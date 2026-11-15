@@ -1,32 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class yd implements s4 {
+public final class yd extends View.AccessibilityDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ yd(ChatActivityEnterView chatActivityEnterView, int i7) {
-        this.a = i7;
-        this.b = chatActivityEnterView;
-    }
-
-    @Override // org.telegram.ui.Components.s4
-    public final void L(int i7, int i10, boolean z9) {
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
         switch (this.a) {
             case 0:
-                this.b.T0(z9, i7, i10, 0L, true);
-                break;
-            case 1:
-                this.b.T0(z9, i7, 0, 0L, true);
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                accessibilityNodeInfo.setClassName("android.widget.ImageButton");
+                accessibilityNodeInfo.setClickable(true);
+                accessibilityNodeInfo.setLongClickable(true);
                 break;
             default:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                boolean T0 = chatActivityEnterView.T0(z9, i7, i10, 0L, true);
-                te teVar = chatActivityEnterView.L0;
-                if (teVar != null) {
-                    teVar.g(!T0);
-                    chatActivityEnterView.L0 = null;
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                if (view.isEnabled()) {
+                    accessibilityNodeInfo.addAction(16);
                     break;
                 }
                 break;

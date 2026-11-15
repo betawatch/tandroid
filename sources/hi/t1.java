@@ -1,63 +1,111 @@
 package hi;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.util.SparseIntArray;
-import android.widget.ImageView;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import android.content.Context;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.is;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class t1 {
-    public final SparseIntArray a = new SparseIntArray();
-    public final SparseIntArray b = new SparseIntArray();
-    public final int[] c = {m6.G6, m6.u8, m6.G8, m6.E8, m6.F8, m6.I5, m6.wj};
-    public float d;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class t1 extends u1 implements is {
+    public final di.c1 b;
+    public final r1 c;
+    public final d2 d;
+    public final s1 e;
+    public final q1 f;
+    public final ArrayList h;
+    public final ArrayList n;
+    public final /* synthetic */ i2 r;
 
-    public final int a(int i7) {
-        return i0.a.f(this.d, this.a.get(i7), this.b.get(i7));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t1(i2 i2Var, Context context) {
+        super(context);
+        this.r = i2Var;
+        this.f = new q1();
+        this.h = new ArrayList();
+        this.n = new ArrayList();
+        di.c1 c1Var = new di.c1(2, context, this);
+        this.b = c1Var;
+        r1 r1Var = new r1(this);
+        this.c = r1Var;
+        c1Var.setAdapter(r1Var);
+        s1 s1Var = new s1(this);
+        this.e = s1Var;
+        c1Var.setLayoutManager(s1Var);
+        c1Var.i(new ai.h0(this, 1));
+        c1Var.setClipToPadding(true);
+        c1Var.setVerticalScrollBarEnabled(false);
+        bi.b6 b6Var = new bi.b6(this, 9);
+        c1Var.setOnTouchListener(new p1(0, this, b6Var));
+        c1Var.setOnItemClickListener(b6Var);
+        c1Var.setOnScrollListener(new bi.z4(this, 13));
+        addView(c1Var, c8.ja.d(-1, -1.0f, ns.E1, 0.0f, 58.0f, 0.0f, 40.0f));
+        int i7 = i2.C1;
+        d2 d2Var = new d2(context, i2Var.J0);
+        this.d = d2Var;
+        d2Var.x = new bi.b(this, 26);
+        d2Var.a(2, false);
+        addView(d2Var, c8.ja.e(-1, -2, 48));
     }
 
-    public final void b(org.telegram.ui.ActionBar.l lVar, float f10) {
-        this.d = f10;
-        int i7 = m6.G6;
-        lVar.setTitleColor(a(i7));
-        lVar.setSubtitleColor(m6.r1(0.45f, a(i7)));
-        lVar.G(a(i7), false);
-        ImageView imageView = lVar.e;
-        if (imageView != null) {
-            imageView.setColorFilter(new PorterDuffColorFilter(a(i7), PorterDuff.Mode.SRC_IN));
+    @Override // hi.u1
+    public final void a(int i7) {
+        r1 r1Var = this.c;
+        r1.E(r1Var, false);
+        if (this.n.isEmpty() && TextUtils.isEmpty(this.r.m1)) {
+            r1Var.G();
         }
-        lVar.E(a(m6.u8), false);
+        r1Var.H(null);
     }
 
-    public final void c(SparseIntArray sparseIntArray, int i7, h6 h6Var) {
-        int i10;
-        int[] iArr = this.c;
-        int i11 = 0;
-        if (i7 == 0) {
-            while (i11 < iArr.length) {
-                int i12 = iArr[i11];
-                sparseIntArray.put(i12, m6.w0(i12, h6Var));
-                i11++;
+    @Override // hi.u1
+    public final float b() {
+        int i7 = 0;
+        while (true) {
+            di.c1 c1Var = this.b;
+            if (i7 >= c1Var.getChildCount()) {
+                return 0.0f;
             }
-            return;
-        }
-        int i13 = i0.a.h(i7) < 0.5d ? -1 : -16777216;
-        int o4 = i0.a.o(i13, 60);
-        while (i11 < iArr.length) {
-            int i14 = iArr[i11];
-            if (i14 == m6.G8 || i14 == m6.E8 || i14 == m6.F8 || i14 == (i10 = m6.I5)) {
-                sparseIntArray.put(i14, m6.w0(i14, h6Var));
-            } else if (i14 == m6.wj) {
-                sparseIntArray.put(i14, i0.a.f(0.5f, i7, i13));
-            } else if (i14 == m6.u8 || i14 == i10) {
-                sparseIntArray.put(i14, o4);
-            } else {
-                sparseIntArray.put(i14, i13);
+            Object tag = c1Var.getChildAt(i7).getTag();
+            if ((tag instanceof Integer) && ((Integer) tag).intValue() == 34) {
+                return Math.max(0, r2.getBottom());
             }
-            i11++;
+            i7++;
         }
+    }
+
+    @Override // hi.u1
+    public final void c() {
+        this.d.setTranslationY(org.telegram.messenger.g0.L(10.0f) + Math.max(0.0f, b()));
+    }
+
+    @Override // org.telegram.messenger.is
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == ns.X0) {
+            r1.E(this.c, true);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        int i7 = i2.C1;
+        ns.f(this.r.a).c(this, ns.X0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        int i7 = i2.C1;
+        ns.f(this.r.a).n(this, ns.X0);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11 = i2.C1;
+        int i12 = this.r.u0;
+        setPadding(i12, 0, i12, org.telegram.messenger.g0.n);
+        super.onMeasure(i7, i10);
     }
 }

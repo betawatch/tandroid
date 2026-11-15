@@ -2,7 +2,7 @@ package h2;
 
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i {
     public final g0 a;
@@ -20,16 +20,16 @@ public final class i {
     }
 
     public final synchronized void b() {
-        boolean z9 = false;
+        boolean z10 = false;
         while (!this.b) {
             try {
                 this.a.getClass();
                 wait();
             } catch (InterruptedException unused) {
-                z9 = true;
+                z10 = true;
             }
         }
-        if (z9) {
+        if (z10) {
             Thread.currentThread().interrupt();
         }
     }
@@ -44,18 +44,18 @@ public final class i {
         if (j10 < elapsedRealtime) {
             b();
         } else {
-            boolean z9 = false;
+            boolean z10 = false;
             while (!this.b && elapsedRealtime < j10) {
                 try {
                     this.a.getClass();
                     wait(j10 - elapsedRealtime);
                 } catch (InterruptedException unused) {
-                    z9 = true;
+                    z10 = true;
                 }
                 this.a.getClass();
                 elapsedRealtime = SystemClock.elapsedRealtime();
             }
-            if (z9) {
+            if (z10) {
                 Thread.currentThread().interrupt();
             }
         }

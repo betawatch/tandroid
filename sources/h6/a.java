@@ -5,10 +5,10 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
-import c8.xb;
+import c8.yb;
 import f7.t0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public final String a;
@@ -20,7 +20,7 @@ public final class a extends r6.a {
     public static final j6.b h = new j6.b("CastMediaOptions", null);
     public static final Parcelable.Creator<a> CREATOR = new t0(17);
 
-    public a(String str, String str2, IBinder iBinder, f fVar, boolean z9, boolean z10) {
+    public a(String str, String str2, IBinder iBinder, f fVar, boolean z10, boolean z11) {
         k kVar;
         this.a = str;
         this.b = str2;
@@ -32,8 +32,8 @@ public final class a extends r6.a {
         }
         this.c = kVar;
         this.d = fVar;
-        this.e = z9;
-        this.f = z10;
+        this.e = z10;
+        this.f = z11;
     }
 
     public final void b() {
@@ -55,16 +55,16 @@ public final class a extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.l(parcel, 2, this.a);
-        xb.l(parcel, 3, this.b);
+        int r10 = yb.r(parcel, 20293);
+        yb.l(parcel, 2, this.a);
+        yb.l(parcel, 3, this.b);
         k kVar = this.c;
-        xb.f(parcel, 4, kVar == null ? null : kVar.b);
-        xb.k(parcel, 5, this.d, i7);
-        xb.q(parcel, 6, 4);
+        yb.f(parcel, 4, kVar == null ? null : kVar.b);
+        yb.k(parcel, 5, this.d, i7);
+        yb.q(parcel, 6, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        xb.q(parcel, 7, 4);
+        yb.q(parcel, 7, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 }

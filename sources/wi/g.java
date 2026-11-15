@@ -1,128 +1,179 @@
 package wi;
 
-import android.hardware.camera2.CameraCaptureSession;
-import android.hardware.camera2.CaptureRequest;
-import android.hardware.camera2.CaptureResult;
-import android.hardware.camera2.TotalCaptureResult;
-import android.os.SystemClock;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.WindowManager;
+import fi.w2;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.hd;
+import org.telegram.ui.Components.f10;
+import org.telegram.ui.Components.m51;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class g extends CameraCaptureSession.CaptureCallback {
-    public final /* synthetic */ k a;
+public final class g extends f10 {
+    public float a;
+    public float b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ h d;
 
-    public g(k kVar) {
-        this.a = kVar;
+    public g(h hVar, int i7) {
+        this.d = hVar;
+        this.c = i7;
     }
 
-    @Override // android.hardware.camera2.CameraCaptureSession.CaptureCallback
-    public final void onCaptureCompleted(CameraCaptureSession cameraCaptureSession, CaptureRequest captureRequest, TotalCaptureResult totalCaptureResult) {
-        int i7;
-        k kVar = this.a;
-        o oVar = kVar.j;
-        if (cameraCaptureSession != kVar.z) {
-            return;
-        }
-        if (kVar.P) {
-            Object tag = captureRequest.getTag();
-            if ((tag instanceof Integer) && ((Integer) tag).intValue() == kVar.T) {
-                kVar.Q++;
-                Integer num = (Integer) totalCaptureResult.get(CaptureResult.FLASH_MODE);
-                Integer num2 = (Integer) totalCaptureResult.get(CaptureResult.FLASH_STATE);
-                boolean z9 = !kVar.O ? !(num == null || num.intValue() == 0) : !(num != null && num.intValue() == 2);
-                boolean z10 = !kVar.O || num2 == null || num2.intValue() == 3 || num2.intValue() == 4;
-                if (z9 && z10) {
-                    oVar.b("torch result confirmed: enabled=" + kVar.O + ", resultMode=" + num + ", flashState=" + num2 + ", frames=" + kVar.Q + ", retries=" + kVar.R);
-                    kVar.P = false;
-                } else {
-                    int i10 = kVar.Q;
-                    if (i10 == 3 && (i7 = kVar.R) == 0) {
-                        kVar.R = i7 + 1;
-                        kVar.Q = 0;
-                        oVar.b("torch result not applied; rebuilding request: enabled=" + kVar.O + ", resultMode=" + num + ", flashState=" + num2);
-                        kVar.f();
-                    } else if (i10 >= 6) {
-                        oVar.b("torch result failed: enabled=" + kVar.O + ", resultMode=" + num + ", flashState=" + num2 + ", retries=" + kVar.R);
-                        kVar.P = false;
+    @Override // org.telegram.ui.Components.f10
+    public final boolean a() {
+        h hVar = this.d;
+        return (hVar.K || hVar.H || !hVar.c()) ? false : true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onDoubleTap(MotionEvent motionEvent) {
+        h hVar = this.d;
+        m51 m51Var = hVar.F;
+        l lVar = hVar.b;
+        if (hVar.b() && hVar.c()) {
+            boolean z10 = motionEvent.getX() >= ((float) hVar.x) * 0.5f;
+            long duration = lVar.getDuration();
+            long l10 = lVar.l();
+            long j3 = (z10 ? 10000 : -10000) + l10;
+            if (j3 > duration) {
+                j3 = duration;
+            } else if (j3 < 0) {
+                if (j3 >= -9000) {
+                    j3 = 0;
+                }
+                return true;
+            }
+            if (l10 != j3) {
+                m51Var.e(true);
+                m51Var.d(!z10);
+                long j10 = m51Var.o + 10000;
+                m51Var.o = j10;
+                m51Var.p = hd.G((int) (j10 / 1000), "Seconds", new Object[0]);
+                lVar.c(j3);
+                m51Var.g(0L);
+                hVar.I = j3 / duration;
+                w2 w2Var = hVar.o;
+                if (w2Var != null) {
+                    w2Var.invalidate();
+                }
+                d dVar = hVar.m;
+                if (dVar != null) {
+                    dVar.invalidate();
+                }
+                if (!hVar.u) {
+                    hVar.u = true;
+                    hVar.o(true);
+                    if (!hVar.w) {
+                        hVar.w = true;
+                        g0.i3(hVar.P, 2500L);
                     }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        h hVar = this.d;
+        if (hVar.u) {
+            for (int i7 = 1; i7 < hVar.i.getChildCount(); i7++) {
+                View childAt = hVar.i.getChildAt(i7);
+                if (childAt.dispatchTouchEvent(motionEvent)) {
+                    hVar.t = childAt;
+                    return true;
                 }
             }
         }
-        Long l10 = (Long) totalCaptureResult.get(CaptureResult.SENSOR_TIMESTAMP);
-        if (l10 == null || l10.longValue() <= kVar.W0) {
-            return;
+        this.a = hVar.B;
+        this.b = hVar.C;
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        h hVar = this.d;
+        if (!hVar.r || hVar.s) {
+            return false;
         }
-        long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
-        if (kVar.V0 == 0) {
-            kVar.V0 = l10.longValue();
-            kVar.X0 = 1L;
-        } else {
-            long longValue = l10.longValue() - kVar.W0;
-            kVar.Z0++;
-            kVar.a1 += longValue;
-            double d = longValue;
-            kVar.b1 = (d * d) + kVar.b1;
-            long j3 = kVar.c1;
-            if (j3 == 0 || longValue < j3) {
-                kVar.c1 = longValue;
+        r1.g gVar = hVar.D;
+        gVar.a = f10;
+        gVar.b = hVar.B;
+        gVar.c = true;
+        gVar.m.i = h.n((f10 / 7.0f) + r0, hVar.x);
+        hVar.D.h();
+        r1.g gVar2 = hVar.E;
+        gVar2.a = f11;
+        gVar2.b = hVar.C;
+        gVar2.c = true;
+        gVar2.m.i = h.e((f11 / 10.0f) + r7, hVar.y);
+        hVar.E.h();
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        h hVar = this.d;
+        WindowManager.LayoutParams layoutParams = hVar.e;
+        if (!hVar.r && hVar.v == null && !hVar.s) {
+            float abs = Math.abs(f10);
+            float f12 = this.c;
+            if (abs >= f12 || Math.abs(f11) >= f12) {
+                hVar.r = true;
+                hVar.D.d();
+                hVar.E.d();
+                hVar.L = false;
+                hVar.b.G();
+                g0.r(hVar.N);
             }
-            kVar.d1 = Math.max(kVar.d1, longValue);
-            if (longValue > 50000000) {
-                kVar.e1++;
+        }
+        if (hVar.r && motionEvent != null) {
+            float rawX = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
+            float rawY = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
+            hVar.C = rawY;
+            r1.g gVar = hVar.D;
+            if (gVar.f) {
+                gVar.m.i = rawX;
+            } else {
+                hVar.B = rawX;
+                layoutParams.x = (int) rawX;
             }
-            if (longValue > 100000000) {
-                kVar.f1++;
+            layoutParams.y = (int) rawY;
+            hVar.r();
+        }
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
+        h hVar = this.d;
+        e eVar = hVar.P;
+        if (hVar.v == null) {
+            if (hVar.w) {
+                g0.r(eVar);
+                hVar.w = false;
             }
-            kVar.X0++;
+            boolean z10 = !hVar.u;
+            hVar.u = z10;
+            hVar.o(z10);
+            if (hVar.u) {
+                g0.i3(eVar, 2500L);
+                hVar.w = true;
+            }
         }
-        long j10 = kVar.Y0;
-        if (j10 != 0) {
-            long j11 = elapsedRealtimeNanos - j10;
-            kVar.g1++;
-            kVar.h1 += j11;
-            kVar.i1 = Math.max(kVar.i1, j11);
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        if (a()) {
+            return super.onSingleTapUp(motionEvent);
         }
-        kVar.Y0 = elapsedRealtimeNanos;
-        kVar.W0 = l10.longValue();
-        long longValue2 = l10.longValue() - kVar.V0;
-        if (longValue2 < 3000000000L) {
-            return;
-        }
-        float f10 = ((kVar.X0 - 1) * 1.0E9f) / longValue2;
-        o0 o0Var = kVar.I;
-        int i11 = o0Var == null ? 0 : o0Var.a;
-        StringBuilder sb2 = new StringBuilder("camera capture rate: measuredFps=");
-        sb2.append(f10);
-        sb2.append(", requestedFps=");
-        sb2.append(kVar.h.a);
-        sb2.append(", activeFps=");
-        sb2.append(i11 == 0 ? "unknown" : Integer.valueOf(i11));
-        sb2.append(", targetMet=");
-        sb2.append(i11 == 0 || f10 >= ((float) i11) * 0.85f);
-        sb2.append(", fpsRange=");
-        sb2.append(kVar.J);
-        sb2.append(", sensorIntervalMs={avg=");
-        sb2.append(k.i(kVar.a1, kVar.Z0));
-        sb2.append(", min=");
-        sb2.append(kVar.c1 / 1000000.0f);
-        sb2.append(", max=");
-        sb2.append(kVar.d1 / 1000000.0f);
-        sb2.append(", jitter=");
-        sb2.append(k.U(kVar.b1, kVar.a1, kVar.Z0));
-        sb2.append("}, sensorGaps={over50ms=");
-        sb2.append(kVar.e1);
-        sb2.append(", over100ms=");
-        sb2.append(kVar.f1);
-        sb2.append("}, callbackIntervalMs={avg=");
-        sb2.append(k.i(kVar.h1, kVar.g1));
-        sb2.append(", max=");
-        sb2.append(kVar.i1 / 1000000.0f);
-        sb2.append("}");
-        oVar.b(sb2.toString());
-        kVar.N();
-        kVar.V0 = l10.longValue();
-        kVar.W0 = l10.longValue();
-        kVar.X0 = 1L;
-        kVar.Y0 = elapsedRealtimeNanos;
+        onSingleTapConfirmed(motionEvent);
+        return true;
     }
 }

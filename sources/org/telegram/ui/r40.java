@@ -1,40 +1,12 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class r40 extends org.telegram.ui.Components.v00 {
-    public final /* synthetic */ z40 r;
+public interface r40 {
+    void f(TLRPC.User user);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r40(z40 z40Var, Context context, int i7) {
-        super(context, i7);
-        this.r = z40Var;
-    }
-
-    @Override // org.telegram.ui.Components.v00
-    public final void a(org.telegram.ui.Components.c20 c20Var) {
-        super.a(c20Var);
-        z40.e0(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.v00
-    public final void b() {
-        super.b();
-        z40.e0(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.v00
-    public final void c(org.telegram.ui.Components.c20 c20Var) {
-        z40 z40Var = this.r;
-        if (c20Var == z40Var.X) {
-            z40Var.X = null;
-        }
-        if (c20Var == z40Var.Y) {
-            z40Var.Y = null;
-        }
-        super.c(c20Var);
-        z40.e0(z40Var);
-    }
+    void i(int i7, ArrayList arrayList);
 }

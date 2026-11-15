@@ -1,10 +1,10 @@
 package e2;
 
-import a8.ia;
+import a8.ja;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b1 {
     public static final String j;
@@ -25,7 +25,7 @@ public final class b1 {
     public final int i;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         j = Integer.toString(0, 36);
         k = Integer.toString(1, 36);
         l = Integer.toString(2, 36);
@@ -36,8 +36,8 @@ public final class b1 {
     }
 
     public b1(Object obj, int i7, l0 l0Var, Object obj2, int i10, long j3, long j10, int i11, int i12) {
-        ia.f(i7 >= 0);
-        ia.f(i10 >= 0);
+        ja.f(i7 >= 0);
+        ja.f(i10 >= 0);
         this.a = obj;
         this.b = i7;
         this.c = l0Var;
@@ -53,11 +53,11 @@ public final class b1 {
         return this.b == b1Var.b && this.e == b1Var.e && this.f == b1Var.f && this.g == b1Var.g && this.h == b1Var.h && this.i == b1Var.i && Objects.equals(this.c, b1Var.c);
     }
 
-    public final b1 b(boolean z9, boolean z10) {
-        if (z9 && z10) {
+    public final b1 b(boolean z10, boolean z11) {
+        if (z10 && z11) {
             return this;
         }
-        return new b1(this.a, z10 ? this.b : 0, z9 ? this.c : null, this.d, z10 ? this.e : 0, z9 ? this.f : 0L, z9 ? this.g : 0L, z9 ? this.h : -1, z9 ? this.i : -1);
+        return new b1(this.a, z11 ? this.b : 0, z10 ? this.c : null, this.d, z11 ? this.e : 0, z10 ? this.f : 0L, z10 ? this.g : 0L, z10 ? this.h : -1, z10 ? this.i : -1);
     }
 
     public final Bundle c(int i7) {
@@ -116,12 +116,12 @@ public final class b1 {
         if (i7 == -1) {
             return str;
         }
-        StringBuilder j3 = rf.b.j(str, ", contentPos=");
-        j3.append(this.g);
-        j3.append(", adGroup=");
-        j3.append(i7);
-        j3.append(", ad=");
-        j3.append(this.i);
-        return j3.toString();
+        StringBuilder m10 = r.b.m(str, ", contentPos=");
+        m10.append(this.g);
+        m10.append(", adGroup=");
+        m10.append(i7);
+        m10.append(", ad=");
+        m10.append(this.i);
+        return m10.toString();
     }
 }

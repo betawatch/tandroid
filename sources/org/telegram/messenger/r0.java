@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r0 implements Application.ActivityLifecycleCallbacks {
     public static r0 f;
@@ -37,7 +37,7 @@ public final class r0 implements Application.ActivityLifecycleCallbacks {
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
                 try {
-                    ((org.telegram.ui.Components.yz) it.next()).b();
+                    ((org.telegram.ui.Components.c00) it.next()).b();
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }
@@ -73,9 +73,9 @@ public final class r0 implements Application.ActivityLifecycleCallbacks {
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityStarted(Activity activity) {
-        boolean z9 = this.a == 0;
+        boolean z10 = this.a == 0;
         a(activity);
-        if (z9) {
+        if (z10) {
             t0.c(true);
         }
     }
@@ -93,7 +93,7 @@ public final class r0 implements Application.ActivityLifecycleCallbacks {
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
                 try {
-                    ((org.telegram.ui.Components.yz) it.next()).a();
+                    ((org.telegram.ui.Components.c00) it.next()).a();
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }

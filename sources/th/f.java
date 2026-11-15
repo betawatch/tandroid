@@ -3,13 +3,13 @@ package th;
 import android.graphics.Canvas;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.m20;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.k20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class f extends sh.d {
+public final class f extends sh.c {
     public final TLRPC.MessageMedia b;
 
     public f(TLRPC.MessageMedia messageMedia) {
@@ -22,11 +22,11 @@ public final class f extends sh.d {
             return;
         }
         int min = Math.min(2, (int) Math.ceil(g0.p));
-        int i7 = m20.i;
-        imageReceiver.s0(hc.p(m20.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 38, 38, 13, min)), null, null, null, null, null, 0);
+        int i7 = k20.i;
+        imageReceiver.s0(gc.p(k20.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 38, 38, 13, min)), null, null, null, null, null, 0);
     }
 
-    @Override // sh.d
+    @Override // sh.c
     public final void c(Canvas canvas, int i7, int i10) {
         ImageReceiver imageReceiver = this.a;
         imageReceiver.y0(0.0f, 0.0f, i7, i10);

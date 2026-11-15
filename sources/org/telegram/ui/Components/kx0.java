@@ -1,88 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import java.util.ArrayList;
+import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class kx0 extends k1.b {
-    public final Rect o;
-    public final /* synthetic */ mx0 p;
+public final class kx0 extends ViewGroup.MarginLayoutParams {
+    public mx0 a;
+    public mx0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kx0(mx0 mx0Var, mx0 mx0Var2) {
-        super(mx0Var2);
-        this.p = mx0Var;
-        this.o = new Rect();
+    public kx0() {
+        super(-2, -2);
+        mx0 mx0Var = mx0.e;
+        this.a = mx0Var;
+        this.b = mx0Var;
+        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
+        this.a = mx0Var;
+        this.b = mx0Var;
     }
 
-    @Override // k1.b
-    public final int g(float f10, float f11) {
-        int i7;
-        mx0 mx0Var = this.p;
-        int childCount = mx0Var.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            fx0 d = mx0Var.d(i10);
-            if (d.k > 0 && (i7 = d.l) > 0) {
-                if (f10 >= d.p && f10 < r6 + r4) {
-                    if (f11 >= d.q && f11 < r3 + i7) {
-                        return i10;
-                    }
-                }
-            }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return TLObject.FLAG_31;
-    }
-
-    @Override // k1.b
-    public final void h(ArrayList arrayList) {
-        mx0 mx0Var = this.p;
-        int childCount = mx0Var.getChildCount();
-        for (int i7 = 0; i7 < childCount; i7++) {
-            fx0 d = mx0Var.d(i7);
-            if (d.k > 0 && d.l > 0) {
-                arrayList.add(Integer.valueOf(i7));
-            }
+        if (obj == null || kx0.class != obj.getClass()) {
+            return false;
         }
+        kx0 kx0Var = (kx0) obj;
+        return this.b.equals(kx0Var.b) && this.a.equals(kx0Var.a);
     }
 
-    @Override // k1.b
-    public final boolean k(int i7, int i10) {
-        return false;
-    }
-
-    @Override // k1.b
-    public final void l(int i7, s0.d dVar) {
-        Rect rect = this.o;
-        if (i7 >= 0) {
-            mx0 mx0Var = this.p;
-            if (i7 < mx0Var.getChildCount()) {
-                fx0 d = mx0Var.d(i7);
-                int i10 = d.p;
-                int i11 = d.q;
-                rect.set(i10, i11, d.k + i10, d.l + i11);
-                dVar.h(rect);
-                dVar.i("android.widget.TextView");
-                dVar.a.setEnabled(true);
-                ex0 ex0Var = d.b;
-                CharSequence text = ex0Var != null ? ex0Var.getText() : null;
-                if (text == null || text.length() == 0) {
-                    text = " ";
-                }
-                dVar.o(text);
-                TL_iv.pageTableCell pagetablecell = d.c;
-                if (pagetablecell == null || !pagetablecell.header) {
-                    return;
-                }
-                dVar.k(true);
-                return;
-            }
-        }
-        rect.set(0, 0, 1, 1);
-        dVar.h(rect);
-        dVar.p(false);
-        dVar.j("");
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

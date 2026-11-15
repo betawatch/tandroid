@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class ag implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -14,33 +14,33 @@ public final class ag implements Parcelable.Creator {
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int z9 = wb.z(parcel);
+                int z10 = xb.z(parcel);
                 long j3 = 0;
                 int i7 = 0;
                 int i10 = 0;
                 int i11 = 0;
                 int i12 = 0;
-                while (parcel.dataPosition() < z9) {
+                while (parcel.dataPosition() < z10) {
                     int readInt = parcel.readInt();
                     char c10 = (char) readInt;
                     if (c10 == 1) {
-                        i7 = wb.u(parcel, readInt);
+                        i7 = xb.u(parcel, readInt);
                     } else if (c10 == 2) {
-                        i10 = wb.u(parcel, readInt);
+                        i10 = xb.u(parcel, readInt);
                     } else if (c10 == 3) {
-                        i11 = wb.u(parcel, readInt);
+                        i11 = xb.u(parcel, readInt);
                     } else if (c10 == 4) {
-                        i12 = wb.u(parcel, readInt);
+                        i12 = xb.u(parcel, readInt);
                     } else if (c10 != 5) {
-                        wb.y(parcel, readInt);
+                        xb.y(parcel, readInt);
                     } else {
-                        j3 = wb.w(parcel, readInt);
+                        j3 = xb.w(parcel, readInt);
                     }
                 }
-                wb.m(parcel, z9);
+                xb.m(parcel, z10);
                 return new yf(i7, i10, i11, j3, i12);
             case 1:
-                int z10 = wb.z(parcel);
+                int z11 = xb.z(parcel);
                 int i13 = 0;
                 int i14 = 0;
                 int i15 = 0;
@@ -48,11 +48,11 @@ public final class ag implements Parcelable.Creator {
                 int i17 = 0;
                 float[] fArr = null;
                 Bitmap bitmap = null;
-                while (parcel.dataPosition() < z10) {
+                while (parcel.dataPosition() < z11) {
                     int readInt2 = parcel.readInt();
                     switch ((char) readInt2) {
                         case 1:
-                            int x10 = wb.x(parcel, readInt2);
+                            int x10 = xb.x(parcel, readInt2);
                             int dataPosition = parcel.dataPosition();
                             if (x10 == 0) {
                                 fArr = null;
@@ -63,43 +63,43 @@ public final class ag implements Parcelable.Creator {
                                 break;
                             }
                         case 2:
-                            bitmap = (Bitmap) wb.g(parcel, readInt2, Bitmap.CREATOR);
+                            bitmap = (Bitmap) xb.g(parcel, readInt2, Bitmap.CREATOR);
                             break;
                         case 3:
-                            i13 = wb.u(parcel, readInt2);
+                            i13 = xb.u(parcel, readInt2);
                             break;
                         case 4:
-                            i14 = wb.u(parcel, readInt2);
+                            i14 = xb.u(parcel, readInt2);
                             break;
                         case 5:
-                            i15 = wb.u(parcel, readInt2);
+                            i15 = xb.u(parcel, readInt2);
                             break;
                         case 6:
-                            i16 = wb.u(parcel, readInt2);
+                            i16 = xb.u(parcel, readInt2);
                             break;
                         case 7:
-                            i17 = wb.u(parcel, readInt2);
+                            i17 = xb.u(parcel, readInt2);
                             break;
                         default:
-                            wb.y(parcel, readInt2);
+                            xb.y(parcel, readInt2);
                             break;
                     }
                 }
-                wb.m(parcel, z10);
+                xb.m(parcel, z11);
                 return new fg(fArr, bitmap, i13, i14, i15, i16, i17);
             case 2:
-                int z11 = wb.z(parcel);
+                int z12 = xb.z(parcel);
                 ArrayList arrayList = null;
                 float[] fArr2 = null;
                 Bitmap bitmap2 = null;
                 ArrayList arrayList2 = null;
-                while (parcel.dataPosition() < z11) {
+                while (parcel.dataPosition() < z12) {
                     int readInt3 = parcel.readInt();
                     char c11 = (char) readInt3;
                     if (c11 == 1) {
-                        arrayList = wb.l(parcel, readInt3, fg.CREATOR);
+                        arrayList = xb.l(parcel, readInt3, fg.CREATOR);
                     } else if (c11 == 2) {
-                        int x11 = wb.x(parcel, readInt3);
+                        int x11 = xb.x(parcel, readInt3);
                         int dataPosition2 = parcel.dataPosition();
                         if (x11 == 0) {
                             fArr2 = null;
@@ -109,11 +109,11 @@ public final class ag implements Parcelable.Creator {
                             fArr2 = createFloatArray;
                         }
                     } else if (c11 == 3) {
-                        bitmap2 = (Bitmap) wb.g(parcel, readInt3, Bitmap.CREATOR);
+                        bitmap2 = (Bitmap) xb.g(parcel, readInt3, Bitmap.CREATOR);
                     } else if (c11 != 4) {
-                        wb.y(parcel, readInt3);
+                        xb.y(parcel, readInt3);
                     } else {
-                        int x12 = wb.x(parcel, readInt3);
+                        int x12 = xb.x(parcel, readInt3);
                         int dataPosition3 = parcel.dataPosition();
                         if (x12 == 0) {
                             arrayList2 = null;
@@ -128,34 +128,34 @@ public final class ag implements Parcelable.Creator {
                         }
                     }
                 }
-                wb.m(parcel, z11);
+                xb.m(parcel, z12);
                 return new gg(arrayList, fArr2, bitmap2, arrayList2);
             default:
-                int z12 = wb.z(parcel);
-                boolean z13 = false;
+                int z13 = xb.z(parcel);
                 boolean z14 = false;
                 boolean z15 = false;
                 boolean z16 = false;
                 boolean z17 = false;
-                while (parcel.dataPosition() < z12) {
+                boolean z18 = false;
+                while (parcel.dataPosition() < z13) {
                     int readInt5 = parcel.readInt();
                     char c12 = (char) readInt5;
                     if (c12 == 1) {
-                        z13 = wb.n(parcel, readInt5);
+                        z14 = xb.n(parcel, readInt5);
                     } else if (c12 == 2) {
-                        z14 = wb.n(parcel, readInt5);
+                        z15 = xb.n(parcel, readInt5);
                     } else if (c12 == 3) {
-                        z15 = wb.n(parcel, readInt5);
+                        z16 = xb.n(parcel, readInt5);
                     } else if (c12 == 4) {
-                        z16 = wb.n(parcel, readInt5);
+                        z17 = xb.n(parcel, readInt5);
                     } else if (c12 != 5) {
-                        wb.y(parcel, readInt5);
+                        xb.y(parcel, readInt5);
                     } else {
-                        z17 = wb.n(parcel, readInt5);
+                        z18 = xb.n(parcel, readInt5);
                     }
                 }
-                wb.m(parcel, z12);
-                return new hg(z13, z14, z15, z16, z17);
+                xb.m(parcel, z13);
+                return new hg(z14, z15, z16, z17, z18);
         }
     }
 

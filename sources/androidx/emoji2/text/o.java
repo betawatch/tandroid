@@ -1,82 +1,119 @@
 package androidx.emoji2.text;
 
-import ab.b0;
-import java.nio.ByteBuffer;
+import android.os.Trace;
+import android.util.SparseIntArray;
+import fi.l7;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.r5;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.i10;
+import org.telegram.ui.Components.voip.i2;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.s2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class o {
-    public static final ThreadLocal d = new ThreadLocal();
-    public final int a;
-    public final b0 b;
-    public volatile int c = 0;
+public final class o implements Runnable {
+    public static final /* synthetic */ o b = new o(1);
+    public final /* synthetic */ int a;
 
-    public o(b0 b0Var, int i7) {
-        this.b = b0Var;
+    public /* synthetic */ o(int i7) {
         this.a = i7;
     }
 
-    public final int a(int i7) {
-        s1.a b10 = b();
-        int a10 = b10.a(16);
-        if (a10 == 0) {
-            return 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = 2;
+        boolean z10 = true;
+        switch (this.a) {
+            case 0:
+                try {
+                    int i10 = n0.g.a;
+                    Trace.beginSection("EmojiCompat.EmojiCompatInitializer.run");
+                    if (l.j == null) {
+                        z10 = false;
+                    }
+                    if (z10) {
+                        l.a().c();
+                    }
+                    Trace.endSection();
+                    return;
+                } catch (Throwable th2) {
+                    int i11 = n0.g.a;
+                    Trace.endSection();
+                    throw th2;
+                }
+            case 1:
+                return;
+            case 2:
+                Math.abs(Utilities.b.nextInt() % 3);
+                i10[] i10VarArr = l7.a;
+                ns.f(m10.t0).k(2, 0);
+                g0.i3(l7.o, 1000L);
+                LaunchActivity.Q().getFragmentView();
+                return;
+            case 3:
+                return;
+            case 4:
+                ArrayList arrayList = r5.j;
+                if (arrayList == null || arrayList.isEmpty()) {
+                    r5.j = null;
+                    return;
+                }
+                ArrayList arrayList2 = r5.j;
+                r5.j = null;
+                if (r5.k == null) {
+                    int max = Math.max(1, Runtime.getRuntime().availableProcessors());
+                    r5 r5Var = new r5();
+                    r5Var.a = new ArrayList(10);
+                    r5Var.b = new SparseIntArray();
+                    r5Var.c = new ArrayList(10);
+                    r5Var.i = new j6.o(r5Var, 7);
+                    r5Var.d = max;
+                    r5Var.f = Utilities.b.nextInt();
+                    r5.k = r5Var;
+                }
+                Utilities.e.c(new org.telegram.messenger.k(i7, arrayList2));
+                return;
+            case 5:
+                j6.j = false;
+                j6.m(false);
+                return;
+            case 6:
+                j6.k = false;
+                j6.m(true);
+                return;
+            case 7:
+                return;
+            case 8:
+                i2 i2Var = i2.U;
+                if (i2Var != null) {
+                    g0.r(i2Var.b.f.O);
+                    return;
+                }
+                return;
+            default:
+                return;
         }
-        ByteBuffer byteBuffer = (ByteBuffer) b10.d;
-        int i10 = a10 + b10.a;
-        return byteBuffer.getInt((i7 * 4) + byteBuffer.getInt(i10) + i10 + 4);
     }
 
-    public final s1.a b() {
-        ThreadLocal threadLocal = d;
-        s1.a aVar = (s1.a) threadLocal.get();
-        if (aVar == null) {
-            aVar = new s1.a();
-            threadLocal.set(aVar);
-        }
-        s1.b bVar = (s1.b) this.b.b;
-        int a10 = bVar.a(6);
-        if (a10 != 0) {
-            int i7 = a10 + bVar.a;
-            int i10 = (this.a * 4) + ((ByteBuffer) bVar.d).getInt(i7) + i7 + 4;
-            int i11 = ((ByteBuffer) bVar.d).getInt(i10) + i10;
-            ByteBuffer byteBuffer = (ByteBuffer) bVar.d;
-            aVar.d = byteBuffer;
-            if (byteBuffer != null) {
-                aVar.a = i11;
-                int i12 = i11 - byteBuffer.getInt(i11);
-                aVar.b = i12;
-                aVar.c = ((ByteBuffer) aVar.d).getShort(i12);
-                return aVar;
-            }
-            aVar.a = 0;
-            aVar.b = 0;
-            aVar.c = 0;
-        }
-        return aVar;
+    public o(s2 s2Var) {
+        this.a = 7;
     }
 
-    public final String toString() {
-        int i7;
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(super.toString());
-        sb2.append(", id:");
-        s1.a b10 = b();
-        int a10 = b10.a(4);
-        sb2.append(Integer.toHexString(a10 != 0 ? ((ByteBuffer) b10.d).getInt(a10 + b10.a) : 0));
-        sb2.append(", codepoints:");
-        s1.a b11 = b();
-        int a11 = b11.a(16);
-        if (a11 != 0) {
-            int i10 = a11 + b11.a;
-            i7 = ((ByteBuffer) b11.d).getInt(((ByteBuffer) b11.d).getInt(i10) + i10);
-        } else {
-            i7 = 0;
-        }
-        for (int i11 = 0; i11 < i7; i11++) {
-            sb2.append(Integer.toHexString(a(i11)));
-            sb2.append(" ");
-        }
-        return sb2.toString();
+    private final /* synthetic */ void a() {
+    }
+
+    private final void b() {
+    }
+
+    private final void c() {
+    }
+
+    private final void d() {
     }
 }

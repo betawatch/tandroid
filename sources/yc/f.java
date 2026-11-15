@@ -1,31 +1,31 @@
 package yc;
 
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public enum f {
     /* JADX INFO: Fake field, exist only in values array */
     EF0(101, "Switching Protocols"),
-    c(qs.e3, "OK"),
+    c(ns.e3, "OK"),
     /* JADX INFO: Fake field, exist only in values array */
-    EF2(qs.f3, "Created"),
+    EF2(ns.f3, "Created"),
     /* JADX INFO: Fake field, exist only in values array */
-    EF3(qs.g3, "Accepted"),
-    d(qs.i3, "No Content"),
-    e(qs.k3, "Partial Content"),
+    EF3(ns.g3, "Accepted"),
+    d(ns.i3, "No Content"),
+    e(ns.k3, "Partial Content"),
     /* JADX INFO: Fake field, exist only in values array */
-    EF9(qs.l3, "Multi-Status"),
+    EF9(ns.l3, "Multi-Status"),
     /* JADX INFO: Fake field, exist only in values array */
-    EF11(qs.Y4, "Moved Permanently"),
+    EF11(ns.Y4, "Moved Permanently"),
     /* JADX INFO: Fake field, exist only in values array */
-    EF4(qs.Z4, "Found"),
+    EF4(ns.Z4, "Found"),
     /* JADX INFO: Fake field, exist only in values array */
-    EF5(qs.a5, "See Other"),
+    EF5(ns.a5, "See Other"),
     /* JADX INFO: Fake field, exist only in values array */
-    EF8(qs.b5, "Not Modified"),
+    EF8(ns.b5, "Not Modified"),
     /* JADX INFO: Fake field, exist only in values array */
-    EF10(qs.e5, "Temporary Redirect"),
+    EF10(ns.e5, "Temporary Redirect"),
     f(400, "Bad Request"),
     /* JADX INFO: Fake field, exist only in values array */
     EF13(401, "Unauthorized"),

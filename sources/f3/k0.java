@@ -1,60 +1,28 @@
 package f3;
 
-import a8.ia;
+import android.os.Parcel;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class k0 {
-    public final byte[] a = new byte[10];
-    public boolean b;
-    public int c;
-    public long d;
-    public int e;
-    public int f;
-    public int g;
+public final class k0 implements com.google.android.gms.common.api.internal.q {
+    public final String[] a;
 
-    public final void a(j0 j0Var, i0 i0Var) {
-        if (this.c > 0) {
-            j0Var.c(this.d, this.e, this.f, this.g, i0Var);
-            this.c = 0;
-        }
+    public /* synthetic */ k0(j6.s sVar, String[] strArr) {
+        this.a = strArr;
     }
 
-    public final void b(j0 j0Var, long j3, int i7, int i10, int i11, i0 i0Var) {
-        ia.o("TrueHD chunk samples must be contiguous in the sample queue.", this.g <= i10 + i11);
-        if (this.b) {
-            int i12 = this.c;
-            int i13 = i12 + 1;
-            this.c = i13;
-            if (i12 == 0) {
-                this.d = j3;
-                this.e = i7;
-                this.f = 0;
-            }
-            this.f += i10;
-            this.g = i11;
-            if (i13 >= 16) {
-                a(j0Var, i0Var);
-            }
-        }
+    @Override // com.google.android.gms.common.api.internal.q
+    public void accept(Object obj, Object obj2) {
+        j6.r rVar = new j6.r(0, (TaskCompletionSource) obj2);
+        j6.i iVar = (j6.i) ((j6.t) obj).n();
+        Parcel p12 = iVar.p1();
+        com.google.android.gms.internal.cast.t.d(p12, rVar);
+        p12.writeStringArray(this.a);
+        iVar.u1(p12, 5);
     }
 
-    public final void c(p pVar) {
-        if (this.b) {
-            return;
-        }
-        byte[] bArr = this.a;
-        pVar.b(0, 10, bArr);
-        pVar.q();
-        if (bArr[4] == -8 && bArr[5] == 114 && bArr[6] == 111) {
-            byte b10 = bArr[7];
-            if ((b10 & 254) == 186) {
-                r1 = 40 << ((bArr[((b10 & 255) == 187 ? 1 : 0) != 0 ? '\t' : '\b'] >> 4) & 7);
-            }
-        }
-        if (r1 == 0) {
-            return;
-        }
-        this.b = true;
+    public k0(String[] strArr) {
+        this.a = strArr;
     }
 }

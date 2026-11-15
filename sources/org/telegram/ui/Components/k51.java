@@ -1,307 +1,166 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class k51 extends Drawable {
-    public static final int[] r = {10, 7, 26, 16, 10, 25};
-    public final Paint a;
-    public final TextPaint b;
-    public final Path c;
-    public boolean d;
-    public final boolean e;
-    public Path f;
-    public int g;
-    public float h;
-    public float i;
-    public boolean j;
-    public boolean k;
-    public boolean l;
-    public long m;
-    public j51 n;
-    public long o;
-    public String p;
-    public float q;
+public final class k51 extends TextureView implements TextureView.SurfaceTextureListener {
+    public u51 a;
+    public wy b;
+    public final pi0 c;
+    public int d;
+    public int e;
+    public hi.c7 f;
+    public j51 h;
+    public int n;
+    public int r;
+    public u9 s;
 
-    public k51(boolean z9) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        Path path = new Path();
-        this.c = path;
-        this.q = 1.0f;
-        this.e = z9;
-        paint.setColor(-1);
-        textPaint.setColor(-1);
-        textPaint.setTextSize(org.telegram.messenger.g0.L(12.0f));
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        path.reset();
-        for (int i7 = 0; i7 < 3; i7++) {
-            int[] iArr = r;
-            if (i7 == 0) {
-                int i10 = i7 * 2;
-                this.c.moveTo(org.telegram.messenger.g0.L(iArr[i10]), org.telegram.messenger.g0.L(iArr[i10 + 1]));
-            } else {
-                int i11 = i7 * 2;
-                this.c.lineTo(org.telegram.messenger.g0.L(iArr[i11]), org.telegram.messenger.g0.L(iArr[i11 + 1]));
-            }
-        }
-        this.c.close();
+    public k51(Context context, u51 u51Var) {
+        super(context);
+        this.c = new pi0();
+        this.a = u51Var;
+        setSurfaceTextureListener(this);
     }
 
-    public final void a() {
-        j51 j51Var = this.n;
+    public final void a(float f10, float f11, float f12, float f13) {
+        pi0 pi0Var = this.c;
+        pi0Var.a = f10;
+        pi0Var.b = f11;
+        pi0Var.c = f12;
+        pi0Var.d = f13;
+    }
+
+    public Bitmap getUiBlurBitmap() {
+        z9 z9Var;
+        wy wyVar = this.b;
+        if (wyVar == null || (z9Var = wyVar.J) == null) {
+            return null;
+        }
+        synchronized (z9Var.n) {
+            try {
+                if (z9Var.q) {
+                    return z9Var.p;
+                }
+                return null;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public int getVideoHeight() {
+        return this.e;
+    }
+
+    public int getVideoWidth() {
+        return this.d;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i7, int i10) {
+        int i11;
+        if (this.b != null || surfaceTexture == null || this.a == null) {
+            return;
+        }
+        wy wyVar = new wy(surfaceTexture, new gx(this, 26), this.f, this.s, i7, i10);
+        this.b = wyVar;
+        wyVar.h(this.n, this.r);
+        wy wyVar2 = this.b;
+        u9 u9Var = this.s;
+        z9 z9Var = wyVar2.J;
+        if (z9Var != null) {
+            u9 u9Var2 = z9Var.t;
+            if (u9Var2 != null && u9Var2.m != null) {
+                u9Var2.m = null;
+            }
+            z9Var.t = u9Var;
+            if (u9Var != null && u9Var.m != z9Var) {
+                u9Var.m = z9Var;
+                u9Var.d();
+            }
+        }
+        int i12 = this.d;
+        if (i12 != 0 && (i11 = this.e) != 0) {
+            wy wyVar3 = this.b;
+            wyVar3.getClass();
+            wyVar3.postRunnable(new sy(wyVar3, i12, i11, 0));
+        }
+        this.b.c(true, true, false);
+        j51 j51Var = this.h;
         if (j51Var != null) {
-            j51Var.invalidate();
-        } else {
-            invalidateSelf();
+            j51Var.b(this.b);
         }
     }
 
-    public final boolean b() {
-        return this.j;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        wy wyVar = this.b;
+        if (wyVar == null) {
+            return true;
+        }
+        wyVar.postRunnable(new ty(wyVar, 0));
+        this.b = null;
+        return true;
     }
 
-    public final void c(org.telegram.ui.uo0 uo0Var) {
-        this.n = uo0Var;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i7, int i10) {
+        wy wyVar = this.b;
+        if (wyVar != null) {
+            wyVar.postRunnable(new sy(wyVar, i7, i10, 1));
+            this.b.c(false, true, false);
+            this.b.postRunnable(new w41(this, 1));
+        }
     }
 
-    public final void d(boolean z9) {
-        boolean z10 = this.d;
-        if (z10 == z9 && this.h >= 1.0f && this.k) {
-            return;
-        }
-        if (z10 != z9) {
-            this.o = 0L;
-            this.p = null;
-        }
-        this.d = z9;
-        this.j = true;
-        this.h = 0.0f;
-        invalidateSelf();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0270  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0273  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        float f10;
-        Rect bounds = getBounds();
-        int width = ((bounds.width() - org.telegram.messenger.g0.L(32.0f)) / 2) + bounds.left;
-        int height = ((bounds.height() - org.telegram.messenger.g0.L(32.0f)) / 2) + bounds.top;
-        int B = this.d ? org.telegram.messenger.k5.B(16.0f, bounds.width() / 4, width) : org.telegram.messenger.k5.C(16.0f, bounds.width() / 4, width);
-        canvas.save();
-        if (this.e) {
-            if (this.f == null) {
-                this.f = new Path();
-            }
-            int i7 = bounds.left + (bounds.top << 8) + (bounds.bottom << 16) + (bounds.right << 24);
-            if (this.g != i7) {
-                this.f.reset();
-                RectF rectF = org.telegram.messenger.g0.P;
-                rectF.set(bounds);
-                this.f.addOval(rectF, Path.Direction.CCW);
-                this.g = i7;
-            }
-            canvas.clipPath(this.f);
-        } else {
-            canvas.clipRect(bounds.left, bounds.top, bounds.right, bounds.bottom);
-        }
-        boolean z9 = this.k;
-        TextPaint textPaint = this.b;
-        Paint paint = this.a;
-        if (z9) {
-            float f11 = this.h;
-            if (f11 <= 0.7f) {
-                paint.setAlpha((int) (Math.min(1.0f, f11 / 0.3f) * 80.0f));
-                textPaint.setAlpha((int) (Math.min(1.0f, this.h / 0.3f) * 255.0f));
+    public void setDelegate(j51 j51Var) {
+        this.h = j51Var;
+        wy wyVar = this.b;
+        if (wyVar != null) {
+            if (j51Var == null) {
+                wyVar.d(null);
             } else {
-                paint.setAlpha((int) ((1.0f - ((f11 - 0.7f) / 0.3f)) * 80.0f));
-                textPaint.setAlpha((int) ((1.0f - ((this.h - 0.7f) / 0.3f)) * 255.0f));
-            }
-        } else {
-            paint.setAlpha((int) (this.i * 80.0f));
-            textPaint.setAlpha((int) (this.i * 255.0f));
-        }
-        canvas.drawCircle(((Math.max(bounds.width(), bounds.height()) / 4) * (this.d ? -1 : 1)) + B, org.telegram.messenger.g0.L(16.0f) + height, Math.max(bounds.width(), bounds.height()) / 2, paint);
-        canvas.restore();
-        String str = this.p;
-        if (str != null) {
-            canvas.drawText(str, (org.telegram.messenger.g0.L(32.0f) * (this.d ? -1 : 1)) + B, org.telegram.messenger.g0.L(15.0f) + org.telegram.messenger.g0.L(32.0f) + height, textPaint);
-        }
-        canvas.save();
-        float f12 = this.q;
-        float f13 = B;
-        float f14 = height;
-        canvas.scale(f12, f12, f13, (org.telegram.messenger.g0.L(32.0f) / 2.0f) + f14);
-        if (this.d) {
-            canvas.rotate(180.0f, f13, (org.telegram.messenger.g0.L(32.0f) / 2) + height);
-        }
-        canvas.translate(f13, f14);
-        float f15 = this.h;
-        Path path = this.c;
-        if (f15 <= 0.6f) {
-            int min = f15 < 0.4f ? Math.min(org.telegram.messenger.qs.e4, (int) ((f15 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f15 - 0.4f) / 0.2f)) * 255.0f);
-            if (!this.k) {
-                min = (int) (min * this.i);
-            }
-            paint.setAlpha(min);
-            canvas.drawPath(path, paint);
-        }
-        canvas.translate(org.telegram.messenger.g0.L(18.0f), 0.0f);
-        float f16 = this.h;
-        if (f16 >= 0.2f && f16 <= 0.8f) {
-            float f17 = f16 - 0.2f;
-            int min2 = f17 < 0.4f ? Math.min(org.telegram.messenger.qs.e4, (int) ((f17 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f17 - 0.4f) / 0.2f)) * 255.0f);
-            if (!this.k) {
-                min2 = (int) (min2 * this.i);
-            }
-            paint.setAlpha(min2);
-            canvas.drawPath(path, paint);
-        }
-        canvas.translate(org.telegram.messenger.g0.L(18.0f), 0.0f);
-        float f18 = this.h;
-        if (f18 >= 0.4f && f18 <= 1.0f) {
-            float f19 = f18 - 0.4f;
-            int min3 = f19 < 0.4f ? Math.min(org.telegram.messenger.qs.e4, (int) ((f19 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f19 - 0.4f) / 0.2f)) * 255.0f);
-            if (!this.k) {
-                min3 = (int) (min3 * this.i);
-            }
-            paint.setAlpha(min3);
-            canvas.drawPath(path, paint);
-        }
-        canvas.restore();
-        if (!this.j) {
-            return;
-        }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j3 = currentTimeMillis - this.m;
-        if (j3 > 17) {
-            j3 = 17;
-        }
-        this.m = currentTimeMillis;
-        float f20 = this.h;
-        if (f20 < 1.0f) {
-            float f21 = (j3 / 800.0f) + f20;
-            this.h = f21;
-            if (this.k) {
-                if (f21 >= 1.0f) {
-                    this.h = 0.0f;
-                    this.j = false;
-                    this.o = 0L;
-                    this.p = null;
-                }
-            } else if (f21 >= 1.0f) {
-                if (this.l) {
-                    this.h = 0.0f;
-                } else {
-                    this.h = 1.0f;
-                }
-            }
-            a();
-        }
-        if (this.k) {
-            return;
-        }
-        boolean z10 = this.l;
-        if (z10) {
-            float f22 = this.i;
-            if (f22 != 1.0f) {
-                this.i = f22 + 0.10666667f;
-                a();
-                f10 = this.i;
-                if (f10 >= 0.0f) {
-                    this.i = 0.0f;
-                    return;
-                } else {
-                    if (f10 > 1.0f) {
-                        this.i = 1.0f;
-                        return;
-                    }
-                    return;
-                }
+                j51Var.b(wyVar);
             }
         }
-        if (!z10) {
-            float f23 = this.i;
-            if (f23 != 0.0f) {
-                this.i = f23 - 0.10666667f;
-                a();
+    }
+
+    public void setHDRInfo(hi.c7 c7Var) {
+        this.f = c7Var;
+        wy wyVar = this.b;
+        if (wyVar != null) {
+            wyVar.postRunnable(new vs(10, wyVar, c7Var));
+        }
+    }
+
+    @Override // android.view.TextureView
+    public void setTransform(Matrix matrix) {
+        super.setTransform(matrix);
+        wy wyVar = this.b;
+        if (wyVar != null) {
+            int width = getWidth();
+            int height = getHeight();
+            z9 z9Var = wyVar.J;
+            if (z9Var == null) {
+                return;
             }
-        }
-        f10 = this.i;
-        if (f10 >= 0.0f) {
-        }
-    }
-
-    public final void e(boolean z9) {
-        if (this.k != z9) {
-            this.k = z9;
-            this.p = null;
-            this.o = 0L;
-            this.h = 0.0f;
+            Matrix matrix2 = z9Var.v;
+            matrix.invert(matrix2);
+            float f10 = width;
+            float f11 = height;
+            matrix2.preScale(f10, f11);
+            matrix2.postScale(1.0f / f10, 1.0f / f11);
+            z9Var.c(matrix2);
+            wyVar.c(false, false, false);
         }
     }
 
-    public final void f(boolean z9) {
-        this.l = z9;
-        a();
-    }
-
-    public final void g(long j3) {
-        this.o = j3;
-        if (j3 >= 1000) {
-            this.p = org.telegram.messenger.id.G((int) (j3 / 1000), "Seconds", new Object[0]);
-        } else {
-            this.p = null;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumHeight() {
-        return org.telegram.messenger.g0.L(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumWidth() {
-        return org.telegram.messenger.g0.L(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.a.setAlpha(i7);
-        this.b.setAlpha(i7);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

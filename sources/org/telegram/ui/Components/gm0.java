@@ -1,28 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.LinearLayout;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class gm0 extends LinearLayout {
-    public gm0(Context context) {
-        super(context);
-        setWillNotDraw(false);
-    }
+public final class gm0 extends NumberTextView {
+    public int w;
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        return super.drawChild(canvas, view, j3);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        if (getParent() instanceof hm0) {
-            ((hm0) getParent()).invalidate();
-        }
+    @Override // org.telegram.ui.Components.NumberTextView
+    public final void setTextColor(int i7) {
+        super.setTextColor(i7);
+        this.w = i7;
     }
 }

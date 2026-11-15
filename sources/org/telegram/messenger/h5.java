@@ -1,8 +1,8 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h5 implements ls {
+public final /* synthetic */ class h5 implements is {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -11,20 +11,20 @@ public final /* synthetic */ class h5 implements ls {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.ls
+    @Override // org.telegram.messenger.is
     public final void didReceivedNotification(int i7, int i10, Object[] objArr) {
         switch (this.a) {
             case 0:
-                di.i4 i4Var = (di.i4) this.b;
+                fi.a4 a4Var = (fi.a4) this.b;
                 if (i7 == 25) {
-                    i4Var.d(false);
+                    a4Var.d(false);
                     break;
                 }
                 break;
             default:
-                wz wzVar = (wz) this.b;
+                uz uzVar = (uz) this.b;
                 if (i7 == 253) {
-                    g0.h3(new ds(wzVar, 15));
+                    g0.h3(new as(uzVar, 15));
                     break;
                 }
                 break;

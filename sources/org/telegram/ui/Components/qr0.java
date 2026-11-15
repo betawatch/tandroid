@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qr0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,12 +30,12 @@ public final /* synthetic */ class qr0 implements Runnable {
                 String str2 = this.c;
                 ArrayList arrayList = null;
                 rr0Var2.f = null;
-                if (!org.telegram.messenger.t3.T(rr0Var2.n) && rr0Var2.s.f1 != null) {
-                    arrayList = new ArrayList(rr0Var2.s.f1.participants.participants);
+                if (!org.telegram.messenger.t3.T(rr0Var2.n) && rr0Var2.s.g1 != null) {
+                    arrayList = new ArrayList(rr0Var2.s.g1.participants.participants);
                 }
                 rr0Var2.r = 2;
                 if (arrayList != null) {
-                    Utilities.g.c(new mg(rr0Var2, str2, arrayList, 22));
+                    Utilities.g.c(new yf(rr0Var2, str2, arrayList, 24));
                 } else {
                     rr0Var2.r = 1;
                 }

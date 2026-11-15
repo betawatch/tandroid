@@ -1,10 +1,10 @@
 package h9;
 
-import a8.ia;
+import a8.ja;
 import java.util.Iterator;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h0 extends i0 {
     public final transient int c;
@@ -19,7 +19,7 @@ public final class h0 extends i0 {
 
     @Override // java.util.List
     public final Object get(int i7) {
-        ia.j(i7, this.d);
+        ja.j(i7, this.d);
         return this.e.get(i7 + this.c);
     }
 
@@ -61,7 +61,7 @@ public final class h0 extends i0 {
     @Override // h9.i0, java.util.List
     /* renamed from: x */
     public final i0 subList(int i7, int i10) {
-        ia.n(i7, i10, this.d);
+        ja.n(i7, i10, this.d);
         int i11 = this.c;
         return this.e.subList(i7 + i11, i10 + i11);
     }

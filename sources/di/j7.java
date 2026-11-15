@@ -1,52 +1,43 @@
 package di;
 
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.messenger.yr;
+import android.content.DialogInterface;
+import org.telegram.messenger.z10;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m7 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+public final /* synthetic */ class j7 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ z10 c;
 
-    public /* synthetic */ j7(m7 m7Var, long j3, int i7, int i10) {
-        this.a = i10;
-        this.b = m7Var;
-        this.c = j3;
-        this.d = i7;
+    public /* synthetic */ j7(z10 z10Var, boolean[] zArr) {
+        this.c = z10Var;
+        this.b = zArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                long j3 = this.c;
-                int i7 = this.d;
-                yr yrVar = this.b.b;
-                SQLiteDatabase sQLiteDatabase = yrVar.b;
-                try {
-                    Locale locale = Locale.US;
-                    sQLiteDatabase.executeFast("REPLACE INTO stories_counter VALUES(" + j3 + ", 0, " + i7 + ")").stepThis().dispose();
+                z10 z10Var = this.c;
+                if (z10Var != null && !this.b[0]) {
+                    z10Var.a(Boolean.FALSE);
                     break;
-                } catch (Throwable th2) {
-                    yrVar.o(th2, true);
-                    return;
                 }
+                break;
             default:
-                long j10 = this.c;
-                int i10 = this.d;
-                yr yrVar2 = this.b.b;
-                SQLiteDatabase sQLiteDatabase2 = yrVar2.b;
-                try {
-                    Locale locale2 = Locale.US;
-                    sQLiteDatabase2.executeFast("DELETE FROM stories WHERE dialog_id = " + j10 + " AND story_id = " + i10).stepThis().dispose();
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    this.c.a(Boolean.FALSE);
+                    zArr[0] = true;
                     break;
-                } catch (Throwable th3) {
-                    yrVar2.o(th3, true);
                 }
+                break;
         }
+    }
+
+    public /* synthetic */ j7(boolean[] zArr, z10 z10Var) {
+        this.b = zArr;
+        this.c = z10Var;
     }
 }

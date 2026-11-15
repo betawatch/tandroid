@@ -1,11 +1,11 @@
 package com.googlecode.mp4parser;
 
-import c8.jb;
+import c8.lb;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a implements i5.b {
     static final /* synthetic */ boolean $assertionsDisabled = false;
@@ -14,7 +14,7 @@ public abstract class a implements i5.b {
     long contentStartPosition;
     f dataSource;
     long offset;
-    private i5.f parent;
+    private i5.g parent;
     protected String type;
     private byte[] userType;
     long memMapSize = -1;
@@ -85,7 +85,7 @@ public abstract class a implements i5.b {
             writableByteChannel.write((ByteBuffer) this.content.position(0));
             return;
         }
-        ByteBuffer allocate3 = ByteBuffer.allocate(jb.a(getSize()));
+        ByteBuffer allocate3 = ByteBuffer.allocate(lb.a(getSize()));
         a(allocate3);
         getContent(allocate3);
         ByteBuffer byteBuffer = this.deadBytes;
@@ -107,7 +107,7 @@ public abstract class a implements i5.b {
     }
 
     @Override // i5.b
-    public i5.f getParent() {
+    public i5.g getParent() {
         return this.parent;
     }
 
@@ -177,7 +177,7 @@ public abstract class a implements i5.b {
     }
 
     @Override // i5.b
-    public void setParent(i5.f fVar) {
-        this.parent = fVar;
+    public void setParent(i5.g gVar) {
+        this.parent = gVar;
     }
 }

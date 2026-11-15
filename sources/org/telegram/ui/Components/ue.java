@@ -1,47 +1,32 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Paint;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ue extends hi.u {
-    public boolean s;
-    public final /* synthetic */ ChatActivityEnterView w;
+public final class ue extends org.telegram.ui.bg0 {
+    public final /* synthetic */ int E0;
+    public final /* synthetic */ Object F0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ue(ChatActivityEnterView chatActivityEnterView, Context context) {
-        super(context);
-        this.w = chatActivityEnterView;
-        this.a = null;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.f = true;
-        this.b = new e2.r0();
-        bi.q1 q1Var = new bi.q1(4, context, this);
-        this.c = q1Var;
-        q1Var.setOverScrollMode(2);
-        q1Var.setClipToPadding(false);
-        q1Var.setClipToOutline(true);
-        q1Var.j(new ai.b(this, 14));
-        addView(q1Var);
-        paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.wj, false));
-        fh.g gVar = this.r;
-        if (gVar != null) {
-            gVar.updateColors();
-        }
-        invalidate();
-        setClipChildren(false);
-        this.s = false;
+    public /* synthetic */ ue(Object obj, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i7) {
+        super(context, e6Var);
+        this.E0 = i7;
+        this.F0 = obj;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        if (this.s) {
-            return;
+    @Override // org.telegram.ui.bg0
+    public final void m(long j3) {
+        switch (this.E0) {
+            case 0:
+                ((ChatActivityEnterView) this.F0).setEffectId(j3);
+                break;
+            default:
+                ki kiVar = (ki) this.F0;
+                sh shVar = kiVar.G2;
+                kiVar.L2 = j3;
+                shVar.setEffect(j3);
+                break;
         }
-        this.s = true;
-        this.w.E1();
     }
 }

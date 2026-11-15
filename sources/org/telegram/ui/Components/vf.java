@@ -1,101 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface vf {
-    void B(boolean z9);
+public final class vf extends j31 {
+    public final /* synthetic */ wf q1;
 
-    void C0();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vf(wf wfVar, Context context, org.telegram.ui.ActionBar.e2 e2Var, x31 x31Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e2Var, x31Var, e6Var);
+        this.q1 = wfVar;
+    }
 
-    void D();
-
-    void E();
-
-    void F(CharSequence charSequence, boolean z9, int i7, int i10, long j3);
-
-    TLRPC.TL_channels_sendAsPeers I();
-
-    void I0();
-
-    void M(float f10, int i7);
-
-    void R0(int i7);
-
-    int S0();
-
-    TL_stories.StoryItem T0();
-
-    void T1();
-
-    boolean V0(long j3);
-
-    void V1(int i7);
-
-    void W();
-
-    boolean X0();
-
-    void X1();
-
-    void Y(boolean z9);
-
-    void Y1(boolean z9);
-
-    void Z1(int i7, int i10, int i11, long j3, long j10, boolean z9);
-
-    void a();
-
-    void a1(CharSequence charSequence, boolean z9, boolean z10);
-
-    void b();
-
-    boolean c();
-
-    void c1();
-
-    boolean d1();
-
-    void d2();
-
-    void e1();
-
-    void f1();
-
-    void h1();
-
-    void h2();
-
-    void i1(View view, CharSequence charSequence, boolean z9);
-
-    void j0();
-
-    void k1(CharSequence charSequence);
-
-    int l();
-
-    boolean l1();
-
-    void l2();
-
-    void m1();
-
-    org.telegram.ui.sm o0();
-
-    void r0();
-
-    TLRPC.Peer s();
-
-    void t();
-
-    void t1();
-
-    boolean v0();
-
-    void w(float f10);
-
-    void w0();
+    @Override // org.telegram.ui.Components.j31, org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
+    public final void dismiss() {
+        super.dismiss();
+        ChatActivityEnterView chatActivityEnterView = this.q1.a;
+        if (chatActivityEnterView.I3 == this) {
+            chatActivityEnterView.I3 = null;
+        }
+        cg cgVar = chatActivityEnterView.H3;
+        if (cgVar != null) {
+            cgVar.C(false);
+        }
+    }
 }

@@ -1,30 +1,31 @@
 package c8;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class pa {
-    public final oa a;
-    public final Integer b;
+public enum pa implements u {
+    b(0),
+    c(1),
+    d(2),
+    e(3),
+    f(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(8),
+    h(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF79(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF88(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF101(9);
 
-    public /* synthetic */ pa(wf.b bVar) {
-        this.a = (oa) bVar.b;
-        this.b = (Integer) bVar.c;
+    public final int a;
+
+    pa(int i7) {
+        this.a = i7;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof pa)) {
-            return false;
-        }
-        pa paVar = (pa) obj;
-        return q6.m.k(this.a, paVar.a) && q6.m.k(this.b, paVar.b) && q6.m.k(null, null) && q6.m.k(null, null);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, null, null});
+    @Override // c8.u
+    public final int zza() {
+        return this.a;
     }
 }

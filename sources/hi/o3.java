@@ -1,39 +1,39 @@
 package hi;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.x31;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class o3 extends w31 {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class o3 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ p3 c;
 
-    static {
-        w31.h(new o3());
+    public o3(p3 p3Var, boolean z10, View view) {
+        this.c = p3Var;
+        this.a = z10;
+        this.b = view;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        p3 p3Var = (p3) view;
-        CharSequence charSequence = x31Var.l;
-        CharSequence charSequence2 = x31Var.m;
-        p3Var.setText(charSequence);
-        p3Var.r.setText(charSequence2);
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        boolean z10 = this.a;
+        p3 p3Var = this.c;
+        if (z10) {
+            p3Var.b = view.getRootView();
+        }
+        View view2 = this.b;
+        view2.getViewTreeObserver().addOnGlobalLayoutListener(p3Var.j);
+        view2.addOnLayoutChangeListener(p3Var.i);
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, h6 h6Var) {
-        return new p3(context, h6Var);
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final boolean f() {
-        return false;
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        View view2 = this.b;
+        ViewTreeObserver viewTreeObserver = view2.getViewTreeObserver();
+        p3 p3Var = this.c;
+        viewTreeObserver.removeOnGlobalLayoutListener(p3Var.j);
+        view2.removeOnLayoutChangeListener(p3Var.i);
     }
 }

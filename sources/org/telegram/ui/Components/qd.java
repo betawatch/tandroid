@@ -1,55 +1,68 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qd implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ qd(ChatActivityEnterView chatActivityEnterView, int i7) {
-        this.a = i7;
-        this.b = chatActivityEnterView;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class qd implements org.telegram.messenger.z10 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ String g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
+    public final /* synthetic */ Object j;
+
+    public /* synthetic */ qd(wf wfVar, Object obj, org.telegram.messenger.ff ffVar, boolean z10, int i7, int i10, boolean z11, String str, Object obj2) {
+        this.h = wfVar;
+        this.b = obj;
+        this.i = ffVar;
+        this.c = z10;
+        this.d = i7;
+        this.e = i10;
+        this.f = z11;
+        this.g = str;
+        this.j = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
         int i7 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
+        Object obj2 = this.i;
+        Object obj3 = this.h;
         switch (i7) {
             case 0:
-                if (chatActivityEnterView.l0 != null && !org.telegram.messenger.b6.h(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
-                    chatActivityEnterView.l0.setOpened(false);
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
+                int i10 = ChatActivityEnterView.N6;
+                ad adVar = new ad(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (org.telegram.messenger.cj) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
+                if (!chatActivityEnterView.J1(adVar)) {
+                    adVar.run();
                     break;
                 }
-                break;
-            case 1:
-                vf vfVar = chatActivityEnterView.Z2;
-                if (vfVar != null) {
-                    vfVar.e1();
-                    break;
-                }
-                break;
-            case 2:
-                we weVar = chatActivityEnterView.E0;
-                if (weVar != null) {
-                    weVar.setText("");
-                    break;
-                }
-                break;
-            case 3:
-                we weVar2 = chatActivityEnterView.E0;
-                if (weVar2 != null) {
-                    weVar2.setText("");
-                }
-                chatActivityEnterView.E(true);
-                break;
-            case 4:
-                chatActivityEnterView.p0.callOnClick();
                 break;
             default:
-                int i10 = ChatActivityEnterView.s5;
-                chatActivityEnterView.y();
+                wf wfVar = (wf) obj3;
+                ad adVar2 = new ad(wfVar, this.b, (org.telegram.messenger.ff) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
+                if (!wfVar.a.J1(adVar2)) {
+                    adVar2.run();
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ qd(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, org.telegram.messenger.cj cjVar, boolean z10, int i7, int i10, Object obj, boolean z11) {
+        this.h = chatActivityEnterView;
+        this.i = document;
+        this.g = str;
+        this.j = cjVar;
+        this.c = z10;
+        this.d = i7;
+        this.e = i10;
+        this.b = obj;
+        this.f = z11;
     }
 }

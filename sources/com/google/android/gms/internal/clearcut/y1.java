@@ -1,13 +1,31 @@
 package com.google.android.gms.internal.clearcut;
 
-/* loaded from: classes.dex */
-public final class y1 extends a8.q {
-    public final /* synthetic */ v1 b;
+import android.os.IBinder;
+import android.os.IInterface;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y1(v1 v1Var) {
-        super(2);
-        this.b = v1Var;
-        attachInterface(this, "com.google.android.gms.clearcut.internal.IClearcutLoggerCallbacks");
+/* loaded from: classes.dex */
+public final class y1 extends q6.h {
+    @Override // q6.d, com.google.android.gms.common.api.c
+    public final int d() {
+        return 11925000;
+    }
+
+    @Override // q6.d
+    public final /* synthetic */ IInterface i(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.clearcut.internal.IClearcutLoggerService");
+        return queryLocalInterface instanceof z1 ? (z1) queryLocalInterface : new z1(iBinder);
+    }
+
+    @Override // q6.d
+    public final String o() {
+        return "com.google.android.gms.clearcut.internal.IClearcutLoggerService";
+    }
+
+    @Override // q6.d
+    public final String p() {
+        return "com.google.android.gms.clearcut.service.START";
     }
 }

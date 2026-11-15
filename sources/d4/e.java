@@ -1,6 +1,6 @@
 package d4;
 
-import a8.ia;
+import a8.ja;
 import android.graphics.Color;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -9,9 +9,9 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import java.util.ArrayList;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e {
     public static final boolean[] A;
@@ -74,13 +74,13 @@ public final class e {
     */
     public static int c(int i7, int i10, int i11, int i12) {
         int i13;
-        ia.j(i7, 4);
-        ia.j(i10, 4);
-        ia.j(i11, 4);
-        ia.j(i12, 4);
+        ja.j(i7, 4);
+        ja.j(i10, 4);
+        ja.j(i11, 4);
+        ja.j(i12, 4);
         if (i12 != 0 && i12 != 1) {
             if (i12 == 2) {
-                i13 = qs.L1;
+                i13 = ns.L1;
             } else if (i12 == 3) {
                 i13 = 0;
             }
@@ -166,23 +166,23 @@ public final class e {
         this.t = i7;
     }
 
-    public final void e(boolean z9, boolean z10) {
+    public final void e(boolean z10, boolean z11) {
         int i7 = this.o;
         SpannableStringBuilder spannableStringBuilder = this.b;
         if (i7 != -1) {
-            if (!z9) {
+            if (!z10) {
                 spannableStringBuilder.setSpan(new StyleSpan(2), this.o, spannableStringBuilder.length(), 33);
                 this.o = -1;
             }
-        } else if (z9) {
+        } else if (z10) {
             this.o = spannableStringBuilder.length();
         }
         if (this.p == -1) {
-            if (z10) {
+            if (z11) {
                 this.p = spannableStringBuilder.length();
             }
         } else {
-            if (z10) {
+            if (z11) {
                 return;
             }
             spannableStringBuilder.setSpan(new UnderlineSpan(), this.p, spannableStringBuilder.length(), 33);

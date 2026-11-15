@@ -5,9 +5,9 @@ import android.os.Process;
 import android.util.Log;
 import androidx.lifecycle.k0;
 import c8.d0;
-import c8.m0;
+import c8.n0;
 import com.google.android.gms.internal.play_billing.s0;
-import h9.f1;
+import hi.l0;
 import java.util.LinkedHashSet;
 import java.util.List;
 import kotlin.jvm.internal.j;
@@ -24,7 +24,7 @@ import zd.b0;
 import zd.j0;
 import zd.t1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d {
     public static final /* synthetic */ g[] d;
@@ -45,7 +45,7 @@ public final class d {
         this.a = name;
         this.b = new ThreadLocal();
         final int i7 = 0;
-        f1 f1Var = new f1(new l(this) { // from class: ka.a
+        l0 l0Var = new l0(new l(this) { // from class: ka.a
             public final /* synthetic */ d b;
 
             {
@@ -70,7 +70,7 @@ public final class d {
                         return d0.a(new o1.d(it, sharedPreferencesName, e.a, new b(keysToMigrate, null, 2), new i(3, null)));
                 }
             }
-        }, 15);
+        }, 13);
         final int i10 = 1;
         l lVar = new l(this) { // from class: ka.a
             public final /* synthetic */ d b;
@@ -102,8 +102,8 @@ public final class d {
         ge.d dVar2 = ge.d.c;
         t1 t1Var = new t1();
         dVar2.getClass();
-        ee.c b10 = b0.b(m0.c(dVar2, t1Var));
-        s0 s0Var = new s0(name, f1Var, lVar, b10);
+        ee.c b10 = b0.b(n0.c(dVar2, t1Var));
+        s0 s0Var = new s0(name, l0Var, lVar, b10);
         g property = d[0];
         j.e(property, "property");
         q1.d dVar3 = (q1.d) s0Var.b;
@@ -115,7 +115,7 @@ public final class d {
                         j.d(applicationContext, "applicationContext");
                         List list = (List) lVar.invoke(applicationContext);
                         o1.a aVar = new o1.a(1, applicationContext, s0Var);
-                        s0Var.b = new q1.d(new q1.d(new m1.b0(new f0(h.a, e0.b, new k0(aVar, 3)), d0.a(new be.l(list, (id.c) null, 8)), f1Var, b10)));
+                        s0Var.b = new q1.d(new q1.d(new m1.b0(new f0(h.a, e0.b, new k0(aVar, 3)), d0.a(new be.l(list, (id.c) null, 8)), l0Var, b10)));
                     }
                     dVar = (q1.d) s0Var.b;
                     j.b(dVar);

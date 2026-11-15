@@ -2,11 +2,12 @@ package e2;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.android.gms.internal.vision.e2;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q implements Parcelable {
     public static final Parcelable.Creator<q> CREATOR = new p(1);
@@ -51,7 +52,7 @@ public final class q implements Parcelable {
         if (this.a == 0) {
             int hashCode = this.b.hashCode() * 31;
             String str = this.c;
-            this.a = Arrays.hashCode(this.e) + com.google.android.recaptcha.internal.a.h((hashCode + (str == null ? 0 : str.hashCode())) * 31, 31, this.d);
+            this.a = Arrays.hashCode(this.e) + e2.h((hashCode + (str == null ? 0 : str.hashCode())) * 31, 31, this.d);
         }
         return this.a;
     }
@@ -70,7 +71,7 @@ public final class q implements Parcelable {
         this.b = new UUID(parcel.readLong(), parcel.readLong());
         this.c = parcel.readString();
         String readString = parcel.readString();
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         this.d = readString;
         this.e = parcel.createByteArray();
     }

@@ -1,14 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class h21 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.33f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30));
+public final class h21 extends p21 {
+    public final /* synthetic */ org.telegram.ui.uf U1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h21(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i7, TL_iv.RichMessage richMessage, org.telegram.ui.uf ufVar) {
+        super(activity, str, str2, null, inputPeer, i7, false, richMessage);
+        this.U1 = ufVar;
+    }
+
+    @Override // org.telegram.ui.Components.p21, org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
+    public final void dismiss() {
+        super.dismiss();
+        this.U1.run();
     }
 }

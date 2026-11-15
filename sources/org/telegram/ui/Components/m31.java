@@ -1,28 +1,44 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class m31 implements vv0 {
-    public final /* synthetic */ t31 a;
+public final class m31 extends jl0 {
+    public final /* synthetic */ x31 f;
 
-    public m31(t31 t31Var) {
-        this.a = t31Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m31(x31 x31Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, 14.0f, e6Var);
+        this.f = x31Var;
     }
 
-    @Override // org.telegram.ui.Components.vv0
-    public final void a(TLRPC.Document document, String str, Object obj, org.telegram.messenger.ej ejVar, boolean z9, boolean z10, int i7, int i10) {
-        this.a.b.f(document, obj, z10, i7);
-    }
-
-    @Override // org.telegram.ui.Components.vv0
-    public final boolean b() {
-        return this.a.b.a();
-    }
-
-    @Override // org.telegram.ui.Components.vv0
-    public final boolean c() {
-        return this.a.b.c();
+    @Override // org.telegram.ui.Components.jl0
+    public final void a(String str) {
+        jg.c2 c2Var = this.f.w;
+        jg.a2 a2Var = c2Var.T;
+        int i7 = c2Var.c;
+        if (c2Var.O != 0) {
+            ConnectionsManager.getInstance(i7).cancelRequest(c2Var.O, true);
+            c2Var.O = 0;
+        }
+        if (c2Var.P != 0) {
+            ConnectionsManager.getInstance(i7).cancelRequest(c2Var.P, true);
+            c2Var.P = 0;
+        }
+        if (TextUtils.isEmpty(str)) {
+            c2Var.S = null;
+            c2Var.G.clear();
+            c2Var.J.clear();
+            c2Var.F.clear();
+            c2Var.e.b(false);
+            c2Var.f();
+        } else {
+            c2Var.S = str.toLowerCase();
+        }
+        org.telegram.messenger.g0.r(a2Var);
+        org.telegram.messenger.g0.i3(a2Var, 300L);
     }
 }

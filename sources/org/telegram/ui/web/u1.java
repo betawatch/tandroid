@@ -1,87 +1,14 @@
 package org.telegram.ui.web;
 
-import java.util.ArrayList;
-import org.telegram.messenger.iz;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.p5;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class u1 {
-    public final int a;
-    public boolean b;
-    public boolean c;
-    public String d;
-    public float e;
-    public boolean f;
-    public boolean g;
-    public TLRPC.WebPage h;
-    public boolean i;
-    public TLRPC.TL_webPage j;
-    public int k;
-    public p5 l;
-    public final ArrayList m = new ArrayList();
-
-    public u1(int i7) {
-        this.a = i7;
-    }
-
-    public final void a() {
-        p5 p5Var;
-        if (this.c) {
-            return;
-        }
-        this.c = true;
-        if (!this.g) {
-            ConnectionsManager.getInstance(this.a).cancelRequest(this.k, true);
-        }
-        if (this.i || (p5Var = this.l) == null) {
-            return;
-        }
-        p5Var.run();
-    }
-
-    public final TLRPC.WebPage b() {
-        TLRPC.WebPage webPage;
-        if (!iz.w0 && (webPage = this.h) != null) {
-            return webPage;
-        }
-        TLRPC.TL_webPage tL_webPage = this.j;
-        if (tL_webPage != null) {
-            return tL_webPage;
-        }
-        return null;
-    }
-
-    public final void c() {
-        ArrayList arrayList = this.m;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            ((Runnable) obj).run();
-        }
-    }
-
-    public final void d(u0 u0Var) {
-        if (this.c) {
-            return;
-        }
-        TLRPC.TL_webPage tL_webPage = this.j;
-        if (tL_webPage != null) {
-            w1.o(tL_webPage);
-            this.j = null;
-        }
-        this.i = false;
-        this.d = u0Var.getUrl();
-        this.e = u0Var.getProgress();
-        this.f = u0Var.b;
-        p5 p5Var = this.l;
-        if (p5Var != null) {
-            p5Var.run();
-        }
-        this.l = w1.e(u0Var, new t1(this, 1));
-    }
+public final class u1 extends TLRPC.Photo {
+    public v1 a;
+    public String b;
+    public final HashSet c = new HashSet();
+    public int d;
+    public int e;
 }

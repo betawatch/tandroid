@@ -5,11 +5,11 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements Parcelable {
     public static final Parcelable.Creator<b> CREATOR = new w.a(16);
-    public final boolean D;
+    public final boolean E;
     public final int[] a;
     public final ArrayList b;
     public final int[] c;
@@ -35,22 +35,22 @@ public final class b implements Parcelable {
         this.d = new int[size];
         int i7 = 0;
         for (int i10 = 0; i10 < size; i10++) {
-            p0 p0Var = (p0) aVar.a.get(i10);
+            q0 q0Var = (q0) aVar.a.get(i10);
             int i11 = i7 + 1;
-            this.a[i7] = p0Var.a;
+            this.a[i7] = q0Var.a;
             ArrayList arrayList = this.b;
-            r rVar = p0Var.b;
-            arrayList.add(rVar != null ? rVar.e : null);
+            s sVar = q0Var.b;
+            arrayList.add(sVar != null ? sVar.e : null);
             int[] iArr = this.a;
-            iArr[i11] = p0Var.c ? 1 : 0;
-            iArr[i7 + 2] = p0Var.d;
-            iArr[i7 + 3] = p0Var.e;
+            iArr[i11] = q0Var.c ? 1 : 0;
+            iArr[i7 + 2] = q0Var.d;
+            iArr[i7 + 3] = q0Var.e;
             int i12 = i7 + 5;
-            iArr[i7 + 4] = p0Var.f;
+            iArr[i7 + 4] = q0Var.f;
             i7 += 6;
-            iArr[i12] = p0Var.g;
-            this.c[i10] = p0Var.h.ordinal();
-            this.d[i10] = p0Var.i.ordinal();
+            iArr[i12] = q0Var.g;
+            this.c[i10] = q0Var.h.ordinal();
+            this.d[i10] = q0Var.i.ordinal();
         }
         this.e = aVar.f;
         this.f = aVar.h;
@@ -61,7 +61,7 @@ public final class b implements Parcelable {
         this.w = aVar.l;
         this.x = aVar.m;
         this.y = aVar.n;
-        this.D = aVar.o;
+        this.E = aVar.o;
     }
 
     @Override // android.os.Parcelable
@@ -84,7 +84,7 @@ public final class b implements Parcelable {
         TextUtils.writeToParcel(this.w, parcel, 0);
         parcel.writeStringList(this.x);
         parcel.writeStringList(this.y);
-        parcel.writeInt(this.D ? 1 : 0);
+        parcel.writeInt(this.E ? 1 : 0);
     }
 
     public b(Parcel parcel) {
@@ -102,6 +102,6 @@ public final class b implements Parcelable {
         this.w = (CharSequence) creator.createFromParcel(parcel);
         this.x = parcel.createStringArrayList();
         this.y = parcel.createStringArrayList();
-        this.D = parcel.readInt() != 0;
+        this.E = parcel.readInt() != 0;
     }
 }

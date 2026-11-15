@@ -1,23 +1,45 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes.dex */
-public abstract class rv {
-    public boolean a;
-    public boolean b;
-    public long c = 104857600;
+import java.util.ArrayList;
 
-    public final boolean a() {
-        return this.a || this.b;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes.dex */
+public final /* synthetic */ class rv implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tv b;
+
+    public /* synthetic */ rv(tv tvVar, int i7) {
+        this.a = i7;
+        this.b = tvVar;
     }
 
-    public void b() {
-        if (a()) {
-            this.b = false;
-            this.a = false;
-        } else {
-            this.a = true;
-            this.b = true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.g(false);
+                break;
+            case 1:
+                this.b.o = false;
+                break;
+            case 2:
+                tv tvVar = this.b;
+                tvVar.o = false;
+                tvVar.l = false;
+                break;
+            case 3:
+                this.b.l();
+                break;
+            default:
+                tv tvVar2 = this.b;
+                if (!tvVar2.o) {
+                    tvVar2.o = true;
+                    ArrayList arrayList = new ArrayList(tvVar2.j);
+                    vr a02 = vr.a0(tvVar2.a);
+                    a02.a.c(new kg(tvVar2, a02, arrayList, 24));
+                    break;
+                }
+                break;
         }
     }
 }

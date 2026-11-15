@@ -2,30 +2,30 @@ package oh;
 
 import android.text.SpannableStringBuilder;
 import android.util.SparseArray;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.wp;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.eq;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class a {
     public static final SparseArray a = new SparseArray(6);
 
-    public static SpannableStringBuilder a(int i7, CharSequence charSequence, boolean z9) {
+    public static SpannableStringBuilder a(int i7, CharSequence charSequence, boolean z10) {
         SpannableStringBuilder spannableStringBuilder = charSequence instanceof SpannableStringBuilder ? (SpannableStringBuilder) charSequence : new SpannableStringBuilder(charSequence);
-        if (z9) {
+        if (z10) {
             spannableStringBuilder.insert(0, (CharSequence) "* \u2068");
         } else {
             spannableStringBuilder.insert(0, (CharSequence) "* ");
         }
         SparseArray sparseArray = a;
-        wp wpVar = (wp) sparseArray.get(i7);
-        if (wpVar == null) {
-            wpVar = new wp(i7, 0);
-            wpVar.a(m6.Wl);
-            sparseArray.put(i7, wpVar);
+        eq eqVar = (eq) sparseArray.get(i7);
+        if (eqVar == null) {
+            eqVar = new eq(i7, 0);
+            eqVar.a(j6.Zl);
+            sparseArray.put(i7, eqVar);
         }
-        spannableStringBuilder.setSpan(wpVar, 0, 1, 33);
-        if (z9) {
+        spannableStringBuilder.setSpan(eqVar, 0, 1, 33);
+        if (z10) {
             spannableStringBuilder.append((char) 8297);
         }
         return spannableStringBuilder;

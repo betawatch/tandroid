@@ -1,80 +1,143 @@
 package wi;
 
-import android.os.Handler;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.messenger.g0;
+import org.telegram.ui.Components.m51;
+import org.telegram.ui.Components.um0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements Runnable {
+public final class d extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k b;
-    public final /* synthetic */ n c;
+    public final /* synthetic */ h b;
 
-    public /* synthetic */ d(k kVar, n nVar, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ d(h hVar, Activity activity, int i7) {
+        super(activity);
         this.a = i7;
-        this.b = kVar;
-        this.c = nVar;
+        this.b = hVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        t tVar;
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                k kVar = this.b;
-                d dVar = new d(kVar, this.c, 3);
-                Handler handler = kVar.n;
-                if (handler != null) {
-                    handler.post(dVar);
-                    return;
+                super.dispatchDraw(canvas);
+                h hVar = this.b;
+                um0 um0Var = hVar.G;
+                if (um0Var != null && um0Var.a()) {
+                    hVar.G.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                    hVar.G.draw(canvas);
+                    break;
                 }
-                return;
-            case 1:
-                k kVar2 = this.b;
-                d dVar2 = new d(kVar2, this.c, 2);
-                Handler handler2 = kVar2.n;
-                if (handler2 != null) {
-                    handler2.post(dVar2);
-                    return;
-                }
-                return;
-            case 2:
-                k kVar3 = this.b;
-                n nVar = this.c;
-                if (kVar3.U && !kVar3.Y && kVar3.w == nVar) {
-                    kVar3.j();
-                    if (kVar3.f0 == 0) {
-                        kVar3.f0 = nVar.e;
-                    }
-                    kVar3.j.b("common A/V start completed: segmentElapsedMs=" + k.z(kVar3.C0));
-                    t0 t0Var = (t0) kVar3.k.b;
-                    t0Var.i.post(new i0(t0Var, 2));
-                    return;
-                }
-                return;
+                break;
             default:
-                k kVar4 = this.b;
-                n nVar2 = this.c;
-                if (!kVar4.U || kVar4.Y || kVar4.w != nVar2 || kVar4.z == null || (tVar = kVar4.v) == null) {
-                    return;
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0092, code lost:
+    
+        if (r3 != false) goto L54;
+     */
+    @Override // android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                h hVar = this.b;
+                float[] fArr = hVar.M;
+                b bVar = hVar.N;
+                l lVar = hVar.b;
+                if (hVar.K) {
+                    return false;
                 }
-                try {
-                    long j3 = nVar2.F;
-                    if (j3 <= 0) {
-                        throw new IllegalArgumentException("Invalid recording time origin");
+                int actionMasked = motionEvent.getActionMasked();
+                if (actionMasked == 0 || actionMasked == 5) {
+                    if (motionEvent.getPointerCount() == 1) {
+                        hVar.L = true;
+                        fArr[0] = motionEvent.getX();
+                        fArr[1] = motionEvent.getY();
+                        g0.i3(bVar, 500L);
+                    } else {
+                        hVar.L = false;
+                        lVar.G();
+                        g0.r(bVar);
                     }
-                    tVar.p = j3;
-                    tVar.Q = -1L;
-                    tVar.R = 0L;
-                    tVar.S = -1L;
-                    tVar.q = Long.MAX_VALUE;
-                    tVar.t0 = true;
-                    kVar4.j.b("common A/V start armed; waiting for next camera frame: segmentElapsedMs=" + k.z(kVar4.C0));
-                    return;
-                } catch (RuntimeException e10) {
-                    kVar4.j();
-                    kVar4.M(e10);
-                    return;
                 }
+                if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
+                    hVar.L = false;
+                    lVar.G();
+                    g0.r(bVar);
+                } else if (actionMasked == 2 && lVar.q()) {
+                    lVar.M(motionEvent.getX());
+                }
+                if (hVar.t != null) {
+                    MotionEvent obtain = MotionEvent.obtain(motionEvent);
+                    obtain.offsetLocation(-hVar.t.getX(), -hVar.t.getY());
+                    boolean dispatchTouchEvent = hVar.t.dispatchTouchEvent(obtain);
+                    obtain.recycle();
+                    if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
+                        hVar.t = null;
+                        break;
+                    }
+                }
+                MotionEvent obtain2 = MotionEvent.obtain(motionEvent);
+                obtain2.offsetLocation(motionEvent.getRawX() - motionEvent.getX(), motionEvent.getRawY() - motionEvent.getY());
+                boolean onTouchEvent = hVar.p.onTouchEvent(obtain2);
+                obtain2.recycle();
+                boolean z10 = !hVar.p.isInProgress() && hVar.q.B0(motionEvent);
+                if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
+                    hVar.r = false;
+                    hVar.s = false;
+                    r1.g gVar = hVar.D;
+                    if (!gVar.f) {
+                        gVar.b = hVar.B;
+                        gVar.c = true;
+                        gVar.m.i = h.n(r2, hVar.x);
+                        hVar.D.h();
+                    }
+                    r1.g gVar2 = hVar.E;
+                    if (!gVar2.f) {
+                        gVar2.b = hVar.C;
+                        gVar2.c = true;
+                        gVar2.m.i = h.e(r2, hVar.y);
+                        hVar.E.h();
+                    }
+                }
+                if (!onTouchEvent && !z10) {
+                    return false;
+                }
+                return true;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                h hVar = this.b;
+                m51 m51Var = hVar.F;
+                if (m51Var.j) {
+                    m51Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                    m51Var.draw(canvas);
+                }
+                canvas.save();
+                canvas.translate(getLeft(), getTop());
+                hVar.b.o0(canvas, getRight() - getLeft(), getBottom() - getTop());
+                canvas.restore();
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
         }
     }
 }

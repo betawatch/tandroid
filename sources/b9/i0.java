@@ -1,12 +1,20 @@
 package b9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class i0 implements q6.l {
-    public static final /* synthetic */ i0 a = new i0();
+import com.google.android.gms.common.api.Status;
 
-    @Override // q6.l
-    public Object b(com.google.android.gms.common.api.q qVar) {
-        return Integer.valueOf(((h0) qVar).b);
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes.dex */
+public final class i0 implements com.google.android.gms.common.api.r {
+    public final Status a;
+    public final int b;
+
+    public i0(Status status, int i7) {
+        this.a = status;
+        this.b = i7;
+    }
+
+    @Override // com.google.android.gms.common.api.r
+    public final Status a() {
+        return this.a;
     }
 }

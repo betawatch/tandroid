@@ -1,103 +1,100 @@
 package ah;
 
-import android.content.ClipData;
+import ai.a1;
+import ai.c0;
+import ai.v0;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
-import bg.m0;
-import bi.a1;
-import bi.h8;
-import bi.k9;
-import bi.n9;
-import bi.t0;
-import bi.uc;
-import bi.v;
-import bi.w4;
-import di.a4;
-import di.c1;
-import di.j4;
-import di.l5;
-import di.q9;
-import di.v4;
-import di.z1;
-import fi.b3;
-import fi.f3;
-import fi.la;
-import fi.q1;
-import fi.q8;
-import fi.x9;
-import fi.z2;
-import h9.f1;
+import bi.c4;
+import bi.h0;
+import bi.i4;
+import bi.m0;
+import bi.r3;
+import bi.t6;
+import bi.v2;
+import bi.y;
+import di.a7;
+import di.c8;
+import di.db;
+import di.f8;
+import di.i1;
+import di.p0;
+import di.s2;
+import fi.b4;
+import fi.c5;
+import fi.i9;
+import fi.m4;
+import fi.t3;
+import fi.w1;
+import hi.d3;
+import hi.ia;
+import hi.o8;
+import hi.u9;
+import hi.x2;
+import hi.z2;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import kg.i0;
-import li.a6;
+import oi.j0;
+import oi.y5;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c20;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gf;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.iz;
-import org.telegram.messenger.mj;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gz;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ou;
 import org.telegram.messenger.p2;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.t3;
+import org.telegram.messenger.r9;
+import org.telegram.messenger.v9;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_aicompose;
+import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.i1;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.ActionBar.w2;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.ActionBar.u2;
 import org.telegram.ui.ActionBar.z0;
 import org.telegram.ui.Cells.w;
-import org.telegram.ui.Cells.x8;
+import org.telegram.ui.Cells.w8;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ax;
-import org.telegram.ui.Components.ca0;
+import org.telegram.ui.Components.a2;
+import org.telegram.ui.Components.ar;
+import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.ci;
-import org.telegram.ui.Components.d10;
-import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.gp;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.ha0;
+import org.telegram.ui.Components.fo;
+import org.telegram.ui.Components.ft;
 import org.telegram.ui.Components.ia0;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.kh;
-import org.telegram.ui.Components.kt;
-import org.telegram.ui.Components.mc0;
-import org.telegram.ui.Components.q2;
-import org.telegram.ui.Components.q4;
-import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.qu;
-import org.telegram.ui.Components.ro;
-import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.s4;
-import org.telegram.ui.Components.sq;
-import org.telegram.ui.Components.st0;
-import org.telegram.ui.Components.te;
-import org.telegram.ui.Components.u4;
-import org.telegram.ui.Components.uh;
-import org.telegram.ui.Components.ys;
-import org.telegram.ui.Components.z7;
-import org.telegram.ui.cn;
-import org.telegram.ui.z40;
-import sg.l0;
+import org.telegram.ui.Components.ki;
+import org.telegram.ui.Components.m60;
+import org.telegram.ui.Components.od;
+import org.telegram.ui.Components.p4;
+import org.telegram.ui.Components.r4;
+import org.telegram.ui.Components.sh;
+import org.telegram.ui.Components.t4;
+import org.telegram.ui.Components.ue;
+import org.telegram.ui.Components.wp0;
+import org.telegram.ui.Components.wu;
+import org.telegram.ui.Components.x7;
+import org.telegram.ui.Components.zq;
+import org.telegram.ui.an;
+import sg.k0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -114,578 +111,495 @@ public final /* synthetic */ class g implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
+        ki kiVar;
         boolean u12;
-        ha0 ha0Var;
-        m2 m2Var;
-        int i7 = 3;
-        int i10 = 2;
-        int i11 = 4;
+        ia0 ia0Var;
+        int i7 = this.a;
+        int i10 = 4;
+        int i11 = 3;
+        int i12 = 6;
+        int i13 = 2;
         CharSequence charSequence = null;
-        boolean z9 = false;
-        z9 = false;
-        char c10 = 1;
-        char c11 = 1;
-        char c12 = 1;
-        char c13 = 1;
-        char c14 = 1;
-        switch (this.a) {
+        boolean z10 = false;
+        z10 = false;
+        final int i14 = 1;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        Object obj3 = this.b;
+        switch (i7) {
             case 0:
-                ((o) this.b).a(view, (HashSet) this.c, (Runnable) this.d);
+                ((o) obj3).a(view, (HashSet) obj2, (Runnable) obj);
                 break;
             case 1:
-                a1 a1Var = (a1) this.b;
-                Context context = (Context) this.c;
-                h6 h6Var = (h6) this.d;
-                if (a1Var.i2.a == cg.b.a) {
-                    new uc(context, h6Var).show();
-                    break;
-                }
+                new y((Context) obj2, null, null, (r9) obj).show();
+                ((bi.g) obj3).dismiss();
                 break;
             case 2:
-                n9 n9Var = (n9) this.b;
-                final w2 w2Var = (w2) this.c;
-                final fi.d dVar = (fi.d) this.d;
-                w2Var.b0 = false;
-                dVar.setLoading(true);
-                final char c15 = c10 == true ? 1 : 0;
-                n9Var.a(new c20() { // from class: bi.fa
-                    @Override // org.telegram.messenger.c20
-                    public final void a(Object obj) {
-                        Boolean bool = (Boolean) obj;
-                        switch (c15) {
-                            case 0:
-                                boolean booleanValue = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.w2 w2Var2 = w2Var;
-                                if (!booleanValue) {
-                                    final int i12 = 0;
-                                    final fi.d dVar2 = dVar;
-                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: bi.ha
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            switch (i12) {
-                                                case 0:
-                                                    w2Var2.b0 = false;
-                                                    dVar2.setLoading(false);
-                                                    break;
-                                                default:
-                                                    w2Var2.b0 = false;
-                                                    dVar2.setLoading(false);
-                                                    break;
-                                            }
-                                        }
-                                    }, 400L);
-                                    break;
-                                } else {
-                                    w2Var2.dismiss();
-                                    break;
-                                }
-                            default:
-                                boolean booleanValue2 = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.w2 w2Var3 = w2Var;
-                                if (!booleanValue2) {
-                                    final int i13 = 1;
-                                    final fi.d dVar3 = dVar;
-                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: bi.ha
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            switch (i13) {
-                                                case 0:
-                                                    w2Var3.b0 = false;
-                                                    dVar3.setLoading(false);
-                                                    break;
-                                                default:
-                                                    w2Var3.b0 = false;
-                                                    dVar3.setLoading(false);
-                                                    break;
-                                            }
-                                        }
-                                    }, 400L);
-                                    break;
-                                } else {
-                                    w2Var3.dismiss();
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            case 3:
-                k9 k9Var = (k9) this.b;
-                final w2 w2Var2 = (w2) this.c;
-                final fi.d dVar2 = (fi.d) this.d;
-                w2Var2.b0 = false;
-                dVar2.setLoading(true);
-                final int i12 = z9 ? 1 : 0;
-                k9Var.a(new c20() { // from class: bi.fa
-                    @Override // org.telegram.messenger.c20
-                    public final void a(Object obj) {
-                        Boolean bool = (Boolean) obj;
-                        switch (i12) {
-                            case 0:
-                                boolean booleanValue = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.w2 w2Var22 = w2Var2;
-                                if (!booleanValue) {
-                                    final int i122 = 0;
-                                    final fi.d dVar22 = dVar2;
-                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: bi.ha
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            switch (i122) {
-                                                case 0:
-                                                    w2Var22.b0 = false;
-                                                    dVar22.setLoading(false);
-                                                    break;
-                                                default:
-                                                    w2Var22.b0 = false;
-                                                    dVar22.setLoading(false);
-                                                    break;
-                                            }
-                                        }
-                                    }, 400L);
-                                    break;
-                                } else {
-                                    w2Var22.dismiss();
-                                    break;
-                                }
-                            default:
-                                boolean booleanValue2 = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.w2 w2Var3 = w2Var2;
-                                if (!booleanValue2) {
-                                    final int i13 = 1;
-                                    final fi.d dVar3 = dVar2;
-                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: bi.ha
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            switch (i13) {
-                                                case 0:
-                                                    w2Var3.b0 = false;
-                                                    dVar3.setLoading(false);
-                                                    break;
-                                                default:
-                                                    w2Var3.b0 = false;
-                                                    dVar3.setLoading(false);
-                                                    break;
-                                            }
-                                        }
-                                    }, 400L);
-                                    break;
-                                } else {
-                                    w2Var3.dismiss();
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            case 4:
-                z1 z1Var = (z1) this.b;
-                long[] jArr = (long[]) this.c;
-                w2 w2Var3 = (w2) this.d;
-                z1Var.a(Long.valueOf(jArr[0]));
-                w2Var3.dismiss();
-                break;
-            case 5:
-                a4 a4Var = (a4) this.b;
-                q8 q8Var = (q8) this.c;
-                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.d;
-                j4 j4Var = a4Var.x;
-                j4Var.D0(q8Var, storyItem);
-                a4 a4Var2 = j4Var.c1;
-                if (a4Var2 != null) {
-                    a4Var2.a();
+                y yVar = (y) obj3;
+                boolean[] zArr = (boolean[]) obj2;
+                e6 e6Var = (e6) obj;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    v9.c(yVar.a).e(yVar.T1, new bi.j(yVar, zArr, e6Var, z10 ? 1 : 0));
                     break;
                 }
                 break;
+            case 3:
+                m0 m0Var = (m0) obj3;
+                int i15 = m0Var.a;
+                r9 r9Var = m0Var.i2;
+                new i1((Context) obj2, (e6) obj, i15, r9Var.d.title, r9Var.h, false).show();
+                m0Var.dismiss();
+                break;
+            case 4:
+                m0 m0Var2 = (m0) obj3;
+                boolean[] zArr2 = (boolean[]) obj2;
+                e6 e6Var2 = (e6) obj;
+                if (!zArr2[0]) {
+                    zArr2[0] = true;
+                    v9.c(m0Var2.a).e(m0Var2.U1, new bi.j(m0Var2, zArr2, e6Var2, 1));
+                    break;
+                }
+                break;
+            case 5:
+                c4 c4Var = (c4) obj3;
+                ((m60) obj2).u();
+                wp0 wp0Var = c4Var.a;
+                r3 r3Var = new r3(c4Var, (TL_stars.SavedStarGift) obj, z10 ? 1 : 0);
+                HashMap hashMap = i4.V;
+                wp0Var.h(null, r3Var);
+                break;
             case 6:
-                a4 a4Var3 = (a4) this.b;
-                z0 z0Var = (z0) this.c;
-                q9 q9Var = (q9) this.d;
-                z0Var.performHapticFeedback(3);
-                gc X = gc.X();
-                if (X != null) {
-                    X.Q(R.raw.ic_save_to_gallery, 36, g0.U2(id.M0(2131745933, null), new di.z0(i11, a4Var3, q9Var))).j();
+                Context context = (Context) obj2;
+                e6 e6Var3 = (e6) obj;
+                if (((p0) obj3).j2.a == cg.b.a) {
+                    new db(context, e6Var3).show();
                     break;
                 }
                 break;
             case 7:
-                v4 v4Var = (v4) this.b;
-                ArrayList arrayList = (ArrayList) this.c;
-                k60 k60Var = (k60) this.d;
-                w4 w4Var = new w4(v4Var, i10);
-                l5 l5Var = v4Var.b;
-                new qu(w4Var, l5Var.getContext(), l5Var.s, arrayList).show();
-                k60Var.u();
+                final u2 u2Var = (u2) obj2;
+                final hi.d dVar = (hi.d) obj;
+                u2Var.c0 = false;
+                dVar.setLoading(true);
+                ((f8) obj3).a(new z10() { // from class: di.w8
+                    @Override // org.telegram.messenger.z10
+                    public final void a(Object obj4) {
+                        Boolean bool = (Boolean) obj4;
+                        switch (i14) {
+                            case 0:
+                                boolean booleanValue = bool.booleanValue();
+                                final org.telegram.ui.ActionBar.u2 u2Var2 = u2Var;
+                                if (!booleanValue) {
+                                    final int i16 = 0;
+                                    final hi.d dVar2 = dVar;
+                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.y8
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            switch (i16) {
+                                                case 0:
+                                                    u2Var2.c0 = false;
+                                                    dVar2.setLoading(false);
+                                                    break;
+                                                default:
+                                                    u2Var2.c0 = false;
+                                                    dVar2.setLoading(false);
+                                                    break;
+                                            }
+                                        }
+                                    }, 400L);
+                                    break;
+                                } else {
+                                    u2Var2.dismiss();
+                                    break;
+                                }
+                            default:
+                                boolean booleanValue2 = bool.booleanValue();
+                                final org.telegram.ui.ActionBar.u2 u2Var3 = u2Var;
+                                if (!booleanValue2) {
+                                    final int i17 = 1;
+                                    final hi.d dVar3 = dVar;
+                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.y8
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            switch (i17) {
+                                                case 0:
+                                                    u2Var3.c0 = false;
+                                                    dVar3.setLoading(false);
+                                                    break;
+                                                default:
+                                                    u2Var3.c0 = false;
+                                                    dVar3.setLoading(false);
+                                                    break;
+                                            }
+                                        }
+                                    }, 400L);
+                                    break;
+                                } else {
+                                    u2Var3.dismiss();
+                                    break;
+                                }
+                        }
+                    }
+                });
                 break;
             case 8:
-                la laVar = (la) this.b;
-                FrameLayout frameLayout = (FrameLayout) this.c;
-                di.b bVar = (di.b) this.d;
-                k60 k60Var2 = laVar.U0;
-                if (k60Var2 == null || !k60Var2.D()) {
-                    fi.o oVar = new fi.o(laVar, z9 ? 1 : 0);
-                    boolean q10 = p10.i(laVar.U).q();
-                    fi.o oVar2 = q10 ? null : new fi.o(laVar, c11 == true ? 1 : 0);
-                    k60 F = k60.F(frameLayout, bVar, laVar.S0);
-                    laVar.U0 = F;
-                    F.p(13, g0.L(200.0f), id.N0("StoryPeriodHint"));
-                    laVar.U0.k();
-                    int i13 = 0;
+                final u2 u2Var2 = (u2) obj2;
+                final hi.d dVar2 = (hi.d) obj;
+                u2Var2.c0 = false;
+                dVar2.setLoading(true);
+                final int i16 = z10 ? 1 : 0;
+                ((c8) obj3).a(new z10() { // from class: di.w8
+                    @Override // org.telegram.messenger.z10
+                    public final void a(Object obj4) {
+                        Boolean bool = (Boolean) obj4;
+                        switch (i16) {
+                            case 0:
+                                boolean booleanValue = bool.booleanValue();
+                                final org.telegram.ui.ActionBar.u2 u2Var22 = u2Var2;
+                                if (!booleanValue) {
+                                    final int i162 = 0;
+                                    final hi.d dVar22 = dVar2;
+                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.y8
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            switch (i162) {
+                                                case 0:
+                                                    u2Var22.c0 = false;
+                                                    dVar22.setLoading(false);
+                                                    break;
+                                                default:
+                                                    u2Var22.c0 = false;
+                                                    dVar22.setLoading(false);
+                                                    break;
+                                            }
+                                        }
+                                    }, 400L);
+                                    break;
+                                } else {
+                                    u2Var22.dismiss();
+                                    break;
+                                }
+                            default:
+                                boolean booleanValue2 = bool.booleanValue();
+                                final org.telegram.ui.ActionBar.u2 u2Var3 = u2Var2;
+                                if (!booleanValue2) {
+                                    final int i17 = 1;
+                                    final hi.d dVar3 = dVar2;
+                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.y8
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            switch (i17) {
+                                                case 0:
+                                                    u2Var3.c0 = false;
+                                                    dVar3.setLoading(false);
+                                                    break;
+                                                default:
+                                                    u2Var3.c0 = false;
+                                                    dVar3.setLoading(false);
+                                                    break;
+                                            }
+                                        }
+                                    }, 400L);
+                                    break;
+                                } else {
+                                    u2Var3.dismiss();
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+            case 9:
+                ((w1) obj3).a(Long.valueOf(((long[]) obj2)[0]));
+                ((u2) obj).dismiss();
+                break;
+            case 10:
+                b4 b4Var = ((t3) obj3).x;
+                b4Var.D0((o8) obj2, (TL_stories.StoryItem) obj);
+                t3 t3Var = b4Var.d1;
+                if (t3Var != null) {
+                    t3Var.a();
+                    break;
+                }
+                break;
+            case 11:
+                t3 t3Var2 = (t3) obj3;
+                i9 i9Var = (i9) obj;
+                ((z0) obj2).performHapticFeedback(3);
+                cc X = cc.X();
+                if (X != null) {
+                    X.Q(R.raw.ic_save_to_gallery, 36, g0.U2(hd.M0(2131745933, null), new s2(25, t3Var2, i9Var))).j();
+                    break;
+                }
+                break;
+            case 12:
+                m4 m4Var = (m4) obj3;
+                t6 t6Var = new t6(m4Var, i11);
+                c5 c5Var = m4Var.b;
+                new wu(t6Var, c5Var.getContext(), c5Var.s, (ArrayList) obj2).show();
+                ((m60) obj).u();
+                break;
+            case 13:
+                ia iaVar = (ia) obj3;
+                FrameLayout frameLayout = (FrameLayout) obj2;
+                fi.b bVar = (fi.b) obj;
+                m60 m60Var = iaVar.V0;
+                if (m60Var == null || !m60Var.D()) {
+                    hi.o oVar = new hi.o(iaVar, z10 ? 1 : 0);
+                    boolean q10 = m10.i(iaVar.V).q();
+                    hi.o oVar2 = q10 ? null : new hi.o(iaVar, 1);
+                    m60 F = m60.F(frameLayout, bVar, iaVar.T0);
+                    iaVar.V0 = F;
+                    F.p(13, g0.L(200.0f), hd.N0("StoryPeriodHint"));
+                    iaVar.V0.k();
+                    int i17 = 0;
                     while (true) {
-                        int[] iArr = fi.r.P1;
-                        if (i13 >= 4) {
-                            k60 k60Var3 = laVar.U0;
-                            k60Var3.s = 0;
-                            k60Var3.Z();
+                        int[] iArr = hi.r.Q1;
+                        if (i17 >= 4) {
+                            m60 m60Var2 = iaVar.V0;
+                            m60Var2.s = 0;
+                            m60Var2.Z();
                             break;
                         } else {
-                            int i14 = iArr[i13];
-                            k60 k60Var4 = laVar.U0;
-                            String N0 = i14 == Integer.MAX_VALUE ? id.N0("StoryPeriodKeep") : id.G(i14 / 3600, "Hours", new Object[0]);
-                            int i15 = m6.E8;
-                            k60Var4.b(0, null, N0, i15, i15, new m0(oVar, i14, 5));
-                            k60Var4.M((q10 || i14 == 86400 || i14 == Integer.MAX_VALUE) ? null : new m0(oVar2, i14, 6));
-                            if (laVar.W0 == i13) {
-                                laVar.U0.L();
+                            int i18 = iArr[i17];
+                            m60 m60Var3 = iaVar.V0;
+                            String N0 = i18 == Integer.MAX_VALUE ? hd.N0("StoryPeriodKeep") : hd.G(i18 / 3600, "Hours", new Object[0]);
+                            int i19 = j6.E8;
+                            m60Var3.b(0, null, N0, i19, i19, new v0(oVar, i18, i12));
+                            m60Var3.M((q10 || i18 == 86400 || i18 == Integer.MAX_VALUE) ? null : new a1(oVar2, i18, 1));
+                            if (iaVar.X0 == i17) {
+                                iaVar.V0.L();
                             }
-                            i13++;
+                            i17++;
                         }
                     }
                 }
                 break;
-            case 9:
-                z2 z2Var = (z2) this.b;
-                gf gfVar = (gf) this.c;
-                b3 b3Var = (b3) this.d;
-                f3 f3Var = z2Var.c;
-                ArrayList arrayList2 = f3Var.h0;
-                if (arrayList2.contains(gfVar)) {
-                    arrayList2.remove(gfVar);
-                } else if (arrayList2.size() + 1 > f3Var.R) {
-                    int i16 = -f3Var.N;
-                    f3Var.N = i16;
-                    g0.G3(i16, b3Var, null);
-                    p2.D.a();
+            case 14:
+                ff ffVar = (ff) obj2;
+                z2 z2Var = (z2) obj;
+                d3 d3Var = ((x2) obj3).c;
+                ArrayList arrayList = d3Var.i0;
+                if (arrayList.contains(ffVar)) {
+                    arrayList.remove(ffVar);
+                } else if (arrayList.size() + 1 > d3Var.S) {
+                    int i20 = -d3Var.O;
+                    d3Var.O = i20;
+                    g0.F3(i20, z2Var, null);
+                    p2.E.a();
                     break;
                 } else {
-                    arrayList2.add(gfVar);
+                    arrayList.add(ffVar);
                 }
-                g0.b4(f3Var.d);
-                f3Var.j();
+                g0.a4(d3Var.d);
+                d3Var.j();
                 break;
-            case 10:
-                x9 x9Var = (x9) this.b;
-                Context context2 = (Context) this.c;
-                l0 l0Var = (l0) this.d;
-                if (!x9Var.k1) {
-                    Runnable runnable = x9Var.t1;
+            case 15:
+                u9 u9Var = (u9) obj3;
+                Context context2 = (Context) obj2;
+                k0 k0Var = (k0) obj;
+                if (!u9Var.l1) {
+                    Runnable runnable = u9Var.u1;
                     if (runnable != null) {
                         runnable.run();
                         break;
                     }
                 } else {
-                    sg.q qVar = new sg.q(context2, x9Var.p1);
-                    x9Var.C1 = qVar;
-                    qVar.I0(x9Var.j1.a, 2);
-                    qVar.r1 = new androidx.activity.n(x9Var, l0Var, c12 == true ? 1 : 0);
-                    qVar.q1 = new h8(i10, x9Var, l0Var);
+                    sg.q qVar = new sg.q(context2, u9Var.q1);
+                    u9Var.D1 = qVar;
+                    qVar.I0(u9Var.k1.a, 2);
+                    qVar.s1 = new androidx.activity.n(u9Var, k0Var, 1);
+                    qVar.r1 = new a7(i13, u9Var, k0Var);
                     qVar.show();
                     break;
                 }
                 break;
-            case 11:
-                kg.e eVar = (kg.e) this.b;
-                k60 F2 = k60.F(((cn) this.c).getLayoutContainer(), (h6) this.d, eVar.n);
-                F2.c(R.drawable.msg_cancel, id.M0(2131753702, null), new kg.d(eVar, c13 == true ? 1 : 0), true);
+            case 16:
+                kg.e eVar = (kg.e) obj3;
+                m60 F2 = m60.F(((an) obj2).getLayoutContainer(), (e6) obj, eVar.n);
+                F2.c(R.drawable.msg_cancel, hd.M0(2131753702, null), new kg.d(eVar, 1), true);
                 F2.E();
                 if (eVar.y != null) {
-                    F2.c(R.drawable.msg_settings, id.M0(2131753703, null), new kg.d(eVar, i10), false);
+                    F2.c(R.drawable.msg_settings, hd.M0(2131753703, null), new kg.d(eVar, i13), false);
                 }
                 F2.a0(g0.L(10.0f), g0.L(7.0f));
                 F2.s = 0;
                 F2.Z();
                 break;
-            case 12:
-                i0 i0Var = (i0) this.b;
-                TL_account.TL_connectedBot tL_connectedBot = (TL_account.TL_connectedBot) this.c;
-                q2 q2Var = (q2) this.d;
-                fi.d dVar3 = i0Var.X1;
-                if (!dVar3.Q) {
+            case 17:
+                i0 i0Var = (i0) obj3;
+                TL_account.TL_connectedBot tL_connectedBot = (TL_account.TL_connectedBot) obj2;
+                a2 a2Var = (a2) obj;
+                hi.d dVar3 = i0Var.Y1;
+                if (!dVar3.R) {
                     dVar3.setLoading(true);
                     TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
                     updateconnectedbot.deleted = true;
-                    updateconnectedbot.bot = qp.s1(i0Var.a).o1(tL_connectedBot.bot_id);
+                    updateconnectedbot.bot = np.s1(i0Var.a).o1(tL_connectedBot.bot_id);
                     updateconnectedbot.recipients = new TL_account.TL_inputBusinessBotRecipients();
-                    ConnectionsManager.getInstance(i0Var.a).sendRequest(updateconnectedbot, new bi.j(20, i0Var, q2Var));
+                    ConnectionsManager.getInstance(i0Var.a).sendRequest(updateconnectedbot, new v2(20, i0Var, a2Var));
                     break;
                 }
                 break;
-            case 13:
-                ki.a aVar = (ki.a) this.b;
-                c20 c20Var = (c20) this.c;
-                TLRPC.Chat chat = (TLRPC.Chat) this.d;
-                boolean z10 = aVar.T1;
-                if (chat != null && !t3.w(27, chat)) {
-                    z9 = true;
-                }
-                aVar.d1(c20Var, z10, z9);
-                break;
-            case 14:
-                ga.d dVar4 = (ga.d) this.b;
-                a6 a6Var = (a6) this.c;
-                li.l0 l0Var2 = (li.l0) this.d;
-                dVar4.c();
-                a6Var.D(l0Var2);
-                break;
-            case 15:
-                org.telegram.ui.Components.r rVar = (org.telegram.ui.Components.r) this.b;
-                TL_aicompose.AiComposeTone aiComposeTone = (TL_aicompose.AiComposeTone) this.c;
-                h6 h6Var2 = (h6) this.d;
-                fi.d dVar5 = rVar.a2;
-                if (dVar5.c0 && !dVar5.Q) {
-                    if (!rVar.d1()) {
-                        dVar5.setLoading(true);
-                        TL_aicompose.saveTone savetone = new TL_aicompose.saveTone();
-                        savetone.tone = TL_aicompose.InputAiComposeTone.from(aiComposeTone);
-                        ConnectionsManager.getInstance(rVar.a).sendRequestTyped(savetone, new d3.b(c14 == true ? 1 : 0), new t0(rVar, h6Var2, aiComposeTone, i11));
-                        break;
-                    } else {
-                        rVar.dismiss();
-                        break;
-                    }
-                }
-                break;
-            case 16:
-                boolean[] zArr = (boolean[]) this.b;
-                s4 s4Var = (s4) this.c;
-                f1 f1Var = (f1) this.d;
-                zArr[0] = false;
-                s4Var.L(-1, 0, true);
-                ((w2) f1Var.b).x0.run();
-                break;
-            case 17:
-                u1[] u1VarArr = (u1[]) this.b;
-                Runnable runnable2 = (Runnable) this.d;
-                q4 q4Var = (q4) this.c;
-                u1 u1Var = u1VarArr[0];
-                if (u1Var != null) {
-                    u1Var.setOnDismissListener(null);
-                }
-                runnable2.run();
-                q4Var.a(((org.telegram.ui.Cells.k) view).getAccountNumber());
-                break;
             case 18:
-                ArrayList arrayList3 = (ArrayList) this.b;
-                Runnable runnable3 = (Runnable) this.d;
-                AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) this.c;
-                iz.o0 = ((Integer) arrayList3.get(((Integer) view.getTag()).intValue())).intValue();
-                SharedPreferences.Editor edit = qp.e1().edit();
-                edit.putInt("mapPreviewType", iz.o0);
-                edit.apply();
-                runnable3.run();
-                alertDialog$Builder.a.L0.run();
+                ni.a aVar = (ni.a) obj3;
+                z10 z10Var = (z10) obj2;
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
+                boolean z11 = aVar.U1;
+                if (chat != null && !org.telegram.messenger.t3.w(27, chat)) {
+                    z10 = true;
+                }
+                aVar.d1(z10Var, z11, z10);
                 break;
             case 19:
-                ((z7) this.b).n.X0((w) this.c, (ij) this.d);
+                ((ga.d) obj3).c();
+                ((y5) obj2).D((j0) obj);
                 break;
             case 20:
-                ci ciVar = (ci) this.b;
-                f2 f2Var = (f2) this.c;
-                h6 h6Var3 = (h6) this.d;
-                f2 f2Var2 = ciVar.Z1;
-                int i17 = ciVar.G3;
-                kh khVar = ciVar.F2;
-                te teVar = ciVar.b2;
-                long j3 = teVar != null ? teVar.j() : 0L;
-                ciVar.K2 = j3;
-                khVar.setEffect(j3);
-                ciVar.f1 = true;
-                if (ciVar.E1 - ciVar.F1 < 0) {
-                    g0.F3(ciVar.t1);
-                    g0.F3(ciVar.u1);
-                    try {
-                        khVar.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    if (!qp.s1(i17).D3() && qp.s1(i17).U4 > ciVar.F1) {
-                        ciVar.D1(f2Var);
-                    }
-                    te teVar2 = ciVar.b2;
-                    if (teVar2 != null) {
-                        teVar2.g(false);
-                        ciVar.b2 = null;
+                org.telegram.ui.Components.q qVar2 = (org.telegram.ui.Components.q) obj3;
+                TL_aicompose.AiComposeTone aiComposeTone = (TL_aicompose.AiComposeTone) obj2;
+                e6 e6Var4 = (e6) obj;
+                hi.d dVar4 = qVar2.b2;
+                if (dVar4.d0 && !dVar4.R) {
+                    if (!qVar2.d1()) {
+                        dVar4.setLoading(true);
+                        TL_aicompose.saveTone savetone = new TL_aicompose.saveTone();
+                        savetone.tone = TL_aicompose.InputAiComposeTone.from(aiComposeTone);
+                        ConnectionsManager.getInstance(qVar2.a).sendRequestTyped(savetone, new d3.b(1), new h0(qVar2, e6Var4, aiComposeTone, i12));
+                        break;
+                    } else {
+                        qVar2.dismiss();
                         break;
                     }
-                } else {
-                    if (ciVar.E3 == null && (f2Var2 instanceof cn)) {
-                        cn cnVar = (cn) f2Var2;
-                        if (cnVar.c()) {
-                            u4.J(ciVar.getContext(), cnVar.a(), new c1(ciVar, j3, i7), h6Var3);
-                            ciVar.v1(false, false);
-                            break;
-                        }
-                    }
-                    uh uhVar = ciVar.v2;
-                    if (uhVar == ciVar.d2 || uhVar == ciVar.k2) {
-                        u12 = ciVar.u1(true, 0, 0, j3, ciVar.f1());
-                    } else {
-                        if (!uhVar.L(true, 0, 0, j3, ciVar.f1())) {
-                            ciVar.A4 = true;
-                            ciVar.dismiss();
-                        }
-                        u12 = false;
-                    }
-                    te teVar3 = ciVar.b2;
-                    if (teVar3 != null) {
-                        teVar3.g(!u12);
-                        ciVar.b2 = null;
-                    }
-                    ciVar.v1(false, false);
                 }
                 break;
             case 21:
-                ci ciVar2 = (ci) this.b;
-                ij ijVar = (ij) this.c;
-                ha0 ha0Var2 = (ha0) this.d;
-                ciVar2.v1(!ciVar2.W1, true);
-                TLRPC.Message message = ijVar.k;
-                boolean z11 = ciVar2.W1;
-                message.invert_media = z11;
-                ha0Var2.a(!z11, true);
-                ciVar2.b2.e(ijVar);
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ciVar2.d2;
-                if (chatAttachAlertPhotoLayout != null && (ha0Var = chatAttachAlertPhotoLayout.d1) != null) {
-                    ha0Var.a(!ciVar2.W1, true);
-                }
-                ciVar2.b2.m(!ciVar2.W1);
+                ((boolean[]) obj3)[0] = false;
+                ((r4) obj2).L(-1, 0, true);
+                ((u2) ((ou) obj).b).y0.run();
                 break;
             case 22:
-                sq sqVar = (sq) this.b;
-                c20 c20Var2 = (c20) this.c;
-                fi.d dVar6 = (fi.d) this.d;
-                c20Var2.a(new vf.b(new gp(dVar6, i11), new ro(i7, sqVar, dVar6)));
+                Runnable runnable2 = (Runnable) obj;
+                p4 p4Var = (p4) obj2;
+                t1 t1Var = ((t1[]) obj3)[0];
+                if (t1Var != null) {
+                    t1Var.setOnDismissListener(null);
+                }
+                runnable2.run();
+                p4Var.a(((org.telegram.ui.Cells.k) view).getAccountNumber());
                 break;
             case 23:
-                rq rqVar = (rq) this.b;
-                Context context3 = (Context) this.c;
-                x8 x8Var = (x8) this.d;
-                rqVar.getClass();
-                g0.g(x8Var.a.getText().toString());
-                if (g0.I3()) {
-                    Toast.makeText(context3, id.M0(2131744194, null), 0).show();
+                gz.o0 = ((Integer) ((ArrayList) obj3).get(((Integer) view.getTag()).intValue())).intValue();
+                SharedPreferences.Editor edit = np.e1().edit();
+                edit.putInt("mapPreviewType", gz.o0);
+                edit.apply();
+                ((Runnable) obj).run();
+                ((AlertDialog$Builder) obj2).a.M0.run();
+                break;
+            case 24:
+                ((x7) obj3).n.X0((w) obj2, (gj) obj);
+                break;
+            case 25:
+                ki kiVar2 = (ki) obj3;
+                e2 e2Var = (e2) obj2;
+                e6 e6Var5 = (e6) obj;
+                e2 e2Var2 = kiVar2.a2;
+                int i21 = kiVar2.H3;
+                sh shVar = kiVar2.G2;
+                ue ueVar = kiVar2.c2;
+                long k10 = ueVar != null ? ueVar.k() : 0L;
+                kiVar2.L2 = k10;
+                shVar.setEffect(k10);
+                kiVar2.g1 = true;
+                if (kiVar2.F1 - kiVar2.G1 < 0) {
+                    g0.E3(kiVar2.u1);
+                    g0.E3(kiVar2.v1);
+                    try {
+                        shVar.performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
+                    if (!np.s1(i21).D3() && np.s1(i21).V4 > kiVar2.G1) {
+                        kiVar2.D1(e2Var);
+                    }
+                    ue ueVar2 = kiVar2.c2;
+                    if (ueVar2 != null) {
+                        ueVar2.h(false);
+                        kiVar2.c2 = null;
+                        break;
+                    }
+                } else {
+                    if (kiVar2.F3 == null && (e2Var2 instanceof an)) {
+                        an anVar = (an) e2Var2;
+                        if (anVar.c()) {
+                            t4.J(kiVar2.getContext(), anVar.a(), new c0(kiVar2, k10, i10), e6Var5);
+                            kiVar = kiVar2;
+                            kiVar.v1(false, false);
+                            break;
+                        }
+                    }
+                    ci ciVar = kiVar2.w2;
+                    if (ciVar == kiVar2.e2 || ciVar == kiVar2.l2) {
+                        kiVar = kiVar2;
+                        u12 = kiVar.u1(true, 0, 0, k10, kiVar2.f1());
+                    } else {
+                        if (!ciVar.M(true, 0, 0, k10, kiVar2.f1())) {
+                            kiVar2.B4 = true;
+                            kiVar2.dismiss();
+                        }
+                        u12 = false;
+                        kiVar = kiVar2;
+                    }
+                    ue ueVar3 = kiVar.c2;
+                    if (ueVar3 != null) {
+                        ueVar3.h(!u12);
+                        kiVar.c2 = null;
+                    }
+                    kiVar.v1(false, false);
+                }
+                break;
+            case 26:
+                ki kiVar3 = (ki) obj3;
+                gj gjVar = (gj) obj2;
+                kiVar3.v1(!kiVar3.X1, true);
+                TLRPC.Message message = gjVar.k;
+                boolean z12 = kiVar3.X1;
+                message.invert_media = z12;
+                ((ia0) obj).a(!z12, true);
+                kiVar3.c2.f(gjVar);
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = kiVar3.e2;
+                if (chatAttachAlertPhotoLayout != null && (ia0Var = chatAttachAlertPhotoLayout.e1) != null) {
+                    ia0Var.a(!kiVar3.X1, true);
+                }
+                kiVar3.c2.n(!kiVar3.X1);
+                break;
+            case 27:
+                hi.d dVar5 = (hi.d) obj;
+                ((z10) obj2).a(new vf.b(new fo(dVar5, i12), new od(26, (ar) obj3, dVar5)));
+                break;
+            case 28:
+                Context context3 = (Context) obj2;
+                ((zq) obj3).getClass();
+                g0.g(((w8) obj).a.getText().toString());
+                if (g0.H3()) {
+                    Toast.makeText(context3, hd.M0(2131744194, null), 0).show();
                     break;
                 }
                 break;
-            case 24:
-                ys ysVar = (ys) this.b;
-                v vVar = (v) this.c;
-                q1 q1Var = (q1) this.d;
+            default:
+                ft ftVar = (ft) obj3;
+                di.q qVar3 = (di.q) obj2;
+                ai.j jVar = (ai.j) obj;
                 try {
-                    charSequence = ((ClipboardManager) ysVar.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(ysVar.getContext());
+                    charSequence = ((ClipboardManager) ftVar.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(ftVar.getContext());
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }
                 if (charSequence != null) {
-                    vVar.setText(charSequence);
-                    vVar.setSelection(0, vVar.getText().length());
+                    qVar3.setText(charSequence);
+                    qVar3.setSelection(0, qVar3.getText().length());
                 }
-                q1Var.run();
-                break;
-            case 25:
-                kt ktVar = (kt) this.b;
-                st0 st0Var = (st0) this.c;
-                h6 h6Var4 = (h6) this.d;
-                et etVar = ktVar.a;
-                kg.k kVar = ktVar.b;
-                if (kVar.isEnabled() && kVar.getAlpha() >= 0.5f) {
-                    i1 i1Var = ktVar.K;
-                    if (i1Var == null || !i1Var.f) {
-                        if (!ktVar.n) {
-                            if (!ktVar.e) {
-                                ktVar.x(1);
-                                boolean isFocused = etVar.isFocused();
-                                ktVar.d.C(etVar.length() > 0, false);
-                                etVar.requestFocus();
-                                if (!isFocused) {
-                                    etVar.setSelection(etVar.length());
-                                    break;
-                                }
-                            } else {
-                                if (ktVar.y) {
-                                    ktVar.k(true);
-                                    ktVar.y = false;
-                                    ktVar.p();
-                                }
-                                ktVar.v();
-                                break;
-                            }
-                        } else {
-                            etVar.m();
-                            k60 k60Var5 = new k60(st0Var, h6Var4, kVar, false, false, true);
-                            k60Var5.X = g0.L(280.0f);
-                            etVar.o(null, new h90(k60Var5, etVar));
-                            k60Var5.U = true;
-                            k60Var5.Z();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 26:
-                d10 d10Var = (d10) this.b;
-                Context context4 = (Context) this.c;
-                f2 f2Var3 = (f2) this.d;
-                d10Var.dismiss();
-                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(context4);
-                alertDialog$Builder2.a.R = id.M0(2131749561, null);
-                alertDialog$Builder2.a.T = g0.X2(id.M0(2131749562, null));
-                alertDialog$Builder2.k(id.M0(2131749563, null), new ax(d10Var, i11));
-                alertDialog$Builder2.h(id.M0(2131752589, null), null);
-                f2Var3.showDialog(alertDialog$Builder2.a);
-                break;
-            case 27:
-                q70 q70Var = (q70) this.b;
-                w2 w2Var4 = (w2) this.c;
-                f2 f2Var4 = (f2) this.d;
-                try {
-                    if (q70Var.b != null) {
-                        ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", q70Var.b));
-                        if (w2Var4 == null || (m2Var = w2Var4.c) == null) {
-                            gc.j(f2Var4).j();
-                        } else {
-                            new gc(m2Var, null).k(false).j();
-                        }
-                    }
-                    break;
-                } catch (Exception e11) {
-                    a8.g(e11, true);
-                    return;
-                }
-                break;
-            case 28:
-                ca0 ca0Var = (ca0) this.b;
-                ha0 ha0Var3 = (ha0) this.c;
-                ha0 ha0Var4 = (ha0) this.d;
-                ia0 ia0Var = ca0Var.c0;
-                mj mjVar = ia0Var.d;
-                boolean z12 = mjVar.l;
-                boolean z13 = !z12;
-                mjVar.l = z13;
-                if (z12) {
-                    if (ia0Var.y) {
-                        mjVar.k = false;
-                    }
-                    ia0Var.y = false;
-                } else if (!mjVar.k) {
-                    mjVar.k = true;
-                    ia0Var.y = true;
-                }
-                ha0Var3.a(z13, true);
-                ha0Var4.a(mjVar.k, true);
-                ca0Var.i();
-                ca0Var.l(true);
-                break;
-            default:
-                mc0.J0((mc0) this.b, (TLRPC.ChatFull) this.c, (z40) this.d);
+                jVar.run();
                 break;
         }
     }

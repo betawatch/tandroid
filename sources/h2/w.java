@@ -2,22 +2,23 @@ package h2;
 
 import android.content.Context;
 import android.graphics.SurfaceTexture;
-import fi.v9;
+import fi.c1;
+import fi.f6;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ij;
+import org.telegram.messenger.gj;
 import org.telegram.ui.Components.PipRoundVideoView;
-import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.j4;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class w implements q51 {
+public final class w implements s51 {
     public static w f;
     public boolean a;
     public int b;
@@ -25,11 +26,11 @@ public final class w implements q51 {
     public final Object d;
     public final Object e;
 
-    public w(bi.a aVar, com.google.android.gms.common.api.internal.o oVar, n6.c[] cVarArr, boolean z9, int i7) {
-        this.e = aVar;
+    public w(com.google.android.gms.common.api.internal.p pVar, com.google.android.gms.common.api.internal.o oVar, n6.c[] cVarArr, boolean z10, int i7) {
+        this.e = pVar;
         this.c = oVar;
         this.d = cVarArr;
-        this.a = z9;
+        this.a = z10;
         this.b = i7;
     }
 
@@ -75,7 +76,7 @@ public final class w implements q51 {
                 Iterator it2 = ((CopyOnWriteArrayList) this.d).iterator();
                 while (it2.hasNext()) {
                     v vVar2 = (v) it2.next();
-                    vVar2.b.execute(new v9(vVar2, 9));
+                    vVar2.b.execute(new c1(vVar2, 24));
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -83,101 +84,101 @@ public final class w implements q51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.q51
-    public void onError(t51 t51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.s51
+    public void onError(u51 u51Var, Exception exc) {
         a8.g(exc, true);
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.s51
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.q51
-    public void onStateChanged(boolean z9, int i7) {
+    @Override // org.telegram.ui.Components.s51
+    public void onStateChanged(boolean z10, int i7) {
         int i10 = this.b;
         MediaController mediaController = (MediaController) this.e;
-        if (i10 != mediaController.m0) {
+        if (i10 != mediaController.n0) {
             return;
         }
-        MediaController.f(mediaController, (ij) this.c, (int[]) this.d, this.a, z9, i7);
+        MediaController.f(mediaController, (gj) this.c, (int[]) this.d, this.a, z10, i7);
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.s51
     public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         MediaController mediaController = (MediaController) this.e;
-        if (mediaController.E0 != null) {
-            int i7 = mediaController.I0;
+        if (mediaController.F0 != null) {
+            int i7 = mediaController.J0;
             if (i7 == 2) {
-                j4 j4Var = mediaController.L0;
+                j4 j4Var = mediaController.M0;
                 if (j4Var != null) {
-                    if (mediaController.M0) {
+                    if (mediaController.N0) {
                         j4Var.setDrawingReady(true);
                     }
-                    if (mediaController.L0.getParent() == null) {
-                        mediaController.N0.addView(mediaController.L0);
+                    if (mediaController.M0.getParent() == null) {
+                        mediaController.O0.addView(mediaController.M0);
                     }
-                    if (mediaController.G0.getSurfaceTexture() != surfaceTexture) {
-                        mediaController.G0.setSurfaceTexture(surfaceTexture);
+                    if (mediaController.H0.getSurfaceTexture() != surfaceTexture) {
+                        mediaController.H0.setSurfaceTexture(surfaceTexture);
                     }
-                    mediaController.E0.A0(mediaController.G0);
+                    mediaController.F0.A0(mediaController.H0);
                 }
-                mediaController.I0 = 0;
+                mediaController.J0 = 0;
                 return true;
             }
             if (i7 == 1) {
-                if (mediaController.J0 != null) {
-                    if (mediaController.H0 == null) {
+                if (mediaController.K0 != null) {
+                    if (mediaController.I0 == null) {
                         try {
                             PipRoundVideoView pipRoundVideoView = new PipRoundVideoView();
-                            mediaController.H0 = pipRoundVideoView;
-                            pipRoundVideoView.d(mediaController.J0, new org.telegram.messenger.a(this, 17));
+                            mediaController.I0 = pipRoundVideoView;
+                            pipRoundVideoView.d(mediaController.K0, new org.telegram.messenger.a(this, 17));
                         } catch (Exception unused) {
-                            mediaController.H0 = null;
+                            mediaController.I0 = null;
                         }
                     }
-                    PipRoundVideoView pipRoundVideoView2 = mediaController.H0;
+                    PipRoundVideoView pipRoundVideoView2 = mediaController.I0;
                     if (pipRoundVideoView2 != null) {
                         if (pipRoundVideoView2.c.getSurfaceTexture() != surfaceTexture) {
-                            mediaController.H0.c.setSurfaceTexture(surfaceTexture);
+                            mediaController.I0.c.setSurfaceTexture(surfaceTexture);
                         }
-                        mediaController.E0.A0(mediaController.H0.c);
+                        mediaController.F0.A0(mediaController.I0.c);
                     }
                 }
-                mediaController.I0 = 0;
+                mediaController.J0 = 0;
                 return true;
             }
-            if (PhotoViewer.A1() && PhotoViewer.p1().R2 != null) {
-                PhotoViewer.p1().S2 = surfaceTexture;
+            if (PhotoViewer.A1() && PhotoViewer.p1().S2 != null) {
+                PhotoViewer.p1().T2 = surfaceTexture;
                 return true;
             }
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.s51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         MediaController mediaController = (MediaController) this.e;
         float f11 = i10 == 0 ? 1.0f : (i7 * f10) / i10;
-        mediaController.O0 = f11;
-        j4 j4Var = mediaController.L0;
+        mediaController.P0 = f11;
+        j4 j4Var = mediaController.M0;
         if (j4Var != null) {
             j4Var.a(f11, 0);
         }
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.s51
     public void onRenderedFirstFrame() {
         MediaController mediaController = (MediaController) this.e;
-        j4 j4Var = mediaController.L0;
+        j4 j4Var = mediaController.M0;
         if (j4Var != null && !j4Var.d) {
-            mediaController.M0 = true;
+            mediaController.N0 = true;
             j4Var.setDrawingReady(true);
-            mediaController.N0.setTag(1);
+            mediaController.O0.setTag(1);
         }
-        if (mediaController.E0 == null || !d1.f.u()) {
+        if (mediaController.F0 == null || !d1.f.u()) {
             return;
         }
-        mediaController.E0.t0(true);
+        mediaController.F0.t0(true);
     }
 
     public w(Context context) {
@@ -186,26 +187,26 @@ public final class w implements q51 {
         this.d = new CopyOnWriteArrayList();
         this.e = new Object();
         this.b = 0;
-        e10.execute(new f2.h(25, context, (Object) this));
+        e10.execute(new f6(20, this, context));
     }
 
-    public w(MediaController mediaController, int i7, ij ijVar, int[] iArr, boolean z9) {
+    public w(MediaController mediaController, int i7, gj gjVar, int[] iArr, boolean z10) {
         this.e = mediaController;
         this.b = i7;
-        this.c = ijVar;
+        this.c = gjVar;
         this.d = iArr;
-        this.a = z9;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.s51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.s51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.s51
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

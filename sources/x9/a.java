@@ -1,22 +1,22 @@
 package x9;
 
 import android.util.Log;
-import bi.i;
 import da.p1;
+import di.h;
 import java.util.concurrent.atomic.AtomicReference;
-import u5.e;
-import u9.p;
+import tg.a2;
+import u9.o;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
-    public final p a;
+    public final o a;
     public final AtomicReference b = new AtomicReference(null);
 
-    public a(p pVar) {
-        this.a = pVar;
-        pVar.a(new e(this, 11));
+    public a(o oVar) {
+        this.a = oVar;
+        oVar.a(new a2(this, 15));
     }
 
     public final b a(String str) {
@@ -35,10 +35,10 @@ public final class a {
     }
 
     public final void d(String str, long j3, p1 p1Var) {
-        String i7 = rf.b.i("Deferring native open session: ", str);
+        String k10 = r.b.k("Deferring native open session: ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-            Log.v("FirebaseCrashlytics", i7, null);
+            Log.v("FirebaseCrashlytics", k10, null);
         }
-        this.a.a(new i(str, j3, p1Var, 11));
+        this.a.a(new h(str, j3, p1Var, 11));
     }
 }

@@ -4,10 +4,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h0 {
-    public static final h0 d = new h0(new android.support.v4.media.session.a0(20, false));
+    public static final h0 d = new h0(new android.support.v4.media.session.a0(21, false));
     public static final String e;
     public static final String f;
     public static final String g;
@@ -16,7 +16,7 @@ public final class h0 {
     public final Bundle c;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         e = Integer.toString(0, 36);
         f = Integer.toString(1, 36);
         g = Integer.toString(2, 36);

@@ -1,32 +1,65 @@
 package bg;
 
+import android.graphics.Canvas;
 import android.graphics.Outline;
-import android.view.View;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.os.Build;
+import android.os.Looper;
 import android.view.ViewOutlineProvider;
+import org.telegram.ui.r3;
+import org.telegram.ui.xl0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class t0 extends ViewOutlineProvider {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+public abstract class t0 {
+    public static final p0 a = new p0(0);
+    public static final p0 b = new p0(1);
+    public static Path c;
+    public static Outline d;
+    public static Rect e;
 
-    public t0(int i7, boolean z9, boolean z10, boolean z11, boolean z12) {
-        this.a = z9;
-        this.b = i7;
-        this.c = z10;
-        this.d = z11;
-        this.e = z12;
-    }
-
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        int width = view.getWidth();
-        int height = view.getHeight();
-        boolean z9 = this.a;
-        int i7 = this.b;
-        outline.setRoundRect(-(z9 ? 0 : i7), -(this.c ? 0 : i7), width + (this.d ? 0 : i7), height + (this.e ? 0 : i7), i7);
+    public static void a(Canvas canvas, xl0 xl0Var, r3 r3Var) {
+        Path path;
+        Outline outline;
+        Rect rect;
+        ViewOutlineProvider outlineProvider = xl0Var.getOutlineProvider();
+        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !xl0Var.getClipToOutline() || outlineProvider == null) {
+            r3Var.a(canvas);
+            return;
+        }
+        if (Looper.myLooper() == Looper.getMainLooper()) {
+            if (c == null) {
+                c = new Path();
+                d = new Outline();
+                e = new Rect();
+            }
+            path = c;
+            outline = d;
+            rect = e;
+            outline.setEmpty();
+            rect.setEmpty();
+        } else {
+            path = new Path();
+            outline = new Outline();
+            rect = new Rect();
+        }
+        Path path2 = path;
+        outlineProvider.getOutline(xl0Var, outline);
+        path2.rewind();
+        if (outline.isEmpty() || !outline.getRect(rect)) {
+            r3Var.a(canvas);
+            return;
+        }
+        float radius = outline.getRadius();
+        if (radius > 0.0f) {
+            path2.addRoundRect(rect.left, rect.top, rect.right, rect.bottom, radius, radius, Path.Direction.CW);
+        } else {
+            path2.addRect(rect.left, rect.top, rect.right, rect.bottom, Path.Direction.CW);
+        }
+        int save = canvas.save();
+        canvas.clipPath(path2);
+        r3Var.a(canvas);
+        canvas.restoreToCount(save);
     }
 }

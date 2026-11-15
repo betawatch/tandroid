@@ -8,7 +8,7 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class fu0 extends CharacterStyle {
     public final Paint a;
@@ -54,7 +54,7 @@ public final class fu0 extends CharacterStyle {
                 Spanned spanned2 = spanned;
                 fu0[] fu0VarArr2 = fu0VarArr;
                 int i11 = i7;
-                paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ci, false));
+                paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.Fi, false));
                 paint.setStrokeWidth(L);
                 Path path = fu0Var.b;
                 path.rewind();

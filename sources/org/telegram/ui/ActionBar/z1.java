@@ -1,90 +1,117 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.ui.Components.bc;
-import org.telegram.ui.Components.za;
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class z1 implements za {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f2 b;
+public final class z1 extends u2 {
+    public final /* synthetic */ c2 m1;
+    public final /* synthetic */ o4[] n1;
+    public final /* synthetic */ e2 o1;
+    public final /* synthetic */ u2[] p1;
 
-    public /* synthetic */ z1(int i7, f2 f2Var) {
-        this.a = i7;
-        this.b = f2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z1(Activity activity, e6 e6Var, c2 c2Var, o4[] o4VarArr, e2 e2Var, u2[] u2VarArr) {
+        super(1, (Context) activity, e6Var, true);
+        this.m1 = c2Var;
+        this.n1 = o4VarArr;
+        this.o1 = e2Var;
+        this.p1 = u2VarArr;
+        boolean z10 = c2Var != null && c2Var.e;
+        this.x = z10;
+        this.n = !z10;
+        o4VarArr[0].setFragmentStack(new ArrayList());
+        ((ActionBarLayout) o4VarArr[0]).c(-1, e2Var);
+        ((ActionBarLayout) o4VarArr[0]).f0();
+        ViewGroup view = o4VarArr[0].getView();
+        int i7 = this.u0;
+        view.setPadding(i7, 0, i7, 0);
+        this.b = o4VarArr[0].getView();
+        this.w0 = false;
+        setOnDismissListener(new di.a3(6, e2Var, c2Var));
     }
 
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ boolean a() {
-        switch (this.a) {
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ void b(bc bcVar) {
-        int i7 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ void c(float f10) {
-        int i7 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ void d(bc bcVar) {
-        int i7 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ boolean e() {
-        switch (this.a) {
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final int f(int i7) {
-        switch (this.a) {
-            case 0:
-                if (this.b.isSupportEdgeToEdge()) {
-                    return org.telegram.messenger.g0.n;
-                }
-                return 0;
-            default:
-                return this.b.getBottomInset();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ boolean g(int i7) {
-        switch (this.a) {
-        }
+    @Override // org.telegram.ui.ActionBar.u2
+    public final boolean H() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ int h(int i7) {
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.u2
+    public final boolean J(MotionEvent motionEvent) {
+        o4[] o4VarArr;
+        o4 o4Var;
+        c2 c2Var = this.m1;
+        return c2Var != null && c2Var.a && (o4Var = (o4VarArr = this.n1)[0]) != null && o4Var.getFragmentStack().size() <= 1 && (o4VarArr[0].getFragmentStack().size() != 1 || ((e2) o4VarArr[0].getFragmentStack().get(0)).isSwipeBackEnabled(motionEvent));
+    }
+
+    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
+    public final void dismiss() {
+        c2 c2Var;
+        Runnable runnable;
+        if (!this.J && (c2Var = this.m1) != null && (runnable = c2Var.d) != null) {
+            runnable.run();
         }
-        return 0;
+        super.dismiss();
+        ArrayList arrayList = LaunchActivity.H1.Q;
+        o4[] o4VarArr = this.n1;
+        arrayList.remove(o4VarArr[0]);
+        o4VarArr[0] = null;
     }
 
-    private final /* synthetic */ void i(float f10) {
+    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog
+    public final void onBackPressed() {
+        o4[] o4VarArr = this.n1;
+        o4 o4Var = o4VarArr[0];
+        if (o4Var == null || o4Var.getFragmentStack().size() <= 1) {
+            super.onBackPressed();
+        } else {
+            ((ActionBarLayout) o4VarArr[0]).I();
+        }
     }
 
-    private final /* synthetic */ void j(float f10) {
+    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        o4 o4Var = this.n1[0];
+        u2[] u2VarArr = this.p1;
+        o4Var.setWindow(u2VarArr[0].getWindow());
+        c2 c2Var = this.m1;
+        if (c2Var == null || !c2Var.e) {
+            Q(j6.i5);
+        } else {
+            org.telegram.messenger.g0.n3(u2VarArr[0], true);
+        }
+        e2 e2Var = this.o1;
+        org.telegram.messenger.g0.q3(this, e2Var.isLightStatusBar());
+        e2Var.onBottomSheetCreated();
     }
 
-    private final /* synthetic */ void k(bc bcVar) {
+    @Override // org.telegram.ui.ActionBar.u2
+    public final void p0() {
+        o4 o4Var = this.n1[0];
+        if (o4Var != null) {
+            for (e2 e2Var : o4Var.getFragmentStack()) {
+                if (e2Var.getFragmentView() != null) {
+                    e2Var.getFragmentView().requestLayout();
+                }
+            }
+        }
     }
 
-    private final /* synthetic */ void l(bc bcVar) {
-    }
-
-    private final /* synthetic */ void m(bc bcVar) {
-    }
-
-    private final /* synthetic */ void n(bc bcVar) {
+    @Override // org.telegram.ui.ActionBar.u2
+    public final void v() {
+        Runnable runnable;
+        this.o1.onTransitionAnimationEnd(true, false);
+        c2 c2Var = this.m1;
+        if (c2Var == null || (runnable = c2Var.c) == null) {
+            return;
+        }
+        runnable.run();
     }
 }

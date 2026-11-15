@@ -1,24 +1,34 @@
 package ug;
 
-import android.content.Context;
-import bi.w4;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.qu;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class d1 extends qu {
-    public final /* synthetic */ f1 Q1;
+public final /* synthetic */ class d1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d1(f1 f1Var, w4 w4Var, Context context, h6 h6Var, ArrayList arrayList) {
-        super(w4Var, context, h6Var, arrayList);
-        this.Q1 = f1Var;
+    public /* synthetic */ d1(g1 g1Var, int i7) {
+        this.a = i7;
+        this.b = g1Var;
     }
 
-    @Override // org.telegram.ui.Components.qu
-    public final void L0() {
-        this.Q1.dismiss();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g1 g1Var = this.b;
+                g1Var.C2 = floatValue;
+                g1Var.c.invalidate();
+                break;
+            default:
+                g1 g1Var2 = this.b;
+                g1Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g1Var2.J2.getLayoutParams().height = org.telegram.messenger.g0.W1(floatValue2, g1Var2.K2[0].getHeight(), g1Var2.K2[1].getHeight());
+                g1Var2.J2.requestLayout();
+                break;
+        }
     }
 }

@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Toast;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -23,40 +23,40 @@ public final /* synthetic */ class r implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 g4 g4Var = this.b;
-                if (g4Var.u0[0].f()) {
-                    if (g4Var.u0[0].getWebView() != null) {
-                        g4Var.u0[0].getWebView().findNext(false);
+                if (g4Var.v0[0].f()) {
+                    if (g4Var.v0[0].getWebView() != null) {
+                        g4Var.v0[0].getWebView().findNext(false);
                         break;
                     }
                 } else {
-                    g4Var.U(g4Var.G - 1);
+                    g4Var.U(g4Var.H - 1);
                     break;
                 }
                 break;
             case 1:
                 g4 g4Var2 = this.b;
-                if (g4Var2.u0[0].f()) {
-                    if (g4Var2.u0[0].getWebView() != null) {
-                        g4Var2.u0[0].getWebView().findNext(true);
+                if (g4Var2.v0[0].f()) {
+                    if (g4Var2.v0[0].getWebView() != null) {
+                        g4Var2.v0[0].getWebView().findNext(true);
                         break;
                     }
                 } else {
-                    g4Var2.U(g4Var2.G + 1);
+                    g4Var2.U(g4Var2.H + 1);
                     break;
                 }
                 break;
             case 2:
                 g4 g4Var3 = this.b;
-                l0 l0Var = g4Var3.h0;
-                if (l0Var.T) {
+                l0 l0Var = g4Var3.i0;
+                if (l0Var.U) {
                     l0Var.h(false);
                     break;
-                } else if (l0Var.W) {
+                } else if (l0Var.a0) {
                     l0Var.k(false);
                     break;
                 } else {
                     if (g4Var3.H()) {
-                        k3 k3Var = g4Var3.u0[0];
+                        k3 k3Var = g4Var3.v0[0];
                         if (k3Var.s) {
                             if (k3Var.f() && k3Var.getWebView() != null) {
                                 k3Var.getWebView().goBack();
@@ -64,11 +64,11 @@ public final /* synthetic */ class r implements View.OnClickListener {
                             }
                         }
                     }
-                    if (g4Var3.d0.size() > 1) {
+                    if (g4Var3.e0.size() > 1) {
                         g4Var3.E();
                         break;
                     } else {
-                        t3 t3Var = g4Var3.K;
+                        t3 t3Var = g4Var3.L;
                         if (t3Var != null) {
                             t3Var.a(false);
                             break;
@@ -80,7 +80,7 @@ public final /* synthetic */ class r implements View.OnClickListener {
                 }
                 break;
             case 3:
-                t3 t3Var2 = this.b.K;
+                t3 t3Var2 = this.b.L;
                 if (t3Var2 != null) {
                     t3Var2.a(true);
                     break;
@@ -92,10 +92,10 @@ public final /* synthetic */ class r implements View.OnClickListener {
                 g4Var4.a = intValue;
                 int i10 = 0;
                 while (i10 < 2) {
-                    ((RadioButton) g4Var4.T0[i10].b).a(i10 == intValue, true);
+                    ((RadioButton) g4Var4.U0[i10].b).a(i10 == intValue, true);
                     i10++;
                 }
-                o3 o3Var = g4.g1;
+                o3 o3Var = g4.h1;
                 int i11 = g4Var4.a;
                 o3Var.getClass();
                 org.telegram.messenger.t0.b.getSharedPreferences("articles", 0).edit().putInt("font_type", i11).commit();
@@ -149,7 +149,7 @@ public final /* synthetic */ class r implements View.OnClickListener {
                     o3.b(o3Var.A.keyAt(i26), (TextPaint) o3Var.A.valueAt(i26), typeface, o13, o4, o12);
                 }
                 while (true) {
-                    k3[] k3VarArr = g4Var4.u0;
+                    k3[] k3VarArr = g4Var4.v0;
                     if (i7 >= k3VarArr.length) {
                         break;
                     } else {
@@ -162,13 +162,13 @@ public final /* synthetic */ class r implements View.OnClickListener {
                 z2 z2Var = g4Var5.d;
                 if (z2Var != null) {
                     org.telegram.messenger.g0.g(z2Var.d.getText());
-                    if (org.telegram.messenger.g0.I3()) {
-                        Toast.makeText(g4Var5.L, org.telegram.messenger.id.M0(2131744194, null), 0).show();
+                    if (org.telegram.messenger.g0.H3()) {
+                        Toast.makeText(g4Var5.M, org.telegram.messenger.hd.M0(2131744194, null), 0).show();
                     }
                 }
-                org.telegram.ui.ActionBar.g1 g1Var = g4Var5.H;
+                org.telegram.ui.ActionBar.g1 g1Var = g4Var5.I;
                 if (g1Var != null && g1Var.isShowing()) {
-                    g4Var5.H.d(true);
+                    g4Var5.I.d(true);
                     break;
                 }
                 break;

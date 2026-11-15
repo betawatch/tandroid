@@ -1,6 +1,7 @@
 package com.google.firebase.pnv.internal;
 
 import android.content.Context;
+import androidx.emoji2.text.n;
 import c8.d0;
 import com.google.android.gms.common.api.i;
 import com.google.firebase.components.ComponentRegistrar;
@@ -8,15 +9,14 @@ import db.a;
 import db.d;
 import db.f;
 import db.h;
-import db.n;
-import di.a1;
+import di.o;
 import e2.j0;
 import java.util.List;
 import kotlin.jvm.internal.j;
 import o9.g;
 import u9.b;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class FirebasePhoneNumberVerificationRegistrar implements ComponentRegistrar {
     /* JADX INFO: Access modifiers changed from: private */
@@ -32,7 +32,7 @@ public final class FirebasePhoneNumberVerificationRegistrar implements Component
         gVar.a();
         Context context3 = gVar.a;
         j.d(context3, "firebaseApp.applicationContext");
-        k0.b bVar2 = new k0.b(context3);
+        n nVar = new n(context3, 3);
         h hVar = new h();
         gVar.a();
         String str = gVar.c.b;
@@ -40,14 +40,14 @@ public final class FirebasePhoneNumberVerificationRegistrar implements Component
         gVar.a();
         String str2 = gVar.c.a;
         j.d(str2, "firebaseApp.options.apiKey");
-        return new n(context, dVar, bVar2, hVar, str, str2);
+        return new db.n(context, dVar, nVar, hVar, str, str2);
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<u9.a> getComponents() {
         j0 a10 = u9.a.a(a.class);
-        a10.a(u9.j.a(g.class));
-        a10.f = new a1(17);
+        a10.a(u9.i.a(g.class));
+        a10.f = new o(20);
         return d0.a(a10.b());
     }
 }

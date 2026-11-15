@@ -1,39 +1,20 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class zj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cn b;
+public final class zj extends jx {
+    public final /* synthetic */ an O;
 
-    public /* synthetic */ zj(cn cnVar, int i7) {
-        this.a = i7;
-        this.b = cnVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zj(an anVar, an anVar2, FrameLayout frameLayout, aj ajVar, int i7, long j3, long j10) {
+        super(anVar2, frameLayout, ajVar, i7, j3, j10);
+        this.O = anVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.kg kgVar;
-        FrameLayout frameLayout;
-        switch (this.a) {
-            case 0:
-                cn cnVar = this.b;
-                AnimatorSet animatorSet = cnVar.qa;
-                if (animatorSet != null && !animatorSet.isRunning()) {
-                    cnVar.qa.start();
-                    break;
-                }
-                break;
-            default:
-                cn cnVar2 = this.b;
-                if (cnVar2.c3 == this && (kgVar = cnVar2.a1) != null && (frameLayout = cnVar2.b3) != null) {
-                    kgVar.i(frameLayout, false, true);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.jx
+    public final void h() {
+        this.O.cd();
     }
 }

@@ -13,20 +13,20 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class y0 extends View implements org.telegram.ui.Cells.h9, c3 {
-    public final r50 a;
+public final class y0 extends View implements org.telegram.ui.Cells.g9, c3 {
+    public final n50 a;
     public final e4 b;
     public z2 c;
     public int d;
     public final int e;
     public TL_iv.pageBlockAuthorDate f;
 
-    public y0(Context context, r50 r50Var, e4 e4Var) {
+    public y0(Context context, n50 n50Var, e4 e4Var) {
         super(context);
         this.e = org.telegram.messenger.g0.L(8.0f);
-        this.a = r50Var;
+        this.a = n50Var;
         this.b = e4Var;
     }
 
@@ -64,10 +64,10 @@ public final class y0 extends View implements org.telegram.ui.Cells.h9, c3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.camera.q.a(this);
+        return org.telegram.messenger.i20.a(this);
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.g9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.c;
         if (z2Var != null) {
@@ -140,8 +140,8 @@ public final class y0 extends View implements org.telegram.ui.Cells.h9, c3 {
             TL_iv.RichText richText = pageblockauthordate.author;
             e4 e4Var = this.b;
             if (e4Var != null) {
-                HashSet hashSet = g4.c1;
-                webPage = e4Var.E;
+                HashSet hashSet = g4.d1;
+                webPage = e4Var.F;
             } else {
                 webPage = null;
             }
@@ -154,7 +154,7 @@ public final class y0 extends View implements org.telegram.ui.Cells.h9, c3 {
                 spannable = null;
                 metricAffectingSpanArr = null;
             }
-            CharSequence a02 = (this.f.published_date == 0 || TextUtils.isEmpty(A)) ? !TextUtils.isEmpty(A) ? org.telegram.messenger.id.a0(null, null, 2131754056, A) : org.telegram.messenger.id.E0().h0().format(this.f.published_date * 1000) : org.telegram.messenger.id.a0(null, null, 2131754040, org.telegram.messenger.id.E0().h0().format(this.f.published_date * 1000), A);
+            CharSequence a02 = (this.f.published_date == 0 || TextUtils.isEmpty(A)) ? !TextUtils.isEmpty(A) ? org.telegram.messenger.hd.a0(null, null, 2131754056, A) : org.telegram.messenger.hd.E0().h0().format(this.f.published_date * 1000) : org.telegram.messenger.hd.a0(null, null, 2131754040, org.telegram.messenger.hd.E0().h0().format(this.f.published_date * 1000), A);
             if (metricAffectingSpanArr != null) {
                 try {
                     if (metricAffectingSpanArr.length > 0 && (indexOf = TextUtils.indexOf((CharSequence) a02, A)) != -1) {
@@ -172,7 +172,7 @@ public final class y0 extends View implements org.telegram.ui.Cells.h9, c3 {
             this.c = o4;
             if (o4 != null) {
                 int height = this.c.d.getHeight() + org.telegram.messenger.g0.L(16.0f);
-                if (e4Var == null || !e4Var.G) {
+                if (e4Var == null || !e4Var.H) {
                     this.d = org.telegram.messenger.g0.L(18.0f);
                 } else {
                     this.d = (int) Math.floor(((i11 - this.c.d.getLineLeft(0)) - this.c.d.getLineWidth(0)) - org.telegram.messenger.g0.L(16.0f));

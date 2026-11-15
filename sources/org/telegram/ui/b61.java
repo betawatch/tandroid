@@ -1,75 +1,166 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.graphics.Rect;
+import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.ThemeActivity;
+import android.view.ViewParent;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b61 implements org.telegram.ui.Components.bj0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class b61 extends org.telegram.ui.Components.uj0 {
+    public final /* synthetic */ int f3;
 
-    public /* synthetic */ b61(Object obj, Object obj2, Object obj3, int i7) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b61(int i7, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.f3 = i7;
     }
 
-    @Override // org.telegram.ui.Components.bj0
-    public final void c(int i7, View view) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.uj0
+    public Integer V0(int i7) {
+        switch (this.f3) {
+            case 1:
+                return 0;
+            case 2:
+            case 5:
+            case 6:
+            case 8:
+            default:
+                return super.V0(i7);
+            case 3:
+                return 0;
+            case 4:
+                return 0;
+            case 7:
+                return 0;
+            case 9:
+                return 0;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
             case 0:
-                h61 h61Var = (h61) this.b;
-                j61 j61Var = (j61) this.c;
-                g61 g61Var = (g61) this.d;
-                ThemeActivity themeActivity = h61Var.e;
-                int i10 = themeActivity.f;
-                org.telegram.ui.ActionBar.l6 D0 = i10 == 1 ? org.telegram.ui.ActionBar.m6.J : org.telegram.ui.ActionBar.m6.D0();
-                if (i7 == j61Var.b() - 1) {
-                    themeActivity.presentFragment(new x71(D0, false, 1, false, i10 == 1));
-                } else {
-                    org.telegram.ui.ActionBar.j6 j6Var = (org.telegram.ui.ActionBar.j6) j61Var.e.get(i7);
-                    if (!TextUtils.isEmpty(j6Var.o) && j6Var.a != org.telegram.ui.ActionBar.m6.n) {
-                        org.telegram.ui.ActionBar.g6.a(false);
-                    }
-                    int i11 = D0.Y;
-                    int i12 = j6Var.a;
-                    if (i11 != i12) {
-                        org.telegram.ui.ActionBar.m6.K1(D0, i10 == 1, i12, view);
-                        org.telegram.ui.ActionBar.s3.q(D0, j6Var.a);
-                        org.telegram.ui.ActionBar.m6.M1(themeActivity);
-                    } else {
-                        themeActivity.presentFragment(new x71(D0, false, 1, i12 >= 100, i10 == 1));
-                    }
+                if (getParent() != null && getParent().getParent() != null) {
+                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
                 }
-                int left = view.getLeft();
-                int right = view.getRight();
-                int L = org.telegram.messenger.g0.L(52.0f);
-                int i13 = left - L;
-                if (i13 < 0) {
-                    g61Var.w0(i13, 0, null);
-                } else {
-                    int i14 = right + L;
-                    if (i14 > g61Var.getMeasuredWidth()) {
-                        g61Var.w0(i14 - g61Var.getMeasuredWidth(), 0, null);
+                break;
+            case 2:
+                if (getParent() != null && getParent().getParent() != null) {
+                    ViewParent parent = getParent().getParent();
+                    boolean z10 = true;
+                    if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
+                        z10 = false;
                     }
+                    parent.requestDisallowInterceptTouchEvent(z10);
                 }
-                int childCount = g61Var.getChildCount();
-                for (int i15 = 0; i15 < childCount; i15++) {
-                    View childAt = g61Var.getChildAt(i15);
-                    if (childAt instanceof ThemeActivity.InnerAccentView) {
-                        ((ThemeActivity.InnerAccentView) childAt).a(true);
+                break;
+            case 6:
+                if (getParent() != null && getParent().getParent() != null) {
+                    ViewParent parent2 = getParent().getParent();
+                    boolean z11 = true;
+                    if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
+                        z11 = false;
                     }
+                    parent2.requestDisallowInterceptTouchEvent(z11);
+                }
+                break;
+            case 14:
+                if (getParent() != null && getParent().getParent() != null) {
+                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+                }
+                break;
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.f3) {
+            case 8:
+                int size = View.MeasureSpec.getSize(i10);
+                int b10 = (getAdapter().b() * org.telegram.messenger.g0.L(50.0f)) + org.telegram.messenger.g0.L(4.0f);
+                if (b10 <= size) {
+                    size = b10;
+                }
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+                break;
+            case 11:
+                int size2 = View.MeasureSpec.getSize(i10);
+                int b11 = (getAdapter().b() * org.telegram.messenger.g0.L(50.0f)) + org.telegram.messenger.g0.L(4.0f);
+                if (b11 <= size2) {
+                    size2 = b11;
+                }
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
+            case 13:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public void r0(View view, View view2) {
+        switch (this.f3) {
+            case 5:
+                if (view instanceof org.telegram.ui.Cells.z5) {
+                    super.r0(view, view2);
+                    break;
+                }
+                break;
+            case 12:
+                if (view instanceof org.telegram.ui.Cells.z5) {
+                    super.r0(view, view2);
+                    break;
                 }
                 break;
             default:
-                lx0.a0((lx0) this.b, (Context) this.c, (String) this.d, view, i7);
+                super.r0(view, view2);
                 break;
         }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
+    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        switch (this.f3) {
+            case 5:
+                rect.bottom = org.telegram.messenger.g0.L(60.0f) + rect.bottom;
+                break;
+            case 12:
+                rect.bottom = org.telegram.messenger.g0.L(60.0f) + rect.bottom;
+                break;
+        }
+        return super.requestChildRectangleOnScreen(view, rect, z10);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean requestFocus(int i7, Rect rect) {
+        switch (this.f3) {
+            case 10:
+                return false;
+            default:
+                return super.requestFocus(i7, rect);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b61(Context context) {
+        super(context, null);
+        this.f3 = 13;
     }
 }

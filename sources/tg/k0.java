@@ -3,29 +3,30 @@ package tg;
 import android.content.Context;
 import android.graphics.PointF;
 import android.view.ViewGroup;
-import c8.ha;
-import org.telegram.ui.Components.ki0;
+import c8.ja;
+import org.telegram.messenger.i20;
+import org.telegram.ui.Components.pi0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class k0 extends j {
-    public final i0 q0;
-    public int r0;
+    public final i0 r0;
     public int s0;
-    public boolean t0;
-    public h0 u0;
+    public int t0;
+    public boolean u0;
+    public h0 v0;
 
     public k0(Context context, PointF pointF, int i7, h0 h0Var, float f10, int i10) {
         super(context, pointF);
         i0 i0Var = new i0(context, f10);
-        this.q0 = i0Var;
+        this.r0 = i0Var;
         i0Var.setMaxWidth(i10);
-        this.u0 = h0Var;
+        this.v0 = h0Var;
         i0Var.b(i7, h0Var, false);
         m();
-        this.s0 = 3;
-        i0Var.c(3, this.r0);
-        addView(i0Var, ha.e(-2, -2, 51));
+        this.t0 = 3;
+        i0Var.c(3, this.s0);
+        addView(i0Var, ja.e(-2, -2, 51));
         setClipChildren(false);
         setClipToPadding(false);
         k();
@@ -37,7 +38,7 @@ public final class k0 extends j {
     }
 
     public int getColor() {
-        return this.r0;
+        return this.s0;
     }
 
     @Override // tg.j
@@ -46,50 +47,50 @@ public final class k0 extends j {
     }
 
     public int getNextType() {
-        int i7 = this.s0 + 1;
-        return i7 == 4 ? !this.t0 ? 1 : 0 : i7;
+        int i7 = this.t0 + 1;
+        return i7 == 4 ? !this.u0 ? 1 : 0 : i7;
     }
 
     @Override // tg.j
-    public ki0 getSelectionBounds() {
+    public pi0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new ki0();
+            return new pi0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float L2 = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = org.telegram.messenger.camera.q.x(L, 2.0f, getPositionX(), scaleX);
-        return new ki0(x10, org.telegram.messenger.camera.q.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
+        float x10 = i20.x(L, 2.0f, getPositionX(), scaleX);
+        return new pi0(x10, i20.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
     }
 
     @Override // tg.j
     public float getStickyPaddingBottom() {
-        return this.q0.h;
+        return this.r0.h;
     }
 
     @Override // tg.j
     public float getStickyPaddingLeft() {
-        return this.q0.f;
+        return this.r0.f;
     }
 
     @Override // tg.j
     public float getStickyPaddingRight() {
-        return this.q0.f;
+        return this.r0.f;
     }
 
     @Override // tg.j
     public float getStickyPaddingTop() {
-        return this.q0.h;
+        return this.r0.h;
     }
 
     public int getType() {
-        return this.s0;
+        return this.t0;
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
         k();
     }
 
@@ -100,16 +101,16 @@ public final class k0 extends j {
     }
 
     public void setColor(int i7) {
-        this.t0 = true;
-        this.r0 = i7;
+        this.u0 = true;
+        this.s0 = i7;
     }
 
     public void setMaxWidth(int i7) {
-        this.q0.setMaxWidth(i7);
+        this.r0.setMaxWidth(i7);
     }
 
     public void setType(int i7) {
-        this.s0 = i7;
-        this.q0.c(i7, this.r0);
+        this.t0 = i7;
+        this.r0.c(i7, this.s0);
     }
 }

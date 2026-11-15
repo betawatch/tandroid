@@ -17,12 +17,13 @@ import android.util.TypedValue;
 import android.util.Xml;
 import android.view.InflateException;
 import android.view.animation.AnimationUtils;
-import c8.i0;
+import c8.j0;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final int[] a = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
@@ -208,9 +209,9 @@ public abstract class a {
                                             TypedArray f13 = h0.b.f(resources3, theme3, Xml.asAttributeSet(xmlPullParser), iArr);
                                             float f14 = h0.b.c(xmlPullParser, "fraction") ? f13.getFloat(3, -1.0f) : -1.0f;
                                             TypedValue peekValue2 = !h0.b.c(xmlPullParser, "value") ? null : f13.peekValue(0);
-                                            boolean z9 = peekValue2 != null;
-                                            int i25 = i23 == 4 ? (z9 && c(peekValue2.type)) ? 3 : 0 : i23;
-                                            if (!z9) {
+                                            boolean z10 = peekValue2 != null;
+                                            int i25 = i23 == 4 ? (z10 && c(peekValue2.type)) ? 3 : 0 : i23;
+                                            if (!z10) {
                                                 ofFloat = i25 == 0 ? Keyframe.ofFloat(f14) : Keyframe.ofInt(f14);
                                             } else if (i25 == 0) {
                                                 ofFloat = Keyframe.ofFloat(f14, xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "value") != null ? f13.getFloat(0, 0.0f) : 0.0f);
@@ -380,31 +381,31 @@ public abstract class a {
     public static PropertyValuesHolder b(TypedArray typedArray, int i7, int i10, int i11, String str) {
         PropertyValuesHolder ofFloat;
         TypedValue peekValue = typedArray.peekValue(i10);
-        boolean z9 = peekValue != null;
-        int i12 = z9 ? peekValue.type : 0;
+        boolean z10 = peekValue != null;
+        int i12 = z10 ? peekValue.type : 0;
         TypedValue peekValue2 = typedArray.peekValue(i11);
-        boolean z10 = peekValue2 != null;
-        int i13 = z10 ? peekValue2.type : 0;
+        boolean z11 = peekValue2 != null;
+        int i13 = z11 ? peekValue2.type : 0;
         if (i7 == 4) {
-            i7 = ((z9 && c(i12)) || (z10 && c(i13))) ? 3 : 0;
+            i7 = ((z10 && c(i12)) || (z11 && c(i13))) ? 3 : 0;
         }
-        boolean z11 = i7 == 0;
+        boolean z12 = i7 == 0;
         PropertyValuesHolder propertyValuesHolder = null;
         if (i7 == 2) {
             String string = typedArray.getString(i10);
             String string2 = typedArray.getString(i11);
-            i0.d[] c10 = i0.c(string);
-            i0.d[] c11 = i0.c(string2);
+            i0.e[] c10 = j0.c(string);
+            i0.e[] c11 = j0.c(string2);
             if (c10 != null || c11 != null) {
                 if (c10 != null) {
                     f fVar = new f();
                     if (c11 == null) {
                         return PropertyValuesHolder.ofObject(str, fVar, c10);
                     }
-                    if (i0.a(c10, c11)) {
+                    if (j0.a(c10, c11)) {
                         return PropertyValuesHolder.ofObject(str, fVar, c10, c11);
                     }
-                    throw new InflateException(com.google.android.recaptcha.internal.a.l(" Can't morph from ", string, " to ", string2));
+                    throw new InflateException(e2.l(" Can't morph from ", string, " to ", string2));
                 }
                 if (c11 != null) {
                     return PropertyValuesHolder.ofObject(str, new f(), c11);
@@ -413,10 +414,10 @@ public abstract class a {
             return null;
         }
         g gVar = i7 == 3 ? g.a : null;
-        if (z11) {
-            if (z9) {
+        if (z12) {
+            if (z10) {
                 float dimension = i12 == 5 ? typedArray.getDimension(i10, 0.0f) : typedArray.getFloat(i10, 0.0f);
-                if (z10) {
+                if (z11) {
                     ofFloat = PropertyValuesHolder.ofFloat(str, dimension, i13 == 5 ? typedArray.getDimension(i11, 0.0f) : typedArray.getFloat(i11, 0.0f));
                 } else {
                     ofFloat = PropertyValuesHolder.ofFloat(str, dimension);
@@ -425,14 +426,14 @@ public abstract class a {
                 ofFloat = PropertyValuesHolder.ofFloat(str, i13 == 5 ? typedArray.getDimension(i11, 0.0f) : typedArray.getFloat(i11, 0.0f));
             }
             propertyValuesHolder = ofFloat;
-        } else if (z9) {
+        } else if (z10) {
             int dimension2 = i12 == 5 ? (int) typedArray.getDimension(i10, 0.0f) : c(i12) ? typedArray.getColor(i10, 0) : typedArray.getInt(i10, 0);
-            if (z10) {
+            if (z11) {
                 propertyValuesHolder = PropertyValuesHolder.ofInt(str, dimension2, i13 == 5 ? (int) typedArray.getDimension(i11, 0.0f) : c(i13) ? typedArray.getColor(i11, 0) : typedArray.getInt(i11, 0));
             } else {
                 propertyValuesHolder = PropertyValuesHolder.ofInt(str, dimension2);
             }
-        } else if (z10) {
+        } else if (z11) {
             propertyValuesHolder = PropertyValuesHolder.ofInt(str, i13 == 5 ? (int) typedArray.getDimension(i11, 0.0f) : c(i13) ? typedArray.getColor(i11, 0) : typedArray.getInt(i11, 0));
         }
         if (propertyValuesHolder != null && gVar != null) {
@@ -453,9 +454,9 @@ public abstract class a {
         TypedArray f11 = h0.b.f(resources, theme, attributeSet, k);
         ValueAnimator valueAnimator3 = objectAnimator == null ? new ValueAnimator() : objectAnimator;
         boolean c10 = h0.b.c(xmlPullParser, "duration");
-        int i10 = qs.X4;
+        int i10 = ns.X4;
         if (c10) {
-            i10 = f10.getInt(1, qs.X4);
+            i10 = f10.getInt(1, ns.X4);
         }
         long j3 = i10;
         long j10 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "startOffset") != null ? f10.getInt(2, 0) : 0;
@@ -463,11 +464,11 @@ public abstract class a {
         if (xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "valueFrom") != null && xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "valueTo") != null) {
             if (i11 == 4) {
                 TypedValue peekValue = f10.peekValue(5);
-                boolean z9 = peekValue != null;
-                int i12 = z9 ? peekValue.type : 0;
+                boolean z10 = peekValue != null;
+                int i12 = z10 ? peekValue.type : 0;
                 TypedValue peekValue2 = f10.peekValue(6);
-                boolean z10 = peekValue2 != null;
-                i11 = ((z9 && c(i12)) || (z10 && c(z10 ? peekValue2.type : 0))) ? 3 : 0;
+                boolean z11 = peekValue2 != null;
+                i11 = ((z10 && c(i12)) || (z11 && c(z11 ? peekValue2.type : 0))) ? 3 : 0;
             }
             PropertyValuesHolder b10 = b(f10, i11, 5, 6, "");
             if (b10 != null) {
@@ -489,7 +490,7 @@ public abstract class a {
                 if (b12 == null && b13 == null) {
                     throw new InflateException(f11.getPositionDescription() + " propertyXName or propertyYName is needed for PathData");
                 }
-                Path d2 = i0.d(b11);
+                Path d2 = j0.d(b11);
                 PathMeasure pathMeasure = new PathMeasure(d2, false);
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(Float.valueOf(0.0f));

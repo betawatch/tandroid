@@ -1,260 +1,95 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewParent;
-import android.widget.FrameLayout;
-import j$.util.Objects;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class bc {
-    public static bc w;
-    public int a;
-    public int b;
-    public pa c;
-    public r1.g d;
-    public final fb e;
-    public final ta f;
-    public final org.telegram.ui.ActionBar.f2 g;
-    public final FrameLayout h;
-    public final Runnable i;
-    public int j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public int o;
-    public za p;
-    public eb q;
-    public boolean r;
-    public boolean s;
-    public boolean t;
-    public boolean u;
-    public Runnable v;
+public final class bc {
+    public static final bc E;
+    public static final bc F;
+    public static final bc G;
+    public static final bc H;
+    public static final bc I;
+    public static final bc J;
+    public static final /* synthetic */ bc[] K;
+    public static final bc e;
+    public static final bc f;
+    public static final bc h;
+    public static final bc n;
+    public static final bc r;
+    public static final bc s;
+    public static final bc w;
+    public static final bc x;
+    public static final bc y;
+    public final String a;
+    public final int b;
+    public final boolean c;
+    public final ac d;
 
-    public bc() {
-        this.i = new oa(this, 0);
-        this.n = true;
-        this.r = true;
-        this.u = true;
-        this.e = null;
-        this.f = null;
-        this.g = null;
-        this.h = null;
+    static {
+        ac acVar = ac.e;
+        bc bcVar = new bc("PHOTO", 0, "PhotoSavedHint", 2131747264, acVar);
+        e = bcVar;
+        bc bcVar2 = new bc("PHOTOS", 1, "PhotosSavedHint", acVar);
+        f = bcVar2;
+        bc bcVar3 = new bc("VIDEO", 2, "VideoSavedHint", 2131743585, acVar);
+        h = bcVar3;
+        bc bcVar4 = new bc("VIDEOS", 3, "VideosSavedHint", acVar);
+        n = bcVar4;
+        bc bcVar5 = new bc("LIVEPHOTO", 4, "LivePhotoSavedHint", 2131748834, acVar);
+        r = bcVar5;
+        bc bcVar6 = new bc("LIVEPHOTOS", 5, "LivePhotosSavedHint", acVar);
+        s = bcVar6;
+        bc bcVar7 = new bc("MEDIA", 6, "MediaSavedHint", acVar);
+        w = bcVar7;
+        ac acVar2 = ac.d;
+        bc bcVar8 = new bc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", 2131747263, acVar2);
+        x = bcVar8;
+        bc bcVar9 = new bc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", 2131743584, acVar2);
+        y = bcVar9;
+        bc bcVar10 = new bc("GIF", 9, "GifSavedHint", 2131750470, ac.h);
+        E = bcVar10;
+        bc bcVar11 = new bc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", 2131750469, acVar2);
+        F = bcVar11;
+        ac acVar3 = ac.f;
+        bc bcVar12 = new bc("AUDIO", 11, "AudioSavedHint", 2131753908, acVar3);
+        G = bcVar12;
+        bc bcVar13 = new bc("AUDIOS", 12, "AudiosSavedHint", acVar3);
+        H = bcVar13;
+        bc bcVar14 = new bc("UNKNOWN", 13, "FileSavedHintLinked", 2131750828, acVar2);
+        I = bcVar14;
+        bc bcVar15 = new bc("UNKNOWNS", 14, "FilesSavedHintLinked", acVar2);
+        J = bcVar15;
+        K = new bc[]{bcVar, bcVar2, bcVar3, bcVar4, bcVar5, bcVar6, bcVar7, bcVar8, bcVar9, bcVar10, bcVar11, bcVar12, bcVar13, bcVar14, bcVar15};
     }
 
-    public static void a(FrameLayout frameLayout, za zaVar) {
-        if (frameLayout != null) {
-            frameLayout.setTag(R.id.bulletin_delegate_tag, zaVar);
-        }
+    public bc(String str, int i7, String str2, int i10, ac acVar) {
+        this.a = str2;
+        this.b = i10;
+        this.d = acVar;
+        this.c = false;
     }
 
-    public static void d(FrameLayout frameLayout) {
-        bc bcVar;
-        int childCount = frameLayout.getChildCount();
-        int i7 = 0;
-        while (true) {
-            if (i7 >= childCount) {
-                bcVar = null;
-                break;
-            }
-            View childAt = frameLayout.getChildAt(i7);
-            if (childAt instanceof fb) {
-                bcVar = ((fb) childAt).bulletin;
-                break;
-            }
-            i7++;
-        }
-        if (bcVar != null) {
-            bcVar.c(0L, org.telegram.messenger.qp.e1().getBoolean("view_animations", true));
-        }
+    public static bc valueOf(String str) {
+        return (bc) Enum.valueOf(bc.class, str);
     }
 
-    public static void e() {
-        bc bcVar = w;
-        if (bcVar != null) {
-            bcVar.b();
-        }
+    public static bc[] values() {
+        return (bc[]) K.clone();
     }
 
-    public static bc f(FrameLayout frameLayout, fb fbVar, int i7) {
-        return frameLayout == null ? new ab() : new bc(null, frameLayout, fbVar, i7);
-    }
-
-    public static bc g(org.telegram.ui.ActionBar.f2 f2Var, ya yaVar, int i7) {
-        if (f2Var == null) {
-            return new ab();
-        }
-        if (f2Var instanceof org.telegram.ui.cn) {
-            fb.access$000(yaVar, -2, 1);
-        } else if (f2Var instanceof org.telegram.ui.zw) {
-            fb.access$000(yaVar, -1, 0);
-        }
-        return new bc(f2Var, f2Var.getBulletinLayoutContainer(), yaVar, i7);
-    }
-
-    public static void h(FrameLayout frameLayout) {
-        if (frameLayout != null) {
-            frameLayout.setTag(R.id.bulletin_delegate_tag, null);
-        }
-    }
-
-    public final void b() {
-        c(0L, org.telegram.messenger.qp.e1().getBoolean("view_animations", true));
-    }
-
-    public final void c(long j3, boolean z9) {
-        fb fbVar = this.e;
-        if (fbVar != null && this.l) {
-            int i7 = 0;
-            this.l = false;
-            if (w == this) {
-                w = null;
-            }
-            WeakHashMap weakHashMap = r0.i0.a;
-            if (fbVar.isLaidOut() || this.t) {
-                fbVar.removeCallbacks(this.i);
-                if (z9) {
-                    int i10 = 1;
-                    fbVar.transitionRunningExit = true;
-                    fbVar.delegate = this.p;
-                    fbVar.invalidate();
-                    if (j3 >= 0) {
-                        f3.s sVar = new f3.s();
-                        sVar.a = j3;
-                        this.q = sVar;
-                    } else if (fbVar != null && this.q == null) {
-                        this.q = fbVar.createTransition();
-                    }
-                    eb ebVar = this.q;
-                    Objects.requireNonNull(fbVar);
-                    ebVar.c(fbVar, new qa(fbVar, i7), new oa(this, i10), new ra(this, i7));
-                    return;
-                }
-            }
-            za zaVar = this.p;
-            if (zaVar != null && !fbVar.top) {
-                zaVar.c(0.0f);
-                this.p.d(this);
-            }
-            fbVar.onExitTransitionStart();
-            fbVar.onExitTransitionEnd();
-            fbVar.onHide();
-            if (this.h != null) {
-                org.telegram.messenger.g0.h3(new oa(this, 2));
-            }
-            fbVar.onDetach();
-            Runnable runnable = this.v;
-            if (runnable != null) {
-                runnable.run();
-            }
-        }
-    }
-
-    public final void i(boolean z9) {
-        fb fbVar;
-        boolean z10 = z9 && this.n;
-        if (this.m == z10 || (fbVar = this.e) == null) {
-            return;
-        }
-        this.m = z10;
-        Runnable runnable = this.i;
-        if (!z10) {
-            fbVar.removeCallbacks(runnable);
-            return;
-        }
-        int i7 = this.j;
-        if (i7 >= 0) {
-            fbVar.postDelayed(runnable, i7);
-        }
-    }
-
-    public bc j() {
-        k(false);
-        return this;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v3, types: [android.view.View$OnLayoutChangeListener, org.telegram.ui.Components.pa] */
-    public final void k(final boolean z9) {
-        FrameLayout frameLayout;
-        if (this.l || (frameLayout = this.h) == 0) {
-            return;
-        }
-        this.l = true;
-        fb fbVar = this.e;
-        fbVar.setTop(z9);
-        CharSequence accessibilityText = fbVar.getAccessibilityText();
-        if (accessibilityText != null) {
-            org.telegram.messenger.g0.i2(accessibilityText);
-        }
-        ViewParent parent = fbVar.getParent();
-        ta taVar = this.f;
-        if (parent != taVar) {
-            throw new IllegalStateException("Layout has incorrect parent");
-        }
-        bc bcVar = w;
-        if (bcVar != null) {
-            bcVar.b();
-        }
-        w = this;
-        fbVar.onAttach(this);
-        ?? r22 = new View.OnLayoutChangeListener() { // from class: org.telegram.ui.Components.pa
-            @Override // android.view.View.OnLayoutChangeListener
-            public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
-                bc bcVar2 = bc.this;
-                za zaVar = bcVar2.p;
-                if ((zaVar == null || zaVar.a()) && !z9) {
-                    za zaVar2 = bcVar2.p;
-                    int f10 = zaVar2 != null ? zaVar2.f(bcVar2.a) : 0;
-                    int i17 = bcVar2.o;
-                    if (i17 != f10) {
-                        r1.g gVar = bcVar2.d;
-                        if (gVar == null || !gVar.f) {
-                            r1.g gVar2 = new r1.g(new r1.f(i17));
-                            r1.h hVar = new r1.h();
-                            hVar.i = f10;
-                            hVar.b(900.0f);
-                            hVar.a(1.0f);
-                            gVar2.m = hVar;
-                            bcVar2.d = gVar2;
-                            gVar2.b(new d7(bcVar2, 1));
-                            bcVar2.d.a(new sa(bcVar2, 0));
-                        } else {
-                            gVar.m.i = f10;
-                        }
-                        bcVar2.d.h();
-                    }
-                }
-            }
-        };
-        this.c = r22;
-        frameLayout.addOnLayoutChangeListener(r22);
-        fbVar.addOnLayoutChangeListener(new ua(this, z9));
-        if (!this.t) {
-            fbVar.addOnAttachStateChangeListener(new bi.m6(this, 8));
-        }
-        frameLayout.addView(taVar);
-    }
-
-    public final void l() {
-        fb fbVar = this.e;
-        if (fbVar != null) {
-            fbVar.updatePosition();
-        }
-    }
-
-    public bc(org.telegram.ui.ActionBar.f2 f2Var, FrameLayout frameLayout, fb fbVar, int i7) {
-        this.i = new oa(this, 0);
-        this.r = true;
-        this.u = true;
-        this.e = fbVar;
-        this.n = true ^ (fbVar instanceof gb);
-        this.f = new ta(this, fbVar, frameLayout);
-        this.g = f2Var;
-        this.h = frameLayout;
-        this.j = i7;
+    public bc(String str, int i7, String str2, ac acVar) {
+        this.a = str2;
+        this.d = acVar;
+        this.b = 0;
+        this.c = true;
     }
 }

@@ -1,41 +1,29 @@
 package bi;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.qs;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class q6 extends n6 {
-    public final boolean c;
-    public final ImageReceiver d;
+public final class q6 extends View {
+    public final /* synthetic */ TL_stars.StarGift a;
+    public final /* synthetic */ float b;
 
-    public q6(View view, TL_stars.starGiftAttributeModel stargiftattributemodel) {
-        this.a = stargiftattributemodel.name;
-        this.b = stargiftattributemodel.getRarityPermille();
-        this.c = true;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.d = imageReceiver;
-        dd.c1(imageReceiver, stargiftattributemodel.document, qs.q2);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q6(Context context, TL_stars.StarGift starGift, float f10) {
+        super(context);
+        this.a = starGift;
+        this.b = f10;
     }
 
-    @Override // bi.n6
-    public final void a() {
-        if (this.c) {
-            this.d.R();
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        if (this.a == null) {
+            super.onMeasure(i7, i10);
+        } else {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i7) * this.b), TLObject.FLAG_30), i10);
         }
-    }
-
-    @Override // bi.n6
-    public final boolean b() {
-        return this.d.B() != null;
-    }
-
-    public q6(org.telegram.ui.Components.k9 k9Var, TL_stars.starGiftAttributeModel stargiftattributemodel) {
-        this.a = stargiftattributemodel.name;
-        this.b = stargiftattributemodel.getRarityPermille();
-        this.c = false;
-        this.d = k9Var.getImageReceiver();
     }
 }

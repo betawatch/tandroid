@@ -14,21 +14,21 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class d extends Thread {
-    public EGLSurface D;
-    public EGLContext E;
-    public int F;
+    public EGLSurface E;
+    public EGLContext F;
     public int G;
     public int H;
     public int I;
     public int J;
     public int K;
     public int L;
-    public int[] O;
-    public float P;
-    public final /* synthetic */ e Q;
+    public int M;
+    public int[] P;
+    public float Q;
+    public final /* synthetic */ e R;
     public final c c;
     public final SurfaceTexture d;
     public boolean f;
@@ -42,11 +42,11 @@ public final class d extends Thread {
     public volatile boolean b = false;
     public final Object e = new Object();
     public final float s = g0.N(1.2f);
-    public boolean M = true;
-    public int N = 0;
+    public boolean N = true;
+    public int O = 0;
 
     public d(e eVar, SurfaceTexture surfaceTexture, int i7, int i10, c cVar) {
-        this.Q = eVar;
+        this.R = eVar;
         this.c = cVar;
         this.d = surfaceTexture;
         this.h = i7;
@@ -65,15 +65,15 @@ public final class d extends Thread {
     }
 
     public final void b() {
-        int[] iArr = this.O;
+        int[] iArr = this.P;
         if (iArr != null) {
             GLES20.glDeleteBuffers(2, iArr, 0);
         }
         int[] iArr2 = new int[2];
-        this.O = iArr2;
+        this.P = iArr2;
         GLES20.glGenBuffers(2, iArr2, 0);
         for (int i7 = 0; i7 < 2; i7++) {
-            GLES20.glBindBuffer(34962, this.O[i7]);
+            GLES20.glBindBuffer(34962, this.P[i7]);
             GLES20.glBufferData(34962, this.r * 24, null, 35048);
         }
         a();
@@ -98,15 +98,15 @@ public final class d extends Thread {
                     EGLConfig eGLConfig = eGLConfigArr[0];
                     this.y = eGLConfig;
                     EGLContext eglCreateContext = this.w.eglCreateContext(this.x, eGLConfig, EGL10.EGL_NO_CONTEXT, new int[]{12440, 3, 12344});
-                    this.E = eglCreateContext;
+                    this.F = eglCreateContext;
                     if (eglCreateContext == null) {
                         this.a = false;
                     } else {
                         EGLSurface eglCreateWindowSurface = this.w.eglCreateWindowSurface(this.x, this.y, this.d, null);
-                        this.D = eglCreateWindowSurface;
+                        this.E = eglCreateWindowSurface;
                         if (eglCreateWindowSurface == null) {
                             this.a = false;
-                        } else if (this.w.eglMakeCurrent(this.x, eglCreateWindowSurface, eglCreateWindowSurface, this.E)) {
+                        } else if (this.w.eglMakeCurrent(this.x, eglCreateWindowSurface, eglCreateWindowSurface, this.F)) {
                             b();
                             int glCreateShader = GLES20.glCreateShader(35633);
                             int glCreateShader2 = GLES20.glCreateShader(35632);
@@ -131,34 +131,34 @@ public final class d extends Thread {
                                         this.a = false;
                                     } else {
                                         int glCreateProgram = GLES20.glCreateProgram();
-                                        this.F = glCreateProgram;
+                                        this.G = glCreateProgram;
                                         if (glCreateProgram == 0) {
                                             this.a = false;
                                         } else {
                                             GLES20.glAttachShader(glCreateProgram, glCreateShader);
-                                            GLES20.glAttachShader(this.F, glCreateShader2);
-                                            GLES30.glTransformFeedbackVaryings(this.F, new String[]{"outPosition", "outVelocity", "outTime", "outDuration"}, 35980);
-                                            GLES20.glLinkProgram(this.F);
-                                            GLES20.glGetProgramiv(this.F, 35714, iArr, 0);
+                                            GLES20.glAttachShader(this.G, glCreateShader2);
+                                            GLES30.glTransformFeedbackVaryings(this.G, new String[]{"outPosition", "outVelocity", "outTime", "outDuration"}, 35980);
+                                            GLES20.glLinkProgram(this.G);
+                                            GLES20.glGetProgramiv(this.G, 35714, iArr, 0);
                                             if (iArr[0] == 0) {
-                                                a8.d("SpoilerEffect2, link draw program error: " + GLES20.glGetProgramInfoLog(this.F));
+                                                a8.d("SpoilerEffect2, link draw program error: " + GLES20.glGetProgramInfoLog(this.G));
                                                 this.a = false;
                                             } else {
-                                                this.G = GLES20.glGetUniformLocation(this.F, "reset");
-                                                this.H = GLES20.glGetUniformLocation(this.F, "time");
-                                                this.I = GLES20.glGetUniformLocation(this.F, "deltaTime");
-                                                this.J = GLES20.glGetUniformLocation(this.F, "size");
-                                                this.K = GLES20.glGetUniformLocation(this.F, "r");
-                                                this.L = GLES20.glGetUniformLocation(this.F, "seed");
+                                                this.H = GLES20.glGetUniformLocation(this.G, "reset");
+                                                this.I = GLES20.glGetUniformLocation(this.G, "time");
+                                                this.J = GLES20.glGetUniformLocation(this.G, "deltaTime");
+                                                this.K = GLES20.glGetUniformLocation(this.G, "size");
+                                                this.L = GLES20.glGetUniformLocation(this.G, "r");
+                                                this.M = GLES20.glGetUniformLocation(this.G, "seed");
                                                 GLES20.glViewport(0, 0, this.h, this.n);
                                                 GLES20.glEnable(3042);
                                                 GLES20.glBlendFunc(770, 771);
                                                 GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-                                                GLES20.glUseProgram(this.F);
-                                                GLES20.glUniform2f(this.J, this.h, this.n);
-                                                GLES20.glUniform1f(this.G, this.M ? 1.0f : 0.0f);
-                                                GLES20.glUniform1f(this.K, this.s);
-                                                GLES20.glUniform1f(this.L, Utilities.c.nextInt(256) / 256.0f);
+                                                GLES20.glUseProgram(this.G);
+                                                GLES20.glUniform2f(this.K, this.h, this.n);
+                                                GLES20.glUniform1f(this.H, this.N ? 1.0f : 0.0f);
+                                                GLES20.glUniform1f(this.L, this.s);
+                                                GLES20.glUniform1f(this.M, Utilities.c.nextInt(256) / 256.0f);
                                             }
                                         }
                                     }
@@ -179,7 +179,7 @@ public final class d extends Thread {
         while (this.a) {
             long nanoTime2 = System.nanoTime();
             double d = (nanoTime2 - nanoTime) / 1.0E9d;
-            e eVar = this.Q;
+            e eVar = this.R;
             double d2 = eVar.a;
             if (d < d2) {
                 double d10 = d2 - d;
@@ -190,7 +190,7 @@ public final class d extends Thread {
                     Thread.sleep(j3, (int) ((d10 - (j3 / 1000.0d)) * 1.0E9d));
                 } catch (Exception unused) {
                 }
-                d = this.Q.a;
+                d = this.R.a;
             } else {
                 i7 = i11;
                 i10 = i12;
@@ -208,11 +208,11 @@ public final class d extends Thread {
             synchronized (this.e) {
                 try {
                     if (this.f) {
-                        GLES20.glUniform2f(this.J, this.h, this.n);
+                        GLES20.glUniform2f(this.K, this.h, this.n);
                         GLES20.glViewport(0, 0, this.h, this.n);
                         int i13 = (int) Utilities.i(((this.h * this.n) / 250000.0f) * 1000.0f, 10000.0f, 500.0f);
                         if (i13 > this.r) {
-                            this.M = true;
+                            this.N = true;
                             b();
                         }
                         this.r = i13;
@@ -225,16 +225,16 @@ public final class d extends Thread {
             float f10 = (float) d;
             EGL10 egl102 = this.w;
             EGLDisplay eGLDisplay = this.x;
-            EGLSurface eGLSurface = this.D;
-            if (egl102.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.E)) {
+            EGLSurface eGLSurface = this.E;
+            if (egl102.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.F)) {
                 float f11 = f10 * 0.65f;
-                float f12 = this.P + f11;
-                this.P = f12;
+                float f12 = this.Q + f11;
+                this.Q = f12;
                 if (f12 > 1000.0f) {
-                    this.P = 0.0f;
+                    this.Q = 0.0f;
                 }
                 GLES20.glClear(TLObject.FLAG_14);
-                GLES20.glBindBuffer(34962, this.O[this.N]);
+                GLES20.glBindBuffer(34962, this.P[this.O]);
                 GLES20.glVertexAttribPointer(0, 2, 5126, false, 24, 0);
                 GLES20.glEnableVertexAttribArray(0);
                 GLES20.glVertexAttribPointer(1, 2, 5126, false, 24, 8);
@@ -243,7 +243,7 @@ public final class d extends Thread {
                 GLES20.glEnableVertexAttribArray(i10);
                 GLES20.glVertexAttribPointer(3, 1, 5126, false, 24, 20);
                 GLES20.glEnableVertexAttribArray(i7);
-                GLES30.glBindBufferBase(35982, 0, this.O[1 - this.N]);
+                GLES30.glBindBufferBase(35982, 0, this.P[1 - this.O]);
                 GLES20.glVertexAttribPointer(0, 2, 5126, false, 24, 0);
                 GLES20.glEnableVertexAttribArray(0);
                 GLES20.glVertexAttribPointer(1, 2, 5126, false, 24, 8);
@@ -252,17 +252,17 @@ public final class d extends Thread {
                 GLES20.glEnableVertexAttribArray(i10);
                 GLES20.glVertexAttribPointer(3, 1, 5126, false, 24, 20);
                 GLES20.glEnableVertexAttribArray(i7);
-                GLES20.glUniform1f(this.H, this.P);
-                GLES20.glUniform1f(this.I, f11);
+                GLES20.glUniform1f(this.I, this.Q);
+                GLES20.glUniform1f(this.J, f11);
                 GLES30.glBeginTransformFeedback(0);
                 GLES20.glDrawArrays(0, 0, this.r);
                 GLES30.glEndTransformFeedback();
-                if (this.M) {
-                    this.M = false;
-                    GLES20.glUniform1f(this.G, 0.0f);
+                if (this.N) {
+                    this.N = false;
+                    GLES20.glUniform1f(this.H, 0.0f);
                 }
-                this.N = 1 - this.N;
-                this.w.eglSwapBuffers(this.x, this.D);
+                this.O = 1 - this.O;
+                this.w.eglSwapBuffers(this.x, this.E);
                 a();
             } else {
                 this.a = false;
@@ -274,23 +274,23 @@ public final class d extends Thread {
             i12 = i10;
         }
         int i14 = i12;
-        int[] iArr2 = this.O;
+        int[] iArr2 = this.P;
         if (iArr2 != null) {
             try {
                 GLES20.glDeleteBuffers(i14, iArr2, 0);
             } catch (Exception e10) {
                 a8.g(e10, true);
             }
-            this.O = null;
+            this.P = null;
         }
-        int i15 = this.F;
+        int i15 = this.G;
         if (i15 != 0) {
             try {
                 GLES20.glDeleteProgram(i15);
             } catch (Exception e11) {
                 a8.g(e11, true);
             }
-            this.F = 0;
+            this.G = 0;
         }
         EGL10 egl103 = this.w;
         if (egl103 != null) {
@@ -302,12 +302,12 @@ public final class d extends Thread {
                 a8.g(e12, true);
             }
             try {
-                this.w.eglDestroySurface(this.x, this.D);
+                this.w.eglDestroySurface(this.x, this.E);
             } catch (Exception e13) {
                 a8.g(e13, true);
             }
             try {
-                this.w.eglDestroyContext(this.x, this.E);
+                this.w.eglDestroyContext(this.x, this.F);
             } catch (Exception e14) {
                 a8.g(e14, true);
             }

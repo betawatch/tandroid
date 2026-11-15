@@ -1,6 +1,6 @@
 package a5;
 
-import a8.wa;
+import a8.xa;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
@@ -10,9 +10,9 @@ import android.graphics.PathMeasure;
 import android.graphics.PorterDuff;
 import android.graphics.Shader;
 import java.util.ArrayList;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n {
     public static final Matrix p = new Matrix();
@@ -38,7 +38,7 @@ public final class n {
         this.i = 0.0f;
         this.j = 0.0f;
         this.k = 0.0f;
-        this.l = qs.e4;
+        this.l = ns.e4;
         this.m = null;
         this.n = null;
         this.o = new a0.f(0);
@@ -76,18 +76,18 @@ public final class n {
                 float[] fArr = {0.0f, 1.0f, 1.0f, 0.0f};
                 matrix3.mapVectors(fArr);
                 float hypot = (float) Math.hypot(fArr[c10], fArr[1]);
-                boolean z9 = c10;
+                boolean z10 = c10;
                 i11 = i13;
                 float hypot2 = (float) Math.hypot(fArr[2], fArr[3]);
-                float f14 = (fArr[z9 ? 1 : 0] * fArr[3]) - (fArr[1] * fArr[2]);
+                float f14 = (fArr[z10 ? 1 : 0] * fArr[3]) - (fArr[1] * fArr[2]);
                 float max = Math.max(hypot, hypot2);
                 float abs = max > 0.0f ? Math.abs(f14) / max : 0.0f;
                 if (abs != 0.0f) {
                     Path path = this.a;
                     path.reset();
-                    i0.d[] dVarArr = mVar.a;
-                    if (dVarArr != null) {
-                        i0.d.b(dVarArr, path);
+                    i0.e[] eVarArr = mVar.a;
+                    if (eVarArr != null) {
+                        i0.e.b(eVarArr, path);
                     }
                     Path path2 = this.b;
                     path2.reset();
@@ -105,7 +105,7 @@ public final class n {
                             if (this.f == null) {
                                 this.f = new PathMeasure();
                             }
-                            this.f.setPath(path, z9);
+                            this.f.setPath(path, z10);
                             float length = this.f.getLength();
                             float f19 = f17 * length;
                             float f20 = f18 * length;
@@ -121,8 +121,8 @@ public final class n {
                             path.rLineTo(f10, f10);
                         }
                         path2.addPath(path, matrix4);
-                        wa waVar = jVar.f;
-                        if (((Shader) waVar.c) == null && waVar.b == 0) {
+                        xa xaVar = jVar.f;
+                        if (((Shader) xaVar.c) == null && xaVar.b == 0) {
                             f11 = 255.0f;
                             i12 = 16777215;
                         } else {
@@ -135,7 +135,7 @@ public final class n {
                                 i12 = 16777215;
                             }
                             Paint paint2 = this.e;
-                            Shader shader = (Shader) waVar.c;
+                            Shader shader = (Shader) xaVar.c;
                             if (shader != null) {
                                 shader.setLocalMatrix(matrix4);
                                 paint2.setShader(shader);
@@ -143,8 +143,8 @@ public final class n {
                                 f11 = 255.0f;
                             } else {
                                 paint2.setShader(null);
-                                paint2.setAlpha(qs.e4);
-                                int i14 = waVar.b;
+                                paint2.setAlpha(ns.e4);
+                                int i14 = xaVar.b;
                                 float f21 = jVar.h;
                                 PorterDuff.Mode mode = q.w;
                                 f11 = 255.0f;
@@ -154,8 +154,8 @@ public final class n {
                             path2.setFillType(jVar.c == 0 ? Path.FillType.WINDING : Path.FillType.EVEN_ODD);
                             canvas.drawPath(path2, paint2);
                         }
-                        wa waVar2 = jVar.d;
-                        if (((Shader) waVar2.c) != null || waVar2.b != 0) {
+                        xa xaVar2 = jVar.d;
+                        if (((Shader) xaVar2.c) != null || xaVar2.b != 0) {
                             if (this.d == null) {
                                 Paint paint3 = new Paint(1);
                                 this.d = paint3;
@@ -171,15 +171,15 @@ public final class n {
                                 paint4.setStrokeCap(cap);
                             }
                             paint4.setStrokeMiter(jVar.n);
-                            Shader shader2 = (Shader) waVar2.c;
+                            Shader shader2 = (Shader) xaVar2.c;
                             if (shader2 != null) {
                                 shader2.setLocalMatrix(matrix4);
                                 paint4.setShader(shader2);
                                 paint4.setAlpha(Math.round(jVar.g * f11));
                             } else {
                                 paint4.setShader(null);
-                                paint4.setAlpha(qs.e4);
-                                int i15 = waVar2.b;
+                                paint4.setAlpha(ns.e4);
+                                int i15 = xaVar2.b;
                                 float f22 = jVar.g;
                                 PorterDuff.Mode mode2 = q.w;
                                 paint4.setColor((i15 & i12) | (((int) (Color.alpha(i15) * f22)) << 24));
@@ -222,7 +222,7 @@ public final class n {
         this.i = 0.0f;
         this.j = 0.0f;
         this.k = 0.0f;
-        this.l = qs.e4;
+        this.l = ns.e4;
         this.m = null;
         this.n = null;
         a0.f fVar = new a0.f(0);

@@ -1,977 +1,805 @@
 package kg;
 
-import android.animation.Animator;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.EditText;
-import bi.e5;
-import bi.w4;
-import fi.m3;
-import fi.w3;
+import di.f2;
+import fi.m5;
 import java.util.ArrayList;
-import java.util.Timer;
-import org.telegram.messenger.id;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.y00;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g5;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a8;
-import org.telegram.ui.Components.jj;
-import org.telegram.ui.Components.nj;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.tj;
-import org.telegram.ui.Components.tk;
-import org.telegram.ui.Components.uj;
-import org.telegram.ui.Components.vk;
-import org.telegram.ui.Components.w80;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.ContactsActivity;
-import org.telegram.ui.LanguageSelectActivity;
-import org.telegram.ui.NotificationsCustomSettingsActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.c60;
-import org.telegram.ui.dn0;
-import org.telegram.ui.du;
-import org.telegram.ui.gv;
-import org.telegram.ui.iw;
-import org.telegram.ui.mb;
-import org.telegram.ui.nq;
-import org.telegram.ui.o31;
-import org.telegram.ui.o50;
-import org.telegram.ui.ow;
-import org.telegram.ui.p50;
-import org.telegram.ui.rq;
-import org.telegram.ui.sa0;
-import org.telegram.ui.sv;
-import org.telegram.ui.to;
-import org.telegram.ui.tq;
-import org.telegram.ui.ts;
-import org.telegram.ui.uo;
-import org.telegram.ui.uy0;
-import org.telegram.ui.v91;
-import org.telegram.ui.wc1;
-import org.telegram.ui.yw;
-import org.telegram.ui.z50;
-import org.telegram.ui.z91;
-import org.telegram.ui.zw;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.si;
+import org.telegram.messenger.vr;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class v1 extends org.telegram.ui.ActionBar.n0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class v1 {
+    public static volatile v1[] g = new v1[4];
+    public static final Object[] h = new Object[4];
+    public final int a;
+    public final ArrayList b = new ArrayList();
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public boolean e;
+    public boolean f;
 
-    public /* synthetic */ v1(Object obj, int i7) {
+    static {
+        for (int i7 = 0; i7 < 4; i7++) {
+            h[i7] = new Object();
+        }
+    }
+
+    public v1(int i7) {
         this.a = i7;
-        this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.n0
-    public boolean b() {
-        switch (this.a) {
-            case 11:
-                zw zwVar = (zw) this.b;
-                org.telegram.ui.ActionBar.r0 r0Var = zwVar.E1;
-                if (r0Var != null) {
-                    r0Var.setVisibility(0);
+    public static v1 f(int i7) {
+        v1 v1Var;
+        v1 v1Var2 = g[i7];
+        if (v1Var2 != null) {
+            return v1Var2;
+        }
+        synchronized (h[i7]) {
+            try {
+                v1Var = g[i7];
+                if (v1Var == null) {
+                    v1[] v1VarArr = g;
+                    v1 v1Var3 = new v1(i7);
+                    v1VarArr[i7] = v1Var3;
+                    v1Var = v1Var3;
                 }
-                if (zwVar.o2 == null) {
-                    return true;
-                }
-                zwVar.finishFragment();
-                return false;
-            case 18:
-                ((dn0) this.b).finishFragment();
-                return false;
-            default:
-                return super.b();
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return v1Var;
+    }
+
+    public static boolean g(String str) {
+        return "hello".equalsIgnoreCase(str) || "away".equalsIgnoreCase(str);
+    }
+
+    public final void a(String str) {
+        u1 u1Var;
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (true) {
+            if (i7 >= size) {
+                u1Var = null;
+                break;
+            }
+            Object obj = arrayList.get(i7);
+            i7++;
+            u1Var = (u1) obj;
+            if (TextUtils.equals(str, u1Var.b)) {
+                break;
+            }
+        }
+        if (u1Var != null) {
+            arrayList.remove(u1Var);
+            ns.f(this.a).k(ns.F1, new Object[0]);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n0
-    public boolean c() {
-        org.telegram.ui.ActionBar.l lVar;
-        switch (this.a) {
-            case 11:
-                zw zwVar = (zw) this.b;
-                lVar = ((f2) zwVar).actionBar;
-                return !lVar.x() && zwVar.R3 == null;
-            default:
-                return super.c();
+    public final void b(Runnable runnable) {
+        if (this.f) {
+            runnable.run();
+        } else {
+            i(runnable, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n0
-    public Animator e() {
-        switch (this.a) {
-            case 19:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                boolean z9 = profileActivity.V1;
-                profileActivity.V1 = !z9;
-                if (z9) {
-                    g5 g5Var = profileActivity.T0;
-                    g5Var.e.clearFocus();
-                    org.telegram.messenger.g0.v1(g5Var.e);
-                }
-                if (profileActivity.V1) {
-                    profileActivity.T0.getSearchField().setText("");
-                }
-                return ProfileActivity.P0(profileActivity, profileActivity.V1);
-            default:
-                return super.e();
+    public final u1 c(long j3) {
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            u1 u1Var = (u1) obj;
+            if (u1Var.a == j3) {
+                return u1Var;
+            }
+        }
+        return null;
+    }
+
+    public final u1 d(String str) {
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            u1 u1Var = (u1) obj;
+            if (TextUtils.equals(str, u1Var.b)) {
+                return u1Var;
+            }
+        }
+        return null;
+    }
+
+    public final ArrayList e() {
+        ArrayList arrayList = this.d;
+        arrayList.clear();
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.b;
+            if (i7 >= arrayList2.size()) {
+                return arrayList;
+            }
+            if (!g(((u1) arrayList2.get(i7)).b)) {
+                arrayList.add((u1) arrayList2.get(i7));
+            }
+            i7++;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n0
-    public void f() {
-        switch (this.a) {
-            case 23:
-                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
-                wc1 wc1Var = wallpapersListActivity.H;
-                wc1Var.n = null;
-                wc1Var.E(null, true);
-                wallpapersListActivity.J.setSearchFieldHint(id.M0(2131745816, null));
-                break;
-        }
+    public final void h() {
+        i(null, true);
     }
 
-    @Override // org.telegram.ui.ActionBar.n0
-    public void h() {
-        oi.q qVar;
-        int i7 = this.a;
-        Object obj = this.b;
-        switch (i7) {
-            case 0:
-                w1 w1Var = (w1) obj;
-                w1Var.d = false;
-                w1Var.e = null;
-                w1Var.a.f3.O(true);
-                w1Var.a.v0(0);
-                break;
-            case 1:
-                mb mbVar = (mb) obj;
-                mbVar.v0 = "";
-                mbVar.I.setVisibility(0);
-                if (mbVar.U) {
-                    mbVar.U = false;
-                    mbVar.Z0(true);
-                    break;
-                }
-                break;
-            case 2:
-                uo uoVar = (uo) obj;
-                uoVar.e.F(null);
-                uoVar.N = false;
-                uoVar.getClass();
-                uoVar.b.setAdapter(uoVar.a);
-                uoVar.a.f();
-                uoVar.b.setFastScrollVisible(true);
-                uoVar.b.setVerticalScrollBarEnabled(false);
-                uoVar.d.setShowAtCenter(false);
-                uoVar.d.b();
-                break;
-            case 3:
-                rq rqVar = (rq) obj;
-                rqVar.e.F(null);
-                rqVar.n1 = false;
-                bi.q1 q1Var = rqVar.c;
-                q1Var.W1 = false;
-                q1Var.X1 = 0;
-                q1Var.setAdapter(rqVar.a);
-                rqVar.a.f();
-                rqVar.c.setFastScrollVisible(true);
-                rqVar.c.setVerticalScrollBarEnabled(false);
-                break;
-            case 4:
-                tq tqVar = (tq) obj;
-                tqVar.n = null;
-                w3 w3Var = tqVar.a;
-                if (w3Var != null) {
-                    w3Var.f3.O(true);
-                    break;
-                }
-                break;
-            case 5:
-                a8 a8Var = (a8) obj;
-                if (a8Var.q1) {
-                    a8Var.p1 = false;
-                    a8Var.q1 = false;
-                    a8Var.q0 = true;
-                    a8Var.t1.E(null);
-                    org.telegram.ui.ActionBar.r0 r0Var = a8Var.d2;
-                    if (r0Var != null) {
-                        r0Var.setVisibility(0);
-                        break;
-                    }
-                }
-                break;
-            case 6:
-                uj ujVar = (uj) obj;
-                ujVar.b0 = false;
-                ujVar.G.setVisibility(0);
-                jj jjVar = ujVar.r;
-                v4.g0 adapter = jjVar.getAdapter();
-                nj njVar = ujVar.w;
-                if (adapter != njVar) {
-                    jjVar.setAdapter(njVar);
-                }
-                njVar.f();
-                ujVar.D.Y(null, true);
-                break;
-            case 7:
-                vk vkVar = (vk) obj;
-                vkVar.c0 = false;
-                vkVar.d0 = false;
-                vkVar.N.G(null);
-                vkVar.j0();
-                vkVar.L.setVisibility(0);
-                vkVar.J.setVisibility(0);
-                vkVar.M.setVisibility(8);
-                vkVar.s.setVisibility(8);
-                break;
-            case 8:
-                ContactsActivity contactsActivity = (ContactsActivity) obj;
-                contactsActivity.h.G(null);
-                contactsActivity.b0 = null;
-                contactsActivity.D = false;
-                contactsActivity.y = false;
-                contactsActivity.d.setAdapter(contactsActivity.b);
-                contactsActivity.d.setSectionsType(1);
-                contactsActivity.b.f();
-                contactsActivity.d.setFastScrollVisible(true);
-                contactsActivity.d.setVerticalScrollBarEnabled(false);
-                ContactsActivity.g0(contactsActivity);
-                break;
-            case 9:
-                ts tsVar = (ts) obj;
-                nj njVar2 = tsVar.d;
-                njVar2.getClass();
-                njVar2.e = null;
-                tsVar.f = false;
-                tsVar.e = false;
-                tsVar.a.setAdapter(tsVar.c);
-                tsVar.a.setFastScrollVisible(true);
-                break;
-            case 10:
-                du duVar = (du) obj;
-                duVar.a.getActionBar().n(false);
-                duVar.b.getActionBar().n(false);
-                break;
-            case 11:
-                zw zwVar = (zw) obj;
-                ow owVar = zwVar.X;
-                if (owVar != null) {
-                    ArrayList arrayList = owVar.F;
-                    if (!arrayList.isEmpty() && owVar.H != null) {
-                        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                            if (((jg.o0) arrayList.get(i10)).h) {
-                                ((gv) owVar.H).h((jg.o0) arrayList.get(i10));
-                            }
-                        }
-                    }
-                }
-                zwVar.k2 = false;
-                zwVar.l2 = false;
-                yw ywVar = zwVar.e0[0];
-                if (ywVar != null) {
-                    ywVar.a.setEmptyView(zwVar.X2 == 0 ? ywVar.x : null);
-                    zwVar.a5(false, false, true, false);
-                }
-                zwVar.m5(false, false);
-                qs.e().k(qs.r4, Boolean.TRUE);
-                zwVar.X.setCloseButtonVisible(false);
-                zwVar.l5(true);
-                zwVar.N3();
-                qVar = ((f2) zwVar).glassEngine;
-                qVar.g();
-                break;
-            case 12:
-                p50 p50Var = (p50) obj;
-                if (p50Var.M) {
-                    o50.E(p50Var.f, null);
-                    p50Var.M = false;
-                    p50Var.d.setAdapter(p50Var.e);
-                    break;
-                }
-                break;
-            case 13:
-                c60.d0((c60) obj);
-                break;
-            case 14:
-                LanguageSelectActivity languageSelectActivity = (LanguageSelectActivity) obj;
-                languageSelectActivity.m0(null);
-                languageSelectActivity.getClass();
-                languageSelectActivity.getClass();
-                if (languageSelectActivity.b != null) {
-                    languageSelectActivity.d.setVisibility(8);
-                    languageSelectActivity.b.setAdapter(languageSelectActivity.a);
-                    break;
-                }
-                break;
-            case 15:
-                sa0 sa0Var = (sa0) obj;
-                sa0Var.t0 = false;
-                sa0Var.u0 = false;
-                sa0Var.S.G(null);
-                sa0Var.L0();
-                g5 g5Var = sa0Var.V;
-                if (g5Var != null) {
-                    g5Var.setVisibility(0);
-                }
-                sa0Var.Q.setVisibility(0);
-                sa0Var.O.setVisibility(0);
-                sa0Var.R.setAdapter(null);
-                sa0Var.R.setVisibility(8);
-                sa0Var.K0(false);
-                break;
-            case 16:
-                w80 w80Var = (w80) ((w4) obj).b;
-                w80Var.y = false;
-                w80Var.j(null);
-                break;
-            case 17:
-                NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj;
-                notificationsCustomSettingsActivity.d.F(null);
-                notificationsCustomSettingsActivity.f = false;
-                notificationsCustomSettingsActivity.getClass();
-                notificationsCustomSettingsActivity.c.setText(id.M0(2131748211, "NoExceptions"));
-                notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.b);
-                notificationsCustomSettingsActivity.b.f();
-                notificationsCustomSettingsActivity.a.setFastScrollVisible(true);
-                notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(false);
-                notificationsCustomSettingsActivity.c.setShowAtCenter(false);
-                break;
-            case 20:
-                uy0 uy0Var = (uy0) obj;
-                uy0Var.f = null;
-                if (uy0Var.b != null) {
-                    uy0Var.d.setVisibility(8);
-                    uy0Var.b.setAdapter(uy0Var.a);
-                    break;
-                }
-                break;
-            case 21:
-                o31 o31Var = (o31) obj;
-                o31Var.a.a(false, true);
-                o31Var.o0(false, true);
-                o31Var.c.f3.O(false);
-                break;
-            case 22:
-                z91.f0((z91) obj, false);
-                break;
-            case 23:
-                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) obj;
-                wallpapersListActivity.F.setAdapter(wallpapersListActivity.G);
-                wallpapersListActivity.F.invalidate();
-                wallpapersListActivity.H.E(null, true);
-                wallpapersListActivity.J.setSearchFieldCaption(null);
-                f();
-                break;
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x014c, code lost:
-    
-        if (r6.K == false) goto L77;
-     */
-    @Override // org.telegram.ui.ActionBar.n0
+    /* JADX WARN: Removed duplicated region for block: B:58:0x010d A[EDGE_INSN: B:58:0x010d->B:59:0x010d BREAK  A[LOOP:0: B:11:0x003b->B:28:0x0167, LOOP_LABEL: LOOP:0: B:11:0x003b->B:28:0x0167], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0100 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void i() {
-        org.telegram.ui.ActionBar.l lVar;
-        oi.q qVar;
-        yl0 yl0Var;
-        yl0 yl0Var2;
-        int i7 = this.a;
-        Object obj = this.b;
-        switch (i7) {
-            case 0:
-                w1 w1Var = (w1) obj;
-                w1Var.d = true;
-                w1Var.a.f3.O(true);
-                w1Var.a.v0(0);
-                break;
-            case 1:
-                mb mbVar = (mb) obj;
-                mbVar.I.setVisibility(8);
-                mbVar.getClass();
-                break;
-            case 2:
-                uo uoVar = (uo) obj;
-                uoVar.N = true;
-                uoVar.d.setShowAtCenter(true);
-                break;
-            case 3:
-                ((rq) obj).n1 = true;
-                break;
-            case 5:
-                a8 a8Var = (a8) obj;
-                v4.b0 b0Var = a8Var.s1;
-                int N0 = b0Var.N0();
-                a8Var.l2 = N0;
-                View m10 = b0Var.m(N0);
-                a8Var.m2 = m10 == null ? 0 : m10.getTop();
-                a8Var.q1 = true;
-                a8Var.u0(false);
-                a8Var.t1.f();
-                org.telegram.ui.ActionBar.r0 r0Var = a8Var.d2;
-                if (r0Var != null) {
-                    r0Var.setVisibility(8);
-                    break;
+    public final void i(Runnable runnable, boolean z10) {
+        String substring;
+        long j3;
+        long j10;
+        int i7;
+        long j11;
+        long j12;
+        long j13;
+        TLRPC.Message message;
+        if (this.e || this.f) {
+            return;
+        }
+        int i10 = 1;
+        this.e = true;
+        int i11 = this.a;
+        if (z10) {
+            vr a02 = vr.a0(i11);
+            a02.a.c(new f2(this, a02, m10.i(i11).e(), runnable, 13));
+            return;
+        }
+        TLRPC.TL_messages_getQuickReplies tL_messages_getQuickReplies = new TLRPC.TL_messages_getQuickReplies();
+        long j14 = 0;
+        tL_messages_getQuickReplies.hash = 0L;
+        int i12 = 0;
+        int i13 = 0;
+        loop0: while (true) {
+            ArrayList arrayList = this.b;
+            if (i13 >= arrayList.size()) {
+                ConnectionsManager.getInstance(i11).sendRequest(tL_messages_getQuickReplies, new ai.d1(this, 19));
+                return;
+            }
+            u1 u1Var = (u1) arrayList.get(i13);
+            long p10 = si.p(tL_messages_getQuickReplies.hash, u1Var.a);
+            tL_messages_getQuickReplies.hash = p10;
+            String str = u1Var.b;
+            if (str == null) {
+                j3 = j14;
+            } else {
+                substring = Utilities.a(str).substring(i12, 16);
+                int length = substring.length();
+                if (length == 0) {
+                    throw new NumberFormatException("empty string");
                 }
-                break;
-            case 6:
-                uj ujVar = (uj) obj;
-                ujVar.b0 = true;
-                ujVar.G.setVisibility(8);
-                ujVar.b.h1(ujVar.F.getSearchField(), true);
-                break;
-            case 7:
-                vk vkVar = (vk) obj;
-                vkVar.c0 = true;
-                vkVar.b.h1(vkVar.x.getSearchField(), true);
-                break;
-            case 8:
-                ContactsActivity contactsActivity = (ContactsActivity) obj;
-                contactsActivity.D = true;
-                ContactsActivity.g0(contactsActivity);
-                break;
-            case 9:
-                ((ts) obj).f = true;
-                break;
-            case 10:
-                du duVar = (du) obj;
-                duVar.a.getActionBar().C();
-                duVar.b.getActionBar().C();
-                duVar.c.getSearchField().requestFocus();
-                break;
-            case 11:
-                zw zwVar = (zw) obj;
-                zwVar.k2 = true;
-                org.telegram.ui.ActionBar.r0 r0Var2 = zwVar.E1;
-                if (r0Var2 != null) {
-                    r0Var2.setVisibility(8);
+                long j15 = 16;
+                if (j15 >= j14) {
+                    long j16 = (Long.MAX_VALUE / j15) << i10;
+                    j3 = j14;
+                    j10 = j16 + ((((-1) - (j16 * j15)) ^ Long.MIN_VALUE) >= (j15 ^ Long.MIN_VALUE) ? i10 : i12);
+                } else if (Long.MAX_VALUE < (j15 ^ Long.MIN_VALUE)) {
+                    j3 = j14;
+                    j10 = j3;
+                } else {
+                    j10 = 1;
+                    j3 = j14;
                 }
-                zwVar.Y3();
-                yw ywVar = zwVar.e0[0];
-                if (ywVar != null) {
-                    if (zwVar.o2 != null) {
-                        ywVar.a.c1();
-                        iw iwVar = zwVar.C0;
-                        if (iwVar != null) {
-                            bi.q1 q1Var = iwVar.a0;
-                            if (q1Var.g1) {
-                                q1Var.g1 = false;
-                                q1Var.K0(false);
+                int i14 = (substring.charAt(i12) != '+' || length <= i10) ? i12 : i10;
+                long j17 = j3;
+                while (i14 < length) {
+                    int digit = Character.digit(substring.charAt(i14), 16);
+                    int i15 = i10;
+                    if (digit == -1) {
+                        throw new NumberFormatException(substring.toString());
+                    }
+                    if (j17 < j3 || j17 > j10) {
+                        break loop0;
+                    }
+                    if (j17 == j10) {
+                        if (j15 >= j14) {
+                            long j18 = (-1) - (((Long.MAX_VALUE / j15) << i15) * j15);
+                            j11 = j18 - ((j18 ^ Long.MIN_VALUE) >= (j15 ^ Long.MIN_VALUE) ? j15 : j3);
+                        } else if (Long.MAX_VALUE < (j15 ^ Long.MIN_VALUE)) {
+                            i7 = i13;
+                            j12 = -1;
+                            if (digit <= ((int) j12)) {
+                                break loop0;
                             }
+                        } else {
+                            j11 = (-1) - j15;
                         }
+                        i7 = i13;
+                        j12 = j11;
+                        if (digit <= ((int) j12)) {
+                        }
+                    } else {
+                        i7 = i13;
                     }
-                    if (!zwVar.m2) {
-                        m3 m3Var = zwVar.p0;
-                        if (m3Var != null) {
-                            m3Var.f(true);
-                        }
-                        m3 m3Var2 = zwVar.q0;
-                        if (m3Var2 != null) {
-                            m3Var2.f(true);
-                        }
+                    j17 = (j17 * j15) + digit;
+                    i14++;
+                    i10 = i15;
+                    i13 = i7;
+                }
+                j14 = j17;
+            }
+            int i16 = i10;
+            int i17 = i13;
+            long p11 = si.p(p10, j14);
+            tL_messages_getQuickReplies.hash = p11;
+            long p12 = si.p(p11, u1Var.e == null ? j3 : r6.e1());
+            tL_messages_getQuickReplies.hash = p12;
+            gj gjVar = u1Var.e;
+            if (gjVar == null || (message = gjVar.k) == null || (message.flags & 32768) == 0) {
+                j13 = j3;
+                tL_messages_getQuickReplies.hash = si.p(p12, j13);
+            } else {
+                tL_messages_getQuickReplies.hash = si.p(p12, message.edit_date);
+                j13 = j3;
+            }
+            i13 = i17 + 1;
+            j14 = j13;
+            i10 = i16;
+            i12 = 0;
+        }
+        throw new NumberFormatException("Too large for unsigned long: ".concat(substring.toString()));
+    }
+
+    public final boolean j(final TLRPC.Update update, String str, int i7) {
+        if (update instanceof TL_update.TL_updateQuickReplyMessage) {
+            b(new ci.p0(this, ((TL_update.TL_updateQuickReplyMessage) update).message, str, i7));
+            return true;
+        }
+        if (update instanceof TL_update.TL_updateQuickReplies) {
+            final int i10 = 3;
+            b(new Runnable(this) { // from class: kg.s1
+                public final /* synthetic */ v1 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    u1 u1Var;
+                    switch (i10) {
+                        case 0:
+                            v1 v1Var = this.b;
+                            ArrayList arrayList = v1Var.b;
+                            int i11 = v1Var.a;
+                            TLRPC.TL_quickReply tL_quickReply = ((TL_update.TL_updateNewQuickReply) update).quick_reply;
+                            u1 c10 = v1Var.c(tL_quickReply.shortcut_id);
+                            if (c10 != null) {
+                                c10.b = tL_quickReply.shortcut;
+                                c10.f = tL_quickReply.count;
+                                c10.d = tL_quickReply.top_message;
+                                gj gjVar = c10.e;
+                                if (gjVar != null && gjVar.e1() != tL_quickReply.top_message) {
+                                    c10.e = null;
+                                    long e10 = m10.i(i11).e();
+                                    vr a02 = vr.a0(i11);
+                                    a02.a.c(new f2(v1Var, a02, c10, e10, 14));
+                                    break;
+                                }
+                            } else {
+                                u1 u1Var2 = new u1();
+                                u1Var2.a = tL_quickReply.shortcut_id;
+                                u1Var2.b = tL_quickReply.shortcut;
+                                u1Var2.f = tL_quickReply.count;
+                                u1Var2.d = tL_quickReply.top_message;
+                                for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                                    ((u1) arrayList.get(i12)).c = i12;
+                                }
+                                arrayList.add(u1Var2);
+                                v1Var.a(u1Var2.b);
+                            }
+                            v1Var.l();
+                            ns.f(i11).k(ns.F1, new Object[0]);
+                            break;
+                        case 1:
+                            v1 v1Var2 = this.b;
+                            int i13 = v1Var2.a;
+                            u1 c11 = v1Var2.c(((TL_update.TL_updateDeleteQuickReply) update).shortcut_id);
+                            if (c11 != null) {
+                                v1Var2.b.remove(c11);
+                                v1Var2.a(c11.b);
+                                int i14 = c11.a;
+                                vr a03 = vr.a0(i13);
+                                a03.a.c(new ai.v0(a03, i14, 13));
+                                v1Var2.l();
+                                ns.f(i13).k(ns.F1, new Object[0]);
+                                break;
+                            }
+                            break;
+                        case 2:
+                            v1 v1Var3 = this.b;
+                            int i15 = v1Var3.a;
+                            TL_update.TL_updateDeleteQuickReplyMessages tL_updateDeleteQuickReplyMessages = (TL_update.TL_updateDeleteQuickReplyMessages) update;
+                            u1 c12 = v1Var3.c(tL_updateDeleteQuickReplyMessages.shortcut_id);
+                            if (c12 != null) {
+                                int size = c12.f - tL_updateDeleteQuickReplyMessages.messages.size();
+                                c12.f = size;
+                                if (size <= 0) {
+                                    v1Var3.b.remove(c12);
+                                }
+                                ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
+                                gj gjVar2 = c12.e;
+                                if (!arrayList2.contains(Integer.valueOf(gjVar2 != null ? gjVar2.e1() : c12.d)) && c12.e != null) {
+                                    v1Var3.l();
+                                    ns.f(i15).k(ns.F1, new Object[0]);
+                                    break;
+                                } else {
+                                    c12.e = null;
+                                    long e11 = m10.i(i15).e();
+                                    vr a04 = vr.a0(i15);
+                                    a04.a.c(new f2(v1Var3, a04, c12, e11, 14));
+                                    break;
+                                }
+                            }
+                            break;
+                        default:
+                            ArrayList<TLRPC.TL_quickReply> arrayList3 = ((TL_update.TL_updateQuickReplies) update).quick_replies;
+                            v1 v1Var4 = this.b;
+                            ArrayList arrayList4 = v1Var4.b;
+                            ArrayList arrayList5 = new ArrayList(arrayList4);
+                            arrayList4.clear();
+                            for (int i16 = 0; i16 < arrayList3.size(); i16++) {
+                                TLRPC.TL_quickReply tL_quickReply2 = arrayList3.get(i16);
+                                int i17 = 0;
+                                while (true) {
+                                    if (i17 >= arrayList5.size()) {
+                                        u1Var = null;
+                                    } else if (((u1) arrayList5.get(i17)).a == tL_quickReply2.shortcut_id) {
+                                        u1Var = (u1) arrayList5.get(i17);
+                                    } else {
+                                        i17++;
+                                    }
+                                }
+                                if (u1Var == null) {
+                                    u1Var = new u1();
+                                }
+                                u1Var.a = tL_quickReply2.shortcut_id;
+                                u1Var.b = tL_quickReply2.shortcut;
+                                u1Var.f = tL_quickReply2.count;
+                                u1Var.c = i16;
+                                u1Var.d = tL_quickReply2.top_message;
+                                gj gjVar3 = u1Var.e;
+                                if (gjVar3 != null && gjVar3.e1() != tL_quickReply2.top_message) {
+                                    u1Var.e = null;
+                                }
+                                arrayList4.add(u1Var);
+                                v1Var4.a(u1Var.b);
+                            }
+                            v1Var4.l();
+                            ns.f(v1Var4.a).k(ns.F1, new Object[0]);
+                            break;
                     }
                 }
-                sv svVar = zwVar.E0;
-                if (svVar != null && svVar.getPremiumHint() != null) {
-                    zwVar.E0.getPremiumHint().f(true);
+            });
+            return true;
+        }
+        if (update instanceof TL_update.TL_updateNewQuickReply) {
+            final int i11 = 0;
+            b(new Runnable(this) { // from class: kg.s1
+                public final /* synthetic */ v1 b;
+
+                {
+                    this.b = this;
                 }
-                if (!zwVar.K) {
-                    zwVar.O4(0.0f);
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    u1 u1Var;
+                    switch (i11) {
+                        case 0:
+                            v1 v1Var = this.b;
+                            ArrayList arrayList = v1Var.b;
+                            int i112 = v1Var.a;
+                            TLRPC.TL_quickReply tL_quickReply = ((TL_update.TL_updateNewQuickReply) update).quick_reply;
+                            u1 c10 = v1Var.c(tL_quickReply.shortcut_id);
+                            if (c10 != null) {
+                                c10.b = tL_quickReply.shortcut;
+                                c10.f = tL_quickReply.count;
+                                c10.d = tL_quickReply.top_message;
+                                gj gjVar = c10.e;
+                                if (gjVar != null && gjVar.e1() != tL_quickReply.top_message) {
+                                    c10.e = null;
+                                    long e10 = m10.i(i112).e();
+                                    vr a02 = vr.a0(i112);
+                                    a02.a.c(new f2(v1Var, a02, c10, e10, 14));
+                                    break;
+                                }
+                            } else {
+                                u1 u1Var2 = new u1();
+                                u1Var2.a = tL_quickReply.shortcut_id;
+                                u1Var2.b = tL_quickReply.shortcut;
+                                u1Var2.f = tL_quickReply.count;
+                                u1Var2.d = tL_quickReply.top_message;
+                                for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                                    ((u1) arrayList.get(i12)).c = i12;
+                                }
+                                arrayList.add(u1Var2);
+                                v1Var.a(u1Var2.b);
+                            }
+                            v1Var.l();
+                            ns.f(i112).k(ns.F1, new Object[0]);
+                            break;
+                        case 1:
+                            v1 v1Var2 = this.b;
+                            int i13 = v1Var2.a;
+                            u1 c11 = v1Var2.c(((TL_update.TL_updateDeleteQuickReply) update).shortcut_id);
+                            if (c11 != null) {
+                                v1Var2.b.remove(c11);
+                                v1Var2.a(c11.b);
+                                int i14 = c11.a;
+                                vr a03 = vr.a0(i13);
+                                a03.a.c(new ai.v0(a03, i14, 13));
+                                v1Var2.l();
+                                ns.f(i13).k(ns.F1, new Object[0]);
+                                break;
+                            }
+                            break;
+                        case 2:
+                            v1 v1Var3 = this.b;
+                            int i15 = v1Var3.a;
+                            TL_update.TL_updateDeleteQuickReplyMessages tL_updateDeleteQuickReplyMessages = (TL_update.TL_updateDeleteQuickReplyMessages) update;
+                            u1 c12 = v1Var3.c(tL_updateDeleteQuickReplyMessages.shortcut_id);
+                            if (c12 != null) {
+                                int size = c12.f - tL_updateDeleteQuickReplyMessages.messages.size();
+                                c12.f = size;
+                                if (size <= 0) {
+                                    v1Var3.b.remove(c12);
+                                }
+                                ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
+                                gj gjVar2 = c12.e;
+                                if (!arrayList2.contains(Integer.valueOf(gjVar2 != null ? gjVar2.e1() : c12.d)) && c12.e != null) {
+                                    v1Var3.l();
+                                    ns.f(i15).k(ns.F1, new Object[0]);
+                                    break;
+                                } else {
+                                    c12.e = null;
+                                    long e11 = m10.i(i15).e();
+                                    vr a04 = vr.a0(i15);
+                                    a04.a.c(new f2(v1Var3, a04, c12, e11, 14));
+                                    break;
+                                }
+                            }
+                            break;
+                        default:
+                            ArrayList<TLRPC.TL_quickReply> arrayList3 = ((TL_update.TL_updateQuickReplies) update).quick_replies;
+                            v1 v1Var4 = this.b;
+                            ArrayList arrayList4 = v1Var4.b;
+                            ArrayList arrayList5 = new ArrayList(arrayList4);
+                            arrayList4.clear();
+                            for (int i16 = 0; i16 < arrayList3.size(); i16++) {
+                                TLRPC.TL_quickReply tL_quickReply2 = arrayList3.get(i16);
+                                int i17 = 0;
+                                while (true) {
+                                    if (i17 >= arrayList5.size()) {
+                                        u1Var = null;
+                                    } else if (((u1) arrayList5.get(i17)).a == tL_quickReply2.shortcut_id) {
+                                        u1Var = (u1) arrayList5.get(i17);
+                                    } else {
+                                        i17++;
+                                    }
+                                }
+                                if (u1Var == null) {
+                                    u1Var = new u1();
+                                }
+                                u1Var.a = tL_quickReply2.shortcut_id;
+                                u1Var.b = tL_quickReply2.shortcut;
+                                u1Var.f = tL_quickReply2.count;
+                                u1Var.c = i16;
+                                u1Var.d = tL_quickReply2.top_message;
+                                gj gjVar3 = u1Var.e;
+                                if (gjVar3 != null && gjVar3.e1() != tL_quickReply2.top_message) {
+                                    u1Var.e = null;
+                                }
+                                arrayList4.add(u1Var);
+                                v1Var4.a(u1Var.b);
+                            }
+                            v1Var4.l();
+                            ns.f(v1Var4.a).k(ns.F1, new Object[0]);
+                            break;
+                    }
                 }
-                zwVar.m5(false, false);
-                lVar = ((f2) zwVar).actionBar;
-                lVar.setBackButtonContentDescription(id.M0(2131754878, null));
-                qs.e().k(qs.r4, new Object[0]);
-                qVar = ((f2) zwVar).glassEngine;
-                qVar.g();
-                iw iwVar2 = zwVar.C0;
-                if (iwVar2 != null && (yl0Var2 = iwVar2.d0) != null) {
-                    yl0Var2.c = jg.e0.d;
+            });
+            return true;
+        }
+        if (update instanceof TL_update.TL_updateDeleteQuickReply) {
+            final int i12 = 1;
+            b(new Runnable(this) { // from class: kg.s1
+                public final /* synthetic */ v1 b;
+
+                {
+                    this.b = this;
                 }
-                if (iwVar2 == null || (yl0Var = iwVar2.d0) == null || !yl0Var.M()) {
-                    ArrayList arrayList = (ArrayList) zwVar.getMessagesController().w.get(0);
-                    if ((arrayList != null ? arrayList.size() : 0) <= 10) {
-                        if (!zwVar.u3) {
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    u1 u1Var;
+                    switch (i12) {
+                        case 0:
+                            v1 v1Var = this.b;
+                            ArrayList arrayList = v1Var.b;
+                            int i112 = v1Var.a;
+                            TLRPC.TL_quickReply tL_quickReply = ((TL_update.TL_updateNewQuickReply) update).quick_reply;
+                            u1 c10 = v1Var.c(tL_quickReply.shortcut_id);
+                            if (c10 != null) {
+                                c10.b = tL_quickReply.shortcut;
+                                c10.f = tL_quickReply.count;
+                                c10.d = tL_quickReply.top_message;
+                                gj gjVar = c10.e;
+                                if (gjVar != null && gjVar.e1() != tL_quickReply.top_message) {
+                                    c10.e = null;
+                                    long e10 = m10.i(i112).e();
+                                    vr a02 = vr.a0(i112);
+                                    a02.a.c(new f2(v1Var, a02, c10, e10, 14));
+                                    break;
+                                }
+                            } else {
+                                u1 u1Var2 = new u1();
+                                u1Var2.a = tL_quickReply.shortcut_id;
+                                u1Var2.b = tL_quickReply.shortcut;
+                                u1Var2.f = tL_quickReply.count;
+                                u1Var2.d = tL_quickReply.top_message;
+                                for (int i122 = 0; i122 < arrayList.size(); i122++) {
+                                    ((u1) arrayList.get(i122)).c = i122;
+                                }
+                                arrayList.add(u1Var2);
+                                v1Var.a(u1Var2.b);
+                            }
+                            v1Var.l();
+                            ns.f(i112).k(ns.F1, new Object[0]);
+                            break;
+                        case 1:
+                            v1 v1Var2 = this.b;
+                            int i13 = v1Var2.a;
+                            u1 c11 = v1Var2.c(((TL_update.TL_updateDeleteQuickReply) update).shortcut_id);
+                            if (c11 != null) {
+                                v1Var2.b.remove(c11);
+                                v1Var2.a(c11.b);
+                                int i14 = c11.a;
+                                vr a03 = vr.a0(i13);
+                                a03.a.c(new ai.v0(a03, i14, 13));
+                                v1Var2.l();
+                                ns.f(i13).k(ns.F1, new Object[0]);
+                                break;
+                            }
+                            break;
+                        case 2:
+                            v1 v1Var3 = this.b;
+                            int i15 = v1Var3.a;
+                            TL_update.TL_updateDeleteQuickReplyMessages tL_updateDeleteQuickReplyMessages = (TL_update.TL_updateDeleteQuickReplyMessages) update;
+                            u1 c12 = v1Var3.c(tL_updateDeleteQuickReplyMessages.shortcut_id);
+                            if (c12 != null) {
+                                int size = c12.f - tL_updateDeleteQuickReplyMessages.messages.size();
+                                c12.f = size;
+                                if (size <= 0) {
+                                    v1Var3.b.remove(c12);
+                                }
+                                ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
+                                gj gjVar2 = c12.e;
+                                if (!arrayList2.contains(Integer.valueOf(gjVar2 != null ? gjVar2.e1() : c12.d)) && c12.e != null) {
+                                    v1Var3.l();
+                                    ns.f(i15).k(ns.F1, new Object[0]);
+                                    break;
+                                } else {
+                                    c12.e = null;
+                                    long e11 = m10.i(i15).e();
+                                    vr a04 = vr.a0(i15);
+                                    a04.a.c(new f2(v1Var3, a04, c12, e11, 14));
+                                    break;
+                                }
+                            }
+                            break;
+                        default:
+                            ArrayList<TLRPC.TL_quickReply> arrayList3 = ((TL_update.TL_updateQuickReplies) update).quick_replies;
+                            v1 v1Var4 = this.b;
+                            ArrayList arrayList4 = v1Var4.b;
+                            ArrayList arrayList5 = new ArrayList(arrayList4);
+                            arrayList4.clear();
+                            for (int i16 = 0; i16 < arrayList3.size(); i16++) {
+                                TLRPC.TL_quickReply tL_quickReply2 = arrayList3.get(i16);
+                                int i17 = 0;
+                                while (true) {
+                                    if (i17 >= arrayList5.size()) {
+                                        u1Var = null;
+                                    } else if (((u1) arrayList5.get(i17)).a == tL_quickReply2.shortcut_id) {
+                                        u1Var = (u1) arrayList5.get(i17);
+                                    } else {
+                                        i17++;
+                                    }
+                                }
+                                if (u1Var == null) {
+                                    u1Var = new u1();
+                                }
+                                u1Var.a = tL_quickReply2.shortcut_id;
+                                u1Var.b = tL_quickReply2.shortcut;
+                                u1Var.f = tL_quickReply2.count;
+                                u1Var.c = i16;
+                                u1Var.d = tL_quickReply2.top_message;
+                                gj gjVar3 = u1Var.e;
+                                if (gjVar3 != null && gjVar3.e1() != tL_quickReply2.top_message) {
+                                    u1Var.e = null;
+                                }
+                                arrayList4.add(u1Var);
+                                v1Var4.a(u1Var.b);
+                            }
+                            v1Var4.l();
+                            ns.f(v1Var4.a).k(ns.F1, new Object[0]);
+                            break;
+                    }
+                }
+            });
+            return true;
+        }
+        if (!(update instanceof TL_update.TL_updateDeleteQuickReplyMessages)) {
+            return false;
+        }
+        final int i13 = 2;
+        b(new Runnable(this) { // from class: kg.s1
+            public final /* synthetic */ v1 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                u1 u1Var;
+                switch (i13) {
+                    case 0:
+                        v1 v1Var = this.b;
+                        ArrayList arrayList = v1Var.b;
+                        int i112 = v1Var.a;
+                        TLRPC.TL_quickReply tL_quickReply = ((TL_update.TL_updateNewQuickReply) update).quick_reply;
+                        u1 c10 = v1Var.c(tL_quickReply.shortcut_id);
+                        if (c10 != null) {
+                            c10.b = tL_quickReply.shortcut;
+                            c10.f = tL_quickReply.count;
+                            c10.d = tL_quickReply.top_message;
+                            gj gjVar = c10.e;
+                            if (gjVar != null && gjVar.e1() != tL_quickReply.top_message) {
+                                c10.e = null;
+                                long e10 = m10.i(i112).e();
+                                vr a02 = vr.a0(i112);
+                                a02.a.c(new f2(v1Var, a02, c10, e10, 14));
+                                break;
+                            }
+                        } else {
+                            u1 u1Var2 = new u1();
+                            u1Var2.a = tL_quickReply.shortcut_id;
+                            u1Var2.b = tL_quickReply.shortcut;
+                            u1Var2.f = tL_quickReply.count;
+                            u1Var2.d = tL_quickReply.top_message;
+                            for (int i122 = 0; i122 < arrayList.size(); i122++) {
+                                ((u1) arrayList.get(i122)).c = i122;
+                            }
+                            arrayList.add(u1Var2);
+                            v1Var.a(u1Var2.b);
+                        }
+                        v1Var.l();
+                        ns.f(i112).k(ns.F1, new Object[0]);
+                        break;
+                    case 1:
+                        v1 v1Var2 = this.b;
+                        int i132 = v1Var2.a;
+                        u1 c11 = v1Var2.c(((TL_update.TL_updateDeleteQuickReply) update).shortcut_id);
+                        if (c11 != null) {
+                            v1Var2.b.remove(c11);
+                            v1Var2.a(c11.b);
+                            int i14 = c11.a;
+                            vr a03 = vr.a0(i132);
+                            a03.a.c(new ai.v0(a03, i14, 13));
+                            v1Var2.l();
+                            ns.f(i132).k(ns.F1, new Object[0]);
                             break;
                         }
-                    }
-                }
-                zwVar.l2 = true;
-                if (!zwVar.r3) {
-                    zwVar.a5(true, false, true, false);
-                }
-                zwVar.X.setCloseButtonVisible(true);
-                zwVar.l5(true);
-                zwVar.N3();
-                break;
-            case 14:
-                ((LanguageSelectActivity) obj).getClass();
-                break;
-            case 15:
-                ((sa0) obj).t0 = true;
-                break;
-            case 16:
-                ((w80) ((w4) obj).b).y = true;
-                break;
-            case 17:
-                NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj;
-                notificationsCustomSettingsActivity.f = true;
-                notificationsCustomSettingsActivity.c.setShowAtCenter(true);
-                break;
-            case 18:
-                dn0 dn0Var = (dn0) obj;
-                dn0Var.a.getActionBar().C();
-                dn0Var.b.getActionBar().C();
-                dn0Var.c.getSearchField().requestFocus();
-                break;
-            case 21:
-                o31 o31Var = (o31) obj;
-                o31Var.a.a(true, true);
-                o31Var.f.I("");
-                o31Var.o0(false, true);
-                o31Var.c.f3.O(false);
-                break;
-            case 22:
-                z91 z91Var = (z91) obj;
-                z91.f0(z91Var, true);
-                v91 v91Var = z91Var.r0;
-                if (!v91Var.d0.equals("")) {
-                    v91Var.M(v91Var.e[0], v91Var.getCurrentPosition(), "", false);
-                }
-                z91Var.r0.setAlpha(0.0f);
-                z91Var.r0.p0.e(true, false);
-                break;
-            case 23:
-                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) obj;
-                wallpapersListActivity.F.setAdapter(wallpapersListActivity.H);
-                wallpapersListActivity.F.invalidate();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n0
-    public void j(jg.o0 o0Var) {
-        switch (this.a) {
-            case 6:
-                uj ujVar = (uj) this.b;
-                tj tjVar = ujVar.D;
-                tjVar.R.remove(o0Var);
-                tjVar.Y(ujVar.F.getSearchField().getText().toString(), false);
-                tjVar.a0(null, null, true);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n0
-    public void k(EditTextBoldCursor editTextBoldCursor) {
-        switch (this.a) {
-            case 1:
-                mb mbVar = (mb) this.b;
-                mbVar.U = true;
-                mbVar.v0 = editTextBoldCursor.getText().toString();
-                mbVar.Z0(true);
-                break;
-            case 18:
-                dn0 dn0Var = (dn0) this.b;
-                dn0Var.a.getActionBar().B();
-                dn0Var.b.getActionBar().B();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n0
-    public void l(EditText editText) {
-        pj0 pj0Var;
-        bi.q1 q1Var;
-        iw iwVar;
-        yl0 yl0Var;
-        int i7 = this.a;
-        Object obj = this.b;
-        switch (i7) {
-            case 0:
-                w1 w1Var = (w1) obj;
-                w1Var.e = editText.getText().toString();
-                w1Var.a.f3.O(true);
-                w1Var.a.v0(0);
-                break;
-            case 2:
-                uo uoVar = (uo) obj;
-                if (uoVar.e != null) {
-                    String obj2 = editText.getText().toString();
-                    if (obj2.length() != 0 && (pj0Var = uoVar.b) != null) {
-                        v4.g0 adapter = pj0Var.getAdapter();
-                        to toVar = uoVar.e;
-                        if (adapter != toVar) {
-                            uoVar.b.setAdapter(toVar);
-                            uoVar.e.f();
-                            uoVar.b.setFastScrollVisible(false);
-                            uoVar.b.setVerticalScrollBarEnabled(true);
-                            uoVar.d.b();
-                        }
-                    }
-                    uoVar.e.F(obj2);
-                    break;
-                }
-                break;
-            case 3:
-                rq rqVar = (rq) obj;
-                if (rqVar.e != null) {
-                    String obj3 = editText.getText().toString();
-                    int b10 = rqVar.c.getAdapter() == null ? 0 : rqVar.c.getAdapter().b();
-                    rqVar.e.F(obj3);
-                    if (TextUtils.isEmpty(obj3) && (q1Var = rqVar.c) != null) {
-                        v4.g0 adapter2 = q1Var.getAdapter();
-                        nq nqVar = rqVar.a;
-                        if (adapter2 != nqVar) {
-                            bi.q1 q1Var2 = rqVar.c;
-                            q1Var2.W1 = false;
-                            q1Var2.X1 = 0;
-                            q1Var2.setAdapter(nqVar);
-                            if (b10 == 0) {
-                                rqVar.D0(0);
+                        break;
+                    case 2:
+                        v1 v1Var3 = this.b;
+                        int i15 = v1Var3.a;
+                        TL_update.TL_updateDeleteQuickReplyMessages tL_updateDeleteQuickReplyMessages = (TL_update.TL_updateDeleteQuickReplyMessages) update;
+                        u1 c12 = v1Var3.c(tL_updateDeleteQuickReplyMessages.shortcut_id);
+                        if (c12 != null) {
+                            int size = c12.f - tL_updateDeleteQuickReplyMessages.messages.size();
+                            c12.f = size;
+                            if (size <= 0) {
+                                v1Var3.b.remove(c12);
+                            }
+                            ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
+                            gj gjVar2 = c12.e;
+                            if (!arrayList2.contains(Integer.valueOf(gjVar2 != null ? gjVar2.e1() : c12.d)) && c12.e != null) {
+                                v1Var3.l();
+                                ns.f(i15).k(ns.F1, new Object[0]);
+                                break;
+                            } else {
+                                c12.e = null;
+                                long e11 = m10.i(i15).e();
+                                vr a04 = vr.a0(i15);
+                                a04.a.c(new f2(v1Var3, a04, c12, e11, 14));
+                                break;
                             }
                         }
-                    }
-                    rqVar.C1.setVisibility(8);
-                    rqVar.B1.setVisibility(0);
-                    break;
-                }
-                break;
-            case 4:
-                tq tqVar = (tq) obj;
-                tqVar.n = editText.getText().toString();
-                w3 w3Var = tqVar.a;
-                if (w3Var != null) {
-                    w3Var.f3.O(true);
-                    break;
-                }
-                break;
-            case 5:
-                a8 a8Var = (a8) obj;
-                if (editText.length() > 0) {
-                    a8Var.t1.E(editText.getText().toString());
-                    break;
-                } else {
-                    a8Var.p1 = false;
-                    a8Var.t1.E(null);
-                    break;
-                }
-            case 6:
-                ((uj) obj).D.Y(editText.getText().toString(), false);
-                break;
-            case 7:
-                vk vkVar = (vk) obj;
-                e5 e5Var = vkVar.J;
-                bi.q1 q1Var3 = vkVar.L;
-                pj0 pj0Var2 = vkVar.M;
-                tk tkVar = vkVar.N;
-                if (tkVar != null) {
-                    String obj4 = editText.getText().toString();
-                    if (obj4.length() != 0) {
-                        vkVar.d0 = true;
-                        vkVar.x.setShowSearchProgress(true);
-                        q1Var3.setVisibility(8);
-                        e5Var.setVisibility(8);
-                        if (pj0Var2.getAdapter() != tkVar) {
-                            pj0Var2.setAdapter(tkVar);
-                        }
-                        pj0Var2.setVisibility(0);
-                        vkVar.e0 = tkVar.f.isEmpty();
-                        vkVar.j0();
-                    } else {
-                        q1Var3.setVisibility(0);
-                        e5Var.setVisibility(0);
-                        pj0Var2.setAdapter(null);
-                        pj0Var2.setVisibility(8);
-                        vkVar.s.setVisibility(8);
-                    }
-                    tkVar.G(obj4);
-                    break;
-                }
-                break;
-            case 8:
-                ContactsActivity contactsActivity = (ContactsActivity) obj;
-                if (contactsActivity.h != null) {
-                    String obj5 = editText.getText().toString();
-                    contactsActivity.b0 = obj5;
-                    if (obj5.isEmpty()) {
-                        contactsActivity.y = false;
-                        contactsActivity.h.G(null);
-                        pj0 pj0Var3 = contactsActivity.d;
-                        if (pj0Var3 != null) {
-                            pj0Var3.setAdapter(contactsActivity.b);
-                            contactsActivity.d.setSectionsType(1);
-                            contactsActivity.d.setFastScrollVisible(true);
-                            contactsActivity.d.setVerticalScrollBarEnabled(false);
-                            break;
-                        }
-                    } else {
-                        contactsActivity.y = true;
-                        pj0 pj0Var4 = contactsActivity.d;
-                        if (pj0Var4 != null) {
-                            pj0Var4.setAdapter(contactsActivity.h);
-                            contactsActivity.d.setSectionsType(0);
-                            contactsActivity.h.f();
-                            contactsActivity.d.setFastScrollVisible(false);
-                            contactsActivity.d.setVerticalScrollBarEnabled(true);
-                        }
-                        contactsActivity.c.e(true, true);
-                        contactsActivity.h.G(obj5);
                         break;
-                    }
-                }
-                break;
-            case 9:
-                ts tsVar = (ts) obj;
-                String obj6 = editText.getText().toString();
-                if (TextUtils.isEmpty(obj6)) {
-                    nj njVar = tsVar.d;
-                    njVar.getClass();
-                    njVar.e = null;
-                    tsVar.e = false;
-                    tsVar.a.setAdapter(tsVar.c);
-                    tsVar.a.setFastScrollVisible(true);
-                    break;
-                } else {
-                    nj njVar2 = tsVar.d;
-                    njVar2.getClass();
-                    if (obj6 == null) {
-                        njVar2.e = null;
-                    } else {
-                        try {
-                            Timer timer = (Timer) njVar2.h;
-                            if (timer != null) {
-                                timer.cancel();
+                    default:
+                        ArrayList<TLRPC.TL_quickReply> arrayList3 = ((TL_update.TL_updateQuickReplies) update).quick_replies;
+                        v1 v1Var4 = this.b;
+                        ArrayList arrayList4 = v1Var4.b;
+                        ArrayList arrayList5 = new ArrayList(arrayList4);
+                        arrayList4.clear();
+                        for (int i16 = 0; i16 < arrayList3.size(); i16++) {
+                            TLRPC.TL_quickReply tL_quickReply2 = arrayList3.get(i16);
+                            int i17 = 0;
+                            while (true) {
+                                if (i17 >= arrayList5.size()) {
+                                    u1Var = null;
+                                } else if (((u1) arrayList5.get(i17)).a == tL_quickReply2.shortcut_id) {
+                                    u1Var = (u1) arrayList5.get(i17);
+                                } else {
+                                    i17++;
+                                }
                             }
-                        } catch (Exception e10) {
-                            org.telegram.messenger.a8.g(e10, true);
+                            if (u1Var == null) {
+                                u1Var = new u1();
+                            }
+                            u1Var.a = tL_quickReply2.shortcut_id;
+                            u1Var.b = tL_quickReply2.shortcut;
+                            u1Var.f = tL_quickReply2.count;
+                            u1Var.c = i16;
+                            u1Var.d = tL_quickReply2.top_message;
+                            gj gjVar3 = u1Var.e;
+                            if (gjVar3 != null && gjVar3.e1() != tL_quickReply2.top_message) {
+                                u1Var.e = null;
+                            }
+                            arrayList4.add(u1Var);
+                            v1Var4.a(u1Var.b);
                         }
-                        Timer timer2 = new Timer();
-                        njVar2.h = timer2;
-                        timer2.schedule(new jg.q1(2, njVar2, obj6), 100L, 300L);
-                    }
-                    if (obj6.length() != 0) {
-                        tsVar.e = true;
+                        v1Var4.l();
+                        ns.f(v1Var4.a).k(ns.F1, new Object[0]);
                         break;
-                    }
                 }
-                break;
-            case 10:
-                du duVar = (du) obj;
-                duVar.a.getActionBar().setSearchFieldText(editText.getText().toString());
-                duVar.b.getActionBar().setSearchFieldText(editText.getText().toString());
-                break;
-            case 11:
-                zw zwVar = (zw) obj;
-                String obj7 = editText.getText().toString();
-                if (!obj7.isEmpty() || (((iwVar = zwVar.C0) != null && (yl0Var = iwVar.d0) != null && yl0Var.M()) || zwVar.u3 || zwVar.K)) {
-                    zwVar.l2 = true;
-                    if (!zwVar.r3) {
-                        zwVar.a5(true, false, true, false);
-                    }
-                }
-                iw iwVar2 = zwVar.C0;
-                if (iwVar2 != null) {
-                    View currentView = iwVar2.getCurrentView();
-                    boolean z9 = TextUtils.isEmpty(iwVar2.M0) ? true : !iwVar2.g0;
-                    iwVar2.M0 = obj7;
-                    iwVar2.P(currentView, iwVar2.getCurrentPosition(), obj7, z9);
-                    break;
-                }
-                break;
-            case 12:
-                String obj8 = editText.getText().toString();
-                p50 p50Var = (p50) obj;
-                o50.E(p50Var.f, obj8);
-                boolean isEmpty = TextUtils.isEmpty(obj8);
-                boolean z10 = !isEmpty;
-                if (z10 != p50Var.M) {
-                    p50Var.M = z10;
-                    pj0 pj0Var5 = p50Var.d;
-                    if (pj0Var5 != null) {
-                        pj0Var5.setAdapter(!isEmpty ? p50Var.f : p50Var.e);
-                        break;
-                    }
-                }
-                break;
-            case 13:
-                c60 c60Var = (c60) obj;
-                if (editText.length() != 0) {
-                    c60Var.y = true;
-                    z50 z50Var = c60Var.s;
-                    if (!z50Var.h) {
-                        z50Var.h = true;
-                        z50Var.f();
-                    }
-                    c60Var.s.E(editText.getText().toString());
-                    c60Var.h.setFastScrollVisible(false);
-                    c60Var.h.setVerticalScrollBarEnabled(true);
-                    c60Var.r.e(true, true);
-                    c60Var.r.setStickerType(1);
-                    c60Var.r.d.setText(id.M0(2131748167, null));
-                    c60Var.r.e.setText(id.M0(2131745807, null));
-                    break;
-                } else {
-                    c60.d0(c60Var);
-                    break;
-                }
-            case 14:
-                String obj9 = editText.getText().toString();
-                LanguageSelectActivity languageSelectActivity = (LanguageSelectActivity) obj;
-                languageSelectActivity.m0(obj9);
-                if (obj9.length() != 0) {
-                    languageSelectActivity.getClass();
-                    pj0 pj0Var6 = languageSelectActivity.b;
-                    if (pj0Var6 != null) {
-                        pj0Var6.setAdapter(languageSelectActivity.c);
-                        break;
-                    }
-                } else {
-                    languageSelectActivity.getClass();
-                    languageSelectActivity.getClass();
-                    if (languageSelectActivity.b != null) {
-                        languageSelectActivity.d.setVisibility(8);
-                        languageSelectActivity.b.setAdapter(languageSelectActivity.a);
-                        break;
-                    }
-                }
-                break;
-            case 15:
-                sa0 sa0Var = (sa0) obj;
-                if (sa0Var.S != null) {
-                    String obj10 = editText.getText().toString();
-                    if (obj10.length() != 0) {
-                        sa0Var.u0 = true;
-                        sa0Var.r.setShowSearchProgress(true);
-                        g5 g5Var = sa0Var.V;
-                        if (g5Var != null) {
-                            g5Var.setVisibility(8);
-                        }
-                        sa0Var.Q.setVisibility(8);
-                        sa0Var.O.setVisibility(8);
-                        v4.g0 adapter3 = sa0Var.R.getAdapter();
-                        tk tkVar2 = sa0Var.S;
-                        if (adapter3 != tkVar2) {
-                            sa0Var.R.setAdapter(tkVar2);
-                        }
-                        sa0Var.R.setVisibility(0);
-                        sa0Var.v0 = sa0Var.S.b() == 0;
-                    } else {
-                        g5 g5Var2 = sa0Var.V;
-                        if (g5Var2 != null) {
-                            g5Var2.setVisibility(0);
-                        }
-                        sa0Var.Q.setVisibility(0);
-                        sa0Var.O.setVisibility(0);
-                        sa0Var.R.setAdapter(null);
-                        sa0Var.R.setVisibility(8);
-                    }
-                    sa0Var.L0();
-                    sa0Var.M0();
-                    sa0Var.S.G(obj10);
-                    break;
-                }
-                break;
-            case 16:
-                ((w80) ((w4) obj).b).j(editText.getText().toString());
-                break;
-            case 17:
-                NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj;
-                if (notificationsCustomSettingsActivity.d != null) {
-                    String obj11 = editText.getText().toString();
-                    if (obj11.length() != 0) {
-                        notificationsCustomSettingsActivity.getClass();
-                        if (notificationsCustomSettingsActivity.a != null) {
-                            notificationsCustomSettingsActivity.c.setText(id.M0(2131748167, "NoResult"));
-                            notificationsCustomSettingsActivity.c.b();
-                            notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.d);
-                            notificationsCustomSettingsActivity.d.f();
-                            notificationsCustomSettingsActivity.a.setFastScrollVisible(false);
-                            notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(true);
-                        }
-                    }
-                    notificationsCustomSettingsActivity.d.F(obj11);
-                    break;
-                }
-                break;
-            case 18:
-                dn0 dn0Var = (dn0) obj;
-                dn0Var.a.getActionBar().setSearchFieldText(editText.getText().toString());
-                dn0Var.b.getActionBar().setSearchFieldText(editText.getText().toString());
-                break;
-            case 19:
-                ((ProfileActivity) obj).e.I(editText.getText().toString().toLowerCase());
-                break;
-            case 20:
-                String obj12 = editText.getText().toString();
-                uy0 uy0Var = (uy0) obj;
-                if (obj12 == null) {
-                    uy0Var.f = null;
-                } else {
-                    String lowerCase = obj12.trim().toLowerCase();
-                    ArrayList arrayList = uy0Var.f;
-                    if (arrayList == null) {
-                        uy0Var.f = new ArrayList();
-                    } else {
-                        arrayList.clear();
-                    }
-                    for (int i10 = 0; i10 < uy0Var.h.size(); i10++) {
-                        y00 y00Var = (y00) uy0Var.h.get(i10);
-                        if (y00Var.d.startsWith(lowerCase)) {
-                            uy0Var.f.add(0, y00Var);
-                        } else if (y00Var.d.contains(lowerCase)) {
-                            uy0Var.f.add(y00Var);
-                        }
-                    }
-                    uy0Var.c.f();
-                }
-                if (obj12.length() != 0) {
-                    pj0 pj0Var7 = uy0Var.b;
-                    if (pj0Var7 != null) {
-                        pj0Var7.setAdapter(uy0Var.c);
-                        break;
-                    }
-                } else if (uy0Var.b != null) {
-                    uy0Var.d.setVisibility(8);
-                    uy0Var.b.setAdapter(uy0Var.a);
-                    break;
-                }
-                break;
-            case 21:
-                ((o31) obj).f.I(editText.getText().toString());
-                break;
-            case 22:
-                String obj13 = editText.getText().toString();
-                v91 v91Var = ((z91) obj).r0;
-                if (!v91Var.d0.equals(obj13)) {
-                    v91Var.M(v91Var.e[0], v91Var.getCurrentPosition(), obj13, false);
-                    break;
-                }
-                break;
-            case 23:
-                ((WallpapersListActivity) obj).H.E(editText.getText().toString(), false);
-                break;
+            }
+        });
+        return true;
+    }
+
+    public final void k(int i7, String str) {
+        u1 c10 = c(i7);
+        if (c10 == null) {
+            return;
         }
+        c10.b = str;
+        TLRPC.TL_messages_editQuickReplyShortcut tL_messages_editQuickReplyShortcut = new TLRPC.TL_messages_editQuickReplyShortcut();
+        tL_messages_editQuickReplyShortcut.shortcut_id = i7;
+        tL_messages_editQuickReplyShortcut.shortcut = str;
+        int i10 = this.a;
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_editQuickReplyShortcut, new m5(7));
+        l();
+        ns.f(i10).k(ns.F1, new Object[0]);
     }
 
-    private final void q(jg.o0 o0Var) {
-    }
-
-    private final void n() {
-    }
-
-    private final void o() {
-    }
-
-    private final void p() {
+    public final void l() {
+        vr a02 = vr.a0(this.a);
+        a02.a.c(new t1(this, a02));
     }
 }

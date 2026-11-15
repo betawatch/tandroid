@@ -1,6 +1,6 @@
 package android.support.v4.media.session;
 
-import a8.i1;
+import a8.j1;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g extends Binder implements b {
     public final WeakReference a;
@@ -21,12 +21,12 @@ public final class g extends Binder implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void E(Bundle bundle) {
+    public final void F(Bundle bundle) {
         throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.b
-    public final void L(List list) {
+    public final void M(List list) {
         throw new AssertionError();
     }
 
@@ -60,17 +60,12 @@ public final class g extends Binder implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void k0(CharSequence charSequence) {
+    public final void l0(CharSequence charSequence) {
         throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.b
-    public final void m0() {
-        throw new AssertionError();
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void o0(MediaMetadataCompat mediaMetadataCompat) {
+    public final void n0() {
         throw new AssertionError();
     }
 
@@ -87,32 +82,32 @@ public final class g extends Binder implements b {
         switch (i7) {
             case 1:
                 String readString = parcel.readString();
-                Bundle bundle = (Bundle) i1.a(parcel, Bundle.CREATOR);
+                Bundle bundle = (Bundle) j1.a(parcel, Bundle.CREATOR);
                 androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) weakReference.get();
                 if (qVar != null) {
                     qVar.e(1, readString, bundle);
                 }
                 return true;
             case 2:
-                m0();
+                n0();
                 return true;
             case 3:
-                e1((PlaybackStateCompat) i1.a(parcel, PlaybackStateCompat.CREATOR));
+                e1((PlaybackStateCompat) j1.a(parcel, PlaybackStateCompat.CREATOR));
                 return true;
             case 4:
-                o0((MediaMetadataCompat) i1.a(parcel, MediaMetadataCompat.CREATOR));
+                p0((MediaMetadataCompat) j1.a(parcel, MediaMetadataCompat.CREATOR));
                 return true;
             case 5:
-                L(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
+                M(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
                 return true;
             case 6:
-                k0((CharSequence) i1.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
+                l0((CharSequence) j1.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
                 return true;
             case 7:
-                E((Bundle) i1.a(parcel, Bundle.CREATOR));
+                F((Bundle) j1.a(parcel, Bundle.CREATOR));
                 return true;
             case 8:
-                g1((ParcelableVolumeInfo) i1.a(parcel, ParcelableVolumeInfo.CREATOR));
+                g1((ParcelableVolumeInfo) j1.a(parcel, ParcelableVolumeInfo.CREATOR));
                 return true;
             case 9:
                 e(parcel.readInt());
@@ -121,10 +116,10 @@ public final class g extends Binder implements b {
                 parcel.readInt();
                 return true;
             case 11:
-                boolean z9 = parcel.readInt() != 0;
+                boolean z10 = parcel.readInt() != 0;
                 androidx.mediarouter.app.q qVar2 = (androidx.mediarouter.app.q) weakReference.get();
                 if (qVar2 != null) {
-                    qVar2.e(11, Boolean.valueOf(z9), null);
+                    qVar2.e(11, Boolean.valueOf(z10), null);
                     return true;
                 }
                 return true;
@@ -141,6 +136,11 @@ public final class g extends Binder implements b {
             default:
                 return super.onTransact(i7, parcel, parcel2, i10);
         }
+    }
+
+    @Override // android.support.v4.media.session.b
+    public final void p0(MediaMetadataCompat mediaMetadataCompat) {
+        throw new AssertionError();
     }
 
     @Override // android.os.IInterface

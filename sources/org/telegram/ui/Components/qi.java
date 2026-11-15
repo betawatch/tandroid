@@ -1,45 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qi implements dj0, vi {
-    public final /* synthetic */ ej a;
+public final class qi extends FragmentContextView {
+    public final /* synthetic */ FrameLayout Y0;
+    public final /* synthetic */ vi Z0;
 
-    public /* synthetic */ qi(ej ejVar) {
-        this.a = ejVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qi(vi viVar, Context context, org.telegram.ui.ActionBar.e2 e2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.e6 e6Var, FrameLayout frameLayout2) {
+        super(context, e2Var, frameLayout, false, e6Var);
+        this.Z0 = viVar;
+        this.Y0 = frameLayout2;
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public void a(TLRPC.User user, boolean z9, int i7, long j3) {
-        ej ejVar = this.a;
-        ejVar.b.a(true);
-        ejVar.J.a(user, z9, i7, j3);
-    }
-
-    @Override // org.telegram.ui.Components.dj0
-    public boolean c(int i7, View view) {
-        Object O;
-        ej ejVar = this.a;
-        v4.g0 adapter = ejVar.s.getAdapter();
-        aj ajVar = ejVar.F;
-        if (adapter == ajVar) {
-            O = ajVar.E(i7);
-        } else {
-            yi yiVar = ejVar.E;
-            O = yiVar.O(yiVar.S(i7), yiVar.Q(i7));
-        }
-        if (O == null) {
-            return false;
-        }
-        ejVar.P((dj) view, O);
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.vi
-    public /* synthetic */ void b(ArrayList arrayList, String str, boolean z9, int i7, long j3, boolean z10) {
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i7) {
+        this.Z0.y.i(this.Y0, i7 == 0, true);
     }
 }

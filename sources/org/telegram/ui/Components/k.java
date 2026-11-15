@@ -3,24 +3,24 @@ package org.telegram.ui.Components;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class k implements TextWatcher {
-    public final /* synthetic */ f0 a;
+    public final /* synthetic */ d0 a;
 
-    public k(f0 f0Var) {
-        this.a = f0Var;
+    public k(d0 d0Var) {
+        this.a = d0Var;
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
-        e0 e0Var;
-        f0 f0Var = this.a;
-        e0 e0Var2 = f0Var.r2;
-        if ((e0Var2 != null ? e0Var2.getSelectedTab() : 0) == 1 && (e0Var = f0Var.s2) != null && (e0Var.getSelectedTone() instanceof a0)) {
-            f0Var.h1();
-            f0Var.v1();
-            f0Var.u1(true);
+        c0 c0Var;
+        d0 d0Var = this.a;
+        c0 c0Var2 = d0Var.s2;
+        if ((c0Var2 != null ? c0Var2.getSelectedTab() : 0) == 1 && (c0Var = d0Var.t2) != null && (c0Var.getSelectedTone() instanceof z)) {
+            d0Var.h1();
+            d0Var.v1();
+            d0Var.u1(true);
         }
     }
 

@@ -1,83 +1,113 @@
 package org.telegram.ui;
 
 import android.graphics.RectF;
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
+import android.widget.Toast;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jo0 implements org.telegram.ui.ActionBar.r1, org.telegram.messenger.w10, org.telegram.ui.Components.vt0, org.telegram.ui.ActionBar.q6, org.telegram.ui.ActionBar.r6 {
+public final /* synthetic */ class jo0 implements RequestDelegate {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ jo0(int i7) {
+    public /* synthetic */ jo0(Object obj, Object obj2, Object obj3, int i7) {
         this.a = i7;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // org.telegram.ui.ActionBar.r6
-    public void c(int i7, View view) {
-        org.telegram.ui.Wallet.w3 w3Var = (org.telegram.ui.Wallet.w3) view;
-        ShapeDrawable shapeDrawable = w3Var.e0;
-        if (shapeDrawable != null) {
-            shapeDrawable.getPaint().setColor(i7);
-            w3Var.e0.invalidateSelf();
-        }
-    }
-
-    @Override // org.telegram.messenger.w10
-    public Object d(Number number, Object obj) {
-        return ((Integer) number).intValue() == 0 ? bi.dd.a1(false, org.telegram.messenger.id.H(',', "Stars", ((Integer) obj).intValue()), 0.66f, null) : org.telegram.messenger.id.E(r4.intValue(), ',');
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                u1Var.dismiss();
+                org.telegram.messenger.g0.h3(new hn0((oo0) this.b, tLObject, (org.telegram.messenger.m10) this.c, (TLRPC.Photo) this.d, 3));
                 break;
             case 1:
-                u1Var.dismiss();
+                org.telegram.messenger.g0.h3(new hp(this.b, (Object) tLObject, this.c, this.d, tL_error, 28));
+                break;
+            case 2:
+                org.telegram.messenger.g0.h3(new hn0((PrivacySettingsActivity) this.b, (org.telegram.ui.ActionBar.t1) this.c, tLObject, (TL_account.setAccountTTL) this.d, 6));
                 break;
             case 3:
-                RectF rectF = ProfileActivity.V6;
-                u1Var.dismiss();
+                ProfileActivity profileActivity = (ProfileActivity) this.b;
+                TLRPC.UserFull userFull = (TLRPC.UserFull) this.c;
+                TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) this.d;
+                RectF rectF = ProfileActivity.X6;
+                org.telegram.messenger.g0.h3(new cu0(profileActivity, tLObject, userFull, tL_birthday, tL_error, 2));
                 break;
             case 4:
-                u1Var.dismiss();
+                ProfileActivity profileActivity2 = (ProfileActivity) this.b;
+                TLRPC.TL_username tL_username = (TLRPC.TL_username) this.c;
+                iv0 iv0Var = (iv0) this.d;
+                RectF rectF2 = ProfileActivity.X6;
+                org.telegram.messenger.g0.h3(new cu0(profileActivity2, tLObject, tL_username, iv0Var, tL_error, 0));
+                break;
+            case 5:
+                ProfileActivity profileActivity3 = (ProfileActivity) this.b;
+                String str = (String) this.c;
+                TLRPC.User user = (TLRPC.User) this.d;
+                RectF rectF3 = ProfileActivity.X6;
+                org.telegram.messenger.g0.h3(new cu0(profileActivity3, tLObject, str, user, tL_error, 1));
+                break;
+            case 6:
+                org.telegram.messenger.g0.h3(new hn0((pv0) this.b, tLObject, (org.telegram.messenger.m10) this.c, (TLRPC.Photo) this.d, 12));
+                break;
+            case 7:
+                org.telegram.messenger.g0.h3(new cu0((x11) this.b, tL_error, tLObject, (TwoStepVerificationActivity) this.c, (TLRPC.User) this.d));
+                break;
+            case 8:
+                org.telegram.messenger.g0.h3(new hn0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.t1) this.c, tL_error, (TLRPC.TL_authorization) this.d, 15));
+                break;
+            case 9:
+                org.telegram.messenger.g0.h3(new hn0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.t1) this.c, tL_error, (TLRPC.TL_webAuthorization) this.d, 14));
                 break;
             case 10:
-                u1Var.dismiss();
+                k41 k41Var = (k41) this.b;
+                String str2 = (String) this.c;
+                y41 y41Var = (y41) this.d;
+                boolean z10 = true;
+                mg.b bVar = null;
+                if (tLObject instanceof TL_stats.TL_statsGraph) {
+                    try {
+                        JSONObject jSONObject = new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data);
+                        l41 l41Var = k41Var.r;
+                        int i7 = l41Var.i;
+                        if (l41Var != k41Var.x.x) {
+                            z10 = false;
+                        }
+                        bVar = z41.h0(jSONObject, i7, z10);
+                    } catch (JSONException e10) {
+                        e10.printStackTrace();
+                    }
+                } else if (tLObject instanceof TL_stats.TL_statsGraphError) {
+                    Toast.makeText(k41Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
+                }
+                org.telegram.messenger.g0.h3(new hn0(18, k41Var, bVar, y41Var, str2));
                 break;
-            case 14:
-                u1Var.dismiss();
-                break;
-            case 15:
-                u1Var.dismiss();
-                break;
-            case 16:
-                u1Var.dismiss();
+            case 11:
+                org.telegram.messenger.g0.h3(new hn0(20, (o81) this.b, tLObject, (org.telegram.ui.ActionBar.t1) this.d, (String) this.c));
                 break;
             default:
-                u1Var.dismiss();
-                break;
+                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
+                byte[] bArr = (byte[]) this.c;
+                byte[] bArr2 = (byte[]) this.d;
+                if (tL_error != null) {
+                    org.telegram.messenger.g0.h3(new fy0(21, twoStepVerificationActivity, tL_error));
+                    break;
+                } else {
+                    Utilities.e.c(new hn0(twoStepVerificationActivity, bArr, tLObject, bArr2, 21));
+                    break;
+                }
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.q6
-    public int i(View view) {
-        ShapeDrawable shapeDrawable = ((org.telegram.ui.Wallet.w3) view).e0;
-        if (shapeDrawable != null) {
-            return shapeDrawable.getPaint().getColor();
-        }
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.vt0
-    public void m(int i7) {
-        org.telegram.messenger.iz.b1 = i7;
-        org.telegram.messenger.iz.y();
-    }
-
-    @Override // org.telegram.ui.Components.vt0
-    public /* synthetic */ void n() {
     }
 }

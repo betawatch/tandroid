@@ -4,24 +4,24 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
-import fi.e5;
-import org.telegram.messenger.iz;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.u4;
+import hi.c5;
+import org.telegram.messenger.gz;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.r4;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class t0 implements h6 {
+public final class t0 implements e6 {
     public final TextPaint a;
     public final TextPaint b;
     public final TextPaint c;
     public final Paint d;
     public final Paint e;
-    public final /* synthetic */ e5 f;
+    public final /* synthetic */ c5 f;
 
-    public t0(e5 e5Var) {
-        this.f = e5Var;
+    public t0(c5 c5Var) {
+        this.f = c5Var;
         TextPaint textPaint = new TextPaint();
         this.a = textPaint;
         TextPaint textPaint2 = new TextPaint();
@@ -32,29 +32,29 @@ public final class t0 implements h6 {
         this.d = new Paint(3);
         Paint paint = new Paint(3);
         this.e = paint;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(Math.max(16, iz.W0) - 2));
-        textPaint2.setTextSize(org.telegram.messenger.g0.L(Math.max(16, iz.W0) - 2));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(Math.max(16, gz.W0) - 2));
+        textPaint2.setTextSize(org.telegram.messenger.g0.L(Math.max(16, gz.W0) - 2));
         textPaint3.setTextSize(org.telegram.messenger.g0.L(15.0f));
         textPaint3.setTypeface(org.telegram.messenger.g0.o());
         paint.setColor(352321536);
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
+    @Override // org.telegram.ui.ActionBar.e6
     public final boolean a() {
-        return this.f.B0;
+        return this.f.C0;
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
+    @Override // org.telegram.ui.ActionBar.e6
     public final void b(float f10, float f11, int i7, int i10) {
-        m6.r(f10, f11, i7, i10);
+        j6.r(f10, f11, i7, i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
+    @Override // org.telegram.ui.ActionBar.e6
     public final ColorFilter c() {
-        return m6.v3;
+        return j6.v3;
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
+    @Override // org.telegram.ui.ActionBar.e6
     public final Paint d(String str) {
         str.getClass();
         switch (str) {
@@ -69,92 +69,92 @@ public final class t0 implements h6 {
             case "paintChatActionText":
                 return this.a;
             default:
-                return m6.V0(str);
+                return j6.V0(str);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
+    @Override // org.telegram.ui.ActionBar.e6
     public final boolean e() {
-        return iz.H0;
+        return gz.H0;
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
+    @Override // org.telegram.ui.ActionBar.e6
     public final int f(int i7) {
         return h(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
+    @Override // org.telegram.ui.ActionBar.e6
     public final /* synthetic */ boolean g() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
+    @Override // org.telegram.ui.ActionBar.e6
     public final Drawable getDrawable(String str) {
-        e5 e5Var = this.f;
-        t0 t0Var = e5Var.D0;
+        c5 c5Var = this.f;
+        t0 t0Var = c5Var.E0;
         if (str.equals("drawableMsgIn")) {
-            if (e5Var.E0 == null) {
-                e5Var.E0 = new u4(0, false, false, t0Var);
+            if (c5Var.F0 == null) {
+                c5Var.F0 = new r4(0, false, false, t0Var);
             }
-            return e5Var.E0;
+            return c5Var.F0;
         }
         if (str.equals("drawableMsgInSelected")) {
-            if (e5Var.F0 == null) {
-                e5Var.F0 = new u4(0, false, true, t0Var);
+            if (c5Var.G0 == null) {
+                c5Var.G0 = new r4(0, false, true, t0Var);
             }
-            return e5Var.F0;
+            return c5Var.G0;
         }
         if (str.equals("drawableMsgOut")) {
-            if (e5Var.G0 == null) {
-                e5Var.G0 = new u4(0, true, false, t0Var);
+            if (c5Var.H0 == null) {
+                c5Var.H0 = new r4(0, true, false, t0Var);
             }
-            return e5Var.G0;
+            return c5Var.H0;
         }
         if (str.equals("drawableMsgOutSelected")) {
-            if (e5Var.H0 == null) {
-                e5Var.H0 = new u4(0, true, true, t0Var);
+            if (c5Var.I0 == null) {
+                c5Var.I0 = new r4(0, true, true, t0Var);
             }
-            return e5Var.H0;
+            return c5Var.I0;
         }
         if (str.equals("drawableMsgInMedia")) {
-            if (e5Var.I0 == null) {
-                e5Var.I0 = new u4(1, false, false, t0Var);
+            if (c5Var.J0 == null) {
+                c5Var.J0 = new r4(1, false, false, t0Var);
             }
-            e5Var.I0.invalidateSelf();
-            return e5Var.I0;
+            c5Var.J0.invalidateSelf();
+            return c5Var.J0;
         }
         if (str.equals("drawableMsgInMediaSelected")) {
-            if (e5Var.J0 == null) {
-                e5Var.J0 = new u4(1, false, true, t0Var);
+            if (c5Var.K0 == null) {
+                c5Var.K0 = new r4(1, false, true, t0Var);
             }
-            return e5Var.J0;
+            return c5Var.K0;
         }
         if (str.equals("drawableMsgOutMedia")) {
-            if (e5Var.K0 == null) {
-                e5Var.K0 = new u4(1, true, false, t0Var);
+            if (c5Var.L0 == null) {
+                c5Var.L0 = new r4(1, true, false, t0Var);
             }
-            return e5Var.K0;
+            return c5Var.L0;
         }
         if (!str.equals("drawableMsgOutMediaSelected")) {
-            return m6.R0(str);
+            return j6.R0(str);
         }
-        if (e5Var.L0 == null) {
-            e5Var.L0 = new u4(1, true, true, t0Var);
+        if (c5Var.M0 == null) {
+            c5Var.M0 = new r4(1, true, true, t0Var);
         }
-        return e5Var.L0;
+        return c5Var.M0;
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
+    @Override // org.telegram.ui.ActionBar.e6
     public final int h(int i7) {
-        return this.f.C0.get(i7, m6.x0(null, i7, false));
+        return this.f.D0.get(i7, j6.x0(null, i7, false));
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
+    @Override // org.telegram.ui.ActionBar.e6
     public final int j(int i7) {
         return h(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
+    @Override // org.telegram.ui.ActionBar.e6
     public final /* synthetic */ void i(int i7, int i10) {
     }
 }

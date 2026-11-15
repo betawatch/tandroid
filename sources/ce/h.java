@@ -2,14 +2,14 @@ package ce;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h implements c {
-    public final /* synthetic */ gf.g a;
+    public final /* synthetic */ ia.d a;
     public final /* synthetic */ m1.n b;
 
-    public h(gf.g gVar, m1.n nVar) {
-        this.a = gVar;
+    public h(ia.d dVar, m1.n nVar) {
+        this.a = dVar;
         this.b = nVar;
     }
 
@@ -22,7 +22,7 @@ public final class h implements c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object B(d dVar, kd.c cVar) {
+    public final Object G(d dVar, kd.c cVar) {
         g gVar;
         jd.a aVar;
         int i7;
@@ -45,11 +45,11 @@ public final class h implements c {
                     if (i7 != 0) {
                         af.b.c(obj);
                         try {
-                            gf.g gVar2 = this.a;
+                            ia.d dVar2 = this.a;
                             gVar.d = this;
                             gVar.e = dVar;
                             gVar.b = 1;
-                            if (gVar2.B(dVar, gVar) != aVar) {
+                            if (dVar2.G(dVar, gVar) != aVar) {
                                 hVar = this;
                             }
                         } catch (Throwable th3) {

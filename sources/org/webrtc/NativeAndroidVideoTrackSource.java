@@ -4,7 +4,7 @@ import org.webrtc.VideoFrame;
 import org.webrtc.VideoProcessor;
 import org.webrtc.VideoSource;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 class NativeAndroidVideoTrackSource {
     private final long nativeAndroidVideoTrackSource;
@@ -13,8 +13,8 @@ class NativeAndroidVideoTrackSource {
         this.nativeAndroidVideoTrackSource = j3;
     }
 
-    public static VideoProcessor.FrameAdaptationParameters createFrameAdaptationParameters(int i7, int i10, int i11, int i12, int i13, int i14, long j3, boolean z9) {
-        return new VideoProcessor.FrameAdaptationParameters(i7, i10, i11, i12, i13, i14, j3, z9);
+    public static VideoProcessor.FrameAdaptationParameters createFrameAdaptationParameters(int i7, int i10, int i11, int i12, int i13, int i14, long j3, boolean z10) {
+        return new VideoProcessor.FrameAdaptationParameters(i7, i10, i11, i12, i13, i14, j3, z10);
     }
 
     private static native VideoProcessor.FrameAdaptationParameters nativeAdaptFrame(long j3, int i7, int i10, int i11, long j10);
@@ -23,9 +23,9 @@ class NativeAndroidVideoTrackSource {
 
     private static native void nativeOnFrameCaptured(long j3, int i7, long j10, VideoFrame.Buffer buffer);
 
-    private static native void nativeSetIsScreencast(long j3, boolean z9);
+    private static native void nativeSetIsScreencast(long j3, boolean z10);
 
-    private static native void nativeSetState(long j3, boolean z9);
+    private static native void nativeSetState(long j3, boolean z10);
 
     public VideoProcessor.FrameAdaptationParameters adaptFrame(VideoFrame videoFrame) {
         return nativeAdaptFrame(this.nativeAndroidVideoTrackSource, videoFrame.getBuffer().getWidth(), videoFrame.getBuffer().getHeight(), videoFrame.getRotation(), videoFrame.getTimestampNs());
@@ -39,11 +39,11 @@ class NativeAndroidVideoTrackSource {
         nativeOnFrameCaptured(this.nativeAndroidVideoTrackSource, videoFrame.getRotation(), videoFrame.getTimestampNs(), videoFrame.getBuffer());
     }
 
-    public void setIsScreencast(boolean z9) {
-        nativeSetIsScreencast(this.nativeAndroidVideoTrackSource, z9);
+    public void setIsScreencast(boolean z10) {
+        nativeSetIsScreencast(this.nativeAndroidVideoTrackSource, z10);
     }
 
-    public void setState(boolean z9) {
-        nativeSetState(this.nativeAndroidVideoTrackSource, z9);
+    public void setState(boolean z10) {
+        nativeSetState(this.nativeAndroidVideoTrackSource, z10);
     }
 }

@@ -11,7 +11,7 @@ import java.util.Map;
 import v4.n;
 import v4.p;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements Comparator {
     public static final /* synthetic */ b b = new b(2);
@@ -45,12 +45,12 @@ public final class b implements Comparator {
     public final int compare(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                return ((d) obj).b - ((d) obj2).b;
+                return ((e) obj).b - ((e) obj2).b;
             case 1:
-                e eVar = (e) ((View) obj).getLayoutParams();
-                e eVar2 = (e) ((View) obj2).getLayoutParams();
-                boolean z9 = eVar.a;
-                return z9 != eVar2.a ? z9 ? 1 : -1 : eVar.e - eVar2.e;
+                f fVar = (f) ((View) obj).getLayoutParams();
+                f fVar2 = (f) ((View) obj2).getLayoutParams();
+                boolean z10 = fVar.a;
+                return z10 != fVar2.a ? z10 ? 1 : -1 : fVar.e - fVar2.e;
             case 2:
                 return ((Scope) obj).b.compareTo(((Scope) obj2).b);
             case 3:
@@ -87,8 +87,8 @@ public final class b implements Comparator {
                 p pVar2 = (p) obj2;
                 RecyclerView recyclerView = pVar.d;
                 if ((recyclerView == null) == (pVar2.d == null)) {
-                    boolean z10 = pVar.a;
-                    if (z10 == pVar2.a) {
+                    boolean z11 = pVar.a;
+                    if (z11 == pVar2.a) {
                         int i10 = pVar2.b - pVar.b;
                         if (i10 != 0) {
                             return i10;

@@ -1,13 +1,13 @@
 package a3;
 
-import a8.ia;
+import a8.ja;
 import android.os.SystemClock;
 import e2.m1;
-import h2.m0;
+import h2.l0;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class d implements u {
     public final m1 a;
@@ -19,7 +19,7 @@ public abstract class d implements u {
 
     public d(m1 m1Var, int[] iArr) {
         int i7 = 0;
-        ia.p(iArr.length > 0);
+        ja.p(iArr.length > 0);
         m1Var.getClass();
         this.a = m1Var;
         int length = iArr.length;
@@ -130,7 +130,7 @@ public abstract class d implements u {
             return false;
         }
         long[] jArr = this.e;
-        jArr[i7] = Math.max(jArr[i7], m0.a(elapsedRealtime, j3));
+        jArr[i7] = Math.max(jArr[i7], l0.a(elapsedRealtime, j3));
         return true;
     }
 
@@ -161,7 +161,7 @@ public abstract class d implements u {
     }
 
     @Override // a3.u
-    public final void f(boolean z9) {
+    public final void f(boolean z10) {
     }
 
     @Override // a3.u

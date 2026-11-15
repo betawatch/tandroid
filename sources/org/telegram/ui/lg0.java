@@ -1,55 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class lg0 extends LinearLayout {
-    public static final /* synthetic */ int d = 0;
-    public final TextView[] a;
-    public final TextView[] b;
-    public final /* synthetic */ mg0 c;
+public final /* synthetic */ class lg0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lg0(mg0 mg0Var, Context context) {
-        super(context);
-        this.c = mg0Var;
-        this.a = new TextView[4];
-        this.b = new TextView[4];
-        setOrientation(1);
-        setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
-        int i7 = 0;
-        while (i7 < 2) {
-            LinearLayout f10 = org.telegram.messenger.k5.f(context, 0);
-            for (int i10 = 0; i10 < 2; i10++) {
-                LinearLayout f11 = org.telegram.messenger.k5.f(context, 1);
-                LinearLayout f12 = org.telegram.messenger.k5.f(context, 0);
-                int i11 = (i7 * 2) + i10;
-                this.a[i11] = new TextView(context);
-                this.b[i11] = new TextView(context);
-                this.a[i11].setTypeface(org.telegram.messenger.g0.o());
-                this.a[i11].setTextSize(1, 17.0f);
-                this.b[i11].setTextSize(1, 13.0f);
-                this.b[i11].setGravity(3);
-                f12.addView(this.a[i11]);
-                f11.addView(f12);
-                f11.addView(this.b[i11]);
-                f10.addView(f11, c8.ha.l(1.0f, -1, -2));
-            }
-            addView(f10, c8.ha.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, i7 == 0 ? 16.0f : 0.0f));
-            i7++;
-        }
+    public /* synthetic */ lg0(qg0 qg0Var, int i7) {
+        this.a = i7;
+        this.b = qg0Var;
     }
 
-    public final void a() {
-        for (int i7 = 0; i7 < 4; i7++) {
-            TextView textView = this.a[i7];
-            int i10 = org.telegram.ui.ActionBar.m6.G6;
-            mg0 mg0Var = this.c;
-            textView.setTextColor(org.telegram.ui.ActionBar.m6.w0(i10, mg0Var.getResourceProvider()));
-            this.b[i7].setTextColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.z6, mg0Var.getResourceProvider()));
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                qg0 qg0Var = this.b;
+                pg0 pg0Var = qg0Var.m2;
+                HashSet hashSet = qg0Var.Z1;
+                if (hashSet.size() != 0 && pg0Var != null) {
+                    ArrayList arrayList = new ArrayList();
+                    for (TLRPC.User user : qg0Var.e2.values()) {
+                        if (hashSet.contains(Long.valueOf(user.id))) {
+                            arrayList.add(Long.valueOf(user.id));
+                        }
+                    }
+                    pg0Var.a(arrayList);
+                    qg0Var.dismiss();
+                    break;
+                }
+                break;
+            default:
+                qg0 qg0Var2 = this.b;
+                qg0Var2.Z1.clear();
+                qg0Var2.U1.d.b(true);
+                qg0Var2.g1(true, false);
+                break;
         }
     }
 }

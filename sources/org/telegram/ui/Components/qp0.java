@@ -1,18 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.view.animation.Interpolator;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qp0 implements Interpolator {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class qp0 implements org.telegram.messenger.z10 {
+    public final /* synthetic */ org.telegram.ui.Cells.n7 a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f10) {
-        switch (this.a) {
-        }
-        float f11 = f10 - 1.0f;
-        return (f11 * f11 * f11 * f11 * f11) + 1.0f;
+    public /* synthetic */ qp0(org.telegram.ui.Cells.n7 n7Var, float f10, float f11) {
+        this.a = n7Var;
+        this.b = f10;
+        this.c = f11;
+    }
+
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
+        this.a.n(this.b, this.c);
     }
 }

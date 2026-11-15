@@ -1,6 +1,6 @@
 package uh;
 
-import a8.wa;
+import a8.xa;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
@@ -16,11 +16,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ij;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k20;
 import org.telegram.messenger.k5;
-import org.telegram.messenger.m20;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.t5;
 import org.telegram.messenger.w7;
@@ -28,27 +28,27 @@ import org.telegram.messenger.x5;
 import org.telegram.messenger.z5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.a9;
-import org.telegram.ui.Components.h6;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.g6;
+import org.telegram.ui.Components.y8;
 import te.g;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class b extends Drawable implements x5 {
-    public final te.a D;
-    public final RadialProgress2 E;
-    public ij F;
-    public final wa G;
-    public String H;
-    public final int I;
-    public boolean J;
-    public int K;
+    public final te.a E;
+    public final RadialProgress2 F;
+    public gj G;
+    public final xa H;
+    public String I;
+    public final int J;
+    public boolean K;
     public int L;
-    public final h6 a;
-    public final a9 b;
+    public int M;
+    public final g6 a;
+    public final y8 b;
     public final ImageReceiver c;
     public final View d;
     public final int e;
@@ -65,41 +65,41 @@ public final class b extends Drawable implements x5 {
         Paint paint = new Paint(1);
         this.x = paint;
         this.y = new Paint(1);
-        this.G = new wa((char) 0, 18);
+        this.H = new xa((char) 0, 18);
         this.e = i7;
         this.d = view;
-        this.D = new te.a(view, wq.h, 380L);
-        h6 h6Var = new h6(false, false, false);
-        this.a = h6Var;
-        h6Var.b = 21;
-        h6Var.w(g0.L(11.0f));
-        h6Var.setCallback(view);
-        this.b = new a9(i7, view, g0.L(18.0f), g0.L(8.33f), g0.N(1.0f));
+        this.E = new te.a(view, er.h, 380L);
+        g6 g6Var = new g6(false, false, false);
+        this.a = g6Var;
+        g6Var.b = 21;
+        g6Var.w(g0.L(11.0f));
+        g6Var.setCallback(view);
+        this.b = new y8(i7, view, g0.L(18.0f), g0.L(8.33f), g0.N(1.0f));
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.c = imageReceiver;
         imageReceiver.J0(g0.L(5.0f));
         paint.setColor(TLObject.FLAG_30);
         RadialProgress2 radialProgress2 = new RadialProgress2(view, null);
-        this.E = radialProgress2;
+        this.F = radialProgress2;
         radialProgress2.setCircleRadius(g0.L(18.0f));
         radialProgress2.d = -1;
-        this.I = z5.q(i7).k();
+        this.J = z5.q(i7).k();
     }
 
     public final void a(TLRPC.Photo photo, Object obj) {
         TLRPC.PhotoSize w10 = w7.w(photo.sizes, 40, false, null, false);
         TLRPC.PhotoSize w11 = w7.w(photo.sizes, g0.L(36.0f), false, w10, true);
-        this.c.r0(hc.f(w11, photo), "36_36", hc.f(w10, photo), "36_36_b", null, w11 != null ? w11.size : 0L, null, obj, 1);
+        this.c.r0(gc.f(w11, photo), "36_36", gc.f(w10, photo), "36_36_b", null, w11 != null ? w11.size : 0L, null, obj, 1);
     }
 
-    public final void b(boolean z9) {
-        if (this.F.o4() || this.F.Y2()) {
+    public final void b(boolean z10) {
+        if (this.G.o4() || this.G.Y2()) {
             return;
         }
-        if (TextUtils.isEmpty(this.H) || !w7.G(this.e).S(this.H)) {
-            g(this.w ? 0 : 4, z9);
+        if (TextUtils.isEmpty(this.I) || !w7.G(this.e).S(this.I)) {
+            g(this.w ? 0 : 4, z10);
         } else {
-            g(3, z9);
+            g(3, z10);
         }
     }
 
@@ -107,21 +107,21 @@ public final class b extends Drawable implements x5 {
         int x02;
         Rect bounds = getBounds();
         int L = g0.L(this.f ? 56.33f : 19.0f);
-        if (this.D.e > 0.0f) {
+        if (this.E.e > 0.0f) {
             g gVar = this.b.c.d;
             float f10 = gVar.c.a;
             int i7 = (int) gVar.f.a;
             int W1 = (bounds.right - L) - g0.W1(f10, g0.L(2.0f), g0.L(4.0f) + i7);
             if (f10 > 0.0f) {
-                a9 a9Var = this.b;
-                a9Var.i = (int) (this.D.e * 255.0f);
-                a9Var.setBounds((bounds.right - L) - i7, bounds.bottom - g0.L(31.33f), bounds.right - L, bounds.bottom);
+                y8 y8Var = this.b;
+                y8Var.i = (int) (this.E.e * 255.0f);
+                y8Var.setBounds((bounds.right - L) - i7, bounds.bottom - g0.L(31.33f), bounds.right - L, bounds.bottom);
                 this.b.c(canvas);
             }
             int L2 = bounds.bottom - g0.L(21.33f);
-            h6 h6Var = this.a;
-            h6Var.B = (int) (this.D.e * 255.0f);
-            h6Var.setBounds(bounds.left, g0.L(15.0f) + L2, W1, L2 - g0.L(15.0f));
+            g6 g6Var = this.a;
+            g6Var.C = (int) (this.E.e * 255.0f);
+            g6Var.setBounds(bounds.left, g0.L(15.0f) + L2, W1, L2 - g0.L(15.0f));
             this.a.draw(canvas);
         }
         if (this.h) {
@@ -130,7 +130,7 @@ public final class b extends Drawable implements x5 {
             rect.set(k5.z(9.0f, bounds.right, L3), k5.z(4.0f, bounds.bottom, L3), bounds.right - g0.L(9.0f), bounds.bottom - g0.L(4.0f));
             RectF rectF = g0.P;
             rectF.set(rect);
-            this.E.a.set(rectF.left, rectF.top, rectF.right, rectF.bottom);
+            this.F.a.set(rectF.left, rectF.top, rectF.right, rectF.bottom);
             this.c.z0(rect);
             if (!this.n || this.r) {
                 this.c.h(canvas, null);
@@ -139,44 +139,44 @@ public final class b extends Drawable implements x5 {
                 if (!this.n || this.r) {
                     canvas.drawRoundRect(rectF, g0.L(5.0f), g0.L(5.0f), this.x);
                 } else {
-                    this.y.setColor(i0.a.o(m6.x0(null, this.F.P3() ? m6.Tc : m6.Sc, false), 16));
+                    this.y.setColor(i0.a.o(j6.x0(null, this.G.P3() ? j6.Wc : j6.Vc, false), 16));
                     canvas.drawRoundRect(rectF, g0.L(5.0f), g0.L(5.0f), this.y);
                 }
             }
             if (this.n) {
                 if (this.s == null) {
-                    this.s = jg.g.h(t0.b, R.drawable.media_link_24);
+                    this.s = i5.c.g(t0.b, R.drawable.media_link_24);
                 }
                 Drawable drawable = this.s;
-                wa waVar = this.G;
+                xa xaVar = this.H;
                 if (this.r) {
                     x02 = -1;
                 } else {
-                    x02 = m6.x0(null, this.F.P3() ? m6.gc : m6.be, false);
+                    x02 = j6.x0(null, this.G.P3() ? j6.jc : j6.ee, false);
                 }
                 PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-                waVar.getClass();
-                if (((PorterDuffColorFilter) waVar.c) == null || waVar.b != x02 || ((PorterDuff.Mode) waVar.d) != mode) {
-                    waVar.c = new PorterDuffColorFilter(x02, mode);
-                    waVar.b = x02;
-                    waVar.d = mode;
+                xaVar.getClass();
+                if (((PorterDuffColorFilter) xaVar.c) == null || xaVar.b != x02 || ((PorterDuff.Mode) xaVar.d) != mode) {
+                    xaVar.c = new PorterDuffColorFilter(x02, mode);
+                    xaVar.b = x02;
+                    xaVar.d = mode;
                 }
-                drawable.setColorFilter((PorterDuffColorFilter) waVar.c);
+                drawable.setColorFilter((PorterDuffColorFilter) xaVar.c);
                 s.e(this.s, rectF.centerX(), rectF.centerY(), g0.L(24.0f), g0.L(24.0f), 17);
                 this.s.draw(canvas);
             }
             b(true);
-            if (this.J) {
-                this.E.draw(canvas);
+            if (this.K) {
+                this.F.draw(canvas);
             }
         }
     }
 
     public final float d(float f10) {
-        a9 a9Var = this.b;
-        float c10 = this.a.c() + a9Var.c.d.f.a;
-        float L = a9Var.c.d.c.a * g0.L(4.0f);
-        float f11 = this.D.e;
+        y8 y8Var = this.b;
+        float c10 = this.a.c() + y8Var.c.d.f.a;
+        float L = y8Var.c.d.c.a * g0.L(4.0f);
+        float f11 = this.E.e;
         return (f10 * f11) + (L * f11) + c10;
     }
 
@@ -186,23 +186,23 @@ public final class b extends Drawable implements x5 {
     }
 
     public final float e() {
-        return this.a.d + (this.K > 0 ? g0.L((r1 * 9.34f) + 8.66f) : 0);
+        return this.a.d + (this.L > 0 ? g0.L((r1 * 9.34f) + 8.66f) : 0);
     }
 
-    public final void f(boolean z9) {
-        this.f = z9;
+    public final void f(boolean z10) {
+        this.f = z10;
     }
 
-    public final void g(int i7, boolean z9) {
-        if (this.L != i7) {
-            this.L = i7;
-            this.E.setIcon(i7, true, z9);
+    public final void g(int i7, boolean z10) {
+        if (this.M != i7) {
+            this.M = i7;
+            this.F.setIcon(i7, true, z10);
         }
     }
 
     @Override // org.telegram.messenger.x5
     public final int getObserverTag() {
-        return this.I;
+        return this.J;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -217,28 +217,28 @@ public final class b extends Drawable implements x5 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void h(ij ijVar, TLRPC.MessageMedia messageMedia, ij ijVar2, String str, boolean z9) {
+    public final void h(gj gjVar, TLRPC.MessageMedia messageMedia, gj gjVar2, String str, boolean z10) {
         ImageReceiver imageReceiver;
-        boolean z10;
         boolean z11;
+        boolean z12;
         TLRPC.GeoPoint geoPoint;
-        this.F = ijVar;
-        String str2 = this.H;
-        this.J = false;
-        this.H = null;
+        this.G = gjVar;
+        String str2 = this.I;
+        this.K = false;
+        this.I = null;
         ImageReceiver imageReceiver2 = this.c;
         if (messageMedia != null && !(messageMedia instanceof TLRPC.TL_messageMediaEmpty)) {
             this.r = false;
             this.n = false;
             this.w = false;
-            z10 = true;
+            z11 = true;
             if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                 TLRPC.WebPage webPage = ((TLRPC.TL_messageMediaWebPage) messageMedia).webpage;
                 this.n = true;
                 TLRPC.Photo photo = webPage.photo;
                 if (photo != null) {
                     this.r = true;
-                    a(photo, ijVar2);
+                    a(photo, gjVar2);
                 } else {
                     imageReceiver2.f();
                 }
@@ -248,113 +248,113 @@ public final class b extends Drawable implements x5 {
                         TLRPC.TL_messageMediaDocument tL_messageMediaDocument = (TLRPC.TL_messageMediaDocument) messageMedia;
                         TLRPC.Document document = tL_messageMediaDocument.document;
                         if (document != null) {
-                            this.H = !TextUtils.isEmpty(str) ? str : ij.U0(messageMedia);
-                            if (ij.K4(tL_messageMediaDocument.document)) {
+                            this.I = !TextUtils.isEmpty(str) ? str : gj.U0(messageMedia);
+                            if (gj.K4(tL_messageMediaDocument.document)) {
                                 TLRPC.PhotoSize w10 = w7.w(document.thumbs, 40, false, null, false);
                                 TLRPC.PhotoSize w11 = w7.w(document.thumbs, g0.L(36.0f), false, w10, true);
                                 this.w = true;
-                                this.J = true;
-                                hc f10 = hc.f(w11, document);
-                                hc f11 = hc.f(w10, document);
+                                this.K = true;
+                                gc f10 = gc.f(w11, document);
+                                gc f11 = gc.f(w10, document);
                                 imageReceiver = imageReceiver2;
-                                imageReceiver.r0(f10, "36_36", f11, "36_36_b", null, w11 != null ? w11.size : 0L, null, ijVar2, 1);
+                                imageReceiver.r0(f10, "36_36", f11, "36_36_b", null, w11 != null ? w11.size : 0L, null, gjVar2, 1);
                             } else {
                                 imageReceiver = imageReceiver2;
-                                boolean z12 = ij.u4(document) || ij.N4(document);
-                                boolean K2 = ij.K2(document, true);
-                                if (z12 || K2) {
-                                    imageReceiver.p0(hc.b(document), "36_36", t5.f(document, m6.Zc, 1.0f, null), document.size, z12 ? "webp" : null, ijVar2, 1);
+                                boolean z13 = gj.u4(document) || gj.N4(document);
+                                boolean K2 = gj.K2(document, true);
+                                if (z13 || K2) {
+                                    imageReceiver.p0(gc.b(document), "36_36", t5.f(document, j6.cd, 1.0f, null), document.size, z13 ? "webp" : null, gjVar2, 1);
                                 }
-                                z10 = false;
+                                z11 = false;
                             }
                         }
                     } else if (((messageMedia instanceof TLRPC.TL_messageMediaGeo) || (messageMedia instanceof TLRPC.TL_messageMediaVenue)) && (geoPoint = messageMedia.geo) != null) {
                         int min = Math.min(2, (int) Math.ceil(g0.p));
-                        int i7 = m20.i;
-                        hc p10 = hc.p(m20.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 36, 36, 13, min));
+                        int i7 = k20.i;
+                        gc p10 = gc.p(k20.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 36, 36, 13, min));
                         imageReceiver = imageReceiver2;
-                        imageReceiver.s0(p10, null, null, null, null, ijVar2, 0);
+                        imageReceiver.s0(p10, null, null, null, null, gjVar2, 0);
                     } else {
                         imageReceiver = imageReceiver2;
-                        z10 = false;
+                        z11 = false;
                     }
-                    this.h = z10;
-                    if (!z10) {
+                    this.h = z11;
+                    if (!z11) {
                         imageReceiver.f();
                     }
-                    z11 = this.w;
-                    RadialProgress2 radialProgress2 = this.E;
-                    if (z11) {
-                        radialProgress2.setColors(0, 0, m6.x0(null, m6.bf, false), m6.x0(null, m6.cf, false));
+                    z12 = this.w;
+                    RadialProgress2 radialProgress2 = this.F;
+                    if (z12) {
+                        radialProgress2.setColors(0, 0, j6.x0(null, j6.ef, false), j6.x0(null, j6.ff, false));
                     } else {
-                        int i10 = m6.Ze;
-                        int x02 = m6.x0(null, i10, false);
-                        int i11 = m6.af;
-                        int x03 = m6.x0(null, i11, false);
-                        int i12 = m6.bf;
-                        int x04 = m6.x0(null, i12, false);
-                        int i13 = m6.cf;
-                        radialProgress2.setColors(x02, x03, x04, m6.x0(null, i13, false));
+                        int i10 = j6.cf;
+                        int x02 = j6.x0(null, i10, false);
+                        int i11 = j6.df;
+                        int x03 = j6.x0(null, i11, false);
+                        int i12 = j6.ef;
+                        int x04 = j6.x0(null, i12, false);
+                        int i13 = j6.ff;
+                        radialProgress2.setColors(x02, x03, x04, j6.x0(null, i13, false));
                         radialProgress2.g(i10, i11, i12, i13);
                     }
-                    if (!TextUtils.equals(str2, this.H)) {
+                    if (!TextUtils.equals(str2, this.I)) {
                         boolean isEmpty = TextUtils.isEmpty(str2);
                         int i14 = this.e;
                         if (!isEmpty) {
                             z5.q(i14).v(this);
                         }
-                        if (!TextUtils.isEmpty(this.H)) {
-                            z5.q(i14).a(this.H, null, this);
+                        if (!TextUtils.isEmpty(this.I)) {
+                            z5.q(i14).a(this.I, null, this);
                         }
                     }
-                    b(z9);
+                    b(z10);
                 }
                 TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = (TLRPC.TL_messageMediaPhoto) messageMedia;
-                this.J = true;
-                this.H = !TextUtils.isEmpty(str) ? str : ij.U0(messageMedia);
-                a(tL_messageMediaPhoto.photo, ijVar2);
+                this.K = true;
+                this.I = !TextUtils.isEmpty(str) ? str : gj.U0(messageMedia);
+                a(tL_messageMediaPhoto.photo, gjVar2);
             }
             imageReceiver = imageReceiver2;
-            this.h = z10;
-            if (!z10) {
+            this.h = z11;
+            if (!z11) {
             }
-            z11 = this.w;
-            RadialProgress2 radialProgress22 = this.E;
-            if (z11) {
+            z12 = this.w;
+            RadialProgress2 radialProgress22 = this.F;
+            if (z12) {
             }
-            if (!TextUtils.equals(str2, this.H)) {
+            if (!TextUtils.equals(str2, this.I)) {
             }
-            b(z9);
+            b(z10);
         }
         imageReceiver = imageReceiver2;
-        z10 = false;
-        this.h = z10;
-        if (!z10) {
+        z11 = false;
+        this.h = z11;
+        if (!z11) {
         }
-        z11 = this.w;
-        RadialProgress2 radialProgress222 = this.E;
-        if (z11) {
+        z12 = this.w;
+        RadialProgress2 radialProgress222 = this.F;
+        if (z12) {
         }
-        if (!TextUtils.equals(str2, this.H)) {
+        if (!TextUtils.equals(str2, this.I)) {
         }
-        b(z9);
+        b(z10);
     }
 
     @Override // org.telegram.messenger.x5
     public final void i(long j3, long j10) {
         float min = j10 == 0 ? 0.0f : Math.min(1.0f, j3 / j10);
-        this.E.p(true, min);
+        this.F.p(true, min);
         g(min < 1.0f ? 3 : this.w ? 0 : 4, true);
         this.d.invalidate();
     }
 
-    public final void j(ArrayList arrayList, boolean z9) {
-        this.K = arrayList != null ? arrayList.size() : 0;
-        this.b.d(arrayList, z9);
+    public final void j(ArrayList arrayList, boolean z10) {
+        this.L = arrayList != null ? arrayList.size() : 0;
+        this.b.d(arrayList, z10);
     }
 
-    public final void k(int i7, boolean z9) {
-        this.a.t(i7 > 0 ? id.S(null, i7) : null, z9, true);
+    public final void k(int i7, boolean z10) {
+        this.a.t(i7 > 0 ? hd.S(null, i7) : null, z10, true);
     }
 
     public final void l(int i7) {
@@ -364,17 +364,17 @@ public final class b extends Drawable implements x5 {
     @Override // org.telegram.messenger.x5
     public final void o(long j3, long j10) {
         float min = j10 == 0 ? 0.0f : Math.min(1.0f, j3 / j10);
-        this.E.p(true, min);
+        this.F.p(true, min);
         g(min < 1.0f ? 3 : this.w ? 0 : 4, true);
         this.d.invalidate();
     }
 
     @Override // org.telegram.messenger.x5
-    public final void C(boolean z9) {
+    public final void C(boolean z10) {
     }
 
     @Override // org.telegram.messenger.x5
-    public final void M(String str) {
+    public final void N(String str) {
     }
 
     @Override // android.graphics.drawable.Drawable

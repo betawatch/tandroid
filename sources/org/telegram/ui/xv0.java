@@ -1,52 +1,40 @@
 package org.telegram.ui;
 
 import android.view.View;
-import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class xv0 implements fi.ma {
-    public final /* synthetic */ ProfileActivity a;
+public final /* synthetic */ class xv0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ iw0 b;
 
-    public xv0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public /* synthetic */ xv0(iw0 iw0Var, int i7) {
+        this.a = i7;
+        this.b = iw0Var;
     }
 
-    @Override // fi.ma
-    public final fi.qa d(long j3) {
-        ProfileActivity profileActivity = this.a;
-        if (j3 != profileActivity.a()) {
-            return null;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.b.e;
+                profileActivity.getMessagesController().x3(profileActivity, profileActivity.getMessagesController().a2(Long.valueOf(profileActivity.e1)), null, profileActivity.getClassGuid(), null, false, false);
+                break;
+            default:
+                ProfileActivity profileActivity2 = this.b.e;
+                profileActivity2.Q4 = !profileActivity2.Q4;
+                if (!profileActivity2.P4) {
+                    profileActivity2.P4 = true;
+                }
+                profileActivity2.V4();
+                view.requestLayout();
+                profileActivity2.d.g(profileActivity2.P3);
+                int i7 = profileActivity2.p6;
+                if (i7 >= 0) {
+                    profileActivity2.c.h1(i7, profileActivity2.q6 - profileActivity2.a.getPaddingTop());
+                    break;
+                }
+                break;
         }
-        profileActivity.e0.setRoundRadiusForExpand((int) org.telegram.messenger.g0.T1(profileActivity.s4(), 0.0f, profileActivity.j2));
-        cv0 cv0Var = profileActivity.e0;
-        boolean c02 = org.telegram.messenger.t3.c0(profileActivity.D2);
-        if (cv0Var == null || cv0Var.getRootView() == null) {
-            return null;
-        }
-        float scaleX = ((View) cv0Var.getParent()).getScaleX();
-        float f10 = cv0Var.getImageReceiver().M0 * scaleX;
-        float f11 = c02 ? 0.32f * f10 : f10;
-        fi.oa oaVar = new fi.oa(cv0Var, 0);
-        float[] fArr = new float[2];
-        cv0Var.getRootView().getLocationOnScreen(new int[2]);
-        org.telegram.messenger.g0.r1(cv0Var, (ViewGroup) cv0Var.getRootView(), fArr);
-        float f12 = (cv0Var.getImageReceiver().K0 * scaleX) + r4[0] + fArr[0];
-        float f13 = (cv0Var.getImageReceiver().L0 * scaleX) + r4[1] + fArr[1];
-        oaVar.c.set(f12, f13, f12 + f10, f10 + f13);
-        oaVar.e = cv0Var.getImageReceiver();
-        oaVar.b = f11;
-        return oaVar;
-    }
-
-    @Override // fi.ma
-    public final void g(long j3, bi.r3 r3Var) {
-        ProfileActivity profileActivity = this.a;
-        profileActivity.e0.setHasStories(profileActivity.A4());
-        if (j3 == profileActivity.a() && profileActivity.n2 && profileActivity.j2 > 0.0f) {
-            profileActivity.c.h1(0, profileActivity.j4() - profileActivity.a.getPaddingTop());
-            profileActivity.a.post(new m90(profileActivity, 16));
-        }
-        org.telegram.messenger.g0.i3(r3Var, 30L);
     }
 }

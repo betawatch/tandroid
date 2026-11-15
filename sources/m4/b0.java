@@ -1,11 +1,11 @@
 package m4;
 
 import h2.k0;
-import h2.m0;
+import h2.l0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class b0 implements h0 {
+public final class b0 implements g0 {
     public final a0 a;
     public final h2.x b = new h2.x(32);
     public int c;
@@ -17,12 +17,12 @@ public final class b0 implements h0 {
         this.a = a0Var;
     }
 
-    @Override // m4.h0
+    @Override // m4.g0
     public final void a(int i7, h2.x xVar) {
-        boolean z9 = (i7 & 1) != 0;
-        int A = z9 ? xVar.b + xVar.A() : -1;
+        boolean z10 = (i7 & 1) != 0;
+        int A = z10 ? xVar.b + xVar.A() : -1;
         if (this.f) {
-            if (!z9) {
+            if (!z10) {
                 return;
             }
             this.f = false;
@@ -71,7 +71,7 @@ public final class b0 implements h0 {
                     if (!this.e) {
                         xVar2.M(i14);
                     } else {
-                        if (m0.p(0, i14, -1, xVar2.a) != 0) {
+                        if (l0.p(0, i14, -1, xVar2.a) != 0) {
                             this.f = true;
                             return;
                         }
@@ -85,13 +85,13 @@ public final class b0 implements h0 {
         }
     }
 
-    @Override // m4.h0
-    public final void b(k0 k0Var, f3.q qVar, g0 g0Var) {
-        this.a.b(k0Var, qVar, g0Var);
+    @Override // m4.g0
+    public final void b(k0 k0Var, f3.q qVar, f0 f0Var) {
+        this.a.b(k0Var, qVar, f0Var);
         this.f = true;
     }
 
-    @Override // m4.h0
+    @Override // m4.g0
     public final void d() {
         this.f = true;
     }

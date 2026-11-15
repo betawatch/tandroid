@@ -11,7 +11,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Callback, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "SurfaceViewRenderer";
@@ -89,7 +89,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         sb2.append(", frame size: ");
         sb2.append(this.rotatedFrameWidth);
         sb2.append("x");
-        jg.g.x(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        i5.c.y(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb2.append(min2);
         sb2.append(", old surface size: ");
         sb2.append(this.surfaceWidth);
@@ -143,11 +143,11 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         if (i11 == 0 || i11 == 180) {
             i7 = i10;
         }
-        postOrRun(new jg.r(this, i12, i7, 16));
+        postOrRun(new jg.q(this, i12, i7, 17));
     }
 
     @Override // android.view.View
-    public void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         ThreadUtils.checkIsOnMainThread();
         this.eglRenderer.setLayoutAspectRatio((i11 - i7) / (i12 - i10));
         updateSurfaceSize();
@@ -173,9 +173,9 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         this.eglRenderer.removeFrameListener(frameListener);
     }
 
-    public void setEnableHardwareScaler(boolean z9) {
+    public void setEnableHardwareScaler(boolean z10) {
         ThreadUtils.checkIsOnMainThread();
-        this.enableFixedSize = z9;
+        this.enableFixedSize = z10;
         updateSurfaceSize();
     }
 
@@ -183,8 +183,8 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         this.eglRenderer.setFpsReduction(f10);
     }
 
-    public void setMirror(boolean z9) {
-        this.eglRenderer.setMirror(z9);
+    public void setMirror(boolean z10) {
+        this.eglRenderer.setMirror(z10);
     }
 
     @Override // org.webrtc.VideoSink

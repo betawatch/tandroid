@@ -1,52 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class d11 extends Drawable {
-    public final Drawable a;
-    public final Paint b = new Paint(1);
-    public final RectF c = new RectF();
+public final class d11 extends v4.t0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p11 b;
 
-    public d11(Context context) {
-        this.a = jg.g.h(context, R.drawable.menu_topic_add);
+    public /* synthetic */ d11(p11 p11Var, int i7) {
+        this.a = i7;
+        this.b = p11Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.drawRoundRect(this.c, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), this.b);
-        this.a.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.c.set(rect);
-        int centerX = rect.centerX() - org.telegram.messenger.g0.L(12.0f);
-        int centerY = rect.centerY() - org.telegram.messenger.g0.L(12.0f);
-        this.a.setBounds(centerX, centerY, org.telegram.messenger.g0.L(24.0f) + centerX, org.telegram.messenger.g0.L(24.0f) + centerY);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.b.setAlpha(i7);
-        this.a.setAlpha(i7);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // v4.t0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                p11 p11Var = this.b;
+                if (p11Var.l()) {
+                    p11Var.m();
+                    break;
+                }
+                break;
+            default:
+                p11 p11Var2 = this.b;
+                if (p11Var2.l()) {
+                    p11Var2.m();
+                    break;
+                }
+                break;
+        }
     }
 }

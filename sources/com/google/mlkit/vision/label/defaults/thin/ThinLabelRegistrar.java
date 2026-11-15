@@ -7,32 +7,32 @@ import a8.u0;
 import com.google.firebase.components.ComponentRegistrar;
 import e2.j0;
 import java.util.List;
+import pb.d;
 import pb.g;
 import u9.a;
-import u9.j;
-import vb.b;
+import u9.i;
+import yb.b;
 import yb.c;
-import yb.d;
-import yb.f;
+import yb.e;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class ThinLabelRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        j0 a10 = a.a(d.class);
-        a10.a(j.a(g.class));
-        a10.f = f.b;
+        j0 a10 = a.a(c.class);
+        a10.a(i.a(g.class));
+        a10.f = e.b;
         a b10 = a10.b();
-        j0 a11 = a.a(c.class);
-        a11.a(j.a(d.class));
-        a11.a(j.a(pb.d.class));
-        a11.f = f.c;
+        j0 a11 = a.a(b.class);
+        a11.a(i.a(c.class));
+        a11.a(i.a(d.class));
+        a11.f = e.c;
         a b11 = a11.b();
-        j0 a12 = a.a(b.class);
+        j0 a12 = a.a(vb.b.class);
         a12.b = 1;
-        a12.a(new j(1, 1, c.class));
-        a12.f = f.d;
+        a12.a(new i(1, 1, b.class));
+        a12.f = e.d;
         a b12 = a12.b();
         s sVar = u.b;
         Object[] objArr = {b10, b11, b12};

@@ -1,49 +1,52 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class g11 extends w31 {
-    public static final /* synthetic */ int b = 0;
+public final class g11 extends Drawable {
+    public final Drawable a;
+    public final Paint b = new Paint(1);
+    public final RectF c = new RectF();
 
-    static {
-        w31.h(new g11());
+    public g11(Context context) {
+        this.a = i5.c.g(context, R.drawable.menu_topic_add);
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        h11 h11Var = (h11) view;
-        boolean z10 = false;
-        if (x31Var.r) {
-            h11Var.f();
-        } else {
-            Object obj = x31Var.G;
-            if (obj == null) {
-                if (x31Var.d == -2) {
-                    h11Var.c();
-                } else {
-                    h11Var.d((x31Var.y & 1) != 0, x31Var.q, x31Var.e);
-                }
-            } else if (obj instanceof TLRPC.TL_forumTopic) {
-                if (x31Var.I) {
-                    h11Var.b(x31Var.x, (TLRPC.TL_forumTopic) obj, x31Var.e);
-                } else {
-                    h11Var.g(x31Var.x, (TLRPC.TL_forumTopic) obj, x31Var.e);
-                }
-            }
-        }
-        h11Var.L = c8.zc.a(x31Var.y, 8) ? org.telegram.messenger.g0.L(10.0f) : 0;
-        if (r41Var != null && r41Var.j3 && h11Var.s) {
-            z10 = true;
-        }
-        h11Var.setReorder(z10);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.drawRoundRect(this.c, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), this.b);
+        this.a.draw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
-        return new h11(i7, context, h6Var);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.c.set(rect);
+        int centerX = rect.centerX() - org.telegram.messenger.g0.L(12.0f);
+        int centerY = rect.centerY() - org.telegram.messenger.g0.L(12.0f);
+        this.a.setBounds(centerX, centerY, org.telegram.messenger.g0.L(24.0f) + centerX, org.telegram.messenger.g0.L(24.0f) + centerY);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.b.setAlpha(i7);
+        this.a.setAlpha(i7);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

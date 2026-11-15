@@ -4,18 +4,18 @@ import android.os.Handler;
 import e2.q0;
 import e2.t0;
 import e2.u;
+import f3.h0;
 import f3.i0;
-import f3.j0;
-import h2.m0;
+import h2.l0;
 import h2.x;
-import org.telegram.ui.Components.om0;
+import org.telegram.ui.Components.sm0;
 import x2.a1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class o implements j0 {
+public final class o implements i0 {
     public final a1 a;
-    public final wf.b b = new wf.b(27, false);
+    public final k8.a b = new k8.a(1, false);
     public final o3.a c = new o3.a();
     public long d = -9223372036854775807L;
     public final /* synthetic */ p e;
@@ -25,23 +25,23 @@ public final class o implements j0 {
         this.a = new a1(mVar, null, null);
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final void a(x xVar, int i7, int i10) {
         a1 a1Var = this.a;
         a1Var.getClass();
         a1Var.a(xVar, i7, 0);
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final void b(int i7, x xVar) {
         a(xVar, i7, 0);
     }
 
-    @Override // f3.j0
-    public final void c(long j3, int i7, int i10, int i11, i0 i0Var) {
+    @Override // f3.i0
+    public final void c(long j3, int i7, int i10, int i11, h0 h0Var) {
         long j10;
         long j11;
-        this.a.c(j3, i7, i10, i11, i0Var);
+        this.a.c(j3, i7, i10, i11, h0Var);
         while (this.a.A(false)) {
             o3.a aVar = this.c;
             aVar.clear();
@@ -59,7 +59,7 @@ public final class o implements j0 {
                     String str2 = aVar2.b;
                     if ("urn:mpeg:dash:event:2012".equals(str) && ("1".equals(str2) || "2".equals(str2) || "3".equals(str2))) {
                         try {
-                            j11 = m0.V(m0.r(aVar2.e));
+                            j11 = l0.V(l0.r(aVar2.e));
                         } catch (t0 unused) {
                             j11 = -9223372036854775807L;
                         }
@@ -73,32 +73,32 @@ public final class o implements j0 {
             }
         }
         a1 a1Var = this.a;
-        om0 om0Var = a1Var.a;
+        sm0 sm0Var = a1Var.a;
         synchronized (a1Var) {
             int i12 = a1Var.s;
             j10 = i12 == 0 ? -1L : a1Var.j(i12);
         }
-        om0Var.b(j10);
+        sm0Var.b(j10);
     }
 
-    @Override // f3.j0
-    public final int e(e2.n nVar, int i7, boolean z9) {
-        return f(nVar, i7, z9);
+    @Override // f3.i0
+    public final int e(e2.n nVar, int i7, boolean z10) {
+        return f(nVar, i7, z10);
     }
 
-    @Override // f3.j0
-    public final int f(e2.n nVar, int i7, boolean z9) {
+    @Override // f3.i0
+    public final int f(e2.n nVar, int i7, boolean z10) {
         a1 a1Var = this.a;
         a1Var.getClass();
-        return a1Var.f(nVar, i7, z9);
+        return a1Var.f(nVar, i7, z10);
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final void g(u uVar) {
         this.a.g(uVar);
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final /* synthetic */ void d(long j3) {
     }
 }

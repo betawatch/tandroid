@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k extends kd.j implements rd.l {
     public Object a;
@@ -15,13 +15,13 @@ public final class k extends kd.j implements rd.l {
     public int f;
     public int h;
     public final /* synthetic */ b0 n;
-    public final /* synthetic */ ui.e r;
+    public final /* synthetic */ ab.c0 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(b0 b0Var, ui.e eVar, id.c cVar) {
+    public k(b0 b0Var, ab.c0 c0Var, id.c cVar) {
         super(1, cVar);
         this.n = b0Var;
-        this.r = eVar;
+        this.r = c0Var;
     }
 
     @Override // kd.a
@@ -62,7 +62,7 @@ public final class k extends kd.j implements rd.l {
         int i7;
         jd.a aVar2 = jd.a.a;
         int i10 = this.h;
-        ui.e eVar = this.r;
+        ab.c0 c0Var = this.r;
         b0 b0Var = this.n;
         if (i10 == 0) {
             af.b.c(obj);
@@ -140,7 +140,7 @@ public final class k extends kd.j implements rd.l {
             rVar2 = rVar3;
             oVar = oVar2;
             dVar = aVar;
-            eVar.d = null;
+            c0Var.d = null;
             this.a = oVar;
             this.b = rVar2;
             this.c = dVar;
@@ -176,7 +176,7 @@ public final class k extends kd.j implements rd.l {
         af.b.c(obj);
         rVar.a = ((c) obj).b;
         j jVar2 = new j(dVar, oVar, rVar2, b0Var);
-        List list = (List) eVar.d;
+        List list = (List) c0Var.d;
         if (list != null) {
             it = list.iterator();
             aVar = dVar;
@@ -189,7 +189,7 @@ public final class k extends kd.j implements rd.l {
             oVar = oVar2;
             dVar = aVar;
         }
-        eVar.d = null;
+        c0Var.d = null;
         this.a = oVar;
         this.b = rVar2;
         this.c = dVar;

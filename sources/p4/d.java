@@ -1,15 +1,15 @@
 package p4;
 
-import a8.ia;
+import a8.ja;
 import android.os.Bundle;
 import android.text.TextUtils;
 import e2.q1;
-import h9.t1;
+import h9.s1;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d {
     public static final String h;
@@ -28,7 +28,7 @@ public final class d {
     public final Object g;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         h = Integer.toString(0, 36);
         i = Integer.toString(1, 36);
         j = Integer.toString(2, 36);
@@ -41,12 +41,12 @@ public final class d {
         n = Integer.toString(9, 36);
     }
 
-    public d(i1 i1Var, int i7, int i10, Bundle bundle, boolean z9, l9.a aVar, Object obj) {
+    public d(i1 i1Var, int i7, int i10, Bundle bundle, boolean z10, l9.a aVar, Object obj) {
         this.a = i1Var;
         this.b = i7;
         this.c = i10;
         this.d = new Bundle(bundle);
-        this.f = z9;
+        this.f = z10;
         this.e = aVar;
         this.g = obj;
     }
@@ -60,31 +60,31 @@ public final class d {
                 if (obj instanceof Integer) {
                     obj = Long.valueOf(((Integer) obj).longValue());
                 }
-                ia.e("Parameter has incorrect type.", obj instanceof Long);
+                ja.e("Parameter has incorrect type.", obj instanceof Long);
                 break;
             case 2:
-                ia.e("Parameter has incorrect type.", obj instanceof Integer);
+                ja.e("Parameter has incorrect type.", obj instanceof Integer);
                 break;
             case 3:
-                ia.e("Parameter has incorrect type.", obj instanceof Boolean);
+                ja.e("Parameter has incorrect type.", obj instanceof Boolean);
                 break;
             case 4:
                 if (obj instanceof Double) {
                     obj = Float.valueOf(((Double) obj).floatValue());
                 }
-                ia.e("Parameter has incorrect type.", obj instanceof Float);
+                ja.e("Parameter has incorrect type.", obj instanceof Float);
                 break;
             case 5:
-                ia.e("Parameter has incorrect type.", obj instanceof e2.d1);
+                ja.e("Parameter has incorrect type.", obj instanceof e2.d1);
                 break;
             case 6:
-                ia.e("Parameter has incorrect type.", obj instanceof e2.l0);
+                ja.e("Parameter has incorrect type.", obj instanceof e2.l0);
                 break;
             case 7:
-                ia.e("Parameter has incorrect type.", obj instanceof e2.o0);
+                ja.e("Parameter has incorrect type.", obj instanceof e2.o0);
                 break;
             case 8:
-                ia.e("Parameter has incorrect type.", obj instanceof q1);
+                ja.e("Parameter has incorrect type.", obj instanceof q1);
                 break;
         }
         return obj;
@@ -106,7 +106,7 @@ public final class d {
             int parseInt = Integer.parseInt(str.substring(39));
             Object h7 = h(i(parseInt), bundle);
             c cVar = new c();
-            ia.e("sessionCommand is already set. Only one of sessionCommand and playerCommand should be set.", ((i1) cVar.d) == null);
+            ja.e("sessionCommand is already set. Only one of sessionCommand and playerCommand should be set.", ((i1) cVar.d) == null);
             cVar.a = parseInt;
             cVar.g = a(i(parseInt), h7);
             return cVar.a();
@@ -115,25 +115,25 @@ public final class d {
         Object h10 = h(parseInt2 == 40010 ? 5 : 0, bundle);
         c cVar2 = new c();
         i1 i1Var2 = new i1(parseInt2);
-        ia.e("playerCommands is already set. Only one of sessionCommand and playerCommand should be set.", cVar2.a == -1);
+        ja.e("playerCommands is already set. Only one of sessionCommand and playerCommand should be set.", cVar2.a == -1);
         cVar2.d = i1Var2;
         cVar2.g = a(i1Var2.a == 40010 ? 5 : 0, h10);
         return cVar2.a();
     }
 
-    public static t1 g(List list) {
+    public static s1 g(List list) {
         int b10;
         if (list.isEmpty()) {
             h9.g0 g0Var = h9.i0.b;
-            return t1.e;
+            return s1.e;
         }
         int i7 = -1;
         int i10 = -1;
         for (int i11 = 0; i11 < list.size(); i11++) {
             d dVar = (d) list.get(i11);
-            boolean z9 = dVar.f;
+            boolean z10 = dVar.f;
             l9.a aVar = dVar.e;
-            if (z9 && dVar.b()) {
+            if (z10 && dVar.b()) {
                 int i12 = 0;
                 while (true) {
                     if (i12 < aVar.b && (b10 = aVar.b(i12)) != 6) {
@@ -445,9 +445,9 @@ public final class d {
         if (!bundle2.isEmpty()) {
             bundle.putBundle(k, bundle2);
         }
-        boolean z9 = this.f;
-        if (!z9) {
-            bundle.putBoolean(l, z9);
+        boolean z10 = this.f;
+        if (!z10) {
+            bundle.putBoolean(l, z10);
         }
         l9.a aVar = this.e;
         if (aVar.b != 1 || aVar.b(0) != 6) {

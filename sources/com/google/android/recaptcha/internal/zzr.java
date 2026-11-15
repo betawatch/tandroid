@@ -3,19 +3,20 @@ package com.google.android.recaptcha.internal;
 import af.b;
 import android.app.Application;
 import com.google.android.gms.common.api.i;
-import com.google.android.gms.common.api.internal.s;
 import com.google.android.gms.common.api.internal.t;
+import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.tasks.Task;
 import d8.e;
 import gd.g;
 import gd.k;
 import id.c;
+import jd.a;
 import kd.j;
 import o8.f;
 import rd.p;
 import zd.e0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzr extends j implements p {
     int zza;
@@ -49,7 +50,7 @@ final class zzr extends j implements p {
         e0 e0Var;
         String str;
         String str2;
-        jd.a aVar = jd.a.a;
+        a aVar = a.a;
         int i7 = this.zza;
         try {
             try {
@@ -89,9 +90,9 @@ final class zzr extends j implements p {
                 Application context = zzu.zzl(zzuVar);
                 kotlin.jvm.internal.j.e(context, "context");
                 e eVar = new e(context, e.l, com.google.android.gms.common.api.b.j, i.c);
-                s b10 = t.b();
+                t b10 = u.b();
                 b10.d = new n6.c[]{f.a};
-                b10.c = new cb.c(aVar2, 18);
+                b10.c = new cb.c(aVar2, 16);
                 b10.a = 34002;
                 Task e10 = eVar.e(0, b10.a());
                 kotlin.jvm.internal.j.d(e10, "doRead(...)");

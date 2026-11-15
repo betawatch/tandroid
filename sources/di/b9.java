@@ -1,31 +1,49 @@
 package di;
 
-import android.animation.ValueAnimator;
+import org.telegram.ui.Components.et0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b9 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class b9 implements te.b, et0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e9 b;
+    public final /* synthetic */ mb b;
 
-    public /* synthetic */ b9(e9 e9Var, int i7) {
+    public /* synthetic */ b9(mb mbVar, int i7) {
         this.a = i7;
-        this.b = e9Var;
+        this.b = mbVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // te.b
+    public /* synthetic */ void E(float f10, int i7) {
+        int i10 = this.a;
+    }
+
+    @Override // te.b
+    public void G(int i7, float f10, float f11, te.c cVar) {
         switch (this.a) {
             case 0:
-                q9 q9Var = this.b.r0;
-                q9Var.X = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q9.i(q9Var);
+                this.b.r1();
+                break;
+            case 1:
+                this.b.r1();
                 break;
             default:
-                q9 q9Var2 = this.b.r0;
-                q9Var2.W = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q9.i(q9Var2);
+                this.b.X.setAlpha(f10);
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.et0
+    public int b() {
+        return this.b.b0;
+    }
+
+    private final /* synthetic */ void a(float f10, int i7) {
+    }
+
+    private final /* synthetic */ void c(float f10, int i7) {
+    }
+
+    private final /* synthetic */ void d(float f10, int i7) {
     }
 }

@@ -3,7 +3,7 @@ package ce;
 import java.io.Serializable;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m implements d {
     public final /* synthetic */ int a = 0;
@@ -33,7 +33,7 @@ public final class m implements d {
         m mVar;
         q qVar;
         int i10;
-        boolean z9;
+        boolean z10;
         Object obj2;
         Object obj3;
         m mVar2;
@@ -94,7 +94,7 @@ public final class m implements d {
                         Object obj5 = qVar.b;
                         jd.a aVar3 = jd.a.a;
                         i10 = qVar.c;
-                        z9 = true;
+                        z10 = true;
                         if (i10 != 0) {
                             af.b.c(obj5);
                             jb.c cVar2 = (jb.c) this.c;
@@ -115,7 +115,7 @@ public final class m implements d {
                                 }
                                 mVar2 = qVar.a;
                                 af.b.c(obj5);
-                                if (z9) {
+                                if (z10) {
                                     return gd.k.a;
                                 }
                                 throw new de.a(mVar2);
@@ -128,7 +128,7 @@ public final class m implements d {
                             obj2 = obj5;
                         }
                         if (((Boolean) obj2).booleanValue()) {
-                            z9 = false;
+                            z10 = false;
                         } else {
                             d dVar2 = mVar2.b;
                             qVar.a = mVar2;
@@ -138,7 +138,7 @@ public final class m implements d {
                                 return aVar3;
                             }
                         }
-                        if (z9) {
+                        if (z10) {
                         }
                     }
                 }
@@ -146,12 +146,12 @@ public final class m implements d {
                 Object obj52 = qVar.b;
                 jd.a aVar32 = jd.a.a;
                 i10 = qVar.c;
-                z9 = true;
+                z10 = true;
                 if (i10 != 0) {
                 }
                 if (((Boolean) obj2).booleanValue()) {
                 }
-                if (z9) {
+                if (z10) {
                 }
         }
     }

@@ -1,48 +1,39 @@
 package org.telegram.ui;
 
-import android.net.Uri;
-import android.text.TextUtils;
-import java.io.File;
-import java.io.IOException;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class th0 {
-    public boolean a;
-    public boolean b;
-    public int c;
-    public int d;
-    public TLRPC.Document e;
-    public String f;
-    public String g;
+public final class th0 extends FrameLayout {
+    public TextView a;
+    public RadioButton b;
+    public org.telegram.ui.Components.fp c;
+    public boolean d;
+    public sh0 e;
 
-    public final Uri a(int i7) {
-        if (!TextUtils.isEmpty(this.g)) {
-            return Uri.fromFile(new File(this.g));
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(org.telegram.messenger.g0.L(org.telegram.messenger.hd.a0 ? 0.0f : 60.0f), getHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(org.telegram.messenger.hd.a0 ? 60.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
         }
-        TLRPC.Document document = this.e;
-        if (document == null) {
-            return null;
-        }
-        String str = document.file_name_fixed;
-        String A = org.telegram.messenger.w7.A(document);
-        if (A == null) {
-            return null;
-        }
-        String lowerCase = A.toLowerCase();
-        if (!str.endsWith(lowerCase)) {
-            str = a8.p0.D(str, ".", lowerCase);
-        }
-        File file = new File(org.telegram.messenger.g0.E0(), str);
-        if (!file.exists()) {
-            try {
-                org.telegram.messenger.w7.G(i7);
-                org.telegram.messenger.g0.E(org.telegram.messenger.w7.I(this.e), file);
-            } catch (IOException e10) {
-                e10.printStackTrace();
-            }
-        }
-        return Uri.fromFile(file);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.b.f);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30));
     }
 }

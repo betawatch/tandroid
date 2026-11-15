@@ -2,17 +2,23 @@ package g6;
 
 import a8.r7;
 import android.content.Context;
+import android.media.session.MediaSession;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Parcel;
 import android.os.RemoteException;
 import android.support.v4.media.MediaMetadataCompat;
+import android.util.Log;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.internal.cast.l4;
 import com.google.android.gms.tasks.Task;
+import f6.e0;
+import java.lang.reflect.Field;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c extends f {
     public static final j6.b m = new j6.b("CastSession", null);
@@ -22,7 +28,7 @@ public final class c extends f {
     public final b f;
     public final com.google.android.gms.internal.cast.p g;
     public final i6.h h;
-    public f6.e0 i;
+    public e0 i;
     public h6.h j;
     public CastDevice k;
     public l4 l;
@@ -63,24 +69,41 @@ public final class c extends f {
             hVar.c.m1(null);
             r7 r7Var = hVar.h;
             if (r7Var != null) {
-                r7Var.J();
+                r7Var.N();
                 r7Var.f = null;
             }
             r7 r7Var2 = hVar.i;
             if (r7Var2 != null) {
-                r7Var2.J();
+                r7Var2.N();
                 r7Var2.f = null;
             }
             android.support.v4.media.session.a0 a0Var = hVar.p;
             if (a0Var != null) {
-                a0Var.s(null, null);
-                hVar.p.t(new MediaMetadataCompat(new Bundle()));
+                a0Var.r(null, null);
+                hVar.p.s(new MediaMetadataCompat(new Bundle()));
                 hVar.j(0, null);
             }
             android.support.v4.media.session.a0 a0Var2 = hVar.p;
             if (a0Var2 != null) {
-                a0Var2.r(false);
-                hVar.p.q();
+                a0Var2.q(false);
+                android.support.v4.media.session.u uVar = (android.support.v4.media.session.u) hVar.p.b;
+                MediaSession mediaSession = uVar.a;
+                uVar.e.kill();
+                if (Build.VERSION.SDK_INT == 27) {
+                    try {
+                        Field declaredField = mediaSession.getClass().getDeclaredField("mCallback");
+                        declaredField.setAccessible(true);
+                        Handler handler = (Handler) declaredField.get(mediaSession);
+                        if (handler != null) {
+                            handler.removeCallbacksAndMessages(null);
+                        }
+                    } catch (Exception e10) {
+                        Log.w("MediaSessionCompat", "Exception happened while accessing MediaSession.mCallback.", e10);
+                    }
+                }
+                mediaSession.setCallback(null);
+                uVar.b.a.set(null);
+                mediaSession.release();
                 hVar.p = null;
             }
             hVar.n = null;
@@ -90,14 +113,14 @@ public final class c extends f {
                 hVar.i();
             }
         }
-        f6.e0 e0Var = cVar.i;
+        e0 e0Var = cVar.i;
         if (e0Var != null) {
-            com.google.android.gms.common.api.internal.s b10 = com.google.android.gms.common.api.internal.t.b();
+            com.google.android.gms.common.api.internal.t b10 = com.google.android.gms.common.api.internal.u.b();
             b10.c = f6.z.b;
             b10.a = 8403;
             e0Var.e(1, b10.a());
             e0Var.h();
-            com.google.android.gms.common.api.internal.m mVar = cb.c.o(e0Var.g, e0Var.l, "castDeviceControllerListenerKey").b;
+            com.google.android.gms.common.api.internal.m mVar = cb.c.h(e0Var.g, e0Var.l, "castDeviceControllerListenerKey").b;
             q6.m.h(mVar, "Key must not be null");
             e0Var.c(mVar, 8415);
             cVar.i = null;
@@ -134,8 +157,8 @@ public final class c extends f {
                 oVar2.t1(p13, 5);
                 return;
             }
-            j6.t tVar = (j6.t) task.getResult();
-            Status status = tVar.a;
+            j6.u uVar = (j6.u) task.getResult();
+            Status status = uVar.a;
             if (!status.b()) {
                 bVar.b("%s() -> failure result", str);
                 int i10 = status.a;
@@ -155,18 +178,18 @@ public final class c extends f {
             h6.h hVar3 = cVar.j;
             q6.m.d("Must be called from the main thread.");
             hVar2.a(hVar3, cVar.k);
-            f6.d dVar = tVar.b;
+            f6.d dVar = uVar.b;
             q6.m.g(dVar);
-            String str2 = tVar.c;
-            String str3 = tVar.d;
+            String str2 = uVar.c;
+            String str3 = uVar.d;
             q6.m.g(str3);
-            boolean z9 = tVar.e;
+            boolean z10 = uVar.e;
             o oVar4 = (o) qVar;
             Parcel p15 = oVar4.p1();
             com.google.android.gms.internal.cast.t.c(p15, dVar);
             p15.writeString(str2);
             p15.writeString(str3);
-            p15.writeInt(z9 ? 1 : 0);
+            p15.writeInt(z10 ? 1 : 0);
             oVar4.t1(p15, 4);
         } catch (RemoteException e10) {
             bVar.a(e10, "Unable to call %s on %s.", "methods", q.class.getSimpleName());
@@ -179,20 +202,20 @@ public final class c extends f {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void i(Bundle bundle) {
-        boolean z9;
+        boolean z10;
         j6.b bVar = f.b;
         x xVar = this.a;
         CastDevice b10 = CastDevice.b(bundle);
         this.k = b10;
         if (b10 != null) {
-            f6.e0 e0Var = this.i;
+            e0 e0Var = this.i;
             if (e0Var != null) {
-                com.google.android.gms.common.api.internal.s b11 = com.google.android.gms.common.api.internal.t.b();
+                com.google.android.gms.common.api.internal.t b11 = com.google.android.gms.common.api.internal.u.b();
                 b11.c = f6.z.b;
                 b11.a = 8403;
                 e0Var.e(1, b11.a());
                 e0Var.h();
-                com.google.android.gms.common.api.internal.m mVar = cb.c.o(e0Var.g, e0Var.l, "castDeviceControllerListenerKey").b;
+                com.google.android.gms.common.api.internal.m mVar = cb.c.h(e0Var.g, e0Var.l, "castDeviceControllerListenerKey").b;
                 q6.m.h(mVar, "Key must not be null");
                 e0Var.c(mVar, 8415);
                 this.i = null;
@@ -204,29 +227,29 @@ public final class c extends f {
             b bVar2 = this.f;
             h6.a aVar = bVar2 == null ? null : bVar2.f;
             h6.f fVar = aVar != null ? aVar.d : null;
-            boolean z10 = aVar != null && aVar.e;
+            boolean z11 = aVar != null && aVar.e;
             bundle2.putBoolean("com.google.android.gms.cast.EXTRA_CAST_FRAMEWORK_NOTIFICATION_ENABLED", fVar != null);
-            bundle2.putBoolean("com.google.android.gms.cast.EXTRA_CAST_REMOTE_CONTROL_NOTIFICATION_ENABLED", z10);
+            bundle2.putBoolean("com.google.android.gms.cast.EXTRA_CAST_REMOTE_CONTROL_NOTIFICATION_ENABLED", z11);
             bundle2.putBoolean("com.google.android.gms.cast.EXTRA_CAST_ALWAYS_FOLLOW_SESSION_ENABLED", this.g.i);
-            android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(castDevice, new e0(this));
+            android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(castDevice, new d0(this));
             a0Var.d = bundle2;
             f6.e eVar = new f6.e(a0Var);
             Context context = this.c;
             int i7 = f6.g.a;
-            f6.e0 e0Var2 = new f6.e0(context, eVar);
+            e0 e0Var2 = new e0(context, eVar);
             e0Var2.F.add(new i(this));
             this.i = e0Var2;
-            com.google.android.gms.common.api.internal.o o4 = cb.c.o(e0Var2.g, e0Var2.l, "castDeviceControllerListenerKey");
-            bi.a aVar2 = new bi.a();
-            aVar2.a = true;
-            d6.i iVar = new d6.i(e0Var2, 23);
+            com.google.android.gms.common.api.internal.o h = cb.c.h(e0Var2.g, e0Var2.l, "castDeviceControllerListenerKey");
+            com.google.android.gms.common.api.internal.p pVar = new com.google.android.gms.common.api.internal.p();
+            pVar.b = true;
+            ob.c cVar = new ob.c(e0Var2, 20);
             f6.z zVar = f6.z.c;
-            aVar2.e = o4;
-            aVar2.c = iVar;
-            aVar2.d = zVar;
-            aVar2.f = new n6.c[]{f6.y.a};
-            aVar2.b = 8428;
-            e0Var2.b(aVar2.a());
+            pVar.e = h;
+            pVar.c = cVar;
+            pVar.d = zVar;
+            pVar.f = new n6.c[]{f6.y.a};
+            pVar.a = 8428;
+            e0Var2.b(pVar.a());
             return;
         }
         q6.m.d("Must be called from the main thread.");
@@ -235,12 +258,12 @@ public final class c extends f {
                 v vVar = (v) xVar;
                 Parcel r12 = vVar.r1(vVar.p1(), 9);
                 int i10 = com.google.android.gms.internal.cast.t.a;
-                z9 = r12.readInt() != 0;
+                z10 = r12.readInt() != 0;
                 r12.recycle();
             } catch (RemoteException e10) {
                 bVar.a(e10, "Unable to call %s on %s.", "isResuming", x.class.getSimpleName());
             }
-            if (z9) {
+            if (z10) {
                 if (xVar == null) {
                     return;
                 }
@@ -269,8 +292,8 @@ public final class c extends f {
                 return;
             }
         }
-        z9 = false;
-        if (z9) {
+        z10 = false;
+        if (z10) {
         }
     }
 }

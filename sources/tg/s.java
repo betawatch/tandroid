@@ -4,12 +4,12 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ha;
-import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
+import c8.ja;
+import org.telegram.messenger.hd;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.q6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -36,16 +36,16 @@ public final /* synthetic */ class s implements Runnable {
                 final int i10 = 0;
                 linearLayout.setOrientation(0);
                 TextView textView = new TextView(g0Var.getContext());
-                int i11 = m6.E8;
-                u uVar = g0Var.z1;
-                t6.U(textView, i11, uVar);
-                textView.setBackground(m6.N0(false));
+                int i11 = j6.E8;
+                u uVar = g0Var.A1;
+                q6.U(textView, i11, uVar);
+                textView.setBackground(j6.N0(false));
                 textView.setGravity(16);
                 textView.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
                 final int i12 = 1;
                 textView.setTextSize(1, 14.0f);
                 textView.setTag(0);
-                textView.setText(id.M0(2131747672, null));
+                textView.setText(hd.M0(2131747672, null));
                 TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
                 textView.setEllipsize(truncateAt);
                 textView.setOnClickListener(new View.OnClickListener() { // from class: tg.p
@@ -56,49 +56,49 @@ public final /* synthetic */ class s implements Runnable {
                                 j jVar2 = jVar;
                                 g0 g0Var2 = g0Var;
                                 g0Var2.q0(jVar2);
-                                org.telegram.ui.ActionBar.g1 g1Var = g0Var2.A1;
+                                org.telegram.ui.ActionBar.g1 g1Var = g0Var2.B1;
                                 if (g1Var != null && g1Var.isShowing()) {
-                                    g0Var2.A1.d(true);
+                                    g0Var2.B1.d(true);
                                     break;
                                 }
                                 break;
                             default:
                                 g0 g0Var3 = g0Var;
                                 g0Var3.getClass();
-                                ((d2) jVar).r(true);
-                                org.telegram.ui.ActionBar.g1 g1Var2 = g0Var3.A1;
+                                ((g2) jVar).r(true);
+                                org.telegram.ui.ActionBar.g1 g1Var2 = g0Var3.B1;
                                 if (g1Var2 != null && g1Var2.isShowing()) {
-                                    g0Var3.A1.d(true);
+                                    g0Var3.B1.d(true);
                                     break;
                                 }
                                 break;
                         }
                     }
                 });
-                linearLayout.addView(textView, ha.o(-2, 48));
-                if (jVar instanceof k2) {
+                linearLayout.addView(textView, ja.o(-2, 48));
+                if (jVar instanceof o2) {
                     TextView textView2 = new TextView(g0Var.getContext());
-                    t6.U(textView2, i11, uVar);
-                    textView2.setBackground(m6.N0(false));
+                    q6.U(textView2, i11, uVar);
+                    textView2.setBackground(j6.N0(false));
                     textView2.setGravity(16);
                     textView2.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
                     textView2.setTextSize(1, 14.0f);
                     textView2.setEllipsize(truncateAt);
                     textView2.setTag(1);
-                    textView2.setText(id.M0(2131747670, null));
+                    textView2.setText(hd.M0(2131747670, null));
                     textView2.setOnClickListener(new k(g0Var, 2));
-                    linearLayout.addView(textView2, ha.o(-2, 48));
+                    linearLayout.addView(textView2, ja.o(-2, 48));
                 }
-                if (jVar instanceof d2) {
+                if (jVar instanceof g2) {
                     TextView textView3 = new TextView(g0Var.getContext());
-                    t6.U(textView3, i11, uVar);
-                    textView3.setBackgroundDrawable(m6.N0(false));
+                    q6.U(textView3, i11, uVar);
+                    textView3.setBackgroundDrawable(j6.N0(false));
                     textView3.setGravity(16);
                     textView3.setEllipsize(truncateAt);
                     textView3.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
                     textView3.setTextSize(1, 14.0f);
                     textView3.setTag(2);
-                    textView3.setText(id.M0(2131750690, null));
+                    textView3.setText(hd.M0(2131750690, null));
                     textView3.setOnClickListener(new View.OnClickListener() { // from class: tg.p
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -107,41 +107,41 @@ public final /* synthetic */ class s implements Runnable {
                                     j jVar2 = jVar;
                                     g0 g0Var2 = g0Var;
                                     g0Var2.q0(jVar2);
-                                    org.telegram.ui.ActionBar.g1 g1Var = g0Var2.A1;
+                                    org.telegram.ui.ActionBar.g1 g1Var = g0Var2.B1;
                                     if (g1Var != null && g1Var.isShowing()) {
-                                        g0Var2.A1.d(true);
+                                        g0Var2.B1.d(true);
                                         break;
                                     }
                                     break;
                                 default:
                                     g0 g0Var3 = g0Var;
                                     g0Var3.getClass();
-                                    ((d2) jVar).r(true);
-                                    org.telegram.ui.ActionBar.g1 g1Var2 = g0Var3.A1;
+                                    ((g2) jVar).r(true);
+                                    org.telegram.ui.ActionBar.g1 g1Var2 = g0Var3.B1;
                                     if (g1Var2 != null && g1Var2.isShowing()) {
-                                        g0Var3.A1.d(true);
+                                        g0Var3.B1.d(true);
                                         break;
                                     }
                                     break;
                             }
                         }
                     });
-                    linearLayout.addView(textView3, ha.o(-2, 48));
+                    linearLayout.addView(textView3, ja.o(-2, 48));
                 }
                 if (!(jVar instanceof n1)) {
                     TextView textView4 = new TextView(g0Var.getContext());
-                    t6.U(textView4, i11, uVar);
-                    textView4.setBackgroundDrawable(m6.N0(false));
+                    q6.U(textView4, i11, uVar);
+                    textView4.setBackgroundDrawable(j6.N0(false));
                     textView4.setGravity(16);
                     textView4.setEllipsize(truncateAt);
                     textView4.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
                     textView4.setTextSize(1, 14.0f);
                     textView4.setTag(2);
-                    textView4.setText(id.M0(2131747671, null));
+                    textView4.setText(hd.M0(2131747671, null));
                     textView4.setOnClickListener(new k(g0Var, 3));
-                    linearLayout.addView(textView4, ha.o(-2, 48));
+                    linearLayout.addView(textView4, ja.o(-2, 48));
                 }
-                g0Var.B1.addView(linearLayout);
+                g0Var.C1.addView(linearLayout);
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) linearLayout.getLayoutParams();
                 layoutParams.width = -2;
                 layoutParams.height = -2;

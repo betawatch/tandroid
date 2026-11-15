@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class t extends c implements RandomAccess {
     public final Object[] a;
@@ -16,15 +16,15 @@ public final class t extends c implements RandomAccess {
     public t(int i7, Object[] objArr) {
         this.a = objArr;
         if (i7 < 0) {
-            throw new IllegalArgumentException(jg.g.j(i7, "ring buffer filled size should not be negative but it is ").toString());
+            throw new IllegalArgumentException(i5.c.i(i7, "ring buffer filled size should not be negative but it is ").toString());
         }
         if (i7 <= objArr.length) {
             this.b = objArr.length;
             this.d = i7;
         } else {
-            StringBuilder n10 = jg.g.n(i7, "ring buffer filled size: ", " cannot be larger than the buffer size: ");
-            n10.append(objArr.length);
-            throw new IllegalArgumentException(n10.toString().toString());
+            StringBuilder m10 = i5.c.m(i7, "ring buffer filled size: ", " cannot be larger than the buffer size: ");
+            m10.append(objArr.length);
+            throw new IllegalArgumentException(m10.toString().toString());
         }
     }
 

@@ -1,27 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ba1 implements kx0 {
-    public final /* synthetic */ TLRPC.TL_forumTopic a;
-    public final /* synthetic */ ca1 b;
+public final /* synthetic */ class ba1 implements org.telegram.ui.ActionBar.q1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TwoStepVerificationActivity b;
 
-    public ba1(ca1 ca1Var, TLRPC.TL_forumTopic tL_forumTopic) {
-        this.b = ca1Var;
-        this.a = tL_forumTopic;
+    public /* synthetic */ ba1(TwoStepVerificationActivity twoStepVerificationActivity, int i7) {
+        this.a = i7;
+        this.b = twoStepVerificationActivity;
     }
 
-    @Override // org.telegram.ui.kx0
-    public final void c0() {
-        fa1 fa1Var = this.b.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        fa1.Z(fa1Var, tL_forumTopic.id);
-        org.telegram.messenger.g0.i3(new rw0(23, this, tL_forumTopic), 300L);
-    }
-
-    @Override // org.telegram.ui.kx0
-    public final void t(rh0 rh0Var) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            case 1:
+                TL_account.declinePasswordReset declinepasswordreset = new TL_account.declinePasswordReset();
+                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
+                twoStepVerificationActivity.getConnectionsManager().sendRequest(declinepasswordreset, new ca1(twoStepVerificationActivity, 2));
+                break;
+            case 2:
+                this.b.p0();
+                break;
+            case 3:
+                this.b.z0();
+                break;
+            default:
+                this.b.z0();
+                break;
+        }
     }
 }

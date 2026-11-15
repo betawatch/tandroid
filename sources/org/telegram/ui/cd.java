@@ -1,52 +1,66 @@
 package org.telegram.ui;
 
-import java.io.Serializable;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cd implements org.telegram.ui.Components.et0, org.telegram.ui.ActionBar.r1, org.telegram.messenger.a20 {
-    public final /* synthetic */ zd a;
+public final /* synthetic */ class cd implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xd b;
 
-    public /* synthetic */ cd(zd zdVar) {
-        this.a = zdVar;
+    public /* synthetic */ cd(xd xdVar, int i7) {
+        this.a = i7;
+        this.b = xdVar;
     }
 
-    @Override // org.telegram.ui.Components.et0
-    public int b() {
-        return this.a.R0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        this.a.m0.presentFragment(new cb1(6, null));
-    }
-
-    @Override // org.telegram.messenger.a20
-    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        zd zdVar = this.a;
-        dd ddVar = zdVar.s1;
-        int i7 = zdVar.o0;
-        long j3 = zdVar.p0;
-        int i10 = ((org.telegram.ui.Components.x31) obj).d;
-        if (i10 != 1) {
-            if (i10 == 4) {
-                zdVar.m0.presentFragment(new hi.q3(j3));
-            }
-        } else {
-            if (zdVar.r0 >= org.telegram.messenger.qp.s1(i7).z4) {
-                zdVar.j1 = !zdVar.j1;
-                org.telegram.messenger.g0.r(ddVar);
-                org.telegram.messenger.g0.i3(ddVar, 1000L);
-                zdVar.X0.f3.O(true);
-                return;
-            }
-            if (zdVar.q0 == null) {
-                return;
-            }
-            ug.i0 i0Var = new ug.i0(30, zdVar.o0, zdVar.getContext(), zdVar.m0, zdVar.n0);
-            i0Var.B1(j3);
-            i0Var.z1(zdVar.q0, true);
-            org.telegram.messenger.qp.s1(i7).G0().b(j3, zdVar.q0, new org.telegram.messenger.voip.k(8, zdVar, i0Var));
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        Object[] objArr = 0;
+        xd xdVar = this.b;
+        switch (i7) {
+            case 0:
+                vf.c.t(xdVar.getContext(), org.telegram.messenger.hd.M0(2131748404, null));
+                break;
+            case 1:
+                vf.c.t(xdVar.getContext(), org.telegram.messenger.hd.M0(2131748370, null));
+                break;
+            case 2:
+                org.telegram.ui.Components.u41 u41Var = xdVar.Y0;
+                if (u41Var != null) {
+                    boolean z10 = xdVar.f0;
+                    u41Var.g3.O((xdVar.S0 != -1) == xdVar.b1.a());
+                    if (z10 && xdVar.S0 != -1) {
+                        xdVar.a();
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                xdVar.l1 = xdVar.k1;
+                break;
+            case 4:
+                xdVar.K0.setLoading(false);
+                break;
+            case 5:
+                xdVar.Z0.setVisibility(8);
+                break;
+            case 6:
+                xdVar.Z0.setVisibility(8);
+                break;
+            default:
+                int i10 = xdVar.p0;
+                org.telegram.messenger.g0.r(xdVar.t1);
+                if (xdVar.k1 != xdVar.l1) {
+                    TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
+                    tL_channels_restrictSponsoredMessages.channel = org.telegram.messenger.np.s1(i10).h1(-xdVar.q0);
+                    tL_channels_restrictSponsoredMessages.restricted = xdVar.k1;
+                    ConnectionsManager.getInstance(i10).sendRequest(tL_channels_restrictSponsoredMessages, new jd(xdVar, objArr == true ? 1 : 0));
+                    break;
+                }
+                break;
         }
     }
 }

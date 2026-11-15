@@ -2,10 +2,11 @@ package com.google.android.recaptcha.internal;
 
 import af.b;
 import id.c;
+import jd.a;
 import org.telegram.tgnet.TLObject;
 import rd.p;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzhf {
     private final p zza;
@@ -34,7 +35,7 @@ public final class zzhf {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzheVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzheVar.zza;
-                jd.a aVar = jd.a.a;
+                a aVar = a.a;
                 i7 = zzheVar.zzc;
                 if (i7 != 0) {
                     b.c(obj);
@@ -73,7 +74,7 @@ public final class zzhf {
         }
         zzheVar = new zzhe(this, cVar);
         Object obj2 = zzheVar.zza;
-        jd.a aVar2 = jd.a.a;
+        a aVar2 = a.a;
         i7 = zzheVar.zzc;
         if (i7 != 0) {
         }

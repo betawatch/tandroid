@@ -1,6 +1,6 @@
 package i2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n {
     public final int a;
@@ -23,7 +23,7 @@ public final class n {
     public final int r;
     public final int s;
 
-    public n(int i7, int i10, int i11, int i12, int i13, int i14, float f10, int i15, int i16, boolean z9, boolean z10, int i17, int i18, int i19, boolean z11, int i20, int i21, int i22, int i23) {
+    public n(int i7, int i10, int i11, int i12, int i13, int i14, float f10, int i15, int i16, boolean z10, boolean z11, int i17, int i18, int i19, boolean z12, int i20, int i21, int i22, int i23) {
         this.a = i7;
         this.b = i10;
         this.c = i11;
@@ -33,12 +33,12 @@ public final class n {
         this.g = f10;
         this.h = i15;
         this.i = i16;
-        this.j = z9;
-        this.k = z10;
+        this.j = z10;
+        this.k = z11;
         this.l = i17;
         this.m = i18;
         this.n = i19;
-        this.o = z11;
+        this.o = z12;
         this.p = i20;
         this.q = i21;
         this.r = i22;

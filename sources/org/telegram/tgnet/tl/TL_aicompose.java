@@ -10,17 +10,17 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class TL_aicompose {
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class AiComposeTone extends TLObject {
         public long emoji_id;
         public String title;
 
-        public static AiComposeTone TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return (AiComposeTone) TLObject.TLdeserialize(AiComposeTone.class, fromConstructor(i7), inputSerializedData, i7, z9);
+        public static AiComposeTone TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return (AiComposeTone) TLObject.TLdeserialize(AiComposeTone.class, fromConstructor(i7), inputSerializedData, i7, z10);
         }
 
         private static AiComposeTone fromConstructor(int i7) {
@@ -34,10 +34,10 @@ public class TL_aicompose {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class InputAiComposeTone extends TLObject {
-        public static InputAiComposeTone TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return (InputAiComposeTone) TLObject.TLdeserialize(InputAiComposeTone.class, fromConstructor(i7), inputSerializedData, i7, z9);
+        public static InputAiComposeTone TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return (InputAiComposeTone) TLObject.TLdeserialize(InputAiComposeTone.class, fromConstructor(i7), inputSerializedData, i7, z10);
         }
 
         public static boolean equals(InputAiComposeTone inputAiComposeTone, InputAiComposeTone inputAiComposeTone2) {
@@ -106,7 +106,7 @@ public class TL_aicompose {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class TL_aiComposeTone extends AiComposeTone {
         public static final int constructor = -805945687;
         public long access_hash;
@@ -120,28 +120,28 @@ public class TL_aicompose {
         public String slug;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
-            int readInt32 = inputSerializedData.readInt32(z9);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.creator = TLObject.hasFlag(readInt32, 1);
-            this.id = inputSerializedData.readInt64(z9);
-            this.access_hash = inputSerializedData.readInt64(z9);
-            this.slug = inputSerializedData.readString(z9);
-            this.title = inputSerializedData.readString(z9);
+            this.id = inputSerializedData.readInt64(z10);
+            this.access_hash = inputSerializedData.readInt64(z10);
+            this.slug = inputSerializedData.readString(z10);
+            this.title = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.emoji_id = inputSerializedData.readInt64(z9);
+                this.emoji_id = inputSerializedData.readInt64(z10);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
-                this.prompt = inputSerializedData.readString(z9);
+                this.prompt = inputSerializedData.readString(z10);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.installs_count = inputSerializedData.readInt32(z9);
+                this.installs_count = inputSerializedData.readInt32(z10);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.author_id = inputSerializedData.readInt64(z9);
+                this.author_id = inputSerializedData.readInt64(z10);
             }
             if (TLObject.hasFlag(this.flags, 32)) {
-                this.example_english = aiComposeToneExample.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+                this.example_english = aiComposeToneExample.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
         }
 
@@ -173,16 +173,16 @@ public class TL_aicompose {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class TL_aiComposeToneDefault extends AiComposeTone {
         public static final int constructor = -1683135468;
         public String tone;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
-            this.tone = inputSerializedData.readString(z9);
-            this.emoji_id = inputSerializedData.readInt64(z9);
-            this.title = inputSerializedData.readString(z9);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.tone = inputSerializedData.readString(z10);
+            this.emoji_id = inputSerializedData.readInt64(z10);
+            this.title = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -194,17 +194,17 @@ public class TL_aicompose {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class TL_tones extends Tones {
         public static final int constructor = 1822232318;
         public long hash;
         public ArrayList<AiComposeTone> tones = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
-            this.hash = inputSerializedData.readInt64(z9);
-            this.tones = Vector.deserialize(inputSerializedData, new c(17), z9);
-            this.users = Vector.deserialize(inputSerializedData, new m(4), z9);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.hash = inputSerializedData.readInt64(z10);
+            this.tones = Vector.deserialize(inputSerializedData, new c(17), z10);
+            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -216,12 +216,12 @@ public class TL_aicompose {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class Tones extends TLObject {
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
-        public static Tones TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return (Tones) TLObject.TLdeserialize(Tones.class, fromConstructor(i7), inputSerializedData, i7, z9);
+        public static Tones TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return (Tones) TLObject.TLdeserialize(Tones.class, fromConstructor(i7), inputSerializedData, i7, z10);
         }
 
         private static Tones fromConstructor(int i7) {
@@ -235,20 +235,20 @@ public class TL_aicompose {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class aiComposeToneExample extends TLObject {
         public static final int constructor = -237623060;
         public TLRPC.TL_textWithEntities from;
         public TLRPC.TL_textWithEntities to;
 
-        public static aiComposeToneExample TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return (aiComposeToneExample) TLObject.TLdeserialize(aiComposeToneExample.class, i7 == -237623060 ? new aiComposeToneExample() : null, inputSerializedData, i7, z9);
+        public static aiComposeToneExample TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return (aiComposeToneExample) TLObject.TLdeserialize(aiComposeToneExample.class, i7 == -237623060 ? new aiComposeToneExample() : null, inputSerializedData, i7, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
-            this.from = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
-            this.to = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.from = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.to = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -259,7 +259,7 @@ public class TL_aicompose {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class createTone extends TLMethod<AiComposeTone> {
         public static final int constructor = 1252538643;
         public boolean display_author;
@@ -280,12 +280,12 @@ public class TL_aicompose {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public AiComposeTone deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return AiComposeTone.TLdeserialize(inputSerializedData, i7, z9);
+        public AiComposeTone deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return AiComposeTone.TLdeserialize(inputSerializedData, i7, z10);
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class deleteTone extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -583454358;
         public InputAiComposeTone tone;
@@ -297,12 +297,12 @@ public class TL_aicompose {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i7, z9);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i7, z10);
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class getTone extends TLMethod<Tones> {
         public static final int constructor = -1293370877;
         public InputAiComposeTone tone;
@@ -314,12 +314,12 @@ public class TL_aicompose {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public Tones deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return Tones.TLdeserialize(inputSerializedData, i7, z9);
+        public Tones deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return Tones.TLdeserialize(inputSerializedData, i7, z10);
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class getToneExample extends TLMethod<aiComposeToneExample> {
         public static final int constructor = -776688876;
         public int num;
@@ -333,12 +333,12 @@ public class TL_aicompose {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public aiComposeToneExample deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return aiComposeToneExample.TLdeserialize(inputSerializedData, i7, z9);
+        public aiComposeToneExample deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return aiComposeToneExample.TLdeserialize(inputSerializedData, i7, z10);
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class getTones extends TLMethod<Tones> {
         public static final int constructor = -1412066815;
         public long hash;
@@ -350,19 +350,19 @@ public class TL_aicompose {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public Tones deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return Tones.TLdeserialize(inputSerializedData, i7, z9);
+        public Tones deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return Tones.TLdeserialize(inputSerializedData, i7, z10);
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class inputAiComposeToneDefault extends InputAiComposeTone {
         public static final int constructor = 535407039;
         public String tone;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
-            this.tone = inputSerializedData.readString(z9);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.tone = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -372,16 +372,16 @@ public class TL_aicompose {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class inputAiComposeToneID extends InputAiComposeTone {
         public static final int constructor = 125026432;
         public long access_hash;
         public long id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
-            this.id = inputSerializedData.readInt64(z9);
-            this.access_hash = inputSerializedData.readInt64(z9);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.id = inputSerializedData.readInt64(z10);
+            this.access_hash = inputSerializedData.readInt64(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -392,14 +392,14 @@ public class TL_aicompose {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class inputAiComposeToneSingleUse extends InputAiComposeTone {
         public static final int constructor = 235681199;
         public String custom_prompt;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
-            this.custom_prompt = inputSerializedData.readString(z9);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.custom_prompt = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -409,14 +409,14 @@ public class TL_aicompose {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class inputAiComposeToneSlug extends InputAiComposeTone {
         public static final int constructor = 530584407;
         public String slug;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
-            this.slug = inputSerializedData.readString(z9);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.slug = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -426,7 +426,7 @@ public class TL_aicompose {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class saveTone extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 394447793;
         public InputAiComposeTone tone;
@@ -440,12 +440,12 @@ public class TL_aicompose {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i7, z9);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i7, z10);
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class updateTone extends TLMethod<AiComposeTone> {
         public static final int constructor = -1875128487;
         public boolean display_author;
@@ -475,12 +475,12 @@ public class TL_aicompose {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public AiComposeTone deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return AiComposeTone.TLdeserialize(inputSerializedData, i7, z9);
+        public AiComposeTone deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return AiComposeTone.TLdeserialize(inputSerializedData, i7, z10);
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class TL_tonesNotModified extends Tones {
         public static final int constructor = -1040948989;
 
@@ -490,7 +490,7 @@ public class TL_aicompose {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
         }
     }
 }

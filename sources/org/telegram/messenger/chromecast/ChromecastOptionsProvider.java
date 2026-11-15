@@ -8,7 +8,7 @@ import h6.a;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class ChromecastOptionsProvider implements e {
     public static final b a;
@@ -17,11 +17,11 @@ public class ChromecastOptionsProvider implements e {
         ArrayList arrayList = new ArrayList();
         i iVar = new i();
         ArrayList arrayList2 = new ArrayList();
-        a aVar = b.I;
+        a aVar = b.J;
         if (aVar == null) {
             throw new NullPointerException("use Optional.orNull() instead of Optional.or(null)");
         }
-        a = new b("CC1AD845", arrayList, false, iVar, true, aVar, true, 0.05000000074505806d, false, false, false, arrayList2, true, false, b.G, b.H);
+        a = new b("CC1AD845", arrayList, false, iVar, true, aVar, true, 0.05000000074505806d, false, false, false, arrayList2, true, false, b.H, b.I);
     }
 
     @Override // g6.e

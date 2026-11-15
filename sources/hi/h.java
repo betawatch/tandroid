@@ -1,41 +1,100 @@
 package hi;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.x31;
+import android.animation.ObjectAnimator;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class h extends w31 {
-    static {
-        w31.h(new h());
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class h implements TextWatcher {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ m c;
+
+    public h(m mVar) {
+        this.c = mVar;
     }
 
-    public static x31 i(int i7, String str, String str2) {
-        x31 K = x31.K(h.class);
-        K.k = i7;
-        K.l = str;
-        K.m = str2;
-        return K;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        m mVar = this.c;
+        e eVar = mVar.d0;
+        org.telegram.ui.Components.h6 h6Var = mVar.w;
+        mVar.x = Character.codePointCount(editable, 0, editable.length());
+        int captionLimit = mVar.getCaptionLimit();
+        if (mVar.x + 25 > captionLimit) {
+            str = "" + (captionLimit - mVar.x);
+        } else {
+            str = null;
+        }
+        h6Var.a();
+        h6Var.setText(str);
+        h6Var.setTextColor(mVar.x >= captionLimit ? -1280137 : -1);
+        if (mVar.x > captionLimit && !m10.i(mVar.V).q() && mVar.x < mVar.getCaptionPremiumLimit() && mVar.x > this.a && (mVar.e() || np.s1(mVar.V).D3())) {
+            int i7 = -mVar.O;
+            mVar.O = i7;
+            org.telegram.messenger.g0.F3(i7, h6Var, null);
+            org.telegram.messenger.p2.E.a();
+        }
+        int i10 = mVar.x;
+        this.a = i10;
+        boolean z10 = i10 > captionLimit;
+        if (z10 != this.b) {
+            mVar.q(z10);
+        }
+        this.b = z10;
+        if (!mVar.W) {
+            org.telegram.messenger.g0.r(eVar);
+            org.telegram.messenger.g0.i3(eVar, 1500L);
+        }
+        mVar.W = false;
+        org.telegram.messenger.g0.h3(new fi.c1(this, 25));
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        ((i) view).a(x31Var.k, x31Var.l, x31Var.m);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        m mVar = this.c;
+        ObjectAnimator objectAnimator = mVar.g0;
+        if (objectAnimator == null || !objectAnimator.isRunning()) {
+            mVar.b0 = mVar.f.getEditText().getScrollY();
+            mVar.a0 = true;
+        }
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, h6 h6Var) {
-        return new i(context, h6Var, false);
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final boolean f() {
-        return false;
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        m mVar = this.c;
+        g gVar = mVar.f;
+        if (gVar.getEditText().h) {
+            return;
+        }
+        if (mVar.N == null) {
+            i iVar = new i(mVar, mVar.getContext(), mVar.y, LaunchActivity.Q(), new fi.b(), 0);
+            mVar.N = iVar;
+            mVar.U = new org.telegram.ui.Components.y9(mVar.P, iVar, 0, false);
+            mVar.N.p(new gc.b(mVar, 3));
+            dh.c cVar = mVar.h0;
+            if (cVar != null) {
+                i iVar2 = mVar.N;
+                fh.g c10 = cVar.c(iVar2, null, false);
+                c10.p(c8.g0.i(mVar.a));
+                iVar2.setBackgroundDrawable(c10);
+            }
+            mVar.b.addView(mVar.N, c8.ja.e(-1, -1, 83));
+            mVar.w();
+        }
+        if (mVar.N.getAdapter() != null) {
+            jg.h1 adapter = mVar.N.getAdapter();
+            np.s1(mVar.V).a2(Long.valueOf(mVar.y));
+            TLRPC.Chat M0 = np.s1(mVar.V).M0(Long.valueOf(-mVar.y));
+            adapter.getClass();
+            adapter.m0 = M0;
+            mVar.N.getAdapter().U(charSequence, gVar.getEditText().getSelectionStart(), null, false, false);
+        }
     }
 }

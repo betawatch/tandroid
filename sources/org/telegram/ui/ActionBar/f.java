@@ -2,61 +2,133 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.view.KeyEvent;
+import android.view.View;
 import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.Components.i9;
+import org.telegram.ui.Components.xe;
+import org.telegram.ui.bg0;
+import org.telegram.ui.rf0;
+import org.telegram.ui.xf0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class f extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ KeyEvent.Callback e;
 
-    public /* synthetic */ f(l lVar, int i7) {
-        this.a = i7;
-        this.b = lVar;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                l lVar = this.b;
-                AnimatorSet animatorSet = lVar.P;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    lVar.P = null;
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
+    public f(k kVar, ArrayList arrayList, boolean z10, boolean z11) {
+        this.e = kVar;
+        this.d = arrayList;
+        this.b = z10;
+        this.c = z11;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
+        xe xeVar;
+        org.telegram.ui.Cells.q1 q1Var;
+        ViewGroup viewGroup;
+        rf0 rf0Var;
         switch (this.a) {
             case 0:
-                l lVar = this.b;
-                AnimatorSet animatorSet = lVar.P;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    lVar.P = null;
-                    lVar.F.setVisibility(4);
-                    break;
+                ArrayList arrayList = (ArrayList) this.d;
+                k kVar = (k) this.e;
+                int i7 = 0;
+                while (true) {
+                    int size = arrayList.size();
+                    boolean z10 = this.b;
+                    if (i7 >= size) {
+                        if (z10 && !this.c) {
+                            j5 j5Var = kVar.n[0];
+                            if (j5Var != null) {
+                                j5Var.setVisibility(8);
+                            }
+                            j5 j5Var2 = kVar.n[1];
+                            if (j5Var2 != null) {
+                                j5Var2.setVisibility(8);
+                            }
+                        }
+                        i9 i9Var = kVar.f;
+                        if (i9Var != null && !z10) {
+                            i9Var.setVisibility(8);
+                            break;
+                        }
+                    } else {
+                        View view = (View) arrayList.get(i7);
+                        if (z10) {
+                            view.setVisibility(4);
+                            view.setAlpha(0.0f);
+                        } else {
+                            view.setAlpha(1.0f);
+                        }
+                        i7++;
+                    }
                 }
                 break;
             default:
-                l lVar2 = this.b;
-                m5 m5Var = lVar2.n[1];
-                if (m5Var != null && m5Var.getParent() != null) {
-                    ((ViewGroup) lVar2.n[1].getParent()).removeView(lVar2.n[1]);
+                Runnable runnable = (Runnable) this.d;
+                bg0 bg0Var = (bg0) this.e;
+                xf0 xf0Var = bg0Var.K;
+                boolean z11 = this.b;
+                float f10 = z11 ? 1.0f : 0.0f;
+                bg0Var.E = f10;
+                bg0Var.x = false;
+                bg0Var.y = false;
+                bg0Var.H.setAlpha(f10);
+                if (z11) {
+                    bg0Var.w = false;
+                    bg0Var.s = false;
                 }
-                lVar2.O0.x(lVar2.n[1]);
-                lVar2.n[1] = null;
-                lVar2.i1 = false;
-                Object[] objArr = lVar2.g0;
-                lVar2.N((String) objArr[0], ((Integer) objArr[1]).intValue(), (Runnable) lVar2.g0[2]);
+                xe xeVar2 = bg0Var.S;
+                if (xeVar2 != null) {
+                    xeVar2.setAlpha(1.0f);
+                }
+                ab.q qVar = bg0Var.m0;
+                if (qVar != null && !z11) {
+                    qVar.C(false);
+                }
+                org.telegram.ui.Cells.q1 q1Var2 = bg0Var.v0;
+                if (q1Var2 != null) {
+                    q1Var2.setVisibility(0);
+                }
+                if (!bg0Var.r) {
+                    bg0Var.o(false, 1.0f);
+                }
+                if (!z11 && (rf0Var = bg0Var.X) != null) {
+                    rf0Var.setAlpha(0.0f);
+                }
+                if (!this.c && (viewGroup = bg0Var.Z) != null) {
+                    viewGroup.setAlpha(bg0Var.E);
+                }
+                xf0Var.invalidate();
+                xf0Var.setAlpha(bg0Var.E);
+                bg0Var.F.invalidate();
+                bg0Var.G.invalidate();
+                if (runnable != null) {
+                    if (!z11 && (q1Var = bg0Var.v0) != null && q1Var.isAttachedToWindow()) {
+                        bg0Var.v0.post(runnable);
+                        break;
+                    } else if (!z11 && (xeVar = bg0Var.S) != null && xeVar.isAttachedToWindow()) {
+                        bg0Var.S.post(runnable);
+                        break;
+                    } else {
+                        org.telegram.messenger.g0.h3(runnable);
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    public f(bg0 bg0Var, boolean z10, boolean z11, Runnable runnable) {
+        this.e = bg0Var;
+        this.b = z10;
+        this.c = z11;
+        this.d = runnable;
     }
 }

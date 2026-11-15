@@ -1,84 +1,56 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class ze {
-    public ye A;
-    public CharSequence a;
-    public boolean b;
-    public String c;
-    public long d;
-    public TLRPC.Photo e;
-    public ij f;
-    public String g;
-    public String h;
-    public String i;
-    public String j;
-    public String k;
-    public String l;
-    public long m;
-    public ArrayList n;
-    public hf o;
-    public ArrayList p;
-    public ArrayList q;
-    public ArrayList r;
-    public j20 s;
-    public long t;
-    public boolean u;
-    public boolean v;
-    public boolean w;
-    public int x;
-    public long y;
-    public Boolean z;
+public final /* synthetic */ class ze implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bf b;
+    public final /* synthetic */ int c;
 
-    public abstract String a();
+    public /* synthetic */ ze(bf bfVar, int i7, int i10) {
+        this.a = i10;
+        this.b = bfVar;
+        this.c = i7;
+    }
 
-    public final boolean b() {
-        ArrayList arrayList;
-        if (!this.b) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                bf bfVar = this.b;
+                try {
+                    bfVar.b.o(this.c);
+                    break;
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    return;
+                }
+            case 1:
+                bf bfVar2 = this.b;
+                try {
+                    bfVar2.b.o(this.c);
+                    break;
+                } catch (Exception e11) {
+                    a8.g(e11, true);
+                    return;
+                }
+            case 2:
+                bf bfVar3 = this.b;
+                try {
+                    bfVar3.b.o(this.c);
+                    break;
+                } catch (Exception e12) {
+                    a8.g(e12, true);
+                    return;
+                }
+            default:
+                bf bfVar4 = this.b;
+                try {
+                    bfVar4.b.o(this.c);
+                    break;
+                } catch (Exception e13) {
+                    a8.g(e13, true);
+                }
         }
-        j20 j20Var = this.s;
-        if (j20Var != null && (j20Var.t || j20Var.a > 0 || j20Var.b > 0)) {
-            return true;
-        }
-        ye yeVar = this.A;
-        return ((yeVar == null || yeVar.b()) && this.o == null && this.j == null && ((arrayList = this.p) == null || arrayList.isEmpty()) && this.g == null) ? false : true;
-    }
-
-    public final boolean c() {
-        Boolean bool = this.z;
-        return bool == null ? iz.h1 : bool.booleanValue();
-    }
-
-    public boolean d() {
-        return (this instanceof gf) && ((gf) this).d();
-    }
-
-    public void e() {
-        this.a = null;
-        this.g = null;
-        this.e = null;
-        this.f = null;
-        this.c = null;
-        this.i = null;
-        this.h = null;
-        this.j = null;
-        this.l = null;
-        this.k = null;
-        this.u = false;
-        this.v = false;
-        this.w = false;
-        this.x = 0;
-        this.p = null;
-        this.s = null;
-        this.n = null;
-        this.o = null;
-        this.r = null;
-        this.A = null;
-        this.z = null;
     }
 }

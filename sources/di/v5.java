@@ -1,130 +1,37 @@
 package di;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import java.util.Comparator;
-import java.util.List;
-import java.util.regex.Pattern;
-import org.telegram.messenger.bc;
-import org.telegram.messenger.dt;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.ui;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ez;
-import org.telegram.ui.Components.ly0;
-import org.telegram.ui.Components.tv;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ak0;
-import org.telegram.ui.hf0;
-import org.telegram.ui.ho;
-import org.telegram.ui.jd0;
-import org.telegram.ui.kl0;
-import org.telegram.ui.la;
-import org.telegram.ui.o21;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.ns;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v5 implements RequestDelegate {
-    public final /* synthetic */ int a;
+public final class v5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ w5 a;
 
-    public /* synthetic */ v5(int i7) {
-        this.a = i7;
+    public v5(w5 w5Var) {
+        this.a = w5Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new ai.m0(8));
-                break;
-            case 1:
-                Comparator comparator = z6.X;
-                break;
-            case 2:
-                org.telegram.messenger.g0.h3(new ai.m0(24));
-                break;
-            case 3:
-                org.telegram.messenger.g0.h3(new ai.m0(24));
-                break;
-            case 4:
-                int[] iArr = fi.b1.a0;
-                break;
-            case 5:
-                org.telegram.messenger.g0.h3(new ai.m0(17));
-                break;
-            case 6:
-                org.telegram.messenger.g0.h3(new ai.m0(17));
-                break;
-            case 7:
-                org.telegram.messenger.g0.h3(new ai.m0(17));
-                break;
-            case 8:
-                org.telegram.messenger.p5 p5Var = org.telegram.messenger.d4.s;
-                break;
-            case 9:
-                break;
-            case 10:
-                int i7 = bc.i;
-                break;
-            case 11:
-                Pattern pattern = ui.R1;
-                break;
-            case 12:
-                org.telegram.messenger.g0.h3(new org.telegram.messenger.a(tL_error, 25));
-                break;
-            case 13:
-                int i10 = qp.C8;
-                break;
-            case 14:
-                String str = dt.j0;
-                break;
-            case 15:
-                Paint paint = la.H;
-                break;
-            case 16:
-                int i11 = ho.i3;
-                break;
-            case 17:
-                org.telegram.messenger.g0.h3(new ai.m0(24));
-                break;
-            case 18:
-                Pattern pattern2 = org.telegram.ui.Components.u4.a;
-                break;
-            case 19:
-                int i12 = tv.H0;
-                break;
-            case 20:
-                int i13 = ez.A0;
-                break;
-            case 21:
-                org.telegram.messenger.g0.h3(new ai.m0(24));
-                break;
-            case 22:
-                int i14 = ly0.e;
-                break;
-            case 23:
-                int i15 = jd0.v0;
-                break;
-            case 24:
-                org.telegram.messenger.g0.h3(new hf0(tLObject, 5));
-                break;
-            case 25:
-                int i16 = ak0.R;
-                break;
-            case 26:
-                List list = kl0.g1;
-                break;
-            case 27:
-                RectF rectF = ProfileActivity.V6;
-                break;
-            default:
-                int i17 = o21.o1;
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        w5 w5Var = this.a;
+        ch.w wVar = w5Var.m0;
+        w5Var.w0 = w5Var.v0;
+        w5Var.d(w5Var.b0);
+        TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = w5Var.e;
+        int i7 = 2 - w5Var.v0;
+        stargiftattributemodelArr[i7] = (TL_stars.starGiftAttributeModel) w5Var.d0.f;
+        mb.c1(w5Var.d[i7].getImageReceiver(), stargiftattributemodelArr[2 - w5Var.v0].document, ns.q2);
+        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) w5Var.e0.f;
+        if (stargiftattributepattern != null) {
+            org.telegram.ui.Components.g5 l10 = org.telegram.ui.Components.g5.l(m10.t0, 7, stargiftattributepattern.document);
+            l10.m = true;
+            l10.u();
         }
-    }
-
-    private final void a(TLObject tLObject, TLRPC.TL_error tL_error) {
+        org.telegram.messenger.g0.r(wVar);
+        org.telegram.messenger.g0.i3(wVar, 2500L);
     }
 }

@@ -7,9 +7,9 @@ import android.view.ScaleGestureDetector;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class c {
     public final ScaleGestureDetector a;
@@ -39,13 +39,13 @@ public final class c {
         float y12;
         n nVar;
         this.a.onTouchEvent(motionEvent);
-        int action = motionEvent.getAction() & qs.e4;
+        int action = motionEvent.getAction() & ns.e4;
         if (action == 0) {
             this.i = motionEvent.getPointerId(0);
             this.k = SystemClock.elapsedRealtime();
         } else if (action == 1 || action == 3) {
-            if (!this.h && SystemClock.elapsedRealtime() - this.k < 800 && (nVar = this.b.M) != null) {
-                nVar.c0();
+            if (!this.h && SystemClock.elapsedRealtime() - this.k < 800 && (nVar = this.b.N) != null) {
+                nVar.D0();
             }
             this.i = -1;
         } else if (action == 6) {
@@ -148,8 +148,8 @@ public final class c {
         }
         if (this.h) {
             o oVar = this.b;
-            if (!oVar.F) {
-                m.f(oVar.L, f10, f11);
+            if (!oVar.G) {
+                m.f(oVar.M, f10, f11);
                 oVar.r(false);
             }
             this.c = x10;

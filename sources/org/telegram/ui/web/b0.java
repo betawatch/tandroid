@@ -1,37 +1,39 @@
 package org.telegram.ui.web;
 
 import android.os.Bundle;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
-import org.telegram.messenger.t10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.cn;
-import org.telegram.ui.r31;
+import fi.i7;
+import org.json.JSONObject;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class b0 extends cn {
-    public boolean td;
-    public final /* synthetic */ TLRPC.User ud;
-    public final /* synthetic */ long vd;
-    public final /* synthetic */ x0 wd;
+public final class b0 extends yw {
+    public final /* synthetic */ boolean[] D4;
+    public final /* synthetic */ i7 E4;
+    public final /* synthetic */ v0 F4;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b0(x0 x0Var, Bundle bundle, TLRPC.User user, long j3) {
+    public b0(v0 v0Var, Bundle bundle, boolean[] zArr, i7 i7Var) {
         super(bundle);
-        this.wd = x0Var;
-        this.ud = user;
-        this.vd = j3;
+        this.F4 = v0Var;
+        this.D4 = zArr;
+        this.E4 = i7Var;
     }
 
-    @Override // org.telegram.ui.cn, org.telegram.ui.ActionBar.f2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.td) {
+    @Override // org.telegram.ui.yw, org.telegram.ui.ActionBar.e2
+    public final void onFragmentDestroy() {
+        JSONObject jSONObject;
+        super.onFragmentDestroy();
+        boolean[] zArr = this.D4;
+        if (zArr[0]) {
             return;
         }
-        this.td = true;
-        gc.a0(this).I(R.raw.contact_check, id.a0(null, null, 2131751739, t10.p(this.ud)), org.telegram.messenger.g0.U2(id.a0(null, null, 2131751740, t10.p(this.wd.U)), new r31(this, this.vd, 1))).j();
+        zArr[0] = true;
+        try {
+            jSONObject = new JSONObject();
+        } catch (Exception unused) {
+            jSONObject = null;
+        }
+        this.F4.x(this.E4, "requested_chat_failed", jSONObject);
     }
 }

@@ -1,146 +1,150 @@
 package d3;
 
-import android.os.SystemClock;
-import android.os.Trace;
-import bi.a4;
-import e2.s0;
-import e2.x1;
-import h2.m0;
-import java.util.NoSuchElementException;
+import a8.p0;
+import di.c6;
+import di.cb;
+import di.f2;
+import di.k3;
+import fi.u0;
+import h2.l0;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.voip.GroupCallMessagesController;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.Components.io;
+import org.telegram.ui.Components.jy0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.an;
+import org.telegram.ui.u91;
+import org.telegram.ui.yw;
+import zi.r0;
+import zi.v0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class e0 {
-    public final q4.q a;
-    public final y b;
-    public final x c = new x();
-    public final h2.j0 d = new h2.j0();
-    public final h2.j0 e = new h2.j0();
-    public final h2.s f;
-    public final z g;
-    public long h;
-    public long i;
-    public long j;
-    public x1 k;
-    public long l;
+public final /* synthetic */ class e0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public e0(q4.q qVar, y yVar, z zVar) {
-        this.a = qVar;
-        this.b = yVar;
-        this.g = zVar;
-        h2.s sVar = new h2.s();
-        int highestOneBit = Integer.bitCount(16) != 1 ? Integer.highestOneBit(15) << 1 : 16;
-        sVar.a = 0;
-        sVar.b = -1;
-        sVar.c = 0;
-        sVar.e = new long[highestOneBit];
-        sVar.d = highestOneBit - 1;
-        this.f = sVar;
-        this.h = -9223372036854775807L;
-        this.k = x1.d;
-        this.i = -9223372036854775807L;
-        this.j = -9223372036854775807L;
+    public /* synthetic */ e0(u0 u0Var, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, long j10) {
+        this.a = 2;
+        this.d = u0Var;
+        this.b = j3;
+        this.e = tL_textWithEntities;
+        this.c = j10;
     }
 
-    public final void a(long j3, long j10) {
-        final q4.q qVar = this.a;
-        e eVar = (e) qVar.c;
-        while (true) {
-            h2.s sVar = this.f;
-            int i7 = sVar.c;
-            if (i7 == 0) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                wf.b bVar = (wf.b) this.d;
+                String str = (String) this.e;
+                long j3 = this.b;
+                long j10 = this.c;
+                h0 h0Var = (h0) bVar.c;
+                String str2 = l0.a;
+                m2.e eVar = ((l2.z) h0Var).a.s;
+                m2.a U = eVar.U();
+                eVar.V(U, 1016, new li.p(U, str, j10, j3, 19));
                 return;
-            }
-            if (i7 == 0) {
-                throw new NoSuchElementException();
-            }
-            long j11 = ((long[]) sVar.e)[sVar.a];
-            Long l10 = (Long) this.e.j(j11);
-            y yVar = this.b;
-            if (l10 != null && l10.longValue() != this.l) {
-                this.l = l10.longValue();
-                yVar.e(2);
-            }
-            long j12 = this.l;
-            y yVar2 = this.b;
-            x xVar = this.c;
-            int a10 = yVar2.a(j11, j3, j10, j12, false, false, xVar);
-            if (a10 != 5 && a10 != 4) {
-                this.g.a(j11, xVar.a);
-            }
-            if (a10 == 0 || a10 == 1) {
-                this.i = j11;
-                boolean z9 = a10 == 0;
-                long d = sVar.d();
-                x1 x1Var = (x1) this.d.j(d);
-                if (x1Var != null && !x1Var.equals(x1.d) && !x1Var.equals(this.k)) {
-                    this.k = x1Var;
-                    e2.t tVar = new e2.t();
-                    tVar.y = x1Var.a;
-                    tVar.z = x1Var.b;
-                    tVar.r = s0.n("video/raw");
-                    qVar.b = new e2.u(tVar);
-                    eVar.i.execute(new a4(22, qVar, x1Var));
+            case 1:
+                c6 c6Var = (c6) this.d;
+                cb cbVar = new cb(c6Var.getContext(), c6Var.J0, this.b, 11, null, new f2(c6Var, new boolean[]{false}, this.c, (z10) this.e, 2), 0L);
+                cbVar.setOnDismissListener(new k3(c6Var, 1));
+                cbVar.show();
+                return;
+            case 2:
+                ((u0) this.d).n(this.b, (TLRPC.TL_textWithEntities) this.e, this.c);
+                return;
+            case 3:
+                k8.a aVar = (k8.a) this.d;
+                String str3 = (String) this.e;
+                long j11 = this.b;
+                long j12 = this.c;
+                n2.s sVar = (n2.s) aVar.c;
+                String str4 = l0.a;
+                m2.e eVar2 = ((l2.z) sVar).a.s;
+                m2.a U2 = eVar2.U();
+                eVar2.V(U2, 1008, new li.p(U2, str3, j12, j11, 7));
+                return;
+            case 4:
+                ((GroupCallMessagesController) this.d).lambda$processUpdate$3(this.b, this.c, (byte[]) this.e);
+                return;
+            case 5:
+                ((io) this.d).e(this.b, this.c, (HashSet) this.e);
+                return;
+            case 6:
+                yw ywVar = (yw) this.d;
+                long j13 = this.b;
+                long j14 = this.c;
+                u91 u91Var = (u91) this.e;
+                if (ywVar.E2 == null) {
+                    ywVar.finishFragment();
+                    return;
                 }
-                long nanoTime = z9 ? System.nanoTime() : xVar.b;
-                boolean z10 = yVar.e != 3;
-                yVar.e = 3;
-                yVar.l.getClass();
-                yVar.g = m0.S(SystemClock.elapsedRealtime());
-                if (z10 && eVar.e != null) {
-                    final int i10 = 0;
-                    eVar.i.execute(new Runnable() { // from class: d3.d
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (i10) {
-                                case 0:
-                                    ((e) qVar.c).h.onFirstFrameRendered();
-                                    break;
-                                default:
-                                    ((e) qVar.c).h.m();
-                                    break;
-                            }
-                        }
-                    });
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(ur.a(j13, j14));
+                ywVar.E2.y(ywVar, arrayList, null, false, ywVar.L2, ywVar.M2, ywVar.N2, u91Var);
+                if (ywVar.k2) {
+                    ywVar.E2 = null;
+                    return;
                 }
-                e2.u uVar = (e2.u) qVar.b;
-                eVar.j.b(d, nanoTime, uVar == null ? new e2.u(new e2.t()) : uVar, null);
-                i iVar = (i) eVar.d.remove();
-                iVar.c.M0(iVar.a, iVar.b, nanoTime);
-            } else if (a10 == 2 || a10 == 3) {
-                this.i = j11;
-                sVar.d();
-                final int i11 = 1;
-                eVar.i.execute(new Runnable() { // from class: d3.d
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                ((e) qVar.c).h.onFirstFrameRendered();
-                                break;
-                            default:
-                                ((e) qVar.c).h.m();
-                                break;
-                        }
-                    }
-                });
-                i iVar2 = (i) eVar.d.remove();
-                l lVar = iVar2.c;
-                u2.l lVar2 = iVar2.a;
-                int i12 = iVar2.b;
-                Trace.beginSection("dropVideoBuffer");
-                lVar2.c(i12);
-                Trace.endSection();
-                lVar.R0(0, 1);
-            } else {
-                if (a10 != 4) {
-                    if (a10 != 5) {
-                        throw new IllegalStateException(String.valueOf(a10));
+                return;
+            case 7:
+                LaunchActivity launchActivity = (LaunchActivity) this.d;
+                long j15 = this.b;
+                long j16 = this.c;
+                an anVar = (an) this.e;
+                String str5 = LaunchActivity.C1;
+                TLRPC.TL_forumTopic f10 = np.s1(launchActivity.P).r7.f(j15, j16);
+                StringBuilder t6 = p0.t(j15, "LaunchActivity openForum after load ", " ");
+                t6.append(j16);
+                t6.append(" TL_forumTopic ");
+                t6.append(f10);
+                a8.b(t6.toString());
+                if (launchActivity.p0 != null) {
+                    qg.c.a(anVar, ur.a(-j15, j16));
+                    ((ActionBarLayout) launchActivity.M()).S(anVar);
+                    return;
+                }
+                return;
+            default:
+                v0 v0Var = (v0) this.d;
+                r0 r0Var = (r0) this.e;
+                long j17 = this.b;
+                long j18 = this.c;
+                synchronized (v0Var.g) {
+                    if (!r0Var.d && !r0Var.e) {
+                        ((jy0) v0Var.e).a(r0Var.a, r0Var.b, j17, j18);
+                        return;
                     }
                     return;
                 }
-                this.i = j11;
-            }
         }
+    }
+
+    public /* synthetic */ e0(Object obj, long j3, long j10, Object obj2, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.b = j3;
+        this.c = j10;
+        this.e = obj2;
+    }
+
+    public /* synthetic */ e0(Object obj, Object obj2, long j3, long j10, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.e = obj2;
+        this.b = j3;
+        this.c = j10;
     }
 }

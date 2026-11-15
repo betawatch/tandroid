@@ -1,50 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class zw extends c5.a {
-    public final /* synthetic */ gy c;
-
-    public zw(gy gyVar) {
-        this.c = gyVar;
-    }
-
-    @Override // c5.a
-    public final void a(c5.k kVar, Object obj) {
-        kVar.removeView((View) obj);
-    }
-
-    @Override // c5.a
-    public final int b() {
-        return this.c.e.size();
-    }
-
-    @Override // c5.a
-    public final CharSequence d(int i7) {
-        if (i7 == 0) {
-            return org.telegram.messenger.id.M0(2131751196, null);
-        }
-        if (i7 == 1) {
-            return org.telegram.messenger.id.M0(2131754879, null);
-        }
-        if (i7 != 2) {
-            return null;
-        }
-        return org.telegram.messenger.id.M0(2131754756, null);
-    }
-
-    @Override // c5.a
-    public final Object e(c5.k kVar, int i7) {
-        FrameLayout frameLayout = ((cy) this.c.e.get(i7)).b;
-        kVar.addView(frameLayout);
-        return frameLayout;
-    }
-
-    @Override // c5.a
-    public final boolean f(View view, Object obj) {
-        return view == obj;
-    }
+public final class zw {
+    public Long a;
+    public TLRPC.StickerSet b;
+    public ArrayList c = new ArrayList();
+    public TLRPC.TL_inputStickerSetID d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public boolean i;
+    public int j;
 }

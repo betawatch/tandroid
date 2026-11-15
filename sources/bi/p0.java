@@ -1,36 +1,12 @@
 package bi;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.x31;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class p0 extends w31 {
-    static {
-        w31.h(new p0());
-    }
-
-    public static x31 i(String str, CharSequence charSequence, int i7) {
-        x31 K = x31.K(p0.class);
-        K.b = false;
-        K.z = i7;
-        K.l = str;
-        K.m = charSequence;
-        return K;
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        ((q0) view).a(x31Var.z, x31Var.l, x31Var.m);
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
-        return new q0(0, context, h6Var);
+public final class p0 extends i2 {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 }

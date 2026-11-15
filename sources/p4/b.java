@@ -8,7 +8,7 @@ import android.os.Build;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b {
     public static final Uri g = Uri.parse("content://androidx.car.app.connection");
@@ -52,8 +52,8 @@ public final class b {
     public final void b() {
         Cursor query;
         AtomicBoolean atomicBoolean = this.e;
-        boolean z9 = atomicBoolean.get();
-        boolean z10 = false;
+        boolean z10 = atomicBoolean.get();
+        boolean z11 = false;
         try {
             query = this.a.getContentResolver().query(g, new String[]{"CarConnectionState"}, null, null, null);
         } catch (Exception unused) {
@@ -62,11 +62,11 @@ public final class b {
             try {
                 int columnIndex = query.getColumnIndex("CarConnectionState");
                 if (columnIndex != -1 && query.moveToNext()) {
-                    boolean z11 = query.getInt(columnIndex) != 0;
+                    boolean z12 = query.getInt(columnIndex) != 0;
                     query.close();
-                    z10 = z11;
-                    atomicBoolean.set(z10);
-                    if (z9 != z10 || this.f.get()) {
+                    z11 = z12;
+                    atomicBoolean.set(z11);
+                    if (z10 != z11 || this.f.get()) {
                     }
                     this.b.run();
                     return;
@@ -75,8 +75,8 @@ public final class b {
             }
         }
         query.close();
-        atomicBoolean.set(z10);
-        if (z9 != z10) {
+        atomicBoolean.set(z11);
+        if (z10 != z11) {
         }
     }
 }

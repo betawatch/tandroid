@@ -3,7 +3,7 @@ package androidx.mediarouter.app;
 import android.view.animation.Animation;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j implements Animation.AnimationListener {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class j implements Animation.AnimationListener {
                 break;
             default:
                 t tVar = this.b;
-                OverlayListView overlayListView = tVar.U;
+                OverlayListView overlayListView = tVar.V;
                 ArrayList arrayList = overlayListView.a;
                 int size = arrayList.size();
                 int i7 = 0;
@@ -48,7 +48,7 @@ public final class j implements Animation.AnimationListener {
                         o0Var.j = true;
                     }
                 }
-                tVar.U.postDelayed(tVar.E0, tVar.x0);
+                tVar.V.postDelayed(tVar.F0, tVar.y0);
                 break;
         }
     }

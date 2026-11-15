@@ -5,12 +5,14 @@ import android.content.Context;
 import android.opengl.Matrix;
 import android.util.Log;
 import android.widget.LinearLayout;
-import c8.ha;
+import c8.ja;
+import com.google.android.gms.internal.vision.e2;
 import da.e1;
 import gb.d0;
-import gb.j1;
-import gb.r0;
-import gb.v0;
+import gb.d1;
+import gb.h1;
+import gb.q0;
+import gb.u0;
 import id.h;
 import java.io.File;
 import java.util.ArrayList;
@@ -19,21 +21,20 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Executor;
 import jb.l;
-import kg.u1;
-import l2.a0;
-import li.a6;
-import li.l0;
-import li.m0;
+import kg.j1;
+import kg.w1;
+import oi.j0;
+import oi.k0;
+import oi.y5;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.ly0;
-import w7.s;
+import org.telegram.messenger.ns;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.y0;
+import org.telegram.ui.Components.m60;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d implements ib.b, q5.b {
     public final /* synthetic */ int a;
@@ -110,9 +111,9 @@ public final class d implements ib.b, q5.b {
 
     public void c() {
         j(null);
-        k60 k60Var = (k60) this.d;
-        if (k60Var != null) {
-            k60Var.u();
+        m60 m60Var = (m60) this.d;
+        if (m60Var != null) {
+            m60Var.u();
             this.d = null;
         }
         this.e = null;
@@ -120,8 +121,8 @@ public final class d implements ib.b, q5.b {
         this.h = null;
     }
 
-    public void d(a6 a6Var, ArrayList arrayList) {
-        h6 h6Var = (h6) this.c;
+    public void d(y5 y5Var, ArrayList arrayList) {
+        e6 e6Var = (e6) this.c;
         LinearLayout linearLayout = (LinearLayout) this.e;
         if (linearLayout == null) {
             return;
@@ -132,16 +133,16 @@ public final class d implements ib.b, q5.b {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            l0 l0Var = (l0) obj;
-            u1 u1Var = new u1(a6Var.getContext(), l0Var, h6Var);
-            u1Var.setPadding(g0.L(8.0f), 0, g0.L(12.0f), 0);
-            u1Var.setBackground(m6.a0(m6.w0(m6.i6, h6Var), 0, 0));
-            u1Var.setOnClickListener(new g(this, a6Var, l0Var, 14));
-            ((LinearLayout) this.e).addView(u1Var, ha.o(-1, 48));
+            j0 j0Var = (j0) obj;
+            w1 w1Var = new w1(y5Var.getContext(), j0Var, e6Var);
+            w1Var.setPadding(g0.L(8.0f), 0, g0.L(12.0f), 0);
+            w1Var.setBackground(j6.a0(j6.w0(j6.i6, e6Var), 0, 0));
+            w1Var.setOnClickListener(new g(this, y5Var, j0Var, 19));
+            ((LinearLayout) this.e).addView(w1Var, ja.o(-1, 48));
         }
     }
 
-    public void f(int i7, int i10, float f10, float f11, boolean z9, float[] fArr) {
+    public void f(int i7, int i10, float f10, float f11, boolean z10, float[] fArr) {
         float[] fArr2 = (float[]) this.b;
         float f12 = (i7 - i10) / 0.3902439f;
         if (f12 <= 0.0f || f12 > i7) {
@@ -158,8 +159,8 @@ public final class d implements ib.b, q5.b {
         Matrix.scaleM(fArr3, 0, 0.965f, 0.965f, 0.965f);
         Matrix.multiplyMM((float[]) this.e, 0, (float[]) this.c, 0, (float[]) this.d, 0);
         Matrix.multiplyMM((float[]) this.f, 0, (float[]) this.b, 0, (float[]) this.e, 0);
-        float f13 = z9 ? 0.0125f : -0.0125f;
-        float f14 = z9 ? 1.0f : -1.0f;
+        float f13 = z10 ? 0.0125f : -0.0125f;
+        float f14 = z10 ? 1.0f : -1.0f;
         float f15 = -f14;
         g(f13, 0.618561f, f14, i7, i10, fArr, 0);
         g(f13, 0.618561f, f15, i7, i10, fArr, 2);
@@ -176,8 +177,8 @@ public final class d implements ib.b, q5.b {
         Matrix.multiplyMV((float[]) this.n, 0, (float[]) this.f, 0, fArr2, 0);
         float[] fArr3 = (float[]) this.n;
         float f13 = 1.0f / fArr3[3];
-        fArr[i11] = com.google.android.recaptcha.internal.a.x(fArr3[0], f13, 0.5f, 0.5f) * i7;
-        fArr[i11 + 1] = f1.x(fArr3[1], f13, 0.5f, 0.5f) * i10;
+        fArr[i11] = e2.x(fArr3[0], f13, 0.5f, 0.5f) * i7;
+        fArr[i11 + 1] = y0.x(fArr3[1], f13, 0.5f, 0.5f) * i10;
         return fArr3[2] * f13;
     }
 
@@ -185,90 +186,90 @@ public final class d implements ib.b, q5.b {
     public Object get() {
         switch (this.a) {
             case 2:
-                return new gb.f1((l) ((ib.c) this.b).get(), (v0) ((ib.c) this.c).get(), (r0) ((ib.c) this.d).get(), (j1) ((ib.c) this.e).get(), (m1.g) ((ib.c) this.f).get(), (d0) ((ib.c) this.h).get(), (h) ((ib.c) this.n).get());
+                return new d1((l) ((ib.c) this.b).get(), (u0) ((ib.c) this.c).get(), (q0) ((ib.c) this.d).get(), (h1) ((ib.c) this.e).get(), (m1.g) ((ib.c) this.f).get(), (d0) ((ib.c) this.h).get(), (h) ((ib.c) this.n).get());
             default:
                 Context context = (Context) ((fd.a) this.b).get();
                 p5.d dVar = (p5.d) ((fd.a) this.c).get();
                 v5.d dVar2 = (v5.d) ((fd.a) this.d).get();
-                ly0 ly0Var = (ly0) ((ly0) this.e).get();
+                ld0 ld0Var = (ld0) ((ld0) this.e).get();
                 Executor executor = (Executor) ((fd.a) this.f).get();
                 w5.c cVar = (w5.c) ((fd.a) this.h).get();
-                nb.a aVar = new nb.a(28);
-                s sVar = new s(27, false);
+                qb.a aVar = new qb.a(28);
+                pb.b bVar = new pb.b(28);
                 v5.c cVar2 = (v5.c) ((fd.a) this.n).get();
                 ia.c cVar3 = new ia.c();
                 cVar3.a = context;
                 cVar3.b = dVar;
                 cVar3.c = dVar2;
-                cVar3.d = ly0Var;
+                cVar3.d = ld0Var;
                 cVar3.e = executor;
                 cVar3.f = cVar;
                 cVar3.g = aVar;
-                cVar3.h = sVar;
+                cVar3.h = bVar;
                 cVar3.i = cVar2;
                 return cVar3;
         }
     }
 
-    public void j(a6 a6Var) {
-        a6 a6Var2 = (a6) this.n;
-        if (a6Var2 == a6Var) {
+    public void j(y5 y5Var) {
+        y5 y5Var2 = (y5) this.n;
+        if (y5Var2 == y5Var) {
             return;
         }
-        if (a6Var2 != null) {
-            a6Var2.setShowCommandBackground(false);
+        if (y5Var2 != null) {
+            y5Var2.setShowCommandBackground(false);
         }
-        this.n = a6Var;
-        if (a6Var != null) {
-            a6Var.setShowCommandBackground(true);
+        this.n = y5Var;
+        if (y5Var != null) {
+            y5Var.setShowCommandBackground(true);
         }
     }
 
-    public void k(a6 a6Var, String str) {
-        k60 k60Var;
-        k60 k60Var2;
+    public void k(y5 y5Var, String str) {
+        m60 m60Var;
+        m60 m60Var2;
         if (str == null) {
             c();
             return;
         }
-        ArrayList a10 = l0.a(str);
+        ArrayList a10 = j0.a(str);
         if (a10.isEmpty()) {
             c();
             return;
         }
-        j(a6Var);
-        if (((a6) this.h) == a6Var && a10.equals((ArrayList) this.f) && (k60Var2 = (k60) this.d) != null && k60Var2.D()) {
+        j(y5Var);
+        if (((y5) this.h) == y5Var && a10.equals((ArrayList) this.f) && (m60Var2 = (m60) this.d) != null && m60Var2.D()) {
             return;
         }
-        if (((a6) this.h) == a6Var && (k60Var = (k60) this.d) != null && k60Var.D() && ((LinearLayout) this.e) != null) {
+        if (((y5) this.h) == y5Var && (m60Var = (m60) this.d) != null && m60Var.D() && ((LinearLayout) this.e) != null) {
             this.f = a10;
-            d(a6Var, a10);
-            ((k60) this.d).O();
+            d(y5Var, a10);
+            ((m60) this.d).O();
             return;
         }
         c();
-        j(a6Var);
-        this.h = a6Var;
+        j(y5Var);
+        this.h = y5Var;
         this.f = a10;
-        LinearLayout linearLayout = new LinearLayout(a6Var.getContext());
+        LinearLayout linearLayout = new LinearLayout(y5Var.getContext());
         this.e = linearLayout;
         linearLayout.setOrientation(1);
-        d(a6Var, a10);
-        k60 a11 = ((m0) this.b).a(a6Var.getEditText());
-        a11.Q = true;
-        a11.s = 0;
-        a11.t = false;
-        a11.r((LinearLayout) this.e, ha.o(qs.x3, -2));
-        a11.X = g0.L(240.0f);
-        a11.i = 3;
-        a11.a0(-g0.L(12.0f), 0.0f);
-        a11.p = new a0(this, 5);
-        a11.d0 = true;
-        if (a11.D()) {
-            a11.C();
+        d(y5Var, a10);
+        m60 b10 = ((k0) this.b).b(y5Var.getEditText());
+        b10.Q = true;
+        b10.s = 0;
+        b10.t = false;
+        b10.r((LinearLayout) this.e, ja.o(ns.x3, -2));
+        b10.X = g0.L(240.0f);
+        b10.i = 3;
+        b10.a0(-g0.L(12.0f), 0.0f);
+        b10.p = new j1(this, 24);
+        b10.d0 = true;
+        if (b10.D()) {
+            b10.C();
         }
-        a11.Z();
-        this.d = a11;
+        b10.Z();
+        this.d = b10;
     }
 
     public d(int i7) {
@@ -286,10 +287,10 @@ public final class d implements ib.b, q5.b {
         }
     }
 
-    public d(m0 m0Var, h6 h6Var) {
+    public d(k0 k0Var, e6 e6Var) {
         this.a = 3;
-        this.b = m0Var;
-        this.c = h6Var;
+        this.b = k0Var;
+        this.c = e6Var;
     }
 
     public d(Context context) {

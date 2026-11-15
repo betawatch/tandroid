@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.animation.PathInterpolator;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ v0 a;
@@ -39,8 +39,8 @@ public final class o0 implements ValueAnimator.AnimatorUpdateListener {
             if ((this.d & i10) == 0) {
                 z0Var.c(i10, h1Var.f(i10));
             } else {
-                i0.b f10 = h1Var.f(i10);
-                i0.b f11 = this.c.a.f(i10);
+                i0.c f10 = h1Var.f(i10);
+                i0.c f11 = this.c.a.f(i10);
                 float f12 = 1.0f - b10;
                 z0Var.c(i10, k1.e(f10, (int) (((f10.a - f11.a) * f12) + 0.5d), (int) (((f10.b - f11.b) * f12) + 0.5d), (int) (((f10.c - f11.c) * f12) + 0.5d), (int) (((f10.d - f11.d) * f12) + 0.5d)));
             }

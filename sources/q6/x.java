@@ -4,9 +4,9 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class x extends r6.a {
     public static final Parcelable.Creator<x> CREATOR = new q4.x(6);
@@ -16,12 +16,12 @@ public final class x extends r6.a {
     public final boolean d;
     public final boolean e;
 
-    public x(int i7, IBinder iBinder, n6.a aVar, boolean z9, boolean z10) {
+    public x(int i7, IBinder iBinder, n6.a aVar, boolean z10, boolean z11) {
         this.a = i7;
         this.b = iBinder;
         this.c = aVar;
-        this.d = z9;
-        this.e = z10;
+        this.d = z10;
+        this.e = z11;
     }
 
     public final boolean equals(Object obj) {
@@ -59,15 +59,15 @@ public final class x extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 1, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        xb.f(parcel, 2, this.b);
-        xb.k(parcel, 3, this.c, i7);
-        xb.q(parcel, 4, 4);
+        yb.f(parcel, 2, this.b);
+        yb.k(parcel, 3, this.c, i7);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        xb.q(parcel, 5, 4);
+        yb.q(parcel, 5, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 }

@@ -1,36 +1,43 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import android.view.WindowManager;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.x60;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class b2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e2 b;
+public final class b2 extends x60 {
+    public final /* synthetic */ TLRPC.User n1;
+    public final /* synthetic */ TLRPC.Chat o1;
+    public final /* synthetic */ String p1;
+    public final /* synthetic */ TLRPC.InputPeer q1;
+    public final /* synthetic */ boolean r1;
+    public final /* synthetic */ boolean s1;
+    public final /* synthetic */ boolean t1;
+    public final /* synthetic */ Activity u1;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 v1;
+    public final /* synthetic */ org.telegram.messenger.c w1;
+    public final /* synthetic */ boolean x1;
 
-    public /* synthetic */ b2(e2 e2Var, int i7) {
-        this.a = i7;
-        this.b = e2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b2(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12, Activity activity, org.telegram.ui.ActionBar.e2 e2Var, org.telegram.messenger.c cVar, boolean z13) {
+        super(context, chat);
+        this.n1 = user;
+        this.o1 = chat2;
+        this.p1 = str;
+        this.q1 = inputPeer;
+        this.r1 = z10;
+        this.s1 = z11;
+        this.t1 = z12;
+        this.u1 = activity;
+        this.v1 = e2Var;
+        this.w1 = cVar;
+        this.x1 = z13;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                e2 e2Var = this.b;
-                WindowManager.LayoutParams layoutParams = e2Var.d;
-                layoutParams.x = (int) floatValue;
-                org.telegram.messenger.g0.T3(e2Var.c, e2Var.a, layoutParams);
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                e2 e2Var2 = this.b;
-                WindowManager.LayoutParams layoutParams2 = e2Var2.d;
-                layoutParams2.y = (int) floatValue2;
-                org.telegram.messenger.g0.T3(e2Var2.c, e2Var2.a, layoutParams2);
-                break;
-        }
+    @Override // org.telegram.ui.Components.x60
+    public final void I0() {
+        c2.b(this.n1, this.o1, this.p1, this.q1, false, this.r1, this.s1, this.t1, this.u1, this.v1, this.w1, false, true, this.x1);
     }
 }

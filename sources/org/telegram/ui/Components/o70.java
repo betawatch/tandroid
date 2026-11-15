@@ -1,22 +1,30 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class o70 extends y8 {
-    public final /* synthetic */ bi.s1 e;
+public final class o70 extends po0 {
+    public final /* synthetic */ t70 V2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o70(bi.s1 s1Var, Context context) {
-        super(context, false);
-        this.e = s1Var;
+    public o70(t70 t70Var, Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, null, str, false, str2, false, e6Var);
+        this.V2 = t70Var;
     }
 
-    @Override // org.telegram.ui.Components.y8, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(Math.min(3, ((q70) this.e.d).x) == 0 ? 0 : com.google.android.recaptcha.internal.a.e(r4, 1, 20, 32)), TLObject.FLAG_30), i10);
+    @Override // org.telegram.ui.Components.po0
+    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        String a02;
+        if (z10) {
+            if (hVar == null || hVar.m() != 1) {
+                a02 = org.telegram.messenger.hd.a0(null, null, 2131749187, org.telegram.messenger.hd.G(i7, "Chats", new Object[0]));
+            } else {
+                long j3 = ((TLRPC.Dialog) hVar.n(0)).id;
+                a02 = (j3 == 0 || j3 == org.telegram.messenger.m10.i(this.a).e()) ? org.telegram.messenger.hd.M0(2131749185, null) : org.telegram.messenger.hd.a0(null, null, 2131749184, org.telegram.messenger.np.s1(this.a).B1(j3, true));
+            }
+            this.V2.e(org.telegram.messenger.g0.X2(a02));
+        }
     }
 }

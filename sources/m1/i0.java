@@ -1,13 +1,13 @@
 package m1;
 
-import a8.la;
+import a8.ma;
 import android.os.Build;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i0 implements a {
     public final File a;
@@ -63,7 +63,7 @@ public final class i0 implements a {
         int i7;
         Throwable th2;
         d0 d0Var;
-        boolean z9;
+        boolean z10;
         i0 i0Var;
         try {
             if (cVar instanceof g0) {
@@ -94,7 +94,7 @@ public final class i0 implements a {
                                     return aVar;
                                 }
                                 obj = b10;
-                                z9 = e10;
+                                z10 = e10;
                                 i0Var = this;
                                 d0Var = d0Var2;
                             } catch (Throwable th3) {
@@ -123,13 +123,13 @@ public final class i0 implements a {
                         try {
                             af.b.c(obj);
                             i0Var = r02;
-                            z9 = nVar;
+                            z10 = nVar;
                         } catch (Throwable th5) {
                             th2 = th5;
                             try {
                                 d0Var.close();
                             } catch (Throwable th6) {
-                                la.a(th2, th6);
+                                ma.a(th2, th6);
                             }
                             throw th2;
                         }
@@ -139,7 +139,7 @@ public final class i0 implements a {
                     if (th == null) {
                         throw th;
                     }
-                    if (z9) {
+                    if (z10) {
                         i0Var.f.f(null);
                     }
                     return obj;
@@ -255,7 +255,7 @@ public final class i0 implements a {
                                         try {
                                             k0Var2.close();
                                         } catch (Throwable th5) {
-                                            la.a(th2, th5);
+                                            ma.a(th2, th5);
                                         }
                                         throw th2;
                                     }

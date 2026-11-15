@@ -8,7 +8,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLiteException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f8 {
     public p5 a;
@@ -28,7 +28,7 @@ public final class f8 {
         File h = t0.h();
         int i7 = this.b;
         if (i7 != 0) {
-            File file = new File(h, jg.g.k(i7, "account", "/"));
+            File file = new File(h, i5.c.j(i7, "account", "/"));
             file.mkdirs();
             h = file;
         }
@@ -45,12 +45,12 @@ public final class f8 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(int i7, boolean z9) {
+    public final void b(int i7, boolean z10) {
         boolean E;
         File h = t0.h();
         int i10 = this.b;
         if (i10 != 0) {
-            File file = new File(h, jg.g.k(i10, "account", "/"));
+            File file = new File(h, i5.c.j(i10, "account", "/"));
             file.mkdirs();
             h = file;
         }
@@ -77,16 +77,16 @@ public final class f8 {
                 this.c.executeFast("CREATE TABLE paths_by_dialog_id(path TEXT PRIMARY KEY, dialog_id INTEGER, message_id INTEGER, message_type INTEGER);").stepThis().dispose();
                 this.c.executeFast("PRAGMA user_version = 7").stepThis().dispose();
             }
-            if (!z9) {
+            if (!z10) {
                 a();
             }
-            a8.b("files db created from_backup= " + z9);
+            a8.b("files db created from_backup= " + z10);
         } catch (Exception e10) {
             if (i7 < 4) {
-                if (!z9) {
+                if (!z10) {
                     File h7 = t0.h();
                     if (i10 != 0) {
-                        File file2 = new File(h7, jg.g.k(i10, "account", "/"));
+                        File file2 = new File(h7, i5.c.j(i10, "account", "/"));
                         file2.mkdirs();
                         h7 = file2;
                     }
@@ -102,7 +102,7 @@ public final class f8 {
                             this.d.delete();
                             this.e.delete();
                             b(i7 + 1, false);
-                            boolean z10 = r2.a;
+                            boolean z11 = r2.a;
                             a8.g(e10, true);
                         }
                         if (E) {
@@ -118,7 +118,7 @@ public final class f8 {
                 this.e.delete();
                 b(i7 + 1, false);
             }
-            boolean z102 = r2.a;
+            boolean z112 = r2.a;
             a8.g(e10, true);
         }
     }
@@ -127,9 +127,9 @@ public final class f8 {
         if (this.h) {
             return;
         }
-        if (!as.a) {
+        if (!xr.a) {
             int i7 = 0;
-            while (!as.a) {
+            while (!xr.a) {
                 try {
                     Thread.sleep(1000L);
                 } catch (InterruptedException e10) {
@@ -238,9 +238,9 @@ public final class f8 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final String f(final int i7, final int i10, final long j3, boolean z9) {
+    public final String f(final int i7, final int i10, final long j3, boolean z10) {
         int i11;
-        boolean z10;
+        boolean z11;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
         String str;
@@ -250,20 +250,20 @@ public final class f8 {
         String str3 = (String) concurrentHashMap.get(str2);
         String str4 = null;
         if (str3 == "~null~") {
-            boolean z11 = r2.a;
+            boolean z12 = r2.a;
             a8.b("get file path cached null id=" + j3 + " dc=" + i7 + " type=" + i10 + " path=null in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
             return null;
         }
         if (str3 != null) {
-            boolean z12 = r2.a;
+            boolean z13 = r2.a;
             a8.b("get file path cached id=" + j3 + " dc=" + i7 + " type=" + i10 + " path=" + str3 + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
             return str3;
         }
         if (this.a != null) {
             i11 = 0;
             if (Thread.currentThread() == this.a) {
-                z10 = false;
-                if (!z10) {
+                z11 = false;
+                if (!z11) {
                     final CountDownLatch countDownLatch = new CountDownLatch(1);
                     final String[] strArr = new String[1];
                     h(new Runnable() { // from class: org.telegram.messenger.b8
@@ -290,7 +290,7 @@ public final class f8 {
                                     sQLiteCursor3 = sQLiteDatabase.queryFinalized("SELECT path FROM paths WHERE document_id = " + j10 + " AND dc_id = " + i12 + " AND type = " + i13, new Object[0]);
                                     if (sQLiteCursor3.next()) {
                                         strArr2[0] = sQLiteCursor3.stringValue(0);
-                                        boolean z13 = r2.a;
+                                        boolean z14 = r2.a;
                                         a8.b("get file path id=" + j10 + " dc=" + i12 + " type=" + i13 + " path=" + strArr2[0] + " in " + (System.currentTimeMillis() - j11) + "ms");
                                     }
                                 } catch (Throwable th2) {
@@ -332,7 +332,7 @@ public final class f8 {
                             if (sQLiteCursor2.next()) {
                                 str = sQLiteCursor2.stringValue(i12);
                                 try {
-                                    boolean z13 = r2.a;
+                                    boolean z14 = r2.a;
                                     a8.b("get file path id=" + j3 + " dc=" + i7 + " type=" + i10 + " path=" + str + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
                                     str4 = str;
                                 } catch (SQLiteException e10) {
@@ -378,26 +378,26 @@ public final class f8 {
         } else {
             i11 = 0;
         }
-        z10 = z9;
-        if (!z10) {
+        z11 = z10;
+        if (!z11) {
         }
     }
 
     public final void g(int i7) {
         if (i7 == 1) {
-            jg.g.z(this.c, "CREATE INDEX IF NOT EXISTS path_in_paths ON paths(path);");
-            jg.g.z(this.c, "PRAGMA user_version = 2");
+            k5.s(this.c, "CREATE INDEX IF NOT EXISTS path_in_paths ON paths(path);");
+            k5.s(this.c, "PRAGMA user_version = 2");
             i7 = 2;
         }
         if (i7 == 2) {
-            jg.g.z(this.c, "CREATE TABLE paths_by_dialog_id(path TEXT PRIMARY KEY, dialog_id INTEGER);");
-            jg.g.z(this.c, "PRAGMA user_version = 3");
+            k5.s(this.c, "CREATE TABLE paths_by_dialog_id(path TEXT PRIMARY KEY, dialog_id INTEGER);");
+            k5.s(this.c, "PRAGMA user_version = 3");
             i7 = 3;
         }
         if (i7 == 3) {
-            jg.g.z(this.c, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_id INTEGER default 0");
-            jg.g.z(this.c, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_type INTEGER default 0");
-            jg.g.z(this.c, "PRAGMA user_version = 4");
+            k5.s(this.c, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_id INTEGER default 0");
+            k5.s(this.c, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_type INTEGER default 0");
+            k5.s(this.c, "PRAGMA user_version = 4");
             i7 = 4;
         }
         if (i7 == 4 || i7 == 5 || i7 == 6) {
@@ -406,7 +406,7 @@ public final class f8 {
             } catch (Throwable th2) {
                 a8.g(th2, true);
             }
-            jg.g.z(this.c, "PRAGMA user_version = 7");
+            k5.s(this.c, "PRAGMA user_version = 7");
         }
     }
 

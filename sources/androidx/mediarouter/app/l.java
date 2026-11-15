@@ -15,15 +15,15 @@ import java.util.HashSet;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ t b;
 
-    public l(t tVar, boolean z9) {
+    public l(t tVar, boolean z10) {
         this.b = tVar;
-        this.a = z9;
+        this.a = z10;
     }
 
     @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
@@ -33,88 +33,88 @@ public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
         HashMap hashMap2;
         Bitmap bitmap;
         t tVar = this.b;
-        tVar.J.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-        if (tVar.v0) {
-            tVar.w0 = true;
+        tVar.K.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+        if (tVar.w0) {
+            tVar.x0 = true;
             return;
         }
         s4.v vVar = tVar.r;
-        int i10 = tVar.Q.getLayoutParams().height;
-        t.o(-1, tVar.Q);
+        int i10 = tVar.R.getLayoutParams().height;
+        t.o(-1, tVar.R);
         tVar.u(tVar.h());
         View decorView = tVar.getWindow().getDecorView();
         decorView.measure(View.MeasureSpec.makeMeasureSpec(tVar.getWindow().getAttributes().width, TLObject.FLAG_30), 0);
-        t.o(i10, tVar.Q);
-        if (!(tVar.K.getDrawable() instanceof BitmapDrawable) || (bitmap = ((BitmapDrawable) tVar.K.getDrawable()).getBitmap()) == null) {
+        t.o(i10, tVar.R);
+        if (!(tVar.L.getDrawable() instanceof BitmapDrawable) || (bitmap = ((BitmapDrawable) tVar.L.getDrawable()).getBitmap()) == null) {
             i7 = 0;
         } else {
             i7 = tVar.k(bitmap.getWidth(), bitmap.getHeight());
-            tVar.K.setScaleType(bitmap.getWidth() >= bitmap.getHeight() ? ImageView.ScaleType.FIT_XY : ImageView.ScaleType.FIT_CENTER);
+            tVar.L.setScaleType(bitmap.getWidth() >= bitmap.getHeight() ? ImageView.ScaleType.FIT_XY : ImageView.ScaleType.FIT_CENTER);
         }
         int l10 = tVar.l(tVar.h());
-        int size = tVar.W.size();
-        int size2 = tVar.n() ? DesugarCollections.unmodifiableList(vVar.v).size() * tVar.e0 : 0;
+        int size = tVar.X.size();
+        int size2 = tVar.n() ? DesugarCollections.unmodifiableList(vVar.v).size() * tVar.f0 : 0;
         if (size > 0) {
-            size2 += tVar.g0;
+            size2 += tVar.h0;
         }
-        int min = Math.min(size2, tVar.f0);
-        if (!tVar.u0) {
+        int min = Math.min(size2, tVar.g0);
+        if (!tVar.v0) {
             min = 0;
         }
         int max = Math.max(i7, min) + l10;
         Rect rect = new Rect();
         decorView.getWindowVisibleDisplayFrame(rect);
-        int height = rect.height() - (tVar.I.getMeasuredHeight() - tVar.J.getMeasuredHeight());
+        int height = rect.height() - (tVar.J.getMeasuredHeight() - tVar.K.getMeasuredHeight());
         if (i7 <= 0 || max > height) {
-            if (tVar.Q.getMeasuredHeight() + tVar.U.getLayoutParams().height >= tVar.J.getMeasuredHeight()) {
-                tVar.K.setVisibility(8);
+            if (tVar.R.getMeasuredHeight() + tVar.V.getLayoutParams().height >= tVar.K.getMeasuredHeight()) {
+                tVar.L.setVisibility(8);
             }
             max = min + l10;
             i7 = 0;
         } else {
-            tVar.K.setVisibility(0);
-            t.o(i7, tVar.K);
+            tVar.L.setVisibility(0);
+            t.o(i7, tVar.L);
         }
         if (!tVar.h() || max > height) {
-            tVar.R.setVisibility(8);
+            tVar.S.setVisibility(8);
         } else {
-            tVar.R.setVisibility(0);
+            tVar.S.setVisibility(0);
         }
-        tVar.u(tVar.R.getVisibility() == 0);
-        int l11 = tVar.l(tVar.R.getVisibility() == 0);
+        tVar.u(tVar.S.getVisibility() == 0);
+        int l11 = tVar.l(tVar.S.getVisibility() == 0);
         int max2 = Math.max(i7, min) + l11;
         if (max2 > height) {
             min -= max2 - height;
         } else {
             height = max2;
         }
-        tVar.Q.clearAnimation();
-        tVar.U.clearAnimation();
-        tVar.J.clearAnimation();
-        boolean z9 = this.a;
-        if (z9) {
-            tVar.f(l11, tVar.Q);
-            tVar.f(min, tVar.U);
-            tVar.f(height, tVar.J);
+        tVar.R.clearAnimation();
+        tVar.V.clearAnimation();
+        tVar.K.clearAnimation();
+        boolean z10 = this.a;
+        if (z10) {
+            tVar.f(l11, tVar.R);
+            tVar.f(min, tVar.V);
+            tVar.f(height, tVar.K);
         } else {
-            t.o(l11, tVar.Q);
-            t.o(min, tVar.U);
-            t.o(height, tVar.J);
+            t.o(l11, tVar.R);
+            t.o(min, tVar.V);
+            t.o(height, tVar.K);
         }
-        t.o(rect.height(), tVar.H);
+        t.o(rect.height(), tVar.I);
         List unmodifiableList = DesugarCollections.unmodifiableList(vVar.v);
         if (unmodifiableList.isEmpty()) {
-            tVar.W.clear();
-            tVar.V.notifyDataSetChanged();
+            tVar.X.clear();
+            tVar.W.notifyDataSetChanged();
             return;
         }
-        if (new HashSet(tVar.W).equals(new HashSet(unmodifiableList))) {
-            tVar.V.notifyDataSetChanged();
+        if (new HashSet(tVar.X).equals(new HashSet(unmodifiableList))) {
+            tVar.W.notifyDataSetChanged();
             return;
         }
-        if (z9) {
-            OverlayListView overlayListView = tVar.U;
-            s sVar = tVar.V;
+        if (z10) {
+            OverlayListView overlayListView = tVar.V;
+            s sVar = tVar.W;
             hashMap = new HashMap();
             int firstVisiblePosition = overlayListView.getFirstVisiblePosition();
             for (int i11 = 0; i11 < overlayListView.getChildCount(); i11++) {
@@ -125,10 +125,10 @@ public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
         } else {
             hashMap = null;
         }
-        if (z9) {
+        if (z10) {
             Context context = tVar.s;
-            OverlayListView overlayListView2 = tVar.U;
-            s sVar2 = tVar.V;
+            OverlayListView overlayListView2 = tVar.V;
+            s sVar2 = tVar.W;
             hashMap2 = new HashMap();
             int firstVisiblePosition2 = overlayListView2.getFirstVisiblePosition();
             for (int i12 = 0; i12 < overlayListView2.getChildCount(); i12++) {
@@ -141,26 +141,26 @@ public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
         } else {
             hashMap2 = null;
         }
-        ArrayList arrayList = tVar.W;
+        ArrayList arrayList = tVar.X;
         HashSet hashSet = new HashSet(unmodifiableList);
         hashSet.removeAll(arrayList);
-        tVar.X = hashSet;
-        HashSet hashSet2 = new HashSet(tVar.W);
+        tVar.Y = hashSet;
+        HashSet hashSet2 = new HashSet(tVar.X);
         hashSet2.removeAll(unmodifiableList);
-        tVar.Y = hashSet2;
-        tVar.W.addAll(0, tVar.X);
-        tVar.W.removeAll(tVar.Y);
-        tVar.V.notifyDataSetChanged();
-        if (z9 && tVar.u0) {
-            if (tVar.Y.size() + tVar.X.size() > 0) {
-                tVar.U.setEnabled(false);
-                tVar.U.requestLayout();
-                tVar.v0 = true;
-                tVar.U.getViewTreeObserver().addOnGlobalLayoutListener(new n(tVar, hashMap, hashMap2));
+        tVar.Z = hashSet2;
+        tVar.X.addAll(0, tVar.Y);
+        tVar.X.removeAll(tVar.Z);
+        tVar.W.notifyDataSetChanged();
+        if (z10 && tVar.v0) {
+            if (tVar.Z.size() + tVar.Y.size() > 0) {
+                tVar.V.setEnabled(false);
+                tVar.V.requestLayout();
+                tVar.w0 = true;
+                tVar.V.getViewTreeObserver().addOnGlobalLayoutListener(new n(tVar, hashMap, hashMap2));
                 return;
             }
         }
-        tVar.X = null;
         tVar.Y = null;
+        tVar.Z = null;
     }
 }

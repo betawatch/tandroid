@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q0 extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -25,15 +25,15 @@ public final class q0 extends BroadcastReceiver {
                 boolean p10 = t0.p();
                 for (int i7 = 0; i7 < 4; i7++) {
                     ConnectionsManager.getInstance(i7).checkConnection();
-                    w7.J.c(new o10(1, w7.G(i7), p10));
+                    w7.K.c(new l10(1, w7.G(i7), p10));
                 }
                 break;
             case 1:
-                sc.h(intent);
+                qc.h(intent);
                 break;
             case 2:
                 if ("android.media.AUDIO_BECOMING_NOISY".equals(intent.getAction())) {
-                    MediaController.B().R(MediaController.B().u0, true);
+                    MediaController.B().R(MediaController.B().v0, true);
                     break;
                 }
                 break;
@@ -42,16 +42,16 @@ public final class q0 extends BroadcastReceiver {
                     if (r2.a) {
                         a8.b("screen off");
                     }
-                    ConnectionsManager.getInstance(p10.s0).setAppPaused(true, true);
+                    ConnectionsManager.getInstance(m10.t0).setAppPaused(true, true);
                     t0.w = false;
                 } else if (intent.getAction().equals("android.intent.action.SCREEN_ON")) {
                     if (r2.a) {
                         a8.b("screen on");
                     }
-                    ConnectionsManager.getInstance(p10.s0).setAppPaused(false, true);
+                    ConnectionsManager.getInstance(m10.t0).setAppPaused(false, true);
                     t0.w = true;
                 }
-                qs.e().k(qs.K4, new Object[0]);
+                ns.e().k(ns.K4, new Object[0]);
                 break;
         }
     }

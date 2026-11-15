@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzqc {
     public static final /* synthetic */ int zza = 0;
@@ -168,7 +168,7 @@ final class zzqc {
     public static int zzj(int i7, byte[] bArr, int i10, zzqb zzqbVar) {
         byte b10 = bArr[i10];
         int i11 = i10 + 1;
-        int i12 = i7 & qs.L1;
+        int i12 = i7 & ns.L1;
         if (b10 >= 0) {
             zzqbVar.zza = i12 | (b10 << 7);
             return i11;

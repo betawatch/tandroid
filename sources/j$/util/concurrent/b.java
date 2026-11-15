@@ -140,7 +140,7 @@ public abstract class b implements Collection, Serializable {
     public boolean removeAll(Collection collection) {
         collection.getClass();
         k[] kVarArr = this.a.a;
-        boolean z9 = false;
+        boolean z10 = false;
         if (kVarArr == null) {
             return false;
         }
@@ -149,29 +149,29 @@ public abstract class b implements Collection, Serializable {
             while (it.hasNext()) {
                 if (collection.contains(it.next())) {
                     it.remove();
-                    z9 = true;
+                    z10 = true;
                 }
             }
-            return z9;
+            return z10;
         }
         Iterator it2 = collection.iterator();
         while (it2.hasNext()) {
-            z9 |= remove(it2.next());
+            z10 |= remove(it2.next());
         }
-        return z9;
+        return z10;
     }
 
     @Override // java.util.Collection
     public final boolean retainAll(Collection collection) {
         collection.getClass();
         Iterator it = iterator();
-        boolean z9 = false;
+        boolean z10 = false;
         while (it.hasNext()) {
             if (!collection.contains(it.next())) {
                 it.remove();
-                z9 = true;
+                z10 = true;
             }
         }
-        return z9;
+        return z10;
     }
 }

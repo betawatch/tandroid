@@ -1,6 +1,6 @@
 package androidx.mediarouter.app;
 
-import a8.b7;
+import a8.c7;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -14,9 +14,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s extends ArrayAdapter {
     public final float a;
@@ -26,7 +26,7 @@ public final class s extends ArrayAdapter {
     public s(t tVar, Context context, ArrayList arrayList) {
         super(context, 0, arrayList);
         this.b = tVar;
-        this.a = b7.c(context);
+        this.a = c7.c(context);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x00ac  */
@@ -36,65 +36,65 @@ public final class s extends ArrayAdapter {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final View getView(int i7, View view, ViewGroup viewGroup) {
-        boolean z9;
+        boolean z10;
         t tVar = this.b;
         if (view == null) {
             view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.mr_controller_volume_item, viewGroup, false);
         } else {
-            t.o(tVar.e0, (LinearLayout) view.findViewById(R.id.volume_item_container));
+            t.o(tVar.f0, (LinearLayout) view.findViewById(R.id.volume_item_container));
             View findViewById = view.findViewById(R.id.mr_volume_item_icon);
             ViewGroup.LayoutParams layoutParams = findViewById.getLayoutParams();
-            int i10 = tVar.d0;
+            int i10 = tVar.e0;
             layoutParams.width = i10;
             layoutParams.height = i10;
             findViewById.setLayoutParams(layoutParams);
         }
         s4.v vVar = (s4.v) getItem(i7);
         if (vVar != null) {
-            boolean z10 = vVar.g;
+            boolean z11 = vVar.g;
             TextView textView = (TextView) view.findViewById(R.id.mr_name);
-            textView.setEnabled(z10);
+            textView.setEnabled(z11);
             textView.setText(vVar.d);
             MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) view.findViewById(R.id.mr_volume_slider);
             Context context = viewGroup.getContext();
-            OverlayListView overlayListView = tVar.U;
-            int b10 = b7.b(context, 0);
+            OverlayListView overlayListView = tVar.V;
+            int b10 = c7.b(context, 0);
             int alpha = Color.alpha(b10);
-            int i11 = qs.e4;
+            int i11 = ns.e4;
             if (alpha != 255) {
                 b10 = i0.a.k(b10, ((Integer) overlayListView.getTag()).intValue());
             }
             mediaRouteVolumeSlider.a(b10, b10);
             mediaRouteVolumeSlider.setTag(vVar);
-            tVar.h0.put(vVar, mediaRouteVolumeSlider);
-            mediaRouteVolumeSlider.b(!z10);
-            mediaRouteVolumeSlider.setEnabled(z10);
-            if (z10) {
-                if (tVar.O) {
+            tVar.i0.put(vVar, mediaRouteVolumeSlider);
+            mediaRouteVolumeSlider.b(!z11);
+            mediaRouteVolumeSlider.setEnabled(z11);
+            if (z11) {
+                if (tVar.P) {
                     if (((!vVar.e() || s4.x.g()) ? vVar.o : 0) == 1) {
-                        z9 = true;
-                        if (z9) {
+                        z10 = true;
+                        if (z10) {
                             mediaRouteVolumeSlider.setMax(100);
                             mediaRouteVolumeSlider.setProgress(100);
                             mediaRouteVolumeSlider.setEnabled(false);
                         } else {
                             mediaRouteVolumeSlider.setMax(vVar.q);
                             mediaRouteVolumeSlider.setProgress(vVar.p);
-                            mediaRouteVolumeSlider.setOnSeekBarChangeListener(tVar.b0);
+                            mediaRouteVolumeSlider.setOnSeekBarChangeListener(tVar.c0);
                         }
                     }
                 }
-                z9 = false;
-                if (z9) {
+                z10 = false;
+                if (z10) {
                 }
             }
             ImageView imageView = (ImageView) view.findViewById(R.id.mr_volume_item_icon);
-            if (!z10) {
+            if (!z11) {
                 i11 = (int) (this.a * 255.0f);
             }
             imageView.setAlpha(i11);
-            ((LinearLayout) view.findViewById(R.id.volume_item_container)).setVisibility(tVar.Z.contains(vVar) ? 4 : 0);
-            HashSet hashSet = tVar.X;
+            ((LinearLayout) view.findViewById(R.id.volume_item_container)).setVisibility(tVar.a0.contains(vVar) ? 4 : 0);
+            HashSet hashSet = tVar.Y;
             if (hashSet != null && hashSet.contains(vVar)) {
                 AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.0f);
                 alphaAnimation.setDuration(0L);

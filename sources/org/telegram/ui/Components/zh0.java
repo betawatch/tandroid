@@ -1,31 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final class zh0 extends rg.a {
-    public final ch.o0 c;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public zh0(int i7, ch.o0 o0Var) {
-        super(i7, false);
-        this.c = o0Var;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class zh0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mi0 b;
+
+    public /* synthetic */ zh0(mi0 mi0Var, int i7) {
+        this.a = i7;
+        this.b = mi0Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                this.b.M0.e();
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                mi0 mi0Var = this.b;
+                mi0Var.R = null;
+                mi0Var.o0 = 0.0f;
+                mi0Var.m0 = null;
+                mi0Var.invalidate();
+                break;
         }
-        if (obj != null && zh0.class == obj.getClass()) {
-            zh0 zh0Var = (zh0) obj;
-            int i7 = this.a;
-            int i10 = zh0Var.a;
-            if (i7 == i10 && (i7 == 0 || i7 == 3)) {
-                ch.o0 o0Var = this.c;
-                return o0Var != null && o0Var.equals(zh0Var.c);
-            }
-            if (i7 == i10) {
-                return true;
-            }
-        }
-        return false;
     }
 }

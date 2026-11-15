@@ -4,11 +4,12 @@ import af.b;
 import android.webkit.WebView;
 import gd.k;
 import id.c;
+import jd.a;
 import kd.j;
 import rd.p;
 import zd.z;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzlf extends j implements p {
     Object zza;
@@ -75,7 +76,7 @@ final class zzlf extends j implements p {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        jd.a aVar = jd.a.a;
+        a aVar = a.a;
         int i7 = this.zzb;
         if (i7 == 0) {
             b.c(obj);

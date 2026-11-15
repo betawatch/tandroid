@@ -1,25 +1,26 @@
 package com.google.android.recaptcha.internal;
 
-import a8.ab;
+import a8.bb;
 import af.b;
 import android.app.Application;
 import gd.c;
+import ie.a;
 import ie.d;
 import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzeh {
     private final Application zza;
-    private final ie.a zzb = new d();
+    private final a zzb = new d();
     private zzeq zzc;
     private final c zzd;
 
     public zzeh(Application application) {
         this.zza = application;
         int i7 = zzby.zza;
-        this.zzd = ab.b(zzef.zza);
+        this.zzd = bb.b(zzef.zza);
         zzdp.zza(application);
     }
 
@@ -79,7 +80,7 @@ public final class zzeh {
                     i7 = zzeaVar2.zzg;
                     if (i7 != 0) {
                         b.c(obj);
-                        ie.a aVar2 = this.zzb;
+                        a aVar2 = this.zzb;
                         str2 = str;
                         zzeaVar2.zza = str2;
                         zzeaVar2.zzb = null;
@@ -99,7 +100,7 @@ public final class zzeh {
                         if (i7 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        obj3 = (ie.a) zzeaVar2.zza;
+                        obj3 = (a) zzeaVar2.zza;
                         try {
                             b.c(obj);
                             zzeq zzeqVar = (zzeq) obj;
@@ -112,7 +113,7 @@ public final class zzeh {
                         }
                     }
                     long j11 = zzeaVar2.zzd;
-                    Object obj4 = (ie.a) zzeaVar2.zzc;
+                    Object obj4 = (a) zzeaVar2.zzc;
                     zzdq zzdqVar3 = zzeaVar2.zzh;
                     String str3 = (String) zzeaVar2.zza;
                     b.c(obj);

@@ -1,27 +1,33 @@
 package wi;
 
-import org.telegram.ui.Components.qt;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c {
+public final /* synthetic */ class c implements r1.c {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qt b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ c(qt qtVar, int i7) {
+    public /* synthetic */ c(Object obj, int i7) {
         this.a = i7;
-        this.b = qtVar;
+        this.b = obj;
     }
 
-    public void a(Exception exc) {
+    @Override // r1.c
+    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
         switch (this.a) {
             case 0:
-                qt qtVar = this.b;
-                ((t0) qtVar.b).i.post(new j0(qtVar, exc, 1));
+                h hVar = (h) this.b;
+                ((SharedPreferences) u7.i.b().a).edit().putFloat("x", f10).apply();
+                hVar.a.b.f();
+                break;
+            case 1:
+                h hVar2 = (h) this.b;
+                ((SharedPreferences) u7.i.b().a).edit().putFloat("y", f10).apply();
+                hVar2.a.b.f();
                 break;
             default:
-                qt qtVar2 = this.b;
-                ((t0) qtVar2.b).i.post(new j0(qtVar2, exc, 0));
+                ((h2.f) this.b).e();
                 break;
         }
     }

@@ -7,7 +7,7 @@ import j$.util.Objects;
 import java.util.regex.Pattern;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class dj0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final class dj0 implements TextWatcher {
         long parseLong;
         int i7;
         int i10 = this.a;
-        boolean z9 = true;
+        boolean z10 = true;
         Object obj = this.b;
         Object obj2 = this.d;
         switch (i10) {
@@ -50,14 +50,14 @@ public final class dj0 implements TextWatcher {
                             i11++;
                         }
                     } else {
-                        z9 = false;
+                        z10 = false;
                     }
                 }
-                if (z9 && !ek0Var.u0) {
-                    editTextBoldCursor.setErrorText(org.telegram.messenger.id.M0(2131747449, null));
+                if (z10 && !ek0Var.v0) {
+                    editTextBoldCursor.setErrorText(org.telegram.messenger.hd.M0(2131747449, null));
                     break;
                 } else {
-                    ek0Var.t0[intValue] = z9;
+                    ek0Var.u0[intValue] = z10;
                     ek0.N0(ek0Var, editTextBoldCursor, this.c, editable, false);
                     break;
                 }
@@ -81,11 +81,11 @@ public final class dj0 implements TextWatcher {
                             if (length == 6) {
                                 i7 = ((int) Long.parseLong(obj3, 16)) - 16777216;
                             } else if (length != 8) {
-                                i7 = qVar.p1;
+                                i7 = qVar.q1;
                             } else {
                                 parseLong = Long.parseLong(obj3, 16);
                             }
-                            if (i7 == qVar.p1) {
+                            if (i7 == qVar.q1) {
                                 qVar.I0(i7, 5);
                                 break;
                             }
@@ -93,7 +93,7 @@ public final class dj0 implements TextWatcher {
                             parseLong = Long.parseLong("FF" + obj3.charAt(0) + obj3.charAt(0) + obj3.charAt(1) + obj3.charAt(1) + obj3.charAt(2) + obj3.charAt(2), 16);
                         }
                         i7 = (int) parseLong;
-                        if (i7 == qVar.p1) {
+                        if (i7 == qVar.q1) {
                         }
                     }
                 }

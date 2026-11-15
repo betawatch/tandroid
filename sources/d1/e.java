@@ -1,6 +1,6 @@
 package d1;
 
-import a8.m9;
+import a8.o9;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -35,19 +35,19 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import q7.s0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
     public v0.g f;
     public Executor g;
     public CancellationSignal h;
-    public final c1.d i;
+    public final c1.e i;
 
     public e(Context context) {
         j.e(context, "context");
         this.e = context;
-        this.i = new c1.d(this, new Handler(Looper.getMainLooper()), 1);
+        this.i = new c1.e(this, new Handler(Looper.getMainLooper()), 1);
     }
 
     public static v0.f f(u uVar) {
@@ -74,7 +74,7 @@ public final class e extends b1.d {
                 }
                 String str4 = "response";
                 i iVar = uVar.e;
-                boolean z9 = true;
+                boolean z10 = true;
                 if (iVar != null) {
                     jSONObject = iVar.b();
                 } else {
@@ -82,7 +82,7 @@ public final class e extends b1.d {
                     if (jVar != null) {
                         jSONObject = jVar.b();
                     } else {
-                        z9 = false;
+                        z10 = false;
                         if (kVar != null) {
                             try {
                                 JSONObject jSONObject3 = new JSONObject();
@@ -107,7 +107,7 @@ public final class e extends b1.d {
                 f7.g gVar = uVar.h;
                 if (gVar != null) {
                     jSONObject2.put("clientExtensionResults", gVar.b());
-                } else if (z9) {
+                } else if (z10) {
                     jSONObject2.put("clientExtensionResults", new JSONObject());
                 }
                 String jSONObject4 = jSONObject2.toString();
@@ -152,7 +152,7 @@ public final class e extends b1.d {
             }
         }
         JSONObject jSONObject = new JSONObject(str2);
-        byte[] a10 = m9.a(jSONObject);
+        byte[] a10 = o9.a(jSONObject);
         JSONObject jSONObject2 = jSONObject.getJSONObject("user");
         String str3 = "id";
         String string = jSONObject2.getString("id");

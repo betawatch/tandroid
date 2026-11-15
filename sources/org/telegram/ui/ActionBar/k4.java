@@ -1,11 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface k4 {
-    void a(int i7, int i10, int i11);
+public final class k4 {
+    public static final k4 a;
+    public static final k4 b;
+    public static final /* synthetic */ k4[] c;
 
-    void b(int i7, int i10, int i11);
+    static {
+        k4 k4Var = new k4("BACK", 0);
+        a = k4Var;
+        k4 k4Var2 = new k4("MENU", 1);
+        b = k4Var2;
+        c = new k4[]{k4Var, k4Var2};
+    }
 
-    int c(int i7, int i10);
+    public static k4 valueOf(String str) {
+        return (k4) Enum.valueOf(k4.class, str);
+    }
+
+    public static k4[] values() {
+        return (k4[]) c.clone();
+    }
 }

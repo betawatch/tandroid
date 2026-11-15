@@ -1,15 +1,6 @@
 package l2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class h1 {
-    public final x2.a a;
-    public final c1 b;
-    public final g1 c;
-
-    public h1(x2.a aVar, c1 c1Var, g1 g1Var) {
-        this.a = aVar;
-        this.b = c1Var;
-        this.c = g1Var;
-    }
+public interface h1 {
 }

@@ -2,7 +2,7 @@ package be;
 
 import zd.c2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o extends c {
     public final a w;
@@ -12,7 +12,7 @@ public final class o extends c {
         this.w = aVar;
         if (aVar != a.a) {
             if (i7 < 1) {
-                throw new IllegalArgumentException(jg.g.k(i7, "Buffered channel capacity must be at least 1, but ", " was specified").toString());
+                throw new IllegalArgumentException(i5.c.j(i7, "Buffered channel capacity must be at least 1, but ", " was specified").toString());
             }
         } else {
             throw new IllegalArgumentException(("This implementation does not support suspension for senders, use " + kotlin.jvm.internal.s.a(c.class).b() + " instead").toString());
@@ -26,7 +26,7 @@ public final class o extends c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object C(Object obj, boolean z9) {
+    public final Object C(Object obj, boolean z10) {
         a aVar = this.w;
         a aVar2 = a.c;
         gd.k kVar = gd.k.a;

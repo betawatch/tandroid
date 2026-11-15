@@ -1,54 +1,19 @@
 package g9;
 
-import java.io.Serializable;
-import java.util.List;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class n implements m, Serializable {
-    public final List a;
-
-    public n(List list) {
-        this.a = list;
+public enum n extends r {
+    public n() {
+        super("ALWAYS_TRUE", 0);
     }
 
-    @Override // g9.m
+    @Override // g9.l
     public final boolean apply(Object obj) {
-        int i7 = 0;
-        while (true) {
-            List list = this.a;
-            if (i7 >= list.size()) {
-                return true;
-            }
-            if (!((m) list.get(i7)).apply(obj)) {
-                return false;
-            }
-            i7++;
-        }
+        return true;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof n) {
-            return this.a.equals(((n) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode() + 306654252;
-    }
-
+    @Override // java.lang.Enum
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("Predicates.and(");
-        boolean z9 = true;
-        for (Object obj : this.a) {
-            if (!z9) {
-                sb2.append(',');
-            }
-            sb2.append(obj);
-            z9 = false;
-        }
-        sb2.append(')');
-        return sb2.toString();
+        return "Predicates.alwaysTrue()";
     }
 }

@@ -1,19 +1,19 @@
 package a8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class z3 implements na.d {
     public static final z3 a = new z3();
-    public static final na.c b = new na.c("durationMs", jg.g.q(p0.w(n0.class, new j0(1))));
-    public static final na.c c = new na.c("errorCode", jg.g.q(p0.w(n0.class, new j0(2))));
-    public static final na.c d = new na.c("isColdCall", jg.g.q(p0.w(n0.class, new j0(3))));
-    public static final na.c e = new na.c("autoManageModelOnBackground", jg.g.q(p0.w(n0.class, new j0(4))));
-    public static final na.c f = new na.c("autoManageModelOnLowMemory", jg.g.q(p0.w(n0.class, new j0(5))));
-    public static final na.c g = new na.c("isNnApiEnabled", jg.g.q(p0.w(n0.class, new j0(6))));
-    public static final na.c h = new na.c("eventsCount", jg.g.q(p0.w(n0.class, new j0(7))));
-    public static final na.c i = new na.c("otherErrors", jg.g.q(p0.w(n0.class, new j0(8))));
-    public static final na.c j = new na.c("remoteConfigValueForAcceleration", jg.g.q(p0.w(n0.class, new j0(9))));
-    public static final na.c k = new na.c("isAccelerated", jg.g.q(p0.w(n0.class, new j0(10))));
+    public static final na.c b = new na.c("durationMs", i5.c.p(p0.w(n0.class, new j0(1))));
+    public static final na.c c = new na.c("errorCode", i5.c.p(p0.w(n0.class, new j0(2))));
+    public static final na.c d = new na.c("isColdCall", i5.c.p(p0.w(n0.class, new j0(3))));
+    public static final na.c e = new na.c("autoManageModelOnBackground", i5.c.p(p0.w(n0.class, new j0(4))));
+    public static final na.c f = new na.c("autoManageModelOnLowMemory", i5.c.p(p0.w(n0.class, new j0(5))));
+    public static final na.c g = new na.c("isNnApiEnabled", i5.c.p(p0.w(n0.class, new j0(6))));
+    public static final na.c h = new na.c("eventsCount", i5.c.p(p0.w(n0.class, new j0(7))));
+    public static final na.c i = new na.c("otherErrors", i5.c.p(p0.w(n0.class, new j0(8))));
+    public static final na.c j = new na.c("remoteConfigValueForAcceleration", i5.c.p(p0.w(n0.class, new j0(9))));
+    public static final na.c k = new na.c("isAccelerated", i5.c.p(p0.w(n0.class, new j0(10))));
 
     @Override // na.a
     public final void a(Object obj, Object obj2) {

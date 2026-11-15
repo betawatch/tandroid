@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.a9;
 import a8.c9;
-import a8.wa;
+import a8.e9;
+import a8.xa;
 import j$.util.Objects;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a0 extends a8.v {
     public static final a0 n = new a0(null, new Object[0], 0);
@@ -34,33 +34,33 @@ public final class a0 extends a8.v {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static a0 c(int i7, Object[] objArr, wa waVar) {
+    public static a0 c(int i7, Object[] objArr, xa xaVar) {
         int i10;
-        boolean z9;
+        boolean z10;
         int i11;
         char c10;
         Object obj;
         char c11;
         short[] sArr;
-        boolean z10;
+        boolean z11;
         int i12;
         ?? r16;
-        boolean z11;
         boolean z12;
+        boolean z13;
         int i13 = i7;
         Object[] objArr2 = objArr;
         if (i13 == 0) {
             return n;
         }
         Object obj2 = null;
-        boolean z13 = false;
+        boolean z14 = false;
         int i14 = 1;
         if (i13 == 1) {
             Objects.requireNonNull(objArr2[0]);
             Objects.requireNonNull(objArr2[1]);
             return new a0(null, objArr2, 1);
         }
-        a9.b(i13, objArr2.length >> 1);
+        c9.b(i13, objArr2.length >> 1);
         char c12 = 2;
         int max = Math.max(i13, 2);
         if (max < 751619276) {
@@ -77,7 +77,7 @@ public final class a0 extends a8.v {
         if (i13 == 1) {
             Objects.requireNonNull(objArr2[0]);
             Objects.requireNonNull(objArr2[1]);
-            z12 = false;
+            z13 = false;
             i13 = 1;
             i11 = 1;
         } else {
@@ -94,10 +94,10 @@ public final class a0 extends a8.v {
                     Objects.requireNonNull(obj3);
                     Object obj4 = objArr2[i19 ^ i14];
                     Objects.requireNonNull(obj4);
-                    int a10 = c9.a(obj3.hashCode());
+                    int a10 = e9.a(obj3.hashCode());
                     while (true) {
                         int i20 = a10 & i15;
-                        z10 = z13;
+                        z11 = z14;
                         i12 = i14;
                         int i21 = bArr[i20] & 255;
                         if (i21 == 255) {
@@ -118,29 +118,29 @@ public final class a0 extends a8.v {
                                 break;
                             }
                             a10 = i20 + 1;
-                            z13 = z10;
+                            z14 = z11;
                             i14 = i12;
                         }
                     }
                     i16++;
-                    z13 = z10;
+                    z14 = z11;
                     i14 = i12;
                 }
-                z9 = z13;
+                z10 = z14;
                 i11 = i14;
                 if (i17 == i13) {
                     c10 = 2;
                     obj = bArr;
-                    r16 = z9;
-                    z11 = obj instanceof Object[];
+                    r16 = z10;
+                    z12 = obj instanceof Object[];
                     Object obj6 = obj;
-                    if (z11) {
+                    if (z12) {
                         Object[] objArr3 = (Object[]) obj;
                         s sVar2 = (s) objArr3[c10];
-                        if (waVar == null) {
+                        if (xaVar == null) {
                             throw sVar2.a();
                         }
-                        waVar.d = sVar2;
+                        xaVar.d = sVar2;
                         Object obj7 = objArr3[r16];
                         int intValue = ((Integer) objArr3[i11]).intValue();
                         objArr2 = Arrays.copyOf(objArr2, intValue + intValue);
@@ -150,13 +150,13 @@ public final class a0 extends a8.v {
                     return new a0(obj6, objArr2, i13);
                 }
                 sArr = new Object[3];
-                sArr[z9 ? 1 : 0] = bArr;
+                sArr[z10 ? 1 : 0] = bArr;
                 sArr[i11] = Integer.valueOf(i17);
                 sArr[2] = obj2;
                 obj2 = sArr;
-                z12 = z9;
+                z13 = z10;
             } else {
-                z9 = false;
+                z10 = false;
                 i11 = 1;
                 if (i10 > 32768) {
                     int[] iArr = new int[i10];
@@ -170,7 +170,7 @@ public final class a0 extends a8.v {
                         Objects.requireNonNull(obj8);
                         Object obj9 = objArr2[i26 ^ 1];
                         Objects.requireNonNull(obj9);
-                        int a11 = c9.a(obj8.hashCode());
+                        int a11 = e9.a(obj8.hashCode());
                         while (true) {
                             int i27 = a11 & i15;
                             int i28 = iArr[i27];
@@ -203,18 +203,18 @@ public final class a0 extends a8.v {
                     c10 = c12;
                     if (i24 == i13) {
                         obj = iArr;
-                        r16 = z9;
+                        r16 = z10;
                     } else {
                         Object[] objArr4 = new Object[3];
                         objArr4[0] = iArr;
                         objArr4[1] = Integer.valueOf(i24);
                         objArr4[c10] = obj2;
                         obj = objArr4;
-                        r16 = z9;
+                        r16 = z10;
                     }
-                    z11 = obj instanceof Object[];
+                    z12 = obj instanceof Object[];
                     Object obj62 = obj;
-                    if (z11) {
+                    if (z12) {
                     }
                     return new a0(obj62, objArr2, i13);
                 }
@@ -228,7 +228,7 @@ public final class a0 extends a8.v {
                     Objects.requireNonNull(obj11);
                     Object obj12 = objArr2[i33 ^ 1];
                     Objects.requireNonNull(obj12);
-                    int a12 = c9.a(obj11.hashCode());
+                    int a12 = e9.a(obj11.hashCode());
                     while (true) {
                         int i34 = a12 & i15;
                         char c13 = (char) sArr[i34];
@@ -255,18 +255,18 @@ public final class a0 extends a8.v {
                 }
                 if (i30 != i13) {
                     obj2 = new Object[]{sArr, Integer.valueOf(i30), obj2};
-                    z12 = z9;
+                    z13 = z10;
                 }
                 obj2 = sArr;
-                z12 = z9;
+                z13 = z10;
             }
         }
         c10 = 2;
         obj = obj2;
-        r16 = z12;
-        z11 = obj instanceof Object[];
+        r16 = z13;
+        z12 = obj instanceof Object[];
         Object obj622 = obj;
-        if (z11) {
+        if (z12) {
         }
         return new a0(obj622, objArr2, i13);
     }
@@ -295,7 +295,7 @@ public final class a0 extends a8.v {
                     if (obj4 instanceof byte[]) {
                         byte[] bArr = (byte[]) obj4;
                         int length = bArr.length - 1;
-                        int a10 = c9.a(obj.hashCode());
+                        int a10 = e9.a(obj.hashCode());
                         while (true) {
                             int i10 = a10 & length;
                             int i11 = bArr[i10] & 255;
@@ -311,7 +311,7 @@ public final class a0 extends a8.v {
                     } else if (obj4 instanceof short[]) {
                         short[] sArr = (short[]) obj4;
                         int length2 = sArr.length - 1;
-                        int a11 = c9.a(obj.hashCode());
+                        int a11 = e9.a(obj.hashCode());
                         while (true) {
                             int i12 = a11 & length2;
                             char c10 = (char) sArr[i12];
@@ -327,7 +327,7 @@ public final class a0 extends a8.v {
                     } else {
                         int[] iArr = (int[]) obj4;
                         int length3 = iArr.length - 1;
-                        int a12 = c9.a(obj.hashCode());
+                        int a12 = e9.a(obj.hashCode());
                         while (true) {
                             int i13 = a12 & length3;
                             int i14 = iArr[i13];

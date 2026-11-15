@@ -1,9 +1,9 @@
 package ud;
 
-import c8.t9;
+import c8.s9;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a implements Iterable {
     public final char a;
@@ -12,7 +12,7 @@ public abstract class a implements Iterable {
 
     public a(char c10, char c11) {
         this.a = c10;
-        this.b = (char) t9.a(c10, c11, 1);
+        this.b = (char) s9.a(c10, c11, 1);
     }
 
     @Override // java.lang.Iterable

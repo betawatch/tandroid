@@ -1,9 +1,9 @@
 package mf;
 
 import gf.b;
-import gf.h;
+import gf.g;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a {
     public boolean b(kf.a aVar) {
@@ -20,7 +20,7 @@ public abstract class a {
         return this instanceof b;
     }
 
-    public abstract gf.a h(h hVar);
+    public abstract gf.a h(g gVar);
 
     public void d() {
     }

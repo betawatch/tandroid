@@ -16,12 +16,12 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.st0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class x6 {
     public static volatile x6[] g = new x6[4];
     public static final Object[] h = new Object[4];
-    public static org.telegram.ui.ActionBar.u1 i;
+    public static org.telegram.ui.ActionBar.t1 i;
     public final int a;
     public final LongSparseArray b = new LongSparseArray();
     public final LongSparseArray c = new LongSparseArray();
@@ -62,84 +62,84 @@ public final class x6 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void a(ij ijVar, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z9) {
+    public final void a(gj gjVar, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
         TLRPC.TL_editFactCheck tL_editFactCheck;
         if (!TextUtils.isEmpty(tL_textWithEntities.text)) {
             TLRPC.TL_editFactCheck tL_editFactCheck2 = new TLRPC.TL_editFactCheck();
-            tL_editFactCheck2.peer = qp.s1(this.a).j1(ij.B0(ijVar.k));
-            tL_editFactCheck2.msg_id = ijVar.e1();
+            tL_editFactCheck2.peer = np.s1(this.a).j1(gj.B0(gjVar.k));
+            tL_editFactCheck2.msg_id = gjVar.e1();
             tL_editFactCheck2.text = tL_textWithEntities;
             tL_editFactCheck = tL_editFactCheck2;
         } else {
-            if (z9) {
+            if (z10) {
                 return;
             }
             TLRPC.TL_deleteFactCheck tL_deleteFactCheck = new TLRPC.TL_deleteFactCheck();
-            tL_deleteFactCheck.peer = qp.s1(this.a).j1(ij.B0(ijVar.k));
-            tL_deleteFactCheck.msg_id = ijVar.e1();
+            tL_deleteFactCheck.peer = np.s1(this.a).j1(gj.B0(gjVar.k));
+            tL_deleteFactCheck.msg_id = gjVar.e1();
             tL_editFactCheck = tL_deleteFactCheck;
         }
-        Context context = LaunchActivity.G1;
+        Context context = LaunchActivity.H1;
         if (context == null) {
             context = t0.b;
         }
-        org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, context, null);
-        u1Var.r(320L);
-        ConnectionsManager.getInstance(this.a).sendRequest(tL_editFactCheck, new bi.d4(this, tL_textWithEntities, z9, u1Var, 2));
+        org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, context, null);
+        t1Var.r(320L);
+        ConnectionsManager.getInstance(this.a).sendRequest(tL_editFactCheck, new di.f3(this, tL_textWithEntities, z10, t1Var, 2));
     }
 
-    public final void c(Activity activity, org.telegram.ui.ActionBar.h6 h6Var, ij ijVar) {
+    public final void c(Activity activity, org.telegram.ui.ActionBar.e6 e6Var, gj gjVar) {
         TLRPC.TL_textWithEntities tL_textWithEntities;
         TLRPC.Message message;
-        org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
+        org.telegram.ui.ActionBar.e2 Q = LaunchActivity.Q();
         Activity W = g0.W(activity);
         final View currentFocus = W != null ? W.getCurrentFocus() : null;
         final int i7 = 1;
         final int i10 = 0;
-        boolean z9 = Q != null && (Q.getFragmentView() instanceof st0) && ((st0) Q.getFragmentView()).Q() > g0.L(20.0f);
-        org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
-        AlertDialog$Builder w1Var = z9 ? new org.telegram.ui.ActionBar.w1(0, activity, h6Var) : new AlertDialog$Builder(0, activity, h6Var);
+        boolean z10 = Q != null && (Q.getFragmentView() instanceof st0) && ((st0) Q.getFragmentView()).Q() > g0.L(20.0f);
+        org.telegram.ui.ActionBar.t1[] t1VarArr = new org.telegram.ui.ActionBar.t1[1];
+        AlertDialog$Builder v1Var = z10 ? new org.telegram.ui.ActionBar.v1(0, activity, e6Var) : new AlertDialog$Builder(0, activity, e6Var);
         TextView[] textViewArr = new TextView[1];
-        boolean z10 = ijVar == null || (message = ijVar.k) == null || message.factcheck == null;
-        String M0 = id.M0(2131750852, null);
-        org.telegram.ui.ActionBar.u1 u1Var = w1Var.a;
-        u1Var.R = M0;
+        boolean z11 = gjVar == null || (message = gjVar.k) == null || message.factcheck == null;
+        String M0 = hd.M0(2131750852, null);
+        org.telegram.ui.ActionBar.t1 t1Var = v1Var.a;
+        t1Var.S = M0;
         int i11 = this.a;
-        int i12 = qp.s1(i11).Q5;
-        final t6 t6Var = new t6(activity, h6Var, i12, h6Var);
-        t6Var.r0 = true;
-        boolean z11 = z10;
-        t6Var.setOnEditorActionListener(new u6(this, t6Var, i12, ijVar, z11, u1VarArr, currentFocus));
-        ui.b0(i11).M(g0.G0(), true);
+        int i12 = np.s1(i11).R5;
+        final t6 t6Var = new t6(activity, e6Var, i12, e6Var);
+        t6Var.s0 = true;
+        boolean z12 = z11;
+        t6Var.setOnEditorActionListener(new u6(this, t6Var, i12, gjVar, z12, t1VarArr, currentFocus));
+        si.b0(i11).M(g0.G0(), true);
         t6Var.setTextSize(1, 18.0f);
-        org.telegram.ui.ActionBar.t6.U(t6Var, org.telegram.ui.ActionBar.m6.j5, h6Var);
-        org.telegram.ui.ActionBar.t6.l(t6Var, 34, org.telegram.ui.ActionBar.m6.Li, h6Var);
-        t6Var.setHintText(id.M0(2131750849, null));
+        org.telegram.ui.ActionBar.q6.U(t6Var, org.telegram.ui.ActionBar.j6.j5, e6Var);
+        org.telegram.ui.ActionBar.q6.l(t6Var, 34, org.telegram.ui.ActionBar.j6.Oi, e6Var);
+        t6Var.setHintText(hd.M0(2131750849, null));
         t6Var.setFocusable(true);
         t6Var.setInputType(147457);
-        org.telegram.ui.ActionBar.t6.F(t6Var, org.telegram.ui.ActionBar.m6.k6, org.telegram.ui.ActionBar.m6.l6, org.telegram.ui.ActionBar.m6.p7, h6Var);
+        org.telegram.ui.ActionBar.q6.F(t6Var, org.telegram.ui.ActionBar.j6.k6, org.telegram.ui.ActionBar.j6.l6, org.telegram.ui.ActionBar.j6.p7, e6Var);
         t6Var.setImeOptions(6);
         t6Var.setBackgroundDrawable(null);
         t6Var.setPadding(0, g0.L(6.0f), 0, g0.L(6.0f));
-        TLRPC.TL_factCheck R0 = ijVar.R0();
+        TLRPC.TL_factCheck R0 = gjVar.R0();
         if (R0 != null && (tL_textWithEntities = R0.text) != null) {
             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(tL_textWithEntities.text);
-            ij.b(valueOf, R0.text.entities, false, true, false, false, 0);
+            gj.b(valueOf, R0.text.entities, false, true, false, false, 0);
             t6Var.setText(valueOf);
         }
         t6Var.addTextChangedListener(new v6(i12, t6Var, textViewArr, R0));
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
-        linearLayout.addView(t6Var, c8.ha.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
-        w1Var.c();
-        w1Var.o(linearLayout);
-        u1Var.a = g0.L(292.0f);
-        w1Var.k(id.M0(2131751354, null), new r6(this, t6Var, i12, ijVar, z11));
-        w1Var.h(id.M0(2131752589, "Cancel"), new ni.a(15));
-        if (z9) {
-            i = u1Var;
-            u1VarArr[0] = u1Var;
-            u1Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.messenger.s6
+        linearLayout.addView(t6Var, c8.ja.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
+        v1Var.c();
+        v1Var.o(linearLayout);
+        t1Var.a = g0.L(292.0f);
+        v1Var.k(hd.M0(2131751354, null), new r6(this, t6Var, i12, gjVar, z12));
+        v1Var.h(hd.M0(2131752589, "Cancel"), new n2.a0(19));
+        if (z10) {
+            i = t1Var;
+            t1VarArr[0] = t1Var;
+            t1Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.messenger.s6
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     switch (i10) {
@@ -160,20 +160,20 @@ public final class x6 {
                         case 0:
                             t6 t6Var2 = t6Var;
                             t6Var2.requestFocus();
-                            g0.K3(t6Var2);
+                            g0.J3(t6Var2);
                             break;
                         default:
                             t6 t6Var3 = t6Var;
                             t6Var3.requestFocus();
-                            g0.K3(t6Var3);
+                            g0.J3(t6Var3);
                             break;
                     }
                 }
             });
             i.r(250L);
         } else {
-            u1VarArr[0] = u1Var;
-            u1Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.messenger.s6
+            t1VarArr[0] = t1Var;
+            t1Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.messenger.s6
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     switch (i7) {
@@ -187,28 +187,28 @@ public final class x6 {
                     }
                 }
             });
-            u1VarArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.messenger.p6
+            t1VarArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.messenger.p6
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
                     switch (i10) {
                         case 0:
                             t6 t6Var2 = t6Var;
                             t6Var2.requestFocus();
-                            g0.K3(t6Var2);
+                            g0.J3(t6Var2);
                             break;
                         default:
                             t6 t6Var3 = t6Var;
                             t6Var3.requestFocus();
-                            g0.K3(t6Var3);
+                            g0.J3(t6Var3);
                             break;
                     }
                 }
             });
-            u1VarArr[0].show();
+            t1VarArr[0].show();
         }
-        org.telegram.ui.ActionBar.u1 u1Var2 = u1VarArr[0];
-        u1Var2.j0 = false;
-        View d = u1Var2.d(-1);
+        org.telegram.ui.ActionBar.t1 t1Var2 = t1VarArr[0];
+        t1Var2.k0 = false;
+        View d = t1Var2.d(-1);
         if (d instanceof TextView) {
             textViewArr[0] = (TextView) d;
         }

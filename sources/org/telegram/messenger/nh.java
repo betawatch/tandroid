@@ -1,71 +1,74 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
-import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.HashMap;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.e80;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nh implements ri, tr {
-    public final /* synthetic */ c1 a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class nh implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ si b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ nh(c1 c1Var, Object obj, Object obj2, Object obj3) {
-        this.a = c1Var;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public /* synthetic */ nh(si siVar, int i7, int i10) {
+        this.a = i10;
+        this.b = siVar;
+        this.c = i7;
     }
 
-    @Override // org.telegram.messenger.ri
-    public void e(String str, ArrayList arrayList) {
-        ui uiVar = (ui) this.a;
-        si siVar = (si) this.b;
-        ti tiVar = (ti) this.c;
-        c20 c20Var = (c20) this.d;
-        HashMap hashMap = uiVar.P1;
-        if (hashMap.containsKey(siVar)) {
-            StringBuilder sb2 = new StringBuilder();
-            int size = arrayList.size();
-            int i7 = 0;
-            while (i7 < size) {
-                Object obj = arrayList.get(i7);
-                i7++;
-                qi qiVar = (qi) obj;
-                if (!TextUtils.isEmpty(qiVar.a) && !qiVar.a.startsWith("animated_")) {
-                    sb2.append(qiVar.a);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        ArrayList<TLRPC.Document> arrayList;
+        switch (this.a) {
+            case 0:
+                si siVar = this.b;
+                Long[] lArr = siVar.G0;
+                Long valueOf = Long.valueOf(System.currentTimeMillis() / 1000);
+                int i7 = this.c;
+                lArr[i7] = valueOf;
+                if (!(tLObject instanceof TL_account.TL_emojiStatusesNotModified)) {
+                    if (tLObject instanceof TL_account.TL_emojiStatuses) {
+                        TL_account.TL_emojiStatuses tL_emojiStatuses = (TL_account.TL_emojiStatuses) tLObject;
+                        siVar.E0[i7] = tL_emojiStatuses.hash;
+                        siVar.F0[i7] = tL_emojiStatuses.statuses;
+                        siVar.getMessagesStorage().a.c(new l7(siVar, i7, tL_emojiStatuses, 8));
+                        g0.h3(new eg(siVar, 1));
+                        break;
+                    }
+                } else {
+                    siVar.I0[i7] = false;
+                    break;
                 }
-            }
-            TLRPC.TL_messages_searchStickers tL_messages_searchStickers = new TLRPC.TL_messages_searchStickers();
-            boolean z9 = siVar.a;
-            String str2 = siVar.b;
-            tL_messages_searchStickers.emojis = z9;
-            if (!TextUtils.isEmpty(str2)) {
-                tL_messages_searchStickers.lang_code.add(str2);
-            }
-            tL_messages_searchStickers.emoticon = sb2.toString();
-            tL_messages_searchStickers.q = siVar.c;
-            tL_messages_searchStickers.limit = 100;
-            tL_messages_searchStickers.offset = tiVar != null ? tiVar.b.intValue() : 0;
-            hashMap.put(siVar, Integer.valueOf(uiVar.getConnectionsManager().sendRequestTyped(tL_messages_searchStickers, new d3.b(1), new m9(uiVar, siVar, tiVar, c20Var, 1))));
-        }
-    }
-
-    @Override // org.telegram.messenger.tr
-    public void run(long j3) {
-        gz gzVar = (gz) this.a;
-        Uri uri = (Uri) this.b;
-        ArrayList arrayList = (ArrayList) this.c;
-        e80 e80Var = (e80) this.d;
-        if (j3 != 0) {
-            gzVar.Q(-j3, uri, arrayList, e80Var);
-        } else {
-            e80Var.run(0L);
+                break;
+            case 1:
+                g0.h3(new cg(this.b, tL_error, tLObject, this.c, 0));
+                break;
+            case 2:
+                this.b.y1(this.c, tLObject instanceof TLRPC.TL_messages_savedGifs ? ((TLRPC.TL_messages_savedGifs) tLObject).gifs : null, true, 0, true);
+                break;
+            default:
+                int i10 = this.c;
+                if (i10 == 3 || i10 == 7) {
+                    if (tLObject instanceof TLRPC.TL_messages_stickers) {
+                        arrayList = ((TLRPC.TL_messages_stickers) tLObject).stickers;
+                    }
+                    arrayList = null;
+                } else if (i10 == 2) {
+                    if (tLObject instanceof TLRPC.TL_messages_favedStickers) {
+                        arrayList = ((TLRPC.TL_messages_favedStickers) tLObject).stickers;
+                    }
+                    arrayList = null;
+                } else {
+                    if (tLObject instanceof TLRPC.TL_messages_recentStickers) {
+                        arrayList = ((TLRPC.TL_messages_recentStickers) tLObject).stickers;
+                    }
+                    arrayList = null;
+                }
+                this.b.y1(i10, arrayList, false, 0, true);
+                break;
         }
     }
 }

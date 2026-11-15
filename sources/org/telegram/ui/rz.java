@@ -1,36 +1,65 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class rz extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ xp b;
+public final class rz extends View implements org.telegram.ui.ActionBar.z5 {
+    public final org.telegram.ui.Components.g6 a;
+    public fh.g b;
+    public String c;
 
-    public rz(xp xpVar) {
-        this.b = xpVar;
+    public rz(Activity activity) {
+        super(activity);
+        org.telegram.ui.Components.g6 g6Var = new org.telegram.ui.Components.g6(true, false, false);
+        this.a = g6Var;
+        g6Var.u(-1);
+        g6Var.b = 17;
+        g6Var.x(org.telegram.messenger.g0.o());
+        g6Var.w(org.telegram.messenger.g0.L(14.0f));
+        g6Var.setCallback(this);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ((b00) this.b.d).l0.e();
-                break;
-            default:
-                xp xpVar = this.b;
-                View view = xpVar.b;
-                view.setAlpha(1.0f);
-                v4.n0.x0(view);
-                ((b00) xpVar.d).b.removeView(view);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        org.telegram.ui.Components.g6 g6Var = this.a;
+        int N = (int) (org.telegram.messenger.g0.N(30.0f) + g6Var.c());
+        int width = (getWidth() - N) / 2;
+        int i7 = N + width;
+        fh.g gVar = this.b;
+        if (gVar != null) {
+            gVar.setBounds(width, 0, i7, getHeight());
+            this.b.draw(canvas);
+        }
+        g6Var.draw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
+        super.onSizeChanged(i7, i10, i11, i12);
+        this.a.setBounds(0, 0, i7, i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        fh.g gVar = this.b;
+        if (gVar != null) {
+            gVar.updateColors();
+            invalidate();
         }
     }
 
-    public rz(xp xpVar, v4.n0 n0Var) {
-        this.b = xpVar;
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return super.verifyDrawable(drawable) || drawable == this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import ud.b;
 import ud.e;
+import xd.a;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzkd implements zzjt {
     public static final zzkd zza = new zzkd();
@@ -17,41 +18,41 @@ public final class zzkd implements zzjt {
     }
 
     private final Object zzb(Object obj, Object obj2) {
-        boolean z9 = obj instanceof Byte;
-        if (z9 && (obj2 instanceof Byte)) {
+        boolean z10 = obj instanceof Byte;
+        if (z10 && (obj2 instanceof Byte)) {
             return Integer.valueOf(((Number) obj).intValue() % ((Number) obj2).intValue());
         }
-        boolean z10 = obj instanceof Short;
-        if (z10 && (obj2 instanceof Short)) {
+        boolean z11 = obj instanceof Short;
+        if (z11 && (obj2 instanceof Short)) {
             return Integer.valueOf(((Number) obj).intValue() % ((Number) obj2).intValue());
         }
-        boolean z11 = obj instanceof Integer;
-        if (z11 && (obj2 instanceof Integer)) {
+        boolean z12 = obj instanceof Integer;
+        if (z12 && (obj2 instanceof Integer)) {
             return Integer.valueOf(((Number) obj).intValue() % ((Number) obj2).intValue());
         }
-        boolean z12 = obj instanceof Long;
-        if (z12 && (obj2 instanceof Long)) {
+        boolean z13 = obj instanceof Long;
+        if (z13 && (obj2 instanceof Long)) {
             return Long.valueOf(((Number) obj).longValue() % ((Number) obj2).longValue());
         }
-        boolean z13 = obj instanceof Float;
-        if (z13 && (obj2 instanceof Float)) {
+        boolean z14 = obj instanceof Float;
+        if (z14 && (obj2 instanceof Float)) {
             return Float.valueOf(((Number) obj).floatValue() % ((Number) obj2).floatValue());
         }
-        boolean z14 = obj instanceof Double;
-        if (z14 && (obj2 instanceof Double)) {
+        boolean z15 = obj instanceof Double;
+        if (z15 && (obj2 instanceof Double)) {
             return Double.valueOf(((Number) obj).doubleValue() % ((Number) obj2).doubleValue());
         }
         int i7 = 0;
         if (obj instanceof String) {
             if (obj2 instanceof Byte) {
-                byte[] bytes = ((String) obj).getBytes(xd.a.a);
+                byte[] bytes = ((String) obj).getBytes(a.a);
                 int length = bytes.length;
                 ArrayList arrayList = new ArrayList(length);
                 while (i7 < length) {
                     arrayList.add(Byte.valueOf((byte) (bytes[i7] % ((Number) obj2).intValue())));
                     i7++;
                 }
-                return new String(f.i(arrayList), xd.a.a);
+                return new String(f.i(arrayList), a.a);
             }
             if (obj2 instanceof Integer) {
                 char[] charArray = ((String) obj).toCharArray();
@@ -64,7 +65,7 @@ public final class zzkd implements zzjt {
                 return f.k(arrayList2);
             }
         }
-        if (z9 && (obj2 instanceof byte[])) {
+        if (z10 && (obj2 instanceof byte[])) {
             byte[] bArr = (byte[]) obj2;
             ArrayList arrayList3 = new ArrayList(bArr.length);
             for (byte b10 : bArr) {
@@ -72,7 +73,7 @@ public final class zzkd implements zzjt {
             }
             return arrayList3.toArray(new Integer[0]);
         }
-        if (z10 && (obj2 instanceof short[])) {
+        if (z11 && (obj2 instanceof short[])) {
             short[] sArr = (short[]) obj2;
             ArrayList arrayList4 = new ArrayList(sArr.length);
             for (short s5 : sArr) {
@@ -80,7 +81,7 @@ public final class zzkd implements zzjt {
             }
             return arrayList4.toArray(new Integer[0]);
         }
-        if (z11 && (obj2 instanceof int[])) {
+        if (z12 && (obj2 instanceof int[])) {
             int[] iArr = (int[]) obj2;
             ArrayList arrayList5 = new ArrayList(iArr.length);
             for (int i10 : iArr) {
@@ -88,7 +89,7 @@ public final class zzkd implements zzjt {
             }
             return arrayList5.toArray(new Integer[0]);
         }
-        if (z12 && (obj2 instanceof long[])) {
+        if (z13 && (obj2 instanceof long[])) {
             long[] jArr = (long[]) obj2;
             ArrayList arrayList6 = new ArrayList(jArr.length);
             for (long j3 : jArr) {
@@ -96,7 +97,7 @@ public final class zzkd implements zzjt {
             }
             return arrayList6.toArray(new Long[0]);
         }
-        if (z13 && (obj2 instanceof float[])) {
+        if (z14 && (obj2 instanceof float[])) {
             float[] fArr = (float[]) obj2;
             ArrayList arrayList7 = new ArrayList(fArr.length);
             for (float f10 : fArr) {
@@ -104,7 +105,7 @@ public final class zzkd implements zzjt {
             }
             return arrayList7.toArray(new Float[0]);
         }
-        if (z14 && (obj2 instanceof double[])) {
+        if (z15 && (obj2 instanceof double[])) {
             double[] dArr = (double[]) obj2;
             ArrayList arrayList8 = new ArrayList(dArr.length);
             for (double d : dArr) {
@@ -112,8 +113,8 @@ public final class zzkd implements zzjt {
             }
             return arrayList8.toArray(new Double[0]);
         }
-        boolean z15 = obj instanceof byte[];
-        if (z15 && (obj2 instanceof Byte)) {
+        boolean z16 = obj instanceof byte[];
+        if (z16 && (obj2 instanceof Byte)) {
             byte[] bArr2 = (byte[]) obj;
             ArrayList arrayList9 = new ArrayList(bArr2.length);
             for (byte b11 : bArr2) {
@@ -121,8 +122,8 @@ public final class zzkd implements zzjt {
             }
             return arrayList9.toArray(new Integer[0]);
         }
-        boolean z16 = obj instanceof short[];
-        if (z16 && (obj2 instanceof Short)) {
+        boolean z17 = obj instanceof short[];
+        if (z17 && (obj2 instanceof Short)) {
             short[] sArr2 = (short[]) obj;
             ArrayList arrayList10 = new ArrayList(sArr2.length);
             for (short s9 : sArr2) {
@@ -130,8 +131,8 @@ public final class zzkd implements zzjt {
             }
             return arrayList10.toArray(new Integer[0]);
         }
-        boolean z17 = obj instanceof int[];
-        if (z17 && (obj2 instanceof Integer)) {
+        boolean z18 = obj instanceof int[];
+        if (z18 && (obj2 instanceof Integer)) {
             int[] iArr2 = (int[]) obj;
             int length3 = iArr2.length;
             ArrayList arrayList11 = new ArrayList(length3);
@@ -141,8 +142,8 @@ public final class zzkd implements zzjt {
             }
             return f.k(arrayList11);
         }
-        boolean z18 = obj instanceof long[];
-        if (z18 && (obj2 instanceof Long)) {
+        boolean z19 = obj instanceof long[];
+        if (z19 && (obj2 instanceof Long)) {
             long[] jArr2 = (long[]) obj;
             ArrayList arrayList12 = new ArrayList(jArr2.length);
             for (long j10 : jArr2) {
@@ -150,8 +151,8 @@ public final class zzkd implements zzjt {
             }
             return arrayList12.toArray(new Long[0]);
         }
-        boolean z19 = obj instanceof float[];
-        if (z19 && (obj2 instanceof Float)) {
+        boolean z20 = obj instanceof float[];
+        if (z20 && (obj2 instanceof Float)) {
             float[] fArr2 = (float[]) obj;
             ArrayList arrayList13 = new ArrayList(fArr2.length);
             for (float f11 : fArr2) {
@@ -159,8 +160,8 @@ public final class zzkd implements zzjt {
             }
             return arrayList13.toArray(new Float[0]);
         }
-        boolean z20 = obj instanceof double[];
-        if (z20 && (obj2 instanceof Double)) {
+        boolean z21 = obj instanceof double[];
+        if (z21 && (obj2 instanceof Double)) {
             double[] dArr2 = (double[]) obj;
             ArrayList arrayList14 = new ArrayList(dArr2.length);
             for (double d2 : dArr2) {
@@ -168,7 +169,7 @@ public final class zzkd implements zzjt {
             }
             return arrayList14.toArray(new Double[0]);
         }
-        if (z15 && (obj2 instanceof byte[])) {
+        if (z16 && (obj2 instanceof byte[])) {
             byte[] bArr3 = (byte[]) obj;
             int length4 = bArr3.length;
             byte[] bArr4 = (byte[]) obj2;
@@ -184,7 +185,7 @@ public final class zzkd implements zzjt {
                 int nextInt = bVar.nextInt();
                 arrayList15.add(Integer.valueOf(bArr3[nextInt] % bArr4[nextInt]));
             }
-        } else if (z16 && (obj2 instanceof short[])) {
+        } else if (z17 && (obj2 instanceof short[])) {
             short[] sArr3 = (short[]) obj;
             int length5 = sArr3.length;
             short[] sArr4 = (short[]) obj2;
@@ -200,7 +201,7 @@ public final class zzkd implements zzjt {
                 int nextInt2 = bVar2.nextInt();
                 arrayList16.add(Integer.valueOf(sArr3[nextInt2] % sArr4[nextInt2]));
             }
-        } else if (z17 && (obj2 instanceof int[])) {
+        } else if (z18 && (obj2 instanceof int[])) {
             int[] iArr3 = (int[]) obj;
             int length6 = iArr3.length;
             int[] iArr4 = (int[]) obj2;
@@ -216,7 +217,7 @@ public final class zzkd implements zzjt {
                 int nextInt3 = bVar3.nextInt();
                 arrayList17.add(Integer.valueOf(iArr3[nextInt3] % iArr4[nextInt3]));
             }
-        } else if (z18 && (obj2 instanceof long[])) {
+        } else if (z19 && (obj2 instanceof long[])) {
             long[] jArr3 = (long[]) obj;
             int length7 = jArr3.length;
             long[] jArr4 = (long[]) obj2;
@@ -232,7 +233,7 @@ public final class zzkd implements zzjt {
                 int nextInt4 = bVar4.nextInt();
                 arrayList18.add(Long.valueOf(jArr3[nextInt4] % jArr4[nextInt4]));
             }
-        } else if (z19 && (obj2 instanceof float[])) {
+        } else if (z20 && (obj2 instanceof float[])) {
             float[] fArr3 = (float[]) obj;
             int length8 = fArr3.length;
             float[] fArr4 = (float[]) obj2;
@@ -249,7 +250,7 @@ public final class zzkd implements zzjt {
                 arrayList19.add(Float.valueOf(fArr3[nextInt5] % fArr4[nextInt5]));
             }
         } else {
-            if (!z20 || !(obj2 instanceof double[])) {
+            if (!z21 || !(obj2 instanceof double[])) {
                 throw new zzdm(4, 5, null);
             }
             double[] dArr3 = (double[]) obj;

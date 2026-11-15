@@ -11,24 +11,24 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class x1 extends HorizontalScrollView implements org.telegram.ui.ActionBar.c6, c3 {
-    public final r50 a;
+public final class x1 extends HorizontalScrollView implements org.telegram.ui.ActionBar.z5, c3 {
+    public final n50 a;
     public final FrameLayout b;
     public final ImageView c;
     public int d;
 
-    public x1(Context context, r50 r50Var) {
+    public x1(Context context, n50 n50Var) {
         super(context);
-        this.a = r50Var;
+        this.a = n50Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
-        addView(frameLayout, c8.ha.c(-2.0f, -2));
+        addView(frameLayout, c8.ja.c(-2.0f, -2));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        frameLayout.addView(imageView, c8.ha.c(-2.0f, -2));
+        frameLayout.addView(imageView, c8.ja.c(-2.0f, -2));
         updateColors();
     }
 
@@ -55,11 +55,11 @@ public final class x1 extends HorizontalScrollView implements org.telegram.ui.Ac
     }
 
     @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         int i13 = i11 - i7;
         int i14 = this.d;
         if (i14 > i13) {
-            super.onLayout(z9, i7, i10, i11, i12);
+            super.onLayout(z10, i7, i10, i11, i12);
         } else {
             FrameLayout frameLayout = this.b;
             frameLayout.layout((i13 - i14) / 2, 0, (i13 + i14) / 2, frameLayout.getMeasuredHeight());
@@ -72,37 +72,37 @@ public final class x1 extends HorizontalScrollView implements org.telegram.ui.Ac
     }
 
     public void setBlock(TL_iv.pageBlockMath pageblockmath) {
-        li.q a10;
+        oi.p a10;
         ImageView imageView = this.c;
         imageView.setImageBitmap(null);
-        r50 r50Var = this.a;
-        r50Var.getClass();
+        n50 n50Var = this.a;
+        n50Var.getClass();
         float f10 = 18;
         int L = org.telegram.messenger.g0.L(f10);
-        r50Var.getClass();
+        n50Var.getClass();
         imageView.setPadding(L, 0, org.telegram.messenger.g0.L(f10), 0);
         imageView.setLayoutParams(new FrameLayout.LayoutParams(0, 0));
-        r50Var.getClass();
+        n50Var.getClass();
         float f11 = 36;
         this.d = org.telegram.messenger.g0.L(f11);
-        if (pageblockmath == null || (a10 = li.q.a(pageblockmath.source, org.telegram.messenger.g0.L(20.0f), false)) == null) {
+        if (pageblockmath == null || (a10 = oi.p.a(pageblockmath.source, org.telegram.messenger.g0.L(20.0f), false)) == null) {
             return;
         }
         imageView.setImageBitmap(a10.a);
         int i7 = a10.b;
-        r50Var.getClass();
+        n50Var.getClass();
         int L2 = org.telegram.messenger.g0.L(f11) + i7;
         this.d = L2;
         imageView.setLayoutParams(new FrameLayout.LayoutParams(L2, a10.c));
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void updateColors() {
         ((g4) this.a).getClass();
-        this.c.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.v0(org.telegram.ui.ActionBar.m6.G6), PorterDuff.Mode.SRC_IN));
+        this.c.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6), PorterDuff.Mode.SRC_IN));
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -1,48 +1,68 @@
 package xi;
 
-import android.content.SharedPreferences;
+import org.telegram.messenger.g0;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class b {
-    public final String a;
-    public final Enum b;
-    public volatile boolean c;
-    public volatile Enum d;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e b;
+    public final /* synthetic */ d c;
 
-    public b(String str, Enum r22) {
-        this.a = str;
-        this.b = r22;
+    public /* synthetic */ b(e eVar, d dVar, int i7) {
+        this.a = i7;
+        this.b = eVar;
+        this.c = dVar;
     }
 
-    public final Enum a() {
-        if (!this.c) {
-            synchronized (this) {
-                try {
-                    if (!this.c) {
-                        SharedPreferences sharedPreferences = d.a;
-                        String str = this.a;
-                        Enum r22 = this.b;
-                        String string = sharedPreferences.getString(str, r22.name());
-                        if (string != null) {
-                            try {
-                                r22 = Enum.valueOf(r22.getDeclaringClass(), string);
-                            } catch (IllegalArgumentException unused) {
-                            }
-                        }
-                        this.d = r22;
-                        this.c = true;
-                    }
-                } finally {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                e eVar = this.b;
+                d dVar = (d) eVar.b;
+                d dVar2 = this.c;
+                if (dVar == dVar2) {
+                    eVar.c = null;
+                    eVar.m(dVar2);
+                    break;
                 }
-            }
+                break;
+            case 1:
+                e eVar2 = this.b;
+                d dVar3 = (d) eVar2.b;
+                d dVar4 = this.c;
+                if (dVar3 == dVar4) {
+                    b bVar = (b) eVar2.c;
+                    if (bVar != null) {
+                        g0.r(bVar);
+                        eVar2.c = null;
+                    }
+                    int i7 = dVar4.d;
+                    if (i7 != 0) {
+                        b bVar2 = new b(eVar2, dVar4, 2);
+                        eVar2.d = bVar2;
+                        g0.i3(bVar2, 20000L);
+                        ki.e eVar3 = dVar4.a;
+                        ((ConnectionsManager) eVar3.b).checkWebProxyInternal(dVar4.b, i7, new c(eVar2, dVar4));
+                        break;
+                    } else {
+                        eVar2.m(dVar4);
+                        break;
+                    }
+                }
+                break;
+            default:
+                e eVar4 = this.b;
+                d dVar5 = (d) eVar4.b;
+                d dVar6 = this.c;
+                if (dVar5 == dVar6) {
+                    eVar4.d = null;
+                    eVar4.m(dVar6);
+                    break;
+                }
+                break;
         }
-        return this.d;
-    }
-
-    public final synchronized void b(Enum r32) {
-        this.d = r32;
-        this.c = true;
-        d.a.edit().putString(this.a, r32.name()).apply();
     }
 }

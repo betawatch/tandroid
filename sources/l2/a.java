@@ -2,7 +2,7 @@ package l2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a extends e2.l1 {
     public static final /* synthetic */ int g = 0;
@@ -15,15 +15,15 @@ public abstract class a extends e2.l1 {
     }
 
     @Override // e2.l1
-    public final int a(boolean z9) {
+    public final int a(boolean z10) {
         if (this.e != 0) {
-            int b10 = z9 ? this.f.b() : 0;
+            int b10 = z10 ? this.f.b() : 0;
             while (x(b10).p()) {
-                b10 = w(b10, z9);
+                b10 = w(b10, z10);
                 if (b10 == -1) {
                 }
             }
-            return x(b10).a(z9) + v(b10);
+            return x(b10).a(z10) + v(b10);
         }
         return -1;
     }
@@ -45,49 +45,49 @@ public abstract class a extends e2.l1 {
     }
 
     @Override // e2.l1
-    public final int c(boolean z9) {
+    public final int c(boolean z10) {
         int i7 = this.e;
         if (i7 != 0) {
             x2.g1 g1Var = this.f;
-            int h = z9 ? g1Var.h() : i7 - 1;
+            int h = z10 ? g1Var.h() : i7 - 1;
             while (x(h).p()) {
-                h = z9 ? g1Var.d(h) : h > 0 ? h - 1 : -1;
+                h = z10 ? g1Var.d(h) : h > 0 ? h - 1 : -1;
                 if (h == -1) {
                 }
             }
-            return x(h).c(z9) + v(h);
+            return x(h).c(z10) + v(h);
         }
         return -1;
     }
 
     @Override // e2.l1
-    public final int e(int i7, int i10, boolean z9) {
+    public final int e(int i7, int i10, boolean z10) {
         int s5 = s(i7);
         int v = v(s5);
-        int e10 = x(s5).e(i7 - v, i10 == 2 ? 0 : i10, z9);
+        int e10 = x(s5).e(i7 - v, i10 == 2 ? 0 : i10, z10);
         if (e10 != -1) {
             return v + e10;
         }
-        int w10 = w(s5, z9);
+        int w10 = w(s5, z10);
         while (w10 != -1 && x(w10).p()) {
-            w10 = w(w10, z9);
+            w10 = w(w10, z10);
         }
         if (w10 != -1) {
-            return x(w10).a(z9) + v(w10);
+            return x(w10).a(z10) + v(w10);
         }
         if (i10 == 2) {
-            return a(z9);
+            return a(z10);
         }
         return -1;
     }
 
     @Override // e2.l1
-    public final e2.i1 f(int i7, e2.i1 i1Var, boolean z9) {
+    public final e2.i1 f(int i7, e2.i1 i1Var, boolean z10) {
         int r10 = r(i7);
         int v = v(r10);
-        x(r10).f(i7 - u(r10), i1Var, z9);
+        x(r10).f(i7 - u(r10), i1Var, z10);
         i1Var.c += v;
-        if (z9) {
+        if (z10) {
             Object t6 = t(r10);
             Object obj = i1Var.b;
             obj.getClass();
@@ -125,26 +125,26 @@ public abstract class a extends e2.l1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int k(int i7, int i10, boolean z9) {
+    public final int k(int i7, int i10, boolean z10) {
         int i11;
         int s5 = s(i7);
         int v = v(s5);
-        int k10 = x(s5).k(i7 - v, i10 == 2 ? 0 : i10, z9);
+        int k10 = x(s5).k(i7 - v, i10 == 2 ? 0 : i10, z10);
         if (k10 != -1) {
             return v + k10;
         }
         x2.g1 g1Var = this.f;
-        if (z9) {
+        if (z10) {
             i11 = g1Var.d(s5);
         }
         while (i11 != -1 && x(i11).p()) {
-            i11 = z9 ? g1Var.d(i11) : i11 > 0 ? i11 - 1 : -1;
+            i11 = z10 ? g1Var.d(i11) : i11 > 0 ? i11 - 1 : -1;
         }
         if (i11 != -1) {
-            return x(i11).c(z9) + v(i11);
+            return x(i11).c(z10) + v(i11);
         }
         if (i10 == 2) {
-            return c(z9);
+            return c(z10);
         }
         return -1;
     }
@@ -183,8 +183,8 @@ public abstract class a extends e2.l1 {
 
     public abstract int v(int i7);
 
-    public final int w(int i7, boolean z9) {
-        if (z9) {
+    public final int w(int i7, boolean z10) {
+        if (z10) {
             return this.f.e(i7);
         }
         if (i7 < this.e - 1) {

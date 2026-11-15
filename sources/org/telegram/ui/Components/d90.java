@@ -1,18 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface d90 {
-    void G1(String str);
+public final class d90 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 a;
+    public final /* synthetic */ i90 b;
 
-    void M(TLRPC.BotInlineResult botInlineResult, boolean z9, int i7);
+    public d90(i90 i90Var, org.telegram.ui.ActionBar.e2 e2Var) {
+        this.b = i90Var;
+        this.a = e2Var;
+    }
 
-    Paint.FontMetricsInt R0();
+    public final void a(boolean z10) {
+        i90 i90Var = this.b;
+        if (i90Var.getNeededLayoutManager() != i90Var.getCurrentLayoutManager() && i90Var.a()) {
+            if (i90Var.f.N0 > 0) {
+                i90Var.O = true;
+                i90Var.o(false);
+                return;
+            }
+            i90Var.b.setLayoutManager(i90Var.getNeededLayoutManager());
+        }
+        if (z10 && !i90Var.a()) {
+            z10 = false;
+        }
+        i90Var.o((!z10 || i90Var.f.K() > 0) ? z10 : false);
+    }
 
-    void e1(TLRPC.TL_document tL_document, String str, Object obj);
+    public final void b(boolean z10) {
+        this.b.l(z10);
+    }
 
-    void z1(int i7, int i10, CharSequence charSequence, boolean z9);
+    public final void c() {
+        i90 i90Var = this.b;
+        fo foVar = i90Var.K;
+        if (i90Var.b.getLayoutManager() == i90Var.d || !i90Var.J) {
+            return;
+        }
+        org.telegram.messenger.g0.r(foVar);
+        org.telegram.messenger.g0.i3(foVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
+    }
 }

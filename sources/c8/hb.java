@@ -1,42 +1,25 @@
 package c8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.os.Parcel;
+import android.os.RemoteException;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class hb {
-    public static void a(int i7, int i10) {
-        String a10;
-        if (i7 < 0 || i7 >= i10) {
-            if (i7 < 0) {
-                a10 = ib.a("%s (%s) must not be negative", "index", Integer.valueOf(i7));
-            } else {
-                if (i10 < 0) {
-                    StringBuilder sb2 = new StringBuilder(String.valueOf(i10).length() + 15);
-                    sb2.append("negative size: ");
-                    sb2.append(i10);
-                    throw new IllegalArgumentException(sb2.toString());
+    public static void a(p4.l lVar) {
+        if (lVar != null) {
+            try {
+                p4.k kVar = (p4.k) lVar;
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+                    obtain.writeInt(0);
+                    kVar.a.transact(3006, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
                 }
-                a10 = ib.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i7), Integer.valueOf(i10));
+            } catch (RemoteException unused) {
             }
-            throw new IndexOutOfBoundsException(a10);
         }
-    }
-
-    public static void b(int i7, int i10, int i11) {
-        if (i7 < 0 || i10 < i7 || i10 > i11) {
-            throw new IndexOutOfBoundsException((i7 < 0 || i7 > i11) ? c(i7, i11, "start index") : (i10 < 0 || i10 > i11) ? c(i10, i11, "end index") : ib.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i10), Integer.valueOf(i7)));
-        }
-    }
-
-    public static String c(int i7, int i10, String str) {
-        if (i7 < 0) {
-            return ib.a("%s (%s) must not be negative", str, Integer.valueOf(i7));
-        }
-        if (i10 >= 0) {
-            return ib.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i7), Integer.valueOf(i10));
-        }
-        StringBuilder sb2 = new StringBuilder(String.valueOf(i10).length() + 15);
-        sb2.append("negative size: ");
-        sb2.append(i10);
-        throw new IllegalArgumentException(sb2.toString());
     }
 }

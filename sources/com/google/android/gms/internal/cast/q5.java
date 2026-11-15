@@ -3,9 +3,9 @@ package com.google.android.gms.internal.cast;
 import android.content.SharedPreferences;
 import android.util.Log;
 import java.nio.charset.Charset;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q5 implements g6.h {
     public static final z4 b = new z4(1);
@@ -23,8 +23,8 @@ public final class q5 implements g6.h {
     }
 
     @Override // g6.h
-    public void b(g6.f fVar, boolean z9) {
-        x0.j.b("onSessionResumed with wasSuspended = %b", Boolean.valueOf(z9));
+    public void b(g6.f fVar, boolean z10) {
+        x0.j.b("onSessionResumed with wasSuspended = %b", Boolean.valueOf(z10));
         x0 x0Var = (x0) this.a;
         x0Var.h = (g6.c) fVar;
         x0Var.c();
@@ -32,7 +32,7 @@ public final class q5 implements g6.h {
         o1 b10 = x0Var.c.b(x0Var.g);
         j1 m10 = k1.m(b10.d());
         m10.c();
-        k1.p((k1) m10.b, z9);
+        k1.p((k1) m10.b, z10);
         b10.c();
         p1.p((p1) b10.b, (k1) m10.a());
         x0Var.a.a((p1) b10.a(), 227);
@@ -47,17 +47,16 @@ public final class q5 implements g6.h {
         x0Var.h = (g6.c) fVar;
         x0Var.c();
         q6.m.g(x0Var.g);
-        x0Var.a.a(x0Var.c.a(x0Var.g, i7), qs.C3);
+        x0Var.a.a(x0Var.c.a(x0Var.g, i7), ns.C3);
         x0.b(x0Var);
         x0Var.e.removeCallbacks(x0Var.d);
     }
 
-    public void d(int i7, Object obj, d6 d6Var) {
-        q4 q4Var = (q4) obj;
-        v4 v4Var = (v4) this.a;
-        v4Var.j((i7 << 3) | 2);
-        v4Var.j(q4Var.a(d6Var));
-        d6Var.e(q4Var, v4Var.a);
+    @Override // g6.h
+    public /* bridge */ /* synthetic */ void d(g6.f fVar, int i7) {
+        x0 x0Var = (x0) this.a;
+        x0Var.h = (g6.c) fVar;
+        x0.a(x0Var, i7);
     }
 
     @Override // g6.h
@@ -68,27 +67,28 @@ public final class q5 implements g6.h {
     }
 
     @Override // g6.h
-    public /* bridge */ /* synthetic */ void f(g6.f fVar, int i7) {
-        x0 x0Var = (x0) this.a;
-        x0Var.h = (g6.c) fVar;
-        x0.a(x0Var, i7);
-    }
-
-    @Override // g6.h
-    public void i(g6.f fVar, String str) {
+    public void f(g6.f fVar, String str) {
         x0.j.b("onSessionStarted with sessionId = %s", str);
         x0 x0Var = (x0) this.a;
         x0Var.h = (g6.c) fVar;
         x0Var.c();
         y0 y0Var = x0Var.g;
         y0Var.f = str;
-        x0Var.a.a((p1) x0Var.c.b(y0Var).a(), qs.z3);
+        x0Var.a.a((p1) x0Var.c.b(y0Var).a(), ns.z3);
         x0.b(x0Var);
         x0Var.e();
     }
 
+    public void g(int i7, Object obj, d6 d6Var) {
+        q4 q4Var = (q4) obj;
+        v4 v4Var = (v4) this.a;
+        v4Var.j((i7 << 3) | 2);
+        v4Var.j(q4Var.a(d6Var));
+        d6Var.e(q4Var, v4Var.a);
+    }
+
     @Override // g6.h
-    public /* bridge */ /* synthetic */ void j(g6.f fVar, int i7) {
+    public /* bridge */ /* synthetic */ void i(g6.f fVar, int i7) {
         x0 x0Var = (x0) this.a;
         x0Var.h = (g6.c) fVar;
         x0.a(x0Var, i7);
@@ -100,10 +100,10 @@ public final class q5 implements g6.h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void p(g6.f fVar, String str) {
+    public void l(g6.f fVar, String str) {
         y0 y0Var;
         j6.b bVar = x0.j;
-        boolean z9 = false;
+        boolean z10 = false;
         bVar.b("onSessionResuming with sessionId = %s", str);
         x0 x0Var = (x0) this.a;
         x0Var.h = (g6.c) fVar;
@@ -140,9 +140,9 @@ public final class q5 implements g6.h {
                                         x0Var.g = y0Var2;
                                         g6.c cVar2 = x0Var.h;
                                         if (cVar2 != null && cVar2.g.i) {
-                                            z9 = true;
+                                            z10 = true;
                                         }
-                                        y0Var2.i = z9;
+                                        y0Var2.i = z10;
                                         j6.b bVar3 = g6.a.l;
                                         q6.m.d("Must be called from the main thread.");
                                         g6.a aVar = g6.a.n;
@@ -179,11 +179,11 @@ public final class q5 implements g6.h {
         k1.p((k1) m11.b, true);
         b10.c();
         p1.p((p1) b10.b, (k1) m11.a());
-        x0Var.a.a((p1) b10.a(), qs.D3);
+        x0Var.a.a((p1) b10.a(), ns.D3);
     }
 
     @Override // g6.h
-    public void s(g6.f fVar) {
+    public void m(g6.f fVar) {
         j6.b bVar = x0.j;
         bVar.b("onSessionStarting", new Object[0]);
         x0 x0Var = (x0) this.a;
@@ -201,11 +201,11 @@ public final class q5 implements g6.h {
             k1.r((k1) m10.b, 17);
             b10.e((k1) m10.a());
         }
-        x0Var.a.a((p1) b10.a(), qs.y3);
+        x0Var.a.a((p1) b10.a(), ns.y3);
     }
 
     @Override // g6.h
-    public /* synthetic */ void t(g6.f fVar) {
+    public /* synthetic */ void n(g6.f fVar) {
         ((x0) this.a).h = (g6.c) fVar;
     }
 

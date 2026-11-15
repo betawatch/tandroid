@@ -1,189 +1,260 @@
 package org.telegram.utils.twidget;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.RemoteException;
-import android.os.SystemClock;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
-import org.telegram.messenger.r2;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.Parcel;
+import java.io.ByteArrayOutputStream;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class r0 extends k {
-    public static final r0 i = new r0();
-    public q0 d;
-    public Context g;
-    public boolean h;
-    public final Object b = new Object();
-    public final Handler c = new Handler(Looper.getMainLooper());
-    public final ConcurrentHashMap e = new ConcurrentHashMap();
-    public final AtomicLong f = new AtomicLong();
+public final class r0 extends Binder implements d {
+    public final t0 a;
+    public final int b;
+    public final WidgetSandboxBackend c;
+    public volatile long d;
+    public final ByteArrayOutputStream e;
+    public final /* synthetic */ u0 f;
 
-    public final q0 e() {
-        q0 q0Var = this.d;
-        if (q0Var != null) {
-            return q0Var;
-        }
-        q0 q0Var2 = new q0(this);
-        if (!this.g.bindService(new Intent(this.g, (Class<?>) WidgetEngineService.class), q0Var2, 65)) {
-            this.g.unbindService(q0Var2);
-            throw new IllegalStateException("Widget engine service is unavailable");
-        }
-        q0Var2.d = true;
-        this.d = q0Var2;
-        if (this.h) {
-            h(q0Var2);
-        }
-        return q0Var2;
+    public r0(u0 u0Var, t0 t0Var, int i7, WidgetSandboxBackend widgetSandboxBackend) {
+        this.f = u0Var;
+        attachInterface(this, "org.telegram.utils.twidget.IWidgetEngineCallback");
+        this.e = new ByteArrayOutputStream();
+        this.a = t0Var;
+        this.b = i7;
+        this.c = widgetSandboxBackend;
     }
 
-    public final long f(Context context, String str, String str2, float f10, float f11, int i7, String str3, String str4, String str5, String str6, boolean z9, WidgetSandboxBackend widgetSandboxBackend) {
-        q0 e10;
-        boolean z10;
-        b bVar;
-        int i10;
-        long uptimeMillis = SystemClock.uptimeMillis();
-        synchronized (this.b) {
-            try {
-                if (this.g == null) {
-                    this.g = context.getApplicationContext();
-                }
-                e10 = e();
-                this.c.removeCallbacks(e10.f);
-                e10.c++;
-                z10 = e10.a == null;
-                long elapsedRealtime = SystemClock.elapsedRealtime() + 10000;
-                while (true) {
-                    bVar = e10.a;
-                    if (bVar == null) {
-                        long elapsedRealtime2 = elapsedRealtime - SystemClock.elapsedRealtime();
-                        if (elapsedRealtime2 <= 0) {
-                            g(e10);
-                            throw new IllegalStateException("Widget engine did not start");
-                        }
-                        this.b.wait(elapsedRealtime2);
-                    } else {
-                        i10 = e10.b;
-                    }
-                }
-            } catch (Exception e11) {
-                j(e10);
-                throw e11;
-            } finally {
-            }
-        }
-        long uptimeMillis2 = SystemClock.uptimeMillis() - uptimeMillis;
-        o0 o0Var = new o0(this, e10, i10, widgetSandboxBackend);
+    public static Object i1(o0 o0Var) {
         try {
-            bVar.v(false, false, null);
-            Charset charset = StandardCharsets.UTF_8;
-            o0Var.d = bVar.t(str.getBytes(charset), str2.getBytes(charset), f10, f11, i7, str3.getBytes(charset), str4.getBytes(charset), str5.getBytes(charset), str6.getBytes(charset), z9, o0Var);
-            if (r2.a) {
-                StringBuilder sb2 = new StringBuilder("create ");
-                sb2.append(SystemClock.uptimeMillis() - uptimeMillis);
-                sb2.append(" ms");
-                rf.b.p(sb2, z10 ? rf.b.h(uptimeMillis2, " (engine started: ", " ms to bind)") : "", "WidgetEngine");
-            }
-            long incrementAndGet = this.f.incrementAndGet();
-            this.e.put(Long.valueOf(incrementAndGet), o0Var);
-            synchronized (this.b) {
-                try {
-                    if (e10.b == i10) {
-                        if (e10.a == null) {
+            return o0Var.run();
+        } catch (Throwable th2) {
+            throw new IllegalStateException(th2.getClass().getSimpleName() + ": " + th2.getMessage());
+        }
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final byte[] B(int i7, int i10, int i11, int i12, int i13) {
+        try {
+            return this.c.canvasRead(i7, i10, i11, i12, i13);
+        } catch (Throwable th2) {
+            throw new IllegalStateException(th2.getClass().getSimpleName() + ": " + th2.getMessage());
+        }
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final void E(int i7) {
+        try {
+            this.c.canvasRelease(i7);
+        } catch (Throwable th2) {
+            throw new IllegalStateException(th2.getClass().getSimpleName() + ": " + th2.getMessage());
+        }
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final void G(final byte[] bArr, final byte[] bArr2, final double d, final int i7, final int i10, final float f10, final float f11, final int i11, final int i12) {
+        i1(new o0() { // from class: org.telegram.utils.twidget.p0
+            @Override // org.telegram.utils.twidget.o0
+            public final Object run() {
+                int i13;
+                r0 r0Var = r0.this;
+                byte[] j12 = r0Var.j1(bArr);
+                int i14 = i7;
+                if (i14 >= 0 && (i13 = i10) >= 0 && i14 <= 16384 && i13 <= 16384) {
+                    float f12 = f10;
+                    if (f12 > 0.0f && f12 <= 10.0f) {
+                        WidgetSandboxBackend widgetSandboxBackend = r0Var.c;
+                        byte[] bArr3 = bArr2;
+                        if (bArr3 == null) {
+                            bArr3 = new byte[]{123, 125};
                         }
-                    }
-                    i(e10, i10);
-                } finally {
-                }
-            }
-            return incrementAndGet;
-        } catch (Exception e12) {
-            synchronized (this.b) {
-                j(e10);
-                throw e12;
-            }
-        }
-    }
-
-    public final void g(q0 q0Var) {
-        q0Var.a = null;
-        if (q0Var.d) {
-            q0Var.d = false;
-            this.c.removeCallbacks(q0Var.f);
-            if (this.d == q0Var) {
-                this.d = null;
-            }
-            try {
-                this.g.unbindService(q0Var);
-            } catch (IllegalArgumentException unused) {
-            }
-        }
-    }
-
-    public final void h(q0 q0Var) {
-        if (q0Var.e) {
-            return;
-        }
-        q0Var.e = true;
-        q0Var.c++;
-        this.c.removeCallbacks(q0Var.f);
-        b bVar = q0Var.a;
-        if (bVar != null) {
-            try {
-                bVar.b1();
-            } catch (RemoteException unused) {
-            }
-        }
-    }
-
-    public final void i(q0 q0Var, int i7) {
-        ArrayList arrayList = new ArrayList();
-        synchronized (this.b) {
-            try {
-                Iterator it = this.e.entrySet().iterator();
-                while (it.hasNext()) {
-                    o0 o0Var = (o0) ((Map.Entry) it.next()).getValue();
-                    if (o0Var.a == q0Var && o0Var.b == i7) {
-                        arrayList.add(o0Var);
-                        it.remove();
-                        j(q0Var);
+                        widgetSandboxBackend.record(j12, bArr3, d, i14, i13, f12, f11, i11, i12);
+                        return null;
                     }
                 }
-                if (q0Var.b == i7) {
-                    g(q0Var);
-                }
+                throw new IllegalArgumentException("Frame size");
+            }
+        });
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final float[] H(int i7, byte[] bArr, float f10, int i10, boolean z10, byte[] bArr2) {
+        try {
+            return this.c.defineFont(i7, bArr, f10, i10, z10, bArr2);
+        } catch (Throwable th2) {
+            throw new IllegalStateException(th2.getClass().getSimpleName() + ": " + th2.getMessage());
+        }
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final void K0(int i7, int i10, byte[] bArr) {
+        try {
+            this.c.recordLayer(i7, i10, j1(bArr));
+        } catch (Throwable th2) {
+            throw new IllegalStateException(th2.getClass().getSimpleName() + ": " + th2.getMessage());
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.utils.twidget.d
+    public final void R0(byte[] bArr) {
+        i1(new t(3, bArr, this));
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final void f1(int i7) {
+        try {
+            this.c.deleteFont(i7);
+        } catch (Throwable th2) {
+            throw new IllegalStateException(th2.getClass().getSimpleName() + ": " + th2.getMessage());
+        }
+    }
+
+    public final b h1() {
+        b bVar;
+        synchronized (this.f.b) {
+            try {
+                t0 t0Var = this.a;
+                bVar = t0Var.b == this.b ? t0Var.a : null;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            i1 session = ((o0) obj).c.session();
-            session.a.post(new b1(session, 1));
+        return bVar;
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final void i0(byte[] bArr) {
+        try {
+            this.c.selectableText(j1(bArr));
+        } catch (Throwable th2) {
+            throw new IllegalStateException(th2.getClass().getSimpleName() + ": " + th2.getMessage());
         }
     }
 
-    public final void j(q0 q0Var) {
-        int i7 = q0Var.c;
-        j0 j0Var = q0Var.f;
-        int i10 = i7 - 1;
-        q0Var.c = i10;
-        if (i10 > 0) {
-            return;
+    public final synchronized byte[] j1(byte[] bArr) {
+        if (bArr != null) {
+            return bArr;
         }
-        Handler handler = this.c;
-        handler.removeCallbacks(j0Var);
-        handler.postDelayed(j0Var, 30000L);
+        byte[] byteArray = this.e.toByteArray();
+        this.e.reset();
+        return byteArray;
+    }
+
+    @Override // android.os.Binder
+    public final boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
+        if (i7 >= 1 && i7 <= 16777215) {
+            parcel.enforceInterface("org.telegram.utils.twidget.IWidgetEngineCallback");
+        }
+        if (i7 == 1598968902) {
+            parcel2.writeString("org.telegram.utils.twidget.IWidgetEngineCallback");
+            return true;
+        }
+        switch (i7) {
+            case 1:
+                float[] H = H(parcel.readInt(), parcel.createByteArray(), parcel.readFloat(), parcel.readInt(), parcel.readInt() != 0, parcel.createByteArray());
+                parcel2.writeNoException();
+                parcel2.writeFloatArray(H);
+                return true;
+            case 2:
+                float q02 = q0(parcel.readInt(), parcel.createByteArray());
+                parcel2.writeNoException();
+                parcel2.writeFloat(q02);
+                return true;
+            case 3:
+                f1(parcel.readInt());
+                parcel2.writeNoException();
+                return true;
+            case 4:
+                y(parcel.readInt(), parcel.readInt(), parcel.readInt(), parcel.createByteArray());
+                parcel2.writeNoException();
+                return true;
+            case 5:
+                R0(parcel.createByteArray());
+                parcel2.writeNoException();
+                return true;
+            case 6:
+                G(parcel.createByteArray(), parcel.createByteArray(), parcel.readDouble(), parcel.readInt(), parcel.readInt(), parcel.readFloat(), parcel.readFloat(), parcel.readInt(), parcel.readInt());
+                parcel2.writeNoException();
+                return true;
+            case 7:
+                K0(parcel.readInt(), parcel.readInt(), parcel.createByteArray());
+                parcel2.writeNoException();
+                return true;
+            case 8:
+                i0(parcel.createByteArray());
+                parcel2.writeNoException();
+                return true;
+            case 9:
+                w0(parcel.readInt(), parcel.createByteArray());
+                parcel2.writeNoException();
+                return true;
+            case 10:
+                u0(parcel.readInt(), parcel.readInt(), parcel.readInt(), parcel.createIntArray());
+                parcel2.writeNoException();
+                return true;
+            case 11:
+                byte[] B = B(parcel.readInt(), parcel.readInt(), parcel.readInt(), parcel.readInt(), parcel.readInt());
+                parcel2.writeNoException();
+                parcel2.writeByteArray(B);
+                return true;
+            case 12:
+                E(parcel.readInt());
+                parcel2.writeNoException();
+                return true;
+            default:
+                return super.onTransact(i7, parcel, parcel2, i10);
+        }
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final float q0(final int i7, final byte[] bArr) {
+        return ((Float) i1(new o0() { // from class: org.telegram.utils.twidget.q0
+            @Override // org.telegram.utils.twidget.o0
+            public final Object run() {
+                r0 r0Var = r0.this;
+                r0Var.getClass();
+                byte[] bArr2 = bArr;
+                if (bArr2 == null || bArr2.length > 262144) {
+                    throw new IllegalArgumentException("Text too long");
+                }
+                return Float.valueOf(r0Var.c.textWidth(i7, bArr2));
+            }
+        })).floatValue();
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final void u0(int i7, int i10, int i11, int[] iArr) {
+        try {
+            WidgetSandboxBackend widgetSandboxBackend = this.c;
+            if (iArr == null) {
+                iArr = new int[0];
+            }
+            widgetSandboxBackend.canvasRun(i7, i10, i11, iArr);
+        } catch (Throwable th2) {
+            throw new IllegalStateException(th2.getClass().getSimpleName() + ": " + th2.getMessage());
+        }
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final void w0(int i7, byte[] bArr) {
+        try {
+            this.c.signal(i7, j1(bArr));
+        } catch (Throwable th2) {
+            throw new IllegalStateException(th2.getClass().getSimpleName() + ": " + th2.getMessage());
+        }
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final void y(int i7, int i10, int i11, byte[] bArr) {
+        try {
+            this.c.defineImage(i7, i10, i11, j1(bArr));
+        } catch (Throwable th2) {
+            throw new IllegalStateException(th2.getClass().getSimpleName() + ": " + th2.getMessage());
+        }
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this;
     }
 }

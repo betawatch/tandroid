@@ -1,6 +1,6 @@
 package org.telegram.utils.twidget;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 final class WidgetSandboxNative {
     private static final boolean LOADED = load();
@@ -10,15 +10,15 @@ final class WidgetSandboxNative {
 
     public static native void answerRequest(long j3, long j10, int i7, byte[] bArr);
 
-    public static native void attackScan(boolean z9);
+    public static native void attackScan(boolean z10);
 
     public static boolean available() {
         return LOADED;
     }
 
-    public static native void conformance(boolean z9);
+    public static native void conformance(boolean z10);
 
-    public static native long create(byte[] bArr, byte[] bArr2, byte[] bArr3, float f10, float f11, int i7, byte[] bArr4, byte[] bArr5, byte[] bArr6, byte[] bArr7, boolean z9, Object obj);
+    public static native long create(byte[] bArr, byte[] bArr2, byte[] bArr3, float f10, float f11, int i7, byte[] bArr4, byte[] bArr5, byte[] bArr6, byte[] bArr7, boolean z10, Object obj);
 
     public static native void data(long j3, byte[] bArr);
 
@@ -45,11 +45,11 @@ final class WidgetSandboxNative {
 
     public static native void theme(long j3, byte[] bArr);
 
-    public static native void tick(long j3, float f10, boolean z9, boolean z10, boolean z11);
+    public static native void tick(long j3, float f10, boolean z10, boolean z11, boolean z12);
 
-    public static native void touch(long j3, int i7, float f10, float f11, int i10, boolean z9, boolean z10, int i11, int i12);
+    public static native void touch(long j3, int i7, float f10, float f11, int i10, boolean z10, boolean z11, int i11, int i12);
 
-    public static native void visible(long j3, boolean z9);
+    public static native void visible(long j3, boolean z10);
 
     public static native void width(long j3, float f10);
 }

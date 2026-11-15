@@ -4,10 +4,11 @@ import c4.i;
 import c4.j;
 import c4.m;
 import java.nio.ByteBuffer;
+import k2.f;
 import k2.h;
 import k2.l;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b extends l implements c4.e {
     public final String o;
@@ -36,12 +37,12 @@ public final class b extends l implements c4.e {
     }
 
     @Override // k2.l
-    public final k2.f h(Throwable th2) {
+    public final f h(Throwable th2) {
         return new c4.f("Unexpected decode error", th2);
     }
 
     @Override // k2.l
-    public final k2.f i(h hVar, k2.j jVar, boolean z9) {
+    public final f i(h hVar, k2.j jVar, boolean z10) {
         i iVar = (i) hVar;
         j jVar2 = (j) jVar;
         try {
@@ -50,14 +51,14 @@ public final class b extends l implements c4.e {
             byte[] array = byteBuffer.array();
             int limit = byteBuffer.limit();
             m mVar = this.p;
-            if (z9) {
+            if (z10) {
                 mVar.reset();
             }
-            c4.d c10 = mVar.c(0, limit, array);
+            c4.d x10 = mVar.x(0, limit, array);
             long j3 = iVar.e;
             long j10 = iVar.r;
             jVar2.timeUs = j3;
-            jVar2.a = c10;
+            jVar2.a = x10;
             if (j10 != Long.MAX_VALUE) {
                 j3 = j10;
             }

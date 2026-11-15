@@ -2,45 +2,45 @@ package kg;
 
 import android.content.Context;
 import android.text.Editable;
-import fi.w3;
-import org.telegram.ui.ActionBar.h6;
+import bi.v3;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.Cells.k3;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class l extends k3 {
-    public final /* synthetic */ int E;
-    public final /* synthetic */ m F;
+    public final /* synthetic */ int F;
+    public final /* synthetic */ n G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(m mVar, Context context, String str, int i7, h6 h6Var, int i10) {
-        super(context, str, false, false, i7, h6Var);
-        this.E = i10;
+    public l(n nVar, Context context, String str, int i7, e6 e6Var, int i10) {
+        super(context, str, false, false, i7, e6Var);
+        this.F = i10;
         switch (i10) {
             case 1:
-                this.F = mVar;
-                super(context, str, true, false, i7, h6Var);
+                this.G = nVar;
+                super(context, str, true, false, i7, e6Var);
                 break;
             default:
-                this.F = mVar;
+                this.G = nVar;
                 break;
         }
     }
 
     @Override // org.telegram.ui.Cells.k3
-    public final void a(boolean z9) {
-        w3 w3Var;
-        w3 w3Var2;
-        switch (this.E) {
+    public final void a(boolean z10) {
+        v3 v3Var;
+        v3 v3Var2;
+        switch (this.F) {
             case 0:
-                if (z9 && (w3Var = this.F.a) != null) {
-                    w3Var.y0(2);
+                if (z10 && (v3Var = this.G.a) != null) {
+                    v3Var.y0(2);
                     break;
                 }
                 break;
             default:
-                if (z9 && (w3Var2 = this.F.a) != null) {
-                    w3Var2.y0(3);
+                if (z10 && (v3Var2 = this.G.a) != null) {
+                    v3Var2.y0(3);
                     break;
                 }
                 break;
@@ -49,16 +49,16 @@ public final class l extends k3 {
 
     @Override // org.telegram.ui.Cells.k3
     public final void b(Editable editable) {
-        switch (this.E) {
+        switch (this.F) {
             case 0:
-                m mVar = this.F;
-                mVar.n.d(mVar.s.getText().toString(), mVar.w.getText().toString());
-                mVar.j0(true);
+                n nVar = this.G;
+                nVar.n.d(nVar.s.getText().toString(), nVar.w.getText().toString());
+                nVar.j0(true);
                 break;
             default:
-                m mVar2 = this.F;
-                mVar2.n.d(mVar2.s.getText().toString(), mVar2.w.getText().toString());
-                mVar2.j0(true);
+                n nVar2 = this.G;
+                nVar2.n.d(nVar2.s.getText().toString(), nVar2.w.getText().toString());
+                nVar2.j0(true);
                 break;
         }
     }

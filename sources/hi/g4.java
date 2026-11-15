@@ -1,146 +1,80 @@
 package hi;
 
-import android.util.SparseIntArray;
-import di.j8;
-import java.util.Calendar;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.p10;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.fb0;
-import org.telegram.ui.Components.hb0;
-import org.telegram.ui.Components.ph0;
-import org.telegram.ui.Components.rh0;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.fh0;
+import org.telegram.ui.Components.sk0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class g4 implements org.telegram.ui.ActionBar.r1, ph0, fb0 {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class g4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
 
-    public /* synthetic */ g4(int i7, boolean[] zArr, TLRPC.Document document, int i10, boolean[] zArr2, c20 c20Var) {
-        this.a = i7;
-        this.c = zArr;
-        this.e = document;
-        this.b = i10;
-        this.d = zArr2;
-        this.f = c20Var;
+    public /* synthetic */ g4(Object obj, int i7, int i10, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = i7;
+        this.c = i10;
     }
 
-    @Override // org.telegram.ui.Components.ph0
-    public void b(rh0 rh0Var, int i7) {
-        SparseIntArray sparseIntArray = (SparseIntArray) this.c;
-        c5.k kVar = (c5.k) this.d;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.e;
-        int[] iArr = (int[]) this.f;
-        int i10 = this.b + i7;
-        int i11 = this.a;
-        sparseIntArray.put(i11, i10);
-        if (kVar.getCurrentItem() == i11) {
-            actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().f(iArr[0], i10, true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        boolean[] zArr = (boolean[]) this.c;
-        TLRPC.Document document = (TLRPC.Document) this.e;
-        boolean[] zArr2 = (boolean[]) this.d;
-        c20 c20Var = (c20) this.f;
-        int i10 = this.a;
-        if (!p10.i(i10).q()) {
-            new ug.w0((org.telegram.ui.ActionBar.f2) new k4(null), 12, false).show();
-            return;
-        }
-        zArr[0] = true;
-        TL_account.updateEmojiStatus updateemojistatus = new TL_account.updateEmojiStatus();
-        TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-        tL_emojiStatus.document_id = document.id;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i7 = this.a;
+        int i10 = this.c;
         int i11 = this.b;
-        if (i11 > 0) {
-            tL_emojiStatus.flags = 1 | tL_emojiStatus.flags;
-            tL_emojiStatus.until = ConnectionsManager.getInstance(i10).getCurrentTime() + i11;
-        }
-        updateemojistatus.emoji_status = tL_emojiStatus;
-        ConnectionsManager.getInstance(i10).sendRequest(updateemojistatus, new j8(zArr2, c20Var, i10, updateemojistatus, 1));
-    }
-
-    @Override // org.telegram.ui.Components.fb0
-    public void n(hb0 hb0Var, int i7) {
-        org.telegram.ui.Components.x3 x3Var = (org.telegram.ui.Components.x3) this.c;
-        wg.f fVar = (wg.f) this.d;
-        wg.g gVar = (wg.g) this.e;
-        hb0 hb0Var2 = (hb0) this.f;
-        try {
-            x3Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
-        }
-        if (hb0Var.getTag() != null && hb0Var.getTag().equals("DAY")) {
-            if (hb0Var.getValue() == hb0Var.getMinValue()) {
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTimeInMillis(System.currentTimeMillis());
-                int i10 = calendar.get(11);
-                int i11 = (calendar.get(12) / 5) + 1;
-                if (i11 > 11) {
-                    if (i10 == 23) {
-                        hb0Var.setMinValue(hb0Var.getMinValue() + 1);
-                        fVar.setMinValue(0);
-                    } else {
-                        fVar.setMinValue(i10 + 1);
-                    }
-                    gVar.setMinValue(0);
-                } else {
-                    fVar.setMinValue(i10);
-                    gVar.setMinValue(i11);
+        Object obj = this.d;
+        switch (i7) {
+            case 0:
+                m5 m5Var = (m5) obj;
+                m5Var.k1.a = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10);
+                m5Var.D0.invalidate();
+                break;
+            case 1:
+                org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) obj;
+                f4Var.getClass();
+                int S0 = org.telegram.messenger.g0.S0(valueAnimator.getAnimatedFraction(), 1.0f, i11, i10);
+                fh0 fh0Var = f4Var.f;
+                fh0Var.setColorFilter(new PorterDuffColorFilter(S0, PorterDuff.Mode.SRC_IN));
+                org.telegram.ui.ActionBar.j6.H1(fh0Var.getDrawable(), S0 & 620756991, true);
+                break;
+            case 2:
+                org.telegram.ui.Components.g6 g6Var = (org.telegram.ui.Components.g6) obj;
+                g6Var.getClass();
+                g6Var.u(i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10));
+                g6Var.invalidateSelf();
+                break;
+            case 3:
+                ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) obj;
+                int i12 = ScrollSlidingTextTabStrip.p0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                scrollSlidingTextTabStrip.a0 = i11 * floatValue;
+                scrollSlidingTextTabStrip.b0 = i10 * floatValue;
+                scrollSlidingTextTabStrip.a.invalidate();
+                scrollSlidingTextTabStrip.invalidate();
+                break;
+            case 4:
+                float animatedFraction = valueAnimator.getAnimatedFraction();
+                bw0 bw0Var = (bw0) ((sk0) obj).b;
+                bw0Var.n1.setAlpha(animatedFraction);
+                bw0Var.r1.setAlpha(animatedFraction);
+                if (i11 != 0) {
+                    int i13 = (int) ((1.0f - animatedFraction) * i11);
+                    bw0Var.W0(i10 + i13);
+                    bw0Var.n1.setTranslationY(i13);
+                    break;
                 }
-            } else if (hb0Var.getValue() == hb0Var.getMaxValue()) {
-                fVar.setMaxValue(this.a);
-                gVar.setMaxValue(Math.min(this.b / 5, 11));
-            } else {
-                fVar.setMinValue(0);
-                gVar.setMinValue(0);
-                fVar.setMaxValue(23);
-                gVar.setMaxValue(11);
-            }
+                break;
+            default:
+                tg.g0 g0Var = (tg.g0) obj;
+                g0Var.u1.a = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10);
+                g0Var.M0.invalidate();
+                break;
         }
-        if (hb0Var.getTag() != null && hb0Var.getTag().equals("HOUR") && hb0Var2.getValue() == hb0Var2.getMinValue()) {
-            if (hb0Var.getValue() != hb0Var.getMinValue()) {
-                gVar.setMinValue(0);
-                gVar.setMaxValue(11);
-                return;
-            }
-            Calendar calendar2 = Calendar.getInstance();
-            calendar2.setTimeInMillis(System.currentTimeMillis());
-            int i12 = (calendar2.get(12) / 5) + 1;
-            if (i12 > 11) {
-                gVar.setMinValue(0);
-            } else {
-                gVar.setMinValue(i12);
-            }
-        }
-    }
-
-    public /* synthetic */ g4(SparseIntArray sparseIntArray, int i7, int i10, c5.k kVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
-        this.c = sparseIntArray;
-        this.a = i7;
-        this.b = i10;
-        this.d = kVar;
-        this.e = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.f = iArr;
-    }
-
-    public /* synthetic */ g4(org.telegram.ui.Components.x3 x3Var, wg.f fVar, wg.g gVar, int i7, int i10, hb0 hb0Var) {
-        this.c = x3Var;
-        this.d = fVar;
-        this.e = gVar;
-        this.a = i7;
-        this.b = i10;
-        this.f = hb0Var;
     }
 }

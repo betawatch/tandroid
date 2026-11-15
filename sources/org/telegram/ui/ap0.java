@@ -1,11 +1,22 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.content.DialogInterface;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ap0 extends org.telegram.ui.Components.os {
-    public ap0(Context context, String str) {
-        super(context, str);
+public final class ap0 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ PhotoViewer a;
+
+    public ap0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
+    }
+
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        ImageView imageView = this.a.E3;
+        if (imageView != null) {
+            imageView.animate().alpha(0.0f).withEndAction(new ef0(this, 19)).setDuration(150L).start();
+        }
     }
 }

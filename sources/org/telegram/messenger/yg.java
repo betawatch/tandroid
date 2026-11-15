@@ -1,120 +1,127 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
+import java.util.HashMap;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ui b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ c1 d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ yg(ui uiVar, long j3, int i7) {
-        this.a = i7;
-        this.b = uiVar;
-        this.c = j3;
+    public /* synthetic */ yg(g5 g5Var, HashMap hashMap, HashMap hashMap2, boolean z10, HashMap hashMap3, ArrayList arrayList, HashMap hashMap4, boolean[] zArr) {
+        this.d = g5Var;
+        this.e = hashMap;
+        this.f = hashMap2;
+        this.b = z10;
+        this.h = hashMap3;
+        this.c = arrayList;
+        this.n = hashMap4;
+        this.r = zArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7;
-        int i10 = this.a;
-        ui uiVar = this.b;
-        long j3 = this.c;
-        int i11 = 0;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                a0.h hVar = uiVar.w1;
-                ArrayList arrayList = (ArrayList) hVar.f(j3);
-                if (arrayList != null) {
-                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                        TLRPC.Message message = (TLRPC.Message) arrayList.get(i12);
-                        int i13 = uiVar.currentAccount;
-                        xr a10 = xr.a(j3, ij.b2(i13, message, t3.b0(i13, j3), false));
-                        uiVar.x1.remove(a10);
-                        uiVar.getNotificationCenter().k(69, null, a10);
+                si siVar = (si) this.d;
+                ArrayList arrayList = (ArrayList) this.c;
+                boolean z10 = this.b;
+                ArrayList arrayList2 = (ArrayList) this.e;
+                ArrayList arrayList3 = (ArrayList) this.f;
+                ArrayList arrayList4 = (ArrayList) this.h;
+                a0.h hVar = (a0.h) this.n;
+                a0.h hVar2 = (a0.h) this.r;
+                siVar.getMessagesController().Y3(arrayList, z10);
+                siVar.getMessagesController().S3(arrayList2, z10);
+                int size = arrayList3.size();
+                int i7 = 0;
+                for (int i10 = 0; i10 < size; i10++) {
+                    TLRPC.Message message = (TLRPC.Message) arrayList3.get(i10);
+                    if ((gj.n1(message) instanceof TLRPC.TL_messageMediaDocument) || (gj.n1(message) instanceof TLRPC.TL_messageMediaPhoto)) {
+                        i7++;
                     }
+                    arrayList4.add(new gj(siVar.currentAccount, message, hVar, hVar2, false, i7 < 30));
                 }
-                hVar.l(j3);
+                g0.h3(new hh(siVar, arrayList4, 0));
                 break;
             case 1:
-                uiVar.p1.l(j3);
-                break;
-            case 2:
-                final long j10 = this.c;
-                final ui uiVar2 = this.b;
-                uiVar2.getClass();
-                double d = 0.0d;
-                try {
-                    SQLiteDatabase sQLiteDatabase = uiVar2.getMessagesStorage().b;
-                    Locale locale = Locale.US;
-                    SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT MAX(mid), MAX(date) FROM messages_v2 WHERE uid = " + j10 + " AND out = 1", new Object[0]);
-                    if (queryFinalized.next()) {
-                        i11 = queryFinalized.intValue(0);
-                        i7 = queryFinalized.intValue(1);
-                    } else {
-                        i7 = 0;
-                    }
-                    queryFinalized.dispose();
-                    if (i11 > 0 && uiVar2.getUserConfig().D != 0) {
-                        d = i7 - uiVar2.getUserConfig().D;
-                    }
-                } catch (Exception e10) {
-                    a8.g(e10, true);
+                g5 g5Var = (g5) this.d;
+                HashMap hashMap = (HashMap) this.e;
+                HashMap hashMap2 = (HashMap) this.f;
+                boolean z11 = this.b;
+                HashMap hashMap3 = (HashMap) this.h;
+                ArrayList arrayList5 = (ArrayList) this.c;
+                HashMap hashMap4 = (HashMap) this.n;
+                boolean[] zArr = (boolean[]) this.r;
+                g5Var.a0 = hashMap;
+                g5Var.Z = hashMap2;
+                g5Var.e = false;
+                g5Var.r = true;
+                if (z11) {
+                    g5Var.h = true;
                 }
-                final double d2 = d;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.xg
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        ui uiVar3;
-                        long j11;
-                        TLRPC.TL_topPeer tL_topPeer;
-                        int i14 = 0;
-                        while (true) {
-                            uiVar3 = ui.this;
-                            int size = uiVar3.i1.size();
-                            j11 = j10;
-                            if (i14 >= size) {
-                                tL_topPeer = null;
-                                break;
-                            }
-                            tL_topPeer = (TLRPC.TL_topPeer) uiVar3.i1.get(i14);
-                            if (tL_topPeer.peer.user_id == j11) {
-                                break;
-                            } else {
-                                i14++;
-                            }
-                        }
-                        if (tL_topPeer == null) {
-                            tL_topPeer = new TLRPC.TL_topPeer();
-                            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                            tL_topPeer.peer = tL_peerUser;
-                            tL_peerUser.user_id = j11;
-                            uiVar3.i1.add(tL_topPeer);
-                        }
-                        tL_topPeer.rating = Math.exp(d2 / uiVar3.getMessagesController().Z2) + tL_topPeer.rating;
-                        Collections.sort(uiVar3.i1, new jg.x(22));
-                        uiVar3.getMessagesStorage().a.c(new ah(uiVar3, j11, 0, tL_topPeer.rating));
-                        uiVar3.getNotificationCenter().k(qs.S0, new Object[0]);
-                    }
-                });
+                if (!g5Var.x.isEmpty() && g5Var.h) {
+                    g5Var.c(g5Var.x, null, null, null);
+                    g5Var.x.clear();
+                }
+                g0.h3(new u4(g5Var, hashMap3, arrayList5, hashMap4, 3));
+                if (zArr[0]) {
+                    Utilities.e.d(new k4(g5Var, 7), 300000L);
+                    break;
+                }
                 break;
             default:
-                ui uiVar3 = this.b;
-                ArrayList[] arrayListArr = uiVar3.u0;
-                arrayListArr[0].remove(Long.valueOf(j3));
-                uiVar3.v0[0].remove(Long.valueOf(j3));
-                long[] jArr = uiVar3.p0;
-                ArrayList[] arrayListArr2 = uiVar3.s0;
-                jArr[0] = uiVar3.o(arrayListArr2[0], false);
-                uiVar3.getNotificationCenter().k(62, new Object[0]);
-                uiVar3.G1(false, arrayListArr2[0], arrayListArr[0], uiVar3.q0[0], jArr[0], uiVar3.r0);
+                ez ezVar = (ez) this.d;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
+                TLObject tLObject = (TLObject) this.e;
+                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.f;
+                boolean z12 = this.b;
+                gj gjVar = (gj) this.h;
+                TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) this.n;
+                org.telegram.ui.an anVar = (org.telegram.ui.an) this.r;
+                if (tL_error == null) {
+                    TL_account.Password password = (TL_account.Password) tLObject;
+                    twoStepVerificationActivity.J = password;
+                    TwoStepVerificationActivity.r0(password);
+                    ezVar.n0(z12, gjVar, keyboardButtonProto, twoStepVerificationActivity.q0(), twoStepVerificationActivity, anVar);
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ yg(si siVar, ArrayList arrayList, boolean z10, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, a0.h hVar, a0.h hVar2) {
+        this.d = siVar;
+        this.c = arrayList;
+        this.b = z10;
+        this.e = arrayList2;
+        this.f = arrayList3;
+        this.h = arrayList4;
+        this.n = hVar;
+        this.r = hVar2;
+    }
+
+    public /* synthetic */ yg(ez ezVar, TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, gj gjVar, TL_keyboard.KeyboardButtonProto keyboardButtonProto, org.telegram.ui.an anVar) {
+        this.d = ezVar;
+        this.c = tL_error;
+        this.e = tLObject;
+        this.f = twoStepVerificationActivity;
+        this.b = z10;
+        this.h = gjVar;
+        this.n = keyboardButtonProto;
+        this.r = anVar;
     }
 }

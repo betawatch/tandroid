@@ -1,95 +1,37 @@
 package di;
 
-import java.util.ArrayList;
-import org.telegram.messenger.qp;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.DialogInterface;
+import org.telegram.messenger.is;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class z9 {
-    public static long g;
-    public final z6 a;
-    public final int b;
-    public final long c;
-    public int d;
-    public boolean e;
-    public final f8 f = new f8(this, 6);
+public final /* synthetic */ class z9 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ is c;
 
-    public z9(int i7, long j3, z6 z6Var) {
+    public /* synthetic */ z9(int i7, la laVar) {
         this.b = i7;
-        this.a = z6Var;
-        this.c = j3;
+        this.c = laVar;
     }
 
-    public void a(ArrayList arrayList) {
-        TL_stories.PeerStories y10 = this.a.y(this.c);
-        if (y10 == null || y10.stories == null) {
-            return;
-        }
-        int i7 = 0;
-        while (i7 < y10.stories.size()) {
-            i7 = com.google.android.recaptcha.internal.a.f(y10.stories.get(i7).id, i7, 1, arrayList);
-        }
-    }
-
-    public final void b(boolean z9) {
-        if (this.e == z9) {
-            return;
-        }
-        if (z9) {
-            this.e = true;
-            c();
-        } else {
-            this.e = false;
-            org.telegram.messenger.g0.r(this.f);
-            ConnectionsManager.getInstance(this.b).cancelRequest(this.d, false);
-            this.d = 0;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                ns.f(this.b).n((la) this.c, ns.A3);
+                break;
+            default:
+                tg.g0 g0Var = (tg.g0) this.c;
+                g0Var.o0(false);
+                g0Var.B0(this.b);
+                break;
         }
     }
 
-    public final void c() {
-        if (this.e) {
-            long currentTimeMillis = 10000 - (System.currentTimeMillis() - g);
-            if (currentTimeMillis > 0) {
-                f8 f8Var = this.f;
-                org.telegram.messenger.g0.r(f8Var);
-                org.telegram.messenger.g0.i3(f8Var, currentTimeMillis);
-                return;
-            }
-            if (this.d == 0) {
-                TL_stories.TL_stories_getStoriesViews tL_stories_getStoriesViews = new TL_stories.TL_stories_getStoriesViews();
-                a(tL_stories_getStoriesViews.id);
-                if (!tL_stories_getStoriesViews.id.isEmpty()) {
-                    int i7 = this.b;
-                    tL_stories_getStoriesViews.peer = qp.s1(i7).j1(this.c);
-                    this.d = ConnectionsManager.getInstance(i7).sendRequest(tL_stories_getStoriesViews, new bi.j(11, this, tL_stories_getStoriesViews));
-                    return;
-                }
-            }
-            this.d = 0;
-            this.e = false;
-        }
-    }
-
-    public boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
-        if (tL_stories_storyViews != null && tL_stories_storyViews.views != null) {
-            long j3 = this.c;
-            z6 z6Var = this.a;
-            TL_stories.PeerStories y10 = z6Var.y(j3);
-            if (y10 != null && !y10.stories.isEmpty()) {
-                for (int i7 = 0; i7 < tL_stories_storyViews.views.size(); i7++) {
-                    for (int i10 = 0; i10 < y10.stories.size(); i10++) {
-                        if (y10.stories.get(i10).id == ((Integer) arrayList.get(i7)).intValue()) {
-                            y10.stories.get(i10).views = tL_stories_storyViews.views.get(i7);
-                        }
-                    }
-                }
-                m7 m7Var = z6Var.k;
-                m7Var.b.a.c(new k7(m7Var, y10, 0));
-                return true;
-            }
-        }
-        return false;
+    public /* synthetic */ z9(tg.g0 g0Var, int i7) {
+        this.c = g0Var;
+        this.b = i7;
     }
 }

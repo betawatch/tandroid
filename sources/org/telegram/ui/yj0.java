@@ -4,7 +4,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class yj0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -20,30 +20,30 @@ public final class yj0 implements TextWatcher {
         int length;
         String code;
         ak0 ak0Var = this.b;
-        if (!ak0Var.H && (length = editable.length()) >= 1) {
+        if (!ak0Var.I && (length = editable.length()) >= 1) {
             int i7 = this.a;
             if (length > 1) {
                 String obj = editable.toString();
-                ak0Var.H = true;
-                for (int i10 = 0; i10 < Math.min(ak0Var.O - i7, length); i10++) {
+                ak0Var.I = true;
+                for (int i10 = 0; i10 < Math.min(ak0Var.P - i7, length); i10++) {
                     if (i10 == 0) {
                         editable.replace(0, length, obj.substring(i10, i10 + 1));
                     } else {
                         ak0Var.d[i7 + i10].setText(obj.substring(i10, i10 + 1));
                     }
                 }
-                ak0Var.H = false;
+                ak0Var.I = false;
             }
-            if (i7 != ak0Var.O - 1) {
+            if (i7 != ak0Var.P - 1) {
                 int i11 = i7 + 1;
                 EditTextBoldCursor editTextBoldCursor = ak0Var.d[i11];
                 editTextBoldCursor.setSelection(editTextBoldCursor.length());
                 ak0Var.d[i11].requestFocus();
             }
-            int i12 = ak0Var.O;
+            int i12 = ak0Var.P;
             if (i7 == i12 - 1 || (i7 == i12 - 2 && length >= 2)) {
                 code = ak0Var.getCode();
-                if (code.length() == ak0Var.O) {
+                if (code.length() == ak0Var.P) {
                     ak0Var.h(null);
                 }
             }

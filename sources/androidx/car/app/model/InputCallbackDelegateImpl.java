@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IInputCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class InputCallbackDelegateImpl implements o {
     private final IInputCallback mCallback;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class OnInputCallbackStub extends IInputCallback.Stub {
         private final n mCallback;
 
@@ -29,12 +29,12 @@ public class InputCallbackDelegateImpl implements o {
 
         @Override // androidx.car.app.model.IInputCallback
         public void onInputSubmitted(String str, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.g.b(iOnDoneCallback, "onInputSubmitted", new p(this, str, 1));
+            androidx.car.app.utils.h.b(iOnDoneCallback, "onInputSubmitted", new p(this, str, 1));
         }
 
         @Override // androidx.car.app.model.IInputCallback
         public void onInputTextChanged(String str, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.g.b(iOnDoneCallback, "onInputTextChanged", new p(this, str, 0));
+            androidx.car.app.utils.h.b(iOnDoneCallback, "onInputTextChanged", new p(this, str, 0));
         }
     }
 
@@ -51,7 +51,7 @@ public class InputCallbackDelegateImpl implements o {
         try {
             IInputCallback iInputCallback = this.mCallback;
             Objects.requireNonNull(iInputCallback);
-            iInputCallback.onInputSubmitted(str, androidx.car.app.utils.g.a());
+            iInputCallback.onInputSubmitted(str, androidx.car.app.utils.h.a());
         } catch (RemoteException e10) {
             throw new RuntimeException(e10);
         }
@@ -61,7 +61,7 @@ public class InputCallbackDelegateImpl implements o {
         try {
             IInputCallback iInputCallback = this.mCallback;
             Objects.requireNonNull(iInputCallback);
-            iInputCallback.onInputTextChanged(str, androidx.car.app.utils.g.a());
+            iInputCallback.onInputTextChanged(str, androidx.car.app.utils.h.a());
         } catch (RemoteException e10) {
             throw new RuntimeException(e10);
         }

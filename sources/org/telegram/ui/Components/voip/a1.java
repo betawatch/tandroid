@@ -1,30 +1,43 @@
 package org.telegram.ui.Components.voip;
 
-import bi.m5;
-import org.telegram.ui.Components.ch0;
+import android.animation.ValueAnimator;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import org.telegram.ui.yb1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m5 b;
-    public final /* synthetic */ ch0 c;
+public final class a1 extends GestureDetector.SimpleOnGestureListener {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ yb1 c;
 
-    public /* synthetic */ a1(m5 m5Var, ch0 ch0Var, int i7) {
-        this.a = i7;
-        this.b = m5Var;
-        this.c = ch0Var;
+    public a1(yb1 yb1Var) {
+        this.c = yb1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new a1(this.b, this.c, 1));
-                break;
-            default:
-                this.b.removeView(this.c);
-                break;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        this.a = true;
+        return super.onDown(motionEvent);
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        float x10 = motionEvent.getX() - motionEvent2.getX();
+        float y10 = motionEvent.getY() - motionEvent2.getY();
+        if (Math.abs(x10) > org.telegram.messenger.g0.a1(true, 0.4f) && Math.abs(x10) / 3.0f > y10 && this.a && !this.b) {
+            this.a = false;
+            org.telegram.ui.a0 a0Var = new org.telegram.ui.a0(this, x10, 2);
+            yb1 yb1Var = this.c;
+            ValueAnimator valueAnimator = yb1Var.V;
+            if (valueAnimator != null) {
+                this.b = true;
+                org.telegram.messenger.g0.i3(a0Var, (valueAnimator.getDuration() - yb1Var.V.getCurrentPlayTime()) + 50);
+            } else {
+                a0Var.run();
+            }
         }
+        return super.onScroll(motionEvent, motionEvent2, f10, f11);
     }
 }

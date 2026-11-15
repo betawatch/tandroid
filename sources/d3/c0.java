@@ -1,53 +1,123 @@
 package d3;
 
-import android.hardware.display.DisplayManager;
-import android.os.Handler;
-import android.view.Choreographer;
-import android.view.Choreographer$VsyncCallback;
-import bi.ab;
-import h2.m0;
+import android.content.Context;
+import android.os.Build;
+import android.view.Surface;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class c0 extends a0 implements Choreographer$VsyncCallback {
-    public final Handler e;
+public final class c0 {
+    public final g a;
+    public final Context b;
+    public z c;
+    public boolean d;
+    public Surface e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public int j;
+    public long k;
+    public long l;
+    public long m;
+    public long n;
+    public long o;
+    public long p;
+    public long q;
+    public long r;
+    public long s;
 
-    public c0(Choreographer choreographer, DisplayManager displayManager) {
-        super(choreographer, displayManager);
-        this.e = m0.q(null);
+    public c0(Context context) {
+        this.b = context;
+        g gVar = new g();
+        gVar.a = new f();
+        gVar.b = new f();
+        gVar.d = -9223372036854775807L;
+        this.a = gVar;
+        this.f = -1.0f;
+        this.i = 1.0f;
+        this.j = 0;
     }
 
-    @Override // d3.a0
     public final void a() {
-        this.b.registerDisplayListener(this, m0.q(null));
-        this.a.postVsyncCallback(this);
+        Surface surface;
+        if (Build.VERSION.SDK_INT < 30 || (surface = this.e) == null || this.j == Integer.MIN_VALUE || this.h == 0.0f || !surface.isValid()) {
+            return;
+        }
+        this.h = 0.0f;
+        g0.f.v(this.e, 0.0f);
     }
 
-    @Override // d3.a0
     public final void b() {
-        this.b.unregisterDisplayListener(this);
-        this.e.removeCallbacksAndMessages(null);
-        this.a.removeVsyncCallback(this);
-        this.c = -9223372036854775807L;
-        this.d = -9223372036854775807L;
+        this.m = 0L;
+        this.q = -1L;
+        this.n = -1L;
+        this.k = 0L;
+        this.l = 0L;
     }
 
-    @Override // android.hardware.display.DisplayManager.DisplayListener
-    public final void onDisplayChanged(int i7) {
-        if (i7 == 0) {
-            this.a.postVsyncCallback(this);
+    /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c() {
+        float f10;
+        float f11;
+        if (Build.VERSION.SDK_INT < 30 || this.e == null) {
+            return;
         }
-    }
-
-    public final void onVsync(Choreographer.FrameData frameData) {
-        this.c = frameData.getFrameTimeNanos();
-        Choreographer.FrameTimeline[] frameTimelines = frameData.getFrameTimelines();
-        if (frameTimelines.length >= 2) {
-            long expectedPresentationTimeNanos = frameTimelines[1].getExpectedPresentationTimeNanos() - frameTimelines[0].getExpectedPresentationTimeNanos();
-            this.d = expectedPresentationTimeNanos != 0 ? expectedPresentationTimeNanos : -9223372036854775807L;
+        g gVar = this.a;
+        if (!gVar.a.a()) {
+            f10 = this.f;
+        } else if (gVar.a.a()) {
+            f10 = (float) (1.0E9d / (gVar.a.e != 0 ? r2.f / r4 : 0L));
         } else {
-            this.d = -9223372036854775807L;
+            f10 = -1.0f;
         }
-        this.e.postDelayed(new ab(this, 13), 500L);
+        float f12 = this.g;
+        if (f10 == f12) {
+            return;
+        }
+        if (f10 != -1.0f && f12 != -1.0f) {
+            if (gVar.a.a()) {
+                if ((gVar.a.a() ? gVar.a.f : -9223372036854775807L) >= 5000000000L) {
+                    f11 = 0.1f;
+                    if (Math.abs(f10 - this.g) < f11) {
+                        return;
+                    }
+                }
+            }
+            f11 = 1.0f;
+            if (Math.abs(f10 - this.g) < f11) {
+            }
+        } else if (f10 == -1.0f && gVar.e < 30) {
+            return;
+        }
+        this.g = f10;
+        d(false);
+    }
+
+    public final void d(boolean z10) {
+        Surface surface;
+        float f10;
+        if (Build.VERSION.SDK_INT < 30 || (surface = this.e) == null || this.j == Integer.MIN_VALUE || !surface.isValid()) {
+            return;
+        }
+        if (this.d) {
+            float f11 = this.g;
+            if (f11 != -1.0f) {
+                f10 = f11 * this.i;
+                if (z10 && this.h == f10) {
+                    return;
+                }
+                this.h = f10;
+                g0.f.v(this.e, f10);
+            }
+        }
+        f10 = 0.0f;
+        if (z10) {
+        }
+        this.h = f10;
+        g0.f.v(this.e, f10);
     }
 }

@@ -2,10 +2,11 @@ package f7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
+import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f extends r6.a {
     public static final Parcelable.Creator<f> CREATOR = new t0(0);
@@ -61,29 +62,29 @@ public final class f extends r6.a {
         String valueOf9 = String.valueOf(this.r);
         String valueOf10 = String.valueOf(this.s);
         String valueOf11 = String.valueOf(this.w);
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("AuthenticationExtensions{\n fidoAppIdExtension=", valueOf, ", \n cableAuthenticationExtension=", valueOf2, ", \n userVerificationMethodExtension=");
-        com.google.android.recaptcha.internal.a.s(n10, valueOf3, ", \n googleMultiAssertionExtension=", valueOf4, ", \n googleSessionIdExtension=");
-        com.google.android.recaptcha.internal.a.s(n10, valueOf5, ", \n googleSilentVerificationExtension=", valueOf6, ", \n devicePublicKeyExtension=");
-        com.google.android.recaptcha.internal.a.s(n10, valueOf7, ", \n googleTunnelServerIdExtension=", valueOf8, ", \n googleThirdPartyPaymentExtension=");
-        com.google.android.recaptcha.internal.a.s(n10, valueOf9, ", \n prfExtension=", valueOf10, ", \n simpleTransactionAuthorizationExtension=");
+        StringBuilder n10 = e2.n("AuthenticationExtensions{\n fidoAppIdExtension=", valueOf, ", \n cableAuthenticationExtension=", valueOf2, ", \n userVerificationMethodExtension=");
+        e2.r(n10, valueOf3, ", \n googleMultiAssertionExtension=", valueOf4, ", \n googleSessionIdExtension=");
+        e2.r(n10, valueOf5, ", \n googleSilentVerificationExtension=", valueOf6, ", \n devicePublicKeyExtension=");
+        e2.r(n10, valueOf7, ", \n googleTunnelServerIdExtension=", valueOf8, ", \n googleThirdPartyPaymentExtension=");
+        e2.r(n10, valueOf9, ", \n prfExtension=", valueOf10, ", \n simpleTransactionAuthorizationExtension=");
         return a8.p0.s(n10, valueOf11, "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.k(parcel, 2, this.a, i7);
-        xb.k(parcel, 3, this.b, i7);
-        xb.k(parcel, 4, this.c, i7);
-        xb.k(parcel, 5, this.d, i7);
-        xb.k(parcel, 6, this.e, i7);
-        xb.k(parcel, 7, this.f, i7);
-        xb.k(parcel, 8, this.h, i7);
-        xb.k(parcel, 9, this.n, i7);
-        xb.k(parcel, 10, this.r, i7);
-        xb.k(parcel, 11, this.s, i7);
-        xb.k(parcel, 12, this.w, i7);
-        xb.k(parcel, 13, this.x, i7);
-        xb.s(parcel, r10);
+        int r10 = yb.r(parcel, 20293);
+        yb.k(parcel, 2, this.a, i7);
+        yb.k(parcel, 3, this.b, i7);
+        yb.k(parcel, 4, this.c, i7);
+        yb.k(parcel, 5, this.d, i7);
+        yb.k(parcel, 6, this.e, i7);
+        yb.k(parcel, 7, this.f, i7);
+        yb.k(parcel, 8, this.h, i7);
+        yb.k(parcel, 9, this.n, i7);
+        yb.k(parcel, 10, this.r, i7);
+        yb.k(parcel, 11, this.s, i7);
+        yb.k(parcel, 12, this.w, i7);
+        yb.k(parcel, 13, this.x, i7);
+        yb.s(parcel, r10);
     }
 }

@@ -1,47 +1,52 @@
 package gb;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class x0 {
-    public final String a;
-    public final String b;
-    public final int c;
-    public final long d;
-    public final k e;
-    public final String f;
-    public final String g;
+public final class x0 extends kd.j implements rd.q {
+    public int a;
+    public /* synthetic */ ce.d b;
+    public /* synthetic */ Throwable c;
+    public final /* synthetic */ d1 d;
 
-    public x0(String sessionId, String firstSessionId, int i7, long j3, k kVar, String str, String firebaseAuthenticationToken) {
-        kotlin.jvm.internal.j.e(sessionId, "sessionId");
-        kotlin.jvm.internal.j.e(firstSessionId, "firstSessionId");
-        kotlin.jvm.internal.j.e(firebaseAuthenticationToken, "firebaseAuthenticationToken");
-        this.a = sessionId;
-        this.b = firstSessionId;
-        this.c = i7;
-        this.d = j3;
-        this.e = kVar;
-        this.f = str;
-        this.g = firebaseAuthenticationToken;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x0(d1 d1Var, id.c cVar) {
+        super(3, cVar);
+        this.d = d1Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // rd.q
+    public final Object b(Object obj, Object obj2, Object obj3) {
+        x0 x0Var = new x0(this.d, (id.c) obj3);
+        x0Var.b = (ce.d) obj;
+        x0Var.c = (Throwable) obj2;
+        return x0Var.invokeSuspend(gd.k.a);
+    }
+
+    @Override // kd.a
+    public final Object invokeSuspend(Object obj) {
+        jd.a aVar = jd.a.a;
+        int i7 = this.a;
+        if (i7 == 0) {
+            af.b.c(obj);
+            ce.d dVar = this.b;
+            Throwable th2 = this.c;
+            n0 a10 = this.d.b.a(null);
+            j0 j0Var = new j0(a10, null, null);
+            StringBuilder sb2 = new StringBuilder("Init session datastore failed with exception message: ");
+            sb2.append(th2.getMessage());
+            sb2.append(". Emit fallback session ");
+            r.b.t(sb2, a10.a, "FirebaseSessions");
+            this.b = null;
+            this.a = 1;
+            if (dVar.a(j0Var, this) == aVar) {
+                return aVar;
+            }
+        } else {
+            if (i7 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            af.b.c(obj);
         }
-        if (!(obj instanceof x0)) {
-            return false;
-        }
-        x0 x0Var = (x0) obj;
-        return kotlin.jvm.internal.j.a(this.a, x0Var.a) && kotlin.jvm.internal.j.a(this.b, x0Var.b) && this.c == x0Var.c && this.d == x0Var.d && kotlin.jvm.internal.j.a(this.e, x0Var.e) && kotlin.jvm.internal.j.a(this.f, x0Var.f) && kotlin.jvm.internal.j.a(this.g, x0Var.g);
-    }
-
-    public final int hashCode() {
-        int h = (com.google.android.recaptcha.internal.a.h(this.a.hashCode() * 31, 31, this.b) + this.c) * 31;
-        long j3 = this.d;
-        return this.g.hashCode() + com.google.android.recaptcha.internal.a.h((this.e.hashCode() + ((h + ((int) (j3 ^ (j3 >>> 32)))) * 31)) * 31, 31, this.f);
-    }
-
-    public final String toString() {
-        return "SessionInfo(sessionId=" + this.a + ", firstSessionId=" + this.b + ", sessionIndex=" + this.c + ", eventTimestampUs=" + this.d + ", dataCollectionStatus=" + this.e + ", firebaseInstallationId=" + this.f + ", firebaseAuthenticationToken=" + this.g + ')';
+        return gd.k.a;
     }
 }

@@ -1,6 +1,6 @@
 package androidx.mediarouter.app;
 
-import a8.b7;
+import a8.c7;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -13,11 +13,11 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import v4.d1;
+import v4.e1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class a0 extends v4.g0 {
+public final class a0 extends v4.h0 {
     public final ArrayList c = new ArrayList();
     public final LayoutInflater d;
     public final Drawable e;
@@ -30,10 +30,10 @@ public final class a0 extends v4.g0 {
         this.r = b0Var;
         Context context = b0Var.n;
         this.d = LayoutInflater.from(context);
-        this.e = b7.d(context, R.attr.mediaRouteDefaultIconDrawable);
-        this.f = b7.d(context, R.attr.mediaRouteTvIconDrawable);
-        this.h = b7.d(context, R.attr.mediaRouteSpeakerIconDrawable);
-        this.n = b7.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
+        this.e = c7.d(context, R.attr.mediaRouteDefaultIconDrawable);
+        this.f = c7.d(context, R.attr.mediaRouteTvIconDrawable);
+        this.h = c7.d(context, R.attr.mediaRouteSpeakerIconDrawable);
+        this.n = c7.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
         D();
     }
 
@@ -53,42 +53,42 @@ public final class a0 extends v4.g0 {
         f();
     }
 
-    @Override // v4.g0
+    @Override // v4.h0
     public final int b() {
         return this.c.size();
     }
 
-    @Override // v4.g0
+    @Override // v4.h0
     public final int d(int i7) {
         return ((y) this.c.get(i7)).b;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0054, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0055, code lost:
     
         if (r2 != null) goto L25;
      */
-    @Override // v4.g0
+    @Override // v4.h0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void t(d1 d1Var, int i7) {
+    public final void t(e1 e1Var, int i7) {
         Drawable createFromStream;
         int d = d(i7);
         y yVar = (y) this.c.get(i7);
         if (d == 1) {
-            ((x) d1Var).v.setText(yVar.a.toString());
+            ((x) e1Var).v.setText(yVar.a.toString());
             return;
         }
         if (d != 2) {
             Log.w("RecyclerAdapter", "Cannot bind item to ViewHolder because of wrong view type");
             return;
         }
-        z zVar = (z) d1Var;
+        z zVar = (z) e1Var;
         s4.v vVar = (s4.v) yVar.a;
         View view = zVar.v;
         view.setVisibility(0);
         zVar.x.setVisibility(4);
-        view.setOnClickListener(new a7.d(zVar, vVar));
+        view.setOnClickListener(new a7.d(1, zVar, vVar));
         zVar.y.setText(vVar.d);
         ImageView imageView = zVar.w;
         a0 a0Var = zVar.z;
@@ -105,8 +105,8 @@ public final class a0 extends v4.g0 {
         imageView.setImageDrawable(createFromStream);
     }
 
-    @Override // v4.g0
-    public final d1 x(ViewGroup viewGroup, int i7) {
+    @Override // v4.h0
+    public final e1 x(ViewGroup viewGroup, int i7) {
         LayoutInflater layoutInflater = this.d;
         if (i7 != 1) {
             if (i7 == 2) {

@@ -3,16 +3,15 @@ package kg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.kt;
+import org.telegram.ui.Components.rt;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class k extends ImageView {
     public final /* synthetic */ int a;
@@ -26,32 +25,19 @@ public final class k extends ImageView {
     @Override // android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
-            case 2:
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
             case 1:
-                if (getAlpha() < 0.5f) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
+                super.dispatchDraw(canvas);
+                break;
             default:
-                return super.dispatchTouchEvent(motionEvent);
+                super.dispatchDraw(canvas);
+                break;
         }
     }
 
     @Override // android.widget.ImageView, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.a) {
-            case 5:
+            case 4:
                 super.onDraw(canvas);
                 invalidate();
                 break;
@@ -64,7 +50,7 @@ public final class k extends ImageView {
     @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         switch (this.a) {
-            case 6:
+            case 5:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 accessibilityNodeInfo.setClassName(ToggleButton.class.getName());
                 accessibilityNodeInfo.setCheckable(true);
@@ -104,23 +90,22 @@ public final class k extends ImageView {
                 setImageMatrix(imageMatrix);
                 break;
             case 1:
-            case 2:
             default:
                 super.onMeasure(i7, i10);
                 break;
-            case 3:
+            case 2:
                 int size = View.MeasureSpec.getSize(i7);
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
                 break;
-            case 4:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.l.getCurrentActionBarHeight(), TLObject.FLAG_30));
+            case 3:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), TLObject.FLAG_30));
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(kt ktVar, Context context) {
+    public k(rt rtVar, Context context) {
         super(context);
-        this.a = 2;
+        this.a = 1;
     }
 }

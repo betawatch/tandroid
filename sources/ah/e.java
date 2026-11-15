@@ -7,59 +7,60 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import c8.ha;
+import c8.ja;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.id;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.ActionBar.y1;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.x1;
+import org.telegram.ui.ActionBar.z5;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class e extends FrameLayout implements c6 {
+public class e extends FrameLayout implements z5 {
     public int a;
-    public final h6 b;
+    public final e6 b;
     public final ImageView c;
     public final TextView d;
     public Runnable e;
-    public final y1 f;
+    public final x1 f;
     public final Paint h;
 
-    public e(Context context, h6 h6Var) {
+    public e(Context context, e6 e6Var) {
         super(context);
         this.h = new Paint(1);
-        this.b = h6Var;
+        this.b = e6Var;
         TextView textView = new TextView(context);
         this.d = textView;
-        org.telegram.messenger.camera.q.m(textView, 1, 20.0f);
-        textView.setGravity(id.a0 ? 5 : 3);
-        int i7 = m6.j5;
-        t6.U(textView, i7, h6Var);
-        boolean z9 = id.a0;
-        addView(textView, ha.d(-1, -2.0f, 23, z9 ? 16.0f : 53.0f, 0.0f, z9 ? 53.0f : 16.0f, 0.0f));
+        i20.o(textView, 1, 20.0f);
+        textView.setGravity(hd.a0 ? 5 : 3);
+        int i7 = j6.j5;
+        q6.U(textView, i7, e6Var);
+        boolean z10 = hd.a0;
+        addView(textView, ja.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
-        y1 y1Var = new y1(false);
-        this.f = y1Var;
-        imageView.setImageDrawable(y1Var);
-        int w02 = m6.w0(i7, h6Var);
+        x1 x1Var = new x1(false);
+        this.f = x1Var;
+        imageView.setImageDrawable(x1Var);
+        int w02 = j6.w0(i7, e6Var);
         this.a = w02;
-        y1Var.a(w02);
-        y1Var.b(m6.w0(i7, h6Var));
-        y1Var.k = 220.0f;
-        addView(imageView, ha.d(24, 24.0f, (id.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        x1Var.a(w02);
+        x1Var.b(j6.w0(i7, e6Var));
+        x1Var.k = 220.0f;
+        addView(imageView, ja.d(24, 24.0f, (hd.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new d(this, 0));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        int w02 = m6.w0(m6.d7, this.b);
+        int w02 = j6.w0(j6.d7, this.b);
         Paint paint = this.h;
         paint.setColor(w02);
         canvas.drawRect(0.0f, getHeight() - g0.f1(), getWidth(), getHeight(), paint);
@@ -78,10 +79,10 @@ public class e extends FrameLayout implements c6 {
         this.c.setImageResource(i7);
     }
 
-    public void setCloseImageVisible(boolean z9) {
-        this.c.setVisibility(z9 ? 0 : 8);
-        boolean z10 = id.a0;
-        this.d.setLayoutParams(ha.d(-1, -2.0f, 23, (z10 || !z9) ? 22.0f : 53.0f, 0.0f, (z10 && z9) ? 53.0f : 22.0f, 0.0f));
+    public void setCloseImageVisible(boolean z10) {
+        this.c.setVisibility(z10 ? 0 : 8);
+        boolean z11 = hd.a0;
+        this.d.setLayoutParams(ja.d(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
     }
 
     public void setOnCloseClickListener(Runnable runnable) {
@@ -92,18 +93,18 @@ public class e extends FrameLayout implements c6 {
         this.d.setText(charSequence);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void updateColors() {
-        y1 y1Var = this.f;
-        if (y1Var == null) {
+        x1 x1Var = this.f;
+        if (x1Var == null) {
             return;
         }
         try {
-            int w02 = m6.w0(m6.j5, this.b);
+            int w02 = j6.w0(j6.j5, this.b);
             if (w02 != this.a) {
                 this.a = w02;
-                y1Var.a(w02);
-                y1Var.b(w02);
+                x1Var.a(w02);
+                x1Var.b(w02);
                 ImageView imageView = this.c;
                 if (imageView != null) {
                     imageView.invalidate();
@@ -114,7 +115,7 @@ public class e extends FrameLayout implements c6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

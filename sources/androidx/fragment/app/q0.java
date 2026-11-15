@@ -1,7 +1,31 @@
 package androidx.fragment.app;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class q0 implements androidx.lifecycle.i, w4.e, androidx.lifecycle.u0 {
-    public abstract void a();
+public final class q0 {
+    public int a;
+    public s b;
+    public boolean c = false;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public androidx.lifecycle.n h;
+    public androidx.lifecycle.n i;
+
+    public q0(int i7, s sVar) {
+        this.a = i7;
+        this.b = sVar;
+        androidx.lifecycle.n nVar = androidx.lifecycle.n.e;
+        this.h = nVar;
+        this.i = nVar;
+    }
+
+    public q0(int i7, s sVar, int i10) {
+        this.a = i7;
+        this.b = sVar;
+        androidx.lifecycle.n nVar = androidx.lifecycle.n.e;
+        this.h = nVar;
+        this.i = nVar;
+    }
 }

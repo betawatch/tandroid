@@ -1,69 +1,46 @@
 package hi;
 
-import bi.p5;
-import org.telegram.messenger.a8;
-import org.telegram.ui.Components.ec0;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class n extends a8.l1 {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ ia b;
 
-    public /* synthetic */ n(Object obj, int i7) {
+    public /* synthetic */ n(ia iaVar, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = iaVar;
     }
 
-    @Override // a8.l1
-    public final void a(int i7, CharSequence charSequence) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                a8.b("BotBiometry onAuthenticationError " + i7 + " \"" + ((Object) charSequence) + "\"");
-                p pVar = (p) this.b;
-                p5 p5Var = pVar.j;
-                if (p5Var != null) {
-                    pVar.j = null;
-                    p5Var.a(Boolean.FALSE, null);
-                    break;
+                this.b.n();
+                break;
+            case 1:
+                ia iaVar = this.b;
+                iaVar.K0 = false;
+                iaVar.L0 = TLObject.FLAG_31;
+                iaVar.invalidate();
+                iaVar.S0.setVisibility(0);
+                iaVar.T0.setVisibility(0);
+                break;
+            default:
+                sa saVar = this.b.S1;
+                ga gaVar = saVar.Y0;
+                if (gaVar != null) {
+                    gaVar.P = false;
+                    gaVar.c();
+                    ga gaVar2 = saVar.Y0;
+                    gaVar2.m(0L);
+                    cb cbVar = gaVar2.G;
+                    if (cbVar != null) {
+                        cbVar.setProgress(0L);
+                        break;
+                    }
                 }
-                break;
-            default:
-                a8.b("PasscodeView onAuthenticationError " + i7 + " \"" + ((Object) charSequence) + "\"");
-                ((ec0) this.b).o(true);
-                break;
-        }
-    }
-
-    @Override // a8.l1
-    public final void b() {
-        switch (this.a) {
-            case 0:
-                a8.b("BotBiometry onAuthenticationFailed");
-                break;
-            default:
-                a8.b("PasscodeView onAuthenticationFailed");
-                ((ec0) this.b).o(true);
-                break;
-        }
-    }
-
-    @Override // a8.l1
-    public final void c(androidx.biometric.u uVar) {
-        switch (this.a) {
-            case 0:
-                a8.b("BotBiometry onAuthenticationSucceeded");
-                p pVar = (p) this.b;
-                p5 p5Var = pVar.j;
-                if (p5Var != null) {
-                    pVar.j = null;
-                    p5Var.a(Boolean.TRUE, uVar);
-                    break;
-                }
-                break;
-            default:
-                a8.b("PasscodeView onAuthenticationSucceeded");
-                ((ec0) this.b).n(true);
                 break;
         }
     }

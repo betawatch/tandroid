@@ -1,24 +1,155 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
+import j$.util.Objects;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j90 extends q5 {
-    public final /* synthetic */ l90 a;
+public final class j90 implements Menu {
+    public final m60 a;
+    public final q2 b;
+    public final Runnable c;
+    public final xs d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j90(l90 l90Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
-        super(document, fontMetricsInt);
-        this.a = l90Var;
+    public j90(m60 m60Var, ft ftVar) {
+        Objects.requireNonNull(ftVar);
+        q2 q2Var = new q2(ftVar, 7);
+        Runnable onPremiumMenuLockClickListener = ftVar.getOnPremiumMenuLockClickListener();
+        xs xsVar = new xs(ftVar, 2);
+        this.a = m60Var;
+        this.b = q2Var;
+        this.c = onPremiumMenuLockClickListener;
+        this.d = xsVar;
     }
 
-    @Override // org.telegram.ui.Components.q5, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        int i14 = i13 + i11;
-        int i15 = this.measuredSize;
-        this.a.c.set((int) f10, (i14 - i15) / 2, (int) (f10 + i15), (i14 + i15) / 2);
+    @Override // android.view.Menu
+    public final MenuItem add(int i7) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final int addIntentOptions(int i7, int i10, int i11, ComponentName componentName, Intent[] intentArr, Intent intent, int i12, MenuItem[] menuItemArr) {
+        return 0;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i7) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem findItem(int i7) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem getItem(int i7) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final boolean hasVisibleItems() {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean isShortcutKey(int i7, KeyEvent keyEvent) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean performIdentifierAction(int i7, int i10) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean performShortcut(int i7, KeyEvent keyEvent, int i10) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final int size() {
+        return 0;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(CharSequence charSequence) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i7, int i10, int i11, int i12) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(int i7, int i10, int i11, CharSequence charSequence) {
+        xs xsVar;
+        if (i10 != R.id.menu_quote || (xsVar = this.d) == null || ((Boolean) xsVar.run()).booleanValue()) {
+            Runnable runnable = this.c;
+            if ((i10 != R.id.menu_regular || runnable == null) && (runnable == null || !org.telegram.ui.ActionBar.i4.r.contains(Integer.valueOf(i10)) || !org.telegram.messenger.np.s1(org.telegram.messenger.m10.t0).D3())) {
+                a2 a2Var = new a2(this, i10, 10);
+                m60 m60Var = this.a;
+                m60Var.c(0, charSequence, a2Var, false);
+                if (runnable != null && org.telegram.ui.ActionBar.i4.r.contains(Integer.valueOf(i10))) {
+                    m60Var.M(runnable);
+                }
+            }
+        }
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i7, int i10, int i11, CharSequence charSequence) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(CharSequence charSequence) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(int i7, int i10, int i11, int i12) {
+        add(i7, i10, i11, org.telegram.messenger.hd.M0(i12, null));
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final void removeGroup(int i7) {
+    }
+
+    @Override // android.view.Menu
+    public final void removeItem(int i7) {
+    }
+
+    @Override // android.view.Menu
+    public final void setQwertyMode(boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void clear() {
+    }
+
+    @Override // android.view.Menu
+    public final void close() {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupEnabled(int i7, boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupVisible(int i7, boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupCheckable(int i7, boolean z10, boolean z11) {
     }
 }

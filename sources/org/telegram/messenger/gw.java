@@ -1,11 +1,40 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_update;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class gw {
-    public long a;
-    public long b;
-    public Integer c;
-    public int d;
-    public int e;
+public final /* synthetic */ class gw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ez b;
+    public final /* synthetic */ TL_update.TL_updateNewChannelMessage c;
+    public final /* synthetic */ long d;
+
+    public /* synthetic */ gw(ez ezVar, TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage, long j3, int i7) {
+        this.a = i7;
+        this.b = ezVar;
+        this.c = tL_updateNewChannelMessage;
+        this.d = j3;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ez ezVar = this.b;
+                ezVar.getClass();
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(Integer.valueOf(this.c.message.id));
+                ezVar.getMessagesStorage().c2(-this.d, arrayList, true, -1, 0, false, null);
+                break;
+            default:
+                ez ezVar2 = this.b;
+                ezVar2.getClass();
+                ArrayList arrayList2 = new ArrayList();
+                arrayList2.add(Integer.valueOf(this.c.message.id));
+                ezVar2.getMessagesStorage().c2(-this.d, arrayList2, true, -1, 0, false, null);
+                break;
+        }
+    }
 }

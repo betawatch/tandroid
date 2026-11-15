@@ -1,6 +1,6 @@
 package h0;
 
-import a8.wa;
+import a8.xa;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
@@ -15,7 +15,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final float[][] a = {new float[]{0.401288f, 0.650173f, -0.051461f}, new float[]{-0.250268f, 1.204414f, 0.045854f}, new float[]{-0.002079f, 0.048952f, 0.953127f}};
@@ -23,8 +23,8 @@ public abstract class b {
     public static final float[] c = {95.047f, 100.0f, 108.883f};
     public static final float[][] d = {new float[]{0.41233894f, 0.35762063f, 0.18051042f}, new float[]{0.2126f, 0.7152f, 0.0722f}, new float[]{0.01932141f, 0.11916382f, 0.9503448f}};
 
-    public static wa a(TypedArray typedArray, XmlPullParser xmlPullParser, Resources.Theme theme, String str, int i7) {
-        wa waVar;
+    public static xa a(TypedArray typedArray, XmlPullParser xmlPullParser, Resources.Theme theme, String str, int i7) {
+        xa xaVar;
         String attributeValue = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", str);
         Object obj = null;
         int i10 = 0;
@@ -33,19 +33,19 @@ public abstract class b {
             typedArray.getValue(i7, typedValue);
             int i11 = typedValue.type;
             if (i11 >= 28 && i11 <= 31) {
-                return new wa(obj, obj, typedValue.data, 9);
+                return new xa(obj, obj, typedValue.data, 9);
             }
             try {
-                waVar = wa.g(typedArray.getResources(), typedArray.getResourceId(i7, 0), theme);
+                xaVar = xa.f(typedArray.getResources(), typedArray.getResourceId(i7, 0), theme);
             } catch (Exception e10) {
                 Log.e("ComplexColorCompat", "Failed to inflate ComplexColor.", e10);
-                waVar = null;
+                xaVar = null;
             }
-            if (waVar != null) {
-                return waVar;
+            if (xaVar != null) {
+                return xaVar;
             }
         }
-        return new wa(obj, obj, i10, 9);
+        return new xa(obj, obj, i10, 9);
     }
 
     public static String b(TypedArray typedArray, XmlPullParser xmlPullParser, String str, int i7) {
@@ -69,9 +69,9 @@ public abstract class b {
         float f11 = (f10 + 16.0f) / 116.0f;
         float f12 = f10 > 8.0f ? f11 * f11 * f11 : f10 / 903.2963f;
         float f13 = f11 * f11 * f11;
-        boolean z9 = f13 > 0.008856452f;
-        float f14 = z9 ? f13 : ((f11 * 116.0f) - 16.0f) / 903.2963f;
-        if (!z9) {
+        boolean z10 = f13 > 0.008856452f;
+        float f14 = z10 ? f13 : ((f11 * 116.0f) - 16.0f) / 903.2963f;
+        if (!z10) {
             f13 = ((f11 * 116.0f) - 16.0f) / 903.2963f;
         }
         float[] fArr = c;
@@ -126,7 +126,7 @@ public abstract class b {
                 if (xmlResourceParser.getName().equals("font")) {
                     TypedArray obtainAttributes2 = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), d0.a.c);
                     int i7 = obtainAttributes2.getInt(obtainAttributes2.hasValue(8) ? 8 : 1, 400);
-                    boolean z9 = 1 == obtainAttributes2.getInt(obtainAttributes2.hasValue(6) ? 6 : 2, 0);
+                    boolean z10 = 1 == obtainAttributes2.getInt(obtainAttributes2.hasValue(6) ? 6 : 2, 0);
                     int i10 = obtainAttributes2.hasValue(9) ? 9 : 3;
                     String string6 = obtainAttributes2.getString(obtainAttributes2.hasValue(7) ? 7 : 4);
                     int i11 = obtainAttributes2.getInt(i10, 0);
@@ -137,7 +137,7 @@ public abstract class b {
                     while (xmlResourceParser.next() != 3) {
                         i(xmlResourceParser);
                     }
-                    arrayList.add(new f(string7, i7, z9, string6, i11, resourceId2));
+                    arrayList.add(new f(string7, i7, z10, string6, i11, resourceId2));
                 } else {
                     i(xmlResourceParser);
                 }

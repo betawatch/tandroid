@@ -17,17 +17,17 @@ import zd.x;
 import zd.y;
 import zd.y1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e extends x implements g0 {
     public final Handler c;
     public final boolean d;
     public final e e;
 
-    public e(Handler handler, boolean z9) {
+    public e(Handler handler, boolean z10) {
         this.c = handler;
-        this.d = z9;
-        this.e = z9 ? this : new e(handler, true);
+        this.d = z10;
+        this.e = z10 ? this : new e(handler, true);
     }
 
     @Override // zd.g0
@@ -110,6 +110,6 @@ public final class e extends x implements g0 {
             return str;
         }
         String handler = this.c.toString();
-        return this.d ? rf.b.r(handler, ".immediate") : handler;
+        return this.d ? r.b.v(handler, ".immediate") : handler;
     }
 }

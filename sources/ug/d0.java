@@ -1,28 +1,14 @@
 package ug;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class d0 {
-    public final int a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final int e;
-    public boolean f;
+public final class d0 extends e0 {
+    public final int g;
+    public final boolean h;
 
-    public d0(int i7, int i10, int i11, String str, String str2) {
-        this.a = i7;
-        this.b = i10;
-        this.c = str;
-        this.d = str2;
-        this.e = i11;
-    }
-
-    public static d0 a(int i7, int i10) {
-        return new d0(i7, i10, -1, null, null);
-    }
-
-    public static d0 b(int i7, int i10, String str) {
-        return new d0(i7, -1, i10, null, str);
+    public d0(int i7, boolean z10) {
+        super(-1, -1, -1, null, null);
+        this.g = i7;
+        this.h = z10;
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.g9;
+import a8.i9;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -13,19 +13,19 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class g4 implements t0 {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(g4.class.getName());
-    public static final g9 f;
+    public static final i9 f;
     public static final Object h;
     public volatile Object a;
     public volatile v2 b;
     public volatile f4 c;
 
     static {
-        g9 e4Var;
+        i9 e4Var;
         try {
             e4Var = new s3(AtomicReferenceFieldUpdater.newUpdater(f4.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(f4.class, f4.class, "b"), AtomicReferenceFieldUpdater.newUpdater(g4.class, f4.class, "c"), AtomicReferenceFieldUpdater.newUpdater(g4.class, v2.class, "b"), AtomicReferenceFieldUpdater.newUpdater(g4.class, Object.class, "a"));
             th = null;
@@ -43,14 +43,14 @@ public class g4 implements t0 {
 
     public static void d(g4 g4Var) {
         f4 f4Var;
-        g9 g9Var;
+        i9 i9Var;
         v2 v2Var;
         v2 v2Var2;
         v2 v2Var3;
         do {
             f4Var = g4Var.c;
-            g9Var = f;
-        } while (!g9Var.e(g4Var, f4Var, f4.c));
+            i9Var = f;
+        } while (!i9Var.e(g4Var, f4Var, f4.c));
         while (true) {
             v2Var = null;
             if (f4Var == null) {
@@ -65,7 +65,7 @@ public class g4 implements t0 {
         }
         do {
             v2Var2 = g4Var.b;
-        } while (!g9Var.c(g4Var, v2Var2, v2.d));
+        } while (!i9Var.c(g4Var, v2Var2, v2.d));
         while (true) {
             v2Var3 = v2Var;
             v2Var = v2Var2;
@@ -87,7 +87,7 @@ public class g4 implements t0 {
         try {
             executor.execute(runnable);
         } catch (RuntimeException e10) {
-            e.logp(Level.SEVERE, "com.android.billingclient.util.concurrent.AbstractResolvableFuture", "executeListener", com.google.android.recaptcha.internal.a.l("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e10);
+            e.logp(Level.SEVERE, "com.android.billingclient.util.concurrent.AbstractResolvableFuture", "executeListener", com.google.android.gms.internal.vision.e2.l("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e10);
         }
     }
 
@@ -110,7 +110,7 @@ public class g4 implements t0 {
     /* JADX WARN: Multi-variable type inference failed */
     public String a() {
         if (this instanceof ScheduledFuture) {
-            return rf.b.h(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+            return r.b.j(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
         }
         return null;
     }
@@ -135,12 +135,12 @@ public class g4 implements t0 {
     }
 
     @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z9) {
+    public final boolean cancel(boolean z10) {
         Object obj = this.a;
         if (obj != null) {
             return false;
         }
-        if (!f.d(this, obj, d ? new j1(new CancellationException("Future.cancel() was called.")) : z9 ? j1.b : j1.c)) {
+        if (!f.d(this, obj, d ? new j1(new CancellationException("Future.cancel() was called.")) : z10 ? j1.b : j1.c)) {
             return false;
         }
         d(this);
@@ -149,16 +149,16 @@ public class g4 implements t0 {
 
     public final void e(StringBuilder sb2) {
         Object obj;
-        boolean z9 = false;
+        boolean z10 = false;
         while (true) {
             try {
                 try {
                     obj = get();
                     break;
                 } catch (InterruptedException unused) {
-                    z9 = true;
+                    z10 = true;
                 } catch (Throwable th2) {
-                    if (z9) {
+                    if (z10) {
                         Thread.currentThread().interrupt();
                     }
                     throw th2;
@@ -178,7 +178,7 @@ public class g4 implements t0 {
                 return;
             }
         }
-        if (z9) {
+        if (z10) {
             Thread.currentThread().interrupt();
         }
         sb2.append("SUCCESS, result=[");
@@ -227,9 +227,9 @@ public class g4 implements t0 {
         if (f4Var != f4Var2) {
             f4 f4Var3 = new f4();
             do {
-                g9 g9Var = f;
-                g9Var.a(f4Var3, f4Var);
-                if (g9Var.e(this, f4Var, f4Var3)) {
+                i9 i9Var = f;
+                i9Var.a(f4Var3, f4Var);
+                if (i9Var.e(this, f4Var, f4Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -300,9 +300,9 @@ public class g4 implements t0 {
                 if (f4Var != f4Var2) {
                     f4 f4Var3 = new f4();
                     do {
-                        g9 g9Var = f;
-                        g9Var.a(f4Var3, f4Var);
-                        if (g9Var.e(this, f4Var, f4Var3)) {
+                        i9 i9Var = f;
+                        i9Var.a(f4Var3, f4Var);
+                        if (i9Var.e(this, f4Var, f4Var3)) {
                             do {
                                 LockSupport.parkNanos(this, nanos);
                                 if (!Thread.interrupted()) {
@@ -345,18 +345,18 @@ public class g4 implements t0 {
                 long j10 = -nanos;
                 long convert = timeUnit.convert(j10, TimeUnit.NANOSECONDS);
                 long nanos2 = j10 - timeUnit.toNanos(convert);
-                boolean z9 = true;
+                boolean z10 = true;
                 if (convert != 0 && nanos2 <= 1000) {
-                    z9 = false;
+                    z10 = false;
                 }
                 if (convert > 0) {
                     String str2 = concat + convert + " " + lowerCase;
-                    if (z9) {
+                    if (z10) {
                         str2 = str2.concat(",");
                     }
                     concat = str2.concat(" ");
                 }
-                if (z9) {
+                if (z10) {
                     concat = concat + nanos2 + " nanoseconds ";
                 }
                 str = concat.concat("delay)");
@@ -364,7 +364,7 @@ public class g4 implements t0 {
             if (isDone()) {
                 throw new TimeoutException(str.concat(" but future completed as timeout expired"));
             }
-            throw new TimeoutException(a8.p0.D(str, " for ", g4Var));
+            throw new TimeoutException(a8.p0.E(str, " for ", g4Var));
         }
         throw new InterruptedException();
     }

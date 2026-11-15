@@ -3,34 +3,34 @@ package org.telegram.messenger.car;
 import androidx.car.app.m;
 import androidx.lifecycle.e;
 import androidx.lifecycle.t;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.is;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class HomeScreen extends m implements e, ls {
+public class HomeScreen extends m implements e, is {
     @Override // androidx.lifecycle.e
     public final void a(t tVar) {
-        qs.e().c(this, qs.d4);
-        qs.e().c(this, qs.G4);
-        qs.e().c(this, qs.c4);
+        ns.e().c(this, ns.d4);
+        ns.e().c(this, ns.G4);
+        ns.e().c(this, ns.c4);
     }
 
-    @Override // org.telegram.messenger.ls
+    @Override // org.telegram.messenger.is
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == qs.c4) {
+        if (i7 == ns.c4) {
             throw null;
         }
-        if ((i7 == qs.d4 || i7 == qs.G4) && "tab_notifications".equals(null)) {
+        if ((i7 == ns.d4 || i7 == ns.G4) && "tab_notifications".equals(null)) {
             throw null;
         }
     }
 
     @Override // androidx.lifecycle.e
     public final void e(t tVar) {
-        qs.e().n(this, qs.d4);
-        qs.e().n(this, qs.G4);
-        qs.e().n(this, qs.c4);
+        ns.e().n(this, ns.d4);
+        ns.e().n(this, ns.G4);
+        ns.e().n(this, ns.c4);
     }
 
     @Override // androidx.lifecycle.e

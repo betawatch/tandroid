@@ -3,36 +3,36 @@ package t1;
 import android.text.InputFilter;
 import android.widget.TextView;
 import androidx.emoji2.text.l;
-import c8.gc;
+import c8.ic;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class g extends gc {
+public final class g extends ic {
     public final f a;
 
     public g(TextView textView) {
         this.a = new f(textView);
     }
 
-    @Override // c8.gc
+    @Override // c8.ic
     public final InputFilter[] a(InputFilter[] inputFilterArr) {
         return !(l.j != null) ? inputFilterArr : this.a.a(inputFilterArr);
     }
 
-    @Override // c8.gc
-    public final void b(boolean z9) {
+    @Override // c8.ic
+    public final void b(boolean z10) {
         if (l.j != null) {
-            this.a.b(z9);
+            this.a.b(z10);
         }
     }
 
-    @Override // c8.gc
-    public final void c(boolean z9) {
+    @Override // c8.ic
+    public final void c(boolean z10) {
         f fVar = this.a;
         if (l.j != null) {
-            fVar.c(z9);
+            fVar.c(z10);
         } else {
-            fVar.c = z9;
+            fVar.c = z10;
         }
     }
 }

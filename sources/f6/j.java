@@ -2,10 +2,10 @@ package f6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j extends r6.a {
     public final long a;
@@ -15,11 +15,11 @@ public final class j extends r6.a {
     public static final j6.b e = new j6.b("MediaLiveSeekableRange", null);
     public static final Parcelable.Creator<j> CREATOR = new v(8);
 
-    public j(long j3, long j10, boolean z9, boolean z10) {
+    public j(long j3, long j10, boolean z10, boolean z11) {
         this.a = Math.max(j3, 0L);
         this.b = Math.max(j10, 0L);
-        this.c = z9;
-        this.d = z10;
+        this.c = z10;
+        this.d = z11;
     }
 
     public final boolean equals(Object obj) {
@@ -39,15 +39,15 @@ public final class j extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 2, 8);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 2, 8);
         parcel.writeLong(this.a);
-        xb.q(parcel, 3, 8);
+        yb.q(parcel, 3, 8);
         parcel.writeLong(this.b);
-        xb.q(parcel, 4, 4);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(this.c ? 1 : 0);
-        xb.q(parcel, 5, 4);
+        yb.q(parcel, 5, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 }

@@ -1,16 +1,38 @@
 package di;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final class p7 {
-    public long a;
-    public boolean b;
-    public Object c;
-    public Object d;
-    public Object e;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public void a() {
-        this.b = true;
-        ((z6) this.c).h0(this.a, false);
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class p7 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v8 b;
+
+    public /* synthetic */ p7(v8 v8Var, int i7) {
+        this.a = i7;
+        this.b = v8Var;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new s7(this.b, tLObject, 0));
+                break;
+            case 1:
+                org.telegram.messenger.g0.h3(new s7(this.b, tLObject, 1));
+                break;
+            case 2:
+                org.telegram.messenger.g0.h3(new s7(this.b, tLObject, 2));
+                break;
+            case 3:
+                org.telegram.messenger.g0.h3(new s7(this.b, tLObject, 3));
+                break;
+            default:
+                org.telegram.messenger.g0.h3(new s7(this.b, tLObject, 4));
+                break;
+        }
     }
 }

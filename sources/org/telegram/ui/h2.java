@@ -9,20 +9,20 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class h2 extends View implements org.telegram.ui.Cells.h9, c3 {
-    public final r50 a;
+public final class h2 extends View implements org.telegram.ui.Cells.g9, c3 {
+    public final n50 a;
     public final e4 b;
     public z2 c;
     public final int d;
     public int e;
     public TL_iv.pageBlockRelatedArticles f;
 
-    public h2(Context context, r50 r50Var, e4 e4Var) {
+    public h2(Context context, n50 n50Var, e4 e4Var) {
         super(context);
         this.d = org.telegram.messenger.g0.L(18.0f);
-        this.a = r50Var;
+        this.a = n50Var;
         this.b = e4Var;
     }
 
@@ -60,10 +60,10 @@ public final class h2 extends View implements org.telegram.ui.Cells.h9, c3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.camera.q.a(this);
+        return org.telegram.messenger.i20.a(this);
     }
 
-    @Override // org.telegram.ui.Cells.h9
+    @Override // org.telegram.ui.Cells.g9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.c;
         if (z2Var != null) {

@@ -4,9 +4,9 @@ import android.content.SharedPreferences;
 import android.os.Looper;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a2 {
     public static final j6.b i = new j6.b("FeatureUsageAnalytics", null);
@@ -35,11 +35,11 @@ public final class a2 {
         SharedPreferences sharedPreferences = a2Var.b;
         String num = Integer.toString(a1Var.a);
         SharedPreferences.Editor edit = sharedPreferences.edit();
-        String i7 = rf.b.i("feature_usage_timestamp_reported_feature_", num);
-        if (!sharedPreferences.contains(i7)) {
-            i7 = rf.b.i("feature_usage_timestamp_detected_feature_", num);
+        String k10 = r.b.k("feature_usage_timestamp_reported_feature_", num);
+        if (!sharedPreferences.contains(k10)) {
+            k10 = r.b.k("feature_usage_timestamp_detected_feature_", num);
         }
-        edit.putLong(i7, System.currentTimeMillis()).apply();
+        edit.putLong(k10, System.currentTimeMillis()).apply();
         a2Var.f.add(a1Var);
         a2Var.e.post(a2Var.d);
     }
@@ -72,93 +72,93 @@ public final class a2 {
             case 11:
                 return a1.y;
             case 12:
-                return a1.D;
-            case 13:
                 return a1.E;
-            case 14:
+            case 13:
                 return a1.F;
-            case 15:
+            case 14:
                 return a1.G;
-            case 16:
+            case 15:
                 return a1.H;
-            case 17:
+            case 16:
                 return a1.I;
-            case 18:
+            case 17:
                 return a1.J;
-            case 19:
+            case 18:
                 return a1.K;
-            case 20:
+            case 19:
                 return a1.L;
-            case 21:
+            case 20:
                 return a1.M;
-            case 22:
+            case 21:
                 return a1.N;
-            case 23:
+            case 22:
                 return a1.O;
-            case 24:
+            case 23:
                 return a1.P;
-            case 25:
+            case 24:
                 return a1.Q;
-            case 26:
+            case 25:
                 return a1.R;
-            case 27:
+            case 26:
                 return a1.S;
-            case 28:
+            case 27:
                 return a1.T;
-            case 29:
+            case 28:
                 return a1.U;
-            case qs.T /* 30 */:
+            case 29:
                 return a1.V;
-            case qs.U /* 31 */:
+            case ns.T /* 30 */:
                 return a1.W;
-            case 32:
+            case ns.U /* 31 */:
                 return a1.X;
-            case 33:
+            case 32:
                 return a1.Y;
-            case 34:
+            case 33:
                 return a1.Z;
-            case 35:
+            case 34:
                 return a1.a0;
-            case 36:
+            case 35:
                 return a1.b0;
-            case 37:
+            case 36:
                 return a1.c0;
-            case 38:
+            case 37:
                 return a1.d0;
-            case 39:
+            case 38:
                 return a1.e0;
-            case 40:
+            case 39:
                 return a1.f0;
-            case 41:
+            case 40:
                 return a1.g0;
-            case 42:
+            case 41:
                 return a1.h0;
-            case 43:
+            case 42:
                 return a1.i0;
-            case 44:
+            case 43:
                 return a1.j0;
-            case 45:
+            case 44:
                 return a1.k0;
-            case 46:
+            case 45:
                 return a1.l0;
-            case 47:
+            case 46:
                 return a1.m0;
-            case 48:
+            case 47:
                 return a1.n0;
-            case 49:
+            case 48:
                 return a1.o0;
-            case 50:
+            case 49:
                 return a1.p0;
-            case qs.o0 /* 51 */:
+            case 50:
                 return a1.q0;
-            case qs.p0 /* 52 */:
+            case ns.o0 /* 51 */:
                 return a1.r0;
-            case qs.q0 /* 53 */:
+            case ns.p0 /* 52 */:
                 return a1.s0;
-            case qs.r0 /* 54 */:
+            case ns.q0 /* 53 */:
                 return a1.t0;
-            case qs.s0 /* 55 */:
+            case ns.r0 /* 54 */:
                 return a1.u0;
+            case ns.s0 /* 55 */:
+                return a1.v0;
             default:
                 return null;
         }

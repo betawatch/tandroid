@@ -2,122 +2,93 @@ package org.telegram.messenger;
 
 import android.util.SparseArray;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class us implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dt b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ at b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ us(dt dtVar, long j3, int i7, int i10) {
+    public /* synthetic */ us(at atVar, int i7, int i10) {
         this.a = i10;
-        this.b = dtVar;
-        this.c = j3;
-        this.d = i7;
+        this.b = atVar;
+        this.c = i7;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x011c  */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        boolean z9;
-        int i7;
-        boolean z10;
-        switch (this.a) {
+        int i7 = this.a;
+        int i10 = this.c;
+        at atVar = this.b;
+        switch (i7) {
             case 0:
-                dt dtVar = this.b;
-                a0.h hVar = dtVar.c;
-                ArrayList arrayList = dtVar.a;
-                a0.h hVar2 = dtVar.E;
-                long j3 = this.c;
-                ct ctVar = (ct) hVar2.f(j3);
-                int i10 = this.d;
-                if (ctVar != null) {
-                    HashMap hashMap = ctVar.c;
-                    hashMap.remove(Integer.valueOf(i10));
-                    if (hashMap.isEmpty()) {
-                        hVar2.l(j3);
-                        dtVar.D.remove(ctVar);
-                        yr messagesStorage = dtVar.getMessagesStorage();
-                        messagesStorage.a.c(new xp(messagesStorage, j3, 4));
-                        z9 = true;
-                        i7 = 0;
-                        while (i7 < arrayList.size()) {
-                            ij ijVar = (ij) arrayList.get(i7);
-                            if (ijVar != null && ijVar.N && ijVar.e1() == i10) {
-                                arrayList.remove(i7);
-                                i7--;
-                                SparseArray sparseArray = (SparseArray) hVar.f(ij.B0(ijVar.k));
-                                if (sparseArray != null) {
-                                    sparseArray.remove(ijVar.e1());
-                                }
-                                if (sparseArray != null && sparseArray.size() <= 0) {
-                                    hVar.l(ij.B0(ijVar.k));
-                                }
-                                z9 = true;
-                            }
-                            i7++;
-                        }
-                        if (!z9) {
-                            dtVar.Z(false);
-                            break;
-                        }
-                    } else {
-                        yr messagesStorage2 = dtVar.getMessagesStorage();
-                        messagesStorage2.a.c(new zq(5, messagesStorage2, ctVar));
-                    }
-                }
-                z9 = false;
-                i7 = 0;
-                while (i7 < arrayList.size()) {
-                }
-                if (!z9) {
-                }
+                ns.e().k(ns.G4, Integer.valueOf(atVar.currentAccount));
+                atVar.getNotificationCenter().k(ns.d2, Integer.valueOf(i10));
                 break;
-            default:
-                dt dtVar2 = this.b;
-                a0.h hVar3 = dtVar2.c;
-                ArrayList arrayList2 = dtVar2.a;
-                a0.h hVar4 = dtVar2.E;
-                long j10 = this.c;
-                ct ctVar2 = (ct) hVar4.f(j10);
-                if (ctVar2 != null) {
-                    hVar4.l(j10);
-                    dtVar2.D.remove(ctVar2);
-                    yr messagesStorage3 = dtVar2.getMessagesStorage();
-                    messagesStorage3.a.c(new xp(messagesStorage3, j10, 4));
-                    z10 = true;
-                } else {
-                    z10 = false;
+            case 1:
+                ns.e().k(ns.G4, Integer.valueOf(atVar.currentAccount));
+                atVar.getNotificationCenter().k(ns.d2, Integer.valueOf(i10));
+                break;
+            case 2:
+                ns.e().k(ns.G4, Integer.valueOf(atVar.currentAccount));
+                atVar.getNotificationCenter().k(ns.d2, Integer.valueOf(i10));
+                break;
+            case 3:
+                ns.e().k(ns.G4, Integer.valueOf(atVar.currentAccount));
+                atVar.getNotificationCenter().k(ns.d2, Integer.valueOf(i10));
+                break;
+            case 4:
+                if (atVar.J == 0) {
+                    atVar.w.clear();
+                    ns.e().k(ns.d4, new Object[0]);
                 }
+                ns.e().k(ns.G4, Integer.valueOf(atVar.currentAccount));
+                atVar.getNotificationCenter().k(ns.d2, Integer.valueOf(i10));
+                break;
+            case 5:
+                a0.h hVar = atVar.c;
+                ArrayList arrayList = atVar.a;
                 int i11 = 0;
-                while (i11 < arrayList2.size()) {
-                    ij ijVar2 = (ij) arrayList2.get(i11);
-                    if (ijVar2 != null && ijVar2.N && ijVar2.e1() <= this.d) {
-                        arrayList2.remove(i11);
+                boolean z10 = false;
+                while (i11 < arrayList.size()) {
+                    gj gjVar = (gj) arrayList.get(i11);
+                    if (gjVar.J && Math.abs(gjVar.e1()) == i10) {
+                        arrayList.remove(i11);
+                        SparseArray sparseArray = (SparseArray) hVar.f(gj.B0(gjVar.k));
+                        if (sparseArray != null) {
+                            sparseArray.remove(gjVar.e1());
+                        }
+                        if (sparseArray != null && sparseArray.size() <= 0) {
+                            hVar.l(gj.B0(gjVar.k));
+                        }
+                        ArrayList arrayList2 = new ArrayList();
+                        arrayList2.add(Integer.valueOf(gjVar.e1()));
+                        atVar.getMessagesStorage().E(arrayList2, gj.B0(gjVar.k));
                         i11--;
-                        SparseArray sparseArray2 = (SparseArray) hVar3.f(ij.B0(ijVar2.k));
-                        if (sparseArray2 != null) {
-                            sparseArray2.remove(ijVar2.e1());
-                        }
-                        if (sparseArray2 != null && sparseArray2.size() <= 0) {
-                            hVar3.l(ij.B0(ijVar2.k));
-                        }
                         z10 = true;
                     }
                     i11++;
                 }
                 if (z10) {
-                    dtVar2.Z(false);
-                    dtVar2.d0();
+                    atVar.Z(false);
                     break;
                 }
+                break;
+            case 6:
+                atVar.getClass();
+                a0.h hVar2 = new a0.h();
+                hVar2.k(h9.o.r(Integer.valueOf(i10)), 0L);
+                atVar.M(hVar2, false);
+                break;
+            case 7:
+                if (r2.a) {
+                    a8.b("set last online from other device = " + i10);
+                }
+                atVar.M = i10;
+                break;
+            default:
+                atVar.n(i10);
                 break;
         }
     }

@@ -3,12 +3,12 @@ package j2;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.net.Uri;
-import h2.m0;
+import h2.l0;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b extends c {
     public final AssetManager a;
@@ -102,7 +102,7 @@ public final class b extends c {
                 }
             }
             InputStream inputStream = this.c;
-            String str = m0.a;
+            String str = l0.a;
             int read = inputStream.read(bArr, i7, i10);
             if (read != -1) {
                 long j10 = this.d;

@@ -55,13 +55,13 @@ public abstract class z extends a implements c0 {
     }
 
     @Override // j$.util.stream.a
-    public final e2 K0(a aVar, Spliterator spliterator, boolean z9, IntFunction intFunction) {
-        return t3.b0(aVar, spliterator, z9);
+    public final e2 K0(a aVar, Spliterator spliterator, boolean z10, IntFunction intFunction) {
+        return t3.b0(aVar, spliterator, z10);
     }
 
     @Override // j$.util.stream.a
-    public final Spliterator T0(a aVar, Supplier supplier, boolean z9) {
-        return new g7(aVar, supplier, z9);
+    public final Spliterator T0(a aVar, Supplier supplier, boolean z10) {
+        return new g7(aVar, supplier, z10);
     }
 
     @Override // j$.util.stream.a

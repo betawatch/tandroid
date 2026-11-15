@@ -1,110 +1,35 @@
 package m;
 
-import android.database.DataSetObserver;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListAdapter;
-import android.widget.SpinnerAdapter;
+import android.widget.AdapterView;
+import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class k0 implements ListAdapter, SpinnerAdapter {
-    public SpinnerAdapter a;
-    public ListAdapter b;
+public final class k0 implements AdapterView.OnItemClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    @Override // android.widget.ListAdapter
-    public final boolean areAllItemsEnabled() {
-        ListAdapter listAdapter = this.b;
-        if (listAdapter != null) {
-            return listAdapter.areAllItemsEnabled();
-        }
-        return true;
+    public /* synthetic */ k0(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // android.widget.Adapter
-    public final int getCount() {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter == null) {
-            return 0;
-        }
-        return spinnerAdapter.getCount();
-    }
-
-    @Override // android.widget.SpinnerAdapter
-    public final View getDropDownView(int i7, View view, ViewGroup viewGroup) {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter == null) {
-            return null;
-        }
-        return spinnerAdapter.getDropDownView(i7, view, viewGroup);
-    }
-
-    @Override // android.widget.Adapter
-    public final Object getItem(int i7) {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter == null) {
-            return null;
-        }
-        return spinnerAdapter.getItem(i7);
-    }
-
-    @Override // android.widget.Adapter
-    public final long getItemId(int i7) {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter == null) {
-            return -1L;
-        }
-        return spinnerAdapter.getItemId(i7);
-    }
-
-    @Override // android.widget.Adapter
-    public final int getItemViewType(int i7) {
-        return 0;
-    }
-
-    @Override // android.widget.Adapter
-    public final View getView(int i7, View view, ViewGroup viewGroup) {
-        return getDropDownView(i7, view, viewGroup);
-    }
-
-    @Override // android.widget.Adapter
-    public final int getViewTypeCount() {
-        return 1;
-    }
-
-    @Override // android.widget.Adapter
-    public final boolean hasStableIds() {
-        SpinnerAdapter spinnerAdapter = this.a;
-        return spinnerAdapter != null && spinnerAdapter.hasStableIds();
-    }
-
-    @Override // android.widget.Adapter
-    public final boolean isEmpty() {
-        return getCount() == 0;
-    }
-
-    @Override // android.widget.ListAdapter
-    public final boolean isEnabled(int i7) {
-        ListAdapter listAdapter = this.b;
-        if (listAdapter != null) {
-            return listAdapter.isEnabled(i7);
-        }
-        return true;
-    }
-
-    @Override // android.widget.Adapter
-    public final void registerDataSetObserver(DataSetObserver dataSetObserver) {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter != null) {
-            spinnerAdapter.registerDataSetObserver(dataSetObserver);
-        }
-    }
-
-    @Override // android.widget.Adapter
-    public final void unregisterDataSetObserver(DataSetObserver dataSetObserver) {
-        SpinnerAdapter spinnerAdapter = this.a;
-        if (spinnerAdapter != null) {
-            spinnerAdapter.unregisterDataSetObserver(dataSetObserver);
+    @Override // android.widget.AdapterView.OnItemClickListener
+    public final void onItemClick(AdapterView adapterView, View view, int i7, long j3) {
+        switch (this.a) {
+            case 0:
+                m0 m0Var = (m0) this.b;
+                p0 p0Var = m0Var.X;
+                p0Var.setSelection(i7);
+                if (p0Var.getOnItemClickListener() != null) {
+                    p0Var.performItemClick(view, i7, m0Var.U.getItemId(i7));
+                }
+                m0Var.dismiss();
+                break;
+            default:
+                ((SearchView) this.b).m(i7);
+                break;
         }
     }
 }

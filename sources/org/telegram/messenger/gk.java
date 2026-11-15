@@ -1,67 +1,40 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gk implements Runnable {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ qp b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ np b;
+    public final /* synthetic */ TL_update.TL_updatePeerBlocked c;
 
-    public /* synthetic */ gk(qp qpVar, long j3, long j10, ArrayList arrayList) {
-        this.b = qpVar;
-        this.d = j3;
-        this.e = j10;
-        this.c = arrayList;
+    public /* synthetic */ gk(np npVar, TL_update.TL_updatePeerBlocked tL_updatePeerBlocked, int i7) {
+        this.a = i7;
+        this.b = npVar;
+        this.c = tL_updatePeerBlocked;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        qp qpVar = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                yr messagesStorage = qpVar.getMessagesStorage();
-                int i10 = (int) this.e;
-                long j3 = this.d;
-                ArrayList arrayList = this.c;
-                qpVar.getMessagesStorage().R1(j3, -j3, arrayList, messagesStorage.P0(j3, arrayList, false, true, 5, i10));
-                break;
-            case 1:
-                qp qpVar2 = this.b;
-                ArrayList arrayList2 = this.c;
-                long j10 = this.d;
-                g0.h3(new fk(qpVar2, arrayList2, j10, 1));
-                yr messagesStorage2 = qpVar2.getMessagesStorage();
-                long j11 = this.e;
-                messagesStorage2.E(arrayList2, j11);
-                qpVar2.getMessagesStorage().R1(j11, j10, arrayList2, qpVar2.getMessagesStorage().P0(j11, arrayList2, false, true, 0, 0));
+                g0.h3(new gk(this.b, this.c, 1));
                 break;
             default:
-                k00 k00Var = qpVar.getMessagesController().q7;
-                long j12 = this.d;
-                long j13 = this.e;
-                k00Var.B(0, j12, j13, false);
-                qpVar.getMessagesStorage().h2(0, j12, j13, false);
-                qpVar.getNotificationCenter().k(qs.Z4, Long.valueOf(j12), Long.valueOf(j13), 0, this.c);
+                np npVar = this.b;
+                LongSparseIntArray longSparseIntArray = npVar.H0;
+                TL_update.TL_updatePeerBlocked tL_updatePeerBlocked = this.c;
+                long B1 = gj.B1(tL_updatePeerBlocked.peer_id);
+                if (!tL_updatePeerBlocked.blocked) {
+                    longSparseIntArray.delete(B1);
+                } else if (longSparseIntArray.indexOfKey(B1) < 0) {
+                    longSparseIntArray.put(B1, 1);
+                }
+                npVar.getNotificationCenter().k(43, new Object[0]);
+                npVar.P1().m0(B1, tL_updatePeerBlocked.blocked_my_stories_from, false);
                 break;
         }
-    }
-
-    public /* synthetic */ gk(qp qpVar, long j3, ArrayList arrayList, long j10) {
-        this.b = qpVar;
-        this.d = j3;
-        this.c = arrayList;
-        this.e = j10;
-    }
-
-    public /* synthetic */ gk(qp qpVar, ArrayList arrayList, long j3, long j10) {
-        this.b = qpVar;
-        this.c = arrayList;
-        this.d = j3;
-        this.e = j10;
     }
 }

@@ -1,9 +1,9 @@
 package b9;
 
 import android.os.Parcel;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a extends a8.q implements d0 {
     public a() {
@@ -11,12 +11,12 @@ public abstract class a extends a8.q implements d0 {
     }
 
     @Override // b9.d0
-    public void H() {
+    public void I() {
         throw new UnsupportedOperationException();
     }
 
     @Override // b9.d0
-    public void O(t0 t0Var) {
+    public void P(u0 u0Var) {
         throw new UnsupportedOperationException();
     }
 
@@ -34,9 +34,9 @@ public abstract class a extends a8.q implements d0 {
             case 6:
                 throw a8.p0.v(parcel);
             case 7:
-                t0 t0Var = (t0) i8.a.a(parcel, t0.CREATOR);
+                u0 u0Var = (u0) i8.a.a(parcel, u0.CREATOR);
                 i8.a.b(parcel);
-                O(t0Var);
+                P(u0Var);
                 break;
             case 8:
                 throw a8.p0.v(parcel);
@@ -46,7 +46,7 @@ public abstract class a extends a8.q implements d0 {
                 throw a8.p0.v(parcel);
             case 11:
                 i8.a.b(parcel);
-                H();
+                I();
                 break;
             case 12:
                 throw a8.p0.v(parcel);
@@ -69,7 +69,7 @@ public abstract class a extends a8.q implements d0 {
             case 21:
             case 24:
             case 25:
-            case qs.U /* 31 */:
+            case ns.U /* 31 */:
             case 32:
             case 33:
             default:
@@ -86,7 +86,7 @@ public abstract class a extends a8.q implements d0 {
                 throw a8.p0.v(parcel);
             case 29:
                 throw a8.p0.v(parcel);
-            case qs.T /* 30 */:
+            case ns.T /* 30 */:
                 throw a8.p0.v(parcel);
             case 34:
                 throw a8.p0.v(parcel);

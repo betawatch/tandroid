@@ -1,372 +1,225 @@
 package org.telegram.messenger;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
+import android.graphics.Typeface;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bq implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yr b;
-    public final /* synthetic */ a0.h c;
+    public final /* synthetic */ vr b;
+    public final /* synthetic */ TLRPC.EncryptedChat c;
 
-    public /* synthetic */ bq(yr yrVar, a0.h hVar, int i7) {
+    public /* synthetic */ bq(vr vrVar, TLRPC.EncryptedChat encryptedChat, int i7) {
         this.a = i7;
-        this.b = yrVar;
-        this.c = hVar;
+        this.b = vrVar;
+        this.c = encryptedChat;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:113:0x02de  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x02e3  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x02e8  */
-    /* JADX WARN: Removed duplicated region for block: B:122:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x02f5  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x02fa  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x02ff  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x0306  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0071 A[Catch: all -> 0x0042, Exception -> 0x0045, TryCatch #3 {Exception -> 0x0045, blocks: (B:36:0x0038, B:38:0x003e, B:41:0x005a, B:43:0x0071, B:44:0x0074, B:46:0x007d, B:47:0x0080, B:49:0x0089, B:50:0x008c, B:52:0x0095, B:53:0x0098, B:55:0x00a5, B:56:0x00a8, B:58:0x00ac, B:59:0x00af, B:61:0x00b3, B:62:0x00b6, B:64:0x00ba, B:65:0x00bd, B:73:0x0048, B:75:0x004c), top: B:35:0x0038, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x007d A[Catch: all -> 0x0042, Exception -> 0x0045, TryCatch #3 {Exception -> 0x0045, blocks: (B:36:0x0038, B:38:0x003e, B:41:0x005a, B:43:0x0071, B:44:0x0074, B:46:0x007d, B:47:0x0080, B:49:0x0089, B:50:0x008c, B:52:0x0095, B:53:0x0098, B:55:0x00a5, B:56:0x00a8, B:58:0x00ac, B:59:0x00af, B:61:0x00b3, B:62:0x00b6, B:64:0x00ba, B:65:0x00bd, B:73:0x0048, B:75:0x004c), top: B:35:0x0038, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0089 A[Catch: all -> 0x0042, Exception -> 0x0045, TryCatch #3 {Exception -> 0x0045, blocks: (B:36:0x0038, B:38:0x003e, B:41:0x005a, B:43:0x0071, B:44:0x0074, B:46:0x007d, B:47:0x0080, B:49:0x0089, B:50:0x008c, B:52:0x0095, B:53:0x0098, B:55:0x00a5, B:56:0x00a8, B:58:0x00ac, B:59:0x00af, B:61:0x00b3, B:62:0x00b6, B:64:0x00ba, B:65:0x00bd, B:73:0x0048, B:75:0x004c), top: B:35:0x0038, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0095 A[Catch: all -> 0x0042, Exception -> 0x0045, TryCatch #3 {Exception -> 0x0045, blocks: (B:36:0x0038, B:38:0x003e, B:41:0x005a, B:43:0x0071, B:44:0x0074, B:46:0x007d, B:47:0x0080, B:49:0x0089, B:50:0x008c, B:52:0x0095, B:53:0x0098, B:55:0x00a5, B:56:0x00a8, B:58:0x00ac, B:59:0x00af, B:61:0x00b3, B:62:0x00b6, B:64:0x00ba, B:65:0x00bd, B:73:0x0048, B:75:0x004c), top: B:35:0x0038, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00a5 A[Catch: all -> 0x0042, Exception -> 0x0045, TryCatch #3 {Exception -> 0x0045, blocks: (B:36:0x0038, B:38:0x003e, B:41:0x005a, B:43:0x0071, B:44:0x0074, B:46:0x007d, B:47:0x0080, B:49:0x0089, B:50:0x008c, B:52:0x0095, B:53:0x0098, B:55:0x00a5, B:56:0x00a8, B:58:0x00ac, B:59:0x00af, B:61:0x00b3, B:62:0x00b6, B:64:0x00ba, B:65:0x00bd, B:73:0x0048, B:75:0x004c), top: B:35:0x0038, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00ac A[Catch: all -> 0x0042, Exception -> 0x0045, TryCatch #3 {Exception -> 0x0045, blocks: (B:36:0x0038, B:38:0x003e, B:41:0x005a, B:43:0x0071, B:44:0x0074, B:46:0x007d, B:47:0x0080, B:49:0x0089, B:50:0x008c, B:52:0x0095, B:53:0x0098, B:55:0x00a5, B:56:0x00a8, B:58:0x00ac, B:59:0x00af, B:61:0x00b3, B:62:0x00b6, B:64:0x00ba, B:65:0x00bd, B:73:0x0048, B:75:0x004c), top: B:35:0x0038, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00b3 A[Catch: all -> 0x0042, Exception -> 0x0045, TryCatch #3 {Exception -> 0x0045, blocks: (B:36:0x0038, B:38:0x003e, B:41:0x005a, B:43:0x0071, B:44:0x0074, B:46:0x007d, B:47:0x0080, B:49:0x0089, B:50:0x008c, B:52:0x0095, B:53:0x0098, B:55:0x00a5, B:56:0x00a8, B:58:0x00ac, B:59:0x00af, B:61:0x00b3, B:62:0x00b6, B:64:0x00ba, B:65:0x00bd, B:73:0x0048, B:75:0x004c), top: B:35:0x0038, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x00ba A[Catch: all -> 0x0042, Exception -> 0x0045, TryCatch #3 {Exception -> 0x0045, blocks: (B:36:0x0038, B:38:0x003e, B:41:0x005a, B:43:0x0071, B:44:0x0074, B:46:0x007d, B:47:0x0080, B:49:0x0089, B:50:0x008c, B:52:0x0095, B:53:0x0098, B:55:0x00a5, B:56:0x00a8, B:58:0x00ac, B:59:0x00af, B:61:0x00b3, B:62:0x00b6, B:64:0x00ba, B:65:0x00bd, B:73:0x0048, B:75:0x004c), top: B:35:0x0038, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x007f  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x013f  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        SQLitePreparedStatement sQLitePreparedStatement;
-        SQLiteCursor sQLiteCursor;
-        SQLitePreparedStatement sQLitePreparedStatement2;
-        SQLiteDatabase sQLiteDatabase;
-        SQLiteDatabase sQLiteDatabase2;
-        boolean z9;
-        ArrayList arrayList;
-        boolean z10;
-        uv uvVar;
+        byte[] bArr;
+        byte[] bArr2;
+        byte[] bArr3;
+        byte[] bArr4;
+        byte[] bArr5;
         int i7 = this.a;
-        a0.h hVar = this.c;
-        yr yrVar = this.b;
-        int i10 = 0;
-        switch (i7) {
-            case 0:
-                int i11 = 1;
-                try {
-                    ArrayList arrayList2 = new ArrayList();
-                    int m10 = hVar.m();
-                    int i12 = 0;
-                    while (i12 < m10) {
-                        SQLiteCursor queryFinalized = yrVar.b.queryFinalized("SELECT mid, uid FROM webpage_pending_v2 WHERE id = " + hVar.j(i12), new Object[0]);
+        SQLitePreparedStatement sQLitePreparedStatement = null;
+        TLRPC.EncryptedChat encryptedChat = this.c;
+        vr vrVar = this.b;
+        try {
+            switch (i7) {
+                case 0:
+                    vrVar.getClass();
+                    try {
                         try {
-                            a0.h hVar2 = new a0.h();
-                            while (queryFinalized.next()) {
-                                long longValue = queryFinalized.longValue(i11);
-                                ArrayList arrayList3 = (ArrayList) hVar2.f(longValue);
-                                if (arrayList3 == null) {
-                                    arrayList3 = new ArrayList();
-                                    hVar2.k(arrayList3, longValue);
-                                }
-                                arrayList3.add(Integer.valueOf(queryFinalized.intValue(0)));
-                                i11 = 1;
+                            sQLitePreparedStatement = vrVar.b.executeFast("UPDATE enc_chats SET ttl = ? WHERE uid = ?");
+                            sQLitePreparedStatement.bindInteger(1, encryptedChat.ttl);
+                            sQLitePreparedStatement.bindInteger(2, encryptedChat.id);
+                            sQLitePreparedStatement.step();
+                        } catch (Exception e10) {
+                            vrVar.o(e10, true);
+                            if (sQLitePreparedStatement == null) {
+                                return;
                             }
-                            queryFinalized.dispose();
-                            if (!hVar2.i()) {
-                                int m11 = hVar2.m();
-                                for (int i13 = 0; i13 < m11; i13++) {
-                                    long j3 = hVar2.j(i13);
-                                    ArrayList arrayList4 = (ArrayList) hVar2.n(i13);
-                                    SQLiteDatabase sQLiteDatabase3 = yrVar.b;
-                                    Locale locale = Locale.US;
-                                    SQLiteCursor queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT mid, data FROM messages_v2 WHERE mid IN (" + TextUtils.join(",", arrayList4) + ") AND uid = " + j3, new Object[0]);
-                                    while (queryFinalized2.next()) {
-                                        try {
-                                            int intValue = queryFinalized2.intValue(0);
-                                            NativeByteBuffer byteBufferValue = queryFinalized2.byteBufferValue(1);
-                                            if (byteBufferValue != null) {
-                                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                                                TLdeserialize.readAttachPath(byteBufferValue, yrVar.getUserConfig().n);
-                                                byteBufferValue.reuse();
-                                                TLRPC.MessageMedia messageMedia = TLdeserialize.media;
-                                                if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
-                                                    TLdeserialize.id = intValue;
-                                                    messageMedia.webpage = (TLRPC.WebPage) hVar.n(i12);
-                                                    arrayList2.add(TLdeserialize);
-                                                }
-                                            }
-                                        } catch (Exception e10) {
-                                            e = e10;
-                                            sQLiteCursor = queryFinalized2;
-                                            sQLitePreparedStatement = null;
-                                            z9 = true;
-                                            sQLitePreparedStatement2 = null;
-                                            try {
-                                                yrVar.o(e, z9);
-                                                if (sQLiteCursor != null) {
-                                                    sQLiteCursor.dispose();
-                                                }
-                                                if (sQLitePreparedStatement2 != null) {
-                                                    sQLitePreparedStatement2.dispose();
-                                                }
-                                                if (sQLitePreparedStatement != null) {
-                                                    sQLitePreparedStatement.dispose();
-                                                }
-                                                sQLiteDatabase2 = yrVar.b;
-                                                if (sQLiteDatabase2 == null) {
-                                                    return;
-                                                }
-                                                sQLiteDatabase2.commitTransaction();
-                                                return;
-                                            } catch (Throwable th2) {
-                                                th = th2;
-                                                if (sQLiteCursor != null) {
-                                                    sQLiteCursor.dispose();
-                                                }
-                                                if (sQLitePreparedStatement2 != null) {
-                                                    sQLitePreparedStatement2.dispose();
-                                                }
-                                                if (sQLitePreparedStatement != null) {
-                                                    sQLitePreparedStatement.dispose();
-                                                }
-                                                sQLiteDatabase = yrVar.b;
-                                                if (sQLiteDatabase != null) {
-                                                    sQLiteDatabase.commitTransaction();
-                                                }
-                                                throw th;
-                                            }
-                                        } catch (Throwable th3) {
-                                            th = th3;
-                                            sQLiteCursor = queryFinalized2;
-                                            sQLitePreparedStatement = null;
-                                            sQLitePreparedStatement2 = null;
-                                            if (sQLiteCursor != null) {
-                                            }
-                                            if (sQLitePreparedStatement2 != null) {
-                                            }
-                                            if (sQLitePreparedStatement != null) {
-                                            }
-                                            sQLiteDatabase = yrVar.b;
-                                            if (sQLiteDatabase != null) {
-                                            }
-                                            throw th;
-                                        }
-                                    }
-                                    queryFinalized2.dispose();
-                                }
-                            }
-                            i12++;
-                            i11 = 1;
-                        } catch (Exception e11) {
-                            e = e11;
-                            sQLiteCursor = queryFinalized;
-                        } catch (Throwable th4) {
-                            th = th4;
-                            sQLiteCursor = queryFinalized;
                         }
+                        sQLitePreparedStatement.dispose();
+                        return;
+                    } catch (Throwable th2) {
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                        }
+                        throw th2;
                     }
-                    if (arrayList2.isEmpty()) {
-                        sQLiteDatabase2 = yrVar.b;
-                        if (sQLiteDatabase2 == null) {
+                case 1:
+                    try {
+                        bArr = encryptedChat.key_hash;
+                    } catch (Exception e11) {
+                        vrVar.o(e11, true);
+                        if (sQLitePreparedStatement == null) {
                             return;
                         }
-                    } else {
-                        yrVar.b.beginTransaction();
-                        SQLitePreparedStatement executeFast = yrVar.b.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?");
-                        try {
-                            SQLitePreparedStatement executeFast2 = yrVar.b.executeFast("UPDATE media_v4 SET data = ? WHERE mid = ? AND uid = ?");
-                            while (i10 < arrayList2.size()) {
-                                try {
-                                    TLRPC.Message message = (TLRPC.Message) arrayList2.get(i10);
-                                    ij.q5(message);
-                                    NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
-                                    message.serializeToStream(nativeByteBuffer);
-                                    executeFast.requery();
-                                    executeFast.bindByteBuffer(1, nativeByteBuffer);
-                                    executeFast.bindInteger(2, message.id);
-                                    executeFast.bindLong(3, ij.B0(message));
-                                    executeFast.step();
-                                    executeFast2.requery();
-                                    executeFast2.bindByteBuffer(1, nativeByteBuffer);
-                                    executeFast2.bindInteger(2, message.id);
-                                    executeFast2.bindLong(3, ij.B0(message));
-                                    executeFast2.step();
-                                    nativeByteBuffer.reuse();
-                                    i10++;
-                                } catch (Exception e12) {
-                                    e = e12;
-                                    sQLitePreparedStatement2 = executeFast;
-                                    sQLitePreparedStatement = executeFast2;
-                                    sQLiteCursor = null;
-                                    z9 = true;
-                                    yrVar.o(e, z9);
-                                    if (sQLiteCursor != null) {
-                                    }
-                                    if (sQLitePreparedStatement2 != null) {
-                                    }
-                                    if (sQLitePreparedStatement != null) {
-                                    }
-                                    sQLiteDatabase2 = yrVar.b;
-                                    if (sQLiteDatabase2 == null) {
-                                    }
-                                    sQLiteDatabase2.commitTransaction();
-                                    return;
-                                } catch (Throwable th5) {
-                                    th = th5;
-                                    sQLitePreparedStatement2 = executeFast;
-                                    sQLitePreparedStatement = executeFast2;
-                                    sQLiteCursor = null;
-                                    if (sQLiteCursor != null) {
-                                    }
-                                    if (sQLitePreparedStatement2 != null) {
-                                    }
-                                    if (sQLitePreparedStatement != null) {
-                                    }
-                                    sQLiteDatabase = yrVar.b;
-                                    if (sQLiteDatabase != null) {
-                                    }
-                                    throw th;
-                                }
-                            }
-                            executeFast.dispose();
-                            try {
-                                executeFast2.dispose();
-                                yrVar.b.commitTransaction();
-                                g0.h3(new sp(yrVar, arrayList2, 11));
-                                sQLiteDatabase2 = yrVar.b;
-                                if (sQLiteDatabase2 == null) {
-                                    return;
-                                }
-                            } catch (Exception e13) {
-                                e = e13;
-                                sQLitePreparedStatement = executeFast2;
-                                sQLiteCursor = null;
-                                z9 = true;
-                                sQLitePreparedStatement2 = null;
-                                yrVar.o(e, z9);
-                                if (sQLiteCursor != null) {
-                                }
-                                if (sQLitePreparedStatement2 != null) {
-                                }
-                                if (sQLitePreparedStatement != null) {
-                                }
-                                sQLiteDatabase2 = yrVar.b;
-                                if (sQLiteDatabase2 == null) {
-                                }
-                                sQLiteDatabase2.commitTransaction();
-                                return;
-                            } catch (Throwable th6) {
-                                th = th6;
-                                sQLitePreparedStatement = executeFast2;
-                                sQLiteCursor = null;
-                                sQLitePreparedStatement2 = null;
-                                if (sQLiteCursor != null) {
-                                }
-                                if (sQLitePreparedStatement2 != null) {
-                                }
-                                if (sQLitePreparedStatement != null) {
-                                }
-                                sQLiteDatabase = yrVar.b;
-                                if (sQLiteDatabase != null) {
-                                }
-                                throw th;
-                            }
-                        } catch (Exception e14) {
-                            e = e14;
-                            sQLitePreparedStatement2 = executeFast;
-                            sQLitePreparedStatement = null;
-                        } catch (Throwable th7) {
-                            th = th7;
-                            sQLitePreparedStatement2 = executeFast;
-                            sQLitePreparedStatement = null;
+                    }
+                    if (bArr != null) {
+                        if (bArr.length < 16) {
                         }
-                    }
-                } catch (Exception e15) {
-                    e = e15;
-                    sQLitePreparedStatement = null;
-                } catch (Throwable th8) {
-                    th = th8;
-                    sQLitePreparedStatement = null;
-                }
-                sQLiteDatabase2.commitTransaction();
-                return;
-            case 1:
-                int m12 = hVar.m();
-                for (int i14 = 0; i14 < m12; i14++) {
-                    yrVar.getNotificationCenter().k(49, Long.valueOf(hVar.j(i14)), hVar.n(i14));
-                }
-                return;
-            case 2:
-                ui mediaDataController = yrVar.getMediaDataController();
-                mediaDataController.q1.b();
-                if (hVar != null) {
-                    int m13 = hVar.m();
-                    while (i10 < m13) {
-                        long j10 = hVar.j(i10);
-                        Integer num = (Integer) hVar.n(i10);
-                        num.intValue();
-                        mediaDataController.q1.k(num, j10);
-                        i10++;
-                    }
-                    return;
-                }
-                return;
-            default:
-                vv G1 = yrVar.getMessagesController().G1();
-                ArrayList arrayList5 = G1.j;
-                ArrayList arrayList6 = new ArrayList();
-                boolean z11 = false;
-                for (int i15 = 0; i15 < hVar.m(); i15++) {
-                    long j11 = hVar.j(i15);
-                    ArrayList arrayList7 = (ArrayList) hVar.n(i15);
-                    int i16 = 0;
-                    for (int i17 = 0; i17 < arrayList7.size(); i17++) {
-                        i16 = Math.max(i16, ((Integer) arrayList7.get(i17)).intValue());
-                    }
-                    int i18 = 0;
-                    while (true) {
-                        if (i18 < arrayList5.size()) {
-                            arrayList = arrayList7;
-                            z10 = true;
-                            if (((uv) arrayList5.get(i18)).a == j11) {
-                                uvVar = (uv) arrayList5.get(i18);
-                            } else {
-                                i18++;
-                                arrayList7 = arrayList;
-                            }
-                        } else {
-                            arrayList = arrayList7;
-                            z10 = true;
-                            uvVar = null;
+                        sQLitePreparedStatement = vrVar.b.executeFast("UPDATE enc_chats SET data = ?, g = ?, authkey = ?, ttl = ?, layer = ?, seq_in = ?, seq_out = ?, use_count = ?, exchange_id = ?, key_date = ?, fprint = ?, fauthkey = ?, khash = ?, in_seq_no = ?, admin_id = ?, mtproto_seq = ? WHERE uid = ?");
+                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(encryptedChat.getObjectSize());
+                        byte[] bArr6 = encryptedChat.a_or_b;
+                        NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(bArr6 == null ? bArr6.length : 1);
+                        byte[] bArr7 = encryptedChat.auth_key;
+                        NativeByteBuffer nativeByteBuffer3 = new NativeByteBuffer(bArr7 == null ? bArr7.length : 1);
+                        byte[] bArr8 = encryptedChat.future_auth_key;
+                        NativeByteBuffer nativeByteBuffer4 = new NativeByteBuffer(bArr8 == null ? bArr8.length : 1);
+                        byte[] bArr9 = encryptedChat.key_hash;
+                        NativeByteBuffer nativeByteBuffer5 = new NativeByteBuffer(bArr9 == null ? bArr9.length : 1);
+                        encryptedChat.serializeToStream(nativeByteBuffer);
+                        sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
+                        bArr2 = encryptedChat.a_or_b;
+                        if (bArr2 != null) {
+                            nativeByteBuffer2.writeBytes(bArr2);
                         }
-                    }
-                    if (uvVar != null) {
-                        if (uvVar.i) {
-                            int max = Math.max(0, uvVar.e - arrayList.size());
-                            int i19 = uvVar.e;
-                            if (max != i19) {
-                                uvVar.e = Math.max(0, i19 - arrayList.size());
-                                z11 = z10;
-                            }
+                        bArr3 = encryptedChat.auth_key;
+                        if (bArr3 != null) {
+                            nativeByteBuffer3.writeBytes(bArr3);
                         }
-                        if (uvVar.i && uvVar.e <= 0) {
-                            G1.j(uvVar.a);
-                        } else if (uvVar.c <= i16) {
-                            arrayList6.add(uvVar);
+                        bArr4 = encryptedChat.future_auth_key;
+                        if (bArr4 != null) {
+                            nativeByteBuffer4.writeBytes(bArr4);
                         }
-                        z11 = z10;
-                    }
-                }
-                if (z11) {
-                    if (arrayList6.isEmpty()) {
-                        G1.l();
+                        bArr5 = encryptedChat.key_hash;
+                        if (bArr5 != null) {
+                            nativeByteBuffer5.writeBytes(bArr5);
+                        }
+                        sQLitePreparedStatement.bindByteBuffer(2, nativeByteBuffer2);
+                        sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer3);
+                        sQLitePreparedStatement.bindInteger(4, encryptedChat.ttl);
+                        sQLitePreparedStatement.bindInteger(5, encryptedChat.layer);
+                        sQLitePreparedStatement.bindInteger(6, encryptedChat.seq_in);
+                        sQLitePreparedStatement.bindInteger(7, encryptedChat.seq_out);
+                        sQLitePreparedStatement.bindInteger(8, (encryptedChat.key_use_count_in << 16) | encryptedChat.key_use_count_out);
+                        sQLitePreparedStatement.bindLong(9, encryptedChat.exchange_id);
+                        sQLitePreparedStatement.bindInteger(10, encryptedChat.key_create_date);
+                        sQLitePreparedStatement.bindLong(11, encryptedChat.future_key_fingerprint);
+                        sQLitePreparedStatement.bindByteBuffer(12, nativeByteBuffer4);
+                        sQLitePreparedStatement.bindByteBuffer(13, nativeByteBuffer5);
+                        sQLitePreparedStatement.bindInteger(14, encryptedChat.in_seq_no);
+                        sQLitePreparedStatement.bindLong(15, encryptedChat.admin_id);
+                        sQLitePreparedStatement.bindInteger(16, encryptedChat.mtproto_seq);
+                        sQLitePreparedStatement.bindInteger(17, encryptedChat.id);
+                        sQLitePreparedStatement.step();
+                        nativeByteBuffer.reuse();
+                        nativeByteBuffer2.reuse();
+                        nativeByteBuffer3.reuse();
+                        nativeByteBuffer4.reuse();
+                        nativeByteBuffer5.reuse();
+                        sQLitePreparedStatement.dispose();
                         return;
                     }
-                    int i20 = G1.a;
-                    long e16 = p10.i(i20).e();
-                    yr a02 = yr.a0(i20);
-                    a02.a.c(new jm(G1, a02, arrayList6, e16, 17));
+                    byte[] bArr10 = encryptedChat.auth_key;
+                    if (bArr10 != null) {
+                        Typeface typeface = g0.a;
+                        byte[] bArr11 = new byte[16];
+                        System.arraycopy(Utilities.n(bArr10), 0, bArr11, 0, 16);
+                        encryptedChat.key_hash = bArr11;
+                    }
+                    sQLitePreparedStatement = vrVar.b.executeFast("UPDATE enc_chats SET data = ?, g = ?, authkey = ?, ttl = ?, layer = ?, seq_in = ?, seq_out = ?, use_count = ?, exchange_id = ?, key_date = ?, fprint = ?, fauthkey = ?, khash = ?, in_seq_no = ?, admin_id = ?, mtproto_seq = ? WHERE uid = ?");
+                    NativeByteBuffer nativeByteBuffer6 = new NativeByteBuffer(encryptedChat.getObjectSize());
+                    byte[] bArr62 = encryptedChat.a_or_b;
+                    NativeByteBuffer nativeByteBuffer22 = new NativeByteBuffer(bArr62 == null ? bArr62.length : 1);
+                    byte[] bArr72 = encryptedChat.auth_key;
+                    NativeByteBuffer nativeByteBuffer32 = new NativeByteBuffer(bArr72 == null ? bArr72.length : 1);
+                    byte[] bArr82 = encryptedChat.future_auth_key;
+                    NativeByteBuffer nativeByteBuffer42 = new NativeByteBuffer(bArr82 == null ? bArr82.length : 1);
+                    byte[] bArr92 = encryptedChat.key_hash;
+                    NativeByteBuffer nativeByteBuffer52 = new NativeByteBuffer(bArr92 == null ? bArr92.length : 1);
+                    encryptedChat.serializeToStream(nativeByteBuffer6);
+                    sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer6);
+                    bArr2 = encryptedChat.a_or_b;
+                    if (bArr2 != null) {
+                    }
+                    bArr3 = encryptedChat.auth_key;
+                    if (bArr3 != null) {
+                    }
+                    bArr4 = encryptedChat.future_auth_key;
+                    if (bArr4 != null) {
+                    }
+                    bArr5 = encryptedChat.key_hash;
+                    if (bArr5 != null) {
+                    }
+                    sQLitePreparedStatement.bindByteBuffer(2, nativeByteBuffer22);
+                    sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer32);
+                    sQLitePreparedStatement.bindInteger(4, encryptedChat.ttl);
+                    sQLitePreparedStatement.bindInteger(5, encryptedChat.layer);
+                    sQLitePreparedStatement.bindInteger(6, encryptedChat.seq_in);
+                    sQLitePreparedStatement.bindInteger(7, encryptedChat.seq_out);
+                    sQLitePreparedStatement.bindInteger(8, (encryptedChat.key_use_count_in << 16) | encryptedChat.key_use_count_out);
+                    sQLitePreparedStatement.bindLong(9, encryptedChat.exchange_id);
+                    sQLitePreparedStatement.bindInteger(10, encryptedChat.key_create_date);
+                    sQLitePreparedStatement.bindLong(11, encryptedChat.future_key_fingerprint);
+                    sQLitePreparedStatement.bindByteBuffer(12, nativeByteBuffer42);
+                    sQLitePreparedStatement.bindByteBuffer(13, nativeByteBuffer52);
+                    sQLitePreparedStatement.bindInteger(14, encryptedChat.in_seq_no);
+                    sQLitePreparedStatement.bindLong(15, encryptedChat.admin_id);
+                    sQLitePreparedStatement.bindInteger(16, encryptedChat.mtproto_seq);
+                    sQLitePreparedStatement.bindInteger(17, encryptedChat.id);
+                    sQLitePreparedStatement.step();
+                    nativeByteBuffer6.reuse();
+                    nativeByteBuffer22.reuse();
+                    nativeByteBuffer32.reuse();
+                    nativeByteBuffer42.reuse();
+                    nativeByteBuffer52.reuse();
+                    sQLitePreparedStatement.dispose();
                     return;
-                }
-                return;
+                default:
+                    vrVar.getClass();
+                    try {
+                        try {
+                            sQLitePreparedStatement = vrVar.b.executeFast("UPDATE enc_chats SET layer = ? WHERE uid = ?");
+                            sQLitePreparedStatement.bindInteger(1, encryptedChat.layer);
+                            sQLitePreparedStatement.bindInteger(2, encryptedChat.id);
+                            sQLitePreparedStatement.step();
+                        } catch (Exception e12) {
+                            vrVar.o(e12, true);
+                            if (sQLitePreparedStatement == null) {
+                                return;
+                            }
+                        }
+                        sQLitePreparedStatement.dispose();
+                        return;
+                    } catch (Throwable th3) {
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                        }
+                        throw th3;
+                    }
+            }
+        } catch (Throwable th4) {
+            if (sQLitePreparedStatement != null) {
+            }
+            throw th4;
         }
+        if (sQLitePreparedStatement != null) {
+            sQLitePreparedStatement.dispose();
+        }
+        throw th4;
     }
 }

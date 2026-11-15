@@ -1,56 +1,56 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.os.StatFs;
-import java.io.File;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w70 implements Runnable {
+public final /* synthetic */ class w70 implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ int c;
 
-    public /* synthetic */ w70(LaunchActivity launchActivity, int i7, int i10) {
-        this.a = i10;
+    public /* synthetic */ w70(LaunchActivity launchActivity, int i7) {
+        this.a = i7;
         this.b = launchActivity;
-        this.c = i7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        File z9;
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
+        org.telegram.ui.ActionBar.e2 lastFragment;
         int i7 = this.a;
-        int i10 = this.c;
         LaunchActivity launchActivity = this.b;
         switch (i7) {
             case 0:
-                String str = LaunchActivity.B1;
-                ConnectionsManager.getInstance(launchActivity.O).cancelRequest(i10, true);
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                if (launchActivity.p0 != null && booleanValue && org.telegram.messenger.qc.c() < 100 && (lastFragment = launchActivity.p0.getLastFragment()) != null && !(lastFragment instanceof x90)) {
+                    int b10 = org.telegram.messenger.qc.b();
+                    org.telegram.ui.Components.cc a02 = org.telegram.ui.Components.cc.a0(lastFragment);
+                    org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(b10 / 100.0f, lastFragment.getThemedColor(org.telegram.ui.ActionBar.j6.Y5));
+                    String M0 = org.telegram.messenger.hd.M0(2131748715, null);
+                    String a03 = org.telegram.messenger.hd.a0("LowPowerEnabledSubtitle", null, 2131748716, String.format("%d%%", Integer.valueOf(b10)));
+                    String M02 = org.telegram.messenger.hd.M0(2131751435, null);
+                    q60 q60Var = new q60(launchActivity, 11);
+                    a02.getClass();
+                    Context W = a02.W();
+                    org.telegram.ui.ActionBar.e6 e6Var = a02.c;
+                    org.telegram.ui.Components.ub ubVar = new org.telegram.ui.Components.ub(W, e6Var);
+                    ubVar.a.setImageDrawable(k9Var);
+                    ubVar.b.setText(M0);
+                    ubVar.c.setText(a03);
+                    org.telegram.ui.Components.vb vbVar = new org.telegram.ui.Components.vb(a02.W(), e6Var, true);
+                    vbVar.e(M02);
+                    vbVar.b = q60Var;
+                    ubVar.setButton(vbVar);
+                    org.telegram.ui.Components.xb b11 = a02.b(ubVar, 2750);
+                    b11.j = 5000;
+                    b11.j();
+                    break;
+                }
                 break;
             default:
-                String str2 = LaunchActivity.B1;
-                if (org.telegram.messenger.p10.i(launchActivity.O).p()) {
-                    try {
-                        SharedPreferences e12 = org.telegram.messenger.qp.e1();
-                        int i11 = 2;
-                        if ((((i10 == 2 || i10 == 1) && Math.abs(launchActivity.w1 - System.currentTimeMillis()) > 240000) || Math.abs(e12.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (z9 = org.telegram.messenger.w7.z(4)) != null) {
-                            StatFs statFs = new StatFs(z9.getAbsolutePath());
-                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
-                            if (i10 > 0 || availableBlocksLong < 52428800) {
-                                if (i10 > 0) {
-                                    launchActivity.w1 = System.currentTimeMillis();
-                                }
-                                e12.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
-                                org.telegram.messenger.g0.h3(new v60(launchActivity, i11));
-                                break;
-                            }
-                        }
-                    } catch (Throwable unused) {
-                        return;
-                    }
-                }
+                TLRPC.User user = (TLRPC.User) obj;
+                String str = LaunchActivity.C1;
+                org.telegram.messenger.np.s1(launchActivity.P).x3(null, user, null, 0, null, false, false);
                 break;
         }
     }

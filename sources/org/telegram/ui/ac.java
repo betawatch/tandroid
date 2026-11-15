@@ -1,42 +1,19 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ac extends t11 {
-    public final /* synthetic */ vb e2;
-    public final /* synthetic */ k11[] f2;
-    public final /* synthetic */ rc g2;
+public final class ac extends e11 {
+    public final /* synthetic */ qc e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ac(rc rcVar, rc rcVar2, Activity activity, Integer num, int i7, org.telegram.ui.ActionBar.h6 h6Var, int i10, int i11, vb vbVar, k11[] k11VarArr) {
-        super(rcVar2, activity, true, num, i7, true, h6Var, i10, i11);
-        this.g2 = rcVar;
-        this.e2 = vbVar;
-        this.f2 = k11VarArr;
+    public ac(qc qcVar, zb zbVar) {
+        super(zbVar);
+        this.e = qcVar;
     }
 
-    @Override // org.telegram.ui.t11
-    public final long getDialogId() {
-        return this.g2.a;
-    }
-
-    @Override // org.telegram.ui.t11
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.t11
-    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        this.e2.a(Long.valueOf(l10 == null ? 0L : l10.longValue()), num, tL_starGiftUnique);
-        k11 k11Var = this.f2[0];
-        if (k11Var != null) {
-            this.g2.Q = null;
-            k11Var.dismiss();
-        }
+    @Override // org.telegram.ui.e11, android.widget.PopupWindow
+    public final void dismiss() {
+        super.dismiss();
+        this.e.R = null;
     }
 }

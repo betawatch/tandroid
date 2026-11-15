@@ -5,14 +5,14 @@ import android.os.Bundle;
 import java.lang.reflect.Constructor;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n0 implements s0 {
     public final Application a;
     public final r0 b;
     public final Bundle c;
     public final o d;
-    public final m.q e;
+    public final m.p e;
 
     public n0(Application application, w4.e eVar, Bundle bundle) {
         r0 r0Var;
@@ -44,28 +44,28 @@ public final class n0 implements s0 {
         Constructor a10 = (!isAssignableFrom || this.a == null) ? o0.a(cls, o0.b) : o0.a(cls, o0.a);
         if (a10 == null) {
             if (this.a != null) {
-                return this.b.i(cls);
+                return this.b.d(cls);
             }
             if (q0.c == null) {
                 q0.c = new q0();
             }
             q0 q0Var = q0.c;
             kotlin.jvm.internal.j.b(q0Var);
-            return q0Var.i(cls);
+            return q0Var.d(cls);
         }
-        m.q qVar = this.e;
-        kotlin.jvm.internal.j.b(qVar);
+        m.p pVar = this.e;
+        kotlin.jvm.internal.j.b(pVar);
         Bundle bundle = this.c;
-        Bundle c10 = qVar.c(str);
+        Bundle c10 = pVar.c(str);
         Class[] clsArr = i0.f;
         i0 b10 = j0.b(c10, bundle);
         SavedStateHandleController savedStateHandleController = new SavedStateHandleController(str, b10);
-        savedStateHandleController.c(oVar, qVar);
+        savedStateHandleController.c(oVar, pVar);
         n nVar = ((v) oVar).c;
         if (nVar == n.b || nVar.compareTo(n.d) >= 0) {
-            qVar.g();
+            pVar.g();
         } else {
-            oVar.a(new LegacySavedStateHandleController$tryToAddRecreator$1(oVar, qVar));
+            oVar.a(new LegacySavedStateHandleController$tryToAddRecreator$1(oVar, pVar));
         }
         p0 b11 = (!isAssignableFrom || (application = this.a) == null) ? o0.b(cls, a10, b10) : o0.b(cls, a10, application, b10);
         synchronized (b11.a) {
@@ -88,7 +88,7 @@ public final class n0 implements s0 {
     }
 
     @Override // androidx.lifecycle.s0
-    public final p0 i(Class cls) {
+    public final p0 d(Class cls) {
         String canonicalName = cls.getCanonicalName();
         if (canonicalName != null) {
             return a(cls, canonicalName);
@@ -97,7 +97,7 @@ public final class n0 implements s0 {
     }
 
     @Override // androidx.lifecycle.s0
-    public final p0 t(Class cls, y1.b bVar) {
+    public final p0 e(Class cls, y1.b bVar) {
         q0 q0Var = q0.b;
         LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
         String str = (String) linkedHashMap.get(q0Var);
@@ -113,6 +113,6 @@ public final class n0 implements s0 {
         Application application = (Application) linkedHashMap.get(q0.a);
         boolean isAssignableFrom = a.class.isAssignableFrom(cls);
         Constructor a10 = (!isAssignableFrom || application == null) ? o0.a(cls, o0.b) : o0.a(cls, o0.a);
-        return a10 == null ? this.b.t(cls, bVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a10, j0.c(bVar)) : o0.b(cls, a10, application, j0.c(bVar));
+        return a10 == null ? this.b.e(cls, bVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a10, j0.c(bVar)) : o0.b(cls, a10, application, j0.c(bVar));
     }
 }

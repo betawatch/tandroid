@@ -1,99 +1,198 @@
 package ui;
 
-import android.util.Base64;
-import e5.k;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.g0;
+import android.graphics.Canvas;
+import android.graphics.RecordingCanvas;
+import android.graphics.RectF;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
+import android.graphics.Shader;
+import android.os.Build;
+import android.support.v4.media.session.w;
+import dh.i;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i b;
+public final class f implements a, dh.b, si.a {
+    public final a a;
+    public i c;
+    public dh.g d;
+    public int e;
+    public a f;
+    public ri.c h;
+    public boolean n;
+    public boolean r;
+    public RecordingCanvas s;
+    public final xe.b w = new xe.b();
+    public final RenderNode b = w.c();
 
-    public /* synthetic */ f(i iVar, int i7) {
-        this.a = i7;
-        this.b = iVar;
+    public f(a aVar) {
+        this.a = aVar;
     }
 
-    private final void a() {
-        i iVar = this.b;
-        iVar.g();
-        synchronized (iVar.a) {
-            try {
-                if (iVar.u) {
-                    return;
-                }
-                g0.i3(new f(iVar, 2), 1000L);
-            } catch (Throwable th2) {
-                throw th2;
+    @Override // si.a
+    public final int a() {
+        ri.c cVar = this.h;
+        if (cVar == null) {
+            cVar = null;
+        }
+        if (cVar != null) {
+            return cVar.a();
+        }
+        return 0;
+    }
+
+    @Override // dh.b
+    public final fh.g b() {
+        fh.g gVar = new fh.g(this, this, this);
+        c(gVar);
+        return gVar;
+    }
+
+    @Override // ui.a
+    public final void b0(float f10, float f11, float f12, float f13, Canvas canvas) {
+        dh.g gVar;
+        ri.c cVar;
+        if (!canvas.isHardwareAccelerated()) {
+            a aVar = this.a;
+            if (aVar != null) {
+                aVar.b0(f10, f11, f12, f13, canvas);
+                return;
             }
+            return;
+        }
+        if (this.r) {
+            throw new IllegalStateException();
+        }
+        a aVar2 = this.f;
+        if (aVar2 != null) {
+            aVar2.b0(f10, f11, f12, f13, canvas);
+        }
+        canvas.save();
+        if (!this.n) {
+            canvas.clipRect(f10, f11, f12, f13);
+        }
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 31 && (cVar = this.h) != null) {
+            cVar.b0(f10, f11, f12, f13, canvas);
+        } else if (i7 < 31 || (gVar = this.d) == null) {
+            canvas.drawRenderNode(this.b);
+        } else {
+            gVar.c(canvas, this.e);
+        }
+        canvas.restore();
+    }
+
+    @Override // dh.b
+    public final void c(fh.g gVar) {
+        this.w.add(gVar);
+    }
+
+    @Override // si.a
+    public final void d(float f10, float f11, int i7, Canvas canvas, RectF rectF) {
+        Canvas canvas2;
+        dh.g gVar;
+        ri.c cVar = this.h;
+        if (cVar == null) {
+            cVar = null;
+        }
+        ri.c cVar2 = cVar;
+        if (this.f != null || cVar2 == null) {
+            canvas.save();
+            float f12 = 1.0f / i7;
+            canvas.scale(f12, f12);
+            canvas.translate(-f10, -f11);
+            a aVar = this.f;
+            if (aVar != null) {
+                float f13 = i7 * 2;
+                aVar.b0(rectF.left - f13, rectF.top - f13, rectF.right + f13, rectF.bottom + f13, canvas);
+                canvas2 = canvas;
+            } else {
+                canvas2 = canvas;
+            }
+            if (cVar2 == null && Build.VERSION.SDK_INT >= 31 && (gVar = this.d) != null) {
+                gVar.c(canvas2, this.e);
+            }
+            canvas2.restore();
+        } else {
+            canvas2 = canvas;
+        }
+        if (cVar2 != null) {
+            cVar2.d(f10, f11, i7, canvas2, rectF);
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x008a, code lost:
-    
-        return;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                i iVar = this.b;
-                e5.f fVar = iVar.p;
-                if (fVar != null) {
-                    try {
-                        if (!k.c.b()) {
-                            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
-                        }
-                        fVar.a.postMessage("{\"t\":\"close\"}");
-                    } catch (Exception unused) {
-                    }
-                }
-                iVar.g();
-                return;
-            case 1:
-                i.d(this.b);
-                return;
-            case 2:
-                i.c(this.b);
-                return;
-            case 3:
-                a();
-                return;
-            default:
-                i iVar2 = this.b;
-                while (true) {
-                    synchronized (iVar2.a) {
-                        e5.f fVar2 = iVar2.p;
-                        if (!iVar2.u && fVar2 != null && iVar2.r && !iVar2.n.isEmpty()) {
-                            byte[] bArr = (byte[]) iVar2.n.removeFirst();
-                            iVar2.w -= bArr.length;
-                            try {
-                                if (!iVar2.q) {
-                                    String str = "tproxy-base64:" + Base64.encodeToString(bArr, 2);
-                                    if (!k.c.b()) {
-                                        throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
-                                    }
-                                    fVar2.a.postMessage(str);
-                                } else {
-                                    if (!k.a.b()) {
-                                        throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
-                                    }
-                                    fVar2.a.postMessageWithPayload(new af.a(new e5.h(bArr)));
-                                }
-                            } catch (Exception e10) {
-                                a8.g(e10, true);
-                                iVar2.h();
-                                return;
-                            }
-                        }
-                    }
-                }
-                break;
+    @Override // si.a
+    public final int e() {
+        dh.g gVar;
+        dh.e eVar;
+        ri.c cVar = this.h;
+        if (cVar == null) {
+            cVar = null;
         }
+        if (cVar != null) {
+            return cVar.e();
+        }
+        if (Build.VERSION.SDK_INT < 31 || (gVar = this.d) == null) {
+            return 1;
+        }
+        int i7 = this.e;
+        if (!gVar.a || gVar.k == 0) {
+            return 1;
+        }
+        dh.f fVar = (dh.f) gVar.j.get(0);
+        return ((i7 == -2 || i7 == -4) && (eVar = fVar.c) != null) ? eVar.e : fVar.b.e;
+    }
+
+    @Override // si.a
+    public final int f() {
+        ri.c cVar = this.h;
+        if (cVar == null) {
+            cVar = null;
+        }
+        if (cVar != null) {
+            return cVar.f();
+        }
+        return 0;
+    }
+
+    @Override // si.a
+    public final boolean g() {
+        return e() > 1;
+    }
+
+    public final RecordingCanvas h(int i7, int i10) {
+        if (this.r) {
+            throw new IllegalStateException();
+        }
+        this.r = true;
+        this.b.setPosition(0, 0, i7, i10);
+        RecordingCanvas beginRecording = this.b.beginRecording(i7, i10);
+        this.s = beginRecording;
+        return beginRecording;
+    }
+
+    public final void i() {
+        if (!this.r) {
+            throw new IllegalStateException();
+        }
+        this.b.endRecording();
+        this.r = false;
+        this.s = null;
+    }
+
+    public final boolean j(int i7, int i10) {
+        return (this.b.hasDisplayList() && this.b.getWidth() == i7 && this.b.getHeight() == i10) ? false : true;
+    }
+
+    public final void k(float f10) {
+        this.b.setRenderEffect(f10 > 0.0f ? RenderEffect.createBlurEffect(f10, f10, Shader.TileMode.CLAMP) : null);
+    }
+
+    public final void l(float f10, RenderEffect renderEffect) {
+        this.b.setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(f10, f10, Shader.TileMode.CLAMP), renderEffect));
+    }
+
+    public final void m(int i7, int i10) {
+        this.b.setPosition(0, 0, i7, i10);
     }
 }

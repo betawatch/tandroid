@@ -1,71 +1,43 @@
 package di;
 
-import android.graphics.Typeface;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class t0 {
-    public int a;
-    public long b;
-    public int c;
-    public long d;
-    public int e;
-    public ArrayList f;
+    public final long a;
+    public final TLRPC.Document b;
+    public final long c;
+    public final int d;
+    public final String e;
+    public bc f;
+    public int g = -1;
+    public RadialGradient h;
+    public Paint i;
+    public org.telegram.ui.Components.g5 j;
+    public org.telegram.ui.Components.u5 k;
+    public final RectF l;
+    public final org.telegram.ui.Components.dc m;
 
-    public final float a() {
-        int currentTime = ConnectionsManager.getInstance(this.a).getCurrentTime();
-        ArrayList arrayList = this.f;
-        int size = arrayList.size();
-        int i7 = currentTime;
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            s0 s0Var = (s0) obj;
-            if (s0Var.g > 0) {
-                i7 = Math.min(i7, s0Var.d);
-                i10 = Math.max(i10, t.b(this.a, (int) s0Var.g, 0) + s0Var.d);
-            }
-        }
-        Typeface typeface = org.telegram.messenger.g0.a;
-        return (currentTime - i10) / (i7 - i10);
-    }
-
-    public final int b() {
-        int currentTime = ConnectionsManager.getInstance(this.a).getCurrentTime();
-        ArrayList arrayList = this.f;
-        int size = arrayList.size();
-        int i7 = 0;
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            s0 s0Var = (s0) obj;
-            long j3 = s0Var.g;
-            if (j3 > 0 && currentTime - s0Var.d <= t.b(this.a, (int) j3, 0)) {
-                i7 += (int) s0Var.g;
-            }
-        }
-        this.d = Math.max(this.d, i7);
-        return i7;
-    }
-
-    public final void c() {
-        int currentTime = ConnectionsManager.getInstance(this.a).getCurrentTime();
-        ArrayList arrayList = this.f;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            s0 s0Var = (s0) obj;
-            if (s0Var.g > 0) {
-                currentTime = Math.min(currentTime, s0Var.d);
-            }
-        }
-        this.c = currentTime;
+    public t0(u0 u0Var, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        new Matrix();
+        this.l = new RectF();
+        this.m = new org.telegram.ui.Components.dc(u0Var);
+        this.a = tL_starGiftUnique.id;
+        TLRPC.Document document = tL_starGiftUnique.getDocument();
+        this.b = document;
+        this.c = document == null ? 0L : document.id;
+        this.d = ((TL_stars.starGiftAttributeBackdrop) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class)).center_color | (-16777216);
+        this.e = tL_starGiftUnique.slug;
+        this.f = new bc(1, 6);
+        float L = org.telegram.messenger.g0.L(36.0f);
+        float f10 = (-L) / 2.0f;
+        float f11 = L / 2.0f;
+        this.f.c.set(f10, f10, f11, f11);
     }
 }

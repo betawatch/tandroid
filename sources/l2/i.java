@@ -6,9 +6,9 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class i implements w0 {
+public final class i implements t0 {
     public static i h;
     public boolean a;
     public boolean b;
@@ -20,7 +20,7 @@ public final class i implements w0 {
     public i() {
         this.c = new ArrayList();
         this.d = new ArrayList();
-        this.e = new ti.q(this);
+        this.e = new wi.p(this);
     }
 
     public static i d() {
@@ -34,126 +34,126 @@ public final class i implements w0 {
         Log.d("PIP_DEBUG", "[utils.pip] " + str);
     }
 
-    @Override // l2.w0
+    @Override // l2.t0
     public long a() {
         if (this.a) {
-            return ((u1) this.c).a();
+            return ((q1) this.c).a();
         }
-        w0 w0Var = (w0) this.f;
-        w0Var.getClass();
-        return w0Var.a();
+        t0 t0Var = (t0) this.f;
+        t0Var.getClass();
+        return t0Var.a();
     }
 
-    @Override // l2.w0
+    @Override // l2.t0
     public boolean b() {
         if (this.a) {
-            ((u1) this.c).getClass();
+            ((q1) this.c).getClass();
             return false;
         }
-        w0 w0Var = (w0) this.f;
-        w0Var.getClass();
-        return w0Var.b();
+        t0 t0Var = (t0) this.f;
+        t0Var.getClass();
+        return t0Var.b();
     }
 
-    public ti.o c() {
+    public wi.n c() {
         ArrayList arrayList = (ArrayList) this.c;
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            ti.o oVar = (ti.o) arrayList.get(i7);
-            if (oVar.e()) {
-                return oVar;
+            wi.n nVar = (wi.n) arrayList.get(i7);
+            if (nVar.e()) {
+                return nVar;
             }
         }
         return null;
     }
 
-    @Override // l2.w0
+    @Override // l2.t0
     public void e(e2.w0 w0Var) {
-        w0 w0Var2 = (w0) this.f;
-        if (w0Var2 != null) {
-            w0Var2.e(w0Var);
-            w0Var = ((w0) this.f).j();
+        t0 t0Var = (t0) this.f;
+        if (t0Var != null) {
+            t0Var.e(w0Var);
+            w0Var = ((t0) this.f).j();
         }
-        ((u1) this.c).e(w0Var);
+        ((q1) this.c).e(w0Var);
     }
 
     public void f() {
-        ((ti.q) this.e).j();
+        ((wi.p) this.e).j();
     }
 
     public void h(b bVar) {
-        w0 w0Var;
-        w0 h7 = bVar.h();
-        if (h7 == null || h7 == (w0Var = (w0) this.f)) {
+        t0 t0Var;
+        t0 h7 = bVar.h();
+        if (h7 == null || h7 == (t0Var = (t0) this.f)) {
             return;
         }
-        if (w0Var != null) {
+        if (t0Var != null) {
             throw new l(2, new IllegalStateException("Multiple renderer media clocks enabled."), 1000);
         }
         this.f = h7;
         this.e = bVar;
-        h7.e((e2.w0) ((u1) this.c).e);
+        h7.e((e2.w0) ((q1) this.c).e);
     }
 
-    public void i(ti.o oVar, int i7) {
+    public void i(wi.n nVar, int i7) {
         g("dismissed, prevState=" + i7);
-        ((ArrayList) this.c).remove(oVar);
-        ti.q qVar = (ti.q) this.e;
-        if (oVar == qVar.e) {
-            qVar.e = null;
+        ((ArrayList) this.c).remove(nVar);
+        wi.p pVar = (wi.p) this.e;
+        if (nVar == pVar.e) {
+            pVar.e = null;
         }
-        if (oVar == qVar.f) {
-            ti.p pVar = qVar.g;
-            View view = qVar.h;
-            qVar.f = null;
-            qVar.g = null;
-            qVar.h = null;
-            ti.r rVar = qVar.c;
-            if (rVar != null) {
-                rVar.a(null, null);
+        if (nVar == pVar.f) {
+            wi.o oVar = pVar.g;
+            View view = pVar.h;
+            pVar.f = null;
+            pVar.g = null;
+            pVar.h = null;
+            wi.q qVar = pVar.c;
+            if (qVar != null) {
+                qVar.a(null, null);
             }
-            if (pVar != null) {
-                SurfaceTexture surfaceTexture = pVar.a;
-                pVar.a = null;
+            if (oVar != null) {
+                SurfaceTexture surfaceTexture = oVar.a;
+                oVar.a = null;
                 if (surfaceTexture != null) {
                     surfaceTexture.release();
                 }
             }
             if (view != null) {
-                oVar.a.y(view);
+                nVar.a.x(view);
             }
-            LaunchActivity launchActivity = qVar.b;
-            if (launchActivity != null && qVar.i && org.telegram.messenger.g0.H1(launchActivity)) {
-                qVar.b.moveTaskToBack(false);
+            LaunchActivity launchActivity = pVar.b;
+            if (launchActivity != null && pVar.i && org.telegram.messenger.g0.H1(launchActivity)) {
+                pVar.b.moveTaskToBack(false);
             }
-            qVar.i = false;
-            bg.v0 v0Var = qVar.d;
-            if (v0Var != null) {
-                v0Var.c(false);
+            pVar.i = false;
+            bg.u0 u0Var = pVar.d;
+            if (u0Var != null) {
+                u0Var.c(false);
             }
         }
         f();
     }
 
-    @Override // l2.w0
+    @Override // l2.t0
     public e2.w0 j() {
-        w0 w0Var = (w0) this.f;
-        return w0Var != null ? w0Var.j() : (e2.w0) ((u1) this.c).e;
+        t0 t0Var = (t0) this.f;
+        return t0Var != null ? t0Var.j() : (e2.w0) ((q1) this.c).e;
     }
 
-    public ti.o k(ti.m mVar) {
-        ti.o oVar = new ti.o(this, mVar);
-        ((ArrayList) this.c).add(oVar);
-        g("register " + mVar);
+    public wi.n k(wi.l lVar) {
+        wi.n nVar = new wi.n(this, lVar);
+        ((ArrayList) this.c).add(nVar);
+        g("register " + lVar);
         f();
-        return oVar;
+        return nVar;
     }
 
-    public i(r0 r0Var, h2.g0 g0Var) {
-        this.d = r0Var;
-        u1 u1Var = new u1();
-        u1Var.d = g0Var;
-        u1Var.e = e2.w0.d;
-        this.c = u1Var;
+    public i(o0 o0Var, h2.g0 g0Var) {
+        this.d = o0Var;
+        q1 q1Var = new q1();
+        q1Var.d = g0Var;
+        q1Var.e = e2.w0.d;
+        this.c = q1Var;
         this.a = true;
     }
 }

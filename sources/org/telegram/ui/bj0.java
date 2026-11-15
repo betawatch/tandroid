@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class bj0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final class bj0 extends FrameLayout {
                     if (lineCount > 1) {
                         i10 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.g0.L(64.0f), TLObject.FLAG_30);
                     }
-                    if (org.telegram.messenger.id.a0) {
+                    if (org.telegram.messenger.hd.a0) {
                         float f10 = 0.0f;
                         while (true) {
                             if (i11 < lineCount) {
@@ -103,7 +103,7 @@ public final class bj0 extends FrameLayout {
                     if (lineCount2 > 1) {
                         i10 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount2 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.g0.L(64.0f), TLObject.FLAG_30);
                     }
-                    if (org.telegram.messenger.id.a0) {
+                    if (org.telegram.messenger.hd.a0) {
                         float f11 = 0.0f;
                         while (true) {
                             if (i12 < lineCount2) {
@@ -132,7 +132,7 @@ public final class bj0 extends FrameLayout {
                     if (lineCount3 > 1) {
                         i10 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount3 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.g0.L(64.0f), TLObject.FLAG_30);
                     }
-                    if (org.telegram.messenger.id.a0) {
+                    if (org.telegram.messenger.hd.a0) {
                         float f12 = 0.0f;
                         while (true) {
                             if (i13 < lineCount3) {
@@ -153,13 +153,13 @@ public final class bj0 extends FrameLayout {
                 break;
             default:
                 super.onMeasure(i7, i10);
-                org.telegram.ui.Components.ch0 ch0Var = ((org.telegram.ui.Components.lg0) this.d).q1;
-                float measuredHeight = (r0.p1 / 768.0f) * ((kg.k) this.b).getMeasuredHeight();
+                org.telegram.ui.Components.fh0 fh0Var = ((org.telegram.ui.Components.og0) this.d).r1;
+                float measuredHeight = (r0.q1 / 768.0f) * ((kg.k) this.b).getMeasuredHeight();
                 if (this.c != measuredHeight) {
                     this.c = measuredHeight;
-                    ViewGroup.LayoutParams layoutParams = ch0Var.getLayoutParams();
+                    ViewGroup.LayoutParams layoutParams = fh0Var.getLayoutParams();
                     int i14 = (int) measuredHeight;
-                    ch0Var.getLayoutParams().width = i14;
+                    fh0Var.getLayoutParams().width = i14;
                     layoutParams.height = i14;
                     super.onMeasure(i7, i10);
                     break;
@@ -169,10 +169,10 @@ public final class bj0 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bj0(org.telegram.ui.Components.lg0 lg0Var, Context context, kg.k kVar) {
+    public bj0(org.telegram.ui.Components.og0 og0Var, Context context, kg.k kVar) {
         super(context);
         this.a = 3;
-        this.d = lg0Var;
+        this.d = og0Var;
         this.b = kVar;
     }
 }

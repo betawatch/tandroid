@@ -1,37 +1,45 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class bb0 implements org.telegram.ui.Components.rt0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-    public /* synthetic */ bb0(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class bb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oc0 b;
+
+    public /* synthetic */ bb0(oc0 oc0Var, int i7) {
         this.a = i7;
-        this.b = f2Var;
+        this.b = oc0Var;
     }
 
-    @Override // org.telegram.ui.Components.rt0
-    public final void K(int i7, boolean z9) {
-        td0 td0Var;
-        hi0 hi0Var;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                fe0 fe0Var = (fe0) this.b;
-                if (i7 > org.telegram.messenger.g0.L(20.0f) && fe0Var.z1()) {
-                    org.telegram.messenger.g0.v1(fe0Var.fragmentView);
-                }
-                if (i7 <= org.telegram.messenger.g0.L(20.0f) && (td0Var = fe0Var.T) != null) {
-                    td0Var.run();
-                    fe0Var.T = null;
-                    break;
-                }
+                this.b.N.m();
+                break;
+            case 1:
+                oc0 oc0Var = this.b;
+                oc0Var.O = null;
+                oc0Var.P = null;
+                oc0Var.o(true);
+                oc0Var.e.j(null, null, oc0Var.f, null);
+                xc xcVar = oc0Var.n;
+                org.telegram.ui.Components.ch0 ch0Var = oc0Var.K;
+                xcVar.setAnimation(ch0Var);
+                ch0Var.M(0);
+                oc0Var.M = true;
+                break;
+            case 2:
+                this.b.M = true;
                 break;
             default:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
-                if (i7 >= org.telegram.messenger.g0.L(20.0f) && (hi0Var = passcodeActivity.T) != null) {
-                    hi0Var.run();
-                    passcodeActivity.T = null;
+                EditTextBoldCursor editTextBoldCursor = this.b.c;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    org.telegram.messenger.g0.J3(editTextBoldCursor);
                     break;
                 }
                 break;

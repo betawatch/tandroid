@@ -1,10 +1,15 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class z3 extends hb0 {
-    @Override // org.telegram.ui.Components.hb0
-    public final CharSequence d(int i7) {
-        return org.telegram.messenger.id.G(i7, "Minutes", new Object[0]);
+public final class z3 extends s4 {
+    @Override // android.widget.TextView, android.view.View
+    public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
+        editorInfo.imeOptions &= -1073741825;
+        return onCreateInputConnection;
     }
 }

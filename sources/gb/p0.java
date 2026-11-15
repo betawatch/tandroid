@@ -1,34 +1,51 @@
 package gb;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.os.Build;
+import org.telegram.ui.Components.cf;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p0 {
-    public final x0 a;
-    public final b b;
+    public static final p0 a = new p0();
+    public static final cf b;
 
-    public p0(x0 x0Var, b bVar) {
-        n nVar = n.b;
-        this.a = x0Var;
-        this.b = bVar;
+    static {
+        pa.d dVar = new pa.d();
+        dVar.b(o0.class, g.a);
+        dVar.b(v0.class, h.a);
+        dVar.b(k.class, e.a);
+        dVar.b(b.class, d.a);
+        dVar.b(a.class, c.a);
+        dVar.b(e0.class, f.a);
+        dVar.d = true;
+        b = new cf(dVar);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof p0)) {
-            return false;
-        }
-        p0 p0Var = (p0) obj;
-        n nVar = n.b;
-        return this.a.equals(p0Var.a) && this.b.equals(p0Var.b);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + ((this.a.hashCode() + (n.b.hashCode() * 31)) * 31);
-    }
-
-    public final String toString() {
-        return "SessionEvent(eventType=" + n.b + ", sessionData=" + this.a + ", applicationInfo=" + this.b + ')';
+    public static b a(o9.g gVar) {
+        gVar.a();
+        Context context = gVar.a;
+        kotlin.jvm.internal.j.d(context, "getApplicationContext(...)");
+        String packageName = context.getPackageName();
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
+        String valueOf = Build.VERSION.SDK_INT >= 28 ? String.valueOf(packageInfo.getLongVersionCode()) : String.valueOf(packageInfo.versionCode);
+        gVar.a();
+        String str = gVar.c.b;
+        kotlin.jvm.internal.j.d(str, "getApplicationId(...)");
+        String MODEL = Build.MODEL;
+        kotlin.jvm.internal.j.d(MODEL, "MODEL");
+        String RELEASE = Build.VERSION.RELEASE;
+        kotlin.jvm.internal.j.d(RELEASE, "RELEASE");
+        y yVar = y.b;
+        kotlin.jvm.internal.j.b(packageName);
+        String str2 = packageInfo.versionName;
+        String str3 = str2 == null ? valueOf : str2;
+        String MANUFACTURER = Build.MANUFACTURER;
+        kotlin.jvm.internal.j.d(MANUFACTURER, "MANUFACTURER");
+        gVar.a();
+        e0 b10 = f0.b(context);
+        gVar.a();
+        return new b(str, new a(packageName, str3, valueOf, b10, f0.a(context)));
     }
 }

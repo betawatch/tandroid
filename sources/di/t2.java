@@ -1,44 +1,82 @@
 package di;
 
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d90;
+import android.content.DialogInterface;
+import java.util.Arrays;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class t2 implements d90 {
-    public final /* synthetic */ j4 a;
+public final /* synthetic */ class t2 implements z10 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public t2(j4 j4Var) {
-        this.a = j4Var;
+    public /* synthetic */ t2(c6 c6Var, boolean z10, vf.b bVar, Runnable runnable, DialogInterface dialogInterface) {
+        this.c = c6Var;
+        this.b = z10;
+        this.d = bVar;
+        this.e = runnable;
+        this.f = dialogInterface;
     }
 
-    @Override // org.telegram.ui.Components.d90
-    public final void G1(String str) {
-        o2 o2Var = this.a.K1;
-        o2Var.Q();
-        o2Var.U0.h(str);
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                c6 c6Var = (c6) this.c;
+                vf.b bVar = (vf.b) this.d;
+                Runnable runnable = (Runnable) this.e;
+                DialogInterface dialogInterface = (DialogInterface) this.f;
+                if (!((Boolean) obj).booleanValue()) {
+                    bVar.c(false);
+                    dialogInterface.dismiss();
+                    runnable.run();
+                    break;
+                } else {
+                    m10 i7 = m10.i(c6Var.a);
+                    i7.y = null;
+                    i7.v(false);
+                    c6Var.W1(this.b, bVar, runnable);
+                    break;
+                }
+            default:
+                org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) this.c;
+                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) this.d;
+                x21 x21Var = (x21) this.e;
+                org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) this.f;
+                byte[] bArr = (byte[]) obj;
+                if (!d2Var.j(z1Var) && d2Var.A(z1Var)) {
+                    TL_wallet.tonConnectClaimRequest tonconnectclaimrequest = new TL_wallet.tonConnectClaimRequest();
+                    tonconnectclaimrequest.session_id = z1Var.a.id;
+                    tonconnectclaimrequest.msg_id = z1Var.b;
+                    tonconnectclaimrequest.app_request_id = z1Var.d;
+                    boolean z10 = this.b;
+                    tonconnectclaimrequest.declined = z10;
+                    tonconnectclaimrequest.challenge_answer = bArr;
+                    d2Var.f.sendRequestTyped(tonconnectclaimrequest, new d3.b(1), new org.telegram.ui.Wallet.u1(d2Var, bArr, z1Var, x21Var, z10, i0Var));
+                    break;
+                } else {
+                    if (bArr != null) {
+                        Arrays.fill(bArr, (byte) 0);
+                    }
+                    x21Var.a("Request expired or wallet changed");
+                    break;
+                }
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.d90
-    public final void M(TLRPC.BotInlineResult botInlineResult, boolean z9, int i7) {
-        j4 j4Var = this.a;
-        org.telegram.ui.Components.u4.X(j4Var.l2, 1, j4Var.k1, new r2(i7, 0, this, botInlineResult, z9));
-    }
-
-    @Override // org.telegram.ui.Components.d90
-    public final Paint.FontMetricsInt R0() {
-        return this.a.K1.getEditField().getPaint().getFontMetricsInt();
-    }
-
-    @Override // org.telegram.ui.Components.d90
-    public final void e1(TLRPC.TL_document tL_document, String str, Object obj) {
-        j4 j4Var = this.a;
-        org.telegram.ui.Components.u4.X(j4Var.l2, 1, j4Var.k1, new s2(this, tL_document, str, obj, 0));
-    }
-
-    @Override // org.telegram.ui.Components.d90
-    public final void z1(int i7, int i10, CharSequence charSequence, boolean z9) {
-        this.a.K1.O0(i7, i10, charSequence, z9);
+    public /* synthetic */ t2(org.telegram.ui.Wallet.d2 d2Var, org.telegram.ui.Wallet.z1 z1Var, x21 x21Var, boolean z10, org.telegram.ui.Wallet.i0 i0Var) {
+        this.c = d2Var;
+        this.d = z1Var;
+        this.e = x21Var;
+        this.b = z10;
+        this.f = i0Var;
     }
 }

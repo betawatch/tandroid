@@ -1,63 +1,66 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class al implements q0.a {
+public final class al extends v4.t0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ dl b;
 
-    public /* synthetic */ al(int i7, Object obj, boolean z9) {
+    public /* synthetic */ al(dl dlVar, int i7) {
         this.a = i7;
-        this.b = obj;
-        this.c = z9;
+        this.b = dlVar;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        int i7 = this.a;
-        boolean z9 = false;
-        boolean z10 = this.c;
-        Object obj2 = this.b;
-        switch (i7) {
+    @Override // v4.t0
+    public final void a(RecyclerView recyclerView, int i7) {
+        cj0 cj0Var;
+        switch (this.a) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj2;
-                View view = (View) obj;
-                boolean z11 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.q5) {
-                    org.telegram.ui.Cells.q5 q5Var = (org.telegram.ui.Cells.q5) view;
-                    org.telegram.messenger.gf photoEntry = q5Var.getPhotoEntry();
-                    if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.C)) && z10) {
-                        z9 = true;
-                    }
-                    q5Var.setHasSpoiler(z9);
-                    break;
+                dl dlVar = this.b;
+                di.c1 c1Var = dlVar.M;
+                boolean z10 = i7 != 0;
+                dlVar.I = z10;
+                if (!z10 && dlVar.G != null) {
+                    dlVar.G = null;
                 }
-                break;
-            case 1:
-                ArrayList arrayList2 = (ArrayList) obj2;
-                View view2 = (View) obj;
-                boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                if (view2 instanceof org.telegram.ui.Cells.q5) {
-                    org.telegram.ui.Cells.q5 q5Var2 = (org.telegram.ui.Cells.q5) view2;
-                    org.telegram.messenger.gf photoEntry2 = q5Var2.getPhotoEntry();
-                    if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.C)) && z10) {
-                        z9 = true;
+                if (i7 == 0) {
+                    int L = org.telegram.messenger.g0.L(13.0f);
+                    ki kiVar = dlVar.b;
+                    int i10 = kiVar.t0;
+                    if (((kiVar.Z3[0] - i10) - L) + i10 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (cj0Var = (cj0) c1Var.K(0)) != null) {
+                        View view = cj0Var.a;
+                        if (view.getTop() > 0) {
+                            c1Var.w0(0, view.getTop(), null);
+                            break;
+                        }
                     }
-                    q5Var2.setHighQuality(z9);
-                    break;
                 }
                 break;
             default:
-                Float f10 = (Float) obj;
-                za zaVar = ((ua) obj2).b.p;
-                if (zaVar != null && !z10) {
-                    zaVar.c(r0.e.getHeight() - f10.floatValue());
-                    break;
+                if (i7 == 1) {
+                    dl dlVar2 = this.b;
+                    if (dlVar2.d0 && dlVar2.e0) {
+                        org.telegram.messenger.g0.v1(dlVar2.b.getCurrentFocus());
+                        break;
+                    }
                 }
+                break;
+        }
+    }
+
+    @Override // v4.t0
+    public void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                dl dlVar = this.b;
+                dlVar.i0();
+                if (dlVar.G != null) {
+                    dlVar.H += i10;
+                }
+                dlVar.b.M1(dlVar, i10);
                 break;
         }
     }

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -40,82 +40,82 @@ public final /* synthetic */ class q6 implements RequestDelegate {
         Object obj4 = this.b;
         switch (i7) {
             case 0:
-                g0.h3(new mn((x6) obj4, tLObject, (TLRPC.TL_getFactCheck) obj3, (ArrayList) obj2, (HashMap) obj, 2));
+                g0.h3(new jn((x6) obj4, tLObject, (TLRPC.TL_getFactCheck) obj3, (ArrayList) obj2, (HashMap) obj, 2));
                 break;
             case 1:
-                sd sdVar = (sd) obj4;
-                rd rdVar = (rd) obj3;
+                rd rdVar = (rd) obj4;
+                qd qdVar = (qd) obj3;
                 int[] iArr = (int[]) obj2;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
                 if (tL_error != null) {
                     if (tL_error.text.equals("MESSAGE_ID_INVALID")) {
-                        sdVar.b.remove(rdVar);
-                        sdVar.a.l(rdVar.a);
-                        sdVar.l(rdVar, 1);
-                        sdVar.F.delete(iArr[0]);
-                        g0.h3(new ld(sdVar, rdVar, 1));
+                        rdVar.b.remove(qdVar);
+                        rdVar.a.l(qdVar.a);
+                        rdVar.l(qdVar, 1);
+                        rdVar.G.delete(iArr[0]);
+                        g0.h3(new kd(rdVar, qdVar, 1));
                         break;
                     }
                 } else {
                     if ((tL_messages_editMessage.flags & 8) != 0) {
-                        rdVar.g = tL_messages_editMessage.media.proximity_notification_radius;
+                        qdVar.g = tL_messages_editMessage.media.proximity_notification_radius;
                     }
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    boolean z9 = false;
+                    boolean z10 = false;
                     for (int i11 = 0; i11 < updates.updates.size(); i11++) {
                         TLRPC.Update update = updates.updates.get(i11);
                         if (update instanceof TL_update.TL_updateEditMessage) {
-                            rdVar.h.k = ((TL_update.TL_updateEditMessage) update).message;
+                            qdVar.h.k = ((TL_update.TL_updateEditMessage) update).message;
                         } else if (update instanceof TL_update.TL_updateEditChannelMessage) {
-                            rdVar.h.k = ((TL_update.TL_updateEditChannelMessage) update).message;
+                            qdVar.h.k = ((TL_update.TL_updateEditChannelMessage) update).message;
                         }
-                        z9 = true;
+                        z10 = true;
                     }
-                    if (z9) {
-                        sdVar.l(rdVar, 0);
+                    if (z10) {
+                        rdVar.l(qdVar, 0);
                     }
-                    sdVar.getMessagesController().O3(updates, false);
+                    rdVar.getMessagesController().O3(updates, false);
                     break;
                 }
                 break;
             case 2:
-                qp qpVar = (qp) obj4;
+                np npVar = (np) obj4;
                 TLRPC.Chat chat = (TLRPC.Chat) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
                 TLRPC.Chat chat2 = (TLRPC.Chat) obj;
-                qpVar.getClass();
+                npVar.getClass();
                 if (tL_error == null) {
                     TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
                     int i12 = tL_messages_affectedHistory.offset;
                     if (i12 > 0) {
-                        qpVar.k0(chat, user, chat2, i12);
+                        npVar.k0(chat, user, chat2, i12);
                     }
-                    qpVar.L3(tL_messages_affectedHistory.pts, tL_messages_affectedHistory.pts_count, chat.id);
+                    npVar.L3(tL_messages_affectedHistory.pts, tL_messages_affectedHistory.pts_count, chat.id);
                     break;
                 }
                 break;
             case 3:
-                qp qpVar2 = (qp) obj4;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj3;
+                np npVar2 = (np) obj4;
+                org.telegram.ui.ActionBar.b6 b6Var = (org.telegram.ui.ActionBar.b6) obj3;
                 TLRPC.TL_wallPaperSettings tL_wallPaperSettings = (TLRPC.TL_wallPaperSettings) obj2;
                 String str = (String) obj;
                 TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) tLObject;
-                File file = new File(t0.h(), e6Var.b);
+                File file = new File(t0.h(), b6Var.b);
                 if (wallPaper != null) {
                     try {
-                        w7 fileLoader = qpVar2.getFileLoader();
+                        w7 fileLoader = npVar2.getFileLoader();
                         TLRPC.Document document = wallPaper.document;
                         fileLoader.getClass();
                         g0.E(file, w7.J(document, null, true, true));
                     } catch (Exception unused) {
                     }
                 }
-                g0.h3(new yj(qpVar2, wallPaper, tL_wallPaperSettings, e6Var, file, str, 0));
+                g0.h3(new wj(npVar2, wallPaper, tL_wallPaperSettings, b6Var, file, str, 0));
                 break;
             case 4:
-                dw dwVar = (dw) obj4;
+                bw bwVar = (bw) obj4;
                 Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) obj2;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) obj2;
                 TLRPC.User user2 = (TLRPC.User) obj;
                 if (tL_error == null) {
                     TLRPC.messages_DhConfig messages_dhconfig = (TLRPC.messages_DhConfig) tLObject;
@@ -124,41 +124,41 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                         int i13 = messages_dhconfig.g;
                         Pattern pattern = Utilities.a;
                         if (!ConnectionsManager.native_isGoodPrime(bArr, i13)) {
-                            g0.h3(new fn(2, context, u1Var));
+                            g0.h3(new cn(2, context, t1Var));
                             break;
                         } else {
-                            yr messagesStorage = dwVar.getMessagesStorage();
+                            vr messagesStorage = bwVar.getMessagesStorage();
                             byte[] bArr2 = messages_dhconfig.p;
                             messagesStorage.H();
                             messagesStorage.y = bArr2;
-                            yr messagesStorage2 = dwVar.getMessagesStorage();
+                            vr messagesStorage2 = bwVar.getMessagesStorage();
                             int i14 = messages_dhconfig.g;
                             messagesStorage2.H();
-                            messagesStorage2.D = i14;
-                            yr messagesStorage3 = dwVar.getMessagesStorage();
+                            messagesStorage2.E = i14;
+                            vr messagesStorage3 = bwVar.getMessagesStorage();
                             int i15 = messages_dhconfig.version;
                             messagesStorage3.H();
                             messagesStorage3.x = i15;
-                            yr messagesStorage4 = dwVar.getMessagesStorage();
-                            yr messagesStorage5 = dwVar.getMessagesStorage();
+                            vr messagesStorage4 = bwVar.getMessagesStorage();
+                            vr messagesStorage5 = bwVar.getMessagesStorage();
                             messagesStorage5.H();
                             int i16 = messagesStorage5.x;
-                            yr messagesStorage6 = dwVar.getMessagesStorage();
+                            vr messagesStorage6 = bwVar.getMessagesStorage();
                             messagesStorage6.H();
-                            int i17 = messagesStorage6.D;
-                            yr messagesStorage7 = dwVar.getMessagesStorage();
+                            int i17 = messagesStorage6.E;
+                            vr messagesStorage7 = bwVar.getMessagesStorage();
                             messagesStorage7.H();
-                            messagesStorage4.a.c(new l2.z(messagesStorage4, i16, i17, messagesStorage7.y, 7));
+                            messagesStorage4.a.c(new l2.x(messagesStorage4, i16, i17, messagesStorage7.y, 7));
                         }
                     }
                     byte[] bArr3 = new byte[256];
                     for (int i18 = 0; i18 < 256; i18++) {
                         bArr3[i18] = (byte) (((byte) (Utilities.b.nextDouble() * 256.0d)) ^ messages_dhconfig.random[i18]);
                     }
-                    dwVar.getMessagesStorage().H();
-                    BigInteger valueOf = BigInteger.valueOf(r1.D);
+                    bwVar.getMessagesStorage().H();
+                    BigInteger valueOf = BigInteger.valueOf(r1.E);
                     BigInteger bigInteger = new BigInteger(1, bArr3);
-                    yr messagesStorage8 = dwVar.getMessagesStorage();
+                    vr messagesStorage8 = bwVar.getMessagesStorage();
                     messagesStorage8.H();
                     byte[] byteArray = valueOf.modPow(bigInteger, new BigInteger(1, messagesStorage8.y)).toByteArray();
                     if (byteArray.length > 256) {
@@ -168,27 +168,27 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                     }
                     TLRPC.TL_messages_requestEncryption tL_messages_requestEncryption = new TLRPC.TL_messages_requestEncryption();
                     tL_messages_requestEncryption.g_a = byteArray;
-                    tL_messages_requestEncryption.user_id = dwVar.getMessagesController().q1(user2);
+                    tL_messages_requestEncryption.user_id = bwVar.getMessagesController().q1(user2);
                     tL_messages_requestEncryption.random_id = Utilities.b.nextInt();
-                    dwVar.getConnectionsManager().sendRequest(tL_messages_requestEncryption, new eo(dwVar, context, u1Var, bArr3, user2, 2), 2);
+                    bwVar.getConnectionsManager().sendRequest(tL_messages_requestEncryption, new ao(bwVar, context, t1Var, bArr3, user2, 2), 2);
                     break;
                 } else {
-                    dwVar.f.clear();
-                    g0.h3(new aw(dwVar, context, u1Var, i10));
+                    bwVar.f.clear();
+                    g0.h3(new yv(bwVar, context, t1Var, i10));
                     break;
                 }
             default:
-                gz gzVar = (gz) obj4;
-                ij ijVar = (ij) obj3;
+                ez ezVar = (ez) obj4;
+                gj gjVar = (gj) obj3;
                 String str2 = (String) obj2;
                 Runnable runnable = (Runnable) obj;
-                a0.h hVar = gzVar.x;
+                a0.h hVar = ezVar.x;
                 if (tL_error == null) {
-                    hVar.k(0L, ijVar.D1());
-                    gzVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
-                    hVar.k(Long.valueOf(SystemClock.elapsedRealtime()), ijVar.D1());
+                    hVar.k(0L, gjVar.D1());
+                    ezVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    hVar.k(Long.valueOf(SystemClock.elapsedRealtime()), gjVar.D1());
                 }
-                g0.h3(new lg(gzVar, str2, runnable, 26));
+                g0.h3(new kg(ezVar, str2, runnable, 26));
                 break;
         }
     }

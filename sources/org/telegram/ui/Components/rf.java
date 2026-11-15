@@ -1,10 +1,32 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class rf {
-    public String a;
-    public ArrayList b;
+public final class rf extends org.telegram.ui.an {
+    public boolean ud;
+    public final /* synthetic */ TLRPC.User vd;
+    public final /* synthetic */ TLRPC.User wd;
+    public final /* synthetic */ long xd;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rf(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j3) {
+        super(bundle);
+        this.vd = user;
+        this.wd = user2;
+        this.xd = j3;
+    }
+
+    @Override // org.telegram.ui.an, org.telegram.ui.ActionBar.e2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.ud) {
+            return;
+        }
+        this.ud = true;
+        cc.a0(this).I(R.raw.contact_check, org.telegram.messenger.hd.a0(null, null, 2131751739, org.telegram.messenger.q10.p(this.vd)), org.telegram.messenger.g0.U2(org.telegram.messenger.hd.a0(null, null, 2131751740, org.telegram.messenger.q10.p(this.wd)), new di.x2(this, this.xd, 21))).j();
+    }
 }

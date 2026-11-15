@@ -6,11 +6,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class m5 {
     public static boolean A() {
-        TLRPC.User a22 = qp.s1(p10.s0).a2(0L);
+        TLRPC.User a22 = np.s1(m10.t0).a2(0L);
         if (a22 == null) {
             return false;
         }
@@ -45,48 +45,48 @@ public abstract class m5 {
         return 2305843009213693952L | i7;
     }
 
-    public static String H(ImageReceiver imageReceiver, org.telegram.ui.Components.v8 v8Var, TLObject tLObject) {
+    public static String H(ImageReceiver imageReceiver, org.telegram.ui.Components.t8 t8Var, TLObject tLObject) {
         if (!(tLObject instanceof TLRPC.User)) {
             if (!(tLObject instanceof TLRPC.Chat)) {
                 return "";
             }
             TLRPC.Chat chat = (TLRPC.Chat) tLObject;
             String str = chat.title;
-            if (v8Var != null) {
-                v8Var.q(chat);
+            if (t8Var != null) {
+                t8Var.q(chat);
             }
             if (imageReceiver != null) {
-                imageReceiver.i0(tLObject, v8Var, null);
+                imageReceiver.i0(tLObject, t8Var, null);
             }
             return str;
         }
         TLRPC.User user = (TLRPC.User) tLObject;
-        if (t10.z(user)) {
-            String M0 = id.M0(2131746266, null);
-            if (v8Var != null) {
-                v8Var.g(12);
+        if (q10.z(user)) {
+            String M0 = hd.M0(2131746266, null);
+            if (t8Var != null) {
+                t8Var.g(12);
             }
             if (imageReceiver != null) {
-                imageReceiver.i0(null, v8Var, null);
+                imageReceiver.i0(null, t8Var, null);
             }
             return M0;
         }
-        if (t10.B(user)) {
-            String M02 = id.M0(2131745901, null);
-            if (v8Var != null) {
-                v8Var.g(1);
+        if (q10.B(user)) {
+            String M02 = hd.M0(2131745901, null);
+            if (t8Var != null) {
+                t8Var.g(1);
             }
             if (imageReceiver != null) {
-                imageReceiver.i0(null, v8Var, null);
+                imageReceiver.i0(null, t8Var, null);
             }
             return M02;
         }
-        String p10 = t10.p(user);
-        if (v8Var != null) {
-            v8Var.r(user);
+        String p10 = q10.p(user);
+        if (t8Var != null) {
+            t8Var.r(user);
         }
         if (imageReceiver != null) {
-            imageReceiver.i0(tLObject, v8Var, null);
+            imageReceiver.i0(tLObject, t8Var, null);
         }
         return p10;
     }
@@ -234,11 +234,11 @@ public abstract class m5 {
     }
 
     public static String l(int i7, long j3) {
-        return m(qp.s1(i7).e2(j3));
+        return m(np.s1(i7).e2(j3));
     }
 
     public static String m(TLObject tLObject) {
-        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(t10.p((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
+        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(q10.p((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
     }
 
     public static long n(TLRPC.InputPeer inputPeer) {
@@ -306,15 +306,15 @@ public abstract class m5 {
     }
 
     public static String s(int i7, long j3) {
-        return u(qp.s1(i7).e2(j3));
+        return u(np.s1(i7).e2(j3));
     }
 
     public static String t(long j3) {
-        return u(qp.s1(p10.s0).e2(j3));
+        return u(np.s1(m10.t0).e2(j3));
     }
 
     public static String u(TLObject tLObject) {
-        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(t10.k((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? g0.F2(g0.D2(((TLRPC.Chat) tLObject).title)) : "";
+        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(q10.k((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? g0.F2(g0.D2(((TLRPC.Chat) tLObject).title)) : "";
     }
 
     public static String v(String str, ArrayList arrayList, String str2) {
@@ -341,16 +341,16 @@ public abstract class m5 {
     }
 
     public static String w(long j3) {
-        int i7 = p10.s0;
-        TLObject e22 = qp.s1(i7).e2(j3);
+        int i7 = m10.t0;
+        TLObject e22 = np.s1(i7).e2(j3);
         if (e22 instanceof TLRPC.User) {
-            return id.d0(i7, (TLRPC.User) e22, null, null);
+            return hd.d0(i7, (TLRPC.User) e22, null, null);
         }
         if (!(e22 instanceof TLRPC.Chat)) {
             return "";
         }
         TLRPC.Chat chat = (TLRPC.Chat) e22;
-        return chat.participants_count > 1 ? t3.V(chat) ? id.H(',', "Subscribers", chat.participants_count) : id.H(',', "Members", chat.participants_count) : t3.V(chat) ? id.M0(2131751390, null) : id.M0(2131754876, null);
+        return chat.participants_count > 1 ? t3.V(chat) ? hd.H(',', "Subscribers", chat.participants_count) : hd.H(',', "Members", chat.participants_count) : t3.V(chat) ? hd.M0(2131751390, null) : hd.M0(2131754876, null);
     }
 
     public static void x(TLRPC.Dialog dialog) {

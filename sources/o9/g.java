@@ -6,7 +6,7 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Trace;
 import android.util.Log;
-import androidx.emoji2.text.w;
+import androidx.emoji2.text.x;
 import com.google.firebase.FirebaseCommonRegistrar;
 import com.google.firebase.components.ComponentDiscoveryService;
 import com.google.firebase.concurrent.ExecutorsRegistrar;
@@ -16,13 +16,12 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Components.qt;
-import q6.m;
-import sg.i0;
-import u9.n;
+import org.telegram.ui.Components.cf;
+import sg.h0;
+import u9.m;
 import v9.j;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object k = new Object();
@@ -30,10 +29,10 @@ public final class g {
     public final Context a;
     public final String b;
     public final i c;
-    public final u9.g d;
+    public final u9.f d;
     public final AtomicBoolean e;
     public final AtomicBoolean f;
-    public final n g;
+    public final m g;
     public final ua.b h;
     public final CopyOnWriteArrayList i;
     public final CopyOnWriteArrayList j;
@@ -46,13 +45,13 @@ public final class g {
         this.i = copyOnWriteArrayList;
         this.j = new CopyOnWriteArrayList();
         this.a = context;
-        m.e(str);
+        q6.m.e(str);
         this.b = str;
         this.c = iVar;
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList b10 = new i0(4, context, new qt(ComponentDiscoveryService.class, 20)).b();
+        ArrayList b10 = new h0(4, context, new cf(ComponentDiscoveryService.class)).b();
         Trace.endSection();
         Trace.beginSection("Runtime");
         j jVar = j.a;
@@ -66,14 +65,14 @@ public final class g {
         arrayList2.add(u9.a.c(this, g.class, new Class[0]));
         arrayList2.add(u9.a.c(iVar, i.class, new Class[0]));
         qb.a aVar2 = new qb.a(12);
-        if ((Build.VERSION.SDK_INT >= 24 ? w.g(context) : true) && FirebaseInitProvider.b.get()) {
+        if ((Build.VERSION.SDK_INT >= 24 ? x.g(context) : true) && FirebaseInitProvider.b.get()) {
             arrayList2.add(u9.a.c(aVar, a.class, new Class[0]));
         }
-        u9.g gVar = new u9.g(jVar, arrayList, arrayList2, aVar2);
-        this.d = gVar;
+        u9.f fVar = new u9.f(jVar, arrayList, arrayList2, aVar2);
+        this.d = fVar;
         Trace.endSection();
-        this.g = new n(new c(0, this, context));
-        this.h = gVar.c(sa.c.class);
+        this.g = new m(new c(0, this, context));
+        this.h = fVar.c(sa.c.class);
         d dVar = new d(this);
         a();
         if (atomicBoolean.get()) {
@@ -142,8 +141,8 @@ public final class g {
         }
         synchronized (k) {
             a0.f fVar = l;
-            m.i("FirebaseApp name [DEFAULT] already exists!", !fVar.containsKey("[DEFAULT]"));
-            m.h(context, "Application context cannot be null.");
+            q6.m.i("FirebaseApp name [DEFAULT] already exists!", !fVar.containsKey("[DEFAULT]"));
+            q6.m.h(context, "Application context cannot be null.");
             gVar = new g(context, "[DEFAULT]", iVar);
             fVar.put("[DEFAULT]", gVar);
         }
@@ -152,7 +151,7 @@ public final class g {
     }
 
     public final void a() {
-        m.i("FirebaseApp was deleted", !this.f.get());
+        q6.m.i("FirebaseApp was deleted", !this.f.get());
     }
 
     public final Object b(Class cls) {
@@ -173,7 +172,7 @@ public final class g {
     public final void e() {
         int i7 = Build.VERSION.SDK_INT;
         Context context = this.a;
-        boolean g10 = i7 >= 24 ? w.g(context) : true;
+        boolean g10 = i7 >= 24 ? x.g(context) : true;
         String str = this.b;
         if (g10) {
             StringBuilder sb2 = new StringBuilder("Device unlocked: initializing all Firebase APIs for app ");
@@ -211,13 +210,13 @@ public final class g {
     }
 
     public final boolean h() {
-        boolean z9;
+        boolean z10;
         a();
         za.a aVar = (za.a) this.g.get();
         synchronized (aVar) {
-            z9 = aVar.a;
+            z10 = aVar.a;
         }
-        return z9;
+        return z10;
     }
 
     public final int hashCode() {
@@ -225,9 +224,9 @@ public final class g {
     }
 
     public final String toString() {
-        j2.n nVar = new j2.n(this);
-        nVar.X(this.b, "name");
-        nVar.X(this.c, "options");
-        return nVar.toString();
+        ji.j jVar = new ji.j(this);
+        jVar.U(this.b, "name");
+        jVar.U(this.c, "options");
+        return jVar.toString();
     }
 }

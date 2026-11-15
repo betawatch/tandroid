@@ -2,15 +2,15 @@ package x3;
 
 import f3.p;
 import java.util.ArrayDeque;
-import org.telegram.ui.Components.m;
+import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b {
     public final byte[] a = new byte[8];
     public final ArrayDeque b = new ArrayDeque();
     public final g c = new g();
-    public m d;
+    public ff d;
     public int e;
     public int f;
     public long g;

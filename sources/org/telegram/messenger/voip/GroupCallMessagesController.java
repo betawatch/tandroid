@@ -1,9 +1,8 @@
 package org.telegram.messenger.voip;
 
 import android.util.LongSparseArray;
-import bi.h4;
-import bi.r3;
-import bi.x2;
+import di.g2;
+import di.x2;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -12,13 +11,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import li.j3;
+import oi.u4;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.c1;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.id;
+import org.telegram.messenger.ez;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.m5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -27,7 +26,7 @@ import org.telegram.tgnet.json.TLJsonParser;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class GroupCallMessagesController extends c1 {
     private static volatile GroupCallMessagesController[] Instance = new GroupCallMessagesController[4];
@@ -35,14 +34,14 @@ public class GroupCallMessagesController extends c1 {
     private final LongSparseArray<List<CallMessageListener>> callMessagesListeners;
     private final Set<String> sentMessageIds;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface CallMessageListener {
         void onNewGroupCallMessage(long j3, GroupCallMessage groupCallMessage);
 
         void onPopGroupCallMessage();
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class MessagesList {
         private final List<GroupCallMessage> messages;
         private final Set<Long> randomIds;
@@ -146,7 +145,7 @@ public class GroupCallMessagesController extends c1 {
             TLRPC.TL_groupCallMessage tL_groupCallMessage2 = new TLRPC.TL_groupCallMessage();
             TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
             tL_groupCallMessage2.message = tL_textWithEntities;
-            tL_textWithEntities.text = id.M0(2131749491, null);
+            tL_textWithEntities.text = hd.M0(2131749491, null);
             org.telegram.messenger.g0.h3(new e(this, j3, new GroupCallMessage(this.currentAccount, j10, 0L, tL_groupCallMessage2.message), 2));
             return;
         }
@@ -196,7 +195,7 @@ public class GroupCallMessagesController extends c1 {
                 if ((update2 instanceof TL_update.TL_updateGroupCallMessage) && (inputGroupCall = (tL_updateGroupCallMessage = (TL_update.TL_updateGroupCallMessage) update2).call) != null && inputGroupCall.id == j3 && (groupCallMessage2 = tL_updateGroupCallMessage.message) != null && m5.o(groupCallMessage2.from_id) == j10) {
                     String str = j3 + "_" + tL_updateGroupCallMessage.message.id;
                     if (this.sentMessageIds.add(str)) {
-                        org.telegram.messenger.g0.i3(new j3(20, this, str), 60000L);
+                        org.telegram.messenger.g0.i3(new u4(8, this, str), 60000L);
                     }
                 }
             }
@@ -255,7 +254,7 @@ public class GroupCallMessagesController extends c1 {
                     it2.next().onNewGroupCallMessage(j3, groupCallMessage);
                 }
             }
-            org.telegram.messenger.g0.i3(new r3(this, j3, 16), getAppGlobalConfig().w.M1(TimeUnit.MILLISECONDS));
+            org.telegram.messenger.g0.i3(new x2(this, j3, 16), getAppGlobalConfig().w.z0(TimeUnit.MILLISECONDS));
         }
     }
 
@@ -287,7 +286,7 @@ public class GroupCallMessagesController extends c1 {
             return false;
         }
         getSendMessagesHelper().getClass();
-        long E = gz.E();
+        long E = ez.E();
         if (sharedInstance.isConference()) {
             ConferenceCall conferenceCall = sharedInstance.conference;
             if (conferenceCall == null || (groupCall = conferenceCall.groupCall) == null || groupCall.id != j10) {
@@ -321,7 +320,7 @@ public class GroupCallMessagesController extends c1 {
         lambda$processUpdate$2(j10, groupCallMessage);
         f fVar = new f(groupCallMessage, 1);
         org.telegram.messenger.g0.i3(fVar, 1000L);
-        getConnectionsManager().sendRequest(sendgroupcallmessage3, new x2(this, fVar, groupCallMessage, j10, j3));
+        getConnectionsManager().sendRequest(sendgroupcallmessage3, new g2(this, fVar, groupCallMessage, j10, j3));
         return true;
     }
 
@@ -352,6 +351,6 @@ public class GroupCallMessagesController extends c1 {
         if (getUserConfig().n == o4) {
             return;
         }
-        Utilities.e.c(new h4(this, j3, o4, bArr, 4));
+        Utilities.e.c(new d3.e0(this, j3, o4, bArr, 4));
     }
 }

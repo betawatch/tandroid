@@ -26,13 +26,13 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class ListMenuItemView extends LinearLayout implements y, AbsListView.SelectionBoundsAdjuster {
-    public final Drawable D;
-    public final boolean E;
-    public LayoutInflater F;
-    public boolean G;
+    public final Drawable E;
+    public final boolean F;
+    public LayoutInflater G;
+    public boolean H;
     public m a;
     public ImageView b;
     public RadioButton c;
@@ -52,16 +52,16 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
     }
 
     private LayoutInflater getInflater() {
-        if (this.F == null) {
-            this.F = LayoutInflater.from(getContext());
+        if (this.G == null) {
+            this.G = LayoutInflater.from(getContext());
         }
-        return this.F;
+        return this.G;
     }
 
-    private void setSubMenuArrowVisible(boolean z9) {
+    private void setSubMenuArrowVisible(boolean z10) {
         ImageView imageView = this.h;
         if (imageView != null) {
-            imageView.setVisibility(z9 ? 0 : 8);
+            imageView.setVisibility(z10 ? 0 : 8);
         }
     }
 
@@ -87,9 +87,9 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b(m mVar) {
-        boolean z9;
-        String sb2;
         boolean z10;
+        String sb2;
+        boolean z11;
         this.a = mVar;
         boolean isVisible = mVar.isVisible();
         k kVar = mVar.n;
@@ -99,17 +99,17 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
         setCheckable(mVar.isCheckable());
         if (kVar.o()) {
             if ((kVar.n() ? mVar.j : mVar.h) != 0) {
-                z9 = true;
+                z10 = true;
                 kVar.n();
-                if (z9) {
+                if (z10) {
                     m mVar2 = this.a;
                     k kVar2 = mVar2.n;
                     if (kVar2.o()) {
                         if ((kVar2.n() ? mVar2.j : mVar2.h) != 0) {
-                            z10 = true;
+                            z11 = true;
                         }
                     }
-                    z10 = false;
+                    z11 = false;
                 }
                 i7 = 8;
                 if (i7 == 0) {
@@ -155,9 +155,9 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
                 setContentDescription(mVar.q);
             }
         }
-        z9 = false;
+        z10 = false;
         kVar.n();
-        if (z9) {
+        if (z10) {
         }
         i7 = 8;
         if (i7 == 0) {
@@ -190,7 +190,7 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
         ImageView imageView = (ImageView) findViewById(R.id.submenuarrow);
         this.h = imageView;
         if (imageView != null) {
-            imageView.setImageDrawable(this.D);
+            imageView.setImageDrawable(this.E);
         }
         this.n = (ImageView) findViewById(R.id.group_divider);
         this.r = (LinearLayout) findViewById(R.id.content);
@@ -209,10 +209,10 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
         super.onMeasure(i7, i10);
     }
 
-    public void setCheckable(boolean z9) {
+    public void setCheckable(boolean z10) {
         CompoundButton compoundButton;
         View view;
-        if (!z9 && this.c == null && this.e == null) {
+        if (!z10 && this.c == null && this.e == null) {
             return;
         }
         if ((this.a.x & 4) != 0) {
@@ -242,7 +242,7 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
             compoundButton = this.e;
             view = this.c;
         }
-        if (z9) {
+        if (z10) {
             compoundButton.setChecked(this.a.isChecked());
             if (compoundButton.getVisibility() != 0) {
                 compoundButton.setVisibility(0);
@@ -263,7 +263,7 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
         }
     }
 
-    public void setChecked(boolean z9) {
+    public void setChecked(boolean z10) {
         CompoundButton compoundButton;
         if ((this.a.x & 4) != 0) {
             if (this.c == null) {
@@ -290,25 +290,25 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
             }
             compoundButton = this.e;
         }
-        compoundButton.setChecked(z9);
+        compoundButton.setChecked(z10);
     }
 
-    public void setForceShowIcon(boolean z9) {
-        this.G = z9;
-        this.y = z9;
+    public void setForceShowIcon(boolean z10) {
+        this.H = z10;
+        this.y = z10;
     }
 
-    public void setGroupDividerEnabled(boolean z9) {
+    public void setGroupDividerEnabled(boolean z10) {
         ImageView imageView = this.n;
         if (imageView != null) {
-            imageView.setVisibility((this.E || !z9) ? 8 : 0);
+            imageView.setVisibility((this.F || !z10) ? 8 : 0);
         }
     }
 
     public void setIcon(Drawable drawable) {
         k kVar = this.a.n;
-        boolean z9 = this.G;
-        if (z9 || this.y) {
+        boolean z10 = this.H;
+        if (z10 || this.y) {
             ImageView imageView = this.b;
             if (imageView == null && drawable == null && !this.y) {
                 return;
@@ -328,7 +328,7 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
                 return;
             }
             ImageView imageView3 = this.b;
-            if (!z9) {
+            if (!z10) {
                 drawable = null;
             }
             imageView3.setImageDrawable(drawable);
@@ -353,16 +353,16 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
 
     public ListMenuItemView(Context context, AttributeSet attributeSet, int i7) {
         super(context, attributeSet);
-        h6.m x10 = h6.m.x(getContext(), attributeSet, a.r, i7);
-        this.s = x10.p(5);
-        TypedArray typedArray = (TypedArray) x10.c;
+        h6.m z10 = h6.m.z(getContext(), attributeSet, a.r, i7);
+        this.s = z10.p(5);
+        TypedArray typedArray = (TypedArray) z10.c;
         this.w = typedArray.getResourceId(1, -1);
         this.y = typedArray.getBoolean(7, false);
         this.x = context;
-        this.D = x10.p(8);
+        this.E = z10.p(8);
         TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
-        this.E = obtainStyledAttributes.hasValue(0);
-        x10.C();
+        this.F = obtainStyledAttributes.hasValue(0);
+        z10.D();
         obtainStyledAttributes.recycle();
     }
 }

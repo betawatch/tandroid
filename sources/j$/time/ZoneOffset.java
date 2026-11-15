@@ -97,8 +97,8 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
         return new ZoneRules(this);
     }
 
-    public static int P(CharSequence charSequence, int i7, boolean z9) {
-        if (z9) {
+    public static int P(CharSequence charSequence, int i7, boolean z10) {
+        if (z10) {
             String str = (String) charSequence;
             if (str.charAt(i7 - 1) != ':') {
                 throw new b("Invalid ID for ZoneOffset, colon not found when expected: " + ((Object) str));

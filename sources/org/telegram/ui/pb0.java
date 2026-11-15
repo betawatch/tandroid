@@ -1,53 +1,102 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.app.Dialog;
+import android.text.TextUtils;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class pb0 extends TextView {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class pb0 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ tb0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ TLObject f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ pb0(Context context, int i7) {
-        super(context);
-        this.a = i7;
+    public /* synthetic */ pb0(tb0 tb0Var, TLRPC.TL_error tL_error, String str, String str2, TLObject tLObject) {
+        this.b = tb0Var;
+        this.c = tL_error;
+        this.d = str;
+        this.e = str2;
+        this.f = tLObject;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public CharSequence getAccessibilityClassName() {
-        switch (this.a) {
-            case 5:
-                return Button.class.getName();
-            default:
-                return super.getAccessibilityClassName();
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7;
+        int i10 = this.a;
+        TLObject tLObject = this.f;
+        String str = this.e;
+        String str2 = this.d;
+        TLRPC.TL_error tL_error = this.c;
+        tb0 tb0Var = this.b;
+        switch (i10) {
             case 0:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31));
-                break;
-            case 1:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(100.0f)), TLObject.FLAG_31));
-                break;
-            case 2:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31));
-                break;
-            case 3:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31));
-                break;
-            case 4:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(org.telegram.messenger.g0.L(26.0f)), TLObject.FLAG_30));
+                tb0Var.getClass();
+                if (tL_error == null) {
+                    TL_account.Password password = (TL_account.Password) tLObject;
+                    tb0Var.s = password;
+                    TwoStepVerificationActivity.r0(password);
+                    tb0Var.n(str2, str);
+                    break;
+                }
                 break;
             default:
-                super.onMeasure(i7, i10);
+                ce0 ce0Var = tb0Var.H;
+                int i11 = 1;
+                if (tL_error != null && ("SRP_ID_INVALID".equals(tL_error.text) || "NEW_SALT_INVALID".equals(tL_error.text))) {
+                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                    i7 = ((org.telegram.ui.ActionBar.e2) ce0Var).currentAccount;
+                    ConnectionsManager.getInstance(i7).sendRequest(getpassword, new sb0(tb0Var, str2, str, i11), 8);
+                    break;
+                } else {
+                    ce0Var.C1(false, true);
+                    if (!(tLObject instanceof TLRPC.auth_Authorization)) {
+                        if (tL_error != null) {
+                            tb0Var.x = false;
+                            if (!tL_error.text.startsWith("FLOOD_WAIT")) {
+                                ce0Var.D1(org.telegram.messenger.hd.M0(2131746071, null), tL_error.text);
+                                break;
+                            } else {
+                                int intValue = Utilities.z(tL_error.text).intValue();
+                                ce0Var.D1(org.telegram.messenger.hd.M0(2131746071, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750686, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
+                                break;
+                            }
+                        }
+                    } else {
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ce0Var.getParentActivity());
+                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751771, null), new tr(23, tb0Var, tLObject));
+                        boolean isEmpty = TextUtils.isEmpty(str2);
+                        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                        if (isEmpty) {
+                            t1Var.U = org.telegram.messenger.hd.M0(2131742799, null);
+                        } else {
+                            t1Var.U = org.telegram.messenger.hd.M0(2131742804, null);
+                        }
+                        t1Var.S = org.telegram.messenger.hd.M0(2131743931, null);
+                        Dialog showDialog = ce0Var.showDialog(t1Var);
+                        if (showDialog != null) {
+                            showDialog.setCanceledOnTouchOutside(false);
+                            showDialog.setCancelable(false);
+                            break;
+                        }
+                    }
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ pb0(tb0 tb0Var, TLRPC.TL_error tL_error, TLObject tLObject, String str, String str2) {
+        this.b = tb0Var;
+        this.c = tL_error;
+        this.f = tLObject;
+        this.d = str;
+        this.e = str2;
     }
 }

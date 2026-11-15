@@ -1,46 +1,41 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a01 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t11 b;
-    public final /* synthetic */ boolean c;
+public final class a01 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ n11 d;
 
-    public /* synthetic */ a01(t11 t11Var, boolean z9, int i7) {
-        this.a = i7;
-        this.b = t11Var;
-        this.c = z9;
+    public /* synthetic */ a01(n11 n11Var, int i7) {
+        this.c = i7;
+        this.d = n11Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // g.p
+    public final int i(int i7) {
+        int i10;
+        ArrayList arrayList;
+        int i11;
+        switch (this.c) {
             case 0:
-                t11 t11Var = this.b;
-                r01 r01Var = t11Var.h0;
-                h01 h01Var = t11Var.i0;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (!this.c) {
-                    floatValue = 1.0f - floatValue;
-                }
-                float f10 = 1.0f - floatValue;
-                r01Var.setAlpha(f10);
-                r01Var.setTranslationY(org.telegram.messenger.g0.L(8.0f) * floatValue);
-                h01Var.setAlpha(floatValue);
-                h01Var.setTranslationY(org.telegram.messenger.g0.L(8.0f) * f10);
-                t11Var.j0.setAlpha(h01Var.getAlpha() * floatValue);
-                break;
+                n11 n11Var = this.d;
+                return (n11Var.x0.indexOfKey(i7) >= 0 || n11Var.A0.indexOfKey(i7) >= 0 || i7 == n11Var.f || i7 == n11Var.E || i7 == n11Var.n || i7 == n11Var.h || i7 == n11Var.w || i7 == n11Var.a || i7 == n11Var.y) ? n11Var.s0.J : ((i7 < n11Var.F || i7 >= n11Var.G) && !n11Var.R) ? 5 : 8;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (!this.c) {
-                    floatValue2 = 1.0f - floatValue2;
+                n11 n11Var2 = this.d;
+                y01 y01Var = n11Var2.r0;
+                int d = y01Var.d(i7);
+                if (d == 6) {
+                    return n11Var2.s0.J;
                 }
-                t11 t11Var2 = this.b;
-                t11Var2.j0.setAlpha(t11Var2.i0.getAlpha() * floatValue2);
-                break;
+                if (d != 5) {
+                    n11 n11Var3 = y01Var.s;
+                    if (n11Var3.a0 != 14 ? i7 <= (i10 = y01Var.c) || (i7 - i10) - 1 >= n11Var3.E1.size() : (arrayList = n11Var3.D1) == null || i7 < (i11 = y01Var.c) || i7 - i11 >= arrayList.size()) {
+                        return 5;
+                    }
+                }
+                return 8;
         }
     }
 }

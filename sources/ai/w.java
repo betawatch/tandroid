@@ -1,169 +1,184 @@
 package ai;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.e61;
+import android.util.Log;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class w extends HorizontalScrollView {
-    public ab.g a;
-    public j0 b;
-    public final e61 c;
-    public final Paint d;
-    public int e;
-    public float f;
-    public final /* synthetic */ q0 h;
+public final class w {
+    public boolean a;
+    public boolean b;
+    public long c;
+    public final Object d;
+    public final Object e;
+    public Object f;
+    public Object g;
+    public Object h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(q0 q0Var, Context context) {
-        super(context);
-        this.h = q0Var;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.e = -1;
-        this.f = Float.NaN;
-        setHorizontalScrollBarEnabled(false);
-        setOverScrollMode(2);
-        setFillViewport(true);
-        setWillNotDraw(false);
-        e61 e61Var = new e61(1, context, this);
-        this.c = e61Var;
-        e61Var.setOrientation(0);
-        e61Var.setGravity(16);
-        e61Var.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
-        addView(e61Var, new FrameLayout.LayoutParams(-2, -1));
-        paint.setColor(1560281087);
+    public w(Context context, d3.x xVar) {
+        this.d = context.getApplicationContext();
+        this.e = xVar;
+        this.c = 15000L;
+        this.h = new d3.y();
+        this.g = h2.g0.a;
     }
 
-    public final void a(int i7, boolean z9) {
-        if (i7 == this.e || i7 < 0) {
-            return;
+    public static w c(android.support.v4.media.session.a0 a0Var, n2 n2Var) {
+        long nativeSessionNew;
+        long k10 = DictationAsr.k((s) a0Var.b);
+        if (k10 == 0) {
+            return null;
         }
-        e61 e61Var = this.c;
-        if (i7 >= e61Var.getChildCount()) {
-            return;
+        w wVar = new w(a0Var, n2Var);
+        String str = (String) a0Var.c;
+        nativeSessionNew = DictationAsr.nativeSessionNew(k10, str, str.split(",")[0]);
+        wVar.c = nativeSessionNew;
+        if (nativeSessionNew != 0) {
+            return wVar;
         }
-        this.e = i7;
-        if (!z9) {
-            this.f = Float.NaN;
-        }
-        View childAt = e61Var.getChildAt(i7);
-        int left = childAt.getLeft() - org.telegram.messenger.g0.L(30.0f);
-        int L = org.telegram.messenger.g0.L(30.0f) + childAt.getRight();
-        if (left >= getScrollX()) {
-            if (L > getWidth() + getScrollX()) {
-                if (z9) {
-                    smoothScrollTo(L - getWidth(), 0);
-                } else {
-                    scrollTo(L - getWidth(), 0);
-                }
-            }
-        } else if (z9) {
-            smoothScrollTo(left, 0);
-        } else {
-            scrollTo(left, 0);
-        }
-        e61Var.invalidate();
+        DictationAsr.M((s) a0Var.b);
+        return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00e7  */
-    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
-    @Override // android.widget.HorizontalScrollView, android.view.View
+    public void a() {
+        String nativeSessionFinish;
+        long j3 = this.c;
+        if (j3 == 0) {
+            return;
+        }
+        nativeSessionFinish = DictationAsr.nativeSessionFinish(j3);
+        b(nativeSessionFinish);
+        DictationAsr.nativeSessionFree(this.c);
+        this.c = 0L;
+        DictationAsr.M((s) this.e);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x014b  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x015d  */
+    /* JADX WARN: Removed duplicated region for block: B:61:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void draw(Canvas canvas) {
-        float f10;
-        j0 j0Var;
-        ab.g gVar = this.a;
-        if (gVar != null) {
-            float scrollX = getScrollX();
-            float width = getWidth() + getScrollX();
-            float height = getHeight();
-            s0 s0Var = (s0) gVar.b;
-            w wVar = (w) gVar.c;
-            RectF rectF = s0Var.m0;
-            int[] iArr = s0Var.k0;
-            int[] iArr2 = s0Var.i0;
-            Path path = s0Var.l0;
-            RectF rectF2 = s0Var.h0;
-            if (s0Var.Z != null && s0Var.d != null) {
-                float f11 = s0Var.a0;
-                f10 = 2.0f;
-                rectF2.set(scrollX + f11, s0Var.b0 + 0.0f, width - f11, height - s0Var.c0);
-                canvas.save();
-                path.rewind();
-                path.addRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, Path.Direction.CW);
-                canvas.clipPath(path);
-                wVar.getLocationOnScreen(iArr2);
-                s0Var.d.getLocationOnScreen(iArr);
-                float max = Math.max(0.01f, wVar.getScaleX());
-                canvas.translate(scrollX, 0.0f);
-                float f12 = 1.0f / max;
-                canvas.scale(f12, f12);
-                rectF.set((rectF2.left - scrollX) * max, (rectF2.top - 0.0f) * max, (rectF2.right - scrollX) * max, (rectF2.bottom - 0.0f) * max);
-                l1 l1Var = s0Var.d;
-                int i7 = iArr2[0];
-                int i10 = iArr[0];
-                int i11 = iArr2[1];
-                int i12 = iArr[1];
-                Paint paint = l1Var.z1;
-                paint.setColor(l1Var.t0());
-                canvas.drawRect(rectF, paint);
-                canvas.restore();
-                if (s0Var.n0 == null) {
-                    s0Var.n0 = new Paint(1);
+    public void b(String str) {
+        boolean z10;
+        boolean z11;
+        boolean z12;
+        int i7;
+        n2 n2Var = (n2) this.f;
+        StringBuilder sb2 = (StringBuilder) this.g;
+        if (str == null || str.length() <= 2) {
+            return;
+        }
+        boolean z13 = this.b;
+        try {
+            JSONArray jSONArray = new JSONArray(str);
+            z11 = false;
+            for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+                try {
+                    JSONObject jSONObject = jSONArray.getJSONObject(i10);
+                    String optString = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
+                    int hashCode = optString.hashCode();
+                    z10 = true;
+                    if (hashCode != -1354815177) {
+                        if (hashCode != -792934015) {
+                            if (hashCode != 100619) {
+                                continue;
+                            } else {
+                                try {
+                                    if (optString.equals("eou") && jSONObject.optDouble("p") > 0.5d) {
+                                        z13 = true;
+                                    }
+                                } catch (Exception e10) {
+                                    e = e10;
+                                    Log.e("Dictation", "tinyasr: events ".concat(str), e);
+                                    z12 = z13;
+                                    if (z11) {
+                                    }
+                                    i7 = 0;
+                                    this.b = (z12 || ((String) this.h).isEmpty()) ? i7 : z10;
+                                    if (z12) {
+                                    }
+                                }
+                            }
+                        } else if (optString.equals("partial")) {
+                            StringBuilder sb3 = new StringBuilder();
+                            this.a = DictationAsr.h(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
+                            DictationAsr.n(sb3, jSONObject.optJSONArray("open"), null);
+                            DictationAsr.n(sb3, jSONObject.optJSONArray("tail"), null);
+                            this.h = sb3.toString();
+                            z11 = true;
+                        }
+                    } else if (optString.equals("commit")) {
+                        DictationAsr.n(sb2, jSONObject.optJSONArray("words"), null);
+                        z11 = true;
+                    }
+                } catch (Exception e11) {
+                    e = e11;
+                    z10 = true;
                 }
-                Paint paint2 = s0Var.n0;
-                j1 j1Var = s0Var.d.n;
-                paint2.setColor(j1Var != null ? j1Var.h : 872415231);
-                canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, s0Var.n0);
-                super.draw(canvas);
-                j0Var = this.b;
-                if (j0Var == null) {
-                    float scrollX2 = getScrollX();
-                    float width2 = getWidth() + getScrollX();
-                    float height2 = getHeight();
-                    s0 s0Var2 = j0Var.a;
-                    RectF rectF3 = s0Var2.p0;
-                    float f13 = s0Var2.a0;
-                    rectF3.set(scrollX2 + f13, 0.0f + s0Var2.b0, width2 - f13, height2 - s0Var2.c0);
-                    s0Var2.o0.a(rectF3.height() / f10, 1.0f, 0, canvas, rectF3);
+            }
+            z10 = true;
+        } catch (Exception e12) {
+            e = e12;
+            z10 = true;
+            z11 = false;
+        }
+        z12 = z13;
+        if (z11) {
+            String sb4 = sb2.toString();
+            String str2 = (String) this.h;
+            boolean z14 = this.a;
+            n2Var.s++;
+            if (n2Var.g > sb4.length()) {
+                n2Var.g = 0;
+            }
+            n2Var.h = sb4.length();
+            n2Var.i = str2.isEmpty();
+            String trim = sb4.substring(n2Var.g).trim();
+            if (trim.length() > 180 && str2.isEmpty()) {
+                org.telegram.messenger.g0.h3(new k2(n2Var, n2Var.f, trim, z10, 0));
+                o2 o2Var = n2Var.t;
+                long j3 = o2Var.f;
+                o2Var.f = 1 + j3;
+                n2Var.f = j3;
+                n2Var.g = sb4.length();
+                n2Var.m.reset();
+                trim = "";
+            }
+            String p10 = DictationAsr.p(trim, str2, z14);
+            if (!p10.equals(n2Var.j)) {
+                n2Var.j = p10;
+                boolean z15 = 0;
+                org.telegram.messenger.g0.h3(new k2(n2Var, n2Var.f, p10, z15, 0));
+                i7 = z15;
+                this.b = (z12 || ((String) this.h).isEmpty()) ? i7 : z10;
+                if (z12 && ((String) this.h).isEmpty() && sb2.length() > 0) {
+                    sb2.setLength(i7);
+                    n2Var.b();
+                    n2Var.h = i7;
+                    n2Var.g = i7;
                     return;
                 }
                 return;
             }
         }
-        f10 = 2.0f;
-        super.draw(canvas);
-        j0Var = this.b;
-        if (j0Var == null) {
+        i7 = 0;
+        this.b = (z12 || ((String) this.h).isEmpty()) ? i7 : z10;
+        if (z12) {
         }
     }
 
-    public void setSections(ArrayList<t> arrayList) {
-        e61 e61Var = this.c;
-        e61Var.removeAllViews();
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            t tVar = arrayList.get(i7);
-            Context context = getContext();
-            int i10 = tVar.a;
-            u uVar = new u(this.h, context, i10, i10 == 2 ? (TLRPC.Document) tVar.c.get(0) : null);
-            uVar.setOnClickListener(new v(this, i7, 0));
-            uVar.setContentDescription(tVar.b);
-            e61Var.addView(uVar, new LinearLayout.LayoutParams(org.telegram.messenger.g0.L(34.0f), org.telegram.messenger.g0.L(30.0f)));
-        }
-        this.e = -1;
-        this.f = Float.NaN;
+    public w(android.support.v4.media.session.a0 a0Var, n2 n2Var) {
+        this.g = new StringBuilder();
+        this.h = "";
+        this.d = a0Var;
+        this.e = (s) a0Var.b;
+        this.f = n2Var;
     }
 }

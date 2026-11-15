@@ -3,7 +3,7 @@ package l4;
 import h2.x;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public static final Pattern c = Pattern.compile("\\[voice=\"([^\"]*)\"\\]");
@@ -12,14 +12,14 @@ public final class a {
     public final StringBuilder b = new StringBuilder();
 
     public static String a(x xVar, StringBuilder sb2) {
-        boolean z9 = false;
+        boolean z10 = false;
         sb2.setLength(0);
         int i7 = xVar.b;
         int i10 = xVar.c;
-        while (i7 < i10 && !z9) {
+        while (i7 < i10 && !z10) {
             char c10 = (char) xVar.a[i7];
             if ((c10 < 'A' || c10 > 'Z') && ((c10 < 'a' || c10 > 'z') && !((c10 >= '0' && c10 <= '9') || c10 == '#' || c10 == '-' || c10 == '.' || c10 == '_'))) {
-                z9 = true;
+                z10 = true;
             } else {
                 i7++;
                 sb2.append(c10);
@@ -43,7 +43,7 @@ public final class a {
 
     public static void c(x xVar) {
         while (true) {
-            for (boolean z9 = true; xVar.a() > 0 && z9; z9 = false) {
+            for (boolean z10 = true; xVar.a() > 0 && z10; z10 = false) {
                 int i7 = xVar.b;
                 byte[] bArr = xVar.a;
                 byte b10 = bArr[i7];

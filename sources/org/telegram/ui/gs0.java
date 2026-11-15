@@ -1,44 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.RelativeLayout;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class gs0 extends RelativeLayout {
-    public final /* synthetic */ PopupNotificationActivity a;
+public final /* synthetic */ class gs0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PremiumPreviewFragment b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gs0(PopupNotificationActivity popupNotificationActivity, PopupNotificationActivity popupNotificationActivity2) {
-        super(popupNotificationActivity2);
-        this.a = popupNotificationActivity;
+    public /* synthetic */ gs0(PremiumPreviewFragment premiumPreviewFragment, int i7) {
+        this.a = i7;
+        this.b = premiumPreviewFragment;
     }
 
-    @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        for (int i13 = 0; i13 < getChildCount(); i13++) {
-            View childAt = getChildAt(i13);
-            if (childAt.getTag() instanceof String) {
-                int left = childAt.getLeft();
-                PopupNotificationActivity popupNotificationActivity = this.a;
-                childAt.layout(left, org.telegram.messenger.g0.L(3.0f) + popupNotificationActivity.b.getTop(), childAt.getRight(), popupNotificationActivity.b.getBottom());
-            }
-        }
-    }
-
-    @Override // android.widget.RelativeLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        PopupNotificationActivity popupNotificationActivity = this.a;
-        int measuredWidth = popupNotificationActivity.b.getMeasuredWidth();
-        int measuredHeight = popupNotificationActivity.b.getMeasuredHeight();
-        for (int i11 = 0; i11 < getChildCount(); i11++) {
-            View childAt = getChildAt(i11);
-            if (childAt.getTag() instanceof String) {
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight - org.telegram.messenger.g0.L(3.0f), TLObject.FLAG_30));
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.o0();
+                break;
+            case 1:
+                PremiumPreviewFragment premiumPreviewFragment = this.b;
+                premiumPreviewFragment.a.postOnAnimation(new gs0(premiumPreviewFragment, 0));
+                break;
+            default:
+                this.b.getMediaDataController().R0(false);
+                break;
         }
     }
 }

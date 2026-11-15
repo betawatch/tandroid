@@ -1,47 +1,46 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class pn implements org.telegram.messenger.c20 {
-    public final /* synthetic */ k60 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 f;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ pn(k60 k60Var, int i7, long j3, long j10, org.telegram.ui.cn cnVar, org.telegram.ui.ActionBar.h6 h6Var) {
-        this.a = k60Var;
-        this.b = i7;
-        this.c = j3;
-        this.d = j10;
-        this.e = cnVar;
-        this.f = h6Var;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class pn implements c8 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.g1[] a;
+    public final /* synthetic */ sn b;
+
+    public pn(sn snVar, org.telegram.ui.ActionBar.g1[] g1VarArr) {
+        this.b = snVar;
+        this.a = g1VarArr;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        Integer num = (Integer) obj;
-        this.a.u();
-        int intValue = num.intValue();
-        int i7 = this.b;
-        long j3 = this.c;
-        long j10 = this.d;
-        org.telegram.ui.ActionBar.f2 f2Var = this.e;
-        org.telegram.ui.ActionBar.h6 h6Var = this.f;
-        if (intValue != 0) {
-            org.telegram.messenger.dt.t(i7).H(j3, num.intValue(), j10);
-            if (gc.a(f2Var)) {
-                gc.z(f2Var, 5, num.intValue(), h6Var).j();
-                return;
-            }
+    @Override // org.telegram.ui.Components.c8
+    public final void R0(int i7, int i10) {
+        org.telegram.ui.an anVar = this.b.H;
+        if (anVar == null) {
             return;
         }
-        if (org.telegram.messenger.qp.s1(i7).r2(j3, j10, null)) {
-            org.telegram.messenger.dt.t(i7).G(j3, j10, false);
+        anVar.getMessagesController().J4(i7, anVar.a());
+        TLRPC.ChatFull chatFull = anVar.q8;
+        TLRPC.UserFull userFull = anVar.r8;
+        if (userFull == null && chatFull == null) {
+            return;
         }
-        if (gc.a(f2Var)) {
-            gc.z(f2Var, 4, num.intValue(), h6Var).j();
+        anVar.h8();
+        UndoView undoView = anVar.N3;
+        if (undoView != null) {
+            undoView.k(anVar.a(), i10, anVar.j(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
         }
+    }
+
+    @Override // org.telegram.ui.Components.c8
+    public final void dismiss() {
+        org.telegram.ui.ActionBar.g1 g1Var = this.a[0];
+        if (g1Var != null) {
+            g1Var.dismiss();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.c8
+    public final /* synthetic */ void g1() {
     }
 }

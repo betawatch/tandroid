@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.d9;
+import a8.f9;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,7 +9,7 @@ import com.android.billingclient.api.Purchase;
 import java.util.ArrayList;
 import org.json.JSONException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -54,29 +54,29 @@ public abstract class u {
         bundle.putString("SKU_DETAILS_RESPONSE_FORMAT", "PRODUCT_DETAILS");
         p pVar = r.b;
         Object[] objArr = {"subs", "inapp"};
-        d9.a(2, objArr);
+        f9.a(2, objArr);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_MULTIPLE_OFFERS", new ArrayList<>(r.o(2, objArr)));
         Object[] objArr2 = {"inapp"};
-        d9.a(1, objArr2);
+        f9.a(1, objArr2);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_RENT_OFFERS", new ArrayList<>(r.o(1, objArr2)));
         bundle.putBoolean("SHOULD_RETURN_UNFETCHED_PRODUCTS", true);
         ArrayList<String> arrayList2 = new ArrayList<>();
         ArrayList<String> arrayList3 = new ArrayList<>();
         ArrayList<String> arrayList4 = new ArrayList<>();
         int size = arrayList.size();
-        boolean z9 = false;
         boolean z10 = false;
+        boolean z11 = false;
         for (int i7 = 0; i7 < size; i7++) {
-            f5.o oVar = (f5.o) arrayList.get(i7);
+            f5.p pVar2 = (f5.p) arrayList.get(i7);
             arrayList2.add(null);
-            z9 |= !TextUtils.isEmpty(null);
-            arrayList4.add(null);
             z10 |= !TextUtils.isEmpty(null);
-            if (oVar.b.equals("first_party")) {
+            arrayList4.add(null);
+            z11 |= !TextUtils.isEmpty(null);
+            if (pVar2.b.equals("first_party")) {
                 throw new NullPointerException("Serialized DocId is required for constructing ExtraParams to query ProductDetails for all first party products.");
             }
         }
-        if (z9) {
+        if (z10) {
             bundle.putStringArrayList("SKU_OFFER_ID_TOKEN_LIST", arrayList2);
         }
         if (!arrayList3.isEmpty()) {
@@ -85,7 +85,7 @@ public abstract class u {
         if (!TextUtils.isEmpty(null)) {
             bundle.putString("accountName", null);
         }
-        if (z10) {
+        if (z11) {
             bundle.putStringArrayList("SKU_DYNAMIC_PRODUCT_TOKEN_LIST", arrayList4);
         }
         return bundle;

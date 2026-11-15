@@ -1,7 +1,7 @@
 package bg;
 
-import a8.ra;
-import a8.wa;
+import a8.sa;
+import a8.xa;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -22,16 +22,16 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.iz;
+import org.telegram.messenger.gz;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.w7;
-import org.telegram.ui.Components.zg0;
+import org.telegram.ui.Components.ch0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i {
     public static int A;
-    public static wa B;
+    public static xa B;
     public static boolean v;
     public static volatile boolean x;
     public static ThreadPoolExecutor z;
@@ -50,7 +50,7 @@ public final class i {
     public final File m;
     public int n;
     public final AtomicBoolean o;
-    public final ra p;
+    public final sa p;
     public volatile boolean q;
     public volatile boolean r;
     public RandomAccessFile s;
@@ -60,13 +60,13 @@ public final class i {
     public static final int y = Utilities.j(Runtime.getRuntime().availableProcessors() - 2, 6, 1);
 
     /* JADX WARN: Multi-variable type inference failed */
-    public i(File file, g gVar, f fVar, int i7, int i10, boolean z9, int i11) {
+    public i(File file, g gVar, f fVar, int i7, int i10, boolean z10, int i11) {
         RandomAccessFile randomAccessFile;
         ArrayList arrayList = new ArrayList();
         this.e = arrayList;
         this.h = new Object();
         this.o = new AtomicBoolean(false);
-        this.p = new ra(this, 11);
+        this.p = new sa(this, 13);
         this.a = (BitmapDrawable) gVar;
         this.b = i7;
         this.c = i10;
@@ -87,11 +87,11 @@ public final class i {
         sb2.append(i7);
         sb2.append("_");
         sb2.append(i10);
-        sb2.append(z9 ? "_nolimit" : " ");
-        File file3 = new File(file2, a8.p0.s(sb2, i11 != 0 ? jg.g.j(i11, "_fitz") : "", ".pcache2"));
+        sb2.append(z10 ? "_nolimit" : " ");
+        File file3 = new File(file2, a8.p0.s(sb2, i11 != 0 ? i5.c.i(i11, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i7 < org.telegram.messenger.g0.L(60.0f) && i10 < org.telegram.messenger.g0.L(60.0f);
-        if (iz.o() < 2) {
+        if (gz.o() < 2) {
             this.k = false;
             this.q = false;
             return;
@@ -150,7 +150,7 @@ public final class i {
         A = i7;
         if (i7 <= 0) {
             A = 0;
-            zg0.T0.postRunnable(new ai.m0(1));
+            ch0.U0.postRunnable(new ai.o(3));
         }
     }
 
@@ -223,10 +223,10 @@ public final class i {
                 RandomAccessFile randomAccessFile2 = new RandomAccessFile(this.m, "rw");
                 if (B == null) {
                 }
-                B.b(this.c, this.b);
-                wa waVar = B;
-                bitmapArr = (Bitmap[]) waVar.d;
-                d0[] d0VarArr = (d0[]) waVar.c;
+                B.a(this.c, this.b);
+                xa xaVar = B;
+                bitmapArr = (Bitmap[]) xaVar.d;
+                d0[] d0VarArr = (d0[]) xaVar.c;
                 countDownLatchArr = new CountDownLatch[y];
                 ArrayList arrayList = new ArrayList();
                 randomAccessFile2.writeBoolean(false);
@@ -246,7 +246,7 @@ public final class i {
                     if (a10 != -1) {
                     }
                 }
-                boolean z9 = r2.a;
+                boolean z10 = r2.a;
                 a8.b("cancelled cache generation");
                 atomicBoolean.set(true);
                 while (i7 < y) {
@@ -285,12 +285,12 @@ public final class i {
         }
         RandomAccessFile randomAccessFile22 = new RandomAccessFile(this.m, "rw");
         if (B == null) {
-            B = new wa(1, (byte) 0);
+            B = new xa(1, (byte) 0);
         }
-        B.b(this.c, this.b);
-        wa waVar2 = B;
-        bitmapArr = (Bitmap[]) waVar2.d;
-        d0[] d0VarArr2 = (d0[]) waVar2.c;
+        B.a(this.c, this.b);
+        xa xaVar2 = B;
+        bitmapArr = (Bitmap[]) xaVar2.d;
+        d0[] d0VarArr2 = (d0[]) xaVar2.c;
         countDownLatchArr = new CountDownLatch[y];
         ArrayList arrayList2 = new ArrayList();
         randomAccessFile22.writeBoolean(false);
@@ -359,7 +359,7 @@ public final class i {
                 this.d.set(i112);
             }
         }
-        boolean z92 = r2.a;
+        boolean z102 = r2.a;
         a8.b("cancelled cache generation");
         atomicBoolean2.set(true);
         while (i7 < y) {
@@ -400,13 +400,13 @@ public final class i {
     }
 
     public final byte[] e(h hVar) {
-        boolean z9 = this.f && Thread.currentThread().getName().startsWith("DispatchQueuePoolThreadSafety_");
-        byte[] bArr = z9 ? (byte[]) w.get(Thread.currentThread()) : this.g;
+        boolean z10 = this.f && Thread.currentThread().getName().startsWith("DispatchQueuePoolThreadSafety_");
+        byte[] bArr = z10 ? (byte[]) w.get(Thread.currentThread()) : this.g;
         if (bArr != null && bArr.length >= hVar.b) {
             return bArr;
         }
         byte[] bArr2 = new byte[(int) (hVar.b * 1.3f)];
-        if (!z9) {
+        if (!z10) {
             this.g = bArr2;
             return bArr2;
         }
@@ -479,8 +479,8 @@ public final class i {
                             if (this.t == null) {
                                 this.t = new BitmapFactory.Options();
                             }
-                            boolean z9 = bitmap.getConfig() == Bitmap.Config.ALPHA_8;
-                            if (z9) {
+                            boolean z10 = bitmap.getConfig() == Bitmap.Config.ALPHA_8;
+                            if (z10) {
                                 Bitmap bitmap2 = this.u;
                                 if (bitmap2 == null || bitmap2.getWidth() != bitmap.getWidth() || this.u.getHeight() != bitmap.getHeight()) {
                                     this.u = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
@@ -490,7 +490,7 @@ public final class i {
                                 this.t.inBitmap = bitmap;
                             }
                             BitmapFactory.decodeByteArray(e10, 0, hVar.b, this.t);
-                            if (z9) {
+                            if (z10) {
                                 Utilities.extractAlpha(this.u, bitmap);
                             }
                             this.t.inBitmap = null;

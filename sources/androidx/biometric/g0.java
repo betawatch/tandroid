@@ -1,7 +1,7 @@
 package androidx.biometric;
 
-import a8.k1;
-import a8.ra;
+import a8.l1;
+import a8.sa;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -21,44 +21,44 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class g0 extends androidx.fragment.app.o {
-    public final Handler A0 = new Handler(Looper.getMainLooper());
-    public final ra B0 = new ra(this, 3);
-    public z C0;
-    public int D0;
+public class g0 extends androidx.fragment.app.p {
+    public final Handler B0 = new Handler(Looper.getMainLooper());
+    public final sa C0 = new sa(this, 5);
+    public z D0;
     public int E0;
-    public ImageView F0;
-    public TextView G0;
+    public int F0;
+    public ImageView G0;
+    public TextView H0;
 
-    @Override // androidx.fragment.app.r
+    @Override // androidx.fragment.app.s
     public final void E() {
-        this.U = true;
-        this.A0.removeCallbacksAndMessages(null);
+        this.V = true;
+        this.B0.removeCallbacksAndMessages(null);
     }
 
-    @Override // androidx.fragment.app.r
+    @Override // androidx.fragment.app.s
     public final void F() {
-        this.U = true;
-        z zVar = this.C0;
+        this.V = true;
+        z zVar = this.D0;
         zVar.y = 0;
         zVar.f(1);
-        this.C0.e(q(R.string.fingerprint_dialog_touch_sensor));
+        this.D0.e(q(R.string.fingerprint_dialog_touch_sensor));
     }
 
-    @Override // androidx.fragment.app.o
+    @Override // androidx.fragment.app.p
     public final Dialog O() {
-        f5.u uVar = new f5.u(K());
-        m6.n nVar = this.C0.f;
+        f5.v vVar = new f5.v(K());
+        m6.n nVar = this.D0.f;
         Object obj = null;
         CharSequence charSequence = nVar != null ? (CharSequence) nVar.b : null;
-        g.b bVar = (g.b) uVar.c;
+        g.b bVar = (g.b) vVar.c;
         bVar.f = charSequence;
         View inflate = LayoutInflater.from((ContextThemeWrapper) bVar.c).inflate(R.layout.fingerprint_dialog_layout, (ViewGroup) null);
         TextView textView = (TextView) inflate.findViewById(R.id.fingerprint_subtitle);
         if (textView != null) {
-            this.C0.getClass();
+            this.D0.getClass();
             if (TextUtils.isEmpty(null)) {
                 textView.setVisibility(8);
             } else {
@@ -68,7 +68,7 @@ public class g0 extends androidx.fragment.app.o {
         }
         TextView textView2 = (TextView) inflate.findViewById(R.id.fingerprint_description);
         if (textView2 != null) {
-            m6.n nVar2 = this.C0.f;
+            m6.n nVar2 = this.D0.f;
             CharSequence charSequence2 = nVar2 != null ? (CharSequence) nVar2.c : null;
             if (TextUtils.isEmpty(charSequence2)) {
                 textView2.setVisibility(8);
@@ -77,12 +77,12 @@ public class g0 extends androidx.fragment.app.o {
                 textView2.setText(charSequence2);
             }
         }
-        this.F0 = (ImageView) inflate.findViewById(R.id.fingerprint_icon);
-        this.G0 = (TextView) inflate.findViewById(R.id.fingerprint_error);
-        if (k1.a(this.C0.c())) {
+        this.G0 = (ImageView) inflate.findViewById(R.id.fingerprint_icon);
+        this.H0 = (TextView) inflate.findViewById(R.id.fingerprint_error);
+        if (l1.a(this.D0.c())) {
             obj = q(R.string.confirm_device_credential_password);
         } else {
-            z zVar = this.C0;
+            z zVar = this.D0;
             String str = zVar.k;
             if (str != null) {
                 obj = str;
@@ -97,14 +97,14 @@ public class g0 extends androidx.fragment.app.o {
         bVar.g = obj;
         bVar.j = yVar;
         bVar.i = inflate;
-        g.f g10 = uVar.g();
+        g.f g10 = vVar.g();
         g10.setCanceledOnTouchOutside(false);
         return g10;
     }
 
     public final int P(int i7) {
         Context n10 = n();
-        androidx.fragment.app.u k10 = k();
+        androidx.fragment.app.v k10 = k();
         if (n10 == null || k10 == null) {
             Log.w("FingerprintFragment", "Unable to get themed color. Context or activity is null.");
             return 0;
@@ -117,38 +117,38 @@ public class g0 extends androidx.fragment.app.o {
         return color;
     }
 
-    @Override // androidx.fragment.app.o, android.content.DialogInterface.OnCancelListener
+    @Override // androidx.fragment.app.p, android.content.DialogInterface.OnCancelListener
     public final void onCancel(DialogInterface dialogInterface) {
-        z zVar = this.C0;
+        z zVar = this.D0;
         if (zVar.x == null) {
             zVar.x = new androidx.lifecycle.z();
         }
         z.h(zVar.x, Boolean.TRUE);
     }
 
-    @Override // androidx.fragment.app.o, androidx.fragment.app.r
+    @Override // androidx.fragment.app.p, androidx.fragment.app.s
     public final void z(Bundle bundle) {
         super.z(bundle);
-        androidx.fragment.app.u k10 = k();
+        androidx.fragment.app.v k10 = k();
         if (k10 != null) {
-            z zVar = (z) new android.support.v4.media.session.a0(k10).i(z.class);
-            this.C0 = zVar;
+            z zVar = (z) new android.support.v4.media.session.a0(k10).j(z.class);
+            this.D0 = zVar;
             if (zVar.z == null) {
                 zVar.z = new androidx.lifecycle.z();
             }
-            zVar.z.d(this, new d6.i(this, 6));
-            z zVar2 = this.C0;
+            zVar.z.d(this, new ob.c(this, 4));
+            z zVar2 = this.D0;
             if (zVar2.A == null) {
                 zVar2.A = new androidx.lifecycle.z();
             }
-            zVar2.A.d(this, new aa.n(this, 2));
+            zVar2.A.d(this, new cb.c(this, 5));
         }
         if (Build.VERSION.SDK_INT >= 26) {
-            this.D0 = P(f0.a());
+            this.E0 = P(f0.a());
         } else {
             Context n10 = n();
-            this.D0 = n10 != null ? n10.getColor(R.color.biometric_error_color) : 0;
+            this.E0 = n10 != null ? n10.getColor(R.color.biometric_error_color) : 0;
         }
-        this.E0 = P(android.R.attr.textColorSecondary);
+        this.F0 = P(android.R.attr.textColorSecondary);
     }
 }

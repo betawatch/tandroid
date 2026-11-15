@@ -1,16 +1,56 @@
 package a8;
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class l9 {
-    public static /* synthetic */ boolean a(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, com.google.android.gms.internal.play_billing.g4 g4Var, Object obj, Object obj2) {
-        while (!atomicReferenceFieldUpdater.compareAndSet(g4Var, obj, obj2)) {
-            if (atomicReferenceFieldUpdater.get(g4Var) != obj && atomicReferenceFieldUpdater.get(g4Var) != obj) {
-                return false;
+    public static String a(com.google.android.gms.internal.play_billing.l1 l1Var) {
+        StringBuilder sb2 = new StringBuilder(l1Var.j());
+        for (int i7 = 0; i7 < l1Var.j(); i7++) {
+            byte f10 = l1Var.f(i7);
+            if (f10 == 34) {
+                sb2.append("\\\"");
+            } else if (f10 == 39) {
+                sb2.append("\\'");
+            } else if (f10 != 92) {
+                switch (f10) {
+                    case 7:
+                        sb2.append("\\a");
+                        break;
+                    case 8:
+                        sb2.append("\\b");
+                        break;
+                    case 9:
+                        sb2.append("\\t");
+                        break;
+                    case 10:
+                        sb2.append("\\n");
+                        break;
+                    case 11:
+                        sb2.append("\\v");
+                        break;
+                    case 12:
+                        sb2.append("\\f");
+                        break;
+                    case 13:
+                        sb2.append("\\r");
+                        break;
+                    default:
+                        if (f10 < 32 || f10 > 126) {
+                            sb2.append('\\');
+                            sb2.append((char) (((f10 >>> 6) & 3) + 48));
+                            sb2.append((char) (((f10 >>> 3) & 7) + 48));
+                            sb2.append((char) ((f10 & 7) + 48));
+                            break;
+                        } else {
+                            sb2.append((char) f10);
+                            break;
+                        }
+                        break;
+                }
+            } else {
+                sb2.append("\\\\");
             }
         }
-        return true;
+        return sb2.toString();
     }
 }

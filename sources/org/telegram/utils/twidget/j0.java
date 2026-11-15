@@ -3,16 +3,16 @@ package org.telegram.utils.twidget;
 import android.content.Context;
 import android.os.Process;
 import android.text.TextUtils;
-import bi.ra;
+import di.g9;
 import java.util.HashMap;
 import java.util.Iterator;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.v10;
-import org.telegram.messenger.yr;
+import org.telegram.messenger.np;
+import org.telegram.messenger.s10;
+import org.telegram.messenger.vr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,11 +50,11 @@ public final /* synthetic */ class j0 implements Runnable {
                     return;
                 }
                 TLRPC.TL_messages_getWidgetPublicData tL_messages_getWidgetPublicData = new TLRPC.TL_messages_getWidgetPublicData();
-                tL_messages_getWidgetPublicData.peer = qp.s1(k0Var.b).j1(k0Var.c);
+                tL_messages_getWidgetPublicData.peer = np.s1(k0Var.b).j1(k0Var.c);
                 tL_messages_getWidgetPublicData.msg_id = k0Var.d;
                 tL_messages_getWidgetPublicData.hash = m0Var.c;
-                m0Var.e = ConnectionsManager.getInstance(i7).sendRequestTyped(tL_messages_getWidgetPublicData, new d3.b(1), new v10() { // from class: org.telegram.utils.twidget.h0
-                    @Override // org.telegram.messenger.v10
+                m0Var.e = ConnectionsManager.getInstance(i7).sendRequestTyped(tL_messages_getWidgetPublicData, new d3.b(1), new s10() { // from class: org.telegram.utils.twidget.h0
+                    @Override // org.telegram.messenger.s10
                     public final void a(Object obj, Object obj2) {
                         TLRPC.messages_WidgetPublicData messages_widgetpublicdata = (TLRPC.messages_WidgetPublicData) obj;
                         m0 m0Var2 = m0.this;
@@ -86,8 +86,8 @@ public final /* synthetic */ class j0 implements Runnable {
                                         if (tL_messageMediaWidget != null) {
                                             tL_messageMediaWidget.public_data_hash = j10;
                                         }
-                                        yr a02 = yr.a0(i10);
-                                        a02.a.c(new ra(a02, k0Var3.d, k0Var3.c, str == null ? "" : str, j10, (String) null));
+                                        vr a02 = vr.a0(i10);
+                                        a02.a.c(new g9(a02, k0Var3.d, k0Var3.c, str == null ? "" : str, j10, (String) null));
                                         str = str;
                                     }
                                 }
@@ -98,17 +98,17 @@ public final /* synthetic */ class j0 implements Runnable {
                 });
                 return;
             case 2:
-                q0 q0Var = (q0) this.b;
-                r0 r0Var = q0Var.h;
-                synchronized (r0Var.b) {
+                t0 t0Var = (t0) this.b;
+                u0 u0Var = t0Var.h;
+                synchronized (u0Var.b) {
                     try {
-                        if (q0Var.c <= 0 && q0Var.d) {
-                            q0Var.d = false;
-                            q0Var.a = null;
-                            if (r0Var.d == q0Var) {
-                                r0Var.d = null;
+                        if (t0Var.c <= 0 && t0Var.d) {
+                            t0Var.d = false;
+                            t0Var.a = null;
+                            if (u0Var.d == t0Var) {
+                                u0Var.d = null;
                             }
-                            r0Var.g.unbindService(q0Var);
+                            u0Var.g.unbindService(t0Var);
                             return;
                         }
                         return;
@@ -116,10 +116,10 @@ public final /* synthetic */ class j0 implements Runnable {
                     }
                 }
             case 3:
-                v0 v0Var = (v0) this.b;
-                i1 i1Var = v0Var.f;
-                if (i1Var != null) {
-                    i1Var.e(v0Var.x);
+                y0 y0Var = (y0) this.b;
+                l1 l1Var = y0Var.f;
+                if (l1Var != null) {
+                    l1Var.e(y0Var.x);
                     return;
                 }
                 return;
@@ -129,7 +129,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 runnable.run();
                 return;
             default:
-                i1.c((Context) this.b);
+                l1.c((Context) this.b);
                 return;
         }
     }

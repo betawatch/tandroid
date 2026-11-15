@@ -1,6 +1,6 @@
 package a3;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k implements Comparable {
     public final boolean a;
@@ -8,7 +8,7 @@ public final class k implements Comparable {
 
     public k(e2.u uVar, int i7) {
         this.a = (uVar.e & 1) != 0;
-        this.b = jg.g.c(i7, false);
+        this.b = i5.c.b(i7, false);
     }
 
     @Override // java.lang.Comparable

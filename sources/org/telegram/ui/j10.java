@@ -1,31 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j10 extends g.p {
-    public final /* synthetic */ f40 c;
+public final class j10 extends v4.k {
+    public final /* synthetic */ c40 F;
 
-    public j10(f40 f40Var) {
-        this.c = f40Var;
+    public j10(c40 c40Var) {
+        this.F = c40Var;
     }
 
-    @Override // g.p
-    public final int i(int i7) {
-        z30 z30Var;
-        int i10;
-        int i11;
-        int i12 = f40.z5 ? 6 : 2;
-        if (f40.A5 || i7 < (i10 = (z30Var = this.c.J1).G) || i7 >= (i11 = z30Var.H)) {
-            return i12;
-        }
-        int i13 = i11 - i10;
-        int i14 = (i7 != i11 - 1 || (!f40.z5 && i13 % 2 == 0)) ? 1 : 2;
-        if (!f40.z5) {
-            return i14;
-        }
-        if (i13 == 1) {
-            return 6;
-        }
-        return i13 == 2 ? 3 : 2;
+    @Override // v4.k
+    public final void P(v4.e1 e1Var) {
+        c40 c40Var = this.F;
+        c40Var.L1.invalidate();
+        c40Var.Z3.invalidate();
+        c40Var.b.invalidate();
+        c40.P0(c40Var);
     }
 }

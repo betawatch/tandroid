@@ -3,7 +3,7 @@ package bg;
 import android.graphics.Rect;
 import android.view.Choreographer;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class y implements Choreographer.FrameCallback {
         switch (this.a) {
             case 0:
                 b0 b0Var = (b0) this.b;
-                if (b0Var.F.get()) {
+                if (b0Var.G.get()) {
                     long j10 = b0Var.b;
                     if (j10 == 0) {
                         b0Var.b = j3;

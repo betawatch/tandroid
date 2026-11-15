@@ -1,50 +1,51 @@
 package f3;
 
+import com.google.android.gms.internal.vision.e2;
 import java.io.EOFException;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class n implements j0 {
+public final class n implements i0 {
     public final byte[] a = new byte[TLObject.FLAG_12];
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final void a(h2.x xVar, int i7, int i10) {
         xVar.O(i7);
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final /* synthetic */ void b(int i7, h2.x xVar) {
-        com.google.android.recaptcha.internal.a.a(this, xVar, i7);
+        e2.a(this, xVar, i7);
     }
 
-    @Override // f3.j0
-    public final int e(e2.n nVar, int i7, boolean z9) {
-        return f(nVar, i7, z9);
+    @Override // f3.i0
+    public final int e(e2.n nVar, int i7, boolean z10) {
+        return f(nVar, i7, z10);
     }
 
-    @Override // f3.j0
-    public final int f(e2.n nVar, int i7, boolean z9) {
+    @Override // f3.i0
+    public final int f(e2.n nVar, int i7, boolean z10) {
         byte[] bArr = this.a;
         int read = nVar.read(bArr, 0, Math.min(bArr.length, i7));
         if (read != -1) {
             return read;
         }
-        if (z9) {
+        if (z10) {
             return -1;
         }
         throw new EOFException();
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final /* synthetic */ void d(long j3) {
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final void g(e2.u uVar) {
     }
 
-    @Override // f3.j0
-    public final void c(long j3, int i7, int i10, int i11, i0 i0Var) {
+    @Override // f3.i0
+    public final void c(long j3, int i7, int i10, int i11, h0 h0Var) {
     }
 }

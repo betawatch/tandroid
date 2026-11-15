@@ -1,58 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class wn0 implements View.OnTouchListener {
+public final class wn0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final Rect b;
-    public final /* synthetic */ mo0 c;
+    public final /* synthetic */ po0 b;
 
-    public wn0(mo0 mo0Var, int i7) {
+    public /* synthetic */ wn0(po0 po0Var, int i7) {
         this.a = i7;
-        switch (i7) {
-            case 1:
-                this.c = mo0Var;
-                this.b = new Rect();
+        this.b = po0Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new wa0(this, 28));
                 break;
             default:
-                this.c = mo0Var;
-                this.b = new Rect();
+                po0 po0Var = this.b;
+                io0 io0Var = po0Var.G1;
+                cv0 cv0Var = po0Var.M1;
+                v00 v00Var = po0Var.u2;
+                if (!TextUtils.isEmpty(v00Var.r.getText())) {
+                    po0Var.K0(false);
+                }
+                if (po0Var.w2) {
+                    String obj = v00Var.r.getText().toString();
+                    if (obj.length() != 0) {
+                        if (cv0Var != null) {
+                            cv0Var.d.setText(org.telegram.messenger.hd.M0(2131748167, null));
+                        }
+                    } else if (po0Var.B1.getAdapter() != io0Var) {
+                        int J0 = po0.J0(po0Var);
+                        cv0Var.d.setText(org.telegram.messenger.hd.M0(2131748167, null));
+                        cv0Var.e(false, true);
+                        po0Var.K0(false);
+                        io0Var.f();
+                        if (J0 > 0) {
+                            po0Var.D1.h1(0, -J0);
+                        }
+                    }
+                    mo0 mo0Var = po0Var.I1;
+                    if (mo0Var != null) {
+                        mo0Var.E(obj);
+                        break;
+                    }
+                }
                 break;
         }
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        mo0 mo0Var;
-        org.telegram.ui.ActionBar.g1 g1Var;
-        mo0 mo0Var2;
-        org.telegram.ui.ActionBar.g1 g1Var2;
-        switch (this.a) {
-            case 0:
-                if (motionEvent.getActionMasked() == 0 && (g1Var = (mo0Var = this.c).E2) != null && g1Var.isShowing()) {
-                    Rect rect = this.b;
-                    view.getHitRect(rect);
-                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        mo0Var.E2.d(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (motionEvent.getActionMasked() == 0 && (g1Var2 = (mo0Var2 = this.c).E2) != null && g1Var2.isShowing()) {
-                    Rect rect2 = this.b;
-                    view.getHitRect(rect2);
-                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        mo0Var2.E2.d(true);
-                        break;
-                    }
-                }
-                break;
-        }
-        return false;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

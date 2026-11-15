@@ -2,11 +2,11 @@ package m8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import java.util.Arrays;
 import q6.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class h extends r6.a {
     public static final Parcelable.Creator<h> CREATOR = new m6.e(8);
@@ -14,11 +14,11 @@ public class h extends r6.a {
     public final Float b;
 
     public h(int i7, Float f10) {
-        boolean z9 = true;
+        boolean z10 = true;
         if (i7 != 1 && (f10 == null || f10.floatValue() < 0.0f)) {
-            z9 = false;
+            z10 = false;
         }
-        m.a("Invalid PatternItem: type=" + i7 + " length=" + f10, z9);
+        m.a("Invalid PatternItem: type=" + i7 + " length=" + f10, z10);
         this.a = i7;
         this.b = f10;
     }
@@ -44,10 +44,10 @@ public class h extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 2, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 2, 4);
         parcel.writeInt(this.a);
-        xb.e(parcel, 3, this.b);
-        xb.s(parcel, r10);
+        yb.e(parcel, 3, this.b);
+        yb.s(parcel, r10);
     }
 }

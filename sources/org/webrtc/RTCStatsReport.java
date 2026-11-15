@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class RTCStatsReport {
     private final Map<String, RTCStats> stats;
@@ -29,13 +29,13 @@ public class RTCStatsReport {
         StringBuilder sb2 = new StringBuilder("{ timestampUs: ");
         sb2.append(this.timestampUs);
         sb2.append(", stats: [\n");
-        boolean z9 = true;
+        boolean z10 = true;
         for (RTCStats rTCStats : this.stats.values()) {
-            if (!z9) {
+            if (!z10) {
                 sb2.append(",\n");
             }
             sb2.append(rTCStats);
-            z9 = false;
+            z10 = false;
         }
         sb2.append(" ] }");
         return sb2.toString();

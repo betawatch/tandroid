@@ -6,7 +6,7 @@ import zd.b0;
 import zd.b1;
 import zd.n1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r extends zd.a implements s, g {
     public final c d;
@@ -17,8 +17,8 @@ public final class r extends zd.a implements s, g {
     }
 
     @Override // zd.a
-    public final void Q(Throwable th2, boolean z9) {
-        if (this.d.g(th2, false) || z9) {
+    public final void Q(Throwable th2, boolean z10) {
+        if (this.d.g(th2, false) || z10) {
             return;
         }
         b0.m(this.c, th2);
@@ -37,16 +37,16 @@ public final class r extends zd.a implements s, g {
             if (atomicReferenceFieldUpdater.get(cVar) != null) {
                 while (true) {
                     Object obj = atomicReferenceFieldUpdater.get(cVar);
-                    com.google.android.gms.internal.clearcut.e eVar = e.q;
-                    if (obj != eVar) {
+                    aa.b0 b0Var = e.q;
+                    if (obj != b0Var) {
                         if (obj == e.r) {
                             throw new IllegalStateException("Another handler was already registered and successfully invoked");
                         }
                         throw new IllegalStateException(("Another handler is already registered: " + obj).toString());
                     }
-                    com.google.android.gms.internal.clearcut.e eVar2 = e.r;
-                    while (!atomicReferenceFieldUpdater.compareAndSet(cVar, eVar, eVar2)) {
-                        if (atomicReferenceFieldUpdater.get(cVar) != eVar) {
+                    aa.b0 b0Var2 = e.r;
+                    while (!atomicReferenceFieldUpdater.compareAndSet(cVar, b0Var, b0Var2)) {
+                        if (atomicReferenceFieldUpdater.get(cVar) != b0Var) {
                             break;
                         }
                     }

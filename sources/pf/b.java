@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b {
     public static volatile b j;
@@ -74,10 +74,10 @@ public final class b {
                 a8.g(e13, true);
             }
             this.d = Locale.getDefault().getCountry().toLowerCase();
-            this.f = new HashMap(qs.e4);
-            this.g = new HashMap(qs.e4);
+            this.f = new HashMap(ns.e4);
+            this.g = new HashMap(ns.e4);
             this.h = new HashMap(10);
-            this.i = new HashMap(qs.e4);
+            this.i = new HashMap(ns.e4);
             int f10 = f(0);
             int i7 = 4;
             int i10 = (f10 * 12) + 4;
@@ -164,12 +164,12 @@ public final class b {
         return bVar;
     }
 
-    public static String d(String str, boolean z9) {
+    public static String d(String str, boolean z10) {
         if (str == null) {
             return null;
         }
         StringBuilder sb2 = new StringBuilder(str);
-        String str2 = z9 ? "0123456789+" : "0123456789";
+        String str2 = z10 ? "0123456789+" : "0123456789";
         for (int length = sb2.length() - 1; length >= 0; length--) {
             if (!str2.contains(sb2.substring(length, length + 1))) {
                 sb2.deleteCharAt(length);
@@ -248,7 +248,7 @@ public final class b {
                 cVar.e = g12;
                 int indexOf = g12.indexOf("[[");
                 if (indexOf != -1) {
-                    cVar.e = rf.b.r(cVar.e.substring(0, indexOf), cVar.e.substring(cVar.e.indexOf("]]") + 2));
+                    cVar.e = r.b.v(cVar.e.substring(0, indexOf), cVar.e.substring(cVar.e.indexOf("]]") + 2));
                 }
                 arrayList4.add(cVar);
                 i14++;

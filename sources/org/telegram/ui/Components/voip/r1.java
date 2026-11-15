@@ -1,96 +1,445 @@
 package org.telegram.ui.Components.voip;
 
+import android.animation.ValueAnimator;
 import android.app.Activity;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.r60;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.f40;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewParent;
+import android.view.ViewPropertyAnimator;
+import android.view.WindowInsets;
+import android.widget.FrameLayout;
+import fi.f4;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.ns;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.pb1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r1 implements r60, org.telegram.ui.ActionBar.r1 {
-    public final /* synthetic */ TLRPC.User a;
-    public final /* synthetic */ TLRPC.Chat b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ Activity h;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 n;
-    public final /* synthetic */ org.telegram.messenger.c r;
+public final class r1 extends FrameLayout {
+    public float E;
+    public float F;
+    public float G;
+    public float H;
+    public float I;
+    public float J;
+    public float K;
+    public float L;
+    public boolean M;
+    public boolean N;
+    public boolean O;
+    public boolean P;
+    public boolean Q;
+    public float R;
+    public boolean S;
+    public boolean T;
+    public int U;
+    public float V;
+    public float W;
+    public float a;
+    public float a0;
+    public float b;
+    public float b0;
+    public float c;
+    public boolean c0;
+    public float d;
+    public boolean d0;
+    public boolean e;
+    public ValueAnimator e0;
+    public int f;
+    public final f4 f0;
+    public ValueAnimator g0;
+    public int h;
+    public final hi.j3 h0;
+    public View.OnClickListener i0;
+    public q1 j0;
+    public long k0;
+    public WindowInsets n;
+    public final float r;
+    public final Path s;
+    public final RectF w;
+    public final Paint x;
+    public final Drawable y;
 
-    public /* synthetic */ r1(TLRPC.User user, TLRPC.Chat chat, String str, boolean z9, boolean z10, boolean z11, Activity activity, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.messenger.c cVar) {
-        this.a = user;
-        this.b = chat;
-        this.c = str;
-        this.d = z9;
-        this.e = z10;
-        this.f = z11;
-        this.h = activity;
-        this.n = f2Var;
-        this.r = cVar;
+    public r1(Activity activity) {
+        super(activity);
+        this.s = new Path();
+        this.w = new RectF();
+        new Paint(1);
+        Paint paint = new Paint(1);
+        this.x = paint;
+        this.E = -1.0f;
+        this.F = -1.0f;
+        this.K = 0.0f;
+        this.L = 0.0f;
+        this.R = -1.0f;
+        this.S = true;
+        this.f0 = new f4(this, 11);
+        this.h0 = new hi.j3(this, 20);
+        this.r = ViewConfiguration.get(activity).getScaledTouchSlop();
+        setOutlineProvider(new fh.a(this, 7));
+        setClipToOutline(true);
+        paint.setColor(i0.a.o(-16777216, ns.n1));
+        this.y = activity.getDrawable(R.drawable.calls_mute_mini);
     }
 
-    @Override // org.telegram.ui.Components.r60
-    public void a(TLRPC.InputPeer inputPeer, boolean z9, boolean z10, boolean z11) {
-        boolean z12 = this.d;
-        Activity activity = this.h;
-        org.telegram.messenger.c cVar = this.r;
-        TLRPC.Chat chat = this.b;
-        String str = this.c;
-        if (z12 && z10) {
-            f40.e1((LaunchActivity) activity, cVar, chat, inputPeer, z9, str);
+    public final void a() {
+        f();
+        float f10 = this.V;
+        if (f10 < 0.0f || this.P) {
             return;
         }
-        TLRPC.User user = this.a;
-        boolean z13 = this.e;
-        boolean z14 = this.f;
-        org.telegram.ui.ActionBar.f2 f2Var = this.n;
-        if (z9 || str == null) {
-            y1.b(user, chat, str, inputPeer, z9, z13, z14, z12, activity, f2Var, cVar, false, true, z11);
-            return;
-        }
-        x1 x1Var = new x1(activity, chat, user, chat, str, inputPeer, z13, z14, z12, activity, f2Var, cVar, z11);
-        if (f2Var != null) {
-            f2Var.showDialog(x1Var);
-        }
+        e(f10, this.W, getMeasuredWidth(), getMeasuredHeight(), true);
+        this.V = -1.0f;
+        this.W = -1.0f;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        final TLRPC.User user = this.a;
-        final TLRPC.Chat chat = this.b;
-        final String str = this.c;
-        final boolean z9 = this.d;
-        final boolean z10 = this.e;
-        final boolean z11 = this.f;
-        final Activity activity = this.h;
-        final org.telegram.ui.ActionBar.f2 f2Var = this.n;
-        final org.telegram.messenger.c cVar = this.r;
-        if (sharedInstance != null) {
-            VoIPService.getSharedInstance().hangUp(new Runnable() { // from class: org.telegram.ui.Components.voip.t1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    y1.a = 0L;
-                    y1.b(TLRPC.User.this, chat, str, null, false, z9, z10, z11, activity, f2Var, cVar, true, true, false);
-                }
-            });
+    public final void b() {
+        if (getMeasuredWidth() <= 0 || this.E >= 0.0f) {
+            this.V = -1.0f;
+            this.W = -1.0f;
+            return;
+        }
+        Object parent = getParent();
+        if (parent == null) {
+            return;
+        }
+        float systemWindowInsetTop = this.n == null ? 0.0f : r2.getSystemWindowInsetTop() + this.I;
+        float systemWindowInsetBottom = this.n == null ? 0.0f : r3.getSystemWindowInsetBottom() + this.J;
+        View view = (View) parent;
+        this.V = (getTranslationX() - this.G) / (((view.getMeasuredWidth() - this.G) - this.H) - getMeasuredWidth());
+        this.W = (getTranslationY() - systemWindowInsetTop) / (((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop) - getMeasuredHeight());
+        this.V = Math.max(0.0f, Math.min(1.0f, this.V));
+        this.W = Math.max(0.0f, Math.min(1.0f, this.W));
+    }
+
+    public final void c(boolean z10, boolean z11) {
+        r1 r1Var;
+        if (getMeasuredWidth() <= 0 || getVisibility() != 0) {
+            z11 = false;
+        }
+        if (!z11) {
+            if (this.N != z10) {
+                this.N = z10;
+                this.O = z10;
+                this.K = z10 ? 1.0f : 0.0f;
+                requestLayout();
+                invalidateOutline();
+                return;
+            }
+            return;
+        }
+        if (this.P) {
+            this.O = z10;
+            return;
+        }
+        if (!z10 || this.N) {
+            if (z10 || !this.N) {
+                this.K = this.N ? 1.0f : 0.0f;
+                this.N = z10;
+                this.O = z10;
+                requestLayout();
+                return;
+            }
+            this.O = z10;
+            float translationX = getTranslationX();
+            float translationY = getTranslationY();
+            f();
+            this.N = false;
+            this.P = true;
+            requestLayout();
+            animate().setListener(null).cancel();
+            getViewTreeObserver().addOnPreDrawListener(new p1(this, translationX, translationY));
+            return;
+        }
+        this.N = true;
+        this.O = z10;
+        f();
+        float f10 = this.E;
+        if (f10 >= 0.0f) {
+            r1Var = this;
+            r1Var.e(f10, this.F, (int) (getMeasuredWidth() * 0.23f), (int) (getMeasuredHeight() * 0.23f), false);
         } else {
-            y1.b(user, chat, str, null, false, z9, z10, z11, activity, f2Var, cVar, true, true, false);
+            r1Var = this;
+        }
+        r1Var.N = false;
+        r1Var.P = true;
+        float translationX2 = getTranslationX();
+        float translationY2 = getTranslationY();
+        setTranslationX(0.0f);
+        setTranslationY(0.0f);
+        invalidate();
+        ValueAnimator valueAnimator = r1Var.e0;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(r1Var.K, 1.0f);
+        r1Var.e0 = ofFloat;
+        ofFloat.addUpdateListener(r1Var.f0);
+        r1Var.e0.setDuration(300L);
+        r1Var.e0.start();
+        animate().setListener(null).cancel();
+        ViewPropertyAnimator duration = animate().scaleX(0.23f).scaleY(0.23f).translationX(translationX2 - ((getMeasuredWidth() - (getMeasuredWidth() * 0.23f)) / 2.0f)).translationY(translationY2 - ((getMeasuredHeight() - (getMeasuredHeight() * 0.23f)) / 2.0f)).alpha(1.0f).setStartDelay(0L).setDuration(300L);
+        er erVar = er.f;
+        duration.setInterpolator(erVar).setListener(new o1(this, translationX2, translationY2, 0)).setInterpolator(erVar).start();
+    }
+
+    public final void d(float f10, float f11) {
+        Object parent = getParent();
+        if (this.N && parent != null && ((View) parent).getMeasuredWidth() <= 0 && getMeasuredWidth() != 0 && getMeasuredHeight() != 0) {
+            e(f10, f11, getMeasuredWidth(), getMeasuredHeight(), true);
+        } else {
+            this.E = f10;
+            this.F = f11;
         }
     }
 
-    public /* synthetic */ r1(boolean z9, Activity activity, org.telegram.messenger.c cVar, TLRPC.Chat chat, String str, TLRPC.User user, boolean z10, boolean z11, org.telegram.ui.ActionBar.f2 f2Var) {
-        this.d = z9;
-        this.h = activity;
-        this.r = cVar;
-        this.b = chat;
-        this.c = str;
-        this.a = user;
-        this.e = z10;
-        this.f = z11;
-        this.n = f2Var;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        r1 r1Var;
+        if (this.a0 >= 0.0f) {
+            if (!this.d0) {
+                animate().setListener(null).cancel();
+            }
+            setTranslationX(this.a0);
+            setTranslationY(this.b0);
+            if (!this.d0) {
+                setScaleX(1.0f);
+                setScaleY(1.0f);
+                setAlpha(1.0f);
+            }
+            this.a0 = -1.0f;
+            this.b0 = -1.0f;
+        }
+        if (this.E < 0.0f || !this.N || getMeasuredWidth() <= 0) {
+            r1Var = this;
+        } else {
+            r1Var = this;
+            r1Var.e(this.E, this.F, getMeasuredWidth(), getMeasuredHeight(), false);
+            r1Var.E = -1.0f;
+            r1Var.F = -1.0f;
+        }
+        super.dispatchDraw(canvas);
+        if (!r1Var.P) {
+            boolean z10 = r1Var.N;
+            boolean z11 = r1Var.O;
+            if (z10 != z11) {
+                c(z11, true);
+            }
+        }
+        int measuredWidth = getMeasuredWidth() >> 1;
+        int measuredHeight = getMeasuredHeight() - ((int) ((org.telegram.messenger.g0.L(18.0f) * 1.0f) / getScaleY()));
+        canvas.save();
+        float f10 = measuredWidth;
+        float f11 = measuredHeight;
+        canvas.scale((1.0f / getScaleX()) * r1Var.K * r1Var.L, (1.0f / getScaleY()) * r1Var.K * r1Var.L, f10, f11);
+        canvas.drawCircle(f10, f11, org.telegram.messenger.g0.L(14.0f), r1Var.x);
+        Drawable drawable = r1Var.y;
+        drawable.setBounds(org.telegram.ui.Cells.y0.A(2, measuredWidth, drawable), org.telegram.ui.Cells.y0.y(2, measuredHeight, drawable), org.telegram.ui.Cells.y0.w(2, measuredWidth, drawable), org.telegram.ui.Cells.y0.h(2, measuredHeight, drawable));
+        drawable.draw(canvas);
+        canvas.restore();
+        if (r1Var.P) {
+            invalidate();
+        }
+    }
+
+    public final void e(float f10, float f11, int i7, int i10, boolean z10) {
+        Object parent = getParent();
+        if (parent == null || !this.N || this.P || !this.S) {
+            return;
+        }
+        float systemWindowInsetTop = this.n == null ? 0.0f : r1.getSystemWindowInsetTop() + this.I;
+        float systemWindowInsetBottom = this.n != null ? r3.getSystemWindowInsetBottom() + this.J : 0.0f;
+        View view = (View) parent;
+        float z11 = com.google.android.gms.internal.vision.e2.z((view.getMeasuredWidth() - this.G) - this.H, i7, f10, this.G);
+        float z12 = com.google.android.gms.internal.vision.e2.z((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i10, f11, systemWindowInsetTop);
+        if (z10) {
+            animate().setListener(null).cancel();
+            animate().scaleX(1.0f).scaleY(1.0f).translationX(z11).translationY(z12).alpha(1.0f).setStartDelay(this.M ? 0L : 150L).setDuration(150L).setInterpolator(er.f).start();
+            return;
+        }
+        if (!this.T) {
+            animate().setListener(null).cancel();
+            setScaleX(1.0f);
+            setScaleY(1.0f);
+            animate().alpha(1.0f).setDuration(150L).start();
+        }
+        setTranslationX(z11);
+        setTranslationY(z12);
+    }
+
+    public final void f() {
+        this.G = org.telegram.messenger.g0.L(16.0f);
+        this.H = org.telegram.messenger.g0.L(16.0f);
+        this.I = this.M ? org.telegram.messenger.g0.L(60.0f) : org.telegram.messenger.g0.L(16.0f);
+        this.J = org.telegram.messenger.g0.L(this.M ? 100.0f : 16.0f) + this.U;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return true;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
+        int size2 = View.MeasureSpec.getSize(i10);
+        this.Q = false;
+        if (this.N) {
+            size = (int) (size * 0.23f);
+            size2 = (int) (size2 * 0.23f);
+            this.Q = true;
+        } else if (!this.c0) {
+            setTranslationX(0.0f);
+            setTranslationY(0.0f);
+        }
+        q1 q1Var = this.j0;
+        if (q1Var != null) {
+            ((pb1) q1Var).b.e0.d(this.Q, this.K);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+        if (getMeasuredHeight() != this.f && getMeasuredWidth() != this.h) {
+            Path path = this.s;
+            path.reset();
+            float measuredWidth = getMeasuredWidth();
+            float measuredHeight = getMeasuredHeight();
+            RectF rectF = this.w;
+            rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+            path.addRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), Path.Direction.CW);
+            path.toggleInverseFillType();
+        }
+        this.f = getMeasuredHeight();
+        this.h = getMeasuredWidth();
+        f();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0025, code lost:
+    
+        if (r1 != 3) goto L63;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ViewParent parent = getParent();
+        if (!this.N || this.P || !this.S) {
+            return false;
+        }
+        int action = motionEvent.getAction();
+        if (action != 0) {
+            if (action != 1) {
+                if (action == 2) {
+                    float x10 = (getX() + motionEvent.getX()) - this.a;
+                    float y10 = (getY() + motionEvent.getY()) - this.b;
+                    if (!this.e) {
+                        float f10 = (y10 * y10) + (x10 * x10);
+                        float f11 = this.r;
+                        if (f10 > f11 * f11) {
+                            if (parent != null) {
+                                parent.requestDisallowInterceptTouchEvent(true);
+                            }
+                            this.e = true;
+                            this.a = getX() + motionEvent.getX();
+                            this.b = getY() + motionEvent.getY();
+                            this.c = getTranslationX();
+                            this.d = getTranslationY();
+                            x10 = 0.0f;
+                            y10 = 0.0f;
+                        }
+                    }
+                    if (this.e) {
+                        setTranslationX(this.c + x10);
+                        setTranslationY(this.d + y10);
+                        return true;
+                    }
+                }
+            }
+            if (parent != null && this.N && !this.P) {
+                parent.requestDisallowInterceptTouchEvent(false);
+                animate().setListener(null).cancel();
+                ViewPropertyAnimator startDelay = animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setStartDelay(0L);
+                if (this.i0 != null && !this.e && System.currentTimeMillis() - this.k0 < 200) {
+                    this.i0.onClick(this);
+                }
+                int measuredWidth = ((View) getParent()).getMeasuredWidth();
+                int measuredHeight = ((View) getParent()).getMeasuredHeight();
+                float f12 = this.I;
+                float f13 = this.J;
+                if (this.n != null) {
+                    f12 += r5.getSystemWindowInsetTop();
+                    f13 += this.n.getSystemWindowInsetBottom();
+                }
+                float x11 = getX();
+                float f14 = this.G;
+                if (x11 < f14) {
+                    startDelay.translationX(f14);
+                } else if (getX() + getMeasuredWidth() > measuredWidth - this.H) {
+                    startDelay.translationX((measuredWidth - getMeasuredWidth()) - this.H);
+                }
+                if (getY() < f12) {
+                    startDelay.translationY(f12);
+                } else if (getY() + getMeasuredHeight() > measuredHeight - f13) {
+                    startDelay.translationY((measuredHeight - getMeasuredHeight()) - f13);
+                }
+                startDelay.setDuration(150L).setInterpolator(er.f).start();
+            }
+            this.e = false;
+            return true;
+        }
+        if (this.N && !this.P) {
+            this.k0 = System.currentTimeMillis();
+            this.a = getX() + motionEvent.getX();
+            this.b = getY() + motionEvent.getY();
+            animate().setListener(null).cancel();
+            animate().scaleY(1.05f).scaleX(1.05f).alpha(1.0f).setStartDelay(0L).start();
+        }
+        return true;
+    }
+
+    public void setCornerRadius(float f10) {
+        this.R = f10;
+        invalidateOutline();
+    }
+
+    public void setDelegate(q1 q1Var) {
+        this.j0 = q1Var;
+    }
+
+    public void setInsets(WindowInsets windowInsets) {
+        this.n = windowInsets;
+    }
+
+    public void setIsActive(boolean z10) {
+        this.S = z10;
+    }
+
+    public void setOnTapListener(View.OnClickListener onClickListener) {
+        this.i0 = onClickListener;
+    }
+
+    public void setRelativePosition(r1 r1Var) {
+        Object parent = getParent();
+        if (parent == null) {
+            return;
+        }
+        float systemWindowInsetTop = this.n == null ? 0.0f : r1.getSystemWindowInsetTop() + this.I;
+        View view = (View) parent;
+        d(Math.min(1.0f, Math.max(0.0f, (r1Var.getTranslationX() - this.G) / (((view.getMeasuredWidth() - this.G) - this.H) - r1Var.getMeasuredWidth()))), Math.min(1.0f, Math.max(0.0f, (r1Var.getTranslationY() - systemWindowInsetTop) / (((view.getMeasuredHeight() - (this.n == null ? 0.0f : r3.getSystemWindowInsetBottom() + this.J)) - systemWindowInsetTop) - r1Var.getMeasuredHeight()))));
+    }
+
+    public void setUiVisible(boolean z10) {
+        if (getParent() == null) {
+            this.M = z10;
+        } else {
+            this.M = z10;
+        }
     }
 }

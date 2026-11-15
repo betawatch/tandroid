@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l5 implements org.telegram.messenger.c20 {
+public final /* synthetic */ class l5 implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ t5 b;
 
@@ -13,14 +13,14 @@ public final /* synthetic */ class l5 implements org.telegram.messenger.c20 {
         this.b = t5Var;
     }
 
-    @Override // org.telegram.messenger.c20
+    @Override // org.telegram.messenger.z10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.U = (org.telegram.messenger.e3) obj;
+                this.b.V = (org.telegram.messenger.e3) obj;
                 break;
             default:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.c(11, this.b, (TL_stories.TL_premium_boostsStatus) obj));
+                org.telegram.messenger.g0.h3(new oi.u4(29, this.b, (TL_stories.TL_premium_boostsStatus) obj));
                 break;
         }
     }

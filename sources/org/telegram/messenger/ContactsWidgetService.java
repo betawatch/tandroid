@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class ContactsWidgetService extends RemoteViewsService {
     @Override // android.widget.RemoteViewsService
@@ -16,7 +16,7 @@ public class ContactsWidgetService extends RemoteViewsService {
         i5Var.a = new ArrayList();
         i5Var.g = new a0.h();
         i5Var.b = applicationContext;
-        org.telegram.ui.ActionBar.m6.T(applicationContext);
+        org.telegram.ui.ActionBar.j6.T(applicationContext);
         int intExtra = intent.getIntExtra("appWidgetId", 0);
         i5Var.c = intExtra;
         SharedPreferences sharedPreferences = applicationContext.getSharedPreferences("shortcut_widget", 0);

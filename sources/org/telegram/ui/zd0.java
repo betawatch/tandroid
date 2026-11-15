@@ -1,85 +1,94 @@
 package org.telegram.ui;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import java.util.concurrent.CancellationException;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zd0 implements ss, OnSuccessListener, OnFailureListener {
-    public final /* synthetic */ ee0 a;
+public final class zd0 extends AnimatedPhoneNumberEditText {
+    public final /* synthetic */ int b2;
+    public final /* synthetic */ be0 c2;
 
-    public /* synthetic */ zd0(ee0 ee0Var) {
-        this.a = ee0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zd0(be0 be0Var, Context context, int i7) {
+        super(context);
+        this.b2 = i7;
+        this.c2 = be0Var;
     }
 
-    @Override // org.telegram.ui.ss
-    public void b(ps psVar) {
-        ee0 ee0Var = this.a;
-        ee0Var.K = true;
-        String str = psVar.c;
-        ee0Var.a.setText(str);
-        ee0Var.u(str, psVar);
-        ee0Var.F = psVar;
-        ee0Var.E = 0;
-        ee0Var.K = false;
-        org.telegram.messenger.qp.e1().edit().putString("phone_code_last_matched_" + psVar.c, psVar.d).apply();
-        org.telegram.messenger.g0.i3(new td0(ee0Var, 4), 300L);
-        ce0 ce0Var = ee0Var.b;
-        ce0Var.requestFocus();
-        ce0Var.setSelection(ce0Var.length());
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z10, int i7, Rect rect) {
+        int i10 = this.b2;
+        float f10 = 1.0f;
+        be0 be0Var = this.c2;
+        switch (i10) {
+            case 0:
+                super.onFocusChanged(z10, i7, rect);
+                org.telegram.ui.Components.mb0 mb0Var = be0Var.f;
+                if (!z10 && !be0Var.b.isFocused()) {
+                    f10 = 0.0f;
+                }
+                mb0Var.b(f10, f10, true);
+                if (z10) {
+                    be0Var.h0.c.setEditText(this);
+                    break;
+                }
+                break;
+            default:
+                super.onFocusChanged(z10, i7, rect);
+                ce0 ce0Var = be0Var.h0;
+                org.telegram.ui.Components.mb0 mb0Var2 = be0Var.f;
+                if (!z10 && !be0Var.a.isFocused()) {
+                    f10 = 0.0f;
+                }
+                mb0Var2.b(f10, f10, true);
+                if (!z10) {
+                    if (be0Var.F == 2) {
+                        be0Var.setCountryButtonText(null);
+                        break;
+                    }
+                } else {
+                    ce0Var.c.setEditText(this);
+                    ce0Var.c.setDispatchBackWhenEmpty(true);
+                    if (be0Var.F == 2) {
+                        be0Var.setCountryButtonText(org.telegram.messenger.hd.M0(2131742859, null));
+                        break;
+                    }
+                }
+                break;
+        }
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        int i7;
-        ee0 ee0Var = this.a;
-        fe0 fe0Var = ee0Var.g0;
-        if (ee0Var.W) {
-            return;
-        }
-        if (exc instanceof ConnectionsManager.RequestException) {
-            String message = exc.getMessage();
-            if (message != null && message.contains("SESSION_PASSWORD_NEEDED")) {
-                TL_account.getPassword getpassword = new TL_account.getPassword();
-                i7 = ((org.telegram.ui.ActionBar.f2) fe0Var).currentAccount;
-                ConnectionsManager.getInstance(i7).sendRequest(getpassword, new yd0(ee0Var, 1), 10);
-                return;
-            } else if (message != null) {
-                boolean z9 = org.telegram.messenger.r2.a;
-                new org.telegram.ui.Components.gc(fe0Var.Z, null).e0(message, false);
-            }
-        } else if (!(exc instanceof CancellationException)) {
-            org.telegram.messenger.a8.g(exc, true);
-        }
-        if (ee0Var.o()) {
-            ee0Var.t(false);
+    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
+    public boolean onKeyDown(int i7, KeyEvent keyEvent) {
+        switch (this.b2) {
+            case 1:
+                be0 be0Var = this.c2;
+                zd0 zd0Var = be0Var.a;
+                if (i7 == 67 && be0Var.b.length() == 0) {
+                    zd0Var.requestFocus();
+                    zd0Var.setSelection(zd0Var.length());
+                    zd0Var.dispatchKeyEvent(keyEvent);
+                }
+                return super.onKeyDown(i7, keyEvent);
+            default:
+                return super.onKeyDown(i7, keyEvent);
         }
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public void onSuccess(Object obj) {
-        TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj;
-        ee0 ee0Var = this.a;
-        fe0 fe0Var = ee0Var.g0;
-        if (ee0Var.W) {
-            return;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.b2) {
+            case 1:
+                if (motionEvent.getAction() == 0 && !ce0.b1(this.c2.h0, this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
         }
-        if (auth_authorization instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
-            TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) auth_authorization).terms_of_service;
-            if (tL_help_termsOfService != null) {
-                fe0Var.q0 = tL_help_termsOfService;
-            }
-            fe0Var.M1(5, true, a8.p0.k("fromFirebasePhoneNumberVerification", true), false);
-            return;
-        }
-        if (auth_authorization instanceof TLRPC.TL_auth_authorization) {
-            fe0Var.G1((TLRPC.TL_auth_authorization) auth_authorization, false);
-        } else {
-            ee0Var.t(false);
-        }
+        return super.onTouchEvent(motionEvent);
     }
 }

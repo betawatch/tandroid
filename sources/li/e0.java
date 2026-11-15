@@ -1,44 +1,38 @@
 package li;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.x31;
+import android.content.DialogInterface;
+import org.telegram.messenger.s10;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.ActionBar.t1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class e0 extends w31 {
-    public static final /* synthetic */ int b = 0;
+public final /* synthetic */ class e0 implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    static {
-        w31.h(new e0());
+    public /* synthetic */ e0(int i7, int i10, Object obj, int i11) {
+        this.a = i11;
+        this.b = i7;
+        this.c = i10;
+        this.d = obj;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        f0 f0Var = (f0) view;
-        a aVar = (a) x31Var.G;
-        d0 d0Var = (d0) x31Var.H;
-        f0Var.a = aVar;
-        f0Var.E = d0Var;
-        f0Var.c(aVar);
-        f0Var.h();
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, h6 h6Var) {
-        f0 f0Var = new f0(i7, context, h6Var);
-        f0Var.setBackground(new y1(m6.w0(m6.d6, h6Var)));
-        return f0Var;
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final boolean f() {
-        return false;
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                t1[] t1VarArr = (t1[]) this.d;
+                ConnectionsManager.getInstance(this.b).cancelRequest(this.c, true);
+                t1VarArr[0] = null;
+                break;
+            default:
+                s10 s10Var = (s10) this.d;
+                ConnectionsManager.getInstance(this.b).cancelRequest(this.c, true);
+                s10Var.a(null, "CANCELLED");
+                break;
+        }
     }
 }

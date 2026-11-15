@@ -1,10 +1,10 @@
 package ch;
 
-import c8.ha;
-import org.telegram.messenger.id;
-import org.telegram.ui.cn;
+import c8.ja;
+import org.telegram.messenger.hd;
+import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -26,23 +26,23 @@ public final /* synthetic */ class p implements Runnable {
                 rVar.e = rVar.b();
                 int i7 = rVar.f;
                 int i10 = rVar.h;
-                cn cnVar = rVar.a;
+                an anVar = rVar.a;
                 if (rVar.b == null) {
-                    q qVar = new q((cnVar.getUserConfig().e() > cnVar.a() ? 1 : (cnVar.getUserConfig().e() == cnVar.a() ? 0 : -1)) == 0 ? 3 : 0, cnVar.getCurrentAccount(), rVar.getContext(), rVar.a, cnVar.getResourceProvider());
-                    qVar.m1 = 1.0f;
+                    q qVar = new q((anVar.getUserConfig().e() > anVar.a() ? 1 : (anVar.getUserConfig().e() == anVar.a() ? 0 : -1)) == 0 ? 3 : 0, anVar.getCurrentAccount(), rVar.getContext(), rVar.a, anVar.getResourceProvider());
+                    qVar.n1 = 1.0f;
                     qVar.setWillNotDraw(false);
                     rVar.b = qVar;
-                    int L = org.telegram.messenger.g0.L(4.0f) + (id.a0 ? 0 : i10);
+                    int L = org.telegram.messenger.g0.L(4.0f) + (hd.a0 ? 0 : i10);
                     int L2 = org.telegram.messenger.g0.L(4.0f);
                     int L3 = org.telegram.messenger.g0.L(4.0f);
-                    if (!id.a0) {
+                    if (!hd.a0) {
                         i10 = 0;
                     }
                     qVar.setPadding(L, L2, L3 + i10, org.telegram.messenger.g0.L(i7));
-                    rVar.b.setDelegate(new d6.i(rVar, 13));
+                    rVar.b.setDelegate(new d6.i(rVar, 6));
                     rVar.b.setClipChildren(false);
                     rVar.b.setClipToPadding(false);
-                    rVar.addView(rVar.b, ha.e(-2, i7 + 70, 5));
+                    rVar.addView(rVar.b, ja.e(-2, i7 + 70, 5));
                 }
                 rVar.c(false);
                 if (!rVar.b.isEnabled()) {
@@ -51,7 +51,7 @@ public final /* synthetic */ class p implements Runnable {
                     break;
                 } else {
                     rVar.y = true;
-                    rVar.b.p(rVar.e, cnVar.p8, true);
+                    rVar.b.p(rVar.e, anVar.q8, true);
                     rVar.b.r(false);
                     break;
                 }

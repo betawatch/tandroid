@@ -7,45 +7,45 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import bg.s;
-import c8.ha;
+import c8.ja;
 import java.util.HashSet;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Cells.z7;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.Cells.y7;
+import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class b extends FrameLayout implements te.b, c6 {
+public final class b extends FrameLayout implements te.b, z5 {
     public ShapeDrawable a;
-    public final h6 b;
-    public final z7 c;
+    public final e6 b;
+    public final y7 c;
     public final TextView d;
     public final te.a e;
 
-    public b(Context context, h6 h6Var) {
+    public b(Context context, e6 e6Var) {
         super(context);
-        this.e = new te.a(0, this, wq.h, 380L, false);
-        this.b = h6Var;
-        z7 z7Var = new z7(context, h6Var, false);
-        this.c = z7Var;
-        addView(z7Var, ha.d(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
+        this.e = new te.a(0, this, er.h, 380L, false);
+        this.b = e6Var;
+        y7 y7Var = new y7(context, e6Var, false);
+        this.c = y7Var;
+        addView(y7Var, ja.d(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 10.0f);
         textView.setGravity(17);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setSingleLine();
-        addView(textView, ha.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 5.0f));
+        addView(textView, ja.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 5.0f));
         updateColors();
     }
 
     @Override // te.b
-    public final void Y(int i7, float f10, float f11, te.c cVar) {
+    public final void G(int i7, float f10, float f11, te.c cVar) {
         ShapeDrawable shapeDrawable = this.a;
         if (shapeDrawable != null) {
             shapeDrawable.setAlpha((int) (f10 * 255.0f));
@@ -53,19 +53,19 @@ public final class b extends FrameLayout implements te.b, c6 {
         invalidate();
     }
 
-    public final void a(boolean z9, boolean z10) {
-        if (z9 && this.a == null) {
-            this.a = m6.d0(g0.L(10.0f), i0.a.o(m6.w0(m6.Kl, this.b), 25));
+    public final void a(boolean z10, boolean z11) {
+        if (z10 && this.a == null) {
+            this.a = j6.d0(g0.L(10.0f), i0.a.o(j6.w0(j6.Nl, this.b), 25));
         }
         te.a aVar = this.e;
-        if (aVar.f != z9 || z10) {
-            aVar.a(z9, z10);
+        if (aVar.f != z10 || z11) {
+            aVar.a(z10, z11);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(m6.Kl));
+        hashSet.add(Integer.valueOf(j6.Nl));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -91,19 +91,19 @@ public final class b extends FrameLayout implements te.b, c6 {
         this.c.d(!tL_messages_stickerSet.documents.isEmpty() ? tL_messages_stickerSet.documents.get(0) : null, null, null, null, false, false);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void updateColors() {
         ShapeDrawable shapeDrawable = this.a;
-        h6 h6Var = this.b;
+        e6 e6Var = this.b;
         if (shapeDrawable != null) {
-            m6.C1(i0.a.o(m6.w0(m6.Kl, h6Var), 25), shapeDrawable);
+            j6.C1(i0.a.o(j6.w0(j6.Nl, e6Var), 25), shapeDrawable);
             this.a.setAlpha((int) (this.e.e * 255.0f));
             invalidate();
         }
-        this.d.setTextColor(i0.a.o(m6.w0(m6.Kl, h6Var), qs.F3));
+        this.d.setTextColor(i0.a.o(j6.w0(j6.Nl, e6Var), ns.F3));
     }
 
     @Override // te.b
-    public final /* synthetic */ void F(float f10, int i7) {
+    public final /* synthetic */ void E(float f10, int i7) {
     }
 }

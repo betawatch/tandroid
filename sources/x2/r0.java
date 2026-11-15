@@ -2,9 +2,9 @@ package x2;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class r0 implements f3.j0 {
+public final class r0 implements f3.i0 {
     public final a1 a;
     public final a1 b;
     public final f3.n c = new f3.n();
@@ -15,19 +15,19 @@ public final class r0 implements f3.j0 {
         this.b = a1Var;
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final void a(h2.x xVar, int i7, int i10) {
         h().a(xVar, i7, i10);
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final void b(int i7, h2.x xVar) {
         h().b(i7, xVar);
     }
 
-    @Override // f3.j0
-    public final void c(long j3, int i7, int i10, int i11, f3.i0 i0Var) {
-        h().c(j3, i7, i10, i11, i0Var);
+    @Override // f3.i0
+    public final void c(long j3, int i7, int i10, int i11, f3.h0 h0Var) {
+        h().c(j3, i7, i10, i11, h0Var);
         AtomicReference atomicReference = this.d;
         if (atomicReference.get() == q0.b) {
             this.b.G(false);
@@ -35,26 +35,26 @@ public final class r0 implements f3.j0 {
         }
     }
 
-    @Override // f3.j0
-    public final int e(e2.n nVar, int i7, boolean z9) {
-        return h().e(nVar, i7, z9);
+    @Override // f3.i0
+    public final int e(e2.n nVar, int i7, boolean z10) {
+        return h().e(nVar, i7, z10);
     }
 
-    @Override // f3.j0
-    public final int f(e2.n nVar, int i7, boolean z9) {
-        return h().f(nVar, i7, z9);
+    @Override // f3.i0
+    public final int f(e2.n nVar, int i7, boolean z10) {
+        return h().f(nVar, i7, z10);
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final void g(e2.u uVar) {
         this.a.g(uVar);
     }
 
-    public final f3.j0 h() {
+    public final f3.i0 h() {
         return this.d.get() == q0.c ? this.c : this.b;
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final void d(long j3) {
     }
 }

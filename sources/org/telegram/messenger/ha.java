@@ -1,13 +1,28 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.view.MotionEvent;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ha {
-    public final /* synthetic */ a8.r7 a;
-    public final /* synthetic */ q0.a b;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ai.j0 b;
 
-    public /* synthetic */ ha(a8.r7 r7Var, q0.a aVar) {
-        this.a = r7Var;
-        this.b = aVar;
+    public /* synthetic */ ha(ai.j0 j0Var, int i7) {
+        this.a = i7;
+        this.b = j0Var;
+    }
+
+    public final Boolean a(Object obj) {
+        Boolean valueOf;
+        Boolean valueOf2;
+        switch (this.a) {
+            case 0:
+                valueOf = Boolean.valueOf(super/*android.widget.FrameLayout*/.dispatchTouchEvent((MotionEvent) obj));
+                return valueOf;
+            default:
+                valueOf2 = Boolean.valueOf(super/*android.widget.FrameLayout*/.onInterceptTouchEvent((MotionEvent) obj));
+                return valueOf2;
+        }
     }
 }

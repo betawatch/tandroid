@@ -1,38 +1,80 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import android.content.Context;
-import android.widget.ImageView;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class he extends ImageView {
-    public float a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class he extends jg {
+    public final /* synthetic */ int w0 = 0;
+    public final /* synthetic */ ChatActivityEnterView x0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public he(ChatActivityEnterView chatActivityEnterView, Context context) {
-        super(context);
-        this.b = chatActivityEnterView;
+    public he(ChatActivityEnterView chatActivityEnterView, Activity activity, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(i7, activity, e6Var, true);
+        this.x0 = chatActivityEnterView;
+    }
+
+    @Override // org.telegram.ui.Components.jg
+    public boolean b() {
+        switch (this.w0) {
+            case 0:
+                return this.x0.c();
+            default:
+                return super.b();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.jg
+    public final boolean c() {
+        switch (this.w0) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = this.x0;
+                return !chatActivityEnterView.c() && chatActivityEnterView.H0 == Integer.MAX_VALUE;
+            default:
+                return !this.x0.Y3;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.jg
+    public final boolean d() {
+        switch (this.w0) {
+            case 0:
+                org.telegram.ui.bg0 bg0Var = this.x0.M0;
+                return !(bg0Var == null || bg0Var.u0) || this.w > 0;
+            default:
+                return true;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.jg
+    public boolean j() {
+        switch (this.w0) {
+            case 0:
+                return this.x0.Q5;
+            default:
+                return super.j();
+        }
     }
 
     @Override // android.view.View
-    public final float getTranslationX() {
-        return this.a;
+    public void setAlpha(float f10) {
+        switch (this.w0) {
+            case 0:
+                super.setAlpha(f10);
+                int i7 = ChatActivityEnterView.N6;
+                this.x0.T1();
+                break;
+            default:
+                super.setAlpha(f10);
+                break;
+        }
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f10) {
-        this.a = f10;
-        float L = org.telegram.messenger.g0.L(-44.0f) + this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        float f11 = L + chatActivityEnterView.D + chatActivityEnterView.y;
-        je jeVar = chatActivityEnterView.K1;
-        float L2 = org.telegram.messenger.g0.L((jeVar == null || jeVar.getVisibility() != 0) ? 0.0f : -44.0f);
-        je jeVar2 = chatActivityEnterView.K1;
-        float alpha = (L2 * (jeVar2 == null ? 0.0f : jeVar2.getAlpha())) + f11;
-        je jeVar3 = chatActivityEnterView.x1;
-        float L3 = org.telegram.messenger.g0.L((jeVar3 == null || jeVar3.getVisibility() != 0) ? 0.0f : -44.0f);
-        je jeVar4 = chatActivityEnterView.x1;
-        super.setTranslationX((L3 * (jeVar4 != null ? jeVar4.getAlpha() : 0.0f)) + alpha);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public he(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(R.drawable.input_done, context, e6Var, true);
+        this.x0 = chatActivityEnterView;
     }
 }

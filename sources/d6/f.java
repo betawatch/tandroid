@@ -3,9 +3,9 @@ package d6;
 import a8.q;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f extends q implements j {
     public final /* synthetic */ int b;
@@ -19,7 +19,7 @@ public final class f extends q implements j {
     }
 
     @Override // d6.j
-    public void g0(Status status) {
+    public void h0(Status status) {
         switch (this.b) {
             case 1:
                 this.c.a(status);
@@ -35,15 +35,15 @@ public final class f extends q implements j {
             case 101:
                 l7.f.b(parcel);
                 throw new UnsupportedOperationException();
-            case qs.n1 /* 102 */:
+            case ns.n1 /* 102 */:
                 Status status = (Status) l7.f.a(parcel, Status.CREATOR);
                 l7.f.b(parcel);
-                r0(status);
+                s0(status);
                 break;
-            case qs.o1 /* 103 */:
+            case ns.o1 /* 103 */:
                 Status status2 = (Status) l7.f.a(parcel, Status.CREATOR);
                 l7.f.b(parcel);
-                g0(status2);
+                h0(status2);
                 break;
             default:
                 return false;
@@ -53,7 +53,7 @@ public final class f extends q implements j {
     }
 
     @Override // d6.j
-    public void r0(Status status) {
+    public void s0(Status status) {
         switch (this.b) {
             case 0:
                 this.c.a(status);

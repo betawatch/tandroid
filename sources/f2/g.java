@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Handler;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g {
     public final int a;
@@ -16,11 +16,11 @@ public final class g {
     public final boolean e;
     public final Object f;
 
-    public g(int i7, AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener, Handler handler, e2.e eVar, boolean z9, boolean z10) {
+    public g(int i7, AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener, Handler handler, e2.e eVar, boolean z10, boolean z11) {
         this.a = i7;
         this.c = handler;
         this.d = eVar;
-        this.e = z9;
+        this.e = z10;
         int i10 = Build.VERSION.SDK_INT;
         if (i10 < 26) {
             this.b = new f(onAudioFocusChangeListener, handler);
@@ -28,7 +28,7 @@ public final class g {
             this.b = onAudioFocusChangeListener;
         }
         if (i10 >= 26) {
-            this.f = new AudioFocusRequest.Builder(i7).setAudioAttributes(eVar.b()).setWillPauseWhenDucked(z9).setOnAudioFocusChangeListener(onAudioFocusChangeListener, handler).setAcceptsDelayedFocusGain(z10).build();
+            this.f = new AudioFocusRequest.Builder(i7).setAudioAttributes(eVar.b()).setWillPauseWhenDucked(z10).setOnAudioFocusChangeListener(onAudioFocusChangeListener, handler).setAcceptsDelayedFocusGain(z11).build();
         } else {
             this.f = null;
         }

@@ -1,316 +1,118 @@
 package di;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.drawable.GradientDrawable;
-import android.text.SpannableStringBuilder;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Scroller;
+import android.util.SparseIntArray;
+import java.text.Collator;
 import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.beta.R;
+import java.util.Comparator;
+import org.telegram.messenger.np;
+import org.telegram.messenger.q10;
+import org.telegram.messenger.ve;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.wp;
-import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class p4 extends View {
-    public float D;
-    public ArrayList E;
-    public ArrayList F;
-    public ArrayList G;
-    public GradientDrawable H;
-    public GestureDetector I;
-    public float J;
-    public int K;
-    public boolean L;
-    public ValueAnimator M;
-    public int a;
-    public int b;
-    public int c;
-    public Scroller d;
-    public float e;
-    public float f;
-    public float h;
-    public int n;
-    public int r;
-    public int s;
-    public boolean w;
-    public int x;
-    public float y;
+public final /* synthetic */ class p4 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public static void a(p4 p4Var, SpannableStringBuilder spannableStringBuilder, TL_stories.StoryViews storyViews, boolean z9) {
-        int i7 = storyViews == null ? 0 : storyViews.views_count;
-        if (i7 > 0) {
-            spannableStringBuilder.append("d");
-            spannableStringBuilder.setSpan(new wp(R.drawable.msg_views, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
-            spannableStringBuilder.append(" ").append((CharSequence) org.telegram.messenger.g0.o0(i7, 0));
-            if (storyViews == null || storyViews.reactions_count <= 0) {
-                return;
-            }
-            spannableStringBuilder.append((CharSequence) (z9 ? "\n" : "  "));
-            spannableStringBuilder.append("d");
-            spannableStringBuilder.setSpan(new wp(R.drawable.mini_like_filled, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
-            spannableStringBuilder.append(" ").append((CharSequence) org.telegram.messenger.g0.o0(storyViews.reactions_count, 0));
-        }
+    public /* synthetic */ p4(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    public abstract void b(int i7);
-
-    public final void c(int i7, boolean z9, boolean z10) {
-        if ((this.K != i7 || z10) && getMeasuredHeight() > 0) {
-            if (this.K != i7) {
-                this.K = i7;
-                b(i7);
-            }
-            this.d.abortAnimation();
-            this.L = false;
-            ValueAnimator valueAnimator = this.M;
-            if (valueAnimator != null) {
-                valueAnimator.removeAllListeners();
-                this.M.cancel();
-                this.M = null;
-            }
-            if (!z9) {
-                this.e = (this.s / 2.0f) + ((-getMeasuredWidth()) / 2.0f) + ((r6 + this.n) * i7);
-                invalidate();
-                return;
-            }
-            float f10 = (this.s / 2.0f) + ((-getMeasuredWidth()) / 2.0f) + ((r1 + this.n) * i7);
-            float f11 = this.e;
-            if (f10 == f11) {
-                return;
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(f11, f10);
-            this.M = ofFloat;
-            ofFloat.addUpdateListener(new n4(this, 0));
-            this.M.addListener(new bi.t5(this, 12));
-            this.M.setInterpolator(wq.f);
-            this.M.setDuration(200L);
-            this.M.start();
-        }
-    }
-
-    public final void d() {
-        int measuredWidth = getMeasuredWidth();
-        int i7 = this.s;
-        this.f = (-(measuredWidth - i7)) / 2.0f;
-        this.h = ((getMeasuredWidth() - this.s) / 2.0f) + (((this.E.size() * (i7 + this.n)) - this.n) - getMeasuredWidth());
-    }
-
-    public o4 getCenteredImageReciever() {
-        ArrayList arrayList = this.G;
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            if (((o4) arrayList.get(i7)).b == this.K) {
-                return (o4) arrayList.get(i7);
-            }
-        }
-        return null;
-    }
-
-    public int getClosestPosition() {
-        return this.K;
-    }
-
-    public float getFinalHeight() {
-        return org.telegram.messenger.g0.L(180.0f);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.w = true;
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        ArrayList arrayList = this.G;
-        super.onDetachedFromWindow();
-        this.w = false;
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            ((o4) arrayList.get(i7)).a.R();
-        }
-        arrayList.clear();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i7;
-        float f10;
-        float f11;
-        ArrayList arrayList;
-        float f12;
-        float f13;
-        int i10;
-        float f14;
-        o4 o4Var;
-        ArrayList arrayList2;
-        int i11;
-        GradientDrawable gradientDrawable = this.H;
-        ArrayList arrayList3 = this.G;
-        ArrayList arrayList4 = this.F;
-        super.onDraw(canvas);
-        if (this.d.computeScrollOffset()) {
-            this.e = r5.getCurrX();
-            invalidate();
-            this.L = true;
-        } else if (this.L && (i7 = this.K) >= 0) {
-            c(i7, true, true);
-        }
-        float f15 = 2.0f;
-        float measuredWidth = getMeasuredWidth() / 2.0f;
-        arrayList4.clear();
-        arrayList4.addAll(arrayList3);
-        arrayList3.clear();
-        int i12 = -1;
-        float f16 = 2.14748365E9f;
-        int i13 = -1;
-        int i14 = 0;
-        while (i14 < this.E.size()) {
-            float f17 = -this.e;
-            float f18 = f17 + ((this.n + r13) * i14);
-            float f19 = ((this.s / f15) + f18) - measuredWidth;
-            float abs = Math.abs(f19);
-            if (abs < this.s) {
-                f11 = 1.0f - (Math.abs(f19) / this.s);
-                f10 = (0.2f * f11) + 1.0f;
-            } else {
-                f10 = 1.0f;
-                f11 = 0.0f;
-            }
-            if (i13 == i12 || abs < f16) {
-                i13 = i14;
-                f16 = abs;
-            }
-            float v = f19 < 0.0f ? com.google.android.recaptcha.internal.a.v(1.0f, f11, this.s * 0.1f, f18) : com.google.android.recaptcha.internal.a.z(1.0f, f11, this.s * 0.1f, f18);
-            if (v > getMeasuredWidth() || this.s + v < 0.0f) {
-                arrayList = arrayList4;
-                f12 = measuredWidth;
-                f13 = f16;
-                i10 = i13;
-                f14 = 2.0f;
-            } else {
-                int i15 = 0;
-                while (true) {
-                    if (i15 >= arrayList4.size()) {
-                        o4Var = new o4(this);
-                        o4Var.a(i14);
-                        o4Var.b = i14;
-                        break;
-                    } else {
-                        if (((o4) arrayList4.get(i15)).b == i14) {
-                            o4Var = (o4) arrayList4.remove(i15);
-                            break;
-                        }
-                        i15++;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v14, types: [int] */
+    /* JADX WARN: Type inference failed for: r0v21 */
+    /* JADX WARN: Type inference failed for: r0v37 */
+    /* JADX WARN: Type inference failed for: r1v17 */
+    /* JADX WARN: Type inference failed for: r1v4, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v6 */
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int indexOf;
+        int indexOf2;
+        switch (this.a) {
+            case 0:
+                float[] fArr = ((s4) this.b).r;
+                return Float.compare(fArr[((Integer) obj).intValue()], fArr[((Integer) obj2).intValue()]);
+            case 1:
+                fi.s6 s6Var = (fi.s6) this.b;
+                int i7 = s6Var.a;
+                TL_stories.PeerStories peerStories = (TL_stories.PeerStories) obj;
+                TL_stories.PeerStories peerStories2 = (TL_stories.PeerStories) obj2;
+                long o4 = org.telegram.messenger.m5.o(peerStories.peer);
+                long o10 = org.telegram.messenger.m5.o(peerStories2.peer);
+                boolean M = s6Var.M(o4);
+                boolean M2 = s6Var.M(o10);
+                boolean L = s6Var.L(o4);
+                boolean L2 = s6Var.L(o10);
+                boolean H = s6Var.H(o4);
+                boolean H2 = s6Var.H(o10);
+                if (H != H2) {
+                    return (H2 ? 1 : 0) - (H ? 1 : 0);
+                }
+                if (M != M2) {
+                    return (M2 ? 1 : 0) - (M ? 1 : 0);
+                }
+                if (L != L2) {
+                    return (L2 ? 1 : 0) - (L ? 1 : 0);
+                }
+                boolean A = q10.A(o4);
+                boolean A2 = q10.A(o10);
+                if (A != A2) {
+                    return (A2 ? 1 : 0) - (A ? 1 : 0);
+                }
+                TLRPC.User a22 = np.s1(i7).a2(Long.valueOf(o4));
+                ?? r02 = a22 == null ? 0 : a22.premium;
+                TLRPC.User a23 = np.s1(i7).a2(Long.valueOf(o10));
+                ?? r12 = a23 == null ? 0 : a23.premium;
+                if (r02 == r12) {
+                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i5.c.h(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i5.c.h(1, peerStories.stories)).date);
+                }
+                return r12 - r02;
+            case 2:
+                ArrayList arrayList = (ArrayList) this.b;
+                ve veVar = (ve) obj;
+                ve veVar2 = (ve) obj2;
+                int i10 = veVar.a;
+                if (i10 != 0 || veVar2.a == 0) {
+                    if ((i10 != 0 && veVar2.a == 0) || (indexOf = arrayList.indexOf(veVar)) > (indexOf2 = arrayList.indexOf(veVar2))) {
+                        return 1;
+                    }
+                    if (indexOf >= indexOf2) {
+                        return 0;
                     }
                 }
-                float f20 = this.s;
-                float f21 = f20 * f10;
-                float f22 = this.r;
-                float f23 = f10 * f22;
-                f12 = measuredWidth;
-                float y10 = org.telegram.messenger.k5.y(f21, f20, 2.0f, v);
-                float y11 = org.telegram.messenger.k5.y(f23, f22, 2.0f, this.y);
-                if (this.D == 0.0f || i14 == (i11 = this.K)) {
-                    arrayList2 = arrayList3;
-                    arrayList = arrayList4;
-                    f13 = f16;
-                    i10 = i13;
-                    o4Var.a.y0(y10, y11, f21, f23);
-                } else {
-                    f13 = f16;
-                    i10 = i13;
-                    arrayList = arrayList4;
-                    arrayList2 = arrayList3;
-                    o4Var.a.y0(org.telegram.messenger.g0.T1(getMeasuredWidth() * (i14 - i11), y10, this.D), org.telegram.messenger.g0.T1(this.a, y11, this.D), org.telegram.messenger.g0.T1(this.b, f21, this.D), org.telegram.messenger.g0.T1(this.c, f23, this.D));
+                return -1;
+            case 3:
+                oi.c6 c6Var = (oi.c6) this.b;
+                TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) obj;
+                TL_iv.pageTableCell pagetablecell2 = (TL_iv.pageTableCell) obj2;
+                int b10 = c6Var.b(pagetablecell);
+                int b11 = c6Var.b(pagetablecell2);
+                return b10 != b11 ? Integer.compare(b10, b11) : Integer.compare(c6Var.a(pagetablecell), c6Var.a(pagetablecell2));
+            case 4:
+                u2.v vVar = (u2.v) this.b;
+                return vVar.c(obj2) - vVar.c(obj);
+            case 5:
+                SparseIntArray sparseIntArray = (SparseIntArray) this.b;
+                return sparseIntArray.get(((ug.g) obj).e, ConnectionsManager.DEFAULT_DATACENTER_ID) - sparseIntArray.get(((ug.g) obj2).e, ConnectionsManager.DEFAULT_DATACENTER_ID);
+            case 6:
+                return ((Collator) this.b).compare((String) obj, (String) obj2);
+            default:
+                int[] iArr = (int[]) this.b;
+                Integer num = (Integer) obj;
+                Integer num2 = (Integer) obj2;
+                int i11 = iArr[num.intValue()];
+                int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                int i13 = i11 < 0 ? Integer.MAX_VALUE : iArr[num.intValue()];
+                if (iArr[num2.intValue()] >= 0) {
+                    i12 = iArr[num2.intValue()];
                 }
-                if (this.D == 1.0f || i14 != this.K) {
-                    ImageReceiver imageReceiver = o4Var.a;
-                    imageReceiver.h(canvas, null);
-                    if (o4Var.c != null) {
-                        int B = (int) com.google.android.recaptcha.internal.a.B(f11, 0.3f, 0.7f, 255.0f);
-                        gradientDrawable.setAlpha(B);
-                        gradientDrawable.setBounds((int) imageReceiver.K0, (int) (imageReceiver.A() - org.telegram.messenger.g0.L(24.0f)), (int) imageReceiver.y(), ((int) imageReceiver.A()) + 2);
-                        gradientDrawable.draw(canvas);
-                        canvas.save();
-                        f14 = 2.0f;
-                        canvas.translate(imageReceiver.r() - (this.J / 2.0f), (imageReceiver.A() - org.telegram.messenger.g0.L(8.0f)) - o4Var.c.getHeight());
-                        o4Var.d.setAlpha(B);
-                        o4Var.c.draw(canvas);
-                        canvas.restore();
-                    } else {
-                        f14 = 2.0f;
-                    }
-                    arrayList3 = arrayList2;
-                } else {
-                    arrayList3 = arrayList2;
-                    f14 = 2.0f;
-                }
-                arrayList3.add(o4Var);
-            }
-            i14++;
-            f16 = f13;
-            f15 = f14;
-            measuredWidth = f12;
-            i13 = i10;
-            arrayList4 = arrayList;
-            i12 = -1;
+                return i13 != i12 ? Integer.compare(i13, i12) : Integer.compare(num.intValue(), num2.intValue());
         }
-        ArrayList arrayList5 = arrayList4;
-        if (this.M == null && this.K != i13) {
-            this.K = i13;
-            b(i13);
-        }
-        for (int i16 = 0; i16 < arrayList5.size(); i16++) {
-            ((o4) arrayList5.get(i16)).a.R();
-        }
-        arrayList5.clear();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        ArrayList arrayList = this.G;
-        super.onMeasure(i7, i10);
-        this.n = org.telegram.messenger.g0.L(8.0f);
-        int L = (int) (org.telegram.messenger.g0.L(180.0f) / 1.2f);
-        this.r = L;
-        int i11 = (int) ((L / 16.0f) * 9.0f);
-        this.s = i11;
-        float L2 = i11 - org.telegram.messenger.g0.L(8.0f);
-        this.y = ((org.telegram.messenger.g0.L(180.0f) - this.r) / 2.0f) + org.telegram.messenger.g0.L(20.0f);
-        d();
-        if (this.x >= 0 && getMeasuredWidth() > 0) {
-            this.K = -1;
-            c(this.x, false, false);
-            this.x = -1;
-        }
-        if (this.J != L2) {
-            this.J = L2;
-            for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                ((o4) arrayList.get(i12)).a(((o4) arrayList.get(i12)).b);
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int i7;
-        this.I.onTouchEvent(motionEvent);
-        if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && this.d.isFinished() && (i7 = this.K) >= 0) {
-            c(i7, true, true);
-        }
-        return true;
-    }
-
-    public void setProgressToOpen(float f10) {
-        if (this.D == f10) {
-            return;
-        }
-        this.D = f10;
-        invalidate();
     }
 }

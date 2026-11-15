@@ -1,20 +1,20 @@
 package org.telegram.ui.Stories.recorder;
 
-import ai.e0;
-import di.f8;
+import ai.z0;
+import hi.e1;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.s10;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class FfmpegAudioWaveformLoader {
-    private v10 onChunkReceived;
+    private s10 onChunkReceived;
     private volatile boolean running = true;
 
-    public FfmpegAudioWaveformLoader(String str, int i7, v10 v10Var) {
-        this.onChunkReceived = v10Var;
-        Utilities.h.c(new e0(this, str, i7, 9));
+    public FfmpegAudioWaveformLoader(String str, int i7, s10 s10Var) {
+        this.onChunkReceived = s10Var;
+        Utilities.h.c(new z0(this, str, i7, 13));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -32,10 +32,10 @@ public class FfmpegAudioWaveformLoader {
     }
 
     private void receiveChunk(short[] sArr, int i7) {
-        g0.h3(new e0(this, sArr, i7, 10));
+        g0.h3(new z0(this, sArr, i7, 14));
     }
 
     public void destroy() {
-        Utilities.h.c(new f8(this, 21));
+        Utilities.h.c(new e1(this, 5));
     }
 }

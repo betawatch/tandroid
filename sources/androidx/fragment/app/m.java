@@ -3,21 +3,21 @@ package androidx.fragment.app;
 import android.app.Dialog;
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class m implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ o a;
+public final class m implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ p a;
 
-    public m(o oVar) {
-        this.a = oVar;
+    public m(p pVar) {
+        this.a = pVar;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        o oVar = this.a;
-        Dialog dialog = oVar.v0;
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        p pVar = this.a;
+        Dialog dialog = pVar.w0;
         if (dialog != null) {
-            oVar.onDismiss(dialog);
+            pVar.onCancel(dialog);
         }
     }
 }

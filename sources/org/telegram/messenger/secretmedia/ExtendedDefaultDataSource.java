@@ -1,30 +1,31 @@
 package org.telegram.messenger.secretmedia;
 
-import a8.ia;
+import a8.ja;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.LongSparseArray;
-import h2.m0;
+import h2.l0;
 import j$.util.Objects;
+import j2.a0;
 import j2.b;
-import j2.b0;
-import j2.d0;
+import j2.c0;
 import j2.e;
 import j2.f;
 import j2.h;
 import j2.l;
 import j2.m;
-import j2.s;
-import j2.u;
+import j2.r;
+import j2.t;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.s8;
+import q4.q;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSource implements h {
     private static final String SCHEME_ASSET = "asset";
@@ -44,10 +45,10 @@ public final class ExtendedDefaultDataSource implements h {
     private h rawResourceDataSource;
     private h rtmpDataSource;
     private s8 streamLoadOperation;
-    private final List<d0> transferListeners;
+    private final List<c0> transferListeners;
 
-    public ExtendedDefaultDataSource(Context context, String str, boolean z9) {
-        this(context, str, 8000, 8000, z9);
+    public ExtendedDefaultDataSource(Context context, String str, boolean z10) {
+        this(context, str, 8000, 8000, z10);
     }
 
     private void addListenersToDataSource(h hVar) {
@@ -94,18 +95,18 @@ public final class ExtendedDefaultDataSource implements h {
 
     private h getFileDataSource() {
         if (this.fileDataSource == null) {
-            u uVar = new u(false);
-            this.fileDataSource = uVar;
-            addListenersToDataSource(uVar);
+            t tVar = new t(false);
+            this.fileDataSource = tVar;
+            addListenersToDataSource(tVar);
         }
         return this.fileDataSource;
     }
 
     private h getRawResourceDataSource() {
         if (this.rawResourceDataSource == null) {
-            b0 b0Var = new b0(this.context);
-            this.rawResourceDataSource = b0Var;
-            addListenersToDataSource(b0Var);
+            a0 a0Var = new a0(this.context);
+            this.rawResourceDataSource = a0Var;
+            addListenersToDataSource(a0Var);
         }
         return this.rawResourceDataSource;
     }
@@ -137,22 +138,22 @@ public final class ExtendedDefaultDataSource implements h {
         return this.streamLoadOperation;
     }
 
-    private void maybeAddListenerToDataSource(h hVar, d0 d0Var) {
+    private void maybeAddListenerToDataSource(h hVar, c0 c0Var) {
         if (hVar != null) {
-            hVar.addTransferListener(d0Var);
+            hVar.addTransferListener(c0Var);
         }
     }
 
     @Override // j2.h
-    public void addTransferListener(d0 d0Var) {
-        this.baseDataSource.addTransferListener(d0Var);
-        this.transferListeners.add(d0Var);
-        maybeAddListenerToDataSource(this.fileDataSource, d0Var);
-        maybeAddListenerToDataSource(this.assetDataSource, d0Var);
-        maybeAddListenerToDataSource(this.contentDataSource, d0Var);
-        maybeAddListenerToDataSource(this.rtmpDataSource, d0Var);
-        maybeAddListenerToDataSource(this.dataSchemeDataSource, d0Var);
-        maybeAddListenerToDataSource(this.rawResourceDataSource, d0Var);
+    public void addTransferListener(c0 c0Var) {
+        this.baseDataSource.addTransferListener(c0Var);
+        this.transferListeners.add(c0Var);
+        maybeAddListenerToDataSource(this.fileDataSource, c0Var);
+        maybeAddListenerToDataSource(this.assetDataSource, c0Var);
+        maybeAddListenerToDataSource(this.contentDataSource, c0Var);
+        maybeAddListenerToDataSource(this.rtmpDataSource, c0Var);
+        maybeAddListenerToDataSource(this.dataSchemeDataSource, c0Var);
+        maybeAddListenerToDataSource(this.rawResourceDataSource, c0Var);
     }
 
     @Override // j2.h
@@ -184,7 +185,7 @@ public final class ExtendedDefaultDataSource implements h {
 
     @Override // j2.h
     public long open(m mVar) {
-        ia.p(this.dataSource == null);
+        ja.p(this.dataSource == null);
         Uri uri = mVar.a;
         if ("mtproto".equals(uri.getScheme())) {
             uri = this.mtprotoUris.get(Long.parseLong(mVar.a.toString().substring(8)));
@@ -193,7 +194,7 @@ public final class ExtendedDefaultDataSource implements h {
             mVar = a10.d();
         }
         String scheme = uri.getScheme();
-        String str = m0.a;
+        String str = l0.a;
         String scheme2 = uri.getScheme();
         if (TextUtils.isEmpty(scheme2) || Objects.equals(scheme2, "file")) {
             String path = uri.getPath();
@@ -229,8 +230,8 @@ public final class ExtendedDefaultDataSource implements h {
         return hVar.read(bArr, i7, i10);
     }
 
-    public ExtendedDefaultDataSource(Context context, String str, int i7, int i10, boolean z9) {
-        this(context, new s(str, i7, i10, z9, new wf.b(24)), (LongSparseArray<Uri>) null);
+    public ExtendedDefaultDataSource(Context context, String str, int i7, int i10, boolean z10) {
+        this(context, new r(str, i7, i10, z10, new q(28)), (LongSparseArray<Uri>) null);
     }
 
     public ExtendedDefaultDataSource(Context context, h hVar, LongSparseArray<Uri> longSparseArray) {
@@ -242,11 +243,11 @@ public final class ExtendedDefaultDataSource implements h {
     }
 
     @Deprecated
-    public ExtendedDefaultDataSource(Context context, d0 d0Var, h hVar, LongSparseArray<Uri> longSparseArray) {
+    public ExtendedDefaultDataSource(Context context, c0 c0Var, h hVar, LongSparseArray<Uri> longSparseArray) {
         this(context, hVar, longSparseArray);
-        if (d0Var != null) {
-            this.transferListeners.add(d0Var);
-            hVar.addTransferListener(d0Var);
+        if (c0Var != null) {
+            this.transferListeners.add(c0Var);
+            hVar.addTransferListener(c0Var);
         }
     }
 }

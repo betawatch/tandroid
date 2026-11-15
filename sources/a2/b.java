@@ -1,7 +1,7 @@
 package a2;
 
 import a0.e;
-import a8.ta;
+import a8.ua;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -25,23 +25,23 @@ import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.internal.play_billing.u;
 import com.google.android.gms.internal.play_billing.z3;
 import e0.j0;
+import f5.a0;
 import f5.f;
-import f5.s;
-import f5.x;
-import f5.z;
+import f5.t;
+import f5.y;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import p1.g;
 import q6.j;
 import w7.p;
-import y7.e9;
+import y7.d9;
 import z7.ma;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements Callable {
     public final /* synthetic */ int a;
@@ -69,21 +69,21 @@ public final class b implements Callable {
                 } finally {
                 }
             case 1:
-                ta taVar = (ta) this.b;
-                taVar.getClass();
-                return j.c.a(taVar.g);
+                ua uaVar = (ua) this.b;
+                uaVar.getClass();
+                return j.c.a(uaVar.g);
             case 2:
                 uf ufVar = (uf) this.b;
                 ufVar.getClass();
                 return j.c.a(ufVar.g);
             case 3:
-                s sVar = (s) this.b;
-                f5.b bVar = sVar.d;
+                t tVar = (t) this.b;
+                f5.b bVar = tVar.d;
                 synchronized (bVar.a) {
                     try {
                         if (bVar.b != 3) {
-                            boolean z9 = true;
-                            boolean z10 = bVar.b == 1;
+                            boolean z10 = true;
+                            boolean z11 = bVar.b == 1;
                             if (TextUtils.isEmpty(null)) {
                                 bundle = null;
                             } else {
@@ -95,13 +95,13 @@ public final class b implements Callable {
                                 cVar = bVar.i;
                             }
                             if (cVar == null) {
-                                f5.b bVar2 = sVar.d;
+                                f5.b bVar2 = tVar.d;
                                 bVar2.k(0);
-                                f fVar = z.h;
-                                bVar2.j(qs.s1, fVar);
-                                sVar.c(fVar);
+                                f fVar = a0.h;
+                                bVar2.j(ns.s1, fVar);
+                                tVar.c(fVar);
                             } else {
-                                f5.b bVar3 = sVar.d;
+                                f5.b bVar3 = tVar.d;
                                 String packageName = bVar3.g.getPackageName();
                                 int i10 = 3;
                                 int i11 = 25;
@@ -120,12 +120,12 @@ public final class b implements Callable {
                                                 i10 = readInt;
                                             } catch (Exception e10) {
                                                 u.i("BillingClient", "Exception while checking if billing is supported; try to reconnect", e10);
-                                                boolean z11 = e10 instanceof DeadObjectException;
-                                                int i12 = z11 ? 91 : e10 instanceof RemoteException ? 90 : e10 instanceof SecurityException ? 92 : 42;
-                                                String a10 = g.b(i12, 42) ? x.a(e10) : null;
-                                                sVar.d.k(0);
-                                                sVar.b(z11 ? z.h : z.f, i12, a10, z10);
-                                                sVar.c(z11 ? z.h : z.f);
+                                                boolean z12 = e10 instanceof DeadObjectException;
+                                                int i12 = z12 ? 91 : e10 instanceof RemoteException ? 90 : e10 instanceof SecurityException ? 92 : 42;
+                                                String a10 = g.b(i12, 42) ? y.a(e10) : null;
+                                                tVar.d.k(0);
+                                                tVar.b(z12 ? a0.h : a0.f, i12, a10, z11);
+                                                tVar.c(z12 ? a0.h : a0.f);
                                             }
                                         } else {
                                             i10 = ((com.google.android.gms.internal.play_billing.a) cVar).x1(i11, packageName, "subs", bundle);
@@ -183,22 +183,22 @@ public final class b implements Callable {
                                 bVar3.o = i15 >= 14;
                                 bVar3.n = i15 >= 9;
                                 if (i15 < 6) {
-                                    z9 = false;
+                                    z10 = false;
                                 }
-                                bVar3.m = z9;
+                                bVar3.m = z10;
                                 if (i15 < 3) {
                                     u.h("BillingClient", "In-app billing API version 3 is not supported on this device.");
                                     i7 = 36;
                                 }
                                 f5.b.p(bVar3, i13);
                                 if (i13 != 0) {
-                                    f fVar2 = z.a;
-                                    sVar.b(fVar2, i7, null, z10);
-                                    sVar.c(fVar2);
+                                    f fVar2 = a0.a;
+                                    tVar.b(fVar2, i7, null, z11);
+                                    tVar.c(fVar2);
                                 } else {
                                     try {
-                                        Long a11 = sVar.a(z10);
-                                        if (z10) {
+                                        Long a11 = tVar.a(z11);
+                                        if (z11) {
                                             h3 s5 = i3.s();
                                             s5.c();
                                             i3.r((i3) s5.b, 6);
@@ -210,7 +210,7 @@ public final class b implements Callable {
                                                 r10.c();
                                                 d4.p((d4) r10.b, longValue);
                                             }
-                                            f5.b bVar4 = sVar.d;
+                                            f5.b bVar4 = tVar.d;
                                             s5.c();
                                             i3.q((i3) s5.b, (d4) r10.a());
                                             bVar4.i((i3) s5.a());
@@ -226,12 +226,12 @@ public final class b implements Callable {
                                                 p10.c();
                                                 a4.o((a4) p10.b, longValue2);
                                             }
-                                            sVar.d.h.m((a4) p10.a());
+                                            tVar.d.h.b0((a4) p10.a());
                                         }
                                     } catch (Throwable th2) {
                                         u.i("BillingClient", "Unable to log.", th2);
                                     }
-                                    sVar.c(z.g);
+                                    tVar.c(a0.g);
                                 }
                             }
                         }
@@ -253,46 +253,46 @@ public final class b implements Callable {
                     if (!bVar5.hasNext()) {
                         return arrayList;
                     }
-                    g0.c cVar2 = ((x4.f) bVar5.next()).c;
-                    g0.c cVar3 = new g0.c();
-                    cVar3.a = cVar2.a;
-                    cVar3.b = cVar2.b;
-                    Intent[] intentArr = cVar2.c;
-                    cVar3.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
-                    cVar3.d = cVar2.d;
-                    cVar3.e = cVar2.e;
-                    cVar3.f = cVar2.f;
-                    cVar3.g = cVar2.g;
-                    cVar3.h = cVar2.h;
-                    cVar3.k = cVar2.k;
-                    cVar3.l = cVar2.l;
-                    cVar3.m = cVar2.m;
-                    j0[] j0VarArr = cVar2.i;
+                    g0.b bVar6 = ((x4.f) bVar5.next()).c;
+                    g0.b bVar7 = new g0.b();
+                    bVar7.a = bVar6.a;
+                    bVar7.b = bVar6.b;
+                    Intent[] intentArr = bVar6.c;
+                    bVar7.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
+                    bVar7.d = bVar6.d;
+                    bVar7.e = bVar6.e;
+                    bVar7.f = bVar6.f;
+                    bVar7.g = bVar6.g;
+                    bVar7.h = bVar6.h;
+                    bVar7.k = bVar6.k;
+                    bVar7.l = bVar6.l;
+                    bVar7.m = bVar6.m;
+                    j0[] j0VarArr = bVar6.i;
                     if (j0VarArr != null) {
-                        cVar3.i = (j0[]) Arrays.copyOf(j0VarArr, j0VarArr.length);
+                        bVar7.i = (j0[]) Arrays.copyOf(j0VarArr, j0VarArr.length);
                     }
-                    if (cVar2.j != null) {
-                        cVar3.j = new HashSet(cVar2.j);
+                    if (bVar6.j != null) {
+                        bVar7.j = new HashSet(bVar6.j);
                     }
-                    PersistableBundle persistableBundle = cVar2.n;
+                    PersistableBundle persistableBundle = bVar6.n;
                     if (persistableBundle != null) {
-                        cVar3.n = persistableBundle;
+                        bVar7.n = persistableBundle;
                     }
-                    if (TextUtils.isEmpty(cVar3.e)) {
+                    if (TextUtils.isEmpty(bVar7.e)) {
                         throw new IllegalArgumentException("Shortcut must have a non-empty label");
                     }
-                    Intent[] intentArr2 = cVar3.c;
+                    Intent[] intentArr2 = bVar7.c;
                     if (intentArr2 != null && intentArr2.length != 0) {
-                        arrayList.add(cVar3);
+                        arrayList.add(bVar7);
                     }
                 }
                 throw new IllegalArgumentException("Shortcut must have an intent");
             case 7:
                 return BitmapFactory.decodeFile(((x4.f) this.b).b);
             case 8:
-                e9 e9Var = (e9) this.b;
-                e9Var.getClass();
-                return j.c.a(e9Var.g);
+                d9 d9Var = (d9) this.b;
+                d9Var.getClass();
+                return j.c.a(d9Var.g);
             default:
                 ma maVar = (ma) this.b;
                 maVar.getClass();

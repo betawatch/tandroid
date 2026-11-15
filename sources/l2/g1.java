@@ -1,134 +1,120 @@
 package l2;
 
-import android.util.Pair;
-import bi.l4;
-import bi.ub;
-import java.io.IOException;
+import android.os.SystemClock;
+import h9.s1;
+import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class g1 implements x2.j0, q2.k {
-    public final i1 a;
-    public final /* synthetic */ j1 b;
+public final class g1 {
+    public static final x2.f0 u = new x2.f0(new Object());
+    public final e2.l1 a;
+    public final x2.f0 b;
+    public final long c;
+    public final long d;
+    public final int e;
+    public final l f;
+    public final boolean g;
+    public final x2.q1 h;
+    public final a3.y i;
+    public final List j;
+    public final x2.f0 k;
+    public final boolean l;
+    public final int m;
+    public final int n;
+    public final e2.w0 o;
+    public final boolean p;
+    public volatile long q;
+    public volatile long r;
+    public volatile long s;
+    public volatile long t;
 
-    public g1(j1 j1Var, i1 i1Var) {
-        this.b = j1Var;
-        this.a = i1Var;
+    public g1(e2.l1 l1Var, x2.f0 f0Var, long j3, long j10, int i7, l lVar, boolean z10, x2.q1 q1Var, a3.y yVar, List list, x2.f0 f0Var2, boolean z11, int i10, int i11, e2.w0 w0Var, long j11, long j12, long j13, long j14, boolean z12) {
+        this.a = l1Var;
+        this.b = f0Var;
+        this.c = j3;
+        this.d = j10;
+        this.e = i7;
+        this.f = lVar;
+        this.g = z10;
+        this.h = q1Var;
+        this.i = yVar;
+        this.j = list;
+        this.k = f0Var2;
+        this.l = z11;
+        this.m = i10;
+        this.n = i11;
+        this.o = w0Var;
+        this.q = j11;
+        this.r = j12;
+        this.s = j13;
+        this.t = j14;
+        this.p = z12;
     }
 
-    @Override // x2.j0
-    public final void A(int i7, x2.f0 f0Var, x2.t tVar, x2.b0 b0Var) {
-        Pair a10 = a(i7, f0Var);
-        if (a10 != null) {
-            this.b.i.d(new e1(this, a10, tVar, b0Var, 0));
-        }
+    public static g1 k(a3.y yVar) {
+        e2.h1 h1Var = e2.l1.a;
+        x2.q1 q1Var = x2.q1.d;
+        s1 s1Var = s1.e;
+        e2.w0 w0Var = e2.w0.d;
+        x2.f0 f0Var = u;
+        return new g1(h1Var, f0Var, -9223372036854775807L, 0L, 1, null, false, q1Var, yVar, s1Var, f0Var, false, 1, 0, w0Var, 0L, 0L, 0L, 0L, false);
     }
 
-    @Override // x2.j0
-    public final void E(int i7, x2.f0 f0Var, x2.b0 b0Var) {
-        Pair a10 = a(i7, f0Var);
-        if (a10 != null) {
-            this.b.i.d(new d1(this, a10, b0Var, 0));
-        }
+    public final g1 a() {
+        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, l(), SystemClock.elapsedRealtime(), this.p);
     }
 
-    @Override // x2.j0
-    public final void G(int i7, x2.f0 f0Var, x2.t tVar, x2.b0 b0Var) {
-        Pair a10 = a(i7, f0Var);
-        if (a10 != null) {
-            this.b.i.d(new e1(this, a10, tVar, b0Var, 1));
-        }
+    public final g1 b(boolean z10) {
+        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, z10, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
     }
 
-    @Override // x2.j0
-    public final void I(int i7, x2.f0 f0Var, x2.t tVar, x2.b0 b0Var, int i10) {
-        Pair a10 = a(i7, f0Var);
-        if (a10 != null) {
-            this.b.i.d(new ub(this, a10, tVar, b0Var, i10, 6));
-        }
+    public final g1 c(x2.f0 f0Var) {
+        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, f0Var, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
     }
 
-    @Override // q2.k
-    public final void K(int i7, x2.f0 f0Var, Exception exc) {
-        Pair a10 = a(i7, f0Var);
-        if (a10 != null) {
-            this.b.i.d(new z0(this, a10, exc, 2));
-        }
+    public final g1 d(x2.f0 f0Var, long j3, long j10, long j11, long j12, x2.q1 q1Var, a3.y yVar, List list) {
+        return new g1(this.a, f0Var, j10, j11, this.e, this.f, this.g, q1Var, yVar, list, this.k, this.l, this.m, this.n, this.o, this.q, j12, j3, SystemClock.elapsedRealtime(), this.p);
     }
 
-    @Override // q2.k
-    public final void N(int i7, x2.f0 f0Var, int i10) {
-        Pair a10 = a(i7, f0Var);
-        if (a10 != null) {
-            this.b.i.d(new ai.e0(this, a10, i10, 19));
-        }
+    public final g1 e(int i7, int i10, boolean z10) {
+        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, z10, i7, i10, this.o, this.q, this.r, this.s, this.t, this.p);
     }
 
-    public final Pair a(int i7, x2.f0 f0Var) {
-        x2.f0 f0Var2;
-        i1 i1Var = this.a;
-        x2.f0 f0Var3 = null;
-        if (f0Var != null) {
-            int i10 = 0;
-            while (true) {
-                if (i10 >= i1Var.c.size()) {
-                    f0Var2 = null;
-                    break;
-                }
-                if (((x2.f0) i1Var.c.get(i10)).d == f0Var.d) {
-                    Object obj = f0Var.a;
-                    Object obj2 = i1Var.b;
-                    int i11 = a.g;
-                    f0Var2 = f0Var.a(Pair.create(obj2, obj));
-                    break;
-                }
-                i10++;
-            }
-            if (f0Var2 == null) {
-                return null;
-            }
-            f0Var3 = f0Var2;
-        }
-        return Pair.create(Integer.valueOf(i7 + i1Var.d), f0Var3);
+    public final g1 f(l lVar) {
+        return new g1(this.a, this.b, this.c, this.d, this.e, lVar, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
     }
 
-    @Override // q2.k
-    public final void b(int i7, x2.f0 f0Var, qb.a aVar) {
-        Pair a10 = a(i7, f0Var);
-        if (a10 != null) {
-            this.b.i.d(new z0(this, a10, aVar, 1));
-        }
+    public final g1 g(e2.w0 w0Var) {
+        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, w0Var, this.q, this.r, this.s, this.t, this.p);
     }
 
-    @Override // x2.j0
-    public final void d(int i7, x2.f0 f0Var, x2.b0 b0Var) {
-        Pair a10 = a(i7, f0Var);
-        if (a10 != null) {
-            this.b.i.d(new d1(this, a10, b0Var, 1));
-        }
+    public final g1 h(int i7) {
+        return new g1(this.a, this.b, this.c, this.d, i7, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
     }
 
-    @Override // x2.j0
-    public final void r(int i7, x2.f0 f0Var, x2.t tVar, x2.b0 b0Var, IOException iOException, boolean z9) {
-        Pair a10 = a(i7, f0Var);
-        if (a10 != null) {
-            this.b.i.d(new l4(this, a10, tVar, b0Var, iOException, z9, 1));
-        }
+    public final g1 i(boolean z10) {
+        return new g1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, z10);
     }
 
-    @Override // q2.k
-    public final void w(int i7, x2.f0 f0Var) {
-        Pair a10 = a(i7, f0Var);
-        if (a10 != null) {
-            this.b.i.d(new f1(this, a10, 1));
-        }
+    public final g1 j(e2.l1 l1Var) {
+        return new g1(l1Var, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
     }
 
-    @Override // q2.k
-    public final void z(int i7, x2.f0 f0Var) {
-        Pair a10 = a(i7, f0Var);
-        if (a10 != null) {
-            this.b.i.d(new f1(this, a10, 0));
+    public final long l() {
+        long j3;
+        long j10;
+        if (!m()) {
+            return this.s;
         }
+        do {
+            j3 = this.t;
+            j10 = this.s;
+        } while (j3 != this.t);
+        return h2.l0.S(h2.l0.h0(j10) + ((long) ((SystemClock.elapsedRealtime() - j3) * this.o.a)));
+    }
+
+    public final boolean m() {
+        return this.e == 3 && this.l && this.n == 0;
     }
 }

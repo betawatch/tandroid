@@ -1,7 +1,7 @@
 package h9;
 
-import a8.ha;
-import a8.kb;
+import a8.ia;
+import a8.lb;
 import j$.util.Objects;
 import java.util.AbstractMap;
 import java.util.Collection;
@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c extends a8.h0 {
     public final /* synthetic */ int b;
@@ -32,7 +32,7 @@ public final class c extends a8.h0 {
     public boolean contains(Object obj) {
         switch (this.b) {
             case 0:
-                Set entrySet = ((kb) this.c).b.entrySet();
+                Set entrySet = ((lb) this.c).b.entrySet();
                 entrySet.getClass();
                 try {
                     return entrySet.contains(obj);
@@ -58,7 +58,7 @@ public final class c extends a8.h0 {
         } catch (ClassCastException | NullPointerException unused) {
             obj2 = null;
         }
-        if (ha.a(obj2, entry.getValue())) {
+        if (ia.a(obj2, entry.getValue())) {
             return obj2 != null || i().containsKey(key);
         }
         return false;
@@ -67,9 +67,9 @@ public final class c extends a8.h0 {
     public final Map i() {
         switch (this.b) {
             case 0:
-                return (kb) this.c;
+                return (lb) this.c;
             default:
-                return (i1) this.c;
+                return (h1) this.c;
         }
     }
 
@@ -82,13 +82,13 @@ public final class c extends a8.h0 {
     public final Iterator iterator() {
         switch (this.b) {
             case 0:
-                return new a8.d((kb) this.c, (char) 0);
+                return new a8.d((lb) this.c, (char) 0);
             default:
-                i1 i1Var = (i1) this.c;
-                Iterator it = i1Var.a.entrySet().iterator();
-                h1 h1Var = i1Var.b;
-                h1Var.getClass();
-                return new w0(it, new f1(h1Var, 0));
+                h1 h1Var = (h1) this.c;
+                Iterator it = h1Var.a.entrySet().iterator();
+                g1 g1Var = h1Var.b;
+                g1Var.getClass();
+                return new w0(it, new d6.i(g1Var, 24));
         }
     }
 
@@ -109,9 +109,9 @@ public final class c extends a8.h0 {
                 }
                 Map.Entry entry = (Map.Entry) obj;
                 Objects.requireNonNull(entry);
-                l1 l1Var = (l1) ((kb) this.c).e;
+                k1 k1Var = (k1) ((lb) this.c).e;
                 Object key = entry.getKey();
-                Map map = l1Var.e;
+                Map map = k1Var.e;
                 map.getClass();
                 try {
                     obj2 = map.remove(key);
@@ -122,7 +122,7 @@ public final class c extends a8.h0 {
                 if (collection != null) {
                     int size = collection.size();
                     collection.clear();
-                    l1Var.f -= size;
+                    k1Var.f -= size;
                 }
                 return true;
             default:
@@ -137,11 +137,11 @@ public final class c extends a8.h0 {
             return super.removeAll(collection);
         } catch (UnsupportedOperationException unused) {
             Iterator it = collection.iterator();
-            boolean z9 = false;
+            boolean z10 = false;
             while (it.hasNext()) {
-                z9 |= remove(it.next());
+                z10 |= remove(it.next());
             }
-            return z9;
+            return z10;
         }
     }
 

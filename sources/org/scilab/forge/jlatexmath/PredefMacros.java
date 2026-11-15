@@ -1,18 +1,18 @@
 package org.scilab.forge.jlatexmath;
 
 import a8.p0;
-import com.google.android.recaptcha.internal.a;
+import com.google.android.gms.internal.vision.e2;
 import java.lang.Character;
 import java.util.Map;
 import java.util.StringTokenizer;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
-import rf.b;
+import r.b;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class PredefMacros {
     static {
@@ -150,7 +150,7 @@ public class PredefMacros {
         TeXFormula teXFormula = new TeXFormula("\\mathbb{G}\\mathsf{e}");
         teXFormula.add(new GeoGebraLogoAtom());
         teXFormula.add("\\mathsf{Gebra}");
-        return new ColorAtom(teXFormula.root, (Color) null, new Color(qs.n1, qs.n1, qs.n1));
+        return new ColorAtom(teXFormula.root, (Color) null, new Color(ns.n1, ns.n1, ns.n1));
     }
 
     public static final Atom Hstrok_macro(TeXParser teXParser, String[] strArr) {
@@ -259,13 +259,13 @@ public class PredefMacros {
             str = "mathring";
         } else if (charAt != '~') {
             switch (charAt) {
-                case qs.B1 /* 116 */:
+                case ns.B1 /* 116 */:
                     str = "tie";
                     break;
-                case qs.C1 /* 117 */:
+                case ns.C1 /* 117 */:
                     str = "breve";
                     break;
-                case qs.D1 /* 118 */:
+                case ns.D1 /* 118 */:
                     str = "check";
                     break;
                 default:
@@ -773,7 +773,7 @@ public class PredefMacros {
     }
 
     public static final Atom genfrac_macro(TeXParser teXParser, String[] strArr) {
-        boolean z9;
+        boolean z10;
         Atom atom;
         Atom atom2 = new TeXFormula(teXParser, strArr[1], false).root;
         SymbolAtom symbolAtom = atom2 instanceof SymbolAtom ? (SymbolAtom) atom2 : null;
@@ -783,9 +783,9 @@ public class PredefMacros {
         String str = strArr[3];
         if (str == null || str.length() == 0 || length.length == 1) {
             length = new float[]{0.0f, 0.0f};
-            z9 = false;
+            z10 = false;
         } else {
-            z9 = true;
+            z10 = true;
         }
         int parseInt = strArr[4].length() != 0 ? Integer.parseInt(strArr[4]) : 0;
         TeXFormula teXFormula = new TeXFormula(teXParser, strArr[5], false);
@@ -794,7 +794,7 @@ public class PredefMacros {
         if (atom4 == null || (atom = teXFormula2.root) == null) {
             throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
         }
-        FractionAtom fractionAtom = new FractionAtom(atom4, atom, z9, (int) length[0], length[1]);
+        FractionAtom fractionAtom = new FractionAtom(atom4, atom, z10, (int) length[0], length[1]);
         RowAtom rowAtom = new RowAtom();
         rowAtom.add(new StyleAtom(parseInt * 2, new FencedAtom(fractionAtom, symbolAtom, symbolAtom2)));
         return rowAtom;
@@ -1254,7 +1254,7 @@ public class PredefMacros {
     public static final Atom newcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(b.i("Invalid name for the command :", str));
+            throw new ParseException(b.k("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         Integer num = str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2));
@@ -1413,7 +1413,7 @@ public class PredefMacros {
     public static final Atom renewcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(b.i("Invalid name for the command :", str));
+            throw new ParseException(b.k("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         NewCommandMacro.addReNewCommand(str.substring(1), strArr[2], (str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2))).intValue());
@@ -1428,13 +1428,13 @@ public class PredefMacros {
 
     public static final Atom resizebox_macro(TeXParser teXParser, String[] strArr) {
         Atom atom = new TeXFormula(teXParser, strArr[3]).root;
-        boolean z9 = true;
+        boolean z10 = true;
         String str = strArr[1];
         String str2 = strArr[2];
         if (!str.equals("!") && !strArr[2].equals("!")) {
-            z9 = false;
+            z10 = false;
         }
-        return new ResizeAtom(atom, str, str2, z9);
+        return new ResizeAtom(atom, str, str2, z10);
     }
 
     public static final Atom rm_macro(TeXParser teXParser, String[] strArr) {
@@ -1457,7 +1457,7 @@ public class PredefMacros {
         String str = "";
         for (int i7 = 0; i7 < 13; i7++) {
             while (parseInt >= iArr[i7]) {
-                StringBuilder m10 = a.m(str);
+                StringBuilder m10 = e2.m(str);
                 m10.append(strArr2[i7]);
                 str = m10.toString();
                 parseInt -= iArr[i7];

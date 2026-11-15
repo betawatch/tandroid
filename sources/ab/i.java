@@ -13,9 +13,10 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.Callable;
+import org.telegram.ui.Dictation.DictationLid;
 import org.webrtc.audio.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Callable {
     public final /* synthetic */ int a;
@@ -40,27 +41,27 @@ public final /* synthetic */ class i implements Callable {
             case 0:
                 Context context = (Context) this.b;
                 Intent intent = (Intent) this.c;
-                b0 k10 = b0.k();
-                k10.getClass();
+                c0 q10 = c0.q();
+                q10.getClass();
                 if (Log.isLoggable("FirebaseMessaging", 3)) {
                     Log.d("FirebaseMessaging", "Starting service");
                 }
-                ((ArrayDeque) k10.e).offer(intent);
+                ((ArrayDeque) q10.e).offer(intent);
                 Intent intent2 = new Intent("com.google.firebase.MESSAGING_EVENT");
                 intent2.setPackage(context.getPackageName());
-                synchronized (k10) {
+                synchronized (q10) {
                     try {
-                        str = (String) k10.b;
+                        str = (String) q10.b;
                         if (str == null) {
                             ResolveInfo resolveService = context.getPackageManager().resolveService(intent2, 0);
                             if (resolveService != null && (serviceInfo = resolveService.serviceInfo) != null) {
                                 if (context.getPackageName().equals(serviceInfo.packageName) && (str2 = serviceInfo.name) != null) {
                                     if (str2.startsWith(".")) {
-                                        k10.b = context.getPackageName() + serviceInfo.name;
+                                        q10.b = context.getPackageName() + serviceInfo.name;
                                     } else {
-                                        k10.b = serviceInfo.name;
+                                        q10.b = serviceInfo.name;
                                     }
-                                    str = (String) k10.b;
+                                    str = (String) q10.b;
                                 }
                                 Log.e("FirebaseMessaging", "Error resolving target intent service, skipping classname enforcement. Resolved service was: " + serviceInfo.packageName + "/" + serviceInfo.name);
                                 str = null;
@@ -78,7 +79,7 @@ public final /* synthetic */ class i implements Callable {
                     intent2.setClassName(context.getPackageName(), str);
                 }
                 try {
-                    if (k10.m(context)) {
+                    if (q10.w(context)) {
                         startService = m0.d(context, intent2);
                     } else {
                         startService = context.startService(intent2);
@@ -99,21 +100,23 @@ public final /* synthetic */ class i implements Callable {
                 }
                 return Integer.valueOf(i7);
             case 1:
+                return DictationLid.a((byte[]) this.b, (int[]) this.c);
+            case 2:
                 j2.i iVar = (j2.i) this.b;
                 byte[] bArr = (byte[]) this.c;
-                boolean z9 = iVar.d;
-                Bitmap b10 = bg.o0.b(bArr.length, iVar.c, bArr);
-                return z9 ? bg.o0.e(b10) : b10;
-            case 2:
+                boolean z10 = iVar.d;
+                Bitmap b10 = bg.n0.b(bArr.length, iVar.c, bArr);
+                return z10 ? bg.n0.e(b10) : b10;
+            case 3:
                 j2.i iVar2 = (j2.i) this.b;
                 Uri uri = (Uri) this.c;
                 j2.h createDataSource = iVar2.b.createDataSource();
                 int i10 = iVar2.c;
-                boolean z10 = iVar2.d;
+                boolean z11 = iVar2.d;
                 try {
                     j2.m mVar = new j2.m(uri, 1, null, Collections.EMPTY_MAP, 0L, -1L, null, 0);
-                    j2.o oVar = (j2.o) createDataSource;
-                    oVar.open(mVar);
+                    j2.n nVar = (j2.n) createDataSource;
+                    nVar.open(mVar);
                     byte[] bArr2 = new byte[1024];
                     int i11 = 0;
                     int i12 = 0;
@@ -121,20 +124,20 @@ public final /* synthetic */ class i implements Callable {
                         if (i12 == bArr2.length) {
                             bArr2 = Arrays.copyOf(bArr2, bArr2.length * 2);
                         }
-                        i11 = oVar.read(bArr2, i12, bArr2.length - i12);
+                        i11 = nVar.read(bArr2, i12, bArr2.length - i12);
                         if (i11 != -1) {
                             i12 += i11;
                         }
                     }
                     byte[] copyOf = Arrays.copyOf(bArr2, i12);
-                    Bitmap b11 = bg.o0.b(copyOf.length, i10, copyOf);
-                    if (z10) {
-                        b11 = bg.o0.e(b11);
+                    Bitmap b11 = bg.n0.b(copyOf.length, i10, copyOf);
+                    if (z11) {
+                        b11 = bg.n0.e(b11);
                     }
-                    oVar.close();
+                    nVar.close();
                     return b11;
                 } catch (Throwable th2) {
-                    ((j2.o) createDataSource).close();
+                    ((j2.n) createDataSource).close();
                     throw th2;
                 }
             default:

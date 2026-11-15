@@ -9,17 +9,17 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 import kotlin.jvm.internal.j;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b {
     public final LinkedHashMap a;
-    public final qt b;
+    public final ff b;
 
-    public b(LinkedHashMap linkedHashMap, boolean z9) {
+    public b(LinkedHashMap linkedHashMap, boolean z10) {
         this.a = linkedHashMap;
-        this.b = new qt(z9);
+        this.b = new ff(z10);
     }
 
     public final Map a() {
@@ -72,9 +72,9 @@ public final class b {
             c(key);
             return;
         }
-        boolean z9 = obj instanceof Set;
+        boolean z10 = obj instanceof Set;
         LinkedHashMap linkedHashMap = this.a;
-        if (z9) {
+        if (z10) {
             Set unmodifiableSet = DesugarCollections.unmodifiableSet(hd.f.o((Set) obj));
             j.d(unmodifiableSet, "unmodifiableSet(set.toSet())");
             linkedHashMap.put(key, unmodifiableSet);
@@ -96,7 +96,7 @@ public final class b {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean equals(Object obj) {
-        boolean z9;
+        boolean z10;
         if (obj instanceof b) {
             LinkedHashMap linkedHashMap = ((b) obj).a;
             LinkedHashMap linkedHashMap2 = this.a;
@@ -108,15 +108,15 @@ public final class b {
                             if (obj2 != null) {
                                 Object value = entry.getValue();
                                 if (!(value instanceof byte[])) {
-                                    z9 = j.a(value, obj2);
+                                    z10 = j.a(value, obj2);
                                 } else if ((obj2 instanceof byte[]) && Arrays.equals((byte[]) value, (byte[]) obj2)) {
-                                    z9 = true;
+                                    z10 = true;
                                 }
-                                if (z9) {
+                                if (z10) {
                                 }
                             }
-                            z9 = false;
-                            if (z9) {
+                            z10 = false;
+                            if (z10) {
                             }
                         }
                     }
@@ -141,7 +141,7 @@ public final class b {
         return hd.f.g(this.a.entrySet(), ",\n", "{\n", "\n}", a.b, 24);
     }
 
-    public /* synthetic */ b(boolean z9) {
-        this(new LinkedHashMap(), z9);
+    public /* synthetic */ b(boolean z10) {
+        this(new LinkedHashMap(), z10);
     }
 }

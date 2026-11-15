@@ -2,14 +2,14 @@ package org.telegram.ui.Wallet;
 
 import android.text.TextUtils;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.s10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.sb1;
+import org.telegram.ui.fy0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i implements v10 {
+public final /* synthetic */ class i implements s10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ l0 b;
 
@@ -18,7 +18,7 @@ public final /* synthetic */ class i implements v10 {
         this.b = l0Var;
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.s10
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
@@ -75,7 +75,7 @@ public final /* synthetic */ class i implements v10 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 l0Var3.B = -1;
                 if (updates != null) {
-                    Utilities.d.c(new sb1(2, l0Var3, updates));
+                    Utilities.d.c(new fy0(27, l0Var3, updates));
                     break;
                 } else {
                     StringBuilder sb3 = new StringBuilder("requesting gasless info: ");

@@ -9,12 +9,12 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.view.View;
-import fi.v3;
+import hi.j3;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.wq;
-import org.telegram.ui.c50;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.z20;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class o1 extends View {
     public Bitmap a;
@@ -31,22 +31,22 @@ public abstract class o1 extends View {
     public q0.a x;
     public float y;
 
-    public final void a(boolean z9) {
+    public final void a(boolean z10) {
         if (this.w) {
             return;
         }
         this.w = true;
         ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(150L);
-        duration.setInterpolator(wq.f);
-        duration.addUpdateListener(new v3(this, 26));
-        duration.addListener(new c50(14, this, z9));
+        duration.setInterpolator(er.f);
+        duration.addUpdateListener(new j3(this, 28));
+        duration.addListener(new z20(15, this, z10));
         duration.start();
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ((sg.i) this).D.r1.c();
+        ((sg.i) this).E.s1.d();
         this.a.recycle();
         this.a = null;
     }

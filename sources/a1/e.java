@@ -1,75 +1,63 @@
 package a1;
 
-import a8.ra;
-import aa.f0;
-import aa.q;
-import aa.u;
-import aa.w;
-import ab.d0;
+import aa.e0;
+import aa.p;
+import aa.t;
+import aa.v;
 import ab.l;
-import ai.c0;
+import ab.u;
+import ai.a1;
+import ai.b2;
 import ai.h;
-import ai.i0;
-import ai.l1;
-import ai.s0;
-import ai.x;
+import ai.m0;
+import ai.n2;
+import ai.o2;
+import ai.s;
+import ai.t1;
+import ai.u1;
+import ai.w;
 import ai.y;
-import android.animation.AnimatorSet;
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PointF;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.os.Build;
+import android.os.ParcelFileDescriptor;
+import android.os.SystemClock;
+import android.speech.SpeechRecognizer;
 import android.support.v4.media.session.a0;
-import android.text.TextUtils;
 import android.util.Log;
+import android.util.SparseArray;
+import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import bi.ab;
-import bi.ea;
-import bi.k0;
-import bi.k7;
-import bi.l0;
+import bi.c4;
+import bi.i2;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.messaging.FirebaseMessaging;
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import kotlin.jvm.internal.j;
 import kotlin.jvm.internal.r;
-import m.q3;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c20;
+import m.o3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.id;
-import org.telegram.messenger.k5;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.qs;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.np;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.bc;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.pm0;
-import v0.o;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.q2;
+import org.telegram.ui.Components.wp0;
+import org.telegram.ui.Dictation.DictationAsr;
+import org.telegram.ui.Dictation.DictationLid;
+import v0.n;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -82,27 +70,24 @@ public final /* synthetic */ class e implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:188:0x0410, code lost:
-    
-        if (r6 == null) goto L177;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x027a  */
+    /* JADX WARN: Finally extract failed */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x01b7 A[Catch: all -> 0x010f, InterruptedException -> 0x02d2, TryCatch #12 {InterruptedException -> 0x02d2, all -> 0x010f, blocks: (B:27:0x00b8, B:29:0x00bc, B:31:0x00c8, B:32:0x00d6, B:34:0x00dc, B:109:0x0211, B:111:0x021b, B:114:0x0220, B:116:0x0226, B:120:0x023a, B:122:0x0264, B:126:0x0251, B:128:0x0255, B:130:0x025d, B:137:0x0267, B:36:0x00f4, B:38:0x00fb, B:40:0x0106, B:43:0x0112, B:45:0x011a, B:47:0x012f, B:49:0x0133, B:50:0x0141, B:51:0x0149, B:58:0x0182, B:59:0x0184, B:64:0x018d, B:66:0x0191, B:68:0x019a, B:70:0x01a2, B:75:0x01af, B:77:0x01b7, B:79:0x01d4, B:80:0x01dc, B:84:0x01df, B:86:0x01e3, B:90:0x01f0, B:92:0x01fd, B:93:0x0204, B:97:0x0154, B:99:0x016d), top: B:26:0x00b8 }] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        RLottieNative rLottieNative;
-        ai.g gVar;
-        TLRPC.Chat M0;
-        int i7 = 10;
-        Bitmap bitmap = null;
-        boolean z9 = false;
-        r10 = false;
-        r10 = false;
-        r10 = false;
-        boolean z10 = false;
-        final int i10 = 1;
+        b2 b2Var;
+        int read;
+        int i7;
+        ByteBuffer byteBuffer;
+        int i10;
+        float sqrt;
+        String nativeSessionPush;
+        w c10;
+        String nativeSessionPush2;
+        int i11 = 8;
+        String str = null;
         switch (this.a) {
             case 0:
                 CredentialProviderPlayServicesImpl.runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25$lambda$24((v0.g) this.b, (Exception) this.c);
@@ -111,55 +96,50 @@ public final /* synthetic */ class e implements Runnable {
                 CredentialProviderPlayServicesImpl.onClearCredential$lambda$14$lambda$13$lambda$12((v0.g) this.b, (r) this.c);
                 return;
             case 2:
-                ((q) this.b).d((String) this.c, Boolean.FALSE);
+                ((p) this.b).d((String) this.c, Boolean.FALSE);
                 return;
             case 3:
-                u uVar = (u) this.b;
-                String str = (String) this.c;
-                q3 q3Var = uVar.f.d;
-                q3Var.getClass();
-                String b10 = ca.e.b(1024, str);
-                synchronized (((AtomicMarkableReference) q3Var.g)) {
+                t tVar = (t) this.b;
+                String str2 = (String) this.c;
+                o3 o3Var = tVar.f.d;
+                o3Var.getClass();
+                String b10 = ca.e.b(1024, str2);
+                synchronized (((AtomicMarkableReference) o3Var.g)) {
                     try {
-                        String str2 = (String) ((AtomicMarkableReference) q3Var.g).getReference();
-                        if (b10 != null) {
-                            z9 = b10.equals(str2);
-                        } else if (str2 == null) {
-                            z9 = true;
-                        }
-                        if (z9) {
+                        String str3 = (String) ((AtomicMarkableReference) o3Var.g).getReference();
+                        if (b10 == null ? str3 == null : b10.equals(str3)) {
                             return;
                         }
-                        ((AtomicMarkableReference) q3Var.g).set(b10, true);
-                        ((ba.e) q3Var.b).b.a(new ab(q3Var, 6));
+                        ((AtomicMarkableReference) o3Var.g).set(b10, true);
+                        ((ba.e) o3Var.b).b.a(new a3.f(o3Var, 26));
                         return;
                     } finally {
                     }
                 }
             case 4:
-                u uVar2 = (u) this.b;
+                t tVar2 = (t) this.b;
                 Throwable th2 = (Throwable) this.c;
                 Map map = Collections.EMPTY_MAP;
-                q qVar = uVar2.f;
+                p pVar = tVar2.f;
                 Thread currentThread = Thread.currentThread();
-                qVar.getClass();
+                pVar.getClass();
                 long currentTimeMillis = System.currentTimeMillis();
-                w wVar = qVar.n;
-                if (wVar == null || !wVar.e.get()) {
+                v vVar = pVar.n;
+                if (vVar == null || !vVar.e.get()) {
                     long j3 = currentTimeMillis / 1000;
-                    String g10 = qVar.g();
+                    String g10 = pVar.g();
                     if (g10 == null) {
                         Log.w("FirebaseCrashlytics", "Tried to write a non-fatal exception while no session was open.", null);
                         return;
                     }
                     ca.c cVar = new ca.c(g10, j3, map);
-                    f0 f0Var = qVar.m;
-                    f0Var.getClass();
+                    e0 e0Var = pVar.m;
+                    e0Var.getClass();
                     String concat = "Persisting non-fatal event for session ".concat(g10);
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                         Log.v("FirebaseCrashlytics", concat, null);
                     }
-                    f0Var.g(th2, currentThread, "error", cVar, false);
+                    e0Var.g(th2, currentThread, "error", cVar, false);
                     return;
                 }
                 return;
@@ -169,7 +149,7 @@ public final /* synthetic */ class e implements Runnable {
             case 6:
                 FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.b;
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.c;
-                d0 d0Var = FirebaseMessaging.m;
+                ob.c cVar2 = FirebaseMessaging.m;
                 try {
                     taskCompletionSource.setResult(firebaseMessaging.a());
                     return;
@@ -178,352 +158,385 @@ public final /* synthetic */ class e implements Runnable {
                     return;
                 }
             case 7:
-                ab.u uVar3 = (ab.u) this.b;
+                u uVar = (u) this.b;
                 TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) this.c;
                 try {
-                    taskCompletionSource2.setResult(uVar3.a());
+                    taskCompletionSource2.setResult(uVar.a());
                     return;
                 } catch (Exception e11) {
                     taskCompletionSource2.setException(e11);
                     return;
                 }
             case 8:
-                x xVar = (x) this.b;
-                if (((TLRPC.Document) this.c) != null) {
-                    xVar.e();
-                    return;
-                } else {
-                    xVar.getClass();
+                boolean[] zArr = (boolean[]) this.b;
+                ArrayList arrayList = (ArrayList) this.c;
+                if (zArr[0]) {
                     return;
                 }
-            case 9:
-                y yVar = (y) this.b;
-                File file = (File) this.c;
-                int i11 = yVar.c;
-                try {
-                    rLottieNative = RLottieNative.a(file.getAbsolutePath(), null, null, null, 0, null);
-                    if (rLottieNative != null) {
-                        try {
-                            Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                            Bitmap createBitmap = Bitmap.createBitmap(i11, i11, config);
-                            rLottieNative.c(0, createBitmap, true);
-                            Bitmap createBitmap2 = Bitmap.createBitmap(i11, i11, config);
-                            Paint paint = new Paint(2);
-                            paint.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                            new Canvas(createBitmap2).drawBitmap(createBitmap, 0.0f, 0.0f, paint);
-                            createBitmap.recycle();
-                            createBitmap2.setHasMipMap(true);
-                            rLottieNative.d();
-                            bitmap = createBitmap2;
-                        } catch (Throwable th3) {
-                            th = th3;
-                            try {
-                                a8.g(th, true);
-                                break;
-                            } finally {
-                                if (rLottieNative != null) {
-                                    rLottieNative.d();
-                                }
-                            }
-                        }
+                zArr[0] = true;
+                ai.d.d = false;
+                int size = arrayList.size();
+                int i12 = 0;
+                while (i12 < size) {
+                    Object obj = arrayList.get(i12);
+                    i12++;
+                    try {
+                        ((SpeechRecognizer) obj).destroy();
+                    } catch (Throwable unused) {
                     }
-                } catch (Throwable th4) {
-                    th = th4;
-                    rLottieNative = null;
                 }
-                g0.h3(new e(i7, yVar, bitmap));
+                return;
+            case 9:
+                boolean[] zArr2 = (boolean[]) this.b;
+                e eVar = (e) this.c;
+                if (!zArr2[0]) {
+                    Log.d("Dictation", "support probe: no answer");
+                }
+                eVar.run();
                 return;
             case 10:
-                y yVar2 = (y) this.b;
-                Bitmap bitmap2 = (Bitmap) this.c;
-                yVar2.h = true;
-                if (yVar2.e) {
-                    if (bitmap2 != null) {
-                        bitmap2.recycle();
-                        return;
-                    }
-                    return;
-                } else {
-                    if (bitmap2 != null) {
-                        yVar2.d.a(bitmap2);
-                        return;
-                    }
-                    return;
-                }
+                ((ai.g) this.b).g(((TLRPC.TL_composedMessageWithAI) this.c).result_text.text);
+                return;
             case 11:
-                i0 i0Var = (i0) this.b;
-                q4.q qVar2 = (q4.q) this.c;
-                if (i0Var.V) {
-                    return;
-                }
-                i0Var.e();
-                i0Var.a.m((String) qVar2.b);
+                ((ai.g) this.b).g((String) this.c);
                 return;
             case 12:
-                ra raVar = (ra) this.b;
-                q4.q qVar3 = (q4.q) this.c;
-                i0 i0Var2 = (i0) raVar.b;
-                if (i0Var2.l0 || i0Var2.V || i0Var2.U) {
-                    return;
+                y yVar = (y) this.b;
+                t1 t1Var = (t1) this.c;
+                byte[] bArr = new byte[3200];
+                while (!yVar.d) {
+                    int read2 = yVar.e.read(bArr, 0, 3200);
+                    if (read2 <= 0) {
+                        if (read2 < 0) {
+                            Log.d("Dictation", "audio read " + read2);
+                            return;
+                        }
+                        return;
+                    }
+                    yVar.a(read2, bArr);
+                    int i13 = read2 / 2;
+                    double d = 0.0d;
+                    for (int i14 = 0; i14 < i13; i14++) {
+                        int i15 = i14 * 2;
+                        double d2 = (short) ((bArr[i15 + 1] << 8) | (bArr[i15] & 255));
+                        d += d2 * d2;
+                    }
+                    t1Var.a((float) Math.max(0.0d, Math.min(1.0d, ((Math.log10(Math.max(1.0d, Math.sqrt(d / Math.max(1, i13)))) * 20.0d) - 42.0d) / 30.0d)));
                 }
-                i0Var2.l0 = true;
-                i0Var2.h0 = false;
-                i0Var2.performHapticFeedback(3, 2);
-                PointF[] pointFArr = (PointF[]) qVar3.c;
-                Object[] objArr = pointFArr.length >= 3 ? 1 : null;
-                if (objArr != null) {
-                    i0Var2.m0 = pointFArr;
-                    i0Var2.invalidate();
-                }
-                g0.i3(new e(11, i0Var2, qVar3), objArr != null ? 450L : 0L);
                 return;
             case 13:
-                s0.Z((s0) this.b, (AnimatorSet) this.c);
-                return;
-            case 14:
-                s0 s0Var = (s0) this.b;
-                Bitmap bitmap3 = (Bitmap) this.c;
-                File file2 = new File(g0.E0(), "qr_code_" + System.currentTimeMillis() + ".png");
-                try {
-                    FileOutputStream fileOutputStream = new FileOutputStream(file2);
-                    try {
-                        z10 = bitmap3.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
-                        fileOutputStream.close();
-                    } finally {
-                    }
-                } catch (Exception e12) {
-                    a8.g(e12, true);
-                }
-                bitmap3.recycle();
-                if (z10) {
-                    g0.h3(new e(16, s0Var, file2));
+                m0 m0Var = (m0) this.b;
+                String str4 = (String) this.c;
+                m0Var.getClass();
+                DictationAsr.S(str4);
+                DictationAsr.s(DictationAsr.H(str4));
+                m0Var.w.setLanguage(m0.l(str4));
+                if (m0Var.r != 1 || (b2Var = m0Var.G) == null) {
                     return;
                 }
+                b2Var.p(str4);
+                return;
+            case 14:
+                ((m0) this.b).c((h) this.c);
                 return;
             case 15:
-                final s0 s0Var2 = (s0) this.b;
-                i0 i0Var3 = (i0) this.c;
-                if (i0.d(s0Var2.getParentActivity())) {
-                    i0Var3.e();
-                    c0 c0Var = new c0(i10);
-                    final int i12 = z9 ? 1 : 0;
-                    c20 c20Var = new c20() { // from class: ai.l0
-                        @Override // org.telegram.messenger.c20
-                        public final void a(Object obj) {
-                            int i13 = i12;
-                            s0 s0Var3 = s0Var2;
-                            switch (i13) {
-                                case 0:
-                                    String str3 = (String) obj;
-                                    if (s0Var3.getParentActivity() != null) {
-                                        vf.c.t(s0Var3.getParentActivity(), str3);
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    l1 l1Var = s0Var3.d;
-                                    if (l1Var != null && !s0Var3.isFinished) {
-                                        l1Var.d1(R.drawable.msg_download, id.M0(2131746471, null), null);
-                                        break;
-                                    }
-                                    break;
-                            }
-                        }
-                    };
-                    pm0 pm0Var = new pm0(10, false, false, null);
-                    pm0Var.G = 1;
-                    pm0Var.H = false;
-                    pm0Var.y = false;
-                    pm0Var.V = new a0(c0Var, s0Var2, c20Var, false, 7);
-                    s0Var2.presentFragment(pm0Var);
+                m0 m0Var2 = (m0) this.b;
+                b2 b2Var2 = (b2) this.c;
+                if (m0Var2.G == b2Var2 && m0Var2.r == 1) {
+                    b2Var2.s();
                     return;
                 }
                 return;
             case 16:
-                final s0 s0Var3 = (s0) this.b;
-                File file3 = (File) this.c;
-                Activity parentActivity = s0Var3.getParentActivity();
-                if (parentActivity == null) {
-                    return;
-                }
-                MediaController.d0(file3.getAbsolutePath(), parentActivity, 0, file3.getName(), "image/png", new c20() { // from class: ai.l0
-                    @Override // org.telegram.messenger.c20
-                    public final void a(Object obj) {
-                        int i13 = i10;
-                        s0 s0Var32 = s0Var3;
-                        switch (i13) {
-                            case 0:
-                                String str3 = (String) obj;
-                                if (s0Var32.getParentActivity() != null) {
-                                    vf.c.t(s0Var32.getParentActivity(), str3);
-                                    break;
-                                }
-                                break;
-                            default:
-                                l1 l1Var = s0Var32.d;
-                                if (l1Var != null && !s0Var32.isFinished) {
-                                    l1Var.d1(R.drawable.msg_download, id.M0(2131746471, null), null);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+                ((q2) this.b).a((h) this.c);
                 return;
             case 17:
-                l1 l1Var = (l1) this.b;
-                ai.g gVar2 = (ai.g) this.c;
-                h hVar = l1Var.s0;
-                if (hVar.q == 2 && hVar.o < 1.0f) {
-                    hVar.m = gVar2;
-                    l1Var.invalidate();
-                    return;
-                }
-                long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-                l1Var.p2 = l1.j(l1Var.n2, 0.03f, 0.005f);
-                l1Var.n2 = currentAnimationTimeMillis;
-                ai.g gVar3 = hVar.m;
-                if (gVar3 == null) {
-                    hVar.m = gVar2;
-                    hVar.n = null;
-                    hVar.o = 1.0f;
-                    return;
-                }
-                int i13 = (Build.VERSION.SDK_INT >= 29 ? 1 : 0) ^ 1;
-                if (hVar.o < 1.0f && (gVar = hVar.n) != null) {
-                    gVar3 = gVar;
-                }
-                hVar.n = gVar3;
-                hVar.m = gVar2;
-                hVar.o = 0.0f;
-                hVar.q = i13;
-                hVar.p = System.currentTimeMillis();
-                boolean[] zArr = hVar.s;
-                if (zArr != null) {
-                    int length = zArr.length;
-                    int i14 = hVar.n.e;
-                    if (length >= i14 * i14) {
-                        Arrays.fill(zArr, false);
-                        hVar.G = i13 == 1;
-                        return;
-                    }
-                }
-                int i15 = hVar.n.e;
-                hVar.s = new boolean[i15 * i15];
-                hVar.G = i13 == 1;
+                g0.h3(new a1((z10) this.c, DictationLid.m((byte[]) this.b).length / 32, 0));
                 return;
             case 18:
-                g0.h3(new e(19, (c20) this.c, h.c((String) this.b, g0.L(240.0f), gc.b.c, 0.75f, null)));
+                b2 b2Var3 = (b2) this.b;
+                Runnable runnable = (Runnable) this.c;
+                if (b2Var3.j) {
+                    return;
+                }
+                runnable.run();
                 return;
             case 19:
-                ((c20) this.b).a((ai.g) this.c);
-                return;
+                File file = (File) this.b;
+                ParcelFileDescriptor parcelFileDescriptor = (ParcelFileDescriptor) this.c;
+                byte[] bArr2 = new byte[3200];
+                try {
+                    FileInputStream fileInputStream = new FileInputStream(file);
+                    try {
+                        ParcelFileDescriptor.AutoCloseOutputStream autoCloseOutputStream = new ParcelFileDescriptor.AutoCloseOutputStream(parcelFileDescriptor);
+                        try {
+                            long elapsedRealtime = SystemClock.elapsedRealtime();
+                            long j10 = 0;
+                            while (!Thread.interrupted() && (read = fileInputStream.read(bArr2)) > 0) {
+                                autoCloseOutputStream.write(bArr2, 0, read);
+                                j10 += read;
+                                long elapsedRealtime2 = (((j10 * 1000) / 32000) + elapsedRealtime) - SystemClock.elapsedRealtime();
+                                if (elapsedRealtime2 > 0) {
+                                    Thread.sleep(elapsedRealtime2);
+                                }
+                            }
+                            byte[] bArr3 = new byte[3200];
+                            for (int i16 = 0; i16 < 40 && !Thread.interrupted(); i16++) {
+                                autoCloseOutputStream.write(bArr3);
+                                Thread.sleep(100L);
+                            }
+                            Log.d("Dictation", "test source done");
+                            autoCloseOutputStream.close();
+                            fileInputStream.close();
+                            return;
+                        } catch (Throwable th3) {
+                            try {
+                                autoCloseOutputStream.close();
+                                throw th3;
+                            } catch (Throwable th4) {
+                                th3.addSuppressed(th4);
+                                throw th3;
+                            }
+                        }
+                    } finally {
+                    }
+                } catch (Exception e12) {
+                    Log.d("Dictation", "test source closed: " + e12);
+                    return;
+                }
             case 20:
+                o2 o2Var = (o2) this.b;
+                a0 a0Var = (a0) this.c;
+                o2Var.getClass();
+                SparseArray sparseArray = new SparseArray();
+                int i17 = 0;
+                while (o2Var.d) {
+                    try {
+                        byte[] readIncomingAudio = NativeInstance.readIncomingAudio();
+                        long currentTimeMillis2 = System.currentTimeMillis();
+                        if (readIncomingAudio != null) {
+                            ByteBuffer order = ByteBuffer.wrap(readIncomingAudio).order(ByteOrder.LITTLE_ENDIAN);
+                            while (true) {
+                                if (order.remaining() >= i11) {
+                                    int i18 = order.getInt();
+                                    i7 = i11;
+                                    int i19 = order.getInt() * 2;
+                                    int position = order.position();
+                                    if (i19 <= order.remaining()) {
+                                        order.position(position + i19);
+                                        if (i18 == 0) {
+                                            o2Var.a.getClass();
+                                            VoIPService sharedInstance = VoIPService.getSharedInstance();
+                                            if (sharedInstance == null || sharedInstance.isMicMute()) {
+                                                i11 = i7;
+                                            }
+                                        }
+                                        n2 n2Var = (n2) sparseArray.get(i18);
+                                        if (n2Var == null) {
+                                            n2Var = new n2(o2Var, i18);
+                                            long j11 = o2Var.f;
+                                            byteBuffer = order;
+                                            i10 = i19;
+                                            o2Var.f = j11 + 1;
+                                            n2Var.f = j11;
+                                            if (i18 == 0 && o2Var.c) {
+                                                ExecutorService executorService = DictationLid.a;
+                                                n2Var.k = np.e1().getString("tinylid_lang", str);
+                                            }
+                                            sparseArray.put(i18, n2Var);
+                                        } else {
+                                            byteBuffer = order;
+                                            i10 = i19;
+                                        }
+                                        int i20 = i10 / 2;
+                                        if (i20 == 0) {
+                                            sqrt = 0.0f;
+                                        } else {
+                                            double d10 = 0.0d;
+                                            for (int i21 = 0; i21 < i20; i21++) {
+                                                int i22 = (i21 * 2) + position;
+                                                double d11 = (short) ((readIncomingAudio[i22] & 255) | (readIncomingAudio[i22 + 1] << 8));
+                                                d10 = (d11 * d11) + d10;
+                                            }
+                                            sqrt = (float) Math.sqrt(d10 / i20);
+                                        }
+                                        boolean z10 = sqrt >= 400.0f;
+                                        if (z10) {
+                                            n2Var.e = currentTimeMillis2;
+                                        }
+                                        if (n2Var.d == null) {
+                                            if (z10 && i17 < 4) {
+                                                String str5 = n2Var.k;
+                                                a0 R = str5 != null ? DictationAsr.R(str5, a0Var, false) : null;
+                                                if (R != null) {
+                                                    s sVar = (s) R.b;
+                                                    s[] sVarArr = DictationAsr.a;
+                                                    if ((sVar == null || sVar.d == 0) ? false : true) {
+                                                        c10 = w.c(R, n2Var);
+                                                        n2Var.d = c10;
+                                                        if (c10 != null) {
+                                                            i17++;
+                                                            n2Var.h = 0;
+                                                            n2Var.g = 0;
+                                                            n2Var.e();
+                                                            n2Var.c(0, n2Var.c, n2Var.b);
+                                                            w wVar = n2Var.d;
+                                                            byte[] bArr4 = n2Var.b;
+                                                            int i23 = n2Var.c;
+                                                            long j12 = wVar.c;
+                                                            if (j12 != 0) {
+                                                                nativeSessionPush2 = DictationAsr.nativeSessionPush(j12, bArr4, 0, i23);
+                                                                wVar.b(nativeSessionPush2);
+                                                            }
+                                                            n2Var.c = 0;
+                                                        }
+                                                    }
+                                                }
+                                                R = a0Var;
+                                                c10 = w.c(R, n2Var);
+                                                n2Var.d = c10;
+                                                if (c10 != null) {
+                                                }
+                                            }
+                                            if (n2Var.d == null) {
+                                                n2Var.d(position, i10, readIncomingAudio);
+                                                i11 = i7;
+                                                order = byteBuffer;
+                                                str = null;
+                                            }
+                                        }
+                                        int i24 = i10;
+                                        n2Var.c(position, i24, readIncomingAudio);
+                                        w wVar2 = n2Var.d;
+                                        long j13 = wVar2.c;
+                                        if (j13 != 0) {
+                                            nativeSessionPush = DictationAsr.nativeSessionPush(j13, readIncomingAudio, position, i24);
+                                            wVar2.b(nativeSessionPush);
+                                        }
+                                        n2Var.a();
+                                        i11 = i7;
+                                        order = byteBuffer;
+                                        str = null;
+                                    }
+                                } else {
+                                    i7 = i11;
+                                }
+                            }
+                        } else {
+                            i7 = i11;
+                        }
+                        while (true) {
+                            Runnable runnable2 = (Runnable) o2Var.b.poll();
+                            if (runnable2 != null) {
+                                runnable2.run();
+                            } else {
+                                for (int i25 = 0; i25 < sparseArray.size(); i25++) {
+                                    n2 n2Var2 = (n2) sparseArray.valueAt(i25);
+                                    long j14 = currentTimeMillis2 - n2Var2.e;
+                                    w wVar3 = n2Var2.d;
+                                    if (wVar3 != null && j14 > 6000) {
+                                        wVar3.a();
+                                        n2Var2.d = null;
+                                        i17--;
+                                        n2Var2.b();
+                                        n2Var2.e();
+                                    } else if (wVar3 != null && j14 > 1600 && n2Var2.i && !n2Var2.j.isEmpty()) {
+                                        n2Var2.b();
+                                        n2Var2.g = n2Var2.h;
+                                    }
+                                }
+                                Thread.sleep(60L);
+                                i11 = i7;
+                                str = null;
+                            }
+                        }
+                    } catch (InterruptedException unused2) {
+                        for (int i26 = 0; i26 < sparseArray.size(); i26++) {
+                            n2 n2Var3 = (n2) sparseArray.valueAt(i26);
+                            w wVar4 = n2Var3.d;
+                            if (wVar4 != null) {
+                                wVar4.a();
+                                n2Var3.d = null;
+                            }
+                            n2Var3.b();
+                        }
+                        return;
+                    } catch (Throwable th5) {
+                        try {
+                            Log.e("Dictation", "live captions", th5);
+                            for (int i27 = 0; i27 < sparseArray.size(); i27++) {
+                                n2 n2Var4 = (n2) sparseArray.valueAt(i27);
+                                w wVar5 = n2Var4.d;
+                                if (wVar5 != null) {
+                                    wVar5.a();
+                                    n2Var4.d = null;
+                                }
+                                n2Var4.b();
+                            }
+                            return;
+                        } finally {
+                            for (int i28 = 0; i28 < sparseArray.size(); i28++) {
+                                n2 n2Var5 = (n2) sparseArray.valueAt(i28);
+                                w wVar6 = n2Var5.d;
+                                if (wVar6 != null) {
+                                    wVar6.a();
+                                    n2Var5.d = null;
+                                }
+                                n2Var5.b();
+                            }
+                        }
+                    }
+                }
+                return;
+            case 21:
                 ViewGroup container = (ViewGroup) this.b;
                 j.e(container, "$container");
                 container.endViewTransition(null);
                 throw null;
-            case 21:
+            case 22:
                 ((v0.g) this.b).a(this.c);
                 return;
-            case 22:
-                ((v0.g) this.b).onResult((o) this.c);
-                return;
             case 23:
-                k0 k0Var = (k0) this.b;
-                TLObject tLObject = (TLObject) this.c;
-                int i16 = k0Var.a;
-                ArrayList arrayList = k0Var.e;
-                k0Var.i = 0;
-                if (tLObject instanceof TL_payments.connectedStarRefBots) {
-                    TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
-                    qp.s1(i16).Y3(connectedstarrefbots.users, false);
-                    if (k0Var.c <= 0) {
-                        arrayList.clear();
-                    }
-                    k0Var.c = connectedstarrefbots.count;
-                    arrayList.addAll(connectedstarrefbots.connected_bots);
-                    k0Var.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList.size() >= k0Var.c;
-                } else {
-                    k0Var.h = true;
-                    k0Var.d = true;
-                }
-                k0Var.g = false;
-                qs.f(i16).k(qs.L3, Long.valueOf(k0Var.b));
+                ((v0.g) this.b).onResult((n) this.c);
                 return;
             case 24:
-                l0 l0Var = (l0) this.b;
-                TLObject tLObject2 = (TLObject) this.c;
-                int i17 = l0Var.a;
-                ArrayList arrayList2 = l0Var.e;
-                if (tLObject2 instanceof TL_payments.suggestedStarRefBots) {
-                    TL_payments.suggestedStarRefBots suggestedstarrefbots = (TL_payments.suggestedStarRefBots) tLObject2;
-                    qp.s1(i17).Y3(suggestedstarrefbots.users, false);
-                    if (l0Var.c <= 0) {
-                        arrayList2.clear();
-                    }
-                    l0Var.c = suggestedstarrefbots.count;
-                    arrayList2.addAll(suggestedstarrefbots.suggested_bots);
-                    l0Var.j = suggestedstarrefbots.next_offset;
-                    l0Var.d = suggestedstarrefbots.suggested_bots.isEmpty() || arrayList2.size() >= l0Var.c;
-                } else {
-                    l0Var.i = true;
-                    l0Var.d = true;
-                }
-                l0Var.h = false;
-                qs.f(i17).k(qs.K3, Long.valueOf(l0Var.b));
+                bi.d dVar = (bi.d) this.b;
+                View.OnClickListener onClickListener = (View.OnClickListener) this.c;
+                dVar.getClass();
+                onClickListener.onClick(dVar);
                 return;
             case 25:
-                k7.g1((k7) this.b, (TL_stars.TL_payments_uniqueStarGift) this.c);
+                ((bi.b2) this.b).k().f0((TLRPC.TL_error) this.c, false);
                 return;
             case 26:
-                u1 u1Var = (u1) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
-                u1Var.dismiss();
-                f2 T = LaunchActivity.T();
-                if (T != null) {
-                    if (tL_error == null || !"STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
-                        k5.o(null, 2131743881, gc.a0(T), R.raw.error, 36);
-                        return;
-                    } else {
-                        k5.o(null, 2131743880, gc.a0(T), R.raw.fire_on, 36);
-                        return;
-                    }
+                i2 i2Var = (i2) this.b;
+                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
+                i2Var.getClass();
+                if (savedStarGift.unsaved) {
+                    return;
                 }
+                i2Var.G.setVisibility(8);
                 return;
             case 27:
-                k7 k7Var = (k7) this.b;
-                Long l10 = (Long) this.c;
-                String str3 = "";
-                if (l10.longValue() < 0 && (M0 = qp.s1(k7Var.a).M0(Long.valueOf(-l10.longValue()))) != null) {
-                    str3 = M0.title;
-                }
-                bc Q = k7Var.k().Q(R.raw.contact_check, 36, g0.X2(TextUtils.isEmpty(str3) ? id.M0(2131749616, null) : id.a0(null, null, 2131749617, str3)));
-                Q.t = true;
-                Q.j();
+                wp0 wp0Var = (wp0) this.b;
+                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c;
+                wp0Var.h(tL_starGiftCollection.title, new u1(3, wp0Var, tL_starGiftCollection));
                 return;
             case 28:
-                k7 k7Var2 = (k7) this.b;
-                if (((ea) this.c).e) {
-                    k7Var2.f2.setLoading(false);
-                    k7Var2.s1();
-                    return;
-                } else {
-                    bc Q2 = k7Var2.k().Q(R.raw.error, 36, id.a0(null, null, 2131743878, "NO_BALANCE"));
-                    Q2.t = true;
-                    Q2.j();
-                    return;
-                }
+                c4 c4Var = (c4) this.b;
+                g0.g((String) this.c);
+                cc.a0(c4Var.a.a).k(false).j();
+                return;
             default:
-                qp.s1(((k7) this.b).a).O3((TLRPC.Updates) ((TLObject) this.c), false);
+                ((c1.f) this.b).f().a(((r) this.c).a);
                 return;
         }
     }
 
-    public /* synthetic */ e(u uVar, Throwable th2) {
+    public /* synthetic */ e(t tVar, Throwable th2) {
         this.a = 4;
         Map map = Collections.EMPTY_MAP;
-        this.b = uVar;
+        this.b = tVar;
         this.c = th2;
     }
 }

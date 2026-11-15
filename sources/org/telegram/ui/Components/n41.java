@@ -1,20 +1,23 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import java.io.Serializable;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n41 implements org.telegram.messenger.a20, org.telegram.messenger.b20 {
-    public final /* synthetic */ o41 a;
+public final class n41 extends View {
+    public int a;
 
-    @Override // org.telegram.messenger.b20
-    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
-        return Boolean.valueOf(this.a.c0(x31Var, view));
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.messenger.a20
-    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        this.a.b0((x31) obj, (View) obj2);
+    public void setHeight(int i7) {
+        if (this.a == i7) {
+            return;
+        }
+        this.a = i7;
+        requestLayout();
     }
 }

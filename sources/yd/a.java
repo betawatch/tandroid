@@ -1,10 +1,9 @@
 package yd;
 
 import c8.ee;
-import jg.g;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements Comparable {
     public static final long b;
@@ -18,7 +17,7 @@ public final class a implements Comparable {
         c = ee.a(-4611686018427387903L);
     }
 
-    public static final void a(StringBuilder sb2, int i7, int i10, int i11, String str, boolean z9) {
+    public static final void a(StringBuilder sb2, int i7, int i10, int i11, String str, boolean z10) {
         CharSequence charSequence;
         sb2.append(i7);
         if (i10 != 0) {
@@ -26,7 +25,7 @@ public final class a implements Comparable {
             String valueOf = String.valueOf(i10);
             j.e(valueOf, "<this>");
             if (i11 < 0) {
-                throw new IllegalArgumentException(g.k(i11, "Desired length ", " is less than zero."));
+                throw new IllegalArgumentException(i5.c.j(i11, "Desired length ", " is less than zero."));
             }
             if (i11 <= valueOf.length()) {
                 charSequence = valueOf.subSequence(0, valueOf.length());
@@ -64,7 +63,7 @@ public final class a implements Comparable {
                 }
             }
             int i15 = i13 + 1;
-            if (z9 || i15 >= 3) {
+            if (z10 || i15 >= 3) {
                 sb2.append((CharSequence) obj, 0, ((i13 + 3) / 3) * 3);
             } else {
                 sb2.append((CharSequence) obj, 0, i15);
@@ -137,9 +136,9 @@ public final class a implements Comparable {
         if (j11 == c) {
             return "-Infinity";
         }
-        boolean z9 = j11 < 0;
+        boolean z10 = j11 < 0;
         StringBuilder sb2 = new StringBuilder();
-        if (z9) {
+        if (z10) {
             sb2.append('-');
         }
         if (j11 < 0) {
@@ -215,7 +214,7 @@ public final class a implements Comparable {
             }
             i11 = i19;
         }
-        if (z9 && i11 > i7) {
+        if (z10 && i11 > i7) {
             sb2.insert(i7, '(').append(')');
         }
         return sb2.toString();

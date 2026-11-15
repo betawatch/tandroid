@@ -5,8 +5,9 @@ import android.os.Parcelable;
 import android.os.ResultReceiver;
 import android.util.Base64;
 import android.util.Log;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.fido.common.Transport;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -16,7 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class v extends r6.a {
     public static final Parcelable.Creator<v> CREATOR = new db.k(13);
@@ -297,8 +298,8 @@ public final class v extends r6.a {
         String valueOf6 = String.valueOf(this.r);
         String valueOf7 = String.valueOf(this.s);
         String valueOf8 = String.valueOf(this.w);
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("PublicKeyCredentialCreationOptions{\n rp=", valueOf, ", \n user=", valueOf2, ", \n challenge=");
-        com.google.android.recaptcha.internal.a.s(n10, c10, ", \n parameters=", valueOf3, ", \n timeoutSeconds=");
+        StringBuilder n10 = e2.n("PublicKeyCredentialCreationOptions{\n rp=", valueOf, ", \n user=", valueOf2, ", \n challenge=");
+        e2.r(n10, c10, ", \n parameters=", valueOf3, ", \n timeoutSeconds=");
         n10.append(this.e);
         n10.append(", \n excludeList=");
         n10.append(valueOf4);
@@ -318,26 +319,26 @@ public final class v extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.k(parcel, 2, this.a, i7);
-        xb.k(parcel, 3, this.b, i7);
-        xb.c(parcel, 4, this.c);
-        xb.p(parcel, 5, this.d);
+        int r10 = yb.r(parcel, 20293);
+        yb.k(parcel, 2, this.a, i7);
+        yb.k(parcel, 3, this.b, i7);
+        yb.c(parcel, 4, this.c);
+        yb.p(parcel, 5, this.d);
         Double d = this.e;
         if (d != null) {
-            xb.q(parcel, 6, 8);
+            yb.q(parcel, 6, 8);
             parcel.writeDouble(d.doubleValue());
         }
-        xb.p(parcel, 7, this.f);
-        xb.k(parcel, 8, this.h, i7);
-        xb.i(parcel, 9, this.n);
-        xb.k(parcel, 10, this.r, i7);
+        yb.p(parcel, 7, this.f);
+        yb.k(parcel, 8, this.h, i7);
+        yb.i(parcel, 9, this.n);
+        yb.k(parcel, 10, this.r, i7);
         e eVar = this.s;
-        xb.l(parcel, 11, eVar == null ? null : eVar.a);
-        xb.k(parcel, 12, this.w, i7);
-        xb.l(parcel, 13, this.x);
-        xb.k(parcel, 14, this.y, i7);
-        xb.s(parcel, r10);
+        yb.l(parcel, 11, eVar == null ? null : eVar.a);
+        yb.k(parcel, 12, this.w, i7);
+        yb.l(parcel, 13, this.x);
+        yb.k(parcel, 14, this.y, i7);
+        yb.s(parcel, r10);
     }
 
     public v(String str) {

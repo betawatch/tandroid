@@ -1,90 +1,34 @@
 package fi;
 
-import java.io.File;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.VideoEncodingService;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qs;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.Components.a41;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class q0 implements ls {
-    public final int a;
-    public final File b;
-    public ij c;
-    public final o0 d;
-    public final p0 e;
-    public final n0 f;
+public final class q0 extends a41 {
+    public static final /* synthetic */ int b = 0;
 
-    public q0(int i7, e7 e7Var, File file, o0 o0Var, p0 p0Var, n0 n0Var) {
-        this.a = i7;
-        this.b = file;
-        this.d = o0Var;
-        this.e = p0Var;
-        this.f = n0Var;
-        if (this.c != null) {
-            return;
-        }
-        qs.f(i7).b(this, qs.a2);
-        qs.f(i7).b(this, qs.b2);
-        qs.f(i7).b(this, qs.c2);
-        TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.id = 1;
-        tL_message.attachPath = file.getAbsolutePath();
-        this.c = new ij(i7, tL_message, null, false, false);
-        e7Var.s(new ai.i(this, 18));
+    static {
+        a41.h(new q0());
     }
 
-    public final void a(boolean z9) {
-        if (this.c == null) {
-            return;
-        }
-        int i7 = this.a;
-        qs.f(i7).n(this, qs.a2);
-        qs.f(i7).n(this, qs.b2);
-        qs.f(i7).n(this, qs.c2);
-        if (z9) {
-            MediaController.B().i(this.c);
-        }
-        this.c = null;
+    @Override // org.telegram.ui.Components.a41
+    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+        ((r0) view).set((t0) b41Var.G);
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == qs.a2) {
-            return;
-        }
-        if (i7 != qs.b2) {
-            if (i7 == qs.c2 && ((ij) objArr[0]) == this.c) {
-                a(false);
-                try {
-                    File file = this.b;
-                    if (file != null) {
-                        file.delete();
-                    }
-                } catch (Exception unused) {
-                }
-                this.f.run();
-                return;
-            }
-            return;
-        }
-        if (((ij) objArr[0]) == this.c) {
-            ((Long) objArr[2]).getClass();
-            long longValue = ((Long) objArr[3]).longValue();
-            Float f10 = (Float) objArr[4];
-            f10.getClass();
-            this.e.a(f10);
-            if (longValue > 0) {
-                this.d.run();
-                VideoEncodingService videoEncodingService = VideoEncodingService.e;
-                if (videoEncodingService != null) {
-                    videoEncodingService.stopSelf();
-                }
-                a(false);
-            }
-        }
+    @Override // org.telegram.ui.Components.a41
+    public final View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new r0(context);
+    }
+
+    @Override // org.telegram.ui.Components.a41
+    public final boolean e(b41 b41Var, b41 b41Var2) {
+        return b41Var.G == b41Var2.G;
     }
 }

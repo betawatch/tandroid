@@ -2,7 +2,7 @@ package z3;
 
 import h2.x;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public final int a;
@@ -15,10 +15,10 @@ public final class a {
     public int h;
     public int i;
 
-    public a(x xVar, x xVar2, boolean z9) {
+    public a(x xVar, x xVar2, boolean z10) {
         this.g = xVar;
         this.f = xVar2;
-        this.e = z9;
+        this.e = z10;
         xVar2.N(12);
         this.a = xVar2.E();
         xVar.N(12);
@@ -33,9 +33,9 @@ public final class a {
         if (i7 == this.a) {
             return false;
         }
-        boolean z9 = this.e;
+        boolean z10 = this.e;
         x xVar = this.f;
-        this.d = z9 ? xVar.G() : xVar.C();
+        this.d = z10 ? xVar.G() : xVar.C();
         if (this.b == this.h) {
             x xVar2 = this.g;
             this.c = xVar2.E();

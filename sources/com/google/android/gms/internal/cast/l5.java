@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l5 extends n5 {
     public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
@@ -22,8 +22,8 @@ public final class l5 extends n5 {
             }
             if ((list instanceof z5) && (list instanceof g5)) {
                 r4 r4Var = (r4) ((g5) list);
-                boolean z9 = r4Var.a;
-                if (z9 && z9) {
+                boolean z10 = r4Var.a;
+                if (z10 && z10) {
                     r4Var.a = false;
                     return;
                 }

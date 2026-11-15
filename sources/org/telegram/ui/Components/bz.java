@@ -1,69 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class bz {
-    public int a;
-    public CharSequence b;
-    public int c;
-    public int d;
-    public boolean e;
-    public boolean f;
-    public boolean g;
-    public final /* synthetic */ ez h;
+public final /* synthetic */ class bz implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gz b;
 
-    public bz(ez ezVar, int i7, Spannable spannable, boolean z9) {
-        this.h = ezVar;
+    public /* synthetic */ bz(gz gzVar, int i7) {
         this.a = i7;
-        this.b = spannable;
-        this.g = z9;
+        this.b = gzVar;
     }
 
-    public final int a(boolean z9) {
-        int i7;
-        int i10;
-        CharSequence charSequence = this.b;
-        ez ezVar = this.h;
-        int ceil = (int) Math.ceil(fi.m3.h(charSequence, ezVar.b));
-        this.c = ceil;
-        int i11 = 0;
-        if (z9) {
-            i7 = ((org.telegram.ui.qw) ezVar.J).a(this.a);
-            if (i7 < 0) {
-                i7 = 0;
-            }
-            if (z9) {
-                this.d = i7;
-            }
-        } else {
-            i7 = this.d;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                gz gzVar = this.b;
+                gzVar.y = floatValue;
+                gzVar.invalidate();
+                break;
+            default:
+                gz gzVar2 = this.b;
+                gzVar2.getClass();
+                gzVar2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                gzVar2.invalidate();
+                break;
         }
-        if (i7 > 0) {
-            i10 = org.telegram.messenger.g0.L(-2.0f) + org.telegram.messenger.g0.L(10.0f) + Math.max(org.telegram.messenger.g0.L(7.333f), (int) Math.ceil(ezVar.c.measureText(String.format("%d", Integer.valueOf(i7)))));
-        } else {
-            if (!this.e && ezVar.n) {
-                i11 = org.telegram.messenger.g0.L(12.333f);
-            }
-            i10 = i11;
-        }
-        return Math.max(org.telegram.messenger.g0.L(16.0f), ceil + i10);
-    }
-
-    public final void b(String str) {
-        TextPaint textPaint = this.h.b;
-        if (TextUtils.equals(this.b, str)) {
-            return;
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-        this.b = spannableStringBuilder;
-        CharSequence m10 = org.telegram.messenger.i6.m(spannableStringBuilder, textPaint.getFontMetricsInt(), false, null, 0);
-        this.b = m10;
-        this.b = org.telegram.messenger.ij.B5(m10, null, textPaint.getFontMetricsInt(), false);
-        this.g = false;
     }
 }

@@ -8,13 +8,13 @@ import android.content.pm.ResolveInfo;
 import android.util.Log;
 import android.util.SparseArray;
 import e2.u;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import java.lang.reflect.Array;
 import java.util.List;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c implements z3.b {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final class c implements z3.b {
             int i12 = 8 - i10;
             int min = Math.min(i7, i12);
             int i13 = i12 - min;
-            int i14 = (qs.e4 >> (8 - min)) << i13;
+            int i14 = (ns.e4 >> (8 - min)) << i13;
             int i15 = this.b;
             int i16 = (i14 & bArr[i15]) >> i13;
             i7 -= min;
@@ -86,7 +86,7 @@ public final class c implements z3.b {
             }
             if (i7 > 0) {
                 int i21 = 8 - i7;
-                int i22 = ((bArr[this.b] & ((qs.e4 >> i21) << i21)) >> i21) | (i11 << i7);
+                int i22 = ((bArr[this.b] & ((ns.e4 >> i21) << i21)) >> i21) | (i11 << i7);
                 this.c += i7;
                 return i22;
             }
@@ -203,7 +203,7 @@ public final class c implements z3.b {
         xVar.N(12);
         int E = xVar.E();
         if ("audio/raw".equals(uVar.s)) {
-            int u10 = m0.u(uVar.M) * uVar.K;
+            int u10 = l0.u(uVar.M) * uVar.K;
             if (E % u10 != 0) {
                 h2.a.l("BoxParsers", "Audio sample size mismatch. stsd sample size: " + u10 + ", stsz sample size: " + E);
                 E = u10;

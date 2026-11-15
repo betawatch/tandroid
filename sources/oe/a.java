@@ -1,6 +1,6 @@
 package oe;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements ke.a {
     public static final a a = new a();
@@ -18,41 +18,41 @@ public final class a implements ke.a {
 
     @Override // ke.a
     public final Object b(h2.c decoder) {
-        boolean z9;
         boolean z10;
+        boolean z11;
         kotlin.jvm.internal.j.e(decoder, "decoder");
         a4.k kVar = (a4.k) decoder.d;
-        int u10 = kVar.u();
+        int t6 = kVar.t();
         String str = (String) kVar.f;
-        if (u10 == str.length()) {
+        if (t6 == str.length()) {
             a4.k.n(kVar, "EOF", 0, 6);
             throw null;
         }
-        if (str.charAt(u10) == '\"') {
-            u10++;
-            z9 = true;
+        if (str.charAt(t6) == '\"') {
+            t6++;
+            z10 = true;
         } else {
-            z9 = false;
+            z10 = false;
         }
-        int r10 = kVar.r(u10);
-        if (r10 >= str.length() || r10 == -1) {
+        int q10 = kVar.q(t6);
+        if (q10 >= str.length() || q10 == -1) {
             a4.k.n(kVar, "EOF", 0, 6);
             throw null;
         }
-        int i7 = r10 + 1;
-        int charAt = str.charAt(r10) | ' ';
+        int i7 = q10 + 1;
+        int charAt = str.charAt(q10) | ' ';
         if (charAt == 102) {
             kVar.f(i7, "alse");
-            z10 = false;
+            z11 = false;
         } else {
             if (charAt != 116) {
                 a4.k.n(kVar, "Expected valid boolean literal prefix, but had '" + kVar.k() + '\'', 0, 6);
                 throw null;
             }
             kVar.f(i7, "rue");
-            z10 = true;
+            z11 = true;
         }
-        if (z9) {
+        if (z10) {
             if (kVar.b == str.length()) {
                 a4.k.n(kVar, "EOF", 0, 6);
                 throw null;
@@ -63,7 +63,7 @@ public final class a implements ke.a {
             }
             kVar.b++;
         }
-        return Boolean.valueOf(z10);
+        return Boolean.valueOf(z11);
     }
 
     @Override // ke.a

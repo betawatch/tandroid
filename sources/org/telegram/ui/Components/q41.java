@@ -1,45 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.view.View;
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class q41 extends v4.k {
-    public final /* synthetic */ r41 F;
+public final /* synthetic */ class q41 implements org.telegram.messenger.x10, org.telegram.messenger.y10 {
+    public final /* synthetic */ r41 a;
 
-    public q41(r41 r41Var) {
-        this.F = r41Var;
+    @Override // org.telegram.messenger.y10
+    public Boolean a(b41 b41Var, View view, Integer num, Float f10, Float f11) {
+        return Boolean.valueOf(this.a.c0(b41Var, view));
     }
 
-    @Override // v4.k
-    public final void M() {
-        r41 r41Var = this.F;
-        if (r41Var.b1()) {
-            r41Var.invalidate();
-        }
-        r41Var.F1();
-    }
-
-    @Override // v4.k
-    public final void O() {
-        r41 r41Var = this.F;
-        if (r41Var.b1()) {
-            r41Var.invalidate();
-        }
-        r41Var.F1();
-    }
-
-    @Override // v4.k
-    public final void P(v4.d1 d1Var) {
-        r41 r41Var = this.F;
-        r41Var.invalidate();
-        r41Var.F1();
-    }
-
-    @Override // v4.k
-    public final void Q() {
-        r41 r41Var = this.F;
-        if (r41Var.b1()) {
-            r41Var.invalidate();
-        }
-        r41Var.F1();
+    @Override // org.telegram.messenger.x10
+    public void m(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.b0((b41) obj, (View) obj2);
     }
 }

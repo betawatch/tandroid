@@ -1,6 +1,6 @@
 package z7;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m9 {
     public final String a;
@@ -15,17 +15,17 @@ public final class m9 {
     public final Integer j;
     public final Integer k;
 
-    public /* synthetic */ m9(a8.s9 s9Var) {
-        this.a = s9Var.a;
-        this.b = s9Var.b;
-        this.c = s9Var.c;
-        this.d = s9Var.d;
-        this.e = (va) s9Var.k;
-        this.f = s9Var.e;
-        this.g = s9Var.f;
-        this.h = s9Var.g;
-        this.i = s9Var.h;
-        this.j = s9Var.i;
-        this.k = s9Var.j;
+    public /* synthetic */ m9(a8.u9 u9Var) {
+        this.a = u9Var.a;
+        this.b = u9Var.b;
+        this.c = u9Var.c;
+        this.d = u9Var.d;
+        this.e = (va) u9Var.k;
+        this.f = u9Var.e;
+        this.g = u9Var.f;
+        this.h = u9Var.g;
+        this.i = u9Var.h;
+        this.j = u9Var.i;
+        this.k = u9Var.j;
     }
 }

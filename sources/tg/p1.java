@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class p1 extends i {
     public final /* synthetic */ int n;
@@ -25,7 +25,7 @@ public final class p1 extends i {
                 float L2 = org.telegram.messenger.g0.L(19.5f);
                 float f12 = L + L2;
                 float f13 = f12 * 2.0f;
-                float A = com.google.android.recaptcha.internal.a.A(getMeasuredHeight(), f13, 2.0f, f12);
+                float A = com.google.android.gms.internal.vision.e2.A(getMeasuredHeight(), f13, 2.0f, f12);
                 if (f10 <= f12 - L2 || f11 <= A - L2 || f10 >= f12 + L2 || f11 >= A + L2) {
                     if (f10 <= ((getMeasuredWidth() - f13) + f12) - L2 || f11 <= A - L2 || f10 >= (getMeasuredWidth() - f13) + f12 + L2 || f11 >= A + L2) {
                         if (Math.pow(f11 - r0, 2.0d) + Math.pow(f10 - r0, 2.0d) < Math.pow(getMeasuredWidth() / 2.0f, 2.0d)) {
@@ -38,7 +38,7 @@ public final class p1 extends i {
                 float L4 = org.telegram.messenger.g0.L(19.5f);
                 float f14 = L3 + L4;
                 float f15 = f14 * 2.0f;
-                float A2 = com.google.android.recaptcha.internal.a.A(getMeasuredHeight(), f15, 2.0f, f14);
+                float A2 = com.google.android.gms.internal.vision.e2.A(getMeasuredHeight(), f15, 2.0f, f14);
                 if (f10 <= f14 - L4 || f11 <= A2 - L4 || f10 >= f14 + L4 || f11 >= A2 + L4) {
                     if (f10 <= ((getMeasuredWidth() - f15) + f14) - L4 || f11 <= A2 - L4 || f10 >= (getMeasuredWidth() - f15) + f14 + L4 || f11 >= A2 + L4) {
                         if (Math.pow(f11 - r0, 2.0d) + Math.pow(f10 - r0, 2.0d) < Math.pow(getMeasuredWidth() / 2.0f, 2.0d)) {
@@ -51,7 +51,7 @@ public final class p1 extends i {
                 float L6 = org.telegram.messenger.g0.L(19.5f);
                 float f16 = L5 + L6;
                 float f17 = f16 * 2.0f;
-                float A3 = com.google.android.recaptcha.internal.a.A(getMeasuredHeight(), f17, 2.0f, f16);
+                float A3 = com.google.android.gms.internal.vision.e2.A(getMeasuredHeight(), f17, 2.0f, f16);
                 if (f10 <= f16 - L6 || f11 <= A3 - L6 || f10 >= f16 + L6 || f11 >= A3 + L6) {
                     if (f10 <= ((getMeasuredWidth() - f17) + f16) - L6 || f11 <= A3 - L6 || f10 >= (getMeasuredWidth() - f17) + f16 + L6 || f11 >= A3 + L6) {
                         if (Math.pow(f11 - r0, 2.0d) + Math.pow(f10 - r0, 2.0d) < Math.pow(getMeasuredWidth() / 2.0f, 2.0d)) {

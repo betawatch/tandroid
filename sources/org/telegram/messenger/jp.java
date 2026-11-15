@@ -1,25 +1,12 @@
 package org.telegram.messenger;
 
-import java.util.HashSet;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class jp {
-    public final int a;
-    public final HashSet b = new HashSet();
-    public boolean c;
+    public ArrayList a;
+    public Integer b;
+    public long c;
     public boolean d;
-
-    public jp(int i7) {
-        this.a = i7;
-        if (this.c || this.d) {
-            return;
-        }
-        this.c = true;
-        TL_account.getSavedMusicIds getsavedmusicids = new TL_account.getSavedMusicIds();
-        getsavedmusicids.hash = 0L;
-        ConnectionsManager.getInstance(i7).sendRequest(getsavedmusicids, new s1(this, 5));
-    }
 }

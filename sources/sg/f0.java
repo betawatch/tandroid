@@ -1,32 +1,29 @@
 package sg;
 
-import org.telegram.ui.Components.uy;
+import a8.xa;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j0 b;
+    public final /* synthetic */ i0 b;
+    public final /* synthetic */ xa c;
 
-    public /* synthetic */ f0(j0 j0Var, int i7) {
+    public /* synthetic */ f0(i0 i0Var, xa xaVar, int i7) {
         this.a = i7;
-        this.b = j0Var;
+        this.b = i0Var;
+        this.c = xaVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                j0 j0Var = this.b;
-                j0Var.c = null;
-                uy uyVar = j0Var.a;
-                if (uyVar != null) {
-                    uyVar.b();
-                    break;
-                }
+                this.b.p(this.c, true);
                 break;
             default:
-                this.b.b();
+                i0 i0Var = this.b;
+                i0Var.f.f(new f0(i0Var, this.c, 0));
                 break;
         }
     }

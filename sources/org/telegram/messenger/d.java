@@ -7,9 +7,9 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements v10 {
+public final /* synthetic */ class d implements s10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -18,7 +18,7 @@ public final /* synthetic */ class d implements v10 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.s10
     public final void a(Object obj, Object obj2) {
         ArrayList<TLRPC.Message> arrayList;
         int i7;
@@ -30,7 +30,7 @@ public final /* synthetic */ class d implements v10 {
                 eVar.f = -1;
                 eVar.g = System.currentTimeMillis();
                 if (tones instanceof TL_aicompose.TL_tones) {
-                    qp.s1(eVar.a).Y3(tones.users, false);
+                    np.s1(eVar.a).Y3(tones.users, false);
                     arrayList2.clear();
                     TL_aicompose.TL_tones tL_tones = (TL_aicompose.TL_tones) tones;
                     arrayList2.addAll(tL_tones.tones);
@@ -51,75 +51,75 @@ public final /* synthetic */ class d implements v10 {
                     break;
                 }
             case 2:
-                w9 w9Var = (w9) this.b;
+                v9 v9Var = (v9) this.b;
                 TL_payments.StarGiftActiveAuctions starGiftActiveAuctions = (TL_payments.StarGiftActiveAuctions) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                w9Var.getClass();
+                v9Var.getClass();
                 if (starGiftActiveAuctions != null && tL_error == null && (starGiftActiveAuctions instanceof TL_payments.TL_starGiftActiveAuctions)) {
                     TL_payments.TL_starGiftActiveAuctions tL_starGiftActiveAuctions = (TL_payments.TL_starGiftActiveAuctions) starGiftActiveAuctions;
                     int i10 = 0;
-                    w9Var.getMessagesController().Y3(tL_starGiftActiveAuctions.users, false);
-                    w9Var.getMessagesController().S3(tL_starGiftActiveAuctions.chats, false);
+                    v9Var.getMessagesController().Y3(tL_starGiftActiveAuctions.users, false);
+                    v9Var.getMessagesController().S3(tL_starGiftActiveAuctions.chats, false);
                     ArrayList<TL_stars.TL_StarGiftActiveAuctionState> arrayList3 = tL_starGiftActiveAuctions.auctions;
                     int size = arrayList3.size();
                     while (i10 < size) {
                         TL_stars.TL_StarGiftActiveAuctionState tL_StarGiftActiveAuctionState = arrayList3.get(i10);
                         i10++;
                         TL_stars.TL_StarGiftActiveAuctionState tL_StarGiftActiveAuctionState2 = tL_StarGiftActiveAuctionState;
-                        w9Var.a(tL_StarGiftActiveAuctionState2.gift, tL_StarGiftActiveAuctionState2.state, tL_StarGiftActiveAuctionState2.user_state);
+                        v9Var.a(tL_StarGiftActiveAuctionState2.gift, tL_StarGiftActiveAuctionState2.state, tL_StarGiftActiveAuctionState2.user_state);
                     }
                     break;
                 }
                 break;
             case 3:
-                ui uiVar = (ui) this.b;
+                si siVar = (si) this.b;
                 TLRPC.contacts_TopPeers contacts_toppeers = (TLRPC.contacts_TopPeers) obj;
                 if (contacts_toppeers instanceof TLRPC.TL_contacts_topPeers) {
                     TLRPC.TL_contacts_topPeers tL_contacts_topPeers = (TLRPC.TL_contacts_topPeers) contacts_toppeers;
-                    uiVar.getMessagesController().Y3(tL_contacts_topPeers.users, false);
-                    uiVar.getMessagesController().S3(tL_contacts_topPeers.chats, false);
+                    siVar.getMessagesController().Y3(tL_contacts_topPeers.users, false);
+                    siVar.getMessagesController().S3(tL_contacts_topPeers.chats, false);
                     int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                     for (int i11 = 0; i11 < tL_contacts_topPeers.categories.size(); i11++) {
                         TLRPC.TL_topPeerCategoryPeers tL_topPeerCategoryPeers = tL_contacts_topPeers.categories.get(i11);
                         TLRPC.TopPeerCategory topPeerCategory = tL_topPeerCategoryPeers.category;
                         if (topPeerCategory instanceof TLRPC.TL_topPeerCategoryBotsInline) {
-                            uiVar.j1 = tL_topPeerCategoryPeers.peers;
-                            uiVar.getUserConfig().E = currentTimeMillis;
+                            siVar.k1 = tL_topPeerCategoryPeers.peers;
+                            siVar.getUserConfig().F = currentTimeMillis;
                         } else if (topPeerCategory instanceof TLRPC.TL_topPeerCategoryBotsApp) {
-                            uiVar.l1 = tL_topPeerCategoryPeers.peers;
-                            uiVar.getUserConfig().G = currentTimeMillis;
+                            siVar.m1 = tL_topPeerCategoryPeers.peers;
+                            siVar.getUserConfig().H = currentTimeMillis;
                         } else if (topPeerCategory instanceof TLRPC.TL_topPeerCategoryBotsGuestChat) {
-                            uiVar.k1 = tL_topPeerCategoryPeers.peers;
-                            uiVar.getUserConfig().F = currentTimeMillis;
+                            siVar.l1 = tL_topPeerCategoryPeers.peers;
+                            siVar.getUserConfig().G = currentTimeMillis;
                         } else {
-                            uiVar.i1 = tL_topPeerCategoryPeers.peers;
-                            long e10 = uiVar.getUserConfig().e();
+                            siVar.j1 = tL_topPeerCategoryPeers.peers;
+                            long e10 = siVar.getUserConfig().e();
                             int i12 = 0;
                             while (true) {
-                                if (i12 < uiVar.i1.size()) {
-                                    if (((TLRPC.TL_topPeer) uiVar.i1.get(i12)).peer.user_id == e10) {
-                                        uiVar.i1.remove(i12);
+                                if (i12 < siVar.j1.size()) {
+                                    if (((TLRPC.TL_topPeer) siVar.j1.get(i12)).peer.user_id == e10) {
+                                        siVar.j1.remove(i12);
                                     } else {
                                         i12++;
                                     }
                                 }
                             }
-                            uiVar.getUserConfig().D = (int) (System.currentTimeMillis() / 1000);
+                            siVar.getUserConfig().E = (int) (System.currentTimeMillis() / 1000);
                         }
                     }
-                    uiVar.getUserConfig().v(false);
-                    uiVar.m();
-                    uiVar.getNotificationCenter().k(81, new Object[0]);
-                    uiVar.getNotificationCenter().k(82, new Object[0]);
-                    uiVar.getNotificationCenter().k(83, new Object[0]);
-                    uiVar.getNotificationCenter().k(84, new Object[0]);
-                    uiVar.getMessagesStorage().a.c(new x4(27, uiVar, tL_contacts_topPeers));
+                    siVar.getUserConfig().v(false);
+                    siVar.m();
+                    siVar.getNotificationCenter().k(81, new Object[0]);
+                    siVar.getNotificationCenter().k(82, new Object[0]);
+                    siVar.getNotificationCenter().k(83, new Object[0]);
+                    siVar.getNotificationCenter().k(84, new Object[0]);
+                    siVar.getMessagesStorage().a.c(new x4(27, siVar, tL_contacts_topPeers));
                     break;
                 } else if (contacts_toppeers instanceof TLRPC.TL_contacts_topPeersDisabled) {
-                    uiVar.getUserConfig().V = false;
-                    uiVar.getUserConfig().s = (int) (System.currentTimeMillis() / 1000);
-                    uiVar.getUserConfig().v(false);
-                    uiVar.F();
+                    siVar.getUserConfig().W = false;
+                    siVar.getUserConfig().s = (int) (System.currentTimeMillis() / 1000);
+                    siVar.getUserConfig().v(false);
+                    siVar.F();
                     break;
                 }
                 break;
@@ -130,10 +130,10 @@ public final /* synthetic */ class d implements v10 {
                 if (((TLRPC.TL_error) obj2) == null && messages_messages != null && (arrayList = messages_messages.messages) != null && !arrayList.isEmpty()) {
                     i13 = messages_messages.messages.get(0).id;
                 }
-                g0.h3(new ym(aVar, i13, 1));
+                g0.h3(new vm(aVar, i13, 1));
                 break;
             case 5:
-                ii.a aVar2 = (ii.a) this.b;
+                li.a aVar2 = (li.a) this.b;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (tL_error2 != null) {
                     aVar2.a(null, tL_error2);
@@ -162,13 +162,13 @@ public final /* synthetic */ class d implements v10 {
                     break;
                 }
             default:
-                gz gzVar = (gz) this.b;
+                ez ezVar = (ez) this.b;
                 TLRPC.Updates updates2 = (TLRPC.Updates) obj;
                 if (updates2 != null) {
-                    gzVar.getMessagesController().O3(updates2, false);
+                    ezVar.getMessagesController().O3(updates2, false);
                     break;
                 } else {
-                    gzVar.getClass();
+                    ezVar.getClass();
                     break;
                 }
         }

@@ -1,9 +1,10 @@
 package hc;
 
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e {
     public static final d e = new d();
@@ -68,7 +69,7 @@ public final class e {
         int i11;
         int i12;
         int i13;
-        boolean z9 = false;
+        boolean z10 = false;
         char c12 = 2;
         char c13 = 3;
         int i14 = iArr[0] + iArr[1] + iArr[2] + iArr[3] + iArr[4];
@@ -201,15 +202,15 @@ public final class e {
                                         Arrays.fill(iArr2, 0);
                                         int i35 = 0;
                                         while (i25 >= i35 && i34 >= i35) {
-                                            r16 = z9;
+                                            r16 = z10;
                                             if (!bVar.b(i34 - i35, i25 - i35)) {
                                                 break;
                                             }
                                             iArr2[c10] = iArr2[c10] + 1;
                                             i35++;
-                                            z9 = r16 == true ? 1 : 0;
+                                            z10 = r16 == true ? 1 : 0;
                                         }
-                                        r16 = z9;
+                                        r16 = z10;
                                         if (iArr2[c10] == 0) {
                                             return r16;
                                         }
@@ -304,7 +305,7 @@ public final class e {
                                         float f18 = i45;
                                         float f19 = (f10 * f18) + f13;
                                         float f20 = i46;
-                                        arrayList.set(i44, new c(f19 / f20, com.google.android.recaptcha.internal.a.y(f18, f11, a10, f20), com.google.android.recaptcha.internal.a.y(f18, cVar.c, f16, f20), i46));
+                                        arrayList.set(i44, new c(f19 / f20, e2.y(f18, f11, a10, f20), e2.y(f18, cVar.c, f16, f20), i46));
                                         return true;
                                     }
                                 }

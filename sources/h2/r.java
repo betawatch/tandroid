@@ -1,6 +1,7 @@
 package h2;
 
-import a8.ia;
+import a8.ja;
+import ai.z0;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -8,7 +9,7 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r {
     public final Thread a;
@@ -41,7 +42,7 @@ public final class r {
 
     public final void b() {
         if (this.i) {
-            ia.p(Thread.currentThread() == this.a);
+            ja.p(Thread.currentThread() == this.a);
         }
         ArrayDeque arrayDeque = this.f;
         if (arrayDeque.isEmpty()) {
@@ -73,14 +74,14 @@ public final class r {
 
     public final void c(int i7, o oVar) {
         if (this.i) {
-            ia.p(Thread.currentThread() == this.a);
+            ja.p(Thread.currentThread() == this.a);
         }
-        this.f.add(new ai.e0(new CopyOnWriteArraySet(this.d), i7, oVar, 14));
+        this.f.add(new z0(new CopyOnWriteArraySet(this.d), i7, oVar, 12));
     }
 
     public final void d() {
         if (this.i) {
-            ia.p(Thread.currentThread() == this.a);
+            ja.p(Thread.currentThread() == this.a);
         }
         synchronized (this.g) {
             this.h = true;
@@ -92,7 +93,7 @@ public final class r {
             qVar.d = true;
             if (pVar != null && qVar.c) {
                 qVar.c = false;
-                pVar.h(qVar.a, qVar.b.d());
+                pVar.e(qVar.a, qVar.b.d());
             }
         }
         this.d.clear();
@@ -103,7 +104,7 @@ public final class r {
         b();
     }
 
-    public r(CopyOnWriteArraySet copyOnWriteArraySet, Looper looper, Thread thread, g0 g0Var, p pVar, boolean z9) {
+    public r(CopyOnWriteArraySet copyOnWriteArraySet, Looper looper, Thread thread, g0 g0Var, p pVar, boolean z10) {
         this.a = thread;
         this.d = copyOnWriteArraySet;
         this.c = pVar;
@@ -115,6 +116,6 @@ public final class r {
         } else {
             this.b = g0Var.a(looper, new n(this, 0));
         }
-        this.i = z9;
+        this.i = z10;
     }
 }

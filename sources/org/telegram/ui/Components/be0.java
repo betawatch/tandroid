@@ -1,10 +1,8 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class be0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class be0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ de0 b;
 
@@ -13,20 +11,24 @@ public final /* synthetic */ class be0 implements ValueAnimator.AnimatorUpdateLi
         this.b = de0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                de0 de0Var = this.b;
-                de0Var.getClass();
-                de0Var.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                de0Var.invalidate();
+                this.b.c.a(false);
                 break;
             default:
-                de0 de0Var2 = this.b;
-                de0Var2.getClass();
-                de0Var2.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                de0Var2.invalidate();
+                de0 de0Var = this.b;
+                Runnable runnable = de0Var.H;
+                de0Var.H = null;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                Runnable runnable2 = de0Var.I;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
                 break;
         }
     }

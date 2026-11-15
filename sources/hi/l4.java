@@ -1,25 +1,36 @@
 package hi;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.ui.LaunchActivity;
+import android.view.KeyEvent;
+import org.telegram.messenger.v10;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class l4 extends org.telegram.ui.ActionBar.f2 {
-    @Override // org.telegram.ui.ActionBar.f2
-    public final Context getContext() {
-        return org.telegram.messenger.g0.W(LaunchActivity.G1);
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class l4 implements org.telegram.ui.ActionBar.e1, v10 {
+    public final /* synthetic */ m5 a;
+
+    public /* synthetic */ l4(m5 m5Var) {
+        this.a = m5Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
-    public final int getCurrentAccount() {
-        return this.currentAccount;
+    @Override // org.telegram.ui.ActionBar.e1
+    public void j(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.g1 g1Var;
+        m5 m5Var = this.a;
+        m5Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g1Var = m5Var.r1) != null && g1Var.isShowing()) {
+            m5Var.r1.d(true);
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
-    public final Activity getParentActivity() {
-        Activity W = org.telegram.messenger.g0.W(org.telegram.messenger.t0.b);
-        return W == null ? LaunchActivity.G1 : W;
+    @Override // org.telegram.messenger.v10
+    public void l(Object obj, TLRPC.Document document, Boolean bool) {
+        m5 m5Var = this.a;
+        m5Var.V1 = true;
+        d5 k02 = m5Var.k0(obj, document);
+        if (bool.booleanValue()) {
+            k02.setScale(1.5f);
+        }
+        m5Var.b0(k02);
     }
 }

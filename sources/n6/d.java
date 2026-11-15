@@ -20,7 +20,7 @@ import e0.q;
 import q6.s;
 import q6.t;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d extends e {
     public static final Object d = new Object();
@@ -43,7 +43,7 @@ public final class d extends e {
         if (g.c(context)) {
             return e0Var;
         }
-        cVar.D();
+        cVar.z();
         e0Var.b();
         return null;
     }
@@ -75,7 +75,7 @@ public final class d extends e {
             if (a10 != null) {
                 builder.setTitle(a10);
             }
-            Log.w("GoogleApiAvailability", jg.g.j(i7, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
+            Log.w("GoogleApiAvailability", i5.c.i(i7, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
             alertDialog = builder.create();
         }
         if (alertDialog == null) {
@@ -95,7 +95,7 @@ public final class d extends e {
 
     public final void f(Context context, int i7, PendingIntent pendingIntent) {
         int i10;
-        Log.w("GoogleApiAvailability", jg.g.k(i7, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
+        Log.w("GoogleApiAvailability", i5.c.j(i7, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
         if (i7 == 18) {
             new j(this, context).sendEmptyMessageDelayed(1, 120000L);
             return;

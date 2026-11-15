@@ -1,57 +1,102 @@
 package org.telegram.ui;
 
-import java.util.Collections;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.PointF;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vu implements Runnable {
+public final /* synthetic */ class vu implements eh.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zw b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 b;
+    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ vu(zw zwVar, long j3, boolean z9, int i7) {
+    public /* synthetic */ vu(org.telegram.ui.ActionBar.e2 e2Var, FrameLayout frameLayout, Object obj, int i7) {
         this.a = i7;
-        this.b = zwVar;
-        this.c = j3;
-        this.d = z9;
+        this.b = e2Var;
+        this.c = frameLayout;
+        this.d = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
-        TLRPC.Chat chat;
-        int i7 = this.a;
-        boolean z9 = this.d;
-        long j3 = this.c;
-        zw zwVar = this.b;
-        switch (i7) {
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // eh.a
+    public final void c(dh.a aVar, RectF rectF) {
+        switch (this.a) {
+        }
+        aVar.a = true;
+    }
+
+    @Override // eh.a
+    public final void d(Canvas canvas, RectF rectF) {
+        Canvas canvas2;
+        RectF rectF2;
+        switch (this.a) {
             case 0:
-                zw zwVar2 = this.b;
-                di.z6 P1 = zwVar2.getMessagesController().P1();
-                long j10 = this.c;
-                boolean z10 = this.d;
-                P1.l0(j10, z10, false);
-                m4.d0 d0Var = new m4.d0();
-                d0Var.a = new vu(zwVar2, j10, z10, 1);
-                d0Var.b = new vu(zwVar2, j10, z10, 2);
-                if (j10 >= 0) {
-                    TLRPC.User a22 = zwVar2.getMessagesController().a2(Long.valueOf(j10));
-                    str = org.telegram.messenger.g5.m(15, a22.first_name, null);
-                    chat = a22;
-                } else {
-                    TLRPC.Chat M0 = zwVar2.getMessagesController().M0(Long.valueOf(-j10));
-                    str = M0.title;
-                    chat = M0;
+                yw ywVar = (yw) this.b;
+                rw rwVar = (rw) this.c;
+                PointF pointF = (PointF) this.d;
+                hw hwVar = ywVar.D0;
+                int alpha = hwVar != null ? (int) (hwVar.getAlpha() * 255.0f) : 0;
+                xw[] xwVarArr = ywVar.f0;
+                int length = xwVarArr.length;
+                int i7 = 0;
+                while (i7 < length) {
+                    xw xwVar = xwVarArr[i7];
+                    if (xwVar != null && xwVar.getVisibility() == 0 && xwVar.getAlpha() > 0.0f) {
+                        float h42 = ywVar.h4();
+                        if (xwVar.G == null || h42 <= 0.0f) {
+                            uw uwVar = xwVar.a;
+                            canvas2 = canvas;
+                            rectF2 = rectF;
+                            ih.d.b(uwVar, canvas2, rectF2, uwVar, rwVar, 255 - alpha);
+                            i7++;
+                            canvas = canvas2;
+                            rectF = rectF2;
+                        } else if (!jh.k.b(xwVar.a, rwVar, pointF)) {
+                            break;
+                        } else {
+                            canvas.save();
+                            canvas.clipRect(rectF);
+                            canvas.translate(pointF.x, pointF.y);
+                            xwVar.a.dispatchDraw(canvas);
+                            canvas.restore();
+                        }
+                    }
+                    canvas2 = canvas;
+                    rectF2 = rectF;
+                    i7++;
+                    canvas = canvas2;
+                    rectF = rectF2;
                 }
-                zwVar2.S = org.telegram.ui.Components.gc.X().V(Collections.singletonList(chat), zwVar2.q4() ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("StoriesMovedToDialogs", null, 2131744758, str)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("StoriesMovedToContacts", null, 2131744759, org.telegram.messenger.g5.m(15, str, null))), null, d0Var).j();
-                break;
-            case 1:
-                zwVar.getMessagesController().P1().l0(j3, !z9, false);
+                Canvas canvas3 = canvas;
+                RectF rectF3 = rectF;
+                hw hwVar2 = ywVar.D0;
+                if (hwVar2 != null && hwVar2.getVisibility() == 0 && ywVar.D0.getAlpha() > 0.0f) {
+                    hw hwVar3 = ywVar.D0;
+                    ih.d.b(hwVar3, canvas3, rectF3, hwVar3, rwVar, alpha);
+                    break;
+                }
                 break;
             default:
-                zwVar.getMessagesController().P1().l0(j3, z9, true);
+                z41 z41Var = (z41) this.b;
+                a6 a6Var = (a6) this.d;
+                z31 z31Var = z41Var.T;
+                FrameLayout frameLayout = this.c;
+                if (z31Var != null) {
+                    ih.d.a(z31Var, canvas, rectF, z31Var, frameLayout);
+                }
+                sb sbVar = z41Var.j0;
+                if (sbVar != null) {
+                    org.telegram.ui.Components.uj0 uj0Var = sbVar.G;
+                    ih.d.a(uj0Var, canvas, rectF, uj0Var, frameLayout);
+                }
+                xd xdVar = z41Var.k0;
+                if (xdVar != null && xdVar.getParent() == z41Var.i0 && z41Var.k0.getVisibility() == 0) {
+                    z41Var.k0.d(canvas, rectF, a6Var);
+                    break;
+                }
                 break;
         }
     }

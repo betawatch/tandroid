@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class p1 {
     public boolean A;
@@ -45,23 +45,23 @@ public class p1 {
 
     public p1() {
         h9.g0 g0Var = h9.i0.b;
-        h9.t1 t1Var = h9.t1.e;
-        this.m = t1Var;
-        this.n = t1Var;
-        this.o = t1Var;
+        h9.s1 s1Var = h9.s1.e;
+        this.m = s1Var;
+        this.n = s1Var;
+        this.o = s1Var;
         this.p = 0;
-        this.q = t1Var;
-        this.r = t1Var;
+        this.q = s1Var;
+        this.r = s1Var;
         this.s = 0;
         this.t = ConnectionsManager.DEFAULT_DATACENTER_ID;
         this.u = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.v = t1Var;
+        this.v = s1Var;
         this.w = o1.d;
         this.x = false;
-        this.y = t1Var;
+        this.y = s1Var;
         this.z = 0;
         this.A = true;
-        this.B = t1Var;
+        this.B = s1Var;
         this.C = 0;
         this.D = false;
         this.E = false;
@@ -71,11 +71,11 @@ public class p1 {
         this.I = new HashSet();
     }
 
-    public static h9.t1 e(String[] strArr) {
+    public static h9.s1 e(String[] strArr) {
         h9.f0 p10 = h9.i0.p();
         for (String str : strArr) {
             str.getClass();
-            p10.c(h2.m0.T(str));
+            p10.c(h2.l0.T(str));
         }
         return p10.f();
     }

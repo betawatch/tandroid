@@ -1,8 +1,62 @@
 package m;
 
-import android.view.ViewGroup;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class d extends ViewGroup.MarginLayoutParams {
+public final class d extends l.v {
+    public final /* synthetic */ int l = 0;
+    public final /* synthetic */ h m;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(h hVar, Context context, l.k kVar, View view) {
+        super(context, kVar, view, true, R.attr.actionOverflowMenuStyle, 0);
+        this.m = hVar;
+        this.f = 8388613;
+        ia.d dVar = hVar.N;
+        this.h = dVar;
+        l.s sVar = this.i;
+        if (sVar != null) {
+            sVar.h(dVar);
+        }
+    }
+
+    @Override // l.v
+    public final void c() {
+        switch (this.l) {
+            case 0:
+                h hVar = this.m;
+                hVar.K = null;
+                hVar.getClass();
+                super.c();
+                break;
+            default:
+                h hVar2 = this.m;
+                l.k kVar = hVar2.c;
+                if (kVar != null) {
+                    kVar.c(true);
+                }
+                hVar2.J = null;
+                super.c();
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(h hVar, Context context, l.d0 d0Var, View view) {
+        super(context, d0Var, view, false, R.attr.actionOverflowMenuStyle, 0);
+        this.m = hVar;
+        if ((d0Var.A.x & 32) != 32) {
+            View view2 = hVar.r;
+            this.e = view2 == null ? (View) hVar.n : view2;
+        }
+        ia.d dVar = hVar.N;
+        this.h = dVar;
+        l.s sVar = this.i;
+        if (sVar != null) {
+            sVar.h(dVar);
+        }
+    }
 }

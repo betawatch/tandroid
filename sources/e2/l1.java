@@ -1,10 +1,10 @@
 package e2;
 
-import a8.ia;
+import a8.ja;
 import android.util.Pair;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class l1 {
     public static final h1 a = new h1();
@@ -13,40 +13,40 @@ public abstract class l1 {
     public static final String d;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         b = Integer.toString(0, 36);
         c = Integer.toString(1, 36);
         d = Integer.toString(2, 36);
     }
 
-    public int a(boolean z9) {
+    public int a(boolean z10) {
         return p() ? -1 : 0;
     }
 
     public abstract int b(Object obj);
 
-    public int c(boolean z9) {
+    public int c(boolean z10) {
         if (p()) {
             return -1;
         }
         return o() - 1;
     }
 
-    public final int d(int i7, i1 i1Var, k1 k1Var, int i10, boolean z9) {
+    public final int d(int i7, i1 i1Var, k1 k1Var, int i10, boolean z10) {
         int i11 = f(i7, i1Var, false).c;
         if (m(i11, k1Var, 0L).o != i7) {
             return i7 + 1;
         }
-        int e10 = e(i11, i10, z9);
+        int e10 = e(i11, i10, z10);
         if (e10 == -1) {
             return -1;
         }
         return m(e10, k1Var, 0L).n;
     }
 
-    public int e(int i7, int i10, boolean z9) {
+    public int e(int i7, int i10, boolean z10) {
         if (i10 == 0) {
-            if (i7 == c(z9)) {
+            if (i7 == c(z10)) {
                 return -1;
             }
             return i7 + 1;
@@ -55,7 +55,7 @@ public abstract class l1 {
             return i7;
         }
         if (i10 == 2) {
-            return i7 == c(z9) ? a(z9) : i7 + 1;
+            return i7 == c(z10) ? a(z10) : i7 + 1;
         }
         throw new IllegalStateException();
     }
@@ -106,7 +106,7 @@ public abstract class l1 {
         return true;
     }
 
-    public abstract i1 f(int i7, i1 i1Var, boolean z9);
+    public abstract i1 f(int i7, i1 i1Var, boolean z10);
 
     public i1 g(Object obj, i1 i1Var) {
         return f(b(obj), i1Var, true);
@@ -117,7 +117,7 @@ public abstract class l1 {
     public int hashCode() {
         k1 k1Var = new k1();
         i1 i1Var = new i1();
-        int o4 = o() + qs.u3;
+        int o4 = o() + ns.u3;
         for (int i7 = 0; i7 < o(); i7++) {
             o4 = (o4 * 31) + m(i7, k1Var, 0L).hashCode();
         }
@@ -140,7 +140,7 @@ public abstract class l1 {
     }
 
     public final Pair j(k1 k1Var, i1 i1Var, int i7, long j3, long j10) {
-        ia.j(i7, o());
+        ja.j(i7, o());
         m(i7, k1Var, j10);
         if (j3 == -9223372036854775807L) {
             j3 = k1Var.l;
@@ -169,9 +169,9 @@ public abstract class l1 {
         return Pair.create(obj, Long.valueOf(max));
     }
 
-    public int k(int i7, int i10, boolean z9) {
+    public int k(int i7, int i10, boolean z10) {
         if (i10 == 0) {
-            if (i7 == a(z9)) {
+            if (i7 == a(z10)) {
                 return -1;
             }
             return i7 - 1;
@@ -180,7 +180,7 @@ public abstract class l1 {
             return i7;
         }
         if (i10 == 2) {
-            return i7 == a(z9) ? c(z9) : i7 - 1;
+            return i7 == a(z10) ? c(z10) : i7 - 1;
         }
         throw new IllegalStateException();
     }

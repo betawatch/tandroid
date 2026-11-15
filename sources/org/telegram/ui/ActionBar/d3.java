@@ -1,76 +1,38 @@
 package org.telegram.ui.ActionBar;
 
-import a8.wa;
-import android.graphics.Bitmap;
-import android.text.TextUtils;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.id;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.t10;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class d3 {
-    public boolean A;
-    public boolean B;
-    public boolean C;
-    public boolean D;
-    public String E;
-    public Bitmap F;
-    public boolean G;
-    public String H;
-    public float I;
-    public org.telegram.ui.g4 J;
-    public hi.v0 K;
-    public boolean L;
-    public hi.q4 a;
-    public org.telegram.ui.web.u0 b;
-    public org.telegram.ui.k3 c;
-    public Object d;
-    public boolean e;
-    public String f;
-    public int g;
-    public int h;
-    public int i;
-    public boolean j;
-    public float k = Float.MAX_VALUE;
-    public boolean l = true;
-    public Bitmap m;
-    public boolean n;
-    public boolean o;
-    public int p;
-    public int q;
-    public int r;
-    public int s;
-    public boolean t;
-    public boolean u;
-    public boolean v;
-    public wa w;
-    public String x;
-    public boolean y;
-    public boolean z;
+public final /* synthetic */ class d3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j3 b;
 
-    public final void a() {
-        try {
-            org.telegram.ui.web.u0 u0Var = this.b;
-            if (u0Var != null) {
-                u0Var.destroy();
-                this.b = null;
-            }
-            org.telegram.ui.g4 g4Var = this.J;
-            if (g4Var != null) {
-                g4Var.q();
-            }
-        } catch (Exception e10) {
-            a8.g(e10, true);
-        }
+    public /* synthetic */ d3(j3 j3Var, int i7) {
+        this.a = i7;
+        this.b = j3Var;
     }
 
-    public String b() {
-        if (this.J != null) {
-            return TextUtils.isEmpty(this.E) ? id.M0(2131742926, null) : this.E;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                j3 j3Var = this.b;
+                j3Var.getClass();
+                j3Var.W = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                j3Var.invalidate();
+                break;
+            case 1:
+                j3 j3Var2 = this.b;
+                j3Var2.getClass();
+                j3Var2.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            default:
+                j3 j3Var3 = this.b;
+                j3Var3.getClass();
+                j3Var3.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                j3Var3.invalidate();
+                break;
         }
-        hi.q4 q4Var = this.a;
-        return q4Var == null ? "" : q4Var.g == 6 ? q4Var.e : t10.p(qp.s1(q4Var.a).a2(Long.valueOf(this.a.c)));
     }
 }

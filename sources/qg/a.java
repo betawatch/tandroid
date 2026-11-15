@@ -14,17 +14,17 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.rz;
-import org.telegram.messenger.sz;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.messenger.pz;
+import org.telegram.messenger.qz;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class a extends Drawable {
-    public static rz j;
+    public static pz j;
     public static final int[] k = {7322096, 16766590, 13338331, 9367192, 16749490, 16478047};
     public static final SparseArray l;
-    public final rz a;
+    public final pz a;
     public LinearGradient b;
     public int e;
     public final Paint f;
@@ -47,9 +47,9 @@ public final class a extends Drawable {
 
     public a(int i7) {
         if (j == null) {
-            j = sz.h(R.raw.topic_bubble, -1);
+            j = qz.h(R.raw.topic_bubble, -1);
         }
-        rz clone = j.clone();
+        pz clone = j.clone();
         SparseArray sparseArray = clone.r;
         this.a = clone;
         ArrayList arrayList = clone.a;
@@ -86,7 +86,7 @@ public final class a extends Drawable {
             }
         }
         int[] iArr2 = (int[]) l.get(iArr[this.e]);
-        int[] iArr3 = m6.I.q() ? new int[]{i0.a.f(0.2f, iArr2[0], -1), i0.a.f(0.2f, iArr2[1], -1)} : iArr2;
+        int[] iArr3 = j6.I.q() ? new int[]{i0.a.f(0.2f, iArr2[0], -1), i0.a.f(0.2f, iArr2[1], -1)} : iArr2;
         this.h = iArr3;
         Paint paint = new Paint(1);
         LinearGradient linearGradient = new LinearGradient(0.0f, 100.0f, 0.0f, 0.0f, iArr3, (float[]) null, Shader.TileMode.CLAMP);
@@ -105,9 +105,9 @@ public final class a extends Drawable {
         matrix.setScale(1.0f, getBounds().height() / 100.0f);
         this.b.setLocalMatrix(matrix);
         Rect bounds = getBounds();
-        rz rzVar = this.a;
-        rzVar.setBounds(bounds);
-        rzVar.draw(canvas);
+        pz pzVar = this.a;
+        pzVar.setBounds(bounds);
+        pzVar.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable

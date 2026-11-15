@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s0 {
     public final Object a;
@@ -45,7 +45,7 @@ public final class s0 {
     public synchronized int[] b() {
         try {
             if (((int[]) this.b) == null) {
-                this.b = ((ni.t) this.a).b(this);
+                this.b = ((qi.q) this.a).b(this);
             }
         } catch (Throwable th2) {
             throw th2;
@@ -73,14 +73,14 @@ public final class s0 {
         }
     }
 
-    public s0(String name, h9.f1 f1Var, rd.l lVar, zd.z zVar) {
+    public s0(String name, hi.l0 l0Var, rd.l lVar, zd.z zVar) {
         kotlin.jvm.internal.j.e(name, "name");
         this.a = name;
         this.c = new Object();
     }
 
-    public s0(int[] iArr, ni.t tVar) {
+    public s0(int[] iArr, qi.q qVar) {
         this.c = iArr;
-        this.a = tVar;
+        this.a = qVar;
     }
 }

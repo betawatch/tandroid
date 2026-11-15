@@ -38,13 +38,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b {
     public static final Charset e = Charset.forName("UTF-8");
     public static final int f = 15;
     public static final ea.a g = new ea.a();
-    public static final a3.c h = new a3.c(28);
+    public static final a3.c h = new a3.c(26);
     public static final h i = new h(3);
     public final AtomicInteger a = new AtomicInteger(0);
     public final d b;
@@ -105,7 +105,7 @@ public final class b {
 
     public final q2 a(String str, final t0 t0Var) {
         String str2 = t0Var.b;
-        return Build.VERSION.SDK_INT >= 37 ? (str2.equals("crash") || str2.equals("ndk-crash")) ? (q2) Optional.of(this.b.b(str, "profiling-manager-info")).filter(new m(3)).flatMap(new l(1)).map(new Function() { // from class: ga.a
+        return Build.VERSION.SDK_INT >= 37 ? (str2.equals("crash") || str2.equals("ndk-crash")) ? (q2) Optional.of(this.b.b(str, "profiling-manager-info")).filter(new m(4)).flatMap(new l(1)).map(new Function() { // from class: ga.a
             public /* synthetic */ Function andThen(Function function) {
                 return Function$-CC.$default$andThen(this, function);
             }
@@ -158,12 +158,12 @@ public final class b {
         return new TreeSet(d.i(((File) this.b.e).list())).descendingSet();
     }
 
-    public final void e(q2 q2Var, String str, boolean z9) {
+    public final void e(q2 q2Var, String str, boolean z10) {
         d dVar = this.b;
         int i7 = this.c.b().a.a;
         g.getClass();
         try {
-            g(dVar.b(str, p0.p("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z9 ? "_" : "")), ea.a.a.u(q2Var));
+            g(dVar.b(str, p0.p("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z10 ? "_" : "")), ea.a.a.o(q2Var));
         } catch (IOException e10) {
             Log.w("FirebaseCrashlytics", "Could not persist event for session " + str, e10);
         }
@@ -172,7 +172,7 @@ public final class b {
         File file = new File((File) dVar.e, str);
         file.mkdirs();
         List<File> i10 = d.i(file.listFiles(hVar));
-        Collections.sort(i10, new a3.c(29));
+        Collections.sort(i10, new a3.c(27));
         int size = i10.size();
         for (File file2 : i10) {
             if (size <= i7) {

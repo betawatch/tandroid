@@ -1,19 +1,19 @@
 package m4;
 
-import a8.ia;
+import a8.ja;
 import e2.s0;
-import f3.j0;
+import f3.i0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class u implements i {
     public final h2.x a;
-    public final f3.a0 b;
+    public final f3.z b;
     public final String c;
     public final int d;
     public final String e;
-    public j0 f;
+    public i0 f;
     public String g;
     public int h = 0;
     public int i;
@@ -27,7 +27,7 @@ public final class u implements i {
         h2.x xVar = new h2.x(4);
         this.a = xVar;
         xVar.a[0] = -1;
-        this.b = new f3.a0();
+        this.b = new f3.z();
         this.n = -9223372036854775807L;
         this.c = str;
         this.d = i7;
@@ -50,10 +50,10 @@ public final class u implements i {
                         break;
                     }
                     byte b10 = bArr[i10];
-                    boolean z9 = (b10 & 255) == 255;
-                    boolean z10 = this.k && (b10 & 224) == 224;
-                    this.k = z9;
-                    if (z10) {
+                    boolean z10 = (b10 & 255) == 255;
+                    boolean z11 = this.k && (b10 & 224) == 224;
+                    this.k = z10;
+                    if (z11) {
                         xVar.N(i10 + 1);
                         this.k = false;
                         xVar2.a[1] = bArr[i10];
@@ -71,18 +71,18 @@ public final class u implements i {
                 if (i12 >= 4) {
                     xVar2.N(0);
                     int m10 = xVar2.m();
-                    f3.a0 a0Var = this.b;
-                    if (a0Var.a(m10)) {
-                        this.m = a0Var.b;
+                    f3.z zVar = this.b;
+                    if (zVar.a(m10)) {
+                        this.m = zVar.b;
                         if (!this.j) {
-                            this.l = (a0Var.f * 1000000) / a0Var.c;
+                            this.l = (zVar.f * 1000000) / zVar.c;
                             e2.t tVar = new e2.t();
                             tVar.a = this.g;
                             tVar.q = s0.n(this.e);
-                            tVar.r = s0.n((String) a0Var.g);
+                            tVar.r = s0.n((String) zVar.g);
                             tVar.s = TLObject.FLAG_12;
-                            tVar.J = a0Var.d;
-                            tVar.K = a0Var.c;
+                            tVar.J = zVar.d;
+                            tVar.K = zVar.c;
                             tVar.d = this.c;
                             tVar.f = this.d;
                             this.f.g(new e2.u(tVar));
@@ -105,7 +105,7 @@ public final class u implements i {
                 int i13 = this.i + min2;
                 this.i = i13;
                 if (i13 >= this.m) {
-                    ia.p(this.n != -9223372036854775807L);
+                    ja.p(this.n != -9223372036854775807L);
                     this.f.c(this.n, 1, this.m, 0, null);
                     this.n += this.l;
                     this.i = 0;
@@ -129,15 +129,15 @@ public final class u implements i {
     }
 
     @Override // m4.i
-    public final void g(f3.q qVar, g0 g0Var) {
-        g0Var.b();
-        g0Var.c();
-        this.g = (String) g0Var.e;
-        g0Var.c();
-        this.f = qVar.O1(g0Var.c, 1);
+    public final void g(f3.q qVar, f0 f0Var) {
+        f0Var.b();
+        f0Var.c();
+        this.g = (String) f0Var.e;
+        f0Var.c();
+        this.f = qVar.d2(f0Var.c, 1);
     }
 
     @Override // m4.i
-    public final void e(boolean z9) {
+    public final void e(boolean z10) {
     }
 }

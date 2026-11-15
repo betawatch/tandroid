@@ -1,15 +1,15 @@
 package com.google.android.gms.internal.cast;
 
 import a8.r7;
-import a8.wa;
+import a8.xa;
 import android.os.Looper;
 import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s {
     public static final j6.b i = new j6.b("SessionTransController", null);
@@ -70,15 +70,15 @@ public final class s {
                     m10.c();
                     k1.w((k1) m10.b, i7);
                     b10.e((k1) m10.a());
-                    x0Var.a.a((p1) b10.a(), qs.I3);
+                    x0Var.a.a((p1) b10.a(), ns.I3);
                     x0Var.i = false;
                     break;
                 default:
-                    wa waVar = new wa(11, 4);
-                    waVar.c = Integer.valueOf(i7);
+                    xa xaVar = new xa(11, 4);
+                    xaVar.c = Integer.valueOf(i7);
                     r7 r7Var = (r7) v0Var.b;
-                    waVar.d = Boolean.valueOf(((c) r7Var.c).d == 2);
-                    r7.K(r7Var, new s6(waVar));
+                    xaVar.d = Boolean.valueOf(((c) r7Var.c).d == 2);
+                    r7.O(r7Var, new s6(xaVar));
                     break;
             }
         }

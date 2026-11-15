@@ -20,7 +20,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.versionedparcelable.CustomVersionedParcelable;
 import d1.f;
-import f2.i;
+import f2.h;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,7 +28,7 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class IconCompat extends CustomVersionedParcelable {
     public static final PorterDuff.Mode k = PorterDuff.Mode.SRC_IN;
@@ -87,7 +87,7 @@ public class IconCompat extends CustomVersionedParcelable {
         }
     }
 
-    public static Bitmap b(Bitmap bitmap, boolean z9) {
+    public static Bitmap b(Bitmap bitmap, boolean z10) {
         int min = (int) (Math.min(bitmap.getWidth(), bitmap.getHeight()) * 0.6666667f);
         Bitmap createBitmap = Bitmap.createBitmap(min, min, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
@@ -95,7 +95,7 @@ public class IconCompat extends CustomVersionedParcelable {
         float f10 = min;
         float f11 = 0.5f * f10;
         float f12 = 0.9166667f * f11;
-        if (z9) {
+        if (z10) {
             float f13 = 0.010416667f * f10;
             paint.setColor(0);
             paint.setShadowLayer(f13, 0.0f, f10 * 0.020833334f, 1023410176);
@@ -354,7 +354,7 @@ public class IconCompat extends CustomVersionedParcelable {
                     createWithBitmap = Icon.createWithBitmap(b((Bitmap) this.b, false));
                     break;
                 } else {
-                    createWithBitmap = i.b((Bitmap) this.b);
+                    createWithBitmap = h.b((Bitmap) this.b);
                     break;
                 }
             case 6:
@@ -373,7 +373,7 @@ public class IconCompat extends CustomVersionedParcelable {
                         createWithBitmap = Icon.createWithBitmap(b(BitmapFactory.decodeStream(k10), false));
                         break;
                     } else {
-                        createWithBitmap = i.b(BitmapFactory.decodeStream(k10));
+                        createWithBitmap = h.b(BitmapFactory.decodeStream(k10));
                         break;
                     }
                 }

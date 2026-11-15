@@ -2,13 +2,13 @@ package a3;
 
 import e2.m1;
 import h9.i0;
-import h9.o1;
-import h9.r1;
+import h9.n1;
+import h9.q1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o extends q implements Comparable {
-    public final boolean D;
+    public final boolean E;
     public final int e;
     public final boolean f;
     public final boolean h;
@@ -23,7 +23,7 @@ public final class o extends q implements Comparable {
         super(i7, m1Var, i10);
         int i12;
         int i13 = 0;
-        this.f = jg.g.c(i11, false);
+        this.f = i5.c.b(i11, false);
         int i14 = this.d.e;
         int i15 = nVar.C;
         i0 i0Var = nVar.y;
@@ -50,17 +50,17 @@ public final class o extends q implements Comparable {
         this.s = i12;
         int i18 = str2 != null ? 1088 : nVar.A;
         int i19 = this.d.f;
-        r1 r1Var = s.l;
+        q1 q1Var = s.l;
         int bitCount = (i19 == 0 || i19 != i18) ? Integer.bitCount(i18 & i19) : Integer.MAX_VALUE;
         this.w = bitCount;
         e2.u uVar = this.d;
-        this.D = (1088 & uVar.f) != 0;
+        this.E = (1088 & uVar.f) != 0;
         int c10 = s.c(uVar, nVar.z);
         this.x = c10;
         int i20 = s.i(this.d, str, s.l(str) == null);
         this.y = i20;
-        boolean z9 = i12 > 0 || (i0Var.isEmpty() && bitCount > 0) || ((i0Var.isEmpty() && c10 != Integer.MAX_VALUE) || this.h || ((this.n && i20 > 0) || nVar.x));
-        if (jg.g.c(i11, nVar.B0) && z9) {
+        boolean z10 = i12 > 0 || (i0Var.isEmpty() && bitCount > 0) || ((i0Var.isEmpty() && c10 != Integer.MAX_VALUE) || this.h || ((this.n && i20 > 0) || nVar.x));
+        if (i5.c.b(i11, nVar.B0) && z10) {
             i13 = 1;
         }
         this.e = i13;
@@ -82,23 +82,23 @@ public final class o extends q implements Comparable {
         h9.w c10 = h9.w.a.c(this.f, oVar.f);
         Integer valueOf = Integer.valueOf(this.r);
         Integer valueOf2 = Integer.valueOf(oVar.r);
-        o1 o1Var = o1.b;
-        o1 o1Var2 = o1.c;
-        h9.w b10 = c10.b(valueOf, valueOf2, o1Var2);
+        n1 n1Var = n1.b;
+        n1 n1Var2 = n1.c;
+        h9.w b10 = c10.b(valueOf, valueOf2, n1Var2);
         int i7 = oVar.s;
         int i10 = this.s;
         h9.w a10 = b10.a(i10, i7);
         int i11 = oVar.w;
         int i12 = this.w;
-        h9.w c11 = a10.a(i12, i11).b(Integer.valueOf(this.x), Integer.valueOf(oVar.x), o1Var2).c(this.h, oVar.h);
+        h9.w c11 = a10.a(i12, i11).b(Integer.valueOf(this.x), Integer.valueOf(oVar.x), n1Var2).c(this.h, oVar.h);
         Boolean valueOf3 = Boolean.valueOf(this.n);
         Boolean valueOf4 = Boolean.valueOf(oVar.n);
         if (i10 != 0) {
-            o1Var = o1Var2;
+            n1Var = n1Var2;
         }
-        h9.w a11 = c11.b(valueOf3, valueOf4, o1Var).a(this.y, oVar.y);
+        h9.w a11 = c11.b(valueOf3, valueOf4, n1Var).a(this.y, oVar.y);
         if (i12 == 0) {
-            a11 = a11.d(this.D, oVar.D);
+            a11 = a11.d(this.E, oVar.E);
         }
         return a11.e();
     }

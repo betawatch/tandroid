@@ -2,18 +2,18 @@ package com.google.android.recaptcha.internal;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 interface zzvi {
-    void zzA(int i7, List list, boolean z9);
+    void zzA(int i7, List list, boolean z10);
 
     void zzB(int i7, int i10);
 
-    void zzC(int i7, List list, boolean z9);
+    void zzC(int i7, List list, boolean z10);
 
     void zzD(int i7, long j3);
 
-    void zzE(int i7, List list, boolean z9);
+    void zzE(int i7, List list, boolean z10);
 
     @Deprecated
     void zzF(int i7);
@@ -24,15 +24,15 @@ interface zzvi {
 
     void zzI(int i7, int i10);
 
-    void zzJ(int i7, List list, boolean z9);
+    void zzJ(int i7, List list, boolean z10);
 
     void zzK(int i7, long j3);
 
-    void zzL(int i7, List list, boolean z9);
+    void zzL(int i7, List list, boolean z10);
 
-    void zzb(int i7, boolean z9);
+    void zzb(int i7, boolean z10);
 
-    void zzc(int i7, List list, boolean z9);
+    void zzc(int i7, List list, boolean z10);
 
     void zzd(int i7, zzqm zzqmVar);
 
@@ -40,37 +40,37 @@ interface zzvi {
 
     void zzf(int i7, double d);
 
-    void zzg(int i7, List list, boolean z9);
+    void zzg(int i7, List list, boolean z10);
 
     @Deprecated
     void zzh(int i7);
 
     void zzi(int i7, int i10);
 
-    void zzj(int i7, List list, boolean z9);
+    void zzj(int i7, List list, boolean z10);
 
     void zzk(int i7, int i10);
 
-    void zzl(int i7, List list, boolean z9);
+    void zzl(int i7, List list, boolean z10);
 
     void zzm(int i7, long j3);
 
-    void zzn(int i7, List list, boolean z9);
+    void zzn(int i7, List list, boolean z10);
 
     void zzo(int i7, float f10);
 
-    void zzp(int i7, List list, boolean z9);
+    void zzp(int i7, List list, boolean z10);
 
     @Deprecated
     void zzq(int i7, Object obj, zzug zzugVar);
 
     void zzr(int i7, int i10);
 
-    void zzs(int i7, List list, boolean z9);
+    void zzs(int i7, List list, boolean z10);
 
     void zzt(int i7, long j3);
 
-    void zzu(int i7, List list, boolean z9);
+    void zzu(int i7, List list, boolean z10);
 
     void zzv(int i7, Object obj, zzug zzugVar);
 
@@ -78,7 +78,7 @@ interface zzvi {
 
     void zzx(int i7, int i10);
 
-    void zzy(int i7, List list, boolean z9);
+    void zzy(int i7, List list, boolean z10);
 
     void zzz(int i7, long j3);
 }

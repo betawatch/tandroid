@@ -1,49 +1,130 @@
 package fi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.hc;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import java.util.Comparator;
+import java.util.List;
+import java.util.regex.Pattern;
+import org.telegram.messenger.ac;
+import org.telegram.messenger.at;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.iz;
+import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.zv;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.ak0;
+import org.telegram.ui.ed0;
+import org.telegram.ui.ef0;
+import org.telegram.ui.go;
+import org.telegram.ui.i21;
+import org.telegram.ui.jl0;
+import org.telegram.ui.la;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class m5 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    public float T;
-    public float U;
-    public final hc V;
-    public boolean W;
+public final /* synthetic */ class m5 implements RequestDelegate {
+    public final /* synthetic */ int a;
 
-    public m5(o5 o5Var, Context context) {
-        super(context, o5Var.p1);
-        this.V = new hc(this);
-        this.W = true;
+    public /* synthetic */ m5(int i7) {
+        this.a = i7;
     }
 
-    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float a10 = this.V.a(0.05f);
-        if (a10 < 1.0f) {
-            canvas.save();
-            canvas.scale(a10, a10, this.T, this.U);
-        }
-        super.dispatchDraw(canvas);
-        if (a10 < 1.0f) {
-            canvas.restore();
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new ai.o(12));
+                break;
+            case 1:
+                Comparator comparator = s6.X;
+                break;
+            case 2:
+                org.telegram.messenger.g0.h3(new ai.o(28));
+                break;
+            case 3:
+                org.telegram.messenger.g0.h3(new ai.o(28));
+                break;
+            case 4:
+                int[] iArr = hi.c1.b0;
+                break;
+            case 5:
+                org.telegram.messenger.g0.h3(new ai.o(19));
+                break;
+            case 6:
+                org.telegram.messenger.g0.h3(new ai.o(19));
+                break;
+            case 7:
+                org.telegram.messenger.g0.h3(new ai.o(19));
+                break;
+            case 8:
+                org.telegram.messenger.p5 p5Var = org.telegram.messenger.d4.s;
+                break;
+            case 9:
+                break;
+            case 10:
+                int i7 = ac.i;
+                break;
+            case 11:
+                Pattern pattern = si.S1;
+                break;
+            case 12:
+                org.telegram.messenger.g0.h3(new org.telegram.messenger.a(tL_error, 25));
+                break;
+            case 13:
+                int i10 = np.D8;
+                break;
+            case 14:
+                String str = at.k0;
+                break;
+            case 15:
+                Paint paint = la.I;
+                break;
+            case 16:
+                int i11 = go.j3;
+                break;
+            case 17:
+                org.telegram.messenger.g0.h3(new ai.o(28));
+                break;
+            case 18:
+                Pattern pattern2 = org.telegram.ui.Components.t4.a;
+                break;
+            case 19:
+                int i12 = zv.I0;
+                break;
+            case 20:
+                int i13 = iz.B0;
+                break;
+            case 21:
+                org.telegram.messenger.g0.h3(new ai.o(28));
+                break;
+            case 22:
+                int i14 = ny0.e;
+                break;
+            case 23:
+                int i15 = ed0.w0;
+                break;
+            case 24:
+                org.telegram.messenger.g0.h3(new ef0(tLObject, 5));
+                break;
+            case 25:
+                int i16 = ak0.S;
+                break;
+            case 26:
+                List list = jl0.h1;
+                break;
+            case 27:
+                RectF rectF = ProfileActivity.X6;
+                break;
+            default:
+                int i17 = i21.p1;
+                break;
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction();
-        hc hcVar = this.V;
-        if (action == 0) {
-            this.T = motionEvent.getX();
-            this.U = motionEvent.getY();
-            hcVar.c(this.W);
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            hcVar.c(false);
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    private final void a(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 }

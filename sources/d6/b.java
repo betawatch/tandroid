@@ -16,10 +16,10 @@ import java.util.concurrent.locks.ReentrantLock;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.Cells.f1;
+import org.telegram.ui.Cells.y0;
 import q6.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b {
     public static final ReentrantLock c = new ReentrantLock();
@@ -49,7 +49,7 @@ public final class b {
     }
 
     public static final String f(String str, String str2) {
-        return f1.n(str, ":", str2, new StringBuilder(str.length() + 1 + String.valueOf(str2).length()));
+        return y0.m(str, ":", str2, new StringBuilder(str.length() + 1 + String.valueOf(str2).length()));
     }
 
     public final GoogleSignInAccount b() {
@@ -124,7 +124,7 @@ public final class b {
             try {
                 JSONArray jSONArray2 = new JSONArray();
                 ArrayList arrayList = googleSignInOptions.b;
-                Collections.sort(arrayList, GoogleSignInOptions.F);
+                Collections.sort(arrayList, GoogleSignInOptions.G);
                 int size = arrayList.size();
                 while (i7 < size) {
                     Object obj = arrayList.get(i7);

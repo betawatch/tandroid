@@ -1,70 +1,131 @@
 package j6;
 
-import a8.ua;
-import android.text.TextUtils;
-import android.util.Log;
-import f6.b0;
-import f6.e0;
-import f6.f0;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+import android.os.Looper;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class p {
+public final class p {
+    public static final Object i = new Object();
     public final b a;
-    public final String b;
-    public h6.m c;
-    public final List d;
+    public final long b;
+    public final String c;
+    public n g;
+    public o h;
+    public long e = -1;
+    public long f = 0;
+    public final com.google.android.gms.internal.cast.y d = new com.google.android.gms.internal.cast.y(Looper.getMainLooper(), 0);
 
-    public p(String str) {
-        a.b(str);
-        this.b = str;
-        this.a = new b("MediaControlChannel", null);
-        this.d = DesugarCollections.synchronizedList(new ArrayList());
+    public p(long j3, String str) {
+        this.b = j3;
+        this.c = str;
+        this.a = new b("RequestTracker", str);
     }
 
-    public final void a(o oVar) {
-        this.d.add(oVar);
+    public final void a(long j3, n nVar) {
+        n nVar2;
+        long j10;
+        long j11;
+        long currentTimeMillis = System.currentTimeMillis();
+        Object obj = i;
+        synchronized (obj) {
+            nVar2 = this.g;
+            j10 = this.e;
+            j11 = this.f;
+            this.e = j3;
+            this.g = nVar;
+            this.f = currentTimeMillis;
+        }
+        if (nVar2 != null) {
+            nVar2.h(this.c, j10, j11, currentTimeMillis);
+        }
+        synchronized (obj) {
+            try {
+                o oVar = this.h;
+                if (oVar != null) {
+                    this.d.removeCallbacks(oVar);
+                }
+                o oVar2 = new o(this, 0);
+                this.h = oVar2;
+                this.d.postDelayed(oVar2, this.b);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
     }
 
-    public final long b() {
-        h6.m mVar = this.c;
-        if (mVar != null) {
-            return ((AtomicLong) mVar.c).getAndIncrement();
+    public final void b(long j3, int i7, l lVar) {
+        synchronized (i) {
+            try {
+                if (c(j3)) {
+                    Locale locale = Locale.ROOT;
+                    e("request " + j3 + " completed", i7, lVar);
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        b bVar = this.a;
-        Log.e(bVar.a, bVar.d("Attempt to generate requestId without a sink", new Object[0]));
-        return 0L;
     }
 
-    public final void c(long j3, String str) {
-        h6.m mVar = this.c;
-        if (mVar == null) {
-            b bVar = this.a;
-            Log.e(bVar.a, bVar.d("Attempt to send text message without a sink", new Object[0]));
-            return;
+    public final boolean c(long j3) {
+        boolean z10;
+        synchronized (i) {
+            long j10 = this.e;
+            z10 = false;
+            if (j10 != -1 && j10 == j3) {
+                z10 = true;
+            }
         }
-        f0 f0Var = (f0) mVar.b;
-        if (f0Var == null) {
-            throw new IllegalStateException("Device is not connected");
+        return z10;
+    }
+
+    public final boolean d() {
+        boolean z10;
+        synchronized (i) {
+            z10 = this.e != -1;
         }
-        e0 e0Var = (e0) f0Var;
-        String str2 = this.b;
-        a.b(str2);
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException("The message payload cannot be null or empty");
+        return z10;
+    }
+
+    public final void e(String str, int i7, Object obj) {
+        this.a.b(str, new Object[0]);
+        Object obj2 = i;
+        synchronized (obj2) {
+            try {
+                if (this.g != null) {
+                    long currentTimeMillis = System.currentTimeMillis();
+                    n nVar = this.g;
+                    q6.m.g(nVar);
+                    nVar.k(this.c, this.e, i7, obj, this.f, currentTimeMillis);
+                }
+                this.e = -1L;
+                this.g = null;
+                synchronized (obj2) {
+                    o oVar = this.h;
+                    if (oVar != null) {
+                        this.d.removeCallbacks(oVar);
+                        this.h = null;
+                    }
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            } finally {
+            }
         }
-        if (str.length() > 524288) {
-            b bVar2 = e0.H;
-            Log.w(bVar2.a, bVar2.d("Message send failed. Message exceeds maximum size", new Object[0]));
-            throw new IllegalArgumentException("Message exceeds maximum size524288");
+    }
+
+    public final boolean f(int i7) {
+        synchronized (i) {
+            try {
+                if (!d()) {
+                    return false;
+                }
+                Locale locale = Locale.ROOT;
+                e("clearing request " + this.e, i7, null);
+                return true;
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        com.google.android.gms.common.api.internal.s b10 = com.google.android.gms.common.api.internal.t.b();
-        b10.c = new b0(e0Var, str2, str, 1);
-        b10.a = 8405;
-        e0Var.e(1, b10.a()).addOnFailureListener(new ua(mVar, j3, 4));
     }
 }

@@ -1,149 +1,47 @@
 package di;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.sv;
+import android.app.Activity;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class i extends pj0 {
-    public final /* synthetic */ int e3;
-    public final /* synthetic */ sv f3;
+public final /* synthetic */ class i implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i(sv svVar, Context context, int i7) {
-        super(context, null);
-        this.e3 = i7;
-        this.f3 = svVar;
+    public /* synthetic */ i(t tVar, TwoStepVerificationActivity twoStepVerificationActivity, Activity activity, boolean z10, long j3) {
+        this.d = tVar;
+        this.e = twoStepVerificationActivity;
+        this.f = activity;
+        this.b = z10;
+        this.c = j3;
     }
 
-    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        switch (this.e3) {
-            case 1:
-                sv svVar = this.f3;
-                ArrayList arrayList = svVar.P;
-                arrayList.clear();
-                int i7 = 0;
-                for (int i10 = 0; i10 < getChildCount(); i10++) {
-                    p pVar = (p) getChildAt(i10);
-                    int R = RecyclerView.R(pVar);
-                    pVar.b = R;
-                    boolean z9 = true;
-                    pVar.a = true;
-                    pVar.d = R == 0;
-                    if (R != svVar.D.size() - 1) {
-                        z9 = false;
-                    }
-                    pVar.c = z9;
-                    arrayList.add(pVar);
-                }
-                Collections.sort(arrayList, svVar.w0);
-                while (i7 < arrayList.size()) {
-                    p pVar2 = (p) arrayList.get(i7);
-                    int save = canvas.save();
-                    canvas.translate(pVar2.getX(), pVar2.getY());
-                    if (pVar2.getAlpha() != 1.0f) {
-                        canvas2 = canvas;
-                        canvas2.saveLayerAlpha(-org.telegram.messenger.g0.L(4.0f), -org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), (int) (pVar2.getAlpha() * 255.0f), 31);
-                    } else {
-                        canvas2 = canvas;
-                    }
-                    canvas2.scale(pVar2.getScaleX(), pVar2.getScaleY(), org.telegram.messenger.g0.L(14.0f), pVar2.getCy());
-                    pVar2.draw(canvas2);
-                    canvas2.restoreToCount(save);
-                    i7++;
-                    canvas = canvas2;
-                }
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                if (motionEvent.getAction() == 0) {
-                    sv svVar = this.f3;
-                    if (svVar.c0 > 0.2f || svVar.getAlpha() == 0.0f) {
-                        return false;
-                    }
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return false;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.e3) {
-            case 0:
-                if (!this.f3.P.contains(view)) {
-                    break;
-                }
+                org.telegram.messenger.g0.h3(new j((t) this.d, tL_error, (TwoStepVerificationActivity) this.e, (Activity) this.f, this.b, this.c, tLObject));
                 break;
-        }
-        return super.drawChild(canvas, view, j3);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public void l0(int i7) {
-        switch (this.e3) {
-            case 1:
-                fi.m3 m3Var = this.f3.J;
-                if (m3Var != null) {
-                    m3Var.f(true);
-                    break;
-                }
+            default:
+                org.telegram.messenger.g0.h3(new l((fi.s6) this.d, tL_error, this.b, this.c, (z10) this.e, (org.telegram.ui.ActionBar.e6) this.f));
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
-            case 1:
-                return false;
-            default:
-                return super.onInterceptTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        switch (this.e3) {
-            case 0:
-                ArrayList arrayList = this.f3.b0;
-                super.onLayout(z9, i7, i10, i11, i12);
-                for (int i13 = 0; i13 < arrayList.size(); i13++) {
-                    ((Runnable) arrayList.get(i13)).run();
-                }
-                arrayList.clear();
-                break;
-            default:
-                super.onLayout(z9, i7, i10, i11, i12);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
-            case 1:
-                return false;
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
+    public /* synthetic */ i(fi.s6 s6Var, boolean z10, long j3, z10 z10Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.d = s6Var;
+        this.b = z10;
+        this.c = j3;
+        this.e = z10Var;
+        this.f = e6Var;
     }
 }

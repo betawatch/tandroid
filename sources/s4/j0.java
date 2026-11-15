@@ -7,23 +7,23 @@ import android.media.MediaRouter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
-import com.google.android.gms.internal.vision.g3;
+import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.beta.R;
+import org.telegram.messenger.ou;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class j0 extends k0 implements b0 {
-    public static final ArrayList I;
     public static final ArrayList J;
-    public int D;
-    public boolean E;
+    public static final ArrayList K;
+    public int E;
     public boolean F;
-    public final ArrayList G;
+    public boolean G;
     public final ArrayList H;
+    public final ArrayList I;
     public final e r;
     public final MediaRouter s;
     public final a0 w;
@@ -34,19 +34,19 @@ public class j0 extends k0 implements b0 {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addCategory("android.media.intent.category.LIVE_AUDIO");
         ArrayList arrayList = new ArrayList();
-        I = arrayList;
+        J = arrayList;
         arrayList.add(intentFilter);
         IntentFilter intentFilter2 = new IntentFilter();
         intentFilter2.addCategory("android.media.intent.category.LIVE_VIDEO");
         ArrayList arrayList2 = new ArrayList();
-        J = arrayList2;
+        K = arrayList2;
         arrayList2.add(intentFilter2);
     }
 
     public j0(Context context, e eVar) {
-        super(context, new uy(new ComponentName("android", k0.class.getName()), 15));
-        this.G = new ArrayList();
+        super(context, new ou(new ComponentName("android", k0.class.getName()), 22));
         this.H = new ArrayList();
+        this.I = new ArrayList();
         this.r = eVar;
         MediaRouter mediaRouter = (MediaRouter) context.getSystemService("media_router");
         this.s = mediaRouter;
@@ -65,14 +65,14 @@ public class j0 extends k0 implements b0 {
     }
 
     public void A() {
-        boolean z9 = this.F;
+        boolean z10 = this.G;
         a0 a0Var = this.w;
         MediaRouter mediaRouter = this.s;
-        if (z9) {
+        if (z10) {
             mediaRouter.removeCallback(a0Var);
         }
-        this.F = true;
-        mediaRouter.addCallback(this.D, a0Var, (this.E ? 1 : 0) | 2);
+        this.G = true;
+        mediaRouter.addCallback(this.E, a0Var, (this.F ? 1 : 0) | 2);
     }
 
     public final void B() {
@@ -80,7 +80,7 @@ public class j0 extends k0 implements b0 {
         MediaRouter mediaRouter = this.s;
         int routeCount = mediaRouter.getRouteCount();
         ArrayList arrayList = new ArrayList(routeCount);
-        boolean z9 = false;
+        boolean z10 = false;
         for (int i7 = 0; i7 < routeCount; i7++) {
             arrayList.add(mediaRouter.getRouteAt(i7));
         }
@@ -89,9 +89,9 @@ public class j0 extends k0 implements b0 {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            z9 |= n((MediaRouter.RouteInfo) obj);
+            z10 |= n((MediaRouter.RouteInfo) obj);
         }
-        if (z9) {
+        if (z10) {
             y();
         }
     }
@@ -124,18 +124,18 @@ public class j0 extends k0 implements b0 {
         }
     }
 
-    @Override // com.google.android.gms.internal.vision.g3
+    @Override // com.google.android.gms.internal.vision.h3
     public final q d(String str) {
         int p10 = p(str);
         if (p10 >= 0) {
-            return new g0(((h0) this.G.get(p10)).a);
+            return new g0(((h0) this.H.get(p10)).a);
         }
         return null;
     }
 
-    @Override // com.google.android.gms.internal.vision.g3
+    @Override // com.google.android.gms.internal.vision.h3
     public final void f(n nVar) {
-        boolean z9;
+        boolean z10;
         int i7 = 0;
         if (nVar != null) {
             nVar.a();
@@ -147,16 +147,16 @@ public class j0 extends k0 implements b0 {
                 i10 = str.equals("android.media.intent.category.LIVE_AUDIO") ? i10 | 1 : str.equals("android.media.intent.category.LIVE_VIDEO") ? i10 | 2 : i10 | TLObject.FLAG_23;
                 i7++;
             }
-            z9 = nVar.b();
+            z10 = nVar.b();
             i7 = i10;
         } else {
-            z9 = false;
+            z10 = false;
         }
-        if (this.D == i7 && this.E == z9) {
+        if (this.E == i7 && this.F == z10) {
             return;
         }
-        this.D = i7;
-        this.E = z9;
+        this.E = i7;
+        this.F = z10;
         B();
     }
 
@@ -192,12 +192,12 @@ public class j0 extends k0 implements b0 {
         l lVar = new l(format, name2 != null ? name2.toString() : "");
         u(h0Var, lVar);
         h0Var.c = lVar.b();
-        this.G.add(h0Var);
+        this.H.add(h0Var);
         return true;
     }
 
     public final int o(MediaRouter.RouteInfo routeInfo) {
-        ArrayList arrayList = this.G;
+        ArrayList arrayList = this.H;
         int size = arrayList.size();
         for (int i7 = 0; i7 < size; i7++) {
             if (((h0) arrayList.get(i7)).a == routeInfo) {
@@ -208,7 +208,7 @@ public class j0 extends k0 implements b0 {
     }
 
     public final int p(String str) {
-        ArrayList arrayList = this.G;
+        ArrayList arrayList = this.H;
         int size = arrayList.size();
         for (int i7 = 0; i7 < size; i7++) {
             if (((h0) arrayList.get(i7)).b.equals(str)) {
@@ -219,7 +219,7 @@ public class j0 extends k0 implements b0 {
     }
 
     public final int q(v vVar) {
-        ArrayList arrayList = this.H;
+        ArrayList arrayList = this.I;
         int size = arrayList.size();
         for (int i7 = 0; i7 < size; i7++) {
             if (((i0) arrayList.get(i7)).a == vVar) {
@@ -241,10 +241,10 @@ public class j0 extends k0 implements b0 {
         MediaRouter.RouteInfo routeInfo = h0Var.a;
         int supportedTypes = routeInfo.getSupportedTypes();
         if ((supportedTypes & 1) != 0) {
-            lVar.a(I);
+            lVar.a(J);
         }
         if ((supportedTypes & 2) != 0) {
-            lVar.a(J);
+            lVar.a(K);
         }
         int playbackType = routeInfo.getPlaybackType();
         Bundle bundle = lVar.a;
@@ -272,11 +272,11 @@ public class j0 extends k0 implements b0 {
     }
 
     public final void v(v vVar) {
-        g3 c10 = vVar.c();
+        h3 c10 = vVar.c();
         MediaRouter mediaRouter = this.s;
         if (c10 == this) {
             int o4 = o(mediaRouter.getSelectedRoute(8388611));
-            if (o4 < 0 || !((h0) this.G.get(o4)).b.equals(vVar.b)) {
+            if (o4 < 0 || !((h0) this.H.get(o4)).b.equals(vVar.b)) {
                 return;
             }
             vVar.l();
@@ -287,7 +287,7 @@ public class j0 extends k0 implements b0 {
         createUserRoute.setTag(i0Var);
         createUserRoute.setVolumeCallback(this.x);
         C(i0Var);
-        this.H.add(i0Var);
+        this.I.add(i0Var);
         mediaRouter.addUserRoute(createUserRoute);
     }
 
@@ -296,7 +296,7 @@ public class j0 extends k0 implements b0 {
         if (vVar.c() == this || (q10 = q(vVar)) < 0) {
             return;
         }
-        MediaRouter.UserRouteInfo userRouteInfo = ((i0) this.H.remove(q10)).b;
+        MediaRouter.UserRouteInfo userRouteInfo = ((i0) this.I.remove(q10)).b;
         userRouteInfo.setTag(null);
         userRouteInfo.setVolumeCallback(null);
         try {
@@ -311,21 +311,21 @@ public class j0 extends k0 implements b0 {
             if (vVar.c() != this) {
                 int q10 = q(vVar);
                 if (q10 >= 0) {
-                    z(((i0) this.H.get(q10)).b);
+                    z(((i0) this.I.get(q10)).b);
                     return;
                 }
                 return;
             }
             int p10 = p(vVar.b);
             if (p10 >= 0) {
-                z(((h0) this.G.get(p10)).a);
+                z(((h0) this.H.get(p10)).a);
             }
         }
     }
 
     public final void y() {
         ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = this.G;
+        ArrayList arrayList2 = this.H;
         int size = arrayList2.size();
         for (int i7 = 0; i7 < size; i7++) {
             m mVar = ((h0) arrayList2.get(i7)).c;

@@ -1,22 +1,18 @@
 package g0;
 
+import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class d extends e {
-    @Override // g0.e
-    public final /* bridge */ /* synthetic */ Object a(List list) {
-        return null;
+public abstract class d {
+    public abstract Object a(List list);
+
+    public List b() {
+        return new ArrayList();
     }
 
-    @Override // g0.e
-    public final /* bridge */ /* synthetic */ Object c() {
-        return null;
-    }
+    public abstract Object c();
 
-    @Override // g0.e
-    public final /* bridge */ /* synthetic */ Object d(List list) {
-        return null;
-    }
+    public abstract Object d(List list);
 }

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class MusicPlayerReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -18,10 +18,10 @@ public class MusicPlayerReceiver extends BroadcastReceiver {
             int keyCode = keyEvent.getKeyCode();
             if (keyCode == 79 || keyCode == 85) {
                 if (MediaController.B().H()) {
-                    MediaController.B().S(MediaController.B().u0);
+                    MediaController.B().S(MediaController.B().v0);
                     return;
                 } else {
-                    MediaController.B().R(MediaController.B().u0, true);
+                    MediaController.B().R(MediaController.B().v0, true);
                     return;
                 }
             }
@@ -33,39 +33,39 @@ public class MusicPlayerReceiver extends BroadcastReceiver {
                 MediaController.B().V();
                 return;
             } else if (keyCode == 126) {
-                MediaController.B().S(MediaController.B().u0);
+                MediaController.B().S(MediaController.B().v0);
                 return;
             } else {
                 if (keyCode != 127) {
                     return;
                 }
-                MediaController.B().R(MediaController.B().u0, true);
+                MediaController.B().R(MediaController.B().v0, true);
             }
         }
         String action = intent.getAction();
         action.getClass();
         switch (action) {
             case "org.telegram.android.musicplayer.repeat":
-                iz.E((iz.S0 + 1) % 3);
+                gz.E((gz.S0 + 1) % 3);
                 break;
             case "org.telegram.android.musicplayer.close":
                 MediaController.B().q(true, true, false, false);
                 break;
             case "org.telegram.android.musicplayer.pause":
             case "android.media.AUDIO_BECOMING_NOISY":
-                MediaController.B().R(MediaController.B().u0, true);
+                MediaController.B().R(MediaController.B().v0, true);
                 break;
             case "org.telegram.android.musicplayer.next":
                 MediaController.B().U(false);
                 break;
             case "org.telegram.android.musicplayer.play":
-                MediaController.B().S(MediaController.B().u0);
+                MediaController.B().S(MediaController.B().v0);
                 break;
             case "org.telegram.android.musicplayer.previous":
                 MediaController.B().V();
                 break;
             case "org.telegram.android.musicplayer.shuffle":
-                if (!iz.N0) {
+                if (!gz.N0) {
                     MediaController.B().l0(2);
                     break;
                 } else {

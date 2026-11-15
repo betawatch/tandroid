@@ -1,31 +1,29 @@
 package org.telegram.messenger;
 
-import android.os.SystemClock;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class qb {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gc b;
+public abstract /* synthetic */ class qb {
+    public static final /* synthetic */ int[] a;
 
-    public qb(gc gcVar, int i7) {
-        this.b = gcVar;
-        this.a = i7;
-    }
-
-    public final void a(y8 y8Var, final String str, final long j3, final long j10, final boolean z9) {
-        this.b.u.put(str, new long[]{j3, j10});
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j11 = y8Var.S;
-        if (j11 == 0 || j11 < elapsedRealtime - 100 || j3 == j10) {
-            y8Var.S = elapsedRealtime;
-            final int i7 = this.a;
-            g0.h3(new Runnable() { // from class: org.telegram.messenger.mb
-                @Override // java.lang.Runnable
-                public final void run() {
-                    qs.f(i7).k(qs.W1, str, Long.valueOf(j3), Long.valueOf(j10), Boolean.valueOf(z9));
-                }
-            });
+    static {
+        Bitmap.CompressFormat compressFormat;
+        int[] iArr = new int[Bitmap.CompressFormat.values().length];
+        a = iArr;
+        try {
+            iArr[Bitmap.CompressFormat.WEBP.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
+        }
+        try {
+            int[] iArr2 = a;
+            compressFormat = Bitmap.CompressFormat.WEBP_LOSSY;
+            iArr2[compressFormat.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            a[Bitmap.CompressFormat.WEBP_LOSSLESS.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
         }
     }
 }

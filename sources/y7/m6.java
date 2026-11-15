@@ -1,113 +1,17 @@
 package y7;
 
-import org.telegram.messenger.qs;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public enum m6 implements f {
-    b(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF5(3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF9(6),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF11(7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF14(8),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(9),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF4(100),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF8(101),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF10(qs.n1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF12(qs.o1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF13(qs.p1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(qs.q1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(qs.r1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(qs.s1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(qs.t1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(qs.u1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(qs.v1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(qs.w1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(qs.x1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(qs.y1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(qs.z1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(qs.A1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(qs.B1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(qs.f3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(qs.g3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(203),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(qs.i3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(qs.j3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(qs.k3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(qs.l3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(qs.Y4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(qs.Z4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(qs.a5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(qs.b5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(qs.c5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(400),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(401),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(402),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(403),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(404),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(405),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(406),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(407),
-    c(9999);
+public final class m6 {
+    public final h8 a;
+    public final l6 b;
+    public final j6 c;
+    public final k7 d;
 
-    public final int a;
-
-    m6(int i7) {
-        this.a = i7;
-    }
-
-    @Override // y7.f
-    public final int zza() {
-        return this.a;
+    public /* synthetic */ m6(xi.e eVar) {
+        this.a = (h8) eVar.a;
+        this.b = (l6) eVar.b;
+        this.c = (j6) eVar.c;
+        this.d = (k7) eVar.d;
     }
 }

@@ -1,527 +1,293 @@
 package hi;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import c8.ha;
-import fi.y5;
-import java.io.File;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.k5;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.t10;
-import org.telegram.messenger.w7;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.ma;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.pj0;
-import org.webrtc.MediaStreamTrack;
+import android.text.SpannableStringBuilder;
+import android.view.MotionEvent;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.hd;
+import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.w61;
+import org.telegram.ui.an;
+import org.telegram.ui.cm0;
+import org.telegram.ui.e81;
+import org.telegram.ui.im0;
+import org.telegram.ui.jy0;
+import org.telegram.ui.ly0;
+import org.telegram.ui.my0;
+import org.telegram.ui.nj;
+import org.telegram.ui.xr0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class i1 extends ma {
-    public final int S1;
-    public final String T1;
-    public m41 U1;
-    public final f1 V1;
-    public boolean W1;
-    public boolean X1;
-    public final bi.t0 Y1;
-    public int Z1;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class i1 extends w61 {
+    public final /* synthetic */ int W;
+    public final /* synthetic */ Object a0;
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v1 */
-    /* JADX WARN: Type inference failed for: r11v13 */
-    /* JADX WARN: Type inference failed for: r11v2, types: [boolean, int] */
-    public i1(Context context, int i7, long j3, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File file, TLRPC.WebPage webPage, h6 h6Var, org.telegram.ui.web.p pVar, bi.t0 t0Var) {
-        super(context, null, false, false, h6Var);
-        ?? r11;
-        int i10;
-        h1 d12;
-        String str;
-        String absolutePath;
-        boolean z9;
-        char c10;
-        TLRPC.TL_document tL_document;
-        TLRPC.TL_photo tL_photo;
-        int i11;
-        TLRPC.TL_photo tL_photo2;
-        this.W1 = false;
-        this.X1 = false;
-        this.S1 = i7;
-        this.T1 = t10.p(qp.s1(i7).a2(Long.valueOf(j3)));
-        this.Y1 = t0Var;
-        Y0();
-        this.C1 = org.telegram.messenger.g0.L(4.0f);
-        this.D1 = org.telegram.messenger.g0.L(-10.0f);
-        TLRPC.BotInlineResult botInlineResult = tL_messages_preparedInlineMessage.result;
-        if (file != null && file.exists() && webPage == null) {
-            str = botInlineResult.type;
-            absolutePath = file.getAbsolutePath();
-            str.getClass();
-            z9 = true;
-            switch (str) {
-                case "sticker":
-                case "gif":
-                case "file":
-                case "audio":
-                case "video":
-                case "voice":
-                    TLRPC.TL_document tL_document2 = new TLRPC.TL_document();
-                    tL_document2.id = 0L;
-                    tL_document2.size = 0L;
-                    tL_document2.dc_id = 0;
-                    tL_document2.mime_type = botInlineResult.content.mime_type;
-                    tL_document2.file_reference = new byte[0];
-                    tL_document2.date = ConnectionsManager.getInstance(i7).getCurrentTime();
-                    TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
-                    tL_document2.attributes.add(tL_documentAttributeFilename);
-                    switch (str.hashCode()) {
-                        case -1890252483:
-                            if (str.equals("sticker")) {
-                                c10 = 0;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 102340:
-                            if (str.equals("gif")) {
-                                c10 = 1;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 3143036:
-                            if (str.equals("file")) {
-                                c10 = 2;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 93166550:
-                            if (str.equals(MediaStreamTrack.AUDIO_TRACK_KIND)) {
-                                c10 = 3;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 112202875:
-                            if (str.equals(MediaStreamTrack.VIDEO_TRACK_KIND)) {
-                                c10 = 4;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 112386354:
-                            if (str.equals("voice")) {
-                                c10 = 5;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        default:
-                            c10 = 65535;
-                            break;
-                    }
-                    switch (c10) {
-                        case 0:
-                            TLRPC.TL_documentAttributeSticker tL_documentAttributeSticker = new TLRPC.TL_documentAttributeSticker();
-                            tL_documentAttributeSticker.alt = "";
-                            tL_documentAttributeSticker.stickerset = new TLRPC.TL_inputStickerSetEmpty();
-                            tL_document2.attributes.add(tL_documentAttributeSticker);
-                            TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
-                            int[] g12 = ij.g1(botInlineResult);
-                            tL_documentAttributeImageSize.w = g12[0];
-                            tL_documentAttributeImageSize.h = g12[1];
-                            tL_document2.attributes.add(tL_documentAttributeImageSize);
-                            tL_documentAttributeFilename.file_name = "sticker.webp";
-                            try {
-                                if (botInlineResult.thumb != null) {
-                                    Bitmap K = gc.K(new File(w7.z(4), Utilities.a(botInlineResult.thumb.url) + "." + gc.B(botInlineResult.thumb.url, "webp")).getAbsolutePath(), null, 90.0f, 90.0f, true);
-                                    if (K != null) {
-                                        TLRPC.PhotoSize Z = gc.Z(K, 90.0f, 90.0f, 55, false);
-                                        if (Z != null) {
-                                            tL_document2.thumbs.add(Z);
-                                            tL_document2.flags |= 1;
-                                        }
-                                        K.recycle();
-                                        break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i1(int i7, Context context, Object obj) {
+        super(context, null);
+        this.W = i7;
+        this.a0 = obj;
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public int F() {
+        switch (this.W) {
+            case 9:
+                return 12;
+            default:
+                return super.F();
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00de A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.ui.Components.w61
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean b(MotionEvent motionEvent) {
+        int i7;
+        View E;
+        int R;
+        switch (this.W) {
+            case 1:
+                q8 q8Var = (q8) this.a0;
+                View currentView = q8Var.m1.getCurrentView();
+                if (!(currentView instanceof l8)) {
+                    return true;
+                }
+                if (getCurrentPosition() > 0) {
+                    q8Var.M0();
+                    return true;
+                }
+                l8 l8Var = (l8) currentView;
+                ArrayList arrayList = l8Var.M;
+                uj0 uj0Var = l8Var.f;
+                if (l8Var.a == 0 && motionEvent != null && (E = uj0Var.E(motionEvent.getX(), motionEvent.getY() - l8Var.e.getPaddingTop())) != null && (R = RecyclerView.R(E)) >= 0 && R < arrayList.size()) {
+                    z7 z7Var = (z7) arrayList.get(R);
+                    if (z7Var.a == 3 && !z7Var.n) {
+                        boolean z10 = hd.a0;
+                        float x10 = motionEvent.getX();
+                        if (!z10 ? x10 > org.telegram.messenger.g0.L(100.0f) : x10 < l8Var.getWidth() - org.telegram.messenger.g0.L(100.0f)) {
+                            i7 = z7Var.i;
+                            if (i7 != -1) {
+                                q8Var.H1 = i7;
+                                if (i7 == 3) {
+                                    if (!q8Var.s1.isEmpty() && !q8Var.t1.isEmpty()) {
+                                        q8Var.I1 = i7;
                                     }
+                                } else if (i7 != 4) {
+                                    q8Var.I1 = i7;
+                                } else if (!q8Var.o1.isEmpty() && !q8Var.p1.isEmpty()) {
+                                    q8Var.I1 = i7;
                                 }
-                            } catch (Throwable th2) {
-                                a8.g(th2, true);
-                                break;
+                                l8Var.g(true);
+                                l8Var.f(true);
                             }
-                            break;
-                        case 1:
-                            tL_documentAttributeFilename.file_name = "animation.gif";
-                            if (!absolutePath.endsWith("mp4")) {
-                                tL_document2.mime_type = "image/gif";
-                                break;
-                            } else {
-                                tL_document2.mime_type = "video/mp4";
-                                tL_document2.attributes.add(new TLRPC.TL_documentAttributeAnimated());
-                                break;
+                            if (i7 != -1) {
+                                q8Var.M0();
                             }
-                        case 2:
-                            int lastIndexOf = botInlineResult.content.mime_type.lastIndexOf(47);
-                            if (lastIndexOf == -1) {
-                                tL_documentAttributeFilename.file_name = "file";
-                                break;
-                            } else {
-                                tL_documentAttributeFilename.file_name = "file." + botInlineResult.content.mime_type.substring(lastIndexOf + 1);
-                                break;
-                            }
-                        case 3:
-                            TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio = new TLRPC.TL_documentAttributeAudio();
-                            tL_documentAttributeAudio.duration = ij.f1(botInlineResult);
-                            tL_documentAttributeAudio.title = botInlineResult.title;
-                            int i12 = tL_documentAttributeAudio.flags;
-                            tL_documentAttributeAudio.flags = i12 | 1;
-                            String str2 = botInlineResult.description;
-                            if (str2 != null) {
-                                tL_documentAttributeAudio.performer = str2;
-                                tL_documentAttributeAudio.flags = i12 | 3;
-                            }
-                            tL_documentAttributeFilename.file_name = "audio.mp3";
-                            tL_document2.attributes.add(tL_documentAttributeAudio);
-                            break;
-                        case 4:
-                            tL_documentAttributeFilename.file_name = "video.mp4";
-                            TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo = new TLRPC.TL_documentAttributeVideo();
-                            int[] g13 = ij.g1(botInlineResult);
-                            tL_documentAttributeVideo.w = g13[0];
-                            tL_documentAttributeVideo.h = g13[1];
-                            tL_documentAttributeVideo.duration = ij.f1(botInlineResult);
-                            tL_documentAttributeVideo.supports_streaming = true;
-                            tL_document2.attributes.add(tL_documentAttributeVideo);
-                            try {
-                                if (botInlineResult.thumb != null) {
-                                    Bitmap K2 = gc.K(new File(w7.z(4), Utilities.a(botInlineResult.thumb.url) + "." + gc.B(botInlineResult.thumb.url, "jpg")).getAbsolutePath(), null, 90.0f, 90.0f, true);
-                                    if (K2 != null) {
-                                        TLRPC.PhotoSize Z2 = gc.Z(K2, 90.0f, 90.0f, 55, false);
-                                        if (Z2 != null) {
-                                            tL_document2.thumbs.add(Z2);
-                                            tL_document2.flags |= 1;
-                                        }
-                                        K2.recycle();
-                                        break;
-                                    }
-                                }
-                            } catch (Throwable th3) {
-                                a8.g(th3, true);
-                                break;
-                            }
-                            break;
-                        case 5:
-                            TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio2 = new TLRPC.TL_documentAttributeAudio();
-                            tL_documentAttributeAudio2.duration = ij.f1(botInlineResult);
-                            tL_documentAttributeAudio2.voice = true;
-                            tL_documentAttributeFilename.file_name = "audio.ogg";
-                            tL_document2.attributes.add(tL_documentAttributeAudio2);
-                            break;
+                            return i7 == -1;
+                        }
                     }
-                    if (tL_documentAttributeFilename.file_name == null) {
-                        tL_documentAttributeFilename.file_name = "file";
-                    }
-                    if (tL_document2.mime_type == null) {
-                        tL_document2.mime_type = "application/octet-stream";
-                    }
-                    if (tL_document2.thumbs.isEmpty()) {
-                        TLRPC.TL_photoSize tL_photoSize = new TLRPC.TL_photoSize();
-                        int[] g14 = ij.g1(botInlineResult);
-                        tL_photoSize.w = g14[0];
-                        z9 = true;
-                        tL_photoSize.h = g14[1];
-                        tL_photoSize.size = 0;
-                        tL_photoSize.location = new TLRPC.TL_fileLocationUnavailable();
-                        tL_photoSize.type = "x";
-                        tL_document2.thumbs.add(tL_photoSize);
-                        tL_document2.flags |= 1;
-                    } else {
-                        z9 = true;
-                    }
-                    tL_document = tL_document2;
-                    tL_photo = null;
-                    break;
-                case "photo":
-                    if (file.exists()) {
-                        i11 = 0;
-                        tL_photo2 = gz.C(i7).A(absolutePath, null, false);
-                    } else {
-                        i11 = 0;
-                        tL_photo2 = null;
-                    }
-                    if (tL_photo2 == null) {
-                        tL_photo2 = new TLRPC.TL_photo();
-                        tL_photo2.date = ConnectionsManager.getInstance(i7).getCurrentTime();
-                        tL_photo2.file_reference = new byte[i11];
-                        TLRPC.TL_photoSize tL_photoSize2 = new TLRPC.TL_photoSize();
-                        int[] g15 = ij.g1(botInlineResult);
-                        tL_photoSize2.w = g15[i11];
-                        tL_photoSize2.h = g15[1];
-                        tL_photoSize2.size = 1;
-                        tL_photoSize2.location = new TLRPC.TL_fileLocationUnavailable();
-                        tL_photoSize2.type = "x";
-                        tL_photo2.sizes.add(tL_photoSize2);
-                    }
-                    tL_photo = tL_photo2;
-                    tL_document = null;
-                    z9 = true;
-                    break;
-                default:
-                    tL_photo = null;
-                    tL_document = null;
-                    break;
-            }
-            i10 = i7;
-            r11 = z9;
-            d12 = d1(i10, j3, botInlineResult, tL_photo, tL_document, null);
-        } else {
-            r11 = 1;
-            i10 = i7;
-            d12 = d1(i10, j3, botInlineResult, null, null, webPage);
-        }
-        h1 h1Var = d12;
-        org.telegram.ui.Cells.t0 t0Var2 = new org.telegram.ui.Cells.t0(context, h6Var, false);
-        t0Var2.setDelegate(new c1());
-        t0Var2.setCustomText(id.M0(2131752979, null));
-        d1 d1Var = new d1(context, i10);
-        d1Var.setDelegate(new e1());
-        d1Var.w3(h1Var, null, false, false, false, false);
-        LinearLayout f10 = k5.f(context, r11);
-        f10.addView(t0Var2, ha.o(-1, -2));
-        f10.addView(d1Var, ha.o(-1, -2));
-        f1 f1Var = new f1(context, null);
-        this.V1 = f1Var;
-        f1Var.U(y5.e(null, i10, j3, m6.I.q()));
-        f1Var.addView(f10, ha.d(-1, -1.0f, qs.E1, 4.0f, 8.0f, 4.0f, 8.0f));
-        FrameLayout frameLayout = new FrameLayout(context);
-        fi.d h = k5.h(24, context, h6Var, r11);
-        h.i(id.M0(2131752978, null), false, r11);
-        h.setOnClickListener(new bi.d1(this, tL_messages_preparedInlineMessage, t0Var, i10, j3, pVar));
-        frameLayout.addView(h, ha.d(-1, 48.0f, qs.E1, 10.0f, 10.0f, 10.0f, 10.0f));
-        ViewGroup viewGroup = this.b;
-        int i13 = this.t0;
-        viewGroup.addView(frameLayout, ha.f(-2.0f, -1, 87, i13, 0, i13, 0));
-        pj0 pj0Var = this.n1;
-        int i14 = this.t0;
-        pj0Var.setPadding(i14, 0, i14, org.telegram.messenger.g0.L(68.0f) + r11);
-        this.n1.r1();
-        int i15 = m6.a7;
-        v0(m6.w0(i15, this.I0));
-        P(i15);
-        this.U1.O(false);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v7, types: [org.telegram.tgnet.TLRPC$Photo] */
-    /* JADX WARN: Type inference failed for: r9v0, types: [org.telegram.tgnet.TLRPC$TL_document] */
-    /* JADX WARN: Type inference failed for: r9v1, types: [org.telegram.tgnet.TLRPC$Document] */
-    /* JADX WARN: Type inference failed for: r9v2, types: [org.telegram.tgnet.TLRPC$Document] */
-    public static h1 d1(int i7, long j3, TLRPC.BotInlineResult botInlineResult, TLRPC.TL_photo tL_photo, TLRPC.TL_document tL_document, TLRPC.WebPage webPage) {
-        TLRPC.ReplyMarkup replyMarkup;
-        TLRPC.TL_photo tL_photo2 = tL_photo;
-        if (tL_photo == null) {
-            tL_photo2 = botInlineResult.photo;
-        }
-        if (tL_document == 0) {
-            tL_document = botInlineResult.document;
-        }
-        TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.out = false;
-        tL_message.flags |= 2048;
-        tL_message.via_bot_id = j3;
-        tL_message.date = ConnectionsManager.getInstance(i7).getCurrentTime();
-        tL_message.peer_id = qp.s1(i7).z1(p10.i(i7).e());
-        tL_message.from_id = qp.s1(i7).z1(p10.i(i7).e());
-        TLRPC.BotInlineMessage botInlineMessage = botInlineResult.send_message;
-        if (botInlineMessage != null) {
-            if (botInlineMessage instanceof TLRPC.TL_botInlineMessageText) {
-                TLRPC.TL_botInlineMessageText tL_botInlineMessageText = (TLRPC.TL_botInlineMessageText) botInlineMessage;
-                tL_message.message = tL_botInlineMessageText.message;
-                tL_message.entities = tL_botInlineMessageText.entities;
-            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaContact) {
-                TLRPC.TL_botInlineMessageMediaContact tL_botInlineMessageMediaContact = (TLRPC.TL_botInlineMessageMediaContact) botInlineMessage;
-                TLRPC.TL_messageMediaContact tL_messageMediaContact = new TLRPC.TL_messageMediaContact();
-                tL_messageMediaContact.phone_number = tL_botInlineMessageMediaContact.phone_number;
-                tL_messageMediaContact.first_name = tL_botInlineMessageMediaContact.first_name;
-                tL_messageMediaContact.last_name = tL_botInlineMessageMediaContact.last_name;
-                tL_messageMediaContact.vcard = tL_botInlineMessageMediaContact.vcard;
-                tL_message.flags |= 512;
-                tL_message.media = tL_messageMediaContact;
-            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaGeo) {
-                TLRPC.TL_messageMediaGeo tL_messageMediaGeo = new TLRPC.TL_messageMediaGeo();
-                tL_messageMediaGeo.geo = ((TLRPC.TL_botInlineMessageMediaGeo) botInlineMessage).geo;
-                tL_message.flags |= 512;
-                tL_message.media = tL_messageMediaGeo;
-            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaVenue) {
-                TLRPC.TL_botInlineMessageMediaVenue tL_botInlineMessageMediaVenue = (TLRPC.TL_botInlineMessageMediaVenue) botInlineMessage;
-                TLRPC.TL_messageMediaVenue tL_messageMediaVenue = new TLRPC.TL_messageMediaVenue();
-                tL_messageMediaVenue.geo = tL_botInlineMessageMediaVenue.geo;
-                tL_messageMediaVenue.title = tL_botInlineMessageMediaVenue.title;
-                tL_messageMediaVenue.address = tL_botInlineMessageMediaVenue.address;
-                tL_messageMediaVenue.venue_id = tL_botInlineMessageMediaVenue.venue_id;
-                tL_messageMediaVenue.provider = tL_botInlineMessageMediaVenue.venue_type;
-                tL_message.flags |= 512;
-                tL_message.media = tL_messageMediaVenue;
-            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaAuto) {
-                TLRPC.TL_botInlineMessageMediaAuto tL_botInlineMessageMediaAuto = (TLRPC.TL_botInlineMessageMediaAuto) botInlineMessage;
-                tL_message.message = tL_botInlineMessageMediaAuto.message;
-                if (TLObject.hasFlag(tL_botInlineMessageMediaAuto.flags, 2)) {
-                    tL_message.flags |= 128;
-                    tL_message.entities = tL_botInlineMessageMediaAuto.entities;
                 }
-            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaInvoice) {
-                TLRPC.TL_botInlineMessageMediaInvoice tL_botInlineMessageMediaInvoice = (TLRPC.TL_botInlineMessageMediaInvoice) botInlineMessage;
-                TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice = new TLRPC.TL_messageMediaInvoice();
-                tL_messageMediaInvoice.shipping_address_requested = tL_botInlineMessageMediaInvoice.shipping_address_requested;
-                tL_messageMediaInvoice.test = tL_botInlineMessageMediaInvoice.test;
-                tL_messageMediaInvoice.title = tL_botInlineMessageMediaInvoice.title;
-                tL_messageMediaInvoice.description = tL_botInlineMessageMediaInvoice.description;
-                if (TLObject.hasFlag(tL_botInlineMessageMediaInvoice.flags, 1)) {
-                    tL_messageMediaInvoice.flags |= 128;
-                    tL_messageMediaInvoice.webPhoto = tL_botInlineMessageMediaInvoice.photo;
+                i7 = -1;
+                if (i7 != -1) {
                 }
-                tL_messageMediaInvoice.currency = tL_botInlineMessageMediaInvoice.currency;
-                tL_messageMediaInvoice.total_amount = tL_botInlineMessageMediaInvoice.total_amount;
-                tL_message.flags |= 512;
-                tL_message.media = tL_messageMediaInvoice;
-            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaWebPage) {
-                TLRPC.TL_botInlineMessageMediaWebPage tL_botInlineMessageMediaWebPage = (TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage;
-                TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
-                tL_messageMediaWebPage.force_large_media = tL_botInlineMessageMediaWebPage.force_large_media;
-                tL_messageMediaWebPage.force_small_media = tL_botInlineMessageMediaWebPage.force_small_media;
-                tL_messageMediaWebPage.manual = tL_botInlineMessageMediaWebPage.manual;
-                tL_messageMediaWebPage.safe = tL_botInlineMessageMediaWebPage.safe;
-                tL_message.invert_media = tL_botInlineMessageMediaWebPage.invert_media;
-                tL_message.message = tL_botInlineMessageMediaWebPage.message;
-                if (webPage != null) {
-                    tL_messageMediaWebPage.webpage = webPage;
-                } else {
-                    TLRPC.TL_webPage tL_webPage = new TLRPC.TL_webPage();
-                    if (TLObject.hasFlag(tL_botInlineMessageMediaWebPage.flags, 2)) {
-                        tL_message.flags |= 128;
-                        tL_message.entities = tL_botInlineMessageMediaWebPage.entities;
+                if (i7 != -1) {
+                }
+                if (i7 == -1) {
+                }
+                break;
+            case 2:
+            default:
+                return super.b(motionEvent);
+            case 3:
+                nj njVar = ((an) this.a0).E1;
+                return njVar != null && njVar.b > 0.5f;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public boolean e(MotionEvent motionEvent) {
+        switch (this.W) {
+            case 2:
+                return getCurrentPosition() != 2;
+            default:
+                return super.e(motionEvent);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public boolean f(MotionEvent motionEvent) {
+        switch (this.W) {
+            case 2:
+                return false;
+            case 6:
+                return false;
+            default:
+                return super.f(motionEvent);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.W) {
+            case 3:
+                return false;
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public void q(View view, View view2, int i7, int i10) {
+        switch (this.W) {
+            case 1:
+                q8 q8Var = (q8) this.a0;
+                if (q8Var.d) {
+                    q8Var.M0();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public void r() {
+        switch (this.W) {
+            case 2:
+                if (getCurrentPosition() == 1) {
+                    ((li.d0) this.a0).v1.d.g3.O(false);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public void s() {
+        jy0 jy0Var;
+        switch (this.W) {
+            case 6:
+                if ((getCurrentView() instanceof ly0) && (jy0Var = ((ly0) getCurrentView()).n) != null) {
+                    org.telegram.messenger.g0.v1(jy0Var);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public final void t(boolean z10) {
+        switch (this.W) {
+            case 0:
+                i2 i2Var = (i2) this.a0;
+                i1 i1Var = i2Var.q1;
+                h2 h2Var = i2Var.r1;
+                if (h2Var != null) {
+                    h2Var.G = i1Var.getPositionAnimated();
+                    h2Var.invalidate();
+                }
+                i2Var.b.invalidate();
+                invalidate();
+                i2.C1 = i1Var.getCurrentPosition();
+                break;
+            case 1:
+                ((q8) this.a0).b.invalidate();
+                break;
+            case 2:
+                ((li.d0) this.a0).b.invalidate();
+                break;
+            case 3:
+                an anVar = (an) this.a0;
+                anVar.m1.getClass();
+                anVar.m1.getClass();
+                anVar.A7();
+                break;
+            case 4:
+                im0 im0Var = (im0) this.a0;
+                float positionAnimated = im0Var.J.getPositionAnimated();
+                im0Var.N.setSelected(positionAnimated);
+                im0Var.e.setProgressToGradient(1.0f - c8.i9.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
+                im0Var.K0();
+                cm0 H0 = im0Var.H0();
+                d dVar = im0Var.R;
+                if (dVar != null && H0 != null && H0 != im0Var.S) {
+                    im0Var.S = H0;
+                    ji.j jVar = H0.e;
+                    dVar.i((CharSequence) jVar.b, true, true);
+                    im0Var.R.g((SpannableStringBuilder) jVar.c, true);
+                    break;
+                }
+                break;
+            case 5:
+                ((xr0) this.a0).e();
+                break;
+            case 6:
+                ((my0) this.a0).b.invalidate();
+                break;
+            case 7:
+                ((e81) this.a0).e();
+                break;
+            case 8:
+                ((org.telegram.ui.Wallet.w2) this.a0).b.invalidate();
+                break;
+            default:
+                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.a0;
+                y5Var.a1();
+                org.telegram.ui.Wallet.c8 c8Var = y5Var.k0;
+                if (c8Var != null && c8Var.i1) {
+                    c8Var.f0();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public void v(int i7) {
+        org.telegram.ui.Wallet.u8 u8Var;
+        switch (this.W) {
+            case 9:
+                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.a0;
+                y5Var.f0 = i7;
+                if (i7 != 1 && (u8Var = y5Var.j0) != null) {
+                    u8Var.b(false);
+                }
+                if (i7 == 1) {
+                    y5Var.q0.post(new org.telegram.ui.Wallet.e4(y5Var, 13));
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public void x(int i7) {
+        switch (this.W) {
+            case 3:
+                if (i7 == 0) {
+                    an anVar = (an) this.a0;
+                    if (anVar.H1) {
+                        anVar.H1 = false;
+                        anVar.F1.h.clear();
+                        break;
                     }
-                    String str = tL_botInlineMessageMediaWebPage.url;
-                    tL_webPage.display_url = str;
-                    tL_webPage.url = str;
-                    tL_messageMediaWebPage.webpage = tL_webPage;
                 }
-                tL_message.flags |= 512;
-                tL_message.media = tL_messageMediaWebPage;
-            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageRichMessage) {
-                tL_message.flags2 |= TLObject.FLAG_13;
-                tL_message.rich_message = ((TLRPC.TL_botInlineMessageRichMessage) botInlineMessage).rich_message;
-            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageWidget) {
-                TLRPC.TL_botInlineMessageWidget tL_botInlineMessageWidget = (TLRPC.TL_botInlineMessageWidget) botInlineMessage;
-                TLRPC.TL_messageMediaWidget tL_messageMediaWidget = new TLRPC.TL_messageMediaWidget();
-                tL_messageMediaWidget.width = tL_botInlineMessageWidget.width;
-                tL_messageMediaWidget.height = tL_botInlineMessageWidget.height;
-                tL_messageMediaWidget.payload = tL_botInlineMessageWidget.payload;
-                tL_messageMediaWidget.public_data = tL_botInlineMessageWidget.public_data;
-                tL_messageMediaWidget.public_data_hash = tL_botInlineMessageWidget.public_data_hash;
-                tL_messageMediaWidget.chat_data = tL_botInlineMessageWidget.chat_data;
-                tL_messageMediaWidget.widget_id = tL_botInlineMessageWidget.widget_id;
-                tL_message.message = tL_botInlineMessageWidget.message;
-                tL_message.entities = tL_botInlineMessageWidget.entities;
-                tL_message.invert_media = tL_botInlineMessageWidget.invert_media;
-                tL_message.flags |= 512;
-                tL_message.media = tL_messageMediaWidget;
-            }
-        }
-        boolean z9 = botInlineResult.send_message instanceof TLRPC.TL_botInlineMessageWidget;
-        if (tL_photo2 != null) {
-            TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = new TLRPC.TL_messageMediaPhoto();
-            tL_messageMediaPhoto.photo = tL_photo2;
-            tL_message.flags |= 512;
-            tL_message.media = tL_messageMediaPhoto;
-        } else if (tL_document != 0) {
-            TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
-            tL_messageMediaDocument.flags = 1 | tL_messageMediaDocument.flags;
-            tL_messageMediaDocument.voice = "voice".equalsIgnoreCase(botInlineResult.type);
-            tL_messageMediaDocument.round = "round".equalsIgnoreCase(botInlineResult.type);
-            tL_messageMediaDocument.document = tL_document;
-            tL_message.flags |= 512;
-            tL_message.media = tL_messageMediaDocument;
-        }
-        TLRPC.BotInlineMessage botInlineMessage2 = botInlineResult.send_message;
-        if (botInlineMessage2 != null && (replyMarkup = botInlineMessage2.reply_markup) != null) {
-            tL_message.flags |= 64;
-            tL_message.reply_markup = replyMarkup;
-        }
-        return new h1(i7, tL_message, z9, botInlineResult);
-    }
-
-    public static void e1(Context context, int i7, long j3, String str, h6 h6Var, org.telegram.ui.web.p pVar, bi.t0 t0Var) {
-        org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, context, null);
-        u1Var.r(500L);
-        TLRPC.TL_messages_getPreparedInlineMessage tL_messages_getPreparedInlineMessage = new TLRPC.TL_messages_getPreparedInlineMessage();
-        tL_messages_getPreparedInlineMessage.bot = qp.s1(i7).o1(j3);
-        tL_messages_getPreparedInlineMessage.id = str;
-        ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getPreparedInlineMessage, new w0(i7, u1Var, context, j3, h6Var, pVar, t0Var));
-    }
-
-    @Override // org.telegram.ui.Components.ma
-    public final oj0 L0(pj0 pj0Var) {
-        m41 m41Var = new m41(pj0Var, getContext(), this.S1, 0, true, new ai.e(this, 29), this.I0);
-        this.U1 = m41Var;
-        return m41Var;
-    }
-
-    @Override // org.telegram.ui.Components.ma
-    public final CharSequence O0() {
-        return id.M0(2131752981, null);
-    }
-
-    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
-    public final void dismiss() {
-        super.dismiss();
-        if (this.W1 || this.X1) {
-            return;
-        }
-        this.X1 = true;
-        bi.t0 t0Var = this.Y1;
-        if (t0Var != null) {
-            t0Var.a("USER_DECLINED", null);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        pj0 pj0Var = this.n1;
-        pj0Var.v0(Math.max((pj0Var.getAdapter() == null ? 0 : pj0Var.getAdapter().b()) - 1, 0));
-    }
-
-    @Override // org.telegram.ui.ActionBar.w2
-    public final void s0() {
-        try {
-            super.s0();
-            int w02 = m6.w0(m6.a7, this.I0);
-            if (w02 != this.Z1) {
-                this.Z1 = w02;
-                v0(w02);
-            }
-        } catch (Exception e10) {
-            a8.g(e10, true);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i1(org.telegram.ui.ActionBar.e2 e2Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i7) {
+        super(context, e6Var);
+        this.W = i7;
+        this.a0 = e2Var;
     }
 }

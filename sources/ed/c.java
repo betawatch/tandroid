@@ -1,10 +1,11 @@
 package ed;
 
-import c8.x0;
+import c8.y0;
+import com.google.android.gms.internal.vision.e2;
 import java.util.regex.Pattern;
 import kf.p;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c extends h {
     public static final Pattern e = Pattern.compile("`+");
@@ -29,8 +30,8 @@ public final class c extends h {
         String replace = this.c.substring(i7, this.d - a11.length()).replace('\n', ' ');
         if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
             int length = replace.length();
-            if (x0.b(' ', 0, length, replace) != length) {
-                replace = com.google.android.recaptcha.internal.a.k(replace, 1, 1);
+            if (y0.b(' ', 0, length, replace) != length) {
+                replace = e2.k(replace, 1, 1);
             }
         }
         dVar.h = replace;

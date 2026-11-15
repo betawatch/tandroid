@@ -1,101 +1,215 @@
 package org.telegram.messenger;
 
+import android.content.SharedPreferences;
+import android.os.SystemClock;
+import android.util.Pair;
 import java.util.ArrayList;
-import org.telegram.ui.SecretMediaViewer;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tj implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qp b;
-    public final /* synthetic */ a0.h c;
-    public final /* synthetic */ a0.h d;
+    public final /* synthetic */ np b;
 
-    public /* synthetic */ tj(qp qpVar, a0.h hVar, a0.h hVar2, int i7) {
+    public /* synthetic */ tj(np npVar, int i7) {
         this.a = i7;
-        this.b = qpVar;
-        this.c = hVar;
-        this.d = hVar2;
+        this.b = npVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     @Override // java.lang.Runnable
     public final void run() {
-        boolean z9;
-        ArrayList arrayList;
-        boolean z10 = false;
+        int i7 = 1;
         switch (this.a) {
             case 0:
-                qp qpVar = this.b;
-                a0.h hVar = this.c;
-                a0.h hVar2 = this.d;
-                if (hVar != null) {
-                    int i7 = 0;
-                    for (int m10 = hVar.m(); i7 < m10; m10 = m10) {
-                        ArrayList arrayList2 = (ArrayList) hVar.n(i7);
-                        qpVar.a0(arrayList2, null, null, hVar.j(i7), true, 0, !arrayList2.isEmpty() && ((Integer) arrayList2.get(0)).intValue() > 0, 0L, null, 0);
-                        i7++;
-                        hVar2 = hVar2;
-                    }
-                }
-                a0.h hVar3 = hVar2;
-                if (hVar3 != null) {
-                    Object[] objArr = SecretMediaViewer.g() && SecretMediaViewer.f().s;
-                    ij ijVar = objArr != false ? SecretMediaViewer.f().f0 : null;
-                    int m11 = hVar3.m();
-                    int i10 = 0;
-                    while (i10 < m11) {
-                        long j3 = hVar3.j(i10);
-                        ArrayList arrayList3 = (ArrayList) hVar3.n(i10);
-                        if (objArr == true && ijVar != null && ijVar.I1 == qpVar.currentAccount && ij.B0(ijVar.k) == j3 && arrayList3.contains(Integer.valueOf(ijVar.e1()))) {
-                            int e12 = ijVar.e1();
-                            arrayList3.remove(Integer.valueOf(e12));
-                            ijVar.G0 = true;
-                            long V = qpVar.V(e12, j3);
-                            z9 = z10;
-                            arrayList = arrayList3;
-                            qp qpVar2 = qpVar;
-                            qpVar = qpVar2;
-                            SecretMediaViewer.f().n1 = new vk(e12, V, j3, qpVar2);
-                            qs notificationCenter = qpVar.getNotificationCenter();
-                            Object[] objArr2 = new Object[1];
-                            objArr2[z9 ? 1 : 0] = ijVar.k;
-                            notificationCenter.k(48, objArr2);
-                        } else {
-                            z9 = z10;
-                            arrayList = arrayList3;
-                        }
-                        if (!arrayList.isEmpty()) {
-                            yr messagesStorage = qpVar.getMessagesStorage();
-                            messagesStorage.a.c(new lr(messagesStorage, arrayList, j3, 1));
-                        }
-                        i10++;
-                        z10 = z9;
-                    }
-                }
-                Utilities.d.c(new tj(qpVar, hVar, hVar3, 3));
+                np npVar = this.b;
+                npVar.getNotificationCenter().k(46, new Object[0]);
+                npVar.getNotificationCenter().k(2, 2);
+                npVar.getUserConfig().v(true);
                 break;
             case 1:
-                qp qpVar3 = this.b;
-                a0.h hVar4 = this.c;
-                a0.h hVar5 = this.d;
-                qpVar3.W = hVar4;
-                qpVar3.X = hVar5;
+                this.b.h3();
                 break;
             case 2:
-                qp qpVar4 = this.b;
-                a0.h hVar6 = this.c;
-                a0.h hVar7 = this.d;
-                qpVar4.T1 = true;
-                yr messagesStorage2 = qpVar4.getMessagesStorage();
-                messagesStorage2.a.c(new lg(messagesStorage2, hVar6, hVar7, 17));
+                np npVar2 = this.b;
+                np messagesController = npVar2.getMessagesController();
+                npVar2.getNotificationCenter().b(messagesController, ns.U1);
+                npVar2.getNotificationCenter().b(messagesController, ns.V1);
+                npVar2.getNotificationCenter().b(messagesController, ns.W1);
+                npVar2.getNotificationCenter().b(messagesController, ns.Y1);
+                npVar2.getNotificationCenter().b(messagesController, ns.Z1);
+                npVar2.getNotificationCenter().b(messagesController, 21);
+                npVar2.getNotificationCenter().b(messagesController, 48);
+                break;
+            case 3:
+                np npVar3 = this.b;
+                tj tjVar = npVar3.K7;
+                g0.r(tjVar);
+                long currentTime = npVar3.v4 - npVar3.getConnectionsManager().getCurrentTime();
+                if (currentTime > 0) {
+                    g0.i3(tjVar, currentTime);
+                    break;
+                }
+                break;
+            case 4:
+                this.b.k2 = false;
+                break;
+            case 5:
+                np npVar4 = this.b;
+                npVar4.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_19));
+                npVar4.j5();
+                break;
+            case 6:
+                this.b.R2(true);
+                break;
+            case 7:
+                this.b.M(false);
+                break;
+            case 8:
+                m10 userConfig = this.b.getUserConfig();
+                if ((userConfig.l0 != null || userConfig.k0 != null) && Math.abs(SystemClock.elapsedRealtime() - userConfig.m0) >= 1800000) {
+                    userConfig.u();
+                    break;
+                }
+                break;
+            case 9:
+                np npVar5 = this.b;
+                SharedPreferences sharedPreferences = npVar5.e7;
+                sharedPreferences.getBoolean("EnableContactJoined", true);
+                npVar5.G2 = sharedPreferences.getInt("nextTosCheckTime", 0);
+                break;
+            case 10:
+                this.b.getNotificationsController().m(0);
+                break;
+            case 11:
+                this.b.getNotificationsController().m(1);
+                break;
+            case 12:
+                this.b.getNotificationsController().m(2);
+                break;
+            case 13:
+                this.b.getNotificationCenter().k(ns.E1, new Object[0]);
+                break;
+            case 14:
+                np npVar6 = this.b;
+                HashSet hashSet = npVar6.f8;
+                if (!hashSet.isEmpty()) {
+                    TL_account.getRequirementsToContact getrequirementstocontact = new TL_account.getRequirementsToContact();
+                    ArrayList arrayList = new ArrayList();
+                    Iterator it = hashSet.iterator();
+                    while (it.hasNext()) {
+                        Long l10 = (Long) it.next();
+                        l10.getClass();
+                        getrequirementstocontact.id.add(npVar6.q1(npVar6.a2(l10)));
+                        arrayList.add(l10);
+                    }
+                    hashSet.clear();
+                    if (!getrequirementstocontact.id.isEmpty()) {
+                        npVar6.getConnectionsManager().sendRequest(getrequirementstocontact, new r4(6, npVar6, arrayList));
+                        break;
+                    }
+                }
+                break;
+            case 15:
+                np npVar7 = this.b;
+                npVar7.getClass();
+                a0.h hVar = new a0.h();
+                HashSet hashSet2 = npVar7.q8;
+                Iterator it2 = hashSet2.iterator();
+                while (it2.hasNext()) {
+                    Pair pair = (Pair) it2.next();
+                    Pair pair2 = (Pair) hVar.f(((di.o8) pair.first).a);
+                    if (pair2 == null) {
+                        long j3 = ((di.o8) pair.first).a;
+                        pair2 = new Pair(new HashSet(), (AtomicBoolean) pair.second);
+                        hVar.k(pair2, j3);
+                    }
+                    if (!((AtomicBoolean) pair.second).get()) {
+                        ((AtomicBoolean) pair2.second).set(false);
+                    }
+                    ((HashSet) pair2.first).add(Integer.valueOf(((di.o8) pair.first).b));
+                }
+                hashSet2.clear();
+                for (int i10 = 0; i10 < hVar.m(); i10++) {
+                    Pair pair3 = (Pair) hVar.n(i10);
+                    long j10 = hVar.j(i10);
+                    HashSet hashSet3 = (HashSet) pair3.first;
+                    boolean z10 = ((AtomicBoolean) pair3.second).get();
+                    TLRPC.TL_reportMessagesDelivery tL_reportMessagesDelivery = new TLRPC.TL_reportMessagesDelivery();
+                    tL_reportMessagesDelivery.peer = npVar7.j1(j10);
+                    tL_reportMessagesDelivery.id.addAll(hashSet3);
+                    tL_reportMessagesDelivery.push = z10;
+                    npVar7.getConnectionsManager().sendRequest(tL_reportMessagesDelivery, null);
+                }
+                break;
+            case 16:
+                this.b.getNotificationCenter().k(ns.P3, new Object[0]);
+                break;
+            case 17:
+                this.b.getNotificationCenter().k(ns.Z2, new Object[0]);
+                break;
+            case 18:
+                this.b.getNotificationCenter().k(2, 4);
+                break;
+            case 19:
+                this.b.getNotificationCenter().k(2, 64);
+                break;
+            case 20:
+                np npVar8 = this.b;
+                npVar8.A2 = 0L;
+                npVar8.E2 = null;
+                npVar8.u2 = npVar8.getConnectionsManager().getCurrentTime() + 3600;
+                np.e1().edit().putLong("proxy_dialog", npVar8.A2).remove("proxyDialogAddress").putInt("nextPromoInfoCheckTime", npVar8.u2).commit();
+                break;
+            case 21:
+                np npVar9 = this.b;
+                npVar9.getMessagesStorage().t1(false);
+                g0.h3(new pn(npVar9, i7));
+                break;
+            case 22:
+                this.b.h3();
+                break;
+            case 23:
+                this.b.h3();
+                break;
+            case 24:
+                np npVar10 = this.b;
+                TLRPC.Dialog dialog = npVar10.y2;
+                if (dialog != null) {
+                    long j11 = dialog.id;
+                    if (j11 < 0) {
+                        TLRPC.Chat M0 = npVar10.M0(Long.valueOf(-j11));
+                        if (t3.r0(M0) || M0.restricted) {
+                            npVar10.f4(npVar10.y2);
+                        }
+                    } else {
+                        npVar10.f4(dialog);
+                    }
+                    npVar10.y2 = null;
+                    npVar10.U4(null);
+                    npVar10.getNotificationCenter().k(3, new Object[0]);
+                    break;
+                }
+                break;
+            case 25:
+                this.b.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_13));
+                break;
+            case 26:
+                this.b.f2 = false;
+                break;
+            case 27:
+                this.b.N(true);
+                break;
+            case 28:
+                this.b.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_13));
                 break;
             default:
-                qp qpVar5 = this.b;
-                Utilities.d.c(new tj(qpVar5, this.c, this.d, 2));
-                qpVar5.U1 = 0;
-                qpVar5.V1 = null;
-                qpVar5.W1 = null;
+                this.b.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_13));
                 break;
         }
     }

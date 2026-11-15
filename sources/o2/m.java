@@ -1,11 +1,10 @@
 package o2;
 
 import e2.u;
-import h2.m0;
-import m4.d0;
+import h2.l0;
 import x2.b1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m implements b1 {
     public final u a;
@@ -14,31 +13,31 @@ public final class m implements b1 {
     public p2.g e;
     public boolean f;
     public int h;
-    public final d0 b = new d0(20);
+    public final k8.a b = new k8.a(24);
     public long n = -9223372036854775807L;
 
-    public m(p2.g gVar, u uVar, boolean z9) {
+    public m(p2.g gVar, u uVar, boolean z10) {
         this.a = uVar;
         this.e = gVar;
         this.c = gVar.b;
-        b(gVar, z9);
+        b(gVar, z10);
     }
 
-    public final void b(p2.g gVar, boolean z9) {
+    public final void b(p2.g gVar, boolean z10) {
         int i7 = this.h;
         long j3 = -9223372036854775807L;
         long j10 = i7 == 0 ? -9223372036854775807L : this.c[i7 - 1];
-        this.d = z9;
+        this.d = z10;
         this.e = gVar;
         long[] jArr = gVar.b;
         this.c = jArr;
         long j11 = this.n;
         if (j11 == -9223372036854775807L) {
             if (j10 != -9223372036854775807L) {
-                this.h = m0.b(jArr, j10, false);
+                this.h = l0.b(jArr, j10, false);
             }
         } else {
-            int b10 = m0.b(jArr, j11, true);
+            int b10 = l0.b(jArr, j11, true);
             this.h = b10;
             if (this.d && b10 == this.c.length) {
                 j3 = j11;
@@ -53,36 +52,36 @@ public final class m implements b1 {
     }
 
     @Override // x2.b1
-    public final int l(long j3) {
-        int max = Math.max(this.h, m0.b(this.c, j3, true));
+    public final int n(long j3) {
+        int max = Math.max(this.h, l0.b(this.c, j3, true));
         int i7 = max - this.h;
         this.h = max;
         return i7;
     }
 
     @Override // x2.b1
-    public final int m(wf.b bVar, k2.h hVar, int i7) {
+    public final int q(k8.a aVar, k2.h hVar, int i7) {
         int i10 = this.h;
-        boolean z9 = i10 == this.c.length;
-        if (z9 && !this.d) {
+        boolean z10 = i10 == this.c.length;
+        if (z10 && !this.d) {
             hVar.setFlags(4);
             return -4;
         }
         if ((i7 & 2) != 0 || !this.f) {
-            bVar.c = this.a;
+            aVar.c = this.a;
             this.f = true;
             return -5;
         }
-        if (z9) {
+        if (z10) {
             return -3;
         }
         if ((i7 & 1) == 0) {
             this.h = i10 + 1;
         }
         if ((i7 & 4) == 0) {
-            byte[] B = this.b.B(this.e.a[i10]);
-            hVar.b(B.length);
-            hVar.c.put(B);
+            byte[] E0 = this.b.E0(this.e.a[i10]);
+            hVar.b(E0.length);
+            hVar.c.put(E0);
         }
         hVar.e = this.c[i10];
         hVar.setFlags(1);

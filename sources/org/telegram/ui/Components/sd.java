@@ -1,88 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.util.Property;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class sd extends Property {
+public final class sd extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ChatActivityEnterView c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sd(ChatActivityEnterView chatActivityEnterView, int i7) {
-        super(Float.class, "emoji_button_scale");
-        this.a = i7;
-        switch (i7) {
-            case 1:
-                this.b = chatActivityEnterView;
-                super(Float.class, "attach_scale");
-                break;
-            case 2:
-                this.b = chatActivityEnterView;
-                super(Float.class, "emoji_button_alpha");
-                break;
-            case 3:
-                this.b = chatActivityEnterView;
-                super(Float.class, "attach_layout_translation_x");
-                break;
-            case 4:
-                this.b = chatActivityEnterView;
-                super(Float.class, "message_text_translation_x");
-                break;
-            default:
-                this.b = chatActivityEnterView;
-                break;
-        }
+    public /* synthetic */ sd(ChatActivityEnterView chatActivityEnterView, int i7, int i10) {
+        this.a = i10;
+        this.c = chatActivityEnterView;
+        this.b = i7;
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                return Float.valueOf(this.b.h);
-            case 1:
-                return Float.valueOf(this.b.E);
-            case 2:
-                return Float.valueOf(this.b.n);
-            case 3:
-                return Float.valueOf(this.b.y);
-            default:
-                return Float.valueOf(this.b.G);
-        }
-    }
-
-    @Override // android.util.Property
-    public final void set(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                chatActivityEnterView.h = floatValue;
-                chatActivityEnterView.H1();
-                break;
-            case 1:
-                float floatValue2 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                chatActivityEnterView2.E = floatValue2;
-                chatActivityEnterView2.C1();
-                break;
-            case 2:
-                float floatValue3 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView3 = this.b;
-                chatActivityEnterView3.n = floatValue3;
-                chatActivityEnterView3.H1();
-                break;
-            case 3:
-                float floatValue4 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView4 = this.b;
-                chatActivityEnterView4.y = floatValue4;
-                chatActivityEnterView4.C1();
+                ChatActivityEnterView chatActivityEnterView = this.c;
+                st0 st0Var = chatActivityEnterView.U1;
+                chatActivityEnterView.i4 = false;
+                chatActivityEnterView.j4 = null;
+                sf sfVar = chatActivityEnterView.V0;
+                if (sfVar != null) {
+                    if (chatActivityEnterView.C6 == null) {
+                        sfVar.getLayoutParams().height = this.b;
+                    }
+                    chatActivityEnterView.V0.setLayerType(0, null);
+                }
+                if (st0Var != null) {
+                    st0Var.requestLayout();
+                    st0Var.setForeground(null);
+                    st0Var.setWillNotDraw(false);
+                }
+                if (chatActivityEnterView.h3 && chatActivityEnterView.G0()) {
+                    chatActivityEnterView.L1(0, chatActivityEnterView.N2, true, true);
+                }
+                nd ndVar = chatActivityEnterView.s0;
+                if (ndVar != null) {
+                    ndVar.run();
+                    chatActivityEnterView.s0 = null;
+                }
+                chatActivityEnterView.t4.e();
                 break;
             default:
-                float floatValue5 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView5 = this.b;
-                chatActivityEnterView5.G = floatValue5;
-                chatActivityEnterView5.L1();
+                int i7 = this.b;
+                ChatActivityEnterView chatActivityEnterView2 = this.c;
+                if (i7 == 0) {
+                    chatActivityEnterView2.i3 = 0;
+                }
+                chatActivityEnterView2.W0 = null;
+                chatActivityEnterView2.p2.setTranslationY(0.0f);
+                chatActivityEnterView2.p2.setVisibility(8);
+                chatActivityEnterView2.t4.e();
+                cg cgVar = chatActivityEnterView2.H3;
+                if (cgVar != null) {
+                    cgVar.y(0.0f);
+                }
+                chatActivityEnterView2.requestLayout();
                 break;
         }
     }

@@ -1,30 +1,30 @@
 package f3;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class v implements c0 {
-    public final c0 a;
+public abstract class v implements b0 {
+    public final b0 a;
 
-    public v(c0 c0Var) {
-        this.a = c0Var;
+    public v(b0 b0Var) {
+        this.a = b0Var;
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final boolean d() {
         return this.a.d();
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final boolean e() {
         return this.a.e();
     }
 
-    @Override // f3.c0
-    public b0 f(long j3) {
+    @Override // f3.b0
+    public a0 f(long j3) {
         return this.a.f(j3);
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public long h() {
         return this.a.h();
     }

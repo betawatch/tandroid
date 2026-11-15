@@ -1,77 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class xn0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ mo0 c;
+public final class xn0 implements jg.f0 {
+    public final /* synthetic */ po0 a;
 
-    public /* synthetic */ xn0(mo0 mo0Var, boolean z9, int i7) {
-        this.a = i7;
-        this.c = mo0Var;
-        this.b = z9;
+    public xn0(po0 po0Var) {
+        this.a = po0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                AnimatorSet[] animatorSetArr = this.c.O1;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    animatorSetArr[0] = null;
-                    break;
-                }
-                break;
-            default:
-                mo0 mo0Var = this.c;
-                if (animator.equals(mo0Var.y1)) {
-                    mo0Var.y1 = null;
-                    break;
-                }
-                break;
+    @Override // jg.f0
+    public final void a(a0.h hVar, ArrayList arrayList) {
+        int i7 = 0;
+        while (i7 < arrayList.size()) {
+            TLObject tLObject = ((jg.g0) arrayList.get(i7)).a;
+            if ((tLObject instanceof TLRPC.Chat) && !org.telegram.messenger.t3.B((TLRPC.Chat) tLObject)) {
+                arrayList.remove(i7);
+                i7--;
+            }
+            i7++;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                mo0 mo0Var = this.c;
-                AnimatorSet[] animatorSetArr = mo0Var.O1;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        mo0Var.N1[0].setVisibility(4);
-                    }
-                    animatorSetArr[0] = null;
-                    break;
-                }
-                break;
-            default:
-                mo0 mo0Var2 = this.c;
-                FrameLayout frameLayout = mo0Var2.q1;
-                if (animator.equals(mo0Var2.y1)) {
-                    if (!this.b) {
-                        mo0Var2.m1.setVisibility(4);
-                        FrameLayout frameLayout2 = mo0Var2.X1;
-                        if (frameLayout2 != null && frameLayout == null) {
-                            frameLayout2.setVisibility(4);
-                        }
-                        mo0Var2.p1.setVisibility(4);
-                    } else if (frameLayout != null) {
-                        frameLayout.setVisibility(4);
-                    }
-                    mo0Var2.y1 = null;
-                    break;
-                }
-                break;
+        po0 po0Var = this.a;
+        po0Var.A2 = arrayList;
+        for (int i10 = 0; i10 < po0Var.A2.size(); i10++) {
+            jg.g0 g0Var = (jg.g0) po0Var.A2.get(i10);
+            TLObject tLObject2 = g0Var.a;
+            if (tLObject2 instanceof TLRPC.User) {
+                org.telegram.messenger.np.s1(po0Var.a).X3((TLRPC.User) g0Var.a, true, false);
+            } else if (tLObject2 instanceof TLRPC.Chat) {
+                org.telegram.messenger.np.s1(po0Var.a).Q3((TLRPC.Chat) g0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
+                org.telegram.messenger.np.s1(po0Var.a).U3((TLRPC.EncryptedChat) g0Var.a, true);
+            }
         }
+        po0Var.I1.f();
     }
 }

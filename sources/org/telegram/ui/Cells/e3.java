@@ -5,29 +5,29 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class e3 extends View {
     public boolean a;
     public final Paint b;
-    public final org.telegram.ui.ActionBar.h6 c;
+    public final org.telegram.ui.ActionBar.e6 c;
 
-    public e3(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public e3(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.b = new Paint();
-        this.c = h6Var;
+        this.c = e6Var;
         setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        boolean z9 = this.a;
-        org.telegram.ui.ActionBar.h6 h6Var = this.c;
+        boolean z10 = this.a;
+        org.telegram.ui.ActionBar.e6 e6Var = this.c;
         Paint paint = this.b;
-        if (z9) {
-            paint.setColor(i0.a.f(0.2f, -16777216, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.ih, h6Var)));
+        if (z10) {
+            paint.setColor(i0.a.f(0.2f, -16777216, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.lh, e6Var)));
         } else {
-            paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d7, h6Var));
+            paint.setColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.d7, e6Var));
         }
         canvas.drawLine(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop(), paint);
     }
@@ -37,7 +37,7 @@ public final class e3 extends View {
         setMeasuredDimension(View.MeasureSpec.getSize(i7), getPaddingBottom() + getPaddingTop() + 1);
     }
 
-    public void setForceDarkTheme(boolean z9) {
-        this.a = z9;
+    public void setForceDarkTheme(boolean z10) {
+        this.a = z10;
     }
 }

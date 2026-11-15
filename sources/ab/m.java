@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m implements ua.b {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class m implements ua.b {
     public final Object get() {
         switch (this.a) {
             case 0:
-                d0 d0Var = FirebaseMessaging.m;
+                ob.c cVar = FirebaseMessaging.m;
                 return null;
             case 1:
                 return Collections.EMPTY_SET;
@@ -29,13 +29,13 @@ public final /* synthetic */ class m implements ua.b {
             case 3:
                 return ExecutorsRegistrar.a();
             case 4:
-                u9.n nVar = ExecutorsRegistrar.a;
+                u9.m mVar = ExecutorsRegistrar.a;
                 return new v9.f(Executors.newFixedThreadPool(Math.max(2, Runtime.getRuntime().availableProcessors()), new v9.a("Firebase Lite", 0, new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build())), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
             case 5:
-                u9.n nVar2 = ExecutorsRegistrar.a;
+                u9.m mVar2 = ExecutorsRegistrar.a;
                 return new v9.f(Executors.newCachedThreadPool(new v9.a("Firebase Blocking", 11, null)), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
             default:
-                u9.n nVar3 = ExecutorsRegistrar.a;
+                u9.m mVar3 = ExecutorsRegistrar.a;
                 return Executors.newSingleThreadScheduledExecutor(new v9.a("Firebase Scheduler", 0, null));
         }
     }

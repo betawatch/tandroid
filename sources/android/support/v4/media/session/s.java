@@ -11,7 +11,7 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class s {
     public final /* synthetic */ int a;
@@ -108,13 +108,13 @@ public abstract class s {
             handler.removeMessages(1);
             PlaybackStateCompat d = uVar.d();
             long j3 = d == null ? 0L : d.e;
-            boolean z9 = d != null && d.a == 3;
-            boolean z10 = (516 & j3) != 0;
-            boolean z11 = (j3 & 514) != 0;
-            if (z9 && z11) {
+            boolean z10 = d != null && d.a == 3;
+            boolean z11 = (516 & j3) != 0;
+            boolean z12 = (j3 & 514) != 0;
+            if (z10 && z12) {
                 k();
             } else {
-                if (z9 || !z10) {
+                if (z10 || !z11) {
                     return;
                 }
                 n();
@@ -128,13 +128,13 @@ public abstract class s {
             handler.removeMessages(1);
             q4.w wVar = lVar.g;
             long j3 = wVar == null ? 0L : wVar.e;
-            boolean z9 = wVar != null && wVar.a == 3;
-            boolean z10 = (516 & j3) != 0;
-            boolean z11 = (j3 & 514) != 0;
-            if (z9 && z11) {
+            boolean z10 = wVar != null && wVar.a == 3;
+            boolean z11 = (516 & j3) != 0;
+            boolean z12 = (j3 & 514) != 0;
+            if (z10 && z12) {
                 k();
             } else {
-                if (z9 || !z10) {
+                if (z10 || !z11) {
                     return;
                 }
                 n();

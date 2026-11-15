@@ -1,37 +1,49 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tc implements RequestDelegate {
+public final /* synthetic */ class tc implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bd b;
+    public final /* synthetic */ ad b;
 
-    public /* synthetic */ tc(bd bdVar, int i7) {
+    public /* synthetic */ tc(ad adVar, int i7) {
         this.a = i7;
-        this.b = bdVar;
+        this.b = adVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.c(27, this.b, tLObject));
+                ad.c0(this.b, view);
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.c(25, this.b, tL_error));
+                ad adVar = this.b;
+                adVar.x.n(adVar.E != null, new rc(adVar, 2), new q5(adVar, 2), 0);
+                adVar.L.M(0);
+                adVar.L.P(43);
+                adVar.n.d();
                 break;
             case 2:
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    org.telegram.messenger.g0.h3(new sc(this.b, 3));
+                ad adVar2 = this.b;
+                if (!adVar2.l0) {
+                    adVar2.l0();
+                    break;
+                } else if (adVar2.c0) {
+                    adVar2.c0 = false;
+                    adVar2.n0();
                     break;
                 }
                 break;
             default:
-                org.telegram.messenger.g0.h3(new o1(this.b, tL_error, tLObject, 11));
+                ad adVar3 = this.b;
+                if (!adVar3.c0) {
+                    adVar3.c0 = true;
+                    adVar3.n0();
+                    break;
+                }
                 break;
         }
     }

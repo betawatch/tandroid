@@ -2,12 +2,14 @@ package j8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
+import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 import q6.m;
-import u7.n;
+import u7.k;
+import u7.o;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public static final Parcelable.Creator<a> CREATOR = new j7.b(21);
@@ -15,14 +17,14 @@ public final class a extends r6.a {
     public final int b;
     public final boolean c;
     public final String d;
-    public final u7.j e;
+    public final k e;
 
-    public a(long j3, int i7, boolean z9, String str, u7.j jVar) {
+    public a(long j3, int i7, boolean z10, String str, k kVar) {
         this.a = j3;
         this.b = i7;
-        this.c = z9;
+        this.c = z10;
         this.d = str;
-        this.e = jVar;
+        this.e = kVar;
     }
 
     public final boolean equals(Object obj) {
@@ -39,11 +41,11 @@ public final class a extends r6.a {
 
     public final String toString() {
         String str;
-        StringBuilder m10 = com.google.android.recaptcha.internal.a.m("LastLocationRequest[");
+        StringBuilder m10 = e2.m("LastLocationRequest[");
         long j3 = this.a;
         if (j3 != Long.MAX_VALUE) {
             m10.append("maxAge=");
-            n.a(j3, m10);
+            o.a(j3, m10);
         }
         int i7 = this.b;
         if (i7 != 0) {
@@ -68,10 +70,10 @@ public final class a extends r6.a {
             m10.append(", moduleId=");
             m10.append(str2);
         }
-        u7.j jVar = this.e;
-        if (jVar != null) {
+        k kVar = this.e;
+        if (kVar != null) {
             m10.append(", impersonation=");
-            m10.append(jVar);
+            m10.append(kVar);
         }
         m10.append(']');
         return m10.toString();
@@ -79,15 +81,15 @@ public final class a extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 1, 8);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 1, 8);
         parcel.writeLong(this.a);
-        xb.q(parcel, 2, 4);
+        yb.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        xb.q(parcel, 3, 4);
+        yb.q(parcel, 3, 4);
         parcel.writeInt(this.c ? 1 : 0);
-        xb.l(parcel, 4, this.d);
-        xb.k(parcel, 5, this.e, i7);
-        xb.s(parcel, r10);
+        yb.l(parcel, 4, this.d);
+        yb.k(parcel, 5, this.e, i7);
+        yb.s(parcel, r10);
     }
 }

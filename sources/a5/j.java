@@ -1,15 +1,15 @@
 package a5;
 
-import a8.wa;
+import a8.xa;
 import android.content.res.ColorStateList;
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j extends m {
-    public wa d;
+    public xa d;
     public float e;
-    public wa f;
+    public xa f;
     public float g;
     public float h;
     public float i;
@@ -21,7 +21,7 @@ public final class j extends m {
 
     @Override // a5.l
     public final boolean a() {
-        return this.f.n() || this.d.n();
+        return this.f.m() || this.d.m();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:8:0x0027  */
@@ -30,35 +30,35 @@ public final class j extends m {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean b(int[] iArr) {
-        boolean z9;
-        wa waVar;
-        wa waVar2 = this.f;
-        boolean z10 = true;
-        if (waVar2.n()) {
-            ColorStateList colorStateList = (ColorStateList) waVar2.d;
+        boolean z10;
+        xa xaVar;
+        xa xaVar2 = this.f;
+        boolean z11 = true;
+        if (xaVar2.m()) {
+            ColorStateList colorStateList = (ColorStateList) xaVar2.d;
             int colorForState = colorStateList.getColorForState(iArr, colorStateList.getDefaultColor());
-            if (colorForState != waVar2.b) {
-                waVar2.b = colorForState;
-                z9 = true;
-                waVar = this.d;
-                if (waVar.n()) {
-                    ColorStateList colorStateList2 = (ColorStateList) waVar.d;
+            if (colorForState != xaVar2.b) {
+                xaVar2.b = colorForState;
+                z10 = true;
+                xaVar = this.d;
+                if (xaVar.m()) {
+                    ColorStateList colorStateList2 = (ColorStateList) xaVar.d;
                     int colorForState2 = colorStateList2.getColorForState(iArr, colorStateList2.getDefaultColor());
-                    if (colorForState2 != waVar.b) {
-                        waVar.b = colorForState2;
-                        return z9 | z10;
+                    if (colorForState2 != xaVar.b) {
+                        xaVar.b = colorForState2;
+                        return z10 | z11;
                     }
                 }
-                z10 = false;
-                return z9 | z10;
+                z11 = false;
+                return z10 | z11;
             }
         }
-        z9 = false;
-        waVar = this.d;
-        if (waVar.n()) {
-        }
         z10 = false;
-        return z9 | z10;
+        xaVar = this.d;
+        if (xaVar.m()) {
+        }
+        z11 = false;
+        return z10 | z11;
     }
 
     public float getFillAlpha() {

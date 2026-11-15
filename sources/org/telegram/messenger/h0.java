@@ -3,26 +3,26 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h0 implements k0 {
     public final String a;
     public final boolean b;
     public boolean c;
 
-    public h0(String str, boolean z9) {
+    public h0(String str, boolean z10) {
         this.a = str;
-        this.b = z9;
+        this.b = z10;
     }
 
     @Override // org.telegram.messenger.k0
     public final boolean a(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
-        boolean z9;
-        if (!(jSONValue instanceof TLRPC.TL_jsonBool) || (z9 = ((TLRPC.TL_jsonBool) jSONValue).value) == this.c) {
+        boolean z10;
+        if (!(jSONValue instanceof TLRPC.TL_jsonBool) || (z10 = ((TLRPC.TL_jsonBool) jSONValue).value) == this.c) {
             return false;
         }
-        this.c = z9;
-        editor.putBoolean(this.a, z9);
+        this.c = z10;
+        editor.putBoolean(this.a, z10);
         return true;
     }
 

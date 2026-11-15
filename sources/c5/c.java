@@ -1,10 +1,35 @@
 package c5;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import android.view.animation.Interpolator;
+import org.telegram.messenger.i20;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-@Retention(RetentionPolicy.RUNTIME)
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public @interface c {
+public final class c implements Interpolator {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ c(int i7) {
+        this.a = i7;
+    }
+
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f10) {
+        switch (this.a) {
+            case 0:
+            case 4:
+            default:
+                float f11 = f10 - 1.0f;
+                return (f11 * f11 * f11 * f11 * f11) + 1.0f;
+            case 1:
+                return (float) Math.pow(f10, 2.0d);
+            case 2:
+                if (f10 < 0.33f) {
+                    return (f10 / 0.33f) * 0.1f;
+                }
+                float f12 = f10 - 0.33f;
+                return f12 < 0.33f ? i20.v(f12, 0.34f, 0.15f, 0.1f) : (((f12 - 0.34f) / 0.33f) * 0.05f) - 0.05f;
+            case 3:
+                return f10 * f10 * f10 * f10 * f10;
+        }
+    }
 }

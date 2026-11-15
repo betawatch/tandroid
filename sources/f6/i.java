@@ -3,12 +3,12 @@ package f6;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.xb;
+import c8.yb;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i extends r6.a {
     public static final Parcelable.Creator<i> CREATOR = new v(5);
@@ -17,10 +17,10 @@ public final class i extends r6.a {
     public final boolean c;
     public final h d;
 
-    public i(boolean z9, String str, boolean z10, h hVar) {
-        this.a = z9;
+    public i(boolean z10, String str, boolean z11, h hVar) {
+        this.a = z10;
         this.b = str;
-        this.c = z10;
+        this.c = z11;
         this.d = hVar;
     }
 
@@ -45,14 +45,14 @@ public final class i extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 2, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 2, 4);
         parcel.writeInt(this.a ? 1 : 0);
-        xb.l(parcel, 3, this.b);
-        xb.q(parcel, 4, 4);
+        yb.l(parcel, 3, this.b);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(this.c ? 1 : 0);
-        xb.k(parcel, 5, this.d, i7);
-        xb.s(parcel, r10);
+        yb.k(parcel, 5, this.d, i7);
+        yb.s(parcel, r10);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */

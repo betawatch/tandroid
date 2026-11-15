@@ -7,10 +7,10 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.v8;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.t8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class z0 extends View {
     public final Drawable a;
@@ -19,11 +19,11 @@ public final class z0 extends View {
     public z0(a1 a1Var, Context context) {
         super(context);
         this.a = getContext().getResources().getDrawable(R.drawable.map_pin_photo).mutate();
-        v8 v8Var = new v8((h6) null);
+        t8 t8Var = new t8((e6) null);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.b = imageReceiver;
-        v8Var.r(a1Var.getUserConfig().f());
-        imageReceiver.i0(a1Var.getUserConfig().f(), v8Var, null);
+        t8Var.r(a1Var.getUserConfig().f());
+        imageReceiver.i0(a1Var.getUserConfig().f(), t8Var, null);
     }
 
     @Override // android.view.View

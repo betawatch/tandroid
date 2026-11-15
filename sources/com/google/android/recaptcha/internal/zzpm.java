@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import jg.g;
-import org.telegram.messenger.qs;
+import i5.c;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzpm extends zzpo {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -24,7 +24,7 @@ final class zzpm extends zzpo {
         int length = zze.length();
         zzpk zzpkVar = this.zza;
         if (!zzpkVar.zzc(length)) {
-            throw new zzpn(g.j(zze.length(), "Invalid input length "));
+            throw new zzpn(c.i(zze.length(), "Invalid input length "));
         }
         int i7 = 0;
         int i10 = 0;
@@ -37,11 +37,11 @@ final class zzpm extends zzpo {
                 int i13 = i7 + 3;
                 int zzb2 = zzb | (zzpkVar.zzb(zze.charAt(i12)) << 6);
                 int i14 = i10 + 2;
-                bArr[i11] = (byte) ((zzb2 >>> 8) & qs.e4);
+                bArr[i11] = (byte) ((zzb2 >>> 8) & ns.e4);
                 if (i13 < zze.length()) {
                     i7 += 4;
                     i10 += 3;
-                    bArr[i14] = (byte) ((zzb2 | zzpkVar.zzb(zze.charAt(i13))) & qs.e4);
+                    bArr[i14] = (byte) ((zzb2 | zzpkVar.zzb(zze.charAt(i13))) & ns.e4);
                 } else {
                     i10 = i14;
                     i7 = i13;

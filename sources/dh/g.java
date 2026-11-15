@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.support.v4.media.session.w;
 import java.util.ArrayList;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.qc;
+import org.telegram.messenger.si;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class g {
     public final boolean a;
@@ -27,12 +27,12 @@ public final class g {
     public int l;
     public Rect m;
 
-    public g(boolean z9) {
-        boolean e10 = sc.e(262144);
+    public g(boolean z10) {
+        boolean e10 = qc.e(262144);
         this.a = e10;
         this.c = true;
-        this.d = (e10 || z9) ? 1 : 8;
-        this.b = z9;
+        this.d = (e10 || z10) ? 1 : 8;
+        this.b = z10;
         this.f = new RenderNode[e10 ? 2 : 1];
         int i7 = 0;
         while (true) {
@@ -54,13 +54,13 @@ public final class g {
         if (!canvas.isHardwareAccelerated()) {
             throw new IllegalStateException();
         }
-        boolean z9 = this.a;
-        if (!z9 && this.c) {
+        boolean z10 = this.a;
+        if (!z10 && this.c) {
             canvas.drawRenderNode(this.f[0]);
             return;
         }
         if (i7 == -2) {
-            canvas.drawRenderNode(this.f[!z9 ? 1 : 0]);
+            canvas.drawRenderNode(this.f[!z10 ? 1 : 0]);
         } else if (i7 == -4) {
             canvas.drawRenderNode(this.f[0]);
         } else if (i7 == -3) {
@@ -70,11 +70,11 @@ public final class g {
 
     public final void c(Canvas canvas, int i7) {
         int i10;
-        boolean z9 = this.a;
-        if (!z9 && this.c) {
+        boolean z10 = this.a;
+        if (!z10 && this.c) {
             i10 = 0;
         } else if (i7 == -2) {
-            i10 = !z9 ? 1 : 0;
+            i10 = !z10 ? 1 : 0;
         } else if (i7 == -4) {
             i10 = 3;
         } else if (i7 != -3) {
@@ -129,9 +129,9 @@ public final class g {
                 aVar2.b = 0L;
                 aVar2.a = false;
                 aVar.c(aVar2, rectF);
-                boolean z9 = aVar2.a;
-                long j3 = z9 ? -1L : aVar2.b;
-                if (z9 || fVar.e != j3 || !fVar.a.hasDisplayList()) {
+                boolean z10 = aVar2.a;
+                long j3 = z10 ? -1L : aVar2.b;
+                if (z10 || fVar.e != j3 || !fVar.a.hasDisplayList()) {
                     fVar.e = j3;
                     if (this.m != null) {
                         throw new IllegalStateException();
@@ -173,28 +173,28 @@ public final class g {
                 if (i12 <= 0) {
                     return;
                 }
-                long p10 = ui.p(ui.p(0L, i7), i10);
+                long p10 = si.p(si.p(0L, i7), i10);
                 int i16 = 0;
-                boolean z10 = false;
+                boolean z11 = false;
                 while (true) {
                     RenderNode[] renderNodeArr = this.f;
                     if (i16 >= renderNodeArr.length) {
                         break;
                     }
                     RenderNode renderNode = renderNodeArr[i16];
-                    p10 = ui.p(p10, renderNode.getUniqueId());
+                    p10 = si.p(p10, renderNode.getUniqueId());
                     for (int i17 = 0; i17 < this.k; i17++) {
                         f fVar4 = (f) arrayList.get(i17);
                         RenderNode d = d(i16, i17);
                         Rect rect3 = fVar4.d;
-                        p10 = ui.p(ui.p(ui.p(ui.p(ui.p(p10, rect3.left), rect3.top), rect3.right), rect3.bottom), d.getUniqueId());
+                        p10 = si.p(si.p(si.p(si.p(si.p(p10, rect3.left), rect3.top), rect3.right), rect3.bottom), d.getUniqueId());
                     }
                     if (!renderNode.hasDisplayList()) {
-                        z10 = true;
+                        z11 = true;
                     }
                     i16++;
                 }
-                if (p10 == this.g && !z10) {
+                if (p10 == this.g && !z11) {
                     return;
                 }
                 this.g = p10;
@@ -250,7 +250,7 @@ public final class g {
         }
     }
 
-    public final void h(qi.a aVar) {
+    public final void h(ti.a aVar) {
         ArrayList arrayList;
         this.k = aVar.b;
         while (true) {

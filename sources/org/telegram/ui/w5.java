@@ -1,28 +1,83 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final class w5 extends rg.a {
-    public final org.telegram.messenger.s2 c;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public w5(int i7, org.telegram.messenger.s2 s2Var) {
-        super(i7, false);
-        this.c = s2Var;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class w5 extends rg.b {
+    public final /* synthetic */ y5 d;
+
+    public w5(y5 y5Var) {
+        this.d = y5Var;
     }
 
-    public final boolean equals(Object obj) {
-        org.telegram.messenger.s2 s2Var;
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.Components.tj0
+    public final boolean D(v4.e1 e1Var) {
+        int i7 = e1Var.f;
+        return i7 == 1 || i7 == 2 || i7 == 4;
+    }
+
+    @Override // v4.h0
+    public final int b() {
+        return this.d.c.size();
+    }
+
+    @Override // v4.h0
+    public final int d(int i7) {
+        return ((x5) this.d.c.get(i7)).a;
+    }
+
+    @Override // v4.h0
+    public final void t(v4.e1 e1Var, int i7) {
+        y5 y5Var = this.d;
+        ArrayList arrayList = y5Var.c;
+        if (((x5) arrayList.get(i7)).a == 2) {
+            org.telegram.ui.Cells.pa paVar = (org.telegram.ui.Cells.pa) e1Var.a;
+            org.telegram.messenger.s2 s2Var = ((x5) arrayList.get(i7)).c;
+            TLObject e22 = y5Var.getMessagesController().e2(s2Var.a);
+            String str = null;
+            if (e22 instanceof TLRPC.User) {
+                TLRPC.User user = (TLRPC.User) e22;
+                str = user.self ? org.telegram.messenger.hd.M0(2131745901, null) : org.telegram.messenger.g5.m(0, user.first_name, user.last_name);
+            } else if (e22 instanceof TLRPC.Chat) {
+                str = ((TLRPC.Chat) e22).title;
+            }
+            paVar.setSelfAsSavedMessages(true);
+            paVar.d(e22, str, org.telegram.messenger.u2.f(s2Var.b), i7 == arrayList.size() - 1 || ((x5) arrayList.get(i7 + 1)).a == 2);
         }
-        if (obj == null || w5.class != obj.getClass()) {
-            return false;
+    }
+
+    @Override // v4.h0
+    public final v4.e1 x(ViewGroup viewGroup, int i7) {
+        View view;
+        View view2 = null;
+        if (i7 != 1) {
+            if (i7 == 2) {
+                View paVar = new org.telegram.ui.Cells.pa(4, 0, viewGroup.getContext(), null, false, false);
+                org.telegram.ui.ActionBar.q6.h(org.telegram.ui.ActionBar.j6.d6, paVar, null);
+                view2 = paVar;
+            } else if (i7 == 3) {
+                view = new org.telegram.ui.Cells.x6(viewGroup.getContext(), (org.telegram.ui.Cells.y0) null);
+            } else if (i7 == 4) {
+                org.telegram.ui.Cells.l8 l8Var = new org.telegram.ui.Cells.l8(viewGroup.getContext());
+                l8Var.k(org.telegram.messenger.hd.M0(2131747915, null), false);
+                l8Var.g(-1, org.telegram.ui.ActionBar.j6.p7);
+                org.telegram.ui.ActionBar.q6.h(org.telegram.ui.ActionBar.j6.d6, l8Var, null);
+                view = l8Var;
+            }
+            return i5.c.q(view2, view2, -1, -2);
         }
-        w5 w5Var = (w5) obj;
-        if (this.a != w5Var.a) {
-            return false;
-        }
-        org.telegram.messenger.s2 s2Var2 = this.c;
-        return s2Var2 == null || (s2Var = w5Var.c) == null || s2Var2.a == s2Var.a;
+        org.telegram.ui.Cells.l8 l8Var2 = new org.telegram.ui.Cells.l8(viewGroup.getContext());
+        l8Var2.o(R.drawable.msg_contact_add, org.telegram.messenger.hd.M0(2131747923, null), true);
+        l8Var2.g(org.telegram.ui.ActionBar.j6.v6, org.telegram.ui.ActionBar.j6.u6);
+        org.telegram.ui.ActionBar.q6.h(org.telegram.ui.ActionBar.j6.d6, l8Var2, null);
+        view = l8Var2;
+        view2 = view;
+        return i5.c.q(view2, view2, -1, -2);
     }
 }

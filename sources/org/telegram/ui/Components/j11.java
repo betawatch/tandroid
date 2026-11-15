@@ -1,34 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j11 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l11 b;
+public final class j11 extends a41 {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ j11(l11 l11Var, int i7) {
-        this.a = i7;
-        this.b = l11Var;
+    static {
+        a41.h(new j11());
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                l11 l11Var = this.b;
-                l11Var.getClass();
-                l11Var.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l11Var.h();
-                l11Var.g();
-                break;
-            default:
-                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                l11 l11Var2 = this.b;
-                l11Var2.L = max;
-                l11Var2.h.invalidate();
-                break;
+    @Override // org.telegram.ui.Components.a41
+    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+        k11 k11Var = (k11) view;
+        boolean z11 = false;
+        if (b41Var.r) {
+            k11Var.f();
+        } else {
+            Object obj = b41Var.G;
+            if (obj == null) {
+                if (b41Var.d == -2) {
+                    k11Var.c();
+                } else {
+                    k11Var.d((b41Var.y & 1) != 0, b41Var.q, b41Var.e);
+                }
+            } else if (obj instanceof TLRPC.TL_forumTopic) {
+                if (b41Var.I) {
+                    k11Var.b(b41Var.x, (TLRPC.TL_forumTopic) obj, b41Var.e);
+                } else {
+                    k11Var.g(b41Var.x, (TLRPC.TL_forumTopic) obj, b41Var.e);
+                }
+            }
         }
+        k11Var.M = c8.zc.a(b41Var.y, 8) ? org.telegram.messenger.g0.L(10.0f) : 0;
+        if (u41Var != null && u41Var.k3 && k11Var.s) {
+            z11 = true;
+        }
+        k11Var.setReorder(z11);
+    }
+
+    @Override // org.telegram.ui.Components.a41
+    public final View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new k11(i7, context, e6Var);
     }
 }

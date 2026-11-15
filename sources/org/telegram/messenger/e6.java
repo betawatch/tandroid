@@ -1,15 +1,8 @@
 package org.telegram.messenger;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class e6 extends Drawable {
-    public boolean a = false;
-    public int b = TLObject.FLAG_28;
-
-    public abstract boolean a();
-
-    public abstract void b();
+public final class e6 {
+    public byte a;
+    public short b;
 }

@@ -1,26 +1,30 @@
 package y7;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import a8.xa;
+import android.content.Context;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class b9 {
-    public final String a;
+public final class b9 implements c9 {
+    public final ArrayList a;
 
-    public b9(String str) {
-        this.a = str;
+    public b9(Context context, a9 a9Var) {
+        ArrayList arrayList = new ArrayList();
+        this.a = arrayList;
+        a9Var.getClass();
+        arrayList.add(new e9(context, a9Var));
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // y7.c9
+    public final void a(xa xaVar) {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ((c9) obj).a(xaVar);
         }
-        return (obj instanceof b9) && this.a.equals(((b9) obj).a);
-    }
-
-    public final int hashCode() {
-        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ 1231) * 1000003) ^ 1;
-    }
-
-    public final String toString() {
-        return a8.p0.p("MLKitLoggingOptions{libraryName=", this.a, ", enableFirelog=true, firelogEventType=1}");
     }
 }

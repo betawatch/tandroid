@@ -11,24 +11,24 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.b4;
-import org.telegram.messenger.c20;
 import org.telegram.messenger.d4;
-import org.telegram.messenger.jc;
-import org.telegram.messenger.lc;
-import org.telegram.messenger.ng;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.kc;
+import org.telegram.messenger.mg;
 import org.telegram.messenger.t0;
+import org.telegram.messenger.z10;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements OnSuccessListener, OnFailureListener, lc {
+public final /* synthetic */ class f implements OnSuccessListener, OnFailureListener, kc {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ f(int i7, int i10, long j3, c20 c20Var) {
+    public /* synthetic */ f(int i7, int i10, long j3, z10 z10Var) {
         this.a = i7;
-        this.d = c20Var;
+        this.d = z10Var;
         this.c = i10;
         this.b = j3;
     }
@@ -36,20 +36,20 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
     /* JADX WARN: Removed duplicated region for block: B:10:0x0029  */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0043  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0054  */
-    @Override // org.telegram.messenger.lc
+    @Override // org.telegram.messenger.kc
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
+    public void I(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         List list;
         Bitmap bitmap;
         int i7 = this.a;
-        c20 c20Var = (c20) this.d;
+        z10 z10Var = (z10) this.d;
         int i10 = this.c;
         long j3 = this.b;
-        jc p10 = imageReceiver.p();
-        jc u10 = imageReceiver.u();
-        if (!z9 || p10 == null) {
+        ic p10 = imageReceiver.p();
+        ic u10 = imageReceiver.u();
+        if (!z10 || p10 == null) {
             return;
         }
         if (u10 != null) {
@@ -63,7 +63,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
                         bitmap = ((BitmapDrawable) drawable2).getBitmap();
                     }
                 }
-                c20Var.a(new gg.a(bitmap, i7, list));
+                z10Var.a(new gg.a(bitmap, i7, list));
                 d4 f10 = d4.f(i10);
                 if (i7 != 0) {
                     d4.s.c(new b4(24, f10.g(j3), bitmap));
@@ -72,7 +72,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
                     if (i7 == 1) {
                         File i11 = t0.i();
                         Locale locale = Locale.US;
-                        d4.s.c(new ng(new File(i11, rf.b.h(j3, "pattern_", ".pgm.gz")), list, bitmap, 13));
+                        d4.s.c(new mg(new File(i11, r.b.j(j3, "pattern_", ".pgm.gz")), list, bitmap, 13));
                         return;
                     }
                     return;
@@ -83,7 +83,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         bitmap = p10.c;
         if (bitmap == null) {
         }
-        c20Var.a(new gg.a(bitmap, i7, list));
+        z10Var.a(new gg.a(bitmap, i7, list));
         d4 f102 = d4.f(i10);
         if (i7 != 0) {
         }
@@ -106,11 +106,11 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         this.d = str;
     }
 
-    @Override // org.telegram.messenger.lc
-    public /* synthetic */ void O(ImageReceiver imageReceiver) {
+    @Override // org.telegram.messenger.kc
+    public /* synthetic */ void A(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.lc
-    public /* synthetic */ void t0(int i7, Drawable drawable) {
+    @Override // org.telegram.messenger.kc
+    public /* synthetic */ void O(int i7, Drawable drawable) {
     }
 }

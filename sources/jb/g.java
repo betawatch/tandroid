@@ -1,8 +1,8 @@
 package jb;
 
-import c8.k1;
+import c8.m1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements oe.e {
     public static final g a;
@@ -46,11 +46,11 @@ public final /* synthetic */ class g implements oe.e {
         Integer num = null;
         Integer num2 = null;
         Long l10 = null;
-        boolean z9 = true;
-        while (z9) {
+        boolean z10 = true;
+        while (z10) {
             int d2 = c10.d(dVar);
             if (d2 == -1) {
-                z9 = false;
+                z10 = false;
             } else if (d2 == 0) {
                 bool = (Boolean) c10.j(dVar, 0, oe.a.a, bool);
                 i7 |= 1;
@@ -77,10 +77,10 @@ public final /* synthetic */ class g implements oe.e {
 
     @Override // oe.e
     public final ke.a[] c() {
-        ke.a a10 = k1.a(oe.a.a);
-        ke.a a11 = k1.a(oe.c.a);
+        ke.a a10 = m1.a(oe.a.a);
+        ke.a a11 = m1.a(oe.c.a);
         oe.f fVar = oe.f.a;
-        return new ke.a[]{a10, a11, k1.a(fVar), k1.a(fVar), k1.a(oe.i.a)};
+        return new ke.a[]{a10, a11, m1.a(fVar), m1.a(fVar), m1.a(oe.i.a)};
     }
 
     @Override // ke.a

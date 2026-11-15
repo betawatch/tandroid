@@ -9,48 +9,40 @@ import android.text.Layout;
 import android.text.SpannableString;
 import android.util.Log;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import bi.ad;
-import bi.da;
-import bi.k7;
+import bi.z5;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import e2.m1;
 import h9.g0;
-import h9.t1;
+import h9.s1;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.b20;
+import org.telegram.messenger.j9;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.ActionBar.r1;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.gt0;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.cb1;
-import org.telegram.ui.ly0;
-import x2.p1;
+import org.telegram.ui.ActionBar.q1;
+import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, Vector.TLDeserializer, b20, r1, q6, r6, gt0, u9.d {
+public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, Vector.TLDeserializer, q1, y10, j9, u9.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ l(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.messenger.b20
-    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
+    @Override // org.telegram.messenger.y10
+    public Boolean a(b41 b41Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
 
@@ -98,17 +90,17 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
         int i10;
         String str2;
         int i11;
-        boolean z9;
+        boolean z10;
         String str3;
         switch (this.a) {
             case 0:
-                p1 p1Var = (p1) obj;
-                p1Var.getClass();
+                x2.q1 q1Var = (x2.q1) obj;
+                q1Var.getClass();
                 Bundle bundle = new Bundle();
-                String str4 = p1.e;
-                t1 t1Var = p1Var.b;
-                ArrayList<? extends Parcelable> arrayList = new ArrayList<>(t1Var.d);
-                g0 listIterator = t1Var.listIterator(0);
+                String str4 = x2.q1.e;
+                s1 s1Var = q1Var.b;
+                ArrayList<? extends Parcelable> arrayList = new ArrayList<>(s1Var.d);
+                g0 listIterator = s1Var.listIterator(0);
                 while (listIterator.hasNext()) {
                     arrayList.add(((m1) listIterator.next()).c());
                 }
@@ -117,15 +109,15 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
             case 10:
                 bb.e eVar = (bb.e) obj;
                 eVar.getClass();
-                ly0 ly0Var = ab.w.a;
-                ly0Var.getClass();
+                ld0 ld0Var = ab.x.a;
+                ld0Var.getClass();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
-                    ly0Var.q(eVar, byteArrayOutputStream);
+                    ld0Var.q(eVar, byteArrayOutputStream);
                 } catch (IOException unused) {
                 }
                 return byteArrayOutputStream.toByteArray();
-            case 27:
+            case 23:
                 Bundle bundle2 = (Bundle) obj;
                 ?? charSequence2 = bundle2.getCharSequence(g2.b.s);
                 int i12 = 1;
@@ -139,26 +131,26 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                             Object obj2 = parcelableArrayList.get(i13);
                             i13++;
                             Bundle bundle3 = (Bundle) obj2;
-                            int i14 = bundle3.getInt(g2.e.a);
-                            int i15 = bundle3.getInt(g2.e.b);
-                            int i16 = bundle3.getInt(g2.e.c);
-                            int i17 = bundle3.getInt(g2.e.d, -1);
-                            Bundle bundle4 = bundle3.getBundle(g2.e.e);
+                            int i14 = bundle3.getInt(g2.d.a);
+                            int i15 = bundle3.getInt(g2.d.b);
+                            int i16 = bundle3.getInt(g2.d.c);
+                            int i17 = bundle3.getInt(g2.d.d, -1);
+                            Bundle bundle4 = bundle3.getBundle(g2.d.e);
                             if (i17 == i12) {
                                 bundle4.getClass();
-                                String string = bundle4.getString(g2.g.c);
+                                String string = bundle4.getString(g2.f.c);
                                 string.getClass();
-                                charSequence2.setSpan(new g2.g(string, bundle4.getInt(g2.g.d)), i14, i15, i16);
+                                charSequence2.setSpan(new g2.f(string, bundle4.getInt(g2.f.d)), i14, i15, i16);
                             } else if (i17 == 2) {
                                 bundle4.getClass();
-                                charSequence2.setSpan(new g2.h(bundle4.getInt(g2.h.d), bundle4.getInt(g2.h.e), bundle4.getInt(g2.h.f)), i14, i15, i16);
+                                charSequence2.setSpan(new g2.g(bundle4.getInt(g2.g.d), bundle4.getInt(g2.g.e), bundle4.getInt(g2.g.f)), i14, i15, i16);
                             } else if (i17 == 3) {
-                                charSequence2.setSpan(new g2.f(), i14, i15, i16);
+                                charSequence2.setSpan(new g2.e(), i14, i15, i16);
                             } else if (i17 == 4) {
                                 bundle4.getClass();
-                                String string2 = bundle4.getString(g2.i.b);
+                                String string2 = bundle4.getString(g2.h.b);
                                 string2.getClass();
-                                charSequence2.setSpan(new g2.i(string2), i14, i15, i16);
+                                charSequence2.setSpan(new g2.h(string2), i14, i15, i16);
                             }
                             i12 = 1;
                         }
@@ -205,13 +197,13 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                                         str2 = g2.b.H;
                                         if (bundle2.containsKey(str2)) {
                                             i11 = -16777216;
-                                            z9 = false;
+                                            z10 = false;
                                         } else {
                                             i11 = bundle2.getInt(str2);
-                                            z9 = true;
+                                            z10 = true;
                                         }
                                         int i21 = i11;
-                                        boolean z10 = bundle2.getBoolean(g2.b.I, false) ? false : z9;
+                                        boolean z11 = bundle2.getBoolean(g2.b.I, false) ? false : z10;
                                         str3 = g2.b.J;
                                         if (bundle2.containsKey(str3)) {
                                             i18 = bundle2.getInt(str3);
@@ -220,7 +212,7 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                                         String str13 = g2.b.K;
                                         float f15 = !bundle2.containsKey(str13) ? bundle2.getFloat(str13) : 0.0f;
                                         String str14 = g2.b.L;
-                                        return new g2.b(charSequence, alignment2, alignment4, bitmap, f10, i7, i19, f12, i20, i10, f11, f13, f14, z10, i21, i22, f15, bundle2.containsKey(str14) ? bundle2.getInt(str14) : 0);
+                                        return new g2.b(charSequence, alignment2, alignment4, bitmap, f10, i7, i19, f12, i20, i10, f11, f13, f14, z11, i21, i22, f15, bundle2.containsKey(str14) ? bundle2.getInt(str14) : 0);
                                     }
                                 }
                                 f11 = -3.4028235E38f;
@@ -243,7 +235,7 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                                 String str132 = g2.b.K;
                                 float f152 = !bundle2.containsKey(str132) ? bundle2.getFloat(str132) : 0.0f;
                                 String str142 = g2.b.L;
-                                return new g2.b(charSequence, alignment2, alignment4, bitmap, f10, i7, i19, f12, i20, i10, f11, f13, f142, z10, i212, i222, f152, bundle2.containsKey(str142) ? bundle2.getInt(str142) : 0);
+                                return new g2.b(charSequence, alignment2, alignment4, bitmap, f10, i7, i19, f12, i20, i10, f11, f13, f142, z11, i212, i222, f152, bundle2.containsKey(str142) ? bundle2.getInt(str142) : 0);
                             }
                         }
                         f10 = -3.4028235E38f;
@@ -280,7 +272,7 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                         String str1322 = g2.b.K;
                         float f1522 = !bundle2.containsKey(str1322) ? bundle2.getFloat(str1322) : 0.0f;
                         String str1422 = g2.b.L;
-                        return new g2.b(charSequence, alignment2, alignment4, bitmap, f10, i7, i19, f12, i20, i10, f11, f13, f1422, z10, i2122, i2222, f1522, bundle2.containsKey(str1422) ? bundle2.getInt(str1422) : 0);
+                        return new g2.b(charSequence, alignment2, alignment4, bitmap, f10, i7, i19, f12, i20, i10, f11, f13, f1422, z11, i2122, i2222, f1522, bundle2.containsKey(str1422) ? bundle2.getInt(str1422) : 0);
                     }
                     bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                 }
@@ -324,7 +316,7 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                 String str13222 = g2.b.K;
                 float f15222 = !bundle2.containsKey(str13222) ? bundle2.getFloat(str13222) : 0.0f;
                 String str14222 = g2.b.L;
-                return new g2.b(charSequence, alignment2, alignment4, bitmap, f10, i7, i19, f12, i20, i10, f11, f13, f14222, z10, i21222, i22222, f15222, bundle2.containsKey(str14222) ? bundle2.getInt(str14222) : 0);
+                return new g2.b(charSequence, alignment2, alignment4, bitmap, f10, i7, i19, f12, i20, i10, f11, f13, f14222, z11, i21222, i22222, f15222, bundle2.containsKey(str14222) ? bundle2.getInt(str14222) : 0);
             default:
                 long j3 = ((c4.a) obj).b;
                 if (j3 == -9223372036854775807L) {
@@ -334,19 +326,26 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r6
-    public void c(int i7, View view) {
-        ((da) view).setColor(i7);
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
+        return TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, i7, z10);
     }
 
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public TLObject deserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
-        return TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, i7, z9);
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(t1 t1Var, int i7) {
+        switch (this.a) {
+            case 19:
+                t1Var.dismiss();
+                break;
+            default:
+                t1Var.dismiss();
+                break;
+        }
     }
 
     @Override // u9.d
-    public Object e(r7 r7Var) {
-        Set H = r7Var.H(cb.a.class);
+    public Object i(r7 r7Var) {
+        Set I = r7Var.I(cb.a.class);
         cb.c cVar = cb.c.c;
         if (cVar == null) {
             synchronized (cb.c.class) {
@@ -360,44 +359,18 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                 }
             }
         }
-        return new cb.b(H, cVar);
+        return new cb.b(I, cVar);
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(u1 u1Var, int i7) {
-        switch (this.a) {
-            case 22:
-                int i10 = k7.v3;
-                break;
-            default:
-                k7.b2(new cb1(6, null));
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.gt0
-    public /* synthetic */ float h(RecyclerView recyclerView) {
-        return f1.c(recyclerView);
-    }
-
-    @Override // org.telegram.ui.ActionBar.q6
-    public int i(View view) {
-        return ((da) view).y;
-    }
-
-    @Override // org.telegram.ui.Components.gt0
-    public RecyclerView l(View view) {
-        return ((ad) view).a;
-    }
-
-    @Override // org.telegram.ui.Components.gt0
-    public /* synthetic */ void s(RecyclerView recyclerView) {
-        f1.b(recyclerView);
+    @Override // org.telegram.messenger.j9
+    public Object o(Object obj) {
+        int i7 = z5.g2;
+        return 0;
     }
 
     @Override // com.google.android.gms.tasks.Continuation
     public Object then(Task task) {
-        boolean z9;
+        boolean z10;
         int i7;
         switch (this.a) {
             case 5:
@@ -407,7 +380,7 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                     x9.b bVar2 = x9.b.a;
                     bVar2.b(str);
                     File file = bVar.c;
-                    z9 = true;
+                    z10 = true;
                     if (file.delete()) {
                         bVar2.b("Deleted report file: " + file.getPath());
                     } else {
@@ -415,9 +388,9 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                     }
                 } else {
                     Log.w("FirebaseCrashlytics", "Crashlytics report could not be enqueued to DataTransport", task.getException());
-                    z9 = false;
+                    z10 = false;
                 }
-                return Boolean.valueOf(z9);
+                return Boolean.valueOf(z10);
             case 6:
             default:
                 i7 = -1;

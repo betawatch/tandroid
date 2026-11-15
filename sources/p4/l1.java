@@ -1,10 +1,10 @@
 package p4;
 
-import a8.ia;
+import a8.ja;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l1 {
     public static final e2.b1 k;
@@ -34,7 +34,7 @@ public final class l1 {
         e2.b1 b1Var = new e2.b1(null, 0, null, null, 0, 0L, 0L, -1, -1);
         k = b1Var;
         l = new l1(b1Var, false, -9223372036854775807L, -9223372036854775807L, 0L, 0, 0L, -9223372036854775807L, -9223372036854775807L, 0L);
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         m = Integer.toString(0, 36);
         n = Integer.toString(1, 36);
         o = Integer.toString(2, 36);
@@ -47,10 +47,10 @@ public final class l1 {
         v = Integer.toString(9, 36);
     }
 
-    public l1(e2.b1 b1Var, boolean z9, long j3, long j10, long j11, int i7, long j12, long j13, long j14, long j15) {
-        ia.f(z9 == (b1Var.h != -1));
+    public l1(e2.b1 b1Var, boolean z10, long j3, long j10, long j11, int i7, long j12, long j13, long j14, long j15) {
+        ja.f(z10 == (b1Var.h != -1));
         this.a = b1Var;
-        this.b = z9;
+        this.b = z10;
         this.c = j3;
         this.d = j10;
         this.e = j11;
@@ -61,11 +61,11 @@ public final class l1 {
         this.j = j15;
     }
 
-    public final l1 a(boolean z9, boolean z10) {
-        if (z9 && z10) {
+    public final l1 a(boolean z10, boolean z11) {
+        if (z10 && z11) {
             return this;
         }
-        return new l1(this.a.b(z9, z10), z9 && this.b, this.c, z9 ? this.d : -9223372036854775807L, z9 ? this.e : 0L, z9 ? this.f : 0, z9 ? this.g : 0L, z9 ? this.h : -9223372036854775807L, z9 ? this.i : -9223372036854775807L, z9 ? this.j : 0L);
+        return new l1(this.a.b(z10, z11), z10 && this.b, this.c, z10 ? this.d : -9223372036854775807L, z10 ? this.e : 0L, z10 ? this.f : 0, z10 ? this.g : 0L, z10 ? this.h : -9223372036854775807L, z10 ? this.i : -9223372036854775807L, z10 ? this.j : 0L);
     }
 
     public final Bundle b(int i7) {
@@ -74,9 +74,9 @@ public final class l1 {
         if (i7 < 3 || !k.a(b1Var)) {
             bundle.putBundle(m, b1Var.c(i7));
         }
-        boolean z9 = this.b;
-        if (z9) {
-            bundle.putBoolean(n, z9);
+        boolean z10 = this.b;
+        if (z10) {
+            bundle.putBoolean(n, z10);
         }
         long j3 = this.c;
         if (j3 != -9223372036854775807L) {

@@ -1,29 +1,29 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lm implements org.telegram.messenger.c20 {
+public final /* synthetic */ class lm implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.c20 b;
+    public final /* synthetic */ jn b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ lm(org.telegram.messenger.c20 c20Var, int i7) {
-        this.a = i7;
-        this.b = c20Var;
+    public /* synthetic */ lm(jn jnVar, int i7, int i10) {
+        this.a = i10;
+        this.b = jnVar;
+        this.c = i7;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.a(new th.e((String) obj));
+                this.b.j0(this.c, null);
+                break;
+            case 1:
+                this.b.g0(this.c);
                 break;
             default:
-                int[] iArr = (int[]) obj;
-                boolean z9 = false;
-                if (iArr.length >= 1 && iArr[0] == 0) {
-                    z9 = true;
-                }
-                this.b.a(Boolean.valueOf(z9));
+                this.b.j0(this.c, null);
                 break;
         }
     }

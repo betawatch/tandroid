@@ -1,53 +1,36 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.ChatActivityEnterView;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class us0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class us0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ PrivacyControlActivity b;
 
-    public /* synthetic */ us0(int i7, ViewGroup viewGroup, Object obj, Object obj2) {
+    public /* synthetic */ us0(PrivacyControlActivity privacyControlActivity, int i7) {
         this.a = i7;
-        this.b = obj;
-        this.c = viewGroup;
-        this.d = obj2;
+        this.b = privacyControlActivity;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                xs0 xs0Var = (xs0) this.b;
-                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
-                PremiumPreviewFragment premiumPreviewFragment = xs0Var.n;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = this.c;
-                view.setAlpha(floatValue);
-                view.setScaleX(floatValue);
-                view.setScaleY(floatValue);
-                float animatedFraction = valueAnimator2.getAnimatedFraction();
-                for (int i7 = 0; i7 < premiumPreviewFragment.U.getChildCount(); i7++) {
-                    View childAt = premiumPreviewFragment.U.getChildAt(i7);
-                    if (childAt != xs0Var.e) {
-                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == xs0Var.c ? 0.0f - (org.telegram.messenger.g0.L(15.0f) * animatedFraction) : 0.0f + (org.telegram.messenger.g0.L(8.0f) * animatedFraction)));
-                    }
-                }
+                PrivacyControlActivity privacyControlActivity = this.b;
+                privacyControlActivity.getClass();
+                privacyControlActivity.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
+                break;
+            case 1:
+                PrivacyControlActivity.Z(this.b);
+                break;
+            case 2:
+                PrivacyControlActivity privacyControlActivity2 = this.b;
+                privacyControlActivity2.getClass();
+                privacyControlActivity2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
                 break;
             default:
-                n51 n51Var = (n51) this.b;
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                org.telegram.ui.Components.bi biVar = (org.telegram.ui.Components.bi) this.d;
-                n51Var.getClass();
-                n51Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                chatActivityEnterView.getEditField().setAlpha(n51Var.a);
-                biVar.invalidate();
+                PrivacyControlActivity privacyControlActivity3 = this.b;
+                privacyControlActivity3.getClass();
+                privacyControlActivity3.presentFragment(new PremiumPreviewFragment(0, "settings"));
                 break;
         }
     }

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import androidx.activity.l;
-import androidx.fragment.app.d0;
+import androidx.fragment.app.e0;
 import androidx.lifecycle.m;
 import androidx.lifecycle.n;
 import androidx.lifecycle.r;
@@ -14,7 +14,7 @@ import androidx.lifecycle.v;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class f {
     public final HashMap a = new HashMap();
@@ -44,9 +44,9 @@ public abstract class f {
         return true;
     }
 
-    public abstract void b(int i7, d0 d0Var, Object obj);
+    public abstract void b(int i7, e0 e0Var, Object obj);
 
-    public final c c(final String str, l lVar, final d0 d0Var, final b bVar) {
+    public final c c(final String str, l lVar, final e0 e0Var, final b bVar) {
         v vVar = lVar.d;
         if (vVar.c.compareTo(n.d) >= 0) {
             throw new IllegalStateException("LifecycleOwner " + lVar + " is attempting to register while current state is " + vVar.c + ". LifecycleOwners must call register before they are STARTED.");
@@ -79,8 +79,8 @@ public abstract class f {
                 Bundle bundle = fVar.g;
                 HashMap hashMap3 = fVar.f;
                 b bVar2 = bVar;
-                d0 d0Var2 = d0Var;
-                hashMap2.put(str2, new d(bVar2, d0Var2));
+                e0 e0Var2 = e0Var;
+                hashMap2.put(str2, new d(bVar2, e0Var2));
                 if (hashMap3.containsKey(str2)) {
                     Object obj = hashMap3.get(str2);
                     hashMap3.remove(str2);
@@ -89,19 +89,19 @@ public abstract class f {
                 a aVar = (a) bundle.getParcelable(str2);
                 if (aVar != null) {
                     bundle.remove(str2);
-                    bVar2.f(d0Var2.a(aVar.b, aVar.a));
+                    bVar2.f(e0Var2.a(aVar.b, aVar.a));
                 }
             }
         };
         eVar.a.a(rVar);
         eVar.b.add(rVar);
         hashMap.put(str, eVar);
-        return new c(this, str, d0Var, 0);
+        return new c(this, str, e0Var, 0);
     }
 
-    public final c d(String str, d0 d0Var, b bVar) {
+    public final c d(String str, e0 e0Var, b bVar) {
         e(str);
-        this.e.put(str, new d(bVar, d0Var));
+        this.e.put(str, new d(bVar, e0Var));
         HashMap hashMap = this.f;
         if (hashMap.containsKey(str)) {
             Object obj = hashMap.get(str);
@@ -112,9 +112,9 @@ public abstract class f {
         a aVar = (a) bundle.getParcelable(str);
         if (aVar != null) {
             bundle.remove(str);
-            bVar.f(d0Var.a(aVar.b, aVar.a));
+            bVar.f(e0Var.a(aVar.b, aVar.a));
         }
-        return new c(this, str, d0Var, 1);
+        return new c(this, str, e0Var, 1);
     }
 
     public final void e(String str) {

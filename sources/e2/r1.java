@@ -1,9 +1,9 @@
 package e2;
 
-import a8.ia;
+import a8.ja;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r1 {
     public static final String f;
@@ -17,23 +17,23 @@ public final class r1 {
     public final boolean[] e;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         f = Integer.toString(0, 36);
         g = Integer.toString(1, 36);
         h = Integer.toString(3, 36);
         i = Integer.toString(4, 36);
     }
 
-    public r1(m1 m1Var, boolean z9, int[] iArr, boolean[] zArr) {
+    public r1(m1 m1Var, boolean z10, int[] iArr, boolean[] zArr) {
         int i7 = m1Var.a;
         this.a = i7;
-        boolean z10 = false;
-        ia.f(i7 == iArr.length && i7 == zArr.length);
+        boolean z11 = false;
+        ja.f(i7 == iArr.length && i7 == zArr.length);
         this.b = m1Var;
-        if (z9 && i7 > 1) {
-            z10 = true;
+        if (z10 && i7 > 1) {
+            z11 = true;
         }
-        this.c = z10;
+        this.c = z11;
         this.d = (int[]) iArr.clone();
         this.e = (boolean[]) zArr.clone();
     }

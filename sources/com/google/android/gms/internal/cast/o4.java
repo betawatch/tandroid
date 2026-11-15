@@ -4,7 +4,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o4 extends AtomicReference implements Runnable {
     public static final h4 c = new h4();
@@ -21,12 +21,12 @@ public final class o4 extends AtomicReference implements Runnable {
     public final void a(Thread thread) {
         Runnable runnable = (Runnable) get();
         g4 g4Var = null;
-        boolean z9 = false;
+        boolean z10 = false;
         int i7 = 0;
         while (true) {
-            boolean z10 = runnable instanceof g4;
+            boolean z11 = runnable instanceof g4;
             h4 h4Var = d;
-            if (!z10) {
+            if (!z11) {
                 if (runnable != h4Var) {
                     break;
                 }
@@ -37,12 +37,12 @@ public final class o4 extends AtomicReference implements Runnable {
             if (i7 <= 1000) {
                 Thread.yield();
             } else if (runnable == h4Var || compareAndSet(runnable, h4Var)) {
-                z9 = Thread.interrupted() || z9;
+                z10 = Thread.interrupted() || z10;
                 LockSupport.park(g4Var);
             }
             runnable = (Runnable) get();
         }
-        if (z9) {
+        if (z10) {
             thread.interrupt();
         }
     }
@@ -102,6 +102,6 @@ public final class o4 extends AtomicReference implements Runnable {
     @Override // java.util.concurrent.atomic.AtomicReference
     public final String toString() {
         Runnable runnable = (Runnable) get();
-        return a8.p0.D(runnable == c ? "running=[DONE]" : runnable instanceof g4 ? "running=[INTERRUPTED]" : runnable instanceof Thread ? a8.p0.p("running=[RUNNING ON ", ((Thread) runnable).getName(), "]") : "running=[NOT STARTED YET]", ", ", this.a.toString());
+        return a8.p0.E(runnable == c ? "running=[DONE]" : runnable instanceof g4 ? "running=[INTERRUPTED]" : runnable instanceof Thread ? a8.p0.p("running=[RUNNING ON ", ((Thread) runnable).getName(), "]") : "running=[NOT STARTED YET]", ", ", this.a.toString());
     }
 }

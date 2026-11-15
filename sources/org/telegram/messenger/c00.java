@@ -1,30 +1,48 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.content.SharedPreferences;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c00 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k00 b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ h00 b;
 
-    public /* synthetic */ c00(k00 k00Var, long j3, int i7) {
+    public /* synthetic */ c00(h00 h00Var, int i7) {
         this.a = i7;
-        this.b = k00Var;
-        this.c = j3;
+        this.b = h00Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        long j3 = this.c;
-        k00 k00Var = this.b;
+        h00 h00Var = this.b;
         switch (i7) {
             case 0:
-                k00Var.c.put(j3, 0);
-                k00Var.getNotificationCenter().k(qs.q5, Long.valueOf(j3), Boolean.FALSE);
+                ns f10 = ns.f(h00Var.currentAccount);
+                int i10 = np.D8;
+                f10.k(2, 512);
                 break;
             default:
-                k00Var.n(0, j3, false);
+                h00Var.a.b();
+                h00Var.b.b();
+                h00Var.d.clear();
+                SharedPreferences.Editor edit = h00Var.getUserConfig().k().edit();
+                for (String str : h00Var.getUserConfig().k().getAll().keySet()) {
+                    if (str.startsWith("topics_load_offset_message_id_")) {
+                        edit.remove(str);
+                    }
+                    if (str.startsWith("topics_load_offset_date_")) {
+                        edit.remove(str);
+                    }
+                    if (str.startsWith("topics_load_offset_topic_id_")) {
+                        edit.remove(str);
+                    }
+                    if (str.startsWith("topics_end_reached_")) {
+                        edit.remove(str);
+                    }
+                }
+                edit.apply();
                 break;
         }
     }

@@ -13,10 +13,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static volatile ab.a0 b;
+    public static volatile ab.b0 b;
     public static final Object a = new Object();
     public static final a1 c = new a1("id");
     public static final a1 d = new a1(TeXSymbolParser.TYPE_ATTR);
@@ -84,7 +84,7 @@ public abstract class a {
         int length;
         int length2;
         int indexOf;
-        String m10;
+        String l10;
         int i7 = 0;
         int i10 = 0;
         while (true) {
@@ -94,17 +94,17 @@ public abstract class a {
             }
             Object obj = objArr[i10];
             if (obj == null) {
-                m10 = "null";
+                l10 = "null";
             } else {
                 try {
-                    m10 = obj.toString();
+                    l10 = obj.toString();
                 } catch (Exception e10) {
-                    String D = a8.p0.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e10);
-                    m10 = org.telegram.ui.Cells.f1.m("<", D, " threw ", e10.getClass().getName(), ">");
+                    String E = a8.p0.E(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(E), (Throwable) e10);
+                    l10 = r.b.l("<", E, " threw ", e10.getClass().getName(), ">");
                 }
             }
-            objArr[i10] = m10;
+            objArr[i10] = l10;
             i10++;
         }
         StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
@@ -190,7 +190,7 @@ public abstract class a {
                 c10 = c("%s (%s) must not be negative", "index", Integer.valueOf(i7));
             } else {
                 if (i10 < 0) {
-                    throw new IllegalArgumentException(jg.g.j(i10, "negative size: "));
+                    throw new IllegalArgumentException(i5.c.i(i10, "negative size: "));
                 }
                 c10 = c("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i7), Integer.valueOf(i10));
             }
@@ -207,18 +207,18 @@ public abstract class a {
         }
     }
 
-    public static final void g(StringBuilder sb2, Iterator it, nb.a aVar) {
+    public static final void g(StringBuilder sb2, Iterator it, sa.d dVar) {
         if (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            sb2.append(nb.a.t0(entry.getKey()));
+            sb2.append(sa.d.E2(entry.getKey()));
             sb2.append(" : ");
-            sb2.append(nb.a.t0(entry.getValue()));
+            sb2.append(sa.d.E2(entry.getValue()));
             while (it.hasNext()) {
                 sb2.append(",\n  ");
                 Map.Entry entry2 = (Map.Entry) it.next();
-                sb2.append(nb.a.t0(entry2.getKey()));
+                sb2.append(sa.d.E2(entry2.getKey()));
                 sb2.append(" : ");
-                sb2.append(nb.a.t0(entry2.getValue()));
+                sb2.append(sa.d.E2(entry2.getValue()));
             }
         }
     }
@@ -325,7 +325,7 @@ public abstract class a {
                     }
                     l(b11, c10);
                     int i10 = (int) c10;
-                    m4.d0[] d0VarArr = new m4.d0[i10];
+                    k8.a[] aVarArr = new k8.a[i10];
                     c1 c1Var = null;
                     int i11 = 0;
                     while (i11 < c10) {
@@ -333,17 +333,17 @@ public abstract class a {
                         if (c1Var != null && k10.compareTo(c1Var) <= 0) {
                             throw new androidx.datastore.preferences.protobuf.l("Keys in CBOR Map not in strictly ascending natural order:\nPrevious key: " + c1Var.toString() + "\nCurrent key: " + k10.toString());
                         }
-                        d0VarArr[i11] = new m4.d0(k10, k(e1Var));
+                        aVarArr[i11] = new k8.a(k10, k(e1Var), false, 27);
                         i11++;
                         c1Var = k10;
                     }
                     TreeMap treeMap = new TreeMap();
                     while (i7 < i10) {
-                        m4.d0 d0Var = d0VarArr[i7];
-                        if (treeMap.containsKey((c1) d0Var.a)) {
+                        k8.a aVar = aVarArr[i7];
+                        if (treeMap.containsKey((c1) aVar.b)) {
                             throw new androidx.datastore.preferences.protobuf.l("Attempted to add duplicate key to canonical CBOR Map.");
                         }
-                        treeMap.put((c1) d0Var.a, (c1) d0Var.b);
+                        treeMap.put((c1) aVar.b, (c1) aVar.c);
                         i7++;
                     }
                     return new z0(r.c(treeMap));
@@ -364,22 +364,22 @@ public abstract class a {
         switch (b10) {
             case 24:
                 if (j3 < 24) {
-                    throw new androidx.datastore.preferences.protobuf.l(rf.b.h(j3, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
+                    throw new androidx.datastore.preferences.protobuf.l(r.b.j(j3, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
                 }
                 return;
             case 25:
                 if (j3 < 256) {
-                    throw new androidx.datastore.preferences.protobuf.l(rf.b.h(j3, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
+                    throw new androidx.datastore.preferences.protobuf.l(r.b.j(j3, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
                 }
                 return;
             case 26:
                 if (j3 < 65536) {
-                    throw new androidx.datastore.preferences.protobuf.l(rf.b.h(j3, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
+                    throw new androidx.datastore.preferences.protobuf.l(r.b.j(j3, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
                 }
                 return;
             case 27:
                 if (j3 < 4294967296L) {
-                    throw new androidx.datastore.preferences.protobuf.l(rf.b.h(j3, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
+                    throw new androidx.datastore.preferences.protobuf.l(r.b.j(j3, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
                 }
                 return;
             default:
@@ -400,6 +400,6 @@ public abstract class a {
         if (i10 >= 0) {
             return c("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i7), Integer.valueOf(i10));
         }
-        throw new IllegalArgumentException(jg.g.j(i10, "negative size: "));
+        throw new IllegalArgumentException(i5.c.i(i10, "negative size: "));
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class Camera1Enumerator implements CameraEnumerator {
     private static final String TAG = "Camera1Enumerator";
@@ -63,10 +63,10 @@ public class Camera1Enumerator implements CameraEnumerator {
                     Logging.e(TAG, "getSupportedFormats() failed on camera index " + i7, e10);
                 }
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
-                StringBuilder n10 = jg.g.n(i7, "Get supported formats for camera index ", " done. Time spent: ");
-                n10.append(elapsedRealtime2 - elapsedRealtime);
-                n10.append(" ms.");
-                Logging.d(TAG, n10.toString());
+                StringBuilder m10 = i5.c.m(i7, "Get supported formats for camera index ", " done. Time spent: ");
+                m10.append(elapsedRealtime2 - elapsedRealtime);
+                m10.append(" ms.");
+                Logging.d(TAG, m10.toString());
                 return arrayList;
             } catch (RuntimeException e11) {
                 Logging.e(TAG, "Open camera failed on camera index " + i7, e11);
@@ -91,7 +91,7 @@ public class Camera1Enumerator implements CameraEnumerator {
                 return i7;
             }
         }
-        throw new IllegalArgumentException(rf.b.i("No such camera: ", str));
+        throw new IllegalArgumentException(r.b.k("No such camera: ", str));
     }
 
     private static Camera.CameraInfo getCameraInfo(int i7) {
@@ -150,8 +150,8 @@ public class Camera1Enumerator implements CameraEnumerator {
         return cameraInfo != null && cameraInfo.facing == 1;
     }
 
-    public Camera1Enumerator(boolean z9) {
-        this.captureToTexture = z9;
+    public Camera1Enumerator(boolean z10) {
+        this.captureToTexture = z10;
     }
 
     public static synchronized List<CameraEnumerationAndroid.CaptureFormat> getSupportedFormats(int i7) {

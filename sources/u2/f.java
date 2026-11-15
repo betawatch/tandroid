@@ -5,10 +5,10 @@ import android.media.MediaFormat;
 import android.os.Handler;
 import android.os.HandlerThread;
 import java.util.ArrayDeque;
-import l2.l0;
-import org.telegram.ui.Components.qt;
+import l2.i0;
+import org.telegram.ui.Components.cf;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f extends MediaCodec.Callback {
     public final HandlerThread b;
@@ -20,7 +20,7 @@ public final class f extends MediaCodec.Callback {
     public long l;
     public boolean m;
     public IllegalStateException n;
-    public qt o;
+    public cf o;
     public final Object a = new Object();
     public final h2.f d = new h2.f(0);
     public final h2.f e = new h2.f(0);
@@ -85,19 +85,19 @@ public final class f extends MediaCodec.Callback {
 
     @Override // android.media.MediaCodec.Callback
     public final void onInputBufferAvailable(MediaCodec mediaCodec, int i7) {
-        l0 l0Var;
+        i0 i0Var;
         synchronized (this.a) {
             this.d.a(i7);
-            qt qtVar = this.o;
-            if (qtVar != null && (l0Var = ((r) qtVar.b).Y) != null) {
-                l0Var.a();
+            cf cfVar = this.o;
+            if (cfVar != null && (i0Var = ((r) cfVar.a).Z) != null) {
+                i0Var.a();
             }
         }
     }
 
     @Override // android.media.MediaCodec.Callback
     public final void onOutputBufferAvailable(MediaCodec mediaCodec, int i7, MediaCodec.BufferInfo bufferInfo) {
-        l0 l0Var;
+        i0 i0Var;
         synchronized (this.a) {
             try {
                 MediaFormat mediaFormat = this.i;
@@ -108,9 +108,9 @@ public final class f extends MediaCodec.Callback {
                 }
                 this.e.a(i7);
                 this.f.add(bufferInfo);
-                qt qtVar = this.o;
-                if (qtVar != null && (l0Var = ((r) qtVar.b).Y) != null) {
-                    l0Var.a();
+                cf cfVar = this.o;
+                if (cfVar != null && (i0Var = ((r) cfVar.a).Z) != null) {
+                    i0Var.a();
                 }
             } catch (Throwable th2) {
                 throw th2;

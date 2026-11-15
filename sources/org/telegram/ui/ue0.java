@@ -1,33 +1,84 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ue0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ff0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
+public final class ue0 extends v4.o {
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public final SparseIntArray i = new SparseIntArray();
+    public final SparseIntArray j = new SparseIntArray();
+    public final ArrayList k = new ArrayList();
+    public final ArrayList l = new ArrayList();
+    public final /* synthetic */ cf0 m;
 
-    public /* synthetic */ ue0(ff0 ff0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i7) {
-        this.a = i7;
-        this.b = ff0Var;
-        this.c = tL_error;
-        this.d = tLObject;
+    public ue0(cf0 cf0Var) {
+        this.m = cf0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ff0 ff0Var = this.b;
-                ff0Var.getNotificationCenter().d(new ue0(ff0Var, this.c, this.d, 1));
-                break;
-            default:
-                ff0.a0(this.b, this.c, this.d);
-                break;
+    public static void g(int i7, int i10, SparseIntArray sparseIntArray) {
+        if (i10 >= 0) {
+            sparseIntArray.put(i10, i7);
         }
+    }
+
+    @Override // v4.o
+    public final boolean a(int i7, int i10) {
+        return b(i7, i10);
+    }
+
+    @Override // v4.o
+    public final boolean b(int i7, int i10) {
+        int i11;
+        int i12;
+        int i13 = this.c;
+        cf0 cf0Var = this.m;
+        if (((i7 >= i13 && i7 < this.d) || (i7 >= this.e && i7 < this.f)) && ((i10 >= (i12 = cf0Var.E) && i10 < cf0Var.F) || (i10 >= cf0Var.I && i10 < cf0Var.J))) {
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = (i10 < i12 || i10 >= cf0Var.F) ? (TLRPC.TL_chatInviteExported) cf0Var.k0.get(i10 - cf0Var.I) : (TLRPC.TL_chatInviteExported) cf0Var.j0.get(i10 - i12);
+            int i14 = this.c;
+            return ((i7 < i14 || i7 >= this.d) ? (TLRPC.TL_chatInviteExported) this.l.get(i7 - this.e) : (TLRPC.TL_chatInviteExported) this.k.get(i7 - i14)).link.equals(tL_chatInviteExported.link);
+        }
+        int i15 = this.g;
+        if (i7 >= i15 && i7 < this.h && i10 >= (i11 = cf0Var.V) && i10 < cf0Var.W) {
+            return i7 - i15 == i10 - i11;
+        }
+        int i16 = this.i.get(i7, -1);
+        return i16 >= 0 && i16 == this.j.get(i10, -1);
+    }
+
+    @Override // v4.o
+    public final int d() {
+        return this.m.Y;
+    }
+
+    @Override // v4.o
+    public final int e() {
+        return this.b;
+    }
+
+    public final void f(SparseIntArray sparseIntArray) {
+        sparseIntArray.clear();
+        cf0 cf0Var = this.m;
+        g(1, cf0Var.r, sparseIntArray);
+        g(2, cf0Var.s, sparseIntArray);
+        g(3, cf0Var.w, sparseIntArray);
+        g(4, cf0Var.x, sparseIntArray);
+        g(5, cf0Var.y, sparseIntArray);
+        g(6, cf0Var.M, sparseIntArray);
+        g(7, cf0Var.O, sparseIntArray);
+        g(8, cf0Var.P, sparseIntArray);
+        g(9, cf0Var.R, sparseIntArray);
+        g(10, cf0Var.S, sparseIntArray);
+        g(11, cf0Var.T, sparseIntArray);
+        g(12, cf0Var.Q, sparseIntArray);
+        g(13, cf0Var.G, sparseIntArray);
     }
 }

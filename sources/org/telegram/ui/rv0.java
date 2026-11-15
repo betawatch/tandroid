@@ -1,16 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class rv0 extends hz {
-    @Override // org.telegram.ui.hz, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        canvas.save();
-        canvas.translate(org.telegram.messenger.g0.L(2.0f), 0.0f);
-        super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
-        canvas.restore();
+public final /* synthetic */ class rv0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sv0 b;
+
+    public /* synthetic */ rv0(sv0 sv0Var, int i7) {
+        this.a = i7;
+        this.b = sv0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.b.n0;
+                fv0 fv0Var = profileActivity.R5;
+                if (fv0Var != null) {
+                    fv0Var.dismiss();
+                    profileActivity.R5 = null;
+                    break;
+                }
+                break;
+            default:
+                try {
+                    org.telegram.ui.Components.uj0 currentListView = this.b.h0.O.getCurrentListView();
+                    if (currentListView != null && currentListView.getAdapter() != null) {
+                        currentListView.getAdapter().f();
+                        break;
+                    }
+                } catch (Throwable unused) {
+                    return;
+                }
+                break;
+        }
     }
 }

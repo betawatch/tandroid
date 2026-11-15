@@ -1,46 +1,44 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class og0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tg0 b;
+public final class og0 extends hi.d {
+    public final /* synthetic */ int l0;
+    public final /* synthetic */ org.telegram.ui.Components.ja m0;
 
-    public /* synthetic */ og0(tg0 tg0Var, int i7) {
-        this.a = i7;
-        this.b = tg0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ og0(org.telegram.ui.Components.ja jaVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i7) {
+        super(context, e6Var, true);
+        this.l0 = i7;
+        this.m0 = jaVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // hi.d
+    public final float b(float f10, float f11) {
+        switch (this.l0) {
             case 0:
-                tg0 tg0Var = this.b;
-                sg0 sg0Var = tg0Var.l2;
-                HashSet hashSet = tg0Var.Y1;
-                if (hashSet.size() != 0 && sg0Var != null) {
-                    ArrayList arrayList = new ArrayList();
-                    for (TLRPC.User user : tg0Var.d2.values()) {
-                        if (hashSet.contains(Long.valueOf(user.id))) {
-                            arrayList.add(Long.valueOf(user.id));
-                        }
-                    }
-                    sg0Var.a(arrayList);
-                    tg0Var.dismiss();
+                qg0 qg0Var = (qg0) this.m0;
+                boolean z10 = qg0Var.j2 == 0.0f;
+                qg0Var.j2 = f10;
+                if (z10) {
+                    qg0Var.k2 = new org.telegram.ui.Components.hp(qg0Var, 2);
+                    qg0Var.e1(false);
                     break;
                 }
                 break;
             default:
-                tg0 tg0Var2 = this.b;
-                tg0Var2.Y1.clear();
-                tg0Var2.T1.d.b(true);
-                tg0Var2.g1(true, false);
+                wg.c1 c1Var = (wg.c1) this.m0;
+                boolean z11 = c1Var.p2 == 0.0f;
+                c1Var.p2 = f10;
+                if (z11) {
+                    c1Var.q2 = new org.telegram.ui.Components.hp(c1Var, 3);
+                    c1Var.n1(false);
+                    break;
+                }
                 break;
         }
+        return f10;
     }
 }

@@ -1,15 +1,15 @@
 package oe;
 
-import a8.ab;
+import a8.bb;
+import c8.u9;
 import c8.uc;
-import c8.v9;
-import gb.h0;
+import gb.g0;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class m implements me.d, b {
     public final String a;
@@ -39,7 +39,7 @@ public class m implements me.d, b {
         this.g = new boolean[i12];
         this.h = hd.o.a;
         gd.d[] dVarArr = gd.d.a;
-        this.i = ab.a(new rd.a(this) { // from class: oe.l
+        this.i = bb.a(new rd.a(this) { // from class: oe.l
             public final /* synthetic */ m b;
 
             {
@@ -79,7 +79,7 @@ public class m implements me.d, b {
                                     }
                                     int i18 = f11 - 1;
                                     int i19 = i17 * 31;
-                                    v9 e10 = mVar.i(mVar.f() - f11).e();
+                                    u9 e10 = mVar.i(mVar.f() - f11).e();
                                     i17 = i19 + (e10 != null ? e10.hashCode() : 0);
                                     f11 = i18;
                                 }
@@ -88,9 +88,9 @@ public class m implements me.d, b {
                 }
             }
         });
-        this.j = ab.a(new h0(this));
+        this.j = bb.a(new g0(this));
         final int i13 = 1;
-        this.k = ab.a(new rd.a(this) { // from class: oe.l
+        this.k = bb.a(new rd.a(this) { // from class: oe.l
             public final /* synthetic */ m b;
 
             {
@@ -130,7 +130,7 @@ public class m implements me.d, b {
                                     }
                                     int i18 = f11 - 1;
                                     int i19 = i17 * 31;
-                                    v9 e10 = mVar.i(mVar.f() - f11).e();
+                                    u9 e10 = mVar.i(mVar.f() - f11).e();
                                     i17 = i19 + (e10 != null ? e10.hashCode() : 0);
                                     f11 = i18;
                                 }
@@ -169,7 +169,7 @@ public class m implements me.d, b {
     }
 
     @Override // me.d
-    public final v9 e() {
+    public final u9 e() {
         return me.f.b;
     }
 
@@ -238,12 +238,12 @@ public class m implements me.d, b {
         return this.g[i7];
     }
 
-    public final void k(String str, boolean z9) {
+    public final void k(String str, boolean z10) {
         int i7 = this.d + 1;
         this.d = i7;
         String[] strArr = this.e;
         strArr[i7] = str;
-        this.g[i7] = z9;
+        this.g[i7] = z10;
         this.f[i7] = null;
         if (i7 == this.c - 1) {
             HashMap hashMap = new HashMap();

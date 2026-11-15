@@ -9,9 +9,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
+public final /* synthetic */ class vp implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
@@ -21,17 +21,17 @@ public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Serializable h;
 
-    public /* synthetic */ vp(int i7, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, org.telegram.messenger.c20 c20Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public /* synthetic */ vp(int i7, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, org.telegram.messenger.z10 z10Var, org.telegram.ui.ActionBar.e6 e6Var) {
         this.b = i7;
         this.d = arrayList;
         this.c = j3;
         this.e = activity;
-        this.f = h6Var;
-        this.g = c20Var;
+        this.f = e6Var;
+        this.g = z10Var;
         this.h = hashMap;
     }
 
-    @Override // org.telegram.messenger.c20
+    @Override // org.telegram.messenger.z10
     public final void a(Object obj) {
         int i7 = this.a;
         Serializable serializable = this.h;
@@ -41,31 +41,31 @@ public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
         Object obj5 = this.d;
         switch (i7) {
             case 0:
-                rq rqVar = (rq) obj5;
+                qq qqVar = (qq) obj5;
                 TLObject tLObject = (TLObject) obj4;
                 TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) obj3;
                 TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) obj2;
                 String str = (String) serializable;
                 int intValue = ((Integer) obj).intValue();
                 boolean[] zArr = new boolean[1];
-                boolean z9 = (tLObject instanceof TLRPC.TL_channelParticipantAdmin) || (tLObject instanceof TLRPC.TL_chatParticipantAdmin);
-                long j3 = rqVar.M;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights2 = rqVar.D;
+                boolean z10 = (tLObject instanceof TLRPC.TL_channelParticipantAdmin) || (tLObject instanceof TLRPC.TL_chatParticipantAdmin);
+                long j3 = qqVar.N;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights2 = qqVar.E;
                 long j10 = this.c;
-                yp ypVar = new yp(rqVar, j10, j3, tL_chatAdminRights, tL_chatBannedRights2, tL_chatBannedRights, str, intValue, zArr, j10);
-                ypVar.X0 = new zp(rqVar, intValue, j10, this.b, z9, zArr);
-                rqVar.presentFragment(ypVar);
+                yp ypVar = new yp(qqVar, j10, j3, tL_chatAdminRights, tL_chatBannedRights2, tL_chatBannedRights, str, intValue, zArr, j10);
+                ypVar.Y0 = new zp(qqVar, intValue, j10, this.b, z10, zArr);
+                qqVar.presentFragment(ypVar);
                 break;
             case 1:
                 ArrayList arrayList = (ArrayList) obj5;
                 Activity activity = (Activity) obj4;
-                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj3;
-                org.telegram.messenger.c20 c20Var = (org.telegram.messenger.c20) obj2;
+                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj3;
+                org.telegram.messenger.z10 z10Var = (org.telegram.messenger.z10) obj2;
                 HashMap hashMap = (HashMap) serializable;
                 boolean booleanValue = ((Boolean) obj).booleanValue();
                 int i10 = this.b;
                 if (booleanValue) {
-                    SharedPreferences.Editor edit = org.telegram.messenger.qp.s1(i10).e7.edit();
+                    SharedPreferences.Editor edit = org.telegram.messenger.np.s1(i10).f7.edit();
                     int size = arrayList.size();
                     int i11 = 0;
                     while (i11 < size) {
@@ -73,41 +73,41 @@ public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
                         i11++;
                         Long l10 = (Long) obj6;
                         long longValue = l10.longValue();
-                        long N1 = org.telegram.messenger.qp.s1(i10).N1(longValue);
+                        long N1 = org.telegram.messenger.np.s1(i10).N1(longValue);
                         if (N1 <= 0 && longValue > 0) {
-                            N1 = org.telegram.messenger.m5.k(org.telegram.messenger.qp.s1(i10).J2(longValue));
+                            N1 = org.telegram.messenger.m5.k(org.telegram.messenger.np.s1(i10).J2(longValue));
                         }
-                        edit.putLong(rf.b.h(longValue, "ask_paid_message_", "_price"), N1);
-                        bi.ea.y(i10, false).O.put(l10, Long.valueOf(System.currentTimeMillis()));
+                        edit.putLong(r.b.j(longValue, "ask_paid_message_", "_price"), N1);
+                        di.v8.y(i10, false).O.put(l10, Long.valueOf(System.currentTimeMillis()));
                     }
                     edit.apply();
                 }
-                org.telegram.messenger.pb pbVar = new org.telegram.messenger.pb(i10, this.c, activity, arrayList, hashMap, c20Var, h6Var);
-                if (!bi.ea.y(i10, false).e) {
-                    bi.ea y10 = bi.ea.y(i10, false);
+                org.telegram.messenger.ob obVar = new org.telegram.messenger.ob(i10, this.c, activity, arrayList, hashMap, z10Var, e6Var);
+                if (!di.v8.y(i10, false).e) {
+                    di.v8 y10 = di.v8.y(i10, false);
                     y10.e = false;
-                    y10.q(pbVar, false, true);
+                    y10.q(obVar, false, true);
                     y10.e = true;
                     break;
                 } else {
-                    pbVar.run();
+                    obVar.run();
                     break;
                 }
                 break;
             default:
-                String str2 = LaunchActivity.B1;
+                String str2 = LaunchActivity.C1;
                 TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
                 int i12 = this.b;
-                tL_messages_toggleBotInAttachMenu.bot = org.telegram.messenger.qp.s1(i12).o1(this.c);
+                tL_messages_toggleBotInAttachMenu.bot = org.telegram.messenger.np.s1(i12).o1(this.c);
                 tL_messages_toggleBotInAttachMenu.enabled = true;
                 tL_messages_toggleBotInAttachMenu.write_allowed = true;
-                ConnectionsManager.getInstance(i12).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.nx((LaunchActivity) obj5, i12, (zw) obj4, (org.telegram.ui.ActionBar.f2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
+                ConnectionsManager.getInstance(i12).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.lx((LaunchActivity) obj5, i12, (yw) obj4, (org.telegram.ui.ActionBar.e2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
                 break;
         }
     }
 
-    public /* synthetic */ vp(rq rqVar, long j3, int i7, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z9) {
-        this.d = rqVar;
+    public /* synthetic */ vp(qq qqVar, long j3, int i7, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10) {
+        this.d = qqVar;
         this.c = j3;
         this.b = i7;
         this.e = tLObject;
@@ -116,12 +116,12 @@ public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
         this.h = str;
     }
 
-    public /* synthetic */ vp(LaunchActivity launchActivity, int i7, long j3, zw zwVar, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.User user, String str) {
+    public /* synthetic */ vp(LaunchActivity launchActivity, int i7, long j3, yw ywVar, org.telegram.ui.ActionBar.e2 e2Var, TLRPC.User user, String str) {
         this.d = launchActivity;
         this.b = i7;
         this.c = j3;
-        this.e = zwVar;
-        this.f = f2Var;
+        this.e = ywVar;
+        this.f = e2Var;
         this.g = user;
         this.h = str;
     }

@@ -1,10 +1,10 @@
 package y3;
 
-import f3.b0;
-import f3.d0;
-import h2.m0;
+import f3.a0;
+import f3.c0;
+import h2.l0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j implements h {
     public final long a;
@@ -26,7 +26,12 @@ public final class j implements h {
     }
 
     @Override // y3.h
-    public final long a(long j3) {
+    public final long a() {
+        return this.f;
+    }
+
+    @Override // y3.h
+    public final long b(long j3) {
         long j10 = j3 - this.a;
         if (!d() || j10 <= this.b) {
             return 0L;
@@ -34,7 +39,7 @@ public final class j implements h {
         long[] jArr = this.g;
         jArr.getClass();
         double d = (j10 * 256.0d) / this.e;
-        int f10 = m0.f(jArr, (long) d, true);
+        int f10 = l0.f(jArr, (long) d, true);
         long j11 = this.c;
         long j12 = (f10 * j11) / 100;
         long j13 = jArr[f10];
@@ -44,37 +49,32 @@ public final class j implements h {
     }
 
     @Override // y3.h
-    public final long b() {
-        return this.f;
-    }
-
-    @Override // y3.h
     public final long c() {
         return this.a + this.b;
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final boolean d() {
         return this.g != null;
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // f3.c0
-    public final b0 f(long j3) {
+    @Override // f3.b0
+    public final a0 f(long j3) {
         double d;
         double d2;
         boolean d10 = d();
         int i7 = this.b;
         long j10 = this.a;
         if (!d10) {
-            d0 d0Var = new d0(0L, j10 + i7);
-            return new b0(d0Var, d0Var);
+            c0 c0Var = new c0(0L, j10 + i7);
+            return new a0(c0Var, c0Var);
         }
-        long j11 = m0.j(j3, 0L, this.c);
+        long j11 = l0.j(j3, 0L, this.c);
         double d11 = (j11 * 100.0d) / this.c;
         double d12 = 0.0d;
         if (d11 <= 0.0d) {
@@ -97,8 +97,8 @@ public final class j implements h {
             d12 = ((d2 - d13) * (d11 - i10)) + d13;
         }
         long j12 = this.e;
-        d0 d0Var2 = new d0(j11, j10 + m0.j(Math.round((d12 / d) * j12), i7, j12 - 1));
-        return new b0(d0Var2, d0Var2);
+        c0 c0Var2 = new c0(j11, j10 + l0.j(Math.round((d12 / d) * j12), i7, j12 - 1));
+        return new a0(c0Var2, c0Var2);
     }
 
     @Override // y3.h
@@ -106,7 +106,7 @@ public final class j implements h {
         return this.d;
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final long h() {
         return this.c;
     }

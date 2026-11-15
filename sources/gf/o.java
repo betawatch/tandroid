@@ -1,23 +1,22 @@
 package gf;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import kf.r;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o extends mf.a {
-    public final kf.n a;
-    public boolean b;
-    public int c;
+    public final kf.o a = new kf.o();
+    public final int b;
+    public boolean c;
 
-    public o(kf.n nVar) {
-        this.a = nVar;
+    public o(int i7) {
+        this.b = i7;
     }
 
     @Override // mf.a
     public final boolean b(kf.a aVar) {
-        if (!(aVar instanceof kf.o)) {
-            return false;
-        }
-        if (this.b && this.c == 1) {
-            this.b = false;
+        if (!this.c) {
+            return true;
         }
         return true;
     }
@@ -33,13 +32,20 @@ public final class o extends mf.a {
     }
 
     @Override // mf.a
-    public final a h(h hVar) {
-        if (hVar.h) {
-            this.b = true;
-            this.c = 0;
-        } else if (this.b) {
-            this.c++;
+    public final a h(g gVar) {
+        if (gVar.h) {
+            if (((kf.p) this.a.c) == null) {
+                return null;
+            }
+            kf.a e10 = gVar.h().e();
+            this.c = (e10 instanceof r) || (e10 instanceof kf.o);
+            return a.a(gVar.e);
         }
-        return a.a(hVar.b);
+        int i7 = gVar.g;
+        int i10 = this.b;
+        if (i7 >= i10) {
+            return new a(-1, gVar.c + i10, false);
+        }
+        return null;
     }
 }

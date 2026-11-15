@@ -7,15 +7,15 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class f4 extends e6 {
+public final class f4 extends f6 {
     public static final Paint i = new Paint(2);
     public static final Rect j = new Rect();
     public g4 c;
     public g4 d;
-    public org.telegram.ui.Components.v5 e;
-    public org.telegram.ui.Components.v5 f;
+    public org.telegram.ui.Components.u5 e;
+    public org.telegram.ui.Components.u5 f;
     public g4 g;
     public g4 h;
 
@@ -28,7 +28,7 @@ public final class f4 extends e6 {
                 i7 = paint.getAlpha();
                 paint.setAlpha((int) (i7 * f10));
             } else {
-                i7 = qs.e4;
+                i7 = ns.e4;
             }
             canvas.drawBitmap(bitmap, (Rect) null, rect, paint);
             if (f10 < 1.0f) {
@@ -37,14 +37,14 @@ public final class f4 extends e6 {
         }
     }
 
-    @Override // org.telegram.messenger.e6
+    @Override // org.telegram.messenger.f6
     public final boolean a() {
         g4 g4Var = this.c;
         SparseArray sparseArray = g4.e;
         return sparseArray.indexOfKey(g4Var.c) >= 0 && sparseArray.indexOfKey(this.d.c) >= 0;
     }
 
-    @Override // org.telegram.messenger.e6
+    @Override // org.telegram.messenger.f6
     public final void b() {
         if (a()) {
             return;
@@ -58,7 +58,7 @@ public final class f4 extends e6 {
         Rect bounds;
         if (!a()) {
             b();
-            Paint paint = i6.d;
+            Paint paint = j6.d;
             paint.setColor(this.b);
             Rect bounds2 = getBounds();
             canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), bounds2.width() * 0.4f, paint);
@@ -68,13 +68,13 @@ public final class f4 extends e6 {
             Rect bounds3 = getBounds();
             int centerX = bounds3.centerX();
             int centerY = bounds3.centerY();
-            boolean z9 = this.a;
-            int i7 = z9 ? i6.c : i6.b;
+            boolean z10 = this.a;
+            int i7 = z10 ? j6.c : j6.b;
             bounds = j;
             bounds.left = centerX - (i7 / 2);
-            bounds.right = ((z9 ? i6.c : i6.b) / 2) + centerX;
-            bounds.top = centerY - ((z9 ? i6.c : i6.b) / 2);
-            bounds.bottom = ((z9 ? i6.c : i6.b) / 2) + centerY;
+            bounds.right = ((z10 ? j6.c : j6.b) / 2) + centerX;
+            bounds.top = centerY - ((z10 ? j6.c : j6.b) / 2);
+            bounds.bottom = ((z10 ? j6.c : j6.b) / 2) + centerY;
         } else {
             bounds = getBounds();
         }
@@ -83,7 +83,7 @@ public final class f4 extends e6 {
         }
         if (this.g != null) {
             if (this.e == null) {
-                this.e = new org.telegram.ui.Components.v5(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.wq.g);
+                this.e = new org.telegram.ui.Components.u5(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.er.g);
             }
             float e10 = this.e.e(false, 1.0f);
             c(canvas, this.g, bounds, Math.min(1.0f, e10 * 1.5f));
@@ -100,7 +100,7 @@ public final class f4 extends e6 {
             return;
         }
         if (this.f == null) {
-            this.f = new org.telegram.ui.Components.v5(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.wq.g);
+            this.f = new org.telegram.ui.Components.u5(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.er.g);
         }
         float e11 = this.f.e(false, 1.0f);
         c(canvas, this.h, bounds, Math.min(1.0f, 1.5f * e11));

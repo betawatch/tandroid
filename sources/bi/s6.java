@@ -1,82 +1,54 @@
 package bi;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.Canvas;
+import android.graphics.PointF;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class s6 {
-    public final e7 a;
-    public x6 b;
-    public x6 c;
-    public x6 d;
-    public o6 h;
-    public o6 i;
-    public o6 j;
-    public o6 k;
-    public TL_stars.TL_starGiftUnique l;
-    public long m;
-    public z1 r;
-    public z1 s;
-    public float t;
-    public boolean u;
-    public boolean v;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final ArrayList g = new ArrayList();
-    public float n = 0.0f;
-    public boolean o = false;
-    public boolean p = false;
-    public boolean q = false;
+public final class s6 extends v4.n0 {
+    public final PointF a = new PointF();
+    public final /* synthetic */ u6 b;
 
-    public s6(e7 e7Var) {
-        this.a = e7Var;
-        e7Var.c.addOnAttachStateChangeListener(new m6(this, 0));
+    public s6(u6 u6Var) {
+        this.b = u6Var;
     }
 
-    public final void a() {
-        this.o = false;
-        this.a.c.c();
-        o6 o6Var = this.h;
-        if (o6Var != null) {
-            o6Var.a();
+    @Override // v4.n0
+    public final void f(Canvas canvas, RecyclerView recyclerView) {
+        float f10;
+        o2 o2Var;
+        float height = recyclerView.getHeight();
+        float width = recyclerView.getWidth();
+        u6 u6Var = this.b;
+        o6 o6Var = u6Var.p2;
+        n6 n6Var = u6Var.d2;
+        uj0 uj0Var = u6Var.o1;
+        PointF pointF = this.a;
+        float f11 = 0.0f;
+        if (jh.k.b(n6Var, uj0Var, pointF)) {
+            float f12 = pointF.x;
+            height = Math.min(height, pointF.y);
+            f11 = Math.max(0.0f, pointF.y + n6Var.getMeasuredHeight());
+            f10 = f12;
+            width = n6Var.getMeasuredWidth() + f12;
+        } else {
+            f10 = 0.0f;
         }
-        o6 o6Var2 = this.i;
-        if (o6Var2 != null) {
-            o6Var2.a();
+        if (jh.k.b(o6Var, uj0Var, pointF)) {
+            height = Math.min(height, pointF.y);
+            f11 = Math.max(f11, pointF.y + o6Var.getMeasuredHeight() + org.telegram.messenger.g0.L(12.0f));
         }
-        o6 o6Var3 = this.j;
-        if (o6Var3 != null) {
-            o6Var3.a();
-        }
-        o6 o6Var4 = this.k;
-        if (o6Var4 != null) {
-            o6Var4.a();
-        }
-        c();
-    }
-
-    public final void b() {
-        if (this.o && !this.v) {
-            this.v = true;
-            org.telegram.messenger.g0.h3(new l6(this, 1));
-        }
-    }
-
-    public final void c() {
-        if (this.o) {
+        if (height >= f11 || (o2Var = n6Var.M) == null) {
             return;
         }
-        ArrayList arrayList = this.e;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            ((q6) obj).a();
-        }
-        arrayList.clear();
-        this.f.clear();
-        this.g.clear();
+        float height2 = (f11 - height) / o2Var.getHeight();
+        canvas.save();
+        canvas.clipRect(f10, height, width, f11);
+        canvas.translate(f10, height);
+        canvas.scale(height2, height2);
+        n6Var.M.draw(canvas);
+        canvas.restore();
     }
 }

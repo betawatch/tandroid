@@ -1,16 +1,29 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes.dex */
-public final class hw {
-    public static final hw d = new hw(new li.z());
-    public final long a;
-    public final String b;
-    public final int c;
+import org.telegram.tgnet.TLRPC;
 
-    public hw(li.z zVar) {
-        this.a = zVar.b;
-        this.b = (String) zVar.c;
-        this.c = zVar.a;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes.dex */
+public final /* synthetic */ class hw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ez b;
+    public final /* synthetic */ TLRPC.Updates c;
+
+    public /* synthetic */ hw(ez ezVar, TLRPC.Updates updates, int i7) {
+        this.a = i7;
+        this.b = ezVar;
+        this.c = updates;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.getMessagesController().O3(this.c, false);
+                break;
+            default:
+                this.b.getMessagesController().O3(this.c, false);
+                break;
+        }
     }
 }

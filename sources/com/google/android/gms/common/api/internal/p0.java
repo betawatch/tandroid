@@ -1,22 +1,18 @@
 package com.google.android.gms.common.api.internal;
 
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public interface p0 {
-    void a();
+public final class p0 extends com.google.android.gms.common.api.m {
+    public final com.google.android.gms.common.api.j b;
 
-    d b(d dVar);
+    public p0(com.google.android.gms.common.api.j jVar) {
+        this.b = jVar;
+    }
 
-    void c();
-
-    void d(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr);
-
-    boolean e(d6.d dVar);
-
-    void f();
-
-    boolean g();
+    @Override // com.google.android.gms.common.api.m
+    public final Looper a() {
+        return this.b.g;
+    }
 }

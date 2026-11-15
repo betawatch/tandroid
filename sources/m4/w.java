@@ -1,10 +1,11 @@
 package m4;
 
+import com.google.android.gms.internal.vision.e2;
 import h2.k0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class w implements h0 {
+public final class w implements g0 {
     public final i a;
     public final d4.f b = new d4.f(new byte[10], 10);
     public int c = 0;
@@ -22,7 +23,7 @@ public final class w implements h0 {
         this.a = iVar;
     }
 
-    @Override // m4.h0
+    @Override // m4.g0
     public final void a(int i7, h2.x xVar) {
         this.e.getClass();
         int i10 = i7 & 1;
@@ -113,10 +114,10 @@ public final class w implements h0 {
         }
     }
 
-    @Override // m4.h0
-    public final void b(k0 k0Var, f3.q qVar, g0 g0Var) {
+    @Override // m4.g0
+    public final void b(k0 k0Var, f3.q qVar, f0 f0Var) {
         this.e = k0Var;
-        this.a.g(qVar, g0Var);
+        this.a.g(qVar, f0Var);
     }
 
     public final boolean c(h2.x xVar, byte[] bArr, int i7) {
@@ -134,7 +135,7 @@ public final class w implements h0 {
         return i10 == i7;
     }
 
-    @Override // m4.h0
+    @Override // m4.g0
     public final void d() {
         this.c = 0;
         this.d = 0;
@@ -147,7 +148,7 @@ public final class w implements h0 {
         fVar.J(0);
         int j3 = fVar.j(24);
         if (j3 != 1) {
-            com.google.android.recaptcha.internal.a.o(j3, "Unexpected start code prefix: ", "PesReader");
+            e2.o(j3, "Unexpected start code prefix: ", "PesReader");
             this.j = -1;
             return false;
         }

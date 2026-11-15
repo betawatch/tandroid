@@ -1,58 +1,24 @@
 package fi;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.as;
-import org.telegram.ui.Components.ez0;
-import org.telegram.ui.f40;
+import org.telegram.messenger.voip.Instance;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d1 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
+public final class d1 implements Instance.OnStateUpdatedListener {
+    public final /* synthetic */ e1 a;
 
-    public /* synthetic */ d1(int i7) {
-        this.a = i7;
+    public d1(e1 e1Var) {
+        this.a = e1Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                int i7 = k2.B1;
-                break;
-            case 1:
-                org.telegram.ui.b.a = false;
-                break;
-            case 2:
-                break;
-            case 3:
-                as.j.edit().putInt("dismissed_count", as.j.getInt("dismissed_count", 0) + 1).apply();
-                break;
-            case 4:
-                int i10 = ez0.e;
-                break;
-            case 5:
-                f40 f40Var = f40.x5;
-                break;
-            case 6:
-                break;
-            case 7:
-                org.telegram.utils.twidget.n0.i = false;
-                break;
-            default:
-                MediaController.g2 = false;
-                break;
+    @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
+    public final void onStateUpdated(int i7, boolean z10) {
+        e1 e1Var = this.a;
+        boolean m10 = e1Var.m();
+        e1Var.E = i7;
+        org.telegram.messenger.a8.b("[LivePlayer] connectionState = " + i7);
+        if (m10 != e1Var.m()) {
+            org.telegram.messenger.g0.h3(new c1(this, 0));
         }
-    }
-
-    public /* synthetic */ d1(boolean[] zArr) {
-        this.a = 2;
-    }
-
-    private final void a(DialogInterface dialogInterface) {
-    }
-
-    private final void b(DialogInterface dialogInterface) {
     }
 }

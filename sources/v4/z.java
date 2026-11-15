@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class z {
     public boolean a;
@@ -26,9 +26,9 @@ public final class z {
         View view2 = null;
         int i7 = ConnectionsManager.DEFAULT_DATACENTER_ID;
         for (int i10 = 0; i10 < size; i10++) {
-            View view3 = ((d1) this.k.get(i10)).a;
-            o0 o0Var = (o0) view3.getLayoutParams();
-            if (view3 != view && !o0Var.a.j() && (b10 = (o0Var.b() - this.d) * this.e) >= 0 && b10 < i7) {
+            View view3 = ((e1) this.k.get(i10)).a;
+            p0 p0Var = (p0) view3.getLayoutParams();
+            if (view3 != view && !p0Var.a.j() && (b10 = (p0Var.b() - this.d) * this.e) >= 0 && b10 < i7) {
                 view2 = view3;
                 if (b10 == 0) {
                     break;
@@ -40,27 +40,27 @@ public final class z {
         if (view2 == null) {
             this.d = -1;
         } else {
-            this.d = ((o0) view2.getLayoutParams()).b();
+            this.d = ((p0) view2.getLayoutParams()).b();
         }
     }
 
-    public final boolean b(a1 a1Var) {
+    public final boolean b(b1 b1Var) {
         int i7 = this.d;
-        return i7 >= 0 && i7 < a1Var.b();
+        return i7 >= 0 && i7 < b1Var.b();
     }
 
-    public final View c(v0 v0Var) {
+    public final View c(w0 w0Var) {
         List list = this.k;
         if (list == null) {
-            View view = v0Var.j(this.d, Long.MAX_VALUE).a;
+            View view = w0Var.j(this.d, Long.MAX_VALUE).a;
             this.d += this.e;
             return view;
         }
         int size = list.size();
         for (int i7 = 0; i7 < size; i7++) {
-            View view2 = ((d1) this.k.get(i7)).a;
-            o0 o0Var = (o0) view2.getLayoutParams();
-            if (!o0Var.a.j() && this.d == o0Var.b()) {
+            View view2 = ((e1) this.k.get(i7)).a;
+            p0 p0Var = (p0) view2.getLayoutParams();
+            if (!p0Var.a.j() && this.d == p0Var.b()) {
                 a(view2);
                 return view2;
             }

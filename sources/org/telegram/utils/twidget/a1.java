@@ -1,10 +1,20 @@
 package org.telegram.utils.twidget;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import a8.r7;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public abstract class a1 {
-    public static final ExecutorService a = Executors.newFixedThreadPool(2, new h2.l0(7));
+public final class a1 {
+    public Canvas a;
+    public int b;
+    public Object c;
+    public int d;
+    public int e;
+    public Bitmap f;
+    public final Matrix g = new Matrix();
+    public float h;
+    public r7 i;
 }

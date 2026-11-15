@@ -1,59 +1,44 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class cy0 extends t11 {
-    public final /* synthetic */ ey0 e2;
-    public final /* synthetic */ k11[] f2;
-    public final /* synthetic */ fy0 g2;
+public final /* synthetic */ class cy0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
+    public final /* synthetic */ org.telegram.ui.Components.hh0 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cy0(fy0 fy0Var, fy0 fy0Var2, Activity activity, Integer num, ey0 ey0Var, k11[] k11VarArr) {
-        super(fy0Var2, activity, false, num, 2, null);
-        this.g2 = fy0Var;
-        this.e2 = ey0Var;
-        this.f2 = k11VarArr;
+    public /* synthetic */ cy0(org.telegram.ui.ActionBar.e2 e2Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.Components.hh0 hh0Var, int i7) {
+        this.a = i7;
+        this.b = e2Var;
+        this.c = context;
+        this.d = e6Var;
+        this.e = hh0Var;
     }
 
-    @Override // org.telegram.ui.t11
-    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i7;
-        if (l10 == null) {
-            return;
-        }
-        fy0 fy0Var = this.g2;
-        i7 = ((org.telegram.ui.ActionBar.f2) fy0Var).currentAccount;
-        org.telegram.messenger.ui.b0(i7).a2("animated_" + l10);
-        ey0 ey0Var = this.e2;
-        if (ey0Var != null) {
-            ey0Var.a(true);
-        }
-        k11 k11Var = this.f2[0];
-        if (k11Var != null) {
-            fy0Var.n = null;
-            k11Var.dismiss();
-        }
-    }
-
-    @Override // org.telegram.ui.t11
-    public final void r(d11 d11Var, ch.o0 o0Var) {
-        int i7;
-        fy0 fy0Var = this.g2;
-        i7 = ((org.telegram.ui.ActionBar.f2) fy0Var).currentAccount;
-        org.telegram.messenger.ui.b0(i7).a2(o0Var.f);
-        ey0 ey0Var = this.e2;
-        if (ey0Var != null) {
-            ey0Var.a(true);
-        }
-        k11 k11Var = this.f2[0];
-        if (k11Var != null) {
-            fy0Var.n = null;
-            k11Var.dismiss();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        org.telegram.ui.Components.hh0 hh0Var = this.e;
+        org.telegram.ui.ActionBar.e6 e6Var = this.d;
+        Context context = this.c;
+        org.telegram.ui.ActionBar.e2 e2Var = this.b;
+        switch (i7) {
+            case 0:
+                org.telegram.ui.Components.cc.a0(e2Var).c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new du(context, 4), e6Var)).j();
+                org.telegram.messenger.g0.h3(hh0Var);
+                break;
+            case 1:
+                org.telegram.ui.Components.cc.a0(e2Var).c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new du(context, 3), e6Var)).j();
+                org.telegram.messenger.g0.h3(hh0Var);
+                break;
+            default:
+                org.telegram.ui.Components.cc.a0(e2Var).c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new du(context, 7), e6Var)).j();
+                org.telegram.messenger.g0.h3(hh0Var);
+                break;
         }
     }
 }

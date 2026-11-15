@@ -1,29 +1,97 @@
 package wi;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class q implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t b;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.g0;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.LaunchActivity;
 
-    public /* synthetic */ q(t tVar, int i7) {
-        this.a = i7;
-        this.b = tVar;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes4.dex */
+public final class q extends ViewGroup {
+    public final LaunchActivity a;
+    public final Rect b;
+    public View c;
+    public int d;
+    public int e;
+    public boolean f;
+
+    public q(LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.b = new Rect();
+        this.a = launchActivity;
+        setWillNotDraw(false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                t tVar = this.b;
-                if (tVar.W != 0) {
-                    tVar.V = true;
-                    break;
-                }
-                break;
-            default:
-                this.b.c();
-                break;
+    public final void a(View view, Rect rect) {
+        View view2 = this.c;
+        if (view2 != null && view2 != view) {
+            removeView(view2);
+        }
+        this.c = view;
+        Rect rect2 = this.b;
+        if (rect != null) {
+            rect2.set(rect);
+        } else {
+            rect2.setEmpty();
+        }
+        if (view != null && view.getParent() != this) {
+            g0.E2(view);
+            addView(view);
+        }
+        requestLayout();
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c == null || !this.f) {
+            return;
+        }
+        canvas.drawColor(-16777216);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        if (this.c == null) {
+            return;
+        }
+        if (!this.f) {
+            Rect rect = this.b;
+            if (!rect.isEmpty()) {
+                this.c.layout(rect.left, rect.top, rect.right, rect.bottom);
+                return;
+            }
+        }
+        this.c.layout(0, 0, i11 - i7, i12 - i10);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
+        int size2 = View.MeasureSpec.getSize(i10);
+        boolean H1 = g0.H1(this.a);
+        if (!H1) {
+            this.d = size;
+            this.e = size2;
+        }
+        this.f = H1 && (size < this.d || size2 < this.e);
+        setMeasuredDimension(size, size2);
+        if (this.c != null) {
+            boolean z10 = this.f;
+            Rect rect = this.b;
+            boolean z11 = z10 || rect.isEmpty();
+            View view = this.c;
+            if (!z11) {
+                size = rect.width();
+            }
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+            if (!z11) {
+                size2 = rect.height();
+            }
+            view.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         }
     }
 }

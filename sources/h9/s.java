@@ -1,7 +1,7 @@
 package h9;
 
-import a8.ha;
 import a8.ia;
+import a8.ja;
 import j$.util.Objects;
 import java.io.Serializable;
 import java.util.AbstractMap;
@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s extends AbstractMap implements Serializable {
     public static final Object s = new Object();
@@ -34,7 +34,7 @@ public final class s extends AbstractMap implements Serializable {
 
     public static s c(int i7) {
         s sVar = new s();
-        ia.e("Expected size must be >= 0", i7 >= 0);
+        ja.e("Expected size must be >= 0", i7 >= 0);
         sVar.e = Math.min(Math.max(i7, 1), 1073741823);
         return sVar;
     }
@@ -81,7 +81,7 @@ public final class s extends AbstractMap implements Serializable {
             return d.containsValue(obj);
         }
         for (int i7 = 0; i7 < this.f; i7++) {
-            if (ha.a(obj, l()[i7])) {
+            if (ia.a(obj, l()[i7])) {
                 return true;
             }
         }
@@ -128,7 +128,7 @@ public final class s extends AbstractMap implements Serializable {
         do {
             int i11 = w10 - 1;
             int i12 = j()[i11];
-            if ((i12 & i7) == i10 && ha.a(obj, k()[i11])) {
+            if ((i12 & i7) == i10 && ia.a(obj, k()[i11])) {
                 return i11;
             }
             w10 = i12 & e10;
@@ -282,7 +282,7 @@ public final class s extends AbstractMap implements Serializable {
         int i11 = 32;
         int i12 = 1;
         if (h()) {
-            ia.o("Arrays already allocated", h());
+            ja.o("Arrays already allocated", h());
             int i13 = this.e;
             int max = Math.max(i13 + 1, 2);
             int highestOneBit = Integer.highestOneBit(max);
@@ -329,7 +329,7 @@ public final class s extends AbstractMap implements Serializable {
                 i7 = i12;
                 int i21 = j3[i20];
                 int i22 = i11;
-                if ((i21 & i17) == i18 && ha.a(obj, k10[i20])) {
+                if ((i21 & i17) == i18 && ia.a(obj, k10[i20])) {
                     Object obj5 = l10[i20];
                     l10[i20] = obj2;
                     return obj5;

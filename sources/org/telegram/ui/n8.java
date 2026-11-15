@@ -1,28 +1,73 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import java.util.HashSet;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n8 implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class n8 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ i9 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1 c;
+    public final /* synthetic */ HashSet d;
+    public final /* synthetic */ TLRPC.TL_inputGroupCallInviteMessage e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ n8(i9 i9Var, int i7, int i10) {
-        this.a = i10;
+    public /* synthetic */ n8(i9 i9Var, org.telegram.ui.ActionBar.t1 t1Var, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, boolean z10, int i7) {
+        this.a = i7;
         this.b = i9Var;
-        this.c = i7;
+        this.c = t1Var;
+        this.d = hashSet;
+        this.e = tL_inputGroupCallInviteMessage;
+        this.f = z10;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                final int i7 = 0;
+                final i9 i9Var = this.b;
+                final org.telegram.ui.ActionBar.t1 t1Var = this.c;
+                final HashSet hashSet = this.d;
+                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage = this.e;
+                final boolean z10 = this.f;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.q8
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i7) {
+                            case 0:
+                                i9.b0(i9Var, t1Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
+                                break;
+                            default:
+                                i9.c0(i9Var, t1Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
+                                break;
+                        }
+                    }
+                });
                 break;
             default:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                final int i10 = 1;
+                final i9 i9Var2 = this.b;
+                final org.telegram.ui.ActionBar.t1 t1Var2 = this.c;
+                final HashSet hashSet2 = this.d;
+                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage2 = this.e;
+                final boolean z11 = this.f;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.q8
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                i9.b0(i9Var2, t1Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
+                                break;
+                            default:
+                                i9.c0(i9Var2, t1Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
+                                break;
+                        }
+                    }
+                });
                 break;
         }
     }

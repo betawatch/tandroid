@@ -1,39 +1,69 @@
 package hi;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.x31;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class f extends w31 {
-    static {
-        w31.h(new f());
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class f extends gh.b {
+    public final /* synthetic */ int s;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f(int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(i7, e6Var);
+        this.s = 2;
     }
 
-    public static x31 i(int i7, int i10, CharSequence charSequence, String str) {
-        x31 K = x31.K(f.class);
-        K.d = i7;
-        K.z = i10;
-        K.k = R.drawable.filled_earn_stars;
-        K.l = charSequence;
-        K.m = str;
-        return K;
+    @Override // gh.b, gh.a
+    public int U0() {
+        switch (this.s) {
+            case 2:
+                if (c()) {
+                    return 301989887;
+                }
+                return TLObject.FLAG_29;
+            default:
+                return super.U0();
+        }
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        ((g) view).a(x31Var.z, x31Var.k, x31Var.l, x31Var.m);
+    @Override // gh.b, gh.a
+    public int W1() {
+        switch (this.s) {
+            case 2:
+                if (c()) {
+                    return 83886079;
+                }
+                return TLObject.FLAG_29;
+            default:
+                return super.W1();
+        }
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, h6 h6Var) {
-        return new g(context, h6Var);
+    @Override // gh.b
+    public boolean c() {
+        switch (this.s) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            default:
+                return super.c();
+        }
+    }
+
+    @Override // gh.b, gh.a
+    public int t0() {
+        switch (this.s) {
+            case 2:
+                return c() ? 117440511 : 285212672;
+            default:
+                return super.t0();
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f(org.telegram.ui.ActionBar.e6 e6Var, int i7, float f10, int i10) {
+        super(e6Var, i7, f10);
+        this.s = i10;
     }
 }

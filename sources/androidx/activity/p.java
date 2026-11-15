@@ -1,9 +1,9 @@
 package androidx.activity;
 
-import androidx.fragment.app.z;
+import androidx.fragment.app.a0;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p extends kotlin.jvm.internal.k implements rd.a {
     public final /* synthetic */ int b;
@@ -22,31 +22,31 @@ public final class p extends kotlin.jvm.internal.k implements rd.a {
     /* JADX WARN: Type inference failed for: r3v4, types: [java.lang.Object] */
     @Override // rd.a
     public final Object invoke() {
-        z zVar;
+        a0 a0Var;
         switch (this.b) {
             case 0:
                 this.c.b();
                 break;
             case 1:
                 w wVar = this.c;
-                z zVar2 = wVar.c;
-                if (zVar2 == null) {
+                a0 a0Var2 = wVar.c;
+                if (a0Var2 == null) {
                     hd.d dVar = wVar.b;
                     ListIterator listIterator = dVar.listIterator(dVar.size());
                     while (true) {
                         if (listIterator.hasPrevious()) {
-                            zVar = listIterator.previous();
-                            if (((z) zVar).a) {
+                            a0Var = listIterator.previous();
+                            if (((a0) a0Var).a) {
                             }
                         } else {
-                            zVar = 0;
+                            a0Var = 0;
                         }
                     }
-                    zVar2 = zVar;
+                    a0Var2 = a0Var;
                 }
                 wVar.c = null;
-                if (zVar2 != null) {
-                    zVar2.a();
+                if (a0Var2 != null) {
+                    a0Var2.a();
                 }
                 break;
             default:

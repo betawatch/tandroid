@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.json.JSONObject;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -25,14 +25,14 @@ public final /* synthetic */ class e implements Runnable {
             case 0:
                 f fVar = this.b;
                 TL_wallet.currencyRates currencyrates = this.c;
-                boolean z9 = true;
+                boolean z10 = true;
                 if (currencyrates == null || currencyrates.rates == null) {
                     i7 = 1;
                 } else {
                     try {
                         InputStream open = org.telegram.messenger.t0.b.getAssets().open("currencies.json");
                         try {
-                            String str = h2.m0.a;
+                            String str = h2.l0.a;
                             JSONObject jSONObject = new JSONObject(new String(i9.f.b(open), g9.j.a));
                             ArrayList<TL_wallet.currencyRate> arrayList = currencyrates.rates;
                             int size = arrayList.size();
@@ -49,7 +49,7 @@ public final /* synthetic */ class e implements Runnable {
                                         currencyrate2.symbol = str2;
                                         currencyrate2.thousandsSeparator = ",";
                                         currencyrate2.decimalSeparator = ".";
-                                        currencyrate2.spaceBetween = z9;
+                                        currencyrate2.spaceBetween = z10;
                                         currencyrate2.exp = 2;
                                     } else {
                                         currencyrate2.title = optJSONObject.optString("title", currencyrate2.currency);
@@ -66,7 +66,7 @@ public final /* synthetic */ class e implements Runnable {
                                         } else if ("USD".equalsIgnoreCase(currencyrate2.currency)) {
                                             currencyrate2.title = currencyrate2.title.replace("United States", "US");
                                         }
-                                        z9 = true;
+                                        z10 = true;
                                     }
                                 }
                             }

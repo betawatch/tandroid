@@ -1,15 +1,33 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.tgnet.tl.TL_wallet;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import org.telegram.ui.Components.vr;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class i5 implements bi.i7 {
-    public final /* synthetic */ TL_wallet.nftItem a;
-    public final /* synthetic */ z5 b;
+public final class i5 extends vr {
+    public final ShapeDrawable H;
+    public final /* synthetic */ y5 I;
 
-    public i5(z5 z5Var, TL_wallet.nftItem nftitem) {
-        this.b = z5Var;
-        this.a = nftitem;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i5(y5 y5Var, Context context) {
+        super(context);
+        this.I = y5Var;
+        this.H = org.telegram.ui.ActionBar.j6.d0(org.telegram.messenger.g0.L(22.0f), y5Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
+    }
+
+    @Override // org.telegram.ui.Components.vr, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int ceil = (int) Math.ceil(getMetadata().g.a);
+        if (ceil > 0) {
+            ShapeDrawable shapeDrawable = this.H;
+            shapeDrawable.getPaint().setColor(this.I.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
+            shapeDrawable.setBounds(0, 0, getWidth(), ceil);
+            shapeDrawable.setAlpha((int) (getMetadata().c.a * 255.0f));
+            shapeDrawable.draw(canvas);
+        }
+        super.dispatchDraw(canvas);
     }
 }

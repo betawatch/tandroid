@@ -7,18 +7,18 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.json.JSONObject;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.xn0;
+import org.telegram.ui.qv0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class k0 {
     public boolean h;
     public boolean i;
     public final /* synthetic */ l0 l;
-    public final v3 a = new v3();
+    public final u3 a = new u3();
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
     public final HashSet d = new HashSet();
@@ -47,7 +47,7 @@ public final class k0 {
         if (TextUtils.isEmpty(optString) || TextUtils.isEmpty(optString2)) {
             return null;
         }
-        return a8.p0.D(optString, ":", optString2);
+        return a8.p0.E(optString, ":", optString2);
     }
 
     public final void a() {
@@ -162,7 +162,7 @@ public final class k0 {
 
     public final void i() {
         l0 l0Var = this.l;
-        qs.f(l0Var.a).k(qs.b4, this, l0Var);
+        ns.f(l0Var.a).k(ns.b4, this, l0Var);
     }
 
     public final void k() {
@@ -217,11 +217,11 @@ public final class k0 {
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
         arrayList3.addAll(arrayList);
-        List.-EL.sort(arrayList3, new xn0(7));
-        v3 v3Var = this.a;
-        HashSet hashSet2 = v3Var.a;
-        HashSet hashSet3 = v3Var.a;
-        HashMap hashMap = v3Var.b;
+        List.-EL.sort(arrayList3, new qv0(6));
+        u3 u3Var = this.a;
+        HashSet hashSet2 = u3Var.a;
+        HashSet hashSet3 = u3Var.a;
+        HashMap hashMap = u3Var.b;
         hashSet2.clear();
         hashMap.clear();
         int size3 = arrayList3.size();
@@ -234,6 +234,6 @@ public final class k0 {
             }
         }
         hashMap.clear();
-        v3Var.b(4, new ArrayList(hashSet3));
+        u3Var.b(4, new ArrayList(hashSet3));
     }
 }

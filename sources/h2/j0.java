@@ -1,12 +1,12 @@
 package h2;
 
-import a8.ia;
+import a8.ja;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.TextView;
-import fi.v9;
+import fi.c1;
 import java.lang.ref.WeakReference;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -15,12 +15,12 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
+import m.v0;
 import m.w0;
-import m.x0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class j0 {
     public int a;
@@ -96,7 +96,7 @@ public class j0 {
     }
 
     public void b() {
-        new Handler(Looper.getMainLooper()).post(new v9(this, 8));
+        new Handler(Looper.getMainLooper()).post(new c1(this, 23));
     }
 
     public synchronized void c() {
@@ -155,19 +155,19 @@ public class j0 {
     public void h(Typeface typeface) {
         int i7;
         if (Build.VERSION.SDK_INT >= 28 && (i7 = this.a) != -1) {
-            typeface = w0.a(typeface, i7, (this.b & 2) != 0);
+            typeface = v0.a(typeface, i7, (this.b & 2) != 0);
         }
-        x0 x0Var = (x0) this.d;
+        w0 w0Var = (w0) this.d;
         WeakReference weakReference = (WeakReference) this.c;
-        if (x0Var.m) {
-            x0Var.l = typeface;
+        if (w0Var.m) {
+            w0Var.l = typeface;
             TextView textView = (TextView) weakReference.get();
             if (textView != null) {
                 WeakHashMap weakHashMap = r0.i0.a;
                 if (textView.isAttachedToWindow()) {
-                    textView.post(new androidx.activity.g(textView, typeface, x0Var.j, 4));
+                    textView.post(new androidx.activity.g(textView, typeface, w0Var.j, 4));
                 } else {
-                    textView.setTypeface(typeface, x0Var.j);
+                    textView.setTypeface(typeface, w0Var.j);
                 }
             }
         }
@@ -187,7 +187,7 @@ public class j0 {
     }
 
     public Object k() {
-        ia.p(this.b > 0);
+        ja.p(this.b > 0);
         Object[] objArr = (Object[]) this.d;
         int i7 = this.a;
         Object obj = objArr[i7];
@@ -231,12 +231,12 @@ public class j0 {
         return put;
     }
 
-    public int m(f5.u uVar, int[] iArr) {
+    public int m(f5.v vVar, int[] iArr) {
         int i7 = this.a;
         while (true) {
             int i10 = 1;
             if (i7 > this.b) {
-                throw new ab.a0(String.format("[%s] Bad code at the bit index '%d'.", getClass().getSimpleName(), Integer.valueOf(iArr[0])));
+                throw new ab.b0(String.format("[%s] Bad code at the bit index '%d'.", getClass().getSimpleName(), Integer.valueOf(iArr[0])));
             }
             int i11 = ((int[]) this.c)[i7];
             if (i11 >= 0) {
@@ -244,7 +244,7 @@ public class j0 {
                 int i13 = i7 - 1;
                 int i14 = 0;
                 while (i13 >= 0) {
-                    if (uVar.n(i12 + i13)) {
+                    if (vVar.n(i12 + i13)) {
                         i14 += i10;
                     }
                     i13--;
@@ -334,7 +334,7 @@ public class j0 {
     public j0(int i7, int i10) {
         switch (i10) {
             case 5:
-                this.c = new z3.s[i7];
+                this.c = new z3.r[i7];
                 this.b = 0;
                 return;
             default:

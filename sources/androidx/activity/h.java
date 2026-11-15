@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import androidx.fragment.app.d0;
-import androidx.fragment.app.i0;
+import androidx.fragment.app.e0;
+import androidx.fragment.app.j0;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h extends androidx.activity.result.f {
     public final /* synthetic */ l h;
@@ -20,13 +20,13 @@ public final class h extends androidx.activity.result.f {
     }
 
     @Override // androidx.activity.result.f
-    public final void b(int i7, d0 d0Var, Object obj) {
+    public final void b(int i7, e0 e0Var, Object obj) {
         e.a aVar;
         Intent input;
         Bundle bundleExtra;
         Bundle bundle;
         int i10;
-        int i11 = d0Var.a;
+        int i11 = e0Var.a;
         l lVar = this.h;
         switch (i11) {
             case 1:
@@ -59,7 +59,7 @@ public final class h extends androidx.activity.result.f {
             new Handler(Looper.getMainLooper()).post(new g(this, i7, aVar, 0));
             return;
         }
-        switch (d0Var.a) {
+        switch (e0Var.a) {
             case 0:
                 androidx.activity.result.g gVar = (androidx.activity.result.g) obj;
                 input = new Intent("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST");
@@ -74,7 +74,7 @@ public final class h extends androidx.activity.result.f {
                     }
                 }
                 input.putExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST", gVar);
-                if (i0.K(2)) {
+                if (j0.K(2)) {
                     Log.v("FragmentManager", "CreateIntent created the following intent: " + input);
                     break;
                 }

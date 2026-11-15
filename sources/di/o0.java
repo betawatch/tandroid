@@ -1,79 +1,36 @@
 package di;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.animation.LinearInterpolator;
-import android.widget.LinearLayout;
-import bi.ud;
-import org.telegram.messenger.qs;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class o0 extends LinearLayout {
-    public ud a;
-    public final Path b;
-    public final Paint c;
-    public long d;
-    public final org.telegram.ui.Components.v5 e;
-    public final /* synthetic */ r0 f;
+public final class o0 implements TextWatcher {
+    public final /* synthetic */ p0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o0(r0 r0Var, Context context) {
-        super(context);
-        this.f = r0Var;
-        this.b = new Path();
-        this.c = new Paint(1);
-        this.d = 0L;
-        this.e = new org.telegram.ui.Components.v5(this, 0L, 1000L, new LinearInterpolator());
+    public o0(p0 p0Var) {
+        this.a = p0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        Path path = this.b;
-        path.rewind();
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-        path.addRoundRect(rectF, org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), Path.Direction.CW);
-        canvas.save();
-        canvas.clipPath(path);
-        r0 r0Var = this.f;
-        t0 t0Var = r0Var.f;
-        if (t0Var != null) {
-            int b10 = t.b(t0Var.a, t0Var.b(), 3);
-            t0 t0Var2 = r0Var.f;
-            int b11 = t.b(t0Var2.a, t0Var2.b(), 5);
-            canvas.drawColor(b10);
-            long j3 = this.d;
-            t0 t0Var3 = r0Var.f;
-            long j10 = t0Var3.b;
-            org.telegram.ui.Components.v5 v5Var = this.e;
-            if (j3 != j10) {
-                v5Var.e(true, t0Var3.a());
-            }
-            float e10 = v5Var.e(false, r0Var.f.a());
-            this.d = r0Var.f.b;
-            Paint paint = this.c;
-            paint.setColor(b11);
-            paint.setAlpha(qs.L1);
-            canvas2 = canvas;
-            canvas2.drawRect(getWidth() * e10, 0.0f, getWidth(), getHeight(), paint);
-        } else {
-            canvas2 = canvas;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String obj;
+        int indexOf;
+        boolean z10 = editable == null || editable.toString().isEmpty() || ".".equals(editable.toString());
+        if (!z10 && (indexOf = (obj = editable.toString()).indexOf(46)) >= 0 && (obj.length() - indexOf) - 1 > 2) {
+            editable.delete(indexOf + 3, obj.length());
         }
-        if (this.a == null) {
-            this.a = new ud(1, qs.Z3);
-        }
-        this.a.f(0, 0, getWidth(), getHeight());
-        ud udVar = this.a;
-        udVar.h = 30.0f;
-        udVar.d();
-        this.a.b(canvas2, -1, 0.85f);
-        invalidate();
-        canvas2.restore();
-        super.dispatchDraw(canvas2);
+        p0 p0Var = this.a;
+        p0Var.f1(!z10 ? cg.a.h(editable.toString(), p0Var.j2.a) : cg.a.i(0L, p0Var.j2.a), false, false, true);
+        p0Var.Z1.c(p0Var.a2.isFocused(), true ^ TextUtils.isEmpty(p0Var.a2.getText()));
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

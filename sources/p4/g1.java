@@ -1,6 +1,6 @@
 package p4;
 
-import a8.ia;
+import a8.ja;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.view.SurfaceHolder;
@@ -10,7 +10,7 @@ import e2.x1;
 import java.util.IdentityHashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g1 implements e2.c1 {
     public final e2.c1 a;
@@ -56,8 +56,8 @@ public final class g1 implements e2.c1 {
     }
 
     @Override // e2.c1
-    public final void D(e2.e eVar, boolean z9) {
-        this.a.D(eVar, z9);
+    public final void D(e2.e eVar, boolean z10) {
+        this.a.D(eVar, z10);
     }
 
     @Override // e2.c1
@@ -138,9 +138,9 @@ public final class g1 implements e2.c1 {
     }
 
     @Override // e2.c1
-    public final void J(int i7, boolean z9) {
+    public final void J(int i7, boolean z10) {
         V0();
-        this.a.J(i7, z9);
+        this.a.J(i7, z10);
     }
 
     @Override // e2.c1
@@ -230,15 +230,15 @@ public final class g1 implements e2.c1 {
         boolean p02 = p0(16);
         boolean p03 = p0(17);
         int o02 = p03 ? o0() : 0;
-        ia.p(o02 >= 0);
+        ja.p(o02 >= 0);
         int B = p03 ? B() : 0;
-        ia.p(B >= 0);
+        ja.p(B >= 0);
         if (p03) {
             e2.l1 y02 = y0();
             if (!y02.p()) {
-                ia.p(o02 < y02.o());
+                ja.p(o02 < y02.o());
                 e2.k1 m10 = y02.m(o02, new e2.k1(), 0L);
-                ia.p(B == h2.m0.i(B, m10.n, m10.o));
+                ja.p(B == h2.l0.i(B, m10.n, m10.o));
             }
         }
         long j3 = 0;
@@ -301,7 +301,7 @@ public final class g1 implements e2.c1 {
     }
 
     public final void V0() {
-        ia.p(Looper.myLooper() == this.a.A0());
+        ja.p(Looper.myLooper() == this.a.A0());
     }
 
     @Override // e2.c1
@@ -311,9 +311,9 @@ public final class g1 implements e2.c1 {
     }
 
     @Override // e2.c1
-    public final void X(boolean z9) {
+    public final void X(boolean z10) {
         V0();
-        this.a.X(z9);
+        this.a.X(z10);
     }
 
     @Override // e2.c1
@@ -480,7 +480,7 @@ public final class g1 implements e2.c1 {
     }
 
     @Override // e2.c1
-    public final g2.d l0() {
+    public final g2.c l0() {
         V0();
         return this.a.l0();
     }
@@ -552,9 +552,9 @@ public final class g1 implements e2.c1 {
     }
 
     @Override // e2.c1
-    public final void r0(boolean z9) {
+    public final void r0(boolean z10) {
         V0();
-        this.a.r0(z9);
+        this.a.r0(z10);
     }
 
     @Override // e2.c1
@@ -624,9 +624,9 @@ public final class g1 implements e2.c1 {
     }
 
     @Override // e2.c1
-    public final void x(boolean z9) {
+    public final void x(boolean z10) {
         V0();
-        this.a.x(z9);
+        this.a.x(z10);
     }
 
     @Override // e2.c1

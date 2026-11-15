@@ -1,30 +1,72 @@
 package di;
 
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.messenger.m10;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j1 extends TLRPC.TL_messageMediaStory {
-    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z9) {
-        this.user_id = inputSerializedData.readInt64(z9);
-        this.id = inputSerializedData.readInt32(z9);
-        this.storyItem = TL_stories.StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
-        this.via_mention = inputSerializedData.readBool(z9);
-        this.peer = qp.s1(p10.s0).z1(this.user_id);
+public final /* synthetic */ class j1 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ c6 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TwoStepVerificationActivity d;
+    public final /* synthetic */ TLObject e;
+    public final /* synthetic */ boolean f;
+
+    public /* synthetic */ j1(c6 c6Var, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, TLRPC.TL_error tL_error) {
+        this.b = c6Var;
+        this.e = tLObject;
+        this.d = twoStepVerificationActivity;
+        this.f = z10;
+        this.c = tL_error;
     }
 
-    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-946147811);
-        outputSerializedData.writeInt64(this.user_id);
-        outputSerializedData.writeInt32(this.id);
-        this.storyItem.serializeToStream(outputSerializedData);
-        outputSerializedData.writeBool(this.via_mention);
+    @Override // java.lang.Runnable
+    public final void run() {
+        TwoStepVerificationActivity twoStepVerificationActivity;
+        switch (this.a) {
+            case 0:
+                TLObject tLObject = this.e;
+                boolean z10 = tLObject instanceof TL_account.tmpPassword;
+                c6 c6Var = this.b;
+                TwoStepVerificationActivity twoStepVerificationActivity2 = this.d;
+                boolean z11 = this.f;
+                if (!z10) {
+                    c6Var.Q1(this.c, twoStepVerificationActivity2, z11);
+                    break;
+                } else {
+                    TL_account.tmpPassword tmppassword = (TL_account.tmpPassword) tLObject;
+                    m10.i(c6Var.a).y = tmppassword;
+                    m10.i(c6Var.a).v(false);
+                    c6Var.J1(tmppassword.tmp_password, twoStepVerificationActivity2, z11, null);
+                    break;
+                }
+            default:
+                if (this.c == null && (twoStepVerificationActivity = this.d) != null) {
+                    TL_account.Password password = (TL_account.Password) this.e;
+                    twoStepVerificationActivity.J = password;
+                    TwoStepVerificationActivity.r0(password);
+                    TLRPC.TL_inputCheckPasswordSRP q02 = twoStepVerificationActivity.q0();
+                    TL_account.getTmpPassword gettmppassword = new TL_account.getTmpPassword();
+                    gettmppassword.password = q02;
+                    gettmppassword.period = 600;
+                    c6 c6Var2 = this.b;
+                    ConnectionsManager.getInstance(c6Var2.a).sendRequest(gettmppassword, new j3(c6Var2, twoStepVerificationActivity, this.f, 0));
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ j1(c6 c6Var, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, TLObject tLObject, boolean z10) {
+        this.b = c6Var;
+        this.c = tL_error;
+        this.d = twoStepVerificationActivity;
+        this.e = tLObject;
+        this.f = z10;
     }
 }

@@ -2,90 +2,148 @@ package fi;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.KeyEvent;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ci;
-import org.telegram.ui.Components.g90;
+import android.view.MotionEvent;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.ui.Components.uj0;
+import org.telegram.ui.qv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class i extends g90 {
-    public final /* synthetic */ int V;
-    public final /* synthetic */ KeyEvent.Callback W;
+public final class i extends uj0 {
+    public final /* synthetic */ int f3;
+    public final /* synthetic */ qv g3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i(KeyEvent.Callback callback, Context context, long j3, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(context, j3, 0L, f2Var, h6Var);
-        this.V = i7;
-        this.W = callback;
+    public /* synthetic */ i(qv qvVar, Context context, int i7) {
+        super(context, null);
+        this.f3 = i7;
+        this.g3 = qvVar;
     }
 
-    @Override // org.telegram.ui.Components.g90
-    public void f(Canvas canvas, Rect rect, float f10) {
-        switch (this.V) {
-            case 0:
-                m mVar = (m) this.W;
-                Paint paint = mVar.e;
-                RectF rectF = mVar.y0;
-                rectF.set(rect);
-                if (!mVar.g()) {
-                    Paint c10 = mVar.T.c(1.0f);
-                    if (c10 != null) {
-                        canvas.drawRoundRect(rectF, f10, f10, c10);
-                        paint.setAlpha(80);
-                        canvas.drawRoundRect(rectF, f10, f10, paint);
-                        break;
-                    } else {
-                        paint.setAlpha(128);
-                        canvas.drawRoundRect(rectF, f10, f10, paint);
-                        break;
+    @Override // org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        switch (this.f3) {
+            case 1:
+                qv qvVar = this.g3;
+                ArrayList arrayList = qvVar.Q;
+                arrayList.clear();
+                int i7 = 0;
+                for (int i10 = 0; i10 < getChildCount(); i10++) {
+                    p pVar = (p) getChildAt(i10);
+                    int R = RecyclerView.R(pVar);
+                    pVar.b = R;
+                    boolean z10 = true;
+                    pVar.a = true;
+                    pVar.d = R == 0;
+                    if (R != qvVar.E.size() - 1) {
+                        z10 = false;
                     }
-                } else {
-                    mVar.h(mVar.T, canvas, mVar.y0, f10, false, -mVar.M.getX(), -mVar.M.getY(), false);
-                    break;
+                    pVar.c = z10;
+                    arrayList.add(pVar);
                 }
+                Collections.sort(arrayList, qvVar.x0);
+                while (i7 < arrayList.size()) {
+                    p pVar2 = (p) arrayList.get(i7);
+                    int save = canvas.save();
+                    canvas.translate(pVar2.getX(), pVar2.getY());
+                    if (pVar2.getAlpha() != 1.0f) {
+                        canvas2 = canvas;
+                        canvas2.saveLayerAlpha(-org.telegram.messenger.g0.L(4.0f), -org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), (int) (pVar2.getAlpha() * 255.0f), 31);
+                    } else {
+                        canvas2 = canvas;
+                    }
+                    canvas2.scale(pVar2.getScaleX(), pVar2.getScaleY(), org.telegram.messenger.g0.L(14.0f), pVar2.getCy());
+                    pVar2.draw(canvas2);
+                    canvas2.restoreToCount(save);
+                    i7++;
+                    canvas = canvas2;
+                }
+                break;
             default:
-                super.f(canvas, rect, f10);
+                super.dispatchDraw(canvas);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.g90
-    public boolean h() {
-        switch (this.V) {
+    @Override // org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
             case 0:
-                return true;
+                if (motionEvent.getAction() == 0) {
+                    qv qvVar = this.g3;
+                    if (qvVar.d0 > 0.2f || qvVar.getAlpha() == 0.0f) {
+                        return false;
+                    }
+                }
+                return super.dispatchTouchEvent(motionEvent);
             default:
-                return super.h();
+                return false;
         }
     }
 
-    @Override // org.telegram.ui.Components.g90
-    public void i() {
-        switch (this.V) {
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        switch (this.f3) {
+            case 0:
+                if (!this.g3.Q.contains(view)) {
+                    break;
+                }
+                break;
+        }
+        return super.drawChild(canvas, view, j3);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public void l0(int i7) {
+        switch (this.f3) {
             case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((ci) this.W).d2;
-                if (chatAttachAlertPhotoLayout != null) {
-                    chatAttachAlertPhotoLayout.X();
+                hi.l3 l3Var = this.g3.K;
+                if (l3Var != null) {
+                    l3Var.f(true);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.g90
-    public void n(boolean z9) {
-        switch (this.V) {
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
             case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((ci) this.W).d2;
-                if (chatAttachAlertPhotoLayout != null) {
-                    chatAttachAlertPhotoLayout.X();
-                    break;
+                return false;
+            default:
+                return super.onInterceptTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        switch (this.f3) {
+            case 0:
+                ArrayList arrayList = this.g3.c0;
+                super.onLayout(z10, i7, i10, i11, i12);
+                for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                    ((Runnable) arrayList.get(i13)).run();
                 }
+                arrayList.clear();
                 break;
+            default:
+                super.onLayout(z10, i7, i10, i11, i12);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
+            case 1:
+                return false;
+            default:
+                return super.onTouchEvent(motionEvent);
         }
     }
 }

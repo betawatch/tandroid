@@ -8,7 +8,7 @@ import android.os.PowerManager;
 import android.util.Log;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o extends p {
     public final /* synthetic */ int c = 0;
@@ -41,7 +41,7 @@ public final class o extends p {
     @Override // g.p
     public final int e() {
         Location location;
-        boolean z9;
+        boolean z10;
         long j3;
         Location location2;
         switch (this.c) {
@@ -52,7 +52,7 @@ public final class o extends p {
                 dh.a aVar = (dh.a) a0Var.d;
                 LocationManager locationManager = (LocationManager) a0Var.c;
                 if (aVar.b > System.currentTimeMillis()) {
-                    z9 = aVar.a;
+                    z10 = aVar.a;
                 } else {
                     Context context = (Context) a0Var.b;
                     Location location3 = null;
@@ -90,7 +90,7 @@ public final class o extends p {
                         y yVar = y.d;
                         yVar.a(location.getLatitude(), location.getLongitude(), currentTimeMillis - 86400000);
                         yVar.a(location.getLatitude(), location.getLongitude(), currentTimeMillis);
-                        z9 = yVar.c == 1;
+                        z10 = yVar.c == 1;
                         long j10 = yVar.b;
                         long j11 = yVar.a;
                         yVar.a(location.getLatitude(), location.getLongitude(), currentTimeMillis + 86400000);
@@ -105,17 +105,17 @@ public final class o extends p {
                             }
                             j3 = j10 + 60000;
                         }
-                        aVar.a = z9;
+                        aVar.a = z10;
                         aVar.b = j3;
                     } else {
                         Log.i("TwilightManager", "Could not get last known location. This is probably because the app does not have any location permissions. Falling back to hardcoded sunrise/sunset values.");
                         int i7 = Calendar.getInstance().get(11);
                         if (i7 < 6 || i7 >= 22) {
-                            z9 = true;
+                            z10 = true;
                         }
                     }
                 }
-                return z9 ? 2 : 1;
+                return z10 ? 2 : 1;
         }
     }
 

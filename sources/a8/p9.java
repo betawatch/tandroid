@@ -1,60 +1,32 @@
 package a8;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import j$.util.DesugarCollections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class p9 {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String m10;
-        int i7 = 0;
-        int i10 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i10 >= length) {
-                break;
+    public static boolean a(String str) {
+        e5.b bVar = e5.k.a;
+        Set<e5.d> unmodifiableSet = DesugarCollections.unmodifiableSet(e5.c.c);
+        HashSet hashSet = new HashSet();
+        for (e5.d dVar : unmodifiableSet) {
+            if (((e5.c) dVar).a.equals(str)) {
+                hashSet.add(dVar);
             }
-            Object obj = objArr[i10];
-            if (obj == null) {
-                m10 = "null";
-            } else {
-                try {
-                    m10 = obj.toString();
-                } catch (Exception e10) {
-                    String D = p0.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e10);
-                    m10 = org.telegram.ui.Cells.f1.m("<", D, " threw ", e10.getClass().getName(), ">");
-                }
-            }
-            objArr[i10] = m10;
-            i10++;
         }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i11 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i7 >= length2 || (indexOf = str.indexOf("%s", i11)) == -1) {
-                break;
-            }
-            sb2.append((CharSequence) str, i11, indexOf);
-            sb2.append(objArr[i7]);
-            i7++;
-            i11 = indexOf + 2;
+        if (hashSet.isEmpty()) {
+            throw new RuntimeException("Unknown feature ".concat(str));
         }
-        sb2.append((CharSequence) str, i11, str.length());
-        if (i7 < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i7]);
-            for (int i12 = i7 + 1; i12 < objArr.length; i12++) {
-                sb2.append(", ");
-                sb2.append(objArr[i12]);
+        Iterator it = hashSet.iterator();
+        while (it.hasNext()) {
+            e5.c cVar = (e5.c) ((e5.d) it.next());
+            if (cVar.a() || cVar.b()) {
+                return true;
             }
-            sb2.append(']');
         }
-        return sb2.toString();
+        return false;
     }
 }

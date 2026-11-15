@@ -1,95 +1,46 @@
 package org.telegram.ui;
 
-import android.graphics.Typeface;
-import android.provider.Settings;
-import org.telegram.messenger.voip.VoIPService;
+import java.util.Calendar;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v00 implements Runnable {
+public final /* synthetic */ class v00 implements org.telegram.ui.Components.eb0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f40 b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Calendar c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ v00(f40 f40Var, int i7) {
-        this.a = i7;
-        this.b = f40Var;
+    public /* synthetic */ v00(long j3, Calendar calendar, int i7, int i10) {
+        this.a = i10;
+        this.b = j3;
+        this.c = calendar;
+        this.d = i7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        f40 f40Var = this.b;
-        switch (i7) {
+    @Override // org.telegram.ui.Components.eb0
+    public final String e(int i7) {
+        int i10 = this.a;
+        int i11 = this.d;
+        Calendar calendar = this.c;
+        long j3 = this.b;
+        switch (i10) {
             case 0:
-                if (f40Var.u1()) {
-                    LaunchActivity launchActivity = f40Var.c2;
-                    Typeface typeface = org.telegram.messenger.g0.a;
-                    if (Settings.canDrawOverlays(launchActivity) && !org.telegram.ui.Components.voip.g1.i()) {
-                        org.telegram.ui.Components.voip.g1.k(f40Var.c2);
-                        break;
-                    }
+                if (i7 == 0) {
+                    return org.telegram.messenger.hd.M0(2131748531, null);
                 }
-                if (!f40Var.u1()) {
-                    LaunchActivity launchActivity2 = f40Var.c2;
-                    Typeface typeface2 = org.telegram.messenger.g0.a;
-                    if (Settings.canDrawOverlays(launchActivity2)) {
-                        org.telegram.ui.Components.p10.f0 = false;
-                        break;
-                    }
+                long j10 = (i7 * 86400000) + j3;
+                calendar.setTimeInMillis(j10);
+                if (calendar.get(1) != i11) {
+                    return org.telegram.messenger.hd.E0().y0().format(j10);
                 }
-                break;
-            case 1:
-                if (f40Var.U2 != null && f40Var.L3 && VoIPService.getSharedInstance() != null) {
-                    try {
-                        f40Var.v1.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    f40Var.P1(1, true);
-                    org.telegram.messenger.g0.i3(f40Var.r4, 80L);
-                    f40Var.L3 = false;
-                    f40Var.M3 = true;
-                    break;
-                }
-                break;
-            case 2:
-                int i10 = f40Var.N3;
-                if (i10 == 1 || i10 == 2 || i10 == 6 || i10 == 5) {
-                    f40Var.T1(true, false);
-                    break;
-                }
-            case 3:
-                f40Var.A1();
-                break;
-            case 4:
-                f40Var.a1();
-                f40Var.X0();
-                f40Var.W0();
-                f40Var.z1.setTranslationY((-f40Var.w3.d()) + f40Var.b.getPaddingBottom());
-                f40Var.A1.invalidate();
-                f40Var.b1();
-                f40Var.b.invalidate();
-                break;
-            case 5:
-                f40Var.dismiss();
-                break;
-            case 6:
-                f40Var.Q1();
-                org.telegram.messenger.g0.i3(f40Var.x3, 1000L);
-                break;
-            case 7:
-                b30 b30Var = f40Var.l2;
-                if (b30Var != null) {
-                    b30Var.show();
-                    break;
-                }
-                break;
-            case 8:
-                org.telegram.messenger.qp.s1(f40Var.n1.a).l0(null);
-                break;
+                return org.telegram.messenger.hd.E0().A0().format(j10) + " " + org.telegram.messenger.hd.E0().w0().format(j10);
             default:
-                f40Var.r5 = null;
-                f40Var.N1(true);
-                break;
+                if (i7 == 0) {
+                    return org.telegram.messenger.hd.M0(2131748531, "MessageScheduleToday");
+                }
+                long j11 = (i7 * 86400000) + j3;
+                calendar.setTimeInMillis(j11);
+                return calendar.get(1) == i11 ? org.telegram.messenger.hd.E0().w0().format(j11) : org.telegram.messenger.hd.E0().y0().format(j11);
         }
     }
 }

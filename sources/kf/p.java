@@ -1,11 +1,12 @@
 package kf;
 
-import c8.b1;
+import c8.d1;
+import com.google.android.gms.internal.vision.e2;
 import java.io.DataInputStream;
 import java.io.EOFException;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class p {
     public final /* synthetic */ int a;
@@ -24,7 +25,7 @@ public abstract class p {
         this.f = null;
     }
 
-    public abstract void a(b1 b1Var);
+    public abstract void a(d1 d1Var);
 
     public void b(p pVar) {
         pVar.g();
@@ -65,7 +66,7 @@ public abstract class p {
         if (str2.matches(str)) {
             return c10;
         }
-        throw new IOException(com.google.android.recaptcha.internal.a.l("atom type mismatch, expected ", str, ", got ", str2));
+        throw new IOException(e2.l("atom type mismatch, expected ", str, ", got ", str2));
     }
 
     public void e(p pVar) {

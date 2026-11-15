@@ -9,19 +9,18 @@ import android.os.IBinder;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
-import com.google.android.gms.internal.vision.g3;
+import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.ActionBar.n3;
-import org.telegram.ui.Components.uy;
+import org.telegram.messenger.ou;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class r0 extends g3 implements ServiceConnection {
-    public static final /* synthetic */ int G = 0;
-    public m0 D;
-    public boolean E;
-    public n3 F;
+public final class r0 extends h3 implements ServiceConnection {
+    public static final /* synthetic */ int H = 0;
+    public m0 E;
+    public boolean F;
+    public org.telegram.ui.ActionBar.z G;
     public final ComponentName r;
     public final com.google.android.gms.internal.cast.y s;
     public final ArrayList w;
@@ -33,13 +32,13 @@ public final class r0 extends g3 implements ServiceConnection {
     }
 
     public r0(Context context, ComponentName componentName) {
-        super(context, new uy(componentName, 15));
+        super(context, new ou(componentName, 22));
         this.w = new ArrayList();
         this.r = componentName;
         this.s = new com.google.android.gms.internal.cast.y();
     }
 
-    @Override // com.google.android.gms.internal.vision.g3
+    @Override // com.google.android.gms.internal.vision.h3
     public final p c(String str) {
         if (str == null) {
             throw new IllegalArgumentException("initialMemberRouteId cannot be null.");
@@ -54,8 +53,8 @@ public final class r0 extends g3 implements ServiceConnection {
             if (((m) list.get(i7)).d().equals(str)) {
                 p0 p0Var = new p0(this, str);
                 this.w.add(p0Var);
-                if (this.E) {
-                    p0Var.a(this.D);
+                if (this.F) {
+                    p0Var.a(this.E);
                 }
                 r();
                 return p0Var;
@@ -64,7 +63,7 @@ public final class r0 extends g3 implements ServiceConnection {
         return null;
     }
 
-    @Override // com.google.android.gms.internal.vision.g3
+    @Override // com.google.android.gms.internal.vision.h3
     public final q d(String str) {
         if (str != null) {
             return o(str, null);
@@ -72,7 +71,7 @@ public final class r0 extends g3 implements ServiceConnection {
         throw new IllegalArgumentException("routeId cannot be null");
     }
 
-    @Override // com.google.android.gms.internal.vision.g3
+    @Override // com.google.android.gms.internal.vision.h3
     public final q e(String str, String str2) {
         if (str == null) {
             throw new IllegalArgumentException("routeId cannot be null");
@@ -83,10 +82,10 @@ public final class r0 extends g3 implements ServiceConnection {
         throw new IllegalArgumentException("routeGroupId cannot be null");
     }
 
-    @Override // com.google.android.gms.internal.vision.g3
+    @Override // com.google.android.gms.internal.vision.h3
     public final void f(n nVar) {
-        if (this.E) {
-            m0 m0Var = this.D;
+        if (this.F) {
+            m0 m0Var = this.E;
             int i7 = m0Var.d;
             m0Var.d = i7 + 1;
             m0Var.b(10, i7, 0, nVar != null ? nVar.a : null, null);
@@ -117,8 +116,8 @@ public final class r0 extends g3 implements ServiceConnection {
             if (((m) list.get(i7)).d().equals(str)) {
                 q0 q0Var = new q0(this, str, str2);
                 this.w.add(q0Var);
-                if (this.E) {
-                    q0Var.a(this.D);
+                if (this.F) {
+                    q0Var.a(this.E);
                 }
                 r();
                 return q0Var;
@@ -142,7 +141,7 @@ public final class r0 extends g3 implements ServiceConnection {
                         if (m0Var.b(1, i7, 4, null, null)) {
                             try {
                                 m0Var.a.getBinder().linkToDeath(m0Var, 0);
-                                this.D = m0Var;
+                                this.E = m0Var;
                                 return;
                             } catch (RemoteException unused) {
                                 m0Var.binderDied();
@@ -164,20 +163,20 @@ public final class r0 extends g3 implements ServiceConnection {
     }
 
     public final void p() {
-        if (this.D != null) {
+        if (this.E != null) {
             g(null);
-            this.E = false;
+            this.F = false;
             ArrayList arrayList = this.w;
             int size = arrayList.size();
             for (int i7 = 0; i7 < size; i7++) {
                 ((n0) arrayList.get(i7)).c();
             }
-            m0 m0Var = this.D;
+            m0 m0Var = this.E;
             m0Var.b(2, 0, 0, null, null);
             m0Var.b.b.clear();
             m0Var.a.getBinder().unlinkToDeath(m0Var, 0);
             m0Var.i.s.post(new l0(m0Var, 0));
-            this.D = null;
+            this.E = null;
         }
     }
 

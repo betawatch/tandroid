@@ -12,36 +12,37 @@ import android.view.Surface;
 import androidx.lifecycle.m;
 import androidx.lifecycle.t;
 import androidx.savedstate.Recreator;
-import c8.ab;
+import c8.cb;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.y0;
-import h2.m0;
+import h2.l0;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import kotlin.jvm.internal.j;
-import m.q;
+import m.p;
+import org.telegram.messenger.ou;
 import org.telegram.ui.Components.tt0;
 import p4.d0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class n implements m9.t, u2.k, com.google.android.gms.common.api.internal.p {
+public final class n implements m9.t, u2.k, com.google.android.gms.common.api.internal.q {
     public final /* synthetic */ int a;
     public boolean b;
     public Object c;
     public Object d;
 
-    public n(String str, String str2, boolean z9) {
-        this.a = 4;
+    public n(String str, String str2, boolean z10) {
+        this.a = 5;
         this.d = str;
         this.c = str2;
-        this.b = z9;
+        this.b = z10;
     }
 
     @Override // u2.k
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public u2.c Y(b8 b8Var) {
+    public u2.c F(b8 b8Var) {
         MediaCodec mediaCodec;
         u2.m eVar;
         int i7;
@@ -56,7 +57,7 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
                     eVar = new u2.e(mediaCodec, (HandlerThread) ((u2.b) this.d).get());
                     i7 = 0;
                 } else {
-                    eVar = new org.telegram.ui.Components.m(mediaCodec);
+                    eVar = new ou(mediaCodec, 29);
                     i7 = 4;
                 }
                 cVar = new u2.c(mediaCodec, (HandlerThread) ((u2.b) this.c).get(), eVar, (u2.j) b8Var.f);
@@ -69,7 +70,7 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
                 if (surface == null && ((u2.o) b8Var.a).h && Build.VERSION.SDK_INT >= 35) {
                     i7 |= 8;
                 }
-                u2.c.o(cVar, (MediaFormat) b8Var.b, surface, (MediaCrypto) b8Var.e, i7);
+                u2.c.a(cVar, (MediaFormat) b8Var.b, surface, (MediaCrypto) b8Var.e, i7);
                 return cVar;
             } catch (Exception e11) {
                 e = e11;
@@ -87,37 +88,41 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.p
+    @Override // com.google.android.gms.common.api.internal.q
     public void accept(Object obj, Object obj2) {
         com.google.android.gms.common.api.internal.m mVar;
-        boolean z9;
-        u7.k kVar = (u7.k) obj;
+        boolean z10;
+        u7.l lVar = (u7.l) obj;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
         synchronized (this) {
             mVar = ((com.google.android.gms.common.api.internal.o) this.c).b;
-            z9 = this.b;
+            z10 = this.b;
             ((com.google.android.gms.common.api.internal.o) this.c).b = null;
         }
         if (mVar == null) {
             taskCompletionSource.setResult(Boolean.FALSE);
         } else {
-            u7.a.a.a(kVar, mVar, z9, taskCompletionSource);
+            u7.a.a.a(lVar, mVar, z10, taskCompletionSource);
         }
     }
 
-    public boolean b(Long l10) {
-        boolean z9;
+    public float b() {
+        return ((ji.e) this.d).d.getTextSize();
+    }
+
+    public boolean c(Long l10) {
+        boolean z10;
         synchronized (((HashMap) this.d)) {
             try {
                 xe.b bVar = (xe.b) ((HashMap) this.d).get(l10);
-                z9 = (bVar == null || bVar.isEmpty()) ? false : true;
+                z10 = (bVar == null || bVar.isEmpty()) ? false : true;
             } finally {
             }
         }
-        return z9;
+        return z10;
     }
 
-    public void c() {
+    public void d() {
         switch (this.a) {
             case 1:
                 this.b = false;
@@ -128,22 +133,22 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
         }
     }
 
-    public void d() {
+    public void e() {
         w4.e eVar = (w4.e) this.c;
         androidx.lifecycle.o m10 = eVar.m();
         if (((androidx.lifecycle.v) m10).c != androidx.lifecycle.n.b) {
             throw new IllegalStateException("Restarter must be created only during owner's initialization stage");
         }
         m10.a(new Recreator(eVar));
-        final m.q qVar = (m.q) this.d;
-        qVar.getClass();
-        if (qVar.c) {
+        final m.p pVar = (m.p) this.d;
+        pVar.getClass();
+        if (pVar.c) {
             throw new IllegalStateException("SavedStateRegistry was already attached.");
         }
         m10.a(new androidx.lifecycle.r() { // from class: w4.b
             @Override // androidx.lifecycle.r
             public final void d(t tVar, m mVar) {
-                q this$0 = q.this;
+                p this$0 = p.this;
                 j.e(this$0, "this$0");
                 if (mVar == m.ON_START) {
                     this$0.e = true;
@@ -152,38 +157,38 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
                 }
             }
         });
-        qVar.c = true;
+        pVar.c = true;
         this.b = true;
     }
 
-    public void e(Bundle bundle) {
+    public void f(Bundle bundle) {
         if (!this.b) {
-            d();
+            e();
         }
         androidx.lifecycle.v vVar = (androidx.lifecycle.v) ((w4.e) this.c).m();
         if (vVar.c.compareTo(androidx.lifecycle.n.d) >= 0) {
             throw new IllegalStateException(("performRestore cannot be called when owner is " + vVar.c).toString());
         }
-        m.q qVar = (m.q) this.d;
-        if (!qVar.c) {
+        m.p pVar = (m.p) this.d;
+        if (!pVar.c) {
             throw new IllegalStateException("You must call performAttach() before calling performRestore(Bundle).");
         }
-        if (qVar.d) {
+        if (pVar.d) {
             throw new IllegalStateException("SavedStateRegistry was already restored.");
         }
-        qVar.a = bundle != null ? bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key") : null;
-        qVar.d = true;
+        pVar.a = bundle != null ? bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key") : null;
+        pVar.d = true;
     }
 
-    public void f(Bundle bundle) {
-        m.q qVar = (m.q) this.d;
-        qVar.getClass();
+    public void g(Bundle bundle) {
+        m.p pVar = (m.p) this.d;
+        pVar.getClass();
         Bundle bundle2 = new Bundle();
-        Bundle bundle3 = (Bundle) qVar.a;
+        Bundle bundle3 = (Bundle) pVar.a;
         if (bundle3 != null) {
             bundle2.putAll(bundle3);
         }
-        o.f fVar = (o.f) qVar.f;
+        o.f fVar = (o.f) pVar.f;
         fVar.getClass();
         o.d dVar = new o.d(fVar);
         fVar.c.put(dVar, Boolean.FALSE);
@@ -197,10 +202,6 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
         bundle.putBundle("androidx.lifecycle.BundlableSavedStateRegistry.key", bundle2);
     }
 
-    public synchronized com.google.android.gms.common.api.internal.o g() {
-        return (com.google.android.gms.common.api.internal.o) this.c;
-    }
-
     @Override // m9.t
     public void h(Throwable th2) {
         d0 d0Var = (d0) this.d;
@@ -209,20 +210,24 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
         } else {
             h2.a.d("MediaSessionImpl", "Failure calling MediaSession.Callback.onPlaybackResumption(): " + th2.getMessage(), th2);
         }
-        m0.J(d0Var.t);
+        l0.J(d0Var.t);
         if (this.b) {
             d0Var.p((p4.v) this.c);
         }
+    }
+
+    public synchronized com.google.android.gms.common.api.internal.o i() {
+        return (com.google.android.gms.common.api.internal.o) this.c;
     }
 
     @Override // m9.t
     public void onSuccess(Object obj) {
         d0 d0Var = (d0) this.d;
         p4.v vVar = (p4.v) this.c;
-        boolean z9 = this.b;
-        ab.b(d0Var.t, (p4.w) obj);
-        m0.J(d0Var.t);
-        if (z9) {
+        boolean z10 = this.b;
+        cb.b(d0Var.t, (p4.w) obj);
+        l0.J(d0Var.t);
+        if (z10) {
             d0Var.p(vVar);
         }
     }
@@ -234,16 +239,16 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
     }
 
     public n(u7.c cVar, com.google.android.gms.common.api.internal.o oVar) {
-        this.a = 8;
+        this.a = 9;
         this.d = cVar;
         this.b = true;
         this.c = oVar;
     }
 
     public n(w4.e eVar) {
-        this.a = 9;
+        this.a = 10;
         this.c = eVar;
-        this.d = new m.q();
+        this.d = new m.p();
     }
 
     public n(k kVar, d dVar) {
@@ -255,7 +260,7 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
     public n(int i7) {
         this.a = i7;
         switch (i7) {
-            case 10:
+            case 11:
                 this.d = new HashMap();
                 this.b = true;
                 break;
@@ -263,22 +268,28 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
     }
 
     public n(u2.b bVar, u2.b bVar2) {
-        this.a = 7;
+        this.a = 8;
         this.c = bVar;
         this.d = bVar2;
         this.b = true;
     }
 
     public n(kh.a aVar, te.a aVar2) {
-        this.a = 2;
+        this.a = 3;
         this.c = aVar;
         this.d = aVar2;
     }
 
-    public n(d0 d0Var, p4.v vVar, boolean z9, y0 y0Var) {
-        this.a = 3;
+    public n(d0 d0Var, p4.v vVar, boolean z10, y0 y0Var) {
+        this.a = 4;
         this.d = d0Var;
         this.c = vVar;
-        this.b = z9;
+        this.b = z10;
+    }
+
+    public n(ji.e eVar) {
+        this.a = 2;
+        this.d = eVar;
+        this.c = new int[2];
     }
 }

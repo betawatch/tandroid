@@ -1,35 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ln implements View.OnClickListener {
+public final /* synthetic */ class ln implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ on b;
-    public final /* synthetic */ TLRPC.Document c;
+    public final /* synthetic */ sn b;
 
-    public /* synthetic */ ln(on onVar, TLRPC.Document document, int i7) {
+    public /* synthetic */ ln(sn snVar, int i7) {
         this.a = i7;
-        this.b = onVar;
-        this.c = document;
+        this.b = snVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                nn nnVar = this.b.d;
-                if (nnVar != null) {
-                    nnVar.b(this.c);
+                sn snVar = this.b;
+                AtomicReference atomicReference = snVar.n;
+                org.telegram.ui.ActionBar.j5 j5Var = (org.telegram.ui.ActionBar.j5) atomicReference.get();
+                if (j5Var != null) {
+                    snVar.removeView(j5Var);
+                    atomicReference.set(null);
                     break;
                 }
                 break;
+            case 1:
+                sn snVar2 = this.b;
+                AtomicReference atomicReference2 = snVar2.w;
+                org.telegram.ui.ActionBar.j5 j5Var2 = (org.telegram.ui.ActionBar.j5) atomicReference2.get();
+                if (j5Var2 != null) {
+                    snVar2.removeView(j5Var2);
+                    atomicReference2.set(null);
+                    if (!snVar2.b) {
+                        snVar2.setClipChildren(true);
+                        break;
+                    }
+                }
+                break;
             default:
-                nn nnVar2 = this.b.d;
-                if (nnVar2 != null) {
-                    nnVar2.b(this.c);
+                sn snVar3 = this.b;
+                snVar3.k0 = false;
+                snVar3.i0.c(false);
+                if (snVar3.a()) {
+                    snVar3.f();
                     break;
                 }
                 break;

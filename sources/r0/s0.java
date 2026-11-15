@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s0 extends WindowInsetsAnimation$Callback {
     public final rh.d a;
@@ -69,8 +69,8 @@ public final class s0 extends WindowInsetsAnimation$Callback {
 
     public final WindowInsetsAnimation.Bounds onStart(WindowInsetsAnimation windowInsetsAnimation, WindowInsetsAnimation.Bounds bounds) {
         a(windowInsetsAnimation);
-        i0.b f10 = t0.f(bounds);
-        i0.b e10 = t0.e(bounds);
+        i0.c f10 = t0.f(bounds);
+        i0.c e10 = t0.e(bounds);
         rh.d dVar = this.a;
         if (dVar.c == 0) {
             Iterator it = dVar.d.iterator();

@@ -1,31 +1,31 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.e9;
+import a8.g9;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class l0 extends x0 implements t0 {
     public static final Object d = new Object();
     public static final s0 e = new s0(w0.class, 0);
     public static final boolean f;
-    public static final e9 h;
+    public static final g9 h;
     public volatile Object a;
     public volatile f0 b;
     public volatile k0 c;
 
     static {
-        boolean z9;
-        e9 i0Var;
+        boolean z10;
+        g9 i0Var;
         Throwable th2;
         Throwable th3;
         try {
-            z9 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
+            z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
-            z9 = false;
+            z10 = false;
         }
-        f = z9;
+        f = z10;
         String property = System.getProperty("java.runtime.name", "");
         Throwable th4 = null;
         if (property == null || property.contains("Android")) {

@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.view.Display;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a0 extends MediaRouter.Callback {
     public final j0 a;
@@ -32,7 +32,7 @@ public final class a0 extends MediaRouter.Callback {
         if (j0.s(routeInfo) != null || (o4 = j0Var.o(routeInfo)) < 0) {
             return;
         }
-        h0 h0Var = (h0) j0Var.G.get(o4);
+        h0 h0Var = (h0) j0Var.H.get(o4);
         String str = h0Var.b;
         CharSequence name = h0Var.a.getName(j0Var.a);
         l lVar = new l(str, name != null ? name.toString() : "");
@@ -51,7 +51,7 @@ public final class a0 extends MediaRouter.Callback {
         j0 j0Var = this.a;
         int o4 = j0Var.o(routeInfo);
         if (o4 >= 0) {
-            h0 h0Var = (h0) j0Var.G.get(o4);
+            h0 h0Var = (h0) j0Var.H.get(o4);
             Display presentationDisplay = routeInfo.getPresentationDisplay();
             int displayId = presentationDisplay != null ? presentationDisplay.getDisplayId() : -1;
             if (displayId != h0Var.c.a.getInt("presentationDisplayId", -1)) {
@@ -84,7 +84,7 @@ public final class a0 extends MediaRouter.Callback {
         if (j0.s(routeInfo) != null || (o4 = j0Var.o(routeInfo)) < 0) {
             return;
         }
-        j0Var.G.remove(o4);
+        j0Var.H.remove(o4);
         j0Var.y();
     }
 
@@ -102,10 +102,10 @@ public final class a0 extends MediaRouter.Callback {
         }
         int o4 = j0Var.o(routeInfo);
         if (o4 >= 0) {
-            h0 h0Var = (h0) j0Var.G.get(o4);
+            h0 h0Var = (h0) j0Var.H.get(o4);
             e eVar = j0Var.r;
             String str = h0Var.b;
-            eVar.a.removeMessages(qs.l4);
+            eVar.a.removeMessages(ns.l4);
             u d = eVar.d(eVar.s);
             if (d == null || (a10 = d.a(str)) == null) {
                 return;
@@ -132,7 +132,7 @@ public final class a0 extends MediaRouter.Callback {
         if (j0.s(routeInfo) != null || (o4 = j0Var.o(routeInfo)) < 0) {
             return;
         }
-        h0 h0Var = (h0) j0Var.G.get(o4);
+        h0 h0Var = (h0) j0Var.H.get(o4);
         int volume = routeInfo.getVolume();
         if (volume != h0Var.c.a.getInt("volume")) {
             m mVar = h0Var.c;

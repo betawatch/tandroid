@@ -1,67 +1,81 @@
 package org.telegram.ui.Components;
 
+import android.view.MotionEvent;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class sk extends v4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vk b;
+public final /* synthetic */ class sk implements org.telegram.ui.ActionBar.l0, org.telegram.messenger.ab, org.telegram.messenger.cb, org.telegram.ui.ActionBar.q1, jg.b {
+    public final /* synthetic */ dl a;
 
-    public /* synthetic */ sk(vk vkVar, int i7) {
-        this.a = i7;
-        this.b = vkVar;
+    public /* synthetic */ sk(dl dlVar) {
+        this.a = dlVar;
     }
 
-    @Override // v4.s0
-    public final void a(RecyclerView recyclerView, int i7) {
-        xi0 xi0Var;
-        switch (this.a) {
-            case 0:
-                vk vkVar = this.b;
-                bi.q1 q1Var = vkVar.L;
-                boolean z9 = i7 != 0;
-                vkVar.H = z9;
-                if (!z9 && vkVar.F != null) {
-                    vkVar.F = null;
-                }
-                if (i7 == 0) {
-                    int L = org.telegram.messenger.g0.L(13.0f);
-                    ci ciVar = vkVar.b;
-                    int i10 = ciVar.s0;
-                    if (((ciVar.Y3[0] - i10) - L) + i10 < org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() && (xi0Var = (xi0) q1Var.K(0)) != null) {
-                        View view = xi0Var.a;
-                        if (view.getTop() > 0) {
-                            q1Var.w0(0, view.getTop(), null);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                if (i7 == 1) {
-                    vk vkVar2 = this.b;
-                    if (vkVar2.c0 && vkVar2.d0) {
-                        org.telegram.messenger.g0.v1(vkVar2.b.getCurrentFocus());
-                        break;
-                    }
-                }
-                break;
+    @Override // jg.b
+    public void a() {
+        dl dlVar = this.a;
+        dlVar.f0 = false;
+        dlVar.j0();
+    }
+
+    @Override // org.telegram.messenger.cb
+    public void b(int i7) {
+        View childAt;
+        dl dlVar = this.a;
+        di.c1 c1Var = dlVar.M;
+        if (i7 != 1 || dlVar.I || c1Var.getChildCount() <= 0 || (childAt = c1Var.getChildAt(0)) == null) {
+            return;
+        }
+        View F = c1Var.F(childAt);
+        v4.e1 T = F == null ? null : c1Var.T(F);
+        if (T == null || T.b() != 0) {
+            return;
+        }
+        int L = dlVar.p0 == 0 ? 0 : org.telegram.messenger.g0.L(66.0f);
+        int top = childAt.getTop();
+        if (top < (-L)) {
+            hi.w4 d = dlVar.E.d();
+            dlVar.G = ((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom((org.telegram.messenger.bb) d.b, d.c);
+            c1Var.w0(0, top + L, null);
         }
     }
 
-    @Override // v4.s0
-    public void b(RecyclerView recyclerView, int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                vk vkVar = this.b;
-                vkVar.i0();
-                if (vkVar.F != null) {
-                    vkVar.G += i10;
-                }
-                vkVar.b.M1(vkVar, i10);
-                break;
+    @Override // org.telegram.messenger.ab
+    public boolean c(MotionEvent motionEvent, org.telegram.messenger.ha haVar) {
+        MotionEvent motionEvent2;
+        dl dlVar = this.a;
+        if (dlVar.H != 0.0f) {
+            motionEvent = MotionEvent.obtain(motionEvent);
+            motionEvent.offsetLocation(0.0f, (-dlVar.H) / 2.0f);
+            motionEvent2 = motionEvent;
+        } else {
+            motionEvent2 = null;
         }
+        boolean booleanValue = haVar.a(motionEvent).booleanValue();
+        if (motionEvent2 != null) {
+            motionEvent2.recycle();
+        }
+        return booleanValue;
+    }
+
+    @Override // org.telegram.ui.ActionBar.l0
+    public void g(int i7) {
+        org.telegram.messenger.ea eaVar = this.a.E;
+        if (eaVar == null) {
+            return;
+        }
+        if (i7 == 2) {
+            eaVar.j(0);
+        } else if (i7 == 3) {
+            eaVar.j(1);
+        } else if (i7 == 4) {
+            eaVar.j(2);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        dl.R(this.a);
     }
 }

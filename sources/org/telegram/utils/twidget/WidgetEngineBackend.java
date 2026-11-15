@@ -5,11 +5,12 @@ import android.graphics.Paint;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.concurrent.ConcurrentHashMap;
+import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 final class WidgetEngineBackend {
     private static final int MAX_CACHED_TEXT = 1024;
@@ -41,57 +42,57 @@ final class WidgetEngineBackend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$canvasRead$8(byte[][] bArr, int i7, int i10, int i11, int i12, int i13) {
-        bArr[0] = this.client.A(i7, i10, i11, i12, i13);
+        bArr[0] = this.client.B(i7, i10, i11, i12, i13);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$canvasRun$7(int i7, int i10, int i11, int[] iArr) {
-        this.client.t0(i7, i10, i11, iArr);
+        this.client.u0(i7, i10, i11, iArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createFont$0(float[][] fArr, int i7, byte[] bArr, float f10, int i10, boolean z9, byte[] bArr2) {
-        fArr[0] = this.client.G(i7, bArr, f10, i10, z9, bArr2);
+    public /* synthetic */ void lambda$createFont$0(float[][] fArr, int i7, byte[] bArr, float f10, int i10, boolean z10, byte[] bArr2) {
+        fArr[0] = this.client.H(i7, bArr, f10, i10, z10, bArr2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadImage$2(int i7, Bitmap bitmap) {
-        this.client.Z0(i7, bitmap);
+    public /* synthetic */ void lambda$loadImage$2(int i7, int i10, int i11, byte[] bArr) {
+        this.client.y(i7, i10, i11, bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$record$6(byte[] bArr, double d, int i7, int i10, float f10, float f11, int i11, int i12, byte[] bArr2) {
-        this.client.F(bArr2, bArr, d, i7, i10, f10, f11, i11, i12);
+        this.client.G(bArr2, bArr, d, i7, i10, f10, f11, i11, i12);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$recordLayer$5(int i7, int i10, byte[] bArr) {
-        this.client.J0(i7, i10, bArr);
+        this.client.K0(i7, i10, bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$remoteWidth$1(float[] fArr, int i7, byte[] bArr) {
-        fArr[0] = this.client.p0(i7, bArr);
+        fArr[0] = this.client.q0(i7, bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$selectableText$4(byte[] bArr) {
-        this.client.h0(bArr);
+        this.client.i0(bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$send$10(byte[] bArr) {
-        this.client.Q0(bArr);
+        this.client.R0(bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$signal$3(int i7, byte[] bArr) {
-        this.client.v0(i7, bArr);
+        this.client.w0(i7, bArr);
     }
 
-    private Paint localFont(byte[] bArr, float f10, int i7, boolean z9, byte[] bArr2) {
+    private Paint localFont(byte[] bArr, float f10, int i7, boolean z10, byte[] bArr2) {
         try {
-            return WidgetSandboxBackend.paints(WidgetSandboxBackend.text(bArr), f10, i7, z9, WidgetSandboxBackend.text(bArr2), this.density)[1];
+            return WidgetSandboxBackend.paints(WidgetSandboxBackend.text(bArr), f10, i7, z10, WidgetSandboxBackend.text(bArr2), this.density)[1];
         } catch (RuntimeException e10) {
             localFonts = false;
             Log.w("WidgetEngine", "no fonts in this process (" + e10.getClass().getSimpleName() + "): widths come from the client");
@@ -145,7 +146,7 @@ final class WidgetEngineBackend {
 
     public void canvasRelease(int i7) {
         try {
-            this.client.D(i7);
+            this.client.E(i7);
         } catch (RemoteException unused) {
         }
     }
@@ -159,25 +160,25 @@ final class WidgetEngineBackend {
         });
     }
 
-    public float[] createFont(final byte[] bArr, final float f10, final int i7, final boolean z9, final byte[] bArr2) {
+    public float[] createFont(final byte[] bArr, final float f10, final int i7, final boolean z10, final byte[] bArr2) {
         final int i10 = this.nextFont + 1;
         this.nextFont = i10;
         final float[][] fArr = new float[1][];
         call(new w() { // from class: org.telegram.utils.twidget.u
             @Override // org.telegram.utils.twidget.w
             public final void run() {
-                WidgetEngineBackend.this.lambda$createFont$0(fArr, i10, bArr, f10, i7, z9, bArr2);
+                WidgetEngineBackend.this.lambda$createFont$0(fArr, i10, bArr, f10, i7, z10, bArr2);
             }
         });
         float[] fArr2 = fArr[0];
         if (fArr2 == null || fArr2.length != 6) {
             throw new IllegalStateException("Widget client: font");
         }
-        Paint localFont = localFonts ? localFont(bArr, f10, i7, z9, bArr2) : null;
+        Paint localFont = localFonts ? localFont(bArr, f10, i7, z10, bArr2) : null;
         if (localFont != null) {
             this.deviceFonts.put(Integer.valueOf(i10), localFont);
         } else {
-            this.fontKeys.put(Integer.valueOf(i10), WidgetSandboxBackend.text(bArr) + (char) 1 + f10 + (char) 1 + i7 + (char) 1 + z9 + (char) 1 + WidgetSandboxBackend.text(bArr2) + (char) 1);
+            this.fontKeys.put(Integer.valueOf(i10), WidgetSandboxBackend.text(bArr) + (char) 1 + f10 + (char) 1 + i7 + (char) 1 + z10 + (char) 1 + WidgetSandboxBackend.text(bArr2) + (char) 1);
         }
         return fArr[0];
     }
@@ -192,22 +193,34 @@ final class WidgetEngineBackend {
     }
 
     public byte[] formatIntl(byte[] bArr) {
-        return t0.b(WidgetSandboxBackend.text(bArr)).getBytes(StandardCharsets.UTF_8);
+        return w0.b(WidgetSandboxBackend.text(bArr)).getBytes(StandardCharsets.UTF_8);
     }
 
     public float[] loadImage(final int i7, byte[] bArr) {
-        final Bitmap decodeImage = WidgetSandboxBackend.decodeImage(WidgetSandboxBackend.text(bArr), this.imageBytes);
+        Bitmap decodeImage = WidgetSandboxBackend.decodeImage(WidgetSandboxBackend.text(bArr), this.imageBytes);
         if (decodeImage == null) {
             return null;
         }
         this.imageBytes += decodeImage.getAllocationByteCount();
-        call(new w() { // from class: org.telegram.utils.twidget.l
-            @Override // org.telegram.utils.twidget.w
-            public final void run() {
-                WidgetEngineBackend.this.lambda$loadImage$2(i7, decodeImage);
+        Bitmap.Config config = decodeImage.getConfig();
+        Bitmap.Config config2 = Bitmap.Config.ARGB_8888;
+        if (config != config2) {
+            decodeImage = decodeImage.copy(config2, false);
+        }
+        if (decodeImage == null) {
+            return null;
+        }
+        ByteBuffer allocate = ByteBuffer.allocate(decodeImage.getHeight() * decodeImage.getWidth() * 4);
+        decodeImage.copyPixelsToBuffer(allocate);
+        final int width = decodeImage.getWidth();
+        final int height = decodeImage.getHeight();
+        send(allocate.array(), new x() { // from class: org.telegram.utils.twidget.l
+            @Override // org.telegram.utils.twidget.x
+            public final void a(byte[] bArr2) {
+                WidgetEngineBackend.this.lambda$loadImage$2(i7, width, height, bArr2);
             }
         });
-        return new float[]{decodeImage.getWidth(), decodeImage.getHeight()};
+        return new float[]{width, height};
     }
 
     public void record(byte[] bArr, final byte[] bArr2, final double d, final int i7, final int i10, final float f10, final float f11, final int i11, final int i12) {

@@ -1,89 +1,52 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.net.Uri;
-import android.text.TextUtils;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class he implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cn b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ an b;
+    public final /* synthetic */ org.telegram.messenger.np c;
+    public final /* synthetic */ CharSequence d;
+    public final /* synthetic */ boolean e;
 
-    public /* synthetic */ he(cn cnVar, String str, int i7) {
-        this.a = i7;
-        this.b = cnVar;
-        this.c = str;
+    public /* synthetic */ he(an anVar, CharSequence charSequence, org.telegram.messenger.np npVar, boolean z10) {
+        this.b = anVar;
+        this.d = charSequence;
+        this.c = npVar;
+        this.e = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        String str = this.c;
-        cn cnVar = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                cn.t1(cnVar, str);
-                break;
-            case 1:
-                cn.B1(cnVar, str);
-                break;
-            case 2:
-                g4.d(str, cnVar.currentAccount, cnVar.l1, null, cnVar.za);
-                break;
-            case 3:
-                if (str != null) {
-                    cnVar.getClass();
-                    if (str.length() != 0) {
-                        cnVar.getMessagesController().A4(str, cnVar.f);
-                        break;
-                    }
-                }
-                cnVar.getSendMessagesHelper().r0(org.telegram.messenger.ez.b("/start", cnVar.j6, null, null, null, false, null, null, null, true, 0, 0, null, false));
-                break;
-            case 4:
-                cnVar.Na(str);
-                break;
-            case 5:
-                cnVar.getClass();
-                cnVar.presentFragment(new org.telegram.ui.Wallet.o9(str));
-                break;
-            case 6:
-                String str2 = cnVar.getMessagesController().H6;
-                if (TextUtils.isEmpty(str2)) {
-                    str2 = "https://tonviewer.com/";
-                } else if (!str2.endsWith("/")) {
-                    str2 = str2.concat("/");
-                }
-                Activity parentActivity = cnVar.getParentActivity();
-                StringBuilder m10 = com.google.android.recaptcha.internal.a.m(str2);
-                m10.append(Uri.encode(str));
-                vf.c.v(parentActivity, m10.toString(), false);
-                break;
-            case 7:
-                cnVar.Fa(str, false);
-                break;
-            case 8:
-                vf.c.t(cnVar.getParentActivity(), "tel:" + str);
-                break;
-            case 9:
-                org.telegram.messenger.g0.g(str);
-                org.telegram.messenger.camera.q.r(null, 2131747295, org.telegram.ui.Components.gc.a0(cnVar));
-                break;
-            case 10:
-                cn.a0(cnVar, str);
-                break;
-            case 11:
-                vf.c.t(cnVar.getParentActivity(), "tel:" + str);
-                break;
-            case 12:
-                org.telegram.messenger.g0.g(str);
-                org.telegram.messenger.camera.q.r(null, 2131747295, org.telegram.ui.Components.gc.a0(cnVar));
+                an.P0(this.b, this.d, this.c, this.e);
                 break;
             default:
-                vf.c.t(cnVar.getParentActivity(), "https://fragment.com/username/" + str);
+                an anVar = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, anVar.getParentActivity(), anVar.Aa);
+                String M0 = org.telegram.messenger.hd.M0(R.string.AppName, null);
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.S = M0;
+                String M02 = org.telegram.messenger.hd.M0(2131747831, null);
+                org.telegram.messenger.np npVar = this.c;
+                alertDialog$Builder.k(M02, new a3.g(anVar, npVar, this.d, this.e, 4));
+                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                t1Var.U = org.telegram.messenger.hd.M0(2131745685, null);
+                anVar.showDialog(t1Var);
+                npVar.H2 = 0;
+                org.telegram.messenger.np.e1().edit().putInt("secretWebpage2", npVar.H2).commit();
                 break;
         }
+    }
+
+    public /* synthetic */ he(an anVar, org.telegram.messenger.np npVar, CharSequence charSequence, boolean z10) {
+        this.b = anVar;
+        this.c = npVar;
+        this.d = charSequence;
+        this.e = z10;
     }
 }

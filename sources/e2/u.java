@@ -1,7 +1,8 @@
 package e2;
 
-import a8.ia;
+import a8.ja;
 import android.text.TextUtils;
+import com.google.android.gms.internal.vision.e2;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ import java.util.Locale;
 import java.util.UUID;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class u {
     public static final String A0;
@@ -135,10 +136,10 @@ public final class u {
     }
 
     public u(t tVar) {
-        boolean z9;
+        boolean z10;
         String str;
         this.a = tVar.a;
-        String T = h2.m0.T(tVar.d);
+        String T = h2.l0.T(tVar.d);
         this.d = T;
         if (tVar.c.isEmpty() && tVar.b != null) {
             this.c = h9.i0.u(new x(T, tVar.b));
@@ -149,13 +150,13 @@ public final class u {
                     if (!((x) tVar.c.get(i7)).b.equals(tVar.b)) {
                     }
                 }
-                z9 = false;
-                ia.p(z9);
+                z10 = false;
+                ja.p(z10);
                 this.c = tVar.c;
                 this.b = tVar.b;
             }
-            z9 = true;
-            ia.p(z9);
+            z10 = true;
+            ja.p(z10);
             this.c = tVar.c;
             this.b = tVar.b;
         } else {
@@ -179,7 +180,7 @@ public final class u {
             this.b = str;
         }
         this.e = tVar.e;
-        ia.o("Auxiliary track type must only be set to a value other than AUXILIARY_TRACK_TYPE_UNDEFINED only when ROLE_FLAG_AUXILIARY is set", tVar.g == 0 || (tVar.f & 32768) != 0);
+        ja.o("Auxiliary track type must only be set to a value other than AUXILIARY_TRACK_TYPE_UNDEFINED only when ROLE_FLAG_AUXILIARY is set", tVar.g == 0 || (tVar.f & 32768) != 0);
         this.f = tVar.f;
         this.g = tVar.g;
         int i11 = tVar.h;
@@ -237,6 +238,7 @@ public final class u {
     }
 
     public static String c(u uVar) {
+        char c10;
         int i7;
         String str;
         String str2;
@@ -262,8 +264,8 @@ public final class u {
         String str5 = uVar.m;
         String str6 = uVar.r;
         int i19 = uVar.f;
-        g9.l lVar = new g9.l(String.valueOf(','), 0);
-        StringBuilder m10 = com.google.android.recaptcha.internal.a.m("id=");
+        f5.g gVar = new f5.g(String.valueOf(','), 1);
+        StringBuilder m10 = e2.m("id=");
         m10.append(uVar.a);
         m10.append(", mimeType=");
         m10.append(uVar.s);
@@ -301,9 +303,12 @@ public final class u {
                     linkedHashSet.add("unknown (" + uuid + ")");
                 }
             }
+            c10 = 0;
             m10.append(", drm=[");
-            lVar.a(m10, linkedHashSet.iterator());
+            gVar.a(m10, linkedHashSet.iterator());
             m10.append(']');
+        } else {
+            c10 = 0;
         }
         if (i17 != -1 && i16 != -1) {
             m10.append(", res=");
@@ -321,8 +326,9 @@ public final class u {
         int i21 = j9.c.a;
         if (Math.copySign(d - 1.0d, 1.0d) > 0.001d && d != 1.0d && (!Double.isNaN(d) || !Double.isNaN(1.0d))) {
             m10.append(", par=");
-            Object[] objArr = {Float.valueOf(f11)};
-            String str7 = h2.m0.a;
+            Object[] objArr = new Object[1];
+            objArr[c10] = Float.valueOf(f11);
+            String str7 = h2.l0.a;
             m10.append(String.format(Locale.US, "%.3f", objArr));
         }
         if (mVar != null) {
@@ -333,14 +339,14 @@ public final class u {
                 if (mVar.d()) {
                     String b10 = m.b(mVar.a);
                     String a10 = m.a(mVar.b);
-                    String c10 = m.c(mVar.c);
-                    String str8 = h2.m0.a;
+                    String c11 = m.c(mVar.c);
+                    String str8 = h2.l0.a;
                     Locale locale = Locale.US;
-                    str2 = b10 + "/" + a10 + "/" + c10;
+                    str2 = b10 + "/" + a10 + "/" + c11;
                 } else {
                     str2 = "NA/NA/NA";
                 }
-                m10.append(str2 + "/" + ((i23 == -1 || i22 == -1) ? "NA/NA" : com.google.android.recaptcha.internal.a.j(i23, "/", i22)));
+                m10.append(str2 + "/" + ((i23 == -1 || i22 == -1) ? "NA/NA" : e2.j(i23, "/", i22)));
             }
         }
         if (f10 != -1.0f) {
@@ -363,16 +369,14 @@ public final class u {
             m10.append(", language=");
             m10.append(str3);
         }
-        boolean isEmpty = i0Var.isEmpty();
-        int i24 = 4;
-        if (!isEmpty) {
+        if (!i0Var.isEmpty()) {
             m10.append(", labels=[");
-            lVar.a(m10, h9.o.y(i0Var, new di.a1(i24)).iterator());
+            gVar.a(m10, h9.o.y(i0Var, new di.o(7)).iterator());
             m10.append("]");
         }
         if (i10 != 0) {
             m10.append(", selectionFlags=[");
-            String str9 = h2.m0.a;
+            String str9 = h2.l0.a;
             ArrayList arrayList = new ArrayList();
             if ((i10 & 4) != 0) {
                 arrayList.add("auto");
@@ -383,12 +387,12 @@ public final class u {
             if ((i10 & 2) != 0) {
                 arrayList.add("forced");
             }
-            lVar.a(m10, arrayList.iterator());
+            gVar.a(m10, arrayList.iterator());
             m10.append("]");
         }
         if (i19 != 0) {
             m10.append(", roleFlags=[");
-            String str10 = h2.m0.a;
+            String str10 = h2.l0.a;
             ArrayList arrayList2 = new ArrayList();
             if ((i19 & 1) != 0) {
                 arrayList2.add("main");
@@ -439,25 +443,25 @@ public final class u {
             if ((i7 & 32768) != 0) {
                 arrayList2.add("auxiliary");
             }
-            lVar.a(m10, arrayList2.iterator());
+            gVar.a(m10, arrayList2.iterator());
             m10.append("]");
         } else {
             i7 = i19;
         }
         if ((i7 & 32768) != 0) {
             m10.append(", auxiliaryTrackType=");
-            int i25 = uVar.g;
-            String str11 = h2.m0.a;
-            if (i25 == 0) {
+            int i24 = uVar.g;
+            String str11 = h2.l0.a;
+            if (i24 == 0) {
                 str = "undefined";
-            } else if (i25 == 1) {
+            } else if (i24 == 1) {
                 str = "original";
-            } else if (i25 == 2) {
+            } else if (i24 == 2) {
                 str = "depth-linear";
-            } else if (i25 == 3) {
+            } else if (i24 == 3) {
                 str = "depth-inverse";
             } else {
-                if (i25 != 4) {
+                if (i24 != 4) {
                     throw new IllegalStateException("Unsupported auxiliary track type");
                 }
                 str = "depth metadata";
@@ -563,8 +567,8 @@ public final class u {
         }
         String str5 = this.k;
         if (str5 == null) {
-            String w10 = h2.m0.w(h, uVar.k);
-            if (h2.m0.d0(w10).length == 1) {
+            String w10 = h2.l0.w(h, uVar.k);
+            if (h2.l0.d0(w10).length == 1) {
                 str5 = w10;
             }
         }

@@ -1,456 +1,78 @@
 package m;
 
-import android.app.SearchableInfo;
-import android.content.ComponentName;
+import android.R;
 import android.content.Context;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.database.Cursor;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.text.style.TextAppearanceSpan;
+import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import androidx.appcompat.widget.SearchView;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class z2 extends i1.a implements View.OnClickListener {
-    public static final /* synthetic */ int N = 0;
-    public final WeakHashMap D;
-    public final int E;
-    public int F;
-    public ColorStateList G;
-    public int H;
-    public int I;
-    public int J;
-    public int K;
-    public int L;
-    public int M;
-    public final int n;
-    public final int r;
-    public final LayoutInflater s;
-    public final SearchView w;
-    public final SearchableInfo x;
-    public final Context y;
+public abstract class z2 {
+    public static final ThreadLocal a = new ThreadLocal();
+    public static final int[] b = {-16842910};
+    public static final int[] c = {R.attr.state_focused};
+    public static final int[] d = {R.attr.state_pressed};
+    public static final int[] e = {R.attr.state_checked};
+    public static final int[] f = new int[0];
+    public static final int[] g = new int[1];
 
-    public z2(Context context, SearchView searchView, SearchableInfo searchableInfo, WeakHashMap weakHashMap) {
-        int suggestionRowLayout = searchView.getSuggestionRowLayout();
-        this.b = true;
-        this.c = null;
-        this.a = false;
-        this.d = -1;
-        this.e = new com.google.android.gms.internal.clearcut.c(this);
-        this.f = new c5.h(this, 1);
-        this.r = suggestionRowLayout;
-        this.n = suggestionRowLayout;
-        this.s = (LayoutInflater) context.getSystemService("layout_inflater");
-        this.F = 1;
-        this.H = -1;
-        this.I = -1;
-        this.J = -1;
-        this.K = -1;
-        this.L = -1;
-        this.M = -1;
-        this.w = searchView;
-        this.x = searchableInfo;
-        this.E = searchView.getSuggestionCommitIconResId();
-        this.y = context;
-        this.D = weakHashMap;
-    }
-
-    public static String g(Cursor cursor, int i7) {
-        if (i7 == -1) {
-            return null;
-        }
+    public static void a(View view, Context context) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(f.a.j);
         try {
-            return cursor.getString(i7);
-        } catch (Exception e10) {
-            Log.e("SuggestionsAdapter", "unexpected error retrieving valid column from cursor, did the remote process die?", e10);
-            return null;
+            if (!obtainStyledAttributes.hasValue(ns.C1)) {
+                Log.e("ThemeUtils", "View " + view.getClass() + " is an AppCompat widget that can only be used with a Theme.AppCompat theme (or descendant).");
+            }
+        } finally {
+            obtainStyledAttributes.recycle();
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0132  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0134  */
-    @Override // i1.a
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(View view, Cursor cursor) {
-        int i7;
-        int i10;
-        Drawable e10;
-        ActivityInfo activityInfo;
-        int iconResource;
-        String str;
-        y2 y2Var = (y2) view.getTag();
-        int i11 = this.M;
-        int i12 = i11 != -1 ? cursor.getInt(i11) : 0;
-        TextView textView = y2Var.a;
-        TextView textView2 = y2Var.b;
-        ImageView imageView = y2Var.e;
-        if (textView != null) {
-            String g10 = g(cursor, this.H);
-            textView.setText(g10);
-            if (TextUtils.isEmpty(g10)) {
-                textView.setVisibility(8);
-            } else {
-                textView.setVisibility(0);
-            }
+    public static int b(Context context, int i7) {
+        ColorStateList d2 = d(context, i7);
+        if (d2 != null && d2.isStateful()) {
+            return d2.getColorForState(b, d2.getDefaultColor());
         }
-        Context context = this.y;
-        if (textView2 != null) {
-            String g11 = g(cursor, this.J);
-            if (g11 != null) {
-                if (this.G == null) {
-                    TypedValue typedValue = new TypedValue();
-                    context.getTheme().resolveAttribute(R.attr.textColorSearchUrl, typedValue, true);
-                    this.G = context.getResources().getColorStateList(typedValue.resourceId);
-                }
-                SpannableString spannableString = new SpannableString(g11);
-                spannableString.setSpan(new TextAppearanceSpan(null, 0, 0, this.G, null), 0, g11.length(), 33);
-                str = spannableString;
-            } else {
-                str = g(cursor, this.I);
-            }
-            if (TextUtils.isEmpty(str)) {
-                if (textView != null) {
-                    textView.setSingleLine(false);
-                    textView.setMaxLines(2);
-                }
-            } else if (textView != null) {
-                textView.setSingleLine(true);
-                textView.setMaxLines(1);
-            }
-            textView2.setText(str);
-            if (TextUtils.isEmpty(str)) {
-                textView2.setVisibility(8);
-            } else {
-                textView2.setVisibility(0);
-            }
+        ThreadLocal threadLocal = a;
+        TypedValue typedValue = (TypedValue) threadLocal.get();
+        if (typedValue == null) {
+            typedValue = new TypedValue();
+            threadLocal.set(typedValue);
         }
-        ImageView imageView2 = y2Var.c;
-        if (imageView2 != null) {
-            int i13 = this.K;
-            if (i13 == -1) {
-                e10 = null;
-            } else {
-                e10 = e(cursor.getString(i13));
-                if (e10 == null) {
-                    ComponentName searchActivity = this.x.getSearchActivity();
-                    String flattenToShortString = searchActivity.flattenToShortString();
-                    WeakHashMap weakHashMap = this.D;
-                    if (weakHashMap.containsKey(flattenToShortString)) {
-                        Drawable.ConstantState constantState = (Drawable.ConstantState) weakHashMap.get(flattenToShortString);
-                        e10 = constantState == null ? null : constantState.newDrawable(context.getResources());
-                    } else {
-                        PackageManager packageManager = context.getPackageManager();
-                        try {
-                            activityInfo = packageManager.getActivityInfo(searchActivity, 128);
-                            iconResource = activityInfo.getIconResource();
-                        } catch (PackageManager.NameNotFoundException e11) {
-                            Log.w("SuggestionsAdapter", e11.toString());
-                        }
-                        if (iconResource != 0) {
-                            Drawable drawable = packageManager.getDrawable(searchActivity.getPackageName(), iconResource, activityInfo.applicationInfo);
-                            if (drawable == null) {
-                                StringBuilder n10 = jg.g.n(iconResource, "Invalid icon resource ", " for ");
-                                n10.append(searchActivity.flattenToShortString());
-                                Log.w("SuggestionsAdapter", n10.toString());
-                            } else {
-                                e10 = drawable;
-                                weakHashMap.put(flattenToShortString, e10 != null ? null : e10.getConstantState());
-                            }
-                        }
-                        e10 = null;
-                        weakHashMap.put(flattenToShortString, e10 != null ? null : e10.getConstantState());
-                    }
-                    if (e10 == null) {
-                        e10 = context.getPackageManager().getDefaultActivityIcon();
-                    }
-                }
-            }
-            imageView2.setImageDrawable(e10);
-            if (e10 == null) {
-                imageView2.setVisibility(4);
-            } else {
-                imageView2.setVisibility(0);
-                e10.setVisible(false, false);
-                e10.setVisible(true, false);
-            }
-        }
-        ImageView imageView3 = y2Var.d;
-        if (imageView3 != null) {
-            int i14 = this.L;
-            Drawable e12 = i14 == -1 ? null : e(cursor.getString(i14));
-            imageView3.setImageDrawable(e12);
-            if (e12 != null) {
-                imageView3.setVisibility(0);
-                e12.setVisible(false, false);
-                i7 = 1;
-                e12.setVisible(true, false);
-                i10 = this.F;
-                if (i10 == 2 && (i10 != i7 || (i12 & 1) == 0)) {
-                    imageView.setVisibility(8);
-                    return;
-                }
-                imageView.setVisibility(0);
-                imageView.setTag(textView.getText());
-                imageView.setOnClickListener(this);
-            }
-            imageView3.setVisibility(8);
-        }
-        i7 = 1;
-        i10 = this.F;
-        if (i10 == 2) {
-        }
-        imageView.setVisibility(0);
-        imageView.setTag(textView.getText());
-        imageView.setOnClickListener(this);
+        context.getTheme().resolveAttribute(R.attr.disabledAlpha, typedValue, true);
+        float f10 = typedValue.getFloat();
+        return i0.a.o(c(context, i7), Math.round(Color.alpha(r4) * f10));
     }
 
-    @Override // i1.a
-    public final void b(Cursor cursor) {
+    public static int c(Context context, int i7) {
+        int[] iArr = g;
+        iArr[0] = i7;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
         try {
-            super.b(cursor);
-            if (cursor != null) {
-                this.H = cursor.getColumnIndex("suggest_text_1");
-                this.I = cursor.getColumnIndex("suggest_text_2");
-                this.J = cursor.getColumnIndex("suggest_text_2_url");
-                this.K = cursor.getColumnIndex("suggest_icon_1");
-                this.L = cursor.getColumnIndex("suggest_icon_2");
-                this.M = cursor.getColumnIndex("suggest_flags");
-            }
-        } catch (Exception e10) {
-            Log.e("SuggestionsAdapter", "error changing cursor and caching columns", e10);
+            return obtainStyledAttributes.getColor(0, 0);
+        } finally {
+            obtainStyledAttributes.recycle();
         }
     }
 
-    @Override // i1.a
-    public final String c(Cursor cursor) {
-        String g10;
-        String g11;
-        if (cursor == null) {
-            return null;
-        }
-        String g12 = g(cursor, cursor.getColumnIndex("suggest_intent_query"));
-        if (g12 != null) {
-            return g12;
-        }
-        SearchableInfo searchableInfo = this.x;
-        if (searchableInfo.shouldRewriteQueryFromData() && (g11 = g(cursor, cursor.getColumnIndex("suggest_intent_data"))) != null) {
-            return g11;
-        }
-        if (!searchableInfo.shouldRewriteQueryFromText() || (g10 = g(cursor, cursor.getColumnIndex("suggest_text_1"))) == null) {
-            return null;
-        }
-        return g10;
-    }
-
-    public final Drawable d(Uri uri) {
-        int parseInt;
-        String authority = uri.getAuthority();
-        if (TextUtils.isEmpty(authority)) {
-            throw new FileNotFoundException("No authority: " + uri);
-        }
+    public static ColorStateList d(Context context, int i7) {
+        ColorStateList colorStateList;
+        int resourceId;
+        int[] iArr = g;
+        iArr[0] = i7;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
         try {
-            Resources resourcesForApplication = this.y.getPackageManager().getResourcesForApplication(authority);
-            List<String> pathSegments = uri.getPathSegments();
-            if (pathSegments == null) {
-                throw new FileNotFoundException("No path: " + uri);
+            if (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0 || (colorStateList = b5.a.a(context, resourceId)) == null) {
+                colorStateList = obtainStyledAttributes.getColorStateList(0);
             }
-            int size = pathSegments.size();
-            if (size == 1) {
-                try {
-                    parseInt = Integer.parseInt(pathSegments.get(0));
-                } catch (NumberFormatException unused) {
-                    throw new FileNotFoundException("Single path segment is not a resource ID: " + uri);
-                }
-            } else {
-                if (size != 2) {
-                    throw new FileNotFoundException("More than two path segments: " + uri);
-                }
-                parseInt = resourcesForApplication.getIdentifier(pathSegments.get(1), pathSegments.get(0), authority);
-            }
-            if (parseInt != 0) {
-                return resourcesForApplication.getDrawable(parseInt);
-            }
-            throw new FileNotFoundException("No resource found for: " + uri);
-        } catch (PackageManager.NameNotFoundException unused2) {
-            throw new FileNotFoundException("No package found for authority: " + uri);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:42:0x010c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Drawable e(String str) {
-        WeakHashMap weakHashMap = this.D;
-        Context context = this.y;
-        Drawable drawable = null;
-        if (str != null && !str.isEmpty() && !"0".equals(str)) {
-            try {
-                int parseInt = Integer.parseInt(str);
-                String str2 = "android.resource://" + context.getPackageName() + "/" + parseInt;
-                Drawable.ConstantState constantState = (Drawable.ConstantState) weakHashMap.get(str2);
-                Drawable newDrawable = constantState == null ? null : constantState.newDrawable();
-                if (newDrawable != null) {
-                    return newDrawable;
-                }
-                Drawable drawable2 = context.getDrawable(parseInt);
-                if (drawable2 != null) {
-                    weakHashMap.put(str2, drawable2.getConstantState());
-                }
-                return drawable2;
-            } catch (Resources.NotFoundException unused) {
-                Log.w("SuggestionsAdapter", "Icon resource not found: ".concat(str));
-                return null;
-            } catch (NumberFormatException unused2) {
-                Drawable.ConstantState constantState2 = (Drawable.ConstantState) weakHashMap.get(str);
-                Drawable newDrawable2 = constantState2 == null ? null : constantState2.newDrawable();
-                if (newDrawable2 != null) {
-                    return newDrawable2;
-                }
-                Uri parse = Uri.parse(str);
-                try {
-                } catch (FileNotFoundException e10) {
-                    Log.w("SuggestionsAdapter", "Icon not found: " + parse + ", " + e10.getMessage());
-                    if (drawable != null) {
-                        weakHashMap.put(str, drawable.getConstantState());
-                    }
-                    return drawable;
-                }
-                if ("android.resource".equals(parse.getScheme())) {
-                    try {
-                        drawable = d(parse);
-                        if (drawable != null) {
-                        }
-                    } catch (Resources.NotFoundException unused3) {
-                        throw new FileNotFoundException("Resource does not exist: " + parse);
-                    }
-                } else {
-                    InputStream openInputStream = context.getContentResolver().openInputStream(parse);
-                    if (openInputStream == null) {
-                        throw new FileNotFoundException("Failed to open " + parse);
-                    }
-                    try {
-                        Drawable createFromStream = Drawable.createFromStream(openInputStream, null);
-                        try {
-                            openInputStream.close();
-                        } catch (IOException e11) {
-                            Log.e("SuggestionsAdapter", "Error closing icon stream for " + parse, e11);
-                        }
-                        drawable = createFromStream;
-                        if (drawable != null) {
-                        }
-                    } finally {
-                    }
-                }
-            }
-        }
-        return drawable;
-    }
-
-    public final Cursor f(SearchableInfo searchableInfo, String str) {
-        String suggestAuthority;
-        String[] strArr = null;
-        if (searchableInfo == null || (suggestAuthority = searchableInfo.getSuggestAuthority()) == null) {
-            return null;
-        }
-        Uri.Builder fragment = new Uri.Builder().scheme("content").authority(suggestAuthority).query("").fragment("");
-        String suggestPath = searchableInfo.getSuggestPath();
-        if (suggestPath != null) {
-            fragment.appendEncodedPath(suggestPath);
-        }
-        fragment.appendPath("search_suggest_query");
-        String suggestSelection = searchableInfo.getSuggestSelection();
-        if (suggestSelection != null) {
-            strArr = new String[]{str};
-        } else {
-            fragment.appendPath(str);
-        }
-        String[] strArr2 = strArr;
-        fragment.appendQueryParameter("limit", String.valueOf(50));
-        return this.y.getContentResolver().query(fragment.build(), null, suggestSelection, strArr2, null);
-    }
-
-    @Override // i1.a, android.widget.BaseAdapter, android.widget.SpinnerAdapter
-    public final View getDropDownView(int i7, View view, ViewGroup viewGroup) {
-        try {
-            return super.getDropDownView(i7, view, viewGroup);
-        } catch (RuntimeException e10) {
-            Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e10);
-            View inflate = this.s.inflate(this.r, viewGroup, false);
-            if (inflate != null) {
-                ((y2) inflate.getTag()).a.setText(e10.toString());
-            }
-            return inflate;
-        }
-    }
-
-    @Override // i1.a, android.widget.Adapter
-    public final View getView(int i7, View view, ViewGroup viewGroup) {
-        try {
-            return super.getView(i7, view, viewGroup);
-        } catch (RuntimeException e10) {
-            Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e10);
-            View inflate = this.s.inflate(this.n, viewGroup, false);
-            inflate.setTag(new y2(inflate));
-            ((ImageView) inflate.findViewById(R.id.edit_query)).setImageResource(this.E);
-            ((y2) inflate.getTag()).a.setText(e10.toString());
-            return inflate;
-        }
-    }
-
-    @Override // android.widget.BaseAdapter, android.widget.Adapter
-    public final boolean hasStableIds() {
-        return false;
-    }
-
-    @Override // android.widget.BaseAdapter
-    public final void notifyDataSetChanged() {
-        super.notifyDataSetChanged();
-        Cursor cursor = this.c;
-        Bundle extras = cursor != null ? cursor.getExtras() : null;
-        if (extras != null) {
-            extras.getBoolean("in_progress");
-        }
-    }
-
-    @Override // android.widget.BaseAdapter
-    public final void notifyDataSetInvalidated() {
-        super.notifyDataSetInvalidated();
-        Cursor cursor = this.c;
-        Bundle extras = cursor != null ? cursor.getExtras() : null;
-        if (extras != null) {
-            extras.getBoolean("in_progress");
-        }
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        Object tag = view.getTag();
-        if (tag instanceof CharSequence) {
-            this.w.o((CharSequence) tag);
+            return colorStateList;
+        } finally {
+            obtainStyledAttributes.recycle();
         }
     }
 }

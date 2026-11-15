@@ -2,125 +2,142 @@ package zh;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.Point;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.LinearLayout;
-import bi.dd;
-import c8.ha;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.t10;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.k5;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.v8;
-import org.telegram.ui.Components.wp;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.Cells.x9;
+import org.telegram.ui.Components.vf0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j extends LinearLayout implements ls {
-    public final k9 a;
-    public final i6 b;
-    public final i6 c;
-    public final i6 d;
-    public final wp[] e;
-    public boolean f;
+public final class j extends ViewGroup {
+    public final GestureDetector a;
+    public final Path b;
+    public final RectF c;
+    public boolean d;
+    public final /* synthetic */ k e;
 
-    public j(Context context, h6 h6Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j(k kVar, Context context) {
         super(context);
-        this.e = new wp[1];
-        setOrientation(0);
-        i6 i6Var = new i6(context, false, false, false);
-        this.c = i6Var;
-        int i7 = m6.G6;
-        t6.Y(i6Var, i7, h6Var);
-        i6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        i6Var.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
-        i6Var.setEllipsizeByGradient(true);
-        i6 i6Var2 = new i6(context, false, false, false);
-        this.d = i6Var2;
-        t6.Y(i6Var2, m6.y6, h6Var);
-        i6Var2.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        k9 k9Var = new k9(context);
-        this.a = k9Var;
-        i6 i6Var3 = new i6(context, false, false, false);
-        this.b = i6Var3;
-        i6Var3.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        i6Var3.setPadding(org.telegram.messenger.g0.L(20.0f), 0, 0, 0);
-        t6.Y(i6Var3, i7, h6Var);
-        i6Var3.setTypeface(org.telegram.messenger.g0.o());
-        i6Var3.setGravity(17);
-        addView(i6Var3, ha.p(66, -2, 0.0f, 16));
-        addView(k9Var, ha.p(32, 32, 0.0f, 16));
-        addView(i6Var, ha.p(0, -2, 1.0f, 16));
-        addView(i6Var2, ha.q(-2, -2, 0.0f, 16, 0, 0, 20, 0));
-    }
-
-    public final void a(long j3, boolean z9) {
-        this.d.c(dd.a1(false, jg.g.m((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z9, true);
-    }
-
-    public final void b(int i7, boolean z9, boolean z10) {
-        i6 i6Var = this.b;
-        if (!z9 || i7 > 3) {
-            if (i7 >= 10000) {
-                i6Var.setTextSize(org.telegram.messenger.g0.L(12.0f));
-            } else if (i7 >= 1000) {
-                i6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-            } else {
-                i6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
-            }
-            i6Var.c(Integer.toString(i7), z10, true);
-            return;
-        }
-        if (i7 == 1) {
-            i6Var.c(org.telegram.messenger.i6.o("🥇", i6Var.getPaint().getFontMetricsInt(), 20, null), z10, true);
-        } else if (i7 == 2) {
-            i6Var.c(org.telegram.messenger.i6.o("🥈", i6Var.getPaint().getFontMetricsInt(), 20, null), z10, true);
-        } else if (i7 == 3) {
-            i6Var.c(org.telegram.messenger.i6.o("🥉", i6Var.getPaint().getFontMetricsInt(), 20, null), z10, true);
-        }
-    }
-
-    public final void c(TLRPC.User user) {
-        v8 v8Var = new v8((h6) null);
-        v8Var.r(user);
-        k9 k9Var = this.a;
-        k9Var.e(user, v8Var);
-        k9Var.setRoundRadius(org.telegram.messenger.g0.L(16.0f));
-        this.c.setText(t10.p(user));
-    }
-
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        this.b.invalidate();
+        this.e = kVar;
+        this.a = new GestureDetector(getContext(), new x9(2, this));
+        this.b = new Path();
+        this.c = new RectF();
+        this.d = true;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.b);
         super.dispatchDraw(canvas);
-        if (this.f) {
-            canvas.drawLine(org.telegram.messenger.g0.L(112.0f), getMeasuredHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f), getMeasuredHeight(), m6.k0);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        this.e.c.draw(canvas);
+        super.onDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        int height = getHeight();
+        k kVar = this.e;
+        int i13 = kVar.a;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = kVar.f;
+        int i14 = kVar.b;
+        int d = (height - kVar.d()) / 2;
+        int width = getWidth();
+        vf0 vf0Var = kVar.h;
+        int measuredWidth = (width - vf0Var.getMeasuredWidth()) / 2;
+        vf0Var.layout(measuredWidth, d, vf0Var.getMeasuredWidth() + measuredWidth, vf0Var.getMeasuredHeight() + d);
+        i iVar = kVar.n;
+        iVar.layout(vf0Var.getLeft(), vf0Var.getTop(), vf0Var.getRight(), iVar.getMeasuredHeight() + vf0Var.getTop());
+        int C = k5.C(12.0f, vf0Var.getMeasuredHeight(), d);
+        TextView textView = kVar.d;
+        textView.layout(g0.L(16.0f) + vf0Var.getLeft(), C, vf0Var.getRight() - g0.L(16.0f), textView.getMeasuredHeight() + C);
+        int measuredHeight = textView.getMeasuredHeight() + C;
+        TextView textView2 = kVar.e;
+        if (textView2.getVisibility() != 8) {
+            int L = g0.L(4.0f) + measuredHeight;
+            textView2.layout(textView.getLeft(), L, textView.getRight(), textView2.getMeasuredHeight() + L);
+            measuredHeight = textView2.getMeasuredHeight() + L;
         }
+        int L2 = g0.L(12.0f) + measuredHeight;
+        kVar.c.setBounds(vf0Var.getLeft() - i14, vf0Var.getTop() - i13, vf0Var.getRight() + i14, i13 + L2);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.layout((vf0Var.getRight() - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth()) + i14, L2, vf0Var.getRight() + i14, actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredHeight() + L2);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setVisibility(actionBarPopupWindow$ActionBarPopupWindowLayout.getBottom() < i12 ? 0 : 8);
+        int L3 = g0.L(6.0f);
+        float left = vf0Var.getLeft();
+        float top = vf0Var.getTop();
+        float right = vf0Var.getRight();
+        float top2 = (L3 * 2) + vf0Var.getTop();
+        RectF rectF = this.c;
+        rectF.set(left, top, right, top2);
+        Path path = this.b;
+        path.reset();
+        float f10 = L3;
+        Path.Direction direction = Path.Direction.CW;
+        path.addRoundRect(rectF, f10, f10, direction);
+        rectF.set(i7, vf0Var.getTop() + L3, i11, i12);
+        path.addRect(rectF, direction);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        qs.e().c(this, qs.i4);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        qs.e().n(this, qs.i4);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
+    @Override // android.view.View
     public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(52.0f), TLObject.FLAG_30));
+        setWillNotDraw(false);
+        super.onMeasure(i7, i10);
+        int A = i20.A(12.0f, 2, Math.min(Math.min(getMeasuredWidth(), getMeasuredHeight()), (int) (getMeasuredHeight() * 0.66d)));
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(A, TLObject.FLAG_31);
+        k kVar = this.e;
+        vf0 vf0Var = kVar.h;
+        vf0Var.measure(makeMeasureSpec, makeMeasureSpec);
+        kVar.n.measure(makeMeasureSpec, makeMeasureSpec);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(A - (g0.L(16.0f) * 2), TLObject.FLAG_30);
+        kVar.d.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
+        kVar.e.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
+        kVar.f.measure(View.MeasureSpec.makeMeasureSpec((kVar.b * 2) + vf0Var.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(0, 0));
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
+        super.onSizeChanged(i7, i10, i11, i12);
+        Point point = g0.q;
+        int i13 = point.x;
+        int i14 = point.y;
+        k kVar = this.e;
+        if (i13 > i14) {
+            super/*android.app.Dialog*/.dismiss();
+        }
+        if (i7 == i11 || i10 == i12) {
+            return;
+        }
+        if (!this.d) {
+            kVar.f();
+        }
+        this.d = false;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return this.a.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.e.c || super.verifyDrawable(drawable);
     }
 }

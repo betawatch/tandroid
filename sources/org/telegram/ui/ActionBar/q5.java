@@ -1,40 +1,17 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.graphics.Point;
+import c8.ga;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class q5 extends Drawable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-
-    public q5(int i7, int i10) {
-        this.a = i7;
-        this.b = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        int max = Math.max(bounds.width(), bounds.height()) / 2;
-        int i7 = this.a;
-        int i10 = this.b;
-        canvas.drawCircle((bounds.centerX() - i7) + i10, bounds.centerY(), max + i7 + i10, m6.z);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+public final class q5 extends ga {
+    @Override // c8.ga
+    public final void b(int i7, int i10) {
+        Point point = org.telegram.messenger.g0.q;
+        if ((point.x <= point.y) == (i7 <= i10)) {
+            ns.e().k(ns.z4, new Object[0]);
+        }
     }
 }

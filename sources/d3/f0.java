@@ -1,8 +1,8 @@
 package d3;
 
-import h2.m0;
+import h2.l0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -25,17 +25,17 @@ public final /* synthetic */ class f0 implements Runnable {
         switch (i7) {
             case 0:
                 h0 h0Var = (h0) bVar.c;
-                String str = m0.a;
-                m2.e eVar = ((l2.c0) h0Var).a.s;
+                String str = l0.a;
+                m2.e eVar = ((l2.z) h0Var).a.s;
                 m2.a S = eVar.S((x2.f0) eVar.d.e);
-                eVar.V(S, 1018, new m2.c(S, i10, j3));
+                eVar.V(S, 1018, new li.p(S, i10, j3));
                 break;
             default:
                 h0 h0Var2 = (h0) bVar.c;
-                String str2 = m0.a;
-                m2.e eVar2 = ((l2.c0) h0Var2).a.s;
+                String str2 = l0.a;
+                m2.e eVar2 = ((l2.z) h0Var2).a.s;
                 m2.a S2 = eVar2.S((x2.f0) eVar2.d.e);
-                eVar2.V(S2, 1021, new m2.c(S2, j3, i10));
+                eVar2.V(S2, 1021, new li.p(S2, j3, i10));
                 break;
         }
     }

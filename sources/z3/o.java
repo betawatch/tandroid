@@ -1,13 +1,14 @@
 package z3;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import a8.xa;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o {
-    public final long a;
-    public final int b;
-
-    public o(long j3, int i7) {
-        this.a = j3;
-        this.b = i7;
-    }
+    public static final xa d = new xa(new d6.i(new g9.e(':', 0), 21));
+    public static final xa e = new xa(new d6.i(new g9.e('*', 0), 21));
+    public final ArrayList a = new ArrayList();
+    public int b = 0;
+    public int c;
 }

@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j {
     public static r0.g a(View view, r0.g gVar) {
@@ -26,7 +26,7 @@ public final class j {
         TextView textView = (TextView) view;
         Editable editable = (Editable) textView.getText();
         Context context = textView.getContext();
-        boolean z9 = false;
+        boolean z10 = false;
         for (int i7 = 0; i7 < a10.getItemCount(); i7++) {
             ClipData.Item itemAt = a10.getItemAt(i7);
             if ((l10 & 1) != 0) {
@@ -38,7 +38,7 @@ public final class j {
                 coerceToStyledText = itemAt.coerceToStyledText(context);
             }
             if (coerceToStyledText != null) {
-                if (z9) {
+                if (z10) {
                     editable.insert(Selection.getSelectionEnd(editable), "\n");
                     editable.insert(Selection.getSelectionEnd(editable), coerceToStyledText);
                 } else {
@@ -48,7 +48,7 @@ public final class j {
                     int max2 = Math.max(0, Math.max(selectionStart, selectionEnd));
                     Selection.setSelection(editable, max2);
                     editable.replace(max, max2, coerceToStyledText);
-                    z9 = true;
+                    z10 = true;
                 }
             }
         }

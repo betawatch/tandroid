@@ -5,9 +5,9 @@ import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b0 implements com.google.android.gms.common.api.internal.p {
+public final /* synthetic */ class b0 implements com.google.android.gms.common.api.internal.q {
     public final /* synthetic */ int a;
     public final /* synthetic */ e0 b;
     public final /* synthetic */ String c;
@@ -20,17 +20,17 @@ public final /* synthetic */ class b0 implements com.google.android.gms.common.a
         this.d = str2;
     }
 
-    @Override // com.google.android.gms.common.api.internal.p
+    @Override // com.google.android.gms.common.api.internal.q
     public final void accept(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
                 e0 e0Var = this.b;
                 String str = this.c;
                 String str2 = this.d;
-                j6.w wVar = (j6.w) obj;
+                j6.x xVar = (j6.x) obj;
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
                 q6.m.i("Not connected to device", e0Var.G == 2);
-                j6.f fVar = (j6.f) wVar.n();
+                j6.f fVar = (j6.f) xVar.n();
                 Parcel p12 = fVar.p1();
                 p12.writeString(str);
                 p12.writeString(str2);
@@ -52,14 +52,14 @@ public final /* synthetic */ class b0 implements com.google.android.gms.common.a
                 e0 e0Var2 = this.b;
                 String str3 = this.c;
                 String str4 = this.d;
-                j6.w wVar2 = (j6.w) obj;
+                j6.x xVar2 = (j6.x) obj;
                 TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) obj2;
                 HashMap hashMap = e0Var2.C;
                 long incrementAndGet = e0Var2.r.incrementAndGet();
                 q6.m.i("Not connected to device", e0Var2.G == 2);
                 try {
                     hashMap.put(Long.valueOf(incrementAndGet), taskCompletionSource2);
-                    j6.f fVar2 = (j6.f) wVar2.n();
+                    j6.f fVar2 = (j6.f) xVar2.n();
                     Parcel p13 = fVar2.p1();
                     p13.writeString(str3);
                     p13.writeString(str4);

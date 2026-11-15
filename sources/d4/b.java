@@ -6,10 +6,11 @@ import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b {
     public final ArrayList a;
@@ -82,7 +83,7 @@ public final class b {
         int length = (32 - i11) - spannableStringBuilder.length();
         int i12 = i11 - length;
         int i13 = i7 != Integer.MIN_VALUE ? i7 : (this.g != 2 || (Math.abs(i12) >= 3 && length >= 0)) ? (this.g != 2 || i12 <= 0) ? 0 : 2 : 1;
-        float c10 = i13 != 1 ? i13 != 2 ? com.google.android.recaptcha.internal.a.c(i11, 32.0f, 0.8f, 0.1f) : com.google.android.recaptcha.internal.a.c(32 - length, 32.0f, 0.8f, 0.1f) : 0.5f;
+        float c10 = i13 != 1 ? i13 != 2 ? e2.c(i11, 32.0f, 0.8f, 0.1f) : e2.c(32 - length, 32.0f, 0.8f, 0.1f) : 0.5f;
         int i14 = this.d;
         if (i14 > 7) {
             i14 -= 17;
@@ -101,35 +102,35 @@ public final class b {
         int i12 = -1;
         int i13 = 0;
         int i14 = 0;
-        boolean z9 = false;
+        boolean z10 = false;
         while (true) {
             ArrayList arrayList = this.a;
             if (i13 >= arrayList.size()) {
                 break;
             }
             a aVar = (a) arrayList.get(i13);
-            boolean z10 = aVar.b;
+            boolean z11 = aVar.b;
             int i15 = aVar.a;
             if (i15 != 8) {
-                boolean z11 = i15 == 7;
+                boolean z12 = i15 == 7;
                 if (i15 != 7) {
                     i12 = c.B[i15];
                 }
-                z9 = z11;
+                z10 = z12;
             }
             int i16 = aVar.c;
             i13++;
             if (i16 != (i13 < arrayList.size() ? ((a) arrayList.get(i13)).c : length)) {
-                if (i7 != -1 && !z10) {
+                if (i7 != -1 && !z11) {
                     spannableStringBuilder.setSpan(new UnderlineSpan(), i7, i16, 33);
                     i7 = -1;
-                } else if (i7 == -1 && z10) {
+                } else if (i7 == -1 && z11) {
                     i7 = i16;
                 }
-                if (i10 != -1 && !z9) {
+                if (i10 != -1 && !z10) {
                     spannableStringBuilder.setSpan(new StyleSpan(2), i10, i16, 33);
                     i10 = -1;
-                } else if (i10 == -1 && z9) {
+                } else if (i10 == -1 && z10) {
                     i10 = i16;
                 }
                 if (i12 != i11) {

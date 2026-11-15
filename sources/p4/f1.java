@@ -1,6 +1,6 @@
 package p4;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f1 extends e2.l1 {
     public static final Object j = new Object();
@@ -15,7 +15,7 @@ public final class f1 extends e2.l1 {
         this.f = g1Var.e0();
         this.g = g1Var.v0();
         this.h = g1Var.P0() ? e2.f0.f : null;
-        this.i = h2.m0.S(g1Var.A());
+        this.i = h2.l0.S(g1Var.A());
     }
 
     @Override // e2.l1
@@ -24,7 +24,7 @@ public final class f1 extends e2.l1 {
     }
 
     @Override // e2.l1
-    public final e2.i1 f(int i7, e2.i1 i1Var, boolean z9) {
+    public final e2.i1 f(int i7, e2.i1 i1Var, boolean z10) {
         i1Var.getClass();
         e2.c cVar = e2.c.c;
         Object obj = j;

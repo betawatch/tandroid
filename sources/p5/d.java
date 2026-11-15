@@ -3,33 +3,32 @@ package p5;
 import android.content.Context;
 import com.google.android.datatransport.cct.CctBackendFactory;
 import java.util.HashMap;
-import m4.d0;
-import org.telegram.ui.ly0;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d {
-    public final d0 a;
-    public final ly0 b;
+    public final k8.a a;
+    public final ld0 b;
     public final HashMap c;
 
-    public d(Context context, ly0 ly0Var) {
-        d0 d0Var = new d0(context);
+    public d(Context context, ld0 ld0Var) {
+        k8.a aVar = new k8.a(context, 22);
         this.c = new HashMap();
-        this.a = d0Var;
-        this.b = ly0Var;
+        this.a = aVar;
+        this.b = ld0Var;
     }
 
     public final synchronized e a(String str) {
         if (this.c.containsKey(str)) {
             return (e) this.c.get(str);
         }
-        CctBackendFactory E = this.a.E(str);
-        if (E == null) {
+        CctBackendFactory G0 = this.a.G0(str);
+        if (G0 == null) {
             return null;
         }
-        ly0 ly0Var = this.b;
-        e create = E.create(new b((Context) ly0Var.b, (x5.a) ly0Var.c, (x5.a) ly0Var.d, str));
+        ld0 ld0Var = this.b;
+        e create = G0.create(new b((Context) ld0Var.b, (x5.a) ld0Var.c, (x5.a) ld0Var.d, str));
         this.c.put(str, create);
         return create;
     }

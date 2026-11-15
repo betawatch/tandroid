@@ -2,9 +2,9 @@ package org.telegram.ui.ActionBar;
 
 import android.transition.Transition;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.r00;
+import org.telegram.ui.Components.v00;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class j0 implements Transition.TransitionListener {
     public final /* synthetic */ int a;
@@ -19,10 +19,10 @@ public final class j0 implements Transition.TransitionListener {
     public final void onTransitionCancel(Transition transition) {
         switch (this.a) {
             case 0:
-                ((r0) this.b).i0.e();
+                ((q0) this.b).j0.e();
                 break;
             default:
-                ((r00) this.b).E.e();
+                ((v00) this.b).F.e();
                 break;
         }
     }
@@ -31,10 +31,10 @@ public final class j0 implements Transition.TransitionListener {
     public final void onTransitionEnd(Transition transition) {
         switch (this.a) {
             case 0:
-                ((r0) this.b).i0.e();
+                ((q0) this.b).j0.e();
                 break;
             default:
-                ((r00) this.b).E.e();
+                ((v00) this.b).F.e();
                 break;
         }
     }
@@ -53,10 +53,10 @@ public final class j0 implements Transition.TransitionListener {
     public final void onTransitionStart(Transition transition) {
         switch (this.a) {
             case 0:
-                ((r0) this.b).i0.d();
+                ((q0) this.b).j0.d();
                 break;
             default:
-                ((r00) this.b).E.d();
+                ((v00) this.b).F.d();
                 break;
         }
     }

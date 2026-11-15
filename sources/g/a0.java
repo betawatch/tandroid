@@ -1,12 +1,13 @@
 package g;
 
+import ab.c0;
 import android.content.Context;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a0 extends k.a implements l.i {
     public final Context c;
@@ -23,15 +24,6 @@ public final class a0 extends k.a implements l.i {
         kVar.l = 1;
         this.d = kVar;
         kVar.e = this;
-    }
-
-    @Override // l.i
-    public final boolean F0(l.k kVar, MenuItem menuItem) {
-        q4.q qVar = this.e;
-        if (qVar != null) {
-            return ((ui.e) qVar.b).N(this, menuItem);
-        }
-        return false;
     }
 
     @Override // k.a
@@ -99,52 +91,61 @@ public final class a0 extends k.a implements l.i {
         }
     }
 
-    @Override // k.a
-    public final boolean i() {
-        return this.h.f.I;
-    }
-
     @Override // l.i
-    public final void j0(l.k kVar) {
+    public final void i(l.k kVar) {
         if (this.e == null) {
             return;
         }
         h();
-        m.i iVar = this.h.f.d;
-        if (iVar != null) {
-            iVar.l();
+        m.h hVar = this.h.f.d;
+        if (hVar != null) {
+            hVar.l();
         }
     }
 
     @Override // k.a
-    public final void l(View view) {
+    public final boolean j() {
+        return this.h.f.J;
+    }
+
+    @Override // k.a
+    public final void m(View view) {
         this.h.f.setCustomView(view);
         this.f = new WeakReference(view);
     }
 
     @Override // k.a
-    public final void m(int i7) {
-        n(this.h.a.getResources().getString(i7));
-    }
-
-    @Override // k.a
-    public final void n(CharSequence charSequence) {
-        this.h.f.setSubtitle(charSequence);
-    }
-
-    @Override // k.a
-    public final void o(int i7) {
+    public final void n(int i7) {
         p(this.h.a.getResources().getString(i7));
+    }
+
+    @Override // l.i
+    public final boolean o(l.k kVar, MenuItem menuItem) {
+        q4.q qVar = this.e;
+        if (qVar != null) {
+            return ((c0) qVar.b).D(this, menuItem);
+        }
+        return false;
     }
 
     @Override // k.a
     public final void p(CharSequence charSequence) {
+        this.h.f.setSubtitle(charSequence);
+    }
+
+    @Override // k.a
+    public final void q(int i7) {
+        r(this.h.a.getResources().getString(i7));
+    }
+
+    @Override // k.a
+    public final void r(CharSequence charSequence) {
         this.h.f.setTitle(charSequence);
     }
 
     @Override // k.a
-    public final void q(boolean z9) {
-        this.a = z9;
-        this.h.f.setTitleOptional(z9);
+    public final void s(boolean z10) {
+        this.a = z10;
+        this.h.f.setTitleOptional(z10);
     }
 }

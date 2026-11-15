@@ -1,258 +1,104 @@
 package fi;
 
-import org.telegram.ui.Components.bc;
+import a8.sa;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.media.AudioManager;
+import android.os.Build;
+import android.view.KeyEvent;
+import android.view.View;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class r7 implements org.telegram.ui.Components.za {
-    public final /* synthetic */ int a;
+public final class r7 extends View {
+    public Paint a;
+    public boolean b;
+    public sa c;
+    public org.telegram.ui.Components.u5 d;
+    public org.telegram.ui.Components.u5 e;
+    public float f;
 
-    public /* synthetic */ r7(int i7) {
-        this.a = i7;
+    public final void a(boolean z10) {
+        sa saVar = this.c;
+        AudioManager audioManager = (AudioManager) getContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+        int streamMaxVolume = audioManager.getStreamMaxVolume(3);
+        int streamVolume = audioManager.getStreamVolume(3);
+        float f10 = streamMaxVolume;
+        int max = (int) Math.max(1.0f, f10 / 15.0f);
+        if (z10) {
+            int i7 = streamVolume + max;
+            if (i7 <= streamMaxVolume) {
+                streamMaxVolume = i7;
+            }
+        } else {
+            streamMaxVolume = streamVolume - max;
+            if (streamMaxVolume < 0) {
+                streamMaxVolume = 0;
+            }
+        }
+        audioManager.setStreamVolume(3, streamMaxVolume, 0);
+        float f11 = streamMaxVolume / f10;
+        this.f = f11;
+        if (!this.b) {
+            this.e.e(true, f11);
+        }
+        invalidate();
+        this.b = true;
+        org.telegram.messenger.g0.r(saVar);
+        org.telegram.messenger.g0.i3(saVar, 2000L);
     }
 
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ boolean a() {
-        switch (this.a) {
+    public final void b() {
+        sa saVar = this.c;
+        AudioManager audioManager = (AudioManager) getContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+        int streamMaxVolume = audioManager.getStreamMaxVolume(3);
+        int streamMinVolume = Build.VERSION.SDK_INT >= 28 ? audioManager.getStreamMinVolume(3) : 0;
+        int streamVolume = audioManager.getStreamVolume(3);
+        if (streamVolume <= streamMinVolume) {
+            a(true);
+            return;
         }
+        if (this.b) {
+            return;
+        }
+        float f10 = streamVolume / streamMaxVolume;
+        this.f = f10;
+        this.e.e(true, f10);
+        this.b = true;
+        invalidate();
+        org.telegram.messenger.g0.r(saVar);
+        org.telegram.messenger.g0.i3(saVar, 2000L);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.a;
+        super.onDraw(canvas);
+        org.telegram.ui.Components.u5 u5Var = this.e;
+        u5Var.e(false, this.f);
+        org.telegram.ui.Components.u5 u5Var2 = this.d;
+        u5Var2.e(false, this.b ? 1.0f : 0.0f);
+        if (u5Var2.c != 0.0f) {
+            float measuredHeight = getMeasuredHeight() / 2.0f;
+            paint.setAlpha((int) (u5Var2.c * 255.0f));
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(0.0f, 0.0f, getMeasuredWidth() * u5Var.c, getMeasuredHeight());
+            canvas.drawRoundRect(rectF, measuredHeight, measuredHeight, paint);
+        }
+    }
+
+    @Override // android.view.View, android.view.KeyEvent.Callback
+    public final boolean onKeyDown(int i7, KeyEvent keyEvent) {
+        if (keyEvent.getAction() == 0 && i7 == 24) {
+            a(true);
+            return true;
+        }
+        if (keyEvent.getAction() != 0 || i7 != 25) {
+            return super.onKeyDown(i7, keyEvent);
+        }
+        a(false);
         return true;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ void b(bc bcVar) {
-        int i7 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ void c(float f10) {
-        int i7 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ void d(bc bcVar) {
-        int i7 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ boolean e() {
-        switch (this.a) {
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final int f(int i7) {
-        int i10;
-        int L;
-        switch (this.a) {
-            case 0:
-                return 0;
-            case 1:
-                return 0;
-            case 2:
-                return 0;
-            case 3:
-                return 0;
-            case 4:
-                i10 = org.telegram.messenger.g0.n;
-                L = org.telegram.messenger.g0.L(64.0f);
-                break;
-            case 5:
-                i10 = org.telegram.messenger.g0.n;
-                L = org.telegram.messenger.g0.L(60.0f);
-                break;
-            case 6:
-                return 0;
-            case 7:
-                return org.telegram.messenger.g0.L(51.0f);
-            case 8:
-                return org.telegram.messenger.g0.L(74.0f);
-            case 9:
-                return org.telegram.messenger.g0.L(80.0f);
-            case 10:
-                i10 = org.telegram.messenger.g0.n;
-                L = org.telegram.messenger.g0.L(16.0f);
-                break;
-            case 11:
-                return org.telegram.messenger.g0.L(62.0f);
-            case 12:
-                return org.telegram.messenger.g0.L(64.0f);
-            case 13:
-                return 0;
-            case 14:
-                return 0;
-            case 15:
-                return org.telegram.messenger.g0.L(68.0f);
-            default:
-                return org.telegram.messenger.g0.L(64.0f);
-        }
-        return L + i10;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final boolean g(int i7) {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final int h(int i7) {
-        switch (this.a) {
-        }
-        return org.telegram.messenger.g0.m;
-    }
-
-    private final /* synthetic */ void A(bc bcVar) {
-    }
-
-    private final /* synthetic */ void B(bc bcVar) {
-    }
-
-    private final /* synthetic */ void C(bc bcVar) {
-    }
-
-    private final /* synthetic */ void D(bc bcVar) {
-    }
-
-    private final /* synthetic */ void E(bc bcVar) {
-    }
-
-    private final /* synthetic */ void F(bc bcVar) {
-    }
-
-    private final /* synthetic */ void G(bc bcVar) {
-    }
-
-    private final /* synthetic */ void H(bc bcVar) {
-    }
-
-    private final /* synthetic */ void I(bc bcVar) {
-    }
-
-    private final /* synthetic */ void J(bc bcVar) {
-    }
-
-    private final /* synthetic */ void K(bc bcVar) {
-    }
-
-    private final /* synthetic */ void L(bc bcVar) {
-    }
-
-    private final /* synthetic */ void M(bc bcVar) {
-    }
-
-    private final /* synthetic */ void N(bc bcVar) {
-    }
-
-    private final /* synthetic */ void O(bc bcVar) {
-    }
-
-    private final /* synthetic */ void P(bc bcVar) {
-    }
-
-    private final /* synthetic */ void Q(bc bcVar) {
-    }
-
-    private final /* synthetic */ void R(bc bcVar) {
-    }
-
-    private final /* synthetic */ void S(bc bcVar) {
-    }
-
-    private final /* synthetic */ void T(bc bcVar) {
-    }
-
-    private final /* synthetic */ void U(bc bcVar) {
-    }
-
-    private final /* synthetic */ void V(bc bcVar) {
-    }
-
-    private final /* synthetic */ void W(bc bcVar) {
-    }
-
-    private final /* synthetic */ void X(bc bcVar) {
-    }
-
-    private final /* synthetic */ void Y(bc bcVar) {
-    }
-
-    private final /* synthetic */ void Z(bc bcVar) {
-    }
-
-    private final /* synthetic */ void a0(bc bcVar) {
-    }
-
-    private final /* synthetic */ void b0(bc bcVar) {
-    }
-
-    private final /* synthetic */ void c0(bc bcVar) {
-    }
-
-    private final /* synthetic */ void d0(bc bcVar) {
-    }
-
-    private final /* synthetic */ void e0(bc bcVar) {
-    }
-
-    private final /* synthetic */ void f0(bc bcVar) {
-    }
-
-    private final /* synthetic */ void g0(bc bcVar) {
-    }
-
-    private final /* synthetic */ void i(float f10) {
-    }
-
-    private final /* synthetic */ void j(float f10) {
-    }
-
-    private final /* synthetic */ void k(float f10) {
-    }
-
-    private final /* synthetic */ void l(float f10) {
-    }
-
-    private final /* synthetic */ void m(float f10) {
-    }
-
-    private final /* synthetic */ void n(float f10) {
-    }
-
-    private final /* synthetic */ void o(float f10) {
-    }
-
-    private final /* synthetic */ void p(float f10) {
-    }
-
-    private final /* synthetic */ void q(float f10) {
-    }
-
-    private final /* synthetic */ void r(float f10) {
-    }
-
-    private final /* synthetic */ void s(float f10) {
-    }
-
-    private final /* synthetic */ void t(float f10) {
-    }
-
-    private final /* synthetic */ void u(float f10) {
-    }
-
-    private final /* synthetic */ void v(float f10) {
-    }
-
-    private final /* synthetic */ void w(float f10) {
-    }
-
-    private final /* synthetic */ void x(float f10) {
-    }
-
-    private final /* synthetic */ void y(float f10) {
-    }
-
-    private final /* synthetic */ void z(bc bcVar) {
     }
 }

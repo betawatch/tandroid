@@ -2,9 +2,9 @@ package org.telegram.messenger;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v2 implements v10 {
+public final /* synthetic */ class v2 implements s10 {
     public final /* synthetic */ x2 a;
     public final /* synthetic */ Pair b;
     public final /* synthetic */ Object c;
@@ -17,7 +17,7 @@ public final /* synthetic */ class v2 implements v10 {
         this.d = i7;
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.s10
     public final void a(Object obj, Object obj2) {
         Object obj3;
         Long l10 = (Long) obj;
@@ -25,7 +25,7 @@ public final /* synthetic */ class v2 implements v10 {
         Pair pair = this.b;
         if (!x2Var.i(pair)) {
             x2Var.a(pair, obj2);
-            g0.h3(new aa.d0((Object) x2Var, (Object) pair, obj2, true, 8));
+            g0.h3(new aa.c0((Object) x2Var, (Object) pair, obj2, true, 8));
             return;
         }
         Object obj4 = this.c;
@@ -34,7 +34,7 @@ public final /* synthetic */ class v2 implements v10 {
         } else {
             x2Var.a(pair, obj2);
             obj3 = obj2;
-            g0.h3(new aa.d0((Object) x2Var, (Object) pair, obj3, false, 8));
+            g0.h3(new aa.c0((Object) x2Var, (Object) pair, obj3, false, 8));
         }
         long longValue = l10.longValue();
         int i7 = this.d;

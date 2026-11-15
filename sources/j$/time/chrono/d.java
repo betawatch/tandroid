@@ -61,9 +61,9 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
 
     @Override // j$.time.temporal.Temporal
     public b d(long j3, j$.time.temporal.q qVar) {
-        boolean z9 = qVar instanceof ChronoUnit;
-        if (!z9) {
-            if (!z9) {
+        boolean z10 = qVar instanceof ChronoUnit;
+        if (!z10) {
+            if (!z10) {
                 return G(a(), qVar.j(this, j3));
             }
             throw new j$.time.temporal.r("Unsupported unit: " + qVar);
@@ -145,8 +145,8 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
 
     @Override // j$.time.chrono.b
     public int hashCode() {
-        long z9 = z();
-        return ((int) (z9 ^ (z9 >>> 32))) ^ a().hashCode();
+        long z10 = z();
+        return ((int) (z10 ^ (z10 >>> 32))) ^ a().hashCode();
     }
 
     @Override // j$.time.temporal.Temporal

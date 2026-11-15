@@ -1,42 +1,62 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class br0 implements org.telegram.ui.Cells.j7 {
-    public final /* synthetic */ ys0 a;
+public final class br0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ KeyEvent.Callback c;
 
-    public br0(ys0 ys0Var) {
-        this.a = ys0Var;
+    public /* synthetic */ br0(KeyEvent.Callback callback, int i7, int i10) {
+        this.a = i10;
+        this.c = callback;
+        this.b = i7;
     }
 
-    @Override // org.telegram.ui.Cells.j7
-    public final void a(String str, boolean z9) {
-        ys0 ys0Var = this.a;
-        org.telegram.ui.ActionBar.f2 f2Var = ys0Var.x1;
-        if (!z9) {
-            ys0Var.d1(str);
-            return;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        int i7 = this.a;
+        int i10 = this.b;
+        KeyEvent.Callback callback = this.c;
+        switch (i7) {
+            case 0:
+                ys0 ys0Var = (ys0) callback;
+                ys0Var.n0[i10].getViewTreeObserver().removeOnPreDrawListener(this);
+                ys0Var.e0(i10);
+                break;
+            default:
+                e51 e51Var = (e51) callback;
+                di.c1 c1Var = e51Var.o1;
+                c1Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                int childCount = c1Var.getChildCount();
+                AnimatorSet animatorSet = new AnimatorSet();
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    View childAt = c1Var.getChildAt(i11);
+                    c1Var.getClass();
+                    int R = RecyclerView.R(childAt);
+                    if (R >= i10) {
+                        if (R == 1 && c1Var.getAdapter() == e51Var.p1 && (childAt instanceof org.telegram.ui.Cells.x3)) {
+                            childAt = ((org.telegram.ui.Cells.x3) childAt).getTextView();
+                        }
+                        childAt.setAlpha(0.0f);
+                        int min = (int) ((Math.min(c1Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / c1Var.getMeasuredHeight()) * 100.0f);
+                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
+                        ofFloat.setStartDelay(min);
+                        ofFloat.setDuration(200L);
+                        animatorSet.playTogether(ofFloat);
+                    }
+                }
+                animatorSet.start();
+                break;
         }
-        org.telegram.ui.ActionBar.w2 h = org.telegram.messenger.camera.q.h(f2Var.getParentActivity(), false, 1, null);
-        h.O = str;
-        h.P = false;
-        CharSequence[] charSequenceArr = {org.telegram.messenger.id.M0(2131747817, "Open"), org.telegram.messenger.id.M0(2131751767, "Copy")};
-        og.j jVar = new og.j(6, this, str);
-        h.L = charSequenceArr;
-        h.K = jVar;
-        f2Var.showDialog(h);
-    }
-
-    @Override // org.telegram.ui.Cells.j7
-    public final void b(TLRPC.WebPage webPage, org.telegram.messenger.ij ijVar) {
-        ys0 ys0Var = this.a;
-        vt.N0(ys0Var.x1, ijVar, ys0Var.t1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
-    }
-
-    @Override // org.telegram.ui.Cells.j7
-    public final boolean d() {
-        return !this.a.E1;
+        return true;
     }
 }

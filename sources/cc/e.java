@@ -1,17 +1,17 @@
 package cc;
 
+import f2.p;
 import f2.q;
-import f2.r;
 import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.ShortBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class e implements q {
+public final class e implements p {
     public int a;
     public int b;
     public int c;
@@ -30,37 +30,37 @@ public final class e implements q {
         this.c = i11;
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public void a(int i7, ByteBuffer byteBuffer) {
         ShortBuffer asShortBuffer = byteBuffer.asShortBuffer();
         short[] sArr = (short[]) this.e;
-        r rVar = (r) this.h;
-        asShortBuffer.get(sArr, rVar.j * rVar.b, i7 / 2);
+        q qVar = (q) this.h;
+        asShortBuffer.get(sArr, qVar.j * qVar.b, i7 / 2);
         byteBuffer.position(byteBuffer.position() + i7);
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public void b(int i7, ByteBuffer byteBuffer) {
         ShortBuffer asShortBuffer = byteBuffer.asShortBuffer();
         short[] sArr = (short[]) this.f;
-        r rVar = (r) this.h;
-        asShortBuffer.put(sArr, 0, rVar.b * i7);
-        byteBuffer.position((i7 * 2 * rVar.b) + byteBuffer.position());
+        q qVar = (q) this.h;
+        asShortBuffer.put(sArr, 0, qVar.b * i7);
+        byteBuffer.position((i7 * 2 * qVar.b) + byteBuffer.position());
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public void c(int i7, int i10) {
-        for (int i11 = 0; i11 < ((r) this.h).b * i10; i11++) {
+        for (int i11 = 0; i11 < ((q) this.h).b * i10; i11++) {
             ((short[]) this.e)[i7 + i11] = 0;
         }
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public void d(int i7, int i10) {
         short[] sArr = (short[]) this.e;
-        r rVar = (r) this.h;
-        int i11 = rVar.h / i10;
-        int i12 = rVar.b;
+        q qVar = (q) this.h;
+        int i11 = qVar.h / i10;
+        int i12 = qVar.b;
         int i13 = i10 * i12;
         int i14 = i7 * i12;
         for (int i15 = 0; i15 < i11; i15++) {
@@ -72,74 +72,74 @@ public final class e implements q {
         }
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public int e(int i7, int i10, int i11) {
         return s((short[]) this.e, i7, i10, i11);
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public void f() {
         this.c = this.a;
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public void flush() {
         this.c = 0;
         this.a = 0;
         this.b = 0;
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public Object g() {
         return (short[]) this.e;
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public Object h() {
         return (short[]) this.f;
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public void i(int i7) {
-        this.f = r((short[]) this.f, ((r) this.h).k, i7);
+        this.f = r((short[]) this.f, ((q) this.h).k, i7);
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public boolean j() {
         int i7 = this.a;
-        return i7 != 0 && ((r) this.h).p != 0 && this.b <= i7 * 3 && i7 * 2 > this.c * 3;
+        return i7 != 0 && ((q) this.h).p != 0 && this.b <= i7 * 3 && i7 * 2 > this.c * 3;
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public void k(long j3, int i7, long j10) {
         int i10 = 0;
         while (true) {
-            r rVar = (r) this.h;
-            int i11 = rVar.b;
+            q qVar = (q) this.h;
+            int i11 = qVar.b;
             if (i10 >= i11) {
                 return;
             }
             short[] sArr = (short[]) this.f;
-            int i12 = (rVar.k * i11) + i10;
+            int i12 = (qVar.k * i11) + i10;
             short[] sArr2 = (short[]) this.g;
             int i13 = (i7 * i11) + i10;
             short s5 = sArr2[i13];
             short s9 = sArr2[i13 + i11];
-            long j11 = rVar.n * j3;
+            long j11 = qVar.n * j3;
             long j12 = (r1 + 1) * j10;
             long j13 = j12 - j11;
-            long j14 = j12 - (rVar.m * j10);
+            long j14 = j12 - (qVar.m * j10);
             sArr[i12] = (short) ((((j14 - j13) * s9) + (s5 * j13)) / j14);
             i10++;
         }
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public Object l() {
         return (short[]) this.g;
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public void m(int i7, int i10, int i11, int i12, int i13) {
         short[] sArr = (short[]) this.f;
         short[] sArr2 = (short[]) this.e;
@@ -157,37 +157,37 @@ public final class e implements q {
     }
 
     /* JADX WARN: Type inference failed for: r3v1, types: [java.io.Serializable, short[]] */
-    @Override // f2.q
+    @Override // f2.p
     public void n(int i7) {
-        this.g = r((short[]) this.g, ((r) this.h).l, i7);
+        this.g = r((short[]) this.g, ((q) this.h).l, i7);
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public int o() {
         return 2;
     }
 
     /* JADX WARN: Type inference failed for: r3v1, types: [java.io.Serializable, short[]] */
-    @Override // f2.q
+    @Override // f2.p
     public void p(int i7) {
-        this.e = r((short[]) this.e, ((r) this.h).j, i7);
+        this.e = r((short[]) this.e, ((q) this.h).j, i7);
     }
 
-    @Override // f2.q
+    @Override // f2.p
     public int q(int i7, int i10) {
         return s((short[]) this.d, 0, i7, i10);
     }
 
     public short[] r(short[] sArr, int i7, int i10) {
         int length = sArr.length;
-        int i11 = ((r) this.h).b;
+        int i11 = ((q) this.h).b;
         int i12 = length / i11;
         return i7 + i10 <= i12 ? sArr : Arrays.copyOf(sArr, (((i12 * 3) / 2) + i10) * i11);
     }
 
     public int s(short[] sArr, int i7, int i10, int i11) {
-        int i12 = i7 * ((r) this.h).b;
-        int i13 = qs.e4;
+        int i12 = i7 * ((q) this.h).b;
+        int i13 = ns.e4;
         int i14 = 1;
         int i15 = 0;
         int i16 = 0;
@@ -214,11 +214,11 @@ public final class e implements q {
     /* JADX WARN: Type inference failed for: r1v0, types: [java.io.Serializable, short[]] */
     /* JADX WARN: Type inference failed for: r3v2, types: [java.io.Serializable, short[]] */
     /* JADX WARN: Type inference failed for: r3v4, types: [java.io.Serializable, short[]] */
-    public e(r rVar) {
-        this.h = rVar;
-        int i7 = rVar.h;
+    public e(q qVar) {
+        this.h = qVar;
+        int i7 = qVar.h;
         this.d = new short[i7];
-        int i10 = i7 * rVar.b;
+        int i10 = i7 * qVar.b;
         this.e = new short[i10];
         this.f = new short[i10];
         this.g = new short[i10];

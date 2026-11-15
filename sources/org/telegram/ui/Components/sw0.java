@@ -1,25 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sw0 implements db0, fb0 {
-    public final /* synthetic */ uw0 a;
+public final class sw0 {
+    public final oy0 a;
+    public final oy0 b;
 
-    @Override // org.telegram.ui.Components.db0
-    public String h(int i7) {
-        return this.a.n[i7];
-    }
-
-    @Override // org.telegram.ui.Components.fb0
-    public void n(hb0 hb0Var, int i7) {
-        uw0 uw0Var = this.a;
-        uw0Var.b();
-        org.telegram.messenger.iz.r1 = i7;
-        org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putInt("ChatSwipeAction", org.telegram.messenger.iz.r1).apply();
-        uw0Var.invalidate();
-        try {
-            hb0Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
-        }
+    public sw0(oy0 oy0Var, oy0 oy0Var2) {
+        this.a = oy0Var;
+        this.b = oy0Var2;
     }
 }

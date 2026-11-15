@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import java.nio.charset.StandardCharsets;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class z extends Binder implements b {
     public static final /* synthetic */ int b = 0;
@@ -20,12 +20,12 @@ public final class z extends Binder implements b {
     }
 
     @Override // org.telegram.utils.twidget.b
-    public final void G0(long j3, float f10) {
+    public final void H0(long j3, float f10) {
         WidgetSandboxNative.width(j3, f10);
     }
 
     @Override // org.telegram.utils.twidget.b
-    public final void J(final long j3) {
+    public final void K(final long j3) {
         WidgetEngineService.d.execute(new Runnable() { // from class: org.telegram.utils.twidget.y
             @Override // java.lang.Runnable
             public final void run() {
@@ -35,17 +35,17 @@ public final class z extends Binder implements b {
     }
 
     @Override // org.telegram.utils.twidget.b
-    public final void M0(long j3) {
+    public final void N0(long j3) {
         WidgetSandboxNative.repaint(j3);
     }
 
     @Override // org.telegram.utils.twidget.b
-    public final void R(long j3, byte[] bArr) {
+    public final void S(long j3, byte[] bArr) {
         WidgetSandboxNative.data(j3, bArr);
     }
 
     @Override // org.telegram.utils.twidget.b
-    public final void Y0(long j3, int i7, float f10, float f11, int i10) {
+    public final void Z0(long j3, int i7, float f10, float f11, int i10) {
         WidgetSandboxNative.hover(j3, i7, f10, f11, i10);
     }
 
@@ -66,21 +66,21 @@ public final class z extends Binder implements b {
     }
 
     @Override // org.telegram.utils.twidget.b
-    public final void e0(long j3, byte[] bArr) {
+    public final void f0(long j3, byte[] bArr) {
         WidgetSandboxNative.theme(j3, bArr);
     }
 
     @Override // org.telegram.utils.twidget.b
-    public final void j0(long j3, int i7, float f10, float f11, int i10, boolean z9, boolean z10, int i11, int i12) {
-        WidgetSandboxNative.touch(j3, i7, f10, f11, i10, z9, z10, i11, i12);
+    public final void k0(long j3, int i7, float f10, float f11, int i10, boolean z10, boolean z11, int i11, int i12) {
+        WidgetSandboxNative.touch(j3, i7, f10, f11, i10, z10, z11, i11, i12);
     }
 
     @Override // android.os.Binder
     public final boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
         Parcel parcel3;
         d dVar;
-        boolean z9;
         boolean z10;
+        boolean z11;
         if (i7 < 1 || i7 > 16777215) {
             parcel3 = parcel;
         } else {
@@ -101,10 +101,10 @@ public final class z extends Binder implements b {
                 byte[] createByteArray3 = parcel.createByteArray();
                 byte[] createByteArray4 = parcel.createByteArray();
                 byte[] createByteArray5 = parcel.createByteArray();
-                boolean z11 = false;
+                boolean z12 = false;
                 byte[] createByteArray6 = parcel.createByteArray();
                 if (parcel.readInt() != 0) {
-                    z11 = true;
+                    z12 = true;
                 }
                 IBinder readStrongBinder = parcel.readStrongBinder();
                 if (readStrongBinder == null) {
@@ -119,20 +119,20 @@ public final class z extends Binder implements b {
                         dVar = (d) queryLocalInterface;
                     }
                 }
-                long t6 = t(createByteArray, createByteArray2, readFloat, readFloat2, readInt, createByteArray3, createByteArray4, createByteArray5, createByteArray6, z11, dVar);
+                long t6 = t(createByteArray, createByteArray2, readFloat, readFloat2, readInt, createByteArray3, createByteArray4, createByteArray5, createByteArray6, z12, dVar);
                 parcel2.writeNoException();
                 parcel2.writeLong(t6);
                 return true;
             case 2:
-                J(parcel.readLong());
+                K(parcel.readLong());
                 return true;
             case 3:
-                boolean z12 = false;
+                boolean z13 = false;
                 long readLong = parcel.readLong();
                 if (parcel.readInt() != 0) {
-                    z12 = true;
+                    z13 = true;
                 }
-                WidgetSandboxNative.visible(readLong, z12);
+                WidgetSandboxNative.visible(readLong, z13);
                 return true;
             case 4:
                 WidgetSandboxNative.theme(parcel.readLong(), parcel.createByteArray());
@@ -153,25 +153,25 @@ public final class z extends Binder implements b {
                 WidgetSandboxNative.repaint(parcel.readLong());
                 return true;
             case 10:
-                boolean z13 = false;
+                boolean z14 = false;
                 long readLong2 = parcel3.readLong();
                 float readFloat3 = parcel.readFloat();
                 if (parcel.readInt() != 0) {
-                    z9 = false;
-                    z13 = true;
+                    z10 = false;
+                    z14 = true;
                 } else {
-                    z9 = false;
+                    z10 = false;
                 }
                 if (parcel.readInt() != 0) {
-                    z10 = z9;
-                    z9 = true;
-                } else {
-                    z10 = z9;
-                }
-                if (parcel.readInt() != 0) {
+                    z11 = z10;
                     z10 = true;
+                } else {
+                    z11 = z10;
                 }
-                WidgetSandboxNative.tick(readLong2, readFloat3, z13, z9, z10);
+                if (parcel.readInt() != 0) {
+                    z11 = true;
+                }
+                WidgetSandboxNative.tick(readLong2, readFloat3, z14, z10, z11);
                 return true;
             case 11:
                 WidgetSandboxNative.touch(parcel3.readLong(), parcel3.readInt(), parcel3.readFloat(), parcel3.readFloat(), parcel3.readInt(), parcel3.readInt() != 0, parcel3.readInt() != 0, parcel3.readInt(), parcel3.readInt());
@@ -192,16 +192,16 @@ public final class z extends Binder implements b {
     }
 
     @Override // org.telegram.utils.twidget.b
-    public final void s(long j3, float f10, boolean z9, boolean z10, boolean z11) {
-        WidgetSandboxNative.tick(j3, f10, z9, z10, z11);
+    public final void s(long j3, float f10, boolean z10, boolean z11, boolean z12) {
+        WidgetSandboxNative.tick(j3, f10, z10, z11, z12);
     }
 
     @Override // org.telegram.utils.twidget.b
-    public final long t(byte[] bArr, byte[] bArr2, float f10, float f11, int i7, byte[] bArr3, byte[] bArr4, byte[] bArr5, byte[] bArr6, boolean z9, d dVar) {
+    public final long t(byte[] bArr, byte[] bArr2, float f10, float f11, int i7, byte[] bArr3, byte[] bArr4, byte[] bArr5, byte[] bArr6, boolean z10, d dVar) {
         long uptimeMillis = SystemClock.uptimeMillis();
         String a10 = WidgetEngineService.a(this.a.getAssets());
         long uptimeMillis2 = SystemClock.uptimeMillis() - uptimeMillis;
-        long create = WidgetSandboxNative.create(a10.getBytes(StandardCharsets.UTF_8), bArr, bArr2, f10, f11, i7, bArr3, bArr4, bArr5, bArr6, z9, new WidgetEngineBackend(dVar, f11));
+        long create = WidgetSandboxNative.create(a10.getBytes(StandardCharsets.UTF_8), bArr, bArr2, f10, f11, i7, bArr3, bArr4, bArr5, bArr6, z10, new WidgetEngineBackend(dVar, f11));
         Log.i("WidgetEngine", "session in " + (SystemClock.uptimeMillis() - uptimeMillis) + " ms (bundles " + uptimeMillis2 + " ms)");
         return create;
     }
@@ -212,15 +212,15 @@ public final class z extends Binder implements b {
     }
 
     @Override // org.telegram.utils.twidget.b
-    public final void u0(long j3, boolean z9) {
-        WidgetSandboxNative.visible(j3, z9);
+    public final void v(boolean z10, boolean z11, byte[] bArr) {
+        WidgetSandboxNative.conformance(z10);
+        WidgetSandboxNative.attackScan(z11);
+        WidgetSandboxNative.limits(bArr);
     }
 
     @Override // org.telegram.utils.twidget.b
-    public final void v(boolean z9, boolean z10, byte[] bArr) {
-        WidgetSandboxNative.conformance(z9);
-        WidgetSandboxNative.attackScan(z10);
-        WidgetSandboxNative.limits(bArr);
+    public final void v0(long j3, boolean z10) {
+        WidgetSandboxNative.visible(j3, z10);
     }
 
     @Override // android.os.IInterface

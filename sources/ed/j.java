@@ -1,11 +1,12 @@
 package ed;
 
+import com.google.android.gms.internal.vision.e2;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import kf.p;
 import kf.s;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j extends h {
     public static final Pattern e = Pattern.compile(" *$");
@@ -21,7 +22,7 @@ public final class j extends h {
                 Matcher matcher = e.matcher(str);
                 int end = matcher.find() ? matcher.end() - matcher.start() : 0;
                 if (end > 0) {
-                    sVar.g = com.google.android.recaptcha.internal.a.k(str, end, 0);
+                    sVar.g = e2.k(str, end, 0);
                 }
                 return end >= 2 ? new kf.g(1) : new kf.g(2);
             }

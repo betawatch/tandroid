@@ -1,26 +1,44 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class og implements View.OnLayoutChangeListener {
+public final /* synthetic */ class og implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ og(Object obj, int i7) {
+    public /* synthetic */ og(EditTextBoldCursor editTextBoldCursor, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                view.post((bi.u0) this.b);
+                org.telegram.messenger.g0.J3(this.b);
+                break;
+            case 1:
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                editTextBoldCursor.requestFocus();
+                org.telegram.messenger.g0.J3(editTextBoldCursor);
+                break;
+            case 2:
+                EditTextBoldCursor editTextBoldCursor2 = this.b;
+                editTextBoldCursor2.requestFocus();
+                org.telegram.messenger.g0.J3(editTextBoldCursor2);
+                break;
+            case 3:
+                org.telegram.messenger.g0.J3(this.b);
+                break;
+            case 4:
+                org.telegram.messenger.g0.J3(this.b);
                 break;
             default:
-                ((o31) this.b).p0();
+                EditTextBoldCursor editTextBoldCursor3 = this.b;
+                editTextBoldCursor3.requestFocus();
+                org.telegram.messenger.g0.J3(editTextBoldCursor3);
                 break;
         }
     }

@@ -1,27 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class xm0 extends v4.s0 {
-    public final /* synthetic */ me a;
+public final /* synthetic */ class xm0 implements r1.c {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fn0 b;
+    public final /* synthetic */ r1.g c;
 
-    public xm0(me meVar) {
-        this.a = meVar;
+    public /* synthetic */ xm0(fn0 fn0Var, r1.g gVar, int i7) {
+        this.a = i7;
+        this.b = fn0Var;
+        this.c = gVar;
     }
 
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        me meVar = this.a;
-        View view = meVar.u;
-        boolean z9 = meVar.w.I0() != 0;
-        Boolean bool = meVar.x;
-        if (bool == null || z9 != bool.booleanValue()) {
-            view.animate().cancel();
-            view.animate().alpha(z9 ? 1.0f : 0.0f).setDuration(150L).start();
-            meVar.x = Boolean.valueOf(z9);
+    @Override // r1.c
+    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
+        switch (this.a) {
+            case 0:
+                if (!z10) {
+                    this.b.z.remove(this.c);
+                    gVar.d();
+                    break;
+                }
+                break;
+            default:
+                fn0 fn0Var = this.b;
+                if (!z10) {
+                    fn0Var.z.remove(this.c);
+                    gVar.d();
+                    break;
+                } else {
+                    fn0Var.getClass();
+                    break;
+                }
         }
     }
 }

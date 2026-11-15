@@ -1,19 +1,20 @@
 package w3;
 
-import a8.ga;
-import c8.e1;
+import a8.ha;
+import c8.g1;
+import com.google.android.gms.internal.vision.e2;
 import e2.n0;
 import e2.p0;
 import e2.u;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements p0 {
     public final String a;
     public final String b;
 
     public a(String str, String str2) {
-        this.a = ga.d(str);
+        this.a = ha.d(str);
         this.b = str2;
     }
 
@@ -93,21 +94,21 @@ public final class a implements p0 {
         String str2 = this.b;
         switch (c10) {
             case 0:
-                Integer g10 = e1.g(str2);
+                Integer g10 = g1.g(str2);
                 if (g10 != null) {
                     n0Var.p = g10;
                     break;
                 }
                 break;
             case 1:
-                Integer g11 = e1.g(str2);
+                Integer g11 = g1.g(str2);
                 if (g11 != null) {
                     n0Var.D = g11;
                     break;
                 }
                 break;
             case 2:
-                Integer g12 = e1.g(str2);
+                Integer g12 = g1.g(str2);
                 if (g12 != null) {
                     n0Var.o = g12;
                     break;
@@ -126,7 +127,7 @@ public final class a implements p0 {
                 n0Var.g = str2;
                 break;
             case 7:
-                Integer g13 = e1.g(str2);
+                Integer g13 = g1.g(str2);
                 if (g13 != null) {
                     n0Var.C = g13;
                     break;
@@ -160,7 +161,7 @@ public final class a implements p0 {
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + com.google.android.recaptcha.internal.a.h(527, 31, this.a);
+        return this.b.hashCode() + e2.h(527, 31, this.a);
     }
 
     public final String toString() {

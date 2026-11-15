@@ -2,10 +2,10 @@ package org.telegram.ui.Wallet;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.Components.pp0;
-import org.telegram.ui.h10;
+import org.telegram.ui.Components.sp0;
+import org.telegram.ui.Components.u11;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class x0 {
     public final /* synthetic */ int a;
@@ -18,14 +18,14 @@ public final class x0 {
         this.b = j3;
     }
 
-    public final void a(rc.u uVar, rc.x xVar, rc.x xVar2, boolean z9) {
+    public final void a(rc.u uVar, rc.x xVar, rc.x xVar2, boolean z10) {
         StringBuilder sb2 = new StringBuilder("websocket disconnected; closedByServer=");
-        sb2.append(z9);
+        sb2.append(z10);
         sb2.append(", serverCloseCode=");
         sb2.append(xVar == null ? "none" : Integer.valueOf(xVar.b()));
         sb2.append(", clientCloseCode=");
         sb2.append(xVar2 != null ? Integer.valueOf(xVar2.b()) : "none");
-        org.telegram.messenger.g0.h3(new pp0(this.c, uVar, this.a, sb2.toString(), 18));
+        org.telegram.messenger.g0.h3(new sp0(this.c, uVar, this.a, sb2.toString(), 18));
     }
 
     public final void b(rc.u uVar, String str) {
@@ -38,9 +38,9 @@ public final class x0 {
         sb2.append(str);
         org.telegram.messenger.a8.b(sb2.toString());
         try {
-            org.telegram.messenger.g0.h3(new pp0(this, uVar, i7, new JSONObject(str), 19));
+            org.telegram.messenger.g0.h3(new sp0(this, uVar, i7, new JSONObject(str), 19));
         } catch (JSONException unused) {
-            org.telegram.messenger.g0.h3(new h10(this, uVar, i7, 13));
+            org.telegram.messenger.g0.h3(new u11(this, uVar, i7, 16));
         }
     }
 }

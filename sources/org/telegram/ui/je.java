@@ -1,52 +1,54 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class je implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ cn b;
-    public final /* synthetic */ org.telegram.messenger.qp c;
-    public final /* synthetic */ CharSequence d;
-    public final /* synthetic */ boolean e;
+public final /* synthetic */ class je implements org.telegram.messenger.s10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ an b;
 
-    public /* synthetic */ je(cn cnVar, CharSequence charSequence, org.telegram.messenger.qp qpVar, boolean z9) {
-        this.b = cnVar;
-        this.d = charSequence;
-        this.c = qpVar;
-        this.e = z9;
+    public /* synthetic */ je(an anVar, int i7) {
+        this.a = i7;
+        this.b = anVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.s10
+    public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                cn.P0(this.b, this.d, this.c, this.e);
+                an.l1(this.b, (Integer) obj, (Boolean) obj2);
+                break;
+            case 1:
+                an.x1(this.b, (Long) obj, (Boolean) obj2);
+                break;
+            case 2:
+                an anVar = this.b;
+                ui.b bVar = anVar.O8;
+                bVar.a((Bitmap) obj2);
+                ih.d.c(bVar, anVar.fragmentView);
+                anVar.P8.d();
                 break;
             default:
-                cn cnVar = this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, cnVar.getParentActivity(), cnVar.za);
-                String M0 = org.telegram.messenger.id.M0(R.string.AppName, null);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.R = M0;
-                String M02 = org.telegram.messenger.id.M0(2131747831, null);
-                org.telegram.messenger.qp qpVar = this.c;
-                alertDialog$Builder.k(M02, new a3.g(cnVar, qpVar, this.d, this.e, 4));
-                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-                u1Var.T = org.telegram.messenger.id.M0(2131745685, null);
-                cnVar.showDialog(u1Var);
-                qpVar.G2 = 0;
-                org.telegram.messenger.qp.e1().edit().putInt("secretWebpage2", qpVar.G2).commit();
+                an anVar2 = this.b;
+                anVar2.Q8 = (Bitmap) obj;
+                Paint paint = new Paint(1);
+                anVar2.S8 = paint;
+                Bitmap bitmap = anVar2.Q8;
+                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+                anVar2.R8 = bitmapShader;
+                paint.setShader(bitmapShader);
+                anVar2.T8 = new Matrix();
+                ui.b bVar2 = anVar2.O8;
+                bVar2.a((Bitmap) obj2);
+                ih.d.c(bVar2, anVar2.fragmentView);
+                anVar2.P8.d();
                 break;
         }
-    }
-
-    public /* synthetic */ je(cn cnVar, org.telegram.messenger.qp qpVar, CharSequence charSequence, boolean z9) {
-        this.b = cnVar;
-        this.c = qpVar;
-        this.d = charSequence;
-        this.e = z9;
     }
 }

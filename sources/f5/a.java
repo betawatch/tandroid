@@ -4,51 +4,58 @@ import android.content.Context;
 import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
-import sg.i0;
+import sg.h0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
-    public String a;
+    public final /* synthetic */ int a;
     public String b;
+    public String c;
 
-    public /* synthetic */ a(String str, String str2, boolean z9) {
-        this.a = str;
-        this.b = str2;
+    public /* synthetic */ a() {
+        this.a = 1;
     }
 
-    public o a() {
-        if ("first_party".equals(this.b)) {
+    public p a() {
+        if ("first_party".equals(this.c)) {
             throw new IllegalArgumentException("Serialized doc id must be provided for first party products.");
         }
-        if (this.a == null) {
+        if (this.b == null) {
             throw new IllegalArgumentException("Product id must be provided.");
         }
-        if (this.b != null) {
-            return new o(this);
+        if (this.c != null) {
+            return new p(this);
         }
         throw new IllegalArgumentException("Product type must be provided.");
     }
 
-    public a(String str, String str2) {
-        Object[] objArr = {str, 23};
-        if (!(str.length() <= 23)) {
-            throw new IllegalArgumentException(String.format("tag \"%s\" is longer than the %d character maximum", objArr));
+    public String toString() {
+        switch (this.a) {
+            case 3:
+                return this.b + ", " + this.c;
+            default:
+                return super.toString();
         }
-        this.a = str;
-        this.b = (str2 == null || str2.length() <= 0) ? null : str2;
     }
 
-    public a(i0 i0Var) {
-        Context context = (Context) i0Var.b;
+    public /* synthetic */ a(int i7, String str, String str2) {
+        this.a = i7;
+        this.b = str;
+        this.c = str2;
+    }
+
+    public a(h0 h0Var) {
+        this.a = 5;
+        Context context = (Context) h0Var.b;
         int e10 = aa.g.e(context, "com.google.firebase.crashlytics.unity_version", "string");
         if (e10 != 0) {
-            this.a = "Unity";
+            this.b = "Unity";
             String string = context.getResources().getString(e10);
-            this.b = string;
-            String i7 = rf.b.i("Unity Editor version is: ", string);
+            this.c = string;
+            String k10 = r.b.k("Unity Editor version is: ", string);
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                Log.v("FirebaseCrashlytics", i7, null);
+                Log.v("FirebaseCrashlytics", k10, null);
                 return;
             }
             return;
@@ -59,8 +66,8 @@ public final class a {
                 if (open != null) {
                     open.close();
                 }
-                this.a = "Flutter";
-                this.b = null;
+                this.b = "Flutter";
+                this.c = null;
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                     Log.v("FirebaseCrashlytics", "Development platform is: Flutter", null);
                     return;
@@ -69,7 +76,7 @@ public final class a {
             } catch (IOException unused) {
             }
         }
-        this.a = null;
         this.b = null;
+        this.c = null;
     }
 }

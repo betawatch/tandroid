@@ -1,24 +1,27 @@
 package org.telegram.messenger;
 
-import java.util.HashSet;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class ft {
-    public static final HashSet a;
+public final /* synthetic */ class ft implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s10 b;
+    public final /* synthetic */ Exception c;
 
-    static {
-        HashSet hashSet = new HashSet();
-        a = hashSet;
-        hashSet.add("com.google.android.projection.gearhead");
-        hashSet.add("com.google.android.mediasimulator");
-        hashSet.add("com.android.car.media");
-        hashSet.add("com.android.car.carlauncher");
-        hashSet.add("com.google.android.car.kitchensink");
-        hashSet.add("com.google.android.wearable.app");
-        hashSet.add("com.google.android.wearable.media.sessions");
-        hashSet.add("com.google.android.googlequicksearchbox");
-        hashSet.add("com.google.android.apps.gsa.staticplugins");
-        hashSet.add("com.google.android.bluetooth");
+    public /* synthetic */ ft(s10 s10Var, Exception exc, int i7) {
+        this.a = i7;
+        this.b = s10Var;
+        this.c = exc;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.a(null, this.c.getMessage());
+                break;
+            default:
+                this.b.a(null, this.c.getMessage());
+                break;
+        }
     }
 }

@@ -1,108 +1,169 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.wq;
+import android.view.ViewConfiguration;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.Scroller;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.ui.Components.u41;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class u5 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
-    public final org.telegram.ui.ActionBar.h6 a;
-    public final org.telegram.ui.Components.c0 b;
-    public final TextView[] c;
-    public int d;
+public final class u5 extends v4.r0 {
+    public RecyclerView a;
+    public bi.v3 c;
+    public boolean d;
     public boolean e;
-    public final org.telegram.ui.Components.v5 f;
-    public final Paint h;
+    public boolean f;
+    public float g;
+    public float h;
+    public final /* synthetic */ y5 j;
+    public final hi.f8 b = new hi.f8(this);
+    public final l i = new l(this, 8);
 
-    public u5(Context context, CharSequence[] charSequenceArr, k kVar, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        this.d = 0;
-        this.e = false;
-        this.h = new Paint(1);
-        this.a = h6Var;
-        org.telegram.ui.Components.c0 c0Var = new org.telegram.ui.Components.c0(this, context, h6Var);
-        this.b = c0Var;
-        this.f = new org.telegram.ui.Components.v5(new t5(this, 0), 420L, wq.h);
-        c0Var.setOrientation(0);
-        c0Var.setPadding(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f));
-        this.c = new TextView[charSequenceArr.length];
-        int i7 = 0;
-        while (i7 < charSequenceArr.length) {
-            TextView textView = new TextView(context);
-            textView.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(6.0f));
-            textView.setTypeface(org.telegram.messenger.g0.o());
-            textView.setTextSize(1, 14.0f);
-            textView.setText(charSequenceArr[i7]);
-            textView.setOnClickListener(new bi.la(this, kVar, i7, 19));
-            c8.ka.a(textView);
-            this.b.addView(textView, c8.ha.q(-2, -2, 0.0f, 19, i7 == 0 ? 0 : 3, 0, 0, 0));
-            this.c[i7] = textView;
-            i7++;
-        }
-        addView(this.b, c8.ha.e(-2, -2, 17));
-        updateColors();
+    public u5(y5 y5Var) {
+        this.j = y5Var;
     }
 
-    public final void a() {
-        int i7 = 0;
-        float e10 = this.f.e(false, this.d);
-        while (true) {
-            TextView[] textViewArr = this.c;
-            if (i7 >= textViewArr.length) {
-                this.b.invalidate();
-                return;
+    /* JADX WARN: Removed duplicated region for block: B:35:0x008a  */
+    @Override // v4.r0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean a(int i7, int i10) {
+        int minFlingVelocity;
+        int i11;
+        boolean z10 = this.f;
+        if (z10) {
+            if (z10) {
+                this.d = true;
             }
-            float l10 = Utilities.l(1.0f - Math.abs(e10 - i7));
-            TextView textView = textViewArr[i7];
-            int i10 = org.telegram.ui.ActionBar.m6.z6;
-            org.telegram.ui.ActionBar.h6 h6Var = this.a;
-            textView.setTextColor(i0.a.f(l10, org.telegram.ui.ActionBar.m6.w0(i10, h6Var), org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ci, h6Var)));
-            i7++;
+            v4.o0 layoutManager = this.a.getLayoutManager();
+            if (layoutManager != null && this.a.getAdapter() != null && ((Math.abs(i10) > (minFlingVelocity = this.a.getMinFlingVelocity()) || Math.abs(i7) > minFlingVelocity) && (layoutManager instanceof v4.b0))) {
+                v4.h1 h1Var = new v4.h1(this, this.a.getContext());
+                if (this.c != null && this.f && Math.abs(i10) >= org.telegram.messenger.g0.L(600.0f)) {
+                    y5 y5Var = this.j;
+                    if (y5Var.z0()) {
+                        int i12 = i10 > 0 ? 1 : -1;
+                        u41 y02 = y5Var.y0();
+                        if (this.c.canScrollVertically(i12) && (i12 >= 0 || y02 == null || !y02.canScrollVertically(-1))) {
+                            i11 = i12 > 0 ? layoutManager.B() - 1 : 0;
+                            if (i11 != -1) {
+                                h1Var.a = i11;
+                                layoutManager.w0(h1Var);
+                                return true;
+                            }
+                        }
+                    }
+                }
+                i11 = -1;
+                if (i11 != -1) {
+                }
+            }
         }
+        return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.z6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Ci));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d6));
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.ui.Components.c0 c0Var;
-        if (this.e && view == (c0Var = this.b)) {
-            float N = org.telegram.messenger.g0.N(1.67f);
-            float N2 = org.telegram.messenger.g0.N(0.67f);
-            Paint paint = this.h;
-            paint.setShadowLayer(N, 0.0f, N2, 520093696);
-            paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, this.a));
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(c0Var.getX(), c0Var.getY(), c0Var.getX() + c0Var.getWidth(), c0Var.getY() + c0Var.getHeight());
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(18.0f), paint);
+    public final void b(bi.v3 v3Var) {
+        bi.v3 v3Var2 = this.c;
+        if (v3Var2 != null) {
+            v3Var2.removeCallbacks(this.i);
         }
-        return super.drawChild(canvas, view, j3);
-    }
-
-    public void setSelected(int i7) {
-        if (this.d == i7) {
+        this.c = v3Var;
+        RecyclerView recyclerView = this.a;
+        if (recyclerView == v3Var) {
             return;
         }
-        this.d = i7;
-        a();
+        hi.f8 f8Var = this.b;
+        if (recyclerView != null) {
+            ArrayList arrayList = recyclerView.x0;
+            if (arrayList != null) {
+                arrayList.remove(f8Var);
+            }
+            this.a.setOnFlingListener(null);
+        }
+        this.a = v3Var;
+        if (v3Var != null) {
+            if (v3Var.getOnFlingListener() != null) {
+                throw new IllegalStateException("An instance of OnFlingListener already set.");
+            }
+            this.a.j(f8Var);
+            this.a.setOnFlingListener(this);
+            new Scroller(this.a.getContext(), new DecelerateInterpolator());
+            f();
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        a();
-        this.b.setBackground(this.e ? null : org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(18.0f), org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, this.a)));
+    public final void c() {
+        this.e = false;
+        this.f = false;
+        this.d = false;
+        bi.v3 v3Var = this.c;
+        if (v3Var != null) {
+            v3Var.removeCallbacks(this.i);
+        }
+    }
+
+    public final View d(v4.o0 o0Var) {
+        bi.v3 v3Var;
+        if (this.e || (v3Var = this.c) == null || v3Var.getScrollState() != 0) {
+            return null;
+        }
+        y5 y5Var = this.j;
+        u41 y02 = y5Var.y0();
+        if ((y02 != null && y02.getScrollState() != 0) || !this.d) {
+            return null;
+        }
+        this.d = false;
+        if (!y5Var.z0()) {
+            return null;
+        }
+        View m10 = o0Var.m(0);
+        View m11 = o0Var.m(o0Var.B() - 1);
+        return m10 == null ? m11 : (m11 != null && Math.abs(new int[]{0, v4.o0.z(m10) - o0Var.F()}[1]) >= Math.abs(new int[]{0, v4.o0.z(m11) - o0Var.F()}[1])) ? m11 : m10;
+    }
+
+    public final void e(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            c();
+            this.e = true;
+            this.g = motionEvent.getX();
+            this.h = motionEvent.getY();
+            return;
+        }
+        if (actionMasked == 3) {
+            c();
+            return;
+        }
+        if (actionMasked == 2 || actionMasked == 1) {
+            float abs = Math.abs(motionEvent.getX() - this.g);
+            float abs2 = Math.abs(motionEvent.getY() - this.h);
+            boolean z10 = abs2 > ((float) ViewConfiguration.get(this.c.getContext()).getScaledTouchSlop()) && abs2 > abs * 1.5f;
+            this.f = z10;
+            if (!z10) {
+                this.d = false;
+            }
+            if (actionMasked == 1) {
+                this.e = false;
+            }
+        }
+    }
+
+    public final void f() {
+        v4.o0 layoutManager;
+        View d;
+        RecyclerView recyclerView = this.a;
+        if (recyclerView == null || (layoutManager = recyclerView.getLayoutManager()) == null || (d = d(layoutManager)) == null) {
+            return;
+        }
+        int[] iArr = {0, v4.o0.z(d) - layoutManager.F()};
+        int i7 = iArr[0];
+        if (i7 == 0 && iArr[1] == 0) {
+            return;
+        }
+        this.a.w0(i7, iArr[1], null);
     }
 }

@@ -1,64 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.text.TextUtils;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class i00 extends v7 {
-    public final /* synthetic */ int D;
-    public final /* synthetic */ Context E;
-    public final /* synthetic */ FragmentContextView F;
+public final /* synthetic */ class i00 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FragmentContextView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i00(FragmentContextView fragmentContextView, Context context, Context context2, int i7) {
-        super(context);
-        this.D = i7;
-        this.F = fragmentContextView;
-        this.E = context2;
+    public /* synthetic */ i00(FragmentContextView fragmentContextView, int i7) {
+        this.a = i7;
+        this.b = fragmentContextView;
     }
 
-    @Override // org.telegram.ui.Components.v7
-    public final TextView a() {
-        switch (this.D) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        FragmentContextView fragmentContextView = this.b;
+        switch (i7) {
             case 0:
-                TextView textView = new TextView(this.E);
-                textView.setMaxLines(1);
-                textView.setLines(1);
-                textView.setSingleLine(true);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setTextSize(1, 15.0f);
-                textView.setGravity(19);
-                FragmentContextView fragmentContextView = this.F;
-                int i7 = fragmentContextView.U;
-                if (i7 == 0 || i7 == 2) {
-                    textView.setGravity(19);
-                    textView.setTypeface(Typeface.DEFAULT);
-                    textView.setTextSize(1, 15.0f);
-                } else if (i7 == 4) {
-                    textView.setGravity(51);
-                    org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.t7, fragmentContextView.q0);
-                    textView.setTypeface(org.telegram.messenger.g0.o());
-                    textView.setTextSize(1, 15.0f);
-                } else if (i7 == 1 || i7 == 3) {
-                    textView.setGravity(19);
-                    org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.A7, fragmentContextView.q0);
-                    textView.setTypeface(org.telegram.messenger.g0.o());
-                    textView.setTextSize(1, 14.0f);
-                }
-                return textView;
+                fragmentContextView.P.g = 0.0f;
+                fragmentContextView.N.invalidate();
+                break;
             default:
-                TextView textView2 = new TextView(this.E);
-                textView2.setMaxLines(1);
-                textView2.setLines(1);
-                textView2.setSingleLine(true);
-                textView2.setEllipsize(TextUtils.TruncateAt.END);
-                textView2.setGravity(3);
-                textView2.setTextSize(1, 13.0f);
-                org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.x7, this.F.q0);
-                return textView2;
+                float[] fArr = FragmentContextView.X0;
+                fragmentContextView.o(true);
+                break;
         }
     }
 }

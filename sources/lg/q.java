@@ -6,27 +6,28 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.messenger.ns;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class q extends g {
-    public final Matrix D1;
-    public final float[] E1;
-    public final Path F1;
-    public boolean[] G1;
-    public float[] H1;
+    public final Matrix E1;
+    public final float[] F1;
+    public final Path G1;
+    public boolean[] H1;
+    public float[] I1;
 
     public q(Context context) {
         super(context, null);
-        this.D1 = new Matrix();
-        this.E1 = new float[2];
-        this.F1 = new Path();
-        this.w0 = true;
+        this.E1 = new Matrix();
+        this.F1 = new float[2];
+        this.G1 = new Path();
         this.x0 = true;
+        this.y0 = true;
         this.e = false;
     }
 
@@ -37,7 +38,7 @@ public class q extends g {
     }
 
     public final int M(float f10, float f11) {
-        RectF rectF = this.H0;
+        RectF rectF = this.I0;
         float centerX = rectF.centerX();
         float centerY = rectF.centerY() + g0.L(16.0f);
         if (f10 >= centerX && f11 <= centerY) {
@@ -87,9 +88,9 @@ public class q extends g {
         int i7;
         int min;
         int i10;
-        boolean z9;
-        int i11;
         boolean z10;
+        int i11;
+        boolean z11;
         int size;
         float f13;
         int i12;
@@ -118,7 +119,7 @@ public class q extends g {
         int M;
         int M2;
         float f26;
-        boolean z11;
+        boolean z12;
         float f27;
         float f28;
         int i19;
@@ -127,15 +128,15 @@ public class q extends g {
         float f31;
         double degrees2;
         int i20;
-        if (this.h0 != null) {
-            float f32 = this.F0;
-            j jVar = this.g0;
+        if (this.i0 != null) {
+            float f32 = this.G0;
+            j jVar = this.h0;
             float f33 = jVar.l;
             float f34 = jVar.k;
             float f35 = f32 / (f33 - f34);
-            float f36 = g.k1;
+            float f36 = g.l1;
             float f37 = (f34 * f35) - f36;
-            RectF rectF = this.H0;
+            RectF rectF = this.I0;
             float centerX = rectF.centerX();
             float centerY = rectF.centerY() + g0.L(16.0f);
             int i21 = 0;
@@ -149,51 +150,51 @@ public class q extends g {
                 i21++;
             }
             canvas.save();
-            boolean[] zArr = this.G1;
-            if (zArr == null || zArr.length < ((mg.e) this.h0).d.size()) {
-                this.G1 = new boolean[((mg.e) this.h0).d.size()];
-                this.H1 = new float[((mg.e) this.h0).d.size()];
+            boolean[] zArr = this.H1;
+            if (zArr == null || zArr.length < ((mg.e) this.i0).d.size()) {
+                this.H1 = new boolean[((mg.e) this.i0).d.size()];
+                this.I1 = new float[((mg.e) this.i0).d.size()];
             }
-            int i22 = this.y0;
+            int i22 = this.z0;
             if (i22 == 2) {
-                f12 = this.z0.f / 0.6f;
+                f12 = this.A0.f / 0.6f;
                 if (f12 > 1.0f) {
                     f12 = 1.0f;
                 }
-                Path path = this.F1;
+                Path path = this.G1;
                 path.reset();
                 float width = rectF.width() > rectF.height() ? rectF.width() : rectF.height();
                 float height = (rectF.width() > rectF.height() ? rectF.height() : rectF.width()) * 0.45f;
                 f11 = 0.0f;
-                float z12 = com.google.android.recaptcha.internal.a.z(1.0f, this.z0.f, (width - height) / 2.0f, height);
+                float z13 = e2.z(1.0f, this.A0.f, (width - height) / 2.0f, height);
                 RectF rectF2 = new RectF();
                 f10 = 1.0f;
-                rectF2.set(centerX - z12, centerY - z12, centerX + z12, centerY + z12);
-                path.addRoundRect(rectF2, z12, z12, Path.Direction.CW);
+                rectF2.set(centerX - z13, centerY - z13, centerX + z13, centerY + z13);
+                path.addRoundRect(rectF2, z13, z13, Path.Direction.CW);
                 canvas.clipPath(path);
             } else {
                 f10 = 1.0f;
                 f11 = 0.0f;
                 if (i22 == 3) {
-                    i7 = (int) (this.z0.f * 255.0f);
+                    i7 = (int) (this.A0.f * 255.0f);
                     f12 = 0.0f;
-                    float[] fArr = ((mg.e) this.h0).b;
+                    float[] fArr = ((mg.e) this.i0).b;
                     int i23 = ((int) (f36 / (fArr.length >= 2 ? f10 : fArr[1] * f35))) + 1;
-                    int max = Math.max(0, (this.F - i23) - 1);
-                    min = Math.min(((mg.e) this.h0).b.length - 1, this.G + i23 + 1);
+                    int max = Math.max(0, (this.G - i23) - 1);
+                    min = Math.min(((mg.e) this.i0).b.length - 1, this.H + i23 + 1);
                     i10 = max;
                     float f38 = f11;
                     float f39 = f38;
-                    z9 = false;
+                    z10 = false;
                     while (true) {
-                        i11 = g.n1;
+                        i11 = g.o1;
                         if (i10 <= min) {
                             break;
                         }
                         float f40 = f35;
                         float f41 = f37;
                         float f42 = f12;
-                        boolean z13 = z9;
+                        boolean z14 = z10;
                         float f43 = f11;
                         int i24 = 0;
                         int i25 = 0;
@@ -221,9 +222,9 @@ public class q extends g {
                         while (i29 < arrayList.size()) {
                             ng.f fVar2 = (ng.f) arrayList.get(i29);
                             float f45 = f38;
-                            boolean z14 = fVar2.n;
+                            boolean z15 = fVar2.n;
                             Path path2 = fVar2.f;
-                            if (z14) {
+                            if (z15) {
                                 f13 = f44;
                             } else {
                                 f13 = f44;
@@ -252,15 +253,15 @@ public class q extends g {
                                 if (jArr[i10] != 0) {
                                     f14 = fVar2.o;
                                     i12 = i24;
-                                    float[] fArr2 = ((mg.e) this.h0).b;
+                                    float[] fArr2 = ((mg.e) this.i0).b;
                                     f15 = (fArr2[i10] * f40) - f41;
                                     float measuredWidth = i10 != min ? getMeasuredWidth() : (fArr2[i10 + 1] * f40) - f41;
                                     if (f14 == f11 && i29 == i25) {
-                                        z13 = true;
+                                        z14 = true;
                                     }
                                     float measuredHeight2 = ((getMeasuredHeight() - this.s) - i11) * f14;
                                     measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight2) - f13;
-                                    this.H1[i29] = measuredHeight;
+                                    this.I1[i29] = measuredHeight;
                                     float measuredHeight3 = getMeasuredHeight() - this.s;
                                     if (i10 != min) {
                                         f16 = measuredHeight3;
@@ -271,11 +272,11 @@ public class q extends g {
                                             f39 = f15;
                                         }
                                     }
-                                    i13 = this.y0;
+                                    i13 = this.z0;
                                     float f46 = measuredWidth;
-                                    float[] fArr3 = this.E1;
+                                    float[] fArr3 = this.F1;
                                     i14 = i12;
-                                    Matrix matrix = this.D1;
+                                    Matrix matrix = this.E1;
                                     if (i13 == 2 || i29 == i25) {
                                         arrayList2 = arrayList;
                                         f17 = f11;
@@ -285,13 +286,13 @@ public class q extends g {
                                     } else {
                                         int i30 = (f15 > centerX ? 1 : (f15 == centerX ? 0 : -1));
                                         if (i30 < 0) {
-                                            ng.j jVar2 = this.z0;
+                                            ng.j jVar2 = this.A0;
                                             i19 = i30;
                                             f30 = jVar2.g[i29];
                                             f29 = jVar2.h[i29];
                                         } else {
                                             i19 = i30;
-                                            ng.j jVar3 = this.z0;
+                                            ng.j jVar3 = this.A0;
                                             float f47 = jVar3.i[i29];
                                             f29 = jVar3.j[i29];
                                             f30 = f47;
@@ -319,7 +320,7 @@ public class q extends g {
                                             fArr3[0] = f15;
                                             fArr3[1] = f54;
                                             matrix.reset();
-                                            matrix.postRotate(this.z0.f * f57, centerX, centerY);
+                                            matrix.postRotate(this.A0.f * f57, centerX, centerY);
                                             matrix.mapPoints(fArr3);
                                             float f58 = fArr3[0];
                                             f18 = fArr3[1];
@@ -330,7 +331,7 @@ public class q extends g {
                                             fArr3[1] = f55;
                                             matrix.reset();
                                             f17 = f57;
-                                            matrix.postRotate(this.z0.f * f17, centerX, centerY);
+                                            matrix.postRotate(this.A0.f * f17, centerX, centerY);
                                             matrix.mapPoints(fArr3);
                                             f19 = fArr3[1];
                                             f21 = f39;
@@ -346,21 +347,21 @@ public class q extends g {
                                                 fArr3[0] = f15;
                                                 fArr3[1] = f54;
                                                 matrix.reset();
-                                                ng.j jVar4 = this.z0;
+                                                ng.j jVar4 = this.A0;
                                                 float f59 = jVar4.f;
                                                 matrix.postRotate((f59 * jVar4.k[i29]) + (f59 * f17), centerX, centerY);
                                                 matrix.mapPoints(fArr3);
                                                 float f60 = fArr3[0];
                                                 f18 = fArr3[1];
                                                 if (f46 >= centerX) {
-                                                    float f61 = this.z0.f;
+                                                    float f61 = this.A0.f;
                                                     fArr3[0] = (f61 * centerX) + ((f10 - f61) * f15);
                                                 } else {
                                                     fArr3[0] = f15;
                                                 }
                                                 fArr3[1] = f55;
                                                 matrix.reset();
-                                                ng.j jVar5 = this.z0;
+                                                ng.j jVar5 = this.A0;
                                                 float f62 = jVar5.f;
                                                 matrix.postRotate((f62 * jVar5.k[i29]) + (f62 * f17), centerX, centerY);
                                                 matrix.mapPoints(fArr3);
@@ -374,66 +375,66 @@ public class q extends g {
                                         if (i10 == max) {
                                             float measuredHeight4 = getMeasuredHeight();
                                             i16 = i11;
-                                            if (this.y0 != 2 || i29 == i25) {
-                                                z11 = false;
+                                            if (this.z0 != 2 || i29 == i25) {
+                                                z12 = false;
                                                 f27 = f11;
                                                 f28 = measuredHeight4;
                                             } else {
                                                 fArr3[0] = f11 - centerX;
                                                 fArr3[1] = measuredHeight4;
                                                 matrix.reset();
-                                                ng.j jVar6 = this.z0;
+                                                ng.j jVar6 = this.A0;
                                                 float f63 = jVar6.f;
                                                 matrix.postRotate((f63 * jVar6.k[i29]) + (f17 * f63), centerX, centerY);
                                                 matrix.mapPoints(fArr3);
-                                                z11 = false;
+                                                z12 = false;
                                                 f27 = fArr3[0];
                                                 f28 = fArr3[1];
                                             }
                                             path2.moveTo(f27, f28);
-                                            this.G1[i29] = z11;
+                                            this.H1[i29] = z12;
                                         } else {
                                             i16 = i11;
                                         }
-                                        ng.j jVar7 = this.z0;
+                                        ng.j jVar7 = this.A0;
                                         f23 = jVar7 == null ? f11 : jVar7.f;
                                         if (f14 == f11 || i10 <= 0 || jArr[i10 - 1] != 0 || i10 >= min || jArr[i10 + 1] != 0) {
                                             f24 = f23;
                                         } else {
                                             f24 = f23;
-                                            if (this.y0 != 2) {
-                                                if (!this.G1[i29]) {
+                                            if (this.z0 != 2) {
+                                                if (!this.H1[i29]) {
                                                     if (i29 == i25) {
                                                         path2.lineTo(f20, (f10 - f24) * f19);
                                                     } else {
                                                         path2.lineTo(f20, f19);
                                                     }
                                                 }
-                                                this.G1[i29] = true;
+                                                this.H1[i29] = true;
                                                 c10 = 0;
                                                 if (i10 == min) {
                                                     float measuredWidth2 = getMeasuredWidth();
                                                     float measuredHeight5 = getMeasuredHeight();
-                                                    if (this.y0 != 2 || i29 == i25) {
+                                                    if (this.z0 != 2 || i29 == i25) {
                                                         path2.lineTo(measuredWidth2, measuredHeight5);
                                                     } else {
                                                         fArr3[c10] = measuredWidth2 + centerX;
                                                         fArr3[1] = measuredHeight5;
                                                         matrix.reset();
-                                                        ng.j jVar8 = this.z0;
+                                                        ng.j jVar8 = this.A0;
                                                         matrix.postRotate(jVar8.f * jVar8.k[i29], centerX, centerY);
                                                         matrix.mapPoints(fArr3);
                                                         float f64 = fArr3[c10];
                                                         float f65 = fArr3[1];
                                                     }
-                                                    if (this.y0 != 2) {
+                                                    if (this.z0 != 2) {
                                                         i17 = i25;
                                                         i18 = min;
                                                         f25 = f11;
                                                         f44 = f13 + measuredHeight2;
                                                         f39 = f21;
                                                     } else if (i29 != i25) {
-                                                        ng.j jVar9 = this.z0;
+                                                        ng.j jVar9 = this.A0;
                                                         float f66 = (centerY - jVar9.h[i29]) / (centerX - jVar9.g[i29]);
                                                         if (f66 > f11) {
                                                             i17 = i25;
@@ -444,13 +445,13 @@ public class q extends g {
                                                             i18 = min;
                                                             degrees = Math.toDegrees(Math.atan(Math.abs(f66)));
                                                         }
-                                                        ng.j jVar10 = this.z0;
+                                                        ng.j jVar10 = this.A0;
                                                         float f67 = jVar10.g[i29];
                                                         float f68 = jVar10.h[i29];
                                                         fArr3[0] = f67;
                                                         fArr3[1] = f68;
                                                         matrix.reset();
-                                                        ng.j jVar11 = this.z0;
+                                                        ng.j jVar11 = this.A0;
                                                         float f69 = jVar11.f;
                                                         matrix.postRotate((f69 * jVar11.k[i29]) + ((((float) degrees) - 90.0f) * f69), centerX, centerY);
                                                         matrix.mapPoints(fArr3);
@@ -460,7 +461,7 @@ public class q extends g {
                                                             M = M(f22, f18);
                                                             M2 = M(f70, f71);
                                                         } else {
-                                                            M2 = this.z0.k[i29] == -180.0f ? 0 : 3;
+                                                            M2 = this.A0.k[i29] == -180.0f ? 0 : 3;
                                                             M = 0;
                                                         }
                                                         while (M <= M2) {
@@ -496,7 +497,7 @@ public class q extends g {
                                                 f39 = f21;
                                             }
                                         }
-                                        if (this.G1[i29]) {
+                                        if (this.H1[i29]) {
                                             if (i29 == i25) {
                                                 path2.lineTo(f20, (f10 - f24) * f19);
                                             } else {
@@ -509,7 +510,7 @@ public class q extends g {
                                             path2.lineTo(f22, f18);
                                         }
                                         c10 = 0;
-                                        this.G1[i29] = false;
+                                        this.H1[i29] = false;
                                         if (i10 == min) {
                                         }
                                         i17 = i25;
@@ -523,18 +524,18 @@ public class q extends g {
                                     i15 = max;
                                     if (i10 == max) {
                                     }
-                                    ng.j jVar72 = this.z0;
+                                    ng.j jVar72 = this.A0;
                                     if (jVar72 == null) {
                                     }
                                     if (f14 == f11) {
                                     }
                                     f24 = f23;
-                                    if (this.G1[i29]) {
+                                    if (this.H1[i29]) {
                                     }
                                     if (i29 == i25) {
                                     }
                                     c10 = 0;
-                                    this.G1[i29] = false;
+                                    this.H1[i29] = false;
                                     if (i10 == min) {
                                     }
                                     i17 = i25;
@@ -545,24 +546,24 @@ public class q extends g {
                                 }
                                 i12 = i24;
                                 f14 = f11;
-                                float[] fArr22 = ((mg.e) this.h0).b;
+                                float[] fArr22 = ((mg.e) this.i0).b;
                                 f15 = (fArr22[i10] * f40) - f41;
                                 if (i10 != min) {
                                 }
                                 if (f14 == f11) {
-                                    z13 = true;
+                                    z14 = true;
                                 }
                                 float measuredHeight22 = ((getMeasuredHeight() - this.s) - i11) * f14;
                                 measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight22) - f13;
-                                this.H1[i29] = measuredHeight;
+                                this.I1[i29] = measuredHeight;
                                 float measuredHeight32 = getMeasuredHeight() - this.s;
                                 if (i10 != min) {
                                 }
-                                i13 = this.y0;
+                                i13 = this.z0;
                                 float f462 = measuredWidth;
-                                float[] fArr32 = this.E1;
+                                float[] fArr32 = this.F1;
                                 i14 = i12;
-                                Matrix matrix2 = this.D1;
+                                Matrix matrix2 = this.E1;
                                 if (i13 == 2) {
                                 }
                                 arrayList2 = arrayList;
@@ -575,18 +576,18 @@ public class q extends g {
                                 i15 = max;
                                 if (i10 == max) {
                                 }
-                                ng.j jVar722 = this.z0;
+                                ng.j jVar722 = this.A0;
                                 if (jVar722 == null) {
                                 }
                                 if (f14 == f11) {
                                 }
                                 f24 = f23;
-                                if (this.G1[i29]) {
+                                if (this.H1[i29]) {
                                 }
                                 if (i29 == i25) {
                                 }
                                 c10 = 0;
-                                this.G1[i29] = false;
+                                this.H1[i29] = false;
                                 if (i10 == min) {
                                 }
                                 i17 = i25;
@@ -598,7 +599,7 @@ public class q extends g {
                                 if (f43 != f11) {
                                     i12 = i24;
                                     f14 = (jArr[i10] * fVar2.o) / f43;
-                                    float[] fArr222 = ((mg.e) this.h0).b;
+                                    float[] fArr222 = ((mg.e) this.i0).b;
                                     f15 = (fArr222[i10] * f40) - f41;
                                     if (i10 != min) {
                                     }
@@ -606,15 +607,15 @@ public class q extends g {
                                     }
                                     float measuredHeight222 = ((getMeasuredHeight() - this.s) - i11) * f14;
                                     measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight222) - f13;
-                                    this.H1[i29] = measuredHeight;
+                                    this.I1[i29] = measuredHeight;
                                     float measuredHeight322 = getMeasuredHeight() - this.s;
                                     if (i10 != min) {
                                     }
-                                    i13 = this.y0;
+                                    i13 = this.z0;
                                     float f4622 = measuredWidth;
-                                    float[] fArr322 = this.E1;
+                                    float[] fArr322 = this.F1;
                                     i14 = i12;
-                                    Matrix matrix22 = this.D1;
+                                    Matrix matrix22 = this.E1;
                                     if (i13 == 2) {
                                     }
                                     arrayList2 = arrayList;
@@ -627,18 +628,18 @@ public class q extends g {
                                     i15 = max;
                                     if (i10 == max) {
                                     }
-                                    ng.j jVar7222 = this.z0;
+                                    ng.j jVar7222 = this.A0;
                                     if (jVar7222 == null) {
                                     }
                                     if (f14 == f11) {
                                     }
                                     f24 = f23;
-                                    if (this.G1[i29]) {
+                                    if (this.H1[i29]) {
                                     }
                                     if (i29 == i25) {
                                     }
                                     c10 = 0;
-                                    this.G1[i29] = false;
+                                    this.H1[i29] = false;
                                     if (i10 == min) {
                                     }
                                     i17 = i25;
@@ -649,7 +650,7 @@ public class q extends g {
                                 }
                                 i12 = i24;
                                 f14 = f11;
-                                float[] fArr2222 = ((mg.e) this.h0).b;
+                                float[] fArr2222 = ((mg.e) this.i0).b;
                                 f15 = (fArr2222[i10] * f40) - f41;
                                 if (i10 != min) {
                                 }
@@ -657,15 +658,15 @@ public class q extends g {
                                 }
                                 float measuredHeight2222 = ((getMeasuredHeight() - this.s) - i11) * f14;
                                 measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight2222) - f13;
-                                this.H1[i29] = measuredHeight;
+                                this.I1[i29] = measuredHeight;
                                 float measuredHeight3222 = getMeasuredHeight() - this.s;
                                 if (i10 != min) {
                                 }
-                                i13 = this.y0;
+                                i13 = this.z0;
                                 float f46222 = measuredWidth;
-                                float[] fArr3222 = this.E1;
+                                float[] fArr3222 = this.F1;
                                 i14 = i12;
-                                Matrix matrix222 = this.D1;
+                                Matrix matrix222 = this.E1;
                                 if (i13 == 2) {
                                 }
                                 arrayList2 = arrayList;
@@ -678,18 +679,18 @@ public class q extends g {
                                 i15 = max;
                                 if (i10 == max) {
                                 }
-                                ng.j jVar72222 = this.z0;
+                                ng.j jVar72222 = this.A0;
                                 if (jVar72222 == null) {
                                 }
                                 if (f14 == f11) {
                                 }
                                 f24 = f23;
-                                if (this.G1[i29]) {
+                                if (this.H1[i29]) {
                                 }
                                 if (i29 == i25) {
                                 }
                                 c10 = 0;
-                                this.G1[i29] = false;
+                                this.H1[i29] = false;
                                 if (i10 == min) {
                                 }
                                 i17 = i25;
@@ -713,40 +714,40 @@ public class q extends g {
                         f35 = f40;
                         f37 = f41;
                         f12 = f42;
-                        z9 = z13;
+                        z10 = z14;
                         i7 = i28;
                     }
                     int i31 = i7;
                     ArrayList arrayList3 = arrayList;
-                    z10 = z9;
+                    z11 = z10;
                     canvas.save();
                     canvas.clipRect(f39, i11, f38, getMeasuredHeight() - this.s);
-                    if (z10) {
-                        canvas.drawColor(m6.x0(null, m6.fk, false));
+                    if (z11) {
+                        canvas.drawColor(j6.x0(null, j6.ik, false));
                     }
                     for (size = arrayList3.size() - 1; size >= 0; size--) {
                         ng.f fVar3 = (ng.f) arrayList3.get(size);
                         Paint paint = fVar3.c;
                         paint.setAlpha(i31);
                         canvas.drawPath(fVar3.f, paint);
-                        paint.setAlpha(qs.e4);
+                        paint.setAlpha(ns.e4);
                     }
                     canvas.restore();
                     canvas.restore();
                 }
                 f12 = 0.0f;
             }
-            i7 = qs.e4;
-            float[] fArr4 = ((mg.e) this.h0).b;
+            i7 = ns.e4;
+            float[] fArr4 = ((mg.e) this.i0).b;
             int i232 = ((int) (f36 / (fArr4.length >= 2 ? f10 : fArr4[1] * f35))) + 1;
-            int max2 = Math.max(0, (this.F - i232) - 1);
-            min = Math.min(((mg.e) this.h0).b.length - 1, this.G + i232 + 1);
+            int max2 = Math.max(0, (this.G - i232) - 1);
+            min = Math.min(((mg.e) this.i0).b.length - 1, this.H + i232 + 1);
             i10 = max2;
             float f382 = f11;
             float f392 = f382;
-            z9 = false;
+            z10 = false;
             while (true) {
-                i11 = g.n1;
+                i11 = g.o1;
                 if (i10 <= min) {
                 }
                 i10++;
@@ -754,15 +755,15 @@ public class q extends g {
                 f35 = f40;
                 f37 = f41;
                 f12 = f42;
-                z9 = z13;
+                z10 = z14;
                 i7 = i28;
             }
             int i312 = i7;
             ArrayList arrayList32 = arrayList;
-            z10 = z9;
+            z11 = z10;
             canvas.save();
             canvas.clipRect(f392, i11, f382, getMeasuredHeight() - this.s);
-            if (z10) {
+            if (z11) {
             }
             while (size >= 0) {
             }
@@ -783,23 +784,23 @@ public class q extends g {
     */
     public void n(Canvas canvas) {
         int i7;
-        boolean z9;
-        float f10;
         boolean z10;
+        float f10;
+        boolean z11;
         mg.b bVar;
-        if (this.h0 != null) {
+        if (this.i0 != null) {
             ArrayList arrayList = this.d;
             int size = arrayList.size();
             for (int i10 = 0; i10 < size; i10++) {
                 ((ng.i) arrayList.get(i10)).g.reset();
             }
-            mg.b bVar2 = this.h0;
+            mg.b bVar2 = this.i0;
             int i11 = ((mg.e) bVar2).n;
-            boolean[] zArr = this.G1;
+            boolean[] zArr = this.H1;
             if (zArr == null || zArr.length < ((mg.e) bVar2).d.size()) {
-                this.G1 = new boolean[((mg.e) this.h0).d.size()];
+                this.H1 = new boolean[((mg.e) this.i0).d.size()];
             }
-            boolean z11 = false;
+            boolean z12 = false;
             for (int i12 = 0; i12 < i11; i12++) {
                 float f11 = 0.0f;
                 float f12 = 0.0f;
@@ -808,7 +809,7 @@ public class q extends g {
                 for (int i15 = 0; i15 < arrayList.size(); i15++) {
                     ng.f fVar = (ng.f) arrayList.get(i15);
                     if (fVar.n || fVar.o != 0.0f) {
-                        if (((mg.e) this.h0).m[i15][i12] > 0) {
+                        if (((mg.e) this.i0).m[i15][i12] > 0) {
                             f12 += ((mg.e) r12).m[i15][i12] * fVar.o;
                             i13++;
                         }
@@ -816,125 +817,125 @@ public class q extends g {
                     }
                 }
                 int i16 = i11 - 1;
-                float f13 = (i12 / i16) * this.C0;
+                float f13 = (i12 / i16) * this.D0;
                 float f14 = 0.0f;
                 int i17 = 0;
                 while (i17 < arrayList.size()) {
                     ng.f fVar2 = (ng.f) arrayList.get(i17);
                     float f15 = f11;
-                    boolean z12 = fVar2.n;
+                    boolean z13 = fVar2.n;
                     Path path = fVar2.g;
-                    if (!z12 && fVar2.o == f15) {
+                    if (!z13 && fVar2.o == f15) {
                         i7 = i11;
                     } else if (i13 == 1) {
-                        if (((mg.e) this.h0).m[i17][i12] != 0) {
+                        if (((mg.e) this.i0).m[i17][i12] != 0) {
                             f10 = fVar2.o;
                             i7 = i11;
-                            z9 = z11;
-                            boolean z13 = (f10 == f15 || i17 != i14) ? z9 : true;
-                            int i18 = this.B0;
+                            z10 = z12;
+                            boolean z14 = (f10 == f15 || i17 != i14) ? z10 : true;
+                            int i18 = this.C0;
                             float f16 = f10 * i18;
                             float f17 = (i18 - f16) - f14;
                             if (i12 != 0) {
-                                z10 = z13;
+                                z11 = z14;
                                 path.moveTo(f15, i18);
-                                this.G1[i17] = false;
+                                this.H1[i17] = false;
                             } else {
-                                z10 = z13;
+                                z11 = z14;
                             }
-                            bVar = this.h0;
+                            bVar = this.i0;
                             if (((mg.e) bVar).m[i17][i12] == 0 || i12 <= 0 || ((mg.e) bVar).m[i17][i12 - 1] != 0 || i12 >= i16 || ((mg.e) bVar).m[i17][i12 + 1] != 0) {
-                                if (this.G1[i17]) {
+                                if (this.H1[i17]) {
                                     path.lineTo(f13, i18);
                                 }
                                 path.lineTo(f13, f17);
-                                this.G1[i17] = false;
+                                this.H1[i17] = false;
                             } else {
-                                if (!this.G1[i17]) {
+                                if (!this.H1[i17]) {
                                     path.lineTo(f13, i18);
                                 }
-                                this.G1[i17] = true;
+                                this.H1[i17] = true;
                             }
                             if (i12 == i16) {
-                                path.lineTo(this.C0, i18);
+                                path.lineTo(this.D0, i18);
                             }
                             f14 += f16;
-                            z11 = z10;
+                            z12 = z11;
                         }
                         i7 = i11;
-                        z9 = z11;
+                        z10 = z12;
                         f10 = f15;
                         if (f10 == f15) {
                         }
-                        int i182 = this.B0;
+                        int i182 = this.C0;
                         float f162 = f10 * i182;
                         float f172 = (i182 - f162) - f14;
                         if (i12 != 0) {
                         }
-                        bVar = this.h0;
+                        bVar = this.i0;
                         if (((mg.e) bVar).m[i17][i12] == 0) {
                         }
-                        if (this.G1[i17]) {
+                        if (this.H1[i17]) {
                         }
                         path.lineTo(f13, f172);
-                        this.G1[i17] = false;
+                        this.H1[i17] = false;
                         if (i12 == i16) {
                         }
                         f14 += f162;
-                        z11 = z10;
+                        z12 = z11;
                     } else {
                         if (f12 != f15) {
                             i7 = i11;
-                            z9 = z11;
-                            f10 = (((mg.e) this.h0).m[i17][i12] * fVar2.o) / f12;
+                            z10 = z12;
+                            f10 = (((mg.e) this.i0).m[i17][i12] * fVar2.o) / f12;
                             if (f10 == f15) {
                             }
-                            int i1822 = this.B0;
+                            int i1822 = this.C0;
                             float f1622 = f10 * i1822;
                             float f1722 = (i1822 - f1622) - f14;
                             if (i12 != 0) {
                             }
-                            bVar = this.h0;
+                            bVar = this.i0;
                             if (((mg.e) bVar).m[i17][i12] == 0) {
                             }
-                            if (this.G1[i17]) {
+                            if (this.H1[i17]) {
                             }
                             path.lineTo(f13, f1722);
-                            this.G1[i17] = false;
+                            this.H1[i17] = false;
                             if (i12 == i16) {
                             }
                             f14 += f1622;
-                            z11 = z10;
+                            z12 = z11;
                         }
                         i7 = i11;
-                        z9 = z11;
+                        z10 = z12;
                         f10 = f15;
                         if (f10 == f15) {
                         }
-                        int i18222 = this.B0;
+                        int i18222 = this.C0;
                         float f16222 = f10 * i18222;
                         float f17222 = (i18222 - f16222) - f14;
                         if (i12 != 0) {
                         }
-                        bVar = this.h0;
+                        bVar = this.i0;
                         if (((mg.e) bVar).m[i17][i12] == 0) {
                         }
-                        if (this.G1[i17]) {
+                        if (this.H1[i17]) {
                         }
                         path.lineTo(f13, f17222);
-                        this.G1[i17] = false;
+                        this.H1[i17] = false;
                         if (i12 == i16) {
                         }
                         f14 += f16222;
-                        z11 = z10;
+                        z12 = z11;
                     }
                     i17++;
                     i11 = i7;
                     f11 = 0.0f;
                 }
             }
-            if (z11) {
-                canvas.drawColor(m6.x0(null, m6.fk, false));
+            if (z12) {
+                canvas.drawColor(j6.x0(null, j6.ik, false));
             }
             for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
                 ng.f fVar3 = (ng.f) arrayList.get(size2);
@@ -949,12 +950,12 @@ public class q extends g {
         k(canvas);
         i(canvas);
         ArrayList arrayList = this.b;
-        this.m0 = arrayList.size();
+        this.n0 = arrayList.size();
         int i7 = 0;
         while (true) {
-            this.n0 = i7;
-            int i10 = this.n0;
-            if (i10 >= this.m0) {
+            this.o0 = i7;
+            int i10 = this.o0;
+            if (i10 >= this.n0) {
                 j(canvas);
                 m(canvas);
                 o(canvas);
@@ -962,8 +963,8 @@ public class q extends g {
                 return;
             }
             l(canvas, (ng.d) arrayList.get(i10));
-            p(canvas, (ng.d) arrayList.get(this.n0));
-            i7 = this.n0 + 1;
+            p(canvas, (ng.d) arrayList.get(this.o0));
+            i7 = this.o0 + 1;
         }
     }
 
@@ -977,28 +978,28 @@ public class q extends g {
         ArrayList arrayList;
         int i7;
         float f10;
-        mg.b bVar = this.h0;
+        mg.b bVar = this.i0;
         if (bVar == null) {
             return;
         }
-        float f11 = this.F0;
-        j jVar2 = this.g0;
+        float f11 = this.G0;
+        j jVar2 = this.h0;
         float f12 = jVar2.l;
         float f13 = jVar2.k;
         float f14 = f11 / (f12 - f13);
-        float f15 = g.k1;
+        float f15 = g.l1;
         float f16 = (f13 * f14) - f15;
         int i10 = 2;
         int i11 = 1;
         int i12 = ((int) (f15 / (((mg.e) bVar).b.length < 2 ? 1.0f : ((mg.e) bVar).b[1] * f14))) + 1;
         int i13 = 0;
-        int max = Math.max(0, (this.F - i12) - 1);
-        int min = Math.min(((mg.e) this.h0).b.length - 1, this.G + i12 + 1);
-        this.z0.g = new float[((mg.e) this.h0).d.size()];
-        this.z0.h = new float[((mg.e) this.h0).d.size()];
-        this.z0.i = new float[((mg.e) this.h0).d.size()];
-        this.z0.j = new float[((mg.e) this.h0).d.size()];
-        this.z0.k = new float[((mg.e) this.h0).d.size()];
+        int max = Math.max(0, (this.G - i12) - 1);
+        int min = Math.min(((mg.e) this.i0).b.length - 1, this.H + i12 + 1);
+        this.A0.g = new float[((mg.e) this.i0).d.size()];
+        this.A0.h = new float[((mg.e) this.i0).d.size()];
+        this.A0.i = new float[((mg.e) this.i0).d.size()];
+        this.A0.j = new float[((mg.e) this.i0).d.size()];
+        this.A0.k = new float[((mg.e) this.i0).d.size()];
         int i14 = 0;
         while (i14 < i10) {
             int i15 = i14 == i11 ? min : max;
@@ -1030,25 +1031,25 @@ public class q extends g {
                         if (jArr[i15] != 0) {
                             f10 = fVar2.o;
                             i7 = i14;
-                            float f18 = (((mg.e) this.h0).b[i15] * f14) - f16;
-                            float measuredHeight = f10 * ((getMeasuredHeight() - this.s) - g.n1);
+                            float f18 = (((mg.e) this.i0).b[i15] * f14) - f16;
+                            float measuredHeight = f10 * ((getMeasuredHeight() - this.s) - g.o1);
                             float f19 = i19;
                             float measuredHeight2 = ((getMeasuredHeight() - this.s) - measuredHeight) - f19;
                             i19 = (int) (f19 + measuredHeight);
                             if (i7 != 0) {
-                                ng.j jVar3 = this.z0;
+                                ng.j jVar3 = this.A0;
                                 jVar3.g[i18] = f18;
                                 jVar3.h[i18] = measuredHeight2;
                             } else {
-                                ng.j jVar4 = this.z0;
+                                ng.j jVar4 = this.A0;
                                 jVar4.i[i18] = f18;
                                 jVar4.j[i18] = measuredHeight2;
                             }
                         }
                         i7 = i14;
                         f10 = 0.0f;
-                        float f182 = (((mg.e) this.h0).b[i15] * f14) - f16;
-                        float measuredHeight3 = f10 * ((getMeasuredHeight() - this.s) - g.n1);
+                        float f182 = (((mg.e) this.i0).b[i15] * f14) - f16;
+                        float measuredHeight3 = f10 * ((getMeasuredHeight() - this.s) - g.o1);
                         float f192 = i19;
                         float measuredHeight22 = ((getMeasuredHeight() - this.s) - measuredHeight3) - f192;
                         i19 = (int) (f192 + measuredHeight3);
@@ -1058,8 +1059,8 @@ public class q extends g {
                         if (f17 != 0.0f) {
                             i7 = i14;
                             f10 = (jArr[i15] * fVar2.o) / f17;
-                            float f1822 = (((mg.e) this.h0).b[i15] * f14) - f16;
-                            float measuredHeight32 = f10 * ((getMeasuredHeight() - this.s) - g.n1);
+                            float f1822 = (((mg.e) this.i0).b[i15] * f14) - f16;
+                            float measuredHeight32 = f10 * ((getMeasuredHeight() - this.s) - g.o1);
                             float f1922 = i19;
                             float measuredHeight222 = ((getMeasuredHeight() - this.s) - measuredHeight32) - f1922;
                             i19 = (int) (f1922 + measuredHeight32);
@@ -1068,8 +1069,8 @@ public class q extends g {
                         }
                         i7 = i14;
                         f10 = 0.0f;
-                        float f18222 = (((mg.e) this.h0).b[i15] * f14) - f16;
-                        float measuredHeight322 = f10 * ((getMeasuredHeight() - this.s) - g.n1);
+                        float f18222 = (((mg.e) this.i0).b[i15] * f14) - f16;
+                        float measuredHeight322 = f10 * ((getMeasuredHeight() - this.s) - g.o1);
                         float f19222 = i19;
                         float measuredHeight2222 = ((getMeasuredHeight() - this.s) - measuredHeight322) - f19222;
                         i19 = (int) (f19222 + measuredHeight322);

@@ -1,104 +1,187 @@
 package org.telegram.messenger;
 
+import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
-import java.util.HashMap;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bo implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ c1 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ bo(Object obj, int i7, Object obj2, int i10) {
+    public /* synthetic */ bo(c1 c1Var, int i7, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = i7;
-        this.d = obj2;
+        this.b = c1Var;
+        this.c = i7;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x016d  */
     @Override // org.telegram.tgnet.RequestDelegate
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i7;
+        int i10;
+        int size;
+        int i11;
+        TLRPC.Chat chat;
+        np npVar;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        TLRPC.Message message;
+        int i12;
+        TLRPC.Chat chat2;
+        TLRPC.Chat chat3;
+        ArrayList arrayList3;
         switch (this.a) {
             case 0:
-                qp qpVar = (qp) this.c;
-                String str = (String) this.d;
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    boolean z9 = r2.a;
-                    int i7 = this.b;
-                    if (z9) {
-                        a8.b("account " + qpVar.currentAccount + " registered for push, push type: " + i7);
+                np npVar2 = (np) this.b;
+                ConcurrentHashMap concurrentHashMap = npVar2.Q;
+                ConcurrentHashMap concurrentHashMap2 = npVar2.P;
+                Integer num = 0;
+                if (tLObject != null) {
+                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = (TLRPC.TL_messages_peerDialogs) tLObject;
+                    ArrayList arrayList4 = new ArrayList(tL_messages_peerDialogs.dialogs);
+                    npVar2.v0(tL_messages_peerDialogs);
+                    TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
+                    tL_messages_dialogs.users.addAll(tL_messages_peerDialogs.users);
+                    tL_messages_dialogs.chats.addAll(tL_messages_peerDialogs.chats);
+                    tL_messages_dialogs.dialogs.addAll(tL_messages_peerDialogs.dialogs);
+                    tL_messages_dialogs.messages.addAll(tL_messages_peerDialogs.messages);
+                    a0.h hVar = new a0.h();
+                    a0.h hVar2 = new a0.h();
+                    a0.h hVar3 = new a0.h();
+                    int i13 = 0;
+                    while (i13 < tL_messages_peerDialogs.users.size()) {
+                        TLRPC.User user = tL_messages_peerDialogs.users.get(i13);
+                        hVar2.k(user, user.id);
+                        i13++;
+                        num = num;
                     }
-                    qpVar.getUserConfig().d = true;
-                    iz.g = str;
-                    iz.f = i7;
-                    qpVar.getUserConfig().v(false);
+                    Integer num2 = num;
+                    for (int i14 = 0; i14 < tL_messages_peerDialogs.chats.size(); i14++) {
+                        TLRPC.Chat chat4 = tL_messages_peerDialogs.chats.get(i14);
+                        hVar3.k(chat4, chat4.id);
+                    }
+                    ArrayList arrayList5 = new ArrayList();
+                    int i15 = 0;
+                    while (i15 < tL_messages_peerDialogs.messages.size()) {
+                        TLRPC.Message message2 = tL_messages_peerDialogs.messages.get(i15);
+                        TLRPC.Peer peer = message2.peer_id;
+                        int i16 = i15;
+                        TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs2 = tL_messages_peerDialogs;
+                        long j3 = peer.channel_id;
+                        if (j3 != 0) {
+                            TLRPC.Chat chat5 = (TLRPC.Chat) hVar3.f(j3);
+                            if (chat5 != null && chat5.left) {
+                            }
+                            gj gjVar = new gj(npVar2.currentAccount, message2, hVar2, hVar3, false, false);
+                            arrayList5.add(gjVar);
+                            long B0 = gj.B0(gjVar.k);
+                            arrayList3 = (ArrayList) hVar.f(B0);
+                            if (arrayList3 == null) {
+                                arrayList3 = new ArrayList();
+                            }
+                            arrayList3.add(gjVar);
+                            hVar.k(arrayList3, B0);
+                        } else {
+                            long j10 = peer.chat_id;
+                            if (j10 != 0 && (chat3 = (TLRPC.Chat) hVar3.f(j10)) != null && chat3.migrated_to != null) {
+                            }
+                            gj gjVar2 = new gj(npVar2.currentAccount, message2, hVar2, hVar3, false, false);
+                            arrayList5.add(gjVar2);
+                            long B02 = gj.B0(gjVar2.k);
+                            arrayList3 = (ArrayList) hVar.f(B02);
+                            if (arrayList3 == null) {
+                            }
+                            arrayList3.add(gjVar2);
+                            hVar.k(arrayList3, B02);
+                        }
+                        i15 = i16 + 1;
+                        tL_messages_peerDialogs = tL_messages_peerDialogs2;
+                    }
+                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs3 = tL_messages_peerDialogs;
+                    boolean z10 = true;
+                    if (!arrayList4.isEmpty()) {
+                        i7 = 0;
+                        if (arrayList4.get(0) instanceof TLRPC.TL_dialogFolder) {
+                            i10 = 1;
+                            size = arrayList4.size();
+                            i11 = i7;
+                            while (i11 < size) {
+                                TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList4.get(i11);
+                                dialog.pinned = z10;
+                                m5.x(dialog);
+                                if (!m5.y(dialog) ? !m5.z(dialog.id) || (chat = (TLRPC.Chat) hVar3.f(-dialog.id)) == null || chat.migrated_to == null : (chat2 = (TLRPC.Chat) hVar3.f(-dialog.id)) == null || !chat2.left) {
+                                    if (dialog.last_message_date == 0 && (arrayList2 = (ArrayList) hVar.f(dialog.id)) != null) {
+                                        int i17 = TLObject.FLAG_31;
+                                        for (int i18 = 0; i18 < arrayList2.size(); i18++) {
+                                            gj gjVar3 = (gj) arrayList2.get(i18);
+                                            if (gjVar3 != null && (message = gjVar3.k) != null && (i12 = message.date) > i17) {
+                                                i17 = i12;
+                                            }
+                                        }
+                                        if (i17 > Integer.MIN_VALUE) {
+                                            dialog.last_message_date = i17;
+                                        }
+                                    }
+                                    Integer num3 = (Integer) concurrentHashMap2.get(Long.valueOf(dialog.id));
+                                    if (num3 == null) {
+                                        num3 = num2;
+                                    }
+                                    npVar = npVar2;
+                                    arrayList = arrayList4;
+                                    concurrentHashMap2.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num3.intValue(), dialog.read_inbox_max_id)));
+                                    Integer num4 = (Integer) concurrentHashMap.get(Long.valueOf(dialog.id));
+                                    if (num4 == null) {
+                                        num4 = num2;
+                                    }
+                                    concurrentHashMap.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num4.intValue(), dialog.read_outbox_max_id)));
+                                } else {
+                                    npVar = npVar2;
+                                    arrayList = arrayList4;
+                                }
+                                i11++;
+                                npVar2 = npVar;
+                                arrayList4 = arrayList;
+                                z10 = true;
+                            }
+                            npVar2.getMessagesStorage().a.c(new vj(npVar2, this.c, arrayList4, i10, tL_messages_peerDialogs3, hVar, tL_messages_dialogs, 0));
+                            break;
+                        }
+                    } else {
+                        i7 = 0;
+                    }
+                    i10 = i7;
+                    size = arrayList4.size();
+                    i11 = i7;
+                    while (i11 < size) {
+                    }
+                    npVar2.getMessagesStorage().a.c(new vj(npVar2, this.c, arrayList4, i10, tL_messages_peerDialogs3, hVar, tL_messages_dialogs, 0));
                 }
-                g0.h3(new vj(qpVar, 4));
                 break;
             case 1:
-                i7 i7Var = (i7) this.c;
-                h7 h7Var = (h7) this.d;
-                i7Var.z0 = false;
-                boolean z10 = tLObject instanceof Vector;
-                int i10 = this.b;
-                if (z10) {
-                    Vector vector = (Vector) tLObject;
-                    if (!vector.objects.isEmpty()) {
-                        if (i7Var.q0 == null) {
-                            i7Var.q0 = new HashMap();
-                        }
-                        for (int i11 = 0; i11 < vector.objects.size(); i11++) {
-                            TLRPC.TL_fileHash tL_fileHash = (TLRPC.TL_fileHash) vector.objects.get(i11);
-                            i7Var.q0.put(Long.valueOf(tL_fileHash.offset), tL_fileHash);
-                        }
-                    }
-                    i7Var.s(i10);
-                    break;
-                } else if (tL_error != null) {
-                    if (!tL_error.text.equals("FILE_TOKEN_INVALID") && !tL_error.text.equals("REQUEST_TOKEN_INVALID")) {
-                        i7Var.j(0, false);
-                        break;
-                    } else {
-                        i7Var.u0 = false;
-                        i7Var.e(h7Var, false, false);
-                        i7Var.s(i10);
-                        break;
-                    }
-                }
+                g0.h3(new l7((np) this.b, tLObject, this.c, 12));
                 break;
             case 2:
-                g0.h3(new l7((ui) this.c, (TLRPC.StickerSet) this.d, this.b, 9));
-                break;
-            case 3:
-                ui uiVar = (ui) this.c;
-                c20 c20Var = (c20) this.d;
-                boolean z11 = tLObject instanceof TLRPC.TL_messages_stickerSet;
-                int i12 = this.b;
-                if (z11) {
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add((TLRPC.TL_messages_stickerSet) tLObject);
-                    uiVar.z1(i12, arrayList, false, (int) (System.currentTimeMillis() / 1000), ui.q(arrayList), new rf(c20Var, 4));
+                np npVar3 = (np) this.b;
+                if (tL_error == null) {
+                    npVar3.getMessagesStorage().a.c(new l7(npVar3, (TLRPC.messages_Dialogs) tLObject, this.c, 14));
                     break;
                 } else {
-                    uiVar.z1(i12, null, false, (int) (System.currentTimeMillis() / 1000), 0L, new rf(c20Var, 5));
+                    g0.h3(new tj(npVar3, 26));
                     break;
                 }
             default:
-                g0.h3(new dg((qp) this.c, tLObject, this.b, (so) this.d));
+                g0.h3(new cg((g5) this.b, tL_error, tLObject, this.c, 4));
                 break;
         }
-    }
-
-    public /* synthetic */ bo(ui uiVar, TLRPC.StickerSet stickerSet, int i7) {
-        this.a = 2;
-        this.c = uiVar;
-        this.d = stickerSet;
-        this.b = i7;
     }
 }

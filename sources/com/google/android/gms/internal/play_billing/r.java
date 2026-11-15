@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.a9;
-import a8.d9;
+import a8.c9;
+import a8.f9;
 import j$.util.List;
 import java.util.Collection;
 import java.util.Comparator;
@@ -11,7 +11,7 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class r extends o implements List, RandomAccess, j$.util.List {
     public static final p b = new p(v.e, 0);
@@ -25,7 +25,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
         if (!(list instanceof o)) {
             Object[] array = list.toArray();
             int length = array.length;
-            d9.a(length, array);
+            f9.a(length, array);
             return o(length, array);
         }
         r k10 = ((o) list).k();
@@ -146,7 +146,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: n */
     public r subList(int i7, int i10) {
-        a9.c(i7, i10, size());
+        c9.c(i7, i10, size());
         int i11 = i10 - i7;
         return i11 == size() ? this : i11 == 0 ? v.e : new q(this, i7, i11);
     }
@@ -154,7 +154,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: q, reason: merged with bridge method [inline-methods] */
     public final p listIterator(int i7) {
-        a9.b(i7, size());
+        c9.b(i7, size());
         return isEmpty() ? b : new p(this, i7);
     }
 

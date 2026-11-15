@@ -1,10 +1,10 @@
 package androidx.lifecycle;
 
-import a8.ra;
+import a8.sa;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -17,12 +17,12 @@ public class z {
     public int g;
     public boolean h;
     public boolean i;
-    public final ra j;
+    public final sa j;
 
     public z() {
         Object obj = k;
         this.f = obj;
-        this.j = new ra(this, 7);
+        this.j = new sa(this, 9);
         this.e = obj;
         this.g = -1;
     }
@@ -46,7 +46,7 @@ public class z {
                 return;
             }
             yVar.c = i10;
-            yVar.a.X(this.e);
+            yVar.a.o(this.e);
         }
     }
 
@@ -112,25 +112,25 @@ public class z {
         tVar.m().a(liveData$LifecycleBoundObserver);
     }
 
-    public final void e(d6.i iVar) {
+    public final void e(ob.c cVar) {
         Object obj;
         a("observeForever");
-        x xVar = new x(this, iVar);
+        x xVar = new x(this, cVar);
         o.f fVar = this.b;
-        o.c f10 = fVar.f(iVar);
+        o.c f10 = fVar.f(cVar);
         if (f10 != null) {
             obj = f10.b;
         } else {
-            o.c cVar = new o.c(iVar, xVar);
+            o.c cVar2 = new o.c(cVar, xVar);
             fVar.d++;
-            o.c cVar2 = fVar.b;
-            if (cVar2 == null) {
-                fVar.a = cVar;
-                fVar.b = cVar;
+            o.c cVar3 = fVar.b;
+            if (cVar3 == null) {
+                fVar.a = cVar2;
+                fVar.b = cVar2;
             } else {
-                cVar2.c = cVar;
-                cVar.d = cVar2;
-                fVar.b = cVar;
+                cVar3.c = cVar2;
+                cVar2.d = cVar3;
+                fVar.b = cVar2;
             }
             obj = null;
         }
@@ -145,12 +145,12 @@ public class z {
     }
 
     public final void h(Object obj) {
-        boolean z9;
+        boolean z10;
         synchronized (this.a) {
-            z9 = this.f == k;
+            z10 = this.f == k;
             this.f = obj;
         }
-        if (z9) {
+        if (z10) {
             n.a.a().b(this.j);
         }
     }

@@ -1,23 +1,55 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class p2 extends ScrollView {
-    public final /* synthetic */ int a;
+public final class p2 implements q2 {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ org.telegram.utils.twidget.i0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p2(Context context, int i7) {
-        super(context);
-        this.a = i7;
+    public p2(boolean[] zArr, org.telegram.utils.twidget.i0 i0Var) {
+        this.a = zArr;
+        this.b = i0Var;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(this.a)), TLObject.FLAG_31));
+    @Override // org.telegram.ui.Wallet.q2
+    public final void a() {
+        boolean[] zArr = this.a;
+        if (zArr[0]) {
+            return;
+        }
+        zArr[0] = true;
+        this.b.a();
+    }
+
+    @Override // org.telegram.ui.Wallet.q2
+    public final void b() {
+        boolean[] zArr = this.a;
+        if (zArr[0]) {
+            return;
+        }
+        zArr[0] = true;
+        this.b.b();
+    }
+
+    public final void c() {
+        boolean[] zArr = this.a;
+        if (zArr[0]) {
+            return;
+        }
+        zArr[0] = true;
+        org.telegram.utils.twidget.i0 i0Var = this.b;
+        i0Var.b.b(4, null, i0Var.c);
+    }
+
+    public final void d(TLRPC.WidgetQueryType widgetQueryType) {
+        boolean[] zArr = this.a;
+        if (zArr[0]) {
+            return;
+        }
+        zArr[0] = true;
+        org.telegram.utils.twidget.i0 i0Var = this.b;
+        org.telegram.utils.twidget.n0.w(i0Var.a, i0Var.b, i0Var.c, widgetQueryType, i0Var.d);
     }
 }

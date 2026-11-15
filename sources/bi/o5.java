@@ -1,107 +1,193 @@
 package bi;
 
-import android.app.Activity;
-import android.text.SpannableStringBuilder;
+import di.n8;
 import java.util.ArrayList;
-import org.telegram.messenger.c20;
+import java.util.HashMap;
+import java.util.HashSet;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.wq;
-import org.telegram.ui.cn;
-import org.telegram.ui.ui;
-import org.telegram.ui.vg;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o5 implements c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+public final class o5 implements n8 {
+    public final int a;
+    public final long b;
+    public final z10 c;
+    public int e;
+    public long i;
+    public String q;
+    public boolean r;
+    public boolean s;
+    public boolean t;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public final HashSet j = new HashSet();
+    public final HashSet k = new HashSet();
+    public final HashSet l = new HashSet();
+    public final HashMap m = new HashMap();
+    public final HashMap n = new HashMap();
+    public final HashMap o = new HashMap();
+    public n5 p = n5.a;
+    public boolean u = false;
+    public int v = -1;
 
-    public /* synthetic */ o5(Object obj, long j3, long j10, int i7) {
+    public o5(int i7, long j3, z10 z10Var) {
         this.a = i7;
-        this.d = obj;
         this.b = j3;
-        this.c = j10;
+        this.c = z10Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x010c A[LOOP:1: B:35:0x0108->B:37:0x010c, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0140  */
-    @Override // org.telegram.messenger.c20
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(Object obj) {
-        SpannableStringBuilder spannableStringBuilder;
-        int size;
-        int i7;
-        org.telegram.ui.ActionBar.h6 h6Var;
-        int i10 = this.a;
-        Object obj2 = this.d;
-        switch (i10) {
-            case 0:
-                d6 d6Var = (d6) obj2;
-                ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.Components.p5 p5Var = d6Var.E;
-                if (this.b == this.c) {
-                    d6Var.d0 = arrayList;
-                    p5Var.animate().alpha(d6Var.s ? 0.0f : d6Var.d0 != null ? 1.0f : 0.25f).setInterpolator(wq.h).setDuration(420L).start();
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if ((arrayList.get(i11) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i11)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
-                            arrayList2.add((TL_stars.starGiftAttributeModel) arrayList.get(i11));
-                            if (arrayList2.size() >= 3) {
-                                spannableStringBuilder = new SpannableStringBuilder();
-                                size = arrayList2.size();
-                                i7 = 0;
-                                while (i7 < size) {
-                                    Object obj3 = arrayList2.get(i7);
-                                    i7++;
-                                    spannableStringBuilder.append((CharSequence) "x");
-                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.q5(((TL_stars.starGiftAttributeModel) obj3).document, p5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                                    spannableStringBuilder.append((CharSequence) " ");
-                                }
-                                if (spannableStringBuilder.length() > 0) {
-                                    spannableStringBuilder.append((CharSequence) " ");
-                                }
-                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.id.M0(2131749754, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
-                                p5Var.setText(spannableStringBuilder);
-                                break;
-                            }
+    @Override // di.n8
+    public final void a() {
+        g(false);
+    }
+
+    @Override // di.n8
+    public final int b(int i7) {
+        return -1;
+    }
+
+    @Override // di.n8
+    public final int c() {
+        return this.e;
+    }
+
+    @Override // di.n8
+    public final int e() {
+        return this.d.size();
+    }
+
+    public final void f() {
+        if (this.v >= 0) {
+            ConnectionsManager.getInstance(this.a).cancelRequest(this.v, true);
+            this.v = -1;
+        }
+        this.t = false;
+    }
+
+    public final void g(boolean z10) {
+        if (this.t) {
+            return;
+        }
+        if (z10 || !this.u) {
+            this.t = true;
+            TL_stars.getResaleStarGifts getresalestargifts = new TL_stars.getResaleStarGifts();
+            getresalestargifts.gift_id = this.b;
+            String str = this.q;
+            if (str == null) {
+                str = "";
+            }
+            getresalestargifts.offset = str;
+            getresalestargifts.limit = 15;
+            getresalestargifts.for_craft = this.s;
+            getresalestargifts.stars_only = this.r;
+            n5 n5Var = this.p;
+            int i7 = 0;
+            if (n5Var == n5.c) {
+                getresalestargifts.sort_by_num = true;
+                getresalestargifts.sort_by_price = false;
+            } else if (n5Var == n5.b) {
+                getresalestargifts.sort_by_num = false;
+                getresalestargifts.sort_by_price = false;
+            } else if (n5Var == n5.a) {
+                getresalestargifts.sort_by_num = false;
+                getresalestargifts.sort_by_price = true;
+            }
+            long j3 = this.i;
+            ArrayList arrayList = this.h;
+            ArrayList arrayList2 = this.g;
+            ArrayList arrayList3 = this.f;
+            if (j3 != 0) {
+                getresalestargifts.flags = 1 | getresalestargifts.flags;
+                getresalestargifts.attributes_hash = j3;
+            } else if (arrayList3.isEmpty() && arrayList2.isEmpty() && arrayList.isEmpty()) {
+                getresalestargifts.flags = 1 | getresalestargifts.flags;
+                getresalestargifts.attributes_hash = 0L;
+            }
+            HashSet hashSet = this.j;
+            boolean isEmpty = hashSet.isEmpty();
+            HashSet hashSet2 = this.l;
+            HashSet hashSet3 = this.k;
+            if (!isEmpty || !hashSet3.isEmpty() || !hashSet2.isEmpty()) {
+                getresalestargifts.flags |= 8;
+                if (!hashSet.isEmpty()) {
+                    int size = arrayList3.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        Object obj = arrayList3.get(i10);
+                        i10++;
+                        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj;
+                        if (!hashSet.contains(Long.valueOf(stargiftattributemodel.document.id))) {
+                            TL_stars.starGiftAttributeIdModel stargiftattributeidmodel = new TL_stars.starGiftAttributeIdModel();
+                            stargiftattributeidmodel.document_id = stargiftattributemodel.document.id;
+                            getresalestargifts.attributes.add(stargiftattributeidmodel);
                         }
                     }
-                    spannableStringBuilder = new SpannableStringBuilder();
-                    size = arrayList2.size();
-                    i7 = 0;
-                    while (i7 < size) {
-                    }
-                    if (spannableStringBuilder.length() > 0) {
-                    }
-                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.id.M0(2131749754, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
-                    p5Var.setText(spannableStringBuilder);
                 }
-                break;
-            case 1:
-                cn.m1((cn) obj2, this.b, this.c, (Long) obj);
-                break;
-            default:
-                ui uiVar = (ui) obj2;
-                Long l10 = (Long) obj;
-                cn cnVar = uiVar.b;
-                if (cnVar.getParentActivity() != null) {
-                    Activity parentActivity = cnVar.getParentActivity();
-                    String M0 = org.telegram.messenger.id.M0(2131746291, null);
-                    int i12 = org.telegram.messenger.t3.p0(cnVar.e) ? 2131746295 : 2131746296;
-                    long j3 = this.b;
-                    SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, i12, org.telegram.messenger.m5.t(j3)));
-                    String H = l10.longValue() > 0 ? org.telegram.messenger.id.H(',', "RemoveMessageFeeRefund", (int) l10.longValue()) : null;
-                    String M02 = org.telegram.messenger.id.M0(2131751817, null);
-                    vg vgVar = new vg(uiVar, j3, this.c, l10, 1);
-                    h6Var = ((org.telegram.ui.ActionBar.f2) cnVar).resourceProvider;
-                    org.telegram.ui.Components.u4.f0(parentActivity, M0, X2, H, M02, vgVar, h6Var, true);
-                    break;
+                if (!hashSet3.isEmpty()) {
+                    int size2 = arrayList2.size();
+                    int i11 = 0;
+                    while (i11 < size2) {
+                        Object obj2 = arrayList2.get(i11);
+                        i11++;
+                        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj2;
+                        if (!hashSet3.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id))) {
+                            TL_stars.starGiftAttributeIdBackdrop stargiftattributeidbackdrop = new TL_stars.starGiftAttributeIdBackdrop();
+                            stargiftattributeidbackdrop.backdrop_id = stargiftattributebackdrop.backdrop_id;
+                            getresalestargifts.attributes.add(stargiftattributeidbackdrop);
+                        }
+                    }
                 }
-                break;
+                if (!hashSet2.isEmpty()) {
+                    int size3 = arrayList.size();
+                    while (i7 < size3) {
+                        Object obj3 = arrayList.get(i7);
+                        i7++;
+                        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj3;
+                        if (!hashSet2.contains(Long.valueOf(stargiftattributepattern.document.id))) {
+                            TL_stars.starGiftAttributeIdPattern stargiftattributeidpattern = new TL_stars.starGiftAttributeIdPattern();
+                            stargiftattributeidpattern.document_id = stargiftattributepattern.document.id;
+                            getresalestargifts.attributes.add(stargiftattributeidpattern);
+                        }
+                    }
+                }
+            }
+            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new v2(1, this, getresalestargifts));
         }
+    }
+
+    @Override // di.n8
+    public final Object get(int i7) {
+        return this.d.get(i7);
+    }
+
+    public final void h() {
+        f();
+        this.q = null;
+        this.d.clear();
+        g(true);
+        z10 z10Var = this.c;
+        if (z10Var != null) {
+            z10Var.a(Boolean.TRUE);
+        }
+    }
+
+    public final void i(n5 n5Var) {
+        if (this.p != n5Var) {
+            this.p = n5Var;
+            h();
+        }
+    }
+
+    @Override // di.n8
+    public final int indexOf(Object obj) {
+        return this.d.indexOf(obj);
+    }
+
+    @Override // di.n8
+    public final void d() {
     }
 }

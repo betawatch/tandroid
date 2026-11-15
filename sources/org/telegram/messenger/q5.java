@@ -7,7 +7,7 @@ import android.os.Process;
 import android.os.SystemClock;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class q5 extends Thread {
     private static final int THREAD_PRIORITY_DEFAULT = -1000;
@@ -18,13 +18,13 @@ public class q5 extends Thread {
     private volatile Handler handler = null;
     private CountDownLatch syncLatch = new CountDownLatch(1);
 
-    public q5(String str, boolean z9) {
+    public q5(String str, boolean z10) {
         int i7 = indexPointer;
         indexPointer = i7 + 1;
         this.index = i7;
         this.threadPriority = THREAD_PRIORITY_DEFAULT;
         setName(str);
-        if (z9) {
+        if (z10) {
             start();
         }
     }

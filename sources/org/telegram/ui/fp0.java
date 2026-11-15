@@ -1,22 +1,85 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import android.widget.ImageView;
+import android.view.MotionEvent;
+import org.telegram.messenger.video.VideoFramesRewinder;
+import org.telegram.messenger.video.VideoPlayerRewinder;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class fp0 implements DialogInterface.OnDismissListener {
+public final class fp0 extends VideoPlayerRewinder {
     public final /* synthetic */ PhotoViewer a;
 
-    public fp0(PhotoViewer photoViewer) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fp0(PhotoViewer photoViewer, VideoFramesRewinder videoFramesRewinder) {
+        super(videoFramesRewinder);
         this.a = photoViewer;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        ImageView imageView = this.a.D3;
-        if (imageView != null) {
-            imageView.animate().alpha(0.0f).withEndAction(new hf0(this, 19)).setDuration(150L).start();
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindCanceled() {
+        wi.h hVar;
+        MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+        PhotoViewer photoViewer = this.a;
+        PhotoViewer.c(photoViewer, obtain);
+        photoViewer.A1.f(false);
+        wi.n nVar = photoViewer.P8;
+        if (nVar == null || (hVar = nVar.e) == null) {
+            return;
+        }
+        hVar.F.f(false);
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindStart(boolean z10) {
+        wi.h hVar;
+        PhotoViewer photoViewer = this.a;
+        photoViewer.A1.e(false);
+        boolean z11 = !z10;
+        photoViewer.A1.d(z11);
+        photoViewer.A1.f(true);
+        photoViewer.f0.invalidate();
+        wi.n nVar = photoViewer.P8;
+        if (nVar == null || (hVar = nVar.e) == null) {
+            return;
+        }
+        org.telegram.ui.Components.m51 m51Var = hVar.F;
+        m51Var.e(false);
+        m51Var.d(z11);
+        m51Var.f(true);
+        fi.w2 w2Var = hVar.o;
+        if (w2Var != null) {
+            w2Var.invalidate();
+        }
+        wi.d dVar = hVar.m;
+        if (dVar != null) {
+            dVar.invalidate();
+        }
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void updateRewindProgressUi(long j3, float f10, boolean z10) {
+        wi.h hVar;
+        PhotoViewer photoViewer = this.a;
+        photoViewer.A1.g(Math.abs(j3));
+        if (z10) {
+            photoViewer.q3.h(false, f10);
+            photoViewer.r3.invalidate();
+        }
+        wi.n nVar = photoViewer.P8;
+        if (nVar == null || (hVar = nVar.e) == null) {
+            return;
+        }
+        hVar.F.g(0L);
+        if (z10) {
+            hVar.I = f10;
+            fi.w2 w2Var = hVar.o;
+            if (w2Var != null) {
+                w2Var.invalidate();
+            }
+            wi.d dVar = hVar.m;
+            if (dVar != null) {
+                dVar.invalidate();
+            }
         }
     }
 }

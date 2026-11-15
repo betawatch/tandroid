@@ -1,13 +1,45 @@
 package bi;
 
-import android.view.MotionEvent;
-import org.telegram.ui.Components.EditTextBoldCursor;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class y0 extends EditTextBoldCursor {
-    @Override // org.telegram.ui.Components.ct, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
+public final /* synthetic */ class y0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f1 b;
+
+    public /* synthetic */ y0(f1 f1Var, int i7) {
+        this.a = i7;
+        this.b = f1Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                f1 f1Var = this.b;
+                rh.h hVar = f1Var.r1;
+                jh.f fVar = f1Var.q1;
+                if (fVar != null) {
+                    fVar.d();
+                }
+                d1 d1Var = f1Var.C1;
+                if (d1Var != null) {
+                    d1Var.setTranslationY(-hVar.d());
+                }
+                org.telegram.ui.Components.h6 h6Var = f1Var.w1;
+                if (h6Var != null) {
+                    h6Var.setTranslationY(-hVar.d());
+                }
+                f1Var.I0();
+                break;
+            case 1:
+                this.b.C1.performClick();
+                break;
+            case 2:
+                this.b.s1.X0();
+                break;
+            default:
+                this.b.dismiss();
+                break;
+        }
     }
 }

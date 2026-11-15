@@ -1,69 +1,55 @@
 package di;
 
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.wq;
+import android.os.Bundle;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q9 b;
+    public final /* synthetic */ long b;
 
-    public /* synthetic */ l3(q9 q9Var, int i7) {
+    public /* synthetic */ l3(long j3, int i7) {
         this.a = i7;
-        this.b = q9Var;
+        this.b = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.V();
-                break;
-            case 1:
-                q9 q9Var = this.b;
-                q9Var.c0 = true;
-                q9Var.o(true);
-                break;
-            case 2:
-                q9 q9Var2 = this.b;
-                if (q9Var2.F != null) {
-                    f9 f9Var = q9Var2.w;
-                    if (f9Var != null) {
-                        v.c = true;
-                        f9Var.setLayerType(2, null);
-                    }
-                    q9Var2.F.addListener(new z8(q9Var2, 0));
-                    q9Var2.F.setDuration(320L);
-                    q9Var2.F.setInterpolator(wq.h);
-                    q9Var2.F.start();
+                org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
+                if (T != null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", this.b);
+                    bundle.putBoolean("my_profile", true);
+                    bundle.putBoolean("open_gifts", true);
+                    T.presentFragment(new ProfileActivity(bundle, null));
                     break;
                 }
                 break;
-            case 3:
-                q9 q9Var3 = this.b;
-                q9Var3.v0 = null;
-                q9Var3.V();
-                break;
-            case 4:
-                this.b.R(true);
-                break;
-            case 5:
-                q9 q9Var4 = this.b;
-                q9Var4.W();
-                n9 n9Var = q9Var4.s0;
-                ImageReceiver imageReceiver = n9Var.b;
-                if (imageReceiver != null) {
-                    imageReceiver.O0(false, true);
+            case 1:
+                org.telegram.ui.ActionBar.e2 T2 = LaunchActivity.T();
+                if (T2 != null) {
+                    T2.presentFragment(an.ua(this.b));
+                    break;
                 }
-                ImageReceiver imageReceiver2 = n9Var.c;
-                if (imageReceiver2 != null) {
-                    imageReceiver2.O0(false, true);
+                break;
+            case 2:
+                org.telegram.ui.ActionBar.e2 T3 = LaunchActivity.T();
+                if (T3 != null) {
+                    T3.presentFragment(an.ua(this.b));
                     break;
                 }
                 break;
             default:
-                this.b.m();
+                org.telegram.ui.ActionBar.e2 T4 = LaunchActivity.T();
+                if (T4 != null) {
+                    T4.presentFragment(an.ua(this.b));
+                    break;
+                }
                 break;
         }
     }

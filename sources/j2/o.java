@@ -1,187 +1,22 @@
 package j2;
 
-import a8.ia;
-import android.content.Context;
-import android.net.Uri;
-import android.text.TextUtils;
-import h2.m0;
-import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Map;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class o implements h {
-    public final Context a;
-    public final ArrayList b;
-    public final h c;
-    public u d;
-    public b e;
-    public e f;
-    public h h;
-    public f0 n;
-    public f r;
-    public b0 s;
-    public h w;
+public final class o implements g {
+    public c0 b;
+    public String c;
+    public boolean f;
+    public final q4.q a = new q4.q(28);
+    public final int d = 8000;
+    public final int e = 8000;
 
-    public o(Context context, h hVar) {
-        this.a = context.getApplicationContext();
-        hVar.getClass();
-        this.c = hVar;
-        this.b = new ArrayList();
-    }
-
-    public static void d(h hVar, d0 d0Var) {
-        if (hVar != null) {
-            hVar.addTransferListener(d0Var);
+    @Override // j2.g
+    public final h createDataSource() {
+        r rVar = new r(this.c, this.d, this.e, this.f, this.a);
+        c0 c0Var = this.b;
+        if (c0Var != null) {
+            rVar.addTransferListener(c0Var);
         }
-    }
-
-    public final void a(h hVar) {
-        int i7 = 0;
-        while (true) {
-            ArrayList arrayList = this.b;
-            if (i7 >= arrayList.size()) {
-                return;
-            }
-            hVar.addTransferListener((d0) arrayList.get(i7));
-            i7++;
-        }
-    }
-
-    @Override // j2.h
-    public final void addTransferListener(d0 d0Var) {
-        d0Var.getClass();
-        this.c.addTransferListener(d0Var);
-        this.b.add(d0Var);
-        d(this.d, d0Var);
-        d(this.e, d0Var);
-        d(this.f, d0Var);
-        d(this.h, d0Var);
-        d(this.n, d0Var);
-        d(this.r, d0Var);
-        d(this.s, d0Var);
-    }
-
-    @Override // j2.h
-    public final void close() {
-        h hVar = this.w;
-        if (hVar != null) {
-            try {
-                hVar.close();
-            } finally {
-                this.w = null;
-            }
-        }
-    }
-
-    @Override // j2.h
-    public final Map getResponseHeaders() {
-        h hVar = this.w;
-        return hVar == null ? Collections.EMPTY_MAP : hVar.getResponseHeaders();
-    }
-
-    @Override // j2.h
-    public final Uri getUri() {
-        h hVar = this.w;
-        if (hVar == null) {
-            return null;
-        }
-        return hVar.getUri();
-    }
-
-    @Override // j2.h
-    public final long open(m mVar) {
-        ia.p(this.w == null);
-        Uri uri = mVar.a;
-        String scheme = uri.getScheme();
-        String str = m0.a;
-        String scheme2 = uri.getScheme();
-        boolean isEmpty = TextUtils.isEmpty(scheme2);
-        Context context = this.a;
-        if (isEmpty || Objects.equals(scheme2, "file")) {
-            String path = uri.getPath();
-            if (path == null || !path.startsWith("/android_asset/")) {
-                if (this.d == null) {
-                    u uVar = new u(false);
-                    this.d = uVar;
-                    a(uVar);
-                }
-                this.w = this.d;
-            } else {
-                if (this.e == null) {
-                    b bVar = new b(context);
-                    this.e = bVar;
-                    a(bVar);
-                }
-                this.w = this.e;
-            }
-        } else if ("asset".equals(scheme)) {
-            if (this.e == null) {
-                b bVar2 = new b(context);
-                this.e = bVar2;
-                a(bVar2);
-            }
-            this.w = this.e;
-        } else if ("content".equals(scheme)) {
-            if (this.f == null) {
-                e eVar = new e(context);
-                this.f = eVar;
-                a(eVar);
-            }
-            this.w = this.f;
-        } else {
-            boolean equals = "rtmp".equals(scheme);
-            h hVar = this.c;
-            if (equals) {
-                if (this.h == null) {
-                    try {
-                        h hVar2 = (h) Class.forName("androidx.media3.datasource.rtmp.RtmpDataSource").getConstructor(null).newInstance(null);
-                        this.h = hVar2;
-                        a(hVar2);
-                    } catch (ClassNotFoundException unused) {
-                        h2.a.l("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
-                    } catch (Exception e10) {
-                        throw new RuntimeException("Error instantiating RTMP extension", e10);
-                    }
-                    if (this.h == null) {
-                        this.h = hVar;
-                    }
-                }
-                this.w = this.h;
-            } else if ("udp".equals(scheme)) {
-                if (this.n == null) {
-                    f0 f0Var = new f0();
-                    this.n = f0Var;
-                    a(f0Var);
-                }
-                this.w = this.n;
-            } else if ("data".equals(scheme)) {
-                if (this.r == null) {
-                    f fVar = new f(false);
-                    this.r = fVar;
-                    a(fVar);
-                }
-                this.w = this.r;
-            } else if ("rawresource".equals(scheme) || "android.resource".equals(scheme)) {
-                if (this.s == null) {
-                    b0 b0Var = new b0(context);
-                    this.s = b0Var;
-                    a(b0Var);
-                }
-                this.w = this.s;
-            } else {
-                this.w = hVar;
-            }
-        }
-        return this.w.open(mVar);
-    }
-
-    @Override // e2.n
-    public final int read(byte[] bArr, int i7, int i10) {
-        h hVar = this.w;
-        hVar.getClass();
-        return hVar.read(bArr, i7, i10);
+        return rVar;
     }
 }

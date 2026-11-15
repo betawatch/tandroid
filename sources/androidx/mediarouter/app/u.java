@@ -3,49 +3,49 @@ package androidx.mediarouter.app;
 import android.app.Dialog;
 import android.content.res.Configuration;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class u extends androidx.fragment.app.o {
-    public boolean A0 = false;
-    public g.u B0;
-    public s4.r C0;
+public class u extends androidx.fragment.app.p {
+    public boolean B0 = false;
+    public g.u C0;
+    public s4.r D0;
 
     public u() {
-        this.q0 = true;
-        Dialog dialog = this.v0;
+        this.r0 = true;
+        Dialog dialog = this.w0;
         if (dialog != null) {
             dialog.setCancelable(true);
         }
     }
 
-    @Override // androidx.fragment.app.o, androidx.fragment.app.r
+    @Override // androidx.fragment.app.p, androidx.fragment.app.s
     public final void I() {
         super.I();
-        g.u uVar = this.B0;
-        if (uVar == null || this.A0) {
+        g.u uVar = this.C0;
+        if (uVar == null || this.B0) {
             return;
         }
         ((t) uVar).i(false);
     }
 
-    @Override // androidx.fragment.app.o
+    @Override // androidx.fragment.app.p
     public final Dialog O() {
-        if (this.A0) {
+        if (this.B0) {
             n0 n0Var = new n0(n());
-            this.B0 = n0Var;
-            n0Var.i(this.C0);
+            this.C0 = n0Var;
+            n0Var.i(this.D0);
         } else {
-            this.B0 = new t(n());
+            this.C0 = new t(n());
         }
-        return this.B0;
+        return this.C0;
     }
 
-    @Override // androidx.fragment.app.r, android.content.ComponentCallbacks
+    @Override // androidx.fragment.app.s, android.content.ComponentCallbacks
     public final void onConfigurationChanged(Configuration configuration) {
-        this.U = true;
-        g.u uVar = this.B0;
+        this.V = true;
+        g.u uVar = this.C0;
         if (uVar != null) {
-            if (this.A0) {
+            if (this.B0) {
                 ((n0) uVar).j();
             } else {
                 ((t) uVar).s();

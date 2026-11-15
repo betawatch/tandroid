@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d extends AbstractList implements List {
     public static final Object[] d = new Object[0];
@@ -434,9 +434,9 @@ public final class d extends AbstractList implements List {
     public final boolean removeAll(Collection elements) {
         int m10;
         kotlin.jvm.internal.j.e(elements, "elements");
-        boolean z9 = false;
-        z9 = false;
-        z9 = false;
+        boolean z10 = false;
+        z10 = false;
+        z10 = false;
         if (!isEmpty() && this.b.length != 0) {
             int m11 = m(this.a + this.c);
             int i7 = this.a;
@@ -445,7 +445,7 @@ public final class d extends AbstractList implements List {
                 while (i7 < m11) {
                     Object obj = this.b[i7];
                     if (elements.contains(obj)) {
-                        z9 = true;
+                        z10 = true;
                     } else {
                         this.b[m10] = obj;
                         m10++;
@@ -455,14 +455,14 @@ public final class d extends AbstractList implements List {
                 e.e(m10, m11, this.b);
             } else {
                 int length = this.b.length;
-                boolean z10 = false;
+                boolean z11 = false;
                 int i10 = i7;
                 while (i7 < length) {
                     Object[] objArr = this.b;
                     Object obj2 = objArr[i7];
                     objArr[i7] = null;
                     if (elements.contains(obj2)) {
-                        z10 = true;
+                        z11 = true;
                     } else {
                         this.b[i10] = obj2;
                         i10++;
@@ -475,20 +475,20 @@ public final class d extends AbstractList implements List {
                     Object obj3 = objArr2[i11];
                     objArr2[i11] = null;
                     if (elements.contains(obj3)) {
-                        z10 = true;
+                        z11 = true;
                     } else {
                         this.b[m10] = obj3;
                         m10 = j(m10);
                     }
                 }
-                z9 = z10;
+                z10 = z11;
             }
-            if (z9) {
+            if (z10) {
                 n();
                 this.c = k(m10 - this.a);
             }
         }
-        return z9;
+        return z10;
     }
 
     public final Object removeFirst() {
@@ -578,9 +578,9 @@ public final class d extends AbstractList implements List {
     public final boolean retainAll(Collection elements) {
         int m10;
         kotlin.jvm.internal.j.e(elements, "elements");
-        boolean z9 = false;
-        z9 = false;
-        z9 = false;
+        boolean z10 = false;
+        z10 = false;
+        z10 = false;
         if (!isEmpty() && this.b.length != 0) {
             int m11 = m(this.a + this.c);
             int i7 = this.a;
@@ -592,14 +592,14 @@ public final class d extends AbstractList implements List {
                         this.b[m10] = obj;
                         m10++;
                     } else {
-                        z9 = true;
+                        z10 = true;
                     }
                     i7++;
                 }
                 e.e(m10, m11, this.b);
             } else {
                 int length = this.b.length;
-                boolean z10 = false;
+                boolean z11 = false;
                 int i10 = i7;
                 while (i7 < length) {
                     Object[] objArr = this.b;
@@ -609,7 +609,7 @@ public final class d extends AbstractList implements List {
                         this.b[i10] = obj2;
                         i10++;
                     } else {
-                        z10 = true;
+                        z11 = true;
                     }
                     i7++;
                 }
@@ -622,17 +622,17 @@ public final class d extends AbstractList implements List {
                         this.b[m10] = obj3;
                         m10 = j(m10);
                     } else {
-                        z10 = true;
+                        z11 = true;
                     }
                 }
-                z9 = z10;
+                z10 = z11;
             }
-            if (z9) {
+            if (z10) {
                 n();
                 this.c = k(m10 - this.a);
             }
         }
-        return z9;
+        return z10;
     }
 
     @Override // java.util.AbstractList, java.util.List

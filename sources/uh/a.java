@@ -11,14 +11,13 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import bg.s;
-import jg.g;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.wq;
+import org.telegram.messenger.hd;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class a extends c implements te.b {
     public final te.a d;
@@ -29,15 +28,15 @@ public final class a extends c implements te.b {
     public int r;
     public int s;
 
-    public a(Context context, h6 h6Var) {
-        super(h6Var);
-        this.d = new te.a(0, this, wq.h, 320L, false);
+    public a(Context context, e6 e6Var) {
+        super(e6Var);
+        this.d = new te.a(0, this, er.h, 320L, false);
         this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
-        this.f = g.h(context, org.telegram.messenger.beta.R.drawable.outline_poll_add_24);
-        this.h = new TextPaint(m6.P2);
-        int w02 = m6.w0(m6.i6, h6Var);
+        this.f = i5.c.g(context, org.telegram.messenger.beta.R.drawable.outline_poll_add_24);
+        this.h = new TextPaint(j6.P2);
+        int w02 = j6.w0(j6.i6, e6Var);
         if (this.b != w02) {
-            m6.H1(this.a, w02, false);
+            j6.H1(this.a, w02, false);
             this.b = w02;
         }
         b();
@@ -45,7 +44,7 @@ public final class a extends c implements te.b {
     }
 
     @Override // te.b
-    public final void Y(int i7, float f10, float f11, te.c cVar) {
+    public final void G(int i7, float f10, float f11, te.c cVar) {
         b();
         c();
         invalidateSelf();
@@ -66,8 +65,8 @@ public final class a extends c implements te.b {
         this.h.setAlpha((int) ((1.0f - this.d.e) * this.c));
     }
 
-    public final void d(boolean z9, boolean z10) {
-        this.d.a(z9, z10);
+    public final void d(boolean z10, boolean z11) {
+        this.d.a(z10, z11);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -103,11 +102,11 @@ public final class a extends c implements te.b {
         int width = rect.width() - g0.L(56.0f);
         if (this.n == null || this.r != width) {
             this.r = width;
-            this.n = new StaticLayout(id.M0(2131747184, null), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.n = new StaticLayout(hd.M0(2131747184, null), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
     }
 
     @Override // te.b
-    public final /* synthetic */ void F(float f10, int i7) {
+    public final /* synthetic */ void E(float f10, int i7) {
     }
 }

@@ -1,66 +1,109 @@
 package gf;
 
-import c8.x0;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i extends mf.a {
-    public final kf.h a;
-    public String b;
-    public final StringBuilder c;
+    public final /* synthetic */ int a;
+    public final kf.a b;
+    public final Serializable c;
 
-    public i(char c10, int i7, int i10) {
-        kf.h hVar = new kf.h();
-        this.a = hVar;
-        this.c = new StringBuilder();
-        hVar.g = c10;
-        hVar.h = i7;
-        hVar.i = i10;
+    public i() {
+        this.a = 1;
+        this.b = new kf.l();
+        this.c = new ArrayList();
     }
 
     @Override // mf.a
-    public final void a(CharSequence charSequence) {
-        if (this.b == null) {
-            this.b = charSequence.toString();
-            return;
+    public void a(CharSequence charSequence) {
+        switch (this.a) {
+            case 1:
+                ((ArrayList) this.c).add(charSequence);
+                break;
         }
-        StringBuilder sb2 = this.c;
-        sb2.append(charSequence);
-        sb2.append('\n');
     }
 
     @Override // mf.a
-    public final void d() {
-        String a10 = jf.a.a(this.b.trim());
-        kf.h hVar = this.a;
-        hVar.j = a10;
-        hVar.k = this.c.toString();
+    public void d() {
+        int i7;
+        switch (this.a) {
+            case 1:
+                ArrayList arrayList = (ArrayList) this.c;
+                int size = arrayList.size() - 1;
+                while (true) {
+                    if (size >= 0) {
+                        CharSequence charSequence = (CharSequence) arrayList.get(size);
+                        int length = charSequence.length();
+                        int i10 = 0;
+                        while (true) {
+                            if (i10 < length) {
+                                char charAt = charSequence.charAt(i10);
+                                if (charAt != ' ') {
+                                    switch (charAt) {
+                                    }
+                                }
+                                i10++;
+                            } else {
+                                i10 = -1;
+                            }
+                        }
+                        if (i10 == -1) {
+                            size--;
+                        }
+                    }
+                }
+                StringBuilder sb2 = new StringBuilder();
+                for (i7 = 0; i7 < size + 1; i7++) {
+                    sb2.append((CharSequence) arrayList.get(i7));
+                    sb2.append('\n');
+                }
+                ((kf.l) this.b).g = sb2.toString();
+                break;
+        }
     }
 
     @Override // mf.a
     public final kf.a e() {
-        return this.a;
+        switch (this.a) {
+            case 0:
+                return (kf.i) this.b;
+            default:
+                return (kf.l) this.b;
+        }
     }
 
     @Override // mf.a
-    public final a h(h hVar) {
-        int i7 = hVar.e;
-        int i10 = hVar.b;
-        CharSequence charSequence = hVar.a;
-        int i11 = hVar.g;
-        kf.h hVar2 = this.a;
-        if (i11 < 4) {
-            char c10 = hVar2.g;
-            int i12 = hVar2.h;
-            int b10 = x0.b(c10, i7, charSequence.length(), charSequence) - i7;
-            if (b10 >= i12 && x0.c(i7 + b10, charSequence.length(), charSequence) == charSequence.length()) {
-                return new a(-1, -1, true);
-            }
+    public void g(lf.a aVar) {
+        switch (this.a) {
+            case 0:
+                aVar.a((String) this.c, (kf.i) this.b);
+                break;
         }
-        int length = charSequence.length();
-        for (int i13 = hVar2.i; i13 > 0 && i10 < length && charSequence.charAt(i10) == ' '; i13--) {
-            i10++;
+    }
+
+    @Override // mf.a
+    public final a h(g gVar) {
+        switch (this.a) {
+            case 0:
+                return null;
+            default:
+                if (gVar.g >= 4) {
+                    return new a(-1, gVar.c + 4, false);
+                }
+                if (gVar.h) {
+                    return a.a(gVar.e);
+                }
+                return null;
         }
-        return a.a(i10);
+    }
+
+    public i(int i7, String str) {
+        this.a = 0;
+        kf.i iVar = new kf.i();
+        this.b = iVar;
+        iVar.g = i7;
+        this.c = str;
     }
 }

@@ -1,53 +1,49 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e20 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g20 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ int d;
+public abstract class e20 extends org.telegram.ui.ActionBar.u2 {
+    public c5.l m1;
+    public b20 n1;
+    public LinearLayout o1;
+    public TextView[] p1;
+    public float q1;
+    public int r1;
 
-    public /* synthetic */ e20(g20 g20Var, String str, int i7, int i10) {
-        this.a = i10;
-        this.b = g20Var;
-        this.c = str;
-        this.d = i7;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                g20 g20Var = this.b;
-                String str = this.c;
-                int i7 = this.d;
-                if (g20Var.e != null) {
-                    g20Var.e = null;
-                    org.telegram.messenger.g0.h3(new e20(g20Var, str, i7, 1));
-                    break;
-                }
-                break;
-            default:
-                g20 g20Var2 = this.b;
-                String str2 = this.c;
-                int i10 = this.d;
-                ArrayList arrayList = null;
-                g20Var2.e = null;
-                if (!org.telegram.messenger.t3.T(g20Var2.x.P1) && g20Var2.x.Q1 != null) {
-                    arrayList = new ArrayList(g20Var2.x.Q1.participants.participants);
-                }
-                ArrayList arrayList2 = arrayList;
-                if (arrayList2 != null) {
-                    Utilities.g.c(new ai.a1(g20Var2, str2, i10, arrayList2, 24));
-                } else {
-                    g20Var2.h = false;
-                }
-                g20Var2.d.g(str2, org.telegram.messenger.t3.w(3, g20Var2.x.P1), false, true, false, org.telegram.messenger.t3.T(g20Var2.x.P1) ? g20Var2.x.P1.id : 0L, false, 2, i10);
-                break;
+    public static void I0(org.telegram.ui.d30 d30Var) {
+        TextView[] textViewArr = d30Var.p1;
+        int i7 = d30Var.r1;
+        TextView textView = textViewArr[i7];
+        TextView textView2 = i7 < textViewArr.length + (-1) ? textViewArr[i7 + 1] : null;
+        d30Var.b.getMeasuredWidth();
+        float measuredWidth = (textView.getMeasuredWidth() / 2) + textView.getLeft();
+        float measuredWidth2 = (d30Var.b.getMeasuredWidth() / 2) - measuredWidth;
+        if (textView2 != null) {
+            measuredWidth2 -= (((textView2.getMeasuredWidth() / 2) + textView2.getLeft()) - measuredWidth) * d30Var.q1;
         }
+        for (int i10 = 0; i10 < textViewArr.length; i10++) {
+            int i11 = d30Var.r1;
+            float f10 = 0.9f;
+            float f11 = 0.7f;
+            if (i10 >= i11 && i10 <= i11 + 1) {
+                if (i10 == i11) {
+                    float f12 = d30Var.q1;
+                    f11 = 1.0f - (0.3f * f12);
+                    f10 = 1.0f - (f12 * 0.1f);
+                } else {
+                    float f13 = d30Var.q1;
+                    f11 = 0.7f + (0.3f * f13);
+                    f10 = 0.9f + (f13 * 0.1f);
+                }
+            }
+            textViewArr[i10].setAlpha(f11);
+            textViewArr[i10].setScaleX(f10);
+            textViewArr[i10].setScaleY(f10);
+        }
+        d30Var.o1.setTranslationX(measuredWidth2);
+        d30Var.n1.invalidate();
     }
 }

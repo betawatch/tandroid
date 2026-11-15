@@ -1,34 +1,34 @@
 package ee;
 
-import a8.la;
+import a8.ma;
 import a8.p0;
+import aa.b0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import org.telegram.tgnet.ConnectionsManager;
 import zd.a1;
 import zd.a2;
-import zd.b0;
 import zd.t0;
 import zd.u1;
 import zd.v1;
 import zd.x;
 import zd.y;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("CLOSED", 1);
-    public static final com.google.android.gms.internal.clearcut.e b = new com.google.android.gms.internal.clearcut.e("UNDEFINED", 1);
-    public static final com.google.android.gms.internal.clearcut.e c = new com.google.android.gms.internal.clearcut.e("REUSABLE_CLAIMED", 1);
-    public static final com.google.android.gms.internal.clearcut.e d = new com.google.android.gms.internal.clearcut.e("NO_THREAD_ELEMENTS", 1);
+    public static final b0 a = new b0("CLOSED", 1);
+    public static final b0 b = new b0("UNDEFINED", 1);
+    public static final b0 c = new b0("REUSABLE_CLAIMED", 1);
+    public static final b0 d = new b0("NO_THREAD_ELEMENTS", 1);
     public static final b1.e e = new b1.e(5);
     public static final b1.e f = new b1.e(6);
     public static final b1.e g = new b1.e(7);
 
     public static final void a(int i7) {
         if (i7 < 1) {
-            throw new IllegalArgumentException(jg.g.j(i7, "Expected positive parallelism level, but got ").toString());
+            throw new IllegalArgumentException(i5.c.i(i7, "Expected positive parallelism level, but got ").toString());
         }
     }
 
@@ -39,9 +39,9 @@ public abstract class a {
             }
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = b.a;
             Object obj = atomicReferenceFieldUpdater.get(rVar);
-            com.google.android.gms.internal.clearcut.e eVar = a;
-            if (obj == eVar) {
-                return eVar;
+            b0 b0Var = a;
+            if (obj == b0Var) {
+                return b0Var;
             }
             r rVar2 = (r) ((b) obj);
             if (rVar2 == null) {
@@ -77,14 +77,14 @@ public abstract class a {
                     runtimeException = th2;
                 } else {
                     runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
-                    la.a(runtimeException, th2);
+                    ma.a(runtimeException, th2);
                 }
                 Thread currentThread = Thread.currentThread();
                 currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, runtimeException);
             }
         }
         try {
-            la.a(th2, new e(hVar));
+            ma.a(th2, new e(hVar));
         } catch (Throwable unused) {
         }
         Thread currentThread2 = Thread.currentThread();
@@ -166,7 +166,7 @@ public abstract class a {
                 Object obj2 = fVar.h;
                 id.h context = cVar2.getContext();
                 Object l10 = l(context, obj2);
-                a2 x10 = l10 != d ? b0.x(cVar2, context, l10) : null;
+                a2 x10 = l10 != d ? zd.b0.x(cVar2, context, l10) : null;
                 try {
                     cVar2.resumeWith(obj);
                 } finally {
@@ -194,7 +194,7 @@ public abstract class a {
     public static final long i(String str, long j3, long j10, long j11) {
         String str2;
         Long l10;
-        boolean z9;
+        boolean z10;
         int i7;
         int i10;
         int i11 = t.a;
@@ -213,10 +213,10 @@ public abstract class a {
             char charAt = str2.charAt(0);
             long j12 = -9223372036854775807L;
             if (kotlin.jvm.internal.j.f(charAt, 48) < 0) {
-                z9 = true;
+                z10 = true;
                 if (length != 1) {
                     if (charAt == '+') {
-                        z9 = false;
+                        z10 = false;
                         i12 = 1;
                     } else if (charAt == '-') {
                         j12 = Long.MIN_VALUE;
@@ -224,7 +224,7 @@ public abstract class a {
                     }
                 }
             } else {
-                z9 = false;
+                z10 = false;
             }
             long j13 = 0;
             long j14 = -256204778801521550L;
@@ -250,7 +250,7 @@ public abstract class a {
                     }
                 }
             }
-            l10 = z9 ? Long.valueOf(j13) : Long.valueOf(-j13);
+            l10 = z10 ? Long.valueOf(j13) : Long.valueOf(-j13);
             if (l10 != null) {
                 throw new IllegalStateException(("System property '" + str + "' has unrecognized value '" + str2 + '\'').toString());
             }

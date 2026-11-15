@@ -3,35 +3,35 @@ package r2;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.util.Pair;
-import c8.e1;
+import c8.g1;
 import e2.m1;
 import e2.u;
-import h2.m0;
+import h2.l0;
 import h9.g0;
-import h9.h2;
+import h9.g2;
 import h9.i0;
+import h9.s1;
 import h9.t0;
-import h9.t1;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
-import j2.d0;
+import j2.c0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import org.telegram.messenger.ou;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.cf;
 import org.telegram.utils.twidget.v;
 import s2.w;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h {
     public final c a;
     public final j2.h b;
     public final j2.h c;
-    public final org.telegram.ui.Components.m d;
+    public final cf d;
     public final w[] e;
     public final u[] f;
     public final s2.d g;
@@ -44,24 +44,24 @@ public final class h {
     public Uri p;
     public boolean q;
     public a3.u r;
-    public final uy j = new uy(12);
-    public byte[] m = m0.b;
+    public final ou j = new ou(19);
+    public byte[] m = l0.b;
     public long s = -9223372036854775807L;
 
-    public h(c cVar, s2.d dVar, w[] wVarArr, u[] uVarArr, org.telegram.ui.Components.m mVar, d0 d0Var, org.telegram.ui.Components.m mVar2, List list, m2.j jVar) {
+    public h(c cVar, s2.d dVar, w[] wVarArr, u[] uVarArr, cf cfVar, c0 c0Var, cf cfVar2, List list, m2.j jVar) {
         this.a = cVar;
         this.g = dVar;
         this.e = wVarArr;
         this.f = uVarArr;
-        this.d = mVar2;
+        this.d = cfVar2;
         this.i = list;
         this.k = jVar;
-        j2.h createDataSource = ((j2.g) mVar.a).createDataSource();
+        j2.h createDataSource = ((j2.g) cfVar.a).createDataSource();
         this.b = createDataSource;
-        if (d0Var != null) {
-            createDataSource.addTransferListener(d0Var);
+        if (c0Var != null) {
+            createDataSource.addTransferListener(c0Var);
         }
-        this.c = ((j2.g) mVar.a).createDataSource();
+        this.c = ((j2.g) cfVar.a).createDataSource();
         this.h = new m1("", uVarArr);
         ArrayList arrayList = new ArrayList();
         for (int i7 = 0; i7 < wVarArr.length; i7++) {
@@ -70,7 +70,7 @@ public final class h {
             }
         }
         m1 m1Var = this.h;
-        int[] f10 = e1.f(arrayList);
+        int[] f10 = g1.f(arrayList);
         f fVar = new f(m1Var, f10);
         fVar.g = fVar.b(m1Var.d[f10[0]]);
         this.r = fVar;
@@ -115,13 +115,13 @@ public final class h {
         wVar.getClass();
         HashMap hashMap = wVar.b;
         int size = hashMap.size();
-        h2 it = t0.q(hashMap.values()).iterator();
+        g2 it = t0.q(hashMap.values()).iterator();
         int i7 = 0;
         while (it.hasNext()) {
             Uri uri2 = (Uri) it.next();
             s2.c cVar2 = (s2.c) dVar.d.get(uri2);
             if (cVar2 != null) {
-                s2.b bVar = (s2.b) f1.l(cVar2.b, uri2, uri2);
+                s2.b bVar = (s2.b) r.b.i(cVar2.b, uri2, uri2);
                 bVar.getClass();
                 if (elapsedRealtime <= bVar.r) {
                     i7++;
@@ -138,17 +138,17 @@ public final class h {
         int a10 = iVar2 == null ? -1 : hVar.h.a(iVar2.d);
         int length = hVar.r.length();
         y2.m[] mVarArr = new y2.m[length];
-        boolean z9 = false;
+        boolean z10 = false;
         int i7 = 0;
         while (i7 < length) {
             int i10 = hVar.r.i(i7);
             Uri c10 = hVar.e[i10].c();
             s2.d dVar = hVar.g;
             if (dVar.f(c10)) {
-                s2.m b10 = dVar.b(c10, z9);
+                s2.m b10 = dVar.b(c10, z10);
                 b10.getClass();
-                long j10 = b10.h - dVar.I;
-                Pair e10 = hVar.e(iVar2, i10 != a10 ? true : z9, b10, j10, j3);
+                long j10 = b10.h - dVar.J;
+                Pair e10 = hVar.e(iVar2, i10 != a10 ? true : z10, b10, j10, j3);
                 long longValue = ((Long) e10.first).longValue();
                 int intValue = ((Integer) e10.second).intValue();
                 long j11 = b10.k;
@@ -157,7 +157,7 @@ public final class h {
                 int i11 = (int) (longValue - j11);
                 if (i11 < 0 || i0Var2.size() < i11) {
                     g0 g0Var = i0.b;
-                    list = t1.e;
+                    list = s1.e;
                 } else {
                     ArrayList arrayList = new ArrayList();
                     if (i11 < i0Var2.size()) {
@@ -191,13 +191,13 @@ public final class h {
             i7++;
             hVar = this;
             iVar2 = iVar;
-            z9 = false;
+            z10 = false;
         }
         return mVarArr;
     }
 
     public final int c(i iVar) {
-        int i7 = iVar.E;
+        int i7 = iVar.F;
         if (i7 == -1) {
             return 1;
         }
@@ -239,15 +239,15 @@ public final class h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Pair e(i iVar, boolean z9, s2.m mVar, long j3, long j10) {
+    public final Pair e(i iVar, boolean z10, s2.m mVar, long j3, long j10) {
         i0 i0Var;
         int i7;
-        boolean z10 = true;
+        boolean z11 = true;
         if (iVar != null) {
             long j11 = iVar.s;
-            int i10 = iVar.E;
-            if (!z9) {
-                if (!iVar.X) {
+            int i10 = iVar.F;
+            if (!z10) {
+                if (!iVar.Y) {
                     return new Pair(Long.valueOf(j11), Integer.valueOf(i10));
                 }
                 if (i10 == -1) {
@@ -268,12 +268,12 @@ public final class h {
         long j16 = j15 - j3;
         Long valueOf = Long.valueOf(j16);
         s2.d dVar = this.g;
-        if (dVar.H && iVar != null) {
-            z10 = false;
+        if (dVar.I && iVar != null) {
+            z11 = false;
         }
-        int d = m0.d(i0Var3, valueOf, z10);
+        int d = l0.d(i0Var3, valueOf, z11);
         long j17 = d + j13;
-        if (!dVar.H) {
+        if (!dVar.I) {
             return new Pair(Long.valueOf(j17), -1);
         }
         if (d >= 0) {
@@ -308,12 +308,12 @@ public final class h {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final d g(Uri uri, int i7, boolean z9) {
+    public final d g(Uri uri, int i7, boolean z10) {
         if (uri == null) {
             return null;
         }
-        uy uyVar = this.j;
-        byte[] bArr = (byte[]) ((v) uyVar.b).remove(uri);
+        ou ouVar = this.j;
+        byte[] bArr = (byte[]) ((v) ouVar.b).remove(uri);
         if (bArr != null) {
             return null;
         }
@@ -324,7 +324,7 @@ public final class h {
         byte[] bArr2 = this.m;
         d dVar = new d(this.c, mVar, 3, uVar, o4, r10, -9223372036854775807L, -9223372036854775807L);
         if (bArr2 == null) {
-            bArr2 = m0.b;
+            bArr2 = l0.b;
         }
         dVar.s = bArr2;
         return dVar;

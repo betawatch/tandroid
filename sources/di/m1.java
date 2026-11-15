@@ -1,51 +1,71 @@
 package di;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Components.cp;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class m1 extends View {
-    public final /* synthetic */ int a = 1;
-    public final cp b;
+public final /* synthetic */ class m1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c6 b;
+    public final /* synthetic */ long c;
 
-    public m1(Context context) {
-        super(context);
-        this.b = new cp(org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(2.0f), -13522392);
+    public /* synthetic */ m1(c6 c6Var, long j3, int i7) {
+        this.a = i7;
+        this.b = c6Var;
+        this.c = j3;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        long j3 = this.c;
+        c6 c6Var = this.b;
+        switch (i7) {
             case 0:
-                int L = org.telegram.messenger.g0.L(1.0f);
-                int width = (getWidth() - L) - L;
-                int height = (getHeight() - L) - L;
-                cp cpVar = this.b;
-                cpVar.setBounds(L, L, width, height);
-                cpVar.draw(canvas);
-                invalidate();
+                c6Var.V1(j3);
+                break;
+            case 1:
+                c6Var.V1(j3);
+                break;
+            case 2:
+                l1 l1Var = c6Var.q3;
+                c6Var.t2(1, true, null);
+                if (j3 > 0) {
+                    org.telegram.messenger.g0.r(l1Var);
+                    org.telegram.messenger.g0.h3(l1Var);
+                    break;
+                }
+                break;
+            case 3:
+                c6Var.V1(j3);
+                break;
+            case 4:
+                c6Var.V1(j3);
+                break;
+            case 5:
+                c6Var.U1(j3);
+                break;
+            case 6:
+                cb cbVar = new cb(c6Var.getContext(), c6Var.J0, this.c, 10, null, new s2(4, c6Var, new boolean[]{false}), 0L);
+                cbVar.setOnDismissListener(new k3(c6Var, 0));
+                cbVar.show();
+                break;
+            case 7:
+                c6Var.V1(j3);
+                break;
+            case 8:
+                c6Var.U1(j3);
+                break;
+            case 9:
+                c6Var.V1(j3);
+                break;
+            case 10:
+                c6Var.U1(j3);
+                break;
+            case 11:
+                c6Var.V1(j3);
                 break;
             default:
-                int width2 = getWidth();
-                int height2 = getHeight();
-                cp cpVar2 = this.b;
-                cpVar2.setBounds(0, 0, width2, height2);
-                cpVar2.b(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.m5, false));
-                cpVar2.setAlpha(qs.e4);
-                cpVar2.draw(canvas);
-                invalidate();
-                super.onDraw(canvas);
+                c6Var.U1(j3);
                 break;
         }
-    }
-
-    public m1(Activity activity) {
-        super(activity);
-        this.b = new cp(org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.m5, false));
     }
 }

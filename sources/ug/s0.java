@@ -1,11 +1,31 @@
 package ug;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class s0 extends j1 {
-    @Override // ug.j1, ug.l0
-    public final void setOffset(float f10) {
-        setAutoPlayEnabled(f10 == 0.0f);
-        super.setOffset(f10);
+public final class s0 extends v4.t0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x0 b;
+
+    public /* synthetic */ s0(x0 x0Var, int i7) {
+        this.a = i7;
+        this.b = x0Var;
+    }
+
+    @Override // v4.t0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                x0 x0Var = this.b;
+                x0Var.b.invalidate();
+                x0Var.I0();
+                break;
+            default:
+                x0 x0Var2 = this.b;
+                x0Var2.b.invalidate();
+                x0Var2.I0();
+                break;
+        }
     }
 }

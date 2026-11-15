@@ -2,8 +2,9 @@ package androidx.mediarouter.app;
 
 import android.widget.SeekBar;
 import j$.util.DesugarCollections;
+import org.telegram.ui.Components.cf;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c extends s4.s {
     public final /* synthetic */ int a;
@@ -31,7 +32,7 @@ public final class c extends s4.s {
 
     @Override // s4.s
     public final void e(s4.v vVar) {
-        org.telegram.ui.Components.m b10;
+        cf b10;
         s4.o oVar;
         switch (this.a) {
             case 0:
@@ -115,18 +116,18 @@ public final class c extends s4.s {
         switch (i7) {
             case 1:
                 t tVar = (t) uVar;
-                SeekBar seekBar = (SeekBar) tVar.h0.get(vVar);
+                SeekBar seekBar = (SeekBar) tVar.i0.get(vVar);
                 int i10 = vVar.p;
-                int i11 = t.F0;
-                if (seekBar != null && tVar.c0 != vVar) {
+                int i11 = t.G0;
+                if (seekBar != null && tVar.d0 != vVar) {
                     seekBar.setProgress(i10);
                     break;
                 }
                 break;
             case 3:
-                int i12 = n0.j0;
+                int i12 = n0.k0;
                 n0 n0Var = (n0) uVar;
-                if (n0Var.M != vVar && (e0Var = (e0) n0Var.L.get(vVar.c)) != null) {
+                if (n0Var.N != vVar && (e0Var = (e0) n0Var.M.get(vVar.c)) != null) {
                     int i13 = e0Var.v.p;
                     e0Var.u(i13 == 0);
                     e0Var.x.setProgress(i13);

@@ -1,74 +1,34 @@
 package fi;
 
-import android.util.Pair;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qs;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.zu0;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f8 implements c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-
-    public /* synthetic */ f8(Object obj, long j3, int i7) {
-        this.a = i7;
-        this.c = obj;
-        this.b = j3;
+public abstract class f8 {
+    public static void a(TL_stories.StoryItem storyItem, NativeByteBuffer nativeByteBuffer) {
+        if (nativeByteBuffer == null) {
+            return;
+        }
+        int readInt32 = nativeByteBuffer.readInt32(true);
+        if (readInt32 != 1) {
+            throw new RuntimeException(i5.c.i(readInt32, "(story) can't read params version = "));
+        }
+        new e8(storyItem).readParams(nativeByteBuffer, true);
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        int i7;
-        long j3;
-        switch (this.a) {
-            case 0:
-                n8 n8Var = (n8) this.c;
-                TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) obj;
-                org.telegram.ui.ActionBar.u1 u1Var = n8Var.G;
-                if (u1Var != null) {
-                    u1Var.c(350L);
-                    n8Var.G = null;
-                }
-                if (tL_channels_channelParticipants != null && !tL_channels_channelParticipants.participants.isEmpty()) {
-                    TLRPC.TL_chatParticipants tL_chatParticipants = new TLRPC.TL_chatParticipants();
-                    while (i7 < tL_channels_channelParticipants.participants.size()) {
-                        TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i7);
-                        TLRPC.TL_chatParticipant tL_chatParticipant = new TLRPC.TL_chatParticipant();
-                        TLRPC.Peer peer = channelParticipant.peer;
-                        if (peer != null) {
-                            j3 = org.telegram.messenger.m5.o(peer);
-                            i7 = j3 < 0 ? i7 + 1 : 0;
-                        } else {
-                            j3 = channelParticipant.user_id;
-                        }
-                        tL_chatParticipant.user_id = j3;
-                        tL_chatParticipants.participants.add(tL_chatParticipant);
-                    }
-                    n8Var.e(this.b, tL_chatParticipants);
-                    break;
-                }
-                break;
-            case 1:
-                ResultCallback resultCallback = (ResultCallback) this.c;
-                gg.a aVar = (gg.a) obj;
-                if (resultCallback != null) {
-                    resultCallback.onComplete(new Pair(Long.valueOf(this.b), aVar));
-                    break;
-                }
-                break;
-            default:
-                zu0 zu0Var = (zu0) this.c;
-                TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) obj;
-                if (tL_messages_emojiGroups != null) {
-                    qs.f(p10.s0).d(new bi.d3(zu0Var, tL_messages_emojiGroups, this.b, 25));
-                    break;
-                }
-                break;
+    public static NativeByteBuffer b(TL_stories.StoryItem storyItem) {
+        if (storyItem.detectedLng == null && storyItem.translatedLng == null && !storyItem.translated && storyItem.translatedText == null) {
+            return null;
+        }
+        e8 e8Var = new e8(storyItem);
+        try {
+            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(e8Var.getObjectSize());
+            e8Var.serializeToStream(nativeByteBuffer);
+            return nativeByteBuffer;
+        } catch (Exception e10) {
+            e10.printStackTrace();
+            return null;
         }
     }
 }

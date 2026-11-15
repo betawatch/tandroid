@@ -1,7 +1,34 @@
 package m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.graphics.Rect;
+import android.os.Build;
+import android.util.Log;
+import android.view.View;
+import java.lang.reflect.Method;
+import java.util.WeakHashMap;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class r3 extends o2 {
-    public static final /* synthetic */ int a = 0;
+public abstract class r3 {
+    public static final Method a;
+    public static final boolean b;
+
+    static {
+        b = Build.VERSION.SDK_INT >= 27;
+        try {
+            Method declaredMethod = View.class.getDeclaredMethod("computeFitSystemWindows", Rect.class, Rect.class);
+            a = declaredMethod;
+            if (declaredMethod.isAccessible()) {
+                return;
+            }
+            declaredMethod.setAccessible(true);
+        } catch (NoSuchMethodException unused) {
+            Log.d("ViewUtils", "Could not find method computeFitSystemWindows. Oh well.");
+        }
+    }
+
+    public static boolean a(View view) {
+        WeakHashMap weakHashMap = r0.i0.a;
+        return view.getLayoutDirection() == 1;
+    }
 }

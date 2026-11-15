@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 class ColorPicker$RadioButton extends View {
     public final Paint a;
@@ -28,12 +28,12 @@ class ColorPicker$RadioButton extends View {
         invalidate();
     }
 
-    public final void b(boolean z9) {
+    public final void b(boolean z10) {
         ObjectAnimator objectAnimator = this.b;
         if (objectAnimator != null) {
             objectAnimator.cancel();
         }
-        if (!z9) {
+        if (!z10) {
             setCheckedState(this.d ? 1.0f : 0.0f);
             return;
         }
@@ -65,7 +65,7 @@ class ColorPicker$RadioButton extends View {
         paint.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
         paint.setAlpha(Math.round(this.c * 255.0f));
         canvas.drawCircle(measuredWidth, measuredHeight, L - (paint.getStrokeWidth() * 0.5f), paint);
-        paint.setAlpha(org.telegram.messenger.qs.e4);
+        paint.setAlpha(org.telegram.messenger.ns.e4);
         paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(measuredWidth, measuredHeight, L - (org.telegram.messenger.g0.L(5.0f) * this.c), paint);
     }
@@ -73,7 +73,7 @@ class ColorPicker$RadioButton extends View {
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setText(org.telegram.messenger.id.M0(2131752015, null));
+        accessibilityNodeInfo.setText(org.telegram.messenger.hd.M0(2131752015, null));
         accessibilityNodeInfo.setClassName(Button.class.getName());
         accessibilityNodeInfo.setChecked(this.d);
         accessibilityNodeInfo.setCheckable(true);

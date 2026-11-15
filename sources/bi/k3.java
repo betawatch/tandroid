@@ -1,45 +1,63 @@
 package bi;
 
-import android.os.Bundle;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.e51;
+import android.view.KeyEvent;
+import android.view.View;
+import android.webkit.JsPromptResult;
+import android.widget.TextView;
+import org.telegram.messenger.z10;
+import org.telegram.ui.Components.ft;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k3 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
-    public final /* synthetic */ long c;
+public final class k3 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ k3(long j3, org.telegram.ui.ActionBar.f2 f2Var) {
-        this.c = j3;
-        this.b = f2Var;
+    public /* synthetic */ k3(Object obj, Object obj2, Object obj3, Object obj4, int i7) {
+        this.a = i7;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                Bundle bundle = new Bundle();
-                long j3 = this.c;
-                if (j3 >= 0) {
-                    bundle.putLong("user_id", j3);
-                } else {
-                    bundle.putLong("chat_id", -j3);
+                j3 j3Var = (j3) this.b;
+                if (i7 != 6) {
+                    return false;
                 }
-                bundle.putBoolean("my_profile", true);
-                bundle.putBoolean("open_gifts", true);
-                this.b.presentFragment(new ProfileActivity(bundle, null));
-                break;
+                String obj = j3Var.getText().toString();
+                if (obj.length() <= 0 || obj.length() > 12) {
+                    org.telegram.messenger.g0.E3(j3Var);
+                } else {
+                    ((z10) this.c).a(obj);
+                    org.telegram.ui.ActionBar.t1 t1Var = ((org.telegram.ui.ActionBar.t1[]) this.d)[0];
+                    if (t1Var != null) {
+                        t1Var.dismiss();
+                    }
+                    View view = (View) this.e;
+                    if (view != null) {
+                        view.requestFocus();
+                    }
+                }
+                return true;
             default:
-                org.telegram.ui.ActionBar.f2 f2Var = this.b;
-                f2Var.presentFragment(e51.g0(f2Var.getMessagesController().M0(Long.valueOf(-this.c)), true));
-                break;
+                if (i7 != 6) {
+                    return false;
+                }
+                boolean[] zArr = (boolean[]) this.b;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    ((JsPromptResult) this.c).confirm(((ft) this.d).getText().toString());
+                    ((org.telegram.ui.ActionBar.t1) this.e).dismiss();
+                }
+                return true;
         }
-    }
-
-    public /* synthetic */ k3(org.telegram.ui.ActionBar.f2 f2Var, long j3) {
-        this.b = f2Var;
-        this.c = j3;
     }
 }

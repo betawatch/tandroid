@@ -2,25 +2,25 @@ package org.telegram.ui.Wallet;
 
 import android.text.TextUtils;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.ez;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.s10;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.sb1;
+import org.telegram.ui.fy0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ l0 b;
     public final /* synthetic */ String c;
-    public final /* synthetic */ c20 d;
+    public final /* synthetic */ z10 d;
     public final /* synthetic */ TL_wallet.nftItem e;
     public final /* synthetic */ String f;
     public final /* synthetic */ String h;
@@ -29,13 +29,13 @@ public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ c2 s;
     public final /* synthetic */ TLRPC.User w;
     public final /* synthetic */ String x;
-    public final /* synthetic */ c20 y;
+    public final /* synthetic */ z10 y;
 
-    public /* synthetic */ o(l0 l0Var, String str, c20 c20Var, TL_wallet.nftItem nftitem, String str2, String str3, byte[] bArr, long j3, c2 c2Var, TLRPC.User user, String str4, c20 c20Var2, int i7) {
+    public /* synthetic */ o(l0 l0Var, String str, z10 z10Var, TL_wallet.nftItem nftitem, String str2, String str3, byte[] bArr, long j3, c2 c2Var, TLRPC.User user, String str4, z10 z10Var2, int i7) {
         this.a = i7;
         this.b = l0Var;
         this.c = str;
-        this.d = c20Var;
+        this.d = z10Var;
         this.e = nftitem;
         this.f = str2;
         this.h = str3;
@@ -44,7 +44,7 @@ public final /* synthetic */ class o implements Runnable {
         this.s = c2Var;
         this.w = user;
         this.x = str4;
-        this.y = c20Var2;
+        this.y = z10Var2;
     }
 
     @Override // java.lang.Runnable
@@ -53,18 +53,18 @@ public final /* synthetic */ class o implements Runnable {
             case 0:
                 l0 l0Var = this.b;
                 String str = this.c;
-                c20 c20Var = this.d;
-                o oVar = new o(l0Var, str, c20Var, this.e, this.f, this.h, this.n, this.r, this.s, this.w, this.x, this.y, 1);
+                z10 z10Var = this.d;
+                o oVar = new o(l0Var, str, z10Var, this.e, this.f, this.h, this.n, this.r, this.s, this.w, this.x, this.y, 1);
                 if (l0Var.K() && !l0Var.J()) {
                     l0.H("send " + str + ": asking passcode");
-                    org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
+                    org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
                     if (T != null) {
-                        org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2();
-                        d2Var.a = true;
+                        org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2();
+                        c2Var.a = true;
                         boolean[] zArr = {false};
-                        y yVar = new y(zArr, c20Var);
-                        yVar.V = new sb1(4, zArr, oVar);
-                        T.showAsSheet(yVar, d2Var);
+                        y yVar = new y(zArr, z10Var);
+                        yVar.W = new fy0(29, zArr, oVar);
+                        T.showAsSheet(yVar, c2Var);
                         break;
                     }
                 } else {
@@ -79,24 +79,24 @@ public final /* synthetic */ class o implements Runnable {
                 sb2.append(": ready, get secret phrase");
                 l0.H(sb2.toString());
                 final l0 l0Var2 = this.b;
-                final c20 c20Var2 = this.d;
+                final z10 z10Var2 = this.d;
                 final TL_wallet.nftItem nftitem = this.e;
                 final String str3 = this.f;
                 final String str4 = this.h;
                 final byte[] bArr = this.n;
                 final long j3 = this.r;
-                final c2 c2Var = this.s;
+                final c2 c2Var2 = this.s;
                 final TLRPC.User user = this.w;
                 final String str5 = this.x;
-                final c20 c20Var3 = this.y;
-                l0Var2.z(new v10() { // from class: org.telegram.ui.Wallet.r
+                final z10 z10Var3 = this.y;
+                l0Var2.z(new s10() { // from class: org.telegram.ui.Wallet.s
                     /* JADX WARN: Removed duplicated region for block: B:47:0x012d  */
                     /* JADX WARN: Removed duplicated region for block: B:50:0x0139  */
                     /* JADX WARN: Removed duplicated region for block: B:57:0x0154  */
                     /* JADX WARN: Removed duplicated region for block: B:60:0x0175  */
                     /* JADX WARN: Removed duplicated region for block: B:62:0x0187  */
                     /* JADX WARN: Removed duplicated region for block: B:67:0x012f  */
-                    @Override // org.telegram.messenger.v10
+                    @Override // org.telegram.messenger.s10
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
                     */
@@ -107,8 +107,8 @@ public final /* synthetic */ class o implements Runnable {
                         l0 l0Var3;
                         long j10;
                         long j11;
-                        ij ijVar;
-                        c20 c20Var4;
+                        gj gjVar;
+                        z10 z10Var4;
                         l0 l0Var4;
                         TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo;
                         TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo2;
@@ -116,23 +116,23 @@ public final /* synthetic */ class o implements Runnable {
                         String str6 = (String) obj2;
                         l0 l0Var5 = l0.this;
                         int i7 = l0Var5.a;
-                        c20 c20Var5 = c20Var2;
+                        z10 z10Var5 = z10Var2;
                         if (str6 != null) {
-                            c20Var5.a(str6);
+                            z10Var5.a(str6);
                             return;
                         }
                         if (i0Var == null) {
-                            c20Var5.a("NULL_ERROR");
+                            z10Var5.a("NULL_ERROR");
                             return;
                         }
                         if (l0Var5.b == null) {
-                            c20Var5.a("NULL_ENGINE");
+                            z10Var5.a("NULL_ENGINE");
                             return;
                         }
                         TL_wallet.nftItem nftitem3 = nftitem;
                         if (nftitem3 != null) {
                             if (!l0.b(str3, l0Var5.t())) {
-                                c20Var5.a("WALLET_CHANGED");
+                                z10Var5.a("WALLET_CHANGED");
                                 return;
                             }
                         }
@@ -149,10 +149,10 @@ public final /* synthetic */ class o implements Runnable {
                         long j12 = j3;
                         wallettransaction.amount = j12;
                         wallettransaction.nft = nftitem3;
-                        c2 c2Var2 = c2Var;
+                        c2 c2Var3 = c2Var2;
                         TLRPC.User user3 = user;
                         String str8 = str2;
-                        if (c2Var2 == null || nftitem3 == null) {
+                        if (c2Var3 == null || nftitem3 == null) {
                             nftitem2 = nftitem3;
                             k0Var = B;
                             wallettransaction.peer = l0.g(user3, str8, str5);
@@ -160,12 +160,12 @@ public final /* synthetic */ class o implements Runnable {
                             TL_wallet.walletTransactionPeerTelegramGift wallettransactionpeertelegramgift = new TL_wallet.walletTransactionPeerTelegramGift();
                             nftitem2 = nftitem3;
                             k0Var = B;
-                            wallettransactionpeertelegramgift.own_profile = user3 != null && user3.id == p10.i(i7).e();
+                            wallettransactionpeertelegramgift.own_profile = user3 != null && user3.id == m10.i(i7).e();
                             wallettransaction.peer = wallettransactionpeertelegramgift;
                         }
                         TL_wallet.nftItem nftitem4 = nftitem2;
                         k0 k0Var2 = k0Var;
-                        h7 h7Var = new h7(l0Var5, wallettransaction, nftitem4, k0Var2, 3);
+                        g7 g7Var = new g7(l0Var5, wallettransaction, nftitem4, k0Var2, 3);
                         long nextLong = Utilities.b.nextLong();
                         wallettransaction.random_id = nextLong;
                         l0Var5.p.add(0, wallettransaction);
@@ -181,21 +181,21 @@ public final /* synthetic */ class o implements Runnable {
                         k0Var2.k();
                         k0Var2.i();
                         l0Var5.S();
-                        gz C = gz.C(i7);
+                        ez C = ez.C(i7);
                         if (user3 != null) {
                             l0Var3 = l0Var5;
-                            if (user3.id != p10.i(i7).e() && nftitem4 == null) {
+                            if (user3.id != m10.i(i7).e() && nftitem4 == null) {
                                 user2 = user3;
                                 j10 = nextLong;
                                 j11 = j12;
-                                ijVar = C.q(user2, str8, j11, wallettransaction.comment, wallettransaction.comment_encrypted, wallettransaction.comment_encrypted_preparing, j10);
-                                wallettransaction.localMessageId = ijVar != null ? 0 : ijVar.e1();
-                                c20Var4 = c20Var3;
-                                if (c20Var4 != null) {
-                                    c20Var4.a(wallettransaction);
+                                gjVar = C.q(user2, str8, j11, wallettransaction.comment, wallettransaction.comment_encrypted, wallettransaction.comment_encrypted_preparing, j10);
+                                wallettransaction.localMessageId = gjVar != null ? 0 : gjVar.e1();
+                                z10Var4 = z10Var3;
+                                if (z10Var4 != null) {
+                                    z10Var4.a(wallettransaction);
                                 }
                                 String str9 = null;
-                                c20Var5.a(null);
+                                z10Var5.a(null);
                                 l0Var4 = l0Var3;
                                 tL_updateWalletGaslessInfo = l0Var4.f;
                                 if (tL_updateWalletGaslessInfo != null && !TextUtils.isEmpty(tL_updateWalletGaslessInfo.relayer_address)) {
@@ -207,11 +207,11 @@ public final /* synthetic */ class o implements Runnable {
                                 l0.H("prepare sending");
                                 String str10 = str9;
                                 long j13 = j10;
-                                final u uVar = new u(l0Var4, h7Var, C, ijVar, wallettransaction, str8, k0Var2, j13, user2);
-                                if (c2Var2 == null) {
+                                final u uVar = new u(l0Var4, g7Var, C, gjVar, wallettransaction, str8, k0Var2, j13, user2);
+                                if (c2Var3 == null) {
                                     final int i10 = 0;
-                                    l0Var4.b.prepareTonConnectTransfer(i0Var, c2Var2, a8.p0.o(j13, "deposit:"), new v10() { // from class: org.telegram.ui.Wallet.v
-                                        @Override // org.telegram.messenger.v10
+                                    l0Var4.b.prepareTonConnectTransfer(i0Var, c2Var3, a8.p0.o(j13, "deposit:"), new s10() { // from class: org.telegram.ui.Wallet.v
+                                        @Override // org.telegram.messenger.s10
                                         public final void a(Object obj3, Object obj4) {
                                             TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj3;
                                             String str11 = (String) obj4;
@@ -231,8 +231,8 @@ public final /* synthetic */ class o implements Runnable {
                                     return;
                                 } else {
                                     final int i11 = 1;
-                                    l0Var4.b.prepareSendNFT(i0Var, str8, nftitem4.address, str7, new v10() { // from class: org.telegram.ui.Wallet.v
-                                        @Override // org.telegram.messenger.v10
+                                    l0Var4.b.prepareSendNFT(i0Var, str8, nftitem4.address, str7, new s10() { // from class: org.telegram.ui.Wallet.v
+                                        @Override // org.telegram.messenger.s10
                                         public final void a(Object obj3, Object obj4) {
                                             TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj3;
                                             String str11 = (String) obj4;
@@ -256,13 +256,13 @@ public final /* synthetic */ class o implements Runnable {
                         }
                         j10 = nextLong;
                         j11 = j12;
-                        ijVar = null;
-                        wallettransaction.localMessageId = ijVar != null ? 0 : ijVar.e1();
-                        c20Var4 = c20Var3;
-                        if (c20Var4 != null) {
+                        gjVar = null;
+                        wallettransaction.localMessageId = gjVar != null ? 0 : gjVar.e1();
+                        z10Var4 = z10Var3;
+                        if (z10Var4 != null) {
                         }
                         String str92 = null;
-                        c20Var5.a(null);
+                        z10Var5.a(null);
                         l0Var4 = l0Var3;
                         tL_updateWalletGaslessInfo = l0Var4.f;
                         if (tL_updateWalletGaslessInfo != null) {
@@ -273,8 +273,8 @@ public final /* synthetic */ class o implements Runnable {
                         l0.H("prepare sending");
                         String str102 = str92;
                         long j132 = j10;
-                        final u uVar2 = new u(l0Var4, h7Var, C, ijVar, wallettransaction, str8, k0Var2, j132, user2);
-                        if (c2Var2 == null) {
+                        final u uVar2 = new u(l0Var4, g7Var, C, gjVar, wallettransaction, str8, k0Var2, j132, user2);
+                        if (c2Var3 == null) {
                         }
                     }
                 }, false, true);

@@ -1,23 +1,26 @@
 package org.telegram.ui;
 
 import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class g21 implements View.OnClickListener {
-    public final /* synthetic */ o21 a;
+    public final /* synthetic */ org.telegram.ui.Components.kg a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ i21 c;
 
-    public g21(o21 o21Var) {
-        this.a = o21Var;
+    public g21(i21 i21Var, org.telegram.ui.Components.kg kgVar, TLRPC.TL_authorization tL_authorization) {
+        this.c = i21Var;
+        this.a = kgVar;
+        this.b = tL_authorization;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        org.telegram.ui.Components.ch0 ch0Var = this.a.n1;
-        if (ch0Var.b() || ch0Var.getAnimatedDrawable() == null) {
-            return;
-        }
-        ch0Var.getAnimatedDrawable().M(40);
-        ch0Var.d();
+        ((Switch) this.a.f).c(!r0.h, true);
+        this.b.call_requests_disabled = !((Switch) r4.f).h;
+        i21.J0(this.c);
     }
 }

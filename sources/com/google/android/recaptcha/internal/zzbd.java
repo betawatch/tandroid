@@ -5,13 +5,14 @@ import com.google.android.play.core.integrity.StandardIntegrityException;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import gd.k;
 import id.c;
+import jd.a;
 import kd.j;
 import kotlin.jvm.internal.r;
 import rd.p;
 import zd.t;
 import zd.z;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzbd extends j implements p {
     long zza;
@@ -59,24 +60,24 @@ final class zzbd extends j implements p {
     */
     public final Object invokeSuspend(Object obj) {
         long j3;
-        boolean z9;
         boolean z10;
+        boolean z11;
         int errorCode;
-        jd.a aVar = jd.a.a;
+        a aVar = a.a;
         int i7 = this.zzc;
         if (i7 == 0) {
             b.c(obj);
             j3 = 1000;
-            z9 = true;
-            if (!z9) {
+            z10 = true;
+            if (!z10) {
             }
         } else if (i7 != 1) {
-            z10 = this.zzb;
+            z11 = this.zzb;
             j3 = this.zza;
             b.c(obj);
-            z9 = z10;
+            z10 = z11;
             j3 += j3;
-            if (!z9) {
+            if (!z10) {
                 return k.a;
             }
             zzbo zzboVar = this.zzd;
@@ -89,8 +90,8 @@ final class zzbd extends j implements p {
                 b.c(obj);
             } catch (Exception e10) {
                 this.zze.a = e10;
-                z10 = (e10 instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e10).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);
-                if (!z10) {
+                z11 = (e10 instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e10).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);
+                if (!z11) {
                     throw e10;
                 }
                 this.zza = j3;
@@ -100,8 +101,8 @@ final class zzbd extends j implements p {
             zzbo zzboVar2 = this.zzd;
             ((t) zzboVar2.zzf()).C((StandardIntegrityManager.StandardIntegrityTokenProvider) obj);
             zzboVar2.zzc = zzbp.zzc;
-            z9 = false;
-            if (!z9) {
+            z10 = false;
+            if (!z10) {
             }
         }
     }

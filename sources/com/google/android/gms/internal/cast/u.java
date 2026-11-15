@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class u implements Runnable {
                 x0 x0Var = (x0) this.b;
                 y0 y0Var = x0Var.g;
                 if (y0Var != null) {
-                    x0Var.a.a((p1) x0Var.c.b(y0Var).a(), qs.A3);
+                    x0Var.a.a((p1) x0Var.c.b(y0Var).a(), ns.A3);
                 }
                 x0Var.e();
                 return;
@@ -68,7 +68,7 @@ public final /* synthetic */ class u implements Runnable {
                     o1 m10 = p1.m();
                     m10.c();
                     p1.s((p1) m10.b, e1Var);
-                    a2Var.a.a((p1) m10.a(), qs.S3);
+                    a2Var.a.a((p1) m10.a(), ns.S3);
                     SharedPreferences.Editor edit = sharedPreferences.edit();
                     if (!hashSet2.equals(hashSet)) {
                         hashSet2.clear();
@@ -76,16 +76,16 @@ public final /* synthetic */ class u implements Runnable {
                         Iterator it = hashSet2.iterator();
                         while (it.hasNext()) {
                             String num = Integer.toString(((a1) it.next()).a);
-                            String i7 = rf.b.i("feature_usage_timestamp_reported_feature_", num);
-                            if (!sharedPreferences.contains(i7)) {
-                                i7 = rf.b.i("feature_usage_timestamp_detected_feature_", num);
+                            String k10 = r.b.k("feature_usage_timestamp_reported_feature_", num);
+                            if (!sharedPreferences.contains(k10)) {
+                                k10 = r.b.k("feature_usage_timestamp_detected_feature_", num);
                             }
-                            String i10 = rf.b.i("feature_usage_timestamp_reported_feature_", num);
-                            if (!TextUtils.equals(i7, i10)) {
-                                long j11 = sharedPreferences.getLong(i7, 0L);
-                                edit.remove(i7);
+                            String k11 = r.b.k("feature_usage_timestamp_reported_feature_", num);
+                            if (!TextUtils.equals(k10, k11)) {
+                                long j11 = sharedPreferences.getLong(k10, 0L);
+                                edit.remove(k10);
                                 if (j11 != 0) {
-                                    edit.putLong(i10, j11);
+                                    edit.putLong(k11, j11);
                                 }
                             }
                         }

@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import java.nio.charset.StandardCharsets;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class d0 {
     public static final String[] m = {"t.me", "telegram.me", "telegram.dog"};
@@ -22,19 +22,19 @@ public final class d0 {
     public final long[] k = new long[10];
 
     public d0(JSONObject jSONObject) {
-        boolean z9 = false;
-        boolean z10 = (jSONObject == null || (jSONObject != null && jSONObject.optBoolean("preview")) || !jSONObject.optBoolean("canQuery")) ? false : true;
-        this.a = z10;
-        this.b = z10 && jSONObject.optBoolean("backgroundQuery");
-        if (z10 && jSONObject.has("wallet") && !jSONObject.isNull("wallet")) {
-            z9 = true;
+        boolean z10 = false;
+        boolean z11 = (jSONObject == null || (jSONObject != null && jSONObject.optBoolean("preview")) || !jSONObject.optBoolean("canQuery")) ? false : true;
+        this.a = z11;
+        this.b = z11 && jSONObject.optBoolean("backgroundQuery");
+        if (z11 && jSONObject.has("wallet") && !jSONObject.isNull("wallet")) {
+            z10 = true;
         }
-        this.c = z9;
+        this.c = z10;
     }
 
-    public final synchronized boolean a(boolean z9) {
+    public final synchronized boolean a(boolean z10) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (z9) {
+        if (z10) {
             long[] jArr = this.k;
             int i7 = this.l;
             if (elapsedRealtime - jArr[i7] >= 1000) {
@@ -50,27 +50,27 @@ public final class d0 {
         return this.e < this.d && j3 - this.f <= 10000;
     }
 
-    public final synchronized boolean c(boolean z9) {
+    public final synchronized boolean c(boolean z10) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (z9 && b(elapsedRealtime)) {
+        if (z10 && b(elapsedRealtime)) {
             this.e = this.d;
             return true;
         }
         return false;
     }
 
-    public final synchronized boolean d(String str, boolean z9, boolean z10) {
+    public final synchronized boolean d(String str, boolean z10, boolean z11) {
         try {
-            if (this.a && !this.i && str != null && str.getBytes(StandardCharsets.UTF_8).length <= 64 && (!z9 || this.c)) {
+            if (this.a && !this.i && str != null && str.getBytes(StandardCharsets.UTF_8).length <= 64 && (!z10 || this.c)) {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
-                if (!z10 || !b(elapsedRealtime)) {
-                    if (this.b && !z9 && elapsedRealtime - this.g >= 1000) {
+                if (!z11 || !b(elapsedRealtime)) {
+                    if (this.b && !z10 && elapsedRealtime - this.g >= 1000) {
                         this.g = elapsedRealtime;
                     }
                     return false;
                 }
                 this.e = this.d;
-                this.j = z9;
+                this.j = z10;
                 this.i = true;
                 return true;
             }
@@ -79,9 +79,9 @@ public final class d0 {
         }
     }
 
-    public final synchronized boolean e(String str, boolean z9) {
+    public final synchronized boolean e(String str, boolean z10) {
         try {
-            if (this.c && !this.i && str != null && str.length() <= 262144 && z9) {
+            if (this.c && !this.i && str != null && str.length() <= 262144 && z10) {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 if (b(elapsedRealtime)) {
                     this.e = this.d;

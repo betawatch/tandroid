@@ -3,7 +3,7 @@ package f6;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d0 extends j6.g {
     public final /* synthetic */ e0 b;
@@ -13,31 +13,31 @@ public final class d0 extends j6.g {
     }
 
     @Override // j6.h
-    public final void K0(j6.d dVar) {
+    public final void L0(j6.d dVar) {
         e0.k(this.b).post(new m9.u(18, this, dVar));
     }
 
     @Override // j6.h
-    public final void N0(j6.c cVar) {
+    public final void O0(j6.c cVar) {
         e0.k(this.b).post(new m9.u(19, this, cVar));
     }
 
     @Override // j6.h
-    public final void O0(int i7) {
+    public final void P0(int i7) {
         e0.k(this.b).post(new c0(this, i7, 3));
     }
 
     @Override // j6.h
-    public final void R0(d dVar, String str, String str2, boolean z9) {
+    public final void S0(d dVar, String str, String str2, boolean z10) {
         e0 e0Var = this.b;
         e0Var.u = dVar;
         e0Var.v = str;
-        j6.t tVar = new j6.t(new Status(0, null, null, null), dVar, str, str2, z9);
+        j6.u uVar = new j6.u(new Status(0, null, null, null), dVar, str, str2, z10);
         synchronized (e0Var.s) {
             try {
                 TaskCompletionSource taskCompletionSource = e0Var.p;
                 if (taskCompletionSource != null) {
-                    taskCompletionSource.setResult(tVar);
+                    taskCompletionSource.setResult(uVar);
                 }
                 e0Var.p = null;
             } catch (Throwable th2) {
@@ -47,34 +47,34 @@ public final class d0 extends j6.g {
     }
 
     @Override // j6.h
-    public final void W(int i7) {
+    public final void X(int i7) {
         e0.k(this.b).post(new c0(this, i7, 0));
     }
 
     @Override // j6.h
-    public final void X0(String str, byte[] bArr) {
+    public final void Y0(String str, byte[] bArr) {
         e0.H.b("IGNORING: Receive (type=binary, ns=%s) <%d bytes>", str, Integer.valueOf(bArr.length));
     }
 
     @Override // j6.h
-    public final void Z(String str, String str2) {
+    public final void a0(String str, String str2) {
         e0.H.b("Receive (type=text, ns=%s) %s", str, str2);
         e0.k(this.b).post(new a9.h(this, str, str2, 4));
     }
 
     @Override // j6.h
-    public final void c0(int i7) {
+    public final void d0(int i7) {
         this.b.i(i7);
-    }
-
-    @Override // j6.h
-    public final void f0(long j3) {
-        e0.f(this.b, j3, 0);
     }
 
     @Override // j6.h
     public final void g(int i7) {
         e0.g(this.b, i7);
+    }
+
+    @Override // j6.h
+    public final void g0(long j3) {
+        e0.f(this.b, j3, 0);
     }
 
     @Override // j6.h

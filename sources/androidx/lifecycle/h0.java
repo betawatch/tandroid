@@ -6,13 +6,13 @@ import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class h0 extends Fragment {
     public static final /* synthetic */ int b = 0;
-    public cb.c a;
+    public d6.i a;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static final class a implements Application.ActivityLifecycleCallbacks {
         public static final g0 Companion = new g0();
 
@@ -130,9 +130,9 @@ public class h0 extends Fragment {
     @Override // android.app.Fragment
     public final void onResume() {
         super.onResume();
-        cb.c cVar = this.a;
-        if (cVar != null) {
-            ((e0) cVar.b).a();
+        d6.i iVar = this.a;
+        if (iVar != null) {
+            ((e0) iVar.b).a();
         }
         a(m.ON_RESUME);
     }
@@ -140,9 +140,9 @@ public class h0 extends Fragment {
     @Override // android.app.Fragment
     public final void onStart() {
         super.onStart();
-        cb.c cVar = this.a;
-        if (cVar != null) {
-            e0 e0Var = (e0) cVar.b;
+        d6.i iVar = this.a;
+        if (iVar != null) {
+            e0 e0Var = (e0) iVar.b;
             int i7 = e0Var.a + 1;
             e0Var.a = i7;
             if (i7 == 1 && e0Var.d) {

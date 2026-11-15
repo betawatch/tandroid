@@ -1,89 +1,31 @@
 package mi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
-import java.util.ArrayList;
-import org.telegram.ui.Cells.q1;
-import v4.d1;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.a41;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class i extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v4.i b;
-    public final /* synthetic */ ViewPropertyAnimator c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ l e;
+public final class i extends a41 {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ i(l lVar, v4.i iVar, ViewPropertyAnimator viewPropertyAnimator, View view, int i7) {
-        this.a = i7;
-        this.e = lVar;
-        this.b = iVar;
-        this.c = viewPropertyAnimator;
-        this.d = view;
+    static {
+        a41.h(new i());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.c.setListener(null);
-                View view = this.d;
-                view.setAlpha(1.0f);
-                view.setScaleX(1.0f);
-                view.setScaleX(1.0f);
-                if (view instanceof q1) {
-                    ((q1) view).setAnimationOffsetX(0.0f);
-                } else {
-                    view.setTranslationX(0.0f);
-                }
-                view.setTranslationY(0.0f);
-                l lVar = this.e;
-                ArrayList arrayList = lVar.B;
-                v4.i iVar = this.b;
-                if (arrayList.remove(iVar.a)) {
-                    lVar.d(iVar.a);
-                    lVar.G();
-                    break;
-                }
-                break;
-            default:
-                this.c.setListener(null);
-                View view2 = this.d;
-                view2.setAlpha(1.0f);
-                view2.setScaleX(1.0f);
-                view2.setScaleX(1.0f);
-                if (view2 instanceof q1) {
-                    ((q1) view2).setAnimationOffsetX(0.0f);
-                } else {
-                    view2.setTranslationX(0.0f);
-                }
-                view2.setTranslationY(0.0f);
-                l lVar2 = this.e;
-                ArrayList arrayList2 = lVar2.B;
-                v4.i iVar2 = this.b;
-                if (arrayList2.remove(iVar2.b)) {
-                    lVar2.d(iVar2.b);
-                    lVar2.G();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.a41
+    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+        long j3 = b41Var.B;
+        ((j) view).a((int) j3, (int) (j3 >>> 32), b41Var.k, b41Var.l, b41Var.n, b41Var.q);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                d1 d1Var = this.b.a;
-                this.e.getClass();
-                break;
-            default:
-                d1 d1Var2 = this.b.b;
-                this.e.getClass();
-                break;
-        }
+    @Override // org.telegram.ui.Components.a41
+    public final View d(Context context, uj0 uj0Var, int i7, e6 e6Var) {
+        return new j(context, e6Var, false);
     }
 }

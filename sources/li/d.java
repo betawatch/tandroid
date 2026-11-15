@@ -1,60 +1,81 @@
 package li;
 
-import org.telegram.messenger.p10;
-import org.telegram.ui.eg0;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import c8.ja;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.Components.i9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p b;
+public final class d extends FrameLayout implements z5 {
+    public final i9 a;
+    public final e6 b;
+    public final TextView c;
+    public final TextView d;
 
-    public /* synthetic */ d(p pVar, int i7) {
-        this.a = i7;
-        this.b = pVar;
+    public d(Context context, e6 e6Var) {
+        super(context);
+        this.b = e6Var;
+        i9 i9Var = new i9(context);
+        this.a = i9Var;
+        i9Var.setRoundRadius(org.telegram.messenger.g0.L(20.0f));
+        addView(i9Var, ja.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        textView.setTextSize(1, 20.0f);
+        textView.setGravity(17);
+        addView(textView, ja.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity(17);
+        textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        addView(textView2, ja.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
+        updateColors();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                p pVar = this.b;
-                pVar.L(true, 2147483646, 0, 0L, false);
-                eg0 eg0Var = pVar.O;
-                if (eg0Var != null) {
-                    eg0Var.g(false);
-                    pVar.O = null;
-                    break;
-                }
-                break;
-            case 1:
-                p pVar2 = this.b;
-                pVar2.L(false, 0, 0, 0L, false);
-                eg0 eg0Var2 = pVar2.O;
-                if (eg0Var2 != null) {
-                    eg0Var2.g(true);
-                    pVar2.O = null;
-                    break;
-                }
-                break;
-            case 2:
-                p pVar3 = this.b;
-                if (!p10.i(pVar3.n).q()) {
-                    new ug.w0(pVar3.b.Z1, pVar3.getContext(), pVar3.n, 43, true).show();
-                    break;
-                }
-                break;
-            case 3:
-                p pVar4 = this.b;
-                y3 y3Var = pVar4.s;
-                if (y3Var != null) {
-                    y3Var.setSendEnabled(pVar4.r.P3());
-                    break;
-                }
-                break;
-            default:
-                this.b.f0();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(j6.G6));
+        hashSet.add(Integer.valueOf(j6.z6));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Drawable drawable = j6.S0;
+        i9 i9Var = this.a;
+        bg.s.a(canvas, drawable, (i9Var.getWidth() / 2.0f) + i9Var.getLeft(), (i9Var.getHeight() / 2.0f) + i9Var.getTop(), i9Var.getHeight());
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(218.0f), TLObject.FLAG_30));
+    }
+
+    public void setSubtitle(CharSequence charSequence) {
+        this.d.setText(charSequence);
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.c.setText(charSequence);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        int i7 = j6.G6;
+        e6 e6Var = this.b;
+        this.c.setTextColor(j6.w0(i7, e6Var));
+        this.d.setTextColor(j6.w0(j6.z6, e6Var));
     }
 }

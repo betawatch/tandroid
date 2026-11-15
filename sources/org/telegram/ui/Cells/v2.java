@@ -5,11 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.id;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class v2 extends FrameLayout {
     public int a;
@@ -19,19 +20,19 @@ public final class v2 extends FrameLayout {
     public boolean e;
     public int f;
 
-    public final void a(boolean z9, boolean z10) {
+    public final void a(boolean z10, boolean z11) {
         RadioButton radioButton = this.d;
         TextView textView = this.c;
         TextView textView2 = this.b;
-        setEnabled(z9);
-        if (z10) {
-            textView2.animate().alpha(z9 ? 1.0f : 0.5f).start();
-            textView.animate().alpha(z9 ? 1.0f : 0.5f).start();
-            radioButton.animate().alpha(z9 ? 1.0f : 0.5f).start();
+        setEnabled(z10);
+        if (z11) {
+            textView2.animate().alpha(z10 ? 1.0f : 0.5f).start();
+            textView.animate().alpha(z10 ? 1.0f : 0.5f).start();
+            radioButton.animate().alpha(z10 ? 1.0f : 0.5f).start();
         } else {
-            textView2.setAlpha(z9 ? 1.0f : 0.5f);
-            textView.setAlpha(z9 ? 1.0f : 0.5f);
-            radioButton.setAlpha(z9 ? 1.0f : 0.5f);
+            textView2.setAlpha(z10 ? 1.0f : 0.5f);
+            textView.setAlpha(z10 ? 1.0f : 0.5f);
+            radioButton.setAlpha(z10 ? 1.0f : 0.5f);
         }
     }
 
@@ -41,18 +42,18 @@ public final class v2 extends FrameLayout {
         TextView textView = this.b;
         TextView textView2 = this.c;
         if (textView2.getVisibility() == 0) {
-            boolean z9 = id.a0;
-            d = c8.ha.d(-1, -1.0f, (z9 ? 5 : 3) | 48, z9 ? this.f : 61.0f, 0.0f, z9 ? 61.0f : this.f, 0.0f);
+            boolean z10 = hd.a0;
+            d = c8.ja.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? this.f : 61.0f, 0.0f, z10 ? 61.0f : this.f, 0.0f);
         } else {
-            boolean z10 = id.a0;
-            d = c8.ha.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 61.0f : this.f, 0.0f, z10 ? this.f : 61.0f, 0.0f);
+            boolean z11 = hd.a0;
+            d = c8.ja.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 61.0f : this.f, 0.0f, z11 ? this.f : 61.0f, 0.0f);
         }
         textView.setLayoutParams(d);
         RadioButton radioButton = this.d;
         if (textView2.getVisibility() == 0) {
-            d2 = c8.ha.d(22, 22.0f, (id.a0 ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+            d2 = c8.ja.d(22, 22.0f, (hd.a0 ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
         } else {
-            d2 = c8.ha.d(22, 22.0f, (id.a0 ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+            d2 = c8.ja.d(22, 22.0f, (hd.a0 ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
         }
         radioButton.setLayoutParams(d2);
     }
@@ -60,7 +61,7 @@ public final class v2 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.e) {
-            canvas.drawLine(org.telegram.messenger.g0.L(id.a0 ? 0.0f : this.f), getHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(id.a0 ? this.f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
+            canvas.drawLine(org.telegram.messenger.g0.L(hd.a0 ? 0.0f : this.f), getHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(hd.a0 ? this.f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
         }
     }
 
@@ -74,7 +75,7 @@ public final class v2 extends FrameLayout {
         this.d.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(22.0f), TLObject.FLAG_30));
         if (textView.getVisibility() == 0) {
             textView.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-            L = org.telegram.messenger.camera.q.w(12.0f, textView.getMeasuredWidth(), L);
+            L = i20.w(12.0f, textView.getMeasuredWidth(), L);
         }
         this.b.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }

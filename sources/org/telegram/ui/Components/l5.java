@@ -1,40 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.view.View;
-import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l5 implements n5 {
-    public final WeakReference a;
-    public final boolean b;
-    public Layout c;
-    public q5 d;
-    public Rect e;
-    public h5 f;
-    public org.telegram.messenger.e6 h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean w;
+public final class l5 {
+    public ArrayList a;
+    public HashMap b;
+    public ArrayList c;
 
-    public l5(View view, boolean z9) {
-        this.a = new WeakReference(view);
-        this.b = z9;
+    public final void a() {
+        ArrayList arrayList = this.a;
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            ((k5) arrayList.get(i7)).d.spanDrawn = false;
+        }
     }
 
-    @Override // org.telegram.ui.Components.n5
-    public final void invalidate() {
-        View view = (View) this.a.get();
-        if (view == null) {
-            return;
+    public final void b(int i7) {
+        k5 k5Var = (k5) this.a.remove(i7);
+        HashMap hashMap = this.b;
+        n5 n5Var = (n5) hashMap.get(k5Var.c);
+        if (n5Var == null) {
+            throw new RuntimeException("!!!");
         }
-        if (!this.b || view.getParent() == null) {
-            view.invalidate();
-        } else {
-            ((View) view.getParent()).invalidate();
+        ArrayList arrayList = n5Var.b;
+        arrayList.remove(k5Var);
+        n5Var.a();
+        if (arrayList.isEmpty()) {
+            hashMap.remove(k5Var.c);
+            this.c.remove(n5Var);
+        }
+        g5 g5Var = k5Var.f;
+        if (g5Var != null) {
+            g5Var.o(k5Var);
         }
     }
 }

@@ -2,7 +2,7 @@ package a8;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class g implements Map.Entry {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public abstract class g implements Map.Entry {
             default:
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry2 = (Map.Entry) obj;
-                    if (!e8.a(getKey(), entry2.getKey()) || !e8.a(getValue(), entry2.getValue())) {
+                    if (!f8.a(getKey(), entry2.getKey()) || !f8.a(getValue(), entry2.getValue())) {
                     }
                 }
                 break;
@@ -47,11 +47,11 @@ public abstract class g implements Map.Entry {
             case 0:
                 return getKey() + "=" + getValue();
             default:
-                return p0.D(String.valueOf(getKey()), "=", String.valueOf(getValue()));
+                return p0.E(String.valueOf(getKey()), "=", String.valueOf(getValue()));
         }
     }
 
-    public /* synthetic */ g(int i7, boolean z9) {
+    public /* synthetic */ g(int i7, boolean z10) {
         this.a = i7;
     }
 }

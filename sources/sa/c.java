@@ -2,24 +2,24 @@ package sa;
 
 import android.content.Context;
 import android.os.Build;
-import androidx.emoji2.text.w;
+import androidx.emoji2.text.x;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.Set;
 import java.util.concurrent.Executor;
-import u9.n;
+import u9.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c implements e, f {
-    public final n a;
+    public final m a;
     public final Context b;
     public final ua.b c;
     public final Set d;
     public final Executor e;
 
     public c(Context context, String str, Set set, ua.b bVar, Executor executor) {
-        this.a = new n(new o9.c(context, str));
+        this.a = new m(new o9.c(context, str));
         this.d = set;
         this.e = executor;
         this.c = bVar;
@@ -37,7 +37,7 @@ public final class c implements e, f {
     }
 
     public final Task b() {
-        if (Build.VERSION.SDK_INT >= 24 ? w.g(this.b) : true) {
+        if (Build.VERSION.SDK_INT >= 24 ? x.g(this.b) : true) {
             return Tasks.call(this.e, new b(this, 0));
         }
         return Tasks.forResult("");
@@ -48,7 +48,7 @@ public final class c implements e, f {
             Tasks.forResult(null);
             return;
         }
-        if (Build.VERSION.SDK_INT >= 24 ? w.g(this.b) : true) {
+        if (Build.VERSION.SDK_INT >= 24 ? x.g(this.b) : true) {
             Tasks.call(this.e, new b(this, 1));
         } else {
             Tasks.forResult(null);

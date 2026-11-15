@@ -1,20 +1,43 @@
 package c8;
 
-import java.io.Serializable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a1 {
-    public static final Object a(q1.b bVar, q1.e key, Serializable serializable) {
-        kotlin.jvm.internal.j.e(bVar, "<this>");
-        kotlin.jvm.internal.j.e(key, "key");
-        Object obj = bVar.a.get(key);
-        if (obj instanceof byte[]) {
-            byte[] bArr = (byte[]) obj;
-            obj = Arrays.copyOf(bArr, bArr.length);
-            kotlin.jvm.internal.j.d(obj, "copyOf(this, size)");
+    public static Integer a(String str) {
+        if (str == null) {
+            return null;
         }
-        return obj == null ? serializable : obj;
+        switch (str.hashCode()) {
+            case -1118317585:
+                return str.equals("REPEAT_ALL_AND_SHUFFLE") ? 3 : null;
+            case -962896020:
+                return str.equals("REPEAT_SINGLE") ? 2 : null;
+            case 1645938909:
+                return str.equals("REPEAT_ALL") ? 1 : null;
+            case 1645952171:
+                return str.equals("REPEAT_OFF") ? 0 : null;
+            default:
+                return null;
+        }
+    }
+
+    public static String b(Integer num) {
+        if (num == null) {
+            return null;
+        }
+        int intValue = num.intValue();
+        if (intValue == 0) {
+            return "REPEAT_OFF";
+        }
+        if (intValue == 1) {
+            return "REPEAT_ALL";
+        }
+        if (intValue == 2) {
+            return "REPEAT_SINGLE";
+        }
+        if (intValue != 3) {
+            return null;
+        }
+        return "REPEAT_ALL_AND_SHUFFLE";
     }
 }

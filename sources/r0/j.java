@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j {
     public ViewParent a;
@@ -18,11 +18,11 @@ public final class j {
         this.c = viewGroup;
     }
 
-    public final boolean a(float f10, float f11, boolean z9) {
+    public final boolean a(float f10, float f11, boolean z10) {
         ViewParent e10;
         if (this.d && (e10 = e(0)) != null) {
             try {
-                return e10.onNestedFling(this.c, f10, f11, z9);
+                return e10.onNestedFling(this.c, f10, f11, z10);
             } catch (AbstractMethodError e11) {
                 Log.e("ViewParentCompat", "ViewParent " + e10 + " does not implement interface method onNestedFling", e11);
             }
@@ -173,8 +173,8 @@ public final class j {
                 View view = this.c;
                 View view2 = view;
                 for (ViewParent parent = view.getParent(); parent != null; parent = parent.getParent()) {
-                    boolean z9 = parent instanceof k;
-                    if (z9) {
+                    boolean z10 = parent instanceof k;
+                    if (z10) {
                         onStartNestedScroll = ((k) parent).o(view2, view, i7, i10);
                     } else {
                         if (i10 == 0) {
@@ -192,7 +192,7 @@ public final class j {
                         } else if (i10 == 1) {
                             this.b = parent;
                         }
-                        if (z9) {
+                        if (z10) {
                             ((k) parent).r(view2, view, i7, i10);
                         } else if (i10 == 0) {
                             try {
@@ -216,9 +216,9 @@ public final class j {
     public final void h(int i7) {
         ViewParent e10 = e(i7);
         if (e10 != null) {
-            boolean z9 = e10 instanceof k;
+            boolean z10 = e10 instanceof k;
             ViewGroup viewGroup = this.c;
-            if (z9) {
+            if (z10) {
                 ((k) e10).k(i7, viewGroup);
             } else if (i7 == 0) {
                 try {

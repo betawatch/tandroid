@@ -1,95 +1,105 @@
 package ji;
 
+import ai.b2;
 import ai.m0;
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.id;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.t3;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.v8;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.x31;
-import v4.o0;
+import ai.s;
+import org.telegram.messenger.z10;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class g extends w31 {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes.dex */
+public final /* synthetic */ class g implements z10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m b;
+    public final /* synthetic */ String[] c;
 
-    static {
-        w31.h(new g());
+    public /* synthetic */ g(m mVar, String[] strArr, int i7) {
+        this.a = i7;
+        this.b = mVar;
+        this.c = strArr;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        h hVar = (h) view;
-        f fVar = (f) x31Var.G;
-        TLRPC.User user = fVar.b;
-        long j3 = fVar.a;
-        e eVar = (e) x31Var.H;
-        boolean z10 = fVar.c;
-        boolean z11 = !x31Var.j;
-        k9 k9Var = hVar.c;
-        TextView textView = hVar.n;
-        TextView textView2 = hVar.d;
-        hVar.E = eVar;
-        hVar.F = j3;
-        hVar.G = user.id;
-        int i7 = hVar.b;
-        TLRPC.Chat M0 = qp.s1(i7).M0(Long.valueOf(-j3));
-        TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(j3));
-        hVar.f.setText(m5.l(p10.s0, j3));
-        hVar.h.setText(g0.Q2(id.a0(null, null, a22 != null ? 2131751898 : t3.V(M0) ? 2131751897 : 2131751896, m5.u(user)), m6.Wl, null, new m0(16), false));
-        if (a22 != null) {
-            textView2.setVisibility(8);
-        } else if (M0 == null || M0.participants_count <= 0) {
-            textView2.setVisibility(8);
-        } else {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("* ");
-            spannableStringBuilder.setSpan(hVar.s, 0, 1, 33);
-            long j10 = M0.participants_count;
-            spannableStringBuilder.append((CharSequence) (j10 < 1000000 ? id.E(j10, ',') : g0.o0((int) j10, 1000000)));
-            textView2.setText(spannableStringBuilder);
-            textView2.setVisibility(0);
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
+        b2 b2Var;
+        p pVar;
+        b2 b2Var2;
+        Integer num = (Integer) obj;
+        switch (this.a) {
+            case 0:
+                m mVar = this.b;
+                mVar.getClass();
+                if (num.intValue() != 0) {
+                    String str = this.c[num.intValue() - 1];
+                    s H = DictationAsr.H(str);
+                    boolean z10 = (H == null || DictationAsr.w(H)) ? false : true;
+                    DictationAsr.S(str);
+                    DictationAsr.s(H);
+                    if (z10 && mVar.c == 2 && (pVar = mVar.h) != null) {
+                        mVar.n = "";
+                        if (pVar.N1) {
+                            pVar.v1 = null;
+                        }
+                        pVar.i0 = "";
+                        pVar.w1 = -1;
+                        pVar.j0 = null;
+                        pVar.m0.clear();
+                        pVar.S0 = true;
+                        pVar.B0 = 0.0f;
+                        pVar.A0 = 0.0f;
+                        pVar.C0 = 0.0f;
+                        pVar.D0 = 0.0f;
+                        pVar.F0 = -1.0f;
+                        pVar.E0 = -1.0f;
+                        pVar.H0 = -1.0f;
+                        pVar.J0 = false;
+                        pVar.Q0 = 0L;
+                        pVar.R0 = 0.0f;
+                        pVar.y0 = true;
+                        pVar.X0 = true;
+                        pVar.invalidate();
+                    }
+                    p pVar2 = mVar.h;
+                    if (pVar2 != null) {
+                        pVar2.setLanguage(m0.l(str));
+                    }
+                    if (mVar.c == 2 && (b2Var = mVar.f) != null) {
+                        b2Var.p(str);
+                    }
+                    mVar.t();
+                    break;
+                } else {
+                    DictationAsr.T(true);
+                    break;
+                }
+                break;
+            default:
+                if (num.intValue() != 0) {
+                    String str2 = this.c[num.intValue() - 1];
+                    s H2 = DictationAsr.H(str2);
+                    boolean z11 = (H2 == null || DictationAsr.w(H2)) ? false : true;
+                    DictationAsr.S(str2);
+                    DictationAsr.s(H2);
+                    m mVar2 = this.b;
+                    if (z11 && mVar2.c == 2 && mVar2.X == null && mVar2.e0 == null) {
+                        mVar2.M.clear();
+                        mVar2.n();
+                    }
+                    String l10 = m0.l(str2);
+                    mVar2.l0 = l10;
+                    e eVar = mVar2.K;
+                    if (eVar != null) {
+                        eVar.setLanguage(l10);
+                    }
+                    if (mVar2.c == 2 && (b2Var2 = mVar2.f) != null) {
+                        b2Var2.p(str2);
+                    }
+                    mVar2.t();
+                    break;
+                } else {
+                    DictationAsr.T(true);
+                    break;
+                }
         }
-        if (z10) {
-            textView.setVisibility(0);
-        } else {
-            textView.setVisibility(8);
-        }
-        hVar.y = z11;
-        if (a22 != null) {
-            k9Var.e(a22, new v8(0, a22));
-        } else {
-            k9Var.e(M0, new v8(M0));
-        }
-        hVar.e.e(user, new v8(0, user));
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, h6 h6Var) {
-        h hVar = new h(i7, context, h6Var);
-        hVar.setLayoutParams(new o0(-1, -2));
-        hVar.setClickable(false);
-        return hVar;
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final boolean e(x31 x31Var, x31 x31Var2) {
-        f fVar = (f) x31Var.G;
-        f fVar2 = (f) x31Var2.G;
-        return fVar.a == fVar2.a && m5.d(fVar.b) == m5.d(fVar2.b);
     }
 }

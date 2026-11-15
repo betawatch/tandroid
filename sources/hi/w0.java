@@ -1,137 +1,77 @@
 package hi;
 
-import android.app.Activity;
-import android.content.Context;
-import java.util.HashSet;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.qp;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.kn0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cn;
-import org.telegram.ui.f40;
-import org.telegram.ui.gy0;
-import org.telegram.ui.ih;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.z10;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class w0 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class w0 implements z10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a1 b;
 
-    public /* synthetic */ w0(int i7, org.telegram.ui.ActionBar.u1 u1Var, Context context, long j3, h6 h6Var, org.telegram.ui.web.p pVar, bi.t0 t0Var) {
-        this.c = i7;
-        this.d = u1Var;
-        this.e = context;
-        this.b = j3;
-        this.f = h6Var;
-        this.g = pVar;
-        this.h = t0Var;
+    public /* synthetic */ w0(a1 a1Var, int i7) {
+        this.a = i7;
+        this.b = a1Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i7 = this.a;
-        int i10 = this.c;
-        Object obj = this.h;
-        Object obj2 = this.g;
-        Object obj3 = this.e;
-        Object obj4 = this.f;
-        Object obj5 = this.d;
-        switch (i7) {
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
+        File file;
+        File file2;
+        ArrayList arrayList = (ArrayList) obj;
+        switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new y0(tLObject, this.c, (org.telegram.ui.ActionBar.u1) obj5, (Context) obj3, this.b, (h6) obj4, (org.telegram.ui.web.p) obj2, (bi.t0) obj));
-                break;
-            case 1:
-                f40 f40Var = (f40) obj5;
-                HashSet hashSet = (HashSet) obj3;
-                AtomicInteger atomicInteger = (AtomicInteger) obj4;
-                org.telegram.messenger.r3 r3Var = (org.telegram.messenger.r3) obj2;
-                String str = (String) obj;
-                boolean z9 = tLObject instanceof TLRPC.Updates;
-                long j3 = this.b;
-                if (z9) {
-                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    qp.s1(f40Var.a).O3(updates, false);
-                    org.telegram.messenger.g0.h3(new bi.d3(f40Var, updates, j3, 27));
-                } else if (tL_error != null && "USER_PRIVACY_RESTRICTED".equalsIgnoreCase(tL_error.text)) {
-                    hashSet.add(Long.valueOf(j3));
+                long currentTimeMillis = System.currentTimeMillis();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                ArrayList arrayList4 = new ArrayList();
+                for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                    d7 a10 = ((z0) arrayList.get(i7)).a();
+                    if ((a10.v() || ((file = a10.L) != null && file.exists())) && currentTimeMillis - a10.d <= 604800000) {
+                        arrayList4.add(a10);
+                        arrayList2.add(Long.valueOf(a10.b));
+                    } else {
+                        arrayList3.add(a10);
+                    }
                 }
-                if (atomicInteger.incrementAndGet() == i10 && !hashSet.isEmpty()) {
-                    org.telegram.messenger.g0.h3(new kn0(f40Var, hashSet, r3Var, str, 7));
-                    break;
+                a1 a1Var = this.b;
+                a1Var.c(arrayList3);
+                a1Var.f = false;
+                a1Var.e = true;
+                fi.s6 P1 = np.s1(a1Var.a).P1();
+                int size = arrayList4.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj2 = arrayList4.get(i10);
+                    i10++;
+                    fi.r6 r6Var = new fi.r6(P1, (d7) obj2);
+                    P1.d(r6Var.K, r6Var, P1.b, false);
                 }
-                break;
-            case 2:
-                String str2 = LaunchActivity.B1;
-                org.telegram.messenger.g0.h3(new y0((LaunchActivity) obj5, tLObject, this.c, (String) obj3, (String) obj4, (TLRPC.User) obj2, (String) obj, this.b));
+                ns.f(P1.a).k(ns.v5, new Object[0]);
                 break;
             default:
-                Activity activity = (Activity) obj5;
-                h6 h6Var = (h6) obj4;
-                byte[] bArr = (byte[]) obj3;
-                cn cnVar = (cn) obj2;
-                ij ijVar = (ij) obj;
-                if (tLObject == null) {
-                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        org.telegram.messenger.g0.i3(new gy0(cnVar, activity, h6Var, ijVar, 1), 200L);
-                        break;
-                    }
-                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
-                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
-                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            org.telegram.messenger.g0.i3(new ih(cnVar, i10, ijVar), 200L);
-                            break;
-                        }
+                a1 a1Var2 = this.b;
+                a1Var2.getClass();
+                long currentTimeMillis2 = System.currentTimeMillis();
+                ArrayList arrayList5 = new ArrayList();
+                ArrayList arrayList6 = new ArrayList();
+                for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                    d7 a11 = ((z0) arrayList.get(i11)).a();
+                    if ((a11.v() || ((file2 = a11.L) != null && file2.exists())) && (!a11.g ? currentTimeMillis2 - a11.d <= 604800000 : currentTimeMillis2 <= a11.J)) {
+                        a1Var2.b.add(a11);
+                        arrayList5.add(Long.valueOf(a11.b));
                     } else {
-                        org.telegram.messenger.g0.i3(new gy0(cnVar, activity, h6Var, ijVar, 0), 200L);
-                        break;
+                        arrayList6.add(a11);
                     }
-                } else {
-                    org.telegram.messenger.g0.h3(new bg.h0(tLObject, activity, h6Var, this.b, bArr, cnVar, ijVar));
-                    break;
                 }
+                a1Var2.c(arrayList6);
+                a1Var2.d = false;
+                a1Var2.c = true;
+                ns.f(a1Var2.a).k(ns.y5, new Object[0]);
                 break;
         }
-    }
-
-    public /* synthetic */ w0(Activity activity, h6 h6Var, long j3, byte[] bArr, cn cnVar, ij ijVar, int i7) {
-        this.d = activity;
-        this.f = h6Var;
-        this.b = j3;
-        this.e = bArr;
-        this.g = cnVar;
-        this.h = ijVar;
-        this.c = i7;
-    }
-
-    public /* synthetic */ w0(f40 f40Var, long j3, HashSet hashSet, AtomicInteger atomicInteger, int i7, org.telegram.messenger.r3 r3Var, String str) {
-        this.d = f40Var;
-        this.b = j3;
-        this.e = hashSet;
-        this.f = atomicInteger;
-        this.c = i7;
-        this.g = r3Var;
-        this.h = str;
-    }
-
-    public /* synthetic */ w0(LaunchActivity launchActivity, int i7, String str, String str2, TLRPC.User user, String str3, long j3) {
-        this.d = launchActivity;
-        this.c = i7;
-        this.e = str;
-        this.f = str2;
-        this.g = user;
-        this.h = str3;
-        this.b = j3;
     }
 }

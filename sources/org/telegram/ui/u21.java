@@ -1,37 +1,62 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u21 implements org.telegram.messenger.c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
+public final class u21 implements s9 {
+    public TLObject a = null;
+    public TLRPC.TL_error b = null;
+    public final /* synthetic */ SessionsActivity c;
 
-    public /* synthetic */ u21(SessionsActivity sessionsActivity, int i7) {
-        this.a = i7;
-        this.b = sessionsActivity;
+    public u21(SessionsActivity sessionsActivity) {
+        this.c = sessionsActivity;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                if (connectedbots != null) {
-                    sessionsActivity.f = connectedbots.connected_bots;
-                    if (sessionsActivity.a != null) {
-                        sessionsActivity.r0();
-                        sessionsActivity.a.f();
-                        break;
-                    }
-                }
-                break;
-            default:
-                SessionsActivity.a0(this.b, (Boolean) obj);
-                break;
+    @Override // org.telegram.ui.s9
+    public final /* synthetic */ String J0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.s9
+    public final void M(String str) {
+        TLObject tLObject = this.a;
+        if (!(tLObject instanceof TLRPC.TL_authorization)) {
+            if (this.b != null) {
+                org.telegram.messenger.g0.h3(new t21(this, 0));
+                return;
+            }
+            return;
         }
+        TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
+        boolean z10 = tL_authorization.password_pending;
+        SessionsActivity sessionsActivity = this.c;
+        if (z10) {
+            sessionsActivity.e.add(0, tL_authorization);
+            sessionsActivity.V = 4;
+            sessionsActivity.p0(false);
+        } else {
+            sessionsActivity.d.add(0, tL_authorization);
+        }
+        sessionsActivity.r0();
+        sessionsActivity.a.f();
+        sessionsActivity.r.m(0L, this.a, 11);
+    }
+
+    @Override // org.telegram.ui.s9
+    public final boolean d1(String str, j9 j9Var) {
+        this.a = null;
+        this.b = null;
+        org.telegram.messenger.g0.i3(new q21(this, str, j9Var, 2), 750L);
+        return true;
+    }
+
+    @Override // org.telegram.ui.s9
+    public final /* synthetic */ void S0(org.telegram.messenger.wr wrVar) {
+    }
+
+    @Override // org.telegram.ui.s9
+    public final /* synthetic */ void onDismiss() {
     }
 }

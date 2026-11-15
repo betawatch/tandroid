@@ -15,9 +15,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class g1 extends PopupWindow {
     public static Method k;
@@ -49,7 +49,7 @@ public class g1 extends PopupWindow {
     public g1(View view, int i7, int i10) {
         super(view, i7, i10);
         this.b = true;
-        this.c = qs.g2;
+        this.c = ns.g2;
         this.f = -1L;
         this.j = new h2.f((int[]) null);
         e();
@@ -63,11 +63,11 @@ public class g1 extends PopupWindow {
         actionBarPopupWindow$ActionBarPopupWindowLayout.setPivotX(actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth());
         actionBarPopupWindow$ActionBarPopupWindowLayout.setPivotY(0.0f);
         int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
-        HashMap hashMap = actionBarPopupWindow$ActionBarPopupWindowLayout.D;
+        HashMap hashMap = actionBarPopupWindow$ActionBarPopupWindowLayout.E;
         hashMap.clear();
         int i7 = 0;
         for (int i10 = 0; i10 < itemsCount; i10++) {
-            View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10);
+            View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.M.getChildAt(i10);
             if (!(childAt instanceof d1)) {
                 childAt.setAlpha(0.0f);
                 if (childAt.getVisibility() == 0) {
@@ -87,12 +87,12 @@ public class g1 extends PopupWindow {
         }
         AnimatorSet animatorSet = new AnimatorSet();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new fi.v3(actionBarPopupWindow$ActionBarPopupWindowLayout, 12));
+        ofFloat.addUpdateListener(new hi.j3(actionBarPopupWindow$ActionBarPopupWindowLayout, 12));
         actionBarPopupWindow$ActionBarPopupWindowLayout.a = false;
         actionBarPopupWindow$ActionBarPopupWindowLayout.b = true;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f10), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, qs.e4), ofFloat);
-        animatorSet.setDuration((i7 * 16) + qs.g2);
-        animatorSet.addListener(new m.a(actionBarPopupWindow$ActionBarPopupWindowLayout, 8));
+        animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f10), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, ns.e4), ofFloat);
+        animatorSet.setDuration((i7 * 16) + ns.g2);
+        animatorSet.addListener(new ki.s3(actionBarPopupWindow$ActionBarPopupWindowLayout, 9));
         animatorSet.start();
     }
 
@@ -109,7 +109,7 @@ public class g1 extends PopupWindow {
         windowManager.updateViewLayout(rootView, layoutParams);
     }
 
-    public void d(boolean z9) {
+    public void d(boolean z10) {
         ArrayList arrayList;
         long j3 = this.f;
         setFocusable(false);
@@ -130,14 +130,14 @@ public class g1 extends PopupWindow {
         AnimatorSet animatorSet = this.a;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = null;
         if (animatorSet != null) {
-            if (z9 && this.d) {
+            if (z10 && this.d) {
                 return;
             }
             animatorSet.cancel();
             this.a = null;
         }
         this.d = false;
-        if (!this.b || !z9) {
+        if (!this.b || !z10) {
             try {
                 super.dismiss();
             } catch (Exception unused2) {
@@ -191,7 +191,7 @@ public class g1 extends PopupWindow {
         if (contentView instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
             ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) contentView;
             if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-                setTouchInterceptor(new fi.n1(1, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
+                setTouchInterceptor(new hi.p1(1, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
             }
         }
         Field field = l;
@@ -253,7 +253,7 @@ public class g1 extends PopupWindow {
                 actionBarPopupWindow$ActionBarPopupWindowLayout = actionBarPopupWindow$ActionBarPopupWindowLayout2;
             }
             actionBarPopupWindow$ActionBarPopupWindowLayout.setTranslationY(0.0f);
-            HashMap hashMap = actionBarPopupWindow$ActionBarPopupWindowLayout.D;
+            HashMap hashMap = actionBarPopupWindow$ActionBarPopupWindowLayout.E;
             float f10 = 1.0f;
             actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(1.0f);
             actionBarPopupWindow$ActionBarPopupWindowLayout.setPivotX(actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth());
@@ -262,7 +262,7 @@ public class g1 extends PopupWindow {
             hashMap.clear();
             int i11 = 0;
             for (int i12 = 0; i12 < itemsCount; i12++) {
-                View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i12);
+                View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.M.getChildAt(i12);
                 childAt.setAlpha(0.0f);
                 if (childAt.getVisibility() == 0) {
                     hashMap.put(childAt, Integer.valueOf(i11));
@@ -280,8 +280,8 @@ public class g1 extends PopupWindow {
             }
             AnimatorSet animatorSet = new AnimatorSet();
             this.a = animatorSet;
-            animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f10), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, qs.e4));
-            this.a.setDuration((i11 * 16) + qs.g2);
+            animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f10), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, ns.e4));
+            this.a.setDuration((i11 * 16) + ns.g2);
             this.a.addListener(new b1(this, i7));
             this.a.start();
         }

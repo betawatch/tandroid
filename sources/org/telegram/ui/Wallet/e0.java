@@ -1,15 +1,15 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.v10;
+import org.telegram.messenger.s10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.q61;
+import org.telegram.ui.ah0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e0 implements v10 {
+public final /* synthetic */ class e0 implements s10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ f0 b;
 
@@ -18,7 +18,7 @@ public final /* synthetic */ class e0 implements v10 {
         this.b = f0Var;
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.s10
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
@@ -49,7 +49,7 @@ public final /* synthetic */ class e0 implements v10 {
                 if (walletState != null) {
                     l0Var2.l0(walletState);
                     l0Var2.R();
-                    org.telegram.messenger.g0.i3(new q61(3), 1000L);
+                    org.telegram.messenger.g0.i3(new ah0(7), 1000L);
                     break;
                 } else {
                     StringBuilder sb2 = new StringBuilder("disable backup: failed to disable backup on server: ");

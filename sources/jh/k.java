@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class k implements ViewTreeObserver.OnPreDrawListener, View.OnAttachStateChangeListener {
     public static final int[] f = new int[2];
@@ -93,9 +93,9 @@ public final class k implements ViewTreeObserver.OnPreDrawListener, View.OnAttac
         }
     }
 
-    public final void d(View view, ViewGroup viewGroup, i iVar, boolean z9) {
+    public final void d(View view, ViewGroup viewGroup, i iVar, boolean z10) {
         j jVar = new j(viewGroup, iVar);
-        jVar.d = z9;
+        jVar.d = z10;
         WeakHashMap weakHashMap = this.d;
         List list = (List) weakHashMap.get(view);
         if (list == null) {
@@ -109,7 +109,7 @@ public final class k implements ViewTreeObserver.OnPreDrawListener, View.OnAttac
         if (!this.c) {
             a();
         }
-        if (z9) {
+        if (z10) {
             new m(view, this);
         }
     }
@@ -133,11 +133,11 @@ public final class k implements ViewTreeObserver.OnPreDrawListener, View.OnAttac
                 List<j> list = (List) entry.getValue();
                 if (view != null && list != null) {
                     for (j jVar : list) {
-                        boolean z9 = jVar.d;
+                        boolean z10 = jVar.d;
                         RectF rectF = jVar.c;
                         ViewGroup viewGroup = jVar.a;
                         RectF rectF2 = this.e;
-                        if (z9) {
+                        if (z10) {
                             int[] iArr = f;
                             view.getLocationOnScreen(iArr);
                             rectF2.set(iArr[0], iArr[1], view.getWidth() + r10, view.getHeight() + iArr[1]);
@@ -149,7 +149,7 @@ public final class k implements ViewTreeObserver.OnPreDrawListener, View.OnAttac
                             rectF.set(rectF2);
                             jVar.e = true;
                             try {
-                                jVar.b.b(new RectF(rectF2), view);
+                                jVar.b.j(new RectF(rectF2), view);
                             } catch (Throwable unused) {
                             }
                         }

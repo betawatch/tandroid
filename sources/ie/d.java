@@ -1,13 +1,13 @@
 package ie;
 
-import c8.u0;
+import c8.v0;
 import gd.k;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import zd.b0;
 import zd.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d extends h implements a {
     public static final /* synthetic */ AtomicReferenceFieldUpdater g = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "owner$volatile");
@@ -21,7 +21,7 @@ public final class d extends h implements a {
         boolean e10 = e();
         k kVar = k.a;
         if (!e10) {
-            m l10 = b0.l(u0.b(cVar));
+            m l10 = b0.l(v0.b(cVar));
             try {
                 a(new c(this, l10));
                 Object r10 = l10.r();
@@ -67,10 +67,10 @@ public final class d extends h implements a {
         while (c()) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = g;
             Object obj2 = atomicReferenceFieldUpdater.get(this);
-            com.google.android.gms.internal.clearcut.e eVar = e.a;
-            if (obj2 != eVar) {
+            aa.b0 b0Var = e.a;
+            if (obj2 != b0Var) {
                 if (obj2 == obj || obj == null) {
-                    while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, eVar)) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, b0Var)) {
                         if (atomicReferenceFieldUpdater.get(this) != obj2) {
                             break;
                         }

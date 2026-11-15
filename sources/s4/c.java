@@ -1,17 +1,17 @@
 package s4;
 
-import org.telegram.ui.ly0;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ androidx.emoji2.text.p b;
+    public final /* synthetic */ androidx.emoji2.text.q b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ c(androidx.emoji2.text.p pVar, int i7, int i10) {
+    public /* synthetic */ c(androidx.emoji2.text.q qVar, int i7, int i10) {
         this.a = i10;
-        this.b = pVar;
+        this.b = qVar;
         this.c = i7;
     }
 
@@ -19,14 +19,14 @@ public final /* synthetic */ class c implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                v vVar = ((e) ((ly0) this.b.f).d).d;
+                v vVar = ((e) ((ld0) this.b.f).d).d;
                 if (vVar != null) {
                     vVar.j(this.c);
                     break;
                 }
                 break;
             default:
-                v vVar2 = ((e) ((ly0) this.b.f).d).d;
+                v vVar2 = ((e) ((ld0) this.b.f).d).d;
                 if (vVar2 != null) {
                     vVar2.k(this.c);
                     break;

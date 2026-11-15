@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class c extends TextView {
     public boolean a;
@@ -15,20 +15,20 @@ public final class c extends TextView {
         if (this.a) {
             RectF rectF = org.telegram.messenger.g0.P;
             rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.m6.U1);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.j6.U1);
         }
         super.onDraw(canvas);
     }
 
     @Override // android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z9 = this.a;
+        boolean z10 = this.a;
         if (motionEvent.getAction() == 0) {
             this.a = true;
         } else if (motionEvent.getAction() != 2) {
             this.a = false;
         }
-        if (z9 != this.a) {
+        if (z10 != this.a) {
             invalidate();
         }
         return this.a || super.onTouchEvent(motionEvent);

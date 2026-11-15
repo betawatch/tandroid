@@ -16,7 +16,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p extends AsyncTask {
     public final Bitmap a;
@@ -27,14 +27,14 @@ public final class p extends AsyncTask {
 
     public p(t tVar) {
         this.e = tVar;
-        MediaDescriptionCompat mediaDescriptionCompat = tVar.l0;
+        MediaDescriptionCompat mediaDescriptionCompat = tVar.m0;
         Bitmap bitmap = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.e;
         if (bitmap != null && bitmap.isRecycled()) {
             Log.w("MediaRouteCtrlDialog", "Can't fetch the given art bitmap because it's already recycled.");
             bitmap = null;
         }
         this.a = bitmap;
-        MediaDescriptionCompat mediaDescriptionCompat2 = tVar.l0;
+        MediaDescriptionCompat mediaDescriptionCompat2 = tVar.m0;
         this.b = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.f : null;
     }
 
@@ -45,7 +45,7 @@ public final class p extends AsyncTask {
             openInputStream = this.e.s.getContentResolver().openInputStream(uri);
         } else {
             URLConnection openConnection = new URL(uri.toString()).openConnection();
-            int i7 = t.F0;
+            int i7 = t.G0;
             openConnection.setConnectTimeout(i7);
             openConnection.setReadTimeout(i7);
             openInputStream = openConnection.getInputStream();
@@ -129,9 +129,9 @@ public final class p extends AsyncTask {
                             if (bitmap == null) {
                             }
                             if (bitmap != null) {
-                                androidx.emoji2.text.p pVar = new androidx.emoji2.text.p(bitmap);
-                                pVar.a = 1;
-                                List list = (List) pVar.b().a;
+                                androidx.emoji2.text.q qVar = new androidx.emoji2.text.q(bitmap);
+                                qVar.a = 1;
+                                List list = (List) qVar.b().a;
                                 this.c = DesugarCollections.unmodifiableList(list).isEmpty() ? 0 : ((t4.d) DesugarCollections.unmodifiableList(list).get(0)).d;
                             }
                             return bitmap;
@@ -161,9 +161,9 @@ public final class p extends AsyncTask {
             return null;
         }
         if (bitmap != null && bitmap.getWidth() < bitmap.getHeight()) {
-            androidx.emoji2.text.p pVar2 = new androidx.emoji2.text.p(bitmap);
-            pVar2.a = 1;
-            List list2 = (List) pVar2.b().a;
+            androidx.emoji2.text.q qVar2 = new androidx.emoji2.text.q(bitmap);
+            qVar2.a = 1;
+            List list2 = (List) qVar2.b().a;
             this.c = DesugarCollections.unmodifiableList(list2).isEmpty() ? 0 : ((t4.d) DesugarCollections.unmodifiableList(list2).get(0)).d;
         }
         return bitmap;
@@ -173,19 +173,19 @@ public final class p extends AsyncTask {
     public final void onPostExecute(Object obj) {
         Bitmap bitmap = (Bitmap) obj;
         t tVar = this.e;
-        tVar.m0 = null;
-        Bitmap bitmap2 = tVar.n0;
+        tVar.n0 = null;
+        Bitmap bitmap2 = tVar.o0;
         Bitmap bitmap3 = this.a;
         boolean equals = Objects.equals(bitmap2, bitmap3);
         Uri uri = this.b;
-        if (equals && Objects.equals(tVar.o0, uri)) {
+        if (equals && Objects.equals(tVar.p0, uri)) {
             return;
         }
-        tVar.n0 = bitmap3;
-        tVar.q0 = bitmap;
-        tVar.o0 = uri;
-        tVar.r0 = this.c;
-        tVar.p0 = true;
+        tVar.o0 = bitmap3;
+        tVar.r0 = bitmap;
+        tVar.p0 = uri;
+        tVar.s0 = this.c;
+        tVar.q0 = true;
         tVar.q(SystemClock.uptimeMillis() - this.d > 120);
     }
 
@@ -193,8 +193,8 @@ public final class p extends AsyncTask {
     public final void onPreExecute() {
         this.d = SystemClock.uptimeMillis();
         t tVar = this.e;
-        tVar.p0 = false;
-        tVar.q0 = null;
-        tVar.r0 = 0;
+        tVar.q0 = false;
+        tVar.r0 = null;
+        tVar.s0 = 0;
     }
 }

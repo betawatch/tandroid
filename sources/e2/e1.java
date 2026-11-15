@@ -1,10 +1,10 @@
 package e2;
 
-import a8.ia;
+import a8.ja;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e1 extends d1 {
     public static final String d;
@@ -13,13 +13,13 @@ public final class e1 extends d1 {
     public final float c;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         d = Integer.toString(1, 36);
         e = Integer.toString(2, 36);
     }
 
     public e1(int i7) {
-        ia.e("maxStars must be a positive integer", i7 > 0);
+        ja.e("maxStars must be a positive integer", i7 > 0);
         this.b = i7;
         this.c = -1.0f;
     }
@@ -51,12 +51,12 @@ public final class e1 extends d1 {
     }
 
     public e1(int i7, float f10) {
-        boolean z9 = false;
-        ia.e("maxStars must be a positive integer", i7 > 0);
+        boolean z10 = false;
+        ja.e("maxStars must be a positive integer", i7 > 0);
         if (f10 >= 0.0f && f10 <= i7) {
-            z9 = true;
+            z10 = true;
         }
-        ia.e("starRating is out of range [0, maxStars]", z9);
+        ja.e("starRating is out of range [0, maxStars]", z10);
         this.b = i7;
         this.c = f10;
     }

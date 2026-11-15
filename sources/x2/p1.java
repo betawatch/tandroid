@@ -1,68 +1,44 @@
 package x2;
 
-import h9.t1;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class p1 {
-    public static final p1 d = new p1(new e2.m1[0]);
-    public static final String e;
-    public final int a;
-    public final t1 b;
-    public int c;
+public final /* synthetic */ class p1 implements g9.k, ua.a, t3.g {
+    public final /* synthetic */ int a;
 
-    static {
-        String str = h2.m0.a;
-        e = Integer.toString(0, 36);
+    public /* synthetic */ p1(int i7) {
+        this.a = i7;
     }
 
-    public p1(e2.m1... m1VarArr) {
-        t1 r10 = h9.i0.r(m1VarArr);
-        this.b = r10;
-        this.a = m1VarArr.length;
-        int i7 = 0;
-        while (i7 < r10.d) {
-            int i10 = i7 + 1;
-            for (int i11 = i10; i11 < r10.d; i11++) {
-                if (((e2.m1) r10.get(i7)).equals(r10.get(i11))) {
-                    h2.a.d("TrackGroupArray", "", new IllegalArgumentException("Multiple identical TrackGroups added to one TrackGroupArray."));
-                }
-            }
-            i7 = i10;
+    @Override // g9.k, l5.e
+    public Object apply(Object obj) {
+        switch (this.a) {
+            case 0:
+                return Integer.valueOf(((e2.m1) obj).c);
+            case 1:
+            case 2:
+            default:
+                return (z3.q) obj;
+            case 3:
+                return Long.valueOf(((c4.a) obj).b);
+            case 4:
+                return Long.valueOf(((c4.a) obj).c);
         }
     }
 
-    public final e2.m1 a(int i7) {
-        return (e2.m1) this.b.get(i7);
+    @Override // ua.a
+    public void b(ua.b bVar) {
+        bVar.get().getClass();
+        throw new ClassCastException();
     }
 
-    public final int b(e2.m1 m1Var) {
-        int indexOf = this.b.indexOf(m1Var);
-        if (indexOf >= 0) {
-            return indexOf;
-        }
-        return -1;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
+    @Override // t3.g
+    public boolean c(int i7, int i10, int i11, int i12, int i13) {
+        if (i10 == 67 && i11 == 79 && i12 == 77 && (i13 == 77 || i7 == 2)) {
             return true;
         }
-        if (obj == null || p1.class != obj.getClass()) {
-            return false;
+        if (i10 == 77 && i11 == 76 && i12 == 76) {
+            return i13 == 84 || i7 == 2;
         }
-        p1 p1Var = (p1) obj;
-        return this.a == p1Var.a && this.b.equals(p1Var.b);
-    }
-
-    public final int hashCode() {
-        if (this.c == 0) {
-            this.c = this.b.hashCode();
-        }
-        return this.c;
-    }
-
-    public final String toString() {
-        return this.b.toString();
+        return false;
     }
 }

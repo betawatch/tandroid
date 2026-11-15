@@ -1,6 +1,6 @@
 package da;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e1 extends j2 {
     public final String a;
@@ -8,11 +8,11 @@ public final class e1 extends j2 {
     public final int c;
     public final boolean d;
 
-    public e1(int i7, int i10, String str, boolean z9) {
+    public e1(int i7, int i10, String str, boolean z10) {
         this.a = str;
         this.b = i7;
         this.c = i10;
-        this.d = z9;
+        this.d = z10;
     }
 
     public final boolean equals(Object obj) {

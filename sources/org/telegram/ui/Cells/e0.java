@@ -11,9 +11,9 @@ import android.graphics.Rect;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class e0 extends Drawable {
     public final Drawable a;
@@ -29,17 +29,17 @@ public final class e0 extends Drawable {
         Paint paint2 = new Paint(1);
         this.c = paint2;
         this.d = new Paint();
-        this.e = qs.e4;
-        Drawable h = jg.g.h(context, R.drawable.msg_folders_bots);
-        this.a = h;
-        h.setColorFilter(new PorterDuffColorFilter(-13628751, PorterDuff.Mode.SRC_IN));
+        this.e = ns.e4;
+        Drawable g10 = i5.c.g(context, R.drawable.msg_folders_bots);
+        this.a = g10;
+        g10.setColorFilter(new PorterDuffColorFilter(-13628751, PorterDuff.Mode.SRC_IN));
         paint.setShader(new RadialGradient(400.0f, 213.0f, 500.0f, -4811527, -9674273, Shader.TileMode.CLAMP));
         paint2.setColor(-1);
         paint2.setStyle(Paint.Style.STROKE);
         paint2.setStrokeCap(Paint.Cap.ROUND);
     }
 
-    public final void a(Canvas canvas, float f10, float f11, float f12, float f13) {
+    public final void a(float f10, float f11, float f12, float f13, Canvas canvas) {
         Drawable drawable = this.a;
         int intrinsicWidth = drawable.getIntrinsicWidth();
         int intrinsicHeight = drawable.getIntrinsicHeight();
@@ -83,12 +83,12 @@ public final class e0 extends Drawable {
         float width = bounds.width() / 800.0f;
         float height = bounds.height() / 427.0f;
         int i10 = this.e;
+        Canvas canvas3 = canvas2;
         Paint paint2 = this.b;
         paint2.setAlpha(i10);
-        canvas2.save();
-        canvas2.translate(bounds.left, bounds.top);
-        canvas2.scale(width, height);
-        Canvas canvas3 = canvas2;
+        canvas3.save();
+        canvas3.translate(bounds.left, bounds.top);
+        canvas3.scale(width, height);
         canvas3.drawRect(0.0f, 0.0f, 800.0f, 427.0f, paint2);
         canvas3.restore();
         int i11 = this.e;
@@ -103,24 +103,24 @@ public final class e0 extends Drawable {
         canvas3.save();
         canvas3.translate(bounds.left, bounds.top);
         canvas3.scale(width, height);
-        a(canvas3, 299.339f, 60.9305f, 56.0f, 0.1629f);
-        a(canvas3, 500.651f, 60.9305f, 56.0f, 0.1629f);
-        a(canvas3, 579.018f, 225.477f, 56.0f, 0.2239f);
-        a(canvas3, 220.979f, 225.477f, 56.0f, 0.2239f);
-        a(canvas3, 548.102f, 359.18f, 52.0f, 0.1816f);
-        a(canvas3, 400.0f, 382.172f, 52.0f, 0.123f);
-        a(canvas3, 251.891f, 359.18f, 52.0f, 0.1816f);
-        a(canvas3, 698.424f, 175.361f, 42.0f, 0.12f);
-        a(canvas3, 572.549f, 125.064f, 42.0f, 0.2409f);
-        a(canvas3, 650.19f, 61.1149f, 42.0f, 0.0764f);
-        a(canvas3, 399.994f, 18.0016f, 42.0f, 0.1231f);
-        a(canvas3, 149.799f, 61.1149f, 42.0f, 0.0753f);
-        a(canvas3, 227.44f, 125.064f, 42.0f, 0.2409f);
-        a(canvas3, 101.565f, 175.361f, 42.0f, 0.12f);
-        a(canvas3, 167.057f, 316.916f, 42.0f, 0.15f);
-        a(canvas3, 114.502f, 408.888f, 42.0f, 0.075f);
-        a(canvas3, 678.299f, 408.888f, 42.0f, 0.075f);
-        a(canvas3, 655.947f, 316.916f, 42.0f, 0.15f);
+        a(299.339f, 60.9305f, 56.0f, 0.1629f, canvas3);
+        a(500.651f, 60.9305f, 56.0f, 0.1629f, canvas3);
+        a(579.018f, 225.477f, 56.0f, 0.2239f, canvas3);
+        a(220.979f, 225.477f, 56.0f, 0.2239f, canvas3);
+        a(548.102f, 359.18f, 52.0f, 0.1816f, canvas3);
+        a(400.0f, 382.172f, 52.0f, 0.123f, canvas3);
+        a(251.891f, 359.18f, 52.0f, 0.1816f, canvas3);
+        a(698.424f, 175.361f, 42.0f, 0.12f, canvas3);
+        a(572.549f, 125.064f, 42.0f, 0.2409f, canvas3);
+        a(650.19f, 61.1149f, 42.0f, 0.0764f, canvas3);
+        a(399.994f, 18.0016f, 42.0f, 0.1231f, canvas3);
+        a(149.799f, 61.1149f, 42.0f, 0.0753f, canvas3);
+        a(227.44f, 125.064f, 42.0f, 0.2409f, canvas3);
+        a(101.565f, 175.361f, 42.0f, 0.12f, canvas3);
+        a(167.057f, 316.916f, 42.0f, 0.15f, canvas3);
+        a(114.502f, 408.888f, 42.0f, 0.075f, canvas3);
+        a(678.299f, 408.888f, 42.0f, 0.075f, canvas3);
+        a(655.947f, 316.916f, 42.0f, 0.15f, canvas3);
         canvas3.restore();
         if (i7 >= 0) {
             canvas3.restoreToCount(i7);
@@ -144,7 +144,7 @@ public final class e0 extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i7) {
-        int max = Math.max(0, Math.min(qs.e4, i7));
+        int max = Math.max(0, Math.min(ns.e4, i7));
         if (this.e != max) {
             this.e = max;
             invalidateSelf();

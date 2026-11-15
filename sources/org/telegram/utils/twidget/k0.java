@@ -2,12 +2,12 @@ package org.telegram.utils.twidget;
 
 import java.util.ArrayList;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.qp;
+import org.telegram.messenger.np;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.hk0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class k0 {
     public boolean A;
@@ -35,40 +35,40 @@ public final class k0 {
     public long q;
     public TLRPC.TL_messageMediaWidget r;
     public String s;
-    public v0 t;
-    public ck0 u;
-    public ck0 w;
+    public y0 t;
+    public hk0 u;
+    public hk0 w;
     public int x;
     public long y;
     public boolean z;
     public final ArrayList v = new ArrayList();
     public final j0 G = new j0(this, 0);
 
-    public k0(String str, int i7, long j3, int i10, long j10, TLRPC.TL_messageMediaWidget tL_messageMediaWidget, boolean z9) {
+    public k0(String str, int i7, long j3, int i10, long j10, TLRPC.TL_messageMediaWidget tL_messageMediaWidget, boolean z10) {
         this.a = str;
         this.b = i7;
         this.c = j3;
         this.d = i10;
         this.n = j10;
-        boolean z10 = false;
+        boolean z11 = false;
         this.e = Math.max(0, tL_messageMediaWidget.width);
         this.f = Math.max(0, tL_messageMediaWidget.height);
         this.g = tL_messageMediaWidget.payload;
-        this.k = z9;
-        boolean z11 = !z9 && tL_messageMediaWidget.is_copy;
-        this.h = z11;
-        this.i = !z9 && tL_messageMediaWidget.can_query && i10 > 0;
-        if (!z9 && tL_messageMediaWidget.background_query && i10 > 0) {
-            z10 = true;
+        this.k = z10;
+        boolean z12 = !z10 && tL_messageMediaWidget.is_copy;
+        this.h = z12;
+        this.i = !z10 && tL_messageMediaWidget.can_query && i10 > 0;
+        if (!z10 && tL_messageMediaWidget.background_query && i10 > 0) {
+            z11 = true;
         }
-        this.j = z10;
+        this.j = z11;
         this.l = tL_messageMediaWidget.widget_id;
         String str2 = null;
-        if (!z9 && !z11) {
+        if (!z10 && !z12) {
             if (m5.E(j3)) {
                 str2 = "private";
             } else {
-                TLRPC.Chat M0 = qp.s1(i7).M0(Long.valueOf(-j3));
+                TLRPC.Chat M0 = np.s1(i7).M0(Long.valueOf(-j3));
                 if (M0 != null) {
                     str2 = !t3.T(M0) ? "group" : M0.megagroup ? "supergroup" : "channel";
                 }

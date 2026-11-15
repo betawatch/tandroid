@@ -6,7 +6,7 @@ import android.os.Process;
 import android.util.Log;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n0 extends Binder {
     public final cb.c a;
@@ -25,7 +25,7 @@ public final class n0 extends Binder {
         Intent intent = o0Var.a;
         h hVar = (h) this.a.b;
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        hVar.a.execute(new aa.s(hVar, intent, taskCompletionSource, 1));
+        hVar.a.execute(new aa.r(hVar, intent, taskCompletionSource, 1));
         taskCompletionSource.getTask().addOnCompleteListener(new d3.b(3), new a1.c(o0Var, 6));
     }
 }

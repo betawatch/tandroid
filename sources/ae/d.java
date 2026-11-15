@@ -7,7 +7,6 @@ import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
 import androidx.credentials.playservices.controllers.identitycredentials.IdentityCredentialApiHiddenActivity;
-import bi.ab;
 import gd.k;
 import j7.m;
 import java.util.concurrent.Executor;
@@ -17,7 +16,7 @@ import rd.l;
 import v0.g;
 import w0.i;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements l {
     public final /* synthetic */ int a;
@@ -46,46 +45,46 @@ public final /* synthetic */ class d implements l {
                 break;
             case 2:
                 CancellationSignal cancellationSignal = (CancellationSignal) this.b;
-                c1.e eVar2 = (c1.e) this.c;
-                Context context = eVar2.e;
-                a6.f fVar = (a6.f) obj;
+                c1.f fVar = (c1.f) this.c;
+                Context context = fVar.e;
+                a6.f fVar2 = (a6.f) obj;
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 if (!a1.g.a(cancellationSignal)) {
                     Intent intent = new Intent(context, (Class<?>) HiddenActivity.class);
-                    b1.d.a(eVar2.i, intent, "BEGIN_SIGN_IN");
-                    intent.putExtra("EXTRA_FLOW_PENDING_INTENT", fVar.a);
+                    b1.d.a(fVar.i, intent, "BEGIN_SIGN_IN");
+                    intent.putExtra("EXTRA_FLOW_PENDING_INTENT", fVar2.a);
                     try {
                         context.startActivity(intent);
                     } catch (Exception unused) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
                         if (!a1.g.a(cancellationSignal)) {
-                            eVar2.g().execute(new ab(eVar2, 5));
+                            fVar.g().execute(new a3.f(fVar, 25));
                         }
                     }
                 }
                 return k.a;
             case 3:
                 CancellationSignal cancellationSignal2 = (CancellationSignal) this.b;
-                d1.e eVar3 = (d1.e) this.c;
-                Context context2 = eVar3.e;
+                d1.e eVar2 = (d1.e) this.c;
+                Context context2 = eVar2.e;
                 PendingIntent result = (PendingIntent) obj;
                 j.e(result, "result");
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 if (!a1.g.a(cancellationSignal2)) {
                     Intent intent2 = new Intent(context2, (Class<?>) HiddenActivity.class);
-                    b1.d.a(eVar3.i, intent2, "CREATE_PUBLIC_KEY_CREDENTIAL");
+                    b1.d.a(eVar2.i, intent2, "CREATE_PUBLIC_KEY_CREDENTIAL");
                     intent2.putExtra("EXTRA_FLOW_PENDING_INTENT", result);
                     try {
                         context2.startActivity(intent2);
                     } catch (Exception unused2) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
                         if (!a1.g.a(cancellationSignal2)) {
-                            Executor executor2 = eVar3.g;
+                            Executor executor2 = eVar2.g;
                             if (executor2 == null) {
                                 j.h("executor");
                                 throw null;
                             }
-                            executor2.execute(new d1.d(eVar3, 0));
+                            executor2.execute(new d1.d(eVar2, 0));
                         }
                     }
                 }

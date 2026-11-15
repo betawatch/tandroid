@@ -1,30 +1,73 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class i11 {
-    public static final i11 a;
-    public static final i11 b;
-    public static final i11 c;
-    public static final /* synthetic */ i11[] d;
+public final class i11 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    static {
-        i11 i11Var = new i11("TOP", 0);
-        a = i11Var;
-        i11 i11Var2 = new i11("LEFT", 1);
-        b = i11Var2;
-        i11 i11Var3 = new i11("BOTTOM", 2);
-        c = i11Var3;
-        d = new i11[]{i11Var, i11Var2, i11Var3};
+    public /* synthetic */ i11(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    public static i11 valueOf(String str) {
-        return (i11) Enum.valueOf(i11.class, str);
-    }
-
-    public static i11[] values() {
-        return (i11[]) d.clone();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                fi.w2 w2Var = ((k11) this.b).f;
+                w2Var.setScaleX(1.0f);
+                w2Var.setScaleY(1.0f);
+                w2Var.invalidate();
+                break;
+            case 1:
+                o11 o11Var = (o11) this.b;
+                o11Var.M = 1.0f;
+                o11Var.h.invalidate();
+                break;
+            case 2:
+                ((x31) this.b).M = null;
+                break;
+            case 3:
+                UndoView undoView = (UndoView) this.b;
+                undoView.setVisibility(4);
+                undoView.setScaleX(1.0f);
+                undoView.setScaleY(1.0f);
+                undoView.setAlpha(1.0f);
+                break;
+            case 4:
+                b51 b51Var = (b51) this.b;
+                if (b51Var.a.getTag() == null) {
+                    b51Var.a.setVisibility(4);
+                    break;
+                }
+                break;
+            case 5:
+                super.onAnimationEnd(animator);
+                c51 c51Var = (c51) this.b;
+                c51Var.b = 0.0f;
+                c51Var.setTranslationY(0.0f);
+                c51Var.a = null;
+                break;
+            case 6:
+                v61 v61Var = (v61) this.b;
+                v61Var.K = false;
+                v61Var.setEnabled(true);
+                u61 u61Var = v61Var.E;
+                if (u61Var != null) {
+                    ((cf) u61Var).q(1.0f);
+                }
+                v61Var.invalidate();
+                break;
+            case 7:
+                ((m71) this.b).f0 = null;
+                break;
+            default:
+                ((s71) this.b).L = null;
+                break;
+        }
     }
 }

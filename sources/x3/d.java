@@ -1,16 +1,16 @@
 package x3;
 
 import android.util.SparseArray;
+import f3.a0;
 import f3.b0;
 import f3.c0;
-import f3.d0;
 import f3.j;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class d implements c0 {
+public final class d implements b0 {
     public final j a;
     public final SparseArray b;
     public final long c;
@@ -66,28 +66,28 @@ public final class d implements c0 {
         this.a = jVar;
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final boolean d() {
         List list = (List) this.b.get(this.d);
         return (list == null || list.isEmpty()) ? false : true;
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // f3.c0
-    public final b0 f(long j3) {
+    @Override // f3.b0
+    public final a0 f(long j3) {
         j jVar = this.a;
         if (jVar != null) {
             return jVar.f(j3);
         }
-        d0 d0Var = d0.c;
-        return new b0(d0Var, d0Var);
+        c0 c0Var = c0.c;
+        return new a0(c0Var, c0Var);
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final long h() {
         return this.c;
     }

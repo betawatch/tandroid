@@ -1,19 +1,21 @@
 package c8;
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import java.io.Closeable;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class ob {
-    public abstract void a(Rect rect, RectF rectF);
-
-    public abstract void b();
-
-    public abstract void c(Canvas canvas);
-
-    public abstract boolean d();
-
-    public abstract void e(float f10);
+    public static final void a(Closeable closeable, Throwable th2) {
+        if (closeable != null) {
+            if (th2 == null) {
+                closeable.close();
+                return;
+            }
+            try {
+                closeable.close();
+            } catch (Throwable th3) {
+                a8.ma.a(th2, th3);
+            }
+        }
+    }
 }

@@ -6,16 +6,16 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
-import fi.k9;
-import org.telegram.ui.Components.voip.k1;
+import hi.i9;
+import org.telegram.ui.Components.voip.o1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c {
     public final int a;
     public final b b;
-    public final Interpolator c;
-    public final long d;
+    public Interpolator c;
+    public long d;
     public long e;
     public float f;
     public float g;
@@ -40,7 +40,7 @@ public final class c {
         int i7 = this.a;
         b bVar = this.b;
         if (f11 == f10) {
-            bVar.F(f11, i7);
+            bVar.E(f11, i7);
             return;
         }
         int i10 = 1;
@@ -48,13 +48,16 @@ public final class c {
             this.h = true;
         }
         float f12 = f10 - f11;
-        long j3 = (Build.VERSION.SDK_INT < 26 || ValueAnimator.areAnimatorsEnabled()) ? this.d : 0L;
+        long j3 = this.d;
+        if (Build.VERSION.SDK_INT >= 26 && !ValueAnimator.areAnimatorsEnabled()) {
+            j3 = 0;
+        }
         if (j3 <= 0) {
             d(f10, 1.0f);
             if (this.h) {
                 this.h = false;
             }
-            bVar.F(f10, i7);
+            bVar.E(f10, i7);
             return;
         }
         this.g = f10;
@@ -63,8 +66,8 @@ public final class c {
         this.i = ofFloat;
         ofFloat.setDuration(j3);
         this.i.setInterpolator(this.c);
-        this.i.addUpdateListener(new k9(this, f11, f12, 6));
-        this.i.addListener(new k1(this, f11, f12, i10));
+        this.i.addUpdateListener(new i9(this, f11, f12, 6));
+        this.i.addListener(new o1(this, f11, f12, i10));
         long j10 = this.e;
         if (j10 != 0) {
             this.i.setStartDelay(j10);
@@ -99,7 +102,7 @@ public final class c {
     public final void c(float f10) {
         boolean b10 = b();
         if (d(f10, 1.0f) || b10) {
-            this.b.F(f10, this.a);
+            this.b.E(f10, this.a);
         }
     }
 
@@ -108,7 +111,7 @@ public final class c {
             return false;
         }
         this.f = f10;
-        this.b.Y(this.a, f10, f11, this);
+        this.b.G(this.a, f10, f11, this);
         return true;
     }
 

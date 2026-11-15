@@ -1,64 +1,64 @@
 package y2;
 
-import c8.p0;
+import c8.q0;
 import e2.u;
-import f3.j0;
-import j2.c0;
+import f3.i0;
+import j2.b0;
 import org.telegram.tgnet.ConnectionsManager;
-import sg.i0;
+import sg.h0;
 import x2.a1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n extends a {
-    public final int E;
-    public final u F;
-    public long G;
-    public boolean H;
+    public final int F;
+    public final u G;
+    public long H;
+    public boolean I;
 
     public n(j2.h hVar, j2.m mVar, u uVar, int i7, Object obj, long j3, long j10, long j11, int i10, u uVar2) {
         super(hVar, mVar, uVar, i7, obj, j3, j10, -9223372036854775807L, -9223372036854775807L, j11);
-        this.E = i10;
-        this.F = uVar2;
+        this.F = i10;
+        this.G = uVar2;
     }
 
     @Override // b3.l
     public final void a() {
-        c0 c0Var = this.r;
-        i0 i0Var = this.y;
-        i0Var.getClass();
-        for (a1 a1Var : (a1[]) i0Var.c) {
+        b0 b0Var = this.r;
+        h0 h0Var = this.y;
+        h0Var.getClass();
+        for (a1 a1Var : (a1[]) h0Var.c) {
             if (a1Var.H != 0) {
                 a1Var.H = 0L;
                 a1Var.B = true;
             }
         }
-        j0 f10 = i0Var.f(this.E);
-        f10.g(this.F);
+        i0 f10 = h0Var.f(this.F);
+        f10.g(this.G);
         try {
-            long open = c0Var.open(this.b.b(this.G));
+            long open = b0Var.open(this.b.b(this.H));
             if (open != -1) {
-                open += this.G;
+                open += this.H;
             }
-            f3.l lVar = new f3.l(this.r, this.G, open);
+            f3.l lVar = new f3.l(this.r, this.H, open);
             for (int i7 = 0; i7 != -1; i7 = f10.e(lVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
-                this.G += i7;
+                this.H += i7;
             }
-            f10.c(this.h, 1, (int) this.G, 0, null);
-            p0.a(c0Var);
-            this.H = true;
+            f10.c(this.h, 1, (int) this.H, 0, null);
+            q0.a(b0Var);
+            this.I = true;
         } catch (Throwable th2) {
-            p0.a(c0Var);
+            q0.a(b0Var);
             throw th2;
         }
     }
 
     @Override // y2.l
     public final boolean c() {
-        return this.H;
+        return this.I;
     }
 
     @Override // b3.l
-    public final void q0() {
+    public final void D() {
     }
 }

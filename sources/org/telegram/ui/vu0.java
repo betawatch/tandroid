@@ -1,47 +1,70 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.RectF;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class vu0 extends v4.k {
-    public int F = -1;
-    public final /* synthetic */ ProfileActivity G;
+public final class vu0 extends v4.t0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    public vu0(ProfileActivity profileActivity) {
-        this.G = profileActivity;
+    public /* synthetic */ vu0(ProfileActivity profileActivity, int i7) {
+        this.a = i7;
+        this.b = profileActivity;
     }
 
-    @Override // v4.k
-    public final long K(long j3, long j10, long j11) {
-        return 0L;
-    }
-
-    @Override // v4.k
-    public final void N() {
-        org.telegram.messenger.g0.h3(new uu0(this, 0));
-    }
-
-    @Override // v4.k
-    public final void P(v4.d1 d1Var) {
-        RectF rectF = ProfileActivity.V6;
-        this.G.s5();
-    }
-
-    @Override // v4.k, v4.l0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.s.isEmpty();
-        boolean isEmpty4 = this.q.isEmpty();
-        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addUpdateListener(new a3(this, 24));
-            ofFloat.setDuration(this.e);
-            ofFloat.start();
-            this.F = this.G.getNotificationCenter().q(null, this.F, true);
+    @Override // v4.t0
+    public final void a(RecyclerView recyclerView, int i7) {
+        View m10;
+        switch (this.a) {
+            case 0:
+                if (i7 == 1) {
+                    org.telegram.messenger.g0.v1(this.b.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity = this.b;
+                if (i7 == 1) {
+                    org.telegram.messenger.g0.v1(profileActivity.getParentActivity().getCurrentFocus());
+                }
+                if (profileActivity.G0 && i7 != 2) {
+                    profileActivity.G0 = false;
+                }
+                if (i7 == 0 && !profileActivity.G1 && (m10 = profileActivity.c.m(0)) != null) {
+                    ProfileActivity.R0(profileActivity, m10, 0.0f);
+                }
+                org.telegram.ui.ActionBar.d5 d5Var = profileActivity.U0;
+                if (d5Var != null) {
+                    boolean z10 = i7 != 0;
+                    profileActivity.z1 = z10;
+                    d5Var.setEnabled((z10 || profileActivity.q2) ? false : true);
+                }
+                uv0 uv0Var = profileActivity.O;
+                boolean z11 = profileActivity.a.J1;
+                uv0Var.getClass();
+                break;
         }
-        super.m();
+    }
+
+    @Override // v4.t0
+    public void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 1:
+                ProfileActivity profileActivity = this.b;
+                hi.l3 l3Var = profileActivity.X;
+                if (l3Var != null) {
+                    l3Var.f(true);
+                }
+                profileActivity.N3();
+                if (profileActivity.C1 != null && !profileActivity.D1 && profileActivity.c.N0() > profileActivity.w4 - 8) {
+                    profileActivity.g4(false);
+                }
+                uv0 uv0Var = profileActivity.O;
+                uv0Var.setPinnedToTop(uv0Var.getY() <= 0.0f);
+                profileActivity.r5();
+                break;
+        }
     }
 }

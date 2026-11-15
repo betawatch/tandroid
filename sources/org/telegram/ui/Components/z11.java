@@ -1,34 +1,25 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.v10 b;
-    public final /* synthetic */ String c;
+public final /* synthetic */ class z11 implements org.telegram.messenger.oc, org.telegram.messenger.nc {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ org.telegram.messenger.s10 c;
 
-    public /* synthetic */ z11(String str, int i7, org.telegram.messenger.v10 v10Var) {
-        this.a = i7;
-        this.b = v10Var;
-        this.c = str;
+    public /* synthetic */ z11(String str, String str2, org.telegram.messenger.s10 s10Var) {
+        this.a = str;
+        this.b = str2;
+        this.c = s10Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.v10 v10Var = this.b;
-                if (v10Var != null) {
-                    v10Var.a(this.c, Boolean.FALSE);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.a(null, this.c);
-                break;
-            default:
-                this.b.a(null, this.c);
-                break;
-        }
+    @Override // org.telegram.messenger.oc
+    public void a(String str) {
+        p21.J0(this.a, str, this.b, this.c);
+    }
+
+    @Override // org.telegram.messenger.nc
+    public void r(Exception exc) {
+        p21.J0(this.a, "en", this.b, this.c);
     }
 }

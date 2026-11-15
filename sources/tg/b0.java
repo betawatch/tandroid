@@ -2,30 +2,30 @@ package tg;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import org.telegram.ui.xp0;
+import org.telegram.ui.tp0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class b0 extends sg.v0 {
-    public final /* synthetic */ Bitmap E;
-    public final /* synthetic */ xp0 F;
+public final class b0 extends sg.u0 {
+    public final /* synthetic */ Bitmap F;
+    public final /* synthetic */ tp0 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b0(xp0 xp0Var, Context context, sg.j0 j0Var, Bitmap bitmap, Bitmap bitmap2) {
-        super(context, j0Var, bitmap, null, null);
-        this.F = xp0Var;
-        this.E = bitmap2;
+    public b0(tp0 tp0Var, Context context, sg.i0 i0Var, Bitmap bitmap, Bitmap bitmap2) {
+        super(context, i0Var, bitmap, null, null);
+        this.G = tp0Var;
+        this.F = bitmap2;
     }
 
-    @Override // sg.v0
+    @Override // sg.u0
     public final void g(sg.h hVar) {
         int indexOf = sg.h.a.indexOf(hVar);
         int i7 = indexOf + 1;
-        if (i7 <= 1 || this.E != null) {
+        if (i7 <= 1 || this.F != null) {
             indexOf = i7;
         }
-        xp0 xp0Var = this.F;
-        xp0Var.c1.b(indexOf);
-        xp0Var.w(hVar);
+        tp0 tp0Var = this.G;
+        tp0Var.d1.b(indexOf);
+        tp0Var.w(hVar);
     }
 }

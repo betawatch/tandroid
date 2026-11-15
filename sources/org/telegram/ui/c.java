@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Intent;
 import android.net.Uri;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class c implements org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ g b;
 
@@ -14,8 +14,8 @@ public final /* synthetic */ class c implements org.telegram.ui.ActionBar.r1 {
         this.b = gVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
                 g gVar = this.b;
@@ -31,9 +31,9 @@ public final /* synthetic */ class c implements org.telegram.ui.ActionBar.r1 {
             default:
                 g gVar2 = this.b;
                 gVar2.getClass();
-                fe0 fe0Var = new fe0();
-                fe0Var.F = 2;
-                gVar2.presentFragment(fe0Var, true);
+                ce0 ce0Var = new ce0();
+                ce0Var.G = 2;
+                gVar2.presentFragment(ce0Var, true);
                 break;
         }
     }

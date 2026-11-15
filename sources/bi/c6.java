@@ -1,101 +1,89 @@
 package bi;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.wq;
+import di.m8;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class c6 extends Drawable {
-    public Drawable g;
-    public int h;
-    public int i;
-    public final Paint b = new Paint(1);
-    public final Shader[] c = new Shader[2];
-    public final Matrix d = new Matrix();
-    public final org.telegram.ui.Components.v5 e = new org.telegram.ui.Components.v5(1.0f, new a3.f(this, 27), 0, 420, wq.h);
-    public final RectF f = new RectF();
-    public final int a = 1;
+public final /* synthetic */ class c6 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z0 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z0 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z0 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z0 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z0 f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z0 n;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z0 r;
+    public final /* synthetic */ Object s;
 
-    public final void a(int i7, int i10) {
-        if (this.h == i7 && this.i == i10) {
-            return;
-        }
-        Shader[] shaderArr = this.c;
-        shaderArr[0] = shaderArr[1];
-        if (this.a == 0) {
-            this.h = i7;
-            this.i = i10;
-            shaderArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        } else {
-            float L = org.telegram.messenger.g0.L(340.0f);
-            this.h = i7;
-            this.i = i10;
-            shaderArr[1] = new RadialGradient(0.0f, 0.0f, L, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        }
-        this.e.e(true, 0.0f);
-        invalidateSelf();
+    public /* synthetic */ c6(d6 d6Var, org.telegram.ui.ActionBar.z0 z0Var, org.telegram.ui.ActionBar.z0 z0Var2, org.telegram.ui.ActionBar.z0 z0Var3, org.telegram.ui.ActionBar.z0 z0Var4, org.telegram.ui.ActionBar.z0 z0Var5, boolean z10, org.telegram.ui.ActionBar.z0 z0Var6, org.telegram.ui.ActionBar.z0 z0Var7) {
+        this.s = d6Var;
+        this.b = z0Var;
+        this.c = z0Var2;
+        this.d = z0Var3;
+        this.e = z0Var4;
+        this.f = z0Var5;
+        this.h = z10;
+        this.n = z0Var6;
+        this.r = z0Var7;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.f;
-        rectF.set(bounds);
-        rectF.right = rectF.width() + rectF.left;
-        int i7 = 0;
-        float e10 = this.e.e(false, 1.0f);
-        while (true) {
-            Shader[] shaderArr = this.c;
-            if (i7 >= shaderArr.length) {
-                break;
-            }
-            if (shaderArr[i7] != null) {
-                float pow = (float) Math.pow(1.0f - Math.abs(i7 - e10), 0.25d);
-                if (pow > 0.0f) {
-                    Matrix matrix = this.d;
-                    matrix.reset();
-                    if (this.a == 1) {
-                        matrix.postTranslate(rectF.centerX(), org.telegram.messenger.g0.L(145.0f));
-                    } else {
-                        matrix.postScale(getBounds().width() / 100.0f, 1.0f);
-                    }
-                    shaderArr[i7].setLocalMatrix(matrix);
-                    Shader shader = shaderArr[i7];
-                    Paint paint = this.b;
-                    paint.setShader(shader);
-                    paint.setAlpha((int) (pow * 255.0f));
-                    canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        org.telegram.ui.ActionBar.z0 z0Var = this.r;
+        org.telegram.ui.ActionBar.z0 z0Var2 = this.n;
+        boolean z10 = this.h;
+        org.telegram.ui.ActionBar.z0 z0Var3 = this.f;
+        org.telegram.ui.ActionBar.z0 z0Var4 = this.e;
+        org.telegram.ui.ActionBar.z0 z0Var5 = this.d;
+        org.telegram.ui.ActionBar.z0 z0Var6 = this.c;
+        Object obj = this.s;
+        org.telegram.ui.ActionBar.z0 z0Var7 = this.b;
+        switch (i7) {
+            case 0:
+                m8 m8Var = ((d6) obj).c.U1;
+                z0Var7.j(hd.M0(m8Var.e ? 2131750197 : 2131750198, null), m8Var.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
+                z0Var6.setChecked(TLObject.hasFlag(m8Var.g, 1));
+                z0Var5.setChecked(TLObject.hasFlag(m8Var.g, 2));
+                z0Var4.setChecked(TLObject.hasFlag(m8Var.g, 4));
+                z0Var3.setChecked(TLObject.hasFlag(m8Var.g, 8));
+                if (z10) {
+                    z0Var2.setChecked(TLObject.hasFlag(m8Var.g, 256));
+                    z0Var.setChecked(TLObject.hasFlag(m8Var.g, 512));
+                    break;
                 }
-            }
-            i7++;
+                break;
+            default:
+                m8 m8Var2 = (m8) obj;
+                if (z0Var7 != null) {
+                    z0Var7.j(hd.M0(m8Var2.e ? 2131750197 : 2131750198, null), m8Var2.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
+                }
+                z0Var6.setChecked(TLObject.hasFlag(m8Var2.g, 1));
+                z0Var5.setChecked(TLObject.hasFlag(m8Var2.g, 2));
+                z0Var4.setChecked(TLObject.hasFlag(m8Var2.g, 4));
+                z0Var3.setChecked(TLObject.hasFlag(m8Var2.g, 8));
+                if (z10) {
+                    z0Var2.setChecked(TLObject.hasFlag(m8Var2.g, 256));
+                    z0Var.setChecked(TLObject.hasFlag(m8Var2.g, 512));
+                    break;
+                }
+                break;
         }
-        if (this.g != null) {
-            canvas.save();
-            canvas.translate(rectF.centerX(), org.telegram.messenger.g0.L(145.0f));
-            i1.a(canvas, 0, this.g, rectF.width(), org.telegram.messenger.g0.L(290.0f), 2.0f, 1.0f);
-            canvas.restore();
-        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public /* synthetic */ c6(org.telegram.ui.ActionBar.z0 z0Var, m8 m8Var, org.telegram.ui.ActionBar.z0 z0Var2, org.telegram.ui.ActionBar.z0 z0Var3, org.telegram.ui.ActionBar.z0 z0Var4, org.telegram.ui.ActionBar.z0 z0Var5, boolean z10, org.telegram.ui.ActionBar.z0 z0Var6, org.telegram.ui.ActionBar.z0 z0Var7) {
+        this.b = z0Var;
+        this.s = m8Var;
+        this.c = z0Var2;
+        this.d = z0Var3;
+        this.e = z0Var4;
+        this.f = z0Var5;
+        this.h = z10;
+        this.n = z0Var6;
+        this.r = z0Var7;
     }
 }

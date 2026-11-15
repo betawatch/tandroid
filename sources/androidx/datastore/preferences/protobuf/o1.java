@@ -1,11 +1,11 @@
 package androidx.datastore.preferences.protobuf;
 
-import a8.r6;
+import a8.s6;
 import java.nio.charset.Charset;
 import java.util.Arrays;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o1 {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final class o1 {
                                 i7 += 2;
                                 byte b13 = bArr[i13];
                                 int i15 = i12 + 1;
-                                if (b11 < -62 || r6.a(b13)) {
+                                if (b11 < -62 || s6.a(b13)) {
                                     throw e0.a();
                                 }
                                 cArr[i12] = (char) ((b13 & 63) | ((b11 & 31) << 6));
@@ -66,7 +66,7 @@ public final class o1 {
                                 i7 += 3;
                                 byte b15 = bArr[i16];
                                 int i17 = i12 + 1;
-                                if (r6.a(b14) || ((b11 == -32 && b14 < -96) || ((b11 == -19 && b14 >= -96) || r6.a(b15)))) {
+                                if (s6.a(b14) || ((b11 == -32 && b14 < -96) || ((b11 == -19 && b14 >= -96) || s6.a(b15)))) {
                                     throw e0.a();
                                 }
                                 cArr[i12] = (char) (((b14 & 63) << 6) | ((b11 & 15) << 12) | (b15 & 63));
@@ -81,7 +81,7 @@ public final class o1 {
                                 i7 += 4;
                                 byte b18 = bArr[i18];
                                 int i19 = i12 + 1;
-                                if (r6.a(b16) || (((b16 + 112) + (b11 << 28)) >> 30) != 0 || r6.a(b17) || r6.a(b18)) {
+                                if (s6.a(b16) || (((b16 + 112) + (b11 << 28)) >> 30) != 0 || s6.a(b17) || s6.a(b18)) {
                                     throw e0.a();
                                 }
                                 int i20 = ((b16 & 63) << 12) | ((b11 & 7) << 18) | ((b17 & 63) << 6) | (b18 & 63);
@@ -158,7 +158,7 @@ public final class o1 {
                                 char charAt4 = str.charAt(i18);
                                 if (Character.isSurrogatePair(charAt3, charAt4)) {
                                     int codePoint = Character.toCodePoint(charAt3, charAt4);
-                                    bArr[i16] = (byte) ((codePoint >>> 18) | qs.P3);
+                                    bArr[i16] = (byte) ((codePoint >>> 18) | ns.P3);
                                     bArr[i16 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
                                     int i19 = i16 + 3;
                                     bArr[i16 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
@@ -219,7 +219,7 @@ public final class o1 {
                                     char charAt6 = str.charAt(i22);
                                     if (Character.isSurrogatePair(charAt5, charAt6)) {
                                         int codePoint2 = Character.toCodePoint(charAt5, charAt6);
-                                        n1.j(bArr, j12, (byte) ((codePoint2 >>> 18) | qs.P3));
+                                        n1.j(bArr, j12, (byte) ((codePoint2 >>> 18) | ns.P3));
                                         n1.j(bArr, j12 + j10, (byte) (((codePoint2 >>> 12) & 63) | 128));
                                         long j14 = j12 + 3;
                                         n1.j(bArr, j12 + 2, (byte) (((codePoint2 >>> 6) & 63) | 128));

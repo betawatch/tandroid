@@ -1,64 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tg implements eh.a {
+public final /* synthetic */ class tg implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ ki b;
 
-    public /* synthetic */ tg(Object obj, int i7) {
+    public /* synthetic */ tg(ki kiVar, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = kiVar;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // eh.a
-    public final void c(dh.a aVar, RectF rectF) {
-        switch (this.a) {
-        }
-        aVar.a = true;
-    }
-
-    @Override // eh.a
-    public final void d(Canvas canvas, RectF rectF) {
-        Canvas canvas2;
-        RectF rectF2;
-        uh uhVar;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ci ciVar = (ci) this.b;
-                int i7 = 0;
-                while (i7 < 2) {
-                    uh uhVar2 = i7 == 0 ? ciVar.v2 : ciVar.w2;
-                    if (uhVar2 == null || uhVar2.c == null || uhVar2.getVisibility() != 0) {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                    } else {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                        ih.d.b(uhVar2.c, canvas2, rectF2, uhVar2.d, ciVar.b, (int) (((i7 == 0 && (uhVar = ciVar.w2) != null && uhVar.getVisibility() == 0) ? (1.0f - ciVar.w2.getAlpha()) * uhVar2.getAlpha() : uhVar2.getAlpha()) * 255.0f));
-                    }
-                    i7++;
-                    canvas = canvas2;
-                    rectF = rectF2;
-                }
+                this.b.Q1();
                 break;
             case 1:
-                gy gyVar = (gy) this.b;
-                sw swVar = gyVar.P;
-                ih.d.a(swVar, canvas, rectF, swVar, gyVar);
-                kv kvVar = gyVar.h0;
-                ih.d.a(kvVar, canvas, rectF, kvVar, gyVar);
-                pv pvVar = gyVar.D0;
-                ih.d.a(pvVar, canvas, rectF, pvVar, gyVar);
+                this.b.B2.invalidate();
+                break;
+            case 2:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ki kiVar = this.b;
+                kiVar.D0 = floatValue;
+                org.telegram.ui.ActionBar.k2 k2Var = kiVar.c;
+                if (k2Var != null) {
+                    k2Var.invalidate();
+                    break;
+                }
+                break;
+            case 3:
+                ki kiVar2 = this.b;
+                kiVar2.getClass();
+                kiVar2.z1(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 4:
+                ki kiVar3 = this.b;
+                ci ciVar = kiVar3.w2;
+                qk qkVar = kiVar3.r2;
+                if (ciVar == qkVar && qkVar != null) {
+                    qkVar.invalidate();
+                    break;
+                }
                 break;
             default:
-                mo0 mo0Var = (mo0) this.b;
-                on0 on0Var = mo0Var.A1;
-                ih.d.a(on0Var, canvas, rectF, on0Var, mo0Var.b);
+                this.b.Q1();
                 break;
         }
     }

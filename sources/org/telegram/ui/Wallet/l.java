@@ -1,10 +1,10 @@
 package org.telegram.ui.Wallet;
 
 import android.view.View;
-import c8.va;
-import org.telegram.ui.Components.r41;
+import c8.xa;
+import org.telegram.ui.Components.u41;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -61,68 +61,68 @@ public final /* synthetic */ class l implements Runnable {
                 u0 u0Var = (u0) this.b;
                 u0Var.c("AUTH_CANCELED");
                 u0Var.e();
-                if (va.b == u0Var) {
-                    va.b = null;
+                if (xa.b == u0Var) {
+                    xa.b = null;
                     return;
                 }
                 return;
             case 5:
-                ((x2) this.b).dismiss();
+                ((w2) this.b).dismiss();
                 return;
             case 6:
                 ((org.telegram.ui.Cells.t0) this.b).invalidate();
                 return;
             case 7:
-                org.telegram.messenger.g0.E2((fi.m3) this.b);
+                org.telegram.messenger.g0.E2((hi.l3) this.b);
                 return;
             case 8:
-                v5 v5Var = (v5) this.b;
-                fi.w3 w3Var = v5Var.c;
-                if (w3Var == null || w3Var.getScrollState() != 0) {
+                u5 u5Var = (u5) this.b;
+                bi.v3 v3Var = u5Var.c;
+                if (v3Var == null || v3Var.getScrollState() != 0) {
                     return;
                 }
-                r41 y02 = v5Var.j.y0();
-                if ((y02 == null || y02.getScrollState() == 0) && (d = v5Var.d(v5Var.c.e3)) != null) {
-                    v4.b0 b0Var = v5Var.c.e3;
+                u41 y02 = u5Var.j.y0();
+                if ((y02 == null || y02.getScrollState() == 0) && (d = u5Var.d(u5Var.c.f3)) != null) {
+                    v4.b0 b0Var = u5Var.c.f3;
                     b0Var.getClass();
-                    int i7 = new int[]{0, v4.n0.z(d) - b0Var.F()}[1];
+                    int i7 = new int[]{0, v4.o0.z(d) - b0Var.F()}[1];
                     if (i7 != 0) {
-                        v5Var.c.w0(0, i7, null);
+                        u5Var.c.w0(0, i7, null);
                         return;
                     }
                     return;
                 }
                 return;
             case 9:
-                di.b3 b3Var = (di.b3) this.b;
-                ai.h hVar = (ai.h) b3Var.b;
-                ai.g gVar = (ai.g) b3Var.c;
-                if (gVar == null) {
+                fi.w2 w2Var = (fi.w2) this.b;
+                ci.f fVar = (ci.f) w2Var.b;
+                ci.e eVar = (ci.e) w2Var.c;
+                if (eVar == null) {
                     return;
                 }
-                hVar.a(gVar);
-                hVar.D = 0.0f;
-                b3Var.c = null;
-                b3Var.invalidate();
+                fVar.a(eVar);
+                fVar.D = 0.0f;
+                w2Var.c = null;
+                w2Var.invalidate();
                 return;
             case 10:
                 ((WalletEngine2) this.b).lambda$close$53();
                 return;
             case 11:
                 q8 q8Var = (q8) this.b;
-                boolean z9 = q8Var.h != -1;
-                if (!z9 && !q8Var.s) {
+                boolean z10 = q8Var.h != -1;
+                if (!z10 && !q8Var.s) {
                     q8Var.c = q8Var.c();
                     q8Var.d = 0.0f;
                 }
-                boolean z10 = z9 || q8Var.s || q8Var.e > 1.001f;
-                c4 c4Var = q8Var.b;
+                boolean z11 = z10 || q8Var.s || q8Var.e > 1.001f;
+                b4 b4Var = q8Var.b;
                 float f10 = q8Var.c;
                 float f11 = q8Var.d;
-                c4Var.r = f10;
-                c4Var.s = f11;
-                c4Var.w = z10;
-                c4Var.x = z10;
+                b4Var.r = f10;
+                b4Var.s = f11;
+                b4Var.w = z11;
+                b4Var.x = z11;
                 return;
             case 12:
                 w8 w8Var = (w8) this.b;
@@ -137,7 +137,7 @@ public final /* synthetic */ class l implements Runnable {
                 ((org.telegram.ui.Cells.w3) this.b).requestLayout();
                 return;
             default:
-                ((ga) this.b).Z();
+                ((ha) this.b).Z();
                 return;
         }
     }

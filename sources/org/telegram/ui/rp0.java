@@ -2,54 +2,47 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class rp0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sp0 b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ PhotoViewer c;
 
-    public rp0(sp0 sp0Var, int i7) {
-        this.b = sp0Var;
-        this.a = i7;
+    public /* synthetic */ rp0(PhotoViewer photoViewer, int i7, int i10) {
+        this.a = i10;
+        this.c = photoViewer;
+        this.b = i7;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        if (this.b.b.j8) {
-            PhotoViewer photoViewer = this.b.b;
-            if (photoViewer.r1) {
-                photoViewer.z3();
-            }
-        }
-        if (this.a == 3) {
-            PhotoViewer photoViewer2 = this.b.b;
-            photoViewer2.D2(photoViewer2.O4, false, true, true);
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        PhotoViewer photoViewer = this.b.b;
-        photoViewer.P0.setVisibility(0);
-        if (photoViewer.C3()) {
-            photoViewer.n0.setVisibility(0);
-        } else {
-            photoViewer.S0.setVisibility(0);
-        }
-        photoViewer.F.setVisibility(0);
-        if (photoViewer.i2) {
-            oq0 oq0Var = photoViewer.Q1;
-            oq0Var.setVisibility(oq0Var.getTag() != null ? 0 : 4);
-        }
-        if (photoViewer.d2 || photoViewer.e2) {
-            return;
-        }
-        int i7 = photoViewer.c2;
-        if ((i7 == 0 || i7 == 4 || ((i7 == 2 || i7 == 5) && photoViewer.f7.size() > 1)) && !photoViewer.e4) {
-            photoViewer.N0.setVisibility(0);
-            photoViewer.O0.setVisibility(0);
-            photoViewer.p3();
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.c;
+                sp0 sp0Var = photoViewer.O1;
+                sp0Var.e.setVisibility(0);
+                FrameLayout frameLayout = sp0Var.r;
+                frameLayout.setVisibility(0);
+                frameLayout.setTranslationY(org.telegram.messenger.g0.L(18.0f));
+                ViewPropertyAnimator translationY = frameLayout.animate().alpha(1.0f).translationY(0.0f);
+                org.telegram.ui.Components.er erVar = org.telegram.ui.Components.er.h;
+                org.telegram.messenger.i20.n(translationY, erVar, 320L);
+                sp0Var.x.animate().alpha(1.0f).translationX(0.0f).setInterpolator(erVar).setDuration(320L).start();
+                photoViewer.u4 = this.b;
+                photoViewer.q6 = null;
+                photoViewer.o6 = -1;
+                break;
+            default:
+                int i7 = this.b;
+                PhotoViewer photoViewer2 = this.c;
+                photoViewer2.u4 = i7;
+                photoViewer2.q6 = null;
+                photoViewer2.o6 = -1;
+                break;
         }
     }
 }

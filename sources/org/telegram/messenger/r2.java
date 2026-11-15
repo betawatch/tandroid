@@ -5,7 +5,7 @@ import j$.util.Objects;
 import java.lang.Thread;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class r2 {
     public static boolean a = true;
@@ -22,7 +22,7 @@ public abstract class r2 {
 
     static {
         b = Build.VERSION.SDK_INT <= 29;
-        c = "13.2.2";
+        c = "13.3.0";
         d = 4;
         e = "014b35b6184100b085b0d0572f9b5103";
         f = "AIzaSyDqt8P-7F7CPCseMkOiVRgb1LY8RN1bvH8";
@@ -55,34 +55,34 @@ public abstract class r2 {
     }
 
     public static boolean b() {
-        f5.l lVar;
+        f5.m mVar;
         if (r1.n) {
             return true;
         }
         t0.u();
         a();
         t0.r();
-        if (r1.i().k() && (lVar = r1.l) != null) {
-            ArrayList arrayList = lVar.h;
+        if (r1.i().k() && (mVar = r1.l) != null) {
+            ArrayList arrayList = mVar.h;
             int size = arrayList.size();
             int i7 = 0;
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                ArrayList arrayList2 = ((f5.k) obj).b.a;
+                ArrayList arrayList2 = ((f5.l) obj).b.a;
                 int size2 = arrayList2.size();
                 int i10 = 0;
                 while (i10 < size2) {
                     Object obj2 = arrayList2.get(i10);
                     i10++;
-                    f5.i iVar = (f5.i) obj2;
-                    ArrayList arrayList3 = qp.s1(p10.s0).k7;
+                    f5.j jVar = (f5.j) obj2;
+                    ArrayList arrayList3 = np.s1(m10.t0).l7;
                     int size3 = arrayList3.size();
                     int i11 = 0;
                     while (i11 < size3) {
                         Object obj3 = arrayList3.get(i11);
                         i11++;
-                        if (Objects.equals(iVar.c, (String) obj3)) {
+                        if (Objects.equals(jVar.c, (String) obj3)) {
                             return true;
                         }
                     }

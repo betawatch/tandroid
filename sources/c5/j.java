@@ -1,36 +1,71 @@
 package c5;
 
-import a8.p0;
 import android.os.Parcel;
 import android.os.Parcelable;
+import m.i3;
+import m.v2;
+import v4.y0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class j extends j1.b {
-    public static final Parcelable.Creator<j> CREATOR = new i(0);
-    public int c;
-    public Parcelable d;
-    public final ClassLoader e;
+public final class j implements Parcelable.ClassLoaderCreator {
+    public final /* synthetic */ int a;
 
-    public j(Parcel parcel, ClassLoader classLoader) {
-        super(parcel, classLoader);
-        classLoader = classLoader == null ? j.class.getClassLoader() : classLoader;
-        this.c = parcel.readInt();
-        this.d = parcel.readParcelable(classLoader);
-        this.e = classLoader;
+    public /* synthetic */ j(int i7) {
+        this.a = i7;
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("FragmentPager.SavedState{");
-        sb2.append(Integer.toHexString(System.identityHashCode(this)));
-        sb2.append(" position=");
-        return p0.n(this.c, "}", sb2);
+    @Override // android.os.Parcelable.ClassLoaderCreator
+    public final Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
+        switch (this.a) {
+            case 0:
+                return new k(parcel, classLoader);
+            case 1:
+                if (parcel.readParcelable(classLoader) == null) {
+                    return j1.b.b;
+                }
+                throw new IllegalStateException("superState must be null");
+            case 2:
+                return new v2(parcel, classLoader);
+            case 3:
+                return new i3(parcel, classLoader);
+            default:
+                return new y0(parcel, classLoader);
+        }
     }
 
-    @Override // j1.b, android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        super.writeToParcel(parcel, i7);
-        parcel.writeInt(this.c);
-        parcel.writeParcelable(this.d, i7);
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i7) {
+        switch (this.a) {
+            case 0:
+                return new k[i7];
+            case 1:
+                return new j1.b[i7];
+            case 2:
+                return new v2[i7];
+            case 3:
+                return new i3[i7];
+            default:
+                return new y0[i7];
+        }
+    }
+
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        switch (this.a) {
+            case 0:
+                return new k(parcel, null);
+            case 1:
+                if (parcel.readParcelable(null) == null) {
+                    return j1.b.b;
+                }
+                throw new IllegalStateException("superState must be null");
+            case 2:
+                return new v2(parcel, null);
+            case 3:
+                return new i3(parcel, null);
+            default:
+                return new y0(parcel, null);
+        }
     }
 }

@@ -1,8 +1,8 @@
 package rc;
 
 import a8.p0;
-import bi.f9;
-import com.google.android.gms.internal.clearcut.z0;
+import com.google.android.gms.internal.clearcut.y0;
+import di.x7;
 import e2.r0;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -15,12 +15,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.uy;
+import org.telegram.messenger.ou;
 import org.telegram.ui.Wallet.x0;
-import org.telegram.ui.web.e1;
+import org.telegram.ui.web.c1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class u {
     public final s a;
@@ -29,7 +28,7 @@ public final class u {
     public final ab.q d;
     public final p e;
     public final p f;
-    public e1 h;
+    public c1 h;
     public y i;
     public q j;
     public a0 k;
@@ -45,7 +44,7 @@ public final class u {
     public final Object g = new Object();
     public final Object n = new Object();
 
-    public u(boolean z9, String str, String str2, String str3, s sVar) {
+    public u(boolean z10, String str, String str2, String str3, s sVar) {
         this.a = sVar;
         r0 r0Var = new r0();
         r0Var.b = 1;
@@ -55,15 +54,15 @@ public final class u {
         hVar.a = str;
         hVar.b = str2;
         hVar.c = str3;
-        URI.create((z9 ? "wss" : "ws") + "://" + str2 + str3);
+        URI.create((z10 ? "wss" : "ws") + "://" + str2 + str3);
         this.c = hVar;
         ab.q qVar = new ab.q();
         qVar.c = new ArrayList();
         qVar.a = true;
         qVar.b = this;
         this.d = qVar;
-        this.e = new p(this, "PingSender", new sa.d(22));
-        this.f = new p(this, "PongSender", new sa.d(22));
+        this.e = new p(this, "PingSender", new pb.b(23));
+        this.f = new p(this, "PongSender", new pb.b(23));
     }
 
     public final void a() {
@@ -84,7 +83,7 @@ public final class u {
                     try {
                         try {
                             int i10 = 5;
-                            g0.h3(new f9(x0Var.a, i10, x0Var.b, x0Var, (u) qVar.b));
+                            g0.h3(new x7(x0Var.a, i10, x0Var.b, x0Var, (u) qVar.b));
                         } catch (Throwable unused) {
                             x0Var.getClass();
                         }
@@ -221,7 +220,7 @@ public final class u {
         x xVar = this.s;
         x xVar2 = this.t;
         int i7 = 0;
-        boolean z9 = this.b.b == 2;
+        boolean z10 = this.b.b == 2;
         ArrayList arrayList = (ArrayList) qVar.p();
         int size = arrayList.size();
         while (i7 < size) {
@@ -230,7 +229,7 @@ public final class u {
             x0 x0Var = (x0) obj;
             try {
                 try {
-                    x0Var.a((u) qVar.b, xVar, xVar2, z9);
+                    x0Var.a((u) qVar.b, xVar, xVar2, z10);
                 } catch (Throwable unused2) {
                 }
             } catch (Throwable unused3) {
@@ -240,13 +239,13 @@ public final class u {
     }
 
     public final void e() {
-        boolean z9;
+        boolean z10;
         synchronized (this.g) {
             this.o = true;
-            z9 = this.p;
+            z10 = this.p;
         }
         a();
-        if (z9) {
+        if (z10) {
             f();
         }
     }
@@ -260,11 +259,11 @@ public final class u {
     }
 
     public final void finalize() {
-        boolean z9;
+        boolean z10;
         synchronized (this.b) {
-            z9 = this.b.a == 1;
+            z10 = this.b.a == 1;
         }
-        if (z9) {
+        if (z10) {
             d();
         }
         super.finalize();
@@ -304,7 +303,7 @@ public final class u {
         w wVar2;
         String str;
         try {
-            e1 e1Var = new e1(new BufferedInputStream(socket.getInputStream()), 1);
+            c1 c1Var = new c1(new BufferedInputStream(socket.getInputStream()), 1);
             try {
                 y yVar = new y(new BufferedOutputStream(socket.getOutputStream()));
                 byte[] bArr = new byte[16];
@@ -323,7 +322,7 @@ public final class u {
                 if (str2 != null && str2.length() != 0) {
                     arrayList.add(new String[]{"Authorization", "Basic " + d.a(k.a(str2))});
                 }
-                StringBuilder j3 = rf.b.j(p10, "\r\n");
+                StringBuilder m10 = r.b.m(p10, "\r\n");
                 int size = arrayList.size();
                 int i11 = 0;
                 int i12 = 0;
@@ -335,13 +334,13 @@ public final class u {
                     Object obj = arrayList.get(i12);
                     i12++;
                     String[] strArr = (String[]) obj;
-                    j3.append(strArr[0]);
-                    j3.append(": ");
-                    j3.append(strArr[1]);
-                    j3.append("\r\n");
+                    m10.append(strArr[0]);
+                    m10.append(": ");
+                    m10.append(strArr[1]);
+                    m10.append("\r\n");
                 }
-                j3.append("\r\n");
-                String sb2 = j3.toString();
+                m10.append("\r\n");
+                String sb2 = m10.toString();
                 ArrayList arrayList2 = (ArrayList) this.d.p();
                 int size2 = arrayList2.size();
                 int i13 = 0;
@@ -361,26 +360,26 @@ public final class u {
                 try {
                     yVar.write(k.a(sb2));
                     yVar.flush();
-                    uy uyVar = new uy(this, 13);
+                    ou ouVar = new ou(this, 20);
                     try {
-                        String b10 = k.b(e1Var);
+                        String b10 = k.b(c1Var);
                         if (b10 == null || b10.length() == 0) {
                             throw new v(6, "The status line of the opening handshake response is empty.");
                         }
                         try {
-                            z0 z0Var = new z0(b10, 4);
+                            y0 y0Var = new y0(b10, 4);
                             TreeMap treeMap = new TreeMap(String.CASE_INSENSITIVE_ORDER);
                             StringBuilder sb3 = null;
                             while (true) {
                                 try {
-                                    String b11 = k.b(e1Var);
+                                    String b11 = k.b(c1Var);
                                     if (b11 == null || b11.length() == 0) {
                                         break;
                                     }
                                     char charAt = b11.charAt(0);
                                     if (charAt != ' ' && charAt != '\t') {
                                         if (sb3 != null) {
-                                            uy.K(sb3.toString(), treeMap);
+                                            ou.e1(sb3.toString(), treeMap);
                                         }
                                         sb3 = new StringBuilder(b11);
                                     } else if (sb3 != null) {
@@ -391,9 +390,9 @@ public final class u {
                                 }
                             }
                             if (sb3 != null) {
-                                uy.K(sb3.toString(), treeMap);
+                                ou.e1(sb3.toString(), treeMap);
                             }
-                            if (z0Var.b != 101) {
+                            if (y0Var.b != 101) {
                                 try {
                                     i10 = Integer.parseInt((String) ((List) treeMap.get("Content-Length")).get(0));
                                 } catch (Exception unused3) {
@@ -401,15 +400,15 @@ public final class u {
                                 }
                                 if (i10 > 0) {
                                     try {
-                                        e1Var.b(i10, new byte[i10]);
+                                        c1Var.b(i10, new byte[i10]);
                                     } catch (Throwable unused4) {
                                     }
                                 }
-                                throw new n(8, "The status code of the opening handshake response is not '101 Switching Protocols'. The status line is: " + z0Var, z0Var);
+                                throw new n(8, "The status code of the opening handshake response is not '101 Switching Protocols'. The status line is: " + y0Var, y0Var);
                             }
                             List list = (List) treeMap.get("Upgrade");
                             if (list == null || list.size() == 0) {
-                                throw new n(10, "The opening handshake response does not contain 'Upgrade' header.", z0Var);
+                                throw new n(10, "The opening handshake response does not contain 'Upgrade' header.", y0Var);
                             }
                             Iterator it = list.iterator();
                             while (it.hasNext()) {
@@ -420,7 +419,7 @@ public final class u {
                                     if ("websocket".equalsIgnoreCase(split[i14])) {
                                         List list2 = (List) treeMap.get("Connection");
                                         if (list2 == null || list2.size() == 0) {
-                                            throw new n(12, "The opening handshake response does not contain 'Connection' header.", z0Var);
+                                            throw new n(12, "The opening handshake response does not contain 'Connection' header.", y0Var);
                                         }
                                         Iterator it2 = list2.iterator();
                                         while (it2.hasNext()) {
@@ -431,11 +430,11 @@ public final class u {
                                                 if ("Upgrade".equalsIgnoreCase(split2[i15])) {
                                                     List list3 = (List) treeMap.get("Sec-WebSocket-Accept");
                                                     if (list3 == null) {
-                                                        throw new n(14, "The opening handshake response does not contain 'Sec-WebSocket-Accept' header.", z0Var);
+                                                        throw new n(14, "The opening handshake response does not contain 'Sec-WebSocket-Accept' header.", y0Var);
                                                     }
                                                     try {
-                                                        if (!d.a(MessageDigest.getInstance("SHA-1").digest(k.a(rf.b.r(a10, "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")))).equals((String) list3.get(0))) {
-                                                            throw new n(15, "The value of 'Sec-WebSocket-Accept' header is different from the expected one.", z0Var);
+                                                        if (!d.a(MessageDigest.getInstance("SHA-1").digest(k.a(r.b.v(a10, "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")))).equals((String) list3.get(0))) {
+                                                            throw new n(15, "The value of 'Sec-WebSocket-Accept' header is different from the expected one.", y0Var);
                                                         }
                                                     } catch (Exception unused5) {
                                                     }
@@ -475,14 +474,14 @@ public final class u {
                                                                                                         if (str.indexOf(92) >= 0) {
                                                                                                             int length4 = str.length();
                                                                                                             StringBuilder sb4 = new StringBuilder();
-                                                                                                            boolean z9 = false;
+                                                                                                            boolean z10 = false;
                                                                                                             for (int i18 = 0; i18 < length4; i18++) {
                                                                                                                 char charAt2 = str.charAt(i18);
-                                                                                                                if (charAt2 != '\\' || z9) {
+                                                                                                                if (charAt2 != '\\' || z10) {
                                                                                                                     sb4.append(charAt2);
-                                                                                                                    z9 = false;
+                                                                                                                    z10 = false;
                                                                                                                 } else {
-                                                                                                                    z9 = true;
+                                                                                                                    z10 = true;
                                                                                                                 }
                                                                                                             }
                                                                                                             str = sb4.toString();
@@ -514,14 +513,14 @@ public final class u {
                                                                             }
                                                                             wVar2 = wVar;
                                                                             if (wVar2 != null) {
-                                                                                throw new n(16, rf.b.i("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), z0Var);
+                                                                                throw new n(16, r.b.k("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), y0Var);
                                                                             }
                                                                             String str6 = wVar2.a;
-                                                                            h hVar2 = ((u) uyVar.b).c;
+                                                                            h hVar2 = ((u) ouVar.b).c;
                                                                             if (str6 == null) {
                                                                                 hVar2.getClass();
                                                                             }
-                                                                            throw new n(17, rf.b.i("The extension contained in the Sec-WebSocket-Extensions header is not supported: ", str6), z0Var);
+                                                                            throw new n(17, r.b.k("The extension contained in the Sec-WebSocket-Extensions header is not supported: ", str6), y0Var);
                                                                         }
                                                                     }
                                                                 }
@@ -538,15 +537,15 @@ public final class u {
                                                             w wVar4 = (w) obj3;
                                                             if (wVar4 instanceof o) {
                                                                 if (wVar3 != null) {
-                                                                    throw new n(18, f1.m("'", wVar3.a, "' extension and '", wVar4.a, "' extension conflict with each other."), z0Var);
+                                                                    throw new n(18, r.b.l("'", wVar3.a, "' extension and '", wVar4.a, "' extension conflict with each other."), y0Var);
                                                                 }
                                                                 wVar3 = wVar4;
                                                             }
                                                         }
-                                                        ((u) uyVar.b).l = arrayList3;
+                                                        ((u) ouVar.b).l = arrayList3;
                                                     }
-                                                    uyVar.S(z0Var, treeMap);
-                                                    this.h = e1Var;
+                                                    ouVar.o1(y0Var, treeMap);
+                                                    this.h = c1Var;
                                                     this.i = yVar;
                                                     return treeMap;
                                                 }
@@ -554,13 +553,13 @@ public final class u {
                                                 i7 = 1;
                                             }
                                         }
-                                        throw new n(13, "'Upgrade' was not found in 'Connection' header.", z0Var);
+                                        throw new n(13, "'Upgrade' was not found in 'Connection' header.", y0Var);
                                     }
                                     i14++;
                                     i7 = 1;
                                 }
                             }
-                            throw new n(11, "'websocket' was not found in 'Upgrade' header.", z0Var);
+                            throw new n(11, "'websocket' was not found in 'Upgrade' header.", y0Var);
                         } catch (Exception unused6) {
                             throw new v(7, "The status line of the opening handshake response is badly formatted. The status line is: ".concat(b10));
                         }

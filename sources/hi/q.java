@@ -1,102 +1,90 @@
 package hi;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.FrameLayout;
-import c8.ha;
-import di.r4;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.WeakHashMap;
-import org.telegram.messenger.id;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.t10;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.f5;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.ch0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class q extends org.telegram.ui.ActionBar.f2 {
-    public r41 a;
-    public final ArrayList b;
-    public final HashMap c;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class q extends Drawable {
+    public final Paint a;
+    public float b;
+    public float c;
+    public long d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public final ch0 h;
+    public final ia i;
+    public final /* synthetic */ ia j;
 
-    public q() {
-        super(null);
-        this.b = new ArrayList();
-        this.c = new HashMap();
+    public q(ia iaVar, ia iaVar2) {
+        this.j = iaVar;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.c = 1.0f;
+        this.i = iaVar2;
+        ch0 ch0Var = new ch0(R.raw.chat_audio_record_delete_3, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), false, null);
+        this.h = ch0Var;
+        ch0Var.p0 = true;
+        paint.setColor(-2406842);
+        ch0Var.a0 = true;
+        ch0Var.Q(-2406842, "Cup Red");
+        ch0Var.Q(-2406842, "Box");
+        ch0Var.o();
     }
 
-    public static void Z(q qVar, ArrayList arrayList) {
-        HashMap hashMap = qVar.c;
-        ArrayList arrayList2 = qVar.b;
-        for (int i7 = 0; i7 < arrayList2.size(); i7++) {
-            o oVar = (o) arrayList2.get(i7);
-            SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) hashMap.get(oVar);
-            if (spannableStringBuilder == null) {
-                spannableStringBuilder = new SpannableStringBuilder();
-                spannableStringBuilder.append((CharSequence) "a   ");
-                f5 f5Var = new f5(24.0f, qVar.currentAccount, null);
-                f5Var.e(oVar.a);
-                spannableStringBuilder.setSpan(f5Var, 0, 1, 33);
-                spannableStringBuilder.append((CharSequence) t10.p(oVar.a));
-                hashMap.put(oVar, spannableStringBuilder);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        boolean z10 = this.g;
+        ch0 ch0Var = this.h;
+        if (z10) {
+            ch0Var.setAlpha((int) (this.b * 255.0f * this.c));
+        }
+        int i7 = (int) (this.b * 255.0f * this.c);
+        Paint paint = this.a;
+        paint.setAlpha(i7);
+        long currentTimeMillis = System.currentTimeMillis() - this.d;
+        if (this.e || this.g) {
+            float f10 = (currentTimeMillis / 600.0f) + this.b;
+            this.b = f10;
+            if (f10 >= 1.0f) {
+                this.b = 1.0f;
+                this.e = false;
             }
-            x31 i10 = x31.i(i7, spannableStringBuilder);
-            i10.L(!oVar.b);
-            arrayList.add(i10);
+        } else {
+            float f11 = this.b - (currentTimeMillis / 600.0f);
+            this.b = f11;
+            if (f11 <= 0.0f) {
+                this.b = 0.0f;
+                this.e = true;
+            }
         }
-        arrayList.add(x31.C(id.M0(2131746861, null)));
+        this.d = System.currentTimeMillis();
+        ch0Var.setBounds(getBounds());
+        if (this.g) {
+            ch0Var.draw(canvas);
+        }
+        if (!this.g || !ch0Var.u()) {
+            canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), org.telegram.messenger.g0.L(5.0f), paint);
+        }
+        this.j.invalidate();
     }
 
-    public static void a0(q qVar, x31 x31Var) {
-        int i7;
-        m41 m41Var;
-        ArrayList arrayList = qVar.b;
-        if (x31Var.a != 4 || (i7 = x31Var.d) < 0 || i7 >= arrayList.size()) {
-            return;
-        }
-        o oVar = (o) arrayList.get(x31Var.d);
-        oVar.b = !oVar.b;
-        Activity parentActivity = qVar.getParentActivity();
-        int i10 = qVar.currentAccount;
-        long j3 = oVar.a.id;
-        boolean z9 = oVar.b;
-        WeakHashMap weakHashMap = p.k;
-        SharedPreferences sharedPreferences = parentActivity.getSharedPreferences("2botbiometry_" + i10, 0);
-        SharedPreferences.Editor edit = sharedPreferences.edit();
-        edit.putBoolean(j3 + "_disabled", z9);
-        if (!z9 && sharedPreferences.getString(String.valueOf(j3), null) == null) {
-            edit.putString(String.valueOf(j3), "");
-        }
-        edit.apply();
-        r41 r41Var = qVar.a;
-        if (r41Var == null || (m41Var = r41Var.f3) == null) {
-            return;
-        }
-        m41Var.O(true);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(id.M0(2131746863, null));
-        this.actionBar.setActionBarMenuOnItemClick(new bi.s(this, 3));
-        FrameLayout frameLayout = new FrameLayout(context);
-        t6.h(m6.a7, frameLayout, this.resourceProvider);
-        r41 r41Var = new r41(this, new ai.e(this, 27), new r4(this, 21), new g2.c(this, 24));
-        this.a = r41Var;
-        frameLayout.addView(r41Var, ha.e(-1, -1, qs.E1));
-        p.d(getParentActivity(), this.currentAccount, new ai.i(this, 29));
-        this.fragmentView = frameLayout;
-        return frameLayout;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.c = i7 / 255.0f;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -5,17 +5,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.view.KeyEvent;
+import fi.f6;
 import j$.util.Objects;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.z5;
-import org.telegram.ui.Components.uj;
-import org.telegram.ui.Components.wf;
+import org.telegram.ui.Components.dg;
+import org.telegram.ui.Components.dk;
 import org.telegram.ui.tp;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -47,7 +48,7 @@ public final class f extends BroadcastReceiver {
                     return;
                 }
             case 3:
-                ((Executor) ((h2.w) this.b).c).execute(new f2.h(26, context, (Object) this));
+                ((Executor) ((h2.w) this.b).c).execute(new f6(21, this, context));
                 break;
             case 4:
                 n2.e eVar = (n2.e) this.b;
@@ -75,12 +76,12 @@ public final class f extends BroadcastReceiver {
                 t0.d.post(new org.telegram.messenger.a(this, 14));
                 break;
             case 8:
-                wf wfVar = new wf(this, 23);
+                dg dgVar = new dg(this, 25);
                 if (!"android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    wfVar.run();
+                    dgVar.run();
                     break;
                 } else {
-                    ((uj) this.b).r.postDelayed(wfVar, 1000L);
+                    ((dk) this.b).r.postDelayed(dgVar, 1000L);
                     break;
                 }
             case 9:
@@ -101,13 +102,13 @@ public final class f extends BroadcastReceiver {
                 break;
             default:
                 if ("org.telegram.utils.pip.ACTION".equals(intent.getAction())) {
-                    ti.q qVar = (ti.q) this.b;
-                    ti.o oVar = qVar.f;
-                    if (oVar == null) {
-                        oVar = qVar.e;
+                    wi.p pVar = (wi.p) this.b;
+                    wi.n nVar = pVar.f;
+                    if (nVar == null) {
+                        nVar = pVar.e;
                     }
-                    if (oVar != null) {
-                        oVar.a.f0(intent.getIntExtra("action_id", -1));
+                    if (nVar != null) {
+                        nVar.a.u0(intent.getIntExtra("action_id", -1));
                         break;
                     }
                 }

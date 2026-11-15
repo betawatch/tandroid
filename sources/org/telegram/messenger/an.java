@@ -2,28 +2,34 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class an implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bp b;
-    public final /* synthetic */ TLRPC.TL_error c;
+public final /* synthetic */ class an implements pr {
+    public final /* synthetic */ np a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ TLRPC.InputPeer e;
+    public final /* synthetic */ long f;
 
-    public /* synthetic */ an(bp bpVar, TLRPC.TL_error tL_error, int i7) {
-        this.a = i7;
-        this.b = bpVar;
-        this.c = tL_error;
+    public /* synthetic */ an(np npVar, long j3, int i7, boolean z10, TLRPC.InputPeer inputPeer, long j10) {
+        this.a = npVar;
+        this.b = j3;
+        this.c = i7;
+        this.d = z10;
+        this.e = inputPeer;
+        this.f = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.a(this.c);
-                break;
-            default:
-                this.b.a(this.c);
-                break;
+    @Override // org.telegram.messenger.pr
+    public final void a(int i7) {
+        np npVar = this.a;
+        long e10 = npVar.getUserConfig().e();
+        long j3 = this.b;
+        if (j3 == e10) {
+            npVar.G1().b();
         }
+        npVar.Y(j3, 2, this.c, Math.max(0, i7), this.d, this.e, this.f);
+        npVar.J(1);
     }
 }

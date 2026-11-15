@@ -2,7 +2,7 @@ package x3;
 
 import f3.p;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g {
     public static final long[] d = {128, 64, 32, 16, 8, 4, 2, 1};
@@ -10,9 +10,9 @@ public final class g {
     public int b;
     public int c;
 
-    public static long a(int i7, boolean z9, byte[] bArr) {
+    public static long a(int i7, boolean z10, byte[] bArr) {
         long j3 = bArr[0] & 255;
-        if (z9) {
+        if (z10) {
             j3 &= ~d[i7 - 1];
         }
         for (int i10 = 1; i10 < i7; i10++) {
@@ -21,12 +21,12 @@ public final class g {
         return j3;
     }
 
-    public final long b(p pVar, boolean z9, boolean z10, int i7) {
+    public final long b(p pVar, boolean z10, boolean z11, int i7) {
         int i10;
         int i11 = this.b;
         byte[] bArr = this.a;
         if (i11 == 0) {
-            if (!pVar.c(bArr, 0, 1, z9)) {
+            if (!pVar.d(bArr, 0, 1, z10)) {
                 return -1L;
             }
             int i12 = bArr[0] & 255;
@@ -57,6 +57,6 @@ public final class g {
             pVar.readFully(bArr, 1, i14 - 1);
         }
         this.b = 0;
-        return a(this.c, z10, bArr);
+        return a(this.c, z11, bArr);
     }
 }

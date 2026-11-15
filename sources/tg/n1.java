@@ -10,66 +10,67 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
-import c8.ha;
+import c8.ja;
 import c8.ke;
 import com.google.mlkit.vision.segmentation.subject.internal.zzd;
-import fi.e7;
+import hi.d7;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.ye;
+import org.telegram.messenger.xe;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n3;
-import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.m01;
 import org.telegram.ui.Components.nt0;
-import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.w41;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.pi0;
+import org.telegram.ui.Components.u5;
+import org.telegram.ui.Wallet.k8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class n1 extends j {
-    public final Bitmap A0;
-    public boolean B0;
+    public final m01 A0;
+    public final Bitmap B0;
     public boolean C0;
-    public final Rect D0;
+    public boolean D0;
     public final Rect E0;
-    public final Paint F0;
-    public ye G0;
-    public final TLObject q0;
-    public final String r0;
-    public final int s0;
-    public boolean t0;
-    public final v5 u0;
-    public final nt0 v0;
-    public final int w0;
-    public boolean x0;
-    public final v5 y0;
-    public final w41 z0;
+    public final Rect F0;
+    public final Paint G0;
+    public xe H0;
+    public final TLObject r0;
+    public final String s0;
+    public final int t0;
+    public boolean u0;
+    public final u5 v0;
+    public final nt0 w0;
+    public final int x0;
+    public boolean y0;
+    public final u5 z0;
 
     public n1(Context context, PointF pointF, nt0 nt0Var, String str, int i7) {
         super(context, pointF);
-        this.s0 = -1;
-        this.t0 = false;
-        this.x0 = false;
+        this.t0 = -1;
+        this.u0 = false;
+        this.y0 = false;
         new Rect();
         new RectF();
         new Paint(3);
-        this.D0 = new Rect();
         this.E0 = new Rect();
-        this.F0 = new Paint(3);
+        this.F0 = new Rect();
+        this.G0 = new Paint(3);
         setRotation(0.0f);
         setScale(1.0f);
-        this.r0 = str;
-        this.v0 = nt0Var;
-        w41 w41Var = new w41(this, context);
-        this.z0 = w41Var;
-        addView(w41Var, ha.c(-1.0f, -1));
-        wq wqVar = wq.h;
-        this.u0 = new v5(w41Var, 0L, 500L, wqVar);
-        this.y0 = new v5(w41Var, 0L, 350L, wqVar);
-        this.w0 = i7;
-        Bitmap q10 = e7.q(new ab.t(str, 2), 1920, 1920, 0, false);
-        this.A0 = q10;
+        this.s0 = str;
+        this.w0 = nt0Var;
+        m01 m01Var = new m01(this, context);
+        this.A0 = m01Var;
+        addView(m01Var, ja.c(-1.0f, -1));
+        er erVar = er.h;
+        this.v0 = new u5(m01Var, 0L, 500L, erVar);
+        this.z0 = new u5(m01Var, 0L, 350L, erVar);
+        this.x0 = i7;
+        Bitmap q10 = d7.q(new ab.t(str, 2), 1920, 1920, 0, false);
+        this.B0 = q10;
         if (q10 != null) {
             s(q10);
         }
@@ -79,7 +80,7 @@ public final class n1 extends j {
     private String getImageFilter() {
         Point point = org.telegram.messenger.g0.q;
         int round = Math.round((Math.min(point.x, point.y) * 0.8f) / org.telegram.messenger.g0.p);
-        return com.google.android.recaptcha.internal.a.j(round, "_", round);
+        return com.google.android.gms.internal.vision.e2.j(round, "_", round);
     }
 
     @Override // tg.j
@@ -88,15 +89,15 @@ public final class n1 extends j {
     }
 
     public int getAnchor() {
-        return this.s0;
+        return this.t0;
     }
 
     public nt0 getBaseSize() {
-        return this.v0;
+        return this.w0;
     }
 
     public int getContentHeight() {
-        Bitmap bitmap = this.A0;
+        Bitmap bitmap = this.B0;
         if (bitmap == null) {
             return 1;
         }
@@ -104,7 +105,7 @@ public final class n1 extends j {
     }
 
     public int getContentWidth() {
-        Bitmap bitmap = this.A0;
+        Bitmap bitmap = this.B0;
         if (bitmap == null) {
             return 1;
         }
@@ -112,7 +113,7 @@ public final class n1 extends j {
     }
 
     public int getOrientation() {
-        return this.w0;
+        return this.x0;
     }
 
     public Bitmap getSegmentedOutBitmap() {
@@ -120,10 +121,10 @@ public final class n1 extends j {
     }
 
     @Override // tg.j
-    public ki0 getSelectionBounds() {
+    public pi0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new ki0();
+            return new pi0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
@@ -132,19 +133,19 @@ public final class n1 extends j {
         getMeasuredHeight();
         getScale();
         org.telegram.messenger.g0.L(64.0f);
-        float x10 = org.telegram.messenger.camera.q.x(L, 2.0f, getPositionX(), scaleX);
-        return new ki0(x10, org.telegram.messenger.camera.q.x(L2, 2.0f, getPositionY(), scaleX), ((L3 * scaleX) + x10) - x10, L2 * scaleX);
+        float x10 = i20.x(L, 2.0f, getPositionX(), scaleX);
+        return new pi0(x10, i20.x(L2, 2.0f, getPositionY(), scaleX), ((L3 * scaleX) + x10) - x10, L2 * scaleX);
     }
 
     @Override // tg.j
     public final void k() {
-        nt0 nt0Var = this.v0;
+        nt0 nt0Var = this.w0;
         float f10 = nt0Var.a / 2.0f;
         float f11 = nt0Var.b / 2.0f;
-        ye yeVar = this.G0;
-        if (yeVar != null) {
-            f10 *= yeVar.e;
-            f11 *= yeVar.f;
+        xe xeVar = this.H0;
+        if (xeVar != null) {
+            f10 *= xeVar.e;
+            f11 *= xeVar.f;
         }
         setX(getPositionX() - f10);
         setY(getPositionY() - f11);
@@ -163,19 +164,19 @@ public final class n1 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        nt0 nt0Var = this.v0;
+        nt0 nt0Var = this.w0;
         float f10 = nt0Var.a;
         float f11 = nt0Var.b;
-        ye yeVar = this.G0;
-        if (yeVar != null) {
-            f10 *= yeVar.e;
-            f11 *= yeVar.f;
+        xe xeVar = this.H0;
+        if (xeVar != null) {
+            f10 *= xeVar.e;
+            f11 *= xeVar.f;
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) f10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) f11, TLObject.FLAG_30));
     }
 
     public final String q(int i7) {
-        TLObject tLObject = this.q0;
+        TLObject tLObject = this.r0;
         if (tLObject instanceof TLRPC.Photo) {
             TLRPC.PhotoSize w10 = w7.w(((TLRPC.Photo) tLObject).sizes, 1000, false, null, false);
             try {
@@ -184,65 +185,65 @@ public final class n1 extends j {
             } catch (Exception unused) {
             }
         }
-        return this.r0;
+        return this.s0;
     }
 
-    public final void r(boolean z9) {
-        boolean z10 = !this.t0;
-        this.t0 = z10;
-        if (!z9) {
-            this.u0.f(z10, true);
+    public final void r(boolean z10) {
+        boolean z11 = !this.u0;
+        this.u0 = z11;
+        if (!z10) {
+            this.v0.f(z11, true);
         }
-        w41 w41Var = this.z0;
-        if (w41Var != null) {
-            w41Var.invalidate();
+        m01 m01Var = this.A0;
+        if (m01Var != null) {
+            m01Var.invalidate();
         }
     }
 
     public final void s(Bitmap bitmap) {
-        if (this.C0 || this.B0 || bitmap == null || Build.VERSION.SDK_INT < 24) {
+        if (this.D0 || this.C0 || bitmap == null || Build.VERSION.SDK_INT < 24) {
             return;
         }
         ia.a aVar = new ia.a();
         aVar.a = true;
         zzd a10 = ke.a(new zb.d(aVar));
-        this.B0 = true;
-        a10.g(ub.a.a(this.w0, bitmap)).addOnSuccessListener(new n3(this, 23)).addOnFailureListener(new org.telegram.ui.web.a0(9, this, bitmap));
+        this.C0 = true;
+        a10.g(ub.a.a(this.x0, bitmap)).addOnSuccessListener(new org.telegram.ui.ActionBar.z(this, 28)).addOnFailureListener(new k8(15, this, bitmap));
     }
 
-    public final void t(boolean z9) {
-        boolean z10 = !this.x0;
-        this.x0 = z10;
-        if (!z9) {
-            this.y0.f(z10, true);
+    public final void t(boolean z10) {
+        boolean z11 = !this.y0;
+        this.y0 = z11;
+        if (!z10) {
+            this.z0.f(z11, true);
         }
-        w41 w41Var = this.z0;
-        if (w41Var != null) {
-            w41Var.invalidate();
+        m01 m01Var = this.A0;
+        if (m01Var != null) {
+            m01Var.invalidate();
         }
     }
 
     public n1(Context context, PointF pointF, nt0 nt0Var, TLObject tLObject) {
         super(context, pointF);
-        this.s0 = -1;
-        this.t0 = false;
-        this.x0 = false;
+        this.t0 = -1;
+        this.u0 = false;
+        this.y0 = false;
         new Rect();
         new RectF();
         new Paint(3);
-        this.D0 = new Rect();
         this.E0 = new Rect();
-        this.F0 = new Paint(3);
+        this.F0 = new Rect();
+        this.G0 = new Paint(3);
         setRotation(0.0f);
         setScale(1.0f);
-        this.q0 = tLObject;
-        this.v0 = nt0Var;
-        w41 w41Var = new w41(this, context);
-        this.z0 = w41Var;
-        addView(w41Var, ha.c(-1.0f, -1));
-        wq wqVar = wq.h;
-        this.u0 = new v5(w41Var, 0L, 500L, wqVar);
-        this.y0 = new v5(w41Var, 0L, 350L, wqVar);
+        this.r0 = tLObject;
+        this.w0 = nt0Var;
+        m01 m01Var = new m01(this, context);
+        this.A0 = m01Var;
+        addView(m01Var, ja.c(-1.0f, -1));
+        er erVar = er.h;
+        this.v0 = new u5(m01Var, 0L, 500L, erVar);
+        this.z0 = new u5(m01Var, 0L, 350L, erVar);
         k();
     }
 }

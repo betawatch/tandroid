@@ -1,106 +1,143 @@
 package org.telegram.ui;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Shader;
+import android.os.SystemClock;
+import java.security.SecureRandom;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j30 implements org.telegram.ui.Components.hi0 {
-    public final Path a = new Path();
-    public final Paint b;
-    public final /* synthetic */ f40 c;
+public final class j30 extends org.telegram.ui.ActionBar.j5 {
+    public LinearGradient N0;
+    public int O0;
+    public final Matrix P0;
+    public float Q0;
+    public float R0;
+    public float S0;
+    public float T0;
+    public float U0;
+    public long V0;
+    public final /* synthetic */ c40 W0;
 
-    public j30(f40 f40Var) {
-        this.c = f40Var;
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setColor(-14603467);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j30(c40 c40Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.W0 = c40Var;
+        this.P0 = new Matrix();
+        this.Q0 = -1.0f;
     }
 
-    @Override // org.telegram.ui.Components.hi0
-    public final /* synthetic */ boolean E() {
-        return false;
+    @Override // org.telegram.ui.ActionBar.j5
+    public final void d(int i7) {
+        super.d(i7);
+        int textWidth = getTextWidth();
+        if (textWidth != this.O0) {
+            float f10 = textWidth;
+            this.U0 = 1.3f * f10;
+            float textHeight = getTextHeight();
+            float f11 = f10 * 2.0f;
+            int x02 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.Zh, false);
+            int x03 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.bi, false);
+            int i10 = org.telegram.ui.ActionBar.j6.ai;
+            this.N0 = new LinearGradient(0.0f, textHeight, f11, 0.0f, new int[]{x02, x03, org.telegram.ui.ActionBar.j6.x0(null, i10, false), org.telegram.ui.ActionBar.j6.x0(null, i10, false)}, new float[]{0.0f, 0.38f, 0.76f, 1.0f}, Shader.TileMode.CLAMP);
+            getPaint().setShader(this.N0);
+            this.O0 = textWidth;
+        }
     }
 
-    @Override // org.telegram.ui.Components.hi0
-    public final void L(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z9) {
-        Paint paint = this.b;
-        if (f10 > 0.0f) {
-            canvas.drawRoundRect(rectF, f10, f10, paint);
-        } else {
-            canvas.drawRect(rectF, paint);
-        }
-        if (Build.VERSION.SDK_INT < 29 || !canvas.isHardwareAccelerated()) {
-            return;
-        }
-        f40 f40Var = this.c;
-        if (f40Var.K4 != null) {
-            canvas.save();
-            if (f10 > 0.0f) {
-                Path path = this.a;
-                path.rewind();
-                path.addRoundRect(rectF, f10, f10, Path.Direction.CW);
-                path.close();
-                canvas.clipPath(path);
-            } else {
-                canvas.clipRect(rectF);
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x008e  */
+    @Override // org.telegram.ui.ActionBar.j5, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        float f10;
+        long j3;
+        float f11;
+        float e10;
+        float f12;
+        if (this.N0 != null) {
+            c40 c40Var = this.W0;
+            org.telegram.messenger.r3 r3Var = c40Var.V2;
+            if (r3Var != null && r3Var.j()) {
+                long currentTimeMillis = (c40Var.V2.b.schedule_date * 1000) - ConnectionsManager.getInstance(c40Var.o1.a).getCurrentTimeMillis();
+                if (currentTimeMillis < 0) {
+                    f10 = 1.0f;
+                } else if (currentTimeMillis < 5000) {
+                    f10 = 1.0f - (currentTimeMillis / 5000.0f);
+                }
+                Matrix matrix = this.P0;
+                matrix.reset();
+                matrix.postTranslate((-this.O0) * 0.7f * f10, 0.0f);
+                long elapsedRealtime = SystemClock.elapsedRealtime();
+                j3 = elapsedRealtime - this.V0;
+                if (j3 > 20) {
+                    j3 = 17;
+                }
+                this.V0 = elapsedRealtime;
+                f11 = this.S0;
+                if (f11 != 0.0f || this.T0 >= f11) {
+                    SecureRandom secureRandom = Utilities.b;
+                    this.S0 = secureRandom.nextInt(org.telegram.messenger.ns.e3) + 1500;
+                    this.T0 = 0.0f;
+                    if (this.Q0 == -1.0f) {
+                        this.Q0 = ((secureRandom.nextInt(100) - 50) * 0.2f) / 50.0f;
+                    }
+                    this.R0 = this.Q0;
+                    this.Q0 = ((secureRandom.nextInt(100) - 50) * 0.2f) / 50.0f;
+                }
+                float f13 = j3;
+                e10 = r.b.e(f13 * 0.02f, c40Var.J2, 1.0f * f13, this.T0);
+                this.T0 = e10;
+                f12 = this.S0;
+                if (e10 > f12) {
+                    this.T0 = f12;
+                }
+                float interpolation = org.telegram.ui.Components.er.g.getInterpolation(this.T0 / f12);
+                float f14 = this.U0;
+                float f15 = this.R0;
+                matrix.postTranslate(((((this.Q0 - f15) * interpolation) + f15) * f14) - (f14 / 2.0f), 0.0f);
+                this.N0.setLocalMatrix(matrix);
+                invalidate();
             }
-            canvas.translate(-f40Var.E1.getX(), -f40Var.E1.getY());
-            float f13 = f40Var.L4;
-            canvas.scale(f13, f13);
-            canvas.drawRenderNode(f40Var.K4);
-            canvas.restore();
+            f10 = 0.0f;
+            Matrix matrix2 = this.P0;
+            matrix2.reset();
+            matrix2.postTranslate((-this.O0) * 0.7f * f10, 0.0f);
+            long elapsedRealtime2 = SystemClock.elapsedRealtime();
+            j3 = elapsedRealtime2 - this.V0;
+            if (j3 > 20) {
+            }
+            this.V0 = elapsedRealtime2;
+            f11 = this.S0;
+            if (f11 != 0.0f) {
+            }
+            SecureRandom secureRandom2 = Utilities.b;
+            this.S0 = secureRandom2.nextInt(org.telegram.messenger.ns.e3) + 1500;
+            this.T0 = 0.0f;
+            if (this.Q0 == -1.0f) {
+            }
+            this.R0 = this.Q0;
+            this.Q0 = ((secureRandom2.nextInt(100) - 50) * 0.2f) / 50.0f;
+            float f132 = j3;
+            e10 = r.b.e(f132 * 0.02f, c40Var.J2, 1.0f * f132, this.T0);
+            this.T0 = e10;
+            f12 = this.S0;
+            if (e10 > f12) {
+            }
+            float interpolation2 = org.telegram.ui.Components.er.g.getInterpolation(this.T0 / f12);
+            float f142 = this.U0;
+            float f152 = this.R0;
+            matrix2.postTranslate(((((this.Q0 - f152) * interpolation2) + f152) * f142) - (f142 / 2.0f), 0.0f);
+            this.N0.setLocalMatrix(matrix2);
+            invalidate();
         }
-    }
-
-    @Override // org.telegram.ui.Components.hi0
-    public final boolean U() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.hi0
-    public final void i(View view, ch.o0 o0Var, boolean z9, boolean z10) {
-        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
-        String str = o0Var.f;
-        if (str == null) {
-            str = "👍";
-        }
-        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-        tL_textWithEntities.text = str;
-        long j3 = o0Var.g;
-        if (j3 != 0) {
-            tL_messageEntityCustomEmoji.document_id = j3;
-            tL_messageEntityCustomEmoji.offset = 0;
-            tL_messageEntityCustomEmoji.length = str.length();
-            tL_textWithEntities.entities.add(tL_messageEntityCustomEmoji);
-        }
-        f40 f40Var = this.c;
-        f40Var.F1(tL_textWithEntities);
-        k20 k20Var = f40Var.B1;
-        if (k20Var.m()) {
-            k20Var.j();
-        } else {
-            k20Var.d();
-        }
-        ch.b0 reactionsWindow = f40Var.E1.getReactionsWindow();
-        if (reactionsWindow == null || reactionsWindow.q) {
-            return;
-        }
-        f40Var.E1.getReactionsWindow().e();
-        f40Var.E1.n();
-    }
-
-    @Override // org.telegram.ui.Components.hi0
-    public final boolean v() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.hi0
-    public final /* synthetic */ void M() {
+        super.onDraw(canvas);
     }
 }

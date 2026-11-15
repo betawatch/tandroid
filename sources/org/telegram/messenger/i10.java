@@ -1,21 +1,79 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class i10 implements c20 {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Runnable c;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLParseException;
+import org.telegram.tgnet.tl.TL_update;
 
-    public /* synthetic */ i10(int i7, Runnable runnable, boolean[] zArr) {
-        this.a = zArr;
-        this.b = i7;
-        this.c = runnable;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes.dex */
+public final class i10 extends TLObject {
+    public final boolean a;
+    public final long b;
+    public final long c;
+    public final int d;
+    public final String e;
+    public final String f;
+    public final /* synthetic */ j10 i;
+
+    public i10(j10 j10Var, NativeByteBuffer nativeByteBuffer) {
+        this.i = j10Var;
+        int readInt32 = nativeByteBuffer.readInt32(true);
+        if (readInt32 == 2058772876) {
+            this.b = nativeByteBuffer.readInt64(true);
+            this.d = nativeByteBuffer.readInt32(true);
+            this.e = nativeByteBuffer.readString(true);
+            this.f = nativeByteBuffer.readString(true);
+            return;
+        }
+        if (readInt32 != 2058772877) {
+            TLParseException.doThrowOrLog(nativeByteBuffer, "UnconfirmedAuth", readInt32, true);
+            return;
+        }
+        this.c = nativeByteBuffer.readInt64(true);
+        this.d = nativeByteBuffer.readInt32(true);
+        this.e = nativeByteBuffer.readString(true);
+        this.f = nativeByteBuffer.readString(true);
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        this.a[this.b] = ((Boolean) obj).booleanValue();
-        this.c.run();
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        boolean z10 = this.a;
+        String str = this.f;
+        String str2 = this.e;
+        int i7 = this.d;
+        if (z10) {
+            outputSerializedData.writeInt32(2058772877);
+            outputSerializedData.writeInt64(this.c);
+            outputSerializedData.writeInt32(i7);
+            outputSerializedData.writeString(str2);
+            outputSerializedData.writeString(str);
+            return;
+        }
+        outputSerializedData.writeInt32(2058772876);
+        outputSerializedData.writeInt64(this.b);
+        outputSerializedData.writeInt32(i7);
+        outputSerializedData.writeString(str2);
+        outputSerializedData.writeString(str);
+    }
+
+    public i10(j10 j10Var, TL_update.TL_updateNewAuthorization tL_updateNewAuthorization) {
+        this.i = j10Var;
+        this.b = tL_updateNewAuthorization.hash;
+        this.d = tL_updateNewAuthorization.date;
+        this.e = tL_updateNewAuthorization.device;
+        this.f = tL_updateNewAuthorization.location;
+    }
+
+    public i10(j10 j10Var, TL_update.TL_updateNewBotConnection tL_updateNewBotConnection) {
+        this.i = j10Var;
+        this.a = true;
+        long j3 = tL_updateNewBotConnection.bot_id;
+        this.c = j3;
+        this.b = j3;
+        this.d = tL_updateNewBotConnection.date;
+        this.e = tL_updateNewBotConnection.device;
+        this.f = tL_updateNewBotConnection.location;
     }
 }

@@ -1,31 +1,57 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ve0 implements Runnable {
-    public final /* synthetic */ ff0 a;
+public final class ve0 extends LinearLayout implements org.telegram.messenger.is {
+    public final org.telegram.ui.Components.i9 a;
+    public final int b;
 
-    public ve0(ff0 ff0Var) {
-        this.a = ff0Var;
+    public ve0(Context context) {
+        super(context);
+        this.b = org.telegram.messenger.m10.t0;
+        setPadding(0, org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f));
+        setOrientation(1);
+        org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(context);
+        this.a = i9Var;
+        addView(i9Var, c8.ja.t(org.telegram.messenger.ns.p1, org.telegram.messenger.ns.p1, 49, 0, 2, 0, 0));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ff0 ff0Var = this.a;
-        if (ff0Var.b == null) {
-            return;
+    public final void a() {
+        int i7 = this.b;
+        TLRPC.TL_messages_stickerSet p02 = org.telegram.messenger.si.b0(i7).p0("tg_placeholders_android");
+        if (p02 == null) {
+            p02 = org.telegram.messenger.si.b0(i7).n0("tg_placeholders_android");
         }
-        for (int i7 = 0; i7 < ff0Var.b.getChildCount(); i7++) {
-            View childAt = ff0Var.b.getChildAt(i7);
-            if (childAt instanceof cf0) {
-                cf0 cf0Var = (cf0) childAt;
-                if (cf0Var.I) {
-                    cf0Var.b(cf0Var.n, cf0Var.r);
-                }
-            }
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = p02;
+        if (tL_messages_stickerSet == null || tL_messages_stickerSet.documents.size() < 4) {
+            org.telegram.messenger.si.b0(i7).c1("tg_placeholders_android", false, tL_messages_stickerSet == null);
+        } else {
+            TLRPC.Document document = tL_messages_stickerSet.documents.get(3);
+            this.a.k(org.telegram.messenger.gc.b(document), "104_104", "tgs", org.telegram.messenger.t5.f(document, org.telegram.ui.ActionBar.j6.a7, 1.0f, null), tL_messages_stickerSet);
         }
-        org.telegram.messenger.g0.i3(this, 500L);
+    }
+
+    @Override // org.telegram.messenger.is
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == org.telegram.messenger.ns.y0 && "tg_placeholders_android".equals((String) objArr[0])) {
+            a();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a();
+        org.telegram.messenger.ns.f(this.b).c(this, org.telegram.messenger.ns.y0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.messenger.ns.f(this.b).n(this, org.telegram.messenger.ns.y0);
     }
 }

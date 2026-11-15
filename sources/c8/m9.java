@@ -1,63 +1,83 @@
 package c8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class m9 {
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x006b, code lost:
-    
-        return true;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static boolean a(f3.l lVar, boolean z9) {
-        int i7;
-        h2.x xVar = new h2.x(16);
-        boolean z10 = true;
-        while (true) {
-            xVar.K(8);
-            if (!lVar.k(xVar.a, 0, 8, true)) {
-                break;
+    public static int a(d4.f fVar, int i7, int i10, int i11) {
+        a8.ja.f(Math.max(Math.max(i7, i10), i11) <= 31);
+        int i12 = (1 << i7) - 1;
+        int i13 = (1 << i10) - 1;
+        s0.a(s0.a(i12, i13), 1 << i11);
+        if (fVar.b() < i7) {
+            return -1;
+        }
+        int j3 = fVar.j(i7);
+        if (j3 == i12) {
+            if (fVar.b() < i10) {
+                return -1;
             }
-            long C = xVar.C();
-            int m10 = xVar.m();
-            if (C != 1) {
-                i7 = 8;
-            } else {
-                if (!lVar.k(xVar.a, 8, 8, true)) {
-                    break;
+            int j10 = fVar.j(i10);
+            j3 += j10;
+            if (j10 == i13) {
+                if (fVar.b() < i11) {
+                    return -1;
                 }
-                C = xVar.G();
-                i7 = 16;
-            }
-            long j3 = i7;
-            if (C < j3) {
-                break;
-            }
-            int i10 = (int) (C - j3);
-            if (z10) {
-                if (m10 != 1718909296 || i10 < 8) {
-                    break;
-                }
-                xVar.K(4);
-                lVar.k(xVar.a, 0, 4, false);
-                if (xVar.m() != 1751476579) {
-                    break;
-                }
-                if (!z9) {
-                    break;
-                }
-                lVar.v(i10 - 4, false);
-                z10 = false;
-            } else {
-                if (m10 == 1836086884) {
-                    break;
-                }
-                if (i10 != 0) {
-                    lVar.v(i10, false);
-                }
+                return fVar.j(i11) + j3;
             }
         }
-        return false;
+        return j3;
+    }
+
+    public static void b(d4.f fVar) {
+        fVar.L(3);
+        fVar.L(8);
+        boolean i7 = fVar.i();
+        boolean i10 = fVar.i();
+        if (i7) {
+            fVar.L(5);
+        }
+        if (i10) {
+            fVar.L(6);
+        }
+    }
+
+    public static void c(d4.f fVar) {
+        int j3;
+        int j10 = fVar.j(2);
+        if (j10 == 0) {
+            fVar.L(6);
+            return;
+        }
+        int a10 = a(fVar, 5, 8, 16) + 1;
+        if (j10 == 1) {
+            fVar.L(a10 * 7);
+            return;
+        }
+        if (j10 == 2) {
+            boolean i7 = fVar.i();
+            int i10 = i7 ? 1 : 5;
+            int i11 = i7 ? 7 : 5;
+            int i12 = i7 ? 8 : 6;
+            int i13 = 0;
+            while (i13 < a10) {
+                if (fVar.i()) {
+                    fVar.L(7);
+                    j3 = 0;
+                } else {
+                    if (fVar.j(2) == 3 && fVar.j(i11) * i10 != 0) {
+                        fVar.K();
+                    }
+                    j3 = fVar.j(i12) * i10;
+                    if (j3 != 0 && j3 != 180) {
+                        fVar.K();
+                    }
+                    fVar.K();
+                }
+                if (j3 != 0 && j3 != 180 && fVar.i()) {
+                    i13++;
+                }
+                i13++;
+            }
+        }
     }
 }

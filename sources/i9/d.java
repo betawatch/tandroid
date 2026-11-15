@@ -1,9 +1,9 @@
 package i9;
 
-import a8.ia;
+import a8.ja;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class d {
     public static final b d;
@@ -20,29 +20,29 @@ public class d {
     }
 
     public d(a aVar, Character ch2) {
-        boolean z9;
+        boolean z10;
         this.a = aVar;
         if (ch2 != null) {
             char charValue = ch2.charValue();
             byte[] bArr = aVar.g;
             if (charValue < bArr.length && bArr[charValue] != -1) {
-                z9 = false;
-                ia.h(z9, "Padding character %s was already in alphabet", ch2);
+                z10 = false;
+                ja.h(z10, "Padding character %s was already in alphabet", ch2);
                 this.b = ch2;
             }
         }
-        z9 = true;
-        ia.h(z9, "Padding character %s was already in alphabet", ch2);
+        z10 = true;
+        ja.h(z10, "Padding character %s was already in alphabet", ch2);
         this.b = ch2;
     }
 
     public final void a(StringBuilder sb2, byte[] bArr, int i7, int i10) {
-        ia.n(i7, i7 + i10, bArr.length);
+        ja.n(i7, i7 + i10, bArr.length);
         a aVar = this.a;
         int i11 = aVar.f;
         int i12 = aVar.d;
         int i13 = 0;
-        ia.f(i10 <= i11);
+        ja.f(i10 <= i11);
         long j3 = 0;
         for (int i14 = 0; i14 < i10; i14++) {
             j3 = (j3 | (bArr[i7 + i14] & 255)) << 8;
@@ -63,7 +63,7 @@ public class d {
 
     public void b(StringBuilder sb2, byte[] bArr, int i7) {
         int i10 = 0;
-        ia.n(0, i7, bArr.length);
+        ja.n(0, i7, bArr.length);
         while (i10 < i7) {
             a aVar = this.a;
             a(sb2, bArr, i10, Math.min(aVar.f, i7 - i10));

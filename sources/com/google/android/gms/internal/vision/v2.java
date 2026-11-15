@@ -1,45 +1,137 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import sun.misc.Unsafe;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class v2 extends w2 {
-    @Override // com.google.android.gms.internal.vision.w2
+public final class v2 extends x2 {
+    public final /* synthetic */ int b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v2(Unsafe unsafe, int i7) {
+        super(unsafe);
+        this.b = i7;
+    }
+
+    @Override // com.google.android.gms.internal.vision.x2
     public final byte a(Object obj, long j3) {
-        return this.a.getByte(obj, j3);
+        switch (this.b) {
+            case 0:
+                if (!y2.g) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (!y2.g) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return y2.o(obj, j3);
     }
 
-    @Override // com.google.android.gms.internal.vision.w2
+    @Override // com.google.android.gms.internal.vision.x2
     public final void c(Object obj, long j3, byte b10) {
-        this.a.putByte(obj, j3, b10);
+        switch (this.b) {
+            case 0:
+                if (!y2.g) {
+                    y2.j(obj, j3, b10);
+                    break;
+                } else {
+                    y2.i(obj, j3, b10);
+                    break;
+                }
+            default:
+                if (!y2.g) {
+                    y2.j(obj, j3, b10);
+                    break;
+                } else {
+                    y2.i(obj, j3, b10);
+                    break;
+                }
+        }
     }
 
-    @Override // com.google.android.gms.internal.vision.w2
+    @Override // com.google.android.gms.internal.vision.x2
     public final void d(Object obj, long j3, double d) {
-        this.a.putDouble(obj, j3, d);
+        switch (this.b) {
+            case 0:
+                f(obj, j3, Double.doubleToLongBits(d));
+                break;
+            default:
+                f(obj, j3, Double.doubleToLongBits(d));
+                break;
+        }
     }
 
-    @Override // com.google.android.gms.internal.vision.w2
+    @Override // com.google.android.gms.internal.vision.x2
     public final void e(Object obj, long j3, float f10) {
-        this.a.putFloat(obj, j3, f10);
+        switch (this.b) {
+            case 0:
+                b(j3, obj, Float.floatToIntBits(f10));
+                break;
+            default:
+                b(j3, obj, Float.floatToIntBits(f10));
+                break;
+        }
     }
 
-    @Override // com.google.android.gms.internal.vision.w2
-    public final void g(Object obj, long j3, boolean z9) {
-        this.a.putBoolean(obj, j3, z9);
+    @Override // com.google.android.gms.internal.vision.x2
+    public final void g(Object obj, long j3, boolean z10) {
+        switch (this.b) {
+            case 0:
+                if (!y2.g) {
+                    y2.j(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                } else {
+                    y2.i(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                }
+            default:
+                if (!y2.g) {
+                    y2.j(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                } else {
+                    y2.i(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                }
+        }
     }
 
-    @Override // com.google.android.gms.internal.vision.w2
+    @Override // com.google.android.gms.internal.vision.x2
     public final boolean h(Object obj, long j3) {
-        return this.a.getBoolean(obj, j3);
+        switch (this.b) {
+            case 0:
+                if (y2.g) {
+                    if (y2.n(obj, j3) == 0) {
+                    }
+                } else if (y2.o(obj, j3) == 0) {
+                }
+                break;
+            default:
+                if (y2.g) {
+                    if (y2.n(obj, j3) == 0) {
+                    }
+                } else if (y2.o(obj, j3) == 0) {
+                }
+                break;
+        }
+        return false;
     }
 
-    @Override // com.google.android.gms.internal.vision.w2
+    @Override // com.google.android.gms.internal.vision.x2
     public final float i(Object obj, long j3) {
-        return this.a.getFloat(obj, j3);
+        switch (this.b) {
+        }
+        return Float.intBitsToFloat(k(obj, j3));
     }
 
-    @Override // com.google.android.gms.internal.vision.w2
+    @Override // com.google.android.gms.internal.vision.x2
     public final double j(Object obj, long j3) {
-        return this.a.getDouble(obj, j3);
+        switch (this.b) {
+        }
+        return Double.longBitsToDouble(l(obj, j3));
     }
 }

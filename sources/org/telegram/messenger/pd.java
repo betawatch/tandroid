@@ -1,68 +1,91 @@
 package org.telegram.messenger;
 
+import android.location.Location;
+import android.location.LocationListener;
+import android.os.Bundle;
 import android.os.SystemClock;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class pd implements Runnable {
+public final class pd implements LocationListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ pd(Object obj, long j3, int i7) {
+    public /* synthetic */ pd(Object obj, int i7) {
         this.a = i7;
-        this.c = obj;
-        this.b = j3;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        long j3 = this.b;
-        Object obj = this.c;
-        int i10 = 0;
-        switch (i7) {
+    @Override // android.location.LocationListener
+    public final void onLocationChanged(Location location) {
+        switch (this.a) {
             case 0:
-                sd sdVar = (sd) obj;
-                ArrayList arrayList = sdVar.b;
-                a0.h hVar = sdVar.a;
-                rd rdVar = (rd) hVar.f(j3);
-                hVar.l(j3);
-                if (rdVar != null) {
-                    TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
-                    tL_messages_editMessage.peer = sdVar.getMessagesController().j1(rdVar.a);
-                    tL_messages_editMessage.id = rdVar.b;
-                    tL_messages_editMessage.flags |= TLObject.FLAG_14;
-                    TLRPC.TL_inputMediaGeoLive tL_inputMediaGeoLive = new TLRPC.TL_inputMediaGeoLive();
-                    tL_messages_editMessage.media = tL_inputMediaGeoLive;
-                    tL_inputMediaGeoLive.stopped = true;
-                    tL_inputMediaGeoLive.geo_point = new TLRPC.TL_inputGeoPointEmpty();
-                    sdVar.getConnectionsManager().sendRequest(tL_messages_editMessage, new kd(sdVar, i10));
-                    arrayList.remove(rdVar);
-                    sdVar.l(rdVar, 1);
-                    g0.h3(new ld(sdVar, rdVar, i10));
-                    if (arrayList.isEmpty()) {
-                        sdVar.r(true);
+                rd rdVar = (rd) this.b;
+                if (location != null) {
+                    Location location2 = rdVar.s;
+                    if (location2 != null && (this == rdVar.h || this == rdVar.n)) {
+                        if (!rdVar.E && location.distanceTo(location2) > 20.0f) {
+                            rdVar.m(location);
+                            rdVar.w = SystemClock.elapsedRealtime() - 25000;
+                            break;
+                        }
+                    } else {
+                        rdVar.m(location);
                         break;
                     }
                 }
                 break;
             default:
-                hz hzVar = (hz) obj;
-                hzVar.e = SystemClock.elapsedRealtime();
-                hzVar.c = false;
-                if (j3 == -1) {
-                    hzVar.d = false;
-                    hzVar.b = 0L;
-                } else {
-                    hzVar.b = j3;
-                    hzVar.d = true;
+                a8.b8 b8Var = (a8.b8) this.b;
+                if (location != null && ((as) b8Var.e) != null) {
+                    if (r2.a) {
+                        a8.b("found location " + location);
+                    }
+                    b8Var.f = location;
+                    if (location.getAccuracy() < 100.0f) {
+                        ((az) b8Var.a).f(location);
+                        as asVar = (as) b8Var.e;
+                        if (asVar != null) {
+                            g0.r(asVar);
+                        }
+                        b8Var.d();
+                        break;
+                    }
                 }
-                qs.e().k(qs.B4, hzVar);
                 break;
         }
+    }
+
+    @Override // android.location.LocationListener
+    public final void onProviderDisabled(String str) {
+        int i7 = this.a;
+    }
+
+    @Override // android.location.LocationListener
+    public final void onProviderEnabled(String str) {
+        int i7 = this.a;
+    }
+
+    @Override // android.location.LocationListener
+    public final void onStatusChanged(String str, int i7, Bundle bundle) {
+        int i10 = this.a;
+    }
+
+    private final void a(String str) {
+    }
+
+    private final void b(String str) {
+    }
+
+    private final void c(String str) {
+    }
+
+    private final void d(String str) {
+    }
+
+    private final void e(String str, int i7, Bundle bundle) {
+    }
+
+    private final void f(String str, int i7, Bundle bundle) {
     }
 }

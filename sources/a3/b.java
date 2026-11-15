@@ -3,14 +3,14 @@ package a3;
 import android.os.SystemClock;
 import e2.m1;
 import h2.g0;
-import h2.m0;
+import h2.l0;
 import h9.f0;
 import h9.i0;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b extends d {
     public final b3.d g;
@@ -98,14 +98,14 @@ public final class b extends d {
                 }
                 y2.m mVar = mVarArr[i10];
                 if (mVar.next()) {
-                    x10 = mVar.E() - mVar.w();
+                    x10 = mVar.S0() - mVar.k0();
                     break;
                 }
                 i10++;
             }
         } else {
             y2.m mVar2 = mVarArr[this.r];
-            x10 = mVar2.E() - mVar2.w();
+            x10 = mVar2.S0() - mVar2.k0();
         }
         int i11 = this.s;
         if (i11 == 0) {
@@ -163,7 +163,7 @@ public final class b extends d {
             return 0;
         }
         int size = list.size();
-        long F = m0.F(((y2.l) list.get(size - 1)).h - j3, this.q);
+        long F = l0.F(((y2.l) list.get(size - 1)).h - j3, this.q);
         long j11 = this.j;
         if (F >= j11) {
             x(list);
@@ -171,7 +171,7 @@ public final class b extends d {
             for (int i11 = 0; i11 < size; i11++) {
                 y2.l lVar = (y2.l) list.get(i11);
                 e2.u uVar2 = lVar.d;
-                if (m0.F(lVar.h - j3, this.q) >= j11 && uVar2.j < uVar.j && (i7 = uVar2.A) != -1 && i7 <= this.l && (i10 = uVar2.z) != -1 && i10 <= this.k && i7 < uVar.A) {
+                if (l0.F(lVar.h - j3, this.q) >= j11 && uVar2.j < uVar.j && (i7 = uVar2.A) != -1 && i7 <= this.l && (i10 = uVar2.z) != -1 && i10 <= this.k && i7 < uVar.A) {
                     return i11;
                 }
             }
@@ -233,8 +233,8 @@ public final class b extends d {
                 if (hashMap.containsKey(Integer.valueOf(max))) {
                     Integer num = (Integer) hashMap.get(Integer.valueOf(max));
                     e2.u uVar2 = uVarArr[num.intValue()];
-                    boolean z9 = uVar2.n;
-                    if ((!z9 || uVar.n) && ((!z9 && uVar.n) || uVar.j < uVar2.j)) {
+                    boolean z10 = uVar2.n;
+                    if ((!z10 || uVar.n) && ((!z10 && uVar.n) || uVar.j < uVar2.j)) {
                         hashMap.put(Integer.valueOf(max), Integer.valueOf(i12));
                         arrayList.remove(num);
                         arrayList.add(Integer.valueOf(i12));

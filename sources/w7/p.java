@@ -1,11 +1,11 @@
 package w7;
 
-import a8.oa;
+import a8.pa;
 import android.content.Context;
 import j$.util.Objects;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p {
     public static final l b = l.c(1, new Object[]{"optional-module-barcode", "com.google.android.gms.vision.barcode"}, null);
@@ -18,7 +18,7 @@ public final class p {
         pb.c.a(context);
         synchronized (s.class) {
             if (s.b == null) {
-                s.b = new s(0, false);
+                s.b = new s(0);
             }
         }
         this.a = "common";
@@ -28,9 +28,9 @@ public final class p {
         pb.f.b(bVar);
         pb.f a11 = pb.f.a();
         Objects.requireNonNull(kVar);
-        oa oaVar = new oa(kVar, 2);
+        pa paVar = new pa(kVar, 2);
         a11.getClass();
-        pb.f.b(oaVar);
+        pb.f.b(paVar);
         l lVar = b;
         if (lVar.containsKey("common")) {
             b7.f.d(context, (String) lVar.get("common"), false);

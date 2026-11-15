@@ -1,52 +1,20 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.util.FloatProperty;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class do0 implements Runnable {
-    public final /* synthetic */ PhotoViewer a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ ip0 c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ AnimatorSet f;
-
-    public /* synthetic */ do0(PhotoViewer photoViewer, View view, ip0 ip0Var, float f10, float f11, AnimatorSet animatorSet) {
-        this.a = photoViewer;
-        this.b = view;
-        this.c = ip0Var;
-        this.d = f10;
-        this.e = f11;
-        this.f = animatorSet;
+public final class do0 extends FloatProperty {
+    public do0() {
+        super("progress");
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Drawable[] drawableArr = PhotoViewer.Y8;
-        View view = this.b;
-        ip0 ip0Var = this.c;
-        view.setOutlineProvider(ip0Var);
-        view.setClipToOutline(true);
-        PhotoViewer photoViewer = this.a;
-        photoViewer.w3.setOutlineProvider(ip0Var);
-        photoViewer.w3.setClipToOutline(true);
-        rq0 rq0Var = photoViewer.E2;
-        if (rq0Var != null) {
-            rq0Var.setOutlineProvider(ip0Var);
-            photoViewer.E2.setClipToOutline(true);
-        }
-        photoViewer.w3.setTranslationY(this.d);
-        float f10 = this.e;
-        view.setTranslationY(f10);
-        rq0 rq0Var2 = photoViewer.E2;
-        if (rq0Var2 != null) {
-            rq0Var2.setTranslationY(f10);
-        }
-        photoViewer.X5 = 0.0f;
-        photoViewer.e0.invalidate();
-        this.f.start();
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((ar0) obj).a);
+    }
+
+    public final void setValue(Object obj, float f10) {
+        ((ar0) obj).b(f10);
     }
 }

@@ -1,21 +1,38 @@
 package org.telegram.ui;
 
 import android.view.View;
+import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class h21 implements View.OnClickListener {
-    public final /* synthetic */ TLRPC.TL_authorization a;
-    public final /* synthetic */ o21 b;
+    public final /* synthetic */ s21 a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ SessionsActivity c;
+    public final /* synthetic */ i21 d;
 
-    public h21(o21 o21Var, TLRPC.TL_authorization tL_authorization) {
-        this.b = o21Var;
-        this.a = tL_authorization;
+    public h21(i21 i21Var, s21 s21Var, TLRPC.TL_authorization tL_authorization, SessionsActivity sessionsActivity) {
+        this.d = i21Var;
+        this.a = s21Var;
+        this.b = tL_authorization;
+        this.c = sessionsActivity;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        o21.I0(this.b, this.a.country);
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.d.n1.getParentActivity());
+        String M0 = org.telegram.messenger.hd.M0(2131744204, null);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.U = M0;
+        t1Var.S = org.telegram.messenger.hd.M0(2131754073, null);
+        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131744209, null), new a7(this, this.a, this.b, 21));
+        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+        this.c.showDialog(t1Var);
+        TextView textView = (TextView) t1Var.d(-1);
+        if (textView != null) {
+            org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.q7, null);
+        }
     }
 }

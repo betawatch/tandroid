@@ -1,26 +1,26 @@
 package bi;
 
-import android.content.DialogInterface;
+import org.telegram.messenger.z10;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j4 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class j4 implements z10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k7 b;
+    public final /* synthetic */ a6 b;
 
-    public /* synthetic */ j4(k7 k7Var, int i7) {
+    public /* synthetic */ j4(a6 a6Var, int i7) {
         this.a = i7;
-        this.b = k7Var;
+        this.b = a6Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.f2.setLoading(false);
+                this.b.k0(((Boolean) obj).booleanValue());
                 break;
             default:
-                this.b.f2.setLoading(false);
+                this.b.simpleActionBar.setTitleMinSideInset(org.telegram.messenger.g0.L(6.0f) + ((Integer) obj).intValue());
                 break;
         }
     }

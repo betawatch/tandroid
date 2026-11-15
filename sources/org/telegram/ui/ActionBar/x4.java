@@ -1,25 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m5 b;
+public final class x4 {
+    public static final x4 a;
+    public static final x4 b;
+    public static final /* synthetic */ x4[] c;
 
-    public /* synthetic */ x4(m5 m5Var, int i7) {
-        this.a = i7;
-        this.b = m5Var;
+    static {
+        x4 x4Var = new x4("ICON", 0);
+        a = x4Var;
+        x4 x4Var2 = new x4("TEXT", 1);
+        b = x4Var2;
+        c = new x4[]{x4Var, x4Var2};
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.setVisibility(8);
-                break;
-            default:
-                this.b.setVisibility(8);
-                break;
-        }
+    public static x4 valueOf(String str) {
+        return (x4) Enum.valueOf(x4.class, str);
+    }
+
+    public static x4[] values() {
+        return (x4[]) c.clone();
     }
 }

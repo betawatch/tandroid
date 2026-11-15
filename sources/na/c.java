@@ -3,9 +3,9 @@ package na;
 import java.lang.annotation.Annotation;
 import java.util.Collections;
 import java.util.Map;
-import m4.d0;
+import ji.j;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
@@ -16,8 +16,8 @@ public final class c {
         this.b = map;
     }
 
-    public static d0 a(String str) {
-        return new d0(str);
+    public static j a(String str) {
+        return new j(str);
     }
 
     public static c c(String str) {

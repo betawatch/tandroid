@@ -4,7 +4,7 @@ import android.content.Context;
 import com.google.android.gms.tasks.Task;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class ma {
     public static va j;
@@ -40,9 +40,9 @@ public final class ma {
         this.e = pb.f.b(bVar);
         pb.f a11 = pb.f.a();
         kVar.getClass();
-        a8.oa oaVar = new a8.oa(kVar, 4);
+        a8.pa paVar = new a8.pa(kVar, 4);
         a11.getClass();
-        this.f = pb.f.b(oaVar);
+        this.f = pb.f.b(paVar);
         ab abVar = k;
         this.h = abVar.containsKey("vision-common") ? b7.f.d(context, (String) abVar.get("vision-common"), false) : -1;
     }

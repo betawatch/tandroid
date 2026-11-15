@@ -1,66 +1,49 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.widget.TextView;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class va1 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cb1 b;
+public final class va1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ xa1 a;
 
-    public /* synthetic */ va1(cb1 cb1Var, int i7) {
-        this.a = i7;
-        this.b = cb1Var;
+    public va1(xa1 xa1Var) {
+        this.a = xa1Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i7 = 0;
-                final cb1 cb1Var = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.xa1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i7) {
-                            case 0:
-                                cb1.g0(cb1Var, tL_error, tLObject);
-                                break;
-                            default:
-                                cb1.m0(cb1Var, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 1:
-                org.telegram.messenger.g0.h3(new ya1(this.b, tL_error, 0));
-                break;
-            case 2:
-                org.telegram.messenger.g0.h3(new ya1(this.b, tL_error, 1));
-                break;
-            case 3:
-                org.telegram.messenger.g0.h3(new ya1(this.b, tL_error, 2));
-                break;
-            default:
-                final int i10 = 1;
-                final cb1 cb1Var2 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.xa1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                cb1.g0(cb1Var2, tL_error, tLObject);
-                                break;
-                            default:
-                                cb1.m0(cb1Var2, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i7) {
+        org.telegram.ui.ActionBar.o4 o4Var;
+        xa1 xa1Var = this.a;
+        if (i7 == -1) {
+            if (xa1Var.H >= 0) {
+                o4Var = ((org.telegram.ui.ActionBar.e2) xa1Var).parentLayout;
+                if (o4Var.getFragmentStack().size() == 1) {
+                    xa1Var.N0();
+                    return;
+                }
+            }
+            xa1Var.finishFragment();
+            return;
+        }
+        if (i7 == 1) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xa1Var.getParentActivity());
+            TL_account.Password password = xa1Var.V;
+            String M0 = (password == null || !password.has_password) ? org.telegram.messenger.hd.M0(2131752578, null) : org.telegram.messenger.hd.M0(2131752586, null);
+            String M02 = org.telegram.messenger.hd.M0(2131752585, null);
+            String M03 = org.telegram.messenger.hd.M0(2131754950, null);
+            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+            t1Var.U = M0;
+            t1Var.S = M02;
+            alertDialog$Builder.k(M03, new ni0(this, 22));
+            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+            xa1Var.showDialog(t1Var);
+            TextView textView = (TextView) t1Var.d(-1);
+            if (textView != null) {
+                org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.q7, null);
+            }
         }
     }
 }

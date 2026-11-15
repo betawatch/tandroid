@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements com.google.android.gms.common.api.internal.b {
     public static final AtomicReference a = new AtomicReference();
 
     @Override // com.google.android.gms.common.api.internal.b
-    public final void a(boolean z9) {
+    public final void a(boolean z10) {
         synchronized (g.k) {
             try {
                 ArrayList arrayList = new ArrayList(g.l.values());
@@ -26,7 +26,7 @@ public final class e implements com.google.android.gms.common.api.internal.b {
                         Iterator it = gVar.i.iterator();
                         while (it.hasNext()) {
                             g gVar2 = ((d) it.next()).a;
-                            if (!z9) {
+                            if (!z10) {
                                 ((sa.c) gVar2.h.get()).c();
                             }
                         }

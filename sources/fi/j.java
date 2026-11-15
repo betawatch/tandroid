@@ -1,34 +1,43 @@
 package fi;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.ImageView;
-import org.telegram.ui.Components.hc;
+import android.widget.FrameLayout;
+import org.telegram.ui.qv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j extends ImageView {
-    public final float a;
-    public final hc b;
+public final class j extends org.telegram.ui.ActionBar.m {
+    public final /* synthetic */ int d = 1;
+    public final /* synthetic */ FrameLayout e;
 
-    public j(Context context) {
-        super(context);
-        this.b = new hc(this);
-        this.a = 0.2f;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j(qv qvVar, Context context, ab.q qVar) {
+        super(context, null, qVar);
+        this.e = qvVar;
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        canvas.save();
-        float a10 = this.b.a(this.a);
-        canvas.scale(a10, a10, getWidth() / 2.0f, getHeight() / 2.0f);
-        super.draw(canvas);
-        canvas.restore();
+    @Override // org.telegram.ui.ActionBar.m, te.i
+    public final void f(te.j jVar) {
+        switch (this.d) {
+            case 0:
+                super.f(jVar);
+                ((qv) this.e).invalidate();
+                break;
+            default:
+                super.f(jVar);
+                float totalVisibility = getTotalVisibility();
+                bi.v1 v1Var = ((org.telegram.ui.Components.o7) this.e).G0;
+                if (v1Var != null) {
+                    v1Var.setTranslationY(totalVisibility * org.telegram.messenger.g0.L(-11.0f));
+                    break;
+                }
+                break;
+        }
     }
 
-    @Override // android.view.View
-    public void setPressed(boolean z9) {
-        super.setPressed(z9);
-        this.b.c(z9);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j(org.telegram.ui.Components.o7 o7Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, ab.q qVar) {
+        super(context, e6Var, qVar);
+        this.e = o7Var;
     }
 }

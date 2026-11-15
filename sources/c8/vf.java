@@ -2,26 +2,26 @@ package c8;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class vf implements rf {
-    public final u9.n a;
+    public final u9.m a;
     public final qf b;
 
     public vf(Context context, qf qfVar) {
         this.b = qfVar;
         m5.a aVar = m5.a.e;
-        o5.s.b(context);
-        o5.q c10 = o5.s.a().c(aVar);
+        o5.t.b(context);
+        o5.r c10 = o5.t.a().c(aVar);
         if (m5.a.d.contains(new l5.c("json"))) {
-            new u9.n(new a8.xa(c10, 2));
+            new u9.m(new a8.ya(c10, 2));
         }
-        this.a = new u9.n(new a8.xa(c10, 3));
+        this.a = new u9.m(new a8.ya(c10, 3));
     }
 
     @Override // c8.rf
-    public final void a(a8.wa waVar) {
+    public final void a(a8.xa xaVar) {
         this.b.getClass();
-        ((o5.r) this.a.get()).a(waVar.b != 0 ? l5.a.a(waVar.E()) : new l5.a(null, waVar.E(), l5.d.b, null), new ni.a(3));
+        ((o5.s) this.a.get()).a(xaVar.b != 0 ? l5.a.a(xaVar.D()) : new l5.a(null, xaVar.D(), l5.d.b, null), new n2.a0(7));
     }
 }

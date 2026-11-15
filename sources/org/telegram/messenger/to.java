@@ -1,37 +1,155 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.HashMap;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class to {
-    public final int a;
-    public final long b;
-    public boolean c;
-    public boolean d;
-    public final ArrayList e;
-    public int f;
-    public int g;
+public final /* synthetic */ class to implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vo b;
 
-    public to(int i7, long j3) {
-        ArrayList arrayList = new ArrayList();
-        this.e = arrayList;
-        this.f = -1;
+    public /* synthetic */ to(vo voVar, int i7) {
         this.a = i7;
-        this.b = j3;
-        if (this.c || this.d) {
-            return;
+        this.b = voVar;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:63:0x016a  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i7;
+        int readInt32;
+        switch (this.a) {
+            case 0:
+                vo voVar = this.b;
+                long j3 = voVar.a;
+                SQLiteDatabase sQLiteDatabase = voVar.h.getMessagesStorage().b;
+                HashMap hashMap = new HashMap();
+                SQLiteCursor sQLiteCursor = null;
+                int i10 = 0;
+                try {
+                    try {
+                        Locale locale = Locale.US;
+                        SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT count FROM dialog_photos_count WHERE uid = " + j3, new Object[0]);
+                        try {
+                            try {
+                                i7 = queryFinalized.next() ? queryFinalized.intValue(0) : 0;
+                                try {
+                                    queryFinalized.dispose();
+                                    try {
+                                        SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT num, data FROM dialog_photos WHERE uid = " + j3, new Object[0]);
+                                        while (queryFinalized2.next()) {
+                                            try {
+                                                try {
+                                                    int intValue = queryFinalized2.intValue(0);
+                                                    NativeByteBuffer byteBufferValue = queryFinalized2.byteBufferValue(1);
+                                                    TLRPC.Photo TLdeserialize = (byteBufferValue == null || (readInt32 = byteBufferValue.readInt32(false)) == 1450380236) ? null : TLRPC.Photo.TLdeserialize(byteBufferValue, readInt32, false);
+                                                    if (TLdeserialize != null) {
+                                                        int max = Math.max(intValue + 1, i7);
+                                                        try {
+                                                            hashMap.put(Integer.valueOf(intValue), TLdeserialize);
+                                                            i7 = max;
+                                                        } catch (Exception unused) {
+                                                            sQLiteCursor = queryFinalized2;
+                                                            i10 = max;
+                                                            if (sQLiteCursor != null) {
+                                                                sQLiteCursor.dispose();
+                                                            }
+                                                            i7 = i10;
+                                                            g0.h3(new l7(voVar, Math.max(i7, hashMap.size()), hashMap, 16));
+                                                            return;
+                                                        }
+                                                    }
+                                                } catch (Throwable th2) {
+                                                    th = th2;
+                                                    sQLiteCursor = queryFinalized2;
+                                                    if (sQLiteCursor != null) {
+                                                        sQLiteCursor.dispose();
+                                                    }
+                                                    throw th;
+                                                }
+                                            } catch (Exception unused2) {
+                                                sQLiteCursor = queryFinalized2;
+                                                i10 = i7;
+                                                if (sQLiteCursor != null) {
+                                                }
+                                                i7 = i10;
+                                                g0.h3(new l7(voVar, Math.max(i7, hashMap.size()), hashMap, 16));
+                                                return;
+                                            }
+                                        }
+                                        queryFinalized2.dispose();
+                                    } catch (Exception unused3) {
+                                    }
+                                } catch (Exception unused4) {
+                                    sQLiteCursor = queryFinalized;
+                                }
+                            } catch (Throwable th3) {
+                                th = th3;
+                                sQLiteCursor = queryFinalized;
+                            }
+                        } catch (Exception unused5) {
+                            sQLiteCursor = queryFinalized;
+                        }
+                    } catch (Exception unused6) {
+                    }
+                    g0.h3(new l7(voVar, Math.max(i7, hashMap.size()), hashMap, 16));
+                    return;
+                } catch (Throwable th4) {
+                    th = th4;
+                }
+                break;
+            default:
+                vo voVar2 = this.b;
+                ArrayList arrayList = voVar2.b;
+                long j10 = voVar2.a;
+                SQLiteDatabase sQLiteDatabase2 = voVar2.h.getMessagesStorage().b;
+                SQLitePreparedStatement sQLitePreparedStatement = null;
+                try {
+                    sQLiteDatabase2.executeFast("DELETE FROM dialog_photos WHERE uid = " + j10).stepThis().dispose();
+                    sQLiteDatabase2.executeFast("DELETE FROM dialog_photos_count WHERE uid = " + j10).stepThis().dispose();
+                    sQLiteDatabase2.executeFast("REPLACE INTO dialog_photos_count VALUES(" + j10 + ", " + arrayList.size() + ")").stepThis().dispose();
+                    sQLitePreparedStatement = sQLiteDatabase2.executeFast("REPLACE INTO dialog_photos VALUES(?, ?, ?, ?)");
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        TLRPC.Photo photo = (TLRPC.Photo) arrayList.get(i11);
+                        if (photo != null) {
+                            if (photo.file_reference == null) {
+                                photo.file_reference = new byte[0];
+                            }
+                            sQLitePreparedStatement.requery();
+                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(photo.getObjectSize());
+                            photo.serializeToStream(nativeByteBuffer);
+                            sQLitePreparedStatement.bindLong(1, j10);
+                            sQLitePreparedStatement.bindLong(2, photo.id);
+                            sQLitePreparedStatement.bindInteger(3, i11);
+                            sQLitePreparedStatement.bindByteBuffer(4, nativeByteBuffer);
+                            sQLitePreparedStatement.step();
+                            nativeByteBuffer.reuse();
+                        }
+                    }
+                    sQLitePreparedStatement.dispose();
+                    return;
+                } catch (Exception unused7) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                        return;
+                    }
+                    return;
+                } catch (Throwable th5) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    throw th5;
+                }
         }
-        boolean isEmpty = arrayList.isEmpty();
-        this.c = true;
-        TLRPC.TL_messages_getCommonChats tL_messages_getCommonChats = new TLRPC.TL_messages_getCommonChats();
-        tL_messages_getCommonChats.user_id = qp.s1(i7).o1(j3);
-        tL_messages_getCommonChats.max_id = arrayList.isEmpty() ? 0L : ((TLRPC.Chat) jg.g.i(1, arrayList)).id;
-        tL_messages_getCommonChats.limit = isEmpty ? 15 : 30;
-        int sendRequest = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getCommonChats, new n3(this, r7, isEmpty, 4));
-        this.f = sendRequest;
-        int[] iArr = {sendRequest};
     }
 }

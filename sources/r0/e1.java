@@ -2,12 +2,12 @@ package r0;
 
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class e1 extends d1 {
-    public i0.b o;
-    public i0.b p;
-    public i0.b q;
+    public i0.c o;
+    public i0.c p;
+    public i0.c q;
 
     public e1(k1 k1Var, WindowInsets windowInsets) {
         super(k1Var, windowInsets);
@@ -17,25 +17,25 @@ public class e1 extends d1 {
     }
 
     @Override // r0.h1
-    public i0.b h() {
+    public i0.c h() {
         if (this.p == null) {
-            this.p = i0.b.c(this.c.getMandatorySystemGestureInsets());
+            this.p = i0.c.c(this.c.getMandatorySystemGestureInsets());
         }
         return this.p;
     }
 
     @Override // r0.h1
-    public i0.b j() {
+    public i0.c j() {
         if (this.o == null) {
-            this.o = i0.b.c(this.c.getSystemGestureInsets());
+            this.o = i0.c.c(this.c.getSystemGestureInsets());
         }
         return this.o;
     }
 
     @Override // r0.h1
-    public i0.b l() {
+    public i0.c l() {
         if (this.q == null) {
-            this.q = i0.b.c(this.c.getTappableElementInsets());
+            this.q = i0.c.c(this.c.getTappableElementInsets());
         }
         return this.q;
     }
@@ -46,6 +46,6 @@ public class e1 extends d1 {
     }
 
     @Override // r0.c1, r0.h1
-    public void s(i0.b bVar) {
+    public void s(i0.c cVar) {
     }
 }

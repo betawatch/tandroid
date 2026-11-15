@@ -1,45 +1,64 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o00 implements Runnable {
+public final /* synthetic */ class o00 implements s10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f10 b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ c10 b;
+    public final /* synthetic */ w10 c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ String f;
+    public final /* synthetic */ long g;
 
-    public /* synthetic */ o00(f10 f10Var, long j3, int i7) {
-        this.a = i7;
-        this.b = f10Var;
-        this.c = j3;
+    public /* synthetic */ o00(c10 c10Var, w10 w10Var, boolean z10, int i7, String str, long j3, int i10) {
+        this.a = i10;
+        this.b = c10Var;
+        this.c = w10Var;
+        this.d = z10;
+        this.e = i7;
+        this.f = str;
+        this.g = j3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.s10
+    public final void a(Object obj, Object obj2) {
         int i7 = this.a;
-        long j3 = this.c;
-        f10 f10Var = this.b;
+        long j3 = this.g;
+        String str = this.f;
+        int i10 = this.e;
+        boolean z10 = this.d;
+        w10 w10Var = this.c;
+        c10 c10Var = this.b;
         switch (i7) {
             case 0:
-                qs.f(f10Var.currentAccount).k(qs.O1, Long.valueOf(j3));
-                break;
-            default:
-                ArrayList arrayList = (ArrayList) f10Var.n.R.f(j3);
-                if (arrayList != null) {
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        ij ijVar = (ij) arrayList.get(i10);
-                        if (ijVar == null || ijVar.k == null) {
-                            arrayList2.add(null);
-                        } else {
-                            arrayList2.add(f10Var.getMessagesStorage().e0(ijVar.e1(), ij.B0(ijVar.k)));
-                        }
-                    }
-                    g0.h3(new ng(f10Var, arrayList2, arrayList, 5));
+                String str2 = (String) obj;
+                Boolean bool = (Boolean) obj2;
+                if (str2 == null) {
+                    c10Var.K(j3, false);
+                    ns.e().k(ns.P4, 1, hd.M0(bool.booleanValue() ? 2131743947 : 2131743946, null));
+                    break;
+                } else {
+                    TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+                    tL_textWithEntities.text = str2;
+                    w10Var.a(Boolean.valueOf(z10), Integer.valueOf(i10), tL_textWithEntities, str);
                     break;
                 }
-                break;
+            default:
+                String str3 = (String) obj;
+                Boolean bool2 = (Boolean) obj2;
+                if (str3 == null) {
+                    c10Var.K(j3, false);
+                    ns.e().k(ns.P4, 1, hd.M0(bool2.booleanValue() ? 2131743947 : 2131743946, null));
+                    break;
+                } else {
+                    TLRPC.TL_textWithEntities tL_textWithEntities2 = new TLRPC.TL_textWithEntities();
+                    tL_textWithEntities2.text = str3;
+                    w10Var.a(Boolean.valueOf(z10), Integer.valueOf(i10), tL_textWithEntities2, str);
+                    break;
+                }
         }
     }
 }

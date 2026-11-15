@@ -1,30 +1,71 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cd0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jd0 b;
-    public final /* synthetic */ int c;
+public final class cd0 extends db0 {
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Components.xt0 f;
 
-    public /* synthetic */ cd0(jd0 jd0Var, int i7, int i10) {
-        this.a = i10;
-        this.b = jd0Var;
-        this.c = i7;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new cd0(this.b, this.c, 1));
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cd0(ed0 ed0Var, Context context, int i7) {
+        super(ed0Var.v0, context);
+        this.e = i7;
+        switch (i7) {
             case 1:
-                this.b.z(this.c);
+                this.f = ed0Var;
+                super(ed0Var.v0, context);
                 break;
             default:
-                this.b.f.f[this.c].C(1.0f);
+                this.f = ed0Var;
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.db0
+    public final boolean a() {
+        switch (this.e) {
+            case 0:
+                return ((ed0) this.f).l0;
+            case 1:
+                return ((ed0) this.f).l0;
+            default:
+                return ((dc0) this.f).N;
+        }
+    }
+
+    @Override // org.telegram.ui.db0
+    public final boolean b() {
+        cd0 cd0Var;
+        switch (this.e) {
+            case 0:
+                if (getVisibility() == 0) {
+                    ed0 ed0Var = (ed0) this.f;
+                    if (ed0Var.b0 <= 0 || ed0Var.U == null) {
+                    }
+                }
+                break;
+            case 1:
+                ed0 ed0Var2 = (ed0) this.f;
+                if (!isClickable() || getVisibility() != 0 || ed0Var2.g0 || (((cd0Var = ed0Var2.w) != null && cd0Var.getVisibility() != 8) || ed0Var2.l0)) {
+                }
+                break;
+            default:
+                if (getVisibility() == 0) {
+                    dc0 dc0Var = (dc0) this.f;
+                    if (dc0Var.Q <= 0 || dc0Var.O == null) {
+                    }
+                }
+                break;
+        }
+        return false;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cd0(dc0 dc0Var, Context context) {
+        super(dc0Var.b0, context);
+        this.e = 2;
+        this.f = dc0Var;
     }
 }

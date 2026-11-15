@@ -1,31 +1,30 @@
 package c8;
 
-import android.content.Context;
-import android.widget.TextView;
-import org.telegram.ui.Components.w70;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class qa {
-    public static w70 a(Context context, float f10, int i7, boolean z9, org.telegram.ui.ActionBar.h6 h6Var) {
-        int i10 = org.telegram.ui.ActionBar.m6.Uc;
-        w70 w70Var = new w70(context, null);
-        w70Var.setTextSize(1, f10);
-        org.telegram.ui.ActionBar.t6.U(w70Var, i7, h6Var);
-        org.telegram.ui.ActionBar.t6.G(w70Var, i10, h6Var);
-        if (z9) {
-            w70Var.setTypeface(org.telegram.messenger.g0.o());
-        }
-        return w70Var;
+public final class qa {
+    public final pa a;
+    public final Integer b;
+
+    public /* synthetic */ qa(wf.b bVar) {
+        this.a = (pa) bVar.b;
+        this.b = (Integer) bVar.c;
     }
 
-    public static TextView b(Context context, float f10, int i7, boolean z9, org.telegram.ui.ActionBar.h6 h6Var) {
-        TextView textView = new TextView(context);
-        textView.setTextSize(1, f10);
-        org.telegram.ui.ActionBar.t6.U(textView, i7, h6Var);
-        if (z9) {
-            textView.setTypeface(org.telegram.messenger.g0.o());
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        return textView;
+        if (!(obj instanceof qa)) {
+            return false;
+        }
+        qa qaVar = (qa) obj;
+        return q6.m.k(this.a, qaVar.a) && q6.m.k(this.b, qaVar.b) && q6.m.k(null, null) && q6.m.k(null, null);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, null, null});
     }
 }

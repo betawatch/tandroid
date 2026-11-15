@@ -1,223 +1,31 @@
 package m;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.text.InputFilter;
+import android.graphics.Bitmap;
 import android.util.AttributeSet;
-import android.widget.RadioButton;
-import c8.gc;
+import android.view.View;
+import android.widget.RatingBar;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class a0 extends RadioButton implements u0.k {
-    public final q a;
-    public final h2.c b;
-    public final x0 c;
-    public u d;
+public final class a0 extends RatingBar {
+    public final y a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a0(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, R.attr.radioButtonStyle);
-        b3.a(context);
-        a3.a(this, getContext());
-        q qVar = new q(this);
-        this.a = qVar;
-        qVar.e(attributeSet, R.attr.radioButtonStyle);
-        h2.c cVar = new h2.c(this);
-        this.b = cVar;
-        cVar.x(attributeSet, R.attr.radioButtonStyle);
-        x0 x0Var = new x0(this);
-        this.c = x0Var;
-        x0Var.f(attributeSet, R.attr.radioButtonStyle);
-        getEmojiTextViewHelper().a(attributeSet, R.attr.radioButtonStyle);
+        super(context, attributeSet, R.attr.ratingBarStyle);
+        z2.a(this, getContext());
+        y yVar = new y(this);
+        this.a = yVar;
+        yVar.b(attributeSet, R.attr.ratingBarStyle);
     }
 
-    private u getEmojiTextViewHelper() {
-        if (this.d == null) {
-            this.d = new u(this);
+    @Override // android.widget.RatingBar, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    public final synchronized void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        Bitmap bitmap = (Bitmap) this.a.c;
+        if (bitmap != null) {
+            setMeasuredDimension(View.resolveSizeAndState(bitmap.getWidth() * getNumStars(), i7, 0), getMeasuredHeight());
         }
-        return this.d;
-    }
-
-    @Override // android.widget.CompoundButton, android.widget.TextView, android.view.View
-    public final void drawableStateChanged() {
-        super.drawableStateChanged();
-        h2.c cVar = this.b;
-        if (cVar != null) {
-            cVar.b();
-        }
-        x0 x0Var = this.c;
-        if (x0Var != null) {
-            x0Var.b();
-        }
-    }
-
-    @Override // android.widget.CompoundButton, android.widget.TextView
-    public int getCompoundPaddingLeft() {
-        int compoundPaddingLeft = super.getCompoundPaddingLeft();
-        q qVar = this.a;
-        if (qVar != null) {
-            qVar.getClass();
-        }
-        return compoundPaddingLeft;
-    }
-
-    public ColorStateList getSupportBackgroundTintList() {
-        h2.c cVar = this.b;
-        if (cVar != null) {
-            return cVar.v();
-        }
-        return null;
-    }
-
-    public PorterDuff.Mode getSupportBackgroundTintMode() {
-        h2.c cVar = this.b;
-        if (cVar != null) {
-            return cVar.w();
-        }
-        return null;
-    }
-
-    public ColorStateList getSupportButtonTintList() {
-        q qVar = this.a;
-        if (qVar != null) {
-            return (ColorStateList) qVar.a;
-        }
-        return null;
-    }
-
-    public PorterDuff.Mode getSupportButtonTintMode() {
-        q qVar = this.a;
-        if (qVar != null) {
-            return (PorterDuff.Mode) qVar.b;
-        }
-        return null;
-    }
-
-    public ColorStateList getSupportCompoundDrawablesTintList() {
-        return this.c.d();
-    }
-
-    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
-        return this.c.e();
-    }
-
-    @Override // android.widget.TextView
-    public void setAllCaps(boolean z9) {
-        super.setAllCaps(z9);
-        getEmojiTextViewHelper().b(z9);
-    }
-
-    @Override // android.view.View
-    public void setBackgroundDrawable(Drawable drawable) {
-        super.setBackgroundDrawable(drawable);
-        h2.c cVar = this.b;
-        if (cVar != null) {
-            cVar.y();
-        }
-    }
-
-    @Override // android.view.View
-    public void setBackgroundResource(int i7) {
-        super.setBackgroundResource(i7);
-        h2.c cVar = this.b;
-        if (cVar != null) {
-            cVar.z(i7);
-        }
-    }
-
-    @Override // android.widget.CompoundButton
-    public void setButtonDrawable(Drawable drawable) {
-        super.setButtonDrawable(drawable);
-        q qVar = this.a;
-        if (qVar != null) {
-            if (qVar.e) {
-                qVar.e = false;
-            } else {
-                qVar.e = true;
-                qVar.a();
-            }
-        }
-    }
-
-    @Override // android.widget.TextView
-    public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
-        x0 x0Var = this.c;
-        if (x0Var != null) {
-            x0Var.b();
-        }
-    }
-
-    @Override // android.widget.TextView
-    public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
-        x0 x0Var = this.c;
-        if (x0Var != null) {
-            x0Var.b();
-        }
-    }
-
-    public void setEmojiCompatEnabled(boolean z9) {
-        getEmojiTextViewHelper().c(z9);
-    }
-
-    @Override // android.widget.TextView
-    public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((gc) getEmojiTextViewHelper().b.b).a(inputFilterArr));
-    }
-
-    public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        h2.c cVar = this.b;
-        if (cVar != null) {
-            cVar.D(colorStateList);
-        }
-    }
-
-    public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        h2.c cVar = this.b;
-        if (cVar != null) {
-            cVar.E(mode);
-        }
-    }
-
-    public void setSupportButtonTintList(ColorStateList colorStateList) {
-        q qVar = this.a;
-        if (qVar != null) {
-            qVar.a = colorStateList;
-            qVar.c = true;
-            qVar.a();
-        }
-    }
-
-    public void setSupportButtonTintMode(PorterDuff.Mode mode) {
-        q qVar = this.a;
-        if (qVar != null) {
-            qVar.b = mode;
-            qVar.d = true;
-            qVar.a();
-        }
-    }
-
-    @Override // u0.k
-    public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
-        x0 x0Var = this.c;
-        x0Var.l(colorStateList);
-        x0Var.b();
-    }
-
-    @Override // u0.k
-    public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
-        x0 x0Var = this.c;
-        x0Var.m(mode);
-        x0Var.b();
-    }
-
-    @Override // android.widget.CompoundButton
-    public void setButtonDrawable(int i7) {
-        setButtonDrawable(b5.a.b(getContext(), i7));
     }
 }

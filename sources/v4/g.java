@@ -5,18 +5,18 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ d1 b;
+    public final /* synthetic */ e1 b;
     public final /* synthetic */ View c;
     public final /* synthetic */ ViewPropertyAnimator d;
     public final /* synthetic */ k e;
 
-    public g(k kVar, d1 d1Var, ViewPropertyAnimator viewPropertyAnimator, View view) {
+    public g(k kVar, e1 e1Var, ViewPropertyAnimator viewPropertyAnimator, View view) {
         this.e = kVar;
-        this.b = d1Var;
+        this.b = e1Var;
         this.d = viewPropertyAnimator;
         this.c = view;
     }
@@ -54,18 +54,18 @@ public final class g extends AnimatorListenerAdapter {
                 view.setTranslationX(0.0f);
                 view.setTranslationY(0.0f);
                 kVar.Q();
-                d1 d1Var = this.b;
-                kVar.d(d1Var);
-                kVar.A.remove(d1Var);
+                e1 e1Var = this.b;
+                kVar.d(e1Var);
+                kVar.A.remove(e1Var);
                 kVar.G();
                 break;
             default:
                 this.d.setListener(null);
                 k kVar2 = this.e;
                 kVar2.M();
-                d1 d1Var2 = this.b;
-                kVar2.u(d1Var2);
-                kVar2.y.remove(d1Var2);
+                e1 e1Var2 = this.b;
+                kVar2.u(e1Var2);
+                kVar2.y.remove(e1Var2);
                 kVar2.G();
                 break;
         }
@@ -82,9 +82,9 @@ public final class g extends AnimatorListenerAdapter {
         }
     }
 
-    public g(k kVar, d1 d1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
+    public g(k kVar, e1 e1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
         this.e = kVar;
-        this.b = d1Var;
+        this.b = e1Var;
         this.c = view;
         this.d = viewPropertyAnimator;
     }

@@ -31,25 +31,27 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.m20;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.t10;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.is;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.q10;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.wp;
-import org.telegram.ui.ik0;
-import org.telegram.ui.o60;
-import org.telegram.ui.o90;
-import org.telegram.ui.w60;
+import org.telegram.ui.Components.eq;
+import org.telegram.ui.a90;
+import org.telegram.ui.k60;
+import org.telegram.ui.m90;
+import org.telegram.ui.r60;
+import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class d2 {
     public final int a;
@@ -76,7 +78,7 @@ public final class d2 {
 
     public static String C(String str) {
         if (TextUtils.isEmpty(str)) {
-            return id.M0(2131742972, null);
+            return hd.M0(2131742972, null);
         }
         if (str.length() <= 10) {
             return str;
@@ -86,198 +88,199 @@ public final class d2 {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:13:0x00e9  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0139  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x014a  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0175  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x01da  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x01f5  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x013c  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00fe  */
-    /* JADX WARN: Type inference failed for: r2v21, types: [org.telegram.messenger.ls, org.telegram.ui.Wallet.o1] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0135  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0146  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x01d6  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x01f6  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0138  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00fc  */
+    /* JADX WARN: Type inference failed for: r2v27, types: [org.telegram.messenger.is, org.telegram.ui.Wallet.o1] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static y2 D(Context context, final int i7, final y1 y1Var, final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, final org.telegram.ui.ActionBar.h6 h6Var, final w60 w60Var, final Runnable runnable) {
+    public static x2 D(Context context, final int i7, final y1 y1Var, final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, final org.telegram.ui.ActionBar.e6 e6Var, final r60 r60Var, final Runnable runnable) {
         TLRPC.WebDocument webDocument;
-        boolean z9;
+        boolean z10;
         TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr;
-        TL_wallet.tonConnectSession tonconnectsession;
         String K0;
         String M0;
-        i6 i6Var;
+        h6 h6Var;
         boolean isAttachedToWindow;
         int i10;
+        TextView textView;
         l0 l0Var;
-        int i11;
         final l0 x10 = l0.x(i7);
-        boolean z10 = tL_urlAuthResultRequest != null;
-        TL_wallet.tonConnectSession tonconnectsession2 = z10 ? null : y1Var.e;
+        boolean z11 = tL_urlAuthResultRequest != null;
+        final TL_wallet.tonConnectSession tonconnectsession = z11 ? null : y1Var.e;
         TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr2 = {null};
         LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
         FrameLayout frameLayout = new FrameLayout(context);
-        final ImageView e10 = org.telegram.messenger.camera.q.e(context, R.drawable.ic_ab_close);
+        final ImageView e10 = i20.e(context, R.drawable.ic_ab_close);
         e10.setScaleType(ImageView.ScaleType.CENTER);
-        int i12 = org.telegram.ui.ActionBar.m6.i6;
-        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.w0(i12, h6Var), 1, -1);
-        org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i12);
+        int i11 = org.telegram.ui.ActionBar.j6.i6;
+        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.j6.h0(org.telegram.ui.ActionBar.j6.w0(i11, e6Var), 1, -1);
+        org.telegram.ui.ActionBar.m6 M = org.telegram.ui.ActionBar.q6.M(i11);
         e10.setBackground(h02);
-        org.telegram.ui.ActionBar.t6.j(e10, h02, null, M, h6Var);
-        int i13 = org.telegram.ui.ActionBar.m6.G6;
-        org.telegram.ui.ActionBar.t6.s(e10, i13, h6Var, PorterDuff.Mode.SRC_IN);
-        c8.ka.a(e10);
-        frameLayout.addView(e10, c8.ha.d(48, 48.0f, 51, 4.0f, 0.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
-        k9Var.setRoundRadius(org.telegram.messenger.g0.L(38.0f));
-        if (z10) {
-            org.telegram.ui.Components.v8 v8Var = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
-            v8Var.r(tL_urlAuthResultRequest.bot);
-            k9Var.e(tL_urlAuthResultRequest.bot, v8Var);
+        org.telegram.ui.ActionBar.q6.j(e10, h02, null, M, e6Var);
+        int i12 = org.telegram.ui.ActionBar.j6.G6;
+        org.telegram.ui.ActionBar.q6.s(e10, i12, e6Var, PorterDuff.Mode.SRC_IN);
+        c8.na.a(e10);
+        frameLayout.addView(e10, c8.ja.d(48, 48.0f, 51, 4.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(context);
+        i9Var.setRoundRadius(org.telegram.messenger.g0.L(38.0f));
+        if (z11) {
+            org.telegram.ui.Components.t8 t8Var = new org.telegram.ui.Components.t8((org.telegram.ui.ActionBar.e6) null);
+            t8Var.r(tL_urlAuthResultRequest.bot);
+            i9Var.f(tL_urlAuthResultRequest.bot, t8Var);
         } else {
-            TL_wallet.tonConnectManifest tonconnectmanifest = tonconnectsession2.manifest;
+            TL_wallet.tonConnectManifest tonconnectmanifest = tonconnectsession.manifest;
             if (tonconnectmanifest != null && (webDocument = tonconnectmanifest.icon) != null) {
-                z9 = z10;
+                z10 = z11;
                 inputtonconnectoauthsessionArr = inputtonconnectoauthsessionArr2;
-                k9Var.p(hc.p(m20.c(webDocument)), "76_76", null, tonconnectsession2.manifest);
-                frameLayout.addView(k9Var, c8.ha.d(76, 76.0f, 49, 0.0f, 32.0f, 0.0f, 0.0f));
-                f10.addView(frameLayout, c8.ha.o(-1, -2));
-                TextView textView = new TextView(context);
-                textView.setTypeface(org.telegram.messenger.g0.o());
-                textView.setTextSize(1, 20.0f);
-                textView.setGravity(17);
-                if (z9) {
-                    TL_wallet.tonConnectManifest tonconnectmanifest2 = tonconnectsession2.manifest;
+                i9Var.p(gc.p(k20.c(webDocument)), "76_76", null, tonconnectsession.manifest);
+                frameLayout.addView(i9Var, c8.ja.d(76, 76.0f, 49, 0.0f, 32.0f, 0.0f, 0.0f));
+                f10.addView(frameLayout, c8.ja.o(-1, -2));
+                TextView textView2 = new TextView(context);
+                textView2.setTypeface(org.telegram.messenger.g0.o());
+                textView2.setTextSize(1, 20.0f);
+                textView2.setGravity(17);
+                if (z10) {
+                    TL_wallet.tonConnectManifest tonconnectmanifest2 = tonconnectsession.manifest;
                     if (tonconnectmanifest2 != null) {
-                        tonconnectsession = tonconnectsession2;
-                        textView.setText(id.V(null, null, 2131743160, tonconnectmanifest2.name));
+                        textView2.setText(hd.V(null, null, 2131743160, tonconnectmanifest2.name));
                     } else {
-                        tonconnectsession = tonconnectsession2;
-                        textView.setText(id.M0(2131743159, null));
+                        textView2.setText(hd.M0(2131743159, null));
                     }
                 } else {
-                    textView.setText(id.V(null, null, 2131743160, t10.p(tL_urlAuthResultRequest.bot)));
-                    tonconnectsession = tonconnectsession2;
+                    textView2.setText(hd.V(null, null, 2131743160, q10.p(tL_urlAuthResultRequest.bot)));
                 }
-                org.telegram.ui.ActionBar.t6.U(textView, i13, h6Var);
-                f10.addView(textView, c8.ha.t(-2, -2, 49, 36, 16, 36, 0));
-                K0 = !z9 ? tL_urlAuthResultRequest.domain : org.telegram.messenger.g0.K0(y1Var.b, false);
+                org.telegram.ui.ActionBar.q6.U(textView2, i12, e6Var);
+                f10.addView(textView2, c8.ja.t(-2, -2, 49, 36, 16, 36, 0));
+                K0 = !z10 ? tL_urlAuthResultRequest.domain : org.telegram.messenger.g0.K0(y1Var.b, false);
                 if (!TextUtils.isEmpty(K0)) {
-                    f10.addView(h(context, K0, h6Var), c8.ha.t(-2, -2, 49, 36, 6, 36, 0));
+                    f10.addView(h(context, K0, e6Var), c8.ja.t(-2, -2, 49, 36, 6, 36, 0));
                 }
-                TextView textView2 = new TextView(context);
-                textView2.setTextSize(1, 14.0f);
-                textView2.setGravity(17);
-                if (!z9) {
+                TextView textView3 = new TextView(context);
+                textView3.setTextSize(1, 14.0f);
+                textView3.setGravity(17);
+                if (!z10) {
                     x10.g.getClass();
                     if (!w(y1Var)) {
-                        M0 = id.M0(2131743163, null);
-                        textView2.setText(M0);
-                        org.telegram.ui.ActionBar.t6.U(textView2, i13, h6Var);
-                        f10.addView(textView2, c8.ha.t(-2, -2, 49, 36, 16, 36, 28));
+                        M0 = hd.M0(2131743163, null);
+                        textView3.setText(M0);
+                        org.telegram.ui.ActionBar.q6.U(textView3, i12, e6Var);
+                        f10.addView(textView3, c8.ja.t(-2, -2, 49, 36, 16, 36, 28));
                         FrameLayout frameLayout2 = new FrameLayout(context);
-                        f10.addView(frameLayout2, c8.ha.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
-                        i6Var = new i6(context, R.drawable.wallet_card_qr, 46);
-                        i6Var.l(x10);
-                        isAttachedToWindow = i6Var.isAttachedToWindow();
-                        i10 = qs.a4;
-                        if (isAttachedToWindow && (l0Var = i6Var.W) != null && ((i11 = i6Var.V) != i7 || l0Var != x10)) {
-                            qs.f(i11).n(i6Var, i10);
+                        f10.addView(frameLayout2, c8.ja.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
+                        h6Var = new h6(context, R.drawable.wallet_card_qr, 46);
+                        h6Var.l(x10);
+                        isAttachedToWindow = h6Var.isAttachedToWindow();
+                        i10 = ns.a4;
+                        if (isAttachedToWindow || (l0Var = h6Var.a0) == null) {
+                            textView = textView3;
+                        } else {
+                            textView = textView3;
+                            int i13 = h6Var.W;
+                            if (i13 != i7 || l0Var != x10) {
+                                ns.f(i13).n(h6Var, i10);
+                            }
                         }
-                        i6Var.V = i7;
-                        i6Var.W = x10;
-                        if (i6Var.isAttachedToWindow() && i6Var.W != null) {
-                            qs.f(i7).c(i6Var, i10);
+                        h6Var.W = i7;
+                        h6Var.a0 = x10;
+                        if (h6Var.isAttachedToWindow() && h6Var.a0 != null) {
+                            ns.f(i7).c(h6Var, i10);
                         }
-                        frameLayout2.addView(i6Var);
-                        TextView textView3 = new TextView(context);
-                        textView3.setTextSize(1, 14.0f);
-                        org.telegram.messenger.k5.m(textView3, 17, null, 2131743162);
-                        org.telegram.ui.ActionBar.t6.U(textView3, org.telegram.ui.ActionBar.m6.z6, h6Var);
-                        f10.addView(textView3, c8.ha.t(-2, -2, 49, 36, 16, 36, 28));
+                        frameLayout2.addView(h6Var);
+                        TextView textView4 = new TextView(context);
+                        textView4.setTextSize(1, 14.0f);
+                        org.telegram.messenger.k5.l(textView4, 17, null, 2131743162);
+                        org.telegram.ui.ActionBar.q6.U(textView4, org.telegram.ui.ActionBar.j6.z6, e6Var);
+                        f10.addView(textView4, c8.ja.t(-2, -2, 49, 36, 16, 36, 28));
                         LinearLayout linearLayout = new LinearLayout(context);
                         linearLayout.setOrientation(0);
                         linearLayout.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-                        f10.addView(linearLayout, c8.ha.k(0.0f, 0.0f, 0.0f, 16.0f, -1, -2));
-                        final fi.d dVar = new fi.d(context, h6Var, true);
+                        f10.addView(linearLayout, c8.ja.k(0.0f, 0.0f, 0.0f, 16.0f, -1, -2));
+                        final hi.d dVar = new hi.d(context, e6Var, true);
                         dVar.setRoundRadius(24);
                         dVar.e();
-                        dVar.setText(id.M0(2131743179, null));
-                        linearLayout.addView(dVar, c8.ha.m(1.0f, 0, 44, 0, 6, 0));
-                        final fi.d h = org.telegram.messenger.k5.h(24, context, h6Var, true);
-                        h.setText(id.M0(2131743164, null));
-                        linearLayout.addView(h, c8.ha.m(1.0f, 0, 44, 6, 0, 0));
-                        final y2 y2Var = new y2(context, f10, h6Var);
-                        y2Var.y0 = new w1(h);
-                        final boolean z11 = z9;
-                        final TL_wallet.tonConnectSession tonconnectsession3 = tonconnectsession;
-                        final jg.w0 w0Var = new jg.w0(z11, h, x10, tonconnectsession3, y1Var, textView, k9Var, textView2);
-                        final ?? r22 = new ls() { // from class: org.telegram.ui.Wallet.o1
-                            @Override // org.telegram.messenger.ls
+                        dVar.setText(hd.M0(2131743179, null));
+                        linearLayout.addView(dVar, c8.ja.m(1.0f, 0, 44, 0, 6, 0));
+                        final hi.d g10 = i20.g(24, context, e6Var, true);
+                        g10.setText(hd.M0(2131743164, null));
+                        linearLayout.addView(g10, c8.ja.m(1.0f, 0, 44, 6, 0, 0));
+                        final x2 x2Var = new x2(context, f10, e6Var);
+                        x2Var.z0 = new w1(g10);
+                        final boolean z12 = z10;
+                        final jg.w0 w0Var = new jg.w0(z12, g10, x10, tonconnectsession, y1Var, textView2, i9Var, textView);
+                        final ?? r22 = new is() { // from class: org.telegram.ui.Wallet.o1
+                            @Override // org.telegram.messenger.is
                             public final void didReceivedNotification(int i14, int i15, Object[] objArr) {
-                                if (!z11 && objArr.length > 1) {
+                                if (!z12 && objArr.length > 1) {
                                     Object obj = objArr[1];
                                     if (obj instanceof TL_wallet.tonConnectSession) {
-                                        TL_wallet.tonConnectSession tonconnectsession4 = (TL_wallet.tonConnectSession) obj;
-                                        if (tonconnectsession4.id == tonconnectsession3.id) {
-                                            y1Var.e = tonconnectsession4;
+                                        TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) obj;
+                                        if (tonconnectsession2.id == tonconnectsession.id) {
+                                            y1Var.e = tonconnectsession2;
                                         }
                                     }
                                 }
                                 w0Var.run();
                             }
                         };
-                        qs.f(i7).b(r22, i10);
+                        ns.f(i7).b(r22, i10);
                         w0Var.run();
                         final boolean[] zArr = {false};
                         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr3 = inputtonconnectoauthsessionArr;
-                        y2Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Wallet.p1
+                        x2Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Wallet.p1
                             @Override // android.content.DialogInterface.OnDismissListener
                             public final void onDismiss(DialogInterface dialogInterface) {
                                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession;
-                                qs.f(i7).n(r22, qs.a4);
+                                ns.f(i7).n(r22, ns.a4);
                                 boolean[] zArr2 = zArr;
                                 if (zArr2[0]) {
                                     return;
                                 }
                                 zArr2[0] = true;
-                                if (!z11 || (inputtonconnectoauthsession = inputtonconnectoauthsessionArr3[0]) == null) {
+                                if (!z12 || (inputtonconnectoauthsession = inputtonconnectoauthsessionArr3[0]) == null) {
                                     runnable.run();
                                 } else {
-                                    w60Var.a(inputtonconnectoauthsession);
+                                    r60Var.a(inputtonconnectoauthsession);
                                 }
                             }
                         });
-                        y2Var.show();
-                        e10.setOnClickListener(new q1(y2Var, 0));
-                        dVar.setOnClickListener(new ik0(17, h, y2Var));
+                        x2Var.show();
+                        e10.setOnClickListener(new q1(x2Var, 0));
+                        dVar.setOnClickListener(new a90(25, g10, x2Var));
                         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr4 = inputtonconnectoauthsessionArr;
-                        h.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.r1
+                        g10.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.r1
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
                                 l0 l0Var2 = x10;
                                 d2 d2Var = l0Var2.g;
-                                fi.d dVar2 = fi.d.this;
-                                if (dVar2.Q) {
+                                hi.d dVar2 = hi.d.this;
+                                if (dVar2.R) {
                                     return;
                                 }
                                 dVar2.setLoading(true);
-                                fi.d dVar3 = dVar;
+                                hi.d dVar3 = dVar;
                                 dVar3.setEnabled(false);
                                 ImageView imageView = e10;
                                 imageView.setEnabled(false);
-                                w60 w60Var2 = new w60(dVar2, dVar3, imageView, y2Var, h6Var, w0Var, 4);
-                                if (!z11) {
+                                r60 r60Var2 = new r60(dVar2, dVar3, imageView, x2Var, e6Var, w0Var, 4);
+                                if (!z12) {
                                     d2Var.getClass();
-                                    org.telegram.messenger.g0.h3(new g(d2Var, y1Var, w60Var2, 6));
+                                    org.telegram.messenger.g0.h3(new g(d2Var, y1Var, r60Var2, 6));
                                     return;
                                 }
                                 String t6 = l0Var2.t();
                                 byte[] y10 = l0Var2.y();
                                 byte[] bArr = y10 == null ? null : (byte[]) y10.clone();
-                                bi.p5 p5Var = new bi.p5(29, inputtonconnectoauthsessionArr4, w60Var2);
+                                t1 t1Var = new t1(0, inputtonconnectoauthsessionArr4, r60Var2);
                                 d2Var.getClass();
                                 TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest2 = tL_urlAuthResultRequest;
                                 if (!tL_urlAuthResultRequest2.request_wallet || tL_urlAuthResultRequest2.bot == null || TextUtils.isEmpty(tL_urlAuthResultRequest2.domain) || !TLObject.hasFlag(tL_urlAuthResultRequest2.flags, 512) || !TLObject.hasFlag(tL_urlAuthResultRequest2.flags, 1024) || TextUtils.isEmpty(tL_urlAuthResultRequest2.tc_client_id) || t6 == null || bArr == null) {
-                                    p5Var.a(null, "Missing wallet login request data");
+                                    t1Var.a(null, "Missing wallet login request data");
                                     return;
                                 }
                                 try {
@@ -285,124 +288,123 @@ public final class d2 {
                                     TL_wallet.tonConnectCreateSession tonconnectcreatesession = new TL_wallet.tonConnectCreateSession();
                                     tonconnectcreatesession.dapp_client_id = tL_urlAuthResultRequest2.tc_client_id;
                                     tonconnectcreatesession.manifest_url = a8.p0.s(new StringBuilder("https://"), tL_urlAuthResultRequest2.domain, "/tonconnect-manifest.json");
-                                    d2Var.f.sendRequestTyped(tonconnectcreatesession, new d3.b(1), new d1(d2Var, (Object) p5Var, (TLObject) tL_urlAuthResultRequest2, t6, bArr, (Object) put, 3));
+                                    d2Var.f.sendRequestTyped(tonconnectcreatesession, new d3.b(1), new d1(d2Var, (Object) t1Var, (TLObject) tL_urlAuthResultRequest2, t6, bArr, (Object) put, 3));
                                 } catch (JSONException e11) {
-                                    p5Var.a(null, d2.i("prepare OAuth request", e11));
+                                    t1Var.a(null, d2.i("prepare OAuth request", e11));
                                 }
                             }
                         });
-                        return y2Var;
+                        return x2Var;
                     }
                 }
-                M0 = id.M0(2131743161, null);
-                textView2.setText(M0);
-                org.telegram.ui.ActionBar.t6.U(textView2, i13, h6Var);
-                f10.addView(textView2, c8.ha.t(-2, -2, 49, 36, 16, 36, 28));
+                M0 = hd.M0(2131743161, null);
+                textView3.setText(M0);
+                org.telegram.ui.ActionBar.q6.U(textView3, i12, e6Var);
+                f10.addView(textView3, c8.ja.t(-2, -2, 49, 36, 16, 36, 28));
                 FrameLayout frameLayout22 = new FrameLayout(context);
-                f10.addView(frameLayout22, c8.ha.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
-                i6Var = new i6(context, R.drawable.wallet_card_qr, 46);
-                i6Var.l(x10);
-                isAttachedToWindow = i6Var.isAttachedToWindow();
-                i10 = qs.a4;
+                f10.addView(frameLayout22, c8.ja.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
+                h6Var = new h6(context, R.drawable.wallet_card_qr, 46);
+                h6Var.l(x10);
+                isAttachedToWindow = h6Var.isAttachedToWindow();
+                i10 = ns.a4;
                 if (isAttachedToWindow) {
-                    qs.f(i11).n(i6Var, i10);
                 }
-                i6Var.V = i7;
-                i6Var.W = x10;
-                if (i6Var.isAttachedToWindow()) {
-                    qs.f(i7).c(i6Var, i10);
+                textView = textView3;
+                h6Var.W = i7;
+                h6Var.a0 = x10;
+                if (h6Var.isAttachedToWindow()) {
+                    ns.f(i7).c(h6Var, i10);
                 }
-                frameLayout22.addView(i6Var);
-                TextView textView32 = new TextView(context);
-                textView32.setTextSize(1, 14.0f);
-                org.telegram.messenger.k5.m(textView32, 17, null, 2131743162);
-                org.telegram.ui.ActionBar.t6.U(textView32, org.telegram.ui.ActionBar.m6.z6, h6Var);
-                f10.addView(textView32, c8.ha.t(-2, -2, 49, 36, 16, 36, 28));
+                frameLayout22.addView(h6Var);
+                TextView textView42 = new TextView(context);
+                textView42.setTextSize(1, 14.0f);
+                org.telegram.messenger.k5.l(textView42, 17, null, 2131743162);
+                org.telegram.ui.ActionBar.q6.U(textView42, org.telegram.ui.ActionBar.j6.z6, e6Var);
+                f10.addView(textView42, c8.ja.t(-2, -2, 49, 36, 16, 36, 28));
                 LinearLayout linearLayout2 = new LinearLayout(context);
                 linearLayout2.setOrientation(0);
                 linearLayout2.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-                f10.addView(linearLayout2, c8.ha.k(0.0f, 0.0f, 0.0f, 16.0f, -1, -2));
-                final fi.d dVar2 = new fi.d(context, h6Var, true);
+                f10.addView(linearLayout2, c8.ja.k(0.0f, 0.0f, 0.0f, 16.0f, -1, -2));
+                final hi.d dVar2 = new hi.d(context, e6Var, true);
                 dVar2.setRoundRadius(24);
                 dVar2.e();
-                dVar2.setText(id.M0(2131743179, null));
-                linearLayout2.addView(dVar2, c8.ha.m(1.0f, 0, 44, 0, 6, 0));
-                final fi.d h7 = org.telegram.messenger.k5.h(24, context, h6Var, true);
-                h7.setText(id.M0(2131743164, null));
-                linearLayout2.addView(h7, c8.ha.m(1.0f, 0, 44, 6, 0, 0));
-                final y2 y2Var2 = new y2(context, f10, h6Var);
-                y2Var2.y0 = new w1(h7);
-                final boolean z112 = z9;
-                final TL_wallet.tonConnectSession tonconnectsession32 = tonconnectsession;
-                final jg.w0 w0Var2 = new jg.w0(z112, h7, x10, tonconnectsession32, y1Var, textView, k9Var, textView2);
-                final o1 r222 = new ls() { // from class: org.telegram.ui.Wallet.o1
-                    @Override // org.telegram.messenger.ls
+                dVar2.setText(hd.M0(2131743179, null));
+                linearLayout2.addView(dVar2, c8.ja.m(1.0f, 0, 44, 0, 6, 0));
+                final hi.d g102 = i20.g(24, context, e6Var, true);
+                g102.setText(hd.M0(2131743164, null));
+                linearLayout2.addView(g102, c8.ja.m(1.0f, 0, 44, 6, 0, 0));
+                final x2 x2Var2 = new x2(context, f10, e6Var);
+                x2Var2.z0 = new w1(g102);
+                final boolean z122 = z10;
+                final jg.w0 w0Var2 = new jg.w0(z122, g102, x10, tonconnectsession, y1Var, textView2, i9Var, textView);
+                final o1 r222 = new is() { // from class: org.telegram.ui.Wallet.o1
+                    @Override // org.telegram.messenger.is
                     public final void didReceivedNotification(int i14, int i15, Object[] objArr) {
-                        if (!z112 && objArr.length > 1) {
+                        if (!z122 && objArr.length > 1) {
                             Object obj = objArr[1];
                             if (obj instanceof TL_wallet.tonConnectSession) {
-                                TL_wallet.tonConnectSession tonconnectsession4 = (TL_wallet.tonConnectSession) obj;
-                                if (tonconnectsession4.id == tonconnectsession32.id) {
-                                    y1Var.e = tonconnectsession4;
+                                TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) obj;
+                                if (tonconnectsession2.id == tonconnectsession.id) {
+                                    y1Var.e = tonconnectsession2;
                                 }
                             }
                         }
                         w0Var2.run();
                     }
                 };
-                qs.f(i7).b(r222, i10);
+                ns.f(i7).b(r222, i10);
                 w0Var2.run();
                 final boolean[] zArr2 = {false};
                 final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr32 = inputtonconnectoauthsessionArr;
-                y2Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Wallet.p1
+                x2Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Wallet.p1
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession;
-                        qs.f(i7).n(r222, qs.a4);
+                        ns.f(i7).n(r222, ns.a4);
                         boolean[] zArr22 = zArr2;
                         if (zArr22[0]) {
                             return;
                         }
                         zArr22[0] = true;
-                        if (!z112 || (inputtonconnectoauthsession = inputtonconnectoauthsessionArr32[0]) == null) {
+                        if (!z122 || (inputtonconnectoauthsession = inputtonconnectoauthsessionArr32[0]) == null) {
                             runnable.run();
                         } else {
-                            w60Var.a(inputtonconnectoauthsession);
+                            r60Var.a(inputtonconnectoauthsession);
                         }
                     }
                 });
-                y2Var2.show();
-                e10.setOnClickListener(new q1(y2Var2, 0));
-                dVar2.setOnClickListener(new ik0(17, h7, y2Var2));
+                x2Var2.show();
+                e10.setOnClickListener(new q1(x2Var2, 0));
+                dVar2.setOnClickListener(new a90(25, g102, x2Var2));
                 final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr42 = inputtonconnectoauthsessionArr;
-                h7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.r1
+                g102.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.r1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         l0 l0Var2 = x10;
                         d2 d2Var = l0Var2.g;
-                        fi.d dVar22 = fi.d.this;
-                        if (dVar22.Q) {
+                        hi.d dVar22 = hi.d.this;
+                        if (dVar22.R) {
                             return;
                         }
                         dVar22.setLoading(true);
-                        fi.d dVar3 = dVar2;
+                        hi.d dVar3 = dVar2;
                         dVar3.setEnabled(false);
                         ImageView imageView = e10;
                         imageView.setEnabled(false);
-                        w60 w60Var2 = new w60(dVar22, dVar3, imageView, y2Var2, h6Var, w0Var2, 4);
-                        if (!z112) {
+                        r60 r60Var2 = new r60(dVar22, dVar3, imageView, x2Var2, e6Var, w0Var2, 4);
+                        if (!z122) {
                             d2Var.getClass();
-                            org.telegram.messenger.g0.h3(new g(d2Var, y1Var, w60Var2, 6));
+                            org.telegram.messenger.g0.h3(new g(d2Var, y1Var, r60Var2, 6));
                             return;
                         }
                         String t6 = l0Var2.t();
                         byte[] y10 = l0Var2.y();
                         byte[] bArr = y10 == null ? null : (byte[]) y10.clone();
-                        bi.p5 p5Var = new bi.p5(29, inputtonconnectoauthsessionArr42, w60Var2);
+                        t1 t1Var = new t1(0, inputtonconnectoauthsessionArr42, r60Var2);
                         d2Var.getClass();
                         TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest2 = tL_urlAuthResultRequest;
                         if (!tL_urlAuthResultRequest2.request_wallet || tL_urlAuthResultRequest2.bot == null || TextUtils.isEmpty(tL_urlAuthResultRequest2.domain) || !TLObject.hasFlag(tL_urlAuthResultRequest2.flags, 512) || !TLObject.hasFlag(tL_urlAuthResultRequest2.flags, 1024) || TextUtils.isEmpty(tL_urlAuthResultRequest2.tc_client_id) || t6 == null || bArr == null) {
-                            p5Var.a(null, "Missing wallet login request data");
+                            t1Var.a(null, "Missing wallet login request data");
                             return;
                         }
                         try {
@@ -410,143 +412,143 @@ public final class d2 {
                             TL_wallet.tonConnectCreateSession tonconnectcreatesession = new TL_wallet.tonConnectCreateSession();
                             tonconnectcreatesession.dapp_client_id = tL_urlAuthResultRequest2.tc_client_id;
                             tonconnectcreatesession.manifest_url = a8.p0.s(new StringBuilder("https://"), tL_urlAuthResultRequest2.domain, "/tonconnect-manifest.json");
-                            d2Var.f.sendRequestTyped(tonconnectcreatesession, new d3.b(1), new d1(d2Var, (Object) p5Var, (TLObject) tL_urlAuthResultRequest2, t6, bArr, (Object) put, 3));
+                            d2Var.f.sendRequestTyped(tonconnectcreatesession, new d3.b(1), new d1(d2Var, (Object) t1Var, (TLObject) tL_urlAuthResultRequest2, t6, bArr, (Object) put, 3));
                         } catch (JSONException e11) {
-                            p5Var.a(null, d2.i("prepare OAuth request", e11));
+                            t1Var.a(null, d2.i("prepare OAuth request", e11));
                         }
                     }
                 });
-                return y2Var2;
+                return x2Var2;
             }
         }
-        z9 = z10;
+        z10 = z11;
         inputtonconnectoauthsessionArr = inputtonconnectoauthsessionArr2;
-        frameLayout.addView(k9Var, c8.ha.d(76, 76.0f, 49, 0.0f, 32.0f, 0.0f, 0.0f));
-        f10.addView(frameLayout, c8.ha.o(-1, -2));
-        TextView textView4 = new TextView(context);
-        textView4.setTypeface(org.telegram.messenger.g0.o());
-        textView4.setTextSize(1, 20.0f);
-        textView4.setGravity(17);
-        if (z9) {
+        frameLayout.addView(i9Var, c8.ja.d(76, 76.0f, 49, 0.0f, 32.0f, 0.0f, 0.0f));
+        f10.addView(frameLayout, c8.ja.o(-1, -2));
+        TextView textView22 = new TextView(context);
+        textView22.setTypeface(org.telegram.messenger.g0.o());
+        textView22.setTextSize(1, 20.0f);
+        textView22.setGravity(17);
+        if (z10) {
         }
-        org.telegram.ui.ActionBar.t6.U(textView4, i13, h6Var);
-        f10.addView(textView4, c8.ha.t(-2, -2, 49, 36, 16, 36, 0));
-        if (!z9) {
+        org.telegram.ui.ActionBar.q6.U(textView22, i12, e6Var);
+        f10.addView(textView22, c8.ja.t(-2, -2, 49, 36, 16, 36, 0));
+        if (!z10) {
         }
         if (!TextUtils.isEmpty(K0)) {
         }
-        TextView textView22 = new TextView(context);
-        textView22.setTextSize(1, 14.0f);
-        textView22.setGravity(17);
-        if (!z9) {
+        TextView textView32 = new TextView(context);
+        textView32.setTextSize(1, 14.0f);
+        textView32.setGravity(17);
+        if (!z10) {
         }
-        M0 = id.M0(2131743161, null);
-        textView22.setText(M0);
-        org.telegram.ui.ActionBar.t6.U(textView22, i13, h6Var);
-        f10.addView(textView22, c8.ha.t(-2, -2, 49, 36, 16, 36, 28));
+        M0 = hd.M0(2131743161, null);
+        textView32.setText(M0);
+        org.telegram.ui.ActionBar.q6.U(textView32, i12, e6Var);
+        f10.addView(textView32, c8.ja.t(-2, -2, 49, 36, 16, 36, 28));
         FrameLayout frameLayout222 = new FrameLayout(context);
-        f10.addView(frameLayout222, c8.ha.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
-        i6Var = new i6(context, R.drawable.wallet_card_qr, 46);
-        i6Var.l(x10);
-        isAttachedToWindow = i6Var.isAttachedToWindow();
-        i10 = qs.a4;
+        f10.addView(frameLayout222, c8.ja.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
+        h6Var = new h6(context, R.drawable.wallet_card_qr, 46);
+        h6Var.l(x10);
+        isAttachedToWindow = h6Var.isAttachedToWindow();
+        i10 = ns.a4;
         if (isAttachedToWindow) {
         }
-        i6Var.V = i7;
-        i6Var.W = x10;
-        if (i6Var.isAttachedToWindow()) {
+        textView = textView32;
+        h6Var.W = i7;
+        h6Var.a0 = x10;
+        if (h6Var.isAttachedToWindow()) {
         }
-        frameLayout222.addView(i6Var);
-        TextView textView322 = new TextView(context);
-        textView322.setTextSize(1, 14.0f);
-        org.telegram.messenger.k5.m(textView322, 17, null, 2131743162);
-        org.telegram.ui.ActionBar.t6.U(textView322, org.telegram.ui.ActionBar.m6.z6, h6Var);
-        f10.addView(textView322, c8.ha.t(-2, -2, 49, 36, 16, 36, 28));
+        frameLayout222.addView(h6Var);
+        TextView textView422 = new TextView(context);
+        textView422.setTextSize(1, 14.0f);
+        org.telegram.messenger.k5.l(textView422, 17, null, 2131743162);
+        org.telegram.ui.ActionBar.q6.U(textView422, org.telegram.ui.ActionBar.j6.z6, e6Var);
+        f10.addView(textView422, c8.ja.t(-2, -2, 49, 36, 16, 36, 28));
         LinearLayout linearLayout22 = new LinearLayout(context);
         linearLayout22.setOrientation(0);
         linearLayout22.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-        f10.addView(linearLayout22, c8.ha.k(0.0f, 0.0f, 0.0f, 16.0f, -1, -2));
-        final fi.d dVar22 = new fi.d(context, h6Var, true);
+        f10.addView(linearLayout22, c8.ja.k(0.0f, 0.0f, 0.0f, 16.0f, -1, -2));
+        final hi.d dVar22 = new hi.d(context, e6Var, true);
         dVar22.setRoundRadius(24);
         dVar22.e();
-        dVar22.setText(id.M0(2131743179, null));
-        linearLayout22.addView(dVar22, c8.ha.m(1.0f, 0, 44, 0, 6, 0));
-        final fi.d h72 = org.telegram.messenger.k5.h(24, context, h6Var, true);
-        h72.setText(id.M0(2131743164, null));
-        linearLayout22.addView(h72, c8.ha.m(1.0f, 0, 44, 6, 0, 0));
-        final y2 y2Var22 = new y2(context, f10, h6Var);
-        y2Var22.y0 = new w1(h72);
-        final boolean z1122 = z9;
-        final TL_wallet.tonConnectSession tonconnectsession322 = tonconnectsession;
-        final jg.w0 w0Var22 = new jg.w0(z1122, h72, x10, tonconnectsession322, y1Var, textView4, k9Var, textView22);
-        final o1 r2222 = new ls() { // from class: org.telegram.ui.Wallet.o1
-            @Override // org.telegram.messenger.ls
+        dVar22.setText(hd.M0(2131743179, null));
+        linearLayout22.addView(dVar22, c8.ja.m(1.0f, 0, 44, 0, 6, 0));
+        final hi.d g1022 = i20.g(24, context, e6Var, true);
+        g1022.setText(hd.M0(2131743164, null));
+        linearLayout22.addView(g1022, c8.ja.m(1.0f, 0, 44, 6, 0, 0));
+        final x2 x2Var22 = new x2(context, f10, e6Var);
+        x2Var22.z0 = new w1(g1022);
+        final boolean z1222 = z10;
+        final jg.w0 w0Var22 = new jg.w0(z1222, g1022, x10, tonconnectsession, y1Var, textView22, i9Var, textView);
+        final o1 r2222 = new is() { // from class: org.telegram.ui.Wallet.o1
+            @Override // org.telegram.messenger.is
             public final void didReceivedNotification(int i14, int i15, Object[] objArr) {
-                if (!z1122 && objArr.length > 1) {
+                if (!z1222 && objArr.length > 1) {
                     Object obj = objArr[1];
                     if (obj instanceof TL_wallet.tonConnectSession) {
-                        TL_wallet.tonConnectSession tonconnectsession4 = (TL_wallet.tonConnectSession) obj;
-                        if (tonconnectsession4.id == tonconnectsession322.id) {
-                            y1Var.e = tonconnectsession4;
+                        TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) obj;
+                        if (tonconnectsession2.id == tonconnectsession.id) {
+                            y1Var.e = tonconnectsession2;
                         }
                     }
                 }
                 w0Var22.run();
             }
         };
-        qs.f(i7).b(r2222, i10);
+        ns.f(i7).b(r2222, i10);
         w0Var22.run();
         final boolean[] zArr22 = {false};
         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr322 = inputtonconnectoauthsessionArr;
-        y2Var22.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Wallet.p1
+        x2Var22.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Wallet.p1
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession;
-                qs.f(i7).n(r2222, qs.a4);
+                ns.f(i7).n(r2222, ns.a4);
                 boolean[] zArr222 = zArr22;
                 if (zArr222[0]) {
                     return;
                 }
                 zArr222[0] = true;
-                if (!z1122 || (inputtonconnectoauthsession = inputtonconnectoauthsessionArr322[0]) == null) {
+                if (!z1222 || (inputtonconnectoauthsession = inputtonconnectoauthsessionArr322[0]) == null) {
                     runnable.run();
                 } else {
-                    w60Var.a(inputtonconnectoauthsession);
+                    r60Var.a(inputtonconnectoauthsession);
                 }
             }
         });
-        y2Var22.show();
-        e10.setOnClickListener(new q1(y2Var22, 0));
-        dVar22.setOnClickListener(new ik0(17, h72, y2Var22));
+        x2Var22.show();
+        e10.setOnClickListener(new q1(x2Var22, 0));
+        dVar22.setOnClickListener(new a90(25, g1022, x2Var22));
         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr422 = inputtonconnectoauthsessionArr;
-        h72.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.r1
+        g1022.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.r1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 l0 l0Var2 = x10;
                 d2 d2Var = l0Var2.g;
-                fi.d dVar222 = fi.d.this;
-                if (dVar222.Q) {
+                hi.d dVar222 = hi.d.this;
+                if (dVar222.R) {
                     return;
                 }
                 dVar222.setLoading(true);
-                fi.d dVar3 = dVar22;
+                hi.d dVar3 = dVar22;
                 dVar3.setEnabled(false);
                 ImageView imageView = e10;
                 imageView.setEnabled(false);
-                w60 w60Var2 = new w60(dVar222, dVar3, imageView, y2Var22, h6Var, w0Var22, 4);
-                if (!z1122) {
+                r60 r60Var2 = new r60(dVar222, dVar3, imageView, x2Var22, e6Var, w0Var22, 4);
+                if (!z1222) {
                     d2Var.getClass();
-                    org.telegram.messenger.g0.h3(new g(d2Var, y1Var, w60Var2, 6));
+                    org.telegram.messenger.g0.h3(new g(d2Var, y1Var, r60Var2, 6));
                     return;
                 }
                 String t6 = l0Var2.t();
                 byte[] y10 = l0Var2.y();
                 byte[] bArr = y10 == null ? null : (byte[]) y10.clone();
-                bi.p5 p5Var = new bi.p5(29, inputtonconnectoauthsessionArr422, w60Var2);
+                t1 t1Var = new t1(0, inputtonconnectoauthsessionArr422, r60Var2);
                 d2Var.getClass();
                 TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest2 = tL_urlAuthResultRequest;
                 if (!tL_urlAuthResultRequest2.request_wallet || tL_urlAuthResultRequest2.bot == null || TextUtils.isEmpty(tL_urlAuthResultRequest2.domain) || !TLObject.hasFlag(tL_urlAuthResultRequest2.flags, 512) || !TLObject.hasFlag(tL_urlAuthResultRequest2.flags, 1024) || TextUtils.isEmpty(tL_urlAuthResultRequest2.tc_client_id) || t6 == null || bArr == null) {
-                    p5Var.a(null, "Missing wallet login request data");
+                    t1Var.a(null, "Missing wallet login request data");
                     return;
                 }
                 try {
@@ -554,26 +556,26 @@ public final class d2 {
                     TL_wallet.tonConnectCreateSession tonconnectcreatesession = new TL_wallet.tonConnectCreateSession();
                     tonconnectcreatesession.dapp_client_id = tL_urlAuthResultRequest2.tc_client_id;
                     tonconnectcreatesession.manifest_url = a8.p0.s(new StringBuilder("https://"), tL_urlAuthResultRequest2.domain, "/tonconnect-manifest.json");
-                    d2Var.f.sendRequestTyped(tonconnectcreatesession, new d3.b(1), new d1(d2Var, (Object) p5Var, (TLObject) tL_urlAuthResultRequest2, t6, bArr, (Object) put, 3));
+                    d2Var.f.sendRequestTyped(tonconnectcreatesession, new d3.b(1), new d1(d2Var, (Object) t1Var, (TLObject) tL_urlAuthResultRequest2, t6, bArr, (Object) put, 3));
                 } catch (JSONException e11) {
-                    p5Var.a(null, d2.i("prepare OAuth request", e11));
+                    t1Var.a(null, d2.i("prepare OAuth request", e11));
                 }
             }
         });
-        return y2Var22;
+        return x2Var22;
     }
 
-    public static LinearLayout F(Context context, String str, org.telegram.ui.ActionBar.h6 h6Var) {
+    public static LinearLayout F(Context context, String str, org.telegram.ui.ActionBar.e6 e6Var) {
         LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
         int L = org.telegram.messenger.g0.L(16.0f);
-        int i7 = org.telegram.ui.ActionBar.m6.d6;
-        ShapeDrawable d02 = org.telegram.ui.ActionBar.m6.d0(L, org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
-        org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i7);
+        int i7 = org.telegram.ui.ActionBar.j6.d6;
+        ShapeDrawable d02 = org.telegram.ui.ActionBar.j6.d0(L, org.telegram.ui.ActionBar.j6.w0(i7, e6Var));
+        org.telegram.ui.ActionBar.m6 M = org.telegram.ui.ActionBar.q6.M(i7);
         f10.setBackground(d02);
-        org.telegram.ui.ActionBar.t6.j(f10, d02, M, null, h6Var);
-        org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context, h6Var);
+        org.telegram.ui.ActionBar.q6.j(f10, d02, M, null, e6Var);
+        org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context, e6Var);
         n4Var.setText(str);
-        f10.addView(n4Var, c8.ha.o(-1, -2));
+        f10.addView(n4Var, c8.ja.o(-1, -2));
         return f10;
     }
 
@@ -674,14 +676,14 @@ public final class d2 {
         if (spannableStringBuilder.length() == 0 || spannableStringBuilder.charAt(spannableStringBuilder.length() - 1) != 'x') {
             spannableStringBuilder.append((CharSequence) " x");
         }
-        wp wpVar = new wp(R.drawable.wallet_gram_small, 2);
-        wpVar.d = false;
-        wpVar.c(org.telegram.messenger.g0.L(16.0f));
-        spannableStringBuilder.setSpan(wpVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+        eq eqVar = new eq(R.drawable.wallet_gram_small, 2);
+        eqVar.d = false;
+        eqVar.c(org.telegram.messenger.g0.L(16.0f));
+        spannableStringBuilder.setSpan(eqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         return spannableStringBuilder;
     }
 
-    public static LinearLayout c(Context context, CharSequence charSequence, CharSequence charSequence2, SpannableStringBuilder spannableStringBuilder, String str, org.telegram.ui.ActionBar.h6 h6Var) {
+    public static LinearLayout c(Context context, CharSequence charSequence, CharSequence charSequence2, SpannableStringBuilder spannableStringBuilder, String str, org.telegram.ui.ActionBar.e6 e6Var) {
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         linearLayout.setGravity(16);
@@ -692,45 +694,45 @@ public final class d2 {
         imageView.setBackground(gradientDrawable);
         imageView.setImageResource(R.drawable.mini_gram_24);
         imageView.setPadding(org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f));
-        linearLayout.addView(imageView, c8.ha.q(46, 46, 0.0f, 16, 0, 0, 12, 0));
+        linearLayout.addView(imageView, c8.ja.q(46, 46, 0.0f, 16, 0, 0, 12, 0));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
         linearLayout2.setGravity((charSequence2 == null && str == null) ? 16 : 48);
         TextView textView = new TextView(context);
-        org.telegram.messenger.camera.q.m(textView, 1, 16.0f);
-        int i7 = org.telegram.ui.ActionBar.m6.G6;
-        org.telegram.ui.ActionBar.t6.U(textView, i7, h6Var);
+        i20.o(textView, 1, 16.0f);
+        int i7 = org.telegram.ui.ActionBar.j6.G6;
+        org.telegram.ui.ActionBar.q6.U(textView, i7, e6Var);
         textView.setSingleLine(charSequence2 != null);
         if (charSequence2 == null) {
             textView.setGravity(16);
         }
         textView.setEllipsize(TextUtils.TruncateAt.MIDDLE);
         textView.setText(charSequence);
-        LinearLayout.LayoutParams r10 = charSequence2 == null ? c8.ha.r(-1, org.telegram.messenger.g0.L(24.0f), 16) : c8.ha.o(-1, -2);
+        LinearLayout.LayoutParams r10 = charSequence2 == null ? c8.ja.r(-1, org.telegram.messenger.g0.L(24.0f), 16) : c8.ja.o(-1, -2);
         r10.weight = 0.0f;
         linearLayout2.addView(textView, r10);
         if (!TextUtils.isEmpty(charSequence2)) {
             TextView g10 = org.telegram.messenger.k5.g(context, 1, 14.0f);
-            org.telegram.ui.ActionBar.t6.U(g10, org.telegram.ui.ActionBar.m6.z6, h6Var);
+            org.telegram.ui.ActionBar.q6.U(g10, org.telegram.ui.ActionBar.j6.z6, e6Var);
             g10.setSingleLine(true);
             g10.setEllipsize(TextUtils.TruncateAt.END);
             g10.setText(charSequence2);
-            linearLayout2.addView(g10, c8.ha.k(0.0f, 3.0f, 0.0f, 0.0f, -1, -2));
+            linearLayout2.addView(g10, c8.ja.k(0.0f, 3.0f, 0.0f, 0.0f, -1, -2));
         }
         if (!TextUtils.isEmpty(str)) {
             TextView textView2 = new TextView(context);
-            org.telegram.ui.ActionBar.u4 u4Var = new org.telegram.ui.ActionBar.u4(0, false, false, null);
-            u4Var.x = false;
-            u4Var.w = Integer.valueOf(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Xl, h6Var));
-            textView2.setBackground(u4Var);
+            org.telegram.ui.ActionBar.r4 r4Var = new org.telegram.ui.ActionBar.r4(0, false, false, null);
+            r4Var.x = false;
+            r4Var.w = Integer.valueOf(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.am, e6Var));
+            textView2.setBackground(r4Var);
             textView2.setPadding(org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(8.0f));
             textView2.setTextSize(1, 15.0f);
-            org.telegram.ui.ActionBar.t6.U(textView2, i7, h6Var);
+            org.telegram.ui.ActionBar.q6.U(textView2, i7, e6Var);
             textView2.setMaxLines(2);
             textView2.setText(str);
-            linearLayout2.addView(textView2, c8.ha.k(0.0f, 6.0f, 0.0f, 0.0f, -2, -2));
+            linearLayout2.addView(textView2, c8.ja.k(0.0f, 6.0f, 0.0f, 0.0f, -2, -2));
         }
-        linearLayout.addView(linearLayout2, c8.ha.p(0, -2, 1.0f, 16));
+        linearLayout.addView(linearLayout2, c8.ja.p(0, -2, 1.0f, 16));
         if (!TextUtils.isEmpty(spannableStringBuilder)) {
             TextView textView3 = new TextView(context);
             textView3.setTypeface(org.telegram.messenger.g0.o());
@@ -738,10 +740,10 @@ public final class d2 {
             textView3.setGravity(21);
             textView3.setText(spannableStringBuilder);
             if (spannableStringBuilder.toString().startsWith("+")) {
-                i7 = org.telegram.ui.ActionBar.m6.ik;
+                i7 = org.telegram.ui.ActionBar.j6.lk;
             }
-            org.telegram.ui.ActionBar.t6.U(textView3, i7, h6Var);
-            linearLayout.addView(textView3, c8.ha.q(-2, -2, 0.0f, 16, 8, 0, 0, 0));
+            org.telegram.ui.ActionBar.q6.U(textView3, i7, e6Var);
+            linearLayout.addView(textView3, c8.ja.q(-2, -2, 0.0f, 16, 8, 0, 0, 0));
         }
         return linearLayout;
     }
@@ -789,10 +791,10 @@ public final class d2 {
         return jSONObject;
     }
 
-    public static TextView h(Context context, String str, org.telegram.ui.ActionBar.h6 h6Var) {
+    public static TextView h(Context context, String str, org.telegram.ui.ActionBar.e6 e6Var) {
         TextView textView = new TextView(context);
-        org.telegram.messenger.camera.q.m(textView, 1, 14.0f);
-        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.Ci, h6Var);
+        i20.o(textView, 1, 14.0f);
+        org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.Fi, e6Var);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) str);
         textView.setText(spannableStringBuilder);
@@ -808,11 +810,11 @@ public final class d2 {
     public static SpannableStringBuilder k(long j3) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         SpannableString spannableString = new SpannableString("GRAM");
-        spannableString.setSpan(new wp(R.drawable.wallet_gram_large, 0), 0, spannableString.length(), 33);
+        spannableString.setSpan(new eq(R.drawable.wallet_gram_large, 0), 0, spannableString.length(), 33);
         spannableStringBuilder.append((CharSequence) spannableString).append((CharSequence) " ");
         spannableStringBuilder.append((CharSequence) l0.o(-j3, true)).append((CharSequence) " ");
         int length = spannableStringBuilder.length();
-        spannableStringBuilder.append((CharSequence) id.M0(2131749516, null));
+        spannableStringBuilder.append((CharSequence) hd.M0(2131749516, null));
         spannableStringBuilder.setSpan(new ForegroundColorSpan(-9577217), length, spannableStringBuilder.length(), 33);
         return spannableStringBuilder;
     }
@@ -837,26 +839,26 @@ public final class d2 {
         return create.getHost().toLowerCase(Locale.ROOT);
     }
 
-    public static void q(Context context, int i7, long j3, int i10, org.telegram.ui.ActionBar.h6 h6Var, o90 o90Var) {
+    public static void q(Context context, int i7, long j3, int i10, org.telegram.ui.ActionBar.e6 e6Var, m90 m90Var) {
         l0 x10 = l0.x(i7);
         d2 d2Var = x10.g;
-        o60 o60Var = new o60(context, i7, x10, h6Var, o90Var);
+        k60 k60Var = new k60(context, i7, x10, e6Var, m90Var);
         if (d2Var.h || d2Var.g != null) {
-            o60Var.a(null, "A TON Connect request is already open");
+            k60Var.a(null, "A TON Connect request is already open");
             return;
         }
-        String string = qp.s1(d2Var.a).e7.getString(l(j3, i10), null);
+        String string = np.s1(d2Var.a).f7.getString(l(j3, i10), null);
         if (string == null) {
             d2Var.h = true;
-            d2Var.b.m0(new bi.f9(d2Var, j3, o60Var, i10));
+            d2Var.b.m0(new di.x7(d2Var, j3, k60Var, i10));
             return;
         }
         d2Var.h = true;
-        s sVar = new s(5, d2Var, o60Var);
+        x21 x21Var = new x21(10, d2Var, k60Var);
         try {
-            d2Var.E(j3, i10, new JSONObject(string), sVar);
+            d2Var.E(j3, i10, new JSONObject(string), x21Var);
         } catch (Exception e10) {
-            sVar.a(i("restore response", e10));
+            x21Var.a(i("restore response", e10));
         }
     }
 
@@ -948,7 +950,7 @@ public final class d2 {
                     jSONObject2 = jSONObject;
                 }
                 JSONObject jSONObject5 = jSONObject2;
-                JSONObject put2 = new JSONObject().put("event", "connect").put("id", tonconnectchallenge.event_id).put("payload", new JSONObject().put("items", jSONArray3).put("device", new JSONObject().put("platform", "android").put("appName", "gramwallet").put("appVersion", org.telegram.messenger.r2.c).put("maxProtocolVersion", 2).put("features", new JSONArray().put(new JSONObject().put("name", "SendTransaction").put("maxMessages", qs.e4)).put(new JSONObject().put("name", "SignMessage").put("maxMessages", qs.e4)).put(new JSONObject().put("name", "SignData").put("types", new JSONArray().put("text").put("binary").put("cell"))))));
+                JSONObject put2 = new JSONObject().put("event", "connect").put("id", tonconnectchallenge.event_id).put("payload", new JSONObject().put("items", jSONArray3).put("device", new JSONObject().put("platform", "android").put("appName", "gramwallet").put("appVersion", org.telegram.messenger.r2.c).put("maxProtocolVersion", 2).put("features", new JSONArray().put(new JSONObject().put("name", "SendTransaction").put("maxMessages", ns.e4)).put(new JSONObject().put("name", "SignMessage").put("maxMessages", ns.e4)).put(new JSONObject().put("name", "SignData").put("types", new JSONArray().put("text").put("binary").put("cell"))))));
                 if (str3 != null) {
                     put2.put("response", new JSONObject().put("error", new JSONObject().put("code", 400).put("message", "Embedded request is not supported")));
                 }
@@ -983,11 +985,11 @@ public final class d2 {
         return new a2(WalletEngine2.tonConnectCrypto(i0Var, tonconnectsession, str, bArr, new JSONObject().put("encrypt", new JSONObject().put("event", "disconnect").put("id", j3).put("payload", new JSONObject()))));
     }
 
-    public static TextView v(int i7, Context context, CharSequence charSequence, org.telegram.ui.ActionBar.h6 h6Var) {
+    public static TextView v(int i7, Context context, CharSequence charSequence, org.telegram.ui.ActionBar.e6 e6Var) {
         TextView textView = new TextView(context);
         textView.setText(charSequence);
         textView.setTextSize(1, i7);
-        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, h6Var);
+        org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.G6, e6Var);
         textView.setGravity(17);
         return textView;
     }
@@ -1048,16 +1050,16 @@ public final class d2 {
         return Objects.equals(str, l0Var.t()) && Arrays.equals(z1Var.g, l0Var.y());
     }
 
-    public final void B(z1 z1Var, i0 i0Var, c20 c20Var) {
+    public final void B(z1 z1Var, i0 i0Var, z10 z10Var) {
         WalletEngine2 walletEngine2 = this.b.b;
         if (walletEngine2 != null) {
             boolean A = A(z1Var);
             int i7 = z1Var.b;
             TL_wallet.tonConnectSession tonconnectsession = z1Var.a;
             if (A && !j(z1Var)) {
-                String string = qp.s1(this.a).e7.getString(l(tonconnectsession.id, i7) + ".transfer", null);
+                String string = np.s1(this.a).f7.getString(l(tonconnectsession.id, i7) + ".transfer", null);
                 if (string == null) {
-                    walletEngine2.prepareTonConnectTransfer(i0Var, z1Var.f, "ton-connect:" + tonconnectsession.id + ":" + i7, new q(this, z1Var, i0Var, c20Var, 7));
+                    walletEngine2.prepareTonConnectTransfer(i0Var, z1Var.f, "ton-connect:" + tonconnectsession.id + ":" + i7, new q(this, z1Var, i0Var, z10Var, 7));
                     return;
                 }
                 try {
@@ -1066,24 +1068,24 @@ public final class d2 {
                     sendtransfer.user_id = new TLRPC.TL_inputUserEmpty();
                     sendtransfer.data_normal = Base64.decode(jSONObject.getString("boc"), 2);
                     sendtransfer.random_id = jSONObject.getLong("randomId");
-                    this.f.sendRequestTyped(sendtransfer, new d3.b(1), new bi.t3(this, c20Var, z1Var, i0Var, sendtransfer, 6));
+                    this.f.sendRequestTyped(sendtransfer, new d3.b(1), new di.z2(this, z10Var, z1Var, i0Var, sendtransfer, 6));
                     return;
                 } catch (Exception e10) {
-                    c20Var.a(i("restore transfer", e10));
+                    z10Var.a(i("restore transfer", e10));
                     return;
                 }
             }
         }
-        y(z1Var, i0Var, null, 0, "Wallet unavailable or request expired", c20Var);
+        y(z1Var, i0Var, null, 0, "Wallet unavailable or request expired", z10Var);
     }
 
-    public final void E(long j3, int i7, JSONObject jSONObject, c20 c20Var) {
+    public final void E(long j3, int i7, JSONObject jSONObject, z10 z10Var) {
         TL_wallet.tonConnectSubmitResponse tonconnectsubmitresponse = new TL_wallet.tonConnectSubmitResponse();
         tonconnectsubmitresponse.session_id = j3;
         tonconnectsubmitresponse.msg_id = i7;
         tonconnectsubmitresponse.trace_id = jSONObject.optString("traceId", null);
         tonconnectsubmitresponse.body = Base64.decode(jSONObject.optString("body"), 2);
-        this.f.sendRequestTyped(tonconnectsubmitresponse, new d3.b(1), new ai.v0(this, c20Var, jSONObject, j3, i7));
+        this.f.sendRequestTyped(tonconnectsubmitresponse, new d3.b(1), new bi.z(this, z10Var, jSONObject, j3, i7));
     }
 
     public final boolean d(y1 y1Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr) {
@@ -1101,31 +1103,31 @@ public final class d2 {
         return str.equals(l0Var.t()) && Arrays.equals(bArr, l0Var.y());
     }
 
-    public final void e(int i7, long j3, c20 c20Var) {
+    public final void e(int i7, long j3, z10 z10Var) {
         long j10 = i7;
-        qp.s1(this.a).e7.edit().remove(l(j3, j10)).remove(l(j3, j10) + ".transfer").apply();
+        np.s1(this.a).f7.edit().remove(l(j3, j10)).remove(l(j3, j10) + ".transfer").apply();
         z1 z1Var = this.g;
         if (z1Var != null && z1Var.a.id == j3 && z1Var.b == i7) {
             z1Var.n = true;
         }
-        c20Var.a(null);
+        z10Var.a(null);
     }
 
-    public final void f(z1 z1Var, boolean z9, c20 c20Var) {
-        boolean z10 = z1Var.m;
+    public final void f(z1 z1Var, boolean z10, z10 z10Var) {
+        boolean z11 = z1Var.m;
         TL_wallet.tonConnectSession tonconnectsession = z1Var.a;
-        if (z10) {
+        if (z11) {
             return;
         }
-        if (z1Var.n || j(z1Var) || !A(z1Var) || !(z9 || z1Var.l >= 0 || "disconnect".equals(z1Var.e) || z1Var.p)) {
-            c20Var.a("Request expired, was processed, or the wallet changed");
+        if (z1Var.n || j(z1Var) || !A(z1Var) || !(z10 || z1Var.l >= 0 || "disconnect".equals(z1Var.e) || z1Var.p)) {
+            z10Var.a("Request expired, was processed, or the wallet changed");
             return;
         }
         z1Var.m = true;
-        m mVar = new m(this, z1Var, c20Var, 2);
-        String string = qp.s1(this.a).e7.getString(l(tonconnectsession.id, z1Var.b), null);
+        m mVar = new m(this, z1Var, z10Var, 2);
+        String string = np.s1(this.a).f7.getString(l(tonconnectsession.id, z1Var.b), null);
         if (string == null) {
-            this.b.z(new w(this, mVar, z1Var, z9, 1), true, false);
+            this.b.z(new w(this, mVar, z1Var, z10, 1), true, false);
             return;
         }
         try {
@@ -1185,7 +1187,7 @@ public final class d2 {
                 o(z1Var.b, tonconnectsession.id);
             }
         }
-        qs.f(this.a).k(qs.a4, this.b, tonconnectsession);
+        ns.f(this.a).k(ns.a4, this.b, tonconnectsession);
     }
 
     public final void u(z1 z1Var) {
@@ -1196,7 +1198,7 @@ public final class d2 {
         this.g = null;
     }
 
-    public final void y(z1 z1Var, i0 i0Var, Object obj, int i7, String str, c20 c20Var) {
-        Utilities.e.c(new jg.c1(this, z1Var, i7, obj, str, i0Var, c20Var, 15));
+    public final void y(z1 z1Var, i0 i0Var, Object obj, int i7, String str, z10 z10Var) {
+        Utilities.e.c(new bi.u2(this, z1Var, i7, obj, str, i0Var, z10Var));
     }
 }

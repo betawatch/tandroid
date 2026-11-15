@@ -1,12 +1,12 @@
 package e2;
 
-import a8.ia;
+import a8.ja;
 import android.net.Uri;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d0 {
     public static final String i;
@@ -27,7 +27,7 @@ public final class d0 {
     public final byte[] h;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         i = Integer.toString(0, 36);
         j = Integer.toString(1, 36);
         k = Integer.toString(2, 36);
@@ -39,7 +39,7 @@ public final class d0 {
     }
 
     public d0(c0 c0Var) {
-        ia.p((c0Var.f && c0Var.b == null) ? false : true);
+        ja.p((c0Var.f && c0Var.b == null) ? false : true);
         UUID uuid = c0Var.a;
         uuid.getClass();
         this.a = uuid;

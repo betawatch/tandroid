@@ -1,57 +1,64 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.net.Uri;
+import android.os.Bundle;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a80 implements org.telegram.messenger.c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+public final /* synthetic */ class a80 implements org.telegram.messenger.qr {
+    public final /* synthetic */ LaunchActivity a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ yw c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ ArrayList e;
+    public final /* synthetic */ Uri f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1 h;
 
-    public /* synthetic */ a80(LaunchActivity launchActivity, int i7) {
-        this.a = i7;
-        this.b = launchActivity;
+    public /* synthetic */ a80(LaunchActivity launchActivity, int i7, yw ywVar, boolean z10, ArrayList arrayList, Uri uri, org.telegram.ui.ActionBar.t1 t1Var) {
+        this.a = launchActivity;
+        this.b = i7;
+        this.c = ywVar;
+        this.d = z10;
+        this.e = arrayList;
+        this.f = uri;
+        this.h = t1Var;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        org.telegram.ui.ActionBar.f2 lastFragment;
-        int i7 = this.a;
-        LaunchActivity launchActivity = this.b;
-        switch (i7) {
-            case 0:
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                if (launchActivity.o0 != null && booleanValue && org.telegram.messenger.sc.c() < 100 && (lastFragment = launchActivity.o0.getLastFragment()) != null && !(lastFragment instanceof z90)) {
-                    int b10 = org.telegram.messenger.sc.b();
-                    org.telegram.ui.Components.gc a02 = org.telegram.ui.Components.gc.a0(lastFragment);
-                    org.telegram.ui.Components.m9 m9Var = new org.telegram.ui.Components.m9(b10 / 100.0f, lastFragment.getThemedColor(org.telegram.ui.ActionBar.m6.Y5));
-                    String M0 = org.telegram.messenger.id.M0(2131748715, null);
-                    String a03 = org.telegram.messenger.id.a0("LowPowerEnabledSubtitle", null, 2131748716, String.format("%d%%", Integer.valueOf(b10)));
-                    String M02 = org.telegram.messenger.id.M0(2131751435, null);
-                    v60 v60Var = new v60(launchActivity, 11);
-                    a02.getClass();
-                    Context W = a02.W();
-                    org.telegram.ui.ActionBar.h6 h6Var = a02.c;
-                    org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(W, h6Var);
-                    ybVar.a.setImageDrawable(m9Var);
-                    ybVar.b.setText(M0);
-                    ybVar.c.setText(a03);
-                    org.telegram.ui.Components.zb zbVar = new org.telegram.ui.Components.zb(a02.W(), h6Var, true);
-                    zbVar.e(M02);
-                    zbVar.b = v60Var;
-                    ybVar.setButton(zbVar);
-                    org.telegram.ui.Components.bc b11 = a02.b(ybVar, 2750);
-                    b11.j = 5000;
-                    b11.j();
-                    break;
-                }
-                break;
-            default:
-                TLRPC.User user = (TLRPC.User) obj;
-                String str = LaunchActivity.B1;
-                org.telegram.messenger.qp.s1(launchActivity.O).x3(null, user, null, 0, null, false, false);
-                break;
+    @Override // org.telegram.messenger.qr
+    public final void run(long j3) {
+        org.telegram.ui.ActionBar.t1 t1Var = this.h;
+        LaunchActivity launchActivity = this.a;
+        if (j3 != 0) {
+            String str = LaunchActivity.C1;
+            Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
+            if (!org.telegram.messenger.g0.Q1()) {
+                org.telegram.messenger.ns.f(this.b).k(org.telegram.messenger.ns.t, new Object[0]);
+            }
+            if (org.telegram.messenger.m5.E(j3)) {
+                k10.putLong("user_id", j3);
+            } else {
+                k10.putLong("chat_id", -j3);
+            }
+            an anVar = new an(k10);
+            anVar.N9 = true;
+            org.telegram.ui.ActionBar.o4 M = launchActivity.M();
+            yw ywVar = this.c;
+            ((ActionBarLayout) M).V(anVar, ywVar != null || this.d, ywVar == null);
+        } else {
+            ArrayList arrayList = this.e;
+            launchActivity.X = arrayList;
+            if (arrayList == null) {
+                launchActivity.X = new ArrayList();
+            }
+            launchActivity.X.add(0, this.f);
+            launchActivity.j0(true);
+        }
+        try {
+            t1Var.dismiss();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 }

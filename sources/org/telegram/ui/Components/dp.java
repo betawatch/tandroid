@@ -1,42 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.graphics.drawable.Drawable;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class dp implements c5.g {
-    public int a;
-    public final /* synthetic */ sf0 b;
+public final class dp {
+    public final org.telegram.ui.ActionBar.p3 a;
+    public Drawable b;
+    public int c;
+    public boolean d;
 
-    public dp(sf0 sf0Var) {
-        this.b = sf0Var;
+    public dp(org.telegram.ui.ActionBar.p3 p3Var) {
+        this.a = p3Var;
     }
 
-    @Override // c5.g
-    public final void b(float f10, int i7, int i10) {
-        if (i7 == this.b.getCurrentItem() && f10 == 0.0f && this.a == 1) {
-            d();
+    public final String a() {
+        org.telegram.ui.ActionBar.p3 p3Var = this.a;
+        if (p3Var == null || p3Var.a) {
+            return null;
         }
-    }
-
-    @Override // c5.g
-    public final void c(int i7) {
-        if (i7 == 0) {
-            d();
-        }
-        this.a = i7;
-    }
-
-    public final void d() {
-        sf0 sf0Var = this.b;
-        if (sf0Var.w0 != null) {
-            int currentItem = sf0Var.getCurrentItem();
-            int k10 = sf0Var.w0.k(currentItem) + sf0Var.w0.j();
-            if (currentItem != k10) {
-                sf0Var.x(k10, false);
-            }
-        }
-    }
-
-    @Override // c5.g
-    public final void a(int i7) {
+        return p3Var.e;
     }
 }

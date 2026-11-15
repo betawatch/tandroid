@@ -1,79 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class we implements org.telegram.ui.ActionBar.r1, org.telegram.messenger.bp, jl0 {
+public final /* synthetic */ class we implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ an b;
 
-    public /* synthetic */ we(int i7, Runnable runnable) {
+    public /* synthetic */ we(an anVar, int i7) {
         this.a = i7;
-        this.b = runnable;
+        this.b = anVar;
     }
 
-    @Override // org.telegram.messenger.bp
-    public boolean a(TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 3:
-                this.b.run();
-                break;
-            case 4:
-                this.b.run();
-                break;
-            case 5:
-                this.b.run();
-                break;
-            case 6:
-                this.b.run();
-                break;
-            case 7:
-                this.b.run();
-                break;
-            default:
-                this.b.run();
-                break;
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.jl0
-    public void b(int i7) {
-        int i10 = this.a;
-        Runnable runnable = this.b;
-        switch (i10) {
-            case 9:
-                String str = LaunchActivity.B1;
-                if (i7 == 1) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                if (i7 == 1) {
-                    runnable.run();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.run();
-                break;
-            case 1:
-                this.b.run();
+                this.b.uc(false);
                 break;
             default:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                this.b.uc(false);
                 break;
         }
     }

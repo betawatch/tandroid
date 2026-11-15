@@ -1,74 +1,71 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
+import android.view.View;
+import java.util.Comparator;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class qv0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class qv0 implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ProfileActivity c;
 
-    public /* synthetic */ qv0(ProfileActivity profileActivity, boolean z9, int i7) {
+    public /* synthetic */ qv0(int i7) {
         this.a = i7;
-        this.c = profileActivity;
-        this.b = z9;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.c.f0 = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i7;
-        org.telegram.ui.Cells.b4 b4Var;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ProfileActivity profileActivity = this.c;
-                boolean z9 = this.b;
-                ProfileActivity.y1(profileActivity, z9);
-                profileActivity.X.setClickable(true);
-                if (z9) {
-                    org.telegram.ui.ActionBar.g5 g5Var = profileActivity.T0;
-                    if (g5Var.F.getWidth() != 0 && !g5Var.e.isFocused()) {
-                        g5Var.e.requestFocus();
-                        org.telegram.messenger.g0.K3(g5Var.e);
-                    }
+                return (int) (((View) obj).getY() - ((View) obj2).getY());
+            case 1:
+                int i7 = obj instanceof rw0 ? ((rw0) obj).g : obj instanceof org.telegram.messenger.zo ? ((org.telegram.messenger.zo) obj).d : 0;
+                int i10 = obj2 instanceof rw0 ? ((rw0) obj2).g : obj2 instanceof org.telegram.messenger.zo ? ((org.telegram.messenger.zo) obj2).d : 0;
+                if (i7 < i10) {
+                    return -1;
                 }
-                profileActivity.B4(true);
-                profileActivity.U1 = null;
-                profileActivity.fragmentView.invalidate();
-                if (z9) {
-                    profileActivity.U4 = true;
-                    profileActivity.W4();
-                    Activity parentActivity = profileActivity.getParentActivity();
-                    i7 = ((org.telegram.ui.ActionBar.f2) profileActivity).classGuid;
-                    org.telegram.messenger.g0.a3(parentActivity, i7);
-                    profileActivity.O.setPreventMoving(false);
-                    break;
+                return i7 > i10 ? 1 : 0;
+            case 2:
+                long j3 = org.telegram.messenger.m10.i(((Integer) obj).intValue()).Z;
+                long j10 = org.telegram.messenger.m10.i(((Integer) obj2).intValue()).Z;
+                if (j3 > j10) {
+                    return 1;
                 }
-                break;
+                return j3 < j10 ? -1 : 0;
+            case 3:
+                return Integer.compare(((org.telegram.ui.ActionBar.i6) obj).W, ((org.telegram.ui.ActionBar.i6) obj2).W);
+            case 4:
+                long j11 = org.telegram.messenger.m10.i(((Integer) obj).intValue()).Z;
+                long j12 = org.telegram.messenger.m10.i(((Integer) obj2).intValue()).Z;
+                if (j11 > j12) {
+                    return 1;
+                }
+                return j11 < j12 ? -1 : 0;
+            case 5:
+                return Integer.compare(((org.telegram.ui.Wallet.h0) obj2).b, ((org.telegram.ui.Wallet.h0) obj).b);
+            case 6:
+                return Integer.compare(((TL_wallet.walletTransaction) obj2).date, ((TL_wallet.walletTransaction) obj).date);
+            case 7:
+                long j13 = org.telegram.messenger.m10.i(((Integer) obj).intValue()).Z;
+                long j14 = org.telegram.messenger.m10.i(((Integer) obj2).intValue()).Z;
+                if (j13 > j14) {
+                    return 1;
+                }
+                return j13 < j14 ? -1 : 0;
+            case 8:
+                return (int) (((org.telegram.ui.web.j) obj2).c - ((org.telegram.ui.web.j) obj).c);
+            case 9:
+                return (int) (((org.telegram.ui.web.j) obj2).c - ((org.telegram.ui.web.j) obj).c);
+            case 10:
+                return Long.compare(((org.telegram.utils.twidget.k0) obj2).y, ((org.telegram.utils.twidget.k0) obj).y);
+            case 11:
+                return ((v4.e1) obj2).a.getTop() - ((v4.e1) obj).a.getTop();
+            case 12:
+                return ((s2.e) obj).a.compareTo(((s2.e) obj2).a);
+            case 13:
+                return (int) ((((ug.j1) obj).a * 100.0f) - (((ug.j1) obj2).a * 100.0f));
             default:
-                ProfileActivity profileActivity2 = this.c;
-                if (profileActivity2.f0 != null && (b4Var = profileActivity2.g0) != null) {
-                    if (!this.b) {
-                        b4Var.setVisibility(4);
-                    }
-                    profileActivity2.f0 = null;
-                    break;
-                }
-                break;
+                return ((String) obj).compareTo((String) obj2);
         }
     }
 }

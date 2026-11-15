@@ -1,6 +1,6 @@
 package x2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class z extends e2.l1 {
     public final e2.l0 e;
@@ -15,8 +15,8 @@ public final class z extends e2.l1 {
     }
 
     @Override // e2.l1
-    public final e2.i1 f(int i7, e2.i1 i1Var, boolean z9) {
-        i1Var.h(z9 ? 0 : null, z9 ? y.h : null, 0, -9223372036854775807L, 0L, e2.c.c, true);
+    public final e2.i1 f(int i7, e2.i1 i1Var, boolean z10) {
+        i1Var.h(z10 ? 0 : null, z10 ? y.h : null, 0, -9223372036854775807L, 0L, e2.c.c, true);
         return i1Var;
     }
 

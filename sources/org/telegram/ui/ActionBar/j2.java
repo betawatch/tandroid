@@ -1,38 +1,31 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.DialogInterface;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j2 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+public final /* synthetic */ class j2 implements ri.n, r0.m, q1 {
+    public final /* synthetic */ u2 a;
 
-    public /* synthetic */ j2(int i7, Runnable runnable) {
-        this.a = i7;
-        this.b = runnable;
+    public /* synthetic */ j2(u2 u2Var) {
+        this.a = u2Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                this.b.run();
-                break;
-            case 1:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
-                break;
-        }
+    @Override // r0.m
+    public r0.k1 M0(View view, r0.k1 k1Var) {
+        return this.a.b0(k1Var);
+    }
+
+    @Override // ri.n
+    public int e() {
+        u2 u2Var = this.a;
+        u2Var.getClass();
+        return j6.w0(j6.h5, u2Var.J0);
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(t1 t1Var, int i7) {
+        this.a.dismiss();
+        wg.c1.l1(0, null);
     }
 }

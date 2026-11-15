@@ -2,11 +2,11 @@ package xd;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class k extends j {
     public static Integer b(String str) {
-        boolean z9;
+        boolean z10;
         int i7;
         int i10;
         kotlin.jvm.internal.j.e(str, "<this>");
@@ -23,16 +23,16 @@ public abstract class k extends j {
                 return null;
             }
             if (charAt == '+') {
-                z9 = false;
+                z10 = false;
             } else {
                 if (charAt != '-') {
                     return null;
                 }
                 i12 = TLObject.FLAG_31;
-                z9 = true;
+                z10 = true;
             }
         } else {
-            z9 = false;
+            z10 = false;
             i7 = 0;
         }
         int i13 = -59652323;
@@ -47,6 +47,6 @@ public abstract class k extends j {
             i11 = i10 - digit;
             i7++;
         }
-        return z9 ? Integer.valueOf(i11) : Integer.valueOf(-i11);
+        return z10 ? Integer.valueOf(i11) : Integer.valueOf(-i11);
     }
 }

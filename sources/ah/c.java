@@ -4,39 +4,38 @@ import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import c8.ha;
+import c8.ja;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.i6;
-import org.telegram.messenger.id;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.wo;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.fp;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class c extends yg.c {
-    public final wo s;
+    public final fp s;
     public TLRPC.TL_help_country w;
     public final TextPaint x;
     public final a3.f y;
 
-    public c(Context context, h6 h6Var) {
-        super(context, h6Var);
+    public c(Context context, e6 e6Var) {
+        super(context, e6Var);
         TextPaint textPaint = new TextPaint();
         this.x = textPaint;
         this.y = new a3.f(this, 3);
         textPaint.setTextSize(g0.L(20.0f));
         this.f.setVisibility(8);
         this.c.setVisibility(8);
-        wo woVar = new wo(21, context, h6Var);
-        this.s = woVar;
-        woVar.b(m6.B5, m6.j7, m6.C5);
-        woVar.setDrawUnchecked(true);
-        woVar.setDrawBackgroundAsArc(10);
-        addView(woVar);
-        woVar.a(false, false);
-        woVar.setLayoutParams(ha.d(24, 24.0f, (id.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+        fp fpVar = new fp(21, context, e6Var);
+        this.s = fpVar;
+        fpVar.b(j6.B5, j6.j7, j6.C5);
+        fpVar.setDrawUnchecked(true);
+        fpVar.setDrawBackgroundAsArc(10);
+        addView(fpVar);
+        fpVar.a(false, false);
+        fpVar.setLayoutParams(ja.d(24, 24.0f, (hd.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
     }
 
     @Override // yg.c
@@ -50,27 +49,27 @@ public final class c extends yg.c {
     }
 
     @Override // yg.c
-    public final void c(boolean z9, boolean z10) {
-        wo woVar = this.s;
-        if (woVar.getVisibility() == 0) {
-            woVar.a(z9, z10);
+    public final void c(boolean z10, boolean z11) {
+        fp fpVar = this.s;
+        if (fpVar.getVisibility() == 0) {
+            fpVar.a(z10, z11);
         }
     }
 
     @Override // yg.c
     public final void d() {
-        boolean z9 = id.a0;
-        this.d.setLayoutParams(ha.d(-1, -2.0f, (z9 ? 5 : 3) | 16, z9 ? 20.0f : 52.0f, 0.0f, z9 ? 52.0f : 20.0f, 0.0f));
-        boolean z10 = id.a0;
-        this.e.setLayoutParams(ha.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 52.0f, 0.0f, z10 ? 52.0f : 20.0f, 0.0f));
-        boolean z11 = id.a0;
-        this.f.setLayoutParams(ha.d(22, 22.0f, (z11 ? 5 : 3) | 16, z11 ? 15.0f : 20.0f, 0.0f, z11 ? 20.0f : 15.0f, 0.0f));
+        boolean z10 = hd.a0;
+        this.d.setLayoutParams(ja.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 52.0f, 0.0f, z10 ? 52.0f : 20.0f, 0.0f));
+        boolean z11 = hd.a0;
+        this.e.setLayoutParams(ja.d(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 52.0f, 0.0f, z11 ? 52.0f : 20.0f, 0.0f));
+        boolean z12 = hd.a0;
+        this.f.setLayoutParams(ja.d(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
     }
 
     public final void f() {
         TLRPC.TL_help_country tL_help_country = this.w;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        CharSequence o4 = i6.o(id.F0(tL_help_country.iso2), this.x.getFontMetricsInt(), 0, this.y);
+        CharSequence o4 = org.telegram.messenger.j6.o(hd.F0(tL_help_country.iso2), this.x.getFontMetricsInt(), 0, this.y);
         if (o4 != null) {
             spannableStringBuilder.append(o4).append((CharSequence) " ");
             spannableStringBuilder.setSpan(new b(16), o4.length(), o4.length() + 1, 0);
@@ -78,7 +77,7 @@ public final class c extends yg.c {
             spannableStringBuilder.append((CharSequence) " ");
             spannableStringBuilder.setSpan(new b(34), 0, 1, 0);
         }
-        String i02 = id.i0(2131750521, tL_help_country.iso2);
+        String i02 = hd.i0(2131750521, tL_help_country.iso2);
         if (TextUtils.isEmpty(i02)) {
             i02 = tL_help_country.default_name;
         }

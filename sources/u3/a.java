@@ -1,12 +1,12 @@
 package u3;
 
-import a8.ia;
+import a8.ja;
 import a8.p0;
-import h2.m0;
+import h2.l0;
 import j$.util.Objects;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public final long a;
@@ -14,7 +14,7 @@ public final class a {
     public final int c;
 
     public a(long j3, int i7, long j10) {
-        ia.f(j3 < j10);
+        ja.f(j3 < j10);
         this.a = j3;
         this.b = j10;
         this.c = i7;
@@ -38,7 +38,7 @@ public final class a {
     }
 
     public final String toString() {
-        String str = m0.a;
+        String str = l0.a;
         Locale locale = Locale.US;
         StringBuilder t6 = p0.t(this.a, "Segment: startTimeMs=", ", endTimeMs=");
         t6.append(this.b);

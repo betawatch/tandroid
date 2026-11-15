@@ -1,58 +1,44 @@
 package di;
 
-import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
-import android.view.GestureDetector;
-import android.view.animation.OvershootInterpolator;
-import android.widget.Scroller;
-import java.util.ArrayList;
-import org.telegram.messenger.qs;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class m5 extends p4 {
-    public final /* synthetic */ q9 N;
-    public final /* synthetic */ t5 O;
+public final class m5 extends Drawable {
+    public final float a;
+    public final Paint b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m5(Context context, t5 t5Var, q9 q9Var) {
-        super(context);
-        this.O = t5Var;
-        this.N = q9Var;
-        this.x = -1;
-        this.E = new ArrayList();
-        this.F = new ArrayList();
-        this.G = new ArrayList();
-        this.I = new GestureDetector(new m4(this));
-        this.d = new Scroller(context, new OvershootInterpolator());
-        this.H = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, i0.a.o(-16777216, qs.q2)});
+    public m5(float f10, int i7) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.a = f10;
+        paint.setColor(i7);
     }
 
-    @Override // di.p4
-    public final void b(int i7) {
-        m9 m9Var;
-        t5 t5Var = this.O;
-        n5 n5Var = t5Var.E;
-        if (t5Var.x) {
-            return;
-        }
-        if (n5Var.getCurrentItem() != i7) {
-            try {
-                n5Var.x(i7, false);
-            } catch (Throwable th2) {
-                org.telegram.messenger.a8.g(th2, true);
-                n5Var.getAdapter().g();
-                n5Var.x(i7, false);
-            }
-        }
-        q9 q9Var = this.N;
-        if (q9Var.N0 == null || (m9Var = q9Var.t0) == null) {
-            return;
-        }
-        if (i7 < 10) {
-            m9Var.b(false);
-        } else if (i7 >= this.E.size() - 10) {
-            q9Var.t0.b(true);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(getBounds());
+        Paint paint = this.b;
+        float f10 = this.a;
+        canvas.drawRoundRect(rectF, f10, f10, paint);
+        org.telegram.messenger.g0.P(canvas, rectF, f10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

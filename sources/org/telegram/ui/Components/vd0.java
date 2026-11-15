@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class vd0 extends LinearLayout {
     public final /* synthetic */ int a = 0;
@@ -20,12 +20,12 @@ public final class vd0 extends LinearLayout {
         setOrientation(0);
         setGravity(17);
         setPadding(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f));
-        LinearLayout a10 = a(R.drawable.msg_replace, org.telegram.messenger.id.M0(2131746271, null));
+        LinearLayout a10 = a(R.drawable.msg_replace, org.telegram.messenger.hd.M0(2131746271, null));
         this.c = a10;
-        addView(a10, c8.ha.o(-2, -1));
-        LinearLayout a11 = a(R.drawable.media_button_restore, org.telegram.messenger.id.M0(2131751335, null));
+        addView(a10, c8.ja.o(-2, -1));
+        LinearLayout a11 = a(R.drawable.media_button_restore, org.telegram.messenger.hd.M0(2131751335, null));
         this.b = a11;
-        addView(a11, c8.ha.o(-2, -1));
+        addView(a11, c8.ja.o(-2, -1));
     }
 
     public LinearLayout a(int i7, String str) {
@@ -34,15 +34,15 @@ public final class vd0 extends LinearLayout {
         linearLayout.setOrientation(0);
         linearLayout.setGravity(17);
         linearLayout.setPadding(org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(7.0f));
-        linearLayout.addView(org.telegram.messenger.camera.q.e(context, i7), c8.ha.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
+        linearLayout.addView(org.telegram.messenger.i20.e(context, i7), c8.ja.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
         TextView textView = new TextView(context);
         textView.setGravity(16);
         textView.setText(str);
         textView.setTextSize(2, 14.0f);
         textView.setSingleLine(true);
         textView.setTextColor(-1);
-        linearLayout.addView(textView, c8.ha.o(-2, -2));
-        c8.ka.a(linearLayout);
+        linearLayout.addView(textView, c8.ja.o(-2, -2));
+        c8.na.a(linearLayout);
         return linearLayout;
     }
 

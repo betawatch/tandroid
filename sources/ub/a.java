@@ -6,12 +6,12 @@ import android.os.SystemClock;
 import com.google.android.gms.tasks.Task;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
-import m.q3;
+import m.o3;
 import org.telegram.tgnet.ConnectionsManager;
+import pb.n;
 import q6.j;
 import q6.m;
-import sg.i0;
-import y7.d6;
+import sg.h0;
 import z7.e7;
 import z7.f7;
 import z7.ja;
@@ -20,7 +20,7 @@ import z7.ma;
 import z7.oa;
 import z7.z6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -34,11 +34,11 @@ public final class a {
         this.a = bitmap;
         this.b = bitmap.getWidth();
         this.c = bitmap.getHeight();
-        boolean z9 = true;
+        boolean z10 = true;
         if (i7 != 0 && i7 != 90 && i7 != 180 && i7 != 270) {
-            z9 = false;
+            z10 = false;
         }
-        m.a("Invalid rotation. Only 0, 90, 180, 270 are supported currently.", z9);
+        m.a("Invalid rotation. Only 0, 90, 180, 270 are supported currently.", z10);
         this.d = i7;
         this.e = -1;
     }
@@ -82,18 +82,18 @@ public final class a {
             }
         }
         hashMap.put(k7Var, Long.valueOf(elapsedRealtime3));
-        q3 q3Var = new q3();
-        q3Var.c = z6.b;
-        q3Var.b = e7.b;
-        q3Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        q3Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        q3Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        q3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
-        q3Var.g = Integer.valueOf(i7 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        f7 f7Var = new f7(q3Var);
-        d6 d6Var = new d6();
-        d6Var.c = f7Var;
-        pb.m.a.execute(new h(a10, new i0(d6Var), task.isSuccessful() ? (String) task.getResult() : j.c.a(a10.g)));
+        o3 o3Var = new o3();
+        o3Var.c = z6.b;
+        o3Var.b = e7.b;
+        o3Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        o3Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        o3Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        o3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
+        o3Var.g = Integer.valueOf(i7 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        f7 f7Var = new f7(o3Var);
+        y7.f7 f7Var2 = new y7.f7();
+        f7Var2.c = f7Var;
+        n.a.execute(new h(a10, new h0(f7Var2), task.isSuccessful() ? (String) task.getResult() : j.c.a(a10.g)));
         return aVar;
     }
 }

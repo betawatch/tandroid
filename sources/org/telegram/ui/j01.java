@@ -1,27 +1,35 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.graphics.Outline;
+import android.graphics.Rect;
 import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j01 extends p11 {
-    public final /* synthetic */ View Q;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique R;
-    public final /* synthetic */ k01 S;
+public final class j01 extends ViewOutlineProvider {
+    public final Rect a = new Rect();
+    public final /* synthetic */ Integer b;
+    public final /* synthetic */ n11 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j01(k01 k01Var, Context context, Runnable runnable, View view, d11 d11Var, org.telegram.ui.ActionBar.h6 h6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        super(k01Var.e, context, runnable, view, d11Var, h6Var);
-        this.S = k01Var;
-        this.Q = view2;
-        this.R = tL_starGiftUnique;
+    public j01(n11 n11Var, Integer num) {
+        this.c = n11Var;
+        this.b = num;
     }
 
-    @Override // org.telegram.ui.p11, android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        super.dismiss();
-        this.S.e.X0 = null;
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        float width = (this.b == null ? view.getWidth() / 2.0f : r0.intValue()) + org.telegram.messenger.g0.L(20.0f);
+        float width2 = (view.getWidth() - view.getPaddingLeft()) - view.getPaddingRight();
+        float height = (view.getHeight() - view.getPaddingBottom()) - view.getPaddingTop();
+        n11 n11Var = this.c;
+        boolean n10 = n11Var.n();
+        Rect rect = this.a;
+        if (n10) {
+            rect.set((int) ((width - (n11Var.b1 * width)) + view.getPaddingLeft()), (int) com.google.android.gms.internal.vision.e2.z(1.0f, n11Var.c1, org.telegram.messenger.g0.L(n11Var.e1), com.google.android.gms.internal.vision.e2.z(1.0f, n11Var.c1, height, view.getPaddingTop())), (int) (((width2 - width) * n11Var.b1) + view.getPaddingLeft() + width), (int) com.google.android.gms.internal.vision.e2.z(1.0f, n11Var.c1, org.telegram.messenger.g0.L(n11Var.e1), view.getPaddingTop() + height));
+        } else {
+            rect.set((int) ((width - (n11Var.b1 * width)) + view.getPaddingLeft()), view.getPaddingTop(), (int) (((width2 - width) * n11Var.b1) + view.getPaddingLeft() + width), (int) ((height * n11Var.c1) + view.getPaddingTop()));
+        }
+        outline.setRoundRect(rect, org.telegram.messenger.g0.L(12.0f));
     }
 }

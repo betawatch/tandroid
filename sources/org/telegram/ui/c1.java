@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class c1 extends v4.t {
     public final /* synthetic */ h1 S;
@@ -20,15 +20,15 @@ public final class c1 extends v4.t {
         byte b10;
         h1 h1Var = this.S;
         ArrayList<TL_iv.PageBlock> arrayList = h1Var.s.items;
-        org.telegram.messenger.aj ajVar = (org.telegram.messenger.aj) h1Var.w.b.get(arrayList.get((arrayList.size() - i7) - 1));
-        if (ajVar.a != ajVar.b && (b10 = ajVar.c) == ajVar.d && b10 != 0) {
+        org.telegram.messenger.yi yiVar = (org.telegram.messenger.yi) h1Var.w.b.get(arrayList.get((arrayList.size() - i7) - 1));
+        if (yiVar.a != yiVar.b && (b10 = yiVar.c) == yiVar.d && b10 != 0) {
             int size = h1Var.w.a.size();
             for (int i10 = 0; i10 < size; i10++) {
-                org.telegram.messenger.aj ajVar2 = (org.telegram.messenger.aj) h1Var.w.a.get(i10);
-                if (ajVar2 != ajVar) {
-                    byte b11 = ajVar2.c;
-                    byte b12 = ajVar.c;
-                    if (b11 <= b12 && ajVar2.d >= b12) {
+                org.telegram.messenger.yi yiVar2 = (org.telegram.messenger.yi) h1Var.w.a.get(i10);
+                if (yiVar2 != yiVar) {
+                    byte b11 = yiVar2.c;
+                    byte b12 = yiVar.c;
+                    if (b11 <= b12 && yiVar2.d >= b12) {
                         return true;
                     }
                 }
@@ -42,7 +42,7 @@ public final class c1 extends v4.t {
         return false;
     }
 
-    @Override // v4.s, v4.b0, v4.n0
+    @Override // v4.s, v4.b0, v4.o0
     public final boolean y0() {
         return false;
     }

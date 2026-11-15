@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rj0 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,19 +31,19 @@ public final /* synthetic */ class rj0 implements Runnable {
                 TLRPC.TL_error tL_error = this.c;
                 ek0 ek0Var = sj0Var.e;
                 if (tLObject instanceof Vector) {
-                    ek0Var.D = new TL_account.authorizationForm();
+                    ek0Var.E = new TL_account.authorizationForm();
                     Vector vector = (Vector) tLObject;
                     int size = vector.objects.size();
                     for (int i7 = 0; i7 < size; i7++) {
-                        ek0Var.D.values.add((TLRPC.TL_secureValue) vector.objects.get(i7));
+                        ek0Var.E.values.add((TLRPC.TL_secureValue) vector.objects.get(i7));
                     }
                     sj0Var.a();
                     break;
                 } else {
                     if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
-                        org.telegram.ui.Components.u4.u0(ek0Var.getParentActivity(), org.telegram.messenger.id.M0(2131743820, null), true);
+                        org.telegram.ui.Components.t4.u0(ek0Var.getParentActivity(), org.telegram.messenger.hd.M0(2131743820, null), true);
                     } else {
-                        ek0Var.Q1(org.telegram.messenger.id.M0(R.string.AppName, null), tL_error.text);
+                        ek0Var.Q1(org.telegram.messenger.hd.M0(R.string.AppName, null), tL_error.text);
                     }
                     ek0Var.R1(true, false);
                     break;
@@ -54,7 +54,7 @@ public final /* synthetic */ class rj0 implements Runnable {
                 TLObject tLObject2 = this.d;
                 if (tL_error2 == null) {
                     TL_account.Password password = (TL_account.Password) tLObject2;
-                    sj0Var2.e.J = password;
+                    sj0Var2.e.K = password;
                     TwoStepVerificationActivity.r0(password);
                     sj0Var2.b();
                     break;
@@ -68,9 +68,9 @@ public final /* synthetic */ class rj0 implements Runnable {
                 TLObject tLObject3 = this.d;
                 if (tL_error3 == null) {
                     TL_account.Password password2 = (TL_account.Password) tLObject3;
-                    sj0Var3.e.J = password2;
+                    sj0Var3.e.K = password2;
                     TwoStepVerificationActivity.r0(password2);
-                    Utilities.e.c(new pc0(sj0Var3, sj0Var3.b, sj0Var3.d, 14));
+                    Utilities.e.c(new lc0(sj0Var3, sj0Var3.b, sj0Var3.d, 14));
                     break;
                 }
                 break;

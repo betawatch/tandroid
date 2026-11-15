@@ -1,37 +1,30 @@
 package gb;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.app.Application;
+import android.content.Context;
+import android.util.Log;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class n implements pa.f {
-    public static final n b;
-    public static final /* synthetic */ n[] c;
-    public final int a;
+public final class n {
+    public final o9.g a;
+    public final jb.l b;
 
-    static {
-        n nVar = new n("EVENT_TYPE_UNKNOWN", 0, 0);
-        n nVar2 = new n("SESSION_START", 1, 1);
-        b = nVar2;
-        n[] nVarArr = {nVar, nVar2};
-        c = nVarArr;
-        c8.j1.a(nVarArr);
-    }
-
-    public n(String str, int i7, int i10) {
-        this.a = i10;
-    }
-
-    public static n valueOf(String str) {
-        return (n) Enum.valueOf(n.class, str);
-    }
-
-    public static n[] values() {
-        return (n[]) c.clone();
-    }
-
-    @Override // pa.f
-    public final int a() {
-        return this.a;
+    public n(o9.g firebaseApp, jb.l settings, id.h backgroundDispatcher, w0 sessionsActivityLifecycleCallbacks) {
+        kotlin.jvm.internal.j.e(firebaseApp, "firebaseApp");
+        kotlin.jvm.internal.j.e(settings, "settings");
+        kotlin.jvm.internal.j.e(backgroundDispatcher, "backgroundDispatcher");
+        kotlin.jvm.internal.j.e(sessionsActivityLifecycleCallbacks, "sessionsActivityLifecycleCallbacks");
+        this.a = firebaseApp;
+        this.b = settings;
+        Log.d("FirebaseSessions", "Initializing Firebase Sessions 3.0.8.");
+        firebaseApp.a();
+        Context applicationContext = firebaseApp.a.getApplicationContext();
+        if (applicationContext instanceof Application) {
+            ((Application) applicationContext).registerActivityLifecycleCallbacks(sessionsActivityLifecycleCallbacks);
+            zd.b0.q(zd.b0.b(backgroundDispatcher), new be.l(this, sessionsActivityLifecycleCallbacks, null, 4));
+        } else {
+            Log.e("FirebaseSessions", "Failed to register lifecycle callbacks, unexpected context " + applicationContext.getClass() + '.');
+        }
     }
 }

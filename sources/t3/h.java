@@ -1,27 +1,28 @@
 package t3;
 
-import a8.ga;
-import c8.ca;
+import a8.ha;
+import c8.ba;
+import com.google.android.gms.internal.vision.e2;
 import e2.p0;
 import e2.q0;
 import e2.s0;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import h9.f0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class h extends ca {
-    public static final s0.b b = new s0.b(18);
+public final class h extends ba {
+    public static final r2.j b = new r2.j(25);
     public final g a;
 
     public h(g gVar) {
@@ -37,14 +38,14 @@ public final class h extends ca {
         byte[] bArr = new byte[i11];
         xVar.k(0, i11, bArr);
         if (i10 == 2) {
-            concat = "image/" + ga.c(new String(bArr, 0, 3, StandardCharsets.ISO_8859_1));
+            concat = "image/" + ha.c(new String(bArr, 0, 3, StandardCharsets.ISO_8859_1));
             if ("image/jpg".equals(concat)) {
                 concat = "image/jpeg";
             }
             v = 2;
         } else {
             v = v(0, bArr);
-            String c10 = ga.c(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
+            String c10 = ha.c(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
             concat = c10.indexOf(47) == -1 ? "image/".concat(c10) : c10;
         }
         int i12 = bArr[v + 1] & 255;
@@ -52,10 +53,10 @@ public final class h extends ca {
         int u10 = u(i13, A, bArr);
         String str = new String(bArr, i13, u10 - i13, s5);
         int r10 = r(A) + u10;
-        return new a(i12, concat, str, i11 <= r10 ? m0.b : Arrays.copyOfRange(bArr, r10, i11));
+        return new a(i12, concat, str, i11 <= r10 ? l0.b : Arrays.copyOfRange(bArr, r10, i11));
     }
 
-    public static c e(x xVar, int i7, int i10, boolean z9, int i11, g gVar) {
+    public static c e(x xVar, int i7, int i10, boolean z10, int i11, g gVar) {
         int i12 = xVar.b;
         int v = v(i12, xVar.a);
         String str = new String(xVar.a, i12, v - i12, StandardCharsets.ISO_8859_1);
@@ -71,7 +72,7 @@ public final class h extends ca {
         ArrayList arrayList = new ArrayList();
         int i13 = i12 + i7;
         while (xVar.b < i13) {
-            i h = h(i10, xVar, z9, i11, gVar);
+            i h = h(i10, xVar, z10, i11, gVar);
             if (h != null) {
                 arrayList.add(h);
             }
@@ -79,14 +80,14 @@ public final class h extends ca {
         return new c(str, m10, m11, C, j3, (i[]) arrayList.toArray(new i[0]));
     }
 
-    public static d f(x xVar, int i7, int i10, boolean z9, int i11, g gVar) {
+    public static d f(x xVar, int i7, int i10, boolean z10, int i11, g gVar) {
         int i12 = xVar.b;
         int v = v(i12, xVar.a);
         String str = new String(xVar.a, i12, v - i12, StandardCharsets.ISO_8859_1);
         xVar.N(v + 1);
         int A = xVar.A();
-        boolean z10 = (A & 2) != 0;
-        boolean z11 = (A & 1) != 0;
+        boolean z11 = (A & 2) != 0;
+        boolean z12 = (A & 1) != 0;
         int A2 = xVar.A();
         String[] strArr = new String[A2];
         for (int i13 = 0; i13 < A2; i13++) {
@@ -98,12 +99,12 @@ public final class h extends ca {
         ArrayList arrayList = new ArrayList();
         int i15 = i12 + i7;
         while (xVar.b < i15) {
-            i h = h(i10, xVar, z9, i11, gVar);
+            i h = h(i10, xVar, z10, i11, gVar);
             if (h != null) {
                 arrayList.add(h);
             }
         }
-        return new d(str, z10, z11, strArr, (i[]) arrayList.toArray(new i[0]));
+        return new d(str, z11, z12, strArr, (i[]) arrayList.toArray(new i[0]));
     }
 
     public static e g(int i7, x xVar) {
@@ -156,15 +157,15 @@ public final class h extends ca {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static i h(int i7, x xVar, boolean z9, int i10, g gVar) {
+    public static i h(int i7, x xVar, boolean z10, int i10, g gVar) {
         int E;
         int i11;
         ?? r12;
-        boolean z10;
         boolean z11;
         boolean z12;
         boolean z13;
         boolean z14;
+        boolean z15;
         int i12;
         int i13;
         int i14;
@@ -181,8 +182,8 @@ public final class h extends ca {
         int A4 = i15 >= 3 ? xVar.A() : 0;
         if (i15 == 4) {
             E = xVar.E();
-            if (!z9) {
-                E = (((E >> 24) & qs.e4) << 21) | (E & qs.e4) | (((E >> 8) & qs.e4) << 7) | (((E >> 16) & qs.e4) << 14);
+            if (!z10) {
+                E = (((E >> 24) & ns.e4) << 21) | (E & ns.e4) | (((E >> 8) & ns.e4) << 7) | (((E >> 16) & ns.e4) << 14);
             }
         } else {
             E = i15 == 3 ? xVar.E() : xVar.D();
@@ -200,11 +201,11 @@ public final class h extends ca {
             return null;
         }
         if (gVar != null) {
-            boolean b10 = gVar.b(i15, A, A2, A3, A4);
+            boolean c10 = gVar.c(i15, A, A2, A3, A4);
             i15 = i15;
             r12 = A;
             i11 = A2;
-            if (!b10) {
+            if (!c10) {
                 xVar.N(i17);
                 return null;
             }
@@ -213,41 +214,41 @@ public final class h extends ca {
             r12 = A;
         }
         if (i15 == 3) {
-            z10 = (H & 128) != 0;
-            z13 = (H & 64) != 0;
-            z14 = false;
-            z12 = (H & 32) != 0;
-            z11 = z10;
+            z11 = (H & 128) != 0;
+            z14 = (H & 64) != 0;
+            z15 = false;
+            z13 = (H & 32) != 0;
+            z12 = z11;
         } else if (i15 == 4) {
-            boolean z15 = (H & 64) != 0;
-            boolean z16 = (H & 8) != 0;
-            z13 = (H & 4) != 0;
-            z14 = (H & 2) != 0;
-            z11 = (H & 1) != 0;
-            boolean z17 = z16;
-            z12 = z15;
-            z10 = z17;
+            boolean z16 = (H & 64) != 0;
+            boolean z17 = (H & 8) != 0;
+            z14 = (H & 4) != 0;
+            z15 = (H & 2) != 0;
+            z12 = (H & 1) != 0;
+            boolean z18 = z17;
+            z13 = z16;
+            z11 = z18;
         } else {
-            z10 = false;
             z11 = false;
             z12 = false;
             z13 = false;
             z14 = false;
+            z15 = false;
         }
-        if (z10 || z13) {
+        if (z11 || z14) {
             h2.a.l("Id3Decoder", "Skipping unsupported compressed or encrypted frame");
             xVar.N(i17);
             return null;
         }
-        if (z12) {
+        if (z13) {
             i16--;
             xVar.O(1);
         }
-        if (z11) {
+        if (z12) {
             i16 -= 4;
             xVar.O(4);
         }
-        if (z14) {
+        if (z15) {
             i16 = w(i16, xVar);
         }
         try {
@@ -378,7 +379,7 @@ public final class h extends ca {
                             i13 = A3;
                             i14 = A4;
                             try {
-                                bVar = e(xVar, i11, i15, z9, i10, gVar);
+                                bVar = e(xVar, i11, i15, z10, i10, gVar);
                                 i15 = i7;
                                 r12 = xVar;
                             } catch (Exception e14) {
@@ -416,7 +417,7 @@ public final class h extends ca {
                                 if (i12 != 67 && i16 == 84 && i13 == 79 && i14 == 67) {
                                     i15 = i7;
                                     x xVar5 = xVar;
-                                    bVar = f(xVar5, i11, i15, z9, i10, gVar);
+                                    bVar = f(xVar5, i11, i15, z10, i10, gVar);
                                     r12 = xVar5;
                                 } else {
                                     i15 = i7;
@@ -512,7 +513,7 @@ public final class h extends ca {
         int u11 = u(r10, A, bArr);
         String l11 = l(bArr, r10, u11, s5);
         int r11 = r(A) + u11;
-        return new f(n10, i10 <= r11 ? m0.b : Arrays.copyOfRange(bArr, r11, i10), l10, l11);
+        return new f(n10, i10 <= r11 ? l0.b : Arrays.copyOfRange(bArr, r11, i10), l10, l11);
     }
 
     public static l j(int i7, x xVar) {
@@ -541,7 +542,7 @@ public final class h extends ca {
         int v = v(0, bArr);
         String str = new String(bArr, 0, v, StandardCharsets.ISO_8859_1);
         int i10 = v + 1;
-        return new m(str, i7 <= i10 ? m0.b : Arrays.copyOfRange(bArr, i10, i7));
+        return new m(str, i7 <= i10 ? l0.b : Arrays.copyOfRange(bArr, i10, i7));
     }
 
     public static String l(byte[] bArr, int i7, int i10, Charset charset) {
@@ -559,7 +560,7 @@ public final class h extends ca {
         return new n(str, null, n(A, 0, bArr));
     }
 
-    public static t1 n(int i7, int i10, byte[] bArr) {
+    public static s1 n(int i7, int i10, byte[] bArr) {
         if (i10 >= bArr.length) {
             return i0.u("");
         }
@@ -570,7 +571,7 @@ public final class h extends ca {
             i10 = r(i7) + u10;
             u10 = u(i10, i7, bArr);
         }
-        t1 f10 = p10.f();
+        s1 f10 = p10.f();
         return f10.isEmpty() ? i0.u("") : f10;
     }
 
@@ -674,7 +675,7 @@ public final class h extends ca {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean x(x xVar, int i7, int i10, boolean z9) {
+    public static boolean x(x xVar, int i7, int i10, boolean z10) {
         int D;
         long D2;
         int i11;
@@ -682,7 +683,7 @@ public final class h extends ca {
         int i13 = xVar.b;
         while (true) {
             try {
-                boolean z10 = true;
+                boolean z11 = true;
                 if (xVar.a() < i10) {
                     xVar.N(i13);
                     return true;
@@ -700,7 +701,7 @@ public final class h extends ca {
                     xVar.N(i13);
                     return true;
                 }
-                if (i7 == 4 && !z9) {
+                if (i7 == 4 && !z10) {
                     if ((8421504 & D2) != 0) {
                         xVar.N(i13);
                         return false;
@@ -714,9 +715,9 @@ public final class h extends ca {
                         i12 = (i11 & 32) != 0 ? 1 : 0;
                     } else {
                         i12 = 0;
-                        z10 = false;
+                        z11 = false;
                     }
-                    if (z10) {
+                    if (z11) {
                         i12 += 4;
                     }
                     if (D2 < i12) {
@@ -736,7 +737,7 @@ public final class h extends ca {
         }
     }
 
-    @Override // c8.ca
+    @Override // c8.ba
     public final q0 b(o3.a aVar, ByteBuffer byteBuffer) {
         return c(byteBuffer.limit(), byteBuffer.array());
     }
@@ -750,7 +751,7 @@ public final class h extends ca {
         gf.a aVar;
         ArrayList arrayList = new ArrayList();
         x xVar = new x(bArr, i7);
-        boolean z9 = false;
+        boolean z10 = false;
         if (xVar.a() < 10) {
             h2.a.l("Id3Decoder", "Data too short to be an ID3 tag");
         } else {
@@ -759,32 +760,32 @@ public final class h extends ca {
                 int A = xVar.A();
                 xVar.O(1);
                 int A2 = xVar.A();
-                int z10 = xVar.z();
+                int z11 = xVar.z();
                 if (A == 2) {
                     if ((A2 & 64) != 0) {
                         h2.a.l("Id3Decoder", "Skipped ID3 tag with majorVersion=2 and undefined compression scheme");
                     }
-                    aVar = new gf.a(A, A >= 4 && (A2 & 128) != 0, z10);
+                    aVar = new gf.a(A, A >= 4 && (A2 & 128) != 0, z11);
                 } else {
                     if (A == 3) {
                         if ((A2 & 64) != 0) {
                             int m10 = xVar.m();
                             xVar.O(m10);
-                            z10 -= m10 + 4;
+                            z11 -= m10 + 4;
                         }
                     } else if (A == 4) {
                         if ((A2 & 64) != 0) {
-                            int z11 = xVar.z();
-                            xVar.O(z11 - 4);
-                            z10 -= z11;
+                            int z12 = xVar.z();
+                            xVar.O(z12 - 4);
+                            z11 -= z12;
                         }
                         if ((A2 & 16) != 0) {
-                            z10 -= 10;
+                            z11 -= 10;
                         }
                     } else {
-                        com.google.android.recaptcha.internal.a.o(A, "Skipped ID3 tag with unsupported majorVersion=", "Id3Decoder");
+                        e2.o(A, "Skipped ID3 tag with unsupported majorVersion=", "Id3Decoder");
                     }
-                    aVar = new gf.a(A, A >= 4 && (A2 & 128) != 0, z10);
+                    aVar = new gf.a(A, A >= 4 && (A2 & 128) != 0, z11);
                 }
                 if (aVar != null) {
                     return null;
@@ -799,13 +800,13 @@ public final class h extends ca {
                 xVar.M(i11 + i13);
                 if (!x(xVar, i10, i12, false)) {
                     if (i10 != 4 || !x(xVar, 4, i12, true)) {
-                        com.google.android.recaptcha.internal.a.o(i10, "Failed to validate ID3 tag with majorVersion=", "Id3Decoder");
+                        e2.o(i10, "Failed to validate ID3 tag with majorVersion=", "Id3Decoder");
                         return null;
                     }
-                    z9 = true;
+                    z10 = true;
                 }
                 while (xVar.a() >= i12) {
-                    i h = h(i10, xVar, z9, i12, this.a);
+                    i h = h(i10, xVar, z10, i12, this.a);
                     if (h != null) {
                         arrayList.add(h);
                     }

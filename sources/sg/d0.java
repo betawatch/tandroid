@@ -1,83 +1,79 @@
 package sg;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.uy;
+import android.graphics.RectF;
+import org.telegram.messenger.ou;
+import org.telegram.messenger.p2;
+import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j0 b;
+    public final /* synthetic */ i0 b;
+    public final /* synthetic */ x0 c;
 
-    public /* synthetic */ d0(j0 j0Var, int i7) {
+    public /* synthetic */ d0(i0 i0Var, x0 x0Var, int i7) {
         this.a = i7;
-        this.b = j0Var;
+        this.b = i0Var;
+        this.c = x0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(final ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        x0 x0Var = this.c;
+        i0 i0Var = this.b;
+        switch (i7) {
             case 0:
-                final j0 j0Var = this.b;
-                final int i7 = 1;
-                j0Var.f.f(new Runnable() { // from class: sg.c0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i7) {
-                            case 0:
-                                j0 j0Var2 = j0Var;
-                                j0Var2.getClass();
-                                j0Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                uy uyVar = j0Var2.a;
-                                if (uyVar != null) {
-                                    uyVar.b();
-                                    break;
-                                }
-                                break;
-                            default:
-                                j0 j0Var3 = j0Var;
-                                j0Var3.getClass();
-                                j0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                uy uyVar2 = j0Var3.a;
-                                if (uyVar2 != null) {
-                                    uyVar2.b();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+                i0Var.c = x0Var;
+                if (i0Var.h == null) {
+                    i0Var.h = new RectF();
+                }
+                i0Var.c.a(i0Var.h);
+                ou ouVar = i0Var.a;
+                if (ouVar != null) {
+                    ouVar.E0();
+                    break;
+                }
                 break;
             default:
-                final j0 j0Var2 = this.b;
-                final int i10 = 0;
-                j0Var2.f.f(new Runnable() { // from class: sg.c0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                j0 j0Var22 = j0Var2;
-                                j0Var22.getClass();
-                                j0Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                uy uyVar = j0Var22.a;
-                                if (uyVar != null) {
-                                    uyVar.b();
-                                    break;
-                                }
-                                break;
-                            default:
-                                j0 j0Var3 = j0Var2;
-                                j0Var3.getClass();
-                                j0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                uy uyVar2 = j0Var3.a;
-                                if (uyVar2 != null) {
-                                    uyVar2.b();
-                                    break;
-                                }
-                                break;
+                if (x0Var != null && i0Var.q == 0) {
+                    i0Var.q = i1.b(i0Var.g);
+                }
+                int i10 = 0;
+                if (i0Var.H == (x0Var != null)) {
+                    if (x0Var != i0Var.d) {
+                        i0Var.d = x0Var;
+                        ou ouVar2 = i0Var.a;
+                        if (ouVar2 != null) {
+                            ouVar2.E0();
+                            break;
                         }
                     }
-                });
+                } else {
+                    i0Var.H = x0Var != null;
+                    ValueAnimator valueAnimator = i0Var.K;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                        i0Var.K = null;
+                    }
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(i0Var.I, i0Var.H ? 1.0f : 0.0f);
+                    i0Var.K = ofFloat;
+                    ofFloat.addUpdateListener(new c0(i0Var, i10));
+                    i0Var.K.addListener(new g0(i0Var, i10));
+                    i0Var.K.setInterpolator(er.h);
+                    i0Var.K.start();
+                    i0Var.d = x0Var;
+                    ou ouVar3 = i0Var.a;
+                    if (ouVar3 != null) {
+                        ouVar3.E0();
+                    }
+                    if (i0Var.H) {
+                        p2.y.a();
+                        break;
+                    }
+                }
                 break;
         }
     }

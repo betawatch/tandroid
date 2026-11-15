@@ -2,7 +2,7 @@ package h2;
 
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d0 {
     public final int a;
@@ -19,9 +19,9 @@ public final class d0 {
     public final void a() {
         e0 e0Var = this.e;
         i0 i0Var = (i0) e0Var.f;
-        l2.i0 i0Var2 = (l2.i0) e0Var.a;
-        int w02 = i0Var2.w0();
-        if (!i0Var2.u() || i0Var2.i() == 1 || i0Var2.i() == 4 || w02 == 0 || w02 == 1) {
+        l2.f0 f0Var = (l2.f0) e0Var.a;
+        int w02 = f0Var.w0();
+        if (!f0Var.u() || f0Var.i() == 1 || f0Var.i() == 4 || w02 == 0 || w02 == 1) {
             if (this.c) {
                 i0Var.e(4);
             }
@@ -30,11 +30,11 @@ public final class d0 {
         }
         ((g0) e0Var.d).getClass();
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z9 = this.c;
+        boolean z10 = this.c;
         int i7 = this.a;
-        if (z9 && this.b == w02) {
+        if (z10 && this.b == w02) {
             if (elapsedRealtime - this.d >= i7) {
-                ((l2.c0) e0Var.c).a.A1(new l2.l(2, new f0(4, i7), 1003));
+                ((l2.z) e0Var.c).a.A1(new l2.l(2, new f0(4, i7), 1003));
                 return;
             }
             return;

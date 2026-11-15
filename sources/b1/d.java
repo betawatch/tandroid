@@ -1,6 +1,6 @@
 package b1;
 
-import a8.d7;
+import a8.e7;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CancellationSignal;
@@ -15,7 +15,7 @@ import java.util.concurrent.Executor;
 import kotlin.jvm.internal.j;
 import rd.l;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a a = new a();
@@ -56,7 +56,7 @@ public abstract class d {
         if (!bundle.getBoolean("FAILURE_RESPONSE")) {
             return false;
         }
-        d7.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
+        e7.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
         return true;
     }
 
@@ -65,7 +65,7 @@ public abstract class d {
             return false;
         }
         kotlin.jvm.internal.r rVar = new kotlin.jvm.internal.r();
-        rVar.a = new w0.c(2, jg.g.k(i7, "activity with result code: ", " indicating not RESULT_OK"));
+        rVar.a = new w0.c(2, i5.c.j(i7, "activity with result code: ", " indicating not RESULT_OK"));
         if (i7 == 0) {
             rVar.a = new w0.b("activity is cancelled by the user.");
         }

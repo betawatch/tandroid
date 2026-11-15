@@ -1,107 +1,59 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.content.Context;
+import java.nio.ByteBuffer;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class p51 {
-    public final boolean a;
-    public final int b;
-    public final int c;
-    public final ArrayList d;
+public final class p51 extends l2.j {
+    public final /* synthetic */ u51 d;
 
-    public p51(r51 r51Var) {
-        ArrayList arrayList = new ArrayList();
-        this.d = arrayList;
-        this.a = r51Var.b;
-        this.b = r51Var.i;
-        this.c = r51Var.j;
-        arrayList.add(r51Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p51(Context context, u51 u51Var) {
+        super(context);
+        this.d = u51Var;
     }
 
-    public final r51 a() {
-        ArrayList arrayList = this.d;
-        r51 r51Var = null;
-        if (arrayList.isEmpty()) {
-            return null;
-        }
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            r51 r51Var2 = (r51) obj;
-            if (r51Var2.b()) {
-                return r51Var2;
+    /* JADX WARN: Type inference failed for: r3v2, types: [float[], java.io.Serializable] */
+    @Override // l2.j
+    public final n2.r0 a(Context context) {
+        fi.a4 a4Var = new fi.a4(context, 1);
+        oi.z5 z5Var = new oi.z5();
+        z5Var.f = this.d;
+        ci.b1 b1Var = new ci.b1();
+        b1Var.e = new float[0];
+        b1Var.a = 3;
+        b1Var.d = new float[513];
+        b1Var.b = new float[1024];
+        b1Var.c = new float[1024];
+        int[] iArr = new int[1024];
+        b1Var.f = iArr;
+        iArr[0] = 0;
+        int i7 = 512;
+        int i10 = 1;
+        while (i10 < 1024) {
+            for (int i11 = 0; i11 < i10; i11++) {
+                int[] iArr2 = (int[]) b1Var.f;
+                iArr2[i11 + i10] = iArr2[i11] + i7;
             }
+            i10 <<= 1;
+            i7 >>= 1;
         }
-        long j3 = Long.MAX_VALUE;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            r51 r51Var3 = (r51) arrayList.get(i10);
-            if (r51Var3.k < j3 && t51.D0(r51Var3.m)) {
-                j3 = r51Var3.k;
-                r51Var = r51Var3;
-            }
+        b1Var.g = new float[1024];
+        b1Var.h = new float[1024];
+        for (int i12 = 0; i12 < 1024; i12++) {
+            double d = (-3.1415927f) / i12;
+            ((float[]) b1Var.g)[i12] = (float) Math.sin(d);
+            ((float[]) b1Var.h)[i12] = (float) Math.cos(d);
         }
-        return r51Var != null ? r51Var : (r51) arrayList.get(0);
-    }
-
-    public final int b() {
-        int min = Math.min(this.b, this.c);
-        if (Math.abs(min - 2160) < 55) {
-            return 2160;
-        }
-        if (Math.abs(min - 1440) < 55) {
-            return 1440;
-        }
-        if (Math.abs(min - 1080) < 55) {
-            return 1080;
-        }
-        if (Math.abs(min - 720) < 55) {
-            return 720;
-        }
-        if (Math.abs(min - 480) < 55) {
-            return 480;
-        }
-        if (Math.abs(min - 360) < 55) {
-            return 360;
-        }
-        return Math.abs(min + (-240)) < 55 ? org.telegram.messenger.qs.P3 : Math.abs(min + (-144)) < 55 ? org.telegram.messenger.qs.a2 : min;
-    }
-
-    public final String toString() {
-        String str;
-        boolean z9 = org.telegram.messenger.iz.R0;
-        boolean z10 = this.a;
-        String str2 = "";
-        if (!z9) {
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(b());
-            sb2.append("p");
-            if (z10) {
-                str2 = " (" + org.telegram.messenger.id.M0(2131746450, null) + ")";
-            }
-            sb2.append(str2);
-            return sb2.toString();
-        }
-        StringBuilder sb3 = new StringBuilder();
-        sb3.append(this.b);
-        sb3.append("x");
-        sb3.append(this.c);
-        if (z10) {
-            str = " (" + org.telegram.messenger.id.M0(2131746450, null) + ")";
-        } else {
-            str = "";
-        }
-        sb3.append(str);
-        sb3.append("\n");
-        ArrayList arrayList = this.d;
-        sb3.append(org.telegram.messenger.g0.i0((long) ((r51) arrayList.get(0)).l, false, false).replace(" ", ""));
-        sb3.append("/s");
-        if (((r51) arrayList.get(0)).m != null) {
-            str2 = ", " + ((r51) arrayList.get(0)).m;
-        }
-        sb3.append(str2);
-        return sb3.toString();
+        z5Var.c = b1Var;
+        z5Var.d = new float[1024];
+        z5Var.a = 0;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(TLObject.FLAG_13);
+        z5Var.e = allocateDirect;
+        allocateDirect.position(0);
+        a4Var.d = new h6.m(new f2.m[]{new n2.y0(z5Var)});
+        return a4Var.a();
     }
 }

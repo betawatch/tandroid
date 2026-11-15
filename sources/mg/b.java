@@ -8,12 +8,11 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import m4.d0;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.ui.ActionBar.v4;
+import org.telegram.ui.ActionBar.s4;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class b {
     public long[] a;
@@ -88,7 +87,7 @@ public class b {
                 Matcher matcher = compile.matcher(optJSONObject.getString(aVar2.c));
                 if (matcher.matches()) {
                     if (!TextUtils.isEmpty(matcher.group(1))) {
-                        aVar2.g = v4.h("statisticChartLine_" + matcher.group(1).toLowerCase());
+                        aVar2.g = s4.h("statisticChartLine_" + matcher.group(1).toLowerCase());
                     }
                     int parseColor = Color.parseColor(matcher.group(2));
                     aVar2.h = parseColor;
@@ -206,7 +205,7 @@ public class b {
             if (((a) this.d.get(i10)).f < this.f) {
                 this.f = ((a) this.d.get(i10)).f;
             }
-            ((a) this.d.get(i10)).b = new d0(((a) this.d.get(i10)).a);
+            ((a) this.d.get(i10)).b = new k8.a(((a) this.d.get(i10)).a);
         }
         long j11 = this.k;
         this.c = new String[((int) ((j10 - j3) / j11)) + 10];

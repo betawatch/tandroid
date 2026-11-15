@@ -1,31 +1,12 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.graphics.ImageDecoder;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ss implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dt b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-
-    public /* synthetic */ ss(dt dtVar, long j3, long j10, int i7) {
-        this.a = i7;
-        this.b = dtVar;
-        this.c = j3;
-        this.d = j10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                dt dtVar = this.b;
-                dtVar.F = this.c;
-                dtVar.G = this.d;
-                break;
-            default:
-                this.b.o(this.c, this.d);
-                break;
-        }
+public final /* synthetic */ class ss implements ImageDecoder.OnHeaderDecodedListener {
+    @Override // android.graphics.ImageDecoder.OnHeaderDecodedListener
+    public final void onHeaderDecoded(ImageDecoder imageDecoder, ImageDecoder.ImageInfo imageInfo, ImageDecoder.Source source) {
+        imageDecoder.setPostProcessor(new ws());
     }
 }

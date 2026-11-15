@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.wearable.internal.DataItemAssetParcelable;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k extends r6.a {
     public static final Parcelable.Creator<k> CREATOR = new c(8);
@@ -56,8 +56,8 @@ public final class k extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.k(parcel, 2, this.a, i7);
+        int r10 = yb.r(parcel, 20293);
+        yb.k(parcel, 2, this.a, i7);
         Bundle bundle = new Bundle();
         ClassLoader classLoader = DataItemAssetParcelable.class.getClassLoader();
         q6.m.g(classLoader);
@@ -65,8 +65,8 @@ public final class k extends r6.a {
         for (Map.Entry entry : this.b.entrySet()) {
             bundle.putParcelable((String) entry.getKey(), new DataItemAssetParcelable((DataItemAssetParcelable) entry.getValue()));
         }
-        xb.b(parcel, 4, bundle);
-        xb.c(parcel, 5, this.c);
-        xb.s(parcel, r10);
+        yb.b(parcel, 4, bundle);
+        yb.c(parcel, 5, this.c);
+        yb.s(parcel, r10);
     }
 }

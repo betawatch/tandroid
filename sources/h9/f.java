@@ -6,15 +6,15 @@ import java.util.NavigableSet;
 import java.util.SortedMap;
 import java.util.SortedSet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f extends i implements NavigableSet {
-    public final /* synthetic */ l1 e;
+    public final /* synthetic */ k1 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(l1 l1Var, NavigableMap navigableMap) {
-        super(l1Var, navigableMap);
-        this.e = l1Var;
+    public f(k1 k1Var, NavigableMap navigableMap) {
+        super(k1Var, navigableMap);
+        this.e = k1Var;
     }
 
     @Override // java.util.NavigableSet
@@ -91,17 +91,17 @@ public final class f extends i implements NavigableSet {
     }
 
     @Override // java.util.NavigableSet
-    public final NavigableSet headSet(Object obj, boolean z9) {
-        return new f(this.e, f().headMap(obj, z9));
+    public final NavigableSet headSet(Object obj, boolean z10) {
+        return new f(this.e, f().headMap(obj, z10));
     }
 
     @Override // java.util.NavigableSet
-    public final NavigableSet subSet(Object obj, boolean z9, Object obj2, boolean z10) {
-        return new f(this.e, f().subMap(obj, z9, obj2, z10));
+    public final NavigableSet subSet(Object obj, boolean z10, Object obj2, boolean z11) {
+        return new f(this.e, f().subMap(obj, z10, obj2, z11));
     }
 
     @Override // java.util.NavigableSet
-    public final NavigableSet tailSet(Object obj, boolean z9) {
-        return new f(this.e, f().tailMap(obj, z9));
+    public final NavigableSet tailSet(Object obj, boolean z10) {
+        return new f(this.e, f().tailMap(obj, z10));
     }
 }

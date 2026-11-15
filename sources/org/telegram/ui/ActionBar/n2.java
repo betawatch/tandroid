@@ -1,272 +1,141 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.TextPaint;
-import android.view.MotionEvent;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import j$.util.Objects;
-import org.telegram.messenger.id;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.i00;
-import org.telegram.ui.Components.i21;
-import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.Wallet.o9;
-import org.telegram.ui.c31;
-import org.telegram.ui.jc1;
-import org.telegram.ui.os;
-import org.telegram.ui.sb1;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import c8.ja;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class n2 extends TextView {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class n2 extends FrameLayout {
+    public final org.telegram.ui.Components.o5 a;
+    public final ImageView b;
+    public final ImageView c;
+    public final int d;
+    public boolean e;
+    public boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n2(int i7, Context context, Object obj) {
+    public n2(int i7, Context context, e6 e6Var) {
         super(context);
-        this.a = i7;
-        this.b = obj;
+        this.f = false;
+        this.d = i7;
+        if (i7 != 4) {
+            setBackgroundDrawable(j6.M0(e6Var, false));
+        }
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        q6.s(imageView, j6.J5, e6Var, PorterDuff.Mode.MULTIPLY);
+        addView(imageView, ja.e(56, 48, (hd.a0 ? 5 : 3) | 16));
+        ImageView imageView2 = new ImageView(context);
+        this.c = imageView2;
+        imageView2.setScaleType(scaleType);
+        q6.s(imageView2, j6.h7, e6Var, PorterDuff.Mode.SRC_IN);
+        addView(imageView2, ja.e(56, 48, (hd.a0 ? 3 : 5) | 16));
+        org.telegram.ui.Components.o5 o5Var = new org.telegram.ui.Components.o5(context);
+        this.a = o5Var;
+        o5Var.setLines(1);
+        o5Var.setSingleLine(true);
+        o5Var.setGravity(1);
+        o5Var.setEllipsize(TextUtils.TruncateAt.END);
+        if (i7 == 0 || i7 == 4) {
+            q6.U(o5Var, j6.j5, e6Var);
+            o5Var.setTextSize(1, 16.0f);
+            addView(o5Var, ja.e(-2, -2, (hd.a0 ? 5 : 3) | 16));
+            return;
+        }
+        if (i7 == 1) {
+            o5Var.setGravity(17);
+            q6.U(o5Var, j6.j5, e6Var);
+            o5Var.setTextSize(1, 14.0f);
+            o5Var.setTypeface(org.telegram.messenger.g0.o());
+            addView(o5Var, ja.c(-1.0f, -1));
+            return;
+        }
+        if (i7 == 2) {
+            o5Var.setGravity(17);
+            q6.U(o5Var, j6.Ji, e6Var);
+            o5Var.setTextSize(1, 14.0f);
+            o5Var.setTypeface(org.telegram.messenger.g0.o());
+            o5Var.setBackground(y5.e(j6.w0(j6.Fi, e6Var), 6.0f));
+            addView(o5Var, ja.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
+        }
     }
 
-    public void b(int i7) {
-        FragmentContextView fragmentContextView = (FragmentContextView) this.b;
-        if (fragmentContextView.N != i7) {
-            i00 i00Var = fragmentContextView.d;
-            i00Var.setPadding(i00Var.getPaddingLeft(), fragmentContextView.d.getPaddingTop(), (fragmentContextView.d.getPaddingRight() - fragmentContextView.N) + i7, fragmentContextView.d.getPaddingBottom());
-            fragmentContextView.N = i7;
+    public final void a(CharSequence charSequence, int i7, Drawable drawable, boolean z10) {
+        org.telegram.ui.Components.o5 o5Var = this.a;
+        o5Var.setText(charSequence);
+        ImageView imageView = this.b;
+        if (i7 == 0 && drawable == null) {
+            imageView.setVisibility(4);
+            o5Var.setPadding(org.telegram.messenger.g0.L(z10 ? 21.0f : 16.0f), 0, org.telegram.messenger.g0.L(z10 ? 21.0f : 16.0f), 0);
+            return;
         }
+        if (drawable != null) {
+            imageView.setImageDrawable(drawable);
+        } else {
+            imageView.setImageResource(i7);
+        }
+        imageView.setVisibility(0);
+        if (z10) {
+            o5Var.setPadding(org.telegram.messenger.g0.L(hd.a0 ? 21.0f : 72.0f), 0, org.telegram.messenger.g0.L(hd.a0 ? 72.0f : 21.0f), 0);
+            imageView.setPadding(hd.a0 ? 0 : org.telegram.messenger.g0.L(5.0f), 0, hd.a0 ? org.telegram.messenger.g0.L(5.0f) : 5, 0);
+        } else {
+            o5Var.setPadding(org.telegram.messenger.g0.L(hd.a0 ? 16.0f : 72.0f), 0, org.telegram.messenger.g0.L(hd.a0 ? 72.0f : 16.0f), 0);
+            imageView.setPadding(0, 0, 0, 0);
+        }
+    }
+
+    public ImageView getImageView() {
+        return this.b;
+    }
+
+    public org.telegram.ui.Components.o5 getTextView() {
+        return this.a;
     }
 
     @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.a) {
-            case 2:
-                super.draw(canvas);
-                int L = org.telegram.messenger.g0.L(1.0f);
-                RectF rectF = org.telegram.messenger.g0.P;
-                float f10 = L;
-                rectF.set(f10, f10, getWidth() - L, getHeight() - L);
-                ((FragmentContextView) this.b).O.a(org.telegram.messenger.g0.L(16.0f), canvas, rectF, this);
-                break;
-            case 6:
-                super.draw(canvas);
-                c31 c31Var = (c31) this.b;
-                org.telegram.ui.Components.voip.n nVar = c31Var.c;
-                if (nVar.g <= 1.0f) {
-                    SessionsActivity sessionsActivity = c31Var.f;
-                    if (sessionsActivity.V && sessionsActivity.W) {
-                        RectF rectF2 = org.telegram.messenger.g0.P;
-                        rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
-                        nVar.f = getMeasuredWidth();
-                        nVar.a(org.telegram.messenger.g0.L(8.0f), canvas, rectF2, null);
-                        invalidate();
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.draw(canvas);
-                break;
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (this.f) {
+            accessibilityNodeInfo.setSelected(true);
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.a) {
-            case 5:
-                super.onAttachedToWindow();
-                qs.e().c((os) this.b, qs.i4);
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11 = this.d;
+        int i12 = i11 == 2 ? 80 : 48;
+        if (i11 == 0) {
+            i7 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30);
         }
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(i12), TLObject.FLAG_30));
     }
 
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.a) {
-            case 5:
-                super.onDetachedFromWindow();
-                qs.e().n((os) this.b, qs.i4);
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
-        }
+    public void setChecked(boolean z10) {
+        this.e = z10;
+        this.c.setImageResource(z10 ? R.drawable.checkbig : 0);
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.onDraw(canvas);
-                if (((org.telegram.ui.Components.voip.n) this.b) == null) {
-                    org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n();
-                    this.b = nVar;
-                    nVar.k = false;
-                    nVar.m = 2.0f;
-                }
-                ((org.telegram.ui.Components.voip.n) this.b).f = getMeasuredWidth();
-                RectF rectF = org.telegram.messenger.g0.P;
-                rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                ((org.telegram.ui.Components.voip.n) this.b).a(org.telegram.messenger.g0.L(22.0f), canvas, rectF, null);
-                invalidate();
-                break;
-            case 7:
-                super.onDraw(canvas);
-                Paint paint = (Paint) this.b;
-                paint.setColor(getCurrentTextColor());
-                RectF rectF2 = org.telegram.messenger.g0.P;
-                rectF2.set(org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f), getMeasuredWidth() - org.telegram.messenger.g0.L(1.0f), getMeasuredHeight() - org.telegram.messenger.g0.L(1.0f));
-                canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
-                break;
-            case 9:
-                org.telegram.ui.Wallet.i6 i6Var = (org.telegram.ui.Wallet.i6) this.b;
-                float e10 = i6Var.g0.e(false, i6Var.e0);
-                TextPaint paint2 = getPaint();
-                Objects.requireNonNull(paint2);
-                i6Var.c(e10, new org.telegram.ui.Wallet.c3(paint2, 3), new sb1(15, this, canvas));
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
+    public void setGravity(int i7) {
+        this.a.setGravity(i7);
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 8:
-                super.onLayout(z9, i7, i10, i11, i12);
-                if (z9) {
-                    ((jc1) this.b).y();
-                    break;
-                }
-                break;
-            default:
-                super.onLayout(z9, i7, i10, i11, i12);
-                break;
-        }
+    public void setIconColor(int i7) {
+        this.b.setColorFilter(new PorterDuffColorFilter(i7, PorterDuff.Mode.MULTIPLY));
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i7, i10);
-                w2 w2Var = (w2) this.b;
-                if (w2Var.Q) {
-                    int measuredHeight = getMeasuredHeight();
-                    ViewGroup viewGroup = w2Var.N;
-                    if (viewGroup != null) {
-                        ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).topMargin = measuredHeight;
-                        break;
-                    } else if (w2Var.b != null) {
-                        for (int i11 = 1; i11 < w2Var.b.getChildCount(); i11++) {
-                            View childAt = w2Var.b.getChildAt(i11);
-                            if (childAt instanceof p2) {
-                                ((ViewGroup.MarginLayoutParams) childAt.getLayoutParams()).topMargin = measuredHeight;
-                                measuredHeight = org.telegram.messenger.g0.L(48.0f) + measuredHeight;
-                            }
-                        }
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                super.onMeasure(i7, i10);
-                b(getMeasuredWidth());
-                break;
-            case 3:
-                super.onMeasure(i7, i10);
-                if (id.a0) {
-                    ((i21) this.b).b.setPivotX(getMeasuredWidth());
-                    break;
-                }
-                break;
-            case 10:
-                super.onMeasure(i7, i10);
-                setMeasuredDimension(getMeasuredWidth(), Math.round(getMeasuredHeight() * ((o9) this.b).X));
-                break;
-            case 11:
-                super.onMeasure(i7, i10);
-                ((org.telegram.ui.web.n1) this.b).c.setPivotY(getMeasuredHeight() / 2.0f);
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onSizeChanged(int i7, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 2:
-                super.onSizeChanged(i7, i10, i11, i12);
-                ((FragmentContextView) this.b).O.f = getWidth();
-                break;
-            default:
-                super.onSizeChanged(i7, i10, i11, i12);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 4:
-                if (Math.abs(((org.telegram.ui.Components.voip.y) this.b).N.getAlpha() - 1.0f) <= 0.001f) {
-                    break;
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i7) {
-        switch (this.a) {
-            case 2:
-                super.setVisibility(i7);
-                if (i7 != 0) {
-                    b(0);
-                    ((FragmentContextView) this.b).N = 0;
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i7);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(Activity activity, Paint paint) {
-        super(activity);
-        this.a = 7;
-        this.b = paint;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(Context context, int i7) {
-        super(context);
-        this.a = i7;
-        switch (i7) {
-            case 5:
-                super(context);
-                this.b = new os(1, this);
-                break;
-            default:
-                break;
-        }
+    public void setTextColor(int i7) {
+        this.a.setTextColor(i7);
     }
 }

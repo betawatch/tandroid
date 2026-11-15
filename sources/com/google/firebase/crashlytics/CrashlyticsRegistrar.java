@@ -1,6 +1,6 @@
 package com.google.firebase.crashlytics;
 
-import a8.h8;
+import a8.i8;
 import android.util.Log;
 import com.google.firebase.components.ComponentRegistrar;
 import e2.j0;
@@ -14,17 +14,17 @@ import o9.g;
 import q9.a;
 import q9.b;
 import q9.c;
-import u5.e;
-import u9.j;
-import u9.r;
+import tg.a2;
+import u9.i;
+import u9.q;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int d = 0;
-    public final r a = new r(a.class, ExecutorService.class);
-    public final r b = new r(b.class, ExecutorService.class);
-    public final r c = new r(c.class, ExecutorService.class);
+    public final q a = new q(a.class, ExecutorService.class);
+    public final q b = new q(b.class, ExecutorService.class);
+    public final q c = new q(c.class, ExecutorService.class);
 
     static {
         d dVar = d.a;
@@ -36,23 +36,23 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
         map.put(dVar, new hb.a(new CountDownLatch(1)));
         StringBuilder sb2 = new StringBuilder("Dependency to ");
         sb2.append(dVar);
-        rf.b.p(sb2, " added.", "FirebaseSessions");
+        r.b.t(sb2, " added.", "FirebaseSessions");
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
         j0 a10 = u9.a.a(w9.b.class);
         a10.d = "fire-cls";
-        a10.a(j.a(g.class));
-        a10.a(j.a(va.d.class));
-        a10.a(new j(this.a, 1, 0));
-        a10.a(new j(this.b, 1, 0));
-        a10.a(new j(this.c, 1, 0));
-        a10.a(new j(0, 2, x9.a.class));
-        a10.a(new j(0, 2, p9.a.class));
-        a10.a(new j(0, 2, fb.a.class));
-        a10.f = new e(this, 3);
+        a10.a(i.a(g.class));
+        a10.a(i.a(va.d.class));
+        a10.a(new i(this.a, 1, 0));
+        a10.a(new i(this.b, 1, 0));
+        a10.a(new i(this.c, 1, 0));
+        a10.a(new i(0, 2, x9.a.class));
+        a10.a(new i(0, 2, p9.a.class));
+        a10.a(new i(0, 2, fb.a.class));
+        a10.f = new a2(this, 7);
         a10.c(2);
-        return Arrays.asList(a10.b(), h8.a("fire-cls", "20.1.1"));
+        return Arrays.asList(a10.b(), i8.a("fire-cls", "20.1.1"));
     }
 }

@@ -1,737 +1,262 @@
 package fi;
 
-import android.graphics.PointF;
-import android.text.SpannableString;
-import android.text.TextUtils;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.hf;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.ye;
-import org.telegram.tgnet.NativeByteBuffer;
+import j$.util.Objects;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.Components.qd0;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class y0 {
-    public final long A;
-    public final ArrayList B;
-    public final List C;
-    public final String D;
-    public final hf E;
-    public final int F;
-    public boolean G;
-    public int H;
-    public long I;
-    public long J;
-    public long K;
-    public long L;
-    public final boolean M;
-    public final TLRPC.TL_error N;
-    public final String O;
-    public final TLRPC.InputDocument P;
-    public final String Q;
-    public final String R;
-    public final long S;
-    public final long T;
-    public final float U;
-    public final float V;
-    public final float W;
-    public final String X;
-    public final String Y;
-    public final long Z;
-    public long a;
-    public final long a0;
-    public final long b;
-    public final float b0;
-    public final String c;
-    public final float c0;
-    public final String d;
-    public final float d0;
-    public final boolean e;
-    public final float e0;
-    public final String f;
-    public final TLRPC.InputPeer f0;
-    public final boolean g;
-    public final long g0;
-    public final boolean h;
-    public final String h0;
-    public final long i;
-    public final TLRPC.InputMedia i0;
-    public final long j;
-    public final t j0;
-    public final int k;
-    public final ArrayList k0;
-    public final int l;
-    public final int m;
-    public final int n;
-    public final ye o;
-    public final int p;
-    public final int q;
-    public final long r;
-    public final float[] s;
-    public final int t;
-    public final int u;
-    public final String v;
-    public final ArrayList w;
-    public final ArrayList x;
-    public final String y;
-    public final String z;
+public final /* synthetic */ class y0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e1 b;
 
-    public y0(e7 e7Var) {
-        float[] fArr = new float[9];
-        this.s = fArr;
-        ArrayList arrayList = new ArrayList();
-        this.x = arrayList;
-        this.V = 1.0f;
-        this.W = 1.0f;
-        this.d0 = 1.0f;
-        this.e0 = 1.0f;
-        this.a = e7Var.b;
-        this.b = e7Var.d;
-        File file = e7Var.O0;
-        this.c = file == null ? "" : file.toString();
-        File file2 = e7Var.N0;
-        this.d = file2 == null ? "" : file2.toString();
-        this.e = e7Var.K;
-        File file3 = e7Var.L;
-        this.f = file3 == null ? "" : file3.toString();
-        this.g = e7Var.M;
-        this.h = e7Var.Y;
-        float f10 = e7Var.Z;
-        long j3 = e7Var.h0;
-        this.i = (long) (f10 * j3);
-        this.j = (long) (e7Var.a0 * j3);
-        this.k = e7Var.Q;
-        this.l = e7Var.R;
-        this.m = e7Var.k0;
-        this.n = e7Var.l0;
-        this.o = e7Var.m0;
-        this.p = e7Var.i0;
-        this.q = e7Var.j0;
-        this.r = j3;
-        e7Var.n0.getValues(fArr);
-        this.t = e7Var.A0;
-        this.u = e7Var.B0;
-        CharSequence[] charSequenceArr = {e7Var.C0};
-        this.w = e7Var.D0 ? ui.b0(e7Var.a).W(charSequenceArr, true, true) : null;
-        CharSequence charSequence = charSequenceArr[0];
-        this.v = charSequence == null ? "" : charSequence.toString();
-        arrayList.addAll(e7Var.F0);
-        File file4 = e7Var.P0;
-        this.y = file4 == null ? "" : file4.toString();
-        File file5 = e7Var.R0;
-        this.z = file5 == null ? "" : file5.toString();
-        this.A = e7Var.S0;
-        this.B = e7Var.T0;
-        this.C = e7Var.U0;
-        File file6 = e7Var.Z0;
-        this.D = file6 != null ? file6.toString() : "";
-        this.E = e7Var.a1;
-        this.F = e7Var.I0;
-        this.M = e7Var.w;
-        this.N = e7Var.x;
-        this.O = e7Var.y;
-        this.P = e7Var.z;
-        this.Q = e7Var.A;
-        this.R = e7Var.B;
-        this.S = e7Var.C;
-        this.T = e7Var.D;
-        this.U = e7Var.E;
-        this.V = e7Var.F;
-        this.W = e7Var.G;
-        File file7 = e7Var.o0;
-        this.X = file7 != null ? file7.getAbsolutePath() : null;
-        this.Y = e7Var.p0;
-        this.Z = e7Var.q0;
-        this.a0 = e7Var.r0;
-        this.b0 = e7Var.s0;
-        this.c0 = e7Var.t0;
-        this.d0 = e7Var.u0;
-        this.e0 = e7Var.P;
-        this.f0 = e7Var.v0;
-        this.g0 = e7Var.J0;
-        this.h0 = e7Var.K0;
-        this.i0 = e7Var.L0;
-        this.j0 = e7Var.S;
-        this.k0 = i20.a(e7Var);
+    public /* synthetic */ y0(e1 e1Var, int i7) {
+        this.a = i7;
+        this.b = e1Var;
     }
 
-    public final e7 a() {
-        e7 e7Var = new e7();
-        e7Var.b = this.a;
-        e7Var.c = true;
-        e7Var.d = this.b;
-        String str = this.c;
-        if (!TextUtils.isEmpty(str)) {
-            e7Var.O0 = new File(str);
-        }
-        String str2 = this.d;
-        if (!TextUtils.isEmpty(str2)) {
-            e7Var.N0 = new File(str2);
-        }
-        e7Var.K = this.e;
-        String str3 = this.f;
-        if (str3 != null) {
-            e7Var.L = new File(str3);
-        }
-        e7Var.M = this.g;
-        e7Var.Y = this.h;
-        long j3 = this.r;
-        e7Var.h0 = j3;
-        if (j3 > 0) {
-            e7Var.Z = this.i / j3;
-            e7Var.a0 = this.j / j3;
-        } else {
-            e7Var.Z = 0.0f;
-            e7Var.a0 = 1.0f;
-        }
-        e7Var.Q = this.k;
-        e7Var.R = this.l;
-        e7Var.k0 = this.m;
-        e7Var.l0 = this.n;
-        e7Var.m0 = this.o;
-        e7Var.i0 = this.p;
-        e7Var.j0 = this.q;
-        e7Var.n0.setValues(this.s);
-        e7Var.A0 = this.t;
-        e7Var.B0 = this.u;
-        ArrayList arrayList = null;
-        String str4 = this.v;
-        int i7 = 0;
-        if (str4 != null) {
-            SpannableString spannableString = new SpannableString(str4);
-            if (org.telegram.ui.ActionBar.m6.o2 == null) {
-                org.telegram.ui.ActionBar.m6.Q();
-            }
-            CharSequence m10 = org.telegram.messenger.i6.m(spannableString, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), true, null, 0);
-            ij.b(m10, this.w, true, false, true, false, 0);
-            e7Var.C0 = ij.B5(m10, this.w, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false);
-        } else {
-            e7Var.C0 = "";
-        }
-        ArrayList arrayList2 = e7Var.F0;
-        arrayList2.clear();
-        arrayList2.addAll(this.x);
-        String str5 = this.y;
-        if (str5 != null) {
-            e7Var.P0 = new File(str5);
-        }
-        String str6 = this.z;
-        if (str6 != null) {
-            e7Var.R0 = new File(str6);
-        }
-        e7Var.S0 = this.A;
-        e7Var.T0 = this.B;
-        e7Var.U0 = this.C;
-        String str7 = this.D;
-        if (str7 != null) {
-            e7Var.Z0 = new File(str7);
-        }
-        e7Var.a1 = this.E;
-        e7Var.I0 = this.F;
-        e7Var.g = this.G;
-        e7Var.f = this.H;
-        e7Var.e = this.I;
-        e7Var.J = this.L;
-        e7Var.I = this.K;
-        e7Var.H = this.J;
-        e7Var.w = this.M;
-        e7Var.x = this.N;
-        e7Var.y = this.O;
-        e7Var.z = this.P;
-        e7Var.A = this.Q;
-        e7Var.B = this.R;
-        e7Var.C = this.S;
-        e7Var.D = this.T;
-        e7Var.E = this.U;
-        e7Var.F = this.V;
-        e7Var.G = this.W;
-        String str8 = this.X;
-        if (str8 != null) {
-            e7Var.o0 = new File(str8);
-        }
-        e7Var.p0 = this.Y;
-        e7Var.q0 = this.Z;
-        e7Var.r0 = this.a0;
-        e7Var.s0 = this.b0;
-        e7Var.t0 = this.c0;
-        e7Var.u0 = this.d0;
-        e7Var.P = this.e0;
-        e7Var.v0 = this.f0;
-        e7Var.J0 = this.g0;
-        e7Var.K0 = this.h0;
-        e7Var.L0 = this.i0;
-        e7Var.S = this.j0;
-        int i10 = i20.C;
-        ArrayList arrayList3 = this.k0;
-        if (arrayList3 != null) {
-            arrayList = new ArrayList();
-            int size = arrayList3.size();
-            while (i7 < size) {
-                Object obj = arrayList3.get(i7);
-                i7++;
-                i20 i20Var = (i20) obj;
-                e7 e7Var2 = new e7();
-                e7Var2.K = i20Var.b;
-                e7Var2.Y = i20Var.c;
-                e7Var2.L = new File(i20Var.d);
-                e7Var2.P = i20Var.e;
-                e7Var2.U = i20Var.i;
-                e7Var2.X = i20Var.f;
-                e7Var2.V = i20Var.j;
-                e7Var2.W = i20Var.k;
-                e7Var2.k0 = i20Var.l;
-                e7Var2.l0 = i20Var.m;
-                e7Var2.h0 = i20Var.o;
-                arrayList.add(e7Var2);
-            }
-        }
-        e7Var.T = arrayList;
-        return e7Var;
-    }
-
-    public final void b(NativeByteBuffer nativeByteBuffer) {
-        ArrayList arrayList;
-        nativeByteBuffer.writeInt32(-1318387531);
-        nativeByteBuffer.writeInt64(this.b);
-        nativeByteBuffer.writeString(this.c);
-        nativeByteBuffer.writeBool(this.e);
-        nativeByteBuffer.writeString(this.f);
-        nativeByteBuffer.writeBool(this.g);
-        nativeByteBuffer.writeBool(this.h);
-        nativeByteBuffer.writeInt64(this.i);
-        nativeByteBuffer.writeInt64(this.j);
-        nativeByteBuffer.writeInt32(this.k);
-        nativeByteBuffer.writeInt32(this.l);
-        nativeByteBuffer.writeInt32(this.m);
-        nativeByteBuffer.writeInt32(this.n);
-        nativeByteBuffer.writeInt32(this.p);
-        nativeByteBuffer.writeInt32(this.q);
-        nativeByteBuffer.writeInt64(this.r);
-        int i7 = 0;
-        int i10 = 0;
-        while (true) {
-            float[] fArr = this.s;
-            if (i10 >= fArr.length) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo;
+        switch (this.a) {
+            case 0:
+                final int i7 = 0;
+                final e1 e1Var = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: fi.z0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i7) {
+                            case 0:
+                                e1 e1Var2 = e1Var;
+                                TLObject tLObject2 = tLObject;
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                int i10 = e1Var2.e;
+                                if (!e1Var2.x) {
+                                    if (tLObject2 instanceof TL_phone.groupCall) {
+                                        TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject2;
+                                        np.s1(i10).Y3(groupcall.users, false);
+                                        np.s1(i10).S3(groupcall.chats, false);
+                                        e1Var2.w = groupcall.call;
+                                        ns.f(i10).k(ns.G2, Long.valueOf(e1Var2.w.id));
+                                    } else if (tL_error2 != null && "GROUPCALL_INVALID".equalsIgnoreCase(tL_error2.text)) {
+                                        org.telegram.messenger.g0.h3(new x0(e1Var2, 4));
+                                    }
+                                    if (e1Var2.Q) {
+                                        Runnable runnable = e1Var2.S;
+                                        if (runnable != null) {
+                                            org.telegram.messenger.g0.r(runnable);
+                                        }
+                                        x0 x0Var = new x0(e1Var2, 11);
+                                        e1Var2.S = x0Var;
+                                        org.telegram.messenger.g0.i3(x0Var, e1Var2.l() ? 5000 : 20000);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                e1 e1Var3 = e1Var;
+                                TLObject tLObject3 = tLObject;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (!e1Var3.x) {
+                                    if (tLObject3 instanceof Vector) {
+                                        if (!((Vector) tLObject3).toIntArray().contains(Integer.valueOf(e1Var3.L))) {
+                                            if (e1Var3.F != null) {
+                                                org.telegram.messenger.p5 p5Var = Utilities.e;
+                                                NativeInstance nativeInstance = e1Var3.F;
+                                                Objects.requireNonNull(nativeInstance);
+                                                p5Var.c(new org.telegram.messenger.voip.q0(nativeInstance, 3));
+                                                e1Var3.N.clear();
+                                                e1Var3.F = null;
+                                            }
+                                            e1Var3.k();
+                                        }
+                                    } else if (tLObject3 instanceof TL_phone.groupCall) {
+                                        TL_phone.groupCall groupcall2 = (TL_phone.groupCall) tLObject3;
+                                        np.s1(e1Var3.e).Y3(groupcall2.users, false);
+                                        np.s1(e1Var3.e).S3(groupcall2.chats, false);
+                                        e1Var3.w = groupcall2.call;
+                                        ns.f(e1Var3.e).k(ns.G2, Long.valueOf(e1Var3.w.id));
+                                    } else if (tL_error3 != null) {
+                                        if ("GROUPCALL_JOIN_MISSING".equals(tL_error3.text)) {
+                                            org.telegram.messenger.a8.b("[LivePlayer] received GROUPCALL_JOIN_MISSING on checkGroupCall => rejoining");
+                                            org.telegram.messenger.g0.h3(new x0(e1Var3, 9));
+                                        } else if ("GROUPCALL_INVALID".equalsIgnoreCase(tL_error3.text)) {
+                                            org.telegram.messenger.g0.h3(new x0(e1Var3, 4));
+                                        }
+                                    }
+                                    if (e1Var3.Q) {
+                                        Runnable runnable2 = e1Var3.R;
+                                        if (runnable2 != null) {
+                                            org.telegram.messenger.g0.r(runnable2);
+                                        }
+                                        x0 x0Var2 = new x0(e1Var3, 10);
+                                        e1Var3.R = x0Var2;
+                                        org.telegram.messenger.g0.i3(x0Var2, 4000L);
+                                        break;
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
-            }
-            nativeByteBuffer.writeFloat(fArr[i10]);
-            i10++;
-        }
-        nativeByteBuffer.writeInt32(this.t);
-        nativeByteBuffer.writeInt32(this.u);
-        nativeByteBuffer.writeString(this.v);
-        nativeByteBuffer.writeInt32(Vector.constructor);
-        ArrayList arrayList2 = this.w;
-        nativeByteBuffer.writeInt32(arrayList2 == null ? 0 : arrayList2.size());
-        if (arrayList2 != null) {
-            for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                ((TLRPC.MessageEntity) arrayList2.get(i11)).serializeToStream(nativeByteBuffer);
-            }
-        }
-        nativeByteBuffer.writeInt32(Vector.constructor);
-        ArrayList arrayList3 = this.x;
-        nativeByteBuffer.writeInt32(arrayList3 == null ? 0 : arrayList3.size());
-        if (arrayList3 != null) {
-            for (int i12 = 0; i12 < arrayList3.size(); i12++) {
-                ((TLRPC.InputPrivacyRule) arrayList3.get(i12)).serializeToStream(nativeByteBuffer);
-            }
-        }
-        nativeByteBuffer.writeBool(false);
-        nativeByteBuffer.writeString(this.y);
-        nativeByteBuffer.writeInt64(this.A);
-        nativeByteBuffer.writeInt32(Vector.constructor);
-        ArrayList arrayList4 = this.B;
-        nativeByteBuffer.writeInt32(arrayList4 == null ? 0 : arrayList4.size());
-        if (arrayList4 != null) {
-            for (int i13 = 0; i13 < arrayList4.size(); i13++) {
-                ((h20) arrayList4.get(i13)).b(nativeByteBuffer, true);
-            }
-        }
-        nativeByteBuffer.writeInt32(Vector.constructor);
-        List list = this.C;
-        nativeByteBuffer.writeInt32(list == null ? 0 : list.size());
-        if (list != null) {
-            for (int i14 = 0; i14 < list.size(); i14++) {
-                ((TLRPC.InputDocument) list.get(i14)).serializeToStream(nativeByteBuffer);
-            }
-        }
-        String str = this.D;
-        if (str == null) {
-            str = "";
-        }
-        nativeByteBuffer.writeString(str);
-        hf hfVar = this.E;
-        if (hfVar == null) {
-            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
-        } else {
-            nativeByteBuffer.writeInt32(-1318387530);
-            nativeByteBuffer.writeFloat(hfVar.a);
-            nativeByteBuffer.writeFloat(hfVar.b);
-            nativeByteBuffer.writeFloat(hfVar.c);
-            nativeByteBuffer.writeFloat(hfVar.d);
-            nativeByteBuffer.writeFloat(hfVar.e);
-            nativeByteBuffer.writeFloat(hfVar.f);
-            nativeByteBuffer.writeFloat(hfVar.g);
-            nativeByteBuffer.writeInt32(hfVar.h);
-            nativeByteBuffer.writeInt32(hfVar.i);
-            nativeByteBuffer.writeFloat(hfVar.j);
-            nativeByteBuffer.writeFloat(hfVar.k);
-            nativeByteBuffer.writeFloat(hfVar.l);
-            nativeByteBuffer.writeFloat(hfVar.m);
-            nativeByteBuffer.writeInt32(hfVar.n);
-            nativeByteBuffer.writeFloat(hfVar.o);
-            h2.c cVar = hfVar.p;
-            ((qd0) cVar.b).d(nativeByteBuffer);
-            ((qd0) cVar.c).d(nativeByteBuffer);
-            ((qd0) cVar.d).d(nativeByteBuffer);
-            ((qd0) cVar.e).d(nativeByteBuffer);
-            nativeByteBuffer.writeFloat(hfVar.q);
-            if (hfVar.r == null) {
-                nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
-            } else {
-                nativeByteBuffer.writeInt32(-559038737);
-                nativeByteBuffer.writeFloat(hfVar.r.x);
-                nativeByteBuffer.writeFloat(hfVar.r.y);
-            }
-            nativeByteBuffer.writeFloat(hfVar.s);
-            nativeByteBuffer.writeFloat(hfVar.t);
-        }
-        nativeByteBuffer.writeInt32(this.F);
-        nativeByteBuffer.writeInt32(Vector.constructor);
-        nativeByteBuffer.writeInt32(0);
-        nativeByteBuffer.writeBool(this.G);
-        nativeByteBuffer.writeInt32(this.H);
-        nativeByteBuffer.writeInt64(this.I);
-        nativeByteBuffer.writeInt64(this.L);
-        nativeByteBuffer.writeInt64(this.K);
-        nativeByteBuffer.writeInt64(this.J);
-        nativeByteBuffer.writeString(this.z);
-        nativeByteBuffer.writeBool(this.M);
-        TLRPC.TL_error tL_error = this.N;
-        if (tL_error == null) {
-            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
-        } else {
-            tL_error.serializeToStream(nativeByteBuffer);
-        }
-        nativeByteBuffer.writeString(this.d);
-        String str2 = this.O;
-        if (str2 == null) {
-            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
-        } else {
-            nativeByteBuffer.writeInt32(TLRPC.TL_documentAttributeAudio.constructor);
-            nativeByteBuffer.writeString(str2);
-            String str3 = this.Q;
-            if (str3 == null) {
-                nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
-            } else {
-                nativeByteBuffer.writeInt32(TLRPC.TL_jsonString.constructor);
-                nativeByteBuffer.writeString(str3);
-            }
-            String str4 = this.R;
-            if (str4 == null) {
-                nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
-            } else {
-                nativeByteBuffer.writeInt32(TLRPC.TL_jsonString.constructor);
-                nativeByteBuffer.writeString(str4);
-            }
-            nativeByteBuffer.writeInt64(this.S);
-            nativeByteBuffer.writeInt64(this.T);
-            nativeByteBuffer.writeFloat(this.U);
-            nativeByteBuffer.writeFloat(this.V);
-            nativeByteBuffer.writeFloat(this.W);
-        }
-        TLRPC.InputPeer inputPeer = this.f0;
-        if (inputPeer != null) {
-            inputPeer.serializeToStream(nativeByteBuffer);
-        } else {
-            new TLRPC.TL_inputPeerSelf().serializeToStream(nativeByteBuffer);
-        }
-        String str5 = this.X;
-        if (TextUtils.isEmpty(str5)) {
-            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
-        } else {
-            nativeByteBuffer.writeInt32(TLRPC.TL_documentAttributeVideo.constructor);
-            nativeByteBuffer.writeString(str5);
-            nativeByteBuffer.writeInt64(this.Z);
-            nativeByteBuffer.writeInt64(this.a0);
-            nativeByteBuffer.writeFloat(this.b0);
-            nativeByteBuffer.writeFloat(this.c0);
-            nativeByteBuffer.writeFloat(this.d0);
-        }
-        nativeByteBuffer.writeFloat(this.e0);
-        nativeByteBuffer.writeInt64(this.g0);
-        String str6 = this.h0;
-        nativeByteBuffer.writeString(str6 != null ? str6 : "");
-        TLRPC.InputMedia inputMedia = this.i0;
-        if (inputMedia == null) {
-            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
-        } else {
-            inputMedia.serializeToStream(nativeByteBuffer);
-        }
-        t tVar = this.j0;
-        if (tVar == null || tVar.e.size() <= 1 || (arrayList = this.k0) == null || arrayList.size() <= 1) {
-            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
-        } else {
-            nativeByteBuffer.writeInt32(-559038737);
-            nativeByteBuffer.writeString(tVar.a);
-            int size = arrayList.size();
-            while (i7 < size) {
-                Object obj = arrayList.get(i7);
-                i7++;
-                ((i20) obj).serializeToStream(nativeByteBuffer);
-            }
-        }
-        ye yeVar = this.o;
-        if (yeVar == null) {
-            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
-        } else {
-            yeVar.serializeToStream(nativeByteBuffer);
-        }
-        TLRPC.InputDocument inputDocument = this.P;
-        if (inputDocument == null) {
-            nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
-        } else {
-            inputDocument.serializeToStream(nativeByteBuffer);
-        }
-    }
-
-    public y0(NativeByteBuffer nativeByteBuffer) {
-        int readInt32;
-        this.s = new float[9];
-        this.x = new ArrayList();
-        this.V = 1.0f;
-        this.W = 1.0f;
-        this.d0 = 1.0f;
-        this.e0 = 1.0f;
-        if (nativeByteBuffer.readInt32(true) == -1318387531) {
-            this.b = nativeByteBuffer.readInt64(true);
-            String readString = nativeByteBuffer.readString(true);
-            this.c = readString;
-            if (readString != null && readString.length() == 0) {
-                this.c = null;
-            }
-            this.e = nativeByteBuffer.readBool(true);
-            String readString2 = nativeByteBuffer.readString(true);
-            this.f = readString2;
-            if (readString2 != null && readString2.length() == 0) {
-                this.f = null;
-            }
-            this.g = nativeByteBuffer.readBool(true);
-            this.h = nativeByteBuffer.readBool(true);
-            this.i = nativeByteBuffer.readInt64(true);
-            this.j = nativeByteBuffer.readInt64(true);
-            this.k = nativeByteBuffer.readInt32(true);
-            this.l = nativeByteBuffer.readInt32(true);
-            this.m = nativeByteBuffer.readInt32(true);
-            this.n = nativeByteBuffer.readInt32(true);
-            this.p = nativeByteBuffer.readInt32(true);
-            this.q = nativeByteBuffer.readInt32(true);
-            this.r = nativeByteBuffer.readInt64(true);
-            int i7 = 0;
-            while (true) {
-                float[] fArr = this.s;
-                if (i7 >= fArr.length) {
+            case 1:
+                boolean z10 = tLObject instanceof TLRPC.Updates;
+                e1 e1Var2 = this.b;
+                if (!z10) {
+                    e1Var2.getClass();
+                    break;
+                } else {
+                    np.s1(e1Var2.e).O3((TLRPC.Updates) tLObject, false);
                     break;
                 }
-                fArr[i7] = nativeByteBuffer.readFloat(true);
-                i7++;
-            }
-            this.t = nativeByteBuffer.readInt32(true);
-            this.u = nativeByteBuffer.readInt32(true);
-            String readString3 = nativeByteBuffer.readString(true);
-            this.v = readString3;
-            if (readString3 != null && readString3.length() == 0) {
-                this.v = null;
-            }
-            if (nativeByteBuffer.readInt32(true) == 481674261) {
-                int readInt322 = nativeByteBuffer.readInt32(true);
-                for (int i10 = 0; i10 < readInt322; i10++) {
-                    if (this.w == null) {
-                        this.w = new ArrayList();
-                    }
-                    this.w.add(TLRPC.MessageEntity.TLdeserialize(nativeByteBuffer, nativeByteBuffer.readInt32(true), true));
-                }
-                if (nativeByteBuffer.readInt32(true) == 481674261) {
-                    int readInt323 = nativeByteBuffer.readInt32(true);
-                    this.x.clear();
-                    for (int i11 = 0; i11 < readInt323; i11++) {
-                        this.x.add(TLRPC.InputPrivacyRule.TLdeserialize(nativeByteBuffer, nativeByteBuffer.readInt32(true), true));
-                    }
-                    nativeByteBuffer.readBool(true);
-                    String readString4 = nativeByteBuffer.readString(true);
-                    this.y = readString4;
-                    if (readString4 != null && readString4.length() == 0) {
-                        this.y = null;
-                    }
-                    this.A = nativeByteBuffer.readInt64(true);
-                    if (nativeByteBuffer.readInt32(true) == 481674261) {
-                        int readInt324 = nativeByteBuffer.readInt32(true);
-                        for (int i12 = 0; i12 < readInt324; i12++) {
-                            if (this.B == null) {
-                                this.B = new ArrayList();
-                            }
-                            this.B.add(new h20(nativeByteBuffer, true, true));
-                        }
-                        if (nativeByteBuffer.readInt32(true) == 481674261) {
-                            int readInt325 = nativeByteBuffer.readInt32(true);
-                            for (int i13 = 0; i13 < readInt325; i13++) {
-                                if (this.C == null) {
-                                    this.C = new ArrayList();
-                                }
-                                this.C.add(TLRPC.InputDocument.TLdeserialize(nativeByteBuffer, nativeByteBuffer.readInt32(true), true));
-                            }
-                            String readString5 = nativeByteBuffer.readString(true);
-                            this.D = readString5;
-                            if (readString5 != null && readString5.length() == 0) {
-                                this.D = null;
-                            }
-                            int readInt326 = nativeByteBuffer.readInt32(true);
-                            if (readInt326 == 1450380236) {
-                                this.E = null;
-                            } else if (readInt326 == -1318387530) {
-                                hf hfVar = new hf();
-                                this.E = hfVar;
-                                hfVar.a = nativeByteBuffer.readFloat(true);
-                                hfVar.b = nativeByteBuffer.readFloat(true);
-                                hfVar.c = nativeByteBuffer.readFloat(true);
-                                hfVar.d = nativeByteBuffer.readFloat(true);
-                                hfVar.e = nativeByteBuffer.readFloat(true);
-                                hfVar.f = nativeByteBuffer.readFloat(true);
-                                hfVar.g = nativeByteBuffer.readFloat(true);
-                                hfVar.h = nativeByteBuffer.readInt32(true);
-                                hfVar.i = nativeByteBuffer.readInt32(true);
-                                hfVar.j = nativeByteBuffer.readFloat(true);
-                                hfVar.k = nativeByteBuffer.readFloat(true);
-                                hfVar.l = nativeByteBuffer.readFloat(true);
-                                hfVar.m = nativeByteBuffer.readFloat(true);
-                                hfVar.n = nativeByteBuffer.readInt32(true);
-                                hfVar.o = nativeByteBuffer.readFloat(true);
-                                h2.c cVar = hfVar.p;
-                                ((qd0) cVar.b).c(nativeByteBuffer);
-                                ((qd0) cVar.c).c(nativeByteBuffer);
-                                ((qd0) cVar.d).c(nativeByteBuffer);
-                                ((qd0) cVar.e).c(nativeByteBuffer);
-                                hfVar.q = nativeByteBuffer.readFloat(true);
-                                if (nativeByteBuffer.readInt32(true) == 1450380236) {
-                                    hfVar.r = null;
+            case 2:
+                e1 e1Var3 = this.b;
+                int i10 = e1Var3.e;
+                if (tLObject instanceof TL_phone.groupCall) {
+                    TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
+                    int i11 = 0;
+                    np.s1(i10).Y3(groupcall.users, false);
+                    np.s1(i10).S3(groupcall.chats, false);
+                    if (e1Var3.F != null && !e1Var3.x) {
+                        while (true) {
+                            if (i11 < groupcall.participants.size()) {
+                                if (org.telegram.messenger.m5.o(groupcall.participants.get(i11).peer) == e1Var3.b) {
+                                    e1Var3.H = groupcall.participants.get(i11);
                                 } else {
-                                    if (hfVar.r == null) {
-                                        hfVar.r = new PointF();
+                                    i11++;
+                                }
+                            }
+                        }
+                        TLRPC.GroupCallParticipant groupCallParticipant = e1Var3.H;
+                        if (groupCallParticipant != null && (tL_groupCallParticipantVideo = groupCallParticipant.video) != null) {
+                            NativeInstance nativeInstance = e1Var3.F;
+                            String str = tL_groupCallParticipantVideo.endpoint;
+                            NativeInstance.SsrcGroup[] d = e1.d(tL_groupCallParticipantVideo);
+                            e1Var3.r(d);
+                            nativeInstance.addIncomingVideoOutput(2, str, d, e1Var3.I, org.telegram.messenger.m5.o(e1Var3.H.peer));
+                            break;
+                        } else {
+                            org.telegram.messenger.g0.h3(new x0(e1Var3, 7));
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 3:
+                final int i12 = 1;
+                final e1 e1Var4 = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: fi.z0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                e1 e1Var22 = e1Var4;
+                                TLObject tLObject2 = tLObject;
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                int i102 = e1Var22.e;
+                                if (!e1Var22.x) {
+                                    if (tLObject2 instanceof TL_phone.groupCall) {
+                                        TL_phone.groupCall groupcall2 = (TL_phone.groupCall) tLObject2;
+                                        np.s1(i102).Y3(groupcall2.users, false);
+                                        np.s1(i102).S3(groupcall2.chats, false);
+                                        e1Var22.w = groupcall2.call;
+                                        ns.f(i102).k(ns.G2, Long.valueOf(e1Var22.w.id));
+                                    } else if (tL_error2 != null && "GROUPCALL_INVALID".equalsIgnoreCase(tL_error2.text)) {
+                                        org.telegram.messenger.g0.h3(new x0(e1Var22, 4));
                                     }
-                                    hfVar.r.x = nativeByteBuffer.readFloat(true);
-                                    hfVar.r.y = nativeByteBuffer.readFloat(true);
+                                    if (e1Var22.Q) {
+                                        Runnable runnable = e1Var22.S;
+                                        if (runnable != null) {
+                                            org.telegram.messenger.g0.r(runnable);
+                                        }
+                                        x0 x0Var = new x0(e1Var22, 11);
+                                        e1Var22.S = x0Var;
+                                        org.telegram.messenger.g0.i3(x0Var, e1Var22.l() ? 5000 : 20000);
+                                        break;
+                                    }
                                 }
-                                hfVar.s = nativeByteBuffer.readFloat(true);
-                                hfVar.t = nativeByteBuffer.readFloat(true);
-                            }
-                            if (nativeByteBuffer.remaining() >= 4) {
-                                this.F = nativeByteBuffer.readInt32(true);
-                            }
-                            if (nativeByteBuffer.remaining() > 0) {
-                                if (nativeByteBuffer.readInt32(true) == 481674261) {
-                                    nativeByteBuffer.readInt32(true);
-                                } else {
-                                    throw new RuntimeException("Vector magic in StoryDraft parse error (5)");
+                                break;
+                            default:
+                                e1 e1Var32 = e1Var4;
+                                TLObject tLObject3 = tLObject;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (!e1Var32.x) {
+                                    if (tLObject3 instanceof Vector) {
+                                        if (!((Vector) tLObject3).toIntArray().contains(Integer.valueOf(e1Var32.L))) {
+                                            if (e1Var32.F != null) {
+                                                org.telegram.messenger.p5 p5Var = Utilities.e;
+                                                NativeInstance nativeInstance2 = e1Var32.F;
+                                                Objects.requireNonNull(nativeInstance2);
+                                                p5Var.c(new org.telegram.messenger.voip.q0(nativeInstance2, 3));
+                                                e1Var32.N.clear();
+                                                e1Var32.F = null;
+                                            }
+                                            e1Var32.k();
+                                        }
+                                    } else if (tLObject3 instanceof TL_phone.groupCall) {
+                                        TL_phone.groupCall groupcall22 = (TL_phone.groupCall) tLObject3;
+                                        np.s1(e1Var32.e).Y3(groupcall22.users, false);
+                                        np.s1(e1Var32.e).S3(groupcall22.chats, false);
+                                        e1Var32.w = groupcall22.call;
+                                        ns.f(e1Var32.e).k(ns.G2, Long.valueOf(e1Var32.w.id));
+                                    } else if (tL_error3 != null) {
+                                        if ("GROUPCALL_JOIN_MISSING".equals(tL_error3.text)) {
+                                            org.telegram.messenger.a8.b("[LivePlayer] received GROUPCALL_JOIN_MISSING on checkGroupCall => rejoining");
+                                            org.telegram.messenger.g0.h3(new x0(e1Var32, 9));
+                                        } else if ("GROUPCALL_INVALID".equalsIgnoreCase(tL_error3.text)) {
+                                            org.telegram.messenger.g0.h3(new x0(e1Var32, 4));
+                                        }
+                                    }
+                                    if (e1Var32.Q) {
+                                        Runnable runnable2 = e1Var32.R;
+                                        if (runnable2 != null) {
+                                            org.telegram.messenger.g0.r(runnable2);
+                                        }
+                                        x0 x0Var2 = new x0(e1Var32, 10);
+                                        e1Var32.R = x0Var2;
+                                        org.telegram.messenger.g0.i3(x0Var2, 4000L);
+                                        break;
+                                    }
                                 }
-                            }
-                            if (nativeByteBuffer.remaining() > 0) {
-                                this.G = nativeByteBuffer.readBool(true);
-                                this.H = nativeByteBuffer.readInt32(true);
-                                this.I = nativeByteBuffer.readInt64(true);
-                                this.L = nativeByteBuffer.readInt64(true);
-                                this.K = nativeByteBuffer.readInt64(true);
-                                this.J = nativeByteBuffer.readInt64(true);
-                            }
-                            if (nativeByteBuffer.remaining() > 0) {
-                                String readString6 = nativeByteBuffer.readString(true);
-                                this.z = readString6;
-                                if (readString6 != null && readString6.length() == 0) {
-                                    this.z = null;
-                                }
-                            }
-                            if (nativeByteBuffer.remaining() > 0) {
-                                this.M = nativeByteBuffer.readBool(true);
-                                int readInt327 = nativeByteBuffer.readInt32(true);
-                                if (readInt327 == 1450380236) {
-                                    this.N = null;
-                                } else {
-                                    this.N = TLRPC.TL_error.TLdeserialize(nativeByteBuffer, readInt327, true);
-                                }
-                                this.d = nativeByteBuffer.readString(true);
-                            }
-                            if (nativeByteBuffer.remaining() > 0 && nativeByteBuffer.readInt32(true) == -1739392570) {
-                                this.O = nativeByteBuffer.readString(true);
-                                if (nativeByteBuffer.readInt32(true) == -1222740358) {
-                                    this.Q = nativeByteBuffer.readString(true);
-                                }
-                                if (nativeByteBuffer.readInt32(true) == -1222740358) {
-                                    this.R = nativeByteBuffer.readString(true);
-                                }
-                                this.S = nativeByteBuffer.readInt64(true);
-                                this.T = nativeByteBuffer.readInt64(true);
-                                this.U = nativeByteBuffer.readFloat(true);
-                                this.V = nativeByteBuffer.readFloat(true);
-                                this.W = nativeByteBuffer.readFloat(true);
-                            }
-                            if (nativeByteBuffer.remaining() > 0) {
-                                this.f0 = TLRPC.InputPeer.TLdeserialize(nativeByteBuffer, nativeByteBuffer.readInt32(true), true);
-                            }
-                            if (nativeByteBuffer.remaining() > 0 && nativeByteBuffer.readInt32(true) == 1137015880) {
-                                this.X = nativeByteBuffer.readString(true);
-                                this.Z = nativeByteBuffer.readInt64(true);
-                                this.a0 = nativeByteBuffer.readInt64(true);
-                                this.b0 = nativeByteBuffer.readFloat(true);
-                                this.c0 = nativeByteBuffer.readFloat(true);
-                                this.d0 = nativeByteBuffer.readFloat(true);
-                            }
-                            if (nativeByteBuffer.remaining() > 0) {
-                                this.e0 = nativeByteBuffer.readFloat(true);
-                            }
-                            if (nativeByteBuffer.remaining() > 0) {
-                                this.g0 = nativeByteBuffer.readInt64(true);
-                                this.h0 = nativeByteBuffer.readString(true);
-                                int readInt328 = nativeByteBuffer.readInt32(true);
-                                if (readInt328 != 1450380236) {
-                                    this.i0 = TLRPC.InputMedia.TLdeserialize(nativeByteBuffer, readInt328, true);
-                                }
-                            }
-                            if (nativeByteBuffer.remaining() > 0 && nativeByteBuffer.readInt32(true) == -559038737) {
-                                this.j0 = new t(nativeByteBuffer.readString(true));
-                                this.k0 = new ArrayList();
-                                for (int i14 = 0; i14 < this.j0.e.size(); i14++) {
-                                    i20 i20Var = new i20();
-                                    i20Var.readParams(nativeByteBuffer, true);
-                                    i20Var.r = (s) this.j0.e.get(i14);
-                                    this.k0.add(i20Var);
-                                }
-                            }
-                            if (nativeByteBuffer.remaining() > 0 && nativeByteBuffer.readInt32(true) == 1151577037) {
-                                ye yeVar = new ye();
-                                this.o = yeVar;
-                                yeVar.readParams(nativeByteBuffer, true);
-                            }
-                            if (nativeByteBuffer.remaining() <= 0 || (readInt32 = nativeByteBuffer.readInt32(true)) != 448771445) {
-                                return;
-                            }
-                            this.P = TLRPC.InputDocument.TLdeserialize(nativeByteBuffer, readInt32, true);
-                            return;
+                                break;
                         }
-                        throw new RuntimeException("Vector magic in StoryDraft parse error (4)");
                     }
-                    throw new RuntimeException("Vector magic in StoryDraft parse error (3)");
+                });
+                break;
+            case 4:
+                e1 e1Var5 = this.b;
+                int i13 = e1Var5.e;
+                if (!(tLObject instanceof TLRPC.Updates)) {
+                    if (tL_error != null && "GROUPCALL_ALREADY_DISCARDED".equalsIgnoreCase(tL_error.text)) {
+                        org.telegram.messenger.g0.h3(new x0(e1Var5, 4));
+                        break;
+                    }
+                } else {
+                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                    np.s1(i13).Y3(updates.users, false);
+                    np.s1(i13).S3(updates.chats, false);
+                    np.s1(i13).O3(updates, false);
+                    break;
                 }
-                throw new RuntimeException("Vector magic in StoryDraft parse error (2)");
-            }
-            throw new RuntimeException("Vector magic in StoryDraft parse error (1)");
+                break;
+            default:
+                boolean z11 = tLObject instanceof TLRPC.Updates;
+                e1 e1Var6 = this.b;
+                if (!z11) {
+                    e1Var6.getClass();
+                    break;
+                } else {
+                    np.s1(e1Var6.e).O3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
         }
-        throw new RuntimeException("StoryDraft parse error");
     }
 }

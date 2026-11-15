@@ -1,6 +1,6 @@
 package f6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class y {
     public static final n6.c a;
@@ -26,9 +26,9 @@ public abstract class y {
     }
 
     public static String a(String str) {
-        if (str != null) {
-            return wf.b.n0(new wf.b(18, str, (Object) null));
+        if (str == null) {
+            throw new IllegalArgumentException("applicationId cannot be null");
         }
-        throw new IllegalArgumentException("applicationId cannot be null");
+        return q4.q.g(new q4.q(str, null, false, 20));
     }
 }

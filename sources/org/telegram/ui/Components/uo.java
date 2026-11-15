@@ -1,24 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
+import org.telegram.ui.t71;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class uo {
-    public final org.telegram.ui.ActionBar.s3 a;
-    public Drawable b;
-    public int c;
-    public boolean d;
+public final class uo extends t71 {
+    public final /* synthetic */ int m2;
 
-    public uo(org.telegram.ui.ActionBar.s3 s3Var) {
-        this.a = s3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ uo(Object obj, Bitmap bitmap, boolean z10, int i7) {
+        super(obj, bitmap, z10);
+        this.m2 = i7;
     }
 
-    public final String a() {
-        org.telegram.ui.ActionBar.s3 s3Var = this.a;
-        if (s3Var == null || s3Var.a) {
-            return null;
+    @Override // org.telegram.ui.t71
+    public final boolean Z0() {
+        switch (this.m2) {
         }
-        return s3Var.e;
+        return true;
     }
 }

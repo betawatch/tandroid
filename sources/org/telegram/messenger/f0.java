@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f0 {
     public int c;
@@ -12,7 +12,7 @@ public final class f0 {
     public String b = "";
     public boolean d = true;
 
-    public final String a(boolean z9) {
+    public final String a(boolean z10) {
         int indexOf = this.b.indexOf(58);
         if (indexOf < 0) {
             return "";
@@ -20,7 +20,7 @@ public final class f0 {
         String substring = this.b.substring(0, indexOf);
         if (this.c == 20) {
             String[] split = substring.substring(2).split(";");
-            return z9 ? split[0] : split.length > 1 ? split[split.length - 1] : "";
+            return z10 ? split[0] : split.length > 1 ? split[split.length - 1] : "";
         }
         String[] split2 = substring.split(";");
         for (int i7 = 0; i7 < split2.length; i7++) {
@@ -63,7 +63,7 @@ public final class f0 {
         return split2;
     }
 
-    public final String c(boolean z9) {
+    public final String c(boolean z10) {
         byte[] H;
         StringBuilder sb2 = new StringBuilder();
         int indexOf = this.b.indexOf(58);
@@ -88,7 +88,7 @@ public final class f0 {
             }
         }
         String[] split2 = substring2.split(";");
-        boolean z10 = false;
+        boolean z11 = false;
         for (int i7 = 0; i7 < split2.length; i7++) {
             if (!TextUtils.isEmpty(split2[i7])) {
                 if (str != null && str.equalsIgnoreCase("QUOTED-PRINTABLE") && (H = g0.H(g0.h1(split2[i7]))) != null && H.length != 0) {
@@ -97,16 +97,16 @@ public final class f0 {
                     } catch (Exception unused) {
                     }
                 }
-                if (z10 && sb2.length() > 0) {
+                if (z11 && sb2.length() > 0) {
                     sb2.append(" ");
                 }
                 sb2.append(split2[i7]);
-                if (!z10) {
-                    z10 = split2[i7].length() > 0;
+                if (!z11) {
+                    z11 = split2[i7].length() > 0;
                 }
             }
         }
-        if (z9) {
+        if (z10) {
             int i10 = this.c;
             if (i10 == 0) {
                 return pf.b.c().b(sb2.toString());
@@ -120,7 +120,7 @@ public final class f0 {
                         calendar.set(1, Utilities.z(split4[0]).intValue());
                         calendar.set(2, Utilities.z(split4[1]).intValue() - 1);
                         calendar.set(5, Utilities.z(split4[2]).intValue());
-                        return id.E0().D0().format(calendar.getTime());
+                        return hd.E0().D0().format(calendar.getTime());
                     }
                 }
             }

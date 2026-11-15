@@ -1,6 +1,6 @@
 package yc;
 
-import a8.ua;
+import a8.va;
 import java.io.ByteArrayInputStream;
 import java.io.Closeable;
 import java.io.IOException;
@@ -12,14 +12,15 @@ import java.nio.charset.Charset;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
+import org.telegram.ui.ActionBar.v;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class i {
     public static final Logger d;
     public volatile ServerSocket a;
     public Thread b;
-    public ua c;
+    public va c;
 
     static {
         Pattern.compile("([ |\t]*Content-Disposition[ |\t]*:)(.*)", 2);
@@ -93,19 +94,19 @@ public abstract class i {
     public final void f() {
         this.a = new ServerSocket();
         this.a.setReuseAddress(true);
-        mi.g gVar = new mi.g(this);
-        Thread thread = new Thread(gVar);
+        v vVar = new v(this);
+        Thread thread = new Thread(vVar);
         this.b = thread;
         thread.setDaemon(true);
         this.b.setName("NanoHttpd Main Listener");
         this.b.start();
-        while (!gVar.b && ((IOException) gVar.c) == null) {
+        while (!vVar.b && ((IOException) vVar.c) == null) {
             try {
                 Thread.sleep(10L);
             } catch (Throwable unused) {
             }
         }
-        IOException iOException = (IOException) gVar.c;
+        IOException iOException = (IOException) vVar.c;
         if (iOException != null) {
             throw iOException;
         }

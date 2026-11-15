@@ -38,7 +38,7 @@ public final class r0 extends CountedCompleter {
         }
         boolean m10 = v6.SHORT_CIRCUIT.m(((a) this.c).m);
         j5 j5Var = this.b;
-        boolean z9 = false;
+        boolean z10 = false;
         r0 r0Var = this;
         while (true) {
             if (m10 && j5Var.q()) {
@@ -49,14 +49,14 @@ public final class r0 extends CountedCompleter {
             }
             r0 r0Var2 = new r0(r0Var, trySplit);
             r0Var.addToPendingCount(1);
-            if (z9) {
+            if (z10) {
                 spliterator = trySplit;
             } else {
                 r0 r0Var3 = r0Var;
                 r0Var = r0Var2;
                 r0Var2 = r0Var3;
             }
-            z9 = !z9;
+            z10 = !z10;
             r0Var.fork();
             r0Var = r0Var2;
             estimateSize = spliterator.estimateSize();

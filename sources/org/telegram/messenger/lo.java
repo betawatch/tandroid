@@ -1,151 +1,62 @@
 package org.telegram.messenger;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class lo implements Runnable {
+public final class lo implements is {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ v2 c;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ bp e;
+    public final /* synthetic */ np f;
 
-    public /* synthetic */ lo(int i7, v2 v2Var, int i10) {
-        this.a = i10;
-        this.b = i7;
-        this.c = v2Var;
+    public lo(np npVar, int i7, int i10, int i11, long j3, bp bpVar) {
+        this.f = npVar;
+        this.a = i7;
+        this.b = i10;
+        this.c = i11;
+        this.d = j3;
+        this.e = bpVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:36:0x006f  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x00dd  */
-    /* JADX WARN: Type inference failed for: r0v1, types: [int] */
-    /* JADX WARN: Type inference failed for: r0v7, types: [int] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        SQLiteCursor sQLiteCursor;
-        TLRPC.help_AppConfig help_appconfig;
-        NativeByteBuffer byteBufferValue;
-        SQLiteCursor sQLiteCursor2;
-        TLRPC.messages_AvailableEffects messages_availableeffects;
-        NativeByteBuffer byteBufferValue2;
-        switch (this.a) {
-            case 0:
-                ?? r02 = this.b;
-                v2 v2Var = this.c;
-                SQLiteCursor sQLiteCursor3 = null;
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase = yr.a0(r02).b;
-                        if (sQLiteDatabase != null) {
-                            sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT data FROM app_config", new Object[0]);
-                            try {
-                                if (!sQLiteCursor.next() || (byteBufferValue = sQLiteCursor.byteBufferValue(0)) == null) {
-                                    help_appconfig = null;
-                                } else {
-                                    help_appconfig = TLRPC.help_AppConfig.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), true);
-                                    byteBufferValue.reuse();
-                                }
-                                if (help_appconfig instanceof TLRPC.TL_help_appConfig) {
-                                    v2Var.a(Long.valueOf(r6.hash), (TLRPC.TL_help_appConfig) help_appconfig);
-                                } else {
-                                    v2Var.a(0L, null);
-                                }
-                                sQLiteCursor3 = sQLiteCursor;
-                            } catch (Exception e10) {
-                                e = e10;
-                                a8.g(e, true);
-                                v2Var.a(0L, null);
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                    return;
-                                }
-                                return;
-                            }
-                        }
-                        if (sQLiteCursor3 != null) {
-                            sQLiteCursor3.dispose();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th2) {
-                        th = th2;
-                        sQLiteCursor3 = r02;
-                        if (sQLiteCursor3 != null) {
-                            sQLiteCursor3.dispose();
-                        }
-                        throw th;
-                    }
-                } catch (Exception e11) {
-                    e = e11;
-                    sQLiteCursor = null;
-                } catch (Throwable th3) {
-                    th = th3;
-                    if (sQLiteCursor3 != null) {
-                    }
-                    throw th;
+    @Override // org.telegram.messenger.is
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        int i11 = ns.I;
+        bp bpVar = this.e;
+        int i12 = this.a;
+        np npVar = this.f;
+        int i13 = ns.H;
+        if (i7 != i13 || ((Integer) objArr[0]).intValue() != i12) {
+            if (i7 == i11 && ((Integer) objArr[0]).intValue() == i12) {
+                npVar.getNotificationCenter().n(this, i13);
+                npVar.getNotificationCenter().n(this, i11);
+                if (bpVar != null) {
+                    bpVar.a();
+                    return;
                 }
-                break;
-            default:
-                ?? r03 = this.b;
-                v2 v2Var2 = this.c;
-                SQLiteCursor sQLiteCursor4 = null;
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase2 = yr.a0(r03).b;
-                        if (sQLiteDatabase2 != null) {
-                            sQLiteCursor2 = sQLiteDatabase2.queryFinalized("SELECT data FROM effects", new Object[0]);
-                            try {
-                                if (!sQLiteCursor2.next() || (byteBufferValue2 = sQLiteCursor2.byteBufferValue(0)) == null) {
-                                    messages_availableeffects = null;
-                                } else {
-                                    messages_availableeffects = TLRPC.messages_AvailableEffects.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), true);
-                                    byteBufferValue2.reuse();
-                                }
-                                if (messages_availableeffects instanceof TLRPC.TL_messages_availableEffects) {
-                                    v2Var2.a(Long.valueOf(r6.hash), (TLRPC.TL_messages_availableEffects) messages_availableeffects);
-                                } else {
-                                    v2Var2.a(0L, null);
-                                }
-                                sQLiteCursor4 = sQLiteCursor2;
-                            } catch (Exception e12) {
-                                e = e12;
-                                a8.g(e, true);
-                                v2Var2.a(0L, null);
-                                if (sQLiteCursor2 != null) {
-                                    sQLiteCursor2.dispose();
-                                    return;
-                                }
-                                return;
-                            }
-                        }
-                        if (sQLiteCursor4 != null) {
-                            sQLiteCursor4.dispose();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th4) {
-                        th = th4;
-                        sQLiteCursor4 = r03;
-                        if (sQLiteCursor4 != null) {
-                            sQLiteCursor4.dispose();
-                        }
-                        throw th;
-                    }
-                } catch (Exception e13) {
-                    e = e13;
-                    sQLiteCursor2 = null;
-                } catch (Throwable th5) {
-                    th = th5;
-                    if (sQLiteCursor4 != null) {
-                    }
-                    throw th;
-                }
-                break;
+                return;
+            }
+            return;
+        }
+        int intValue = ((Integer) objArr[1]).intValue();
+        boolean booleanValue = ((Boolean) objArr[2]).booleanValue();
+        boolean booleanValue2 = ((Boolean) objArr[3]).booleanValue();
+        int intValue2 = ((Integer) objArr[4]).intValue();
+        int i14 = this.b;
+        if (intValue >= i14 / 2 || booleanValue2 || !booleanValue) {
+            npVar.getNotificationCenter().n(this, i13);
+            npVar.getNotificationCenter().n(this, i11);
+            if (bpVar != null) {
+                bpVar.f(booleanValue);
+                return;
+            }
+            return;
+        }
+        int i15 = this.c;
+        if (i15 != 0) {
+            npVar.Z2(this.d, 0L, false, i14, i15, 0, false, 0, this.a, 3, intValue2, 0, 0L, -1, 0, 0, 0, false, 0, true, false, false, null, 0L);
+        } else {
+            npVar.Z2(this.d, 0L, false, i14, i15, 0, false, 0, this.a, 2, intValue2, 0, 0L, -1, 0, 0, 0, false, 0, true, false, false, null, 0L);
         }
     }
 }

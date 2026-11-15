@@ -1,28 +1,61 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class zs implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ct b;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
 
-    public /* synthetic */ zs(ct ctVar, int i7) {
-        this.a = i7;
-        this.b = ctVar;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class zs extends ShapeDrawable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ EditTextBoldCursor b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zs(EditTextBoldCursor editTextBoldCursor, RectShape rectShape) {
+        super(rectShape);
+        this.b = editTextBoldCursor;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                ct ctVar = this.b;
-                ctVar.post(new zs(ctVar, 1));
+                super.draw(canvas);
+                this.b.H0 = true;
                 break;
             default:
-                ct ctVar2 = this.b;
-                ctVar2.h();
-                ctVar2.d();
-                break;
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                if (!editTextBoldCursor.e1) {
+                    super.draw(canvas);
+                    break;
+                } else {
+                    editTextBoldCursor.H0 = true;
+                    break;
+                }
         }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 1:
+                return org.telegram.messenger.g0.L(this.b.j0 + 20);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 1:
+                return org.telegram.messenger.g0.L(this.b.F0);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    public zs(EditTextBoldCursor editTextBoldCursor) {
+        this.b = editTextBoldCursor;
     }
 }

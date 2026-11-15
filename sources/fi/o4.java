@@ -1,36 +1,29 @@
 package fi;
 
-import android.view.KeyEvent;
-import org.telegram.messenger.y10;
-import org.telegram.tgnet.TLRPC;
+import android.text.TextUtils;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o4 implements org.telegram.ui.ActionBar.e1, y10 {
-    public final /* synthetic */ o5 a;
+public final class o4 {
+    public boolean a = true;
+    public boolean b;
+    public String c;
 
-    public /* synthetic */ o4(o5 o5Var) {
-        this.a = o5Var;
+    public final boolean equals(Object obj) {
+        if (this != obj) {
+            if (obj != null && o4.class == obj.getClass()) {
+                o4 o4Var = (o4) obj;
+                boolean z10 = (TextUtils.isEmpty(this.c) && TextUtils.isEmpty(o4Var.c)) || Objects.equals(this.c, o4Var.c);
+                if (this.a != o4Var.a || this.b != o4Var.b || !z10) {
+                }
+            }
+            return false;
+        }
+        return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.e1
-    public void j(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.g1 g1Var;
-        o5 o5Var = this.a;
-        o5Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g1Var = o5Var.q1) != null && g1Var.isShowing()) {
-            o5Var.q1.d(true);
-        }
-    }
-
-    @Override // org.telegram.messenger.y10
-    public void k(Object obj, TLRPC.Document document, Boolean bool) {
-        o5 o5Var = this.a;
-        o5Var.U1 = true;
-        f5 k02 = o5Var.k0(obj, document);
-        if (bool.booleanValue()) {
-            k02.setScale(1.5f);
-        }
-        o5Var.b0(k02);
+    public final int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.a), Boolean.valueOf(this.b), this.c);
     }
 }

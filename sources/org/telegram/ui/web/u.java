@@ -1,24 +1,24 @@
 package org.telegram.ui.web;
 
-import di.p7;
+import fi.i7;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ String[] b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ u0 d;
-    public final /* synthetic */ p7 e;
+    public final /* synthetic */ s0 d;
+    public final /* synthetic */ i7 e;
 
-    public /* synthetic */ u(String[] strArr, int i7, u0 u0Var, p7 p7Var, int i10) {
+    public /* synthetic */ u(String[] strArr, int i7, s0 s0Var, i7 i7Var, int i10) {
         this.a = i10;
         this.b = strArr;
         this.c = i7;
-        this.d = u0Var;
-        this.e = p7Var;
+        this.d = s0Var;
+        this.e = i7Var;
     }
 
     @Override // java.lang.Runnable
@@ -26,14 +26,14 @@ public final /* synthetic */ class u implements Runnable {
         switch (this.a) {
             case 0:
                 int i7 = this.c;
-                u0 u0Var = this.d;
-                p7 p7Var = this.e;
+                s0 s0Var = this.d;
+                i7 i7Var = this.e;
                 String[] strArr = this.b;
                 if (strArr[0] != null) {
                     try {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("status", strArr[0]);
-                        x0.w(i7, u0Var, p7Var, "phone_requested", jSONObject);
+                        v0.w(i7, s0Var, i7Var, "phone_requested", jSONObject);
                         break;
                     } catch (Exception e10) {
                         a8.g(e10, true);
@@ -44,12 +44,12 @@ public final /* synthetic */ class u implements Runnable {
             default:
                 String[] strArr2 = this.b;
                 int i10 = this.c;
-                u0 u0Var2 = this.d;
-                p7 p7Var2 = this.e;
+                s0 s0Var2 = this.d;
+                i7 i7Var2 = this.e;
                 try {
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("status", strArr2[0]);
-                    x0.w(i10, u0Var2, p7Var2, "write_access_requested", jSONObject2);
+                    v0.w(i10, s0Var2, i7Var2, "write_access_requested", jSONObject2);
                     break;
                 } catch (Exception e11) {
                     a8.g(e11, true);

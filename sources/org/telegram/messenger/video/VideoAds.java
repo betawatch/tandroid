@@ -1,6 +1,5 @@
 package org.telegram.messenger.video;
 
-import ai.d0;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -20,67 +19,67 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.r;
-import c8.ha;
-import di.i0;
-import di.v3;
-import hi.h2;
+import bi.f4;
+import bi.n3;
+import c8.ja;
+import fi.i0;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashSet;
-import li.j3;
+import oi.u4;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c20;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.id;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ns;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w7;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.d1;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j5;
+import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.z0;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.bc;
-import org.telegram.ui.Components.fb;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.h6;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.my0;
-import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.wq;
-import org.telegram.ui.Components.ya;
+import org.telegram.ui.Components.cb;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.g6;
+import org.telegram.ui.Components.i9;
+import org.telegram.ui.Components.m60;
+import org.telegram.ui.Components.n60;
+import org.telegram.ui.Components.oy0;
+import org.telegram.ui.Components.u5;
+import org.telegram.ui.Components.va;
+import org.telegram.ui.Components.xb;
+import org.telegram.ui.Components.z70;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.sy0;
-import ug.w0;
+import org.telegram.ui.my0;
+import ug.x0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class VideoAds {
     private static final LruCache<VideoAdsLocation, VideoAdsCache> cached = new LruCache<>(3);
     private int between_delay;
-    private bc bulletin;
-    private gc bulletinFactory;
+    private xb bulletin;
+    private cc bulletinFactory;
     private long bulletinShowTime;
     private final VideoAdsCache cache;
     private final int currentAccount;
     private long currentBulletinPassedTime;
-    private k60 currentMenu;
+    private m60 currentMenu;
     private float currentMenuTranslationY;
     private final long dialogId;
     private boolean lastPopupShown;
@@ -89,7 +88,7 @@ public class VideoAds {
     private boolean loading;
     private final int msg_id;
     private Runnable onPopupCallback;
-    private w0 premiumSheet;
+    private x0 premiumSheet;
     private int requestId;
     private int start_delay;
     public boolean videoWasPlaying;
@@ -99,7 +98,7 @@ public class VideoAds {
     private boolean first = true;
     private final Runnable showRunnable = new d(this, 1);
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class CloseDrawable extends Drawable {
         private int alpha;
         private final long max_display_duration;
@@ -109,19 +108,19 @@ public class VideoAds {
         private final View parentView;
         private boolean paused;
         private long pausedTime;
-        private final v5 showCrossAnimated;
-        private final v5 showTimerAnimated;
+        private final u5 showCrossAnimated;
+        private final u5 showTimerAnimated;
         private final long startTime;
-        private final h6 timer;
-        private final v5 timerScaleAnimated;
+        private final g6 timer;
+        private final u5 timerScaleAnimated;
 
         public CloseDrawable(View view, int i7, int i10, long j3) {
-            h6 h6Var = new h6(false, true, true);
-            this.timer = h6Var;
+            g6 g6Var = new g6(false, true, true);
+            this.timer = g6Var;
             Paint paint = new Paint(1);
             this.paint = paint;
             this.paused = false;
-            this.alpha = qs.e4;
+            this.alpha = ns.e4;
             this.parentView = view;
             this.startTime = System.currentTimeMillis() - j3;
             this.min_display_duration = i7 * 1000;
@@ -130,16 +129,16 @@ public class VideoAds {
             paint.setStrokeCap(Paint.Cap.ROUND);
             paint.setStrokeJoin(Paint.Join.ROUND);
             paint.setColor(-1);
-            h6Var.setCallback(view);
-            h6Var.b = 17;
-            h6Var.w(g0.L(12.0f));
-            h6Var.x(g0.o1("fonts/num.otf"));
-            h6Var.M = g0.q.x;
-            h6Var.u(-1);
-            wq wqVar = wq.h;
-            this.showCrossAnimated = new v5(view, 0L, 420L, wqVar);
-            this.showTimerAnimated = new v5(view, 0L, 420L, wqVar);
-            this.timerScaleAnimated = new v5(view, 0L, 420L, wqVar);
+            g6Var.setCallback(view);
+            g6Var.b = 17;
+            g6Var.w(g0.L(12.0f));
+            g6Var.x(g0.o1("fonts/num.otf"));
+            g6Var.N = g0.q.x;
+            g6Var.u(-1);
+            er erVar = er.h;
+            this.showCrossAnimated = new u5(view, 0L, 420L, erVar);
+            this.showTimerAnimated = new u5(view, 0L, 420L, erVar);
+            this.timerScaleAnimated = new u5(view, 0L, 420L, erVar);
         }
 
         @Override // android.graphics.drawable.Drawable
@@ -157,9 +156,9 @@ public class VideoAds {
             canvas.scale(e10, e10, centerX, centerY);
             this.timer.t(str, true, true);
             this.timer.o(centerX - 1.0f, centerY - 1.0f, centerX + 1.0f, centerY + 1.0f);
-            h6 h6Var = this.timer;
-            h6Var.B = (int) (this.alpha * d);
-            h6Var.draw(canvas);
+            g6 g6Var = this.timer;
+            g6Var.C = (int) (this.alpha * d);
+            g6Var.draw(canvas);
             canvas.restore();
             this.paint.setAlpha((int) (this.alpha * d));
             this.paint.setStrokeWidth(g0.L(2.0f));
@@ -217,12 +216,12 @@ public class VideoAds {
             this.paint.setColorFilter(colorFilter);
         }
 
-        public void setPaused(boolean z9) {
-            if (this.paused == z9) {
+        public void setPaused(boolean z10) {
+            if (this.paused == z10) {
                 return;
             }
-            this.paused = z9;
-            if (z9) {
+            this.paused = z10;
+            if (z10) {
                 this.pausedTime = System.currentTimeMillis();
             } else {
                 this.minusTime += System.currentTimeMillis() - this.pausedTime;
@@ -230,7 +229,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class VideoAdsCache {
         final ArrayList<TLRPC.TL_sponsoredMessage> ads = new ArrayList<>();
         int betweenDelay;
@@ -244,7 +243,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
@@ -272,14 +271,14 @@ public class VideoAds {
         }
     }
 
-    private VideoAds(int i7, long j3, int i10, gc gcVar, VideoAdsCache videoAdsCache) {
+    private VideoAds(int i7, long j3, int i10, cc ccVar, VideoAdsCache videoAdsCache) {
         this.lastTime = 0L;
         this.currentAccount = i7;
         this.dialogId = j3;
         this.msg_id = i10;
         this.cache = videoAdsCache;
         this.lastTime = System.currentTimeMillis();
-        init(gcVar);
+        init(ccVar);
     }
 
     private void checkPopupShownCallback() {
@@ -296,8 +295,8 @@ public class VideoAds {
         cached.evictAll();
     }
 
-    private void init(gc gcVar) {
-        this.bulletinFactory = gcVar;
+    private void init(cc ccVar) {
+        this.bulletinFactory = ccVar;
         this.lastTime = System.currentTimeMillis();
         this.first = true;
         VideoAdsCache videoAdsCache = this.cache;
@@ -317,8 +316,8 @@ public class VideoAds {
         if (this.loading) {
             if (tLObject instanceof TLRPC.TL_messages_sponsoredMessages) {
                 TLRPC.TL_messages_sponsoredMessages tL_messages_sponsoredMessages = (TLRPC.TL_messages_sponsoredMessages) tLObject;
-                qp.s1(this.currentAccount).Y3(tL_messages_sponsoredMessages.users, false);
-                qp.s1(this.currentAccount).S3(tL_messages_sponsoredMessages.chats, false);
+                np.s1(this.currentAccount).Y3(tL_messages_sponsoredMessages.users, false);
+                np.s1(this.currentAccount).S3(tL_messages_sponsoredMessages.chats, false);
                 this.ads.addAll(tL_messages_sponsoredMessages.messages);
                 this.start_delay = tL_messages_sponsoredMessages.start_delay;
                 this.between_delay = tL_messages_sponsoredMessages.between_delay;
@@ -338,7 +337,7 @@ public class VideoAds {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$load$1(TLObject tLObject, TLRPC.TL_error tL_error) {
-        g0.h3(new j3(16, this, tLObject));
+        g0.h3(new u4(4, this, tLObject));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -347,31 +346,31 @@ public class VideoAds {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$show$12(k60 k60Var) {
-        if (!p10.i(this.currentAccount).q()) {
+    public void lambda$show$12(m60 m60Var) {
+        if (!m10.i(this.currentAccount).q()) {
             showPremium();
             return;
         }
-        k60Var.u();
-        bc bcVar = this.bulletin;
-        if (bcVar != null) {
-            bcVar.i(true);
+        m60Var.u();
+        xb xbVar = this.bulletin;
+        if (xbVar != null) {
+            xbVar.i(true);
             this.bulletin.b();
         }
-        this.bulletinFactory.c(id.M0(2131754488, null)).j();
-        qp.s1(this.currentAccount).o0(true);
+        this.bulletinFactory.c(hd.M0(2131754488, null)).j();
+        np.s1(this.currentAccount).o0(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$show$14(Context context, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, k60 k60Var) {
+    public void lambda$show$14(Context context, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, m60 m60Var) {
         int i7 = this.currentAccount;
         long j3 = this.dialogId;
-        gc gcVar = this.bulletinFactory;
+        cc ccVar = this.bulletinFactory;
         i0 i0Var = new i0();
         d dVar = new d(this, 0);
-        Objects.requireNonNull(k60Var);
-        a aVar = new a(k60Var, 1);
-        int i10 = sy0.v1;
+        Objects.requireNonNull(m60Var);
+        a aVar = new a(m60Var, 1);
+        int i10 = my0.w1;
         if (context == null) {
             return;
         }
@@ -379,54 +378,54 @@ public class VideoAds {
         byte[] bArr = tL_sponsoredMessage.random_id;
         tL_messages_reportSponsoredMessage.random_id = bArr;
         tL_messages_reportSponsoredMessage.option = new byte[0];
-        ConnectionsManager.getInstance(i7).sendRequest(tL_messages_reportSponsoredMessage, new l60(context, i0Var, j3, bArr, aVar, gcVar, dVar, i7));
+        ConnectionsManager.getInstance(i7).sendRequest(tL_messages_reportSponsoredMessage, new n60(context, i0Var, j3, bArr, aVar, ccVar, dVar, i7));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$show$15(k60 k60Var) {
-        if (!p10.i(this.currentAccount).q()) {
+    public void lambda$show$15(m60 m60Var) {
+        if (!m10.i(this.currentAccount).q()) {
             showPremium();
             return;
         }
-        k60Var.u();
-        bc bcVar = this.bulletin;
-        if (bcVar != null) {
-            bcVar.i(true);
+        m60Var.u();
+        xb xbVar = this.bulletin;
+        if (xbVar != null) {
+            xbVar.i(true);
             this.bulletin.b();
         }
-        this.bulletinFactory.c(id.M0(2131754488, null)).j();
-        qp.s1(this.currentAccount).o0(true);
+        this.bulletinFactory.c(hd.M0(2131754488, null)).j();
+        np.s1(this.currentAccount).o0(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$16(c20 c20Var) {
-        c20Var.a(Boolean.FALSE);
+    public /* synthetic */ void lambda$show$16(z10 z10Var) {
+        z10Var.a(Boolean.FALSE);
         this.currentMenu = null;
         checkPopupShownCallback();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0079, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x007b, code lost:
     
-        if (r4.startsWith("https://" + org.telegram.messenger.qp.s1(r21.currentAccount).U2) == false) goto L23;
+        if (r4.startsWith("https://" + org.telegram.messenger.np.s1(r21.currentAccount).V2) == false) goto L23;
      */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x02a6  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x02fa  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x02ab  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x02fe  */
     /* JADX WARN: Removed duplicated region for block: B:36:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void lambda$show$17(bc bcVar, final TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Context context, org.telegram.ui.ActionBar.h6 h6Var, AdLayout adLayout, c20 c20Var, View view) {
+    public void lambda$show$17(xb xbVar, final TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Context context, e6 e6Var, AdLayout adLayout, z10 z10Var, View view) {
         ViewGroup viewGroup;
         i0 i0Var;
         Context context2;
         int i7;
-        bc bcVar2 = this.bulletin;
-        if (bcVar2 == null || bcVar2 != bcVar) {
+        xb xbVar2 = this.bulletin;
+        if (xbVar2 == null || xbVar2 != xbVar) {
             return;
         }
         try {
-            viewGroup = (ViewGroup) bcVar2.e.getParent().getParent();
+            viewGroup = (ViewGroup) xbVar2.e.getParent().getParent();
         } catch (Exception unused) {
             viewGroup = null;
         }
@@ -434,24 +433,24 @@ public class VideoAds {
             return;
         }
         i0 i0Var2 = new i0();
-        final k60 k60Var = new k60(viewGroup, i0Var2, this.bulletin.e, true, false, false);
-        k60Var.H = true;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = k60Var.D;
+        final m60 m60Var = new m60(viewGroup, i0Var2, this.bulletin.e, true, false, false);
+        m60Var.H = true;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = m60Var.D;
         actionBarPopupWindow$ActionBarPopupWindowLayout.c = true;
         actionBarPopupWindow$ActionBarPopupWindowLayout.d = true;
-        k60Var.I = true;
-        k60Var.s = 0;
-        k60Var.t = false;
-        k60Var.J = false;
+        m60Var.I = true;
+        m60Var.s = 0;
+        m60Var.t = false;
+        m60Var.J = false;
         if (tL_sponsoredMessage.sponsor_info == null && tL_sponsoredMessage.additional_info == null) {
             String str = tL_sponsoredMessage.url;
             if (str != null) {
             }
             context2 = context;
             i0Var = i0Var2;
-            if (!p10.i(this.currentAccount).q() && !qp.s1(this.currentAccount).D3() && !tL_sponsoredMessage.can_report) {
+            if (!m10.i(this.currentAccount).q() && !np.s1(this.currentAccount).D3() && !tL_sponsoredMessage.can_report) {
                 final int i10 = 1;
-                k60Var.c(R.drawable.msg_block2, id.M0(2131749323, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
+                m60Var.c(R.drawable.msg_block2, hd.M0(2131749323, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
                     public final /* synthetic */ VideoAds b;
 
                     {
@@ -462,25 +461,25 @@ public class VideoAds {
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                this.b.lambda$show$15(k60Var);
+                                this.b.lambda$show$15(m60Var);
                                 break;
                             default:
-                                this.b.lambda$show$12(k60Var);
+                                this.b.lambda$show$12(m60Var);
                                 break;
                         }
                     }
                 }, false);
             }
             if (tL_sponsoredMessage.can_report) {
-                k60Var.c(R.drawable.msg_info, id.M0(2131754943, null), new j3(18, context2, i0Var), false);
-                String M0 = id.M0(2131746234, null);
-                d0 d0Var = new d0(this, context2, tL_sponsoredMessage, k60Var, 27);
-                k60Var = k60Var;
-                k60Var.c(R.drawable.msg_block2, M0, d0Var, false);
-                if (!qp.s1(this.currentAccount).D3()) {
-                    k60Var.k();
+                m60Var.c(R.drawable.msg_info, hd.M0(2131754943, null), new u4(6, context2, i0Var), false);
+                String M0 = hd.M0(2131746234, null);
+                androidx.car.app.utils.a aVar = new androidx.car.app.utils.a(this, context2, tL_sponsoredMessage, m60Var, 28);
+                m60Var = m60Var;
+                m60Var.c(R.drawable.msg_block2, M0, aVar, false);
+                if (!np.s1(this.currentAccount).D3()) {
+                    m60Var.k();
                     final int i11 = 0;
-                    k60Var.c(R.drawable.msg_cancel, id.M0(2131746320, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
+                    m60Var.c(R.drawable.msg_cancel, hd.M0(2131746320, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
                         public final /* synthetic */ VideoAds b;
 
                         {
@@ -491,70 +490,70 @@ public class VideoAds {
                         public final void run() {
                             switch (i11) {
                                 case 0:
-                                    this.b.lambda$show$15(k60Var);
+                                    this.b.lambda$show$15(m60Var);
                                     break;
                                 default:
-                                    this.b.lambda$show$12(k60Var);
+                                    this.b.lambda$show$12(m60Var);
                                     break;
                             }
                         }
                     }, false);
                 }
             }
-            if (k60Var.x() > 0) {
+            if (m60Var.x() > 0) {
                 return;
             }
-            this.currentMenu = k60Var;
+            this.currentMenu = m60Var;
             this.currentMenuTranslationY = adLayout.getTranslationY();
-            c20Var.a(Boolean.TRUE);
-            k60Var.p = new j3(17, this, c20Var);
-            k60Var.Z();
+            z10Var.a(Boolean.TRUE);
+            m60Var.p = new u4(5, this, z10Var);
+            m60Var.Z();
             checkPopupShownCallback();
             return;
         }
-        k60 J = k60Var.J();
+        m60 J = m60Var.J();
         i0Var = i0Var2;
         z0 z0Var = new z0(0, context, i0Var, true, false);
         context2 = context;
         z0Var.setItemHeight(44);
-        z0Var.j(id.M0(2131753756, null), R.drawable.msg_arrow_back, null);
-        z0Var.getTextView().setPadding(id.a0 ? 0 : g0.L(40.0f), 0, id.a0 ? g0.L(40.0f) : 0, 0);
+        z0Var.j(hd.M0(2131753756, null), R.drawable.msg_arrow_back, null);
+        z0Var.getTextView().setPadding(hd.a0 ? 0 : g0.L(40.0f), 0, hd.a0 ? g0.L(40.0f) : 0, 0);
         final int i12 = 2;
-        z0Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.i
+        z0Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.j
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 switch (i12) {
                     case 0:
-                        VideoAds.lambda$show$9((TLRPC.TL_sponsoredMessage) k60Var, view2);
+                        VideoAds.lambda$show$9((TLRPC.TL_sponsoredMessage) m60Var, view2);
                         break;
                     case 1:
-                        VideoAds.lambda$show$10((TLRPC.TL_sponsoredMessage) k60Var, view2);
+                        VideoAds.lambda$show$10((TLRPC.TL_sponsoredMessage) m60Var, view2);
                         break;
                     default:
-                        ((k60) k60Var).s();
+                        ((m60) m60Var).s();
                         break;
                 }
             }
         });
-        J.r(z0Var, ha.o(-1, -2));
-        J.r(new d1(context2, i0Var), ha.o(-1, 8));
+        J.r(z0Var, ja.o(-1, -2));
+        J.r(new d1(context2, i0Var), ja.o(-1, 8));
         ArrayList arrayList = new ArrayList();
         String str2 = tL_sponsoredMessage.url;
-        if (str2 != null && !TextUtils.equals(g0.K0(str2, false), qp.s1(this.currentAccount).U2)) {
+        if (str2 != null && !TextUtils.equals(g0.K0(str2, false), np.s1(this.currentAccount).V2)) {
             TextView textView = new TextView(context2);
-            t6.U(textView, m6.Uc, i0Var);
+            q6.U(textView, j6.Xc, i0Var);
             textView.setTextSize(1, 14.0f);
             textView.setPadding(g0.L(18.0f), g0.L(10.0f), g0.L(18.0f), g0.L(10.0f));
             textView.setMaxWidth(g0.L(300.0f));
             Uri parse = Uri.parse(tL_sponsoredMessage.url);
             textView.setText(vf.c.w(parse, null, null, vf.c.a(parse.getHost()), null));
-            int i13 = m6.I5;
-            y a02 = m6.a0(m6.w0(i13, i0Var), 0, tL_sponsoredMessage.additional_info == null ? 6 : 0);
-            p6 M = t6.M(i13);
+            int i13 = j6.I5;
+            y a02 = j6.a0(j6.w0(i13, i0Var), 0, tL_sponsoredMessage.additional_info == null ? 6 : 0);
+            m6 M = q6.M(i13);
             textView.setBackground(a02);
-            t6.j(textView, a02, null, M, i0Var);
-            textView.setOnClickListener(new v3(this, k60Var, tL_sponsoredMessage, context2, 4));
-            textView.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.messenger.video.h
+            q6.j(textView, a02, null, M, i0Var);
+            textView.setOnClickListener(new f4(this, m60Var, tL_sponsoredMessage, context2, 5));
+            textView.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.messenger.video.i
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view2) {
                     boolean lambda$show$8;
@@ -566,18 +565,18 @@ public class VideoAds {
         }
         if (tL_sponsoredMessage.sponsor_info != null) {
             TextView textView2 = new TextView(context2);
-            t6.U(textView2, m6.E8, i0Var);
+            q6.U(textView2, j6.E8, i0Var);
             textView2.setTextSize(1, 14.0f);
             textView2.setPadding(g0.L(18.0f), g0.L(10.0f), g0.L(18.0f), g0.L(10.0f));
             textView2.setMaxWidth(g0.L(300.0f));
             textView2.setText(tL_sponsoredMessage.sponsor_info);
-            int i14 = m6.I5;
-            y a03 = m6.a0(m6.w0(i14, i0Var), 0, tL_sponsoredMessage.additional_info == null ? 6 : 0);
-            p6 M2 = t6.M(i14);
+            int i14 = j6.I5;
+            y a03 = j6.a0(j6.w0(i14, i0Var), 0, tL_sponsoredMessage.additional_info == null ? 6 : 0);
+            m6 M2 = q6.M(i14);
             textView2.setBackground(a03);
-            t6.j(textView2, a03, null, M2, i0Var);
+            q6.j(textView2, a03, null, M2, i0Var);
             final int i15 = 0;
-            textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.i
+            textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.j
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     switch (i15) {
@@ -588,7 +587,7 @@ public class VideoAds {
                             VideoAds.lambda$show$10((TLRPC.TL_sponsoredMessage) tL_sponsoredMessage, view2);
                             break;
                         default:
-                            ((k60) tL_sponsoredMessage).s();
+                            ((m60) tL_sponsoredMessage).s();
                             break;
                     }
                 }
@@ -597,18 +596,18 @@ public class VideoAds {
         }
         if (tL_sponsoredMessage.additional_info != null) {
             TextView textView3 = new TextView(context2);
-            t6.U(textView3, m6.E8, i0Var);
+            q6.U(textView3, j6.E8, i0Var);
             textView3.setTextSize(1, 14.0f);
             textView3.setPadding(g0.L(18.0f), g0.L(10.0f), g0.L(18.0f), g0.L(10.0f));
             textView3.setMaxWidth(g0.L(300.0f));
             textView3.setText(tL_sponsoredMessage.additional_info);
-            int i16 = m6.I5;
-            y a04 = m6.a0(m6.w0(i16, h6Var), 0, 6);
-            p6 M3 = t6.M(i16);
+            int i16 = j6.I5;
+            y a04 = j6.a0(j6.w0(i16, e6Var), 0, 6);
+            m6 M3 = q6.M(i16);
             textView3.setBackground(a04);
-            t6.j(textView3, a04, null, M3, h6Var);
+            q6.j(textView3, a04, null, M3, e6Var);
             final int i17 = 1;
-            textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.i
+            textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.j
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     switch (i17) {
@@ -619,7 +618,7 @@ public class VideoAds {
                             VideoAds.lambda$show$10((TLRPC.TL_sponsoredMessage) tL_sponsoredMessage, view2);
                             break;
                         default:
-                            ((k60) tL_sponsoredMessage).s();
+                            ((m60) tL_sponsoredMessage).s();
                             break;
                     }
                 }
@@ -630,20 +629,20 @@ public class VideoAds {
             View view2 = (View) arrayList.get(i18);
             if (i18 > 0) {
                 FrameLayout frameLayout = new FrameLayout(context2);
-                t6.h(m6.d7, frameLayout, i0Var);
+                q6.h(j6.d7, frameLayout, i0Var);
                 i7 = -1;
-                LinearLayout.LayoutParams o4 = ha.o(-1, 1);
+                LinearLayout.LayoutParams o4 = ja.o(-1, 1);
                 o4.height = 1;
                 J.r(frameLayout, o4);
             } else {
                 i7 = -1;
             }
-            J.r(view2, ha.o(i7, -2));
+            J.r(view2, ja.o(i7, -2));
         }
-        k60Var.c(R.drawable.msg_channel, id.M0(2131745248, null), new h2(k60Var, J, 3), false);
-        if (!p10.i(this.currentAccount).q()) {
+        m60Var.c(R.drawable.msg_channel, hd.M0(2131745248, null), new n3(m60Var, J, 4), false);
+        if (!m10.i(this.currentAccount).q()) {
             final int i102 = 1;
-            k60Var.c(R.drawable.msg_block2, id.M0(2131749323, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
+            m60Var.c(R.drawable.msg_block2, hd.M0(2131749323, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
                 public final /* synthetic */ VideoAds b;
 
                 {
@@ -654,10 +653,10 @@ public class VideoAds {
                 public final void run() {
                     switch (i102) {
                         case 0:
-                            this.b.lambda$show$15(k60Var);
+                            this.b.lambda$show$15(m60Var);
                             break;
                         default:
-                            this.b.lambda$show$12(k60Var);
+                            this.b.lambda$show$12(m60Var);
                             break;
                     }
                 }
@@ -665,53 +664,53 @@ public class VideoAds {
         }
         if (tL_sponsoredMessage.can_report) {
         }
-        if (k60Var.x() > 0) {
+        if (m60Var.x() > 0) {
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$show$18(TLRPC.TL_sponsoredMessage tL_sponsoredMessage, View view) {
         logSponsoredClicked(tL_sponsoredMessage);
-        vf.c.s(view.getContext(), Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, qp.s1(p10.s0).d6, false, false);
+        vf.c.s(view.getContext(), Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, np.s1(m10.t0).e6, false, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$show$2(CloseDrawable closeDrawable, View view) {
         if (closeDrawable.isCrossAvailable()) {
-            bc bcVar = this.bulletin;
-            if (bcVar != null) {
-                bcVar.b();
+            xb xbVar = this.bulletin;
+            if (xbVar != null) {
+                xbVar.b();
                 return;
             }
             return;
         }
-        if (!p10.i(this.currentAccount).q()) {
+        if (!m10.i(this.currentAccount).q()) {
             showPremium();
             return;
         }
-        bc bcVar2 = this.bulletin;
-        if (bcVar2 != null) {
-            bcVar2.b();
+        xb xbVar2 = this.bulletin;
+        if (xbVar2 != null) {
+            xbVar2.b();
             this.bulletin = null;
         }
-        qp.s1(this.currentAccount).o0(true);
-        this.bulletinFactory.c(id.M0(2131754488, null)).j();
+        np.s1(this.currentAccount).o0(true);
+        this.bulletinFactory.c(hd.M0(2131754488, null)).j();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$show$3(bc bcVar, TLRPC.TL_sponsoredMessage tL_sponsoredMessage) {
-        bc bcVar2 = this.bulletin;
-        if (bcVar2 == null || bcVar2 != bcVar) {
+    public void lambda$show$3(xb xbVar, TLRPC.TL_sponsoredMessage tL_sponsoredMessage) {
+        xb xbVar2 = this.bulletin;
+        if (xbVar2 == null || xbVar2 != xbVar) {
             return;
         }
-        bcVar2.j = (tL_sponsoredMessage.max_display_duration - tL_sponsoredMessage.min_display_duration) * 1000;
-        bcVar2.i(true);
+        xbVar2.j = (tL_sponsoredMessage.max_display_duration - tL_sponsoredMessage.min_display_duration) * 1000;
+        xbVar2.i(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$show$4(bc bcVar, boolean[] zArr, CloseDrawable closeDrawable, long[] jArr, Runnable runnable, long[] jArr2, long j3, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Boolean bool) {
-        bc bcVar2 = this.bulletin;
-        if (bcVar2 == null || bcVar2 != bcVar || bool.booleanValue() == zArr[0]) {
+    public void lambda$show$4(xb xbVar, boolean[] zArr, CloseDrawable closeDrawable, long[] jArr, Runnable runnable, long[] jArr2, long j3, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Boolean bool) {
+        xb xbVar2 = this.bulletin;
+        if (xbVar2 == null || xbVar2 != xbVar || bool.booleanValue() == zArr[0]) {
             return;
         }
         boolean booleanValue = bool.booleanValue();
@@ -729,9 +728,9 @@ public class VideoAds {
         long j10 = (tL_sponsoredMessage.min_display_duration * 1000) - currentTimeMillis;
         long j11 = (tL_sponsoredMessage.max_display_duration * 1000) - currentTimeMillis;
         if (j11 <= 0) {
-            bc bcVar3 = this.bulletin;
-            if (bcVar3 != null) {
-                bcVar3.b();
+            xb xbVar3 = this.bulletin;
+            if (xbVar3 != null) {
+                xbVar3.b();
                 this.bulletin = null;
                 return;
             }
@@ -741,21 +740,21 @@ public class VideoAds {
             g0.i3(runnable, j10);
             return;
         }
-        bc bcVar4 = this.bulletin;
-        bcVar4.j = (int) j11;
-        bcVar4.i(true);
+        xb xbVar4 = this.bulletin;
+        xbVar4.j = (int) j11;
+        xbVar4.i(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$show$5(bc bcVar, boolean[] zArr) {
-        bc bcVar2 = this.bulletin;
-        if (bcVar2 == null || bcVar2 != bcVar || zArr[0]) {
+    public /* synthetic */ void lambda$show$5(xb xbVar, boolean[] zArr) {
+        xb xbVar2 = this.bulletin;
+        if (xbVar2 == null || xbVar2 != xbVar || zArr[0]) {
             return;
         }
         zArr[0] = true;
-        k60 k60Var = this.currentMenu;
-        if (k60Var != null) {
-            k60Var.u();
+        m60 m60Var = this.currentMenu;
+        if (m60Var != null) {
+            m60Var.u();
             this.currentMenu = null;
         }
         this.bulletin = null;
@@ -772,10 +771,10 @@ public class VideoAds {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$show$7(k60 k60Var, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Context context, View view) {
-        k60Var.u();
+    public void lambda$show$7(m60 m60Var, TLRPC.TL_sponsoredMessage tL_sponsoredMessage, Context context, View view) {
+        m60Var.u();
         logSponsoredClicked(tL_sponsoredMessage);
-        vf.c.s(context, Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, qp.s1(this.currentAccount).d6, false, false);
+        vf.c.s(context, Uri.parse(tL_sponsoredMessage.url), true, false, false, null, null, false, np.s1(this.currentAccount).e6, false, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -790,8 +789,8 @@ public class VideoAds {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPremium$19(w0 w0Var) {
-        if (w0Var == this.premiumSheet) {
+    public /* synthetic */ void lambda$showPremium$19(x0 x0Var) {
+        if (x0Var == this.premiumSheet) {
             this.premiumSheet = null;
             checkPopupShownCallback();
         }
@@ -801,15 +800,15 @@ public class VideoAds {
         if (this.loading || this.loaded) {
             return;
         }
-        if (p10.i(this.currentAccount).q() && qp.s1(this.currentAccount).E2()) {
+        if (m10.i(this.currentAccount).q() && np.s1(this.currentAccount).E2()) {
             return;
         }
         this.loading = true;
         TLRPC.TL_messages_getSponsoredMessages tL_messages_getSponsoredMessages = new TLRPC.TL_messages_getSponsoredMessages();
-        tL_messages_getSponsoredMessages.peer = qp.s1(this.currentAccount).j1(this.dialogId);
+        tL_messages_getSponsoredMessages.peer = np.s1(this.currentAccount).j1(this.dialogId);
         tL_messages_getSponsoredMessages.flags = 1 | tL_messages_getSponsoredMessages.flags;
         tL_messages_getSponsoredMessages.msg_id = this.msg_id;
-        this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getSponsoredMessages, new RequestDelegate() { // from class: org.telegram.messenger.video.g
+        this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getSponsoredMessages, new RequestDelegate() { // from class: org.telegram.messenger.video.h
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VideoAds.this.lambda$load$1(tLObject, tL_error);
@@ -817,7 +816,7 @@ public class VideoAds {
         });
     }
 
-    public static VideoAds make(int i7, long j3, int i10, gc gcVar) {
+    public static VideoAds make(int i7, long j3, int i10, cc ccVar) {
         VideoAdsLocation videoAdsLocation = new VideoAdsLocation(i7, j3);
         LruCache<VideoAdsLocation, VideoAdsCache> lruCache = cached;
         VideoAdsCache videoAdsCache = lruCache.get(videoAdsLocation);
@@ -825,7 +824,7 @@ public class VideoAds {
             videoAdsCache = new VideoAdsCache(i10);
             lruCache.put(videoAdsLocation, videoAdsCache);
         }
-        return new VideoAds(i7, j3, i10, gcVar, videoAdsCache);
+        return new VideoAds(i7, j3, i10, ccVar, videoAdsCache);
     }
 
     private void schedule() {
@@ -844,15 +843,15 @@ public class VideoAds {
         final TLRPC.TL_sponsoredMessage tL_sponsoredMessage = this.ads.get(0);
         final long currentTimeMillis = System.currentTimeMillis() - this.currentBulletinPassedTime;
         this.bulletinShowTime = currentTimeMillis;
-        bc bcVar = this.bulletin;
-        if (bcVar != null) {
-            bcVar.b();
+        xb xbVar = this.bulletin;
+        if (xbVar != null) {
+            xbVar.b();
             this.bulletin = null;
         }
         Context W = this.bulletinFactory.W();
-        org.telegram.ui.ActionBar.h6 h6Var = this.bulletinFactory.c;
-        AdLayout adLayout = new AdLayout(W, h6Var) { // from class: org.telegram.messenger.video.VideoAds.1
-            @Override // org.telegram.ui.Components.fb
+        e6 e6Var = this.bulletinFactory.c;
+        AdLayout adLayout = new AdLayout(W, e6Var) { // from class: org.telegram.messenger.video.VideoAds.1
+            @Override // org.telegram.ui.Components.cb
             public void updatePosition() {
                 super.updatePosition();
                 if (VideoAds.this.currentMenu != null) {
@@ -860,65 +859,65 @@ public class VideoAds {
                 }
             }
 
-            @Override // org.telegram.messenger.video.VideoAds.AdLayout, org.telegram.ui.Components.fb, org.telegram.ui.ActionBar.c6
+            @Override // org.telegram.messenger.video.VideoAds.AdLayout, org.telegram.ui.Components.cb, org.telegram.ui.ActionBar.z5
             public /* bridge */ /* synthetic */ void addColorKeys(HashSet hashSet) {
             }
         };
         adLayout.titleTextView.k(tL_sponsoredMessage.title);
-        m5 m5Var = adLayout.titleTextView;
+        j5 j5Var = adLayout.titleTextView;
         Context W2 = this.bulletinFactory.W();
-        int i7 = m6.Ci;
-        m5Var.i(new AdOptionsDrawable(W2, m6.w0(i7, this.bulletinFactory.c)));
+        int i7 = j6.Fi;
+        j5Var.i(new AdOptionsDrawable(W2, j6.w0(i7, this.bulletinFactory.c)));
         adLayout.subtitleTextView.setText(tL_sponsoredMessage.message);
         TLRPC.MessageMedia messageMedia = tL_sponsoredMessage.media;
         if (messageMedia != null) {
             TLRPC.Document document = messageMedia.document;
             if (document != null) {
-                adLayout.imageView.g(0, 0L, null, "48_48", "48_48", null, hc.b(tL_sponsoredMessage.media.document), hc.c(w7.w(document.thumbs, 48, false, null, false), tL_sponsoredMessage.media.document));
+                adLayout.imageView.g(0, 0L, null, "48_48", "48_48", null, gc.b(tL_sponsoredMessage.media.document), gc.c(w7.w(document.thumbs, 48, false, null, false), tL_sponsoredMessage.media.document));
             } else {
                 TLRPC.Photo photo = messageMedia.photo;
                 if (photo != null) {
                     TLRPC.PhotoSize w10 = w7.w(photo.sizes, 48, true, null, true);
-                    adLayout.imageView.g(0, 0L, null, "48_48", "48_48", null, hc.i(w10, tL_sponsoredMessage.media.photo), hc.i(w7.w(tL_sponsoredMessage.media.photo.sizes, 48, true, w10, false), tL_sponsoredMessage.media.photo));
+                    adLayout.imageView.g(0, 0L, null, "48_48", "48_48", null, gc.i(w10, tL_sponsoredMessage.media.photo), gc.i(w7.w(tL_sponsoredMessage.media.photo.sizes, 48, true, w10, false), tL_sponsoredMessage.media.photo));
                 }
             }
         } else {
             TLRPC.Photo photo2 = tL_sponsoredMessage.photo;
             if (photo2 != null) {
                 TLRPC.PhotoSize w11 = w7.w(photo2.sizes, 48, true, null, true);
-                adLayout.imageView.g(0, 0L, null, "48_48", "48_48", null, hc.i(w11, tL_sponsoredMessage.photo), hc.i(w7.w(tL_sponsoredMessage.photo.sizes, 48, true, w11, false), tL_sponsoredMessage.photo));
+                adLayout.imageView.g(0, 0L, null, "48_48", "48_48", null, gc.i(w11, tL_sponsoredMessage.photo), gc.i(w7.w(tL_sponsoredMessage.photo.sizes, 48, true, w11, false), tL_sponsoredMessage.photo));
             } else {
                 adLayout.hideImage();
             }
         }
         final CloseDrawable closeDrawable = new CloseDrawable(adLayout.buttonView, tL_sponsoredMessage.min_display_duration, tL_sponsoredMessage.max_display_duration, this.currentBulletinPassedTime);
-        closeDrawable.setColor(m6.w0(i7, this.bulletinFactory.c));
+        closeDrawable.setColor(j6.w0(i7, this.bulletinFactory.c));
         adLayout.buttonView.setImageDrawable(closeDrawable);
-        adLayout.buttonView.setOnClickListener(new r(23, this, closeDrawable));
-        final bc b10 = this.bulletinFactory.b(adLayout, tL_sponsoredMessage.max_display_duration * 1000);
+        adLayout.buttonView.setOnClickListener(new e(0, this, closeDrawable));
+        final xb b10 = this.bulletinFactory.b(adLayout, tL_sponsoredMessage.max_display_duration * 1000);
         this.bulletin = b10;
         b10.u = false;
         b10.i(false);
-        final l2.z0 z0Var = new l2.z0(this, b10, tL_sponsoredMessage, 13);
+        final ki.n nVar = new ki.n(this, b10, tL_sponsoredMessage, 14);
         final long[] jArr = new long[1];
         final long[] jArr2 = new long[1];
         final boolean[] zArr = new boolean[1];
-        c20 c20Var = new c20() { // from class: org.telegram.messenger.video.e
-            @Override // org.telegram.messenger.c20
+        z10 z10Var = new z10() { // from class: org.telegram.messenger.video.f
+            @Override // org.telegram.messenger.z10
             public final void a(Object obj) {
-                VideoAds.this.lambda$show$4(b10, zArr, closeDrawable, jArr2, z0Var, jArr, currentTimeMillis, tL_sponsoredMessage, (Boolean) obj);
+                VideoAds.this.lambda$show$4(b10, zArr, closeDrawable, jArr2, nVar, jArr, currentTimeMillis, tL_sponsoredMessage, (Boolean) obj);
             }
         };
-        g0.i3(z0Var, tL_sponsoredMessage.min_display_duration * 1000);
-        bc bcVar2 = this.bulletin;
-        bcVar2.r = false;
-        bcVar2.v = new l2.z0(this, b10, new boolean[1], 14);
-        adLayout.titleTextView.setRightDrawableOnClick(new f(this, b10, tL_sponsoredMessage, W, h6Var, adLayout, c20Var, 0));
-        bc bcVar3 = this.bulletin;
-        r rVar = new r(24, this, tL_sponsoredMessage);
-        fb fbVar = bcVar3.e;
-        if (fbVar != null) {
-            fbVar.setOnClickListener(rVar);
+        g0.i3(nVar, tL_sponsoredMessage.min_display_duration * 1000);
+        xb xbVar2 = this.bulletin;
+        xbVar2.r = false;
+        xbVar2.v = new ki.n(this, b10, new boolean[1], 15);
+        adLayout.titleTextView.setRightDrawableOnClick(new g(this, b10, tL_sponsoredMessage, W, e6Var, adLayout, z10Var, 0));
+        xb xbVar3 = this.bulletin;
+        e eVar = new e(1, this, tL_sponsoredMessage);
+        cb cbVar = xbVar3.e;
+        if (cbVar != null) {
+            cbVar.setOnClickListener(eVar);
         }
         this.bulletin.j();
         logSponsoredShown(tL_sponsoredMessage);
@@ -926,41 +925,41 @@ public class VideoAds {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void showPremium() {
-        w0 w0Var = this.premiumSheet;
-        if (w0Var != null) {
-            w0Var.dismiss();
+        x0 x0Var = this.premiumSheet;
+        if (x0Var != null) {
+            x0Var.dismiss();
             this.premiumSheet = null;
         }
-        w0 w0Var2 = new w0(new f2() { // from class: org.telegram.messenger.video.VideoAds.2
-            @Override // org.telegram.ui.ActionBar.f2
+        x0 x0Var2 = new x0(new e2() { // from class: org.telegram.messenger.video.VideoAds.2
+            @Override // org.telegram.ui.ActionBar.e2
             public Context getContext() {
-                return g0.W(LaunchActivity.G1);
+                return g0.W(LaunchActivity.H1);
             }
 
-            @Override // org.telegram.ui.ActionBar.f2
+            @Override // org.telegram.ui.ActionBar.e2
             public int getCurrentAccount() {
                 return VideoAds.this.currentAccount;
             }
 
-            @Override // org.telegram.ui.ActionBar.f2
+            @Override // org.telegram.ui.ActionBar.e2
             public Activity getParentActivity() {
                 Activity W = g0.W(t0.b);
-                return W == null ? LaunchActivity.G1 : W;
+                return W == null ? LaunchActivity.H1 : W;
             }
         }, 3, true);
-        this.premiumSheet = w0Var2;
-        w0Var2.n(new j3(15, this, w0Var2));
-        w0Var2.show();
+        this.premiumSheet = x0Var2;
+        x0Var2.n(new u4(3, this, x0Var2));
+        x0Var2.show();
         checkPopupShownCallback();
     }
 
     public boolean isPopupShown() {
-        k60 k60Var = this.currentMenu;
-        if (k60Var != null && k60Var.D()) {
+        m60 m60Var = this.currentMenu;
+        if (m60Var != null && m60Var.D()) {
             return true;
         }
-        w0 w0Var = this.premiumSheet;
-        return (w0Var == null || w0Var.I) ? false : true;
+        x0 x0Var = this.premiumSheet;
+        return (x0Var == null || x0Var.J) ? false : true;
     }
 
     public void logSponsoredClicked(TLRPC.TL_sponsoredMessage tL_sponsoredMessage) {
@@ -971,7 +970,7 @@ public class VideoAds {
         tL_messages_clickSponsoredMessage.random_id = tL_sponsoredMessage.random_id;
         tL_messages_clickSponsoredMessage.media = false;
         tL_messages_clickSponsoredMessage.fullscreen = false;
-        boolean z9 = r2.a;
+        boolean z10 = r2.a;
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_clickSponsoredMessage, null);
     }
 
@@ -981,7 +980,7 @@ public class VideoAds {
         }
         TLRPC.TL_messages_viewSponsoredMessage tL_messages_viewSponsoredMessage = new TLRPC.TL_messages_viewSponsoredMessage();
         tL_messages_viewSponsoredMessage.random_id = tL_sponsoredMessage.random_id;
-        boolean z9 = r2.a;
+        boolean z10 = r2.a;
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_viewSponsoredMessage, null);
     }
 
@@ -989,13 +988,13 @@ public class VideoAds {
         this.onPopupCallback = runnable;
     }
 
-    public void setWaitingPaused(boolean z9) {
-        if (this.waitingPaused == z9) {
+    public void setWaitingPaused(boolean z10) {
+        if (this.waitingPaused == z10) {
             return;
         }
-        this.waitingPaused = z9;
+        this.waitingPaused = z10;
         g0.r(this.showRunnable);
-        if (z9) {
+        if (z10) {
             this.waitingTimeSince = System.currentTimeMillis();
             return;
         }
@@ -1020,9 +1019,9 @@ public class VideoAds {
         } else {
             this.currentBulletinPassedTime = 0L;
         }
-        k60 k60Var = this.currentMenu;
-        if (k60Var != null) {
-            k60Var.u();
+        m60 m60Var = this.currentMenu;
+        if (m60Var != null) {
+            m60Var.u();
             this.currentMenu = null;
         }
         this.bulletin = null;
@@ -1035,88 +1034,88 @@ public class VideoAds {
         setWaitingPaused(true);
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-    public static class AdLayout extends ya {
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    public static class AdLayout extends va {
         public final ImageView buttonView;
-        public final k9 imageView;
+        public final i9 imageView;
         private final LinearLayout linearLayout;
-        public final w70 subtitleTextView;
-        public final m5 titleTextView;
+        public final z70 subtitleTextView;
+        public final j5 titleTextView;
 
-        public AdLayout(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-            super(context, h6Var);
-            setBackground(getThemedColor(m6.tj));
-            k9 k9Var = new k9(context);
-            this.imageView = k9Var;
-            k9Var.setRoundRadius(g0.L(48.0f));
-            addView(k9Var, ha.i(36.0f, 36.0f, 8388627, 9.0f, 0.0f, 0.0f, 0.0f));
-            int i7 = m6.vj;
+        public AdLayout(Context context, e6 e6Var) {
+            super(context, e6Var);
+            setBackground(getThemedColor(j6.wj));
+            i9 i9Var = new i9(context);
+            this.imageView = i9Var;
+            i9Var.setRoundRadius(g0.L(48.0f));
+            addView(i9Var, ja.i(36.0f, 36.0f, 8388627, 9.0f, 0.0f, 0.0f, 0.0f));
+            int i7 = j6.yj;
             getThemedColor(i7);
-            int i10 = m6.uj;
+            int i10 = j6.xj;
             getThemedColor(i10);
             LinearLayout linearLayout = new LinearLayout(context);
             this.linearLayout = linearLayout;
             linearLayout.setOrientation(1);
-            addView(linearLayout, ha.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 54.0f, 8.0f));
-            m5 m5Var = new m5(context);
-            this.titleTextView = m5Var;
-            m5Var.setPadding(g0.L(4.0f), 0, g0.L(4.0f), 0);
-            t6.X(m5Var, i7, h6Var);
-            m5Var.setTextSize(14);
-            m5Var.setTypeface(g0.o());
-            linearLayout.addView(m5Var);
-            w70 w70Var = new w70(context, null);
-            this.subtitleTextView = w70Var;
-            w70Var.setPadding(g0.L(4.0f), 0, g0.L(4.0f), 0);
-            t6.U(w70Var, i7, h6Var);
-            t6.G(w70Var, i10, h6Var);
-            w70Var.setTypeface(Typeface.SANS_SERIF);
-            w70Var.setTextSize(1, 13.0f);
-            linearLayout.addView(w70Var);
+            addView(linearLayout, ja.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 54.0f, 8.0f));
+            j5 j5Var = new j5(context);
+            this.titleTextView = j5Var;
+            j5Var.setPadding(g0.L(4.0f), 0, g0.L(4.0f), 0);
+            q6.X(j5Var, i7, e6Var);
+            j5Var.setTextSize(14);
+            j5Var.setTypeface(g0.o());
+            linearLayout.addView(j5Var);
+            z70 z70Var = new z70(context, null);
+            this.subtitleTextView = z70Var;
+            z70Var.setPadding(g0.L(4.0f), 0, g0.L(4.0f), 0);
+            q6.U(z70Var, i7, e6Var);
+            q6.G(z70Var, i10, e6Var);
+            z70Var.setTypeface(Typeface.SANS_SERIF);
+            z70Var.setTextSize(1, 13.0f);
+            linearLayout.addView(z70Var);
             ImageView imageView = new ImageView(context);
             this.buttonView = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            int i11 = m6.Ci;
-            y h02 = m6.h0(m6.r1(0.15f, getThemedColor(i11)), 7, -1);
-            p6 K = t6.K(0.15f, i11);
+            int i11 = j6.Fi;
+            y h02 = j6.h0(j6.r1(0.15f, getThemedColor(i11)), 7, -1);
+            m6 K = q6.K(0.15f, i11);
             imageView.setBackground(h02);
-            t6.j(imageView, h02, null, K, h6Var);
-            addView(imageView, ha.i(32.0f, 32.0f, 8388629, 0.0f, 0.0f, 11.0f, 0.0f));
+            q6.j(imageView, h02, null, K, e6Var);
+            addView(imageView, ja.i(32.0f, 32.0f, 8388629, 0.0f, 0.0f, 11.0f, 0.0f));
         }
 
-        @Override // org.telegram.ui.Components.fb
+        @Override // org.telegram.ui.Components.cb
         public CharSequence getAccessibilityText() {
             return ((Object) this.titleTextView.getText()) + ".\n" + ((Object) this.subtitleTextView.getText());
         }
 
         public void hideImage() {
             this.imageView.setVisibility(8);
-            this.linearLayout.setLayoutParams(ha.i(-2.0f, -2.0f, 8388627, 10.0f, 8.0f, 54.0f, 8.0f));
+            this.linearLayout.setLayoutParams(ja.i(-2.0f, -2.0f, 8388627, 10.0f, 8.0f, 54.0f, 8.0f));
         }
 
-        @Override // org.telegram.ui.Components.fb
+        @Override // org.telegram.ui.Components.cb
         public void onShow() {
             super.onShow();
         }
 
-        @Override // org.telegram.ui.Components.fb, org.telegram.ui.ActionBar.c6
+        @Override // org.telegram.ui.Components.cb, org.telegram.ui.ActionBar.z5
         public /* bridge */ /* synthetic */ void addColorKeys(HashSet hashSet) {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class AdOptionsDrawable extends Drawable {
         public final int color;
         public final Drawable icon;
         public final Paint backgroundPaint = new Paint(1);
-        public final my0 text = new my0(id.M0(2131745258, null), 11.0f, g0.o());
+        public final oy0 text = new oy0(hd.M0(2131745258, null), 11.0f, g0.o());
         private float alpha = 1.0f;
 
         public AdOptionsDrawable(Context context, int i7) {
             this.color = i7;
-            Drawable h = jg.g.h(context, R.drawable.ic_ab_other);
-            this.icon = h;
-            h.setColorFilter(new PorterDuffColorFilter(i7, PorterDuff.Mode.SRC_IN));
+            Drawable g10 = i5.c.g(context, R.drawable.ic_ab_other);
+            this.icon = g10;
+            g10.setColorFilter(new PorterDuffColorFilter(i7, PorterDuff.Mode.SRC_IN));
         }
 
         @Override // android.graphics.drawable.Drawable
@@ -1124,7 +1123,7 @@ public class VideoAds {
             RectF rectF = g0.P;
             rectF.set(getBounds());
             rectF.left += g0.L(4.0f);
-            this.backgroundPaint.setColor(m6.r1(this.alpha * 0.2f, this.color));
+            this.backgroundPaint.setColor(j6.r1(this.alpha * 0.2f, this.color));
             canvas.drawRoundRect(rectF, rectF.height(), rectF.height(), this.backgroundPaint);
             this.text.c(rectF.left + g0.L(5.0f), rectF.centerY(), this.alpha, this.color, canvas);
             this.icon.setBounds(getBounds().right - g0.L(12.99f), getBounds().centerY() - g0.L(5.665f), getBounds().right - g0.L(1.66f), g0.L(5.665f) + getBounds().centerY());

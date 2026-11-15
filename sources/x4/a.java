@@ -2,14 +2,14 @@ package x4;
 
 import android.content.ComponentName;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements Comparable {
-    public final g0.c a;
+    public final g0.b a;
     public final ComponentName b;
 
-    public a(g0.c cVar, ComponentName componentName) {
-        this.a = cVar;
+    public a(g0.b bVar, ComponentName componentName) {
+        this.a = bVar;
         this.b = componentName;
     }
 

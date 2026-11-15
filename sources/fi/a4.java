@@ -1,383 +1,124 @@
 package fi;
 
-import android.content.ContentUris;
+import a8.ja;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.provider.MediaStore;
-import android.text.TextUtils;
-import android.util.Size;
-import android.view.MotionEvent;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
-import java.io.File;
-import java.util.HashSet;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.qs;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.wq;
+import java.util.ArrayList;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.ns;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.tr;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class a4 extends View implements org.telegram.ui.ActionBar.c6 {
-    public float D;
-    public final org.telegram.ui.Components.v5 E;
-    public final org.telegram.ui.Components.v5 F;
-    public final org.telegram.ui.ActionBar.h6 a;
-    public final ImageReceiver b;
-    public final Paint c;
-    public final Paint d;
-    public final org.telegram.ui.Components.h6 e;
-    public boolean f;
-    public boolean h;
-    public View.OnClickListener n;
-    public final hc r;
-    public int s;
-    public String w;
-    public float x;
-    public float y;
+public final class a4 {
+    public boolean a;
+    public Object b;
+    public Object c;
+    public Object d;
+    public Object e;
+    public Object f;
+    public Object g;
 
-    public a4(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.b = imageReceiver;
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        org.telegram.ui.Components.h6 h6Var2 = new org.telegram.ui.Components.h6(false, false, false);
-        this.e = h6Var2;
-        this.r = new hc(this);
-        this.s = -1;
-        wq wqVar = wq.h;
-        this.E = new org.telegram.ui.Components.v5(this, 0L, 320L, wqVar);
-        this.F = new org.telegram.ui.Components.v5(this, 0L, 320L, wqVar);
-        h6Var2.setCallback(this);
-        h6Var2.u(-1);
-        h6Var2.b = 17;
-        h6Var2.w(org.telegram.messenger.g0.L(16.0f));
-        h6Var2.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
-        h6Var2.M = org.telegram.messenger.g0.q.x;
-        h6Var2.n(0.65f, 480L, wqVar);
-        h6Var2.A = 0.35f;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(-1);
-        this.a = h6Var;
-        paint2.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ci, h6Var));
-        imageReceiver.J0(org.telegram.messenger.g0.L(6.0f));
-        c8.ka.a(this);
+    public a4(Context context, int i7) {
+        switch (i7) {
+            case 3:
+                this.d = yi.h.a;
+                this.a = true;
+                this.g = yi.j.H;
+                this.b = context;
+                break;
+            default:
+                this.b = context;
+                this.c = n2.b.f;
+                break;
+        }
     }
 
-    public final void a(int i7, int i10, final e7 e7Var) {
-        String str;
-        if (this.s != i7) {
-            this.w = null;
-            this.b.f();
-            this.s = i7;
-        }
-        this.e.t(Integer.toString(i10 + 1), false, true);
-        File file = e7Var.O0;
-        if (file != null) {
-            if (TextUtils.equals(this.w, file.getPath())) {
-                return;
-            }
-            this.w = e7Var.O0.getPath();
-            final int i11 = 0;
-            Utilities.g.c(new Runnable(this) { // from class: fi.x3
-                public final /* synthetic */ a4 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i11) {
-                        case 0:
-                            BitmapFactory.Options options = new BitmapFactory.Options();
-                            options.inJustDecodeBounds = true;
-                            e7 e7Var2 = e7Var;
-                            BitmapFactory.decodeFile(e7Var2.O0.getPath(), options);
-                            int L = org.telegram.messenger.g0.L(94.0f);
-                            org.telegram.messenger.g0.L(112.0f);
-                            e7.C(options, L);
-                            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                            options.inDither = true;
-                            options.inJustDecodeBounds = false;
-                            final Bitmap decodeFile = BitmapFactory.decodeFile(e7Var2.O0.getPath(), options);
-                            final int i12 = 1;
-                            final a4 a4Var = this.b;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: fi.y3
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i12) {
-                                        case 0:
-                                            a4Var.b.v0(decodeFile);
-                                            break;
-                                        default:
-                                            a4Var.b.v0(decodeFile);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                        default:
-                            BitmapFactory.Options options2 = new BitmapFactory.Options();
-                            options2.inJustDecodeBounds = true;
-                            e7 e7Var3 = e7Var;
-                            BitmapFactory.decodeFile(e7Var3.L.getPath(), options2);
-                            int L2 = org.telegram.messenger.g0.L(94.0f);
-                            org.telegram.messenger.g0.L(112.0f);
-                            e7.C(options2, L2);
-                            options2.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                            options2.inDither = true;
-                            options2.inJustDecodeBounds = false;
-                            final Bitmap decodeFile2 = BitmapFactory.decodeFile(e7Var3.L.getPath(), options2);
-                            final int i13 = 0;
-                            final a4 a4Var2 = this.b;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: fi.y3
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i13) {
-                                        case 0:
-                                            a4Var2.b.v0(decodeFile2);
-                                            break;
-                                        default:
-                                            a4Var2.b.v0(decodeFile2);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                    }
-                }
-            });
+    public static void c(tr trVar) {
+        a4 a4Var = new a4();
+        a4Var.b = new org.telegram.messenger.h5(a4Var, 0);
+        a4Var.d = trVar;
+        int i7 = m10.t0;
+        a4Var.g = new org.telegram.messenger.a(a4Var, 6);
+        a4Var.f = org.telegram.messenger.g5.r(i7);
+        a4Var.e = ns.f(i7);
+        a4Var.c = new Handler(Looper.myLooper());
+        if (a4Var.d(false)) {
             return;
         }
-        if (!e7Var.K) {
-            File file2 = e7Var.L;
-            if (file2 == null || TextUtils.equals(this.w, file2.getPath())) {
-                return;
+        ((ns) a4Var.e).b((org.telegram.messenger.h5) a4Var.b, ns.O);
+        ((Handler) a4Var.c).postDelayed((org.telegram.messenger.a) a4Var.g, 1000L);
+    }
+
+    public n2.r0 a() {
+        Context context = (Context) this.b;
+        ja.p(!this.a);
+        this.a = true;
+        if (((h6.m) this.d) == null) {
+            this.d = new h6.m(new f2.m[0]);
+        }
+        if (((n2.i0) this.f) == null) {
+            if (((n2.l0) this.g) == null) {
+                this.g = new n2.l0(context);
             }
-            this.w = e7Var.L.getPath();
-            final int i12 = 1;
-            Utilities.g.c(new Runnable(this) { // from class: fi.x3
-                public final /* synthetic */ a4 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i12) {
-                        case 0:
-                            BitmapFactory.Options options = new BitmapFactory.Options();
-                            options.inJustDecodeBounds = true;
-                            e7 e7Var2 = e7Var;
-                            BitmapFactory.decodeFile(e7Var2.O0.getPath(), options);
-                            int L = org.telegram.messenger.g0.L(94.0f);
-                            org.telegram.messenger.g0.L(112.0f);
-                            e7.C(options, L);
-                            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                            options.inDither = true;
-                            options.inJustDecodeBounds = false;
-                            final Bitmap decodeFile = BitmapFactory.decodeFile(e7Var2.O0.getPath(), options);
-                            final int i122 = 1;
-                            final a4 a4Var = this.b;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: fi.y3
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i122) {
-                                        case 0:
-                                            a4Var.b.v0(decodeFile);
-                                            break;
-                                        default:
-                                            a4Var.b.v0(decodeFile);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                        default:
-                            BitmapFactory.Options options2 = new BitmapFactory.Options();
-                            options2.inJustDecodeBounds = true;
-                            e7 e7Var3 = e7Var;
-                            BitmapFactory.decodeFile(e7Var3.L.getPath(), options2);
-                            int L2 = org.telegram.messenger.g0.L(94.0f);
-                            org.telegram.messenger.g0.L(112.0f);
-                            e7.C(options2, L2);
-                            options2.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                            options2.inDither = true;
-                            options2.inJustDecodeBounds = false;
-                            final Bitmap decodeFile2 = BitmapFactory.decodeFile(e7Var3.L.getPath(), options2);
-                            final int i13 = 0;
-                            final a4 a4Var2 = this.b;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: fi.y3
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i13) {
-                                        case 0:
-                                            a4Var2.b.v0(decodeFile2);
-                                            break;
-                                        default:
-                                            a4Var2.b.v0(decodeFile2);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                    }
-                }
-            });
-            return;
-        }
-        Bitmap bitmap = e7Var.M0;
-        if (bitmap == null) {
-            bitmap = null;
-        }
-        if (bitmap == null && (str = e7Var.N) != null && str.startsWith("vthumb://")) {
-            if (TextUtils.equals(this.w, e7Var.N)) {
-                return;
+            if (((n2.s0) this.e) == null) {
+                this.e = n2.s0.a;
             }
-            String str2 = e7Var.N;
-            this.w = str2;
-            long parseLong = Long.parseLong(str2.substring(9));
-            if (bitmap == null && Build.VERSION.SDK_INT >= 29) {
-                try {
-                    bitmap = getContext().getContentResolver().loadThumbnail(e7Var.K ? ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, parseLong) : ContentUris.withAppendedId(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, parseLong), new Size(org.telegram.messenger.g0.L(94.0f), org.telegram.messenger.g0.L(112.0f)), null);
-                } catch (Exception unused) {
-                }
+            n2.h0 h0Var = new n2.h0(context);
+            n2.b bVar = context != null ? null : (n2.b) this.c;
+            Context context2 = h0Var.a;
+            if (context2 == null) {
+                h0Var.d = bVar;
             }
-        }
-        this.b.v0(bitmap);
-    }
-
-    public final void b(boolean z9, boolean z10) {
-        if (this.f == z9) {
-            return;
-        }
-        this.f = z9;
-        if (!z10) {
-            this.E.a(z9);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float L = org.telegram.messenger.g0.L(2.0f);
-        float L2 = org.telegram.messenger.g0.L(4.0f);
-        float L3 = org.telegram.messenger.g0.L(94.0f);
-        float L4 = org.telegram.messenger.g0.L(112.0f);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.y0(L, L2, L3, L4);
-        imageReceiver.h(canvas, null);
-        float L5 = org.telegram.messenger.g0.L(1.5f);
-        Paint paint = this.c;
-        paint.setStrokeWidth(L5);
-        float d = this.E.d(this.f);
-        if (d > 0.0f) {
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(96.0f), org.telegram.messenger.g0.L(116.0f));
-            paint.setAlpha((int) (d * 255.0f));
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), paint);
-        }
-        this.x = (getWidth() - org.telegram.messenger.g0.L(17.163f)) - org.telegram.messenger.g0.L(3.0f);
-        this.y = org.telegram.messenger.g0.L(3.0f) + org.telegram.messenger.g0.L(17.833f);
-        this.D = org.telegram.messenger.g0.L(12.833f);
-        float d2 = this.F.d(this.h);
-        float a10 = this.r.a(0.075f);
-        canvas.save();
-        canvas.scale(a10, a10, this.x, this.y);
-        if (d2 > 0.0f) {
-            Paint paint2 = this.d;
-            paint2.setAlpha((int) (d2 * 255.0f));
-            canvas.drawCircle(this.x, this.y, this.D, paint2);
-        }
-        paint.setAlpha(qs.e4);
-        canvas.drawCircle(this.x, this.y, this.D - org.telegram.messenger.g0.L(1.0f), paint);
-        if (d2 > 0.0f) {
-            float f10 = this.x;
-            float f11 = this.D;
-            float f12 = f10 - f11;
-            float f13 = this.y;
-            float f14 = f10 + f11;
-            org.telegram.ui.Components.h6 h6Var = this.e;
-            h6Var.o(f12, f13, f14, f13);
-            h6Var.B = (int) (d2 * 255.0f);
-            h6Var.draw(canvas);
-        }
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.b.P();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.b.R();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(98.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(120.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        View.OnClickListener onClickListener;
-        boolean z9 = motionEvent.getX() >= this.x - ((float) org.telegram.messenger.g0.L(14.0f)) && motionEvent.getX() <= this.x + ((float) org.telegram.messenger.g0.L(14.0f)) && motionEvent.getY() >= this.y - ((float) org.telegram.messenger.g0.L(14.0f)) && motionEvent.getY() <= this.y + ((float) org.telegram.messenger.g0.L(14.0f));
-        int action = motionEvent.getAction();
-        hc hcVar = this.r;
-        if (action == 0) {
-            hcVar.c(z9);
-        } else if (motionEvent.getAction() == 1) {
-            if (hcVar.i && z9 && (onClickListener = this.n) != null) {
-                onClickListener.onClick(this);
+            n2.l0 l0Var = (n2.l0) this.g;
+            h0Var.b = l0Var;
+            h0Var.c = (n2.s0) this.e;
+            if (l0Var == null) {
+                h0Var.b = new n2.l0(context2);
             }
-            hcVar.c(false);
-        } else if (motionEvent.getAction() == 3) {
-            hcVar.c(false);
+            this.f = new n2.i0(h0Var);
+        } else {
+            ja.p(((n2.l0) this.g) == null);
+            ja.p(((n2.s0) this.e) == null);
         }
-        return hcVar.i || super.onTouchEvent(motionEvent);
+        return new n2.r0(this);
     }
 
-    public void setOnCheckboxClick(View.OnClickListener onClickListener) {
-        this.n = onClickListener;
-    }
-
-    public void setPosition(int i7) {
-        this.e.t(i7 < 0 ? "" : Integer.toString(i7 + 1), true, true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        try {
-            this.d.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ci, this.a));
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    public void b() {
+        ArrayList arrayList = (ArrayList) this.g;
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            ((View) arrayList.get(i7)).invalidate();
         }
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.e || super.verifyDrawable(drawable);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public boolean d(boolean z10) {
+        boolean z11 = this.a;
+        if (z11) {
+            return false;
+        }
+        if (!((org.telegram.messenger.g5) this.f).h && !z10) {
+            return false;
+        }
+        if (!z11) {
+            ns nsVar = (ns) this.e;
+            if (nsVar != null) {
+                nsVar.n((org.telegram.messenger.h5) this.b, ns.O);
+            }
+            Handler handler = (Handler) this.c;
+            if (handler != null) {
+                handler.removeCallbacks((org.telegram.messenger.a) this.g);
+            }
+            this.a = true;
+        }
+        tr trVar = (tr) this.d;
+        LaunchActivity launchActivity = (LaunchActivity) trVar.b;
+        Intent intent = (Intent) trVar.c;
+        String str = LaunchActivity.C1;
+        launchActivity.W(intent, true, false, false, null, true, false);
+        return true;
     }
 }

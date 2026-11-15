@@ -1,19 +1,60 @@
 package f3;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import a8.ja;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public interface j0 {
-    void a(h2.x xVar, int i7, int i10);
+public final class j0 {
+    public final byte[] a = new byte[10];
+    public boolean b;
+    public int c;
+    public long d;
+    public int e;
+    public int f;
+    public int g;
 
-    void b(int i7, h2.x xVar);
+    public final void a(i0 i0Var, h0 h0Var) {
+        if (this.c > 0) {
+            i0Var.c(this.d, this.e, this.f, this.g, h0Var);
+            this.c = 0;
+        }
+    }
 
-    void c(long j3, int i7, int i10, int i11, i0 i0Var);
+    public final void b(i0 i0Var, long j3, int i7, int i10, int i11, h0 h0Var) {
+        ja.o("TrueHD chunk samples must be contiguous in the sample queue.", this.g <= i10 + i11);
+        if (this.b) {
+            int i12 = this.c;
+            int i13 = i12 + 1;
+            this.c = i13;
+            if (i12 == 0) {
+                this.d = j3;
+                this.e = i7;
+                this.f = 0;
+            }
+            this.f += i10;
+            this.g = i11;
+            if (i13 >= 16) {
+                a(i0Var, h0Var);
+            }
+        }
+    }
 
-    void d(long j3);
-
-    int e(e2.n nVar, int i7, boolean z9);
-
-    int f(e2.n nVar, int i7, boolean z9);
-
-    void g(e2.u uVar);
+    public final void c(p pVar) {
+        if (this.b) {
+            return;
+        }
+        byte[] bArr = this.a;
+        pVar.c(0, 10, bArr);
+        pVar.l();
+        if (bArr[4] == -8 && bArr[5] == 114 && bArr[6] == 111) {
+            byte b10 = bArr[7];
+            if ((b10 & 254) == 186) {
+                r1 = 40 << ((bArr[((b10 & 255) == 187 ? 1 : 0) != 0 ? '\t' : '\b'] >> 4) & 7);
+            }
+        }
+        if (r1 == 0) {
+            return;
+        }
+        this.b = true;
+    }
 }

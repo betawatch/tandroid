@@ -1,6 +1,6 @@
 package a8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r0 implements na.g {
     public final /* synthetic */ int a;
@@ -56,42 +56,42 @@ public final class r0 implements na.g {
     }
 
     @Override // na.g
-    public final na.g g(boolean z9) {
+    public final na.g g(boolean z10) {
         switch (this.a) {
             case 0:
                 if (this.b) {
                     throw new na.b("Cannot encode a second value in the ValueEncoderContext");
                 }
                 this.b = true;
-                ((q0) this.e).h(this.d, z9 ? 1 : 0, this.c);
+                ((q0) this.e).h(this.d, z10 ? 1 : 0, this.c);
                 return this;
             case 1:
                 if (this.b) {
                     throw new na.b("Cannot encode a second value in the ValueEncoderContext");
                 }
                 this.b = true;
-                ((c8.y) this.e).h(this.d, z9 ? 1 : 0, this.c);
+                ((c8.y) this.e).h(this.d, z10 ? 1 : 0, this.c);
                 return this;
             case 2:
                 if (this.b) {
                     throw new na.b("Cannot encode a second value in the ValueEncoderContext");
                 }
                 this.b = true;
-                ((qa.e) this.e).g(this.d, z9 ? 1 : 0, this.c);
+                ((qa.e) this.e).g(this.d, z10 ? 1 : 0, this.c);
                 return this;
             case 3:
                 if (this.b) {
                     throw new na.b("Cannot encode a second value in the ValueEncoderContext");
                 }
                 this.b = true;
-                ((y7.j) this.e).h(this.d, z9 ? 1 : 0, this.c);
+                ((y7.j) this.e).h(this.d, z10 ? 1 : 0, this.c);
                 return this;
             default:
                 if (this.b) {
                     throw new na.b("Cannot encode a second value in the ValueEncoderContext");
                 }
                 this.b = true;
-                ((z7.f) this.e).h(this.d, z9 ? 1 : 0, this.c);
+                ((z7.f) this.e).h(this.d, z10 ? 1 : 0, this.c);
                 return this;
         }
     }

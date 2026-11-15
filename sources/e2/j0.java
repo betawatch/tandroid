@@ -3,7 +3,7 @@ package e2;
 import c8.tc;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j0 {
     public int a;
@@ -21,18 +21,18 @@ public final class j0 {
         this.a = 0;
         this.b = 0;
         this.g = new HashSet();
-        hashSet.add(u9.r.a(cls));
+        hashSet.add(u9.q.a(cls));
         for (Class cls2 : clsArr) {
             tc.a(cls2, "Null interface");
-            ((HashSet) this.c).add(u9.r.a(cls2));
+            ((HashSet) this.c).add(u9.q.a(cls2));
         }
     }
 
-    public void a(u9.j jVar) {
-        if (((HashSet) this.c).contains(jVar.a)) {
+    public void a(u9.i iVar) {
+        if (((HashSet) this.c).contains(iVar.a)) {
             throw new IllegalArgumentException("Components are not allowed to depend on interfaces they themselves provide.");
         }
-        ((HashSet) this.e).add(jVar);
+        ((HashSet) this.e).add(iVar);
     }
 
     public u9.a b() {

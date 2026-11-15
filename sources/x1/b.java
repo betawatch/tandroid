@@ -1,8 +1,9 @@
 package x1;
 
 import android.view.animation.Interpolator;
+import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class b implements Interpolator {
     public final float[] a;
@@ -24,8 +25,8 @@ public abstract class b implements Interpolator {
         float[] fArr = this.a;
         int min = Math.min((int) ((fArr.length - 1) * f10), fArr.length - 2);
         float f11 = this.b;
-        float w10 = com.google.android.recaptcha.internal.a.w(min, f11, f10, f11);
+        float w10 = e2.w(min, f11, f10, f11);
         float f12 = fArr[min];
-        return com.google.android.recaptcha.internal.a.z(fArr[min + 1], f12, w10, f12);
+        return e2.z(fArr[min + 1], f12, w10, f12);
     }
 }

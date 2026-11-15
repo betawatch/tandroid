@@ -4,53 +4,54 @@ import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.gf;
-import org.telegram.messenger.we;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.ve;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class v5 extends FrameLayout {
     public t5[] a;
-    public we[] b;
+    public ve[] b;
     public int c;
     public u5 d;
     public Paint e;
 
-    public final void a(int i7, we weVar) {
+    public final void a(int i7, ve veVar) {
         t5[] t5VarArr = this.a;
-        this.b[i7] = weVar;
-        if (weVar == null) {
+        this.b[i7] = veVar;
+        if (veVar == null) {
             t5VarArr[i7].setVisibility(4);
             return;
         }
-        gf gfVar = weVar.d;
+        ff ffVar = veVar.d;
         t5 t5Var = t5VarArr[i7];
-        org.telegram.ui.Components.k9 k9Var = t5Var.b;
-        k9Var.r();
-        if (gfVar != null) {
-            int i10 = gfVar.C;
-            String str = gfVar.I;
+        org.telegram.ui.Components.i9 i9Var = t5Var.b;
+        i9Var.r();
+        if (ffVar != null) {
+            int i10 = ffVar.C;
+            String str = ffVar.I;
             if (str != null) {
-                k9Var.s(gfVar.J, gfVar.K, true);
-                if (gfVar.b) {
-                    k9Var.h("vthumb://" + i10 + ":" + str, null, org.telegram.ui.ActionBar.m6.R4);
+                i9Var.s(ffVar.J, ffVar.K, true);
+                if (ffVar.b) {
+                    i9Var.h("vthumb://" + i10 + ":" + str, null, org.telegram.ui.ActionBar.j6.R4);
                 } else {
-                    k9Var.h("thumb://" + i10 + ":" + str, null, org.telegram.ui.ActionBar.m6.R4);
+                    i9Var.h("thumb://" + i10 + ":" + str, null, org.telegram.ui.ActionBar.j6.R4);
                 }
-                ((TextView) t5Var.c).setText(weVar.c);
-                ((TextView) t5Var.d).setText(String.format("%d", Integer.valueOf(weVar.e.size())));
+                ((TextView) t5Var.c).setText(veVar.c);
+                ((TextView) t5Var.d).setText(String.format("%d", Integer.valueOf(veVar.e.size())));
             }
         }
-        k9Var.setImageDrawable(org.telegram.ui.ActionBar.m6.R4);
-        ((TextView) t5Var.c).setText(weVar.c);
-        ((TextView) t5Var.d).setText(String.format("%d", Integer.valueOf(weVar.e.size())));
+        i9Var.setImageDrawable(org.telegram.ui.ActionBar.j6.R4);
+        ((TextView) t5Var.c).setText(veVar.c);
+        ((TextView) t5Var.d).setText(String.format("%d", Integer.valueOf(veVar.e.size())));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         View[] viewArr = this.a;
-        int A = org.telegram.messenger.g0.Q1() ? org.telegram.messenger.camera.q.A(4.0f, this.c - 1, org.telegram.messenger.g0.L(490.0f) - org.telegram.messenger.g0.L(12.0f)) / this.c : org.telegram.messenger.camera.q.A(4.0f, this.c - 1, org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(12.0f)) / this.c;
+        int A = org.telegram.messenger.g0.Q1() ? i20.A(4.0f, this.c - 1, org.telegram.messenger.g0.L(490.0f) - org.telegram.messenger.g0.L(12.0f)) / this.c : i20.A(4.0f, this.c - 1, org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(12.0f)) / this.c;
         for (int i11 = 0; i11 < this.c; i11++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i11].getLayoutParams();
             layoutParams.topMargin = org.telegram.messenger.g0.L(4.0f);
@@ -60,7 +61,7 @@ public final class v5 extends FrameLayout {
             layoutParams.gravity = 51;
             viewArr[i11].setLayoutParams(layoutParams);
         }
-        super.onMeasure(i7, org.telegram.messenger.camera.q.B(4.0f, A, TLObject.FLAG_30));
+        super.onMeasure(i7, i20.B(4.0f, A, TLObject.FLAG_30));
     }
 
     public void setAlbumsCount(int i7) {

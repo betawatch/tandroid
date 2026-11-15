@@ -40,8 +40,8 @@ public abstract class p0 implements b8, c8 {
         return false;
     }
 
-    public p0(boolean z9) {
-        this.a = z9;
+    public p0(boolean z10) {
+        this.a = z10;
     }
 
     @Override // j$.util.stream.b8

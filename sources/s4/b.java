@@ -4,9 +4,9 @@ import android.os.Handler;
 import android.os.Message;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b extends Handler {
     public final ArrayList a = new ArrayList();
@@ -43,35 +43,35 @@ public final class b extends Handler {
         v vVar = (i7 == 264 || i7 == 262) ? (v) ((q0.b) obj).b : (v) obj;
         v vVar2 = (i7 == 264 || i7 == 262) ? (v) ((q0.b) obj).a : null;
         if (vVar != null) {
-            boolean z9 = true;
+            boolean z10 = true;
             if ((tVar.d & 2) == 0 && !vVar.h(tVar.c)) {
                 z zVar = x.c().u;
-                z9 = ((zVar == null ? false : zVar.d) && vVar.d() && i7 == 262 && i10 == 3 && vVar2 != null) ? true ^ vVar2.d() : false;
+                z10 = ((zVar == null ? false : zVar.d) && vVar.d() && i7 == 262 && i10 == 3 && vVar2 != null) ? true ^ vVar2.d() : false;
             }
-            if (z9) {
+            if (z10) {
                 switch (i7) {
-                    case qs.g4 /* 257 */:
+                    case ns.g4 /* 257 */:
                         sVar.d(vVar);
                         break;
-                    case qs.h4 /* 258 */:
+                    case ns.h4 /* 258 */:
                         sVar.f(vVar);
                         break;
-                    case qs.i4 /* 259 */:
+                    case ns.i4 /* 259 */:
                         sVar.e(vVar);
                         break;
-                    case qs.j4 /* 260 */:
+                    case ns.j4 /* 260 */:
                         sVar.k(vVar);
                         break;
-                    case qs.k4 /* 261 */:
+                    case ns.k4 /* 261 */:
                         sVar.getClass();
                         break;
-                    case qs.l4 /* 262 */:
+                    case ns.l4 /* 262 */:
                         sVar.h(xVar, vVar, i10);
                         break;
-                    case qs.m4 /* 263 */:
+                    case ns.m4 /* 263 */:
                         sVar.j(xVar, vVar, i10);
                         break;
-                    case qs.n4 /* 264 */:
+                    case ns.n4 /* 264 */:
                         sVar.h(xVar, vVar, i10);
                         break;
                 }
@@ -113,17 +113,17 @@ public final class b extends Handler {
             }
         } else if (i7 != 264) {
             switch (i7) {
-                case qs.g4 /* 257 */:
+                case ns.g4 /* 257 */:
                     j0Var.v((v) obj);
                     break;
-                case qs.h4 /* 258 */:
+                case ns.h4 /* 258 */:
                     j0Var.w((v) obj);
                     break;
-                case qs.i4 /* 259 */:
+                case ns.i4 /* 259 */:
                     v vVar2 = (v) obj;
                     j0Var.getClass();
                     if (vVar2.c() != j0Var && (q10 = j0Var.q(vVar2)) >= 0) {
-                        j0Var.C((i0) j0Var.H.get(q10));
+                        j0Var.C((i0) j0Var.I.get(q10));
                         break;
                     }
                     break;

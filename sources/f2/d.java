@@ -1,30 +1,31 @@
 package f2;
 
-import a8.ka;
+import a8.la;
 import android.content.Context;
 import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Looper;
-import g9.u;
+import com.google.android.gms.internal.vision.e2;
+import g9.t;
 import h2.h0;
 import h2.i0;
-import l2.r0;
+import l2.o0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d {
-    public final u a;
+    public final t a;
     public final Handler b;
-    public r0 c;
+    public o0 c;
     public e2.e d;
     public int f;
     public g h;
     public float g = 1.0f;
     public int e = 0;
 
-    public d(Context context, Looper looper, r0 r0Var) {
-        this.a = ka.a(new c(context, 0));
-        this.c = r0Var;
+    public d(Context context, Looper looper, o0 o0Var) {
+        this.a = la.a(new c(context, 0));
+        this.c = o0Var;
         this.b = new Handler(looper);
     }
 
@@ -33,13 +34,13 @@ public final class d {
         if (i7 == 1 || i7 == 0 || this.h == null) {
             return;
         }
-        i.a((AudioManager) this.a.get(), this.h);
+        h.a((AudioManager) this.a.get(), this.h);
     }
 
     public final void b(int i7) {
-        r0 r0Var = this.c;
-        if (r0Var != null) {
-            i0 i0Var = r0Var.n;
+        o0 o0Var = this.c;
+        if (o0Var != null) {
+            i0 i0Var = o0Var.n;
             i0Var.getClass();
             h0 c10 = i0.c();
             c10.a = i0Var.a.obtainMessage(33, i7, 0);
@@ -57,22 +58,22 @@ public final class d {
             return;
         }
         this.g = f10;
-        r0 r0Var = this.c;
-        if (r0Var != null) {
-            r0Var.n.f(34);
+        o0 o0Var = this.c;
+        if (o0Var != null) {
+            o0Var.n.f(34);
         }
     }
 
-    public final int d(int i7, boolean z9) {
+    public final int d(int i7, boolean z10) {
         int i10;
         e eVar;
-        boolean z10 = false;
+        boolean z11 = false;
         if (i7 == 1 || (i10 = this.f) != 1) {
             a();
             c(0);
             return 1;
         }
-        if (!z9) {
+        if (!z10) {
             int i11 = this.e;
             if (i11 == 1) {
                 return -1;
@@ -96,11 +97,11 @@ public final class d {
                 }
                 e2.e eVar3 = this.d;
                 if (eVar3 != null && eVar3.a == 1) {
-                    z10 = true;
+                    z11 = true;
                 }
                 eVar3.getClass();
                 eVar.b = eVar3;
-                eVar.c = z10;
+                eVar.c = z11;
                 eVar.d = true;
                 AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() { // from class: f2.b
                     @Override // android.media.AudioManager.OnAudioFocusChangeListener
@@ -123,7 +124,7 @@ public final class d {
                             dVar.a();
                             dVar.c(1);
                         } else if (i12 != 1) {
-                            com.google.android.recaptcha.internal.a.o(i12, "Unknown focus change type: ", "AudioFocusManager");
+                            e2.o(i12, "Unknown focus change type: ", "AudioFocusManager");
                         } else {
                             dVar.c(2);
                             dVar.b(1);
@@ -134,7 +135,7 @@ public final class d {
                 handler.getClass();
                 this.h = new g(eVar.a, onAudioFocusChangeListener, handler, eVar.b, eVar.c, eVar.d);
             }
-            int e10 = i.e((AudioManager) this.a.get(), this.h);
+            int e10 = h.e((AudioManager) this.a.get(), this.h);
             if (e10 == 1 || e10 == 2) {
                 c(2);
                 return 1;

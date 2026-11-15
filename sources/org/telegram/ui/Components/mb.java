@@ -1,70 +1,125 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.support.SparseLongArray;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class mb extends jb implements org.telegram.messenger.ls {
-    public final kb d;
-    public SparseLongArray e;
-    public final org.telegram.ui.ActionBar.f2 f;
-    public final int h;
-    public bc n;
+public final class mb extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ cb a;
+    public final /* synthetic */ qa b;
 
-    public mb(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
-        super(f2Var.getContext(), f2Var.getResourceProvider());
-        this.f = f2Var;
-        this.h = i7;
-        this.b.setLayoutParams(c8.ha.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
-        this.a.setLayoutParams(c8.ha.h(56.0f, 48.0f, 8388659));
-        kb kbVar = new kb(this, f2Var, getContext(), f2Var.getCurrentAccount(), f2Var.getResourceProvider());
-        this.d = kbVar;
-        kbVar.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(0.0f));
-        this.d.setDelegate(new lb(this));
-        this.d.setTop(true);
-        this.d.setClipChildren(false);
-        this.d.setClipToPadding(false);
-        this.d.setVisibility(0);
-        this.d.setBubbleOffset(-org.telegram.messenger.g0.L(80.0f));
-        this.d.setHint(org.telegram.messenger.id.M0(2131745875, null));
-        addView(this.d, c8.ha.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
-        this.d.p(null, null, true);
+    public mb(qa qaVar, cb cbVar) {
+        this.b = qaVar;
+        this.a = cbVar;
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.qs.k3) {
-            this.e = (SparseLongArray) objArr[0];
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        qa qaVar = this.b;
+        if (qaVar.s) {
+            return false;
         }
+        cb cbVar = this.a;
+        qaVar.w = cb.access$1400(cbVar, true);
+        qaVar.x = cb.access$1400(cbVar, false);
+        return true;
     }
 
-    public final void f() {
-        if (this.d.getReactionsWindow() != null) {
-            this.d.e();
-            if (this.d.getReactionsWindow().a != null) {
-                this.d.getReactionsWindow().a.animate().alpha(0.0f).setDuration(180L).start();
-            }
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        boolean z10 = false;
+        if (Math.abs(f10) <= 2000.0f) {
+            return false;
         }
+        qa qaVar = this.b;
+        if ((f10 < 0.0f && qaVar.w) || (f10 > 0.0f && qaVar.x)) {
+            z10 = true;
+        }
+        float signum = Math.signum(f10);
+        cb cbVar = this.a;
+        r1.g gVar = new r1.g(cbVar, r1.g.o, signum * cbVar.getWidth() * 2.0f);
+        if (!z10) {
+            final int i7 = 0;
+            gVar.a(new r1.c(this) { // from class: org.telegram.ui.Components.kb
+                public final /* synthetic */ mb b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // r1.c
+                public final void a(r1.g gVar2, boolean z11, float f12, float f13) {
+                    switch (i7) {
+                        case 0:
+                            this.b.b.E.b();
+                            break;
+                        default:
+                            this.b.b.E.b();
+                            break;
+                    }
+                }
+            });
+            gVar.b(new c7(cbVar, 2));
+        }
+        gVar.m.a(1.0f);
+        gVar.m.b(100.0f);
+        gVar.a = f10;
+        gVar.h();
+        if (z10) {
+            r1.g gVar2 = new r1.g((Object) cbVar, (r1.e) r1.g.v, 0.0f);
+            final int i10 = 1;
+            gVar2.a(new r1.c(this) { // from class: org.telegram.ui.Components.kb
+                public final /* synthetic */ mb b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // r1.c
+                public final void a(r1.g gVar22, boolean z11, float f12, float f13) {
+                    switch (i10) {
+                        case 0:
+                            this.b.b.E.b();
+                            break;
+                        default:
+                            this.b.b.E.b();
+                            break;
+                    }
+                }
+            });
+            gVar2.b(new lb());
+            gVar.m.a(1.0f);
+            gVar.m.b(10.0f);
+            gVar.a = f10;
+            gVar2.h();
+        }
+        qaVar.s = true;
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.fb
-    public int getMeasuredBackgroundHeight() {
-        return org.telegram.messenger.g0.L(30.0f) + this.b.getMeasuredHeight();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        org.telegram.messenger.qs.f(org.telegram.messenger.p10.s0).c(this, org.telegram.messenger.qs.k3);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.messenger.qs.f(org.telegram.messenger.p10.s0).n(this, org.telegram.messenger.qs.k3);
-    }
-
-    public void setBulletin(bc bcVar) {
-        this.n = bcVar;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        qa qaVar = this.b;
+        float f12 = qaVar.h + f10;
+        qaVar.h = f12;
+        float f13 = qaVar.n + f11;
+        qaVar.n = f13;
+        if (Utilities.t(0.0f, 0.0f, f12, f13) > org.telegram.messenger.g0.e) {
+            qaVar.r = true;
+        }
+        if (!qaVar.d) {
+            return false;
+        }
+        float f14 = qaVar.f - f10;
+        qaVar.f = f14;
+        cb cbVar = this.a;
+        cbVar.setTranslationX(f14);
+        float f15 = qaVar.f;
+        if (f15 == 0.0f || ((f15 < 0.0f && qaVar.w) || (f15 > 0.0f && qaVar.x))) {
+            cbVar.setAlpha(1.0f - (Math.abs(f15) / cbVar.getWidth()));
+        }
+        return true;
     }
 }

@@ -5,7 +5,7 @@ import h9.i0;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k extends m implements o2.i {
     public final n n;
@@ -16,32 +16,7 @@ public final class k extends m implements o2.i {
     }
 
     @Override // o2.i
-    public final long a(long j3) {
-        return this.n.g(j3);
-    }
-
-    @Override // p2.m
-    public final String b() {
-        return null;
-    }
-
-    @Override // o2.i
-    public final long d(long j3, long j10) {
-        return this.n.e(j3, j10);
-    }
-
-    @Override // o2.i
-    public final long e(long j3, long j10) {
-        return this.n.c(j3, j10);
-    }
-
-    @Override // p2.m
-    public final j f() {
-        return null;
-    }
-
-    @Override // o2.i
-    public final long g(long j3, long j10) {
+    public final long D(long j3, long j10) {
         n nVar = this.n;
         if (nVar.f != null) {
             return -9223372036854775807L;
@@ -51,33 +26,58 @@ public final class k extends m implements o2.i {
     }
 
     @Override // o2.i
-    public final j h(long j3) {
+    public final j E(long j3) {
         return this.n.h(this, j3);
     }
 
     @Override // o2.i
-    public final long o(long j3, long j10) {
+    public final long L(long j3, long j10) {
         return this.n.f(j3, j10);
     }
 
+    @Override // p2.m
+    public final String a() {
+        return null;
+    }
+
     @Override // o2.i
-    public final boolean t() {
+    public final long b(long j3) {
+        return this.n.g(j3);
+    }
+
+    @Override // p2.m
+    public final j d() {
+        return null;
+    }
+
+    @Override // o2.i
+    public final boolean g0() {
         return this.n.i();
     }
 
     @Override // o2.i
-    public final long u() {
+    public final long i(long j3, long j10) {
+        return this.n.e(j3, j10);
+    }
+
+    @Override // o2.i
+    public final long k0() {
         return this.n.d;
     }
 
     @Override // o2.i
-    public final long x(long j3) {
+    public final long t0(long j3) {
         return this.n.d(j3);
     }
 
     @Override // o2.i
-    public final long z(long j3, long j10) {
+    public final long v0(long j3, long j10) {
         return this.n.b(j3, j10);
+    }
+
+    @Override // o2.i
+    public final long y(long j3, long j10) {
+        return this.n.c(j3, j10);
     }
 
     @Override // p2.m

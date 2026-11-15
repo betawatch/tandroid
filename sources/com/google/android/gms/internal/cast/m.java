@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-import a8.m8;
+import a8.n8;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Looper;
@@ -13,7 +13,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m extends s4.s {
     public static final j6.b f = new j6.b("MRDiscoveryCallback", null);
@@ -47,7 +47,7 @@ public final class m extends s4.s {
 
     public final void m() {
         j6.b bVar = f;
-        bVar.b(jg.g.k(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
+        bVar.b(i5.c.j(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
         bVar.b("appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(this.c.keySet())), new Object[0]);
         if (Looper.myLooper() == Looper.getMainLooper()) {
             n();
@@ -109,21 +109,21 @@ public final class m extends s4.s {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void o(s4.v vVar, boolean z9) {
-        boolean z10;
+    public final void o(s4.v vVar, boolean z10) {
+        boolean z11;
         Set m10;
         boolean remove;
         j6.b bVar = f;
-        bVar.b("MediaRouterDiscoveryCallback.updateRouteToAppIds (add=%b) route %s", Boolean.valueOf(z9), vVar);
+        bVar.b("MediaRouterDiscoveryCallback.updateRouteToAppIds (add=%b) route %s", Boolean.valueOf(z10), vVar);
         synchronized (this.c) {
             try {
                 bVar.b("appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(this.c.keySet())), new Object[0]);
-                z10 = false;
+                z11 = false;
                 for (Map.Entry entry : this.c.entrySet()) {
                     String str = (String) entry.getKey();
                     k kVar = (k) entry.getValue();
                     if (vVar.h(kVar.b)) {
-                        if (z9) {
+                        if (z10) {
                             j6.b bVar2 = f;
                             bVar2.b("Adding/updating route for appId " + str, new Object[0]);
                             remove = kVar.a.add(vVar);
@@ -138,20 +138,20 @@ public final class m extends s4.s {
                                 Log.w(bVar3.a, bVar3.d("Route " + String.valueOf(vVar) + " already removed from appId " + str, new Object[0]));
                             }
                         }
-                        z10 = remove;
+                        z11 = remove;
                     }
                 }
             } finally {
             }
         }
-        if (z10) {
+        if (z11) {
             f.b("Invoking callback.onRouteUpdated.", new Object[0]);
             synchronized (this.b) {
                 try {
                     HashMap hashMap = new HashMap();
                     synchronized (this.c) {
                         for (String str2 : this.c.keySet()) {
-                            k kVar2 = (k) this.c.get(m8.a(str2));
+                            k kVar2 = (k) this.c.get(n8.a(str2));
                             if (kVar2 == null) {
                                 int i7 = h0.c;
                                 m10 = q0.s;

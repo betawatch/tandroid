@@ -1,29 +1,25 @@
 package org.telegram.messenger;
 
-import android.graphics.Bitmap;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class rb {
-    public static final /* synthetic */ int[] a;
+public final /* synthetic */ class rb implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sb b;
 
-    static {
-        Bitmap.CompressFormat compressFormat;
-        int[] iArr = new int[Bitmap.CompressFormat.values().length];
-        a = iArr;
-        try {
-            iArr[Bitmap.CompressFormat.WEBP.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            int[] iArr2 = a;
-            compressFormat = Bitmap.CompressFormat.WEBP_LOSSY;
-            iArr2[compressFormat.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[Bitmap.CompressFormat.WEBP_LOSSLESS.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
+    public /* synthetic */ rb(sb sbVar, int i7) {
+        this.a = i7;
+        this.b = sbVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.e.T(true);
+                break;
+            default:
+                this.b.e.T(true);
+                break;
         }
     }
 }

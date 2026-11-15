@@ -1,57 +1,62 @@
 package sg;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final class e1 extends g1 {
-    public final /* synthetic */ int f;
-    public final /* synthetic */ d1 g;
-    public final /* synthetic */ h1 h;
+import a8.t9;
 
-    public /* synthetic */ e1(h1 h1Var, d1 d1Var, int i7) {
-        this.f = i7;
-        this.h = h1Var;
-        this.g = d1Var;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class e1 extends f1 {
+    public final x0 f;
+    public final float g;
+    public final float h;
+    public final /* synthetic */ g1 i;
+
+    public e1(g1 g1Var, x0 x0Var, boolean z10, boolean z11) {
+        this.i = g1Var;
+        this.b = false;
+        this.f = x0Var;
+        this.g = z10 ? -1.0f : 1.0f;
+        this.h = z11 ? -1.0f : 1.0f;
+        a();
     }
 
-    @Override // sg.g1
+    @Override // sg.f1
     public final void a() {
-        switch (this.f) {
-            case 0:
-                y0 y0Var = this.h.h;
-                float f10 = y0Var.i;
-                float f11 = y0Var.j;
-                this.d = f10;
-                this.e = f11;
-                break;
-            default:
-                y0 y0Var2 = this.h.h;
-                float f12 = y0Var2.d;
-                float f13 = y0Var2.e;
-                this.d = f12;
-                this.e = f13;
-                break;
+        x0 x0Var = this.f;
+        if (x0Var != null) {
+            float f10 = (this.g * x0Var.d) + x0Var.b;
+            float f11 = (this.h * x0Var.e) + x0Var.c;
+            g1 g1Var = this.i;
+            g1Var.c(f10, f11, true);
+            float[] fArr = g1Var.p;
+            float f12 = fArr[0];
+            float f13 = fArr[1];
+            this.d = f12;
+            this.e = f13;
         }
     }
 
-    @Override // sg.g1
+    @Override // sg.f1
     public final void b(float f10, float f11) {
-        switch (this.f) {
-            case 0:
-                y0 y0Var = this.h.h;
-                y0Var.i = f10;
-                y0Var.j = f11;
-                this.d = f10;
-                this.e = f11;
-                this.g.a();
-                break;
-            default:
-                y0 y0Var2 = this.h.h;
-                y0Var2.d = f10;
-                y0Var2.e = f11;
-                this.d = f10;
-                this.e = f11;
-                this.g.a();
-                break;
+        this.d = f10;
+        this.e = f11;
+        x0 x0Var = this.f;
+        float f12 = ((-this.g) * x0Var.d) + x0Var.b;
+        float f13 = ((-this.h) * x0Var.e) + x0Var.c;
+        g1 g1Var = this.i;
+        g1Var.c(f10, f11, false);
+        g1Var.c(f12, f13, true);
+        float[] fArr = g1Var.p;
+        float f14 = fArr[0];
+        float f15 = fArr[1];
+        double atan2 = (3.141592653589793d - Math.atan2(f11 - f15, f10 - f14)) - x0Var.h;
+        double cos = Math.cos(atan2) * t9.a(f10, f11, f14, f15);
+        double sin = Math.sin(atan2) * t9.a(f10, f11, f14, f15);
+        x0Var.d = ((float) Math.abs(cos)) / 2.0f;
+        x0Var.e = ((float) Math.abs(sin)) / 2.0f;
+        x0Var.b = (f10 + f14) / 2.0f;
+        x0Var.c = (f11 + f15) / 2.0f;
+        for (int i7 = 0; i7 < g1Var.m.size(); i7++) {
+            ((f1) g1Var.m.get(i7)).a();
         }
     }
 }

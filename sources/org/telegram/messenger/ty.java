@@ -1,18 +1,22 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class ty {
-    public TLObject a;
-    public ij b;
-    public ArrayList c;
-    public String d;
-    public ArrayList e;
-    public ArrayList f;
-    public sy g;
-    public Object h;
-    public boolean i;
+public final class ty implements RequestDelegate {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ vy b;
+
+    public ty(vy vyVar, String str) {
+        this.b = vyVar;
+        this.a = str;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        g0.h3(new wq(20, this, this.a));
+    }
 }

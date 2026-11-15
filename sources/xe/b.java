@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Semaphore;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements Iterable {
     public final boolean a;
@@ -27,7 +27,7 @@ public final class b implements Iterable {
     public final boolean add(Object obj) {
         synchronized (this.b) {
             try {
-                boolean z9 = false;
+                boolean z10 = false;
                 if (indexOf(obj) != -1) {
                     return false;
                 }
@@ -36,22 +36,22 @@ public final class b implements Iterable {
                     return true;
                 }
                 ArrayList arrayList = this.d;
-                boolean z10 = false;
+                boolean z11 = false;
                 for (int size = arrayList.size() - 1; size >= 0; size--) {
                     Reference reference = (Reference) arrayList.get(size);
                     Object obj2 = reference != null ? reference.get() : null;
                     if (obj2 == null) {
                         arrayList.remove(size);
                     } else if (obj2 == obj) {
-                        z10 = true;
+                        z11 = true;
                     }
                 }
-                if (!z10) {
+                if (!z11) {
                     arrayList.add(new WeakReference(obj));
-                    z9 = true;
+                    z10 = true;
                 }
                 td.a(this.c, obj);
-                return z9;
+                return z10;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -171,11 +171,11 @@ public final class b implements Iterable {
         }
     }
 
-    public b(boolean z9, boolean z10) {
+    public b(boolean z10, boolean z11) {
         this.c = new ArrayList();
         this.d = new ArrayList();
-        this.f = z9 ? new Semaphore(1) : null;
-        this.a = z10;
+        this.f = z10 ? new Semaphore(1) : null;
+        this.a = z11;
         this.b = new ArrayList();
     }
 }

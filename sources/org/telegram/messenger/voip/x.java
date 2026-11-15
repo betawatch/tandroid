@@ -1,58 +1,35 @@
 package org.telegram.messenger.voip;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.pb;
-import org.telegram.messenger.qp;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x implements RequestDelegate {
+public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ls b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ String g;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ ArrayList e;
+    public final /* synthetic */ String f;
 
-    public /* synthetic */ x(qp qpVar, HashMap hashMap, String str, a0.h hVar, long j3, int i7) {
-        this.a = 2;
-        this.b = qpVar;
-        this.d = hashMap;
-        this.g = str;
-        this.e = hVar;
-        this.c = j3;
-        this.f = i7;
+    public /* synthetic */ x(VoIPService voIPService, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, String str, int i7) {
+        this.a = i7;
+        this.b = voIPService;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.e = arrayList3;
+        this.f = str;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((VoIPService) this.b).lambda$startConferenceGroupCall$51(this.c, (HashSet) this.d, (AtomicInteger) this.e, this.f, this.g, tLObject, tL_error);
-                break;
-            case 1:
-                ((VoIPService) this.b).lambda$startConferenceGroupCall$43(this.c, (HashSet) this.d, (AtomicInteger) this.e, this.f, this.g, tLObject, tL_error);
+                this.b.lambda$startConferenceGroupCall$47(this.c, this.d, this.e, this.f);
                 break;
             default:
-                org.telegram.messenger.g0.h3(new pb((qp) this.b, (HashMap) this.d, this.g, tLObject, (a0.h) this.e, this.c, this.f));
+                this.b.lambda$startConferenceGroupCall$39(this.c, this.d, this.e, this.f);
                 break;
         }
-    }
-
-    public /* synthetic */ x(VoIPService voIPService, long j3, HashSet hashSet, AtomicInteger atomicInteger, int i7, String str, int i10) {
-        this.a = i10;
-        this.b = voIPService;
-        this.c = j3;
-        this.d = hashSet;
-        this.e = atomicInteger;
-        this.f = i7;
-        this.g = str;
     }
 }

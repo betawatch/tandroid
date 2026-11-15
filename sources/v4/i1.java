@@ -1,17 +1,52 @@
 package v4;
 
-import android.view.View;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public interface i1 {
-    int A();
+public final class i1 {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
 
-    int N();
-
-    View W(int i7);
-
-    int a0(View view);
-
-    int k(View view);
+    public final boolean a() {
+        int i7 = this.a;
+        int i10 = 2;
+        if ((i7 & 7) != 0) {
+            int i11 = this.d;
+            int i12 = this.b;
+            if (((i11 > i12 ? 1 : i11 == i12 ? 2 : 4) & i7) == 0) {
+                return false;
+            }
+        }
+        if ((i7 & ns.x1) != 0) {
+            int i13 = this.d;
+            int i14 = this.c;
+            if ((((i13 > i14 ? 1 : i13 == i14 ? 2 : 4) << 4) & i7) == 0) {
+                return false;
+            }
+        }
+        if ((i7 & 1792) != 0) {
+            int i15 = this.e;
+            int i16 = this.b;
+            if ((((i15 > i16 ? 1 : i15 == i16 ? 2 : 4) << 8) & i7) == 0) {
+                return false;
+            }
+        }
+        if ((i7 & 28672) != 0) {
+            int i17 = this.e;
+            int i18 = this.c;
+            if (i17 > i18) {
+                i10 = 1;
+            } else if (i17 != i18) {
+                i10 = 4;
+            }
+            if ((i7 & (i10 << 12)) == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

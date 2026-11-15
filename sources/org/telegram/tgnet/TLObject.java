@@ -3,7 +3,7 @@ package org.telegram.tgnet;
 import c8.zc;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class TLObject {
     public static final int FLAG_0 = 1;
@@ -47,12 +47,12 @@ public class TLObject {
     public boolean disableFree = false;
     public int networkType;
 
-    public static <T extends TLObject> T TLdeserialize(Class<T> cls, T t6, InputSerializedData inputSerializedData, int i7, boolean z9) {
+    public static <T extends TLObject> T TLdeserialize(Class<T> cls, T t6, InputSerializedData inputSerializedData, int i7, boolean z10) {
         if (t6 == null) {
-            TLParseException.doThrowOrLog(inputSerializedData, cls.getName(), i7, z9);
+            TLParseException.doThrowOrLog(inputSerializedData, cls.getName(), i7, z10);
             return null;
         }
-        t6.readParams(inputSerializedData, z9);
+        t6.readParams(inputSerializedData, z10);
         return t6;
     }
 
@@ -70,11 +70,11 @@ public class TLObject {
         return zc.a(i7, i10);
     }
 
-    public static int setFlag(int i7, int i10, boolean z9) {
-        return zc.b(i7, i10, z9);
+    public static int setFlag(int i7, int i10, boolean z10) {
+        return zc.b(i7, i10, z10);
     }
 
-    public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z9) {
+    public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
         return null;
     }
 
@@ -92,6 +92,6 @@ public class TLObject {
     public void serializeToStream(OutputSerializedData outputSerializedData) {
     }
 
-    public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+    public void readParams(InputSerializedData inputSerializedData, boolean z10) {
     }
 }

@@ -1,8 +1,8 @@
 package f3;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class k implements c0 {
+public class k implements b0 {
     public final long a;
     public final long b;
     public final int c;
@@ -12,13 +12,13 @@ public class k implements c0 {
     public final boolean g;
     public final boolean h;
 
-    public k(long j3, long j10, int i7, int i10, boolean z9, boolean z10) {
+    public k(long j3, long j10, int i7, int i10, boolean z10, boolean z11) {
         this.a = j3;
         this.b = j10;
         this.c = i10 == -1 ? 1 : i10;
         this.e = i7;
-        this.g = z9;
-        this.h = z10;
+        this.g = z10;
+        this.h = z11;
         if (j3 == -1) {
             this.d = -1L;
             this.f = -9223372036854775807L;
@@ -29,23 +29,23 @@ public class k implements c0 {
         }
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final boolean d() {
         return this.d != -1 || this.g;
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final boolean e() {
         return this.h;
     }
 
-    @Override // f3.c0
-    public final b0 f(long j3) {
+    @Override // f3.b0
+    public final a0 f(long j3) {
         long j10 = this.d;
         long j11 = this.b;
         if (j10 == -1 && !this.g) {
-            d0 d0Var = new d0(0L, j11);
-            return new b0(d0Var, d0Var);
+            c0 c0Var = new c0(0L, j11);
+            return new a0(c0Var, c0Var);
         }
         int i7 = this.e;
         long j12 = this.c;
@@ -55,17 +55,17 @@ public class k implements c0 {
         }
         long max = Math.max(j13, 0L) + j11;
         long max2 = (Math.max(0L, max - j11) * 8000000) / i7;
-        d0 d0Var2 = new d0(max2, max);
+        c0 c0Var2 = new c0(max2, max);
         if (j10 != -1 && max2 < j3) {
             long j14 = max + j12;
             if (j14 < this.a) {
-                return new b0(d0Var2, new d0((Math.max(0L, j14 - j11) * 8000000) / i7, j14));
+                return new a0(c0Var2, new c0((Math.max(0L, j14 - j11) * 8000000) / i7, j14));
             }
         }
-        return new b0(d0Var2, d0Var2);
+        return new a0(c0Var2, c0Var2);
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final long h() {
         return this.f;
     }

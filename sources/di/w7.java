@@ -1,38 +1,30 @@
 package di;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class w7 extends FrameLayout {
-    public j4 a;
-    public long b;
-    public ArrayList c;
-    public boolean d;
-    public final /* synthetic */ w e;
+public final /* synthetic */ class w7 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z10 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w7(w wVar, Context context) {
-        super(context);
-        this.e = wVar;
+    public /* synthetic */ w7(z10 z10Var, int i7) {
+        this.a = i7;
+        this.b = z10Var;
     }
 
-    public final void a(boolean z9) {
-        if (this.d != z9) {
-            this.d = z9;
-            invalidate();
-            this.a.setIsVisible(z9);
-            this.e.A();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.d) {
-            super.dispatchDraw(canvas);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new b8(tLObject, this.b, 0));
+                break;
+            default:
+                org.telegram.messenger.g0.h3(new s2(27, this.b, tL_error));
+                break;
         }
     }
 }

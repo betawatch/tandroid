@@ -1,98 +1,90 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.PopupWindow;
-import java.lang.reflect.Field;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.view.ViewParent;
+import android.webkit.WebView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class xt extends PopupWindow {
-    public static Field f;
-    public static final org.telegram.ui.ActionBar.a1 g = new org.telegram.ui.ActionBar.a1(1);
-    public ViewTreeObserver.OnScrollChangedListener a;
-    public ViewTreeObserver b;
-    public final wt c;
-    public boolean d;
-    public final int e;
+public final class xt extends WebView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ KeyEvent.Callback c;
 
-    public xt(wt wtVar) {
-        super(wtVar);
-        this.e = org.telegram.messenger.g0.L(org.telegram.messenger.g0.Q1() ? 40.0f : 32.0f);
-        this.c = wtVar;
-        setOutsideTouchable(true);
-        setClippingEnabled(true);
-        setInputMethodMode(2);
-        setSoftInputMode(0);
-        wtVar.setFocusableInTouchMode(true);
-        wtVar.setOnKeyListener(new um(this, 1));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ xt(KeyEvent.Callback callback, Context context, Context context2, int i7) {
+        super(context);
+        this.a = i7;
+        this.c = callback;
+        this.b = context2;
     }
 
-    public final void a(View view) {
-        if (this.a != null) {
-            ViewTreeObserver viewTreeObserver = view.getWindowToken() != null ? view.getViewTreeObserver() : null;
-            ViewTreeObserver viewTreeObserver2 = this.b;
-            if (viewTreeObserver != viewTreeObserver2) {
-                if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
-                    this.b.removeOnScrollChangedListener(this.a);
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                super.draw(canvas);
+                ViewParent parent = getParent();
+                org.telegram.ui.bq0 bq0Var = (org.telegram.ui.bq0) this.c;
+                if (parent != bq0Var && bq0Var.h.getVisibility() == 0) {
+                    canvas.drawColor(-16777216);
+                    bq0Var.j(canvas, getWidth(), getHeight());
+                    break;
                 }
-                this.b = viewTreeObserver;
-                if (viewTreeObserver != null) {
-                    viewTreeObserver.addOnScrollChangedListener(this.a);
+                break;
+            default:
+                super.draw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.u(this.b, true);
+                super.onAttachedToWindow();
+                break;
+            default:
+                org.telegram.messenger.g0.u(this.b, true);
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.u(this.b, false);
+                super.onDetachedFromWindow();
+                break;
+            default:
+                org.telegram.messenger.g0.u(this.b, false);
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                bu buVar = (bu) this.c;
+                boolean onTouchEvent = super.onTouchEvent(motionEvent);
+                if (onTouchEvent) {
+                    if (motionEvent.getAction() == 1) {
+                        buVar.E0 = false;
+                    } else {
+                        buVar.E0 = true;
+                    }
                 }
-            }
+                return onTouchEvent;
+            default:
+                return super.onTouchEvent(motionEvent);
         }
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void dismiss() {
-        ViewTreeObserver viewTreeObserver;
-        setFocusable(false);
-        try {
-            super.dismiss();
-        } catch (Exception unused) {
-        }
-        if (this.a == null || (viewTreeObserver = this.b) == null) {
-            return;
-        }
-        if (viewTreeObserver.isAlive()) {
-            this.b.removeOnScrollChangedListener(this.a);
-        }
-        this.b = null;
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAsDropDown(View view, int i7, int i10) {
-        try {
-            super.showAsDropDown(view, i7, i10);
-            a(view);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAtLocation(View view, int i7, int i10, int i11) {
-        ViewTreeObserver viewTreeObserver;
-        super.showAtLocation(view, i7, i10, i11);
-        if (this.a == null || (viewTreeObserver = this.b) == null) {
-            return;
-        }
-        if (viewTreeObserver.isAlive()) {
-            this.b.removeOnScrollChangedListener(this.a);
-        }
-        this.b = null;
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void update(View view, int i7, int i10, int i11, int i12) {
-        super.update(view, i7, i10, i11, i12);
-        a(view);
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void update(View view, int i7, int i10) {
-        super.update(view, i7, i10);
-        a(view);
     }
 }

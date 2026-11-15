@@ -1,40 +1,45 @@
 package x2;
 
-import a8.ia;
-import a8.wa;
+import a8.ja;
+import a8.xa;
 import android.net.Uri;
 import java.io.InterruptedIOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import org.telegram.ui.ly0;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s0 implements b3.l {
     public final Uri a;
-    public final j2.c0 b;
-    public final ly0 c;
+    public final j2.b0 b;
+    public final ld0 c;
     public final v0 d;
     public final h2.i e;
     public volatile boolean h;
     public long r;
     public j2.m s;
-    public f3.j0 w;
+    public f3.i0 w;
     public boolean x;
     public final /* synthetic */ v0 y;
     public final f3.s f = new f3.s();
     public boolean n = true;
 
-    public s0(v0 v0Var, Uri uri, j2.h hVar, ly0 ly0Var, v0 v0Var2, h2.i iVar) {
+    public s0(v0 v0Var, Uri uri, j2.h hVar, ld0 ld0Var, v0 v0Var2, h2.i iVar) {
         this.y = v0Var;
         this.a = uri;
-        this.b = new j2.c0(hVar);
-        this.c = ly0Var;
+        this.b = new j2.b0(hVar);
+        this.c = ld0Var;
         this.d = v0Var2;
         this.e = iVar;
         t.g.getAndIncrement();
         this.s = b(0L, null);
+    }
+
+    @Override // b3.l
+    public final void D() {
+        this.h = true;
     }
 
     @Override // b3.l
@@ -51,10 +56,10 @@ public final class s0 implements b3.l {
                 this.s = b10;
                 long open = this.b.open(b10);
                 if (this.h) {
-                    if (i10 != 1 && this.c.x() != -1) {
-                        this.f.a = this.c.x();
+                    if (i10 != 1 && this.c.v() != -1) {
+                        this.f.a = this.c.v();
                     }
-                    c8.p0.a(this.b);
+                    c8.q0.a(this.b);
                     return;
                 }
                 List list = (List) this.b.a.getResponseHeaders().get("ETag");
@@ -62,31 +67,31 @@ public final class s0 implements b3.l {
                 if (open != -1) {
                     open += j3;
                     v0 v0Var = this.y;
-                    v0Var.H.post(new o0(v0Var, 0));
+                    v0Var.I.post(new o0(v0Var, 0));
                 }
                 long j10 = open;
-                this.y.J = s3.b.d(this.b.a.getResponseHeaders());
-                j2.c0 c0Var = this.b;
-                s3.b bVar = this.y.J;
+                this.y.K = s3.b.d(this.b.a.getResponseHeaders());
+                j2.b0 b0Var = this.b;
+                s3.b bVar = this.y.K;
                 if (bVar == null || (i7 = bVar.f) == -1) {
-                    hVar = c0Var;
+                    hVar = b0Var;
                 } else {
-                    hVar = new s(c0Var, i7, this);
-                    f3.j0 x10 = this.y.x(new u0(0, true));
-                    this.w = x10;
-                    x10.g(v0.j0);
+                    hVar = new s(b0Var, i7, this);
+                    f3.i0 B = this.y.B(new u0(0, true));
+                    this.w = B;
+                    B.g(v0.k0);
                 }
-                this.c.E(hVar, this.a, this.b.a.getResponseHeaders(), j3, j10, this.d);
-                if (this.y.J != null && (oVar = (f3.o) this.c.c) != null) {
+                this.c.C(hVar, this.a, this.b.a.getResponseHeaders(), j3, j10, this.d);
+                if (this.y.K != null && (oVar = (f3.o) this.c.c) != null) {
                     f3.o a10 = oVar.a();
                     if (a10 instanceof y3.d) {
                         ((y3.d) a10).t = true;
                     }
                 }
                 if (this.n) {
-                    ly0 ly0Var = this.c;
+                    ld0 ld0Var = this.c;
                     long j11 = this.r;
-                    f3.o oVar2 = (f3.o) ly0Var.c;
+                    f3.o oVar2 = (f3.o) ld0Var.c;
                     oVar2.getClass();
                     oVar2.d(j3, j11);
                     this.n = false;
@@ -100,19 +105,19 @@ public final class s0 implements b3.l {
                                 iVar.wait();
                             }
                         }
-                        ly0 ly0Var2 = this.c;
+                        ld0 ld0Var2 = this.c;
                         f3.s sVar = this.f;
-                        f3.o oVar3 = (f3.o) ly0Var2.c;
+                        f3.o oVar3 = (f3.o) ld0Var2.c;
                         oVar3.getClass();
-                        f3.l lVar = (f3.l) ly0Var2.d;
+                        f3.l lVar = (f3.l) ld0Var2.d;
                         lVar.getClass();
                         i10 = oVar3.f(lVar, sVar);
-                        long x11 = this.c.x();
-                        if (x11 > this.y.s + j3) {
+                        long v = this.c.v();
+                        if (v > this.y.s + j3) {
                             this.e.d();
                             v0 v0Var2 = this.y;
-                            v0Var2.H.post(v0Var2.G);
-                            j3 = x11;
+                            v0Var2.I.post(v0Var2.H);
+                            j3 = v;
                         }
                     } catch (InterruptedException unused) {
                         throw new InterruptedIOException();
@@ -120,37 +125,32 @@ public final class s0 implements b3.l {
                 }
                 if (i10 == 1) {
                     i10 = 0;
-                } else if (this.c.x() != -1) {
-                    this.f.a = this.c.x();
+                } else if (this.c.v() != -1) {
+                    this.f.a = this.c.v();
                 }
-                c8.p0.a(this.b);
+                c8.q0.a(this.b);
             } catch (Throwable th2) {
-                if (i10 != 1 && this.c.x() != -1) {
-                    this.f.a = this.c.x();
+                if (i10 != 1 && this.c.v() != -1) {
+                    this.f.a = this.c.v();
                 }
-                c8.p0.a(this.b);
+                c8.q0.a(this.b);
                 throw th2;
             }
         }
     }
 
     public final j2.m b(long j3, String str) {
-        Map map = v0.i0;
+        Map map = v0.j0;
         if (str != null && !str.startsWith("W/")) {
-            wa waVar = new wa(4, 10);
-            waVar.w(map.entrySet());
-            waVar.v("If-Range", str);
-            map = waVar.e();
+            xa xaVar = new xa(4, 10);
+            xaVar.v(map.entrySet());
+            xaVar.u("If-Range", str);
+            map = xaVar.d();
         }
         Map map2 = Collections.EMPTY_MAP;
         String str2 = this.y.r;
         Uri uri = this.a;
-        ia.k(uri, "The uri must be set.");
+        ja.k(uri, "The uri must be set.");
         return new j2.m(uri, 1, null, map, j3, -1L, str2, 6);
-    }
-
-    @Override // b3.l
-    public final void q0() {
-        this.h = true;
     }
 }

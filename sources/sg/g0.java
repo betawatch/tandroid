@@ -1,29 +1,29 @@
 package sg;
 
-import a8.wa;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g0 implements Runnable {
+public final class g0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j0 b;
-    public final /* synthetic */ wa c;
+    public final /* synthetic */ i0 b;
 
-    public /* synthetic */ g0(j0 j0Var, wa waVar, int i7) {
+    public /* synthetic */ g0(i0 i0Var, int i7) {
         this.a = i7;
-        this.b = j0Var;
-        this.c = waVar;
+        this.b = i0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.p(this.c, true);
+                i0 i0Var = this.b;
+                i0Var.K = null;
+                i0Var.f.f(new q2.d(this, 8));
                 break;
             default:
-                j0 j0Var = this.b;
-                j0Var.f.f(new g0(j0Var, this.c, 0));
+                this.b.f.f(new q2.d(this, 9));
                 break;
         }
     }

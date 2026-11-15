@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q implements Runnable {
     public static final ThreadLocal e = new ThreadLocal();
@@ -17,31 +17,31 @@ public final class q implements Runnable {
     public long c;
     public ArrayList d;
 
-    public static d1 c(RecyclerView recyclerView, int i7, long j3) {
-        int B = recyclerView.e.B();
-        for (int i10 = 0; i10 < B; i10++) {
-            d1 U = RecyclerView.U(recyclerView.e.A(i10));
+    public static e1 c(RecyclerView recyclerView, int i7, long j3) {
+        int z10 = recyclerView.e.z();
+        for (int i10 = 0; i10 < z10; i10++) {
+            e1 U = RecyclerView.U(recyclerView.e.y(i10));
             if (U.c == i7 && !U.h()) {
                 return null;
             }
         }
-        v0 v0Var = recyclerView.b;
+        w0 w0Var = recyclerView.b;
         try {
             try {
                 recyclerView.h0();
-                d1 j10 = v0Var.j(i7, j3);
+                e1 j10 = w0Var.j(i7, j3);
                 if (j10 != null) {
                     if (!j10.g() || j10.h()) {
-                        v0Var.a(j10, false);
+                        w0Var.a(j10, false);
                     } else {
-                        v0Var.g(j10.a);
+                        w0Var.g(j10.a);
                     }
                 }
                 recyclerView.i0(false);
                 return j10;
             } catch (Exception e10) {
                 a8.g(e10, true);
-                org.telegram.messenger.g0.h3(new sh.b(recyclerView, 21));
+                org.telegram.messenger.g0.h3(new q2.d(recyclerView, 27));
                 recyclerView.i0(false);
                 return null;
             }
@@ -52,11 +52,11 @@ public final class q implements Runnable {
     }
 
     public final void a(RecyclerView recyclerView, int i7, int i10) {
-        if (recyclerView.G && this.b == 0) {
+        if (recyclerView.H && this.b == 0) {
             this.b = recyclerView.getNanoTime();
             recyclerView.post(this);
         }
-        h2.f fVar = recyclerView.t0;
+        h2.f fVar = recyclerView.u0;
         fVar.a = i7;
         fVar.b = i10;
     }
@@ -73,7 +73,7 @@ public final class q implements Runnable {
         for (int i10 = 0; i10 < size; i10++) {
             RecyclerView recyclerView3 = (RecyclerView) arrayList2.get(i10);
             int windowVisibility = recyclerView3.getWindowVisibility();
-            h2.f fVar = recyclerView3.t0;
+            h2.f fVar = recyclerView3.u0;
             if (windowVisibility == 0) {
                 fVar.c(recyclerView3, false);
                 i7 += fVar.c;
@@ -84,7 +84,7 @@ public final class q implements Runnable {
         for (int i12 = 0; i12 < size; i12++) {
             RecyclerView recyclerView4 = (RecyclerView) arrayList2.get(i12);
             if (recyclerView4.getWindowVisibility() == 0) {
-                h2.f fVar2 = recyclerView4.t0;
+                h2.f fVar2 = recyclerView4.u0;
                 int abs = Math.abs(fVar2.b) + Math.abs(fVar2.a);
                 for (int i13 = 0; i13 < fVar2.c * 2; i13 += 2) {
                     if (i11 >= arrayList.size()) {
@@ -106,24 +106,24 @@ public final class q implements Runnable {
         }
         Collections.sort(arrayList, f);
         for (int i15 = 0; i15 < arrayList.size() && (recyclerView = (pVar = (p) arrayList.get(i15)).d) != null; i15++) {
-            d1 c10 = c(recyclerView, pVar.e, pVar.a ? Long.MAX_VALUE : j3);
+            e1 c10 = c(recyclerView, pVar.e, pVar.a ? Long.MAX_VALUE : j3);
             if (c10 != null && c10.b != null && c10.g() && !c10.h() && (recyclerView2 = (RecyclerView) c10.b.get()) != null) {
-                if (recyclerView2.Q && recyclerView2.e.B() != 0) {
+                if (recyclerView2.R && recyclerView2.e.z() != 0) {
                     recyclerView2.p0();
                 }
-                h2.f fVar3 = recyclerView2.t0;
+                h2.f fVar3 = recyclerView2.u0;
                 fVar3.c(recyclerView2, true);
                 if (fVar3.c != 0) {
                     try {
                         int i16 = n0.g.a;
                         Trace.beginSection("RV Nested Prefetch");
-                        a1 a1Var = recyclerView2.u0;
-                        g0 g0Var = recyclerView2.x;
-                        a1Var.d = 1;
-                        a1Var.e = g0Var.b();
-                        a1Var.g = false;
-                        a1Var.h = false;
-                        a1Var.i = false;
+                        b1 b1Var = recyclerView2.v0;
+                        h0 h0Var = recyclerView2.x;
+                        b1Var.d = 1;
+                        b1Var.e = h0Var.b();
+                        b1Var.g = false;
+                        b1Var.h = false;
+                        b1Var.i = false;
                         for (int i17 = 0; i17 < fVar3.c * 2; i17 += 2) {
                             c(recyclerView2, fVar3.d[i17], j3);
                         }

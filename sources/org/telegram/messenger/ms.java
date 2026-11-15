@@ -1,7 +1,74 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.app.Activity;
+import java.lang.ref.WeakReference;
+import org.json.JSONObject;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public interface ms {
-    void b();
+public final class ms implements js, is {
+    public final /* synthetic */ int a;
+    public final Object b;
+    public final Object c;
+
+    public /* synthetic */ ms(is isVar, Object obj, int i7) {
+        this.a = i7;
+        this.c = isVar;
+        this.b = obj;
+    }
+
+    @Override // org.telegram.messenger.js
+    public void b() {
+        ((xi.e) this.b).b();
+    }
+
+    @Override // org.telegram.messenger.is
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        switch (this.a) {
+            case 0:
+                is isVar = (is) ((WeakReference) this.c).get();
+                if (isVar == null) {
+                    a8.d("MEMORY_LEAK observer " + i7 + " with destroyed WeakReference");
+                    b();
+                    break;
+                } else {
+                    isVar.didReceivedNotification(i7, i10, objArr);
+                    break;
+                }
+            case 1:
+                if (i7 == 274) {
+                    ((org.telegram.ui.ActionBar.t1) this.b).dismiss();
+                    ns.e().n(this, i7);
+                    g0.i3(new org.telegram.ui.iz(this, 13), 100L);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.web.v0 v0Var = (org.telegram.ui.web.v0) this.c;
+                if (i7 == 306) {
+                    int intValue = ((Integer) objArr[0]).intValue();
+                    int[] iArr = (int[]) objArr[2];
+                    if (intValue == 5000) {
+                        ns.e().n(this, ns.d5);
+                        if (iArr[0] != 0) {
+                            v0Var.x((fi.i7) this.b, "scan_qr_popup_closed", new JSONObject());
+                            break;
+                        } else {
+                            Activity activity = v0Var.a0;
+                            if (activity != null) {
+                                v0Var.h0 = org.telegram.ui.t9.j0(activity, 3, new org.telegram.ui.Components.cf(v0Var));
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    public ms(ns nsVar, is isVar) {
+        this.a = 0;
+        this.b = new xi.e(nsVar, this);
+        this.c = new WeakReference(isVar);
+    }
 }

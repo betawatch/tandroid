@@ -2,13 +2,14 @@ package com.google.android.gms.vision.clearcut;
 
 import android.content.Context;
 import android.util.Log;
-import c8.hc;
-import com.google.android.gms.internal.clearcut.w1;
+import c8.jc;
+import com.google.android.gms.common.api.internal.p;
+import com.google.android.gms.internal.clearcut.v1;
 import com.google.android.gms.internal.vision.c;
 import com.google.android.gms.internal.vision.e0;
 import com.google.android.gms.internal.vision.f0;
-import com.google.android.gms.internal.vision.k2;
-import com.google.android.gms.internal.vision.n2;
+import com.google.android.gms.internal.vision.l2;
+import com.google.android.gms.internal.vision.o2;
 import com.google.android.gms.internal.vision.r0;
 import com.google.android.gms.internal.vision.u0;
 import com.google.android.gms.internal.vision.y1;
@@ -16,7 +17,7 @@ import com.google.android.gms.internal.vision.z0;
 import java.io.IOException;
 import l6.a;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class VisionClearcutLogger {
     private final a zza;
@@ -34,9 +35,9 @@ public class VisionClearcutLogger {
             byte[] bArr = new byte[h];
             r0 r0Var = new r0(bArr, h);
             f0Var.getClass();
-            k2 k2Var = k2.c;
-            k2Var.getClass();
-            n2 a10 = k2Var.a(f0Var.getClass());
+            l2 l2Var = l2.c;
+            l2Var.getClass();
+            o2 a10 = l2Var.a(f0Var.getClass());
             y1 y1Var = r0Var.b;
             if (y1Var == null) {
                 y1Var = new y1(r0Var);
@@ -57,9 +58,9 @@ public class VisionClearcutLogger {
                 if (this.zzb) {
                     a aVar = this.zza;
                     aVar.getClass();
-                    bi.a aVar2 = new bi.a(aVar, bArr);
-                    ((w1) aVar2.e).c = i7;
-                    aVar2.b();
+                    p pVar = new p(aVar, bArr);
+                    ((v1) pVar.e).c = i7;
+                    pVar.b();
                     return;
                 }
                 e0 k10 = f0.k();
@@ -84,11 +85,11 @@ public class VisionClearcutLogger {
                         Log.e("Vision", "Would have logged:\n" + obj);
                     }
                 } catch (Exception e10) {
-                    hc.a(e10, "Parsing error", new Object[0]);
+                    jc.a(e10, "Parsing error", new Object[0]);
                 }
             } catch (Exception e11) {
                 c.a.q(e11);
-                hc.a(e11, "Failed to log", new Object[0]);
+                jc.a(e11, "Failed to log", new Object[0]);
             }
         } catch (IOException e12) {
             String name = f0.class.getName();

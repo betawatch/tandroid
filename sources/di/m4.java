@@ -1,84 +1,108 @@
 package di;
 
-import android.animation.ValueAnimator;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.app.Activity;
+import android.text.SpannableStringBuilder;
 import java.util.ArrayList;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.an;
+import org.telegram.ui.rg;
+import org.telegram.ui.si;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class m4 implements GestureDetector.OnGestureListener {
-    public final /* synthetic */ m5 a;
+public final /* synthetic */ class m4 implements z10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
 
-    public m4(m5 m5Var) {
-        this.a = m5Var;
+    public /* synthetic */ m4(Object obj, long j3, long j10, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.b = j3;
+        this.c = j10;
     }
 
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        m5 m5Var = this.a;
-        m5Var.d.abortAnimation();
-        ValueAnimator valueAnimator = m5Var.M;
-        if (valueAnimator != null) {
-            valueAnimator.removeAllListeners();
-            m5Var.M.cancel();
-            m5Var.M = null;
-        }
-        m5Var.L = false;
-        m5Var.O.x = false;
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        m5 m5Var = this.a;
-        m5Var.d.fling((int) m5Var.e, 0, (int) (-f10), 0, (int) m5Var.f, (int) m5Var.h, 0, 0);
-        m5Var.invalidate();
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        m5 m5Var = this.a;
-        float f12 = m5Var.e + f10;
-        m5Var.e = f12;
-        float f13 = m5Var.f;
-        if (f12 < f13) {
-            m5Var.e = f13;
-        }
-        float f14 = m5Var.e;
-        float f15 = m5Var.h;
-        if (f14 > f15) {
-            m5Var.e = f15;
-        }
-        m5Var.invalidate();
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        m5 m5Var = this.a;
-        ArrayList arrayList = m5Var.G;
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            o4 o4Var = (o4) arrayList.get(i7);
-            if (((o4) arrayList.get(i7)).a.P0.contains(motionEvent.getX(), motionEvent.getY())) {
-                int i10 = m5Var.K;
-                int i11 = o4Var.b;
-                if (i10 != i11) {
-                    m5Var.c(i11, true, false);
-                } else {
-                    m5Var.N.o(false);
+    /* JADX WARN: Removed duplicated region for block: B:37:0x010c A[LOOP:1: B:35:0x0108->B:37:0x010c, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0140  */
+    @Override // org.telegram.messenger.z10
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Object obj) {
+        SpannableStringBuilder spannableStringBuilder;
+        int size;
+        int i7;
+        org.telegram.ui.ActionBar.e6 e6Var;
+        int i10 = this.a;
+        Object obj2 = this.d;
+        switch (i10) {
+            case 0:
+                y4 y4Var = (y4) obj2;
+                ArrayList arrayList = (ArrayList) obj;
+                org.telegram.ui.Components.o5 o5Var = y4Var.F;
+                if (this.b == this.c) {
+                    y4Var.e0 = arrayList;
+                    o5Var.animate().alpha(y4Var.s ? 0.0f : y4Var.e0 != null ? 1.0f : 0.25f).setInterpolator(er.h).setDuration(420L).start();
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        if ((arrayList.get(i11) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i11)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
+                            arrayList2.add((TL_stars.starGiftAttributeModel) arrayList.get(i11));
+                            if (arrayList2.size() >= 3) {
+                                spannableStringBuilder = new SpannableStringBuilder();
+                                size = arrayList2.size();
+                                i7 = 0;
+                                while (i7 < size) {
+                                    Object obj3 = arrayList2.get(i7);
+                                    i7++;
+                                    spannableStringBuilder.append((CharSequence) "x");
+                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.p5(((TL_stars.starGiftAttributeModel) obj3).document, o5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                                    spannableStringBuilder.append((CharSequence) " ");
+                                }
+                                if (spannableStringBuilder.length() > 0) {
+                                    spannableStringBuilder.append((CharSequence) " ");
+                                }
+                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(hd.M0(2131749754, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                                o5Var.setText(spannableStringBuilder);
+                                break;
+                            }
+                        }
+                    }
+                    spannableStringBuilder = new SpannableStringBuilder();
+                    size = arrayList2.size();
+                    i7 = 0;
+                    while (i7 < size) {
+                    }
+                    if (spannableStringBuilder.length() > 0) {
+                    }
+                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(hd.M0(2131749754, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                    o5Var.setText(spannableStringBuilder);
                 }
-            }
+                break;
+            case 1:
+                an.m1((an) obj2, this.b, this.c, (Long) obj);
+                break;
+            default:
+                si siVar = (si) obj2;
+                Long l10 = (Long) obj;
+                an anVar = siVar.b;
+                if (anVar.getParentActivity() != null) {
+                    Activity parentActivity = anVar.getParentActivity();
+                    String M0 = hd.M0(2131746291, null);
+                    int i12 = org.telegram.messenger.t3.p0(anVar.e) ? 2131746295 : 2131746296;
+                    long j3 = this.b;
+                    SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, i12, org.telegram.messenger.m5.t(j3)));
+                    String H = l10.longValue() > 0 ? hd.H(',', "RemoveMessageFeeRefund", (int) l10.longValue()) : null;
+                    String M02 = hd.M0(2131751817, null);
+                    rg rgVar = new rg(siVar, j3, this.c, l10, 1);
+                    e6Var = ((org.telegram.ui.ActionBar.e2) anVar).resourceProvider;
+                    org.telegram.ui.Components.t4.f0(parentActivity, M0, X2, H, M02, rgVar, e6Var, true);
+                    break;
+                }
+                break;
         }
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onShowPress(MotionEvent motionEvent) {
     }
 }

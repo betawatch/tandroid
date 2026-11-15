@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u4 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,9 +50,9 @@ public final /* synthetic */ class u4 implements Runnable {
                 break;
             default:
                 g5 g5Var4 = this.b;
-                g5Var4.c0 = this.d;
-                g5Var4.d0 = this.c;
-                g5Var4.b0 = this.e;
+                g5Var4.d0 = this.d;
+                g5Var4.e0 = this.c;
+                g5Var4.c0 = this.e;
                 break;
         }
     }

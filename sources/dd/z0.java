@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public enum z0 extends b2 {
     public z0() {
@@ -11,7 +11,7 @@ public enum z0 extends b2 {
     public final void d(l lVar, a aVar) {
         e eVar = lVar.n;
         char d = aVar.d();
-        a1 a1Var = b2.j0;
+        a1 a1Var = b2.k0;
         if (d == 0) {
             lVar.m(this);
             eVar.c.append((char) 65533);
@@ -19,7 +19,7 @@ public enum z0 extends b2 {
             return;
         }
         if (d == '-') {
-            lVar.c = b2.i0;
+            lVar.c = b2.j0;
             return;
         }
         w wVar = b2.a;

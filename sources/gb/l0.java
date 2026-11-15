@@ -1,39 +1,81 @@
 package gb;
 
-import c8.lb;
-import java.io.FileInputStream;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class l0 implements m1.y0 {
-    public final v0 a;
+public final /* synthetic */ class l0 implements oe.e {
+    public static final l0 a;
+    private static final me.d descriptor;
 
-    public l0(v0 sessionGenerator) {
-        kotlin.jvm.internal.j.e(sessionGenerator, "sessionGenerator");
-        this.a = sessionGenerator;
+    static {
+        l0 l0Var = new l0();
+        a = l0Var;
+        oe.m mVar = new oe.m("com.google.firebase.sessions.SessionDetails", l0Var, 4);
+        mVar.k("sessionId", false);
+        mVar.k("firstSessionId", false);
+        mVar.k("sessionIndex", false);
+        mVar.k("sessionStartTimestampUs", false);
+        descriptor = mVar;
     }
 
-    @Override // m1.y0
-    public final Object a() {
-        return new k0(this.a.a(null), null, null);
+    @Override // ke.a
+    public final void a(qe.h hVar, Object obj) {
+        n0 value = (n0) obj;
+        kotlin.jvm.internal.j.e(value, "value");
+        me.d dVar = descriptor;
+        qe.h a10 = hVar.a(dVar);
+        a10.k(dVar, 0, value.a);
+        a10.k(dVar, 1, value.b);
+        int i7 = value.c;
+        a10.b(dVar, 2);
+        a10.c(i7);
+        a10.e(dVar, 3, value.d);
+        a10.l(dVar);
     }
 
-    @Override // m1.y0
-    public final Object b(FileInputStream fileInputStream) {
-        try {
-            pe.b bVar = pe.b.d;
-            String str = new String(lb.b(fileInputStream), xd.a.a);
-            bVar.getClass();
-            return (k0) bVar.a(k0.Companion.serializer(), str);
-        } catch (Exception e10) {
-            throw new m1.b("Cannot parse session data", e10);
+    @Override // ke.a
+    public final Object b(h2.c decoder) {
+        kotlin.jvm.internal.j.e(decoder, "decoder");
+        me.d dVar = descriptor;
+        h2.c c10 = decoder.c(dVar);
+        int i7 = 0;
+        int i10 = 0;
+        String str = null;
+        String str2 = null;
+        long j3 = 0;
+        boolean z10 = true;
+        while (z10) {
+            int d = c10.d(dVar);
+            if (d == -1) {
+                z10 = false;
+            } else if (d == 0) {
+                str = c10.n(dVar, 0);
+                i7 |= 1;
+            } else if (d == 1) {
+                str2 = c10.n(dVar, 1);
+                i7 |= 2;
+            } else if (d == 2) {
+                i10 = c10.f(dVar, 2);
+                i7 |= 4;
+            } else {
+                if (d != 3) {
+                    throw new ke.d(d);
+                }
+                j3 = c10.h(dVar, 3);
+                i7 |= 8;
+            }
         }
+        c10.p(dVar);
+        return new n0(i7, str, str2, i10, j3);
     }
 
-    @Override // m1.y0
-    public final void c(Object obj, m1.g1 g1Var) {
-        byte[] bytes = pe.b.d.b(k0.Companion.serializer(), (k0) obj).getBytes(xd.a.a);
-        kotlin.jvm.internal.j.d(bytes, "getBytes(...)");
-        g1Var.write(bytes);
+    @Override // oe.e
+    public final ke.a[] c() {
+        oe.p pVar = oe.p.a;
+        return new ke.a[]{pVar, pVar, oe.f.a, oe.i.a};
+    }
+
+    @Override // ke.a
+    public final me.d d() {
+        return descriptor;
     }
 }

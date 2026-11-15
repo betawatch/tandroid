@@ -1,13 +1,13 @@
 package com.googlecode.mp4parser;
 
 import java.nio.ByteBuffer;
-import y7.i6;
+import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class c extends a {
-    public static final /* synthetic */ i6 c;
-    public static final /* synthetic */ i6 d;
+    public static final /* synthetic */ ff c;
+    public static final /* synthetic */ ff d;
     public int a;
     public int b;
 
@@ -42,7 +42,7 @@ public abstract class c extends a {
     }
 
     public final void g(int i7) {
-        com.google.android.recaptcha.internal.a.t(ze.a.c(d, this, this, new Integer(i7)));
+        i5.c.u(ze.a.c(d, this, this, new Integer(i7)));
         this.b = i7;
     }
 
@@ -52,7 +52,7 @@ public abstract class c extends a {
     }
 
     public final void h() {
-        com.google.android.recaptcha.internal.a.t(ze.a.c(c, this, this, new Integer(1)));
+        i5.c.u(ze.a.c(c, this, this, new Integer(1)));
         this.a = 1;
     }
 

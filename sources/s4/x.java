@@ -9,11 +9,10 @@ import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.qt;
-import org.telegram.ui.ly0;
+import org.telegram.ui.Components.ff;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -73,9 +72,9 @@ public final class x {
         if (eVar == null) {
             return null;
         }
-        ly0 ly0Var = eVar.C;
-        if (ly0Var != null) {
-            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) ly0Var.b;
+        ld0 ld0Var = eVar.C;
+        if (ld0Var != null) {
+            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) ld0Var.b;
             if (a0Var != null) {
                 return ((android.support.v4.media.session.u) a0Var.b).c;
             }
@@ -110,12 +109,12 @@ public final class x {
         c10.u = zVar;
         if (c10.f()) {
             if (c10.r == null) {
-                k kVar = new k(c10.h, new qt(c10, 13));
+                k kVar = new k(c10.h, new ff(c10, 15));
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();
                 qe.h hVar = c10.c;
-                ((Handler) hVar.d).post((dt) hVar.h);
+                ((Handler) hVar.d).post((s0) hVar.h);
             }
             if ((zVar2 != null && zVar2.d) != zVar.d) {
                 k kVar2 = c10.r;
@@ -139,7 +138,7 @@ public final class x {
                 }
                 c10.r = null;
                 qe.h hVar2 = c10.c;
-                ((Handler) hVar2.d).post((dt) hVar2.h);
+                ((Handler) hVar2.d).post((s0) hVar2.h);
             }
         }
         bVar.b(769, zVar);
@@ -159,7 +158,7 @@ public final class x {
 
     public final void a(r rVar, s sVar, int i7) {
         t tVar;
-        boolean z9;
+        boolean z10;
         r rVar2;
         if (rVar == null) {
             throw new IllegalArgumentException("selector must not be null");
@@ -188,23 +187,23 @@ public final class x {
         } else {
             tVar = (t) arrayList.get(i11);
         }
-        boolean z10 = true;
+        boolean z11 = true;
         if (i7 != tVar.d) {
             tVar.d = i7;
-            z9 = true;
+            z10 = true;
         } else {
-            z9 = false;
+            z10 = false;
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if ((i7 & 1) != 0) {
-            z9 = true;
+            z10 = true;
         }
         tVar.e = elapsedRealtime;
         r rVar3 = tVar.c;
         rVar3.a();
         rVar.a();
         if (rVar3.b.containsAll(rVar.b)) {
-            z10 = z9;
+            z11 = z10;
         } else {
             r rVar4 = tVar.c;
             if (rVar4 == null) {
@@ -239,7 +238,7 @@ public final class x {
             }
             tVar.c = rVar2;
         }
-        if (z10) {
+        if (z11) {
             c().k();
         }
     }

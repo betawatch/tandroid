@@ -1,53 +1,32 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wg implements Runnable {
+public final /* synthetic */ class wg implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+    public final /* synthetic */ an b;
+    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
+    public final /* synthetic */ TLRPC.User d;
 
-    public /* synthetic */ wg(int i7, View view) {
+    public /* synthetic */ wg(an anVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user, int i7) {
         this.a = i7;
-        this.b = view;
+        this.b = anVar;
+        this.c = tL_attachMenuBot;
+        this.d = user;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        View view = this.b;
-        switch (i7) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                try {
-                    view.performHapticFeedback(3, 2);
-                    break;
-                } catch (Exception unused) {
-                    return;
-                }
-            case 1:
-                view.setBackgroundDrawable(null);
-                break;
-            case 2:
-                Drawable[] drawableArr = PhotoViewer.Y8;
-                org.telegram.messenger.g0.E2(view);
-                break;
-            case 3:
-                Drawable[] drawableArr2 = PhotoViewer.Y8;
-                view.setVisibility(8);
-                break;
-            case 4:
-                org.telegram.messenger.iz.I(0);
-                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.id.M0(2131744401, null), true, true);
-                break;
-            case 5:
-                org.telegram.messenger.iz.I(1);
-                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.id.M0(2131744400, null), true, true);
+                org.telegram.messenger.g0.h3(new ah(this.b, this.c, tL_error, this.d));
                 break;
             default:
-                org.telegram.messenger.iz.I(2);
-                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.id.M0(2131744399, null), true, true);
+                org.telegram.messenger.g0.h3(new ah(this.b, tL_error, this.c, this.d));
                 break;
         }
     }

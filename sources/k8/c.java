@@ -2,27 +2,27 @@ package k8;
 
 import a8.q;
 import a8.r7;
+import ai.j0;
 import android.location.Location;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import bi.x5;
 import java.util.HashMap;
 import l8.e;
 import m8.f;
+import org.telegram.messenger.cb;
+import org.telegram.messenger.da;
 import org.telegram.messenger.db;
 import org.telegram.messenger.ea;
-import org.telegram.messenger.eb;
-import org.telegram.messenger.fa;
-import org.telegram.messenger.ha;
+import org.telegram.messenger.ga;
 import org.telegram.messenger.j1;
 import org.telegram.messenger.o;
-import org.telegram.messenger.y9;
-import org.telegram.ui.Components.ik;
-import org.telegram.ui.aa0;
+import org.telegram.messenger.x9;
+import org.telegram.ui.Components.rk;
+import org.telegram.ui.y90;
 import v7.i;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c extends q {
     public final /* synthetic */ int b = 1;
@@ -51,13 +51,13 @@ public final class c extends q {
                     v7.b.a(parcel);
                     o oVar = (o) this.c;
                     f fVar = new f(iVar);
-                    fa faVar = (fa) oVar.b;
-                    eb ebVar = (eb) oVar.c;
-                    HashMap hashMap = faVar.b;
-                    if (((ea) hashMap.get(fVar)) == null) {
-                        hashMap.put(fVar, new ea(fVar));
+                    ea eaVar = (ea) oVar.b;
+                    db dbVar = (db) oVar.c;
+                    HashMap hashMap = eaVar.b;
+                    if (((da) hashMap.get(fVar)) == null) {
+                        hashMap.put(fVar, new da(fVar));
                     }
-                    ebVar.onClick();
+                    dbVar.onClick();
                     parcel2.writeNoException();
                     parcel2.writeInt(1);
                     break;
@@ -73,16 +73,16 @@ public final class c extends q {
                         eVar = queryLocalInterface2 instanceof e ? (e) queryLocalInterface2 : new e(readStrongBinder2, "com.google.android.gms.maps.internal.IGoogleMapDelegate", 11);
                     }
                     v7.b.a(parcel);
-                    ha haVar = (ha) this.c;
-                    wf.b bVar = new wf.b(eVar);
-                    r7 r7Var = haVar.a;
-                    q0.a aVar = haVar.b;
-                    fa faVar2 = new fa();
-                    faVar2.b = new HashMap();
-                    faVar2.c = new HashMap();
-                    faVar2.a = bVar;
-                    aVar.accept(faVar2);
-                    r7Var.n((x5) r7Var.b);
+                    ga gaVar = (ga) this.c;
+                    a aVar = new a(eVar);
+                    r7 r7Var = gaVar.a;
+                    q0.a aVar2 = gaVar.b;
+                    ea eaVar2 = new ea();
+                    eaVar2.b = new HashMap();
+                    eaVar2.c = new HashMap();
+                    eaVar2.a = aVar;
+                    aVar2.accept(eaVar2);
+                    r7Var.n((j0) r7Var.b);
                     parcel2.writeNoException();
                     break;
                 }
@@ -91,14 +91,14 @@ public final class c extends q {
                 if (i7 == 1) {
                     a7.a m12 = a7.b.m1(parcel.readStrongBinder());
                     v7.b.a(parcel);
-                    ((y9) this.c).b.accept((Location) a7.b.n1(m12));
+                    ((x9) this.c).b.accept((Location) a7.b.n1(m12));
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             case 3:
                 if (i7 == 1) {
-                    ((ik) ((j1) this.c).b).run();
+                    ((rk) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }
@@ -107,7 +107,7 @@ public final class c extends q {
                 if (i7 == 1) {
                     int readInt = parcel.readInt();
                     v7.b.a(parcel);
-                    db dbVar = (db) ((j1) this.c).b;
+                    cb cbVar = (cb) ((j1) this.c).b;
                     int i10 = 2;
                     if (readInt != 2) {
                         i10 = 3;
@@ -115,21 +115,21 @@ public final class c extends q {
                             i10 = 1;
                         }
                     }
-                    dbVar.c(i10);
+                    cbVar.b(i10);
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             case 5:
                 if (i7 == 1) {
-                    ((aa0) ((j1) this.c).b).run();
+                    ((y90) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             default:
                 if (i7 == 1) {
-                    ((ik) ((j1) this.c).b).run();
+                    ((rk) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }
@@ -163,14 +163,14 @@ public final class c extends q {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(y9 y9Var) {
+    public c(x9 x9Var) {
         super("com.google.android.gms.maps.internal.IOnMyLocationChangeListener", 12);
-        this.c = y9Var;
+        this.c = x9Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(ha haVar) {
+    public c(ga gaVar) {
         super("com.google.android.gms.maps.internal.IOnMapReadyCallback", 12);
-        this.c = haVar;
+        this.c = gaVar;
     }
 }

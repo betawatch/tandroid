@@ -1,37 +1,35 @@
 package aa;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class z implements ThreadFactory {
-    public final /* synthetic */ int a;
-    public final Number b;
+public final class z {
+    public final String a;
+    public final String b;
 
-    public z() {
-        this.a = 1;
-        this.b = new AtomicInteger(0);
+    public z(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                Thread newThread = Executors.defaultThreadFactory().newThread(new y(runnable));
-                newThread.setName("awaitEvenIfOnMainThread task continuation executor" + ((AtomicLong) this.b).getAndIncrement());
-                return newThread;
-            default:
-                Thread thread = new Thread(runnable);
-                thread.setName("arch_disk_io_" + ((AtomicInteger) this.b).getAndIncrement());
-                return thread;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof z)) {
+            return false;
+        }
+        z zVar = (z) obj;
+        return kotlin.jvm.internal.j.a(this.a, zVar.a) && kotlin.jvm.internal.j.a(this.b, zVar.b);
     }
 
-    public z(AtomicLong atomicLong) {
-        this.a = 0;
-        this.b = atomicLong;
+    public final int hashCode() {
+        String str = this.a;
+        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        String str2 = this.b;
+        return hashCode + (str2 != null ? str2.hashCode() : 0);
+    }
+
+    public final String toString() {
+        return "FirebaseInstallationId(fid=" + this.a + ", authToken=" + this.b + ')';
     }
 }

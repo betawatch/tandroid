@@ -2,7 +2,7 @@ package org.telegram.messenger.secretmedia;
 
 import android.net.Uri;
 import j2.c;
-import j2.d0;
+import j2.c0;
 import j2.j;
 import j2.m;
 import java.io.File;
@@ -12,9 +12,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w7;
-import rf.b;
+import r.b;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class EncryptedFileDataSource extends c {
     private int bytesRemaining;
@@ -22,7 +22,7 @@ public final class EncryptedFileDataSource extends c {
     private boolean opened;
     private Uri uri;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class EncryptedFileDataSourceException extends IOException {
         public EncryptedFileDataSourceException(Throwable th2) {
             super(th2);
@@ -63,8 +63,8 @@ public final class EncryptedFileDataSource extends c {
         this.uri = mVar.a;
         File file = new File(mVar.a.getPath());
         String name = file.getName();
-        Pattern pattern = w7.I;
-        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(t0.b.getCacheDir(), b.r(name, ".key")));
+        Pattern pattern = w7.J;
+        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(t0.b.getCacheDir(), b.v(name, ".key")));
         this.fileInputStream = encryptedFileInputStream;
         encryptedFileInputStream.skip(mVar.e);
         int length = (int) file.length();
@@ -107,10 +107,10 @@ public final class EncryptedFileDataSource extends c {
     }
 
     @Deprecated
-    public EncryptedFileDataSource(d0 d0Var) {
+    public EncryptedFileDataSource(c0 c0Var) {
         this();
-        if (d0Var != null) {
-            addTransferListener(d0Var);
+        if (c0Var != null) {
+            addTransferListener(c0Var);
         }
     }
 }

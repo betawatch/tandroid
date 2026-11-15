@@ -1,10 +1,10 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.b9;
+import a8.d9;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q0 implements Runnable {
     public final t0 a;
@@ -21,48 +21,48 @@ public final class q0 implements Runnable {
         Object obj;
         Throwable a10;
         t0 t0Var = this.a;
-        boolean z9 = t0Var instanceof x0;
+        boolean z10 = t0Var instanceof x0;
         m6.n nVar = this.b;
-        if (z9 && (a10 = ((x0) t0Var).a()) != null) {
+        if (z10 && (a10 = ((x0) t0Var).a()) != null) {
             nVar.j(a10);
             return;
         }
         try {
             boolean isDone = t0Var.isDone();
-            boolean z10 = false;
+            boolean z11 = false;
             Future future = t0Var;
             if (!isDone) {
-                throw new IllegalStateException(b9.a("Future was expected to be done: %s", t0Var));
+                throw new IllegalStateException(d9.a("Future was expected to be done: %s", t0Var));
             }
             while (true) {
                 try {
                     obj = future.get();
                     break;
                 } catch (InterruptedException unused) {
-                    z10 = true;
+                    z11 = true;
                     future = future;
                 } catch (Throwable th2) {
-                    if (z10) {
+                    if (z11) {
                         Thread.currentThread().interrupt();
                     }
                     throw th2;
                 }
             }
-            if (z10) {
+            if (z11) {
                 Thread.currentThread().interrupt();
             }
             Integer num = (Integer) obj;
             int intValue = num.intValue();
-            f5.w wVar = (f5.w) nVar.d;
+            f5.x xVar = (f5.x) nVar.d;
             if (intValue <= 0) {
                 ((Runnable) nVar.c).run();
                 return;
             }
             int i7 = nVar.a;
             int intValue2 = num.intValue();
-            wVar.getClass();
-            f5.f a11 = f5.z.a(intValue2, "Billing override value was set by a license tester.");
-            wVar.F(93, i7, a11);
+            xVar.getClass();
+            f5.f a11 = f5.a0.a(intValue2, "Billing override value was set by a license tester.");
+            xVar.F(93, i7, a11);
             ((q0.a) nVar.b).accept(a11);
         } catch (ExecutionException e10) {
             nVar.j(e10.getCause());
@@ -72,7 +72,7 @@ public final class q0 implements Runnable {
     }
 
     public final String toString() {
-        android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(q0.class.getSimpleName(), 19);
+        android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(q0.class.getSimpleName(), 20);
         k kVar = new k();
         ((k) a0Var.d).b = kVar;
         a0Var.d = kVar;

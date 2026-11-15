@@ -1,52 +1,41 @@
 package v4;
 
-import org.telegram.messenger.qs;
+import android.content.Context;
+import android.util.DisplayMetrics;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Wallet.u5;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class h1 {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
+public final class h1 extends c0 {
+    public final /* synthetic */ u5 r;
 
-    public final boolean a() {
-        int i7 = this.a;
-        int i10 = 2;
-        if ((i7 & 7) != 0) {
-            int i11 = this.d;
-            int i12 = this.b;
-            if (((i11 > i12 ? 1 : i11 == i12 ? 2 : 4) & i7) == 0) {
-                return false;
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h1(u5 u5Var, Context context) {
+        super(context);
+        this.r = u5Var;
+    }
+
+    @Override // v4.c0, v4.a1
+    public final void g(View view, z0 z0Var) {
+        RecyclerView recyclerView = this.r.a;
+        if (recyclerView == null) {
+            return;
         }
-        if ((i7 & qs.x1) != 0) {
-            int i13 = this.d;
-            int i14 = this.c;
-            if ((((i13 > i14 ? 1 : i13 == i14 ? 2 : 4) << 4) & i7) == 0) {
-                return false;
-            }
+        o0 layoutManager = recyclerView.getLayoutManager();
+        layoutManager.getClass();
+        int[] iArr = {0, o0.z(view) - layoutManager.F()};
+        int i7 = iArr[0];
+        int i10 = iArr[1];
+        int m10 = m(Math.max(Math.abs(i7), Math.abs(i10)));
+        if (m10 > 0) {
+            z0Var.b(i7, i10, m10, this.j);
         }
-        if ((i7 & 1792) != 0) {
-            int i15 = this.e;
-            int i16 = this.b;
-            if ((((i15 > i16 ? 1 : i15 == i16 ? 2 : 4) << 8) & i7) == 0) {
-                return false;
-            }
-        }
-        if ((i7 & 28672) != 0) {
-            int i17 = this.e;
-            int i18 = this.c;
-            if (i17 > i18) {
-                i10 = 1;
-            } else if (i17 != i18) {
-                i10 = 4;
-            }
-            if ((i7 & (i10 << 12)) == 0) {
-                return false;
-            }
-        }
-        return true;
+    }
+
+    @Override // v4.c0
+    public final float l(DisplayMetrics displayMetrics) {
+        return 100.0f / displayMetrics.densityDpi;
     }
 }

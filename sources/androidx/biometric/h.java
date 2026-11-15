@@ -4,7 +4,7 @@ import android.util.Log;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final class h implements androidx.lifecycle.a0 {
     }
 
     @Override // androidx.lifecycle.a0
-    public final void X(Object obj) {
+    public final void o(Object obj) {
         int i7 = this.a;
         q qVar = this.b;
         switch (i7) {
@@ -24,7 +24,7 @@ public final class h implements androidx.lifecycle.a0 {
                 u uVar = (u) obj;
                 if (uVar != null) {
                     qVar.V(uVar);
-                    z zVar = qVar.l0;
+                    z zVar = qVar.m0;
                     if (zVar.r == null) {
                         zVar.r = new androidx.lifecycle.z();
                     }
@@ -37,7 +37,7 @@ public final class h implements androidx.lifecycle.a0 {
                     if (qVar.R()) {
                         qVar.W(qVar.q(R.string.fingerprint_not_recognized));
                     }
-                    z zVar2 = qVar.l0;
+                    z zVar2 = qVar.m0;
                     if (zVar2.n) {
                         Executor executor = zVar2.d;
                         if (executor == null) {
@@ -47,7 +47,7 @@ public final class h implements androidx.lifecycle.a0 {
                     } else {
                         Log.w("BiometricFragment", "Failure not sent to client. Client is not awaiting a result.");
                     }
-                    z zVar3 = qVar.l0;
+                    z zVar3 = qVar.m0;
                     if (zVar3.u == null) {
                         zVar3.u = new androidx.lifecycle.z();
                     }

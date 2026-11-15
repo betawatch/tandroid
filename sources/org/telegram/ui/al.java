@@ -1,34 +1,29 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.ui.Components.UndoView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class al extends org.telegram.ui.Components.d10 {
-    public final /* synthetic */ cn m1;
+public final class al extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ an d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public al(cn cnVar, Activity activity, org.telegram.ui.ActionBar.f2 f2Var) {
-        super(activity, f2Var);
-        this.m1 = cnVar;
+    public al(an anVar, boolean z10, boolean z11, boolean z12) {
+        this.d = anVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = z12;
     }
 
-    @Override // org.telegram.ui.Components.d10
-    public final void I0() {
-        cn cnVar = this.m1;
-        cnVar.g8();
-        UndoView undoView = cnVar.M3;
-        if (undoView == null) {
-            return;
-        }
-        undoView.j(75, 0L, null);
-        cnVar.getMessagesController().k4(cnVar.j6, "CONVERT_GIGAGROUP");
-    }
-
-    @Override // org.telegram.ui.Components.d10
-    public final void J0() {
-        cn cnVar = this.m1;
-        cnVar.getMessagesController().S(cnVar.getParentActivity(), cnVar.e, cnVar, new w0(this, 21));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        an anVar = this.d;
+        anVar.b3 = null;
+        anVar.Y2.setVisibility(this.a ? 0 : 4);
+        anVar.a3.setVisibility(this.b ? 0 : 4);
+        anVar.Z2.setVisibility(this.c ? 0 : 4);
     }
 }

@@ -1,15 +1,16 @@
 package e2;
 
-import a8.ia;
+import a8.ja;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m1 {
     public static final String f;
@@ -21,13 +22,13 @@ public final class m1 {
     public int e;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         f = Integer.toString(0, 36);
         g = Integer.toString(1, 36);
     }
 
     public m1(String str, u... uVarArr) {
-        ia.f(uVarArr.length > 0);
+        ja.f(uVarArr.length > 0);
         this.b = str;
         this.d = uVarArr;
         this.a = uVarArr.length;
@@ -51,7 +52,7 @@ public final class m1 {
     }
 
     public static void b(String str, int i7, String str2, String str3) {
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("Different ", str, " combined in one TrackGroup: '", str2, "' (track 0) and '");
+        StringBuilder n10 = e2.n("Different ", str, " combined in one TrackGroup: '", str2, "' (track 0) and '");
         n10.append(str3);
         n10.append("' (track ");
         n10.append(i7);
@@ -188,7 +189,7 @@ public final class m1 {
 
     public final int hashCode() {
         if (this.e == 0) {
-            this.e = Arrays.hashCode(this.d) + com.google.android.recaptcha.internal.a.h(527, 31, this.b);
+            this.e = Arrays.hashCode(this.d) + e2.h(527, 31, this.b);
         }
         return this.e;
     }

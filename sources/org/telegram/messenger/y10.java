@@ -1,9 +1,10 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.ui.Components.b41;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public interface y10 {
-    void k(Object obj, TLRPC.Document document, Boolean bool);
+    Boolean a(b41 b41Var, View view, Integer num, Float f10, Float f11);
 }

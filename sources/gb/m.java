@@ -1,25 +1,39 @@
 package gb;
 
-import android.content.Context;
+import c8.l1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class m implements ib.b {
-    public final /* synthetic */ int a;
-    public final d9.o b;
+public final class m implements pa.f {
+    public static final m b;
+    public static final /* synthetic */ m[] c;
+    public final int a;
 
-    public /* synthetic */ m(d9.o oVar, int i7) {
-        this.a = i7;
-        this.b = oVar;
+    static {
+        m mVar = new m("EVENT_TYPE_UNKNOWN", 0, 0);
+        m mVar2 = new m("SESSION_START", 1, 1);
+        b = mVar2;
+        m[] mVarArr = {mVar, mVar2};
+        c = mVarArr;
+        l1.a(mVarArr);
     }
 
-    @Override // fd.a
-    public final Object get() {
-        switch (this.a) {
-            case 0:
-                return new l((ua.b) this.b.a);
-            default:
-                return new jb.a((Context) this.b.a);
-        }
+    public m(String str, int i7, int i10) {
+        this.a = i10;
+    }
+
+    public static m valueOf(String str) {
+        return (m) Enum.valueOf(m.class, str);
+    }
+
+    public static m[] values() {
+        return (m[]) c.clone();
+    }
+
+    @Override // pa.f
+    public final int a() {
+        return this.a;
     }
 }

@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.xb;
+import c8.yb;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l extends r6.a {
     public static final android.support.v4.media.session.a0 e;
@@ -28,34 +29,34 @@ public final class l extends r6.a {
 
     static {
         android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(24);
-        a0Var.z(4, "com.google.android.gms.cast.metadata.CREATION_DATE", "creationDateTime");
-        a0Var.z(4, "com.google.android.gms.cast.metadata.RELEASE_DATE", "releaseDate");
-        a0Var.z(4, "com.google.android.gms.cast.metadata.BROADCAST_DATE", "originalAirdate");
-        a0Var.z(1, "com.google.android.gms.cast.metadata.TITLE", "title");
-        a0Var.z(1, "com.google.android.gms.cast.metadata.SUBTITLE", "subtitle");
-        a0Var.z(1, "com.google.android.gms.cast.metadata.ARTIST", "artist");
-        a0Var.z(1, "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "albumArtist");
-        a0Var.z(1, "com.google.android.gms.cast.metadata.ALBUM_TITLE", "albumName");
-        a0Var.z(1, "com.google.android.gms.cast.metadata.COMPOSER", "composer");
-        a0Var.z(2, "com.google.android.gms.cast.metadata.DISC_NUMBER", "discNumber");
-        a0Var.z(2, "com.google.android.gms.cast.metadata.TRACK_NUMBER", "trackNumber");
-        a0Var.z(2, "com.google.android.gms.cast.metadata.SEASON_NUMBER", "season");
-        a0Var.z(2, "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "episode");
-        a0Var.z(1, "com.google.android.gms.cast.metadata.SERIES_TITLE", "seriesTitle");
-        a0Var.z(1, "com.google.android.gms.cast.metadata.STUDIO", "studio");
-        a0Var.z(2, "com.google.android.gms.cast.metadata.WIDTH", "width");
-        a0Var.z(2, "com.google.android.gms.cast.metadata.HEIGHT", "height");
-        a0Var.z(1, "com.google.android.gms.cast.metadata.LOCATION_NAME", "location");
-        a0Var.z(3, "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "latitude");
-        a0Var.z(3, "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "longitude");
-        a0Var.z(5, "com.google.android.gms.cast.metadata.SECTION_DURATION", "sectionDuration");
-        a0Var.z(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "sectionStartTimeInMedia");
-        a0Var.z(5, "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "sectionStartAbsoluteTime");
-        a0Var.z(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "sectionStartTimeInContainer");
-        a0Var.z(2, "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID", "queueItemId");
-        a0Var.z(1, "com.google.android.gms.cast.metadata.BOOK_TITLE", "bookTitle");
-        a0Var.z(2, "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "chapterNumber");
-        a0Var.z(1, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "chapterTitle");
+        a0Var.y(4, "com.google.android.gms.cast.metadata.CREATION_DATE", "creationDateTime");
+        a0Var.y(4, "com.google.android.gms.cast.metadata.RELEASE_DATE", "releaseDate");
+        a0Var.y(4, "com.google.android.gms.cast.metadata.BROADCAST_DATE", "originalAirdate");
+        a0Var.y(1, "com.google.android.gms.cast.metadata.TITLE", "title");
+        a0Var.y(1, "com.google.android.gms.cast.metadata.SUBTITLE", "subtitle");
+        a0Var.y(1, "com.google.android.gms.cast.metadata.ARTIST", "artist");
+        a0Var.y(1, "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "albumArtist");
+        a0Var.y(1, "com.google.android.gms.cast.metadata.ALBUM_TITLE", "albumName");
+        a0Var.y(1, "com.google.android.gms.cast.metadata.COMPOSER", "composer");
+        a0Var.y(2, "com.google.android.gms.cast.metadata.DISC_NUMBER", "discNumber");
+        a0Var.y(2, "com.google.android.gms.cast.metadata.TRACK_NUMBER", "trackNumber");
+        a0Var.y(2, "com.google.android.gms.cast.metadata.SEASON_NUMBER", "season");
+        a0Var.y(2, "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "episode");
+        a0Var.y(1, "com.google.android.gms.cast.metadata.SERIES_TITLE", "seriesTitle");
+        a0Var.y(1, "com.google.android.gms.cast.metadata.STUDIO", "studio");
+        a0Var.y(2, "com.google.android.gms.cast.metadata.WIDTH", "width");
+        a0Var.y(2, "com.google.android.gms.cast.metadata.HEIGHT", "height");
+        a0Var.y(1, "com.google.android.gms.cast.metadata.LOCATION_NAME", "location");
+        a0Var.y(3, "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "latitude");
+        a0Var.y(3, "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "longitude");
+        a0Var.y(5, "com.google.android.gms.cast.metadata.SECTION_DURATION", "sectionDuration");
+        a0Var.y(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "sectionStartTimeInMedia");
+        a0Var.y(5, "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "sectionStartAbsoluteTime");
+        a0Var.y(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "sectionStartTimeInContainer");
+        a0Var.y(2, "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID", "queueItemId");
+        a0Var.y(1, "com.google.android.gms.cast.metadata.BOOK_TITLE", "bookTitle");
+        a0Var.y(2, "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "chapterNumber");
+        a0Var.y(1, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "chapterTitle");
         e = a0Var;
     }
 
@@ -72,7 +73,7 @@ public final class l extends r6.a {
         Integer num = (Integer) ((HashMap) e.d).get(str);
         int intValue = num != null ? num.intValue() : 0;
         if (intValue != i7 && intValue != 0) {
-            throw new IllegalArgumentException(com.google.android.recaptcha.internal.a.l("Value for ", str, " must be a ", d[i7]));
+            throw new IllegalArgumentException(e2.l("Value for ", str, " must be a ", d[i7]));
         }
     }
 
@@ -311,13 +312,13 @@ public final class l extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.p(parcel, 2, this.a);
-        xb.b(parcel, 3, this.b);
+        int r10 = yb.r(parcel, 20293);
+        yb.p(parcel, 2, this.a);
+        yb.b(parcel, 3, this.b);
         int i10 = this.c;
-        xb.q(parcel, 4, 4);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(i10);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 
     public l(int i7) {

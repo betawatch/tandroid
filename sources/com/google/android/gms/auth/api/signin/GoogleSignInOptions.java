@@ -4,7 +4,7 @@ import android.accounts.Account;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.api.b;
 import com.google.android.gms.common.internal.ReflectedParcelable;
@@ -17,14 +17,14 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import r6.a;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
     public static final Parcelable.Creator<GoogleSignInOptions> CREATOR;
-    public static final Scope D;
     public static final Scope E;
-    public static final c5.b F;
+    public static final Scope F;
+    public static final c5.b G;
     public static final GoogleSignInOptions w;
     public static final Scope x;
     public static final Scope y;
@@ -45,14 +45,14 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         Scope scope2 = new Scope(1, "openid");
         y = scope2;
         Scope scope3 = new Scope(1, "https://www.googleapis.com/auth/games_lite");
-        D = scope3;
-        E = new Scope(1, "https://www.googleapis.com/auth/games");
+        E = scope3;
+        F = new Scope(1, "https://www.googleapis.com/auth/games");
         HashSet hashSet = new HashSet();
         HashMap hashMap = new HashMap();
         hashSet.add(scope2);
         hashSet.add(scope);
-        if (hashSet.contains(E)) {
-            Scope scope4 = D;
+        if (hashSet.contains(F)) {
+            Scope scope4 = E;
             if (hashSet.contains(scope4)) {
                 hashSet.remove(scope4);
             }
@@ -62,24 +62,24 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         HashMap hashMap2 = new HashMap();
         hashSet2.add(scope3);
         hashSet2.addAll(Arrays.asList(new Scope[0]));
-        if (hashSet2.contains(E)) {
-            Scope scope5 = D;
+        if (hashSet2.contains(F)) {
+            Scope scope5 = E;
             if (hashSet2.contains(scope5)) {
                 hashSet2.remove(scope5);
             }
         }
         new GoogleSignInOptions(3, new ArrayList(hashSet2), null, false, false, false, null, null, hashMap2, null);
         CREATOR = new w.a(24);
-        F = new c5.b(3);
+        G = new c5.b(3);
     }
 
-    public GoogleSignInOptions(int i7, ArrayList arrayList, Account account, boolean z9, boolean z10, boolean z11, String str, String str2, HashMap hashMap, String str3) {
+    public GoogleSignInOptions(int i7, ArrayList arrayList, Account account, boolean z10, boolean z11, boolean z12, String str, String str2, HashMap hashMap, String str3) {
         this.a = i7;
         this.b = arrayList;
         this.c = account;
-        this.d = z9;
-        this.e = z10;
-        this.f = z11;
+        this.d = z10;
+        this.e = z11;
+        this.f = z12;
         this.h = str;
         this.n = str2;
         this.r = new ArrayList(hashMap.values());
@@ -176,21 +176,21 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 1, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        xb.p(parcel, 2, new ArrayList(this.b));
-        xb.k(parcel, 3, this.c, i7);
-        xb.q(parcel, 4, 4);
+        yb.p(parcel, 2, new ArrayList(this.b));
+        yb.k(parcel, 3, this.c, i7);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        xb.q(parcel, 5, 4);
+        yb.q(parcel, 5, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        xb.q(parcel, 6, 4);
+        yb.q(parcel, 6, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        xb.l(parcel, 7, this.h);
-        xb.l(parcel, 8, this.n);
-        xb.p(parcel, 9, this.r);
-        xb.l(parcel, 10, this.s);
-        xb.s(parcel, r10);
+        yb.l(parcel, 7, this.h);
+        yb.l(parcel, 8, this.n);
+        yb.p(parcel, 9, this.r);
+        yb.l(parcel, 10, this.s);
+        yb.s(parcel, r10);
     }
 }

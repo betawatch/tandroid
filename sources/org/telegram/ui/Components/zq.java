@@ -1,60 +1,41 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.text.TextPaint;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import java.util.HashSet;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class zq extends View implements org.telegram.ui.ActionBar.c6 {
-    public final TextPaint a;
-    public final TextPaint b;
-    public final String c;
-    public final String d;
-    public final Rect e;
+public final class zq extends a41 {
+    public static final /* synthetic */ int b = 0;
 
-    public zq(Context context, String str, String str2) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.b = textPaint2;
-        this.e = new Rect();
-        this.c = str;
-        this.d = str2;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(24.0f));
-        textPaint2.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        textPaint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.G6, false));
-        textPaint2.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.H6, false));
+    static {
+        a41.h(new zq());
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        TextPaint textPaint = this.b;
-        String str = this.d;
-        float measureText = textPaint.measureText(str);
-        TextPaint textPaint2 = this.a;
-        String str2 = this.c;
-        float measureText2 = textPaint2.measureText(str2);
-        int length = str2.length();
-        Rect rect = this.e;
-        textPaint2.getTextBounds(str2, 0, length, rect);
-        textPaint.getTextBounds(str, 0, str.length(), rect);
-        canvas.drawText(str2, (getWidth() * 0.25f) - (measureText2 / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint2);
-        canvas.drawText(str, (getWidth() * 0.7f) - (measureText / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint);
+    @Override // org.telegram.ui.Components.a41
+    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+        org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
+        w8Var.c(b41Var.l, b41Var.n, !b41Var.j);
+        xh.l lVar = w8Var.a;
+        if (b41Var.l instanceof SpannableStringBuilder) {
+            lVar.setTextSize(1, 13.0f);
+            lVar.setTranslationY(org.telegram.messenger.g0.L(2.0f));
+            lVar.setTypeface(org.telegram.messenger.g0.o1("fonts/rmono.ttf"));
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        this.a.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.G6, false));
-        this.b.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.H6, false));
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.Components.a41
+    public final View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        org.telegram.ui.Cells.w8 w8Var = new org.telegram.ui.Cells.w8(context, e6Var, true);
+        org.telegram.ui.ActionBar.q6.h(org.telegram.ui.ActionBar.j6.d6, w8Var, e6Var);
+        Drawable mutate = context.getDrawable(R.drawable.msg_copy).mutate();
+        org.telegram.ui.ActionBar.q6.x(w8Var, mutate, org.telegram.ui.ActionBar.j6.L6, e6Var, PorterDuff.Mode.MULTIPLY);
+        w8Var.setImage(mutate);
+        w8Var.setImageClickListener(new ah.g(this, context, w8Var, 28));
+        return w8Var;
     }
 }

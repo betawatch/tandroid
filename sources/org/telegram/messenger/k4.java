@@ -6,7 +6,7 @@ import android.provider.ContactsContract;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k4 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class k4 implements Runnable {
 
     private final void a() {
         g5 g5Var = this.b;
-        if (g5Var.e0.isEmpty() && !g5Var.h) {
+        if (g5Var.f0.isEmpty() && !g5Var.h) {
             g5Var.A(0L, true);
             return;
         }
@@ -33,7 +33,7 @@ public final /* synthetic */ class k4 implements Runnable {
         synchronized (g5Var.c) {
             g5Var.b = false;
         }
-        g5Var.getNotificationCenter().k(qs.O, new Object[0]);
+        g5Var.getNotificationCenter().k(ns.O, new Object[0]);
     }
 
     @Override // java.lang.Runnable
@@ -49,7 +49,7 @@ public final /* synthetic */ class k4 implements Runnable {
                         int i10 = 0;
                         while (true) {
                             if (i10 < 4) {
-                                TLRPC.User f10 = p10.i(i10).f();
+                                TLRPC.User f10 = m10.i(i10).f();
                                 if (f10 != null) {
                                     if (account.name.equals("" + f10.id)) {
                                         if (i10 == g5Var.currentAccount) {
@@ -107,14 +107,14 @@ public final /* synthetic */ class k4 implements Runnable {
                     if (r2.a) {
                         a8.b("detected contacts change");
                     }
-                    g5Var3.F(g5.q(g5Var3.Y), true, false, true, false, true, false);
+                    g5Var3.F(g5.q(g5Var3.Z), true, false, true, false, true, false);
                     return;
                 }
                 return;
             case 4:
                 g5 g5Var4 = this.b;
                 g5Var4.s = false;
-                g5Var4.m0 = 0;
+                g5Var4.n0 = 0;
                 return;
             case 5:
                 a();
@@ -123,8 +123,8 @@ public final /* synthetic */ class k4 implements Runnable {
                 b();
                 return;
             case 7:
-                yr messagesStorage = this.b.getMessagesStorage();
-                messagesStorage.a.c(new dr(messagesStorage, true, 0));
+                vr messagesStorage = this.b.getMessagesStorage();
+                messagesStorage.a.c(new ar(messagesStorage, true, 0));
                 return;
             case 8:
                 g5 g5Var5 = this.b;

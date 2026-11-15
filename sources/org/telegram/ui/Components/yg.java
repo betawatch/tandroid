@@ -1,61 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class yg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ci b;
-    public final /* synthetic */ boolean c;
+import android.content.DialogInterface;
+import android.view.KeyEvent;
+import android.view.View;
 
-    public /* synthetic */ yg(ci ciVar, boolean z9, int i7) {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class yg implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+
+    public /* synthetic */ yg(KeyEvent.Callback callback, int i7) {
         this.a = i7;
-        this.b = ciVar;
-        this.c = z9;
+        this.b = callback;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                boolean z9 = this.c;
-                ci ciVar = this.b;
-                if (!z9) {
-                    ciVar.Z2.setVisibility(8);
-                    break;
-                } else {
-                    ciVar.getClass();
-                    break;
+                ki kiVar = (ki) this.b;
+                r1.g gVar = kiVar.n4;
+                if (gVar != null) {
+                    gVar.d();
                 }
-            case 1:
-                boolean z10 = this.c;
-                ci ciVar2 = this.b;
-                if (!z10) {
-                    ciVar2.v1.setVisibility(8);
-                    break;
-                } else {
-                    ciVar2.getClass();
-                    break;
-                }
-            case 2:
-                boolean z11 = this.c;
-                ci ciVar3 = this.b;
-                if (!z11) {
-                    ciVar3.x1.setVisibility(8);
-                    break;
-                } else {
-                    ciVar3.getClass();
-                    break;
-                }
+                r1.g gVar2 = new r1.g((Object) kiVar.b, (r1.e) r1.g.p, 0.0f);
+                kiVar.n4 = gVar2;
+                gVar2.m.a(1.5f);
+                kiVar.n4.m.b(1500.0f);
+                kiVar.n4.h();
+                break;
             default:
-                boolean z12 = this.c;
-                ci ciVar4 = this.b;
-                if (!z12) {
-                    ciVar4.getClass();
-                    break;
-                } else {
-                    ciVar4.u3.setVisibility(4);
-                    break;
-                }
+                ((View) this.b).setTag(null);
+                break;
         }
     }
 }

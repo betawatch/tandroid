@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class os implements org.telegram.messenger.ls {
+public final /* synthetic */ class os implements org.telegram.messenger.is {
     public final /* synthetic */ int a;
     public final /* synthetic */ View b;
 
@@ -13,18 +13,18 @@ public final /* synthetic */ class os implements org.telegram.messenger.ls {
         this.b = view;
     }
 
-    @Override // org.telegram.messenger.ls
+    @Override // org.telegram.messenger.is
     public final void didReceivedNotification(int i7, int i10, Object[] objArr) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Cells.w9 w9Var = (org.telegram.ui.Cells.w9) this.b;
+                org.telegram.ui.Cells.v9 v9Var = (org.telegram.ui.Cells.v9) this.b;
                 if (i7 == 259) {
-                    w9Var.getTextView().invalidate();
+                    v9Var.getTextView().invalidate();
                     break;
                 }
                 break;
             default:
-                ((org.telegram.ui.ActionBar.n2) this.b).invalidate();
+                ((org.telegram.ui.ActionBar.l2) this.b).invalidate();
                 break;
         }
     }

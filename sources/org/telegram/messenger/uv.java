@@ -1,69 +1,37 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class uv {
-    public long a;
-    public boolean b;
-    public int c;
-    public ij d;
-    public int e;
-    public long f;
-    public long g;
-    public long h;
-    public boolean i;
-    public int j;
-    public int k;
+public final /* synthetic */ class uv implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bw b;
+    public final /* synthetic */ TLRPC.EncryptedChat c;
 
-    public static uv a(int i7, TLRPC.Message message) {
-        uv uvVar = new uv();
-        uvVar.a = ij.Q1(p10.i(i7).e(), message);
-        uvVar.b = false;
-        uvVar.c = message.id;
-        uvVar.d = new ij(i7, message, null, null, null, null, null, false, false, 0L, false, false, true, 0);
-        return uvVar;
+    public /* synthetic */ uv(bw bwVar, TLRPC.EncryptedChat encryptedChat, int i7) {
+        this.a = i7;
+        this.b = bwVar;
+        this.c = encryptedChat;
     }
 
-    public static uv b(int i7, TLRPC.savedDialog saveddialog, ArrayList arrayList) {
-        TLRPC.Message message;
-        uv uvVar = new uv();
-        uvVar.a = m5.o(saveddialog.peer);
-        uvVar.b = saveddialog.pinned;
-        uvVar.c = saveddialog.top_message;
-        uvVar.f = saveddialog.unread_count;
-        uvVar.g = saveddialog.read_inbox_max_id;
-        uvVar.h = saveddialog.read_outbox_max_id;
-        int i10 = 0;
-        while (true) {
-            if (i10 >= arrayList.size()) {
-                message = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        TLRPC.EncryptedChat encryptedChat = this.c;
+        bw bwVar = this.b;
+        switch (i7) {
+            case 0:
+                bwVar.getNotificationCenter().k(35, encryptedChat);
                 break;
-            }
-            message = (TLRPC.Message) arrayList.get(i10);
-            if (uvVar.c == message.id) {
+            case 1:
+                bwVar.getNotificationCenter().k(35, encryptedChat);
+                bwVar.w(encryptedChat, null);
                 break;
-            }
-            i10++;
+            default:
+                bwVar.getNotificationCenter().k(35, encryptedChat);
+                bwVar.w(encryptedChat, null);
+                break;
         }
-        TLRPC.Message message2 = message;
-        if (message2 != null) {
-            uvVar.d = new ij(i7, message2, null, null, null, null, null, false, false, 0L, false, false, true, 0);
-        }
-        return uvVar;
-    }
-
-    public final int c() {
-        TLRPC.Message message;
-        ij ijVar = this.d;
-        return (ijVar == null || (message = ijVar.k) == null) ? this.j : (message.flags & 32768) != 0 ? message.edit_date : message.date;
-    }
-
-    public final boolean d() {
-        TLRPC.Message message;
-        ij ijVar = this.d;
-        return (ijVar == null || (message = ijVar.k) == null || !(message.action instanceof TLRPC.TL_messageActionHistoryClear)) ? false : true;
     }
 }

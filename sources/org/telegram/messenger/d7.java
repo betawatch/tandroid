@@ -1,16 +1,16 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d7 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ i7 b;
     public final /* synthetic */ boolean c;
 
-    public /* synthetic */ d7(i7 i7Var, boolean z9, int i7) {
+    public /* synthetic */ d7(i7 i7Var, boolean z10, int i7) {
         this.a = i7;
         this.b = i7Var;
-        this.c = z9;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
@@ -44,16 +44,16 @@ public final /* synthetic */ class d7 implements Runnable {
                 if (this.c) {
                     int i7 = i7Var3.b1;
                     if (i7 == 50331648) {
-                        jz.e(i7Var3.R).i(t0.f(), 3, 1);
+                        hz.e(i7Var3.R).i(t0.f(), 3, 1);
                     } else if (i7 == 33554432) {
-                        jz.e(i7Var3.R).i(t0.f(), 2, 1);
+                        hz.e(i7Var3.R).i(t0.f(), 2, 1);
                     } else if (i7 == 16777216) {
-                        jz.e(i7Var3.R).i(t0.f(), 4, 1);
+                        hz.e(i7Var3.R).i(t0.f(), 4, 1);
                     } else if (i7 == 67108864) {
                         if (str == null || !(str.toLowerCase().endsWith("mp3") || str.toLowerCase().endsWith("m4a"))) {
-                            jz.e(i7Var3.R).i(t0.f(), 5, 1);
+                            hz.e(i7Var3.R).i(t0.f(), 5, 1);
                         } else {
-                            jz.e(i7Var3.R).i(t0.f(), 7, 1);
+                            hz.e(i7Var3.R).i(t0.f(), 7, 1);
                         }
                     }
                 }

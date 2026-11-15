@@ -1,24 +1,26 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.os.Bundle;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class fr0 extends org.telegram.ui.en {
-    public final /* synthetic */ ys0 f;
+public final class fr0 extends ss0 {
+    public final /* synthetic */ ys0 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fr0(ys0 ys0Var, Context context, org.telegram.ui.ActionBar.r4 r4Var, Bundle bundle) {
-        super(context, r4Var, bundle);
-        this.f = ys0Var;
+    public fr0(ys0 ys0Var, Context context) {
+        super(ys0Var, context);
+        this.h = ys0Var;
     }
 
-    @Override // org.telegram.ui.en
-    public final void b(boolean z9) {
-        org.telegram.ui.ActionBar.r0 r0Var = this.f.p0;
-        if (r0Var != null) {
-            r0Var.setShowSearchProgress(z9);
+    @Override // v4.h0
+    public final void f() {
+        super.f();
+        ys0 ys0Var = this.h;
+        tr0 g02 = ys0Var.g0(0);
+        if (g02 == null || g02.n.getVisibility() != 0) {
+            return;
         }
+        ys0Var.L.f();
     }
 }

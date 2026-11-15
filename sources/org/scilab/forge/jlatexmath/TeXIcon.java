@@ -9,7 +9,7 @@ import ru.noties.jlatexmath.awt.RenderingHints;
 import ru.noties.jlatexmath.awt.geom.AffineTransform;
 import ru.noties.jlatexmath.swing.Icon;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class TeXIcon implements Icon {
     private static final int MAX_PIXELS = 4096;
@@ -123,9 +123,9 @@ public class TeXIcon implements Icon {
         }
     }
 
-    public void setInsets(Insets insets, boolean z9) {
+    public void setInsets(Insets insets, boolean z10) {
         this.insets = insets;
-        if (z9) {
+        if (z10) {
             return;
         }
         int i7 = insets.top;
@@ -136,7 +136,7 @@ public class TeXIcon implements Icon {
         insets.right += (int) (f10 * 0.18f);
     }
 
-    public TeXIcon(Box box, float f10, boolean z9) {
+    public TeXIcon(Box box, float f10, boolean z10) {
         this.insets = new Insets(0, 0, 0, 0);
         this.fg = null;
         this.isColored = false;
@@ -149,7 +149,7 @@ public class TeXIcon implements Icon {
         } else {
             this.size = f10;
         }
-        if (z9) {
+        if (z10) {
             return;
         }
         Insets insets = this.insets;

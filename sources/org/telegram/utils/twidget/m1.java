@@ -1,185 +1,121 @@
 package org.telegram.utils.twidget;
 
-import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.text.Layout;
+import android.text.TextPaint;
+import java.util.Locale;
+import org.json.JSONObject;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.gz;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.hk0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class m1 extends Layout {
-    public final l1 a;
+public abstract class m1 {
+    public static final int[] a = {j6.ra, j6.Vc, j6.ee, j6.Xc, j6.Nd};
+    public static final int[] b = {j6.rb, j6.Wc, j6.jc, j6.Yc, j6.Tb};
+    public static final int[] c = {j6.ub, j6.vb, j6.wb};
 
-    public m1(l1 l1Var) {
-        super(l1Var.a, n1.b, Math.max(1, l1Var.d), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f);
-        this.a = l1Var;
-    }
-
-    @Override // android.text.Layout
-    public final void draw(Canvas canvas) {
-    }
-
-    @Override // android.text.Layout
-    public final int getBottomPadding() {
-        return 0;
-    }
-
-    @Override // android.text.Layout
-    public final int getEllipsisCount(int i7) {
-        return 0;
-    }
-
-    @Override // android.text.Layout
-    public final int getEllipsisStart(int i7) {
-        return 0;
-    }
-
-    @Override // android.text.Layout
-    public final boolean getLineContainsTab(int i7) {
-        return false;
-    }
-
-    @Override // android.text.Layout
-    public final int getLineCount() {
-        return this.a.g.length;
-    }
-
-    @Override // android.text.Layout
-    public final int getLineDescent(int i7) {
-        return 0;
-    }
-
-    @Override // android.text.Layout
-    public final Layout.Directions getLineDirections(int i7) {
-        return null;
-    }
-
-    @Override // android.text.Layout
-    public final int getLineForOffset(int i7) {
-        int i10 = 0;
-        while (true) {
-            l1 l1Var = this.a;
-            if (i10 >= l1Var.g.length) {
-                return r2.length - 1;
-            }
-            int i11 = i10 + 1;
-            if (i7 < l1Var.e[i11]) {
-                return i10;
-            }
-            i10 = i11;
+    public static String a(e6 e6Var, boolean z10) {
+        boolean a10 = e6Var != null ? e6Var.a() : j6.I.q();
+        int[] iArr = z10 ? b : a;
+        try {
+            int w10 = j6.w(a10 ? -16777216 : -1, b(e6Var, z10));
+            int w02 = j6.w0(iArr[1], e6Var);
+            int w03 = j6.w0(iArr[2], e6Var);
+            int w04 = j6.w0(iArr[3], e6Var);
+            int w05 = j6.w0(iArr[4], e6Var);
+            int w06 = j6.w0(j6.Fi, e6Var);
+            int w07 = j6.w0(j6.Ji, e6Var);
+            int w11 = j6.w(w10, j6.r1(0.1f, w05));
+            JSONObject jSONObject = new JSONObject();
+            jSONObject.put("bg_color", c(w10, w10));
+            jSONObject.put("text_color", c(w02, w10));
+            jSONObject.put("hint_color", c(w03, w10));
+            jSONObject.put("link_color", c(w04, w10));
+            jSONObject.put("button_color", c(w06, w10));
+            jSONObject.put("button_text_color", c(w07, w06));
+            jSONObject.put("secondary_bg_color", c(w11, w10));
+            jSONObject.put("accent_text_color", c(w05, w10));
+            jSONObject.put("subtitle_text_color", c(w03, w10));
+            jSONObject.put("destructive_text_color", c(j6.w0(j6.p7, e6Var), w10));
+            jSONObject.put("section_bg_color", c(w10, w10));
+            jSONObject.put("section_header_text_color", c(w05, w10));
+            jSONObject.put("section_separator_color", c(j6.r1(0.12f, w02), w10));
+            jSONObject.put("header_bg_color", c(w11, w10));
+            jSONObject.put("bottom_bar_bg_color", c(w11, w10));
+            JSONObject jSONObject2 = new JSONObject();
+            jSONObject2.put("text", c(w05, w10));
+            JSONObject jSONObject3 = new JSONObject();
+            jSONObject3.put("colorScheme", a10 ? "dark" : "light");
+            jSONObject3.put("params", jSONObject);
+            jSONObject3.put("button", jSONObject2);
+            jSONObject3.put("text", e());
+            return jSONObject3.toString();
+        } catch (Exception e10) {
+            a8.g(e10, true);
+            return a8.p0.s(new StringBuilder("{\"colorScheme\":\""), a10 ? "dark" : "light", "\"}");
         }
     }
 
-    @Override // android.text.Layout
-    public final float getLineLeft(int i7) {
-        return this.a.g[Math.max(0, Math.min(i7, r0.length - 1))][0];
-    }
-
-    @Override // android.text.Layout
-    public final float getLineMax(int i7) {
-        return getLineRight(i7);
-    }
-
-    @Override // android.text.Layout
-    public final float getLineRight(int i7) {
-        return this.a.g[Math.max(0, Math.min(i7, r0.length - 1))][r3.length - 1];
-    }
-
-    @Override // android.text.Layout
-    public final int getLineStart(int i7) {
-        l1 l1Var = this.a;
-        return l1Var.e[Math.max(0, Math.min(i7, l1Var.g.length))];
-    }
-
-    @Override // android.text.Layout
-    public final int getLineTop(int i7) {
-        l1 l1Var = this.a;
-        return l1Var.f[Math.max(0, Math.min(i7, l1Var.g.length))];
-    }
-
-    @Override // android.text.Layout
-    public final float getLineWidth(int i7) {
-        return getLineRight(i7) - getLineLeft(i7);
-    }
-
-    @Override // android.text.Layout
-    public final int getOffsetForHorizontal(int i7, float f10) {
-        l1 l1Var = this.a;
-        int max = Math.max(0, Math.min(i7, l1Var.g.length - 1));
-        float[] fArr = l1Var.g[max];
-        int[] iArr = l1Var.e;
-        int i10 = iArr[max + 1] - iArr[max];
-        int i11 = 0;
-        for (int i12 = 0; i12 <= i10 && i12 < fArr.length; i12++) {
-            if (i12 < i10) {
-                int i13 = i12 + 1;
-                if (f10 >= (fArr[i12] + fArr[i13]) / 2.0f) {
-                    i11 = i13;
+    public static int b(e6 e6Var, boolean z10) {
+        int w02 = j6.w0(z10 ? b[0] : a[0], e6Var);
+        if (z10) {
+            int[] iArr = c;
+            int i7 = iArr[0];
+            if ((e6Var != null ? e6Var.j(i7) : j6.lm.get(i7)) != 0) {
+                int red = Color.red(w02);
+                int green = Color.green(w02);
+                int blue = Color.blue(w02);
+                int i10 = 1;
+                for (int i11 : iArr) {
+                    int j3 = e6Var != null ? e6Var.j(i11) : j6.lm.get(i11);
+                    if (j3 != 0) {
+                        int red2 = Color.red(j3) + red;
+                        int green2 = Color.green(j3) + green;
+                        i10++;
+                        blue = Color.blue(j3) + blue;
+                        green = green2;
+                        red = red2;
+                    }
                 }
+                return Color.argb(Color.alpha(w02), red / i10, green / i10, blue / i10);
             }
         }
-        if (i11 == i10 && i10 > 0 && max < l1Var.g.length - 1 && Character.isWhitespace(l1Var.a.charAt((l1Var.e[max] + i10) - 1))) {
-            i11--;
+        return w02;
+    }
+
+    public static String c(int i7, int i10) {
+        int w10 = j6.w(i10, i7);
+        return String.format(Locale.US, "#%02x%02x%02x", Integer.valueOf(Color.red(w10)), Integer.valueOf(Color.green(w10)), Integer.valueOf(Color.blue(w10)));
+    }
+
+    public static int d(e6 e6Var, boolean z10) {
+        int i7 = (e6Var == null ? !j6.I.q() : !e6Var.a()) ? 0 : 1;
+        for (int i10 : z10 ? b : a) {
+            i7 = (i7 * 31) + j6.w0(i10, e6Var);
         }
-        return l1Var.e[max] + i11;
-    }
-
-    @Override // android.text.Layout
-    public final int getParagraphDirection(int i7) {
-        return 1;
-    }
-
-    @Override // android.text.Layout
-    public final float getPrimaryHorizontal(int i7) {
-        int lineForOffset = getLineForOffset(i7);
-        l1 l1Var = this.a;
-        return l1Var.g[lineForOffset][Math.max(0, Math.min(i7 - l1Var.e[lineForOffset], r2.length - 1))];
-    }
-
-    @Override // android.text.Layout
-    public final float getSecondaryHorizontal(int i7) {
-        return getPrimaryHorizontal(i7);
-    }
-
-    @Override // android.text.Layout
-    public final void getSelectionPath(int i7, int i10, Path path) {
-        Path path2;
-        path.reset();
-        if (i7 == i10) {
-            return;
-        }
-        if (i10 < i7) {
-            i10 = i7;
-            i7 = i10;
-        }
-        int lineForOffset = getLineForOffset(i7);
-        int lineForOffset2 = getLineForOffset(i10);
-        int i11 = lineForOffset;
-        while (i11 <= lineForOffset2) {
-            float primaryHorizontal = i11 == lineForOffset ? getPrimaryHorizontal(i7) : getLineLeft(i11);
-            float primaryHorizontal2 = i11 == lineForOffset2 ? getPrimaryHorizontal(i10) : getLineRight(i11);
-            if (primaryHorizontal2 > primaryHorizontal) {
-                path2 = path;
-                path2.addRect(primaryHorizontal, getLineTop(i11), primaryHorizontal2, getLineTop(i11 + 1), Path.Direction.CW);
-            } else {
-                path2 = path;
+        if (z10) {
+            for (int i11 : c) {
+                i7 = (i7 * 31) + (e6Var != null ? e6Var.j(i11) : j6.lm.get(i11));
             }
-            i11++;
-            path = path2;
         }
+        int w02 = (((j6.w0(j6.p7, e6Var) + ((j6.w0(j6.Ji, e6Var) + ((j6.w0(j6.Fi, e6Var) + (i7 * 31)) * 31)) * 31)) * 31) + gz.W0) * 31;
+        TextPaint textPaint = j6.o2;
+        return hk0.j0() + ((w02 + (textPaint != null ? Float.floatToIntBits(textPaint.getTextSize()) : 0)) * 31);
     }
 
-    @Override // android.text.Layout
-    public final int getTopPadding() {
-        return 0;
-    }
-
-    @Override // android.text.Layout
-    public final boolean isRtlCharAt(int i7) {
-        return false;
-    }
-
-    @Override // android.text.Layout
-    public final void draw(Canvas canvas, Path path, Paint paint, int i7) {
+    public static JSONObject e() {
+        JSONObject jSONObject = new JSONObject();
+        jSONObject.put("fontSize", gz.W0);
+        TextPaint textPaint = j6.o2;
+        if (textPaint != null && textPaint.getTextSize() > 0.0f) {
+            Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+            jSONObject.put("lineHeight", Math.round(Math.max(1.0f, Math.min(3.0f, ((fontMetrics.descent - fontMetrics.ascent) + fontMetrics.leading) / textPaint.getTextSize())) * 100.0f) / 100.0d);
+        }
+        jSONObject.put("padding", "8px " + Math.round(hk0.j0() / org.telegram.messenger.g0.p) + "px");
+        return jSONObject;
     }
 }

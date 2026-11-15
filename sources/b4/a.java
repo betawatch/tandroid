@@ -1,29 +1,29 @@
 package b4;
 
-import f3.e0;
+import f3.d0;
 import f3.o;
 import f3.p;
 import f3.q;
 import f3.s;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
-    public final e0 b;
+    public final d0 b;
 
     public a(int i7) {
         this.a = i7;
         switch (i7) {
             case 1:
-                this.b = new e0(16973, 2, "image/bmp");
+                this.b = new d0(16973, 2, "image/bmp");
                 break;
             default:
-                this.b = new e0(35152, 2, "image/png");
+                this.b = new d0(35152, 2, "image/png");
                 break;
         }
     }
@@ -71,7 +71,7 @@ public final class a implements o {
         switch (this.a) {
         }
         g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     @Override // f3.o

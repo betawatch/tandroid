@@ -3,7 +3,7 @@ package q7;
 import java.math.RoundingMode;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j0 {
     public final String a;
@@ -55,7 +55,7 @@ public final class j0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public j0(String str, char[] cArr, byte[] bArr, boolean z9) {
+    public j0(String str, char[] cArr, byte[] bArr, boolean z10) {
         int numberOfLeadingZeros;
         int i7;
         this.a = str;
@@ -86,7 +86,7 @@ public final class j0 {
                             RoundingMode roundingMode2 = RoundingMode.CEILING;
                             zArr[a.a(i7 * 8, i11)] = true;
                         }
-                        this.h = z9;
+                        this.h = z10;
                         return;
                     case 4:
                     case 5:
@@ -101,7 +101,7 @@ public final class j0 {
                         boolean[] zArr2 = new boolean[i102];
                         while (i7 < this.f) {
                         }
-                        this.h = z9;
+                        this.h = z10;
                         return;
                     case 6:
                     case 7:
@@ -118,7 +118,7 @@ public final class j0 {
                         boolean[] zArr22 = new boolean[i1022];
                         while (i7 < this.f) {
                         }
-                        this.h = z9;
+                        this.h = z10;
                         return;
                     default:
                         throw new AssertionError();
@@ -127,7 +127,7 @@ public final class j0 {
                 throw new IllegalArgumentException("x (0) must be > 0");
             }
         } catch (ArithmeticException e10) {
-            throw new IllegalArgumentException(jg.g.j(cArr.length, "Illegal alphabet length "), e10);
+            throw new IllegalArgumentException(i5.c.i(cArr.length, "Illegal alphabet length "), e10);
         }
     }
 }

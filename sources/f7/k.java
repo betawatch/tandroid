@@ -2,11 +2,11 @@ package f7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import java.util.Arrays;
-import org.telegram.ui.ly0;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k extends l {
     public static final Parcelable.Creator<k> CREATOR = new t0(6);
@@ -37,29 +37,29 @@ public final class k extends l {
     }
 
     public final String toString() {
-        ly0 ly0Var = new ly0(getClass().getSimpleName(), 9);
+        ld0 ld0Var = new ld0(getClass().getSimpleName(), 10);
         String valueOf = String.valueOf(this.a.a);
-        q7.c cVar = new q7.c(8, false);
-        ((ly0) ly0Var.d).d = cVar;
-        ly0Var.d = cVar;
-        cVar.c = valueOf;
-        cVar.b = "errorCode";
+        q7.c cVar = new q7.c(9, false);
+        ((ld0) ld0Var.c).c = cVar;
+        ld0Var.c = cVar;
+        cVar.b = valueOf;
+        cVar.d = "errorCode";
         String str = this.b;
         if (str != null) {
-            ly0Var.N(str, "errorMessage");
+            ld0Var.L(str, "errorMessage");
         }
-        return ly0Var.toString();
+        return ld0Var.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
+        int r10 = yb.r(parcel, 20293);
         int i10 = this.a.a;
-        xb.q(parcel, 2, 4);
+        yb.q(parcel, 2, 4);
         parcel.writeInt(i10);
-        xb.l(parcel, 3, this.b);
-        xb.q(parcel, 4, 4);
+        yb.l(parcel, 3, this.b);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(this.c);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 }

@@ -2,16 +2,16 @@ package c1;
 
 import w0.i;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+    public final /* synthetic */ f b;
     public final /* synthetic */ i c;
 
-    public /* synthetic */ a(e eVar, i iVar, int i7) {
+    public /* synthetic */ a(f fVar, i iVar, int i7) {
         this.a = i7;
-        this.b = eVar;
+        this.b = fVar;
         this.c = iVar;
     }
 

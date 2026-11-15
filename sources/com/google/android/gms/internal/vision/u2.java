@@ -1,137 +1,188 @@
 package com.google.android.gms.internal.vision;
 
-import sun.misc.Unsafe;
+import android.content.Context;
+import android.graphics.PointF;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.util.Log;
+import com.google.android.gms.vision.face.internal.client.FaceParcel;
+import com.google.android.gms.vision.face.internal.client.LandmarkParcel;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class u2 extends w2 {
-    public final /* synthetic */ int b;
+public final class u2 extends h3 {
+    public final /* synthetic */ int r = 0;
+    public final r6.a s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u2(Unsafe unsafe, int i7) {
-        super(unsafe);
-        this.b = i7;
+    public u2(Context context, x1 x1Var) {
+        super(context, "BarcodeNativeHandle", "barcode");
+        this.s = x1Var;
+        m();
     }
 
-    @Override // com.google.android.gms.internal.vision.w2
-    public final byte a(Object obj, long j3) {
-        switch (this.b) {
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0056  */
+    @Override // com.google.android.gms.internal.vision.h3
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object i(b7.f fVar, Context context) {
+        f3 f3Var;
+        x8.c eVar;
+        int i7 = this.r;
+        r6.a aVar = this.s;
+        Object obj = null;
+        switch (i7) {
             case 0:
-                if (!x2.g) {
-                    break;
+                IBinder b10 = fVar.b("com.google.android.gms.vision.barcode.ChimeraNativeBarcodeDetectorCreator");
+                if (b10 == null) {
+                    f3Var = null;
                 } else {
-                    break;
+                    IInterface queryLocalInterface = b10.queryLocalInterface("com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetectorCreator");
+                    f3Var = queryLocalInterface instanceof f3 ? (f3) queryLocalInterface : new f3(b10, "com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetectorCreator", 4);
                 }
-            default:
-                if (!x2.g) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return x2.o(obj, j3);
-    }
-
-    @Override // com.google.android.gms.internal.vision.w2
-    public final void c(Object obj, long j3, byte b10) {
-        switch (this.b) {
-            case 0:
-                if (!x2.g) {
-                    x2.j(obj, j3, b10);
-                    break;
-                } else {
-                    x2.i(obj, j3, b10);
-                    break;
-                }
-            default:
-                if (!x2.g) {
-                    x2.j(obj, j3, b10);
-                    break;
-                } else {
-                    x2.i(obj, j3, b10);
-                    break;
-                }
-        }
-    }
-
-    @Override // com.google.android.gms.internal.vision.w2
-    public final void d(Object obj, long j3, double d) {
-        switch (this.b) {
-            case 0:
-                f(obj, j3, Double.doubleToLongBits(d));
-                break;
-            default:
-                f(obj, j3, Double.doubleToLongBits(d));
-                break;
-        }
-    }
-
-    @Override // com.google.android.gms.internal.vision.w2
-    public final void e(Object obj, long j3, float f10) {
-        switch (this.b) {
-            case 0:
-                b(j3, obj, Float.floatToIntBits(f10));
-                break;
-            default:
-                b(j3, obj, Float.floatToIntBits(f10));
-                break;
-        }
-    }
-
-    @Override // com.google.android.gms.internal.vision.w2
-    public final void g(Object obj, long j3, boolean z9) {
-        switch (this.b) {
-            case 0:
-                if (!x2.g) {
-                    x2.j(obj, j3, z9 ? (byte) 1 : (byte) 0);
-                    break;
-                } else {
-                    x2.i(obj, j3, z9 ? (byte) 1 : (byte) 0);
-                    break;
-                }
-            default:
-                if (!x2.g) {
-                    x2.j(obj, j3, z9 ? (byte) 1 : (byte) 0);
-                    break;
-                } else {
-                    x2.i(obj, j3, z9 ? (byte) 1 : (byte) 0);
-                    break;
-                }
-        }
-    }
-
-    @Override // com.google.android.gms.internal.vision.w2
-    public final boolean h(Object obj, long j3) {
-        switch (this.b) {
-            case 0:
-                if (x2.g) {
-                    if (x2.n(obj, j3) == 0) {
+                if (f3Var != null) {
+                    a7.b bVar = new a7.b(context);
+                    x1 x1Var = (x1) aVar;
+                    q6.m.g(x1Var);
+                    Parcel h12 = f3Var.h1();
+                    int i10 = a.a;
+                    h12.writeStrongBinder(bVar);
+                    a.a(h12, x1Var);
+                    Parcel q12 = f3Var.q1(h12, 1);
+                    IBinder readStrongBinder = q12.readStrongBinder();
+                    if (readStrongBinder != null) {
+                        IInterface queryLocalInterface2 = readStrongBinder.queryLocalInterface("com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetector");
+                        obj = queryLocalInterface2 instanceof e3 ? (e3) queryLocalInterface2 : new e3(readStrongBinder, "com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetector", 4);
                     }
-                } else if (x2.o(obj, j3) == 0) {
+                    q12.recycle();
+                    break;
                 }
                 break;
             default:
-                if (x2.g) {
-                    if (x2.n(obj, j3) == 0) {
+                if (b7.f.a(context, "com.google.android.gms.vision.dynamite.face") > b7.f.d(context, "com.google.android.gms.vision.dynamite", false)) {
+                    IBinder b11 = fVar.b("com.google.android.gms.vision.face.NativeFaceDetectorV2Creator");
+                    int i11 = x8.f.a;
+                    if (b11 != null) {
+                        IInterface queryLocalInterface3 = b11.queryLocalInterface("com.google.android.gms.vision.face.internal.client.INativeFaceDetectorCreator");
+                        eVar = queryLocalInterface3 instanceof x8.c ? (x8.c) queryLocalInterface3 : new x8.e(b11, "com.google.android.gms.vision.face.internal.client.INativeFaceDetectorCreator", 4);
+                        if (eVar != null) {
+                            a7.b bVar2 = new a7.b(context);
+                            x8.b bVar3 = (x8.b) aVar;
+                            q6.m.g(bVar3);
+                            x8.e eVar2 = (x8.e) eVar;
+                            Parcel h13 = eVar2.h1();
+                            int i12 = a.a;
+                            h13.writeStrongBinder(bVar2);
+                            a.a(h13, bVar3);
+                            Parcel q13 = eVar2.q1(h13, 1);
+                            IBinder readStrongBinder2 = q13.readStrongBinder();
+                            if (readStrongBinder2 != null) {
+                                IInterface queryLocalInterface4 = readStrongBinder2.queryLocalInterface("com.google.android.gms.vision.face.internal.client.INativeFaceDetector");
+                                obj = queryLocalInterface4 instanceof x8.d ? (x8.d) queryLocalInterface4 : new x8.d(readStrongBinder2, "com.google.android.gms.vision.face.internal.client.INativeFaceDetector", 4);
+                            }
+                            q13.recycle();
+                            break;
+                        }
                     }
-                } else if (x2.o(obj, j3) == 0) {
+                    eVar = null;
+                    if (eVar != null) {
+                    }
+                } else {
+                    IBinder b12 = fVar.b("com.google.android.gms.vision.face.ChimeraNativeFaceDetectorCreator");
+                    int i13 = x8.f.a;
+                    if (b12 != null) {
+                        IInterface queryLocalInterface5 = b12.queryLocalInterface("com.google.android.gms.vision.face.internal.client.INativeFaceDetectorCreator");
+                        eVar = queryLocalInterface5 instanceof x8.c ? (x8.c) queryLocalInterface5 : new x8.e(b12, "com.google.android.gms.vision.face.internal.client.INativeFaceDetectorCreator", 4);
+                        if (eVar != null) {
+                        }
+                    }
+                    eVar = null;
+                    if (eVar != null) {
+                    }
                 }
                 break;
         }
-        return false;
+        return obj;
     }
 
-    @Override // com.google.android.gms.internal.vision.w2
-    public final float i(Object obj, long j3) {
-        switch (this.b) {
+    @Override // com.google.android.gms.internal.vision.h3
+    public final void j() {
+        switch (this.r) {
+            case 0:
+                if (k()) {
+                    e3 e3Var = (e3) m();
+                    q6.m.g(e3Var);
+                    e3Var.s1(e3Var.h1());
+                    break;
+                }
+                break;
+            default:
+                x8.d dVar = (x8.d) m();
+                q6.m.g(dVar);
+                dVar.s1(dVar.h1());
+                break;
         }
-        return Float.intBitsToFloat(k(obj, j3));
     }
 
-    @Override // com.google.android.gms.internal.vision.w2
-    public final double j(Object obj, long j3) {
-        switch (this.b) {
+    public w8.a[] n(ByteBuffer byteBuffer, g3 g3Var) {
+        w8.c[] cVarArr;
+        sa.d[] dVarArr;
+        if (!k()) {
+            return new w8.a[0];
         }
-        return Double.longBitsToDouble(l(obj, j3));
+        try {
+            a7.b bVar = new a7.b(byteBuffer);
+            x8.d dVar = (x8.d) m();
+            q6.m.g(dVar);
+            Parcel h12 = dVar.h1();
+            int i7 = a.a;
+            h12.writeStrongBinder(bVar);
+            a.a(h12, g3Var);
+            Parcel q12 = dVar.q1(h12, 1);
+            FaceParcel[] faceParcelArr = (FaceParcel[]) q12.createTypedArray(FaceParcel.CREATOR);
+            q12.recycle();
+            w8.a[] aVarArr = new w8.a[faceParcelArr.length];
+            for (int i10 = 0; i10 < faceParcelArr.length; i10++) {
+                FaceParcel faceParcel = faceParcelArr[i10];
+                int i11 = faceParcel.b;
+                new PointF(faceParcel.c, faceParcel.d);
+                LandmarkParcel[] landmarkParcelArr = faceParcel.s;
+                if (landmarkParcelArr == null) {
+                    cVarArr = new w8.c[0];
+                } else {
+                    w8.c[] cVarArr2 = new w8.c[landmarkParcelArr.length];
+                    for (int i12 = 0; i12 < landmarkParcelArr.length; i12++) {
+                        LandmarkParcel landmarkParcel = landmarkParcelArr[i12];
+                        cVarArr2[i12] = new w8.c(new PointF(landmarkParcel.b, landmarkParcel.c), landmarkParcel.d);
+                    }
+                    cVarArr = cVarArr2;
+                }
+                x8.a[] aVarArr2 = faceParcel.E;
+                if (aVarArr2 == null) {
+                    dVarArr = new sa.d[0];
+                } else {
+                    sa.d[] dVarArr2 = new sa.d[aVarArr2.length];
+                    for (int i13 = 0; i13 < aVarArr2.length; i13++) {
+                        PointF[] pointFArr = aVarArr2[i13].a;
+                        dVarArr2[i13] = new sa.d(27);
+                    }
+                    dVarArr = dVarArr2;
+                }
+                aVarArr[i10] = new w8.a(i11, cVarArr, dVarArr);
+            }
+            return aVarArr;
+        } catch (RemoteException e10) {
+            Log.e("FaceNativeHandle", "Could not call native face detector", e10);
+            return new w8.a[0];
+        }
+    }
+
+    public u2(Context context, x8.b bVar) {
+        super(context, "FaceNativeHandle", "face");
+        this.s = bVar;
+        m();
     }
 }

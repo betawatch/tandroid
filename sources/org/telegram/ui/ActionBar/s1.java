@@ -1,117 +1,71 @@
 package org.telegram.ui.ActionBar;
 
+import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.iz;
-import org.telegram.ui.Components.m41;
+import android.graphics.drawable.GradientDrawable;
+import android.view.View;
+import java.util.HashSet;
+import org.telegram.ui.Components.fh0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class s1 implements h6 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class s1 extends Drawable implements z5 {
+    public final View a;
+    public final GradientDrawable b;
+    public final int c;
+    public final int d;
+    public final e6 e;
 
-    public /* synthetic */ s1(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public s1(fh0 fh0Var, int i7, int i10, int i11, e6 e6Var) {
+        this.a = fh0Var;
+        this.c = i10;
+        this.d = i11;
+        this.e = e6Var;
+        GradientDrawable gradientDrawable = new GradientDrawable();
+        this.b = gradientDrawable;
+        gradientDrawable.setColor(i7);
+        gradientDrawable.setCornerRadius(org.telegram.messenger.g0.L(128.0f));
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // org.telegram.ui.ActionBar.h6
-    public final boolean a() {
-        switch (this.a) {
-        }
-        return m6.I.q();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int width = this.a.getWidth();
+        int i7 = this.c;
+        int i10 = (int) ((width - i7) / 2.0f);
+        int height = (int) ((r0.getHeight() - i7) / 2.0f);
+        int width2 = (int) ((r0.getWidth() + i7) / 2.0f);
+        int height2 = (int) ((r0.getHeight() + i7) / 2.0f);
+        GradientDrawable gradientDrawable = this.b;
+        gradientDrawable.setBounds(i10, height, width2, height2);
+        gradientDrawable.draw(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
-    public final void b(float f10, float f11, int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                m6.r(f10, f11, i7, i10);
-                break;
-            case 1:
-                m6.r(f10, f11, i7, i10);
-                break;
-            default:
-                m6.r(f10, f11, i7, i10);
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return this.b.getOpacity();
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
-    public final ColorFilter c() {
-        switch (this.a) {
-        }
-        return m6.v3;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.b.setAlpha(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
-    public final Paint d(String str) {
-        switch (this.a) {
-        }
-        return m6.V0(str);
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.b.setColorFilter(colorFilter);
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
-    public final boolean e() {
-        switch (this.a) {
-        }
-        return iz.H0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.h6
-    public final int f(int i7) {
-        switch (this.a) {
-        }
-        return h(i7);
-    }
-
-    @Override // org.telegram.ui.ActionBar.h6
-    public final /* synthetic */ boolean g() {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.h6
-    public final /* synthetic */ Drawable getDrawable(String str) {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.h6
-    public final int h(int i7) {
-        switch (this.a) {
-            case 0:
-                return ((u1) this.b).f(i7);
-            case 1:
-                return ((f2) this.b).getThemedColor(i7);
-            default:
-                return ((m41) this.b).I(i7);
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        int i7 = this.d;
+        if (i7 >= 0) {
+            this.b.setColor(j6.w0(i7, this.e));
+            invalidateSelf();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h6
-    public final /* synthetic */ void i(int i7, int i10) {
-        int i11 = this.a;
-    }
-
-    @Override // org.telegram.ui.ActionBar.h6
-    public final int j(int i7) {
-        switch (this.a) {
-        }
-        return h(i7);
-    }
-
-    private final /* synthetic */ void k(int i7, int i10) {
-    }
-
-    private final /* synthetic */ void l(int i7, int i10) {
-    }
-
-    private final /* synthetic */ void m(int i7, int i10) {
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

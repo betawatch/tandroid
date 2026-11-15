@@ -1,52 +1,60 @@
 package org.telegram.ui.Components;
 
-import j$.util.function.Predicate$-CC;
-import java.util.function.Predicate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.text.TextPaint;
+import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hr implements Predicate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLObject b;
+public final class hr extends View implements org.telegram.ui.ActionBar.z5 {
+    public final TextPaint a;
+    public final TextPaint b;
+    public final String c;
+    public final String d;
+    public final Rect e;
 
-    public /* synthetic */ hr(int i7, TLObject tLObject) {
-        this.a = i7;
-        this.b = tLObject;
+    public hr(Context context, String str, String str2) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.b = textPaint2;
+        this.e = new Rect();
+        this.c = str;
+        this.d = str2;
+        textPaint.setTextSize(org.telegram.messenger.g0.L(24.0f));
+        textPaint2.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        textPaint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        textPaint2.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.H6, false));
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        int i7 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        TextPaint textPaint = this.b;
+        String str = this.d;
+        float measureText = textPaint.measureText(str);
+        TextPaint textPaint2 = this.a;
+        String str2 = this.c;
+        float measureText2 = textPaint2.measureText(str2);
+        int length = str2.length();
+        Rect rect = this.e;
+        textPaint2.getTextBounds(str2, 0, length, rect);
+        textPaint.getTextBounds(str, 0, str.length(), rect);
+        canvas.drawText(str2, (getWidth() * 0.25f) - (measureText2 / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint2);
+        canvas.drawText(str, (getWidth() * 0.7f) - (measureText / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint);
     }
 
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
-        }
-        return Predicate$-CC.$default$negate(this);
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        this.a.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        this.b.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.H6, false));
+        invalidate();
     }
 
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i7 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
-        switch (this.a) {
-            case 0:
-                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.b;
-                TLRPC.Peer peer = ((org.telegram.messenger.ij) obj).k.from_id;
-                if ((inputPeer != null || peer != null) && (inputPeer == null || peer == null || (!(inputPeer instanceof TLRPC.TL_inputPeerChat) || !(peer instanceof TLRPC.TL_peerChat) ? !(inputPeer instanceof TLRPC.TL_inputPeerChannel) || !(peer instanceof TLRPC.TL_peerChannel) ? !(inputPeer instanceof TLRPC.TL_inputPeerUser) || !(peer instanceof TLRPC.TL_peerUser) || inputPeer.user_id != peer.user_id : inputPeer.channel_id != peer.channel_id : inputPeer.chat_id != peer.chat_id))) {
-                }
-            default:
-                org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) obj;
-                TLObject tLObject = this.b;
-                if (!(tLObject instanceof TLRPC.User) ? !(tLObject instanceof TLRPC.Chat) || ijVar.k.from_id.user_id != ((TLRPC.Chat) tLObject).id : ijVar.k.from_id.user_id != ((TLRPC.User) tLObject).id) {
-                }
-                break;
-        }
-        return false;
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

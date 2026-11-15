@@ -1,1442 +1,418 @@
 package m4;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.pm.ServiceInfo;
-import android.content.res.Resources;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.RectF;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.RemoteException;
-import android.os.SystemClock;
-import android.os.WorkSource;
-import android.text.TextUtils;
-import android.text.style.CharacterStyle;
-import android.util.Log;
-import android.util.LongSparseArray;
+import a8.ja;
+import a8.xa;
 import android.util.SparseArray;
+import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
-import android.view.View;
-import android.widget.TextView;
-import c8.xb;
-import com.google.android.datatransport.cct.CctBackendFactory;
-import com.google.android.datatransport.runtime.backends.TransportBackendDiscovery;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import e2.o0;
-import e2.r0;
+import c8.n9;
+import e2.t0;
 import h2.k0;
-import h2.m0;
 import h9.i0;
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
+import h9.s1;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import m.f3;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.fa;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gf;
-import org.telegram.messenger.gw;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.o2;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Cells.h3;
-import org.telegram.ui.Cells.j9;
-import org.telegram.ui.Cells.l1;
-import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.t2;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ai;
-import org.telegram.ui.Components.ci;
-import org.telegram.ui.Components.ej0;
-import org.telegram.ui.Components.ey0;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.pg;
-import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.st0;
-import org.telegram.ui.Components.ws;
-import org.telegram.ui.Components.ys;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Wallet.z5;
-import org.telegram.ui.ek0;
-import org.telegram.ui.h5;
-import org.telegram.ui.hf0;
-import org.telegram.ui.ir0;
-import org.telegram.ui.ly0;
-import org.telegram.ui.nj0;
-import org.telegram.ui.pw;
-import org.telegram.ui.tj0;
-import org.telegram.ui.wg0;
-import org.telegram.ui.yw;
-import org.telegram.ui.zw;
-import ug.y0;
-import v4.d1;
-import v4.j1;
+import java.util.List;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class d0 implements a0, Continuation, lm0, ws, l1, ej0, tj0, ri.a, h2.d, te.b, ai, com.google.android.gms.common.api.internal.p {
-    public Object a;
-    public Object b;
+public final class d0 implements f3.o {
+    public final int a;
+    public final int b;
+    public final List c;
+    public final h2.x d;
+    public final SparseIntArray e;
+    public final f f;
+    public final c4.k g;
+    public final SparseArray h;
+    public final SparseBooleanArray i;
+    public final SparseBooleanArray j;
+    public final x k;
+    public k3.a l;
+    public f3.q m;
+    public int n;
+    public boolean o;
+    public boolean p;
+    public boolean q;
+    public g0 r;
+    public int s;
+    public int t;
 
-    public /* synthetic */ d0(Object obj) {
-        this.b = null;
-        this.a = obj;
-    }
-
-    @Override // h2.d
-    public m9.y A(o0 o0Var) {
-        Uri uri;
-        byte[] bArr;
-        ly0 ly0Var = (ly0) this.b;
-        if (ly0Var != null && (((uri = (Uri) ly0Var.c) != null && uri.equals(o0Var.n)) || ((bArr = (byte[]) ly0Var.b) != null && Arrays.equals(bArr, o0Var.k)))) {
-            m9.y yVar = (m9.y) ((ly0) this.b).d;
-            yVar.getClass();
-            return yVar;
-        }
-        m9.y A = ((h2.d) this.a).A(o0Var);
-        if (A == null) {
-            return null;
-        }
-        this.b = new ly0(o0Var, A);
-        return A;
-    }
-
-    public byte[] B(q3.a aVar) {
-        DataOutputStream dataOutputStream = (DataOutputStream) this.b;
-        ByteArrayOutputStream byteArrayOutputStream = (ByteArrayOutputStream) this.a;
-        byteArrayOutputStream.reset();
-        try {
-            dataOutputStream.writeBytes(aVar.a);
-            dataOutputStream.writeByte(0);
-            dataOutputStream.writeBytes(aVar.b);
-            dataOutputStream.writeByte(0);
-            dataOutputStream.writeLong(aVar.c);
-            dataOutputStream.writeLong(aVar.d);
-            dataOutputStream.write(aVar.e);
-            dataOutputStream.flush();
-            return byteArrayOutputStream.toByteArray();
-        } catch (IOException e10) {
-            throw new RuntimeException(e10);
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public void B1(q1 q1Var, TLRPC.WebPage webPage, String str, boolean z9) {
-        vf.c.t(q1Var.getContext(), str);
-    }
-
-    public long C0(int i7, int i10, int i11) {
-        gw gwVar = ((gw[]) this.a)[i7];
-        if (gwVar.c != null) {
-            int i12 = gwVar.d;
-            int i13 = gwVar.e;
-            if (i10 >= i12 && i11 <= i13) {
-                return r1.intValue();
-            }
-        }
-        int i14 = gwVar.d;
-        int i15 = gwVar.e;
-        if (i14 >= i10 && i15 <= i11) {
-            return gwVar.a;
-        }
-        if ((i10 > i14 || i11 < i14) && (i10 < i14 || i10 > i15)) {
-            return 0L;
-        }
-        r0(i7);
-        int i16 = i7 * 2;
-        return Math.max(C0(i16, i10, i11), C0(i16 + 1, i10, i11));
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ CharacterStyle C1(q1 q1Var) {
-        return null;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:10:0x003e  */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0046  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public CctBackendFactory E(String str) {
-        Bundle bundle;
-        Map map;
-        PackageManager packageManager;
-        if (((Map) this.b) == null) {
-            Context context = (Context) this.a;
-            try {
-                packageManager = context.getPackageManager();
-            } catch (PackageManager.NameNotFoundException unused) {
-                Log.w("BackendRegistry", "Application info not found.");
-            }
-            if (packageManager == null) {
-                Log.w("BackendRegistry", "Context has no PackageManager.");
-            } else {
-                ServiceInfo serviceInfo = packageManager.getServiceInfo(new ComponentName(context, (Class<?>) TransportBackendDiscovery.class), 128);
-                if (serviceInfo == null) {
-                    Log.w("BackendRegistry", "TransportBackendDiscovery has no service info.");
-                } else {
-                    bundle = serviceInfo.metaData;
-                    if (bundle != null) {
-                        Log.w("BackendRegistry", "Could not retrieve metadata, returning empty list of transport backends.");
-                        map = Collections.EMPTY_MAP;
-                    } else {
-                        HashMap hashMap = new HashMap();
-                        for (String str2 : bundle.keySet()) {
-                            Object obj = bundle.get(str2);
-                            if ((obj instanceof String) && str2.startsWith("backend:")) {
-                                for (String str3 : ((String) obj).split(",", -1)) {
-                                    String trim = str3.trim();
-                                    if (!trim.isEmpty()) {
-                                        hashMap.put(trim, str2.substring(8));
-                                    }
-                                }
-                            }
-                        }
-                        map = hashMap;
-                    }
-                    this.b = map;
-                }
-            }
-            bundle = null;
-            if (bundle != null) {
-            }
-            this.b = map;
-        }
-        String str4 = (String) ((Map) this.b).get(str);
-        if (str4 == null) {
-            return null;
-        }
-        try {
-            return (CctBackendFactory) Class.forName(str4).asSubclass(CctBackendFactory.class).getDeclaredConstructor(null).newInstance(null);
-        } catch (ClassNotFoundException e10) {
-            Log.w("BackendRegistry", "Class " + str4 + " is not found.", e10);
-            return null;
-        } catch (IllegalAccessException e11) {
-            Log.w("BackendRegistry", "Could not instantiate " + str4 + ".", e11);
-            return null;
-        } catch (InstantiationException e12) {
-            Log.w("BackendRegistry", "Could not instantiate " + str4 + ".", e12);
-            return null;
-        } catch (NoSuchMethodException e13) {
-            Log.w("BackendRegistry", "Could not instantiate ".concat(str4), e13);
-            return null;
-        } catch (InvocationTargetException e14) {
-            Log.w("BackendRegistry", "Could not instantiate ".concat(str4), e14);
-            return null;
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean E1(q1 q1Var, ij ijVar) {
-        return false;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x002f  */
-    @Override // te.b
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void F(float f10, int i7) {
-        boolean z9;
-        rh.h hVar = (rh.h) this.b;
-        boolean z10 = true;
-        if ((hVar.c() == 0.0f && hVar.s == 2) || hVar.s == 3) {
-            hVar.s = 1;
-            z9 = true;
+    public d0(int i7, int i10, c4.k kVar, k0 k0Var, f fVar) {
+        this.f = fVar;
+        this.a = i7;
+        this.b = i10;
+        this.g = kVar;
+        if (i7 == 1 || i7 == 2) {
+            this.c = Collections.singletonList(k0Var);
         } else {
-            z9 = false;
+            ArrayList arrayList = new ArrayList();
+            this.c = arrayList;
+            arrayList.add(k0Var);
         }
-        if (f10 == 1.0f) {
-            int i10 = hVar.x;
-            int i11 = hVar.w;
-            if (i10 != i11) {
-                hVar.x = i11;
-                if (z10) {
-                    ((Runnable) this.a).run();
+        this.d = new h2.x(new byte[9400], 0);
+        SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
+        this.i = sparseBooleanArray;
+        this.j = new SparseBooleanArray();
+        SparseArray sparseArray = new SparseArray();
+        this.h = sparseArray;
+        this.e = new SparseIntArray();
+        this.k = new x(1);
+        this.m = f3.q.q;
+        this.t = -1;
+        sparseBooleanArray.clear();
+        sparseArray.clear();
+        SparseArray sparseArray2 = new SparseArray();
+        int size = sparseArray2.size();
+        for (int i11 = 0; i11 < size; i11++) {
+            sparseArray.put(sparseArray2.keyAt(i11), (g0) sparseArray2.valueAt(i11));
+        }
+        sparseArray.put(0, new b0(new ji.j(this)));
+        this.r = null;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x001e, code lost:
+    
+        r2 = r2 + 1;
+     */
+    @Override // f3.o
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean b(f3.p pVar) {
+        byte[] bArr = this.d.a;
+        f3.l lVar = (f3.l) pVar;
+        lVar.h(bArr, 0, 940, false);
+        int i7 = 0;
+        while (i7 < 188) {
+            for (int i10 = 0; i10 < 5; i10++) {
+                if (bArr[(i10 * ns.S2) + i7] != 71) {
+                    break;
                 }
-                hVar.a();
+            }
+            lVar.g(i7, false);
+            return true;
+        }
+        return false;
+    }
+
+    @Override // f3.o
+    public final void c(f3.q qVar) {
+        if ((this.b & 1) == 0) {
+            qVar = new ab.q(qVar, this.g);
+        }
+        this.m = qVar;
+    }
+
+    @Override // f3.o
+    public final void d(long j3, long j10) {
+        k3.a aVar;
+        ja.p(this.a != 2);
+        List list = this.c;
+        int size = list.size();
+        for (int i7 = 0; i7 < size; i7++) {
+            k0 k0Var = (k0) list.get(i7);
+            boolean z10 = k0Var.e() == -9223372036854775807L;
+            if (!z10) {
+                long d = k0Var.d();
+                z10 = (d == -9223372036854775807L || d == 0 || d == j10) ? false : true;
+            }
+            if (z10) {
+                k0Var.g(j10);
             }
         }
-        z10 = z9;
-        if (z10) {
+        if (j10 != 0 && (aVar = this.l) != null) {
+            aVar.d(j10);
         }
-        hVar.a();
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public boolean G1() {
-        System.currentTimeMillis();
-        return true;
-    }
-
-    public long H0(int i7, int i10) {
-        long[] jArr = (long[]) this.b;
-        if (jArr.length >= 30) {
-            return I0(1, i7, i10);
-        }
-        if (i7 < 0) {
-            i7 = 0;
-        }
-        if (i10 > jArr.length - 1) {
-            i10 = jArr.length - 1;
-        }
-        long j3 = Long.MAX_VALUE;
-        while (i7 <= i10) {
-            long j10 = jArr[i7];
-            if (j10 < j3) {
-                j3 = j10;
-            }
-            i7++;
-        }
-        return j3;
-    }
-
-    public wg0 I(int i7, long j3, boolean z9) {
-        if (i7 > 0) {
-            i7 = ((SparseIntArray) this.b).get(i7, 0);
-        }
-        if (i7 == 0) {
-            return null;
-        }
-        long j10 = i7;
-        LongSparseArray V = ((g6.d0) this.a).V(j3, 0L);
-        wg0 wg0Var = (wg0) (V != null ? V.get(j10) : null);
-        if (wg0Var != null || !z9) {
-            return wg0Var;
-        }
-        wg0 wg0Var2 = new wg0();
-        ((g6.d0) this.a).Z(j3, 0L, j10, wg0Var2);
-        return wg0Var2;
-    }
-
-    public long I0(int i7, int i10, int i11) {
-        gw gwVar = ((gw[]) this.a)[i7];
-        if (gwVar.c != null) {
-            int i12 = gwVar.d;
-            int i13 = gwVar.e;
-            if (i10 >= i12 && i11 <= i13) {
-                return r1.intValue();
-            }
-        }
-        int i14 = gwVar.d;
-        int i15 = gwVar.e;
-        if (i14 >= i10 && i15 <= i11) {
-            return gwVar.b;
-        }
-        if ((i10 > i14 || i11 < i14) && (i10 < i14 || i10 > i15)) {
-            return 2147483647L;
-        }
-        r0(i7);
-        int i16 = i7 * 2;
-        return Math.min(I0(i16, i10, i11), I0(i16 + 1, i10, i11));
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public boolean J0(long j3) {
-        return ((ey0) this.b).w;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean J1(q1 q1Var, TLRPC.PollAnswer pollAnswer) {
-        return false;
-    }
-
-    public String L(String str) {
-        String str2 = (String) this.b;
-        Resources resources = (Resources) this.a;
-        int identifier = resources.getIdentifier(str, "string", str2);
-        if (identifier == 0) {
-            return null;
-        }
-        return resources.getString(identifier);
-    }
-
-    public boolean M() {
-        z5 z5Var = (z5) this.b;
-        return z5Var.I0 > 0.0f || z5Var.A0();
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ ir0 N1() {
-        return null;
-    }
-
-    public void O(long j3, File file) {
-        synchronized (((e0.g) this.b).f) {
-            ((HashMap) ((e0.g) this.b).g).put(Long.valueOf(j3), file);
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean O0(q1 q1Var, boolean z9) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean Q(q1 q1Var, TLRPC.TodoItem todoItem, boolean z9) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public boolean Q1(long j3) {
-        return ((ey0) this.b).s;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean R() {
-        return false;
-    }
-
-    public void R0() {
-        m8.a aVar = (m8.a) this.a;
-        try {
-            v7.f fVar = (v7.f) aVar.a;
-            fVar.t1(fVar.p1(), 1);
-            ((fa) this.b).c.remove(aVar);
-        } catch (RemoteException e10) {
-            throw new androidx.car.app.j(e10);
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean S(q1 q1Var) {
-        return false;
-    }
-
-    public void S0(d1 d1Var) {
-        j1 j1Var = (j1) ((a0.f) this.a).get(d1Var);
-        if (j1Var == null) {
-            return;
-        }
-        j1Var.a &= -2;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean S1(q1 q1Var, TLRPC.TodoItem todoItem) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean T() {
-        return false;
-    }
-
-    public void T0(d1 d1Var) {
-        a0.f fVar = (a0.f) this.a;
-        a0.h hVar = (a0.h) this.b;
-        int m10 = hVar.m() - 1;
+        this.d.K(0);
+        this.e.clear();
+        int i10 = 0;
         while (true) {
-            if (m10 < 0) {
-                break;
-            }
-            if (d1Var == hVar.n(m10)) {
-                Object[] objArr = hVar.c;
-                Object obj = objArr[m10];
-                Object obj2 = a0.i.a;
-                if (obj != obj2) {
-                    objArr[m10] = obj2;
-                    hVar.a = true;
-                }
+            SparseArray sparseArray = this.h;
+            if (i10 >= sparseArray.size()) {
+                this.s = 0;
+                return;
             } else {
-                m10--;
+                ((g0) sparseArray.valueAt(i10)).d();
+                i10++;
             }
         }
-        j1 j1Var = (j1) fVar.get(d1Var);
-        if (j1Var != null) {
-            fVar.remove(d1Var);
-            j1Var.a = 0;
-            j1Var.b = null;
-            j1Var.c = null;
-            j1.d.v(j1Var);
-        }
     }
 
-    public void U0(int i7) {
-        try {
-            v7.f fVar = (v7.f) ((m8.a) this.a).a;
-            Parcel p12 = fVar.p1();
-            p12.writeInt(i7);
-            fVar.t1(p12, 11);
-        } catch (RemoteException e10) {
-            throw new androidx.car.app.j(e10);
-        }
-    }
-
-    public void V0(double d) {
-        m8.a aVar = (m8.a) this.a;
-        aVar.getClass();
-        try {
-            v7.f fVar = (v7.f) aVar.a;
-            Parcel p12 = fVar.p1();
-            p12.writeDouble(d);
-            fVar.t1(p12, 5);
-        } catch (RemoteException e10) {
-            throw new androidx.car.app.j(e10);
-        }
-    }
-
-    @Override // h2.d
-    public m9.y W(byte[] bArr) {
-        byte[] bArr2;
-        ly0 ly0Var = (ly0) this.b;
-        if (ly0Var == null || (bArr2 = (byte[]) ly0Var.b) == null || !Arrays.equals(bArr2, bArr)) {
-            m9.y W = ((h2.d) this.a).W(bArr);
-            this.b = new ly0(bArr, W);
-            return W;
-        }
-        m9.y yVar = (m9.y) ((ly0) this.b).d;
-        yVar.getClass();
-        return yVar;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean W0(ij ijVar) {
-        return f1.a(ijVar);
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ int X() {
-        return 0;
-    }
-
-    public void X0(int i7) {
-        try {
-            v7.f fVar = (v7.f) ((m8.a) this.a).a;
-            Parcel p12 = fVar.p1();
-            p12.writeInt(i7);
-            fVar.t1(p12, 9);
-        } catch (RemoteException e10) {
-            throw new androidx.car.app.j(e10);
-        }
-    }
-
-    @Override // te.b
-    public void Y(int i7, float f10, float f11, te.c cVar) {
-        rh.h hVar = (rh.h) this.b;
-        hVar.c.a(f10);
-        hVar.d.a(f10);
-        hVar.b.a(f10);
-        ((Runnable) this.a).run();
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ jh.a Z() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.tj0
-    public void a(String str, String str2) {
-        ek0 ek0Var = ((nj0) this.b).a;
-        if ("PHONE_VERIFICATION_NEEDED".equals(str)) {
-            ek0Var.S1(true, str2, (hf0) this.a, this, ek0Var.B1);
-        } else {
-            ek0Var.R1(true, false);
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean a0(q1 q1Var) {
-        return false;
+    @Override // f3.o
+    public final List e() {
+        h9.g0 g0Var = i0.b;
+        return s1.e;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00a5 A[Catch: all -> 0x0066, TryCatch #0 {all -> 0x0066, blocks: (B:11:0x0053, B:15:0x0060, B:16:0x0074, B:18:0x00a5, B:21:0x00ae, B:25:0x00e4, B:51:0x006a), top: B:10:0x0053 }] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00e4 A[Catch: all -> 0x0066, TRY_LEAVE, TryCatch #0 {all -> 0x0066, blocks: (B:11:0x0053, B:15:0x0060, B:16:0x0074, B:18:0x00a5, B:21:0x00ae, B:25:0x00e4, B:51:0x006a), top: B:10:0x0053 }] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0053 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r12v0 */
-    /* JADX WARN: Type inference failed for: r12v1, types: [int] */
-    /* JADX WARN: Type inference failed for: r12v17 */
-    /* JADX WARN: Type inference failed for: r12v4 */
-    /* JADX WARN: Type inference failed for: r12v5 */
-    @Override // com.google.android.gms.common.api.internal.p
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void accept(Object obj, Object obj2) {
-        n6.c cVar;
-        boolean z9;
-        a0.l lVar;
-        u7.i iVar;
-        a0.l lVar2;
-        long j3;
+    /* JADX WARN: Type inference failed for: r1v1 */
+    /* JADX WARN: Type inference failed for: r1v14 */
+    /* JADX WARN: Type inference failed for: r1v2, types: [boolean, int] */
+    @Override // f3.o
+    public final int f(f3.p pVar, f3.s sVar) {
+        f3.p pVar2;
+        ?? r12;
         int i7;
-        androidx.activity.n nVar = (androidx.activity.n) this.a;
-        LocationRequest locationRequest = (LocationRequest) this.b;
-        u7.k kVar = (u7.k) obj;
-        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-        kVar.getClass();
-        com.google.android.gms.common.api.internal.o g10 = nVar.g();
-        com.google.android.gms.common.api.internal.m mVar = g10.b;
-        mVar.getClass();
-        q6.h0 h0Var = kVar.B;
-        n6.c[] cVarArr = h0Var == null ? null : h0Var.b;
-        if (cVarArr != null) {
-            int length = cVarArr.length;
-            ?? r12 = 0;
-            while (true) {
-                if (r12 >= length) {
-                    cVar = null;
-                    break;
+        int i10;
+        int i11;
+        int i12;
+        boolean z10;
+        long length = pVar.getLength();
+        int i13 = this.a;
+        boolean z11 = i13 == 2;
+        if (this.o) {
+            long j3 = -9223372036854775807L;
+            x xVar = this.k;
+            if (length != -1 && !z11 && !xVar.d) {
+                int i14 = this.t;
+                k0 k0Var = xVar.b;
+                h2.x xVar2 = xVar.c;
+                if (i14 <= 0) {
+                    xVar.a(pVar);
+                    return 0;
                 }
-                cVar = cVarArr[r12];
-                if ("location_updates_with_callback".equals(cVar.a)) {
-                    break;
-                } else {
-                    r12++;
-                }
-            }
-            if (cVar != null && cVar.b() >= 1) {
-                z9 = true;
-                lVar = kVar.G;
-                synchronized (lVar) {
-                    try {
-                        try {
-                            u7.i iVar2 = (u7.i) kVar.G.get(mVar);
-                            if (iVar2 != null && !z9) {
-                                iVar2.n1(g10);
-                                iVar = iVar2;
-                                iVar2 = null;
-                                int identityHashCode = System.identityHashCode(mVar.a);
-                                String str = mVar.b;
-                                StringBuilder sb2 = new StringBuilder(str.length() + 1 + String.valueOf(identityHashCode).length());
-                                sb2.append(str);
-                                sb2.append("@");
-                                sb2.append(identityHashCode);
-                                String sb3 = sb2.toString();
-                                if (z9) {
-                                    u7.x xVar = (u7.x) kVar.n();
-                                    int i10 = locationRequest.a;
-                                    lVar2 = lVar;
-                                    long j10 = locationRequest.b;
-                                    long j11 = locationRequest.c;
-                                    long j12 = locationRequest.d;
-                                    long j13 = locationRequest.e;
-                                    int i11 = locationRequest.f;
-                                    float f10 = locationRequest.h;
-                                    boolean z10 = locationRequest.n;
-                                    long j14 = locationRequest.r;
-                                    int i12 = locationRequest.s;
-                                    int i13 = locationRequest.w;
-                                    String str2 = locationRequest.x;
-                                    boolean z11 = locationRequest.y;
-                                    WorkSource workSource = locationRequest.D;
-                                    u7.j jVar = locationRequest.E;
-                                    String str3 = Build.VERSION.SDK_INT < 30 ? null : str2;
-                                    if (j11 == -1) {
-                                        j3 = -1;
-                                        j11 = j10;
-                                        i7 = i10;
-                                    } else {
-                                        j3 = -1;
-                                        i7 = i10;
-                                        if (i7 != 105) {
-                                            j11 = Math.min(j11, j10);
-                                        }
-                                    }
-                                    u7.l lVar3 = new u7.l(new LocationRequest(i7, j10, j11, Math.max(j12, j10), Long.MAX_VALUE, j13, i11, f10, z10, j14 == j3 ? j10 : j14, i12, i13, str3, z11, new WorkSource(workSource), jVar), null, false, false, null, false, false, null, Long.MAX_VALUE);
-                                    u7.h hVar = new u7.h(taskCompletionSource, iVar);
-                                    int i14 = u7.i.c;
-                                    IInterface queryLocalInterface = iVar.queryLocalInterface("com.google.android.gms.location.ILocationCallback");
-                                    IInterface iVar3 = queryLocalInterface instanceof j8.j ? (j8.j) queryLocalInterface : new j8.i(iVar, "com.google.android.gms.location.ILocationCallback", 10);
-                                    IInterface queryLocalInterface2 = hVar.queryLocalInterface("com.google.android.gms.location.internal.IFusedLocationProviderCallback");
-                                    IInterface uVar = queryLocalInterface2 instanceof u7.w ? (u7.w) queryLocalInterface2 : new u7.u(hVar, "com.google.android.gms.location.internal.IFusedLocationProviderCallback", 10);
-                                    Parcel p12 = xVar.p1();
-                                    int i15 = u7.d.a;
-                                    p12.writeInt(1);
-                                    int r10 = xb.r(p12, 20293);
-                                    xb.q(p12, 1, 4);
-                                    p12.writeInt(1);
-                                    xb.k(p12, 2, lVar3, 0);
-                                    xb.f(p12, 5, iVar3.asBinder());
-                                    xb.f(p12, 6, uVar.asBinder());
-                                    xb.l(p12, 8, sb3);
-                                    xb.s(p12, r10);
-                                    xVar.t1(p12, 59);
-                                } else {
-                                    u7.x xVar2 = (u7.x) kVar.n();
-                                    if (iVar2 == null) {
-                                        iVar2 = null;
-                                    }
-                                    u7.e eVar = new u7.e(null, taskCompletionSource);
-                                    Parcel p13 = xVar2.p1();
-                                    int i16 = u7.d.a;
-                                    p13.writeInt(1);
-                                    int r11 = xb.r(p13, 20293);
-                                    xb.q(p13, 1, 4);
-                                    p13.writeInt(2);
-                                    xb.f(p13, 2, iVar2);
-                                    xb.f(p13, 3, iVar);
-                                    xb.l(p13, 6, sb3);
-                                    xb.s(p13, r11);
-                                    p13.writeInt(1);
-                                    locationRequest.writeToParcel(p13, 0);
-                                    u7.d.c(p13, eVar);
-                                    xVar2.t1(p13, 88);
-                                    lVar2 = lVar;
-                                }
-                                return;
-                            }
-                            iVar = new u7.i(nVar);
-                            kVar.G.put(mVar, iVar);
-                            int identityHashCode2 = System.identityHashCode(mVar.a);
-                            String str4 = mVar.b;
-                            StringBuilder sb22 = new StringBuilder(str4.length() + 1 + String.valueOf(identityHashCode2).length());
-                            sb22.append(str4);
-                            sb22.append("@");
-                            sb22.append(identityHashCode2);
-                            String sb32 = sb22.toString();
-                            if (z9) {
-                            }
-                            return;
-                        } catch (Throwable th2) {
-                            th = th2;
-                            r12 = lVar;
-                            throw th;
+                if (xVar.f) {
+                    if (xVar.h == -9223372036854775807L) {
+                        xVar.a(pVar);
+                        return 0;
+                    }
+                    if (xVar.e) {
+                        long j10 = xVar.g;
+                        if (j10 == -9223372036854775807L) {
+                            xVar.a(pVar);
+                            return 0;
                         }
-                    } catch (Throwable th3) {
-                        th = th3;
+                        xVar.i = k0Var.c(xVar.h) - k0Var.b(j10);
+                        xVar.a(pVar);
+                        return 0;
                     }
+                    int min = (int) Math.min(112800, pVar.getLength());
+                    long j11 = 0;
+                    if (pVar.getPosition() != j11) {
+                        sVar.a = j11;
+                        return 1;
+                    }
+                    xVar2.K(min);
+                    pVar.l();
+                    pVar.c(0, min, xVar2.a);
+                    int i15 = xVar2.b;
+                    int i16 = xVar2.c;
+                    while (true) {
+                        if (i15 >= i16) {
+                            break;
+                        }
+                        if (xVar2.a[i15] == 71) {
+                            long a10 = n9.a(xVar2, i15, i14);
+                            if (a10 != -9223372036854775807L) {
+                                j3 = a10;
+                                break;
+                            }
+                        }
+                        i15++;
+                    }
+                    xVar.g = j3;
+                    xVar.e = true;
+                    return 0;
                 }
+                long length2 = pVar.getLength();
+                int min2 = (int) Math.min(112800, length2);
+                long j12 = length2 - min2;
+                if (pVar.getPosition() != j12) {
+                    sVar.a = j12;
+                    return 1;
+                }
+                xVar2.K(min2);
+                pVar.l();
+                pVar.c(0, min2, xVar2.a);
+                int i17 = xVar2.b;
+                int i18 = xVar2.c;
+                int i19 = i18 - 188;
+                while (true) {
+                    if (i19 < i17) {
+                        break;
+                    }
+                    byte[] bArr = xVar2.a;
+                    int i20 = -4;
+                    int i21 = 0;
+                    while (true) {
+                        if (i20 > 4) {
+                            break;
+                        }
+                        int i22 = (i20 * ns.S2) + i19;
+                        if (i22 < i17 || i22 >= i18 || bArr[i22] != 71) {
+                            i21 = 0;
+                        } else {
+                            i21++;
+                            if (i21 == 5) {
+                                long a11 = n9.a(xVar2, i19, i14);
+                                if (a11 != -9223372036854775807L) {
+                                    j3 = a11;
+                                    break;
+                                }
+                            }
+                        }
+                        i20++;
+                    }
+                    i19--;
+                }
+                xVar.h = j3;
+                xVar.f = true;
+                return 0;
             }
-        }
-        z9 = false;
-        lVar = kVar.G;
-        synchronized (lVar) {
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean b0(q1 q1Var, TLRPC.User user) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean b2(q1 q1Var, TL_iv.PageBlock pageBlock) {
-        return false;
-    }
-
-    @Override // m4.a0
-    public void c(h2.x xVar) {
-        e0 e0Var = (e0) this.b;
-        SparseArray sparseArray = e0Var.h;
-        d4.f fVar = (d4.f) this.a;
-        if (xVar.A() == 0 && (xVar.A() & 128) != 0) {
-            xVar.O(6);
-            int a10 = xVar.a() / 4;
-            for (int i7 = 0; i7 < a10; i7++) {
-                xVar.k(0, 4, (byte[]) fVar.b);
-                fVar.J(0);
-                int j3 = fVar.j(16);
-                fVar.L(3);
-                if (j3 == 0) {
-                    fVar.L(13);
+            if (this.p) {
+                i7 = 1;
+                z10 = false;
+                i10 = i13;
+            } else {
+                this.p = true;
+                long j13 = xVar.i;
+                if (j13 != -9223372036854775807L) {
+                    i7 = 1;
+                    z10 = false;
+                    i10 = i13;
+                    k3.a aVar = new k3.a(new pb.b(8), new xa(this.t, xVar.b), j13, 1 + j13, 0L, length, 188L, 940);
+                    this.l = aVar;
+                    this.m.f(aVar.a);
                 } else {
-                    int j10 = fVar.j(13);
-                    if (sparseArray.get(j10) == null) {
-                        sparseArray.put(j10, new b0(new a4.k(e0Var, j10)));
-                        e0Var.n++;
-                    }
+                    i7 = 1;
+                    z10 = false;
+                    i10 = i13;
+                    this.m.f(new f3.t(j13));
                 }
             }
-            if (e0Var.a != 2) {
-                sparseArray.remove(0);
+            if (this.q) {
+                this.q = z10;
+                d(0L, 0L);
+                if (pVar.getPosition() != 0) {
+                    sVar.a = 0L;
+                    return i7;
+                }
             }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public void c0(pg pgVar) {
-        pgVar.run();
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public boolean d() {
-        return false;
-    }
-
-    @Override // ri.a
-    public void e(Canvas canvas, float f10, float f11, float f12, float f13) {
-        Paint paint = (Paint) this.a;
-        PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
-        y0 y0Var = premiumPreviewFragment.m0;
-        if (premiumPreviewFragment.h0) {
-            paint.setColor(premiumPreviewFragment.getThemedColor(m6.a7));
-            canvas.drawRect(f10, f11, f12, f13, paint);
-        } else {
-            y0Var.d(0, (-premiumPreviewFragment.d0.getMeasuredWidth()) * 0.1f * premiumPreviewFragment.b0, 0, premiumPreviewFragment.d0.getMeasuredWidth(), 0.0f, premiumPreviewFragment.d0.getMeasuredHeight());
-            canvas.drawRect(f10, f11, f12, f13, y0Var.f);
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean e0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ej0
-    public boolean f(float f10, float f11, int i7, View view) {
-        zw zwVar = (zw) this.b;
-        if (view instanceof t2) {
-            t2 t2Var = (t2) view;
-            if (t2Var.n2) {
-                zwVar.Z4(t2Var.getDialogId(), view);
-                return true;
+            k3.a aVar2 = this.l;
+            if (aVar2 != null && aVar2.c != null) {
+                return aVar2.b(pVar, sVar);
             }
-        }
-        pw pwVar = zwVar.z0;
-        if (pwVar != null && pwVar.getVisibility() == 0 && zwVar.z0.n) {
-            return false;
-        }
-        return zwVar.A4(view, i7, f10, ((yw) this.a).d);
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ boolean f0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean g() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean g2(int i7) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public /* synthetic */ CharSequence getContentDescription() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ String h(q1 q1Var) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ int h0(q1 q1Var) {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.ej0
-    public void i() {
-        Point point = org.telegram.messenger.g0.q;
-        if (point.x > point.y) {
-            ((zw) this.b).finishPreviewFragment();
-        }
-    }
-
-    public void j0(Exception exc, boolean z9) {
-        this.b = null;
-        HashSet hashSet = (HashSet) this.a;
-        i0 q10 = i0.q(hashSet);
-        hashSet.clear();
-        h9.g0 listIterator = q10.listIterator(0);
-        while (listIterator.hasNext()) {
-            q2.b bVar = (q2.b) listIterator.next();
-            bVar.getClass();
-            bVar.l(z9 ? 1 : 3, exc);
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public boolean k0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ j9 k2() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public void l(boolean z9, float f10) {
-        h5.m1 = f10;
-        ((TextView) this.a).setText("Saturation " + (f10 * 5.0f));
-        st0 st0Var = ((h5) this.b).l1;
-        st0Var.M();
-        st0Var.L();
-    }
-
-    public void l0(o0.f fVar) {
-        androidx.biometric.o oVar = (androidx.biometric.o) this.b;
-        gf.g gVar = (gf.g) this.a;
-        int i7 = fVar.b;
-        if (i7 != 0) {
-            oVar.execute(new f3(gVar, i7));
+            pVar2 = pVar;
+            r12 = z10;
         } else {
-            oVar.execute(new m9.u(25, gVar, fVar.a));
+            pVar2 = pVar;
+            r12 = 0;
+            i7 = 1;
+            i10 = i13;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ws
-    public void m() {
-        ((h3) this.b).b(((ys) this.a).getText());
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean n0(q5 q5Var) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean n1() {
-        return false;
-    }
-
-    public r0 o0(d1 d1Var, int i7) {
-        j1 j1Var;
-        r0 r0Var;
-        a0.f fVar = (a0.f) this.a;
-        int d = fVar.d(d1Var);
-        if (d >= 0 && (j1Var = (j1) fVar.i(d)) != null) {
-            int i10 = j1Var.a;
-            if ((i10 & i7) != 0) {
-                int i11 = i10 & (~i7);
-                j1Var.a = i11;
-                if (i7 == 4) {
-                    r0Var = j1Var.b;
+        h2.x xVar3 = this.d;
+        byte[] bArr2 = xVar3.a;
+        if (9400 - xVar3.b < 188) {
+            int a12 = xVar3.a();
+            if (a12 > 0) {
+                System.arraycopy(bArr2, xVar3.b, bArr2, r12, a12);
+            }
+            xVar3.L(a12, bArr2);
+        }
+        while (true) {
+            int a13 = xVar3.a();
+            SparseArray sparseArray = this.h;
+            if (a13 >= 188) {
+                int i23 = xVar3.b;
+                int i24 = xVar3.c;
+                byte[] bArr3 = xVar3.a;
+                int i25 = i23;
+                while (i25 < i24 && bArr3[i25] != 71) {
+                    i25++;
+                }
+                xVar3.N(i25);
+                int i26 = i25 + ns.S2;
+                if (i26 > i24) {
+                    int i27 = (i25 - i23) + this.s;
+                    this.s = i27;
+                    i11 = i10;
+                    i12 = 2;
+                    if (i11 == 2 && i27 > 376) {
+                        throw t0.a(null, "Cannot find sync byte. Most likely not a Transport Stream.");
+                    }
                 } else {
-                    if (i7 != 8) {
-                        throw new IllegalArgumentException("Must provide flag PRE or POST");
+                    i11 = i10;
+                    i12 = 2;
+                    this.s = r12;
+                }
+                int i28 = xVar3.c;
+                if (i26 > i28) {
+                    return r12;
+                }
+                int m10 = xVar3.m();
+                if ((8388608 & m10) != 0) {
+                    xVar3.N(i26);
+                    return r12;
+                }
+                int i29 = (4194304 & m10) != 0 ? 1 : r12;
+                int i30 = (2096896 & m10) >> 8;
+                boolean z12 = (m10 & 32) != 0 ? true : r12;
+                g0 g0Var = (m10 & 16) != 0 ? (g0) sparseArray.get(i30) : null;
+                if (g0Var == null) {
+                    xVar3.N(i26);
+                    return r12;
+                }
+                if (i11 != i12) {
+                    int i31 = m10 & 15;
+                    SparseIntArray sparseIntArray = this.e;
+                    int i32 = sparseIntArray.get(i30, i31 - 1);
+                    sparseIntArray.put(i30, i31);
+                    if (i32 == i31) {
+                        xVar3.N(i26);
+                        return r12;
                     }
-                    r0Var = j1Var.c;
+                    if (i31 != ((i32 + 1) & 15)) {
+                        g0Var.d();
+                    }
                 }
-                if ((i11 & 12) == 0) {
-                    fVar.g(d);
-                    j1Var.a = 0;
-                    j1Var.b = null;
-                    j1Var.c = null;
-                    j1.d.v(j1Var);
+                if (z12) {
+                    int A = xVar3.A();
+                    i29 |= (xVar3.A() & 64) != 0 ? i12 : r12;
+                    xVar3.O(A - 1);
                 }
-                return r0Var;
+                boolean z13 = this.o;
+                if (i11 == i12 || z13 || !this.j.get(i30, r12)) {
+                    xVar3.M(i26);
+                    g0Var.a(i29, xVar3);
+                    xVar3.M(i28);
+                }
+                if (i11 != i12 && !z13 && this.o && length != -1) {
+                    this.q = true;
+                }
+                xVar3.N(i26);
+                return r12;
             }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public void o1(int i7, boolean z9, boolean z10, int i10, int i11, long j3, boolean z11, boolean z12, long j10) {
-        ci ciVar = (ci) this.a;
-        try {
-            HashMap<Object, Object> selectedPhotos = ciVar.d2.getSelectedPhotos();
-            if (selectedPhotos.isEmpty()) {
-                return;
+            int i33 = xVar3.c;
+            int read = pVar2.read(bArr2, i33, 9400 - i33);
+            if (read == -1) {
+                int i34 = r12;
+                while (i34 < sparseArray.size()) {
+                    g0 g0Var2 = (g0) sparseArray.valueAt(i34);
+                    if (g0Var2 instanceof w) {
+                        w wVar = (w) g0Var2;
+                        int i35 = (!z11 || wVar.e()) ? i7 : r12;
+                        if (wVar.c == 3 && wVar.j == -1 && ((!z11 || !(wVar.a instanceof k)) && i35 != 0)) {
+                            wVar.a(i7, new h2.x());
+                        }
+                    }
+                    i34++;
+                    i7 = 1;
+                }
+                return -1;
             }
-            gf gfVar = (gf) selectedPhotos.values().iterator().next();
-            String str = gfVar.h;
-            if (str == null) {
-                str = gfVar.I;
-            }
-            tg.g0 g0Var = (tg.g0) this.b;
-            g0Var.d0(g0Var.f0(str, true));
-            ciVar.dismiss();
-        } catch (Throwable th2) {
-            a8.g(th2, true);
+            xVar3.M(i33 + read);
+            i7 = 1;
         }
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean p1(q1 q1Var, int i7) {
-        return false;
+    @Override // f3.o
+    public final f3.o a() {
+        return this;
     }
 
-    @Override // org.telegram.ui.Components.ej0
-    public void q(float f10) {
-        Point point = org.telegram.messenger.g0.q;
-        if (point.x > point.y) {
-            ((zw) this.b).movePreviewFragment(f10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public /* synthetic */ int q0() {
-        return 0;
-    }
-
-    public void r0(int i7) {
-        gw[] gwVarArr = (gw[]) this.a;
-        gw gwVar = gwVarArr[i7];
-        Integer num = gwVar.c;
-        if (num != null) {
-            int i10 = i7 * 2;
-            w(gwVarArr[i10], num.intValue());
-            w(gwVarArr[i10 + 1], gwVar.c.intValue());
-            gwVar.c = null;
-        }
-    }
-
-    public void s(d1 d1Var, r0 r0Var) {
-        a0.f fVar = (a0.f) this.a;
-        j1 j1Var = (j1) fVar.get(d1Var);
-        if (j1Var == null) {
-            j1Var = j1.a();
-            fVar.put(d1Var, j1Var);
-        }
-        j1Var.c = r0Var;
-        j1Var.a |= 8;
-    }
-
-    public void t(int i7, int i10, int i11) {
-        gw[] gwVarArr = (gw[]) this.a;
-        gw gwVar = new gw();
-        gwVar.c = null;
-        gwVarArr[i7] = gwVar;
-        gwVar.d = i10;
-        gwVar.e = (i10 + i11) - 1;
-        if (i11 == 1) {
-            long j3 = ((long[]) this.b)[i10];
-            gwVar.a = j3;
-            gwVar.b = j3;
-            return;
-        }
-        int i12 = i7 * 2;
-        int i13 = i11 / 2;
-        t(i12, i10, i13);
-        int i14 = i12 + 1;
-        t(i14, i10 + i13, i11 - i13);
-        gw gwVar2 = gwVarArr[i7];
-        gw gwVar3 = gwVarArr[i12];
-        gwVar3.getClass();
-        gw gwVar4 = gwVarArr[i14];
-        gwVar4.getClass();
-        gwVar2.getClass();
-        gwVar2.a = Math.max(gwVar3.a, gwVar4.a);
-        gwVarArr[i7].b = Math.min(gwVarArr[i12].b, gwVarArr[i14].b);
-    }
-
-    @Override // com.google.android.gms.tasks.Continuation
-    public Object then(Task task) {
-        m6.c cVar = (m6.c) this.a;
-        Bundle bundle = (Bundle) this.b;
-        cVar.getClass();
-        if (!task.isSuccessful()) {
-            return task;
-        }
-        Bundle bundle2 = (Bundle) task.getResult();
-        return (bundle2 == null || !bundle2.containsKey("google.messenger")) ? task : cVar.d(bundle).onSuccessTask(m6.d.b, pb.b.b);
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean u1(q1 q1Var, TLRPC.Chat chat) {
-        return false;
-    }
-
-    public void v0(q2.b bVar) {
-        ((HashSet) this.a).add(bVar);
-        if (((q2.b) this.b) != null) {
-            return;
-        }
-        this.b = bVar;
-        q2.p q10 = bVar.b.q();
-        bVar.z = q10;
-        android.support.v4.media.session.f fVar = bVar.s;
-        String str = m0.a;
-        q10.getClass();
-        fVar.getClass();
-        fVar.obtainMessage(1, new q2.a(x2.t.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), q10)).sendToTarget();
-    }
-
-    public void w(gw gwVar, int i7) {
-        gwVar.c = Integer.valueOf(i7);
-        int i10 = gwVar.d;
-        long j3 = i7;
-        gwVar.a = j3;
-        gwVar.b = j3;
-        ((long[]) this.b)[i10] = j3;
-    }
-
-    public long w0(int i7, int i10) {
-        long[] jArr = (long[]) this.b;
-        if (jArr.length >= 30) {
-            return C0(1, i7, i10);
-        }
-        if (i7 < 0) {
-            i7 = 0;
-        }
-        if (i10 > jArr.length - 1) {
-            i10 = jArr.length - 1;
-        }
-        long j3 = Long.MIN_VALUE;
-        while (i7 <= i10) {
-            long j10 = jArr[i7];
-            if (j10 > j3) {
-                j3 = j10;
-            }
-            i7++;
-        }
-        return j3;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean w1() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean x0(ij ijVar) {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public String y(long j3) {
-        String trim = ((EditTextBoldCursor) this.a).getText().toString().trim();
-        if (trim.length() > 16) {
-            trim = trim.substring(0, 16);
-        }
-        if (((ey0) this.b).s || !TextUtils.isEmpty(trim)) {
-            return trim;
-        }
-        return null;
-    }
-
-    public /* synthetic */ d0(Object obj, Object obj2) {
-        this.a = obj;
-        this.b = obj2;
-    }
-
-    public /* synthetic */ d0(Object obj, Object obj2, boolean z9) {
-        this.b = obj;
-        this.a = obj2;
-    }
-
-    public /* synthetic */ d0(Object obj, boolean z9) {
-        this.a = obj;
-    }
-
-    public d0(long[] jArr) {
-        this.b = jArr;
-        if (jArr.length < 30) {
-            return;
-        }
-        this.a = new gw[(int) (Math.pow(2.0d, Math.floor((Math.log(jArr.length) / Math.log(2.0d)) + 1.0d)) * 2.0d)];
-        t(1, 0, jArr.length);
-    }
-
-    public d0(int i7) {
-        switch (i7) {
-            case 19:
-                this.a = new HashSet();
-                break;
-            case 20:
-                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(512);
-                this.a = byteArrayOutputStream;
-                this.b = new DataOutputStream(byteArrayOutputStream);
-                break;
-            case 29:
-                this.a = new a0.f(0);
-                this.b = new a0.h();
-                break;
-            default:
-                this.a = new g6.d0(24);
-                this.b = new SparseIntArray();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public void D() {
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ void F0() {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void F1() {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void Z0() {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void e2() {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void i2() {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void k() {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void p() {
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ void t0() {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void z0() {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void A1(ij ijVar) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void C(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void D0(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void G0(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void H(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void J(fj fjVar) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void K0(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ void M0(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void N(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void P(ij ijVar) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void P0(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void Q0(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void U1(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void V(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ void Y0(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void c2(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void d0(int i7) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void i0(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void m0(String str) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void o(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void r(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void r1(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void v(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void x(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void y0(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void y1(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void z(q1 q1Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void G(q1 q1Var, o2 o2Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void H1(q1 q1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void K1(q1 q1Var, o10 o10Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void L0(q1 q1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void P1(String str, String str2) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void W1(q1 q1Var, long j3) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void b1(q1 q1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void g1(q1 q1Var, int i7) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void s1(q1 q1Var, boolean z9) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void v1(q1 q1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void x1(q1 q1Var, int i7) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void A0(q1 q1Var, TLObject tLObject, boolean z9) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void B0(q1 q1Var, float f10, float f11) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public void E0(q1 q1Var, boolean z9, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void K(q1 q1Var, TLRPC.Document document, RectF rectF) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void N0(q1 q1Var, CharacterStyle characterStyle, boolean z9) {
-    }
-
-    @Override // m4.a0
-    public void b(k0 k0Var, f3.q qVar, g0 g0Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void g0(q1 q1Var, float f10, float f11) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void j1(q1 q1Var, float f10, float f11) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void j2(q1 q1Var, int i7, int i10) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void p0(q1 q1Var, float f10, float f11) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public void q1(q1 q1Var, boolean z9, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void I1(q1 q1Var, TLRPC.User user, TLRPC.Document document, String str) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void n(q1 q1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i7) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void s0(q1 q1Var, TLRPC.User user, float f10, float f11) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void u0(q1 q1Var, float f10, float f11, boolean z9) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void R1(q1 q1Var, int i7, float f10, float f11, boolean z9) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void f2(q1 q1Var, TLRPC.ReactionCount reactionCount, boolean z9, float f10, float f11) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void j(q1 q1Var, ArrayList arrayList, int i7, int i10, int i11) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void U(q1 q1Var, TLRPC.Chat chat, int i7, float f10, float f11, boolean z9) {
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ void M1(ArrayList arrayList, CharSequence charSequence, boolean z9, int i7, int i10, long j3, boolean z10, long j10) {
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void D1(ij ijVar, String str, String str2, String str3, String str4, int i7, int i10) {
+    @Override // f3.o
+    public final void release() {
     }
 }

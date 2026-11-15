@@ -1,293 +1,366 @@
 package fi;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.MotionEvent;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.SurfaceTexture;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.id;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.v61;
-import org.telegram.ui.cn;
-import org.telegram.ui.cs0;
-import org.telegram.ui.em0;
-import org.telegram.ui.i81;
-import org.telegram.ui.km0;
-import org.telegram.ui.pj;
-import org.telegram.ui.py0;
-import org.telegram.ui.ry0;
-import org.telegram.ui.sy0;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.um0;
+import org.telegram.ui.LaunchActivity;
+import org.webrtc.SurfaceViewRenderer;
+import org.webrtc.TextureViewRenderer;
+import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class g1 extends v61 {
-    public final /* synthetic */ int V;
-    public final /* synthetic */ Object W;
+public final class g1 implements wi.l {
+    public static g1 w;
+    public wi.n a;
+    public e1 b;
+    public i9 c;
+    public org.telegram.ui.Components.voip.u0 e;
+    public hi.r3 f;
+    public VideoSink h;
+    public LaunchActivity r;
+    public boolean s;
+    public final f1 d = new f1(this);
+    public final c1 n = new c1(this, 1);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g1(int i7, Context context, Object obj) {
-        super(context, null);
-        this.V = i7;
-        this.W = obj;
+    public static boolean e(e1 e1Var) {
+        wi.n nVar;
+        g1 g1Var = w;
+        return (e1Var == null || g1Var == null || g1Var.b != e1Var || (nVar = g1Var.a) == null || !nVar.d() || g1Var.a.c == 0) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public void A(int i7) {
-        switch (this.V) {
-            case 3:
-                if (i7 == 0) {
-                    cn cnVar = (cn) this.W;
-                    if (cnVar.G1) {
-                        cnVar.G1 = false;
-                        cnVar.E1.h.clear();
-                        break;
-                    }
-                }
-                break;
+    @Override // wi.l
+    public final void A(View view) {
+        hi.r3 r3Var;
+        e1 e1Var = this.b;
+        if (e1Var == null || view != (r3Var = this.f)) {
+            return;
         }
+        this.h = e1Var.P;
+        this.d.a = r3Var.getSink();
+        this.b.s(this.d);
+        this.b.v(1.0f);
+        g(true);
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public int H() {
-        switch (this.V) {
-            case 9:
-                return 12;
-            default:
-                return super.H();
+    @Override // wi.l
+    public final void C(SurfaceTexture surfaceTexture) {
+        VideoSink videoSink;
+        org.telegram.ui.Components.voip.u0 u0Var = this.e;
+        this.e = null;
+        this.d.a = null;
+        e1 e1Var = this.b;
+        if (e1Var != null && (videoSink = this.h) != null) {
+            e1Var.s(videoSink);
         }
+        this.h = null;
+        if (u0Var != null) {
+            u0Var.a();
+        }
+        surfaceTexture.release();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00de A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.v61
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean b(MotionEvent motionEvent) {
+    @Override // wi.l
+    public final /* synthetic */ View D() {
+        return null;
+    }
+
+    @Override // wi.l
+    public final boolean F() {
+        e1 e1Var;
+        i9 i9Var = this.c;
+        return (i9Var == null || i9Var.H0 || (e1Var = this.b) == null || i9Var.B0 != e1Var) ? false : true;
+    }
+
+    @Override // wi.l
+    public final int L() {
         int i7;
-        View E;
-        int R;
-        switch (this.V) {
-            case 1:
-                s8 s8Var = (s8) this.W;
-                View currentView = s8Var.l1.getCurrentView();
-                if (!(currentView instanceof n8)) {
-                    return true;
-                }
-                if (getCurrentPosition() > 0) {
-                    s8Var.M0();
-                    return true;
-                }
-                n8 n8Var = (n8) currentView;
-                ArrayList arrayList = n8Var.L;
-                pj0 pj0Var = n8Var.f;
-                if (n8Var.a == 0 && motionEvent != null && (E = pj0Var.E(motionEvent.getX(), motionEvent.getY() - n8Var.e.getPaddingTop())) != null && (R = RecyclerView.R(E)) >= 0 && R < arrayList.size()) {
-                    b8 b8Var = (b8) arrayList.get(R);
-                    if (b8Var.a == 3 && !b8Var.n) {
-                        boolean z9 = id.a0;
-                        float x10 = motionEvent.getX();
-                        if (!z9 ? x10 > org.telegram.messenger.g0.L(100.0f) : x10 < n8Var.getWidth() - org.telegram.messenger.g0.L(100.0f)) {
-                            i7 = b8Var.i;
-                            if (i7 != -1) {
-                                s8Var.G1 = i7;
-                                if (i7 == 3) {
-                                    if (!s8Var.r1.isEmpty() && !s8Var.s1.isEmpty()) {
-                                        s8Var.H1 = i7;
-                                    }
-                                } else if (i7 != 4) {
-                                    s8Var.H1 = i7;
-                                } else if (!s8Var.n1.isEmpty() && !s8Var.o1.isEmpty()) {
-                                    s8Var.H1 = i7;
-                                }
-                                n8Var.g(true);
-                                n8Var.f(true);
-                            }
-                            if (i7 != -1) {
-                                s8Var.M0();
-                            }
-                            return i7 == -1;
-                        }
-                    }
-                }
-                i7 = -1;
-                if (i7 != -1) {
-                }
-                if (i7 != -1) {
-                }
-                if (i7 == -1) {
-                }
-                break;
-            case 2:
-            default:
-                return super.b(motionEvent);
-            case 3:
-                pj pjVar = ((cn) this.W).D1;
-                return pjVar != null && pjVar.b > 0.5f;
+        hi.r3 r3Var;
+        if (this.d.b > 0) {
+            return this.d.b;
+        }
+        i9 i9Var = this.c;
+        TextureViewRenderer textureViewRenderer = (i9Var == null || (r3Var = i9Var.E0) == null) ? null : r3Var.d;
+        if (textureViewRenderer == null || (i7 = textureViewRenderer.rotatedFrameWidth) <= 0) {
+            return 9;
+        }
+        return i7;
+    }
+
+    @Override // wi.l
+    public final boolean N() {
+        e1 e1Var = this.b;
+        return (e1Var == null || e1Var.x) ? false : true;
+    }
+
+    @Override // wi.l
+    public final boolean P() {
+        return true;
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ e2.c1 R() {
+        return null;
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ boolean T() {
+        return false;
+    }
+
+    @Override // wi.l
+    public final void V() {
+        VideoSink videoSink;
+        this.s = false;
+        e1 e1Var = this.b;
+        i9 i9Var = this.c;
+        boolean z10 = (this.f == null && this.h == null) ? false : true;
+        this.a = null;
+        this.b = null;
+        this.d.a = null;
+        org.telegram.ui.Components.voip.u0 u0Var = this.e;
+        if (u0Var != null) {
+            u0Var.a();
+            this.e = null;
+        }
+        if (z10 && i9Var != null) {
+            g(false);
+            if (e1Var != null && (videoSink = this.h) != null) {
+                e1Var.s(videoSink);
+            }
+            this.h = null;
+            this.c = null;
+            i9Var.u(false);
+            return;
+        }
+        this.c = null;
+        if (e1Var == null || e1Var.x) {
+            return;
+        }
+        if (i9Var == null || i9Var.B0 != e1Var) {
+            if (e1Var.n || e1Var == e1.X) {
+                e1Var.s(null);
+            } else {
+                e1Var.e();
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public boolean j(MotionEvent motionEvent) {
-        switch (this.V) {
-            case 2:
-                return getCurrentPosition() != 2;
-            default:
-                return super.j(motionEvent);
+    @Override // wi.l
+    public final /* synthetic */ boolean X(boolean z10, float f10, um0 um0Var) {
+        return false;
+    }
+
+    @Override // wi.l
+    public final void Y(View view) {
+        this.f = (hi.r3) view;
+    }
+
+    @Override // wi.l
+    public final void Z() {
+        LaunchActivity launchActivity;
+        e1 e1Var = this.b;
+        if (e1Var != null) {
+            int i7 = e1Var.e;
+            if (!e1Var.x) {
+                if (i7 != m10.t0 && (launchActivity = LaunchActivity.H1) != null) {
+                    launchActivity.O0(i7);
+                }
+                org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
+                TL_stories.StoryItem u10 = np.s1(i7).P1().u(e1Var.c, e1Var.b);
+                if (u10 == null) {
+                    u10 = e1Var.a;
+                }
+                if (T != null && u10 != null && T.getContext() != null) {
+                    T.getOrCreateStoryViewer().G(i7, T.getContext(), u10, null);
+                    return;
+                }
+                wi.n nVar = this.a;
+                if (nVar != null) {
+                    nVar.b();
+                    return;
+                }
+                return;
+            }
+        }
+        wi.n nVar2 = this.a;
+        if (nVar2 != null) {
+            nVar2.b();
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public boolean k(MotionEvent motionEvent) {
-        switch (this.V) {
-            case 2:
-                return false;
-            case 6:
-                return false;
-            default:
-                return super.k(motionEvent);
+    @Override // wi.l
+    public final void a(View view) {
+        VideoSink videoSink;
+        g(false);
+        if (view == this.f) {
+            this.d.a = null;
+            e1 e1Var = this.b;
+            if (e1Var != null && (videoSink = this.h) != null) {
+                e1Var.s(videoSink);
+            }
+            this.h = null;
+            this.f = null;
         }
     }
 
-    @Override // org.telegram.ui.Components.v61, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.V) {
-            case 3:
-                return false;
-            default:
-                return super.onTouchEvent(motionEvent);
+    @Override // wi.l
+    public final void b() {
+        if (this.s) {
+            return;
+        }
+        this.s = true;
+        e1 e1Var = this.b;
+        if (e1Var != null) {
+            e1Var.v(0.0f);
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public void t(View view, View view2, int i7, int i10) {
-        switch (this.V) {
-            case 1:
-                s8 s8Var = (s8) this.W;
-                if (s8Var.d) {
-                    s8Var.M0();
-                    break;
-                }
-                break;
+    @Override // wi.l
+    public final int b0() {
+        int i7;
+        hi.r3 r3Var;
+        if (this.d.c > 0) {
+            return this.d.c;
+        }
+        i9 i9Var = this.c;
+        TextureViewRenderer textureViewRenderer = (i9Var == null || (r3Var = i9Var.E0) == null) ? null : r3Var.d;
+        if (textureViewRenderer == null || (i7 = textureViewRenderer.rotatedFrameHeight) <= 0) {
+            return 16;
+        }
+        return i7;
+    }
+
+    @Override // wi.l
+    public final float c0() {
+        return 0.0f;
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ int d() {
+        return 0;
+    }
+
+    @Override // wi.l
+    public final void f() {
+        if (this.s) {
+            this.s = false;
+            e1 e1Var = this.b;
+            if (e1Var != null) {
+                e1Var.v(1.0f);
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public void u() {
-        switch (this.V) {
-            case 2:
-                if (getCurrentPosition() == 1) {
-                    ((ii.d0) this.W).u1.d.f3.O(false);
-                    break;
-                }
-                break;
+    public final void g(boolean z10) {
+        w8 w8Var;
+        i9 i9Var = this.c;
+        if (i9Var == null || (w8Var = i9Var.s) == null) {
+            return;
         }
+        w8Var.setVisibility(z10 ? 8 : 0);
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public void v() {
-        py0 py0Var;
-        switch (this.V) {
-            case 6:
-                if ((getCurrentView() instanceof ry0) && (py0Var = ((ry0) getCurrentView()).n) != null) {
-                    org.telegram.messenger.g0.v1(py0Var);
-                    break;
-                }
-                break;
-        }
+    @Override // wi.l
+    public final long getDuration() {
+        return 0L;
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public final void w(boolean z9) {
-        switch (this.V) {
-            case 0:
-                k2 k2Var = (k2) this.W;
-                g1 g1Var = k2Var.p1;
-                j2 j2Var = k2Var.q1;
-                if (j2Var != null) {
-                    j2Var.F = g1Var.getPositionAnimated();
-                    j2Var.invalidate();
-                }
-                k2Var.b.invalidate();
-                invalidate();
-                k2.B1 = g1Var.getCurrentPosition();
-                break;
-            case 1:
-                ((s8) this.W).b.invalidate();
-                break;
-            case 2:
-                ((ii.d0) this.W).b.invalidate();
-                break;
-            case 3:
-                cn cnVar = (cn) this.W;
-                cnVar.l1.getClass();
-                cnVar.l1.getClass();
-                cnVar.A7();
-                break;
-            case 4:
-                km0 km0Var = (km0) this.W;
-                float positionAnimated = km0Var.I.getPositionAnimated();
-                km0Var.M.setSelected(positionAnimated);
-                km0Var.e.setProgressToGradient(1.0f - c8.j9.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
-                km0Var.K0();
-                em0 H0 = km0Var.H0();
-                d dVar = km0Var.Q;
-                if (dVar != null && H0 != null && H0 != km0Var.R) {
-                    km0Var.R = H0;
-                    j2.n nVar = H0.e;
-                    dVar.i((CharSequence) nVar.b, true, true);
-                    km0Var.Q.g((SpannableStringBuilder) nVar.c, true);
-                    break;
-                }
-                break;
-            case 5:
-                ((cs0) this.W).e();
-                break;
-            case 6:
-                ((sy0) this.W).b.invalidate();
-                break;
-            case 7:
-                ((i81) this.W).e();
-                break;
-            case 8:
-                ((org.telegram.ui.Wallet.x2) this.W).b.invalidate();
-                break;
-            default:
-                org.telegram.ui.Wallet.z5 z5Var = (org.telegram.ui.Wallet.z5) this.W;
-                z5Var.a1();
-                org.telegram.ui.Wallet.d8 d8Var = z5Var.j0;
-                if (d8Var != null && d8Var.h1) {
-                    d8Var.f0();
-                    break;
-                }
-                break;
-        }
+    @Override // wi.l
+    public final boolean h() {
+        return !this.s;
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public void y(int i7) {
-        org.telegram.ui.Wallet.u8 u8Var;
-        switch (this.V) {
-            case 9:
-                org.telegram.ui.Wallet.z5 z5Var = (org.telegram.ui.Wallet.z5) this.W;
-                z5Var.e0 = i7;
-                if (i7 != 1 && (u8Var = z5Var.i0) != null) {
-                    u8Var.b(false);
-                }
-                if (i7 == 1) {
-                    z5Var.p0.post(new org.telegram.ui.Wallet.f4(z5Var, 13));
-                    break;
-                }
-                break;
+    @Override // wi.l
+    public final void j(wi.o oVar) {
+        if (this.b == null) {
+            return;
         }
+        org.telegram.ui.Components.voip.u0 u0Var = new org.telegram.ui.Components.voip.u0(oVar);
+        this.e = u0Var;
+        this.d.a = u0Var;
+        e1 e1Var = this.b;
+        this.h = e1Var.P;
+        e1Var.s(this.d);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g1(org.telegram.ui.ActionBar.f2 f2Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(context, h6Var);
-        this.V = i7;
-        this.W = f2Var;
+    @Override // wi.l
+    public final long l() {
+        return 0L;
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ boolean p() {
+        return true;
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // wi.l
+    public final boolean t0() {
+        return false;
+    }
+
+    @Override // wi.l
+    public final void u(Rect rect) {
+        rect.setEmpty();
+    }
+
+    @Override // wi.l
+    public final View w(LaunchActivity launchActivity) {
+        e1 e1Var = this.b;
+        return new hi.r3(launchActivity, e1Var != null ? e1Var.e : m10.t0);
+    }
+
+    @Override // wi.l
+    public final void x(View view) {
+        if (view == this.f) {
+            this.d.a = null;
+            this.f = null;
+        }
+        hi.r3 r3Var = (hi.r3) view;
+        TextureViewRenderer textureViewRenderer = r3Var.d;
+        if (textureViewRenderer != null) {
+            textureViewRenderer.release();
+        }
+        SurfaceViewRenderer surfaceViewRenderer = r3Var.c;
+        if (surfaceViewRenderer != null) {
+            surfaceViewRenderer.release();
+        }
+        r3Var.r = false;
+        r3Var.c(false, false);
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ void M(float f10) {
+    }
+
+    @Override // wi.l
+    public final void c(long j3) {
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ void u0(int i7) {
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ void G() {
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ void j0(int i7, ArrayList arrayList) {
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ void o0(Canvas canvas, int i7, int i10) {
     }
 }

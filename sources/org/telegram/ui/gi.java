@@ -1,96 +1,60 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class gi extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cn b;
+public final class gi extends vf.b {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.q1 f;
+    public final /* synthetic */ an g;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ gi(cn cnVar, int i7) {
-        this.a = i7;
-        this.b = cnVar;
+    public /* synthetic */ gi(an anVar, int i7, Object obj, org.telegram.ui.Cells.q1 q1Var, int i10) {
+        this.d = i10;
+        this.g = anVar;
+        this.e = i7;
+        this.h = obj;
+        this.f = q1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        cj cjVar;
-        switch (this.a) {
+    @Override // vf.b
+    public final void c(boolean z10) {
+        switch (this.d) {
             case 0:
-                cn cnVar = this.b;
-                org.telegram.ui.Components.t40 t40Var = cnVar.p3;
-                if (t40Var != null) {
-                    t40Var.setIsMessageTransition(false);
-                    cnVar.p3.d(true);
-                    cnVar.p3.setVisibility(4);
+                if (!z10) {
+                    org.telegram.messenger.g0.i3(new ai.v0(this, this.e, 22), 240L);
                     break;
                 }
-                break;
-            case 1:
-                float L = org.telegram.messenger.g0.L(30.0f);
-                cn cnVar2 = this.b;
-                cnVar2.V9 = L;
-                cnVar2.L9();
-                break;
-            case 2:
-                cn cnVar3 = this.b;
-                if (cnVar3.fragmentView != null && (cjVar = cnVar3.z0) != null) {
-                    cjVar.invalidate();
-                    cnVar3.fragmentView.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.Q.setVisibility(4);
-                break;
-            case 4:
-                cn cnVar4 = this.b;
-                if (animator.equals(cnVar4.u3)) {
-                    cnVar4.u3 = null;
-                    break;
-                }
-                break;
-            case 5:
-                cn cnVar5 = this.b;
-                if (animator.equals(cnVar5.u3)) {
-                    cnVar5.u3 = null;
-                    break;
-                }
-                break;
-            case 6:
-                cn cnVar6 = this.b;
-                if (animator.equals(cnVar6.v3)) {
-                    cnVar6.w3 = 1.0f;
-                    cnVar6.Sc();
-                    cnVar6.v3 = null;
-                    break;
-                }
-                break;
-            case 7:
-                cn cnVar7 = this.b;
-                if (animator.equals(cnVar7.v3)) {
-                    cnVar7.w3 = 0.0f;
-                    cnVar7.Sc();
-                    cnVar7.v3 = null;
-                    break;
-                }
-                break;
-            case 8:
-                this.b.f5 = null;
-                break;
-            case 9:
-                cn cnVar8 = this.b;
-                cnVar8.Za = 1.0f;
-                cnVar8.Z.setVisibility(4);
-                cnVar8.c1.setVisibility(4);
-                cnVar8.L9();
                 break;
             default:
-                cn cnVar9 = this.b;
-                cnVar9.Za = 0.0f;
-                cnVar9.L9();
+                if (!z10) {
+                    org.telegram.messenger.g0.i3(new ai.v0(this, this.e, 25), 240L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // vf.b
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i7 = this.e;
+                an anVar = this.g;
+                anVar.Zb = i7;
+                anVar.ac = 1;
+                anVar.bc = (CharacterStyle) this.h;
+                this.f.invalidate();
+                break;
+            default:
+                int i10 = this.e;
+                an anVar2 = this.g;
+                anVar2.Zb = i10;
+                anVar2.ac = 3;
+                anVar2.cc = (String) this.h;
+                this.f.invalidate();
                 break;
         }
     }

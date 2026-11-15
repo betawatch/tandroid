@@ -1,14 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class p20 extends org.telegram.ui.Components.hb0 {
-    public p20(LaunchActivity launchActivity) {
-        super(launchActivity, null);
+public final class p20 extends AnimatorListenerAdapter {
+    public final /* synthetic */ c40 a;
+
+    public p20(c40 c40Var) {
+        this.a = c40Var;
     }
 
-    @Override // org.telegram.ui.Components.hb0
-    public final CharSequence d(int i7) {
-        return org.telegram.messenger.id.G(i7, "Hours", new Object[0]);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.a.S2 = null;
     }
 }

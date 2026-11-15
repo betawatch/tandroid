@@ -1,14 +1,21 @@
 package m;
 
-import android.view.textclassifier.TextClassificationManager;
-import android.view.textclassifier.TextClassifier;
+import android.graphics.drawable.Drawable;
 import android.widget.TextView;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class r0 {
-    public static TextClassifier a(TextView textView) {
-        TextClassificationManager textClassificationManager = (TextClassificationManager) textView.getContext().getSystemService(TextClassificationManager.class);
-        return textClassificationManager != null ? textClassificationManager.getTextClassifier() : TextClassifier.NO_OP;
+    public static Drawable[] a(TextView textView) {
+        return textView.getCompoundDrawablesRelative();
+    }
+
+    public static void b(TextView textView, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        textView.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, drawable2, drawable3, drawable4);
+    }
+
+    public static void c(TextView textView, Locale locale) {
+        textView.setTextLocale(locale);
     }
 }

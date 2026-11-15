@@ -1,37 +1,100 @@
 package ch;
 
-import android.graphics.Outline;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.content.Context;
 import android.view.View;
-import android.view.ViewOutlineProvider;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.m10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.mi0;
+import org.telegram.ui.an;
+import org.telegram.ui.n11;
+import org.telegram.ui.x01;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class x extends ViewOutlineProvider {
-    public final Rect a = new Rect();
-    public final RectF b = new RectF();
-    public final RectF c = new RectF();
-    public final /* synthetic */ b0 d;
+public final class x extends n11 {
+    public final /* synthetic */ mi0 f2;
+    public final /* synthetic */ e2 g2;
+    public final /* synthetic */ b0 h2;
 
-    public x(b0 b0Var) {
-        this.d = b0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x(b0 b0Var, e2 e2Var, Context context, int i7, boolean z10, e6 e6Var, mi0 mi0Var, e2 e2Var2) {
+        super(e2Var, context, false, null, i7, z10, e6Var, 16);
+        this.h2 = b0Var;
+        this.f2 = mi0Var;
+        this.g2 = e2Var2;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        b0 b0Var = this.d;
-        float T1 = org.telegram.messenger.g0.T1(b0Var.e, org.telegram.messenger.g0.L(8.0f), b0Var.j);
-        float measuredWidth = view.getMeasuredWidth();
-        float measuredHeight = view.getMeasuredHeight();
-        RectF rectF = this.b;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        RectF rectF2 = b0Var.f;
-        float f10 = b0Var.j;
-        RectF rectF3 = this.c;
-        org.telegram.messenger.g0.Z1(rectF2, rectF, f10, rectF3);
-        Rect rect = this.a;
-        rectF3.round(rect);
-        outline.setRoundRect(rect, T1);
+    @Override // org.telegram.ui.n11
+    public final void m() {
+        this.h2.a.invalidate();
+    }
+
+    @Override // org.telegram.ui.n11
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        ai.j0 j0Var = this.h2.c;
+        int i7 = 0;
+        mi0 mi0Var = this.f2;
+        e2 e2Var = this.g2;
+        if (e2Var != null && !mi0Var.B0 && mi0Var.getWindowType() != 13 && !m10.i(e2Var.getCurrentAccount()).q()) {
+            try {
+                j0Var.performHapticFeedback(3);
+            } catch (Exception unused) {
+            }
+            new cc(j0Var, null).r(document, org.telegram.messenger.g0.X2(hd.M0(2131743861, null)), hd.M0(2131747033, null), new w(this, i7)).j();
+            return;
+        }
+        if (l10 == null && document == null) {
+            return;
+        }
+        if (document != null) {
+            g5.g(m10.t0).e(document);
+        }
+        long longValue = l10 == null ? document.id : l10.longValue();
+        p0 p0Var = new p0();
+        p0Var.g = longValue;
+        p0Var.h = longValue;
+        mi0Var.l(view, p0Var, false);
+        org.telegram.messenger.g0.v1(j0Var);
+    }
+
+    @Override // org.telegram.ui.n11
+    public final void q() {
+        b0 b0Var = this.h2;
+        if (b0Var.v) {
+            return;
+        }
+        b0Var.v = true;
+        if (!b0Var.d) {
+            b0Var.b.updateViewLayout(b0Var.c, b0Var.b(true));
+        }
+        e2 e2Var = this.g2;
+        if (e2Var instanceof an) {
+            ((an) e2Var).sa();
+        }
+        mi0 mi0Var = this.f2;
+        if (mi0Var.getDelegate() != null) {
+            mi0Var.getDelegate().B();
+        }
+    }
+
+    @Override // org.telegram.ui.n11
+    public final void r(x01 x01Var, p0 p0Var) {
+        this.f2.l(x01Var, p0Var, false);
+        org.telegram.messenger.g0.v1(this.h2.c);
+    }
+
+    @Override // org.telegram.ui.n11
+    public final boolean u() {
+        mi0 mi0Var = this.f2;
+        if (mi0Var.getDelegate() != null) {
+            return mi0Var.getDelegate().B();
+        }
+        return false;
     }
 }

@@ -2,17 +2,17 @@ package a8;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e1 {
     public final z7 a;
     public final Boolean b;
-    public final t8 c;
+    public final u8 c;
 
     public /* synthetic */ e1(android.support.v4.media.session.a0 a0Var) {
         this.a = (z7) a0Var.b;
         this.b = (Boolean) a0Var.c;
-        this.c = (t8) a0Var.d;
+        this.c = (u8) a0Var.d;
     }
 
     public final boolean equals(Object obj) {

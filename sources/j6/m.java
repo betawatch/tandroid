@@ -2,7 +2,7 @@ package j6;
 
 import android.os.SystemClock;
 import android.util.Log;
-import c8.y0;
+import c8.a1;
 import com.google.android.gms.cast.MediaError;
 import com.google.android.gms.cast.MediaInfo;
 import java.util.Iterator;
@@ -12,27 +12,27 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class m extends p {
+public final class m extends q {
     public static final String v;
     public long e;
     public f6.q f;
     public Long g;
-    public gf.g h;
+    public gc.b h;
     public int i;
-    public final o j;
-    public final o k;
-    public final o l;
-    public final o m;
-    public final o n;
-    public final o o;
-    public final o p;
-    public final o q;
-    public final o r;
-    public final o s;
-    public final o t;
-    public final o u;
+    public final p j;
+    public final p k;
+    public final p l;
+    public final p m;
+    public final p n;
+    public final p o;
+    public final p p;
+    public final p q;
+    public final p r;
+    public final p s;
+    public final p t;
+    public final p u;
 
     static {
         Pattern pattern = a.a;
@@ -42,55 +42,55 @@ public final class m extends p {
     public m() {
         super(v);
         this.i = -1;
-        o oVar = new o(86400000L, "load");
-        this.j = oVar;
-        o oVar2 = new o(86400000L, "pause");
-        this.k = oVar2;
-        o oVar3 = new o(86400000L, "play");
-        this.l = oVar3;
-        o oVar4 = new o(86400000L, "stop");
-        o oVar5 = new o(10000L, "seek");
-        this.m = oVar5;
-        o oVar6 = new o(86400000L, "volume");
-        this.n = oVar6;
-        o oVar7 = new o(86400000L, "mute");
-        this.o = oVar7;
-        o oVar8 = new o(86400000L, "status");
-        this.p = oVar8;
-        o oVar9 = new o(86400000L, "activeTracks");
-        o oVar10 = new o(86400000L, "trackStyle");
-        o oVar11 = new o(86400000L, "queueInsert");
-        o oVar12 = new o(86400000L, "queueUpdate");
-        this.q = oVar12;
-        o oVar13 = new o(86400000L, "queueRemove");
-        o oVar14 = new o(86400000L, "queueReorder");
-        o oVar15 = new o(86400000L, "queueFetchItemIds");
-        this.r = oVar15;
-        o oVar16 = new o(86400000L, "queueFetchItemRange");
-        this.t = oVar16;
-        this.s = new o(86400000L, "queueFetchItems");
-        o oVar17 = new o(86400000L, "setPlaybackRate");
-        this.u = oVar17;
-        o oVar18 = new o(86400000L, "skipAd");
-        a(oVar);
-        a(oVar2);
-        a(oVar3);
-        a(oVar4);
-        a(oVar5);
-        a(oVar6);
-        a(oVar7);
-        a(oVar8);
-        a(oVar9);
-        a(oVar10);
-        a(oVar11);
-        a(oVar12);
-        a(oVar13);
-        a(oVar14);
-        a(oVar15);
-        a(oVar16);
-        a(oVar16);
-        a(oVar17);
-        a(oVar18);
+        p pVar = new p(86400000L, "load");
+        this.j = pVar;
+        p pVar2 = new p(86400000L, "pause");
+        this.k = pVar2;
+        p pVar3 = new p(86400000L, "play");
+        this.l = pVar3;
+        p pVar4 = new p(86400000L, "stop");
+        p pVar5 = new p(10000L, "seek");
+        this.m = pVar5;
+        p pVar6 = new p(86400000L, "volume");
+        this.n = pVar6;
+        p pVar7 = new p(86400000L, "mute");
+        this.o = pVar7;
+        p pVar8 = new p(86400000L, "status");
+        this.p = pVar8;
+        p pVar9 = new p(86400000L, "activeTracks");
+        p pVar10 = new p(86400000L, "trackStyle");
+        p pVar11 = new p(86400000L, "queueInsert");
+        p pVar12 = new p(86400000L, "queueUpdate");
+        this.q = pVar12;
+        p pVar13 = new p(86400000L, "queueRemove");
+        p pVar14 = new p(86400000L, "queueReorder");
+        p pVar15 = new p(86400000L, "queueFetchItemIds");
+        this.r = pVar15;
+        p pVar16 = new p(86400000L, "queueFetchItemRange");
+        this.t = pVar16;
+        this.s = new p(86400000L, "queueFetchItems");
+        p pVar17 = new p(86400000L, "setPlaybackRate");
+        this.u = pVar17;
+        p pVar18 = new p(86400000L, "skipAd");
+        a(pVar);
+        a(pVar2);
+        a(pVar3);
+        a(pVar4);
+        a(pVar5);
+        a(pVar6);
+        a(pVar7);
+        a(pVar8);
+        a(pVar9);
+        a(pVar10);
+        a(pVar11);
+        a(pVar12);
+        a(pVar13);
+        a(pVar14);
+        a(pVar15);
+        a(pVar16);
+        a(pVar16);
+        a(pVar17);
+        a(pVar18);
         g();
     }
 
@@ -125,7 +125,7 @@ public final class m extends p {
             if (i7 != 0) {
                 jSONObject.put("jump", i7);
             }
-            String b11 = y0.b(num);
+            String b11 = a1.b(num);
             if (b11 != null) {
                 jSONObject.put("repeatMode", b11);
             }
@@ -136,7 +136,7 @@ public final class m extends p {
         } catch (JSONException unused) {
         }
         c(b10, jSONObject.toString());
-        this.q.a(b10, new wf.b(this, nVar, false, 25));
+        this.q.a(b10, new q4.q(29, this, nVar));
     }
 
     public final long e(double d, long j3, long j10) {
@@ -162,7 +162,7 @@ public final class m extends p {
         this.f = null;
         Iterator it = this.d.iterator();
         while (it.hasNext()) {
-            ((o) it.next()).f(2002);
+            ((p) it.next()).f(2002);
         }
     }
 
@@ -176,9 +176,9 @@ public final class m extends p {
     }
 
     public final void i() {
-        gf.g gVar = this.h;
-        if (gVar != null) {
-            h6.h hVar = (h6.h) gVar.b;
+        gc.b bVar = this.h;
+        if (bVar != null) {
+            h6.h hVar = (h6.h) bVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -192,9 +192,9 @@ public final class m extends p {
     }
 
     public final void j() {
-        gf.g gVar = this.h;
-        if (gVar != null) {
-            h6.h hVar = (h6.h) gVar.b;
+        gc.b bVar = this.h;
+        if (bVar != null) {
+            h6.h hVar = (h6.h) bVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -208,9 +208,9 @@ public final class m extends p {
     }
 
     public final void k() {
-        gf.g gVar = this.h;
-        if (gVar != null) {
-            h6.h hVar = (h6.h) gVar.b;
+        gc.b bVar = this.h;
+        if (bVar != null) {
+            h6.h hVar = (h6.h) bVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -224,9 +224,9 @@ public final class m extends p {
     }
 
     public final void l() {
-        gf.g gVar = this.h;
-        if (gVar != null) {
-            h6.h hVar = (h6.h) gVar.b;
+        gc.b bVar = this.h;
+        if (bVar != null) {
+            h6.h hVar = (h6.h) bVar.b;
             Iterator it = hVar.j.values().iterator();
             if (it.hasNext()) {
                 if (it.next() != null) {
@@ -257,7 +257,7 @@ public final class m extends p {
             try {
                 Iterator it = this.d.iterator();
                 while (it.hasNext()) {
-                    ((o) it.next()).f(2002);
+                    ((p) it.next()).f(2002);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -275,10 +275,10 @@ public final class m extends p {
             if (l10 != null) {
                 if (l10.equals(4294967296000L)) {
                     f6.q qVar2 = this.f;
-                    if (qVar2.K != null) {
+                    if (qVar2.L != null) {
                         long longValue = l10.longValue();
                         f6.q qVar3 = this.f;
-                        if (qVar3 != null && (jVar = qVar3.K) != null) {
+                        if (qVar3 != null && (jVar = qVar3.L) != null) {
                             long j3 = jVar.b;
                             r3 = !jVar.d ? e(1.0d, j3, -1L) : j3;
                         }

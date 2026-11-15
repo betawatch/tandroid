@@ -1,52 +1,113 @@
 package gb;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.util.Log;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class z0 extends kd.j implements rd.q {
-    public int a;
-    public /* synthetic */ ce.d b;
-    public /* synthetic */ Throwable c;
-    public final /* synthetic */ f1 d;
+public final class z0 extends kd.j implements rd.p {
+    public final /* synthetic */ int a;
+    public int b;
+    public final /* synthetic */ Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(f1 f1Var, id.c cVar) {
-        super(3, cVar);
-        this.d = f1Var;
+    public /* synthetic */ z0(Object obj, id.c cVar, int i7) {
+        super(2, cVar);
+        this.a = i7;
+        this.c = obj;
     }
 
-    @Override // rd.q
-    public final Object b(Object obj, Object obj2, Object obj3) {
-        z0 z0Var = new z0(this.d, (id.c) obj3);
-        z0Var.b = (ce.d) obj;
-        z0Var.c = (Throwable) obj2;
-        return z0Var.invokeSuspend(gd.k.a);
+    @Override // kd.a
+    public final id.c create(Object obj, id.c cVar) {
+        switch (this.a) {
+            case 0:
+                return new z0((d1) this.c, cVar, 0);
+            case 1:
+                return new z0((d1) this.c, cVar, 1);
+            default:
+                return new z0((ka.d) this.c, cVar, 2);
+        }
+    }
+
+    @Override // rd.p
+    public final Object invoke(Object obj, Object obj2) {
+        zd.z zVar = (zd.z) obj;
+        id.c cVar = (id.c) obj2;
+        switch (this.a) {
+        }
+        return ((z0) create(zVar, cVar)).invokeSuspend(gd.k.a);
     }
 
     @Override // kd.a
     public final Object invokeSuspend(Object obj) {
-        jd.a aVar = jd.a.a;
-        int i7 = this.a;
-        if (i7 == 0) {
-            af.b.c(obj);
-            ce.d dVar = this.b;
-            Throwable th2 = this.c;
-            o0 a10 = this.d.b.a(null);
-            k0 k0Var = new k0(a10, null, null);
-            StringBuilder sb2 = new StringBuilder("Init session datastore failed with exception message: ");
-            sb2.append(th2.getMessage());
-            sb2.append(". Emit fallback session ");
-            rf.b.p(sb2, a10.a, "FirebaseSessions");
-            this.b = null;
-            this.a = 1;
-            if (dVar.a(k0Var, this) == aVar) {
-                return aVar;
-            }
-        } else {
-            if (i7 != 1) {
-                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            }
-            af.b.c(obj);
+        switch (this.a) {
+            case 0:
+                d1 d1Var = (d1) this.c;
+                jd.a aVar = jd.a.a;
+                int i7 = this.b;
+                if (i7 == 0) {
+                    af.b.c(obj);
+                    wf.b bVar = new wf.b(8, d1Var.e.getData(), new x0(d1Var, null));
+                    y0 y0Var = new y0(d1Var, 0);
+                    this.b = 1;
+                    if (bVar.G(y0Var, this) == aVar) {
+                        return aVar;
+                    }
+                } else {
+                    if (i7 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    af.b.c(obj);
+                }
+                return gd.k.a;
+            case 1:
+                d1 d1Var2 = (d1) this.c;
+                jd.a aVar2 = jd.a.a;
+                int i10 = this.b;
+                id.c cVar = null;
+                try {
+                    if (i10 == 0) {
+                        af.b.c(obj);
+                        m1.g gVar = d1Var2.e;
+                        b1 b1Var = new b1(d1Var2, cVar, 0);
+                        this.b = 1;
+                        if (gVar.a(b1Var, this) == aVar2) {
+                            return aVar2;
+                        }
+                    } else {
+                        if (i10 != 1) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        af.b.c(obj);
+                    }
+                } catch (Exception e10) {
+                    Log.d("FirebaseSessions", "App backgrounded, failed to update data. Message: " + e10.getMessage());
+                    j0 j0Var = d1Var2.h;
+                    if (j0Var == null) {
+                        kotlin.jvm.internal.j.h("localSessionData");
+                        throw null;
+                    }
+                    d1Var2.h = j0.a(j0Var, null, d1Var2.d.a(), null, 5);
+                }
+                return gd.k.a;
+            default:
+                jd.a aVar3 = jd.a.a;
+                int i11 = this.b;
+                if (i11 == 0) {
+                    af.b.c(obj);
+                    ce.c data = ((ka.d) this.c).c.a.getData();
+                    this.b = 1;
+                    obj = ce.x.e(data, this);
+                    if (obj == aVar3) {
+                        return aVar3;
+                    }
+                } else {
+                    if (i11 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    af.b.c(obj);
+                }
+                q1.b bVar2 = (q1.b) obj;
+                return bVar2 != null ? bVar2.a() : hd.o.a;
         }
-        return gd.k.a;
     }
 }

@@ -5,84 +5,84 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class ud0 extends FrameLayout {
-    public final fi.fb a;
-    public final fi.d b;
-    public final os c;
-    public t51 d;
+    public final hi.cb a;
+    public final hi.d b;
+    public final ws c;
+    public u51 d;
     public long e;
     public float f;
-    public fi.j3 h;
-    public org.telegram.messenger.c20 n;
+    public hi.h3 h;
+    public org.telegram.messenger.z10 n;
     public Runnable r;
 
-    public ud0(Context context, org.telegram.ui.ActionBar.h6 h6Var, x9 x9Var) {
+    public ud0(Context context, org.telegram.ui.ActionBar.e6 e6Var, u9 u9Var) {
         super(context);
         this.e = -1L;
         this.f = 1.39f;
-        org.telegram.ui.ActionBar.l lVar = new org.telegram.ui.ActionBar.l(context, h6Var);
-        lVar.setBackButtonImage(R.drawable.ic_ab_back);
-        lVar.setTitle(org.telegram.messenger.id.M0(2131751205, null));
-        lVar.G(-1, false);
-        lVar.E(587202559, false);
-        lVar.setActionBarMenuOnItemClick(new org.telegram.ui.w9(this, 15));
-        addView(lVar, c8.ha.e(-1, -2, 55));
-        fi.fb fbVar = new fi.fb(context, null, null, h6Var, x9Var);
-        this.a = fbVar;
-        fbVar.X0 = true;
-        addView(fbVar, c8.ha.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
-        fi.d dVar = new fi.d(context, h6Var, true);
+        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, e6Var);
+        kVar.setBackButtonImage(R.drawable.ic_ab_back);
+        kVar.setTitle(org.telegram.messenger.hd.M0(2131751205, null));
+        kVar.H(-1, false);
+        kVar.F(587202559, false);
+        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.p9(this, 16));
+        addView(kVar, c8.ja.e(-1, -2, 55));
+        hi.cb cbVar = new hi.cb(context, null, null, e6Var, u9Var);
+        this.a = cbVar;
+        cbVar.Y0 = true;
+        addView(cbVar, c8.ja.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
+        hi.d dVar = new hi.d(context, e6Var, true);
         this.b = dVar;
-        dVar.i(org.telegram.messenger.id.M0(2131751206, null), false, true);
+        dVar.i(org.telegram.messenger.hd.M0(2131751206, null), false, true);
         dVar.f();
-        addView(dVar, c8.ha.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        os osVar = new os(context, org.telegram.messenger.id.M0(2131751207, null));
-        this.c = osVar;
-        osVar.setOnClickListener(new td0(this, context, h6Var, 0));
-        addView(osVar, c8.ha.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
-        fbVar.setDelegate(new j2.n(this));
+        addView(dVar, c8.ja.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
+        ws wsVar = new ws(context, org.telegram.messenger.hd.M0(2131751207, null));
+        this.c = wsVar;
+        wsVar.setOnClickListener(new lt(this, context, e6Var, 5));
+        addView(wsVar, c8.ja.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
+        cbVar.setDelegate(new ji.j(this));
     }
 
-    public final void a(org.telegram.messenger.gf gfVar, t51 t51Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public final void a(org.telegram.messenger.ff ffVar, u51 u51Var, org.telegram.ui.ActionBar.e6 e6Var) {
         int i7;
-        fi.d dVar = this.b;
-        dVar.a = h6Var;
-        dVar.E = false;
+        hi.d dVar = this.b;
+        dVar.a = e6Var;
+        dVar.F = false;
         dVar.updateColors();
-        int i10 = gfVar.F;
-        if (i10 <= 0 || (i7 = gfVar.G) <= 0) {
+        int i10 = ffVar.F;
+        if (i10 <= 0 || (i7 = ffVar.G) <= 0) {
             this.f = 1.39f;
         } else {
             this.f = Utilities.i(i7 / i10, 1.39f, 0.85f);
         }
-        this.d = t51Var;
-        long j3 = gfVar.d;
+        this.d = u51Var;
+        long j3 = ffVar.d;
         if (j3 >= 0) {
             this.e = j3;
-            t51Var.q0(j3, false);
+            u51Var.q0(j3, false);
         } else {
-            this.e = t51Var.S();
+            this.e = u51Var.S();
         }
-        String path = t51Var.F.getPath();
-        long U = t51Var.U();
-        l2.i0 i0Var = t51Var.d;
-        i0Var.F1();
-        this.a.o(false, path, U, i0Var.b0);
-        long U2 = t51Var.U();
+        String path = u51Var.G.getPath();
+        long U = u51Var.U();
+        l2.f0 f0Var = u51Var.d;
+        f0Var.F1();
+        this.a.o(false, path, U, f0Var.b0);
+        long U2 = u51Var.U();
         float max = 2.8f / Math.max(60L, U2);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, t51Var.U()));
-        fi.fb fbVar = this.a;
-        fbVar.setVideoLeft(max2);
-        fbVar.setVideoRight(max2 + max);
-        fbVar.Z0 = 0L;
-        fbVar.a1 = U2;
-        fi.ab abVar = fbVar.h;
-        if (abVar != null) {
-            fi.ab.a(abVar, true);
+        float max2 = (1.0f - max) * (this.e / Math.max(1L, u51Var.U()));
+        hi.cb cbVar = this.a;
+        cbVar.setVideoLeft(max2);
+        cbVar.setVideoRight(max2 + max);
+        cbVar.a1 = 0L;
+        cbVar.b1 = U2;
+        hi.xa xaVar = cbVar.h;
+        if (xaVar != null) {
+            hi.xa.a(xaVar, true);
         }
-        fbVar.k();
+        cbVar.k();
     }
 
     public long getTime() {
@@ -93,7 +93,7 @@ public final class ud0 extends FrameLayout {
         this.r = runnable;
     }
 
-    public void setOnGalleryImage(org.telegram.messenger.c20 c20Var) {
-        this.n = c20Var;
+    public void setOnGalleryImage(org.telegram.messenger.z10 z10Var) {
+        this.n = z10Var;
     }
 }

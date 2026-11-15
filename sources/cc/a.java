@@ -2,16 +2,16 @@ package cc;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements Cloneable {
     public static final int[] c = new int[0];
     public int b = 0;
     public int[] a = c;
 
-    public final void a(boolean z9) {
+    public final void a(boolean z10) {
         c(this.b + 1);
-        if (z9) {
+        if (z10) {
             int[] iArr = this.a;
             int i7 = this.b;
             int i10 = i7 / 32;

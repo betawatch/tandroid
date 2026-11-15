@@ -1,87 +1,113 @@
 package di;
 
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.hc;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.e10;
-import org.telegram.ui.Components.nu0;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class o4 {
-    public final ImageReceiver a;
-    public int b;
-    public StaticLayout c;
-    public final TextPaint d;
-    public s5 e;
-    public final /* synthetic */ p4 f;
+public final class o4 extends Drawable {
+    public final Paint a;
+    public final LinearGradient[] b;
+    public final Matrix c;
+    public final org.telegram.ui.Components.u5 d;
+    public final Path e;
+    public final bc f;
+    public int g;
+    public int h;
 
-    public o4(p4 p4Var) {
-        this.f = p4Var;
-        ImageReceiver imageReceiver = new ImageReceiver(p4Var);
-        this.a = imageReceiver;
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        imageReceiver.z1 = true;
-        imageReceiver.J0(org.telegram.messenger.g0.L(6.0f));
-        textPaint.setColor(-1);
-        textPaint.setTextSize(org.telegram.messenger.g0.L(13.0f));
+    public o4() {
+        Paint paint = new Paint(1);
+        Paint paint2 = new Paint(1);
+        this.a = new Paint(1);
+        this.b = new LinearGradient[2];
+        this.c = new Matrix();
+        this.d = new org.telegram.ui.Components.u5(1.0f, new ch.w(this, 15), 0L, 420L, er.h);
+        this.e = new Path();
+        this.f = new bc(1, 45);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setColor(117440511);
+        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.0f));
+        paint2.setStyle(style);
+        paint2.setColor(301989887);
+        paint2.setStrokeWidth(org.telegram.messenger.g0.N(0.6666667f));
     }
 
-    public final void a(int i7) {
-        p4 p4Var = this.f;
-        ArrayList arrayList = p4Var.E;
-        if (i7 < 0 || i7 >= arrayList.size()) {
+    public final void a(int i7, int i10) {
+        if (this.g == i7 && this.h == i10) {
             return;
         }
-        this.e = (s5) arrayList.get(i7);
-        boolean z9 = p4Var.w;
-        ImageReceiver imageReceiver = this.a;
-        if (z9) {
-            imageReceiver.P();
-        }
-        s5 s5Var = this.e;
-        TL_stories.StoryItem storyItem = s5Var.a;
-        if (storyItem != null) {
-            s7.x(imageReceiver, storyItem);
-        } else {
-            y6 y6Var = s5Var.b;
-            e10[] e10VarArr = s7.a;
-            if (y6Var.c.K) {
-                imageReceiver.r0(hc.g(y6Var.f), "320_180", null, null, null, 0L, null, null, 0);
-            } else {
-                imageReceiver.r0(hc.g(y6Var.e), "320_180", null, null, null, 0L, null, null, 0);
+        LinearGradient[] linearGradientArr = this.b;
+        linearGradientArr[0] = linearGradientArr[1];
+        this.g = i7;
+        this.h = i10;
+        linearGradientArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.d.e(true, 0.0f);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        org.telegram.messenger.g0.P.set(getBounds());
+        float L = org.telegram.messenger.g0.L(24.0f);
+        int i7 = 0;
+        float e10 = this.d.e(false, 1.0f);
+        while (true) {
+            LinearGradient[] linearGradientArr = this.b;
+            if (i7 >= linearGradientArr.length) {
+                Path path = this.e;
+                path.rewind();
+                RectF rectF = org.telegram.messenger.g0.P;
+                path.addRoundRect(rectF, L, L, Path.Direction.CW);
+                canvas.save();
+                canvas.clipPath(path);
+                bc bcVar = this.f;
+                bcVar.g(rectF);
+                bcVar.h = 30.0f;
+                bcVar.d();
+                bcVar.a(canvas, org.telegram.ui.ActionBar.j6.r1(0.6f, -1));
+                invalidateSelf();
+                canvas.restore();
+                org.telegram.messenger.g0.P(canvas, rectF, L);
+                return;
             }
+            if (linearGradientArr[i7] != null) {
+                float pow = (float) Math.pow(1.0f - Math.abs(i7 - e10), 0.5d);
+                if (pow > 0.0f) {
+                    Matrix matrix = this.c;
+                    matrix.reset();
+                    RectF rectF2 = org.telegram.messenger.g0.P;
+                    matrix.postScale(rectF2.width() / 100.0f, 1.0f);
+                    linearGradientArr[i7].setLocalMatrix(matrix);
+                    LinearGradient linearGradient = linearGradientArr[i7];
+                    Paint paint = this.a;
+                    paint.setShader(linearGradient);
+                    paint.setAlpha((int) (pow * 255.0f));
+                    canvas.drawRoundRect(rectF2, L, L, paint);
+                }
+            }
+            i7++;
         }
-        b();
     }
 
-    public final void b() {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        TL_stories.StoryItem storyItem = this.e.a;
-        p4 p4Var = this.f;
-        if (storyItem != null) {
-            p4.a(p4Var, spannableStringBuilder, storyItem.views, false);
-        }
-        if (spannableStringBuilder.length() == 0) {
-            this.c = null;
-            return;
-        }
-        int i7 = (int) (p4Var.J + 1.0f);
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        TextPaint textPaint = this.d;
-        StaticLayout c10 = nu0.c(spannableStringBuilder, textPaint, i7, alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
-        this.c = c10;
-        if (c10.getLineCount() > 1) {
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("");
-            p4.a(p4Var, spannableStringBuilder2, this.e.a.views, true);
-            this.c = nu0.c(spannableStringBuilder2, textPaint, (int) (p4Var.J + 1.0f), alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

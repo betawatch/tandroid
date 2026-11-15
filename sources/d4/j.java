@@ -1,10 +1,10 @@
 package d4;
 
-import a8.ia;
-import h2.m0;
+import a8.ja;
+import h2.l0;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class j implements c4.e {
     public final ArrayDeque a = new ArrayDeque();
@@ -22,7 +22,7 @@ public abstract class j implements c4.e {
         this.b = new ArrayDeque();
         for (int i10 = 0; i10 < 2; i10++) {
             ArrayDeque arrayDeque = this.b;
-            a1.c cVar = new a1.c(this, 24);
+            a1.c cVar = new a1.c(this, 19);
             i iVar = new i();
             iVar.c = cVar;
             arrayDeque.add(iVar);
@@ -43,7 +43,7 @@ public abstract class j implements c4.e {
 
     @Override // k2.e
     public final Object d() {
-        ia.p(this.d == null);
+        ja.p(this.d == null);
         ArrayDeque arrayDeque = this.a;
         if (arrayDeque.isEmpty()) {
             return null;
@@ -56,7 +56,7 @@ public abstract class j implements c4.e {
     @Override // k2.e
     public final void e(Object obj) {
         c4.i iVar = (c4.i) obj;
-        ia.f(iVar == this.d);
+        ja.f(iVar == this.d);
         h hVar = (h) iVar;
         if (!hVar.isEndOfStream()) {
             long j3 = hVar.e;
@@ -91,7 +91,7 @@ public abstract class j implements c4.e {
                 break;
             }
             h hVar = (h) arrayDeque2.poll();
-            String str = m0.a;
+            String str = l0.a;
             hVar.clear();
             arrayDeque.add(hVar);
         }
@@ -118,7 +118,7 @@ public abstract class j implements c4.e {
                 return null;
             }
             h hVar = (h) arrayDeque2.peek();
-            String str = m0.a;
+            String str = l0.a;
             if (hVar.e > this.e) {
                 return null;
             }

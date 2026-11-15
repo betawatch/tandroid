@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class AudioRecoder {
     private static final int BYTES_PER_SHORT = 2;
@@ -69,15 +69,15 @@ public class AudioRecoder {
     private void mix(ShortBuffer shortBuffer) {
         int remaining = shortBuffer.remaining();
         for (int i7 = 0; i7 < remaining && isInputAvailable(); i7++) {
-            boolean z9 = false;
+            boolean z10 = false;
             short s5 = 0;
             for (int i10 = 0; i10 < this.audioInputs.size() && isInputAvailable(); i10++) {
                 if (this.audioInputs.get(i10).c()) {
                     s5 = (short) ((((short) (r6.a() * r6.a)) / this.audioInputs.size()) + s5);
-                    z9 = true;
+                    z10 = true;
                 }
             }
-            if (z9) {
+            if (z10) {
                 shortBuffer.put(s5);
             }
         }

@@ -1,16 +1,11 @@
 package c8;
 
-import java.io.IOException;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class p0 {
-    public static void a(j2.h hVar) {
-        if (hVar != null) {
-            try {
-                hVar.close();
-            } catch (IOException unused) {
-            }
-        }
+    public static void a(int i7, Drawable drawable) {
+        drawable.setTint(i7);
     }
 }

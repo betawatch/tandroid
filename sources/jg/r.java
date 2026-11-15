@@ -1,270 +1,358 @@
 package jg;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.SurfaceTexture;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
+import android.os.SystemClock;
+import android.util.Pair;
+import fi.s5;
 import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.PushListenerController;
+import java.util.HashMap;
+import java.util.HashSet;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.voip.VoIPGroupNotification;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.yr;
+import org.telegram.messenger.b6;
+import org.telegram.messenger.g7;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.h7;
+import org.telegram.messenger.hz;
+import org.telegram.messenger.i7;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r2;
+import org.telegram.messenger.r8;
+import org.telegram.messenger.vr;
+import org.telegram.messenger.yn;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.pn;
-import org.telegram.ui.Components.t51;
-import org.telegram.ui.Components.wn;
-import org.telegram.ui.cn;
-import org.webrtc.ScreenCapturerAndroid;
-import org.webrtc.SurfaceTextureHelper;
-import org.webrtc.SurfaceViewRenderer;
-import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r implements Runnable {
+public final /* synthetic */ class r implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ TLObject f;
 
-    public /* synthetic */ r(int i7, int i10, Object obj, int i11) {
+    public /* synthetic */ r(int i7, int i10, int i11, Object obj, Object obj2, TLObject tLObject) {
         this.a = i11;
-        this.b = i7;
-        this.c = i10;
-        this.d = obj;
+        this.b = obj;
+        this.c = obj2;
+        this.d = i7;
+        this.e = i10;
+        this.f = tLObject;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        t51 t51Var;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i7;
+        byte[] bArr;
+        int i10;
         switch (this.a) {
             case 0:
-                int i7 = this.b;
-                f0 f0Var = (f0) this.d;
-                try {
-                    SQLiteCursor queryFinalized = yr.a0(i7).b.queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
-                    ArrayList arrayList = new ArrayList();
-                    ArrayList arrayList2 = new ArrayList();
-                    ArrayList arrayList3 = new ArrayList();
-                    new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
+                h0 h0Var = (h0) this.b;
+                String str = (String) this.c;
+                int i11 = this.d;
+                int i12 = this.e;
+                TLRPC.TL_messages_search tL_messages_search = (TLRPC.TL_messages_search) this.f;
+                ArrayList arrayList = new ArrayList();
+                if (tL_error == null) {
+                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                     a0.h hVar = new a0.h();
-                    while (queryFinalized.next()) {
-                        long longValue = queryFinalized.longValue(0);
-                        boolean C = m5.C(longValue);
-                        int i10 = this.c;
-                        if (C) {
-                            if (i10 == 0 || i10 == 3) {
-                                int i11 = (int) (4294967295L & longValue);
-                                if (!arrayList3.contains(Integer.valueOf(i11))) {
-                                    arrayList3.add(Integer.valueOf(i11));
-                                    g0 g0Var = new g0();
-                                    g0Var.c = longValue;
-                                    g0Var.b = queryFinalized.intValue(1);
-                                    arrayList4.add(g0Var);
-                                    hVar.k(g0Var, g0Var.c);
-                                }
-                            }
-                        } else if (!m5.E(longValue)) {
-                            long j3 = -longValue;
-                            if (!arrayList2.contains(Long.valueOf(j3))) {
-                                arrayList2.add(Long.valueOf(j3));
-                                g0 g0Var2 = new g0();
-                                g0Var2.c = longValue;
-                                g0Var2.b = queryFinalized.intValue(1);
-                                arrayList4.add(g0Var2);
-                                hVar.k(g0Var2, g0Var2.c);
-                            }
-                        } else if (i10 != 2 && !arrayList.contains(Long.valueOf(longValue))) {
-                            arrayList.add(Long.valueOf(longValue));
-                            g0 g0Var22 = new g0();
-                            g0Var22.c = longValue;
-                            g0Var22.b = queryFinalized.intValue(1);
-                            arrayList4.add(g0Var22);
-                            hVar.k(g0Var22, g0Var22.c);
-                        }
+                    a0.h hVar2 = new a0.h();
+                    for (int i13 = 0; i13 < messages_messages.chats.size(); i13++) {
+                        TLRPC.Chat chat = messages_messages.chats.get(i13);
+                        hVar.k(chat, chat.id);
                     }
-                    queryFinalized.dispose();
-                    ArrayList arrayList5 = new ArrayList();
-                    if (!arrayList3.isEmpty()) {
-                        ArrayList arrayList6 = new ArrayList();
-                        yr.a0(i7).V(TextUtils.join(",", arrayList3), arrayList6, arrayList);
-                        for (int i12 = 0; i12 < arrayList6.size(); i12++) {
-                            g0 g0Var3 = (g0) hVar.f(m5.F(((TLRPC.EncryptedChat) arrayList6.get(i12)).id));
-                            if (g0Var3 != null) {
-                                g0Var3.a = (TLObject) arrayList6.get(i12);
-                            }
-                        }
+                    for (int i14 = 0; i14 < messages_messages.users.size(); i14++) {
+                        TLRPC.User user = messages_messages.users.get(i14);
+                        hVar2.k(user, user.id);
                     }
-                    if (!arrayList2.isEmpty()) {
-                        ArrayList arrayList7 = new ArrayList();
-                        yr.a0(i7).Q(TextUtils.join(",", arrayList2), arrayList7);
-                        for (int i13 = 0; i13 < arrayList7.size(); i13++) {
-                            TLRPC.Chat chat = (TLRPC.Chat) arrayList7.get(i13);
-                            long j10 = -chat.id;
-                            if (chat.migrated_to != null) {
-                                g0 g0Var4 = (g0) hVar.f(j10);
-                                hVar.l(j10);
-                                if (g0Var4 != null) {
-                                    arrayList4.remove(g0Var4);
-                                }
-                            } else {
-                                g0 g0Var5 = (g0) hVar.f(j10);
-                                if (g0Var5 != null) {
-                                    g0Var5.a = chat;
-                                }
-                            }
-                        }
+                    for (int i15 = 0; i15 < messages_messages.messages.size(); i15++) {
+                        gj gjVar = new gj(h0Var.t0, messages_messages.messages.get(i15), hVar2, hVar, false, true);
+                        arrayList.add(gjVar);
+                        gjVar.K5(str, true);
                     }
-                    if (!arrayList.isEmpty()) {
-                        yr.a0(i7).n0(arrayList, arrayList5, false);
-                        for (int i14 = 0; i14 < arrayList5.size(); i14++) {
-                            TLRPC.User user = (TLRPC.User) arrayList5.get(i14);
-                            g0 g0Var6 = (g0) hVar.f(user.id);
-                            if (g0Var6 != null) {
-                                g0Var6.a = user;
-                            }
-                        }
+                }
+                org.telegram.messenger.g0.h3(new t(h0Var, i11, i12, tL_error, str, tLObject, tL_messages_search, arrayList, 0));
+                return;
+            case 1:
+                h0 h0Var2 = (h0) this.b;
+                String str2 = (String) this.c;
+                int i16 = this.d;
+                int i17 = this.e;
+                TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) this.f;
+                int i18 = h0Var2.t0;
+                ArrayList arrayList2 = new ArrayList();
+                if (tL_error == null) {
+                    TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
+                    a0.h hVar3 = new a0.h();
+                    a0.h hVar4 = new a0.h();
+                    int i19 = 0;
+                    while (i19 < messages_messages2.chats.size()) {
+                        TLRPC.Chat chat2 = messages_messages2.chats.get(i19);
+                        hVar3.k(chat2, chat2.id);
+                        i19++;
+                        h0Var2 = h0Var2;
                     }
-                    Collections.sort(arrayList4, new x(0));
-                    org.telegram.messenger.g0.h3(new fi.x1(f0Var, arrayList4, hVar, 17));
-                    break;
-                } catch (Exception e10) {
-                    a8.g(e10, true);
+                    h0 h0Var3 = h0Var2;
+                    for (int i20 = 0; i20 < messages_messages2.users.size(); i20++) {
+                        TLRPC.User user2 = messages_messages2.users.get(i20);
+                        hVar4.k(user2, user2.id);
+                    }
+                    int i21 = 0;
+                    while (i21 < messages_messages2.messages.size()) {
+                        a0.h hVar5 = hVar3;
+                        gj gjVar2 = new gj(h0Var3.t0, messages_messages2.messages.get(i21), hVar4, hVar5, false, true);
+                        arrayList2.add(gjVar2);
+                        gjVar2.K5(str2, true);
+                        i21++;
+                        hVar3 = hVar5;
+                    }
+                    h0Var2 = h0Var3;
+                }
+                HashSet hashSet = new HashSet();
+                if (tL_error == null) {
+                    TLRPC.messages_Messages messages_messages3 = (TLRPC.messages_Messages) tLObject;
+                    int i22 = 0;
+                    while (i22 < messages_messages3.messages.size()) {
+                        TLRPC.Message message = messages_messages3.messages.get(i22);
+                        long B0 = gj.B0(message);
+                        int i23 = i18;
+                        TLRPC.messages_Messages messages_messages4 = messages_messages3;
+                        if (((Integer) (message.out ? np.s1(i23).Q : np.s1(i23).P).get(Long.valueOf(B0))) == null) {
+                            hashSet.add(new Pair(Boolean.valueOf(message.out), Long.valueOf(B0)));
+                        }
+                        i22++;
+                        i18 = i23;
+                        messages_messages3 = messages_messages4;
+                    }
+                }
+                int i24 = i18;
+                t tVar = new t(h0Var2, i16, i17, tL_error, str2, tLObject, tL_messages_searchGlobal, arrayList2, 1);
+                if (hashSet.isEmpty()) {
+                    org.telegram.messenger.g0.h3(tVar);
+                    return;
+                } else {
+                    vr.a0(i24).a.c(new s5(h0Var2, hashSet, tVar, 16));
                     return;
                 }
-                break;
-            case 1:
-                l2.i0 i0Var = (l2.i0) this.d;
-                h2.r rVar = i0Var.m;
-                int i15 = this.b;
-                int i16 = this.c;
-                rVar.e(24, new gh.c(i15, i16, 2));
-                i0Var.t1(2, 14, new h2.y(i15, i16));
-                break;
-            case 2:
-                ((l2.c0) this.d).a.q1(this.b, this.c);
-                break;
-            case 3:
-                MediaController mediaController = (MediaController) ((f5.u) this.d).c;
-                if (this.b == mediaController.k0 && this.c == 4 && (t51Var = mediaController.j0) != null) {
-                    try {
-                        t51Var.m0();
-                        mediaController.j0 = null;
-                        break;
-                    } catch (Exception e11) {
-                        a8.g(e11, true);
+            default:
+                i7 i7Var = (i7) this.b;
+                h7 h7Var = (h7) this.c;
+                int i25 = this.d;
+                int i26 = this.e;
+                TLObject tLObject2 = this.f;
+                if (h7Var.k) {
+                    a8.d("received chunk but definitely cancelled offset=" + h7Var.e + " size=" + h7Var.c + " token=" + h7Var.a);
+                    return;
+                }
+                if (h7Var.j) {
+                    a8.d("received cancelled chunk after cancelRequests! offset=" + h7Var.e + " size=" + h7Var.c + " token=" + h7Var.a);
+                }
+                if (!i7Var.G0.contains(h7Var)) {
+                    if (!i7Var.H0.contains(h7Var)) {
+                        return;
+                    }
+                    int i27 = 0;
+                    boolean z10 = false;
+                    while (i27 < i7Var.G0.size()) {
+                        h7 h7Var2 = (h7) i7Var.G0.get(i27);
+                        if (h7Var2 == null || h7Var2 == h7Var) {
+                            i10 = 1;
+                        } else {
+                            i10 = 1;
+                            if (h7Var2.e == h7Var.e && h7Var2.c == h7Var.c) {
+                                a8.d("received cancelled chunk faster than new one! received=" + h7Var.a + " new=" + h7Var2.a);
+                                if (z10) {
+                                    i7Var.G0.remove(i27);
+                                    i27--;
+                                } else {
+                                    i7Var.G0.set(i27, h7Var);
+                                    z10 = true;
+                                }
+                            }
+                        }
+                        i27 += i10;
+                    }
+                }
+                int i28 = 0;
+                while (i28 < i7Var.H0.size()) {
+                    h7 h7Var3 = (h7) i7Var.H0.get(i28);
+                    if (h7Var3 != null && h7Var3 != h7Var && h7Var3.e == h7Var.e && h7Var3.c == h7Var.c) {
+                        a8.d("received new chunk faster than cancelled one! received=" + h7Var.a + " cancelled=" + h7Var3.a);
+                        i7Var.H0.remove(i28);
+                        i28 += -1;
+                    }
+                    i28++;
+                }
+                if (r2.a) {
+                    StringBuilder sb2 = new StringBuilder("debug_loading: ");
+                    sb2.append(i7Var.L0.getName());
+                    sb2.append(" time=");
+                    sb2.append(System.currentTimeMillis() - h7Var.b);
+                    sb2.append(" dcId=");
+                    sb2.append(i25);
+                    sb2.append(" cdn=");
+                    sb2.append(i7Var.u0);
+                    sb2.append(" conType=");
+                    sb2.append(i26);
+                    sb2.append(" reqId");
+                    i5.c.r(h7Var.a, sb2);
+                }
+                if (h7Var == i7Var.f0) {
+                    i5.c.t(i7Var.f0.e, new StringBuilder("frame get request completed "));
+                    i7Var.f0 = null;
+                }
+                if (tL_error != null) {
+                    Runnable runnable = h7Var.l;
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    if (tL_error.code == -2000) {
+                        i7Var.G0.remove(h7Var);
+                        long j3 = i7Var.Q;
+                        long j10 = h7Var.c;
+                        i7Var.Q = j3 - j10;
+                        ArrayList arrayList3 = i7Var.O;
+                        long j11 = h7Var.e;
+                        i7.n(j11, j10 + j11, arrayList3);
+                        return;
+                    }
+                    if (r8.r(tL_error.text)) {
+                        i7Var.p(h7Var);
+                        return;
+                    } else if ((tLObject2 instanceof TLRPC.TL_upload_getCdnFile) && tL_error.text.equals("FILE_TOKEN_INVALID")) {
+                        i7Var.u0 = false;
+                        i7Var.e(h7Var, false, false);
+                        i7Var.s(i26);
                         return;
                     }
                 }
-                break;
-            case 4:
-                ((ui) this.d).Y[this.b] = this.c;
-                break;
-            case 5:
-                PushListenerController.lambda$sendRegistrationToServer$0(this.b, this.c, (String) this.d);
-                break;
-            case 6:
-                VoIPGroupNotification.decline((Context) this.d, this.b, this.c);
-                break;
-            case 7:
-                ((VoIPService) this.d).lambda$initiateActualEncryptedCall$86(this.b, this.c);
-                break;
-            case 8:
-                ((ConnectionsManager) this.d).lambda$discardConnection$0(this.b, this.c);
-                break;
-            case 9:
-                org.telegram.ui.web.u0 u0Var = (org.telegram.ui.web.u0) this.d;
-                for (int i17 = 0; i17 < this.b - this.c; i17++) {
-                    u0Var.goBack();
-                }
-                break;
-            case 10:
-                f2 f2Var = (f2) this.d;
-                Bundle bundle = new Bundle();
-                bundle.putLong("user_id", p10.i(this.b).e());
-                bundle.putInt("message_id", this.c);
-                f2Var.presentFragment(new cn(bundle));
-                break;
-            case 11:
-                wn wnVar = (wn) this.d;
-                int i18 = this.b;
-                if (i18 != 0) {
-                    SharedPreferences sharedPreferences = qp.s1(this.c).d7;
-                    sharedPreferences.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", sharedPreferences.getInt("last_selected_mute_until_time", 0)).apply();
-                }
-                wnVar.R(i18);
-                break;
-            case 12:
-                pn pnVar = (pn) this.d;
-                int i19 = this.b;
-                if (i19 != 0) {
-                    SharedPreferences sharedPreferences2 = qp.s1(this.c).d7;
-                    sharedPreferences2.edit().putInt("last_selected_mute_until_time", i19).putInt("last_selected_mute_until_time2", sharedPreferences2.getInt("last_selected_mute_until_time", 0)).apply();
-                }
-                pnVar.a(Integer.valueOf(i19));
-                break;
-            case 13:
-                ca0 ca0Var = (ca0) ((bi.q1) this.d).f3;
-                View d = ca0Var.d();
-                bi.q1 q1Var = ca0Var.f;
-                if (d != null) {
-                    int top = d.getTop() + this.b;
-                    int top2 = d.getTop() + this.c;
-                    int i20 = top2 - top;
-                    int paddingTop = q1Var.getPaddingTop();
-                    int height = q1Var.getHeight() - q1Var.getPaddingBottom();
-                    if (i20 <= height - paddingTop) {
-                        top = (top + top2) / 2;
-                        paddingTop = (paddingTop + height) / 2;
+                if (tLObject instanceof TLRPC.TL_upload_fileCdnRedirect) {
+                    TLRPC.TL_upload_fileCdnRedirect tL_upload_fileCdnRedirect = (TLRPC.TL_upload_fileCdnRedirect) tLObject;
+                    if (!tL_upload_fileCdnRedirect.file_hashes.isEmpty()) {
+                        if (i7Var.q0 == null) {
+                            i7Var.q0 = new HashMap();
+                        }
+                        for (int i29 = 0; i29 < tL_upload_fileCdnRedirect.file_hashes.size(); i29++) {
+                            TLRPC.TL_fileHash tL_fileHash = tL_upload_fileCdnRedirect.file_hashes.get(i29);
+                            i7Var.q0.put(Long.valueOf(tL_fileHash.offset), tL_fileHash);
+                        }
                     }
-                    int i21 = top - paddingTop;
-                    if (i21 < 0) {
-                        q1Var.scrollBy(0, i21);
-                        break;
+                    byte[] bArr2 = tL_upload_fileCdnRedirect.encryption_iv;
+                    if (bArr2 == null || (bArr = tL_upload_fileCdnRedirect.encryption_key) == null || bArr2.length != 16 || bArr.length != 32) {
+                        Runnable runnable2 = h7Var.l;
+                        if (runnable2 != null) {
+                            runnable2.run();
+                        }
+                        TLRPC.TL_error tL_error2 = new TLRPC.TL_error();
+                        tL_error2.text = "bad redirect response";
+                        tL_error2.code = 400;
+                        i7Var.m(h7Var, tL_error2);
+                        return;
+                    }
+                    i7Var.u0 = true;
+                    if (i7Var.P == null) {
+                        ArrayList arrayList4 = new ArrayList();
+                        i7Var.P = arrayList4;
+                        arrayList4.add(new g7(0L, i7Var.q));
+                    }
+                    i7Var.y0 = tL_upload_fileCdnRedirect.dc_id;
+                    i7Var.v0 = tL_upload_fileCdnRedirect.encryption_iv;
+                    i7Var.w0 = tL_upload_fileCdnRedirect.encryption_key;
+                    i7Var.x0 = tL_upload_fileCdnRedirect.file_token;
+                    i7Var.e(h7Var, false, false);
+                    i7Var.s(i26);
+                    return;
+                }
+                if (tLObject instanceof TLRPC.TL_upload_cdnFileReuploadNeeded) {
+                    if (i7Var.z0) {
+                        return;
+                    }
+                    i7Var.e(h7Var, false, false);
+                    i7Var.z0 = true;
+                    TLRPC.TL_upload_reuploadCdnFile tL_upload_reuploadCdnFile = new TLRPC.TL_upload_reuploadCdnFile();
+                    tL_upload_reuploadCdnFile.file_token = i7Var.x0;
+                    tL_upload_reuploadCdnFile.request_token = ((TLRPC.TL_upload_cdnFileReuploadNeeded) tLObject).request_token;
+                    ConnectionsManager.getInstance(i7Var.R).sendRequest(tL_upload_reuploadCdnFile, new yn(i7Var, i26, h7Var, 1), null, null, 0, i7Var.T, 1, true);
+                    return;
+                }
+                if (tLObject instanceof TLRPC.TL_upload_file) {
+                    h7Var.f = (TLRPC.TL_upload_file) tLObject;
+                } else if (tLObject instanceof TLRPC.TL_upload_webFile) {
+                    TLRPC.TL_upload_webFile tL_upload_webFile = (TLRPC.TL_upload_webFile) tLObject;
+                    h7Var.g = tL_upload_webFile;
+                    if (i7Var.b0 == 0 && (i7 = tL_upload_webFile.size) != 0) {
+                        i7Var.b0 = i7;
+                    }
+                } else {
+                    h7Var.h = (TLRPC.TL_upload_cdnFile) tLObject;
+                }
+                if (tLObject != null) {
+                    int i30 = i7Var.b1;
+                    if (i30 == 50331648) {
+                        hz.e(i7Var.R).h(tLObject.networkType, 3, tLObject.getObjectSize() + 4);
+                    } else if (i30 == 33554432) {
+                        hz.e(i7Var.R).h(tLObject.networkType, 2, tLObject.getObjectSize() + 4);
+                    } else if (i30 == 16777216) {
+                        hz.e(i7Var.R).h(tLObject.networkType, 4, tLObject.getObjectSize() + 4);
+                    } else if (i30 == 67108864) {
+                        String str3 = i7Var.P0;
+                        if (str3 == null || !(str3.toLowerCase().endsWith("mp3") || i7Var.P0.toLowerCase().endsWith("m4a"))) {
+                            hz.e(i7Var.R).h(tLObject.networkType, 5, tLObject.getObjectSize() + 4);
+                        } else {
+                            hz.e(i7Var.R).h(tLObject.networkType, 7, tLObject.getObjectSize() + 4);
+                        }
                     }
                 }
-                break;
-            case 14:
-                ((ScreenCapturerAndroid) this.d).lambda$changeCaptureFormat$1(this.b, this.c);
-                break;
-            case 15:
-                ((SurfaceTextureHelper) this.d).lambda$setTextureSize$2(this.b, this.c);
-                break;
-            case 16:
-                ((SurfaceViewRenderer) this.d).lambda$onFrameResolutionChanged$0(this.b, this.c);
-                break;
-            default:
-                ((TextureViewRenderer) this.d).lambda$updateVideoSizes$1(this.b, this.c);
-                break;
+                if (tL_error == null && tLObject != null) {
+                    int objectSize = tLObject.getObjectSize();
+                    long elapsedRealtime = SystemClock.elapsedRealtime();
+                    long j12 = i7Var.g1;
+                    if (j12 == 0 || elapsedRealtime - i7Var.h1 > 2000) {
+                        i7Var.g1 = elapsedRealtime;
+                        i7Var.i1 = 0L;
+                        i7Var.j1 = 0;
+                    } else {
+                        long j13 = i7Var.i1 + objectSize;
+                        i7Var.i1 = j13;
+                        int i31 = i7Var.j1 + 1;
+                        i7Var.j1 = i31;
+                        if (i31 >= 2 && j13 >= 131072) {
+                            long j14 = elapsedRealtime - j12;
+                            if (j14 >= 500) {
+                                long j15 = j13 * 8;
+                                synchronized (b6.class) {
+                                    if (j15 > 0 && j14 > 0) {
+                                        double d = (j15 * 1000.0d) / j14;
+                                        try {
+                                            long elapsedRealtime2 = SystemClock.elapsedRealtime();
+                                            long j16 = b6.b;
+                                            if (j16 != 0 && elapsedRealtime2 - j16 <= 60000) {
+                                                d = (d * 0.3d) + (b6.a * 0.7d);
+                                            }
+                                            b6.a = d;
+                                            b6.b = elapsedRealtime2;
+                                        } catch (Throwable th2) {
+                                            throw th2;
+                                        }
+                                    }
+                                }
+                                i7Var.g1 = elapsedRealtime;
+                                i7Var.i1 = 0L;
+                                i7Var.j1 = 0;
+                            }
+                        }
+                    }
+                    i7Var.h1 = elapsedRealtime;
+                }
+                i7Var.m(h7Var, tL_error);
+                Runnable runnable3 = h7Var.l;
+                if (runnable3 != null) {
+                    runnable3.run();
+                    return;
+                }
+                return;
         }
-    }
-
-    public /* synthetic */ r(Object obj, int i7, int i10, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.b = i7;
-        this.c = i10;
-    }
-
-    public /* synthetic */ r(l2.c0 c0Var, SurfaceTexture surfaceTexture, int i7, int i10) {
-        this.a = 2;
-        this.d = c0Var;
-        this.b = i7;
-        this.c = i10;
     }
 }

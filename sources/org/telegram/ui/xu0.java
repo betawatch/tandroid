@@ -1,33 +1,36 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xu0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zu0 b;
-
-    public /* synthetic */ xu0(zu0 zu0Var, int i7) {
-        this.a = i7;
-        this.b = zu0Var;
+public final class xu0 extends vv0 {
+    public xu0(Context context) {
+        super(context);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
-                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
-                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                zu0 zu0Var = this.b;
-                zu0Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new xu0(zu0Var, 1));
-                break;
-            default:
-                this.b.c.getMessagesController().R2(true);
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        fi.u2 u2Var;
+        super.dispatchDraw(canvas);
+        org.telegram.ui.Components.g5 g5Var = this.e;
+        if (g5Var == null || (u2Var = g5Var.k) == null) {
+            return;
         }
+        u2Var.P0(false);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!getImageReceiver().L()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+            return;
+        }
+        accessibilityNodeInfo.setText(org.telegram.messenger.hd.M0(2131754798, null));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.hd.M0(2131747817, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, org.telegram.messenger.hd.M0(2131754818, null)));
     }
 }

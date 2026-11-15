@@ -1,21 +1,12 @@
 package c8;
 
-import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
-import android.os.Bundle;
-import android.os.Parcelable;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class x9 {
-    public static Object a(Bundle bundle) {
-        if (Build.VERSION.SDK_INT >= 34) {
-            return g0.a.e(bundle);
-        }
-        Parcelable parcelable = bundle.getParcelable("RESULT_DATA");
-        if (Intent.class.isInstance(parcelable)) {
-            return parcelable;
-        }
-        return null;
+    public static n0.c a(Configuration configuration) {
+        return Build.VERSION.SDK_INT >= 24 ? new n0.c(new n0.f(androidx.emoji2.text.x.f(configuration))) : n0.c.a(configuration.locale);
     }
 }

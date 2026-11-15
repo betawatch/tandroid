@@ -22,7 +22,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h0 implements Handler.Callback, ServiceConnection {
     public final Context a;
@@ -38,7 +38,7 @@ public final class h0 implements Handler.Callback, ServiceConnection {
     }
 
     public final void a(g0 g0Var) {
-        boolean z9;
+        boolean z10;
         ArrayDeque arrayDeque = g0Var.d;
         ComponentName componentName = g0Var.a;
         if (Log.isLoggable("NotifManCompat", 3)) {
@@ -48,7 +48,7 @@ public final class h0 implements Handler.Callback, ServiceConnection {
             return;
         }
         if (g0Var.b) {
-            z9 = true;
+            z10 = true;
         } else {
             Intent component = new Intent("android.support.BIND_NOTIFICATION_SIDE_CHANNEL").setComponent(componentName);
             Context context = this.a;
@@ -60,9 +60,9 @@ public final class h0 implements Handler.Callback, ServiceConnection {
                 Log.w("NotifManCompat", "Unable to bind to listener " + componentName);
                 context.unbindService(this);
             }
-            z9 = g0Var.b;
+            z10 = g0Var.b;
         }
-        if (!z9 || g0Var.c == null) {
+        if (!z10 || g0Var.c == null) {
             b(g0Var);
             return;
         }

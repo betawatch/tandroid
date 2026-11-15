@@ -10,13 +10,13 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f0 implements Runnable {
     public final long a;
     public final PowerManager.WakeLock b;
     public final FirebaseMessaging c;
-    public final ThreadPoolExecutor d = new ThreadPoolExecutor(0, 1, 30, TimeUnit.SECONDS, new LinkedBlockingQueue(), new f5.r("firebase-iid-executor"));
+    public final ThreadPoolExecutor d = new ThreadPoolExecutor(0, 1, 30, TimeUnit.SECONDS, new LinkedBlockingQueue(), new f5.s("firebase-iid-executor"));
 
     public f0(FirebaseMessaging firebaseMessaging, long j3) {
         this.c = firebaseMessaging;
@@ -63,9 +63,9 @@ public final class f0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         PowerManager.WakeLock wakeLock = this.b;
-        b0 k10 = b0.k();
+        c0 q10 = c0.q();
         FirebaseMessaging firebaseMessaging = this.c;
-        if (k10.m(firebaseMessaging.b)) {
+        if (q10.w(firebaseMessaging.b)) {
             wakeLock.acquire();
         }
         try {
@@ -75,19 +75,19 @@ public final class f0 implements Runnable {
                 }
                 if (!firebaseMessaging.i.e()) {
                     firebaseMessaging.f(false);
-                    if (b0.k().m(firebaseMessaging.b)) {
+                    if (c0.q().w(firebaseMessaging.b)) {
                         wakeLock.release();
                         return;
                     }
                     return;
                 }
-                if (!b0.k().l(firebaseMessaging.b) || a()) {
+                if (!c0.q().v(firebaseMessaging.b) || a()) {
                     if (b()) {
                         firebaseMessaging.f(false);
                     } else {
                         firebaseMessaging.i(this.a);
                     }
-                    if (b0.k().m(firebaseMessaging.b)) {
+                    if (c0.q().w(firebaseMessaging.b)) {
                         wakeLock.release();
                         return;
                     }
@@ -96,18 +96,18 @@ public final class f0 implements Runnable {
                 e0 e0Var = new e0();
                 e0Var.c = this;
                 e0Var.a();
-                if (b0.k().m(firebaseMessaging.b)) {
+                if (c0.q().w(firebaseMessaging.b)) {
                     wakeLock.release();
                 }
             } catch (IOException e10) {
                 Log.e("FirebaseMessaging", "Topic sync or token retrieval failed on hard failure exceptions: " + e10.getMessage() + ". Won't retry the operation.");
                 firebaseMessaging.f(false);
-                if (b0.k().m(firebaseMessaging.b)) {
+                if (c0.q().w(firebaseMessaging.b)) {
                     wakeLock.release();
                 }
             }
         } catch (Throwable th2) {
-            if (b0.k().m(firebaseMessaging.b)) {
+            if (c0.q().w(firebaseMessaging.b)) {
                 wakeLock.release();
             }
             throw th2;

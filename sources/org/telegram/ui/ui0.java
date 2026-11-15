@@ -1,12 +1,12 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ui0 implements View.OnTouchListener {
+public final /* synthetic */ class ui0 implements org.telegram.ui.ActionBar.q1, ss, tj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ek0 b;
 
@@ -15,58 +15,63 @@ public final /* synthetic */ class ui0 implements View.OnTouchListener {
         this.b = ek0Var;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        int i7 = this.a;
-        int i10 = 2;
-        int i11 = 3;
-        ek0 ek0Var = this.b;
-        switch (i7) {
-            case 0:
-                if (ek0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        ts tsVar = new ts(null, false);
-                        tsVar.r = new su(28, ek0Var, view);
-                        ek0Var.presentFragment(tsVar);
-                    }
-                    break;
-                }
-                break;
-            case 1:
-                if (ek0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ek0Var.getParentActivity());
-                        String M0 = org.telegram.messenger.id.M0(2131747466, null);
-                        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                        u1Var.R = M0;
-                        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.id.M0(2131747508, null), org.telegram.messenger.id.M0(2131747569, null)}, new k4(ek0Var, i11));
-                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752589, null), null);
-                        ek0Var.showDialog(u1Var);
-                    }
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.tj0
+    public void d(String str, String str2) {
+        this.b.B1();
+    }
+
+    @Override // org.telegram.ui.ss
+    public void e(ps psVar) {
+        switch (this.a) {
             case 2:
-                if (ek0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        ts tsVar2 = new ts(null, false);
-                        tsVar2.r = new vi0(ek0Var, i10);
-                        ek0Var.presentFragment(tsVar2);
-                    }
-                    break;
-                }
+                ek0 ek0Var = this.b;
+                ek0Var.Z[5].setText(psVar.a);
+                ek0Var.s = psVar.d;
                 break;
             default:
-                if (ek0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        ts tsVar3 = new ts(null, false);
-                        tsVar3.r = new vi0(ek0Var, i11);
-                        ek0Var.presentFragment(tsVar3);
-                    }
-                    break;
+                ek0 ek0Var2 = this.b;
+                ek0Var2.Z[0].setText(psVar.a);
+                if (ek0Var2.V0.indexOf(psVar.a) != -1) {
+                    ek0Var2.a1 = true;
+                    String str = (String) ek0Var2.W0.get(psVar.a);
+                    ek0Var2.Z[1].setText(str);
+                    String str2 = (String) ek0Var2.Y0.get(str);
+                    ek0Var2.Z[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
+                    ek0Var2.a1 = false;
                 }
+                org.telegram.messenger.g0.i3(new ri0(ek0Var2, 3), 300L);
+                ek0Var2.Z[2].requestFocus();
+                EditTextBoldCursor editTextBoldCursor = ek0Var2.Z[2];
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
                 break;
         }
-        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                ek0 ek0Var = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    ek0Var.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            case 1:
+                this.b.finishFragment();
+                break;
+            case 2:
+            case 3:
+            default:
+                ek0.f0(this.b);
+                break;
+            case 4:
+                vf.c.t(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + org.telegram.messenger.m10.i(this.b.currentAccount).d());
+                break;
+        }
     }
 }

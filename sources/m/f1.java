@@ -3,16 +3,12 @@ package m;
 import android.text.StaticLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class f1 extends e1 {
-    @Override // m.e1, m.g1
-    public void a(StaticLayout.Builder builder, TextView textView) {
-        builder.setTextDirection(textView.getTextDirectionHeuristic());
-    }
+public abstract class f1 {
+    public abstract void a(StaticLayout.Builder builder, TextView textView);
 
-    @Override // m.g1
     public boolean b(TextView textView) {
-        return textView.isHorizontallyScrollable();
+        return ((Boolean) g1.e("getHorizontallyScrolling", textView, Boolean.FALSE)).booleanValue();
     }
 }

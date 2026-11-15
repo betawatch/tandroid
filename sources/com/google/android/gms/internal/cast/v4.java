@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.cast;
 
-import a8.y8;
+import a8.a9;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class v4 extends y8 {
+public final class v4 extends a9 {
     public static final Logger e = Logger.getLogger(v4.class.getName());
     public static final boolean f = o6.e;
     public q5 a;
@@ -113,15 +113,15 @@ public final class v4 extends y8 {
             int i10 = this.d;
             int i11 = i10 + 1;
             this.d = i11;
-            bArr[i10] = (byte) (i7 & qs.e4);
+            bArr[i10] = (byte) (i7 & ns.e4);
             int i12 = i10 + 2;
             this.d = i12;
-            bArr[i11] = (byte) ((i7 >> 8) & qs.e4);
+            bArr[i11] = (byte) ((i7 >> 8) & ns.e4);
             int i13 = i10 + 3;
             this.d = i13;
-            bArr[i12] = (byte) ((i7 >> 16) & qs.e4);
+            bArr[i12] = (byte) ((i7 >> 16) & ns.e4);
             this.d = i10 + 4;
-            bArr[i13] = (byte) ((i7 >> 24) & qs.e4);
+            bArr[i13] = (byte) ((i7 >> 24) & ns.e4);
         } catch (IndexOutOfBoundsException e10) {
             throw new androidx.datastore.preferences.protobuf.l(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
         }
@@ -138,27 +138,27 @@ public final class v4 extends y8 {
             int i7 = this.d;
             int i10 = i7 + 1;
             this.d = i10;
-            bArr[i7] = (byte) (((int) j3) & qs.e4);
+            bArr[i7] = (byte) (((int) j3) & ns.e4);
             int i11 = i7 + 2;
             this.d = i11;
-            bArr[i10] = (byte) (((int) (j3 >> 8)) & qs.e4);
+            bArr[i10] = (byte) (((int) (j3 >> 8)) & ns.e4);
             int i12 = i7 + 3;
             this.d = i12;
-            bArr[i11] = (byte) (((int) (j3 >> 16)) & qs.e4);
+            bArr[i11] = (byte) (((int) (j3 >> 16)) & ns.e4);
             int i13 = i7 + 4;
             this.d = i13;
-            bArr[i12] = (byte) (((int) (j3 >> 24)) & qs.e4);
+            bArr[i12] = (byte) (((int) (j3 >> 24)) & ns.e4);
             int i14 = i7 + 5;
             this.d = i14;
-            bArr[i13] = (byte) (((int) (j3 >> 32)) & qs.e4);
+            bArr[i13] = (byte) (((int) (j3 >> 32)) & ns.e4);
             int i15 = i7 + 6;
             this.d = i15;
-            bArr[i14] = (byte) (((int) (j3 >> 40)) & qs.e4);
+            bArr[i14] = (byte) (((int) (j3 >> 40)) & ns.e4);
             int i16 = i7 + 7;
             this.d = i16;
-            bArr[i15] = (byte) (((int) (j3 >> 48)) & qs.e4);
+            bArr[i15] = (byte) (((int) (j3 >> 48)) & ns.e4);
             this.d = i7 + 8;
-            bArr[i16] = (byte) (((int) (j3 >> 56)) & qs.e4);
+            bArr[i16] = (byte) (((int) (j3 >> 56)) & ns.e4);
         } catch (IndexOutOfBoundsException e10) {
             throw new androidx.datastore.preferences.protobuf.l(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
         }
@@ -217,7 +217,7 @@ public final class v4 extends y8 {
                 try {
                     int i12 = this.d;
                     this.d = i12 + 1;
-                    bArr[i12] = (byte) ((i7 & qs.L1) | 128);
+                    bArr[i12] = (byte) ((i7 & ns.L1) | 128);
                     i7 >>>= 7;
                 } catch (IndexOutOfBoundsException e10) {
                     throw new androidx.datastore.preferences.protobuf.l(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
@@ -233,15 +233,15 @@ public final class v4 extends y8 {
     }
 
     public final void l(long j3) {
-        boolean z9 = f;
+        boolean z10 = f;
         int i7 = this.c;
         byte[] bArr = this.b;
-        if (!z9 || i7 - this.d < 10) {
+        if (!z10 || i7 - this.d < 10) {
             while ((j3 & (-128)) != 0) {
                 try {
                     int i10 = this.d;
                     this.d = i10 + 1;
-                    bArr[i10] = (byte) ((((int) j3) & qs.L1) | 128);
+                    bArr[i10] = (byte) ((((int) j3) & ns.L1) | 128);
                     j3 >>>= 7;
                 } catch (IndexOutOfBoundsException e10) {
                     throw new androidx.datastore.preferences.protobuf.l(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(i7), 1), e10);
@@ -262,7 +262,7 @@ public final class v4 extends y8 {
             } else {
                 int i14 = this.d;
                 this.d = i14 + 1;
-                o6.c.d(bArr, o6.f + i14, (byte) ((i12 & qs.L1) | 128));
+                o6.c.d(bArr, o6.f + i14, (byte) ((i12 & ns.L1) | 128));
                 j3 >>>= 7;
             }
         }

@@ -1,6 +1,7 @@
 package be;
 
-import c8.u0;
+import aa.b0;
+import c8.v0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -9,10 +10,9 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import zd.b0;
 import zd.c2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class c implements g {
     public static final /* synthetic */ AtomicLongFieldUpdater b = AtomicLongFieldUpdater.newUpdater(c.class, "sendersAndCloseStatus$volatile");
@@ -38,7 +38,7 @@ public class c implements g {
     public c(int i7) {
         this.a = i7;
         if (i7 < 0) {
-            throw new IllegalArgumentException(jg.g.k(i7, "Invalid channel capacity: ", ", should be >=0").toString());
+            throw new IllegalArgumentException(i5.c.j(i7, "Invalid channel capacity: ", ", should be >=0").toString());
         }
         k kVar = e.a;
         this.bufferEnd$volatile = i7 != 0 ? i7 != Integer.MAX_VALUE ? i7 : Long.MAX_VALUE : 0L;
@@ -126,10 +126,10 @@ public class c implements g {
         mVar.resumeWith(af.b.b(cVar.o()));
     }
 
-    public static final int e(c cVar, k kVar, int i7, Object obj, long j3, Object obj2, boolean z9) {
+    public static final int e(c cVar, k kVar, int i7, Object obj, long j3, Object obj2, boolean z10) {
         kVar.n(i7, obj);
-        if (z9) {
-            return cVar.A(kVar, i7, obj, j3, obj2, z9);
+        if (z10) {
+            return cVar.A(kVar, i7, obj, j3, obj2, z10);
         }
         Object l10 = kVar.l(i7);
         if (l10 == null) {
@@ -151,14 +151,14 @@ public class c implements g {
                 kVar.o(i7, e.i);
                 return 0;
             }
-            com.google.android.gms.internal.clearcut.e eVar = e.k;
-            if (kVar.f.getAndSet((i7 * 2) + 1, eVar) == eVar) {
+            b0 b0Var = e.k;
+            if (kVar.f.getAndSet((i7 * 2) + 1, b0Var) == b0Var) {
                 return 5;
             }
             kVar.m(i7, true);
             return 5;
         }
-        return cVar.A(kVar, i7, obj, j3, obj2, z9);
+        return cVar.A(kVar, i7, obj, j3, obj2, z10);
     }
 
     public static void q(c cVar) {
@@ -175,7 +175,7 @@ public class c implements g {
         }
         zd.l lVar = (zd.l) obj;
         k kVar = e.a;
-        com.google.android.gms.internal.clearcut.e d2 = lVar.d(gd.k.a, null);
+        b0 d2 = lVar.d(gd.k.a, null);
         if (d2 == null) {
             return false;
         }
@@ -183,12 +183,12 @@ public class c implements g {
         return true;
     }
 
-    public final int A(k kVar, int i7, Object obj, long j3, Object obj2, boolean z9) {
+    public final int A(k kVar, int i7, Object obj, long j3, Object obj2, boolean z10) {
         while (true) {
             Object l10 = kVar.l(i7);
             if (l10 == null) {
-                if (!f(j3) || z9) {
-                    if (z9) {
+                if (!f(j3) || z10) {
+                    if (z10) {
                         if (kVar.k(i7, null, e.j)) {
                             kVar.i();
                             return 4;
@@ -206,8 +206,8 @@ public class c implements g {
                 }
             } else {
                 if (l10 != e.e) {
-                    com.google.android.gms.internal.clearcut.e eVar = e.k;
-                    if (l10 == eVar) {
+                    b0 b0Var = e.k;
+                    if (l10 == b0Var) {
                         kVar.n(i7, null);
                         return 5;
                     }
@@ -228,7 +228,7 @@ public class c implements g {
                         kVar.o(i7, e.i);
                         return 0;
                     }
-                    if (kVar.f.getAndSet((i7 * 2) + 1, eVar) != eVar) {
+                    if (kVar.f.getAndSet((i7 * 2) + 1, b0Var) != b0Var) {
                         kVar.m(i7, true);
                     }
                     return 5;
@@ -279,11 +279,11 @@ public class c implements g {
                     long j12 = atomicLongFieldUpdater.get(cVar);
                     long j13 = atomicLongFieldUpdater2.get(cVar);
                     long j14 = j13 & 4611686018427387903L;
-                    boolean z9 = (j13 & 4611686018427387904L) != 0;
+                    boolean z10 = (j13 & 4611686018427387904L) != 0;
                     if (j12 == j14 && j12 == atomicLongFieldUpdater.get(cVar)) {
                         break;
                     }
-                    if (z9) {
+                    if (z10) {
                         cVar = this;
                     } else {
                         cVar = this;
@@ -324,7 +324,7 @@ public class c implements g {
         k kVar;
         int i7;
         int i10;
-        boolean z9;
+        boolean z10;
         c cVar3 = this;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = f;
         k kVar2 = (k) atomicReferenceFieldUpdater.get(cVar3);
@@ -361,7 +361,7 @@ public class c implements g {
             if (e10 != 2) {
                 AtomicLongFieldUpdater atomicLongFieldUpdater2 = c;
                 if (e10 == 3) {
-                    zd.m l10 = b0.l(u0.b(cVar));
+                    zd.m l10 = zd.b0.l(v0.b(cVar));
                     Object obj3 = obj;
                     try {
                         int e11 = e(cVar3, kVar2, i12, obj3, j3, l10, false);
@@ -393,7 +393,7 @@ public class c implements g {
                                                 if (c11 != null) {
                                                     i7 = i13;
                                                     i10 = i14;
-                                                    z9 = r12;
+                                                    z10 = r12;
                                                     kVar = c11;
                                                 } else {
                                                     if (r12) {
@@ -407,9 +407,9 @@ public class c implements g {
                                                 kVar = kVar4;
                                                 i7 = i13;
                                                 i10 = i14;
-                                                z9 = r12;
+                                                z10 = r12;
                                             }
-                                            int e12 = e(cVar3, kVar, i10, obj3, j13, l10, z9);
+                                            int e12 = e(cVar3, kVar, i10, obj3, j13, l10, z10);
                                             Object obj4 = obj3;
                                             cVar2 = cVar3;
                                             k kVar5 = kVar;
@@ -439,7 +439,7 @@ public class c implements g {
                                                 } else if (j13 < atomicLongFieldUpdater4.get(cVar2)) {
                                                     kVar5.b();
                                                 }
-                                            } else if (z9) {
+                                            } else if (z10) {
                                                 kVar5.i();
                                             } else {
                                                 l10.a(kVar5, i15 + i7);
@@ -506,11 +506,11 @@ public class c implements g {
     @Override // be.u
     public Object b(Object obj) {
         AtomicLongFieldUpdater atomicLongFieldUpdater = b;
-        boolean z9 = false;
+        boolean z10 = false;
         long j3 = 1152921504606846975L;
-        boolean z10 = r(atomicLongFieldUpdater.get(this), false) ? false : !f(r1 & 1152921504606846975L);
+        boolean z11 = r(atomicLongFieldUpdater.get(this), false) ? false : !f(r1 & 1152921504606846975L);
         i iVar = j.b;
-        if (z10) {
+        if (z11) {
             return iVar;
         }
         Object obj2 = e.j;
@@ -518,7 +518,7 @@ public class c implements g {
         while (true) {
             long andIncrement = atomicLongFieldUpdater.getAndIncrement(this);
             long j10 = andIncrement & j3;
-            boolean r10 = r(andIncrement, z9);
+            boolean r10 = r(andIncrement, z10);
             int i7 = e.b;
             long j11 = i7;
             long j12 = j10 / j11;
@@ -531,7 +531,7 @@ public class c implements g {
                     if (r10) {
                         return new h(o());
                     }
-                    z9 = false;
+                    z10 = false;
                     j3 = 1152921504606846975L;
                 }
             }
@@ -568,7 +568,7 @@ public class c implements g {
             if (e10 == 5) {
                 kVar.b();
             }
-            z9 = false;
+            z10 = false;
             j3 = 1152921504606846975L;
         }
     }
@@ -593,11 +593,11 @@ public class c implements g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean g(Throwable th2, boolean z9) {
+    public final boolean g(Throwable th2, boolean z10) {
         c cVar;
-        com.google.android.gms.internal.clearcut.e eVar;
+        b0 b0Var;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
-        boolean z10;
+        boolean z11;
         long j3;
         long j10;
         long j11;
@@ -605,7 +605,7 @@ public class c implements g {
         long j12;
         long j13;
         AtomicLongFieldUpdater atomicLongFieldUpdater = b;
-        if (z9) {
+        if (z10) {
             do {
                 j13 = atomicLongFieldUpdater.get(this);
                 if (((int) (j13 >> 60)) == 0) {
@@ -613,19 +613,19 @@ public class c implements g {
                     cVar = this;
                 }
             } while (!atomicLongFieldUpdater.compareAndSet(cVar, j13, (j13 & 1152921504606846975L) + (1 << 60)));
-            eVar = e.s;
+            b0Var = e.s;
             while (true) {
                 atomicReferenceFieldUpdater = r;
-                if (!atomicReferenceFieldUpdater.compareAndSet(this, eVar, th2)) {
-                    z10 = true;
+                if (!atomicReferenceFieldUpdater.compareAndSet(this, b0Var, th2)) {
+                    z11 = true;
                     break;
                 }
-                if (atomicReferenceFieldUpdater.get(this) != eVar) {
-                    z10 = false;
+                if (atomicReferenceFieldUpdater.get(this) != b0Var) {
+                    z11 = false;
                     break;
                 }
             }
-            if (z9) {
+            if (z10) {
                 do {
                     j3 = atomicLongFieldUpdater.get(this);
                     int i7 = (int) (j3 >> 60);
@@ -646,12 +646,12 @@ public class c implements g {
                 } while (!atomicLongFieldUpdater.compareAndSet(cVar, j12, (3 << 60) + (j12 & 1152921504606846975L)));
             }
             i();
-            if (z10) {
+            if (z11) {
                 loop3: while (true) {
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = s;
                     obj = atomicReferenceFieldUpdater2.get(this);
-                    com.google.android.gms.internal.clearcut.e eVar2 = obj == null ? e.q : e.r;
-                    while (!atomicReferenceFieldUpdater2.compareAndSet(this, obj, eVar2)) {
+                    b0 b0Var2 = obj == null ? e.q : e.r;
+                    while (!atomicReferenceFieldUpdater2.compareAndSet(this, obj, b0Var2)) {
                         if (atomicReferenceFieldUpdater2.get(this) != obj) {
                             break;
                         }
@@ -660,24 +660,24 @@ public class c implements g {
                 if (obj != null) {
                     kotlin.jvm.internal.u.a(1, obj);
                     ((rd.l) obj).invoke(m());
-                    return z10;
+                    return z11;
                 }
             }
-            return z10;
+            return z11;
         }
         cVar = this;
-        eVar = e.s;
+        b0Var = e.s;
         while (true) {
             atomicReferenceFieldUpdater = r;
-            if (!atomicReferenceFieldUpdater.compareAndSet(this, eVar, th2)) {
+            if (!atomicReferenceFieldUpdater.compareAndSet(this, b0Var, th2)) {
             }
         }
-        if (z9) {
-        }
-        i();
         if (z10) {
         }
-        return z10;
+        i();
+        if (z11) {
+        }
+        return z11;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:54:0x008d, code lost:
@@ -704,14 +704,14 @@ public class c implements g {
             bVar.getClass();
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ee.b.a;
             Object obj3 = atomicReferenceFieldUpdater.get(bVar);
-            com.google.android.gms.internal.clearcut.e eVar = ee.a.a;
+            b0 b0Var = ee.a.a;
             obj = null;
-            if (obj3 == eVar) {
+            if (obj3 == b0Var) {
                 break;
             }
             ee.b bVar2 = (ee.b) obj3;
             if (bVar2 == null) {
-                while (!atomicReferenceFieldUpdater.compareAndSet(bVar, null, eVar)) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(bVar, null, b0Var)) {
                     if (atomicReferenceFieldUpdater.get(bVar) != null) {
                         break;
                     }
@@ -910,9 +910,9 @@ public class c implements g {
             }
             int i7 = (int) (andIncrement % e.b);
             Object l10 = kVar.l(i7);
-            boolean z9 = l10 instanceof c2;
+            boolean z10 = l10 instanceof c2;
             AtomicLongFieldUpdater atomicLongFieldUpdater2 = c;
-            if (!z9 || andIncrement < atomicLongFieldUpdater2.get(this) || !kVar.k(i7, l10, e.g)) {
+            if (!z10 || andIncrement < atomicLongFieldUpdater2.get(this) || !kVar.k(i7, l10, e.g)) {
                 while (true) {
                     Object l11 = kVar.l(i7);
                     if (!(l11 instanceof c2)) {
@@ -1059,13 +1059,13 @@ public class c implements g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean r(long j3, boolean z9) {
+    public final boolean r(long j3, boolean z10) {
         int i7 = (int) (j3 >> 60);
         if (i7 != 0 && i7 != 1) {
             AtomicLongFieldUpdater atomicLongFieldUpdater = c;
             if (i7 == 2) {
                 h(1152921504606846975L & j3);
-                if (z9) {
+                if (z10) {
                     while (true) {
                         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = h;
                         k kVar = (k) atomicReferenceFieldUpdater.get(this);
@@ -1115,7 +1115,7 @@ public class c implements g {
                 }
             } else {
                 if (i7 != 3) {
-                    throw new IllegalStateException(jg.g.j(i7, "unexpected close status: ").toString());
+                    throw new IllegalStateException(i5.c.i(i7, "unexpected close status: ").toString());
                 }
                 k h7 = h(1152921504606846975L & j3);
                 Object obj = null;
@@ -1142,11 +1142,11 @@ public class c implements g {
                                 }
                             } else if (l11 != e.e && l11 != null) {
                                 if (!(l11 instanceof c2) && !(l11 instanceof v)) {
-                                    com.google.android.gms.internal.clearcut.e eVar = e.g;
-                                    if (l11 == eVar || l11 == e.f) {
+                                    b0 b0Var = e.g;
+                                    if (l11 == b0Var || l11 == e.f) {
                                         break loop0;
                                     }
-                                    if (l11 != eVar) {
+                                    if (l11 != b0Var) {
                                         break;
                                     }
                                 } else {
@@ -1208,7 +1208,7 @@ public class c implements g {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final String toString() {
-        boolean z9;
+        boolean z10;
         String str;
         StringBuilder sb2 = new StringBuilder();
         int i7 = (int) (b.get(this) >> 60);
@@ -1220,7 +1220,7 @@ public class c implements g {
         sb2.append("capacity=" + this.a + ',');
         sb2.append("data=[");
         int i10 = 0;
-        boolean z10 = true;
+        boolean z11 = true;
         List c10 = hd.g.c(h.get(this), f.get(this), n.get(this));
         ArrayList arrayList = new ArrayList();
         for (Object obj : c10) {
@@ -1259,7 +1259,7 @@ public class c implements g {
                     break loop2;
                 }
                 Object l10 = kVar.l(i12);
-                boolean z11 = z10;
+                boolean z12 = z11;
                 Object obj2 = kVar.f.get(i12 * 2);
                 if (l10 instanceof zd.l) {
                     str = (j12 >= j11 || j12 < p10) ? (j12 >= p10 || j12 < j11) ? "cont" : "send" : "receive";
@@ -1272,7 +1272,7 @@ public class c implements g {
                         str = l10.toString();
                     }
                     i12++;
-                    z10 = z11;
+                    z11 = z12;
                 }
                 if (obj2 != null) {
                     sb2.append("(" + str + ',' + obj2 + "),");
@@ -1280,9 +1280,9 @@ public class c implements g {
                     sb2.append(str + ',');
                 }
                 i12++;
-                z10 = z11;
+                z11 = z12;
             }
-            z10 = z9;
+            z11 = z10;
             i10 = 0;
         }
         if (sb2.length() == 0) {
@@ -1338,16 +1338,16 @@ public class c implements g {
     }
 
     public final Object v(id.c cVar, Object obj) {
-        zd.m mVar = new zd.m(1, u0.b(cVar));
+        zd.m mVar = new zd.m(1, v0.b(cVar));
         mVar.s();
         mVar.resumeWith(af.b.b(o()));
         Object r10 = mVar.r();
         return r10 == jd.a.a ? r10 : gd.k.a;
     }
 
-    public final void w(c2 c2Var, boolean z9) {
+    public final void w(c2 c2Var, boolean z10) {
         if (c2Var instanceof zd.l) {
-            ((id.c) c2Var).resumeWith(af.b.b(z9 ? n() : o()));
+            ((id.c) c2Var).resumeWith(af.b.b(z10 ? n() : o()));
             return;
         }
         if (!(c2Var instanceof b)) {
@@ -1373,7 +1373,7 @@ public class c implements g {
             }
             zd.l lVar = (zd.l) obj;
             k kVar = e.a;
-            com.google.android.gms.internal.clearcut.e d2 = lVar.d(obj2, null);
+            b0 d2 = lVar.d(obj2, null);
             if (d2 == null) {
                 return false;
             }
@@ -1387,7 +1387,7 @@ public class c implements g {
         bVar.a = obj2;
         Boolean bool = Boolean.TRUE;
         k kVar2 = e.a;
-        com.google.android.gms.internal.clearcut.e d10 = mVar.d(bool, null);
+        b0 d10 = mVar.d(bool, null);
         if (d10 == null) {
             return false;
         }
@@ -1433,8 +1433,8 @@ public class c implements g {
                     }
                 }
             } else if (l11 != e.d) {
-                com.google.android.gms.internal.clearcut.e eVar = e.j;
-                if (l11 == eVar) {
+                b0 b0Var = e.j;
+                if (l11 == b0Var) {
                     return e.o;
                 }
                 if (l11 == e.h) {
@@ -1445,8 +1445,8 @@ public class c implements g {
                     return e.o;
                 }
                 if (l11 != e.g && kVar.k(i7, l11, e.f)) {
-                    boolean z9 = l11 instanceof v;
-                    if (z9) {
+                    boolean z10 = l11 instanceof v;
+                    if (z10) {
                         l11 = ((v) l11).a;
                     }
                     if (y(l11)) {
@@ -1456,9 +1456,9 @@ public class c implements g {
                         kVar.n(i7, null);
                         return obj3;
                     }
-                    kVar.o(i7, eVar);
+                    kVar.o(i7, b0Var);
                     kVar.i();
-                    if (z9) {
+                    if (z10) {
                         k();
                     }
                     return e.o;

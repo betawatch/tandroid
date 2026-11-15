@@ -2,21 +2,20 @@ package a4;
 
 import e2.t0;
 import e2.u;
-import f3.c0;
-import f3.j0;
+import f3.b0;
 import f3.o;
 import f3.p;
 import f3.q;
 import f3.s;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements o {
     public q a;
@@ -59,7 +58,7 @@ public final class e implements o {
                 long j11 = (jVar.i * j10) / 1000000;
                 jVar.e = j11;
                 h hVar = jVar.d;
-                String str = m0.a;
+                String str = l0.a;
                 hVar.v0(j11);
                 jVar.h = 2;
             }
@@ -69,7 +68,7 @@ public final class e implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:60:0x0178 A[RETURN] */
@@ -86,27 +85,27 @@ public final class e implements o {
             if (!g(pVar)) {
                 throw t0.a(null, "Failed to determine bitstream type");
             }
-            pVar.q();
+            pVar.l();
         }
         if (!this.c) {
-            j0 O1 = this.a.O1(0, 1);
-            this.a.U0();
+            f3.i0 d2 = this.a.d2(0, 1);
+            this.a.d1();
             j jVar = this.b;
             jVar.c = this.a;
-            jVar.b = O1;
+            jVar.b = d2;
             jVar.d(true);
             this.c = true;
         }
         j jVar2 = this.b;
         f fVar = jVar2.a;
         jVar2.b.getClass();
-        String str = m0.a;
+        String str = l0.a;
         int i10 = jVar2.h;
         int i11 = -1;
         int i12 = 3;
         if (i10 != 0) {
             if (i10 == 1) {
-                pVar.s((int) jVar2.f);
+                pVar.m((int) jVar2.f);
                 jVar2.h = 2;
                 return 0;
             }
@@ -116,19 +115,19 @@ public final class e implements o {
                 }
                 throw new IllegalStateException();
             }
-            long r02 = jVar2.d.r0(pVar);
-            if (r02 >= 0) {
-                sVar.a = r02;
+            long m0 = jVar2.d.m0(pVar);
+            if (m0 >= 0) {
+                sVar.a = m0;
                 return 1;
             }
-            if (r02 < -1) {
-                jVar2.a(-(r02 + 2));
+            if (m0 < -1) {
+                jVar2.a(-(m0 + 2));
             }
             if (!jVar2.l) {
-                c0 M = jVar2.d.M();
-                M.getClass();
-                jVar2.c.f(M);
-                jVar2.b.d(M.h());
+                b0 Y = jVar2.d.Y();
+                Y.getClass();
+                jVar2.c.f(Y);
+                jVar2.b.d(Y.h());
                 jVar2.l = true;
             }
             if (jVar2.k <= 0 && !fVar.b(pVar)) {
@@ -198,12 +197,12 @@ public final class e implements o {
     }
 
     public final boolean g(p pVar) {
-        boolean z9;
+        boolean z10;
         g gVar = new g();
         if (gVar.a(pVar, true) && (gVar.a & 2) == 2) {
             int min = Math.min(gVar.e, 8);
             x xVar = new x(min);
-            pVar.b(0, min, xVar.a);
+            pVar.c(0, min, xVar.a);
             xVar.N(0);
             if (xVar.a() >= 5 && xVar.A() == 127 && xVar.C() == 1179402563) {
                 this.b = new d();
@@ -211,11 +210,11 @@ public final class e implements o {
             }
             xVar.N(0);
             try {
-                z9 = f3.b.w(1, xVar, true);
+                z10 = f3.b.w(1, xVar, true);
             } catch (t0 unused) {
-                z9 = false;
+                z10 = false;
             }
-            if (z9) {
+            if (z10) {
                 this.b = new l();
             } else {
                 xVar.N(0);

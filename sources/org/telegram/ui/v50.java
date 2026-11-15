@@ -1,99 +1,124 @@
 package org.telegram.ui;
 
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
-import org.telegram.messenger.Intro;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.Timer;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class v50 implements TextureView.SurfaceTextureListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.ls b;
+public final class v50 extends org.telegram.ui.Components.tj0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public Timer f;
+    public boolean h;
+    public final /* synthetic */ y50 n;
 
-    public /* synthetic */ v50(org.telegram.messenger.ls lsVar, int i7) {
-        this.a = i7;
-        this.b = lsVar;
+    public v50(y50 y50Var, Context context) {
+        this.n = y50Var;
+        this.c = context;
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                x50 x50Var = (x50) this.b;
-                if (x50Var.I == null && surfaceTexture != null) {
-                    x50Var.I = new w50(x50Var, surfaceTexture);
-                    Intro.onSurfaceChanged(i7, i10, Math.min(i7 / 150.0f, i10 / 150.0f), 0);
-                    x50Var.I.postRunnable(new kz(this, 12));
-                    w50 w50Var = x50Var.I;
-                    w50Var.postRunnable(w50Var.x);
-                    break;
-                }
-                break;
+    @Override // v4.h0
+    public final void A(v4.e1 e1Var) {
+        View view = e1Var.a;
+        if (view instanceof org.telegram.ui.Cells.q4) {
+            ((org.telegram.ui.Cells.q4) view).a.getImageReceiver().c();
         }
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-            case 0:
-                x50 x50Var = (x50) this.b;
-                w50 w50Var = x50Var.I;
-                if (w50Var == null) {
-                    return true;
-                }
-                w50Var.postRunnable(new kz(w50Var, 14));
-                x50Var.I = null;
-                return true;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                TextureView textureView = photoViewer.B2;
-                if (textureView == null || !photoViewer.E3) {
-                    return true;
-                }
-                if (photoViewer.K3) {
-                    photoViewer.F3 = 2;
-                }
-                textureView.setSurfaceTexture(surfaceTexture);
-                photoViewer.B2.setVisibility(0);
-                photoViewer.E3 = false;
-                photoViewer.e0.invalidate();
-                return false;
+    @Override // org.telegram.ui.Components.tj0
+    public final boolean D(v4.e1 e1Var) {
+        return e1Var.f != 2;
+    }
+
+    public final void E(String str) {
+        try {
+            Timer timer = this.f;
+            if (timer != null) {
+                timer.cancel();
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+        if (str == null) {
+            this.d.clear();
+            this.e.clear();
+            f();
+        } else {
+            Timer timer2 = new Timer();
+            this.f = timer2;
+            timer2.schedule(new jg.q1(3, this, str), 200L, 300L);
         }
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                if (((x50) this.b).I != null) {
-                    Intro.onSurfaceChanged(i7, i10, Math.min(i7 / 150.0f, i10 / 150.0f), 0);
-                    break;
-                }
-                break;
+    @Override // v4.h0
+    public final int b() {
+        return this.h ? this.d.size() : this.n.w.size() + 2;
+    }
+
+    @Override // v4.h0
+    public final int d(int i7) {
+        if (this.h) {
+            return 0;
+        }
+        if (i7 == 0) {
+            return 1;
+        }
+        return i7 == 1 ? 2 : 0;
+    }
+
+    @Override // v4.h0
+    public final void f() {
+        super.f();
+        y50 y50Var = this.n;
+        v50 v50Var = y50Var.s;
+        if (v50Var == null || y50Var.y) {
+            return;
+        }
+        y50Var.r.setVisibility(v50Var.b() == 2 ? 0 : 4);
+    }
+
+    @Override // v4.h0
+    public final void t(v4.e1 e1Var, int i7) {
+        org.telegram.messenger.d5 d5Var;
+        CharSequence charSequence;
+        if (e1Var.f == 0) {
+            org.telegram.ui.Cells.q4 q4Var = (org.telegram.ui.Cells.q4) e1Var.a;
+            boolean z10 = this.h;
+            y50 y50Var = this.n;
+            if (z10) {
+                d5Var = (org.telegram.messenger.d5) this.d.get(i7);
+                charSequence = (CharSequence) this.e.get(i7);
+            } else {
+                d5Var = (org.telegram.messenger.d5) y50Var.w.get(i7 - 2);
+                charSequence = null;
+            }
+            q4Var.a(d5Var, charSequence);
+            boolean containsKey = y50Var.E.containsKey(d5Var.b);
+            org.telegram.ui.Components.fp fpVar = q4Var.e;
+            if (fpVar != null) {
+                fpVar.a(containsKey, false);
+            }
         }
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                if (photoViewer.F3 == 1) {
-                    photoViewer.q0(true);
-                    break;
-                }
-                break;
+    @Override // v4.h0
+    public final v4.e1 x(ViewGroup viewGroup, int i7) {
+        View view;
+        Context context = this.c;
+        if (i7 == 1) {
+            org.telegram.ui.Cells.l8 l8Var = new org.telegram.ui.Cells.l8(context);
+            int i10 = org.telegram.ui.ActionBar.j6.G6;
+            l8Var.g(i10, i10);
+            l8Var.u(org.telegram.messenger.hd.M0(2131745427, null), "", false, R.drawable.msg_shareout, false);
+            view = l8Var;
+        } else {
+            view = i7 == 2 ? new org.telegram.ui.Cells.x6(context, (org.telegram.ui.Cells.y0) null) : new org.telegram.ui.Cells.q4(context, true);
         }
-    }
-
-    private final void c(SurfaceTexture surfaceTexture) {
-    }
-
-    private final void a(SurfaceTexture surfaceTexture, int i7, int i10) {
-    }
-
-    private final void b(SurfaceTexture surfaceTexture, int i7, int i10) {
+        return new org.telegram.ui.Components.cj0(view);
     }
 }

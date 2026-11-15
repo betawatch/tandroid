@@ -8,22 +8,22 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class eu0 extends Drawable implements Drawable.Callback {
-    public final h6 a;
+    public final g6 a;
     public final Paint b;
 
     public eu0() {
-        h6 h6Var = new h6(false, true, true);
-        this.a = h6Var;
-        h6Var.setCallback(this);
-        h6Var.n(0.3f, 165L, wq.h);
-        h6Var.b = 1;
-        h6Var.x(org.telegram.messenger.g0.o());
-        h6Var.w(org.telegram.messenger.g0.L(10.0f));
+        g6 g6Var = new g6(false, true, true);
+        this.a = g6Var;
+        g6Var.setCallback(this);
+        g6Var.n(0.3f, 165L, er.h);
+        g6Var.b = 1;
+        g6Var.x(org.telegram.messenger.g0.o());
+        g6Var.w(org.telegram.messenger.g0.L(10.0f));
         Paint.Style style = Paint.Style.FILL_AND_STROKE;
-        TextPaint textPaint = h6Var.a;
+        TextPaint textPaint = g6Var.a;
         textPaint.setStyle(style);
         textPaint.setStrokeWidth(org.telegram.messenger.g0.N(0.6f));
         Paint paint = new Paint(1);
@@ -41,30 +41,30 @@ public final class eu0 extends Drawable implements Drawable.Callback {
         return "" + round;
     }
 
-    public final void b(boolean z9, float f10) {
+    public final void b(boolean z10, float f10) {
         String str = a(f10) + "X";
-        h6 h6Var = this.a;
-        if (z9 && TextUtils.equals(h6Var.i, str)) {
+        g6 g6Var = this.a;
+        if (z10 && TextUtils.equals(g6Var.i, str)) {
             return;
         }
-        h6Var.a();
-        h6Var.t(str, z9, true);
+        g6Var.a();
+        g6Var.t(str, z10, true);
         invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        h6 h6Var = this.a;
+        g6 g6Var = this.a;
         Paint paint = this.b;
         if (paint != null) {
             paint.setStrokeWidth(org.telegram.messenger.g0.N(1.6f));
             RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(((org.telegram.messenger.g0.L(24.0f) - h6Var.c()) / 2.0f) - org.telegram.messenger.g0.N(3.0f), org.telegram.messenger.g0.N(0.2f) + ((org.telegram.messenger.g0.L(24.0f) - h6Var.e) / 2.0f), org.telegram.messenger.g0.N(3.0f) + ((h6Var.c() + org.telegram.messenger.g0.L(24.0f)) / 2.0f), (org.telegram.messenger.g0.L(24.0f) + h6Var.e) / 2.0f);
+            rectF.set(((org.telegram.messenger.g0.L(24.0f) - g6Var.c()) / 2.0f) - org.telegram.messenger.g0.N(3.0f), org.telegram.messenger.g0.N(0.2f) + ((org.telegram.messenger.g0.L(24.0f) - g6Var.e) / 2.0f), org.telegram.messenger.g0.N(3.0f) + ((g6Var.c() + org.telegram.messenger.g0.L(24.0f)) / 2.0f), (org.telegram.messenger.g0.L(24.0f) + g6Var.e) / 2.0f);
             canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(3.0f), org.telegram.messenger.g0.N(3.0f), paint);
         }
-        h6Var.a.setStrokeWidth(org.telegram.messenger.g0.N(0.3f));
-        h6Var.setBounds(0, (int) ((org.telegram.messenger.g0.L(24.0f) - h6Var.e) / 2.0f), org.telegram.messenger.g0.L(24.0f), (int) ((org.telegram.messenger.g0.L(24.0f) + h6Var.e) / 2.0f));
-        h6Var.draw(canvas);
+        g6Var.a.setStrokeWidth(org.telegram.messenger.g0.N(0.3f));
+        g6Var.setBounds(0, (int) ((org.telegram.messenger.g0.L(24.0f) - g6Var.e) / 2.0f), org.telegram.messenger.g0.L(24.0f), (int) ((org.telegram.messenger.g0.L(24.0f) + g6Var.e) / 2.0f));
+        g6Var.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -94,7 +94,7 @@ public final class eu0 extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i7) {
-        this.a.B = i7;
+        this.a.C = i7;
         Paint paint = this.b;
         if (paint != null) {
             paint.setAlpha(i7);

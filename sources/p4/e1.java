@@ -1,17 +1,16 @@
 package p4;
 
-import a8.ia;
+import a8.ja;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Parcelable;
 import e2.q1;
 import e2.s1;
 import e2.x1;
-import h9.t1;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e1 {
     public static final e1 H;
@@ -72,7 +71,7 @@ public final class e1 {
     public final float o;
     public final int p;
     public final e2.e q;
-    public final g2.d r;
+    public final g2.c r;
     public final e2.o s;
     public final int t;
     public final boolean u;
@@ -89,8 +88,8 @@ public final class e1 {
         x1 x1Var = x1.d;
         e2.h1 h1Var = e2.l1.a;
         e2.o0 o0Var = e2.o0.L;
-        H = new e1(null, 0, l1Var, b1Var, b1Var, 0, w0Var, 0, false, x1Var, h1Var, 0, o0Var, 1.0f, 1.0f, e2.e.i, 0, g2.d.d, e2.o.c, 0, false, false, 1, 0, 1, false, false, o0Var, 5000L, 15000L, 3000L, s1.b, q1.J);
-        String str = h2.m0.a;
+        H = new e1(null, 0, l1Var, b1Var, b1Var, 0, w0Var, 0, false, x1Var, h1Var, 0, o0Var, 1.0f, 1.0f, e2.e.i, 0, g2.c.d, e2.o.c, 0, false, false, 1, 0, 1, false, false, o0Var, 5000L, 15000L, 3000L, s1.b, q1.J);
+        String str = h2.l0.a;
         I = Integer.toString(1, 36);
         J = Integer.toString(2, 36);
         K = Integer.toString(3, 36);
@@ -127,7 +126,7 @@ public final class e1 {
         o0 = Integer.toString(34, 36);
     }
 
-    public e1(e2.v0 v0Var, int i7, l1 l1Var, e2.b1 b1Var, e2.b1 b1Var2, int i10, e2.w0 w0Var, int i11, boolean z9, x1 x1Var, e2.l1 l1Var2, int i12, e2.o0 o0Var, float f10, float f11, e2.e eVar, int i13, g2.d dVar, e2.o oVar, int i14, boolean z10, boolean z11, int i15, int i16, int i17, boolean z12, boolean z13, e2.o0 o0Var2, long j3, long j10, long j11, s1 s1Var, q1 q1Var) {
+    public e1(e2.v0 v0Var, int i7, l1 l1Var, e2.b1 b1Var, e2.b1 b1Var2, int i10, e2.w0 w0Var, int i11, boolean z10, x1 x1Var, e2.l1 l1Var2, int i12, e2.o0 o0Var, float f10, float f11, e2.e eVar, int i13, g2.c cVar, e2.o oVar, int i14, boolean z11, boolean z12, int i15, int i16, int i17, boolean z13, boolean z14, e2.o0 o0Var2, long j3, long j10, long j11, s1 s1Var, q1 q1Var) {
         this.a = v0Var;
         this.b = i7;
         this.c = l1Var;
@@ -136,7 +135,7 @@ public final class e1 {
         this.f = i10;
         this.g = w0Var;
         this.h = i11;
-        this.i = z9;
+        this.i = z10;
         this.l = x1Var;
         this.j = l1Var2;
         this.k = i12;
@@ -145,16 +144,16 @@ public final class e1 {
         this.o = f11;
         this.p = i13;
         this.q = eVar;
-        this.r = dVar;
+        this.r = cVar;
         this.s = oVar;
         this.t = i14;
-        this.u = z10;
-        this.v = z11;
+        this.u = z11;
+        this.v = z12;
         this.w = i15;
         this.z = i16;
         this.A = i17;
-        this.x = z12;
-        this.y = z13;
+        this.x = z13;
+        this.y = z14;
         this.B = o0Var2;
         this.C = j3;
         this.D = j10;
@@ -167,22 +166,22 @@ public final class e1 {
         e2.l1 l1Var = this.j;
         boolean p10 = l1Var.p();
         l1 l1Var2 = this.c;
-        ia.p(p10 || l1Var2.a.b < l1Var.o());
+        ja.p(p10 || l1Var2.a.b < l1Var.o());
         return new e1(this.a, this.b, l1Var2, this.d, this.e, this.f, this.g, this.h, this.i, this.l, l1Var, this.k, this.m, this.n, this.o, this.q, this.p, this.r, this.s, this.t, this.u, this.v, this.w, this.z, this.A, this.x, this.y, this.B, this.C, this.D, this.E, s1Var, this.G);
     }
 
-    public final e1 b(int i7, int i10, boolean z9) {
+    public final e1 b(int i7, int i10, boolean z10) {
         int i11 = this.A;
-        boolean z10 = i11 == 3 && z9 && i10 == 0;
+        boolean z11 = i11 == 3 && z10 && i10 == 0;
         e2.l1 l1Var = this.j;
         boolean p10 = l1Var.p();
         l1 l1Var2 = this.c;
-        ia.p(p10 || l1Var2.a.b < l1Var.o());
-        return new e1(this.a, this.b, l1Var2, this.d, this.e, this.f, this.g, this.h, this.i, this.l, l1Var, this.k, this.m, this.n, this.o, this.q, this.p, this.r, this.s, this.t, this.u, z9, i7, i10, i11, z10, this.y, this.B, this.C, this.D, this.E, this.F, this.G);
+        ja.p(p10 || l1Var2.a.b < l1Var.o());
+        return new e1(this.a, this.b, l1Var2, this.d, this.e, this.f, this.g, this.h, this.i, this.l, l1Var, this.k, this.m, this.n, this.o, this.q, this.p, this.r, this.s, this.t, this.u, z10, i7, i10, i11, z11, this.y, this.B, this.C, this.D, this.E, this.F, this.G);
     }
 
     public final e1 c(e2.l1 l1Var, l1 l1Var2, int i7) {
-        ia.p(l1Var.p() || l1Var2.a.b < l1Var.o());
+        ja.p(l1Var.p() || l1Var2.a.b < l1Var.o());
         return new e1(this.a, this.b, l1Var2, this.d, this.e, this.f, this.g, this.h, this.i, this.l, l1Var, i7, this.m, this.n, this.o, this.q, this.p, this.r, this.s, this.t, this.u, this.v, this.w, this.z, this.A, this.x, this.y, this.B, this.C, this.D, this.E, this.F, this.G);
     }
 
@@ -190,15 +189,15 @@ public final class e1 {
         e2.l1 l1Var = this.j;
         boolean p10 = l1Var.p();
         l1 l1Var2 = this.c;
-        ia.p(p10 || l1Var2.a.b < l1Var.o());
+        ja.p(p10 || l1Var2.a.b < l1Var.o());
         return new e1(this.a, this.b, l1Var2, this.d, this.e, this.f, this.g, this.h, this.i, this.l, l1Var, this.k, this.m, this.n, this.o, this.q, this.p, this.r, this.s, this.t, this.u, this.v, this.w, this.z, this.A, this.x, this.y, this.B, this.C, this.D, this.E, this.F, q1Var);
     }
 
-    public final e1 e(e2.y0 y0Var, boolean z9, boolean z10) {
+    public final e1 e(e2.y0 y0Var, boolean z10, boolean z11) {
         float f10;
         float f11;
         int i7;
-        boolean z11;
+        boolean z12;
         int i10;
         boolean a10 = y0Var.a(16);
         boolean a11 = y0Var.a(17);
@@ -206,7 +205,7 @@ public final class e1 {
         l1 a12 = l1Var.a(a10, a11);
         e2.b1 b10 = this.d.b(a10, a11);
         e2.b1 b11 = this.e.b(a10, a11);
-        boolean z12 = true;
+        boolean z13 = true;
         e2.l1 l1Var2 = this.j;
         if (!a11 && a10 && !l1Var2.p()) {
             int i11 = l1Var.a.b;
@@ -228,7 +227,7 @@ public final class e1 {
                 m10.n = 0;
                 l1Var2 = new e2.j1(h9.i0.u(m10), p10.f(), new int[]{0});
             }
-        } else if (z9 || !a11) {
+        } else if (z10 || !a11) {
             l1Var2 = e2.l1.a;
         }
         e2.l1 l1Var3 = l1Var2;
@@ -241,27 +240,27 @@ public final class e1 {
             f11 = 1.0f;
         }
         e2.e eVar = !y0Var.a(21) ? e2.e.i : this.q;
-        g2.d dVar = !y0Var.a(28) ? g2.d.d : this.r;
+        g2.c cVar = !y0Var.a(28) ? g2.c.d : this.r;
         if (y0Var.a(23)) {
             i7 = this.t;
-            z11 = this.u;
+            z12 = this.u;
         } else {
             i7 = 0;
-            z11 = false;
-        }
-        e2.o0 o0Var2 = !y0Var.a(18) ? e2.o0.L : this.B;
-        s1 s1Var = (z10 || !y0Var.a(30)) ? s1.b : this.F;
-        if (!l1Var3.p() && a12.a.b >= l1Var3.o()) {
             z12 = false;
         }
-        ia.p(z12);
-        return new e1(this.a, this.b, a12, b10, b11, this.f, this.g, this.h, this.i, this.l, l1Var3, this.k, o0Var, f10, f11, eVar, this.p, dVar, this.s, i7, z11, this.v, this.w, this.z, this.A, this.x, this.y, o0Var2, this.C, this.D, this.E, s1Var, this.G);
+        e2.o0 o0Var2 = !y0Var.a(18) ? e2.o0.L : this.B;
+        s1 s1Var = (z11 || !y0Var.a(30)) ? s1.b : this.F;
+        if (!l1Var3.p() && a12.a.b >= l1Var3.o()) {
+            z13 = false;
+        }
+        ja.p(z13);
+        return new e1(this.a, this.b, a12, b10, b11, this.f, this.g, this.h, this.i, this.l, l1Var3, this.k, o0Var, f10, f11, eVar, this.p, cVar, this.s, i7, z12, this.v, this.w, this.z, this.A, this.x, this.y, o0Var2, this.C, this.D, this.E, s1Var, this.G);
     }
 
     public final Bundle f(int i7) {
         Bundle bundle;
         int i10;
-        boolean z9;
+        boolean z10;
         Bundle bundle2;
         ArrayList arrayList;
         int i11;
@@ -316,13 +315,13 @@ public final class e1 {
         if (i16 != 0) {
             bundle3.putInt(J, i16);
         }
-        boolean z10 = this.i;
-        if (z10) {
-            bundle3.putBoolean(K, z10);
+        boolean z11 = this.i;
+        if (z11) {
+            bundle3.putBoolean(K, z11);
         }
         e2.h1 h1Var = e2.l1.a;
         e2.l1 l1Var2 = this.j;
-        boolean z11 = false;
+        boolean z12 = false;
         long j3 = 0;
         if (l1Var2.equals(h1Var)) {
             bundle = bundle3;
@@ -349,21 +348,21 @@ public final class e1 {
                 if (j12 != -9223372036854775807L) {
                     bundle6.putLong(e2.k1.v, j12);
                 }
-                boolean z12 = m10.h;
-                if (z12) {
-                    bundle6.putBoolean(e2.k1.w, z12);
-                }
-                boolean z13 = m10.i;
+                boolean z13 = m10.h;
                 if (z13) {
-                    bundle6.putBoolean(e2.k1.x, z13);
+                    bundle6.putBoolean(e2.k1.w, z13);
+                }
+                boolean z14 = m10.i;
+                if (z14) {
+                    bundle6.putBoolean(e2.k1.x, z14);
                 }
                 e2.f0 f0Var = m10.j;
                 if (f0Var != null) {
                     bundle6.putBundle(e2.k1.y, f0Var.b());
                 }
-                boolean z14 = m10.k;
-                if (z14) {
-                    bundle6.putBoolean(e2.k1.z, z14);
+                boolean z15 = m10.k;
+                if (z15) {
+                    bundle6.putBoolean(e2.k1.z, z15);
                 }
                 long j13 = m10.l;
                 if (j13 != 0) {
@@ -392,7 +391,7 @@ public final class e1 {
             e2.i1 i1Var2 = new e2.i1();
             int i20 = 0;
             while (i20 < h) {
-                e2.i1 f10 = l1Var2.f(i20, i1Var2, z11);
+                e2.i1 f10 = l1Var2.f(i20, i1Var2, z12);
                 f10.getClass();
                 Bundle bundle7 = new Bundle();
                 int i21 = f10.c;
@@ -408,9 +407,9 @@ public final class e1 {
                 if (j18 != j16) {
                     bundle7.putLong(e2.i1.j, j18);
                 }
-                boolean z15 = f10.f;
-                if (z15) {
-                    bundle7.putBoolean(e2.i1.k, z15);
+                boolean z16 = f10.f;
+                if (z16) {
+                    bundle7.putBoolean(e2.i1.k, z16);
                 }
                 if (f10.g.equals(e2.c.c)) {
                     bundle2 = bundle3;
@@ -498,26 +497,26 @@ public final class e1 {
                 i1Var2 = i1Var;
                 bundle3 = bundle2;
                 arrayList2 = arrayList;
-                z11 = false;
+                z12 = false;
                 j3 = 0;
             }
             Bundle bundle11 = bundle3;
             ArrayList arrayList8 = arrayList2;
             int[] iArr = new int[o4];
             if (o4 > 0) {
-                z9 = true;
+                z10 = true;
                 i10 = 0;
                 iArr[0] = l1Var2.a(true);
             } else {
                 i10 = 0;
-                z9 = true;
+                z10 = true;
             }
-            int i28 = z9 ? 1 : 0;
+            int i28 = z10 ? 1 : 0;
             while (i28 < o4) {
-                iArr[i28] = l1Var2.e(iArr[i28 - 1], i10, z9);
+                iArr[i28] = l1Var2.e(iArr[i28 - 1], i10, z10);
                 i28++;
                 i10 = 0;
-                z9 = true;
+                z10 = true;
             }
             Bundle bundle12 = new Bundle();
             bundle12.putBinder(e2.l1.b, new e2.g(arrayList8));
@@ -589,29 +588,29 @@ public final class e1 {
             if (i37 != 0) {
                 bundle14.putInt(e2.e.n, i37);
             }
-            boolean z16 = eVar2.f;
-            if (z16) {
-                bundle14.putBoolean(e2.e.o, z16);
+            boolean z17 = eVar2.f;
+            if (z17) {
+                bundle14.putBoolean(e2.e.o, z17);
             }
-            boolean z17 = eVar2.g;
-            if (!z17) {
-                bundle14.putBoolean(e2.e.p, z17);
+            boolean z18 = eVar2.g;
+            if (!z18) {
+                bundle14.putBoolean(e2.e.p, z18);
             }
             bundle.putBundle(Q, bundle14);
         }
-        g2.d dVar = g2.d.d;
-        g2.d dVar2 = this.r;
-        if (!dVar2.equals(dVar)) {
+        g2.c cVar2 = g2.c.d;
+        g2.c cVar3 = this.r;
+        if (!cVar3.equals(cVar2)) {
             Bundle bundle15 = new Bundle();
-            String str4 = g2.d.e;
-            t1 t1Var = dVar2.a;
+            String str4 = g2.c.e;
+            h9.s1 s1Var = cVar3.a;
             h9.f0 p10 = h9.i0.p();
-            for (int i38 = 0; i38 < t1Var.d; i38++) {
-                if (((g2.b) t1Var.get(i38)).d == null) {
-                    p10.c((g2.b) t1Var.get(i38));
+            for (int i38 = 0; i38 < s1Var.d; i38++) {
+                if (((g2.b) s1Var.get(i38)).d == null) {
+                    p10.c((g2.b) s1Var.get(i38));
                 }
             }
-            t1 f14 = p10.f();
+            h9.s1 f14 = p10.f();
             ArrayList<? extends Parcelable> arrayList9 = new ArrayList<>(f14.d);
             h9.g0 listIterator = f14.listIterator(0);
             while (listIterator.hasNext()) {
@@ -624,7 +623,7 @@ public final class e1 {
                 arrayList9.add(a10);
             }
             bundle15.putParcelableArrayList(str4, arrayList9);
-            bundle15.putLong(g2.d.f, dVar2.b);
+            bundle15.putLong(g2.c.f, cVar3.b);
             bundle.putBundle(g0, bundle15);
         }
         e2.o oVar = e2.o.c;
@@ -645,13 +644,13 @@ public final class e1 {
         if (i41 != 0) {
             bundle.putInt(S, i41);
         }
-        boolean z18 = this.u;
-        if (z18) {
-            bundle.putBoolean(T, z18);
-        }
-        boolean z19 = this.v;
+        boolean z19 = this.u;
         if (z19) {
-            bundle.putBoolean(U, z19);
+            bundle.putBoolean(T, z19);
+        }
+        boolean z20 = this.v;
+        if (z20) {
+            bundle.putBoolean(U, z20);
         }
         int i42 = this.w;
         if (i42 != 1) {
@@ -665,13 +664,13 @@ public final class e1 {
         if (i44 != 1) {
             bundle.putInt(X, i44);
         }
-        boolean z20 = this.x;
-        if (z20) {
-            bundle.putBoolean(Y, z20);
-        }
-        boolean z21 = this.y;
+        boolean z21 = this.x;
         if (z21) {
-            bundle.putBoolean(Z, z21);
+            bundle.putBoolean(Y, z21);
+        }
+        boolean z22 = this.y;
+        if (z22) {
+            bundle.putBoolean(Z, z22);
         }
         e2.o0 o0Var3 = e2.o0.L;
         e2.o0 o0Var4 = this.B;
@@ -693,11 +692,11 @@ public final class e1 {
         if (j24 != j23) {
             bundle.putLong(k0, j24);
         }
-        s1 s1Var = s1.b;
-        s1 s1Var2 = this.F;
-        if (!s1Var2.equals(s1Var)) {
+        s1 s1Var2 = s1.b;
+        s1 s1Var3 = this.F;
+        if (!s1Var3.equals(s1Var2)) {
             Bundle bundle17 = new Bundle();
-            bundle17.putParcelableArrayList(s1.c, h2.e.h(s1Var2.a, new di.a1(10)));
+            bundle17.putParcelableArrayList(s1.c, h2.e.h(s1Var3.a, new di.o(13)));
             bundle.putBundle(m0, bundle17);
         }
         q1 q1Var = q1.J;

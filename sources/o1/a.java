@@ -2,12 +2,12 @@ package o1;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import c8.c1;
+import c8.e1;
 import com.google.android.gms.internal.play_billing.s0;
 import kotlin.jvm.internal.j;
 import kotlin.jvm.internal.k;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends k implements rd.a {
     public final /* synthetic */ int b;
@@ -34,7 +34,7 @@ public final class a extends k implements rd.a {
                 j.d(applicationContext, "applicationContext");
                 String name = (String) ((s0) this.d).a;
                 j.e(name, "name");
-                return c1.a(applicationContext, name.concat(".preferences_pb"));
+                return e1.a(applicationContext, name.concat(".preferences_pb"));
         }
     }
 }

@@ -1,40 +1,49 @@
 package hi;
 
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class k2 extends org.telegram.ui.ActionBar.k {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class k2 extends View {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a3 b;
+    public final /* synthetic */ n2 b;
 
-    public /* synthetic */ k2(a3 a3Var, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k2(n2 n2Var, Context context, int i7) {
+        super(context);
         this.a = i7;
-        this.b = a3Var;
+        this.b = n2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i7) {
-        int i10 = this.a;
-        a3 a3Var = this.b;
-        switch (i10) {
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
             case 0:
-                if (i7 != -1) {
-                    if (i7 == R.id.menu_collapse_bot) {
-                        a3Var.y0 = true;
-                        a3Var.o(true);
-                        break;
-                    }
-                } else if (!a3Var.D.D()) {
-                    a3Var.v();
-                    break;
-                }
+                n2 n2Var = this.b;
+                n2Var.q.reset();
+                n2Var.b(canvas, true);
                 break;
             default:
-                if (i7 == -1) {
-                    a3Var.v();
-                    break;
-                }
+                n2 n2Var2 = this.b;
+                n2Var2.q.reset();
+                n2Var2.q.postTranslate(-getX(), (-getY()) + org.telegram.messenger.g0.m);
+                n2Var2.q.postScale(1.0f / getScaleX(), 1.0f / getScaleY(), getPivotX(), getPivotY());
+                n2Var2.b(canvas, false);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i7, i10);
+                this.b.g();
+                break;
+            default:
+                super.onMeasure(i7, i10);
                 break;
         }
     }

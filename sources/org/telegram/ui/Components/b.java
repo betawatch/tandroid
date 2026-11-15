@@ -1,28 +1,28 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements org.telegram.messenger.pc {
+public final /* synthetic */ class b implements org.telegram.messenger.oc {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f0 b;
+    public final /* synthetic */ d0 b;
 
-    public /* synthetic */ b(f0 f0Var, int i7) {
+    public /* synthetic */ b(d0 d0Var, int i7) {
         this.a = i7;
-        this.b = f0Var;
+        this.b = d0Var;
     }
 
-    @Override // org.telegram.messenger.pc
+    @Override // org.telegram.messenger.oc
     public final void a(String str) {
         switch (this.a) {
             case 0:
-                f0 f0Var = this.b;
-                f0Var.m2 = str;
-                f0Var.J2.O(true);
+                d0 d0Var = this.b;
+                d0Var.n2 = str;
+                d0Var.K2.O(true);
                 break;
             default:
-                f0 f0Var2 = this.b;
-                f0Var2.m2 = str;
-                f0Var2.J2.O(true);
+                d0 d0Var2 = this.b;
+                d0Var2.n2 = str;
+                d0Var2.K2.O(true);
                 break;
         }
     }

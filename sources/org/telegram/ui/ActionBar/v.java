@@ -1,46 +1,78 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.logging.Level;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class v implements Runnable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ f2 b;
-    public final /* synthetic */ f2 c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ ActionBarLayout e;
+    public final /* synthetic */ int a;
+    public boolean b;
+    public Object c;
+    public final /* synthetic */ Object d;
 
-    public v(ActionBarLayout actionBarLayout, boolean z9, f2 f2Var, f2 f2Var2, boolean z10) {
-        this.e = actionBarLayout;
-        this.a = z9;
-        this.b = f2Var;
-        this.c = f2Var2;
-        this.d = z10;
+    public /* synthetic */ v(Object obj, Object obj2, boolean z10, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.c = obj2;
+        this.b = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        ActionBarLayout actionBarLayout = this.e;
-        if (actionBarLayout.d != this) {
-            return;
+        switch (this.a) {
+            case 0:
+                ActionBarLayout actionBarLayout = (ActionBarLayout) this.d;
+                if (actionBarLayout.e == this) {
+                    actionBarLayout.e = null;
+                    ((e2) this.c).onTransitionAnimationStart(true, false);
+                    actionBarLayout.h0(true, true, this.b);
+                    break;
+                }
+                break;
+            case 1:
+                pi.k kVar = (pi.k) this.d;
+                ArrayList arrayList = (ArrayList) this.c;
+                int size = arrayList.size();
+                int i7 = 0;
+                while (i7 < size) {
+                    Object obj = arrayList.get(i7);
+                    i7++;
+                    v4.j jVar = (v4.j) obj;
+                    kVar.T(jVar.a, jVar, this.b);
+                }
+                arrayList.clear();
+                kVar.u.remove(arrayList);
+                break;
+            default:
+                try {
+                    ((yc.i) this.d).a.bind(new InetSocketAddress(61578));
+                    this.b = true;
+                    do {
+                        try {
+                            Socket accept = ((yc.i) this.d).a.accept();
+                            accept.setSoTimeout(5000);
+                            InputStream inputStream = accept.getInputStream();
+                            yc.i iVar = (yc.i) this.d;
+                            iVar.c.s(new yc.a(iVar, inputStream, accept));
+                        } catch (IOException e10) {
+                            yc.i.d.log(Level.FINE, "Communication with the client broken", (Throwable) e10);
+                        }
+                    } while (!((yc.i) this.d).a.isClosed());
+                } catch (IOException e11) {
+                    this.c = e11;
+                    return;
+                }
         }
-        actionBarLayout.d = null;
-        if (this.a) {
-            f2 f2Var = this.b;
-            if (f2Var != null) {
-                f2Var.onTransitionAnimationStart(false, false);
-            }
-            this.c.onTransitionAnimationStart(true, false);
-            actionBarLayout.h0(true, true, this.d);
-            return;
-        }
-        Runnable runnable = actionBarLayout.e;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-            if (actionBarLayout.X0) {
-                actionBarLayout.e.run();
-            } else {
-                org.telegram.messenger.g0.i3(actionBarLayout.e, 200L);
-            }
-        }
+    }
+
+    public v(yc.i iVar) {
+        this.a = 2;
+        this.d = iVar;
+        this.b = false;
     }
 }

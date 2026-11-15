@@ -1,118 +1,114 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yf implements org.telegram.messenger.v10 {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class yf implements mr0, sw {
+    public final /* synthetic */ boolean a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ yf(Object obj, int i7, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.c = obj;
+    public /* synthetic */ yf(an anVar, boolean z10, org.telegram.messenger.gj gjVar, int i7) {
+        this.c = anVar;
+        this.a = z10;
+        this.d = gjVar;
         this.b = i7;
-        this.d = tLObject;
     }
 
-    @Override // org.telegram.messenger.v10
-    public final void a(Object obj, Object obj2) {
-        TLRPC.Updates updates;
-        int i7 = this.a;
-        int i10 = this.b;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        switch (i7) {
-            case 0:
-                org.telegram.messenger.g0.h3(new bi.ub((cn) obj4, this.b, (Boolean) obj, (TLRPC.WebPage) obj2, (TL_account.getWebPagePreview) obj3, 10));
-                break;
-            case 1:
-                LaunchActivity launchActivity = (LaunchActivity) obj4;
-                f10 f10Var = (f10) obj3;
-                TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                String str = LaunchActivity.B1;
-                if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
-                    TLRPC.Updates updates2 = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
-                    org.telegram.messenger.qp.s1(launchActivity.O).O3(updates2, false);
-                    updates = updates2;
-                } else {
-                    if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                        org.telegram.messenger.g0.h3(new f10(11, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
-                    }
-                    updates = null;
+    @Override // org.telegram.ui.sw
+    public /* synthetic */ boolean H() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sw
+    public /* synthetic */ boolean P(yw ywVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.mr0
+    public void a(TLRPC.MessageMedia messageMedia) {
+        int i7;
+        an anVar = (an) this.c;
+        org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) this.d;
+        if (!this.a) {
+            if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
+                TLRPC.MessageMedia messageMedia2 = gjVar.k.media;
+                if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
+                    ((TLRPC.TL_messageMediaToDo) messageMedia).completions = ((TLRPC.TL_messageMediaToDo) messageMedia2).completions;
                 }
-                org.telegram.messenger.g0.h3(new bi.ub(launchActivity, f10Var, tL_error, updates, this.b, 19));
-                break;
-            case 2:
-                PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
-                TL_account.Passkey passkey = (TL_account.Passkey) obj3;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                ArrayList arrayList = passkeysActivity.b;
-                if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolFalse)) {
-                    if (tL_error2 != null) {
-                        org.telegram.ui.Components.gc.a0(passkeysActivity).f0(tL_error2, false);
-                        arrayList.add(Utilities.j(i10, arrayList.size(), 0), passkey);
-                        passkeysActivity.a.f3.O(true);
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.Components.gc.a0(passkeysActivity).e0("FALSE", false);
-                    arrayList.add(Utilities.j(i10, arrayList.size(), 0), passkey);
-                    passkeysActivity.a.f3.O(true);
+            }
+            gjVar.k.media = messageMedia;
+            anVar.getSendMessagesHelper().t(gjVar, null, null, null, null, null, null, null, false, false, null);
+            return;
+        }
+        TLRPC.TL_messages_appendTodoList tL_messages_appendTodoList = new TLRPC.TL_messages_appendTodoList();
+        tL_messages_appendTodoList.peer = anVar.getMessagesController().j1(org.telegram.messenger.gj.B0(gjVar.k));
+        tL_messages_appendTodoList.msg_id = gjVar.e1();
+        if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
+            TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
+            int i10 = 0;
+            int i11 = 0;
+            while (true) {
+                i7 = this.b;
+                if (i10 >= i7) {
                     break;
                 }
-                break;
-            default:
-                org.telegram.ui.Wallet.d8 d8Var = (org.telegram.ui.Wallet.d8) obj4;
-                TL_wallet.card cardVar = (TL_wallet.card) obj3;
-                TL_wallet.card cardVar2 = (TL_wallet.card) obj;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                d8Var.f1 = 0;
-                if (cardVar2 == null) {
-                    if (cardVar != null) {
-                        org.telegram.ui.Wallet.d8.e0(i10, cardVar);
-                    }
-                    if (!d8Var.a1) {
-                        if (tL_error3 != null) {
-                            org.telegram.ui.Components.gc.a0(d8Var.a).f0(tL_error3, false);
-                        }
-                        d8Var.d1 = false;
-                        TL_wallet.card cardVar3 = d8Var.b1;
-                        if (cardVar3 != null) {
-                            d8Var.d(cardVar3);
-                            break;
-                        }
-                    }
-                } else {
-                    org.telegram.ui.Wallet.d8.e0(i10, cardVar2);
-                    if (!d8Var.a1) {
-                        if (!d8Var.d1) {
-                            d8Var.d(cardVar2);
-                            break;
-                        } else {
-                            d8Var.b1 = cardVar2;
-                            d8Var.c1 = org.telegram.ui.Wallet.d8.T(cardVar2);
-                            d8Var.Q();
-                            break;
-                        }
-                    }
+                i11 = Math.max(i11, tL_messageMediaToDo.todo.list.get(i10).id);
+                i10++;
+            }
+            while (i7 < tL_messageMediaToDo.todo.list.size()) {
+                TLRPC.TodoItem todoItem = tL_messageMediaToDo.todo.list.get(i7);
+                if (todoItem.id <= i11) {
+                    todoItem.id = i11 + 1;
                 }
-                break;
+                tL_messages_appendTodoList.list.add(todoItem);
+                i11 = Math.max(i11, todoItem.id);
+                i7++;
+            }
+            TLRPC.MessageMedia messageMedia3 = gjVar.k.media;
+            if (messageMedia3 instanceof TLRPC.TL_messageMediaToDo) {
+                tL_messageMediaToDo.completions = ((TLRPC.TL_messageMediaToDo) messageMedia3).completions;
+            }
         }
+        gjVar.k.media = messageMedia;
+        anVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
     }
 
-    public /* synthetic */ yf(LaunchActivity launchActivity, f10 f10Var, int i7) {
-        this.a = 1;
+    @Override // org.telegram.ui.sw
+    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, u91 u91Var) {
+        LaunchActivity launchActivity = (LaunchActivity) this.c;
+        String str = (String) this.d;
+        String str2 = LaunchActivity.C1;
+        long j3 = ((org.telegram.messenger.ur) arrayList.get(0)).a;
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("scrollToTopOnResume", true);
+        bundle.putBoolean("hasUrl", this.a);
+        if (org.telegram.messenger.m5.C(j3)) {
+            bundle.putInt("enc_id", (int) (4294967295L & j3));
+        } else if (org.telegram.messenger.m5.E(j3)) {
+            bundle.putLong("user_id", j3);
+        } else {
+            bundle.putLong("chat_id", -j3);
+        }
+        int i11 = this.b;
+        if (!org.telegram.messenger.np.s1(i11).E(bundle, ywVar, null, null)) {
+            return true;
+        }
+        org.telegram.messenger.ns.f(i11).k(org.telegram.messenger.ns.t, new Object[0]);
+        org.telegram.messenger.si.b0(i11).Q1(j3, 0, str, null, null, null, null, 0L, false, false, null);
+        ((ActionBarLayout) launchActivity.M()).V(new an(bundle), true, false);
+        return true;
+    }
+
+    public /* synthetic */ yf(LaunchActivity launchActivity, boolean z10, int i7, String str) {
         this.c = launchActivity;
-        this.d = f10Var;
+        this.a = z10;
         this.b = i7;
+        this.d = str;
     }
 }

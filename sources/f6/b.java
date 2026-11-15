@@ -2,14 +2,14 @@ package f6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b extends r6.a {
     public static final Parcelable.Creator<b> CREATOR = new v(4);
@@ -21,14 +21,14 @@ public final class b extends r6.a {
     public final boolean f;
     public final boolean h;
 
-    public b(long j3, String str, long j10, boolean z9, String[] strArr, boolean z10, boolean z11) {
+    public b(long j3, String str, long j10, boolean z10, String[] strArr, boolean z11, boolean z12) {
         this.a = j3;
         this.b = str;
         this.c = j10;
-        this.d = z9;
+        this.d = z10;
         this.e = strArr;
-        this.f = z10;
-        this.h = z11;
+        this.f = z11;
+        this.h = z12;
     }
 
     public final JSONObject b() {
@@ -72,19 +72,19 @@ public final class b extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 2, 8);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 2, 8);
         parcel.writeLong(this.a);
-        xb.l(parcel, 3, this.b);
-        xb.q(parcel, 4, 8);
+        yb.l(parcel, 3, this.b);
+        yb.q(parcel, 4, 8);
         parcel.writeLong(this.c);
-        xb.q(parcel, 5, 4);
+        yb.q(parcel, 5, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        xb.m(parcel, 6, this.e);
-        xb.q(parcel, 7, 4);
+        yb.m(parcel, 6, this.e);
+        yb.q(parcel, 7, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        xb.q(parcel, 8, 4);
+        yb.q(parcel, 8, 4);
         parcel.writeInt(this.h ? 1 : 0);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 }

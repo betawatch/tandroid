@@ -1,19 +1,23 @@
 package a8;
 
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class u8 {
-    public static int a(int i7, int i10) {
-        if (i10 < 0) {
-            throw new AssertionError("cannot store more than MAX_VALUE elements");
+public final class u8 {
+    public final Float a;
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        int i11 = i7 + (i7 >> 1) + 1;
-        if (i11 < i10) {
-            int highestOneBit = Integer.highestOneBit(i10 - 1);
-            i11 = highestOneBit + highestOneBit;
+        if (obj instanceof u8) {
+            return q6.m.k(null, null) && q6.m.k(this.a, ((u8) obj).a) && q6.m.k(null, null);
         }
-        return i11 < 0 ? ConnectionsManager.DEFAULT_DATACENTER_ID : i11;
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{null, this.a, null});
     }
 }

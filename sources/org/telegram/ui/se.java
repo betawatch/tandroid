@@ -1,32 +1,27 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.function.ToIntFunction;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class se implements ToIntFunction {
+public final /* synthetic */ class se implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ an b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ se(Object obj, int i7) {
+    public /* synthetic */ se(an anVar, boolean z10, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = anVar;
+        this.c = z10;
     }
 
-    @Override // java.util.function.ToIntFunction
-    public final int applyAsInt(Object obj) {
-        int i7 = this.a;
-        Object obj2 = this.b;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                return ((Integer) ((HashMap) obj2).get((View) obj)).intValue();
+                this.b.presentFragment(new PremiumPreviewFragment(0, this.c ? "upload_speed" : "download_speed"));
+                break;
             default:
-                RectF rectF = ProfileActivity.V6;
-                return ((Integer) ((ArrayList) obj2).get(((Integer) obj).intValue())).intValue();
+                this.b.gd(0, this.c);
+                break;
         }
     }
 }

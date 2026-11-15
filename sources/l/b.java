@@ -2,11 +2,11 @@ package l;
 
 import android.view.View;
 import androidx.appcompat.view.menu.ActionMenuItemView;
-import m.v1;
+import m.u1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class b extends v1 {
+public final class b extends u1 {
     public final /* synthetic */ int s = 0;
     public final /* synthetic */ View w;
 
@@ -16,26 +16,26 @@ public final class b extends v1 {
         this.w = actionMenuItemView;
     }
 
-    @Override // m.v1
+    @Override // m.u1
     public final b0 b() {
-        m.e eVar;
+        m.d dVar;
         switch (this.s) {
             case 0:
                 c cVar = ((ActionMenuItemView) this.w).y;
-                if (cVar == null || (eVar = ((m.f) cVar).a.J) == null) {
+                if (cVar == null || (dVar = ((m.e) cVar).a.K) == null) {
                     return null;
                 }
-                return eVar.a();
+                return dVar.a();
             default:
-                m.e eVar2 = ((m.h) this.w).d.I;
-                if (eVar2 == null) {
+                m.d dVar2 = ((m.g) this.w).d.J;
+                if (dVar2 == null) {
                     return null;
                 }
-                return eVar2.a();
+                return dVar2.a();
         }
     }
 
-    @Override // m.v1
+    @Override // m.u1
     public final boolean c() {
         b0 b10;
         switch (this.s) {
@@ -44,20 +44,20 @@ public final class b extends v1 {
                 j jVar = actionMenuItemView.w;
                 return jVar != null && jVar.a(actionMenuItemView.n) && (b10 = b()) != null && b10.a();
             default:
-                ((m.h) this.w).d.l();
+                ((m.g) this.w).d.l();
                 return true;
         }
     }
 
-    @Override // m.v1
+    @Override // m.u1
     public boolean d() {
         switch (this.s) {
             case 1:
-                m.i iVar = ((m.h) this.w).d;
-                if (iVar.K != null) {
+                m.h hVar = ((m.g) this.w).d;
+                if (hVar.L != null) {
                     return false;
                 }
-                iVar.f();
+                hVar.f();
                 return true;
             default:
                 return super.d();
@@ -65,8 +65,8 @@ public final class b extends v1 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(m.h hVar, m.h hVar2) {
-        super(hVar2);
-        this.w = hVar;
+    public b(m.g gVar, m.g gVar2) {
+        super(gVar2);
+        this.w = gVar;
     }
 }

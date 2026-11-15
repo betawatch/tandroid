@@ -1,21 +1,11 @@
 package q2;
 
-import android.os.Looper;
+import p4.q0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public interface m {
-    public static final nb.a A = new nb.a(21);
-
-    void E(Looper looper, m2.j jVar);
-
-    int F(e2.u uVar);
-
-    void a();
-
-    g i(j jVar, e2.u uVar);
-
-    l m(j jVar, e2.u uVar);
+    public static final q0 z = new q0(21);
 
     void release();
 }

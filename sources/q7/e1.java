@@ -5,15 +5,15 @@ import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
 import java.util.ArrayDeque;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e1 implements Closeable {
     public final ByteArrayInputStream a;
     public d1 b;
     public final byte[] c = new byte[8];
-    public final qt d = new qt(10);
+    public final ff d = new ff(12);
 
     public e1(ByteArrayInputStream byteArrayInputStream) {
         this.a = byteArrayInputStream;
@@ -33,20 +33,20 @@ public final class e1 implements Closeable {
     }
 
     public final long b() {
-        boolean z9;
+        boolean z10;
         d();
         byte b10 = this.b.a;
         if (b10 == 0) {
-            z9 = true;
+            z10 = true;
         } else {
             if (b10 != 32) {
-                throw new IllegalStateException(jg.g.j((this.b.a >> 5) & 7, "expected major type 0 or 1 but found "));
+                throw new IllegalStateException(i5.c.i((this.b.a >> 5) & 7, "expected major type 0 or 1 but found "));
             }
-            z9 = false;
+            z10 = false;
         }
         long f10 = f();
         if (f10 >= 0) {
-            return z9 ? f10 : ~f10;
+            return z10 ? f10 : ~f10;
         }
         throw new UnsupportedOperationException("the maximum supported unsigned/negative integer is 9223372036854775807");
     }
@@ -67,7 +67,7 @@ public final class e1 implements Closeable {
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
         this.a.close();
-        this.d.o0();
+        this.d.G0();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:52:0x0098, code lost:
@@ -80,9 +80,9 @@ public final class e1 implements Closeable {
     public final d1 d() {
         if (this.b == null) {
             int read = this.a.read();
-            qt qtVar = this.d;
+            ff ffVar = this.d;
             if (read == -1) {
-                qtVar.o0();
+                ffVar.G0();
                 return null;
             }
             d1 d1Var = new d1(read);
@@ -93,42 +93,42 @@ public final class e1 implements Closeable {
                 if (b10 != -32) {
                     if (b10 != 0 && b10 != 32) {
                         if (b10 == 64) {
-                            qtVar.p0(-1L);
+                            ffVar.H0(-1L);
                         } else {
                             if (b10 != 96) {
-                                throw new IllegalStateException(jg.g.j((this.b.a >> 5) & 7, "invalid major type: "));
+                                throw new IllegalStateException(i5.c.i((this.b.a >> 5) & 7, "invalid major type: "));
                             }
-                            qtVar.p0(-2L);
+                            ffVar.H0(-2L);
                         }
-                        long q02 = qtVar.q0();
-                        ArrayDeque arrayDeque = (ArrayDeque) qtVar.b;
-                        if (q02 == 1) {
+                        long I0 = ffVar.I0();
+                        ArrayDeque arrayDeque = (ArrayDeque) ffVar.b;
+                        if (I0 == 1) {
                             arrayDeque.pop();
-                        } else if (q02 > 1) {
+                        } else if (I0 > 1) {
                             arrayDeque.pop();
-                            arrayDeque.push(Long.valueOf(q02 - 1));
-                        } else if (q02 == -4) {
+                            arrayDeque.push(Long.valueOf(I0 - 1));
+                        } else if (I0 == -4) {
                             arrayDeque.pop();
                             arrayDeque.push(-5L);
-                        } else if (q02 == -5) {
+                        } else if (I0 == -5) {
                             arrayDeque.pop();
                             arrayDeque.push(-4L);
                         }
                     }
                 } else if (d1Var.b == 31) {
-                    long q03 = qtVar.q0();
-                    if (q03 >= 0) {
-                        throw new IOException(a8.p0.o(q03, "expected indefinite length scope but found "));
+                    long I02 = ffVar.I0();
+                    if (I02 >= 0) {
+                        throw new IOException(a8.p0.o(I02, "expected indefinite length scope but found "));
                     }
-                    if (q03 == -5) {
+                    if (I02 == -5) {
                         throw new IOException("expected a value for dangling key in indefinite-length map");
                     }
-                    ((ArrayDeque) qtVar.b).pop();
+                    ((ArrayDeque) ffVar.b).pop();
                 }
             }
-            long q04 = qtVar.q0();
-            if (q04 == -1) {
-                j3 = q04;
+            long I03 = ffVar.I0();
+            if (I03 == -1) {
+                j3 = I03;
             }
             throw new IOException(a8.p0.o(j3, "expected non-string scope but found "));
         }
@@ -185,7 +185,7 @@ public final class e1 implements Closeable {
     public final void g() {
         d();
         if (this.b.b == 31) {
-            throw new IllegalStateException(jg.g.j(this.b.b, "expected definite length but found "));
+            throw new IllegalStateException(i5.c.i(this.b.b, "expected definite length but found "));
         }
     }
 

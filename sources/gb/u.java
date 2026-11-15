@@ -4,7 +4,7 @@ import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class u implements ib.b {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final class u implements ib.b {
                         kotlin.jvm.internal.j.d(f10, "getToken(...)");
                         wVar.a = cVar2;
                         wVar.d = 1;
-                        Object a10 = c8.v0.a(f10, wVar);
+                        Object a10 = c8.w0.a(f10, wVar);
                         if (a10 != aVar) {
                             obj = a10;
                             dVar = cVar2;
@@ -78,7 +78,7 @@ public final class u implements ib.b {
                         kotlin.jvm.internal.j.d(e11, "getId(...)");
                         wVar.a = r92;
                         wVar.d = 2;
-                        obj = c8.v0.a(e11, wVar);
+                        obj = c8.w0.a(e11, wVar);
                         dVar = r92;
                     }
                     return aVar;
@@ -109,7 +109,7 @@ public final class u implements ib.b {
                 kotlin.jvm.internal.j.d(e112, "getId(...)");
                 wVar.a = r92;
                 wVar.d = 2;
-                obj = c8.v0.a(e112, wVar);
+                obj = c8.w0.a(e112, wVar);
                 dVar = r92;
             }
         }
@@ -128,7 +128,7 @@ public final class u implements ib.b {
         kotlin.jvm.internal.j.d(e1122, "getId(...)");
         wVar.a = r92;
         wVar.d = 2;
-        obj2 = c8.v0.a(e1122, wVar);
+        obj2 = c8.w0.a(e1122, wVar);
         dVar = r92;
     }
 
@@ -136,9 +136,9 @@ public final class u implements ib.b {
     public Object get() {
         switch (this.a) {
             case 0:
-                return j1.a;
+                return h1.a;
             default:
-                return k1.a;
+                return i1.a;
         }
     }
 }

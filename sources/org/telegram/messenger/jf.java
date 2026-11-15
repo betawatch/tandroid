@@ -1,17 +1,68 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes.dex */
-public final class jf {
-    public final ij a;
-    public final float b;
-    public final int c;
-    public final int d;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
 
-    public jf(ij ijVar) {
-        this.a = ijVar;
-        this.b = ijVar.b0;
-        this.c = ijVar.d0;
-        this.d = ijVar.g0;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes.dex */
+public final class jf extends ye {
+    public String B;
+    public String C;
+    public String D;
+    public int E;
+    public int F;
+    public int G;
+    public int H;
+    public CharSequence I;
+    public TLRPC.Document J;
+    public TLRPC.Photo K;
+    public TLRPC.PhotoSize L;
+    public TLRPC.PhotoSize M;
+    public TLRPC.BotInlineResult N;
+    public HashMap O;
+
+    @Override // org.telegram.messenger.ye
+    public final String a() {
+        if (this.L != null) {
+            w7.G(m10.t0);
+            return w7.J(this.L, null, true, true).getAbsolutePath();
+        }
+        if (this.J == null) {
+            return fc.A(this.C).getAbsolutePath();
+        }
+        w7.G(m10.t0);
+        return w7.J(this.J, null, true, true).getAbsolutePath();
+    }
+
+    /* renamed from: f, reason: merged with bridge method [inline-methods] */
+    public final jf clone() {
+        jf jfVar = new jf();
+        jfVar.B = this.B;
+        jfVar.C = this.C;
+        jfVar.D = this.D;
+        jfVar.E = this.E;
+        jfVar.F = this.F;
+        jfVar.G = this.G;
+        jfVar.H = this.H;
+        jfVar.I = this.I;
+        jfVar.J = this.J;
+        jfVar.K = this.K;
+        jfVar.L = this.L;
+        jfVar.M = this.M;
+        jfVar.N = this.N;
+        jfVar.O = this.O;
+        return jfVar;
+    }
+
+    public final String g() {
+        if (this.L != null) {
+            w7.G(m10.t0);
+            return w7.J(this.L, null, true, true).getAbsolutePath();
+        }
+        if (this.J == null) {
+            return this.C;
+        }
+        w7.G(m10.t0);
+        return w7.J(this.J, null, true, true).getAbsolutePath();
     }
 }

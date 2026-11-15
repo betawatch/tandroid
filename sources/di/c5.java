@@ -1,29 +1,43 @@
 package di;
 
-import org.telegram.tgnet.tl.TL_stories;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class c5 {
-    public final int a;
-    public final TL_stories.StoryView b;
-    public final TL_stories.StoryReaction c;
+    public final cg.b a;
+    public final TLRPC.TL_payments_paymentFormStarGift b;
+    public final cg.a c;
 
-    public c5(int i7) {
-        this.a = i7;
-        this.b = null;
-        this.c = null;
-    }
-
-    public c5(TL_stories.StoryView storyView) {
-        this.a = 1;
-        this.b = storyView;
-        this.c = null;
-    }
-
-    public c5(TL_stories.StoryReaction storyReaction) {
-        this.a = 1;
-        this.b = null;
-        this.c = storyReaction;
+    public c5(cg.b bVar, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
+        long j3;
+        this.a = bVar;
+        this.b = tL_payments_paymentFormStarGift;
+        v8[][] v8VarArr = v8.S;
+        if (tL_payments_paymentFormStarGift != null) {
+            ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStarGift.invoice.prices;
+            int size = arrayList.size();
+            int i7 = 0;
+            j3 = 0;
+            while (i7 < size) {
+                TLRPC.TL_labeledPrice tL_labeledPrice = arrayList.get(i7);
+                i7++;
+                j3 += tL_labeledPrice.amount;
+            }
+        } else {
+            j3 = 0;
+        }
+        cg.b bVar2 = cg.b.a;
+        if (bVar == bVar2) {
+            this.c = cg.a.g(j3, bVar2);
+            return;
+        }
+        cg.b bVar3 = cg.b.b;
+        if (bVar == bVar3) {
+            this.c = cg.a.i(j3, bVar3);
+        } else {
+            this.c = cg.a.i(0L, bVar2);
+        }
     }
 }

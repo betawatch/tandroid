@@ -1,43 +1,35 @@
 package hi;
 
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qs;
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class b1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c1 b;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class b1 implements ls {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ ls[] b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ z0 d;
-
-    public b1(long j3, ls[] lsVarArr, int i7, z0 z0Var) {
-        this.a = j3;
-        this.b = lsVarArr;
-        this.c = i7;
-        this.d = z0Var;
+    public /* synthetic */ b1(c1 c1Var, int i7) {
+        this.a = i7;
+        this.b = c1Var;
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        a0.h hVar;
-        int i11 = qs.w0;
-        if (i7 != i11 || (hVar = (a0.h) objArr[0]) == null) {
-            return;
-        }
-        long j3 = this.a;
-        if (hVar.d(j3)) {
-            TLRPC.WebPage webPage = (TLRPC.WebPage) hVar.f(j3);
-            ls[] lsVarArr = this.b;
-            if (lsVarArr[0] != null) {
-                qs.f(this.c).n(lsVarArr[0], i11);
-                lsVarArr[0] = null;
-            }
-            if (!(webPage instanceof TLRPC.TL_webPage)) {
-                webPage = null;
-            }
-            this.d.a(webPage);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                c1 c1Var = this.b;
+                if (c1Var.L > 0) {
+                    c1Var.dualToggleShape();
+                    try {
+                        c1Var.performHapticFeedback(0, 1);
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+                break;
+            default:
+                c1 c1Var2 = this.b;
+                c1Var2.focusToPoint((int) c1Var2.J, (int) c1Var2.K);
+                break;
         }
     }
 }

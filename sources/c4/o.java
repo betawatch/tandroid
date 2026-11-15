@@ -1,35 +1,35 @@
 package c4;
 
-import a8.ia;
+import a8.ja;
+import com.google.android.gms.internal.vision.e2;
 import e2.s0;
 import e2.t;
 import e2.u;
+import f3.h0;
 import f3.i0;
-import f3.j0;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import java.io.EOFException;
-import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class o implements j0 {
-    public final j0 a;
+public final class o implements i0 {
+    public final i0 a;
     public final k b;
     public m g;
     public u h;
     public boolean i;
     public int d = 0;
     public int e = 0;
-    public byte[] f = m0.b;
+    public byte[] f = l0.b;
     public final x c = new x();
 
-    public o(j0 j0Var, k kVar) {
-        this.a = j0Var;
+    public o(i0 i0Var, k kVar) {
+        this.a = i0Var;
         this.b = kVar;
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final void a(x xVar, int i7, int i10) {
         if (this.g == null) {
             this.a.a(xVar, i7, i10);
@@ -40,20 +40,20 @@ public final class o implements j0 {
         this.e += i7;
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final /* synthetic */ void b(int i7, x xVar) {
-        com.google.android.recaptcha.internal.a.a(this, xVar, i7);
+        e2.a(this, xVar, i7);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x005b  */
     /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:30:0x004c  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0060  */
-    @Override // f3.j0
+    @Override // f3.i0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(long j3, int i7, int i10, int i11, i0 i0Var) {
+    public final void c(long j3, int i7, int i10, int i11, h0 h0Var) {
         o oVar;
         int i12;
         int i13;
@@ -62,11 +62,11 @@ public final class o implements j0 {
         l lVar;
         n nVar;
         if (this.g == null) {
-            this.a.c(j3, i7, i10, i11, i0Var);
+            this.a.c(j3, i7, i10, i11, h0Var);
             return;
         }
         int i14 = i10;
-        ia.e("DRM on subtitles is not supported", i0Var == null);
+        ja.e("DRM on subtitles is not supported", h0Var == null);
         int i15 = (this.e - i11) - i14;
         try {
             mVar = this.g;
@@ -95,7 +95,7 @@ public final class o implements j0 {
             }
         }
         try {
-            mVar.z(bArr, i12, i14, lVar, nVar);
+            mVar.K(bArr, i12, i14, lVar, nVar);
             i14 = i14;
         } catch (RuntimeException e12) {
             e = e12;
@@ -112,15 +112,15 @@ public final class o implements j0 {
         }
     }
 
-    @Override // f3.j0
-    public final int e(e2.n nVar, int i7, boolean z9) {
-        return f(nVar, i7, z9);
+    @Override // f3.i0
+    public final int e(e2.n nVar, int i7, boolean z10) {
+        return f(nVar, i7, z10);
     }
 
-    @Override // f3.j0
-    public final int f(e2.n nVar, int i7, boolean z9) {
+    @Override // f3.i0
+    public final int f(e2.n nVar, int i7, boolean z10) {
         if (this.g == null) {
-            return this.a.f(nVar, i7, z9);
+            return this.a.f(nVar, i7, z10);
         }
         h(i7);
         int read = nVar.read(this.f, this.e, i7);
@@ -128,35 +128,35 @@ public final class o implements j0 {
             this.e += read;
             return read;
         }
-        if (z9) {
+        if (z10) {
             return -1;
         }
         throw new EOFException();
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final void g(u uVar) {
         uVar.s.getClass();
         String str = uVar.s;
-        ia.f(s0.h(str) == 3);
+        ja.f(s0.h(str) == 3);
         boolean equals = uVar.equals(this.h);
         k kVar = this.b;
         if (!equals) {
             this.h = uVar;
-            this.g = kVar.w(uVar) ? kVar.l(uVar) : null;
+            this.g = kVar.L(uVar) ? kVar.f(uVar) : null;
         }
         m mVar = this.g;
-        j0 j0Var = this.a;
+        i0 i0Var = this.a;
         if (mVar == null) {
-            j0Var.g(uVar);
+            i0Var.g(uVar);
             return;
         }
         t a10 = uVar.a();
         a10.r = s0.n("application/x-media3-cues");
         a10.j = str;
         a10.w = Long.MAX_VALUE;
-        a10.P = kVar.D(uVar);
-        f1.s(a10, j0Var);
+        a10.P = kVar.O(uVar);
+        r.b.s(a10, i0Var);
     }
 
     public final void h(int i7) {
@@ -175,7 +175,7 @@ public final class o implements j0 {
         this.f = bArr2;
     }
 
-    @Override // f3.j0
+    @Override // f3.i0
     public final /* synthetic */ void d(long j3) {
     }
 }

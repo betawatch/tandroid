@@ -1,10 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jg0 implements ValueAnimator.AnimatorUpdateListener {
+public final class jg0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ kg0 b;
 
@@ -13,98 +15,62 @@ public final /* synthetic */ class jg0 implements ValueAnimator.AnimatorUpdateLi
         this.b = kg0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
         switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kg0 kg0Var = this.b;
-                kg0Var.v = floatValue;
-                org.telegram.ui.Cells.t2 t2Var = kg0Var.H;
-                if (t2Var != null) {
-                    t2Var.invalidate();
-                }
-                pj0 pj0Var = kg0Var.I;
-                if (pj0Var != null) {
-                    pj0Var.invalidate();
-                    break;
-                }
-                break;
             case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kg0 kg0Var2 = this.b;
-                kg0Var2.w = floatValue2;
-                org.telegram.ui.Cells.t2 t2Var2 = kg0Var2.H;
-                if (t2Var2 != null) {
-                    t2Var2.invalidate();
-                }
-                pj0 pj0Var2 = kg0Var2.I;
-                if (pj0Var2 != null) {
-                    pj0Var2.invalidate();
+                kg0 kg0Var = this.b;
+                AnimatorSet animatorSet = kg0Var.s;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    kg0Var.s = null;
+                    kg0Var.getClass();
                     break;
                 }
                 break;
             case 2:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kg0 kg0Var3 = this.b;
-                kg0Var3.p = floatValue3;
-                org.telegram.ui.Cells.t2 t2Var3 = kg0Var3.H;
-                if (t2Var3 != null) {
-                    t2Var3.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kg0 kg0Var4 = this.b;
-                kg0Var4.o = floatValue4;
-                org.telegram.ui.Cells.t2 t2Var4 = kg0Var4.H;
-                if (t2Var4 != null) {
-                    t2Var4.invalidate();
-                    break;
-                }
-                break;
-            case 4:
-                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kg0 kg0Var5 = this.b;
-                kg0Var5.x = floatValue5;
-                org.telegram.ui.Cells.t2 t2Var5 = kg0Var5.H;
-                if (t2Var5 != null) {
-                    t2Var5.invalidate();
-                    break;
-                }
-                break;
-            case 5:
-                kg0 kg0Var6 = this.b;
-                kg0Var6.getClass();
-                kg0Var6.e(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                org.telegram.ui.Cells.t2 t2Var6 = kg0Var6.H;
-                if (t2Var6 != null) {
-                    t2Var6.invalidate();
-                    break;
-                }
-                break;
-            case 6:
-                kg0 kg0Var7 = this.b;
-                kg0Var7.getClass();
-                kg0Var7.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kg0Var7.F = true;
-                org.telegram.ui.Cells.t2 t2Var7 = kg0Var7.H;
-                if (t2Var7 != null) {
-                    t2Var7.invalidate();
+                kg0 kg0Var2 = this.b;
+                AnimatorSet animatorSet2 = kg0Var2.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    kg0Var2.s = null;
+                    kg0Var2.getClass();
                     break;
                 }
                 break;
             default:
-                kg0 kg0Var8 = this.b;
-                kg0Var8.getClass();
-                kg0Var8.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kg0Var8.F = false;
-                org.telegram.ui.Cells.t2 t2Var8 = kg0Var8.H;
-                if (t2Var8 != null) {
-                    t2Var8.invalidate();
-                    break;
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i7 = this.a;
+        kg0 kg0Var = this.b;
+        switch (i7) {
+            case 0:
+                AnimatorSet animatorSet = kg0Var.h;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    kg0Var.h = null;
                 }
+                org.telegram.messenger.ns.e().k(99, 512);
+                break;
+            case 1:
+                AnimatorSet animatorSet2 = kg0Var.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    kg0Var.s = null;
+                    if (kg0Var.x) {
+                        kg0Var.setLayerType(0, null);
+                    }
+                }
+                org.telegram.messenger.ns.e().k(99, 512);
+                break;
+            default:
+                AnimatorSet animatorSet3 = kg0Var.s;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    kg0Var.s = null;
+                    org.telegram.messenger.g0.h3(new wa0(this, 11));
+                }
+                org.telegram.messenger.ns.e().k(99, 512);
                 break;
         }
     }

@@ -1,8 +1,8 @@
 package p4;
 
-import c8.s9;
+import c8.r9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w0 implements a1, h2.j {
     public final /* synthetic */ d a;
@@ -17,12 +17,12 @@ public final /* synthetic */ class w0 implements a1, h2.j {
     }
 
     @Override // p4.a1
-    public Object l(d0 d0Var, v vVar, int i7) {
+    public Object k(d0 d0Var, v vVar, int i7) {
         Object obj = this.a.g;
         obj.getClass();
-        pb.b bVar = d0Var.e;
+        w7.s sVar = d0Var.e;
         d0Var.s(vVar);
-        bVar.getClass();
-        return s9.b(new m1(-6));
+        sVar.getClass();
+        return r9.b(new m1(-6));
     }
 }

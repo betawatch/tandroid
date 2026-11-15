@@ -1,57 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.vc1;
-import org.telegram.ui.wc1;
-import org.telegram.ui.x71;
+import android.view.View;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class oi extends org.telegram.ui.Cells.ua {
-    public final /* synthetic */ int x;
-    public final /* synthetic */ oj0 y;
+public final /* synthetic */ class oi implements org.telegram.messenger.x10, org.telegram.messenger.y10 {
+    public final /* synthetic */ vi a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ oi(oj0 oj0Var, Context context, int i7) {
-        super(context, 5);
-        this.x = i7;
-        this.y = oj0Var;
+    @Override // org.telegram.messenger.y10
+    public Boolean a(b41 b41Var, View view, Integer num, Float f10, Float f11) {
+        this.a.R(b41Var, view);
+        return Boolean.TRUE;
     }
 
-    @Override // org.telegram.ui.Cells.ua
-    public final void a(int i7, Object obj) {
-        switch (this.x) {
-            case 0:
-                q0.a aVar = ((pi) ((ka) this.y).f).y;
-                if (aVar != null) {
-                    aVar.accept(obj);
-                    break;
-                }
-                break;
-            case 1:
-                WallpapersListActivity.w0(((vc1) this.y).d, this, obj, i7);
-                break;
-            default:
-                ((wc1) this.y).E.presentFragment(new x71(obj, null, true));
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.ua
-    public boolean b(Object obj, int i7) {
-        switch (this.x) {
-            case 1:
-                return WallpapersListActivity.x0(((vc1) this.y).d, this, obj, i7);
-            default:
-                return super.b(obj, i7);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oi(ka kaVar, Context context) {
-        super(context, 1);
-        this.x = 0;
-        this.y = kaVar;
+    @Override // org.telegram.messenger.x10
+    public void m(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.R((b41) obj, (View) obj2);
     }
 }

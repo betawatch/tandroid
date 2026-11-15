@@ -1,33 +1,230 @@
 package ei;
 
-import android.view.View;
-import di.k6;
-import org.telegram.ui.Components.sp0;
+import android.util.LongSparseArray;
+import android.util.SparseArray;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.ui.s6;
+import org.telegram.ui.t6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n b;
+public final class c {
+    public final boolean a;
+    public long k;
+    public boolean m;
+    public boolean n;
+    public boolean o;
+    public boolean p;
+    public boolean q;
+    public long r;
+    public long s;
+    public long t;
+    public long u;
+    public long v;
+    public ArrayList b = new ArrayList();
+    public final LongSparseArray c = new LongSparseArray();
+    public final ArrayList d = new ArrayList();
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public final HashSet i = new HashSet();
+    public final HashSet j = new HashSet();
+    public final HashSet l = new HashSet();
 
-    public /* synthetic */ c(n nVar, int i7) {
-        this.a = i7;
-        this.b = nVar;
+    public c(boolean z10) {
+        this.a = z10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                n nVar = this.b;
-                sp0 sp0Var = nVar.W;
-                k6 k6Var = nVar.a;
-                sp0Var.a(k6Var == null ? "" : k6Var.E);
-                break;
-            default:
-                n nVar2 = this.b;
-                nVar2.W.b(nVar2.a.E);
-                break;
+    public final void a(int i7, boolean z10) {
+        if (this.a) {
+            if (!z10) {
+                if (i7 == 0) {
+                    this.m = false;
+                    return;
+                }
+                if (i7 == 1) {
+                    this.n = false;
+                    return;
+                }
+                if (i7 == 2) {
+                    this.o = false;
+                    return;
+                } else if (i7 == 3) {
+                    this.p = false;
+                    return;
+                } else {
+                    if (i7 == 4) {
+                        this.q = false;
+                        return;
+                    }
+                    return;
+                }
+            }
+            ArrayList arrayList = this.d;
+            if (i7 == 0) {
+                this.m = b(i7, arrayList);
+                return;
+            }
+            if (i7 == 1) {
+                this.n = b(i7, arrayList);
+                return;
+            }
+            if (i7 == 2) {
+                this.o = b(i7, this.e);
+                return;
+            }
+            if (i7 == 3) {
+                this.p = b(i7, this.f);
+            } else if (i7 == 4) {
+                this.q = b(i7, this.g);
+            } else if (i7 == 7) {
+                b(i7, this.h);
+            }
         }
+    }
+
+    public final boolean b(int i7, ArrayList arrayList) {
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            if (((b) arrayList.get(i10)).d == i7 && !this.j.contains(arrayList.get(i10))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public final void c() {
+        if (this.a) {
+            return;
+        }
+        HashSet hashSet = this.i;
+        hashSet.clear();
+        HashSet hashSet2 = this.j;
+        Iterator it = hashSet2.iterator();
+        while (it.hasNext()) {
+            long j3 = ((b) it.next()).b;
+            if (j3 != 0) {
+                hashSet.add(Long.valueOf(j3));
+            }
+        }
+        HashSet hashSet3 = this.l;
+        hashSet3.clear();
+        Iterator it2 = hashSet.iterator();
+        while (it2.hasNext()) {
+            s6 s6Var = (s6) this.c.get(((Long) it2.next()).longValue());
+            if (s6Var != null) {
+                SparseArray sparseArray = s6Var.d;
+                int i7 = 0;
+                while (true) {
+                    if (i7 >= sparseArray.size()) {
+                        hashSet3.add(Long.valueOf(s6Var.a));
+                        break;
+                    }
+                    ArrayList arrayList = ((t6) sparseArray.valueAt(i7)).b;
+                    int size = arrayList.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        Object obj = arrayList.get(i10);
+                        i10++;
+                        if (!hashSet2.contains((b) obj)) {
+                            break;
+                        }
+                    }
+                    i7++;
+                }
+            }
+        }
+    }
+
+    public final void d() {
+        this.k = 0L;
+        this.j.clear();
+        this.l.clear();
+    }
+
+    public final ArrayList e(int i7) {
+        if (i7 == 0 || i7 == 1) {
+            return this.d;
+        }
+        if (i7 == 2) {
+            return this.e;
+        }
+        if (i7 == 3) {
+            return this.f;
+        }
+        if (i7 == 4) {
+            return this.g;
+        }
+        if (i7 == 7) {
+            return this.h;
+        }
+        return null;
+    }
+
+    public final long f(int i7) {
+        if (i7 == 0) {
+            return this.r;
+        }
+        if (i7 == 1) {
+            return this.s;
+        }
+        if (i7 == 2) {
+            return this.t;
+        }
+        if (i7 == 3) {
+            return this.u;
+        }
+        if (i7 == 4) {
+            return this.v;
+        }
+        return -1L;
+    }
+
+    public final void g(b bVar, boolean z10) {
+        long j3 = bVar.c;
+        if (!z10) {
+            j3 = -j3;
+        }
+        int i7 = bVar.d;
+        if (i7 == 0) {
+            this.r += j3;
+            return;
+        }
+        if (i7 == 1) {
+            this.s += j3;
+            return;
+        }
+        if (i7 == 2) {
+            this.t += j3;
+        } else if (i7 == 3) {
+            this.u += j3;
+        } else if (i7 == 4) {
+            this.v += j3;
+        }
+    }
+
+    public final boolean h() {
+        if (this.d.isEmpty() && this.e.isEmpty() && this.f.isEmpty()) {
+            return this.a || this.b.isEmpty();
+        }
+        return false;
+    }
+
+    public final void i(b bVar) {
+        HashSet hashSet = this.j;
+        if (hashSet.contains(bVar)) {
+            hashSet.remove(bVar);
+            g(bVar, false);
+            this.k -= bVar.c;
+            a(bVar.d, false);
+        } else {
+            hashSet.add(bVar);
+            g(bVar, true);
+            this.k += bVar.c;
+            a(bVar.d, true);
+        }
+        c();
     }
 }

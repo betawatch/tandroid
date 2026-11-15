@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q4 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -37,20 +37,20 @@ public final /* synthetic */ class q4 implements RequestDelegate {
                             case 0:
                                 g5 g5Var2 = g5Var;
                                 if (tL_error == null) {
-                                    g5Var2.X = (TLRPC.GlobalPrivacySettings) tLObject;
-                                    g5Var2.F = 2;
+                                    g5Var2.Y = (TLRPC.GlobalPrivacySettings) tLObject;
+                                    g5Var2.G = 2;
                                 } else {
-                                    g5Var2.F = 0;
+                                    g5Var2.G = 0;
                                 }
                                 g5Var2.getNotificationCenter().k(47, new Object[0]);
                                 break;
                             default:
                                 g5 g5Var3 = g5Var;
                                 if (tL_error == null) {
-                                    g5Var3.H = ((TLRPC.TL_accountDaysTTL) tLObject).days;
-                                    g5Var3.G = 2;
+                                    g5Var3.I = ((TLRPC.TL_accountDaysTTL) tLObject).days;
+                                    g5Var3.H = 2;
                                 } else {
-                                    g5Var3.G = 0;
+                                    g5Var3.H = 0;
                                 }
                                 g5Var3.getNotificationCenter().k(47, new Object[0]);
                                 break;
@@ -68,20 +68,20 @@ public final /* synthetic */ class q4 implements RequestDelegate {
                             case 0:
                                 g5 g5Var22 = g5Var2;
                                 if (tL_error == null) {
-                                    g5Var22.X = (TLRPC.GlobalPrivacySettings) tLObject;
-                                    g5Var22.F = 2;
+                                    g5Var22.Y = (TLRPC.GlobalPrivacySettings) tLObject;
+                                    g5Var22.G = 2;
                                 } else {
-                                    g5Var22.F = 0;
+                                    g5Var22.G = 0;
                                 }
                                 g5Var22.getNotificationCenter().k(47, new Object[0]);
                                 break;
                             default:
                                 g5 g5Var3 = g5Var2;
                                 if (tL_error == null) {
-                                    g5Var3.H = ((TLRPC.TL_accountDaysTTL) tLObject).days;
-                                    g5Var3.G = 2;
+                                    g5Var3.I = ((TLRPC.TL_accountDaysTTL) tLObject).days;
+                                    g5Var3.H = 2;
                                 } else {
-                                    g5Var3.G = 0;
+                                    g5Var3.H = 0;
                                 }
                                 g5Var3.getNotificationCenter().k(47, new Object[0]);
                                 break;

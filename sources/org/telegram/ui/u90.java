@@ -1,53 +1,43 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class u90 extends rg.a {
-    public final CharSequence c;
-    public final int d;
-    public final int e;
-    public final int f;
+public final class u90 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ v90 c;
 
-    public u90(int i7, int i10, CharSequence charSequence, int i11, int i12) {
-        super(i7, false);
-        this.c = charSequence;
-        this.d = i10;
-        this.e = i11;
-        this.f = i12;
+    public /* synthetic */ u90(v90 v90Var, float f10, int i7) {
+        this.a = i7;
+        this.c = v90Var;
+        this.b = f10;
     }
 
-    public static u90 b(int i7, String str) {
-        return new u90(4, 0, str, i7, 0);
-    }
-
-    public static u90 c(int i7, int i10, String str) {
-        return new u90(3, i7, str, i10, 0);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                v90 v90Var = this.c;
+                TextView textView = v90Var.f;
+                int x02 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.y6, false);
+                int x03 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.n6, false);
+                float f10 = this.b;
+                v90Var.s = f10;
+                textView.setTextColor(i0.a.f(f10, x02, x03));
+                break;
+            default:
+                v90 v90Var2 = this.c;
+                TextView textView2 = v90Var2.d;
+                int x04 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.y6, false);
+                int x05 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.n6, false);
+                float f11 = this.b;
+                v90Var2.x = f11;
+                textView2.setTextColor(i0.a.f(f11, x04, x05));
+                break;
         }
-        if (!(obj instanceof u90)) {
-            return false;
-        }
-        u90 u90Var = (u90) obj;
-        int i7 = u90Var.a;
-        int i10 = this.a;
-        if (i7 != i10) {
-            return false;
-        }
-        if (i10 == 3 && u90Var.d != this.d) {
-            return false;
-        }
-        if (i10 == 5 && u90Var.f != this.f) {
-            return false;
-        }
-        if ((i10 == 3 || i10 == 4) && u90Var.e != this.e) {
-            return false;
-        }
-        return !(i10 == 0 || i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) || TextUtils.equals(u90Var.c, this.c);
     }
 }

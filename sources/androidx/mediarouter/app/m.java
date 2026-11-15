@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m extends Animation {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final class m extends Animation {
                 break;
             default:
                 int i12 = i10 + ((int) ((i11 - i10) * f10));
-                int i13 = n0.j0;
+                int i13 = n0.k0;
                 ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
                 layoutParams.height = i12;
                 view.setLayoutParams(layoutParams);

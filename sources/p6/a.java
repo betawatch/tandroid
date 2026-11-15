@@ -3,16 +3,16 @@ package p6;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
+import i5.c;
 import java.util.Arrays;
 import java.util.Locale;
-import jg.g;
 import m6.e;
 import org.json.JSONException;
 import org.json.JSONObject;
 import q6.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public static final Parcelable.Creator<a> CREATOR = new e(17);
@@ -48,22 +48,22 @@ public final class a extends r6.a {
     public final String toString() {
         Locale locale = Locale.US;
         String uri = this.b.toString();
-        StringBuilder o4 = g.o("Image ", this.c, "x", this.d, " ");
-        o4.append(uri);
-        return o4.toString();
+        StringBuilder n10 = c.n("Image ", this.c, "x", this.d, " ");
+        n10.append(uri);
+        return n10.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 1, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        xb.k(parcel, 2, this.b, i7);
-        xb.q(parcel, 3, 4);
+        yb.k(parcel, 2, this.b, i7);
+        yb.q(parcel, 3, 4);
         parcel.writeInt(this.c);
-        xb.q(parcel, 4, 4);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(this.d);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 
     public a(Uri uri, int i7, int i10) {

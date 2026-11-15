@@ -69,27 +69,27 @@ public abstract class ZoneId implements Serializable {
         return new u(str, zoneOffset.getRules());
     }
 
-    public static ZoneId H(String str, boolean z9) {
+    public static ZoneId H(String str, boolean z10) {
         Objects.requireNonNull(str, "zoneId");
         if (str.length() <= 1 || str.startsWith("+") || str.startsWith("-")) {
             return ZoneOffset.M(str);
         }
         if (str.startsWith("UTC") || str.startsWith("GMT")) {
-            return J(str, 3, z9);
+            return J(str, 3, z10);
         }
         if (str.startsWith("UT")) {
-            return J(str, 2, z9);
+            return J(str, 2, z10);
         }
-        return u.L(str, z9);
+        return u.L(str, z10);
     }
 
-    public static ZoneId J(String str, int i7, boolean z9) {
+    public static ZoneId J(String str, int i7, boolean z10) {
         String substring = str.substring(0, i7);
         if (str.length() == i7) {
             return I(substring, ZoneOffset.UTC);
         }
         if (str.charAt(i7) != '+' && str.charAt(i7) != '-') {
-            return u.L(str, z9);
+            return u.L(str, z10);
         }
         try {
             ZoneOffset M = ZoneOffset.M(str.substring(i7));

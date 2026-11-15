@@ -1,75 +1,32 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class rf implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c20 b;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ rf(c20 c20Var, int i7) {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes.dex */
+public final /* synthetic */ class rf implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ c1 d;
+
+    public /* synthetic */ rf(c1 c1Var, boolean z10, long j3, int i7) {
         this.a = i7;
-        this.b = c20Var;
+        this.d = c1Var;
+        this.b = z10;
+        this.c = j3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        c20 c20Var = this.b;
-        switch (i7) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                if (c20Var != null) {
-                    c20Var.a(null);
-                    break;
-                }
-                break;
-            case 1:
-                if (c20Var != null) {
-                    c20Var.a(null);
-                    break;
-                }
-                break;
-            case 2:
-                if (c20Var != null) {
-                    c20Var.a(null);
-                    break;
-                }
-                break;
-            case 3:
-                if (c20Var != null) {
-                    c20Var.a(null);
-                    break;
-                }
-                break;
-            case 4:
-                if (c20Var != null) {
-                    c20Var.a(null);
-                    break;
-                }
-                break;
-            case 5:
-                if (c20Var != null) {
-                    c20Var.a(null);
-                    break;
-                }
-                break;
-            case 6:
-                c20Var.a(null);
-                break;
-            case 7:
-                if (c20Var != null) {
-                    c20Var.a(null);
-                    break;
-                }
-                break;
-            case 8:
-                if (c20Var != null) {
-                    c20Var.a(null);
-                    break;
-                }
+                g0.h3(new qg((si) this.d, tLObject, this.b, this.c, 1));
                 break;
             default:
-                int i10 = ShortcutResultReceiver.a;
-                c20Var.a(Boolean.TRUE);
+                g0.h3(new qg((np) this.d, tLObject, this.b, this.c, 3));
                 break;
         }
     }

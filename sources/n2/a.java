@@ -1,11 +1,11 @@
 package n2;
 
 import android.os.Build;
-import h9.h2;
+import h9.g2;
 import j$.util.Objects;
 import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public static final a d;
@@ -18,7 +18,7 @@ public final class a {
         if (Build.VERSION.SDK_INT >= 33) {
             h9.s0 s0Var = new h9.s0(4);
             for (int i7 = 1; i7 <= 10; i7++) {
-                s0Var.c(Integer.valueOf(h2.m0.t(i7)));
+                s0Var.c(Integer.valueOf(h2.l0.t(i7)));
             }
             aVar = new a(2, s0Var.g());
         } else {
@@ -31,7 +31,7 @@ public final class a {
         this.a = i7;
         h9.t0 q10 = h9.t0.q(set);
         this.c = q10;
-        h2 it = q10.iterator();
+        g2 it = q10.iterator();
         int i10 = 0;
         while (it.hasNext()) {
             i10 = Math.max(i10, Integer.bitCount(((Integer) it.next()).intValue()));

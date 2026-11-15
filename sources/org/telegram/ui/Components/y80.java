@@ -1,10 +1,54 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y80 implements r1.c {
-    @Override // r1.c
-    public final void a(r1.g gVar, boolean z9, float f10, float f11) {
-        int i7 = g90.U;
+public final class y80 extends zh.l {
+    public final /* synthetic */ int E = 1;
+    public final /* synthetic */ Object F;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y80(bi.t6 t6Var, bi.t6 t6Var2, FrameLayout frameLayout, long j3) {
+        super(t6Var2, frameLayout, j3, true);
+        this.F = t6Var;
+    }
+
+    @Override // zh.l
+    public final void f(String str, boolean z10, boolean z11) {
+        org.telegram.ui.ActionBar.k kVar;
+        switch (this.E) {
+            case 0:
+                zh.b bVar = (zh.b) this.F;
+                cv0 cv0Var = bVar.R1;
+                if (!this.e.isEmpty()) {
+                    if (!z11) {
+                        super.f(str, z10, z11);
+                        break;
+                    } else {
+                        bVar.w1.K.setText("");
+                        break;
+                    }
+                } else if (cv0Var.getVisibility() != 4) {
+                    cv0Var.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!z11) {
+                    super.f(str, z10, z11);
+                    break;
+                } else {
+                    kVar = ((org.telegram.ui.ActionBar.e2) ((bi.t6) this.F)).actionBar;
+                    kVar.setSearchFieldText("");
+                    break;
+                }
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y80(zh.b bVar, org.telegram.ui.ActionBar.e2 e2Var, org.telegram.ui.ActionBar.k2 k2Var, long j3) {
+        super(e2Var, k2Var, j3, false);
+        this.F = bVar;
     }
 }

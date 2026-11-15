@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class pb0 extends TextView {
     public final /* synthetic */ qb0 a;
@@ -20,19 +20,19 @@ public final class pb0 extends TextView {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         qb0 qb0Var = this.a;
-        if (qb0Var.e.getAdapter() instanceof zw) {
-            ((zw) qb0Var.e.getAdapter()).getClass();
+        if (qb0Var.e.getAdapter() instanceof fx) {
+            ((fx) qb0Var.e.getAdapter()).getClass();
         }
     }
 
     @Override // android.widget.TextView, android.view.View
-    public final void setSelected(boolean z9) {
-        super.setSelected(z9);
+    public final void setSelected(boolean z10) {
+        super.setSelected(z10);
         Drawable background = getBackground();
         qb0 qb0Var = this.a;
         if (background != null) {
-            org.telegram.ui.ActionBar.m6.H1(background, qb0Var.c(z9 ? 0.1f : 0.05f), true);
+            org.telegram.ui.ActionBar.j6.H1(background, qb0Var.c(z10 ? 0.1f : 0.05f), true);
         }
-        setTextColor(qb0Var.c(z9 ? 0.8f : 0.6f));
+        setTextColor(qb0Var.c(z10 ? 0.8f : 0.6f));
     }
 }

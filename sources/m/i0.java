@@ -1,16 +1,124 @@
 package m;
 
-import android.content.res.Resources;
-import android.widget.ThemedSpinnerAdapter;
-import j$.util.Objects;
+import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
+import android.widget.ListAdapter;
+import androidx.appcompat.app.AlertController$RecycleListView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class i0 {
-    public static void a(ThemedSpinnerAdapter themedSpinnerAdapter, Resources.Theme theme) {
-        if (Objects.equals(themedSpinnerAdapter.getDropDownViewTheme(), theme)) {
+public final class i0 implements o0, DialogInterface.OnClickListener {
+    public g.f a;
+    public j0 b;
+    public CharSequence c;
+    public final /* synthetic */ p0 d;
+
+    public i0(p0 p0Var) {
+        this.d = p0Var;
+    }
+
+    @Override // m.o0
+    public final boolean a() {
+        g.f fVar = this.a;
+        if (fVar != null) {
+            return fVar.isShowing();
+        }
+        return false;
+    }
+
+    @Override // m.o0
+    public final int b() {
+        return 0;
+    }
+
+    @Override // m.o0
+    public final void c(int i7) {
+        Log.e("AppCompatSpinner", "Cannot set horizontal offset for MODE_DIALOG, ignoring");
+    }
+
+    @Override // m.o0
+    public final CharSequence d() {
+        return this.c;
+    }
+
+    @Override // m.o0
+    public final void dismiss() {
+        g.f fVar = this.a;
+        if (fVar != null) {
+            fVar.dismiss();
+            this.a = null;
+        }
+    }
+
+    @Override // m.o0
+    public final Drawable e() {
+        return null;
+    }
+
+    @Override // m.o0
+    public final void h(CharSequence charSequence) {
+        this.c = charSequence;
+    }
+
+    @Override // m.o0
+    public final void i(Drawable drawable) {
+        Log.e("AppCompatSpinner", "Cannot set popup background for MODE_DIALOG, ignoring");
+    }
+
+    @Override // m.o0
+    public final void k(int i7) {
+        Log.e("AppCompatSpinner", "Cannot set vertical offset for MODE_DIALOG, ignoring");
+    }
+
+    @Override // m.o0
+    public final void l(int i7) {
+        Log.e("AppCompatSpinner", "Cannot set horizontal (original) offset for MODE_DIALOG, ignoring");
+    }
+
+    @Override // m.o0
+    public final void m(int i7, int i10) {
+        if (this.b == null) {
             return;
         }
-        themedSpinnerAdapter.setDropDownViewTheme(theme);
+        p0 p0Var = this.d;
+        f5.v vVar = new f5.v(p0Var.getPopupContext());
+        g.b bVar = (g.b) vVar.c;
+        CharSequence charSequence = this.c;
+        if (charSequence != null) {
+            bVar.f = charSequence;
+        }
+        j0 j0Var = this.b;
+        int selectedItemPosition = p0Var.getSelectedItemPosition();
+        bVar.l = j0Var;
+        bVar.m = this;
+        bVar.b = selectedItemPosition;
+        bVar.a = true;
+        g.f g10 = vVar.g();
+        this.a = g10;
+        AlertController$RecycleListView alertController$RecycleListView = g10.f.e;
+        g0.d(alertController$RecycleListView, i7);
+        g0.c(alertController$RecycleListView, i10);
+        this.a.show();
+    }
+
+    @Override // m.o0
+    public final int n() {
+        return 0;
+    }
+
+    @Override // m.o0
+    public final void o(ListAdapter listAdapter) {
+        this.b = (j0) listAdapter;
+    }
+
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i7) {
+        p0 p0Var = this.d;
+        p0Var.setSelection(i7);
+        if (p0Var.getOnItemClickListener() != null) {
+            p0Var.performItemClick(null, i7, this.b.getItemId(i7));
+        }
+        dismiss();
     }
 }

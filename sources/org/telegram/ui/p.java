@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -24,8 +24,8 @@ public final /* synthetic */ class p implements ValueAnimator.AnimatorUpdateList
             default:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 g4 g4Var2 = this.b;
-                g4Var2.Z0 = floatValue;
-                g4Var2.q0.setTranslationY(((1.0f - floatValue) * org.telegram.messenger.g0.L(51.0f)) + g4Var2.p0);
+                g4Var2.a1 = floatValue;
+                g4Var2.r0.setTranslationY(((1.0f - floatValue) * org.telegram.messenger.g0.L(51.0f)) + g4Var2.q0);
                 break;
         }
     }

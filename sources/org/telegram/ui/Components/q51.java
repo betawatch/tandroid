@@ -1,25 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.graphics.SurfaceTexture;
+import android.net.Uri;
+import java.util.Map;
+import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface q51 {
-    void onError(t51 t51Var, Exception exc);
+public final class q51 implements j2.h {
+    public final j2.h a;
+    public final long b;
 
-    void onRenderedFirstFrame();
+    public q51(ExtendedDefaultDataSource extendedDefaultDataSource, long j3) {
+        this.a = extendedDefaultDataSource;
+        this.b = j3;
+    }
 
-    void onRenderedFirstFrame(m2.a aVar);
+    @Override // j2.h
+    public final void addTransferListener(j2.c0 c0Var) {
+        this.a.addTransferListener(c0Var);
+    }
 
-    void onSeekFinished(m2.a aVar);
+    @Override // j2.h
+    public final void close() {
+        this.a.close();
+    }
 
-    void onSeekStarted(m2.a aVar);
+    @Override // j2.h
+    public final Map getResponseHeaders() {
+        return this.a.getResponseHeaders();
+    }
 
-    void onStateChanged(boolean z9, int i7);
+    @Override // j2.h
+    public final Uri getUri() {
+        return this.a.getUri();
+    }
 
-    boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture);
+    @Override // j2.h
+    public final long open(j2.m mVar) {
+        j2.l a10 = mVar.a();
+        a10.b = mVar.e + this.b;
+        return this.a.open(a10.d());
+    }
 
-    void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture);
-
-    void onVideoSizeChanged(int i7, int i10, int i11, float f10);
+    @Override // e2.n
+    public final int read(byte[] bArr, int i7, int i10) {
+        return this.a.read(bArr, i7, i10);
+    }
 }

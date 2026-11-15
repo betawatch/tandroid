@@ -1,125 +1,143 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
-import org.telegram.ui.Components.m41;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class xk implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ np b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ long f;
+    public final /* synthetic */ int g;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int i;
+    public final /* synthetic */ int j;
+    public final /* synthetic */ int k;
+    public final /* synthetic */ int l;
+    public final /* synthetic */ int m;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ long o;
+    public final /* synthetic */ int p;
+    public final /* synthetic */ boolean q;
+    public final /* synthetic */ int r;
+    public final /* synthetic */ boolean s;
+    public final /* synthetic */ boolean t;
 
-    public /* synthetic */ xk(Object obj, long j3, long j10, int i7) {
-        this.a = i7;
-        this.d = obj;
-        this.b = j3;
-        this.c = j10;
+    public /* synthetic */ xk(np npVar, int i7, int i10, long j3, long j10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, long j11, int i19, boolean z10, int i20, boolean z11, boolean z12) {
+        this.b = npVar;
+        this.c = i7;
+        this.d = i10;
+        this.e = j3;
+        this.f = j10;
+        this.g = i11;
+        this.h = i12;
+        this.i = i13;
+        this.j = i14;
+        this.k = i15;
+        this.l = i16;
+        this.m = i17;
+        this.n = i18;
+        this.o = j11;
+        this.p = i19;
+        this.q = z10;
+        this.r = i20;
+        this.s = z11;
+        this.t = z12;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        m41 m41Var;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i7;
         switch (this.a) {
             case 0:
-                qp qpVar = (qp) this.d;
-                long j3 = this.b;
-                long j10 = this.c;
-                a0.h hVar = qpVar.Q1;
-                HashMap hashMap = qpVar.S1;
-                if (j3 == 0) {
-                    ip ipVar = (ip) hVar.f(j10);
-                    if (ipVar != null) {
-                        qpVar.R(ipVar);
-                        qpVar.P1.remove(ipVar);
-                        hVar.l(j10);
+                np npVar = this.b;
+                npVar.getClass();
+                long j3 = this.e;
+                long j10 = this.f;
+                int i10 = this.c;
+                int i11 = this.d;
+                int i12 = this.g;
+                int i13 = this.h;
+                int i14 = this.i;
+                int i15 = this.j;
+                int i16 = this.k;
+                int i17 = this.l;
+                int i18 = this.m;
+                int i19 = this.n;
+                long j11 = this.o;
+                int i20 = this.p;
+                boolean z10 = this.q;
+                int i21 = this.r;
+                boolean z11 = this.s;
+                boolean z12 = this.t;
+                if (tLObject == null) {
+                    if (tL_error != null && "SHORTCUT_INVALID".equals(tL_error.text)) {
+                        npVar.K3(new TLRPC.TL_messages_messages(), 0, j3, j10, i10, i11, i12, false, i13, i14, i15, i16, i17, i18, false, i19, j11, i20, z10, i21, z11, z12, null);
                         break;
                     }
                 } else {
-                    String str = j10 + "_" + j3;
-                    ip ipVar2 = (ip) hashMap.get(str);
-                    if (ipVar2 != null) {
-                        qpVar.R(ipVar2);
-                        qpVar.R1.remove(ipVar2);
-                        hashMap.remove(str);
+                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                    if (!(messages_messages instanceof TLRPC.TL_messages_messagesNotModified)) {
+                        npVar.K3(messages_messages, messages_messages.messages.size(), j3, j10, i10, i11, i12, false, i13, i14, i15, i16, i17, i18, false, i19, j11, i20, z10, i21, z11, z12, null);
                         break;
                     }
                 }
                 break;
-            case 1:
-                org.telegram.ui.rn.b0((org.telegram.ui.rn) this.d, this.b, this.c);
-                break;
-            case 2:
-                org.telegram.ui.web.o1 o1Var = (org.telegram.ui.web.o1) this.d;
-                long j11 = this.b;
-                long j12 = this.c;
-                o1Var.h = j11;
-                o1Var.n = j12;
-                fi.w3 w3Var = o1Var.a;
-                if (w3Var != null && (m41Var = w3Var.f3) != null && w3Var.G) {
-                    m41Var.O(true);
-                    break;
-                }
-                break;
-            case 3:
-                vi.h hVar2 = (vi.h) this.d;
-                long j13 = this.b;
-                long j14 = this.c;
-                if (hVar2.G == 7) {
-                    long j15 = ((j13 - j14) * 48000) / 1000;
-                    hVar2.p = j15;
-                    hVar2.r = 0L;
-                    hVar2.s = vi.h.r(j15);
-                    hVar2.i();
-                    break;
-                }
-                break;
             default:
-                ac.e eVar = (ac.e) this.d;
-                long j16 = this.b;
-                long j17 = this.c;
-                vi.h hVar3 = (vi.h) eVar.c;
-                if (j16 == hVar3.o) {
-                    hVar3.n = null;
-                    hVar3.p += j17;
-                    hVar3.q = 0L;
-                    hVar3.i.removeCallbacks(hVar3.D);
-                    int i7 = hVar3.G;
-                    if (i7 != 10) {
-                        if (i7 != 9) {
-                            if (!hVar3.v) {
-                                if (i7 == 4) {
-                                    vi.g gVar = hVar3.z;
-                                    if (gVar != null) {
-                                        long j18 = hVar3.j();
-                                        hVar3.r = 0L;
-                                        hVar3.s = j18;
-                                        hVar3.j.execute(new org.telegram.utils.recorder.audio.c(1, hVar3, gVar));
-                                        break;
+                np npVar2 = this.b;
+                npVar2.getClass();
+                if (tLObject != null) {
+                    TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
+                    if (!(messages_messages2 instanceof TLRPC.TL_messages_messagesNotModified)) {
+                        int i22 = this.d;
+                        if (i22 == 0 || messages_messages2.messages.isEmpty()) {
+                            i7 = this.c;
+                        } else {
+                            i7 = ((TLRPC.Message) i5.c.h(1, messages_messages2.messages)).id;
+                            int size = messages_messages2.messages.size() - 1;
+                            while (true) {
+                                if (size >= 0) {
+                                    TLRPC.Message message = messages_messages2.messages.get(size);
+                                    if (message.date > i22) {
+                                        i7 = message.id;
                                     } else {
-                                        hVar3.g(new IllegalStateException("Output generation is missing"));
-                                        break;
+                                        size--;
                                     }
                                 }
-                            } else {
-                                hVar3.v = false;
-                                hVar3.i();
-                                break;
                             }
-                        } else {
-                            hVar3.c();
-                            hVar3.t();
-                            break;
                         }
-                    } else {
-                        hVar3.c();
-                        hVar3.t();
-                        hVar3.l("cancelled");
+                        npVar2.K3(messages_messages2, messages_messages2.messages.size(), this.e, this.f, this.g, i7, i22, false, this.h, this.i, this.j, this.k, this.l, this.m, false, this.n, this.o, this.p, this.q, this.r, this.s, this.t, null);
                         break;
                     }
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ xk(np npVar, long j3, long j10, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, long j11, int i19, boolean z10, int i20, boolean z11, boolean z12) {
+        this.b = npVar;
+        this.e = j3;
+        this.f = j10;
+        this.c = i7;
+        this.d = i10;
+        this.g = i11;
+        this.h = i12;
+        this.i = i13;
+        this.j = i14;
+        this.k = i15;
+        this.l = i16;
+        this.m = i17;
+        this.n = i18;
+        this.o = j11;
+        this.p = i19;
+        this.q = z10;
+        this.r = i20;
+        this.s = z11;
+        this.t = z12;
     }
 }

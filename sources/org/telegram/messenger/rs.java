@@ -1,301 +1,123 @@
 package org.telegram.messenger;
 
-import android.media.SoundPool;
-import android.os.PowerManager;
-import android.os.SystemClock;
-import android.util.Pair;
 import android.util.SparseArray;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Iterator;
-import java.util.Map;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rs implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dt b;
+    public final /* synthetic */ at b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ rs(dt dtVar, int i7) {
-        this.a = i7;
-        this.b = dtVar;
+    public /* synthetic */ rs(at atVar, long j3, int i7, int i10) {
+        this.a = i10;
+        this.b = atVar;
+        this.c = j3;
+        this.d = i7;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x011c  */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        final int i7 = 1;
-        final int i10 = 0;
+        boolean z10;
+        int i7;
+        boolean z11;
         switch (this.a) {
             case 0:
-                dt dtVar = this.b;
-                ArrayList arrayList = dtVar.a;
-                ArrayList arrayList2 = new ArrayList();
-                for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    ij ijVar = (ij) arrayList.get(i11);
-                    long B0 = ij.B0(ijVar.k);
-                    TLRPC.Message message = ijVar.k;
-                    if ((!message.mentioned || !(message.action instanceof TLRPC.TL_messageActionPinMessage)) && !m5.C(B0) && (ijVar.k.peer_id.channel_id == 0 || ijVar.A4())) {
-                        arrayList2.add(0, ijVar);
-                    }
-                }
-                if (!arrayList2.isEmpty() && !g0.p2(false) && !iz.C) {
-                    g0.h3(new ts(dtVar, arrayList2, i10));
-                    break;
-                }
-                break;
-            case 1:
-                dt dtVar2 = this.b;
-                dtVar2.getClass();
-                int i12 = Calendar.getInstance().get(11);
-                if (i12 < 11 || i12 > 22) {
-                    dtVar2.R();
-                    break;
-                } else {
-                    dt.l0.b(dtVar2.d0, null);
-                    dtVar2.Z(true);
-                    break;
-                }
-                break;
-            case 2:
-                dt dtVar3 = this.b;
-                try {
-                    if (Math.abs(SystemClock.elapsedRealtime() - dtVar3.W) <= 100) {
-                        break;
+                at atVar = this.b;
+                a0.h hVar = atVar.c;
+                ArrayList arrayList = atVar.a;
+                a0.h hVar2 = atVar.F;
+                long j3 = this.c;
+                zs zsVar = (zs) hVar2.f(j3);
+                int i10 = this.d;
+                if (zsVar != null) {
+                    HashMap hashMap = zsVar.c;
+                    hashMap.remove(Integer.valueOf(i10));
+                    if (hashMap.isEmpty()) {
+                        hVar2.l(j3);
+                        atVar.E.remove(zsVar);
+                        vr messagesStorage = atVar.getMessagesStorage();
+                        messagesStorage.a.c(new up(messagesStorage, j3, 4));
+                        z10 = true;
+                        i7 = 0;
+                        while (i7 < arrayList.size()) {
+                            gj gjVar = (gj) arrayList.get(i7);
+                            if (gjVar != null && gjVar.N && gjVar.e1() == i10) {
+                                arrayList.remove(i7);
+                                i7--;
+                                SparseArray sparseArray = (SparseArray) hVar.f(gj.B0(gjVar.k));
+                                if (sparseArray != null) {
+                                    sparseArray.remove(gjVar.e1());
+                                }
+                                if (sparseArray != null && sparseArray.size() <= 0) {
+                                    hVar.l(gj.B0(gjVar.k));
+                                }
+                                z10 = true;
+                            }
+                            i7++;
+                        }
+                        if (!z10) {
+                            atVar.Z(false);
+                            break;
+                        }
                     } else {
-                        dtVar3.W = SystemClock.elapsedRealtime();
-                        if (dtVar3.X == null) {
-                            SoundPool soundPool = new SoundPool(3, 1, 0);
-                            dtVar3.X = soundPool;
-                            soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() { // from class: org.telegram.messenger.ys
-                                @Override // android.media.SoundPool.OnLoadCompleteListener
-                                public final void onLoadComplete(SoundPool soundPool2, int i13, int i14) {
-                                    switch (i10) {
-                                        case 0:
-                                            if (i14 == 0) {
-                                                try {
-                                                    soundPool2.play(i13, 1.0f, 1.0f, 1, 0, 1.0f);
-                                                    break;
-                                                } catch (Exception e10) {
-                                                    a8.g(e10, true);
-                                                    return;
-                                                }
-                                            }
-                                            break;
-                                        default:
-                                            if (i14 == 0) {
-                                                try {
-                                                    soundPool2.play(i13, 1.0f, 1.0f, 1, 0, 1.0f);
-                                                    break;
-                                                } catch (Exception e11) {
-                                                    a8.g(e11, true);
-                                                }
-                                            }
-                                            break;
-                                    }
-                                }
-                            });
-                        }
-                        if (dtVar3.Z == 0 && !dtVar3.b0) {
-                            dtVar3.b0 = true;
-                            dtVar3.Z = dtVar3.X.load(t0.b, R.raw.sound_out, 1);
-                        }
-                        int i13 = dtVar3.Z;
-                        if (i13 != 0) {
-                            try {
-                                dtVar3.X.play(i13, 1.0f, 1.0f, 1, 0, 1.0f);
-                                break;
-                            } catch (Exception e10) {
-                                a8.g(e10, true);
-                                return;
-                            }
-                        }
-                    }
-                } catch (Exception e11) {
-                    a8.g(e11, true);
-                    return;
-                }
-                break;
-            case 3:
-                this.b.Z(false);
-                break;
-            case 4:
-                dt.c(this.b);
-                break;
-            case 5:
-                dt dtVar4 = this.b;
-                a0.h hVar = dtVar4.h;
-                dt.l0.b(dtVar4.d0, null);
-                dtVar4.n.b();
-                while (i10 < hVar.m()) {
-                    dt.l0.b(((Integer) hVar.n(i10)).intValue(), null);
-                    i10++;
-                }
-                hVar.b();
-                break;
-            case 6:
-                dt dtVar5 = this.b;
-                a0.h hVar2 = dtVar5.c;
-                ArrayList arrayList3 = dtVar5.a;
-                int i14 = 0;
-                boolean z9 = false;
-                while (i14 < arrayList3.size()) {
-                    ij ijVar2 = (ij) arrayList3.get(i14);
-                    if (ijVar2 != null && ijVar2.J) {
-                        arrayList3.remove(i14);
-                        i14--;
-                        SparseArray sparseArray = (SparseArray) hVar2.f(ij.B0(ijVar2.k));
-                        if (sparseArray != null) {
-                            sparseArray.remove(ijVar2.e1());
-                        }
-                        if (sparseArray != null && sparseArray.size() <= 0) {
-                            hVar2.l(ij.B0(ijVar2.k));
-                        }
-                        z9 = true;
-                    }
-                    i14++;
-                }
-                yr messagesStorage = dtVar5.getMessagesStorage();
-                messagesStorage.a.c(new rq(messagesStorage, 17));
-                if (z9) {
-                    dtVar5.Z(false);
-                    break;
-                }
-                break;
-            case 7:
-                dt dtVar6 = this.b;
-                dtVar6.S(dtVar6.z());
-                break;
-            case 8:
-                dt dtVar7 = this.b;
-                if (Math.abs(SystemClock.elapsedRealtime()) > 500) {
-                    try {
-                        if (dtVar7.X == null) {
-                            SoundPool soundPool2 = new SoundPool(3, 1, 0);
-                            dtVar7.X = soundPool2;
-                            soundPool2.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() { // from class: org.telegram.messenger.ys
-                                @Override // android.media.SoundPool.OnLoadCompleteListener
-                                public final void onLoadComplete(SoundPool soundPool22, int i132, int i142) {
-                                    switch (i7) {
-                                        case 0:
-                                            if (i142 == 0) {
-                                                try {
-                                                    soundPool22.play(i132, 1.0f, 1.0f, 1, 0, 1.0f);
-                                                    break;
-                                                } catch (Exception e102) {
-                                                    a8.g(e102, true);
-                                                    return;
-                                                }
-                                            }
-                                            break;
-                                        default:
-                                            if (i142 == 0) {
-                                                try {
-                                                    soundPool22.play(i132, 1.0f, 1.0f, 1, 0, 1.0f);
-                                                    break;
-                                                } catch (Exception e112) {
-                                                    a8.g(e112, true);
-                                                }
-                                            }
-                                            break;
-                                    }
-                                }
-                            });
-                        }
-                        if (dtVar7.Y == 0 && !dtVar7.a0) {
-                            dtVar7.a0 = true;
-                            dtVar7.Y = dtVar7.X.load(t0.b, R.raw.sound_in, 1);
-                        }
-                        int i15 = dtVar7.Y;
-                        if (i15 != 0) {
-                            try {
-                                dtVar7.X.play(i15, 1.0f, 1.0f, 1, 0, 1.0f);
-                                break;
-                            } catch (Exception e12) {
-                                a8.g(e12, true);
-                                return;
-                            }
-                        }
-                    } catch (Exception e13) {
-                        a8.g(e13, true);
-                        return;
+                        vr messagesStorage2 = atVar.getMessagesStorage();
+                        messagesStorage2.a.c(new wq(5, messagesStorage2, zsVar));
                     }
                 }
-                break;
-            case 9:
-                dt.b(this.b);
-                break;
-            case 10:
-                dt dtVar8 = this.b;
-                ArrayList arrayList4 = dtVar8.D;
-                boolean isEmpty = arrayList4.isEmpty();
-                arrayList4.clear();
-                dtVar8.E.b();
-                yr messagesStorage2 = dtVar8.getMessagesStorage();
-                messagesStorage2.a.c(new rq(messagesStorage2, 14));
-                if (!isEmpty) {
-                    dtVar8.Z(false);
-                    break;
+                z10 = false;
+                i7 = 0;
+                while (i7 < arrayList.size()) {
                 }
-                break;
-            case 11:
-                dt dtVar9 = this.b;
-                ArrayList arrayList5 = dtVar9.D;
-                long currentTimeMillis = System.currentTimeMillis();
-                int i16 = 0;
-                boolean z10 = false;
-                while (i16 < arrayList5.size()) {
-                    ct ctVar = (ct) arrayList5.get(i16);
-                    Iterator it = ctVar.c.entrySet().iterator();
-                    while (it.hasNext()) {
-                        if (currentTimeMillis >= ((Long) ((Pair) ((Map.Entry) it.next()).getValue()).second).longValue()) {
-                            it.remove();
-                            z10 = true;
-                        }
-                    }
-                    if (z10) {
-                        if (ctVar.c.isEmpty()) {
-                            yr messagesStorage3 = dtVar9.getMessagesStorage();
-                            messagesStorage3.a.c(new xp(messagesStorage3, ctVar.a, 4));
-                            arrayList5.remove(i16);
-                            i16--;
-                        } else {
-                            yr messagesStorage4 = dtVar9.getMessagesStorage();
-                            messagesStorage4.a.c(new zq(5, messagesStorage4, ctVar));
-                        }
-                    }
-                    i16++;
-                }
-                if (z10) {
-                    dtVar9.Z(false);
-                }
-                dtVar9.d0();
-                break;
-            case 12:
-                dt dtVar10 = this.b;
-                PowerManager.WakeLock wakeLock = dtVar10.V;
-                ArrayList arrayList6 = dtVar10.b;
-                if (r2.a) {
-                    a8.b("delay reached");
-                }
-                if (!arrayList6.isEmpty()) {
-                    dtVar10.Z(true);
-                    arrayList6.clear();
-                }
-                try {
-                    if (wakeLock.isHeld()) {
-                        wakeLock.release();
-                        break;
-                    }
-                } catch (Exception e14) {
-                    a8.g(e14, true);
-                    return;
+                if (!z10) {
                 }
                 break;
             default:
-                dt dtVar11 = this.b;
-                dtVar11.getNotificationCenter().b(dtVar11, qs.Y1);
+                at atVar2 = this.b;
+                a0.h hVar3 = atVar2.c;
+                ArrayList arrayList2 = atVar2.a;
+                a0.h hVar4 = atVar2.F;
+                long j10 = this.c;
+                zs zsVar2 = (zs) hVar4.f(j10);
+                if (zsVar2 != null) {
+                    hVar4.l(j10);
+                    atVar2.E.remove(zsVar2);
+                    vr messagesStorage3 = atVar2.getMessagesStorage();
+                    messagesStorage3.a.c(new up(messagesStorage3, j10, 4));
+                    z11 = true;
+                } else {
+                    z11 = false;
+                }
+                int i11 = 0;
+                while (i11 < arrayList2.size()) {
+                    gj gjVar2 = (gj) arrayList2.get(i11);
+                    if (gjVar2 != null && gjVar2.N && gjVar2.e1() <= this.d) {
+                        arrayList2.remove(i11);
+                        i11--;
+                        SparseArray sparseArray2 = (SparseArray) hVar3.f(gj.B0(gjVar2.k));
+                        if (sparseArray2 != null) {
+                            sparseArray2.remove(gjVar2.e1());
+                        }
+                        if (sparseArray2 != null && sparseArray2.size() <= 0) {
+                            hVar3.l(gj.B0(gjVar2.k));
+                        }
+                        z11 = true;
+                    }
+                    i11++;
+                }
+                if (z11) {
+                    atVar2.Z(false);
+                    atVar2.d0();
+                    break;
+                }
                 break;
         }
     }

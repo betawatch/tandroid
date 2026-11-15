@@ -2,24 +2,24 @@ package j7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d extends r6.a {
     public static final Parcelable.Creator<d> CREATOR = new b(2);
     public final boolean a;
 
-    public d(boolean z9) {
-        this.a = z9;
+    public d(boolean z10) {
+        this.a = z10;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel dest, int i7) {
         kotlin.jvm.internal.j.e(dest, "dest");
-        int r10 = xb.r(dest, 20293);
-        xb.q(dest, 1, 4);
+        int r10 = yb.r(dest, 20293);
+        yb.q(dest, 1, 4);
         dest.writeInt(this.a ? 1 : 0);
-        xb.s(dest, r10);
+        yb.s(dest, r10);
     }
 }

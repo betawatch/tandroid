@@ -1,0 +1,33 @@
+package org.telegram.ui;
+
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class re0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cf0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
+
+    public /* synthetic */ re0(cf0 cf0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i7) {
+        this.a = i7;
+        this.b = cf0Var;
+        this.c = tL_error;
+        this.d = tLObject;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                cf0 cf0Var = this.b;
+                cf0Var.getNotificationCenter().d(new re0(cf0Var, this.c, this.d, 1));
+                break;
+            default:
+                cf0.a0(this.b, this.c, this.d);
+                break;
+        }
+    }
+}

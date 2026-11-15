@@ -1,62 +1,37 @@
 package com.google.android.gms.internal.clearcut;
 
-import android.content.ContentResolver;
-import android.net.Uri;
 import android.util.Log;
-import java.util.HashMap;
 
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements h {
-    public final /* synthetic */ int a;
-    public String b;
+public final class e extends d {
+    public final /* synthetic */ int i;
 
-    public String toString() {
-        switch (this.a) {
-            case 1:
-                return "<" + this.b + '>';
-            default:
-                return super.toString();
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ e(h hVar, String str, Object obj, int i7) {
+        super(hVar, str, obj);
+        this.i = i7;
     }
 
-    @Override // com.google.android.gms.internal.clearcut.h
-    public Object zzp() {
-        Object obj;
-        boolean z9;
-        String str = this.b;
-        ContentResolver contentResolver = d.g.getContentResolver();
-        Uri uri = e2.a;
-        synchronized (e2.class) {
-            e2.c(contentResolver);
-            obj = e2.k;
-        }
-        HashMap hashMap = e2.g;
-        Boolean bool = Boolean.FALSE;
-        Boolean bool2 = (Boolean) e2.a(hashMap, str, bool);
-        if (bool2 != null) {
-            z9 = bool2.booleanValue();
-        } else {
-            String b10 = e2.b(contentResolver, str);
-            boolean z10 = false;
-            if (b10 != null && !b10.equals("")) {
-                if (e2.c.matcher(b10).matches()) {
-                    bool = Boolean.TRUE;
-                    z10 = true;
-                } else if (!e2.d.matcher(b10).matches()) {
-                    Log.w("Gservices", org.telegram.ui.Cells.f1.m("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
+    @Override // com.google.android.gms.internal.clearcut.d
+    public final /* synthetic */ Object d(String str) {
+        switch (this.i) {
+            case 0:
+                if (d2.c.matcher(str).matches()) {
+                    return Boolean.TRUE;
                 }
-                e2.e(obj, hashMap, str, bool);
-                z9 = z10;
-            }
-            bool = bool2;
-            e2.e(obj, hashMap, str, bool);
-            z9 = z10;
+                if (d2.d.matcher(str).matches()) {
+                    return Boolean.FALSE;
+                }
+                String str2 = this.b;
+                StringBuilder sb2 = new StringBuilder(str.length() + String.valueOf(str2).length() + 28);
+                sb2.append("Invalid boolean value for ");
+                sb2.append(str2);
+                sb2.append(": ");
+                sb2.append(str);
+                Log.e("PhenotypeFlag", sb2.toString());
+                return null;
+            default:
+                return str;
         }
-        return Boolean.valueOf(z9);
-    }
-
-    public /* synthetic */ e(String str, int i7) {
-        this.a = i7;
-        this.b = str;
     }
 }

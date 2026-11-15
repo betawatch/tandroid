@@ -13,7 +13,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class h extends Service {
     public final ExecutorService a;
@@ -23,7 +23,7 @@ public abstract class h extends Service {
     public int e;
 
     public h() {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new f5.r("Firebase-Messaging-Intent-Handle"));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new f5.s("Firebase-Messaging-Intent-Handle"));
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         this.a = Executors.unconfigurableExecutorService(threadPoolExecutor);
         this.c = new Object();
@@ -76,13 +76,13 @@ public abstract class h extends Service {
             this.d = i10;
             this.e++;
         }
-        Intent intent2 = (Intent) ((ArrayDeque) b0.k().e).poll();
+        Intent intent2 = (Intent) ((ArrayDeque) c0.q().e).poll();
         if (intent2 == null) {
             a(intent);
             return 2;
         }
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.execute(new aa.s(this, intent2, taskCompletionSource, 1));
+        this.a.execute(new aa.r(this, intent2, taskCompletionSource, 1));
         Task task = taskCompletionSource.getTask();
         if (task.isComplete()) {
             a(intent);

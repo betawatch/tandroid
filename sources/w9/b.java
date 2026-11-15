@@ -1,40 +1,40 @@
 package w9;
 
-import aa.s;
-import aa.u;
-import aa.x;
+import aa.r;
+import aa.t;
+import aa.w;
 import android.content.SharedPreferences;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b {
-    public final u a;
+    public final t a;
 
-    public b(u uVar) {
-        this.a = uVar;
+    public b(t tVar) {
+        this.a = tVar;
     }
 
     public final void a() {
-        u uVar = this.a;
+        t tVar = this.a;
         Boolean bool = Boolean.TRUE;
-        x xVar = uVar.b;
-        synchronized (xVar) {
-            xVar.f = false;
-            xVar.g = bool;
-            SharedPreferences.Editor edit = xVar.a.edit();
+        w wVar = tVar.b;
+        synchronized (wVar) {
+            wVar.f = false;
+            wVar.g = bool;
+            SharedPreferences.Editor edit = wVar.a.edit();
             edit.putBoolean("firebase_crashlytics_collection_enabled", true);
             edit.apply();
-            synchronized (xVar.c) {
+            synchronized (wVar.c) {
                 try {
-                    if (xVar.a()) {
-                        if (!xVar.e) {
-                            xVar.d.trySetResult(null);
-                            xVar.e = true;
+                    if (wVar.a()) {
+                        if (!wVar.e) {
+                            wVar.d.trySetResult(null);
+                            wVar.e = true;
                         }
-                    } else if (xVar.e) {
-                        xVar.d = new TaskCompletionSource();
-                        xVar.e = false;
+                    } else if (wVar.e) {
+                        wVar.d = new TaskCompletionSource();
+                        wVar.e = false;
                     }
                 } finally {
                 }
@@ -43,7 +43,7 @@ public final class b {
     }
 
     public final void b(String str, String str2) {
-        u uVar = this.a;
-        uVar.n.a.a(new s((Object) uVar, (Object) str, (Object) str2, 0));
+        t tVar = this.a;
+        tVar.n.a.a(new r((Object) tVar, (Object) str, (Object) str2, 0));
     }
 }

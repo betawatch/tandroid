@@ -1,87 +1,50 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.WallpapersListActivity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eo implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vo b;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ eo(vo voVar, int i7) {
-        this.a = i7;
-        this.b = voVar;
+    public /* synthetic */ eo(Object obj, Context context, Object obj2, int i7, Object obj3, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = context;
+        this.e = obj2;
+        this.c = i7;
+        this.f = obj3;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        int i7 = this.a;
-        vo voVar = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                ci ciVar = voVar.R1;
-                if (ciVar.v2 != ciVar.d2) {
-                    voVar.T1.setText(org.telegram.messenger.id.M0(2131745537, null));
-                    ci ciVar2 = voVar.R1;
-                    ciVar2.F1(ciVar2.d2);
-                    break;
-                } else {
-                    voVar.T1.setText(org.telegram.messenger.id.M0(2131752138, null));
-                    ci ciVar3 = voVar.R1;
-                    if (ciVar3.l2 == null) {
-                        Context context = ciVar3.getContext();
-                        org.telegram.ui.ActionBar.h6 h6Var = ciVar3.I0;
-                        pi piVar = new pi(context, h6Var, ciVar3);
-                        piVar.r = org.telegram.messenger.g0.L(80.0f);
-                        piVar.x = 3;
-                        bi.q1 q1Var = new bi.q1(piVar, context, h6Var, 14);
-                        piVar.n = q1Var;
-                        ka kaVar = new ka(piVar, context);
-                        piVar.w = kaVar;
-                        q1Var.setAdapter(kaVar);
-                        q1Var.setClipToPadding(false);
-                        q1Var.setItemAnimator(null);
-                        q1Var.setLayoutAnimation(null);
-                        q1Var.setVerticalScrollBarEnabled(false);
-                        org.telegram.ui.ActionBar.t6.l(q1Var, 21, org.telegram.ui.ActionBar.m6.A5, h6Var);
-                        piVar.addView(q1Var, c8.ha.c(-1.0f, -1));
-                        q1Var.setOnScrollListener(new ai.b(piVar, 29));
-                        ei.h hVar = new ei.h(piVar, piVar.r, 2);
-                        piVar.s = hVar;
-                        hVar.O = new ai.l(piVar, 6);
-                        q1Var.setLayoutManager(hVar);
-                        ciVar3.l2 = piVar;
-                        piVar.setDelegate(new ra(ciVar3, 1));
-                    }
-                    ciVar3.F1(ciVar3.l2);
-                    pi piVar2 = voVar.R1.l2;
-                    boolean z9 = voVar.G1;
-                    ka kaVar2 = piVar2.w;
-                    ((ArrayList) kaVar2.e).clear();
-                    WallpapersListActivity.E0((ArrayList) kaVar2.e, z9);
-                    kaVar2.f();
-                    break;
-                }
-            case 1:
-                if (!voVar.P0()) {
-                    voVar.dismiss();
-                    break;
-                } else {
-                    voVar.T0(true);
-                    voVar.Z0(true);
-                    break;
-                }
-            case 2:
-                if (voVar.M1 == null) {
-                    voVar.V0(!voVar.G1);
-                    break;
-                }
+                io ioVar = (io) this.d;
+                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.e;
+                ho hoVar = (ho) this.f;
+                ioVar.a();
+                t4.D(this.b, e6Var, new ai.r1(this.c, hoVar, 9));
                 break;
             default:
-                voVar.K0(false);
+                org.telegram.ui.ActionBar.u2 u2Var = (org.telegram.ui.ActionBar.u2) this.d;
+                fp fpVar = (fp) this.e;
+                TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = (TLRPC.TL_inputGroupCallSlug) this.f;
+                u2Var.dismiss();
+                Activity W = org.telegram.messenger.g0.W(this.b);
+                if (W != null) {
+                    org.telegram.messenger.np.e1().edit().putBoolean("callmiconstart", fpVar.a.q).apply();
+                    org.telegram.ui.Components.voip.c2.g(W, this.c, tL_inputGroupCallSlug, false, null, null);
+                    break;
+                }
                 break;
         }
     }

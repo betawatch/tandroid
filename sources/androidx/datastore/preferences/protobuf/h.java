@@ -1,12 +1,12 @@
 package androidx.datastore.preferences.protobuf;
 
-import a8.q6;
+import a8.r6;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class h implements Iterable, Serializable {
     public static final h c = new h(c0.b);
@@ -29,7 +29,7 @@ public class h implements Iterable, Serializable {
             return i12;
         }
         if (i7 < 0) {
-            throw new IndexOutOfBoundsException(jg.g.k(i7, "Beginning index: ", " < 0"));
+            throw new IndexOutOfBoundsException(i5.c.j(i7, "Beginning index: ", " < 0"));
         }
         if (i10 < i7) {
             throw new IndexOutOfBoundsException(a8.p0.m(i7, i10, "Beginning index larger than ending index: ", ", "));
@@ -76,9 +76,9 @@ public class h implements Iterable, Serializable {
             throw new IllegalArgumentException("Length too large: " + size + size());
         }
         if (size > hVar.size()) {
-            StringBuilder n10 = jg.g.n(size, "Ran off end of other: 0, ", ", ");
-            n10.append(hVar.size());
-            throw new IllegalArgumentException(n10.toString());
+            StringBuilder m10 = i5.c.m(size, "Ran off end of other: 0, ", ", ");
+            m10.append(hVar.size());
+            throw new IllegalArgumentException(m10.toString());
         }
         byte[] bArr = hVar.b;
         int l10 = l() + size;
@@ -143,11 +143,11 @@ public class h implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int size = size();
         if (size() <= 50) {
-            sb2 = q6.a(this);
+            sb2 = r6.a(this);
         } else {
             StringBuilder sb3 = new StringBuilder();
             int i7 = i(0, 47, size());
-            sb3.append(q6.a(i7 == 0 ? c : new g(this.b, l(), i7)));
+            sb3.append(r6.a(i7 == 0 ? c : new g(this.b, l(), i7)));
             sb3.append("...");
             sb2 = sb3.toString();
         }

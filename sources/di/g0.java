@@ -1,28 +1,36 @@
 package di;
 
+import android.content.Context;
 import android.view.View;
+import org.telegram.ui.Components.a41;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class g0 extends v4.k {
-    public final /* synthetic */ g2 F;
-
-    public g0(g2 g2Var) {
-        this.F = g2Var;
+public final class g0 extends a41 {
+    static {
+        a41.h(new g0());
     }
 
-    @Override // v4.k
-    public final float A(View view) {
-        return 0.5f;
+    public static b41 i(String str, CharSequence charSequence, int i7) {
+        b41 K = b41.K(g0.class);
+        K.b = false;
+        K.z = i7;
+        K.l = str;
+        K.m = charSequence;
+        return K;
     }
 
-    @Override // v4.k
-    public final void M() {
-        this.F.c.invalidate();
+    @Override // org.telegram.ui.Components.a41
+    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+        ((h0) view).a(b41Var.z, b41Var.l, b41Var.m);
     }
 
-    @Override // v4.k
-    public final void P(v4.d1 d1Var) {
-        this.F.c.invalidate();
+    @Override // org.telegram.ui.Components.a41
+    public final View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new h0(0, context, e6Var);
     }
 }

@@ -1,106 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.KeyEvent;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.text.Spanned;
+import android.text.style.LeadingMarginSpan;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ka extends oj0 {
-    public final /* synthetic */ int c;
-    public final Context d;
-    public final Object e;
-    public final /* synthetic */ KeyEvent.Callback f;
+public final class ka implements LeadingMarginSpan {
+    public final int a;
+    public final int b;
 
-    public ka(pi piVar, Context context) {
-        this.c = 1;
-        this.f = piVar;
-        this.e = new ArrayList();
-        this.d = context;
+    public ka(int i7, int i10) {
+        this.a = i7;
+        this.b = i10;
     }
 
-    @Override // v4.g0
-    public void B(v4.i0 i0Var) {
-        switch (this.c) {
-            case 0:
-                ((oj0) this.e).B(new ja(this, i0Var));
-                break;
-            default:
-                super.B(i0Var);
-                break;
+    @Override // android.text.style.LeadingMarginSpan
+    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i7, int i10, int i11, int i12, int i13, CharSequence charSequence, int i14, int i15, boolean z10, Layout layout) {
+        if (((Spanned) charSequence).getSpanStart(this) == i14) {
+            Paint.Style style = paint.getStyle();
+            int color = paint.getColor();
+            paint.setColor(-11491093);
+            paint.setStyle(Paint.Style.FILL);
+            if (layout != null) {
+                i13 -= layout.getLineForOffset(i14) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
+            }
+            canvas.drawCircle((i10 * r7) + i7, (i11 + i13) / 2.0f, this.b, paint);
+            paint.setColor(color);
+            paint.setStyle(style);
         }
     }
 
-    @Override // org.telegram.ui.Components.oj0
-    public final boolean D(v4.d1 d1Var) {
-        switch (this.c) {
-            case 0:
-                return ((oj0) this.e).D(d1Var);
-            default:
-                return d1Var.f == 0;
-        }
-    }
-
-    @Override // v4.g0
-    public final int b() {
-        switch (this.c) {
-            case 0:
-                return ((oj0) this.e).b() + 1;
-            default:
-                return ((ArrayList) this.e).size();
-        }
-    }
-
-    @Override // v4.g0
-    public final int d(int i7) {
-        switch (this.c) {
-            case 0:
-                ma maVar = (ma) this.f;
-                if (i7 == (maVar.J1 ? b() - 1 : 0)) {
-                    return -1000;
-                }
-                return ((oj0) this.e).d(i7 - (!maVar.J1 ? 1 : 0));
-            default:
-                return 0;
-        }
-    }
-
-    @Override // v4.g0
-    public final void t(v4.d1 d1Var, int i7) {
-        switch (this.c) {
-            case 0:
-                ma maVar = (ma) this.f;
-                if (i7 != (maVar.J1 ? b() - 1 : 0)) {
-                    ((oj0) this.e).t(d1Var, i7 - (!maVar.J1 ? 1 : 0));
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Cells.ua uaVar = (org.telegram.ui.Cells.ua) d1Var.a;
-                uaVar.d(1, false, false);
-                uaVar.setSize(((pi) this.f).r);
-                uaVar.e(1, ((ArrayList) this.e).get(i7), null, 0);
-                break;
-        }
-    }
-
-    @Override // v4.g0
-    public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        switch (this.c) {
-            case 0:
-                return i7 == -1000 ? new xi0(new bi.ec((ma) this.f, this.d)) : ((oj0) this.e).x(viewGroup, i7);
-            default:
-                oi oiVar = new oi(this, this.d);
-                oiVar.b = false;
-                return new xi0(oiVar);
-        }
-    }
-
-    public ka(ma maVar, oj0 oj0Var, Context context) {
-        this.c = 0;
-        this.f = maVar;
-        this.e = oj0Var;
-        this.d = context;
+    @Override // android.text.style.LeadingMarginSpan
+    public final int getLeadingMargin(boolean z10) {
+        return (this.b * 2) + this.a;
     }
 }

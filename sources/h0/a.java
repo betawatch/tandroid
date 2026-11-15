@@ -1,8 +1,9 @@
 package h0;
 
 import android.graphics.Color;
+import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public final float a;
@@ -58,7 +59,7 @@ public final class a {
         float f23 = ((float) (((signum2 * (-12.0d)) + (signum * 11.0d)) + d)) / 11.0f;
         float f24 = ((float) ((signum + signum2) - (d * 2.0d))) / 9.0f;
         float f25 = signum2 * 20.0f;
-        float y10 = com.google.android.recaptcha.internal.a.y(signum3, 21.0f, (signum * 20.0f) + f25, 20.0f);
+        float y10 = e2.y(signum3, 21.0f, (signum * 20.0f) + f25, 20.0f);
         float f26 = (((signum * 40.0f) + f25) + signum3) / 20.0f;
         float atan2 = (((float) Math.atan2(f24, f23)) * 180.0f) / 3.1415927f;
         if (atan2 < 0.0f) {
@@ -110,13 +111,13 @@ public final class a {
                 float f16 = pow2 / kVar.b;
                 float sin = (float) Math.sin(d10);
                 float cos2 = (float) Math.cos(d10);
-                float x10 = (((0.305f + f16) * 23.0f) * pow) / (((pow * 108.0f) * sin) + com.google.android.recaptcha.internal.a.x(pow, 11.0f, cos2, f15 * 23.0f));
+                float x10 = (((0.305f + f16) * 23.0f) * pow) / (((pow * 108.0f) * sin) + e2.x(pow, 11.0f, cos2, f15 * 23.0f));
                 float f17 = cos2 * x10;
                 float f18 = x10 * sin;
                 float f19 = f16 * 460.0f;
-                float y10 = com.google.android.recaptcha.internal.a.y(f18, 288.0f, (451.0f * f17) + f19, 1403.0f);
-                float w10 = com.google.android.recaptcha.internal.a.w(f18, 261.0f, f19 - (891.0f * f17), 1403.0f);
-                float w11 = com.google.android.recaptcha.internal.a.w(f18, 6300.0f, f19 - (f17 * 220.0f), 1403.0f);
+                float y10 = e2.y(f18, 288.0f, (451.0f * f17) + f19, 1403.0f);
+                float w10 = e2.w(f18, 261.0f, f19 - (891.0f * f17), 1403.0f);
+                float w11 = e2.w(f18, 6300.0f, f19 - (f17 * 220.0f), 1403.0f);
                 float f20 = 100.0f / f14;
                 float signum = Math.signum(y10) * f20 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(y10) * 27.13d) / (400.0d - Math.abs(y10))), 2.380952380952381d));
                 float signum2 = Math.signum(w10) * f20 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(w10) * 27.13d) / (400.0d - Math.abs(w10))), 2.380952380952381d));
@@ -145,13 +146,13 @@ public final class a {
         float f162 = pow22 / kVar.b;
         float sin2 = (float) Math.sin(d102);
         float cos22 = (float) Math.cos(d102);
-        float x102 = (((0.305f + f162) * 23.0f) * pow3) / (((pow3 * 108.0f) * sin2) + com.google.android.recaptcha.internal.a.x(pow3, 11.0f, cos22, f152 * 23.0f));
+        float x102 = (((0.305f + f162) * 23.0f) * pow3) / (((pow3 * 108.0f) * sin2) + e2.x(pow3, 11.0f, cos22, f152 * 23.0f));
         float f172 = cos22 * x102;
         float f182 = x102 * sin2;
         float f192 = f162 * 460.0f;
-        float y102 = com.google.android.recaptcha.internal.a.y(f182, 288.0f, (451.0f * f172) + f192, 1403.0f);
-        float w102 = com.google.android.recaptcha.internal.a.w(f182, 261.0f, f192 - (891.0f * f172), 1403.0f);
-        float w112 = com.google.android.recaptcha.internal.a.w(f182, 6300.0f, f192 - (f172 * 220.0f), 1403.0f);
+        float y102 = e2.y(f182, 288.0f, (451.0f * f172) + f192, 1403.0f);
+        float w102 = e2.w(f182, 261.0f, f192 - (891.0f * f172), 1403.0f);
+        float w112 = e2.w(f182, 6300.0f, f192 - (f172 * 220.0f), 1403.0f);
         float f202 = 100.0f / f142;
         float signum4 = Math.signum(y102) * f202 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(y102) * 27.13d) / (400.0d - Math.abs(y102))), 2.380952380952381d));
         float signum22 = Math.signum(w102) * f202 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(w102) * 27.13d) / (400.0d - Math.abs(w102))), 2.380952380952381d));

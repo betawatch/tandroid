@@ -1,21 +1,22 @@
 package z3;
 
 import h2.x;
+import i2.u;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements g9.k, i2.u {
+public final /* synthetic */ class e implements g9.k, u {
     public final /* synthetic */ h a;
+
+    @Override // i2.u
+    public void a(long j3, x xVar) {
+        f3.b.c(j3, xVar, this.a.K);
+    }
 
     @Override // g9.k, l5.e
     public Object apply(Object obj) {
-        r rVar = (r) obj;
+        q qVar = (q) obj;
         this.a.getClass();
-        return rVar;
-    }
-
-    @Override // i2.u
-    public void b(long j3, x xVar) {
-        f3.b.c(j3, xVar, this.a.K);
+        return qVar;
     }
 }

@@ -6,11 +6,12 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.i20;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.d80;
+import org.telegram.ui.Components.oy0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class c0 {
     public final Runnable a;
@@ -20,7 +21,7 @@ public final class c0 {
     public float e;
     public int f;
     public int g;
-    public my0 h;
+    public oy0 h;
     public TL_keyboard.KeyboardInlineButton i;
     public org.telegram.messenger.o2 j;
     public org.telegram.messenger.m2 k;
@@ -30,10 +31,10 @@ public final class c0 {
     public final Paint o = new Paint(1);
     public final RectF p = new RectF();
     public final float[] q = new float[8];
-    public a80 r;
+    public d80 r;
     public y s;
     public Drawable t;
-    public org.telegram.ui.Components.h5 u;
+    public org.telegram.ui.Components.g5 u;
     public boolean v;
     public float w;
     public ValueAnimator x;
@@ -52,19 +53,19 @@ public final class c0 {
                 this.a.run();
             }
         }
-        return com.google.android.recaptcha.internal.a.z(1.0f, this.w, 0.04f, 0.96f);
+        return com.google.android.gms.internal.vision.e2.z(1.0f, this.w, 0.04f, 0.96f);
     }
 
-    public final void b(boolean z9) {
+    public final void b(boolean z10) {
         ValueAnimator valueAnimator;
-        if (this.v != z9) {
-            this.v = z9;
+        if (this.v != z10) {
+            this.v = z10;
             this.a.run();
-            if (z9 && (valueAnimator = this.x) != null) {
+            if (z10 && (valueAnimator = this.x) != null) {
                 valueAnimator.removeAllListeners();
                 this.x.cancel();
             }
-            if (z9) {
+            if (z10) {
                 return;
             }
             float f10 = this.w;
@@ -72,8 +73,8 @@ public final class c0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
                 this.x = ofFloat;
                 ofFloat.addUpdateListener(new r(this, 1));
-                this.x.addListener(new m.a(this, 22));
-                org.telegram.messenger.camera.q.i(2.0f, this.x);
+                this.x.addListener(new ki.s3(this, 23));
+                i20.k(2.0f, this.x);
                 this.x.setDuration(350L);
                 this.x.start();
             }

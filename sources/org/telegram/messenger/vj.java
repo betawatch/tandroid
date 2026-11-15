@@ -1,216 +1,189 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import android.os.SystemClock;
-import android.util.Pair;
+import android.util.SparseIntArray;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vj implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qp b;
+    public final /* synthetic */ np b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ TLRPC.TL_messages_peerDialogs f;
+    public final /* synthetic */ a0.h h;
+    public final /* synthetic */ TLRPC.TL_messages_dialogs n;
 
-    public /* synthetic */ vj(qp qpVar, int i7) {
-        this.a = i7;
-        this.b = qpVar;
+    public /* synthetic */ vj(np npVar, int i7, ArrayList arrayList, boolean z10, TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs, a0.h hVar, TLRPC.TL_messages_dialogs tL_messages_dialogs, int i10) {
+        this.a = i10;
+        this.b = npVar;
+        this.c = i7;
+        this.d = arrayList;
+        this.e = z10;
+        this.f = tL_messages_peerDialogs;
+        this.h = hVar;
+        this.n = tL_messages_dialogs;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0076  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0164  */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        int i7 = 1;
+        boolean z10;
+        int i7;
+        int i10;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        int i11;
         switch (this.a) {
             case 0:
-                qp qpVar = this.b;
-                qpVar.getNotificationCenter().k(46, new Object[0]);
-                qpVar.getNotificationCenter().k(2, 2);
-                qpVar.getUserConfig().v(true);
-                break;
-            case 1:
-                this.b.h3();
-                break;
-            case 2:
-                qp qpVar2 = this.b;
-                qp messagesController = qpVar2.getMessagesController();
-                qpVar2.getNotificationCenter().b(messagesController, qs.U1);
-                qpVar2.getNotificationCenter().b(messagesController, qs.V1);
-                qpVar2.getNotificationCenter().b(messagesController, qs.W1);
-                qpVar2.getNotificationCenter().b(messagesController, qs.Y1);
-                qpVar2.getNotificationCenter().b(messagesController, qs.Z1);
-                qpVar2.getNotificationCenter().b(messagesController, 21);
-                qpVar2.getNotificationCenter().b(messagesController, 48);
-                break;
-            case 3:
-                qp qpVar3 = this.b;
-                vj vjVar = qpVar3.J7;
-                g0.r(vjVar);
-                long currentTime = qpVar3.u4 - qpVar3.getConnectionsManager().getCurrentTime();
-                if (currentTime > 0) {
-                    g0.i3(vjVar, currentTime);
-                    break;
-                }
-                break;
-            case 4:
-                this.b.j2 = false;
-                break;
-            case 5:
-                qp qpVar4 = this.b;
-                qpVar4.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_19));
-                qpVar4.i5();
-                break;
-            case 6:
-                this.b.R2(true);
-                break;
-            case 7:
-                this.b.M(false);
-                break;
-            case 8:
-                p10 userConfig = this.b.getUserConfig();
-                if ((userConfig.k0 != null || userConfig.j0 != null) && Math.abs(SystemClock.elapsedRealtime() - userConfig.l0) >= 1800000) {
-                    userConfig.u();
-                    break;
-                }
-                break;
-            case 9:
-                qp qpVar5 = this.b;
-                SharedPreferences sharedPreferences = qpVar5.d7;
-                sharedPreferences.getBoolean("EnableContactJoined", true);
-                qpVar5.F2 = sharedPreferences.getInt("nextTosCheckTime", 0);
-                break;
-            case 10:
-                this.b.getNotificationsController().m(0);
-                break;
-            case 11:
-                this.b.getNotificationsController().m(1);
-                break;
-            case 12:
-                this.b.getNotificationsController().m(2);
-                break;
-            case 13:
-                this.b.getNotificationCenter().k(qs.E1, new Object[0]);
-                break;
-            case 14:
-                qp qpVar6 = this.b;
-                HashSet hashSet = qpVar6.e8;
-                if (!hashSet.isEmpty()) {
-                    TL_account.getRequirementsToContact getrequirementstocontact = new TL_account.getRequirementsToContact();
-                    ArrayList arrayList = new ArrayList();
-                    Iterator it = hashSet.iterator();
-                    while (it.hasNext()) {
-                        Long l10 = (Long) it.next();
-                        l10.getClass();
-                        getrequirementstocontact.id.add(qpVar6.q1(qpVar6.a2(l10)));
-                        arrayList.add(l10);
-                    }
-                    hashSet.clear();
-                    if (!getrequirementstocontact.id.isEmpty()) {
-                        qpVar6.getConnectionsManager().sendRequest(getrequirementstocontact, new r4(6, qpVar6, arrayList));
-                        break;
-                    }
-                }
-                break;
-            case 15:
-                qp qpVar7 = this.b;
-                qpVar7.getClass();
-                a0.h hVar = new a0.h();
-                HashSet hashSet2 = qpVar7.p8;
-                Iterator it2 = hashSet2.iterator();
-                while (it2.hasNext()) {
-                    Pair pair = (Pair) it2.next();
-                    Pair pair2 = (Pair) hVar.f(((bi.x9) pair.first).a);
-                    if (pair2 == null) {
-                        long j3 = ((bi.x9) pair.first).a;
-                        pair2 = new Pair(new HashSet(), (AtomicBoolean) pair.second);
-                        hVar.k(pair2, j3);
-                    }
-                    if (!((AtomicBoolean) pair.second).get()) {
-                        ((AtomicBoolean) pair2.second).set(false);
-                    }
-                    ((HashSet) pair2.first).add(Integer.valueOf(((bi.x9) pair.first).b));
-                }
-                hashSet2.clear();
-                for (int i10 = 0; i10 < hVar.m(); i10++) {
-                    Pair pair3 = (Pair) hVar.n(i10);
-                    long j10 = hVar.j(i10);
-                    HashSet hashSet3 = (HashSet) pair3.first;
-                    boolean z9 = ((AtomicBoolean) pair3.second).get();
-                    TLRPC.TL_reportMessagesDelivery tL_reportMessagesDelivery = new TLRPC.TL_reportMessagesDelivery();
-                    tL_reportMessagesDelivery.peer = qpVar7.j1(j10);
-                    tL_reportMessagesDelivery.id.addAll(hashSet3);
-                    tL_reportMessagesDelivery.push = z9;
-                    qpVar7.getConnectionsManager().sendRequest(tL_reportMessagesDelivery, null);
-                }
-                break;
-            case 16:
-                this.b.getNotificationCenter().k(qs.P3, new Object[0]);
-                break;
-            case 17:
-                this.b.getNotificationCenter().k(qs.Z2, new Object[0]);
-                break;
-            case 18:
-                this.b.getNotificationCenter().k(2, 4);
-                break;
-            case 19:
-                this.b.getNotificationCenter().k(2, 64);
-                break;
-            case 20:
-                qp qpVar8 = this.b;
-                qpVar8.z2 = 0L;
-                qpVar8.D2 = null;
-                qpVar8.t2 = qpVar8.getConnectionsManager().getCurrentTime() + 3600;
-                qp.e1().edit().putLong("proxy_dialog", qpVar8.z2).remove("proxyDialogAddress").putInt("nextPromoInfoCheckTime", qpVar8.t2).commit();
-                break;
-            case 21:
-                qp qpVar9 = this.b;
-                qpVar9.getMessagesStorage().t1(false);
-                g0.h3(new sn(qpVar9, i7));
-                break;
-            case 22:
-                this.b.h3();
-                break;
-            case 23:
-                this.b.h3();
-                break;
-            case 24:
-                qp qpVar10 = this.b;
-                TLRPC.Dialog dialog = qpVar10.x2;
-                if (dialog != null) {
-                    long j11 = dialog.id;
-                    if (j11 < 0) {
-                        TLRPC.Chat M0 = qpVar10.M0(Long.valueOf(-j11));
-                        if (t3.r0(M0) || M0.restricted) {
-                            qpVar10.f4(qpVar10.x2);
-                        }
-                    } else {
-                        qpVar10.f4(dialog);
-                    }
-                    qpVar10.x2 = null;
-                    qpVar10.T4(null);
-                    qpVar10.getNotificationCenter().k(3, new Object[0]);
-                    break;
-                }
-                break;
-            case 25:
-                this.b.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_13));
-                break;
-            case 26:
-                this.b.e2 = false;
-                break;
-            case 27:
-                this.b.N(true);
-                break;
-            case 28:
-                this.b.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_13));
+                g0.h3(new vj(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1));
                 break;
             default:
-                this.b.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_13));
-                break;
+                np npVar = this.b;
+                ArrayList arrayList3 = npVar.y;
+                a0.h hVar = npVar.R;
+                SparseIntArray sparseIntArray = npVar.p2;
+                int i12 = this.c;
+                sparseIntArray.delete(i12);
+                ArrayList arrayList4 = this.d;
+                npVar.r(arrayList4);
+                ArrayList W0 = npVar.W0(i12);
+                int i13 = 0;
+                int i14 = 0;
+                boolean z11 = false;
+                int i15 = this.e;
+                while (i13 < W0.size()) {
+                    TLRPC.Dialog dialog = (TLRPC.Dialog) W0.get(i13);
+                    if (!(dialog instanceof TLRPC.TL_dialogFolder)) {
+                        if (m5.C(dialog.id)) {
+                            if (i15 < arrayList4.size()) {
+                                arrayList4.add(i15, dialog);
+                            } else {
+                                arrayList4.add(dialog);
+                            }
+                            i15++;
+                        } else if (dialog.pinned) {
+                            i14 = Math.max(dialog.pinnedNum, i14);
+                            dialog.pinned = false;
+                            dialog.pinnedNum = 0;
+                            i15++;
+                            z11 = true;
+                        } else if (dialog.id != npVar.A2) {
+                            ArrayList arrayList5 = new ArrayList();
+                            if (arrayList4.isEmpty()) {
+                                TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = this.f;
+                                npVar.Y3(tL_messages_peerDialogs.users, false);
+                                npVar.S3(tL_messages_peerDialogs.chats, false);
+                                ArrayList arrayList6 = new ArrayList();
+                                ArrayList arrayList7 = new ArrayList();
+                                int size = arrayList4.size();
+                                int i16 = 0;
+                                z10 = false;
+                                ArrayList arrayList8 = arrayList4;
+                                while (i16 < size) {
+                                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) arrayList8.get(i16);
+                                    dialog2.pinnedNum = (size - i16) + i14;
+                                    ArrayList arrayList9 = arrayList7;
+                                    arrayList5.add(Long.valueOf(dialog2.id));
+                                    TLRPC.Dialog dialog3 = (TLRPC.Dialog) hVar.f(dialog2.id);
+                                    if (dialog3 != null) {
+                                        dialog3.pinned = true;
+                                        dialog3.pinnedNum = dialog2.pinnedNum;
+                                        arrayList6.add(Long.valueOf(dialog2.id));
+                                        arrayList7 = arrayList9;
+                                        arrayList7.add(Integer.valueOf(dialog2.pinnedNum));
+                                        arrayList = arrayList8;
+                                        i7 = size;
+                                        i10 = i16;
+                                    } else {
+                                        i7 = size;
+                                        arrayList7 = arrayList9;
+                                        i10 = i16;
+                                        hVar.k(dialog2, dialog2.id);
+                                        ArrayList arrayList10 = (ArrayList) this.h.f(dialog2.id);
+                                        npVar.S.k(arrayList10, dialog2.id);
+                                        if (arrayList10 != null) {
+                                            int i17 = 0;
+                                            arrayList8 = arrayList8;
+                                            while (i17 < arrayList10.size()) {
+                                                gj gjVar = (gj) arrayList10.get(i17);
+                                                if (gjVar != null) {
+                                                    i11 = i17;
+                                                    if (gjVar.k.peer_id.channel_id == 0) {
+                                                        npVar.V.put(gjVar.e1(), gjVar);
+                                                        npVar.O = Math.min(npVar.O, gjVar.k.date);
+                                                        long j3 = gjVar.k.random_id;
+                                                        if (j3 != 0) {
+                                                            arrayList2 = arrayList8;
+                                                            npVar.T.k(gjVar, j3);
+                                                        }
+                                                    }
+                                                    arrayList2 = arrayList8;
+                                                } else {
+                                                    arrayList2 = arrayList8;
+                                                    i11 = i17;
+                                                }
+                                                i17 = i11 + 1;
+                                                arrayList8 = arrayList2;
+                                            }
+                                        }
+                                        arrayList = arrayList8;
+                                        npVar.t7.d(dialog2.id);
+                                        z10 = true;
+                                    }
+                                    i16 = i10 + 1;
+                                    size = i7;
+                                    arrayList8 = arrayList;
+                                    z11 = true;
+                                }
+                                vr messagesStorage = npVar.getMessagesStorage();
+                                messagesStorage.a.c(new vp(messagesStorage, arrayList6, arrayList7, 0));
+                            } else {
+                                z10 = false;
+                            }
+                            if (z11) {
+                                if (z10) {
+                                    arrayList3.clear();
+                                    int m10 = hVar.m();
+                                    for (int i18 = 0; i18 < m10; i18++) {
+                                        TLRPC.Dialog dialog4 = (TLRPC.Dialog) hVar.n(i18);
+                                        if (npVar.E0.h(dialog4.id) < 0) {
+                                            arrayList3.add(dialog4);
+                                        }
+                                    }
+                                }
+                                npVar.U4(null);
+                                npVar.getNotificationCenter().k(3, new Object[0]);
+                            }
+                            vr messagesStorage2 = npVar.getMessagesStorage();
+                            messagesStorage2.a.c(new rp(messagesStorage2, arrayList5, i12));
+                            npVar.getMessagesStorage().d1(this.n, 1);
+                            npVar.getUserConfig().y(i12, true);
+                            npVar.getUserConfig().v(false);
+                            break;
+                        }
+                    }
+                    i13++;
+                    i15 = i15;
+                }
+                ArrayList arrayList52 = new ArrayList();
+                if (arrayList4.isEmpty()) {
+                }
+                if (z11) {
+                }
+                vr messagesStorage22 = npVar.getMessagesStorage();
+                messagesStorage22.a.c(new rp(messagesStorage22, arrayList52, i12));
+                npVar.getMessagesStorage().d1(this.n, 1);
+                npVar.getUserConfig().y(i12, true);
+                npVar.getUserConfig().v(false);
         }
     }
 }

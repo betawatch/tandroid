@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class i0 {
     public static WeakHashMap a = null;
@@ -137,8 +137,8 @@ public abstract class i0 {
         }
     }
 
-    public static String[] e(m.t tVar) {
-        return Build.VERSION.SDK_INT >= 31 ? g0.a(tVar) : (String[]) tVar.getTag(R.id.tag_on_receive_content_mime_types);
+    public static String[] e(m.s sVar) {
+        return Build.VERSION.SDK_INT >= 31 ? g0.a(sVar) : (String[]) sVar.getTag(R.id.tag_on_receive_content_mime_types);
     }
 
     public static void f(int i7, View view) {
@@ -155,12 +155,12 @@ public abstract class i0 {
                     tag = null;
                 }
             }
-            boolean z9 = ((CharSequence) tag) != null && view.isShown() && view.getWindowVisibility() == 0;
-            if (view.getAccessibilityLiveRegion() != 0 || z9) {
+            boolean z10 = ((CharSequence) tag) != null && view.isShown() && view.getWindowVisibility() == 0;
+            if (view.getAccessibilityLiveRegion() != 0 || z10) {
                 AccessibilityEvent obtain = AccessibilityEvent.obtain();
-                obtain.setEventType(z9 ? 32 : 2048);
+                obtain.setEventType(z10 ? 32 : 2048);
                 obtain.setContentChangeTypes(i7);
-                if (z9) {
+                if (z10) {
                     List<CharSequence> text = obtain.getText();
                     if (i10 >= 28) {
                         charSequence = d0.a(view);

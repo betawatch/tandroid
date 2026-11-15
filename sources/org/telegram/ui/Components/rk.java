@@ -1,28 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.location.Location;
 import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class rk extends v4.c0 {
-    public final /* synthetic */ kg.c0 r;
+public final /* synthetic */ class rk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dl b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rk(kg.c0 c0Var, Context context) {
-        super(context);
-        this.r = c0Var;
+    public /* synthetic */ rk(dl dlVar, int i7) {
+        this.a = i7;
+        this.b = dlVar;
     }
 
-    @Override // v4.c0
-    public final int k(int i7, View view) {
-        int k10 = super.k(i7, view);
-        vk vkVar = (vk) this.r.V;
-        return k10 - (vkVar.L.getPaddingTop() - (vkVar.q0 - vkVar.p0));
-    }
-
-    @Override // v4.c0
-    public final int m(int i7) {
-        return super.m(i7) * 4;
+    @Override // java.lang.Runnable
+    public final void run() {
+        Location location;
+        switch (this.a) {
+            case 0:
+                dl.T(this.b);
+                break;
+            case 1:
+                dl.V(this.b);
+                break;
+            case 2:
+                dl dlVar = this.b;
+                double[] dArr = dlVar.b.y4;
+                dlVar.h0(dArr[0], dArr[1]);
+                break;
+            case 3:
+                org.telegram.messenger.g0.h3(new rk(this.b, 6));
+                break;
+            case 4:
+                dl dlVar2 = this.b;
+                jg.r0 r0Var = dlVar2.L;
+                if (!dlVar2.l0) {
+                    org.telegram.messenger.ea eaVar = dlVar2.E;
+                    if (eaVar != null && (location = dlVar2.j0) != null) {
+                        location.setLatitude(((org.telegram.messenger.bb) eaVar.d().b).a);
+                        dlVar2.j0.setLongitude(((org.telegram.messenger.bb) dlVar2.E.d().b).b);
+                    }
+                    r0Var.L(dlVar2.j0);
+                    r0Var.H();
+                    break;
+                } else {
+                    dlVar2.l0 = false;
+                    break;
+                }
+                break;
+            case 5:
+                View view = this.b.J;
+                if (view.getTag() == null) {
+                    view.animate().alpha(0.0f).setDuration(180L).start();
+                    break;
+                }
+                break;
+            case 6:
+                View view2 = this.b.J;
+                view2.setTag(1);
+                view2.animate().alpha(0.0f).setDuration(180L).start();
+                break;
+            default:
+                this.b.h0(0.0d, 0.0d);
+                break;
+        }
     }
 }

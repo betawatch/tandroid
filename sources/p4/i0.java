@@ -1,6 +1,6 @@
 package p4;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements l0 {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class i0 implements l0 {
         int i7 = this.a;
         int i10 = 0;
         r0 = false;
-        boolean z9 = false;
+        boolean z10 = false;
         i10 = 0;
         i10 = 0;
         int i11 = this.c;
@@ -43,11 +43,11 @@ public final /* synthetic */ class i0 implements l0 {
                 int i13 = n.a;
                 if (i11 != -1 && i11 != 0) {
                     if (i11 != 1 && i11 != 2) {
-                        throw new IllegalArgumentException(jg.g.j(i11, "Unrecognized ShuffleMode: "));
+                        throw new IllegalArgumentException(i5.c.i(i11, "Unrecognized ShuffleMode: "));
                     }
-                    z9 = true;
+                    z10 = true;
                 }
-                g1Var2.x(z9);
+                g1Var2.x(z10);
                 return;
         }
     }

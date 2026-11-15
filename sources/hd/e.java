@@ -3,6 +3,7 @@ package hd;
 import c8.c0;
 import c8.d0;
 import c8.sd;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -88,7 +89,7 @@ public abstract class e extends c0 {
         ArrayList arrayList = new ArrayList(jArr.length);
         int length2 = jArr.length;
         while (i7 < length2) {
-            i7 = com.google.android.recaptcha.internal.a.g(i7, 1, jArr[i7], arrayList);
+            i7 = e2.g(i7, 1, jArr[i7], arrayList);
         }
         return arrayList;
     }

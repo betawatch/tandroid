@@ -1,60 +1,281 @@
 package hi;
 
-import android.os.AsyncTask;
-import android.os.Build;
-import android.util.Pair;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import org.telegram.messenger.a8;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ns;
+import org.telegram.ui.Components.m60;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class a0 extends AsyncTask {
-    public String a;
-    public long b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ ai.e d;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class a0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e0 b;
 
-    public a0(String str, ai.e eVar) {
-        this.c = str;
-        this.d = eVar;
+    public /* synthetic */ a0(e0 e0Var, int i7) {
+        this.a = i7;
+        this.b = e0Var;
     }
 
-    @Override // android.os.AsyncTask
-    public final Object doInBackground(Object[] objArr) {
-        try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(this.c).openConnection();
-            httpURLConnection.setRequestMethod("GET");
-            httpURLConnection.setRequestProperty("Accept-Encoding", "identity");
-            httpURLConnection.setConnectTimeout(1000);
-            httpURLConnection.setReadTimeout(1000);
-            httpURLConnection.setUseCaches(false);
-            httpURLConnection.setDefaultUseCaches(false);
-            httpURLConnection.setDoOutput(false);
-            httpURLConnection.setDoInput(false);
-            httpURLConnection.getResponseCode();
-            if (Build.VERSION.SDK_INT >= 24) {
-                this.b = httpURLConnection.getContentLengthLong();
-            } else {
-                this.b = httpURLConnection.getContentLength();
-            }
-            String contentType = httpURLConnection.getContentType();
-            this.a = contentType;
-            if (contentType.contains("; ")) {
-                String str = this.a;
-                this.a = str.substring(0, str.indexOf("; "));
-            }
-            httpURLConnection.getInputStream().close();
-            return null;
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return null;
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0182  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0195  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x01ad  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x01c1  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x01da A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x01b0  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        c0 c0Var;
+        long j3;
+        c0 c0Var2;
+        boolean z10;
+        long k10;
+        float f10;
+        c0 c0Var3;
+        t tVar = null;
+        switch (this.a) {
+            case 0:
+                e0 e0Var = this.b;
+                if (!e0Var.f0 && !e0Var.o0) {
+                    d0 d0Var = e0Var.k0;
+                    if (d0Var != null && (c0Var = d0Var.d) != null) {
+                        c0Var.setVolume(0.0f);
+                    }
+                    d0 d0Var2 = e0Var.h0;
+                    e0Var.k0 = d0Var2;
+                    if (d0Var2 != null && d0Var2.n != null) {
+                        Runnable runnable = e0Var.m0;
+                        if (runnable != null) {
+                            runnable.run();
+                        }
+                        d0 d0Var3 = e0Var.k0;
+                        c0 c0Var4 = d0Var3.d;
+                        if (c0Var4 != null) {
+                            c0Var4.setVolume(d0Var3.n.P);
+                        }
+                        FrameLayout frameLayout = new FrameLayout(e0Var.getContext());
+                        ImageView imageView = new ImageView(e0Var.getContext());
+                        imageView.setImageResource(R.drawable.menu_lightbulb);
+                        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+                        imageView.setScaleType(ImageView.ScaleType.CENTER);
+                        frameLayout.addView(imageView, c8.ja.d(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
+                        TextView textView = new TextView(e0Var.getContext());
+                        textView.setText(hd.M0(2131744705, null));
+                        textView.setTextSize(1, 13.0f);
+                        textView.setTextColor(-1);
+                        frameLayout.addView(textView, c8.ja.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
+                        m60 F = m60.F(e0Var.a, e0Var.b, e0Var);
+                        if (e0Var.k0.n.K) {
+                            x6 x6Var = new x6(e0Var.getContext(), 0);
+                            x6Var.b = 0.0f;
+                            x6Var.c = 1.5f;
+                            x6Var.d(e0Var.k0.n.P);
+                            x6Var.h = new ai.f0(e0Var, 21);
+                            x6Var.S = org.telegram.messenger.g0.L(220.0f);
+                            F.q(x6Var);
+                            F.o();
+                        }
+                        F.T = ns.x3;
+                        F.c(R.drawable.menu_camera_retake, hd.M0(2131744811, null), new a0(e0Var, 4), false);
+                        F.c(R.drawable.msg_delete, hd.M0(2131751598, null), new a0(e0Var, 5), true);
+                        F.o();
+                        F.r(frameLayout, c8.ja.o(ns.x3, -2));
+                        F.p = new ai.o(14);
+                        F.i = 1;
+                        F.V = true;
+                        F.u = true;
+                        F.v = false;
+                        int L = org.telegram.messenger.g0.L(12.0f);
+                        int L2 = org.telegram.messenger.g0.L(10.0f);
+                        F.l = L;
+                        F.k = L2;
+                        F.p = new a0(e0Var, 6);
+                        F.Z();
+                        try {
+                            e0Var.performHapticFeedback(0, 1);
+                            break;
+                        } catch (Exception unused) {
+                            return;
+                        }
+                    }
+                }
+                break;
+            case 1:
+                this.b.invalidate();
+                break;
+            case 2:
+                e0 e0Var2 = this.b;
+                if (e0Var2.g0) {
+                    e0Var2.g0 = false;
+                    e0Var2.invalidate();
+                    break;
+                }
+                break;
+            case 3:
+                e0 e0Var3 = this.b;
+                long position = e0Var3.getPosition();
+                d0 mainPart = e0Var3.getMainPart();
+                if (mainPart == null) {
+                    j3 = 0;
+                } else {
+                    d7 d7Var = mainPart.n;
+                    j3 = d7Var.X + ((long) (d7Var.V * d7Var.h0));
+                }
+                for (int i7 = 0; i7 < e0Var3.h.size(); i7++) {
+                    d0 d0Var4 = (d0) e0Var3.h.get(i7);
+                    if (d0Var4.n != null && (c0Var2 = d0Var4.d) != null) {
+                        long duration = c0Var2.getDuration();
+                        long k11 = Utilities.k((position + j3) - d0Var4.n.X, duration, 0L);
+                        if (!e0Var3.o0 || e0Var3.r0) {
+                            float f11 = k11;
+                            d7 d7Var2 = d0Var4.n;
+                            float f12 = duration;
+                            if (f11 > d7Var2.V * f12 && f11 < d7Var2.W * f12) {
+                                z10 = true;
+                                d7 d7Var3 = d0Var4.n;
+                                float f13 = duration;
+                                k10 = Utilities.k(k11, (long) (d7Var3.W * f13), (long) (d7Var3.V * f13));
+                                if (d0Var4.d.isPlaying() != z10) {
+                                    if (z10) {
+                                        d0Var4.d.play();
+                                    } else {
+                                        d0Var4.d.pause();
+                                    }
+                                }
+                                c0 c0Var5 = d0Var4.d;
+                                if (!e0Var3.w0) {
+                                    d7 d7Var4 = d0Var4.n;
+                                    if (!d7Var4.Y && e0Var3.o0) {
+                                        f10 = d7Var4.P;
+                                        c0Var5.setVolume(f10);
+                                        if (Math.abs((d0Var4.g >= 0 ? d0Var4.g : d0Var4.d.getCurrentPosition()) - k10) <= 450 && d0Var4.g < 0) {
+                                            c0 c0Var6 = d0Var4.d;
+                                            d0Var4.g = k10;
+                                            c0Var6.seekTo(k10, e0Var3.q0, new fi.c1(d0Var4, 27));
+                                        }
+                                    }
+                                }
+                                f10 = 0.0f;
+                                c0Var5.setVolume(f10);
+                                if (Math.abs((d0Var4.g >= 0 ? d0Var4.g : d0Var4.d.getCurrentPosition()) - k10) <= 450) {
+                                    c0 c0Var62 = d0Var4.d;
+                                    d0Var4.g = k10;
+                                    c0Var62.seekTo(k10, e0Var3.q0, new fi.c1(d0Var4, 27));
+                                }
+                            }
+                        }
+                        z10 = false;
+                        d7 d7Var32 = d0Var4.n;
+                        float f132 = duration;
+                        k10 = Utilities.k(k11, (long) (d7Var32.W * f132), (long) (d7Var32.V * f132));
+                        if (d0Var4.d.isPlaying() != z10) {
+                        }
+                        c0 c0Var52 = d0Var4.d;
+                        if (!e0Var3.w0) {
+                        }
+                        f10 = 0.0f;
+                        c0Var52.setVolume(f10);
+                        if (Math.abs((d0Var4.g >= 0 ? d0Var4.g : d0Var4.d.getCurrentPosition()) - k10) <= 450) {
+                        }
+                    }
+                }
+                cb cbVar = e0Var3.s0;
+                if (cbVar != null) {
+                    cbVar.setProgress(position);
+                }
+                x5 x5Var = e0Var3.t0;
+                if (x5Var != null) {
+                    x5Var.w(true);
+                    e0Var3.t0.y(true);
+                }
+                if (e0Var3.o0 && e0Var3.r0) {
+                    org.telegram.messenger.g0.i3(e0Var3.x0, (long) (1000.0f / org.telegram.messenger.g0.r));
+                    break;
+                }
+                break;
+            case 4:
+                e0 e0Var4 = this.b;
+                d0 d0Var5 = e0Var4.k0;
+                if (d0Var5 != null) {
+                    d0Var5.a(null);
+                    e0Var4.q();
+                    e0Var4.invalidate();
+                    Runnable runnable2 = e0Var4.n0;
+                    if (runnable2 != null) {
+                        runnable2.run();
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                e0 e0Var5 = this.b;
+                d0 d0Var6 = e0Var5.k0;
+                if (d0Var6 != null && e0Var5.h.indexOf(d0Var6) >= 0) {
+                    t tVar2 = e0Var5.f;
+                    int indexOf = tVar2.e.indexOf(d0Var6.h);
+                    ArrayList arrayList = tVar2.e;
+                    if (indexOf >= 0 && indexOf < arrayList.size()) {
+                        ArrayList arrayList2 = new ArrayList(arrayList);
+                        arrayList2.remove(indexOf);
+                        StringBuilder sb2 = new StringBuilder();
+                        int i10 = 0;
+                        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                            s sVar = (s) arrayList2.get(i11);
+                            if (sVar.c != i10) {
+                                sb2.append("/");
+                                i10 = sVar.c;
+                            }
+                            sb2.append(".");
+                        }
+                        tVar = new t(sb2.toString());
+                    }
+                    if (tVar.e.size() <= 1) {
+                        e0Var5.c();
+                        e0Var5.invalidate();
+                    }
+                    e0Var5.o(tVar);
+                    e0Var5.g0 = true;
+                    e0Var5.q();
+                    e0Var5.invalidate();
+                    Runnable runnable3 = e0Var5.n0;
+                    if (runnable3 != null) {
+                        runnable3.run();
+                    }
+                    sa saVar = ((fa) e0Var5).z0;
+                    saVar.J0.a(false, true);
+                    if (tVar.e.size() > 1) {
+                        z zVar = saVar.H0;
+                        saVar.A0 = tVar;
+                        zVar.a(new u(tVar, false), true);
+                        saVar.H0.b(true, true);
+                    } else {
+                        saVar.H0.b(false, true);
+                    }
+                    saVar.l0(true);
+                    g3 g3Var = saVar.N0;
+                    if (g3Var != null) {
+                        g3Var.setMultipleOnClick(saVar.B0.j());
+                        saVar.N0.setMaxCount(Math.min(10, t.b() - saVar.B0.getFilledCount()));
+                        break;
+                    }
+                }
+                break;
+            default:
+                d0 d0Var7 = this.b.k0;
+                if (d0Var7 != null && (c0Var3 = d0Var7.d) != null) {
+                    c0Var3.setVolume(0.0f);
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        g0.h.put(this.c, new Pair(this.a, Long.valueOf(this.b)));
-        this.d.a(this.a, Long.valueOf(this.b));
     }
 }

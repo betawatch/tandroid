@@ -1,49 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class bh0 extends Drawable {
+public final /* synthetic */ class bh0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ ch0 c;
+    public final /* synthetic */ ch0 b;
 
-    public bh0(ch0 ch0Var, int i7, int i10) {
-        this.c = ch0Var;
+    public /* synthetic */ bh0(ch0 ch0Var, int i7) {
         this.a = i7;
-        this.b = i10;
+        this.b = ch0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect rect = org.telegram.messenger.g0.Q;
-        int centerX = getBounds().centerX();
-        float f10 = this.a;
-        int L = centerX - (org.telegram.messenger.g0.L(f10) / 2);
-        int centerY = getBounds().centerY();
-        float f11 = this.b;
-        rect.set(L, centerY - (org.telegram.messenger.g0.L(f11) / 2), (org.telegram.messenger.g0.L(f10) / 2) + getBounds().centerX(), (org.telegram.messenger.g0.L(f11) / 2) + getBounds().centerY());
-        ch0 ch0Var = this.c;
-        ch0Var.c.z0(rect);
-        ch0Var.c.h(canvas, null);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.c.c.setAlpha(i7 / 255.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.c.o1 = colorFilter;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ch0 ch0Var = this.b;
+                ch0Var.getClass();
+                try {
+                    bg.i iVar = ch0Var.C0;
+                    if (iVar != null) {
+                        iVar.b();
+                    }
+                } catch (Throwable unused) {
+                }
+                org.telegram.messenger.g0.h3(ch0Var.A0);
+                break;
+            case 1:
+                ch0 ch0Var2 = this.b;
+                ch0Var2.Q = null;
+                ch0Var2.p();
+                break;
+            case 2:
+                ch0.h(this.b);
+                break;
+            case 3:
+                ch0.e(this.b);
+                break;
+            case 4:
+                ch0.d(this.b);
+                break;
+            case 5:
+                ch0.f(this.b);
+                break;
+            default:
+                this.b.m();
+                break;
+        }
     }
 }

@@ -1,10 +1,18 @@
 package xi;
 
-import android.content.SharedPreferences;
-import org.telegram.messenger.t0;
+import org.telegram.tgnet.RequestTimeDelegate;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public abstract class d {
-    public static final SharedPreferences a = t0.b.getSharedPreferences("mainconfig", 0);
+public final class d {
+    public final ki.e a;
+    public final a b;
+    public final RequestTimeDelegate c;
+    public int d;
+
+    public d(ki.e eVar, a aVar, RequestTimeDelegate requestTimeDelegate) {
+        this.a = eVar;
+        this.b = aVar;
+        this.c = requestTimeDelegate;
+    }
 }

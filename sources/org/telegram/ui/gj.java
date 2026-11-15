@@ -1,63 +1,38 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class gj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cn b;
+import android.content.Context;
+import android.view.MotionEvent;
 
-    public /* synthetic */ gj(cn cnVar, int i7) {
-        this.a = i7;
-        this.b = cnVar;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class gj extends org.telegram.ui.Components.h01 {
+    public final /* synthetic */ an e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gj(an anVar, Context context, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(i7, context, e6Var);
+        this.e = anVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        cn cnVar = this.b;
-        switch (i7) {
-            case 0:
-                int i10 = cn.kd;
-                cnVar.o7();
-                break;
-            case 1:
-                cn.s2(cnVar);
-                break;
-            case 2:
-                cn.s2(cnVar);
-                break;
-            case 3:
-                int i11 = cn.kd;
-                cnVar.ob();
-                break;
-            case 4:
-                int i12 = cn.kd;
-                cnVar.ob();
-                break;
-            case 5:
-                int i13 = cn.kd;
-                cnVar.ob();
-                break;
-            case 6:
-                int i14 = cn.kd;
-                cnVar.ob();
-                break;
-            case 7:
-                int i15 = cn.kd;
-                cnVar.ob();
-                break;
-            case 8:
-                int i16 = cn.kd;
-                cnVar.ob();
-                break;
-            case 9:
-                int i17 = cn.kd;
-                cnVar.ob();
-                break;
-            default:
-                int i18 = cn.kd;
-                cnVar.ob();
-                break;
+    @Override // org.telegram.ui.Components.h01, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
+            return false;
         }
+        an anVar = this.e;
+        kVar = ((org.telegram.ui.ActionBar.e2) anVar).actionBar;
+        if (kVar.x() || anVar.Y9()) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        if (getTranslationY() != f10) {
+            invalidate();
+        }
+        super.setTranslationY(f10);
     }
 }

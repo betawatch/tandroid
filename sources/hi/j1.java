@@ -1,67 +1,45 @@
 package hi;
 
-import j$.util.function.Predicate$-CC;
-import java.util.HashSet;
-import java.util.function.Predicate;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.Components.n61;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class j1 implements Predicate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class j1 extends n61 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ i2 c;
 
-    public /* synthetic */ j1(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public j1(i2 i2Var, boolean z10, Context context) {
+        this.c = i2Var;
+        this.a = z10;
+        this.b = context;
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        int i7 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.n61
+    public final void b(View view, int i7, int i10) {
+        u1 u1Var = (u1) view;
+        if (this.a) {
+            i7 = 1;
         }
-        return Predicate$-CC.$default$negate(this);
+        u1Var.a(i7);
     }
 
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i7 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
+    @Override // org.telegram.ui.Components.n61
+    public final View d(int i7) {
+        Context context = this.b;
+        i2 i2Var = this.c;
+        return i7 == 1 ? new t1(i2Var, context) : new y1(i2Var, context);
     }
 
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
-        boolean contains;
-        boolean z9;
-        switch (this.a) {
-            case 0:
-                contains = ((HashSet) this.b).contains(Long.valueOf(((l1) obj).b));
-                break;
-            case 1:
-                contains = ((HashSet) this.b).contains(Long.valueOf(((l1) obj).b));
-                break;
-            default:
-                zh.g1 g1Var = (zh.g1) this.b;
-                TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
-                if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                    z9 = g1Var.V1.disallow_unique_stargifts;
-                } else {
-                    g1Var.getClass();
-                    if (starGift.limited) {
-                        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings = g1Var.V1;
-                        if (disallowedGiftsSettings.disallow_limited_stargifts) {
-                            return starGift.can_upgrade && !disallowedGiftsSettings.disallow_unique_stargifts;
-                        }
-                        return true;
-                    }
-                    z9 = g1Var.V1.disallow_unlimited_stargifts;
-                }
-                return true ^ z9;
-        }
-        return !contains;
+    @Override // org.telegram.ui.Components.n61
+    public final int e() {
+        return this.a ? 1 : 3;
+    }
+
+    @Override // org.telegram.ui.Components.n61
+    public final int h(int i7) {
+        return (i7 == 0 || i7 == 1) ? 0 : 1;
     }
 }

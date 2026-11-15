@@ -1,28 +1,34 @@
 package hi;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class m4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n4 b;
+import android.widget.FrameLayout;
+import android.widget.PopupWindow;
 
-    public /* synthetic */ m4(n4 n4Var, int i7) {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class m4 implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
+
+    public /* synthetic */ m4(int i7, FrameLayout frameLayout) {
         this.a = i7;
-        this.b = n4Var;
+        this.b = frameLayout;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
         switch (this.a) {
             case 0:
-                n4 n4Var = this.b;
-                if (n4Var.x) {
-                    n4Var.d();
+                ((m5) this.b).s1.d();
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.n0 n0Var = ((org.telegram.ui.ActionBar.q0) this.b).R;
+                if (n0Var != null) {
+                    n0Var.i();
                     break;
                 }
                 break;
             default:
-                this.b.invalidateSelf();
+                ((tg.g0) this.b).C1.d();
                 break;
         }
     }

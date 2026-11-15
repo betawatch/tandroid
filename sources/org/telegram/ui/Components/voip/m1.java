@@ -1,6 +1,163 @@
 package org.telegram.ui.Components.voip;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import a8.b8;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.view.View;
+import android.view.animation.LinearInterpolator;
+import java.util.ArrayList;
+import org.telegram.messenger.ns;
+import org.telegram.ui.Cells.w9;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface m1 {
+public final class m1 {
+    public final b8 a;
+    public final b8 b;
+    public b8 c;
+    public b8 d;
+    public boolean e;
+    public int f;
+    public int g;
+    public int h;
+    public boolean i;
+    public final Paint j;
+    public final Paint k;
+    public final Paint l;
+    public final ArrayList m;
+
+    public m1() {
+        b8 b8Var = new b8(80, 80);
+        this.a = b8Var;
+        b8 b8Var2 = new b8(80, 80);
+        this.b = b8Var2;
+        this.f = 0;
+        this.g = 0;
+        Paint paint = new Paint(1);
+        this.j = paint;
+        Paint paint2 = new Paint(1);
+        this.k = paint2;
+        Paint paint3 = new Paint(1);
+        this.l = paint3;
+        this.m = new ArrayList();
+        b8Var2.k(0.0f, 0.0f, 80.0f, 80.0f);
+        b8Var.k(0.0f, 0.0f, 80.0f, 80.0f);
+        paint.setColor(-1);
+        paint.setAlpha(35);
+        paint2.setColor(-16777216);
+        paint2.setAlpha(ns.n1);
+        paint3.setColor(-16777216);
+        paint3.setAlpha(35);
+        ((Paint) b8Var2.a).setAlpha(ns.K2);
+    }
+
+    public final void a(View view) {
+        this.m.add(view);
+    }
+
+    public final Paint b() {
+        return this.i ? this.k : (Paint) this.b.a;
+    }
+
+    public final void c() {
+        ArrayList arrayList = this.m;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ((View) obj).invalidate();
+        }
+    }
+
+    public final void d(float f10, float f11) {
+        float f12 = this.g * 1.12f;
+        float f13 = -f10;
+        float f14 = -f11;
+        this.b.m(f13 - ((f12 - this.f) / 2.0f), f14 - ((f12 - this.g) / 2.0f), f12 / ((Bitmap) r1.c).getHeight(), this.h);
+        this.d.k(f13, f14, this.f - f10, this.g - f11);
+    }
+
+    public final void e(boolean z10) {
+        if (!this.i || z10) {
+            this.i = z10;
+        } else {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
+            final int i7 = 0;
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.l1
+                public final /* synthetic */ m1 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    switch (i7) {
+                        case 0:
+                            m1 m1Var = this.b;
+                            m1Var.getClass();
+                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            int i10 = (int) (35.0f * floatValue);
+                            m1Var.l.setAlpha(i10);
+                            m1Var.k.setAlpha((int) (floatValue * 102.0f));
+                            m1Var.j.setAlpha(i10);
+                            m1Var.c();
+                            break;
+                        default:
+                            m1 m1Var2 = this.b;
+                            m1Var2.getClass();
+                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            ((Paint) m1Var2.b.a).setAlpha((int) (180.0f * floatValue2));
+                            ((Paint) m1Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
+                            m1Var2.c();
+                            break;
+                    }
+                }
+            });
+            ofFloat.setInterpolator(new LinearInterpolator());
+            ofFloat.setDuration(80L);
+            ofFloat.addListener(new w9(this, 15));
+            ofFloat.start();
+            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+            final int i10 = 1;
+            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.l1
+                public final /* synthetic */ m1 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    switch (i10) {
+                        case 0:
+                            m1 m1Var = this.b;
+                            m1Var.getClass();
+                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            int i102 = (int) (35.0f * floatValue);
+                            m1Var.l.setAlpha(i102);
+                            m1Var.k.setAlpha((int) (floatValue * 102.0f));
+                            m1Var.j.setAlpha(i102);
+                            m1Var.c();
+                            break;
+                        default:
+                            m1 m1Var2 = this.b;
+                            m1Var2.getClass();
+                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            ((Paint) m1Var2.b.a).setAlpha((int) (180.0f * floatValue2));
+                            ((Paint) m1Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
+                            m1Var2.c();
+                            break;
+                    }
+                }
+            });
+            ofFloat2.setInterpolator(new LinearInterpolator());
+            ofFloat2.setStartDelay(80L);
+            ofFloat2.setDuration(80L);
+            ofFloat2.start();
+        }
+        c();
+    }
 }

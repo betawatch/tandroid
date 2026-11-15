@@ -1,6 +1,6 @@
 package androidx.mediarouter.app;
 
-import a8.b7;
+import a8.c7;
 import android.R;
 import android.content.Context;
 import android.graphics.Color;
@@ -9,11 +9,11 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class MediaRouteVolumeSlider extends m.d0 {
+public class MediaRouteVolumeSlider extends m.c0 {
     public final float b;
     public boolean c;
     public Drawable d;
@@ -39,18 +39,18 @@ public class MediaRouteVolumeSlider extends m.d0 {
         }
     }
 
-    public final void b(boolean z9) {
-        if (this.c == z9) {
+    public final void b(boolean z10) {
+        if (this.c == z10) {
             return;
         }
-        this.c = z9;
-        super.setThumb(z9 ? null : this.d);
+        this.c = z10;
+        super.setThumb(z10 ? null : this.d);
     }
 
-    @Override // m.d0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    @Override // m.c0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        int i7 = isEnabled() ? qs.e4 : (int) (this.b * 255.0f);
+        int i7 = isEnabled() ? ns.e4 : (int) (this.b * 255.0f);
         Drawable drawable = this.d;
         int i10 = this.e;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -82,6 +82,6 @@ public class MediaRouteVolumeSlider extends m.d0 {
 
     public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet, int i7) {
         super(context, attributeSet, i7);
-        this.b = b7.c(context);
+        this.b = c7.c(context);
     }
 }

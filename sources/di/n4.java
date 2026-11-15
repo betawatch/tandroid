@@ -1,133 +1,100 @@
 package di;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.v61;
-import org.telegram.ui.Components.w50;
-import org.telegram.ui.ub1;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.m10;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class n4 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class n4 extends FrameLayout {
+    public final org.telegram.ui.Components.i9 a;
+    public final t4 b;
+    public final org.telegram.ui.Components.h6 c;
+    public TL_stars.starGiftAttributeBackdrop d;
+    public TL_stars.starGiftAttributePattern e;
+    public float f;
 
-    public /* synthetic */ n4(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public n4(Context context) {
+        super(context);
+        org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(context);
+        this.a = i9Var;
+        i9Var.setRoundRadius(org.telegram.messenger.g0.L(13.0f));
+        addView(i9Var, c8.ja.d(26, 26.0f, 49, 0.0f, 11.33f, 0.0f, 0.0f));
+        t4 t4Var = new t4(context);
+        this.b = t4Var;
+        t4Var.e = org.telegram.messenger.g0.L(18.0f);
+        t4Var.a.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
+        addView(t4Var, c8.ja.d(48, 48.0f, 49, 0.0f, 0.66f, 0.0f, 0.0f));
+        org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(context, false, false, false);
+        this.c = h6Var;
+        h6Var.setTypeface(org.telegram.messenger.g0.o());
+        h6Var.setGravity(17);
+        h6Var.setTextSize(org.telegram.messenger.g0.L(12.0f));
+        h6Var.setTextColor(-1);
+        addView(h6Var, c8.ja.d(-1, 14.0f, 48, 0.0f, 39.0f, 0.0f, 0.0f));
+        c(false, 0.0f);
+        c8.na.a(this);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        View view;
-        switch (this.a) {
-            case 0:
-                p4 p4Var = (p4) this.b;
-                p4Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p4Var.invalidate();
-                break;
-            case 1:
-                ei.n nVar = (ei.n) this.b;
-                nVar.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                nVar.f.invalidate();
-                break;
-            case 2:
-                fi.d0 d0Var = (fi.d0) this.b;
-                d0Var.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d0Var.p.invalidate();
-                break;
-            case 3:
-                jg.l1 l1Var = (jg.l1) this.b;
-                l1Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l1Var.invalidate();
-                int i7 = 0;
-                while (i7 < 2) {
-                    l1Var.c[i7].setTranslationX(org.telegram.messenger.g0.W1(l1Var.e, 0, -org.telegram.messenger.g0.L(62.0f)));
-                    l1Var.c[i7].setVisibility(0);
-                    float f10 = 0.0f;
-                    l1Var.c[i7].setAlpha(org.telegram.messenger.g0.T1(i7 == 0 ? 1.0f : 0.0f, i7 == 1 ? 1.0f : 0.0f, l1Var.e));
-                    l1Var.d[i7].setTranslationX(org.telegram.messenger.g0.W1(l1Var.e, 0, -org.telegram.messenger.g0.L(62.0f)));
-                    l1Var.d[i7].setVisibility(0);
-                    TextView textView = l1Var.d[i7];
-                    float f11 = i7 == 0 ? 1.0f : 0.0f;
-                    if (i7 == 1) {
-                        f10 = 1.0f;
-                    }
-                    textView.setAlpha(org.telegram.messenger.g0.T1(f11, f10, l1Var.e));
-                    i7++;
-                }
-                break;
-            case 4:
-                lg.k kVar = (lg.k) this.b;
-                kVar.j0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kVar.H = true;
-                kVar.invalidate();
-                break;
-            case 5:
-                lg.p pVar = (lg.p) this.b;
-                pVar.j0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pVar.H = true;
-                pVar.invalidate();
-                break;
-            case 6:
-                MediaController mediaController = (MediaController) this.b;
-                mediaController.P1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mediaController.n0();
-                break;
-            case 7:
-                org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) this.b;
-                o7Var.B0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o7Var.invalidate();
-                break;
-            case 8:
-                ((org.telegram.ui.Components.k9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
-                break;
-            case 9:
-                bi.q1 q1Var = ((w50) this.b).e.n1;
-                int i10 = q1Var.C1;
-                if (i10 != -1 && (view = q1Var.D1) != null) {
-                    q1Var.k1(i10, view);
-                    q1Var.invalidate();
-                    break;
-                }
-                break;
-            case 10:
-                v61 v61Var = (v61) this.b;
-                View[] viewArr = v61Var.e;
-                if (v61Var.y) {
-                    float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    v61Var.c = abs;
-                    k61 k61Var = v61Var.M;
-                    if (k61Var != null) {
-                        k61Var.e(abs, v61Var.d, v61Var.b);
-                    }
-                }
-                v61Var.x(false);
-                break;
-            case 11:
-                org.telegram.ui.Components.voip.n1 n1Var = (org.telegram.ui.Components.voip.n1) this.b;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n1Var.J = floatValue;
-                org.telegram.ui.Components.voip.m1 m1Var = n1Var.i0;
-                if (m1Var != null) {
-                    ((ub1) m1Var).b.d0.d(n1Var.P, floatValue);
-                }
-                n1Var.invalidate();
-                break;
-            case 12:
-                ug.p0 p0Var = (ug.p0) this.b;
-                p0Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p0Var.e();
-                break;
-            case 13:
-                ((ug.n0) this.b).setOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                ((v4.u) this.b).y = valueAnimator.getAnimatedFraction();
-                break;
+    public final void a(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
+        this.d = stargiftattributebackdrop;
+        this.e = null;
+        org.telegram.ui.Components.i9 i9Var = this.a;
+        i9Var.setScaleX(1.0f);
+        i9Var.setScaleY(1.0f);
+        if (stargiftattributebackdrop == null) {
+            i9Var.setAlpha(1.0f);
+            i9Var.setImageDrawable(org.telegram.ui.ActionBar.j6.L(org.telegram.messenger.g0.L(26.0f), org.telegram.ui.ActionBar.j6.r1(0.25f, -1)));
+            return;
         }
+        i9Var.setAlpha(1.0f);
+        OvalShape ovalShape = new OvalShape();
+        ovalShape.resize(org.telegram.messenger.g0.L(26.0f), org.telegram.messenger.g0.L(26.0f));
+        ShapeDrawable shapeDrawable = new ShapeDrawable(ovalShape);
+        shapeDrawable.setIntrinsicWidth(org.telegram.messenger.g0.L(26.0f));
+        shapeDrawable.setIntrinsicHeight(org.telegram.messenger.g0.L(26.0f));
+        shapeDrawable.getPaint().setShader(new RadialGradient(org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), new int[]{stargiftattributebackdrop.center_color | (-16777216), stargiftattributebackdrop.edge_color | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        i9Var.setImageDrawable(shapeDrawable);
+    }
+
+    public final void b(TL_stars.starGiftAttributePattern stargiftattributepattern) {
+        this.d = null;
+        this.e = stargiftattributepattern;
+        org.telegram.ui.Components.i9 i9Var = this.a;
+        if (stargiftattributepattern == null) {
+            i9Var.setAlpha(0.25f);
+            i9Var.setScaleX(0.75f);
+            i9Var.setScaleY(0.75f);
+            i9Var.setTranslationY(0.0f);
+            i9Var.setAnimatedEmojiDrawable(null);
+            i9Var.setImageResource(R.drawable.mini_roll);
+            return;
+        }
+        i9Var.setAlpha(1.0f);
+        i9Var.setScaleX(0.95f);
+        i9Var.setScaleY(0.95f);
+        i9Var.setTranslationY(org.telegram.messenger.g0.L(2.0f));
+        org.telegram.ui.Components.g5 l10 = org.telegram.ui.Components.g5.l(m10.t0, 9, stargiftattributepattern.document);
+        l10.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        i9Var.setAnimatedEmojiDrawable(l10);
+    }
+
+    public final void c(boolean z10, float f10) {
+        this.f = f10;
+        t4 t4Var = this.b;
+        t4Var.d = f10;
+        if (!z10) {
+            t4Var.b.e(true, f10);
+        }
+        t4Var.invalidate();
+        this.c.c(Math.round(f10 * 100.0f) + "%", z10, true);
     }
 }

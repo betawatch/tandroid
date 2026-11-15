@@ -3,14 +3,14 @@ package org.telegram.ui.Wallet;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.s10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_toncenter;
-import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.zj;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class y0 {
     public final int a;
@@ -28,7 +28,7 @@ public final class y0 {
     public final v0 n;
     public final v0 o;
     public int i = -1;
-    public final dt p = new dt(this, 23);
+    public final zj p = new zj(this, 26);
 
     /* JADX WARN: Type inference failed for: r0v1, types: [org.telegram.ui.Wallet.v0] */
     /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Wallet.v0] */
@@ -128,7 +128,7 @@ public final class y0 {
 
     public static String a(rc.v vVar) {
         String str;
-        com.google.android.gms.internal.clearcut.z0 z0Var;
+        com.google.android.gms.internal.clearcut.y0 y0Var;
         switch (vVar.a) {
             case 1:
                 str = "NOT_IN_CREATED_STATE";
@@ -217,10 +217,10 @@ public final class y0 {
             case 29:
                 str = "UNEXPECTED_RESERVED_BIT";
                 break;
-            case qs.T /* 30 */:
+            case ns.T /* 30 */:
                 str = "FRAME_MASKED";
                 break;
-            case qs.U /* 31 */:
+            case ns.U /* 31 */:
                 str = "UNKNOWN_OPCODE";
                 break;
             case 32:
@@ -281,12 +281,12 @@ public final class y0 {
                 str = "null";
                 break;
         }
-        if (!(vVar instanceof rc.n) || (z0Var = ((rc.n) vVar).b) == null) {
+        if (!(vVar instanceof rc.n) || (y0Var = ((rc.n) vVar).b) == null) {
             return str;
         }
-        StringBuilder j3 = rf.b.j(str, ", HTTP ");
-        j3.append(z0Var.b);
-        return j3.toString();
+        StringBuilder m10 = r.b.m(str, ", HTTP ");
+        m10.append(y0Var.b);
+        return m10.toString();
     }
 
     public final void b() {
@@ -330,8 +330,8 @@ public final class y0 {
             final long elapsedRealtime = SystemClock.elapsedRealtime();
             d("requesting streaming URL; retry=" + this.j);
             org.telegram.messenger.g0.i3(this.o, 30000L);
-            this.i = ConnectionsManager.getInstance(this.a).sendRequestTyped(new TL_toncenter.getStreamingUrl(), new d3.b(1), new v10() { // from class: org.telegram.ui.Wallet.w0
-                @Override // org.telegram.messenger.v10
+            this.i = ConnectionsManager.getInstance(this.a).sendRequestTyped(new TL_toncenter.getStreamingUrl(), new d3.b(1), new s10() { // from class: org.telegram.ui.Wallet.w0
+                @Override // org.telegram.messenger.s10
                 public final void a(Object obj, Object obj2) {
                     y0 y0Var = y0.this;
                     int i10 = i7;
@@ -364,9 +364,9 @@ public final class y0 {
                     long elapsedRealtime2 = SystemClock.elapsedRealtime();
                     y0Var.d("opening websocket; attempt=" + i10);
                     try {
-                        f5.u uVar = new f5.u(16, (short) 0);
-                        uVar.b = 10000;
-                        rc.u h = uVar.h(str);
+                        f5.v vVar = new f5.v(16, (short) 0);
+                        vVar.b = 10000;
+                        rc.u h = vVar.h(str);
                         y0Var.k = h;
                         x0 x0Var = new x0(y0Var, i10, elapsedRealtime2);
                         ab.q qVar = h.d;
@@ -375,10 +375,10 @@ public final class y0 {
                             qVar.a = true;
                         }
                         org.telegram.messenger.g0.i3(y0Var.o, 30000L);
-                        rc.u uVar2 = y0Var.k;
-                        uVar2.getClass();
-                        rc.b bVar = new rc.b("ConnectThread", uVar2, 3, 0);
-                        ab.q qVar2 = uVar2.d;
+                        rc.u uVar = y0Var.k;
+                        uVar.getClass();
+                        rc.b bVar = new rc.b("ConnectThread", uVar, 3, 0);
+                        ab.q qVar2 = uVar.d;
                         if (qVar2 != null) {
                             ArrayList arrayList = (ArrayList) qVar2.p();
                             int size = arrayList.size();

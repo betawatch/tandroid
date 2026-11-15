@@ -1,32 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class kf extends org.telegram.ui.cn {
-    public boolean td;
-    public final /* synthetic */ TLRPC.User ud;
-    public final /* synthetic */ TLRPC.User vd;
-    public final /* synthetic */ long wd;
+public final class kf extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kf(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j3) {
-        super(bundle);
-        this.ud = user;
-        this.vd = user2;
-        this.wd = j3;
+    public kf(ChatActivityEnterView chatActivityEnterView, boolean z10) {
+        this.b = chatActivityEnterView;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.cn, org.telegram.ui.ActionBar.f2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.td) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        if (animator.equals(chatActivityEnterView.b3)) {
+            chatActivityEnterView.b3 = null;
         }
-        this.td = true;
-        gc.a0(this).I(R.raw.contact_check, org.telegram.messenger.id.a0(null, null, 2131751739, org.telegram.messenger.t10.p(this.ud)), org.telegram.messenger.g0.U2(org.telegram.messenger.id.a0(null, null, 2131751740, org.telegram.messenger.t10.p(this.vd)), new bi.r3(this, this.wd, 21))).j();
+        chatActivityEnterView.K0();
+        chatActivityEnterView.S1.setAlpha(1.0f);
+        chatActivityEnterView.S1.setTranslationX(0.0f);
+        gg ggVar = chatActivityEnterView.w2;
+        if (ggVar != null && org.telegram.messenger.gz.O < 3) {
+            ChatActivityEnterView chatActivityEnterView2 = ggVar.Q0;
+            chatActivityEnterView2.M4 = true;
+            chatActivityEnterView2.N4 = System.currentTimeMillis();
+        }
+        xe xeVar = chatActivityEnterView.F0;
+        if (xeVar != null) {
+            xeVar.setAlpha(0.0f);
+        }
+        if (this.a) {
+            oi0 oi0Var = chatActivityEnterView.i1;
+            if (oi0Var != null) {
+                oi0Var.setVisibility(8);
+            }
+            ud udVar = chatActivityEnterView.f1;
+            if (udVar != null) {
+                udVar.setVisibility(8);
+            }
+            chatActivityEnterView.K0();
+        }
     }
 }

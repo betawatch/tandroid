@@ -3,7 +3,7 @@ package androidx.datastore.preferences.protobuf;
 import java.lang.reflect.Field;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class m1 {
     public final Unsafe a;
@@ -42,7 +42,7 @@ public abstract class m1 {
         return this.a.objectFieldOffset(field);
     }
 
-    public abstract void j(Object obj, long j3, boolean z9);
+    public abstract void j(Object obj, long j3, boolean z10);
 
     public abstract void k(Object obj, long j3, byte b10);
 

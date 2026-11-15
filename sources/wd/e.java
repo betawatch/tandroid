@@ -1,10 +1,10 @@
 package wd;
 
-import c8.u0;
+import c8.v0;
 import java.util.Iterator;
 import zd.j1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements b {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class e implements b {
             case 0:
                 j1 j1Var = (j1) this.b;
                 c cVar = new c();
-                cVar.c = u0.a(cVar, cVar, j1Var);
+                cVar.c = v0.a(cVar, cVar, j1Var);
                 return cVar;
             case 1:
                 return (Iterator) this.b;

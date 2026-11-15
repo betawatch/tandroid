@@ -1,60 +1,69 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import android.util.LongSparseArray;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class sv extends rv {
-    public int d;
+public final class sv {
+    public long a;
+    public boolean b;
+    public int c;
+    public gj d;
+    public int e;
+    public long f;
+    public long g;
+    public long h;
+    public boolean i;
+    public int j;
+    public int k;
 
-    public static void c(sv svVar, String str, SharedPreferences sharedPreferences) {
-        svVar.getClass();
-        sharedPreferences.edit().putBoolean(str.concat("_save_gallery_photo"), svVar.a).putBoolean(str.concat("_save_gallery_video"), svVar.b).putLong(str.concat("_save_gallery_limitVideo"), svVar.c).apply();
-    }
-
-    public static sv d(String str, SharedPreferences sharedPreferences) {
+    public static sv a(int i7, TLRPC.Message message) {
         sv svVar = new sv();
-        svVar.a = sharedPreferences.getBoolean(str.concat("_save_gallery_photo"), false);
-        svVar.b = sharedPreferences.getBoolean(str.concat("_save_gallery_video"), false);
-        svVar.c = sharedPreferences.getLong(str.concat("_save_gallery_limitVideo"), 104857600L);
+        svVar.a = gj.Q1(m10.i(i7).e(), message);
+        svVar.b = false;
+        svVar.c = message.id;
+        svVar.d = new gj(i7, message, null, null, null, null, null, false, false, 0L, false, false, true, 0);
         return svVar;
     }
 
-    @Override // org.telegram.messenger.rv
-    public final void b() {
-        super.b();
-        b6.m(this.d);
+    public static sv b(int i7, TLRPC.savedDialog saveddialog, ArrayList arrayList) {
+        TLRPC.Message message;
+        sv svVar = new sv();
+        svVar.a = m5.o(saveddialog.peer);
+        svVar.b = saveddialog.pinned;
+        svVar.c = saveddialog.top_message;
+        svVar.f = saveddialog.unread_count;
+        svVar.g = saveddialog.read_inbox_max_id;
+        svVar.h = saveddialog.read_outbox_max_id;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= arrayList.size()) {
+                message = null;
+                break;
+            }
+            message = (TLRPC.Message) arrayList.get(i10);
+            if (svVar.c == message.id) {
+                break;
+            }
+            i10++;
+        }
+        TLRPC.Message message2 = message;
+        if (message2 != null) {
+            svVar.d = new gj(i7, message2, null, null, null, null, null, false, false, 0L, false, false, true, 0);
+        }
+        return svVar;
     }
 
-    public final CharSequence e(int i7) {
-        StringBuilder sb2 = new StringBuilder();
-        if (a()) {
-            if (this.a) {
-                sb2.append(id.M0(2131745920, null));
-            }
-            if (this.b) {
-                if (sb2.length() != 0) {
-                    sb2.append(", ");
-                }
-                sb2.append(id.M0(2131745913, null));
-                long j3 = this.c;
-                if (j3 > 0 && j3 < 4194304000L) {
-                    sb2.append(" (");
-                    sb2.append(g0.i0(this.c, true, false));
-                    sb2.append(")");
-                }
-            }
-        } else {
-            sb2.append(id.M0(2131745921, null));
-        }
-        LongSparseArray m10 = p10.i(i7).m(this.d);
-        if (m10.size() != 0) {
-            if (sb2.length() != 0) {
-                sb2.append(", ");
-            }
-            sb2.append(id.G(m10.size(), "Exception", Integer.valueOf(m10.size())));
-        }
-        return sb2;
+    public final int c() {
+        TLRPC.Message message;
+        gj gjVar = this.d;
+        return (gjVar == null || (message = gjVar.k) == null) ? this.j : (message.flags & 32768) != 0 ? message.edit_date : message.date;
+    }
+
+    public final boolean d() {
+        TLRPC.Message message;
+        gj gjVar = this.d;
+        return (gjVar == null || (message = gjVar.k) == null || !(message.action instanceof TLRPC.TL_messageActionHistoryClear)) ? false : true;
     }
 }

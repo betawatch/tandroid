@@ -6,14 +6,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.util.Log;
+import c8.ac;
 import c8.z;
-import c8.zb;
-import f5.q;
-import g7.f;
+import f5.r;
+import g7.e;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class FlagProviderImpl extends f {
+public class FlagProviderImpl extends e {
     public boolean a;
     public SharedPreferences b;
 
@@ -22,15 +22,15 @@ public class FlagProviderImpl extends f {
         this.a = false;
     }
 
-    @Override // g7.g
-    public boolean getBooleanFlagValue(String str, boolean z9, int i7) {
+    @Override // g7.f
+    public boolean getBooleanFlagValue(String str, boolean z10, int i7) {
         if (!this.a) {
-            return z9;
+            return z10;
         }
         SharedPreferences sharedPreferences = this.b;
-        Boolean valueOf = Boolean.valueOf(z9);
+        Boolean valueOf = Boolean.valueOf(z10);
         try {
-            valueOf = (Boolean) zb.a(new q(sharedPreferences, str, valueOf, 4));
+            valueOf = (Boolean) ac.a(new r(sharedPreferences, str, valueOf, 4));
         } catch (Exception e10) {
             String valueOf2 = String.valueOf(e10.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
@@ -38,7 +38,7 @@ public class FlagProviderImpl extends f {
         return valueOf.booleanValue();
     }
 
-    @Override // g7.g
+    @Override // g7.f
     public int getIntFlagValue(String str, int i7, int i10) {
         if (!this.a) {
             return i7;
@@ -46,7 +46,7 @@ public class FlagProviderImpl extends f {
         SharedPreferences sharedPreferences = this.b;
         Integer valueOf = Integer.valueOf(i7);
         try {
-            valueOf = (Integer) zb.a(new q(sharedPreferences, str, valueOf, 5));
+            valueOf = (Integer) ac.a(new r(sharedPreferences, str, valueOf, 5));
         } catch (Exception e10) {
             String valueOf2 = String.valueOf(e10.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
@@ -54,7 +54,7 @@ public class FlagProviderImpl extends f {
         return valueOf.intValue();
     }
 
-    @Override // g7.g
+    @Override // g7.f
     public long getLongFlagValue(String str, long j3, int i7) {
         if (!this.a) {
             return j3;
@@ -62,7 +62,7 @@ public class FlagProviderImpl extends f {
         SharedPreferences sharedPreferences = this.b;
         Long valueOf = Long.valueOf(j3);
         try {
-            valueOf = (Long) zb.a(new q(sharedPreferences, str, valueOf, 6));
+            valueOf = (Long) ac.a(new r(sharedPreferences, str, valueOf, 6));
         } catch (Exception e10) {
             String valueOf2 = String.valueOf(e10.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
@@ -70,13 +70,13 @@ public class FlagProviderImpl extends f {
         return valueOf.longValue();
     }
 
-    @Override // g7.g
+    @Override // g7.f
     public String getStringFlagValue(String str, String str2, int i7) {
         if (!this.a) {
             return str2;
         }
         try {
-            return (String) zb.a(new q(this.b, str, str2, 7));
+            return (String) ac.a(new r(this.b, str, str2, 7));
         } catch (Exception e10) {
             String valueOf = String.valueOf(e10.getMessage());
             Log.w("FlagDataUtils", valueOf.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf) : new String("Flag value not available, returning default: "));
@@ -84,7 +84,7 @@ public class FlagProviderImpl extends f {
         }
     }
 
-    @Override // g7.g
+    @Override // g7.f
     public void init(a aVar) {
         Context context = (Context) b.n1(aVar);
         if (this.a) {

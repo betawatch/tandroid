@@ -1,18 +1,18 @@
 package oe;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d {
     public static final long[] e = new long[0];
     public final me.d a;
-    public final c1.c b;
+    public final c1.d b;
     public long c;
     public final long[] d;
 
-    public d(me.d descriptor, c1.c cVar) {
+    public d(me.d descriptor, c1.d dVar) {
         kotlin.jvm.internal.j.e(descriptor, "descriptor");
         this.a = descriptor;
-        this.b = cVar;
+        this.b = dVar;
         int f10 = descriptor.f();
         if (f10 <= 64) {
             this.c = f10 != 64 ? (-1) << f10 : 0L;

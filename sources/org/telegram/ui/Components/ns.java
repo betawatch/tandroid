@@ -1,28 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import android.widget.EdgeEffect;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ns extends v4.k0 {
-    public final ms[] a = new ms[4];
-    public final ArrayList b = new ArrayList();
+public final class ns implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ os b;
 
-    @Override // v4.k0
-    public final EdgeEffect a(RecyclerView recyclerView, int i7) {
-        ms msVar = new ms(recyclerView, i7, new ks(this, 0));
-        this.a[i7] = msVar;
-        return msVar;
+    public /* synthetic */ ns(os osVar, int i7) {
+        this.a = i7;
+        this.b = osVar;
     }
 
-    public final float b(int i7) {
-        ms msVar = this.a[i7];
-        if (Build.VERSION.SDK_INT < 31 || msVar == null || msVar.isFinished()) {
-            return 0.0f;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7;
+        Bitmap bitmap;
+        switch (this.a) {
+            case 0:
+                os osVar = this.b;
+                try {
+                    i7 = osVar.x + 0;
+                    bitmap = osVar.b;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    osVar.F = true;
+                }
+                if (bitmap != null) {
+                    if (bitmap.getWidth() == osVar.y) {
+                        if (osVar.b.getHeight() != i7) {
+                        }
+                        osVar.b.eraseColor(0);
+                        osVar.c.save();
+                        osVar.c.translate(0.0f, 0);
+                        osVar.c(osVar.c);
+                        osVar.c.restore();
+                        osVar.b.prepareToDraw();
+                        org.telegram.messenger.g0.h3(osVar.I);
+                        break;
+                    }
+                }
+                Bitmap bitmap2 = osVar.b;
+                if (bitmap2 != null) {
+                    bitmap2.recycle();
+                }
+                osVar.b = Bitmap.createBitmap(osVar.y, i7, Bitmap.Config.ARGB_8888);
+                osVar.c = new Canvas(osVar.b);
+                osVar.b.eraseColor(0);
+                osVar.c.save();
+                osVar.c.translate(0.0f, 0);
+                osVar.c(osVar.c);
+                osVar.c.restore();
+                osVar.b.prepareToDraw();
+                org.telegram.messenger.g0.h3(osVar.I);
+            default:
+                os osVar2 = this.b;
+                osVar2.f = false;
+                osVar2.g();
+                if (!osVar2.a) {
+                    osVar2.j();
+                    break;
+                } else if (osVar2.w == osVar2.K) {
+                    osVar2.H = true;
+                    break;
+                }
+                break;
         }
-        return msVar.getDistance();
     }
 }

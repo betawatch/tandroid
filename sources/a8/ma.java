@@ -1,17 +1,23 @@
 package a8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import java.lang.reflect.Method;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class ma {
-    public final boolean equals(Object obj) {
-        return obj == this || (obj instanceof ma);
-    }
-
-    public final int hashCode() {
-        return -1705342425;
-    }
-
-    public final String toString() {
-        return "MLKitLoggingOptions{libraryName=play-services-mlkit-image-labeling, enableFirelog=true, firelogEventType=1}";
+public abstract class ma {
+    public static void a(Throwable th2, Throwable exception) {
+        kotlin.jvm.internal.j.e(th2, "<this>");
+        kotlin.jvm.internal.j.e(exception, "exception");
+        if (th2 != exception) {
+            Integer num = nd.a.a;
+            if (num == null || num.intValue() >= 19) {
+                th2.addSuppressed(exception);
+                return;
+            }
+            Method method = md.a.a;
+            if (method != null) {
+                method.invoke(th2, exception);
+            }
+        }
     }
 }

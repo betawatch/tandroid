@@ -1,7 +1,7 @@
 package ed;
 
-import a8.x9;
-import c8.w0;
+import a8.z9;
+import c8.x0;
 import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -9,7 +9,7 @@ import kf.m;
 import kf.p;
 import kf.s;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e extends h {
     public static final Pattern e = i.n;
@@ -22,7 +22,7 @@ public final class e extends h {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final p b() {
-        boolean z9;
+        boolean z10;
         String str;
         String str2;
         int i7 = this.d + 1;
@@ -33,7 +33,7 @@ public final class e extends h {
             return f("]");
         }
         s sVar = (s) dVar.e;
-        boolean z10 = dVar.a;
+        boolean z11 = dVar.a;
         if (!dVar.c) {
             iVar.i = (gf.d) dVar.f;
             return f("]");
@@ -44,7 +44,7 @@ public final class e extends h {
             i iVar2 = this.a;
             int i10 = this.d;
             iVar2.g = i10;
-            int a10 = w0.a(i10, iVar2.f);
+            int a10 = x0.a(i10, iVar2.f);
             if (a10 == -1) {
                 str = null;
             } else {
@@ -61,7 +61,7 @@ public final class e extends h {
                     i iVar3 = this.a;
                     int i12 = this.d;
                     iVar3.g = i12;
-                    int c10 = w0.c(i12, iVar3.f);
+                    int c10 = x0.c(i12, iVar3.f);
                     if (c10 == -1) {
                         str2 = null;
                     } else {
@@ -76,18 +76,18 @@ public final class e extends h {
                 }
                 if (c() == ')') {
                     this.d++;
-                    z9 = true;
+                    z10 = true;
                 } else {
                     this.d = i7;
-                    z9 = false;
+                    z10 = false;
                 }
-                if (!z9) {
+                if (!z10) {
                     int i13 = this.d;
                     i iVar4 = this.a;
                     iVar4.g = i13;
                     if (i13 < iVar4.f.length() && iVar4.f.charAt(iVar4.g) == '[') {
                         int i14 = iVar4.g + 1;
-                        int b10 = w0.b(i14, iVar4.f);
+                        int b10 = x0.b(i14, iVar4.f);
                         int i15 = b10 - i14;
                         if (b10 != -1 && i15 <= 999 && b10 < iVar4.f.length() && iVar4.f.charAt(b10) == ']') {
                             iVar4.g = b10 + 1;
@@ -106,17 +106,17 @@ public final class e extends h {
                         if (mVar != null) {
                             str = mVar.h;
                             str2 = mVar.i;
-                            z9 = true;
+                            z10 = true;
                         }
                     }
                 }
-                if (z9) {
+                if (z10) {
                     this.d = i7;
                     i iVar6 = this.a;
                     iVar6.i = (gf.d) iVar6.i.f;
                     return f("]");
                 }
-                kf.k kVar = z10 ? new kf.k(0, str, str2) : new kf.k(1, str, str2);
+                kf.k kVar = z11 ? new kf.k(0, str, str2) : new kf.k(1, str, str2);
                 p pVar = (p) sVar.f;
                 while (pVar != null) {
                     p pVar2 = (p) pVar.f;
@@ -131,13 +131,13 @@ public final class e extends h {
                 p pVar3 = (p) kVar.c;
                 p pVar4 = (p) kVar.d;
                 if (pVar3 != pVar4) {
-                    x9.b(pVar3, pVar4);
+                    z9.b(pVar3, pVar4);
                 }
                 sVar.g();
                 i iVar8 = this.a;
                 gf.d dVar2 = (gf.d) iVar8.i.f;
                 iVar8.i = dVar2;
-                if (!z10) {
+                if (!z11) {
                     while (dVar2 != null) {
                         if (!dVar2.a) {
                             dVar2.c = false;
@@ -147,15 +147,15 @@ public final class e extends h {
                 }
                 return kVar;
             }
-            z9 = false;
+            z10 = false;
         } else {
-            z9 = false;
+            z10 = false;
             str = null;
         }
         str2 = null;
-        if (!z9) {
+        if (!z10) {
         }
-        if (z9) {
+        if (z10) {
         }
     }
 

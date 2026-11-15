@@ -6,7 +6,7 @@ import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class h0 extends TLObject {
     public static final /* synthetic */ int j = 0;
@@ -19,20 +19,20 @@ public final class h0 extends TLObject {
     public int i;
 
     @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z9) {
-        int readInt32 = inputSerializedData.readInt32(z9);
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        int readInt32 = inputSerializedData.readInt32(z10);
         this.a = readInt32;
         this.e = (readInt32 & 8) != 0;
         this.f = (readInt32 & 16) != 0;
-        this.c = inputSerializedData.readString(z9);
+        this.c = inputSerializedData.readString(z10);
         if ((this.a & 1) != 0) {
-            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
         }
         if ((this.a & 2) != 0) {
-            this.b = inputSerializedData.readString(z9);
+            this.b = inputSerializedData.readString(z10);
         }
         if ((this.a & 4) != 0) {
-            this.i = inputSerializedData.readInt32(z9);
+            this.i = inputSerializedData.readInt32(z10);
         }
     }
 

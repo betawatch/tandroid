@@ -9,12 +9,12 @@ import android.hardware.fingerprint.FingerprintManager;
 import android.os.CancellationSignal;
 import android.os.Handler;
 import android.os.Looper;
-import c8.va;
+import c8.xa;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.id;
+import org.telegram.messenger.hd;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class u0 {
     public final CountDownLatch a = new CountDownLatch(1);
@@ -37,18 +37,18 @@ public final class u0 {
             KeyguardManager keyguardManager = (KeyguardManager) this.e.getSystemService("keyguard");
             Intent intent = null;
             if (keyguardManager != null) {
-                intent = keyguardManager.createConfirmDeviceCredentialIntent(id.M0(2131742970, null), null);
+                intent = keyguardManager.createConfirmDeviceCredentialIntent(hd.M0(2131742970, null), null);
             }
             if (intent == null) {
                 c("AUTH_UNAVAILABLE");
                 return;
             }
-            int i7 = va.a;
+            int i7 = xa.a;
             int i10 = i7 + 1;
-            va.a = i10;
+            xa.a = i10;
             this.g = i7;
             if (i10 > 22399) {
-                va.a = 22336;
+                xa.a = 22336;
             }
             this.e.startActivityForResult(intent, i7);
         } catch (Exception e10) {
@@ -66,7 +66,7 @@ public final class u0 {
         this.h = new CancellationSignal();
         final int i7 = 0;
         final int i10 = 1;
-        this.i = new AlertDialog.Builder(this.e).setTitle(id.M0(2131742970, null)).setMessage(id.M0(2131742989, null)).setNegativeButton(id.M0(2131752589, null), new DialogInterface.OnClickListener(this) { // from class: org.telegram.ui.Wallet.r0
+        this.i = new AlertDialog.Builder(this.e).setTitle(hd.M0(2131742970, null)).setMessage(hd.M0(2131742989, null)).setNegativeButton(hd.M0(2131752589, null), new DialogInterface.OnClickListener(this) { // from class: org.telegram.ui.Wallet.r0
             public final /* synthetic */ u0 b;
 
             {
@@ -84,7 +84,7 @@ public final class u0 {
                         break;
                 }
             }
-        }).setPositiveButton(id.M0(2131742965, null), new DialogInterface.OnClickListener(this) { // from class: org.telegram.ui.Wallet.r0
+        }).setPositiveButton(hd.M0(2131742965, null), new DialogInterface.OnClickListener(this) { // from class: org.telegram.ui.Wallet.r0
             public final /* synthetic */ u0 b;
 
             {
@@ -122,7 +122,7 @@ public final class u0 {
 
     public final void d() {
         this.h = new CancellationSignal();
-        new BiometricPrompt.Builder(this.e).setTitle(id.M0(2131742970, null)).setAllowedAuthenticators(32783).build().authenticate(this.h, this.e.getMainExecutor(), new t0(this));
+        new BiometricPrompt.Builder(this.e).setTitle(hd.M0(2131742970, null)).setAllowedAuthenticators(32783).build().authenticate(this.h, this.e.getMainExecutor(), new t0(this));
     }
 
     public final void e() {

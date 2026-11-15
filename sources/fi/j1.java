@@ -1,59 +1,38 @@
 package fi;
 
-import android.content.Context;
-import org.telegram.ui.Components.gw;
-import org.telegram.ui.Components.gy;
-import org.telegram.ui.i01;
-import org.telegram.ui.t11;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j1 extends mi.m {
-    public final /* synthetic */ int q;
-    public final /* synthetic */ Object r;
+public final /* synthetic */ class j1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j1(int i7, Context context, Object obj) {
-        super(context, 2);
-        this.q = i7;
-        this.r = obj;
+    public /* synthetic */ j1(l1 l1Var, int i7) {
+        this.a = i7;
+        this.b = l1Var;
     }
 
-    @Override // mi.m, v4.z0
-    public void e() {
-        switch (this.q) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                ((m1) this.r).i3 = true;
-                break;
-            case 1:
-                ((gy) this.r).f0 = true;
-                break;
-            case 4:
-                ((t11) this.r).x1 = true;
-                break;
-        }
-    }
-
-    @Override // mi.m
-    public final void i() {
-        switch (this.q) {
-            case 0:
-                ((m1) this.r).i3 = false;
-                break;
-            case 1:
-                ((gy) this.r).f0 = false;
-                break;
-            case 2:
-                ((gw) this.r).Q.f0 = false;
-                break;
-            case 3:
-                ((i01) this.r).R.x1 = false;
-                break;
-            case 4:
-                ((t11) this.r).x1 = false;
+                this.b.d.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                ((i01) this.r).R.x1 = false;
+                l1 l1Var = this.b;
+                l1Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l1Var.n = floatValue;
+                View view = l1Var.b;
+                view.setAlpha(1.0f - floatValue);
+                view.setScaleX(1.0f - l1Var.n);
+                view.setScaleY(1.0f - l1Var.n);
+                l1Var.c.setColorFilter(new PorterDuffColorFilter(i0.a.f(l1Var.n, -1, -2960428), PorterDuff.Mode.SRC_IN));
+                l1Var.a.invalidate();
                 break;
         }
     }

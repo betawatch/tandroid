@@ -1,14 +1,14 @@
 package ac;
 
-import a8.va;
-import bi.b1;
+import a8.wa;
 import c8.uf;
 import c8.wf;
+import com.google.android.gms.common.api.q;
 import pb.g;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class c extends b1 {
+public final class c extends q {
     public final g b;
 
     public c(g gVar) {
@@ -16,10 +16,10 @@ public final class c extends b1 {
         this.b = gVar;
     }
 
-    @Override // bi.b1
+    @Override // com.google.android.gms.common.api.q
     public final Object Q0(Object obj) {
         uf b10 = wf.b();
         g gVar = this.b;
-        return new f(gVar, (zb.d) obj, b10, new va(gVar.b(), 1));
+        return new f(gVar, (zb.d) obj, b10, new wa(gVar.b(), 1));
     }
 }

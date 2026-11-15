@@ -4,19 +4,19 @@ import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public enum p2 {
     e(new long[]{7}, new int[]{65}, new long[]{60}),
-    f(new long[]{7}, new int[]{qs.b2}, new long[]{70}),
-    h(new long[]{7}, new int[]{qs.e4}, new long[]{80}),
-    n(new long[]{3}, new int[]{qs.C3}, new long[]{50}),
-    r(new long[]{10}, new int[]{qs.F2}, new long[]{55}),
-    s(new long[]{14, 48, 14, 48, 14, 48, 20}, new int[]{qs.e3, 0, qs.e3, 0, qs.e4, 0, qs.b2}, new long[]{40, 60, 40, 60, 65, 60, 40}),
-    w(new long[]{14, 65, 14}, new int[]{qs.F2, 0, qs.e4}, new long[]{50, 60, 65}),
-    x(new long[]{14, 64, 14}, new int[]{qs.C3, 0, qs.F2}, new long[]{65, 60, 40}),
+    f(new long[]{7}, new int[]{ns.b2}, new long[]{70}),
+    h(new long[]{7}, new int[]{ns.e4}, new long[]{80}),
+    n(new long[]{3}, new int[]{ns.C3}, new long[]{50}),
+    r(new long[]{10}, new int[]{ns.F2}, new long[]{55}),
+    s(new long[]{14, 48, 14, 48, 14, 48, 20}, new int[]{ns.e3, 0, ns.e3, 0, ns.e4, 0, ns.b2}, new long[]{40, 60, 40, 60, 65, 60, 40}),
+    w(new long[]{14, 65, 14}, new int[]{ns.F2, 0, ns.e4}, new long[]{50, 60, 65}),
+    x(new long[]{14, 64, 14}, new int[]{ns.C3, 0, ns.F2}, new long[]{65, 60, 40}),
     y(new long[]{1}, new int[]{65}, new long[]{30}),
-    D(new long[]{30, 10, 150, 10}, new int[]{0, 100, 0, 100}, new long[]{40, 60, 40, 60, 65, 60, 40});
+    E(new long[]{30, 10, 150, 10}, new int[]{0, 100, 0, 100}, new long[]{40, 60, 40, 60, 65, 60, 40});
 
     public final long[] a;
     public final int[] b;

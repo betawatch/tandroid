@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d0 extends k implements SubMenu {
     public final m A;
@@ -45,7 +45,7 @@ public final class d0 extends k implements SubMenu {
         if (i7 == 0) {
             return null;
         }
-        return jg.g.j(i7, "android:menu:actionviewstates:");
+        return i5.c.i(i7, "android:menu:actionviewstates:");
     }
 
     @Override // l.k
@@ -69,8 +69,8 @@ public final class d0 extends k implements SubMenu {
     }
 
     @Override // l.k, android.view.Menu
-    public final void setGroupDividerEnabled(boolean z9) {
-        this.z.setGroupDividerEnabled(z9);
+    public final void setGroupDividerEnabled(boolean z10) {
+        this.z.setGroupDividerEnabled(z10);
     }
 
     @Override // android.view.SubMenu
@@ -98,8 +98,8 @@ public final class d0 extends k implements SubMenu {
     }
 
     @Override // l.k, android.view.Menu
-    public final void setQwertyMode(boolean z9) {
-        this.z.setQwertyMode(z9);
+    public final void setQwertyMode(boolean z10) {
+        this.z.setQwertyMode(z10);
     }
 
     @Override // android.view.SubMenu

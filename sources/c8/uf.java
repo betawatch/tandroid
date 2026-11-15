@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class uf {
     public static m k;
@@ -43,9 +43,9 @@ public final class uf {
         this.e = pb.f.b(bVar);
         pb.f a11 = pb.f.a();
         kVar.getClass();
-        a8.oa oaVar = new a8.oa(kVar, 1);
+        a8.pa paVar = new a8.pa(kVar, 1);
         a11.getClass();
-        this.f = pb.f.b(oaVar);
+        this.f = pb.f.b(paVar);
         r rVar = l;
         this.h = rVar.containsKey("subject-segmentation") ? b7.f.d(context, (String) rVar.get("subject-segmentation"), false) : -1;
     }
@@ -58,7 +58,7 @@ public final class uf {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if (d(fbVar, elapsedRealtime)) {
             this.i.put(fbVar, Long.valueOf(elapsedRealtime));
-            pb.m.a.execute(new a8.pa(this, tfVar.zza(), fbVar, c(), 1));
+            pb.n.a.execute(new a8.qa(this, tfVar.zza(), fbVar, c(), 1));
         }
     }
 

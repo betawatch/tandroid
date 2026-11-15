@@ -7,12 +7,12 @@ import android.content.pm.Signature;
 import android.content.pm.SigningInfo;
 import android.os.Build;
 import android.util.Log;
-import c8.cb;
+import c8.ib;
 import java.util.Arrays;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h {
     public static h b;
@@ -44,17 +44,17 @@ public final class h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final boolean b(PackageInfo packageInfo, boolean z9) {
+    public static final boolean b(PackageInfo packageInfo, boolean z10) {
         p7.f fVar;
         p7.f fVar2;
         int i7;
         if (packageInfo != null) {
-            if (z9 && ("com.android.vending".equals(packageInfo.packageName) || "com.google.android.gms".equals(packageInfo.packageName))) {
+            if (z10 && ("com.android.vending".equals(packageInfo.packageName) || "com.google.android.gms".equals(packageInfo.packageName))) {
                 ApplicationInfo applicationInfo = packageInfo.applicationInfo;
-                z9 = (applicationInfo == null || (applicationInfo.flags & qs.N1) == 0) ? false : true;
+                z10 = (applicationInfo == null || (applicationInfo.flags & ns.N1) == 0) ? false : true;
             }
             try {
-                fVar = z9 ? n.c : n.b;
+                fVar = z10 ? n.c : n.b;
                 int i10 = Build.VERSION.SDK_INT;
                 if (i10 < 28) {
                     Signature[] signatureArr = packageInfo.signatures;
@@ -65,7 +65,7 @@ public final class h {
                     if (bArr != null) {
                         p7.b bVar = p7.e.b;
                         Object[] objArr = {bArr};
-                        cb.a(1, objArr);
+                        ib.a(1, objArr);
                         fVar2 = new p7.f(1, objArr);
                     } else {
                         p7.b bVar2 = p7.e.b;
@@ -117,7 +117,7 @@ public final class h {
                 }
             } catch (IllegalArgumentException unused) {
                 Log.i("GoogleSignatureVerifier", "package info is not set correctly");
-                if ((z9 ? c(packageInfo, n.a) : c(packageInfo, n.a[0])) != null) {
+                if ((z10 ? c(packageInfo, n.a) : c(packageInfo, n.a[0])) != null) {
                 }
             }
             if (fVar2.isEmpty()) {

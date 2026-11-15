@@ -1,7 +1,7 @@
 package fh;
 
-import a8.aa;
-import a8.m7;
+import a8.ca;
+import a8.n7;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
@@ -13,131 +13,131 @@ import android.os.Build;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.HashSet;
-import oi.q;
-import oi.r;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.z5;
+import ri.q;
+import ri.r;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class g extends oi.e implements c6 {
-    public static Path g0 = new Path();
-    public int D;
+public final class g extends ri.e implements z5 {
+    public static Path h0 = new Path();
     public int E;
     public int F;
     public int G;
-    public float H;
-    public float J;
-    public int K;
+    public int H;
+    public float I;
+    public float K;
     public int L;
-    public h O;
-    public boolean P;
-    public final f Q;
-    public a R;
-    public boolean S;
-    public float T;
+    public int M;
+    public h P;
+    public boolean Q;
+    public final f R;
+    public a S;
+    public boolean T;
     public float U;
     public float V;
-    public boolean W;
-    public int X;
-    public aa Y;
-    public boolean Z;
-    public ri.a a0;
-    public boolean b0;
-    public final d c0;
-    public b d0;
-    public c e0;
-    public final ri.a f;
-    public e f0;
-    public final ri.a h;
-    public final ri.a n;
-    public ri.a r;
+    public float W;
+    public boolean X;
+    public int Y;
+    public ca Z;
+    public boolean a0;
+    public ui.a b0;
+    public boolean c0;
+    public final d d0;
+    public b e0;
+    public final ui.a f;
+    public c f0;
+    public e g0;
+    public final ui.a h;
+    public final ui.a n;
+    public ui.a r;
     public gh.a w;
     public int x;
     public int y;
     public boolean s = true;
-    public float I = -1.0f;
-    public int M = t6.b;
-    public final l N = new l();
+    public float J = -1.0f;
+    public int N = q6.b;
+    public final l O = new l();
 
-    public g(ri.a aVar, ri.a aVar2, ri.a aVar3) {
+    public g(ui.a aVar, ui.a aVar2, ui.a aVar3) {
         f fVar = new f();
-        this.Q = fVar;
-        this.V = 1.0f;
-        this.X = q.G;
-        this.Z = true;
-        this.c0 = new d(this);
+        this.R = fVar;
+        this.W = 1.0f;
+        this.Y = q.G;
+        this.a0 = true;
+        this.d0 = new d(this);
         this.f = aVar;
         this.h = aVar2;
         this.n = aVar3;
         r rVar = this.b;
         if (!rVar.a) {
             aVar = aVar3;
-        } else if (!this.W || !rVar.b || Build.VERSION.SDK_INT < 33) {
+        } else if (!this.X || !rVar.b || Build.VERSION.SDK_INT < 33) {
             aVar = aVar2;
         }
         this.r = aVar;
         fVar.i = g0.N(1.0f);
         fVar.j = g0.N(0.6666667f);
-        this.T = g0.N(1.0f);
-        this.U = g0.N(0.33333334f);
+        this.U = g0.N(1.0f);
+        this.V = g0.N(0.33333334f);
     }
 
     public static void l(Outline outline, Rect rect, float[] fArr) {
-        if (m7.a(fArr)) {
+        if (n7.a(fArr)) {
             outline.setRoundRect(rect, Math.min(fArr[0], Math.min(rect.width(), rect.height()) / 2.0f));
             return;
         }
-        Path path = g0;
+        Path path = h0;
         if (path == null) {
-            g0 = new Path();
+            h0 = new Path();
         } else {
             path.rewind();
         }
-        g0.addRoundRect(rect.left, rect.top, rect.right, rect.bottom, fArr, Path.Direction.CW);
-        outline.setConvexPath(g0);
+        h0.addRoundRect(rect.left, rect.top, rect.right, rect.bottom, fArr, Path.Direction.CW);
+        outline.setConvexPath(h0);
     }
 
-    public static ri.a v(ri.a aVar) {
-        while (aVar instanceof ri.g) {
-            aVar = ((ri.g) aVar).a;
+    public static ui.a v(ui.a aVar) {
+        while (aVar instanceof ui.g) {
+            aVar = ((ui.g) aVar).a;
         }
         return aVar;
     }
 
-    @Override // oi.e
+    @Override // ri.e
     public final void a() {
-        aa o4 = o();
-        e eVar = this.f0;
+        ca o4 = o();
+        e eVar = this.g0;
         if (o4 != eVar || eVar == null) {
             return;
         }
         eVar.e();
     }
 
-    @Override // oi.e
+    @Override // ri.e
     public final void b(Rect rect) {
-        rect.set(this.Q.m);
+        rect.set(this.R.m);
     }
 
-    @Override // oi.e
+    @Override // ri.e
     public final int c() {
-        return this.K;
+        return this.L;
     }
 
-    @Override // oi.e
+    @Override // ri.e
     public final int d() {
-        return this.L;
+        return this.M;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        ri.a aVar;
-        int i7 = t6.b;
-        if (this.M != i7) {
-            this.M = i7;
+        ui.a aVar;
+        int i7 = q6.b;
+        if (this.N != i7) {
+            this.N = i7;
             try {
                 updateColors();
             } catch (Exception e10) {
@@ -145,23 +145,23 @@ public final class g extends oi.e implements c6 {
             }
         }
         int i10 = q.G;
-        if (this.X != i10) {
-            this.X = i10;
+        if (this.Y != i10) {
+            this.Y = i10;
             r f10 = q.f();
             if (!Objects.equals(this.b, f10)) {
                 this.b = f10;
                 g(f10);
             }
         }
-        f fVar = this.Q;
+        f fVar = this.R;
         if (fVar.m.isEmpty()) {
             return;
         }
-        aa o4 = o();
-        ri.a aVar2 = this.r;
-        if (o4 == this.f0 && !canvas.isHardwareAccelerated()) {
-            ri.a v = v(v(this.r));
-            if (Build.VERSION.SDK_INT >= 29 && (v instanceof ri.f) && (aVar = ((ri.f) v).a) != null) {
+        ca o4 = o();
+        ui.a aVar2 = this.r;
+        if (o4 == this.g0 && !canvas.isHardwareAccelerated()) {
+            ui.a v = v(v(this.r));
+            if (Build.VERSION.SDK_INT >= 29 && (v instanceof ui.f) && (aVar = ((ui.f) v).a) != null) {
                 v = v(aVar);
             }
             aVar2 = v;
@@ -171,7 +171,7 @@ public final class g extends oi.e implements c6 {
         float f11 = this.c / 255.0f;
         Rect rect = fVar.m;
         if (!fVar.e()) {
-            this.N.a(canvas, rect.left, rect.top, rect.right, rect.bottom, fVar.b, m(), f11);
+            this.O.a(canvas, rect.left, rect.top, rect.right, rect.bottom, fVar.b, m(), f11);
             return;
         }
         Path path = fVar.k;
@@ -181,7 +181,7 @@ public final class g extends oi.e implements c6 {
         float f14 = rect.right;
         float f15 = rect.bottom;
         h m10 = m();
-        l lVar = this.N;
+        l lVar = this.O;
         lVar.getClass();
         float f16 = f15 - f13;
         if (f14 - f12 < 1.0f || f16 < 1.0f || f11 <= 0.0f) {
@@ -210,24 +210,24 @@ public final class g extends oi.e implements c6 {
         }
     }
 
-    @Override // oi.e
+    @Override // ri.e
     public final boolean e() {
-        aa o4 = o();
-        e eVar = this.f0;
+        ca o4 = o();
+        e eVar = this.g0;
         return o4 != eVar || eVar == null || eVar.c();
     }
 
-    @Override // oi.e
+    @Override // ri.e
     public final void f(int i7) {
-        e eVar = this.f0;
+        e eVar = this.g0;
         if (eVar != null) {
             eVar.f(i7 / 255.0f);
         }
     }
 
-    @Override // oi.e
+    @Override // ri.e
     public final void g(r rVar) {
-        this.Z = true;
+        this.a0 = true;
         updateColors();
         invalidateSelf();
     }
@@ -239,7 +239,7 @@ public final class g extends oi.e implements c6 {
 
     @Override // android.graphics.drawable.Drawable
     public final void getOutline(Outline outline) {
-        f fVar = this.Q;
+        f fVar = this.R;
         if (!fVar.e()) {
             l(outline, fVar.m, fVar.b);
         } else if (Build.VERSION.SDK_INT >= 30) {
@@ -252,117 +252,117 @@ public final class g extends oi.e implements c6 {
 
     @Override // android.graphics.drawable.Drawable
     public final boolean getPadding(Rect rect) {
-        f fVar = this.Q;
+        f fVar = this.R;
         int i7 = fVar.d;
         rect.set(i7, i7, i7, i7);
         return fVar.e;
     }
 
-    @Override // oi.e
+    @Override // ri.e
     public final void h() {
-        e eVar = this.f0;
+        e eVar = this.g0;
         if (eVar != null) {
             eVar.h = true;
         }
     }
 
-    @Override // oi.e
+    @Override // ri.e
     public final boolean j() {
-        aa o4 = o();
-        e eVar = this.f0;
+        ca o4 = o();
+        e eVar = this.g0;
         return o4 == eVar && eVar != null;
     }
 
-    public final aa k(ri.a aVar) {
-        ri.a v = v(aVar);
-        if (Color.alpha(this.y) == 255 || (v instanceof ri.c)) {
-            return this.c0;
-        }
-        if (v instanceof ri.b) {
-            if (this.d0 == null) {
-                this.d0 = new b(this);
-            }
+    public final ca k(ui.a aVar) {
+        ui.a v = v(aVar);
+        if (Color.alpha(this.y) == 255 || (v instanceof ui.c)) {
             return this.d0;
         }
-        if (this.e0 == null) {
-            this.e0 = new c(this);
+        if (v instanceof ui.b) {
+            if (this.e0 == null) {
+                this.e0 = new b(this);
+            }
+            return this.e0;
         }
-        return this.e0;
+        if (this.f0 == null) {
+            this.f0 = new c(this);
+        }
+        return this.f0;
     }
 
     public final h m() {
         h hVar;
-        if (this.O == null) {
-            boolean z9 = this.P;
-            f fVar = this.Q;
-            if (z9) {
+        if (this.P == null) {
+            boolean z10 = this.Q;
+            f fVar = this.R;
+            if (z10) {
                 float f10 = fVar.i;
-                int i7 = this.D;
-                hVar = new h(0.0f, 0, 0.0f, 0, this.H, this.G, (f10 + fVar.j) / 2.0f, i0.a.f(0.5f, i7, this.E));
+                int i7 = this.E;
+                hVar = new h(0.0f, 0, 0.0f, 0, this.I, this.H, (f10 + fVar.j) / 2.0f, i0.a.f(0.5f, i7, this.F));
             } else {
-                hVar = new h(fVar.i, this.D, fVar.j, this.E, this.H, this.G, 0.0f, 0);
+                hVar = new h(fVar.i, this.E, fVar.j, this.F, this.I, this.H, 0.0f, 0);
             }
-            this.O = hVar;
+            this.P = hVar;
         }
-        return this.O;
+        return this.P;
     }
 
     public final void n() {
-        e eVar = this.f0;
+        e eVar = this.g0;
         if (eVar != null) {
             eVar.d();
         }
     }
 
-    public final aa o() {
-        aa k10;
-        if (this.Z) {
+    public final ca o() {
+        ca k10;
+        if (this.a0) {
             r rVar = this.b;
-            ri.a aVar = !rVar.a ? this.n : (this.W && rVar.b && Build.VERSION.SDK_INT >= 33) ? this.f : this.h;
+            ui.a aVar = !rVar.a ? this.n : (this.X && rVar.b && Build.VERSION.SDK_INT >= 33) ? this.f : this.h;
             if (this.r != aVar) {
                 this.r = aVar;
-                e eVar = this.f0;
+                e eVar = this.g0;
                 if (eVar != null) {
                     eVar.h = true;
                 }
             }
         }
-        ri.a v = v(this.r);
-        boolean z9 = Color.alpha(this.y) == 255;
-        if (this.Y == null || this.Z || this.a0 != v || this.b0 != z9) {
-            this.Z = false;
-            this.a0 = v;
-            this.b0 = z9;
+        ui.a v = v(this.r);
+        boolean z10 = Color.alpha(this.y) == 255;
+        if (this.Z == null || this.a0 || this.b0 != v || this.c0 != z10) {
+            this.a0 = false;
+            this.b0 = v;
+            this.c0 = z10;
             int i7 = Build.VERSION.SDK_INT;
-            if (i7 < 29 || !(this.r instanceof dh.b) || (v instanceof ri.c) || (v instanceof ri.b)) {
+            if (i7 < 29 || !(this.r instanceof dh.b) || (v instanceof ui.c) || (v instanceof ui.b)) {
                 k10 = k(v);
             } else {
-                if (this.f0 == null) {
+                if (this.g0 == null) {
                     e eVar2 = new e(this);
                     eVar2.g(this.s);
                     eVar2.f(this.c / 255.0f);
                     eVar2.d();
-                    this.f0 = eVar2;
+                    this.g0 = eVar2;
                 }
-                k10 = this.f0;
+                k10 = this.g0;
             }
-            e eVar3 = this.f0;
+            e eVar3 = this.g0;
             if (eVar3 != null) {
-                eVar3.h(k10 == eVar3 && this.W && this.b.b && i7 >= 33);
+                eVar3.h(k10 == eVar3 && this.X && this.b.b && i7 >= 33);
             }
-            aa aaVar = this.Y;
-            if (aaVar != k10 && aaVar != null) {
-                aaVar.a();
+            ca caVar = this.Z;
+            if (caVar != k10 && caVar != null) {
+                caVar.a();
             }
-            this.Y = k10;
+            this.Z = k10;
         }
-        return this.Y;
+        return this.Z;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
-        f fVar = this.Q;
+        f fVar = this.R;
         fVar.a.set(rect);
         fVar.a();
         n();
@@ -370,28 +370,28 @@ public final class g extends oi.e implements c6 {
 
     public final void p(gh.a aVar) {
         this.w = aVar;
-        if (this.I < 0.0f) {
-            this.I = this.T;
+        if (this.J < 0.0f) {
             this.J = this.U;
+            this.K = this.V;
         }
         updateColors();
         if (aVar instanceof gh.e) {
             gh.e eVar = (gh.e) aVar;
             float f10 = eVar.f;
             float f11 = eVar.h;
-            f fVar = this.Q;
+            f fVar = this.R;
             fVar.i = f10;
             fVar.j = f11;
-            this.O = null;
+            this.P = null;
             float c10 = eVar.c();
             float b10 = eVar.b();
-            this.T = c10;
-            this.U = b10;
+            this.U = c10;
+            this.V = b10;
         }
     }
 
     public final void q(int i7) {
-        f fVar = this.Q;
+        f fVar = this.R;
         if (fVar.d != i7) {
             fVar.d = i7;
             fVar.a();
@@ -400,7 +400,7 @@ public final class g extends oi.e implements c6 {
     }
 
     public final void r(float f10) {
-        f fVar = this.Q;
+        f fVar = this.R;
         Arrays.fill(fVar.b, f10);
         Arrays.fill(fVar.c, f10);
         fVar.a();
@@ -408,7 +408,7 @@ public final class g extends oi.e implements c6 {
     }
 
     public final void s(float f10, float f11, float f12, float f13) {
-        f fVar = this.Q;
+        f fVar = this.R;
         float[] fArr = fVar.b;
         fArr[1] = f10;
         fArr[0] = f10;
@@ -422,17 +422,17 @@ public final class g extends oi.e implements c6 {
         n();
     }
 
-    public final void t(float f10, float f11, float f12, float f13, boolean z9) {
-        f fVar = this.Q;
+    public final void t(float f10, float f11, float f12, float f13, boolean z10) {
+        f fVar = this.R;
         float[] fArr = fVar.b;
         fArr[1] = f10;
         fArr[0] = f10;
         fArr[3] = f11;
         fArr[2] = f11;
-        float f14 = z9 ? 0.0f : f12;
+        float f14 = z10 ? 0.0f : f12;
         fArr[5] = f14;
         fArr[4] = f14;
-        float f15 = z9 ? 0.0f : f13;
+        float f15 = z10 ? 0.0f : f13;
         fArr[7] = f15;
         fArr[6] = f15;
         float[] fArr2 = fVar.c;
@@ -449,13 +449,13 @@ public final class g extends oi.e implements c6 {
     }
 
     public final void u(int i7) {
-        this.Q.f = i7;
+        this.R.f = i7;
         n();
     }
 
-    @Override // oi.e, org.telegram.ui.ActionBar.c6
+    @Override // ri.e, org.telegram.ui.ActionBar.z5
     public final void updateColors() {
-        this.M = t6.b;
+        this.N = q6.b;
         gh.a aVar = this.w;
         if (aVar == null) {
             return;
@@ -463,41 +463,41 @@ public final class g extends oi.e implements c6 {
         if (aVar instanceof gh.b) {
             ((gh.b) aVar).d();
         }
-        this.y = this.w.e1();
-        this.x = this.w.R0();
-        this.D = this.w.A();
-        this.E = this.w.O();
-        this.F = this.w.C0();
-        this.G = this.w.M();
-        this.H = this.w.v0();
+        this.y = this.w.A2();
+        this.x = this.w.W1();
+        this.E = this.w.t0();
+        this.F = this.w.U0();
+        this.G = this.w.D1();
+        this.H = this.w.M0();
+        this.I = this.w.A1();
         gh.a aVar2 = this.w;
         if (aVar2 instanceof gh.e) {
             gh.e eVar = (gh.e) aVar2;
             float c10 = eVar.c();
             float b10 = eVar.b();
-            this.T = c10;
-            this.U = b10;
-        } else if (aVar2.o0() >= 0.0f) {
-            float o02 = this.w.o0();
-            float j02 = this.w.j0();
-            this.T = o02;
-            this.U = j02;
+            this.U = c10;
+            this.V = b10;
+        } else if (aVar2.Z0() >= 0.0f) {
+            float Z0 = this.w.Z0();
+            float Y0 = this.w.Y0();
+            this.U = Z0;
+            this.V = Y0;
         } else {
-            float f10 = this.I;
+            float f10 = this.J;
             if (f10 >= 0.0f) {
-                float f11 = this.J;
-                this.T = f10;
-                this.U = f11;
+                float f11 = this.K;
+                this.U = f10;
+                this.V = f11;
             }
         }
-        this.O = null;
-        e eVar2 = this.f0;
+        this.P = null;
+        e eVar2 = this.g0;
         if (eVar2 != null) {
             eVar2.h = true;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

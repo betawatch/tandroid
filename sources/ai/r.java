@@ -1,34 +1,29 @@
 package ai;
 
-import android.graphics.Canvas;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class r extends pj0 {
-    public aa.k e3;
-    public k0 f3;
+public final /* synthetic */ class r implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean[] b;
 
-    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        int i7;
-        if (this.f3 != null) {
-            canvas2 = canvas;
-            i7 = canvas2.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
-        } else {
-            canvas2 = canvas;
-            i7 = -1;
-        }
-        aa.k kVar = this.e3;
-        if (kVar != null) {
-            kVar.x(canvas2);
-        }
-        super.dispatchDraw(canvas2);
-        k0 k0Var = this.f3;
-        if (k0Var != null) {
-            k0Var.x(canvas2);
-            canvas2.restoreToCount(i7);
+    public /* synthetic */ r(int i7, boolean[] zArr) {
+        this.a = i7;
+        this.b = zArr;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                boolean[] zArr = this.b;
+                s[] sVarArr = DictationAsr.a;
+                zArr[0] = true;
+                break;
+            default:
+                this.b[0] = true;
+                break;
         }
     }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l0 {
     public final CharSequence a;
@@ -31,11 +31,11 @@ public final class l0 {
             if (Build.VERSION.SDK_INT >= 26) {
                 Iterator it = l0Var.c.iterator();
                 while (it.hasNext()) {
-                    f2.i.f(addExtras, (String) it.next());
+                    f2.h.f(addExtras, (String) it.next());
                 }
             }
             if (Build.VERSION.SDK_INT >= 29) {
-                ab.x.n(addExtras);
+                ab.y.n(addExtras);
             }
             remoteInputArr[i7] = addExtras.build();
         }

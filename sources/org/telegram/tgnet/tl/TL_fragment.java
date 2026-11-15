@@ -4,18 +4,18 @@ import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class TL_fragment {
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class InputCollectible extends TLObject {
-        public static InputCollectible TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return (InputCollectible) TLObject.TLdeserialize(InputCollectible.class, i7 != -1562241884 ? i7 != -476815191 ? null : new TL_inputCollectibleUsername() : new TL_inputCollectiblePhone(), inputSerializedData, i7, z9);
+        public static InputCollectible TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return (InputCollectible) TLObject.TLdeserialize(InputCollectible.class, i7 != -1562241884 ? i7 != -476815191 ? null : new TL_inputCollectibleUsername() : new TL_inputCollectiblePhone(), inputSerializedData, i7, z10);
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class TL_collectibleInfo extends TLObject {
         public static final int constructor = 1857945489;
         public long amount;
@@ -25,18 +25,18 @@ public class TL_fragment {
         public int purchase_date;
         public String url;
 
-        public static TL_collectibleInfo TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return (TL_collectibleInfo) TLObject.TLdeserialize(TL_collectibleInfo.class, 1857945489 != i7 ? null : new TL_collectibleInfo(), inputSerializedData, i7, z9);
+        public static TL_collectibleInfo TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return (TL_collectibleInfo) TLObject.TLdeserialize(TL_collectibleInfo.class, 1857945489 != i7 ? null : new TL_collectibleInfo(), inputSerializedData, i7, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
-            this.purchase_date = inputSerializedData.readInt32(z9);
-            this.currency = inputSerializedData.readString(z9);
-            this.amount = inputSerializedData.readInt64(z9);
-            this.crypto_currency = inputSerializedData.readString(z9);
-            this.crypto_amount = inputSerializedData.readInt64(z9);
-            this.url = inputSerializedData.readString(z9);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.purchase_date = inputSerializedData.readInt32(z10);
+            this.currency = inputSerializedData.readString(z10);
+            this.amount = inputSerializedData.readInt64(z10);
+            this.crypto_currency = inputSerializedData.readString(z10);
+            this.crypto_amount = inputSerializedData.readInt64(z10);
+            this.url = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -51,14 +51,14 @@ public class TL_fragment {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class TL_getCollectibleInfo extends TLObject {
         public static final int constructor = -1105295942;
         public InputCollectible collectible;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z9) {
-            return TL_collectibleInfo.TLdeserialize(inputSerializedData, i7, z9);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z10) {
+            return TL_collectibleInfo.TLdeserialize(inputSerializedData, i7, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -68,14 +68,14 @@ public class TL_fragment {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class TL_inputCollectiblePhone extends InputCollectible {
         public static final int constructor = -1562241884;
         public String phone;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
-            this.phone = inputSerializedData.readString(z9);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.phone = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -85,14 +85,14 @@ public class TL_fragment {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class TL_inputCollectibleUsername extends InputCollectible {
         public static final int constructor = -476815191;
         public String username;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
-            this.username = inputSerializedData.readString(z9);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.username = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject

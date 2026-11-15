@@ -1,40 +1,30 @@
 package fi;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m7 b;
+public final class g7 extends ImageReceiver {
+    public final /* synthetic */ Runnable[] K1;
+    public final /* synthetic */ i7 L1;
 
-    public /* synthetic */ g7(m7 m7Var, int i7) {
-        this.a = i7;
-        this.b = m7Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g7(Runnable[] runnableArr, i7 i7Var) {
+        super(null);
+        this.K1 = runnableArr;
+        this.L1 = i7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
-                m7 m7Var = this.b;
-                getwebpagepreview.message = m7Var.T1.d.getText().toString();
-                m7Var.d2 = ConnectionsManager.getInstance(m7Var.a).sendRequest(getwebpagepreview, new bi.j0(m7Var, 11));
-                break;
-            case 1:
-                this.b.h1();
-                break;
-            default:
-                m7 m7Var2 = this.b;
-                org.telegram.ui.Cells.k3 k3Var = m7Var2.T1;
-                if (m7Var2.isShowing()) {
-                    k3Var.d.requestFocus();
-                    org.telegram.messenger.g0.K3(k3Var.d);
-                    break;
-                }
-                break;
+    @Override // org.telegram.messenger.ImageReceiver
+    public final boolean x0(Drawable drawable, String str, int i7, boolean z10, int i10) {
+        boolean x02 = super.x0(drawable, str, i7, z10, i10);
+        Runnable runnable = this.K1[0];
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+            ((f6) this.L1.d).run();
         }
+        org.telegram.messenger.g0.h3(new c1(this, 12));
+        return x02;
     }
 }

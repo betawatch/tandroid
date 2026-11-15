@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class v extends o {
     public final boolean a;
@@ -43,13 +43,13 @@ public final class v extends o {
         }
         u uVar = new u();
         HashMap hashMap = w.a;
-        boolean z9 = sVar instanceof r;
-        boolean z10 = sVar instanceof e;
-        if (z9 && z10) {
+        boolean z10 = sVar instanceof r;
+        boolean z11 = sVar instanceof e;
+        if (z10 && z11) {
             reflectiveGenericLifecycleObserver = new DefaultLifecycleObserverAdapter((e) sVar, (r) sVar);
-        } else if (z10) {
+        } else if (z11) {
             reflectiveGenericLifecycleObserver = new DefaultLifecycleObserverAdapter((e) sVar, null);
-        } else if (z9) {
+        } else if (z10) {
             reflectiveGenericLifecycleObserver = (r) sVar;
         } else {
             Class<?> cls = sVar.getClass();
@@ -95,7 +95,7 @@ public final class v extends o {
             obj = null;
         }
         if (((u) obj) == null && (tVar = (t) this.d.get()) != null) {
-            boolean z11 = this.e != 0 || this.f;
+            boolean z12 = this.e != 0 || this.f;
             n c10 = c(sVar);
             this.e++;
             while (uVar.a.compareTo(c10) < 0 && this.b.e.containsKey(sVar)) {
@@ -115,7 +115,7 @@ public final class v extends o {
                 arrayList.remove(arrayList.size() - 1);
                 c10 = c(sVar);
             }
-            if (!z11) {
+            if (!z12) {
                 h();
             }
             this.e--;
@@ -135,7 +135,7 @@ public final class v extends o {
         o.c cVar = hashMap.containsKey(sVar) ? ((o.c) hashMap.get(sVar)).d : null;
         n nVar = (cVar == null || (uVar = (u) cVar.b) == null) ? null : uVar.a;
         ArrayList arrayList = this.h;
-        n nVar2 = arrayList.isEmpty() ? null : (n) jg.g.i(1, arrayList);
+        n nVar2 = arrayList.isEmpty() ? null : (n) i5.c.h(1, arrayList);
         n state1 = this.c;
         kotlin.jvm.internal.j.e(state1, "state1");
         if (nVar == null || nVar.compareTo(state1) >= 0) {

@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class m extends i0 implements l, kd.d, c2 {
     public static final /* synthetic */ AtomicIntegerFieldUpdater f = AtomicIntegerFieldUpdater.newUpdater(m.class, "_decisionAndIndex$volatile");
@@ -50,10 +50,10 @@ public class m extends i0 implements l, kd.d, c2 {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ee.f.n;
             loop0: while (true) {
                 Object obj = atomicReferenceFieldUpdater.get(fVar);
-                com.google.android.gms.internal.clearcut.e eVar = ee.a.c;
-                if (obj == eVar) {
-                    while (!atomicReferenceFieldUpdater.compareAndSet(fVar, eVar, this)) {
-                        if (atomicReferenceFieldUpdater.get(fVar) != eVar) {
+                aa.b0 b0Var = ee.a.c;
+                if (obj == b0Var) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(fVar, b0Var, this)) {
+                        if (atomicReferenceFieldUpdater.get(fVar) != b0Var) {
                             break;
                         }
                     }
@@ -119,8 +119,8 @@ public class m extends i0 implements l, kd.d, c2 {
         C(gd.k.a, (fVar != null ? fVar.d : null) == xVar ? 4 : this.c, null);
     }
 
-    public final com.google.android.gms.internal.clearcut.e F(Object obj, rd.q qVar) {
-        com.google.android.gms.internal.clearcut.e eVar = b0.a;
+    public final aa.b0 F(Object obj, rd.q qVar) {
+        aa.b0 b0Var = b0.a;
         while (true) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = h;
             Object obj2 = atomicReferenceFieldUpdater.get(this);
@@ -136,7 +136,7 @@ public class m extends i0 implements l, kd.d, c2 {
             if (!x()) {
                 o();
             }
-            return eVar;
+            return b0Var;
         }
     }
 
@@ -206,7 +206,7 @@ public class m extends i0 implements l, kd.d, c2 {
     }
 
     @Override // zd.l
-    public final com.google.android.gms.internal.clearcut.e d(Object obj, rd.q qVar) {
+    public final aa.b0 d(Object obj, rd.q qVar) {
         return F(obj, qVar);
     }
 
@@ -326,12 +326,12 @@ public class m extends i0 implements l, kd.d, c2 {
                 if (i11 != 1) {
                     throw new IllegalStateException("Already resumed");
                 }
-                boolean z9 = i7 == 4;
+                boolean z10 = i7 == 4;
                 id.c cVar = this.d;
-                if (!z9 && (cVar instanceof ee.f)) {
-                    boolean z10 = i7 == 1 || i7 == 2;
+                if (!z10 && (cVar instanceof ee.f)) {
+                    boolean z11 = i7 == 1 || i7 == 2;
                     int i12 = this.c;
-                    if (z10 == (i12 == 1 || i12 == 2)) {
+                    if (z11 == (i12 == 1 || i12 == 2)) {
                         ee.f fVar = (ee.f) cVar;
                         x xVar = fVar.d;
                         id.h context = fVar.e.getContext();
@@ -363,7 +363,7 @@ public class m extends i0 implements l, kd.d, c2 {
                         return;
                     }
                 }
-                b0.t(this, cVar, z9);
+                b0.t(this, cVar, z10);
                 return;
             }
         } while (!atomicIntegerFieldUpdater.compareAndSet(this, i10, TLObject.FLAG_30 + (536870911 & i10)));

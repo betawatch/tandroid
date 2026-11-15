@@ -1,51 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class q20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ r20 c;
-
-    public /* synthetic */ q20(r20 r20Var, boolean z9, int i7) {
-        this.a = i7;
-        this.c = r20Var;
-        this.b = z9;
+public final class q20 implements nr0 {
+    @Override // org.telegram.ui.Components.nr0
+    public final boolean Y() {
+        return false;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.dn dnVar;
-        bi.q1 q1Var;
-        switch (this.a) {
-            case 0:
-                float f10 = this.b ? 1.0f : 0.0f;
-                r20 r20Var = this.c;
-                r20Var.x = f10;
-                r20Var.e.setTranslationY(f10 * org.telegram.messenger.g0.L(48.0f));
-                r20Var.e.setPadding(0, 0, 0, (int) (r20Var.x * org.telegram.messenger.g0.L(48.0f)));
-                break;
-            default:
-                boolean z9 = this.b;
-                float f11 = z9 ? 1.0f : 0.0f;
-                r20 r20Var2 = this.c;
-                r20Var2.E = f11;
-                r20Var2.n.setScaleX(org.telegram.messenger.g0.T1(0.95f, 1.0f, f11));
-                r20Var2.n.setScaleY(org.telegram.messenger.g0.T1(0.95f, 1.0f, r20Var2.E));
-                org.telegram.ui.oj ojVar = r20Var2.f;
-                if (ojVar != null && (dnVar = ojVar.a) != null && (q1Var = dnVar.Z3) != null) {
-                    q1Var.setScaleX(org.telegram.messenger.g0.T1(1.0f, 0.95f, r20Var2.E));
-                    r20Var2.f.a.Z3.setScaleY(org.telegram.messenger.g0.T1(1.0f, 0.95f, r20Var2.E));
-                }
-                r20Var2.h.setAlpha(r20Var2.E);
-                if (!z9) {
-                    r20Var2.h.setVisibility(8);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.nr0
+    public final uj0 f() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.nr0
+    public final TLRPC.Chat g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.nr0
+    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.nr0
+    public final boolean t() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.nr0
+    public final void J() {
+    }
+
+    @Override // org.telegram.ui.Components.nr0
+    public final void W() {
     }
 }

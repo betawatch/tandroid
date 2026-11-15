@@ -1,121 +1,77 @@
 package l2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import a8.ja;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class p1 extends a {
-    public final int h;
-    public final int i;
-    public final int[] j;
-    public final int[] k;
-    public final e2.l1[] l;
-    public final Object[] m;
-    public final HashMap n;
+public final class p1 {
+    public static final p1 c;
+    public static final p1 d;
+    public static final p1 e;
+    public static final p1 f;
+    public final long a;
+    public final long b;
 
-    public p1(e2.l1[] l1VarArr, Object[] objArr, x2.g1 g1Var) {
-        super(g1Var);
-        int length = l1VarArr.length;
-        this.l = l1VarArr;
-        this.j = new int[length];
-        this.k = new int[length];
-        this.m = objArr;
-        this.n = new HashMap();
-        int length2 = l1VarArr.length;
-        int i7 = 0;
-        int i10 = 0;
-        int i11 = 0;
-        int i12 = 0;
-        while (i7 < length2) {
-            e2.l1 l1Var = l1VarArr[i7];
-            this.l[i12] = l1Var;
-            this.k[i12] = i10;
-            this.j[i12] = i11;
-            i10 += l1Var.o();
-            i11 += this.l[i12].h();
-            this.n.put(objArr[i12], Integer.valueOf(i12));
-            i7++;
-            i12++;
-        }
-        this.h = i10;
-        this.i = i11;
+    static {
+        p1 p1Var = new p1(0L, 0L);
+        c = p1Var;
+        d = new p1(Long.MAX_VALUE, Long.MAX_VALUE);
+        e = new p1(Long.MAX_VALUE, 0L);
+        new p1(0L, Long.MAX_VALUE);
+        f = p1Var;
     }
 
-    @Override // e2.l1
-    public final int h() {
-        return this.i;
+    public p1(long j3, long j10) {
+        ja.f(j3 >= 0);
+        ja.f(j10 >= 0);
+        this.a = j3;
+        this.b = j10;
     }
 
-    @Override // e2.l1
-    public final int o() {
-        return this.h;
-    }
-
-    @Override // l2.a
-    public final int q(Object obj) {
-        Integer num = (Integer) this.n.get(obj);
-        if (num == null) {
-            return -1;
-        }
-        return num.intValue();
-    }
-
-    @Override // l2.a
-    public final int r(int i7) {
-        return h2.m0.e(this.j, i7 + 1, false, false);
-    }
-
-    @Override // l2.a
-    public final int s(int i7) {
-        return h2.m0.e(this.k, i7 + 1, false, false);
-    }
-
-    @Override // l2.a
-    public final Object t(int i7) {
-        return this.m[i7];
-    }
-
-    @Override // l2.a
-    public final int u(int i7) {
-        return this.j[i7];
-    }
-
-    @Override // l2.a
-    public final int v(int i7) {
-        return this.k[i7];
-    }
-
-    @Override // l2.a
-    public final e2.l1 x(int i7) {
-        return this.l[i7];
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0082 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public p1(ArrayList arrayList, x2.g1 g1Var) {
-        this(r0, r1, g1Var);
-        e2.l1[] l1VarArr = new e2.l1[arrayList.size()];
-        int size = arrayList.size();
-        int i7 = 0;
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            l1VarArr[i10] = ((b1) obj).b();
-            i10++;
+    public final long a(long j3, long j10, long j11) {
+        long j12 = this.a;
+        long j13 = this.b;
+        if (j12 == 0 && j13 == 0) {
+            return j3;
         }
-        Object[] objArr = new Object[arrayList.size()];
-        int size2 = arrayList.size();
-        int i12 = 0;
-        while (i12 < size2) {
-            Object obj2 = arrayList.get(i12);
-            i12++;
-            objArr[i7] = ((b1) obj2).a();
-            i7++;
+        String str = h2.l0.a;
+        long j14 = j3 - j12;
+        long j15 = (((j12 ^ j3) > 0L ? 1 : ((j12 ^ j3) == 0L ? 0 : -1)) >= 0) | (((j3 ^ j14) > 0L ? 1 : ((j3 ^ j14) == 0L ? 0 : -1)) >= 0) ? j14 : ((j14 >>> 63) ^ 1) + Long.MAX_VALUE;
+        if ((j15 == Long.MIN_VALUE && j14 != Long.MIN_VALUE) || (j15 == Long.MAX_VALUE && j14 != Long.MAX_VALUE)) {
+            j15 = Long.MIN_VALUE;
         }
+        long a10 = h2.l0.a(j3, j13);
+        boolean z10 = j15 <= j10 && j10 <= a10;
+        boolean z11 = j15 <= j11 && j11 <= a10;
+        if (!z10 || !z11) {
+            if (!z10) {
+                return z11 ? j11 : j15;
+            }
+            return j10;
+        }
+        if (Math.abs(j10 - j3) <= Math.abs(j11 - j3)) {
+            return j10;
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && p1.class == obj.getClass()) {
+            p1 p1Var = (p1) obj;
+            if (this.a == p1Var.a && this.b == p1Var.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return (((int) this.a) * 31) + ((int) this.b);
     }
 }

@@ -1,27 +1,24 @@
 package k9;
 
-import a8.ga;
-import a8.wa;
-import aa.n;
-import g6.d0;
+import a8.ha;
+import a8.xa;
+import f5.g;
 import g9.b;
 import g9.e;
 import g9.h;
 import g9.i;
-import g9.l;
 import h9.c0;
 import h9.f0;
 import h9.g0;
+import h9.h1;
 import h9.i0;
-import h9.i1;
 import h9.j0;
-import h9.m1;
+import h9.l1;
 import h9.o;
 import h9.q;
 import h9.s;
-import h9.t1;
+import h9.s1;
 import h9.y;
-import hi.x3;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.AbstractCollection;
@@ -30,16 +27,17 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import ob.c;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public static final j0 f;
     public static final g9.a g;
     public static final HashMap h;
     public static final a i;
-    public static final n j;
+    public static final c j;
     public final String a;
     public final String b;
     public final j0 c;
@@ -48,7 +46,7 @@ public final class a {
 
     static {
         j0 j0Var;
-        String c10 = ga.c(StandardCharsets.UTF_8.name());
+        String c10 = ha.c(StandardCharsets.UTF_8.name());
         o.f("charset", c10);
         s b10 = s.b();
         c0 c0Var = (c0) b10.get("charset");
@@ -64,17 +62,17 @@ public final class a {
             j0Var = y.h;
         } else {
             q qVar = (q) entrySet;
-            wa waVar = new wa(qVar.b.size(), 10);
+            xa xaVar = new xa(qVar.b.size(), 10);
             Iterator it = qVar.iterator();
             int i7 = 0;
             while (it.hasNext()) {
                 Map.Entry entry = (Map.Entry) it.next();
                 Object key = entry.getKey();
-                t1 f10 = ((f0) entry.getValue()).f();
-                waVar.v(key, f10);
+                s1 f10 = ((f0) entry.getValue()).f();
+                xaVar.u(key, f10);
                 i7 += f10.d;
             }
-            j0Var = new j0(waVar.d(true), i7);
+            j0Var = new j0(xaVar.c(true), i7);
         }
         f = j0Var;
         b bVar = b.d;
@@ -202,7 +200,7 @@ public final class a {
         a("font", "ttf");
         a("font", "woff");
         a("font", "woff2");
-        j = new n(new l("; ", 0), 27);
+        j = new c(new g("; ", 1), 25);
     }
 
     public a(String str, String str2, j0 j0Var) {
@@ -223,8 +221,8 @@ public final class a {
         return aVar;
     }
 
-    public final i1 c() {
-        return new i1(this.c.b(), new d0(new x3(14), 4));
+    public final h1 c() {
+        return new h1(this.c.b(), new c(new i0.b(10), 29));
     }
 
     public final boolean equals(Object obj) {
@@ -260,11 +258,11 @@ public final class a {
         j0 j0Var = this.c;
         if (j0Var.f != 0) {
             sb2.append("; ");
-            Collection a10 = new m1(j0Var, new d0(new x3(13), 4)).a();
-            n nVar = j;
-            nVar.getClass();
+            Collection a10 = new l1(j0Var, new c(new i0.b(9), 29)).a();
+            c cVar = j;
+            cVar.getClass();
             try {
-                nVar.c(sb2, a10.iterator());
+                cVar.c(sb2, a10.iterator());
             } catch (IOException e10) {
                 throw new AssertionError(e10);
             }

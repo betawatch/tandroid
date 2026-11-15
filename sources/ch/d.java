@@ -7,23 +7,23 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.sc;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.qc;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h5;
-import org.telegram.ui.Components.wq;
-import org.telegram.ui.Components.zg0;
-import org.telegram.ui.lx;
+import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.jx;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class d {
     public static int m;
-    public h5 a;
+    public g5 a;
     public Rect b;
     public ArrayList c;
     public View d;
@@ -36,22 +36,22 @@ public final class d {
     public int k;
     public long l;
 
-    public static d a(h5 h5Var, boolean z9, boolean z10) {
-        int i7 = p10.s0;
+    public static d a(g5 g5Var, boolean z10, boolean z11) {
+        int i7 = m10.t0;
         d dVar = new d();
         dVar.b = new Rect();
         dVar.c = new ArrayList();
         dVar.g = true;
         dVar.k = -1;
-        dVar.a = h5Var;
-        dVar.f = z9;
+        dVar.a = g5Var;
+        dVar.f = z10;
         dVar.h = i7;
-        dVar.i = z10;
+        dVar.i = z11;
         dVar.e = System.currentTimeMillis();
-        if (z10 && sc.e(4112)) {
+        if (z11 && qc.e(4112)) {
             ImageReceiver imageReceiver = new ImageReceiver(null);
             dVar.j = imageReceiver;
-            if (z9) {
+            if (z10) {
                 imageReceiver.b = true;
             }
         }
@@ -69,8 +69,8 @@ public final class d {
         Rect rect = this.b;
         ImageReceiver imageReceiver = this.j;
         ArrayList arrayList = this.c;
-        boolean z9 = this.f;
-        if (z9) {
+        boolean z10 = this.f;
+        if (z10) {
             long currentTimeMillis = System.currentTimeMillis();
             if (arrayList.size() < 12) {
                 long j3 = currentTimeMillis - this.e;
@@ -89,7 +89,7 @@ public final class d {
             }
         }
         if (imageReceiver != null && this.i && (imageReceiver.B() == null || !imageReceiver.B().A())) {
-            if (z9) {
+            if (z10) {
                 canvas.save();
                 canvas.translate(rect.width() / 3.0f, 0.0f);
                 imageReceiver.h(canvas, null);
@@ -107,13 +107,13 @@ public final class d {
             cVar3.h = min;
             float i11 = Utilities.i(min, 1.0f, 0.0f);
             cVar3.h = i11;
-            wq wqVar = wq.g;
-            float interpolation = wqVar.getInterpolation(i11);
+            er erVar = er.g;
+            float interpolation = erVar.getInterpolation(i11);
             float T1 = org.telegram.messenger.g0.T1(cVar3.a, cVar3.c, interpolation);
             d dVar = cVar3.l;
-            h5 h5Var = dVar.a;
+            g5 g5Var = dVar.a;
             float f11 = cVar3.h;
-            float T12 = f11 < 0.3f ? org.telegram.messenger.g0.T1(cVar3.b, cVar3.d, wqVar.getInterpolation(f11 / 0.3f)) : org.telegram.messenger.g0.T1(cVar3.d, cVar3.e, wq.i.getInterpolation((f11 - 0.3f) / 0.7f));
+            float T12 = f11 < 0.3f ? org.telegram.messenger.g0.T1(cVar3.b, cVar3.d, erVar.getInterpolation(f11 / 0.3f)) : org.telegram.messenger.g0.T1(cVar3.d, cVar3.e, er.i.getInterpolation((f11 - 0.3f) / 0.7f));
             float T13 = org.telegram.messenger.g0.T1(cVar3.f, cVar3.g, interpolation);
             if (!dVar.f) {
                 float height = dVar.b.height() * 0.8f;
@@ -125,10 +125,10 @@ public final class d {
                         canvas.scale(-1.0f, 1.0f, T1, T12);
                     }
                     canvas.rotate(cVar3.k, T1, T12);
-                    h5Var.setAlpha((int) (Utilities.i(cVar3.h / 0.2f, 1.0f, 0.0f) * f10 * 255.0f));
-                    h5Var.setBounds((int) (T1 - f12), (int) (T12 - f12), (int) (T1 + f12), (int) (T12 + f12));
-                    h5Var.draw(canvas);
-                    h5Var.setAlpha(qs.e4);
+                    g5Var.setAlpha((int) (Utilities.i(cVar3.h / 0.2f, 1.0f, 0.0f) * f10 * 255.0f));
+                    g5Var.setBounds((int) (T1 - f12), (int) (T12 - f12), (int) (T1 + f12), (int) (T12 + f12));
+                    g5Var.draw(canvas);
+                    g5Var.setAlpha(ns.e4);
                     canvas.restore();
                     if (((c) arrayList.get(i10)).h < 1.0f) {
                         arrayList.remove(i10);
@@ -143,10 +143,10 @@ public final class d {
             if (cVar3.j) {
             }
             canvas.rotate(cVar3.k, T1, T12);
-            h5Var.setAlpha((int) (Utilities.i(cVar3.h / 0.2f, 1.0f, 0.0f) * f10 * 255.0f));
-            h5Var.setBounds((int) (T1 - f122), (int) (T12 - f122), (int) (T1 + f122), (int) (T12 + f122));
-            h5Var.draw(canvas);
-            h5Var.setAlpha(qs.e4);
+            g5Var.setAlpha((int) (Utilities.i(cVar3.h / 0.2f, 1.0f, 0.0f) * f10 * 255.0f));
+            g5Var.setBounds((int) (T1 - f122), (int) (T12 - f122), (int) (T1 + f122), (int) (T12 + f122));
+            g5Var.draw(canvas);
+            g5Var.setAlpha(ns.e4);
             canvas.restore();
             if (((c) arrayList.get(i10)).h < 1.0f) {
             }
@@ -183,73 +183,73 @@ public final class d {
     }
 
     public final void f(View view) {
-        boolean z9;
         boolean z10;
+        boolean z11;
         TLRPC.TL_availableReaction tL_availableReaction;
         TLRPC.Document document;
-        boolean z11 = this.f;
+        boolean z12 = this.f;
         int i7 = this.h;
-        h5 h5Var = this.a;
-        h5Var.a(view);
+        g5 g5Var = this.a;
+        g5Var.a(view);
         this.d = view;
         ImageReceiver imageReceiver = this.j;
         if (imageReceiver == null || !this.i) {
             return;
         }
         imageReceiver.P();
-        TLRPC.Document document2 = h5Var.e;
+        TLRPC.Document document2 = g5Var.e;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = null;
-        String V = ij.V(document2, null, null);
-        if (V == null || (tL_availableReaction = (TLRPC.TL_availableReaction) ui.b0(i7).r.get(V)) == null || (document = tL_availableReaction.around_animation) == null) {
-            z9 = true;
-            z10 = false;
+        String V = gj.V(document2, null, null);
+        if (V == null || (tL_availableReaction = (TLRPC.TL_availableReaction) si.b0(i7).r.get(V)) == null || (document = tL_availableReaction.around_animation) == null) {
+            z10 = true;
+            z11 = false;
         } else {
-            if (z11) {
+            if (z12) {
                 StringBuilder sb2 = new StringBuilder();
                 int i10 = m;
                 m = i10 + 1;
-                imageReceiver.v1 = a8.p0.n(i10, " ", sb2);
-                int f10 = lx.f();
+                imageReceiver.w1 = a8.p0.n(i10, " ", sb2);
+                int f10 = jx.f();
                 TLRPC.Document document3 = tL_availableReaction.around_animation;
-                z9 = true;
-                imageReceiver.q0(hc.b(tL_availableReaction.around_animation), f10 + "_" + f10 + "_pcache_compress", null, null, document3, 0);
+                z10 = true;
+                imageReceiver.q0(gc.b(tL_availableReaction.around_animation), f10 + "_" + f10 + "_pcache_compress", null, null, document3, 0);
             } else {
-                hc b10 = hc.b(document);
-                String a10 = k0.a();
+                gc b10 = gc.b(document);
+                String a10 = l0.a();
                 TLRPC.Document document4 = tL_availableReaction.around_animation;
-                z9 = true;
+                z10 = true;
                 imageReceiver.q0(b10, a10, null, null, document4, 0);
             }
-            z10 = z9;
+            z11 = z10;
         }
-        if (!z10) {
-            String str = p10.i(i7).d0;
-            if (str != null && (tL_messages_stickerSet = ui.b0(i7).p0(str)) == null) {
-                tL_messages_stickerSet = ui.b0(i7).n0(str);
+        if (!z11) {
+            String str = m10.i(i7).e0;
+            if (str != null && (tL_messages_stickerSet = si.b0(i7).p0(str)) == null) {
+                tL_messages_stickerSet = si.b0(i7).n0(str);
             }
             if (tL_messages_stickerSet != null) {
                 if (this.k < 0) {
                     this.k = Math.abs(((int) Utilities.c.nextLong()) % tL_messages_stickerSet.documents.size());
                 }
-                if (z11) {
+                if (z12) {
                     StringBuilder sb3 = new StringBuilder();
                     int i11 = m;
                     m = i11 + 1;
-                    imageReceiver.v1 = a8.p0.n(i11, " ", sb3);
-                    int f11 = lx.f();
-                    imageReceiver.q0(hc.b(tL_messages_stickerSet.documents.get(this.k)), f11 + "_" + f11 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
+                    imageReceiver.w1 = a8.p0.n(i11, " ", sb3);
+                    int f11 = jx.f();
+                    imageReceiver.q0(gc.b(tL_messages_stickerSet.documents.get(this.k)), f11 + "_" + f11 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
                 } else {
-                    imageReceiver.q0(hc.b(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
+                    imageReceiver.q0(gc.b(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
                 }
-                z10 = z9;
+                z11 = z10;
             }
         }
-        if (!z10) {
-            imageReceiver.w0(new zg0(R.raw.custom_emoji_reaction, org.telegram.messenger.g0.L(60.0f), org.telegram.messenger.g0.L(60.0f), false, null));
+        if (!z11) {
+            imageReceiver.w0(new ch0(R.raw.custom_emoji_reaction, org.telegram.messenger.g0.L(60.0f), org.telegram.messenger.g0.L(60.0f), false, null));
             return;
         }
         if (imageReceiver.B() != null) {
-            imageReceiver.B().N(0, false, z9);
+            imageReceiver.B().N(0, false, z10);
         }
         imageReceiver.W(0);
     }

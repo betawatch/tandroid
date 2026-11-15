@@ -1,18 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class v4 extends MetricAffectingSpan {
-    public String a;
+public final class v4 extends FrameLayout {
+    public boolean a;
+    public int b;
+    public h6 c;
+    public h6 d;
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
+    public h6 getSubtitleTextView() {
+        return this.d;
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
+    public h6 getTitle() {
+        return this.c;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        h6 h6Var = this.d;
+        h6 h6Var2 = this.c;
+        int y10 = org.telegram.messenger.i20.y(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2) + (this.a ? org.telegram.messenger.g0.m : 0);
+        int i13 = this.b;
+        if (h6Var.getVisibility() != 8) {
+            h6Var2.layout(i13, (org.telegram.messenger.g0.L(1.0f) + y10) - h6Var2.getPaddingTop(), h6Var2.getMeasuredWidth() + i13, h6Var2.getPaddingBottom() + ((org.telegram.messenger.g0.L(1.3f) + (h6Var2.getTextHeight() + y10)) - h6Var2.getPaddingTop()));
+        } else {
+            h6Var2.layout(i13, (org.telegram.messenger.g0.L(11.0f) + y10) - h6Var2.getPaddingTop(), h6Var2.getMeasuredWidth() + i13, h6Var2.getPaddingBottom() + ((org.telegram.messenger.g0.L(11.0f) + (h6Var2.getTextHeight() + y10)) - h6Var2.getPaddingTop()));
+        }
+        h6Var.layout(i13, org.telegram.messenger.g0.L(20.0f) + y10, h6Var.getMeasuredWidth() + i13, org.telegram.messenger.g0.L(24.0f) + h6Var.getTextHeight() + y10);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
+        h6 h6Var = this.c;
+        int paddingRight = h6Var.getPaddingRight() + size;
+        int L = paddingRight - org.telegram.messenger.g0.L(16.0f);
+        h6Var.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(h6Var.getPaddingRight() + org.telegram.messenger.g0.L(32.0f), TLObject.FLAG_31));
+        this.d.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(20.0f), TLObject.FLAG_31));
+        setMeasuredDimension(paddingRight, View.MeasureSpec.getSize(i10));
     }
 }

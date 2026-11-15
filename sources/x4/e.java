@@ -16,9 +16,9 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 import m9.y;
-import org.telegram.ui.ix;
+import pb.l;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class e implements Runnable {
     
         if (r4 != 5) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x011f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x011e, code lost:
     
         throw new java.lang.IllegalArgumentException("Shortcut must have an intent");
      */
@@ -45,7 +45,7 @@ public final class e implements Runnable {
     /* JADX WARN: Removed duplicated region for block: B:24:0x00ab  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x00b8  */
     /* JADX WARN: Removed duplicated region for block: B:30:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0120 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x011f A[SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -53,7 +53,7 @@ public final class e implements Runnable {
     public final void run() {
         String str;
         String str2;
-        g0.c cVar;
+        g0.b bVar;
         j0[] j0VarArr;
         PersistableBundle persistableBundle;
         switch (this.a) {
@@ -87,10 +87,10 @@ public final class e implements Runnable {
                         return;
                     }
                     int i11 = i10 + 1;
-                    g0.c cVar2 = (g0.c) arrayList2.get(i10);
-                    Set set = cVar2.j;
+                    g0.b bVar2 = (g0.b) arrayList2.get(i10);
+                    Set set = bVar2.j;
                     if (set != null && !set.isEmpty()) {
-                        IconCompat iconCompat = cVar2.h;
+                        IconCompat iconCompat = bVar2.h;
                         if (iconCompat != null) {
                             int i12 = iconCompat.i();
                             if (i12 != 1) {
@@ -99,44 +99,44 @@ public final class e implements Runnable {
                                 } else {
                                     str = shortcutInfoCompatSaverImpl2.a.getResources().getResourceName(iconCompat.g());
                                     str2 = null;
-                                    cVar = new g0.c();
-                                    cVar.a = cVar2.a;
-                                    cVar.b = cVar2.b;
-                                    Intent[] intentArr = cVar2.c;
-                                    cVar.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
-                                    cVar.d = cVar2.d;
-                                    cVar.e = cVar2.e;
-                                    cVar.f = cVar2.f;
-                                    cVar.g = cVar2.g;
-                                    cVar.h = cVar2.h;
-                                    cVar.k = cVar2.k;
-                                    cVar.l = cVar2.l;
-                                    cVar.m = cVar2.m;
-                                    j0VarArr = cVar2.i;
+                                    bVar = new g0.b();
+                                    bVar.a = bVar2.a;
+                                    bVar.b = bVar2.b;
+                                    Intent[] intentArr = bVar2.c;
+                                    bVar.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
+                                    bVar.d = bVar2.d;
+                                    bVar.e = bVar2.e;
+                                    bVar.f = bVar2.f;
+                                    bVar.g = bVar2.g;
+                                    bVar.h = bVar2.h;
+                                    bVar.k = bVar2.k;
+                                    bVar.l = bVar2.l;
+                                    bVar.m = bVar2.m;
+                                    j0VarArr = bVar2.i;
                                     if (j0VarArr != null) {
-                                        cVar.i = (j0[]) Arrays.copyOf(j0VarArr, j0VarArr.length);
+                                        bVar.i = (j0[]) Arrays.copyOf(j0VarArr, j0VarArr.length);
                                     }
-                                    if (cVar2.j != null) {
-                                        cVar.j = new HashSet(cVar2.j);
+                                    if (bVar2.j != null) {
+                                        bVar.j = new HashSet(bVar2.j);
                                     }
-                                    persistableBundle = cVar2.n;
+                                    persistableBundle = bVar2.n;
                                     if (persistableBundle != null) {
-                                        cVar.n = persistableBundle;
+                                        bVar.n = persistableBundle;
                                     }
-                                    cVar.h = null;
-                                    if (TextUtils.isEmpty(cVar.e)) {
+                                    bVar.h = null;
+                                    if (TextUtils.isEmpty(bVar.e)) {
                                         throw new IllegalArgumentException("Shortcut must have a non-empty label");
                                     }
-                                    Intent[] intentArr2 = cVar.c;
+                                    Intent[] intentArr2 = bVar.c;
                                     if (intentArr2 != null && intentArr2.length != 0) {
-                                        f fVar = new f(cVar, str, str2);
-                                        Bitmap f10 = str2 != null ? cVar2.h.f() : null;
-                                        String str4 = cVar2.b;
+                                        f fVar = new f(bVar, str, str2);
+                                        Bitmap f10 = str2 != null ? bVar2.h.f() : null;
+                                        String str4 = bVar2.b;
                                         shortcutInfoCompatSaverImpl2.b.put(str4, fVar);
                                         if (f10 != null) {
                                             h hVar = new h(shortcutInfoCompatSaverImpl2, f10, str2, false, 11);
                                             m mVar = new m();
-                                            shortcutInfoCompatSaverImpl2.e.submit(new ix(mVar, hVar, false, 11));
+                                            shortcutInfoCompatSaverImpl2.e.submit(new l(11, mVar, hVar));
                                             y yVar2 = (y) shortcutInfoCompatSaverImpl2.c.put(str4, mVar);
                                             if (yVar2 != null) {
                                                 yVar2.cancel(false);
@@ -148,56 +148,56 @@ public final class e implements Runnable {
                             }
                             str2 = new File(shortcutInfoCompatSaverImpl2.g, UUID.randomUUID().toString()).getAbsolutePath();
                             str = null;
-                            cVar = new g0.c();
-                            cVar.a = cVar2.a;
-                            cVar.b = cVar2.b;
-                            Intent[] intentArr3 = cVar2.c;
-                            cVar.c = (Intent[]) Arrays.copyOf(intentArr3, intentArr3.length);
-                            cVar.d = cVar2.d;
-                            cVar.e = cVar2.e;
-                            cVar.f = cVar2.f;
-                            cVar.g = cVar2.g;
-                            cVar.h = cVar2.h;
-                            cVar.k = cVar2.k;
-                            cVar.l = cVar2.l;
-                            cVar.m = cVar2.m;
-                            j0VarArr = cVar2.i;
+                            bVar = new g0.b();
+                            bVar.a = bVar2.a;
+                            bVar.b = bVar2.b;
+                            Intent[] intentArr3 = bVar2.c;
+                            bVar.c = (Intent[]) Arrays.copyOf(intentArr3, intentArr3.length);
+                            bVar.d = bVar2.d;
+                            bVar.e = bVar2.e;
+                            bVar.f = bVar2.f;
+                            bVar.g = bVar2.g;
+                            bVar.h = bVar2.h;
+                            bVar.k = bVar2.k;
+                            bVar.l = bVar2.l;
+                            bVar.m = bVar2.m;
+                            j0VarArr = bVar2.i;
                             if (j0VarArr != null) {
                             }
-                            if (cVar2.j != null) {
+                            if (bVar2.j != null) {
                             }
-                            persistableBundle = cVar2.n;
+                            persistableBundle = bVar2.n;
                             if (persistableBundle != null) {
                             }
-                            cVar.h = null;
-                            if (TextUtils.isEmpty(cVar.e)) {
+                            bVar.h = null;
+                            if (TextUtils.isEmpty(bVar.e)) {
                             }
                         }
                         str = null;
                         str2 = null;
-                        cVar = new g0.c();
-                        cVar.a = cVar2.a;
-                        cVar.b = cVar2.b;
-                        Intent[] intentArr32 = cVar2.c;
-                        cVar.c = (Intent[]) Arrays.copyOf(intentArr32, intentArr32.length);
-                        cVar.d = cVar2.d;
-                        cVar.e = cVar2.e;
-                        cVar.f = cVar2.f;
-                        cVar.g = cVar2.g;
-                        cVar.h = cVar2.h;
-                        cVar.k = cVar2.k;
-                        cVar.l = cVar2.l;
-                        cVar.m = cVar2.m;
-                        j0VarArr = cVar2.i;
+                        bVar = new g0.b();
+                        bVar.a = bVar2.a;
+                        bVar.b = bVar2.b;
+                        Intent[] intentArr32 = bVar2.c;
+                        bVar.c = (Intent[]) Arrays.copyOf(intentArr32, intentArr32.length);
+                        bVar.d = bVar2.d;
+                        bVar.e = bVar2.e;
+                        bVar.f = bVar2.f;
+                        bVar.g = bVar2.g;
+                        bVar.h = bVar2.h;
+                        bVar.k = bVar2.k;
+                        bVar.l = bVar2.l;
+                        bVar.m = bVar2.m;
+                        j0VarArr = bVar2.i;
                         if (j0VarArr != null) {
                         }
-                        if (cVar2.j != null) {
+                        if (bVar2.j != null) {
                         }
-                        persistableBundle = cVar2.n;
+                        persistableBundle = bVar2.n;
                         if (persistableBundle != null) {
                         }
-                        cVar.h = null;
-                        if (TextUtils.isEmpty(cVar.e)) {
+                        bVar.h = null;
+                        if (TextUtils.isEmpty(bVar.e)) {
                         }
                     }
                     i10 = i11;

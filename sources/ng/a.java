@@ -1,22 +1,22 @@
 package ng;
 
 import android.graphics.Paint;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class a extends f {
-    public final h6 q;
+    public final e6 q;
     public final Paint r;
     public int s;
 
-    public a(mg.a aVar, h6 h6Var) {
+    public a(mg.a aVar, e6 e6Var) {
         super(aVar, false, null);
         Paint paint = new Paint();
         this.r = paint;
         this.s = 0;
-        this.q = h6Var;
+        this.q = e6Var;
         Paint paint2 = this.c;
         Paint.Style style = Paint.Style.STROKE;
         paint2.setStyle(style);
@@ -27,6 +27,6 @@ public final class a extends f {
     @Override // ng.f
     public final void a() {
         super.a();
-        this.s = i0.a.f(0.3f, m6.w0(m6.d6, this.q), this.m);
+        this.s = i0.a.f(0.3f, j6.w0(j6.d6, this.q), this.m);
     }
 }

@@ -1,45 +1,68 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.d20;
-import org.telegram.messenger.v10;
-import org.telegram.messenger.x10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.pa1;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.kc;
+import org.telegram.ui.xa1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b3 implements pa1 {
+public final /* synthetic */ class b3 implements org.telegram.ui.ActionBar.q1, r0.m, kc {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ d20 c;
-    public final /* synthetic */ v10 d;
-    public final /* synthetic */ f3 e;
-    public final /* synthetic */ x10 f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ boolean n;
-    public final /* synthetic */ bg.v0 r;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ b3(int i7, d20 d20Var, v10 v10Var, f3 f3Var, x10 x10Var, boolean z9, boolean z10, bg.v0 v0Var, int i10) {
-        this.a = i10;
-        this.b = i7;
-        this.c = d20Var;
-        this.d = v10Var;
-        this.e = f3Var;
-        this.f = x10Var;
-        this.h = z9;
-        this.n = z10;
-        this.r = v0Var;
+    public /* synthetic */ b3(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.pa1
-    public final void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
+    @Override // org.telegram.messenger.kc
+    public void I(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        ((b8) this.b).d0.f0();
+    }
+
+    @Override // r0.m
+    public r0.k1 M0(View view, r0.k1 k1Var) {
+        o3 o3Var = (o3) this.b;
+        o3Var.I = k1Var.a.f(647);
+        o3Var.h.requestLayout();
+        return r0.k1.b;
+    }
+
+    public void a(float f10, float f11, int i7) {
         switch (this.a) {
-            case 0:
-                g3.a(this.b, this.c, this.d, tL_inputCheckPasswordSRP, this.e, this.f, this.h, this.n, this.r);
+            case 2:
+                ((h6) this.b).J.setShadowLayer(f10 * 2.0f, f11, -0.0f, i0.a.o(i7, Math.round(Color.alpha(i7) * 0.5f)));
+                break;
+            case 3:
+                ((TextPaint) this.b).setShadowLayer(f10, 0.0f, f11, i7);
                 break;
             default:
-                g3.a(this.b, this.c, this.d, tL_inputCheckPasswordSRP, this.e, this.f, this.h, this.n, this.r);
+                ((org.telegram.ui.Components.g6) this.b).s(f10, f11, i7);
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                ((org.telegram.ui.ActionBar.e2) this.b).presentFragment(new xa1(6, null));
+                break;
+            default:
+                p8.e0((p8) this.b, t1Var, i7);
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.kc
+    public /* synthetic */ void A(ImageReceiver imageReceiver) {
+    }
+
+    @Override // org.telegram.messenger.kc
+    public /* synthetic */ void O(int i7, Drawable drawable) {
     }
 }

@@ -3,11 +3,11 @@ package m1;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d1 implements m0 {
     public final ie.d a = new ie.d();
-    public final g6.d0 b = new g6.d0(17);
+    public final gc.b b = new gc.b(17);
     public final d6.i c = new d6.i(new c1(2, null));
 
     public d1(String str) {
@@ -26,7 +26,7 @@ public final class d1 implements m0 {
         int i7;
         ie.d dVar;
         Throwable th2;
-        boolean z9;
+        boolean z10;
         if (cVar instanceof b1) {
             b1Var = (b1) cVar;
             int i10 = b1Var.e;
@@ -50,12 +50,12 @@ public final class d1 implements m0 {
                         }
                         dVar = dVar2;
                         obj = invoke;
-                        z9 = e10;
+                        z10 = e10;
                     } catch (Throwable th3) {
                         dVar = dVar2;
                         th2 = th3;
-                        z9 = e10;
-                        if (z9) {
+                        z10 = e10;
+                        if (z10) {
                             dVar.f(null);
                         }
                         throw th2;
@@ -64,18 +64,18 @@ public final class d1 implements m0 {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    z9 = b1Var.b;
+                    z10 = b1Var.b;
                     dVar = b1Var.a;
                     try {
                         af.b.c(obj);
                     } catch (Throwable th4) {
                         th2 = th4;
-                        if (z9) {
+                        if (z10) {
                         }
                         throw th2;
                     }
                 }
-                if (z9) {
+                if (z10) {
                     dVar.f(null);
                 }
                 return obj;
@@ -87,7 +87,7 @@ public final class d1 implements m0 {
         i7 = b1Var.e;
         if (i7 != 0) {
         }
-        if (z9) {
+        if (z10) {
         }
         return obj3;
     }

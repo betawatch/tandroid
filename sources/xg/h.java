@@ -5,11 +5,10 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.m5;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ik0;
-import wg.a1;
-import wg.z0;
+import org.telegram.ui.sc1;
+import wg.x0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class h extends rg.a {
     public TLRPC.User c;
@@ -22,15 +21,15 @@ public final class h extends rg.a {
     public int j;
     public boolean k;
     public int l;
-    public ik0 m;
-    public a1 n;
-    public z0 o;
-    public z0 p;
+    public sc1 m;
+    public sc1 n;
+    public x0 o;
+    public x0 p;
     public View q;
     public Drawable r;
 
-    public h(int i7, boolean z9) {
-        super(i7, z9);
+    public h(int i7, boolean z10) {
+        super(i7, z10);
         this.l = -1;
     }
 
@@ -40,12 +39,12 @@ public final class h extends rg.a {
         return hVar;
     }
 
-    public static h c(TLRPC.User user, boolean z9) {
+    public static h c(TLRPC.User user, boolean z10) {
         h hVar = new h(3, true);
         hVar.c = user;
         hVar.d = null;
         hVar.e = null;
-        hVar.k = z9;
+        hVar.k = z10;
         return hVar;
     }
 

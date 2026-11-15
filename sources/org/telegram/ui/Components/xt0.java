@@ -3,18 +3,18 @@ package org.telegram.ui.Components;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class xt0 extends LinearLayout {
     public boolean a() {
-        return this instanceof org.telegram.ui.rb0;
+        return this instanceof org.telegram.ui.ob0;
     }
 
     public boolean b() {
-        return this instanceof org.telegram.ui.rb0;
+        return this instanceof org.telegram.ui.ob0;
     }
 
-    public boolean c(boolean z9) {
+    public boolean c(boolean z10) {
         return true;
     }
 
@@ -49,6 +49,6 @@ public abstract class xt0 extends LinearLayout {
     public void updateColors() {
     }
 
-    public void m(Bundle bundle, boolean z9) {
+    public void m(Bundle bundle, boolean z10) {
     }
 }

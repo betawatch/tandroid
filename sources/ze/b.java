@@ -1,6 +1,6 @@
 package ze;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b {
     public static final b e;
@@ -22,18 +22,18 @@ public final class b {
         bVar.d = false;
     }
 
-    public static String a(String str, Class cls, boolean z9) {
+    public static String a(String str, Class cls, boolean z10) {
         if (cls == null) {
             return "ANONYMOUS";
         }
         if (cls.isArray()) {
             Class<?> componentType = cls.getComponentType();
             StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append(a(componentType.getName(), componentType, z9));
+            stringBuffer.append(a(componentType.getName(), componentType, z10));
             stringBuffer.append("[]");
             return stringBuffer.toString();
         }
-        if (!z9) {
+        if (!z10) {
             return str.replace('$', '.');
         }
         int lastIndexOf = str.lastIndexOf(46);

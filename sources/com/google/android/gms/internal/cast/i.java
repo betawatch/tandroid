@@ -8,7 +8,7 @@ import android.util.Log;
 import com.google.android.gms.cast.CastDevice;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i extends s4.s {
     public static final j6.b b = new j6.b("MediaRouterCallback", null);
@@ -77,7 +77,7 @@ public final class i extends s4.s {
         h hVar = this.a;
         Integer valueOf = Integer.valueOf(i7);
         String str2 = vVar.c;
-        boolean z9 = true;
+        boolean z10 = true;
         j6.b bVar = b;
         Log.i(bVar.a, bVar.d("onRouteSelected with reason = %d, routeId = %s", valueOf, str2));
         if (vVar.l != 1) {
@@ -98,7 +98,7 @@ public final class i extends s4.s {
                         Object obj = arrayList.get(i10);
                         i10++;
                         s4.v vVar2 = (s4.v) obj;
-                        boolean z10 = z9;
+                        boolean z11 = z10;
                         try {
                             str = vVar2.c;
                             if (str != null && !str.endsWith("-groupRoute") && (b11 = CastDevice.b(vVar2.s)) != null) {
@@ -109,15 +109,15 @@ public final class i extends s4.s {
                                 if (TextUtils.equals(str4, str3)) {
                                     Object[] objArr = new Object[2];
                                     objArr[0] = str2;
-                                    objArr[z10 ? 1 : 0] = str;
+                                    objArr[z11 ? 1 : 0] = str;
                                     bVar.b("routeId is changed from %s to %s", objArr);
                                     break;
                                 }
                             }
-                            z9 = z10 ? 1 : 0;
+                            z10 = z11 ? 1 : 0;
                         } catch (RemoteException e10) {
                             e = e10;
-                            r18 = z10;
+                            r18 = z11;
                             String simpleName = h.class.getSimpleName();
                             Object[] objArr2 = new Object[2];
                             objArr2[0] = "onRouteSelected";
@@ -129,7 +129,7 @@ public final class i extends s4.s {
                 }
             } catch (RemoteException e11) {
                 e = e11;
-                r18 = z9;
+                r18 = z10;
             }
         }
         str = str2;

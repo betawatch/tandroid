@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Map;
 import na.g;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements na.e, g {
     public final boolean a = true;
@@ -18,12 +18,12 @@ public final class e implements na.e, g {
     public final na.d e;
     public final boolean f;
 
-    public e(Writer writer, Map map, Map map2, na.d dVar, boolean z9) {
+    public e(Writer writer, Map map, Map map2, na.d dVar, boolean z10) {
         this.b = new JsonWriter(writer);
         this.c = map;
         this.d = map2;
         this.e = dVar;
-        this.f = z9;
+        this.f = z10;
     }
 
     @Override // na.e
@@ -44,13 +44,13 @@ public final class e implements na.e, g {
     }
 
     @Override // na.e
-    public final na.e c(na.c cVar, boolean z9) {
+    public final na.e c(na.c cVar, boolean z10) {
         String str = cVar.a;
         j();
         JsonWriter jsonWriter = this.b;
         jsonWriter.name(str);
         j();
-        jsonWriter.value(z9);
+        jsonWriter.value(z10);
         return this;
     }
 
@@ -84,9 +84,9 @@ public final class e implements na.e, g {
     }
 
     @Override // na.g
-    public final g g(boolean z9) {
+    public final g g(boolean z10) {
         j();
-        this.b.value(z9);
+        this.b.value(z10);
         return this;
     }
 
@@ -208,9 +208,9 @@ public final class e implements na.e, g {
     }
 
     public final e i(Object obj, String str) {
-        boolean z9 = this.f;
+        boolean z10 = this.f;
         JsonWriter jsonWriter = this.b;
-        if (z9) {
+        if (z10) {
             if (obj == null) {
                 return this;
             }

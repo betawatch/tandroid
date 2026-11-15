@@ -1,8 +1,8 @@
 package e2;
 
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class x1 {
     public static final x1 d = new x1(0, 0);
@@ -14,7 +14,7 @@ public final class x1 {
     public final float c;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         e = Integer.toString(0, 36);
         f = Integer.toString(1, 36);
         g = Integer.toString(3, 36);
@@ -38,7 +38,7 @@ public final class x1 {
     }
 
     public final int hashCode() {
-        return Float.floatToRawIntBits(this.c) + ((((qs.u3 + this.a) * 31) + this.b) * 31);
+        return Float.floatToRawIntBits(this.c) + ((((ns.u3 + this.a) * 31) + this.b) * 31);
     }
 
     public x1(float f10, int i7, int i10) {

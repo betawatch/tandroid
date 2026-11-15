@@ -3,21 +3,21 @@ package a8;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class h implements y {
     public transient b a;
-    public transient kb b;
+    public transient lb b;
 
     public final Map a() {
-        kb kbVar = this.b;
-        if (kbVar != null) {
-            return kbVar;
+        lb lbVar = this.b;
+        if (lbVar != null) {
+            return lbVar;
         }
         i iVar = (i) this;
-        kb kbVar2 = new kb(iVar, iVar.c, 0);
-        this.b = kbVar2;
-        return kbVar2;
+        lb lbVar2 = new lb(iVar, iVar.c, 0);
+        this.b = lbVar2;
+        return lbVar2;
     }
 
     public final Set b() {
@@ -42,10 +42,10 @@ public abstract class h implements y {
     }
 
     public final int hashCode() {
-        return ((kb) a()).b.hashCode();
+        return ((lb) a()).b.hashCode();
     }
 
     public final String toString() {
-        return ((kb) a()).b.toString();
+        return ((lb) a()).b.toString();
     }
 }

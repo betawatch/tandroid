@@ -1,26 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class o31 implements ValueAnimator.AnimatorUpdateListener {
-    public int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ t31 c;
+public final class o31 extends py {
+    public final /* synthetic */ x31 Y;
 
-    public o31(t31 t31Var, int i7) {
-        this.c = t31Var;
-        this.b = i7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o31(x31 x31Var, int i7, n31 n31Var) {
+        super(5, i7, n31Var);
+        this.Y = x31Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.b);
-        t31 t31Var = this.c;
-        t31Var.N = true;
-        t31Var.n.scrollBy(0, floatValue - this.a);
-        t31Var.N = false;
-        this.a = floatValue;
+    @Override // org.telegram.ui.Components.py
+    public final boolean D1() {
+        x31 x31Var = this.Y;
+        return x31Var.n.getAdapter() == x31Var.w;
+    }
+
+    @Override // v4.b0
+    public final boolean Y0() {
+        return org.telegram.messenger.hd.a0;
+    }
+
+    @Override // v4.s, v4.b0, v4.o0
+    public final int o0(int i7, v4.w0 w0Var, v4.b1 b1Var) {
+        int i10;
+        View m10;
+        x31 x31Var = this.Y;
+        if (x31Var.O) {
+            return super.o0(i7, w0Var, b1Var);
+        }
+        int i11 = 0;
+        if (x31Var.M != null) {
+            return 0;
+        }
+        if (x31Var.N) {
+            while (true) {
+                i10 = 1;
+                if (i11 >= r()) {
+                    break;
+                }
+                n31 n31Var = x31Var.n;
+                View q10 = q(i11);
+                n31Var.getClass();
+                int R = RecyclerView.R(q10);
+                if (R < 1) {
+                    i10 = R;
+                    break;
+                }
+                i11++;
+            }
+            if (i10 == 0 && (m10 = x31Var.r.m(i10)) != null && m10.getTop() - i7 > org.telegram.messenger.g0.L(58.0f)) {
+                i7 = m10.getTop() - org.telegram.messenger.g0.L(58.0f);
+            }
+        }
+        return super.o0(i7, w0Var, b1Var);
+    }
+
+    @Override // v4.s, v4.b0, v4.o0
+    public final boolean y0() {
+        return false;
     }
 }

@@ -1,48 +1,34 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.app.Activity;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class yk extends qq0 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ cn c;
+public final class yk extends org.telegram.ui.Components.h10 {
+    public final /* synthetic */ an n1;
 
-    public yk(cn cnVar, ArrayList arrayList, boolean[] zArr) {
-        this.c = cnVar;
-        this.a = arrayList;
-        this.b = zArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yk(an anVar, Activity activity, org.telegram.ui.ActionBar.e2 e2Var) {
+        super(activity, e2Var);
+        this.n1 = anVar;
     }
 
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    public final org.telegram.messenger.jc j(int i7) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (!this.b[size]) {
-                arrayList.remove(size);
-            }
+    @Override // org.telegram.ui.Components.h10
+    public final void I0() {
+        an anVar = this.n1;
+        anVar.h8();
+        UndoView undoView = anVar.N3;
+        if (undoView == null) {
+            return;
         }
-        this.c.Jb(i10, arrayList, z9, z10);
+        undoView.j(75, 0L, null);
+        anVar.getMessagesController().k4(anVar.k6, "CONVERT_GIGAGROUP");
     }
 
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    public final boolean x(int i7) {
-        return this.b[i7];
-    }
-
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    public final int k(int i7, org.telegram.messenger.j20 j20Var) {
-        return i7;
+    @Override // org.telegram.ui.Components.h10
+    public final void J0() {
+        an anVar = this.n1;
+        anVar.getMessagesController().S(anVar.getParentActivity(), anVar.e, anVar, new w0(this, 21));
     }
 }

@@ -8,9 +8,9 @@ import java.math.RoundingMode;
 public final class g extends i {
     public final boolean g;
 
-    public g(j$.time.temporal.o oVar, int i7, int i10, boolean z9, int i11) {
+    public g(j$.time.temporal.o oVar, int i7, int i10, boolean z10, int i11) {
         super(oVar, i7, i10, x.NOT_NEGATIVE, i11);
-        this.g = z9;
+        this.g = z10;
     }
 
     @Override // j$.time.format.i
@@ -47,19 +47,19 @@ public final class g extends i {
             bigDecimal = divide.signum() == 0 ? new BigDecimal(BigInteger.ZERO, 0) : divide.stripTrailingZeros();
         }
         int scale = bigDecimal.scale();
-        boolean z9 = this.g;
+        boolean z10 = this.g;
         int i7 = this.b;
         if (scale != 0) {
             String substring = bigDecimal.setScale(Math.min(Math.max(bigDecimal.scale(), i7), this.c), roundingMode).toPlainString().substring(2);
             vVar.getClass();
-            if (z9) {
+            if (z10) {
                 sb2.append('.');
             }
             sb2.append(substring);
             return true;
         }
         if (i7 > 0) {
-            if (z9) {
+            if (z10) {
                 vVar.getClass();
                 sb2.append('.');
             }

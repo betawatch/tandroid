@@ -1,166 +1,73 @@
 package tg;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import c8.ha;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.w7;
-import org.telegram.tgnet.TLObject;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.g20;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.s10;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n3;
-import org.telegram.ui.Components.ki0;
-import org.telegram.ui.Components.nt0;
-import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.w41;
-import org.telegram.ui.Components.wq;
-import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class d2 extends j {
-    public final TLRPC.Document q0;
-    public final Object r0;
-    public final int s0;
-    public boolean t0;
-    public final v5 u0;
-    public final nt0 v0;
-    public final w41 w0;
-    public final ImageReceiver x0;
+public final class d2 {
+    public String a;
+    public String b;
+    public String c;
+    public CharSequence d;
+    public TLRPC.TL_inputStickerSetItem e;
+    public TLRPC.TL_messageMediaDocument f;
+    public TLRPC.InputFile g;
+    public boolean h;
+    public long i;
+    public TLRPC.StickerSet j;
+    public TLRPC.Document k;
+    public String l;
+    public s10 m;
+    public z10 n;
+    public boolean o;
+    public ArrayList p;
+    public ArrayList q;
+    public gj r;
+    public g20 s;
+    public float t;
+    public float u;
 
-    public d2(Context context, PointF pointF, float f10, float f11, nt0 nt0Var, TLRPC.Document document, Object obj) {
-        super(context, pointF);
-        this.s0 = -1;
-        this.t0 = false;
-        this.x0 = new ImageReceiver(null);
-        setRotation(f10);
-        setScale(f11);
-        this.q0 = document;
-        this.v0 = nt0Var;
-        this.r0 = obj;
+    public final void a() {
+        ArrayList arrayList = this.q;
+        ArrayList arrayList2 = this.p;
+        int size = arrayList2.size();
         int i7 = 0;
-        while (true) {
-            if (i7 >= document.attributes.size()) {
-                break;
-            }
-            TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i7);
-            if (documentAttribute instanceof TLRPC.TL_documentAttributeSticker) {
-                TLRPC.TL_maskCoords tL_maskCoords = documentAttribute.mask_coords;
-                if (tL_maskCoords != null) {
-                    this.s0 = tL_maskCoords.n;
-                }
-            } else {
-                i7++;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList2.get(i10);
+            i10++;
+            try {
+                ((File) obj).delete();
+            } catch (Exception e10) {
+                a8.g(e10, true);
             }
         }
-        w41 w41Var = new w41(this, context);
-        this.w0 = w41Var;
-        addView(w41Var, ha.c(-1.0f, -1));
-        this.u0 = new v5(w41Var, 0L, 500L, wq.h);
-        ImageReceiver imageReceiver = this.x0;
-        imageReceiver.R0 = true;
-        imageReceiver.J0 = true;
-        imageReceiver.H0(w41Var);
-        this.x0.t0(hc.b(document), null, hc.c(w7.w(document.thumbs, 90, false, null, false), document), null, "webp", obj, 1);
-        this.x0.g1 = new n3(this, 26);
-        k();
-    }
-
-    @Override // tg.j
-    public final i a() {
-        p1 p1Var = new p1(this, getContext(), 2);
-        p1Var.r = new RectF();
-        return p1Var;
-    }
-
-    public int getAnchor() {
-        return this.s0;
-    }
-
-    public nt0 getBaseSize() {
-        return this.v0;
-    }
-
-    public long getDuration() {
-        ImageReceiver imageReceiver = this.x0;
-        zg0 B = imageReceiver.B();
-        if (B != null) {
-            return B.r();
+        arrayList2.clear();
+        int size2 = arrayList.size();
+        while (i7 < size2) {
+            Object obj2 = arrayList.get(i7);
+            i7++;
+            try {
+                ((File) obj2).delete();
+            } catch (Exception e11) {
+                a8.g(e11, true);
+            }
         }
-        if (imageReceiver.m() != null) {
-            return r0.d[4];
+        arrayList.clear();
+    }
+
+    public final float b() {
+        float f10 = this.m == null ? 0.9f : 1.0f;
+        if (this.s == null) {
+            return f10 * this.u;
         }
-        return 0L;
-    }
-
-    public Object getParentObject() {
-        return this.r0;
-    }
-
-    @Override // tg.j
-    public ki0 getSelectionBounds() {
-        ViewGroup viewGroup = (ViewGroup) getParent();
-        if (viewGroup == null) {
-            return new ki0();
-        }
-        float scaleX = viewGroup.getScaleX();
-        float scale = (getScale() + 0.5f) * getMeasuredWidth();
-        float f10 = scale / 2.0f;
-        float f11 = scale * scaleX;
-        return new ki0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
-    }
-
-    public TLRPC.Document getSticker() {
-        return this.q0;
-    }
-
-    @Override // tg.j
-    public final void k() {
-        nt0 nt0Var = this.v0;
-        float f10 = nt0Var.a / 2.0f;
-        float f11 = nt0Var.b / 2.0f;
-        setX(getPositionX() - f10);
-        setY(getPositionY() - f11);
-        m();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.x0.P();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.x0.R();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        nt0 nt0Var = this.v0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) nt0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) nt0Var.b, TLObject.FLAG_30));
-    }
-
-    public final void r(boolean z9) {
-        boolean z10 = !this.t0;
-        this.t0 = z10;
-        if (!z9) {
-            this.u0.f(z10, true);
-        }
-        this.w0.invalidate();
-    }
-
-    public void q(zg0 zg0Var) {
-    }
-
-    public d2(Context context, d2 d2Var, PointF pointF) {
-        this(context, pointF, d2Var.getRotation(), d2Var.getScale(), d2Var.v0, d2Var.q0, d2Var.r0);
-        if (d2Var.t0) {
-            r(false);
-        }
+        return com.google.android.gms.internal.vision.e2.B(this.u, 0.5f, this.t * 0.5f, f10);
     }
 }

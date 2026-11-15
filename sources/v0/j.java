@@ -1,153 +1,76 @@
 package v0;
 
-import a8.r7;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.util.Base64;
+import android.credentials.CreateCredentialException;
+import android.credentials.CreateCredentialResponse;
+import android.credentials.Credential;
+import android.credentials.GetCredentialException;
+import android.credentials.GetCredentialResponse;
+import android.os.Bundle;
+import android.os.OutcomeReceiver;
 import android.util.Log;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.firebase.concurrent.ExecutorsRegistrar;
-import com.google.firebase.installations.FirebaseInstallationsRegistrar;
-import e2.m1;
-import h9.i0;
-import java.util.ArrayList;
-import java.util.concurrent.ScheduledExecutorService;
-import org.telegram.messenger.t0;
-import org.telegram.ui.ActionBar.r1;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.db0;
-import x2.d0;
-import x2.y0;
+import c8.ge;
+import c8.vc;
+import c8.wc;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListener, j2.g, r1, db0, g9.k, h2.j, t3.g {
-    public final /* synthetic */ int a;
+public final class j implements OutcomeReceiver {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ g b;
 
-    public /* synthetic */ j(int i7) {
-        this.a = i7;
+    public j(g gVar, k kVar) {
+        this.b = gVar;
     }
 
-    @Override // h2.j
-    public void accept(Object obj) {
-        ((y0) obj).b.release();
-    }
-
-    @Override // v5.e
-    public Object apply(Object obj) {
+    public final void onError(Throwable th2) {
         switch (this.a) {
-            case 5:
-                Cursor rawQuery = ((SQLiteDatabase) obj).rawQuery("SELECT distinct t._id, t.backend_name, t.priority, t.extras FROM transport_contexts AS t, events AS e WHERE e.context_id = t._id", new String[0]);
-                try {
-                    ArrayList arrayList = new ArrayList();
-                    while (rawQuery.moveToNext()) {
-                        h6.m a10 = o5.i.a();
-                        a10.F(rawQuery.getString(1));
-                        a10.d = y5.a.b(rawQuery.getInt(2));
-                        String string = rawQuery.getString(3);
-                        a10.c = string == null ? null : Base64.decode(string, 0);
-                        arrayList.add(a10.h());
-                    }
-                    return arrayList;
-                } finally {
-                    rawQuery.close();
-                }
-            case 22:
-                return ((f3.o) obj).a().getClass().getSimpleName();
-            case 23:
-                return i0.q(h9.o.y(((d0) obj).o().b, new j(25)));
-            case 25:
-                return Integer.valueOf(((m1) obj).c);
-            case 28:
-                return Long.valueOf(((c4.a) obj).b);
-            default:
-                return Long.valueOf(((c4.a) obj).c);
-        }
-    }
-
-    @Override // t3.g
-    public boolean b(int i7, int i10, int i11, int i12, int i13) {
-        if (i10 == 67 && i11 == 79 && i12 == 77 && (i13 == 77 || i7 == 2)) {
-            return true;
-        }
-        if (i10 == 77 && i11 == 76 && i12 == 76) {
-            return i13 == 84 || i7 == 2;
-        }
-        return false;
-    }
-
-    @Override // ua.a
-    public void c(ua.b bVar) {
-        switch (this.a) {
-            case 11:
-                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                    Log.d("FirebaseCrashlytics", "AnalyticsConnector now available.", null);
-                }
-                bVar.get().getClass();
-                throw new ClassCastException();
-            default:
-                bVar.get().getClass();
-                throw new ClassCastException();
-        }
-    }
-
-    @Override // j2.g
-    public j2.h createDataSource() {
-        return new j2.b(t0.b);
-    }
-
-    @Override // u9.d
-    public Object e(r7 r7Var) {
-        va.d lambda$getComponents$0;
-        switch (this.a) {
-            case 6:
-                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
-            case 7:
-                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
-            case 8:
-                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
-            case 9:
-                u9.n nVar = ExecutorsRegistrar.a;
-                return v9.j.a;
-            default:
-                lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(r7Var);
-                return lambda$getComponents$0;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(u1 u1Var, int i7) {
-        switch (this.a) {
-            case 15:
-                break;
-            case 18:
-                u1Var.dismiss();
+            case 0:
+                CreateCredentialException error = (CreateCredentialException) th2;
+                kotlin.jvm.internal.j.e(error, "error");
+                Log.i("CredManProvService", "CreateCredentialResponse error returned from framework");
+                u7.i iVar = (u7.i) this.b;
+                String type = error.getType();
+                kotlin.jvm.internal.j.d(type, "getType(...)");
+                iVar.a(ge.a(error.getMessage(), type));
                 break;
             default:
-                u1Var.dismiss();
+                GetCredentialException error2 = (GetCredentialException) th2;
+                kotlin.jvm.internal.j.e(error2, "error");
+                Log.i("CredManProvService", "GetCredentialResponse error returned from framework");
+                String type2 = error2.getType();
+                kotlin.jvm.internal.j.d(type2, "getType(...)");
+                this.b.a(ge.b(error2.getMessage(), type2));
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.db0
-    public String h(int i7) {
+    public final void onResult(Object obj) {
         switch (this.a) {
-            case 16:
-                return String.valueOf(i7);
+            case 0:
+                CreateCredentialResponse response = (CreateCredentialResponse) obj;
+                kotlin.jvm.internal.j.e(response, "response");
+                Log.i("CredManProvService", "Create Result returned from framework: ");
+                u7.i iVar = (u7.i) this.b;
+                Bundle data = response.getData();
+                kotlin.jvm.internal.j.d(data, "getData(...)");
+                iVar.onResult(vc.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
+                break;
             default:
-                return String.format("%02d", Integer.valueOf(i7 * 5));
+                GetCredentialResponse response2 = (GetCredentialResponse) obj;
+                kotlin.jvm.internal.j.e(response2, "response");
+                Log.i("CredManProvService", "GetCredentialResponse returned from framework");
+                Credential credential = response2.getCredential();
+                kotlin.jvm.internal.j.d(credential, "getCredential(...)");
+                String type = credential.getType();
+                kotlin.jvm.internal.j.d(type, "getType(...)");
+                Bundle data2 = credential.getData();
+                kotlin.jvm.internal.j.d(data2, "getData(...)");
+                this.b.onResult(new n(wc.a(type, data2)));
+                break;
         }
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        Log.e("FirebaseCrashlytics", "Error fetching settings.", exc);
-    }
-
-    public /* synthetic */ j(androidx.emoji2.text.f fVar) {
-        this.a = 11;
-    }
-
-    private final void d(u1 u1Var, int i7) {
+    public j(u7.i iVar, e eVar, k kVar) {
+        this.b = iVar;
     }
 }

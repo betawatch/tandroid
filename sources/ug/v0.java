@@ -1,118 +1,90 @@
 package ug;
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import c8.ha;
-import org.telegram.messenger.k5;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.w70;
-import org.telegram.ui.ys0;
+import android.view.ViewConfiguration;
+import java.lang.reflect.Field;
+import org.telegram.messenger.a8;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class v0 extends LinearLayout {
-    public int a;
-    public final TextView b;
-    public final w70 c;
-    public LinearLayout d;
-    public final l0 e;
-    public final ViewGroup f;
-    public boolean h;
-    public final /* synthetic */ w0 n;
+public final class v0 extends c5.l {
+    public final /* synthetic */ x0 A0;
+    public long x0;
+    public boolean y0;
+    public final u0 z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r12v0, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout, ug.v0] */
-    /* JADX WARN: Type inference failed for: r15v10, types: [ug.j1] */
-    /* JADX WARN: Type inference failed for: r15v9, types: [ug.n0] */
-    /* JADX WARN: Type inference failed for: r3v6, types: [ug.t1] */
-    public v0(w0 w0Var, Context context, int i7) {
+    public v0(x0 x0Var, Context context) {
         super(context);
-        a aVar;
-        this.n = w0Var;
-        setOrientation(1);
-        ys0 ys0Var = (ys0) w0Var.n1.get(i7);
-        int i10 = ys0Var.a;
-        if (i10 == 0) {
-            a bVar = new b(context, w0Var.I0);
-            bVar.b.setOnScrollListener(new r0(w0Var, 1));
-            aVar = bVar;
-        } else if (i10 == 14 || i10 == 28) {
-            a iVar = new i(i10 == 28 ? 1 : 0, context, w0Var.I0);
-            iVar.b.setOnScrollListener(new r0(w0Var, 0));
-            aVar = iVar;
-        } else {
-            aVar = i10 == 5 ? new s0(context, w0Var.a) : i10 == 10 ? new n0(context, w0Var.I0) : new t1(context, w0Var.w1, w0Var.a, ys0Var.a, w0Var.I0);
+        this.A0 = x0Var;
+        try {
+            Field declaredField = c5.l.class.getDeclaredField("r");
+            declaredField.setAccessible(true);
+            u0 u0Var = new u0(this, getContext());
+            this.z0 = u0Var;
+            declaredField.set(this, u0Var);
+        } catch (Exception e10) {
+            a8.g(e10, true);
         }
-        this.f = aVar;
-        addView(aVar);
-        this.e = aVar;
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setGravity(1);
-        int i11 = m6.j5;
-        k5.n(textView, i11, w0Var.I0, 1, 20.0f);
-        addView(textView, ha.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
-        w70 w70Var = new w70(context, null);
-        this.c = w70Var;
-        w70Var.setGravity(1);
-        w70Var.setTextSize(1, 15.0f);
-        t6.U(w70Var, i11, w0Var.I0);
-        if (!w0Var.y1) {
-            w70Var.setLines(2);
-        }
-        addView(w70Var, ha.t(-1, -2, 1, 21, 10, 21, 16));
-        setImportantForAccessibility(2);
-        setClipChildren(false);
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view != this.f) {
-            return super.drawChild(canvas, view, j3);
+    public final boolean A(MotionEvent motionEvent) {
+        u0 u0Var;
+        if (motionEvent.getAction() == 0) {
+            this.x0 = System.currentTimeMillis();
+            return true;
         }
-        boolean z9 = view instanceof a;
-        if (z9) {
-            setTranslationY(0.0f);
-        } else {
-            setTranslationY(this.n.F1);
+        if (motionEvent.getAction() == 1) {
+            if (System.currentTimeMillis() - this.x0 <= ViewConfiguration.getTapTimeout() && (u0Var = this.z0) != null && u0Var.isFinished()) {
+                this.y0 = true;
+                float x10 = motionEvent.getX();
+                float width = getWidth() * 0.45f;
+                x0 x0Var = this.A0;
+                if (x10 <= width) {
+                    int i7 = x0Var.B1 - 1;
+                    if (i7 >= 0) {
+                        x(i7, true);
+                    }
+                } else if (x0Var.B1 + 1 < x0Var.o1.size()) {
+                    x(x0Var.B1 + 1, true);
+                }
+                this.y0 = false;
+                return false;
+            }
+        } else if (motionEvent.getAction() == 3) {
+            this.x0 = -1L;
         }
-        if (z9) {
-            return super.drawChild(canvas, view, j3);
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
+        return false;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
+    @Override // c5.l, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        try {
+            A(motionEvent);
+            return super.onInterceptTouchEvent(motionEvent);
+        } catch (Exception unused) {
+            return false;
+        }
+    }
+
+    @Override // c5.l, android.view.View
     public final void onMeasure(int i7, int i10) {
-        TextView textView = this.b;
-        textView.setVisibility(0);
-        ViewGroup viewGroup = this.f;
-        boolean z9 = viewGroup instanceof a;
-        w0 w0Var = this.n;
-        if (z9) {
-            ((a) viewGroup).setTopOffset(w0Var.F1);
+        int L = org.telegram.messenger.g0.L(100.0f);
+        if (getChildCount() > 0) {
+            getChildAt(0).measure(i7, View.MeasureSpec.makeMeasureSpec(0, 0));
+            L = getChildAt(0).getMeasuredHeight();
         }
-        viewGroup.getLayoutParams().height = w0Var.t1;
-        w70 w70Var = this.c;
-        w70Var.setVisibility(0);
-        ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = 0;
-        super.onMeasure(i7, i10);
-        if (this.h) {
-            viewGroup.getLayoutParams().height = getMeasuredHeight() - org.telegram.messenger.g0.L(16.0f);
-            ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(16.0f);
-            textView.setVisibility(8);
-            w70Var.setVisibility(8);
-            super.onMeasure(i7, i10);
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(L + this.A0.G1, TLObject.FLAG_30));
+    }
+
+    @Override // c5.l, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.A0.w1) {
+            return false;
         }
+        return super.onTouchEvent(motionEvent) || A(motionEvent);
     }
 }

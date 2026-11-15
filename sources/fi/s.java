@@ -1,23 +1,22 @@
 package fi;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.content.Context;
+import di.gc;
+import org.telegram.messenger.z10;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class s {
-    public final t a;
-    public final int b;
-    public final int c;
+public final class s extends gc {
+    public final /* synthetic */ z10[] n0;
 
-    public s(t tVar, int i7, int i10) {
-        this.a = tVar;
-        this.b = i7;
-        this.c = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s(Context context, b bVar, z10[] z10VarArr) {
+        super(context, bVar);
+        this.n0 = z10VarArr;
     }
 
-    public final float a(float f10) {
-        return (f10 / this.a.d[this.c]) * this.b;
-    }
-
-    public final float b(float f10) {
-        return (f10 / this.a.d[this.c]) * (this.b + 1);
+    @Override // di.gc
+    public final void e(int i7) {
+        this.n0[0].a(Integer.valueOf(i7));
     }
 }

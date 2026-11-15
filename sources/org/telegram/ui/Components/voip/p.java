@@ -11,11 +11,11 @@ import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
-import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ns;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class p extends View {
     public org.telegram.ui.Cells.y a;
@@ -40,7 +40,7 @@ public final class p extends View {
         this.e = new RectF();
         this.n = -761748;
         this.r = org.telegram.messenger.g0.L(26.0f);
-        this.s = qs.e4;
+        this.s = ns.e4;
         this.w = 0;
         Drawable mutate = getContext().getDrawable(R.drawable.calls_decline).mutate();
         this.f = mutate;
@@ -57,7 +57,7 @@ public final class p extends View {
         paint2.setColor(-16777216);
         setLayerType(2, null);
         setClickable(true);
-        this.h = id.M0(2131752041, null);
+        this.h = hd.M0(2131752041, null);
     }
 
     @Override // android.view.View
@@ -106,14 +106,14 @@ public final class p extends View {
         int i10 = this.w;
         Paint paint2 = this.c;
         paint2.setAlpha(i10);
-        int i11 = (this.w / qs.e4) * 38;
+        int i11 = (this.w / ns.e4) * 38;
         Paint paint3 = this.d;
         paint3.setAlpha(i11);
         String str = this.h;
         canvas.drawText(str, width, org.telegram.messenger.g0.L(6.0f) + height, paint2);
         canvas.drawText(str, width, height + org.telegram.messenger.g0.L(6.0f), paint3);
         if (this.a == null) {
-            org.telegram.ui.Cells.y a02 = m6.a0(m6.x0(null, m6.i6, false), 8, 8);
+            org.telegram.ui.Cells.y a02 = j6.a0(j6.x0(null, j6.i6, false), 8, 8);
             this.a = a02;
             a02.setCallback(this);
         }

@@ -14,12 +14,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import kotlin.jvm.internal.j;
-import m.q;
-import rf.b;
+import m.p;
+import r.b;
 import w4.c;
 import w4.e;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class Recreator implements r {
     public final e a;
@@ -62,7 +62,7 @@ public final class Recreator implements r {
                             throw new IllegalStateException("Internal error: OnRecreation should be registered only on components that implement ViewModelStoreOwner");
                         }
                         t0 f10 = ((u0) eVar).f();
-                        q g10 = eVar.g();
+                        p g10 = eVar.g();
                         f10.getClass();
                         LinkedHashMap linkedHashMap = f10.a;
                         Iterator it = new HashSet(linkedHashMap.keySet()).iterator();
@@ -77,7 +77,7 @@ public final class Recreator implements r {
                             g10.g();
                         }
                     } catch (Exception e10) {
-                        throw new RuntimeException(b.i("Failed to instantiate ", str2), e10);
+                        throw new RuntimeException(b.k("Failed to instantiate ", str2), e10);
                     }
                 } catch (NoSuchMethodException e11) {
                     throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e11);

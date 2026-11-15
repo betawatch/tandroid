@@ -2,7 +2,7 @@ package zd;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a0 {
     public static final a0 a;
@@ -17,7 +17,7 @@ public final class a0 {
         b = a0Var3;
         a0[] a0VarArr = {a0Var, a0Var2, a0Var3, new a0("UNDISPATCHED", 3)};
         c = a0VarArr;
-        c8.j1.a(a0VarArr);
+        c8.l1.a(a0VarArr);
     }
 
     public static a0 valueOf(String str) {

@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class ContactsWidgetProvider extends AppWidgetProvider {
     public static void a(Context context, AppWidgetManager appWidgetManager, int i7) {
@@ -29,18 +29,18 @@ public class ContactsWidgetProvider extends AppWidgetProvider {
         intent.putExtra("appWidgetId", i7);
         intent.setData(Uri.parse(intent.toUri(1)));
         SharedPreferences sharedPreferences = context.getSharedPreferences("shortcut_widget", 0);
-        boolean z9 = sharedPreferences.getBoolean("deleted" + i7, false);
+        boolean z10 = sharedPreferences.getBoolean("deleted" + i7, false);
         int i12 = R.layout.contacts_widget_layout_1;
-        if (!z9) {
+        if (!z10) {
             int i13 = sharedPreferences.getInt("account" + i7, -1);
             if (i13 == -1) {
                 SharedPreferences.Editor edit = sharedPreferences.edit();
-                edit.putInt(jg.g.j(i7, "account"), p10.s0);
+                edit.putInt(i5.c.i(i7, "account"), m10.t0);
                 edit.putInt(TeXSymbolParser.TYPE_ATTR + i7, 0).commit();
             }
             ArrayList arrayList = new ArrayList();
             if (i13 >= 0) {
-                yr.a0(c.a(i13).a).q0(i7, 1, arrayList, null, null, false);
+                vr.a0(c.a(i13).a).q0(i7, 1, arrayList, null, null, false);
             }
             int ceil = (int) Math.ceil(arrayList.size() / 2.0f);
             if (i11 != 1 && ceil > 1) {
@@ -74,8 +74,8 @@ public class ContactsWidgetProvider extends AppWidgetProvider {
         for (int i7 = 0; i7 < iArr.length; i7++) {
             int i10 = sharedPreferences.getInt("account" + iArr[i7], -1);
             if (i10 >= 0) {
-                yr a02 = yr.a0(c.a(i10).a);
-                a02.a.c(new tp(a02, iArr[i7], 2));
+                vr a02 = vr.a0(c.a(i10).a);
+                a02.a.c(new qp(a02, iArr[i7], 2));
             }
             edit.remove("account" + iArr[i7]);
             edit.remove(TeXSymbolParser.TYPE_ATTR + iArr[i7]);

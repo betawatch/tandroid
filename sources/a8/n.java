@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class n extends AbstractCollection {
     public final /* synthetic */ int a;
@@ -26,19 +26,19 @@ public class n extends AbstractCollection {
                 ((o) this.b).clear();
                 break;
             case 1:
-                ((kb) this.b).clear();
+                ((lb) this.b).clear();
                 break;
             case 2:
                 ((c8.d) this.b).clear();
                 break;
             case 3:
-                ((kb) this.b).clear();
+                ((lb) this.b).clear();
                 break;
             case 4:
                 ((h9.l) this.b).clear();
                 break;
             case 5:
-                ((h9.l1) this.b).clear();
+                ((h9.k1) this.b).clear();
                 break;
             case 6:
                 ((h9.s) this.b).clear();
@@ -53,13 +53,13 @@ public class n extends AbstractCollection {
     public boolean contains(Object obj) {
         switch (this.a) {
             case 1:
-                return ((kb) this.b).containsValue(obj);
+                return ((lb) this.b).containsValue(obj);
             case 2:
             case 6:
             default:
                 return super.contains(obj);
             case 3:
-                return ((kb) this.b).containsValue(obj);
+                return ((lb) this.b).containsValue(obj);
             case 4:
                 if (!(obj instanceof Map.Entry)) {
                     return false;
@@ -71,7 +71,7 @@ public class n extends AbstractCollection {
                 Collection collection = (Collection) lVar.b().get(key);
                 return collection != null && collection.contains(value);
             case 5:
-                return ((h9.l1) this.b).c(obj);
+                return ((h9.k1) this.b).c(obj);
             case 7:
                 return ((AbstractMap) this.b).containsValue(obj);
         }
@@ -81,9 +81,9 @@ public class n extends AbstractCollection {
     public boolean isEmpty() {
         switch (this.a) {
             case 1:
-                return ((kb) this.b).isEmpty();
+                return ((lb) this.b).isEmpty();
             case 3:
-                return ((kb) this.b).isEmpty();
+                return ((lb) this.b).isEmpty();
             case 7:
                 return ((AbstractMap) this.b).isEmpty();
             default:
@@ -99,23 +99,23 @@ public class n extends AbstractCollection {
                 Map b10 = oVar.b();
                 return b10 != null ? b10.values().iterator() : new j(oVar, 2);
             case 1:
-                return new x(((kb) this.b).entrySet().iterator(), 0);
+                return new x(((lb) this.b).entrySet().iterator(), 0);
             case 2:
                 c8.d dVar = (c8.d) this.b;
                 Map b11 = dVar.b();
                 return b11 != null ? b11.values().iterator() : new c8.a(dVar, 2);
             case 3:
-                return new x(((kb) this.b).entrySet().iterator(), 1);
+                return new x(((lb) this.b).entrySet().iterator(), 1);
             case 4:
                 return ((h9.l) this.b).g();
             case 5:
-                return new h9.b((h9.l1) this.b, 0);
+                return new h9.b((h9.k1) this.b, 0);
             case 6:
                 h9.s sVar = (h9.s) this.b;
                 Map d = sVar.d();
                 return d != null ? d.values().iterator() : new h9.p(sVar, 2);
             default:
-                return new h9.g1(((AbstractMap) this.b).entrySet().iterator());
+                return new h9.f1(((AbstractMap) this.b).entrySet().iterator());
         }
     }
 
@@ -123,13 +123,13 @@ public class n extends AbstractCollection {
     public boolean remove(Object obj) {
         switch (this.a) {
             case 1:
-                kb kbVar = (kb) this.b;
+                lb lbVar = (lb) this.b;
                 try {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused) {
-                    for (Map.Entry entry : kbVar.entrySet()) {
+                    for (Map.Entry entry : lbVar.entrySet()) {
                         if (w0.a(obj, entry.getValue())) {
-                            kbVar.remove(entry.getKey());
+                            lbVar.remove(entry.getKey());
                             return true;
                         }
                     }
@@ -141,13 +141,13 @@ public class n extends AbstractCollection {
             default:
                 return super.remove(obj);
             case 3:
-                kb kbVar2 = (kb) this.b;
+                lb lbVar2 = (lb) this.b;
                 try {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused2) {
-                    for (Map.Entry entry2 : kbVar2.entrySet()) {
-                        if (e8.a(obj, entry2.getValue())) {
-                            kbVar2.remove(entry2.getKey());
+                    for (Map.Entry entry2 : lbVar2.entrySet()) {
+                        if (f8.a(obj, entry2.getValue())) {
+                            lbVar2.remove(entry2.getKey());
                             return true;
                         }
                     }
@@ -165,7 +165,7 @@ public class n extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused3) {
                     for (Map.Entry entry4 : abstractMap.entrySet()) {
-                        if (ha.a(obj, entry4.getValue())) {
+                        if (ia.a(obj, entry4.getValue())) {
                             abstractMap.remove(entry4.getKey());
                             return true;
                         }
@@ -179,7 +179,7 @@ public class n extends AbstractCollection {
     public boolean removeAll(Collection collection) {
         switch (this.a) {
             case 1:
-                kb kbVar = (kb) this.b;
+                lb lbVar = (lb) this.b;
                 try {
                     if (collection != null) {
                         return super.removeAll(collection);
@@ -187,15 +187,15 @@ public class n extends AbstractCollection {
                     throw null;
                 } catch (UnsupportedOperationException unused) {
                     HashSet hashSet = new HashSet();
-                    for (Map.Entry entry : kbVar.entrySet()) {
+                    for (Map.Entry entry : lbVar.entrySet()) {
                         if (collection.contains(entry.getValue())) {
                             hashSet.add(entry.getKey());
                         }
                     }
-                    return ((i) kbVar.e).b().removeAll(hashSet);
+                    return ((i) lbVar.e).b().removeAll(hashSet);
                 }
             case 3:
-                kb kbVar2 = (kb) this.b;
+                lb lbVar2 = (lb) this.b;
                 try {
                     if (collection != null) {
                         return super.removeAll(collection);
@@ -203,12 +203,12 @@ public class n extends AbstractCollection {
                     throw null;
                 } catch (UnsupportedOperationException unused2) {
                     HashSet hashSet2 = new HashSet();
-                    for (Map.Entry entry2 : kbVar2.entrySet()) {
+                    for (Map.Entry entry2 : lbVar2.entrySet()) {
                         if (collection.contains(entry2.getValue())) {
                             hashSet2.add(entry2.getKey());
                         }
                     }
-                    return ((jg) kbVar2.e).b().removeAll(hashSet2);
+                    return ((jg) lbVar2.e).b().removeAll(hashSet2);
                 }
             case 7:
                 AbstractMap abstractMap = (AbstractMap) this.b;
@@ -233,7 +233,7 @@ public class n extends AbstractCollection {
     public boolean retainAll(Collection collection) {
         switch (this.a) {
             case 1:
-                kb kbVar = (kb) this.b;
+                lb lbVar = (lb) this.b;
                 try {
                     if (collection != null) {
                         return super.retainAll(collection);
@@ -241,15 +241,15 @@ public class n extends AbstractCollection {
                     throw null;
                 } catch (UnsupportedOperationException unused) {
                     HashSet hashSet = new HashSet();
-                    for (Map.Entry entry : kbVar.entrySet()) {
+                    for (Map.Entry entry : lbVar.entrySet()) {
                         if (collection.contains(entry.getValue())) {
                             hashSet.add(entry.getKey());
                         }
                     }
-                    return ((i) kbVar.e).b().retainAll(hashSet);
+                    return ((i) lbVar.e).b().retainAll(hashSet);
                 }
             case 3:
-                kb kbVar2 = (kb) this.b;
+                lb lbVar2 = (lb) this.b;
                 try {
                     if (collection != null) {
                         return super.retainAll(collection);
@@ -257,12 +257,12 @@ public class n extends AbstractCollection {
                     throw null;
                 } catch (UnsupportedOperationException unused2) {
                     HashSet hashSet2 = new HashSet();
-                    for (Map.Entry entry2 : kbVar2.entrySet()) {
+                    for (Map.Entry entry2 : lbVar2.entrySet()) {
                         if (collection.contains(entry2.getValue())) {
                             hashSet2.add(entry2.getKey());
                         }
                     }
-                    return ((jg) kbVar2.e).b().retainAll(hashSet2);
+                    return ((jg) lbVar2.e).b().retainAll(hashSet2);
                 }
             case 7:
                 AbstractMap abstractMap = (AbstractMap) this.b;
@@ -289,15 +289,15 @@ public class n extends AbstractCollection {
             case 0:
                 return ((o) this.b).size();
             case 1:
-                return ((kb) this.b).b.size();
+                return ((lb) this.b).b.size();
             case 2:
                 return ((c8.d) this.b).size();
             case 3:
-                return ((kb) this.b).b.size();
+                return ((lb) this.b).b.size();
             case 4:
                 return ((h9.l) this.b).size();
             case 5:
-                return ((h9.l1) this.b).f;
+                return ((h9.k1) this.b).f;
             case 6:
                 return ((h9.s) this.b).size();
             default:

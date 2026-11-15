@@ -2,23 +2,23 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.y61;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.s61;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class h0 extends mm0 {
-    public final /* synthetic */ int m0;
+public final class h0 extends qm0 {
+    public final /* synthetic */ int n0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h0(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z9) {
-        super(context, h6Var, z9);
-        this.m0 = i7;
+    public /* synthetic */ h0(int i7, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(context, e6Var, z10);
+        this.n0 = i7;
     }
 
-    @Override // org.telegram.ui.Components.mm0, android.view.View
+    @Override // org.telegram.ui.Components.qm0, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.m0) {
+        switch (this.n0) {
             case 0:
                 if (motionEvent.getAction() == 0) {
                     getParent().requestDisallowInterceptTouchEvent(true);
@@ -46,12 +46,12 @@ public final class h0 extends mm0 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ h0(Context context) {
         super(context);
-        this.m0 = 1;
+        this.n0 = 1;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(Context context, y61 y61Var) {
-        super(context, y61Var, false);
-        this.m0 = 3;
+    public h0(Context context, s61 s61Var) {
+        super(context, s61Var, false);
+        this.n0 = 3;
     }
 }

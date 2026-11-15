@@ -4,31 +4,31 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.widget.TextView;
-import org.telegram.ui.Components.cp;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.lp;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class la extends TextView {
     public boolean a;
-    public final org.telegram.ui.Components.v5 b;
-    public cp c;
+    public final org.telegram.ui.Components.u5 b;
+    public lp c;
 
     public la(Context context) {
         super(context);
-        this.b = new org.telegram.ui.Components.v5(this, 0L, 350L, wq.h);
+        this.b = new org.telegram.ui.Components.u5(this, 0L, 350L, er.h);
     }
 
-    public final void a(boolean z9, boolean z10) {
-        this.a = z9;
-        boolean z11 = true;
-        if (!z10) {
-            this.b.f(z9, true);
+    public final void a(boolean z10, boolean z11) {
+        this.a = z10;
+        boolean z12 = true;
+        if (!z11) {
+            this.b.f(z10, true);
         }
-        if (!isPressed() && !z9) {
-            z11 = false;
+        if (!isPressed() && !z10) {
+            z12 = false;
         }
-        super.setPressed(z11);
+        super.setPressed(z12);
         invalidate();
     }
 
@@ -52,9 +52,9 @@ public final class la extends TextView {
             canvas2 = canvas;
         }
         if (this.c == null) {
-            cp cpVar = new cp(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(2.0f), getCurrentTextColor());
-            this.c = cpVar;
-            cpVar.setCallback(this);
+            lp lpVar = new lp(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(2.0f), getCurrentTextColor());
+            this.c = lpVar;
+            lpVar.setCallback(this);
         }
         this.c.b(getCurrentTextColor());
         float f11 = 1.0f - d;
@@ -65,8 +65,8 @@ public final class la extends TextView {
     }
 
     @Override // android.view.View
-    public final void setPressed(boolean z9) {
-        super.setPressed(z9 || this.a);
+    public final void setPressed(boolean z10) {
+        super.setPressed(z10 || this.a);
     }
 
     @Override // android.widget.TextView, android.view.View

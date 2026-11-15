@@ -1,25 +1,97 @@
 package m;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.Window;
+import androidx.appcompat.widget.Toolbar;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class k3 extends j1.b {
-    public static final Parcelable.Creator<k3> CREATOR = new c5.i(3);
-    public int c;
-    public boolean d;
+public final class k3 implements k1 {
+    public Toolbar a;
+    public int b;
+    public View c;
+    public Drawable d;
+    public Drawable e;
+    public Drawable f;
+    public boolean g;
+    public CharSequence h;
+    public CharSequence i;
+    public CharSequence j;
+    public Window.Callback k;
+    public boolean l;
+    public h m;
+    public int n;
+    public Drawable o;
 
-    public k3(Parcel parcel, ClassLoader classLoader) {
-        super(parcel, classLoader);
-        this.c = parcel.readInt();
-        this.d = parcel.readInt() != 0;
+    public final void a(int i7) {
+        View view;
+        Toolbar toolbar = this.a;
+        int i10 = this.b ^ i7;
+        this.b = i7;
+        if (i10 != 0) {
+            if ((i10 & 4) != 0) {
+                if ((i7 & 4) != 0) {
+                    b();
+                }
+                if ((this.b & 4) != 0) {
+                    Drawable drawable = this.f;
+                    if (drawable == null) {
+                        drawable = this.o;
+                    }
+                    toolbar.setNavigationIcon(drawable);
+                } else {
+                    toolbar.setNavigationIcon((Drawable) null);
+                }
+            }
+            if ((i10 & 3) != 0) {
+                c();
+            }
+            if ((i10 & 8) != 0) {
+                if ((i7 & 8) != 0) {
+                    toolbar.setTitle(this.h);
+                    toolbar.setSubtitle(this.i);
+                } else {
+                    toolbar.setTitle((CharSequence) null);
+                    toolbar.setSubtitle((CharSequence) null);
+                }
+            }
+            if ((i10 & 16) == 0 || (view = this.c) == null) {
+                return;
+            }
+            if ((i7 & 16) != 0) {
+                toolbar.addView(view);
+            } else {
+                toolbar.removeView(view);
+            }
+        }
     }
 
-    @Override // j1.b, android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        super.writeToParcel(parcel, i7);
-        parcel.writeInt(this.c);
-        parcel.writeInt(this.d ? 1 : 0);
+    public final void b() {
+        Toolbar toolbar = this.a;
+        if ((this.b & 4) != 0) {
+            if (TextUtils.isEmpty(this.j)) {
+                toolbar.setNavigationContentDescription(this.n);
+            } else {
+                toolbar.setNavigationContentDescription(this.j);
+            }
+        }
+    }
+
+    public final void c() {
+        Drawable drawable;
+        int i7 = this.b;
+        if ((i7 & 2) == 0) {
+            drawable = null;
+        } else if ((i7 & 1) != 0) {
+            drawable = this.e;
+            if (drawable == null) {
+                drawable = this.d;
+            }
+        } else {
+            drawable = this.d;
+        }
+        this.a.setLogo(drawable);
     }
 }

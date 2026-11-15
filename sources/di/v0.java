@@ -1,244 +1,258 @@
 package di;
 
-import java.util.ArrayList;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.RequestDelegateTimestamp;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
+import android.content.Context;
+import android.text.InputFilter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ns;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.mb0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v0 implements NativeInstance.PayloadCallback, RequestDelegateTimestamp, NativeInstance.VideoSourcesCallback, NativeInstance.RequestBroadcastPartCallback, NativeInstance.RequestCurrentTimeCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g1 b;
+public final class v0 extends org.telegram.ui.ActionBar.u2 {
+    public int A1;
+    public final mb0 m1;
+    public final EditTextBoldCursor n1;
+    public final TextView o1;
+    public final org.telegram.ui.Components.h6 p1;
+    public final hi.d q1;
+    public final org.telegram.ui.Components.h6 r1;
+    public final org.telegram.ui.Cells.r8 s1;
+    public final ImageView t1;
+    public final ImageView u1;
+    public final cg.a v1;
+    public final cg.a w1;
+    public final cg.a x1;
+    public final cg.a y1;
+    public cg.a z1;
 
-    public /* synthetic */ v0(g1 g1Var, int i7) {
+    public v0(Context context, org.telegram.ui.ActionBar.e6 e6Var, int i7, cg.a aVar, ai.u1 u1Var) {
+        super(1, context, e6Var, true);
         this.a = i7;
-        this.b = g1Var;
+        this.Q0 = true;
+        this.E = true;
+        org.telegram.messenger.p0 p0Var = np.s1(i7).y7;
+        long max = Math.max(((org.telegram.messenger.l0) p0Var.r.b).c, 10000000L);
+        cg.b bVar = cg.b.b;
+        this.x1 = cg.a.i(max, bVar);
+        this.y1 = cg.a.i(((org.telegram.messenger.l0) p0Var.s.b).c, bVar);
+        long j3 = ((org.telegram.messenger.j0) p0Var.p.b).c;
+        cg.b bVar2 = cg.b.a;
+        this.v1 = cg.a.g(j3, bVar2);
+        this.w1 = cg.a.g(((org.telegram.messenger.j0) p0Var.q.b).c, bVar2);
+        Q(org.telegram.ui.ActionBar.j6.h5);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        LinearLayout f10 = org.telegram.messenger.k5.f(context, 0);
+        linearLayout.addView(f10, c8.ja.t(-1, 56, 55, 0, 0, 0, 0));
+        org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(context, false, false, false);
+        this.p1 = h6Var;
+        int i10 = org.telegram.ui.ActionBar.j6.G6;
+        org.telegram.ui.ActionBar.q6.Y(h6Var, i10, null);
+        h6Var.setTextSize(org.telegram.messenger.g0.L(20.0f));
+        h6Var.setGravity(8388627);
+        h6Var.setTypeface(org.telegram.messenger.g0.o());
+        f10.addView(h6Var, c8.ja.q(-1, -1, 1.0f, ns.E1, 22, 0, 22, 0));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(1);
+        linearLayout.addView(linearLayout2, c8.ja.l(1.0f, -1, -2));
+        mb0 mb0Var = new mb0(context, null);
+        this.m1 = mb0Var;
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.n1 = editTextBoldCursor;
+        editTextBoldCursor.setCursorSize(org.telegram.messenger.g0.L(20.0f));
+        editTextBoldCursor.setCursorWidth(1.5f);
+        editTextBoldCursor.setImeOptions(268435462);
+        editTextBoldCursor.setTextSize(1, 17.0f);
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setBackground(null);
+        editTextBoldCursor.setPadding(org.telegram.messenger.g0.L(42.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
+        org.telegram.ui.ActionBar.q6.U(editTextBoldCursor, i10, null);
+        editTextBoldCursor.requestFocus();
+        mb0Var.setLeftPadding(org.telegram.messenger.g0.L(28.0f));
+        mb0Var.e(editTextBoldCursor);
+        mb0Var.b(1.0f, aVar != null && !aVar.k() ? 1.0f : 0.0f, false);
+        mb0Var.setForceUseCenter2(true);
+        editTextBoldCursor.setOnFocusChangeListener(new ch.c0(this, 4));
+        mb0Var.addView(editTextBoldCursor, c8.ja.e(-1, -2, 48));
+        linearLayout2.addView(mb0Var, c8.ja.k(18.0f, 0.0f, 18.0f, 0.0f, -1, 58));
+        ImageView imageView = new ImageView(context);
+        this.t1 = imageView;
+        imageView.setImageResource(R.drawable.star_small_inner);
+        mb0Var.addView(imageView, c8.ja.d(22, 22.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.u1 = imageView2;
+        imageView2.setImageResource(R.drawable.mini_gram_72);
+        mb0Var.addView(imageView2, c8.ja.d(22, 22.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.h6 h6Var2 = new org.telegram.ui.Components.h6(context, false, false, false);
+        this.r1 = h6Var2;
+        int i11 = org.telegram.ui.ActionBar.j6.y6;
+        org.telegram.ui.ActionBar.q6.Y(h6Var2, i11, null);
+        h6Var2.setTextSize(org.telegram.messenger.g0.L(13.0f));
+        h6Var2.setGravity(5);
+        mb0Var.addView(h6Var2, c8.ja.d(-2, -1.0f, 21, 0.0f, 0.0f, 16.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.o1 = textView;
+        org.telegram.ui.ActionBar.q6.U(textView, i11, null);
+        textView.setTextSize(1, 13.0f);
+        linearLayout2.addView(textView, c8.ja.t(-1, -2, 55, 33, 4, 33, 0));
+        org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(context);
+        this.s1 = r8Var;
+        r8Var.c.setLayoutParams(c8.ja.d(20, 20.0f, (hd.a0 ? 5 : 3) | 48, 22.0f, 22.0f, 22.0f, 0.0f));
+        r8Var.b(hd.M0(2131746128, null), hd.M0(2131746129, null), true, false);
+        r8Var.setOnClickListener(new ah.d(this, 12));
+        linearLayout2.addView(r8Var, c8.ja.t(-1, -2, 55, 0, 16, 0, 16));
+        LinearLayout linearLayout3 = new LinearLayout(context);
+        linearLayout3.setOrientation(1);
+        linearLayout.addView(linearLayout3, c8.ja.r(-1, -2, 80));
+        hi.d g10 = i20.g(24, context, e6Var, true);
+        this.q1 = g10;
+        g10.setOnClickListener(new ai.t2(9, this, u1Var));
+        g10.i(hd.M0(2131746151, null), false, true);
+        linearLayout3.addView(g10, c8.ja.k(18.0f, 0.0f, 18.0f, 8.0f, -1, 48));
+        if (aVar != null) {
+            J0(cg.a.i(aVar.b, aVar.a), !aVar.k(), true, false);
+        } else {
+            J0(cg.a.i(0L, bVar2), false, true, false);
+        }
+        this.O = linearLayout;
+        editTextBoldCursor.addTextChangedListener(new ah.j(this, 4));
     }
 
-    @Override // org.telegram.messenger.voip.NativeInstance.PayloadCallback
-    public void run(int i7, String str) {
-        g1 g1Var = this.b;
-        g1Var.K = i7;
-        TL_phone.joinGroupCall joingroupcall = new TL_phone.joinGroupCall();
-        boolean z9 = !g1Var.n;
-        joingroupcall.muted = z9;
-        joingroupcall.video_stopped = z9;
-        joingroupcall.call = g1Var.f;
-        TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-        joingroupcall.params = tL_dataJSON;
-        tL_dataJSON.data = str;
-        TLRPC.TL_inputPeerUser tL_inputPeerUser = new TLRPC.TL_inputPeerUser();
-        joingroupcall.join_as = tL_inputPeerUser;
-        int i10 = g1Var.e;
-        tL_inputPeerUser.user_id = p10.i(org.telegram.messenger.c.a(i10).a).e();
-        ConnectionsManager.getInstance(i10).sendRequest(joingroupcall, new bi.j2(g1Var, i7, 2));
+    public final cg.a I0() {
+        return this.z1.a == cg.b.b ? this.y1 : this.w1;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegateTimestamp
-    public void run(TLObject tLObject, TLRPC.TL_error tL_error, long j3) {
-        if (tL_error == null) {
-            g1 g1Var = this.b;
-            if (g1Var.E == null || g1Var.x) {
-                return;
+    public final void J0(cg.a aVar, boolean z10, boolean z11, boolean z12) {
+        long j3;
+        cg.a aVar2;
+        int i7;
+        cg.a aVar3 = this.z1;
+        int i10 = this.A1;
+        this.A1 = 0;
+        if (aVar != null) {
+            this.z1 = aVar;
+        } else {
+            this.z1 = cg.a.i(0L, aVar3.a);
+            this.A1 |= 1;
+        }
+        long j10 = I0().b;
+        cg.a aVar4 = this.z1;
+        if (j10 < aVar4.b) {
+            this.A1 |= 4;
+        }
+        boolean k10 = aVar4.k();
+        cg.a aVar5 = this.v1;
+        cg.a aVar6 = this.x1;
+        cg.b bVar = cg.b.b;
+        if (k10) {
+            j3 = 0;
+        } else {
+            cg.a aVar7 = this.z1;
+            j3 = 0;
+            if ((aVar7.a == bVar ? aVar6 : aVar5).b > aVar7.b) {
+                this.A1 |= 2;
             }
-            TL_phone.groupCallStreamChannels groupcallstreamchannels = (TL_phone.groupCallStreamChannels) tLObject;
-            int i7 = 0;
-            if (!groupcallstreamchannels.channels.isEmpty()) {
-                long j10 = groupcallstreamchannels.channels.get(0).last_timestamp_ms;
+        }
+        boolean z13 = z11 || aVar3.a != this.z1.a;
+        boolean z14 = z11 || aVar3.b != this.z1.b;
+        boolean z15 = z11 || i10 != this.A1;
+        mb0 mb0Var = this.m1;
+        if (z15) {
+            mb0Var.a((this.A1 & (-9)) == 0 ? 0.0f : 1.0f);
+        }
+        cg.b bVar2 = cg.b.a;
+        long j11 = j3;
+        EditTextBoldCursor editTextBoldCursor = this.n1;
+        if (z13) {
+            cg.b bVar3 = this.z1.a;
+            org.telegram.ui.Components.h6 h6Var = this.p1;
+            if (bVar3 == bVar2) {
+                h6Var.c(hd.M0(2131746123, null), z12, true);
+                editTextBoldCursor.setInputType(2);
+                editTextBoldCursor.setFilters(new InputFilter[]{new InputFilter.LengthFilter(Long.toString(I0().a()).length())});
+            } else if (bVar3 == bVar) {
+                h6Var.c(hd.M0(2131746122, null), z12, true);
+                editTextBoldCursor.setInputType(8194);
+                editTextBoldCursor.setFilters(new InputFilter[]{new InputFilter.LengthFilter(Long.toString(I0().a()).length() + 3)});
             }
-            if (groupcallstreamchannels.channels.isEmpty()) {
-                org.telegram.messenger.g0.h3(new x0(g1Var, 8));
+            this.s1.c.a(this.z1.a == bVar, z12);
+            ImageView imageView = this.u1;
+            ImageView imageView2 = this.t1;
+            if (z12) {
+                i7 = 2;
+                aVar2 = aVar5;
+                imageView2.animate().alpha(this.z1.a == bVar2 ? 1.0f : 0.0f).scaleX(this.z1.a == bVar2 ? 1.0f : 0.0f).scaleY(this.z1.a == bVar2 ? 1.0f : 0.0f).setDuration(180L).start();
+                imageView.animate().alpha(this.z1.a == bVar ? 1.0f : 0.0f).scaleX(this.z1.a == bVar ? 1.0f : 0.0f).scaleY(this.z1.a == bVar ? 1.0f : 0.0f).setDuration(180L).start();
+            } else {
+                aVar2 = aVar5;
+                i7 = 2;
+                imageView2.setAlpha(this.z1.a == bVar2 ? 1.0f : 0.0f);
+                imageView.setAlpha(this.z1.a == bVar ? 1.0f : 0.0f);
             }
-            if (g1Var.G == null) {
-                TLRPC.TL_groupCallParticipant tL_groupCallParticipant = new TLRPC.TL_groupCallParticipant();
-                g1Var.G = tL_groupCallParticipant;
-                tL_groupCallParticipant.peer = qp.s1(g1Var.e).z1(g1Var.b);
-                g1Var.G.video = new TLRPC.TL_groupCallParticipantVideo();
-                TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup = new TLRPC.TL_groupCallParticipantVideoSourceGroup();
-                tL_groupCallParticipantVideoSourceGroup.semantics = "SIM";
-                ArrayList<TL_phone.TL_groupCallStreamChannel> arrayList = groupcallstreamchannels.channels;
-                int size = arrayList.size();
-                while (i7 < size) {
-                    TL_phone.TL_groupCallStreamChannel tL_groupCallStreamChannel = arrayList.get(i7);
-                    i7++;
-                    tL_groupCallParticipantVideoSourceGroup.sources.add(Integer.valueOf(tL_groupCallStreamChannel.channel));
+        } else {
+            aVar2 = aVar5;
+            i7 = 2;
+        }
+        if (z13 || z15) {
+            int i11 = this.A1;
+            if ((i11 & 4) != 0) {
+                mb0Var.setText(hd.a0(null, null, 2131746125, I0().f()));
+            } else if ((i11 & 2) != 0) {
+                mb0Var.setText(hd.a0(null, null, 2131746124, (this.z1.a == bVar ? aVar6 : aVar2).f()));
+            } else {
+                mb0Var.setText(hd.M0(this.z1.a == bVar2 ? 2131746127 : 2131746126, null));
+            }
+        }
+        if (z13 || z14 || z15) {
+            boolean z16 = this.A1 == 0 && this.z1.b > j11;
+            hi.d dVar = this.q1;
+            if (dVar.d0 != z16) {
+                dVar.setEnabled(z16);
+                dVar.setClickable(z16);
+                if (z12) {
+                    i20.m(dVar.animate(), z16 ? 1.0f : 0.6f, 180L);
+                } else {
+                    dVar.setAlpha(z16 ? 1.0f : 0.6f);
                 }
-                g1Var.G.video.source_groups.add(tL_groupCallParticipantVideoSourceGroup);
-                TLRPC.GroupCallParticipant groupCallParticipant = g1Var.G;
-                TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo = groupCallParticipant.video;
-                tL_groupCallParticipantVideo.endpoint = "unified";
-                groupCallParticipant.videoEndpoint = "unified";
-                NativeInstance nativeInstance = g1Var.E;
-                NativeInstance.SsrcGroup[] d = g1.d(tL_groupCallParticipantVideo);
-                g1Var.r(d);
-                nativeInstance.addIncomingVideoOutput(2, "unified", d, g1Var.H, org.telegram.messenger.m5.o(g1Var.G.peer));
             }
         }
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.VideoSourcesCallback
-    public void run(long j3, int[] iArr) {
-        g1 g1Var = this.b;
-        if (g1Var.E == null) {
-            return;
-        }
-        TL_phone.getGroupParticipants getgroupparticipants = new TL_phone.getGroupParticipants();
-        getgroupparticipants.call = g1Var.f;
-        getgroupparticipants.offset = "";
-        int i7 = 0;
-        while (i7 < iArr.length) {
-            i7 = com.google.android.recaptcha.internal.a.f(iArr[i7], i7, 1, getgroupparticipants.sources);
-        }
-        ConnectionsManager.getInstance(g1Var.e).sendRequest(getgroupparticipants, new bi.h3(g1Var, iArr, j3, 3));
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback
-    public void run(final long j3, final long j10, final int i7, final int i10) {
-        String str;
-        switch (this.a) {
-            case 3:
-                final g1 g1Var = this.b;
-                if (g1Var.w != null) {
-                    StringBuilder sb2 = new StringBuilder("[LivePlayer] sending getFile time_ms=");
-                    sb2.append(j3);
-                    sb2.append(j10 == 500 ? ", scale = 1" : "");
-                    sb2.append(", video_channel = ");
-                    sb2.append(i7);
-                    sb2.append(", video_quality = ");
-                    sb2.append(i10);
-                    org.telegram.messenger.a8.b(sb2.toString());
-                    final long currentTimeMillis = System.currentTimeMillis();
-                    TLRPC.TL_upload_getFile tL_upload_getFile = new TLRPC.TL_upload_getFile();
-                    tL_upload_getFile.limit = 131072;
-                    TLRPC.TL_inputGroupCallStream tL_inputGroupCallStream = new TLRPC.TL_inputGroupCallStream();
-                    tL_inputGroupCallStream.call = g1Var.f;
-                    tL_inputGroupCallStream.time_ms = j3;
-                    if (j10 == 500) {
-                        tL_inputGroupCallStream.scale = 1;
-                    }
-                    if (i7 != 0) {
-                        tL_inputGroupCallStream.flags |= 1;
-                        tL_inputGroupCallStream.video_channel = i7;
-                        tL_inputGroupCallStream.video_quality = i10;
-                    }
-                    tL_upload_getFile.location = tL_inputGroupCallStream;
-                    if (i7 == 0) {
-                        str = a8.p0.o(j3, "");
-                    } else {
-                        str = i7 + "_" + j3 + "_" + i10;
-                    }
-                    final String str2 = str;
-                    org.telegram.messenger.g0.h3(new ai.e0(g1Var, str2, ConnectionsManager.getInstance(org.telegram.messenger.c.a(g1Var.e).a).sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: di.w0
-                        @Override // org.telegram.tgnet.RequestDelegateTimestamp
-                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error, long j11) {
-                            g1 g1Var2 = g1.this;
-                            if (g1Var2.x || g1Var2.E == null) {
-                                return;
-                            }
-                            org.telegram.messenger.g0.h3(new z0(1, g1Var2, str2));
-                            long j12 = currentTimeMillis;
-                            long j13 = j3;
-                            long j14 = j10;
-                            int i11 = i7;
-                            int i12 = i10;
-                            if (tLObject != null) {
-                                TLRPC.TL_upload_file tL_upload_file = (TLRPC.TL_upload_file) tLObject;
-                                StringBuilder sb3 = new StringBuilder("[LivePlayer] received in ");
-                                sb3.append(System.currentTimeMillis() - j12);
-                                sb3.append("ms getFile{time_ms=");
-                                sb3.append(j13);
-                                sb3.append(j14 == 500 ? ", scale = 1" : "");
-                                sb3.append(", video_channel = ");
-                                sb3.append(i11);
-                                sb3.append(", video_quality = ");
-                                sb3.append(i12);
-                                sb3.append("}: ");
-                                sb3.append(tL_upload_file.bytes.limit());
-                                sb3.append(" bytes");
-                                org.telegram.messenger.a8.b(sb3.toString());
-                                NativeInstance nativeInstance = g1Var2.E;
-                                NativeByteBuffer nativeByteBuffer = tL_upload_file.bytes;
-                                nativeInstance.onStreamPartAvailable(j13, nativeByteBuffer.buffer, nativeByteBuffer.limit(), j11, i11, i12);
-                                return;
-                            }
-                            if ("GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
-                                g1Var2.E.onStreamPartAvailable(j13, null, -1, j11, i11, i12);
-                                org.telegram.messenger.g0.h3(new x0(g1Var2, 4));
-                                return;
-                            }
-                            if ("GROUPCALL_JOIN_MISSING".equals(tL_error.text)) {
-                                org.telegram.messenger.g0.h3(new x0(g1Var2, 6));
-                                StringBuilder sb4 = new StringBuilder("[LivePlayer] received in ");
-                                sb4.append(System.currentTimeMillis() - j12);
-                                sb4.append("ms getFile{time_ms=");
-                                sb4.append(j13);
-                                sb4.append(j14 == 500 ? ", scale = 1" : "");
-                                sb4.append(", video_channel = ");
-                                sb4.append(i11);
-                                sb4.append(", video_quality = ");
-                                sb4.append(i12);
-                                sb4.append("}: ");
-                                sb4.append(tL_error.text);
-                                sb4.append(" => rejoining");
-                                org.telegram.messenger.a8.b(sb4.toString());
-                                return;
-                            }
-                            int i13 = ("TIME_TOO_BIG".equals(tL_error.text) || tL_error.text.startsWith("FLOOD_WAIT")) ? 0 : -1;
-                            StringBuilder sb5 = new StringBuilder("[LivePlayer] received in ");
-                            sb5.append(System.currentTimeMillis() - j12);
-                            sb5.append("ms getFile{time_ms=");
-                            sb5.append(j13);
-                            sb5.append(j14 == 500 ? ", scale = 1" : "");
-                            sb5.append(", video_channel = ");
-                            sb5.append(i11);
-                            sb5.append(", video_quality = ");
-                            sb5.append(i12);
-                            sb5.append("}: ");
-                            sb5.append(tL_error.text);
-                            sb5.append(" => ");
-                            sb5.append(i13);
-                            org.telegram.messenger.a8.b(sb5.toString());
-                            g1Var2.E.onStreamPartAvailable(j13, null, i13, j11, i11, i12);
-                        }
-                    }, 2, 2, g1Var.h()), 6));
-                    break;
-                }
-                break;
-            default:
-                StringBuilder sb3 = new StringBuilder("[LivePlayer] cancelling getFile time_ms=");
-                sb3.append(j3);
-                sb3.append(j10 == 500 ? ", scale = 1" : "");
-                sb3.append(i7 != 0 ? a8.p0.m(i7, i10, ", video_channel = ", ", video_quality = ") : "");
-                org.telegram.messenger.a8.b(sb3.toString());
-                org.telegram.messenger.g0.h3(new d1(i7, i10, 0, j3, this.b));
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.RequestCurrentTimeCallback
-    public void run(long j3) {
-        g1 g1Var = this.b;
-        int i7 = g1Var.e;
-        TLRPC.GroupCall groupCall = g1Var.w;
-        if (groupCall != null && groupCall.rtmp_stream) {
-            TL_phone.getGroupCallStreamChannels getgroupcallstreamchannels = new TL_phone.getGroupCallStreamChannels();
-            getgroupcallstreamchannels.call = g1Var.f;
-            if (g1Var.w == null || g1Var.E == null) {
-                return;
+        if (z13 || z14) {
+            org.telegram.messenger.p0 p0Var = np.s1(this.a).y7;
+            cg.a aVar8 = this.z1;
+            cg.b bVar4 = aVar8.a;
+            long j12 = aVar8.b;
+            TextView textView = this.o1;
+            if (bVar4 == bVar2) {
+                textView.setText(org.telegram.messenger.g0.X2(hd.G((int) cg.a.i((j12 * ((org.telegram.messenger.j0) p0Var.n.b).c) / 1000, bVar4).a(), "ResellGiftInfo", new Object[0])));
+            } else if (bVar4 == bVar) {
+                org.telegram.messenger.k5.q(null, null, 2131746132, new Object[]{cg.a.i((j12 * ((org.telegram.messenger.j0) p0Var.o.b).c) / 1000, bVar4).b()}, textView);
             }
-            ConnectionsManager.getInstance(i7).sendRequest(getgroupcallstreamchannels, new c1(g1Var, j3, 0), 65536, 2, g1Var.h());
-            return;
+            StringBuilder sb2 = new StringBuilder(10);
+            sb2.append('~');
+            double d = this.z1.a == bVar ? ((org.telegram.messenger.i0) np.s1(this.a).y7.l.b).a : np.s1(this.a).d6 * 1.0E-5d;
+            org.telegram.messenger.r1 i12 = org.telegram.messenger.r1.i();
+            long c10 = (long) (this.z1.c() * d * 100.0d);
+            i12.getClass();
+            sb2.append(org.telegram.messenger.r1.g("USD", i7, c10, false));
+            this.r1.c(sb2, z12, true);
         }
-        NativeInstance nativeInstance = g1Var.E;
-        if (nativeInstance != null) {
-            nativeInstance.onRequestTimeComplete(j3, ConnectionsManager.getInstance(i7).getCurrentTimeMillis());
+        if (z10 && z14) {
+            String b10 = this.z1.b();
+            editTextBoldCursor.setText(b10);
+            editTextBoldCursor.setSelection(b10.length());
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog
+    public final void show() {
+        super.show();
+        org.telegram.messenger.g0.i3(new ch.w(this, 10), 50L);
     }
 }

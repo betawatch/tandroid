@@ -1,16 +1,16 @@
 package v2;
 
-import c8.ca;
+import c8.ba;
 import e2.u;
 import t3.h;
 import v3.c;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public static final a a = new a();
 
-    public final ca a(u uVar) {
+    public final ba a(u uVar) {
         String str = uVar.s;
         if (str != null) {
             switch (str) {
@@ -26,7 +26,7 @@ public final class a {
                     return new c();
             }
         }
-        throw new IllegalArgumentException(rf.b.i("Attempted to create decoder for unsupported MIME type: ", str));
+        throw new IllegalArgumentException(r.b.k("Attempted to create decoder for unsupported MIME type: ", str));
     }
 
     public final boolean b(u uVar) {

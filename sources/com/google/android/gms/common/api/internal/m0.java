@@ -1,37 +1,36 @@
 package com.google.android.gms.common.api.internal;
 
-import j$.util.Objects;
-import java.util.Set;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class m0 implements q6.b {
-    public final com.google.android.gms.common.api.c a;
-    public final a b;
-    public q6.i c;
-    public Set d;
-    public boolean e;
-    public final /* synthetic */ g f;
+public final class m0 {
+    public final a a;
+    public final n6.c b;
 
-    public m0(g gVar, com.google.android.gms.common.api.c cVar, a aVar) {
-        Objects.requireNonNull(gVar);
-        this.f = gVar;
-        this.c = null;
-        this.d = null;
-        this.e = false;
-        this.a = cVar;
-        this.b = aVar;
+    public /* synthetic */ m0(a aVar, n6.c cVar) {
+        this.a = aVar;
+        this.b = cVar;
     }
 
-    @Override // q6.b
-    public final void a(n6.a aVar) {
-        this.f.y.post(new l0(this, aVar, 0));
-    }
-
-    public final void b(n6.a aVar) {
-        j0 j0Var = (j0) this.f.s.get(this.b);
-        if (j0Var != null) {
-            j0Var.k(aVar);
+    public final boolean equals(Object obj) {
+        if (obj instanceof m0) {
+            m0 m0Var = (m0) obj;
+            if (q6.m.k(this.a, m0Var.a) && q6.m.k(this.b, m0Var.b)) {
+                return true;
+            }
         }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b});
+    }
+
+    public final String toString() {
+        ji.j jVar = new ji.j(this);
+        jVar.U(this.a, "key");
+        jVar.U(this.b, "feature");
+        return jVar.toString();
     }
 }

@@ -1,24 +1,66 @@
 package x2;
 
-import h9.t1;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class q1 extends e2.t0 {
-    public final h9.i0 c;
+public final class q1 {
+    public static final q1 d = new q1(new e2.m1[0]);
+    public static final String e;
+    public final int a;
+    public final h9.s1 b;
+    public int c;
 
-    public q1(String str, t1 t1Var) {
-        super(str, null, false, 1);
-        this.c = h9.i0.q(t1Var);
+    static {
+        String str = h2.l0.a;
+        e = Integer.toString(0, 36);
     }
 
-    @Override // e2.t0, java.lang.Throwable
-    public final String getMessage() {
-        String message = super.getMessage();
-        h9.i0 i0Var = this.c;
-        if (i0Var.isEmpty()) {
-            return message;
+    public q1(e2.m1... m1VarArr) {
+        h9.s1 r10 = h9.i0.r(m1VarArr);
+        this.b = r10;
+        this.a = m1VarArr.length;
+        int i7 = 0;
+        while (i7 < r10.d) {
+            int i10 = i7 + 1;
+            for (int i11 = i10; i11 < r10.d; i11++) {
+                if (((e2.m1) r10.get(i7)).equals(r10.get(i11))) {
+                    h2.a.d("TrackGroupArray", "", new IllegalArgumentException("Multiple identical TrackGroups added to one TrackGroupArray."));
+                }
+            }
+            i7 = i10;
         }
-        return message + "\nsniff failures: " + i0Var;
+    }
+
+    public final e2.m1 a(int i7) {
+        return (e2.m1) this.b.get(i7);
+    }
+
+    public final int b(e2.m1 m1Var) {
+        int indexOf = this.b.indexOf(m1Var);
+        if (indexOf >= 0) {
+            return indexOf;
+        }
+        return -1;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || q1.class != obj.getClass()) {
+            return false;
+        }
+        q1 q1Var = (q1) obj;
+        return this.a == q1Var.a && this.b.equals(q1Var.b);
+    }
+
+    public final int hashCode() {
+        if (this.c == 0) {
+            this.c = this.b.hashCode();
+        }
+        return this.c;
+    }
+
+    public final String toString() {
+        return this.b.toString();
     }
 }

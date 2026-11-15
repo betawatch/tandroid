@@ -4,17 +4,17 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class fs implements View.OnClickListener {
     public final /* synthetic */ ArrayList a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ js c;
 
-    public fs(js jsVar, ArrayList arrayList, boolean z9) {
+    public fs(js jsVar, ArrayList arrayList, boolean z10) {
         this.c = jsVar;
         this.a = arrayList;
-        this.b = z9;
+        this.b = z10;
     }
 
     @Override // android.view.View.OnClickListener
@@ -30,12 +30,12 @@ public final class fs implements View.OnClickListener {
             if (lsVar != null) {
                 TLRPC.Document document = nsVar.W;
                 String str = nsVar.Y;
-                boolean z9 = true;
+                boolean z10 = true;
                 Object obj = nsVar.b0;
                 if (((Integer) arrayList.get(intValue)).intValue() != 0) {
-                    z9 = false;
+                    z10 = false;
                 }
-                lsVar.l(document, str, obj, z9, 0, 0);
+                lsVar.l(document, str, obj, z10, 0, 0);
             }
         } else if (((Integer) arrayList.get(intValue)).intValue() == 1) {
             ls lsVar2 = nsVar.l;
@@ -43,7 +43,7 @@ public final class fs implements View.OnClickListener {
                 lsVar2.M(nsVar.a0, nsVar.i);
             }
         } else if (((Integer) arrayList.get(intValue)).intValue() == 2) {
-            org.telegram.messenger.ui.b0(nsVar.r).d(2, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+            org.telegram.messenger.si.b0(nsVar.r).d(2, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 3) {
             TLRPC.Document document2 = nsVar.W;
             Object obj2 = nsVar.b0;
@@ -52,14 +52,14 @@ public final class fs implements View.OnClickListener {
             if (lsVar3 == null) {
                 return;
             } else {
-                org.telegram.ui.Components.u4.I(nsVar.w, lsVar3.a(), new a1.d(lsVar3, document2, str2, obj2, 13));
+                org.telegram.ui.Components.t4.I(nsVar.w, lsVar3.a(), new a1.d(lsVar3, document2, str2, obj2, 13));
             }
         } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
-            org.telegram.messenger.ui.b0(nsVar.r).d(0, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), true);
+            org.telegram.messenger.si.b0(nsVar.r).d(0, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), true);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 5) {
             nsVar.l.i(nsVar.X);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 7) {
-            nsVar.l.o(nsVar.W);
+            nsVar.l.n(nsVar.W);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 8) {
             nsVar.l.F(nsVar.W);
         }

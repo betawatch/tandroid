@@ -7,17 +7,17 @@ import android.text.TextPaint;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.d80;
+import org.telegram.ui.Components.dc;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class m1 {
     public final boolean a;
     public final ImageReceiver b;
-    public final org.telegram.ui.Components.v8 c;
+    public final org.telegram.ui.Components.t8 c;
     public final RectF d;
-    public final hc e;
+    public final dc e;
     public StaticLayout f;
     public StaticLayout g;
     public StaticLayout h;
@@ -25,20 +25,20 @@ public final class m1 {
     public int j;
     public y k;
     public int l;
-    public a80 m;
+    public d80 m;
     public boolean n;
     public final float[] o;
 
-    public m1(q1 q1Var, boolean z9) {
+    public m1(q1 q1Var, boolean z10) {
         ImageReceiver imageReceiver = new ImageReceiver(q1Var);
         this.b = imageReceiver;
-        this.c = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
+        this.c = new org.telegram.ui.Components.t8((org.telegram.ui.ActionBar.e6) null);
         this.d = new RectF();
-        this.e = new hc(q1Var);
+        this.e = new dc(q1Var);
         this.o = new float[8];
-        this.a = z9;
+        this.a = z10;
         imageReceiver.J0(org.telegram.messenger.g0.L(16.0f) / 2);
-        if (q1Var.N0) {
+        if (q1Var.O0) {
             imageReceiver.P();
         }
     }
@@ -48,38 +48,38 @@ public final class m1 {
         TLRPC.UserProfilePhoto userProfilePhoto;
         int L = i7 - org.telegram.messenger.g0.L(22.0f);
         this.j = org.telegram.messenger.g0.L(16.0f);
-        StaticLayout U2 = q1.U2(str, q1.jd, L);
-        this.f = U2;
-        if (U2 != null) {
-            int L2 = org.telegram.messenger.g0.L(4.0f) + q1.K1(U2);
+        StaticLayout V2 = q1.V2(str, q1.xd, L);
+        this.f = V2;
+        if (V2 != null) {
+            int L2 = org.telegram.messenger.g0.L(4.0f) + q1.L1(V2);
             L -= L2;
             this.j = org.telegram.messenger.k5.C(6.0f, L2, this.j);
         }
         int i10 = 0;
-        boolean z9 = tLObject != null && (!(tLObject instanceof TLRPC.User) ? !(tLObject instanceof TLRPC.Chat) || (chatPhoto = ((TLRPC.Chat) tLObject).photo) == null || chatPhoto.photo_small == null : (userProfilePhoto = ((TLRPC.User) tLObject).photo) == null || userProfilePhoto.photo_small == null);
-        this.i = z9;
+        boolean z10 = tLObject != null && (!(tLObject instanceof TLRPC.User) ? !(tLObject instanceof TLRPC.Chat) || (chatPhoto = ((TLRPC.Chat) tLObject).photo) == null || chatPhoto.photo_small == null : (userProfilePhoto = ((TLRPC.User) tLObject).photo) == null || userProfilePhoto.photo_small == null);
+        this.i = z10;
         ImageReceiver imageReceiver = this.b;
-        if (z9) {
-            org.telegram.ui.Components.v8 v8Var = this.c;
-            v8Var.p(tLObject);
-            imageReceiver.i0(tLObject, v8Var, null);
+        if (z10) {
+            org.telegram.ui.Components.t8 t8Var = this.c;
+            t8Var.p(tLObject);
+            imageReceiver.i0(tLObject, t8Var, null);
             L -= org.telegram.messenger.g0.L(21.0f);
             this.j = org.telegram.messenger.k5.C(21.0f, this.f == null ? org.telegram.messenger.g0.L(6.0f) : 0, this.j);
         } else {
             imageReceiver.f();
         }
-        SpannableStringBuilder L3 = q1.L3(charSequence2);
+        SpannableStringBuilder M3 = q1.M3(charSequence2);
         int i11 = i7 / 2;
-        StaticLayout U22 = q1.U2(charSequence, textPaint, L - (L3 != null ? org.telegram.messenger.g0.L(4.0f) + (L3 == null ? 0 : Math.min(i11, (int) Math.ceil(q1.kd.measureText(L3, 0, L3.length())))) : 0));
-        this.g = U22;
-        if (U22 != null) {
-            int L4 = org.telegram.messenger.g0.L(4.0f) + q1.K1(U22);
-            L -= L4;
-            this.j = ((this.f != null || this.i) ? 0 : org.telegram.messenger.g0.L(6.0f)) + L4 + this.j;
+        StaticLayout V22 = q1.V2(charSequence, textPaint, L - (M3 != null ? org.telegram.messenger.g0.L(4.0f) + (M3 == null ? 0 : Math.min(i11, (int) Math.ceil(q1.yd.measureText(M3, 0, M3.length())))) : 0));
+        this.g = V22;
+        if (V22 != null) {
+            int L3 = org.telegram.messenger.g0.L(4.0f) + q1.L1(V22);
+            L -= L3;
+            this.j = ((this.f != null || this.i) ? 0 : org.telegram.messenger.g0.L(6.0f)) + L3 + this.j;
         }
-        StaticLayout U23 = L > org.telegram.messenger.g0.L(24.0f) ? q1.U2(L3, q1.kd, Math.min(i11, L)) : null;
-        this.h = U23;
-        if (U23 == null) {
+        StaticLayout V23 = L > org.telegram.messenger.g0.L(24.0f) ? q1.V2(M3, q1.yd, Math.min(i11, L)) : null;
+        this.h = V23;
+        if (V23 == null) {
             if (this.g == null && this.f == null) {
                 return;
             }
@@ -90,6 +90,6 @@ public final class m1 {
         if (this.f == null && !this.i && this.g == null) {
             i10 = org.telegram.messenger.g0.L(6.0f);
         }
-        this.j = q1.K1(this.h) + i10 + i12;
+        this.j = q1.L1(this.h) + i10 + i12;
     }
 }

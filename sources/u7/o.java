@@ -1,76 +1,62 @@
 package u7;
 
-import java.io.Serializable;
-import java.lang.reflect.Array;
-import java.util.AbstractCollection;
-import java.util.Arrays;
-import java.util.Collection;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class o extends AbstractCollection implements Serializable {
-    public static final Object[] a = new Object[0];
+public abstract class o {
+    public static final StringBuilder a;
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
+    static {
+        Locale locale = Locale.ROOT;
+        new SimpleDateFormat("MM-dd HH:mm:ss.SSS", locale);
+        new SimpleDateFormat("MM-dd HH:mm:ss", locale);
+        a = new StringBuilder(33);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException();
-    }
-
-    public abstract int f(Object[] objArr);
-
-    public abstract int i();
-
-    public abstract int j();
-
-    public abstract boolean k();
-
-    public abstract Object[] l();
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray() {
-        return toArray(a);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        objArr.getClass();
-        int size = size();
-        int length = objArr.length;
-        if (length < size) {
-            Object[] l10 = l();
-            if (l10 != null) {
-                return Arrays.copyOfRange(l10, j(), i(), objArr.getClass());
-            }
-            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size);
-        } else if (length > size) {
-            objArr[size] = null;
+    public static void a(long j3, StringBuilder sb2) {
+        if (j3 == 0) {
+            sb2.append("0s");
+            return;
         }
-        f(objArr);
-        return objArr;
+        sb2.ensureCapacity(sb2.length() + 27);
+        boolean z10 = false;
+        if (j3 < 0) {
+            sb2.append("-");
+            if (j3 != Long.MIN_VALUE) {
+                j3 = -j3;
+            } else {
+                j3 = Long.MAX_VALUE;
+                z10 = true;
+            }
+        }
+        if (j3 >= 86400000) {
+            sb2.append(j3 / 86400000);
+            sb2.append("d");
+            j3 %= 86400000;
+        }
+        if (true == z10) {
+            j3 = 25975808;
+        }
+        if (j3 >= 3600000) {
+            sb2.append(j3 / 3600000);
+            sb2.append("h");
+            j3 %= 3600000;
+        }
+        if (j3 >= 60000) {
+            sb2.append(j3 / 60000);
+            sb2.append("m");
+            j3 %= 60000;
+        }
+        if (j3 >= 1000) {
+            sb2.append(j3 / 1000);
+            sb2.append("s");
+            j3 %= 1000;
+        }
+        if (j3 > 0) {
+            sb2.append(j3);
+            sb2.append("ms");
+        }
     }
 }

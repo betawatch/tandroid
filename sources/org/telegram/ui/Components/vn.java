@@ -1,76 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class vn extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    public final /* synthetic */ int T;
-    public Object U;
+public final class vn implements org.telegram.messenger.kc {
+    public boolean a;
+    public final /* synthetic */ kg.g b;
+    public final /* synthetic */ xn c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ vn(int i7, int i10, int i11, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(i7, i10, context, h6Var);
-        this.T = i11;
+    public vn(kg.i iVar, kg.g gVar) {
+        this.c = iVar;
+        this.b = gVar;
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.T) {
-            case 0:
-                canvas.save();
-                Path path = (Path) this.U;
-                path.rewind();
-                RectF rectF = org.telegram.messenger.g0.P;
-                rectF.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-                path.addRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), Path.Direction.CW);
-                canvas.clipPath(path);
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                canvas.restore();
-                return drawChild;
-            case 1:
-                canvas.save();
-                Path path2 = (Path) this.U;
-                path2.rewind();
-                RectF rectF2 = org.telegram.messenger.g0.P;
-                rectF2.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-                path2.addRoundRect(rectF2, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), Path.Direction.CW);
-                canvas.clipPath(path2);
-                boolean drawChild2 = super.drawChild(canvas, view, j3);
-                canvas.restore();
-                return drawChild2;
-            default:
-                return super.drawChild(canvas, view, j3);
+    @Override // org.telegram.messenger.kc
+    public final void O(int i7, Drawable drawable) {
+        ch0 ch0Var;
+        bg.i iVar;
+        if (this.a) {
+            return;
+        }
+        if ((i7 == 0 || i7 == 3) && drawable != null) {
+            this.a = true;
+            boolean z10 = drawable instanceof ch0;
+            kg.g gVar = this.b;
+            if (z10 && (iVar = (ch0Var = (ch0) drawable).C0) != null && iVar.g()) {
+                ch0Var.B0 = new od(21, this, gVar);
+            } else {
+                xn.a(this.c);
+                gVar.run();
+            }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        int i11;
-        switch (this.T) {
-            case 2:
-                k60 k60Var = (k60) this.U;
-                if (this == k60Var.A && (i11 = k60Var.X) > 0) {
-                    i10 = View.MeasureSpec.makeMeasureSpec(Math.min(i11, View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10));
-                }
-                super.onMeasure(i7, i10);
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                break;
-        }
+    @Override // org.telegram.messenger.kc
+    public final /* synthetic */ void A(ImageReceiver imageReceiver) {
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vn(k60 k60Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(R.drawable.popup_fixed_alert4, i7, context, h6Var);
-        this.T = 2;
-        this.U = k60Var;
+    @Override // org.telegram.messenger.kc
+    public final void I(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
     }
 }

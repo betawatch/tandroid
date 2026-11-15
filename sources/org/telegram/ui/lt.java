@@ -9,9 +9,9 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class lt extends View implements org.telegram.ui.ActionBar.c6 {
+public final class lt extends View implements org.telegram.ui.ActionBar.z5 {
     public Path a;
     public Paint b;
     public boolean c;
@@ -34,11 +34,11 @@ public final class lt extends View implements org.telegram.ui.ActionBar.c6 {
         setTop(this.c);
     }
 
-    public void setTop(boolean z9) {
+    public void setTop(boolean z10) {
         Path path = this.a;
         path.rewind();
-        this.c = z9;
-        if (!z9) {
+        this.c = z10;
+        if (!z10) {
             float L = org.telegram.messenger.g0.L(8.0f);
             RectF rectF = org.telegram.messenger.g0.P;
             rectF.set(0.0f, ((-getMeasuredHeight()) * 2) - org.telegram.messenger.g0.L(4.0f), getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.g0.L(4.0f));
@@ -51,17 +51,17 @@ public final class lt extends View implements org.telegram.ui.ActionBar.c6 {
         path.addRoundRect(rectF2, L2, L2, Path.Direction.CW);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void updateColors() {
         try {
-            this.b.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false));
+            this.b.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.d6, false));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

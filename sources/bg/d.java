@@ -2,15 +2,15 @@ package bg;
 
 import java.util.Map;
 import java.util.function.ToIntFunction;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.s9;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.r9;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.w5;
+import org.telegram.ui.Components.v5;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements ToIntFunction {
     public final /* synthetic */ int a;
@@ -41,15 +41,15 @@ public final /* synthetic */ class d implements ToIntFunction {
             case 8:
                 return ((TL_stories.StoryItem) obj).date;
             case 9:
-                return -((TL_stories.StoryItem) jg.g.i(1, ((TL_stories.PeerStories) obj).stories)).date;
+                return -((TL_stories.StoryItem) i5.c.h(1, ((TL_stories.PeerStories) obj).stories)).date;
             case 10:
                 return ((Integer) ((Object[]) obj)[1]).intValue();
             case 11:
-                return ((s9) obj).e.bid_date;
+                return ((r9) obj).e.bid_date;
             case 12:
                 return Integer.parseInt((String) obj);
             case 13:
-                return ((ij) obj).e1();
+                return ((gj) obj).e1();
             case 14:
                 return -((TLRPC.TL_forumTopic) obj).top_message;
             case 15:
@@ -57,9 +57,9 @@ public final /* synthetic */ class d implements ToIntFunction {
             case 16:
                 return ((TLRPC.Message) obj).id;
             case 17:
-                return ((w5) obj).d;
+                return ((v5) obj).d;
             case 18:
-                return ((w5) obj).e;
+                return ((v5) obj).e;
             case 19:
                 ad.c cVar = (ad.c) obj;
                 return cVar.d - cVar.b;

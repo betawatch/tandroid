@@ -1,8 +1,8 @@
 package bc;
 
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g extends d {
     public final byte[] c;
@@ -19,7 +19,7 @@ public final class g extends d {
         byte[] bArr = new byte[i11];
         for (int i12 = 0; i12 < i11; i12++) {
             int i13 = iArr[i12];
-            bArr[i12] = (byte) (((((i13 >> 16) & qs.e4) + ((i13 >> 7) & 510)) + (i13 & qs.e4)) / 4);
+            bArr[i12] = (byte) (((((i13 >> 16) & ns.e4) + ((i13 >> 7) & 510)) + (i13 & ns.e4)) / 4);
         }
         this.c = bArr;
         this.d = i7;
@@ -52,7 +52,7 @@ public final class g extends d {
     @Override // bc.d
     public final byte[] b(int i7, byte[] bArr) {
         if (i7 < 0 || i7 >= this.b) {
-            throw new IllegalArgumentException(jg.g.j(i7, "Requested row is outside the image: "));
+            throw new IllegalArgumentException(i5.c.i(i7, "Requested row is outside the image: "));
         }
         int i10 = this.a;
         if (bArr == null || bArr.length < i10) {

@@ -1,80 +1,104 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ed implements Runnable {
+public final /* synthetic */ class ed implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zd b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ed(zd zdVar, int i7, int i10) {
-        this.a = i10;
-        this.b = zdVar;
-        this.c = i7;
+    public /* synthetic */ ed(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
+        float f10;
         int i7 = this.a;
-        int i10 = this.c;
-        zd zdVar = this.b;
+        Object obj = this.b;
         switch (i7) {
             case 0:
-                vf.c.t(zdVar.getContext(), org.telegram.messenger.id.M0(i10, null));
+                di.p pVar = ((xd) obj).L0;
+                f10 = z10 ? 1.0f : 0.0f;
+                pVar.b(f10, f10, true);
                 break;
             case 1:
-                ed edVar = zdVar.f1;
-                bi.v vVar = zdVar.O0;
-                org.telegram.ui.Components.bc.e();
-                if (zdVar.D0.amount < org.telegram.messenger.qp.s1(i10).R5) {
-                    zdVar.M0 = true;
-                    zdVar.N0 = zdVar.D0.amount;
-                } else {
-                    zdVar.M0 = false;
-                    zdVar.N0 = org.telegram.messenger.qp.s1(i10).R5;
+                yw ywVar = (yw) obj;
+                if (z10) {
+                    ywVar.Z.b(true);
+                    break;
                 }
-                zdVar.L0 = true;
-                vVar.setText(Long.toString(zdVar.N0));
-                vVar.setSelection(vVar.getText().length());
-                zdVar.L0 = false;
-                org.telegram.messenger.g0.r(edVar);
-                edVar.run();
                 break;
-            default:
-                ed edVar2 = zdVar.f1;
-                int currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
-                pd pdVar = zdVar.G0;
-                pdVar.setEnabled(zdVar.N0 > 0 || zdVar.B0 > currentTime);
-                if (currentTime >= zdVar.B0) {
-                    pdVar.g(null, true);
-                    pdVar.i(bi.dd.Y0(false, zdVar.M0 ? org.telegram.messenger.id.M0(2131748368, null) : org.telegram.messenger.id.H(' ', "MonetizationStarsWithdraw", (int) zdVar.N0), zdVar.H0), true, true);
-                    break;
-                } else {
-                    pdVar.i(org.telegram.messenger.id.M0(2131748367, null), true, true);
-                    if (zdVar.e1 == null) {
-                        zdVar.e1 = new SpannableStringBuilder("l");
-                        org.telegram.ui.Components.wp wpVar = new org.telegram.ui.Components.wp(R.drawable.mini_switch_lock, 0);
-                        wpVar.n = 1;
-                        zdVar.e1.setSpan(wpVar, 0, 1, 33);
-                    }
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) zdVar.e1).append((CharSequence) bi.z.w0(zdVar.B0 - currentTime));
-                    pdVar.g(spannableStringBuilder, true);
-                    org.telegram.ui.Components.bc bcVar = zdVar.P0;
-                    if (bcVar != null) {
-                        org.telegram.ui.Components.fb fbVar = bcVar.e;
-                        if ((fbVar instanceof org.telegram.ui.Components.jb) && fbVar.isAttachedToWindow()) {
-                            org.telegram.messenger.k5.r(null, null, 2131752952, new Object[]{bi.z.w0(zdVar.B0 - currentTime)}, ((org.telegram.ui.Components.jb) zdVar.P0.e).b);
-                        }
-                    }
-                    org.telegram.messenger.g0.r(edVar2);
-                    org.telegram.messenger.g0.i3(edVar2, 1000L);
+            case 2:
+                ce0 ce0Var = ((ob0) obj).a0;
+                if (z10) {
+                    ce0Var.c.setEditText((EditText) view);
+                    ce0Var.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
+                break;
+            case 3:
+                org.telegram.ui.Components.mb0 mb0Var = (org.telegram.ui.Components.mb0) obj;
+                f10 = z10 ? 1.0f : 0.0f;
+                mb0Var.b(f10, f10, true);
+                break;
+            case 4:
+                org.telegram.ui.Components.mb0 mb0Var2 = ((wb0) obj).y;
+                f10 = z10 ? 1.0f : 0.0f;
+                mb0Var2.b(f10, f10, true);
+                break;
+            case 5:
+                org.telegram.ui.Components.mb0 mb0Var3 = ((dc0) obj).b;
+                f10 = z10 ? 1.0f : 0.0f;
+                mb0Var3.b(f10, f10, true);
+                break;
+            case 6:
+                ce0 ce0Var2 = ((gc0) obj).E;
+                if (z10) {
+                    ce0Var2.c.setEditText((EditText) view);
+                    ce0Var2.c.setDispatchBackWhenEmpty(true);
+                    break;
+                }
+                break;
+            case 7:
+                org.telegram.ui.Components.mb0 mb0Var4 = ((rc0) obj).a;
+                f10 = z10 ? 1.0f : 0.0f;
+                mb0Var4.b(f10, f10, true);
+                break;
+            case 8:
+                ce0 ce0Var3 = ((ed0) obj).v0;
+                if (z10) {
+                    ce0Var3.c.setEditText((EditText) view);
+                    ce0Var3.c.setDispatchBackWhenEmpty(true);
+                    break;
+                }
+                break;
+            case 9:
+                org.telegram.ui.Components.mb0 mb0Var5 = ((be0) obj).e;
+                f10 = z10 ? 1.0f : 0.0f;
+                mb0Var5.b(f10, f10, true);
+                break;
+            case 10:
+                org.telegram.ui.Components.mb0 mb0Var6 = ((PasscodeActivity) obj).f;
+                f10 = z10 ? 1.0f : 0.0f;
+                mb0Var6.b(f10, f10, true);
+                break;
+            case 11:
+                w71 w71Var = (w71) obj;
+                if (!z10) {
+                    w71Var.d.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131744185, null)));
+                    break;
+                } else {
+                    w71Var.d.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131744184, null)));
+                    break;
+                }
+            default:
+                org.telegram.ui.Components.mb0 mb0Var7 = ((TwoStepVerificationActivity) obj).w;
+                f10 = z10 ? 1.0f : 0.0f;
+                mb0Var7.b(f10, f10, true);
                 break;
         }
     }

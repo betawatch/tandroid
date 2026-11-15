@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n6 {
     public static final String[] e = {"/dev/socket/genyd", "/dev/socket/baseband_genyd"};
@@ -24,7 +24,7 @@ public final class n6 {
     public static final String[] i = {"fstab.andy", "ueventd.andy.rc"};
     public static final String[] j = {"fstab.nox", "init.nox.rc", "ueventd.nox.rc", "/BigNoxGameHD", "/YSLauncher"};
     public static final String[] k = {"/Android/data/com.bluestacks.home", "/Android/data/com.bluestacks.settings"};
-    public static final m6[] l = {new m6(0, "init.svc.qemud", null), new m6(0, "init.svc.qemu-props", null), new m6(0, "qemu.hw.mainkeys", null), new m6(0, "qemu.sf.fake_camera", null), new m6(0, "qemu.sf.lcd_density", null), new m6(0, "ro.bootloader", "unknown"), new m6(0, "ro.bootmode", "unknown"), new m6(0, "ro.hardware", "goldfish"), new m6(0, "ro.kernel.android.qemud", null), new m6(0, "ro.kernel.qemu.gles", null), new m6(0, "ro.kernel.qemu", "1"), new m6(0, "ro.product.device", "generic"), new m6(0, "ro.product.model", "sdk"), new m6(0, "ro.product.name", "sdk"), new m6(0, "ro.serialno", null)};
+    public static final f5.a[] l;
     public static n6 m;
     public static HashMap n;
     public boolean a;
@@ -32,11 +32,19 @@ public final class n6 {
     public final Object c;
     public final Object d;
 
-    public n6(Window window, j9 j9Var) {
+    static {
+        int i7 = 2;
+        String str = null;
+        String str2 = "unknown";
+        String str3 = "sdk";
+        l = new f5.a[]{new f5.a(i7, "init.svc.qemud", str), new f5.a(i7, "init.svc.qemu-props", str), new f5.a(i7, "qemu.hw.mainkeys", str), new f5.a(i7, "qemu.sf.fake_camera", str), new f5.a(i7, "qemu.sf.lcd_density", str), new f5.a(i7, "ro.bootloader", str2), new f5.a(i7, "ro.bootmode", str2), new f5.a(i7, "ro.hardware", "goldfish"), new f5.a(i7, "ro.kernel.android.qemud", str), new f5.a(i7, "ro.kernel.qemu.gles", str), new f5.a(i7, "ro.kernel.qemu", "1"), new f5.a(i7, "ro.product.device", "generic"), new f5.a(i7, "ro.product.model", str3), new f5.a(i7, "ro.product.name", str3), new f5.a(i7, "ro.serialno", null)};
+    }
+
+    public n6(Window window, i9 i9Var) {
         this.a = false;
         this.b = false;
         this.c = window;
-        this.d = j9Var;
+        this.d = i9Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:41:0x00db  */
@@ -44,8 +52,8 @@ public final class n6 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static boolean c() {
-        boolean z9;
-        boolean z10 = false;
+        boolean z10;
+        boolean z11 = false;
         if (!Build.BOARD.toLowerCase().contains("nox") && !Build.BOOTLOADER.toLowerCase().contains("nox") && !Build.FINGERPRINT.startsWith("generic")) {
             String str = Build.MODEL;
             if (!str.toLowerCase().contains("google_sdk") && !str.toLowerCase().contains("droid4x") && !str.toLowerCase().contains("emulator") && !str.contains("Android SDK built for x86") && !Build.MANUFACTURER.toLowerCase().contains("genymotion")) {
@@ -53,14 +61,14 @@ public final class n6 {
                 if (!str2.toLowerCase().contains("goldfish") && !str2.toLowerCase().contains("vbox86") && !str2.toLowerCase().contains("android_x86") && !str2.toLowerCase().contains("nox") && !str2.toLowerCase().contains("ranchu")) {
                     String str3 = Build.PRODUCT;
                     if (!str3.equals("sdk") && !str3.equals("google_sdk") && !str3.equals("sdk_x86") && !str3.equals("vbox86p") && !str3.toLowerCase().contains("nox") && !Build.SERIAL.toLowerCase().contains("nox")) {
-                        z9 = false;
-                        if (!z9) {
+                        z10 = false;
+                        if (!z10) {
                             if (Build.BRAND.startsWith("generic") && Build.DEVICE.startsWith("generic")) {
-                                z10 = true;
+                                z11 = true;
                             }
-                            boolean z11 = z9 | z10;
-                            if (!z11) {
-                                return z11 | "google_sdk".equals(Build.PRODUCT);
+                            boolean z12 = z10 | z11;
+                            if (!z12) {
+                                return z12 | "google_sdk".equals(Build.PRODUCT);
                             }
                         }
                         return true;
@@ -68,8 +76,8 @@ public final class n6 {
                 }
             }
         }
-        z9 = true;
-        if (!z9) {
+        z10 = true;
+        if (!z10) {
         }
         return true;
     }
@@ -145,15 +153,15 @@ public final class n6 {
         }
         int i10 = 0;
         for (int i11 = 0; i11 < 15; i11++) {
-            m6 m6Var = l[i11];
-            String str3 = m6Var.b;
+            f5.a aVar = l[i11];
+            String str3 = aVar.b;
             try {
                 Class<?> loadClass = context.getClassLoader().loadClass("android.os.SystemProperties");
                 str = (String) loadClass.getMethod("get", String.class).invoke(loadClass, str3);
             } catch (Exception unused2) {
                 str = null;
             }
-            String str4 = m6Var.c;
+            String str4 = aVar.c;
             if (str4 == null && str != null) {
                 i10++;
             }
@@ -192,7 +200,7 @@ public final class n6 {
         if (this.a) {
             return this.b;
         }
-        boolean z9 = true;
+        boolean z10 = true;
         try {
             this.a = true;
             if (!this.b) {
@@ -216,8 +224,8 @@ public final class n6 {
                         }
                     }
                 }
-                z9 = false;
-                this.b = z9;
+                z10 = false;
+                this.b = z10;
             }
             if (!this.b) {
                 this.b = b6.b();
@@ -229,10 +237,10 @@ public final class n6 {
     }
 
     public void g() {
-        boolean z9 = this.a && ((j9) this.d).run();
-        if (z9 != this.b) {
-            this.b = z9;
-            int i7 = z9 ? 1 : -1;
+        boolean z10 = this.a && ((i9) this.d).run();
+        if (z10 != this.b) {
+            this.b = z10;
+            int i7 = z10 ? 1 : -1;
             Window window = (Window) this.c;
             if (n == null) {
                 n = new HashMap();

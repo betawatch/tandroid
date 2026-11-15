@@ -10,7 +10,7 @@ import android.view.Window;
 import android.window.OnBackInvokedDispatcher;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class m extends Dialog implements androidx.lifecycle.t, w4.e {
     public androidx.lifecycle.v a;
@@ -20,7 +20,7 @@ public class m extends Dialog implements androidx.lifecycle.t, w4.e {
     public m(Context context, int i7) {
         super(context, i7);
         this.b = new n(this);
-        this.c = new w(new a3.f(this, 7));
+        this.c = new w(new a3.f(this, 10));
     }
 
     public static void a(m mVar) {
@@ -53,8 +53,8 @@ public class m extends Dialog implements androidx.lifecycle.t, w4.e {
     }
 
     @Override // w4.e
-    public final m.q g() {
-        return (m.q) this.b.d;
+    public final m.p g() {
+        return (m.p) this.b.d;
     }
 
     @Override // androidx.lifecycle.t
@@ -84,7 +84,7 @@ public class m extends Dialog implements androidx.lifecycle.t, w4.e {
             wVar.e = onBackInvokedDispatcher;
             wVar.c(wVar.g);
         }
-        this.b.e(bundle);
+        this.b.f(bundle);
         androidx.lifecycle.v vVar = this.a;
         if (vVar == null) {
             vVar = new androidx.lifecycle.v(this);
@@ -97,7 +97,7 @@ public class m extends Dialog implements androidx.lifecycle.t, w4.e {
     public final Bundle onSaveInstanceState() {
         Bundle onSaveInstanceState = super.onSaveInstanceState();
         kotlin.jvm.internal.j.d(onSaveInstanceState, "super.onSaveInstanceState()");
-        this.b.f(onSaveInstanceState);
+        this.b.g(onSaveInstanceState);
         return onSaveInstanceState;
     }
 

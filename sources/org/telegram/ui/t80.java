@@ -1,18 +1,89 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.window.BackEvent;
+import android.window.OnBackAnimationCallback;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class t80 implements View.OnLayoutChangeListener {
-    public boolean a;
+public final class t80 implements OnBackAnimationCallback {
+    public boolean b;
+    public boolean e;
+    public final /* synthetic */ LaunchActivity f;
+    public final h2.f a = new h2.f((int[]) null);
+    public boolean c = false;
+    public boolean d = false;
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
-        boolean z9 = i12 - i10 > i11 - i7;
-        if (z9 != this.a) {
-            org.telegram.messenger.g0.h3(new org.telegram.ui.Components.us(this, 22));
-            this.a = z9;
+    public t80(LaunchActivity launchActivity) {
+        this.f = launchActivity;
+    }
+
+    public final void onBackCancelled() {
+        ActionBarLayout actionBarLayout;
+        this.c = false;
+        this.d = false;
+        if (this.b) {
+            this.a.e();
+            this.b = false;
         }
+        if (org.telegram.messenger.g0.Q1() || (actionBarLayout = this.f.p0) == null || !actionBarLayout.j1) {
+            return;
+        }
+        actionBarLayout.j1 = false;
+        actionBarLayout.e(true);
+    }
+
+    public final void onBackInvoked() {
+        this.d = true;
+        if (this.b) {
+            this.a.e();
+            this.b = false;
+        }
+        if (org.telegram.messenger.g0.Q1()) {
+            this.f.onBackPressed();
+            return;
+        }
+        if (this.f.d0(true)) {
+            LaunchActivity launchActivity = this.f;
+            ActionBarLayout actionBarLayout = launchActivity.p0;
+            if (actionBarLayout == null) {
+                launchActivity.onBackPressed();
+            } else if (!actionBarLayout.j1) {
+                actionBarLayout.I();
+            } else {
+                actionBarLayout.j1 = false;
+                actionBarLayout.e(false);
+            }
+        }
+    }
+
+    public final void onBackProgressed(BackEvent backEvent) {
+        ActionBarLayout actionBarLayout;
+        ActionBarLayout actionBarLayout2;
+        if (this.c && this.d) {
+            return;
+        }
+        float progress = backEvent.getProgress();
+        if (!this.e && progress > 0.015f) {
+            this.e = true;
+            if (!org.telegram.messenger.g0.Q1() && this.f.d0(false) && (actionBarLayout2 = this.f.p0) != null && actionBarLayout2.J(backEvent.getTouchX(), backEvent.getTouchY()) && !this.b) {
+                this.a.d();
+                this.b = true;
+            }
+        }
+        float max = Math.max(0.0f, progress - 0.015f) / 0.985f;
+        if (org.telegram.messenger.g0.Q1() || (actionBarLayout = this.f.p0) == null || !actionBarLayout.j1) {
+            return;
+        }
+        float interpolation = org.telegram.ui.Components.er.l.getInterpolation(max) * org.telegram.messenger.g0.L(56.0f);
+        actionBarLayout.l1 = max > 0.0f;
+        actionBarLayout.s.setTranslationX(interpolation);
+        actionBarLayout.setInnerTranslationX(interpolation);
+    }
+
+    public final void onBackStarted(BackEvent backEvent) {
+        this.c = true;
+        this.d = false;
+        this.e = false;
     }
 }

@@ -17,13 +17,13 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Xml;
-import c8.o0;
+import c8.p0;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e extends h implements Animatable {
     public final Context d;
@@ -293,12 +293,12 @@ public final class e extends h implements Animatable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAutoMirrored(boolean z9) {
+    public final void setAutoMirrored(boolean z10) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
-            drawable.setAutoMirrored(z9);
+            drawable.setAutoMirrored(z10);
         } else {
-            this.c.a.setAutoMirrored(z9);
+            this.c.a.setAutoMirrored(z10);
         }
     }
 
@@ -316,7 +316,7 @@ public final class e extends h implements Animatable {
     public final void setTint(int i7) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
-            o0.a(i7, drawable);
+            p0.a(i7, drawable);
         } else {
             this.c.a.setTint(i7);
         }
@@ -343,13 +343,13 @@ public final class e extends h implements Animatable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final boolean setVisible(boolean z9, boolean z10) {
+    public final boolean setVisible(boolean z10, boolean z11) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
-            return drawable.setVisible(z9, z10);
+            return drawable.setVisible(z10, z11);
         }
-        this.c.a.setVisible(z9, z10);
-        return super.setVisible(z9, z10);
+        this.c.a.setVisible(z10, z11);
+        return super.setVisible(z10, z11);
     }
 
     @Override // android.graphics.drawable.Animatable

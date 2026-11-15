@@ -1,26 +1,28 @@
 package n2;
 
-import android.media.AudioTrack;
-import android.media.AudioTrack$StreamEventCallback;
+import p4.g1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class d0 extends AudioTrack$StreamEventCallback {
-    public final /* synthetic */ e0 a;
+public final /* synthetic */ class d0 implements h2.o, h2.j {
+    public final /* synthetic */ long a;
 
-    public d0(e0 e0Var) {
-        this.a = e0Var;
+    public /* synthetic */ d0(long j3) {
+        this.a = j3;
     }
 
-    public final void onDataRequest(AudioTrack audioTrack, int i7) {
-        this.a.c.j.e(-1, new m2.d(25));
+    @Override // h2.j
+    public void accept(Object obj) {
+        ((g1) obj).c(this.a);
     }
 
-    public final void onPresentationEnded(AudioTrack audioTrack) {
-        this.a.c.j.e(-1, new m2.d(26));
-    }
-
-    public final void onTearDown(AudioTrack audioTrack) {
-        this.a.c.j.e(-1, new m2.d(25));
+    @Override // h2.o
+    public void invoke(Object obj) {
+        v vVar;
+        n0 n0Var = (n0) obj;
+        r0 r0Var = n0Var.b;
+        if (n0Var.equals(r0Var.j) && (vVar = r0Var.n) != null) {
+            vVar.b(this.a);
+        }
     }
 }

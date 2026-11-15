@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class q1 {
     public static final q1 J = new q1(new p1());
@@ -85,7 +85,7 @@ public class q1 {
     public final h9.i0 z;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         K = Integer.toString(1, 36);
         L = Integer.toString(2, 36);
         M = Integer.toString(3, 36);
@@ -260,7 +260,7 @@ public class q1 {
         p1Var.F = bundle.getBoolean(e0, q1Var.F);
         p1Var.G = bundle.getBoolean(f0, q1Var.G);
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(g0);
-        h9.t1 b10 = parcelableArrayList == null ? h9.t1.e : h2.e.b(new di.a1(9), parcelableArrayList);
+        h9.s1 b10 = parcelableArrayList == null ? h9.s1.e : h2.e.b(new di.o(12), parcelableArrayList);
         p1Var.H = new HashMap();
         for (int i10 = 0; i10 < b10.d; i10++) {
             n1 n1Var = (n1) b10.get(i10);
@@ -317,14 +317,14 @@ public class q1 {
         bundle.putBoolean(O, this.D);
         o1 o1Var = this.w;
         bundle.putInt(k0, o1Var.a);
-        boolean z9 = o1Var.b;
-        bundle.putBoolean(l0, z9);
-        boolean z10 = o1Var.c;
-        bundle.putBoolean(m0, z10);
+        boolean z10 = o1Var.b;
+        bundle.putBoolean(l0, z10);
+        boolean z11 = o1Var.c;
+        bundle.putBoolean(m0, z11);
         Bundle bundle2 = new Bundle();
         bundle2.putInt(o1.e, o1Var.a);
-        bundle2.putBoolean(o1.f, z9);
-        bundle2.putBoolean(o1.g, z10);
+        bundle2.putBoolean(o1.f, z10);
+        bundle2.putBoolean(o1.g, z11);
         bundle.putBundle(n0, bundle2);
         bundle.putBoolean(o0, this.E);
         bundle.putBoolean(e0, this.F);
@@ -335,11 +335,11 @@ public class q1 {
             n1Var.getClass();
             Bundle bundle3 = new Bundle();
             bundle3.putBundle(n1.c, n1Var.a.c());
-            bundle3.putIntArray(n1.d, c8.e1.f(n1Var.b));
+            bundle3.putIntArray(n1.d, c8.g1.f(n1Var.b));
             arrayList.add(bundle3);
         }
         bundle.putParcelableArrayList(g0, arrayList);
-        bundle.putIntArray(h0, c8.e1.f(this.I));
+        bundle.putIntArray(h0, c8.g1.f(this.I));
         return bundle;
     }
 

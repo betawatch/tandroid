@@ -1,122 +1,48 @@
 package tg;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.view.ViewGroup;
-import c8.ha;
-import fi.sb;
-import org.telegram.ui.Components.ki0;
+import android.graphics.Insets;
+import android.graphics.Rect;
+import android.os.Build;
+import android.view.View;
+import android.view.WindowInsets;
+import org.telegram.ui.Components.m01;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l2 extends j {
-    public final m0 q0;
-    public boolean r0;
-    public int s0;
-    public int t0;
-    public final sb u0;
+public final class l2 implements View.OnApplyWindowInsetsListener {
+    public final /* synthetic */ m2 a;
 
-    public l2(Context context, PointF pointF, int i7, sb sbVar, float f10, int i10) {
-        super(context, pointF);
-        m0 m0Var = new m0(context, f10);
-        this.q0 = m0Var;
-        m0Var.setMaxWidth(i10);
-        m0Var.e(0, this.s0);
-        this.u0 = sbVar;
-        String str = sbVar.c;
-        String a10 = sbVar.a();
-        m0Var.d(i7, str);
-        m0Var.setText(a10);
-        m();
-        addView(m0Var, ha.e(-2, -2, 51));
-        setClipChildren(false);
-        setClipToPadding(false);
-        k();
+    public l2(m2 m2Var) {
+        this.a = m2Var;
     }
 
-    @Override // tg.j
-    public final i a() {
-        return new j0(this, getContext());
-    }
-
-    public int getColor() {
-        return this.s0;
-    }
-
-    @Override // tg.j
-    public float getMaxScale() {
-        return 1.5f;
-    }
-
-    @Override // tg.j
-    public ki0 getSelectionBounds() {
-        ViewGroup viewGroup = (ViewGroup) getParent();
-        if (viewGroup == null) {
-            return new ki0();
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+        WindowInsets windowInsets2;
+        int i7;
+        int i10;
+        int i11;
+        int i12;
+        m2 m2Var = this.a;
+        m01 m01Var = m2Var.b;
+        Rect rect = m2Var.h;
+        int i13 = Build.VERSION.SDK_INT;
+        if (i13 >= 30) {
+            Insets insets = windowInsets.getInsets(647);
+            i7 = insets.left;
+            i10 = insets.top;
+            i11 = insets.right;
+            i12 = insets.bottom;
+            rect.set(i7, i10, i11, i12);
+        } else {
+            rect.set(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
         }
-        float scaleX = viewGroup.getScaleX();
-        float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
-        float L2 = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = org.telegram.messenger.camera.q.x(L, 2.0f, getPositionX(), scaleX);
-        return new ki0(x10, org.telegram.messenger.camera.q.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
-    }
-
-    @Override // tg.j
-    public float getStickyPaddingBottom() {
-        return this.q0.J;
-    }
-
-    @Override // tg.j
-    public float getStickyPaddingLeft() {
-        return this.q0.I;
-    }
-
-    @Override // tg.j
-    public float getStickyPaddingRight() {
-        return this.q0.I;
-    }
-
-    @Override // tg.j
-    public float getStickyPaddingTop() {
-        return this.q0.J;
-    }
-
-    public int getType() {
-        return this.t0;
-    }
-
-    public int getTypesCount() {
-        return this.q0.getTypesCount() - (!this.r0 ? 1 : 0);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        k();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        k();
-    }
-
-    public void setColor(int i7) {
-        this.r0 = true;
-        this.s0 = i7;
-    }
-
-    @Override // tg.j
-    public void setIsVideo(boolean z9) {
-        this.q0.setIsVideo(true);
-    }
-
-    public void setMaxWidth(int i7) {
-        this.q0.setMaxWidth(i7);
-    }
-
-    public void setType(int i7) {
-        this.t0 = i7;
-        this.q0.e(i7, this.s0);
+        m01Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
+        m01Var.requestLayout();
+        if (i13 < 30) {
+            return windowInsets.consumeSystemWindowInsets();
+        }
+        windowInsets2 = WindowInsets.CONSUMED;
+        return windowInsets2;
     }
 }

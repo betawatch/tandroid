@@ -1,95 +1,202 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class y8 extends View {
-    public final x8 a;
-    public ug.y0 b;
-    public my0 c;
-    public Paint d;
+public final class y8 extends Drawable {
+    public final View a;
+    public final int b;
+    public boolean d;
+    public final int e;
+    public final int f;
+    public final float g;
+    public final te.h c = new te.h(new org.telegram.messenger.ou(this, 4), er.h, 380);
+    public final ArrayList h = new ArrayList();
+    public int i = org.telegram.messenger.ns.e4;
 
-    public y8(Context context, boolean z9) {
-        super(context);
-        this.a = new x8(this, z9);
+    public y8(int i7, View view, int i10, int i11, float f10) {
+        this.b = i7;
+        this.a = view;
+        this.e = i10;
+        this.f = i11;
+        this.g = f10;
     }
 
-    public final void a(boolean z9) {
-        this.a.a(z9, true);
-    }
-
-    public final void b(int i7, int i10, TLObject tLObject) {
-        this.a.j(i7, i10, tLObject);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.e();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.f();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        this.a.g(canvas);
-        if (this.c != null) {
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(getWidth() - org.telegram.messenger.g0.L(22.0f), getHeight() - org.telegram.messenger.g0.L(22.0f), getWidth() - org.telegram.messenger.g0.L(0.0f), getHeight() - org.telegram.messenger.g0.L(0.0f));
-            this.b.e(rectF);
-            canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) + org.telegram.messenger.g0.L(1.33f), this.d);
-            canvas.drawCircle(rectF.centerX(), rectF.centerY(), rectF.width() / 2.0f, this.b.f);
-            this.c.c(rectF.centerX() - (this.c.c / 2.0f), rectF.centerY(), 1.0f, -1, canvas);
+    public final void a() {
+        if (this.d) {
+            return;
+        }
+        this.d = true;
+        ArrayList arrayList = this.h;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            x8 x8Var = (x8) obj;
+            if (x8Var.c != 0 && !x8Var.d) {
+                x8Var.d = true;
+                x8Var.a.P();
+            }
         }
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        int measuredWidth = getMeasuredWidth();
-        x8 x8Var = this.a;
-        x8Var.p = measuredWidth;
-        x8Var.o = getMeasuredHeight();
+    public final void b() {
+        if (this.d) {
+            this.d = false;
+            ArrayList arrayList = this.h;
+            int size = arrayList.size();
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
+                x8 x8Var = (x8) obj;
+                if (x8Var.d) {
+                    x8Var.d = false;
+                    x8Var.a.R();
+                }
+            }
+        }
     }
 
-    public void setAvatarsTextSize(int i7) {
-        this.a.h(i7);
+    public final void c(Canvas canvas) {
+        Rect bounds = getBounds();
+        if (bounds.isEmpty() || this.i == 0) {
+            return;
+        }
+        float f10 = bounds.left;
+        float f11 = bounds.top;
+        te.h hVar = this.c;
+        canvas.saveLayer(f10, f11, f10 + hVar.d.f.a, f11 + this.e, null);
+        for (int size = hVar.b.size() - 1; size >= 0; size--) {
+            te.e i7 = hVar.i(size);
+            RectF b10 = i7.b();
+            Object obj = i7.a;
+            float f12 = i7.f.a;
+            float c10 = i7.c();
+            float f13 = b10.left + f12;
+            float width = b10.width() - f12;
+            float f14 = f10 + f13;
+            float f15 = width / 2.0f;
+            float f16 = f14 + f15;
+            float f17 = f11 + f15;
+            canvas.save();
+            canvas.scale(c10, c10, f16, f17);
+            canvas.drawCircle(f16, f17, f15 + this.g, org.telegram.ui.ActionBar.j6.Fm);
+            x8 x8Var = (x8) obj;
+            x8Var.a.y0(f14, f11, width, width);
+            x8Var.a.setAlpha((this.i / 255.0f) * i7.c());
+            x8Var.a.h(canvas, null);
+            canvas.restore();
+        }
+        canvas.restore();
     }
 
-    public void setCentered(boolean z9) {
-        this.a.l = z9;
+    public final void d(List list, boolean z10) {
+        x8 x8Var;
+        te.h hVar = this.c;
+        if (list == null || list.isEmpty()) {
+            hVar.m(null, z10);
+            return;
+        }
+        if (!z10) {
+            hVar.m(null, false);
+        }
+        ArrayList arrayList = new ArrayList(list.size());
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            long o4 = org.telegram.messenger.m5.o((TLRPC.Peer) it.next());
+            ArrayList arrayList2 = this.h;
+            int size = arrayList2.size();
+            int i7 = 0;
+            while (true) {
+                if (i7 >= size) {
+                    x8Var = null;
+                    break;
+                }
+                Object obj = arrayList2.get(i7);
+                i7++;
+                x8Var = (x8) obj;
+                if (x8Var.c == o4) {
+                    break;
+                }
+            }
+            if (x8Var == null) {
+                int size2 = arrayList2.size();
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= size2) {
+                        x8Var = null;
+                        break;
+                    }
+                    Object obj2 = arrayList2.get(i10);
+                    i10++;
+                    x8Var = (x8) obj2;
+                    if (x8Var.c == 0) {
+                        break;
+                    }
+                }
+            }
+            if (x8Var == null) {
+                x8Var = new x8(this, this.a);
+                arrayList2.add(x8Var);
+            }
+            x8 x8Var2 = x8Var;
+            ImageReceiver imageReceiver = x8Var2.a;
+            t8 t8Var = x8Var2.b;
+            if (x8Var2.c != o4) {
+                x8Var2.c = o4;
+                TLObject e22 = org.telegram.messenger.np.s1(this.b).e2(o4);
+                if (e22 != null) {
+                    t8Var.p(e22);
+                    imageReceiver.i0(e22, t8Var, null);
+                } else {
+                    t8Var.k(o4, "", "", null);
+                    imageReceiver.f();
+                }
+            }
+            arrayList.add(x8Var2);
+            if (this.d && !x8Var2.d) {
+                x8Var2.d = true;
+                imageReceiver.P();
+            }
+        }
+        hVar.m(arrayList, z10);
     }
 
-    public void setCount(int i7) {
-        this.a.i(i7);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        c(canvas);
     }
 
-    public void setDelegate(Runnable runnable) {
-        this.a.j = runnable;
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.i;
     }
 
-    public void setSize(int i7) {
-        this.a.s = i7;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
     }
 
-    public void setStepFactor(float f10) {
-        this.a.t = f10;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.i = i7;
     }
 
-    public void setStyle(int i7) {
-        x8 x8Var = this.a;
-        x8Var.k = i7;
-        x8Var.d();
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

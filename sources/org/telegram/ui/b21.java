@@ -1,39 +1,21 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
 import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class b21 extends View {
-    public final Paint a;
-    public int b;
-    public LinearGradient c;
-    public final /* synthetic */ d21 d;
+public final class b21 implements View.OnClickListener {
+    public final /* synthetic */ TLRPC.TL_authorization a;
+    public final /* synthetic */ i21 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b21(d21 d21Var, Context context) {
-        super(context);
-        this.d = d21Var;
-        this.a = new Paint(1);
-        this.b = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, d21Var.I0);
-        this.c = new LinearGradient(0.0f, 0.0f, 0.0f, org.telegram.messenger.g0.L(68.0f), new int[]{org.telegram.ui.ActionBar.m6.r1(0.0f, this.b), this.b}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
+    public b21(i21 i21Var, TLRPC.TL_authorization tL_authorization) {
+        this.b = i21Var;
+        this.a = tL_authorization;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, this.d.I0);
-        if (w02 != this.b) {
-            this.b = w02;
-            this.c = new LinearGradient(0.0f, 0.0f, 0.0f, org.telegram.messenger.g0.L(68.0f), new int[]{org.telegram.ui.ActionBar.m6.r1(0.0f, w02), w02}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
-        }
-        LinearGradient linearGradient = this.c;
-        Paint paint = this.a;
-        paint.setShader(linearGradient);
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        i21.I0(this.b, this.a.country);
     }
 }

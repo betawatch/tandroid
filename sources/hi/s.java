@@ -1,15 +1,23 @@
 package hi;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
 public final class s {
-    public boolean a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public String e;
-    public long f;
-    public int g;
-    public int h;
-    public String i;
+    public final t a;
+    public final int b;
+    public final int c;
+
+    public s(t tVar, int i7, int i10) {
+        this.a = tVar;
+        this.b = i7;
+        this.c = i10;
+    }
+
+    public final float a(float f10) {
+        return (f10 / this.a.d[this.c]) * this.b;
+    }
+
+    public final float b(float f10) {
+        return (f10 / this.a.d[this.c]) * (this.b + 1);
+    }
 }

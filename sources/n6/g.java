@@ -13,10 +13,10 @@ import com.google.android.gms.common.GooglePlayServicesMissingManifestValueExcep
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class g {
     public static boolean b = false;
@@ -61,7 +61,7 @@ public abstract class g {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static int b(Context context, int i7) {
-        boolean z9;
+        boolean z10;
         String packageName;
         PackageInfo packageInfo;
         PackageInfo packageInfo2;
@@ -95,7 +95,7 @@ public abstract class g {
             }
             if (i10 != 12451000) {
                 int i11 = e.a;
-                StringBuilder sb2 = new StringBuilder(String.valueOf(i11).length() + qs.p1 + String.valueOf(i10).length() + qs.Y2);
+                StringBuilder sb2 = new StringBuilder(String.valueOf(i11).length() + ns.p1 + String.valueOf(i10).length() + ns.Y2);
                 sb2.append("The meta-data tag in your app's AndroidManifest.xml does not have the right value.  Expected ");
                 sb2.append(i11);
                 sb2.append(" but found ");
@@ -110,11 +110,11 @@ public abstract class g {
                     x6.b.d = Boolean.valueOf(x6.b.d() ? context.getPackageManager().hasSystemFeature("android.hardware.type.embedded") : context.getPackageManager().hasSystemFeature("android.hardware.type.iot"));
                 }
                 if (!x6.b.d.booleanValue()) {
-                    z9 = true;
+                    z10 = true;
                     q6.m.b(i7 < 0);
                     packageName = context.getPackageName();
                     PackageManager packageManager = context.getPackageManager();
-                    if (z9) {
+                    if (z10) {
                         packageInfo = null;
                     } else {
                         try {
@@ -128,13 +128,13 @@ public abstract class g {
                     if (h.b(packageInfo2, true)) {
                         Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but their signature is invalid."));
                     } else {
-                        if (z9) {
+                        if (z10) {
                             q6.m.g(packageInfo);
                             if (!h.b(packageInfo, true)) {
                                 Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature is invalid."));
                             }
                         }
-                        if (!z9 || packageInfo == null || packageInfo.signatures[0].equals(packageInfo2.signatures[0])) {
+                        if (!z10 || packageInfo == null || packageInfo.signatures[0].equals(packageInfo2.signatures[0])) {
                             int i12 = packageInfo2.versionCode;
                             if ((i12 == -1 ? -1 : i12 / 1000) >= (i7 != -1 ? i7 / 1000 : -1)) {
                                 ApplicationInfo applicationInfo = packageInfo2.applicationInfo;
@@ -172,11 +172,11 @@ public abstract class g {
             Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but they are missing."));
             return 1;
         }
-        z9 = false;
+        z10 = false;
         q6.m.b(i7 < 0);
         packageName = context.getPackageName();
         PackageManager packageManager2 = context.getPackageManager();
-        if (z9) {
+        if (z10) {
         }
     }
 

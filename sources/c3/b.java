@@ -7,10 +7,9 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketTimeoutException;
 import java.util.Arrays;
-import jg.g;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final Object a = new Object();
@@ -36,7 +35,7 @@ public abstract class b {
             int i10 = 0;
             while (i7 < length) {
                 byte[] bArr2 = new byte[48];
-                DatagramPacket datagramPacket = new DatagramPacket(bArr2, 48, allByName[i7], qs.H1);
+                DatagramPacket datagramPacket = new DatagramPacket(bArr2, 48, allByName[i7], ns.H1);
                 bArr2[b11] = 27;
                 long currentTimeMillis = System.currentTimeMillis();
                 long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -106,10 +105,10 @@ public abstract class b {
             throw new IOException("SNTP: Unsynchronized server");
         }
         if (b11 != 4 && b11 != 5) {
-            throw new IOException(g.j(b11, "SNTP: Untrusted mode: "));
+            throw new IOException(i5.c.i(b11, "SNTP: Untrusted mode: "));
         }
         if (i7 == 0 || i7 > 15) {
-            throw new IOException(g.j(i7, "SNTP: Untrusted stratum: "));
+            throw new IOException(i5.c.i(i7, "SNTP: Untrusted stratum: "));
         }
         if (j3 == 0) {
             throw new IOException("SNTP: Zero transmitTime");
@@ -127,16 +126,16 @@ public abstract class b {
         int i12 = bArr[i7 + 2];
         int i13 = bArr[i7 + 3];
         if ((i10 & 128) == 128) {
-            i10 = (i10 & qs.L1) + 128;
+            i10 = (i10 & ns.L1) + 128;
         }
         if ((i11 & 128) == 128) {
-            i11 = (i11 & qs.L1) + 128;
+            i11 = (i11 & ns.L1) + 128;
         }
         if ((i12 & 128) == 128) {
-            i12 = (i12 & qs.L1) + 128;
+            i12 = (i12 & ns.L1) + 128;
         }
         if ((i13 & 128) == 128) {
-            i13 = (i13 & qs.L1) + 128;
+            i13 = (i13 & ns.L1) + 128;
         }
         return (i10 << 24) + (i11 << 16) + (i12 << 8) + i13;
     }

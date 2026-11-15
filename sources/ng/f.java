@@ -4,10 +4,10 @@ import android.animation.ValueAnimator;
 import android.graphics.Paint;
 import android.graphics.Path;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class f {
     public final mg.a a;
@@ -25,9 +25,9 @@ public class f {
     public int m;
     public boolean n;
     public float o;
-    public final h6 p;
+    public final e6 p;
 
-    public f(mg.a aVar, boolean z9, h6 h6Var) {
+    public f(mg.a aVar, boolean z10, e6 e6Var) {
         Paint paint = new Paint(1);
         this.b = paint;
         Paint paint2 = new Paint(1);
@@ -39,12 +39,12 @@ public class f {
         this.g = new Path();
         this.n = true;
         this.o = 1.0f;
-        this.p = h6Var;
+        this.p = e6Var;
         this.a = aVar;
         paint2.setStrokeWidth(g0.N(2.0f));
         Paint.Style style = Paint.Style.STROKE;
         paint2.setStyle(style);
-        if (!lg.g.A1) {
+        if (!lg.g.B1) {
             paint2.setStrokeJoin(Paint.Join.ROUND);
         }
         paint2.setColor(aVar.h);
@@ -56,19 +56,19 @@ public class f {
         paint3.setStrokeCap(Paint.Cap.ROUND);
         paint3.setColor(aVar.h);
         long[] jArr = aVar.a;
-        this.k = new float[z9 ? jArr.length * 8 : jArr.length << 2];
+        this.k = new float[z10 ? jArr.length * 8 : jArr.length << 2];
         long[] jArr2 = aVar.a;
-        this.l = new float[z9 ? jArr2.length * 8 : jArr2.length << 2];
+        this.l = new float[z10 ? jArr2.length * 8 : jArr2.length << 2];
     }
 
     public void a() {
         mg.a aVar = this.a;
         int i7 = aVar.g;
-        h6 h6Var = this.p;
-        if (i7 < 0 || !m6.f1(i7)) {
-            this.m = i0.a.h(m6.w0(m6.d6, h6Var)) < 0.5d ? aVar.i : aVar.h;
+        e6 e6Var = this.p;
+        if (i7 < 0 || !j6.f1(i7)) {
+            this.m = i0.a.h(j6.w0(j6.d6, e6Var)) < 0.5d ? aVar.i : aVar.h;
         } else {
-            this.m = m6.w0(aVar.g, h6Var);
+            this.m = j6.w0(aVar.g, e6Var);
         }
         this.c.setColor(this.m);
         this.b.setColor(this.m);

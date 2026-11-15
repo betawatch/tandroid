@@ -4,14 +4,14 @@ import cc.j;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final char[] a = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
 
-    public static void a(cc.c cVar, StringBuilder sb2, int i7, boolean z9) {
+    public static void a(cc.c cVar, StringBuilder sb2, int i7, boolean z10) {
         while (i7 > 1) {
             if (cVar.d() < 11) {
                 throw bc.c.a();
@@ -27,7 +27,7 @@ public abstract class a {
             }
             sb2.append(f(cVar.f(6)));
         }
-        if (z9) {
+        if (z10) {
             for (int length = sb2.length(); length < sb2.length(); length++) {
                 if (sb2.charAt(length) == '%') {
                     if (length < sb2.length() - 1) {
@@ -50,7 +50,7 @@ public abstract class a {
     */
     public static void b(cc.c cVar, StringBuilder sb2, int i7, cc.d dVar, ArrayList arrayList) {
         Charset forName;
-        boolean z9;
+        boolean z10;
         byte b10;
         if (i7 * 8 > cVar.d()) {
             throw bc.c.a();
@@ -62,10 +62,10 @@ public abstract class a {
         }
         if (dVar == null) {
             Charset charset = j.b;
-            boolean z10 = true;
+            boolean z11 = true;
             if (i7 <= 2 || !(((b10 = bArr[0]) == -2 && bArr[1] == -1) || (b10 == -1 && bArr[1] == -2))) {
-                boolean z11 = charset != null;
-                boolean z12 = i7 > 3 && bArr[0] == -17 && bArr[1] == -69 && bArr[2] == -65;
+                boolean z12 = charset != null;
+                boolean z13 = i7 > 3 && bArr[0] == -17 && bArr[1] == -69 && bArr[2] == -65;
                 int i12 = 0;
                 int i13 = 0;
                 int i14 = 0;
@@ -77,16 +77,16 @@ public abstract class a {
                 int i20 = 0;
                 int i21 = 0;
                 int i22 = 0;
-                boolean z13 = z11;
-                boolean z14 = true;
-                while (i14 < i7 && (z10 || z13 || z14)) {
+                boolean z14 = z12;
+                boolean z15 = true;
+                while (i14 < i7 && (z11 || z14 || z15)) {
                     Charset charset2 = charset;
                     byte b11 = bArr[i14];
-                    boolean z15 = z10;
+                    boolean z16 = z11;
                     int i23 = b11 & 255;
-                    if (z14) {
+                    if (z15) {
                         if (i15 <= 0) {
-                            z9 = z14;
+                            z10 = z15;
                             if ((b11 & 128) != 0) {
                                 if ((b11 & 64) != 0) {
                                     int i24 = i15 + 1;
@@ -108,19 +108,19 @@ public abstract class a {
                             }
                         } else if ((b11 & 128) != 0) {
                             i15--;
-                            if (z15) {
+                            if (z16) {
                                 if (i23 > 127 && i23 < 160) {
-                                    z15 = false;
+                                    z16 = false;
                                 } else if (i23 > 159 && (i23 < 192 || i23 == 215 || i23 == 247)) {
                                     i20++;
                                 }
                             }
-                            if (z13) {
+                            if (z14) {
                                 if (i16 > 0) {
                                     if (i23 >= 64 && i23 != 127 && i23 <= 252) {
                                         i16--;
                                     }
-                                    z13 = false;
+                                    z14 = false;
                                 } else {
                                     if (i23 != 128 && i23 != 160 && i23 <= 239) {
                                         if (i23 <= 160 || i23 >= 224) {
@@ -149,48 +149,48 @@ public abstract class a {
                                             i21 = 0;
                                         }
                                     }
-                                    z13 = false;
+                                    z14 = false;
                                 }
                             }
                             i14++;
                             charset = charset2;
-                            z10 = z15;
+                            z11 = z16;
                         }
-                        z14 = false;
-                        if (z15) {
+                        z15 = false;
+                        if (z16) {
                         }
-                        if (z13) {
+                        if (z14) {
                         }
                         i14++;
                         charset = charset2;
-                        z10 = z15;
+                        z11 = z16;
                     } else {
-                        z9 = z14;
+                        z10 = z15;
                     }
-                    z14 = z9;
-                    if (z15) {
+                    z15 = z10;
+                    if (z16) {
                     }
-                    if (z13) {
+                    if (z14) {
                     }
                     i14++;
                     charset = charset2;
-                    z10 = z15;
+                    z11 = z16;
                 }
                 Charset charset3 = charset;
-                boolean z16 = z10;
-                boolean z17 = z14;
-                boolean z18 = (!z17 || i15 <= 0) ? z17 : false;
-                boolean z19 = (!z13 || i16 <= 0) ? z13 : false;
-                if (!z18 || (!z12 && i17 + i18 + i19 <= 0)) {
-                    if (!z19 || (!j.d && i10 < 3 && i12 < 3)) {
-                        if (z16 && z19) {
+                boolean z17 = z11;
+                boolean z18 = z15;
+                boolean z19 = (!z18 || i15 <= 0) ? z18 : false;
+                boolean z20 = (!z14 || i16 <= 0) ? z14 : false;
+                if (!z19 || (!z13 && i17 + i18 + i19 <= 0)) {
+                    if (!z20 || (!j.d && i10 < 3 && i12 < 3)) {
+                        if (z17 && z20) {
                             if ((i10 != 2 || i13 != 2) && i20 * 10 < i7) {
                                 forName = StandardCharsets.ISO_8859_1;
                             }
-                        } else if (z16) {
+                        } else if (z17) {
                             forName = StandardCharsets.ISO_8859_1;
-                        } else if (!z19) {
-                            forName = z18 ? StandardCharsets.UTF_8 : j.a;
+                        } else if (!z20) {
+                            forName = z19 ? StandardCharsets.UTF_8 : j.a;
                         }
                     }
                     forName = charset3;
@@ -220,8 +220,8 @@ public abstract class a {
             int f10 = cVar.f(13);
             int i11 = (f10 % 96) | ((f10 / 96) << 8);
             int i12 = i11 + (i11 < 2560 ? 41377 : 42657);
-            bArr[i10] = (byte) ((i12 >> 8) & qs.e4);
-            bArr[i10 + 1] = (byte) (i12 & qs.e4);
+            bArr[i10] = (byte) ((i12 >> 8) & ns.e4);
+            bArr[i10 + 1] = (byte) (i12 & ns.e4);
             i10 += 2;
             i7--;
         }
@@ -239,7 +239,7 @@ public abstract class a {
         int i10 = 0;
         while (i7 > 0) {
             int f10 = cVar.f(13);
-            int i11 = (f10 % qs.W2) | ((f10 / qs.W2) << 8);
+            int i11 = (f10 % ns.W2) | ((f10 / ns.W2) << 8);
             int i12 = i11 + (i11 < 7936 ? 33088 : 49472);
             bArr[i10] = (byte) (i12 >> 8);
             bArr[i10 + 1] = (byte) i12;

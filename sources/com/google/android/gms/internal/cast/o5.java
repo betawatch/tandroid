@@ -7,15 +7,15 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o5 extends r4 implements RandomAccess, f5, z5 {
     public static final o5 d = new o5(new long[0], 0, false);
     public long[] b;
     public int c;
 
-    public o5(long[] jArr, int i7, boolean z9) {
-        super(z9);
+    public o5(long[] jArr, int i7, boolean z10) {
+        super(z10);
         this.b = jArr;
         this.c = i7;
     }

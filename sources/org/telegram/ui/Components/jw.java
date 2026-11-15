@@ -1,45 +1,30 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import j$.util.Objects;
+import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class jw extends fy {
-    public final /* synthetic */ gy d;
+public final class jw extends v4.c0 {
+    public final /* synthetic */ int r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jw(gy gyVar) {
-        super(gyVar, 1);
-        this.d = gyVar;
+    public jw(Context context, int i7) {
+        super(context);
+        this.r = i7;
     }
 
-    @Override // org.telegram.ui.Components.fy, v4.s0
-    public final void a(RecyclerView recyclerView, int i7) {
-        if (i7 == 0) {
-            this.d.f0 = false;
-        }
-        super.a(recyclerView, i7);
+    @Override // v4.c0
+    public final int i(int i7, int i10, int i11, int i12, int i13) {
+        return super.i(i7, i10, i11, i12, i13) + this.r;
     }
 
-    @Override // org.telegram.ui.Components.fy, v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        gy gyVar = this.d;
-        gw gwVar = gyVar.Q;
-        gyVar.U(gwVar.I0());
-        super.b(recyclerView, i7, i10);
-        gx gxVar = gyVar.S;
-        if (gxVar == null || gyVar.P.getAdapter() != gxVar) {
-            return;
-        }
-        gx gxVar2 = gxVar.y.a;
-        if (gxVar2.F.V.F || gxVar2.E) {
-            return;
-        }
-        if (gwVar.N0() + 20 > gxVar.b()) {
-            fx fxVar = gxVar.y;
-            Objects.requireNonNull(fxVar);
-            org.telegram.messenger.g0.h3(new ov(fxVar, 1));
-        }
+    @Override // v4.c0
+    public final int m(int i7) {
+        return super.m(i7) * 16;
+    }
+
+    @Override // v4.c0
+    public final int p() {
+        return -1;
     }
 }

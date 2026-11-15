@@ -1,13 +1,12 @@
 package m4;
 
-import a8.ia;
+import a8.ja;
 import e2.s0;
-import f3.j0;
+import f3.i0;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h implements i {
     public final /* synthetic */ int a;
@@ -21,22 +20,35 @@ public final class h implements i {
     public h(List list) {
         this.a = 0;
         this.f = list;
-        this.g = new j0[list.size()];
+        this.g = new i0[list.size()];
         this.c = -9223372036854775807L;
     }
 
     @Override // m4.i
     public final void c(h2.x xVar) {
-        boolean z9;
         boolean z10;
+        boolean z11;
         switch (this.a) {
             case 0:
                 if (this.b) {
                     if (this.d == 2) {
                         if (xVar.a() == 0) {
-                            z10 = false;
+                            z11 = false;
                         } else {
                             if (xVar.A() != 32) {
+                                this.b = false;
+                            }
+                            this.d--;
+                            z11 = this.b;
+                        }
+                        if (!z11) {
+                        }
+                    }
+                    if (this.d == 1) {
+                        if (xVar.a() == 0) {
+                            z10 = false;
+                        } else {
+                            if (xVar.A() != 0) {
                                 this.b = false;
                             }
                             this.d--;
@@ -45,24 +57,11 @@ public final class h implements i {
                         if (!z10) {
                         }
                     }
-                    if (this.d == 1) {
-                        if (xVar.a() == 0) {
-                            z9 = false;
-                        } else {
-                            if (xVar.A() != 0) {
-                                this.b = false;
-                            }
-                            this.d--;
-                            z9 = this.b;
-                        }
-                        if (!z9) {
-                        }
-                    }
                     int i7 = xVar.b;
                     int a10 = xVar.a();
-                    for (j0 j0Var : (j0[]) this.g) {
+                    for (i0 i0Var : (i0[]) this.g) {
                         xVar.N(i7);
-                        j0Var.b(a10, xVar);
+                        i0Var.b(a10, xVar);
                     }
                     this.e += a10;
                     break;
@@ -70,7 +69,7 @@ public final class h implements i {
                 break;
             default:
                 h2.x xVar2 = (h2.x) this.f;
-                ((j0) this.g).getClass();
+                ((i0) this.g).getClass();
                 if (this.b) {
                     int a11 = xVar.a();
                     int i10 = this.e;
@@ -90,7 +89,7 @@ public final class h implements i {
                         }
                     }
                     int min2 = Math.min(a11, this.d - this.e);
-                    ((j0) this.g).b(min2, xVar);
+                    ((i0) this.g).b(min2, xVar);
                     this.e += min2;
                     break;
                 }
@@ -113,24 +112,24 @@ public final class h implements i {
     }
 
     @Override // m4.i
-    public final void e(boolean z9) {
+    public final void e(boolean z10) {
         int i7;
         switch (this.a) {
             case 0:
                 if (this.b) {
-                    ia.p(this.c != -9223372036854775807L);
-                    for (j0 j0Var : (j0[]) this.g) {
-                        j0Var.c(this.c, 1, this.e, 0, null);
+                    ja.p(this.c != -9223372036854775807L);
+                    for (i0 i0Var : (i0[]) this.g) {
+                        i0Var.c(this.c, 1, this.e, 0, null);
                     }
                     this.b = false;
                     break;
                 }
                 break;
             default:
-                ((j0) this.g).getClass();
+                ((i0) this.g).getClass();
                 if (this.b && (i7 = this.d) != 0 && this.e == i7) {
-                    ia.p(this.c != -9223372036854775807L);
-                    ((j0) this.g).c(this.c, 1, this.d, 0, null);
+                    ja.p(this.c != -9223372036854775807L);
+                    ((i0) this.g).c(this.c, 1, this.d, 0, null);
                     this.b = false;
                     break;
                 }
@@ -163,37 +162,37 @@ public final class h implements i {
     }
 
     @Override // m4.i
-    public final void g(f3.q qVar, g0 g0Var) {
+    public final void g(f3.q qVar, f0 f0Var) {
         switch (this.a) {
             case 0:
-                j0[] j0VarArr = (j0[]) this.g;
-                for (int i7 = 0; i7 < j0VarArr.length; i7++) {
-                    f0 f0Var = (f0) ((List) this.f).get(i7);
-                    g0Var.b();
-                    g0Var.c();
-                    j0 O1 = qVar.O1(g0Var.c, 3);
+                i0[] i0VarArr = (i0[]) this.g;
+                for (int i7 = 0; i7 < i0VarArr.length; i7++) {
+                    e0 e0Var = (e0) ((List) this.f).get(i7);
+                    f0Var.b();
+                    f0Var.c();
+                    i0 d2 = qVar.d2(f0Var.c, 3);
                     e2.t tVar = new e2.t();
-                    g0Var.c();
-                    tVar.a = (String) g0Var.e;
+                    f0Var.c();
+                    tVar.a = (String) f0Var.e;
                     tVar.q = s0.n("video/mp2t");
                     tVar.r = s0.n("application/dvbsubs");
-                    tVar.u = Collections.singletonList(f0Var.b);
-                    tVar.d = f0Var.a;
-                    f1.s(tVar, O1);
-                    j0VarArr[i7] = O1;
+                    tVar.u = Collections.singletonList(e0Var.b);
+                    tVar.d = e0Var.a;
+                    r.b.s(tVar, d2);
+                    i0VarArr[i7] = d2;
                 }
                 break;
             default:
-                g0Var.b();
-                g0Var.c();
-                j0 O12 = qVar.O1(g0Var.c, 5);
-                this.g = O12;
+                f0Var.b();
+                f0Var.c();
+                i0 d22 = qVar.d2(f0Var.c, 5);
+                this.g = d22;
                 e2.t tVar2 = new e2.t();
-                g0Var.c();
-                tVar2.a = (String) g0Var.e;
+                f0Var.c();
+                tVar2.a = (String) f0Var.e;
                 tVar2.q = s0.n("video/mp2t");
                 tVar2.r = s0.n("application/id3");
-                f1.s(tVar2, O12);
+                r.b.s(tVar2, d22);
                 break;
         }
     }

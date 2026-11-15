@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.cast;
 
-import a8.v8;
 import a8.x8;
+import a8.z8;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -14,28 +14,28 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class c4 extends x8 implements m9.y {
+public abstract class c4 extends z8 implements m9.y {
     public static final boolean d;
     public static final Logger e;
-    public static final v8 f;
+    public static final x8 f;
     public static final Object h;
     public volatile Object a;
     public volatile w3 b;
     public volatile b4 c;
 
     static {
-        boolean z9;
-        v8 y3Var;
+        boolean z10;
+        x8 y3Var;
         Throwable th2;
         Throwable th3;
         try {
-            z9 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
+            z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
-            z9 = false;
+            z10 = false;
         }
-        d = z9;
+        d = z10;
         e = Logger.getLogger(c4.class.getName());
         Throwable th4 = null;
         try {
@@ -65,21 +65,21 @@ public abstract class c4 extends x8 implements m9.y {
 
     public static Object f(c4 c4Var) {
         Object obj;
-        boolean z9 = false;
+        boolean z10 = false;
         while (true) {
             try {
                 obj = c4Var.get();
                 break;
             } catch (InterruptedException unused) {
-                z9 = true;
+                z10 = true;
             } catch (Throwable th2) {
-                if (z9) {
+                if (z10) {
                     Thread.currentThread().interrupt();
                 }
                 throw th2;
             }
         }
-        if (z9) {
+        if (z10) {
             Thread.currentThread().interrupt();
         }
         return obj;
@@ -117,7 +117,7 @@ public abstract class c4 extends x8 implements m9.y {
         try {
             executor.execute(runnable);
         } catch (RuntimeException e10) {
-            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.recaptcha.internal.a.l("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e10);
+            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.vision.e2.l("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e10);
         }
     }
 
@@ -140,7 +140,7 @@ public abstract class c4 extends x8 implements m9.y {
     /* JADX WARN: Multi-variable type inference failed */
     public String a() {
         if (this instanceof ScheduledFuture) {
-            return rf.b.h(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+            return r.b.j(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
         }
         return null;
     }
@@ -164,16 +164,16 @@ public abstract class c4 extends x8 implements m9.y {
     }
 
     @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z9) {
+    public final boolean cancel(boolean z10) {
         u3 u3Var;
         Object obj = this.a;
         if (obj != null) {
             return false;
         }
         if (d) {
-            u3Var = new u3(new CancellationException("Future.cancel() was called."), z9);
+            u3Var = new u3(new CancellationException("Future.cancel() was called."), z10);
         } else {
-            u3Var = z9 ? u3.c : u3.d;
+            u3Var = z10 ? u3.c : u3.d;
             u3Var.getClass();
         }
         if (!f.f(this, obj, u3Var)) {
@@ -225,9 +225,9 @@ public abstract class c4 extends x8 implements m9.y {
         if (b4Var2 != b4Var) {
             b4 b4Var3 = new b4();
             do {
-                v8 v8Var = f;
-                v8Var.c(b4Var3, b4Var2);
-                if (v8Var.g(this, b4Var2, b4Var3)) {
+                x8 x8Var = f;
+                x8Var.c(b4Var3, b4Var2);
+                if (x8Var.g(this, b4Var2, b4Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -354,9 +354,9 @@ public abstract class c4 extends x8 implements m9.y {
                 if (b4Var2 != b4Var) {
                     b4 b4Var3 = new b4();
                     while (true) {
-                        v8 v8Var = f;
-                        v8Var.c(b4Var3, b4Var2);
-                        if (v8Var.g(this, b4Var2, b4Var3)) {
+                        x8 x8Var = f;
+                        x8Var.c(b4Var3, b4Var2);
+                        if (x8Var.g(this, b4Var2, b4Var3)) {
                             j10 = j11;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -415,18 +415,18 @@ public abstract class c4 extends x8 implements m9.y {
                     long j13 = -nanos;
                     long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
                     long nanos2 = j13 - timeUnit.toNanos(convert);
-                    boolean z9 = true;
+                    boolean z10 = true;
                     if (convert != j10 && nanos2 <= 1000) {
-                        z9 = false;
+                        z10 = false;
                     }
                     if (convert > j10) {
                         String str2 = concat + convert + " " + lowerCase;
-                        if (z9) {
+                        if (z10) {
                             str2 = str2.concat(",");
                         }
                         concat = str2.concat(" ");
                     }
-                    if (z9) {
+                    if (z10) {
                         concat = concat + nanos2 + " nanoseconds ";
                     }
                     str = concat.concat("delay)");
@@ -434,7 +434,7 @@ public abstract class c4 extends x8 implements m9.y {
                 if (isDone()) {
                     throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                 }
-                throw new TimeoutException(a8.p0.D(str, " for ", c4Var));
+                throw new TimeoutException(a8.p0.E(str, " for ", c4Var));
             }
         } else {
             throw new InterruptedException();

@@ -1,6 +1,6 @@
 package da;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q1 {
     public final String a;
@@ -8,9 +8,9 @@ public final class q1 {
     public final String c;
     public final String d;
     public final int e;
-    public final sg.i0 f;
+    public final sg.h0 f;
 
-    public q1(String str, String str2, String str3, String str4, int i7, sg.i0 i0Var) {
+    public q1(String str, String str2, String str3, String str4, int i7, sg.h0 h0Var) {
         if (str == null) {
             throw new NullPointerException("Null appIdentifier");
         }
@@ -28,7 +28,7 @@ public final class q1 {
         }
         this.d = str4;
         this.e = i7;
-        this.f = i0Var;
+        this.f = h0Var;
     }
 
     public final boolean equals(Object obj) {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import zd.b0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements de.e {
     public final id.h a;
@@ -22,7 +22,7 @@ public final class b implements de.e {
     }
 
     @Override // ce.c
-    public Object B(d dVar, kd.c cVar) {
+    public Object G(d dVar, kd.c cVar) {
         Object a10;
         switch (this.d) {
             case 1:
@@ -35,7 +35,7 @@ public final class b implements de.e {
                     id.h hVar = this.a;
                     id.h plus = !((Boolean) hVar.fold(bool, eVar)).booleanValue() ? context.plus(hVar) : b0.h(context, hVar, false);
                     if (kotlin.jvm.internal.j.a(plus, context)) {
-                        a10 = ((c) this.e).B(dVar, cVar);
+                        a10 = ((c) this.e).G(dVar, cVar);
                         jd.a aVar = jd.a.a;
                         if (a10 != aVar) {
                             a10 = kVar;
@@ -69,7 +69,7 @@ public final class b implements de.e {
     }
 
     @Override // de.e
-    public final c P(id.h hVar, int i7, be.a aVar) {
+    public final c Q(id.h hVar, int i7, be.a aVar) {
         be.a aVar2;
         id.h hVar2 = this.a;
         id.h plus = hVar.plus(hVar2);

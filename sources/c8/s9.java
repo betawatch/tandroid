@@ -1,45 +1,46 @@
 package c8;
 
-import java.util.concurrent.Future;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class s9 {
-    public static Object a(Future future) {
-        Object obj;
-        boolean z9 = false;
-        if (!future.isDone()) {
-            throw new IllegalStateException(a8.ja.a("Future was expected to be done: %s", future));
-        }
-        while (true) {
-            try {
-                obj = future.get();
-                break;
-            } catch (InterruptedException unused) {
-                z9 = true;
-            } catch (Throwable th2) {
-                if (z9) {
-                    Thread.currentThread().interrupt();
+    public static final int a(int i7, int i10, int i11) {
+        if (i11 > 0) {
+            if (i7 < i10) {
+                int i12 = i10 % i11;
+                if (i12 < 0) {
+                    i12 += i11;
                 }
-                throw th2;
+                int i13 = i7 % i11;
+                if (i13 < 0) {
+                    i13 += i11;
+                }
+                int i14 = (i12 - i13) % i11;
+                if (i14 < 0) {
+                    i14 += i11;
+                }
+                return i10 - i14;
+            }
+        } else {
+            if (i11 >= 0) {
+                throw new IllegalArgumentException("Step is zero.");
+            }
+            if (i7 > i10) {
+                int i15 = -i11;
+                int i16 = i7 % i15;
+                if (i16 < 0) {
+                    i16 += i15;
+                }
+                int i17 = i10 % i15;
+                if (i17 < 0) {
+                    i17 += i15;
+                }
+                int i18 = (i16 - i17) % i15;
+                if (i18 < 0) {
+                    i18 += i15;
+                }
+                return i18 + i10;
             }
         }
-        if (z9) {
-            Thread.currentThread().interrupt();
-        }
-        return obj;
-    }
-
-    public static m9.w b(Object obj) {
-        return obj == null ? m9.w.b : new m9.w(obj);
-    }
-
-    public static m9.p c(m9.y yVar, g9.k kVar) {
-        m9.p pVar = new m9.p();
-        yVar.getClass();
-        pVar.n = yVar;
-        pVar.r = kVar;
-        yVar.b(pVar, m9.r.a);
-        return pVar;
+        return i10;
     }
 }

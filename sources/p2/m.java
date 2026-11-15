@@ -1,15 +1,15 @@
 package p2;
 
-import a8.ia;
+import a8.ja;
 import e2.u;
-import h2.m0;
+import h2.l0;
 import h9.i0;
 import j$.util.DesugarCollections;
 import java.math.RoundingMode;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class m {
     public final u a;
@@ -21,7 +21,7 @@ public abstract class m {
     public final j h;
 
     public m(u uVar, List list, s sVar, List list2, List list3, List list4) {
-        ia.f(!list.isEmpty());
+        ja.f(!list.isEmpty());
         this.a = uVar;
         this.b = i0.q(list);
         this.d = list2 == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(list2);
@@ -30,13 +30,13 @@ public abstract class m {
         this.h = sVar.a(this);
         long j3 = sVar.c;
         long j10 = sVar.b;
-        String str = m0.a;
-        this.c = m0.a0(j3, 1000000L, j10, RoundingMode.DOWN);
+        String str = l0.a;
+        this.c = l0.a0(j3, 1000000L, j10, RoundingMode.DOWN);
     }
 
-    public abstract String b();
+    public abstract String a();
 
     public abstract o2.i c();
 
-    public abstract j f();
+    public abstract j d();
 }

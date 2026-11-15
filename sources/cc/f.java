@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.charset.UnsupportedCharsetException;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f {
     public static final ArrayList c = new ArrayList();
@@ -28,11 +28,11 @@ public final class f {
 
     public f(String str, Charset charset) {
         int i7;
-        boolean z9;
+        boolean z10;
         ArrayList arrayList = new ArrayList();
         arrayList.add(StandardCharsets.ISO_8859_1.newEncoder());
         int i10 = 0;
-        boolean z10 = charset != null && charset.name().startsWith("UTF");
+        boolean z11 = charset != null && charset.name().startsWith("UTF");
         int i11 = 0;
         while (true) {
             i7 = -1;
@@ -47,12 +47,12 @@ public final class f {
                 CharsetEncoder charsetEncoder = (CharsetEncoder) obj;
                 char charAt = str.charAt(i11);
                 if (charAt == 65535 || charsetEncoder.canEncode(charAt)) {
-                    z9 = true;
+                    z10 = true;
                     break;
                 }
             }
-            z9 = false;
-            if (!z9) {
+            z10 = false;
+            if (!z10) {
                 ArrayList arrayList2 = c;
                 int size2 = arrayList2.size();
                 int i13 = 0;
@@ -65,17 +65,17 @@ public final class f {
                     CharsetEncoder charsetEncoder2 = (CharsetEncoder) obj2;
                     if (charsetEncoder2.canEncode(str.charAt(i11))) {
                         arrayList.add(charsetEncoder2);
-                        z9 = true;
+                        z10 = true;
                         break;
                     }
                 }
             }
-            if (!z9) {
-                z10 = true;
+            if (!z10) {
+                z11 = true;
             }
             i11++;
         }
-        if (arrayList.size() != 1 || z10) {
+        if (arrayList.size() != 1 || z11) {
             this.a = new CharsetEncoder[arrayList.size() + 2];
             int size3 = arrayList.size();
             int i14 = 0;

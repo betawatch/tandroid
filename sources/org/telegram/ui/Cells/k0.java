@@ -6,19 +6,19 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.t10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.dc;
+import org.telegram.ui.Components.oy0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class k0 {
     public final q1 a;
-    public final org.telegram.ui.Components.v8[] b;
+    public final org.telegram.ui.Components.t8[] b;
     public final ImageReceiver[] c;
     public final TextPaint d;
     public final CharSequence e;
@@ -27,10 +27,10 @@ public final class k0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final my0 k;
+    public final oy0 k;
     public boolean l;
     public boolean m;
-    public final hc n;
+    public final dc n;
     public final TLObject o;
 
     public k0(q1 q1Var, TLObject[] tLObjectArr, int i7) {
@@ -43,35 +43,35 @@ public final class k0 {
         this.o = tLObjectArr[0];
         this.n = new j0(q1Var, q1Var, 0);
         this.c = new ImageReceiver[3];
-        this.b = new org.telegram.ui.Components.v8[3];
+        this.b = new org.telegram.ui.Components.t8[3];
         for (int i10 = 0; i10 < 3; i10++) {
             this.c[i10] = new ImageReceiver(q1Var);
             this.c[i10].H0(q1Var);
             this.c[i10].J0(org.telegram.messenger.g0.L(54.0f));
-            this.b[i10] = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
+            this.b[i10] = new org.telegram.ui.Components.t8((org.telegram.ui.ActionBar.e6) null);
             if (i10 >= tLObjectArr.length || (tLObject = tLObjectArr[i10]) == null) {
                 Paint paint = new Paint(1);
-                int[] iArr = {org.telegram.ui.ActionBar.m6.w(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.ra, q1Var.Pb), org.telegram.ui.ActionBar.m6.r1(0.5f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.y6, q1Var.Pb)))};
+                int[] iArr = {org.telegram.ui.ActionBar.j6.w(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.ra, q1Var.Qb), org.telegram.ui.ActionBar.j6.r1(0.5f, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.y6, q1Var.Qb)))};
                 paint.setColor(iArr[0]);
-                this.c[i10].w0(new org.telegram.ui.ActionBar.v2(q1Var, iArr, paint));
+                this.c[i10].w0(new org.telegram.ui.ActionBar.t2(q1Var, iArr, paint));
             } else {
                 this.b[i10].p(tLObject);
                 this.c[i10].i0(tLObjectArr[i10], this.b[i10], null);
             }
         }
-        if (q1Var.N0) {
+        if (q1Var.O0) {
             a();
         }
         this.d.setTextSize(org.telegram.messenger.g0.L(11.0f));
-        boolean q10 = p10.i(q1Var.Z5).q();
-        this.e = id.M0(q10 ? 2131748330 : 2131743854, null);
+        boolean q10 = m10.i(q1Var.a6).q();
+        this.e = hd.M0(q10 ? 2131748330 : 2131743854, null);
         this.i.setStyle(Paint.Style.STROKE);
         this.g = true;
         this.h = q10 ? null : q1Var.getContext().getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
         if (b(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new my0(jg.g.j(i7, "+"), 9.33f, org.telegram.messenger.g0.o());
+            this.k = new oy0(i5.c.i(i7, "+"), 9.33f, org.telegram.messenger.g0.o());
         }
     }
 
@@ -80,10 +80,10 @@ public final class k0 {
         if (tLObject instanceof TLRPC.Chat) {
             int i10 = ((TLRPC.Chat) tLObject).participants_count;
             if (i10 > 1) {
-                return id.S(null, i10);
+                return hd.S(null, i10);
             }
         } else if ((tLObject instanceof TLRPC.User) && (i7 = ((TLRPC.User) tLObject).bot_active_users) > 1) {
-            return id.S(null, i7);
+            return hd.S(null, i7);
         }
         return null;
     }
@@ -115,24 +115,24 @@ public final class k0 {
         ImageReceiver imageReceiver = new ImageReceiver(q1Var);
         imageReceiver.H0(q1Var);
         imageReceiverArr[0].J0(org.telegram.messenger.g0.L(54.0f));
-        if (q1Var.N0) {
+        if (q1Var.O0) {
             a();
         }
-        org.telegram.ui.Components.v8[] v8VarArr = {r3};
-        this.b = v8VarArr;
-        org.telegram.ui.Components.v8 v8Var = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
-        v8Var.p(tLObject);
-        imageReceiverArr[0].i0(tLObject, v8VarArr[0], null);
+        org.telegram.ui.Components.t8[] t8VarArr = {r3};
+        this.b = t8VarArr;
+        org.telegram.ui.Components.t8 t8Var = new org.telegram.ui.Components.t8((org.telegram.ui.ActionBar.e6) null);
+        t8Var.p(tLObject);
+        imageReceiverArr[0].i0(tLObject, t8VarArr[0], null);
         textPaint.setTextSize(org.telegram.messenger.g0.L(11.0f));
         if (tLObject instanceof TLRPC.Chat) {
             charSequence = ((TLRPC.Chat) tLObject).title;
         } else if (tLObject instanceof TLRPC.User) {
-            charSequence = t10.p((TLRPC.User) tLObject);
+            charSequence = q10.p((TLRPC.User) tLObject);
         } else {
             charSequence = "";
         }
         try {
-            charSequence = org.telegram.messenger.i6.m(charSequence, textPaint.getFontMetricsInt(), false, null, 0);
+            charSequence = org.telegram.messenger.j6.m(charSequence, textPaint.getFontMetricsInt(), false, null, 0);
         } catch (Exception unused) {
         }
         this.e = charSequence;
@@ -142,7 +142,7 @@ public final class k0 {
         if (b(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new my0(b(tLObject), 9.33f, org.telegram.messenger.g0.o());
+            this.k = new oy0(b(tLObject), 9.33f, org.telegram.messenger.g0.o());
         }
     }
 }

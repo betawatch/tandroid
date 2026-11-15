@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzzc extends zzsh implements zztt {
     private zzzc() {
@@ -13,15 +13,15 @@ public final class zzzc extends zzsh implements zztt {
         return this;
     }
 
-    public final zzzc zzf(boolean z9) {
+    public final zzzc zzf(boolean z10) {
         zzn();
-        ((zzzd) this.zza).zzm = z9;
+        ((zzzd) this.zza).zzm = z10;
         return this;
     }
 
-    public final zzzc zzq(boolean z9) {
+    public final zzzc zzq(boolean z10) {
         zzn();
-        ((zzzd) this.zza).zzn = z9;
+        ((zzzd) this.zza).zzn = z10;
         return this;
     }
 

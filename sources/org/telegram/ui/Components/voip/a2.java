@@ -1,85 +1,39 @@
 package org.telegram.ui.Components.voip;
 
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.transition.TransitionSet;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import c8.ha;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.k5;
-import org.telegram.ui.Components.nu0;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.x60;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class a2 extends LinearLayout {
-    public HashMap a;
-    public ArrayList b;
-    public ArrayList c;
-    public TransitionSet d;
-    public boolean e;
-    public boolean f;
-    public Runnable h;
-    public i1 n;
-    public TextPaint r;
+public final class a2 extends x60 {
+    public final /* synthetic */ TLRPC.User n1;
+    public final /* synthetic */ TLRPC.Chat o1;
+    public final /* synthetic */ String p1;
+    public final /* synthetic */ TLRPC.InputPeer q1;
+    public final /* synthetic */ boolean r1;
+    public final /* synthetic */ boolean s1;
+    public final /* synthetic */ Activity t1;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 u1;
+    public final /* synthetic */ org.telegram.messenger.c v1;
 
-    public final void a(int i7, String str, String str2) {
-        HashMap hashMap = this.a;
-        if (hashMap.get(str2) != null) {
-            return;
-        }
-        z1 z1Var = new z1(getContext(), this.n, i7);
-        z1Var.a = str2;
-        int L = org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(120.0f);
-        TextView textView = z1Var.c;
-        StaticLayout c10 = nu0.c(str, textView.getPaint(), L, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, L, 10, true);
-        if (c10 != null) {
-            L = 0;
-            for (int i10 = 0; i10 < c10.getLineCount(); i10++) {
-                L = (int) Math.max(L, Math.ceil(c10.getLineWidth(i10)));
-            }
-        }
-        textView.setMaxWidth(L);
-        textView.setText(str);
-        z1Var.b.setImageResource(i7);
-        hashMap.put(str2, z1Var);
-        if (this.e) {
-            this.b.add(z1Var);
-        } else {
-            this.f = true;
-            addView(z1Var, ha.t(-2, -2, 1, 4, 0, 0, 4));
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a2(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z10, boolean z11, Activity activity, org.telegram.ui.ActionBar.e2 e2Var, org.telegram.messenger.c cVar) {
+        super(context, chat);
+        this.n1 = user;
+        this.o1 = chat2;
+        this.p1 = str;
+        this.q1 = inputPeer;
+        this.r1 = z10;
+        this.s1 = z11;
+        this.t1 = activity;
+        this.u1 = e2Var;
+        this.v1 = cVar;
     }
 
-    public final CharSequence b(String str) {
-        return str == null ? "" : TextUtils.ellipsize(str, this.r, org.telegram.messenger.g0.L(300.0f), TextUtils.TruncateAt.END);
-    }
-
-    public final void c(String str) {
-        z1 z1Var = (z1) this.a.remove(str);
-        this.n.m.remove(z1Var);
-        if (z1Var != null) {
-            if (!this.e) {
-                this.f = true;
-                removeView(z1Var);
-            } else {
-                if (this.b.remove(z1Var)) {
-                    return;
-                }
-                this.c.add(z1Var);
-            }
-        }
-    }
-
-    public int getChildsHight() {
-        int childCount = getChildCount();
-        return k5.D(32.0f, childCount, childCount > 0 ? org.telegram.messenger.g0.L(16.0f) : 0);
-    }
-
-    public void setOnViewsUpdated(Runnable runnable) {
-        this.h = runnable;
+    @Override // org.telegram.ui.Components.x60
+    public final void I0() {
+        c2.b(this.n1, this.o1, this.p1, this.q1, true, this.r1, this.s1, false, this.t1, this.u1, this.v1, false, false, false);
     }
 }

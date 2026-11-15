@@ -1,11 +1,11 @@
 package x2;
 
-import a8.ia;
+import a8.ja;
 import android.util.Pair;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class a0 extends r1 {
+public final class a0 extends s1 {
     public final boolean l;
     public final e2.k1 m;
     public final e2.i1 n;
@@ -15,9 +15,9 @@ public final class a0 extends r1 {
     public boolean r;
     public boolean s;
 
-    public a0(a aVar, boolean z9) {
+    public a0(a aVar, boolean z10) {
         super(aVar);
-        this.l = z9 && aVar.j();
+        this.l = z10 && aVar.j();
         this.m = new e2.k1();
         this.n = new e2.i1();
         e2.l1 h = aVar.h();
@@ -33,7 +33,7 @@ public final class a0 extends r1 {
     /* JADX WARN: Removed duplicated region for block: B:27:0x0086  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x0092  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x00cc  */
-    @Override // x2.r1
+    @Override // x2.s1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -99,7 +99,7 @@ public final class a0 extends r1 {
                         if (a10 != null) {
                             x xVar4 = this.p;
                             xVar4.getClass();
-                            xVar4.f(a10);
+                            xVar4.a(a10);
                             return;
                         }
                         return;
@@ -136,7 +136,7 @@ public final class a0 extends r1 {
         }
     }
 
-    @Override // x2.r1
+    @Override // x2.s1
     public final void C() {
         if (this.l) {
             return;
@@ -149,7 +149,7 @@ public final class a0 extends r1 {
     /* renamed from: D, reason: merged with bridge method [inline-methods] */
     public final x c(f0 f0Var, h6.m mVar, long j3) {
         x xVar = new x(f0Var, mVar, j3);
-        ia.p(xVar.d == null);
+        ja.p(xVar.d == null);
         xVar.d = this.k;
         if (!this.r) {
             this.p = xVar;
@@ -163,7 +163,7 @@ public final class a0 extends r1 {
         if (this.o.g != null && obj.equals(y.h)) {
             obj = this.o.g;
         }
-        xVar.f(f0Var.a(obj));
+        xVar.a(f0Var.a(obj));
         return xVar;
     }
 
@@ -184,7 +184,7 @@ public final class a0 extends r1 {
         return true;
     }
 
-    @Override // x2.r1, x2.a
+    @Override // x2.s1, x2.a
     public final boolean a(e2.l0 l0Var) {
         return this.k.a(l0Var);
     }
@@ -209,7 +209,7 @@ public final class a0 extends r1 {
         super.q();
     }
 
-    @Override // x2.r1, x2.a
+    @Override // x2.s1, x2.a
     public final void t(e2.l0 l0Var) {
         if (this.s) {
             y yVar = this.o;
@@ -221,7 +221,7 @@ public final class a0 extends r1 {
         this.k.t(l0Var);
     }
 
-    @Override // x2.r1
+    @Override // x2.s1
     public final f0 z(f0 f0Var) {
         Object obj = f0Var.a;
         Object obj2 = this.o.g;

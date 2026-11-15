@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.id;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class b5 extends FrameLayout {
     public TextView a;
@@ -18,19 +19,19 @@ public abstract class b5 extends FrameLayout {
     public h0 c;
     public long d;
 
-    public final void a(ArrayList arrayList, boolean z9) {
+    public final void a(ArrayList arrayList, boolean z10) {
         TextView textView = this.b;
         h0 h0Var = this.c;
         TextView textView2 = this.a;
-        super.setEnabled(z9);
+        super.setEnabled(z10);
         if (arrayList != null) {
-            arrayList.add(ObjectAnimator.ofFloat(textView2, "alpha", z9 ? 1.0f : 0.5f));
-            arrayList.add(ObjectAnimator.ofFloat(h0Var, "alpha", z9 ? 1.0f : 0.5f));
-            arrayList.add(ObjectAnimator.ofFloat(textView, "alpha", z9 ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(textView2, "alpha", z10 ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(h0Var, "alpha", z10 ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(textView, "alpha", z10 ? 1.0f : 0.5f));
         } else {
-            textView2.setAlpha(z9 ? 1.0f : 0.5f);
-            h0Var.setAlpha(z9 ? 1.0f : 0.5f);
-            textView.setAlpha(z9 ? 1.0f : 0.5f);
+            textView2.setAlpha(z10 ? 1.0f : 0.5f);
+            h0Var.setAlpha(z10 ? 1.0f : 0.5f);
+            textView.setAlpha(z10 ? 1.0f : 0.5f);
         }
     }
 
@@ -48,7 +49,7 @@ public abstract class b5 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
+        canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
     }
 
     @Override // android.view.ViewGroup
@@ -66,8 +67,8 @@ public abstract class b5 extends FrameLayout {
         int measuredWidth = getMeasuredWidth() - org.telegram.messenger.g0.L(42.0f);
         TextView textView = this.b;
         textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(jg.g.e(8.0f, measuredWidth - textView.getMeasuredWidth(), org.telegram.messenger.g0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
-        this.c.measure(org.telegram.messenger.camera.q.c(20.0f, getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(i5.c.d(8.0f, measuredWidth - textView.getMeasuredWidth(), org.telegram.messenger.g0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
+        this.c.measure(i20.c(20.0f, getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
@@ -83,7 +84,7 @@ public abstract class b5 extends FrameLayout {
         float f10;
         float f11;
         this.d = j3;
-        this.b.setText(id.a0("AutodownloadSizeLimitUpTo", null, 2131753772, org.telegram.messenger.g0.i0(j3, false, false)));
+        this.b.setText(hd.a0("AutodownloadSizeLimitUpTo", null, 2131753772, org.telegram.messenger.g0.i0(j3, false, false)));
         long j10 = j3 - 512000;
         if (j10 < 536576) {
             f11 = Math.max(0.0f, j10 / 536576.0f) * 0.25f;

@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class j implements VideoSink {
     public final /* synthetic */ int a;
@@ -20,24 +20,24 @@ public final class j implements VideoSink {
     public final void onFrame(VideoFrame videoFrame) {
         switch (this.a) {
             case 0:
-                boolean z9 = SystemClock.elapsedRealtime() - ((k) this.b).r > 1000;
+                boolean z10 = SystemClock.elapsedRealtime() - ((k) this.b).r > 1000;
                 ((k) this.b).r = SystemClock.elapsedRealtime();
                 ((k) this.b).s = videoFrame.getRotatedWidth();
                 ((k) this.b).w = videoFrame.getRotatedHeight();
                 ((k) this.b).b.d.onFrame(videoFrame);
-                if (z9 && !((k) this.b).x) {
+                if (z10 && !((k) this.b).x) {
                     ((k) this.b).x = true;
                     org.telegram.messenger.g0.h3(((k) this.b).y);
                     break;
                 }
                 break;
             default:
-                ((d0) this.b).s = SystemClock.elapsedRealtime();
-                ((d0) this.b).w = videoFrame.getRotatedWidth();
-                ((d0) this.b).x = videoFrame.getRotatedHeight();
-                k2 k2Var = ((d0) this.b).c;
-                if (k2Var != null) {
-                    k2Var.d.onFrame(videoFrame);
+                ((e0) this.b).s = SystemClock.elapsedRealtime();
+                ((e0) this.b).w = videoFrame.getRotatedWidth();
+                ((e0) this.b).x = videoFrame.getRotatedHeight();
+                o2 o2Var = ((e0) this.b).c;
+                if (o2Var != null) {
+                    o2Var.d.onFrame(videoFrame);
                     break;
                 }
                 break;

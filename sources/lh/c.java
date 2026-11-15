@@ -7,70 +7,70 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.l1;
-import c8.ha;
-import c8.ka;
+import bi.o;
+import c8.ja;
+import c8.na;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.qi;
+import org.telegram.messenger.hd;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.oi;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class c extends LinearLayout {
     public static final /* synthetic */ int e = 0;
-    public final h6 a;
+    public final e6 a;
     public final r7 b;
     public final r7 c;
     public float d;
 
-    public c(Context context, h6 h6Var, qi qiVar, dh.c cVar) {
+    public c(Context context, e6 e6Var, oi oiVar, dh.c cVar) {
         super(context);
         r7 r7Var = new r7(this);
         this.b = r7Var;
         r7 r7Var2 = new r7(this);
         this.c = r7Var2;
-        this.a = h6Var;
-        kh.a c10 = kh.a.c(context, cVar, qiVar, h6Var);
+        this.a = e6Var;
+        kh.a c10 = kh.a.c(context, cVar, oiVar, e6Var);
         r7Var.b = c10;
-        int i7 = 5;
-        c10.setOnClickListener(new l1(i7));
-        ka.b((kh.a) r7Var.b, 0.065f, 2.0f);
-        kh.a c11 = kh.a.c(context, cVar, qiVar, h6Var);
+        int i7 = 8;
+        c10.setOnClickListener(new o(i7));
+        na.b((kh.a) r7Var.b, 0.065f, 2.0f);
+        kh.a c11 = kh.a.c(context, cVar, oiVar, e6Var);
         r7Var2.b = c11;
-        c11.setOnClickListener(new l1(i7));
-        ka.b((kh.a) r7Var2.b, 0.065f, 2.0f);
-        a(r7Var, id.M0(2131746263, null), R.drawable.input_reply, false);
-        a(r7Var2, id.M0(2131750587, null), R.drawable.input_forward, true);
+        c11.setOnClickListener(new o(i7));
+        na.b((kh.a) r7Var2.b, 0.065f, 2.0f);
+        a(r7Var, hd.M0(2131746263, null), R.drawable.input_reply, false);
+        a(r7Var2, hd.M0(2131750587, null), R.drawable.input_forward, true);
         setOrientation(0);
         setClipChildren(false);
-        addView((kh.a) r7Var.b, ha.m(1.0f, 0, 56, 1, -1, 0));
-        addView((kh.a) r7Var2.b, ha.m(1.0f, 0, 56, -1, 1, 0));
+        addView((kh.a) r7Var.b, ja.m(1.0f, 0, 56, 1, -1, 0));
+        addView((kh.a) r7Var2.b, ja.m(1.0f, 0, 56, -1, 1, 0));
     }
 
-    public final void a(r7 r7Var, String str, int i7, boolean z9) {
+    public final void a(r7 r7Var, String str, int i7, boolean z10) {
         TextView textView = new TextView(getContext());
         textView.setText(str);
         textView.setGravity(16);
         textView.setTextSize(1, 15.0f);
         textView.setPadding(g0.L(21.0f), 0, g0.L(21.0f), 0);
         textView.setCompoundDrawablePadding(g0.L(6.0f));
-        int i10 = m6.Ll;
-        h6 h6Var = this.a;
-        t6.U(textView, i10, h6Var);
+        int i10 = j6.Ol;
+        e6 e6Var = this.a;
+        q6.U(textView, i10, e6Var);
         textView.setTypeface(g0.o());
         Drawable mutate = getContext().getResources().getDrawable(i7).mutate();
-        t6.x(this, mutate, m6.Kl, h6Var, PorterDuff.Mode.MULTIPLY);
-        Drawable drawable = z9 ? mutate : null;
-        if (z9) {
+        q6.x(this, mutate, j6.Nl, e6Var, PorterDuff.Mode.MULTIPLY);
+        Drawable drawable = z10 ? mutate : null;
+        if (z10) {
             mutate = null;
         }
         textView.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, mutate, (Drawable) null);
         r7Var.c = textView;
-        ((kh.a) r7Var.b).addView(textView, ha.e(-2, -2, 17));
+        ((kh.a) r7Var.b).addView(textView, ja.e(-2, -2, 17));
     }
 
     public final void b(r7 r7Var) {

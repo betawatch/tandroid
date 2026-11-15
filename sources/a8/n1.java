@@ -1,34 +1,69 @@
 package a8;
 
-import android.content.Context;
+import android.hardware.biometrics.BiometricPrompt;
+import android.os.Build;
+import android.security.identity.IdentityCredential;
+import android.security.keystore.KeyGenParameterSpec;
 import android.util.Log;
-import org.telegram.messenger.beta.R;
+import java.io.IOException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.Signature;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.Mac;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class n1 {
-    public static String a(Context context, int i7) {
-        if (context == null) {
-            return "";
+    public static androidx.biometric.v a() {
+        try {
+            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
+            keyStore.load(null);
+            KeyGenParameterSpec.Builder b10 = androidx.biometric.b0.b("androidxBiometric", 3);
+            androidx.biometric.b0.d(b10);
+            androidx.biometric.b0.e(b10);
+            KeyGenerator keyGenerator = KeyGenerator.getInstance("AES", "AndroidKeyStore");
+            androidx.biometric.b0.c(keyGenerator, androidx.biometric.b0.a(b10));
+            keyGenerator.generateKey();
+            SecretKey secretKey = (SecretKey) keyStore.getKey("androidxBiometric", null);
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
+            cipher.init(1, secretKey);
+            return new androidx.biometric.v(cipher);
+        } catch (IOException | InvalidAlgorithmParameterException | InvalidKeyException | KeyStoreException | NoSuchAlgorithmException | NoSuchProviderException | UnrecoverableKeyException | CertificateException | NoSuchPaddingException e10) {
+            Log.w("CryptoObjectUtils", "Failed to create fake crypto object.", e10);
+            return null;
         }
-        if (i7 == 1) {
-            return context.getString(R.string.fingerprint_error_hw_not_available);
+    }
+
+    public static BiometricPrompt.CryptoObject b(androidx.biometric.v vVar) {
+        IdentityCredential identityCredential;
+        if (vVar == null) {
+            return null;
         }
-        if (i7 != 7) {
-            switch (i7) {
-                case 9:
-                    break;
-                case 10:
-                    return context.getString(R.string.fingerprint_error_user_canceled);
-                case 11:
-                    return context.getString(R.string.fingerprint_error_no_fingerprints);
-                case 12:
-                    return context.getString(R.string.fingerprint_error_hw_not_present);
-                default:
-                    Log.e("BiometricUtils", "Unknown error code: " + i7);
-                    return context.getString(R.string.default_error_msg);
-            }
+        Cipher cipher = vVar.b;
+        if (cipher != null) {
+            return androidx.biometric.c0.b(cipher);
         }
-        return context.getString(R.string.fingerprint_error_lockout);
+        Signature signature = vVar.a;
+        if (signature != null) {
+            return androidx.biometric.c0.a(signature);
+        }
+        Mac mac = vVar.c;
+        if (mac != null) {
+            return androidx.biometric.c0.c(mac);
+        }
+        if (Build.VERSION.SDK_INT < 30 || (identityCredential = vVar.d) == null) {
+            return null;
+        }
+        return androidx.biometric.d0.a(identityCredential);
     }
 }

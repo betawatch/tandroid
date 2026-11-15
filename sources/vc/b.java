@@ -1,9 +1,9 @@
 package vc;
 
-import a8.wa;
+import a8.xa;
 import c8.od;
 import c8.yc;
-import g9.l;
+import f5.g;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -22,18 +22,17 @@ import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Cells.f1;
-import org.telegram.ui.ly0;
+import org.telegram.ui.ld0;
 import tc.d;
 import tc.e;
 import tc.f;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
 
-    public static HttpURLConnection a(String str, l lVar) {
+    public static HttpURLConnection a(String str, g gVar) {
         Throwable th2;
         OutputStream outputStream;
         HttpURLConnection httpURLConnection = (HttpURLConnection) new URL("https://api.stripe.com/v1/tokens").openConnection();
@@ -44,7 +43,7 @@ public abstract class b {
         hashMap.put("Accept-Charset", "UTF-8");
         hashMap.put("Accept", "application/json");
         hashMap.put("User-Agent", "Stripe/v1 JavaBindings/3.5.0");
-        hashMap.put("Authorization", "Bearer " + lVar.a);
+        hashMap.put("Authorization", "Bearer " + gVar.a);
         String[] strArr = {"os.name", "os.version", "os.arch", "java.version", "java.vendor", "java.vm.version", "java.vm.vendor"};
         HashMap hashMap2 = new HashMap();
         for (int i7 = 0; i7 < 7; i7++) {
@@ -118,13 +117,13 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ly0 c(HashMap hashMap, l lVar) {
+    public static ld0 c(HashMap hashMap, g gVar) {
         String str;
         int i7;
         String str2;
         String str3;
         Boolean bool = Boolean.TRUE;
-        ly0 ly0Var = null;
+        ld0 ld0Var = null;
         try {
             str = Security.getProperty("networkaddress.cache.ttl");
         } catch (SecurityException unused) {
@@ -134,14 +133,14 @@ public abstract class b {
             Security.setProperty("networkaddress.cache.ttl", "0");
         } catch (SecurityException unused2) {
             bool = Boolean.FALSE;
-            if (!lVar.a.trim().isEmpty()) {
+            if (!gVar.a.trim().isEmpty()) {
             }
         }
-        if (!lVar.a.trim().isEmpty()) {
+        if (!gVar.a.trim().isEmpty()) {
             throw new tc.c("No API key provided. (HINT: set your API key using 'Stripe.apiKey = <API-KEY>'. You can generate API keys from the Stripe web interface. See https://stripe.com/api for details or email support@stripe.com if you have questions.", null);
         }
         try {
-            wa f10 = f(hashMap, lVar);
+            xa f10 = f(hashMap, gVar);
             i7 = f10.b;
             str2 = (String) f10.c;
             Map map = (Map) f10.d;
@@ -164,10 +163,10 @@ public abstract class b {
             g(i7, str2, str3);
             throw null;
         }
-        ly0Var = yc.a(str2);
+        ld0Var = yc.a(str2);
         if (bool.booleanValue()) {
         }
-        return ly0Var;
+        return ld0Var;
     }
 
     public static LinkedList d(String str, Map map) {
@@ -191,7 +190,7 @@ public abstract class b {
         }
         if (!(obj instanceof List)) {
             if ("".equals(obj)) {
-                throw new d(f1.m("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
+                throw new d(r.b.l("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
             }
             if (obj == null) {
                 LinkedList linkedList = new LinkedList();
@@ -205,13 +204,13 @@ public abstract class b {
         List list = (List) obj;
         LinkedList linkedList3 = new LinkedList();
         Iterator it = list.iterator();
-        String r10 = rf.b.r(str, "[]");
+        String v = r.b.v(str, "[]");
         if (list.isEmpty()) {
             linkedList3.add(new a(str, ""));
             return linkedList3;
         }
         while (it.hasNext()) {
-            linkedList3.addAll(e(it.next(), r10));
+            linkedList3.addAll(e(it.next(), v));
         }
         return linkedList3;
     }
@@ -221,14 +220,14 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static wa f(HashMap hashMap, l lVar) {
+    public static xa f(HashMap hashMap, g gVar) {
         String next;
         HttpURLConnection httpURLConnection = null;
         try {
             String b10 = b(hashMap);
             try {
                 try {
-                    HttpURLConnection a10 = a(b10, lVar);
+                    HttpURLConnection a10 = a(b10, gVar);
                     try {
                         int responseCode = a10.getResponseCode();
                         if (responseCode < 200 || responseCode >= 300) {
@@ -241,12 +240,12 @@ public abstract class b {
                             inputStream.close();
                         }
                         Map<String, List<String>> headerFields = a10.getHeaderFields();
-                        wa waVar = new wa((char) 0, 23);
-                        waVar.b = responseCode;
-                        waVar.c = next;
-                        waVar.d = headerFields;
+                        xa xaVar = new xa((char) 0, 23);
+                        xaVar.b = responseCode;
+                        xaVar.c = next;
+                        xaVar.d = headerFields;
                         a10.disconnect();
-                        return waVar;
+                        return xaVar;
                     } catch (IOException e10) {
                         e = e10;
                         throw new tc.a("IOException during API request to Stripe (https://api.stripe.com/v1/tokens): " + e.getMessage() + " Please check your internet connection and try again. If this problem persists, you should check Stripe's service status at https://twitter.com/stripestatus, or let us know at support@stripe.com.", null, e);

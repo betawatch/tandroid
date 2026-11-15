@@ -1,119 +1,63 @@
 package org.telegram.ui.Components;
 
+import android.view.View;
 import java.util.ArrayList;
-import java.util.List;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class mx extends jy {
-    public final nt0 X;
-    public final /* synthetic */ gy Y;
+public interface mx {
+    boolean A();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mx(gy gyVar) {
-        super(100, true);
-        this.Y = gyVar;
-        this.X = new nt0();
-        this.O = new ai.l(this, 8);
-    }
+    long a();
 
-    @Override // v4.n0
-    public final int A() {
-        gy gyVar = this.Y;
-        v4.g0 adapter = gyVar.h0.getAdapter();
-        lx lxVar = gyVar.j0;
-        if (adapter == lxVar && lxVar.y.isEmpty()) {
-            return 0;
-        }
-        return B() - 1;
-    }
+    boolean b();
 
-    @Override // org.telegram.ui.Components.jy
-    public final nt0 D1(int i7) {
-        ArrayList<TLRPC.DocumentAttribute> arrayList;
-        TLRPC.Document document;
-        gy gyVar = this.Y;
-        lx lxVar = gyVar.j0;
-        v4.g0 adapter = gyVar.h0.getAdapter();
-        lx lxVar2 = gyVar.n0;
-        TLRPC.Document document2 = null;
-        r4 = null;
-        ArrayList<TLRPC.DocumentAttribute> arrayList2 = null;
-        if (adapter != lxVar2) {
-            if (lxVar.y.isEmpty()) {
-                arrayList = null;
-                return F1(document2, arrayList);
-            }
-            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) lxVar.y.get(i7);
-            document = botInlineResult.document;
-            if (document != null) {
-                arrayList2 = document.attributes;
-            } else {
-                TLRPC.WebDocument webDocument = botInlineResult.content;
-                if (webDocument != null) {
-                    arrayList2 = webDocument.attributes;
-                } else {
-                    TLRPC.WebDocument webDocument2 = botInlineResult.thumb;
-                    if (webDocument2 != null) {
-                        arrayList2 = webDocument2.attributes;
-                    }
-                }
-            }
-            arrayList = arrayList2;
-            document2 = document;
-            return F1(document2, arrayList);
-        }
-        int i10 = lxVar2.H;
-        if (i7 <= i10) {
-            if (i7 == i10) {
-                return null;
-            }
-            document2 = (TLRPC.Document) gyVar.i1.get(i7);
-            arrayList = document2.attributes;
-            return F1(document2, arrayList);
-        }
-        TLRPC.BotInlineResult botInlineResult2 = (TLRPC.BotInlineResult) lxVar2.y.get((i7 - i10) - 1);
-        document = botInlineResult2.document;
-        if (document != null) {
-            arrayList2 = document.attributes;
-        } else {
-            TLRPC.WebDocument webDocument3 = botInlineResult2.content;
-            if (webDocument3 != null) {
-                arrayList2 = webDocument3.attributes;
-            } else {
-                TLRPC.WebDocument webDocument4 = botInlineResult2.thumb;
-                if (webDocument4 != null) {
-                    arrayList2 = webDocument4.attributes;
-                }
-            }
-        }
-        arrayList = arrayList2;
-        document2 = document;
-        return F1(document2, arrayList);
-    }
+    boolean c();
 
-    public final nt0 F1(TLRPC.Document document, List list) {
-        TLRPC.PhotoSize w10;
-        int i7;
-        int i10;
-        nt0 nt0Var = this.X;
-        nt0Var.b = 100.0f;
-        nt0Var.a = 100.0f;
-        if (document != null && (w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false)) != null && (i7 = w10.w) != 0 && (i10 = w10.h) != 0) {
-            nt0Var.a = i7;
-            nt0Var.b = i10;
-        }
-        if (list != null) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                TLRPC.DocumentAttribute documentAttribute = (TLRPC.DocumentAttribute) list.get(i11);
-                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    nt0Var.a = documentAttribute.w;
-                    nt0Var.b = documentAttribute.h;
-                    break;
-                }
-            }
-        }
-        return nt0Var;
-    }
+    void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10);
+
+    void e(Object obj, Object obj2);
+
+    int f();
+
+    boolean g();
+
+    void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    void i(int i7);
+
+    boolean j();
+
+    boolean k();
+
+    void l(String str);
+
+    void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.cj cjVar, boolean z10, int i7);
+
+    void n();
+
+    void o(x31 x31Var);
+
+    float p();
+
+    void q();
+
+    void r(TLRPC.StickerSetCovered stickerSetCovered);
+
+    void s(int i7);
+
+    void t(ArrayList arrayList);
+
+    void u();
+
+    void v(View view, Object obj, String str, Object obj2, boolean z10, int i7, int i10);
+
+    void w();
+
+    void x(long j3, TLRPC.Document document, String str, boolean z10);
+
+    void y(long j3);
+
+    boolean z();
 }

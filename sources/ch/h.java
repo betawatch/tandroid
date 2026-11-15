@@ -1,9 +1,9 @@
 package ch;
 
-import org.telegram.messenger.id;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -29,13 +29,13 @@ public final /* synthetic */ class h implements Runnable {
                 oVar.finishFragment();
                 break;
             case 3:
-                if (oVar.P && !oVar.O) {
-                    oVar.O = true;
-                    qs.e().k(98, 512);
+                if (oVar.Q && !oVar.P) {
+                    oVar.P = true;
+                    ns.e().k(98, 512);
                     oVar.c.setVisibility(0);
                     oVar.c.setLayerType(2, null);
-                    oVar.j0(oVar.Q.e);
-                    oVar.Q.a(true, true);
+                    oVar.j0(oVar.R.e);
+                    oVar.R.a(true, true);
                     break;
                 }
                 break;
@@ -43,7 +43,7 @@ public final /* synthetic */ class h implements Runnable {
                 vf.c.t(oVar.getParentActivity(), "https://t.me/stickers");
                 break;
             case 5:
-                vf.c.t(oVar.getParentActivity(), id.M0(2131752409, null));
+                vf.c.t(oVar.getParentActivity(), hd.M0(2131752409, null));
                 break;
             default:
                 oVar.e0(false);

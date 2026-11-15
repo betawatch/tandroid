@@ -1,111 +1,71 @@
 package org.telegram.messenger;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLitePreparedStatement;
+import android.net.Uri;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.a80;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class lh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ui b;
-    public final /* synthetic */ String c;
+public final /* synthetic */ class lh implements pi, qr {
+    public final /* synthetic */ c1 a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ lh(ui uiVar, String str, int i7) {
-        this.a = i7;
-        this.b = uiVar;
-        this.c = str;
+    public /* synthetic */ lh(c1 c1Var, Object obj, Object obj2, Object obj3) {
+        this.a = c1Var;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x004a  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0052  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i7;
-        int i10;
-        TLRPC.TL_messages_getEmojiKeywordsDifference tL_messages_getEmojiKeywordsDifference;
-        int i11 = this.a;
-        int i12 = 2;
-        String str = this.c;
-        ui uiVar = this.b;
-        switch (i11) {
-            case 0:
-                try {
-                    SQLitePreparedStatement executeFast = uiVar.getMessagesStorage().b.executeFast("DELETE FROM emoji_keywords_info_v2 WHERE lang = ?");
-                    executeFast.bindString(1, str);
-                    executeFast.step();
-                    executeFast.dispose();
-                    g0.h3(new lh(uiVar, str, i12));
-                    break;
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                    return;
+    @Override // org.telegram.messenger.pi
+    public void c(String str, ArrayList arrayList) {
+        si siVar = (si) this.a;
+        qi qiVar = (qi) this.b;
+        ri riVar = (ri) this.c;
+        z10 z10Var = (z10) this.d;
+        HashMap hashMap = siVar.Q1;
+        if (hashMap.containsKey(qiVar)) {
+            StringBuilder sb2 = new StringBuilder();
+            int size = arrayList.size();
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
+                oi oiVar = (oi) obj;
+                if (!TextUtils.isEmpty(oiVar.a) && !oiVar.a.startsWith("animated_")) {
+                    sb2.append(oiVar.a);
                 }
-            case 1:
-                uiVar.z1.remove(str);
-                uiVar.A1.add(str);
-                uiVar.getNotificationCenter().k(qs.l3, new Object[0]);
-                break;
-            case 2:
-                uiVar.z1.remove(str);
-                uiVar.A1.add(str);
-                uiVar.M(new String[]{str}, false);
-                uiVar.getNotificationCenter().k(qs.l3, new Object[0]);
-                break;
-            case 3:
-                uiVar.z1.remove(str);
-                uiVar.getNotificationCenter().k(qs.L2, str);
-                break;
-            case 4:
-                uiVar.S.remove(str);
-                break;
-            default:
-                ui uiVar2 = this.b;
-                String str2 = this.c;
-                String str3 = null;
-                try {
-                    SQLiteCursor queryFinalized = uiVar2.getMessagesStorage().b.queryFinalized("SELECT alias, version, date FROM emoji_keywords_info_v2 WHERE lang = ?", str2);
-                    if (queryFinalized.next()) {
-                        str3 = queryFinalized.stringValue(0);
-                        i7 = queryFinalized.intValue(1);
-                        try {
-                            queryFinalized.longValue(2);
-                        } catch (Exception e11) {
-                            e = e11;
-                            a8.g(e, true);
-                            String str4 = str3;
-                            i10 = i7;
-                            boolean z9 = r2.a;
-                            if (i10 != -1) {
-                            }
-                            uiVar2.getConnectionsManager().sendRequest(tL_messages_getEmojiKeywordsDifference, new bh(uiVar2, i10, str4, str2, 0));
-                        }
-                    } else {
-                        i7 = -1;
-                    }
-                    queryFinalized.dispose();
-                } catch (Exception e12) {
-                    e = e12;
-                    i7 = -1;
-                }
-                String str42 = str3;
-                i10 = i7;
-                boolean z92 = r2.a;
-                if (i10 != -1) {
-                    TLRPC.TL_messages_getEmojiKeywords tL_messages_getEmojiKeywords = new TLRPC.TL_messages_getEmojiKeywords();
-                    tL_messages_getEmojiKeywords.lang_code = str2;
-                    tL_messages_getEmojiKeywordsDifference = tL_messages_getEmojiKeywords;
-                } else {
-                    TLRPC.TL_messages_getEmojiKeywordsDifference tL_messages_getEmojiKeywordsDifference2 = new TLRPC.TL_messages_getEmojiKeywordsDifference();
-                    tL_messages_getEmojiKeywordsDifference2.lang_code = str2;
-                    tL_messages_getEmojiKeywordsDifference2.from_version = i10;
-                    tL_messages_getEmojiKeywordsDifference = tL_messages_getEmojiKeywordsDifference2;
-                }
-                uiVar2.getConnectionsManager().sendRequest(tL_messages_getEmojiKeywordsDifference, new bh(uiVar2, i10, str42, str2, 0));
+            }
+            TLRPC.TL_messages_searchStickers tL_messages_searchStickers = new TLRPC.TL_messages_searchStickers();
+            boolean z10 = qiVar.a;
+            String str2 = qiVar.b;
+            tL_messages_searchStickers.emojis = z10;
+            if (!TextUtils.isEmpty(str2)) {
+                tL_messages_searchStickers.lang_code.add(str2);
+            }
+            tL_messages_searchStickers.emoticon = sb2.toString();
+            tL_messages_searchStickers.q = qiVar.c;
+            tL_messages_searchStickers.limit = 100;
+            tL_messages_searchStickers.offset = riVar != null ? riVar.b.intValue() : 0;
+            hashMap.put(qiVar, Integer.valueOf(siVar.getConnectionsManager().sendRequestTyped(tL_messages_searchStickers, new d3.b(1), new l9(siVar, qiVar, riVar, z10Var, 1))));
+        }
+    }
+
+    @Override // org.telegram.messenger.qr
+    public void run(long j3) {
+        ez ezVar = (ez) this.a;
+        Uri uri = (Uri) this.b;
+        ArrayList arrayList = (ArrayList) this.c;
+        a80 a80Var = (a80) this.d;
+        if (j3 != 0) {
+            ezVar.Q(-j3, uri, arrayList, a80Var);
+        } else {
+            a80Var.run(0L);
         }
     }
 }

@@ -1,21 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l8 extends r8 {
-    public final /* synthetic */ k8 G;
+public final class l8 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ q8 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l8(s8 s8Var, Activity activity, k8 k8Var) {
-        super(s8Var, activity);
-        this.G = k8Var;
+    public l8(q8 q8Var, float f10, float f11, boolean z10) {
+        this.d = q8Var;
+        this.a = f10;
+        this.b = f11;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.r8, android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.G.invalidate();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        q8 q8Var = this.d;
+        q8Var.O = floatValue;
+        float T1 = org.telegram.messenger.g0.T1(this.a, this.b, floatValue);
+        kVar = ((org.telegram.ui.ActionBar.e2) q8Var).actionBar;
+        kVar.getTitleTextView().setAlpha(q8Var.O);
+        if (q8Var.G && !this.c) {
+            q8Var.n0(false, 1.0f - q8Var.O);
+        }
+        q8Var.r.setTranslationY(T1);
+        q8Var.y.setTranslationY(T1);
+        q8Var.fragmentView.invalidate();
+        kVar2 = ((org.telegram.ui.ActionBar.e2) q8Var).actionBar;
+        kVar2.invalidate();
     }
 }

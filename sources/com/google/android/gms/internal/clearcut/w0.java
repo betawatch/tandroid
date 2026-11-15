@@ -1,64 +1,12 @@
 package com.google.android.gms.internal.clearcut;
 
-import java.util.AbstractList;
-import java.util.ArrayList;
-
 /* loaded from: classes.dex */
-public final class w0 extends k {
-    public static final w0 c;
-    public final ArrayList b;
+public final class w0 {
+    public final i a;
+    public final x0 b;
 
-    static {
-        w0 w0Var = new w0(new ArrayList(10));
-        c = w0Var;
-        w0Var.a = false;
-    }
-
-    public w0(ArrayList arrayList) {
-        this.b = arrayList;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final void add(int i7, Object obj) {
-        f();
-        this.b.add(i7, obj);
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i7) {
-        return this.b.get(i7);
-    }
-
-    @Override // com.google.android.gms.internal.clearcut.c0
-    public final c0 h(int i7) {
-        ArrayList arrayList = this.b;
-        if (i7 < arrayList.size()) {
-            throw new IllegalArgumentException();
-        }
-        ArrayList arrayList2 = new ArrayList(i7);
-        arrayList2.addAll(arrayList);
-        return new w0(arrayList2);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object remove(int i7) {
-        f();
-        Object remove = this.b.remove(i7);
-        ((AbstractList) this).modCount++;
-        return remove;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i7, Object obj) {
-        f();
-        Object obj2 = this.b.set(i7, obj);
-        ((AbstractList) this).modCount++;
-        return obj2;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.b.size();
+    public w0(y yVar, String str, Object[] objArr) {
+        this.a = yVar;
+        this.b = new x0(yVar.getClass(), str, objArr);
     }
 }

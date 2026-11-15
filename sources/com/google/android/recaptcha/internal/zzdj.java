@@ -4,15 +4,16 @@ import af.b;
 import gd.k;
 import hd.e;
 import id.c;
+import ie.a;
 import ie.d;
 import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzdj {
     private Object zza;
-    private final ie.a zzb = new d();
+    private final a zzb = new d();
 
     public zzdj(Object obj) {
         this.zza = obj;
@@ -40,7 +41,7 @@ public final class zzdj {
                     i7 = zzdgVar.zzd;
                     if (i7 != 0) {
                         b.c(obj2);
-                        ie.a aVar2 = this.zzb;
+                        a aVar2 = this.zzb;
                         zzdgVar.zze = (zzmc) obj;
                         zzdgVar.zza = aVar2;
                         zzdgVar.zzd = 1;
@@ -52,7 +53,7 @@ public final class zzdj {
                         if (i7 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        ?? r52 = (ie.a) zzdgVar.zza;
+                        ?? r52 = (a) zzdgVar.zza;
                         zzmc zzmcVar = zzdgVar.zze;
                         b.c(obj2);
                         dVar = r52;
@@ -95,7 +96,7 @@ public final class zzdj {
                     i7 = zzdhVar.zzd;
                     if (i7 != 0) {
                         b.c(obj);
-                        ie.a aVar2 = this.zzb;
+                        a aVar2 = this.zzb;
                         zzdhVar.zze = (zzmc[]) objArr;
                         zzdhVar.zza = aVar2;
                         zzdhVar.zzd = 1;
@@ -107,7 +108,7 @@ public final class zzdj {
                         if (i7 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        ?? r52 = (ie.a) zzdhVar.zza;
+                        ?? r52 = (a) zzdhVar.zza;
                         zzmc[] zzmcVarArr = zzdhVar.zze;
                         b.c(obj);
                         dVar = r52;
@@ -150,7 +151,7 @@ public final class zzdj {
                     i7 = zzdiVar.zzd;
                     if (i7 != 0) {
                         b.c(obj2);
-                        ie.a aVar2 = this.zzb;
+                        a aVar2 = this.zzb;
                         zzdiVar.zze = (zzmc) obj;
                         zzdiVar.zza = aVar2;
                         zzdiVar.zzd = 1;
@@ -162,7 +163,7 @@ public final class zzdj {
                         if (i7 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        ?? r52 = (ie.a) zzdiVar.zza;
+                        ?? r52 = (a) zzdiVar.zza;
                         zzmc zzmcVar = zzdiVar.zze;
                         b.c(obj2);
                         dVar = r52;

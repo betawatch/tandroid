@@ -263,16 +263,16 @@ public final class LocalDateTime implements Temporal, j$.time.temporal.m, Chrono
             LocalDate localDate = this.a;
             LocalDate localDate2 = H.a;
             localDate.getClass();
-            long z9 = localDate2.z() - localDate.z();
-            if (z9 == 0) {
+            long z10 = localDate2.z() - localDate.z();
+            if (z10 == 0) {
                 return this.b.g(H.b, qVar);
             }
             long R = H.b.R() - this.b.R();
-            if (z9 > 0) {
-                j3 = z9 - 1;
+            if (z10 > 0) {
+                j3 = z10 - 1;
                 j10 = R + 86400000000000L;
             } else {
-                j3 = z9 + 1;
+                j3 = z10 + 1;
                 j10 = R - 86400000000000L;
             }
             switch (f.a[chronoUnit.ordinal()]) {
@@ -336,10 +336,10 @@ public final class LocalDateTime implements Temporal, j$.time.temporal.m, Chrono
         if (chronoLocalDateTime instanceof LocalDateTime) {
             return G((LocalDateTime) chronoLocalDateTime) < 0;
         }
-        long z9 = this.a.z();
-        long z10 = chronoLocalDateTime.f().z();
-        if (z9 >= z10) {
-            return z9 == z10 && this.b.R() < chronoLocalDateTime.b().R();
+        long z10 = this.a.z();
+        long z11 = chronoLocalDateTime.f().z();
+        if (z10 >= z11) {
+            return z10 == z11 && this.b.R() < chronoLocalDateTime.b().R();
         }
         return true;
     }

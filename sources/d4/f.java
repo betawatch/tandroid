@@ -1,6 +1,6 @@
 package d4;
 
-import a8.ia;
+import a8.ja;
 import androidx.datastore.preferences.protobuf.b0;
 import androidx.datastore.preferences.protobuf.b1;
 import androidx.datastore.preferences.protobuf.c0;
@@ -10,13 +10,13 @@ import androidx.datastore.preferences.protobuf.p;
 import androidx.datastore.preferences.protobuf.v1;
 import androidx.datastore.preferences.protobuf.y0;
 import androidx.datastore.preferences.protobuf.z;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import java.nio.charset.Charset;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class f {
 
     public f() {
         this.a = 2;
-        this.b = m0.b;
+        this.b = l0.b;
     }
 
     public static void O(int i7) {
@@ -94,7 +94,7 @@ public final class f {
         F(b10);
     }
 
-    public void C(b0 b0Var, boolean z9) {
+    public void C(b0 b0Var, boolean z10) {
         String s5;
         int u10;
         k kVar = (k) this.b;
@@ -102,7 +102,7 @@ public final class f {
             throw e0.b();
         }
         do {
-            if (z9) {
+            if (z10) {
                 G(2);
                 s5 = kVar.t();
             } else {
@@ -221,16 +221,16 @@ public final class f {
                 this.d = i12;
                 int i13 = (i7 - (i11 * 8)) + this.e;
                 this.e = i13;
-                boolean z9 = true;
+                boolean z10 = true;
                 if (i13 > 7) {
                     this.d = i12 + 1;
                     this.e = i13 - 8;
                 }
                 int i14 = this.d;
                 if (i14 < 0 || (i14 >= (i10 = this.c) && (i14 != i10 || this.e != 0))) {
-                    z9 = false;
+                    z10 = false;
                 }
-                ia.p(z9);
+                ja.p(z10);
                 break;
             default:
                 int i15 = i7 / 8;
@@ -248,7 +248,7 @@ public final class f {
     }
 
     public void M(int i7) {
-        ia.p(this.d == 0);
+        ja.p(this.d == 0);
         this.c += i7;
         a();
     }
@@ -265,7 +265,7 @@ public final class f {
     public void a() {
         int i7;
         int i10 = this.c;
-        ia.p(i10 >= 0 && (i10 < (i7 = this.e) || (i10 == i7 && this.d == 0)));
+        ja.p(i10 >= 0 && (i10 < (i7 = this.e) || (i10 == i7 && this.d == 0)));
     }
 
     public int b() {
@@ -282,7 +282,7 @@ public final class f {
     }
 
     public int d() {
-        ia.p(this.d == 0);
+        ja.p(this.d == 0);
         return this.c;
     }
 
@@ -333,13 +333,13 @@ public final class f {
     public boolean i() {
         switch (this.a) {
             case 1:
-                boolean z9 = (((((byte[]) this.b)[this.d] & 255) >> this.e) & 1) == 1;
+                boolean z10 = (((((byte[]) this.b)[this.d] & 255) >> this.e) & 1) == 1;
                 L(1);
-                return z9;
-            default:
-                boolean z10 = (((byte[]) this.b)[this.c] & (128 >> this.d)) != 0;
-                K();
                 return z10;
+            default:
+                boolean z11 = (((byte[]) this.b)[this.c] & (128 >> this.d)) != 0;
+                K();
+                return z11;
         }
     }
 
@@ -350,7 +350,7 @@ public final class f {
                 int min = Math.min(i7, 8 - this.e);
                 byte[] bArr = (byte[]) this.b;
                 int i11 = i10 + 1;
-                int i12 = ((bArr[i10] & 255) >> this.e) & (qs.e4 >> (8 - min));
+                int i12 = ((bArr[i10] & 255) >> this.e) & (ns.e4 >> (8 - min));
                 while (min < i7) {
                     i12 |= (bArr[i11] & 255) << min;
                     min += 8;
@@ -405,7 +405,7 @@ public final class f {
         if (i15 == 0) {
             return;
         }
-        byte b12 = (byte) (bArr[i10] & (qs.e4 >> i15));
+        byte b12 = (byte) (bArr[i10] & (ns.e4 >> i15));
         bArr[i10] = b12;
         int i16 = this.d;
         if (i16 + i15 > 8) {
@@ -430,12 +430,12 @@ public final class f {
     public long l(int i7) {
         if (i7 <= 32) {
             int j3 = j(i7);
-            String str = m0.a;
+            String str = l0.a;
             return 4294967295L & j3;
         }
         int j10 = j(i7 - 32);
         int j11 = j(32);
-        String str2 = m0.a;
+        String str2 = l0.a;
         return (4294967295L & j11) | ((j10 & 4294967295L) << 32);
     }
 
@@ -471,7 +471,7 @@ public final class f {
     }
 
     public void o(int i7, byte[] bArr) {
-        ia.p(this.d == 0);
+        ja.p(this.d == 0);
         System.arraycopy((byte[]) this.b, this.c, bArr, 0, i7);
         this.c += i7;
         a();

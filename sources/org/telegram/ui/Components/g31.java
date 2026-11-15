@@ -1,50 +1,72 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class g31 {
-    public final /* synthetic */ p31 a;
-    public final /* synthetic */ t31 b;
+public final class g31 extends v4.t0 {
+    public final /* synthetic */ int a = 1;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    public g31(t31 t31Var, p31 p31Var) {
-        this.b = t31Var;
-        this.a = p31Var;
+    public g31(di.f4 f4Var, int i7) {
+        this.c = f4Var;
+        this.b = i7;
     }
 
-    public final int a() {
-        return this.b.s.w;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(boolean z9) {
-        t31 t31Var = this.b;
-        i31 i31Var = t31Var.n;
-        if (z9) {
-            v4.g0 adapter = i31Var.getAdapter();
-            jg.d2 d2Var = t31Var.w;
-            if (adapter != d2Var) {
-                i31Var.setAdapter(d2Var);
-                if (i31Var.getAdapter().b() <= 0) {
-                    t31Var.r.i1(0, org.telegram.messenger.g0.L(58.0f) + (-i31Var.getPaddingTop()) + t31Var.E, false);
-                    return;
+    @Override // v4.t0
+    public final void a(RecyclerView recyclerView, int i7) {
+        org.telegram.ui.Wallet.u8 u8Var;
+        switch (this.a) {
+            case 0:
+                if (i7 == 0) {
+                    this.b = 0;
+                    break;
                 }
-                return;
-            }
+                break;
+            default:
+                if (i7 == 1 && (u8Var = ((org.telegram.ui.Wallet.y5) ((di.f4) this.c).c).j0) != null) {
+                    u8Var.a();
+                    break;
+                }
+                break;
         }
-        if (z9) {
-            return;
+    }
+
+    @Override // v4.t0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                j31 j31Var = (j31) this.c;
+                x31 x31Var = j31Var.o1;
+                this.b += i10;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > org.telegram.messenger.g0.L(96.0f)) {
+                    View findFocus = x31Var.findFocus();
+                    if (findFocus == null) {
+                        findFocus = x31Var;
+                    }
+                    org.telegram.messenger.g0.v1(findFocus);
+                }
+                if (i10 != 0 && x31Var.c()) {
+                    j31Var.p1 = x31Var.getContentTopOffset();
+                    j31Var.b.invalidate();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) ((di.f4) this.c).c;
+                if (this.b != 0) {
+                    recyclerView.post(new org.telegram.ui.Wallet.e4(y5Var, 14));
+                    break;
+                } else {
+                    y5Var.E0();
+                    break;
+                }
         }
-        v4.g0 adapter2 = i31Var.getAdapter();
-        s31 s31Var = t31Var.s;
-        if (adapter2 == s31Var) {
-            return;
-        }
-        i31Var.setAdapter(s31Var);
-        if (i31Var.getAdapter().b() <= 0) {
-        }
+    }
+
+    public g31(j31 j31Var) {
+        this.c = j31Var;
     }
 }

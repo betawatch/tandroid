@@ -6,16 +6,16 @@ import android.media.AudioRecord;
 import android.media.projection.MediaProjection;
 import android.os.Build;
 import android.os.Process;
+import i5.c;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;
-import jg.g;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class WebRtcAudioRecord {
     private static final long AUDIO_RECORD_THREAD_JOIN_TIMEOUT_MS = 2000;
@@ -26,7 +26,7 @@ public class WebRtcAudioRecord {
     private static final int DEFAULT_AUDIO_SOURCE;
     public static WebRtcAudioRecord Instance = null;
     private static final String TAG = "WebRtcAudioRecord";
-    private static WebRtcAudioRecordSamplesReadyCallback audioSamplesReadyCallback;
+    private static volatile WebRtcAudioRecordSamplesReadyCallback audioSamplesReadyCallback;
     private static int audioSource;
     private static WebRtcAudioRecordErrorCallback errorCallback;
     private static volatile boolean microphoneMute;
@@ -42,13 +42,13 @@ public class WebRtcAudioRecord {
     private int requestedSampleRate = 48000;
     private int requestedChannels = 1;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public enum AudioRecordStartErrorCode {
         AUDIO_RECORD_START_EXCEPTION,
         AUDIO_RECORD_START_STATE_MISMATCH
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public class AudioRecordThread extends Thread {
         private volatile boolean keepAlive;
 
@@ -94,8 +94,9 @@ public class WebRtcAudioRecord {
                             this.keepAlive = false;
                         }
                     }
-                    if (WebRtcAudioRecord.audioSamplesReadyCallback != null) {
-                        WebRtcAudioRecord.audioSamplesReadyCallback.onWebRtcAudioRecordSamplesReady(new AudioSamples(WebRtcAudioRecord.this.audioRecord, Arrays.copyOf(WebRtcAudioRecord.this.byteBuffer.array(), WebRtcAudioRecord.this.byteBuffer.capacity())));
+                    WebRtcAudioRecordSamplesReadyCallback webRtcAudioRecordSamplesReadyCallback = WebRtcAudioRecord.audioSamplesReadyCallback;
+                    if (webRtcAudioRecordSamplesReadyCallback != null) {
+                        webRtcAudioRecordSamplesReadyCallback.onWebRtcAudioRecordSamplesReady(new AudioSamples(WebRtcAudioRecord.this.audioRecord, Arrays.copyOf(WebRtcAudioRecord.this.byteBuffer.array(), WebRtcAudioRecord.this.byteBuffer.capacity())));
                     }
                 } else {
                     String str = "AudioRecord.read failed: " + read;
@@ -121,7 +122,7 @@ public class WebRtcAudioRecord {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class AudioSamples {
         private final int audioFormat;
         private final int channelCount;
@@ -152,7 +153,7 @@ public class WebRtcAudioRecord {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface WebRtcAudioRecordErrorCallback {
         void onWebRtcAudioRecordError(String str);
 
@@ -161,7 +162,7 @@ public class WebRtcAudioRecord {
         void onWebRtcAudioRecordStartError(AudioRecordStartErrorCode audioRecordStartErrorCode, String str);
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface WebRtcAudioRecordSamplesReadyCallback {
         void onWebRtcAudioRecordSamplesReady(AudioSamples audioSamples);
     }
@@ -182,8 +183,8 @@ public class WebRtcAudioRecord {
         }
     }
 
-    private static void assertTrue(boolean z9) {
-        if (!z9) {
+    private static void assertTrue(boolean z10) {
+        if (!z10) {
             throw new AssertionError("Expected condition to be true");
         }
     }
@@ -192,21 +193,21 @@ public class WebRtcAudioRecord {
         return i7 == 1 ? 16 : 12;
     }
 
-    private boolean enableBuiltInAEC(boolean z9) {
-        Logging.d(TAG, "enableBuiltInAEC(" + z9 + ')');
+    private boolean enableBuiltInAEC(boolean z10) {
+        Logging.d(TAG, "enableBuiltInAEC(" + z10 + ')');
         WebRtcAudioEffects webRtcAudioEffects = this.effects;
         if (webRtcAudioEffects != null) {
-            return webRtcAudioEffects.setAEC(z9);
+            return webRtcAudioEffects.setAEC(z10);
         }
         Logging.e(TAG, "Built-in AEC is not supported on this platform");
         return false;
     }
 
-    private boolean enableBuiltInNS(boolean z9) {
-        Logging.d(TAG, "enableBuiltInNS(" + z9 + ')');
+    private boolean enableBuiltInNS(boolean z10) {
+        Logging.d(TAG, "enableBuiltInNS(" + z10 + ')');
         WebRtcAudioEffects webRtcAudioEffects = this.effects;
         if (webRtcAudioEffects != null) {
-            return webRtcAudioEffects.setNS(z9);
+            return webRtcAudioEffects.setNS(z10);
         }
         Logging.e(TAG, "Built-in NS is not supported on this platform");
         return false;
@@ -236,7 +237,7 @@ public class WebRtcAudioRecord {
             int channelCountToConfiguration = channelCountToConfiguration(i10);
             int minBufferSize = AudioRecord.getMinBufferSize(i7, channelCountToConfiguration, 2);
             if (minBufferSize == -1 || minBufferSize == -2) {
-                reportWebRtcAudioRecordInitError(g.j(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
+                reportWebRtcAudioRecordInitError(c.i(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
                 return -1;
             }
             Logging.d(TAG, "AudioRecord.getMinBufferSize: " + minBufferSize);
@@ -306,9 +307,9 @@ public class WebRtcAudioRecord {
         }
     }
 
-    private void releaseAudioResources(boolean z9) {
-        Logging.d(TAG, "releaseAudioResources " + z9);
-        if (z9) {
+    private void releaseAudioResources(boolean z10) {
+        Logging.d(TAG, "releaseAudioResources " + z10);
+        if (z10) {
             AudioRecord audioRecord = this.deviceAudioRecord;
             if (audioRecord != null) {
                 audioRecord.release();
@@ -364,9 +365,9 @@ public class WebRtcAudioRecord {
         errorCallback = webRtcAudioRecordErrorCallback;
     }
 
-    public static void setMicrophoneMute(boolean z9) {
-        Logging.w(TAG, "setMicrophoneMute(" + z9 + ")");
-        microphoneMute = z9;
+    public static void setMicrophoneMute(boolean z10) {
+        Logging.w(TAG, "setMicrophoneMute(" + z10 + ")");
+        microphoneMute = z10;
     }
 
     public static void setOnAudioSamplesReady(WebRtcAudioRecordSamplesReadyCallback webRtcAudioRecordSamplesReadyCallback) {
@@ -425,7 +426,7 @@ public class WebRtcAudioRecord {
         int channelCountToConfiguration = channelCountToConfiguration(this.requestedChannels);
         int minBufferSize = AudioRecord.getMinBufferSize(this.requestedSampleRate, channelCountToConfiguration, 2);
         if (minBufferSize == -1 || minBufferSize == -2) {
-            reportWebRtcAudioRecordInitError(g.j(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
+            reportWebRtcAudioRecordInitError(c.i(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
             return;
         }
         int max = Math.max(minBufferSize * 2, this.deviceByteBuffer.capacity());

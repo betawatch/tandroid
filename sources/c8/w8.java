@@ -1,14 +1,14 @@
 package c8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class w8 implements na.d {
     public static final w8 a = new w8();
-    public static final na.c b = new na.c("isForegroundConfidenceMaskEnabled", jg.g.q(a8.p0.x(w.class, new s(1))));
-    public static final na.c c = new na.c("isForegroundBitmapEnabled", jg.g.q(a8.p0.x(w.class, new s(2))));
-    public static final na.c d = new na.c("isMultipleSubjectsEnabled", jg.g.q(a8.p0.x(w.class, new s(3))));
-    public static final na.c e = new na.c("isSubjectConfidenceMaskEnabled", jg.g.q(a8.p0.x(w.class, new s(4))));
-    public static final na.c f = new na.c("isSubjectBitmapEnabled", jg.g.q(a8.p0.x(w.class, new s(5))));
+    public static final na.c b = new na.c("isForegroundConfidenceMaskEnabled", i5.c.p(a8.p0.x(w.class, new s(1))));
+    public static final na.c c = new na.c("isForegroundBitmapEnabled", i5.c.p(a8.p0.x(w.class, new s(2))));
+    public static final na.c d = new na.c("isMultipleSubjectsEnabled", i5.c.p(a8.p0.x(w.class, new s(3))));
+    public static final na.c e = new na.c("isSubjectConfidenceMaskEnabled", i5.c.p(a8.p0.x(w.class, new s(4))));
+    public static final na.c f = new na.c("isSubjectBitmapEnabled", i5.c.p(a8.p0.x(w.class, new s(5))));
 
     @Override // na.a
     public final void a(Object obj, Object obj2) {

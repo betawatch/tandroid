@@ -1,177 +1,103 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.Build;
-import java.util.ArrayList;
-import java.util.List;
+import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class aq extends Path {
-    public static ArrayList g;
-    public int e;
-    public int f;
-    public boolean b = false;
-    public boolean c = true;
-    public float d = 0.0f;
-    public final ArrayList a = new ArrayList(1);
+public final class aq implements TextWatcher {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ View c;
 
-    public aq() {
+    public aq(dq dqVar, int i7) {
+        this.c = dqVar;
+        this.b = i7;
     }
 
-    public final void a() {
-        if (Build.VERSION.SDK_INT < 34 || !this.c || this.b) {
-            return;
-        }
-        b(this.a);
-        this.b = true;
-    }
-
-    @Override // android.graphics.Path
-    public final void addRect(RectF rectF, Path.Direction direction) {
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            float f10 = rectF.left;
-            int i7 = this.e;
-            float f11 = f10 - i7;
-            float f12 = rectF.top;
-            int i10 = this.f;
-            super.addRect(f11, f12 - i10, rectF.right + i7, rectF.bottom + i10, direction);
-            return;
-        }
-        ArrayList arrayList = this.a;
-        if (arrayList.size() <= 0 || !((RectF) jg.g.i(1, arrayList)).contains(rectF)) {
-            if (arrayList.size() <= 0 || Math.abs(rectF.top - ((RectF) jg.g.i(1, arrayList)).top) > this.d || Math.abs(rectF.bottom - ((RectF) jg.g.i(1, arrayList)).bottom) > this.d) {
-                ArrayList arrayList2 = g;
-                RectF rectF2 = (arrayList2 == null || arrayList2.size() <= 0) ? new RectF() : (RectF) g.remove(0);
-                rectF2.set(rectF);
-                arrayList.add(rectF2);
-            } else {
-                ((RectF) jg.g.i(1, arrayList)).union(rectF);
-            }
-            this.b = false;
-        }
-    }
-
-    public final void b(List list) {
-        if (list.isEmpty()) {
-            return;
-        }
-        boolean z9 = false;
-        if (list.size() == 1) {
-            super.addRect(((RectF) list.get(0)).left - this.e, ((RectF) list.get(0)).top - this.f, ((RectF) list.get(0)).right + this.e, ((RectF) list.get(0)).bottom + this.f, Path.Direction.CW);
-            return;
-        }
-        RectF rectF = (RectF) list.get(0);
-        int size = list.size() - 1;
-        super.moveTo(rectF.left - this.e, rectF.top - this.f);
-        for (int i7 = 1; i7 < list.size(); i7++) {
-            RectF rectF2 = (RectF) list.get(i7);
-            if (rectF2.width() != 0.0f) {
-                float f10 = rectF.bottom;
-                int i10 = this.f;
-                float f11 = f10 + i10;
-                float f12 = rectF2.top;
-                if (f11 >= f12 - i10) {
-                    float f13 = rectF.left;
-                    if (f13 <= rectF2.right) {
-                        float f14 = rectF.right;
-                        float f15 = rectF2.left;
-                        if (f14 >= f15) {
-                            if (f13 != f15) {
-                                super.lineTo(f13 - this.e, f12);
-                                super.lineTo(rectF2.left - this.e, rectF2.top);
-                            }
-                            rectF = rectF2;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i7;
+        int i10 = this.a;
+        int i11 = this.b;
+        View view = this.c;
+        switch (i10) {
+            case 0:
+                dq dqVar = (dq) view;
+                EditTextBoldCursor[] editTextBoldCursorArr = dqVar.F;
+                if (!dqVar.r) {
+                    dqVar.r = true;
+                    int i12 = 0;
+                    while (i12 < editable.length()) {
+                        char charAt = editable.charAt(i12);
+                        if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'f') && (charAt < 'A' || charAt > 'F'))) {
+                            editable.replace(i12, i12 + 1, "");
+                            i12--;
                         }
+                        i12++;
                     }
-                }
-                z9 = true;
-                size = i7;
-                break;
-            }
-        }
-        super.lineTo(rectF.left - this.e, rectF.bottom + this.f);
-        super.lineTo(rectF.right + this.e, rectF.bottom + this.f);
-        for (int i11 = size - 1; i11 >= 0; i11--) {
-            RectF rectF3 = (RectF) list.get(i11);
-            if (rectF3.width() != 0.0f) {
-                float f16 = rectF.right;
-                if (f16 != rectF3.right) {
-                    super.lineTo(f16 + this.e, rectF.top);
-                    super.lineTo(rectF3.right + this.e, rectF.top);
-                }
-                rectF = rectF3;
-            }
-        }
-        super.lineTo(rectF.right + this.e, rectF.top - this.f);
-        super.close();
-        if (z9) {
-            b(list.subList(size, list.size()));
-        }
-    }
-
-    @Override // android.graphics.Path
-    public void reset() {
-        super.reset();
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            return;
-        }
-        ArrayList arrayList = g;
-        ArrayList arrayList2 = this.a;
-        if (arrayList == null) {
-            g = new ArrayList(arrayList2.size());
-        }
-        g.addAll(arrayList2);
-        arrayList2.clear();
-        this.b = false;
-    }
-
-    @Override // android.graphics.Path
-    public final void rewind() {
-        super.rewind();
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            return;
-        }
-        ArrayList arrayList = g;
-        ArrayList arrayList2 = this.a;
-        if (arrayList == null) {
-            g = new ArrayList(arrayList2.size());
-        }
-        g.addAll(arrayList2);
-        arrayList2.clear();
-        this.b = false;
-    }
-
-    public aq(int i7) {
-    }
-
-    @Override // android.graphics.Path
-    public void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
-        RectF rectF;
-        if (Build.VERSION.SDK_INT >= 34 && this.c) {
-            ArrayList arrayList = this.a;
-            if (arrayList.size() <= 0 || !((RectF) jg.g.i(1, arrayList)).contains(f10, f11, f12, f13)) {
-                if (arrayList.size() > 0 && Math.abs(f11 - ((RectF) jg.g.i(1, arrayList)).top) <= this.d && Math.abs(f13 - ((RectF) jg.g.i(1, arrayList)).bottom) <= this.d) {
-                    ((RectF) jg.g.i(1, arrayList)).union(f10, f11, f12, f13);
-                } else {
-                    ArrayList arrayList2 = g;
-                    if (arrayList2 != null && arrayList2.size() > 0) {
-                        rectF = (RectF) g.remove(0);
+                    if (editable.length() != 0) {
+                        try {
+                            i7 = Integer.parseInt(editTextBoldCursorArr[i11].getText().toString(), 16) | (-16777216);
+                        } catch (Exception unused) {
+                            i7 = -1;
+                        }
+                        dqVar.setColorInner(i7);
+                        int color = dqVar.getColor();
+                        if (editable.length() == 6) {
+                            editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
+                            editTextBoldCursorArr[i11].setSelection(editable.length());
+                        }
+                        dqVar.w[dqVar.T].a(color);
+                        dqVar.a.c(color, dqVar.T, true);
+                        dqVar.r = false;
+                        break;
                     } else {
-                        rectF = new RectF();
+                        dqVar.r = false;
+                        break;
                     }
-                    rectF.set(f10, f11, f12, f13);
-                    arrayList.add(rectF);
                 }
-                this.b = false;
-                return;
-            }
-            return;
+                break;
+            default:
+                NumberTextView numberTextView = (NumberTextView) view;
+                int codePointCount = i11 - Character.codePointCount(editable, 0, editable.length());
+                if (codePointCount >= 30) {
+                    org.telegram.messenger.g0.W3(numberTextView, false);
+                    break;
+                } else {
+                    numberTextView.a(codePointCount, numberTextView.getVisibility() == 0);
+                    org.telegram.messenger.g0.W3(numberTextView, true);
+                    break;
+                }
         }
-        int i7 = this.e;
-        float f14 = f10 - i7;
-        int i10 = this.f;
-        super.addRect(f14, f11 - i10, f12 + i7, f13 + i10, direction);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    public aq(int i7, NumberTextView numberTextView) {
+        this.b = i7;
+        this.c = numberTextView;
+    }
+
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

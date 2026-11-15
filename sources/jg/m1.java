@@ -1,196 +1,197 @@
 package jg;
 
-import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import di.l6;
-import fi.v9;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.oa;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.t3;
-import org.telegram.messenger.ui;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.t2;
-import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.cn;
+import java.util.WeakHashMap;
+import org.telegram.messenger.r2;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class m1 extends oj0 implements ls {
-    public l6 D;
-    public final Context c;
-    public final cn f;
-    public int h;
-    public int n;
-    public final h6 s;
-    public final int w;
-    public final boolean x;
-    public String y;
-    public final HashSet d = new HashSet();
-    public final ArrayList e = new ArrayList();
-    public final int r = p10.s0;
-    public final v9 E = new v9(this, 20);
+public final class m1 extends v4.j0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public m1(Context context, cn cnVar, h6 h6Var, int i7, boolean z9) {
-        this.s = h6Var;
-        this.c = context;
-        this.f = cnVar;
-        this.w = i7;
-        this.x = z9;
+    public /* synthetic */ m1(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.oj0
-    public final boolean D(v4.d1 d1Var) {
-        int i7 = d1Var.f;
-        return i7 == 0 || i7 == 2;
-    }
-
-    public final Object E(int i7) {
-        if (i7 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.e;
-        if (i7 >= arrayList.size()) {
-            return null;
-        }
-        return arrayList.get(i7);
-    }
-
-    @Override // v4.g0
-    public final int b() {
-        return this.e.size() + this.n;
-    }
-
-    @Override // v4.g0
-    public final int d(int i7) {
-        return i7 < this.e.size() ? 0 : 1;
-    }
-
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == qs.x5 && objArr[0] == this.D) {
-            f();
-        }
-    }
-
-    @Override // v4.g0
-    public final void f() {
-        int b10 = b();
-        ArrayList arrayList = this.e;
-        arrayList.clear();
-        HashSet hashSet = this.d;
-        hashSet.clear();
-        int i7 = this.r;
-        int i10 = this.w;
-        ArrayList arrayList2 = i10 == 0 ? ui.b0(i7).Y0 : oa.a(i7).b(i10).a;
-        int i11 = 0;
-        for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-            ij ijVar = (ij) arrayList2.get(i12);
-            if ((!ijVar.z2() || ijVar.Q2) && !hashSet.contains(Integer.valueOf(ijVar.e1()))) {
-                arrayList.add(ijVar);
-                hashSet.add(Integer.valueOf(ijVar.e1()));
-            }
-        }
-        int i13 = this.n;
-        this.h = arrayList.size();
-        if (i10 != 0) {
-            if (!oa.a(i7).b(i10).n && this.h != 0) {
-                i11 = Utilities.j(oa.a(i7).b(i10).m - this.h, 3, 0);
-            }
-            this.n = i11;
-        } else {
-            if (!ui.b0(i7).W1() && this.h != 0) {
-                i11 = Utilities.j(ui.b0(i7).j0() - this.h, 3, 0);
-            }
-            this.n = i11;
-        }
-        int b11 = b();
-        if (b10 >= b11) {
-            super.f();
-            return;
-        }
-        if (i13 > 0) {
-            k(b10 - i13, i13);
-        }
-        o(b10, b11 - b10);
-    }
-
-    @Override // v4.g0
-    public final void t(v4.d1 d1Var, int i7) {
-        boolean z9;
-        int i10;
-        int i11;
-        int i12 = d1Var.f;
-        View view = d1Var.a;
-        if (i12 != 0) {
-            if (i12 == 2) {
-                ((l1) view).a(this.D);
-                return;
-            }
-            return;
-        }
-        t2 t2Var = (t2) view;
-        t2Var.s2 = true;
-        ij ijVar = (ij) E(i7);
-        long B0 = ij.B0(ijVar.k);
-        int i13 = ijVar.k.date;
-        if (this.x) {
-            t2Var.r0 = true;
-            long P1 = ijVar.P1();
-            TLRPC.Message message = ijVar.k;
-            TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
-            if (messageFwdHeader == null || ((i10 = messageFwdHeader.date) == 0 && messageFwdHeader.saved_date == 0)) {
-                i11 = message.date;
-            } else {
-                if (i10 == 0) {
-                    i11 = messageFwdHeader.saved_date;
+    @Override // v4.j0
+    public final void a() {
+        int i7 = this.a;
+        Object obj = this.b;
+        switch (i7) {
+            case 0:
+                ((n1) obj).f();
+                break;
+            case 1:
+                uj0 uj0Var = (uj0) obj;
+                uj0Var.K0(true);
+                if (uj0Var.r2) {
+                    uj0Var.r1 = -1;
+                    if (uj0Var.U1 == null) {
+                        uj0Var.F1.setEmpty();
+                    }
                 }
-                z9 = false;
-                B0 = P1;
-            }
-            i10 = i11;
-            z9 = false;
-            B0 = P1;
-        } else {
-            if (ijVar.P3() || t3.o0(this.r, B0)) {
-                B0 = ijVar.Z0();
-            }
-            z9 = true;
-            i10 = i13;
+                uj0Var.invalidate();
+                break;
+            default:
+                RecyclerView recyclerView = (RecyclerView) obj;
+                recyclerView.l(null);
+                recyclerView.v0.f = true;
+                boolean z10 = r2.a;
+                recyclerView.d.h("notifyDataSetChanged()");
+                recyclerView.n0(true);
+                if (!recyclerView.d.g()) {
+                    recyclerView.requestLayout();
+                    break;
+                }
+                break;
         }
-        t2Var.d0(B0, ijVar, i10, z9, false);
-        t2Var.setDialogCellDelegate(new j1(this));
     }
 
-    @Override // v4.g0
-    public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        View t2Var;
-        View view;
-        if (i7 != 0) {
-            h6 h6Var = this.s;
-            Context context = this.c;
-            if (i7 == 1) {
-                lz lzVar = new lz(context, h6Var);
-                lzVar.setIsSingleCell(true);
-                lzVar.setViewType(7);
-                view = lzVar;
-            } else if (i7 != 2) {
-                t2Var = null;
-            } else {
-                view = new l1(context, h6Var);
-            }
-            t2Var = view;
-        } else {
-            t2Var = new t2(null, this.c, true, this.r, this.s);
+    @Override // v4.j0
+    public void b(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                ((n1) this.b).k(i7 + 1, i10);
+                break;
         }
-        return g.r(t2Var, t2Var, -1, -2);
+    }
+
+    @Override // v4.j0
+    public void c(int i7, int i10, Object obj) {
+        switch (this.a) {
+            case 2:
+                RecyclerView recyclerView = (RecyclerView) this.b;
+                recyclerView.l(null);
+                ug.l0 l0Var = recyclerView.d;
+                ArrayList arrayList = (ArrayList) l0Var.d;
+                if (i10 >= 1) {
+                    boolean z10 = r2.a;
+                    StringBuilder n10 = i5.c.n("onItemRangeChanged(", i7, ", ", i10, ", ");
+                    n10.append(obj);
+                    n10.append(")");
+                    l0Var.h(n10.toString());
+                    arrayList.add(l0Var.i(4, i7, obj, i10));
+                    l0Var.b |= 4;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.c(i7, i10, obj);
+                break;
+        }
+    }
+
+    @Override // v4.j0
+    public final void d(int i7, int i10) {
+        int i11 = this.a;
+        Object obj = this.b;
+        switch (i11) {
+            case 0:
+                ((n1) obj).o(i7 + 1, i10);
+                break;
+            case 1:
+                uj0 uj0Var = (uj0) obj;
+                uj0Var.K0(true);
+                View view = uj0Var.q1;
+                if (view != null && view.getAlpha() == 0.0f) {
+                    uj0Var.r1 = -1;
+                    uj0Var.g1();
+                    break;
+                }
+                break;
+            default:
+                RecyclerView recyclerView = (RecyclerView) obj;
+                recyclerView.l(null);
+                ug.l0 l0Var = recyclerView.d;
+                ArrayList arrayList = (ArrayList) l0Var.d;
+                if (i10 >= 1) {
+                    boolean z10 = r2.a;
+                    l0Var.h("onItemRangeInserted(" + i7 + ", " + i10 + ")");
+                    arrayList.add(l0Var.i(1, i7, null, i10));
+                    l0Var.b = l0Var.b | 1;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // v4.j0
+    public void e(int i7, int i10) {
+        int i11 = this.a;
+        Object obj = this.b;
+        switch (i11) {
+            case 0:
+                ((n1) obj).k(i7 + 1, i10 + 2);
+                break;
+            case 2:
+                RecyclerView recyclerView = (RecyclerView) obj;
+                recyclerView.l(null);
+                ug.l0 l0Var = recyclerView.d;
+                ArrayList arrayList = (ArrayList) l0Var.d;
+                if (i7 != i10) {
+                    boolean z10 = r2.a;
+                    l0Var.h("onItemRangeMoved(" + i7 + ", " + i10 + ", 1)");
+                    arrayList.add(l0Var.i(8, i7, null, i10));
+                    l0Var.b = l0Var.b | 8;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // v4.j0
+    public final void f(int i7, int i10) {
+        int i11 = this.a;
+        Object obj = this.b;
+        switch (i11) {
+            case 0:
+                ((n1) obj).p(i7 + 1, i10);
+                break;
+            case 1:
+                ((uj0) obj).K0(true);
+                break;
+            default:
+                RecyclerView recyclerView = (RecyclerView) obj;
+                recyclerView.l(null);
+                ug.l0 l0Var = recyclerView.d;
+                ArrayList arrayList = (ArrayList) l0Var.d;
+                if (i10 >= 1) {
+                    boolean z10 = r2.a;
+                    l0Var.h("onItemRangeRemoved(" + i7 + ", " + i10 + ")");
+                    arrayList.add(l0Var.i(2, i7, null, i10));
+                    l0Var.b = l0Var.b | 2;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    public void g() {
+        int[] iArr = RecyclerView.R0;
+        RecyclerView recyclerView = (RecyclerView) this.b;
+        if (!recyclerView.I || !recyclerView.H) {
+            recyclerView.requestLayout();
+            return;
+        }
+        v4.f0 f0Var = recyclerView.n;
+        WeakHashMap weakHashMap = r0.i0.a;
+        recyclerView.postOnAnimation(f0Var);
     }
 }

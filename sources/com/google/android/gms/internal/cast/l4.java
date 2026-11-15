@@ -1,10 +1,10 @@
 package com.google.android.gms.internal.cast;
 
 import a8.r7;
-import a8.wa;
+import a8.xa;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l4 implements g6.h {
     public final /* synthetic */ r7 a;
@@ -14,10 +14,10 @@ public final class l4 implements g6.h {
     }
 
     @Override // g6.h
-    public /* bridge */ /* synthetic */ void b(g6.f fVar, boolean z9) {
-        s6 s6Var = new s6(new wa(4, 4));
+    public /* bridge */ /* synthetic */ void b(g6.f fVar, boolean z10) {
+        s6 s6Var = new s6(new xa(4, 4));
         r7 r7Var = this.a;
-        r7.K(r7Var, s6Var);
+        r7.O(r7Var, s6Var);
         r6 r6Var = (r6) r7Var.e;
         q6.m.g(r6Var);
         r6Var.a((g6.c) fVar);
@@ -25,41 +25,41 @@ public final class l4 implements g6.h {
 
     @Override // g6.h
     public void c(g6.f fVar, int i7) {
-        wa waVar = new wa(6, 4);
-        waVar.c = Integer.valueOf(i7);
-        s6 s6Var = new s6(waVar);
+        xa xaVar = new xa(6, 4);
+        xaVar.c = Integer.valueOf(i7);
+        s6 s6Var = new s6(xaVar);
         r7 r7Var = this.a;
-        r7.K(r7Var, s6Var);
+        r7.O(r7Var, s6Var);
         r6 r6Var = (r6) r7Var.e;
         q6.m.g(r6Var);
         r6Var.a((g6.c) fVar);
+    }
+
+    @Override // g6.h
+    public void d(g6.f fVar, int i7) {
+        xa xaVar = new xa(5, 4);
+        xaVar.c = Integer.valueOf(i7);
+        s6 s6Var = new s6(xaVar);
+        r7 r7Var = this.a;
+        r7.O(r7Var, s6Var);
+        r7Var.Q();
     }
 
     @Override // g6.h
     public void e(g6.f fVar, int i7) {
-        wa waVar = new wa(5, 4);
-        waVar.c = Integer.valueOf(i7);
-        s6 s6Var = new s6(waVar);
+        xa xaVar = new xa(8, 4);
+        xaVar.c = Integer.valueOf(i7);
+        s6 s6Var = new s6(xaVar);
         r7 r7Var = this.a;
-        r7.K(r7Var, s6Var);
-        r7Var.O();
+        r7.O(r7Var, s6Var);
+        r7Var.Q();
     }
 
     @Override // g6.h
-    public void f(g6.f fVar, int i7) {
-        wa waVar = new wa(8, 4);
-        waVar.c = Integer.valueOf(i7);
-        s6 s6Var = new s6(waVar);
+    public void f(g6.f fVar, String str) {
+        s6 s6Var = new s6(new xa(4, 4));
         r7 r7Var = this.a;
-        r7.K(r7Var, s6Var);
-        r7Var.O();
-    }
-
-    @Override // g6.h
-    public void i(g6.f fVar, String str) {
-        s6 s6Var = new s6(new wa(4, 4));
-        r7 r7Var = this.a;
-        r7.K(r7Var, s6Var);
+        r7.O(r7Var, s6Var);
         r6 r6Var = (r6) r7Var.e;
         q6.m.g(r6Var);
         r6Var.a((g6.c) fVar);
@@ -77,20 +77,20 @@ public final class l4 implements g6.h {
     }
 
     @Override // g6.h
-    public void j(g6.f fVar, int i7) {
-        wa waVar = new wa(9, 4);
-        waVar.c = Integer.valueOf(i7);
+    public void i(g6.f fVar, int i7) {
+        xa xaVar = new xa(9, 4);
+        xaVar.c = Integer.valueOf(i7);
         r7 r7Var = this.a;
-        waVar.d = Boolean.valueOf(((c) r7Var.c).d == 2);
-        r7.K(r7Var, new s6(waVar));
-        r7Var.O();
+        xaVar.d = Boolean.valueOf(((c) r7Var.c).d == 2);
+        r7.O(r7Var, new s6(xaVar));
+        r7Var.Q();
     }
 
     @Override // g6.h
-    public void p(g6.f fVar, String str) {
-        s6 s6Var = new s6(new wa(7, 4));
+    public void l(g6.f fVar, String str) {
+        s6 s6Var = new s6(new xa(7, 4));
         r7 r7Var = this.a;
-        r7.K(r7Var, s6Var);
+        r7.O(r7Var, s6Var);
         r6 r6Var = (r6) r7Var.e;
         q6.m.g(r6Var);
         r6Var.a((g6.c) fVar);
@@ -108,12 +108,12 @@ public final class l4 implements g6.h {
     }
 
     @Override // g6.h
-    public void s(g6.f fVar) {
+    public void m(g6.f fVar) {
         g6.c cVar = (g6.c) fVar;
-        wa waVar = new wa(2, 4);
+        xa xaVar = new xa(2, 4);
         r7 r7Var = this.a;
-        waVar.d = Boolean.valueOf(((c) r7Var.c).d == 2);
-        r7.K(r7Var, new s6(waVar));
+        xaVar.d = Boolean.valueOf(((c) r7Var.c).d == 2);
+        r7.O(r7Var, new s6(xaVar));
         r6 r6Var = (r6) r7Var.e;
         q6.m.g(r6Var);
         r6Var.a(cVar);
@@ -121,6 +121,6 @@ public final class l4 implements g6.h {
     }
 
     @Override // g6.h
-    public /* bridge */ /* synthetic */ void t(g6.f fVar) {
+    public /* bridge */ /* synthetic */ void n(g6.f fVar) {
     }
 }

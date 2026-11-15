@@ -3,7 +3,7 @@ package androidx.biometric;
 import android.content.DialogInterface;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class y implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -24,7 +24,7 @@ public final class y implements DialogInterface.OnClickListener {
                 }
                 break;
             default:
-                ((g0) this.b).C0.g(true);
+                ((g0) this.b).D0.g(true);
                 break;
         }
     }

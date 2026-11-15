@@ -1,24 +1,24 @@
 package android.support.v4.media.session;
 
-import a8.i1;
+import a8.j1;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements b {
     public IBinder a;
 
     @Override // android.support.v4.media.session.b
-    public final void E(Bundle bundle) {
+    public final void F(Bundle bundle) {
         throw null;
     }
 
     @Override // android.support.v4.media.session.b
-    public final void L(List list) {
+    public final void M(List list) {
         throw null;
     }
 
@@ -44,7 +44,7 @@ public final class a implements b {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            i1.b(obtain, playbackStateCompat);
+            j1.b(obtain, playbackStateCompat);
             this.a.transact(3, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -56,7 +56,7 @@ public final class a implements b {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            i1.b(obtain, parcelableVolumeInfo);
+            j1.b(obtain, parcelableVolumeInfo);
             this.a.transact(8, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -76,12 +76,12 @@ public final class a implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void k0(CharSequence charSequence) {
+    public final void l0(CharSequence charSequence) {
         throw null;
     }
 
     @Override // android.support.v4.media.session.b
-    public final void m0() {
+    public final void n0() {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
@@ -92,11 +92,11 @@ public final class a implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void o0(MediaMetadataCompat mediaMetadataCompat) {
+    public final void p0(MediaMetadataCompat mediaMetadataCompat) {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            i1.b(obtain, mediaMetadataCompat);
+            j1.b(obtain, mediaMetadataCompat);
             this.a.transact(4, obtain, null, 1);
         } finally {
             obtain.recycle();

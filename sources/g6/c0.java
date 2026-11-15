@@ -6,12 +6,13 @@ import com.google.android.gms.internal.cast.e3;
 import com.google.android.gms.internal.cast.l4;
 import com.google.android.gms.internal.cast.p2;
 import com.google.android.gms.internal.cast.r6;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c0 extends h6.g {
     public final /* synthetic */ int a;
@@ -85,15 +86,15 @@ public final class c0 extends h6.g {
             case 0:
                 l4 l4Var = ((c) this.b).l;
                 if (l4Var != null) {
-                    r6 N = l4Var.a.N();
+                    r6 P = l4Var.a.P();
                     p2 p2Var = new p2(str);
                     p2Var.b = j3;
                     p2Var.c = i7;
                     p2Var.d = j10;
                     p2Var.e = j11;
                     e3 e3Var = new e3(p2Var);
-                    e3Var.f = N.h;
-                    N.d.add(e3Var);
+                    e3Var.f = P.h;
+                    P.d.add(e3Var);
                     break;
                 }
                 break;
@@ -298,7 +299,7 @@ public final class c0 extends h6.g {
                         cVar.d();
                         break;
                     } else {
-                        i7 = com.google.android.recaptcha.internal.a.f(i11, i7, 1, arrayList);
+                        i7 = e2.f(i11, i7, 1, arrayList);
                     }
                 }
                 Collections.sort(arrayList);

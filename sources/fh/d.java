@@ -1,18 +1,18 @@
 package fh;
 
-import a8.aa;
+import a8.ca;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.NinePatchDrawable;
-import c8.n0;
-import org.telegram.ui.ActionBar.m6;
+import c8.o0;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class d extends aa {
+public final class d extends ca {
     public NinePatchDrawable d;
     public long e;
     public final /* synthetic */ g g;
@@ -25,27 +25,27 @@ public final class d extends aa {
         this.g = gVar;
     }
 
-    @Override // a8.aa
-    public final void b(Canvas canvas, ri.a aVar) {
-        ri.a v = g.v(aVar);
+    @Override // a8.ca
+    public final void b(Canvas canvas, ui.a aVar) {
+        ui.a v = g.v(aVar);
         g gVar = this.g;
-        c(canvas, i0.a.k(gVar.y, (Color.alpha(gVar.y) == 255 || !(v instanceof ri.c)) ? 0 : ((ri.c) v).b));
+        c(canvas, i0.a.k(gVar.y, (Color.alpha(gVar.y) == 255 || !(v instanceof ui.c)) ? 0 : ((ui.c) v).b));
     }
 
     public final void c(Canvas canvas, int i7) {
         g gVar = this.g;
-        f fVar = gVar.Q;
+        f fVar = gVar.R;
         if (Color.alpha(i7) == 0 && Color.alpha(gVar.x) == 0) {
             return;
         }
         if (fVar.e()) {
             float f10 = gVar.c / 255.0f;
-            int r12 = m6.r1(f10, i7);
+            int r12 = j6.r1(f10, i7);
             Paint paint = this.b;
             paint.setColor(r12);
-            int r13 = m6.r1(f10 * gVar.V, gVar.x);
+            int r13 = j6.r1(f10 * gVar.W, gVar.x);
             if (Color.alpha(r13) != 0) {
-                paint.setShadowLayer(gVar.T, 0.0f, gVar.U, r13);
+                paint.setShadowLayer(gVar.U, 0.0f, gVar.V, r13);
             } else {
                 paint.clearShadowLayer();
             }
@@ -60,15 +60,15 @@ public final class d extends aa {
         for (float f11 : fVar.b) {
             aVar.c(f11);
         }
-        aVar.c(gVar.T);
-        aVar.c(0.0f);
         aVar.c(gVar.U);
+        aVar.c(0.0f);
+        aVar.c(gVar.V);
         long j3 = aVar.a ? -1L : aVar.b;
         NinePatchDrawable ninePatchDrawable = this.d;
         Rect rect = this.c;
         if (ninePatchDrawable == null || this.e != j3) {
             this.e = j3;
-            NinePatchDrawable b10 = n0.b(this.f, i7, fVar.b, gVar.T, gVar.x, gVar.U, Color.alpha(i7) == 255 ? i7 : 1);
+            NinePatchDrawable b10 = o0.b(this.f, i7, fVar.b, gVar.U, gVar.x, gVar.V, Color.alpha(i7) == 255 ? i7 : 1);
             this.d = b10;
             b10.getPadding(rect);
         }

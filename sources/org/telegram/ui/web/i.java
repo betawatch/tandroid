@@ -1,14 +1,111 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class i {
-    public final String a;
-    public long b;
-    public double c;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.is;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.si;
+import org.telegram.tgnet.ConnectionsManager;
 
-    public i(String str, long j3) {
-        this.a = str;
-        this.b = j3;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes4.dex */
+public final class i implements is {
+    public final int b;
+    public final Runnable c;
+    public final String d;
+    public boolean f;
+    public boolean h;
+    public boolean n;
+    public final ArrayList a = new ArrayList();
+    public final int e = ConnectionsManager.generateClassGuid();
+
+    public i(String str, int i7, Runnable runnable) {
+        this.b = i7;
+        this.d = str;
+        this.c = runnable;
+    }
+
+    public final void a() {
+        if (this.h) {
+            return;
+        }
+        this.h = true;
+        int i7 = this.b;
+        ns.f(i7).c(this, ns.V);
+        ns.f(i7).c(this, ns.H1);
+        if (TextUtils.isEmpty(this.d)) {
+            d();
+        }
+    }
+
+    public final void b(ArrayList arrayList) {
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.a;
+            if (i7 >= arrayList2.size()) {
+                return;
+            }
+            if (arrayList.contains(Integer.valueOf(((gj) arrayList2.get(i7)).e1()))) {
+                arrayList2.remove(i7);
+                i7--;
+            }
+            i7++;
+        }
+    }
+
+    public final void c() {
+        if (this.h) {
+            this.h = false;
+            int i7 = this.b;
+            ns.f(i7).n(this, ns.V);
+            ns.f(i7).n(this, ns.H1);
+            ConnectionsManager.getInstance(i7).cancelRequestsForGuid(this.e);
+            this.n = false;
+        }
+    }
+
+    public final void d() {
+        ArrayList arrayList;
+        if (this.n || this.f) {
+            return;
+        }
+        this.n = true;
+        int i7 = this.b;
+        long e10 = m10.i(i7).e();
+        int i10 = 0;
+        int i11 = Integer.MAX_VALUE;
+        while (true) {
+            arrayList = this.a;
+            if (i10 >= arrayList.size()) {
+                break;
+            }
+            i11 = Math.min(i11, ((gj) arrayList.get(i10)).e1());
+            i10++;
+        }
+        si b02 = si.b0(i7);
+        int i12 = arrayList.isEmpty() ? 30 : 50;
+        if (i11 == Integer.MAX_VALUE) {
+            i11 = 0;
+        }
+        b02.N0(e10, i12, i11, 0, 3, 0L, 1, this.e, 0, null, this.d);
+    }
+
+    @Override // org.telegram.messenger.is
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        int i11 = ns.V;
+        ArrayList arrayList = this.a;
+        if (i7 != i11) {
+            if (i7 == ns.H1) {
+                arrayList.add(0, (gj) objArr[0]);
+            }
+        } else if (((Integer) objArr[3]).intValue() == this.e) {
+            this.n = false;
+            ArrayList arrayList2 = (ArrayList) objArr[2];
+            this.f = ((Boolean) objArr[5]).booleanValue();
+            arrayList.addAll(arrayList2);
+            this.c.run();
+        }
     }
 }

@@ -3,9 +3,10 @@ package lg;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import java.util.ArrayList;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class a extends g {
     @Override // lg.g
@@ -15,7 +16,7 @@ public final class a extends g {
 
     @Override // lg.g
     public final ng.f h(mg.a aVar) {
-        return new ng.a(aVar, this.W0);
+        return new ng.a(aVar, this.X0);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x0091  */
@@ -36,42 +37,42 @@ public final class a extends g {
         float f15;
         int i11;
         Canvas canvas2 = canvas;
-        mg.b bVar = this.h0;
+        mg.b bVar = this.i0;
         if (bVar == null) {
             return;
         }
-        float f16 = this.F0;
-        j jVar = this.g0;
+        float f16 = this.G0;
+        j jVar = this.h0;
         float f17 = jVar.l;
         float f18 = jVar.k;
         float f19 = f16 / (f17 - f18);
-        float f20 = (f18 * f19) - g.k1;
+        float f20 = (f18 * f19) - g.l1;
         int i12 = 1;
-        int i13 = this.F - 1;
+        int i13 = this.G - 1;
         int i14 = 0;
         int i15 = i13 < 0 ? 0 : i13;
-        int i16 = this.G + 1;
+        int i16 = this.H + 1;
         if (i16 > ((mg.a) bVar.d.get(0)).a.length - 1) {
-            i16 = ((mg.a) this.h0.d.get(0)).a.length - 1;
+            i16 = ((mg.a) this.i0.d.get(0)).a.length - 1;
         }
         int i17 = i16;
         canvas2.save();
         float f21 = 0.0f;
-        canvas2.clipRect(this.D0, 0.0f, this.E0, getMeasuredHeight() - this.s);
+        canvas2.clipRect(this.E0, 0.0f, this.F0, getMeasuredHeight() - this.s);
         canvas2.save();
-        int i18 = this.y0;
+        int i18 = this.z0;
         float f22 = 2.0f;
         int i19 = 2;
         float f23 = 1.0f;
         if (i18 == 2) {
-            this.f0 = true;
-            this.v0 = 0.0f;
-            ng.j jVar2 = this.z0;
+            this.g0 = true;
+            this.w0 = 0.0f;
+            ng.j jVar2 = this.A0;
             float f24 = jVar2.f;
             f11 = 1.0f - f24;
             canvas2.scale((f24 * 2.0f) + 1.0f, 1.0f, jVar2.d, jVar2.e);
         } else if (i18 == 1) {
-            ng.j jVar3 = this.z0;
+            ng.j jVar3 = this.A0;
             f11 = jVar3.f;
             canvas2.scale(f11, 1.0f, jVar3.d, jVar3.e);
         } else {
@@ -85,14 +86,14 @@ public final class a extends g {
                     return;
                 }
                 ng.a aVar = (ng.a) arrayList.get(i7);
-                boolean z9 = aVar.n;
+                boolean z10 = aVar.n;
                 float[] fArr = aVar.k;
                 float f25 = f23;
                 Paint paint = aVar.r;
                 int i20 = i12;
                 Paint paint2 = aVar.c;
-                if (z9 || aVar.o != f21) {
-                    float[] fArr2 = this.h0.b;
+                if (z10 || aVar.o != f21) {
+                    float[] fArr2 = this.i0.b;
                     f12 = f22;
                     float f26 = fArr2.length < i19 ? f25 : fArr2[i20] * f19;
                     long[] jArr = aVar.a.a;
@@ -105,11 +106,11 @@ public final class a extends g {
                     int i23 = i15;
                     while (i23 <= i17) {
                         float f30 = f28;
-                        float f31 = ((this.h0.b[i23] * f19) + (f26 / f12)) - f20;
+                        float f31 = ((this.i0.b[i23] * f19) + (f26 / f12)) - f20;
                         float f32 = f19;
                         float f33 = f20;
-                        float measuredHeight = (getMeasuredHeight() - this.s) - (((jArr[i23] / this.w) * f27) * ((getMeasuredHeight() - this.s) - g.n1));
-                        if (i23 == this.s0 && this.u0) {
+                        float measuredHeight = (getMeasuredHeight() - this.s) - (((jArr[i23] / this.w) * f27) * ((getMeasuredHeight() - this.s) - g.o1));
+                        if (i23 == this.t0 && this.v0) {
                             f29 = measuredHeight;
                             i21 = i20;
                             f28 = f31;
@@ -129,12 +130,12 @@ public final class a extends g {
                     float f34 = f28;
                     f13 = f19;
                     f14 = f20;
-                    Paint paint3 = (i21 != 0 || this.f0) ? paint : paint2;
+                    Paint paint3 = (i21 != 0 || this.g0) ? paint : paint2;
                     paint3.setStrokeWidth(f26);
                     if (i21 != 0) {
-                        paint.setColor(i0.a.f(f25 - this.v0, aVar.m, aVar.s));
+                        paint.setColor(i0.a.f(f25 - this.w0, aVar.m, aVar.s));
                     }
-                    if (this.f0) {
+                    if (this.g0) {
                         f15 = 0.0f;
                         paint.setColor(i0.a.f(0.0f, aVar.m, aVar.s));
                     } else {
@@ -148,7 +149,7 @@ public final class a extends g {
                         paint2.setStrokeWidth(f26);
                         paint2.setAlpha(i25);
                         canvas2.drawLine(f34, f29, f34, getMeasuredHeight() - this.s, paint2);
-                        paint2.setAlpha(qs.e4);
+                        paint2.setAlpha(ns.e4);
                     }
                 } else {
                     i10 = i7;
@@ -199,23 +200,23 @@ public final class a extends g {
         ArrayList arrayList2;
         float f11;
         int measuredHeight = getMeasuredHeight();
-        int i12 = g.q1;
+        int i12 = g.r1;
         int i13 = measuredHeight - i12;
-        int measuredHeight2 = (getMeasuredHeight() - this.B0) - i12;
+        int measuredHeight2 = (getMeasuredHeight() - this.C0) - i12;
         ArrayList arrayList3 = this.d;
         int size = arrayList3.size();
-        if (this.h0 != null) {
+        if (this.i0 != null) {
             int i14 = 0;
             while (i14 < size) {
                 ng.a aVar = (ng.a) arrayList3.get(i14);
-                boolean z9 = aVar.n;
+                boolean z10 = aVar.n;
                 Paint paint = aVar.c;
                 float[] fArr = aVar.k;
-                if (z9 || aVar.o != 0.0f) {
+                if (z10 || aVar.o != 0.0f) {
                     aVar.e.reset();
-                    float[] fArr2 = this.h0.b;
+                    float[] fArr2 = this.i0.b;
                     int length = fArr2.length;
-                    float f12 = fArr2.length < 2 ? 1.0f : fArr2[1] * this.C0;
+                    float f12 = fArr2.length < 2 ? 1.0f : fArr2[1] * this.D0;
                     long[] jArr = aVar.a.a;
                     float f13 = aVar.o;
                     int i15 = 0;
@@ -227,11 +228,11 @@ public final class a extends g {
                             i11 = i13;
                             arrayList2 = arrayList3;
                         } else {
-                            mg.b bVar = this.h0;
+                            mg.b bVar = this.i0;
                             i11 = i13;
-                            float f14 = this.C0 * bVar.b[i15];
-                            if (g.B1) {
-                                f11 = this.j0;
+                            float f14 = this.D0 * bVar.b[i15];
+                            if (g.C1) {
+                                f11 = this.k0;
                                 f10 = f14;
                                 arrayList2 = arrayList3;
                             } else {
@@ -239,7 +240,7 @@ public final class a extends g {
                                 arrayList2 = arrayList3;
                                 f11 = bVar.e;
                             }
-                            float v = org.telegram.messenger.camera.q.v(j3, f11, f13, 1.0f) * (i11 - measuredHeight2);
+                            float v = i20.v(j3, f11, f13, 1.0f) * (i11 - measuredHeight2);
                             fArr[i16] = f10;
                             fArr[i16 + 1] = v;
                             int i18 = i16 + 3;
@@ -275,20 +276,20 @@ public final class a extends g {
         k(canvas);
         i(canvas);
         ArrayList arrayList = this.b;
-        this.m0 = arrayList.size();
+        this.n0 = arrayList.size();
         int i7 = 0;
         while (true) {
-            this.n0 = i7;
-            int i10 = this.n0;
-            if (i10 >= this.m0) {
+            this.o0 = i7;
+            int i10 = this.o0;
+            if (i10 >= this.n0) {
                 j(canvas);
                 m(canvas);
                 super.onDraw(canvas);
                 return;
             } else {
                 l(canvas, (ng.d) arrayList.get(i10));
-                p(canvas, (ng.d) arrayList.get(this.n0));
-                i7 = this.n0 + 1;
+                p(canvas, (ng.d) arrayList.get(this.o0));
+                i7 = this.o0 + 1;
             }
         }
     }

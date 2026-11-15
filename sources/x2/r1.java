@@ -1,77 +1,22 @@
 package x2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class r1 extends l {
-    public final a k;
+public final class r1 extends e2.t0 {
+    public final h9.i0 c;
 
-    public r1(a aVar) {
-        this.k = aVar;
+    public r1(String str, h9.s1 s1Var) {
+        super(str, null, false, 1);
+        this.c = h9.i0.q(s1Var);
     }
 
-    public abstract void A(e2.l1 l1Var);
-
-    public final void B() {
-        y(null, this.k);
-    }
-
-    public void C() {
-        B();
-    }
-
-    @Override // x2.a
-    public boolean a(e2.l0 l0Var) {
-        return this.k.a(l0Var);
-    }
-
-    @Override // x2.a
-    public e2.l1 h() {
-        return this.k.h();
-    }
-
-    @Override // x2.a
-    public final e2.l0 i() {
-        return this.k.i();
-    }
-
-    @Override // x2.a
-    public boolean j() {
-        return this.k.j();
-    }
-
-    @Override // x2.a
-    public final void m(j2.d0 d0Var) {
-        this.j = d0Var;
-        this.i = h2.m0.q(null);
-        C();
-    }
-
-    @Override // x2.a
-    public void t(e2.l0 l0Var) {
-        this.k.t(l0Var);
-    }
-
-    @Override // x2.l
-    public final f0 u(Object obj, f0 f0Var) {
-        return z(f0Var);
-    }
-
-    @Override // x2.l
-    public final long v(Object obj, long j3) {
-        return j3;
-    }
-
-    @Override // x2.l
-    public final int w(int i7, Object obj) {
-        return i7;
-    }
-
-    @Override // x2.l
-    public final void x(Object obj, a aVar, e2.l1 l1Var) {
-        A(l1Var);
-    }
-
-    public f0 z(f0 f0Var) {
-        return f0Var;
+    @Override // e2.t0, java.lang.Throwable
+    public final String getMessage() {
+        String message = super.getMessage();
+        h9.i0 i0Var = this.c;
+        if (i0Var.isEmpty()) {
+            return message;
+        }
+        return message + "\nsniff failures: " + i0Var;
     }
 }

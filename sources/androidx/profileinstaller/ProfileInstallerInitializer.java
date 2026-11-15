@@ -2,14 +2,13 @@ package androidx.profileinstaller;
 
 import android.content.Context;
 import android.os.Build;
-import bi.pa;
 import java.util.Collections;
 import java.util.List;
+import qb.a;
 import u4.e;
-import w7.s;
 import y4.b;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class ProfileInstallerInitializer implements b {
     @Override // y4.b
@@ -20,9 +19,9 @@ public class ProfileInstallerInitializer implements b {
     @Override // y4.b
     public final Object b(Context context) {
         if (Build.VERSION.SDK_INT < 24) {
-            return new s(25, false);
+            return new a(26);
         }
-        e.a(new pa(this, context.getApplicationContext()));
-        return new s(25, false);
+        e.a(new ai.a(this, context.getApplicationContext()));
+        return new a(26);
     }
 }

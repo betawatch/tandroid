@@ -1,117 +1,84 @@
 package hi;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import bi.d9;
-import java.util.ArrayList;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.k60;
+import android.view.MotionEvent;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.z10;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.st0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class h3 implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.w2 c;
-    public final /* synthetic */ h6 d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Context f;
-    public final /* synthetic */ TL_payments.connectedBotStarRef h;
-    public final /* synthetic */ Object n;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class h3 extends org.telegram.ui.ActionBar.u2 {
+    public final g3 m1;
+    public ValueAnimator n1;
+    public r1.g o1;
+    public Boolean p1;
+    public z10 q1;
 
-    public /* synthetic */ h3(int i7, org.telegram.ui.ActionBar.w2 w2Var, h6 h6Var, LinearLayout linearLayout, long j3, Context context, TL_payments.connectedBotStarRef connectedbotstarref) {
-        this.b = i7;
-        this.c = w2Var;
-        this.d = h6Var;
-        this.n = linearLayout;
-        this.e = j3;
-        this.f = context;
-        this.h = connectedbotstarref;
+    public h3(Context context, org.telegram.ui.ActionBar.e6 e6Var, String str, float f10) {
+        super(1, context, e6Var, false);
+        P(-14737633);
+        g3 g3Var = new g3(m10.t0, context, new fi.b(), f10, str);
+        this.m1 = g3Var;
+        g3Var.H.setVisibility(8);
+        g3Var.setMultipleOnClick(false);
+        g3Var.setOnBackClickListener(new e3(this, 0));
+        g3Var.setOnSelectListener(new bi.b(this, 28));
+        st0 st0Var = new st0(context, null);
+        this.b = st0Var;
+        int i7 = this.u0;
+        st0Var.setPadding(i7, 0, i7, 0);
+        this.b.addView(g3Var);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        long j3;
-        switch (this.a) {
-            case 0:
-                ai.d0 d0Var = (ai.d0) this.n;
-                TL_payments.connectedBotStarRef connectedbotstarref = this.h;
-                if (!connectedbotstarref.revoked) {
-                    d0Var.run();
-                    break;
-                } else {
-                    int i7 = this.b;
-                    TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(connectedbotstarref.bot_id));
-                    if (a22 != null) {
-                        qp.s1(i7).W2(a22, 0, true, new d3(this.c, this.f, i7, this.e, this.d, 0));
-                        break;
-                    }
-                }
-                break;
-            default:
-                LinearLayout linearLayout = (LinearLayout) this.n;
-                int i10 = this.b;
-                bi.n0 g10 = bi.n0.g(i10);
-                g10.n();
-                g10.o();
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = g10.j;
-                if (arrayList2 != null) {
-                    arrayList.addAll(arrayList2);
-                }
-                ArrayList arrayList3 = g10.l;
-                if (arrayList3 != null) {
-                    arrayList.addAll(arrayList3);
-                }
-                arrayList.add(0, p10.i(i10).f());
-                org.telegram.ui.ActionBar.w2 w2Var = this.c;
-                ViewGroup viewGroup = w2Var.b;
-                h6 h6Var = this.d;
-                k60 k60Var = new k60(viewGroup, h6Var, linearLayout, false, false, true);
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
-                    TLObject tLObject = (TLObject) obj;
-                    if (tLObject instanceof TLRPC.User) {
-                        j3 = ((TLRPC.User) tLObject).id;
-                    } else if (tLObject instanceof TLRPC.Chat) {
-                        TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                        if (org.telegram.messenger.t3.V(chat)) {
-                            j3 = -chat.id;
-                        }
-                    }
-                    long j10 = j3;
-                    int i12 = i10;
-                    h6 h6Var2 = h6Var;
-                    k60Var.g(tLObject, j10 == this.e, new d9(i12, j10, this.f, this.h, w2Var, h6Var2));
-                    i10 = i12;
-                    h6Var = h6Var2;
-                }
-                k60Var.t = false;
-                k60Var.s = 0;
-                k60Var.V(5);
-                k60Var.a0(org.telegram.messenger.g0.L(24.0f), 0.0f);
-                k60Var.Z();
-                break;
+    @Override // org.telegram.ui.ActionBar.u2
+    public final boolean H() {
+        return !this.m1.x;
+    }
+
+    public final void J0(boolean z10, e3 e3Var) {
+        g3 g3Var = this.m1;
+        float translationY = g3Var.getTranslationY();
+        float height = z10 ? 0.0f : (this.b.getHeight() - g3Var.g()) + (org.telegram.messenger.g0.n * 2.5f);
+        this.p1 = Boolean.valueOf(z10);
+        if (z10) {
+            r1.g gVar = new r1.g(g3Var, r1.g.p, height);
+            this.o1 = gVar;
+            gVar.m.a(0.75f);
+            this.o1.m.b(350.0f);
+            this.o1.a(new f3(this, height, e3Var));
+            this.o1.h();
+            return;
         }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(translationY, height);
+        this.n1 = ofFloat;
+        ofFloat.addUpdateListener(new ah.h(this, 29));
+        this.n1.addListener(new ah.l(5, this, e3Var));
+        this.n1.setDuration(450L);
+        this.n1.setInterpolator(er.h);
+        this.n1.start();
     }
 
-    public /* synthetic */ h3(TL_payments.connectedBotStarRef connectedbotstarref, int i7, org.telegram.ui.ActionBar.w2 w2Var, Context context, long j3, h6 h6Var, ai.d0 d0Var) {
-        this.h = connectedbotstarref;
-        this.b = i7;
-        this.c = w2Var;
-        this.f = context;
-        this.e = j3;
-        this.d = h6Var;
-        this.n = d0Var;
+    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
+    public final void dismiss() {
+        J0(false, new e3(this, 1));
+        super.dismiss();
+    }
+
+    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog, android.view.Window.Callback
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.m1.g()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        dismiss();
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog
+    public final void show() {
+        super.show();
+        J0(true, null);
     }
 }

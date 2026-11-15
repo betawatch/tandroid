@@ -12,7 +12,7 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessaging;
 import java.util.concurrent.ExecutionException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class b1 {
     public static boolean a() {
@@ -132,7 +132,7 @@ public abstract class b1 {
                     o9.g c12 = o9.g.c();
                     c12.a();
                     String packageName = c12.a.getPackageName();
-                    bb.b bVar = !d6.i.l0(extras) ? bb.b.c : bb.b.b;
+                    bb.b bVar = !ab.w.f(extras) ? bb.b.c : bb.b.b;
                     string2 = extras.getString("google.delivered_priority");
                     if (string2 == null) {
                         if (!"1".equals(extras.getString("google.priority_reduced"))) {
@@ -291,7 +291,7 @@ public abstract class b1 {
                 o9.g c122 = o9.g.c();
                 c122.a();
                 String packageName2 = c122.a.getPackageName();
-                bb.b bVar2 = !d6.i.l0(extras) ? bb.b.c : bb.b.b;
+                bb.b bVar2 = !ab.w.f(extras) ? bb.b.c : bb.b.b;
                 string2 = extras.getString("google.delivered_priority");
                 if (string2 == null) {
                 }
@@ -338,7 +338,7 @@ public abstract class b1 {
                 return;
             }
             try {
-                ((o5.q) fVar).a("FCM_CLIENT_EVENT_LOGGING", new l5.c("proto"), new a3.l(i12)).a(new l5.a(null, new bb.e(dVar), l5.d.a, new l5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new ni.a(3));
+                ((o5.r) fVar).a("FCM_CLIENT_EVENT_LOGGING", new l5.c("proto"), new a3.l(i12)).a(new l5.a(null, new bb.e(dVar), l5.d.a, new l5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new n2.a0(7));
             } catch (RuntimeException e16) {
                 Log.w("FirebaseMessaging", "Failed to send big query analytics payload.", e16);
             }
@@ -391,7 +391,7 @@ public abstract class b1 {
                     Log.w("FirebaseMessaging", "Error while parsing use_device_time in GCM event", e11);
                 }
             }
-            String str2 = d6.i.l0(bundle) ? "display" : "data";
+            String str2 = ab.w.f(bundle) ? "display" : "data";
             if ("_nr".equals(str) || "_nf".equals(str)) {
                 bundle2.putString("_nmc", str2);
             }

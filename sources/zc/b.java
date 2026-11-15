@@ -1,9 +1,9 @@
 package zc;
 
-import c8.x0;
-import gf.h;
+import c8.y0;
+import gf.g;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b extends mf.a {
     public final a a = new a();
@@ -32,12 +32,12 @@ public final class b extends mf.a {
     }
 
     @Override // mf.a
-    public final gf.a h(h hVar) {
+    public final gf.a h(g gVar) {
         int i7;
-        int i10 = hVar.e;
-        CharSequence charSequence = hVar.a;
+        int i10 = gVar.e;
+        CharSequence charSequence = gVar.a;
         int length = charSequence.length();
-        if (hVar.g < 4) {
+        if (gVar.g < 4) {
             int i11 = i10;
             while (true) {
                 if (i11 >= length) {
@@ -51,10 +51,10 @@ public final class b extends mf.a {
                 i11++;
             }
             int i12 = this.c;
-            if (i7 == i12 && x0.b(' ', i10 + i12, length, charSequence) == length) {
+            if (i7 == i12 && y0.b(' ', i10 + i12, length, charSequence) == length) {
                 return new gf.a(-1, -1, true);
             }
         }
-        return gf.a.a(hVar.b);
+        return gf.a.a(gVar.b);
     }
 }

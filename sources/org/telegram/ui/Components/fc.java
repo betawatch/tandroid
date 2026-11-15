@@ -1,95 +1,72 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.SpannableString;
+import android.text.style.ReplacementSpan;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class fc {
-    public static final fc D;
-    public static final fc E;
-    public static final fc F;
-    public static final fc G;
-    public static final fc H;
-    public static final fc I;
-    public static final /* synthetic */ fc[] J;
-    public static final fc e;
-    public static final fc f;
-    public static final fc h;
-    public static final fc n;
-    public static final fc r;
-    public static final fc s;
-    public static final fc w;
-    public static final fc x;
-    public static final fc y;
-    public final String a;
-    public final int b;
-    public final boolean c;
-    public final ec d;
+public final class fc extends ReplacementSpan {
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final Paint b = new Paint(1);
+    public final oy0 c;
+    public final Runnable d;
+    public dc e;
+    public Integer f;
 
-    static {
-        ec ecVar = ec.e;
-        fc fcVar = new fc("PHOTO", 0, "PhotoSavedHint", 2131747264, ecVar);
-        e = fcVar;
-        fc fcVar2 = new fc("PHOTOS", 1, "PhotosSavedHint", ecVar);
-        f = fcVar2;
-        fc fcVar3 = new fc("VIDEO", 2, "VideoSavedHint", 2131743585, ecVar);
-        h = fcVar3;
-        fc fcVar4 = new fc("VIDEOS", 3, "VideosSavedHint", ecVar);
-        n = fcVar4;
-        fc fcVar5 = new fc("LIVEPHOTO", 4, "LivePhotoSavedHint", 2131748834, ecVar);
-        r = fcVar5;
-        fc fcVar6 = new fc("LIVEPHOTOS", 5, "LivePhotosSavedHint", ecVar);
-        s = fcVar6;
-        fc fcVar7 = new fc("MEDIA", 6, "MediaSavedHint", ecVar);
-        w = fcVar7;
-        ec ecVar2 = ec.d;
-        fc fcVar8 = new fc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", 2131747263, ecVar2);
-        x = fcVar8;
-        fc fcVar9 = new fc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", 2131743584, ecVar2);
-        y = fcVar9;
-        fc fcVar10 = new fc("GIF", 9, "GifSavedHint", 2131750470, ec.h);
-        D = fcVar10;
-        fc fcVar11 = new fc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", 2131750469, ecVar2);
-        E = fcVar11;
-        ec ecVar3 = ec.f;
-        fc fcVar12 = new fc("AUDIO", 11, "AudioSavedHint", 2131753908, ecVar3);
-        F = fcVar12;
-        fc fcVar13 = new fc("AUDIOS", 12, "AudiosSavedHint", ecVar3);
-        G = fcVar13;
-        fc fcVar14 = new fc("UNKNOWN", 13, "FileSavedHintLinked", 2131750828, ecVar2);
-        H = fcVar14;
-        fc fcVar15 = new fc("UNKNOWNS", 14, "FilesSavedHintLinked", ecVar2);
-        I = fcVar15;
-        J = new fc[]{fcVar, fcVar2, fcVar3, fcVar4, fcVar5, fcVar6, fcVar7, fcVar8, fcVar9, fcVar10, fcVar11, fcVar12, fcVar13, fcVar14, fcVar15};
+    public fc(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.a = e6Var;
+        this.d = runnable;
+        this.c = new oy0(charSequence, 12.0f, null);
     }
 
-    public fc(String str, int i7, String str2, int i10, ec ecVar) {
-        this.a = str2;
-        this.b = i10;
-        this.d = ecVar;
-        this.c = false;
+    public static SpannableString b(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.e6 e6Var, Integer num) {
+        SpannableString spannableString = new SpannableString("btn");
+        fc fcVar = new fc(charSequence, runnable, e6Var);
+        spannableString.setSpan(fcVar, 0, spannableString.length(), 33);
+        fcVar.f = num;
+        return spannableString;
     }
 
-    public static fc valueOf(String str) {
-        return (fc) Enum.valueOf(fc.class, str);
+    public final int a() {
+        return (int) (this.c.c + org.telegram.messenger.g0.L(14.0f));
     }
 
-    public static fc[] values() {
-        return (fc[]) J.clone();
+    public final void c(ec ecVar, boolean z10) {
+        if (this.e == null) {
+            this.e = new dc(ecVar);
+        }
+        this.e.c(z10);
     }
 
-    public fc(String str, int i7, String str2, ec ecVar) {
-        this.a = str2;
-        this.d = ecVar;
-        this.b = 0;
-        this.c = true;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        float N = org.telegram.messenger.g0.N(17.0f);
+        float f11 = (i11 + i13) / 2.0f;
+        RectF rectF = org.telegram.messenger.g0.P;
+        float f12 = N / 2.0f;
+        rectF.set(f10, f11 - f12, a() + f10, f11 + f12);
+        dc dcVar = this.e;
+        float a10 = dcVar == null ? 1.0f : dcVar.a(0.025f);
+        canvas.save();
+        canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
+        Integer num = this.f;
+        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Fi, this.a);
+        int r12 = org.telegram.ui.ActionBar.j6.r1(0.15f, intValue);
+        Paint paint2 = this.b;
+        paint2.setColor(r12);
+        canvas.drawRoundRect(rectF, f12, f12, paint2);
+        this.c.c(f10 + org.telegram.messenger.g0.L(7.0f), f11, 1.0f, intValue, canvas);
+        canvas.restore();
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        if (fontMetricsInt != null) {
+            paint.getFontMetricsInt(fontMetricsInt);
+        }
+        return a();
     }
 }

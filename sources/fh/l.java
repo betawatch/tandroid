@@ -12,10 +12,10 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.os.Build;
-import c8.n0;
+import c8.o0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class l {
     public static final i h = new i(TLObject.FLAG_22, 0);
@@ -89,16 +89,16 @@ public final class l {
         kVar.f = ((int) Math.ceil(Math.max(fArr[1], fArr[3]) + abs2)) + 1;
         int ceil = ((int) Math.ceil(Math.max(fArr[5], fArr[7]) + abs2)) + 1;
         int i13 = kVar.e + kVar.g + 2;
-        boolean z9 = i10 >= i13;
-        kVar.j = z9;
+        boolean z10 = i10 >= i13;
+        kVar.j = z10;
         int i14 = kVar.f + ceil + 2;
-        boolean z10 = i11 >= i14;
-        kVar.k = z10;
-        if (z9) {
+        boolean z11 = i11 >= i14;
+        kVar.k = z11;
+        if (z10) {
             i10 = i13;
         }
         kVar.h = i10;
-        if (z10) {
+        if (z11) {
             i11 = i14;
         }
         kVar.i = i11;
@@ -210,8 +210,8 @@ public final class l {
                     canvas2.restore();
                 }
                 createBitmap.prepareToDraw();
-                boolean z9 = f15.j;
-                if (z9) {
+                boolean z10 = f15.j;
+                if (z10) {
                     i12 = f15.e + ceil;
                     i11 = 2;
                 } else {
@@ -219,9 +219,9 @@ public final class l {
                     i12 = (f15.h / 2) + ceil;
                 }
                 int i16 = i12;
-                boolean z10 = f15.k;
-                int i17 = z10 ? f15.f + ceil : (f15.i / 2) + ceil;
-                j jVar2 = new j(new NinePatch(createBitmap, n0.c(i16, i16 + (z9 ? i11 : 1), i17, i17 + (z10 ? i11 : 1), 0, 0, 0, 0, 1).array(), null), null, ceil, createBitmap.getByteCount());
+                boolean z11 = f15.k;
+                int i17 = z11 ? f15.f + ceil : (f15.i / 2) + ceil;
+                j jVar2 = new j(new NinePatch(createBitmap, o0.c(i16, i16 + (z10 ? i11 : 1), i17, i17 + (z11 ? i11 : 1), 0, 0, 0, 0, 1).array(), null), null, ceil, createBitmap.getByteCount());
                 iVar.put(Long.valueOf(j3), jVar2);
                 jVar = jVar2;
             } else {

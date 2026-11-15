@@ -2,9 +2,10 @@ package b9;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
+import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f extends r6.a implements Parcelable {
     public static final Parcelable.Creator<f> CREATOR = new c(2);
@@ -47,15 +48,15 @@ public final class f extends r6.a implements Parcelable {
         if (length > 25) {
             trim = trim.substring(0, 10) + "..." + trim.substring(length - 10, length) + "::" + i7;
         }
-        return a8.p0.s(com.google.android.recaptcha.internal.a.n("Channel{token=", trim, ", nodeId=", this.b, ", path="), this.c, "}");
+        return a8.p0.s(e2.n("Channel{token=", trim, ", nodeId=", this.b, ", path="), this.c, "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.l(parcel, 2, this.a);
-        xb.l(parcel, 3, this.b);
-        xb.l(parcel, 4, this.c);
-        xb.s(parcel, r10);
+        int r10 = yb.r(parcel, 20293);
+        yb.l(parcel, 2, this.a);
+        yb.l(parcel, 3, this.b);
+        yb.l(parcel, 4, this.c);
+        yb.s(parcel, r10);
     }
 }

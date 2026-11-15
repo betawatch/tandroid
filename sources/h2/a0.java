@@ -5,7 +5,7 @@ import e2.i1;
 import e2.l1;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a0 {
     public long a;
@@ -27,28 +27,28 @@ public final class a0 {
         int i7 = this.d;
         e0 e0Var = (e0) this.i;
         i0 i0Var = (i0) e0Var.f;
-        l2.i0 i0Var2 = (l2.i0) e0Var.a;
-        if (i0Var2.i() != 2 || !i0Var2.u() || i0Var2.w0() != 0) {
+        l2.f0 f0Var = (l2.f0) e0Var.a;
+        if (f0Var.i() != 2 || !f0Var.u() || f0Var.w0() != 0) {
             if (this.e) {
                 i0Var.e(1);
             }
             this.e = false;
             return;
         }
-        l1 y02 = i0Var2.y0();
-        Object l10 = y02.p() ? null : y02.l(i0Var2.B());
-        int n02 = i0Var2.n0();
-        int O = i0Var2.O();
-        long d02 = i0Var2.d0();
-        long max = Math.max(0L, i0Var2.r() - Math.max(0L, d02 - i0Var2.l()));
+        l1 y02 = f0Var.y0();
+        Object l10 = y02.p() ? null : y02.l(f0Var.B());
+        int n02 = f0Var.n0();
+        int O = f0Var.O();
+        long d02 = f0Var.d0();
+        long max = Math.max(0L, f0Var.r() - Math.max(0L, d02 - f0Var.l()));
         if (l10 != null && n02 == -1) {
-            d02 -= m0.h0(y02.g(l10, (i1) e0Var.e).e);
+            d02 -= l0.h0(y02.g(l10, (i1) e0Var.e).e);
         }
         ((g0) e0Var.d).getClass();
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if (this.e && Objects.equals(l10, this.h) && n02 == this.f && O == this.g && d02 == this.a && max == this.b) {
             if (elapsedRealtime - this.c >= i7) {
-                ((l2.c0) e0Var.c).a.A1(new l2.l(2, new f0(1, i7), 1003));
+                ((l2.z) e0Var.c).a.A1(new l2.l(2, new f0(1, i7), 1003));
                 return;
             }
             return;

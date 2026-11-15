@@ -1,60 +1,9 @@
 package a8;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.MappedByteBuffer;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class u6 {
-    public static s1.b a(MappedByteBuffer mappedByteBuffer) {
-        long j3;
-        ByteBuffer duplicate = mappedByteBuffer.duplicate();
-        duplicate.order(ByteOrder.BIG_ENDIAN);
-        duplicate.position(duplicate.position() + 4);
-        int i7 = duplicate.getShort() & 65535;
-        if (i7 > 100) {
-            throw new IOException("Cannot read metadata.");
-        }
-        duplicate.position(duplicate.position() + 6);
-        int i10 = 0;
-        while (true) {
-            if (i10 >= i7) {
-                j3 = -1;
-                break;
-            }
-            int i11 = duplicate.getInt();
-            duplicate.position(duplicate.position() + 4);
-            j3 = duplicate.getInt() & 4294967295L;
-            duplicate.position(duplicate.position() + 4);
-            if (1835365473 == i11) {
-                break;
-            }
-            i10++;
-        }
-        if (j3 != -1) {
-            duplicate.position(duplicate.position() + ((int) (j3 - duplicate.position())));
-            duplicate.position(duplicate.position() + 12);
-            long j10 = duplicate.getInt() & 4294967295L;
-            for (int i12 = 0; i12 < j10; i12++) {
-                int i13 = duplicate.getInt();
-                long j11 = duplicate.getInt() & 4294967295L;
-                duplicate.getInt();
-                if (1164798569 == i13 || 1701669481 == i13) {
-                    duplicate.position((int) (j11 + j3));
-                    s1.b bVar = new s1.b();
-                    duplicate.order(ByteOrder.LITTLE_ENDIAN);
-                    int position = duplicate.position() + duplicate.getInt(duplicate.position());
-                    bVar.d = duplicate;
-                    bVar.a = position;
-                    int i14 = position - duplicate.getInt(position);
-                    bVar.b = i14;
-                    bVar.c = ((ByteBuffer) bVar.d).getShort(i14);
-                    return bVar;
-                }
-            }
-        }
-        throw new IOException("Cannot read metadata.");
-    }
+    public abstract void a(Throwable th2);
+
+    public abstract void b(ab.c0 c0Var);
 }

@@ -2,11 +2,11 @@ package s7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import java.util.Arrays;
 import q4.x;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k extends r6.a {
     public static final Parcelable.Creator<k> CREATOR = new x(21);
@@ -20,12 +20,12 @@ public final class k extends r6.a {
     public final String n;
     public final l r;
 
-    public k(String str, String str2, boolean z9, int i7, boolean z10, String str3, h[] hVarArr, String str4, l lVar) {
+    public k(String str, String str2, boolean z10, int i7, boolean z11, String str3, h[] hVarArr, String str4, l lVar) {
         this.a = str;
         this.b = str2;
-        this.c = z9;
+        this.c = z10;
         this.d = i7;
-        this.e = z10;
+        this.e = z11;
         this.f = str3;
         this.h = hVarArr;
         this.n = str4;
@@ -49,19 +49,19 @@ public final class k extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.l(parcel, 1, this.a);
-        xb.l(parcel, 2, this.b);
-        xb.q(parcel, 3, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.l(parcel, 1, this.a);
+        yb.l(parcel, 2, this.b);
+        yb.q(parcel, 3, 4);
         parcel.writeInt(this.c ? 1 : 0);
-        xb.q(parcel, 4, 4);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(this.d);
-        xb.q(parcel, 5, 4);
+        yb.q(parcel, 5, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        xb.l(parcel, 6, this.f);
-        xb.o(parcel, 7, this.h, i7);
-        xb.l(parcel, 11, this.n);
-        xb.k(parcel, 12, this.r, i7);
-        xb.s(parcel, r10);
+        yb.l(parcel, 6, this.f);
+        yb.o(parcel, 7, this.h, i7);
+        yb.l(parcel, 11, this.n);
+        yb.k(parcel, 12, this.r, i7);
+        yb.s(parcel, r10);
     }
 }

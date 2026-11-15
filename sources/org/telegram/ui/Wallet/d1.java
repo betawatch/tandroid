@@ -7,16 +7,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.json.JSONArray;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.id;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.s10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.l90;
+import org.telegram.ui.j90;
+import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d1 implements v10 {
+public final /* synthetic */ class d1 implements s10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -35,14 +36,14 @@ public final /* synthetic */ class d1 implements v10 {
         this.g = obj6;
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.s10
     public final void a(Object obj, Object obj2) {
         TL_wallet.tonConnectSession tonconnectsession;
         switch (this.a) {
             case 0:
                 int i7 = 0;
                 d2 d2Var = (d2) this.b;
-                l90 l90Var = (l90) this.d;
+                j90 j90Var = (j90) this.d;
                 String str = (String) this.c;
                 String str2 = (String) this.e;
                 String str3 = (String) this.f;
@@ -51,7 +52,7 @@ public final /* synthetic */ class d1 implements v10 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 d2Var.getClass();
                 if (tL_error != null || tonconnectsession2 == null) {
-                    l90Var.a(null, d2.z(tL_error, "createSession"));
+                    j90Var.a(null, d2.z(tL_error, "createSession"));
                     break;
                 } else {
                     ArrayList arrayList = d2Var.d;
@@ -63,18 +64,18 @@ public final /* synthetic */ class d1 implements v10 {
                         if (tonconnectsession3.id == tonconnectsession2.id && (tonconnectsession3.manifest != null || tonconnectsession3.manifest_error != null || tonconnectsession3.closed || tonconnectsession3.closing)) {
                             tonconnectsession = tonconnectsession3;
                             d2Var.p(tonconnectsession);
-                            l90Var.a(new y1(tonconnectsession, str, str2, str3, str4), null);
+                            j90Var.a(new y1(tonconnectsession, str, str2, str3, str4), null);
                             break;
                         }
                     }
                     tonconnectsession = tonconnectsession2;
                     d2Var.p(tonconnectsession);
-                    l90Var.a(new y1(tonconnectsession, str, str2, str3, str4), null);
+                    j90Var.a(new y1(tonconnectsession, str, str2, str3, str4), null);
                 }
                 break;
             case 1:
                 d2 d2Var2 = (d2) this.b;
-                s sVar = (s) this.d;
+                x21 x21Var = (x21) this.d;
                 TL_wallet.tonConnectSession tonconnectsession4 = (TL_wallet.tonConnectSession) this.e;
                 String str5 = (String) this.c;
                 byte[] bArr = (byte[]) this.f;
@@ -84,18 +85,18 @@ public final /* synthetic */ class d1 implements v10 {
                 d2Var2.getClass();
                 if (str6 == null && i0Var != null) {
                     i0 b10 = i0Var.b();
-                    Utilities.e.c(new bi.r7(d2Var2, b10, tonconnectsession4, str5, bArr, y1Var, new s(3, b10, sVar), 11));
+                    Utilities.e.c(new di.j6(d2Var2, b10, tonconnectsession4, str5, bArr, y1Var, new x21(8, b10, x21Var), 11));
                     break;
                 } else {
                     if (str6 == null) {
                         str6 = "Recovery phrase is unavailable";
                     }
-                    sVar.a(str6);
+                    x21Var.a(str6);
                     break;
                 }
             case 2:
                 d2 d2Var3 = (d2) this.b;
-                s sVar2 = (s) this.d;
+                x21 x21Var2 = (x21) this.d;
                 i0 i0Var2 = (i0) this.e;
                 TL_wallet.tonConnectSession tonconnectsession5 = (TL_wallet.tonConnectSession) this.f;
                 String str7 = (String) this.c;
@@ -104,15 +105,15 @@ public final /* synthetic */ class d1 implements v10 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 d2Var3.getClass();
                 if (tL_error2 == null && tonconnectnexteventid != null) {
-                    Utilities.e.c(new bi.r7(d2Var3, i0Var2, tonconnectsession5, str7, bArr2, tonconnectnexteventid, sVar2, 12));
+                    Utilities.e.c(new di.j6(d2Var3, i0Var2, tonconnectsession5, str7, bArr2, tonconnectnexteventid, x21Var2, 12));
                     break;
                 } else {
-                    sVar2.a(d2.z(tL_error2, "getNextEventId"));
+                    x21Var2.a(d2.z(tL_error2, "getNextEventId"));
                     break;
                 }
             case 3:
                 d2 d2Var4 = (d2) this.b;
-                bi.p5 p5Var = (bi.p5) this.d;
+                t1 t1Var = (t1) this.d;
                 TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) this.e;
                 String str8 = (String) this.c;
                 byte[] bArr3 = (byte[]) this.f;
@@ -122,42 +123,42 @@ public final /* synthetic */ class d1 implements v10 {
                 l0 l0Var = d2Var4.b;
                 if (tL_error3 == null && tonconnectsession6 != null) {
                     if (tonconnectsession6.id != tL_urlAuthResultRequest.tc_session_id || !tL_urlAuthResultRequest.tc_client_id.equals(tonconnectsession6.dapp_client_id) || tonconnectsession6.closed || tonconnectsession6.closing || tonconnectsession6.nonce == null || !TextUtils.equals(str8, l0Var.t()) || !Arrays.equals(bArr3, l0Var.y())) {
-                        p5Var.a(null, "Wallet or TON Connect session changed. Open the request again.");
+                        t1Var.a(null, "Wallet or TON Connect session changed. Open the request again.");
                         break;
                     } else {
-                        l0Var.z(new c1(d2Var4, p5Var, tonconnectsession6, str8, bArr3, jSONArray, tL_urlAuthResultRequest), true, false);
+                        l0Var.z(new c1(d2Var4, t1Var, tonconnectsession6, str8, bArr3, jSONArray, tL_urlAuthResultRequest), true, false);
                         break;
                     }
                 } else {
-                    p5Var.a(null, d2.z(tL_error3, "createSession"));
+                    t1Var.a(null, d2.z(tL_error3, "createSession"));
                     break;
                 }
             default:
-                s2 s2Var = (s2) this.b;
+                r2 r2Var = (r2) this.b;
                 int[] iArr = (int[]) this.d;
                 l0 l0Var2 = (l0) this.c;
                 TextView textView = (TextView) this.e;
                 c2 c2Var = (c2) this.f;
-                h7 h7Var = (h7) this.g;
+                g7 g7Var = (g7) this.g;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str9 = (String) obj2;
-                if (!s2Var.e && !s2Var.d) {
+                if (!r2Var.e && !r2Var.d) {
                     if (wallettransaction != null && wallettransaction.traceSucceeded && !wallettransaction.traceIncomplete) {
                         iArr[0] = 1;
                         SpannableStringBuilder n10 = l0.n(wallettransaction.fee, true);
                         CharSequence m10 = l0Var2.m(wallettransaction.fee, true);
-                        textView.setText(TextUtils.isEmpty(m10) ? id.V(null, null, 2131743120, n10) : id.V(null, null, 2131743119, n10, m10));
+                        textView.setText(TextUtils.isEmpty(m10) ? hd.V(null, null, 2131743120, n10) : hd.V(null, null, 2131743119, n10, m10));
                     } else if (l0Var2.v() < c2Var.c) {
                         iArr[0] = 2;
-                        textView.setText(id.M0(2131743066, null));
+                        textView.setText(hd.M0(2131743066, null));
                     } else {
                         iArr[0] = 3;
-                        textView.setText(id.M0(2131742986, null));
+                        textView.setText(hd.M0(2131742986, null));
                         if (str9 != null) {
                             d2.m("widget preview", str9);
                         }
                     }
-                    h7Var.run();
+                    g7Var.run();
                     break;
                 }
                 break;
@@ -174,10 +175,10 @@ public final /* synthetic */ class d1 implements v10 {
         this.g = obj2;
     }
 
-    public /* synthetic */ d1(d2 d2Var, s sVar, i0 i0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr) {
+    public /* synthetic */ d1(d2 d2Var, x21 x21Var, i0 i0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr) {
         this.a = 2;
         this.b = d2Var;
-        this.d = sVar;
+        this.d = x21Var;
         this.e = i0Var;
         this.f = tonconnectsession;
         this.c = str;

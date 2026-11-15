@@ -4,7 +4,7 @@ import android.app.PendingIntent;
 import android.os.Bundle;
 import androidx.core.graphics.drawable.IconCompat;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h {
     public final Bundle a;
@@ -17,7 +17,7 @@ public final class h {
     public final CharSequence h;
     public final PendingIntent i;
 
-    public h(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, l0[] l0VarArr, l0[] l0VarArr2, boolean z9, int i7, boolean z10) {
+    public h(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, l0[] l0VarArr, l0[] l0VarArr2, boolean z10, int i7, boolean z11) {
         this.e = true;
         this.b = iconCompat;
         if (iconCompat != null && iconCompat.i() == 2) {
@@ -27,9 +27,9 @@ public final class h {
         this.i = pendingIntent;
         this.a = bundle == null ? new Bundle() : bundle;
         this.c = l0VarArr;
-        this.d = z9;
+        this.d = z10;
         this.f = i7;
-        this.e = z10;
+        this.e = z11;
     }
 
     public final IconCompat a() {

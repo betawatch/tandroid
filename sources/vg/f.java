@@ -9,9 +9,9 @@ import android.opengl.GLUtils;
 import android.opengl.Matrix;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class f implements GLSurfaceView.Renderer {
     public final int D;
@@ -43,10 +43,10 @@ public final class f implements GLSurfaceView.Renderer {
     public final float[] n = new float[16];
     public final float[] o = new float[16];
     public final float[] p = new float[16];
-    public int z = m6.Jk;
-    public int A = m6.Kk;
-    public final int B = m6.Tk;
-    public final int C = m6.Uk;
+    public int z = j6.Mk;
+    public int A = j6.Nk;
+    public final int B = j6.Wk;
+    public final int C = j6.Xk;
 
     public f(Context context, int i7, int i10) {
         this.l = 0.0f;
@@ -75,15 +75,15 @@ public final class f implements GLSurfaceView.Renderer {
     }
 
     public final void b() {
-        int i7 = m6.h5;
-        boolean z9 = false;
-        this.w = i0.a.h(m6.x0(null, i7, false)) < 0.5d;
-        this.x = i0.a.f(this.l, m6.x0(null, this.z, false), m6.x0(null, this.B, false));
-        this.y = i0.a.f(this.l, m6.x0(null, this.A, false), m6.x0(null, this.C, false));
-        if (this.D == 1 && i0.a.h(m6.x0(null, i7, false)) < 0.5d) {
-            z9 = true;
+        int i7 = j6.h5;
+        boolean z10 = false;
+        this.w = i0.a.h(j6.x0(null, i7, false)) < 0.5d;
+        this.x = i0.a.f(this.l, j6.x0(null, this.z, false), j6.x0(null, this.B, false));
+        this.y = i0.a.f(this.l, j6.x0(null, this.A, false), j6.x0(null, this.C, false));
+        if (this.D == 1 && i0.a.h(j6.x0(null, i7, false)) < 0.5d) {
+            z10 = true;
         }
-        this.F = z9;
+        this.F = z10;
     }
 
     @Override // android.opengl.GLSurfaceView.Renderer

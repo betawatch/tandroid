@@ -1,61 +1,107 @@
 package fi;
 
-import android.content.Context;
-import org.telegram.messenger.sc;
-import org.telegram.ui.Components.vu0;
-import org.telegram.ui.Components.zu0;
+import c8.fa;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.kj;
+import org.telegram.messenger.np;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.Components.da0;
+import org.telegram.ui.Components.ja0;
+import org.telegram.ui.Components.x90;
+import org.telegram.ui.an;
+import org.telegram.ui.qm;
+import org.telegram.ui.tk;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class d2 extends zu0 {
-    public final /* synthetic */ boolean G3;
-    public final /* synthetic */ e2 H3;
+public final class d2 extends fa {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(e2 e2Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var, boolean z9) {
-        super(i7, context, h6Var);
-        this.H3 = e2Var;
-        this.G3 = z9;
+    public /* synthetic */ d2(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.zu0
-    public final boolean D1() {
-        return sc.e(8200);
-    }
-
-    @Override // org.telegram.ui.Components.zu0
-    public final vu0[] E1(vu0[] vu0VarArr) {
-        if (vu0VarArr != null && this.G3) {
-            int i7 = 0;
-            while (true) {
-                if (i7 >= vu0VarArr.length) {
-                    i7 = -1;
-                    break;
+    @Override // c8.fa
+    public final void a(boolean z10) {
+        switch (this.a) {
+            case 0:
+                b4 b4Var = (b4) this.b;
+                u3 u3Var = b4Var.A1;
+                boolean x10 = b4Var.u0.a0.x();
+                i9 i9Var = ((z8) u3Var).d;
+                i9Var.j1 = x10;
+                i9Var.V();
+                break;
+            case 1:
+                an anVar = (an) this.b;
+                anVar.J9 = !z10;
+                if (z10) {
+                    if (anVar.u9 != null) {
+                        an.e2(anVar, 0.0f);
+                        anVar.u9 = null;
+                    }
+                    anVar.v9 = false;
+                    anVar.B9 = false;
+                    tk tkVar = anVar.D9;
+                    if (tkVar != null) {
+                        org.telegram.messenger.g0.r(tkVar.I);
+                        tkVar.a();
+                    }
                 }
-                vu0 vu0Var = vu0VarArr[i7];
-                if (vu0Var != null && vu0Var.b) {
-                    break;
+                anVar.dd();
+                break;
+            default:
+                da0 da0Var = (da0) this.b;
+                x90 x90Var = da0Var.e;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = da0Var.s;
+                ja0 ja0Var = da0Var.d0;
+                if (ja0Var.s) {
+                    if (!z10 && actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b > 0.0f) {
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
+                        break;
+                    } else if (z10) {
+                        if (x90Var.v - x90Var.u <= np.s1(ja0Var.x).p4) {
+                            org.telegram.ui.Cells.p9 p9Var = x90Var.W;
+                            gj c10 = da0Var.c(p9Var != null ? ((org.telegram.ui.Cells.q1) p9Var).getMessageObject() : null);
+                            kj kjVar = ja0Var.d;
+                            if (kjVar.d == null) {
+                                int i7 = x90Var.u;
+                                kjVar.e = i7;
+                                int i10 = x90Var.v;
+                                kjVar.f = i10;
+                                kjVar.d = qm.b(i7, i10, c10);
+                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(da0Var.J);
+                                break;
+                            }
+                        } else {
+                            da0Var.g();
+                            break;
+                        }
+                    }
                 }
-                i7++;
-            }
-            if (i7 >= 0) {
-                int length = vu0VarArr.length;
-                vu0[] vu0VarArr2 = new vu0[length];
-                vu0VarArr2[0] = vu0VarArr[i7];
-                int i10 = 1;
-                while (i10 < length) {
-                    vu0VarArr2[i10] = vu0VarArr[i10 <= i7 ? i10 - 1 : i10];
-                    i10++;
-                }
-                return vu0VarArr2;
-            }
+                break;
         }
-        return vu0VarArr;
     }
 
-    @Override // org.telegram.ui.Components.zu0
-    public final void H1(int i7) {
-        super.H1(i7);
-        this.H3.d(false);
+    @Override // c8.fa
+    public void b() {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        switch (this.a) {
+            case 1:
+                an anVar = (an) this.b;
+                kVar = ((org.telegram.ui.ActionBar.e2) anVar).actionBar;
+                if (kVar != null) {
+                    kVar2 = ((org.telegram.ui.ActionBar.e2) anVar).actionBar;
+                    if (kVar2.x()) {
+                        anVar.O7(false);
+                    }
+                }
+                anVar.h8();
+                anVar.N3.j(58, 0L, null);
+                break;
+        }
     }
 }

@@ -1,11 +1,11 @@
 package va;
 
-import ab.d0;
+import ab.n;
 import android.net.TrafficStats;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
-import c8.qb;
+import c8.rb;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -28,19 +28,19 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.messenger.qs;
-import q6.m;
-import u9.n;
+import org.telegram.messenger.ns;
+import tg.x;
+import u9.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final o9.g a;
     public final xa.c b;
-    public final v6.e c;
+    public final x c;
     public final j d;
-    public final n e;
+    public final m e;
     public final h f;
     public final Object g;
     public final ExecutorService h;
@@ -56,26 +56,25 @@ public final class c implements d {
     public c(o9.g gVar, ua.b bVar, ExecutorService executorService, v9.i iVar) {
         gVar.a();
         xa.c cVar = new xa.c(gVar.a, bVar);
-        v6.e eVar = new v6.e();
-        eVar.b = gVar;
-        if (sa.d.b == null) {
-            sa.d.b = new sa.d(28);
+        x xVar = new x(gVar);
+        if (z9.a.a == null) {
+            z9.a.a = new z9.a();
         }
-        sa.d dVar = sa.d.b;
+        z9.a aVar = z9.a.a;
         if (j.d == null) {
-            j.d = new j(dVar);
+            j.d = new j(aVar);
         }
         j jVar = j.d;
-        n nVar = new n(new u9.c(gVar, 2));
+        m mVar = new m(new u9.c(gVar, 2));
         h hVar = new h();
         this.g = new Object();
         this.k = new HashSet();
         this.l = new ArrayList();
         this.a = gVar;
         this.b = cVar;
-        this.c = eVar;
+        this.c = xVar;
         this.d = jVar;
-        this.e = nVar;
+        this.e = mVar;
         this.f = hVar;
         this.h = executorService;
         this.i = iVar;
@@ -88,9 +87,9 @@ public final class c implements d {
     }
 
     public final synchronized void b(wa.b bVar, wa.b bVar2) {
-        boolean z9 = bVar2.b == 4;
+        boolean z10 = bVar2.b == 4;
         String str = bVar2.a;
-        if (z9 && !TextUtils.isEmpty(str)) {
+        if (z10 && !TextUtils.isEmpty(str)) {
             if (TextUtils.equals(bVar.a, str)) {
                 r2 = !(bVar.b == 4);
             } else {
@@ -100,8 +99,8 @@ public final class c implements d {
         if (r2) {
             Iterator it = this.k.iterator();
             while (it.hasNext()) {
-                FirebaseMessaging firebaseMessaging = ((ab.n) it.next()).a;
-                d0 d0Var = FirebaseMessaging.m;
+                FirebaseMessaging firebaseMessaging = ((n) it.next()).a;
+                ob.c cVar = FirebaseMessaging.m;
                 if (firebaseMessaging.d() != null) {
                     if (Log.isLoggable("FirebaseMessaging", 3)) {
                         Log.d("FirebaseMessaging", "FID Change detected! Triggering re-sync");
@@ -120,32 +119,32 @@ public final class c implements d {
         r2.a = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.c(r2);
+        r4.d(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void c() {
-        wa.b d;
+        wa.b f10;
         synchronized (m) {
             try {
                 o9.g gVar = this.a;
                 gVar.a();
-                v6.e a10 = v6.e.a(gVar.a);
+                x a10 = x.a(gVar.a);
                 try {
-                    d = this.c.d();
-                    int i7 = d.b;
-                    boolean z9 = true;
+                    f10 = this.c.f();
+                    int i7 = f10.b;
+                    boolean z10 = true;
                     if (i7 != 2 && i7 != 1) {
-                        z9 = false;
+                        z10 = false;
                     }
                     if (a10 != null) {
-                        a10.e();
+                        a10.g();
                     }
                 } catch (Throwable th2) {
                     if (a10 != null) {
-                        a10.e();
+                        a10.g();
                     }
                     throw th2;
                 }
@@ -153,7 +152,7 @@ public final class c implements d {
                 throw th3;
             }
         }
-        l(d);
+        l(f10);
         this.i.execute(new b(this, 2));
     }
 
@@ -304,15 +303,15 @@ public final class c implements d {
             try {
                 o9.g gVar = this.a;
                 gVar.a();
-                v6.e a10 = v6.e.a(gVar.a);
+                x a10 = x.a(gVar.a);
                 try {
-                    this.c.c(bVar);
+                    this.c.d(bVar);
                     if (a10 != null) {
-                        a10.e();
+                        a10.g();
                     }
                 } catch (Throwable th2) {
                     if (a10 != null) {
-                        a10.e();
+                        a10.g();
                     }
                     throw th2;
                 }
@@ -325,17 +324,17 @@ public final class c implements d {
     public final void h() {
         o9.g gVar = this.a;
         gVar.a();
-        m.f(gVar.c.b, "Please set your Application ID. A valid Firebase App ID is required to communicate with Firebase server APIs: It identifies your application with Firebase.Please refer to https://firebase.google.com/support/privacy/init-options.");
+        q6.m.f(gVar.c.b, "Please set your Application ID. A valid Firebase App ID is required to communicate with Firebase server APIs: It identifies your application with Firebase.Please refer to https://firebase.google.com/support/privacy/init-options.");
         gVar.a();
-        m.f(gVar.c.h, "Please set your Project ID. A valid Firebase Project ID is required to communicate with Firebase server APIs: It identifies your application with Firebase.Please refer to https://firebase.google.com/support/privacy/init-options.");
+        q6.m.f(gVar.c.h, "Please set your Project ID. A valid Firebase Project ID is required to communicate with Firebase server APIs: It identifies your application with Firebase.Please refer to https://firebase.google.com/support/privacy/init-options.");
         gVar.a();
-        m.f(gVar.c.a, "Please set a valid API key. A Firebase API key is required to communicate with Firebase server APIs: It authenticates your project with Google.Please refer to https://firebase.google.com/support/privacy/init-options.");
+        q6.m.f(gVar.c.a, "Please set a valid API key. A Firebase API key is required to communicate with Firebase server APIs: It authenticates your project with Google.Please refer to https://firebase.google.com/support/privacy/init-options.");
         gVar.a();
         String str = gVar.c.b;
         Pattern pattern = j.c;
-        m.a("Please set your Application ID. A valid Firebase App ID is required to communicate with Firebase server APIs: It identifies your application with Firebase.Please refer to https://firebase.google.com/support/privacy/init-options.", str.contains(":"));
+        q6.m.a("Please set your Application ID. A valid Firebase App ID is required to communicate with Firebase server APIs: It identifies your application with Firebase.Please refer to https://firebase.google.com/support/privacy/init-options.", str.contains(":"));
         gVar.a();
-        m.a("Please set a valid API key. A Firebase API key is required to communicate with Firebase server APIs: It authenticates your project with Google.Please refer to https://firebase.google.com/support/privacy/init-options.", j.c.matcher(gVar.c.a).matches());
+        q6.m.a("Please set a valid API key. A Firebase API key is required to communicate with Firebase server APIs: It authenticates your project with Google.Please refer to https://firebase.google.com/support/privacy/init-options.", j.c.matcher(gVar.c.a).matches());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:4:0x001a, code lost:
@@ -373,7 +372,7 @@ public final class c implements d {
                     if (publicKey != null) {
                         try {
                             byte[] digest = MessageDigest.getInstance("SHA1").digest(publicKey.getEncoded());
-                            digest[0] = (byte) (((digest[0] & 15) + qs.x1) & qs.e4);
+                            digest[0] = (byte) (((digest[0] & 15) + ns.x1) & ns.e4);
                             str2 = Base64.encodeToString(digest, 0, 8, 11);
                         } catch (NoSuchAlgorithmException unused) {
                             Log.w("ContentValues", "Unexpected error, device missing required algorithms");
@@ -407,7 +406,7 @@ public final class c implements d {
                     break;
                 }
                 String str3 = strArr[i7];
-                String str4 = (String) cVar.a.b(qb.a("|T|" + cVar.b + "|" + str3), null);
+                String str4 = (String) cVar.a.b(rb.a("|T|" + cVar.b + "|" + str3), null);
                 if (str4 == null || str4.isEmpty()) {
                     i7++;
                 } else if (str4.startsWith("{")) {

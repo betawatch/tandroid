@@ -1,26 +1,27 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.Switch;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class m21 implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.Components.dg a;
-    public final /* synthetic */ TLRPC.TL_authorization b;
-    public final /* synthetic */ o21 c;
+public final /* synthetic */ class m21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SessionsActivity b;
+    public final /* synthetic */ boolean c;
 
-    public m21(o21 o21Var, org.telegram.ui.Components.dg dgVar, TLRPC.TL_authorization tL_authorization) {
-        this.c = o21Var;
-        this.a = dgVar;
-        this.b = tL_authorization;
+    public /* synthetic */ m21(SessionsActivity sessionsActivity, boolean z10, int i7) {
+        this.a = i7;
+        this.b = sessionsActivity;
+        this.c = z10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        ((Switch) this.a.f).c(!r0.h, true);
-        this.b.call_requests_disabled = !((Switch) r4.f).h;
-        o21.J0(this.c);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.p0(this.c);
+                break;
+            default:
+                this.b.p0(this.c);
+                break;
+        }
     }
 }

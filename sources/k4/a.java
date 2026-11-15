@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import d4.f;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public boolean d;
@@ -27,12 +27,12 @@ public final class a {
         return (i7 & 16777215) | ((i10 * 17) << 24);
     }
 
-    public final void b(f fVar, boolean z9, Rect rect, int[] iArr) {
+    public final void b(f fVar, boolean z10, Rect rect, int[] iArr) {
         int i7;
         int i10;
         int width = rect.width();
         int height = rect.height();
-        int i11 = !z9 ? 1 : 0;
+        int i11 = !z10 ? 1 : 0;
         int i12 = i11 * width;
         while (true) {
             int i13 = 0;

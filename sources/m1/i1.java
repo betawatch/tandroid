@@ -1,6 +1,6 @@
 package m1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i1 implements id.f {
     public final i1 a;
@@ -28,7 +28,7 @@ public final class i1 implements id.f {
 
     @Override // id.h
     public final id.f get(id.g gVar) {
-        return c8.m0.a(this, gVar);
+        return c8.n0.a(this, gVar);
     }
 
     @Override // id.f
@@ -38,11 +38,11 @@ public final class i1 implements id.f {
 
     @Override // id.h
     public final id.h minusKey(id.g gVar) {
-        return c8.m0.b(this, gVar);
+        return c8.n0.b(this, gVar);
     }
 
     @Override // id.h
     public final id.h plus(id.h hVar) {
-        return c8.m0.c(this, hVar);
+        return c8.n0.c(this, hVar);
     }
 }

@@ -1,23 +1,19 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.UndoView;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class x10 extends UndoView {
-    public final /* synthetic */ f40 j0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x10(f40 f40Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.j0 = f40Var;
-    }
-
-    @Override // org.telegram.ui.Components.UndoView
-    public final void k(long j3, int i7, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        if (this.j0.t2 != null) {
-            return;
+public final class x10 extends v4.n0 {
+    @Override // v4.n0
+    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.b1 b1Var) {
+        RecyclerView.R(view);
+        if (c40.E5) {
+            rect.set(0, org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f));
+        } else {
+            rect.set(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
         }
-        super.k(j3, i7, obj, obj2, runnable, runnable2);
     }
 }

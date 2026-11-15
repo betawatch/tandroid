@@ -4,13 +4,13 @@ import android.graphics.drawable.Drawable;
 import android.text.StaticLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.oy0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class p1 {
     public StaticLayout A;
-    public org.telegram.ui.Components.m5 B;
+    public org.telegram.ui.Components.l5 B;
     public int C;
     public int D;
     public final /* synthetic */ q1 E;
@@ -30,15 +30,15 @@ public final class p1 {
     public float n;
     public boolean o;
     public StaticLayout p;
-    public my0 q;
-    public org.telegram.ui.Components.m5 r;
+    public oy0 q;
+    public org.telegram.ui.Components.l5 r;
     public TLRPC.PollAnswer s;
     public TLRPC.TodoItem t;
     public boolean u;
     public int v;
     public Drawable w;
     public uh.b x;
-    public org.telegram.ui.Components.v8 y;
+    public org.telegram.ui.Components.t8 y;
     public ImageReceiver z;
 
     public p1(q1 q1Var) {
@@ -54,7 +54,7 @@ public final class p1 {
         if (bVar != null) {
             bVar.b.a();
             bVar.c.P();
-            bVar.E.e();
+            bVar.F.e();
         }
     }
 
@@ -67,7 +67,7 @@ public final class p1 {
         if (bVar != null) {
             bVar.b.b();
             bVar.c.R();
-            bVar.E.f();
+            bVar.F.f();
         }
     }
 }

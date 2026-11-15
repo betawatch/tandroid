@@ -14,7 +14,7 @@ import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q {
     public f0.g A;
@@ -97,10 +97,10 @@ public final class q {
             build = builder.build();
             if (i7 != 0) {
                 if (build.getGroup() != null && (build.flags & 512) != 0 && i7 == 2) {
-                    a4.k.s(build);
+                    a4.k.r(build);
                 }
                 if (build.getGroup() != null && (build.flags & 512) == 0 && i7 == 1) {
-                    a4.k.s(build);
+                    a4.k.r(build);
                 }
             }
         } else {
@@ -108,10 +108,10 @@ public final class q {
             build = builder.build();
             if (i7 != 0) {
                 if (build.getGroup() != null && (build.flags & 512) != 0 && i7 == 2) {
-                    a4.k.s(build);
+                    a4.k.r(build);
                 }
                 if (build.getGroup() != null && (build.flags & 512) == 0 && i7 == 1) {
-                    a4.k.s(build);
+                    a4.k.r(build);
                 }
             }
         }
@@ -139,11 +139,11 @@ public final class q {
                 IconCompat a10 = hVar.a();
                 Bundle bundle2 = hVar.a;
                 Notification.Action.Builder a11 = a0.a(a10 != null ? a10.m(null) : null, hVar.h, hVar.i);
-                boolean z9 = hVar.d;
+                boolean z10 = hVar.d;
                 Bundle bundle3 = bundle2 != null ? new Bundle(bundle2) : new Bundle();
-                bundle3.putBoolean("android.support.allowGeneratedReplies", z9);
+                bundle3.putBoolean("android.support.allowGeneratedReplies", z10);
                 if (i10 >= 24) {
-                    b0.a(a11, z9);
+                    b0.a(a11, z10);
                 }
                 if (i10 >= 31) {
                     c0.a(a11, false);
@@ -205,9 +205,9 @@ public final class q {
         this.e = d(charSequence);
     }
 
-    public final void h(int i7, boolean z9) {
+    public final void h(int i7, boolean z10) {
         Notification notification = this.F;
-        if (z9) {
+        if (z10) {
             notification.flags = i7 | notification.flags;
         } else {
             notification.flags = (~i7) & notification.flags;

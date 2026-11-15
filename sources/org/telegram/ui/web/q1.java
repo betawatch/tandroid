@@ -1,93 +1,79 @@
 package org.telegram.ui.web;
 
-import android.webkit.ValueCallback;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
-import java.io.File;
+import android.webkit.WebViewClient;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.r31;
+import org.telegram.messenger.r2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q1 implements ValueCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ WebView c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class q1 extends WebViewClient {
+    public boolean a = true;
+    public boolean b;
+    public final /* synthetic */ InputStream c;
+    public final /* synthetic */ v1 d;
 
-    public /* synthetic */ q1(w1 w1Var, WebView webView, File file, p1 p1Var, int i7) {
-        this.a = i7;
-        this.b = w1Var;
-        this.c = webView;
-        this.d = file;
-        this.e = p1Var;
+    public q1(v1 v1Var, InputStream inputStream) {
+        this.d = v1Var;
+        this.c = inputStream;
     }
 
-    @Override // android.webkit.ValueCallback
-    public final void onReceiveValue(Object obj) {
-        int i7 = 1;
-        switch (this.a) {
-            case 0:
-                w1 w1Var = (w1) this.b;
-                WebView webView = this.c;
-                File file = (File) this.d;
-                webView.saveWebArchive(file.getAbsolutePath(), false, new q1(w1Var, webView, file, (p1) this.e, 1));
-                return;
-            case 1:
-                w1 w1Var2 = (w1) this.b;
-                WebView webView2 = this.c;
-                File file2 = (File) this.d;
-                p1 p1Var = (p1) this.e;
-                webView2.evaluateJavascript(org.telegram.messenger.g0.y2(null, R.raw.open_collapsed).replace("$OPEN$", "false"), new e0(i7));
-                try {
-                    ab.b0 b0Var = new ab.b0(file2);
-                    w1Var2.b = b0Var;
-                    if (!((ArrayList) b0Var.c).isEmpty()) {
-                        p1Var.a(((c1) ((ArrayList) w1Var2.b.c).get(0)).a());
-                        return;
-                    }
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                }
-                p1Var.a(null);
-                return;
-            default:
-                ui.i iVar = (ui.i) this.b;
-                r31 r31Var = (r31) this.d;
-                WebView webView3 = this.c;
-                e5.f fVar = (e5.f) this.e;
-                String str = (String) obj;
-                org.telegram.messenger.g0.r(r31Var);
-                synchronized (iVar.a) {
-                    if (!iVar.u && iVar.o == webView3 && iVar.p == fVar && !iVar.r) {
-                        if (!"true".equals(str)) {
-                            a8.d("WEB proxy: Base64 bridge installation failed; transport stopped");
-                            iVar.q();
-                            return;
-                        } else {
-                            if (!iVar.j(webView3)) {
-                                iVar.h();
-                                return;
-                            }
-                            iVar.s = false;
-                            iVar.r = true;
-                            a8.b("WEB proxy: Base64 bridge ready");
-                            iVar.n(16, 0, new byte[]{1});
-                            return;
-                        }
-                    }
-                    return;
-                }
+    @Override // android.webkit.WebViewClient
+    public final WebResourceResponse shouldInterceptRequest(WebView webView, String str) {
+        InputStream a10;
+        String str2;
+        if (this.a) {
+            this.a = false;
+            String y22 = org.telegram.messenger.g0.y2(null, R.raw.instant);
+            boolean z10 = r2.a;
+            return new WebResourceResponse("text/html", "UTF-8", new ByteArrayInputStream(a8.p0.p("<script>\n", y22.replace("$DEBUG$", "true"), "\n</script>").getBytes(StandardCharsets.UTF_8)));
         }
-    }
-
-    public /* synthetic */ q1(ui.i iVar, r31 r31Var, WebView webView, e5.f fVar) {
-        this.a = 2;
-        this.b = iVar;
-        this.d = r31Var;
-        this.c = webView;
-        this.e = fVar;
+        v1 v1Var = this.d;
+        if (str == null || !str.endsWith("/index.html")) {
+            xi.e eVar = v1Var.b;
+            a1 a1Var = eVar != null ? (a1) ((HashMap) eVar.c).get(str) : null;
+            if (a1Var == null) {
+                return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
+            }
+            b1 b1Var = (b1) a1Var.a.get("content-type");
+            String str3 = b1Var == null ? null : b1Var.a;
+            if (!"text/html".equalsIgnoreCase(str3) && !"text/css".equalsIgnoreCase(str3)) {
+                return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
+            }
+            try {
+                a10 = a1Var.a();
+                str2 = str3;
+            } catch (IOException e10) {
+                a8.g(e10, true);
+                return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);
+            }
+        } else {
+            str2 = "application/octet-stream";
+            if (this.b) {
+                xi.e eVar2 = v1Var.b;
+                a1 a1Var2 = eVar2 != null ? (a1) ((ArrayList) eVar2.b).get(0) : null;
+                if (a1Var2 == null) {
+                    return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
+                }
+                try {
+                    a10 = a1Var2.a();
+                } catch (IOException e11) {
+                    a8.g(e11, true);
+                    return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);
+                }
+            } else {
+                this.b = true;
+                a10 = this.c;
+            }
+        }
+        return new WebResourceResponse(str2, null, a10);
     }
 }

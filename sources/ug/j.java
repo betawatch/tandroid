@@ -1,9 +1,10 @@
 package ug;
 
+import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.r2;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class j {
     public final TLRPC.TL_premiumGiftOption a;
@@ -13,7 +14,7 @@ public final class j {
     public int e;
     public long f;
     public long g;
-    public f5.l h;
+    public f5.m h;
 
     public j(TLRPC.TL_premiumGiftOption tL_premiumGiftOption) {
         this.a = tL_premiumGiftOption;
@@ -32,8 +33,8 @@ public final class j {
         } else if (r2.b() || tL_premiumGiftOption.store_product == null) {
             return tL_premiumGiftOption.currency;
         }
-        f5.l lVar = this.h;
-        return lVar == null ? "" : lVar.a().c;
+        f5.m mVar = this.h;
+        return mVar == null ? "" : mVar.a().c;
     }
 
     public final int b() {
@@ -90,11 +91,11 @@ public final class j {
         } else if (r2.b() || tL_premiumGiftOption.store_product == null) {
             return tL_premiumGiftOption.amount;
         }
-        f5.l lVar = this.h;
-        if (lVar == null) {
+        f5.m mVar = this.h;
+        if (mVar == null) {
             return 0L;
         }
-        return lVar.a().b;
+        return mVar.a().b;
     }
 
     public final long f() {
@@ -135,6 +136,6 @@ public final class j {
         this.a = null;
         this.b = tL_premiumGiftCodeOption;
         this.c = null;
-        this.d = com.google.android.recaptcha.internal.a.u(tL_premiumGiftCodeOption2) ? tL_premiumGiftCodeOption2 : null;
+        this.d = e2.s(tL_premiumGiftCodeOption2) ? tL_premiumGiftCodeOption2 : null;
     }
 }

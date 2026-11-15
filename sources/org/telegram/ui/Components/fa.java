@@ -1,35 +1,41 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class fa extends ma {
-    public final LinearLayout S1;
-    public FrameLayout T1;
-    public fi.d U1;
+public final class fa extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ st0 G1;
+    public final /* synthetic */ ja H1;
 
-    public fa(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, null, false, false, h6Var);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.S1 = linearLayout;
-        linearLayout.setOrientation(1);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fa(ja jaVar, Context context, st0 st0Var) {
+        super(context, null);
+        this.H1 = jaVar;
+        this.G1 = st0Var;
     }
 
-    @Override // org.telegram.ui.Components.ma
-    public final oj0 L0(pj0 pj0Var) {
-        return new bi.k5(this, 2);
+    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        ja jaVar = this.H1;
+        if (jaVar.G1 && jaVar.H1) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ma
-    public final CharSequence O0() {
-        return null;
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        if (getAlpha() != f10) {
+            super.setAlpha(f10);
+            this.G1.invalidate();
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
-    public final void setTitle(CharSequence charSequence) {
-        this.o1.setTitle(charSequence);
+    @Override // android.view.View
+    public final void setTag(Object obj) {
+        super.setTag(obj);
+        this.H1.a1();
     }
 }

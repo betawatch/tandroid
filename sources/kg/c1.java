@@ -4,36 +4,38 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import c8.ha;
-import di.r4;
+import bi.x4;
+import c8.ja;
+import di.z6;
+import hi.q4;
 import j$.time.DayOfWeek;
 import j$.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.is;
 import org.telegram.messenger.k5;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.t10;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.c5;
-import org.telegram.ui.ActionBar.f2;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.z4;
 import org.telegram.ui.Cells.h5;
-import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Cells.l8;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class c1 extends f2 implements ls {
-    public r41 a;
-    public c5 b;
+public final class c1 extends e2 implements is {
+    public u41 a;
+    public z4 b;
     public boolean c;
     public boolean d;
     public ArrayList[] e;
@@ -50,14 +52,14 @@ public final class c1 extends f2 implements ls {
     public static void Z(c1 c1Var, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error != null) {
             c1Var.b.b(false);
-            gc.d0(tL_error);
+            cc.d0(tL_error);
         } else {
             if (tLObject instanceof TLRPC.TL_boolFalse) {
                 if (c1Var.getParentActivity() == null) {
                     return;
                 }
                 c1Var.b.b(false);
-                k5.p(null, 2131743879, gc.a0(c1Var), null);
+                k5.o(null, 2131743879, cc.a0(c1Var), null);
                 return;
             }
             if (c1Var.isFinished || c1Var.finishing) {
@@ -68,50 +70,50 @@ public final class c1 extends f2 implements ls {
     }
 
     public static void a0(c1 c1Var, ArrayList arrayList) {
-        String M0 = id.M0(2131752764, null);
-        String M02 = id.M0(2131752749, null);
-        x31 x31Var = new x31(2);
-        x31Var.l = M0;
-        x31Var.o = M02;
-        x31Var.k = R.raw.biz_clock;
-        arrayList.add(x31Var);
-        x31 i7 = x31.i(-1, id.M0(2131752729, null));
+        String M0 = hd.M0(2131752764, null);
+        String M02 = hd.M0(2131752749, null);
+        b41 b41Var = new b41(2);
+        b41Var.l = M0;
+        b41Var.o = M02;
+        b41Var.k = R.raw.biz_clock;
+        arrayList.add(b41Var);
+        b41 i7 = b41.i(-1, hd.M0(2131752729, null));
         i7.L(c1Var.d);
         arrayList.add(i7);
-        arrayList.add(x31.B(-100, null));
+        arrayList.add(b41.B(-100, null));
         if (!c1Var.d) {
             return;
         }
-        arrayList.add(x31.u(id.M0(2131752764, null)));
+        arrayList.add(b41.u(hd.M0(2131752764, null)));
         int i10 = 0;
         while (true) {
             ArrayList[] arrayListArr = c1Var.f;
             if (i10 >= arrayListArr.length) {
-                arrayList.add(x31.B(-101, null));
-                arrayList.add(x31.f(id.M0(2131752728, null), x1.b(c1Var.currentAccount).d(c1Var.n, false), -2));
-                arrayList.add(x31.B(-102, null));
+                arrayList.add(b41.B(-101, null));
+                arrayList.add(b41.f(hd.M0(2131752728, null), z1.b(c1Var.currentAccount).d(c1Var.n, false), -2));
+                arrayList.add(b41.B(-102, null));
                 return;
             }
             if (arrayListArr[i10] == null) {
                 arrayListArr[i10] = new ArrayList();
             }
-            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, id.E0().y);
+            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, hd.E0().y);
             String str = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
             String f02 = f0(c1Var.f[i10]);
-            x31 x31Var2 = new x31(5);
-            x31Var2.d = i10;
-            x31Var2.l = str;
-            x31Var2.m = f02;
-            x31Var2.L(!c1Var.f[i10].isEmpty());
-            arrayList.add(x31Var2);
+            b41 b41Var2 = new b41(5);
+            b41Var2.d = i10;
+            b41Var2.l = str;
+            b41Var2.m = f02;
+            b41Var2.L(!c1Var.f[i10].isEmpty());
+            arrayList.add(b41Var2);
             i10++;
         }
     }
 
     public static /* synthetic */ void b0(c1 c1Var, View view, String str) {
-        x1 b10 = x1.b(c1Var.currentAccount);
+        z1 b10 = z1.b(c1Var.currentAccount);
         c1Var.n = str;
-        ((m8) view).w(b10.d(str, false), true);
+        ((l8) view).w(b10.d(str, false), true);
         c1Var.d0(true);
     }
 
@@ -141,8 +143,8 @@ public final class c1 extends f2 implements ls {
             }
             if (i18 >= i17) {
                 int i20 = (i14 + 6) % 7;
-                if (!arrayListArr[i20].isEmpty() && ((b1) jg.g.i(1, arrayListArr[i20])).b >= 1440) {
-                    ((b1) jg.g.i(1, arrayListArr[i20])).b = 1439;
+                if (!arrayListArr[i20].isEmpty() && ((b1) i5.c.h(1, arrayListArr[i20])).b >= 1440) {
+                    ((b1) i5.c.h(1, arrayListArr[i20])).b = 1439;
                 }
                 int min = Math.min((i18 - i15) - 1, 2879);
                 ArrayList arrayList2 = arrayListArr[(i14 + 8) % 7];
@@ -154,7 +156,7 @@ public final class c1 extends f2 implements ls {
             } else {
                 int i21 = i16 % 7;
                 if (!arrayListArr[i14].isEmpty() && !arrayListArr[i21].isEmpty()) {
-                    b1 b1Var = (b1) jg.g.i(1, arrayListArr[i14]);
+                    b1 b1Var = (b1) i5.c.h(1, arrayListArr[i14]);
                     b1 b1Var2 = (b1) arrayListArr[i21].get(0);
                     int i22 = b1Var.b;
                     if (i22 > 1440 && i22 - 1439 == b1Var2.a) {
@@ -170,18 +172,18 @@ public final class c1 extends f2 implements ls {
 
     public static String f0(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
-            return id.M0(2131752755, null);
+            return hd.M0(2131752755, null);
         }
         if (h0(arrayList)) {
-            return id.M0(2131752754, null);
+            return hd.M0(2131752754, null);
         }
         String str = "";
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
             b1 b1Var = (b1) arrayList.get(i7);
             if (i7 > 0) {
-                str = rf.b.r(str, "\n");
+                str = r.b.v(str, "\n");
             }
-            StringBuilder m10 = com.google.android.recaptcha.internal.a.m(str);
+            StringBuilder m10 = com.google.android.gms.internal.vision.e2.m(str);
             m10.append(b1.a(b1Var.a));
             m10.append(" - ");
             m10.append(b1.a(b1Var.b));
@@ -212,18 +214,18 @@ public final class c1 extends f2 implements ls {
         ArrayList[] e02 = e0(tL_businessWorkHours.weekly_open);
         StringBuilder sb2 = new StringBuilder();
         if (user != null) {
-            sb2.append(id.a0(null, null, 2131752759, t10.p(user)));
+            sb2.append(hd.a0(null, null, 2131752759, q10.p(user)));
             sb2.append("\n");
         }
         for (int i10 = 0; i10 < 7; i10++) {
             ArrayList arrayList = e02[i10];
-            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, id.E0().y);
+            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, hd.E0().y);
             sb2.append(displayName.substring(0, 1).toUpperCase() + displayName.substring(1));
             sb2.append(": ");
             if (h0(arrayList)) {
-                sb2.append(id.M0(2131752741, null));
+                sb2.append(hd.M0(2131752741, null));
             } else if (arrayList.isEmpty()) {
-                sb2.append(id.M0(2131752745, null));
+                sb2.append(hd.M0(2131752745, null));
             } else {
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
                     if (i11 > 0) {
@@ -237,20 +239,20 @@ public final class c1 extends f2 implements ls {
             }
             sb2.append("\n");
         }
-        TLRPC.TL_timezone a10 = x1.b(i7).a(tL_businessWorkHours.timezone_id);
+        TLRPC.TL_timezone a10 = z1.b(i7).a(tL_businessWorkHours.timezone_id);
         if (((Calendar.getInstance().getTimeZone().getRawOffset() / 1000) - (a10 == null ? 0 : a10.utc_offset)) / 60 != 0 && a10 != null) {
-            x1.b(i7);
-            sb2.append(id.a0(null, null, 2131752760, x1.e(a10, true)));
+            z1.b(i7);
+            sb2.append(hd.a0(null, null, 2131752760, z1.e(a10, true)));
         }
         return sb2.toString();
     }
 
     public final void c0(int i7) {
-        if ((this.f[i7].isEmpty() ? null : (b1) jg.g.i(1, this.f[i7])) == null) {
+        if ((this.f[i7].isEmpty() ? null : (b1) i5.c.h(1, this.f[i7])) == null) {
             return;
         }
         int i10 = (i7 + 6) % 7;
-        b1 b1Var = this.f[i10].isEmpty() ? null : (b1) jg.g.i(1, this.f[i10]);
+        b1 b1Var = this.f[i10].isEmpty() ? null : (b1) i5.c.h(1, this.f[i10]);
         if (b1Var == null || b1Var.b <= 1439) {
             return;
         }
@@ -262,54 +264,54 @@ public final class c1 extends f2 implements ls {
         if (B1 instanceof h5) {
             ((h5) B1).setValue(f0(this.f[i10]));
         } else {
-            this.a.f3.O(true);
+            this.a.g3.O(true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(id.M0(2131752764, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 16));
-        this.b = this.simpleActionBar.p(id.M0(2131745946, null));
+        this.simpleActionBar.setTitle(hd.M0(2131752764, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new x4(this, 9));
+        this.b = this.simpleActionBar.q(hd.M0(2131745946, null));
         d0(false);
         FrameLayout frameLayout = new FrameLayout(context);
-        r41 r41Var = new r41(this, new hi.u1(this, 11), new r4(this, 24), null);
-        this.a = r41Var;
-        r41Var.r1();
-        r41 r41Var2 = this.a;
-        r41Var2.f3.r = false;
-        r41Var2.setSectionsDrawBackground(true);
-        frameLayout.addView(this.a, ha.c(-1.0f, -1));
+        u41 u41Var = new u41(this, new q4(this, 13), new z6(this, 25), null);
+        this.a = u41Var;
+        u41Var.r1();
+        u41 u41Var2 = this.a;
+        u41Var2.g3.r = false;
+        u41Var2.setSectionsDrawBackground(true);
+        frameLayout.addView(this.a, ja.c(-1.0f, -1));
         j0();
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
-    public final void d0(boolean z9) {
+    public final void d0(boolean z10) {
         if (this.b == null) {
             return;
         }
-        this.b.a(g0(), z9);
+        this.b.a(g0(), z10);
     }
 
-    @Override // org.telegram.messenger.ls
+    @Override // org.telegram.messenger.is
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        m41 m41Var;
-        if (i7 == qs.E0) {
+        p41 p41Var;
+        if (i7 == ns.E0) {
             j0();
             return;
         }
-        if (i7 == qs.r3) {
+        if (i7 == ns.r3) {
             if (this.e == null) {
-                this.n = x1.b(this.currentAccount).c();
+                this.n = z1.b(this.currentAccount).c();
             }
-            r41 r41Var = this.a;
-            if (r41Var == null || (m41Var = r41Var.f3) == null) {
+            u41 u41Var = this.a;
+            if (u41Var == null || (p41Var = u41Var.g3) == null) {
                 return;
             }
-            m41Var.O(true);
+            p41Var.O(true);
         }
     }
 
@@ -350,8 +352,8 @@ public final class c1 extends f2 implements ls {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
-    public final pj0 getListViewForSimpleGlass() {
+    @Override // org.telegram.ui.ActionBar.e2
+    public final uj0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -396,17 +398,17 @@ public final class c1 extends f2 implements ls {
             b22.flags2 &= -2;
             b22.business_work_hours = null;
         }
-        getConnectionsManager().sendRequest(updatebusinessworkhours, new bi.j0(this, 18));
+        getConnectionsManager().sendRequest(updatebusinessworkhours, new ai.d1(this, 18));
         getMessagesStorage().j2(b22, false);
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
     public final void j0() {
-        m41 m41Var;
+        p41 p41Var;
         if (this.c) {
             return;
         }
@@ -416,10 +418,10 @@ public final class c1 extends f2 implements ls {
             return;
         }
         TL_account.TL_businessWorkHours tL_businessWorkHours = b22.business_work_hours;
-        boolean z9 = tL_businessWorkHours != null;
-        this.d = z9;
-        if (!z9) {
-            String c10 = x1.b(this.currentAccount).c();
+        boolean z10 = tL_businessWorkHours != null;
+        this.d = z10;
+        if (!z10) {
+            String c10 = z1.b(this.currentAccount).c();
             this.n = c10;
             this.h = c10;
             this.e = null;
@@ -443,30 +445,30 @@ public final class c1 extends f2 implements ls {
             this.e = e0(tL_businessWorkHours.weekly_open);
             this.f = e0(b22.business_work_hours.weekly_open);
         }
-        r41 r41Var = this.a;
-        if (r41Var != null && (m41Var = r41Var.f3) != null) {
-            m41Var.O(true);
+        u41 u41Var = this.a;
+        if (u41Var != null && (p41Var = u41Var.g3) != null) {
+            p41Var.O(true);
         }
         d0(false);
         this.c = true;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final boolean onFragmentCreate() {
-        x1.b(this.currentAccount).g();
-        this.n = x1.b(this.currentAccount).c();
-        getNotificationCenter().c(this, qs.E0);
+        z1.b(this.currentAccount).g();
+        this.n = z1.b(this.currentAccount).c();
+        getNotificationCenter().c(this, ns.E0);
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, qs.E0);
+        getNotificationCenter().n(this, ns.E0);
         super.onFragmentDestroy();
         i0();
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final boolean useSimpleActionBar() {
         return true;
     }

@@ -8,56 +8,56 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class tr0 extends FrameLayout {
-    public ri0 D;
-    public int E;
-    public di.b4 F;
-    public r80 G;
-    public boolean H;
-    public int I;
-    public boolean J;
-    public float K;
-    public boolean L;
-    public final Paint M;
-    public org.telegram.ui.ActionBar.h6 N;
-    public Drawable O;
+    public wi0 E;
+    public int F;
+    public bi.v1 G;
+    public hh0 H;
+    public boolean I;
+    public int J;
+    public boolean K;
+    public float L;
+    public boolean M;
+    public final Paint N;
+    public org.telegram.ui.ActionBar.e6 O;
+    public Drawable P;
     public long a;
     public boolean b;
     public ObjectAnimator c;
     public v4.k d;
-    public v4.u0 e;
-    public v4.u0 f;
-    public cq0 h;
+    public v4.v0 e;
+    public v4.v0 f;
+    public dq0 h;
     public sr0 n;
-    public dq0 r;
-    public mq0 s;
-    public oq0 w;
-    public aq0 x;
-    public lq0 y;
+    public eq0 r;
+    public nq0 s;
+    public pq0 w;
+    public bq0 x;
+    public mq0 y;
 
     public tr0(Context context) {
         super(context);
-        this.M = new Paint();
+        this.N = new Paint();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void setDrawPageBackground(boolean z9) {
-        if (this.L != z9) {
-            this.L = z9;
+    public void setDrawPageBackground(boolean z10) {
+        if (this.M != z10) {
+            this.M = z10;
             invalidate();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void setWallpaper(Drawable drawable) {
-        Drawable drawable2 = this.O;
+        Drawable drawable2 = this.P;
         if (drawable2 != drawable) {
             if (drawable2 != null) {
                 drawable2.setCallback(null);
             }
-            this.O = drawable;
+            this.P = drawable;
             if (drawable != null) {
                 drawable.setCallback(this);
             }
@@ -69,25 +69,25 @@ public abstract class tr0 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         h(canvas);
         super.dispatchDraw(canvas);
-        di.b4 b4Var = this.F;
-        if (b4Var == null || b4Var.getVisibility() != 0) {
+        bi.v1 v1Var = this.G;
+        if (v1Var == null || v1Var.getVisibility() != 0) {
             return;
         }
-        ui0 fastScroll = this.h.getFastScroll();
+        zi0 fastScroll = this.h.getFastScroll();
         if (fastScroll != null) {
             float L = org.telegram.messenger.g0.L(36.0f) + fastScroll.getScrollBarY();
-            if (this.E == 9) {
+            if (this.F == 9) {
                 L += org.telegram.messenger.g0.L(64.0f);
             }
-            int i7 = this.E;
+            int i7 = this.F;
             if (i7 == 8 || ys0.J0(i7)) {
                 L += org.telegram.messenger.g0.L(42.0f);
             }
-            float measuredWidth = (getMeasuredWidth() - this.F.getMeasuredWidth()) - org.telegram.messenger.g0.L(16.0f);
-            this.F.setPivotX(r2.getMeasuredWidth());
-            this.F.setPivotY(0.0f);
-            this.F.setTranslationX(measuredWidth);
-            this.F.setTranslationY(L);
+            float measuredWidth = (getMeasuredWidth() - this.G.getMeasuredWidth()) - org.telegram.messenger.g0.L(16.0f);
+            this.G.setPivotX(r2.getMeasuredWidth());
+            this.G.setPivotY(0.0f);
+            this.G.setTranslationX(measuredWidth);
+            this.G.setTranslationY(L);
         }
         if (fastScroll.getProgress() > 0.85f) {
             ys0.s(this, null, false);
@@ -106,18 +106,18 @@ public abstract class tr0 extends FrameLayout {
         int min = Math.min(0, this.h.getTop());
         int max = Math.max(getHeight(), this.h.getBottom());
         int L = org.telegram.messenger.g0.L(2.0f);
-        if (this.O != null) {
+        if (this.P != null) {
             canvas.save();
             int i7 = -L;
             canvas.clipRect(i7, min, getWidth() + L, max);
-            this.O.setBounds(i7, min, getWidth() + L, max);
-            this.O.draw(canvas);
+            this.P.setBounds(i7, min, getWidth() + L, max);
+            this.P.draw(canvas);
             canvas.restore();
             return;
         }
-        if (this.L) {
-            int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.a7, this.N);
-            Paint paint = this.M;
+        if (this.M) {
+            int w02 = org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.a7, this.O);
+            Paint paint = this.N;
             paint.setColor(w02);
             canvas.drawRect(-L, min, getWidth() + L, max, paint);
         }
@@ -125,6 +125,6 @@ public abstract class tr0 extends FrameLayout {
 
     @Override // android.view.View
     public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.O || super.verifyDrawable(drawable);
+        return drawable == this.P || super.verifyDrawable(drawable);
     }
 }

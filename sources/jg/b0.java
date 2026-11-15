@@ -1,10 +1,10 @@
 package jg;
 
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.ep0;
-import org.telegram.ui.mb;
+import org.telegram.ui.lb;
+import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class b0 extends v4.b0 {
     public final /* synthetic */ int I;
@@ -14,18 +14,18 @@ public final class b0 extends v4.b0 {
     }
 
     @Override // v4.b0
-    public int W0(v4.a1 a1Var) {
+    public int W0(v4.b1 b1Var) {
         switch (this.I) {
             case 5:
                 return 5000;
             case 9:
                 return org.telegram.messenger.g0.L(4000.0f);
             default:
-                return super.W0(a1Var);
+                return super.W0(b1Var);
         }
     }
 
-    @Override // v4.b0, v4.n0
+    @Override // v4.b0, v4.o0
     public boolean e() {
         switch (this.I) {
             case 1:
@@ -35,26 +35,26 @@ public final class b0 extends v4.b0 {
         }
     }
 
-    @Override // v4.b0, v4.n0
-    public void v0(RecyclerView recyclerView, v4.a1 a1Var, int i7) {
+    @Override // v4.b0, v4.o0
+    public void v0(RecyclerView recyclerView, v4.b1 b1Var, int i7) {
         switch (this.I) {
             case 4:
-                mi.m mVar = new mi.m(recyclerView.getContext(), 0);
-                mVar.a = i7;
-                w0(mVar);
+                pi.l lVar = new pi.l(recyclerView.getContext(), 0);
+                lVar.a = i7;
+                w0(lVar);
                 break;
             case 15:
-                ep0 ep0Var = new ep0(recyclerView.getContext());
-                ep0Var.a = i7;
-                w0(ep0Var);
+                zo0 zo0Var = new zo0(recyclerView.getContext());
+                zo0Var.a = i7;
+                w0(zo0Var);
                 break;
             default:
-                super.v0(recyclerView, a1Var, i7);
+                super.v0(recyclerView, b1Var, i7);
                 break;
         }
     }
 
-    @Override // v4.b0, v4.n0
+    @Override // v4.b0, v4.o0
     public boolean y0() {
         switch (this.I) {
             case 0:
@@ -100,12 +100,12 @@ public final class b0 extends v4.b0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b0(int i7, boolean z9, int i10) {
-        super(i7, z9);
+    public /* synthetic */ b0(int i7, boolean z10, int i10) {
+        super(i7, z10);
         this.I = i10;
     }
 
-    public b0(mb mbVar) {
+    public b0(lb lbVar) {
         this.I = 4;
     }
 

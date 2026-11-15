@@ -1,9 +1,9 @@
 package e2;
 
-import a8.ia;
+import a8.ja;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class w0 {
     public static final w0 d = new w0(1.0f, 1.0f);
@@ -14,14 +14,14 @@ public final class w0 {
     public final int c;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         e = Integer.toString(0, 36);
         f = Integer.toString(1, 36);
     }
 
     public w0(float f10, float f11) {
-        ia.f(f10 > 0.0f);
-        ia.f(f11 > 0.0f);
+        ja.f(f10 > 0.0f);
+        ja.f(f11 > 0.0f);
         this.a = f10;
         this.b = f11;
         this.c = Math.round(f10 * 1000.0f);
@@ -46,7 +46,7 @@ public final class w0 {
 
     public final String toString() {
         Object[] objArr = {Float.valueOf(this.a), Float.valueOf(this.b)};
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         return String.format(Locale.US, "PlaybackParameters(speed=%.2f, pitch=%.2f)", objArr);
     }
 }

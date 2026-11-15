@@ -1,6 +1,6 @@
 package androidx.biometric;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -12,7 +12,7 @@ public final class j implements androidx.lifecycle.a0 {
     }
 
     @Override // androidx.lifecycle.a0
-    public final void X(Object obj) {
+    public final void o(Object obj) {
         switch (this.a) {
             case 0:
                 CharSequence charSequence = (CharSequence) obj;
@@ -21,7 +21,7 @@ public final class j implements androidx.lifecycle.a0 {
                     if (qVar.R()) {
                         qVar.W(charSequence);
                     }
-                    qVar.l0.d(null);
+                    qVar.m0.d(null);
                     break;
                 }
                 break;
@@ -30,7 +30,7 @@ public final class j implements androidx.lifecycle.a0 {
                     q qVar2 = this.b;
                     qVar2.N(1);
                     qVar2.O();
-                    z zVar = qVar2.l0;
+                    z zVar = qVar2.m0;
                     if (zVar.x == null) {
                         zVar.x = new androidx.lifecycle.z();
                     }

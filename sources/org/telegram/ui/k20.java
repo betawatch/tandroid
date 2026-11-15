@@ -1,68 +1,49 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
+import android.content.SharedPreferences;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class k20 extends org.telegram.ui.Components.kt {
-    public final /* synthetic */ f40 V;
+public final class k20 implements org.telegram.ui.ActionBar.o2 {
+    public final /* synthetic */ c40 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k20(f40 f40Var, LaunchActivity launchActivity, l30 l30Var, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(launchActivity, l30Var, f2Var, 5, true, h6Var);
-        this.V = f40Var;
+    public k20(c40 c40Var) {
+        this.a = c40Var;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view != getEditText()) {
-            return super.drawChild(canvas, view, j3);
+    @Override // org.telegram.ui.ActionBar.o2
+    public final void v() {
+        CountDownLatch groupCallBottomSheetLatch;
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
+            groupCallBottomSheetLatch.countDown();
         }
-        canvas.save();
-        f40 f40Var = this.V;
-        f40Var.B1.getEditText().setTranslationY(view.getMeasuredHeight() - f40Var.v5.f);
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
-    }
-
-    @Override // org.telegram.ui.Components.kt
-    public final void f() {
-        super.f();
-        org.telegram.ui.Components.gy emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.w0 = false;
-            emojiView.x2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(this.V.b.getPaddingBottom());
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        te.c cVar = this.V.v5;
-        if (cVar.f == 0.0f) {
-            cVar.c(getMeasuredHeight());
-        } else {
-            cVar.a(getMeasuredHeight());
+        c40 c40Var = this.a;
+        if (c40Var.E3 == 6) {
+            SharedPreferences e12 = org.telegram.messenger.np.e1();
+            if (e12.getBoolean("reminderhint", false)) {
+                return;
+            }
+            e12.edit().putBoolean("reminderhint", true).commit();
+            if (c40Var.i2 == null) {
+                org.telegram.ui.Components.b30 b30Var = new org.telegram.ui.Components.b30(c40Var.getContext(), 8);
+                c40Var.i2 = b30Var;
+                b30Var.setAlpha(0.0f);
+                c40Var.i2.setVisibility(4);
+                c40Var.i2.setShowingDuration(4000L);
+                c40Var.b.addView(c40Var.i2, c8.ja.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
+                c40Var.i2.setText(org.telegram.messenger.hd.M0(2131743438, null));
+                c40Var.i2.b();
+            }
+            c40Var.i2.setExtraTranslationY(-org.telegram.messenger.g0.m);
+            c40Var.i2.c(c40Var.w1);
         }
     }
 
-    @Override // org.telegram.ui.Components.kt
-    public final void p() {
-        rh.h hVar = this.V.w3;
-        int max = this.e ? Math.max(0, getEmojiPadding()) : this.N ? Math.max(0, getKeyboardHeight()) : 0;
-        if (max > 0) {
-            hVar.g(max);
-        } else {
-            hVar.i(false);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.kt
-    public final void y() {
-        this.V.b.requestApplyInsets();
+    @Override // org.telegram.ui.ActionBar.o2
+    public final boolean x() {
+        return true;
     }
 }

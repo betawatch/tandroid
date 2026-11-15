@@ -1,18 +1,19 @@
 package kg;
 
 import android.text.TextUtils;
-import bi.f2;
-import bi.u7;
+import bi.j6;
+import di.m6;
+import fi.s5;
 import java.util.ArrayList;
-import org.telegram.messenger.id;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.yr;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.vr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.uc;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class y {
     public static volatile y[] e = new y[4];
@@ -60,12 +61,12 @@ public final class y {
             ArrayList arrayList = this.b;
             int indexOf = arrayList.indexOf(c10);
             arrayList.remove(c10);
-            qs.f(this.a).k(qs.J1, new Object[0]);
-            gc.a0(vVar).U(id.M0(2131752715, null), true, new ai.e0(this, indexOf, c10, 18), new fi.x1(this, str, c10, 25)).j();
+            ns.f(this.a).k(ns.J1, new Object[0]);
+            cc.a0(vVar).U(hd.M0(2131752715, null), true, new ai.z0(this, indexOf, c10, 19), new s5((Object) this, (Object) str, (Object) c10, 25)).j();
         }
     }
 
-    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, zc zcVar) {
+    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, uc ucVar) {
         TL_account.editBusinessChatLink editbusinesschatlink = new TL_account.editBusinessChatLink();
         editbusinesschatlink.slug = tL_businessChatLink.link;
         if (!tL_inputBusinessChatLink.entities.isEmpty()) {
@@ -75,7 +76,7 @@ public final class y {
             tL_inputBusinessChatLink.flags |= 2;
         }
         editbusinesschatlink.link = tL_inputBusinessChatLink;
-        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new f2(this, tL_businessChatLink, zcVar, 9));
+        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new j6(this, tL_businessChatLink, ucVar, 8));
     }
 
     public final TL_account.TL_businessChatLink c(String str) {
@@ -106,16 +107,16 @@ public final class y {
         return tL_businessChatLink;
     }
 
-    public final void e(boolean z9, boolean z10) {
+    public final void e(boolean z10, boolean z11) {
         if (this.c) {
             return;
         }
-        if (!this.d || (z10 && !z9)) {
+        if (!this.d || (z11 && !z10)) {
             this.c = true;
             int i7 = this.a;
-            if (z9) {
-                yr a02 = yr.a0(i7);
-                a02.a.c(new u7(this, a02, z10, 5));
+            if (z10) {
+                vr a02 = vr.a0(i7);
+                a02.a.c(new m6(this, a02, z11, 5));
             } else {
                 ConnectionsManager.getInstance(i7).sendRequest(new TL_account.getBusinessChatLinks(), new x(this, 0));
             }
@@ -124,7 +125,7 @@ public final class y {
 
     public final void f() {
         ArrayList arrayList = new ArrayList(this.b);
-        yr a02 = yr.a0(this.a);
-        a02.a.c(new fi.x0(a02, arrayList, 1));
+        vr a02 = vr.a0(this.a);
+        a02.a.c(new hi.y0(a02, arrayList, 1));
     }
 }

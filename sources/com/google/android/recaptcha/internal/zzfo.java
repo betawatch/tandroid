@@ -3,12 +3,13 @@ package com.google.android.recaptcha.internal;
 import af.b;
 import gd.k;
 import id.c;
+import jd.a;
 import kd.j;
 import rd.p;
 import zd.b0;
 import zd.x1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzfo extends j implements p {
     int zza;
@@ -40,7 +41,7 @@ final class zzfo extends j implements p {
         zzcg zzt;
         zzcg zzt2;
         zzcg zzt3;
-        jd.a aVar = jd.a.a;
+        a aVar = a.a;
         try {
             if (this.zza != 0) {
                 b.c(obj);

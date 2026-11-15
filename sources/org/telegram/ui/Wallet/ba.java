@@ -1,36 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.ci;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class ba extends AnimatorListenerAdapter {
-    public final /* synthetic */ ci a;
-    public final /* synthetic */ x6 b;
-    public final /* synthetic */ ca c;
+public final class ba extends FrameLayout {
+    public final /* synthetic */ da a;
 
-    public ba(ca caVar, ci ciVar, x6 x6Var) {
-        this.c = caVar;
-        this.a = ciVar;
-        this.b = x6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ba(da daVar, Context context) {
+        super(context);
+        this.a = daVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        this.c.b();
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.c.b();
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        if (this.a != null) {
-            org.telegram.messenger.g0.v1(this.b);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(-getLeft(), -getTop());
+        da daVar = this.a;
+        daVar.j.c(canvas);
+        canvas.restore();
+        super.dispatchDraw(canvas);
+        if (daVar.j.d()) {
+            postInvalidateOnAnimation();
         }
     }
 }

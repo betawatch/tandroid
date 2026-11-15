@@ -1,20 +1,15 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class bk extends lx {
-    public final /* synthetic */ cn N;
+public final class bk extends org.telegram.ui.Components.f31 {
+    public final /* synthetic */ an E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bk(cn cnVar, cn cnVar2, FrameLayout frameLayout, cj cjVar, int i7, long j3, long j10) {
-        super(cnVar2, frameLayout, cjVar, i7, j3, j10);
-        this.N = cnVar;
-    }
-
-    @Override // org.telegram.ui.lx
-    public final void h() {
-        this.N.bd();
+    public bk(an anVar, Activity activity, an anVar2, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(activity, e6Var, anVar2);
+        this.E = anVar;
     }
 }

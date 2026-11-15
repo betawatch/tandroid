@@ -18,7 +18,7 @@ import java.util.Set;
 import org.webrtc.MediaStreamTrack;
 import p1.g;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d extends g1 {
     public static final Set g = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList("a", "abbr", "acronym", "b", "bdo", "big", "br", "button", "cite", "code", "dfn", "em", "i", "img", "input", "kbd", "label", "map", "object", "q", "samp", "script", "select", "small", "span", "strong", "sub", "sup", "textarea", "time", "tt", "var")));
@@ -131,7 +131,7 @@ public final class d extends g1 {
     /* JADX WARN: Code restructure failed: missing block: B:99:0x0171, code lost:
     
         r8.getClass();
-        r8 = nb.a.l0(r6);
+        r8 = nb.a.P3(r6);
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r17v0, types: [java.lang.Appendable] */
@@ -192,10 +192,10 @@ public final class d extends g1 {
                         }
                         if (set3.contains(str3) || iVar.j) {
                             aVar.getClass();
-                            String l02 = nb.a.l0(bVar2);
-                            if (l02 != null && l02.length() > 0) {
+                            String P3 = nb.a.P3(bVar2);
+                            if (P3 != null && P3.length() > 0) {
                                 try {
-                                    appendable.append(l02);
+                                    appendable.append(P3);
                                 } catch (IOException e10) {
                                     throw new RuntimeException(e10);
                                 }
@@ -236,13 +236,13 @@ public final class d extends g1 {
                         Map a10 = a(iVar);
                         a aVar2 = this.d;
                         a aVar3 = new a(str4, length7, a10, aVar2);
-                        boolean z9 = set3.contains(str4) || iVar.j;
-                        if (z9) {
+                        boolean z10 = set3.contains(str4) || iVar.j;
+                        if (z10) {
                             aVar.getClass();
-                            String l03 = nb.a.l0(aVar3);
-                            if (l03 != null && l03.length() > 0) {
+                            String P32 = nb.a.P3(aVar3);
+                            if (P32 != null && P32.length() > 0) {
                                 try {
-                                    appendable.append(l03);
+                                    appendable.append(P32);
                                 } catch (IOException e11) {
                                     throw new RuntimeException(e11);
                                 }
@@ -255,7 +255,7 @@ public final class d extends g1 {
                             aVar2.f = arrayList2;
                         }
                         arrayList2.add(aVar3);
-                        if (!z9) {
+                        if (!z10) {
                             this.d = aVar3;
                         }
                     }
@@ -280,10 +280,10 @@ public final class d extends g1 {
                             CharSequence charSequence5 = (CharSequence) appendable;
                             if (bVar.b == charSequence5.length()) {
                                 aVar.getClass();
-                                String l04 = nb.a.l0(bVar);
-                                if (l04 != null) {
+                                String P33 = nb.a.P3(bVar);
+                                if (P33 != null) {
                                     try {
-                                        appendable.append(l04);
+                                        appendable.append(P33);
                                     } catch (IOException e12) {
                                         throw new RuntimeException(e12);
                                     }
@@ -323,20 +323,20 @@ public final class d extends g1 {
                         CharSequence charSequence7 = (CharSequence) appendable;
                         int length10 = charSequence7.length();
                         int length11 = str7.length();
-                        boolean z10 = false;
+                        boolean z11 = false;
                         for (int i10 = 0; i10 < length11; i10++) {
                             char charAt = str7.charAt(i10);
                             if (Character.isWhitespace(charAt)) {
-                                z10 = true;
+                                z11 = true;
                             } else {
-                                if (z10 && (length = charSequence7.length()) > 0 && !Character.isWhitespace(charSequence7.charAt(length - 1))) {
+                                if (z11 && (length = charSequence7.length()) > 0 && !Character.isWhitespace(charSequence7.charAt(length - 1))) {
                                     d1.a(appendable, ' ');
                                 }
                                 d1.a(appendable, charAt);
-                                z10 = false;
+                                z11 = false;
                             }
                         }
-                        if (z10 && length10 < charSequence7.length()) {
+                        if (z11 && length10 < charSequence7.length()) {
                             d1.a(appendable, ' ');
                         }
                     }

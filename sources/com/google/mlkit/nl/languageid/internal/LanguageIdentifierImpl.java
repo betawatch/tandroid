@@ -1,9 +1,9 @@
 package com.google.mlkit.nl.languageid.internal;
 
-import a8.pa;
-import a8.ua;
+import a8.qa;
+import a8.t8;
 import a8.va;
-import a8.wa;
+import a8.xa;
 import android.os.SystemClock;
 import androidx.lifecycle.b0;
 import androidx.lifecycle.m;
@@ -15,55 +15,59 @@ import java.util.HashMap;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import n6.c;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Components.qt;
+import org.telegram.messenger.ns;
+import org.telegram.ui.ld0;
 import pb.g;
 import pb.j;
+import pb.n;
 import q6.k;
 import q6.p;
 import rb.b;
+import s6.d;
 import tb.e;
+import tg.x;
+import u7.i;
 import y7.d6;
-import y7.e6;
-import y7.e9;
-import y7.h7;
-import y7.i6;
+import y7.d9;
+import y7.f7;
+import y7.g7;
+import y7.h6;
+import y7.i7;
 import y7.j6;
-import y7.j7;
+import y7.k6;
+import y7.k7;
 import y7.l6;
-import y7.l7;
-import y7.m6;
-import y7.n6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
-    public final e9 a;
-    public final va b;
+    public final d9 a;
+    public final x b;
     public final Executor c;
     public final AtomicReference d;
     public final CancellationTokenSource e = new CancellationTokenSource();
-    public final l6 f;
+    public final j6 f;
 
-    public LanguageIdentifierImpl(e eVar, e9 e9Var, Executor executor) {
-        this.a = e9Var;
+    public LanguageIdentifierImpl(e eVar, d9 d9Var, Executor executor) {
+        this.a = d9Var;
         this.c = executor;
         this.d = new AtomicReference(eVar);
-        this.f = eVar.g ? l6.c : l6.b;
-        this.b = new va(g.c().b(), 2);
+        this.f = eVar.g ? j6.c : j6.b;
+        this.b = new x(g.c().b());
     }
 
-    public static final j6 k() {
-        i6 i6Var = new i6(0);
-        i6Var.b = Float.valueOf(-1.0f);
-        return new j6(i6Var);
+    public static final h6 k() {
+        t8 t8Var = new t8();
+        t8Var.a = Float.valueOf(-1.0f);
+        return new h6(t8Var);
     }
 
     @Override // com.google.android.gms.common.api.n
     public final c[] c() {
-        return this.f == l6.c ? j.a : new c[]{j.b};
+        return this.f == j6.c ? j.a : new c[]{j.b};
     }
 
     @Override // rb.b, java.io.Closeable, java.lang.AutoCloseable
@@ -75,83 +79,83 @@ public class LanguageIdentifierImpl implements b {
         }
         this.e.cancel();
         eVar.d(this.c);
-        ab.b0 b0Var = new ab.b0(15, false);
-        b0Var.d = this.f;
-        d6 d6Var = new d6();
-        d6Var.b = k();
-        b0Var.e = new l7(d6Var);
-        wa waVar = new wa(b0Var, 1);
-        e9 e9Var = this.a;
-        Task task = e9Var.e;
-        pb.m.a.execute(new pa(e9Var, waVar, n6.d, task.isSuccessful() ? (String) task.getResult() : q6.j.c.a(e9Var.g), 7));
+        xi.e eVar2 = new xi.e();
+        eVar2.c = this.f;
+        f7 f7Var = new f7();
+        f7Var.b = k();
+        eVar2.d = new k7(f7Var);
+        xa xaVar = new xa(eVar2, 1);
+        d9 d9Var = this.a;
+        Task task = d9Var.e;
+        n.a.execute(new qa(d9Var, xaVar, l6.d, task.isSuccessful() ? (String) task.getResult() : q6.j.c.a(d9Var.g), 7));
     }
 
     public final Task g(final String str) {
         q6.m.h(str, "Text can not be null");
         final e eVar = (e) this.d.get();
         q6.m.i("LanguageIdentification has been closed", eVar != null);
-        final boolean z9 = true ^ eVar.c.get();
+        final boolean z10 = true ^ eVar.c.get();
         return eVar.a(this.c, new Callable() { // from class: tb.d
             @Override // java.util.concurrent.Callable
             public final Object call() {
                 LanguageIdentifierImpl languageIdentifierImpl = LanguageIdentifierImpl.this;
                 e eVar2 = eVar;
                 String str2 = str;
-                boolean z10 = z9;
+                boolean z11 = z10;
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
-                    String e10 = eVar2.e(str2.substring(0, Math.min(str2.length(), qs.e3)));
-                    qt qtVar = new qt(27);
-                    com.google.android.gms.internal.clearcut.e eVar3 = new com.google.android.gms.internal.clearcut.e();
-                    eVar3.b = e10;
-                    qtVar.b = new h7(eVar3);
-                    languageIdentifierImpl.j(elapsedRealtime, z10, new j7(qtVar), m6.b);
+                    String e10 = eVar2.e(str2.substring(0, Math.min(str2.length(), ns.e3)));
+                    i iVar = new i();
+                    aa.b0 b0Var = new aa.b0(3);
+                    b0Var.b = e10;
+                    iVar.a = new g7(b0Var);
+                    languageIdentifierImpl.j(elapsedRealtime, z11, new i7(iVar), k6.b);
                     return e10;
                 } catch (RuntimeException e11) {
-                    languageIdentifierImpl.j(elapsedRealtime, z10, null, m6.c);
+                    languageIdentifierImpl.j(elapsedRealtime, z11, null, k6.c);
                     throw e11;
                 }
             }
         }, this.e.getToken());
     }
 
-    public final void j(long j3, boolean z9, j7 j7Var, m6 m6Var) {
+    public final void j(long j3, boolean z10, i7 i7Var, k6 k6Var) {
         long elapsedRealtime = SystemClock.elapsedRealtime() - j3;
-        e9 e9Var = this.a;
-        n6 n6Var = n6.b;
-        e9Var.getClass();
+        d9 d9Var = this.a;
+        l6 l6Var = l6.b;
+        d9Var.getClass();
         long elapsedRealtime2 = SystemClock.elapsedRealtime();
-        HashMap hashMap = e9Var.i;
-        if (hashMap.get(n6Var) == null || elapsedRealtime2 - ((Long) hashMap.get(n6Var)).longValue() > TimeUnit.SECONDS.toMillis(30L)) {
-            hashMap.put(n6Var, Long.valueOf(elapsedRealtime2));
-            d6 d6Var = new d6();
-            d6Var.b = k();
-            d6 d6Var2 = new d6();
-            d6Var2.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
-            d6Var2.c = Boolean.valueOf(z9);
-            d6Var2.b = m6Var;
-            d6Var.a = new e6(d6Var2);
-            if (j7Var != null) {
-                d6Var.c = j7Var;
+        HashMap hashMap = d9Var.i;
+        if (hashMap.get(l6Var) == null || elapsedRealtime2 - ((Long) hashMap.get(l6Var)).longValue() > TimeUnit.SECONDS.toMillis(30L)) {
+            hashMap.put(l6Var, Long.valueOf(elapsedRealtime2));
+            f7 f7Var = new f7();
+            f7Var.b = k();
+            ld0 ld0Var = new ld0(29, false);
+            ld0Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
+            ld0Var.d = Boolean.valueOf(z10);
+            ld0Var.c = k6Var;
+            f7Var.a = new d6(ld0Var);
+            if (i7Var != null) {
+                f7Var.c = i7Var;
             }
-            ab.b0 b0Var = new ab.b0(15, false);
-            b0Var.d = this.f;
-            b0Var.e = new l7(d6Var);
-            wa waVar = new wa(b0Var, 0);
-            Task task = e9Var.e;
-            pb.m.a.execute(new pa(e9Var, waVar, n6Var, task.isSuccessful() ? (String) task.getResult() : q6.j.c.a(e9Var.g), 7));
+            xi.e eVar = new xi.e();
+            eVar.c = this.f;
+            eVar.d = new k7(f7Var);
+            xa xaVar = new xa(eVar, 0);
+            Task task = d9Var.e;
+            n.a.execute(new qa(d9Var, xaVar, l6Var, task.isSuccessful() ? (String) task.getResult() : q6.j.c.a(d9Var.g), 7));
         }
         long currentTimeMillis = System.currentTimeMillis();
-        va vaVar = this.b;
-        int i7 = this.f == l6.c ? 24603 : 24602;
-        int i10 = m6Var.a;
+        x xVar = this.b;
+        int i7 = this.f == j6.c ? 24603 : 24602;
+        int i10 = k6Var.a;
         long j10 = currentTimeMillis - elapsedRealtime;
-        synchronized (vaVar) {
+        synchronized (xVar) {
             long elapsedRealtime3 = SystemClock.elapsedRealtime();
-            if (vaVar.b.get() != -1 && elapsedRealtime3 - vaVar.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
+            if (((AtomicLong) xVar.c).get() != -1 && elapsedRealtime3 - ((AtomicLong) xVar.c).get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            vaVar.a.f(new p(0, Arrays.asList(new k(i7, i10, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new ua(vaVar, elapsedRealtime3, 10));
+            ((d) xVar.b).f(new p(0, Arrays.asList(new k(i7, i10, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new va(xVar, elapsedRealtime3, 9));
         }
     }
 }

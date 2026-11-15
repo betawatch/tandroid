@@ -1,249 +1,65 @@
 package pg;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.text.TextUtils;
-import android.util.DisplayMetrics;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.os.Bundle;
+import android.text.TextPaint;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import bg.c0;
-import c8.ha;
-import org.telegram.messenger.camera.q;
+import java.util.Locale;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.k5;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.uy;
-import tg.f0;
-import ug.w0;
-import ug.y0;
+import org.telegram.ui.Components.j6;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final Object b;
-    public final Object c;
+    public qm0 a;
+    public float b;
+    public float c;
+    public float d;
+    public j6 e;
+    public String f;
+    public TextPaint h;
+    public int n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h(Object obj, Context context, Object obj2, int i7) {
-        super(context);
-        this.a = i7;
-        this.c = obj;
-        this.b = obj2;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                c0 c0Var = (c0) this.c;
-                c0Var.b(m6.r1(0.65f, m6.w0(m6.d6, (h6) this.b)));
-                c0Var.draw(canvas);
-                super.dispatchDraw(canvas);
-                break;
-            case 2:
-            default:
-                super.dispatchDraw(canvas);
-                break;
-            case 3:
-                ((y0) this.b).d(0, 0.0f, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
-                RectF rectF = g0.P;
-                rectF.set(0.0f, g0.L(2.0f), getMeasuredWidth(), g0.L(18.0f) + getMeasuredHeight());
-                canvas.save();
-                canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                y0 y0Var = (y0) this.b;
-                y0Var.f.setAlpha(((w0) this.c).E1);
-                canvas.drawRoundRect(rectF, g0.L(24.0f) - 1, g0.L(24.0f) - 1, y0Var.f);
-                canvas.restore();
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                super.dispatchTouchEvent(motionEvent);
-                return true;
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        boolean z9;
-        switch (this.a) {
-            case 2:
-                Path path = (Path) this.b;
-                f0 f0Var = (f0) this.c;
-                if (f0Var.h == null || (!((z9 = f0Var.f) && view == f0Var.d) && (z9 || view != f0Var.c))) {
-                    return super.drawChild(canvas, view, j3);
-                }
-                float measuredWidth = ((z9 ? f0Var.e : 1.0f - f0Var.e) * getMeasuredWidth()) / 2.0f;
-                canvas.save();
-                path.rewind();
-                path.addCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, measuredWidth, Path.Direction.CW);
-                canvas.clipPath(path);
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                canvas.restore();
-                return drawChild;
-            default:
-                return super.drawChild(canvas, view, j3);
-        }
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
     }
 
     @Override // android.view.View
-    public void invalidate() {
-        switch (this.a) {
-            case 0:
-                super.invalidate();
-                ((j) this.c).invalidate();
-                break;
-            default:
-                super.invalidate();
-                break;
-        }
+    public final void onDraw(Canvas canvas) {
+        TextPaint textPaint = this.h;
+        textPaint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        canvas.drawText(this.f, g0.L(24.0f), g0.L(24.0f), textPaint);
+        textPaint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.I6, false));
+        String format = String.format(Locale.ROOT, "%.2f", Float.valueOf(this.d));
+        canvas.drawText(format, (getMeasuredWidth() - g0.L(8.0f)) - textPaint.measureText(format), this.a.getY() + g0.L(23.0f), textPaint);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        this.a.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 3:
-                super.onMeasure(i7, q.B(2.0f, ((w0) this.c).t1, TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                break;
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        int size = View.MeasureSpec.getSize(i7);
+        if (this.n != size) {
+            qm0 qm0Var = this.a;
+            float floatValue = ((Float) this.e.get(null)).floatValue();
+            float f10 = this.b;
+            qm0Var.setProgress((floatValue - f10) / (this.c - f10));
+            this.n = size;
         }
     }
 
     @Override // android.view.View
-    public void onSizeChanged(int i7, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 1:
-                super.onSizeChanged(i7, i10, i11, i12);
-                c0 c0Var = (c0) this.c;
-                c0Var.setBounds(0, 0, i7, i10);
-                c0Var.c(0, g0.L(24.0f) + getPaddingBottom());
-                break;
-            default:
-                super.onSizeChanged(i7, i10, i11, i12);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        DisplayMetrics displayMetrics;
-        float f10;
-        switch (this.a) {
-            case 0:
-                j jVar = (j) this.c;
-                d dVar = jVar.r;
-                boolean onTouchEvent = ((GestureDetector) ((uy) this.b).b).onTouchEvent(motionEvent);
-                if (motionEvent.getAction() == 0) {
-                    g0.i3(dVar, 200L);
-                } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                    g0.r(dVar);
-                    if (!jVar.h) {
-                        r1.h hVar = jVar.c.m;
-                        if (((float) hVar.i) >= getWidth() / 2.0f) {
-                            displayMetrics = getResources().getDisplayMetrics();
-                            f10 = 2.14748365E9f;
-                        } else {
-                            displayMetrics = getResources().getDisplayMetrics();
-                            f10 = -2.14748365E9f;
-                        }
-                        hVar.i = j.a(displayMetrics, f10);
-                        jVar.d.m.i = j.b(getResources().getDisplayMetrics(), (float) jVar.d.m.i);
-                        jVar.c.h();
-                        jVar.d.h();
-                    }
-                    jVar.n = false;
-                    jVar.f = false;
-                    jVar.h = false;
-                }
-                return onTouchEvent;
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationX(float f10) {
-        switch (this.a) {
-            case 0:
-                super.setTranslationX(f10);
-                ((j) this.c).invalidate();
-                break;
-            default:
-                super.setTranslationX(f10);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f10) {
-        switch (this.a) {
-            case 0:
-                super.setTranslationY(f10);
-                ((j) this.c).invalidate();
-                break;
-            default:
-                super.setTranslationY(f10);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(int i7, Context context, h6 h6Var) {
-        super(context);
-        this.a = i7;
-        switch (i7) {
-            case 4:
-                super(context);
-                LinearLayout f10 = k5.f(context, 1);
-                i6 i6Var = new i6(context, false, false, false);
-                this.b = i6Var;
-                int i10 = m6.G6;
-                t6.Y(i6Var, i10, h6Var);
-                i6Var.setTextSize(g0.L(17.0f));
-                i6Var.setTypeface(g0.o());
-                f10.addView(i6Var, ha.r(-2, 23, 1));
-                TextView textView = new TextView(context);
-                this.c = textView;
-                textView.setTextSize(1, 11.0f);
-                t6.U(textView, i10, h6Var);
-                textView.setSingleLine();
-                textView.setMaxLines(1);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                f10.addView(textView, ha.r(-2, -2, 1));
-                addView(f10, ha.e(-2, -2, 17));
-                break;
-            default:
-                this.c = new c0(8);
-                this.b = h6Var;
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(f0 f0Var, Context context) {
-        super(context);
-        this.a = 2;
-        this.c = f0Var;
-        this.b = new Path();
+    public final boolean performAccessibilityAction(int i7, Bundle bundle) {
+        return super.performAccessibilityAction(i7, bundle) || this.a.getSeekBarAccessibilityDelegate().g(this, i7, bundle);
     }
 }

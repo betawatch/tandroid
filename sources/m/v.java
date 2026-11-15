@@ -1,6 +1,6 @@
 package m;
 
-import a8.wa;
+import a8.xa;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
@@ -9,28 +9,27 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
 import android.net.Uri;
 import android.util.AttributeSet;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class v extends ImageButton {
+public class v extends ImageView {
     public final h2.c a;
-    public final wa b;
+    public final xa b;
     public boolean c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public v(Context context, AttributeSet attributeSet, int i7) {
         super(context, attributeSet, i7);
-        b3.a(context);
+        a3.a(context);
         this.c = false;
-        a3.a(this, getContext());
+        z2.a(this, getContext());
         h2.c cVar = new h2.c(this);
         this.a = cVar;
         cVar.x(attributeSet, i7);
-        wa waVar = new wa(this);
-        this.b = waVar;
-        waVar.s(attributeSet, i7);
+        xa xaVar = new xa(this);
+        this.b = xaVar;
+        xaVar.r(attributeSet, i7);
     }
 
     @Override // android.widget.ImageView, android.view.View
@@ -40,9 +39,9 @@ public class v extends ImageButton {
         if (cVar != null) {
             cVar.b();
         }
-        wa waVar = this.b;
-        if (waVar != null) {
-            waVar.c();
+        xa xaVar = this.b;
+        if (xaVar != null) {
+            xaVar.b();
         }
     }
 
@@ -63,21 +62,21 @@ public class v extends ImageButton {
     }
 
     public ColorStateList getSupportImageTintList() {
-        c3 c3Var;
-        wa waVar = this.b;
-        if (waVar == null || (c3Var = (c3) waVar.d) == null) {
+        b3 b3Var;
+        xa xaVar = this.b;
+        if (xaVar == null || (b3Var = (b3) xaVar.d) == null) {
             return null;
         }
-        return (ColorStateList) c3Var.c;
+        return (ColorStateList) b3Var.c;
     }
 
     public PorterDuff.Mode getSupportImageTintMode() {
-        c3 c3Var;
-        wa waVar = this.b;
-        if (waVar == null || (c3Var = (c3) waVar.d) == null) {
+        b3 b3Var;
+        xa xaVar = this.b;
+        if (xaVar == null || (b3Var = (b3) xaVar.d) == null) {
             return null;
         }
-        return (PorterDuff.Mode) c3Var.d;
+        return (PorterDuff.Mode) b3Var.d;
     }
 
     @Override // android.widget.ImageView, android.view.View
@@ -106,27 +105,27 @@ public class v extends ImageButton {
     @Override // android.widget.ImageView
     public void setImageBitmap(Bitmap bitmap) {
         super.setImageBitmap(bitmap);
-        wa waVar = this.b;
-        if (waVar != null) {
-            waVar.c();
+        xa xaVar = this.b;
+        if (xaVar != null) {
+            xaVar.b();
         }
     }
 
     @Override // android.widget.ImageView
     public void setImageDrawable(Drawable drawable) {
-        wa waVar = this.b;
-        if (waVar != null && drawable != null && !this.c) {
-            waVar.b = drawable.getLevel();
+        xa xaVar = this.b;
+        if (xaVar != null && drawable != null && !this.c) {
+            xaVar.b = drawable.getLevel();
         }
         super.setImageDrawable(drawable);
-        if (waVar != null) {
-            waVar.c();
+        if (xaVar != null) {
+            xaVar.b();
             if (this.c) {
                 return;
             }
-            ImageView imageView = (ImageView) waVar.c;
+            ImageView imageView = (ImageView) xaVar.c;
             if (imageView.getDrawable() != null) {
-                imageView.getDrawable().setLevel(waVar.b);
+                imageView.getDrawable().setLevel(xaVar.b);
             }
         }
     }
@@ -139,26 +138,28 @@ public class v extends ImageButton {
 
     @Override // android.widget.ImageView
     public void setImageResource(int i7) {
-        wa waVar = this.b;
-        ImageView imageView = (ImageView) waVar.c;
-        if (i7 != 0) {
-            Drawable b10 = b5.a.b(imageView.getContext(), i7);
-            if (b10 != null) {
-                m1.a(b10);
+        xa xaVar = this.b;
+        if (xaVar != null) {
+            ImageView imageView = (ImageView) xaVar.c;
+            if (i7 != 0) {
+                Drawable b10 = b5.a.b(imageView.getContext(), i7);
+                if (b10 != null) {
+                    l1.a(b10);
+                }
+                imageView.setImageDrawable(b10);
+            } else {
+                imageView.setImageDrawable(null);
             }
-            imageView.setImageDrawable(b10);
-        } else {
-            imageView.setImageDrawable(null);
+            xaVar.b();
         }
-        waVar.c();
     }
 
     @Override // android.widget.ImageView
     public void setImageURI(Uri uri) {
         super.setImageURI(uri);
-        wa waVar = this.b;
-        if (waVar != null) {
-            waVar.c();
+        xa xaVar = this.b;
+        if (xaVar != null) {
+            xaVar.b();
         }
     }
 
@@ -177,28 +178,28 @@ public class v extends ImageButton {
     }
 
     public void setSupportImageTintList(ColorStateList colorStateList) {
-        wa waVar = this.b;
-        if (waVar != null) {
-            if (((c3) waVar.d) == null) {
-                waVar.d = new c3();
+        xa xaVar = this.b;
+        if (xaVar != null) {
+            if (((b3) xaVar.d) == null) {
+                xaVar.d = new b3();
             }
-            c3 c3Var = (c3) waVar.d;
-            c3Var.c = colorStateList;
-            c3Var.b = true;
-            waVar.c();
+            b3 b3Var = (b3) xaVar.d;
+            b3Var.c = colorStateList;
+            b3Var.b = true;
+            xaVar.b();
         }
     }
 
     public void setSupportImageTintMode(PorterDuff.Mode mode) {
-        wa waVar = this.b;
-        if (waVar != null) {
-            if (((c3) waVar.d) == null) {
-                waVar.d = new c3();
+        xa xaVar = this.b;
+        if (xaVar != null) {
+            if (((b3) xaVar.d) == null) {
+                xaVar.d = new b3();
             }
-            c3 c3Var = (c3) waVar.d;
-            c3Var.d = mode;
-            c3Var.a = true;
-            waVar.c();
+            b3 b3Var = (b3) xaVar.d;
+            b3Var.d = mode;
+            b3Var.a = true;
+            xaVar.b();
         }
     }
 }

@@ -1,6 +1,7 @@
 package s3;
 
-import a8.ia;
+import a8.ja;
+import com.google.android.gms.internal.vision.e2;
 import e2.n0;
 import e2.p0;
 import e2.u;
@@ -8,7 +9,7 @@ import j$.util.Objects;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements p0 {
     public final int a;
@@ -18,13 +19,13 @@ public final class b implements p0 {
     public final boolean e;
     public final int f;
 
-    public b(int i7, String str, String str2, String str3, boolean z9, int i10) {
-        ia.f(i10 == -1 || i10 > 0);
+    public b(int i7, String str, String str2, String str3, boolean z10, int i10) {
+        ja.f(i10 == -1 || i10 > 0);
         this.a = i7;
         this.b = str;
         this.c = str2;
         this.d = str3;
-        this.e = z9;
+        this.e = z10;
         this.f = i10;
     }
 
@@ -43,7 +44,7 @@ public final class b implements p0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static b d(Map map) {
-        boolean z9;
+        boolean z10;
         int i7;
         List list;
         String str;
@@ -52,26 +53,26 @@ public final class b implements p0 {
         List list3;
         String str3;
         List list4;
-        boolean z10;
+        boolean z11;
         List list5;
         int i10;
         List list6 = (List) map.get("icy-br");
-        boolean z11 = true;
+        boolean z12 = true;
         int i11 = -1;
         if (list6 != null) {
             String str4 = (String) list6.get(0);
             try {
                 i10 = Integer.parseInt(str4) * 1000;
                 if (i10 > 0) {
-                    z9 = true;
+                    z10 = true;
                 } else {
                     try {
                         h2.a.l("IcyHeaders", "Invalid bitrate: " + str4);
-                        z9 = false;
+                        z10 = false;
                         i10 = -1;
                     } catch (NumberFormatException unused) {
-                        com.google.android.recaptcha.internal.a.r("Invalid bitrate header: ", str4, "IcyHeaders");
-                        z9 = false;
+                        e2.q("Invalid bitrate header: ", str4, "IcyHeaders");
+                        z10 = false;
                         i7 = i10;
                         list = (List) map.get("icy-genre");
                         if (list == null) {
@@ -89,7 +90,7 @@ public final class b implements p0 {
                         if (list5 != null) {
                         }
                         int i12 = i11;
-                        if (z9) {
+                        if (z10) {
                         }
                     }
                 }
@@ -98,36 +99,36 @@ public final class b implements p0 {
             }
             i7 = i10;
         } else {
-            z9 = false;
+            z10 = false;
             i7 = -1;
         }
         list = (List) map.get("icy-genre");
         if (list == null) {
             str = (String) list.get(0);
-            z9 = true;
+            z10 = true;
         } else {
             str = null;
         }
         list2 = (List) map.get("icy-name");
         if (list2 == null) {
             str2 = (String) list2.get(0);
-            z9 = true;
+            z10 = true;
         } else {
             str2 = null;
         }
         list3 = (List) map.get("icy-url");
         if (list3 == null) {
             str3 = (String) list3.get(0);
-            z9 = true;
+            z10 = true;
         } else {
             str3 = null;
         }
         list4 = (List) map.get("icy-pub");
         if (list4 == null) {
-            z10 = ((String) list4.get(0)).equals("1");
-            z9 = true;
+            z11 = ((String) list4.get(0)).equals("1");
+            z10 = true;
         } else {
-            z10 = false;
+            z11 = false;
         }
         list5 = (List) map.get("icy-metaint");
         if (list5 != null) {
@@ -139,22 +140,22 @@ public final class b implements p0 {
                 } else {
                     try {
                         h2.a.l("IcyHeaders", "Invalid metadata interval: " + str5);
-                        z11 = z9;
+                        z12 = z10;
                     } catch (NumberFormatException unused3) {
                         i11 = parseInt;
-                        com.google.android.recaptcha.internal.a.r("Invalid metadata interval: ", str5, "IcyHeaders");
+                        e2.q("Invalid metadata interval: ", str5, "IcyHeaders");
                         int i122 = i11;
-                        if (z9) {
+                        if (z10) {
                         }
                     }
                 }
-                z9 = z11;
+                z10 = z12;
             } catch (NumberFormatException unused4) {
             }
         }
         int i1222 = i11;
-        if (z9) {
-            return new b(i7, str, str2, str3, z10, i1222);
+        if (z10) {
+            return new b(i7, str, str2, str3, z11, i1222);
         }
         return null;
     }

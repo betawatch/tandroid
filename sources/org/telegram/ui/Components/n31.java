@@ -1,46 +1,50 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class n31 implements wv0 {
-    public final /* synthetic */ TLRPC.InputStickerSet a;
-    public final /* synthetic */ t31 b;
+public final class n31 extends uj0 {
+    public final /* synthetic */ u31 f3;
+    public final /* synthetic */ x31 g3;
 
-    public n31(t31 t31Var, TLRPC.InputStickerSet inputStickerSet) {
-        this.b = t31Var;
-        this.a = inputStickerSet;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n31(x31 x31Var, Context context, u31 u31Var) {
+        super(context, null);
+        this.g3 = x31Var;
+        this.f3 = u31Var;
     }
 
-    @Override // org.telegram.ui.Components.wv0
-    public final void a() {
-        t31 t31Var = this.b;
-        v4.g0 adapter = t31Var.n.getAdapter();
-        s31 s31Var = t31Var.s;
-        TLRPC.InputStickerSet inputStickerSet = this.a;
-        int i7 = 0;
-        if (adapter == s31Var) {
-            while (i7 < s31Var.e.size()) {
-                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) s31Var.e.get(i7);
-                if (stickerSetCovered.set.id == inputStickerSet.id) {
-                    s31Var.F(stickerSetCovered, null);
-                    return;
-                }
-                i7++;
-            }
+    @Override // org.telegram.ui.Components.uj0
+    public final boolean E0(float f10) {
+        return f10 >= ((float) (org.telegram.messenger.g0.L(58.0f) + this.g3.F));
+    }
+
+    @Override // org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        this.g3.G = true;
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return super.onInterceptTouchEvent(motionEvent) || this.f3.d(this, motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.g3.M != null) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.g3.I) {
             return;
         }
-        jg.d2 d2Var = t31Var.w;
-        ArrayList arrayList = d2Var.E;
-        while (i7 < arrayList.size()) {
-            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i7);
-            if (stickerSetCovered2.set.id == inputStickerSet.id) {
-                d2Var.F(stickerSetCovered2, null);
-                return;
-            }
-            i7++;
-        }
+        super.requestLayout();
     }
 }

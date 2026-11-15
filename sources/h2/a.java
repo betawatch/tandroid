@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a {
     public static ExecutorService a;
@@ -43,10 +43,10 @@ public abstract class a {
         if (TextUtils.isEmpty(replace)) {
             return str;
         }
-        StringBuilder j3 = rf.b.j(str, "\n  ");
-        j3.append(replace.replace("\n", "\n  "));
-        j3.append('\n');
-        return j3.toString();
+        StringBuilder m10 = r.b.m(str, "\n  ");
+        m10.append(replace.replace("\n", "\n  "));
+        m10.append('\n');
+        return m10.toString();
     }
 
     public static void b(String str, String str2) {
@@ -72,7 +72,7 @@ public abstract class a {
         synchronized (a.class) {
             try {
                 if (a == null) {
-                    String str = m0.a;
+                    String str = l0.a;
                     a = Executors.newSingleThreadExecutor(new androidx.emoji2.text.a("ExoPlayer:BackgroundExecutor", 1));
                 }
                 executorService = a;
@@ -115,7 +115,7 @@ public abstract class a {
 
     public static void k(MediaFormat mediaFormat, List list) {
         for (int i7 = 0; i7 < list.size(); i7++) {
-            mediaFormat.setByteBuffer(jg.g.j(i7, "csd-"), ByteBuffer.wrap((byte[]) list.get(i7)));
+            mediaFormat.setByteBuffer(i5.c.i(i7, "csd-"), ByteBuffer.wrap((byte[]) list.get(i7)));
         }
     }
 

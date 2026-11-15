@@ -3,17 +3,17 @@ package bg;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.c1;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.ij;
+import org.telegram.messenger.gj;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.t10;
+import org.telegram.messenger.q10;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class w extends c1 {
     public static volatile w[] a = new w[4];
@@ -74,7 +74,7 @@ public final class w extends c1 {
         }
         TLRPC.MessageReplyHeader messageReplyHeader = ephemeralMessage.reply_to;
         if (messageReplyHeader != null) {
-            TLRPC.MessageReplyHeader messageReplyHeader2 = (TLRPC.MessageReplyHeader) TLObject.deepCopy(messageReplyHeader, new a3.l(20));
+            TLRPC.MessageReplyHeader messageReplyHeader2 = (TLRPC.MessageReplyHeader) TLObject.deepCopy(messageReplyHeader, new a3.l(18));
             tL_message.reply_to = messageReplyHeader2;
             if (ephemeralMessage.reply_to.reply_to_ephemeral && (i10 = messageReplyHeader2.reply_to_msg_id) != 0) {
                 messageReplyHeader2.reply_to_msg_id = ((-1879048193) & i10) | 1610612752;
@@ -93,7 +93,7 @@ public final class w extends c1 {
             tL_messageReplyHeader.flags |= 2;
             tL_message.flags |= 8;
         }
-        ij.B0(tL_message);
+        gj.B0(tL_message);
         return tL_message;
     }
 
@@ -102,7 +102,7 @@ public final class w extends c1 {
         tL_ephemeralMessage.out = message.out;
         tL_ephemeralMessage.invert_media = message.invert_media;
         tL_ephemeralMessage.noforwards = message.noforwards;
-        tL_ephemeralMessage.id = ij.S(message.id);
+        tL_ephemeralMessage.id = gj.S(message.id);
         tL_ephemeralMessage.from_id = message.from_id;
         tL_ephemeralMessage.peer_id = message.peer_id;
         tL_ephemeralMessage.receiver_id = message.ephemeralReceiverBotId;
@@ -144,7 +144,7 @@ public final class w extends c1 {
         return wVar;
     }
 
-    public final boolean a(TLObject tLObject, List list, c20 c20Var) {
+    public final boolean a(TLObject tLObject, List list, z10 z10Var) {
         TLRPC.ChatFull N0;
         TLRPC.ChatFull N02;
         if (list == null || list.isEmpty() || (tLObject instanceof TL_ephemeral.TL_sendMessage)) {
@@ -169,21 +169,21 @@ public final class w extends c1 {
                 tL_sendMessage.rich_message = tL_messages_sendMessage.rich_message;
                 tL_sendMessage.random_id = tL_messages_sendMessage.random_id;
                 TLRPC.InputReplyTo inputReplyTo = tL_messages_sendMessage.reply_to;
-                boolean z9 = inputReplyTo instanceof TLRPC.TL_inputReplyToMessage;
+                boolean z10 = inputReplyTo instanceof TLRPC.TL_inputReplyToMessage;
                 TLRPC.InputReplyTo inputReplyTo2 = inputReplyTo;
-                if (z9) {
+                if (z10) {
                     TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage = (TLRPC.TL_inputReplyToMessage) inputReplyTo;
                     inputReplyTo2 = inputReplyTo;
-                    if (ij.f3(tL_inputReplyToMessage.reply_to_msg_id)) {
+                    if (gj.f3(tL_inputReplyToMessage.reply_to_msg_id)) {
                         TLRPC.TL_inputReplyToEphemeralMessage tL_inputReplyToEphemeralMessage = new TLRPC.TL_inputReplyToEphemeralMessage();
-                        tL_inputReplyToEphemeralMessage.id = ij.S(tL_inputReplyToMessage.reply_to_msg_id);
+                        tL_inputReplyToEphemeralMessage.id = gj.S(tL_inputReplyToMessage.reply_to_msg_id);
                         inputReplyTo2 = tL_inputReplyToEphemeralMessage;
                     }
                 }
                 tL_sendMessage.reply_to = inputReplyTo2;
                 tL_sendMessage.rich_message = tL_messages_sendMessage.rich_message;
                 tL_sendMessage.invert_media = tL_messages_sendMessage.invert_media;
-                c20Var.a(tL_sendMessage);
+                z10Var.a(tL_sendMessage);
                 return false;
             }
             long n10 = m5.n(tL_messages_sendMessage.peer);
@@ -191,7 +191,7 @@ public final class w extends c1 {
                 long f10 = f(tL_messages_sendMessage.message, N02.bot_info);
                 if (f10 != 0) {
                     tL_messages_sendMessage.ephemeralReceiverBotId = f10;
-                    return a(tLObject, list, c20Var);
+                    return a(tLObject, list, z10Var);
                 }
             }
         }
@@ -214,20 +214,20 @@ public final class w extends c1 {
                 tL_sendMessage2.rich_message = null;
                 tL_sendMessage2.random_id = tL_messages_sendMedia.random_id;
                 TLRPC.InputReplyTo inputReplyTo3 = tL_messages_sendMedia.reply_to;
-                boolean z10 = inputReplyTo3 instanceof TLRPC.TL_inputReplyToMessage;
+                boolean z11 = inputReplyTo3 instanceof TLRPC.TL_inputReplyToMessage;
                 TLRPC.InputReplyTo inputReplyTo4 = inputReplyTo3;
-                if (z10) {
+                if (z11) {
                     TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage2 = (TLRPC.TL_inputReplyToMessage) inputReplyTo3;
                     inputReplyTo4 = inputReplyTo3;
-                    if (ij.f3(tL_inputReplyToMessage2.reply_to_msg_id)) {
+                    if (gj.f3(tL_inputReplyToMessage2.reply_to_msg_id)) {
                         TLRPC.TL_inputReplyToEphemeralMessage tL_inputReplyToEphemeralMessage2 = new TLRPC.TL_inputReplyToEphemeralMessage();
-                        tL_inputReplyToEphemeralMessage2.id = ij.S(tL_inputReplyToMessage2.reply_to_msg_id);
+                        tL_inputReplyToEphemeralMessage2.id = gj.S(tL_inputReplyToMessage2.reply_to_msg_id);
                         inputReplyTo4 = tL_inputReplyToEphemeralMessage2;
                     }
                 }
                 tL_sendMessage2.reply_to = inputReplyTo4;
                 tL_sendMessage2.invert_media = tL_messages_sendMedia.invert_media;
-                c20Var.a(tL_sendMessage2);
+                z10Var.a(tL_sendMessage2);
                 return false;
             }
             long n11 = m5.n(tL_messages_sendMedia.peer);
@@ -235,7 +235,7 @@ public final class w extends c1 {
                 long f11 = f(tL_messages_sendMedia.message, N0.bot_info);
                 if (f11 != 0) {
                     tL_messages_sendMedia.ephemeralReceiverBotId = f11;
-                    return a(tLObject, list, c20Var);
+                    return a(tLObject, list, z10Var);
                 }
             }
         }
@@ -269,7 +269,7 @@ public final class w extends c1 {
             if (str2 != null) {
                 for (int i7 = 0; i7 < hVar.m(); i7++) {
                     TL_bots.BotInfo botInfo = (TL_bots.BotInfo) hVar.n(i7);
-                    if (t10.r(str2, getMessagesController().a2(Long.valueOf(botInfo.user_id)))) {
+                    if (q10.r(str2, getMessagesController().a2(Long.valueOf(botInfo.user_id)))) {
                         ArrayList<TLRPC.BotCommand> arrayList = botInfo.commands;
                         int size = arrayList.size();
                         int i10 = 0;
@@ -289,7 +289,7 @@ public final class w extends c1 {
                 return 0L;
             }
             long j3 = 0;
-            boolean z9 = false;
+            boolean z10 = false;
             for (int i11 = 0; i11 < hVar.m(); i11++) {
                 TL_bots.BotInfo botInfo2 = (TL_bots.BotInfo) hVar.n(i11);
                 ArrayList<TLRPC.BotCommand> arrayList2 = botInfo2.commands;
@@ -304,11 +304,11 @@ public final class w extends c1 {
                             return 0L;
                         }
                         j3 = botInfo2.user_id;
-                        z9 = botCommand4.ephemeral;
+                        z10 = botCommand4.ephemeral;
                     }
                 }
             }
-            if (z9) {
+            if (z10) {
                 return j3;
             }
         }

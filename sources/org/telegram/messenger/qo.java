@@ -1,37 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_account;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class qo extends x2 {
-    public final /* synthetic */ qp e;
+public final class qo {
+    public final int a;
+    public final long b;
+    public boolean c;
+    public boolean d;
+    public final ArrayList e;
+    public int f;
+    public int g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qo(qp qpVar) {
-        super(3600000);
-        this.e = qpVar;
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final void e(int i7, Object obj, v10 v10Var) {
-        yr.a0(i7).a.c(new x0(i7, v10Var, 7));
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final void f(int i7, Object obj, long j3, w2 w2Var) {
-        TL_account.getWebBrowserSettings getwebbrowsersettings = new TL_account.getWebBrowserSettings();
-        getwebbrowsersettings.hash = j3;
-        this.e.getConnectionsManager().sendRequestTyped(getwebbrowsersettings, new d3.b(1), new d(w2Var, 6));
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final void g(int i7, Object obj, Object obj2) {
-        yr.a0(i7).a.c(new x0(i7, (TL_account.TL_webBrowserSettings) obj2, 8));
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final /* bridge */ /* synthetic */ boolean j(Object obj) {
-        return false;
+    public qo(int i7, long j3) {
+        ArrayList arrayList = new ArrayList();
+        this.e = arrayList;
+        this.f = -1;
+        this.a = i7;
+        this.b = j3;
+        if (this.c || this.d) {
+            return;
+        }
+        boolean isEmpty = arrayList.isEmpty();
+        this.c = true;
+        TLRPC.TL_messages_getCommonChats tL_messages_getCommonChats = new TLRPC.TL_messages_getCommonChats();
+        tL_messages_getCommonChats.user_id = np.s1(i7).o1(j3);
+        tL_messages_getCommonChats.max_id = arrayList.isEmpty() ? 0L : ((TLRPC.Chat) i5.c.h(1, arrayList)).id;
+        tL_messages_getCommonChats.limit = isEmpty ? 15 : 30;
+        int sendRequest = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getCommonChats, new n3(this, r7, isEmpty, 4));
+        this.f = sendRequest;
+        int[] iArr = {sendRequest};
     }
 }

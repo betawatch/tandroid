@@ -1,28 +1,28 @@
 package h9;
 
-import a8.wa;
+import a8.xa;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class z extends wa {
-    public final void G(e2.m1 m1Var, String str) {
-        super.v(m1Var, str);
+public final class z extends xa {
+    public final void F(e2.m1 m1Var, String str) {
+        super.u(m1Var, str);
     }
 
-    @Override // a8.wa
-    public final l0 e() {
+    @Override // a8.xa
+    public final l0 d() {
         throw new UnsupportedOperationException("Not supported for bimaps");
     }
 
-    @Override // a8.wa
-    public final wa v(Object obj, Object obj2) {
-        super.v(obj, obj2);
+    @Override // a8.xa
+    public final xa u(Object obj, Object obj2) {
+        super.u(obj, obj2);
         return this;
     }
 
-    @Override // a8.wa
-    public final wa w(Iterable iterable) {
-        super.w(iterable);
+    @Override // a8.xa
+    public final xa v(Iterable iterable) {
+        super.v(iterable);
         return this;
     }
 }

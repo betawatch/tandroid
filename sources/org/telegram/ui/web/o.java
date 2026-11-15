@@ -1,43 +1,93 @@
 package org.telegram.ui.web;
 
-import di.p7;
+import fi.i7;
 import org.json.JSONObject;
-import org.telegram.messenger.c20;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.s10;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o implements c20 {
+public final /* synthetic */ class o implements s10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x0 b;
-    public final /* synthetic */ p7 c;
+    public final /* synthetic */ v0 b;
+    public final /* synthetic */ i7 c;
 
-    public /* synthetic */ o(x0 x0Var, p7 p7Var, int i7) {
+    public /* synthetic */ o(v0 v0Var, i7 i7Var, int i7) {
         this.a = i7;
-        this.b = x0Var;
-        this.c = p7Var;
+        this.b = v0Var;
+        this.c = i7Var;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
+    @Override // org.telegram.messenger.s10
+    public final void a(Object obj, Object obj2) {
+        c0 c0Var;
         switch (this.a) {
             case 0:
-                this.b.x(this.c, "location_requested", (JSONObject) obj);
-                break;
-            case 1:
-                this.b.x(this.c, "location_requested", (JSONObject) obj);
-                break;
-            default:
-                x0 x0Var = this.b;
-                x0Var.getClass();
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                p7 p7Var = this.c;
-                if (!booleanValue) {
-                    x0Var.x(p7Var, "home_screen_failed", x0.A("UNSUPPORTED", "error"));
-                    break;
-                } else {
-                    x0Var.x(p7Var, "home_screen_added", null);
+                String str = (String) obj2;
+                JSONObject A = v0.A(str, "status");
+                v0 v0Var = this.b;
+                v0Var.x(this.c, "emoji_status_access_requested", A);
+                if (((Boolean) obj).booleanValue() && "allowed".equalsIgnoreCase(str) && (c0Var = v0Var.c) != null) {
+                    c0Var.a();
                     break;
                 }
+                break;
+            case 1:
+                Boolean bool = (Boolean) obj;
+                Boolean bool2 = (Boolean) obj2;
+                v0 v0Var2 = this.b;
+                if (v0Var2.c != null && bool.booleanValue()) {
+                    v0Var2.c.w(bool2.booleanValue());
+                }
+                v0Var2.l0.j(new p(v0Var2, this.c, 1));
+                break;
+            case 2:
+                v0 v0Var3 = this.b;
+                v0Var3.getClass();
+                if (((Boolean) obj).booleanValue()) {
+                    ki.r rVar = v0Var3.k0;
+                    rVar.e = true;
+                    rVar.k();
+                }
+                v0Var3.v(this.c);
+                break;
+            case 3:
+                i7 i7Var = this.c;
+                Boolean bool3 = (Boolean) obj;
+                String str2 = (String) obj2;
+                boolean booleanValue = bool3.booleanValue();
+                v0 v0Var4 = this.b;
+                if (booleanValue) {
+                    v0Var4.k0.e = true;
+                }
+                try {
+                    JSONObject jSONObject = new JSONObject();
+                    jSONObject.put("status", bool3.booleanValue() ? "authorized" : "failed");
+                    jSONObject.put("token", str2);
+                    v0Var4.x(i7Var, "biometry_auth_requested", jSONObject);
+                    break;
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    return;
+                }
+            default:
+                String str3 = (String) obj;
+                TLRPC.Document document = (TLRPC.Document) obj2;
+                v0 v0Var5 = this.b;
+                i7 i7Var2 = this.c;
+                if (str3 != null) {
+                    v0Var5.x(i7Var2, "emoji_status_failed", v0.A(str3, "error"));
+                    break;
+                } else {
+                    v0Var5.x(i7Var2, "emoji_status_set", null);
+                    c0 c0Var2 = v0Var5.c;
+                    if (c0Var2 != null) {
+                        c0Var2.d(document);
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

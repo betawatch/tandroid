@@ -1,83 +1,82 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e51 b;
-    public final /* synthetic */ ArrayList c;
+public final class x31 extends org.telegram.ui.Components.w61 {
+    public boolean W;
+    public final /* synthetic */ z41 a0;
 
-    public /* synthetic */ x31(e51 e51Var, ArrayList arrayList, int i7) {
-        this.a = i7;
-        this.b = e51Var;
-        this.c = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x31(z41 z41Var, Activity activity) {
+        super(activity, null);
+        this.a0 = z41Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z9;
-        switch (this.a) {
-            case 0:
-                e51 e51Var = this.b;
-                di.r6 r6Var = e51Var.C0;
-                r6Var.getClass();
-                ArrayList arrayList = this.c;
-                int size = arrayList.size();
-                int i7 = 0;
-                while (true) {
-                    if (i7 < size) {
-                        Object obj = arrayList.get(i7);
-                        i7++;
-                        if (!r6Var.j.containsKey((Integer) obj)) {
-                            z9 = true;
-                        }
-                    } else {
-                        z9 = false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        boolean z10;
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            z41 z41Var = this.a0;
+            if (z41Var.k0 != null) {
+                View currentView = getCurrentView();
+                xd xdVar = z41Var.k0;
+                if (currentView == xdVar) {
+                    boolean G = xdVar.G(motionEvent.getX() - z41Var.k0.getX(), motionEvent.getY() - z41Var.k0.getY());
+                    xdVar.R0 = G;
+                    if (G && xdVar.b1.b.canScrollHorizontally(-1)) {
+                        z10 = true;
+                        this.W = z10;
                     }
                 }
-                if (!r6Var.q(0, arrayList, z9)) {
-                    e51Var.m0();
-                    e51Var.r0();
-                    break;
-                }
-                break;
-            default:
-                e51 e51Var2 = this.b;
-                ArrayList arrayList2 = e51Var2.v0;
-                ArrayList arrayList3 = e51Var2.u0;
-                int i10 = 0;
-                e51Var2.z0 = false;
-                ArrayList arrayList4 = this.c;
-                if (!arrayList4.isEmpty()) {
-                    int size2 = arrayList4.size();
-                    for (int i11 = 0; i11 < size2; i11++) {
-                        org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) arrayList4.get(i11);
-                        int i12 = e51Var2.s0.get(ijVar.e1(), -1);
-                        if (i12 >= 0 && ((b51) arrayList3.get(i12)).b() == ijVar.e1()) {
-                            ((b51) arrayList3.get(i12)).b = ijVar;
-                        }
-                    }
-                    arrayList2.clear();
-                    int size3 = arrayList3.size();
-                    while (true) {
-                        if (i10 < size3) {
-                            b51 b51Var = (b51) arrayList3.get(i10);
-                            if (b51Var.b == null) {
-                                e51Var2.r0 = b51Var.b();
-                            } else {
-                                arrayList2.add(b51Var);
-                                i10++;
-                            }
-                        }
-                    }
-                    e51Var2.r0();
-                    e51Var2.S.setItemAnimator(null);
-                    e51Var2.B0.f();
-                    break;
-                }
-                break;
+            }
+            z10 = false;
+            this.W = z10;
         }
+        try {
+            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+            if (actionMasked != 1 && actionMasked != 3) {
+                return dispatchTouchEvent;
+            }
+            this.W = false;
+            return dispatchTouchEvent;
+        } catch (Throwable th2) {
+            if (actionMasked == 1 || actionMasked == 3) {
+                this.W = false;
+            }
+            throw th2;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w61, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.W && super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.w61, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.W && z(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public final void r() {
+        z41 z41Var = this.a0;
+        z41Var.p0(z41Var.i0.getCurrentPosition(), true);
+        z41Var.q0(false, 0.0f);
+    }
+
+    @Override // org.telegram.ui.Components.w61
+    public final void t(boolean z10) {
+        z41 z41Var = this.a0;
+        float positionAnimated = z41Var.i0.getPositionAnimated();
+        z41Var.q0(!z10, positionAnimated);
+        if (z10) {
+            return;
+        }
+        z41Var.p0(Math.round(positionAnimated), true);
     }
 }

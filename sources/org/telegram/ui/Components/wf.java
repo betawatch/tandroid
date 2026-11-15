@@ -1,225 +1,384 @@
 package org.telegram.ui.Components;
 
 import android.app.Activity;
-import android.app.Dialog;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.util.SparseArray;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wf implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class wf implements mx {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public /* synthetic */ wf(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public wf(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout;
-        int i7 = this.a;
-        int i10 = 0;
-        Object obj = this.b;
-        switch (i7) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = ((zf) obj).b0;
-                if (!MediaController.B().K()) {
-                    org.telegram.messenger.qp.e1().edit().putInt("voicepausehint", 3).apply();
-                }
-                if (chatActivityEnterView.s4) {
-                    chatActivityEnterView.J3 = true;
-                }
-                MediaController.B().D0(chatActivityEnterView.O);
-                chatActivityEnterView.Z2.R0(0);
-                ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
-                if (slideTextView != null) {
-                    slideTextView.setEnabled(false);
-                    break;
-                }
-                break;
-            case 1:
-                gc gcVar = (gc) obj;
-                new ug.w0(42, gcVar.W(), gcVar.c).show();
-                break;
-            case 2:
-                t4 t4Var = (t4) obj;
-                t4Var.requestFocus();
-                org.telegram.messenger.g0.K3(t4Var);
-                break;
-            case 3:
-                org.telegram.messenger.g0.K3((EditText) obj);
-                break;
-            case 4:
-                SparseArray sparseArray = h5.r;
-                ((h5) obj).u();
-                break;
-            case 5:
-                d5 d5Var = (d5) obj;
-                ArrayList arrayList = new ArrayList(d5Var.c);
-                d5Var.c.clear();
-                org.telegram.messenger.yr.a0(d5Var.e).a.c(new a5(d5Var, arrayList, i10));
-                d5Var.d = null;
-                break;
-            case 6:
-                ((f5) obj).invalidate();
-                break;
-            case 7:
-                ((r1.g) obj).h();
-                break;
-            case 8:
-                i6 i6Var = (i6) obj;
-                CharSequence charSequence = i6Var.f;
-                if (charSequence != null) {
-                    i6Var.c(charSequence, i6Var.h, true);
-                    i6Var.f = null;
-                    i6Var.h = false;
-                    break;
-                }
-                break;
-            case 9:
-                ((z7) obj).n.r1.setVisibility(8);
-                break;
-            case 10:
-                ((e8) ((org.telegram.messenger.re) obj).d).i1();
-                break;
-            case 11:
-                v9 v9Var = (v9) obj;
-                v9Var.o = true;
-                v9Var.d.invalidate();
-                break;
-            case 12:
-                u9 u9Var = (u9) obj;
-                if (!u9Var.a) {
-                    v9 v9Var2 = u9Var.d;
-                    Bitmap[] bitmapArr = v9Var2.g;
-                    Canvas[] canvasArr = v9Var2.h;
-                    v9Var2.g = v9Var2.f;
-                    v9Var2.h = v9Var2.i;
-                    v9Var2.f = bitmapArr;
-                    v9Var2.i = canvasArr;
-                    v9Var2.k = false;
-                    fi.p5 p5Var = v9Var2.d;
-                    if (p5Var != null) {
-                        p5Var.invalidate();
-                        break;
-                    }
-                }
-                break;
-            case 13:
-                x9 x9Var = ((ca) obj).t;
-                if (x9Var != null) {
-                    x9Var.d();
-                    break;
-                }
-                break;
-            case 14:
-                x9 x9Var2 = (x9) obj;
-                x9Var2.o = (Bitmap) x9Var2.n.c;
-                x9Var2.d();
-                break;
-            case 15:
-                bc bcVar = ((ua) obj).b;
-                fb fbVar = bcVar.e;
-                fbVar.transitionRunningEnter = false;
-                fbVar.onEnterTransitionEnd();
-                if (bcVar.u) {
-                    bcVar.i(true);
-                    break;
-                }
-                break;
-            case 16:
-                rc rcVar = (rc) obj;
-                rcVar.getClass();
-                if (org.telegram.messenger.sc.e(512)) {
-                    rcVar.invalidateSelf();
-                    break;
-                }
-                break;
-            case 17:
-                tc tcVar = (tc) obj;
-                if (tcVar.n1) {
-                    tcVar.n1 = false;
-                    tcVar.invalidate();
-                    break;
-                }
-                break;
-            case 18:
-                int i11 = ChatActivityEnterView.s5;
-                org.telegram.messenger.g0.Q3((Activity) obj);
-                break;
-            case 19:
-                ((Dialog) obj).dismiss();
-                break;
-            case 20:
-                ChatActivityEnterView chatActivityEnterView2 = ((ye) obj).f;
-                int i12 = ChatActivityEnterView.s5;
-                chatActivityEnterView2.q1();
-                break;
-            case 21:
-                ((ig) obj).s = null;
-                break;
-            case 22:
-                ((ph) obj).k0.x3.f();
-                break;
-            case 23:
-                uj ujVar = (uj) ((androidx.mediarouter.app.f) obj).b;
-                try {
-                    File file = ujVar.O;
-                    if (file == null) {
-                        ujVar.S();
-                    } else {
-                        ujVar.R(file);
-                    }
-                    ujVar.a0();
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
-                }
-            case 24:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((ll) obj).b;
-                boolean z9 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout2.s0(-1, true);
-                break;
-            case 25:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((jl) obj).c;
-                pl plVar = chatAttachAlertPhotoLayout3.P;
-                if (plVar != null && !chatAttachAlertPhotoLayout3.b.I) {
-                    plVar.setSystemUiVisibility(1028);
-                    break;
-                }
-                break;
-            case 26:
-                am amVar = (am) obj;
-                ci ciVar = amVar.b;
-                if (amVar.Q && (chatAttachAlertPhotoLayout = ciVar.d2) != null) {
-                    org.telegram.ui.ActionBar.z0 z0Var = chatAttachAlertPhotoLayout.c1;
-                    z0Var.setIcon(R.drawable.ic_ab_back);
-                    z0Var.setText(org.telegram.messenger.id.M0(2131753756, null));
-                    z0Var.setRightIcon(0);
-                    break;
-                }
-                break;
-            case 27:
-                an anVar = (an) obj;
-                anVar.l1 = -1;
-                anVar.k1 = null;
-                break;
-            case 28:
-                ((wn) obj).p();
-                break;
-            default:
-                ((yn) obj).setVisibility(8);
-                break;
+    @Override // org.telegram.ui.Components.mx
+    public final boolean A() {
+        return this.a.h4;
+    }
+
+    public final void B(View view, Object obj, String str, Object obj2, boolean z10, int i7, int i10, org.telegram.messenger.ff ffVar, boolean z11) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        kg kgVar = chatActivityEnterView.G0;
+        org.telegram.ui.an anVar = chatActivityEnterView.x3;
+        org.telegram.ui.qm qmVar = chatActivityEnterView.D3;
+        if (qmVar != null && anVar != null && qmVar.f) {
+            anVar.yc();
+            return;
         }
+        if (c() && i7 == 0) {
+            t4.J(chatActivityEnterView.w3, anVar.a(), new org.telegram.ui.rp(this, view, obj, str, obj2, ffVar, z11), chatActivityEnterView.E4);
+            return;
+        }
+        if (chatActivityEnterView.H0 <= 0 || c()) {
+            t4.X(chatActivityEnterView.R, 1, chatActivityEnterView.y3, new qd(this, obj, ffVar, z10, i7, i10, z11, str, obj2));
+            return;
+        }
+        cg cgVar = chatActivityEnterView.H3;
+        if (cgVar != null) {
+            cgVar.s1(view != null ? view : kgVar, ((org.telegram.ui.ActionBar.j5) kgVar.c).getText(), true);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final long a() {
+        return this.a.y3;
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final boolean b() {
+        org.telegram.ui.an anVar = this.a.x3;
+        return anVar != null && anVar.S6();
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final boolean c() {
+        org.telegram.ui.an anVar = this.a.x3;
+        return anVar != null && anVar.c();
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        vf vfVar = chatActivityEnterView.I3;
+        if (vfVar != null && !vfVar.J) {
+            vfVar.o1.b(stickerSet, inputStickerSet);
+            return;
+        }
+        org.telegram.ui.ActionBar.e2 e2Var = chatActivityEnterView.x3;
+        if (e2Var == null) {
+            e2Var = LaunchActivity.Q();
+        }
+        org.telegram.ui.ActionBar.e2 e2Var2 = e2Var;
+        if (e2Var2 == null || chatActivityEnterView.w3 == null) {
+            return;
+        }
+        if (stickerSet != null) {
+            inputStickerSet = new TLRPC.TL_inputStickerSetID();
+            inputStickerSet.access_hash = stickerSet.access_hash;
+            inputStickerSet.id = stickerSet.id;
+        }
+        bw0 bw0Var = new bw0(chatActivityEnterView.w3, e2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.E4);
+        e2Var2.showDialog(bw0Var);
+        if (z10) {
+            bw0Var.N0();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void e(Object obj, Object obj2) {
+        File file;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        org.telegram.ui.an anVar = chatActivityEnterView.x3;
+        if (anVar == null) {
+            return;
+        }
+        PhotoViewer.p1().I2(null, anVar, anVar.Aa);
+        if (obj instanceof TLRPC.Document) {
+            org.telegram.messenger.w7.G(chatActivityEnterView.R);
+            file = org.telegram.messenger.w7.I((TLRPC.Document) obj);
+        } else {
+            file = null;
+        }
+        if (file == null) {
+            return;
+        }
+        File file2 = new File(org.telegram.messenger.w7.z(4), file.getName());
+        if (!file.exists()) {
+            if (!file2.exists()) {
+                return;
+            } else {
+                file = file2;
+            }
+        }
+        ArrayList arrayList = new ArrayList();
+        org.telegram.messenger.ff ffVar = new org.telegram.messenger.ff(0, file.getAbsolutePath(), 0, false, 0, 0);
+        ffVar.a = null;
+        ffVar.b = true;
+        arrayList.add(ffVar);
+        PhotoViewer.p1().f2(arrayList, 0, 12, false, new uf(this, obj, obj2, ffVar), chatActivityEnterView.x3);
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final int f() {
+        int threadMessageId;
+        threadMessageId = this.a.getThreadMessageId();
+        return threadMessageId;
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final boolean g() {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        return chatActivityEnterView.y3 == org.telegram.messenger.m10.i(chatActivityEnterView.R).e();
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        org.telegram.messenger.si.b0(chatActivityEnterView.R).f2(chatActivityEnterView.w3, stickerSetCovered, 0, chatActivityEnterView.x3, false, false);
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void i(int i7) {
+        int i10 = ChatActivityEnterView.N6;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.D1(i7, true);
+        if (i7 != 0) {
+            chatActivityEnterView.E1(true, true, false, i7 == 1);
+        }
+        if (chatActivityEnterView.g4 && chatActivityEnterView.z2 == 2) {
+            chatActivityEnterView.O();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final boolean j() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final boolean k() {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        TextView textView = chatActivityEnterView.s6;
+        if (textView == null) {
+            textView = chatActivityEnterView.F0;
+        }
+        if (textView == null || textView.length() == 0) {
+            return false;
+        }
+        textView.dispatchKeyEvent(new KeyEvent(0, 67));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void l(String str) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        EditText editText = chatActivityEnterView.s6;
+        if (editText == null) {
+            editText = chatActivityEnterView.F0;
+        }
+        if (editText == null) {
+            return;
+        }
+        int selectionEnd = editText.getSelectionEnd();
+        if (selectionEnd < 0) {
+            selectionEnd = 0;
+        }
+        try {
+            chatActivityEnterView.A3 = 2;
+            CharSequence m10 = org.telegram.messenger.j6.m(str, editText.getPaint().getFontMetricsInt(), false, null, 0);
+            editText.setText(editText.getText().insert(selectionEnd, m10));
+            int length = selectionEnd + m10.length();
+            editText.setSelection(length, length);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        } finally {
+            chatActivityEnterView.A3 = 0;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.cj cjVar, boolean z10, int i7) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        kg kgVar = chatActivityEnterView.G0;
+        if (chatActivityEnterView.K6) {
+            return;
+        }
+        vf vfVar = chatActivityEnterView.I3;
+        if (vfVar != null) {
+            vfVar.dismiss();
+            chatActivityEnterView.I3 = null;
+        }
+        if (chatActivityEnterView.H0 > 0 && !c()) {
+            cg cgVar = chatActivityEnterView.H3;
+            if (cgVar != null) {
+                if (view == null) {
+                    view = kgVar;
+                }
+                cgVar.s1(view, ((org.telegram.ui.ActionBar.j5) kgVar.c).getText(), true);
+                return;
+            }
+            return;
+        }
+        if (chatActivityEnterView.h4) {
+            if (chatActivityEnterView.z2 != 0) {
+                chatActivityEnterView.D1(0, true);
+                sf sfVar = chatActivityEnterView.V0;
+                long j3 = -1;
+                if (document != null) {
+                    int i10 = 0;
+                    while (true) {
+                        if (i10 >= document.attributes.size()) {
+                            break;
+                        }
+                        TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i10);
+                        if (documentAttribute instanceof TLRPC.TL_documentAttributeSticker) {
+                            TLRPC.InputStickerSet inputStickerSet = documentAttribute.stickerset;
+                            if (!(inputStickerSet instanceof TLRPC.TL_inputStickerSetEmpty)) {
+                                j3 = inputStickerSet.id;
+                            }
+                        } else {
+                            i10++;
+                        }
+                    }
+                }
+                sfVar.s(j3, true);
+                chatActivityEnterView.V0.A();
+            }
+            chatActivityEnterView.E1(false, true, false, true);
+        }
+        chatActivityEnterView.d(document, str, obj, cjVar, false, z10, i7, 0);
+        if (org.telegram.messenger.m5.C(chatActivityEnterView.y3) && org.telegram.messenger.gj.s3(document, false)) {
+            org.telegram.messenger.np.s1(chatActivityEnterView.S.a).t4(obj, document);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void n() {
+        Activity activity;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        org.telegram.ui.an anVar = chatActivityEnterView.x3;
+        if (anVar == null || (activity = chatActivityEnterView.w3) == null) {
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, chatActivityEnterView.E4);
+        String M0 = org.telegram.messenger.hd.M0(2131752068, null);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.S = M0;
+        t1Var.U = org.telegram.messenger.hd.M0(2131752069, null);
+        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131752099, null), new s(this, 17));
+        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+        anVar.showDialog(t1Var);
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void o(x31 x31Var) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        org.telegram.ui.ActionBar.e2 e2Var = chatActivityEnterView.x3;
+        if (e2Var == null) {
+            e2Var = LaunchActivity.Q();
+        }
+        org.telegram.ui.ActionBar.e2 e2Var2 = e2Var;
+        if (e2Var2 != null) {
+            chatActivityEnterView.I3 = new vf(this, chatActivityEnterView.getContext(), e2Var2, x31Var, chatActivityEnterView.E4);
+            cg cgVar = chatActivityEnterView.H3;
+            if (cgVar != null) {
+                cgVar.C(true);
+            }
+            e2Var2.showDialog(chatActivityEnterView.I3);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final float p() {
+        return this.a.x0;
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void q() {
+        org.telegram.ui.ActionBar.e2 e2Var = this.a.x3;
+        if (e2Var == null) {
+            e2Var = LaunchActivity.Q();
+        }
+        e2Var.showDialog(new ug.x0(e2Var, 11, false));
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void r(TLRPC.StickerSetCovered stickerSetCovered) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        org.telegram.messenger.si.b0(chatActivityEnterView.R).f2(chatActivityEnterView.w3, stickerSetCovered, 2, chatActivityEnterView.x3, false, false);
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void s(int i7) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.H3.Y();
+        chatActivityEnterView.H3.n2(i7 == 3);
+        chatActivityEnterView.post(chatActivityEnterView.a4);
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void t(ArrayList arrayList) {
+        org.telegram.ui.an anVar = this.a.x3;
+        if (anVar != null) {
+            anVar.presentFragment(new StickersActivity(5, arrayList));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void u() {
+        this.a.invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void v(View view, Object obj, String str, Object obj2, boolean z10, int i7, int i10) {
+        B(view, obj, str, obj2, z10, i7, i10, null, false);
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void w() {
+        org.telegram.ui.an anVar = this.a.x3;
+        if (anVar != null) {
+            anVar.presentFragment(new StickersActivity(0, null));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void x(long j3, TLRPC.Document document, String str, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        EditTextBoldCursor editTextBoldCursor = chatActivityEnterView.s6;
+        if (editTextBoldCursor == null) {
+            editTextBoldCursor = chatActivityEnterView.F0;
+        }
+        org.telegram.messenger.g0.h3(new di.l(this, editTextBoldCursor, str, document, j3, z10));
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final void y(long j3) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        org.telegram.ui.an anVar = chatActivityEnterView.x3;
+        if (anVar != null) {
+            if (org.telegram.messenger.g0.Q1()) {
+                chatActivityEnterView.y0(false);
+            }
+            org.telegram.ui.l50 l50Var = new org.telegram.ui.l50(j3);
+            l50Var.j0(chatActivityEnterView.L2);
+            anVar.presentFragment(l50Var);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mx
+    public final boolean z() {
+        return this.a.z2 != 0;
     }
 }

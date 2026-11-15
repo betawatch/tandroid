@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class h {
     public final MediaController a;
@@ -62,7 +62,7 @@ public class h {
                     g gVar = (g) this.d.remove(qVar);
                     if (gVar != null) {
                         qVar.c = null;
-                        this.e.a().U(gVar);
+                        this.e.a().V(gVar);
                     }
                 } catch (RemoteException e10) {
                     Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e10);

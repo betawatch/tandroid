@@ -1,175 +1,133 @@
 package jg;
 
-import j$.util.Objects;
-import java.util.HashMap;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.vo;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.gz;
+import org.telegram.messenger.k5;
+import org.telegram.messenger.np;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.t9;
+import org.telegram.ui.uw;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l extends rg.a {
-    public final TLRPC.Dialog c;
-    public final TLRPC.RecentMeUrl d;
-    public final TLRPC.TL_contact e;
-    public final boolean f;
-    public final boolean g;
-    public final boolean h;
-    public final TL_chatlists.TL_chatlists_chatlistUpdates i;
-    public final int j;
-    public final int k;
-    public final String l;
-    public final TLRPC.Chat m;
-    public final TLRPC.User n;
-
-    public l(n nVar, TL_chatlists.TL_chatlists_chatlistUpdates tL_chatlists_chatlistUpdates) {
-        super(17, true);
-        this.i = tL_chatlists_chatlistUpdates;
-        int i7 = nVar.W;
-        nVar.W = i7 + 1;
-        this.k = i7;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.c, this.m, this.d, this.e, this.l);
-    }
-
-    public l(n nVar, String str) {
-        super(22, false);
-        HashMap hashMap = nVar.Y;
-        Integer num = (Integer) hashMap.get(str);
-        if (num != null) {
-            this.k = num.intValue();
-        } else {
-            int i7 = nVar.W;
-            nVar.W = i7 + 1;
-            this.k = i7;
-            hashMap.put(str, Integer.valueOf(i7));
-        }
-        this.l = str;
-    }
-
-    public l(n nVar, TLRPC.User user) {
-        super(23, false);
-        this.n = user;
-        long j3 = user.id;
-        LongSparseIntArray longSparseIntArray = nVar.X;
-        int i7 = longSparseIntArray.get(j3, -1);
-        if (i7 >= 0) {
-            this.k = i7;
-            return;
-        }
-        int i10 = nVar.W;
-        nVar.W = i10 + 1;
-        this.k = i10;
-        longSparseIntArray.put(user.id, i10);
-    }
-
-    public l(n nVar, TLRPC.Chat chat) {
-        super(23, false);
-        this.m = chat;
-        long j3 = chat.id;
-        LongSparseIntArray longSparseIntArray = nVar.X;
-        int i7 = longSparseIntArray.get(-j3, -1);
-        if (i7 >= 0) {
-            this.k = i7;
-            return;
-        }
-        int i10 = nVar.W;
-        nVar.W = i10 + 1;
-        this.k = i10;
-        longSparseIntArray.put(-chat.id, i10);
-    }
+public final class l extends FrameLayout {
+    public boolean a;
+    public final /* synthetic */ m b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(n nVar, int i7, TLRPC.Dialog dialog) {
-        super(i7, true);
-        LongSparseIntArray longSparseIntArray = nVar.X;
-        this.c = dialog;
-        if (dialog != null) {
-            int i10 = longSparseIntArray.get(dialog.id, -1);
-            if (i10 >= 0) {
-                this.k = i10;
-            } else {
-                int i11 = nVar.W;
-                nVar.W = i11 + 1;
-                this.k = i11;
-                longSparseIntArray.put(dialog.id, i11);
+    public l(m mVar, Context context) {
+        super(context);
+        this.b = mVar;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x0134, code lost:
+    
+        if (r8 != false) goto L75;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x0136, code lost:
+    
+        r14 = r14 - r9;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x015f, code lost:
+    
+        if (r8 != false) goto L75;
+     */
+    @Override // android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i7, int i10) {
+        int i11;
+        int i12;
+        m mVar = this.b;
+        int size = mVar.N.size();
+        int i13 = mVar.r;
+        boolean z10 = i13 == 0 && mVar.h == 0 && np.s1(mVar.G).R.f(2305843009213693952L | ((long) 1)) != null;
+        View view = (View) getParent();
+        int i14 = view instanceof t9 ? ((t9) view).f3 : 0;
+        boolean z11 = mVar.K;
+        int paddingTop = view.getPaddingTop();
+        int paddingBottom = view.getPaddingBottom();
+        int i15 = paddingTop - i14;
+        if (i13 == 1 && size == 1 && ((k) mVar.N.get(0)).a == 19) {
+            i11 = View.MeasureSpec.getSize(i10);
+            if (i11 == 0) {
+                i11 = view.getMeasuredHeight();
             }
-        } else if (i7 == 19) {
-            this.k = 5;
+            if (i11 == 0) {
+                i11 = (org.telegram.messenger.g0.q.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m;
+            }
+            if (mVar.S.L) {
+                i11 += org.telegram.messenger.g0.L(81.0f);
+            }
         } else {
-            int i12 = nVar.W;
-            nVar.W = i12 + 1;
-            this.k = i12;
-        }
-        if (dialog != null) {
-            int i13 = nVar.h;
-            int i14 = nVar.F;
-            if (i13 != 7 && i13 != 8) {
-                this.g = dialog.pinned;
-            } else {
-                vo voVar = qp.s1(i14).M[nVar.h == 8 ? (char) 1 : (char) 0];
-                this.g = voVar != null && voVar.j.indexOfKey(dialog.id) >= 0;
+            if (size != 0 && (i15 != 0 || z10)) {
+                int size2 = View.MeasureSpec.getSize(i10);
+                if (size2 == 0) {
+                    size2 = view.getMeasuredHeight();
+                }
+                if (size2 == 0) {
+                    size2 = (org.telegram.messenger.g0.q.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m;
+                }
+                int i16 = size2 - i14;
+                int L = org.telegram.messenger.g0.L(gz.p1 ? 76.0f : 70.0f);
+                int i17 = 0;
+                for (int i18 = 0; i18 < size; i18++) {
+                    if (((k) mVar.N.get(i18)).a == 0) {
+                        if (((k) mVar.N.get(i18)).f && !z11) {
+                            i17 += org.telegram.messenger.g0.L(gz.p1 ? 86.0f : 91.0f);
+                        }
+                        i17 += L;
+                    } else {
+                        if (((k) mVar.N.get(i18)).a != 1) {
+                        }
+                        i17 += L;
+                    }
+                }
+                int i19 = (size - 1) + i17;
+                ArrayList arrayList = mVar.d;
+                if (arrayList != null) {
+                    i19 = k5.C(52.0f, (mVar.d.size() - 1) + (org.telegram.messenger.g0.L(58.0f) * arrayList.size()), i19);
+                }
+                int i20 = z10 ? L + 1 : 0;
+                if (i19 < i16) {
+                    i11 = ((i16 - i19) + i20) - paddingBottom;
+                    if (i15 != 0) {
+                        i11 -= org.telegram.messenger.g0.m;
+                        if (!z11 && !mVar.T) {
+                            i11 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                            if (getParent() instanceof uw) {
+                                i12 = ((uw) getParent()).A3;
+                                i11 -= i12;
+                            }
+                        }
+                    }
+                } else {
+                    int i21 = i19 - i16;
+                    if (i21 < i20) {
+                        i11 = (i20 - i21) - paddingBottom;
+                        if (i15 != 0) {
+                            i11 -= org.telegram.messenger.g0.m;
+                            if (!z11 && !mVar.T) {
+                                i11 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                                if (getParent() instanceof uw) {
+                                    i12 = ((uw) getParent()).A3;
+                                    i11 -= i12;
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            this.h = dialog.isFolder;
-            this.f = qp.s1(i14).t2(dialog.id);
+            i11 = 0;
         }
-    }
-
-    public l(n nVar, TLRPC.RecentMeUrl recentMeUrl) {
-        super(4, true);
-        this.d = recentMeUrl;
-        int i7 = nVar.W;
-        nVar.W = i7 + 1;
-        this.k = i7;
-    }
-
-    public l(n nVar, int i7) {
-        super(i7, true);
-        this.j = i7;
-        if (i7 == 10) {
-            this.k = 1;
-        } else {
-            if (i7 == 19) {
-                this.k = 5;
-                return;
-            }
-            int i10 = nVar.W;
-            nVar.W = i10 + 1;
-            this.k = i10;
+        int i22 = i11 >= 0 ? i11 : 0;
+        if (mVar.T) {
+            i22 += org.telegram.messenger.g0.L(1000.0f);
         }
-    }
-
-    public l(n nVar, int i7, int i10) {
-        super(5, true);
-        this.j = i7;
-        int i11 = nVar.W;
-        nVar.W = i11 + 1;
-        this.k = i11;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(n nVar, TLRPC.TL_contact tL_contact) {
-        super(6, true);
-        LongSparseIntArray longSparseIntArray = nVar.X;
-        this.e = tL_contact;
-        if (tL_contact != null) {
-            int i7 = longSparseIntArray.get(tL_contact.user_id, -1);
-            if (i7 > 0) {
-                this.k = i7;
-                return;
-            }
-            int i10 = nVar.W;
-            nVar.W = i10 + 1;
-            this.k = i10;
-            longSparseIntArray.put(tL_contact.user_id, i10);
-            return;
-        }
-        int i11 = nVar.W;
-        nVar.W = i11 + 1;
-        this.k = i11;
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(i22, TLObject.FLAG_30));
     }
 }

@@ -1,39 +1,230 @@
 package l2;
 
-import a8.ia;
-import android.os.Looper;
+import a8.ja;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n1 {
-    public final m1 a;
-    public final l1 b;
-    public int c;
-    public Object d;
-    public final Looper e;
-    public boolean f;
+    public final b a;
+    public final int b;
+    public final b c;
+    public int d = 0;
+    public boolean e = false;
+    public boolean f = false;
 
-    public n1(l1 l1Var, m1 m1Var, e2.l1 l1Var2, int i7, Looper looper) {
-        this.b = l1Var;
-        this.a = m1Var;
-        this.e = looper;
+    public n1(b bVar, b bVar2, int i7) {
+        this.a = bVar;
+        this.b = i7;
+        this.c = bVar2;
     }
 
-    public final synchronized void a(boolean z9) {
-        synchronized (this) {
-            notifyAll();
+    public static void b(b bVar) {
+        int i7 = bVar.n;
+        if (i7 == 2) {
+            ja.p(i7 == 2);
+            bVar.n = 1;
+            bVar.t();
         }
     }
 
-    public final void b() {
-        ia.p(!this.f);
-        this.f = true;
-        r0 r0Var = (r0) this.b;
-        if (!r0Var.Z && r0Var.s.getThread().isAlive()) {
-            r0Var.n.b(14, this).b();
-        } else {
-            h2.a.l("ExoPlayerImplInternal", "Ignoring messages sent after release.");
-            a(false);
+    public static boolean h(b bVar) {
+        return bVar.n != 0;
+    }
+
+    public static void l(b bVar, long j3) {
+        bVar.E = true;
+        if (bVar instanceof z2.e) {
+            z2.e eVar = (z2.e) bVar;
+            ja.p(eVar.E);
+            eVar.b0 = j3;
         }
+    }
+
+    public final void a(b bVar, i iVar) {
+        ja.p(this.a == bVar || this.c == bVar);
+        if (h(bVar)) {
+            if (bVar == ((b) iVar.e)) {
+                iVar.f = null;
+                iVar.e = null;
+                iVar.a = true;
+            }
+            b(bVar);
+            ja.p(bVar.n == 1);
+            bVar.c.x0();
+            bVar.n = 0;
+            bVar.r = null;
+            bVar.s = null;
+            bVar.E = false;
+            bVar.n();
+            bVar.H = null;
+        }
+    }
+
+    public final int c() {
+        boolean h = h(this.a);
+        b bVar = this.c;
+        return (h ? 1 : 0) + ((bVar == null || !h(bVar)) ? 0 : 1);
+    }
+
+    public final b d(u0 u0Var) {
+        x2.b1 b1Var;
+        if (u0Var != null && (b1Var = u0Var.c[this.b]) != null) {
+            b bVar = this.a;
+            if (bVar.r == b1Var) {
+                return bVar;
+            }
+            b bVar2 = this.c;
+            if (bVar2 != null && bVar2.r == b1Var) {
+                return bVar2;
+            }
+        }
+        return null;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0036, code lost:
+    
+        if (r9.y >= r1.e()) goto L31;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean e(u0 u0Var, b bVar) {
+        if (bVar != null) {
+            x2.b1[] b1VarArr = u0Var.c;
+            int i7 = this.b;
+            x2.b1 b1Var = b1VarArr[i7];
+            x2.b1 b1Var2 = bVar.r;
+            if (b1Var2 != null) {
+                if (b1Var2 == b1Var) {
+                    if (b1Var != null && !bVar.k()) {
+                        u0 u0Var2 = u0Var.m;
+                        if (u0Var.g.h) {
+                            if (u0Var2 != null) {
+                                if (u0Var2.e) {
+                                    if (!(bVar instanceof z2.e)) {
+                                        if (!(bVar instanceof v2.b)) {
+                                        }
+                                    }
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+                u0 u0Var3 = u0Var.m;
+                if (u0Var3 == null || u0Var3.c[i7] != bVar.r) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public final boolean f() {
+        int i7 = this.d;
+        return i7 == 2 || i7 == 4 || i7 == 3;
+    }
+
+    public final boolean g() {
+        int i7 = this.d;
+        if (i7 == 0 || i7 == 2 || i7 == 4) {
+            return h(this.a);
+        }
+        b bVar = this.c;
+        bVar.getClass();
+        return bVar.n != 0;
+    }
+
+    public final void i(boolean z10) {
+        if (z10) {
+            if (this.e) {
+                b bVar = this.a;
+                ja.p(bVar.n == 0);
+                bVar.c.x0();
+                bVar.r();
+                this.e = false;
+                return;
+            }
+            return;
+        }
+        if (this.f) {
+            b bVar2 = this.c;
+            bVar2.getClass();
+            ja.p(bVar2.n == 0);
+            bVar2.c.x0();
+            bVar2.r();
+            this.f = false;
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final int j(b bVar, u0 u0Var, a3.y yVar, i iVar) {
+        b bVar2;
+        int i7;
+        if (bVar == null || bVar.n == 0 || (bVar == (bVar2 = this.a) && ((i7 = this.d) == 2 || i7 == 4))) {
+            return 1;
+        }
+        if (bVar == this.c && this.d == 3) {
+            return 1;
+        }
+        x2.b1 b1Var = bVar.r;
+        x2.b1[] b1VarArr = u0Var.c;
+        int i10 = this.b;
+        Object[] objArr = b1Var != b1VarArr[i10];
+        boolean b10 = yVar.b(i10);
+        if (!b10 || objArr != false) {
+            if (!bVar.E) {
+                a3.u uVar = yVar.c[i10];
+                int length = uVar != null ? uVar.length() : 0;
+                e2.u[] uVarArr = new e2.u[length];
+                for (int i11 = 0; i11 < length; i11++) {
+                    uVar.getClass();
+                    uVarArr[i11] = uVar.g(i11);
+                }
+                x2.b1 b1Var2 = u0Var.c[i10];
+                b1Var2.getClass();
+                bVar.y(uVarArr, b1Var2, u0Var.e(), u0Var.p, u0Var.g.a);
+                return 3;
+            }
+            if (!bVar.l()) {
+                return 0;
+            }
+            a(bVar, iVar);
+            if (!b10 || f()) {
+                i(bVar == bVar2);
+                return 1;
+            }
+        }
+        return 1;
+    }
+
+    public final void k() {
+        if (!h(this.a)) {
+            i(true);
+        }
+        b bVar = this.c;
+        if (bVar == null || bVar.n != 0) {
+            return;
+        }
+        i(false);
+    }
+
+    public final void m() {
+        int i7;
+        b bVar = this.a;
+        int i10 = bVar.n;
+        if (i10 == 1 && this.d != 4) {
+            ja.p(i10 == 1);
+            bVar.n = 2;
+            bVar.s();
+            return;
+        }
+        b bVar2 = this.c;
+        if (bVar2 == null || (i7 = bVar2.n) != 1 || this.d == 3) {
+            return;
+        }
+        ja.p(i7 == 1);
+        bVar2.n = 2;
+        bVar2.s();
     }
 }

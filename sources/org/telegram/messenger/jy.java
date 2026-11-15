@@ -1,32 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jy implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gz b;
-    public final /* synthetic */ TL_update.TL_updateNewChannelMessage c;
+    public final /* synthetic */ ez b;
+    public final /* synthetic */ TLRPC.Updates c;
+    public final /* synthetic */ TLRPC.Message d;
+    public final /* synthetic */ boolean e;
 
-    public /* synthetic */ jy(gz gzVar, TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage, int i7) {
+    public /* synthetic */ jy(ez ezVar, TLRPC.Updates updates, TLRPC.Message message, boolean z10, int i7) {
         this.a = i7;
-        this.b = gzVar;
-        this.c = tL_updateNewChannelMessage;
+        this.b = ezVar;
+        this.c = updates;
+        this.d = message;
+        this.e = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                qp messagesController = this.b.getMessagesController();
-                TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage = this.c;
-                messagesController.L3(tL_updateNewChannelMessage.pts, tL_updateNewChannelMessage.pts_count, tL_updateNewChannelMessage.message.peer_id.channel_id);
+                ez ezVar = this.b;
+                ezVar.getMessagesController().O3(this.c, false);
+                g0.h3(new qw(ezVar, this.d, this.e, 0));
                 break;
             default:
-                qp messagesController2 = this.b.getMessagesController();
-                TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage2 = this.c;
-                messagesController2.L3(tL_updateNewChannelMessage2.pts, tL_updateNewChannelMessage2.pts_count, tL_updateNewChannelMessage2.message.peer_id.channel_id);
+                ez ezVar2 = this.b;
+                ezVar2.getMessagesController().O3(this.c, false);
+                g0.h3(new qw(ezVar2, this.d, this.e, 1));
                 break;
         }
     }

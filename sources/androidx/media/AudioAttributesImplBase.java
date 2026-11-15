@@ -1,10 +1,10 @@
 package androidx.media;
 
+import i5.c;
 import java.util.Arrays;
-import jg.g;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class AudioAttributesImplBase implements AudioAttributesImpl {
     public int a = 0;
@@ -72,7 +72,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
             } else if (i7 == 7) {
                 i11 |= 1;
             }
-            if (i10 == (i11 & qs.w4) && this.a == audioAttributesImplBase.a && this.d == i12) {
+            if (i10 == (i11 & ns.w4) && this.a == audioAttributesImplBase.a && this.d == i12) {
                 return true;
             }
         }
@@ -142,7 +142,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
                 break;
             case 15:
             default:
-                str = g.j(i7, "unknown usage ");
+                str = c.i(i7, "unknown usage ");
                 break;
             case 16:
                 str = "USAGE_ASSISTANT";

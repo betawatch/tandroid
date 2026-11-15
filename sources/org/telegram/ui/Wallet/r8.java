@@ -10,13 +10,13 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import java.util.Arrays;
 import java.util.Random;
-import org.telegram.messenger.id;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class r8 extends View {
-    public ValueAnimator D;
-    public final /* synthetic */ s8 E;
+    public ValueAnimator E;
+    public final /* synthetic */ s8 F;
     public final Paint a;
     public final char[] b;
     public final Random c;
@@ -34,7 +34,7 @@ public final class r8 extends View {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public r8(s8 s8Var, Context context) {
         super(context);
-        this.E = s8Var;
+        this.F = s8Var;
         Paint paint = new Paint(1);
         this.a = paint;
         this.b = new char[1];
@@ -52,7 +52,7 @@ public final class r8 extends View {
         this.h = f11;
         this.r = (fontMetrics.bottom - f10) + f11;
         setImportantForAccessibility(1);
-        setContentDescription(id.M0(2131748779, null));
+        setContentDescription(hd.M0(2131748779, null));
     }
 
     public final float a() {
@@ -66,15 +66,15 @@ public final class r8 extends View {
         return (((max / 4) + max) * 18) + 560;
     }
 
-    public final void c(String str, boolean z9) {
+    public final void c(String str, boolean z10) {
         if (TextUtils.isEmpty(str)) {
             str = null;
         }
-        if (z9 || !TextUtils.equals(this.w, str)) {
-            ValueAnimator valueAnimator = this.D;
+        if (z10 || !TextUtils.equals(this.w, str)) {
+            ValueAnimator valueAnimator = this.E;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
-                this.D = null;
+                this.E = null;
             }
             this.w = str;
             this.x = 0.0f;
@@ -82,7 +82,7 @@ public final class r8 extends View {
             String str2 = this.w;
             this.y = str2 != null;
             if (str2 == null) {
-                str2 = id.M0(2131748779, null);
+                str2 = hd.M0(2131748779, null);
             }
             setContentDescription(str2);
             requestLayout();
@@ -101,11 +101,11 @@ public final class r8 extends View {
                 return;
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, b10);
-            this.D = ofFloat;
+            this.E = ofFloat;
             ofFloat.setDuration(b10);
-            this.D.setInterpolator(new LinearInterpolator());
-            this.D.addUpdateListener(new r3(this, 6));
-            this.D.start();
+            this.E.setInterpolator(new LinearInterpolator());
+            this.E.addUpdateListener(new q3(this, 6));
+            this.E.start();
         }
     }
 
@@ -117,10 +117,10 @@ public final class r8 extends View {
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
-        ValueAnimator valueAnimator = this.D;
+        ValueAnimator valueAnimator = this.E;
         if (valueAnimator != null) {
             valueAnimator.cancel();
-            this.D = null;
+            this.E = null;
         }
         if (this.w != null && !this.y) {
             this.x = b();
@@ -148,10 +148,10 @@ public final class r8 extends View {
         int i11;
         int i12;
         super.onDraw(canvas);
-        int i13 = org.telegram.ui.ActionBar.m6.D6;
-        org.telegram.ui.ActionBar.h6 h6Var = this.E.a;
-        int w02 = org.telegram.ui.ActionBar.m6.w0(i13, h6Var);
-        int w03 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, h6Var);
+        int i13 = org.telegram.ui.ActionBar.j6.D6;
+        org.telegram.ui.ActionBar.e6 e6Var = this.F.a;
+        int w02 = org.telegram.ui.ActionBar.j6.w0(i13, e6Var);
+        int w03 = org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.G6, e6Var);
         String str = this.w;
         int min = str != null ? Math.min(48, str.length()) : 48;
         int i14 = 0;
@@ -208,7 +208,7 @@ public final class r8 extends View {
                             f17 = f23;
                             i11 = i19;
                         } else {
-                            if (Math.max(f23, Math.min(f12, f24 / 560.0f)) >= f12) {
+                            if (a8.p0.C(f24, 560.0f, f12, f23) >= f12) {
                                 f15 = f24;
                                 i10 = i15;
                                 cos = 0.0f;
@@ -218,8 +218,8 @@ public final class r8 extends View {
                                 cos = (float) (Math.cos(r5 * 12.0f) * Math.exp((-8.0f) * r5));
                             }
                             int i22 = (int) (f15 / 50.0f);
-                            boolean z9 = f15 < 260.0f;
-                            if (z9) {
+                            boolean z10 = f15 < 260.0f;
+                            if (z10) {
                                 f16 = f15;
                                 charAt = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_".charAt(((i22 * 13) + (i21 * 17)) % 64);
                             } else {
@@ -228,7 +228,7 @@ public final class r8 extends View {
                             }
                             this.b[0] = charAt;
                             float[] fArr2 = this.e;
-                            if (z9) {
+                            if (z10) {
                                 int[] iArr = this.d;
                                 fArr = fArr2;
                                 if (iArr[i21] != i22) {
@@ -238,7 +238,7 @@ public final class r8 extends View {
                             } else {
                                 fArr = fArr2;
                             }
-                            paint.setColor(z9 ? i0.a.f(fArr[i21], w02, w03) : (i18 + i16) % 2 == 0 ? w02 : w03);
+                            paint.setColor(z10 ? i0.a.f(fArr[i21], w02, w03) : (i18 + i16) % 2 == 0 ? w02 : w03);
                             paint.setAlpha(Math.round(Math.max(0.0f, Math.min(1.0f, f16 / 100.0f)) * paint.getAlpha()));
                             int save = canvas2.save();
                             float L = org.telegram.messenger.g0.L(1.0f) + f11 + fontMetrics.descent;
@@ -278,11 +278,11 @@ public final class r8 extends View {
             d();
             return;
         }
-        ValueAnimator valueAnimator = this.D;
+        ValueAnimator valueAnimator = this.E;
         if (valueAnimator != null) {
             if (valueAnimator != null) {
                 valueAnimator.cancel();
-                this.D = null;
+                this.E = null;
             }
             this.x = this.w == null ? 0.0f : b();
         }

@@ -1,34 +1,33 @@
 package r2;
 
-import c8.e1;
+import c8.g1;
 import e2.s0;
-import e2.t;
 import e2.u;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c {
     public static final int[] d = {8, 13, 11, 2, 0, 1, 7};
-    public w7.s a;
+    public nb.a a;
     public boolean b;
     public int c;
 
     public static void a(int i7, ArrayList arrayList) {
-        if (e1.d(i7, 0, 7, d) == -1 || arrayList.contains(Integer.valueOf(i7))) {
+        if (g1.d(i7, 0, 7, d) == -1 || arrayList.contains(Integer.valueOf(i7))) {
             return;
         }
         arrayList.add(Integer.valueOf(i7));
     }
 
     public final u b(u uVar) {
-        if (!this.b || !this.a.w(uVar)) {
+        if (!this.b || !this.a.L(uVar)) {
             return uVar;
         }
-        t a10 = uVar.a();
+        e2.t a10 = uVar.a();
         String str = uVar.k;
         a10.r = s0.n("application/x-media3-cues");
-        a10.P = this.a.D(uVar);
+        a10.P = this.a.O(uVar);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(uVar.s);
         sb2.append(str != null ? " ".concat(str) : "");

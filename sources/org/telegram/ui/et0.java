@@ -1,28 +1,101 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class et0 implements org.telegram.ui.ActionBar.r1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PrivacyControlActivity b;
+import android.util.SparseIntArray;
 
-    public /* synthetic */ et0(PrivacyControlActivity privacyControlActivity, int i7) {
-        this.a = i7;
-        this.b = privacyControlActivity;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class et0 extends v4.o {
+    public int b;
+    public final SparseIntArray c = new SparseIntArray();
+    public final SparseIntArray d = new SparseIntArray();
+    public final /* synthetic */ PrivacyControlActivity e;
+
+    public et0(PrivacyControlActivity privacyControlActivity) {
+        this.e = privacyControlActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        switch (this.a) {
-            case 0:
-                this.b.K0();
-                break;
-            case 1:
-                this.b.finishFragment();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
+    public static void g(int i7, int i10, SparseIntArray sparseIntArray) {
+        if (i10 >= 0) {
+            sparseIntArray.put(i10, i7);
         }
+    }
+
+    @Override // v4.o
+    public final boolean a(int i7, int i10) {
+        return b(i7, i10);
+    }
+
+    @Override // v4.o
+    public final boolean b(int i7, int i10) {
+        int i11 = this.c.get(i7, -1);
+        return i11 == this.d.get(i10, -1) && i11 >= 0;
+    }
+
+    @Override // v4.o
+    public final int d() {
+        return this.e.t0;
+    }
+
+    @Override // v4.o
+    public final int e() {
+        return this.b;
+    }
+
+    public final void f(SparseIntArray sparseIntArray) {
+        int i7;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        sparseIntArray.clear();
+        PrivacyControlActivity privacyControlActivity = this.e;
+        g(1, privacyControlActivity.O, sparseIntArray);
+        g(2, privacyControlActivity.P, sparseIntArray);
+        i7 = privacyControlActivity.everybodyRow;
+        g(3, i7, sparseIntArray);
+        g(4, privacyControlActivity.Q, sparseIntArray);
+        i10 = privacyControlActivity.nobodyRow;
+        g(5, i10, sparseIntArray);
+        g(6, privacyControlActivity.i0, sparseIntArray);
+        g(7, privacyControlActivity.R, sparseIntArray);
+        g(8, privacyControlActivity.T, sparseIntArray);
+        g(9, privacyControlActivity.U, sparseIntArray);
+        g(10, privacyControlActivity.V, sparseIntArray);
+        g(11, privacyControlActivity.W, sparseIntArray);
+        g(12, privacyControlActivity.X, sparseIntArray);
+        g(13, privacyControlActivity.Y, sparseIntArray);
+        g(14, privacyControlActivity.Z, sparseIntArray);
+        g(15, privacyControlActivity.a0, sparseIntArray);
+        i11 = privacyControlActivity.photoForRestRow;
+        g(16, i11, sparseIntArray);
+        i12 = privacyControlActivity.currentPhotoForRestRow;
+        g(17, i12, sparseIntArray);
+        g(18, privacyControlActivity.b0, sparseIntArray);
+        g(19, privacyControlActivity.c0, sparseIntArray);
+        g(20, privacyControlActivity.d0, sparseIntArray);
+        g(21, privacyControlActivity.e0, sparseIntArray);
+        i13 = privacyControlActivity.readRow;
+        g(22, i13, sparseIntArray);
+        g(23, privacyControlActivity.f0, sparseIntArray);
+        g(24, privacyControlActivity.g0, sparseIntArray);
+        g(25, privacyControlActivity.h0, sparseIntArray);
+        g(26, privacyControlActivity.j0, sparseIntArray);
+        i14 = privacyControlActivity.priceRow;
+        g(27, i14, sparseIntArray);
+        g(28, privacyControlActivity.l0, sparseIntArray);
+        i15 = privacyControlActivity.showGiftIconRow;
+        g(29, i15, sparseIntArray);
+        g(30, privacyControlActivity.m0, sparseIntArray);
+        i16 = privacyControlActivity.giftTypesHeaderRow;
+        g(31, i16, sparseIntArray);
+        g(32, privacyControlActivity.o0, sparseIntArray);
+        g(33, privacyControlActivity.n0, sparseIntArray);
+        g(34, privacyControlActivity.p0, sparseIntArray);
+        g(35, privacyControlActivity.q0, sparseIntArray);
+        g(36, privacyControlActivity.r0, sparseIntArray);
+        g(37, privacyControlActivity.s0, sparseIntArray);
     }
 }

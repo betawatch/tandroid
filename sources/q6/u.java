@@ -7,10 +7,10 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class u implements Handler.Callback {
-    public final aa.n a;
+    public final com.google.android.gms.common.api.internal.d0 a;
     public final com.google.android.gms.internal.cast.y n;
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
@@ -20,8 +20,8 @@ public final class u implements Handler.Callback {
     public boolean h = false;
     public final Object r = new Object();
 
-    public u(Looper looper, aa.n nVar) {
-        this.a = nVar;
+    public u(Looper looper, com.google.android.gms.common.api.internal.d0 d0Var) {
+        this.a = d0Var;
         this.n = new com.google.android.gms.internal.cast.y(looper, this);
     }
 
@@ -59,7 +59,7 @@ public final class u implements Handler.Callback {
         com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) message.obj;
         synchronized (this.r) {
             try {
-                if (this.e && this.a.j() && this.b.contains(kVar)) {
+                if (this.e && this.a.a() && this.b.contains(kVar)) {
                     kVar.onConnected(null);
                 }
             } catch (Throwable th2) {

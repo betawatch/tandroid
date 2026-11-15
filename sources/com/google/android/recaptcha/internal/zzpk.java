@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+import i5.c;
 import java.math.RoundingMode;
 import java.util.Arrays;
-import jg.g;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzpk {
     final int zza;
@@ -27,12 +27,12 @@ final class zzpk {
         Arrays.fill(bArr, (byte) -1);
         for (int i7 = 0; i7 < cArr.length; i7++) {
             char c10 = cArr[i7];
-            boolean z9 = true;
+            boolean z10 = true;
             zzmd.zzc(c10 < 128, "Non-ASCII character: %s", c10);
             if (bArr[c10] != -1) {
-                z9 = false;
+                z10 = false;
             }
-            zzmd.zzc(z9, "Duplicate character: %s", c10);
+            zzmd.zzc(z10, "Duplicate character: %s", c10);
             bArr[c10] = (byte) i7;
         }
     }
@@ -75,7 +75,7 @@ final class zzpk {
         return this.zzg[61] != -1;
     }
 
-    private zzpk(String str, char[] cArr, byte[] bArr, boolean z9) {
+    private zzpk(String str, char[] cArr, byte[] bArr, boolean z10) {
         this.zze = str;
         cArr.getClass();
         this.zzf = cArr;
@@ -96,7 +96,7 @@ final class zzpk {
             this.zzh = zArr;
             this.zzi = false;
         } catch (ArithmeticException e10) {
-            throw new IllegalArgumentException(g.j(cArr.length, "Illegal alphabet length "), e10);
+            throw new IllegalArgumentException(c.i(cArr.length, "Illegal alphabet length "), e10);
         }
     }
 }

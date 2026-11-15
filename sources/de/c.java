@@ -1,13 +1,12 @@
 package de;
 
-import a8.h7;
 import a8.i7;
+import a8.j7;
 import androidx.lifecycle.k0;
 import be.r;
 import be.s;
 import ce.w;
 import ce.x;
-import g6.d0;
 import java.io.File;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -27,7 +26,7 @@ import zd.a0;
 import zd.t;
 import zd.z;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c extends kd.j implements p {
     public final /* synthetic */ int a;
@@ -91,10 +90,10 @@ public final class c extends kd.j implements p {
 
     /* JADX WARN: Code restructure failed: missing block: B:86:0x019c, code lost:
     
-        if (r10.a(r11, r13) == r7) goto L90;
+        if (r10.a(r11, r14) == r7) goto L90;
      */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x01ef  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01fb  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x01ed  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x01f9  */
     /* JADX WARN: Type inference failed for: r8v15, types: [kd.j, rd.p] */
     @Override // kd.a
     /*
@@ -107,9 +106,9 @@ public final class c extends kd.j implements p {
         ae.c cVar;
         int i7 = 11;
         int i10 = 0;
-        boolean z9 = false;
         boolean z10 = false;
         boolean z11 = false;
+        boolean z12 = false;
         int i11 = 2;
         id.c cVar2 = null;
         int i12 = 1;
@@ -137,7 +136,7 @@ public final class c extends kd.j implements p {
                 be.a aVar2 = bVar.c;
                 a0 a0Var = a0.b;
                 p lVar = new be.l(bVar, cVar2, i12);
-                r rVar = new r(zd.b0.r(zVar, hVar), h7.a(i14, aVar2, 4));
+                r rVar = new r(zd.b0.r(zVar, hVar), i7.a(i14, aVar2, 4));
                 rVar.S(a0Var, rVar, lVar);
                 this.b = 1;
                 Object c10 = x.c(dVar2, rVar, true, this);
@@ -222,19 +221,18 @@ public final class c extends kd.j implements p {
                     obj2 = (m1.c) this.d;
                     dVar = (ce.d) this.c;
                     af.b.c(obj);
-                    w wVar = (w) b0Var.h.b;
-                    ce.h hVar2 = new ce.h(new gf.g(new q(new wf.b(10, new q(new m1.m(b0Var, cVar2, z11 ? 1 : 0), wVar, z10 ? 1 : 0, i7), new jb.c(2, null, 1)), new ka.b(obj2, cVar2, i12), z9 ? 1 : 0, 12), 17), new n(b0Var, (id.c) null));
+                    ce.h hVar2 = new ce.h(new ia.d(new q(new wf.b(9, new q(new m1.m(b0Var, cVar2, z12 ? 1 : 0), (w) b0Var.h.b, z11 ? 1 : 0, 10), new jb.c(2, null, 1)), new ka.b(obj2, cVar2, i12), z10 ? 1 : 0, i7), i7), new n(b0Var, (id.c) null));
                     this.c = null;
                     this.d = null;
                     this.b = 3;
                     if (!(dVar instanceof ce.z)) {
                         throw ((ce.z) dVar).a;
                     }
-                    Object B = hVar2.B(dVar, this);
-                    if (B != aVar5) {
-                        B = kVar2;
+                    Object G = hVar2.G(dVar, this);
+                    if (G != aVar5) {
+                        G = kVar2;
                     }
-                    if (B != aVar5) {
+                    if (G != aVar5) {
                         return kVar2;
                     }
                     return aVar5;
@@ -261,8 +259,7 @@ public final class c extends kd.j implements p {
                         return kVar2;
                     }
                 }
-                w wVar2 = (w) b0Var.h.b;
-                ce.h hVar22 = new ce.h(new gf.g(new q(new wf.b(10, new q(new m1.m(b0Var, cVar2, z11 ? 1 : 0), wVar2, z10 ? 1 : 0, i7), new jb.c(2, null, 1)), new ka.b(obj2, cVar2, i12), z9 ? 1 : 0, 12), 17), new n(b0Var, (id.c) null));
+                ce.h hVar22 = new ce.h(new ia.d(new q(new wf.b(9, new q(new m1.m(b0Var, cVar2, z12 ? 1 : 0), (w) b0Var.h.b, z11 ? 1 : 0, 10), new jb.c(2, null, 1)), new ka.b(obj2, cVar2, i12), z10 ? 1 : 0, i7), i7), new n(b0Var, (id.c) null));
                 this.c = null;
                 this.d = null;
                 this.b = 3;
@@ -282,9 +279,9 @@ public final class c extends kd.j implements p {
                 af.b.c(obj);
                 z zVar2 = (z) this.c;
                 t a11 = zd.b0.a();
-                n0 n0Var = new n0((kd.j) this.e, a11, b0Var2.h.T1(), zVar2.c());
-                ab.b0 b0Var3 = b0Var2.l;
-                Object b10 = ((be.c) b0Var3.d).b(n0Var);
+                n0 n0Var = new n0((kd.j) this.e, a11, b0Var2.h.B(), zVar2.c());
+                xi.e eVar = b0Var2.l;
+                Object b10 = ((be.c) eVar.c).b(n0Var);
                 if (b10 instanceof be.h) {
                     Throwable th2 = ((be.h) b10).a;
                     if (th2 == null) {
@@ -295,8 +292,8 @@ public final class c extends kd.j implements p {
                 if (b10 instanceof be.i) {
                     throw new IllegalStateException("Check failed.");
                 }
-                if (((AtomicInteger) ((d0) b0Var3.e).b).getAndIncrement() == 0) {
-                    zd.b0.q((z) b0Var3.b, new be.l(b0Var3, cVar2, i7));
+                if (((AtomicInteger) ((gc.b) eVar.d).b).getAndIncrement() == 0) {
+                    zd.b0.q((z) eVar.a, new be.l(eVar, cVar2, i7));
                 }
                 this.b = 1;
                 Object i19 = a11.i(this);
@@ -359,7 +356,7 @@ public final class c extends kd.j implements p {
                 this.c = null;
                 this.d = null;
                 this.b = 2;
-                if (i7.a(sVar, k0Var, this) == aVar7) {
+                if (j7.a(sVar, k0Var, this) == aVar7) {
                     return aVar7;
                 }
                 return gd.k.a;

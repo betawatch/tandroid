@@ -1,91 +1,40 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import org.telegram.messenger.voip.VoIPGroupNotification;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class on implements RequestDelegate {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ long f;
-    public final /* synthetic */ boolean g;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class on implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 b;
 
-    public /* synthetic */ on(Context context, int i7, long j3, String str, long j10, int i10, boolean z9) {
-        this.d = i7;
-        this.c = j3;
-        this.f = j10;
-        this.e = i10;
-        this.g = z9;
-        this.b = context;
-        this.h = str;
+    public /* synthetic */ on(int i7, org.telegram.ui.ActionBar.e2 e2Var) {
+        this.a = i7;
+        this.b = e2Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                qp qpVar = (qp) this.b;
-                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.h;
-                long j3 = this.c;
-                if (j3 != 0) {
-                    qpVar.getMessagesStorage().q1(j3);
-                }
-                if (tL_error == null) {
-                    TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
-                    int i7 = tL_messages_affectedHistory.offset;
-                    long j10 = this.f;
-                    if (i7 > 0) {
-                        qpVar.Y(j10, 0, this.d, this.e, this.g, inputPeer, 0L);
-                    }
-                    qpVar.M3(tL_messages_affectedHistory.pts, -1, tL_messages_affectedHistory.pts_count);
-                    yr messagesStorage = qpVar.getMessagesStorage();
-                    messagesStorage.a.c(new xp(messagesStorage, j10, 5));
+                org.telegram.ui.ActionBar.e2 e2Var = this.b;
+                if (e2Var != null) {
+                    ThemeActivity themeActivity = new ThemeActivity(0);
+                    themeActivity.V0 = true;
+                    e2Var.presentFragment(themeActivity);
                     break;
                 }
                 break;
             case 1:
-                qp qpVar2 = (qp) this.b;
-                org.telegram.ui.xf xfVar = (org.telegram.ui.xf) this.h;
-                if (tL_error != null) {
-                    g0.h3(new a(xfVar, 26));
-                    break;
-                } else {
-                    TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory2 = (TLRPC.TL_messages_affectedHistory) tLObject;
-                    qpVar2.M3(tL_messages_affectedHistory2.pts, -1, tL_messages_affectedHistory2.pts_count);
-                    qpVar2.getMessagesStorage().a.c(new xn(qpVar2, this.c, this.d, this.e, this.f, tL_messages_affectedHistory2, this.g, xfVar));
-                    break;
-                }
+                org.telegram.ui.Components.t4.q0(7, this.b, null);
+                break;
+            case 2:
+                org.telegram.ui.Components.t4.q0(8, this.b, null);
+                break;
             default:
-                VoIPGroupNotification.lambda$request$1(this.d, this.c, this.f, this.e, this.g, (Context) this.b, (String) this.h, tLObject, tL_error);
+                this.b.presentFragment(new PremiumPreviewFragment(0, "summarize_limit"));
                 break;
         }
-    }
-
-    public /* synthetic */ on(qp qpVar, long j3, int i7, int i10, long j10, boolean z9, org.telegram.ui.xf xfVar) {
-        this.b = qpVar;
-        this.c = j3;
-        this.d = i7;
-        this.e = i10;
-        this.f = j10;
-        this.g = z9;
-        this.h = xfVar;
-    }
-
-    public /* synthetic */ on(qp qpVar, long j3, long j10, int i7, int i10, boolean z9, TLRPC.InputPeer inputPeer) {
-        this.b = qpVar;
-        this.c = j3;
-        this.f = j10;
-        this.d = i7;
-        this.e = i10;
-        this.g = z9;
-        this.h = inputPeer;
     }
 }

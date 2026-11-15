@@ -4,7 +4,7 @@ import android.media.AudioAttributes;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e {
     public static final e i = new e(0, 0, 1, 1, false, 0, true);
@@ -25,7 +25,7 @@ public final class e {
     public AudioAttributes h;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         j = Integer.toString(0, 36);
         k = Integer.toString(1, 36);
         l = Integer.toString(2, 36);
@@ -35,14 +35,14 @@ public final class e {
         p = Integer.toString(6, 36);
     }
 
-    public e(int i7, int i10, int i11, int i12, boolean z9, int i13, boolean z10) {
+    public e(int i7, int i10, int i11, int i12, boolean z10, int i13, boolean z11) {
         this.a = i7;
         this.b = i10;
         this.c = i11;
         this.d = i12;
         this.e = i13;
-        this.f = z9;
-        this.g = z10;
+        this.f = z10;
+        this.g = z11;
     }
 
     public static e a(Bundle bundle) {
@@ -57,9 +57,9 @@ public final class e {
         String str5 = n;
         int i13 = bundle.containsKey(str5) ? bundle.getInt(str5) : 0;
         String str6 = o;
-        boolean z9 = bundle.containsKey(str6) ? bundle.getBoolean(str6) : false;
+        boolean z10 = bundle.containsKey(str6) ? bundle.getBoolean(str6) : false;
         String str7 = p;
-        return new e(i7, i10, i11, i12, z9, i13, bundle.containsKey(str7) ? bundle.getBoolean(str7) : true);
+        return new e(i7, i10, i11, i12, z10, i13, bundle.containsKey(str7) ? bundle.getBoolean(str7) : true);
     }
 
     public final AudioAttributes b() {
@@ -67,8 +67,8 @@ public final class e {
             AudioAttributes.Builder usage = new AudioAttributes.Builder().setContentType(this.a).setFlags(this.b).setUsage(this.c);
             int i7 = Build.VERSION.SDK_INT;
             if (i7 >= 29) {
-                ab.x.k(usage, this.d);
-                ab.x.a(usage, this.g);
+                ab.y.k(usage, this.d);
+                ab.y.a(usage, this.g);
             }
             if (i7 >= 32) {
                 d.b(usage, this.e);

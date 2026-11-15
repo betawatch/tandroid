@@ -1,9 +1,8 @@
 package ch;
 
-import bi.x5;
-import org.telegram.ui.Components.ob0;
+import org.telegram.ui.Components.wa0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -22,19 +21,19 @@ public final /* synthetic */ class s implements Runnable {
                 break;
             default:
                 b0 b0Var = this.b;
-                x5 x5Var = b0Var.c;
-                if (x5Var.getParent() != null) {
+                ai.j0 j0Var = b0Var.c;
+                if (j0Var.getParent() != null) {
                     if (b0Var.d) {
-                        org.telegram.messenger.g0.E2(x5Var);
+                        org.telegram.messenger.g0.E2(j0Var);
                     } else {
                         try {
-                            b0Var.b.removeView(x5Var);
+                            b0Var.b.removeView(j0Var);
                         } catch (Exception unused) {
                         }
                     }
-                    ob0 ob0Var = b0Var.p;
-                    if (ob0Var != null) {
-                        ob0Var.run();
+                    wa0 wa0Var = b0Var.p;
+                    if (wa0Var != null) {
+                        wa0Var.run();
                         break;
                     }
                 }

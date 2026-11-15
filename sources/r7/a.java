@@ -4,9 +4,9 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import g7.f;
+import g7.e;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a extends Binder implements IInterface {
     @Override // android.os.Binder
@@ -16,28 +16,28 @@ public abstract class a extends Binder implements IInterface {
         } else if (super.onTransact(i7, parcel, parcel2, i10)) {
             return true;
         }
-        f fVar = (f) this;
+        e eVar = (e) this;
         if (i7 == 1) {
-            fVar.init(a7.b.m1(parcel.readStrongBinder()));
+            eVar.init(a7.b.m1(parcel.readStrongBinder()));
             parcel2.writeNoException();
             return true;
         }
         if (i7 == 2) {
             String readString = parcel.readString();
             int i11 = b.a;
-            boolean booleanFlagValue = fVar.getBooleanFlagValue(readString, parcel.readInt() != 0, parcel.readInt());
+            boolean booleanFlagValue = eVar.getBooleanFlagValue(readString, parcel.readInt() != 0, parcel.readInt());
             parcel2.writeNoException();
             parcel2.writeInt(booleanFlagValue ? 1 : 0);
             return true;
         }
         if (i7 == 3) {
-            int intFlagValue = fVar.getIntFlagValue(parcel.readString(), parcel.readInt(), parcel.readInt());
+            int intFlagValue = eVar.getIntFlagValue(parcel.readString(), parcel.readInt(), parcel.readInt());
             parcel2.writeNoException();
             parcel2.writeInt(intFlagValue);
             return true;
         }
         if (i7 == 4) {
-            long longFlagValue = fVar.getLongFlagValue(parcel.readString(), parcel.readLong(), parcel.readInt());
+            long longFlagValue = eVar.getLongFlagValue(parcel.readString(), parcel.readLong(), parcel.readInt());
             parcel2.writeNoException();
             parcel2.writeLong(longFlagValue);
             return true;
@@ -45,7 +45,7 @@ public abstract class a extends Binder implements IInterface {
         if (i7 != 5) {
             return false;
         }
-        String stringFlagValue = fVar.getStringFlagValue(parcel.readString(), parcel.readString(), parcel.readInt());
+        String stringFlagValue = eVar.getStringFlagValue(parcel.readString(), parcel.readString(), parcel.readInt());
         parcel2.writeNoException();
         parcel2.writeString(stringFlagValue);
         return true;

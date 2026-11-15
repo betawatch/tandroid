@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import fh.g;
 import jh.k;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static final Matrix a = new Matrix();
@@ -18,7 +18,7 @@ public abstract class d {
     public static final RectF c = new RectF();
 
     public static void a(eh.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup) {
-        b(aVar, canvas, rectF, view, viewGroup, qs.e4);
+        b(aVar, canvas, rectF, view, viewGroup, ns.e4);
     }
 
     public static void b(eh.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup, int i7) {
@@ -32,26 +32,26 @@ public abstract class d {
             RectF rectF3 = b;
             rectF3.set(rectF);
             rectF3.offset(-f10, -f11);
-            boolean z9 = (f10 == 0.0f && f11 == 0.0f) ? false : true;
-            boolean z10 = i7 != 255;
-            if (z9) {
+            boolean z10 = (f10 == 0.0f && f11 == 0.0f) ? false : true;
+            boolean z11 = i7 != 255;
+            if (z10) {
                 canvas.save();
                 canvas.translate(f10, f11);
             }
-            if (z10) {
+            if (z11) {
                 canvas.saveLayerAlpha(rectF3, i7);
             }
             aVar.d(canvas, rectF3);
-            if (z10) {
+            if (z11) {
                 canvas.restore();
             }
-            if (z9) {
+            if (z10) {
                 canvas.restore();
             }
         }
     }
 
-    public static void c(ri.b bVar, View view) {
+    public static void c(ui.b bVar, View view) {
         Bitmap bitmap;
         if (bVar == null || view == null || view.getWidth() == 0 || view.getHeight() == 0 || (bitmap = bVar.d) == null || bitmap.isRecycled() || bitmap.getWidth() == 0 || bitmap.getHeight() == 0) {
             return;

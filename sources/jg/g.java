@@ -1,172 +1,95 @@
 package jg;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.TextView;
-import j$.util.DesugarCollections;
+import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.xi0;
+import org.telegram.messenger.s3;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.q01;
+import org.telegram.ui.Components.s01;
+import org.telegram.ui.Components.vw;
+import org.telegram.ui.f40;
+import org.telegram.ui.n11;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class g {
-    public static boolean A(String str, String str2, String str3) {
-        return str3.contains(str + str2);
+public final class g extends v4.o {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ g(Object obj, ArrayList arrayList, int i7) {
+        this.b = i7;
+        this.d = obj;
+        this.c = arrayList;
     }
 
-    public static int B(int i7, int i10, int i11, int i12) {
-        return Math.max(i12, Math.min(Math.min(i7, i10), i11));
-    }
-
-    public static void C(String str, int i7, AlertDialog$Builder alertDialog$Builder, org.telegram.ui.ActionBar.r1 r1Var) {
-        alertDialog$Builder.k(id.M0(i7, str), r1Var);
-        alertDialog$Builder.p();
-    }
-
-    public static int D(int i7, int i10, int i11, int i12) {
-        return ((i7 - i10) / i11) + i12;
-    }
-
-    public static /* synthetic */ String E(int i7) {
-        return i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 4 ? "null" : "FROSTED_FILTERED" : "FROSTED_GLASS" : "GLASS" : "BLURRED";
-    }
-
-    public static boolean a(int i7) {
-        if (i7 != 0) {
-            return i7 == 3 || i7 == 4;
-        }
-        throw null;
-    }
-
-    public static int b(int i7, int i10, int i11, int i12) {
-        return i7 | i10 | i11 | 128 | i12;
-    }
-
-    public static boolean c(int i7, boolean z9) {
-        int i10 = i7 & 7;
-        if (i10 != 4) {
-            return z9 && i10 == 3;
+    @Override // v4.o
+    public final boolean a(int i7, int i10) {
+        switch (this.b) {
+            case 0:
+                if (((k) ((m) this.d).O.get(i7)).a == ((k) this.c.get(i10)).a) {
+                }
+                break;
         }
         return true;
     }
 
-    public static double d(double d, double d2, double d10) {
-        return (Math.cos(d) * d2) + d10;
+    @Override // v4.o
+    public final boolean b(int i7, int i10) {
+        TLRPC.TL_contact tL_contact;
+        TLRPC.TL_contact tL_contact2;
+        TLRPC.RecentMeUrl recentMeUrl;
+        String str;
+        switch (this.b) {
+            case 0:
+                k kVar = (k) ((m) this.d).O.get(i7);
+                k kVar2 = (k) this.c.get(i10);
+                TLRPC.Dialog dialog = kVar.c;
+                int i11 = kVar.a;
+                int i12 = kVar2.a;
+                TLRPC.Dialog dialog2 = kVar2.c;
+                return i11 == i12 && (i11 != 0 ? i11 != 14 ? i11 != 4 ? i11 != 6 ? i11 != 5 ? i11 != 10 : kVar.j == kVar2.j : !((tL_contact = kVar.e) == null || (tL_contact2 = kVar2.e) == null || tL_contact.user_id != tL_contact2.user_id) : !((recentMeUrl = kVar.d) == null || kVar2.d == null || (str = recentMeUrl.url) == null || !str.equals(str)) : dialog != null && dialog2 != null && dialog.id == dialog2.id && dialog.isFolder == dialog2.isFolder : dialog != null && dialog2 != null && dialog.id == dialog2.id && kVar.h == kVar2.h && kVar.f == kVar2.f && kVar.g == kVar2.g);
+            case 1:
+                return ((Integer) this.c.get(i7)).equals(((vw) this.d).n.get(i10));
+            case 2:
+                return Objects.equals(this.c.get(i7), ((pj0) this.d).n.get(i10));
+            case 3:
+                return ((s01) this.c.get(i7)).a() == ((s01) ((q01) this.d).c.get(i10)).a();
+            case 4:
+                f40 f40Var = (f40) this.d;
+                ArrayList arrayList = this.c;
+                if (i7 >= arrayList.size() || i10 >= f40Var.e.size()) {
+                    return false;
+                }
+                return ((s3) arrayList.get(i7)).equals(f40Var.e.get(i10));
+            default:
+                return ((Long) this.c.get(i7)).equals(((n11) this.d).w0.get(i10));
+        }
     }
 
-    public static int e(float f10, int i7, int i10) {
-        return Math.max(i10, i7 - org.telegram.messenger.g0.L(f10));
+    @Override // v4.o
+    public final int d() {
+        switch (this.b) {
+            case 0:
+                return this.c.size();
+            case 1:
+                return ((vw) this.d).n.size();
+            case 2:
+                return ((pj0) this.d).n.size();
+            case 3:
+                return ((q01) this.d).c.size();
+            case 4:
+                return ((f40) this.d).e.size();
+            default:
+                return ((n11) this.d).w0.size();
+        }
     }
 
-    public static int f(int i7, int i10, int i11, int i12) {
-        return Math.max(i12, Math.min(Math.max(i7, i10), i11));
-    }
-
-    public static int g(int i7, int i10, ArrayList arrayList) {
-        return i10 - (arrayList.size() + i7);
-    }
-
-    public static Drawable h(Context context, int i7) {
-        return context.getResources().getDrawable(i7).mutate();
-    }
-
-    public static Object i(int i7, ArrayList arrayList) {
-        return arrayList.get(arrayList.size() - i7);
-    }
-
-    public static String j(int i7, String str) {
-        return str + i7;
-    }
-
-    public static String k(int i7, String str, String str2) {
-        return str + i7 + str2;
-    }
-
-    public static String l(int i7, String str, StringBuilder sb2) {
-        sb2.append(id.M0(i7, str));
-        return sb2.toString();
-    }
-
-    public static String m(long j3, char c10, StringBuilder sb2) {
-        sb2.append(id.E(j3, c10));
-        return sb2.toString();
-    }
-
-    public static StringBuilder n(int i7, String str, String str2) {
-        StringBuilder sb2 = new StringBuilder(str);
-        sb2.append(i7);
-        sb2.append(str2);
-        return sb2;
-    }
-
-    public static StringBuilder o(String str, int i7, String str2, int i10, String str3) {
-        StringBuilder sb2 = new StringBuilder(str);
-        sb2.append(i7);
-        sb2.append(str2);
-        sb2.append(i10);
-        sb2.append(str3);
-        return sb2;
-    }
-
-    public static HashMap p(Class cls, qa.a aVar) {
-        HashMap hashMap = new HashMap();
-        hashMap.put(cls, aVar);
-        return hashMap;
-    }
-
-    public static Map q(HashMap hashMap) {
-        return DesugarCollections.unmodifiableMap(new HashMap(hashMap));
-    }
-
-    public static xi0 r(View view, View view2, int i7, int i10) {
-        view.setLayoutParams(new v4.o0(i7, i10));
-        return new xi0(view2);
-    }
-
-    public static void s(int i7, StringBuilder sb2) {
-        sb2.append(i7);
-        a8.b(sb2.toString());
-    }
-
-    public static void t(int i7, HashMap hashMap, String str, int i10, String str2) {
-        hashMap.put(Integer.valueOf(i7), str);
-        hashMap.put(Integer.valueOf(i10), str2);
-    }
-
-    public static void u(long j3, StringBuilder sb2) {
-        sb2.append(j3);
-        a8.b(sb2.toString());
-    }
-
-    public static void v(TextView textView, int i7, float f10, String str, int i10) {
-        textView.setTextSize(i7, f10);
-        textView.setText(id.M0(i10, str));
-    }
-
-    public static void w(String str, int i7, AlertDialog$Builder alertDialog$Builder, org.telegram.ui.ActionBar.r1 r1Var) {
-        alertDialog$Builder.h(id.M0(i7, str), r1Var);
-        alertDialog$Builder.p();
-    }
-
-    public static void x(StringBuilder sb2, int i7, String str, int i10, String str2) {
-        sb2.append(i7);
-        sb2.append(str);
-        sb2.append(i10);
-        sb2.append(str2);
-    }
-
-    public static void y(n nVar, int i7, ArrayList arrayList) {
-        arrayList.add(new l(nVar, i7));
-    }
-
-    public static void z(SQLiteDatabase sQLiteDatabase, String str) {
-        sQLiteDatabase.executeFast(str).stepThis().dispose();
+    @Override // v4.o
+    public final int e() {
+        switch (this.b) {
+        }
+        return this.c.size();
     }
 }

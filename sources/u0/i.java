@@ -15,7 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i implements ActionMode.Callback {
     public final ActionMode.Callback a;
@@ -50,9 +50,9 @@ public final class i implements ActionMode.Callback {
         TextView textView = this.b;
         Context context = textView.getContext();
         PackageManager packageManager = context.getPackageManager();
-        boolean z9 = this.f;
+        boolean z10 = this.f;
         Class<?> cls = Integer.TYPE;
-        if (!z9) {
+        if (!z10) {
             this.f = true;
             try {
                 Class<?> cls2 = Class.forName("com.android.internal.view.menu.MenuBuilder");

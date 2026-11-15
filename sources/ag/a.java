@@ -11,20 +11,19 @@ import com.google.android.gms.internal.play_billing.i3;
 import com.google.android.gms.internal.play_billing.m3;
 import com.google.android.gms.internal.play_billing.p3;
 import com.google.android.gms.internal.play_billing.u;
-import d9.b;
-import f5.w;
-import f5.x;
+import f5.y;
 import j$.util.Objects;
 import java.lang.ref.WeakReference;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
-import q4.q;
-import v6.e;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import tg.x;
+import wf.b;
 import zf.c;
 import zf.d;
+import zf.e;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -36,28 +35,28 @@ public final class a implements ServiceConnection {
 
     @Override // android.content.ServiceConnection
     public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        e eVar;
-        zf.e eVar2 = null;
+        x xVar;
+        e eVar = null;
         g gVar = null;
         switch (this.a) {
             case 0:
                 int i7 = d.a;
                 if (iBinder != null) {
                     IInterface queryLocalInterface = iBinder.queryLocalInterface("android.support.customtabs.ICustomTabsService");
-                    if (queryLocalInterface == null || !(queryLocalInterface instanceof zf.e)) {
+                    if (queryLocalInterface == null || !(queryLocalInterface instanceof e)) {
                         c cVar = new c();
                         cVar.a = iBinder;
-                        eVar2 = cVar;
+                        eVar = cVar;
                     } else {
-                        eVar2 = (zf.e) queryLocalInterface;
+                        eVar = (e) queryLocalInterface;
                     }
                 }
-                e eVar3 = new e(eVar2, componentName);
+                x xVar2 = new x(10, eVar, componentName);
                 if (((vf.a) ((WeakReference) this.b).get()) != null) {
-                    vf.c.b = eVar3;
-                    if (qp.s1(p10.s0).O2() && (eVar = vf.c.b) != null) {
+                    vf.c.b = xVar2;
+                    if (np.s1(m10.t0).O2() && (xVar = vf.c.b) != null) {
                         try {
-                            ((c) ((zf.e) eVar.a)).i1();
+                            ((c) ((e) xVar.b)).i1();
                             break;
                         } catch (RemoteException unused) {
                             return;
@@ -75,21 +74,21 @@ public final class a implements ServiceConnection {
                 break;
             default:
                 u.g("BillingClientTesting", "Billing Override Service connected.");
-                w wVar = (w) this.b;
+                f5.x xVar3 = (f5.x) this.b;
                 int i10 = f.b;
                 if (iBinder != null) {
                     IInterface queryLocalInterface2 = iBinder.queryLocalInterface("com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService");
                     gVar = queryLocalInterface2 instanceof g ? (g) queryLocalInterface2 : new com.google.android.gms.internal.play_billing.e(iBinder, "com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService", 3);
                 }
-                wVar.E = gVar;
-                wVar.D = 2;
-                int i11 = x.a;
-                i3 c10 = x.c(26, m3.b);
+                xVar3.E = gVar;
+                xVar3.D = 2;
+                int i11 = y.a;
+                i3 c10 = y.c(26, m3.b);
                 Objects.requireNonNull(c10, "ApiSuccess should not be null");
-                q qVar = wVar.h;
-                qVar.getClass();
+                b bVar = xVar3.h;
+                bVar.getClass();
                 try {
-                    qVar.q(c10, (p3) qVar.b);
+                    bVar.e0(c10, (p3) bVar.b);
                     break;
                 } catch (Throwable th2) {
                     u.i("BillingLogger", "Unable to log.", th2);
@@ -110,13 +109,13 @@ public final class a implements ServiceConnection {
             case 1:
                 d9.c cVar = (d9.c) this.b;
                 cVar.b.b("ServiceConnectionImpl.onServiceDisconnected(%s)", componentName);
-                cVar.a().post(new b(this, i7));
+                cVar.a().post(new d9.b(this, i7));
                 break;
             default:
                 u.h("BillingClientTesting", "Billing Override Service disconnected.");
-                w wVar = (w) this.b;
-                wVar.E = null;
-                wVar.D = 0;
+                f5.x xVar = (f5.x) this.b;
+                xVar.E = null;
+                xVar.D = 0;
                 break;
         }
     }

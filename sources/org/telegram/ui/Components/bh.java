@@ -1,74 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class bh extends AnimatorListenerAdapter {
+public final /* synthetic */ class bh implements org.telegram.messenger.w10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ih c;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public /* synthetic */ bh(ih ihVar, boolean z9, int i7) {
+    public /* synthetic */ bh(KeyEvent.Callback callback, int i7) {
         this.a = i7;
-        this.c = ihVar;
-        this.b = z9;
+        this.b = callback;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.messenger.w10
+    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
         switch (this.a) {
             case 0:
-                ih ihVar = this.c;
-                ci ciVar = ihVar.e;
-                boolean z9 = this.b;
-                if (z9) {
-                    ciVar.u3.setVisibility(8);
-                } else {
-                    ciVar.B3.setVisibility(8);
-                }
-                int L = z9 ? org.telegram.messenger.g0.L(36.0f) : 0;
-                for (int i7 = 0; i7 < ciVar.u2.size(); i7++) {
-                    ((hi.c4) ciVar.u2.valueAt(i7)).setMeasureOffsetY(L);
-                }
-                if (ihVar.a == animator) {
-                    ihVar.a = null;
-                    break;
-                }
+                ki kiVar = (ki) this.b;
+                CharSequence charSequence = (CharSequence) obj;
+                nh nhVar = kiVar.C2;
+                nhVar.setText(charSequence);
+                nhVar.w(charSequence.length(), charSequence.length());
+                kiVar.n1();
+                break;
+            case 1:
+                ki kiVar2 = (ki) this.b;
+                CharSequence charSequence2 = (CharSequence) obj;
+                ph phVar = kiVar2.N2;
+                phVar.setText(charSequence2);
+                phVar.w(charSequence2.length(), charSequence2.length());
+                kiVar2.n1();
                 break;
             default:
-                ci ciVar2 = this.c.e;
-                boolean z10 = this.b;
-                ciVar2.y3 = z10;
-                if (!z10) {
-                    ciVar2.z3.setVisibility(8);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ci ciVar = this.c.e;
-                if (this.b) {
-                    ciVar.B3.setAlpha(0.0f);
-                    ciVar.B3.setVisibility(0);
-                    int L = org.telegram.messenger.g0.L(36.0f);
-                    for (int i7 = 0; i7 < ciVar.u2.size(); i7++) {
-                        ((hi.c4) ciVar.u2.valueAt(i7)).setMeasureOffsetY(L);
-                    }
-                    break;
-                } else {
-                    ciVar.u3.setAlpha(0.0f);
-                    ciVar.u3.setVisibility(0);
-                    break;
-                }
-            default:
-                super.onAnimationStart(animator);
+                pc pcVar = (pc) this.b;
+                hi.g gVar = pcVar.f;
+                gVar.setText((CharSequence) obj);
+                gVar.d();
+                gVar.k(true);
+                hi.e eVar = pcVar.d0;
+                org.telegram.messenger.g0.r(eVar);
+                eVar.run();
                 break;
         }
     }

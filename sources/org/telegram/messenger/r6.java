@@ -7,76 +7,76 @@ import java.util.List;
 import java.util.Random;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.ra0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r6 implements org.telegram.ui.ActionBar.r1, ResultCallback {
+public final /* synthetic */ class r6 implements org.telegram.ui.ActionBar.q1, ResultCallback {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ r6(x6 x6Var, t6 t6Var, int i7, ij ijVar, boolean z9) {
+    public /* synthetic */ r6(x6 x6Var, t6 t6Var, int i7, gj gjVar, boolean z10) {
         this.c = x6Var;
         this.d = t6Var;
         this.b = i7;
-        this.e = ijVar;
-        this.a = z9;
+        this.e = gjVar;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         x6 x6Var = (x6) this.c;
         t6 t6Var = (t6) this.d;
-        ij ijVar = (ij) this.e;
+        gj gjVar = (gj) this.e;
         if (t6Var.getText().toString().length() > this.b) {
-            g0.F3(t6Var);
+            g0.E3(t6Var);
             return;
         }
         TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
         CharSequence[] charSequenceArr = {t6Var.getText()};
-        tL_textWithEntities.entities = ui.b0(x6Var.a).W(charSequenceArr, true, true);
+        tL_textWithEntities.entities = si.b0(x6Var.a).W(charSequenceArr, true, true);
         CharSequence charSequence = charSequenceArr[0];
         tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
-        x6Var.a(ijVar, tL_textWithEntities, this.a);
-        u1Var.dismiss();
+        x6Var.a(gjVar, tL_textWithEntities, this.a);
+        t1Var.dismiss();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        org.telegram.ui.an anVar = (org.telegram.ui.an) this.c;
-        org.telegram.ui.ActionBar.s3 s3Var = (org.telegram.ui.ActionBar.s3) this.d;
-        qa0 qa0Var = (qa0) this.e;
+        org.telegram.ui.ym ymVar = (org.telegram.ui.ym) this.c;
+        org.telegram.ui.ActionBar.p3 p3Var = (org.telegram.ui.ActionBar.p3) this.d;
+        ra0 ra0Var = (ra0) this.e;
         Pair pair = (Pair) obj;
         if (pair == null) {
             return;
         }
         long longValue = ((Long) pair.first).longValue();
         Bitmap bitmap = ((gg.a) pair.second).a;
-        org.telegram.ui.ActionBar.s3 s3Var2 = anVar.f;
-        if (s3Var2 == null || longValue != s3Var2.h(anVar.q ? 1 : 0) || bitmap == null) {
+        org.telegram.ui.ActionBar.p3 p3Var2 = ymVar.f;
+        if (p3Var2 == null || longValue != p3Var2.h(ymVar.q ? 1 : 0) || bitmap == null) {
             return;
         }
-        ValueAnimator valueAnimator = anVar.i;
+        ValueAnimator valueAnimator = ymVar.i;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        int i7 = s3Var.j(this.a ? 1 : 0).settings.intensity;
+        int i7 = p3Var.j(this.a ? 1 : 0).settings.intensity;
         List list = ((gg.a) pair.second).b;
-        qa0Var.R = list;
-        long j3 = anVar.G.mb;
+        ra0Var.R = list;
+        long j3 = ymVar.G.nb;
         if (list != null) {
-            qa0Var.S = new Random(j3).nextInt(qa0Var.R.size());
+            ra0Var.S = new Random(j3).nextInt(ra0Var.R.size());
         }
-        qa0Var.s(i7, bitmap);
-        qa0Var.t(this.b);
+        ra0Var.s(i7, bitmap);
+        ra0Var.t(this.b);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        anVar.i = ofFloat;
-        ofFloat.addUpdateListener(new org.telegram.ui.wm(qa0Var, 2));
-        anVar.i.setDuration(250L);
-        anVar.i.start();
+        ymVar.i = ofFloat;
+        ofFloat.addUpdateListener(new org.telegram.ui.um(ra0Var, 2));
+        ymVar.i.setDuration(250L);
+        ymVar.i.start();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -84,11 +84,11 @@ public final /* synthetic */ class r6 implements org.telegram.ui.ActionBar.r1, R
         org.telegram.tgnet.k.a(this, th2);
     }
 
-    public /* synthetic */ r6(org.telegram.ui.an anVar, org.telegram.ui.ActionBar.s3 s3Var, boolean z9, qa0 qa0Var, int i7) {
-        this.c = anVar;
-        this.d = s3Var;
-        this.a = z9;
-        this.e = qa0Var;
+    public /* synthetic */ r6(org.telegram.ui.ym ymVar, org.telegram.ui.ActionBar.p3 p3Var, boolean z10, ra0 ra0Var, int i7) {
+        this.c = ymVar;
+        this.d = p3Var;
+        this.a = z10;
+        this.e = ra0Var;
         this.b = i7;
     }
 

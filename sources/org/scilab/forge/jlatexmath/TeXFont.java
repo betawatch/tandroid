@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public interface TeXFont {
     public static final int NO_FONT = -1;
@@ -97,13 +97,13 @@ public interface TeXFont {
 
     TeXFont scaleFont(float f10);
 
-    void setBold(boolean z9);
+    void setBold(boolean z10);
 
-    void setIt(boolean z9);
+    void setIt(boolean z10);
 
-    void setRoman(boolean z9);
+    void setRoman(boolean z10);
 
-    void setSs(boolean z9);
+    void setSs(boolean z10);
 
-    void setTt(boolean z9);
+    void setTt(boolean z10);
 }

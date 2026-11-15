@@ -1,10 +1,11 @@
 package org.telegram.ui;
 
+import android.content.DialogInterface;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dy implements org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class dy implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ EditTextBoldCursor b;
 
@@ -13,8 +14,8 @@ public final /* synthetic */ class dy implements org.telegram.ui.ActionBar.r1 {
         this.b = editTextBoldCursor;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
                 org.telegram.messenger.g0.v1(this.b);

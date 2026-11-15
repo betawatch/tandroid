@@ -4,70 +4,70 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bs implements r0.m, org.telegram.ui.Components.hi0 {
+public final /* synthetic */ class bs implements r0.m, org.telegram.ui.Components.li0 {
     public final /* synthetic */ ns a;
 
     public /* synthetic */ bs(ns nsVar) {
         this.a = nsVar;
     }
 
-    @Override // org.telegram.ui.Components.hi0
-    public /* synthetic */ boolean E() {
+    @Override // org.telegram.ui.Components.li0
+    public /* synthetic */ boolean B() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.li0
+    public /* synthetic */ boolean L() {
         return false;
     }
 
     @Override // r0.m
-    public r0.k1 S0(View view, r0.k1 k1Var) {
+    public r0.k1 M0(View view, r0.k1 k1Var) {
         this.a.q = org.telegram.messenger.g0.I0(k1Var, false);
         return k1Var;
     }
 
-    @Override // org.telegram.ui.Components.hi0
-    public /* synthetic */ boolean U() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.hi0
-    public void i(View view, ch.o0 o0Var, boolean z9, boolean z10) {
-        if (o0Var == null) {
+    @Override // org.telegram.ui.Components.li0
+    public void h(View view, ch.p0 p0Var, boolean z10, boolean z11) {
+        if (p0Var == null) {
             return;
         }
         ns nsVar = this.a;
         ch.b0 reactionsWindow = nsVar.P.getReactionsWindow();
-        if (!nsVar.o.contains(o0Var.f)) {
-            nsVar.o.add(o0Var.f);
+        if (!nsVar.o.contains(p0Var.f)) {
+            nsVar.o.add(p0Var.f);
             if (nsVar.o.size() > 7) {
                 nsVar.o.remove(0);
             }
         } else if (nsVar.o.size() <= 1) {
             return;
         } else {
-            nsVar.o.remove(o0Var.f);
+            nsVar.o.remove(p0Var.f);
         }
         nsVar.P.setSelectedEmojis(nsVar.o);
         if (reactionsWindow != null) {
-            ch.w wVar = reactionsWindow.m;
+            ch.x xVar = reactionsWindow.m;
             nsVar.P.p(null, null, false);
-            if (wVar != null) {
-                wVar.setSelectedReactions(nsVar.o);
-                wVar.setRecentReactions(nsVar.P.V);
+            if (xVar != null) {
+                xVar.setSelectedReactions(nsVar.o);
+                xVar.setRecentReactions(nsVar.P.W);
             }
             reactionsWindow.d();
         }
     }
 
-    @Override // org.telegram.ui.Components.hi0
-    public /* synthetic */ boolean v() {
+    @Override // org.telegram.ui.Components.li0
+    public /* synthetic */ boolean r() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.hi0
-    public /* synthetic */ void M() {
+    @Override // org.telegram.ui.Components.li0
+    public /* synthetic */ void K() {
     }
 
-    @Override // org.telegram.ui.Components.hi0
-    public /* synthetic */ void L(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z9) {
+    @Override // org.telegram.ui.Components.li0
+    public /* synthetic */ void J(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
     }
 }

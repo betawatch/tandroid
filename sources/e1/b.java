@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
-import c8.a1;
-import c8.qb;
+import c8.c1;
+import c8.rb;
 import c8.vc;
-import di.z0;
+import di.s2;
 import gd.k;
 import j7.f;
 import j7.h;
@@ -24,7 +24,7 @@ import q1.e;
 import rd.l;
 import v0.g;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class b implements l {
                         if (a10 instanceof v0.f) {
                             CredentialProviderPlayServicesImpl.Companion.getClass();
                             if (!a1.g.a(cancellationSignal)) {
-                                executor.execute(new z0(27, gVar, (v0.f) a10));
+                                executor.execute(new s2(15, gVar, (v0.f) a10));
                             }
                         }
                     }
@@ -128,20 +128,20 @@ public final /* synthetic */ class b implements l {
                 e eVar2 = sa.h.c;
                 e eVar3 = sa.h.d;
                 String str3 = "";
-                if (((String) a1.a(bVar, eVar3, "")).equals(str)) {
+                if (((String) c1.a(bVar, eVar3, "")).equals(str)) {
                     e d = sa.h.d(bVar, str);
                     if (d != null && !d.a.equals(str2)) {
                         sa.h.f(bVar, str);
-                        HashSet hashSet = new HashSet((Collection) a1.a(bVar, eVar, new HashSet()));
+                        HashSet hashSet = new HashSet((Collection) c1.a(bVar, eVar, new HashSet()));
                         hashSet.add(str);
                         bVar.e(eVar, hashSet);
                     }
                     return null;
                 }
-                long longValue = ((Long) a1.a(bVar, eVar2, 0L)).longValue();
+                long longValue = ((Long) c1.a(bVar, eVar2, 0L)).longValue();
                 long j10 = 1;
                 if (longValue + 1 == 30) {
-                    long longValue2 = ((Long) a1.a(bVar, eVar2, 0L)).longValue();
+                    long longValue2 = ((Long) c1.a(bVar, eVar2, 0L)).longValue();
                     Set hashSet2 = new HashSet();
                     String str4 = null;
                     for (Map.Entry entry : bVar.a().entrySet()) {
@@ -163,14 +163,14 @@ public final /* synthetic */ class b implements l {
                     obj2 = null;
                     HashSet hashSet3 = new HashSet(hashSet2);
                     hashSet3.remove(str4);
-                    bVar.e(qb.b(str3), hashSet3);
+                    bVar.e(rb.b(str3), hashSet3);
                     longValue = longValue2 - j3;
                     bVar.e(eVar2, Long.valueOf(longValue));
                 } else {
                     j3 = 1;
                     obj2 = null;
                 }
-                HashSet hashSet4 = new HashSet((Collection) a1.a(bVar, eVar, new HashSet()));
+                HashSet hashSet4 = new HashSet((Collection) c1.a(bVar, eVar, new HashSet()));
                 hashSet4.add(str);
                 bVar.e(eVar, hashSet4);
                 bVar.e(eVar2, Long.valueOf(longValue + j3));

@@ -1,54 +1,165 @@
 package com.google.android.gms.internal.vision;
 
-import java.util.ListIterator;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class r2 implements ListIterator {
-    public ListIterator a;
+public final class r2 {
+    public static final r2 f = new r2(0, new int[0], new Object[0], false);
+    public int a;
+    public int[] b;
+    public Object[] c;
+    public int d = -1;
+    public boolean e;
 
-    @Override // java.util.ListIterator
-    public final /* synthetic */ void add(Object obj) {
-        throw new UnsupportedOperationException();
+    public r2(int i7, int[] iArr, Object[] objArr, boolean z10) {
+        this.a = i7;
+        this.b = iArr;
+        this.c = objArr;
+        this.e = z10;
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final boolean hasNext() {
-        return this.a.hasNext();
+    public static r2 b() {
+        return new r2(0, new int[8], new Object[8], true);
     }
 
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.a.hasPrevious();
+    public final void a(int i7, Object obj) {
+        if (!this.e) {
+            throw new UnsupportedOperationException();
+        }
+        int i10 = this.a;
+        int[] iArr = this.b;
+        if (i10 == iArr.length) {
+            int i11 = i10 + (i10 < 4 ? 8 : i10 >> 1);
+            this.b = Arrays.copyOf(iArr, i11);
+            this.c = Arrays.copyOf(this.c, i11);
+        }
+        int[] iArr2 = this.b;
+        int i12 = this.a;
+        iArr2[i12] = i7;
+        this.c[i12] = obj;
+        this.a = i12 + 1;
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return (String) this.a.next();
+    public final void c(y1 y1Var) {
+        if (this.a == 0) {
+            return;
+        }
+        y1Var.getClass();
+        r0 r0Var = (r0) y1Var.a;
+        for (int i7 = 0; i7 < this.a; i7++) {
+            int i10 = this.b[i7];
+            Object obj = this.c[i7];
+            int i11 = i10 >>> 3;
+            int i12 = i10 & 7;
+            if (i12 == 0) {
+                long longValue = ((Long) obj).longValue();
+                r0Var.D(i11, 0);
+                r0Var.E(longValue);
+            } else if (i12 == 1) {
+                long longValue2 = ((Long) obj).longValue();
+                r0Var.D(i11, 1);
+                r0Var.K(longValue2);
+            } else if (i12 == 2) {
+                y1Var.a(i11, (q0) obj);
+            } else if (i12 == 3) {
+                r0Var.D(i11, 3);
+                ((r2) obj).c(y1Var);
+                r0Var.D(i11, 4);
+            } else {
+                if (i12 != 5) {
+                    int i13 = n1.a;
+                    throw new RuntimeException(new q1("Protocol message tag had invalid wire type."));
+                }
+                int intValue = ((Integer) obj).intValue();
+                r0Var.D(i11, 5);
+                r0Var.M(intValue);
+            }
+        }
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.a.nextIndex();
+    public final int d() {
+        int N;
+        int i7 = this.d;
+        if (i7 != -1) {
+            return i7;
+        }
+        int i10 = 0;
+        for (int i11 = 0; i11 < this.a; i11++) {
+            int i12 = this.b[i11];
+            int i13 = i12 >>> 3;
+            int i14 = i12 & 7;
+            if (i14 == 0) {
+                N = r0.N(i13, ((Long) this.c[i11]).longValue());
+            } else if (i14 == 1) {
+                ((Long) this.c[i11]).getClass();
+                N = r0.R(i13);
+            } else if (i14 == 2) {
+                N = r0.J(i13, (q0) this.c[i11]);
+            } else if (i14 == 3) {
+                i10 = ((r2) this.c[i11]).d() + (r0.y(i13) << 1) + i10;
+            } else {
+                if (i14 != 5) {
+                    int i15 = n1.a;
+                    throw new IllegalStateException(new q1("Protocol message tag had invalid wire type."));
+                }
+                ((Integer) this.c[i11]).getClass();
+                N = r0.V(i13);
+            }
+            i10 = N + i10;
+        }
+        this.d = i10;
+        return i10;
     }
 
-    @Override // java.util.ListIterator
-    public final /* synthetic */ Object previous() {
-        return (String) this.a.previous();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || !(obj instanceof r2)) {
+            return false;
+        }
+        r2 r2Var = (r2) obj;
+        int i7 = this.a;
+        if (i7 == r2Var.a) {
+            int[] iArr = this.b;
+            int[] iArr2 = r2Var.b;
+            int i10 = 0;
+            while (true) {
+                if (i10 >= i7) {
+                    Object[] objArr = this.c;
+                    Object[] objArr2 = r2Var.c;
+                    int i11 = this.a;
+                    for (int i12 = 0; i12 < i11; i12++) {
+                        if (objArr[i12].equals(objArr2[i12])) {
+                        }
+                    }
+                    return true;
+                }
+                if (iArr[i10] != iArr2[i10]) {
+                    break;
+                }
+                i10++;
+            }
+        }
+        return false;
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.a.previousIndex();
-    }
-
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.ListIterator
-    public final /* synthetic */ void set(Object obj) {
-        throw new UnsupportedOperationException();
+    public final int hashCode() {
+        int i7 = this.a;
+        int i10 = (i7 + 527) * 31;
+        int[] iArr = this.b;
+        int i11 = 17;
+        int i12 = 17;
+        for (int i13 = 0; i13 < i7; i13++) {
+            i12 = (i12 * 31) + iArr[i13];
+        }
+        int i14 = (i10 + i12) * 31;
+        Object[] objArr = this.c;
+        int i15 = this.a;
+        for (int i16 = 0; i16 < i15; i16++) {
+            i11 = (i11 * 31) + objArr[i16].hashCode();
+        }
+        return i14 + i11;
     }
 }

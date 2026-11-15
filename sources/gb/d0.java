@@ -1,12 +1,12 @@
 package gb;
 
-import a8.ab;
+import a8.bb;
 import android.content.Context;
 import android.os.Process;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d0 {
     public final Context a;
@@ -16,12 +16,12 @@ public final class d0 {
     public final gd.i e;
     public boolean f;
 
-    public d0(Context appContext, k1 uuidGenerator) {
+    public d0(Context appContext, i1 uuidGenerator) {
         kotlin.jvm.internal.j.e(appContext, "appContext");
         kotlin.jvm.internal.j.e(uuidGenerator, "uuidGenerator");
         this.a = appContext;
         final int i7 = 0;
-        this.b = ab.b(new rd.a(this) { // from class: gb.c0
+        this.b = bb.b(new rd.a(this) { // from class: gb.c0
             public final /* synthetic */ d0 b;
 
             {
@@ -32,16 +32,16 @@ public final class d0 {
             public final Object invoke() {
                 switch (i7) {
                     case 0:
-                        return ((f0) this.b.e.getValue()).a;
+                        return ((e0) this.b.e.getValue()).a;
                     default:
-                        return g0.b(this.b.a);
+                        return f0.b(this.b.a);
                 }
             }
         });
         this.c = Process.myPid();
-        this.d = ab.b(new androidx.activity.d(uuidGenerator, 1));
+        this.d = bb.b(new androidx.activity.d(uuidGenerator, 1));
         final int i10 = 1;
-        this.e = ab.b(new rd.a(this) { // from class: gb.c0
+        this.e = bb.b(new rd.a(this) { // from class: gb.c0
             public final /* synthetic */ d0 b;
 
             {
@@ -52,9 +52,9 @@ public final class d0 {
             public final Object invoke() {
                 switch (i10) {
                     case 0:
-                        return ((f0) this.b.e.getValue()).a;
+                        return ((e0) this.b.e.getValue()).a;
                     default:
-                        return g0.b(this.b.a);
+                        return f0.b(this.b.a);
                 }
             }
         });

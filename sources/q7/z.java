@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class z extends s {
     public static final z h;
@@ -207,16 +207,16 @@ public final class z extends s {
         return this.f.size();
     }
 
-    public final int t(Object obj, boolean z9) {
+    public final int t(Object obj, boolean z10) {
         obj.getClass();
         int binarySearch = Collections.binarySearch(this.f, obj, this.d);
-        return binarySearch >= 0 ? z9 ? binarySearch + 1 : binarySearch : ~binarySearch;
+        return binarySearch >= 0 ? z10 ? binarySearch + 1 : binarySearch : ~binarySearch;
     }
 
-    public final int u(Object obj, boolean z9) {
+    public final int u(Object obj, boolean z10) {
         obj.getClass();
         int binarySearch = Collections.binarySearch(this.f, obj, this.d);
-        return binarySearch >= 0 ? z9 ? binarySearch : binarySearch + 1 : ~binarySearch;
+        return binarySearch >= 0 ? z10 ? binarySearch : binarySearch + 1 : ~binarySearch;
     }
 
     public final z v(int i7, int i10) {

@@ -1,6 +1,6 @@
 package q6;
 
-import a8.i8;
+import a8.j8;
 import android.accounts.Account;
 import android.content.AttributionSource;
 import android.content.Context;
@@ -23,7 +23,7 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final n6.c[] D = new n6.c[0];
@@ -54,7 +54,7 @@ public abstract class d {
     public final int v;
     public final String w;
     public volatile String x;
-    public volatile z2.d y;
+    public volatile x9.d y;
     public n6.a z;
 
     public d(Context context, Looper looper, l0 l0Var, int i7, n nVar, n nVar2, String str) {
@@ -268,7 +268,7 @@ public abstract class d {
             append2.println(sb3.toString());
         }
         if (this.e > j3) {
-            printWriter.append((CharSequence) str).append("lastFailedStatus=").append((CharSequence) i8.a(this.d));
+            printWriter.append((CharSequence) str).append("lastFailedStatus=").append((CharSequence) j8.a(this.d));
             PrintWriter append3 = printWriter.append(" lastFailedTime=");
             long j12 = this.e;
             String format3 = simpleDateFormat.format(new Date(j12));
@@ -302,15 +302,15 @@ public abstract class d {
         } else if (this.y == null) {
             attributionTag = this.x;
         } else {
-            AttributionSource attributionSource = (AttributionSource) this.y.b;
+            AttributionSource attributionSource = (AttributionSource) this.y.a;
             attributionTag = attributionSource == null ? this.x : attributionSource.getAttributionTag() == null ? this.x : attributionSource.getAttributionTag();
         }
         String str = attributionTag;
         int i7 = this.v;
         int i10 = n6.e.a;
-        Scope[] scopeArr = g.E;
+        Scope[] scopeArr = g.F;
         Bundle bundle = new Bundle();
-        n6.c[] cVarArr = g.F;
+        n6.c[] cVarArr = g.G;
         g gVar = new g(6, i7, i10, null, null, scopeArr, bundle, null, cVarArr, cVarArr, true, 0, false, str);
         gVar.d = this.h.getPackageName();
         gVar.h = m10;
@@ -418,23 +418,23 @@ public abstract class d {
     }
 
     public final boolean s() {
-        boolean z9;
+        boolean z10;
         synchronized (this.l) {
-            z9 = this.s == 4;
+            z10 = this.s == 4;
         }
-        return z9;
+        return z10;
     }
 
     public final boolean t() {
-        boolean z9;
+        boolean z10;
         synchronized (this.l) {
             int i7 = this.s;
-            z9 = true;
+            z10 = true;
             if (i7 != 2 && i7 != 3) {
-                z9 = false;
+                z10 = false;
             }
         }
-        return z9;
+        return z10;
     }
 
     public void u(n6.a aVar) {

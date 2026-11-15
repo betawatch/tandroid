@@ -1,103 +1,56 @@
 package aa;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
+import android.os.Process;
 import android.util.Log;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import org.telegram.ui.Cells.f1;
+import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class x {
-    public final SharedPreferences a;
-    public final o9.g b;
-    public final Object c;
-    public TaskCompletionSource d;
-    public boolean e;
-    public boolean f;
-    public Boolean g;
-    public final TaskCompletionSource h;
+public final class x implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0078  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public x(o9.g gVar) {
-        Boolean bool;
-        Boolean bool2;
-        PackageManager packageManager;
-        ApplicationInfo applicationInfo;
-        Bundle bundle;
-        Object obj = new Object();
-        this.c = obj;
-        this.d = new TaskCompletionSource();
-        this.e = false;
-        this.f = false;
-        this.h = new TaskCompletionSource();
-        gVar.a();
-        Context context = gVar.a;
-        this.b = gVar;
-        SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.firebase.crashlytics", 0);
-        this.a = sharedPreferences;
-        if (sharedPreferences.contains("firebase_crashlytics_collection_enabled")) {
-            this.f = false;
-            bool = Boolean.valueOf(sharedPreferences.getBoolean("firebase_crashlytics_collection_enabled", true));
-        } else {
-            bool = null;
-        }
-        if (bool == null) {
-            try {
-                packageManager = context.getPackageManager();
-            } catch (PackageManager.NameNotFoundException e10) {
-                Log.e("FirebaseCrashlytics", "Could not read data collection permission from manifest", e10);
-            }
-            if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null && bundle.containsKey("firebase_crashlytics_collection_enabled")) {
-                bool2 = Boolean.valueOf(applicationInfo.metaData.getBoolean("firebase_crashlytics_collection_enabled"));
-                if (bool2 != null) {
-                    this.f = false;
-                    bool = null;
-                } else {
-                    this.f = true;
-                    bool = Boolean.valueOf(Boolean.TRUE.equals(bool2));
+    public x(Runnable runnable) {
+        this.b = runnable;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        Process.setThreadPriority(10);
+        switch (this.a) {
+            case 0:
+                ((Runnable) this.b).run();
+                break;
+            default:
+                ExecutorService executorService = (ExecutorService) this.b;
+                try {
+                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                        Log.d("FirebaseCrashlytics", "Executing shutdown hook for awaitEvenIfOnMainThread task continuation executor", null);
+                    }
+                    executorService.shutdown();
+                    if (!executorService.awaitTermination(2L, TimeUnit.SECONDS)) {
+                        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                            Log.d("FirebaseCrashlytics", "awaitEvenIfOnMainThread task continuation executor did not shut down in the allocated time. Requesting immediate shutdown.", null);
+                        }
+                        executorService.shutdownNow();
+                        break;
+                    }
+                } catch (InterruptedException unused) {
+                    Locale locale = Locale.US;
+                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                        Log.d("FirebaseCrashlytics", "Interrupted while waiting for awaitEvenIfOnMainThread task continuation executor to shut down. Requesting immediate shutdown.", null);
+                    }
+                    executorService.shutdownNow();
+                    return;
                 }
-            }
-            bool2 = null;
-            if (bool2 != null) {
-            }
-        }
-        this.g = bool;
-        synchronized (obj) {
-            try {
-                if (a()) {
-                    this.d.trySetResult(null);
-                    this.e = true;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
+                break;
         }
     }
 
-    public final synchronized boolean a() {
-        boolean z9;
-        Boolean bool = this.g;
-        if (bool != null) {
-            z9 = bool.booleanValue();
-        } else {
-            try {
-                z9 = this.b.h();
-            } catch (IllegalStateException unused) {
-                z9 = false;
-            }
-        }
-        String m10 = f1.m("Crashlytics automatic data collection ", z9 ? "ENABLED" : "DISABLED", " by ", this.g == null ? "global Firebase setting" : this.f ? "firebase_crashlytics_collection_enabled manifest flag" : "API", ".");
-        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", m10, null);
-        }
-        return z9;
+    public x(ExecutorService executorService) {
+        TimeUnit timeUnit = TimeUnit.SECONDS;
+        this.b = executorService;
     }
 }

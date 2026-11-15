@@ -1,29 +1,28 @@
 package n4;
 
-import a8.ia;
+import a8.ja;
 import android.util.Pair;
 import b3.i;
 import e2.t0;
-import f3.j0;
+import f3.i0;
 import f3.o;
 import f3.p;
 import f3.q;
 import f3.s;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import h9.g0;
-import h9.i0;
-import h9.t1;
+import h9.s1;
 import j2.l;
 import java.nio.ByteOrder;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c implements o {
     public q a;
-    public j0 b;
+    public i0 b;
     public int c;
     public long d;
     public b e;
@@ -38,8 +37,8 @@ public final class c implements o {
     @Override // f3.o
     public final void c(q qVar) {
         this.a = qVar;
-        this.b = qVar.O1(0, 1);
-        qVar.U0();
+        this.b = qVar.d2(0, 1);
+        qVar.d1();
     }
 
     @Override // f3.o
@@ -53,8 +52,8 @@ public final class c implements o {
 
     @Override // f3.o
     public final List e() {
-        g0 g0Var = i0.b;
-        return t1.e;
+        g0 g0Var = h9.i0.b;
+        return s1.e;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:73:0x0213, code lost:
@@ -75,21 +74,21 @@ public final class c implements o {
         byte[] bArr;
         int i7;
         this.b.getClass();
-        String str = m0.a;
+        String str = l0.a;
         int i10 = this.c;
         int i11 = 4;
         if (i10 == 0) {
-            ia.p(pVar.getPosition() == 0);
+            ja.p(pVar.getPosition() == 0);
             int i12 = this.f;
             if (i12 != -1) {
-                pVar.s(i12);
+                pVar.m(i12);
                 this.c = 4;
                 return 0;
             }
             if (!d.a(pVar)) {
                 throw t0.a(null, "Unsupported or unrecognized wav file type.");
             }
-            pVar.s((int) (pVar.l() - pVar.getPosition()));
+            pVar.m((int) (pVar.j() - pVar.getPosition()));
             this.c = 1;
             return 0;
         }
@@ -98,13 +97,13 @@ public final class c implements o {
             x xVar = new x(8);
             i b10 = i.b(pVar, xVar);
             if (b10.a != 1685272116) {
-                pVar.q();
+                pVar.l();
             } else {
-                pVar.m(8);
+                pVar.k(8);
                 xVar.N(0);
-                pVar.b(0, 8, xVar.a);
+                pVar.c(0, 8, xVar.a);
                 j3 = xVar.p();
-                pVar.s(((int) b10.b) + 8);
+                pVar.m(((int) b10.b) + 8);
             }
             this.d = j3;
             this.c = 2;
@@ -115,15 +114,15 @@ public final class c implements o {
                 if (i10 != 4) {
                     throw new IllegalStateException();
                 }
-                ia.p(this.g != -1);
+                ja.p(this.g != -1);
                 long position = this.g - pVar.getPosition();
                 b bVar = this.e;
                 bVar.getClass();
                 return bVar.a(pVar, position) ? -1 : 0;
             }
-            pVar.q();
+            pVar.l();
             i b11 = d.b(1684108385, pVar, new x(8));
-            pVar.s(8);
+            pVar.m(8);
             Pair create = Pair.create(Long.valueOf(pVar.getPosition()), Long.valueOf(b11.b));
             this.f = ((Long) create.first).intValue();
             long longValue = ((Long) create.second).longValue();
@@ -145,8 +144,8 @@ public final class c implements o {
         }
         x xVar2 = new x(16);
         long j11 = d.b(1718449184, pVar, xVar2).b;
-        ia.p(j11 >= 16);
-        pVar.b(0, 16, xVar2.a);
+        ja.p(j11 >= 16);
+        pVar.c(0, 16, xVar2.a);
         xVar2.N(0);
         int t6 = xVar2.t();
         int t10 = xVar2.t();
@@ -157,7 +156,7 @@ public final class c implements o {
         int i13 = ((int) j11) - 16;
         if (i13 > 0) {
             bArr = new byte[i13];
-            pVar.b(0, i13, bArr);
+            pVar.c(0, i13, bArr);
             if (t6 == 65534 && i13 == 24) {
                 x xVar3 = new x(bArr);
                 xVar3.t();
@@ -180,9 +179,9 @@ public final class c implements o {
                 }
             }
         } else {
-            bArr = m0.b;
+            bArr = l0.b;
         }
-        pVar.s((int) (pVar.l() - pVar.getPosition()));
+        pVar.m((int) (pVar.j() - pVar.getPosition()));
         i2.s sVar2 = new i2.s();
         sVar2.a = t10;
         sVar2.b = s5;
@@ -205,7 +204,7 @@ public final class c implements o {
                 }
                 this.e = new l(this.a, this.b, sVar2, "audio/raw", i7);
             }
-            i11 = m0.D(t12, ByteOrder.LITTLE_ENDIAN);
+            i11 = l0.D(t12, ByteOrder.LITTLE_ENDIAN);
             i7 = i11;
             if (i7 != 0) {
             }

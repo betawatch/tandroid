@@ -1,24 +1,70 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class i91 extends org.telegram.ui.Components.x50 {
-    public final /* synthetic */ long u2;
-    public final /* synthetic */ k91 v2;
+public final class i91 extends v4.k {
+    public Runnable F;
+    public int G;
+    public final /* synthetic */ u91 H;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i91(k91 k91Var, Context context, int i7, a0.h hVar, long j3, org.telegram.ui.ActionBar.f2 f2Var, long j10) {
-        super(context, i7, hVar, j3, f2Var, null);
-        this.v2 = k91Var;
-        this.u2 = j10;
+    public i91(u91 u91Var) {
+        this.H = u91Var;
     }
 
-    @Override // org.telegram.ui.Components.x50
-    public final boolean R0() {
-        TLRPC.Chat M0 = this.v2.b.getMessagesController().M0(Long.valueOf(this.u2));
-        return M0 != null && org.telegram.messenger.t3.y(3, M0);
+    @Override // v4.k
+    public final void F() {
+        if (this.G == -1) {
+            this.G = this.H.getNotificationCenter().q(null, this.G, false);
+            Runnable runnable = this.F;
+            if (runnable != null) {
+                org.telegram.messenger.g0.r(runnable);
+                this.F = null;
+            }
+        }
+    }
+
+    @Override // v4.k
+    public final void N() {
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+            this.F = null;
+        }
+        h91 h91Var = new h91(this, 0);
+        this.F = h91Var;
+        org.telegram.messenger.g0.h3(h91Var);
+    }
+
+    @Override // v4.k, v4.m0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+        }
+        h91 h91Var = new h91(this, 1);
+        this.F = h91Var;
+        org.telegram.messenger.g0.h3(h91Var);
+    }
+
+    @Override // v4.k
+    public final void z(v4.e1 e1Var) {
+        u91 u91Var = this.H;
+        View view = u91Var.d1;
+        if (view == e1Var.a) {
+            view.setTranslationX(0.0f);
+            z81 z81Var = u91Var.P;
+            if (z81Var != null) {
+                z81Var.G.clear();
+            }
+            View view2 = u91Var.d1;
+            if (view2 instanceof r91) {
+                r91 r91Var = (r91) view2;
+                r91Var.setTopicIcon(r91Var.d5);
+            }
+            u91Var.d1 = null;
+        }
     }
 }

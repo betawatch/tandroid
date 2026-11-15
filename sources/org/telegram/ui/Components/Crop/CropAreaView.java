@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
+import com.google.android.gms.internal.vision.e2;
+import ki.s3;
 import og.a;
 import og.m;
 import og.n;
@@ -23,59 +25,59 @@ import og.o;
 import org.telegram.messenger.g0;
 import p1.g;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class CropAreaView extends ViewGroup {
-    public RectF D;
-    public int E;
+    public RectF E;
     public int F;
-    public float G;
+    public int G;
     public float H;
-    public boolean I;
+    public float I;
     public boolean J;
-    public float K;
+    public boolean K;
     public float L;
     public float M;
-    public long N;
-    public Paint O;
+    public float N;
+    public long O;
     public Paint P;
     public Paint Q;
     public Paint R;
     public Paint S;
     public Paint T;
-    public AccelerateDecelerateInterpolator U;
-    public float V;
+    public Paint U;
+    public AccelerateDecelerateInterpolator V;
     public float W;
     public int a;
-    public boolean a0;
+    public float a0;
     public float b;
-    public float b0;
+    public boolean b0;
     public float c;
-    public ObjectAnimator c0;
+    public float c0;
     public RectF d;
-    public a d0;
+    public ObjectAnimator d0;
     public RectF e;
-    public boolean e0;
+    public a e0;
     public RectF f;
     public boolean f0;
-    public Bitmap g0;
+    public boolean g0;
     public RectF h;
-    public Paint h0;
-    public String i0;
-    public StaticLayout j0;
-    public AnimatorSet k0;
-    public RectF l0;
-    public TextPaint m0;
+    public Bitmap h0;
+    public Paint i0;
+    public String j0;
+    public StaticLayout k0;
+    public AnimatorSet l0;
+    public RectF m0;
     public RectF n;
-    public float n0;
+    public TextPaint n0;
     public float o0;
     public float p0;
     public float q0;
     public RectF r;
-    public int r0;
+    public float r0;
     public RectF s;
     public int s0;
     public int t0;
+    public int u0;
     public RectF w;
     public float x;
     public RectF y;
@@ -93,7 +95,7 @@ public class CropAreaView extends ViewGroup {
     }
 
     private float getGridProgress() {
-        return this.b0;
+        return this.c0;
     }
 
     private void setCropBottom(float f10) {
@@ -117,7 +119,7 @@ public class CropAreaView extends ViewGroup {
     }
 
     private void setGridProgress(float f10) {
-        this.b0 = f10;
+        this.c0 = f10;
         invalidate();
     }
 
@@ -126,16 +128,16 @@ public class CropAreaView extends ViewGroup {
         float f12;
         float f13;
         float f14;
-        float f15 = this.V;
-        float f16 = !this.a0 ? g0.m : 0;
-        float measuredHeight = ((getMeasuredHeight() - this.G) - this.H) - f16;
+        float f15 = this.W;
+        float f16 = !this.b0 ? g0.m : 0;
+        float measuredHeight = ((getMeasuredHeight() - this.H) - this.I) - f16;
         float measuredWidth = getMeasuredWidth() / measuredHeight;
         float f17 = f15 * 2.0f;
         float min = Math.min(getMeasuredWidth(), measuredHeight) - f17;
         float measuredWidth2 = getMeasuredWidth() - f17;
         float f18 = measuredHeight - f17;
         float measuredWidth3 = getMeasuredWidth() / 2.0f;
-        float f19 = (measuredHeight / 2.0f) + f16 + this.H;
+        float f19 = (measuredHeight / 2.0f) + f16 + this.I;
         if (Math.abs(1.0f - f10) < 1.0E-4d) {
             float f20 = min / 2.0f;
             f14 = measuredWidth3 - f20;
@@ -171,53 +173,53 @@ public class CropAreaView extends ViewGroup {
         rectF.set(this.y);
     }
 
-    public final void e(int i7, int i10, boolean z9, boolean z10) {
-        this.f0 = z10;
-        float f10 = z9 ? i10 / i7 : i7 / i10;
-        if (!z10) {
+    public final void e(int i7, int i10, boolean z10, boolean z11) {
+        this.g0 = z11;
+        float f10 = z10 ? i10 / i7 : i7 / i10;
+        if (!z11) {
             f10 = 1.0f;
             this.x = 1.0f;
         }
         setActualRect(f10);
     }
 
-    public final void f(boolean z9, boolean z10) {
-        this.J = z9;
-        if (!z9) {
-            this.L = 1.0f;
+    public final void f(boolean z10, boolean z11) {
+        this.K = z10;
+        if (!z10) {
+            this.M = 1.0f;
             return;
         }
-        this.L = z10 ? 0.0f : 1.0f;
-        this.N = SystemClock.elapsedRealtime();
+        this.M = z11 ? 0.0f : 1.0f;
+        this.O = SystemClock.elapsedRealtime();
         invalidate();
     }
 
-    public final void g(int i7, boolean z9) {
-        ObjectAnimator objectAnimator = this.c0;
-        if (objectAnimator != null && (!z9 || this.t0 != i7)) {
+    public final void g(int i7, boolean z10) {
+        ObjectAnimator objectAnimator = this.d0;
+        if (objectAnimator != null && (!z10 || this.u0 != i7)) {
             objectAnimator.cancel();
-            this.c0 = null;
+            this.d0 = null;
         }
-        int i10 = this.t0;
+        int i10 = this.u0;
         if (i10 == i7) {
             return;
         }
-        this.s0 = i10;
-        this.t0 = i7;
+        this.t0 = i10;
+        this.u0 = i7;
         float f10 = i7 == 1 ? 0.0f : 1.0f;
-        if (!z9) {
-            this.b0 = f10;
+        if (!z10) {
+            this.c0 = f10;
             invalidate();
             return;
         }
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "gridProgress", this.b0, f10);
-        this.c0 = ofFloat;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "gridProgress", this.c0, f10);
+        this.d0 = ofFloat;
         ofFloat.setDuration(200L);
-        this.c0.addListener(new m.a(this, 3));
+        this.d0.addListener(new s3(this, 4));
         if (i7 == 1) {
-            this.c0.setStartDelay(200L);
+            this.d0.setStartDelay(200L);
         }
-        this.c0.start();
+        this.d0.start();
     }
 
     public float getAspectRatio() {
@@ -262,7 +264,7 @@ public class CropAreaView extends ViewGroup {
     }
 
     public Interpolator getInterpolator() {
-        return this.U;
+        return this.V;
     }
 
     public float getLockAspectRatio() {
@@ -271,33 +273,33 @@ public class CropAreaView extends ViewGroup {
 
     public RectF getTargetRectToFill() {
         float aspectRatio = getAspectRatio();
-        RectF rectF = this.l0;
+        RectF rectF = this.m0;
         a(rectF, aspectRatio);
         return rectF;
     }
 
-    public final void h(boolean z9) {
+    public final void h(boolean z10) {
         try {
             View decorView = ((Activity) getContext()).getWindow().getDecorView();
             int systemUiVisibility = decorView.getSystemUiVisibility();
-            decorView.setSystemUiVisibility(z9 ? systemUiVisibility | 4 : systemUiVisibility & (-5));
+            decorView.setSystemUiVisibility(z10 ? systemUiVisibility | 4 : systemUiVisibility & (-5));
         } catch (Exception unused) {
         }
     }
 
     public final void i() {
-        if (this.i0 == null) {
-            this.j0 = null;
+        if (this.j0 == null) {
+            this.k0 = null;
             return;
         }
-        if (this.m0 == null) {
+        if (this.n0 == null) {
             TextPaint textPaint = new TextPaint();
-            this.m0 = textPaint;
+            this.n0 = textPaint;
             textPaint.setColor(i0.a.o(-1, 120));
-            this.m0.setTextSize(g0.L(13.0f));
-            this.m0.setTextAlign(Paint.Align.CENTER);
+            this.n0.setTextSize(g0.L(13.0f));
+            this.n0.setTextAlign(Paint.Align.CENTER);
         }
-        this.j0 = new StaticLayout(this.i0, this.m0, getMeasuredWidth() - g0.L(120.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.k0 = new StaticLayout(this.j0, this.n0, getMeasuredWidth() - g0.L(120.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
     }
 
     public final void j() {
@@ -352,18 +354,18 @@ public class CropAreaView extends ViewGroup {
         int i13;
         int i14;
         Paint paint3;
-        Paint paint4 = this.T;
-        boolean z9 = this.a0;
-        float f11 = this.V;
-        Paint paint5 = this.S;
-        Paint paint6 = this.Q;
-        Paint paint7 = this.P;
-        Paint paint8 = this.R;
-        Paint paint9 = this.O;
-        if (this.f0) {
-            int L = g0.L(2.0f / this.o0);
-            int L2 = g0.L(16.0f / this.o0);
-            int L3 = g0.L(3.0f / this.o0);
+        Paint paint4 = this.U;
+        boolean z10 = this.b0;
+        float f11 = this.W;
+        Paint paint5 = this.T;
+        Paint paint6 = this.R;
+        Paint paint7 = this.Q;
+        Paint paint8 = this.S;
+        Paint paint9 = this.P;
+        if (this.g0) {
+            int L = g0.L(2.0f / this.p0);
+            int L2 = g0.L(16.0f / this.p0);
+            int L3 = g0.L(3.0f / this.p0);
             RectF rectF = this.y;
             float f12 = rectF.left;
             int i15 = ((int) f12) - L;
@@ -373,22 +375,22 @@ public class CropAreaView extends ViewGroup {
             int i18 = ((int) (rectF.right - f12)) + i17;
             int i19 = i17 + ((int) (rectF.bottom - f13));
             canvas.save();
-            canvas.translate(this.p0, this.q0);
-            float f14 = this.o0;
+            canvas.translate(this.q0, this.r0);
+            float f14 = this.p0;
             float f15 = (i18 / 2) + i15;
             float f16 = (i19 / 2) + i16;
             canvas.scale(f14, f14, f15, f16);
-            canvas.rotate(this.n0, f15, f16);
-            if (this.I) {
+            canvas.rotate(this.o0, f15, f16);
+            if (this.J) {
                 int i20 = (-getWidth()) * 4;
                 int i21 = (-getHeight()) * 4;
                 int width = getWidth() * 4;
                 int height = getHeight() * 4;
-                float f17 = this.K;
+                float f17 = this.L;
                 if (f17 >= 0.0f) {
                     paint9.setAlpha((int) (f17 * 255.0f));
                 } else {
-                    paint9.setAlpha((int) (255.0f - (this.L * 127.0f)));
+                    paint9.setAlpha((int) (255.0f - (this.M * 127.0f)));
                 }
                 float f18 = i20;
                 float f19 = width;
@@ -410,28 +412,28 @@ public class CropAreaView extends ViewGroup {
                 i10 = L2;
                 i11 = i15;
             }
-            if (!this.J) {
+            if (!this.K) {
                 return;
             }
             int i22 = L3 - i7;
             int i23 = L3 * 2;
             int i24 = i18 - i23;
             int i25 = i19 - i23;
-            int i26 = this.t0;
-            if (i26 == 1 && this.b0 > 0.0f) {
-                i26 = this.s0;
+            int i26 = this.u0;
+            if (i26 == 1 && this.c0 > 0.0f) {
+                i26 = this.t0;
             }
-            float f22 = this.M;
+            float f22 = this.N;
             if (f22 >= 0.0f) {
-                paint7.setAlpha((int) (this.b0 * 26.0f * f22));
-                paint6.setAlpha((int) (this.b0 * 178.0f * this.M));
+                paint7.setAlpha((int) (this.c0 * 26.0f * f22));
+                paint6.setAlpha((int) (this.c0 * 178.0f * this.N));
+                paint5.setAlpha((int) (this.N * 178.0f));
+                paint8.setAlpha((int) (this.N * 255.0f));
+            } else {
+                paint7.setAlpha((int) (this.c0 * 26.0f * this.M));
+                paint6.setAlpha((int) (this.c0 * 178.0f * this.M));
                 paint5.setAlpha((int) (this.M * 178.0f));
                 paint8.setAlpha((int) (this.M * 255.0f));
-            } else {
-                paint7.setAlpha((int) (this.b0 * 26.0f * this.L));
-                paint6.setAlpha((int) (this.b0 * 178.0f * this.L));
-                paint5.setAlpha((int) (this.L * 178.0f));
-                paint8.setAlpha((int) (this.L * 255.0f));
             }
             float f23 = i11 + i22;
             float f24 = i16 + i22;
@@ -540,31 +542,31 @@ public class CropAreaView extends ViewGroup {
         } else {
             float f51 = f11 * 2.0f;
             float measuredWidth = getMeasuredWidth() - f51;
-            float measuredHeight = (((getMeasuredHeight() - this.G) - (!z9 ? g0.m : 0)) - this.H) - f51;
+            float measuredHeight = (((getMeasuredHeight() - this.H) - (!z10 ? g0.m : 0)) - this.I) - f51;
             this.a = (int) Math.min(measuredWidth, measuredHeight);
-            Bitmap bitmap = this.g0;
+            Bitmap bitmap = this.h0;
             if (bitmap == null || bitmap.getWidth() != this.a) {
-                Bitmap bitmap2 = this.g0;
-                boolean z10 = bitmap2 != null;
+                Bitmap bitmap2 = this.h0;
+                boolean z11 = bitmap2 != null;
                 if (bitmap2 != null) {
                     bitmap2.recycle();
-                    this.g0 = null;
+                    this.h0 = null;
                 }
                 try {
                     int i42 = this.a;
-                    this.g0 = Bitmap.createBitmap(i42, i42, Bitmap.Config.ARGB_8888);
-                    Canvas canvas2 = new Canvas(this.g0);
+                    this.h0 = Bitmap.createBitmap(i42, i42, Bitmap.Config.ARGB_8888);
+                    Canvas canvas2 = new Canvas(this.h0);
                     float f52 = this.a;
                     f10 = 2.0f;
                     try {
                         canvas2.drawRect(0.0f, 0.0f, f52, f52, paint9);
                         try {
                             int i43 = this.a;
-                            canvas2.drawCircle(i43 / 2, i43 / 2, i43 / 2, this.h0);
+                            canvas2.drawCircle(i43 / 2, i43 / 2, i43 / 2, this.i0);
                             canvas2.setBitmap(null);
-                            if (!z10) {
-                                this.L = 0.0f;
-                                this.N = SystemClock.elapsedRealtime();
+                            if (!z11) {
+                                this.M = 0.0f;
+                                this.O = SystemClock.elapsedRealtime();
                             }
                         } catch (Throwable unused) {
                         }
@@ -573,12 +575,12 @@ public class CropAreaView extends ViewGroup {
                     }
                 } catch (Throwable unused3) {
                 }
-                if (this.g0 != null) {
-                    paint4.setAlpha((int) (this.L * 255.0f));
-                    paint9.setAlpha((int) (this.L * 127.0f));
+                if (this.h0 != null) {
+                    paint4.setAlpha((int) (this.M * 255.0f));
+                    paint9.setAlpha((int) (this.M * 127.0f));
                     float f53 = this.a;
-                    this.b = com.google.android.recaptcha.internal.a.A(measuredWidth, f53, f10, f11);
-                    float A = com.google.android.recaptcha.internal.a.A(measuredHeight, f53, f10, f11) + (z9 ? 0 : g0.m);
+                    this.b = e2.A(measuredWidth, f53, f10, f11);
+                    float A = e2.A(measuredHeight, f53, f10, f11) + (z10 ? 0 : g0.m);
                     this.c = A;
                     float f54 = A + f53;
                     canvas.drawRect(0.0f, 0.0f, getWidth(), (int) this.c, paint9);
@@ -586,30 +588,30 @@ public class CropAreaView extends ViewGroup {
                     canvas.drawRect(0.0f, (int) this.c, (int) this.b, f55, paint9);
                     canvas.drawRect((int) (r1 + f53), (int) this.c, getWidth(), f55, paint9);
                     canvas.drawRect(0.0f, f55, getWidth(), getHeight(), paint9);
-                    canvas.drawBitmap(this.g0, (int) this.b, (int) this.c, paint4);
-                    if (getMeasuredHeight() > getMeasuredWidth() && this.j0 != null) {
+                    canvas.drawBitmap(this.h0, (int) this.b, (int) this.c, paint4);
+                    if (getMeasuredHeight() > getMeasuredWidth() && this.k0 != null) {
                         canvas.save();
                         canvas.translate(getMeasuredWidth() / f10, f54 + g0.L(16.0f));
-                        this.j0.draw(canvas);
+                        this.k0.draw(canvas);
                         canvas.restore();
                     }
                 }
             }
             f10 = 2.0f;
-            if (this.g0 != null) {
+            if (this.h0 != null) {
             }
         }
-        if (this.L < 1.0f) {
+        if (this.M < 1.0f) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j3 = elapsedRealtime - this.N;
+            long j3 = elapsedRealtime - this.O;
             if (j3 > 17) {
                 j3 = 17;
             }
-            this.N = elapsedRealtime;
-            float f56 = (j3 / 180.0f) + this.L;
-            this.L = f56;
+            this.O = elapsedRealtime;
+            float f56 = (j3 / 180.0f) + this.M;
+            this.M = f56;
             if (f56 > 1.0f) {
-                this.L = 1.0f;
+                this.M = 1.0f;
             }
             invalidate();
         }
@@ -617,7 +619,7 @@ public class CropAreaView extends ViewGroup {
 
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.e0) {
+        if (this.f0) {
             return false;
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -631,19 +633,19 @@ public class CropAreaView extends ViewGroup {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float f10 = this.V;
-        RectF rectF = this.D;
+        float f10 = this.W;
+        RectF rectF = this.E;
         int x10 = (int) (motionEvent.getX() - ((ViewGroup) getParent()).getX());
         int y10 = (int) (motionEvent.getY() - ((ViewGroup) getParent()).getY());
-        float f11 = !this.a0 ? g0.m : 0;
+        float f11 = !this.b0 ? g0.m : 0;
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked != 0) {
             if (actionMasked == 1 || actionMasked == 3) {
-                this.e0 = false;
+                this.f0 = false;
                 h(false);
-                if (this.r0 != 1) {
-                    this.r0 = 1;
-                    a aVar = this.d0;
+                if (this.s0 != 1) {
+                    this.s0 = 1;
+                    a aVar = this.e0;
                     if (aVar != null) {
                         o oVar = (o) aVar;
                         CropAreaView cropAreaView = oVar.a;
@@ -653,21 +655,21 @@ public class CropAreaView extends ViewGroup {
                 }
                 return false;
             }
-            if (actionMasked == 2 && this.r0 != 1) {
+            if (actionMasked == 2 && this.s0 != 1) {
                 rectF.set(this.y);
-                float f12 = x10 - this.E;
-                float f13 = y10 - this.F;
-                this.E = x10;
-                this.F = y10;
-                boolean z9 = Math.abs(f12) > Math.abs(f13);
-                switch (g.c(this.r0)) {
+                float f12 = x10 - this.F;
+                float f13 = y10 - this.G;
+                this.F = x10;
+                this.G = y10;
+                boolean z10 = Math.abs(f12) > Math.abs(f13);
+                switch (g.c(this.s0)) {
                     case 1:
                         rectF.left += f12;
                         rectF.top += f13;
                         if (this.x > 0.0f) {
                             float width = rectF.width();
                             float height = rectF.height();
-                            if (z9) {
+                            if (z10) {
                                 c(rectF, this.x);
                             } else {
                                 b(rectF, this.x);
@@ -682,7 +684,7 @@ public class CropAreaView extends ViewGroup {
                         rectF.top += f13;
                         if (this.x > 0.0f) {
                             float height2 = rectF.height();
-                            if (z9) {
+                            if (z10) {
                                 c(rectF, this.x);
                             } else {
                                 b(rectF, this.x);
@@ -696,7 +698,7 @@ public class CropAreaView extends ViewGroup {
                         rectF.bottom += f13;
                         if (this.x > 0.0f) {
                             float width2 = rectF.width();
-                            if (z9) {
+                            if (z10) {
                                 c(rectF, this.x);
                             } else {
                                 b(rectF, this.x);
@@ -710,7 +712,7 @@ public class CropAreaView extends ViewGroup {
                         rectF.bottom += f13;
                         float f14 = this.x;
                         if (f14 > 0.0f) {
-                            if (!z9) {
+                            if (!z10) {
                                 b(rectF, f14);
                                 break;
                             } else {
@@ -755,7 +757,7 @@ public class CropAreaView extends ViewGroup {
                 if (rectF.left < f10) {
                     float f19 = this.x;
                     if (f19 > 0.0f) {
-                        rectF.bottom = com.google.android.recaptcha.internal.a.A(rectF.right, f10, f19, rectF.top);
+                        rectF.bottom = e2.A(rectF.right, f10, f19, rectF.top);
                     }
                     rectF.left = f10;
                 } else if (rectF.right > getWidth() - f10) {
@@ -764,12 +766,12 @@ public class CropAreaView extends ViewGroup {
                         rectF.bottom = (rectF.width() / this.x) + rectF.top;
                     }
                 }
-                float f20 = f11 + this.H + f10;
-                float f21 = this.G + f10;
+                float f20 = f11 + this.I + f10;
+                float f21 = this.H + f10;
                 if (rectF.top < f20) {
                     float f22 = this.x;
                     if (f22 > 0.0f) {
-                        rectF.right = com.google.android.recaptcha.internal.a.z(rectF.bottom, f20, f22, rectF.left);
+                        rectF.right = e2.z(rectF.bottom, f20, f22, rectF.left);
                     }
                     rectF.top = f20;
                 } else if (rectF.bottom > getHeight() - f21) {
@@ -779,12 +781,12 @@ public class CropAreaView extends ViewGroup {
                     }
                 }
                 float width3 = rectF.width();
-                float f23 = this.W;
+                float f23 = this.a0;
                 if (width3 < f23) {
                     rectF.right = rectF.left + f23;
                 }
                 float height3 = rectF.height();
-                float f24 = this.W;
+                float f24 = this.a0;
                 if (height3 < f24) {
                     rectF.bottom = rectF.top + f24;
                 }
@@ -792,14 +794,14 @@ public class CropAreaView extends ViewGroup {
                 if (f25 > 0.0f) {
                     if (f25 < 1.0f) {
                         float width4 = rectF.width();
-                        float f26 = this.W;
+                        float f26 = this.a0;
                         if (width4 <= f26) {
                             rectF.right = rectF.left + f26;
                             rectF.bottom = (rectF.width() / this.x) + rectF.top;
                         }
                     } else {
                         float height4 = rectF.height();
-                        float f27 = this.W;
+                        float f27 = this.a0;
                         if (height4 <= f27) {
                             rectF.bottom = rectF.top + f27;
                             rectF.right = (rectF.height() * this.x) + rectF.left;
@@ -807,7 +809,7 @@ public class CropAreaView extends ViewGroup {
                     }
                 }
                 setActualRect(rectF);
-                a aVar2 = this.d0;
+                a aVar2 = this.e0;
                 if (aVar2 != null) {
                     o oVar2 = (o) aVar2;
                     CropAreaView cropAreaView2 = oVar2.a;
@@ -815,7 +817,7 @@ public class CropAreaView extends ViewGroup {
                     RectF rectF2 = oVar2.f;
                     float centerX = rectF2.centerX() - cropAreaView2.getCropCenterX();
                     float centerY = rectF2.centerY() - cropAreaView2.getCropCenterY();
-                    m mVar = oVar2.L;
+                    m mVar = oVar2.M;
                     if (mVar != null) {
                         m.f(mVar, centerX, centerY);
                     }
@@ -827,46 +829,46 @@ public class CropAreaView extends ViewGroup {
             }
             return false;
         }
-        if (!this.f0) {
-            this.r0 = 1;
+        if (!this.g0) {
+            this.s0 = 1;
             return false;
         }
         float f28 = x10;
         float f29 = y10;
         if (this.d.contains(f28, f29)) {
-            this.r0 = 2;
+            this.s0 = 2;
         } else if (this.e.contains(f28, f29)) {
-            this.r0 = 3;
+            this.s0 = 3;
         } else if (this.f.contains(f28, f29)) {
-            this.r0 = 4;
+            this.s0 = 4;
         } else if (this.h.contains(f28, f29)) {
-            this.r0 = 5;
+            this.s0 = 5;
         } else if (this.r.contains(f28, f29)) {
-            this.r0 = 7;
+            this.s0 = 7;
         } else if (this.n.contains(f28, f29)) {
-            this.r0 = 6;
+            this.s0 = 6;
         } else if (this.w.contains(f28, f29)) {
-            this.r0 = 9;
+            this.s0 = 9;
         } else {
             if (!this.s.contains(f28, f29)) {
-                this.r0 = 1;
+                this.s0 = 1;
                 return false;
             }
-            this.r0 = 8;
+            this.s0 = 8;
         }
-        this.E = x10;
-        this.F = y10;
+        this.F = x10;
+        this.G = y10;
         g(3, false);
-        this.e0 = true;
+        this.f0 = true;
         h(true);
-        a aVar3 = this.d0;
+        a aVar3 = this.e0;
         if (aVar3 != null) {
             o oVar3 = (o) aVar3;
             oVar3.a.d(oVar3.f);
             oVar3.n = 0.0f;
-            n nVar = oVar3.M;
+            n nVar = oVar3.N;
             if (nVar != null) {
-                nVar.Z(false);
+                nVar.m0(false);
                 return true;
             }
         }
@@ -880,31 +882,31 @@ public class CropAreaView extends ViewGroup {
     }
 
     public void setBottomPadding(float f10) {
-        this.G = f10;
+        this.H = f10;
     }
 
     public void setDimAlpha(float f10) {
-        this.K = f10;
+        this.L = f10;
     }
 
-    public void setDimVisibility(boolean z9) {
-        this.I = z9;
+    public void setDimVisibility(boolean z10) {
+        this.J = z10;
     }
 
     public void setFrameAlpha(float f10) {
-        this.M = f10;
+        this.N = f10;
     }
 
-    public void setFreeform(boolean z9) {
-        this.f0 = z9;
+    public void setFreeform(boolean z10) {
+        this.g0 = z10;
     }
 
-    public void setIsVideo(boolean z9) {
-        this.W = g0.L(z9 ? 64.0f : 32.0f);
+    public void setIsVideo(boolean z10) {
+        this.a0 = g0.L(z10 ? 64.0f : 32.0f);
     }
 
     public void setListener(a aVar) {
-        this.d0 = aVar;
+        this.e0 = aVar;
     }
 
     public void setLockedAspectRatio(float f10) {
@@ -912,14 +914,14 @@ public class CropAreaView extends ViewGroup {
     }
 
     public void setSubtitle(String str) {
-        this.i0 = str;
+        this.j0 = str;
         if (getMeasuredWidth() > 0) {
             i();
         }
     }
 
     public void setTopPadding(float f10) {
-        this.H = f10;
+        this.I = f10;
     }
 
     public void setActualRect(RectF rectF) {
@@ -929,6 +931,6 @@ public class CropAreaView extends ViewGroup {
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
     }
 }

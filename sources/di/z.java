@@ -1,57 +1,61 @@
 package di;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import android.content.DialogInterface;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.ix;
+import org.telegram.ui.Components.lx;
+import org.telegram.ui.c40;
+import org.telegram.ui.lm;
+import org.telegram.ui.pa0;
+import org.telegram.ui.qn;
+import org.telegram.ui.w71;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z implements Runnable {
+public final /* synthetic */ class z implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ z(u0 u0Var, int i7) {
-        this.a = i7;
-        this.b = u0Var;
+    public /* synthetic */ z(Object obj, int i7, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = i7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.b();
+                ConnectionsManager.getInstance(((e0) this.c).a).cancelRequest(this.b, true);
+                break;
+            case 1:
+                ConnectionsManager.getInstance(((org.telegram.ui.la) this.c).currentAccount).cancelRequest(this.b, true);
+                break;
+            case 2:
+                ((lm) this.c).a.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 3:
+                qn qnVar = (qn) this.c;
+                qnVar.O0 = false;
+                qnVar.b = null;
+                qnVar.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 4:
+                ((ChatActivityEnterView) this.c).x3.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 5:
+                ConnectionsManager.getInstance(((lx) ((ix) this.c).c.b).G.d1).cancelRequest(this.b, true);
+                break;
+            case 6:
+                ConnectionsManager.getInstance(((c40) this.c).o1.a).cancelRequest(this.b, true);
+                break;
+            case 7:
+                ((pa0) this.c).getConnectionsManager().cancelRequest(this.b, true);
                 break;
             default:
-                u0 u0Var = this.b;
-                ArrayList arrayList = u0Var.s;
-                z zVar = u0Var.E;
-                if (zVar != null) {
-                    org.telegram.messenger.g0.r(zVar);
-                    u0Var.E = null;
-                }
-                int currentTime = ConnectionsManager.getInstance(u0Var.N).getCurrentTime();
-                for (int size = arrayList.size() - 1; size >= 0; size--) {
-                    t0 t0Var = (t0) arrayList.get(size);
-                    ArrayList arrayList2 = t0Var.f;
-                    int size2 = arrayList2.size();
-                    int i7 = 0;
-                    while (true) {
-                        if (i7 < size2) {
-                            Object obj = arrayList2.get(i7);
-                            i7++;
-                            s0 s0Var = (s0) obj;
-                            long j3 = s0Var.g;
-                            if (j3 <= 0 || currentTime - s0Var.d > t.b(t0Var.a, (int) j3, 0)) {
-                            }
-                        } else {
-                            arrayList.remove(size);
-                        }
-                    }
-                }
-                Collections.sort(arrayList, new a3.c(u0Var, 20));
-                u0Var.n.O(true);
-                u0Var.u(true);
-                u0Var.m();
+                ConnectionsManager.getInstance(((w71) this.c).currentAccount).cancelRequest(this.b, true);
                 break;
         }
     }

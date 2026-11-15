@@ -1,9 +1,9 @@
 package androidx.biometric;
 
-import a8.k1;
+import a8.l1;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class x extends d {
     public final WeakReference a;
@@ -31,7 +31,7 @@ public final class x extends d {
         if (uVar.b == -1) {
             v vVar = uVar.a;
             int c10 = ((z) weakReference.get()).c();
-            if ((c10 & 32767) != 0 && !k1.a(c10)) {
+            if ((c10 & 32767) != 0 && !l1.a(c10)) {
                 i7 = 2;
             }
             uVar = new u(vVar, i7);

@@ -1,38 +1,31 @@
 package di;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.TextView;
-import c8.ha;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class b7 implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ TextView a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ TextView c;
-    public final /* synthetic */ d7 d;
+public final /* synthetic */ class b7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bi.v5 b;
 
-    public b7(d7 d7Var, TextView textView, View view, TextView textView2) {
-        this.d = d7Var;
-        this.a = textView;
-        this.b = view;
-        this.c = textView2;
+    public /* synthetic */ b7(bi.v5 v5Var, int i7) {
+        this.a = i7;
+        this.b = v5Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        int[] iArr = new int[2];
-        TextView textView = this.a;
-        textView.getLocationOnScreen(iArr);
-        int L = org.telegram.messenger.g0.L(24.0f) + iArr[1];
-        int measuredHeight = this.b.getMeasuredHeight();
-        d7 d7Var = this.d;
-        if (L > measuredHeight) {
-            textView.setLayoutParams(ha.k(0.0f, 13.0f, 0.0f, 0.0f, -2, -2));
-            this.c.setLayoutParams(ha.k(68.0f, 8.0f, 68.0f, 13.0f, -2, -2));
-            d7Var.requestLayout();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.a(Boolean.FALSE, "PRODUCT_NOT_FOUND");
+                break;
+            case 1:
+                this.b.a(Boolean.FALSE, "PRODUCT_NO_ONETIME_OFFER_DETAILS");
+                break;
+            case 2:
+                org.telegram.messenger.g0.h3(new b7(this.b, 3));
+                break;
+            default:
+                this.b.a(Boolean.FALSE, null);
+                break;
         }
-        d7Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
     }
 }

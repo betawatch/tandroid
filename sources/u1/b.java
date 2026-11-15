@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.nio.ByteOrder;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class b extends InputStream implements DataInput {
     public static final ByteOrder e = ByteOrder.LITTLE_ENDIAN;
@@ -42,7 +42,7 @@ public class b extends InputStream implements DataInput {
                 }
                 skip = dataInputStream.read(this.d, 0, Math.min(TLObject.FLAG_13, i11));
                 if (skip == -1) {
-                    throw new EOFException(jg.g.k(i7, "Reached EOF while skipping ", " bytes."));
+                    throw new EOFException(i5.c.j(i7, "Reached EOF while skipping ", " bytes."));
                 }
             }
             i10 += skip;

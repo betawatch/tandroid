@@ -1,53 +1,78 @@
 package ai;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.w7;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.media.AudioRecord;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class y implements ls {
-    public final int a;
-    public final TLRPC.Document b;
-    public final int c;
-    public final f1 d;
-    public boolean e;
-    public boolean f;
-    public boolean h;
+public final class y {
+    public final Object a = new Object();
+    public byte[] b = new byte[320000];
+    public int c;
+    public boolean d;
+    public AudioRecord e;
+    public Thread f;
+    public volatile t1 g;
+    public double h;
+    public int i;
 
-    public y(int i7, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i10, f1 f1Var) {
-        this.a = i7;
-        this.b = document;
-        this.c = i10;
-        this.d = f1Var;
-        qs.f(i7).b(this, qs.Y1);
-        w7.G(i7);
-        if (!w7.J(document, null, true, true).exists()) {
-            w7.G(i7).W(document, tL_starGiftUnique, 3, 1);
-        }
-        a();
-    }
-
-    public final void a() {
-        if (this.e || this.f) {
-            return;
-        }
-        w7.G(this.a);
-        if (w7.J(this.b, null, true, true).exists()) {
-            this.f = true;
-            qs.f(this.a).n(this, qs.Y1);
-            w7.G(this.a);
-            Utilities.e.c(new a1.e(9, this, w7.J(this.b, null, true, true)));
+    public final void a(int i7, byte[] bArr) {
+        synchronized (this.a) {
+            try {
+                int i10 = this.c + i7;
+                if (i10 > 19200000) {
+                    return;
+                }
+                byte[] bArr2 = this.b;
+                if (i10 > bArr2.length) {
+                    this.b = Arrays.copyOf(bArr2, Math.min(19200000, Math.max(bArr2.length * 2, i10)));
+                }
+                System.arraycopy(bArr, 0, this.b, this.c, i7);
+                this.c += i7;
+                this.a.notifyAll();
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == qs.Y1) {
-            a();
+    public final byte[] b(int i7, int i10) {
+        byte[] copyOfRange;
+        synchronized (this.a) {
+            int max = Math.max(0, Math.min(i7, this.c));
+            copyOfRange = Arrays.copyOfRange(this.b, max, Math.max(max, Math.min(i10, this.c)));
+        }
+        return copyOfRange;
+    }
+
+    public final int c() {
+        int i7;
+        synchronized (this.a) {
+            i7 = this.c;
+        }
+        return i7;
+    }
+
+    public final void d() {
+        synchronized (this.a) {
+            this.d = true;
+            this.a.notifyAll();
+        }
+        AudioRecord audioRecord = this.e;
+        if (audioRecord != null) {
+            try {
+                audioRecord.stop();
+            } catch (Exception unused) {
+            }
+            try {
+                Thread thread = this.f;
+                if (thread != null) {
+                    thread.join(300L);
+                }
+            } catch (InterruptedException unused2) {
+            }
+            this.e.release();
+            this.e = null;
         }
     }
 }

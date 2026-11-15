@@ -1,30 +1,26 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lg implements View.OnClickListener {
+public final /* synthetic */ class lg implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.k60 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ lg(org.telegram.ui.Components.k60 k60Var, int i7) {
+    public /* synthetic */ lg(Object obj, int i7) {
         this.a = i7;
-        this.b = k60Var;
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        org.telegram.ui.Components.k60 k60Var = this.b;
-        switch (i7) {
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+        switch (this.a) {
             case 0:
-                k60Var.s();
+                view.post((ai.b) this.b);
                 break;
             default:
-                Drawable[] drawableArr = PhotoViewer.Y8;
-                k60Var.s();
+                ((k31) this.b).p0();
                 break;
         }
     }

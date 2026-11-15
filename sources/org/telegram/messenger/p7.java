@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p7 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -21,13 +21,13 @@ public final /* synthetic */ class p7 implements Runnable {
     public final /* synthetic */ Object w;
     public final /* synthetic */ Object x;
 
-    public /* synthetic */ p7(w7 w7Var, TLRPC.Document document, ew ewVar, m20 m20Var, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, hc hcVar, Object obj, String str, long j3, int i7, int i10) {
+    public /* synthetic */ p7(w7 w7Var, TLRPC.Document document, cw cwVar, k20 k20Var, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, gc gcVar, Object obj, String str, long j3, int i7, int i10) {
         this.e = w7Var;
         this.f = document;
-        this.h = ewVar;
-        this.n = m20Var;
+        this.h = cwVar;
+        this.n = k20Var;
         this.r = tL_fileLocationToBeDeprecated;
-        this.s = hcVar;
+        this.s = gcVar;
         this.w = obj;
         this.x = str;
         this.c = j3;
@@ -48,10 +48,10 @@ public final /* synthetic */ class p7 implements Runnable {
         c1 c1Var = this.e;
         switch (i7) {
             case 0:
-                ((w7) c1Var).Y((TLRPC.Document) obj6, (ew) obj5, (m20) obj4, (TLRPC.TL_fileLocationToBeDeprecated) obj3, (hc) obj2, this.w, (String) obj, this.c, this.b, null, 0L, false, this.d);
+                ((w7) c1Var).Y((TLRPC.Document) obj6, (cw) obj5, (k20) obj4, (TLRPC.TL_fileLocationToBeDeprecated) obj3, (gc) obj2, this.w, (String) obj, this.c, this.b, null, 0L, false, this.d);
                 break;
             default:
-                ui uiVar = (ui) c1Var;
+                si siVar = (si) c1Var;
                 a0.h hVar2 = (a0.h) obj6;
                 HashMap hashMap = (HashMap) obj5;
                 ArrayList arrayList = (ArrayList) obj4;
@@ -59,10 +59,10 @@ public final /* synthetic */ class p7 implements Runnable {
                 HashMap hashMap2 = (HashMap) obj2;
                 a0.h hVar4 = (a0.h) this.w;
                 Runnable runnable = (Runnable) obj;
-                a0.h hVar5 = uiVar.J;
-                ConcurrentHashMap concurrentHashMap = uiVar.N;
-                a0.h hVar6 = uiVar.I;
-                ArrayList[] arrayListArr = uiVar.G;
+                a0.h hVar5 = siVar.K;
+                ConcurrentHashMap concurrentHashMap = siVar.O;
+                a0.h hVar6 = siVar.J;
+                ArrayList[] arrayListArr = siVar.H;
                 int i10 = 0;
                 while (true) {
                     int i11 = this.b;
@@ -83,16 +83,16 @@ public final /* synthetic */ class p7 implements Runnable {
                         }
                         concurrentHashMap.putAll(hashMap);
                         arrayListArr[i11] = arrayList;
-                        uiVar.X[i11] = this.c;
-                        uiVar.Y[i11] = this.d;
-                        uiVar.H[i11] = hVar3;
+                        siVar.Y[i11] = this.c;
+                        siVar.Z[i11] = this.d;
+                        siVar.I[i11] = hVar3;
                         if (i11 == 0) {
-                            uiVar.d0 = hashMap3;
-                            uiVar.c0 = hVar4;
+                            siVar.e0 = hashMap3;
+                            siVar.d0 = hVar4;
                         } else if (i11 == 3) {
-                            uiVar.e0 = hashMap3;
+                            siVar.f0 = hashMap3;
                         }
-                        uiVar.getNotificationCenter().k(60, Integer.valueOf(i11), Boolean.TRUE);
+                        siVar.getNotificationCenter().k(60, Integer.valueOf(i11), Boolean.TRUE);
                         if (runnable2 != null) {
                             runnable2.run();
                             break;
@@ -114,8 +114,8 @@ public final /* synthetic */ class p7 implements Runnable {
         }
     }
 
-    public /* synthetic */ p7(ui uiVar, int i7, a0.h hVar, HashMap hashMap, ArrayList arrayList, long j3, int i10, a0.h hVar2, HashMap hashMap2, a0.h hVar3, Runnable runnable) {
-        this.e = uiVar;
+    public /* synthetic */ p7(si siVar, int i7, a0.h hVar, HashMap hashMap, ArrayList arrayList, long j3, int i10, a0.h hVar2, HashMap hashMap2, a0.h hVar3, Runnable runnable) {
+        this.e = siVar;
         this.b = i7;
         this.f = hVar;
         this.h = hashMap;

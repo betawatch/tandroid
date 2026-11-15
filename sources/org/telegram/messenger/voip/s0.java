@@ -1,31 +1,36 @@
 package org.telegram.messenger.voip;
 
 import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class s0 {
-    public static void a(VoIPService.StateListener stateListener) {
+public final /* synthetic */ class s0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ s0(Object obj, Object obj2, Object obj3, boolean z10, int i7) {
+        this.a = i7;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = z10;
     }
 
-    public static void b(VoIPService.StateListener stateListener) {
-    }
-
-    public static void c(VoIPService.StateListener stateListener, boolean z9) {
-    }
-
-    public static void e(VoIPService.StateListener stateListener, boolean z9) {
-    }
-
-    public static void f(VoIPService.StateListener stateListener, int i7) {
-    }
-
-    public static void g(VoIPService.StateListener stateListener, int i7) {
-    }
-
-    public static void h(VoIPService.StateListener stateListener, boolean z9) {
-    }
-
-    public static void d(VoIPService.StateListener stateListener, int i7, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((VoIPService.5) this.c).lambda$onFrame$0((String) this.d, (VideoSink) this.e, this.b);
+                break;
+            default:
+                ((VoIPService) this.c).lambda$acknowledgeCall$12((TLObject) this.d, (TLRPC.TL_error) this.e, this.b);
+                break;
+        }
     }
 }

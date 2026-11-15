@@ -1,65 +1,109 @@
 package bg;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.EditText;
-import kg.v1;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class p0 implements TextWatcher {
-    public final v1 a;
-    public final EditText b;
-    public String c;
-    public boolean d;
-    public boolean e;
+public final class p0 extends ViewOutlineProvider {
+    public final /* synthetic */ int a;
 
-    public p0(ah.i iVar, v1 v1Var) {
-        this.a = v1Var;
-        this.b = iVar;
+    public /* synthetic */ p0(int i7) {
+        this.a = i7;
     }
 
-    public final void a() {
-        this.e = true;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String obj = editable.toString();
-        boolean isEmpty = TextUtils.isEmpty(this.c);
-        boolean isEmpty2 = TextUtils.isEmpty(obj);
-        if (isEmpty && !isEmpty2) {
-            b(true);
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        switch (this.a) {
+            case 0:
+                outline.setOval(0, 0, view.getWidth(), view.getHeight());
+                break;
+            case 1:
+                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), Math.min(view.getWidth(), view.getHeight()) / 2.0f);
+                break;
+            case 2:
+                outline.setRoundRect(0, 0, view.getWidth(), org.telegram.messenger.g0.L(29.0f) + view.getHeight(), org.telegram.messenger.g0.L(29.0f));
+                break;
+            case 3:
+                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), org.telegram.messenger.g0.L(18.0f));
+                break;
+            case 4:
+                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), org.telegram.messenger.g0.L(22.0f));
+                break;
+            case 5:
+                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), org.telegram.messenger.g0.L(22.0f));
+                break;
+            case 6:
+                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), org.telegram.messenger.g0.L(22.0f));
+                break;
+            case 7:
+                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), org.telegram.messenger.g0.L(22.0f));
+                break;
+            case 8:
+                outline.setRoundRect(org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f), view.getMeasuredWidth() - org.telegram.messenger.g0.L(1.0f), view.getMeasuredHeight() - org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(6.0f));
+                break;
+            case 9:
+                int i7 = org.telegram.messenger.g0.u;
+                outline.setOval(0, 0, i7, i7);
+                break;
+            case 10:
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), org.telegram.messenger.g0.L(6.0f) + view.getMeasuredHeight(), org.telegram.messenger.g0.L(6.0f));
+                break;
+            case 11:
+                outline.setOval(0, 0, view.getWidth(), view.getHeight());
+                break;
+            case 12:
+                outline.setOval(0, 0, view.getWidth(), view.getHeight());
+                break;
+            case 13:
+                outline.setOval(0, 0, org.telegram.messenger.g0.L(120.0f), org.telegram.messenger.g0.L(120.0f));
+                break;
+            case 14:
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), org.telegram.messenger.g0.L(12.0f));
+                break;
+            case 15:
+                outline.setRoundRect(0, org.telegram.messenger.g0.L(50.0f), view.getWidth(), org.telegram.messenger.g0.L(24.0f) + view.getHeight(), org.telegram.messenger.g0.L(24.0f));
+                break;
+            case 16:
+                outline.setRoundRect(0, 0, org.telegram.messenger.g0.L(24.0f) + view.getWidth(), view.getHeight(), org.telegram.messenger.g0.L(24.0f));
+                break;
+            case 17:
+                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), org.telegram.messenger.g0.L(4.0f));
+                break;
+            case 18:
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / view.getScaleX()) * org.telegram.messenger.g0.L(4.0f));
+                break;
+            case 19:
+                outline.setOval(0, 0, org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.g0.L(56.0f));
+                break;
+            case 20:
+                outline.setOval(0, 0, org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.g0.L(56.0f));
+                break;
+            case 21:
+                ImageReceiver imageReceiver = (ImageReceiver) view.getTag(R.id.parent_tag);
+                if (imageReceiver != null) {
+                    int[] E = imageReceiver.E();
+                    int i10 = 0;
+                    for (int i11 = 0; i11 < 4; i11++) {
+                        i10 = Math.max(i10, E[i11]);
+                    }
+                    outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), i10);
+                    break;
+                } else {
+                    int i12 = org.telegram.messenger.g0.u;
+                    outline.setOval(0, 0, i12, i12);
+                    break;
+                }
+            case 22:
+                float L = org.telegram.messenger.g0.L(12.0f);
+                outline.setRoundRect(0, 0, view.getWidth(), (int) (view.getHeight() + L), L);
+                break;
+            default:
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), org.telegram.messenger.g0.L(6.0f));
+                break;
         }
-        this.c = obj;
-        this.a.l(this.b);
-        if (isEmpty || !isEmpty2 || this.e) {
-            return;
-        }
-        b(false);
-    }
-
-    public final void b(boolean z9) {
-        if (this.d == z9) {
-            return;
-        }
-        v1 v1Var = this.a;
-        if (v1Var.c()) {
-            if (z9) {
-                v1Var.i();
-            } else {
-                v1Var.h();
-            }
-            this.d = z9;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

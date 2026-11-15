@@ -18,14 +18,14 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.util.Xml;
-import c8.i0;
-import c8.o0;
+import c8.j0;
+import c8.p0;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q extends h {
     public static final PorterDuff.Mode w = PorterDuff.Mode.SRC_IN;
@@ -327,7 +327,7 @@ public final class q extends h {
 
     @Override // android.graphics.drawable.Drawable
     public final boolean onStateChange(int[] iArr) {
-        boolean z9;
+        boolean z10;
         PorterDuff.Mode mode;
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -336,11 +336,11 @@ public final class q extends h {
         o oVar = this.c;
         ColorStateList colorStateList = oVar.c;
         if (colorStateList == null || (mode = oVar.d) == null) {
-            z9 = false;
+            z10 = false;
         } else {
             this.d = d(colorStateList, mode);
             invalidateSelf();
-            z9 = true;
+            z10 = true;
         }
         n nVar = oVar.b;
         if (nVar.n == null) {
@@ -354,7 +354,7 @@ public final class q extends h {
                 return true;
             }
         }
-        return z9;
+        return z10;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -379,12 +379,12 @@ public final class q extends h {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAutoMirrored(boolean z9) {
+    public final void setAutoMirrored(boolean z10) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
-            drawable.setAutoMirrored(z9);
+            drawable.setAutoMirrored(z10);
         } else {
-            this.c.e = z9;
+            this.c.e = z10;
         }
     }
 
@@ -403,7 +403,7 @@ public final class q extends h {
     public final void setTint(int i7) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
-            o0.a(i7, drawable);
+            p0.a(i7, drawable);
         } else {
             setTintList(ColorStateList.valueOf(i7));
         }
@@ -440,9 +440,9 @@ public final class q extends h {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final boolean setVisible(boolean z9, boolean z10) {
+    public final boolean setVisible(boolean z10, boolean z11) {
         Drawable drawable = (Drawable) this.b;
-        return drawable != null ? drawable.setVisible(z9, z10) : super.setVisible(z9, z10);
+        return drawable != null ? drawable.setVisible(z10, z11) : super.setVisible(z10, z11);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -520,11 +520,11 @@ public final class q extends h {
         if (colorStateList2 != null) {
             oVar2.c = colorStateList2;
         }
-        boolean z9 = oVar2.e;
+        boolean z10 = oVar2.e;
         if (xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "autoMirrored") != null) {
-            z9 = f10.getBoolean(5, z9);
+            z10 = f10.getBoolean(5, z10);
         }
-        oVar2.e = z9;
+        oVar2.e = z10;
         float f11 = nVar.j;
         if (xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "viewportWidth") != null) {
             f11 = f10.getFloat(7, f11);
@@ -567,7 +567,7 @@ public final class q extends h {
                 arrayDeque.push(kVar);
                 int eventType = xmlPullParser.getEventType();
                 int depth = xmlPullParser.getDepth() + 1;
-                boolean z10 = true;
+                boolean z11 = true;
                 while (eventType != i12 && (xmlPullParser.getDepth() >= depth || eventType != 3)) {
                     if (eventType == 2) {
                         String name = xmlPullParser.getName();
@@ -594,7 +594,7 @@ public final class q extends h {
                                 }
                                 String string3 = f13.getString(2);
                                 if (string3 != null) {
-                                    jVar.a = i0.c(string3);
+                                    jVar.a = j0.c(string3);
                                 }
                                 jVar.f = h0.b.a(f13, xmlPullParser, theme, "fillColor", 1);
                                 float f14 = jVar.h;
@@ -665,7 +665,7 @@ public final class q extends h {
                                 fVar.put(jVar.getPathName(), jVar);
                             }
                             oVar3.a = oVar3.a;
-                            z10 = false;
+                            z11 = false;
                             c10 = '\b';
                         } else {
                             c10 = '\b';
@@ -679,7 +679,7 @@ public final class q extends h {
                                     }
                                     String string5 = f21.getString(1);
                                     if (string5 != null) {
-                                        iVar.a = i0.c(string5);
+                                        iVar.a = j0.c(string5);
                                     }
                                     iVar.c = !h0.b.c(xmlPullParser, "fillType") ? 0 : f21.getInt(2, 0);
                                     f21.recycle();
@@ -746,7 +746,7 @@ public final class q extends h {
                     i12 = i10;
                     depth = i7;
                 }
-                if (!z10) {
+                if (!z11) {
                     this.d = d(oVar.c, oVar.d);
                     return;
                 }

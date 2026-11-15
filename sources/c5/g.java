@@ -1,11 +1,124 @@
 package c5;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.os.Bundle;
+import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLObject;
+import v4.f1;
+import v4.w0;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public interface g {
-    void a(int i7);
+public final class g extends r0.b {
+    public final /* synthetic */ int d = 0;
+    public final Object e;
 
-    void b(float f10, int i7, int i10);
+    public g(f1 f1Var) {
+        this.e = f1Var;
+    }
 
-    void c(int i7);
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0022, code lost:
+    
+        if (r3.b() > 1) goto L12;
+     */
+    @Override // r0.b
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void b(View view, AccessibilityEvent accessibilityEvent) {
+        boolean z10;
+        a aVar;
+        switch (this.d) {
+            case 0:
+                l lVar = (l) this.e;
+                super.b(view, accessibilityEvent);
+                accessibilityEvent.setClassName(l.class.getName());
+                a aVar2 = lVar.e;
+                if (aVar2 != null) {
+                    z10 = true;
+                    break;
+                }
+                z10 = false;
+                accessibilityEvent.setScrollable(z10);
+                if (accessibilityEvent.getEventType() == 4096 && (aVar = lVar.e) != null) {
+                    accessibilityEvent.setItemCount(aVar.b());
+                    accessibilityEvent.setFromIndex(lVar.f);
+                    accessibilityEvent.setToIndex(lVar.f);
+                    break;
+                }
+                break;
+            default:
+                super.b(view, accessibilityEvent);
+                break;
+        }
+    }
+
+    @Override // r0.b
+    public final void c(View view, s0.c cVar) {
+        switch (this.d) {
+            case 0:
+                AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+                this.a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                cVar.i(l.class.getName());
+                l lVar = (l) this.e;
+                a aVar = lVar.e;
+                accessibilityNodeInfo.setScrollable(aVar != null && aVar.b() > 1);
+                if (lVar.canScrollHorizontally(1)) {
+                    cVar.a(TLObject.FLAG_12);
+                }
+                if (lVar.canScrollHorizontally(-1)) {
+                    cVar.a(TLObject.FLAG_13);
+                    break;
+                }
+                break;
+            default:
+                this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
+                f1 f1Var = (f1) this.e;
+                boolean e10 = f1Var.e();
+                RecyclerView recyclerView = f1Var.d;
+                if (!e10 && recyclerView.getLayoutManager() != null) {
+                    recyclerView.getLayoutManager().T(view, cVar);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // r0.b
+    public final boolean d(View view, int i7, Bundle bundle) {
+        switch (this.d) {
+            case 0:
+                l lVar = (l) this.e;
+                if (super.d(view, i7, bundle)) {
+                    return true;
+                }
+                if (i7 != 4096) {
+                    if (i7 == 8192 && lVar.canScrollHorizontally(-1)) {
+                        lVar.setCurrentItem(lVar.f - 1);
+                        return true;
+                    }
+                } else if (lVar.canScrollHorizontally(1)) {
+                    lVar.setCurrentItem(lVar.f + 1);
+                    return true;
+                }
+                return false;
+            default:
+                f1 f1Var = (f1) this.e;
+                if (super.d(view, i7, bundle)) {
+                    return true;
+                }
+                boolean e10 = f1Var.e();
+                RecyclerView recyclerView = f1Var.d;
+                if (!e10 && recyclerView.getLayoutManager() != null) {
+                    w0 w0Var = recyclerView.getLayoutManager().b.b;
+                }
+                return false;
+        }
+    }
+
+    public g(l lVar) {
+        this.e = lVar;
+    }
 }

@@ -10,19 +10,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ScrollView;
-import di.f8;
-import fi.d8;
-import fi.o8;
-import fi.p8;
-import fi.v3;
+import hi.b8;
+import hi.e1;
+import hi.j3;
+import hi.m8;
+import hi.n8;
 import java.util.ArrayList;
 import org.telegram.messenger.g0;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.k5;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.c20;
+import org.telegram.ui.Components.f20;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class n extends ViewGroup {
     public final /* synthetic */ int a = 0;
@@ -45,42 +46,42 @@ public final class n extends ViewGroup {
     }
 
     public void a() {
-        p8 p8Var = (p8) this.n;
+        n8 n8Var = (n8) this.n;
         int i7 = 1;
-        p8Var.H = true;
-        ArrayList arrayList = p8Var.e;
+        n8Var.I = true;
+        ArrayList arrayList = n8Var.e;
         ArrayList arrayList2 = new ArrayList(arrayList);
         ArrayList arrayList3 = this.h;
         arrayList3.clear();
         arrayList3.addAll(arrayList);
         arrayList.clear();
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            ((c20) arrayList2.get(i10)).setOnClickListener(null);
+            ((f20) arrayList2.get(i10)).setOnClickListener(null);
         }
         c();
         this.c = false;
         AnimatorSet animatorSet = new AnimatorSet();
         this.b = animatorSet;
-        animatorSet.addListener(new o8(this, arrayList2, i7));
+        animatorSet.addListener(new m8(this, arrayList2, i7));
         ArrayList arrayList4 = this.f;
         arrayList4.clear();
         ArrayList arrayList5 = this.d;
         arrayList5.clear();
         this.e.clear();
         for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            c20 c20Var = (c20) arrayList2.get(i11);
-            arrayList5.add(c20Var);
-            arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_X, 1.0f, 0.01f));
-            arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_Y, 1.0f, 0.01f));
-            arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.ALPHA, 1.0f, 0.0f));
+            f20 f20Var = (f20) arrayList2.get(i11);
+            arrayList5.add(f20Var);
+            arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.SCALE_X, 1.0f, 0.01f));
+            arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.SCALE_Y, 1.0f, 0.01f));
+            arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.ALPHA, 1.0f, 0.0f));
         }
         requestLayout();
     }
 
-    public void b(boolean z9) {
+    public void b(boolean z10) {
         o oVar = (o) this.n;
         int i7 = 1;
-        oVar.H = true;
+        oVar.I = true;
         ArrayList arrayList = oVar.e;
         ArrayList arrayList2 = new ArrayList(arrayList);
         ArrayList arrayList3 = this.h;
@@ -88,10 +89,10 @@ public final class n extends ViewGroup {
         arrayList3.addAll(arrayList);
         arrayList.clear();
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            ((c20) arrayList2.get(i10)).setOnClickListener(null);
+            ((f20) arrayList2.get(i10)).setOnClickListener(null);
         }
         c();
-        if (z9) {
+        if (z10) {
             this.c = false;
             AnimatorSet animatorSet = new AnimatorSet();
             this.b = animatorSet;
@@ -102,11 +103,11 @@ public final class n extends ViewGroup {
             arrayList5.clear();
             this.e.clear();
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                c20 c20Var = (c20) arrayList2.get(i11);
-                arrayList5.add(c20Var);
-                arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_X, 1.0f, 0.01f));
-                arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_Y, 1.0f, 0.01f));
-                arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.ALPHA, 1.0f, 0.0f));
+                f20 f20Var = (f20) arrayList2.get(i11);
+                arrayList5.add(f20Var);
+                arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.SCALE_X, 1.0f, 0.01f));
+                arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.SCALE_Y, 1.0f, 0.01f));
+                arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.ALPHA, 1.0f, 0.0f));
             }
         } else {
             for (int i12 = 0; i12 < arrayList2.size(); i12++) {
@@ -186,7 +187,7 @@ public final class n extends ViewGroup {
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         switch (this.a) {
             case 0:
                 int childCount = getChildCount();
@@ -224,10 +225,10 @@ public final class n extends ViewGroup {
         int i15;
         char c10;
         int y11;
-        d8 d8Var;
+        b8 b8Var;
         int i16;
         int i17;
-        boolean z9;
+        boolean z10;
         int i18;
         int i19;
         float f10;
@@ -252,7 +253,7 @@ public final class n extends ViewGroup {
                 while (i21 < childCount) {
                     View childAt = getChildAt(i21);
                     int i24 = childCount;
-                    if (childAt instanceof c20) {
+                    if (childAt instanceof f20) {
                         i12 = i21;
                         int i25 = i22;
                         childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(g0.L(28.0f), TLObject.FLAG_30));
@@ -321,7 +322,7 @@ public final class n extends ViewGroup {
                     y10 = g0.L(376.0f) / 3;
                 } else {
                     Point point = g0.q;
-                    y10 = org.telegram.messenger.camera.q.y(154.0f, Math.min(point.x, point.y), 3);
+                    y10 = i20.y(154.0f, Math.min(point.x, point.y), 3);
                 }
                 if (i26 - i27 < y10) {
                     L2 += g0.L(36.0f);
@@ -337,10 +338,10 @@ public final class n extends ViewGroup {
                 if (!this.c) {
                     int L5 = g0.L(38.0f) + L3;
                     int L6 = g0.L(16.0f) + i11;
-                    oVar.I = L2;
+                    oVar.J = L2;
                     if (this.b != null) {
                         int L7 = g0.L(38.0f) + L2;
-                        float f13 = oVar.J;
+                        float f13 = oVar.K;
                         float f14 = L7;
                         if (f13 != f14) {
                             r82 = 0;
@@ -357,7 +358,7 @@ public final class n extends ViewGroup {
                             arrayList.add(ObjectAnimator.ofFloat(iVar, (Property<i, Float>) property, fArr2));
                         }
                         float translationY = iVar.getTranslationY();
-                        float f16 = oVar.I;
+                        float f16 = oVar.J;
                         if (translationY != f16) {
                             float[] fArr3 = new float[1];
                             fArr3[r82] = f16;
@@ -370,19 +371,19 @@ public final class n extends ViewGroup {
                         this.b.start();
                         this.c = true;
                     } else {
-                        oVar.J = L5;
+                        oVar.K = L5;
                         iVar.setTranslationX(L6);
-                        iVar.setTranslationY(oVar.I);
+                        iVar.setTranslationY(oVar.J);
                     }
-                } else if (this.b != null && !oVar.H && arrayList2.isEmpty()) {
+                } else if (this.b != null && !oVar.I && arrayList2.isEmpty()) {
                     iVar.bringPointIntoView(iVar.getSelectionStart());
                 }
-                setMeasuredDimension(size, (int) oVar.J);
+                setMeasuredDimension(size, (int) oVar.K);
                 break;
             default:
-                p8 p8Var = (p8) scrollView;
-                d8 d8Var2 = p8Var.h;
-                i iVar2 = p8Var.b;
+                n8 n8Var = (n8) scrollView;
+                b8 b8Var2 = n8Var.h;
+                i iVar2 = n8Var.b;
                 int childCount2 = getChildCount();
                 int size2 = View.MeasureSpec.getSize(i7);
                 int L8 = size2 - g0.L(14.0f);
@@ -394,8 +395,8 @@ public final class n extends ViewGroup {
                 int i31 = 0;
                 while (i29 < childCount2) {
                     View childAt2 = getChildAt(i29);
-                    if (childAt2 instanceof c20) {
-                        d8Var = d8Var2;
+                    if (childAt2 instanceof f20) {
+                        b8Var = b8Var2;
                         i16 = childCount2;
                         childAt2.measure(View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(g0.L(28.0f), TLObject.FLAG_30));
                         boolean contains2 = arrayList2.contains(childAt2);
@@ -406,17 +407,17 @@ public final class n extends ViewGroup {
                             i17 = 0;
                         }
                         if (childAt2.getMeasuredWidth() + i31 > L8) {
-                            z9 = contains2;
+                            z10 = contains2;
                             L10 = k5.C(4.0f, childAt2.getMeasuredHeight(), L10);
                             i18 = 0;
                         } else {
-                            z9 = contains2;
+                            z10 = contains2;
                             i18 = i31;
                         }
                         int L11 = g0.L(7.0f) + i17;
                         i19 = L8;
                         if (!this.c) {
-                            if (z9) {
+                            if (z10) {
                                 childAt2.setTranslationX(g0.L(7.0f) + i18);
                                 childAt2.setTranslationY(L10);
                             } else if (arrayList2.isEmpty()) {
@@ -433,7 +434,7 @@ public final class n extends ViewGroup {
                                 }
                             }
                         }
-                        if (z9) {
+                        if (z10) {
                             f10 = 4.0f;
                         } else {
                             f10 = 4.0f;
@@ -442,22 +443,22 @@ public final class n extends ViewGroup {
                         i31 = k5.C(f10, childAt2.getMeasuredWidth(), i18);
                         i30 = i17;
                     } else {
-                        d8Var = d8Var2;
+                        b8Var = b8Var2;
                         i16 = childCount2;
                         i19 = L8;
                     }
                     i29++;
-                    d8Var2 = d8Var;
+                    b8Var2 = b8Var;
                     childCount2 = i16;
                     L8 = i19;
                 }
-                d8 d8Var3 = d8Var2;
+                b8 b8Var3 = b8Var2;
                 int i32 = L8;
                 if (g0.Q1()) {
                     y11 = g0.L(394.0f) / 3;
                 } else {
                     Point point2 = g0.q;
-                    y11 = org.telegram.messenger.camera.q.y(136.0f, Math.min(point2.x, point2.y), 3);
+                    y11 = i20.y(136.0f, Math.min(point2.x, point2.y), 3);
                 }
                 if (i32 - i30 < y11) {
                     i28 += g0.L(36.0f);
@@ -467,19 +468,19 @@ public final class n extends ViewGroup {
                     L10 += g0.L(36.0f);
                 }
                 iVar2.measure(View.MeasureSpec.makeMeasureSpec(i32 - i30, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(g0.L(28.0f), TLObject.FLAG_30));
-                iVar2.t(iVar2.getMeasuredWidth() > p8Var.c, true);
+                iVar2.t(iVar2.getMeasuredWidth() > n8Var.c, true);
                 if (!this.c) {
                     int L12 = g0.L(38.0f) + L10;
                     int L13 = g0.L(16.0f) + i30;
-                    p8Var.I = i28;
+                    n8Var.J = i28;
                     if (this.b != null) {
                         int L14 = g0.L(38.0f) + i28;
-                        p8Var.K = L14;
-                        float f19 = p8Var.J;
+                        n8Var.L = L14;
+                        float f19 = n8Var.K;
                         float f20 = L14;
                         if (f19 != f20) {
                             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f19, f20);
-                            ofFloat2.addUpdateListener(new v3(p8Var, 6));
+                            ofFloat2.addUpdateListener(new j3(n8Var, 7));
                             arrayList.add(ofFloat2);
                         }
                         float f21 = L13;
@@ -487,7 +488,7 @@ public final class n extends ViewGroup {
                             arrayList.add(ObjectAnimator.ofFloat(iVar2, (Property<i, Float>) property, f21));
                         }
                         float translationY2 = iVar2.getTranslationY();
-                        float f22 = p8Var.I;
+                        float f22 = n8Var.J;
                         if (translationY2 != f22) {
                             arrayList.add(ObjectAnimator.ofFloat(iVar2, (Property<i, Float>) property2, f22));
                         }
@@ -497,40 +498,40 @@ public final class n extends ViewGroup {
                         this.b.setInterpolator(new LinearInterpolator());
                         this.b.start();
                         this.c = true;
-                        if (d8Var3 != null) {
-                            d8Var3.run();
+                        if (b8Var3 != null) {
+                            b8Var3.run();
                         }
                     } else {
-                        p8Var.K = L12;
-                        p8Var.J = L12;
+                        n8Var.L = L12;
+                        n8Var.K = L12;
                         iVar2.setTranslationX(L13);
-                        iVar2.setTranslationY(p8Var.I);
-                        if (d8Var3 != null) {
-                            d8Var3.run();
+                        iVar2.setTranslationY(n8Var.J);
+                        if (b8Var3 != null) {
+                            b8Var3.run();
                         }
-                        if (p8Var.L) {
-                            post(new f8(this, 28));
-                            p8Var.L = false;
+                        if (n8Var.M) {
+                            post(new e1(this, 12));
+                            n8Var.M = false;
                         }
                     }
                 } else if (this.b != null) {
-                    if (!p8Var.H && arrayList2.isEmpty()) {
+                    if (!n8Var.I && arrayList2.isEmpty()) {
                         iVar2.bringPointIntoView(iVar2.getSelectionStart());
                     }
-                    if (p8Var.L) {
-                        p8Var.fullScroll(qs.O1);
-                        p8Var.L = false;
+                    if (n8Var.M) {
+                        n8Var.fullScroll(ns.O1);
+                        n8Var.M = false;
                     }
                 }
-                setMeasuredDimension(size2, (int) p8Var.J);
+                setMeasuredDimension(size2, (int) n8Var.K);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(p8 p8Var, Context context) {
+    public n(n8 n8Var, Context context) {
         super(context);
-        this.n = p8Var;
+        this.n = n8Var;
         this.d = new ArrayList();
         this.e = new ArrayList();
         this.f = new ArrayList();

@@ -1,32 +1,33 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class lu implements org.telegram.messenger.sr {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zw b;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ lu(zw zwVar, int i7) {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class lu implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yw b;
+
+    public /* synthetic */ lu(yw ywVar, int i7) {
         this.a = i7;
-        this.b = zwVar;
+        this.b = ywVar;
     }
 
-    @Override // org.telegram.messenger.sr
-    public final void a(int i7) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                zw zwVar = this.b;
-                zwVar.getClass();
-                zwVar.V1 = i7 != 0;
-                org.telegram.messenger.qp.f1().edit().putBoolean("askAboutContacts", zwVar.V1).apply();
-                zwVar.u3(false);
+                this.b.P4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                yw ywVar = this.b;
+                ywVar.getClass();
+                ywVar.R4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                zw zwVar2 = this.b;
-                zwVar2.getClass();
-                zwVar2.V1 = i7 != 0;
-                org.telegram.messenger.qp.f1().edit().putBoolean("askAboutContacts", zwVar2.V1).commit();
-                zwVar2.u3(false);
+                yw ywVar2 = this.b;
+                ywVar2.getClass();
+                ywVar2.L4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

@@ -6,10 +6,10 @@ import android.view.animation.AlphaAnimation;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.WeakHashMap;
-import m.k2;
+import m.j2;
 import org.telegram.ui.Components.qb0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -28,22 +28,22 @@ public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
         switch (i7) {
             case 0:
                 t tVar = (t) obj;
-                tVar.U.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                HashSet hashSet = tVar.X;
+                tVar.V.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                HashSet hashSet = tVar.Y;
                 if (hashSet != null && hashSet.size() != 0) {
                     j jVar = new j(tVar, i10);
-                    int firstVisiblePosition = tVar.U.getFirstVisiblePosition();
-                    boolean z9 = false;
-                    while (i10 < tVar.U.getChildCount()) {
-                        View childAt = tVar.U.getChildAt(i10);
-                        if (tVar.X.contains((s4.v) tVar.V.getItem(firstVisiblePosition + i10))) {
+                    int firstVisiblePosition = tVar.V.getFirstVisiblePosition();
+                    boolean z10 = false;
+                    while (i10 < tVar.V.getChildCount()) {
+                        View childAt = tVar.V.getChildAt(i10);
+                        if (tVar.Y.contains((s4.v) tVar.W.getItem(firstVisiblePosition + i10))) {
                             AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
-                            alphaAnimation.setDuration(tVar.y0);
+                            alphaAnimation.setDuration(tVar.z0);
                             alphaAnimation.setFillEnabled(true);
                             alphaAnimation.setFillAfter(true);
-                            if (!z9) {
+                            if (!z10) {
                                 alphaAnimation.setAnimationListener(jVar);
-                                z9 = true;
+                                z10 = true;
                             }
                             childAt.clearAnimation();
                             childAt.startAnimation(alphaAnimation);
@@ -58,8 +58,8 @@ public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
             case 1:
                 l.e eVar = (l.e) obj;
                 ArrayList arrayList = eVar.n;
-                if (eVar.a() && arrayList.size() > 0 && !((l.d) arrayList.get(0)).a.N) {
-                    View view = eVar.E;
+                if (eVar.a() && arrayList.size() > 0 && !((l.d) arrayList.get(0)).a.O) {
+                    View view = eVar.F;
                     if (view != null && view.isShown()) {
                         int size = arrayList.size();
                         while (i10 < size) {
@@ -76,11 +76,11 @@ public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
                 break;
             case 2:
                 l.c0 c0Var = (l.c0) obj;
-                k2 k2Var = c0Var.n;
-                if (c0Var.a() && !k2Var.N) {
+                j2 j2Var = c0Var.n;
+                if (c0Var.a() && !j2Var.O) {
                     View view2 = c0Var.y;
                     if (view2 != null && view2.isShown()) {
-                        k2Var.g();
+                        j2Var.g();
                         break;
                     } else {
                         c0Var.dismiss();
@@ -89,27 +89,27 @@ public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
                 }
                 break;
             case 3:
-                m.q0 q0Var = (m.q0) obj;
-                if (!q0Var.getInternalPopup().a()) {
-                    q0Var.f.l(m.h0.b(q0Var), m.h0.a(q0Var));
+                m.p0 p0Var = (m.p0) obj;
+                if (!p0Var.getInternalPopup().a()) {
+                    p0Var.f.m(m.g0.b(p0Var), m.g0.a(p0Var));
                 }
-                ViewTreeObserver viewTreeObserver = q0Var.getViewTreeObserver();
+                ViewTreeObserver viewTreeObserver = p0Var.getViewTreeObserver();
                 if (viewTreeObserver != null) {
-                    m.g0.a(viewTreeObserver, this);
+                    m.f0.a(viewTreeObserver, this);
                     break;
                 }
                 break;
             case 4:
-                m.n0 n0Var = (m.n0) obj;
-                m.q0 q0Var2 = n0Var.W;
-                n0Var.getClass();
+                m.m0 m0Var = (m.m0) obj;
+                m.p0 p0Var2 = m0Var.X;
+                m0Var.getClass();
                 WeakHashMap weakHashMap = r0.i0.a;
-                if (!q0Var2.isAttachedToWindow() || !q0Var2.getGlobalVisibleRect(n0Var.U)) {
-                    n0Var.dismiss();
+                if (!p0Var2.isAttachedToWindow() || !p0Var2.getGlobalVisibleRect(m0Var.V)) {
+                    m0Var.dismiss();
                     break;
                 } else {
-                    n0Var.q();
-                    n0Var.g();
+                    m0Var.s();
+                    m0Var.g();
                     break;
                 }
                 break;

@@ -17,32 +17,31 @@ import android.util.Log;
 import com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 import w7.s;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f {
-    public static final sa.d b;
-    public static final s c;
+    public static final s b;
     public static Boolean d = null;
     public static String e = null;
     public static boolean f = false;
     public static int g = -1;
     public static Boolean h;
-    public static final ThreadLocal i = new ThreadLocal();
-    public static final j j = new j(0);
-    public static final qb.a k;
+    public static final sa.d k;
     public static m l;
     public static n m;
     public final Context a;
+    public static final ThreadLocal i = new ThreadLocal();
+    public static final j j = new j(0);
+    public static final nb.a c = new nb.a(5);
 
     static {
         int i7 = 4;
-        k = new qb.a(i7);
-        b = new sa.d(i7);
-        c = new s(i7, false);
+        k = new sa.d(i7);
+        b = new s(i7);
     }
 
     public f(Context context) {
@@ -99,7 +98,7 @@ public final class f {
         int i10;
         a7.a x12;
         n nVar;
-        boolean z9;
+        boolean z10;
         a7.a x13;
         Context applicationContext = context.getApplicationContext();
         if (applicationContext == null) {
@@ -114,9 +113,9 @@ public final class f {
         long longValue = l10.longValue();
         try {
             r72.set(Long.valueOf(SystemClock.uptimeMillis()));
-            d f02 = eVar.f0(context, str, k);
-            int i11 = f02.a;
-            int i12 = f02.b;
+            d W = eVar.W(context, str, k);
+            int i11 = W.a;
+            int i12 = W.b;
             StringBuilder sb2 = new StringBuilder(String.valueOf(str).length() + 26 + String.valueOf(i11).length() + 19 + String.valueOf(str).length() + 1 + String.valueOf(i12).length());
             sb2.append("Considering local module ");
             sb2.append(str);
@@ -127,14 +126,14 @@ public final class f {
             sb2.append(":");
             sb2.append(i12);
             Log.i("DynamiteModule", sb2.toString());
-            int i13 = f02.c;
+            int i13 = W.c;
             if (i13 != 0) {
                 if (i13 == -1) {
-                    if (f02.a != 0) {
+                    if (W.a != 0) {
                         i13 = -1;
                     }
                 }
-                if (i13 != 1 || f02.b != 0) {
+                if (i13 != 1 || W.b != 0) {
                     if (i13 == -1) {
                         Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
                         f fVar2 = new f(applicationContext);
@@ -158,7 +157,7 @@ public final class f {
                     }
                     try {
                         try {
-                            i10 = f02.b;
+                            i10 = W.b;
                         } catch (b e10) {
                             e = e10;
                             context2 = context;
@@ -167,8 +166,8 @@ public final class f {
                             sb4.append("Failed to load remote module: ");
                             sb4.append(message);
                             Log.w("DynamiteModule", sb4.toString());
-                            i7 = f02.a;
-                            if (i7 != 0 || eVar.f0(context2, str, new l(i7)).c != -1) {
+                            i7 = W.a;
+                            if (i7 != 0 || eVar.W(context2, str, new l(i7)).c != -1) {
                                 throw new b("Remote load failed. No local fallback found.", e);
                             }
                             Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
@@ -183,7 +182,7 @@ public final class f {
                         sb42.append("Failed to load remote module: ");
                         sb42.append(message2);
                         Log.w("DynamiteModule", sb42.toString());
-                        i7 = f02.a;
+                        i7 = W.a;
                         if (i7 != 0) {
                         }
                         throw new b("Remote load failed. No local fallback found.", e);
@@ -221,9 +220,9 @@ public final class f {
                                             Cursor cursor2 = kVar3.a;
                                             new a7.b(null);
                                             synchronized (f.class) {
-                                                z9 = g >= 2;
+                                                z10 = g >= 2;
                                             }
-                                            if (z9) {
+                                            if (z10) {
                                                 Log.v("DynamiteModule", "Dynamite loader version >= 2, using loadModule2NoCrashUtils");
                                                 x13 = nVar.y1(new a7.b(applicationContext2), str, i10, new a7.b(cursor2));
                                             } else {
@@ -297,8 +296,8 @@ public final class f {
                     }
                 }
             }
-            int i14 = f02.a;
-            int i15 = f02.b;
+            int i14 = W.a;
+            int i15 = W.b;
             StringBuilder sb7 = new StringBuilder(String.valueOf(str).length() + 46 + String.valueOf(i14).length() + 23 + String.valueOf(i15).length() + 1);
             sb7.append("No acceptable module ");
             sb7.append(str);
@@ -329,7 +328,7 @@ public final class f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int d(Context context, String str, boolean z9) {
+    public static int d(Context context, String str, boolean z10) {
         Field declaredField;
         Throwable th2;
         RemoteException remoteException;
@@ -338,7 +337,7 @@ public final class f {
         try {
             synchronized (f.class) {
                 Boolean bool = d;
-                boolean z10 = true;
+                boolean z11 = true;
                 Cursor cursor2 = null;
                 if (bool == null) {
                     try {
@@ -369,7 +368,7 @@ public final class f {
                                 Boolean bool2 = Boolean.TRUE;
                                 if (!bool2.equals(null)) {
                                     try {
-                                        int f10 = f(context, str, z9, true);
+                                        int f10 = f(context, str, z10, true);
                                         String str2 = e;
                                         if (str2 != null && !str2.isEmpty()) {
                                             ClassLoader b10 = h.b();
@@ -405,7 +404,7 @@ public final class f {
                 }
                 if (bool.booleanValue()) {
                     try {
-                        return f(context, str, z9, false);
+                        return f(context, str, z10, false);
                     } catch (b e11) {
                         String message = e11.getMessage();
                         StringBuilder sb3 = new StringBuilder(String.valueOf(message).length() + 42);
@@ -430,7 +429,7 @@ public final class f {
                             if (kVar != null && (cursor = kVar.a) != null) {
                                 return cursor.getInt(0);
                             }
-                            Cursor cursor3 = (Cursor) a7.b.n1(h7.z1(new a7.b(context), str, z9, ((Long) j.get()).longValue()));
+                            Cursor cursor3 = (Cursor) a7.b.n1(h7.z1(new a7.b(context), str, z10, ((Long) j.get()).longValue()));
                             if (cursor3 != null) {
                                 try {
                                     if (cursor3.moveToFirst()) {
@@ -438,7 +437,7 @@ public final class f {
                                         if (readInt > 0) {
                                             k kVar2 = (k) threadLocal.get();
                                             if (kVar2 == null || kVar2.a != null) {
-                                                z10 = false;
+                                                z11 = false;
                                             } else {
                                                 kVar2.a = cursor3;
                                             }
@@ -484,7 +483,7 @@ public final class f {
                             Parcel p12 = h7.p1();
                             p7.g.b(p12, bVar);
                             p12.writeString(str);
-                            p12.writeInt(z9 ? 1 : 0);
+                            p12.writeInt(z10 ? 1 : 0);
                             Parcel n12 = h7.n1(p12, 5);
                             readInt = n12.readInt();
                             n12.recycle();
@@ -494,7 +493,7 @@ public final class f {
                             Parcel p13 = h7.p1();
                             p7.g.b(p13, bVar2);
                             p13.writeString(str);
-                            p13.writeInt(z9 ? 1 : 0);
+                            p13.writeInt(z10 ? 1 : 0);
                             Parcel n13 = h7.n1(p13, 3);
                             readInt = n13.readInt();
                             n13.recycle();
@@ -517,22 +516,22 @@ public final class f {
         if (bool.equals(null) || bool.equals(h)) {
             return true;
         }
-        boolean z9 = false;
+        boolean z10 = false;
         if (h == null) {
             ProviderInfo resolveContentProvider = context.getPackageManager().resolveContentProvider("com.google.android.gms.chimera", Build.VERSION.SDK_INT >= 29 ? TLObject.FLAG_28 : 0);
             if (n6.e.b.d(context, 10000000) == 0 && resolveContentProvider != null && "com.google.android.gms".equals(resolveContentProvider.packageName)) {
-                z9 = true;
+                z10 = true;
             }
-            h = Boolean.valueOf(z9);
-            if (z9 && (applicationInfo = resolveContentProvider.applicationInfo) != null && (applicationInfo.flags & qs.N1) == 0) {
+            h = Boolean.valueOf(z10);
+            if (z10 && (applicationInfo = resolveContentProvider.applicationInfo) != null && (applicationInfo.flags & ns.N1) == 0) {
                 Log.i("DynamiteModule", "Non-system-image GmsCore APK, forcing V1");
                 f = true;
             }
         }
-        if (!z9) {
+        if (!z10) {
             Log.e("DynamiteModule", "Invalid GmsCore APK, remote loading disabled.");
         }
-        return z9;
+        return z10;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:38:0x0137, code lost:
@@ -544,19 +543,19 @@ public final class f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int f(Context context, String str, boolean z9, boolean z10) {
+    public static int f(Context context, String str, boolean z10, boolean z11) {
         Exception exc;
         Throwable th2;
         Cursor query;
         MatrixCursor matrixCursor;
-        boolean z11;
+        boolean z12;
         MatrixCursor matrixCursor2 = null;
         try {
             try {
-                boolean z12 = true;
-                Uri build = new Uri.Builder().scheme("content").authority("com.google.android.gms.chimera").path(true != z9 ? "api" : "api_force_staging").appendPath(str).appendQueryParameter("requestStartUptime", String.valueOf(((Long) j.get()).longValue())).build();
+                boolean z13 = true;
+                Uri build = new Uri.Builder().scheme("content").authority("com.google.android.gms.chimera").path(true != z10 ? "api" : "api_force_staging").appendPath(str).appendQueryParameter("requestStartUptime", String.valueOf(((Long) j.get()).longValue())).build();
                 ContentProviderClient acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(build);
-                boolean z13 = false;
+                boolean z14 = false;
                 if (acquireUnstableContentProviderClient != null) {
                     try {
                         query = acquireUnstableContentProviderClient.query(build, null, null, null, null);
@@ -610,24 +609,24 @@ public final class f {
                                                     }
                                                     int columnIndex2 = matrixCursor.getColumnIndex("disableStandaloneDynamiteLoader2");
                                                     if (columnIndex2 >= 0) {
-                                                        z11 = matrixCursor.getInt(columnIndex2) != 0;
-                                                        f = z11;
+                                                        z12 = matrixCursor.getInt(columnIndex2) != 0;
+                                                        f = z12;
                                                     } else {
-                                                        z11 = false;
+                                                        z12 = false;
                                                     }
                                                 } finally {
                                                 }
                                             }
                                             k kVar = (k) i.get();
                                             if (kVar == null || kVar.a != null) {
-                                                z12 = false;
+                                                z13 = false;
                                             } else {
                                                 kVar.a = matrixCursor;
                                             }
-                                            z13 = z11;
+                                            z14 = z12;
                                         }
                                         matrixCursor2 = matrixCursor;
-                                        if (z10 && z13) {
+                                        if (z11 && z14) {
                                             throw new b("forcing fallback to container DynamiteLoader impl");
                                         }
                                         if (matrixCursor2 != null) {

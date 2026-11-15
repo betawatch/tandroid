@@ -1,31 +1,43 @@
 package fi;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n3 implements View.OnLayoutChangeListener {
+public final /* synthetic */ class n3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ t3 b;
 
-    public /* synthetic */ n3(Object obj, int i7) {
+    public /* synthetic */ n3(t3 t3Var, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = t3Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((q3) this.b).d();
+                ((z8) this.b.x.A1).g(false);
                 break;
             case 1:
-                ng.c cVar = (ng.c) this.b;
-                cVar.c.setPivotX(r2.getMeasuredWidth() * 0.7f);
-                cVar.b.setPivotX(r1.getMeasuredWidth() * 0.7f);
+                b4 b4Var = this.b.x;
+                u3 u3Var = b4Var.A1;
+                if (u3Var != null) {
+                    i9 i9Var = ((z8) u3Var).d;
+                    i9Var.Z0 = false;
+                    i9Var.V();
+                }
+                b4Var.d1(false);
+                b4Var.R2 = true;
+                b4Var.u0.E(true);
+                break;
+            case 2:
+                b4 b4Var2 = this.b.x;
+                b4Var2.E3 = true;
+                b4Var2.setActive(false);
                 break;
             default:
-                ((wi.k) this.b).a0();
+                b4 b4Var3 = this.b.x;
+                b4Var3.E3 = true;
+                b4Var3.setActive(false);
                 break;
         }
     }

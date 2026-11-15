@@ -1,68 +1,77 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vr0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ cs0 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ TLRPC.PollAnswer d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 e;
-    public final /* synthetic */ ArrayList f;
+public final class vr0 extends org.telegram.ui.Cells.q1 {
+    public final Paint Ad;
+    public final /* synthetic */ byte[] Bd;
+    public final /* synthetic */ int Cd;
+    public final /* synthetic */ int Dd;
+    public final /* synthetic */ xr0 Ed;
+    public final Path zd;
 
-    public /* synthetic */ vr0(cs0 cs0Var, boolean z9, TLRPC.PollAnswer pollAnswer, org.telegram.ui.ActionBar.f2 f2Var, ArrayList arrayList) {
-        this.b = cs0Var;
-        this.c = z9;
-        this.d = pollAnswer;
-        this.e = f2Var;
-        this.f = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vr0(xr0 xr0Var, Context context, int i7, org.telegram.ui.ActionBar.e6 e6Var, byte[] bArr, int i10, int i11) {
+        super(context, i7, false, null, e6Var);
+        this.Ed = xr0Var;
+        this.Bd = bArr;
+        this.Cd = i10;
+        this.Dd = i11;
+        this.zd = new Path();
+        this.Ad = new Paint(1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                cs0 cs0Var = this.b;
-                cs0Var.getClass();
-                boolean z9 = this.c;
-                org.telegram.ui.ActionBar.f2 f2Var = this.e;
-                if (z9) {
-                    ArrayList arrayList = this.f;
-                    arrayList.remove(this.d);
-                    f2Var.getSendMessagesHelper().w0(cs0Var.H, arrayList, null);
-                } else {
-                    f2Var.getSendMessagesHelper().w0(cs0Var.H, null, null);
-                }
-                cs0Var.c(true);
-                break;
-            default:
-                cs0 cs0Var2 = this.b;
-                cs0Var2.getClass();
-                boolean z10 = this.c;
-                TLRPC.PollAnswer pollAnswer = this.d;
-                org.telegram.ui.ActionBar.f2 f2Var2 = this.e;
-                if (z10) {
-                    ArrayList arrayList2 = this.f;
-                    arrayList2.add(pollAnswer);
-                    f2Var2.getSendMessagesHelper().w0(cs0Var2.H, arrayList2, null);
-                } else {
-                    ArrayList arrayList3 = new ArrayList(1);
-                    arrayList3.add(pollAnswer);
-                    f2Var2.getSendMessagesHelper().w0(cs0Var2.H, arrayList3, null);
-                }
-                cs0Var2.c(true);
-                break;
+    @Override // org.telegram.ui.Cells.q1
+    public final void j1(Canvas canvas) {
+        this.S4 = 0;
+        this.T4 = this.Q4.size() - 1;
+        this.U4 = (-org.telegram.messenger.g0.L(7.0f)) * this.Ed.E;
+        super.j1(canvas);
+    }
+
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        int W1 = W1(this.Bd);
+        float V1 = V1(W1);
+        float U1 = U1(W1);
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(getPollButtonsLeft(), V1, getPollButtonsRight(), U1);
+        float f10 = rectF.top;
+        float L = org.telegram.messenger.g0.L(3.0f);
+        xr0 xr0Var = this.Ed;
+        rectF.top = org.telegram.messenger.g0.T1(L, xr0Var.W ? -org.telegram.messenger.g0.L(3.0f) : 0.0f, xr0Var.E) + f10;
+        float f11 = rectF.bottom;
+        boolean z10 = xr0Var.W;
+        float L2 = org.telegram.messenger.g0.L(3.0f);
+        if (!z10) {
+            L2 = org.telegram.messenger.g0.T1(L2, 0.0f, xr0Var.E);
         }
+        rectF.bottom = f11 + L2;
+        Path path = this.zd;
+        path.rewind();
+        path.addRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), Path.Direction.CW);
+        Paint paint = this.Ad;
+        paint.setColor(0);
+        paint.setShadowLayer(org.telegram.messenger.g0.L(2.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.j6.r1(xr0Var.E * 0.2f, -16777216));
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), paint);
+        canvas.clipPath(path);
+        d1(canvas);
+        canvas.restore();
     }
 
-    public /* synthetic */ vr0(cs0 cs0Var, boolean z9, org.telegram.ui.ActionBar.f2 f2Var, ArrayList arrayList, TLRPC.PollAnswer pollAnswer) {
-        this.b = cs0Var;
-        this.c = z9;
-        this.e = f2Var;
-        this.f = arrayList;
-        this.d = pollAnswer;
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setMeasuredDimension(this.Cd, this.Dd);
+    }
+
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final void setPressed(boolean z10) {
     }
 }

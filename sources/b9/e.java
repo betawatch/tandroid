@@ -3,9 +3,10 @@ package b9;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import c8.xb;
+import c8.yb;
+import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e extends r6.a {
     public static final Parcelable.Creator<e> CREATOR = new c(1);
@@ -49,7 +50,7 @@ public final class e extends r6.a {
         String num = i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 4 ? Integer.toString(i7) : "OUTPUT_CLOSED" : "INPUT_CLOSED" : "CHANNEL_CLOSED" : "CHANNEL_OPENED";
         int i10 = this.c;
         String num2 = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? Integer.toString(i10) : "CLOSE_REASON_LOCAL_CLOSE" : "CLOSE_REASON_REMOTE_CLOSE" : "CLOSE_REASON_DISCONNECTED" : "CLOSE_REASON_NORMAL";
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("ChannelEventParcelable[, channel=", valueOf, ", type=", num, ", closeReason=");
+        StringBuilder n10 = e2.n("ChannelEventParcelable[, channel=", valueOf, ", type=", num, ", closeReason=");
         n10.append(num2);
         n10.append(", appErrorCode=");
         n10.append(this.d);
@@ -59,14 +60,14 @@ public final class e extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.k(parcel, 2, this.a, i7);
-        xb.q(parcel, 3, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.k(parcel, 2, this.a, i7);
+        yb.q(parcel, 3, 4);
         parcel.writeInt(this.b);
-        xb.q(parcel, 4, 4);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(this.c);
-        xb.q(parcel, 5, 4);
+        yb.q(parcel, 5, 4);
         parcel.writeInt(this.d);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 }

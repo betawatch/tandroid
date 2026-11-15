@@ -1,6 +1,8 @@
 package cc;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import com.google.android.gms.internal.vision.e2;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i {
     public final float a;
@@ -36,8 +38,8 @@ public final class i {
         float f22 = f13 - f15;
         float f23 = f17 - f15;
         float f24 = (f20 * f23) - (f21 * f22);
-        float w10 = com.google.android.recaptcha.internal.a.w(f21, f19, f23 * f18, f24);
-        float w11 = com.google.android.recaptcha.internal.a.w(f18, f22, f20 * f19, f24);
+        float w10 = e2.w(f21, f19, f23 * f18, f24);
+        float w11 = e2.w(f18, f22, f20 * f19, f24);
         return new i((w10 * f12) + (f12 - f10), (w11 * f16) + (f16 - f10), f10, (w10 * f13) + (f13 - f11), (w11 * f17) + (f17 - f11), f11, w10, w11, 1.0f);
     }
 }

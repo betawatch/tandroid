@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class AnimatedArrowDrawable extends Drawable {
     public final Paint a;
@@ -20,7 +20,7 @@ public class AnimatedArrowDrawable extends Drawable {
     public final float h;
     public final float i;
 
-    public AnimatedArrowDrawable(int i7, boolean z9) {
+    public AnimatedArrowDrawable(int i7, boolean z10) {
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setStyle(Paint.Style.STROKE);
@@ -28,7 +28,7 @@ public class AnimatedArrowDrawable extends Drawable {
         paint.setColor(i7);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        this.f = z9;
+        this.f = z10;
         b();
     }
 

@@ -1,6 +1,7 @@
 package androidx.datastore.preferences.protobuf;
 
-import a8.q6;
+import a8.r6;
+import com.google.android.gms.internal.vision.e2;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class s0 {
     public static final char[] a;
@@ -67,13 +68,13 @@ public abstract class s0 {
         if (obj instanceof String) {
             sb2.append(": \"");
             h hVar = h.c;
-            sb2.append(q6.a(new h(((String) obj).getBytes(c0.a))));
+            sb2.append(r6.a(new h(((String) obj).getBytes(c0.a))));
             sb2.append('\"');
             return;
         }
         if (obj instanceof h) {
             sb2.append(": \"");
-            sb2.append(q6.a((h) obj));
+            sb2.append(r6.a((h) obj));
             sb2.append('\"');
             return;
         }
@@ -153,9 +154,9 @@ public abstract class s0 {
         for (Map.Entry entry : treeMap.entrySet()) {
             String substring = ((String) entry.getKey()).substring(i10);
             if (substring.endsWith("List") && !substring.endsWith("OrBuilderList") && !substring.equals("List") && (method2 = (Method) entry.getValue()) != null && method2.getReturnType().equals(List.class)) {
-                b(sb2, i7, com.google.android.recaptcha.internal.a.k(substring, 4, 0), z.e(method2, zVar, new Object[0]));
+                b(sb2, i7, e2.k(substring, 4, 0), z.e(method2, zVar, new Object[0]));
             } else if (substring.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !substring.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && (method = (Method) entry.getValue()) != null && method.getReturnType().equals(Map.class) && !method.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method.getModifiers())) {
-                b(sb2, i7, com.google.android.recaptcha.internal.a.k(substring, 3, 0), z.e(method, zVar, new Object[0]));
+                b(sb2, i7, e2.k(substring, 3, 0), z.e(method, zVar, new Object[0]));
             } else if (hashSet.contains("set".concat(substring))) {
                 if (substring.endsWith("Bytes")) {
                     if (treeMap.containsKey("get" + substring.substring(0, substring.length() - 5))) {

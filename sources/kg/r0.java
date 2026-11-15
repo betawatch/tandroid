@@ -2,13 +2,13 @@ package kg;
 
 import android.os.Bundle;
 import java.io.Serializable;
-import org.telegram.messenger.a20;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.cn;
+import org.telegram.messenger.x10;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r0 implements org.telegram.ui.ActionBar.r1, a20 {
+public final /* synthetic */ class r0 implements org.telegram.ui.ActionBar.q1, x10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ s0 b;
 
@@ -17,8 +17,8 @@ public final /* synthetic */ class r0 implements org.telegram.ui.ActionBar.r1, a
         this.b = s0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
                 this.b.c0();
@@ -29,32 +29,32 @@ public final /* synthetic */ class r0 implements org.telegram.ui.ActionBar.r1, a
         }
     }
 
-    @Override // org.telegram.messenger.a20
-    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        x31 x31Var = (x31) obj;
+    @Override // org.telegram.messenger.x10
+    public void m(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        b41 b41Var = (b41) obj;
         s0 s0Var = this.b;
-        if (s0Var.c.h(x31Var)) {
+        if (s0Var.c.h(b41Var)) {
             return;
         }
-        int i7 = x31Var.d;
-        if (i7 == 2 || x31Var.a == 17) {
+        int i7 = b41Var.d;
+        if (i7 == 2 || b41Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", s0Var.getUserConfig().e());
             bundle.putInt("chatMode", 5);
             bundle.putString("quick_reply", "hello");
-            s0Var.presentFragment(new cn(bundle));
+            s0Var.presentFragment(new an(bundle));
             return;
         }
         if (i7 == 1) {
             s0Var.r = !s0Var.r;
-            s0Var.b.f3.O(true);
+            s0Var.b.g3.O(true);
             s0Var.a0(true);
         } else {
             if (i7 == 3) {
                 a0 a0Var = s0Var.c;
                 s0Var.s = true;
                 a0Var.h = true;
-                s0Var.b.f3.O(true);
+                s0Var.b.g3.O(true);
                 s0Var.a0(true);
                 return;
             }
@@ -62,7 +62,7 @@ public final /* synthetic */ class r0 implements org.telegram.ui.ActionBar.r1, a
                 a0 a0Var2 = s0Var.c;
                 s0Var.s = false;
                 a0Var2.h = false;
-                s0Var.b.f3.O(true);
+                s0Var.b.g3.O(true);
                 s0Var.a0(true);
             }
         }

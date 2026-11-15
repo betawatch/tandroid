@@ -1,148 +1,130 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Point;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class yi extends kj0 {
-    public final int r = org.telegram.messenger.p10.s0;
-    public final Context s;
-    public final /* synthetic */ ej w;
+public final class yi extends ci {
+    public di.c1 n;
+    public int r;
+    public gi.g s;
+    public ha w;
+    public int x;
+    public q0.a y;
 
-    public yi(ej ejVar, Context context) {
-        this.w = ejVar;
-        this.s = context;
-    }
-
-    @Override // org.telegram.ui.Components.vi0
-    public final String F(int i7) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.vi0
-    public final void G(pj0 pj0Var, float f10, int[] iArr) {
-        iArr[0] = 0;
-        iArr[1] = 0;
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public final int M(int i7) {
-        if (i7 == 0 || i7 == R() - 1) {
-            return 1;
-        }
-        int i10 = i7 - 1;
-        int i11 = this.r;
-        HashMap hashMap = org.telegram.messenger.g5.r(i11).b0;
-        ArrayList arrayList = org.telegram.messenger.g5.r(i11).c0;
-        if (i10 < arrayList.size()) {
-            return ((ArrayList) hashMap.get(arrayList.get(i10))).size();
-        }
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public final Object O(int i7, int i10) {
-        if (i7 == 0) {
-            return null;
-        }
-        int i11 = i7 - 1;
-        int i12 = this.r;
-        HashMap hashMap = org.telegram.messenger.g5.r(i12).b0;
-        ArrayList arrayList = org.telegram.messenger.g5.r(i12).c0;
-        if (i11 < arrayList.size()) {
-            ArrayList arrayList2 = (ArrayList) hashMap.get(arrayList.get(i11));
-            if (i10 < arrayList2.size()) {
-                return arrayList2.get(i10);
-            }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public final int P(int i7, int i10) {
-        if (i7 == 0) {
-            return 1;
-        }
-        return i7 == R() - 1 ? 2 : 0;
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public final int R() {
-        return org.telegram.messenger.g5.r(this.r).c0.size() + 2;
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public final View T(int i7, View view) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public final boolean V(int i7, int i10, v4.d1 d1Var) {
-        if (i7 == 0 || i7 == R() - 1) {
-            return false;
-        }
-        int i11 = this.r;
-        return i10 < ((ArrayList) org.telegram.messenger.g5.r(i11).b0.get(org.telegram.messenger.g5.r(i11).c0.get(i7 + (-1)))).size();
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public final void W(int i7, int i10, v4.d1 d1Var) {
-        TLRPC.User user;
-        if (d1Var.f == 0) {
-            dj djVar = (dj) d1Var.a;
-            Object O = O(i7, i10);
-            boolean z9 = true;
-            if (i7 == R() - 2 && i10 == M(i7) - 1) {
-                z9 = false;
-            }
-            if (O instanceof org.telegram.messenger.d5) {
-                org.telegram.messenger.d5 d5Var = (org.telegram.messenger.d5) O;
-                user = d5Var.m;
-                if (user == null) {
-                    djVar.setCurrentId(d5Var.a);
-                    djVar.a(null, org.telegram.messenger.g5.m(0, d5Var.i, d5Var.j), new wi(d5Var, 0), z9);
-                    user = null;
-                }
-            } else {
-                user = (TLRPC.User) O;
-            }
-            if (user != null) {
-                djVar.a(user, null, new xi(0, user), z9);
-            }
-            boolean containsKey = this.w.x.containsKey(ui.a(O));
-            wo woVar = djVar.d;
-            if (woVar.getVisibility() != 0) {
-                woVar.setVisibility(0);
-            }
-            woVar.a(containsKey, false);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.kj0, v4.g0
-    public final void f() {
-        X(false);
-        this.w.R();
-    }
-
-    @Override // v4.g0
-    public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        View djVar;
-        Context context = this.s;
-        if (i7 == 0) {
-            djVar = new dj(context, this.w.a);
-        } else if (i7 != 1) {
-            djVar = new View(context);
-            djVar.setTag(-33024);
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.ui.Components.ci
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void B(int i7, int i10) {
+        int i11;
+        int i12;
+        di.c1 c1Var = this.n;
+        ha haVar = this.w;
+        if (org.telegram.messenger.g0.Q1()) {
+            this.x = 4;
         } else {
-            djVar = new View(context);
-            djVar.setLayoutParams(new v4.o0(-1, org.telegram.messenger.g0.L(56.0f)));
-            djVar.setTag(-33024);
+            Point point = org.telegram.messenger.g0.q;
+            if (point.x > point.y) {
+                this.x = 4;
+            } else {
+                this.x = 3;
+            }
         }
-        return new xi0(djVar);
+        ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        int L = ((i7 - org.telegram.messenger.g0.L(12.0f)) - org.telegram.messenger.g0.L(10.0f)) / this.x;
+        if (this.r != L) {
+            this.r = L;
+            haVar.f();
+        }
+        this.s.y1(Math.max(1, ((this.x - 1) * org.telegram.messenger.g0.L(5.0f)) + (this.x * L)));
+        int ceil = (int) Math.ceil((((ArrayList) haVar.e).size() - 1) / this.x);
+        Math.max(0, ((i10 - ((org.telegram.messenger.g0.L(5.0f) * (ceil - 1)) + (L * ceil))) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.L(60.0f));
+        if (!org.telegram.messenger.g0.Q1()) {
+            Point point2 = org.telegram.messenger.g0.q;
+            if (point2.x > point2.y) {
+                i11 = (int) (i10 / 3.5f);
+                int L2 = i11 - org.telegram.messenger.g0.L(52.0f);
+                i12 = L2 >= 0 ? L2 : 0;
+                if (c1Var.getPaddingTop() == i12) {
+                    c1Var.setPadding(org.telegram.messenger.g0.L(6.0f), i12, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(48.0f));
+                    return;
+                }
+                return;
+            }
+        }
+        i11 = (i10 / 5) * 2;
+        int L22 = i11 - org.telegram.messenger.g0.L(52.0f);
+        if (L22 >= 0) {
+        }
+        if (c1Var.getPaddingTop() == i12) {
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ci
+    public final void I(ci ciVar) {
+        ki kiVar = this.b;
+        try {
+            kiVar.V2.getTitleTextView().setBuildFullLayout(true);
+        } catch (Exception unused) {
+        }
+        kiVar.V2.setTitle(org.telegram.messenger.hd.M0(2131745663, null));
+        this.s.h1(0, 0);
+    }
+
+    @Override // org.telegram.ui.Components.ci
+    public final void K() {
+        this.n.y0(0);
+    }
+
+    @Override // org.telegram.ui.Components.ci
+    public int getCurrentItemTop() {
+        di.c1 c1Var = this.n;
+        if (c1Var.getChildCount() <= 0) {
+            c1Var.setTopGlowOffset(c1Var.getPaddingTop());
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        View childAt = c1Var.getChildAt(0);
+        cj0 cj0Var = (cj0) c1Var.G(childAt);
+        int top = childAt.getTop();
+        int L = org.telegram.messenger.g0.L(7.0f);
+        if (top < org.telegram.messenger.g0.L(7.0f) || cj0Var == null || cj0Var.b() != 0) {
+            top = L;
+        }
+        c1Var.setTopGlowOffset(top);
+        return top;
+    }
+
+    @Override // org.telegram.ui.Components.ci
+    public int getFirstOffset() {
+        return org.telegram.messenger.g0.L(56.0f) + getListTopPadding();
+    }
+
+    @Override // org.telegram.ui.Components.ci
+    public int getListTopPadding() {
+        return this.n.getPaddingTop();
+    }
+
+    @Override // org.telegram.ui.Components.ci
+    public final int j() {
+        return 1;
+    }
+
+    public void setDelegate(q0.a aVar) {
+        this.y = aVar;
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        this.b.b.invalidate();
+        invalidate();
     }
 }

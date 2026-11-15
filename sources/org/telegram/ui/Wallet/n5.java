@@ -2,37 +2,39 @@ package org.telegram.ui.Wallet;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class n5 extends i6 {
-    public final /* synthetic */ z5 l0;
+public final class n5 extends FrameLayout {
+    public View a;
+    public float b;
+    public int c;
+    public final l5 d;
+    public final /* synthetic */ y5 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n5(z5 z5Var, Context context) {
+    public n5(y5 y5Var, Context context) {
         super(context);
-        this.l0 = z5Var;
+        this.e = y5Var;
+        this.d = new l5(1, this);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
-        super.onMeasure(i7, makeMeasureSpec);
-        z5 z5Var = this.l0;
-        if (z5Var.r <= 0 || getMeasuredHeight() <= z5Var.r) {
-            return;
-        }
-        int paddingRight = getPaddingRight() + getPaddingLeft();
-        int paddingBottom = getPaddingBottom() + getPaddingTop();
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(paddingRight + ((int) ((getMeasuredWidth() - paddingRight) * (Math.max(0, z5Var.r - paddingBottom) / Math.max(1, getMeasuredHeight() - paddingBottom)))), TLObject.FLAG_30), makeMeasureSpec);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        getViewTreeObserver().addOnPreDrawListener(this.d);
     }
 
-    @Override // org.telegram.ui.Wallet.i6
-    public final void setStickerStyle(float[] fArr) {
-        super.setStickerStyle(fArr);
-        z5 z5Var = this.l0;
-        z5Var.V0(z5Var.x0);
-        z5Var.W0(fArr);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        getViewTreeObserver().removeOnPreDrawListener(this.d);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        this.e.U0();
     }
 }

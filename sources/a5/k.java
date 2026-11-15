@@ -4,7 +4,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k extends l {
     public final Matrix a;
@@ -51,13 +51,13 @@ public final class k extends l {
     @Override // a5.l
     public final boolean b(int[] iArr) {
         int i7 = 0;
-        boolean z9 = false;
+        boolean z10 = false;
         while (true) {
             ArrayList arrayList = this.b;
             if (i7 >= arrayList.size()) {
-                return z9;
+                return z10;
             }
-            z9 |= ((l) arrayList.get(i7)).b(iArr);
+            z10 |= ((l) arrayList.get(i7)).b(iArr);
             i7++;
         }
     }

@@ -1,39 +1,193 @@
 package org.telegram.messenger;
 
-import org.telegram.SQLite.SQLitePreparedStatement;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ah implements Runnable {
-    public final /* synthetic */ ui a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ double d;
+public final /* synthetic */ class ah implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ c1 e;
 
-    public /* synthetic */ ah(ui uiVar, long j3, int i7, double d) {
-        this.a = uiVar;
-        this.b = j3;
-        this.c = i7;
-        this.d = d;
+    public /* synthetic */ ah(c1 c1Var, int i7, String str, String str2, int i10) {
+        this.a = i10;
+        this.e = c1Var;
+        this.b = i7;
+        this.c = str;
+        this.d = str2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ui uiVar = this.a;
-        long j3 = this.b;
-        int i7 = this.c;
-        double d = this.d;
-        try {
-            SQLitePreparedStatement executeFast = uiVar.getMessagesStorage().b.executeFast("REPLACE INTO chat_hints VALUES(?, ?, ?, ?)");
-            executeFast.requery();
-            executeFast.bindLong(1, j3);
-            executeFast.bindInteger(2, i7);
-            executeFast.bindDouble(3, d);
-            executeFast.bindInteger(4, ((int) System.currentTimeMillis()) / 1000);
-            executeFast.step();
-            executeFast.dispose();
-        } catch (Exception e10) {
-            a8.g(e10, true);
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0079, code lost:
+    
+        r1 = false;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00b8  */
+    @Override // org.telegram.tgnet.RequestDelegate
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        boolean z10;
+        long j3;
+        boolean z11;
+        np npVar;
+        String str;
+        String str2;
+        switch (this.a) {
+            case 0:
+                si siVar = (si) this.e;
+                String str3 = this.d;
+                if (tLObject == null) {
+                    g0.h3(new jh(siVar, str3, 1));
+                    break;
+                } else {
+                    TLRPC.TL_emojiKeywordsDifference tL_emojiKeywordsDifference = (TLRPC.TL_emojiKeywordsDifference) tLObject;
+                    if (this.b != -1 && !tL_emojiKeywordsDifference.lang_code.equals(this.c)) {
+                        siVar.getMessagesStorage().a.c(new jh(siVar, str3, 0));
+                        break;
+                    } else {
+                        siVar.getMessagesStorage().a.c(new kg((Object) siVar, (Object) tL_emojiKeywordsDifference, str3, 3));
+                        g0.h3(new eg(siVar, 9));
+                        break;
+                    }
+                }
+                break;
+            default:
+                np npVar2 = (np) this.e;
+                int i7 = npVar2.x2;
+                int i10 = this.b;
+                if (i10 == i7) {
+                    if (tLObject instanceof TLRPC.TL_help_promoDataEmpty) {
+                        npVar2.u2 = ((TLRPC.TL_help_promoDataEmpty) tLObject).expires;
+                        z10 = true;
+                    } else if (tLObject instanceof TLRPC.TL_help_promoData) {
+                        TLRPC.TL_help_promoData tL_help_promoData = (TLRPC.TL_help_promoData) tLObject;
+                        TLRPC.Peer peer = tL_help_promoData.peer;
+                        if (peer == null) {
+                            j3 = 0;
+                        } else {
+                            j3 = peer.user_id;
+                            if (j3 == 0) {
+                                long j10 = peer.chat_id;
+                                if (j10 != 0) {
+                                    j3 = -j10;
+                                    int i11 = 0;
+                                    while (true) {
+                                        if (i11 >= tL_help_promoData.chats.size()) {
+                                            npVar = npVar2;
+                                            break;
+                                        } else {
+                                            TLRPC.Chat chat = tL_help_promoData.chats.get(i11);
+                                            npVar = npVar2;
+                                            if (chat.id != tL_help_promoData.peer.chat_id) {
+                                                i11++;
+                                                npVar2 = npVar;
+                                            } else if (chat.kicked || chat.restricted) {
+                                                z11 = true;
+                                            }
+                                        }
+                                    }
+                                    npVar2 = npVar;
+                                } else {
+                                    j3 = -peer.channel_id;
+                                    int i12 = 0;
+                                    while (true) {
+                                        if (i12 < tL_help_promoData.chats.size()) {
+                                            TLRPC.Chat chat2 = tL_help_promoData.chats.get(i12);
+                                            if (chat2.id != tL_help_promoData.peer.channel_id) {
+                                                i12++;
+                                            } else if (chat2.kicked || chat2.restricted) {
+                                                npVar2 = npVar2;
+                                                z11 = true;
+                                            }
+                                        }
+                                    }
+                                    npVar2 = npVar2;
+                                }
+                                npVar2.A2 = j3;
+                                if (!tL_help_promoData.proxy) {
+                                    npVar2.B2 = 0;
+                                } else if (TextUtils.isEmpty(tL_help_promoData.psa_type)) {
+                                    npVar2.B2 = 2;
+                                } else {
+                                    npVar2.B2 = 1;
+                                    npVar2.D2 = tL_help_promoData.psa_type;
+                                }
+                                npVar2.E2 = r.b.v(this.c, this.d);
+                                npVar2.C2 = tL_help_promoData.psa_message;
+                                npVar2.u2 = tL_help_promoData.expires;
+                                SharedPreferences.Editor edit = np.e1().edit();
+                                edit.putLong("proxy_dialog", npVar2.A2);
+                                edit.putString("proxyDialogAddress", npVar2.E2);
+                                edit.putInt("promo_dialog_type", npVar2.B2);
+                                str = npVar2.C2;
+                                if (str == null) {
+                                    edit.putString("promo_psa_message", str);
+                                } else {
+                                    edit.remove("promo_psa_message");
+                                }
+                                str2 = npVar2.D2;
+                                if (str2 == null) {
+                                    edit.putString("promo_psa_type", str2);
+                                } else {
+                                    edit.remove("promo_psa_type");
+                                }
+                                edit.putInt("nextPromoInfoCheckTime", npVar2.u2);
+                                edit.commit();
+                                if (!z11) {
+                                    g0.h3(new fk(npVar2, j3, tL_help_promoData, i10, 4));
+                                }
+                                z10 = z11;
+                            }
+                        }
+                        z11 = false;
+                        npVar2.A2 = j3;
+                        if (!tL_help_promoData.proxy) {
+                        }
+                        npVar2.E2 = r.b.v(this.c, this.d);
+                        npVar2.C2 = tL_help_promoData.psa_message;
+                        npVar2.u2 = tL_help_promoData.expires;
+                        SharedPreferences.Editor edit2 = np.e1().edit();
+                        edit2.putLong("proxy_dialog", npVar2.A2);
+                        edit2.putString("proxyDialogAddress", npVar2.E2);
+                        edit2.putInt("promo_dialog_type", npVar2.B2);
+                        str = npVar2.C2;
+                        if (str == null) {
+                        }
+                        str2 = npVar2.D2;
+                        if (str2 == null) {
+                        }
+                        edit2.putInt("nextPromoInfoCheckTime", npVar2.u2);
+                        edit2.commit();
+                        if (!z11) {
+                        }
+                        z10 = z11;
+                    } else {
+                        npVar2.u2 = npVar2.getConnectionsManager().getCurrentTime() + 3600;
+                        z10 = true;
+                    }
+                    if (z10) {
+                        npVar2.A2 = 0L;
+                        np.e1().edit().putLong("proxy_dialog", npVar2.A2).remove("proxyDialogAddress").putInt("nextPromoInfoCheckTime", npVar2.u2).commit();
+                        npVar2.w2 = 0;
+                        npVar2.v2 = false;
+                        g0.h3(new pn(npVar2, 8));
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

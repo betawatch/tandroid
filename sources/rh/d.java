@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.PathInterpolator;
 import android.widget.FrameLayout;
-import bi.b1;
 import c8.zc;
+import com.google.android.gms.common.api.q;
 import java.util.Iterator;
 import java.util.List;
 import java.util.WeakHashMap;
@@ -22,9 +22,9 @@ import r0.q0;
 import r0.t0;
 import r0.v0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class d extends b1 {
+public final class d extends q {
     public static final RectF e;
     public static final Rect f;
     public final ViewGroup b;
@@ -72,19 +72,19 @@ public final class d extends b1 {
         return k1Var.a.m(Math.max(0, i7), Math.max(0, i10), Math.max(0, width), Math.max(0, height));
     }
 
-    @Override // bi.b1
+    @Override // com.google.android.gms.common.api.q
     public final void V0() {
         int i7 = this.c - 1;
         this.c = i7;
         if (i7 == 0) {
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
-                ((c) it.next()).P();
+                ((c) it.next()).Q();
             }
         }
     }
 
-    @Override // bi.b1
+    @Override // com.google.android.gms.common.api.q
     public final k1 W0(k1 k1Var, List list) {
         Iterator it = list.iterator();
         int i7 = 0;
@@ -95,7 +95,7 @@ public final class d extends b1 {
             Iterator it2 = this.d.iterator();
             while (it2.hasNext()) {
                 c cVar = (c) it2.next();
-                k1 e12 = e1(k1Var, cVar.R(), this.b);
+                k1 e12 = e1(k1Var, cVar.S(), this.b);
                 if (e12 != null) {
                     cVar.m(e12);
                 }

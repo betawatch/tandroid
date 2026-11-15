@@ -7,26 +7,26 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class ThreadUtils {
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public class 1CaughtException {
         Exception e;
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public class 1Result {
         public V value;
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface BlockingOperation {
         void run();
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class ThreadChecker {
         private Thread thread = Thread.currentThread();
 
@@ -67,16 +67,16 @@ public class ThreadUtils {
     }
 
     public static void executeUninterruptibly(BlockingOperation blockingOperation) {
-        boolean z9 = false;
+        boolean z10 = false;
         while (true) {
             try {
                 blockingOperation.run();
                 break;
             } catch (InterruptedException unused) {
-                z9 = true;
+                z10 = true;
             }
         }
-        if (z9) {
+        if (z10) {
             Thread.currentThread().interrupt();
         }
     }
@@ -115,7 +115,7 @@ public class ThreadUtils {
 
     public static boolean joinUninterruptibly(Thread thread, long j3) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z9 = false;
+        boolean z10 = false;
         long j10 = j3;
         while (j10 > 0) {
             try {
@@ -123,10 +123,10 @@ public class ThreadUtils {
                 break;
             } catch (InterruptedException unused) {
                 j10 = j3 - (SystemClock.elapsedRealtime() - elapsedRealtime);
-                z9 = true;
+                z10 = true;
             }
         }
-        if (z9) {
+        if (z10) {
             Thread.currentThread().interrupt();
         }
         return !thread.isAlive();
@@ -134,26 +134,26 @@ public class ThreadUtils {
 
     public static boolean awaitUninterruptibly(CountDownLatch countDownLatch, long j3) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z9 = false;
-        long j10 = j3;
         boolean z10 = false;
+        long j10 = j3;
+        boolean z11 = false;
         while (true) {
             try {
-                z9 = countDownLatch.await(j10, TimeUnit.MILLISECONDS);
+                z10 = countDownLatch.await(j10, TimeUnit.MILLISECONDS);
                 break;
             } catch (InterruptedException unused) {
                 j10 = j3 - (SystemClock.elapsedRealtime() - elapsedRealtime);
                 if (j10 <= 0) {
-                    z10 = true;
+                    z11 = true;
                     break;
                 }
-                z10 = true;
+                z11 = true;
             }
         }
-        if (z10) {
+        if (z11) {
             Thread.currentThread().interrupt();
         }
-        return z9;
+        return z10;
     }
 
     public static void joinUninterruptibly(final Thread thread) {

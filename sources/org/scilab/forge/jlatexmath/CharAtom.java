@@ -1,21 +1,21 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class CharAtom extends CharSymbol {
     private final char c;
     private boolean mathMode;
     private String textStyle;
 
-    public CharAtom(char c10, String str, boolean z9) {
+    public CharAtom(char c10, String str, boolean z10) {
         this.c = c10;
         this.textStyle = str;
-        this.mathMode = z9;
+        this.mathMode = z10;
     }
 
-    private Char getChar(TeXFont teXFont, int i7, boolean z9) {
+    private Char getChar(TeXFont teXFont, int i7, boolean z10) {
         char c10 = this.c;
-        if (z9 && Character.isLowerCase(c10)) {
+        if (z10 && Character.isLowerCase(c10)) {
             c10 = Character.toUpperCase(this.c);
         }
         String str = this.textStyle;

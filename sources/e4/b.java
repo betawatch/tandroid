@@ -1,13 +1,13 @@
 package e4;
 
-import a8.ga;
-import a8.ia;
+import a8.ha;
+import a8.ja;
 import android.opengl.GLES20;
 import android.text.TextUtils;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.p30;
+import org.telegram.ui.Components.s30;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class b {
     public final int a;
@@ -29,7 +29,7 @@ public class b {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static b b(String str) {
         char c10;
-        ia.f(str.startsWith("Format:"));
+        ja.f(str.startsWith("Format:"));
         String[] split = TextUtils.split(str.substring(7), ",");
         int i7 = -1;
         int i10 = -1;
@@ -37,7 +37,7 @@ public class b {
         int i12 = -1;
         int i13 = -1;
         for (int i14 = 0; i14 < split.length; i14++) {
-            String c11 = ga.c(split[i14].trim());
+            String c11 = ha.c(split[i14].trim());
             c11.getClass();
             switch (c11.hashCode()) {
                 case 100571:
@@ -110,9 +110,9 @@ public class b {
     }
 
     public b(int i7) {
-        int a10 = p30.a(35633, R.raw.round_blur_vert);
+        int a10 = s30.a(35633, R.raw.round_blur_vert);
         this.b = a10;
-        int a11 = p30.a(35632, i7);
+        int a11 = s30.a(35632, i7);
         this.c = a11;
         int glCreateProgram = GLES20.glCreateProgram();
         GLES20.glAttachShader(glCreateProgram, a10);

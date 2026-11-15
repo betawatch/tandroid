@@ -1,48 +1,50 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l31 extends v4.s0 {
-    public final /* synthetic */ t31 a;
+public final class l31 {
+    public final /* synthetic */ u31 a;
+    public final /* synthetic */ x31 b;
 
-    public l31(t31 t31Var) {
-        this.a = t31Var;
+    public l31(x31 x31Var, u31 u31Var) {
+        this.b = x31Var;
+        this.a = u31Var;
     }
 
-    @Override // v4.s0
-    public final void a(RecyclerView recyclerView, int i7) {
-        v4.s0 s0Var = this.a.D;
-        if (s0Var != null) {
-            s0Var.a(recyclerView, i7);
-        }
+    public final int a() {
+        return this.b.s.w;
     }
 
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        t31 t31Var = this.a;
-        s31 s31Var = t31Var.s;
-        i31 i31Var = t31Var.n;
-        v4.s0 s0Var = t31Var.D;
-        if (s0Var != null) {
-            s0Var.b(i31Var, i7, i10);
-        }
-        if (i10 <= 0 || i31Var.getAdapter() != s31Var || !t31Var.J || s31Var.r || s31Var.s) {
-            return;
-        }
-        if (t31Var.r.N0() >= ((s31Var.x + 1) - ((s31Var.w + 1) * 10)) - 1) {
-            t31 t31Var2 = s31Var.y;
-            if (!t31Var2.J || s31Var.r || s31Var.s) {
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(boolean z10) {
+        x31 x31Var = this.b;
+        n31 n31Var = x31Var.n;
+        if (z10) {
+            v4.h0 adapter = n31Var.getAdapter();
+            jg.c2 c2Var = x31Var.w;
+            if (adapter != c2Var) {
+                n31Var.setAdapter(c2Var);
+                if (n31Var.getAdapter().b() <= 0) {
+                    x31Var.r.i1(0, org.telegram.messenger.g0.L(58.0f) + (-n31Var.getPaddingTop()) + x31Var.F, false);
+                    return;
+                }
                 return;
             }
-            s31Var.r = true;
-            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
-            tL_messages_getOldFeaturedStickers.offset = s31Var.n.size();
-            tL_messages_getOldFeaturedStickers.limit = 40;
-            ConnectionsManager.getInstance(t31Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new w1(s31Var, 16));
+        }
+        if (z10) {
+            return;
+        }
+        v4.h0 adapter2 = n31Var.getAdapter();
+        w31 w31Var = x31Var.s;
+        if (adapter2 == w31Var) {
+            return;
+        }
+        n31Var.setAdapter(w31Var);
+        if (n31Var.getAdapter().b() <= 0) {
         }
     }
 }

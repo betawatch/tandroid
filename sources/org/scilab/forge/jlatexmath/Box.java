@@ -7,7 +7,7 @@ import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.Stroke;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class Box {
     public static boolean DEBUG = false;
@@ -51,7 +51,7 @@ public abstract class Box {
 
     public abstract void draw(Graphics2D graphics2D, float f10, float f11);
 
-    public void drawDebug(Graphics2D graphics2D, float f10, float f11, boolean z9) {
+    public void drawDebug(Graphics2D graphics2D, float f10, float f11, boolean z10) {
         if (DEBUG) {
             Stroke stroke = graphics2D.getStroke();
             if (this.markForDEBUG != null) {
@@ -69,7 +69,7 @@ public abstract class Box {
             }
             float f14 = this.height;
             graphics2D.draw(new Rectangle2D.Float(f10, f11 - f14, this.width, f14 + this.depth));
-            if (z9) {
+            if (z10) {
                 Color color2 = graphics2D.getColor();
                 graphics2D.setColor(Color.RED);
                 float f15 = this.depth;

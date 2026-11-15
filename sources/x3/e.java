@@ -3,11 +3,11 @@ package x3;
 import e2.r;
 import e2.t0;
 import e2.u;
+import f3.h0;
 import f3.i0;
 import f3.j0;
-import f3.k0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e {
     public int A;
@@ -31,13 +31,13 @@ public final class e {
     public int S;
     public long T;
     public long U;
-    public k0 V;
+    public j0 V;
     public boolean W;
     public boolean X;
     public boolean Y;
     public String Z;
     public boolean a;
-    public j0 a0;
+    public i0 a0;
     public String b;
     public u b0;
     public String c;
@@ -49,7 +49,7 @@ public final class e {
     public int h;
     public boolean i;
     public byte[] j;
-    public i0 k;
+    public h0 k;
     public byte[] l;
     public r m;
     public int n;

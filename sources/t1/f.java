@@ -5,11 +5,11 @@ import android.text.method.PasswordTransformationMethod;
 import android.text.method.TransformationMethod;
 import android.util.SparseArray;
 import android.widget.TextView;
-import c8.gc;
+import c8.ic;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class f extends gc {
+public final class f extends ic {
     public final TextView a;
     public final d b;
     public boolean c = true;
@@ -19,7 +19,7 @@ public final class f extends gc {
         this.b = new d(textView);
     }
 
-    @Override // c8.gc
+    @Override // c8.ic
     public final InputFilter[] a(InputFilter[] inputFilterArr) {
         if (!this.c) {
             SparseArray sparseArray = new SparseArray(1);
@@ -60,16 +60,16 @@ public final class f extends gc {
         }
     }
 
-    @Override // c8.gc
-    public final void b(boolean z9) {
-        if (z9) {
+    @Override // c8.ic
+    public final void b(boolean z10) {
+        if (z10) {
             d();
         }
     }
 
-    @Override // c8.gc
-    public final void c(boolean z9) {
-        this.c = z9;
+    @Override // c8.ic
+    public final void c(boolean z10) {
+        this.c = z10;
         d();
         TextView textView = this.a;
         textView.setFilters(a(textView.getFilters()));

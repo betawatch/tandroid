@@ -1,50 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oa implements Runnable {
+public final /* synthetic */ class oa implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bc b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ oa(bc bcVar, int i7) {
+    public /* synthetic */ oa(Object obj, int i7) {
         this.a = i7;
-        this.b = bcVar;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.b();
-                break;
-            case 1:
-                bc bcVar = this.b;
-                FrameLayout frameLayout = bcVar.h;
-                fb fbVar = bcVar.e;
-                za zaVar = bcVar.p;
-                if (zaVar != null && !fbVar.top) {
-                    zaVar.c(0.0f);
-                    bcVar.p.d(bcVar);
-                }
-                fbVar.transitionRunningExit = false;
-                fbVar.onExitTransitionEnd();
-                fbVar.onHide();
-                frameLayout.removeView(bcVar.f);
-                frameLayout.removeOnLayoutChangeListener(bcVar.c);
-                fbVar.onDetach();
-                Runnable runnable = bcVar.v;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
+                xb xbVar = (xb) this.b;
+                Float f10 = (Float) obj;
+                wa waVar = xbVar.p;
+                if (waVar != null) {
+                    if (!xbVar.e.top) {
+                        waVar.c(r0.getHeight() - f10.floatValue());
+                        break;
+                    }
                 }
                 break;
             default:
-                bc bcVar2 = this.b;
-                FrameLayout frameLayout2 = bcVar2.h;
-                frameLayout2.removeView(bcVar2.f);
-                frameLayout2.removeOnLayoutChangeListener(bcVar2.c);
+                ii iiVar = ((ki) this.b).X3;
+                if (iiVar != null) {
+                    iiVar.R0(obj);
+                    break;
+                }
                 break;
         }
     }

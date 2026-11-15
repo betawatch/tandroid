@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class s0 extends t0 implements g0 {
     public static final /* synthetic */ AtomicReferenceFieldUpdater h = AtomicReferenceFieldUpdater.newUpdater(s0.class, Object.class, "_queue$volatile");
@@ -38,7 +38,7 @@ public abstract class s0 extends t0 implements g0 {
     public final long j() {
         Runnable runnable;
         q0 q0Var;
-        com.google.android.gms.internal.clearcut.e eVar = b0.c;
+        aa.b0 b0Var = b0.c;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = h;
         if (!k()) {
             n();
@@ -48,7 +48,7 @@ public abstract class s0 extends t0 implements g0 {
                     break;
                 }
                 if (!(obj instanceof ee.m)) {
-                    if (obj != eVar) {
+                    if (obj != b0Var) {
                         while (!atomicReferenceFieldUpdater.compareAndSet(this, obj, null)) {
                             if (atomicReferenceFieldUpdater.get(this) != obj) {
                                 break;
@@ -83,7 +83,7 @@ public abstract class s0 extends t0 implements g0 {
                         if (((int) (1073741823 & j3)) != ((int) ((j3 & 1152921503533105152L) >> 30))) {
                             return 0L;
                         }
-                    } else if (obj2 == eVar) {
+                    } else if (obj2 == b0Var) {
                         return Long.MAX_VALUE;
                     }
                 }
@@ -269,13 +269,13 @@ public abstract class s0 extends t0 implements g0 {
         q0 c10;
         v1.a.set(null);
         r.set(this, 1);
-        com.google.android.gms.internal.clearcut.e eVar = b0.c;
+        aa.b0 b0Var = b0.c;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = h;
         loop0: while (true) {
             Object obj = atomicReferenceFieldUpdater.get(this);
             if (obj != null) {
                 if (!(obj instanceof ee.m)) {
-                    if (obj != eVar) {
+                    if (obj != b0Var) {
                         ee.m mVar = new ee.m(8, true);
                         mVar.a((Runnable) obj);
                         while (!atomicReferenceFieldUpdater.compareAndSet(this, obj, mVar)) {
@@ -290,7 +290,7 @@ public abstract class s0 extends t0 implements g0 {
                 ((ee.m) obj).b();
                 break;
             }
-            while (!atomicReferenceFieldUpdater.compareAndSet(this, null, eVar)) {
+            while (!atomicReferenceFieldUpdater.compareAndSet(this, null, b0Var)) {
                 if (atomicReferenceFieldUpdater.get(this) != null) {
                     break;
                 }

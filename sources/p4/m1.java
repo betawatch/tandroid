@@ -1,10 +1,10 @@
 package p4;
 
-import a8.ia;
+import a8.ja;
 import android.os.Bundle;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m1 {
     public static final String e;
@@ -17,7 +17,7 @@ public final class m1 {
     public final k1 d;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         e = Integer.toString(0, 36);
         f = Integer.toString(1, 36);
         g = Integer.toString(2, 36);
@@ -31,13 +31,13 @@ public final class m1 {
     public static m1 a(Bundle bundle) {
         k1 k1Var;
         int i7 = bundle.getInt(e, -1);
-        Bundle o4 = h2.m0.o(bundle.getBundle(f));
+        Bundle o4 = h2.l0.o(bundle.getBundle(f));
         long j3 = bundle.getLong(g, SystemClock.elapsedRealtime());
         Bundle bundle2 = bundle.getBundle(h);
         if (bundle2 != null) {
             int i10 = bundle2.getInt(k1.d, 1000);
             String string = bundle2.getString(k1.e, "");
-            Bundle o10 = h2.m0.o(bundle2.getBundle(k1.f));
+            Bundle o10 = h2.l0.o(bundle2.getBundle(k1.f));
             if (o10 == null) {
                 o10 = Bundle.EMPTY;
             }
@@ -53,7 +53,7 @@ public final class m1 {
     }
 
     public m1(int i7, Bundle bundle, long j3, k1 k1Var) {
-        ia.f(k1Var == null || i7 < 0);
+        ja.f(k1Var == null || i7 < 0);
         this.a = i7;
         this.b = new Bundle(bundle);
         this.c = j3;

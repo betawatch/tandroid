@@ -1,25 +1,45 @@
 package l2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.content.Context;
+import j$.util.function.IntConsumer$-CC;
+import java.lang.ref.WeakReference;
+import java.util.function.IntConsumer;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class e0 implements b1 {
-    public final Object a;
-    public final x2.a0 b;
-    public e2.l1 c;
+public final class e0 {
+    public final WeakReference a;
+    public final c0 b;
+    public final /* synthetic */ f0 c;
 
-    public e0(Object obj, x2.a0 a0Var) {
-        this.a = obj;
-        this.b = a0Var;
-        this.c = a0Var.o;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v1, types: [java.util.function.IntConsumer, l2.c0] */
+    public e0(f0 f0Var, Context context) {
+        this.c = f0Var;
+        this.a = new WeakReference(context);
+        ?? r02 = new IntConsumer() { // from class: l2.c0
+            @Override // java.util.function.IntConsumer
+            public final void accept(int i7) {
+                f0 f0Var2 = e0.this.c;
+                if (f0Var2.i0) {
+                    return;
+                }
+                f0Var2.t1(1, 19, Integer.valueOf(i7));
+            }
+
+            public /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+                return IntConsumer$-CC.$default$andThen(this, intConsumer);
+            }
+        };
+        this.b = r02;
+        context.registerDeviceIdChangeListener(new d0(f0Var.v.a(f0Var.t, null), 0), r02);
     }
 
-    @Override // l2.b1
-    public final Object a() {
-        return this.a;
-    }
-
-    @Override // l2.b1
-    public final e2.l1 b() {
-        return this.c;
+    public static void a(e0 e0Var) {
+        Context context = (Context) e0Var.a.get();
+        if (context == null) {
+            return;
+        }
+        context.unregisterDeviceIdChangeListener(e0Var.b);
     }
 }

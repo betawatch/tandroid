@@ -1,23 +1,22 @@
 package f3;
 
-import a8.v9;
+import a8.x9;
 import android.net.Uri;
-import di.a1;
-import h9.t1;
+import h9.s1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m implements r {
     public static final int[] h = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
-    public static final wf.b n = new wf.b(new a1(19));
-    public static final wf.b r = new wf.b(new a1(20));
-    public t1 a;
+    public static final q4.q n = new q4.q(new di.o(22));
+    public static final q4.q r = new q4.q(new di.o(23));
+    public s1 a;
     public int e;
     public int f;
-    public w7.s c = new w7.s(5, false);
+    public nb.a c = new nb.a(6);
     public boolean b = true;
     public int d = 3;
 
@@ -36,12 +35,12 @@ public final class m implements r {
                 arrayList.add(new g3.a(1));
                 break;
             case 4:
-                o Y = n.Y(0);
-                if (Y == null) {
+                o a10 = n.a(0);
+                if (a10 == null) {
                     arrayList.add(new k3.b());
                     break;
                 } else {
-                    arrayList.add(Y);
+                    arrayList.add(a10);
                     break;
                 }
             case 5:
@@ -54,17 +53,17 @@ public final class m implements r {
                 arrayList.add(new y3.d(1));
                 break;
             case 8:
-                w7.s sVar = this.c;
+                nb.a aVar = this.c;
                 int g10 = z3.h.g(this.d) | (this.b ? 0 : 32);
                 h9.g0 g0Var = h9.i0.b;
-                arrayList.add(new z3.h(sVar, g10, null, t1.e, null));
-                w7.s sVar2 = this.c;
+                arrayList.add(new z3.h(aVar, g10, null, s1.e, null));
+                nb.a aVar2 = this.c;
                 int i10 = this.d;
                 int i11 = (i10 & 1) == 0 ? 0 : 32;
                 if ((2 & i10) != 0) {
                     i11 |= 128;
                 }
-                arrayList.add(new z3.m(sVar2, i11 | (this.b ? 0 : 16)));
+                arrayList.add(new z3.l(aVar2, i11 | (this.b ? 0 : 16)));
                 break;
             case 9:
                 arrayList.add(new a4.e());
@@ -75,9 +74,9 @@ public final class m implements r {
             case 11:
                 if (this.a == null) {
                     h9.g0 g0Var2 = h9.i0.b;
-                    this.a = t1.e;
+                    this.a = s1.e;
                 }
-                arrayList.add(new m4.e0(1, !this.b ? 1 : 0, this.c, new h2.k0(0L), new m4.f(0, this.a)));
+                arrayList.add(new m4.d0(1, !this.b ? 1 : 0, this.c, new h2.k0(0L), new m4.f(0, this.a)));
                 break;
             case 12:
                 n4.c cVar = new n4.c();
@@ -91,9 +90,9 @@ public final class m implements r {
                 arrayList.add(new n3.a(this.e));
                 break;
             case 15:
-                o Y2 = r.Y(new Object[0]);
-                if (Y2 != null) {
-                    arrayList.add(Y2);
+                o a11 = r.a(new Object[0]);
+                if (a11 != null) {
+                    arrayList.add(a11);
                     break;
                 }
                 break;
@@ -124,7 +123,7 @@ public final class m implements r {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized o[] e(Uri uri, Map map) {
+    public final synchronized o[] d(Uri uri, Map map) {
         ArrayList arrayList;
         String str;
         int a10;
@@ -136,11 +135,11 @@ public final class m implements r {
             List list = (List) map.get("Content-Type");
             if (list != null && !list.isEmpty()) {
                 str = (String) list.get(0);
-                a10 = v9.a(str);
+                a10 = x9.a(str);
                 if (a10 != -1) {
                     a(a10, arrayList);
                 }
-                b10 = v9.b(uri);
+                b10 = x9.b(uri);
                 if (b10 != -1 && b10 != a10) {
                     a(b10, arrayList);
                 }
@@ -152,10 +151,10 @@ public final class m implements r {
                 }
             }
             str = null;
-            a10 = v9.a(str);
+            a10 = x9.a(str);
             if (a10 != -1) {
             }
-            b10 = v9.b(uri);
+            b10 = x9.b(uri);
             if (b10 != -1) {
                 a(b10, arrayList);
             }

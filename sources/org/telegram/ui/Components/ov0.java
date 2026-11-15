@@ -1,15 +1,45 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ov0 extends org.telegram.ui.qq0 {
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    public final boolean Q() {
-        return true;
+public final class ov0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ bw0 c;
+
+    public ov0(bw0 bw0Var, int i7, boolean z10) {
+        this.c = bw0Var;
+        this.a = i7;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    public final boolean z() {
-        return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        AnimatorSet[] animatorSetArr = this.c.D1;
+        int i7 = this.a;
+        AnimatorSet animatorSet = animatorSetArr[i7];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
+        }
+        animatorSetArr[i7] = null;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        bw0 bw0Var = this.c;
+        AnimatorSet[] animatorSetArr = bw0Var.D1;
+        int i7 = this.a;
+        AnimatorSet animatorSet = animatorSetArr[i7];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
+        }
+        if (!this.b) {
+            bw0Var.E1[i7].setVisibility(4);
+        }
+        animatorSetArr[i7] = null;
     }
 }

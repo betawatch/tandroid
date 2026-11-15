@@ -1,70 +1,46 @@
 package org.telegram.ui;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class av0 extends v4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final class av0 extends ProfileStoriesView {
+    public final /* synthetic */ Context u0;
+    public final /* synthetic */ ProfileActivity v0;
 
-    public /* synthetic */ av0(ProfileActivity profileActivity, int i7) {
-        this.a = i7;
-        this.b = profileActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public av0(ProfileActivity profileActivity, Context context, int i7, long j3, boolean z10, k0 k0Var, xu0 xu0Var, org.telegram.ui.ActionBar.e6 e6Var, Context context2) {
+        super(context, i7, j3, z10, k0Var, xu0Var, e6Var);
+        this.v0 = profileActivity;
+        this.u0 = context2;
     }
 
-    @Override // v4.s0
-    public final void a(RecyclerView recyclerView, int i7) {
-        View m10;
-        switch (this.a) {
-            case 0:
-                if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity = this.b;
-                if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(profileActivity.getParentActivity().getCurrentFocus());
-                }
-                if (profileActivity.F0 && i7 != 2) {
-                    profileActivity.F0 = false;
-                }
-                if (i7 == 0 && !profileActivity.F1 && (m10 = profileActivity.c.m(0)) != null) {
-                    ProfileActivity.R0(profileActivity, m10, 0.0f);
-                }
-                org.telegram.ui.ActionBar.g5 g5Var = profileActivity.T0;
-                if (g5Var != null) {
-                    boolean z9 = i7 != 0;
-                    profileActivity.y1 = z9;
-                    g5Var.setEnabled((z9 || profileActivity.o2) ? false : true);
-                }
-                yv0 yv0Var = profileActivity.N;
-                boolean z10 = profileActivity.a.I1;
-                yv0Var.getClass();
-                break;
+    @Override // org.telegram.ui.Stories.ProfileStoriesView
+    public final void e(cb.c cVar) {
+        TL_stories.PeerStories peerStories;
+        TL_stories.PeerStories peerStories2;
+        ProfileActivity profileActivity = this.v0;
+        long a10 = profileActivity.a();
+        fi.s6 P1 = profileActivity.getMessagesController().P1();
+        boolean K = P1.K(a10);
+        Context context = this.u0;
+        if (K || P1.M(a10) || P1.Q(a10)) {
+            profileActivity.getOrCreateStoryViewer().J(context, a10, cVar);
+            return;
         }
-    }
-
-    @Override // v4.s0
-    public void b(RecyclerView recyclerView, int i7, int i10) {
-        switch (this.a) {
-            case 1:
-                ProfileActivity profileActivity = this.b;
-                fi.m3 m3Var = profileActivity.W;
-                if (m3Var != null) {
-                    m3Var.f(true);
-                }
-                profileActivity.O3();
-                if (profileActivity.B1 != null && !profileActivity.C1 && profileActivity.c.N0() > profileActivity.u4 - 8) {
-                    profileActivity.h4(false);
-                }
-                yv0 yv0Var = profileActivity.N;
-                yv0Var.setPinnedToTop(yv0Var.getY() <= 0.0f);
-                profileActivity.s5();
-                break;
+        TLRPC.UserFull userFull = profileActivity.w2;
+        if (userFull != null && (peerStories2 = userFull.stories) != null && !peerStories2.stories.isEmpty() && profileActivity.e1 != profileActivity.getUserConfig().n) {
+            profileActivity.getOrCreateStoryViewer().K(context, profileActivity.w2.stories, cVar);
+            return;
+        }
+        TLRPC.ChatFull chatFull = profileActivity.v2;
+        if (chatFull == null || (peerStories = chatFull.stories) == null || peerStories.stories.isEmpty()) {
+            profileActivity.Z3();
+        } else {
+            profileActivity.getOrCreateStoryViewer().K(context, profileActivity.v2.stories, cVar);
         }
     }
 }

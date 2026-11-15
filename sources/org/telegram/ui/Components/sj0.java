@@ -1,15 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface sj0 {
-    void d(boolean z9);
+public final class sj0 {
+    public static final sj0 a;
+    public static final sj0 b;
+    public static final /* synthetic */ sj0[] c;
 
-    boolean e(int i7);
+    /* JADX INFO: Fake field, exist only in values array */
+    sj0 EF0;
 
-    void j(View view, boolean z9);
+    static {
+        sj0 sj0Var = new sj0("FULL_BACKGROUND", 0);
+        sj0 sj0Var2 = new sj0("SECTION_COLOR_BACKGROUND", 1);
+        sj0 sj0Var3 = new sj0("OPTIMIZED_BACKGROUND", 2);
+        a = sj0Var3;
+        sj0 sj0Var4 = new sj0("DRAW_VERTICES", 3);
+        b = sj0Var4;
+        c = new sj0[]{sj0Var, sj0Var2, sj0Var3, sj0Var4};
+    }
 
-    boolean k(int i7);
+    public static sj0 valueOf(String str) {
+        return (sj0) Enum.valueOf(sj0.class, str);
+    }
+
+    public static sj0[] values() {
+        return (sj0[]) c.clone();
+    }
 }

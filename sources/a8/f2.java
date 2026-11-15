@@ -1,13 +1,13 @@
 package a8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f2 implements na.d {
     public static final f2 a = new f2();
-    public static final na.c b = new na.c("errorCode", jg.g.q(p0.w(n0.class, new j0(1))));
-    public static final na.c c = new na.c("isColdCall", jg.g.q(p0.w(n0.class, new j0(2))));
-    public static final na.c d = new na.c("imageInfo", jg.g.q(p0.w(n0.class, new j0(3))));
-    public static final na.c e = new na.c("detectorOptions", jg.g.q(p0.w(n0.class, new j0(4))));
+    public static final na.c b = new na.c("errorCode", i5.c.p(p0.w(n0.class, new j0(1))));
+    public static final na.c c = new na.c("isColdCall", i5.c.p(p0.w(n0.class, new j0(2))));
+    public static final na.c d = new na.c("imageInfo", i5.c.p(p0.w(n0.class, new j0(3))));
+    public static final na.c e = new na.c("detectorOptions", i5.c.p(p0.w(n0.class, new j0(4))));
 
     @Override // na.a
     public final void a(Object obj, Object obj2) {

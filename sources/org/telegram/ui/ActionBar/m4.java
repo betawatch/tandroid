@@ -1,20 +1,25 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class m4 extends ActionBarLayout {
-    public final /* synthetic */ l2.x y1;
+public final class m4 {
+    public final e2 a;
+    public boolean b;
+    public boolean c;
+    public boolean d = true;
+    public boolean e;
+    public ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public boolean g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m4(Activity activity, l2.x xVar) {
-        super(activity, false);
-        this.y1 = xVar;
+    public m4(e2 e2Var) {
+        this.a = e2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.ActionBarLayout, org.telegram.ui.ActionBar.r4
-    public final w2 getBottomSheet() {
-        return ((w2[]) this.y1.b)[0];
+    public final void a() {
+        this.c = true;
+    }
+
+    public final void b(boolean z10) {
+        this.b = z10;
     }
 }

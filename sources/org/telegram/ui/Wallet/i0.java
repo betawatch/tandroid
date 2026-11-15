@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class i0 implements AutoCloseable {
     public final byte[] a;
@@ -84,13 +84,13 @@ public final class i0 implements AutoCloseable {
         int i7;
         a();
         i7 = 0;
-        boolean z9 = false;
+        boolean z10 = false;
         for (byte b10 : this.a) {
             if (e(b10)) {
-                z9 = false;
-            } else if (!z9) {
+                z10 = false;
+            } else if (!z10) {
                 i7++;
-                z9 = true;
+                z10 = true;
             }
         }
         return i7;

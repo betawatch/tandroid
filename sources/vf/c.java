@@ -23,41 +23,41 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import jg.g;
 import org.telegram.messenger.CustomTabsCopyReceiver;
 import org.telegram.messenger.ShareBroadcastReceiver;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.id;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.t0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.d3;
-import org.telegram.ui.ActionBar.e3;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.b3;
+import org.telegram.ui.ActionBar.c3;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.g4;
 import org.telegram.ui.k3;
-import org.telegram.ui.web.u0;
+import org.telegram.ui.nb1;
+import org.telegram.ui.web.s0;
 import org.telegram.ui.x2;
-import sa.d;
-import sg.i0;
-import v6.e;
+import sg.h0;
+import tg.x;
+import zf.e;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class c {
-    public static i0 a;
-    public static e b;
+    public static h0 a;
+    public static x b;
     public static ag.a c;
     public static String d;
     public static WeakReference e;
@@ -68,8 +68,8 @@ public abstract class c {
             return null;
         }
         StringBuilder sb2 = new StringBuilder();
-        boolean z9 = true;
-        boolean z10 = false;
+        boolean z10 = true;
+        boolean z11 = false;
         for (String str2 : str.split("&", -1)) {
             int indexOf = str2.indexOf(61);
             String substring = indexOf < 0 ? str2 : str2.substring(0, indexOf);
@@ -87,16 +87,16 @@ public abstract class c {
             }
             String lowerCase = substring.toLowerCase();
             if (lowerCase.startsWith("tgwebauth") || lowerCase.equals("autologin_token")) {
-                z10 = true;
+                z11 = true;
             } else {
-                if (!z9) {
+                if (!z10) {
                     sb2.append('&');
                 }
                 sb2.append(str2);
-                z9 = false;
+                z10 = false;
             }
         }
-        if (z10) {
+        if (z11) {
             return sb2.toString();
         }
         return null;
@@ -170,7 +170,7 @@ public abstract class c {
             if (str.startsWith("https://t.me/")) {
                 return str.substring(13);
             }
-            Matcher matcher = LaunchActivity.C1.matcher(str);
+            Matcher matcher = LaunchActivity.D1.matcher(str);
             if (matcher.find()) {
                 return matcher.group(1);
             }
@@ -178,7 +178,7 @@ public abstract class c {
         return null;
     }
 
-    public static String d(String str, boolean z9) {
+    public static String d(String str, boolean z10) {
         if (str == null) {
             return null;
         }
@@ -196,7 +196,7 @@ public abstract class c {
                 sb2.append(parse.getEncodedUserInfo());
                 sb2.append("@");
             }
-            sb2.append(z9 ? a(parse.getHost()) : parse.getHost());
+            sb2.append(z10 ? a(parse.getHost()) : parse.getHost());
             if (parse.getPort() != -1) {
                 sb2.append(":");
                 sb2.append(parse.getPort());
@@ -219,23 +219,23 @@ public abstract class c {
         }
     }
 
-    public static i0 e() {
-        e eVar = b;
-        i0 i0Var = null;
-        if (eVar == null) {
+    public static h0 e() {
+        x xVar = b;
+        h0 h0Var = null;
+        if (xVar == null) {
             a = null;
         } else if (a == null) {
-            d dVar = new d(26);
-            zf.e eVar2 = (zf.e) eVar.a;
-            zf.b bVar = new zf.b(dVar);
+            pb.b bVar = new pb.b(27);
+            e eVar = (e) xVar.b;
+            zf.b bVar2 = new zf.b(bVar);
             try {
-                if (((zf.c) eVar2).h1(bVar)) {
-                    i0Var = new i0(14, bVar, (ComponentName) eVar.b);
+                if (((zf.c) eVar).h1(bVar2)) {
+                    h0Var = new h0(14, bVar2, (ComponentName) xVar.c);
                 }
             } catch (RemoteException unused) {
             }
-            a = i0Var;
-            new WeakReference(i0Var);
+            a = h0Var;
+            new WeakReference(h0Var);
         }
         return a;
     }
@@ -316,14 +316,14 @@ public abstract class c {
         }
     }
 
-    public static boolean g(Uri uri, boolean z9, boolean[] zArr) {
+    public static boolean g(Uri uri, boolean z10, boolean[] zArr) {
         String str;
         String str2;
         Typeface typeface = g0.a;
         String K0 = uri == null ? null : g0.K0(uri.toString(), false);
         String lowerCase = K0 != null ? K0.toLowerCase() : "";
-        if (!qp.s1(p10.s0).e4.contains(lowerCase)) {
-            Matcher matcher = LaunchActivity.C1.matcher(lowerCase);
+        if (!np.s1(m10.t0).f4.contains(lowerCase)) {
+            Matcher matcher = LaunchActivity.D1.matcher(lowerCase);
             if (matcher.find()) {
                 StringBuilder sb2 = new StringBuilder("https://t.me/");
                 sb2.append(matcher.group(1));
@@ -358,7 +358,7 @@ public abstract class c {
                 if ("telegram.dog".equals(lowerCase)) {
                     String path = uri.getPath();
                     if (path != null && path.length() > 1) {
-                        if (!z9) {
+                        if (!z10) {
                             String lowerCase2 = path.substring(1).toLowerCase();
                             if (lowerCase2.startsWith("blog") || lowerCase2.equals("iv") || lowerCase2.startsWith("faq") || lowerCase2.equals("apps") || lowerCase2.startsWith("s/")) {
                                 if (zArr != null) {
@@ -371,7 +371,7 @@ public abstract class c {
                 } else if ("telegram.me".equals(lowerCase) || "t.me".equals(lowerCase)) {
                     String path2 = uri.getPath();
                     if (path2 != null && path2.length() > 1) {
-                        if (!z9) {
+                        if (!z10) {
                             String lowerCase3 = path2.substring(1).toLowerCase();
                             if (lowerCase3.equals("iv") || lowerCase3.startsWith("s/")) {
                                 if (zArr != null) {
@@ -380,7 +380,7 @@ public abstract class c {
                             }
                         }
                     }
-                } else if ((!"telegram.org".equals(lowerCase) || uri.getPath() == null || !uri.getPath().startsWith("/blog/")) && (!z9 || (!lowerCase.endsWith("telegram.org") && !lowerCase.endsWith("telegra.ph") && !lowerCase.endsWith("telesco.pe")))) {
+                } else if ((!"telegram.org".equals(lowerCase) || uri.getPath() == null || !uri.getPath().startsWith("/blog/")) && (!z10 || (!lowerCase.endsWith("telegram.org") && !lowerCase.endsWith("telegra.ph") && !lowerCase.endsWith("telesco.pe")))) {
                 }
             }
             return true;
@@ -394,19 +394,19 @@ public abstract class c {
 
     public static boolean h(String str) {
         try {
-            return TextUtils.equals(g0.K0(str, false), qp.s1(p10.s0).U2);
+            return TextUtils.equals(g0.K0(str, false), np.s1(m10.t0).V2);
         } catch (Exception e10) {
             a8.g(e10, true);
             return false;
         }
     }
 
-    public static boolean i(String str, boolean z9, boolean z10) {
-        if (z9) {
+    public static boolean i(String str, boolean z10, boolean z11) {
+        if (z10) {
             return str.equals("telegra.ph") || str.equals("te.legra.ph") || str.equals("graph.org");
         }
         StringBuilder sb2 = new StringBuilder("^(https");
-        sb2.append(z10 ? "" : "?");
+        sb2.append(z11 ? "" : "?");
         sb2.append("://)?(te\\.?legra\\.ph|graph\\.org)(/.*|$)");
         return str.matches(sb2.toString());
     }
@@ -438,7 +438,7 @@ public abstract class c {
         return !matches;
     }
 
-    public static boolean l(Context context, String str, boolean z9, boolean z10, b bVar) {
+    public static boolean l(Context context, String str, boolean z10, boolean z11, b bVar) {
         LaunchActivity launchActivity;
         if (str == null) {
             return false;
@@ -446,7 +446,7 @@ public abstract class c {
         if (g0.W(context) instanceof LaunchActivity) {
             launchActivity = (LaunchActivity) g0.W(context);
         } else {
-            launchActivity = LaunchActivity.G1;
+            launchActivity = LaunchActivity.H1;
             if (launchActivity == null) {
                 return false;
             }
@@ -458,13 +458,13 @@ public abstract class c {
         intent.setComponent(new ComponentName(context.getPackageName(), LaunchActivity.class.getName()));
         intent.putExtra("create_new_tab", true);
         intent.putExtra("com.android.browser.application_id", context.getPackageName());
-        intent.putExtra("force_not_internal_apps", z9);
-        intent.putExtra("force_request", z10);
+        intent.putExtra("force_not_internal_apps", z10);
+        intent.putExtra("force_request", z11);
         launchActivity.f0(intent, bVar);
         return true;
     }
 
-    public static boolean m(Context context, String str, boolean z9) {
+    public static boolean m(Context context, String str, boolean z10) {
         Intent intent;
         if (str != null) {
             try {
@@ -472,9 +472,9 @@ public abstract class c {
                     Uri parse = Uri.parse(str);
                     String w10 = w(parse, parse.getScheme() == null ? "https" : parse.getScheme(), null, parse.getHost() != null ? parse.getHost().toLowerCase() : parse.getHost(), TextUtils.isEmpty(parse.getEncodedPath()) ? "/" : parse.getEncodedPath());
                     Uri parse2 = Uri.parse(w10);
-                    boolean z10 = w10.startsWith("intent://") || (parse2.getScheme() != null && parse2.getScheme().equalsIgnoreCase("intent"));
-                    if (!z10 || z9) {
-                        if (z10) {
+                    boolean z11 = w10.startsWith("intent://") || (parse2.getScheme() != null && parse2.getScheme().equalsIgnoreCase("intent"));
+                    if (!z11 || z10) {
+                        if (z11) {
                             intent = Intent.parseUri(parse2.toString(), 1);
                             intent.addCategory("android.intent.category.BROWSABLE");
                             intent.setComponent(null);
@@ -486,12 +486,12 @@ public abstract class c {
                         } else {
                             intent = new Intent("android.intent.action.VIEW", parse2);
                         }
-                        if (!z10 && Build.VERSION.SDK_INT >= 30) {
+                        if (!z11 && Build.VERSION.SDK_INT >= 30) {
                             intent.addCategory("android.intent.category.BROWSABLE");
                             intent.addCategory("android.intent.category.DEFAULT");
                             intent.addFlags(TLObject.FLAG_28);
                             intent.addFlags(1024);
-                        } else if (!z10 && !f(context, w10)) {
+                        } else if (!z11 && !f(context, w10)) {
                         }
                         context.startActivity(intent);
                         return true;
@@ -506,14 +506,14 @@ public abstract class c {
         return false;
     }
 
-    public static boolean n(Context context, String str, boolean z9, String str2) {
+    public static boolean n(Context context, String str, boolean z10, String str2) {
         Intent intent;
         if (str != null) {
             try {
                 Uri parse = Uri.parse(str);
-                boolean z10 = parse.getScheme() != null && parse.getScheme().equalsIgnoreCase("intent");
-                if (!z10 || z9) {
-                    if (z10) {
+                boolean z11 = parse.getScheme() != null && parse.getScheme().equalsIgnoreCase("intent");
+                if (!z11 || z10) {
+                    if (z11) {
                         intent = Intent.parseUri(parse.toString(), 1);
                         intent.addCategory("android.intent.category.BROWSABLE");
                         intent.setComponent(null);
@@ -542,27 +542,27 @@ public abstract class c {
     }
 
     public static void o(String str) {
-        e3 O;
-        d3 d3Var;
+        c3 N;
+        b3 b3Var;
         k3[] k3VarArr;
         k3 k3Var;
-        LaunchActivity launchActivity = LaunchActivity.G1;
-        if (launchActivity != null && (O = launchActivity.O()) != null) {
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        if (launchActivity != null && (N = launchActivity.N()) != null) {
             if (!TextUtils.isEmpty(str)) {
-                ArrayList<d3> tabs = O.getTabs();
+                ArrayList<b3> tabs = N.getTabs();
                 for (int i7 = 0; i7 < tabs.size(); i7++) {
-                    d3Var = tabs.get(i7);
-                    g4 g4Var = d3Var.J;
-                    if (g4Var != null && !g4Var.d0.isEmpty()) {
-                        Object i10 = g.i(1, d3Var.J.d0);
-                        if (i10 instanceof x2) {
-                            u0 u0Var = ((x2) i10).b;
-                            if (u0Var == null && (k3VarArr = d3Var.J.u0) != null && (k3Var = k3VarArr[0]) != null) {
-                                u0Var = k3Var.getWebView();
+                    b3Var = tabs.get(i7);
+                    g4 g4Var = b3Var.J;
+                    if (g4Var != null && !g4Var.e0.isEmpty()) {
+                        Object h = i5.c.h(1, b3Var.J.e0);
+                        if (h instanceof x2) {
+                            s0 s0Var = ((x2) h).b;
+                            if (s0Var == null && (k3VarArr = b3Var.J.v0) != null && (k3Var = k3VarArr[0]) != null) {
+                                s0Var = k3Var.getWebView();
                             }
-                            if (u0Var != null) {
-                                if (TextUtils.equals(e3.p(u0Var.canGoBack() ? u0Var.getUrl() : u0Var.getOpenURL()), e3.p(str))) {
-                                    O.e(d3Var);
+                            if (s0Var != null) {
+                                if (TextUtils.equals(c3.p(s0Var.canGoBack() ? s0Var.getUrl() : s0Var.getOpenURL()), c3.p(str))) {
+                                    N.e(b3Var);
                                     break;
                                 }
                             } else {
@@ -574,12 +574,12 @@ public abstract class c {
                     }
                 }
             }
-            d3Var = null;
-            if (d3Var != null) {
+            b3Var = null;
+            if (b3Var != null) {
                 return;
             }
         }
-        f2 T = LaunchActivity.T();
+        e2 T = LaunchActivity.T();
         if (T != null && T.getArticleViewer() != null) {
             T.getArticleViewer().L(null, null, null, str);
             return;
@@ -593,19 +593,19 @@ public abstract class c {
         T.createArticleViewer(false).L(null, null, null, str);
     }
 
-    public static void p(Activity activity, String str, boolean z9) {
+    public static void p(Activity activity, String str, boolean z10) {
         if (activity == null || str == null) {
             return;
         }
-        q(activity, Uri.parse(str), z9, true);
+        q(activity, Uri.parse(str), z10, true);
     }
 
-    public static void q(Context context, Uri uri, boolean z9, boolean z10) {
-        s(context, uri, z9, z10, false, null, null, false, true, false, false);
+    public static void q(Context context, Uri uri, boolean z10, boolean z11) {
+        s(context, uri, z10, z11, false, null, null, false, true, false, false);
     }
 
-    public static void r(Context context, Uri uri, boolean z9, boolean z10, b bVar) {
-        s(context, uri, z9, z10, false, bVar, null, false, true, false, false);
+    public static void r(Context context, Uri uri, boolean z10, boolean z11, b bVar) {
+        s(context, uri, z10, z11, false, bVar, null, false, true, false, false);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(36:4|(4:6|(9:274|(3:291|(1:293)(2:294|(6:(1:298)|299|(1:301)|302|(1:304)(1:306)|305))|(5:279|(3:281|(1:283)|284)|(3:286|(1:288)|289)|290|11))|276|(0)|279|(0)|(0)|290|11)|10|11)(1:307)|12|(10:192|193|260|(1:16)(1:191)|(5:162|163|(1:165)(1:189)|166|(5:178|179|180|181|(2:183|184)(2:185|186)))|18|19|20|(1:22)|(22:29|(2:155|156)|33|34|35|36|37|38|39|40|(1:42)|(3:(2:45|(1:47))|48|(3:62|63|(2:65|66)(22:67|68|69|70|71|72|73|(1:75)|76|(1:78)(1:95)|79|80|81|82|83|84|85|86|87|88|89|91)))|152|(3:129|130|(1:(2:133|(2:135|(7:137|(1:145)|103|104|105|(1:107)|(1:(2:114|(4:116|(2:120|(1:122))|123|124)(1:125))(2:126|127))(2:111|112))))))|101|(6:128|104|105|(0)|(1:109)|(0)(0))|103|104|105|(0)|(0)|(0)(0))(2:26|27))|14|(0)(0)|(0)|18|19|20|(0)|(1:24)|29|(1:31)|155|156|33|34|35|36|37|38|39|40|(0)|(0)|152|(0)|101|(0)|103|104|105|(0)|(0)|(0)(0)) */
@@ -646,27 +646,27 @@ public abstract class c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void s(Context context, Uri uri, boolean z9, boolean z10, boolean z11, b bVar, String str, boolean z12, boolean z13, boolean z14, boolean z15) {
+    public static void s(Context context, Uri uri, boolean z10, boolean z11, boolean z12, b bVar, String str, boolean z13, boolean z14, boolean z15, boolean z16) {
         Uri uri2;
         String str2;
         String str3;
-        boolean z16;
         boolean z17;
-        String str4;
         boolean z18;
-        b bVar2;
+        String str4;
         boolean z19;
+        b bVar2;
+        boolean z20;
         LaunchActivity launchActivity;
         String lowerCase;
         String K0;
         PendingIntent broadcast;
-        i0 e10;
+        h0 e10;
         String sb2;
         Uri build;
         if (context == null || uri == null) {
             return;
         }
-        if (z15) {
+        if (z16) {
             uri2 = uri;
         } else {
             if ("http".equalsIgnoreCase(uri.getScheme()) || "https".equalsIgnoreCase(uri.getScheme())) {
@@ -726,7 +726,7 @@ public abstract class c {
             build = uri;
             uri2 = build;
         }
-        int i7 = p10.s0;
+        int i7 = m10.t0;
         boolean[] zArr = {false};
         boolean g10 = g(uri2, false, zArr);
         if (str != null) {
@@ -791,31 +791,31 @@ public abstract class c {
                     break;
             }
             if (str3 == null) {
+                z18 = false;
                 z17 = false;
-                z16 = false;
             } else {
-                z16 = z9;
                 z17 = z10;
+                z18 = z11;
             }
-            if (z17) {
+            if (z18) {
                 try {
                     Typeface typeface = g0.a;
                     String K02 = uri2 == null ? null : g0.K0(uri2.toString(), false);
-                    if (p10.i(p10.s0).f() != null && (i(K02, true, false) || ("telegram.org".equalsIgnoreCase(K02) && (uri2.toString().toLowerCase().contains("telegram.org/faq") || uri2.toString().toLowerCase().contains("telegram.org/privacy") || uri2.toString().toLowerCase().contains("telegram.org/blog"))))) {
-                        u1[] u1VarArr = {new u1(3, context, null)};
+                    if (m10.i(m10.t0).f() != null && (i(K02, true, false) || ("telegram.org".equalsIgnoreCase(K02) && (uri2.toString().toLowerCase().contains("telegram.org/faq") || uri2.toString().toLowerCase().contains("telegram.org/privacy") || uri2.toString().toLowerCase().contains("telegram.org/blog"))))) {
+                        t1[] t1VarArr = {new t1(3, context, null)};
                         TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                         getwebpagepreview.message = uri2.toString();
                         str4 = str3;
-                        z18 = z16;
-                        int i10 = 9;
+                        z19 = z17;
+                        int i10 = 12;
                         bVar2 = bVar;
                         try {
-                            int sendRequest = ConnectionsManager.getInstance(p10.s0).sendRequest(getwebpagepreview, new org.telegram.ui.g0(bVar2, u1VarArr, i7, uri2, context, z18));
+                            int sendRequest = ConnectionsManager.getInstance(m10.t0).sendRequest(getwebpagepreview, new org.telegram.ui.g0(bVar2, t1VarArr, i7, uri2, context, z19));
                             if (bVar2 != null) {
                                 bVar2.d();
                                 return;
                             } else {
-                                g0.i3(new org.telegram.ui.Wallet.f2(u1VarArr, sendRequest, i10), 1000L);
+                                g0.i3(new nb1(t1VarArr, sendRequest, i10), 1000L);
                                 return;
                             }
                         } catch (Exception unused) {
@@ -826,7 +826,7 @@ public abstract class c {
             }
             bVar2 = bVar;
             str4 = str3;
-            z18 = z16;
+            z19 = z17;
             lowerCase = uri2.getScheme() != null ? uri2.getScheme().toLowerCase() : "";
             if (lowerCase == null && lowerCase.contains(".")) {
                 return;
@@ -834,18 +834,18 @@ public abstract class c {
             if (!"http".equals(lowerCase) || "https".equals(lowerCase)) {
                 uri2 = uri2.normalizeScheme();
             }
-            boolean z20 = false;
+            boolean z21 = false;
             K0 = g0.K0(uri2.toString().toLowerCase(), false);
-            if (qp.s1(org.telegram.messenger.c.a(i7).a).d4.contains(K0)) {
-                uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(qp.s1(org.telegram.messenger.c.a(p10.s0).a).f4, "UTF-8")).build();
+            if (np.s1(org.telegram.messenger.c.a(i7).a).e4.contains(K0)) {
+                uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(np.s1(org.telegram.messenger.c.a(m10.t0).a).g4, "UTF-8")).build();
             }
-            if (z18) {
+            if (z19) {
                 if (uri2 == null) {
-                    if (!qp.s1(i7).N2(uri2.toString())) {
+                    if (!np.s1(i7).N2(uri2.toString())) {
                     }
                 }
-                if (qp.s1(i7).O2() && !g10 && !lowerCase.equals("tel") && !j(uri2.toString()) && (zArr[0] || !m(context, uri2.toString(), false) || !f(context, uri2.toString()))) {
-                    if (qp.s1(i7).e4.contains(K0)) {
+                if (np.s1(i7).O2() && !g10 && !lowerCase.equals("tel") && !j(uri2.toString()) && (zArr[0] || !m(context, uri2.toString(), false) || !f(context, uri2.toString()))) {
+                    if (np.s1(i7).f4.contains(K0)) {
                         Intent intent = new Intent("android.intent.action.VIEW", uri2);
                         intent.addFlags(TLObject.FLAG_28);
                         t0.b.startActivity(intent);
@@ -853,24 +853,24 @@ public abstract class c {
                     }
                     Intent intent2 = new Intent(t0.b, (Class<?>) ShareBroadcastReceiver.class);
                     intent2.setAction("android.intent.action.SEND");
-                    boolean z21 = false;
+                    boolean z22 = false;
                     try {
                         broadcast = PendingIntent.getBroadcast(t0.b, 0, new Intent(t0.b, (Class<?>) CustomTabsCopyReceiver.class), 167772160);
                         e10 = e();
                     } catch (Exception e11) {
                         e = e11;
-                        z20 = z21;
+                        z21 = z22;
                         a8.g(e, true);
-                        if (z13) {
+                        if (z14) {
                         }
                         if (!j(uri2.toString())) {
                         }
-                        z19 = true;
+                        z20 = true;
                         if (uri2.getScheme() != null) {
                         }
                         if (!g10) {
                         }
-                        if (!z19) {
+                        if (!z20) {
                         }
                     }
                     try {
@@ -881,18 +881,18 @@ public abstract class c {
                         Bundle bundle = new Bundle();
                         bundle.putBinder("android.support.customtabs.extra.SESSION", e10 == null ? null : (zf.b) e10.b);
                         intent3.putExtras(bundle);
-                        String M0 = id.M0(2131751762, null);
+                        String M0 = hd.M0(2131751762, null);
                         ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
                         Bundle bundle2 = new Bundle();
                         bundle2.putString("android.support.customtabs.customaction.MENU_ITEM_TITLE", M0);
                         bundle2.putParcelable("android.support.customtabs.customaction.PENDING_INTENT", broadcast);
                         arrayList.add(bundle2);
-                        z21 = false;
-                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", m6.x0(null, m6.S8, false));
+                        z22 = false;
+                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", j6.x0(null, j6.S8, false));
                         intent3.putExtra("android.support.customtabs.extra.TITLE_VISIBILITY", 1);
                         Bitmap decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
-                        String M02 = id.M0(2131745459, null);
-                        z20 = false;
+                        String M02 = hd.M0(2131745459, null);
+                        z21 = false;
                         PendingIntent broadcast2 = PendingIntent.getBroadcast(t0.b, 0, intent2, 33554432);
                         Bundle bundle3 = new Bundle();
                         bundle3.putInt("android.support.customtabs.customaction.ID", 0);
@@ -909,44 +909,44 @@ public abstract class c {
                         return;
                     } catch (Exception e12) {
                         e = e12;
-                        z20 = false;
+                        z21 = false;
                         a8.g(e, true);
-                        if (z13) {
+                        if (z14) {
                         }
                         if (!j(uri2.toString())) {
                         }
-                        z19 = true;
+                        z20 = true;
                         if (uri2.getScheme() != null) {
                         }
                         if (!g10) {
                         }
-                        if (!z19) {
+                        if (!z20) {
                         }
                     }
                 }
             }
-            z20 = false;
-            if (z13) {
+            z21 = false;
+            if (z14) {
                 try {
-                    if (BubbleActivity.a0 == null) {
+                    if (BubbleActivity.b0 == null) {
                         if (uri2 != null) {
-                            if (qp.s1(i7).N2(uri2.toString())) {
+                            if (np.s1(i7).N2(uri2.toString())) {
                                 if (TextUtils.isEmpty(str4)) {
                                     if (uri2.getScheme() != null && !"https".equals(uri2.getScheme()) && !"http".equals(uri2.getScheme()) && !"tonsite".equals(uri2.getScheme())) {
                                     }
-                                    z19 = true;
+                                    z20 = true;
                                     if (uri2.getScheme() != null) {
                                         uri2.getScheme().equalsIgnoreCase("intent");
                                     }
-                                    if (!g10 && (launchActivity = LaunchActivity.G1) != null) {
-                                        l(launchActivity, uri2.toString(), z11, z14, bVar2);
+                                    if (!g10 && (launchActivity = LaunchActivity.H1) != null) {
+                                        l(launchActivity, uri2.toString(), z12, z15, bVar2);
                                         return;
                                     }
-                                    if (!z19) {
-                                        n(context, uri2.toString(), z12, str4);
+                                    if (!z20) {
+                                        n(context, uri2.toString(), z13, str4);
                                         return;
                                     }
-                                    if (m(context, uri2.toString(), z12)) {
+                                    if (m(context, uri2.toString(), z13)) {
                                         return;
                                     }
                                     if (uri2.getScheme() != null && uri2.getScheme().equalsIgnoreCase("intent")) {
@@ -967,30 +967,30 @@ public abstract class c {
                 }
             }
             if (!j(uri2.toString())) {
-                z19 = z20;
+                z20 = z21;
                 if (uri2.getScheme() != null) {
                 }
                 if (!g10) {
                 }
-                if (!z19) {
+                if (!z20) {
                 }
             }
-            z19 = true;
+            z20 = true;
             if (uri2.getScheme() != null) {
             }
             if (!g10) {
             }
-            if (!z19) {
+            if (!z20) {
             }
         }
         str3 = null;
         if (str3 == null) {
         }
-        if (z17) {
+        if (z18) {
         }
         bVar2 = bVar;
         str4 = str3;
-        z18 = z16;
+        z19 = z17;
         if (uri2.getScheme() != null) {
         }
         if (lowerCase == null) {
@@ -998,23 +998,23 @@ public abstract class c {
         if (!"http".equals(lowerCase)) {
         }
         uri2 = uri2.normalizeScheme();
-        boolean z202 = false;
+        boolean z212 = false;
         K0 = g0.K0(uri2.toString().toLowerCase(), false);
-        if (qp.s1(org.telegram.messenger.c.a(i7).a).d4.contains(K0)) {
+        if (np.s1(org.telegram.messenger.c.a(i7).a).e4.contains(K0)) {
         }
-        if (z18) {
+        if (z19) {
         }
-        z202 = false;
-        if (z13) {
+        z212 = false;
+        if (z14) {
         }
         if (!j(uri2.toString())) {
         }
-        z19 = true;
+        z20 = true;
         if (uri2.getScheme() != null) {
         }
         if (!g10) {
         }
-        if (!z19) {
+        if (!z20) {
         }
     }
 
@@ -1029,11 +1029,11 @@ public abstract class c {
         q(launchActivity, uri, true, true);
     }
 
-    public static void v(Context context, String str, boolean z9) {
+    public static void v(Context context, String str, boolean z10) {
         if (str == null) {
             return;
         }
-        s(context, Uri.parse(str), false, true, false, null, null, false, false, false, z9);
+        s(context, Uri.parse(str), false, true, false, null, null, false, false, false, z10);
     }
 
     public static String w(Uri uri, String str, String str2, String str3, String str4) {

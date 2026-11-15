@@ -1,28 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ku implements org.telegram.messenger.c20 {
+public final /* synthetic */ class ku implements org.telegram.messenger.pr {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zw b;
+    public final /* synthetic */ yw b;
 
-    public /* synthetic */ ku(zw zwVar, int i7) {
+    public /* synthetic */ ku(yw ywVar, int i7) {
         this.a = i7;
-        this.b = zwVar;
+        this.b = ywVar;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
+    @Override // org.telegram.messenger.pr
+    public final void a(int i7) {
         switch (this.a) {
             case 0:
-                zw zwVar = this.b;
-                zwVar.P1 = (Long) obj;
-                zwVar.g5();
+                yw ywVar = this.b;
+                ywVar.getClass();
+                ywVar.W1 = i7 != 0;
+                org.telegram.messenger.np.f1().edit().putBoolean("askAboutContacts", ywVar.W1).apply();
+                ywVar.u3(false);
                 break;
             default:
-                zw.f0(this.b, (TL_account.TL_birthday) obj);
+                yw ywVar2 = this.b;
+                ywVar2.getClass();
+                ywVar2.W1 = i7 != 0;
+                org.telegram.messenger.np.f1().edit().putBoolean("askAboutContacts", ywVar2.W1).commit();
+                ywVar2.u3(false);
                 break;
         }
     }

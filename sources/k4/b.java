@@ -6,19 +6,20 @@ import android.graphics.Rect;
 import c4.d;
 import c4.l;
 import c4.m;
+import com.google.android.gms.internal.vision.e2;
 import d4.f;
 import h2.j;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements m {
     public static final c4.a e;
@@ -29,7 +30,7 @@ public final class b implements m {
 
     static {
         g0 g0Var = i0.b;
-        e = new c4.a(-9223372036854775807L, -9223372036854775807L, t1.e);
+        e = new c4.a(-9223372036854775807L, -9223372036854775807L, s1.e);
     }
 
     public b(List list) {
@@ -37,7 +38,7 @@ public final class b implements m {
         a aVar = new a();
         this.c = aVar;
         String trim = new String((byte[]) list.get(0), StandardCharsets.UTF_8).trim();
-        String str = m0.a;
+        String str = l0.a;
         for (String str2 : trim.split("\\r?\\n", -1)) {
             if (str2.startsWith("palette: ")) {
                 String[] split = str2.substring(9).split(",", -1);
@@ -69,16 +70,6 @@ public final class b implements m {
         }
     }
 
-    @Override // c4.m
-    public final int P() {
-        return 2;
-    }
-
-    @Override // c4.m
-    public final /* synthetic */ d c(int i7, int i10, byte[] bArr) {
-        return p0.a(this, bArr, i10);
-    }
-
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Failed to find 'out' block for switch in B:76:0x00bd. Please report as an issue. */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0276  */
@@ -89,12 +80,12 @@ public final class b implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void z(byte[] bArr, int i7, int i10, l lVar, j jVar) {
+    public final void K(byte[] bArr, int i7, int i10, l lVar, j jVar) {
         c4.a aVar;
-        boolean z9;
+        boolean z10;
         long j3;
         int i11;
-        boolean z10;
+        boolean z11;
         g2.b bVar;
         long j10;
         long j11;
@@ -107,14 +98,14 @@ public final class b implements m {
         }
         Inflater inflater = this.d;
         x xVar2 = this.b;
-        if (m0.Q(xVar, xVar2, inflater)) {
+        if (l0.Q(xVar, xVar2, inflater)) {
             xVar.L(xVar2.c, xVar2.a);
         }
         a aVar2 = this.c;
         long j12 = -9223372036854775807L;
         aVar2.b = -9223372036854775807L;
         aVar2.c = -9223372036854775807L;
-        boolean z11 = false;
+        boolean z12 = false;
         aVar2.e = false;
         aVar2.i = null;
         aVar2.j = -1;
@@ -130,39 +121,39 @@ public final class b implements m {
                 xVar.N(xVar.H() + i12);
                 while (true) {
                     if (xVar.a() < 4) {
+                        z11 = z12;
                         z10 = z11;
-                        z9 = z10;
                         j3 = j12;
                     } else {
                         int i13 = xVar.b;
                         int H = xVar.H() * 10000;
                         int H2 = xVar.H() + i12;
-                        z9 = (H2 == i13 || H2 >= xVar.c) ? z11 : true;
-                        if (z9) {
+                        z10 = (H2 == i13 || H2 >= xVar.c) ? z12 : true;
+                        if (z10) {
                             j3 = j12;
                             i11 = H2;
                         } else {
                             j3 = j12;
                             i11 = xVar.c;
                         }
-                        boolean z12 = true;
-                        while (xVar.b < i11 && z12) {
+                        boolean z13 = true;
+                        while (xVar.b < i11 && z13) {
                             long j13 = H;
-                            boolean z13 = z11;
+                            boolean z14 = z12;
                             int[] iArr = aVar2.a;
                             int A = xVar.A();
                             if (A != 255) {
                                 switch (A) {
                                     case 0:
-                                        z12 = true;
+                                        z13 = true;
                                         break;
                                     case 1:
                                         aVar2.b = j13;
-                                        z12 = true;
+                                        z13 = true;
                                         break;
                                     case 2:
                                         aVar2.c = j13;
-                                        z12 = true;
+                                        z13 = true;
                                         break;
                                     case 3:
                                         if (xVar.a() >= 2) {
@@ -171,9 +162,9 @@ public final class b implements m {
                                             iArr[3] = a.a(aVar2.f, A2 >> 4);
                                             iArr[2] = a.a(aVar2.f, A2 & 15);
                                             iArr[1] = a.a(aVar2.f, A3 >> 4);
-                                            iArr[z13 ? 1 : 0] = a.a(aVar2.f, A3 & 15);
+                                            iArr[z14 ? 1 : 0] = a.a(aVar2.f, A3 & 15);
                                             aVar2.e = true;
-                                            z12 = true;
+                                            z13 = true;
                                             break;
                                         } else {
                                             h2.a.l("VobsubParser", "Incomplete color command");
@@ -190,8 +181,8 @@ public final class b implements m {
                                                 iArr[3] = a.c(iArr[3], A4 >> 4);
                                                 iArr[2] = a.c(iArr[2], A4 & 15);
                                                 iArr[1] = a.c(iArr[1], A5 >> 4);
-                                                iArr[z13 ? 1 : 0] = a.c(iArr[z13 ? 1 : 0], A5 & 15);
-                                                z12 = true;
+                                                iArr[z14 ? 1 : 0] = a.c(iArr[z14 ? 1 : 0], A5 & 15);
+                                                z13 = true;
                                                 break;
                                             }
                                         } else {
@@ -207,7 +198,7 @@ public final class b implements m {
                                             int A9 = xVar.A();
                                             int A10 = xVar.A();
                                             aVar2.i = new Rect(i14, (A9 << 4) | (A10 >> 4), A8 + 1, (((A10 & 15) << 8) | xVar.A()) + 1);
-                                            z12 = true;
+                                            z13 = true;
                                             break;
                                         } else {
                                             h2.a.l("VobsubParser", "Incomplete area command");
@@ -217,29 +208,29 @@ public final class b implements m {
                                         if (xVar.a() >= 4) {
                                             aVar2.j = xVar.H();
                                             aVar2.k = xVar.H();
-                                            z12 = true;
+                                            z13 = true;
                                             break;
                                         } else {
                                             h2.a.l("VobsubParser", "Incomplete offsets command");
                                             break;
                                         }
                                     default:
-                                        com.google.android.recaptcha.internal.a.o(A, "Unrecognized command: ", "VobsubParser");
+                                        e2.o(A, "Unrecognized command: ", "VobsubParser");
                                         break;
                                 }
-                                z11 = z13 ? 1 : 0;
+                                z12 = z14 ? 1 : 0;
                             }
-                            z12 = z13 ? 1 : 0;
-                            z11 = z13 ? 1 : 0;
+                            z13 = z14 ? 1 : 0;
+                            z12 = z14 ? 1 : 0;
                         }
-                        z10 = z11;
-                        if (z9) {
+                        z11 = z12;
+                        if (z10) {
                             xVar.N(H2);
                         }
                     }
-                    if (z9) {
+                    if (z10) {
                         j12 = j3;
-                        z11 = z10;
+                        z12 = z11;
                     } else {
                         if (aVar2.f != null || !aVar2.d || !aVar2.e || (rect = aVar2.i) == null || aVar2.j == -1 || aVar2.k == -1 || rect.width() < 2 || aVar2.i.height() < 2) {
                             bVar = null;
@@ -252,7 +243,7 @@ public final class b implements m {
                             aVar2.b(fVar, true, rect2, iArr2);
                             xVar.N(aVar2.k);
                             fVar.I(xVar);
-                            aVar2.b(fVar, z10, rect2, iArr2);
+                            aVar2.b(fVar, z11, rect2, iArr2);
                             bVar = new g2.b(null, null, null, Bitmap.createBitmap(iArr2, rect2.width(), rect2.height(), Bitmap.Config.ARGB_8888), rect2.top / aVar2.h, 0, 0, rect2.left / aVar2.g, 0, TLObject.FLAG_31, -3.4028235E38f, rect2.width() / aVar2.g, rect2.height() / aVar2.h, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
                         }
                         j10 = aVar2.c;
@@ -262,13 +253,13 @@ public final class b implements m {
                         } else {
                             j11 = j3;
                         }
-                        aVar = new c4.a(aVar2.b, j11, bVar == null ? i0.u(bVar) : t1.e);
+                        aVar = new c4.a(aVar2.b, j11, bVar == null ? i0.u(bVar) : s1.e);
                     }
                 }
             } else {
                 h2.a.l("VobsubParser", "Skipping SPU (no plane)");
             }
-            z10 = false;
+            z11 = false;
             j3 = -9223372036854775807L;
             if (aVar2.f != null) {
             }
@@ -276,9 +267,19 @@ public final class b implements m {
             j10 = aVar2.c;
             if (j10 == j3) {
             }
-            aVar = new c4.a(aVar2.b, j11, bVar == null ? i0.u(bVar) : t1.e);
+            aVar = new c4.a(aVar2.b, j11, bVar == null ? i0.u(bVar) : s1.e);
         }
         jVar.accept(aVar);
+    }
+
+    @Override // c4.m
+    public final int Q() {
+        return 2;
+    }
+
+    @Override // c4.m
+    public final /* synthetic */ d x(int i7, int i10, byte[] bArr) {
+        return p0.a(this, bArr, i10);
     }
 
     @Override // c4.m

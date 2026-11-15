@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class f extends AbstractCollection implements List {
     public final /* synthetic */ int a = 0;
@@ -62,7 +62,7 @@ public class f extends AbstractCollection implements List {
                 boolean isEmpty3 = this.c.isEmpty();
                 boolean add3 = this.c.add(obj);
                 if (add3) {
-                    ((h9.l1) this.f).f++;
+                    ((h9.k1) this.f).f++;
                     if (isEmpty3) {
                         f();
                     }
@@ -115,7 +115,7 @@ public class f extends AbstractCollection implements List {
                     return addAll3;
                 }
                 int size5 = this.c.size();
-                ((h9.l1) this.f).f += size5 - size4;
+                ((h9.k1) this.f).f += size5 - size4;
                 if (size4 != 0) {
                     return addAll3;
                 }
@@ -147,7 +147,7 @@ public class f extends AbstractCollection implements List {
                 int size2 = size();
                 if (size2 != 0) {
                     this.c.clear();
-                    ((h9.l1) this.f).f -= size2;
+                    ((h9.k1) this.f).f -= size2;
                     j();
                     break;
                 }
@@ -216,7 +216,7 @@ public class f extends AbstractCollection implements List {
         if (fVar != null) {
             fVar.f();
         } else {
-            ((h9.l1) this.f).e.put(this.b, this.c);
+            ((h9.k1) this.f).e.put(this.b, this.c);
         }
     }
 
@@ -260,7 +260,7 @@ public class f extends AbstractCollection implements List {
                 throw new ConcurrentModificationException();
             }
         } else {
-            if (!this.c.isEmpty() || (collection = (Collection) ((h9.l1) this.f).e.get(this.b)) == null) {
+            if (!this.c.isEmpty() || (collection = (Collection) ((h9.k1) this.f).e.get(this.b)) == null) {
                 return;
             }
             this.c = collection;
@@ -303,7 +303,7 @@ public class f extends AbstractCollection implements List {
         if (fVar != null) {
             fVar.j();
         } else if (this.c.isEmpty()) {
-            ((h9.l1) this.f).e.remove(this.b);
+            ((h9.k1) this.f).e.remove(this.b);
         }
     }
 
@@ -414,8 +414,8 @@ public class f extends AbstractCollection implements List {
                 i();
                 boolean remove3 = this.c.remove(obj);
                 if (remove3) {
-                    h9.l1 l1Var = (h9.l1) this.f;
-                    l1Var.f--;
+                    h9.k1 k1Var = (h9.k1) this.f;
+                    k1Var.f--;
                     j();
                 }
                 return remove3;
@@ -460,7 +460,7 @@ public class f extends AbstractCollection implements List {
                     return removeAll3;
                 }
                 int size4 = this.c.size();
-                ((h9.l1) this.f).f += size4 - size3;
+                ((h9.k1) this.f).f += size4 - size3;
                 j();
                 return removeAll3;
         }
@@ -494,7 +494,7 @@ public class f extends AbstractCollection implements List {
                 boolean retainAll3 = this.c.retainAll(collection);
                 if (retainAll3) {
                     int size4 = this.c.size();
-                    ((h9.l1) this.f).f += size4 - size3;
+                    ((h9.k1) this.f).f += size4 - size3;
                     j();
                 }
                 return retainAll3;
@@ -544,9 +544,9 @@ public class f extends AbstractCollection implements List {
                 if (fVar == null) {
                     fVar = this;
                 }
-                boolean z9 = subList instanceof RandomAccess;
+                boolean z10 = subList instanceof RandomAccess;
                 Object obj = this.b;
-                return z9 ? new c(iVar, obj, subList, fVar) : new f(iVar, obj, subList, fVar);
+                return z10 ? new c(iVar, obj, subList, fVar) : new f(iVar, obj, subList, fVar);
             case 1:
                 zzb();
                 List subList2 = ((List) this.c).subList(i7, i10);
@@ -555,20 +555,20 @@ public class f extends AbstractCollection implements List {
                     fVar2 = this;
                 }
                 jg jgVar = (jg) this.h;
-                boolean z10 = subList2 instanceof RandomAccess;
+                boolean z11 = subList2 instanceof RandomAccess;
                 Object obj2 = this.b;
-                return z10 ? new be(jgVar, obj2, subList2, fVar2) : new f(jgVar, obj2, subList2, fVar2);
+                return z11 ? new be(jgVar, obj2, subList2, fVar2) : new f(jgVar, obj2, subList2, fVar2);
             default:
                 i();
-                h9.l1 l1Var = (h9.l1) this.h;
+                h9.k1 k1Var = (h9.k1) this.h;
                 List subList3 = ((List) this.c).subList(i7, i10);
                 f fVar3 = (f) this.e;
                 if (fVar3 == null) {
                     fVar3 = this;
                 }
-                boolean z11 = subList3 instanceof RandomAccess;
+                boolean z12 = subList3 instanceof RandomAccess;
                 Object obj3 = this.b;
-                return z11 ? new h9.g(l1Var, obj3, subList3, fVar3) : new f(l1Var, obj3, subList3, fVar3);
+                return z12 ? new h9.g(k1Var, obj3, subList3, fVar3) : new f(k1Var, obj3, subList3, fVar3);
         }
     }
 
@@ -637,9 +637,9 @@ public class f extends AbstractCollection implements List {
         this.d = fVar == null ? null : fVar.c;
     }
 
-    public f(h9.l1 l1Var, Object obj, List list, f fVar) {
-        this.h = l1Var;
-        this.f = l1Var;
+    public f(h9.k1 k1Var, Object obj, List list, f fVar) {
+        this.h = k1Var;
+        this.f = k1Var;
         this.b = obj;
         this.c = list;
         this.e = fVar;
@@ -679,8 +679,8 @@ public class f extends AbstractCollection implements List {
             default:
                 i();
                 Object remove3 = ((List) this.c).remove(i7);
-                h9.l1 l1Var = (h9.l1) this.h;
-                l1Var.f--;
+                h9.k1 k1Var = (h9.k1) this.h;
+                k1Var.f--;
                 j();
                 return remove3;
         }
@@ -712,7 +712,7 @@ public class f extends AbstractCollection implements List {
                 i();
                 boolean isEmpty3 = this.c.isEmpty();
                 ((List) this.c).add(i7, obj);
-                ((h9.l1) this.h).f++;
+                ((h9.k1) this.h).f++;
                 if (isEmpty3) {
                     f();
                     break;
@@ -765,7 +765,7 @@ public class f extends AbstractCollection implements List {
                     return addAll3;
                 }
                 int size5 = this.c.size();
-                ((h9.l1) this.h).f += size5 - size4;
+                ((h9.k1) this.h).f += size5 - size4;
                 if (size4 != 0) {
                     return addAll3;
                 }

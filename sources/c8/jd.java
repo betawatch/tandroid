@@ -1,228 +1,151 @@
 package c8;
 
-import android.media.MediaCodec;
-import android.media.MediaExtractor;
-import android.media.MediaFormat;
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ly0;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class jd {
-    public static n2.p0 a(File file, wi.x xVar, long j3, long j10, boolean z9, b7.d dVar) {
-        long j11;
-        long j12;
-        String str;
-        wi.x xVar2 = xVar;
-        long max = Math.max(0L, j3 * 1000);
-        long max2 = Math.max(max, j10 * 1000);
-        MediaExtractor mediaExtractor = new MediaExtractor();
-        try {
-            mediaExtractor.setDataSource(file.getAbsolutePath());
-            int d = d(mediaExtractor, true);
-            int d2 = d(mediaExtractor, false);
-            if (d < 0 || (z9 && d2 < 0)) {
-                throw new IOException("Source file has no required tracks");
+    public static wi.j a(float[] fArr, float[] fArr2, float f10, float f11, int[] iArr, float f12) {
+        int[][] iArr2;
+        float f13;
+        float f14;
+        int[][] iArr3;
+        int length = fArr.length;
+        wi.j jVar = new wi.j();
+        float f15 = 0.0f;
+        if (length == 0) {
+            jVar.a = Math.max(f10, Math.min(f11, f12 > 0.0f ? f12 : 1.0f));
+            jVar.b = new float[0];
+            jVar.c = new int[0];
+            jVar.e = new int[0];
+            return jVar;
+        }
+        jVar.f = Float.MAX_VALUE;
+        Integer[] numArr = new Integer[length];
+        for (int i7 = 0; i7 < length; i7++) {
+            numArr[i7] = Integer.valueOf(i7);
+        }
+        if (iArr != null) {
+            Arrays.sort(numArr, new di.p4(iArr, 7));
+        }
+        int[] iArr4 = new int[length];
+        for (int i10 = 0; i10 < length; i10++) {
+            iArr4[i10] = numArr[i10].intValue();
+        }
+        int i11 = 1;
+        if (length <= 1) {
+            iArr2 = new int[][]{iArr4};
+        } else {
+            Integer[] numArr2 = new Integer[length];
+            for (int i12 = 0; i12 < length; i12++) {
+                numArr2[i12] = Integer.valueOf(iArr4[i12]);
             }
-            MediaFormat trackFormat = mediaExtractor.getTrackFormat(d);
-            MediaFormat trackFormat2 = z9 ? mediaExtractor.getTrackFormat(d2) : null;
-            mediaExtractor.release();
-            int i7 = dVar.c;
-            synchronized (xVar) {
-                xVar2.s = i7;
+            Arrays.sort(numArr2, new ai.k(4, fArr));
+            int[] iArr5 = new int[length];
+            int[] iArr6 = new int[length];
+            for (int i13 = 0; i13 < length; i13++) {
+                iArr5[i13] = numArr2[i13].intValue();
+                iArr6[(length - 1) - i13] = numArr2[i13].intValue();
             }
-            if (trackFormat2 != null) {
-                xVar2.n(trackFormat2, false);
-            }
-            mediaExtractor = new MediaExtractor();
-            try {
-                mediaExtractor.setDataSource(file.getAbsolutePath());
-                int d10 = d(mediaExtractor, true);
-                long j13 = Long.MAX_VALUE;
-                if (d10 >= 0) {
-                    mediaExtractor.selectTrack(d10);
-                    j11 = Long.MIN_VALUE;
-                    while (true) {
-                        if (mediaExtractor.getSampleTime() < 0) {
-                            break;
-                        }
-                        long sampleTime = mediaExtractor.getSampleTime();
-                        boolean z10 = (mediaExtractor.getSampleFlags() & 1) != 0;
-                        if (sampleTime >= max2) {
-                            break;
-                        }
-                        if (z10) {
-                            if (sampleTime > max) {
-                                j13 = sampleTime;
-                                break;
-                            }
-                            j11 = sampleTime;
-                        }
-                        mediaExtractor.advance();
-                    }
-                } else {
-                    j11 = Long.MIN_VALUE;
-                }
-                mediaExtractor.release();
-                long[] jArr = {j11, j13};
-                long j14 = jArr[0];
-                long j15 = jArr[1];
-                if (j14 == Long.MIN_VALUE) {
-                    throw new IOException("Trim range has no video sync sample");
-                }
-                if (j14 == max) {
-                    xVar2.n(trackFormat, true);
-                    b(file, xVar2, max, max, max2);
-                    str = "copy";
-                    j12 = 0;
-                } else {
-                    long min = Math.min(j15, max2);
-                    ly0 ly0Var = new ly0(25);
-                    j12 = 0;
-                    kd.c(file, j14, max, min, dVar.a, dVar.b, dVar.c, ly0Var);
-                    if (((MediaFormat) ly0Var.d) == null || ((ArrayList) ly0Var.b).isEmpty()) {
-                        throw new IOException("Re-encoded trim start produced no frames");
-                    }
-                    boolean m10 = wi.x.m(trackFormat, (MediaFormat) ly0Var.d, "csd-0", "csd-1");
-                    if (min >= max2) {
-                        xVar2.n(m10 ? trackFormat : (MediaFormat) ly0Var.d, true);
-                        e(xVar2, ly0Var, max);
-                        str = "reencode-range-in-gop";
-                        max = max;
-                    } else if (m10) {
-                        xVar2.n(trackFormat, true);
-                        e(xVar2, ly0Var, max);
-                        b(file, xVar2, j15, max, max2);
-                        max = max;
-                        str = "reencode-head";
+            iArr2 = Arrays.equals(iArr5, iArr4) ? new int[][]{iArr4, iArr6} : Arrays.equals(iArr6, iArr4) ? new int[][]{iArr4, iArr5} : new int[][]{iArr4, iArr5, iArr6};
+        }
+        int[][] iArr7 = iArr2;
+        if (length <= 8) {
+            int i14 = length - 1;
+            int i15 = 1 << i14;
+            iArr3 = new int[i15][];
+            int i16 = 0;
+            while (i16 < i15) {
+                int[] iArr8 = new int[Integer.bitCount(i16) + 1];
+                float f16 = f15;
+                int i17 = 0;
+                int i18 = 1;
+                for (int i19 = 0; i19 < i14; i19++) {
+                    if ((i16 & (1 << i19)) != 0) {
+                        iArr8[i17] = i18;
+                        i18 = 1;
+                        i17++;
                     } else {
-                        max = max;
-                        kd.c(file, j14, max, max2, dVar.a, dVar.b, dVar.c, new a8.ua(xVar2, max, 9));
-                        str = "reencode-all";
+                        i18++;
                     }
                 }
-                if (z9) {
-                    mediaExtractor = new MediaExtractor();
-                    MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
-                    ByteBuffer allocateDirect = ByteBuffer.allocateDirect(TLObject.FLAG_21);
-                    try {
-                        mediaExtractor.setDataSource(file.getAbsolutePath());
-                        int d11 = d(mediaExtractor, false);
-                        if (d11 < 0) {
-                            throw new IOException("Source track disappeared");
-                        }
-                        mediaExtractor.selectTrack(d11);
-                        mediaExtractor.seekTo(max, 2);
-                        while (mediaExtractor.getSampleTime() >= j12 && mediaExtractor.getSampleTime() < max) {
-                            mediaExtractor.advance();
-                        }
-                        while (mediaExtractor.getSampleTime() >= j12 && mediaExtractor.getSampleTime() < max2) {
-                            allocateDirect.clear();
-                            int readSampleData = mediaExtractor.readSampleData(allocateDirect, 0);
-                            if (readSampleData >= 0) {
-                                bufferInfo.set(0, readSampleData, mediaExtractor.getSampleTime(), mediaExtractor.getSampleFlags());
-                                ByteBuffer byteBuffer = allocateDirect;
-                                xVar2.q(false, byteBuffer, bufferInfo, -max);
-                                mediaExtractor.advance();
-                                allocateDirect = byteBuffer;
-                                xVar2 = xVar;
-                            }
-                        }
-                    } finally {
-                    }
+                iArr8[i17] = i18;
+                iArr3[i16] = iArr8;
+                i16++;
+                f15 = f16;
+            }
+            f13 = f15;
+            f14 = 1.0f;
+        } else {
+            f13 = 0.0f;
+            ArrayList arrayList = new ArrayList();
+            int i20 = 1;
+            while (i20 <= length) {
+                int i21 = length / i20;
+                int i22 = length % i20;
+                int[] iArr9 = new int[i20];
+                int[] iArr10 = new int[i20];
+                int i23 = 0;
+                while (i23 < i20) {
+                    iArr9[i23] = i21 + (i23 < i22 ? i11 : 0);
+                    iArr10[i23] = (i23 >= i20 - i22 ? 1 : 0) + i21;
+                    i23++;
+                    i11 = 1;
                 }
-                long h = xVar.h();
-                n2.p0 p0Var = new n2.p0();
-                p0Var.a = max / 1000;
-                p0Var.b = h;
-                p0Var.c = str;
-                return p0Var;
-            } finally {
+                arrayList.add(iArr9);
+                if (i22 != 0) {
+                    arrayList.add(iArr10);
+                }
+                i20++;
+                i11 = 1;
             }
-        } finally {
+            f14 = 1.0f;
+            iArr3 = (int[][]) arrayList.toArray(new int[0][]);
         }
-    }
-
-    public static void b(File file, wi.x xVar, long j3, long j10, long j11) {
-        ByteBuffer byteBuffer;
-        MediaCodec.BufferInfo bufferInfo;
-        wi.x xVar2;
-        MediaExtractor mediaExtractor = new MediaExtractor();
-        MediaCodec.BufferInfo bufferInfo2 = new MediaCodec.BufferInfo();
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(TLObject.FLAG_21);
-        try {
-            mediaExtractor.setDataSource(file.getAbsolutePath());
-            int d = d(mediaExtractor, true);
-            if (d < 0) {
-                throw new IOException("Source track disappeared");
-            }
-            mediaExtractor.selectTrack(d);
-            mediaExtractor.seekTo(j3, 0);
-            while (mediaExtractor.getSampleTime() >= 0) {
-                long sampleTime = mediaExtractor.getSampleTime();
-                if (sampleTime < j11) {
-                    if (sampleTime >= j3) {
-                        allocateDirect.clear();
-                        int readSampleData = mediaExtractor.readSampleData(allocateDirect, 0);
-                        if (readSampleData < 0) {
-                            break;
-                        }
-                        bufferInfo2.set(0, readSampleData, sampleTime, mediaExtractor.getSampleFlags());
-                        byteBuffer = allocateDirect;
-                        bufferInfo = bufferInfo2;
-                        xVar2 = xVar;
-                        xVar2.q(true, byteBuffer, bufferInfo, -j10);
-                    } else {
-                        byteBuffer = allocateDirect;
-                        bufferInfo = bufferInfo2;
-                        xVar2 = xVar;
-                    }
-                    mediaExtractor.advance();
-                    xVar = xVar2;
-                    allocateDirect = byteBuffer;
-                    bufferInfo2 = bufferInfo;
+        float[] fArr3 = new float[length];
+        for (int i24 = 0; i24 < length; i24++) {
+            float f17 = fArr[i24];
+            fArr3[i24] = f17 > f13 ? f14 / f17 : f13;
+        }
+        float[] fArr4 = new float[length];
+        for (int i25 = 0; i25 < length; i25++) {
+            fArr4[i25] = fArr2[i25];
+        }
+        wi.i iVar = new wi.i(fArr, fArr4, f10, f11, f12);
+        wi.i iVar2 = new wi.i(fArr3, fArr4, f14 / f11, f14 / f10, f12 > f13 ? f14 / f12 : f13);
+        int length2 = iArr7.length;
+        int i26 = 0;
+        while (i26 < length2) {
+            int[] iArr11 = iArr7[i26];
+            int i27 = 0;
+            for (int i28 = 0; i28 < iArr11.length; i28++) {
+                if (iArr11[i28] != iArr4[i28]) {
+                    i27++;
                 }
             }
-        } finally {
-            mediaExtractor.release();
-        }
-    }
-
-    public static void c(File file) {
-        try {
-            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
-            try {
-                randomAccessFile.setLength(0L);
-                randomAccessFile.close();
-            } finally {
+            float f18 = i27 * 0.05f;
+            int length3 = iArr3.length;
+            int i29 = 0;
+            while (i29 < length3) {
+                int[] iArr12 = iArr3[i29];
+                wi.i iVar3 = iVar;
+                int[] iArr13 = iArr11;
+                float f19 = f18;
+                wi.j jVar2 = jVar;
+                iVar3.a(iArr13, iArr12, f19, jVar2, false);
+                if (iArr12.length > 1) {
+                    iVar2.a(iArr13, iArr12, f19, jVar2, true);
+                }
+                i29++;
+                jVar = jVar2;
+                iVar = iVar3;
+                iArr11 = iArr13;
+                f18 = f19;
             }
-        } catch (IOException unused) {
+            i26++;
+            iVar = iVar;
         }
-        if (file.exists()) {
-            file.delete();
-        }
-    }
-
-    public static int d(MediaExtractor mediaExtractor, boolean z9) {
-        String str = z9 ? "video/" : "audio/";
-        for (int i7 = 0; i7 < mediaExtractor.getTrackCount(); i7++) {
-            String string = mediaExtractor.getTrackFormat(i7).getString("mime");
-            if (string != null && string.startsWith(str)) {
-                return i7;
-            }
-        }
-        return -1;
-    }
-
-    public static void e(wi.x xVar, ly0 ly0Var, long j3) {
-        ArrayList arrayList = (ArrayList) ly0Var.b;
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            xVar.q(true, (ByteBuffer) arrayList.get(i7), (MediaCodec.BufferInfo) ((ArrayList) ly0Var.c).get(i7), -j3);
-        }
+        return jVar;
     }
 }

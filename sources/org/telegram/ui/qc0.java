@@ -1,6 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import org.telegram.ui.Components.EditTextBoldCursor;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qc0 implements Runnable {
     public final /* synthetic */ int a;
@@ -16,30 +18,15 @@ public final /* synthetic */ class qc0 implements Runnable {
         switch (this.a) {
             case 0:
                 rc0 rc0Var = this.b;
-                sc0 sc0Var = rc0Var.d;
-                if (rc0Var.b) {
-                    boolean z9 = sc0Var.L;
-                    org.telegram.ui.Components.zg0 zg0Var = sc0Var.K;
-                    yc ycVar = sc0Var.n;
-                    if (z9 && System.currentTimeMillis() - rc0Var.a >= 10000) {
-                        ycVar.setAnimation(zg0Var);
-                        zg0Var.N(0, false, false);
-                        zg0Var.t0 = new qc0(rc0Var, 1);
-                        ycVar.d();
-                        rc0Var.a = System.currentTimeMillis();
-                    }
-                    ycVar.postDelayed(rc0Var.c, 1000L);
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.messenger.g0.h3(new qc0(this.b, 2));
+                org.telegram.ui.Components.fh0 fh0Var = rc0Var.h;
+                fh0Var.getAnimatedDrawable().N(0, false, false);
+                fh0Var.d();
+                EditTextBoldCursor editTextBoldCursor = rc0Var.b;
+                editTextBoldCursor.requestFocus();
+                org.telegram.messenger.g0.J3(editTextBoldCursor);
                 break;
             default:
-                sc0 sc0Var2 = this.b.d;
-                org.telegram.ui.Components.zg0 zg0Var2 = sc0Var2.J;
-                zg0Var2.N(0, false, false);
-                sc0Var2.n.setAnimation(zg0Var2);
+                this.b.b.requestFocus();
                 break;
         }
     }

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j {
     public static final int b = l.a;
@@ -14,7 +14,7 @@ public final class j {
         h9.f0 p10 = h9.i0.p();
         int length = bArr.length;
         int i7 = b;
-        int g10 = h2.m0.g(length, i7);
+        int g10 = h2.l0.g(length, i7);
         for (int i10 = 0; i10 < g10; i10++) {
             Bundle bundle = new Bundle();
             int i11 = i10 * i7;
@@ -30,7 +30,7 @@ public final class j {
             try {
                 h9.i0 a10 = g.a(binder);
                 if (a10.isEmpty()) {
-                    return h2.m0.b;
+                    return h2.l0.b;
                 }
                 byte[] byteArray = ((Bundle) h9.o.n(a10)).getByteArray("bytes");
                 if (byteArray != null) {

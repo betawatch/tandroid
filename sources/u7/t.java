@@ -1,29 +1,57 @@
 package u7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import c8.xb;
-import com.google.android.gms.common.api.Status;
+import c8.qc;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class t extends r6.a implements com.google.android.gms.common.api.q {
-    public static final Parcelable.Creator<t> CREATOR = new m(2);
-    public final Status a;
+public final class t extends s {
+    public static final t e = new t(0, new Object[0]);
+    public final transient Object[] c;
+    public final transient int d;
 
-    public t(Status status) {
-        this.a = status;
+    public t(int i7, Object[] objArr) {
+        this.c = objArr;
+        this.d = i7;
     }
 
-    @Override // com.google.android.gms.common.api.q
-    public final Status a() {
-        return this.a;
+    @Override // u7.s, u7.p
+    public final int f(Object[] objArr) {
+        Object[] objArr2 = this.c;
+        int i7 = this.d;
+        System.arraycopy(objArr2, 0, objArr, 0, i7);
+        return i7;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.k(parcel, 1, this.a, i7);
-        xb.s(parcel, r10);
+    @Override // java.util.List
+    public final Object get(int i7) {
+        qc.a(i7, this.d);
+        Object obj = this.c[i7];
+        obj.getClass();
+        return obj;
+    }
+
+    @Override // u7.p
+    public final int i() {
+        return this.d;
+    }
+
+    @Override // u7.p
+    public final int j() {
+        return 0;
+    }
+
+    @Override // u7.p
+    public final boolean k() {
+        return false;
+    }
+
+    @Override // u7.p
+    public final Object[] l() {
+        return this.c;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
     }
 }

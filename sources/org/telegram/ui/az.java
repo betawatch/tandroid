@@ -1,20 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class az extends org.telegram.ui.Cells.n4 {
-    public final org.telegram.ui.Cells.w3 r;
+public final /* synthetic */ class az implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bz b;
 
-    public az(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        org.telegram.ui.Cells.w3 w3Var = new org.telegram.ui.Cells.w3(context, true, true, true, 3);
-        this.r = w3Var;
-        w3Var.setGravity(org.telegram.messenger.id.a0 ? 3 : 5);
-        org.telegram.ui.ActionBar.t6.Y(w3Var, org.telegram.ui.ActionBar.m6.L6, h6Var);
-        w3Var.setTextSize(org.telegram.messenger.g0.N(15.0f));
-        addView(w3Var, c8.ha.d(-1, 18.0f, (org.telegram.messenger.id.a0 ? 3 : 5) | 48, 22.0f, 17.0f, 22.0f, 0.0f));
-        c8.ka.b(w3Var, 0.04f, 1.2f);
+    public /* synthetic */ az(bz bzVar, int i7) {
+        this.a = i7;
+        this.b = bzVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.d();
+                break;
+            case 1:
+                this.b.a();
+                break;
+            default:
+                bz bzVar = this.b;
+                bzVar.b(bzVar.E);
+                break;
+        }
     }
 }

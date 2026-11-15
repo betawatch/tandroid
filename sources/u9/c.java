@@ -5,7 +5,7 @@ import android.util.Log;
 import com.google.firebase.components.ComponentRegistrar;
 import java.lang.reflect.InvocationTargetException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements ua.b {
     public final /* synthetic */ int a;
@@ -26,18 +26,18 @@ public final /* synthetic */ class c implements ua.b {
                     if (ComponentRegistrar.class.isAssignableFrom(cls)) {
                         return (ComponentRegistrar) cls.getDeclaredConstructor(null).newInstance(null);
                     }
-                    throw new m("Class " + str + " is not an instance of com.google.firebase.components.ComponentRegistrar");
+                    throw new l("Class " + str + " is not an instance of com.google.firebase.components.ComponentRegistrar");
                 } catch (ClassNotFoundException unused) {
                     Log.w("ComponentDiscovery", "Class " + str + " is not an found.");
                     return null;
                 } catch (IllegalAccessException e10) {
-                    throw new m(p0.p("Could not instantiate ", str, "."), e10);
+                    throw new l(p0.p("Could not instantiate ", str, "."), e10);
                 } catch (InstantiationException e11) {
-                    throw new m(p0.p("Could not instantiate ", str, "."), e11);
+                    throw new l(p0.p("Could not instantiate ", str, "."), e11);
                 } catch (NoSuchMethodException e12) {
-                    throw new m(rf.b.i("Could not instantiate ", str), e12);
+                    throw new l(r.b.k("Could not instantiate ", str), e12);
                 } catch (InvocationTargetException e13) {
-                    throw new m(rf.b.i("Could not instantiate ", str), e13);
+                    throw new l(r.b.k("Could not instantiate ", str), e13);
                 }
             case 1:
                 return (ComponentRegistrar) this.b;

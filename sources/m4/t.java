@@ -1,20 +1,20 @@
 package m4;
 
-import a8.ia;
+import a8.ja;
 import e2.s0;
 import e2.t0;
-import f3.j0;
+import f3.i0;
 import java.util.Collections;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class t implements i {
     public final String a;
     public final int b;
     public final h2.x c;
     public final d4.f d;
-    public j0 e;
+    public i0 e;
     public String f;
     public e2.u g;
     public int h;
@@ -190,7 +190,7 @@ public final class t implements i {
                                 xVar2.N(0);
                             }
                             this.e.b(i13, xVar2);
-                            ia.p(this.l != -9223372036854775807L);
+                            ja.p(this.l != -9223372036854775807L);
                             this.e.c(this.l, 1, i13, 0, null);
                             this.l += this.t;
                             if (this.q) {
@@ -203,7 +203,7 @@ public final class t implements i {
                     }
                 } else {
                     int A2 = xVar.A();
-                    if ((A2 & qs.B3) == 224) {
+                    if ((A2 & ns.B3) == 224) {
                         this.k = A2;
                         this.h = 2;
                     } else if (A2 != 86) {
@@ -229,15 +229,15 @@ public final class t implements i {
     }
 
     @Override // m4.i
-    public final void g(f3.q qVar, g0 g0Var) {
-        g0Var.b();
-        g0Var.c();
-        this.e = qVar.O1(g0Var.c, 1);
-        g0Var.c();
-        this.f = (String) g0Var.e;
+    public final void g(f3.q qVar, f0 f0Var) {
+        f0Var.b();
+        f0Var.c();
+        this.e = qVar.d2(f0Var.c, 1);
+        f0Var.c();
+        this.f = (String) f0Var.e;
     }
 
     @Override // m4.i
-    public final void e(boolean z9) {
+    public final void e(boolean z10) {
     }
 }

@@ -1,6 +1,9 @@
 package com.google.android.gms.internal.clearcut;
 
+import java.util.List;
+import java.util.RandomAccess;
+
 /* loaded from: classes.dex */
-public interface b0 {
-    p1 a(int i7);
+public interface b0 extends List, RandomAccess {
+    b0 h(int i7);
 }

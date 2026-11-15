@@ -1,37 +1,44 @@
 package xg;
 
-import org.telegram.ui.Cells.f1;
-import org.telegram.ui.web.a0;
-import org.telegram.ui.zw;
-import wg.b0;
+import java.util.ArrayList;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.ur;
+import org.telegram.ui.sw;
+import org.telegram.ui.u91;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
+public final /* synthetic */ class d implements sw {
+    public final /* synthetic */ Object a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ d(f fVar, int i7) {
-        this.a = i7;
-        this.b = fVar;
+    public /* synthetic */ d(Object obj, Object obj2) {
+        this.a = obj;
+        this.b = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.E();
-                break;
-            default:
-                StringBuilder sb2 = new StringBuilder("https://t.me/giftcode/");
-                f fVar = this.b;
-                sb2.append(fVar.h);
-                String sb3 = sb2.toString();
-                zw zwVar = new zw(f1.h(3, "onlySelect", "dialogsType", true));
-                zwVar.D2 = new a0(25, fVar, sb3);
-                fVar.e.presentFragment(zwVar);
-                ((b0) fVar).r.dismiss();
-                break;
+    @Override // org.telegram.ui.sw
+    public /* synthetic */ boolean H() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sw
+    public /* synthetic */ boolean P(yw ywVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sw
+    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, u91 u91Var) {
+        f fVar = (f) this.a;
+        String str = (String) this.b;
+        long j3 = 0;
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            j3 = ((ur) arrayList.get(i11)).a;
+            fVar.e.getSendMessagesHelper().r0(cz.b(str, j3, null, null, null, true, null, null, null, true, 0, 0, null, false));
         }
+        ywVar.finishFragment();
+        wg.h.h(j3);
+        return true;
     }
 }

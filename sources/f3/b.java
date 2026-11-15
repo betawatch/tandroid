@@ -1,18 +1,18 @@
 package f3;
 
-import a8.ia;
+import a8.ja;
 import android.util.Base64;
 import e2.q0;
 import e2.t0;
-import h2.m0;
+import h2.l0;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -21,12 +21,12 @@ public abstract class b {
     public static final int[] d = {48000, 44100, 32000};
     public static final int[] e = {24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE};
     public static final int[] f = {2, 1, 2, 3, 3, 4, 4, 5};
-    public static final int[] g = {32, 40, 48, 56, 64, 80, 96, qs.x1, 128, qs.q2, qs.W2, qs.B3, 256, qs.r5, 384, 448, 512, 576, 640};
-    public static final int[] h = {69, 87, qs.p1, qs.F1, qs.V1, qs.E2, 208, qs.S3, qs.B4, qs.T5, 417, 487, 557, 696, 835, 975, 1114, 1253, 1393};
+    public static final int[] g = {32, 40, 48, 56, 64, 80, 96, ns.x1, 128, ns.q2, ns.W2, ns.B3, 256, ns.r5, 384, 448, 512, 576, 640};
+    public static final int[] h = {69, 87, ns.p1, ns.F1, ns.V1, ns.E2, 208, ns.S3, ns.B4, ns.T5, 417, 487, 557, 696, 835, 975, 1114, 1253, 1393};
     public static final int[] i = {2002, 2000, 1920, 1601, 1600, 1001, 1000, 960, 800, 800, 480, 400, 400, 2048};
     public static final int[] j = {1, 2, 2, 2, 2, 3, 3, 4, 4, 5, 6, 6, 6, 7, 8, 8};
     public static final int[] k = {-1, 8000, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 32000, -1, -1, 11025, 22050, 44100, -1, -1, 12000, 24000, 48000, -1, -1};
-    public static final int[] l = {64, qs.x1, 128, qs.W2, qs.B3, 256, 384, 448, 512, 640, 768, 896, 1024, 1152, 1280, 1536, 1920, 2048, 2304, 2560, 2688, 2816, 2823, 2944, 3072, 3840, TLObject.FLAG_12, 6144, 7680};
+    public static final int[] l = {64, ns.x1, 128, ns.W2, ns.B3, 256, 384, 448, 512, 640, 768, 896, 1024, 1152, 1280, 1536, 1920, 2048, 2304, 2560, 2688, 2816, 2823, 2944, 3072, 3840, TLObject.FLAG_12, 6144, 7680};
     public static final int[] m = {8000, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 32000, 64000, 128000, 22050, 44100, 88200, 176400, 352800, 12000, 24000, 48000, 96000, 192000, 384000};
     public static final int[] n = {5, 8, 10, 12};
     public static final int[] o = {6, 9, 12, 15};
@@ -47,12 +47,12 @@ public abstract class b {
         if (j3 != i7) {
             return false;
         }
-        boolean z9 = (j3 & 1) == 1;
+        boolean z10 = (j3 & 1) == 1;
         int i10 = (int) ((C >> 12) & 15);
         int i11 = (int) ((C >> 8) & 15);
         int i12 = (int) ((C >> 4) & 15);
         int i13 = (int) ((C >> 1) & 7);
-        boolean z10 = (C & 1) == 1;
+        boolean z11 = (C & 1) == 1;
         if (i12 <= 7) {
             if (i12 != uVar.g - 1) {
                 return false;
@@ -60,12 +60,12 @@ public abstract class b {
         } else if (i12 > 10 || uVar.g != 2) {
             return false;
         }
-        if (!(i13 == 0 || i13 == uVar.i) || z10) {
+        if (!(i13 == 0 || i13 == uVar.i) || z11) {
             return false;
         }
         try {
             long I = xVar.I();
-            if (!z9) {
+            if (!z10) {
                 I *= uVar.b;
             }
             long j10 = uVar.j;
@@ -75,11 +75,11 @@ public abstract class b {
             sVar.a = I;
             int s5 = s(i10, xVar);
             long j11 = uVar.j;
-            boolean z11 = j11 == 0 || I + ((long) s5) >= j11;
+            boolean z12 = j11 == 0 || I + ((long) s5) >= j11;
             if (s5 == -1) {
                 return false;
             }
-            if ((!z11 && s5 < uVar.a) || s5 > uVar.b) {
+            if ((!z12 && s5 < uVar.a) || s5 > uVar.b) {
                 return false;
             }
             int i14 = uVar.e;
@@ -109,9 +109,9 @@ public abstract class b {
             int i16 = i15 - 1;
             int i17 = 0;
             for (int i18 = xVar.b; i18 < i16; i18++) {
-                i17 = m0.l[i17 ^ (bArr[i18] & 255)];
+                i17 = l0.l[i17 ^ (bArr[i18] & 255)];
             }
-            String str = m0.a;
+            String str = l0.a;
             if (A != i17) {
                 return false;
             }
@@ -120,7 +120,7 @@ public abstract class b {
                 if ((j12 & 128) != 0) {
                     return false;
                 }
-                int i19 = (j12 & qs.K1) >> 1;
+                int i19 = (j12 & ns.K1) >> 1;
                 if ((i19 >= 2 && i19 <= 7) || (i19 >= 13 && i19 <= 31)) {
                     h2.a.g("FlacFrameReader", "Ignoring frame where first subframe has a reserved type: " + i19);
                     return false;
@@ -132,13 +132,13 @@ public abstract class b {
         }
     }
 
-    public static void b(String str, boolean z9) {
-        if (!z9) {
+    public static void b(String str, boolean z10) {
+        if (!z10) {
             throw t0.a(null, str);
         }
     }
 
-    public static void c(long j3, h2.x xVar, j0[] j0VarArr) {
+    public static void c(long j3, h2.x xVar, i0[] i0VarArr) {
         int i7;
         while (true) {
             if (xVar.a() <= 1) {
@@ -181,29 +181,29 @@ public abstract class b {
                 if (H == 47) {
                     xVar.O(1);
                 }
-                boolean z9 = A3 == 181 && (H == 49 || H == 47) && A4 == 3;
+                boolean z10 = A3 == 181 && (H == 49 || H == 47) && A4 == 3;
                 if (H == 49) {
-                    z9 &= m10 == 1195456820;
+                    z10 &= m10 == 1195456820;
                 }
-                if (z9) {
-                    d(j3, xVar, j0VarArr);
+                if (z10) {
+                    d(j3, xVar, i0VarArr);
                 }
             }
             xVar.N(i12);
         }
     }
 
-    public static void d(long j3, h2.x xVar, j0[] j0VarArr) {
+    public static void d(long j3, h2.x xVar, i0[] i0VarArr) {
         int A = xVar.A();
         if ((A & 64) != 0) {
             xVar.O(1);
             int i7 = (A & 31) * 3;
             int i10 = xVar.b;
-            for (j0 j0Var : j0VarArr) {
+            for (i0 i0Var : i0VarArr) {
                 xVar.N(i10);
-                j0Var.b(i7, xVar);
-                ia.p(j3 != -9223372036854775807L);
-                j0Var.c(j3, 1, i7, 0, null);
+                i0Var.b(i7, xVar);
+                ja.p(j3 != -9223372036854775807L);
+                i0Var.c(j3, 1, i7, 0, null);
             }
         }
     }
@@ -228,9 +228,9 @@ public abstract class b {
         bArr[1] = 64;
         bArr[2] = -1;
         bArr[3] = -1;
-        bArr[4] = (byte) ((i7 >> 16) & qs.e4);
-        bArr[5] = (byte) ((i7 >> 8) & qs.e4);
-        bArr[6] = (byte) (i7 & qs.e4);
+        bArr[4] = (byte) ((i7 >> 16) & ns.e4);
+        bArr[5] = (byte) ((i7 >> 8) & ns.e4);
+        bArr[6] = (byte) (i7 & ns.e4);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0060  */
@@ -244,7 +244,7 @@ public abstract class b {
         int i10;
         int i11;
         byte b11;
-        boolean z9 = false;
+        boolean z10 = false;
         byte b12 = bArr[0];
         if (b12 != -2) {
             if (b12 == -1) {
@@ -258,13 +258,13 @@ public abstract class b {
                 b11 = bArr[8];
             }
             i10 = (((b11 & 60) >> 2) | i11) + 1;
-            z9 = true;
-            return !z9 ? (i10 * 16) / 14 : i10;
+            z10 = true;
+            return !z10 ? (i10 * 16) / 14 : i10;
         }
         i7 = ((bArr[4] & 3) << 12) | ((bArr[7] & 255) << 4);
         b10 = bArr[6];
         i10 = (((b10 & 240) >> 4) | i7) + 1;
-        if (!z9) {
+        if (!z10) {
         }
     }
 
@@ -287,9 +287,9 @@ public abstract class b {
             return ((((i10 == 3 ? u[i12 - 1] : v[i12 - 1]) * 12) / i14) + i15) * 4;
         }
         int i16 = i10 == 3 ? i11 == 2 ? w[i12 - 1] : x[i12 - 1] : y[i12 - 1];
-        int i17 = qs.a2;
+        int i17 = ns.a2;
         if (i10 == 3) {
-            return ((i16 * qs.a2) / i14) + i15;
+            return ((i16 * ns.a2) / i14) + i15;
         }
         if (i11 == 1) {
             i17 = 72;
@@ -487,26 +487,26 @@ public abstract class b {
         return new b7.d(i12, i11, i10);
     }
 
-    public static a n(d4.f fVar, boolean z9) {
+    public static a n(d4.f fVar, boolean z10) {
         int j3 = fVar.j(5);
         if (j3 == 31) {
             j3 = fVar.j(6) + 32;
         }
         int l10 = l(fVar);
         int j10 = fVar.j(4);
-        String j11 = jg.g.j(j3, "mp4a.40.");
+        String i7 = i5.c.i(j3, "mp4a.40.");
         if (j3 == 5 || j3 == 29) {
             l10 = l(fVar);
-            int j12 = fVar.j(5);
-            if (j12 == 31) {
-                j12 = fVar.j(6) + 32;
+            int j11 = fVar.j(5);
+            if (j11 == 31) {
+                j11 = fVar.j(6) + 32;
             }
-            j3 = j12;
+            j3 = j11;
             if (j3 == 22) {
                 j10 = fVar.j(4);
             }
         }
-        if (z9) {
+        if (z10) {
             if (j3 != 1 && j3 != 2 && j3 != 3 && j3 != 4 && j3 != 6 && j3 != 7 && j3 != 17) {
                 switch (j3) {
                     case 19:
@@ -525,14 +525,14 @@ public abstract class b {
             if (fVar.i()) {
                 fVar.L(14);
             }
-            boolean i7 = fVar.i();
+            boolean i10 = fVar.i();
             if (j10 == 0) {
                 throw new UnsupportedOperationException();
             }
             if (j3 == 6 || j3 == 20) {
                 fVar.L(3);
             }
-            if (i7) {
+            if (i10) {
                 if (j3 == 22) {
                     fVar.L(16);
                 }
@@ -548,20 +548,20 @@ public abstract class b {
                 case 21:
                 case 22:
                 case 23:
-                    int j13 = fVar.j(2);
-                    if (j13 == 2 || j13 == 3) {
-                        throw t0.c("Unsupported epConfig: " + j13);
+                    int j12 = fVar.j(2);
+                    if (j12 == 2 || j12 == 3) {
+                        throw t0.c("Unsupported epConfig: " + j12);
                     }
             }
         }
-        int i10 = b[j10];
-        if (i10 == -1) {
+        int i11 = b[j10];
+        if (i11 == -1) {
             throw t0.a(null, null);
         }
         a aVar = new a();
         aVar.b = l10;
-        aVar.c = i10;
-        aVar.a = j11;
+        aVar.c = i11;
+        aVar.a = i7;
         return aVar;
     }
 
@@ -630,7 +630,7 @@ public abstract class b {
         ArrayList arrayList = new ArrayList();
         for (int i7 = 0; i7 < list.size(); i7++) {
             String str = (String) list.get(i7);
-            String str2 = m0.a;
+            String str2 = l0.a;
             String[] split = str.split("=", 2);
             if (split.length != 2) {
                 h2.a.l("VorbisUtil", "Failed to parse Vorbis comment: ".concat(str));
@@ -653,7 +653,7 @@ public abstract class b {
     public static int s(int i7, h2.x xVar) {
         switch (i7) {
             case 1:
-                return qs.W2;
+                return ns.W2;
             case 2:
             case 3:
             case 4:
@@ -677,7 +677,7 @@ public abstract class b {
         }
     }
 
-    public static q4.q t(h2.x xVar) {
+    public static wf.b t(h2.x xVar) {
         xVar.O(1);
         int D = xVar.D();
         long j3 = xVar.b + D;
@@ -701,11 +701,11 @@ public abstract class b {
             i10++;
         }
         xVar.O((int) (j3 - xVar.b));
-        return new q4.q(jArr, jArr2, false, 19);
+        return new wf.b(16, jArr, jArr2);
     }
 
-    public static l0 u(h2.x xVar, boolean z9, boolean z10) {
-        if (z9) {
+    public static k0 u(h2.x xVar, boolean z10, boolean z11) {
+        if (z10) {
             w(3, xVar, false);
         }
         xVar.y((int) xVar.r(), StandardCharsets.UTF_8);
@@ -714,10 +714,10 @@ public abstract class b {
         for (int i7 = 0; i7 < r10; i7++) {
             strArr[i7] = xVar.y((int) xVar.r(), StandardCharsets.UTF_8);
         }
-        if (z10 && (xVar.A() & 1) == 0) {
+        if (z11 && (xVar.A() & 1) == 0) {
             throw t0.a(null, "framing bit expected to be set");
         }
-        return new l0(strArr);
+        return new k0(strArr);
     }
 
     public static void v(d4.f fVar) {
@@ -728,15 +728,15 @@ public abstract class b {
         fVar.L(j3 * 8);
     }
 
-    public static boolean w(int i7, h2.x xVar, boolean z9) {
+    public static boolean w(int i7, h2.x xVar, boolean z10) {
         if (xVar.a() < 7) {
-            if (z9) {
+            if (z10) {
                 return false;
             }
             throw t0.a(null, "too short header: " + xVar.a());
         }
         if (xVar.A() != i7) {
-            if (z9) {
+            if (z10) {
                 return false;
             }
             throw t0.a(null, "expected header type " + Integer.toHexString(i7));
@@ -744,7 +744,7 @@ public abstract class b {
         if (xVar.A() == 118 && xVar.A() == 111 && xVar.A() == 114 && xVar.A() == 98 && xVar.A() == 105 && xVar.A() == 115) {
             return true;
         }
-        if (z9) {
+        if (z10) {
             return false;
         }
         throw t0.a(null, "expected characters 'vorbis'");

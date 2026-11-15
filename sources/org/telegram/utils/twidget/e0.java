@@ -1,6 +1,6 @@
 package org.telegram.utils.twidget;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class e0 {
     public long a;
@@ -12,11 +12,11 @@ public final class e0 {
         }
     }
 
-    public final int b(double d, double d2, double d10, boolean z9, boolean z10, boolean z11, boolean z12, int i7) {
+    public final int b(double d, double d2, double d10, boolean z10, boolean z11, boolean z12, boolean z13, int i7) {
         if (this.a == 0) {
             this.a = WidgetClientNative.arbiterCreate();
         }
-        return WidgetClientNative.arbiterDown(this.a, d, d2, d10, z9, z10, z11, z12, i7);
+        return WidgetClientNative.arbiterDown(this.a, d, d2, d10, z10, z11, z12, z13, i7);
     }
 
     public final double c() {

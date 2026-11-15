@@ -12,7 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class RadioButton extends View {
     public static Paint s;
@@ -44,13 +44,13 @@ public class RadioButton extends View {
         }
     }
 
-    public final void a(boolean z9, boolean z10) {
-        if (z9 == this.f) {
+    public final void a(boolean z10, boolean z11) {
+        if (z10 == this.f) {
             return;
         }
-        this.f = z9;
-        if (this.e && z10) {
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z9 ? 1.0f : 0.0f);
+        this.f = z10;
+        if (this.e && z11) {
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
             this.d = ofFloat;
             ofFloat.setDuration(200L);
             this.d.start();
@@ -60,7 +60,7 @@ public class RadioButton extends View {
         if (objectAnimator != null) {
             objectAnimator.cancel();
         }
-        setProgress(z9 ? 1.0f : 0.0f);
+        setProgress(z10 ? 1.0f : 0.0f);
     }
 
     public final void b(int i7, int i10) {
@@ -108,7 +108,7 @@ public class RadioButton extends View {
             s.setColor(rgb);
             x.setColor(rgb);
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.qs.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ns.e4, 31);
         float f13 = (this.h / 2) - ((f10 + 1.0f) * org.telegram.messenger.g0.p);
         canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f13, s);
         if (this.r == null) {
@@ -116,7 +116,7 @@ public class RadioButton extends View {
                 canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f13 - org.telegram.messenger.g0.L(1.0f), x);
                 canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f10) * (f13 - org.telegram.messenger.g0.L(1.0f)), w);
             } else {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, com.google.android.recaptcha.internal.a.z(f13 - org.telegram.messenger.g0.L(1.0f), this.h / 4, f10, this.h / 4), x);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, com.google.android.gms.internal.vision.e2.z(f13 - org.telegram.messenger.g0.L(1.0f), this.h / 4, f10, this.h / 4), x);
             }
         }
         canvas.restore();

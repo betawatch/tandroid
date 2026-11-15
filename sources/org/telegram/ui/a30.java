@@ -1,37 +1,40 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class a30 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f40 b;
+public final class a30 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ org.telegram.ui.Components.jp G1;
+    public final /* synthetic */ c40 H1;
 
-    public /* synthetic */ a30(f40 f40Var, int i7) {
-        this.a = i7;
-        this.b = f40Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a30(c40 c40Var, LaunchActivity launchActivity, org.telegram.ui.Components.jp jpVar) {
+        super(launchActivity, null);
+        this.H1 = c40Var;
+        this.G1 = jpVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                f40 f40Var = this.b;
-                f40Var.P1.setVisibility(4);
-                f40Var.Q1.setVisibility(4);
-                f40Var.O1.setVisibility(4);
-                break;
-            case 1:
-                this.b.b2 = null;
-                break;
-            default:
-                f40 f40Var2 = this.b;
-                f40Var2.b3 = null;
-                f40Var2.a3.setColor(f40Var2.N3 == 3 ? -1163700 : -12761513);
-                f40Var2.Z2.invalidate();
-                break;
+    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (getAdditionalSubtitleTextView().getVisibility() == 0) {
+            canvas.save();
+            canvas.translate(getSubtitleTextView().getLeft(), getSubtitleTextView().getY() - org.telegram.messenger.g0.L(1.0f));
+            int alpha = (int) (getAdditionalSubtitleTextView().getAlpha() * 255.0f);
+            org.telegram.ui.Components.jp jpVar = this.G1;
+            jpVar.f = alpha;
+            jpVar.draw(canvas);
+            canvas.restore();
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        if (getAlpha() != f10) {
+            super.setAlpha(f10);
+            this.H1.b.invalidate();
         }
     }
 }

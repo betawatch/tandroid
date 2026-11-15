@@ -217,10 +217,10 @@ public final class ZoneRules implements Serializable {
         if (this.f.length > 0) {
             LocalDateTime localDateTime2 = this.d[r0.length - 1];
             if (localDateTime2 == null) {
-                long z9 = localDateTime.a.z();
-                long z10 = localDateTime2.a.z();
-                if (z9 <= z10) {
-                    if (z9 == z10) {
+                long z10 = localDateTime.a.z();
+                long z11 = localDateTime2.a.z();
+                if (z10 <= z11) {
+                    if (z10 == z11) {
                     }
                 }
                 b[] b11 = b(localDateTime.a.getYear());

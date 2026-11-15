@@ -4,7 +4,7 @@ import android.os.Bundle;
 import androidx.core.graphics.drawable.IconCompat;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j0 {
     public CharSequence a;
@@ -20,15 +20,15 @@ public final class j0 {
         IconCompat a10 = bundle2 != null ? IconCompat.a(bundle2) : null;
         String string = bundle.getString("uri");
         String string2 = bundle.getString("key");
-        boolean z9 = bundle.getBoolean("isBot");
-        boolean z10 = bundle.getBoolean("isImportant");
+        boolean z10 = bundle.getBoolean("isBot");
+        boolean z11 = bundle.getBoolean("isImportant");
         j0 j0Var = new j0();
         j0Var.a = charSequence;
         j0Var.b = a10;
         j0Var.c = string;
         j0Var.d = string2;
-        j0Var.e = z9;
-        j0Var.f = z10;
+        j0Var.e = z10;
+        j0Var.f = z11;
         return j0Var;
     }
 

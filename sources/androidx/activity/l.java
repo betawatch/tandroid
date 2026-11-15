@@ -1,6 +1,6 @@
 package androidx.activity;
 
-import a8.ra;
+import a8.sa;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -12,8 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.window.OnBackInvokedDispatcher;
-import androidx.fragment.app.a0;
-import androidx.fragment.app.d0;
+import androidx.fragment.app.e0;
 import androidx.lifecycle.f0;
 import androidx.lifecycle.h0;
 import androidx.lifecycle.j0;
@@ -32,19 +31,19 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ly0;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
-    public final CopyOnWriteArrayList D;
     public final CopyOnWriteArrayList E;
     public final CopyOnWriteArrayList F;
     public final CopyOnWriteArrayList G;
-    public boolean H;
+    public final CopyOnWriteArrayList H;
     public boolean I;
+    public boolean J;
     public final b0 b;
-    public final ly0 c;
+    public final ld0 c;
     public final androidx.lifecycle.v d;
     public final n e;
     public t0 f;
@@ -59,7 +58,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     public l() {
         b0 b0Var = new b0();
         this.b = b0Var;
-        this.c = new ly0(new a3.f(this, 5));
+        this.c = new ld0(new a3.f(this, 8));
         androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
         this.d = vVar;
         n nVar = new n(this);
@@ -71,12 +70,12 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
         this.w = new AtomicInteger();
         this.x = new h(this);
         this.y = new CopyOnWriteArrayList();
-        this.D = new CopyOnWriteArrayList();
         this.E = new CopyOnWriteArrayList();
         this.F = new CopyOnWriteArrayList();
         this.G = new CopyOnWriteArrayList();
-        this.H = false;
+        this.H = new CopyOnWriteArrayList();
         this.I = false;
+        this.J = false;
         int i7 = Build.VERSION.SDK_INT;
         vVar.a(new androidx.lifecycle.r() { // from class: androidx.activity.ComponentActivity$2
             @Override // androidx.lifecycle.r
@@ -121,14 +120,14 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
                 lVar.d.b(this);
             }
         });
-        nVar.d();
+        nVar.e();
         j0.d(this);
         if (i7 <= 23) {
             ImmLeaksCleaner immLeaksCleaner = new ImmLeaksCleaner();
             immLeaksCleaner.a = this;
             vVar.a(immLeaksCleaner);
         }
-        ((m.q) nVar.d).f("android:support:activity-result", new e(this, 0));
+        ((m.p) nVar.d).f("android:support:activity-result", new e(this, 0));
         f fVar = new f(this, 0);
         if (((l) b0Var.c) != null) {
             fVar.a();
@@ -184,8 +183,8 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     }
 
     @Override // w4.e
-    public final m.q g() {
-        return (m.q) this.e.d;
+    public final m.p g() {
+        return (m.p) this.e.d;
     }
 
     @Override // androidx.lifecycle.t
@@ -221,7 +220,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
 
     @Override // e0.e, android.app.Activity
     public void onCreate(Bundle bundle) {
-        this.e.e(bundle);
+        this.e.f(bundle);
         b0 b0Var = this.b;
         b0Var.getClass();
         b0Var.c = this;
@@ -243,7 +242,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
         getMenuInflater();
         Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
         while (it.hasNext()) {
-            ((a0) it.next()).a.k();
+            ((androidx.fragment.app.b0) it.next()).a.k();
         }
         return true;
     }
@@ -256,7 +255,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
         if (i7 == 0) {
             Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
             while (it.hasNext()) {
-                if (((a0) it.next()).a.p()) {
+                if (((androidx.fragment.app.b0) it.next()).a.p()) {
                     return true;
                 }
             }
@@ -265,20 +264,20 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     }
 
     @Override // android.app.Activity
-    public void onMultiWindowModeChanged(boolean z9) {
-        if (this.H) {
+    public void onMultiWindowModeChanged(boolean z10) {
+        if (this.I) {
             return;
         }
-        Iterator it = this.F.iterator();
+        Iterator it = this.G.iterator();
         while (it.hasNext()) {
-            ((q0.a) it.next()).accept(new e0.f(z9));
+            ((q0.a) it.next()).accept(new e0.f(z10));
         }
     }
 
     @Override // android.app.Activity
     public void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Iterator it = this.E.iterator();
+        Iterator it = this.F.iterator();
         while (it.hasNext()) {
             ((q0.a) it.next()).accept(intent);
         }
@@ -288,19 +287,19 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     public final void onPanelClosed(int i7, Menu menu) {
         Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
         while (it.hasNext()) {
-            ((a0) it.next()).a.q();
+            ((androidx.fragment.app.b0) it.next()).a.q();
         }
         super.onPanelClosed(i7, menu);
     }
 
     @Override // android.app.Activity
-    public final void onPictureInPictureModeChanged(boolean z9) {
-        if (this.I) {
+    public final void onPictureInPictureModeChanged(boolean z10) {
+        if (this.J) {
             return;
         }
-        Iterator it = this.G.iterator();
+        Iterator it = this.H.iterator();
         while (it.hasNext()) {
-            ((q0.a) it.next()).accept(new k0(z9));
+            ((q0.a) it.next()).accept(new k0(z10));
         }
     }
 
@@ -312,7 +311,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
         super.onPreparePanel(i7, view, menu);
         Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
         while (it.hasNext()) {
-            ((a0) it.next()).a.t();
+            ((androidx.fragment.app.b0) it.next()).a.t();
         }
         return true;
     }
@@ -347,13 +346,13 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
             vVar.g();
         }
         super.onSaveInstanceState(bundle);
-        this.e.f(bundle);
+        this.e.g(bundle);
     }
 
     @Override // android.app.Activity, android.content.ComponentCallbacks2
     public final void onTrimMemory(int i7) {
         super.onTrimMemory(i7);
-        Iterator it = this.D.iterator();
+        Iterator it = this.E.iterator();
         while (it.hasNext()) {
             ((q0.a) it.next()).accept(Integer.valueOf(i7));
         }
@@ -361,7 +360,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
 
     public final w p() {
         if (this.n == null) {
-            this.n = new w(new ra(this, 2));
+            this.n = new w(new sa(this, 4));
             this.d.a(new androidx.lifecycle.r() { // from class: androidx.activity.ComponentActivity$6
                 @Override // androidx.lifecycle.r
                 public final void d(androidx.lifecycle.t tVar, androidx.lifecycle.m mVar) {
@@ -398,8 +397,8 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
         decorView5.setTag(R.id.report_drawn, this);
     }
 
-    public final androidx.activity.result.c r(androidx.activity.result.b bVar, d0 d0Var) {
-        return this.x.c("activity_rq#" + this.w.getAndIncrement(), this, d0Var, bVar);
+    public final androidx.activity.result.c r(androidx.activity.result.b bVar, e0 e0Var) {
+        return this.x.c("activity_rq#" + this.w.getAndIncrement(), this, e0Var, bVar);
     }
 
     @Override // android.app.Activity
@@ -440,37 +439,37 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     }
 
     @Override // android.app.Activity
-    public final void onMultiWindowModeChanged(boolean z9, Configuration newConfig) {
-        this.H = true;
-        try {
-            super.onMultiWindowModeChanged(z9, newConfig);
-            this.H = false;
-            Iterator it = this.F.iterator();
-            while (it.hasNext()) {
-                q0.a aVar = (q0.a) it.next();
-                kotlin.jvm.internal.j.e(newConfig, "newConfig");
-                aVar.accept(new e0.f(z9));
-            }
-        } catch (Throwable th2) {
-            this.H = false;
-            throw th2;
-        }
-    }
-
-    @Override // android.app.Activity
-    public void onPictureInPictureModeChanged(boolean z9, Configuration newConfig) {
+    public final void onMultiWindowModeChanged(boolean z10, Configuration newConfig) {
         this.I = true;
         try {
-            super.onPictureInPictureModeChanged(z9, newConfig);
+            super.onMultiWindowModeChanged(z10, newConfig);
             this.I = false;
             Iterator it = this.G.iterator();
             while (it.hasNext()) {
                 q0.a aVar = (q0.a) it.next();
                 kotlin.jvm.internal.j.e(newConfig, "newConfig");
-                aVar.accept(new k0(z9));
+                aVar.accept(new e0.f(z10));
             }
         } catch (Throwable th2) {
             this.I = false;
+            throw th2;
+        }
+    }
+
+    @Override // android.app.Activity
+    public void onPictureInPictureModeChanged(boolean z10, Configuration newConfig) {
+        this.J = true;
+        try {
+            super.onPictureInPictureModeChanged(z10, newConfig);
+            this.J = false;
+            Iterator it = this.H.iterator();
+            while (it.hasNext()) {
+                q0.a aVar = (q0.a) it.next();
+                kotlin.jvm.internal.j.e(newConfig, "newConfig");
+                aVar.accept(new k0(z10));
+            }
+        } catch (Throwable th2) {
+            this.J = false;
             throw th2;
         }
     }

@@ -1,59 +1,56 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.InsetDrawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.m61;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class a5 extends m61 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 c;
-    public final /* synthetic */ Rect d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ y2[] f;
+public final class a5 extends x2 {
+    public final /* synthetic */ ViewGroup X1;
+    public final /* synthetic */ View[] Y1;
+    public final /* synthetic */ Context Z1;
 
-    public a5(ArrayList arrayList, Context context, org.telegram.ui.ActionBar.h6 h6Var, Rect rect, int i7, y2[] y2VarArr) {
-        this.a = arrayList;
-        this.b = context;
-        this.c = h6Var;
-        this.d = rect;
-        this.e = i7;
-        this.f = y2VarArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a5(Context context, ViewGroup viewGroup, org.telegram.ui.ActionBar.e6 e6Var, ViewGroup viewGroup2, View[] viewArr, Context context2) {
+        super(context, viewGroup, e6Var);
+        this.X1 = viewGroup2;
+        this.Y1 = viewArr;
+        this.Z1 = context2;
     }
 
-    @Override // org.telegram.ui.Components.m61
-    public final void b(View view, int i7, int i10) {
-        FrameLayout frameLayout = (FrameLayout) view;
-        frameLayout.removeAllViews();
-        frameLayout.addView(z5.t0(this.b, this.e, (TL_wallet.walletTransaction) this.a.get(i7), null, null, null, null, this.c, this.f, true), c8.ha.c(-2.0f, -1));
+    @Override // org.telegram.ui.Wallet.x2, org.telegram.ui.Components.ja
+    public final void T0(float f10) {
+        super.T0(f10);
+        if (this.X1 instanceof w61) {
+            this.s0.setBounds(0, (int) f10, this.b.getWidth(), this.b.getHeight());
+        }
     }
 
-    @Override // org.telegram.ui.Components.m61
-    public final View d(int i7) {
-        FrameLayout frameLayout = new FrameLayout(this.b);
-        int L = org.telegram.messenger.g0.L(20.0f);
-        int i10 = org.telegram.ui.ActionBar.m6.d6;
-        org.telegram.ui.ActionBar.h6 h6Var = this.c;
-        ShapeDrawable e02 = org.telegram.ui.ActionBar.m6.e0(L, 0, org.telegram.ui.ActionBar.m6.w0(i10, h6Var));
-        Rect rect = this.d;
-        InsetDrawable insetDrawable = new InsetDrawable((Drawable) e02, rect.left, 0, rect.right, 0);
-        org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i10);
-        frameLayout.setBackground(insetDrawable);
-        org.telegram.ui.ActionBar.t6.j(frameLayout, insetDrawable, M, null, h6Var);
-        return frameLayout;
+    @Override // org.telegram.ui.Components.ja
+    public final boolean Z0() {
+        return !(this.X1 instanceof w61);
     }
 
-    @Override // org.telegram.ui.Components.m61
-    public final int e() {
-        return this.a.size();
+    @Override // org.telegram.ui.Wallet.x2
+    public final int d1() {
+        return org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.d6, this.J0);
+    }
+
+    @Override // org.telegram.ui.Wallet.x2, org.telegram.ui.ActionBar.u2, android.app.Dialog
+    public final void show() {
+        super.show();
+        if (this.X1 instanceof w61) {
+            View[] viewArr = this.Y1;
+            if (viewArr[0] == null) {
+                jh.h hVar = new jh.h(this, this.Z1);
+                viewArr[0] = hVar;
+                this.b.addView(hVar, 0, c8.ja.e(-1, 50, 80));
+            }
+            this.b.setBackground(null);
+            this.b.setPadding(0, 0, 0, 0);
+            this.o1.setPadding(0, 0, 0, 0);
+        }
     }
 }

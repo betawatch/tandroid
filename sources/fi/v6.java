@@ -1,59 +1,95 @@
 package fi;
 
-import android.view.KeyEvent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.util.TypedValue;
 import android.view.View;
-import androidx.appcompat.widget.SearchView;
+import org.telegram.ui.Components.ch0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class v6 implements View.OnFocusChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
+public final class v6 extends View {
+    public final String a;
+    public final String b;
+    public final ch0 c;
+    public final Paint d;
+    public final TextPaint e;
+    public final TextPaint f;
+    public final RectF h;
+    public float n;
+    public final Rect r;
 
-    public /* synthetic */ v6(KeyEvent.Callback callback, int i7) {
-        this.a = i7;
-        this.b = callback;
+    public v6(Context context, int i7, String str, String str2) {
+        super(context);
+        this.r = new Rect();
+        this.a = str;
+        this.b = str2;
+        ch0 ch0Var = new ch0(i7, org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(36.0f), true, null);
+        this.c = ch0Var;
+        ch0Var.K(1);
+        ch0Var.R(this);
+        Paint paint = new Paint(1);
+        this.d = paint;
+        paint.setColor(383310040);
+        TextPaint textPaint = new TextPaint(1);
+        this.e = textPaint;
+        textPaint.setColor(-1);
+        textPaint.setTextSize(TypedValue.applyDimension(1, 16.0f, getResources().getDisplayMetrics()));
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
+        TextPaint textPaint2 = new TextPaint(1);
+        this.f = textPaint2;
+        textPaint2.setColor(-1761607681);
+        textPaint2.setTextSize(TypedValue.applyDimension(1, 14.0f, getResources().getDisplayMetrics()));
+        this.h = new RectF();
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z9) {
-        switch (this.a) {
-            case 0:
-                if (z9) {
-                    w6 w6Var = (w6) this.b;
-                    w6Var.d2 = true;
-                    v4.b0 b0Var = (v4.b0) w6Var.n1.getLayoutManager();
-                    mi.m mVar = new mi.m(w6Var.getContext(), 2);
-                    mVar.a = 1;
-                    mVar.p = (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + org.telegram.messenger.g0.m) - org.telegram.messenger.g0.L(1.0f);
-                    b0Var.w0(mVar);
-                    break;
-                }
-                break;
-            case 1:
-                SearchView searchView = (SearchView) this.b;
-                View.OnFocusChangeListener onFocusChangeListener = searchView.d0;
-                if (onFocusChangeListener != null) {
-                    onFocusChangeListener.onFocusChange(searchView, z9);
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.Cells.h3 h3Var = (org.telegram.ui.Cells.h3) this.b;
-                h3Var.n = z9;
-                if (h3Var.h) {
-                    h3Var.c();
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Cells.k3 k3Var = (org.telegram.ui.Cells.k3) this.b;
-                k3Var.s = z9;
-                if (k3Var.n) {
-                    k3Var.c();
-                }
-                k3Var.a(z9);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int L = org.telegram.messenger.g0.L(40.0f);
+        int measuredHeight = getMeasuredHeight() / 2;
+        int L2 = (int) ((org.telegram.messenger.g0.L(8.0f) * this.n) + org.telegram.messenger.g0.L(36.0f));
+        int i7 = L2 / 2;
+        int i10 = L - i7;
+        int i11 = measuredHeight - i7;
+        ch0 ch0Var = this.c;
+        ch0Var.setBounds(i10, i11, i10 + L2, L2 + i11);
+        ch0Var.draw(canvas);
+        if (this.n > 0.0f) {
+            float N = (1.0f - this.n) * org.telegram.messenger.g0.N(4.0f);
+            float f10 = N * 2.0f;
+            float measuredWidth = getMeasuredWidth() - f10;
+            float measuredHeight2 = getMeasuredHeight() - f10;
+            RectF rectF = this.h;
+            rectF.set(N, N, measuredWidth, measuredHeight2);
+            int i12 = (int) (this.n * 30.0f);
+            Paint paint = this.d;
+            paint.setAlpha(i12);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(12.0f), org.telegram.messenger.g0.N(12.0f), paint);
+            canvas.save();
+            float f11 = this.n;
+            canvas.scale((f11 * 0.05f) + 1.0f, (f11 * 0.05f) + 1.0f, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
         }
+        canvas.drawText(this.a, org.telegram.messenger.g0.N(80.0f), (getMeasuredHeight() / 2.0f) - org.telegram.messenger.g0.N(4.0f), this.e);
+        canvas.drawText(this.b, org.telegram.messenger.g0.N(80.0f), org.telegram.messenger.g0.N(18.0f) + (getMeasuredHeight() / 2.0f), this.f);
+        if (this.n > 0.0f) {
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        int L = org.telegram.messenger.g0.L(40.0f);
+        int measuredHeight = getMeasuredHeight() / 2;
+        int L2 = org.telegram.messenger.g0.L(36.0f);
+        int i11 = L2 / 2;
+        int i12 = L - i11;
+        int i13 = measuredHeight - i11;
+        this.c.setBounds(i12, i13, i12 + L2, L2 + i13);
     }
 }

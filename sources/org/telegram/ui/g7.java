@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class g7 extends f7 {
     public final ArrayList f;
@@ -15,8 +15,8 @@ public abstract class g7 extends f7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.oj0
-    public boolean D(v4.d1 d1Var) {
+    @Override // org.telegram.ui.Components.tj0
+    public boolean D(v4.e1 e1Var) {
         return !(this instanceof o7);
     }
 
@@ -27,13 +27,13 @@ public abstract class g7 extends f7 {
         ArrayList arrayList2 = this.e;
         arrayList.addAll(arrayList2);
         arrayList2.clear();
-        ci.c cVar = this.h.h;
+        ei.c cVar = this.h.h;
         if (cVar != null) {
             int i7 = this.d;
             ArrayList arrayList3 = i7 == 1 ? cVar.d : i7 == 2 ? cVar.e : i7 == 3 ? cVar.f : i7 == 5 ? cVar.g : i7 == 4 ? cVar.h : null;
             if (arrayList3 != null) {
                 for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-                    ci.b bVar = (ci.b) arrayList3.get(i10);
+                    ei.b bVar = (ei.b) arrayList3.get(i10);
                     m7 m7Var = new m7(2, true);
                     m7Var.d = bVar;
                     arrayList2.add(m7Var);

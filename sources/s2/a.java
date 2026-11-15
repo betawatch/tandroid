@@ -3,12 +3,11 @@ package s2;
 import android.net.Uri;
 import android.os.SystemClock;
 import h9.g0;
-import h9.h2;
+import h9.g2;
 import h9.t0;
 import java.util.HashMap;
-import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements u {
     public final /* synthetic */ d a;
@@ -23,23 +22,23 @@ public final class a implements u {
     }
 
     @Override // s2.u
-    public final boolean d(Uri uri, f5.u uVar, boolean z9) {
+    public final boolean d(Uri uri, f5.v vVar, boolean z10) {
         c cVar;
         d dVar = this.a;
         HashMap hashMap = dVar.d;
-        if (dVar.G == null) {
+        if (dVar.H == null) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             c cVar2 = (c) hashMap.get(uri);
             cVar2.getClass();
             w wVar = cVar2.a;
             int size = wVar.b.size();
-            h2 it = t0.q(wVar.b.values()).iterator();
+            g2 it = t0.q(wVar.b.values()).iterator();
             int i7 = 0;
             while (it.hasNext()) {
                 Uri uri2 = (Uri) it.next();
                 c cVar3 = (c) hashMap.get(uri2);
                 if (cVar3 != null) {
-                    b bVar = (b) f1.l(cVar3.b, uri2, uri2);
+                    b bVar = (b) r.b.i(cVar3.b, uri2, uri2);
                     bVar.getClass();
                     if (elapsedRealtime <= bVar.r) {
                         i7++;
@@ -56,9 +55,9 @@ public final class a implements u {
             }
             b3.h hVar = new b3.h(size, i7, size2, i10);
             dVar.c.getClass();
-            b3.i V0 = pb.b.V0(hVar, uVar);
-            if (V0 != null && (cVar = (c) hashMap.get(uri)) != null) {
-                return c.c(cVar, uri, V0.b);
+            b3.i Q4 = qb.a.Q4(hVar, vVar);
+            if (Q4 != null && (cVar = (c) hashMap.get(uri)) != null) {
+                return c.c(cVar, uri, Q4.b);
             }
         }
         return false;

@@ -4,11 +4,11 @@ import java.util.ArrayDeque;
 import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.logging.Logger;
-import o5.o;
-import org.telegram.ui.ix;
+import o5.p;
+import pb.l;
 import q6.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i implements Executor {
     public static final Logger f = Logger.getLogger(i.class.getName());
@@ -16,7 +16,7 @@ public final class i implements Executor {
     public final ArrayDeque b = new ArrayDeque();
     public int c = 1;
     public long d = 0;
-    public final ix e = new ix(this);
+    public final l e = new l(this);
 
     public i(Executor executor) {
         m.g(executor);
@@ -30,8 +30,8 @@ public final class i implements Executor {
             int i7 = this.c;
             if (i7 != 4 && i7 != 3) {
                 long j3 = this.d;
-                o oVar = new o(1, runnable);
-                this.b.add(oVar);
+                p pVar = new p(1, runnable);
+                this.b.add(pVar);
                 this.c = 2;
                 try {
                     this.a.execute(this.e);
@@ -51,11 +51,11 @@ public final class i implements Executor {
                     synchronized (this.b) {
                         try {
                             int i10 = this.c;
-                            boolean z9 = true;
-                            if ((i10 != 1 && i10 != 2) || !this.b.removeLastOccurrence(oVar)) {
-                                z9 = false;
+                            boolean z10 = true;
+                            if ((i10 != 1 && i10 != 2) || !this.b.removeLastOccurrence(pVar)) {
+                                z10 = false;
                             }
-                            if (!(e10 instanceof RejectedExecutionException) || z9) {
+                            if (!(e10 instanceof RejectedExecutionException) || z10) {
                                 throw e10;
                             }
                         } finally {

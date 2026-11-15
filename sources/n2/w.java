@@ -1,15 +1,15 @@
 package n2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class w extends Exception {
     public final int a;
     public final boolean b;
     public final e2.u c;
 
-    public w(int i7, e2.u uVar, boolean z9) {
-        super(jg.g.j(i7, "AudioTrack write failed: "));
-        this.b = z9;
+    public w(int i7, e2.u uVar, boolean z10) {
+        super(i5.c.i(i7, "AudioTrack write failed: "));
+        this.b = z10;
         this.a = i7;
         this.c = uVar;
     }

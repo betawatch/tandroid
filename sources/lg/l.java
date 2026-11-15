@@ -3,9 +3,10 @@ package lg;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class l extends g {
     @Override // lg.g
@@ -22,7 +23,7 @@ public final class l extends g {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void k(Canvas canvas) {
-        boolean z9;
+        boolean z10;
         float f10;
         float f11;
         float f12;
@@ -31,15 +32,15 @@ public final class l extends g {
         int i10;
         float f14;
         int i11;
-        if (this.h0 == null) {
+        if (this.i0 == null) {
             return;
         }
-        float f15 = this.F0;
-        j jVar = this.g0;
+        float f15 = this.G0;
+        j jVar = this.h0;
         float f16 = jVar.l;
         float f17 = jVar.k;
         float f18 = f15 / (f16 - f17);
-        float f19 = g.k1;
+        float f19 = g.l1;
         float f20 = (f17 * f18) - f19;
         int i12 = 0;
         int i13 = 0;
@@ -49,22 +50,22 @@ public final class l extends g {
                 return;
             }
             ng.f fVar = (ng.f) arrayList.get(i13);
-            boolean z10 = fVar.n;
+            boolean z11 = fVar.n;
             float[] fArr = fVar.k;
             Path path = fVar.f;
             Paint paint = fVar.c;
-            if (z10 || fVar.o != 0.0f) {
-                float[] fArr2 = this.h0.b;
+            if (z11 || fVar.o != 0.0f) {
+                float[] fArr2 = this.i0.b;
                 float f21 = fArr2.length < 2 ? 0.0f : fArr2[1] * f18;
                 long[] jArr = fVar.a.a;
                 int i14 = ((int) (f19 / f21)) + 1;
                 path.reset();
-                int max = Math.max(i12, this.F - i14);
-                int min = Math.min(this.h0.b.length - 1, this.G + i14);
-                boolean z11 = true;
+                int max = Math.max(i12, this.G - i14);
+                int min = Math.min(this.i0.b.length - 1, this.H + i14);
+                boolean z12 = true;
                 int i15 = 0;
                 while (true) {
-                    z9 = g.A1;
+                    z10 = g.B1;
                     if (max > min) {
                         break;
                     }
@@ -76,43 +77,43 @@ public final class l extends g {
                         i11 = i13;
                     } else {
                         f14 = f19;
-                        float f24 = (this.h0.b[max] * f22) - f23;
+                        float f24 = (this.i0.b[max] * f22) - f23;
                         float f25 = this.x;
                         float f26 = (j3 - f25) / (this.w - f25);
                         float strokeWidth = paint.getStrokeWidth() / 2.0f;
                         i11 = i13;
-                        float v = com.google.android.recaptcha.internal.a.v((getMeasuredHeight() - this.s) - g.n1, strokeWidth, f26, (getMeasuredHeight() - this.s) - strokeWidth);
-                        if (!z9) {
-                            if (z11) {
-                                path.moveTo(f24 - (f21 / 2.0f), v);
-                                z11 = false;
+                        float t6 = e2.t((getMeasuredHeight() - this.s) - g.o1, strokeWidth, f26, (getMeasuredHeight() - this.s) - strokeWidth);
+                        if (!z10) {
+                            if (z12) {
+                                path.moveTo(f24 - (f21 / 2.0f), t6);
+                                z12 = false;
                             } else {
-                                path.lineTo(f24 - (f21 / 2.0f), v);
+                                path.lineTo(f24 - (f21 / 2.0f), t6);
                             }
-                            path.lineTo((f21 / 2.0f) + f24, v);
+                            path.lineTo((f21 / 2.0f) + f24, t6);
                         } else if (i15 == 0) {
                             float f27 = f21 / 2.0f;
                             fArr[i15] = f24 - f27;
-                            fArr[i15 + 1] = v;
+                            fArr[i15 + 1] = t6;
                             float f28 = f24 + f27;
                             fArr[i15 + 2] = f28;
-                            fArr[i15 + 3] = v;
+                            fArr[i15 + 3] = t6;
                             int i16 = i15 + 5;
                             fArr[i15 + 4] = f28;
                             i15 += 6;
-                            fArr[i16] = v;
+                            fArr[i16] = t6;
                         } else if (max == min) {
                             float f29 = f21 / 2.0f;
                             float f30 = f24 - f29;
                             fArr[i15] = f30;
-                            fArr[i15 + 1] = v;
+                            fArr[i15 + 1] = t6;
                             fArr[i15 + 2] = f30;
-                            fArr[i15 + 3] = v;
+                            fArr[i15 + 3] = t6;
                             float f31 = f24 + f29;
                             fArr[i15 + 4] = f31;
-                            fArr[i15 + 5] = v;
+                            fArr[i15 + 5] = t6;
                             fArr[i15 + 6] = f31;
-                            fArr[i15 + 7] = v;
+                            fArr[i15 + 7] = t6;
                             int i17 = i15 + 9;
                             fArr[i15 + 8] = f31;
                             i15 += 10;
@@ -121,16 +122,16 @@ public final class l extends g {
                             float f32 = f21 / 2.0f;
                             float f33 = f24 - f32;
                             fArr[i15] = f33;
-                            fArr[i15 + 1] = v;
+                            fArr[i15 + 1] = t6;
                             fArr[i15 + 2] = f33;
-                            fArr[i15 + 3] = v;
+                            fArr[i15 + 3] = t6;
                             float f34 = f24 + f32;
                             fArr[i15 + 4] = f34;
-                            fArr[i15 + 5] = v;
+                            fArr[i15 + 5] = t6;
                             int i18 = i15 + 7;
                             fArr[i15 + 6] = f34;
                             i15 += 8;
-                            fArr[i18] = v;
+                            fArr[i18] = t6;
                         }
                     }
                     max++;
@@ -144,31 +145,31 @@ public final class l extends g {
                 f12 = f19;
                 i7 = i13;
                 canvas.save();
-                int i19 = this.y0;
+                int i19 = this.z0;
                 float f35 = 1.0f;
                 if (i19 == 2) {
-                    ng.j jVar2 = this.z0;
+                    ng.j jVar2 = this.A0;
                     float f36 = jVar2.f;
                     f13 = f36 > 0.5f ? 0.0f : 1.0f - (f36 * 2.0f);
                     canvas.scale((f36 * 2.0f) + 1.0f, 1.0f, jVar2.d, jVar2.e);
                 } else if (i19 == 1) {
-                    float f37 = this.z0.f;
+                    float f37 = this.A0.f;
                     f13 = f37 < 0.3f ? 0.0f : f37;
                     canvas.save();
-                    ng.j jVar3 = this.z0;
+                    ng.j jVar3 = this.A0;
                     float f38 = jVar3.f;
                     canvas.scale(f38, f38, jVar3.d, jVar3.e);
                 } else {
                     if (i19 == 3) {
-                        f35 = this.z0.f;
+                        f35 = this.A0.f;
                     }
                     paint.setAlpha((int) (fVar.o * 255.0f * f35));
-                    if (this.G - this.F <= 100) {
+                    if (this.H - this.G <= 100) {
                         paint.setStrokeCap(Paint.Cap.SQUARE);
                     } else {
                         paint.setStrokeCap(Paint.Cap.ROUND);
                     }
-                    if (z9) {
+                    if (z10) {
                         canvas.drawPath(path, paint);
                         i10 = 0;
                     } else {
@@ -179,9 +180,9 @@ public final class l extends g {
                 }
                 f35 = f13;
                 paint.setAlpha((int) (fVar.o * 255.0f * f35));
-                if (this.G - this.F <= 100) {
+                if (this.H - this.G <= 100) {
                 }
-                if (z9) {
+                if (z10) {
                 }
                 canvas.restore();
             } else {
@@ -201,7 +202,7 @@ public final class l extends g {
 
     @Override // lg.g
     public final void n(Canvas canvas) {
-        boolean z9;
+        boolean z10;
         ArrayList arrayList;
         int i7;
         ArrayList arrayList2;
@@ -213,27 +214,27 @@ public final class l extends g {
         getMeasuredHeight();
         ArrayList arrayList3 = this.d;
         int size = arrayList3.size();
-        mg.b bVar = this.h0;
+        mg.b bVar = this.i0;
         if (bVar != null) {
             float[] fArr = bVar.b;
-            float f13 = fArr.length < 2 ? 1.0f : fArr[1] * this.C0;
+            float f13 = fArr.length < 2 ? 1.0f : fArr[1] * this.D0;
             int i11 = 0;
             while (i11 < size) {
                 ng.f fVar = (ng.f) arrayList3.get(i11);
-                boolean z10 = fVar.n;
+                boolean z11 = fVar.n;
                 Paint paint = fVar.b;
                 float[] fArr2 = fVar.l;
                 Path path = fVar.e;
                 float f14 = 0.0f;
-                if (z10 || fVar.o != 0.0f) {
+                if (z11 || fVar.o != 0.0f) {
                     path.reset();
-                    int length = this.h0.b.length;
+                    int length = this.i0.b.length;
                     long[] jArr = fVar.a.a;
                     fVar.f.reset();
                     int i12 = 0;
                     int i13 = 0;
                     while (true) {
-                        z9 = g.A1;
+                        z10 = g.B1;
                         if (i13 >= length) {
                             break;
                         }
@@ -244,26 +245,26 @@ public final class l extends g {
                             arrayList2 = arrayList3;
                             i10 = size;
                         } else {
-                            mg.b bVar2 = this.h0;
+                            mg.b bVar2 = this.i0;
                             arrayList2 = arrayList3;
-                            float f16 = this.C0 * bVar2.b[i13];
-                            boolean z11 = g.B1;
-                            if (z11) {
-                                f10 = this.j0;
+                            float f16 = this.D0 * bVar2.b[i13];
+                            boolean z12 = g.C1;
+                            if (z12) {
+                                f10 = this.k0;
                                 i10 = size;
                             } else {
                                 i10 = size;
                                 f10 = bVar2.e;
                             }
-                            if (z11) {
-                                f12 = this.k0;
+                            if (z12) {
+                                f12 = this.l0;
                                 f11 = f10;
                             } else {
                                 f11 = f10;
                                 f12 = bVar2.f;
                             }
-                            float f17 = (1.0f - ((j3 - f12) / (f11 - f12))) * this.B0;
-                            if (!z9) {
+                            float f17 = (1.0f - ((j3 - f12) / (f11 - f12))) * this.C0;
+                            if (!z10) {
                                 if (i13 == 0) {
                                     path.moveTo(f16 - (f13 / 2.0f), f17);
                                 } else {
@@ -325,7 +326,7 @@ public final class l extends g {
                     fVar.j = i12;
                     if (fVar.n || fVar.o != f26) {
                         paint.setAlpha((int) (fVar.o * 255.0f));
-                        if (z9) {
+                        if (z10) {
                             canvas.drawLines(fArr2, 0, fVar.j, paint);
                         } else {
                             canvas.drawPath(path, paint);
@@ -344,7 +345,7 @@ public final class l extends g {
 
     @Override // lg.g
     public final void t() {
-        this.P0 = true;
+        this.Q0 = true;
         super.t();
     }
 }

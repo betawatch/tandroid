@@ -11,7 +11,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class v implements Map, Serializable, j$.util.Map {
     public final /* synthetic */ int a;
@@ -612,133 +612,133 @@ public abstract class v implements Map, Serializable, j$.util.Map {
     public final String toString() {
         switch (this.a) {
             case 0:
-                boolean z9 = true;
+                boolean z10 = true;
                 StringBuilder sb2 = new StringBuilder((int) Math.min(1 * 8, 1073741824L));
                 sb2.append('{');
                 Iterator it = ((c0) entrySet()).iterator();
                 while (it.hasNext()) {
                     Map.Entry entry = (Map.Entry) it.next();
-                    if (!z9) {
+                    if (!z10) {
                         sb2.append(", ");
                     }
                     sb2.append(entry.getKey());
                     sb2.append('=');
                     sb2.append(entry.getValue());
-                    z9 = false;
+                    z10 = false;
                 }
                 sb2.append('}');
                 return sb2.toString();
             case 1:
-                boolean z10 = true;
+                boolean z11 = true;
                 StringBuilder sb3 = new StringBuilder((int) Math.min(1 * 8, 1073741824L));
                 sb3.append('{');
                 Iterator it2 = ((c8.o) entrySet()).iterator();
                 while (it2.hasNext()) {
                     Map.Entry entry2 = (Map.Entry) it2.next();
-                    if (!z10) {
+                    if (!z11) {
                         sb3.append(", ");
                     }
                     sb3.append(entry2.getKey());
                     sb3.append('=');
                     sb3.append(entry2.getValue());
-                    z10 = false;
+                    z11 = false;
                 }
                 sb3.append('}');
                 return sb3.toString();
             case 2:
                 int i7 = ((com.google.android.gms.internal.cast.p0) this).h;
                 if (i7 < 0) {
-                    throw new IllegalArgumentException(jg.g.j(i7, "size cannot be negative but was: "));
+                    throw new IllegalArgumentException(i5.c.i(i7, "size cannot be negative but was: "));
                 }
                 StringBuilder sb4 = new StringBuilder((int) Math.min(i7 * 8, 1073741824L));
                 sb4.append('{');
                 Iterator it3 = ((com.google.android.gms.internal.cast.l0) entrySet()).iterator();
-                boolean z11 = true;
+                boolean z12 = true;
                 while (it3.hasNext()) {
                     Map.Entry entry3 = (Map.Entry) it3.next();
-                    if (!z11) {
+                    if (!z12) {
                         sb4.append(", ");
                     }
                     sb4.append(entry3.getKey());
                     sb4.append('=');
                     sb4.append(entry3.getValue());
-                    z11 = false;
+                    z12 = false;
                 }
                 sb4.append('}');
                 return sb4.toString();
             case 3:
                 int i10 = ((com.google.android.gms.internal.play_billing.a0) this).h;
                 if (i10 < 0) {
-                    throw new IllegalArgumentException(jg.g.j(i10, "size cannot be negative but was: "));
+                    throw new IllegalArgumentException(i5.c.i(i10, "size cannot be negative but was: "));
                 }
                 StringBuilder sb5 = new StringBuilder((int) Math.min(i10 * 8, 1073741824L));
                 sb5.append('{');
                 Iterator it4 = ((com.google.android.gms.internal.play_billing.x) entrySet()).iterator();
-                boolean z12 = true;
+                boolean z13 = true;
                 while (it4.hasNext()) {
                     Map.Entry entry4 = (Map.Entry) it4.next();
-                    if (!z12) {
+                    if (!z13) {
                         sb5.append(", ");
                     }
                     sb5.append(entry4.getKey());
                     sb5.append('=');
                     sb5.append(entry4.getValue());
-                    z12 = false;
+                    z13 = false;
                 }
                 sb5.append('}');
                 return sb5.toString();
             case 4:
                 int i11 = ((w7.l) this).h;
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(jg.g.j(i11, "size cannot be negative but was: "));
+                    throw new IllegalArgumentException(i5.c.i(i11, "size cannot be negative but was: "));
                 }
                 StringBuilder sb6 = new StringBuilder((int) Math.min(i11 * 8, 1073741824L));
                 sb6.append('{');
                 Iterator it5 = ((w7.i) entrySet()).iterator();
-                boolean z13 = true;
+                boolean z14 = true;
                 while (it5.hasNext()) {
                     Map.Entry entry5 = (Map.Entry) it5.next();
-                    if (!z13) {
+                    if (!z14) {
                         sb6.append(", ");
                     }
                     sb6.append(entry5.getKey());
                     sb6.append('=');
                     sb6.append(entry5.getValue());
-                    z13 = false;
+                    z14 = false;
                 }
                 sb6.append('}');
                 return sb6.toString();
             case 5:
-                boolean z14 = true;
+                boolean z15 = true;
                 StringBuilder sb7 = new StringBuilder((int) Math.min(1 * 8, 1073741824L));
                 sb7.append('{');
                 Iterator it6 = ((y7.a) entrySet()).iterator();
                 while (it6.hasNext()) {
                     Map.Entry entry6 = (Map.Entry) it6.next();
-                    if (!z14) {
+                    if (!z15) {
                         sb7.append(", ");
                     }
                     sb7.append(entry6.getKey());
                     sb7.append('=');
                     sb7.append(entry6.getValue());
-                    z14 = false;
+                    z15 = false;
                 }
                 sb7.append('}');
                 return sb7.toString();
             default:
-                boolean z15 = true;
+                boolean z16 = true;
                 StringBuilder sb8 = new StringBuilder((int) Math.min(1 * 8, 1073741824L));
                 sb8.append('{');
                 Iterator it7 = ((z7.xa) entrySet()).iterator();
                 while (it7.hasNext()) {
                     Map.Entry entry7 = (Map.Entry) it7.next();
-                    if (!z15) {
+                    if (!z16) {
                         sb8.append(", ");
                     }
                     sb8.append(entry7.getKey());
                     sb8.append('=');
                     sb8.append(entry7.getValue());
-                    z15 = false;
+                    z16 = false;
                 }
                 sb8.append('}');
                 return sb8.toString();

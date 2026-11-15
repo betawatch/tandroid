@@ -1,10 +1,11 @@
 package com.google.android.recaptcha.internal;
 
+import com.google.android.gms.internal.vision.e2;
 import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzui {
     public static final /* synthetic */ int zza = 0;
@@ -15,39 +16,39 @@ final class zzui {
         zzb = new zzux();
     }
 
-    public static void zzA(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzA(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzA(i7, list, z9);
+        zzviVar.zzA(i7, list, z10);
     }
 
-    public static void zzB(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzB(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzC(i7, list, z9);
+        zzviVar.zzC(i7, list, z10);
     }
 
-    public static void zzC(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzC(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzE(i7, list, z9);
+        zzviVar.zzE(i7, list, z10);
     }
 
-    public static void zzD(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzD(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzJ(i7, list, z9);
+        zzviVar.zzJ(i7, list, z10);
     }
 
-    public static void zzE(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzE(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzL(i7, list, z9);
+        zzviVar.zzL(i7, list, z10);
     }
 
     public static boolean zzF(Object obj, Object obj2) {
@@ -80,7 +81,7 @@ final class zzui {
         return i11;
     }
 
-    public static int zzb(int i7, List list, boolean z9) {
+    public static int zzb(int i7, List list, boolean z10) {
         int size = list.size();
         if (size == 0) {
             return 0;
@@ -92,7 +93,7 @@ final class zzui {
         return list.size() * 4;
     }
 
-    public static int zzd(int i7, List list, boolean z9) {
+    public static int zzd(int i7, List list, boolean z10) {
         int size = list.size();
         if (size == 0) {
             return 0;
@@ -157,7 +158,7 @@ final class zzui {
         }
         int zzA = zzqv.zzA(i10);
         int zza2 = ((zztd) obj).zza();
-        return a.d(zza2, zza2, zzA);
+        return e2.u(zza2, zza2, zzA);
     }
 
     public static int zzi(List list) {
@@ -325,66 +326,66 @@ final class zzui {
         zzsnVar.zzc = zzuwVar;
     }
 
-    public static void zzr(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzr(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzc(i7, list, z9);
+        zzviVar.zzc(i7, list, z10);
     }
 
-    public static void zzs(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzs(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzg(i7, list, z9);
+        zzviVar.zzg(i7, list, z10);
     }
 
-    public static void zzt(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzt(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzj(i7, list, z9);
+        zzviVar.zzj(i7, list, z10);
     }
 
-    public static void zzu(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzu(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzl(i7, list, z9);
+        zzviVar.zzl(i7, list, z10);
     }
 
-    public static void zzv(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzv(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzn(i7, list, z9);
+        zzviVar.zzn(i7, list, z10);
     }
 
-    public static void zzw(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzw(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzp(i7, list, z9);
+        zzviVar.zzp(i7, list, z10);
     }
 
-    public static void zzx(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzx(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzs(i7, list, z9);
+        zzviVar.zzs(i7, list, z10);
     }
 
-    public static void zzy(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzy(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzu(i7, list, z9);
+        zzviVar.zzu(i7, list, z10);
     }
 
-    public static void zzz(int i7, List list, zzvi zzviVar, boolean z9) {
+    public static void zzz(int i7, List list, zzvi zzviVar, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
-        zzviVar.zzy(i7, list, z9);
+        zzviVar.zzy(i7, list, z10);
     }
 }

@@ -1,48 +1,66 @@
 package org.telegram.ui;
 
 import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
+import android.animation.ObjectAnimator;
+import android.transition.Fade;
+import android.transition.TransitionValues;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class vp0 extends AnimatorListenerAdapter {
+public final class vp0 extends Fade {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ PhotoViewer c;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ PhotoViewer d;
 
-    public /* synthetic */ vp0(PhotoViewer photoViewer, int i7, int i10) {
-        this.a = i10;
-        this.c = photoViewer;
-        this.b = i7;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.c;
-                wp0 wp0Var = photoViewer.N1;
-                wp0Var.e.setVisibility(0);
-                FrameLayout frameLayout = wp0Var.r;
-                frameLayout.setVisibility(0);
-                frameLayout.setTranslationY(org.telegram.messenger.g0.L(18.0f));
-                ViewPropertyAnimator translationY = frameLayout.animate().alpha(1.0f).translationY(0.0f);
-                org.telegram.ui.Components.wq wqVar = org.telegram.ui.Components.wq.h;
-                org.telegram.messenger.camera.q.l(translationY, wqVar, 320L);
-                wp0Var.x.animate().alpha(1.0f).translationX(0.0f).setInterpolator(wqVar).setDuration(320L).start();
-                photoViewer.t4 = this.b;
-                photoViewer.p6 = null;
-                photoViewer.n6 = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vp0(PhotoViewer photoViewer, boolean z10, boolean z11, int i7) {
+        super(1);
+        this.a = i7;
+        switch (i7) {
+            case 1:
+                this.d = photoViewer;
+                this.b = z10;
+                this.c = z11;
+                super(2);
                 break;
             default:
-                int i7 = this.b;
-                PhotoViewer photoViewer2 = this.c;
-                photoViewer2.t4 = i7;
-                photoViewer2.p6 = null;
-                photoViewer2.n6 = -1;
+                this.d = photoViewer;
+                this.b = z10;
+                this.c = z11;
                 break;
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 0:
+                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                if (this.b && !this.c && view == this.d.R1) {
+                    onAppear.addListener(new xx(this, 15));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new a3(this, 18));
+                }
+                return onAppear;
+            default:
+                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 1:
+                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (!this.b && this.c && view == this.d.R1) {
+                    onDisappear.addListener(new xx(this, 16));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new a3(this, 19));
+                }
+                return onDisappear;
+            default:
+                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
         }
     }
 }

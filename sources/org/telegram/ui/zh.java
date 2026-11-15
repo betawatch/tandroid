@@ -1,24 +1,26 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class zh extends org.telegram.ui.Components.qu {
-    public final /* synthetic */ cn Q1;
+public final class zh extends org.telegram.ui.Components.xn {
+    public final /* synthetic */ an N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zh(cn cnVar, org.telegram.ui.ActionBar.f2 f2Var, Activity activity, org.telegram.ui.ActionBar.h6 h6Var, ArrayList arrayList) {
-        super(f2Var, activity, h6Var, arrayList);
-        this.Q1 = cnVar;
+    public zh(an anVar, Activity activity, int i7, TLRPC.Document document, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(activity, i7, document, e6Var);
+        this.N = anVar;
     }
 
-    @Override // org.telegram.ui.Components.qu, org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
-    public final void dismiss() {
-        super.dismiss();
-        cn cnVar = this.Q1;
-        cnVar.getClass();
-        cnVar.w8(false, true, 0.0f);
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        float y10 = getY();
+        an anVar = this.N;
+        float y11 = anVar.g1.getY() + y10;
+        this.K = anVar.m1.getBackgroundSizeY();
+        this.J = y11;
     }
 }

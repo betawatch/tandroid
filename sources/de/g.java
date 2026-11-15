@@ -1,24 +1,26 @@
 package de;
 
-import c8.u0;
+import aa.b0;
+import c8.v0;
+import com.google.android.gms.internal.vision.e2;
 import kotlin.jvm.internal.u;
 import rd.p;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class g {
-    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("NULL", 1);
+    public static final b0 a = new b0("NULL", 1);
 
     public static final Object a(id.h hVar, Object obj, Object obj2, p pVar, id.c frame) {
         Object invoke;
         Object l10 = ee.a.l(hVar, obj2);
         try {
             m mVar = new m(frame, hVar);
-            if (com.google.android.recaptcha.internal.a.u(pVar)) {
+            if (e2.s(pVar)) {
                 u.a(2, pVar);
                 invoke = pVar.invoke(obj, mVar);
             } else {
-                invoke = u0.c(pVar, obj, mVar);
+                invoke = v0.c(pVar, obj, mVar);
             }
             ee.a.g(hVar, l10);
             if (invoke == jd.a.a) {

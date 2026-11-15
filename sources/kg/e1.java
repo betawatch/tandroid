@@ -3,30 +3,32 @@ package kg;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import c8.ha;
-import di.r4;
-import fi.v9;
+import bi.x4;
+import c8.ja;
+import di.z6;
+import hi.h4;
+import hi.q4;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.Cells.q8;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class e1 extends f2 {
+public final class e1 extends e2 {
     public final CharSequence a;
     public final ArrayList b;
     public final int c;
     public final int d;
     public final int e;
-    public v9 f;
-    public ha.b h;
-    public r41 n;
+    public hi.e1 f;
+    public h4 h;
+    public u41 n;
     public boolean r;
 
     public e1(CharSequence charSequence, ArrayList arrayList, int i7, int i10, int i11) {
@@ -49,45 +51,45 @@ public final class e1 extends f2 {
         if (arrayList.size() >= this.e) {
             return false;
         }
-        return arrayList.isEmpty() || Z() || ((b1) jg.g.i(1, arrayList)).b < Math.min(1438, this.d + (-2));
+        return arrayList.isEmpty() || Z() || ((b1) i5.c.h(1, arrayList)).b < Math.min(1438, this.d + (-2));
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setTitle(this.a);
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 17));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new x4(this, 10));
         FrameLayout frameLayout = new FrameLayout(context);
-        r41 r41Var = new r41(this, new hi.u1(this, 12), new r4(this, 25), null);
-        this.n = r41Var;
-        r41Var.r1();
+        u41 u41Var = new u41(this, new q4(this, 14), new z6(this, 26), null);
+        this.n = u41Var;
+        u41Var.r1();
         this.n.setSectionsDrawBackground(true);
-        frameLayout.addView(this.n, ha.c(-1.0f, -1));
+        frameLayout.addView(this.n, ja.c(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
-    public final pj0 getListViewForSimpleGlass() {
+    @Override // org.telegram.ui.ActionBar.e2
+    public final uj0 getListViewForSimpleGlass() {
         return this.n;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final void onBecomeFullyHidden() {
-        ha.b bVar = this.h;
-        if (bVar != null) {
-            bVar.run();
+        h4 h4Var = this.h;
+        if (h4Var != null) {
+            h4Var.run();
         }
         super.onBecomeFullyHidden();
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         if (this.r) {
@@ -98,21 +100,21 @@ public final class e1 extends f2 {
             return;
         }
         arrayList.clear();
-        v9 v9Var = this.f;
-        if (v9Var != null) {
-            v9Var.run();
+        hi.e1 e1Var = this.f;
+        if (e1Var != null) {
+            e1Var.run();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final void onThemeColorsChanged() {
         super.onThemeColorsChanged();
         try {
             if (this.n != null) {
                 for (int i7 = 0; i7 < this.n.getChildCount(); i7++) {
                     View childAt = this.n.getChildAt(i7);
-                    if ((childAt instanceof r8) && ((r8) childAt).b == -1) {
-                        t6.h(this.r ? m6.f6 : m6.e6, childAt, null);
+                    if ((childAt instanceof q8) && ((q8) childAt).b == -1) {
+                        q6.h(this.r ? j6.f6 : j6.e6, childAt, null);
                     }
                 }
             }
@@ -121,7 +123,7 @@ public final class e1 extends f2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final boolean useSimpleActionBar() {
         return true;
     }

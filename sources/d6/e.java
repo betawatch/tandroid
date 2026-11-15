@@ -12,17 +12,17 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-import m.q3;
+import m.o3;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e extends q6.h {
     public final GoogleSignInOptions F;
 
-    public e(Context context, Looper looper, q3 q3Var, GoogleSignInOptions googleSignInOptions, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
-        super(context, looper, 91, q3Var, kVar, lVar, 0);
+    public e(Context context, Looper looper, o3 o3Var, GoogleSignInOptions googleSignInOptions, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
+        super(context, looper, 91, o3Var, kVar, lVar, 0);
         c6.a aVar;
-        Set<Scope> set = (Set) q3Var.b;
+        Set<Scope> set = (Set) o3Var.b;
         if (googleSignInOptions != null) {
             aVar = new c6.a();
             aVar.a = new HashSet();
@@ -50,8 +50,8 @@ public final class e extends q6.h {
             }
         }
         HashSet hashSet2 = aVar.a;
-        if (hashSet2.contains(GoogleSignInOptions.E)) {
-            Scope scope2 = GoogleSignInOptions.D;
+        if (hashSet2.contains(GoogleSignInOptions.F)) {
+            Scope scope2 = GoogleSignInOptions.E;
             if (hashSet2.contains(scope2)) {
                 hashSet2.remove(scope2);
             }

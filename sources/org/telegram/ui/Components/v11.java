@@ -1,14 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import java.io.File;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class v11 extends FrameLayout {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+public final class v11 implements org.telegram.messenger.is {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ org.telegram.messenger.ns b;
+    public final /* synthetic */ org.telegram.messenger.gj c;
+
+    public v11(String str, org.telegram.messenger.ns nsVar, org.telegram.messenger.gj gjVar) {
+        this.a = str;
+        this.b = nsVar;
+        this.c = gjVar;
+    }
+
+    @Override // org.telegram.messenger.is
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (this.a.equals(objArr[0])) {
+            org.telegram.messenger.ns nsVar = this.b;
+            int i11 = org.telegram.messenger.ns.Y1;
+            nsVar.n(this, i11);
+            nsVar.n(this, org.telegram.messenger.ns.Z1);
+            org.telegram.messenger.gj gjVar = this.c;
+            if (i7 == i11 && objArr.length > 1) {
+                Object obj = objArr[1];
+                if (obj instanceof File) {
+                    x11.w(gjVar, ((File) obj).getAbsolutePath());
+                    return;
+                }
+            }
+            x11.m(gjVar);
+        }
     }
 }

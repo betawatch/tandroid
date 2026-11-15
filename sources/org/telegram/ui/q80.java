@@ -1,75 +1,18 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class q80 implements org.telegram.messenger.ep {
-    public final /* synthetic */ f10 a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Integer e;
-    public final /* synthetic */ Bundle f;
-    public final /* synthetic */ LaunchActivity h;
+public final class q80 implements View.OnLayoutChangeListener {
+    public boolean a;
 
-    public q80(LaunchActivity launchActivity, f10 f10Var, String str, org.telegram.ui.ActionBar.f2 f2Var, long j3, Integer num, Bundle bundle) {
-        this.h = launchActivity;
-        this.a = f10Var;
-        this.b = str;
-        this.c = f2Var;
-        this.d = j3;
-        this.e = num;
-        this.f = bundle;
-    }
-
-    @Override // org.telegram.messenger.ep
-    public final void a() {
-        LaunchActivity launchActivity = this.h;
-        if (!launchActivity.isFinishing()) {
-            org.telegram.ui.Components.u4.r0((org.telegram.ui.ActionBar.f2) jg.g.i(1, launchActivity.d0), null, org.telegram.messenger.id.M0(2131749075, null), null);
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+        boolean z10 = i12 - i10 > i11 - i7;
+        if (z10 != this.a) {
+            org.telegram.messenger.g0.h3(new org.telegram.ui.Components.ih(this, 26));
+            this.a = z10;
         }
-        try {
-            this.a.run();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-    }
-
-    @Override // org.telegram.messenger.ep
-    public final void f(boolean z9) {
-        try {
-            this.a.run();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-        LaunchActivity launchActivity = this.h;
-        if (launchActivity.isFinishing()) {
-            return;
-        }
-        String str = this.b;
-        long j3 = this.d;
-        org.telegram.ui.ActionBar.f2 f2Var = this.c;
-        if (str == null || !(f2Var instanceof cn) || ((cn) f2Var).a() != j3) {
-            if (f2Var instanceof cn) {
-                cn cnVar = (cn) f2Var;
-                if (cnVar.a() == j3 && this.e == null) {
-                    org.telegram.messenger.g0.G3(5.0f, cnVar.z0, null);
-                    org.telegram.messenger.p2.D.a();
-                    sj sjVar = cnVar.Z;
-                    for (int i7 = 0; i7 < sjVar.getChildCount(); i7++) {
-                        org.telegram.messenger.g0.G3(5.0f, sjVar.getChildAt(i7), null);
-                    }
-                    org.telegram.ui.ActionBar.l actionBar = cnVar.getActionBar();
-                    for (int i10 = 0; i10 < actionBar.getChildCount(); i10++) {
-                        org.telegram.messenger.g0.G3(5.0f, actionBar.getChildAt(i10), null);
-                    }
-                }
-            }
-            f2Var = new cn(this.f);
-            ((ActionBarLayout) launchActivity.M()).S(f2Var);
-        }
-        org.telegram.messenger.g0.i3(new bi.w2(this, this.b, this.d, f2Var, 22), 150L);
     }
 }

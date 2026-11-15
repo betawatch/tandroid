@@ -1,25 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class zz {
-    public final String c;
-    public int d;
-    public final /* synthetic */ a00 e;
-    public long b = -1;
-    public final long a = System.currentTimeMillis();
+public final /* synthetic */ class zz implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h00 b;
+    public final /* synthetic */ long c;
 
-    public zz(a00 a00Var, String str) {
-        this.e = a00Var;
-        this.c = str;
-        a00Var.a++;
+    public /* synthetic */ zz(h00 h00Var, long j3, int i7) {
+        this.a = i7;
+        this.b = h00Var;
+        this.c = j3;
     }
 
-    public String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.c);
-        sb2.append(": ");
-        sb2.append(this.b < 0 ? "not done" : a8.p0.r(new StringBuilder(), this.b - this.a, "ms"));
-        return sb2.toString();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        long j3 = this.c;
+        h00 h00Var = this.b;
+        switch (i7) {
+            case 0:
+                h00Var.c.put(j3, 0);
+                h00Var.getNotificationCenter().k(ns.q5, Long.valueOf(j3), Boolean.FALSE);
+                break;
+            default:
+                h00Var.n(0, j3, false);
+                break;
+        }
     }
 }

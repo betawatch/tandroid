@@ -5,30 +5,30 @@ import e2.s0;
 import e2.t;
 import e2.t0;
 import e2.u;
-import f3.a0;
-import f3.l0;
+import f3.k0;
+import f3.z;
 import h2.x;
 import h9.i0;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import q4.q;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l extends j {
     public k n;
     public int o;
     public boolean p;
-    public a0 q;
-    public l0 r;
+    public z q;
+    public k0 r;
 
     @Override // a4.j
     public final void a(long j3) {
         this.g = j3;
         this.p = j3 != 0;
-        a0 a0Var = this.q;
-        this.o = a0Var != null ? a0Var.e : 0;
+        z zVar = this.q;
+        this.o = zVar != null ? zVar.e : 0;
     }
 
     @Override // a4.j
@@ -40,8 +40,8 @@ public final class l extends j {
         k kVar = this.n;
         kVar.getClass();
         int i7 = kVar.b;
-        a0 a0Var = (a0) kVar.c;
-        int i10 = !((ci.a[]) kVar.f)[(b10 >> 1) & (qs.e4 >>> (8 - i7))].a ? a0Var.e : a0Var.f;
+        z zVar = (z) kVar.c;
+        int i10 = !((ei.a[]) kVar.f)[(b10 >> 1) & (ns.e4 >>> (8 - i7))].a ? zVar.e : zVar.f;
         long j3 = this.p ? (this.o + i10) / 4 : 0;
         byte[] bArr = xVar.a;
         int length = bArr.length;
@@ -71,9 +71,9 @@ public final class l extends j {
             ((u) qVar.b).getClass();
             return false;
         }
-        a0 a0Var = this.q;
+        z zVar = this.q;
         int i7 = 4;
-        if (a0Var == null) {
+        if (zVar == null) {
             f3.b.w(1, xVar, false);
             xVar.s();
             int A = xVar.A();
@@ -87,27 +87,27 @@ public final class l extends j {
             xVar.o();
             int A2 = xVar.A();
             int pow = (int) Math.pow(2.0d, A2 & 15);
-            int pow2 = (int) Math.pow(2.0d, (A2 & qs.P3) >> 4);
+            int pow2 = (int) Math.pow(2.0d, (A2 & ns.P3) >> 4);
             xVar.A();
             ?? copyOf = Arrays.copyOf(xVar.a, xVar.c);
-            a0 a0Var2 = new a0();
-            a0Var2.a = A;
-            a0Var2.b = s5;
-            a0Var2.c = o4;
-            a0Var2.d = i10;
-            a0Var2.e = pow;
-            a0Var2.f = pow2;
-            a0Var2.g = copyOf;
-            this.q = a0Var2;
+            z zVar2 = new z();
+            zVar2.a = A;
+            zVar2.b = s5;
+            zVar2.c = o4;
+            zVar2.d = i10;
+            zVar2.e = pow;
+            zVar2.f = pow2;
+            zVar2.g = copyOf;
+            this.q = zVar2;
         } else {
-            l0 l0Var = this.r;
-            if (l0Var == null) {
+            k0 k0Var = this.r;
+            if (k0Var == null) {
                 this.r = f3.b.u(xVar, true, true);
             } else {
                 int i11 = xVar.c;
                 byte[] bArr = new byte[i11];
                 System.arraycopy(xVar.a, 0, bArr, 0, i11);
-                int i12 = a0Var.a;
+                int i12 = zVar.a;
                 int i13 = 5;
                 f3.b.w(5, xVar, false);
                 int A3 = xVar.A() + 1;
@@ -317,13 +317,13 @@ public final class l extends j {
                                 }
                                 int j28 = fVar.j(6);
                                 int i54 = j28 + 1;
-                                ci.a[] aVarArr = new ci.a[i54];
+                                ei.a[] aVarArr = new ei.a[i54];
                                 for (int i55 = 0; i55 < i54; i55++) {
                                     boolean i56 = fVar.i();
                                     fVar.j(16);
                                     fVar.j(16);
                                     fVar.j(8);
-                                    ci.a aVar = new ci.a();
+                                    ei.a aVar = new ei.a();
                                     aVar.a = i56;
                                     aVarArr[i55] = aVar;
                                 }
@@ -335,7 +335,7 @@ public final class l extends j {
                                     i57++;
                                     j28 >>>= 1;
                                 }
-                                kVar = new k(a0Var, l0Var, bArr, aVarArr, i57);
+                                kVar = new k(zVar, k0Var, bArr, aVarArr, i57);
                             }
                         }
                     }
@@ -347,18 +347,18 @@ public final class l extends j {
         if (kVar == null) {
             return true;
         }
-        a0 a0Var3 = (a0) kVar.c;
+        z zVar3 = (z) kVar.c;
         ArrayList arrayList = new ArrayList();
-        arrayList.add((byte[]) a0Var3.g);
+        arrayList.add((byte[]) zVar3.g);
         arrayList.add((byte[]) kVar.e);
-        q0 r10 = f3.b.r(i0.r(((l0) kVar.d).a));
+        q0 r10 = f3.b.r(i0.r(((k0) kVar.d).a));
         t tVar = new t();
         tVar.q = s0.n("audio/ogg");
         tVar.r = s0.n("audio/vorbis");
-        tVar.h = a0Var3.d;
-        tVar.i = a0Var3.c;
-        tVar.J = a0Var3.a;
-        tVar.K = a0Var3.b;
+        tVar.h = zVar3.d;
+        tVar.i = zVar3.c;
+        tVar.J = zVar3.a;
+        tVar.K = zVar3.b;
         tVar.u = arrayList;
         tVar.k = r10;
         qVar.b = new u(tVar);
@@ -366,9 +366,9 @@ public final class l extends j {
     }
 
     @Override // a4.j
-    public final void d(boolean z9) {
-        super.d(z9);
-        if (z9) {
+    public final void d(boolean z10) {
+        super.d(z10);
+        if (z10) {
             this.n = null;
             this.q = null;
             this.r = null;

@@ -1,5 +1,6 @@
 package q7;
 
+import com.google.android.gms.internal.vision.e2;
 import j$.util.Map;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r extends n implements NavigableMap, Map {
     public static final r f;
@@ -65,14 +66,14 @@ public final class r extends n implements NavigableMap, Map {
             Object[] objArr = {key};
             for (int i11 = 0; i11 < 1; i11++) {
                 if (objArr[i11] == null) {
-                    throw new NullPointerException(jg.g.j(i11, "at index "));
+                    throw new NullPointerException(i5.c.i(i11, "at index "));
                 }
             }
             z zVar = new z(m.o(1, objArr), vVar);
             Object[] objArr2 = {value};
             while (i10 < 1) {
                 if (objArr2[i10] == null) {
-                    throw new NullPointerException(jg.g.j(i10, "at index "));
+                    throw new NullPointerException(i5.c.i(i10, "at index "));
                 }
                 i10++;
             }
@@ -111,7 +112,7 @@ public final class r extends n implements NavigableMap, Map {
                 objArr3[i7] = key4;
                 objArr4[i7] = value4;
                 if (vVar.compare(key3, key4) == 0) {
-                    throw new IllegalArgumentException(com.google.android.recaptcha.internal.a.l("Multiple entries with same key: ", String.valueOf(entry4), " and ", String.valueOf(entry5)));
+                    throw new IllegalArgumentException(e2.l("Multiple entries with same key: ", String.valueOf(entry4), " and ", String.valueOf(entry5)));
                 }
                 i7++;
                 key3 = key4;
@@ -170,18 +171,18 @@ public final class r extends n implements NavigableMap, Map {
 
     @Override // java.util.NavigableMap
     /* renamed from: e, reason: merged with bridge method [inline-methods] */
-    public final r headMap(Object obj, boolean z9) {
+    public final r headMap(Object obj, boolean z10) {
         obj.getClass();
-        return h(0, this.c.t(obj, z9));
+        return h(0, this.c.t(obj, z10));
     }
 
     @Override // java.util.NavigableMap
     /* renamed from: f, reason: merged with bridge method [inline-methods] */
-    public final r subMap(Object obj, boolean z9, Object obj2, boolean z10) {
+    public final r subMap(Object obj, boolean z10, Object obj2, boolean z11) {
         obj.getClass();
         obj2.getClass();
         if (this.c.d.compare(obj, obj2) <= 0) {
-            return headMap(obj2, z10).tailMap(obj, z9);
+            return headMap(obj2, z11).tailMap(obj, z10);
         }
         throw new IllegalArgumentException(a.c("expected fromKey <= toKey but %s > %s", obj, obj2));
     }
@@ -215,9 +216,9 @@ public final class r extends n implements NavigableMap, Map {
 
     @Override // java.util.NavigableMap
     /* renamed from: g, reason: merged with bridge method [inline-methods] */
-    public final r tailMap(Object obj, boolean z9) {
+    public final r tailMap(Object obj, boolean z10) {
         obj.getClass();
-        return h(this.c.u(obj, z9), this.d.size());
+        return h(this.c.u(obj, z10), this.d.size());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x000f, code lost:

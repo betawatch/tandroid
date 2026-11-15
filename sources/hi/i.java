@@ -1,53 +1,91 @@
 package hi;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import c8.ha;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.KeyEvent;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.ki;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class i extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final TextView c;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class i extends i90 {
+    public final /* synthetic */ int W;
+    public final /* synthetic */ KeyEvent.Callback a0;
 
-    public i(Context context, h6 h6Var, boolean z9) {
-        super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        int i7 = m6.G6;
-        t6.s(imageView, i7, h6Var, PorterDuff.Mode.SRC_IN);
-        addView(imageView, ha.d(24, 24.0f, 51, 20.0f, 11.46f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, ha.d(-1, -2.0f, 23, 64.0f, z9 ? 2.0f : 9.8f, 24.0f, z9 ? 4.0f : 9.8f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        t6.U(textView, i7, h6Var);
-        textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setTextSize(1, 14.0f);
-        TextView f10 = org.telegram.messenger.camera.q.f(linearLayout, textView, ha.t(-1, -2, 55, 0, 0, 0, 1), context);
-        this.c = f10;
-        t6.U(f10, m6.z6, h6Var);
-        f10.setTextSize(1, 14.0f);
-        linearLayout.addView(f10, ha.t(-1, -2, 55, 0, 0, 0, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i(KeyEvent.Callback callback, Context context, long j3, org.telegram.ui.ActionBar.e2 e2Var, org.telegram.ui.ActionBar.e6 e6Var, int i7) {
+        super(context, j3, 0L, e2Var, e6Var);
+        this.W = i7;
+        this.a0 = callback;
     }
 
-    public final void a(int i7, CharSequence charSequence, CharSequence charSequence2) {
-        this.a.setImageResource(i7);
-        this.b.setText(charSequence);
-        this.c.setText(charSequence2);
+    @Override // org.telegram.ui.Components.i90
+    public void f(Canvas canvas, Rect rect, float f10) {
+        switch (this.W) {
+            case 0:
+                m mVar = (m) this.a0;
+                Paint paint = mVar.e;
+                RectF rectF = mVar.z0;
+                rectF.set(rect);
+                if (!mVar.g()) {
+                    Paint c10 = mVar.U.c(1.0f);
+                    if (c10 != null) {
+                        canvas.drawRoundRect(rectF, f10, f10, c10);
+                        paint.setAlpha(80);
+                        canvas.drawRoundRect(rectF, f10, f10, paint);
+                        break;
+                    } else {
+                        paint.setAlpha(128);
+                        canvas.drawRoundRect(rectF, f10, f10, paint);
+                        break;
+                    }
+                } else {
+                    mVar.h(mVar.U, canvas, mVar.z0, f10, false, -mVar.N.getX(), -mVar.N.getY(), false);
+                    break;
+                }
+            default:
+                super.f(canvas, rect, f10);
+                break;
+        }
     }
 
-    public void setText(CharSequence charSequence) {
-        this.c.setText(charSequence);
+    @Override // org.telegram.ui.Components.i90
+    public boolean h() {
+        switch (this.W) {
+            case 0:
+                return true;
+            default:
+                return super.h();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.i90
+    public void i() {
+        switch (this.W) {
+            case 1:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((ki) this.a0).e2;
+                if (chatAttachAlertPhotoLayout != null) {
+                    chatAttachAlertPhotoLayout.Y();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.i90
+    public void n(boolean z10) {
+        switch (this.W) {
+            case 1:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((ki) this.a0).e2;
+                if (chatAttachAlertPhotoLayout != null) {
+                    chatAttachAlertPhotoLayout.Y();
+                    break;
+                }
+                break;
+        }
     }
 }

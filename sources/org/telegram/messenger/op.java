@@ -1,8 +1,58 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class op extends TLRPC.Updates {
+public final /* synthetic */ class op implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+
+    public /* synthetic */ op(vr vrVar, long j3, ArrayList arrayList, boolean z10, int i7, int i10) {
+        this.f = vrVar;
+        this.e = j3;
+        this.h = arrayList;
+        this.b = z10;
+        this.c = i7;
+        this.d = i10;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((vr) this.f).Q0(this.c, this.d, this.e, (ArrayList) this.h, this.b);
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.f;
+                CharSequence charSequence = (CharSequence) this.h;
+                chatActivityEnterView.g0 = null;
+                chatActivityEnterView.C0(true);
+                org.telegram.ui.Components.xe xeVar = chatActivityEnterView.F0;
+                if (xeVar != null) {
+                    xeVar.setText("");
+                }
+                org.telegram.ui.Components.cg cgVar = chatActivityEnterView.H3;
+                if (cgVar != null) {
+                    cgVar.M(charSequence, this.b, this.c, this.d, this.e);
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ op(ChatActivityEnterView chatActivityEnterView, CharSequence charSequence, boolean z10, int i7, int i10, long j3) {
+        this.f = chatActivityEnterView;
+        this.h = charSequence;
+        this.b = z10;
+        this.c = i7;
+        this.d = i10;
+        this.e = j3;
+    }
 }

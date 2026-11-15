@@ -1,55 +1,50 @@
 package a8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.content.Context;
+import c8.qf;
+import c8.sf;
+import c8.uf;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class ab {
-    public static za a;
+public final class ab extends com.google.android.gms.common.api.q {
+    public final /* synthetic */ int b;
 
-    public static gd.c a(rd.a aVar) {
-        gd.d[] dVarArr = gd.d.a;
-        gd.j jVar = gd.j.a;
-        gd.h hVar = new gd.h();
-        hVar.a = aVar;
-        hVar.b = jVar;
-        return hVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ab(int i7) {
+        super(4);
+        this.b = i7;
     }
 
-    public static gd.i b(rd.a initializer) {
-        kotlin.jvm.internal.j.e(initializer, "initializer");
-        return new gd.i(initializer);
-    }
-
-    public static synchronized ta c(ma maVar) {
-        ta taVar;
-        synchronized (ab.class) {
-            try {
-                if (a == null) {
-                    a = new za(0);
-                }
-                taVar = (ta) a.R0(maVar);
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    @Override // com.google.android.gms.common.api.q
+    public final Object Q0(Object obj) {
+        switch (this.b) {
+            case 0:
+                pb.g c10 = pb.g.c();
+                return new ua(c10.b(), (pb.k) c10.a(pb.k.class), new oa(pb.g.c().b(), (na) obj));
+            case 1:
+                pb.g c11 = pb.g.c();
+                return new uf(c11.b(), (pb.k) c11.a(pb.k.class), new sf(pb.g.c().b(), (qf) obj));
+            case 2:
+                pb.g c12 = pb.g.c();
+                Context b10 = pb.g.c().b();
+                ArrayList arrayList = new ArrayList();
+                ((w7.o) obj).getClass();
+                qb.a aVar = new qb.a(27);
+                m5.a aVar2 = m5.a.e;
+                o5.t.b(b10);
+                o5.t.a().c(aVar2);
+                m5.a.d.contains(new l5.c("json"));
+                arrayList.add(aVar);
+                return new w7.p(c12.b(), (pb.k) c12.a(pb.k.class));
+            case 3:
+                y7.a9 a9Var = (y7.a9) obj;
+                pb.g c13 = pb.g.c();
+                return new y7.d9(c13.b(), (pb.k) c13.a(pb.k.class), new y7.b9(pb.g.c().b(), a9Var), a9Var.a);
+            default:
+                pb.g c14 = pb.g.c();
+                return new z7.ma(c14.b(), (pb.k) c14.a(pb.k.class), new z7.la(pb.g.c().b(), (z7.ja) obj));
         }
-        return taVar;
-    }
-
-    public static synchronized ta d() {
-        ta c10;
-        synchronized (ab.class) {
-            byte b10 = (byte) (((byte) 1) | 2);
-            if (b10 != 3) {
-                StringBuilder sb2 = new StringBuilder();
-                if ((b10 & 1) == 0) {
-                    sb2.append(" enableFirelog");
-                }
-                if ((b10 & 2) == 0) {
-                    sb2.append(" firelogEventType");
-                }
-                throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
-            }
-            c10 = c(new ma());
-        }
-        return c10;
     }
 }

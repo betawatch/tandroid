@@ -1,17 +1,17 @@
 package androidx.biometric;
 
-import a8.l1;
+import a8.m1;
 import android.os.Looper;
 import androidx.lifecycle.p0;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class z extends p0 {
     public androidx.lifecycle.z A;
     public Executor d;
-    public l1 e;
+    public m1 e;
     public m6.n f;
     public v g;
     public android.support.v4.media.session.a0 h;
@@ -55,7 +55,7 @@ public class z extends p0 {
         if (vVar != null) {
             return 15;
         }
-        return qs.e4;
+        return ns.e4;
     }
 
     public final void d(e eVar) {
@@ -79,10 +79,10 @@ public class z extends p0 {
         h(this.z, Integer.valueOf(i7));
     }
 
-    public final void g(boolean z9) {
+    public final void g(boolean z10) {
         if (this.v == null) {
             this.v = new androidx.lifecycle.z();
         }
-        h(this.v, Boolean.valueOf(z9));
+        h(this.v, Boolean.valueOf(z10));
     }
 }

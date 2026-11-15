@@ -1,29 +1,161 @@
 package org.telegram.messenger;
 
-import j$.util.function.Consumer$-CC;
 import java.util.ArrayList;
-import java.util.function.Consumer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class rl implements Consumer {
-    public final /* synthetic */ qp a;
-    public final /* synthetic */ long b;
+public final /* synthetic */ class rl implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ np b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ ArrayList f;
 
-    public /* synthetic */ rl(qp qpVar, long j3) {
-        this.a = qpVar;
-        this.b = j3;
+    public /* synthetic */ rl(np npVar, long j3, int i7, long j10, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = npVar;
+        this.c = j3;
+        this.e = i7;
+        this.d = j10;
+        this.f = arrayList;
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void x(Object obj) {
-        qp qpVar = this.a;
-        qpVar.getClass();
-        g0.h3(new fk(qpVar, (ArrayList) obj, this.b, 2));
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        ArrayList arrayList = this.f;
+        np npVar = this.b;
+        switch (i7) {
+            case 0:
+                long j3 = this.c;
+                long j10 = this.d;
+                int i10 = this.e;
+                if (j3 != 0) {
+                    int B = npVar.getMessagesController().r7.B(i10, j10, j3, true);
+                    if (B >= 0) {
+                        npVar.getMessagesStorage().h2(B, j10, j3, true);
+                        npVar.getNotificationCenter().k(ns.Z4, Long.valueOf(j10), Long.valueOf(j3), Integer.valueOf(B), arrayList);
+                        break;
+                    }
+                } else {
+                    TLRPC.Dialog dialog = (TLRPC.Dialog) npVar.R.f(j10);
+                    if (dialog != null) {
+                        int i11 = dialog.unread_poll_votes_count + i10;
+                        dialog.unread_poll_votes_count = i11;
+                        if (i11 < 0) {
+                            dialog.unread_poll_votes_count = 0;
+                        }
+                        npVar.getMessagesStorage().h2(dialog.unread_poll_votes_count, j10, 0L, false);
+                        npVar.getNotificationCenter().k(ns.Z4, Long.valueOf(j10), Long.valueOf(j3), Integer.valueOf(dialog.unread_poll_votes_count), arrayList);
+                        break;
+                    } else {
+                        npVar.getMessagesStorage().Q1(j10, i10, true, false);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                long j11 = this.c;
+                long j12 = this.d;
+                int i12 = this.e;
+                if (j11 != 0) {
+                    int C = npVar.getMessagesController().r7.C(i12, j12, j11, true);
+                    if (C >= 0) {
+                        npVar.getMessagesStorage().i2(C, j12, j11, true);
+                        if (npVar.t2(j12) || npVar.y2(j12) || j12 > 0) {
+                            npVar.getNotificationCenter().k(ns.Y4, Long.valueOf(j12), Long.valueOf(j11), Integer.valueOf(C), arrayList);
+                            break;
+                        }
+                    }
+                } else {
+                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) npVar.R.f(j12);
+                    if (dialog2 != null) {
+                        int i13 = dialog2.unread_reactions_count + i12;
+                        dialog2.unread_reactions_count = i13;
+                        if (i13 < 0) {
+                            dialog2.unread_reactions_count = 0;
+                        }
+                        npVar.getMessagesStorage().i2(dialog2.unread_reactions_count, j12, 0L, false);
+                        if (npVar.t2(j12) || npVar.y2(j12) || j12 > 0) {
+                            npVar.getNotificationCenter().k(ns.Y4, Long.valueOf(j12), Long.valueOf(j11), Integer.valueOf(dialog2.unread_reactions_count), arrayList);
+                            break;
+                        }
+                    } else {
+                        npVar.getMessagesStorage().Q1(j12, i12, true, true);
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                a0.h hVar = npVar.R;
+                long j13 = this.c;
+                TLRPC.Dialog dialog3 = (TLRPC.Dialog) hVar.f(j13);
+                int i14 = this.e;
+                if (dialog3 != null) {
+                    dialog3.unread_poll_votes_count = i14;
+                    vr messagesStorage = npVar.getMessagesStorage();
+                    long j14 = this.d;
+                    messagesStorage.h2(i14, j13, j14, false);
+                    npVar.getNotificationCenter().k(ns.Z4, Long.valueOf(j13), Long.valueOf(j14), Integer.valueOf(i14), arrayList);
+                    break;
+                } else {
+                    npVar.getMessagesStorage().Q1(j13, i14, false, false);
+                    break;
+                }
+            case 3:
+                a0.h hVar2 = npVar.R;
+                long j15 = this.c;
+                TLRPC.Dialog dialog4 = (TLRPC.Dialog) hVar2.f(j15);
+                int i15 = this.e;
+                if (dialog4 != null) {
+                    dialog4.unread_reactions_count = i15;
+                    vr messagesStorage2 = npVar.getMessagesStorage();
+                    long j16 = this.d;
+                    messagesStorage2.i2(i15, j15, j16, false);
+                    npVar.getNotificationCenter().k(ns.Y4, Long.valueOf(j15), Long.valueOf(j16), Integer.valueOf(i15), arrayList);
+                    break;
+                } else {
+                    npVar.getMessagesStorage().Q1(j15, i15, false, true);
+                    break;
+                }
+            case 4:
+                h00 h00Var = npVar.getMessagesController().r7;
+                int i16 = this.e;
+                long j17 = this.c;
+                long j18 = this.d;
+                h00Var.B(i16, j17, j18, false);
+                npVar.getMessagesStorage().h2(i16, j17, j18, false);
+                npVar.getNotificationCenter().k(ns.Z4, Long.valueOf(j17), Long.valueOf(j18), Integer.valueOf(i16), arrayList);
+                break;
+            case 5:
+                h00 h00Var2 = npVar.getMessagesController().r7;
+                int i17 = this.e;
+                long j19 = this.c;
+                long j20 = this.d;
+                h00Var2.C(i17, j19, j20, false);
+                npVar.getMessagesStorage().i2(i17, j19, j20, false);
+                npVar.getNotificationCenter().k(ns.Y4, Long.valueOf(j19), Long.valueOf(j20), Integer.valueOf(i17), arrayList);
+                break;
+            default:
+                h00 h00Var3 = npVar.getMessagesController().r7;
+                int i18 = this.e;
+                long j21 = this.c;
+                long j22 = this.d;
+                h00Var3.C(i18, j21, j22, false);
+                npVar.getMessagesStorage().i2(i18, j21, j22, false);
+                npVar.getNotificationCenter().k(ns.Y4, Long.valueOf(j21), Long.valueOf(j22), Integer.valueOf(i18), arrayList);
+                break;
+        }
     }
 
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    public /* synthetic */ rl(np npVar, long j3, long j10, int i7, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = npVar;
+        this.c = j3;
+        this.d = j10;
+        this.e = i7;
+        this.f = arrayList;
     }
 }

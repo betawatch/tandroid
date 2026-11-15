@@ -1,70 +1,63 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.PhotoViewer;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class il extends pj0 {
-    public final /* synthetic */ int e3;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout f3;
+public final /* synthetic */ class il implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ il(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(context, h6Var);
-        this.e3 = i7;
-        this.f3 = chatAttachAlertPhotoLayout;
+    public /* synthetic */ il(int i7, Object obj, boolean z10) {
+        this.a = i7;
+        this.b = obj;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
-            case 1:
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.f3.b.Y3[0] - org.telegram.messenger.g0.L(80.0f)) {
-                    break;
-                }
-                break;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        switch (this.e3) {
-            case 1:
-                super.onLayout(z9, i7, i10, i11, i12);
-                PhotoViewer.p1().r0();
-                break;
-            default:
-                super.onLayout(z9, i7, i10, i11, i12);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
-            case 1:
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.f3.b.Y3[0] - org.telegram.messenger.g0.L(80.0f)) {
-                    break;
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        switch (this.e3) {
+    @Override // q0.a
+    public final void accept(Object obj) {
+        int i7 = this.a;
+        boolean z10 = false;
+        boolean z11 = this.c;
+        Object obj2 = this.b;
+        switch (i7) {
             case 0:
-                if (!this.f3.J0) {
-                    super.requestLayout();
+                ArrayList arrayList = (ArrayList) obj2;
+                View view = (View) obj;
+                boolean z12 = ChatAttachAlertPhotoLayout.r1;
+                if (view instanceof org.telegram.ui.Cells.q5) {
+                    org.telegram.ui.Cells.q5 q5Var = (org.telegram.ui.Cells.q5) view;
+                    org.telegram.messenger.ff photoEntry = q5Var.getPhotoEntry();
+                    if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.C)) && z11) {
+                        z10 = true;
+                    }
+                    q5Var.setHasSpoiler(z10);
+                    break;
+                }
+                break;
+            case 1:
+                ArrayList arrayList2 = (ArrayList) obj2;
+                View view2 = (View) obj;
+                boolean z13 = ChatAttachAlertPhotoLayout.r1;
+                if (view2 instanceof org.telegram.ui.Cells.q5) {
+                    org.telegram.ui.Cells.q5 q5Var2 = (org.telegram.ui.Cells.q5) view2;
+                    org.telegram.messenger.ff photoEntry2 = q5Var2.getPhotoEntry();
+                    if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.C)) && z11) {
+                        z10 = true;
+                    }
+                    q5Var2.setHighQuality(z10);
                     break;
                 }
                 break;
             default:
-                super.requestLayout();
+                Float f10 = (Float) obj;
+                wa waVar = ((ra) obj2).b.p;
+                if (waVar != null && !z11) {
+                    waVar.c(r0.e.getHeight() - f10.floatValue());
+                    break;
+                }
                 break;
         }
     }

@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.util.Log;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g {
     public static final j6.b c = new j6.b("SessionManager", null);
@@ -30,7 +30,7 @@ public final class g {
         }
     }
 
-    public final void b(boolean z9) {
+    public final void b(boolean z10) {
         j6.b bVar = c;
         q6.m.d("Must be called from the main thread.");
         try {
@@ -39,7 +39,7 @@ public final class g {
             Parcel p12 = yVar.p1();
             int i7 = com.google.android.gms.internal.cast.t.a;
             p12.writeInt(1);
-            p12.writeInt(z9 ? 1 : 0);
+            p12.writeInt(z10 ? 1 : 0);
             yVar.t1(p12, 6);
         } catch (RemoteException e10) {
             bVar.a(e10, "Unable to call %s on %s.", "endCurrentSession", y.class.getSimpleName());

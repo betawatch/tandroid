@@ -1,92 +1,42 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import android.widget.ScrollView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class eo extends org.telegram.ui.Components.f70 {
-    public final /* synthetic */ Context x;
-    public final /* synthetic */ io y;
+public final class eo implements org.telegram.ui.Components.gj0 {
+    public final /* synthetic */ go a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eo(io ioVar, Context context, TLRPC.Chat chat, Context context2) {
-        super(context, chat);
-        this.y = ioVar;
-        this.x = context2;
+    public eo(go goVar) {
+        this.a = goVar;
     }
 
-    @Override // org.telegram.ui.Components.f70
-    public final boolean a(final boolean z9, org.telegram.ui.Components.d70 d70Var) {
-        TLRPC.ChatFull chatFull;
-        int i7;
-        org.telegram.ui.ActionBar.h6 h6Var;
-        io ioVar = this.y;
-        final int i10 = 1;
-        if (!ioVar.V || (chatFull = ioVar.Y) == null || (i7 = chatFull.invitesCount) == 0) {
-            return true;
+    @Override // org.telegram.ui.Components.gj0
+    public final void b(int i7, View view) {
+        TLRPC.TL_username tL_username;
+        go goVar = this.a;
+        ho hoVar = goVar.i3;
+        if (!(view instanceof ia) || (tL_username = ((ia) view).w) == null) {
+            return;
         }
-        String str = ioVar.a0 ? z9 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z9 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
-        Context context = this.x;
-        h6Var = ((org.telegram.ui.ActionBar.f2) ioVar).resourceProvider;
-        final int i11 = 0;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, h6Var);
-        String M0 = org.telegram.messenger.id.M0(2131754204, null);
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(i7, str, new Object[0]));
-        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131754206, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.co
-            public final /* synthetic */ eo b;
-
-            {
-                this.b = this;
+        if (tL_username.editable) {
+            if (hoVar.fragmentView instanceof ScrollView) {
+                hoVar.a.smoothScrollTo(0, hoVar.E.getTop() - org.telegram.messenger.g0.L(128.0f));
             }
-
-            @Override // org.telegram.ui.ActionBar.r1
-            public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i12) {
-                switch (i11) {
-                    case 0:
-                        boolean z10 = z9;
-                        eo eoVar = this.b;
-                        eoVar.setJoinRequest(z10);
-                        eoVar.y.W = true;
-                        break;
-                    default:
-                        boolean z11 = z9;
-                        eo eoVar2 = this.b;
-                        eoVar2.setJoinRequest(z11);
-                        eoVar2.y.W = false;
-                        break;
-                }
-            }
-        });
-        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131754205, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.co
-            public final /* synthetic */ eo b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.ui.ActionBar.r1
-            public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i12) {
-                switch (i10) {
-                    case 0:
-                        boolean z10 = z9;
-                        eo eoVar = this.b;
-                        eoVar.setJoinRequest(z10);
-                        eoVar.y.W = true;
-                        break;
-                    default:
-                        boolean z11 = z9;
-                        eo eoVar2 = this.b;
-                        eoVar2.setJoinRequest(z11);
-                        eoVar2.y.W = false;
-                        break;
-                }
-            }
-        });
-        ioVar.showDialog(u1Var);
-        return false;
+            hoVar.b.requestFocus();
+            org.telegram.messenger.g0.J3(hoVar.b);
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, goVar.getContext(), hoVar.getResourceProvider());
+        String M0 = org.telegram.messenger.hd.M0(tL_username.active ? 2131743664 : 2131743671, null);
+        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+        t1Var.S = M0;
+        t1Var.U = org.telegram.messenger.hd.M0(tL_username.active ? 2131743663 : 2131743670, null);
+        alertDialog$Builder.k(org.telegram.messenger.hd.M0(tL_username.active ? 2131749325 : 2131745353, null), new a7(this, tL_username, view, 8));
+        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new org.telegram.messenger.fd(27));
+        alertDialog$Builder.p();
     }
 }

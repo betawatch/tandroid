@@ -1,10 +1,10 @@
 package p2;
 
-import h2.m0;
+import h2.l0;
 import java.math.RoundingMode;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class n extends s {
     public final long d;
@@ -87,8 +87,8 @@ public abstract class n extends s {
         long j10 = this.d;
         List list = this.f;
         long j11 = list != null ? ((q) list.get((int) (j3 - j10))).a - this.c : (j3 - j10) * this.e;
-        String str = m0.a;
-        return m0.a0(j11, 1000000L, this.b, RoundingMode.DOWN);
+        String str = l0.a;
+        return l0.a0(j11, 1000000L, this.b, RoundingMode.DOWN);
     }
 
     public abstract j h(k kVar, long j3);

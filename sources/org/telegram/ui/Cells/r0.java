@@ -9,10 +9,10 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.iz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gz;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class r0 {
     public TextPaint a;
@@ -39,7 +39,7 @@ public final class r0 {
         this.d = 25;
         textPaint.setTypeface(org.telegram.messenger.g0.o());
         textPaint.setColor(-1);
-        int o4 = iz.o();
+        int o4 = gz.o();
         if (o4 == 0) {
             this.b = 0.25f;
         } else if (o4 != 1) {
@@ -58,9 +58,9 @@ public final class r0 {
         StaticLayout staticLayout = new StaticLayout(charSequence, textPaint, i7, Layout.Alignment.ALIGN_CENTER, 1.1f, 0.0f, false);
         this.f = staticLayout;
         t0 t0Var2 = (t0) this.i;
-        ij ijVar = t0Var2.P0;
+        gj gjVar = t0Var2.Q0;
         ArrayList arrayList = this.c;
-        if (ijVar == null || !ijVar.L0) {
+        if (gjVar == null || !gjVar.N0) {
             t0Var = t0Var2;
             xh.f.b(t0Var, staticLayout, -1, i7, null, arrayList);
         } else {
@@ -69,7 +69,7 @@ public final class r0 {
             }
             t0Var = t0Var2;
         }
-        this.h = org.telegram.ui.Components.q5.update(0, (View) t0Var, false, (org.telegram.ui.Components.m5) this.h, (StaticLayout) this.f);
+        this.h = org.telegram.ui.Components.p5.update(0, (View) t0Var, false, (org.telegram.ui.Components.l5) this.h, (StaticLayout) this.f);
     }
 
     public r0(t0 t0Var) {

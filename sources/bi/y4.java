@@ -1,71 +1,93 @@
 package bi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.ci;
-import org.telegram.ui.Components.nh;
-import org.telegram.ui.Components.pg;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.uh;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.s10;
+import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.u41;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class y4 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class y4 extends u41 {
+    public final /* synthetic */ int n3;
 
-    public /* synthetic */ y4(Object obj, int i7, Object obj2, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = i7;
-        this.c = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ y4(Context context, int i7, int i10, boolean z10, s10 s10Var, x10 x10Var, y10 y10Var, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
+        super(context, i7, i10, z10, s10Var, x10Var, y10Var, e6Var);
+        this.n3 = i11;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.uj0
+    public Integer V0(int i7) {
+        switch (this.n3) {
             case 0:
-                k7 k7Var = (k7) this.d;
-                k7Var.O1();
-                h5 h5Var = k7Var.b2;
-                int i7 = this.b;
-                h5Var.setVisibility(i7 == 0 ? 0 : 8);
-                k7Var.n2.setVisibility(i7 == 1 ? 0 : 8);
-                k7Var.w2.setVisibility(i7 == 2 ? 0 : 8);
-                k7Var.y2.setVisibility(i7 == 3 ? 0 : 8);
-                k7Var.u2();
-                k7Var.X2 = null;
-                Runnable runnable = (Runnable) this.c;
-                if (runnable != null) {
-                    runnable.run();
+                break;
+            case 7:
+                b41 G = this.g3.G(i7);
+                if (G != null && G.d == 2) {
+                    break;
+                } else {
                     break;
                 }
                 break;
+        }
+        return super.V0(i7);
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.n3) {
             case 1:
-                ci ciVar = (ci) this.d;
-                ciVar.v2.setAlpha(0.0f);
-                ciVar.v2.setTranslationY(org.telegram.messenger.g0.L(78.0f) + this.b);
-                nh nhVar = ciVar.Y1;
-                uh uhVar = ciVar.v2;
-                Float valueOf = Float.valueOf(1.0f);
-                nhVar.getClass();
-                nhVar.a(uhVar, valueOf);
-                ciVar.U2.setAlpha(0.0f);
-                r1.g gVar = new r1.g((Object) ciVar.w2, (r1.e) r1.g.p, 0.0f);
-                gVar.m.a(0.75f);
-                gVar.m.b(500.0f);
-                gVar.b(new org.telegram.ui.Components.d7(this, 3));
-                gVar.a(new hi.y3(3, this, (pg) this.c));
-                ciVar.q3 = gVar;
-                gVar.h();
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 2:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 3:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 4:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 5:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
+                break;
+            case 6:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.35f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
                 break;
             default:
-                a8.wa waVar = (a8.wa) this.d;
-                ((pj0) waVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
-                waVar.c = null;
+                super.onMeasure(i7, i10);
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.uj0
+    public boolean u1(View view) {
+        switch (this.n3) {
+            case 8:
+                if (view instanceof org.telegram.ui.Wallet.v3) {
+                    org.telegram.ui.Wallet.v3 v3Var = (org.telegram.ui.Wallet.v3) view;
+                    if (v3Var.G > 0.0f || v3Var.J.d()) {
+                        return false;
+                    }
+                }
+                return true;
+            default:
+                return super.u1(view);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ y4(Context context, int i7, int i10, boolean z10, s10 s10Var, x10 x10Var, y10 y10Var, org.telegram.ui.ActionBar.e6 e6Var, int i11, int i12) {
+        super(context, i7, i10, z10, s10Var, x10Var, y10Var, e6Var, i11, i12);
+        this.n3 = 8;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ y4(org.telegram.ui.ActionBar.e2 e2Var, s10 s10Var, x10 x10Var, y10 y10Var, int i7) {
+        super(e2Var, s10Var, x10Var, y10Var);
+        this.n3 = i7;
     }
 }

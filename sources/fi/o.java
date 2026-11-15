@@ -1,38 +1,34 @@
 package fi;
 
-import org.telegram.messenger.c20;
+import android.animation.ValueAnimator;
+import org.telegram.ui.qv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o implements c20 {
+public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ la b;
+    public final /* synthetic */ p b;
 
-    public /* synthetic */ o(la laVar, int i7) {
+    public /* synthetic */ o(p pVar, int i7) {
         this.a = i7;
-        this.b = laVar;
+        this.b = pVar;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        Integer num = (Integer) obj;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                int intValue = num.intValue();
-                la laVar = this.b;
-                laVar.setPeriod(intValue);
-                c20 c20Var = laVar.A1;
-                if (c20Var != null) {
-                    c20Var.a(num);
-                    break;
+                qv qvVar = this.b.c0;
+                ValueAnimator valueAnimator = qvVar.k0;
+                if (valueAnimator != null) {
+                    valueAnimator.start();
                 }
+                qvVar.l0 = null;
                 break;
             default:
-                c20 c20Var2 = this.b.B1;
-                if (c20Var2 != null) {
-                    c20Var2.a(num);
-                    break;
-                }
+                p pVar = this.b;
+                pVar.x = false;
+                pVar.invalidate();
                 break;
         }
     }

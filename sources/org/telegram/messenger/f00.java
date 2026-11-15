@@ -1,49 +1,20 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f00 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k00 b;
-
-    public /* synthetic */ f00(k00 k00Var, int i7) {
-        this.a = i7;
-        this.b = k00Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        k00 k00Var = this.b;
-        switch (i7) {
-            case 0:
-                qs f10 = qs.f(k00Var.currentAccount);
-                int i10 = qp.C8;
-                f10.k(2, 512);
-                break;
-            default:
-                k00Var.a.b();
-                k00Var.b.b();
-                k00Var.d.clear();
-                SharedPreferences.Editor edit = k00Var.getUserConfig().k().edit();
-                for (String str : k00Var.getUserConfig().k().getAll().keySet()) {
-                    if (str.startsWith("topics_load_offset_message_id_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_load_offset_date_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_load_offset_topic_id_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_end_reached_")) {
-                        edit.remove(str);
-                    }
-                }
-                edit.apply();
-                break;
-        }
-    }
+public final class f00 {
+    public int a = -1;
+    public long b;
+    public long c;
+    public int d;
+    public int e;
+    public int f;
+    public TLRPC.Message g;
+    public ArrayList h;
+    public boolean i;
+    public boolean j;
+    public boolean k;
 }

@@ -1,25 +1,61 @@
 package a8;
 
-import android.net.Uri;
-import java.util.Iterator;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.CancellationSignal;
+import android.util.Log;
+import c8.ge;
+import c8.wc;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class f7 {
-    public static Uri a(Uri uri) {
-        if (!uri.isHierarchical() || uri.getQueryParameter("CMCD") == null) {
-            return uri;
+    public static void a(int i7, int i10, Intent intent, Executor executor, v0.g gVar, CancellationSignal cancellationSignal) {
+        String string;
+        Bundle bundle;
+        v0.n nVar;
+        int i11 = b1.d.c;
+        if (i7 != i11) {
+            Log.w("GetCredentialController", "Returned request code " + i11 + " which  does not match what was given " + i7);
+            return;
         }
-        Uri.Builder buildUpon = uri.buildUpon();
-        buildUpon.clearQuery();
-        for (String str : uri.getQueryParameterNames()) {
-            if (!str.equals("CMCD")) {
-                Iterator<String> it = uri.getQueryParameters(str).iterator();
-                while (it.hasNext()) {
-                    buildUpon.appendQueryParameter(str, it.next());
+        int i12 = b1.d.d;
+        int i13 = 0;
+        int i14 = 1;
+        if (e7.b(i10, new b1.e(0), new ae.d(i14, executor, gVar), cancellationSignal)) {
+            return;
+        }
+        if (intent == null) {
+            e7.a(cancellationSignal, new b1.f(i13, executor, gVar));
+            return;
+        }
+        int i15 = Build.VERSION.SDK_INT;
+        w0.i iVar = null;
+        if (i15 >= 34) {
+            nVar = h1.a.d(intent);
+        } else {
+            Bundle bundleExtra = intent.getBundleExtra("android.service.credentials.extra.GET_CREDENTIAL_RESPONSE");
+            nVar = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_DATA")) == null) ? null : new v0.n(wc.a(string, bundle));
+        }
+        if (nVar != null) {
+            e7.a(cancellationSignal, new b1.b(executor, gVar, nVar, i14));
+            return;
+        }
+        if (i15 >= 34) {
+            iVar = h1.a.c(intent);
+        } else {
+            int i16 = w0.i.a;
+            Bundle bundleExtra2 = intent.getBundleExtra("android.service.credentials.extra.GET_CREDENTIAL_EXCEPTION");
+            if (bundleExtra2 != null) {
+                String string2 = bundleExtra2.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_TYPE");
+                if (string2 == null) {
+                    throw new IllegalArgumentException("Bundle was missing exception type.");
                 }
+                iVar = ge.b(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string2);
             }
         }
-        return buildUpon.build();
+        e7.a(cancellationSignal, new b1.b(executor, gVar, iVar, 2));
     }
 }

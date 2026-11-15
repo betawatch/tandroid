@@ -14,13 +14,13 @@ public abstract class d extends l {
         return charSequence.length() - 1;
     }
 
-    public static final int g(int i7, CharSequence other, String string, boolean z9) {
+    public static final int g(int i7, CharSequence other, String string, boolean z10) {
         String str;
-        boolean z10;
+        boolean z11;
         boolean regionMatches;
         kotlin.jvm.internal.j.e(other, "<this>");
         kotlin.jvm.internal.j.e(string, "string");
-        if (!z9 && (other instanceof String)) {
+        if (!z10 && (other instanceof String)) {
             return ((String) other).indexOf(string, i7);
         }
         int length = other.length();
@@ -32,11 +32,11 @@ public abstract class d extends l {
             length = length2;
         }
         ud.e eVar = new ud.e(i7, length, 1);
-        boolean z11 = other instanceof String;
+        boolean z12 = other instanceof String;
         int i10 = eVar.c;
         int i11 = eVar.b;
         int i12 = eVar.a;
-        if (z11 && (string instanceof String)) {
+        if (z12 && (string instanceof String)) {
             if ((i10 <= 0 || i12 > i11) && (i10 >= 0 || i11 > i12)) {
                 return -1;
             }
@@ -46,14 +46,14 @@ public abstract class d extends l {
                 int length3 = string.length();
                 kotlin.jvm.internal.j.e(string, "<this>");
                 kotlin.jvm.internal.j.e(other2, "other");
-                if (z9) {
+                if (z10) {
                     str = string;
-                    z10 = z9;
-                    regionMatches = str.regionMatches(z10, 0, other2, i13, length3);
+                    z11 = z10;
+                    regionMatches = str.regionMatches(z11, 0, other2, i13, length3);
                 } else {
                     regionMatches = string.regionMatches(0, other2, i13, length3);
                     str = string;
-                    z10 = z9;
+                    z11 = z10;
                 }
                 if (regionMatches) {
                     return i13;
@@ -63,7 +63,7 @@ public abstract class d extends l {
                 }
                 i13 += i10;
                 string = str;
-                z9 = z10;
+                z10 = z11;
             }
         } else {
             if ((i10 <= 0 || i12 > i11) && (i10 >= 0 || i11 > i12)) {
@@ -74,7 +74,7 @@ public abstract class d extends l {
                 kotlin.jvm.internal.j.e(other, "other");
                 if (i12 >= 0 && string.length() - length4 >= 0 && i12 <= other.length() - length4) {
                     for (int i14 = 0; i14 < length4; i14++) {
-                        if (rd.a(string.charAt(i14), other.charAt(i12 + i14), z9)) {
+                        if (rd.a(string.charAt(i14), other.charAt(i12 + i14), z10)) {
                         }
                     }
                     return i12;
@@ -137,7 +137,7 @@ public abstract class d extends l {
         CharSequence charSequence;
         kotlin.jvm.internal.j.e(str, "<this>");
         if (i7 < 0) {
-            throw new IllegalArgumentException(jg.g.k(i7, "Desired length ", " is less than zero."));
+            throw new IllegalArgumentException(i5.c.j(i7, "Desired length ", " is less than zero."));
         }
         if (i7 <= str.length()) {
             charSequence = str.subSequence(0, str.length());

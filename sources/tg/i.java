@@ -1,6 +1,6 @@
 package tg;
 
-import a8.r9;
+import a8.t9;
 import android.content.Context;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
@@ -8,18 +8,18 @@ import android.os.Build;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.ki0;
-import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.pi0;
+import org.telegram.ui.Components.u5;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class i extends FrameLayout {
     public final Paint a;
     public final Paint b;
     public final Paint c;
     public int d;
-    public final v5 e;
+    public final u5 e;
     public boolean f;
     public final /* synthetic */ j h;
 
@@ -33,7 +33,7 @@ public abstract class i extends FrameLayout {
         this.b = paint2;
         Paint paint3 = new Paint(1);
         this.c = paint3;
-        this.e = new v5(this, 0L, 250L, wq.h);
+        this.e = new u5(this, 0L, 250L, er.h);
         this.f = true;
         setWillNotDraw(false);
         paint.setColor(-1);
@@ -54,7 +54,7 @@ public abstract class i extends FrameLayout {
 
     public final void b() {
         j jVar = this.h;
-        ki0 selectionBounds = jVar.getSelectionBounds();
+        pi0 selectionBounds = jVar.getSelectionBounds();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getLayoutParams();
         layoutParams.leftMargin = (int) selectionBounds.a;
         layoutParams.topMargin = (int) selectionBounds.b;
@@ -77,46 +77,46 @@ public abstract class i extends FrameLayout {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z9;
+        boolean z10;
         double atan2;
         h hVar;
         int actionMasked = motionEvent.getActionMasked();
         float rawX = motionEvent.getRawX();
         float rawY = motionEvent.getRawY();
         j jVar = this.h;
-        h hVar2 = jVar.F;
-        e eVar = jVar.I;
-        float[] fArr = jVar.g0;
-        float[] fArr2 = jVar.f0;
-        float[] fArr3 = jVar.e0;
+        h hVar2 = jVar.G;
+        e eVar = jVar.J;
+        float[] fArr = jVar.h0;
+        float[] fArr2 = jVar.g0;
+        float[] fArr3 = jVar.f0;
         hVar2.v(rawX, rawY, fArr3);
-        boolean z10 = motionEvent.getPointerCount() > 1 && this.d == 3;
-        if (z10) {
+        boolean z11 = motionEvent.getPointerCount() > 1 && this.d == 3;
+        if (z11) {
             if (Build.VERSION.SDK_INT >= 29) {
-                jVar.F.v(motionEvent.getRawX(1), motionEvent.getRawY(1), fArr2);
+                jVar.G.v(motionEvent.getRawX(1), motionEvent.getRawY(1), fArr2);
             } else {
-                z10 = false;
+                z11 = false;
             }
         }
-        if (z10) {
+        if (z11) {
             fArr[0] = (fArr3[0] + fArr2[0]) / 2.0f;
             fArr[1] = (fArr3[1] + fArr2[1]) / 2.0f;
         } else {
             fArr[0] = fArr3[0];
             fArr[1] = fArr3[1];
         }
-        if (jVar.c0 != z10) {
+        if (jVar.d0 != z11) {
             jVar.b = fArr3[0];
             jVar.c = fArr3[1];
             jVar.d = fArr2[0];
             jVar.e = fArr2[1];
             jVar.f = fArr[0];
             jVar.h = fArr[1];
-            this.f = !z10;
+            this.f = !z11;
             invalidate();
         }
-        jVar.c0 = z10;
-        float[] fArr4 = jVar.g0;
+        jVar.d0 = z11;
+        float[] fArr4 = jVar.h0;
         float f10 = fArr4[0];
         float f11 = fArr4[1];
         if (actionMasked != 0) {
@@ -124,23 +124,23 @@ public abstract class i extends FrameLayout {
                 if (actionMasked == 2) {
                     int i7 = this.d;
                     if (i7 == 3) {
-                        float[] fArr5 = jVar.e0;
+                        float[] fArr5 = jVar.f0;
                         float f12 = fArr5[0];
                         float f13 = fArr5[1];
-                        float[] fArr6 = jVar.f0;
-                        z9 = jVar.c(f12, f13, fArr6[0], fArr6[1], z10);
+                        float[] fArr6 = jVar.g0;
+                        z10 = jVar.c(f12, f13, fArr6[0], fArr6[1], z11);
                     } else if (i7 != 0) {
                         float f14 = f10 - jVar.b;
                         float f15 = f11 - jVar.c;
                         if (jVar.s || Math.abs(f14) > org.telegram.messenger.g0.L(2.0f) || Math.abs(f15) > org.telegram.messenger.g0.L(2.0f)) {
-                            if (!jVar.s && (hVar = jVar.F) != null) {
+                            if (!jVar.s && (hVar = jVar.G) != null) {
                                 hVar.y();
                             }
                             jVar.s = true;
                             org.telegram.messenger.g0.r(eVar);
-                            int[] n10 = jVar.F.n(jVar);
-                            float a10 = r9.a(n10[0], n10[1], jVar.b, jVar.c);
-                            float a11 = r9.a(n10[0], n10[1], f10, f11);
+                            int[] n10 = jVar.G.n(jVar);
+                            float a10 = t9.a(n10[0], n10[1], jVar.b, jVar.c);
+                            float a11 = t9.a(n10[0], n10[1], f10, f11);
                             float f16 = 0.0f;
                             if (a10 > 0.0f) {
                                 jVar.j(a11 / a10);
@@ -161,18 +161,18 @@ public abstract class i extends FrameLayout {
                             jVar.b = f10;
                             jVar.c = f11;
                         }
-                        z9 = true;
+                        z10 = true;
                     }
                 }
-                z9 = false;
+                z10 = false;
             }
             jVar.d(actionMasked == 3);
             this.d = 0;
             this.f = true;
             invalidate();
-            z9 = true;
+            z10 = true;
         } else {
-            jVar.d0 = false;
+            jVar.e0 = false;
             int a12 = a(motionEvent.getX(), motionEvent.getY());
             if (a12 != 0) {
                 this.d = a12;
@@ -187,11 +187,11 @@ public abstract class i extends FrameLayout {
                 if (a12 == 3 && (jVar instanceof q1)) {
                     org.telegram.messenger.g0.i3(eVar, ViewConfiguration.getLongPressTimeout());
                 }
-                z9 = true;
+                z10 = true;
             }
-            z9 = false;
+            z10 = false;
         }
-        jVar.d0 = z10;
-        return super.onTouchEvent(motionEvent) || z9;
+        jVar.e0 = z11;
+        return super.onTouchEvent(motionEvent) || z10;
     }
 }

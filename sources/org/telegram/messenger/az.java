@@ -1,22 +1,11 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.location.Location;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class az implements RequestDelegate {
-    public final /* synthetic */ TLRPC.TL_stickers_createStickerSet a;
-    public final /* synthetic */ bz b;
+public interface az {
+    void c();
 
-    public az(bz bzVar, TLRPC.TL_stickers_createStickerSet tL_stickers_createStickerSet) {
-        this.b = bzVar;
-        this.a = tL_stickers_createStickerSet;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        g0.h3(new em(this, tL_error, this.a, tLObject, 26));
-    }
+    void f(Location location);
 }

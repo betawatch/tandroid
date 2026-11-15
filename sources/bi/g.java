@@ -1,117 +1,129 @@
 package bi;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import j$.util.Objects;
-import org.telegram.ui.Components.hm0;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r20;
-import org.telegram.ui.Components.v80;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bx0;
-import org.telegram.ui.nt;
-import org.telegram.ui.tu0;
-import org.telegram.ui.yv0;
+import android.content.Context;
+import android.util.LongSparseArray;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.r9;
+import org.telegram.messenger.t9;
+import org.telegram.messenger.v9;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.ja;
+import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.tj0;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g implements eh.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class g extends ja implements t9 {
+    public final b41 T1;
+    public final LongSparseArray U1;
+    public ArrayList V1;
+    public boolean W1;
+    public p41 X1;
+    public int Y1;
 
-    public /* synthetic */ g(int i7, Object obj, Object obj2) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g(Context context) {
+        super(context, null, false, false, 2, null);
+        int i7 = 0;
+        this.U1 = new LongSparseArray();
+        this.V1 = new ArrayList();
+        int x02 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.a7, false);
+        this.Y1 = x02;
+        v0(x02);
+        v9.c(this.a).f.add(this);
+        this.G1 = false;
+        this.F1 = org.telegram.messenger.g0.L(12.0f);
+        O();
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setClipChildren(false);
+        linearLayout.setClipToPadding(false);
+        linearLayout.setClickable(true);
+        this.T1 = b41.j(-1, linearLayout);
+        this.o1.setPadding(this.u0, org.telegram.messenger.g0.L(9.0f), this.u0, org.telegram.messenger.g0.L(9.0f));
+        this.o1.setOverScrollMode(2);
+        this.X1.O(false);
+        ArrayList arrayList = v9.c(this.a).c;
+        int size = arrayList.size();
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            r9 r9Var = (r9) obj;
+            f fVar = new f(context, r9Var);
+            fVar.a.setOnClickListener(new ah.g(this, context, r9Var, 1));
+            linearLayout.addView(fVar, c8.ja.o(-1, -2));
+            this.U1.put(r9Var.b, fVar);
+        }
+        g(arrayList);
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // eh.a
-    public final void c(dh.a aVar, RectF rectF) {
-        switch (this.a) {
-        }
-        aVar.a = true;
+    @Override // org.telegram.ui.Components.ja
+    public final tj0 L0(uj0 uj0Var) {
+        p41 p41Var = new p41(this.o1, getContext(), this.a, 0, true, new b(this, 1), this.J0);
+        this.X1 = p41Var;
+        p41Var.r = false;
+        return p41Var;
     }
 
-    @Override // eh.a
-    public final void d(Canvas canvas, RectF rectF) {
-        Canvas canvas2;
-        switch (this.a) {
-            case 0:
-                ((z) this.b).f.d(canvas, rectF, (f) this.c);
-                break;
-            case 1:
-                ((dd) this.b).U.d(canvas, rectF, (f) this.c);
-                break;
-            case 2:
-                ((gi.f) this.b).U.d(canvas, rectF, (f) this.c);
-                break;
-            case 3:
-                hm0 hm0Var = (hm0) this.b;
-                ih.d.a(hm0Var, canvas, rectF, hm0Var, (FrameLayout) this.c);
-                break;
-            case 4:
-                pj0 pj0Var = (pj0) this.b;
-                ih.d.a(pj0Var, canvas, rectF, pj0Var, (FrameLayout) this.c);
-                break;
-            case 5:
-                ((org.telegram.ui.y6) this.b).b0.d(canvas, rectF, (org.telegram.ui.z5) this.c);
-                break;
-            case 6:
-                ((r20) this.b).n.L(canvas, rectF, (FrameLayout) this.c);
-                break;
-            case 7:
-                ((v80) this.b).R.L(canvas, rectF, (e5) this.c);
-                break;
-            case 8:
-                nt ntVar = (nt) this.b;
-                di.b4 b4Var = (di.b4) this.c;
-                int childCount = ntVar.a.getChildCount();
-                for (int i7 = 0; i7 < childCount; i7++) {
-                    View childAt = ntVar.a.getChildAt(i7);
-                    if (childAt instanceof pj0) {
-                        pj0 pj0Var2 = (pj0) childAt;
-                        ih.d.a(pj0Var2, canvas, rectF, pj0Var2, b4Var);
-                    }
-                }
-                break;
-            default:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                dh.k kVar = (dh.k) this.c;
-                Paint paint = profileActivity.P6;
-                ViewGroup viewGroup = (ViewGroup) profileActivity.fragmentView;
-                yv0 yv0Var = profileActivity.N;
-                float f10 = (yv0Var == null || yv0Var.getParent() != profileActivity.a) ? 0.0f : profileActivity.S5;
-                if (f10 < 1.0f) {
-                    bx0 bx0Var = profileActivity.c1;
-                    RectF rectF2 = ProfileActivity.V6;
-                    if (jh.k.c(bx0Var, viewGroup, rectF2) && RectF.intersects(rectF2, rectF)) {
-                        ih.d.a(new org.telegram.ui.oa(profileActivity, 4), canvas, rectF, profileActivity.c1, viewGroup);
-                    }
-                    tu0 tu0Var = profileActivity.a;
-                    Objects.requireNonNull(tu0Var);
-                    ih.d.a(new org.telegram.ui.oa(tu0Var, 5), canvas, rectF, profileActivity.a, viewGroup);
-                    kVar.d(canvas, rectF);
-                }
-                if (f10 > 0.0f) {
-                    float y10 = f10 < 1.0f ? profileActivity.N.getY() + profileActivity.a.getY() : Float.MAX_VALUE;
-                    paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.a7, profileActivity.z0));
-                    paint.setAlpha((int) (f10 * 255.0f));
-                    canvas2 = canvas;
-                    canvas2.drawRect(rectF.left, rectF.top, rectF.right, Math.min(rectF.bottom, y10), paint);
-                } else {
-                    canvas2 = canvas;
-                }
-                profileActivity.N.L(canvas2, rectF, viewGroup);
-                ProfileActivity.N3(profileActivity.t0, canvas2, rectF, viewGroup);
-                ProfileActivity.N3(profileActivity.n0, canvas2, rectF, viewGroup);
-                ProfileActivity.N3(profileActivity.m0, canvas2, rectF, viewGroup);
-                break;
+    @Override // org.telegram.ui.Components.ja
+    public final CharSequence O0() {
+        ArrayList arrayList = this.V1;
+        if (arrayList == null) {
+            return null;
         }
+        return hd.a0(null, null, 2131750418, Integer.valueOf(arrayList.size()));
+    }
+
+    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
+    public final void dismiss() {
+        v9.c(this.a).f.remove(this);
+        super.dismiss();
+    }
+
+    @Override // org.telegram.messenger.t9
+    public final void g(ArrayList arrayList) {
+        this.V1 = new ArrayList(arrayList);
+        this.p1.setTitle(O0());
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            r9 r9Var = (r9) obj;
+            TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = r9Var.f;
+            int i10 = tL_starGiftAuctionState != null ? tL_starGiftAuctionState.next_round_at : 0;
+            f fVar = (f) this.U1.get(r9Var.b);
+            if (fVar != null) {
+                fVar.b(this.W1);
+                long max = Math.max(0, i10 - ConnectionsManager.getInstance(this.a).getCurrentTime());
+                fVar.a(max, this.W1);
+                fVar.f.a(max);
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.u2
+    public final void s0() {
+        try {
+            super.s0();
+            int x02 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.a7, false);
+            if (x02 != this.Y1) {
+                this.Y1 = x02;
+                v0(x02);
+            }
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.u2
+    public final void v() {
+        this.W1 = true;
     }
 }

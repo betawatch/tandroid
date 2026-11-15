@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.play_billing;
 
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class e3 {
     public static final /* synthetic */ int a = 0;
@@ -86,7 +86,7 @@ public abstract class e3 {
                         if (Character.isSurrogatePair(charAt2, charAt3)) {
                             int i17 = i15 + 3;
                             int codePoint = Character.toCodePoint(charAt2, charAt3);
-                            bArr[i15] = (byte) ((codePoint >>> 18) | qs.P3);
+                            bArr[i15] = (byte) ((codePoint >>> 18) | ns.P3);
                             bArr[i15 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
                             bArr[i15 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
                             i15 += 4;
@@ -210,7 +210,7 @@ public abstract class e3 {
                 if (i15 > -65) {
                     return false;
                 }
-                if ((((i15 + qs.x1) + (i12 << 28)) >> 30) != 0) {
+                if ((((i15 + ns.x1) + (i12 << 28)) >> 30) != 0) {
                     return false;
                 }
                 int i16 = i7 + 3;

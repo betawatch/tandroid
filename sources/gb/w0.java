@@ -1,25 +1,54 @@
 package gb;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes.dex */
-public final class w0 implements ib.b {
-    public final /* synthetic */ int a;
-    public final ib.c b;
-    public final ib.c c;
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
 
-    public /* synthetic */ w0(ib.c cVar, ib.c cVar2, int i7) {
-        this.a = i7;
-        this.b = cVar;
-        this.c = cVar2;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes.dex */
+public final class w0 implements Application.ActivityLifecycleCallbacks {
+    public final d1 a;
+
+    public w0(d1 sharedSessionRepository) {
+        kotlin.jvm.internal.j.e(sharedSessionRepository, "sharedSessionRepository");
+        this.a = sharedSessionRepository;
     }
 
-    @Override // fd.a
-    public final Object get() {
-        switch (this.a) {
-            case 0:
-                return new v0((j1) this.b.get(), (k1) this.c.get());
-            default:
-                return new jb.l((jb.q) this.b.get(), (jb.q) this.c.get());
-        }
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityCreated(Activity activity, Bundle bundle) {
+        kotlin.jvm.internal.j.e(activity, "activity");
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityDestroyed(Activity activity) {
+        kotlin.jvm.internal.j.e(activity, "activity");
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityPaused(Activity activity) {
+        kotlin.jvm.internal.j.e(activity, "activity");
+        this.a.b();
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityResumed(Activity activity) {
+        kotlin.jvm.internal.j.e(activity, "activity");
+        this.a.c();
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+        kotlin.jvm.internal.j.e(activity, "activity");
+        kotlin.jvm.internal.j.e(outState, "outState");
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityStarted(Activity activity) {
+        kotlin.jvm.internal.j.e(activity, "activity");
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityStopped(Activity activity) {
+        kotlin.jvm.internal.j.e(activity, "activity");
     }
 }

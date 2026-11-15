@@ -11,25 +11,25 @@ import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class ae0 extends FrameLayout {
-    public TLRPC.WebPage D;
-    public float E;
-    public boolean F;
+    public TLRPC.WebPage E;
+    public float F;
     public boolean G;
-    public int H;
+    public boolean H;
     public int I;
-    public float J;
-    public boolean K;
-    public ob0 L;
+    public int J;
+    public float K;
+    public boolean L;
+    public wa0 M;
     public int a;
     public PhotoViewer b;
     public LinearLayout c;
     public TextView d;
     public TextView e;
-    public rt f;
-    public bi.ec h;
+    public xt f;
+    public bi.o2 h;
     public RadialProgressView n;
     public View r;
     public String s;
@@ -37,9 +37,9 @@ public abstract class ae0 extends FrameLayout {
     public String x;
     public boolean y;
 
-    public static void a(org.telegram.ui.fq0 fq0Var, String str) {
-        int videoDuration = fq0Var.getVideoDuration() / 1000;
-        ArrayList arrayList = fq0Var.w;
+    public static void a(org.telegram.ui.bq0 bq0Var, String str) {
+        int videoDuration = bq0Var.getVideoDuration() / 1000;
+        ArrayList arrayList = bq0Var.w;
         arrayList.clear();
         if (videoDuration <= 15) {
             return;
@@ -55,15 +55,15 @@ public abstract class ae0 extends FrameLayout {
         }
     }
 
-    public final void b(boolean z9) {
-        ob0 ob0Var = this.L;
-        if (!z9 && this.G) {
-            org.telegram.messenger.g0.i3(ob0Var, 500L);
+    public final void b(boolean z10) {
+        wa0 wa0Var = this.M;
+        if (!z10 && this.H) {
+            org.telegram.messenger.g0.i3(wa0Var, 500L);
         } else {
-            if (!z9 || this.G) {
+            if (!z10 || this.H) {
                 return;
             }
-            org.telegram.messenger.g0.r(ob0Var);
+            org.telegram.messenger.g0.r(wa0Var);
         }
     }
 
@@ -104,7 +104,7 @@ public abstract class ae0 extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.K) {
+        if (this.L) {
             return false;
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -112,7 +112,7 @@ public abstract class ae0 extends FrameLayout {
 
     public final boolean e() {
         if (this.n.getVisibility() != 0) {
-            ti.o c10 = l2.i.d().c();
+            wi.n c10 = l2.i.d().c();
             if (c10 != null) {
                 c10.b();
                 org.telegram.messenger.g0.i3(new wd0(this, 0), 300L);
@@ -120,9 +120,9 @@ public abstract class ae0 extends FrameLayout {
             }
             this.h.setVisibility(0);
             PhotoViewer photoViewer = this.b;
-            if (photoViewer.D != null && photoViewer.f0 != null) {
+            if (photoViewer.E != null && photoViewer.g0 != null) {
                 photoViewer.T0();
-                photoViewer.O8.g(photoViewer.D, null, true);
+                photoViewer.P8.g(photoViewer.E, null, true);
                 return true;
             }
         }
@@ -130,32 +130,32 @@ public abstract class ae0 extends FrameLayout {
     }
 
     public final void f() {
-        if (this.G && this.y) {
+        if (this.H && this.y) {
             h("pauseVideo();");
-            this.G = false;
+            this.H = false;
             b(true);
         }
     }
 
     public final void g() {
-        if (this.G || !this.y) {
+        if (this.H || !this.y) {
             return;
         }
         h("playVideo();");
-        this.G = true;
+        this.H = true;
         b(false);
     }
 
     public float getBufferedPosition() {
-        return this.J;
+        return this.K;
     }
 
     public int getCurrentPosition() {
-        return this.I;
+        return this.J;
     }
 
     public int getEmbedHeight() {
-        TLRPC.WebPage webPage = this.D;
+        TLRPC.WebPage webPage = this.E;
         if (webPage != null) {
             return webPage.embed_height;
         }
@@ -163,7 +163,7 @@ public abstract class ae0 extends FrameLayout {
     }
 
     public int getEmbedWidth() {
-        TLRPC.WebPage webPage = this.D;
+        TLRPC.WebPage webPage = this.E;
         if (webPage != null) {
             return webPage.embed_width;
         }
@@ -171,7 +171,7 @@ public abstract class ae0 extends FrameLayout {
     }
 
     public int getVideoDuration() {
-        return this.H;
+        return this.I;
     }
 
     public WebView getWebView() {
@@ -183,13 +183,13 @@ public abstract class ae0 extends FrameLayout {
     }
 
     public final void i(long j3) {
-        boolean z9 = this.G;
-        this.I = (int) j3;
-        if (z9) {
+        boolean z10 = this.H;
+        this.J = (int) j3;
+        if (z10) {
             f();
         }
-        if (z9) {
-            org.telegram.messenger.g0.i3(new bi.r3(this, j3, 23), 100L);
+        if (z10) {
+            org.telegram.messenger.g0.i3(new di.x2(this, j3, 23), 100L);
             return;
         }
         h("seekTo(" + Math.round(j3 / 1000.0f) + ", true);");
@@ -197,9 +197,9 @@ public abstract class ae0 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        rt rtVar = this.f;
-        if (rtVar.getParent() == this) {
-            TLRPC.WebPage webPage = this.D;
+        xt xtVar = this.f;
+        if (xtVar.getParent() == this) {
+            TLRPC.WebPage webPage = this.E;
             int i11 = webPage.embed_width;
             if (i11 == 0) {
                 i11 = 100;
@@ -211,7 +211,7 @@ public abstract class ae0 extends FrameLayout {
             float f10 = i11;
             float f11 = i13;
             float min = Math.min(size / f10, size2 / f11);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) rtVar.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) xtVar.getLayoutParams();
             int i14 = (int) (f10 * min);
             layoutParams.width = i14;
             int i15 = (int) (f11 * min);
@@ -223,15 +223,15 @@ public abstract class ae0 extends FrameLayout {
     }
 
     public void setPlaybackSpeed(float f10) {
-        this.E = f10;
+        this.F = f10;
         if (this.n.getVisibility() == 0) {
-            this.F = true;
+            this.G = true;
         } else if (this.y) {
             h("setPlaybackSpeed(" + f10 + ");");
         }
     }
 
-    public void setTouchDisabled(boolean z9) {
-        this.K = z9;
+    public void setTouchDisabled(boolean z10) {
+        this.L = z10;
     }
 }

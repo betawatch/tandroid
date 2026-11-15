@@ -1,172 +1,607 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.SparseIntArray;
-import bi.u7;
+import c8.i9;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Locale;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.sz;
-import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.qa0;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.ns;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class g6 implements ls {
-    public static g6 c;
+public final class g6 {
     public int a;
-    public HashMap b;
+    public i6 b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public boolean i;
+    public long j;
+    public long k;
+    public long l;
+    public long m;
+    public float p;
+    public boolean q;
+    public TLRPC.TL_theme r;
+    public TLRPC.TL_wallPaper s;
+    public int t;
+    public String u;
+    public String v;
+    public TLRPC.InputFile w;
+    public TLRPC.InputFile x;
+    public b6 y;
+    public boolean z;
+    public int n = 45;
+    public String o = "";
+    public final float[] A = new float[3];
 
-    public static void a(boolean z9) {
-        ArrayList arrayList;
-        if (c == null || z9) {
-            ArrayList arrayList2 = null;
-            int i7 = 0;
-            while (i7 < 5) {
-                l6 l6Var = (l6) m6.H.get(i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? "Night" : "Day" : "Arctic Blue" : "Dark Blue" : "Blue");
-                if (l6Var != null && (arrayList = l6Var.b0) != null && !arrayList.isEmpty()) {
-                    int size = l6Var.b0.size();
-                    for (int i10 = 0; i10 < size; i10++) {
-                        j6 j6Var = (j6) l6Var.b0.get(i10);
-                        if (j6Var.a != m6.n && !TextUtils.isEmpty(j6Var.o)) {
-                            if (arrayList2 == null) {
-                                arrayList2 = new ArrayList();
-                            }
-                            arrayList2.add(j6Var);
-                        }
-                    }
+    public static int a(SparseIntArray sparseIntArray, int... iArr) {
+        int i7 = 0;
+        int i10 = 0;
+        int i11 = 0;
+        int i12 = 0;
+        for (int i13 = 0; i13 < iArr.length; i13++) {
+            if (sparseIntArray.indexOfKey(iArr[i13]) >= 0) {
+                try {
+                    int i14 = sparseIntArray.get(iArr[i13]);
+                    i10 += Color.red(i14);
+                    i11 += Color.green(i14);
+                    i12 += Color.blue(i14);
+                    i7++;
+                } catch (Exception unused) {
                 }
-                i7++;
             }
-            g6 g6Var = new g6();
-            g6Var.a = p10.s0;
-            if (arrayList2 != null) {
-                Utilities.e.c(new c(3, g6Var, arrayList2));
-            }
-            c = g6Var;
+        }
+        if (i7 == 0) {
+            return 0;
+        }
+        return Color.argb(ns.e4, i10 / i7, i11 / i7, i12 / i7);
+    }
+
+    public static int c(SparseIntArray sparseIntArray, int i7) {
+        int i10;
+        int indexOfKey = sparseIntArray.indexOfKey(i7);
+        if (indexOfKey < 0 && (i10 = j6.im.get(i7, -1)) >= 0) {
+            indexOfKey = sparseIntArray.indexOfKey(i10);
+        }
+        return indexOfKey >= 0 ? sparseIntArray.valueAt(indexOfKey) : j6.hm[i7];
+    }
+
+    public static void h(SparseIntArray sparseIntArray) {
+        for (int i7 = j6.qb; i7 < j6.xb; i7++) {
+            sparseIntArray.delete(i7);
+            sparseIntArray.put(i7, j6.hm[i7]);
+        }
+        for (int i10 = j6.yb; i10 < j6.Kc; i10++) {
+            sparseIntArray.delete(i10);
+            sparseIntArray.put(i10, j6.hm[i10]);
+        }
+        for (int i11 = j6.Lc; i11 < j6.Tc; i11++) {
+            sparseIntArray.delete(i11);
+            sparseIntArray.put(i11, j6.hm[i11]);
         }
     }
 
-    public static Bitmap b(Bitmap bitmap, boolean z9, File file, j6 j6Var) {
-        Bitmap bitmap2;
-        int V0;
+    public final int b(int i7, int i10) {
+        float[] fArr = this.A;
+        Color.colorToHSV(i10, fArr);
+        float f10 = fArr[0];
+        Color.colorToHSV(i7, fArr);
+        float f11 = fArr[1];
+        if (f11 <= 0.0f) {
+            fArr[0] = f10;
+        }
+        fArr[1] = i20.z(f11, 0.6f, 1.0f, 0.0f);
+        fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.05f));
+        return Color.HSVToColor(30, fArr);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x0549, code lost:
+    
+        if (r14 < 85.0f) goto L221;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0561  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0564  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean d(SparseIntArray sparseIntArray, SparseIntArray sparseIntArray2) {
+        int valueAt;
+        float f10;
+        boolean a10;
         int i7;
+        char c10;
         int i10;
         int i11;
-        try {
-            File e10 = j6Var.e();
-            Drawable drawable = null;
-            if (e10 == null) {
-                return null;
-            }
-            l6 l6Var = j6Var.b;
-            SparseIntArray T0 = m6.T0(null, l6Var.d, null);
-            m6.H(T0, l6Var);
-            int i12 = j6Var.c;
-            int i13 = (int) j6Var.j;
-            long j3 = j6Var.k;
-            int i14 = (int) j3;
-            if (i14 == 0 && j3 == 0) {
-                if (i13 != 0) {
-                    i12 = i13;
+        int valueAt2;
+        int valueAt3;
+        TLRPC.TL_theme tL_theme;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        float[] P0 = j6.P0(1);
+        float[] P02 = j6.P0(2);
+        Color.colorToHSV(this.b.Y, P0);
+        Color.colorToHSV(this.c, P02);
+        boolean q10 = this.b.q();
+        int i19 = 0;
+        if (this.c != this.b.Y || this.d != 0) {
+            int i20 = 0;
+            while (true) {
+                int[] iArr = j6.hm;
+                if (i20 >= iArr.length) {
+                    break;
                 }
-                int i15 = T0.get(m6.Ce);
-                if (i15 != 0) {
-                    i14 = m6.C(l6Var, i12, i15);
+                if (!j6.jm.contains(Integer.valueOf(i20))) {
+                    int indexOfKey = sparseIntArray.indexOfKey(i20);
+                    if (indexOfKey < 0) {
+                        int i21 = j6.im.get(i20, -1);
+                        if (i21 < 0 || sparseIntArray.indexOfKey(i21) < 0) {
+                            valueAt = iArr[i20];
+                        }
+                    } else {
+                        valueAt = sparseIntArray.valueAt(indexOfKey);
+                    }
+                    int E = j6.E(P0, P02, valueAt, q10, valueAt);
+                    if (E != valueAt) {
+                        sparseIntArray2.put(i20, E);
+                    }
                 }
-            } else {
-                i12 = 0;
+                i20++;
             }
-            long j10 = j6Var.l;
-            int i16 = (int) j10;
-            if (i16 == 0 && j10 == 0 && (i11 = T0.get(m6.De)) != 0) {
-                i16 = m6.C(l6Var, i12, i11);
-            }
-            long j11 = j6Var.m;
-            int i17 = (int) j11;
-            if (i17 == 0 && j11 == 0 && (i10 = T0.get(m6.Ee)) != 0) {
-                i17 = m6.C(l6Var, i12, i10);
-            }
-            if (i13 == 0 && (i7 = T0.get(m6.Be)) != 0) {
-                i13 = m6.C(l6Var, i12, i7);
-            }
-            if (i16 != 0) {
-                V0 = qa0.g(i13, i14, i16, i17);
-            } else if (i14 != 0) {
-                Drawable j9Var = new j9(j9.d(j6Var.n), new int[]{i13, i14});
-                V0 = org.telegram.messenger.g0.V0(org.telegram.messenger.g0.w0(i13, i14), false);
-                drawable = j9Var;
-            } else {
-                drawable = new ColorDrawable(i13);
-                V0 = org.telegram.messenger.g0.V0(i13, false);
-            }
-            if (bitmap == null) {
-                Point point = org.telegram.messenger.g0.q;
-                bitmap2 = z9 ? sz.f(file, Math.min(point.x, point.y), Math.max(point.x, point.y), 2) : m6.n1(new FileInputStream(file), 0);
-            } else {
-                bitmap2 = bitmap;
-            }
-            try {
-                if (drawable == null) {
-                    FileOutputStream fileOutputStream = new FileOutputStream(e10);
-                    bitmap2.compress(Bitmap.CompressFormat.PNG, 87, fileOutputStream);
-                    fileOutputStream.close();
-                    return bitmap2;
-                }
-                Bitmap createBitmap = Bitmap.createBitmap(bitmap2.getWidth(), bitmap2.getHeight(), Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(createBitmap);
-                drawable.setBounds(0, 0, bitmap2.getWidth(), bitmap2.getHeight());
-                drawable.draw(canvas);
-                Paint paint = new Paint(2);
-                paint.setColorFilter(new PorterDuffColorFilter(V0, PorterDuff.Mode.SRC_IN));
-                paint.setAlpha((int) (Math.abs(j6Var.p) * 255.0f));
-                canvas.drawBitmap(bitmap2, 0.0f, 0.0f, paint);
-                createBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(e10));
-                return bitmap2;
-            } catch (Throwable th2) {
-                th = th2;
-                a8.g(th, true);
-                return bitmap2;
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            bitmap2 = bitmap;
         }
+        int i22 = this.e;
+        if ((i22 == 0 && this.c == 0) || this.f == 0) {
+            i10 = 1;
+            c10 = 2;
+            f10 = 0.705f;
+            i7 = 0;
+        } else {
+            if (i22 == 0) {
+                i22 = this.c;
+            }
+            int i23 = j6.rb;
+            int i24 = sparseIntArray.get(i23);
+            if (i24 == 0) {
+                i24 = j6.hm[i23];
+            }
+            int F0 = org.telegram.messenger.g0.F0(i22, j6.E(P0, P02, i24, q10, i24));
+            int i25 = 1;
+            int F02 = org.telegram.messenger.g0.F0(i22, this.f);
+            char c11 = 2;
+            if (this.g != 0) {
+                f10 = 0.705f;
+                int w02 = org.telegram.messenger.g0.w0(org.telegram.messenger.g0.w0(this.e, this.f), this.g);
+                int i26 = this.h;
+                if (i26 != 0) {
+                    w02 = org.telegram.messenger.g0.w0(w02, i26);
+                }
+                a10 = org.telegram.messenger.g0.B(w02) > 0.705f;
+            } else {
+                f10 = 0.705f;
+                a10 = j6.a(this.e, this.f);
+            }
+            i7 = (!a10 || F0 > 35000 || F02 > 35000) ? 0 : 1;
+            float[] P03 = j6.P0(3);
+            float[] P04 = j6.P0(4);
+            Color.colorToHSV(i24, P03);
+            Color.colorToHSV(i22, P04);
+            float min = Math.min((P03[1] * 1.5f) / P0[1], 1.0f);
+            P03[0] = (P04[0] - P03[0]) + P0[0];
+            P03[1] = (P04[1] * P0[1]) / P03[1];
+            float f11 = ((((P04[2] / P03[2]) + min) - 1.0f) * P0[2]) / min;
+            P03[2] = f11;
+            i10 = i25;
+            c10 = c11;
+            if (f11 >= 0.3f) {
+                i22 = Color.HSVToColor(ns.e4, P03);
+                i10 = i25;
+                c10 = c11;
+            }
+        }
+        int i27 = (i22 == 0 || (((i17 = this.b.Y) == 0 || i22 == i17) && ((i18 = this.c) == 0 || i18 == i22))) ? 0 : i10;
+        if (i27 == 0 && this.d == 0) {
+            i11 = 0;
+        } else {
+            int i28 = this.d;
+            if (i28 != 0) {
+                Color.colorToHSV(i28, P02);
+            } else {
+                Color.colorToHSV(i22, P02);
+            }
+            for (int i29 = j6.yb; i29 < j6.Kc; i29++) {
+                int indexOfKey2 = sparseIntArray.indexOfKey(i29);
+                if (indexOfKey2 < 0) {
+                    int i30 = j6.im.get(i29, -1);
+                    if (i30 < 0 || sparseIntArray.get(i30, -1) < 0) {
+                        valueAt3 = j6.hm[i29];
+                    }
+                } else {
+                    valueAt3 = sparseIntArray.valueAt(indexOfKey2);
+                }
+                int E2 = j6.E(P0, P02, valueAt3, q10, valueAt3);
+                if (E2 != valueAt3) {
+                    sparseIntArray2.put(i29, E2);
+                }
+            }
+            int[] iArr2 = j6.yl;
+            int length = iArr2.length;
+            int i31 = 0;
+            while (i31 < length) {
+                int i32 = i19;
+                int i33 = iArr2[i31];
+                int indexOfKey3 = sparseIntArray.indexOfKey(i33);
+                int valueAt4 = indexOfKey3 < 0 ? j6.hm[i33] : sparseIntArray.valueAt(indexOfKey3);
+                int E3 = j6.E(P0, P02, valueAt4, q10, valueAt4);
+                if (E3 != valueAt4) {
+                    sparseIntArray2.put(i33, E3);
+                }
+                i31++;
+                i19 = i32;
+            }
+            i11 = i19;
+            if (i27 != 0) {
+                Color.colorToHSV(i22, P02);
+                for (int i34 = j6.qb; i34 < j6.xb; i34++) {
+                    int indexOfKey4 = sparseIntArray.indexOfKey(i34);
+                    if (indexOfKey4 < 0) {
+                        int i35 = j6.im.get(i34, -1);
+                        if (i35 < 0 || sparseIntArray.get(i35, -1) < 0) {
+                            valueAt2 = j6.hm[i34];
+                        }
+                    } else {
+                        valueAt2 = sparseIntArray.valueAt(indexOfKey4);
+                    }
+                    int E4 = j6.E(P0, P02, valueAt2, q10, valueAt2);
+                    if (E4 != valueAt2) {
+                        sparseIntArray2.put(i34, E4);
+                    }
+                }
+            }
+        }
+        if (i7 == 0 && (i12 = this.f) != 0) {
+            if (this.g != 0) {
+                int w03 = org.telegram.messenger.g0.w0(org.telegram.messenger.g0.w0(this.e, i12), this.g);
+                int i36 = this.h;
+                if (i36 != 0) {
+                    w03 = org.telegram.messenger.g0.w0(w03, i36);
+                }
+                i13 = org.telegram.messenger.g0.B(w03) > f10 ? i10 : i11;
+            } else {
+                i13 = j6.a(this.e, i12);
+            }
+            if (i13 != 0) {
+                i16 = -14606047;
+                i14 = -11184811;
+                i15 = 1291845632;
+            } else {
+                i14 = -1118482;
+                i15 = 1308622847;
+                i16 = -1;
+            }
+            if (this.d == 0) {
+                sparseIntArray2.put(j6.hc, i15);
+                sparseIntArray2.put(j6.ic, i15);
+                sparseIntArray2.put(j6.nc, i15);
+                sparseIntArray2.put(j6.oc, i15);
+                sparseIntArray2.put(j6.pc, i15);
+                sparseIntArray2.put(j6.qc, i16);
+                sparseIntArray2.put(j6.rc, i15);
+                sparseIntArray2.put(j6.sc, i15);
+                sparseIntArray2.put(j6.tc, i16);
+                sparseIntArray2.put(j6.Yc, i16);
+                sparseIntArray2.put(j6.Pb, i16);
+                sparseIntArray2.put(j6.Qb, i16);
+                sparseIntArray2.put(j6.Rb, i16);
+                sparseIntArray2.put(j6.Sb, i16);
+                sparseIntArray2.put(j6.Tb, i16);
+                sparseIntArray2.put(j6.Xb, i16);
+                sparseIntArray2.put(j6.Yb, i16);
+                sparseIntArray2.put(j6.Mb, i16);
+                sparseIntArray2.put(j6.Nb, i16);
+                sparseIntArray2.put(j6.Ob, i16);
+                sparseIntArray2.put(j6.Ib, i16);
+                sparseIntArray2.put(j6.Jb, i16);
+                sparseIntArray2.put(j6.kc, i16);
+                sparseIntArray2.put(j6.wc, i16);
+                sparseIntArray2.put(j6.Zb, i16);
+                sparseIntArray2.put(j6.cc, i16);
+                sparseIntArray2.put(j6.dc, i16);
+                sparseIntArray2.put(j6.Ab, i16);
+                sparseIntArray2.put(j6.Bb, i16);
+                sparseIntArray2.put(j6.Cb, i16);
+                sparseIntArray2.put(j6.Db, i16);
+                sparseIntArray2.put(j6.Eb, i16);
+                sparseIntArray2.put(j6.Fb, i16);
+                sparseIntArray2.put(j6.Kb, i16);
+                sparseIntArray2.put(j6.Lb, i16);
+                sparseIntArray2.put(j6.jc, i16);
+                sparseIntArray2.put(j6.ec, i16);
+                sparseIntArray2.put(j6.lc, i14);
+                sparseIntArray2.put(j6.mc, i14);
+                sparseIntArray2.put(j6.ac, i14);
+                sparseIntArray2.put(j6.bc, i14);
+                sparseIntArray2.put(j6.xc, i14);
+                sparseIntArray2.put(j6.yc, i14);
+                sparseIntArray2.put(j6.Bc, i14);
+                sparseIntArray2.put(j6.Cc, i14);
+                sparseIntArray2.put(j6.Ec, i16);
+                sparseIntArray2.put(j6.Fc, i16);
+                sparseIntArray2.put(j6.uc, this.e);
+                sparseIntArray2.put(j6.vc, this.e);
+                sparseIntArray2.put(j6.Gb, this.e);
+                sparseIntArray2.put(j6.Hb, this.e);
+            }
+            sparseIntArray2.put(j6.Ub, i16);
+            sparseIntArray2.put(j6.Vb, i16);
+            sparseIntArray2.put(j6.Wb, i16);
+            sparseIntArray2.put(j6.Wc, i16);
+        }
+        if (i7 != 0) {
+            int i37 = j6.Ec;
+            if (org.telegram.messenger.g0.F0(-1, sparseIntArray2.indexOfKey(i37) >= 0 ? sparseIntArray2.get(i37) : i11) < 5000) {
+                i7 = i11;
+            }
+        }
+        int i38 = this.e;
+        if (i38 != 0 && this.f != 0) {
+            sparseIntArray2.put(j6.rb, i38);
+            sparseIntArray2.put(j6.ub, this.f);
+            int i39 = this.g;
+            if (i39 != 0) {
+                sparseIntArray2.put(j6.vb, i39);
+                int i40 = this.h;
+                if (i40 != 0) {
+                    sparseIntArray2.put(j6.wb, i40);
+                }
+            }
+            sparseIntArray2.put(j6.Rc, this.i ? 1 : 0);
+        }
+        long j3 = this.j;
+        int i41 = (int) j3;
+        if (i41 != 0) {
+            sparseIntArray2.put(j6.Ee, i41);
+        } else if (j3 != 0) {
+            sparseIntArray2.delete(j6.Ee);
+        }
+        long j10 = this.k;
+        int i42 = (int) j10;
+        if (i42 != 0) {
+            sparseIntArray2.put(j6.Fe, i42);
+        } else if (j10 != 0) {
+            sparseIntArray2.delete(j6.Fe);
+        }
+        long j11 = this.l;
+        int i43 = (int) j11;
+        if (i43 != 0) {
+            sparseIntArray2.put(j6.Ge, i43);
+        } else if (j11 != 0) {
+            sparseIntArray2.delete(j6.Ge);
+        }
+        long j12 = this.m;
+        int i44 = (int) j12;
+        if (i44 != 0) {
+            sparseIntArray2.put(j6.He, i44);
+        } else if (j12 != 0) {
+            sparseIntArray2.delete(j6.He);
+        }
+        int i45 = this.n;
+        if (i45 != 45) {
+            sparseIntArray2.put(j6.Ie, i45);
+        }
+        int i46 = j6.rb;
+        int i47 = sparseIntArray2.get(i46);
+        if (i47 == 0) {
+            i47 = j6.y0(sparseIntArray2, i46, null);
+        }
+        int i48 = j6.ra;
+        int i49 = sparseIntArray2.get(i48);
+        if (i49 == 0) {
+            i49 = j6.y0(sparseIntArray2, i48, null);
+        }
+        if (this.c != this.b.Y || this.e != 0 || ((tL_theme = this.r) != null && tL_theme.emoticon != null)) {
+            int c12 = c(sparseIntArray2, j6.Rb);
+            sparseIntArray2.put(j6.La, (-16777216) | i47);
+            sparseIntArray2.put(j6.Ma, c(sparseIntArray2, j6.jc));
+            sparseIntArray2.put(j6.Na, c(sparseIntArray2, j6.Cb));
+            sparseIntArray2.put(j6.Pa, c12);
+            sparseIntArray2.put(j6.Qa, c(sparseIntArray2, j6.Tb));
+            sparseIntArray2.put(j6.Oa, j6.r1(0.1f, c12));
+            sparseIntArray2.put(j6.bb, c(sparseIntArray2, j6.wc));
+            sparseIntArray2.put(j6.cb, c(sparseIntArray2, j6.Ec));
+            sparseIntArray2.put(j6.db, c(sparseIntArray2, j6.Gb));
+            sparseIntArray2.put(j6.eb, c(sparseIntArray2, j6.xc));
+            sparseIntArray2.put(j6.fb, c(sparseIntArray2, j6.zc));
+            sparseIntArray2.put(j6.gb, c(sparseIntArray2, j6.ll));
+            sparseIntArray2.put(j6.Ya, c(sparseIntArray2, j6.Jc));
+        }
+        TLRPC.TL_theme tL_theme2 = this.r;
+        if (tL_theme2 != null && tL_theme2.emoticon != null && !q10) {
+            sparseIntArray2.delete(j6.yd);
+            int a11 = a(sparseIntArray2, j6.Fe, j6.Ge, j6.He);
+            if (a11 == 0) {
+                a11 = a(sparseIntArray2, j6.Ee);
+            }
+            if (a11 == 0) {
+                a11 = this.c;
+            }
+            int b10 = b(i47, a11);
+            sparseIntArray2.put(j6.Pc, b10);
+            sparseIntArray2.put(j6.Sc, b10);
+            sparseIntArray2.put(j6.sb, j6.w(i47, b10));
+            int b11 = b(i49, this.c);
+            sparseIntArray2.put(j6.sa, b11);
+            sparseIntArray2.put(j6.Uc, j6.w(i49, b11));
+        }
+        float[] fArr = this.A;
+        if (!q10) {
+            sparseIntArray2.put(j6.lg, i(i49, this.c));
+            sparseIntArray2.put(j6.Mc, i(i47, this.c));
+            int i50 = j6.Nc;
+            Color.colorToHSV(this.c, fArr);
+            float f12 = fArr[i11];
+            Color.colorToHSV(i47, fArr);
+            float f13 = fArr[i10];
+            if (f13 > 0.0f) {
+                float f14 = fArr[i11];
+                if (f14 > 45.0f) {
+                }
+                fArr[i10] = i20.z(f13, 0.6f, 1.0f, 0.0f);
+                float f15 = fArr[c10];
+                fArr[c10] = Math.max(0.0f, Math.min(1.0f, f15 - (f15 <= 0.7f ? 0.25f : 0.125f)));
+                sparseIntArray2.put(i50, j6.w(i47, Color.HSVToColor(ns.e4, fArr)));
+            }
+            fArr[i11] = f12;
+            fArr[i10] = i20.z(f13, 0.6f, 1.0f, 0.0f);
+            float f152 = fArr[c10];
+            fArr[c10] = Math.max(0.0f, Math.min(1.0f, f152 - (f152 <= 0.7f ? 0.25f : 0.125f)));
+            sparseIntArray2.put(i50, j6.w(i47, Color.HSVToColor(ns.e4, fArr)));
+        }
+        Color.colorToHSV(j6.y0(sparseIntArray2, j6.n6, null), fArr);
+        float f16 = fArr[i11];
+        sparseIntArray2.put(j6.Oc, g(i47, f16, q10));
+        sparseIntArray2.put(j6.ng, g(i49, f16, q10));
+        int i51 = j6.Xc;
+        int i52 = sparseIntArray2.get(i51);
+        if (i52 == 0) {
+            i52 = j6.y0(sparseIntArray2, i51, null);
+        }
+        int i53 = j6.Yc;
+        int i54 = sparseIntArray2.get(i53);
+        if (i54 == 0) {
+            i54 = j6.y0(sparseIntArray2, i53, null);
+        }
+        sparseIntArray2.put(j6.Ce, f(i52, i49, q10));
+        sparseIntArray2.put(j6.Dc, f(i54, i47, q10));
+        int i55 = j6.G8;
+        int i56 = sparseIntArray2.get(i55);
+        if (i56 == 0) {
+            i56 = j6.y0(sparseIntArray2, i55, null);
+        }
+        int i57 = i11;
+        sparseIntArray2.put(j6.H8, Color.argb(Color.alpha(i56), Math.max(i57, Color.red(i56) - 10), Math.max(i57, Color.green(i56) - 10), Math.max(i57, Color.blue(i56) - 10)));
+        int i58 = 64;
+        if (q10) {
+            int i59 = j6.ub;
+            if (sparseIntArray2.get(i59) != 0) {
+                Color.colorToHSV(a(sparseIntArray2, i59, j6.vb, j6.wb), fArr);
+                fArr[i10] = Utilities.i(fArr[i10] + 0.1f, 1.0f, 0.0f);
+                fArr[c10] = Utilities.i(fArr[c10] - 0.8f, 1.0f, 0.0f);
+                sparseIntArray2.put(j6.hl, Color.HSVToColor(64, fArr));
+                j6.g(sparseIntArray, sparseIntArray2, q10);
+                j6.f(sparseIntArray, sparseIntArray2, q10);
+                return i7 ^ 1;
+            }
+        }
+        int i60 = j6.hl;
+        Color.colorToHSV(i47, fArr);
+        if (q10) {
+            fArr[i10] = Utilities.i(fArr[i10] - 0.08f, 1.0f, 0.0f);
+            fArr[c10] = 0.03f;
+        } else {
+            float f17 = fArr[i10];
+            if (f17 > 0.0f) {
+                float f18 = fArr[c10];
+                if (f18 < 1.0f && f18 > 0.0f) {
+                    fArr[i10] = i20.z(f17, 0.28f, 1.0f, 0.0f);
+                    fArr[c10] = i20.z(fArr[c10], -0.1f, 1.0f, 0.0f);
+                    i58 = 32;
+                }
+            }
+            fArr[c10] = i20.z(fArr[c10], -0.2f, 1.0f, 0.0f);
+            i58 = 32;
+        }
+        sparseIntArray2.put(i60, Color.HSVToColor(i58, fArr));
+        j6.g(sparseIntArray, sparseIntArray2, q10);
+        j6.f(sparseIntArray, sparseIntArray2, q10);
+        return i7 ^ 1;
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        HashMap hashMap = this.b;
-        if (hashMap == null) {
-            return;
-        }
-        boolean z9 = false;
-        if (i7 == qs.Y1) {
-            f6 f6Var = (f6) hashMap.remove((String) objArr[0]);
-            if (f6Var != null) {
-                Utilities.e.c(new c(4, this, f6Var));
-                return;
+    public final File e() {
+        if (this.a < 100) {
+            if (TextUtils.isEmpty(this.o)) {
+                return null;
             }
-            return;
+            File h = org.telegram.messenger.t0.h();
+            Locale locale = Locale.US;
+            return new File(h, this.b.m() + "_" + this.a + "_" + this.o + "_v5.jpg");
         }
-        if (i7 != qs.Z1 || hashMap.remove((String) objArr[0]) == null) {
-            return;
+        if (TextUtils.isEmpty(this.o)) {
+            return null;
         }
-        org.telegram.messenger.g0.h3(new u7(this, (Object) null, z9, 13));
+        File h7 = org.telegram.messenger.t0.h();
+        Locale locale2 = Locale.US;
+        return new File(h7, this.b.m() + "_" + this.a + "_" + this.o + "_v8_debug.jpg");
+    }
+
+    public final int f(int i7, int i10, boolean z10) {
+        int f10 = i0.a.f(0.25f, i7, i10);
+        float[] fArr = this.A;
+        Color.colorToHSV(f10, fArr);
+        fArr[1] = Math.max(0.0f, Math.min(1.0f, fArr[1] - 0.1f));
+        fArr[2] = i20.z(fArr[2], z10 ? 0.1f : 0.0f, 1.0f, 0.0f);
+        return Color.HSVToColor(51, fArr);
+    }
+
+    public final int g(int i7, float f10, boolean z10) {
+        if (z10) {
+            return 520093695;
+        }
+        float[] fArr = this.A;
+        Color.colorToHSV(i7, fArr);
+        if (fArr[1] > 0.0f) {
+            float f11 = fArr[2];
+            if (f11 < 1.0f && f11 > 0.0f) {
+                fArr[0] = i9.a(fArr[0] + 0.22f, 0.0f, 1.0f);
+                fArr[1] = i9.a(fArr[1] - 0.35f, 0.0f, 1.0f);
+                fArr[2] = i9.a(fArr[2] - 0.65f, 0.0f, 1.0f);
+                return Color.HSVToColor(90, fArr);
+            }
+        }
+        fArr[0] = f10;
+        fArr[1] = 0.2f;
+        fArr[2] = i9.a(fArr[2] - 0.65f, 0.0f, 1.0f);
+        return Color.HSVToColor(90, fArr);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x001f, code lost:
+    
+        if (r4 < 85.0f) goto L8;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0030  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x002d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int i(int i7, int i10) {
+        float[] fArr = this.A;
+        Color.colorToHSV(i10, fArr);
+        float f10 = fArr[0];
+        Color.colorToHSV(i7, fArr);
+        float f11 = fArr[1];
+        if (f11 > 0.0f) {
+            float f12 = fArr[0];
+            if (f12 > 45.0f) {
+            }
+            fArr[1] = i20.z(f11, fArr[2] <= 0.85f ? 0.25f : 0.45f, 1.0f, 0.0f);
+            fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.15f));
+            return Color.HSVToColor(80, fArr);
+        }
+        fArr[0] = f10;
+        fArr[1] = i20.z(f11, fArr[2] <= 0.85f ? 0.25f : 0.45f, 1.0f, 0.0f);
+        fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.15f));
+        return Color.HSVToColor(80, fArr);
     }
 }

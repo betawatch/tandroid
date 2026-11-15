@@ -1,13 +1,13 @@
 package g6;
 
 import a8.r7;
-import a8.wa;
+import a8.xa;
 import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.internal.cast.l4;
 import com.google.android.gms.internal.cast.s6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i {
     public final /* synthetic */ c a;
@@ -37,7 +37,7 @@ public final class i {
         }
         l4 l4Var = cVar.l;
         if (l4Var != null) {
-            r7.K(l4Var.a, new s6(new wa(3, 4)));
+            r7.O(l4Var.a, new s6(new xa(3, 4)));
         }
     }
 }

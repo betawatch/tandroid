@@ -1,45 +1,585 @@
 package org.telegram.messenger;
 
+import android.os.Bundle;
+import j$.util.Objects;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class tv implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vv b;
+public final class tv {
+    public final int a;
+    public boolean b;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public int g;
+    public int h;
+    public boolean k;
+    public boolean l;
+    public boolean m;
+    public boolean o;
+    public final ArrayList c = new ArrayList();
+    public final ArrayList i = new ArrayList();
+    public final ArrayList j = new ArrayList();
+    public final rv n = new rv(this, 4);
+    public final a0.h p = new a0.h();
 
-    public /* synthetic */ tv(vv vvVar, int i7) {
+    public tv(int i7) {
         this.a = i7;
-        this.b = vvVar;
+        this.b = np.s1(i7).f7.getBoolean("savedMessagesUnsupported", true);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.g(false);
+    public static ArrayList d(ArrayList arrayList) {
+        ArrayList arrayList2 = new ArrayList();
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            sv svVar = (sv) arrayList.get(i7);
+            if (svVar.b) {
+                arrayList2.add(Long.valueOf(svVar.a));
+            }
+        }
+        return arrayList2;
+    }
+
+    public static void h() {
+        org.telegram.ui.ActionBar.e2 Q = LaunchActivity.Q();
+        if (Q == null) {
+            return;
+        }
+        Bundle bundle = new Bundle();
+        bundle.putLong("user_id", m10.i(Q.getCurrentAccount()).e());
+        Q.presentFragment(new org.telegram.ui.an(bundle));
+    }
+
+    public static boolean k(ArrayList arrayList, ArrayList arrayList2) {
+        if (arrayList.size() == arrayList2.size()) {
+            for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                if (Objects.equals(arrayList.get(i7), arrayList2.get(i7))) {
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean o(ArrayList arrayList, ArrayList arrayList2) {
+        if (k(arrayList2, d(arrayList))) {
+            return false;
+        }
+        ArrayList arrayList3 = new ArrayList();
+        int i7 = 0;
+        while (i7 < arrayList.size()) {
+            sv svVar = (sv) arrayList.get(i7);
+            if (svVar.b) {
+                svVar.b = false;
+                arrayList3.add(svVar);
+                arrayList.remove(i7);
+                i7--;
+            }
+            i7++;
+        }
+        arrayList.addAll(arrayList3);
+        ArrayList arrayList4 = new ArrayList();
+        int i10 = 0;
+        while (i10 < arrayList.size()) {
+            sv svVar2 = (sv) arrayList.get(i10);
+            int indexOf = arrayList2.indexOf(Long.valueOf(svVar2.a));
+            if (indexOf >= 0) {
+                svVar2.k = indexOf;
+                svVar2.b = true;
+                arrayList4.add(svVar2);
+                arrayList.remove(i10);
+                i10--;
+            }
+            i10++;
+        }
+        Collections.sort(arrayList, new gl(14));
+        Collections.sort(arrayList4, new gl(15));
+        arrayList.addAll(0, arrayList4);
+        return true;
+    }
+
+    public final void a() {
+        this.c.clear();
+        this.i.clear();
+        this.e = false;
+        this.g = 0;
+        this.h = 0;
+        this.f = false;
+        this.l = true;
+        boolean z10 = this.o;
+        int i7 = this.a;
+        if (!z10) {
+            this.o = true;
+            vr a02 = vr.a0(i7);
+            a02.a.c(new wq(this, a02));
+        }
+        this.b = true;
+        np.s1(i7).f7.edit().remove("savedMessagesUnsupported").apply();
+    }
+
+    public final void b() {
+        this.g = 0;
+        this.j.clear();
+        this.i.clear();
+        this.c.clear();
+        l();
+    }
+
+    public final int c() {
+        return this.f ? this.j.size() : this.e ? this.g - this.h : this.c.size();
+    }
+
+    public final boolean e() {
+        if (c() <= 0) {
+            return false;
+        }
+        long e10 = m10.i(this.a).e();
+        ArrayList arrayList = this.j;
+        return (arrayList.size() == 1 && ((sv) arrayList.get(0)).a == e10) ? false : true;
+    }
+
+    public final void f(long j3, z10 z10Var) {
+        sv svVar;
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList = this.j;
+            if (i7 >= arrayList.size()) {
+                svVar = null;
                 break;
-            case 1:
-                this.b.o = false;
+            }
+            svVar = (sv) arrayList.get(i7);
+            if (svVar.a == j3) {
                 break;
-            case 2:
-                vv vvVar = this.b;
-                vvVar.o = false;
-                vvVar.l = false;
+            } else {
+                i7++;
+            }
+        }
+        if (svVar != null && svVar.e > 0 && svVar.i) {
+            if (z10Var != null) {
+                z10Var.a(Boolean.TRUE);
+                return;
+            }
+            return;
+        }
+        a0.h hVar = this.p;
+        ArrayList arrayList2 = (ArrayList) hVar.f(j3);
+        if (arrayList2 != null) {
+            if (z10Var != null) {
+                arrayList2.add(z10Var);
+                return;
+            }
+            return;
+        }
+        ArrayList arrayList3 = new ArrayList();
+        if (z10Var != null) {
+            arrayList3.add(z10Var);
+        }
+        hVar.k(arrayList3, j3);
+        TLRPC.TL_messages_getSavedHistory tL_messages_getSavedHistory = new TLRPC.TL_messages_getSavedHistory();
+        int i10 = this.a;
+        tL_messages_getSavedHistory.peer = np.s1(i10).j1(j3);
+        tL_messages_getSavedHistory.limit = 1;
+        tL_messages_getSavedHistory.hash = 0L;
+        tL_messages_getSavedHistory.offset_id = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        tL_messages_getSavedHistory.offset_date = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        tL_messages_getSavedHistory.add_offset = -1;
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getSavedHistory, new v4(this, j3, 2));
+    }
+
+    public final void g(boolean z10) {
+        boolean z11;
+        this.m = z10;
+        if (!this.d && !this.f && !(z11 = this.k)) {
+            boolean z12 = this.l;
+            int i7 = this.a;
+            if (z12) {
+                if (z10) {
+                    return;
+                }
+                this.d = true;
+                TLRPC.TL_messages_getSavedDialogs tL_messages_getSavedDialogs = new TLRPC.TL_messages_getSavedDialogs();
+                ArrayList arrayList = this.i;
+                sv svVar = arrayList.isEmpty() ? null : (sv) i5.c.h(1, arrayList);
+                if (svVar != null) {
+                    tL_messages_getSavedDialogs.offset_id = svVar.c;
+                    tL_messages_getSavedDialogs.offset_date = svVar.c();
+                    tL_messages_getSavedDialogs.offset_peer = np.s1(i7).j1(svVar.a);
+                } else {
+                    tL_messages_getSavedDialogs.offset_id = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    tL_messages_getSavedDialogs.offset_date = 0;
+                    tL_messages_getSavedDialogs.offset_peer = new TLRPC.TL_inputPeerEmpty();
+                }
+                tL_messages_getSavedDialogs.limit = 20;
+                ArrayList arrayList2 = new ArrayList();
+                int size = arrayList.size();
+                ArrayList arrayList3 = this.j;
+                arrayList2.addAll(arrayList3.subList(Math.min(size, arrayList3.size()), Math.min(arrayList.size() + tL_messages_getSavedDialogs.limit, arrayList3.size())));
+                for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                    sv svVar2 = (sv) arrayList2.get(i10);
+                    long p10 = si.p(tL_messages_getSavedDialogs.hash, svVar2.b ? 1L : 0L);
+                    tL_messages_getSavedDialogs.hash = p10;
+                    long p11 = si.p(p10, Math.abs(svVar2.a));
+                    tL_messages_getSavedDialogs.hash = p11;
+                    long p12 = si.p(p11, svVar2.c);
+                    tL_messages_getSavedDialogs.hash = p12;
+                    tL_messages_getSavedDialogs.hash = si.p(p12, svVar2.c());
+                }
+                ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getSavedDialogs, new r4(8, this, arrayList2));
+                return;
+            }
+            rv rvVar = new rv(this, 0);
+            if (!z11) {
+                this.k = true;
+                long e10 = m10.i(i7).e();
+                vr a02 = vr.a0(i7);
+                a02.a.c(new gm(this, a02, e10, rvVar, 18));
+            }
+        }
+    }
+
+    public final void i(TLRPC.Update update) {
+        boolean z10 = false;
+        if (update instanceof TL_update.TL_updateSavedDialogPinned) {
+            TL_update.TL_updateSavedDialogPinned tL_updateSavedDialogPinned = (TL_update.TL_updateSavedDialogPinned) update;
+            TLRPC.DialogPeer dialogPeer = tL_updateSavedDialogPinned.peer;
+            if (dialogPeer instanceof TLRPC.TL_dialogPeer) {
+                long o4 = m5.o(((TLRPC.TL_dialogPeer) dialogPeer).peer);
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(Long.valueOf(o4));
+                z10 = n(arrayList, tL_updateSavedDialogPinned.pinned, false);
+            }
+        } else if (update instanceof TL_update.TL_updatePinnedSavedDialogs) {
+            TL_update.TL_updatePinnedSavedDialogs tL_updatePinnedSavedDialogs = (TL_update.TL_updatePinnedSavedDialogs) update;
+            ArrayList arrayList2 = new ArrayList(tL_updatePinnedSavedDialogs.order.size());
+            for (int i7 = 0; i7 < tL_updatePinnedSavedDialogs.order.size(); i7++) {
+                TLRPC.DialogPeer dialogPeer2 = tL_updatePinnedSavedDialogs.order.get(i7);
+                if (dialogPeer2 instanceof TLRPC.TL_dialogPeer) {
+                    arrayList2.add(Long.valueOf(m5.o(((TLRPC.TL_dialogPeer) dialogPeer2).peer)));
+                }
+            }
+            boolean o10 = o(this.i, arrayList2);
+            boolean o11 = o(this.c, arrayList2);
+            if (o10 || o11) {
+                z10 = true;
+            }
+        }
+        if (z10) {
+            l();
+        }
+    }
+
+    public final int j(long j3) {
+        int i7 = 0;
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = this.j;
+            if (i10 >= arrayList.size()) {
                 break;
-            case 3:
-                this.b.l();
+            }
+            if (((sv) arrayList.get(i10)).a == j3) {
+                arrayList.remove(i10);
+                i11++;
+                i10--;
+            }
+            i10++;
+        }
+        int i12 = 0;
+        int i13 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.i;
+            if (i12 >= arrayList2.size()) {
                 break;
-            default:
-                vv vvVar2 = this.b;
-                if (!vvVar2.o) {
-                    vvVar2.o = true;
-                    ArrayList arrayList = new ArrayList(vvVar2.j);
-                    yr a02 = yr.a0(vvVar2.a);
-                    a02.a.c(new lg(vvVar2, a02, arrayList, 24));
+            }
+            if (((sv) arrayList2.get(i12)).a == j3) {
+                arrayList2.remove(i12);
+                i13++;
+                i12--;
+            }
+            i12++;
+        }
+        while (true) {
+            ArrayList arrayList3 = this.c;
+            if (i7 >= arrayList3.size()) {
+                return Math.max(i11, i13);
+            }
+            if (((sv) arrayList3.get(i7)).a == j3) {
+                arrayList3.remove(i7);
+                i7--;
+            }
+            i7++;
+        }
+    }
+
+    public final void l() {
+        m();
+        rv rvVar = this.n;
+        g0.r(rvVar);
+        g0.i3(rvVar, 450L);
+    }
+
+    public final void m() {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        ArrayList arrayList3 = this.j;
+        arrayList3.clear();
+        HashSet hashSet = new HashSet();
+        int i7 = 0;
+        while (true) {
+            arrayList = this.c;
+            if (i7 >= arrayList.size()) {
+                break;
+            }
+            sv svVar = (sv) arrayList.get(i7);
+            if (svVar.b && !hashSet.contains(Long.valueOf(svVar.a)) && !svVar.d()) {
+                arrayList3.add(svVar);
+                hashSet.add(Long.valueOf(svVar.a));
+            }
+            i7++;
+        }
+        int i10 = 0;
+        while (true) {
+            arrayList2 = this.i;
+            if (i10 >= arrayList2.size()) {
+                break;
+            }
+            sv svVar2 = (sv) arrayList2.get(i10);
+            if (svVar2.b && !hashSet.contains(Long.valueOf(svVar2.a)) && !svVar2.d()) {
+                arrayList3.add(svVar2);
+                hashSet.add(Long.valueOf(svVar2.a));
+            }
+            i10++;
+        }
+        ArrayList arrayList4 = new ArrayList();
+        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+            sv svVar3 = (sv) arrayList2.get(i11);
+            if (!hashSet.contains(Long.valueOf(svVar3.a)) && !svVar3.d()) {
+                arrayList4.add(svVar3);
+                hashSet.add(Long.valueOf(svVar3.a));
+            }
+        }
+        if (!this.f) {
+            for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                sv svVar4 = (sv) arrayList.get(i12);
+                if (!hashSet.contains(Long.valueOf(svVar4.a)) && !svVar4.d()) {
+                    arrayList4.add(svVar4);
+                    hashSet.add(Long.valueOf(svVar4.a));
+                }
+            }
+        }
+        Collections.sort(arrayList4, new gl(16));
+        arrayList3.addAll(arrayList4);
+        int i13 = this.a;
+        ns.f(i13).k(ns.g3, new Object[0]);
+        if (e() || !np.s1(i13).p6) {
+            return;
+        }
+        np.s1(i13).O4(false);
+    }
+
+    public final boolean n(ArrayList arrayList, boolean z10, boolean z11) {
+        ArrayList d = d(this.j);
+        ArrayList arrayList2 = new ArrayList(d);
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            Long l10 = (Long) arrayList.get(size);
+            l10.getClass();
+            if (z10 && !arrayList2.contains(l10)) {
+                arrayList2.add(0, l10);
+            } else if (!z10) {
+                arrayList2.remove(l10);
+            }
+        }
+        int i7 = this.a;
+        if (arrayList2.size() <= (m10.i(i7).q() ? np.s1(i7).o6 : np.s1(i7).n6) && !k(d, arrayList2)) {
+            if (z11) {
+                p(arrayList2);
+                return true;
+            }
+            boolean o4 = o(this.i, arrayList2);
+            boolean o10 = o(this.c, arrayList2);
+            if (o4 || o10) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void p(ArrayList arrayList) {
+        boolean o4 = o(this.i, arrayList);
+        boolean o10 = o(this.c, arrayList);
+        if (!o4 && !o10) {
+            return;
+        }
+        TLRPC.TL_messages_reorderPinnedSavedDialogs tL_messages_reorderPinnedSavedDialogs = new TLRPC.TL_messages_reorderPinnedSavedDialogs();
+        tL_messages_reorderPinnedSavedDialogs.force = true;
+        int i7 = 0;
+        while (true) {
+            int size = arrayList.size();
+            int i10 = this.a;
+            if (i7 >= size) {
+                ConnectionsManager.getInstance(i10).sendRequest(tL_messages_reorderPinnedSavedDialogs, null);
+                l();
+                return;
+            } else {
+                long longValue = ((Long) arrayList.get(i7)).longValue();
+                TLRPC.TL_inputDialogPeer tL_inputDialogPeer = new TLRPC.TL_inputDialogPeer();
+                tL_inputDialogPeer.peer = np.s1(i10).j1(longValue);
+                tL_messages_reorderPinnedSavedDialogs.order.add(tL_inputDialogPeer);
+                i7++;
+            }
+        }
+    }
+
+    public final boolean q(ArrayList arrayList) {
+        ArrayList arrayList2;
+        a0.h hVar;
+        boolean z10;
+        ArrayList arrayList3;
+        int i7;
+        boolean z11;
+        int i10 = 0;
+        if (arrayList == null) {
+            return false;
+        }
+        a0.h hVar2 = new a0.h();
+        a0.h hVar3 = new a0.h();
+        new HashSet();
+        int i11 = this.a;
+        long e10 = m10.i(i11).e();
+        for (int i12 = 0; i12 < arrayList.size(); i12++) {
+            TLRPC.Message message = (TLRPC.Message) arrayList.get(i12);
+            long Q1 = gj.Q1(e10, message);
+            if (Q1 == e10 || (message.id >= 0 && (message.send_state == 0 || message.fwd_from == null))) {
+                TLRPC.Message message2 = (TLRPC.Message) hVar2.f(Q1);
+                if (message2 == null || message2.id < message.id) {
+                    hVar2.k(message, Q1);
+                }
+                Integer num = (Integer) hVar3.f(Q1);
+                hVar3.k(Integer.valueOf((num == null ? 0 : num.intValue()) + 1), Q1);
+            }
+        }
+        int i13 = 0;
+        boolean z12 = false;
+        while (i13 < hVar2.m()) {
+            long j3 = hVar2.j(i13);
+            TLRPC.Message message3 = (TLRPC.Message) hVar2.n(i13);
+            Integer num2 = (Integer) hVar3.f(j3);
+            int i14 = i10;
+            while (true) {
+                arrayList2 = this.c;
+                if (i14 >= arrayList2.size()) {
+                    hVar = hVar2;
+                    z10 = false;
                     break;
                 }
-                break;
+                sv svVar = (sv) arrayList2.get(i14);
+                hVar = hVar2;
+                if (svVar.a == j3) {
+                    int i15 = svVar.c;
+                    int i16 = message3.id;
+                    if (i15 < i16 || (i16 < 0 && message3.date > svVar.c())) {
+                        if (svVar.c < message3.id) {
+                            int i17 = 0;
+                            for (int i18 = 0; i18 < arrayList.size(); i18++) {
+                                if (((TLRPC.Message) arrayList.get(i18)).id > svVar.c) {
+                                    i17++;
+                                }
+                            }
+                            svVar.e += i17;
+                        }
+                        gj gjVar = new gj(i11, message3, false, false);
+                        svVar.d = gjVar;
+                        svVar.c = gjVar.e1();
+                        z12 = true;
+                    }
+                    num2 = Integer.valueOf(num2 != null ? Math.max(num2.intValue(), svVar.e) : svVar.e);
+                    z10 = true;
+                } else {
+                    i14++;
+                    hVar2 = hVar;
+                }
+            }
+            if (!z10) {
+                sv a10 = sv.a(i11, message3);
+                if (num2 != null) {
+                    a10.e = num2.intValue();
+                }
+                arrayList2.add(a10);
+                z12 = true;
+            }
+            int i19 = 0;
+            while (true) {
+                arrayList3 = this.i;
+                if (i19 >= arrayList3.size()) {
+                    i7 = 0;
+                    z11 = false;
+                    break;
+                }
+                sv svVar2 = (sv) arrayList3.get(i19);
+                if (svVar2.a == j3) {
+                    int i20 = svVar2.c;
+                    int i21 = message3.id;
+                    if (i20 < i21 || (i21 < 0 && message3.date > svVar2.c())) {
+                        if (svVar2.c < message3.id) {
+                            int i22 = 0;
+                            for (int i23 = 0; i23 < arrayList.size(); i23++) {
+                                if (((TLRPC.Message) arrayList.get(i23)).id > svVar2.c) {
+                                    i22++;
+                                }
+                            }
+                            svVar2.e += i22;
+                        }
+                        i7 = 0;
+                        gj gjVar2 = new gj(i11, message3, false, false);
+                        svVar2.d = gjVar2;
+                        svVar2.c = gjVar2.e1();
+                        z12 = true;
+                    } else {
+                        i7 = 0;
+                    }
+                    num2 = Integer.valueOf(num2 != null ? Math.max(num2.intValue(), svVar2.e) : svVar2.e);
+                    z11 = true;
+                } else {
+                    i19++;
+                }
+            }
+            if (!z11) {
+                sv a11 = sv.a(i11, message3);
+                if (num2 != null) {
+                    a11.e = num2.intValue();
+                }
+                arrayList3.add(a11);
+                z12 = true;
+            }
+            i13++;
+            i10 = i7;
+            hVar2 = hVar;
         }
+        return z12;
+    }
+
+    public final boolean r(int i7, long j3, boolean z10) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.j;
+            if (i10 >= arrayList.size()) {
+                break;
+            }
+            sv svVar = (sv) arrayList.get(i10);
+            if (svVar.a != j3) {
+                i10++;
+            } else if (svVar.e != i7 || (!svVar.i && z10)) {
+                svVar.e = i7;
+                svVar.i = true;
+                return true;
+            }
+        }
+        return false;
     }
 }

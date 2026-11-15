@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class UnderOverAtom extends Atom {
     private final Atom base;
@@ -13,10 +13,10 @@ public class UnderOverAtom extends Atom {
     private final float underSpace;
     private final int underUnit;
 
-    public UnderOverAtom(Atom atom, Atom atom2, int i7, float f10, boolean z9, boolean z10) {
+    public UnderOverAtom(Atom atom, Atom atom2, int i7, float f10, boolean z10, boolean z11) {
         SpaceAtom.checkUnit(i7);
         this.base = atom;
-        if (z10) {
+        if (z11) {
             this.under = null;
             this.underSpace = 0.0f;
             this.underUnit = 0;
@@ -24,13 +24,13 @@ public class UnderOverAtom extends Atom {
             this.over = atom2;
             this.overUnit = i7;
             this.overSpace = f10;
-            this.overScriptSize = z9;
+            this.overScriptSize = z10;
             return;
         }
         this.under = atom2;
         this.underUnit = i7;
         this.underSpace = f10;
-        this.underScriptSize = z9;
+        this.underScriptSize = z10;
         this.overSpace = 0.0f;
         this.over = null;
         this.overUnit = 0;
@@ -88,17 +88,17 @@ public class UnderOverAtom extends Atom {
         return this.base.getRightType();
     }
 
-    public UnderOverAtom(Atom atom, Atom atom2, int i7, float f10, boolean z9, Atom atom3, int i10, float f11, boolean z10) {
+    public UnderOverAtom(Atom atom, Atom atom2, int i7, float f10, boolean z10, Atom atom3, int i10, float f11, boolean z11) {
         SpaceAtom.checkUnit(i7);
         SpaceAtom.checkUnit(i10);
         this.base = atom;
         this.under = atom2;
         this.underUnit = i7;
         this.underSpace = f10;
-        this.underScriptSize = z9;
+        this.underScriptSize = z10;
         this.over = atom3;
         this.overUnit = i10;
         this.overSpace = f11;
-        this.overScriptSize = z10;
+        this.overScriptSize = z11;
     }
 }

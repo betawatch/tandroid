@@ -1,23 +1,63 @@
 package org.telegram.ui;
 
-import android.widget.ImageView;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class mh0 extends org.telegram.ui.Cells.m8 {
-    public ImageView W;
+public final class mh0 extends rg.a {
+    public int c;
+    public int d;
+    public CharSequence e;
+    public CharSequence f;
+    public qh0 g;
+    public int h;
+    public boolean i;
 
-    @Override // org.telegram.ui.Cells.m8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        int L = org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(17.0f) : (i11 - i7) - org.telegram.messenger.g0.L(41.0f);
-        int y10 = org.telegram.messenger.camera.q.y(24.0f, i12 - i10, 2);
-        this.W.layout(L, y10, org.telegram.messenger.g0.L(24.0f) + L, org.telegram.messenger.g0.L(24.0f) + y10);
+    public static mh0 b(int i7, String str, boolean z10) {
+        mh0 mh0Var = new mh0(1, true);
+        mh0Var.c = i7;
+        mh0Var.e = str;
+        mh0Var.i = z10;
+        return mh0Var;
     }
 
-    @Override // org.telegram.ui.Cells.m8, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        this.W.measure(i7, i10);
+    public static mh0 c(int i7, String str, String str2) {
+        mh0 mh0Var = new mh0(5, true);
+        mh0Var.c = i7;
+        mh0Var.e = str;
+        mh0Var.f = str2;
+        return mh0Var;
+    }
+
+    public static mh0 d(int i7, String str) {
+        mh0 mh0Var = new mh0(4, true);
+        mh0Var.c = i7;
+        mh0Var.e = str;
+        return mh0Var;
+    }
+
+    @Override // rg.a
+    public final boolean a(rg.a aVar) {
+        if (this == aVar) {
+            return true;
+        }
+        if (mh0.class != aVar.getClass()) {
+            return false;
+        }
+        mh0 mh0Var = (mh0) aVar;
+        return this.c == mh0Var.c && this.d == mh0Var.d && this.h == mh0Var.h && this.i == mh0Var.i && Objects.equals(this.e, mh0Var.e) && Objects.equals(this.f, mh0Var.f) && this.g == mh0Var.g;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && mh0.class == obj.getClass()) {
+            mh0 mh0Var = (mh0) obj;
+            if (this.c == mh0Var.c && this.h == mh0Var.h && ((this.a == 8 || (this.d == mh0Var.d && Objects.equals(this.e, mh0Var.e) && (this.a == 6 || Objects.equals(this.f, mh0Var.f)))) && this.g == mh0Var.g)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

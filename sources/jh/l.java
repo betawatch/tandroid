@@ -7,73 +7,72 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import h6.m;
-import hi.x3;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Components.qa0;
-import org.telegram.ui.fn;
+import org.telegram.messenger.ns;
+import org.telegram.ui.Components.ra0;
+import org.telegram.ui.dn;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class l {
     public static final Rect f = new Rect();
-    public final ri.c a = new ri.c();
-    public final ri.b b = new ri.b();
-    public final m c = new m(new x3(10));
-    public final m d = new m(new x3(11));
-    public final m e = new m(new x3(12));
+    public final ui.c a = new ui.c();
+    public final ui.b b = new ui.b();
+    public final m c = new m(new i0.b(6));
+    public final m d = new m(new i0.b(7));
+    public final m e = new m(new i0.b(8));
 
-    public final int a(ri.a aVar) {
-        if (aVar instanceof ri.c) {
-            return ((ri.c) aVar).b;
+    public final int a(ui.a aVar) {
+        if (aVar instanceof ui.c) {
+            return ((ui.c) aVar).b;
         }
-        if (aVar instanceof ri.b) {
-            return ((Integer) this.d.n(((ri.b) aVar).d)).intValue();
+        if (aVar instanceof ui.b) {
+            return ((Integer) this.d.n(((ui.b) aVar).d)).intValue();
         }
-        if (aVar instanceof ri.g) {
-            return a(((ri.g) aVar).a);
+        if (aVar instanceof ui.g) {
+            return a(((ui.g) aVar).a);
         }
         return 0;
     }
 
-    public final int b(ri.a aVar) {
-        if (aVar instanceof ri.c) {
-            return ((ri.c) aVar).b;
+    public final int b(ui.a aVar) {
+        if (aVar instanceof ui.c) {
+            return ((ui.c) aVar).b;
         }
-        if (aVar instanceof ri.b) {
-            return ((Integer) this.e.n(((ri.b) aVar).d)).intValue();
+        if (aVar instanceof ui.b) {
+            return ((Integer) this.e.n(((ui.b) aVar).d)).intValue();
         }
-        if (aVar instanceof ri.g) {
-            return b(((ri.g) aVar).a);
+        if (aVar instanceof ui.g) {
+            return b(((ui.g) aVar).a);
         }
         return 0;
     }
 
-    public final ri.a c(Drawable drawable) {
-        boolean z9 = drawable instanceof ColorDrawable;
-        ri.c cVar = this.a;
-        if (z9) {
+    public final ui.a c(Drawable drawable) {
+        boolean z10 = drawable instanceof ColorDrawable;
+        ui.c cVar = this.a;
+        if (z10) {
             cVar.a(((ColorDrawable) drawable).getColor());
             return cVar;
         }
-        boolean z10 = drawable instanceof qa0;
-        ri.b bVar = this.b;
-        if (z10) {
-            qa0 qa0Var = (qa0) drawable;
-            if (qa0Var.q < 0) {
+        boolean z11 = drawable instanceof ra0;
+        ui.b bVar = this.b;
+        if (z11) {
+            ra0 ra0Var = (ra0) drawable;
+            if (ra0Var.q < 0) {
                 cVar.a(-16777216);
                 return cVar;
             }
-            bVar.a(qa0Var.k);
+            bVar.a(ra0Var.k);
             return bVar;
         }
-        boolean z11 = drawable instanceof BitmapDrawable;
+        boolean z12 = drawable instanceof BitmapDrawable;
         m mVar = this.c;
-        if (z11) {
+        if (z12) {
             bVar.a((Bitmap) mVar.n(((BitmapDrawable) drawable).getBitmap()));
             return bVar;
         }
-        if (drawable instanceof fn) {
-            return c(((fn) drawable).c(false));
+        if (drawable instanceof dn) {
+            return c(((dn) drawable).c(false));
         }
         if (drawable != null) {
             bVar.getClass();
@@ -88,11 +87,11 @@ public final class l {
                 bVar.f.eraseColor(0);
             }
             Canvas canvas = new Canvas(bVar.f);
-            canvas.scale(f10 / round, qs.q2 / round2);
+            canvas.scale(f10 / round, ns.q2 / round2);
             Rect bounds = drawable.getBounds();
             Rect rect = f;
             rect.set(bounds);
-            drawable.setBounds(0, 0, 120, qs.q2);
+            drawable.setBounds(0, 0, 120, ns.q2);
             drawable.draw(canvas);
             drawable.setBounds(rect);
             bVar.a(bVar.f);

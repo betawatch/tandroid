@@ -1,15 +1,15 @@
 package org.telegram.utils.recorder.audio;
 
 import a8.p0;
-import bi.w2;
+import ai.e0;
+import di.f2;
 import java.io.File;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.xk;
-import org.telegram.ui.ha0;
-import vi.g;
-import vi.h;
+import org.telegram.ui.d80;
+import yi.i;
+import yi.j;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -17,9 +17,9 @@ public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ b(long j3, g gVar, h hVar) {
-        this.c = hVar;
-        this.d = gVar;
+    public /* synthetic */ b(long j3, i iVar, j jVar) {
+        this.c = jVar;
+        this.d = iVar;
         this.b = j3;
     }
 
@@ -32,7 +32,7 @@ public final /* synthetic */ class b implements Runnable {
                 d dVar = (d) this.c;
                 Exception exc = (Exception) this.d;
                 ac.e eVar = dVar.g;
-                vi.b bVar = dVar.f;
+                yi.b bVar = dVar.f;
                 File file = dVar.a;
                 ByteBuffer byteBuffer = dVar.s;
                 if (dVar.w) {
@@ -101,25 +101,25 @@ public final /* synthetic */ class b implements Runnable {
                 t6.append(dVar.y);
                 bVar.b(t6.toString());
                 if (exc3 == null) {
-                    h hVar = (h) eVar.c;
-                    hVar.a((g) eVar.b, length);
-                    hVar.i.post(new xk(eVar, eVar.a, j3, 4));
+                    j jVar = (j) eVar.c;
+                    jVar.a((i) eVar.b, length);
+                    jVar.i.post(new e0(eVar, eVar.a, j3, 5));
                 } else {
-                    ((h) eVar.c).i.post(new ha0(eVar, eVar.a, exc3, 3));
+                    ((j) eVar.c).i.post(new d80(eVar, eVar.a, exc3, 4));
                 }
                 dVar.j.quitSafely();
                 dVar.l.clear();
                 return;
             default:
-                h hVar2 = (h) this.c;
-                g gVar = (g) this.d;
+                j jVar2 = (j) this.c;
+                i iVar = (i) this.d;
                 try {
-                    bArr = AudioRecorderNative.e(gVar.b.getAbsolutePath());
+                    bArr = AudioRecorderNative.e(iVar.b.getAbsolutePath());
                 } catch (Throwable th4) {
-                    hVar2.h.a("final waveform extraction failed", th4);
+                    jVar2.h.a("final waveform extraction failed", th4);
                     bArr = null;
                 }
-                hVar2.i.post(new w2(hVar2, gVar, this.b, bArr, 27));
+                jVar2.i.post(new f2(jVar2, iVar, this.b, bArr, 27));
                 return;
         }
     }

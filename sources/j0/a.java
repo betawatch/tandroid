@@ -13,9 +13,9 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.Gravity;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends Drawable {
     public final Bitmap a;
@@ -24,7 +24,7 @@ public final class a extends Drawable {
     public float g;
     public final int k;
     public final int l;
-    public final int c = qs.E1;
+    public final int c = ns.E1;
     public final Paint d = new Paint(3);
     public final Matrix f = new Matrix();
     public final Rect h = new Rect();
@@ -32,7 +32,7 @@ public final class a extends Drawable {
     public boolean j = true;
 
     public a(Resources resources, Bitmap bitmap) {
-        this.b = qs.q2;
+        this.b = ns.q2;
         if (resources != null) {
             this.b = resources.getDisplayMetrics().densityDpi;
         }
@@ -143,14 +143,14 @@ public final class a extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setDither(boolean z9) {
-        this.d.setDither(z9);
+    public final void setDither(boolean z10) {
+        this.d.setDither(z10);
         invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setFilterBitmap(boolean z9) {
-        this.d.setFilterBitmap(z9);
+    public final void setFilterBitmap(boolean z10) {
+        this.d.setFilterBitmap(z10);
         invalidateSelf();
     }
 }

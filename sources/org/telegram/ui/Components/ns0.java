@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class ns0 {
     public boolean g;
@@ -30,13 +30,13 @@ public final class ns0 {
     public boolean l = true;
     public int q = 0;
     public final ArrayList s = new ArrayList();
-    public v4.u0 x = new v4.u0();
+    public v4.v0 x = new v4.v0();
 
-    public final boolean a(org.telegram.messenger.ij ijVar, int i7, boolean z9, boolean z10) {
+    public final boolean a(org.telegram.messenger.gj gjVar, int i7, boolean z10, boolean z11) {
         SparseArray[] sparseArrayArr = this.b;
         SparseArray sparseArray = sparseArrayArr[i7];
-        int e12 = ijVar.e1();
-        String str = ijVar.Y;
+        int e12 = gjVar.e1();
+        String str = gjVar.Y;
         if (sparseArray.indexOfKey(e12) >= 0) {
             return false;
         }
@@ -46,53 +46,53 @@ public final class ns0 {
             arrayList = new ArrayList();
             hashMap.put(str, arrayList);
             ArrayList arrayList2 = this.c;
-            if (z9) {
+            if (z10) {
                 arrayList2.add(0, str);
             } else {
                 arrayList2.add(str);
             }
         }
         ArrayList arrayList3 = this.a;
-        if (z9) {
-            arrayList.add(0, ijVar);
-            arrayList3.add(0, ijVar);
-        } else {
-            arrayList.add(ijVar);
-            arrayList3.add(ijVar);
-        }
-        sparseArrayArr[i7].put(ijVar.e1(), ijVar);
-        int[] iArr = this.j;
         if (z10) {
-            iArr[i7] = Math.max(ijVar.e1(), iArr[i7]);
-            this.k = Math.min(ijVar.e1(), this.k);
-        } else if (ijVar.e1() > 0) {
-            iArr[i7] = Math.min(ijVar.e1(), iArr[i7]);
-            this.k = Math.max(ijVar.e1(), this.k);
+            arrayList.add(0, gjVar);
+            arrayList3.add(0, gjVar);
+        } else {
+            arrayList.add(gjVar);
+            arrayList3.add(gjVar);
         }
-        if (!this.v && org.telegram.messenger.ij.L4(ijVar.k)) {
+        sparseArrayArr[i7].put(gjVar.e1(), gjVar);
+        int[] iArr = this.j;
+        if (z11) {
+            iArr[i7] = Math.max(gjVar.e1(), iArr[i7]);
+            this.k = Math.min(gjVar.e1(), this.k);
+        } else if (gjVar.e1() > 0) {
+            iArr[i7] = Math.min(gjVar.e1(), iArr[i7]);
+            this.k = Math.max(gjVar.e1(), this.k);
+        }
+        if (!this.v && org.telegram.messenger.gj.L4(gjVar.k)) {
             this.v = true;
         }
-        if (!this.w && org.telegram.messenger.ij.S3(ijVar.k)) {
+        if (!this.w && org.telegram.messenger.gj.S3(gjVar.k)) {
             this.w = true;
         }
         return true;
     }
 
-    public final org.telegram.messenger.ij b(int i7, int i10) {
+    public final org.telegram.messenger.gj b(int i7, int i10) {
         SparseArray[] sparseArrayArr = this.b;
-        org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) sparseArrayArr[i10].get(i7);
-        if (ijVar == null) {
+        org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) sparseArrayArr[i10].get(i7);
+        if (gjVar == null) {
             return null;
         }
-        String str = ijVar.Y;
+        String str = gjVar.Y;
         HashMap hashMap = this.d;
         ArrayList arrayList = (ArrayList) hashMap.get(str);
         if (arrayList == null) {
             return null;
         }
-        arrayList.remove(ijVar);
-        this.a.remove(ijVar);
-        sparseArrayArr[i10].remove(ijVar.e1());
+        arrayList.remove(gjVar);
+        this.a.remove(gjVar);
+        sparseArrayArr[i10].remove(gjVar.e1());
         if (arrayList.isEmpty()) {
             hashMap.remove(str);
             this.c.remove(str);
@@ -103,7 +103,7 @@ public final class ns0 {
         if (i11 < 0) {
             iArr[i10] = 0;
         }
-        return ijVar;
+        return gjVar;
     }
 
     public final ArrayList c() {
@@ -121,22 +121,22 @@ public final class ns0 {
 
     public final void f(int i7, int i10, int i11) {
         SparseArray[] sparseArrayArr = this.b;
-        org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) sparseArrayArr[i7].get(i10);
-        if (ijVar != null) {
+        org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) sparseArrayArr[i7].get(i10);
+        if (gjVar != null) {
             sparseArrayArr[i7].remove(i10);
-            sparseArrayArr[i7].put(i11, ijVar);
-            ijVar.k.id = i11;
+            sparseArrayArr[i7].put(i11, gjVar);
+            gjVar.k.id = i11;
             int[] iArr = this.j;
             iArr[i7] = Math.min(i11, iArr[i7]);
         }
     }
 
-    public final void g(boolean z9) {
-        if (this.r == z9) {
+    public final void g(boolean z10) {
+        if (this.r == z10) {
             return;
         }
-        this.r = z9;
-        if (z9) {
+        this.r = z10;
+        if (z10) {
             this.t = this.m;
             this.u = this.n;
             ArrayList arrayList = this.s;

@@ -1,56 +1,110 @@
 package xg;
 
-import java.util.HashMap;
-import org.telegram.messenger.c20;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.List;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import zh.b4;
-import zh.d1;
-import zh.g3;
-import zh.k3;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class a extends rg.a {
+    public CharSequence c;
+    public TLRPC.InputPeer d;
+    public TLRPC.Chat e;
+    public Object f;
+    public boolean g;
+    public long h;
+    public int i;
+    public int j;
+    public List k;
+    public int l;
+    public TLObject m;
 
-    public /* synthetic */ a(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public static a b(int i7, TLRPC.Chat chat, boolean z10) {
+        a aVar = new a(9, false);
+        aVar.e = chat;
+        aVar.d = null;
+        aVar.g = z10;
+        aVar.i = i7;
+        return aVar;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                HashMap hashMap = ((c) this.b).x;
-                hashMap.clear();
-                hashMap.putAll((HashMap) obj);
-                break;
-            case 1:
-                ((f) this.b).F((TLObject) obj);
-                break;
-            case 2:
-                HashMap hashMap2 = ((i) this.b).r;
-                hashMap2.clear();
-                hashMap2.putAll((HashMap) obj);
-                break;
-            case 3:
-                ((d1) this.b).a();
-                break;
-            case 4:
-                k3 k3Var = (k3) this.b;
-                ((Boolean) obj).getClass();
-                g3 g3Var = k3Var.d;
-                if (g3Var != null) {
-                    g3Var.run();
-                    break;
-                }
-                break;
-            default:
-                wg.h.j(((b4) this.b).getContext(), (TLRPC.TL_error) obj);
-                break;
+    public static a c(CharSequence charSequence, boolean z10) {
+        a aVar = new a(7, false);
+        aVar.c = charSequence;
+        aVar.g = z10;
+        return aVar;
+    }
+
+    public static a d(TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption, int i7, long j3, boolean z10, boolean z11) {
+        a aVar = new a(17, z10);
+        aVar.i = i7;
+        aVar.h = j3;
+        aVar.m = tL_starsGiveawayOption;
+        aVar.g = z11;
+        return aVar;
+    }
+
+    public static a e(int i7, int i10, boolean z10, ArrayList arrayList) {
+        a aVar = new a(11, i10 == i7);
+        aVar.l = i7;
+        aVar.g = z10;
+        aVar.f = arrayList;
+        return aVar;
+    }
+
+    public static a f(String str) {
+        a aVar = new a(6, false);
+        aVar.c = str;
+        return aVar;
+    }
+
+    public static boolean g(List list, List list2) {
+        if (list == null && list2 == null) {
+            return true;
         }
+        if (list == null || list2 == null || list.size() != list2.size()) {
+            return false;
+        }
+        for (int i7 = 0; i7 < list.size(); i7++) {
+            if (((Integer) list.get(i7)).intValue() != ((Integer) list2.get(i7)).intValue()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override // rg.a
+    public final boolean a(rg.a aVar) {
+        a aVar2;
+        int i7;
+        int i10;
+        if (this == aVar) {
+            return true;
+        }
+        if (a.class == aVar.getClass() && (i7 = (aVar2 = (a) aVar).a) == (i10 = this.a)) {
+            return i10 == 0 ? this.g == aVar2.g : i7 == 17 ? this.i == aVar2.i && this.h == aVar2.h && this.m == aVar2.m && this.g == aVar2.g && this.b == aVar2.b : i10 == 5 ? this.i == aVar2.i && g(this.k, aVar2.k) : i10 == 13 && this.i == aVar2.i && TextUtils.equals(this.c, aVar2.c);
+        }
+        return false;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || a.class != obj.getClass()) {
+            return false;
+        }
+        a aVar = (a) obj;
+        int i7 = this.a;
+        if (i7 != aVar.a) {
+            return false;
+        }
+        if (i7 == 0) {
+            return true;
+        }
+        return i7 == 17 ? this.i == aVar.i && this.m == aVar.m : i7 == 5 ? g(this.k, aVar.k) : i7 == 13 ? TextUtils.equals(this.c, aVar.c) : this.e == aVar.e && this.f == aVar.f && this.d == aVar.d && this.m == aVar.m && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && this.h == aVar.h && this.l == aVar.l && TextUtils.equals(this.c, aVar.c);
     }
 }

@@ -1,7 +1,6 @@
 package rc;
 
 import e2.r0;
-import fi.h2;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import org.telegram.ui.Wallet.x0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q extends z {
     public boolean b;
@@ -20,7 +19,7 @@ public final class q extends z {
     public final o e;
     public final Object f;
     public Timer h;
-    public h2 n;
+    public h6.r n;
     public long r;
     public boolean s;
 
@@ -146,9 +145,9 @@ public final class q extends z {
                 timer.cancel();
                 this.h = null;
             }
-            h2 h2Var = this.n;
-            if (h2Var != null) {
-                h2Var.cancel();
+            h6.r rVar = this.n;
+            if (rVar != null) {
+                rVar.cancel();
                 this.n = null;
             }
         }
@@ -211,7 +210,7 @@ public final class q extends z {
             }
         }
         int i12 = xVar.e;
-        boolean z9 = true;
+        boolean z10 = true;
         if (i12 == 0) {
             ArrayList arrayList2 = this.d;
             u uVar = this.a;
@@ -335,7 +334,7 @@ public final class q extends z {
                         try {
                             int i15 = r0Var.a;
                             if (i15 == 4 || i15 == 5) {
-                                z9 = false;
+                                z10 = false;
                             } else {
                                 r0Var.a = 4;
                                 if (r0Var.b == 1) {
@@ -346,7 +345,7 @@ public final class q extends z {
                         } finally {
                         }
                     }
-                    if (z9) {
+                    if (z10) {
                         this.a.d.g();
                     }
                     ArrayList arrayList6 = (ArrayList) this.a.d.p();
@@ -574,12 +573,12 @@ public final class q extends z {
                 timer.cancel();
                 this.h = null;
             }
-            h2 h2Var = this.n;
-            if (h2Var != null) {
-                h2Var.cancel();
+            h6.r rVar = this.n;
+            if (rVar != null) {
+                rVar.cancel();
                 this.n = null;
             }
-            this.n = new h2(this, 5);
+            this.n = new h6.r(this, 5);
             Timer timer2 = new Timer("ReadingThreadCloseTimer");
             this.h = timer2;
             timer2.schedule(this.n, this.r);
@@ -614,12 +613,12 @@ public final class q extends z {
             throw new v(30, "A frame from the server is masked.");
         }
         if (8 > i10 || i10 > 15) {
-            boolean z9 = this.d.size() != 0;
+            boolean z10 = this.d.size() != 0;
             if (xVar.e == 0) {
-                if (!z9) {
+                if (!z10) {
                     throw new v(33, "A continuation frame was detected although a continuation had not started.");
                 }
-            } else if (z9) {
+            } else if (z10) {
                 throw new v(34, "A non-control frame was detected although the existing continuation had not been closed.");
             }
         } else if (!xVar.a) {

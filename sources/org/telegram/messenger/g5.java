@@ -28,21 +28,20 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g5 extends c1 {
-    public static Locale n0;
-    public static Collator o0;
-    public static final String[] p0 = {"lookup", "data1", "data2", "data3", "display_name", "account_type"};
-    public static final String[] q0 = {"lookup", "data2", "data3", "data5"};
-    public static volatile g5[] r0 = new g5[4];
-    public boolean D;
-    public final HashMap E;
-    public int F;
+    public static Locale o0;
+    public static Collator p0;
+    public static final String[] q0 = {"lookup", "data1", "data2", "data3", "display_name", "account_type"};
+    public static final String[] r0 = {"lookup", "data2", "data3", "data5"};
+    public static volatile g5[] s0 = new g5[4];
+    public boolean E;
+    public final HashMap F;
     public int G;
     public int H;
-    public final int[] I;
-    public ArrayList J;
+    public int I;
+    public final int[] J;
     public ArrayList K;
     public ArrayList L;
     public ArrayList M;
@@ -56,30 +55,31 @@ public final class g5 extends c1 {
     public ArrayList U;
     public ArrayList V;
     public ArrayList W;
-    public TLRPC.GlobalPrivacySettings X;
-    public HashMap Y;
+    public ArrayList X;
+    public TLRPC.GlobalPrivacySettings Y;
     public HashMap Z;
     public Account a;
-    public ArrayList a0;
+    public HashMap a0;
     public boolean b;
-    public HashMap b0;
+    public ArrayList b0;
     public final Object c;
-    public ArrayList c0;
+    public HashMap c0;
     public boolean d;
-    public HashMap d0;
+    public ArrayList d0;
     public boolean e;
-    public ArrayList e0;
+    public HashMap e0;
     public final Object f;
-    public ConcurrentHashMap f0;
-    public HashMap g0;
+    public ArrayList f0;
+    public ConcurrentHashMap g0;
     public boolean h;
-    public ArrayList h0;
-    public HashMap i0;
-    public ArrayList j0;
-    public HashMap k0;
+    public HashMap h0;
+    public ArrayList i0;
+    public HashMap j0;
+    public ArrayList k0;
     public HashMap l0;
-    public int m0;
+    public HashMap m0;
     public boolean n;
+    public int n0;
     public boolean r;
     public boolean s;
     public String w;
@@ -93,23 +93,23 @@ public final class g5 extends c1 {
         this.w = "";
         this.x = new ArrayList();
         HashMap hashMap = new HashMap();
-        this.E = hashMap;
-        this.I = new int[15];
-        this.Y = new HashMap();
+        this.F = hashMap;
+        this.J = new int[15];
         this.Z = new HashMap();
-        this.a0 = new ArrayList();
-        this.b0 = new HashMap();
-        this.c0 = new ArrayList();
-        this.d0 = new HashMap();
-        this.e0 = new ArrayList();
-        this.f0 = new ConcurrentHashMap(20, 1.0f, 2);
-        this.g0 = new HashMap();
-        this.h0 = new ArrayList();
-        this.i0 = new HashMap();
-        this.j0 = new ArrayList();
-        this.k0 = new HashMap();
+        this.a0 = new HashMap();
+        this.b0 = new ArrayList();
+        this.c0 = new HashMap();
+        this.d0 = new ArrayList();
+        this.e0 = new HashMap();
+        this.f0 = new ArrayList();
+        this.g0 = new ConcurrentHashMap(20, 1.0f, 2);
+        this.h0 = new HashMap();
+        this.i0 = new ArrayList();
+        this.j0 = new HashMap();
+        this.k0 = new ArrayList();
         this.l0 = new HashMap();
-        if (qp.s1(this.currentAccount).e7.getBoolean("needGetStatuses", false)) {
+        this.m0 = new HashMap();
+        if (np.s1(this.currentAccount).f7.getBoolean("needGetStatuses", false)) {
             I();
         }
         hashMap.put("À", "A");
@@ -152,7 +152,7 @@ public final class g5 extends c1 {
             str2 = str2.trim();
         }
         StringBuilder sb2 = new StringBuilder((str != null ? str.length() : 0) + (str2 != null ? str2.length() : 0) + 1);
-        if (id.b0 == 1) {
+        if (hd.b0 == 1) {
             if (str == null || str.length() <= 0) {
                 if (str2 != null && str2.length() > 0) {
                     if (i7 > 0 && str2.length() > i7 + 2) {
@@ -205,7 +205,7 @@ public final class g5 extends c1 {
     }
 
     public static String o(TLObject tLObject) {
-        return tLObject instanceof TLRPC.User ? p((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : id.M0(2131749328, null);
+        return tLObject instanceof TLRPC.User ? p((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : hd.M0(2131749328, null);
     }
 
     public static String p(TLRPC.User user) {
@@ -233,15 +233,15 @@ public final class g5 extends c1 {
 
     public static g5 r(int i7) {
         g5 g5Var;
-        g5 g5Var2 = r0[i7];
+        g5 g5Var2 = s0[i7];
         if (g5Var2 != null) {
             return g5Var2;
         }
         synchronized (g5.class) {
             try {
-                g5Var = r0[i7];
+                g5Var = s0[i7];
                 if (g5Var == null) {
-                    g5[] g5VarArr = r0;
+                    g5[] g5VarArr = s0;
                     g5 g5Var3 = new g5(i7);
                     g5VarArr[i7] = g5Var3;
                     g5Var = g5Var3;
@@ -254,30 +254,30 @@ public final class g5 extends c1 {
     }
 
     public static Collator u() {
-        if (o0 == null || n0 != Locale.getDefault()) {
+        if (p0 == null || o0 != Locale.getDefault()) {
             try {
                 Locale locale = Locale.getDefault();
-                n0 = locale;
+                o0 = locale;
                 Collator collator = Collator.getInstance(locale);
-                o0 = collator;
+                p0 = collator;
                 collator.setStrength(1);
             } catch (Exception e10) {
                 a8.g(e10, true);
             }
         }
-        if (o0 == null) {
+        if (p0 == null) {
             try {
                 Collator collator2 = Collator.getInstance();
-                o0 = collator2;
+                p0 = collator2;
                 collator2.setStrength(1);
             } catch (Exception e11) {
                 a8.g(e11, true);
             }
         }
-        if (o0 == null) {
-            o0 = new c5();
+        if (p0 == null) {
+            p0 = new c5();
         }
-        return o0;
+        return p0;
     }
 
     public static boolean w() {
@@ -299,16 +299,16 @@ public final class g5 extends c1 {
         return i7 > 3;
     }
 
-    public final void A(long j3, boolean z9) {
+    public final void A(long j3, boolean z10) {
         synchronized (this.c) {
             this.b = true;
         }
-        if (z9) {
+        if (z10) {
             if (r2.a) {
                 a8.b("load contacts from cache");
             }
-            yr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new rq(messagesStorage, 18));
+            vr messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new oq(messagesStorage, 18));
             return;
         }
         if (r2.a) {
@@ -320,8 +320,8 @@ public final class g5 extends c1 {
     }
 
     public final void B() {
-        if (this.F == 0) {
-            this.F = 1;
+        if (this.G == 0) {
+            this.G = 1;
             getConnectionsManager().sendRequest(new TL_account.getGlobalPrivacySettings(), new q4(this, 1));
         }
     }
@@ -348,20 +348,20 @@ public final class g5 extends c1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void D(boolean z9) {
-        if (this.G == 0) {
-            this.G = 1;
+    public final void D(boolean z10) {
+        if (this.H == 0) {
+            this.H = 1;
             getConnectionsManager().sendRequest(new TL_account.getAccountTTL(), new q4(this, 2));
         }
         B();
         int i7 = 0;
         while (true) {
-            int[] iArr = this.I;
+            int[] iArr = this.J;
             if (i7 >= iArr.length) {
-                getNotificationCenter().k(qs.k0, new Object[0]);
+                getNotificationCenter().k(ns.k0, new Object[0]);
                 return;
             }
-            if (z9) {
+            if (z10) {
                 if (iArr[i7] == 1) {
                     i7++;
                 }
@@ -370,59 +370,59 @@ public final class g5 extends c1 {
                 switch (i7) {
                     case 0:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyStatusTimestamp();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 1:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyChatInvite();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 2:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneCall();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 3:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneP2P();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 4:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyProfilePhoto();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 5:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyForwards();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 6:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneNumber();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 7:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyAddedByPhone();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 8:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyVoiceMessages();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 9:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyAbout();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 11:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyBirthday();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 12:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyStarGiftsAutoSave();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 13:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyNoPaidMessages();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                     case 14:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeySavedMusic();
-                        getConnectionsManager().sendRequest(getprivacy, new fo(this, i7, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new bo(this, i7, 3));
                         break;
                 }
                 i7++;
@@ -439,12 +439,12 @@ public final class g5 extends c1 {
         }
     }
 
-    public final void E(HashMap hashMap, ArrayList arrayList, HashMap hashMap2, boolean z9) {
-        Utilities.e.c(new gy(this, z9, new ArrayList(this.e0), hashMap2, hashMap, arrayList));
+    public final void E(HashMap hashMap, ArrayList arrayList, HashMap hashMap2, boolean z10) {
+        Utilities.e.c(new ey(this, z10, new ArrayList(this.f0), hashMap2, hashMap, arrayList));
     }
 
-    public final void F(final HashMap hashMap, final boolean z9, final boolean z10, final boolean z11, final boolean z12, final boolean z13, final boolean z14) {
-        if (z10 || this.r) {
+    public final void F(final HashMap hashMap, final boolean z10, final boolean z11, final boolean z12, final boolean z13, final boolean z14, final boolean z15) {
+        if (z11 || this.r) {
             Utilities.e.c(new Runnable() { // from class: org.telegram.messenger.b5
                 /* JADX WARN: Code restructure failed: missing block: B:129:0x0335, code lost:
                 
@@ -456,7 +456,7 @@ public final class g5 extends c1 {
                  */
                 /* JADX WARN: Code restructure failed: missing block: B:136:0x0343, code lost:
                 
-                    if (r2.k0.containsKey(r8) == false) goto L135;
+                    if (r2.l0.containsKey(r8) == false) goto L135;
                  */
                 /* JADX WARN: Code restructure failed: missing block: B:137:0x0345, code lost:
                 
@@ -499,13 +499,13 @@ public final class g5 extends c1 {
                     Code decompiled incorrectly, please refer to instructions dump.
                 */
                 public final void run() {
-                    boolean z15;
                     boolean z16;
-                    ArrayList arrayList;
                     boolean z17;
+                    ArrayList arrayList;
+                    boolean z18;
                     HashMap hashMap2;
                     HashMap hashMap3;
-                    boolean z18;
+                    boolean z19;
                     int i7;
                     int i10;
                     int i11;
@@ -513,26 +513,26 @@ public final class g5 extends c1 {
                     final int i12;
                     d5 d5Var;
                     ArrayList arrayList2;
-                    boolean z19;
+                    boolean z20;
                     HashMap hashMap5;
                     HashMap hashMap6;
                     HashMap hashMap7;
-                    boolean z20;
+                    boolean z21;
                     int indexOf;
                     HashMap hashMap8;
                     HashMap hashMap9;
-                    boolean z21;
-                    int i13;
                     boolean z22;
+                    int i13;
                     boolean z23;
+                    boolean z24;
                     final g5 g5Var = g5.this;
                     final HashMap hashMap10 = hashMap;
-                    boolean z24 = z11;
-                    boolean z25 = z9;
+                    boolean z25 = z12;
                     boolean z26 = z10;
-                    boolean z27 = z12;
+                    boolean z27 = z11;
                     boolean z28 = z13;
                     boolean z29 = z14;
+                    boolean z30 = z15;
                     HashMap hashMap11 = new HashMap();
                     Iterator it = hashMap10.entrySet().iterator();
                     while (it.hasNext()) {
@@ -544,28 +544,28 @@ public final class g5 extends c1 {
                     if (r2.a) {
                         a8.b("start read contacts from phone");
                     }
-                    if (!z24) {
+                    if (!z25) {
                         g5Var.e();
                     }
                     final HashMap H = g5Var.H();
                     HashMap hashMap12 = new HashMap();
                     HashMap hashMap13 = new HashMap();
-                    boolean z30 = z28;
+                    boolean z31 = z29;
                     ArrayList arrayList3 = new ArrayList();
                     Iterator it2 = H.entrySet().iterator();
                     while (it2.hasNext()) {
                         d5 d5Var3 = (d5) ((Map.Entry) it2.next()).getValue();
                         int size = d5Var3.g.size();
-                        boolean z31 = z25;
+                        boolean z32 = z26;
                         int i15 = 0;
                         while (i15 < size) {
                             int i16 = size;
                             hashMap13.put(((String) d5Var3.g.get(i15)).substring(Math.max(0, r0.length() - 7)), d5Var3);
                             i15++;
                             size = i16;
-                            z27 = z27;
+                            z28 = z28;
                         }
-                        boolean z32 = z27;
+                        boolean z33 = z28;
                         String a10 = d5.a(d5Var3.i, d5Var3.j);
                         ArrayList arrayList4 = (ArrayList) hashMap12.get(a10);
                         if (arrayList4 == null) {
@@ -574,31 +574,31 @@ public final class g5 extends c1 {
                             arrayList3.add(a10);
                         }
                         arrayList4.add(d5Var3);
-                        z25 = z31;
-                        z27 = z32;
+                        z26 = z32;
+                        z28 = z33;
                     }
-                    boolean z33 = z25;
-                    boolean z34 = z27;
+                    boolean z34 = z26;
+                    boolean z35 = z28;
                     final HashMap hashMap14 = new HashMap();
                     int size2 = hashMap10.size();
                     ArrayList arrayList5 = new ArrayList();
                     if (hashMap10.isEmpty()) {
-                        z15 = z26;
-                        z16 = z24;
+                        z16 = z27;
+                        z17 = z25;
                         arrayList = arrayList3;
-                        z17 = z29;
+                        z18 = z30;
                         hashMap2 = hashMap12;
                         hashMap3 = hashMap13;
-                        z18 = z30;
-                        if (z33) {
+                        z19 = z31;
+                        if (z34) {
                             i10 = 0;
                             for (Map.Entry entry : H.entrySet()) {
                                 d5 d5Var4 = (d5) entry.getValue();
                                 while (i11 < d5Var4.e.size()) {
-                                    if (!z34) {
+                                    if (!z35) {
                                         String str = (String) d5Var4.g.get(i11);
                                         String substring = str.substring(Math.max(0, str.length() - 7));
-                                        TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) g5Var.k0.get(str);
+                                        TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) g5Var.l0.get(str);
                                         if (tL_contact != null) {
                                             TLRPC.User a22 = g5Var.getMessagesController().a2(Long.valueOf(tL_contact.user_id));
                                             if (a22 != null) {
@@ -617,7 +617,7 @@ public final class g5 extends c1 {
                                                 if (TextUtils.isEmpty(d5Var4.i) && TextUtils.isEmpty(d5Var4.j)) {
                                                 }
                                             }
-                                        } else if (g5Var.l0.containsKey(substring)) {
+                                        } else if (g5Var.m0.containsKey(substring)) {
                                             i10++;
                                         }
                                     }
@@ -644,8 +644,8 @@ public final class g5 extends c1 {
                             Iterator it4 = it3;
                             d5 d5Var5 = (d5) entry2.getValue();
                             d5 d5Var6 = (d5) hashMap10.get(str4);
-                            boolean z35 = z26;
-                            boolean z36 = z24;
+                            boolean z36 = z27;
+                            boolean z37 = z25;
                             if (d5Var6 == null) {
                                 for (int i19 = 0; i19 < d5Var5.g.size(); i19++) {
                                     d5Var = (d5) hashMap11.get(d5Var5.g.get(i19));
@@ -670,13 +670,13 @@ public final class g5 extends c1 {
                             } else {
                                 arrayList2 = arrayList3;
                             }
-                            boolean z37 = false;
-                            if (d5Var == null || z37) {
-                                z19 = z29;
+                            boolean z38 = false;
+                            if (d5Var == null || z38) {
+                                z20 = z30;
                                 hashMap5 = hashMap11;
                                 hashMap6 = hashMap12;
                                 hashMap7 = hashMap13;
-                                z20 = z30;
+                                z21 = z31;
                                 int i20 = 0;
                                 while (i20 < d5Var5.e.size()) {
                                     String str5 = (String) d5Var5.g.get(i20);
@@ -686,10 +686,10 @@ public final class g5 extends c1 {
                                         Integer num = (Integer) d5Var.h.get(indexOf);
                                         d5Var5.h.set(i20, num);
                                     }
-                                    boolean z38 = z37;
+                                    boolean z39 = z38;
                                     d5 d5Var7 = d5Var;
                                     i20++;
-                                    z37 = z38;
+                                    z38 = z39;
                                     d5Var = d5Var7;
                                 }
                                 if (d5Var != null) {
@@ -699,24 +699,24 @@ public final class g5 extends c1 {
                                 int i21 = 0;
                                 while (i21 < d5Var5.e.size()) {
                                     String str6 = (String) d5Var5.g.get(i21);
-                                    boolean z39 = z29;
+                                    boolean z40 = z30;
                                     HashMap hashMap15 = hashMap11;
                                     String substring2 = str6.substring(Math.max(0, str6.length() - 7));
                                     hashMap14.put(str6, d5Var5);
                                     int indexOf2 = d5Var.g.indexOf(str6);
-                                    if (z33) {
-                                        TLRPC.TL_contact tL_contact2 = (TLRPC.TL_contact) g5Var.k0.get(str6);
+                                    if (z34) {
+                                        TLRPC.TL_contact tL_contact2 = (TLRPC.TL_contact) g5Var.l0.get(str6);
                                         if (tL_contact2 != null) {
                                             hashMap8 = hashMap12;
                                             hashMap9 = hashMap13;
-                                            z21 = z30;
+                                            z22 = z31;
                                             TLRPC.User a23 = g5Var.getMessagesController().a2(Long.valueOf(tL_contact2.user_id));
                                             if (a23 != null) {
                                                 i18++;
                                                 if (TextUtils.isEmpty(a23.first_name) && TextUtils.isEmpty(a23.last_name) && (!TextUtils.isEmpty(d5Var5.i) || !TextUtils.isEmpty(d5Var5.j))) {
-                                                    z23 = true;
+                                                    z24 = true;
                                                     indexOf2 = -1;
-                                                    z22 = z23;
+                                                    z23 = z24;
                                                     i13 = indexOf2;
                                                     if (i13 != -1) {
                                                         d5Var5.h.set(i21, (Integer) d5Var.h.get(i13));
@@ -724,9 +724,9 @@ public final class g5 extends c1 {
                                                         d5Var.g.remove(i13);
                                                         d5Var.h.remove(i13);
                                                         d5Var.f.remove(i13);
-                                                    } else if (z33) {
-                                                        if (!z22) {
-                                                            TLRPC.TL_contact tL_contact3 = (TLRPC.TL_contact) g5Var.k0.get(str6);
+                                                    } else if (z34) {
+                                                        if (!z23) {
+                                                            TLRPC.TL_contact tL_contact3 = (TLRPC.TL_contact) g5Var.l0.get(str6);
                                                             if (tL_contact3 != null) {
                                                                 TLRPC.User a24 = g5Var.getMessagesController().a2(Long.valueOf(tL_contact3.user_id));
                                                                 if (a24 != null) {
@@ -748,7 +748,7 @@ public final class g5 extends c1 {
                                                                 } else {
                                                                     i17++;
                                                                 }
-                                                            } else if (g5Var.l0.containsKey(substring2)) {
+                                                            } else if (g5Var.m0.containsKey(substring2)) {
                                                                 i18++;
                                                             }
                                                         }
@@ -761,81 +761,81 @@ public final class g5 extends c1 {
                                                     }
                                                     i21++;
                                                     hashMap11 = hashMap15;
-                                                    z29 = z39;
+                                                    z30 = z40;
                                                     hashMap12 = hashMap8;
                                                     hashMap13 = hashMap9;
-                                                    z30 = z21;
+                                                    z31 = z22;
                                                 }
                                             }
-                                            z23 = false;
-                                            z22 = z23;
+                                            z24 = false;
+                                            z23 = z24;
                                             i13 = indexOf2;
                                             if (i13 != -1) {
                                             }
                                             i21++;
                                             hashMap11 = hashMap15;
-                                            z29 = z39;
+                                            z30 = z40;
                                             hashMap12 = hashMap8;
                                             hashMap13 = hashMap9;
-                                            z30 = z21;
+                                            z31 = z22;
                                         } else {
                                             hashMap8 = hashMap12;
                                             hashMap9 = hashMap13;
-                                            z21 = z30;
-                                            if (g5Var.l0.containsKey(substring2)) {
+                                            z22 = z31;
+                                            if (g5Var.m0.containsKey(substring2)) {
                                                 i18++;
                                             }
                                         }
                                     } else {
                                         hashMap8 = hashMap12;
                                         hashMap9 = hashMap13;
-                                        z21 = z30;
+                                        z22 = z31;
                                     }
                                     i13 = indexOf2;
-                                    z22 = false;
+                                    z23 = false;
                                     if (i13 != -1) {
                                     }
                                     i21++;
                                     hashMap11 = hashMap15;
-                                    z29 = z39;
+                                    z30 = z40;
                                     hashMap12 = hashMap8;
                                     hashMap13 = hashMap9;
-                                    z30 = z21;
+                                    z31 = z22;
                                 }
-                                z19 = z29;
+                                z20 = z30;
                                 hashMap5 = hashMap11;
                                 hashMap6 = hashMap12;
                                 hashMap7 = hashMap13;
-                                z20 = z30;
+                                z21 = z31;
                                 if (d5Var.e.isEmpty()) {
                                     hashMap10.remove(str4);
                                 }
                             }
                             arrayList3 = arrayList2;
                             it3 = it4;
-                            z26 = z35;
-                            z24 = z36;
+                            z27 = z36;
+                            z25 = z37;
                             hashMap11 = hashMap5;
-                            z29 = z19;
+                            z30 = z20;
                             hashMap12 = hashMap6;
                             hashMap13 = hashMap7;
-                            z30 = z20;
+                            z31 = z21;
                         }
-                        z15 = z26;
-                        z16 = z24;
+                        z16 = z27;
+                        z17 = z25;
                         arrayList = arrayList3;
-                        z17 = z29;
+                        z18 = z30;
                         hashMap2 = hashMap12;
                         hashMap3 = hashMap13;
-                        z18 = z30;
-                        if (!z15 && hashMap10.isEmpty() && arrayList5.isEmpty() && size2 == H.size()) {
+                        z19 = z31;
+                        if (!z16 && hashMap10.isEmpty() && arrayList5.isEmpty() && size2 == H.size()) {
                             if (r2.a) {
                                 a8.b("contacts not changed!");
                                 return;
                             }
                             return;
                         } else {
-                            if (z33 && !hashMap10.isEmpty() && !H.isEmpty() && arrayList5.isEmpty()) {
+                            if (z34 && !hashMap10.isEmpty() && !H.isEmpty() && arrayList5.isEmpty()) {
                                 g5Var.getMessagesStorage().Z0(H, false, false);
                             }
                             i7 = i17;
@@ -845,9 +845,9 @@ public final class g5 extends c1 {
                     if (r2.a) {
                         a8.b("done processing contacts");
                     }
-                    if (!z33) {
+                    if (!z34) {
                         final ArrayList arrayList6 = arrayList;
-                        final boolean z40 = z15;
+                        final boolean z41 = z16;
                         final HashMap hashMap16 = hashMap2;
                         final HashMap hashMap17 = hashMap3;
                         final int i22 = 2;
@@ -858,12 +858,12 @@ public final class g5 extends c1 {
                                     case 0:
                                         g5 g5Var2 = g5Var;
                                         ArrayList arrayList7 = g5Var2.x;
-                                        g5Var2.Z = hashMap14;
+                                        g5Var2.a0 = hashMap14;
                                         HashMap hashMap18 = H;
-                                        g5Var2.Y = hashMap18;
+                                        g5Var2.Z = hashMap18;
                                         g5Var2.e = false;
                                         g5Var2.r = true;
-                                        if (z40) {
+                                        if (z41) {
                                             g5Var2.h = true;
                                         }
                                         if (!arrayList7.isEmpty() && g5Var2.h) {
@@ -876,11 +876,11 @@ public final class g5 extends c1 {
                                     case 1:
                                         g5 g5Var3 = g5Var;
                                         ArrayList arrayList8 = g5Var3.x;
-                                        g5Var3.Z = hashMap14;
-                                        g5Var3.Y = H;
+                                        g5Var3.a0 = hashMap14;
+                                        g5Var3.Z = H;
                                         g5Var3.e = false;
                                         g5Var3.r = true;
-                                        if (z40) {
+                                        if (z41) {
                                             g5Var3.h = true;
                                         }
                                         if (!arrayList8.isEmpty() && g5Var3.h) {
@@ -892,11 +892,11 @@ public final class g5 extends c1 {
                                     default:
                                         g5 g5Var4 = g5Var;
                                         ArrayList arrayList9 = g5Var4.x;
-                                        g5Var4.Z = hashMap14;
-                                        g5Var4.Y = H;
+                                        g5Var4.a0 = hashMap14;
+                                        g5Var4.Z = H;
                                         g5Var4.e = false;
                                         g5Var4.r = true;
-                                        if (z40) {
+                                        if (z41) {
                                             g5Var4.h = true;
                                         }
                                         if (!arrayList9.isEmpty() && g5Var4.h) {
@@ -916,7 +916,7 @@ public final class g5 extends c1 {
                     }
                     if (arrayList5.isEmpty()) {
                         final ArrayList arrayList7 = arrayList;
-                        final boolean z41 = z15;
+                        final boolean z42 = z16;
                         final HashMap hashMap18 = hashMap2;
                         final HashMap hashMap19 = hashMap3;
                         final int i23 = 1;
@@ -927,12 +927,12 @@ public final class g5 extends c1 {
                                     case 0:
                                         g5 g5Var2 = g5Var;
                                         ArrayList arrayList72 = g5Var2.x;
-                                        g5Var2.Z = hashMap14;
+                                        g5Var2.a0 = hashMap14;
                                         HashMap hashMap182 = H;
-                                        g5Var2.Y = hashMap182;
+                                        g5Var2.Z = hashMap182;
                                         g5Var2.e = false;
                                         g5Var2.r = true;
-                                        if (z41) {
+                                        if (z42) {
                                             g5Var2.h = true;
                                         }
                                         if (!arrayList72.isEmpty() && g5Var2.h) {
@@ -945,11 +945,11 @@ public final class g5 extends c1 {
                                     case 1:
                                         g5 g5Var3 = g5Var;
                                         ArrayList arrayList8 = g5Var3.x;
-                                        g5Var3.Z = hashMap14;
-                                        g5Var3.Y = H;
+                                        g5Var3.a0 = hashMap14;
+                                        g5Var3.Z = H;
                                         g5Var3.e = false;
                                         g5Var3.r = true;
-                                        if (z41) {
+                                        if (z42) {
                                             g5Var3.h = true;
                                         }
                                         if (!arrayList8.isEmpty() && g5Var3.h) {
@@ -961,11 +961,11 @@ public final class g5 extends c1 {
                                     default:
                                         g5 g5Var4 = g5Var;
                                         ArrayList arrayList9 = g5Var4.x;
-                                        g5Var4.Z = hashMap14;
-                                        g5Var4.Y = H;
+                                        g5Var4.a0 = hashMap14;
+                                        g5Var4.Z = H;
                                         g5Var4.e = false;
                                         g5Var4.r = true;
-                                        if (z41) {
+                                        if (z42) {
                                             g5Var4.h = true;
                                         }
                                         if (!arrayList9.isEmpty() && g5Var4.h) {
@@ -982,32 +982,32 @@ public final class g5 extends c1 {
                     if (r2.a) {
                         a8.d("start import contacts");
                     }
-                    if (z18 && i7 != 0) {
+                    if (z19 && i7 != 0) {
                         if (i7 >= 30) {
                             hashMap4 = hashMap14;
                             i12 = 1;
-                        } else if (z15 && size2 == 0 && g5Var.k0.size() - i10 > (g5Var.k0.size() / 3) * 2) {
+                        } else if (z16 && size2 == 0 && g5Var.l0.size() - i10 > (g5Var.l0.size() / 3) * 2) {
                             hashMap4 = hashMap14;
                             i12 = 2;
                         }
                         if (r2.a) {
-                            StringBuilder o4 = jg.g.o("new phone book contacts ", i7, " serverContactsInPhonebook ", i10, " totalContacts ");
-                            o4.append(g5Var.k0.size());
-                            a8.b(o4.toString());
+                            StringBuilder n10 = i5.c.n("new phone book contacts ", i7, " serverContactsInPhonebook ", i10, " totalContacts ");
+                            n10.append(g5Var.l0.size());
+                            a8.b(n10.toString());
                         }
                         if (i12 == 0) {
-                            final boolean z42 = z15;
                             final boolean z43 = z16;
+                            final boolean z44 = z17;
                             g0.h3(new Runnable() { // from class: org.telegram.messenger.m4
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    g5.this.getNotificationCenter().k(qs.Q, Integer.valueOf(i12), hashMap10, Boolean.valueOf(z42), Boolean.valueOf(z43));
+                                    g5.this.getNotificationCenter().k(ns.Q, Integer.valueOf(i12), hashMap10, Boolean.valueOf(z43), Boolean.valueOf(z44));
                                 }
                             });
                             return;
                         }
-                        final boolean z44 = z15;
-                        if (z17) {
+                        final boolean z45 = z16;
+                        if (z18) {
                             final HashMap hashMap20 = hashMap4;
                             final int i24 = 0;
                             final ArrayList arrayList8 = arrayList;
@@ -1020,12 +1020,12 @@ public final class g5 extends c1 {
                                         case 0:
                                             g5 g5Var2 = g5Var;
                                             ArrayList arrayList72 = g5Var2.x;
-                                            g5Var2.Z = hashMap20;
+                                            g5Var2.a0 = hashMap20;
                                             HashMap hashMap182 = H;
-                                            g5Var2.Y = hashMap182;
+                                            g5Var2.Z = hashMap182;
                                             g5Var2.e = false;
                                             g5Var2.r = true;
-                                            if (z44) {
+                                            if (z45) {
                                                 g5Var2.h = true;
                                             }
                                             if (!arrayList72.isEmpty() && g5Var2.h) {
@@ -1038,11 +1038,11 @@ public final class g5 extends c1 {
                                         case 1:
                                             g5 g5Var3 = g5Var;
                                             ArrayList arrayList82 = g5Var3.x;
-                                            g5Var3.Z = hashMap20;
-                                            g5Var3.Y = H;
+                                            g5Var3.a0 = hashMap20;
+                                            g5Var3.Z = H;
                                             g5Var3.e = false;
                                             g5Var3.r = true;
-                                            if (z44) {
+                                            if (z45) {
                                                 g5Var3.h = true;
                                             }
                                             if (!arrayList82.isEmpty() && g5Var3.h) {
@@ -1054,11 +1054,11 @@ public final class g5 extends c1 {
                                         default:
                                             g5 g5Var4 = g5Var;
                                             ArrayList arrayList9 = g5Var4.x;
-                                            g5Var4.Z = hashMap20;
-                                            g5Var4.Y = H;
+                                            g5Var4.a0 = hashMap20;
+                                            g5Var4.Z = H;
                                             g5Var4.e = false;
                                             g5Var4.r = true;
-                                            if (z44) {
+                                            if (z45) {
                                                 g5Var4.h = true;
                                             }
                                             if (!arrayList9.isEmpty() && g5Var4.h) {
@@ -1083,7 +1083,7 @@ public final class g5 extends c1 {
                             d5 d5Var8 = (d5) ((Map.Entry) it5.next()).getValue();
                             sparseArray.put(d5Var8.a, d5Var8.b);
                         }
-                        g5Var.m0 = 0;
+                        g5Var.n0 = 0;
                         int ceil = (int) Math.ceil(arrayList5.size() / 500.0d);
                         int i25 = 0;
                         while (i25 < ceil) {
@@ -1094,12 +1094,12 @@ public final class g5 extends c1 {
                             ConnectionsManager connectionsManager = g5Var.getConnectionsManager();
                             HashMap hashMap26 = hashMap23;
                             int i27 = ceil;
-                            boolean z45 = z44;
+                            boolean z46 = z45;
                             boolean[] zArr2 = zArr;
                             HashMap hashMap27 = hashMap2;
-                            o4 o4Var = new o4(g5Var, hashMap24, sparseArray, zArr2, hashMap25, tL_contacts_importContacts, i27, hashMap4, z45, hashMap27, arrayList10, hashMap26);
+                            o4 o4Var = new o4(g5Var, hashMap24, sparseArray, zArr2, hashMap25, tL_contacts_importContacts, i27, hashMap4, z46, hashMap27, arrayList10, hashMap26);
                             arrayList9 = arrayList10;
-                            z44 = z45;
+                            z45 = z46;
                             hashMap23 = hashMap26;
                             connectionsManager.sendRequest(tL_contacts_importContacts, o4Var, 6);
                             i25++;
@@ -1155,10 +1155,10 @@ public final class g5 extends c1 {
             }
         }
         if (!arrayList4.isEmpty()) {
-            yr messagesStorage = getMessagesStorage();
+            vr messagesStorage = getMessagesStorage();
             messagesStorage.getClass();
             if (!arrayList4.isEmpty()) {
-                messagesStorage.a.c(new sp(messagesStorage, arrayList4, 0));
+                messagesStorage.a.c(new pp(messagesStorage, arrayList4, 0));
             }
         }
         if (!arrayList3.isEmpty()) {
@@ -1188,7 +1188,7 @@ public final class g5 extends c1 {
     public final HashMap H() {
         HashMap hashMap;
         Cursor cursor;
-        boolean z9;
+        boolean z10;
         Cursor cursor2;
         HashMap hashMap2;
         int i7;
@@ -1211,7 +1211,7 @@ public final class g5 extends c1 {
         Cursor cursor4;
         Cursor cursor5;
         long currentTimeMillis;
-        if (!getUserConfig().U) {
+        if (!getUserConfig().V) {
             if (r2.a) {
                 a8.b("contacts sync disabled");
             }
@@ -1229,7 +1229,7 @@ public final class g5 extends c1 {
             ContentResolver contentResolver3 = t0.b.getContentResolver();
             HashMap hashMap5 = new HashMap();
             ArrayList arrayList3 = new ArrayList();
-            Cursor query = contentResolver3.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, p0, null, null, null);
+            Cursor query = contentResolver3.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, q0, null, null, null);
             try {
                 long currentTimeMillis2 = System.currentTimeMillis();
                 String str3 = "+";
@@ -1246,7 +1246,7 @@ public final class g5 extends c1 {
                                     if (string2 == null) {
                                         string2 = "";
                                     }
-                                    boolean z10 = string2.indexOf(".sim") != 0 ? r32 : false;
+                                    boolean z11 = string2.indexOf(".sim") != 0 ? r32 : false;
                                     if (!TextUtils.isEmpty(string)) {
                                         String d = pf.b.d(string, r32);
                                         if (!TextUtils.isEmpty(d)) {
@@ -1255,11 +1255,11 @@ public final class g5 extends c1 {
                                                     substring = d.substring(r32);
                                                 } catch (Throwable th2) {
                                                     th = th2;
-                                                    z9 = r32;
+                                                    z10 = r32;
                                                     hashMap = hashMap3;
                                                     cursor2 = query;
                                                     try {
-                                                        a8.g(th, z9);
+                                                        a8.g(th, z10);
                                                         if (hashMap != null) {
                                                         }
                                                         if (cursor2 != null) {
@@ -1288,7 +1288,7 @@ public final class g5 extends c1 {
                                                     arrayList3.remove(sb3.toString());
                                                     arrayList3.add(sb4);
                                                     d5Var.b = string3;
-                                                    d5Var.d = z10;
+                                                    d5Var.d = z11;
                                                     d5Var.c = string2;
                                                 }
                                                 contentResolver3 = contentResolver2;
@@ -1324,7 +1324,7 @@ public final class g5 extends c1 {
                                                         }
                                                     }
                                                     d5Var2.c = string2;
-                                                    d5Var2.d = z10;
+                                                    d5Var2.d = z11;
                                                     d5Var2.b = string3;
                                                     d5Var2.a = i7;
                                                     hashMap3.put(string3, d5Var2);
@@ -1340,20 +1340,20 @@ public final class g5 extends c1 {
                                                     String string5 = query.getString(3);
                                                     ArrayList arrayList4 = d5Var2.f;
                                                     if (string5 == null) {
-                                                        string5 = id.M0(2131747291, null);
+                                                        string5 = hd.M0(2131747291, null);
                                                     }
                                                     arrayList4.add(string5);
                                                 } else if (i13 == 1) {
-                                                    d5Var2.f.add(id.M0(2131747293, null));
+                                                    d5Var2.f.add(hd.M0(2131747293, null));
                                                 } else {
                                                     if (i13 == 2) {
-                                                        d5Var2.f.add(id.M0(2131747291, null));
+                                                        d5Var2.f.add(hd.M0(2131747291, null));
                                                     } else if (i13 == 3) {
-                                                        d5Var2.f.add(id.M0(2131747281, null));
+                                                        d5Var2.f.add(hd.M0(2131747281, null));
                                                     } else if (i13 == 12) {
-                                                        d5Var2.f.add(id.M0(2131747292, null));
+                                                        d5Var2.f.add(hd.M0(2131747292, null));
                                                     } else {
-                                                        d5Var2.f.add(id.M0(2131747282, null));
+                                                        d5Var2.f.add(hd.M0(2131747282, null));
                                                     }
                                                     hashMap5.put(substring, d5Var2);
                                                     contentResolver3 = contentResolver2;
@@ -1384,9 +1384,9 @@ public final class g5 extends c1 {
                                     th = th3;
                                     hashMap = hashMap3;
                                     cursor = query;
-                                    z9 = true;
+                                    z10 = true;
                                     cursor2 = cursor;
-                                    a8.g(th, z9);
+                                    a8.g(th, z10);
                                     if (hashMap != null) {
                                     }
                                     if (cursor2 != null) {
@@ -1435,7 +1435,7 @@ public final class g5 extends c1 {
                     ContentResolver contentResolver4 = contentResolver;
                     int i15 = i10;
                     String str5 = str;
-                    Cursor query2 = contentResolver4.query(ContactsContract.Data.CONTENT_URI, q0, "lookup IN (" + join + ") AND mimetype = 'vnd.android.cursor.item/name'", null, null);
+                    Cursor query2 = contentResolver4.query(ContactsContract.Data.CONTENT_URI, r0, "lookup IN (" + join + ") AND mimetype = 'vnd.android.cursor.item/name'", null, null);
                     if (query2 != null) {
                         while (query2.moveToNext()) {
                             try {
@@ -1488,9 +1488,9 @@ public final class g5 extends c1 {
                                 th = th5;
                                 hashMap = hashMap4;
                                 cursor = query2;
-                                z9 = true;
+                                z10 = true;
                                 cursor2 = cursor;
-                                a8.g(th, z9);
+                                a8.g(th, z10);
                                 if (hashMap != null) {
                                 }
                                 if (cursor2 != null) {
@@ -1536,9 +1536,9 @@ public final class g5 extends c1 {
                                     th = th6;
                                     hashMap = hashMap4;
                                     cursor = cursor5;
-                                    z9 = true;
+                                    z10 = true;
                                     cursor2 = cursor;
-                                    a8.g(th, z9);
+                                    a8.g(th, z10);
                                     if (hashMap != null) {
                                     }
                                     if (cursor2 != null) {
@@ -1587,7 +1587,7 @@ public final class g5 extends c1 {
                                                             d5Var4.e.add(f5Var2.d);
                                                             d5Var4.g.add(str7);
                                                             d5Var4.h.add(0);
-                                                            d5Var4.f.add(id.M0(2131747282, null));
+                                                            d5Var4.f.add(hd.M0(2131747282, null));
                                                             HashMap hashMap7 = hashMap2 == null ? new HashMap() : hashMap2;
                                                             try {
                                                                 hashMap7.put(f5Var2.b, d5Var4);
@@ -1597,9 +1597,9 @@ public final class g5 extends c1 {
                                                                 th = th7;
                                                                 cursor = query4;
                                                                 hashMap = hashMap7;
-                                                                z9 = true;
+                                                                z10 = true;
                                                                 cursor2 = cursor;
-                                                                a8.g(th, z9);
+                                                                a8.g(th, z10);
                                                                 if (hashMap != null) {
                                                                 }
                                                                 if (cursor2 != null) {
@@ -1617,9 +1617,9 @@ public final class g5 extends c1 {
                                             cursor4 = query4;
                                             hashMap = hashMap2;
                                             cursor = cursor4;
-                                            z9 = true;
+                                            z10 = true;
                                             cursor2 = cursor;
-                                            a8.g(th, z9);
+                                            a8.g(th, z10);
                                             if (hashMap != null) {
                                             }
                                             if (cursor2 != null) {
@@ -1637,9 +1637,9 @@ public final class g5 extends c1 {
                                 cursor4 = cursor5;
                                 hashMap = hashMap2;
                                 cursor = cursor4;
-                                z9 = true;
+                                z10 = true;
                                 cursor2 = cursor;
-                                a8.g(th, z9);
+                                a8.g(th, z10);
                                 if (hashMap != null) {
                                     hashMap.clear();
                                 }
@@ -1673,9 +1673,9 @@ public final class g5 extends c1 {
                         cursor4 = cursor3;
                         hashMap = hashMap2;
                         cursor = cursor4;
-                        z9 = true;
+                        z10 = true;
                         cursor2 = cursor;
-                        a8.g(th, z9);
+                        a8.g(th, z10);
                         if (hashMap != null) {
                         }
                         if (cursor2 != null) {
@@ -1703,17 +1703,17 @@ public final class g5 extends c1 {
 
     public final void I() {
         L();
-        qp messagesController = getMessagesController();
-        messagesController.r1.clear();
-        messagesController.w1.clear();
-        SharedPreferences.Editor edit = qp.s1(this.currentAccount).e7.edit();
+        np messagesController = getMessagesController();
+        messagesController.s1.clear();
+        messagesController.x1.clear();
+        SharedPreferences.Editor edit = np.s1(this.currentAccount).f7.edit();
         edit.putBoolean("needGetStatuses", true).commit();
         getConnectionsManager().sendRequest(new TLRPC.TL_contacts_getStatuses(), new r4(2, this, edit));
     }
 
-    public final void J(boolean z9) {
+    public final void J(boolean z10) {
         try {
-            if (qp.s1(this.currentAccount).e7.getLong("lastReloadStatusTime", 0L) >= System.currentTimeMillis() - 10800000 && !z9) {
+            if (np.s1(this.currentAccount).f7.getLong("lastReloadStatusTime", 0L) >= System.currentTimeMillis() - 10800000 && !z10) {
                 return;
             }
             I();
@@ -1723,12 +1723,12 @@ public final class g5 extends c1 {
     }
 
     public final void K() {
-        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_resetSaved(), new di.v5(9));
+        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_resetSaved(), new fi.m5(9));
     }
 
     public final void L() {
         try {
-            qp.s1(this.currentAccount).e7.edit().putLong("lastReloadStatusTime", System.currentTimeMillis()).commit();
+            np.s1(this.currentAccount).f7.edit().putLong("lastReloadStatusTime", System.currentTimeMillis()).commit();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
@@ -1737,64 +1737,64 @@ public final class g5 extends c1 {
     public final void M(int i7, ArrayList arrayList) {
         switch (i7) {
             case 0:
-                this.J = arrayList;
-                break;
-            case 1:
                 this.K = arrayList;
                 break;
-            case 2:
+            case 1:
                 this.L = arrayList;
                 break;
-            case 3:
+            case 2:
                 this.M = arrayList;
                 break;
-            case 4:
+            case 3:
                 this.N = arrayList;
                 break;
-            case 5:
-                this.Q = arrayList;
-                break;
-            case 6:
-                this.R = arrayList;
-                break;
-            case 7:
-                this.S = arrayList;
-                break;
-            case 8:
-                this.T = arrayList;
-                break;
-            case 9:
+            case 4:
                 this.O = arrayList;
                 break;
-            case 11:
+            case 5:
+                this.R = arrayList;
+                break;
+            case 6:
+                this.S = arrayList;
+                break;
+            case 7:
+                this.T = arrayList;
+                break;
+            case 8:
                 this.U = arrayList;
                 break;
-            case 12:
-                this.V = arrayList;
-                break;
-            case 13:
-                this.W = arrayList;
-                break;
-            case 14:
+            case 9:
                 this.P = arrayList;
                 break;
+            case 11:
+                this.V = arrayList;
+                break;
+            case 12:
+                this.W = arrayList;
+                break;
+            case 13:
+                this.X = arrayList;
+                break;
+            case 14:
+                this.Q = arrayList;
+                break;
         }
-        getNotificationCenter().k(qs.k0, new Object[0]);
+        getNotificationCenter().k(ns.k0, new Object[0]);
         I();
     }
 
     public final void N() {
         HashMap hashMap = new HashMap();
-        int size = this.e0.size();
+        int size = this.f0.size();
         for (int i7 = 0; i7 < size; i7++) {
-            TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) this.e0.get(i7);
+            TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) this.f0.get(i7);
             TLRPC.User a22 = getMessagesController().a2(Long.valueOf(tL_contact.user_id));
             if (a22 != null && !TextUtils.isEmpty(a22.phone)) {
                 hashMap.put(a22.phone, tL_contact);
             }
         }
         ArrayList arrayList = new ArrayList();
-        Iterator it = this.Y.entrySet().iterator();
+        Iterator it = this.Z.entrySet().iterator();
         while (it.hasNext()) {
             d5 d5Var = (d5) ((Map.Entry) it.next()).getValue();
             int i10 = 0;
@@ -1808,7 +1808,7 @@ public final class g5 extends c1 {
             }
         }
         Collections.sort(arrayList, new t4(u(), 1));
-        this.a0 = arrayList;
+        this.b0 = arrayList;
     }
 
     public final void a(TLRPC.User user) {
@@ -1868,7 +1868,7 @@ public final class g5 extends c1 {
         newInsert3.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.profile");
         newInsert3.withValue("data1", Long.valueOf(user.id));
         newInsert3.withValue("data2", "Telegram Profile");
-        newInsert3.withValue("data3", id.a0("ContactShortcutMessage", null, 2131751786, str));
+        newInsert3.withValue("data3", hd.a0("ContactShortcutMessage", null, 2131751786, str));
         newInsert3.withValue("data4", Long.valueOf(user.id));
         arrayList.add(newInsert3.build());
         ContentProviderOperation.Builder newInsert4 = ContentProviderOperation.newInsert(uri);
@@ -1876,7 +1876,7 @@ public final class g5 extends c1 {
         newInsert4.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.call");
         newInsert4.withValue("data1", Long.valueOf(user.id));
         newInsert4.withValue("data2", "Telegram Voice Call");
-        newInsert4.withValue("data3", id.a0("ContactShortcutVoiceCall", null, 2131751784, str));
+        newInsert4.withValue("data3", hd.a0("ContactShortcutVoiceCall", null, 2131751784, str));
         newInsert4.withValue("data4", Long.valueOf(user.id));
         arrayList.add(newInsert4.build());
         ContentProviderOperation.Builder newInsert5 = ContentProviderOperation.newInsert(uri);
@@ -1884,7 +1884,7 @@ public final class g5 extends c1 {
         newInsert5.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.call.video");
         newInsert5.withValue("data1", Long.valueOf(user.id));
         newInsert5.withValue("data2", "Telegram Video Call");
-        newInsert5.withValue("data3", id.a0("ContactShortcutVideoCall", null, 2131751785, str));
+        newInsert5.withValue("data3", hd.a0("ContactShortcutVideoCall", null, 2131751785, str));
         newInsert5.withValue("data4", Long.valueOf(user.id));
         arrayList.add(newInsert5.build());
     }
@@ -1916,7 +1916,7 @@ public final class g5 extends c1 {
         }
         StringBuilder sb2 = new StringBuilder();
         StringBuilder sb3 = new StringBuilder();
-        boolean z9 = false;
+        boolean z10 = false;
         for (int i10 = 0; i10 < arrayList4.size(); i10++) {
             TLRPC.TL_contact tL_contact2 = (TLRPC.TL_contact) arrayList4.get(i10);
             TLRPC.User user = concurrentHashMap != null ? (TLRPC.User) concurrentHashMap.get(Long.valueOf(tL_contact2.user_id)) : null;
@@ -1926,9 +1926,9 @@ public final class g5 extends c1 {
                 getMessagesController().X3(user, true, false);
             }
             if (user == null || TextUtils.isEmpty(user.phone)) {
-                z9 = true;
+                z10 = true;
             } else {
-                d5 d5Var = (d5) this.Z.get(user.phone);
+                d5 d5Var = (d5) this.a0.get(user.phone);
                 if (d5Var != null && (indexOf2 = d5Var.g.indexOf(user.phone)) != -1) {
                     d5Var.h.set(indexOf2, 0);
                 }
@@ -1948,9 +1948,9 @@ public final class g5 extends c1 {
                 getMessagesController().X3(user2, true, false);
             }
             if (user2 == null) {
-                z9 = true;
+                z10 = true;
             } else if (!TextUtils.isEmpty(user2.phone)) {
-                d5 d5Var2 = (d5) this.Z.get(user2.phone);
+                d5 d5Var2 = (d5) this.a0.get(user2.phone);
                 if (d5Var2 != null && (indexOf = d5Var2.g.indexOf(user2.phone)) != -1) {
                     d5Var2.h.set(indexOf, 1);
                 }
@@ -1963,30 +1963,30 @@ public final class g5 extends c1 {
         if (sb2.length() != 0 || sb3.length() != 0) {
             getMessagesStorage().f(sb2.toString(), sb3.toString());
         }
-        if (z9) {
+        if (z10) {
             Utilities.d.c(new k4(this, 2));
         } else {
-            g0.h3(new ng(this, arrayList4, arrayList5, 15));
+            g0.h3(new mg(this, arrayList4, arrayList5, 15));
         }
     }
 
-    public final void d(boolean z9) {
+    public final void d(boolean z10) {
         Collator u10 = u();
-        if (z9) {
-            Collections.sort(this.e0, new s4(this, u10, 0));
+        if (z10) {
+            Collections.sort(this.f0, new s4(this, u10, 0));
         }
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
-        for (int i7 = 0; i7 < this.e0.size(); i7++) {
-            TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) this.e0.get(i7);
+        for (int i7 = 0; i7 < this.f0.size(); i7++) {
+            TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) this.f0.get(i7);
             TLRPC.User a22 = getMessagesController().a2(Long.valueOf(tL_contact.user_id));
             if (a22 != null) {
-                String j3 = t10.j(a22, true);
+                String j3 = q10.j(a22, true);
                 if (j3.length() > 1) {
                     j3 = j3.substring(0, 1);
                 }
                 String upperCase = j3.length() == 0 ? "#" : j3.toUpperCase();
-                String str = (String) this.E.get(upperCase);
+                String str = (String) this.F.get(upperCase);
                 if (str != null) {
                     upperCase = str;
                 }
@@ -2000,12 +2000,12 @@ public final class g5 extends c1 {
             }
         }
         Collections.sort(arrayList, new t4(u10, 0));
-        this.g0 = hashMap;
-        this.h0 = arrayList;
+        this.h0 = hashMap;
+        this.i0 = arrayList;
     }
 
     public final boolean e() {
-        boolean z9 = false;
+        boolean z10 = false;
         try {
         } catch (Exception e10) {
             a8.g(e10, true);
@@ -2023,20 +2023,20 @@ public final class g5 extends c1 {
                     }
                     String sb3 = sb2.toString();
                     if (this.w.length() != 0 && !this.w.equals(sb3)) {
-                        z9 = true;
+                        z10 = true;
                     }
                     this.w = sb3;
                 } catch (Throwable th2) {
-                    boolean z10 = z9;
+                    boolean z11 = z10;
                     try {
                         try {
                             query.close();
                             throw th2;
                         } catch (Exception e11) {
                             e = e11;
-                            z9 = z10;
+                            z10 = z11;
                             a8.g(e, true);
-                            return z9;
+                            return z10;
                         }
                     } catch (Throwable th3) {
                         th2.addSuppressed(th3);
@@ -2050,18 +2050,18 @@ public final class g5 extends c1 {
         } catch (Exception e12) {
             e = e12;
         }
-        return z9;
+        return z10;
     }
 
     public final void f() {
-        SharedPreferences sharedPreferences = qp.s1(this.currentAccount).e7;
+        SharedPreferences sharedPreferences = np.s1(this.currentAccount).f7;
         this.y = sharedPreferences.getString("invitelink", null);
         int i7 = sharedPreferences.getInt("invitelinktime", 0);
-        if (this.D) {
+        if (this.E) {
             return;
         }
         if (this.y == null || Math.abs((System.currentTimeMillis() / 1000) - i7) >= 86400) {
-            this.D = true;
+            this.E = true;
             getConnectionsManager().sendRequest(new TLRPC.TL_help_getInviteText(), new q4(this, 0), 2);
         }
     }
@@ -2179,7 +2179,7 @@ public final class g5 extends c1 {
         }
     }
 
-    public final void i(ArrayList arrayList, boolean z9) {
+    public final void i(ArrayList arrayList, boolean z10) {
         if (arrayList.isEmpty()) {
             return;
         }
@@ -2188,7 +2188,7 @@ public final class g5 extends c1 {
         int size = arrayList.size();
         for (int i7 = 0; i7 < size; i7++) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i7);
-            di.z6 P1 = getMessagesController().P1();
+            fi.s6 P1 = getMessagesController().P1();
             long j3 = user.id;
             int i10 = P1.a;
             ArrayList arrayList3 = P1.h;
@@ -2215,16 +2215,16 @@ public final class g5 extends c1 {
                 }
                 i12++;
             }
-            di.m7 m7Var = P1.k;
-            m7Var.b.a.c(new bi.r3(m7Var, j3, 6));
-            qp.s1(i10).D();
-            qs.f(i10).k(qs.v5, new Object[0]);
+            fi.f7 f7Var = P1.k;
+            f7Var.b.a.c(new di.x2(f7Var, j3, 6));
+            np.s1(i10).D();
+            ns.f(i10).k(ns.v5, new Object[0]);
             TLRPC.InputUser q12 = getMessagesController().q1(user);
             user.contact = false;
             arrayList2.add(Long.valueOf(user.id));
             tL_contacts_deleteContacts.id.add(q12);
         }
-        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new p4(this, arrayList2, arrayList, z9, ((TLRPC.User) arrayList.get(0)).first_name));
+        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new p4(this, arrayList2, arrayList, z10, ((TLRPC.User) arrayList.get(0)).first_name));
     }
 
     public final void j(long j3) {
@@ -2291,64 +2291,64 @@ public final class g5 extends c1 {
             str = "https://telegram.org/dl";
         }
         if (i7 <= 1) {
-            return id.a0(null, null, 2131749116, str);
+            return hd.a0(null, null, 2131749116, str);
         }
         try {
-            return String.format(id.K0(i7, "InviteTextNum"), Integer.valueOf(i7), str);
+            return String.format(hd.K0(i7, "InviteTextNum"), Integer.valueOf(i7), str);
         } catch (Exception unused) {
-            return id.a0(null, null, 2131749116, str);
+            return hd.a0(null, null, 2131749116, str);
         }
     }
 
     public final boolean t(int i7) {
-        return this.I[i7] != 2;
+        return this.J[i7] != 2;
     }
 
     public final ArrayList v(int i7) {
         switch (i7) {
             case 0:
-                return this.J;
-            case 1:
                 return this.K;
-            case 2:
+            case 1:
                 return this.L;
-            case 3:
+            case 2:
                 return this.M;
-            case 4:
+            case 3:
                 return this.N;
-            case 5:
-                return this.Q;
-            case 6:
-                return this.R;
-            case 7:
-                return this.S;
-            case 8:
-                return this.T;
-            case 9:
+            case 4:
                 return this.O;
+            case 5:
+                return this.R;
+            case 6:
+                return this.S;
+            case 7:
+                return this.T;
+            case 8:
+                return this.U;
+            case 9:
+                return this.P;
             case 10:
             default:
                 return null;
             case 11:
-                return this.U;
-            case 12:
                 return this.V;
-            case 13:
+            case 12:
                 return this.W;
+            case 13:
+                return this.X;
             case 14:
-                return this.P;
+                return this.Q;
         }
     }
 
     public final boolean x(long j3) {
-        return this.f0.get(Long.valueOf(j3)) != null;
+        return this.g0.get(Long.valueOf(j3)) != null;
     }
 
     public final boolean y() {
-        boolean z9;
+        boolean z10;
         synchronized (this.c) {
-            z9 = this.b;
+            z10 = this.b;
         }
-        return z9;
+        return z10;
     }
 }

@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class TeXEnvironment {
     private static final int MAX_DEPTH = 64;
@@ -137,8 +137,8 @@ public class TeXEnvironment {
         this.scaleFactor = f10;
     }
 
-    public void setSmallCap(boolean z9) {
-        this.smallCap = z9;
+    public void setSmallCap(boolean z10) {
+        this.smallCap = z10;
     }
 
     public void setStyle(int i7) {
@@ -195,11 +195,11 @@ public class TeXEnvironment {
         throw new DepthLimitExceededException();
     }
 
-    private TeXEnvironment(int i7, float f10, TeXFont teXFont, Color color, Color color2, String str, boolean z9) {
-        this(i7, f10, teXFont, color, color2, str, z9, 0);
+    private TeXEnvironment(int i7, float f10, TeXFont teXFont, Color color, Color color2, String str, boolean z10) {
+        this(i7, f10, teXFont, color, color2, str, z10, 0);
     }
 
-    private TeXEnvironment(int i7, float f10, TeXFont teXFont, Color color, Color color2, String str, boolean z9, int i10) {
+    private TeXEnvironment(int i7, float f10, TeXFont teXFont, Color color, Color color2, String str, boolean z10, int i10) {
         this.lastFontId = -1;
         this.textwidth = Float.POSITIVE_INFINITY;
         this.isColored = false;
@@ -207,7 +207,7 @@ public class TeXEnvironment {
         this.scaleFactor = f10;
         this.tf = teXFont;
         this.textStyle = str;
-        this.smallCap = z9;
+        this.smallCap = z10;
         this.depth = i10;
         this.background = color;
         this.color = color2;

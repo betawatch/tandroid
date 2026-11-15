@@ -1,32 +1,34 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class d90 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k90 b;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.EditText;
 
-    public /* synthetic */ d90(k90 k90Var, int i7) {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class d90 extends EditText {
+    public final /* synthetic */ int a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ d90(Context context, int i7) {
+        super(context);
         this.a = i7;
-        this.b = k90Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        k90 k90Var = this.b;
-        switch (i7) {
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
             case 0:
-                vf.c.t(k90Var.getParentActivity(), org.telegram.messenger.id.M0(2131746156, null));
-                break;
-            case 1:
-                k90Var.r.d.requestFocus();
-                org.telegram.messenger.g0.K3(k90Var.r.d);
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
+                }
                 break;
             default:
-                k90Var.r.d.clearFocus();
-                org.telegram.messenger.g0.v1(k90Var.r.d);
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
+                }
                 break;
         }
+        return super.onTouchEvent(motionEvent);
     }
 }

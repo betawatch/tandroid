@@ -2,10 +2,10 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class gs0 extends org.telegram.ui.Cells.q1 {
-    public final /* synthetic */ int ld = 1;
+    public final /* synthetic */ int zd = 1;
 
     public /* synthetic */ gs0(Context context, int i7) {
         super(context, i7);
@@ -15,7 +15,7 @@ public final class gs0 extends org.telegram.ui.Cells.q1 {
     public int getParentWidth() {
         int i7;
         int L;
-        switch (this.ld) {
+        switch (this.zd) {
             case 1:
                 if (getMeasuredWidth() != 0) {
                     i7 = getMeasuredWidth();
@@ -32,12 +32,12 @@ public final class gs0 extends org.telegram.ui.Cells.q1 {
 
     @Override // android.view.View
     public final boolean isPressed() {
-        switch (this.ld) {
+        switch (this.zd) {
         }
         return false;
     }
 
-    public /* synthetic */ gs0(Context context, int i7, boolean z9, h6.m mVar, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, i7, z9, mVar, h6Var);
+    public /* synthetic */ gs0(Context context, int i7, boolean z10, h6.m mVar, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, i7, z10, mVar, e6Var);
     }
 }

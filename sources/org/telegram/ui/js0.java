@@ -1,42 +1,37 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import android.view.View;
-import java.io.Serializable;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class js0 implements org.telegram.ui.ActionBar.r1, org.telegram.messenger.a20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ks0 b;
+public final class js0 extends n11 {
+    public final /* synthetic */ bi.e4 f2;
+    public final /* synthetic */ e11[] g2;
+    public final /* synthetic */ PremiumPreviewFragment h2;
 
-    public /* synthetic */ js0(ks0 ks0Var, int i7) {
-        this.a = i7;
-        this.b = ks0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public js0(PremiumPreviewFragment premiumPreviewFragment, PremiumPreviewFragment premiumPreviewFragment2, Activity activity, Integer num, int i7, org.telegram.ui.ActionBar.e6 e6Var, int i10, bi.e4 e4Var, e11[] e11VarArr) {
+        super(premiumPreviewFragment2, activity, true, num, i7, true, e6Var, i10);
+        this.h2 = premiumPreviewFragment;
+        this.f2 = e4Var;
+        this.g2 = e11VarArr;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        switch (this.a) {
-            case 0:
-                this.b.d0();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
-        }
+    @Override // org.telegram.ui.n11
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
     }
 
-    @Override // org.telegram.messenger.a20
-    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        View view = (View) obj2;
-        if (((org.telegram.ui.Components.x31) obj).d == 1) {
-            org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
-            boolean z9 = !r8Var.e.h;
-            ks0 ks0Var = this.b;
-            ks0Var.n = z9;
-            r8Var.setChecked(z9);
-            ks0Var.d.f3.O(true);
-            ks0Var.a0(true);
+    @Override // org.telegram.ui.n11
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        this.f2.a(l10, num);
+        e11 e11Var = this.g2[0];
+        if (e11Var != null) {
+            this.h2.v0 = null;
+            e11Var.dismiss();
         }
     }
 }

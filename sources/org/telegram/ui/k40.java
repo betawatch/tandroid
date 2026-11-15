@@ -1,26 +1,46 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class k40 implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ FrameLayout a;
-    public final /* synthetic */ m40 b;
+public final /* synthetic */ class k40 implements org.telegram.ui.Components.w00, org.telegram.ui.ActionBar.q1, r0.m {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w40 b;
 
-    public k40(m40 m40Var, FrameLayout frameLayout) {
-        this.b = m40Var;
-        this.a = frameLayout;
+    public /* synthetic */ k40(w40 w40Var, int i7) {
+        this.a = i7;
+        this.b = w40Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        this.a.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        m40 m40Var = this.b;
-        if (m40Var.z0 == null) {
-            m40Var.z0 = (kc) m40Var.F0(m40Var.Z);
+    @Override // r0.m
+    public r0.k1 M0(View view, r0.k1 k1Var) {
+        int i7 = org.telegram.messenger.g0.I0(k1Var, false).d;
+        w40 w40Var = this.b;
+        w40Var.n0 = i7;
+        di.e1 e1Var = w40Var.G;
+        if (e1Var != null) {
+            e1Var.setPadding(0, 0, 0, i7);
         }
-        m40Var.z0.f.setOnClickListener(new j40(this, 0));
+        w40Var.o0();
+        w40Var.m0();
+        return r0.k1.b;
+    }
+
+    @Override // org.telegram.ui.Components.w00
+    public void a(int i7) {
+        this.b.b.a(Math.min(i7, r0.d0));
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        switch (this.a) {
+            case 1:
+                this.b.t0();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
+        }
     }
 }

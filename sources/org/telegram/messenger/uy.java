@@ -4,19 +4,19 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class uy implements RequestDelegate {
-    public final /* synthetic */ TLRPC.TL_messages_initHistoryImport a;
-    public final /* synthetic */ xy b;
+    public final /* synthetic */ TLRPC.TL_messages_startHistoryImport a;
+    public final /* synthetic */ vy b;
 
-    public uy(xy xyVar, TLRPC.TL_messages_initHistoryImport tL_messages_initHistoryImport) {
-        this.b = xyVar;
-        this.a = tL_messages_initHistoryImport;
+    public uy(vy vyVar, TLRPC.TL_messages_startHistoryImport tL_messages_startHistoryImport) {
+        this.b = vyVar;
+        this.a = tL_messages_startHistoryImport;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        g0.h3(new em(this, tLObject, this.a, tL_error, 25));
+        g0.h3(new kg(this, tL_error, this.a, 27));
     }
 }

@@ -1,6 +1,6 @@
 package g;
 
-import a8.ca;
+import a8.da;
 import android.R;
 import android.app.Activity;
 import android.content.Context;
@@ -13,24 +13,23 @@ import androidx.appcompat.widget.ActionBarContainer;
 import androidx.appcompat.widget.ActionBarContextView;
 import androidx.appcompat.widget.ActionBarOverlayLayout;
 import androidx.appcompat.widget.Toolbar;
-import bi.de;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import m.l1;
-import m.m3;
+import m.k1;
+import m.k3;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class b0 extends ca implements m.c {
+public final class b0 extends da implements m.b {
     public static final AccelerateInterpolator x = new AccelerateInterpolator();
     public static final DecelerateInterpolator y = new DecelerateInterpolator();
     public Context a;
     public Context b;
     public ActionBarOverlayLayout c;
     public ActionBarContainer d;
-    public l1 e;
+    public k1 e;
     public ActionBarContextView f;
     public final View g;
     public boolean h;
@@ -48,9 +47,9 @@ public final class b0 extends ca implements m.c {
     public boolean t;
     public final z u;
     public final z v;
-    public final aa.n w;
+    public final ob.c w;
 
-    public b0(Activity activity, boolean z9) {
+    public b0(Activity activity, boolean z10) {
         new ArrayList();
         this.m = new ArrayList();
         this.n = 0;
@@ -58,19 +57,19 @@ public final class b0 extends ca implements m.c {
         this.r = true;
         this.u = new z(this, 0);
         this.v = new z(this, 1);
-        this.w = new aa.n(this, 25);
+        this.w = new ob.c(this, 23);
         View decorView = activity.getWindow().getDecorView();
         b(decorView);
-        if (z9) {
+        if (z10) {
             return;
         }
         this.g = decorView.findViewById(R.id.content);
     }
 
-    public final void a(boolean z9) {
+    public final void a(boolean z10) {
         l0 i7;
         l0 l0Var;
-        if (z9) {
+        if (z10) {
             if (!this.q) {
                 this.q = true;
                 ActionBarOverlayLayout actionBarOverlayLayout = this.c;
@@ -90,29 +89,29 @@ public final class b0 extends ca implements m.c {
         ActionBarContainer actionBarContainer = this.d;
         WeakHashMap weakHashMap = i0.a;
         if (!actionBarContainer.isLaidOut()) {
-            if (z9) {
-                ((m3) this.e).a.setVisibility(4);
+            if (z10) {
+                ((k3) this.e).a.setVisibility(4);
                 this.f.setVisibility(0);
                 return;
             } else {
-                ((m3) this.e).a.setVisibility(0);
+                ((k3) this.e).a.setVisibility(0);
                 this.f.setVisibility(8);
                 return;
             }
         }
-        if (z9) {
-            m3 m3Var = (m3) this.e;
-            i7 = i0.a(m3Var.a);
+        if (z10) {
+            k3 k3Var = (k3) this.e;
+            i7 = i0.a(k3Var.a);
             i7.a(0.0f);
             i7.c(100L);
-            i7.d(new k.i(m3Var, 4));
+            i7.d(new k.i(k3Var, 4));
             l0Var = this.f.i(0, 200L);
         } else {
-            m3 m3Var2 = (m3) this.e;
-            l0 a10 = i0.a(m3Var2.a);
+            k3 k3Var2 = (k3) this.e;
+            l0 a10 = i0.a(k3Var2.a);
             a10.a(1.0f);
             a10.c(200L);
-            a10.d(new k.i(m3Var2, 0));
+            a10.d(new k.i(k3Var2, 0));
             i7 = this.f.i(8, 100L);
             l0Var = a10;
         }
@@ -130,15 +129,15 @@ public final class b0 extends ca implements m.c {
     }
 
     public final void b(View view) {
-        l1 wrapper;
+        k1 wrapper;
         ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) view.findViewById(org.telegram.messenger.beta.R.id.decor_content_parent);
         this.c = actionBarOverlayLayout;
         if (actionBarOverlayLayout != null) {
             actionBarOverlayLayout.setActionBarVisibilityCallback(this);
         }
         KeyEvent.Callback findViewById = view.findViewById(org.telegram.messenger.beta.R.id.action_bar);
-        if (findViewById instanceof l1) {
-            wrapper = (l1) findViewById;
+        if (findViewById instanceof k1) {
+            wrapper = (k1) findViewById;
         } else {
             if (!(findViewById instanceof Toolbar)) {
                 throw new IllegalStateException("Can't make a decor toolbar out of ".concat(findViewById != null ? findViewById.getClass().getSimpleName() : "null"));
@@ -149,26 +148,26 @@ public final class b0 extends ca implements m.c {
         this.f = (ActionBarContextView) view.findViewById(org.telegram.messenger.beta.R.id.action_context_bar);
         ActionBarContainer actionBarContainer = (ActionBarContainer) view.findViewById(org.telegram.messenger.beta.R.id.action_bar_container);
         this.d = actionBarContainer;
-        l1 l1Var = this.e;
-        if (l1Var == null || this.f == null || actionBarContainer == null) {
+        k1 k1Var = this.e;
+        if (k1Var == null || this.f == null || actionBarContainer == null) {
             throw new IllegalStateException(b0.class.getSimpleName().concat(" can only be used with a compatible window decor layout"));
         }
-        Context context = ((m3) l1Var).a.getContext();
+        Context context = ((k3) k1Var).a.getContext();
         this.a = context;
-        if ((((m3) this.e).b & 4) != 0) {
+        if ((((k3) this.e).b & 4) != 0) {
             this.h = true;
         }
         int i7 = context.getApplicationInfo().targetSdkVersion;
         this.e.getClass();
         if (context.getResources().getBoolean(org.telegram.messenger.beta.R.bool.abc_action_bar_embed_tabs)) {
             this.d.setTabContainer(null);
-            ((m3) this.e).getClass();
+            ((k3) this.e).getClass();
         } else {
-            ((m3) this.e).getClass();
+            ((k3) this.e).getClass();
             this.d.setTabContainer(null);
         }
         this.e.getClass();
-        ((m3) this.e).a.setCollapsible(false);
+        ((k3) this.e).a.setCollapsible(false);
         this.c.setHasNonEmbeddedTabs(false);
         TypedArray obtainStyledAttributes = this.a.obtainStyledAttributes(null, f.a.a, org.telegram.messenger.beta.R.attr.actionBarStyle, 0);
         if (obtainStyledAttributes.getBoolean(14, false)) {
@@ -188,24 +187,24 @@ public final class b0 extends ca implements m.c {
         obtainStyledAttributes.recycle();
     }
 
-    public final void c(boolean z9) {
+    public final void c(boolean z10) {
         if (this.h) {
             return;
         }
-        int i7 = z9 ? 4 : 0;
-        m3 m3Var = (m3) this.e;
-        int i10 = m3Var.b;
+        int i7 = z10 ? 4 : 0;
+        k3 k3Var = (k3) this.e;
+        int i10 = k3Var.b;
         this.h = true;
-        m3Var.a((i7 & 4) | (i10 & (-5)));
+        k3Var.a((i7 & 4) | (i10 & (-5)));
     }
 
-    public final void d(boolean z9) {
-        boolean z10 = this.p;
-        boolean z11 = this.q;
+    public final void d(boolean z10) {
+        boolean z11 = this.p;
+        boolean z12 = this.q;
         int i7 = 27;
-        aa.n nVar = this.w;
+        ob.c cVar = this.w;
         View view = this.g;
-        if (!z11 && z10) {
+        if (!z12 && z11) {
             if (this.r) {
                 this.r = false;
                 ac.d dVar = this.s;
@@ -214,7 +213,7 @@ public final class b0 extends ca implements m.c {
                 }
                 int i10 = this.n;
                 z zVar = this.u;
-                if (i10 != 0 || !z9) {
+                if (i10 != 0 || !z10) {
                     zVar.c();
                     return;
                 }
@@ -223,7 +222,7 @@ public final class b0 extends ca implements m.c {
                 ac.d dVar2 = new ac.d();
                 ArrayList arrayList = (ArrayList) dVar2.c;
                 float f10 = -this.d.getHeight();
-                if (z9) {
+                if (z10) {
                     this.d.getLocationInWindow(new int[]{0, 0});
                     f10 -= r13[1];
                 }
@@ -231,7 +230,7 @@ public final class b0 extends ca implements m.c {
                 a10.e(f10);
                 View view2 = (View) a10.a.get();
                 if (view2 != null) {
-                    view2.animate().setUpdateListener(nVar != null ? new de(i7, nVar, view2) : null);
+                    view2.animate().setUpdateListener(cVar != null ? new ch.v(i7, cVar, view2) : null);
                 }
                 if (!dVar2.b) {
                     arrayList.add(a10);
@@ -243,14 +242,14 @@ public final class b0 extends ca implements m.c {
                         arrayList.add(a11);
                     }
                 }
-                boolean z12 = dVar2.b;
-                if (!z12) {
+                boolean z13 = dVar2.b;
+                if (!z13) {
                     dVar2.d = x;
                 }
-                if (!z12) {
+                if (!z13) {
                     dVar2.a = 250L;
                 }
-                if (!z12) {
+                if (!z13) {
                     dVar2.e = zVar;
                 }
                 this.s = dVar2;
@@ -270,10 +269,10 @@ public final class b0 extends ca implements m.c {
         this.d.setVisibility(0);
         int i11 = this.n;
         z zVar2 = this.v;
-        if (i11 == 0 && z9) {
+        if (i11 == 0 && z10) {
             this.d.setTranslationY(0.0f);
             float f11 = -this.d.getHeight();
-            if (z9) {
+            if (z10) {
                 this.d.getLocationInWindow(new int[]{0, 0});
                 f11 -= r13[1];
             }
@@ -284,7 +283,7 @@ public final class b0 extends ca implements m.c {
             a12.e(0.0f);
             View view3 = (View) a12.a.get();
             if (view3 != null) {
-                view3.animate().setUpdateListener(nVar != null ? new de(i7, nVar, view3) : null);
+                view3.animate().setUpdateListener(cVar != null ? new ch.v(i7, cVar, view3) : null);
             }
             if (!dVar4.b) {
                 arrayList2.add(a12);
@@ -297,14 +296,14 @@ public final class b0 extends ca implements m.c {
                     arrayList2.add(a13);
                 }
             }
-            boolean z13 = dVar4.b;
-            if (!z13) {
+            boolean z14 = dVar4.b;
+            if (!z14) {
                 dVar4.d = y;
             }
-            if (!z13) {
+            if (!z14) {
                 dVar4.a = 250L;
             }
-            if (!z13) {
+            if (!z14) {
                 dVar4.e = zVar2;
             }
             this.s = dVar4;
@@ -332,7 +331,7 @@ public final class b0 extends ca implements m.c {
         this.r = true;
         this.u = new z(this, 0);
         this.v = new z(this, 1);
-        this.w = new aa.n(this, 25);
+        this.w = new ob.c(this, 23);
         b(uVar.getWindow().getDecorView());
     }
 }

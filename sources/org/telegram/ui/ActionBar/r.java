@@ -1,45 +1,21 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.drawable.Drawable;
+import org.telegram.ui.kx;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class r extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ActionBarLayout b;
+public final class r extends kx {
+    public final /* synthetic */ ActionBarLayout a;
 
-    public /* synthetic */ r(ActionBarLayout actionBarLayout, int i7) {
-        this.a = i7;
-        this.b = actionBarLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r(ActionBarLayout actionBarLayout) {
+        super(null);
+        this.a = actionBarLayout;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i7 = this.a;
-        ActionBarLayout actionBarLayout = this.b;
-        switch (i7) {
-            case 0:
-                Drawable drawable = ActionBarLayout.v1;
-                actionBarLayout.H(false);
-                break;
-            default:
-                Drawable drawable2 = ActionBarLayout.v1;
-                actionBarLayout.H(false);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.B0 = System.currentTimeMillis();
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.e2
+    public final void updateSheetsVisibility() {
+        super.updateSheetsVisibility();
+        this.a.invalidate();
     }
 }

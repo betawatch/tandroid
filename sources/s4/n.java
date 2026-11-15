@@ -2,13 +2,13 @@ package s4;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n {
     public final Bundle a;
     public r b;
 
-    public n(r rVar, boolean z9) {
+    public n(r rVar, boolean z10) {
         if (rVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
@@ -16,7 +16,7 @@ public final class n {
         this.a = bundle;
         this.b = rVar;
         bundle.putBundle("selector", rVar.a);
-        bundle.putBoolean("activeScan", z9);
+        bundle.putBoolean("activeScan", z10);
     }
 
     public final void a() {

@@ -1,92 +1,16 @@
 package c8;
 
-import java.math.RoundingMode;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class r0 {
-    public static int a(int i7, int i10) {
-        long j3 = i7 + i10;
-        int i11 = (int) j3;
-        if (j3 == ((long) i11)) {
-            return i11;
-        }
-        throw new ArithmeticException("overflow: checkedAdd(" + i7 + ", " + i10 + ")");
+    public static long a(double d) {
+        a8.ja.e("not a normal value", b(d));
+        int exponent = Math.getExponent(d);
+        long doubleToRawLongBits = Double.doubleToRawLongBits(d) & 4503599627370495L;
+        return exponent == -1023 ? doubleToRawLongBits << 1 : doubleToRawLongBits | 4503599627370496L;
     }
 
-    public static int b(int i7, int i10) {
-        RoundingMode roundingMode = RoundingMode.CEILING;
-        roundingMode.getClass();
-        if (i10 == 0) {
-            throw new ArithmeticException("/ by zero");
-        }
-        int i11 = i7 / i10;
-        int i12 = i7 - (i10 * i11);
-        if (i12 == 0) {
-            return i11;
-        }
-        int i13 = ((i7 ^ i10) >> 31) | 1;
-        switch (j9.d.a[roundingMode.ordinal()]) {
-            case 1:
-                t0.b(i12 == 0);
-                return i11;
-            case 2:
-                return i11;
-            case 3:
-                if (i13 >= 0) {
-                    return i11;
-                }
-                break;
-            case 4:
-                break;
-            case 5:
-                if (i13 <= 0) {
-                    return i11;
-                }
-                break;
-            case 6:
-            case 7:
-            case 8:
-                int abs = Math.abs(i12);
-                int abs2 = abs - (Math.abs(i10) - abs);
-                if (abs2 == 0) {
-                    RoundingMode roundingMode2 = RoundingMode.HALF_UP;
-                    RoundingMode roundingMode3 = RoundingMode.HALF_EVEN;
-                    return i11;
-                }
-                if (abs2 <= 0) {
-                    return i11;
-                }
-                break;
-            default:
-                throw new AssertionError();
-        }
-        return i11 + i13;
-    }
-
-    public static int c(int i7) {
-        RoundingMode roundingMode = RoundingMode.UNNECESSARY;
-        if (i7 <= 0) {
-            throw new IllegalArgumentException(jg.g.k(i7, "x (", ") must be > 0"));
-        }
-        switch (j9.d.a[roundingMode.ordinal()]) {
-            case 1:
-                t0.b((i7 > 0) & (((i7 + (-1)) & i7) == 0));
-                break;
-            case 2:
-            case 3:
-                break;
-            case 4:
-            case 5:
-                return 32 - Integer.numberOfLeadingZeros(i7 - 1);
-            case 6:
-            case 7:
-            case 8:
-                int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i7);
-                return (31 - numberOfLeadingZeros) + ((~(~(((-1257966797) >>> numberOfLeadingZeros) - i7))) >>> 31);
-            default:
-                throw new AssertionError();
-        }
-        return 31 - Integer.numberOfLeadingZeros(i7);
+    public static boolean b(double d) {
+        return Math.getExponent(d) <= 1023;
     }
 }

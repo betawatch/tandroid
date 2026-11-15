@@ -1,18 +1,49 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final class e91 extends v4.y {
-    public final /* synthetic */ z91 S;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e91(z91 z91Var, y91 y91Var) {
-        super(y91Var);
-        this.S = z91Var;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class e91 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ u91 c;
+
+    public /* synthetic */ e91(u91 u91Var, boolean z10, int i7) {
+        this.a = i7;
+        this.c = u91Var;
+        this.b = z10;
     }
 
-    @Override // v4.y
-    public final boolean s() {
-        return this.S.y > 0;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i7;
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                boolean z10 = this.b;
+                float f10 = z10 ? 1.0f : 0.0f;
+                u91 u91Var = this.c;
+                u91Var.W0(f10);
+                if (!z10) {
+                    Activity parentActivity = u91Var.getParentActivity();
+                    i7 = ((org.telegram.ui.ActionBar.e2) u91Var).classGuid;
+                    org.telegram.messenger.g0.l3(parentActivity, i7);
+                    u91Var.s0.setVisibility(8);
+                    u91Var.U0(true);
+                    break;
+                } else {
+                    u91Var.r0.setVisibility(8);
+                    break;
+                }
+            default:
+                if (!this.b) {
+                    this.c.p0.setVisibility(8);
+                    break;
+                }
+                break;
+        }
     }
 }

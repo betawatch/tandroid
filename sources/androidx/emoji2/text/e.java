@@ -1,28 +1,28 @@
 package androidx.emoji2.text;
 
-import a8.t6;
-import ab.b0;
+import a8.u6;
+import ab.c0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class e extends t6 {
+public final class e extends u6 {
     public final /* synthetic */ f a;
 
     public e(f fVar) {
         this.a = fVar;
     }
 
-    @Override // a8.t6
+    @Override // a8.u6
     public final void a(Throwable th2) {
         ((l) this.a.b).d(th2);
     }
 
-    @Override // a8.t6
-    public final void b(b0 b0Var) {
+    @Override // a8.u6
+    public final void b(c0 c0Var) {
         f fVar = this.a;
-        fVar.c = b0Var;
-        fVar.a = new wf.b((b0) fVar.c, new nb.a(3), ((l) fVar.b).h);
+        fVar.c = c0Var;
+        fVar.a = new wf.b((c0) fVar.c, new pb.b(3), ((l) fVar.b).h);
         l lVar = (l) fVar.b;
         lVar.getClass();
         ArrayList arrayList = new ArrayList();

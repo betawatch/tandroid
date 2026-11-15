@@ -1,70 +1,49 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.text.Editable;
-import android.text.TextWatcher;
+import android.text.TextUtils;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class g90 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k90 b;
+public final class g90 extends org.telegram.ui.Cells.k3 {
+    public boolean F;
+    public final /* synthetic */ i90 G;
 
-    public /* synthetic */ g90(k90 k90Var, int i7) {
-        this.a = i7;
-        this.b = k90Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g90(i90 i90Var, Context context, String str, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, str, false, false, -1, e6Var);
+        this.G = i90Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        switch (this.a) {
-            case 0:
-                k90 k90Var = this.b;
-                if (!k90Var.N) {
-                    if (editable.toString().equals("0")) {
-                        k90Var.F.setText("");
-                        break;
-                    } else {
-                        try {
-                            int parseInt = Integer.parseInt(editable.toString());
-                            if (parseInt <= 100000) {
-                                k90Var.b0(parseInt);
-                                break;
-                            } else {
-                                k90Var.c0();
-                                break;
-                            }
-                        } catch (NumberFormatException unused) {
-                            k90Var.c0();
-                            return;
-                        }
-                    }
-                }
-                break;
-            default:
-                org.telegram.messenger.i6.l(editable, this.b.K.getPaint().getFontMetricsInt(), false);
-                break;
+    @Override // org.telegram.ui.Cells.k3
+    public final void b(Editable editable) {
+        int i7;
+        if (this.F) {
+            return;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
+        boolean isEmpty = TextUtils.isEmpty(editable);
+        i90 i90Var = this.G;
+        if (isEmpty) {
+            i90Var.s.setText("");
+            return;
+        }
+        try {
+            long parseLong = Long.parseLong(editable.toString());
+            if (parseLong > i90Var.getMessagesController().b6) {
+                this.F = true;
+                parseLong = i90Var.getMessagesController().b6;
+                setText(Long.toString(parseLong));
+                this.F = false;
+            }
+            TextView textView = i90Var.s;
+            int i10 = i90Var.getConnectionsManager().isTestBackend() ? 2131746152 : 2131746155;
+            org.telegram.messenger.r1 i11 = org.telegram.messenger.r1.i();
+            i7 = ((org.telegram.ui.ActionBar.e2) i90Var).currentAccount;
+            textView.setText(org.telegram.messenger.hd.a0(null, null, i10, i11.f((long) ((parseLong / 1000.0d) * org.telegram.messenger.np.s1(i7).d6), "USD")));
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
     }
 }

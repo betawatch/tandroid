@@ -1,11 +1,11 @@
 package i9;
 
-import a8.ja;
-import c8.r0;
+import a8.ka;
+import c8.s0;
 import java.math.RoundingMode;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -17,7 +17,7 @@ public final class a {
     public final byte[] g;
     public final boolean h;
 
-    public a(String str, char[] cArr, byte[] bArr, boolean z9) {
+    public a(String str, char[] cArr, byte[] bArr, boolean z10) {
         str.getClass();
         this.a = str;
         cArr.getClass();
@@ -25,7 +25,7 @@ public final class a {
         try {
             int length = cArr.length;
             RoundingMode roundingMode = RoundingMode.UNNECESSARY;
-            int c10 = r0.c(length);
+            int c10 = s0.c(length);
             this.d = c10;
             int numberOfTrailingZeros = Integer.numberOfTrailingZeros(c10);
             int i7 = 1 << (3 - numberOfTrailingZeros);
@@ -37,9 +37,9 @@ public final class a {
             for (int i10 = 0; i10 < this.f; i10++) {
                 int i11 = this.d;
                 RoundingMode roundingMode2 = RoundingMode.CEILING;
-                zArr[r0.b(i10 * 8, i11)] = true;
+                zArr[s0.b(i10 * 8, i11)] = true;
             }
-            this.h = z9;
+            this.h = z10;
         } catch (ArithmeticException e10) {
             throw new IllegalArgumentException("Illegal alphabet length " + cArr.length, e10);
         }
@@ -75,10 +75,10 @@ public final class a {
                 if (bArr[c10] == -1) {
                     bArr[c10] = (byte) i7;
                 } else {
-                    throw new IllegalArgumentException(ja.a("Duplicate character: %s", Character.valueOf(c10)));
+                    throw new IllegalArgumentException(ka.a("Duplicate character: %s", Character.valueOf(c10)));
                 }
             } else {
-                throw new IllegalArgumentException(ja.a("Non-ASCII character: %s", Character.valueOf(c10)));
+                throw new IllegalArgumentException(ka.a("Non-ASCII character: %s", Character.valueOf(c10)));
             }
         }
     }

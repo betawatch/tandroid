@@ -1,9 +1,9 @@
 package lg;
 
 import android.animation.ValueAnimator;
-import fi.v3;
+import hi.j3;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class h {
     public final int a;
@@ -23,8 +23,8 @@ public final class h {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.e = ofFloat;
         ofFloat.setDuration(600L);
-        this.e.setInterpolator(g.C1);
-        this.e.addUpdateListener(new v3(this, 7));
+        this.e.setInterpolator(g.D1);
+        this.e.addUpdateListener(new j3(this, 8));
         this.e.start();
     }
 }

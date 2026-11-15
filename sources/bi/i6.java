@@ -1,258 +1,106 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
-import com.google.android.gms.tasks.OnFailureListener;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ew;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qi;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.v10;
-import org.telegram.messenger.w10;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.fb0;
-import org.telegram.ui.Components.hb0;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.ow0;
-import org.telegram.ui.Components.pp0;
-import org.telegram.ui.Components.up0;
-import org.telegram.ui.Components.wp0;
-import org.telegram.ui.ck0;
-import org.telegram.ui.ek0;
-import org.telegram.ui.h10;
-import org.telegram.ui.mn0;
-import org.telegram.ui.od0;
+import android.animation.ValueAnimator;
+import hi.u9;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.s10;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.tp0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.r1, fb0, ri, org.telegram.messenger.q1, OnFailureListener, w10 {
+public final /* synthetic */ class i6 implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ i6(int i7, hb0 hb0Var, org.telegram.ui.Components.y3 y3Var, org.telegram.ui.Components.z3 z3Var, TextView textView) {
-        this.a = 1;
-        this.b = i7;
-        this.c = hb0Var;
-        this.d = y3Var;
-        this.e = z3Var;
-        this.f = textView;
+    public /* synthetic */ i6(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.q1
-    public void a(f5.f fVar, List list) {
-        org.telegram.messenger.g0.h3(new jg.c1((od0) this.c, (String) this.d, fVar, list, (String) this.e, (String) this.f, this.b));
-    }
-
-    @Override // org.telegram.messenger.w10
-    public Object d(Number number, Object obj) {
-        int i7;
-        TL_stars.TL_starGiftCollection tL_starGiftCollection;
-        up0 up0Var = (up0) this.c;
-        org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.f;
-        Context context = (Context) this.d;
-        org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.e;
-        Integer num = (Integer) number;
-        View view = (View) obj;
-        t9 t9Var = up0Var.e;
-        if (num.intValue() == -1 || num.intValue() == -2 || num.intValue() == 0 || up0Var.O) {
-            return Boolean.FALSE;
-        }
+    @Override // q0.a
+    public final void accept(Object obj) {
+        int i7 = this.a;
         int i10 = 0;
-        while (true) {
-            if (i10 >= t9Var.d().size()) {
-                i7 = -1;
-                tL_starGiftCollection = null;
-                break;
-            }
-            if (((TL_stars.TL_starGiftCollection) t9Var.d().get(i10)).collection_id == num.intValue()) {
-                tL_starGiftCollection = (TL_stars.TL_starGiftCollection) t9Var.d().get(i10);
-                i7 = i10;
-                break;
-            }
-            i10++;
-        }
-        int i11 = this.b;
-        String r10 = org.telegram.messenger.m5.r(qp.s1(i11).e2(up0Var.c));
-        boolean h = t9Var.h();
-        if (TextUtils.isEmpty(r10) && !h) {
-            return Boolean.FALSE;
-        }
-        k60 H = k60.H(f2Var, view);
-        H.W(new wp0(up0Var));
-        H.l(R.drawable.menu_gift_add, org.telegram.messenger.id.M0(2131750238, null), new zh.h1(up0Var, 2), h);
-        H.l(R.drawable.msg_share, org.telegram.messenger.id.M0(2131750234, null), new jg.c1(up0Var, i11, r10, tL_starGiftCollection, context, h6Var, f2Var, 18), !TextUtils.isEmpty(r10));
-        H.l(R.drawable.msg_edit, org.telegram.messenger.id.M0(2131750236, null), new yf.b(9, up0Var, tL_starGiftCollection), h);
-        H.l(R.drawable.tabs_reorder, org.telegram.messenger.id.M0(2131750235, null), new zh.h1(up0Var, 1), h);
-        H.m(R.drawable.msg_delete, new h10(up0Var, i7, tL_starGiftCollection, 25), org.telegram.messenger.id.M0(2131750237, null), h, true);
-        up0Var.I = H;
-        H.Z();
-        return Boolean.TRUE;
-    }
-
-    @Override // org.telegram.messenger.ri
-    public void e(String str, ArrayList arrayList) {
-        ow0 ow0Var = (ow0) this.c;
-        String str2 = (String) this.d;
-        HashSet hashSet = (HashSet) this.e;
-        ArrayList arrayList2 = (ArrayList) this.f;
-        if (this.b != ow0Var.K) {
-            return;
-        }
-        ow0Var.I = 1;
-        ow0Var.J = str2;
-        if (arrayList != null) {
-            int size = arrayList.size();
-            int i7 = 0;
-            while (i7 < size) {
-                Object obj = arrayList.get(i7);
-                i7++;
-                qi qiVar = (qi) obj;
-                if (!hashSet.contains(qiVar.a)) {
-                    hashSet.add(qiVar.a);
-                    arrayList2.add(qiVar);
-                }
-            }
-        }
-        if (arrayList2.isEmpty()) {
-            ow0Var.x = null;
-            ow0Var.y = true;
-            ow0Var.f();
-            return;
-        }
-        ow0Var.y = false;
-        ow0Var.w = false;
-        ow0Var.c();
-        e5 e5Var = ow0Var.d;
-        if (e5Var != null) {
-            e5Var.setVisibility(0);
-        }
-        ow0Var.W = org.telegram.messenger.g0.L(10.0f);
-        ow0Var.x = arrayList;
-        ow0Var.a0 = 0;
-        ow0Var.b0 = Integer.valueOf(str2.length());
-        e5 e5Var2 = ow0Var.d;
-        if (e5Var2 != null) {
-            e5Var2.invalidate();
-        }
-        org.telegram.ui.l4 l4Var = ow0Var.f;
-        if (l4Var != null) {
-            l4Var.f();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        switch (this.a) {
+        char c10 = 1;
+        char c11 = 1;
+        Object obj2 = this.b;
+        switch (i7) {
             case 0:
-                k6 k6Var = (k6) this.c;
-                Context context = (Context) this.d;
-                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.e;
-                v10 v10Var = (v10) this.f;
-                h6 h6Var2 = (h6) k6Var.o.get(k6Var.q);
-                if (h6Var2 != null) {
-                    cg.a aVar = h6Var2.c;
-                    ea x10 = ea.x(this.b, k6Var.q);
-                    cg.a l10 = x10.e ? cg.a.l(x10.p()) : null;
-                    if (l10 != null && aVar.b > l10.b) {
-                        cg.b bVar = k6Var.q;
-                        if (bVar != cg.b.a) {
-                            if (bVar == cg.b.b) {
-                                new gi.e(context, h6Var, h6Var2.c, true, null).show();
-                                break;
-                            }
-                        } else {
-                            new tc(context, h6Var, aVar.a(), 14, null, null, 0L).show();
-                            break;
-                        }
-                    } else {
-                        vf.b bVar2 = k6Var.n;
-                        if (bVar2 != null) {
-                            bVar2.a(false);
-                            k6Var.n = null;
-                        }
-                        v10Var.a(h6Var2, u1Var.h(i7, true, true));
-                        break;
-                    }
+                u6 u6Var = (u6) obj2;
+                if (((f5.f) obj).a == 0) {
+                    org.telegram.messenger.g0.h3(new h6(u6Var, c10 == true ? 1 : 0));
+                    break;
+                }
+                break;
+            case 1:
+                s10 s10Var = (s10) obj2;
+                int i11 = ((f5.f) obj).a;
+                boolean z10 = i11 == 0;
+                String j3 = z10 ? null : org.telegram.messenger.r1.j(i11);
+                a8.b("StarsController.buy onResult " + z10 + " " + j3);
+                org.telegram.messenger.g0.h3(new di.m6(s10Var, z10, j3, i10));
+                break;
+            case 2:
+                hi.m5.Y((u9) obj2, (Integer) obj);
+                break;
+            case 3:
+                ((jg.m) obj2).S.L4(((Float) obj).floatValue());
+                break;
+            case 4:
+                ki.x2 x2Var = (ki.x2) obj2;
+                Float f10 = (Float) obj;
+                x2Var.F.setLoadProgressAnimated(f10.floatValue());
+                if (f10.floatValue() == 1.0f) {
+                    ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
+                    duration.setInterpolator(er.f);
+                    duration.addUpdateListener(new ki.w1(x2Var, 1));
+                    duration.addListener(new ai.i0(x2Var, 29));
+                    duration.start();
+                    break;
+                }
+                break;
+            case 5:
+                ki.y3 y3Var = (ki.y3) obj2;
+                Float f11 = (Float) obj;
+                y3Var.J.setLoadProgressAnimated(f11.floatValue());
+                if (f11.floatValue() == 1.0f) {
+                    ValueAnimator duration2 = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
+                    duration2.setInterpolator(er.f);
+                    duration2.addUpdateListener(new ki.q3(y3Var, c11 == true ? 1 : 0));
+                    duration2.addListener(new ki.s3(y3Var, 0));
+                    duration2.start();
+                    y3Var.Q();
+                    break;
                 }
                 break;
             default:
-                ek0 ek0Var = (ek0) this.c;
-                ek0.e0(this.b, (String) this.f, (ew) this.d, (ck0) this.e, ek0Var);
-                break;
+                androidx.activity.n nVar = (androidx.activity.n) obj2;
+                int intValue = ((Integer) obj).intValue();
+                switch (nVar.a) {
+                    case 1:
+                        u9 u9Var = (u9) nVar.d;
+                        u9Var.F0(false);
+                        sg.k0 k0Var = (sg.k0) nVar.c;
+                        k0Var.h(intValue, true);
+                        k0Var.g();
+                        u9Var.setNewColor(intValue);
+                        hi.u4 u4Var = u9Var.g1;
+                        u4Var.setSelectedColorIndex(k0Var.d());
+                        u4Var.getAdapter().f();
+                        break;
+                    default:
+                        tp0 tp0Var = (tp0) nVar.d;
+                        tp0Var.w0(false);
+                        sg.k0 k0Var2 = tp0Var.F1;
+                        k0Var2.h(intValue, true);
+                        k0Var2.g();
+                        tp0Var.setNewColor(intValue);
+                        tg.d0 d0Var = tp0Var.q1;
+                        d0Var.setSelectedColorIndex(k0Var2.d());
+                        d0Var.getAdapter().f();
+                        break;
+                }
         }
-    }
-
-    @Override // org.telegram.ui.Components.fb0
-    public void n(hb0 hb0Var, int i7) {
-        hb0 hb0Var2 = (hb0) this.c;
-        org.telegram.ui.Components.y3 y3Var = (org.telegram.ui.Components.y3) this.d;
-        org.telegram.ui.Components.z3 z3Var = (org.telegram.ui.Components.z3) this.e;
-        TextView textView = (TextView) this.f;
-        org.telegram.ui.Components.u4.g(null, null, 0L, this.b, 3, hb0Var2, y3Var, z3Var);
-        org.telegram.ui.Components.u4.e(textView, hb0Var2, y3Var, z3Var);
-    }
-
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        tg.c2 c2Var = (tg.c2) this.c;
-        Bitmap bitmap = (Bitmap) this.d;
-        int i7 = this.b;
-        mn0 mn0Var = (mn0) this.e;
-        hi.d4 d4Var = (hi.d4) this.f;
-        c2Var.y = false;
-        org.telegram.messenger.a8.g(exc, true);
-        if ((exc instanceof lb.a) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && c2Var.isAttachedToWindow()) {
-            org.telegram.messenger.g0.i3(new pp0(c2Var, bitmap, i7, mn0Var, 23), 2000L);
-        } else {
-            d4Var.a(new ArrayList());
-        }
-    }
-
-    public /* synthetic */ i6(Object obj, int i7, Object obj2, Object obj3, Object obj4, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = i7;
-        this.d = obj2;
-        this.e = obj3;
-        this.f = obj4;
-    }
-
-    public /* synthetic */ i6(ls lsVar, Object obj, int i7, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.c = lsVar;
-        this.d = obj;
-        this.b = i7;
-        this.e = obj2;
-        this.f = obj3;
-    }
-
-    public /* synthetic */ i6(up0 up0Var, int i7, org.telegram.ui.ActionBar.f2 f2Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        this.a = 6;
-        this.c = up0Var;
-        this.b = i7;
-        this.f = f2Var;
-        this.d = context;
-        this.e = h6Var;
-    }
-
-    public /* synthetic */ i6(od0 od0Var, String str, String str2, String str3, int i7) {
-        this.a = 3;
-        this.c = od0Var;
-        this.d = str;
-        this.e = str2;
-        this.f = str3;
-        this.b = i7;
     }
 }

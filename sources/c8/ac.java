@@ -1,27 +1,18 @@
 package c8;
 
-import com.google.android.gms.tasks.Task;
-import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
-import java.util.concurrent.Executor;
+import android.os.StrictMode;
+import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class ac {
-    public static LanguageIdentifierImpl a() {
-        tb.a aVar = (tb.a) pb.g.c().a(tb.a.class);
-        tb.e eVar = aVar.b;
-        eVar.getClass();
-        y7.e9 e9Var = aVar.a;
-        LanguageIdentifierImpl languageIdentifierImpl = new LanguageIdentifierImpl(eVar, e9Var, (Executor) aVar.c.a.get());
-        ab.b0 b0Var = new ab.b0(15, false);
-        b0Var.d = languageIdentifierImpl.f;
-        y7.d6 d6Var = new y7.d6();
-        d6Var.b = LanguageIdentifierImpl.k();
-        b0Var.e = new y7.l7(d6Var);
-        a8.wa waVar = new a8.wa(b0Var, 1);
-        Task task = e9Var.e;
-        pb.m.a.execute(new a8.pa(e9Var, waVar, y7.n6.c, task.isSuccessful() ? (String) task.getResult() : q6.j.c.a(e9Var.g), 7));
-        ((tb.e) languageIdentifierImpl.d.get()).b.incrementAndGet();
-        return languageIdentifierImpl;
+    public static Object a(Callable callable) {
+        StrictMode.ThreadPolicy threadPolicy = StrictMode.getThreadPolicy();
+        try {
+            StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
+            return callable.call();
+        } finally {
+            StrictMode.setThreadPolicy(threadPolicy);
+        }
     }
 }

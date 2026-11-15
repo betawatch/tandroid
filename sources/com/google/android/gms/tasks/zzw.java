@@ -5,7 +5,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
 import q6.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzw<TResult> extends Task<TResult> {
     private final Object zza = new Object();
@@ -124,26 +124,26 @@ final class zzw<TResult> extends Task<TResult> {
 
     @Override // com.google.android.gms.tasks.Task
     public final boolean isComplete() {
-        boolean z9;
+        boolean z10;
         synchronized (this.zza) {
-            z9 = this.zzc;
+            z10 = this.zzc;
         }
-        return z9;
+        return z10;
     }
 
     @Override // com.google.android.gms.tasks.Task
     public final boolean isSuccessful() {
-        boolean z9;
+        boolean z10;
         synchronized (this.zza) {
             try {
-                z9 = false;
+                z10 = false;
                 if (this.zzc && !this.zzd && this.zzf == null) {
-                    z9 = true;
+                    z10 = true;
                 }
             } finally {
             }
         }
-        return z9;
+        return z10;
     }
 
     @Override // com.google.android.gms.tasks.Task

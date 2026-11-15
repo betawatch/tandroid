@@ -1,81 +1,32 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Bundle;
-import android.os.DeadObjectException;
-import android.os.RemoteException;
-import com.google.android.gms.common.api.Status;
-import java.util.Set;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class v implements e0 {
-    public final g0 a;
+public final class v extends h0 {
+    public final /* synthetic */ int b = 0;
+    public final /* synthetic */ Object c;
 
-    public v(g0 g0Var) {
-        this.a = g0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v(w wVar, w wVar2) {
+        super(wVar2);
+        this.c = wVar;
     }
 
-    @Override // com.google.android.gms.common.api.internal.e0
-    public final void A(int i7) {
-        g0 g0Var = this.a;
-        g0Var.h();
-        g0Var.p.i(i7);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.e0
-    public final boolean I() {
-        g0 g0Var = this.a;
-        g0Var.o.getClass();
-        g0Var.h();
-        return true;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.android.gms.common.api.internal.e0
-    public final d b(d dVar) {
-        g0 g0Var = this.a;
-        try {
-            d0 d0Var = g0Var.o;
-            y0 y0Var = d0Var.M;
-            ((Set) y0Var.a).add(dVar);
-            dVar.g.set((x0) y0Var.b);
-            com.google.android.gms.common.api.d dVar2 = dVar.o;
-            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) d0Var.E.get(dVar2);
-            q6.m.h(cVar, "Appropriate Api was not requested.");
-            if (!((q6.d) cVar).s() && g0Var.i.containsKey(dVar2)) {
-                dVar.o(new Status(17, null, null, null));
-                return dVar;
-            }
-            try {
-                dVar.n(cVar);
-            } catch (DeadObjectException e10) {
-                dVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
-                throw e10;
-            } catch (RemoteException e11) {
-                dVar.o(new Status(8, e11.getLocalizedMessage(), null, null));
-            }
-            return dVar;
-        } catch (DeadObjectException unused) {
-            u uVar = new u(this, this);
-            c0 c0Var = g0Var.e;
-            c0Var.sendMessage(c0Var.obtainMessage(1, uVar));
-            return dVar;
+    @Override // com.google.android.gms.common.api.internal.h0
+    public final void a() {
+        switch (this.b) {
+            case 0:
+                ((w) this.c).y(1);
+                break;
+            default:
+                ((q6.b) this.c).a(new n6.a(16, null, null));
+                break;
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.e0
-    public final void R() {
-    }
-
-    @Override // com.google.android.gms.common.api.internal.e0
-    public final void a() {
-    }
-
-    @Override // com.google.android.gms.common.api.internal.e0
-    public final void c(Bundle bundle) {
-    }
-
-    @Override // com.google.android.gms.common.api.internal.e0
-    public final void q(n6.a aVar, com.google.android.gms.common.api.e eVar, boolean z9) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v(z zVar, g0 g0Var, q6.b bVar) {
+        super(g0Var);
+        this.c = bVar;
     }
 }

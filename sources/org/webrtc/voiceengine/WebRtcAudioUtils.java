@@ -9,7 +9,7 @@ import org.webrtc.ContextUtils;
 import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class WebRtcAudioUtils {
     private static final int DEFAULT_SAMPLE_RATE_HZ = 16000;
@@ -110,11 +110,11 @@ public final class WebRtcAudioUtils {
     }
 
     public static synchronized boolean isDefaultSampleRateOverridden() {
-        boolean z9;
+        boolean z10;
         synchronized (WebRtcAudioUtils.class) {
-            z9 = isDefaultSampleRateOverridden;
+            z10 = isDefaultSampleRateOverridden;
         }
-        return z9;
+        return z10;
     }
 
     public static boolean isNoiseSuppressorSupported() {
@@ -213,21 +213,21 @@ public final class WebRtcAudioUtils {
         }
     }
 
-    public static synchronized void setWebRtcBasedAcousticEchoCanceler(boolean z9) {
+    public static synchronized void setWebRtcBasedAcousticEchoCanceler(boolean z10) {
         synchronized (WebRtcAudioUtils.class) {
-            useWebRtcBasedAcousticEchoCanceler = z9;
+            useWebRtcBasedAcousticEchoCanceler = z10;
         }
     }
 
-    public static synchronized void setWebRtcBasedAutomaticGainControl(boolean z9) {
+    public static synchronized void setWebRtcBasedAutomaticGainControl(boolean z10) {
         synchronized (WebRtcAudioUtils.class) {
             Logging.w(TAG, "setWebRtcBasedAutomaticGainControl() is deprecated");
         }
     }
 
-    public static synchronized void setWebRtcBasedNoiseSuppressor(boolean z9) {
+    public static synchronized void setWebRtcBasedNoiseSuppressor(boolean z10) {
         synchronized (WebRtcAudioUtils.class) {
-            useWebRtcBasedNoiseSuppressor = z9;
+            useWebRtcBasedNoiseSuppressor = z10;
         }
     }
 
@@ -236,18 +236,18 @@ public final class WebRtcAudioUtils {
     }
 
     public static synchronized boolean useWebRtcBasedAcousticEchoCanceler() {
-        boolean z9;
+        boolean z10;
         synchronized (WebRtcAudioUtils.class) {
             try {
                 if (useWebRtcBasedAcousticEchoCanceler) {
                     Logging.w(TAG, "Overriding default behavior; now using WebRTC AEC!");
                 }
-                z9 = useWebRtcBasedAcousticEchoCanceler;
+                z10 = useWebRtcBasedAcousticEchoCanceler;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return z9;
+        return z10;
     }
 
     public static synchronized boolean useWebRtcBasedAutomaticGainControl() {
@@ -257,17 +257,17 @@ public final class WebRtcAudioUtils {
     }
 
     public static synchronized boolean useWebRtcBasedNoiseSuppressor() {
-        boolean z9;
+        boolean z10;
         synchronized (WebRtcAudioUtils.class) {
             try {
                 if (useWebRtcBasedNoiseSuppressor) {
                     Logging.w(TAG, "Overriding default behavior; now using WebRTC NS!");
                 }
-                z9 = useWebRtcBasedNoiseSuppressor;
+                z10 = useWebRtcBasedNoiseSuppressor;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return z9;
+        return z10;
     }
 }

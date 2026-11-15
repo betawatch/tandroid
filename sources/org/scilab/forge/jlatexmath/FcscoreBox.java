@@ -6,7 +6,7 @@ import ru.noties.jlatexmath.awt.Stroke;
 import ru.noties.jlatexmath.awt.geom.AffineTransform;
 import ru.noties.jlatexmath.awt.geom.Line2D;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class FcscoreBox extends Box {
     private int N;
@@ -14,7 +14,7 @@ public class FcscoreBox extends Box {
     private boolean strike;
     private float thickness;
 
-    public FcscoreBox(int i7, float f10, float f11, float f12, boolean z9) {
+    public FcscoreBox(int i7, float f10, float f11, float f12, boolean z10) {
         if (i7 < 0) {
             i7 = 0;
         } else if (i7 > 4096) {
@@ -24,7 +24,7 @@ public class FcscoreBox extends Box {
         this.width = (2.0f * f12) + ((f11 + f12) * i7);
         this.height = f10;
         this.depth = 0.0f;
-        this.strike = z9;
+        this.strike = z10;
         this.space = f12;
         this.thickness = f11;
     }

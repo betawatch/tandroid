@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class Utilities {
     public static final Pattern a = Pattern.compile("[\\-0-9]+");
@@ -37,14 +37,14 @@ public class Utilities {
         b = secureRandom;
         long nextLong = secureRandom.nextLong();
         g5.a aVar = new g5.a(0L);
-        long a10 = a8.fa.a(nextLong);
+        long a10 = a8.ga.a(nextLong);
         aVar.a = a10;
-        long a11 = a8.fa.a(a10);
+        long a11 = a8.ga.a(a10);
         aVar.b = a11;
         if (aVar.a == 0 && a11 == 0) {
-            long a12 = a8.fa.a(3735928559L);
+            long a12 = a8.ga.a(3735928559L);
             aVar.a = a12;
-            aVar.b = a8.fa.a(a12);
+            aVar.b = a8.ga.a(a12);
         }
         c = aVar;
         d = new p5("stageQueue");
@@ -81,14 +81,14 @@ public class Utilities {
         return Long.valueOf(j3);
     }
 
-    public static void B(Runnable runnable, c20... c20VarArr) {
-        if (c20VarArr.length == 0) {
+    public static void B(Runnable runnable, z10... z10VarArr) {
+        if (z10VarArr.length == 0) {
             runnable.run();
             return;
         }
-        uz uzVar = new uz(new int[]{0}, c20VarArr, runnable, 2);
-        for (c20 c20Var : c20VarArr) {
-            c20Var.a(uzVar);
+        sz szVar = new sz(new int[]{0}, z10VarArr, runnable, 2);
+        for (z10 z10Var : z10VarArr) {
+            z10Var.a(szVar);
         }
     }
 
@@ -96,21 +96,21 @@ public class Utilities {
         return D(bitmap, false);
     }
 
-    public static Bitmap D(Bitmap bitmap, boolean z9) {
+    public static Bitmap D(Bitmap bitmap, boolean z10) {
         int L = g0.L(20.0f);
         int L2 = (int) ((g0.L(20.0f) * bitmap.getHeight()) / bitmap.getWidth());
         Bitmap createBitmap = Bitmap.createBitmap(L, L2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         canvas.save();
         canvas.scale(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
-        if (z9) {
+        if (z10) {
             Path path = new Path();
             path.addCircle(bitmap.getWidth() / 2.0f, bitmap.getHeight() / 2.0f, (Math.min(bitmap.getWidth(), bitmap.getHeight()) / 2.0f) - 1.0f, Path.Direction.CW);
             canvas.clipPath(path);
         }
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(L, L2) / qs.g2));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(L, L2) / ns.g2));
         return createBitmap;
     }
 
@@ -123,7 +123,7 @@ public class Utilities {
         canvas.scale(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(max, max2) / qs.g2));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(max, max2) / ns.g2));
         return createBitmap;
     }
 
@@ -152,9 +152,9 @@ public class Utilities {
 
     public static native void aesCtrDecryptionByteArray(byte[] bArr, byte[] bArr2, byte[] bArr3, int i7, long j3, int i10);
 
-    private static native void aesIgeEncryption(ByteBuffer byteBuffer, byte[] bArr, byte[] bArr2, boolean z9, int i7, int i10);
+    private static native void aesIgeEncryption(ByteBuffer byteBuffer, byte[] bArr, byte[] bArr2, boolean z10, int i7, int i10);
 
-    private static native void aesIgeEncryptionByteArray(byte[] bArr, byte[] bArr2, byte[] bArr3, boolean z9, int i7, int i10);
+    private static native void aesIgeEncryptionByteArray(byte[] bArr, byte[] bArr2, byte[] bArr3, boolean z10, int i7, int i10);
 
     public static native boolean applyAlphaInvert(Bitmap bitmap, Bitmap bitmap2, int i7);
 
@@ -168,16 +168,16 @@ public class Utilities {
 
     public static native void blurBitmap(Object obj, int i7);
 
-    public static void c(ByteBuffer byteBuffer, byte[] bArr, byte[] bArr2, boolean z9, boolean z10, int i7, int i10) {
-        if (!z10) {
+    public static void c(ByteBuffer byteBuffer, byte[] bArr, byte[] bArr2, boolean z10, boolean z11, int i7, int i10) {
+        if (!z11) {
             bArr2 = (byte[]) bArr2.clone();
         }
-        aesIgeEncryption(byteBuffer, bArr, bArr2, z9, i7, i10);
+        aesIgeEncryption(byteBuffer, bArr, bArr2, z10, i7, i10);
     }
 
     public static native void calcCDT(ByteBuffer byteBuffer, int i7, int i10, ByteBuffer byteBuffer2, ByteBuffer byteBuffer3);
 
-    public static native void clearDir(String str, int i7, long j3, boolean z9);
+    public static native void clearDir(String str, int i7, long j3, boolean z10);
 
     public static native boolean copyBitmaps(Bitmap bitmap, Bitmap bitmap2);
 
@@ -185,18 +185,18 @@ public class Utilities {
         if (bArr == null || bArr2 == null || i7 < 0 || bArr.length > bArr2.length - i7 || bArr.length < 0 || bArr2.length - i7 < 0) {
             return false;
         }
-        boolean z9 = true;
+        boolean z10 = true;
         for (int i10 = 0; i10 < bArr.length; i10++) {
             if (bArr[i10] != bArr2[i10 + i7]) {
-                z9 = false;
+                z10 = false;
             }
         }
-        return z9;
+        return z10;
     }
 
     public static native boolean drawDitheredGradient(Bitmap bitmap, int[] iArr, int i7, int i10, int i11, int i12);
 
-    public static native boolean drawReplyLinePattern(Bitmap bitmap, int i7, int i10, int i11, int i12, boolean z9);
+    public static native boolean drawReplyLinePattern(Bitmap bitmap, int i7, int i10, int i11, int i12, boolean z10);
 
     public static Bitmap e(Bitmap bitmap) {
         if (bitmap == null) {
@@ -235,7 +235,7 @@ public class Utilities {
 
     public static native void generateQrBackdrop(Bitmap bitmap, Bitmap bitmap2, float f10, int i7, float[] fArr, int[] iArr, float[] fArr2);
 
-    public static native long getDirSize(String str, int i7, boolean z9);
+    public static native long getDirSize(String str, int i7, boolean z10);
 
     public static native long getLastUsageFileTime(String str);
 
@@ -372,9 +372,9 @@ public class Utilities {
         return (float) Math.sqrt((f15 * f15) + (f14 * f14));
     }
 
-    public static void u(int i7, c20... c20VarArr) {
-        if (c20VarArr.length > i7) {
-            c20VarArr[i7].a(new x0(i7, c20VarArr, 13));
+    public static void u(int i7, z10... z10VarArr) {
+        if (z10VarArr.length > i7) {
+            z10VarArr[i7].a(new x0(i7, z10VarArr, 13));
         }
     }
 
@@ -403,7 +403,7 @@ public class Utilities {
     }
 
     public static Integer z(CharSequence charSequence) {
-        boolean z9;
+        boolean z10;
         int i7 = 0;
         if (charSequence == null) {
             return 0;
@@ -414,18 +414,18 @@ public class Utilities {
             try {
                 char charAt = charSequence.charAt(i11);
                 if (charAt != '-' && (charAt < '0' || charAt > '9')) {
-                    z9 = false;
-                    if (!z9 && i10 < 0) {
+                    z10 = false;
+                    if (!z10 && i10 < 0) {
                         i10 = i11;
-                    } else if (!z9 && i10 >= 0) {
+                    } else if (!z10 && i10 >= 0) {
                         break;
                     }
                     i11++;
                 }
-                z9 = true;
-                if (!z9) {
+                z10 = true;
+                if (!z10) {
                 }
-                if (!z9) {
+                if (!z10) {
                     break;
                     break;
                 }

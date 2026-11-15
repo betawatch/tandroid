@@ -1,422 +1,290 @@
 package org.telegram.ui.Components;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.net.Uri;
-import android.text.TextUtils;
-import android.view.ActionMode;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MotionEvent;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.webkit.MimeTypeMap;
-import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class uf extends ys {
-    public oc Y1;
-    public final /* synthetic */ ChatActivityEnterView Z1;
+public final class uf implements org.telegram.ui.sq0 {
+    public boolean a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ org.telegram.messenger.ff d;
+    public final /* synthetic */ wf e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uf(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, h6Var);
-        this.Z1 = chatActivityEnterView;
+    public uf(wf wfVar, Object obj, Object obj2, org.telegram.messenger.ff ffVar) {
+        this.e = wfVar;
+        this.b = obj;
+        this.c = obj2;
+        this.d = ffVar;
     }
 
-    @Override // org.telegram.ui.Components.ys
-    public final void D() {
-        vf vfVar = this.Z1.Z2;
-        if (vfVar != null) {
-            vfVar.T1();
-        }
+    @Override // org.telegram.ui.sq0
+    public final boolean A() {
+        return this.a;
     }
 
-    @Override // org.telegram.ui.Components.ys
-    public final void E() {
-        vf vfVar = this.Z1.Z2;
-        if (vfVar != null) {
-            vfVar.b();
-        }
+    @Override // org.telegram.ui.sq0
+    public final CharSequence C(int i7) {
+        return null;
     }
 
-    public final void I(Uri uri, String str) {
-        org.telegram.ui.cn cnVar = this.Z1.P2;
-        Utilities.e.c(new l2.z0(this, uri, org.telegram.messenger.g0.q0(MimeTypeMap.getSingleton().getExtensionFromMimeType(str), cnVar != null && cnVar.z()), 28));
+    @Override // org.telegram.ui.sq0
+    public final org.telegram.ui.uq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+        return null;
     }
 
-    public final void J(File file, ArrayList arrayList) {
-        ChatActivityEnterView chatActivityEnterView = this.Z1;
-        org.telegram.ui.cn cnVar = chatActivityEnterView.P2;
-        if (cnVar == null || cnVar.getParentActivity() == null) {
-            return;
-        }
-        org.telegram.messenger.gf gfVar = (org.telegram.messenger.gf) arrayList.get(0);
-        if (!chatActivityEnterView.z2) {
-            PhotoViewer.p1().H2(null, cnVar, chatActivityEnterView.W3);
-            PhotoViewer.p1().e2(arrayList, 0, 2, false, new tf(this, gfVar, file), chatActivityEnterView.P2);
-        } else {
-            org.telegram.messenger.g0.v1(this);
-            org.telegram.messenger.g0.i3(new a9.h(this, arrayList, file, false, 9), 100L);
-        }
+    @Override // org.telegram.ui.sq0
+    public final void F(boolean z10) {
+        this.a = z10;
     }
 
-    public final void K(qt qtVar, boolean z9, int i7, int i10) {
-        org.telegram.messenger.ij threadMessage;
-        org.telegram.messenger.ij threadMessage2;
-        ChatActivityEnterView chatActivityEnterView = this.Z1;
-        org.telegram.ui.cn cnVar = chatActivityEnterView.P2;
-        te teVar = chatActivityEnterView.L0;
-        if (teVar != null) {
-            teVar.g(true);
-            chatActivityEnterView.L0 = null;
-        }
-        org.telegram.ui.sm smVar = chatActivityEnterView.V2;
-        if (smVar != null && cnVar != null && smVar.f) {
-            cnVar.xc();
-            return;
-        }
-        t0.h hVar = (t0.h) qtVar.b;
-        if (hVar.getDescription().hasMimeType("image/gif")) {
-            org.telegram.messenger.c cVar = chatActivityEnterView.R;
-            Uri c10 = hVar.c();
-            long j3 = chatActivityEnterView.Q2;
-            org.telegram.messenger.ij ijVar = chatActivityEnterView.T2;
-            threadMessage2 = chatActivityEnterView.getThreadMessage();
-            org.telegram.messenger.gz.T(cVar, null, null, c10, null, "image/gif", j3, ijVar, threadMessage2, null, chatActivityEnterView.V2, z9, qtVar, cnVar != null ? cnVar.X8() : null);
-        } else {
-            org.telegram.messenger.c cVar2 = chatActivityEnterView.R;
-            Uri c11 = hVar.c();
-            long j10 = chatActivityEnterView.Q2;
-            org.telegram.messenger.ij ijVar2 = chatActivityEnterView.T2;
-            threadMessage = chatActivityEnterView.getThreadMessage();
-            org.telegram.messenger.gz.Y(cVar2, c11, j10, ijVar2, threadMessage, qtVar, null, z9, 0, cnVar != null ? cnVar.X8() : null);
-        }
-        vf vfVar = chatActivityEnterView.Z2;
-        if (vfVar != null) {
-            vfVar.F(null, true, i7, i10, 0L);
-        }
+    @Override // org.telegram.ui.sq0
+    public final int H() {
+        return 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0064 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0079  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        int i7;
-        boolean z9 = false;
-        if (this.Z1.a0) {
-            return false;
-        }
-        if (keyEvent.getAction() == 0 && keyEvent.isCtrlPressed() && !keyEvent.isAltPressed()) {
-            int i10 = 4;
-            if (keyEvent.isShiftPressed()) {
-                int keyCode = keyEvent.getKeyCode();
-                if (keyCode != 41) {
-                    if (keyCode != 44) {
-                        if (keyCode == 47 || keyCode == 52) {
-                            i7 = 8;
-                        }
-                        i7 = 0;
-                    } else {
-                        i7 = 256;
-                    }
-                    if (!z9) {
-                    }
-                    if (z9) {
-                    }
-                }
-                i7 = 4;
-                if (!z9) {
-                }
-                if (z9) {
-                }
-            } else {
-                int keyCode2 = keyEvent.getKeyCode();
-                if (keyCode2 != 30) {
-                    if (keyCode2 != 33) {
-                        if (keyCode2 == 37) {
-                            i7 = 2;
-                        } else if (keyCode2 != 39) {
-                            if (keyCode2 == 49) {
-                                i7 = 16;
-                            }
-                            i7 = 0;
-                        } else {
-                            i7 = 0;
-                            z9 = true;
-                        }
-                    }
-                    i7 = 4;
-                } else {
-                    i7 = 1;
-                }
-                if ((!z9 || i7 != 0) && getSelectionStart() != getSelectionEnd()) {
-                    if (z9) {
-                        C(null);
-                        return true;
-                    }
-                    if (getText() != null) {
-                        int selectionStart = getSelectionStart();
-                        int selectionEnd = getSelectionEnd();
-                        if (selectionStart >= 0 && selectionEnd >= 0) {
-                            if (selectionStart > selectionEnd) {
-                                selectionEnd = selectionStart;
-                                selectionStart = selectionEnd;
-                            }
-                            if (selectionStart < selectionEnd) {
-                                if ((c(selectionStart, selectionEnd) & i7) == 0) {
-                                    if (i7 == 4) {
-                                        i10 = 49435;
-                                    } else if (i7 == 16384) {
-                                        i10 = 32772;
-                                    } else if (i7 == 32768) {
-                                        i10 = 16388;
-                                    }
-                                    b(i10, selectionStart, selectionEnd);
-                                    a(i7, selectionStart, selectionEnd);
-                                    return true;
-                                }
-                                b(i7, selectionStart, selectionEnd);
-                            }
-                        }
-                    }
-                    return true;
-                }
-            }
-        }
-        return super.dispatchKeyEvent(keyEvent);
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ boolean I() {
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final org.telegram.ui.ActionBar.h6 getResourcesProvider() {
-        return this.Z1.W3;
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final void o(ActionMode actionMode, Menu menu) {
-        ChatActivityEnterView chatActivityEnterView = this.Z1;
-        org.telegram.ui.cn cnVar = chatActivityEnterView.P2;
-        if (cnVar != null) {
-            cnVar.extendActionMode(menu);
-        } else {
-            chatActivityEnterView.e0(menu);
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        ChatActivityEnterView chatActivityEnterView = this.Z1;
-        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        if (onCreateInputConnection == null) {
-            return null;
-        }
-        try {
-            int i7 = ChatActivityEnterView.s5;
-            if (!(chatActivityEnterView.b2 != null) && !chatActivityEnterView.p5) {
-                t0.b.b(editorInfo, new String[]{"image/gif", "image/*", "image/jpg", "image/png", "image/webp"});
-                return t0.f.a(onCreateInputConnection, editorInfo, new t(this, 18));
-            }
-            t0.b.b(editorInfo, null);
-            return t0.f.a(onCreateInputConnection, editorInfo, new t(this, 18));
-        } catch (Throwable th2) {
-            org.telegram.messenger.a8.g(th2, true);
-            return onCreateInputConnection;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ys, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public void onMeasure(int i7, int i10) {
-        boolean z9 = getMeasuredWidth() == 0 && getMeasuredHeight() == 0;
-        ChatActivityEnterView chatActivityEnterView = this.Z1;
-        chatActivityEnterView.S = z9;
-        super.onMeasure(i7, i10);
-        if (chatActivityEnterView.S) {
-            chatActivityEnterView.T = getLineCount();
-            chatActivityEnterView.p1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
-            chatActivityEnterView.v1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
-        }
-        chatActivityEnterView.S = false;
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onScrollChanged(int i7, int i10, int i11, int i12) {
-        super.onScrollChanged(i7, i10, i11, i12);
-        vf vfVar = this.Z1.Z2;
-        if (vfVar != null) {
-            vfVar.j0();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ct, android.widget.TextView
-    public final void onSelectionChanged(int i7, int i10) {
-        k60 k60Var;
-        we weVar;
-        super.onSelectionChanged(i7, i10);
-        ChatActivityEnterView chatActivityEnterView = this.Z1;
-        vf vfVar = chatActivityEnterView.Z2;
-        if (vfVar != null) {
-            vfVar.E();
-        }
-        vd vdVar = chatActivityEnterView.Q0;
-        if (vdVar == null) {
-            return;
-        }
-        boolean z9 = (chatActivityEnterView.P2 == null || (weVar = chatActivityEnterView.E0) == null || weVar.getSelectionEnd() == chatActivityEnterView.E0.getSelectionStart()) ? false : true;
-        if (vdVar.x != z9) {
-            vdVar.x = z9;
-            vdVar.invalidate();
-        }
-        if (z9 || (k60Var = chatActivityEnterView.Y4) == null) {
-            return;
-        }
-        k60Var.u();
-        chatActivityEnterView.Y4 = null;
-    }
-
-    @Override // org.telegram.ui.Components.ys, android.widget.EditText, android.widget.TextView
-    public boolean onTextContextMenuItem(int i7) {
-        if (i7 == 16908322) {
-            ChatActivityEnterView chatActivityEnterView = this.Z1;
-            chatActivityEnterView.X1 = true;
-            ClipData primaryClip = ((ClipboardManager) getContext().getSystemService("clipboard")).getPrimaryClip();
-            if (primaryClip != null && primaryClip.getItemCount() == 1 && primaryClip.getDescription().hasMimeType("image/*") && chatActivityEnterView.b2 == null) {
-                I(primaryClip.getItemAt(0).getUri(), primaryClip.getDescription().getMimeType(0));
-            }
-        }
-        return super.onTextContextMenuItem(i7);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        ChatActivityEnterView chatActivityEnterView = this.Z1;
-        if (!chatActivityEnterView.E3 && chatActivityEnterView.B3 == null) {
-            if (!chatActivityEnterView.z0 && !chatActivityEnterView.q0()) {
-                if (this.Y1 == null) {
-                    oc ocVar = new oc(this);
-                    this.Y1 = ocVar;
-                    final int i7 = 0;
-                    ocVar.h = new Runnable(this) { // from class: org.telegram.ui.Components.sf
-                        public final /* synthetic */ uf b;
-
-                        {
-                            this.b = this;
-                        }
-
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            int i10 = i7;
-                            uf ufVar = this.b;
-                            switch (i10) {
-                                case 0:
-                                    ChatActivityEnterView chatActivityEnterView2 = ufVar.Z1;
-                                    int i11 = ChatActivityEnterView.s5;
-                                    chatActivityEnterView2.u1();
-                                    break;
-                                default:
-                                    ChatActivityEnterView chatActivityEnterView3 = ufVar.Z1;
-                                    chatActivityEnterView3.l3 = false;
-                                    chatActivityEnterView3.I0();
-                                    break;
-                            }
-                        }
-                    };
-                }
-                oc ocVar2 = this.Y1;
-                int measuredWidth = getMeasuredWidth();
-                int measuredHeight = getMeasuredHeight();
-                ocVar2.getClass();
-                RectF rectF = org.telegram.messenger.g0.P;
-                float f10 = 0;
-                rectF.set(f10, f10, measuredWidth, measuredHeight);
-                ocVar2.i = false;
-                ocVar2.c = 0;
-                ocVar2.a(rectF);
-                return this.Y1.b(motionEvent);
-            }
-            if (chatActivityEnterView.s0() && motionEvent.getAction() == 0) {
-                if (chatActivityEnterView.R1 != 0) {
-                    chatActivityEnterView.m1(0, false);
-                    chatActivityEnterView.U0.t(false);
-                    requestFocus();
-                }
-                chatActivityEnterView.t1(org.telegram.messenger.g0.D ? 0 : 2, 0, true, true);
-                if (!chatActivityEnterView.z3) {
-                    chatActivityEnterView.I0();
-                    return true;
-                }
-                chatActivityEnterView.n1(false, true, false, true);
-                chatActivityEnterView.l3 = true;
-                final int i10 = 1;
-                org.telegram.messenger.g0.i3(new Runnable(this) { // from class: org.telegram.ui.Components.sf
-                    public final /* synthetic */ uf b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i102 = i10;
-                        uf ufVar = this.b;
-                        switch (i102) {
-                            case 0:
-                                ChatActivityEnterView chatActivityEnterView2 = ufVar.Z1;
-                                int i11 = ChatActivityEnterView.s5;
-                                chatActivityEnterView2.u1();
-                                break;
-                            default:
-                                ChatActivityEnterView chatActivityEnterView3 = ufVar.Z1;
-                                chatActivityEnterView3.l3 = false;
-                                chatActivityEnterView3.I0();
-                                break;
-                        }
-                    }
-                }, 200L);
-                return true;
-            }
-            try {
-                return super.onTouchEvent(motionEvent);
-            } catch (Exception e10) {
-                org.telegram.messenger.a8.g(e10, true);
-            }
-        }
+    @Override // org.telegram.ui.sq0
+    public final boolean K() {
         return false;
     }
 
-    @Override // android.view.View
-    public final boolean requestFocus(int i7, Rect rect) {
-        ChatActivityEnterView chatActivityEnterView = this.Z1;
-        if (!chatActivityEnterView.z0 && !chatActivityEnterView.q0()) {
-            return false;
-        }
-        chatActivityEnterView.getClass();
-        return super.requestFocus(i7, rect);
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ boolean L() {
+        return false;
     }
 
-    @Override // android.view.View
-    public final boolean requestRectangleOnScreen(Rect rect) {
-        rect.bottom = org.telegram.messenger.g0.L(1000.0f) + rect.bottom;
-        return super.requestRectangleOnScreen(rect);
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ boolean N() {
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.ct
-    public void setOffsetY(float f10) {
-        super.setOffsetY(f10);
-        ChatActivityEnterView chatActivityEnterView = this.Z1;
-        if (chatActivityEnterView.m1.getForeground() != null) {
-            st0 st0Var = chatActivityEnterView.m1;
-            st0Var.invalidateDrawable(st0Var.getForeground());
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ boolean O() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final boolean P() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ boolean Q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final int R(Object obj) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final int S(int i7) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final boolean T() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final boolean U() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final org.telegram.messenger.gj V() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final boolean Z() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final String b0() {
+        return "";
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final ArrayList c() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final CharSequence c0(int i7) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void d() {
+        hi.g gVar;
+        pc b12 = PhotoViewer.p1().b1();
+        if (b12 == null || (gVar = b12.f) == null) {
+            return;
         }
+        mt mtVar = gVar.a;
+        mtVar.requestFocus();
+        org.telegram.messenger.g0.J3(mtVar);
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ boolean h() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final org.telegram.messenger.ic j(int i7) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final int k(int i7, org.telegram.messenger.g20 g20Var) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final boolean l() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void o(int i7, org.telegram.messenger.g20 g20Var, boolean z10, int i10, int i11, boolean z11) {
+        this.e.B(null, this.b, null, this.c, z10, i10, i11, this.d, this.a);
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final boolean p() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final boolean r() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ boolean t() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final boolean u() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final HashMap v() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ boolean w() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final boolean x(int i7) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final int y() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final boolean z() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void B(int i7) {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void M(org.telegram.messenger.g20 g20Var) {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void X(int i7) {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ void Y(int i7) {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void a0(int i7) {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void e(CharSequence charSequence) {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void D() {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void G() {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ void J() {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ void W() {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ void i() {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ void m() {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void n() {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final /* synthetic */ void s() {
+    }
+
+    @Override // org.telegram.ui.sq0
+    public final void f(String str, String str2, boolean z10) {
     }
 }

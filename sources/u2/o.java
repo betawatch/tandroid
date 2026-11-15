@@ -1,6 +1,7 @@
 package u2;
 
 import a8.p0;
+import ab.y;
 import android.content.Context;
 import android.graphics.Point;
 import android.media.MediaCodecInfo;
@@ -8,18 +9,19 @@ import android.os.Build;
 import android.util.Pair;
 import android.util.Range;
 import c8.oc;
+import com.google.android.gms.internal.vision.e2;
 import e2.s0;
-import h2.m0;
+import h2.l0;
 import h9.f0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.List;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -35,16 +37,16 @@ public final class o {
     public int k;
     public float l;
 
-    public o(String str, String str2, String str3, MediaCodecInfo.CodecCapabilities codecCapabilities, boolean z9, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
+    public o(String str, String str2, String str3, MediaCodecInfo.CodecCapabilities codecCapabilities, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, boolean z15) {
         str.getClass();
         this.a = str;
         this.b = str2;
         this.c = str3;
         this.d = codecCapabilities;
-        this.g = z9;
-        this.e = z12;
-        this.f = z13;
-        this.h = z14;
+        this.g = z10;
+        this.e = z13;
+        this.f = z14;
+        this.h = z15;
         this.i = s0.m(str2);
         this.l = -3.4028235E38f;
         this.j = -1;
@@ -55,7 +57,7 @@ public final class o {
         Range<Double> achievableFrameRatesFor;
         int widthAlignment = videoCapabilities.getWidthAlignment();
         int heightAlignment = videoCapabilities.getHeightAlignment();
-        Point point = new Point(m0.g(i7, widthAlignment) * widthAlignment, m0.g(i10, heightAlignment) * heightAlignment);
+        Point point = new Point(l0.g(i7, widthAlignment) * widthAlignment, l0.g(i10, heightAlignment) * heightAlignment);
         int i11 = point.x;
         int i12 = point.y;
         if (d == -1.0d || d < 1.0d) {
@@ -68,43 +70,43 @@ public final class o {
         return false;
     }
 
-    public static o i(String str, String str2, String str3, MediaCodecInfo.CodecCapabilities codecCapabilities, boolean z9, boolean z10, boolean z11, boolean z12) {
-        boolean z13;
+    public static o i(String str, String str2, String str3, MediaCodecInfo.CodecCapabilities codecCapabilities, boolean z10, boolean z11, boolean z12, boolean z13) {
+        boolean z14;
         String str4;
         String str5;
         MediaCodecInfo.CodecCapabilities codecCapabilities2;
-        boolean z14;
         boolean z15;
         boolean z16;
+        boolean z17;
         String str6;
-        boolean z17 = codecCapabilities != null && codecCapabilities.isFeatureSupported("adaptive-playback");
+        boolean z18 = codecCapabilities != null && codecCapabilities.isFeatureSupported("adaptive-playback");
         if (codecCapabilities != null) {
             codecCapabilities.isFeatureSupported("tunneled-playback");
         }
-        boolean z18 = z12 || (codecCapabilities != null && codecCapabilities.isFeatureSupported("secure-playback"));
+        boolean z19 = z13 || (codecCapabilities != null && codecCapabilities.isFeatureSupported("secure-playback"));
         if (Build.VERSION.SDK_INT >= 35 && codecCapabilities != null && codecCapabilities.isFeatureSupported("detached-surface")) {
             String str7 = Build.MANUFACTURER;
             if (!str7.equals("Xiaomi") && !str7.equals("OPPO") && !str7.equals("realme") && !str7.equals("motorola") && !str7.equals("LENOVO")) {
-                z13 = true;
+                z14 = true;
                 str6 = str;
                 str5 = str3;
                 codecCapabilities2 = codecCapabilities;
-                z14 = z9;
                 z15 = z10;
                 z16 = z11;
+                z17 = z12;
                 str4 = str2;
-                return new o(str6, str4, str5, codecCapabilities2, z14, z15, z16, z17, z18, z13);
+                return new o(str6, str4, str5, codecCapabilities2, z15, z16, z17, z18, z19, z14);
             }
         }
-        z13 = false;
+        z14 = false;
         str4 = str2;
         str5 = str3;
         codecCapabilities2 = codecCapabilities;
-        z14 = z9;
         z15 = z10;
         z16 = z11;
+        z17 = z12;
         str6 = str;
-        return new o(str6, str4, str5, codecCapabilities2, z14, z15, z16, z17, z18, z13);
+        return new o(str6, str4, str5, codecCapabilities2, z15, z16, z17, z18, z19, z14);
     }
 
     public final l2.e b(e2.u uVar, e2.u uVar2) {
@@ -120,8 +122,8 @@ public final class o {
             if (uVar.E != uVar2.E) {
                 i10 |= 1024;
             }
-            boolean z9 = (uVar.z == uVar2.z && uVar.A == uVar2.A) ? false : true;
-            if (!this.e && z9) {
+            boolean z10 = (uVar.z == uVar2.z && uVar.A == uVar2.A) ? false : true;
+            if (!this.e && z10) {
                 i10 |= 512;
             }
             if ((!e2.m.e(mVar) || !e2.m.e(mVar2)) && !Objects.equals(mVar, mVar2)) {
@@ -131,7 +133,7 @@ public final class o {
                 i10 |= 2;
             }
             int i11 = uVar.B;
-            if (i11 != -1 && (i7 = uVar.C) != -1 && i11 == uVar2.B && i7 == uVar2.C && z9) {
+            if (i11 != -1 && (i7 = uVar.C) != -1 && i11 == uVar2.B && i7 == uVar2.C && z10) {
                 i10 |= 2;
             }
             if (i10 == 0 && Objects.equals(uVar2.s, "video/dolby-vision")) {
@@ -194,7 +196,7 @@ public final class o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean c(Context context, e2.u uVar, boolean z9) {
+    public final boolean c(Context context, e2.u uVar, boolean z10) {
         MediaCodecInfo.CodecProfileLevel[] codecProfileLevelArr;
         int i7;
         MediaCodecInfo.VideoCapabilities videoCapabilities;
@@ -233,7 +235,7 @@ public final class o {
                             }
                             i12 = c10 + 3;
                         }
-                        t1 f10 = p10.f();
+                        s1 f10 = p10.f();
                         int i13 = 0;
                         while (i13 < f10.d) {
                             if (((Integer) f10.get(i13)).intValue() + i10 < length) {
@@ -258,7 +260,7 @@ public final class o {
                 }
                 if (str != null) {
                     String trim = str.trim();
-                    String str4 = m0.a;
+                    String str4 = l0.a;
                     b10 = h2.g.c(str, trim.split("\\.", -1), uVar.I);
                     if (b10 != null) {
                         return true;
@@ -295,7 +297,7 @@ public final class o {
                             codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[]{w.b(1026, i15)};
                         } else {
                             i7 = 4;
-                            codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[]{w.b(qs.g4, i15), w.b(513, i15), w.b(514, i15), w.b(1026, i15), w.b(1028, i15)};
+                            codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[]{w.b(ns.g4, i15), w.b(513, i15), w.b(514, i15), w.b(1026, i15), w.b(1028, i15)};
                         }
                     } else {
                         i7 = 4;
@@ -305,7 +307,7 @@ public final class o {
                         codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[]{w.b(1, intValue3 >= 180000000 ? 1024 : intValue3 >= 120000000 ? 512 : intValue3 >= 60000000 ? 256 : intValue3 >= 30000000 ? 128 : intValue3 >= 18000000 ? 64 : intValue3 >= 12000000 ? 32 : intValue3 >= 7200000 ? 16 : intValue3 >= 3600000 ? 8 : intValue3 >= 1800000 ? i7 : intValue3 >= 800000 ? 2 : 1)};
                     }
                     for (MediaCodecInfo.CodecProfileLevel codecProfileLevel : codecProfileLevelArr) {
-                        if (codecProfileLevel.profile == intValue && (codecProfileLevel.level >= intValue2 || !z9)) {
+                        if (codecProfileLevel.profile == intValue && (codecProfileLevel.level >= intValue2 || !z10)) {
                             if (!"video/hevc".equals(str5) || 2 != intValue) {
                                 return true;
                             }
@@ -407,12 +409,12 @@ public final class o {
         }
         int i11 = Build.VERSION.SDK_INT;
         if (i11 >= 29) {
-            int b10 = (i11 < 29 || ((bool = oc.a) != null && bool.booleanValue())) ? 0 : ab.x.b(videoCapabilities, i7, i10, d);
+            int b10 = (i11 < 29 || ((bool = oc.a) != null && bool.booleanValue())) ? 0 : y.b(videoCapabilities, i7, i10, d);
             if (b10 != 2) {
                 if (b10 == 1) {
-                    StringBuilder o4 = jg.g.o("sizeAndRate.cover, ", i7, "x", i10, "@");
-                    o4.append(d);
-                    h(o4.toString());
+                    StringBuilder n10 = i5.c.n("sizeAndRate.cover, ", i7, "x", i10, "@");
+                    n10.append(d);
+                    h(n10.toString());
                     return false;
                 }
             }
@@ -422,20 +424,20 @@ public final class o {
             if (i7 < i10) {
                 String str = this.a;
                 if ((!"OMX.MTK.VIDEO.DECODER.HEVC".equals(str) || !"mcv5a".equals(Build.DEVICE)) && a(videoCapabilities, i10, i7, d)) {
-                    StringBuilder o10 = jg.g.o("sizeAndRate.rotated, ", i7, "x", i10, "@");
-                    o10.append(d);
-                    StringBuilder n10 = com.google.android.recaptcha.internal.a.n("AssumedSupport [", o10.toString(), "] [", str, ", ");
-                    n10.append(this.b);
-                    n10.append("] [");
-                    n10.append(m0.a);
-                    n10.append("]");
-                    h2.a.b("MediaCodecInfo", n10.toString());
+                    StringBuilder n11 = i5.c.n("sizeAndRate.rotated, ", i7, "x", i10, "@");
+                    n11.append(d);
+                    StringBuilder n12 = e2.n("AssumedSupport [", n11.toString(), "] [", str, ", ");
+                    n12.append(this.b);
+                    n12.append("] [");
+                    n12.append(l0.a);
+                    n12.append("]");
+                    h2.a.b("MediaCodecInfo", n12.toString());
                     return true;
                 }
             }
-            StringBuilder o11 = jg.g.o("sizeAndRate.support, ", i7, "x", i10, "@");
-            o11.append(d);
-            h(o11.toString());
+            StringBuilder n13 = i5.c.n("sizeAndRate.support, ", i7, "x", i10, "@");
+            n13.append(d);
+            h(n13.toString());
             return false;
         }
         return true;
@@ -447,7 +449,7 @@ public final class o {
         u10.append(", ");
         u10.append(this.b);
         u10.append("] [");
-        u10.append(m0.a);
+        u10.append(l0.a);
         u10.append("]");
         h2.a.b("MediaCodecInfo", u10.toString());
     }

@@ -1,31 +1,13 @@
 package c8;
 
-import android.os.Build;
-import android.text.TextUtils;
-import android.view.View;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class i9 {
-    public static void a(View view, CharSequence charSequence) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            m.n3.a(view, charSequence);
-            return;
-        }
-        m.p3 p3Var = m.p3.w;
-        if (p3Var != null && p3Var.a == view) {
-            m.p3.b(null);
-        }
-        if (!TextUtils.isEmpty(charSequence)) {
-            new m.p3(view, charSequence);
-            return;
-        }
-        m.p3 p3Var2 = m.p3.x;
-        if (p3Var2 != null && p3Var2.a == view) {
-            p3Var2.a();
-        }
-        view.setOnLongClickListener(null);
-        view.setLongClickable(false);
-        view.setOnHoverListener(null);
+    public static float a(float f10, float f11, float f12) {
+        return f10 < f11 ? f11 : f10 > f12 ? f12 : f10;
+    }
+
+    public static int b(int i7, int i10, int i11) {
+        return i7 < i10 ? i10 : i7 > i11 ? i11 : i7;
     }
 }

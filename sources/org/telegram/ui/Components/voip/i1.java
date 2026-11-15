@@ -1,163 +1,94 @@
 package org.telegram.ui.Components.voip;
 
-import a8.b8;
-import android.animation.ValueAnimator;
 import android.graphics.Bitmap;
-import android.graphics.Paint;
-import android.view.View;
-import android.view.animation.LinearInterpolator;
-import java.util.ArrayList;
-import org.telegram.messenger.qs;
-import org.telegram.ui.va;
+import android.graphics.Canvas;
+import java.nio.ByteBuffer;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.t8;
+import org.webrtc.JavaI420Buffer;
+import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class i1 {
-    public final b8 a;
-    public final b8 b;
-    public b8 c;
-    public b8 d;
-    public boolean e;
-    public int f;
-    public int g;
-    public int h;
-    public boolean i;
-    public final Paint j;
-    public final Paint k;
-    public final Paint l;
-    public final ArrayList m;
+    public final ImageReceiver a;
+    public VideoFrame b;
 
     public i1() {
-        b8 b8Var = new b8(80, 80);
-        this.a = b8Var;
-        b8 b8Var2 = new b8(80, 80);
-        this.b = b8Var2;
-        this.f = 0;
-        this.g = 0;
-        Paint paint = new Paint(1);
-        this.j = paint;
-        Paint paint2 = new Paint(1);
-        this.k = paint2;
-        Paint paint3 = new Paint(1);
-        this.l = paint3;
-        this.m = new ArrayList();
-        b8Var2.k(0.0f, 0.0f, 80.0f, 80.0f);
-        b8Var.k(0.0f, 0.0f, 80.0f, 80.0f);
-        paint.setColor(-1);
-        paint.setAlpha(35);
-        paint2.setColor(-16777216);
-        paint2.setAlpha(qs.n1);
-        paint3.setColor(-16777216);
-        paint3.setAlpha(35);
-        ((Paint) b8Var2.a).setAlpha(qs.K2);
-    }
-
-    public final void a(View view) {
-        this.m.add(view);
-    }
-
-    public final Paint b() {
-        return this.i ? this.k : (Paint) this.b.a;
-    }
-
-    public final void c() {
-        ArrayList arrayList = this.m;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            ((View) obj).invalidate();
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        this.a = imageReceiver;
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        TLRPC.Chat chat = sharedInstance != null ? sharedInstance.getChat() : null;
+        t8 t8Var = new t8((e6) null);
+        if (chat != null) {
+            sharedInstance.getAccount();
+            t8Var.q(chat);
+            imageReceiver.d = sharedInstance.getAccount();
         }
+        imageReceiver.J0(60);
+        imageReceiver.h1 = new org.telegram.ui.ActionBar.z(this, 7);
+        imageReceiver.P();
+        imageReceiver.q0(chat != null ? gc.a(1, chat) : null, "100_100", t8Var, null, chat, 0);
+        a();
     }
 
-    public final void d(float f10, float f11) {
-        float f12 = this.g * 1.12f;
-        float f13 = -f10;
-        float f14 = -f11;
-        this.b.m(f13 - ((f12 - this.f) / 2.0f), f14 - ((f12 - this.g) / 2.0f), f12 / ((Bitmap) r1.c).getHeight(), this.h);
-        this.d.k(f13, f14, this.f - f10, this.g - f11);
-    }
-
-    public final void e(boolean z9) {
-        if (!this.i || z9) {
-            this.i = z9;
-        } else {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
-            final int i7 = 0;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.h1
-                public final /* synthetic */ i1 b;
-
-                {
-                    this.b = this;
+    public final void a() {
+        ByteBuffer byteBuffer;
+        Bitmap createBitmap = Bitmap.createBitmap(640, 360, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        canvas.drawColor(-14999773);
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.y0(260.0f, 120.0f, 120.0f, 120.0f);
+        imageReceiver.h(canvas, null);
+        int width = createBitmap.getWidth();
+        int height = createBitmap.getHeight();
+        int[] iArr = new int[width * height];
+        createBitmap.getPixels(iArr, 0, width, 0, 0, width, height);
+        JavaI420Buffer allocate = JavaI420Buffer.allocate(width, height);
+        ByteBuffer dataY = allocate.getDataY();
+        ByteBuffer dataU = allocate.getDataU();
+        ByteBuffer dataV = allocate.getDataV();
+        int strideY = allocate.getStrideY();
+        int strideU = allocate.getStrideU();
+        int strideV = allocate.getStrideV();
+        for (int i7 = 0; i7 < height; i7++) {
+            int i10 = 0;
+            while (i10 < width) {
+                int i11 = iArr[(i7 * width) + i10];
+                Bitmap bitmap = createBitmap;
+                int i12 = (i11 >> 16) & ns.e4;
+                int i13 = (i11 >> 8) & ns.e4;
+                int i14 = i11 & ns.e4;
+                int[] iArr2 = iArr;
+                int i15 = width;
+                dataY.put((i7 * strideY) + i10, (byte) (((((i14 * 25) + ((i13 * ns.N1) + (i12 * 66))) + 128) >> 8) + 16));
+                if ((i7 & 1) == 0 && (i10 & 1) == 0) {
+                    int i16 = i7 >> 1;
+                    int i17 = i10 >> 1;
+                    byteBuffer = dataY;
+                    dataU.put((i16 * strideU) + i17, (byte) (((((i14 * ns.x1) + ((i12 * (-38)) - (i13 * 74))) + 128) >> 8) + 128));
+                    dataV.put((i16 * strideV) + i17, (byte) ((((((i12 * ns.x1) - (i13 * 94)) - (i14 * 18)) + 128) >> 8) + 128));
+                } else {
+                    byteBuffer = dataY;
                 }
-
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    switch (i7) {
-                        case 0:
-                            i1 i1Var = this.b;
-                            i1Var.getClass();
-                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            int i10 = (int) (35.0f * floatValue);
-                            i1Var.l.setAlpha(i10);
-                            i1Var.k.setAlpha((int) (floatValue * 102.0f));
-                            i1Var.j.setAlpha(i10);
-                            i1Var.c();
-                            break;
-                        default:
-                            i1 i1Var2 = this.b;
-                            i1Var2.getClass();
-                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            ((Paint) i1Var2.b.a).setAlpha((int) (180.0f * floatValue2));
-                            ((Paint) i1Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
-                            i1Var2.c();
-                            break;
-                    }
-                }
-            });
-            ofFloat.setInterpolator(new LinearInterpolator());
-            ofFloat.setDuration(80L);
-            ofFloat.addListener(new va(this, 14));
-            ofFloat.start();
-            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-            final int i10 = 1;
-            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.h1
-                public final /* synthetic */ i1 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    switch (i10) {
-                        case 0:
-                            i1 i1Var = this.b;
-                            i1Var.getClass();
-                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            int i102 = (int) (35.0f * floatValue);
-                            i1Var.l.setAlpha(i102);
-                            i1Var.k.setAlpha((int) (floatValue * 102.0f));
-                            i1Var.j.setAlpha(i102);
-                            i1Var.c();
-                            break;
-                        default:
-                            i1 i1Var2 = this.b;
-                            i1Var2.getClass();
-                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            ((Paint) i1Var2.b.a).setAlpha((int) (180.0f * floatValue2));
-                            ((Paint) i1Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
-                            i1Var2.c();
-                            break;
-                    }
-                }
-            });
-            ofFloat2.setInterpolator(new LinearInterpolator());
-            ofFloat2.setStartDelay(80L);
-            ofFloat2.setDuration(80L);
-            ofFloat2.start();
+                i10++;
+                createBitmap = bitmap;
+                iArr = iArr2;
+                width = i15;
+                dataY = byteBuffer;
+            }
         }
-        c();
+        VideoFrame videoFrame = new VideoFrame(allocate, 0, 0L);
+        createBitmap.recycle();
+        VideoFrame videoFrame2 = this.b;
+        if (videoFrame2 != null) {
+            videoFrame2.release();
+        }
+        this.b = videoFrame;
     }
 }

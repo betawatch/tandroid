@@ -12,7 +12,7 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLSession;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m implements HostnameVerifier {
     public static final m a = new m();
@@ -56,16 +56,16 @@ public final class m implements HostnameVerifier {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static boolean b(String str, X509Certificate x509Certificate) {
-        boolean z9;
         boolean z10;
+        boolean z11;
         String str2;
         int i7;
         char[] cArr;
         char c10;
         int i10;
         char c11;
-        boolean z11 = false;
-        boolean z12 = true;
+        boolean z12 = false;
+        boolean z13 = true;
         if (b.matcher(str).matches()) {
             List a10 = a(x509Certificate, 7);
             int size = a10.size();
@@ -108,9 +108,9 @@ public final class m implements HostnameVerifier {
                     }
                     char c14 = eVar.g[i13];
                     char c15 = c12;
-                    z9 = z11;
+                    z10 = z12;
                     if (c14 == '\"') {
-                        z10 = z12;
+                        z11 = z13;
                         int i15 = i13 + 1;
                         eVar.c = i15;
                         eVar.d = i15;
@@ -145,7 +145,7 @@ public final class m implements HostnameVerifier {
                             }
                         }
                     } else if (c14 == '#') {
-                        z10 = z12;
+                        z11 = z13;
                         if (i13 + 4 >= i14) {
                             throw new IllegalStateException("Unexpected end of DN: ".concat(str3));
                         }
@@ -183,13 +183,13 @@ public final class m implements HostnameVerifier {
                         int i23 = i22 / 2;
                         byte[] bArr = new byte[i23];
                         int i24 = i21 + 1;
-                        for (int i25 = z9 ? 1 : 0; i25 < i23; i25++) {
+                        for (int i25 = z10 ? 1 : 0; i25 < i23; i25++) {
                             bArr[i25] = (byte) eVar.a(i24);
                             i24 += 2;
                         }
                         str2 = new String(eVar.g, eVar.d, i22);
                     } else if (c14 == '+' || c14 == ',' || c14 == ';') {
-                        z10 = z12;
+                        z11 = z13;
                         str2 = "";
                     } else {
                         eVar.d = i13;
@@ -200,13 +200,13 @@ public final class m implements HostnameVerifier {
                                 char[] cArr4 = eVar.g;
                                 int i27 = eVar.d;
                                 str2 = new String(cArr4, i27, eVar.e - i27);
-                                z10 = z12;
+                                z11 = z13;
                                 break;
                             }
                             char[] cArr5 = eVar.g;
                             char c17 = cArr5[i26];
                             if (c17 == ' ') {
-                                z10 = z12;
+                                z11 = z13;
                                 int i28 = eVar.e;
                                 eVar.f = i28;
                                 eVar.c = i26 + 1;
@@ -229,13 +229,13 @@ public final class m implements HostnameVerifier {
                                 if (i10 == i14 || (c11 = eVar.g[i10]) == ',' || c11 == '+' || c11 == ';') {
                                     break;
                                 }
-                                z12 = z10;
+                                z13 = z11;
                             } else {
                                 if (c17 == ';') {
                                     break;
                                 }
                                 if (c17 == '\\') {
-                                    z10 = z12;
+                                    z11 = z13;
                                     int i30 = eVar.e;
                                     eVar.e = i30 + 1;
                                     cArr5[i30] = eVar.b();
@@ -245,12 +245,12 @@ public final class m implements HostnameVerifier {
                                         break;
                                     }
                                     int i31 = eVar.e;
-                                    z10 = z12;
+                                    z11 = z13;
                                     eVar.e = i31 + 1;
                                     cArr5[i31] = c17;
                                     eVar.c = i26 + 1;
                                 }
-                                z12 = z10;
+                                z13 = z11;
                             }
                         }
                         char[] cArr7 = eVar.g;
@@ -275,12 +275,12 @@ public final class m implements HostnameVerifier {
                         throw new IllegalStateException("Malformed DN: ".concat(str3));
                     }
                     c12 = c15;
-                    z11 = z9 ? 1 : 0;
-                    z12 = z10;
+                    z12 = z10 ? 1 : 0;
+                    z13 = z11;
                 }
             }
-            z9 = z11;
-            return str4 != null ? c(lowerCase, str4) : z9;
+            z10 = z12;
+            return str4 != null ? c(lowerCase, str4) : z10;
         }
         return false;
     }

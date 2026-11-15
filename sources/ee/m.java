@@ -1,15 +1,16 @@
 package ee;
 
+import aa.b0;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m {
     public static final /* synthetic */ AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(m.class, Object.class, "_next$volatile");
     public static final /* synthetic */ AtomicLongFieldUpdater f = AtomicLongFieldUpdater.newUpdater(m.class, "_state$volatile");
-    public static final com.google.android.gms.internal.clearcut.e g = new com.google.android.gms.internal.clearcut.e("REMOVE_FROZEN", 1);
+    public static final b0 g = new b0("REMOVE_FROZEN", 1);
     private volatile /* synthetic */ Object _next$volatile;
     private volatile /* synthetic */ long _state$volatile;
     public final int a;
@@ -17,9 +18,9 @@ public final class m {
     public final int c;
     public final /* synthetic */ AtomicReferenceArray d;
 
-    public m(int i7, boolean z9) {
+    public m(int i7, boolean z10) {
         this.a = i7;
-        this.b = z9;
+        this.b = z10;
         int i10 = i7 - 1;
         this.c = i10;
         this.d = new AtomicReferenceArray(i7);
@@ -44,9 +45,9 @@ public final class m {
             if (((i10 + 2) & i11) == (i7 & i11)) {
                 return 1;
             }
-            boolean z9 = this.b;
+            boolean z10 = this.b;
             AtomicReferenceArray atomicReferenceArray = this.d;
-            if (z9 || atomicReferenceArray.get(i10 & i11) == null) {
+            if (z10 || atomicReferenceArray.get(i10 & i11) == null) {
                 if (f.compareAndSet(this, j3, ((-1152921503533105153L) & j3) | (((i10 + 1) & 1073741823) << 30))) {
                     atomicReferenceArray.set(i10 & i11, obj);
                     m mVar = this;
@@ -153,9 +154,9 @@ public final class m {
             }
             AtomicReferenceArray atomicReferenceArray = mVar.d;
             Object obj = atomicReferenceArray.get(i11);
-            boolean z9 = mVar.b;
+            boolean z10 = mVar.b;
             if (obj == null) {
-                if (z9) {
+                if (z10) {
                     break;
                 }
             } else {
@@ -168,7 +169,7 @@ public final class m {
                     return obj;
                 }
                 mVar = this;
-                if (z9) {
+                if (z10) {
                     while (true) {
                         long j11 = atomicLongFieldUpdater.get(mVar);
                         int i12 = (int) (j11 & 1073741823);

@@ -1,40 +1,11 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class po extends x2 {
-    public final /* synthetic */ qp e;
-
-    public po(qp qpVar) {
-        this.e = qpVar;
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final /* bridge */ /* synthetic */ boolean b(Object obj) {
-        return true;
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final void e(int i7, Object obj, v10 v10Var) {
-        this.e.getMessagesStorage().a.c(new lo(i7, (v2) v10Var, 1));
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final void f(int i7, Object obj, long j3, w2 w2Var) {
-        TLRPC.TL_messages_getAvailableEffects tL_messages_getAvailableEffects = new TLRPC.TL_messages_getAvailableEffects();
-        tL_messages_getAvailableEffects.hash = (int) j3;
-        this.e.getConnectionsManager().sendRequest(tL_messages_getAvailableEffects, new mo(w2Var, 1));
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final void g(int i7, Object obj, Object obj2) {
-        yr.a0(i7).a.c(new x0(i7, (TLRPC.messages_AvailableEffects) obj2, 6));
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final void h(int i7, long j3) {
-        this.e.e7.edit().putLong("effects_last_" + i7, j3).apply();
-    }
+public final class po {
+    public boolean a;
+    public long b;
+    public TL_chatlists.TL_chatlists_chatlistUpdates c;
 }

@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import org.telegram.ui.Wallet.x0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a0 extends z {
     public final LinkedList b;
@@ -84,14 +84,14 @@ public final class a0 extends z {
     }
 
     public final void c() {
-        boolean z9;
+        boolean z10;
         u uVar = this.a;
         synchronized (uVar.g) {
             uVar.p = true;
-            z9 = uVar.o;
+            z10 = uVar.o;
         }
         uVar.a();
-        if (z9) {
+        if (z10) {
             uVar.f();
         }
         while (true) {
@@ -144,8 +144,8 @@ public final class a0 extends z {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void f(x xVar) {
-        boolean z9;
         boolean z10;
+        boolean z11;
         synchronized (this) {
             try {
                 if (this.f) {
@@ -159,8 +159,8 @@ public final class a0 extends z {
                 }
                 int i10 = xVar.e;
                 if (i10 != 9 && i10 != 10) {
-                    z9 = false;
-                    if (z9) {
+                    z10 = false;
+                    if (z10) {
                         this.b.addLast(xVar);
                     } else {
                         LinkedList linkedList = this.b;
@@ -169,23 +169,23 @@ public final class a0 extends z {
                         while (it.hasNext()) {
                             int i12 = ((x) it.next()).e;
                             if (i12 != 9 && i12 != 10) {
-                                z10 = false;
-                                if (z10) {
+                                z11 = false;
+                                if (z11) {
                                     break;
                                 } else {
                                     i11++;
                                 }
                             }
-                            z10 = true;
-                            if (z10) {
+                            z11 = true;
+                            if (z11) {
                             }
                         }
                         linkedList.add(i11, xVar);
                     }
                     notifyAll();
                 }
-                z9 = true;
-                if (z9) {
+                z10 = true;
+                if (z10) {
                 }
                 notifyAll();
             } catch (Throwable th2) {
@@ -206,7 +206,7 @@ public final class a0 extends z {
         byte[] bArr;
         byte[] bArr2;
         o oVar = this.c;
-        boolean z9 = true;
+        boolean z10 = true;
         if (oVar != null && (((i7 = xVar.e) == 1 || i7 == 2) && xVar.a && !xVar.b && (bArr = xVar.g) != null && bArr.length != 0)) {
             try {
                 bArr2 = oVar.b(bArr);
@@ -262,7 +262,7 @@ public final class a0 extends z {
             synchronized (r0Var) {
                 int i13 = r0Var.a;
                 if (i13 == 4 || i13 == 5) {
-                    z9 = false;
+                    z10 = false;
                 } else {
                     r0Var.a = 4;
                     if (r0Var.b == 1) {
@@ -270,7 +270,7 @@ public final class a0 extends z {
                     }
                 }
             }
-            if (z9) {
+            if (z10) {
                 this.a.d.g();
             }
         }
@@ -356,7 +356,7 @@ public final class a0 extends z {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void i(boolean z9) {
+    public final void i(boolean z10) {
         long currentTimeMillis = System.currentTimeMillis();
         while (true) {
             synchronized (this) {
@@ -367,7 +367,7 @@ public final class a0 extends z {
                 }
             }
         }
-        if (!z9) {
+        if (!z10) {
             this.a.getClass();
         }
         b();

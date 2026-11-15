@@ -1,37 +1,65 @@
 package fi;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
+import java.util.HashMap;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class q5 extends ImageView {
-    public final int a;
-    public final /* synthetic */ s5 b;
+public final /* synthetic */ class q5 implements z10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s6 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q5(s5 s5Var, Context context, int i7, int i10) {
-        super(context);
-        this.b = s5Var;
+    public /* synthetic */ q5(s6 s6Var, int i7) {
         this.a = i7;
-        setBackground(org.telegram.ui.ActionBar.m6.h0(1090519039, 1, -1));
-        setScaleType(ImageView.ScaleType.CENTER);
-        setImageResource(i10);
-        setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-        setOnClickListener(new ai.v(this, i7, 4));
+        this.b = s6Var;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Button");
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(40.0f));
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                k6 k6Var = (k6) obj;
+                s6 s6Var = this.b;
+                HashMap hashMap = s6Var.H;
+                int i7 = k6Var.e;
+                int i10 = k6Var.f;
+                long j3 = k6Var.d;
+                if (i7 == 0 && i10 > 0) {
+                    HashMap hashMap2 = (HashMap) hashMap.get(Long.valueOf(j3));
+                    if (hashMap2 != null) {
+                        hashMap2.remove(Integer.valueOf(i10));
+                        if (hashMap2.isEmpty()) {
+                            hashMap.remove(Long.valueOf(j3));
+                            break;
+                        }
+                    }
+                } else {
+                    HashMap hashMap3 = s6Var.G[i7];
+                    if (hashMap3 != null) {
+                        hashMap3.remove(Long.valueOf(j3));
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                this.b.f = (LongSparseIntArray) obj;
+                break;
+            default:
+                TL_stories.TL_stories_allStories tL_stories_allStories = (TL_stories.TL_stories_allStories) obj;
+                s6 s6Var2 = this.b;
+                s6Var2.n = false;
+                if (tL_stories_allStories == null) {
+                    s6Var2.q();
+                    s6Var2.W();
+                    break;
+                } else {
+                    s6Var2.b0(tL_stories_allStories, false, true, false);
+                    s6Var2.T(false);
+                    s6Var2.T(true);
+                    break;
+                }
+        }
     }
 }

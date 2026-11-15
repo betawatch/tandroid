@@ -1,32 +1,17 @@
 package org.telegram.messenger;
 
-import android.graphics.PointF;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class hf {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public int h;
-    public int i;
-    public float j;
-    public float k;
-    public float l;
-    public float m;
-    public int n;
-    public float o;
-    public h2.c p = new h2.c();
-    public float q;
-    public PointF r;
-    public float s;
-    public float t;
+    public final gj a;
+    public final float b;
+    public final int c;
+    public final int d;
 
-    public final boolean a() {
-        return Math.abs(this.a) < 0.1f && Math.abs(this.b) < 0.1f && Math.abs(this.c) < 0.1f && Math.abs(this.d) < 0.1f && Math.abs(this.e) < 0.1f && Math.abs(this.f) < 0.1f && Math.abs(this.g) < 0.1f && this.h == 0 && this.i == 0 && Math.abs(this.j) < 0.1f && Math.abs(this.k) < 0.1f && Math.abs(this.l) < 0.1f && Math.abs(this.m) < 0.1f && this.n == 0 && Math.abs(this.o) < 0.1f;
+    public hf(gj gjVar) {
+        this.a = gjVar;
+        this.b = gjVar.b0;
+        this.c = gjVar.d0;
+        this.d = gjVar.i0;
     }
 }

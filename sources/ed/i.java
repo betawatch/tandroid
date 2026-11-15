@@ -1,6 +1,7 @@
 package ed;
 
-import a8.x9;
+import a8.z9;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.HashMap;
@@ -12,7 +13,7 @@ import java.util.regex.Pattern;
 import kf.p;
 import kf.s;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i implements lf.a {
     public static final Pattern j = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -102,8 +103,8 @@ public final class i implements lf.a {
     public final void a(String str, p pVar) {
         p sVar;
         p pVar2;
-        boolean z9;
         boolean z10;
+        boolean z11;
         bg.f fVar;
         this.f = str.trim();
         this.g = 0;
@@ -160,18 +161,18 @@ public final class i implements lf.a {
                             boolean matches2 = pattern2.matcher(substring).matches();
                             boolean matches3 = pattern.matcher(valueOf).matches();
                             boolean matches4 = pattern2.matcher(valueOf).matches();
-                            boolean z11 = !matches4 && (!matches3 || matches2 || matches);
-                            boolean z12 = !matches2 && (!matches || matches4 || matches3);
+                            boolean z12 = !matches4 && (!matches3 || matches2 || matches);
+                            boolean z13 = !matches2 && (!matches || matches4 || matches3);
                             if (d == '_') {
-                                z10 = z11 && (!z12 || matches);
-                                z9 = z12 && (!z11 || matches3);
+                                z11 = z12 && (!z13 || matches);
+                                z10 = z13 && (!z12 || matches3);
                             } else {
-                                boolean z13 = z11 && d == aVar.e();
-                                z9 = z12 && d == aVar.b();
-                                z10 = z13;
+                                boolean z14 = z12 && d == aVar.e();
+                                z10 = z13 && d == aVar.b();
+                                z11 = z14;
                             }
                             this.g = i10;
-                            fVar = new bg.f(i11, z10, z9);
+                            fVar = new bg.f(i11, z11, z10);
                         }
                         if (fVar != null) {
                             int i12 = fVar.a;
@@ -180,10 +181,10 @@ public final class i implements lf.a {
                             this.g = i14;
                             bg.f fVar2 = fVar;
                             s sVar2 = new s(this.f.substring(i13, i14));
-                            boolean z14 = fVar2.c;
-                            boolean z15 = fVar2.b;
+                            boolean z15 = fVar2.c;
+                            boolean z16 = fVar2.b;
                             gf.e eVar = this.h;
-                            gf.e eVar2 = new gf.e(sVar2, d, z14, z15, eVar);
+                            gf.e eVar2 = new gf.e(sVar2, d, z15, z16, eVar);
                             this.h = eVar2;
                             eVar2.g = i12;
                             eVar2.h = i12;
@@ -233,7 +234,7 @@ public final class i implements lf.a {
         if (pVar3 == pVar4) {
             return;
         }
-        x9.b(pVar3, pVar4);
+        z9.b(pVar3, pVar4);
     }
 
     public final String c(Pattern pattern) {
@@ -257,7 +258,7 @@ public final class i implements lf.a {
     }
 
     public final void e(gf.e eVar) {
-        boolean z9;
+        boolean z10;
         p pVar;
         HashMap hashMap = new HashMap();
         gf.e eVar2 = this.h;
@@ -279,26 +280,26 @@ public final class i implements lf.a {
                 char e10 = aVar.e();
                 gf.e eVar4 = eVar2.e;
                 int i7 = 0;
-                boolean z10 = false;
+                boolean z11 = false;
                 while (eVar4 != null && eVar4 != eVar && eVar4 != hashMap.get(Character.valueOf(c10))) {
                     if (eVar4.c && eVar4.b == e10) {
                         i7 = aVar.c(eVar4, eVar2);
-                        z10 = true;
+                        z11 = true;
                         if (i7 > 0) {
-                            z9 = true;
+                            z10 = true;
                             break;
                         }
                     }
                     eVar4 = eVar4.e;
                 }
-                z9 = z10;
-                z10 = false;
-                if (z10) {
+                z10 = z11;
+                z11 = false;
+                if (z11) {
                     s sVar2 = eVar4.a;
                     eVar4.g -= i7;
                     eVar2.g -= i7;
-                    sVar2.g = com.google.android.recaptcha.internal.a.k(sVar2.g, i7, 0);
-                    sVar.g = com.google.android.recaptcha.internal.a.k(sVar.g, i7, 0);
+                    sVar2.g = e2.k(sVar2.g, i7, 0);
+                    sVar.g = e2.k(sVar.g, i7, 0);
                     gf.e eVar5 = eVar2.e;
                     while (eVar5 != null && eVar5 != eVar4) {
                         gf.e eVar6 = eVar5.e;
@@ -306,7 +307,7 @@ public final class i implements lf.a {
                         eVar5 = eVar6;
                     }
                     if (sVar2 != sVar && (pVar = (p) sVar2.f) != sVar) {
-                        x9.b(pVar, (p) sVar.e);
+                        z9.b(pVar, (p) sVar.e);
                     }
                     aVar.a(sVar2, sVar, i7);
                     if (eVar4.g == 0) {
@@ -320,7 +321,7 @@ public final class i implements lf.a {
                         eVar2 = eVar7;
                     }
                 } else {
-                    if (!z9) {
+                    if (!z10) {
                         hashMap.put(Character.valueOf(c10), eVar2.e);
                         if (!eVar2.c) {
                             f(eVar2);

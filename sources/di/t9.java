@@ -1,24 +1,43 @@
 package di;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class t9 extends tg.m0 {
-    public final /* synthetic */ u9 Q;
+public final /* synthetic */ class t9 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u2[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t9(u9 u9Var, Context context, float f10) {
-        super(context, f10);
-        this.Q = u9Var;
+    public /* synthetic */ t9(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.u2[] u2VarArr, int i7) {
+        this.a = i7;
+        this.b = editTextBoldCursor;
+        this.c = u2VarArr;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        View view = this.Q.c;
-        if (view != null) {
-            view.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.c[0].A0(true);
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                editTextBoldCursor.requestFocus();
+                org.telegram.messenger.g0.h3(new ch.w(editTextBoldCursor, 22));
+                break;
+            case 1:
+                org.telegram.messenger.g0.v1(this.b);
+                this.c[0].dismiss();
+                break;
+            default:
+                org.telegram.messenger.g0.v1(this.b);
+                this.c[0].dismiss();
+                break;
         }
+    }
+
+    public /* synthetic */ t9(org.telegram.ui.ActionBar.u2[] u2VarArr, EditTextBoldCursor editTextBoldCursor) {
+        this.a = 0;
+        this.c = u2VarArr;
+        this.b = editTextBoldCursor;
     }
 }

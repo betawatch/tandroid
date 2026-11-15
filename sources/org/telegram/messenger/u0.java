@@ -4,20 +4,20 @@ import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m4.d0 b;
+    public final /* synthetic */ k8.a b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ me d;
+    public final /* synthetic */ le d;
     public final /* synthetic */ File e;
 
-    public /* synthetic */ u0(m4.d0 d0Var, long j3, me meVar, File file, int i7) {
+    public /* synthetic */ u0(k8.a aVar, long j3, le leVar, File file, int i7) {
         this.a = i7;
-        this.b = d0Var;
+        this.b = aVar;
         this.c = j3;
-        this.d = meVar;
+        this.d = leVar;
         this.e = file;
     }
 
@@ -25,22 +25,22 @@ public final /* synthetic */ class u0 implements Runnable {
     public final void run() {
         int i7 = this.a;
         File file = this.e;
-        me meVar = this.d;
+        le leVar = this.d;
         long j3 = this.c;
-        m4.d0 d0Var = this.b;
+        k8.a aVar = this.b;
         switch (i7) {
             case 0:
-                if (((HashSet) ((e0.g) d0Var.b).h).remove(Long.valueOf(j3))) {
+                if (((HashSet) ((e0.g) aVar.c).h).remove(Long.valueOf(j3))) {
                     z0.b(file);
-                    MediaController mediaController = meVar.a;
-                    if (file.equals(mediaController.j1)) {
-                        mediaController.j1 = null;
+                    MediaController mediaController = leVar.a;
+                    if (file.equals(mediaController.k1)) {
+                        mediaController.k1 = null;
                         break;
                     }
                 }
                 break;
             default:
-                e0.g gVar = (e0.g) d0Var.b;
+                e0.g gVar = (e0.g) aVar.c;
                 if (!gVar.c) {
                     ((HashSet) gVar.h).add(Long.valueOf(j3));
                     Set set = z0.a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class u0 implements Runnable {
                     if (absolutePath != null) {
                         z0.a.add(absolutePath);
                     }
-                    meVar.a.j1 = file;
+                    leVar.a.k1 = file;
                     break;
                 }
                 break;

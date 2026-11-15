@@ -3,7 +3,7 @@ package ac;
 import a8.r7;
 import pb.g;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements u9.d {
     public static final /* synthetic */ a b = new a(0);
@@ -15,7 +15,7 @@ public final /* synthetic */ class a implements u9.d {
     }
 
     @Override // u9.d
-    public final Object e(r7 r7Var) {
+    public final Object i(r7 r7Var) {
         switch (this.a) {
             case 0:
                 return new c((g) r7Var.a(g.class));

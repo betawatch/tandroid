@@ -1,100 +1,23 @@
 package com.google.android.gms.common.api.internal;
 
-import a8.wa;
-import android.content.Intent;
-import android.os.Bundle;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.Iterator;
+import com.google.android.gms.common.api.Status;
+import j$.util.Objects;
 import java.util.Map;
-import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class i1 extends androidx.fragment.app.r implements l {
-    public static final WeakHashMap l0 = new WeakHashMap();
-    public final wa k0 = new wa(3, (byte) 0);
+public final class i1 implements com.google.android.gms.common.api.o {
+    public final /* synthetic */ BasePendingResult a;
+    public final /* synthetic */ a1 b;
 
-    @Override // androidx.fragment.app.r
-    public final void A() {
-        this.U = true;
-        wa waVar = this.k0;
-        waVar.b = 5;
-        Iterator it = ((Map) waVar.c).values().iterator();
-        while (it.hasNext()) {
-            ((k) it.next()).onDestroy();
-        }
+    public i1(a1 a1Var, BasePendingResult basePendingResult) {
+        this.a = basePendingResult;
+        Objects.requireNonNull(a1Var);
+        this.b = a1Var;
     }
 
-    @Override // androidx.fragment.app.r
-    public final void F() {
-        this.U = true;
-        wa waVar = this.k0;
-        waVar.b = 3;
-        Iterator it = ((Map) waVar.c).values().iterator();
-        while (it.hasNext()) {
-            ((k) it.next()).onResume();
-        }
-    }
-
-    @Override // androidx.fragment.app.r
-    public final void G(Bundle bundle) {
-        this.k0.F(bundle);
-    }
-
-    @Override // androidx.fragment.app.r
-    public final void H() {
-        this.U = true;
-        wa waVar = this.k0;
-        waVar.b = 2;
-        Iterator it = ((Map) waVar.c).values().iterator();
-        while (it.hasNext()) {
-            ((k) it.next()).onStart();
-        }
-    }
-
-    @Override // androidx.fragment.app.r
-    public final void I() {
-        this.U = true;
-        wa waVar = this.k0;
-        waVar.b = 4;
-        Iterator it = ((Map) waVar.c).values().iterator();
-        while (it.hasNext()) {
-            ((k) it.next()).onStop();
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.l
-    public final void a(String str, k kVar) {
-        this.k0.C(str, kVar);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.l
-    public final k b(Class cls, String str) {
-        return (k) cls.cast(((Map) this.k0.c).get(str));
-    }
-
-    @Override // androidx.fragment.app.r
-    public final void i(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        super.i(str, fileDescriptor, printWriter, strArr);
-        Iterator it = ((Map) this.k0.c).values().iterator();
-        while (it.hasNext()) {
-            ((k) it.next()).dump(str, fileDescriptor, printWriter, strArr);
-        }
-    }
-
-    @Override // androidx.fragment.app.r
-    public final void x(int i7, int i10, Intent intent) {
-        super.x(i7, i10, intent);
-        Iterator it = ((Map) this.k0.c).values().iterator();
-        while (it.hasNext()) {
-            ((k) it.next()).onActivityResult(i7, i10, intent);
-        }
-    }
-
-    @Override // androidx.fragment.app.r
-    public final void z(Bundle bundle) {
-        super.z(bundle);
-        this.k0.D(bundle);
+    @Override // com.google.android.gms.common.api.o
+    public final void a(Status status) {
+        ((Map) this.b.a).remove(this.a);
     }
 }

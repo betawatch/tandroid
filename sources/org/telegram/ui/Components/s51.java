@@ -1,33 +1,25 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.graphics.SurfaceTexture;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s51 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public interface s51 {
+    void onError(u51 u51Var, Exception exc);
 
-    public /* synthetic */ s51(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
-    }
+    void onRenderedFirstFrame();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                t51 t51Var = (t51) ((li.b6) this.b).f;
-                t51Var.a0.removeCallbacksAndMessages(null);
-                t51Var.K.F(false, null);
-                break;
-            case 1:
-                ((v51) this.b).g = false;
-                break;
-            case 2:
-                ((l71) ((w30) ((org.telegram.ui.ActionBar.h1) this.b).b).b).w.b();
-                break;
-            default:
-                ((h71) this.b).d(false, true);
-                break;
-        }
-    }
+    void onRenderedFirstFrame(m2.a aVar);
+
+    void onSeekFinished(m2.a aVar);
+
+    void onSeekStarted(m2.a aVar);
+
+    void onStateChanged(boolean z10, int i7);
+
+    boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture);
+
+    void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture);
+
+    void onVideoSizeChanged(int i7, int i10, int i11, float f10);
 }

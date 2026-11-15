@@ -1,6 +1,6 @@
 package e2;
 
-import a8.ia;
+import a8.ja;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,9 +9,9 @@ import android.text.TextUtils;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o0 {
     public static final o0 L = new o0(new n0());
@@ -89,7 +89,7 @@ public final class o0 {
     public final Integer z;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         M = Integer.toString(0, 36);
         N = Integer.toString(1, 36);
         O = Integer.toString(2, 36);
@@ -158,7 +158,7 @@ public final class o0 {
                         case 17:
                         case 18:
                         case 19:
-                        case qs.U /* 31 */:
+                        case ns.U /* 31 */:
                         case 32:
                         case 33:
                         case 34:
@@ -169,7 +169,7 @@ public final class o0 {
                         case 27:
                         case 28:
                         case 29:
-                        case qs.T /* 30 */:
+                        case ns.T /* 30 */:
                         default:
                             i7 = 0;
                             break;
@@ -194,9 +194,9 @@ public final class o0 {
                 num = Integer.valueOf(i10);
             }
         } else if (num != null) {
-            boolean z9 = num.intValue() != -1;
-            bool = Boolean.valueOf(z9);
-            if (z9 && num2 == null) {
+            boolean z10 = num.intValue() != -1;
+            bool = Boolean.valueOf(z10);
+            if (z10 && num2 == null) {
                 switch (num.intValue()) {
                     case 1:
                         break;
@@ -280,7 +280,7 @@ public final class o0 {
         n0Var.E = bundle.getCharSequence(m0);
         n0Var.F = bundle.getCharSequence(n0);
         n0Var.G = bundle.getCharSequence(p0);
-        n0Var.I = h2.m0.o(bundle.getBundle(u0));
+        n0Var.I = h2.l0.o(bundle.getBundle(u0));
         String str = V;
         if (bundle.containsKey(str)) {
             String str2 = o0;
@@ -315,7 +315,7 @@ public final class o0 {
         if (bundle.containsKey(str5)) {
             long j3 = bundle.getLong(str5);
             Long valueOf2 = Long.valueOf(j3);
-            ia.f(j3 >= 0);
+            ja.f(j3 >= 0);
             n0Var.h = valueOf2;
         }
         String str6 = X;

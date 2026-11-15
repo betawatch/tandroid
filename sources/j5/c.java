@@ -2,12 +2,12 @@ package j5;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c extends a {
-    public final long[] D;
+    public final long[] E;
     public int h;
     public int n;
     public double r;
@@ -23,7 +23,7 @@ public final class c extends a {
         this.w = 1;
         this.x = "";
         this.y = 24;
-        this.D = new long[3];
+        this.E = new long[3];
     }
 
     @Override // com.googlecode.mp4parser.b, i5.b
@@ -34,7 +34,7 @@ public final class c extends a {
         h5.b.p(this.f, allocate);
         h5.b.p(0, allocate);
         h5.b.p(0, allocate);
-        long[] jArr = this.D;
+        long[] jArr = this.E;
         allocate.putInt((int) jArr[0]);
         allocate.putInt((int) jArr[1]);
         allocate.putInt((int) jArr[2]);
@@ -44,7 +44,7 @@ public final class c extends a {
         h5.b.n(allocate, this.s);
         allocate.putInt((int) 0);
         h5.b.p(this.w, allocate);
-        allocate.put((byte) (h5.b.l(this.x) & qs.e4));
+        allocate.put((byte) (h5.b.l(this.x) & ns.e4));
         allocate.put(h5.b.b(this.x));
         int l10 = h5.b.l(this.x);
         while (l10 < 31) {

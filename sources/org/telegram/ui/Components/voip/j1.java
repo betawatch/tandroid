@@ -1,88 +1,67 @@
 package org.telegram.ui.Components.voip;
 
 import android.content.Context;
-import android.view.MotionEvent;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import c8.ja;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.r3;
+import org.telegram.messenger.voip.VideoCapturerDevice;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.Components.zj;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class j1 extends FrameLayout {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public boolean e;
+    public final o2 a;
+    public boolean b;
+    public boolean c;
+    public final long d;
+    public final zj e;
+    public final /* synthetic */ k1 f;
 
-    public j1(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j1(k1 k1Var, Context context) {
         super(context);
-        this.d = 68;
-        this.e = true;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.dispatchTouchEvent(motionEvent);
+        this.f = k1Var;
+        this.c = true;
+        this.d = SystemClock.elapsedRealtime();
+        this.e = new zj(this, 24);
+        setBackgroundColor(-16777216);
+        h hVar = new h(context);
+        addView(hVar, ja.c(-1.0f, -1));
+        o2 o2Var = new o2(context, false, false, false, false);
+        this.a = o2Var;
+        RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FILL;
+        n2 n2Var = o2Var.d;
+        n2Var.setScalingType(scalingType);
+        o2Var.b0 = 0;
+        n2Var.setRotateTextureWithScreen(true);
+        n2Var.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), null);
+        View view = o2Var.h;
+        if (view != null) {
+            view.setVisibility(8);
         }
-        return false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        if (this.e) {
-            int childCount = (int) (((getChildCount() - this.a) / 2.0f) * ((this.c * 2) + this.b));
-            for (int i13 = 0; i13 < getChildCount(); i13++) {
-                View childAt = getChildAt(i13);
-                if (childAt.getVisibility() != 8) {
-                    int i14 = this.c;
-                    childAt.layout(childCount + i14, 0, childAt.getMeasuredWidth() + i14 + childCount, childAt.getMeasuredHeight());
-                    childCount = childAt.getMeasuredWidth() + (this.c * 2) + childCount;
-                }
-            }
+        addView(o2Var, ja.c(-1.0f, -1));
+        r3 g10 = k1.g();
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (g10 == null || sharedInstance == null || sharedInstance.getChat() == null) {
             return;
         }
-        int measuredWidth = this.a > 0 ? (getMeasuredWidth() - this.b) / (this.a - 1) : 0;
-        int i15 = 0;
-        for (int i16 = 0; i16 < getChildCount(); i16++) {
-            View childAt2 = getChildAt(i16);
-            if (childAt2.getVisibility() != 8) {
-                int i17 = i15 * measuredWidth;
-                childAt2.layout(i17, 0, childAt2.getMeasuredWidth() + i17, childAt2.getMeasuredHeight());
-                i15++;
-            }
-        }
+        sharedInstance.getAccount();
+        hVar.a(sharedInstance.getChat());
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i7);
-        this.a = 0;
-        for (int i11 = 0; i11 < getChildCount(); i11++) {
-            if (getChildAt(i11).getVisibility() != 8) {
-                this.a++;
-            }
+    public final void a() {
+        boolean a10 = this.f.b.a(this.d);
+        if (this.c == a10) {
+            return;
         }
-        this.b = org.telegram.messenger.g0.L(this.d);
-        this.c = ((size / getChildCount()) - this.b) / 2;
-        int i12 = 0;
-        for (int i13 = 0; i13 < getChildCount(); i13++) {
-            if (getChildAt(i13).getVisibility() != 8) {
-                getChildAt(i13).measure(View.MeasureSpec.makeMeasureSpec(this.b, TLObject.FLAG_30), i10);
-                if (getChildAt(i13).getMeasuredHeight() > i12) {
-                    i12 = getChildAt(i13).getMeasuredHeight();
-                }
-            }
-        }
-        setMeasuredDimension(size, Math.max(i12, org.telegram.messenger.g0.L(80.0f)));
-    }
-
-    public void setChildSize(int i7) {
-        this.d = i7;
-    }
-
-    public void setUseStartPadding(boolean z9) {
-        this.e = z9;
+        this.c = a10;
+        o2 o2Var = this.a;
+        o2Var.animate().cancel();
+        i20.m(o2Var.animate(), a10 ? 1.0f : 0.0f, 200L);
     }
 }

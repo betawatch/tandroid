@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.cast;
 
-import a8.l8;
+import a8.m8;
 import android.os.Bundle;
 import android.util.Log;
 import java.math.BigInteger;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class z0 {
     public static final j6.b d = new j6.b("ApplicationAnalyticsUtils", null);
@@ -17,8 +17,8 @@ public final class z0 {
 
     public z0(String str, Bundle bundle) {
         this.a = str;
-        this.b = l8.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", bundle);
-        this.c = l8.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON", bundle);
+        this.b = m8.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", bundle);
+        this.c = m8.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON", bundle);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:8:0x0039  */
@@ -130,12 +130,12 @@ public final class z0 {
         int i10 = y0Var.g;
         l11.c();
         k1.t((k1) l11.b, i10);
-        boolean z9 = y0Var.a.d == 2;
+        boolean z10 = y0Var.a.d == 2;
         l11.c();
-        k1.u((k1) l11.b, z9);
-        boolean z10 = y0Var.i;
+        k1.u((k1) l11.b, z10);
+        boolean z11 = y0Var.i;
         l11.c();
-        k1.x((k1) l11.b, z10);
+        k1.x((k1) l11.b, z11);
         m10.c();
         p1.p((p1) m10.b, (k1) l11.a());
         return m10;

@@ -1,11 +1,11 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public interface xr0 {
-    void G();
+    void H();
 
-    org.telegram.ui.ActionBar.z0 H(String str);
+    org.telegram.ui.ActionBar.z0 J(String str);
 
-    org.telegram.ui.ActionBar.z0 b0(int i7, Runnable runnable, String str, boolean z9, boolean z10);
+    org.telegram.ui.ActionBar.z0 n0(int i7, Runnable runnable, String str, boolean z10, boolean z11);
 }

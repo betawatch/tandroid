@@ -4,18 +4,18 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f0 extends AtomicReference implements Runnable {
-    public static final androidx.emoji2.text.n c;
-    public static final androidx.emoji2.text.n d;
+    public static final androidx.emoji2.text.o c;
+    public static final androidx.emoji2.text.o d;
     public final Callable a;
     public final /* synthetic */ g0 b;
 
     static {
         int i7 = 3;
-        c = new androidx.emoji2.text.n(i7);
-        d = new androidx.emoji2.text.n(i7);
+        c = new androidx.emoji2.text.o(i7);
+        d = new androidx.emoji2.text.o(i7);
     }
 
     public f0(g0 g0Var, Callable callable) {
@@ -27,27 +27,27 @@ public final class f0 extends AtomicReference implements Runnable {
     public final void a(Thread thread) {
         Runnable runnable = (Runnable) get();
         x xVar = null;
-        boolean z9 = false;
+        boolean z10 = false;
         int i7 = 0;
         while (true) {
-            boolean z10 = runnable instanceof x;
-            androidx.emoji2.text.n nVar = d;
-            if (!z10 && runnable != nVar) {
+            boolean z11 = runnable instanceof x;
+            androidx.emoji2.text.o oVar = d;
+            if (!z11 && runnable != oVar) {
                 break;
             }
-            if (z10) {
+            if (z11) {
                 xVar = (x) runnable;
             }
             i7++;
             if (i7 <= 1000) {
                 Thread.yield();
-            } else if (runnable == nVar || compareAndSet(runnable, nVar)) {
-                z9 = Thread.interrupted() || z9;
+            } else if (runnable == oVar || compareAndSet(runnable, oVar)) {
+                z10 = Thread.interrupted() || z10;
                 LockSupport.park(xVar);
             }
             runnable = (Runnable) get();
         }
-        if (z9) {
+        if (z10) {
             thread.interrupt();
         }
     }
@@ -59,7 +59,7 @@ public final class f0 extends AtomicReference implements Runnable {
         if (compareAndSet(null, currentThread)) {
             g0 g0Var = this.b;
             boolean isDone = g0Var.isDone();
-            androidx.emoji2.text.n nVar = c;
+            androidx.emoji2.text.o oVar = c;
             if (!isDone) {
                 try {
                     obj = this.a.call();
@@ -68,7 +68,7 @@ public final class f0 extends AtomicReference implements Runnable {
                         if (th2 instanceof InterruptedException) {
                             Thread.currentThread().interrupt();
                         }
-                        if (!compareAndSet(currentThread, nVar)) {
+                        if (!compareAndSet(currentThread, oVar)) {
                             a(currentThread);
                         }
                         if (isDone) {
@@ -77,7 +77,7 @@ public final class f0 extends AtomicReference implements Runnable {
                         g0Var.n(th2);
                         return;
                     } finally {
-                        if (!compareAndSet(currentThread, nVar)) {
+                        if (!compareAndSet(currentThread, oVar)) {
                             a(currentThread);
                         }
                         if (!isDone) {
@@ -102,8 +102,8 @@ public final class f0 extends AtomicReference implements Runnable {
         } else {
             str = "running=[NOT STARTED YET]";
         }
-        StringBuilder j3 = rf.b.j(str, ", ");
-        j3.append(this.a.toString());
-        return j3.toString();
+        StringBuilder m10 = r.b.m(str, ", ");
+        m10.append(this.a.toString());
+        return m10.toString();
     }
 }

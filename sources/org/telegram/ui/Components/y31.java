@@ -1,36 +1,56 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Typeface;
 import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class y31 extends b41 {
-    public static boolean h = true;
-    public final int e;
-    public final uy0 f;
+public final class y31 extends MetricAffectingSpan {
+    public Typeface a;
+    public int b;
+    public int c;
 
-    public y31(String str, int i7, uy0 uy0Var) {
-        super(str, (uy0) null);
-        this.e = i7;
-        this.f = uy0Var;
+    public y31(Typeface typeface) {
+        this.c = -1;
+        this.a = typeface;
     }
 
-    @Override // org.telegram.ui.Components.b41, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        int i7 = this.e;
-        if (i7 == 2) {
-            textPaint.setColor(-1);
-        } else if (i7 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.m6.x0(null, h ? org.telegram.ui.ActionBar.m6.Vc : org.telegram.ui.ActionBar.m6.Tc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.m6.x0(null, h ? org.telegram.ui.ActionBar.m6.Uc : org.telegram.ui.ActionBar.m6.Sc, false));
+        int i7 = this.c;
+        if (i7 >= 0) {
+            this.b = org.telegram.ui.ActionBar.j6.v0(i7);
         }
-        uy0 uy0Var = this.f;
-        if (uy0Var != null) {
-            uy0Var.a(textPaint);
-        } else {
-            textPaint.setUnderlineText(false);
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
         }
+        int i10 = this.b;
+        if (i10 != 0) {
+            textPaint.setColor(i10);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
+    }
+
+    public y31() {
+        Typeface typeface = Typeface.DEFAULT;
+        this.c = -1;
+        this.a = typeface;
+    }
+
+    public y31(Typeface typeface, int i7) {
+        this.c = -1;
+        this.a = typeface;
+        this.b = i7;
     }
 }

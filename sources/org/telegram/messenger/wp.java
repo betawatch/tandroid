@@ -1,66 +1,178 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLitePreparedStatement;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wp implements Runnable {
-    public final /* synthetic */ int D;
-    public final /* synthetic */ boolean E;
-    public final /* synthetic */ boolean F;
-    public final /* synthetic */ yr a;
-    public final /* synthetic */ zz b;
-    public final /* synthetic */ a00 c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int n;
-    public final /* synthetic */ int r;
-    public final /* synthetic */ int s;
-    public final /* synthetic */ int w;
-    public final /* synthetic */ int x;
-    public final /* synthetic */ long y;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vr b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ wp(yr yrVar, zz zzVar, a00 a00Var, long j3, long j10, int i7, int i10, int i11, int i12, int i13, int i14, int i15, long j11, int i16, boolean z9, boolean z10) {
-        this.a = yrVar;
-        this.b = zzVar;
-        this.c = a00Var;
-        this.d = j3;
-        this.e = j10;
-        this.f = i7;
-        this.h = i10;
-        this.n = i11;
-        this.r = i12;
-        this.s = i13;
-        this.w = i14;
-        this.x = i15;
-        this.y = j11;
-        this.D = i16;
-        this.E = z9;
-        this.F = z10;
+    public /* synthetic */ wp(int i7, long j3, vr vrVar, boolean z10) {
+        this.a = i7;
+        this.b = vrVar;
+        this.c = j3;
+        this.d = z10;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0044, code lost:
+    
+        if (r3 == null) goto L27;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x006b A[Catch: all -> 0x0038, Exception -> 0x003a, TRY_ENTER, TryCatch #4 {Exception -> 0x003a, blocks: (B:12:0x0034, B:16:0x0050, B:36:0x006b, B:37:0x006e), top: B:11:0x0034, outer: #7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00c6  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00e9 A[Catch: all -> 0x00b0, Exception -> 0x00b2, TRY_ENTER, TryCatch #10 {Exception -> 0x00b2, blocks: (B:50:0x00ac, B:54:0x00cb, B:68:0x00e9, B:69:0x00ec, B:63:0x00be), top: B:43:0x0088, outer: #0 }] */
+    /* JADX WARN: Type inference failed for: r3v13, types: [java.lang.String] */
+    /* JADX WARN: Type inference failed for: r3v24, types: [org.telegram.SQLite.SQLiteCursor] */
+    /* JADX WARN: Type inference failed for: r3v27 */
+    /* JADX WARN: Type inference failed for: r3v28 */
+    /* JADX WARN: Type inference failed for: r3v29 */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        yr yrVar = this.a;
-        zz zzVar = this.b;
-        a00 a00Var = this.c;
-        long j3 = this.d;
-        long j10 = this.e;
-        int i7 = this.f;
-        int i10 = this.h;
-        int i11 = this.n;
-        int i12 = this.r;
-        int i13 = this.s;
-        int i14 = this.w;
-        int i15 = this.x;
-        long j11 = this.y;
-        int i16 = this.D;
-        boolean z9 = this.E;
-        boolean z10 = this.F;
-        a00.a(zzVar);
-        zz d = a00.d(a00Var, "MessagesStorage.getMessages");
-        cr f02 = yrVar.f0(j3, j10, i7, i10, i11, i12, i13, i14, i15, j11, i16, z9, z10, a00Var);
-        a00.a(d);
-        Utilities.d.c(new hi(28, a00.d(a00Var, "MessagesStorage.getMessages: stageQueue.postRunnable"), f02));
+        SQLiteCursor sQLiteCursor;
+        int i7;
+        SQLiteCursor sQLiteCursor2;
+        switch (this.a) {
+            case 0:
+                long j3 = this.c;
+                vr vrVar = this.b;
+                vrVar.getClass();
+                SQLitePreparedStatement sQLitePreparedStatement = null;
+                try {
+                    try {
+                        try {
+                            sQLiteCursor = vrVar.b.queryFinalized("SELECT flags FROM dialogs WHERE did = " + j3, new Object[0]);
+                            try {
+                                try {
+                                    i7 = sQLiteCursor.next() ? sQLiteCursor.intValue(0) : 0;
+                                    sQLiteCursor.dispose();
+                                } catch (Exception e10) {
+                                    e = e10;
+                                    vrVar.o(e, true);
+                                    if (sQLiteCursor != null) {
+                                        sQLiteCursor.dispose();
+                                    }
+                                    i7 = 0;
+                                    if (!this.d) {
+                                    }
+                                    sQLitePreparedStatement = vrVar.b.executeFast("UPDATE dialogs SET flags = ? WHERE did = ?");
+                                    sQLitePreparedStatement.bindInteger(1, r3);
+                                    sQLitePreparedStatement.bindLong(2, j3);
+                                    sQLitePreparedStatement.step();
+                                    sQLitePreparedStatement.dispose();
+                                    vrVar.t1(false);
+                                    sQLitePreparedStatement.dispose();
+                                    return;
+                                }
+                            } catch (Throwable th2) {
+                                th = th2;
+                                if (sQLiteCursor != null) {
+                                    sQLiteCursor.dispose();
+                                }
+                                throw th;
+                            }
+                        } catch (Throwable th3) {
+                            if (0 != 0) {
+                                sQLitePreparedStatement.dispose();
+                            }
+                            throw th3;
+                        }
+                    } catch (Exception e11) {
+                        e = e11;
+                        sQLiteCursor = null;
+                    } catch (Throwable th4) {
+                        th = th4;
+                        sQLiteCursor = null;
+                        if (sQLiteCursor != null) {
+                        }
+                        throw th;
+                    }
+                    int i10 = !this.d ? i7 | 1 : i7 & (-2);
+                    sQLitePreparedStatement = vrVar.b.executeFast("UPDATE dialogs SET flags = ? WHERE did = ?");
+                    sQLitePreparedStatement.bindInteger(1, i10);
+                    sQLitePreparedStatement.bindLong(2, j3);
+                    sQLitePreparedStatement.step();
+                    sQLitePreparedStatement.dispose();
+                    vrVar.t1(false);
+                } catch (Exception e12) {
+                    vrVar.o(e12, true);
+                    if (0 == 0) {
+                        return;
+                    }
+                }
+                sQLitePreparedStatement.dispose();
+                return;
+            default:
+                long j10 = this.c;
+                vr vrVar2 = this.b;
+                vrVar2.getClass();
+                SQLiteCursor sQLiteCursor3 = "SELECT flags FROM dialogs WHERE did = ";
+                SQLitePreparedStatement sQLitePreparedStatement2 = null;
+                int i11 = 0;
+                try {
+                    try {
+                        sQLiteCursor2 = vrVar2.b.queryFinalized("SELECT flags FROM dialogs WHERE did = " + j10, new Object[0]);
+                        try {
+                            boolean next = sQLiteCursor2.next();
+                            sQLiteCursor3 = sQLiteCursor2;
+                            if (next) {
+                                i11 = sQLiteCursor2.intValue(0);
+                                sQLiteCursor3 = sQLiteCursor2;
+                            }
+                        } catch (Exception e13) {
+                            e = e13;
+                            vrVar2.o(e, true);
+                            sQLiteCursor3 = sQLiteCursor2;
+                            break;
+                        }
+                    } catch (Throwable th5) {
+                        th = th5;
+                        if (sQLiteCursor3 != 0) {
+                            sQLiteCursor3.dispose();
+                        }
+                        throw th;
+                    }
+                } catch (Exception e14) {
+                    e = e14;
+                    sQLiteCursor2 = null;
+                } catch (Throwable th6) {
+                    th = th6;
+                    sQLiteCursor3 = 0;
+                    if (sQLiteCursor3 != 0) {
+                    }
+                    throw th;
+                }
+                try {
+                    try {
+                        sQLiteCursor3.dispose();
+                        int i12 = this.d ? i11 | 64 : i11 & (-65);
+                        sQLitePreparedStatement2 = vrVar2.b.executeFast("UPDATE dialogs SET flags = ? WHERE did = ?");
+                        sQLitePreparedStatement2.bindInteger(1, i12);
+                        sQLitePreparedStatement2.bindLong(2, j10);
+                        sQLitePreparedStatement2.step();
+                        sQLitePreparedStatement2.dispose();
+                    } catch (Exception e15) {
+                        vrVar2.o(e15, true);
+                        if (0 == 0) {
+                            return;
+                        }
+                    }
+                    sQLitePreparedStatement2.dispose();
+                    return;
+                } catch (Throwable th7) {
+                    if (0 != 0) {
+                        sQLitePreparedStatement2.dispose();
+                    }
+                    throw th7;
+                }
+        }
     }
 }

@@ -1,23 +1,22 @@
 package ic;
 
 import a4.k;
-import ab.a0;
+import ab.b0;
 import ab.q;
-import cc.f;
 import cc.j;
 import e2.r0;
-import f5.u;
+import f5.v;
+import gc.f;
 import h6.m;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.charset.UnsupportedCharsetException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import jg.g;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
@@ -28,9 +27,9 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void a(String str, gc.d dVar, cc.a aVar, Charset charset) {
+    public static void a(String str, gc.e eVar, cc.a aVar, Charset charset) {
         int i7;
-        int ordinal = dVar.ordinal();
+        int ordinal = eVar.ordinal();
         int i10 = 0;
         if (ordinal == 1) {
             int length = str.length();
@@ -59,14 +58,14 @@ public abstract class b {
                 int[] iArr = a;
                 int i12 = charAt2 < '`' ? iArr[charAt2] : -1;
                 if (i12 == -1) {
-                    throw new a0();
+                    throw new b0();
                 }
                 int i13 = i10 + 1;
                 if (i13 < length2) {
                     char charAt3 = str.charAt(i13);
                     int i14 = charAt3 < '`' ? iArr[charAt3] : -1;
                     if (i14 == -1) {
-                        throw new a0();
+                        throw new b0();
                     }
                     aVar.b((i12 * 45) + i14, 11);
                     i10 += 2;
@@ -87,15 +86,15 @@ public abstract class b {
             return;
         }
         if (ordinal != 6) {
-            throw new a0("Invalid mode: " + dVar);
+            throw new b0("Invalid mode: " + eVar);
         }
         Charset charset2 = j.b;
         if (charset2 == null) {
-            throw new a0("SJIS Charset not supported on this platform");
+            throw new b0("SJIS Charset not supported on this platform");
         }
         byte[] bytes2 = str.getBytes(charset2);
         if (bytes2.length % 2 != 0) {
-            throw new a0("Kanji byte size not even");
+            throw new b0("Kanji byte size not even");
         }
         int length4 = bytes2.length - 1;
         while (i10 < length4) {
@@ -105,9 +104,9 @@ public abstract class b {
                 if (i15 < 57408 || i15 > 60351) {
                     i7 = -1;
                     if (i7 != -1) {
-                        throw new a0("Invalid byte sequence");
+                        throw new b0("Invalid byte sequence");
                     }
-                    aVar.b(((i7 >> 8) * qs.W2) + (i7 & qs.e4), 13);
+                    aVar.b(((i7 >> 8) * ns.W2) + (i7 & ns.e4), 13);
                     i10 += 2;
                 } else {
                     i16 = 49472;
@@ -142,59 +141,59 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static k b(String str, gc.b bVar, HashMap hashMap) {
+    public static k b(String str, gc.c cVar, HashMap hashMap) {
         Charset forName;
         int i7;
         int i10;
         int i11;
-        gc.d dVar;
-        int i12;
         gc.e eVar;
-        gc.e eVar2;
+        int i12;
+        f fVar;
+        f fVar2;
         cc.a aVar;
-        cc.d dVar2;
+        cc.d dVar;
         int length;
         int i13;
         int i14;
         int i15;
         int i16;
         byte[][] bArr;
-        boolean z9;
         boolean z10;
         boolean z11;
         boolean z12;
+        boolean z13;
         char c10;
-        gc.d dVar3;
+        gc.e eVar2;
         int i17;
-        gc.b bVar2 = bVar;
+        gc.c cVar2 = cVar;
         HashMap hashMap2 = hashMap;
-        bc.b bVar3 = bc.b.h;
+        bc.b bVar = bc.b.h;
         int i18 = 0;
         int i19 = 1;
-        boolean z13 = hashMap2.containsKey(bVar3) && Boolean.parseBoolean(hashMap2.get(bVar3).toString());
-        bc.b bVar4 = bc.b.f;
-        boolean z14 = hashMap2.containsKey(bVar4) && Boolean.parseBoolean(hashMap2.get(bVar4).toString());
-        bc.b bVar5 = bc.b.b;
-        boolean containsKey = hashMap2.containsKey(bVar5);
+        boolean z14 = hashMap2.containsKey(bVar) && Boolean.parseBoolean(hashMap2.get(bVar).toString());
+        bc.b bVar2 = bc.b.f;
+        boolean z15 = hashMap2.containsKey(bVar2) && Boolean.parseBoolean(hashMap2.get(bVar2).toString());
+        bc.b bVar3 = bc.b.b;
+        boolean containsKey = hashMap2.containsKey(bVar3);
         Charset charset = b;
         if (containsKey) {
             try {
-                forName = Charset.forName(hashMap2.get(bVar5).toString());
+                forName = Charset.forName(hashMap2.get(bVar3).toString());
             } catch (UnsupportedCharsetException unused) {
             }
-            gc.d dVar4 = gc.d.h;
+            gc.e eVar3 = gc.e.h;
             int i20 = 8;
             int i21 = 4;
-            if (z14) {
+            if (z15) {
                 i7 = 0;
                 i10 = 1;
                 i11 = 2;
                 Charset charset2 = j.b;
                 if (charset2 != null && charset2.equals(forName) && c(str)) {
-                    dVar = gc.d.r;
+                    eVar = gc.e.r;
                 } else {
-                    boolean z15 = false;
                     boolean z16 = false;
+                    boolean z17 = false;
                     int i22 = 0;
                     while (true) {
                         if (i22 < str.length()) {
@@ -203,67 +202,67 @@ public abstract class b {
                                 if ((charAt < '`' ? a[charAt] : -1) == -1) {
                                     break;
                                 }
-                                z15 = true;
-                            } else {
                                 z16 = true;
+                            } else {
+                                z17 = true;
                             }
                             i22++;
-                        } else if (z15) {
-                            dVar = gc.d.e;
                         } else if (z16) {
-                            dVar = gc.d.d;
+                            eVar = gc.e.e;
+                        } else if (z17) {
+                            eVar = gc.e.d;
                         }
                     }
-                    dVar = dVar4;
+                    eVar = eVar3;
                 }
                 cc.a aVar2 = new cc.a();
-                if (dVar == dVar4 && containsKey && (dVar2 = (cc.d) cc.d.d.get(forName.name())) != null) {
+                if (eVar == eVar3 && containsKey && (dVar = (cc.d) cc.d.d.get(forName.name())) != null) {
                     i12 = 4;
                     aVar2.b(7, 4);
-                    aVar2.b(dVar2.a[0], 8);
+                    aVar2.b(dVar.a[0], 8);
                 } else {
                     i12 = 4;
                 }
-                if (z13) {
+                if (z14) {
                     aVar2.b(5, i12);
                 }
-                aVar2.b(dVar.b, i12);
+                aVar2.b(eVar.b, i12);
                 cc.a aVar3 = new cc.a();
-                a(str, dVar, aVar3, forName);
-                bc.b bVar6 = bc.b.d;
-                if (!hashMap2.containsKey(bVar6)) {
-                    int a10 = dVar.a(gc.e.c(1)) + aVar2.b + aVar3.b;
+                a(str, eVar, aVar3, forName);
+                bc.b bVar4 = bc.b.d;
+                if (!hashMap2.containsKey(bVar4)) {
+                    int a10 = eVar.a(f.c(1)) + aVar2.b + aVar3.b;
                     int i23 = 1;
                     while (i23 <= 40) {
-                        gc.e c11 = gc.e.c(i23);
-                        if (d(a10, c11, bVar2)) {
-                            int a11 = dVar.a(c11) + aVar2.b + aVar3.b;
+                        f c11 = f.c(i23);
+                        if (d(a10, c11, cVar2)) {
+                            int a11 = eVar.a(c11) + aVar2.b + aVar3.b;
                             int i24 = 1;
                             while (i24 <= 40) {
-                                gc.e c12 = gc.e.c(i24);
-                                if (d(a11, c12, bVar2)) {
-                                    eVar = c12;
+                                f c12 = f.c(i24);
+                                if (d(a11, c12, cVar2)) {
+                                    fVar = c12;
                                 } else {
                                     i24++;
-                                    bVar2 = bVar2;
+                                    cVar2 = cVar2;
                                     hashMap2 = hashMap2;
                                     i20 = 8;
                                     i7 = 0;
                                 }
                             }
-                            throw new a0("Data too big");
+                            throw new b0("Data too big");
                         }
                         i23++;
-                        bVar2 = bVar2;
+                        cVar2 = cVar2;
                         hashMap2 = hashMap2;
                         i20 = 8;
                         i7 = 0;
                     }
-                    throw new a0("Data too big");
+                    throw new b0("Data too big");
                 }
-                eVar = gc.e.c(Integer.parseInt(hashMap2.get(bVar6).toString()));
-                if (!d(dVar.a(eVar) + aVar2.b + aVar3.b, eVar, bVar2)) {
-                    throw new a0("Data too big for requested version");
+                fVar = f.c(Integer.parseInt(hashMap2.get(bVar4).toString()));
+                if (!d(eVar.a(fVar) + aVar2.b + aVar3.b, fVar, cVar2)) {
+                    throw new b0("Data too big for requested version");
                 }
                 cc.a aVar4 = new cc.a();
                 int i25 = aVar2.b;
@@ -271,15 +270,15 @@ public abstract class b {
                 for (int i26 = i7; i26 < i25; i26++) {
                     aVar4.a(aVar2.d(i26));
                 }
-                int e10 = dVar == dVar4 ? aVar3.e() : str.length();
-                int a12 = dVar.a(eVar);
+                int e10 = eVar == eVar3 ? aVar3.e() : str.length();
+                int a12 = eVar.a(fVar);
                 int i27 = 1 << a12;
                 if (e10 >= i27) {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(e10);
                     sb2.append(" is bigger than ");
                     sb2.append(i27 - 1);
-                    throw new a0(sb2.toString());
+                    throw new b0(sb2.toString());
                 }
                 aVar4.b(e10, a12);
                 int i28 = aVar3.b;
@@ -287,8 +286,8 @@ public abstract class b {
                 for (int i29 = i7; i29 < i28; i29++) {
                     aVar4.a(aVar3.d(i29));
                 }
-                dVar4 = dVar;
-                eVar2 = eVar;
+                eVar3 = eVar;
+                fVar2 = fVar;
                 aVar = aVar4;
             } else {
                 if (forName.equals(charset)) {
@@ -296,30 +295,30 @@ public abstract class b {
                 }
                 q qVar = new q();
                 qVar.b = str;
-                qVar.a = z13;
-                qVar.c = new f(str, forName);
-                qVar.d = bVar2;
-                gc.b bVar7 = (gc.b) qVar.d;
+                qVar.a = z14;
+                qVar.c = new cc.f(str, forName);
+                qVar.d = cVar2;
+                gc.c cVar3 = (gc.c) qVar.d;
                 i11 = 2;
-                gc.e[] eVarArr = {q.q(1), q.q(2), q.q(3)};
-                m[] mVarArr = {qVar.l(eVarArr[0]), qVar.l(eVarArr[1]), qVar.l(eVarArr[2])};
+                f[] fVarArr = {q.q(1), q.q(2), q.q(3)};
+                m[] mVarArr = {qVar.l(fVarArr[0]), qVar.l(fVarArr[1]), qVar.l(fVarArr[2])};
                 int i30 = 0;
                 int i31 = -1;
                 int i32 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 for (int i33 = 3; i30 < i33; i33 = 3) {
                     m mVar = mVarArr[i30];
                     int i34 = i19;
-                    int w10 = mVar.w((gc.e) mVar.c);
-                    if (d(w10, eVarArr[i30], bVar7) && w10 < i32) {
+                    int x10 = mVar.x((f) mVar.c);
+                    if (d(x10, fVarArr[i30], cVar3) && x10 < i32) {
                         i31 = i30;
-                        i32 = w10;
+                        i32 = x10;
                     }
                     i30++;
                     i19 = i34;
                 }
                 i10 = i19;
                 if (i31 < 0) {
-                    throw new a0("Data too big for any version");
+                    throw new b0("Data too big for any version");
                 }
                 m mVar2 = mVarArr[i31];
                 cc.a aVar5 = new cc.a();
@@ -329,35 +328,35 @@ public abstract class b {
                 while (i35 < size) {
                     Object obj = arrayList.get(i35);
                     i35++;
-                    e eVar3 = (e) obj;
-                    int i36 = eVar3.c;
-                    m mVar3 = eVar3.e;
+                    e eVar4 = (e) obj;
+                    int i36 = eVar4.c;
+                    m mVar3 = eVar4.e;
                     int i37 = i18;
                     q qVar2 = (q) mVar3.d;
-                    gc.d dVar5 = eVar3.a;
-                    aVar5.b(dVar5.b, i21);
-                    int i38 = eVar3.d;
+                    gc.e eVar5 = eVar4.a;
+                    aVar5.b(eVar5.b, i21);
+                    int i38 = eVar4.d;
                     if (i38 > 0) {
-                        aVar5.b(eVar3.a(), dVar5.a((gc.e) mVar3.c));
+                        aVar5.b(eVar4.a(), eVar5.a((f) mVar3.c));
                     }
-                    if (dVar5 == gc.d.n) {
-                        aVar5.b(((cc.d) cc.d.d.get(((f) qVar2.c).a[i36].charset().name())).a[i37], 8);
+                    if (eVar5 == gc.e.n) {
+                        aVar5.b(((cc.d) cc.d.d.get(((cc.f) qVar2.c).a[i36].charset().name())).a[i37], 8);
                     } else if (i38 > 0) {
                         String str2 = (String) qVar2.b;
-                        int i39 = eVar3.b;
-                        a(str2.substring(i39, i38 + i39), dVar5, aVar5, ((f) qVar2.c).a[i36].charset());
+                        int i39 = eVar4.b;
+                        a(str2.substring(i39, i38 + i39), eVar5, aVar5, ((cc.f) qVar2.c).a[i36].charset());
                     }
                     i18 = i37;
                     i21 = 4;
                 }
                 i7 = i18;
-                eVar2 = (gc.e) mVar2.c;
+                fVar2 = (f) mVar2.c;
                 aVar = aVar5;
             }
-            u uVar = eVar2.c[bVar2.ordinal()];
-            int i40 = eVar2.d;
-            int i41 = uVar.b;
-            r0[] r0VarArr = (r0[]) uVar.c;
+            v vVar = fVar2.c[cVar2.ordinal()];
+            int i40 = fVar2.d;
+            int i41 = vVar.b;
+            r0[] r0VarArr = (r0[]) vVar.c;
             length = r0VarArr.length;
             i13 = i7;
             int i42 = i13;
@@ -368,33 +367,33 @@ public abstract class b {
             int i43 = i40 - (i42 * i41);
             i14 = i43 * 8;
             if (aVar.b <= i14) {
-                throw new a0("data bits cannot fit in the QR Code" + aVar.b + " > " + i14);
+                throw new b0("data bits cannot fit in the QR Code" + aVar.b + " > " + i14);
             }
             for (int i44 = i7; i44 < 4 && aVar.b < i14; i44++) {
                 aVar.a(i7);
             }
-            boolean z17 = i7;
+            boolean z18 = i7;
             int i45 = aVar.b & 7;
             if (i45 > 0) {
                 while (i45 < i20) {
-                    aVar.a(z17);
+                    aVar.a(z18);
                     i45++;
-                    z17 = 0;
+                    z18 = 0;
                 }
             }
             int e11 = i43 - aVar.e();
             for (int i46 = 0; i46 < e11; i46++) {
-                aVar.b((i46 & 1) == 0 ? qs.L3 : 17, i20);
+                aVar.b((i46 & 1) == 0 ? ns.L3 : 17, i20);
             }
             if (aVar.b != i14) {
-                throw new a0("Bits size does not equal capacity");
+                throw new b0("Bits size does not equal capacity");
             }
             int i47 = 0;
             for (r0 r0Var : r0VarArr) {
                 i47 += r0Var.a;
             }
             if (aVar.e() != i43) {
-                throw new a0("Number of bits and data bytes does not match");
+                throw new b0("Number of bits and data bytes does not match");
             }
             ArrayList arrayList2 = new ArrayList(i47);
             int i48 = 0;
@@ -407,7 +406,7 @@ public abstract class b {
                 int[] iArr = new int[i52];
                 int[] iArr2 = new int[i52];
                 if (i48 >= i47) {
-                    throw new a0("Block ID too large");
+                    throw new b0("Block ID too large");
                 }
                 int i53 = i40 % i47;
                 int i54 = i47 - i53;
@@ -417,13 +416,13 @@ public abstract class b {
                 int i58 = i55 - i56;
                 int i59 = (i55 + 1) - i57;
                 if (i58 != i59) {
-                    throw new a0("EC bytes mismatch");
+                    throw new b0("EC bytes mismatch");
                 }
                 if (i47 != i54 + i53) {
-                    throw new a0("RS blocks mismatch");
+                    throw new b0("RS blocks mismatch");
                 }
                 if (i40 != ((i57 + i59) * i53) + ((i56 + i58) * i54)) {
-                    throw new a0("Total bytes mismatch");
+                    throw new b0("Total bytes mismatch");
                 }
                 if (i48 < i54) {
                     c10 = 0;
@@ -467,7 +466,7 @@ public abstract class b {
                 ec.a aVar7 = ec.a.h;
                 ArrayList arrayList3 = new ArrayList();
                 cc.a aVar8 = aVar6;
-                gc.e eVar4 = eVar2;
+                f fVar3 = fVar2;
                 arrayList3.add(new ec.b(aVar7, new int[]{1}));
                 if (i69 == 0) {
                     throw new IllegalArgumentException("No error correction bytes");
@@ -477,22 +476,22 @@ public abstract class b {
                     throw new IllegalArgumentException("No data bytes provided");
                 }
                 if (i69 >= arrayList3.size()) {
-                    ec.b bVar8 = (ec.b) g.i(1, arrayList3);
+                    ec.b bVar5 = (ec.b) i5.c.h(1, arrayList3);
                     int size2 = arrayList3.size();
-                    dVar3 = dVar4;
-                    ec.b bVar9 = bVar8;
+                    eVar2 = eVar3;
+                    ec.b bVar6 = bVar5;
                     while (size2 <= i69) {
                         int i74 = size2;
-                        bVar9 = bVar9.g(new ec.b(aVar7, new int[]{1, aVar7.a[(i74 - 1) + aVar7.g]}));
-                        arrayList3.add(bVar9);
+                        bVar6 = bVar6.g(new ec.b(aVar7, new int[]{1, aVar7.a[(i74 - 1) + aVar7.g]}));
+                        arrayList3.add(bVar6);
                         size2 = i74 + 1;
                         i40 = i40;
                     }
                 } else {
-                    dVar3 = dVar4;
+                    eVar2 = eVar3;
                 }
                 int i75 = i40;
-                ec.b bVar10 = (ec.b) arrayList3.get(i69);
+                ec.b bVar7 = (ec.b) arrayList3.get(i69);
                 int[] iArr4 = new int[i73];
                 System.arraycopy(iArr3, 0, iArr4, 0, i73);
                 if (i73 == 0) {
@@ -522,28 +521,28 @@ public abstract class b {
                             i78++;
                             length2 = length2;
                         }
-                        ec.b bVar11 = new ec.b(aVar7, iArr6);
-                        if (!aVar7.equals(bVar10.a)) {
+                        ec.b bVar8 = new ec.b(aVar7, iArr6);
+                        if (!aVar7.equals(bVar7.a)) {
                             throw new IllegalArgumentException("GenericGFPolys do not have same GenericGF field");
                         }
-                        if (bVar10.e()) {
+                        if (bVar7.e()) {
                             throw new IllegalArgumentException("Divide by 0");
                         }
-                        ec.b bVar12 = aVar7.c;
-                        int b10 = aVar7.b(bVar10.c(bVar10.d()));
-                        while (bVar11.d() >= bVar10.d() && !bVar11.e()) {
-                            int d = bVar11.d() - bVar10.d();
-                            int c13 = aVar7.c(bVar11.c(bVar11.d()), b10);
+                        ec.b bVar9 = aVar7.c;
+                        int b10 = aVar7.b(bVar7.c(bVar7.d()));
+                        while (bVar8.d() >= bVar7.d() && !bVar8.e()) {
+                            int d = bVar8.d() - bVar7.d();
+                            int c13 = aVar7.c(bVar8.c(bVar8.d()), b10);
                             int i79 = b10;
-                            ec.b h = bVar10.h(d, c13);
-                            bVar12 = bVar12.a(aVar7.a(d, c13));
-                            bVar11 = bVar11.a(h);
+                            ec.b h = bVar7.h(d, c13);
+                            bVar9 = bVar9.a(aVar7.a(d, c13));
+                            bVar8 = bVar8.a(h);
                             b10 = i79;
                         }
                         int i80 = i11;
                         ec.b[] bVarArr = new ec.b[i80];
-                        bVarArr[0] = bVar12;
-                        bVarArr[1] = bVar11;
+                        bVarArr[0] = bVar9;
+                        bVarArr[1] = bVar8;
                         int[] iArr7 = bVarArr[1].b;
                         int length3 = i69 - iArr7.length;
                         for (int i81 = 0; i81 < length3; i81++) {
@@ -560,10 +559,10 @@ public abstract class b {
                         i49 += iArr[0];
                         i48 = i62 + 1;
                         i11 = i80;
-                        dVar4 = dVar3;
+                        eVar3 = eVar2;
                         i47 = i68;
                         aVar6 = aVar8;
-                        eVar2 = eVar4;
+                        fVar2 = fVar3;
                         i40 = i75;
                         i10 = 1;
                     }
@@ -572,11 +571,11 @@ public abstract class b {
                 if (i69 >= 0) {
                 }
             }
-            gc.e eVar5 = eVar2;
+            f fVar4 = fVar2;
             int i83 = i40;
-            gc.d dVar6 = dVar4;
+            gc.e eVar6 = eVar3;
             if (i43 != i49) {
-                throw new a0("Data bytes does not match offset");
+                throw new b0("Data bytes does not match offset");
             }
             cc.a aVar9 = new cc.a();
             for (int i84 = 0; i84 < i50; i84++) {
@@ -604,21 +603,21 @@ public abstract class b {
                 }
             }
             if (i83 != aVar9.e()) {
-                StringBuilder n10 = g.n(i83, "Interleaving error: ", " and ");
-                n10.append(aVar9.e());
-                n10.append(" differ.");
-                throw new a0(n10.toString());
+                StringBuilder m10 = i5.c.m(i83, "Interleaving error: ", " and ");
+                m10.append(aVar9.e());
+                m10.append(" differ.");
+                throw new b0(m10.toString());
             }
             k kVar = new k();
             kVar.b = -1;
-            kVar.d = bVar;
-            kVar.c = dVar6;
-            kVar.e = eVar5;
-            int i88 = (eVar5.a * 4) + 17;
-            cc.c cVar = new cc.c(i88, i88);
-            bc.b bVar13 = bc.b.e;
-            if (hashMap.containsKey(bVar13)) {
-                i15 = Integer.parseInt(hashMap.get(bVar13).toString());
+            kVar.d = cVar;
+            kVar.c = eVar6;
+            kVar.e = fVar4;
+            int i88 = (fVar4.a * 4) + 17;
+            cc.c cVar4 = new cc.c(i88, i88);
+            bc.b bVar10 = bc.b.e;
+            if (hashMap.containsKey(bVar10)) {
+                i15 = Integer.parseInt(hashMap.get(bVar10).toString());
             }
             i15 = -1;
             if (i15 == -1) {
@@ -626,12 +625,12 @@ public abstract class b {
                 int i90 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 int i91 = 0;
                 while (i91 < 8) {
-                    c.b(aVar9, bVar, eVar5, i91, cVar);
+                    c.b(aVar9, cVar, fVar4, i91, cVar4);
                     int i92 = 0;
-                    int a13 = c.a(cVar, false) + c.a(cVar, true);
-                    byte[][] bArr6 = (byte[][]) cVar.d;
-                    int i93 = cVar.b;
-                    int i94 = cVar.c;
+                    int a13 = c.a(cVar4, false) + c.a(cVar4, true);
+                    byte[][] bArr6 = (byte[][]) cVar4.d;
+                    int i93 = cVar4.b;
+                    int i94 = cVar4.c;
                     int i95 = 0;
                     int i96 = 0;
                     while (i95 < i94 - 1) {
@@ -676,8 +675,8 @@ public abstract class b {
                                                 i108 = i109 + 1;
                                             }
                                         }
-                                        z11 = true;
-                                        if (!z11) {
+                                        z12 = true;
+                                        if (!z12) {
                                             int i110 = i105 + 7;
                                             int i111 = i105 + 11;
                                             if (i110 >= 0 && bArr9.length >= i111) {
@@ -690,15 +689,15 @@ public abstract class b {
                                                         i111 = i114;
                                                     }
                                                 }
-                                                z12 = true;
+                                                z13 = true;
                                             }
-                                            z12 = false;
+                                            z13 = false;
                                             break;
                                         }
                                         i104++;
                                     }
-                                    z11 = false;
-                                    if (!z11) {
+                                    z12 = false;
+                                    if (!z12) {
                                     }
                                     i104++;
                                 }
@@ -717,8 +716,8 @@ public abstract class b {
                                                 b12 = 1;
                                             }
                                         }
-                                        z9 = true;
-                                        if (z9) {
+                                        z10 = true;
+                                        if (z10) {
                                             int i117 = i102 + 7;
                                             int i118 = i102 + 11;
                                             if (i117 < 0 || bArr6.length < i118) {
@@ -732,16 +731,16 @@ public abstract class b {
                                                     }
                                                 }
                                                 bArr = bArr6;
-                                                z10 = true;
-                                                if (!z10) {
+                                                z11 = true;
+                                                if (!z11) {
                                                     i105++;
                                                     bArr6 = bArr;
                                                     i89 = i16;
                                                     i91 = i106;
                                                 }
                                             }
-                                            z10 = false;
-                                            if (!z10) {
+                                            z11 = false;
+                                            if (!z11) {
                                             }
                                         } else {
                                             bArr = bArr6;
@@ -752,8 +751,8 @@ public abstract class b {
                                         i89 = i16;
                                         i91 = i106;
                                     }
-                                    z9 = false;
-                                    if (z9) {
+                                    z10 = false;
+                                    if (z10) {
                                     }
                                     i104++;
                                     i105++;
@@ -797,20 +796,20 @@ public abstract class b {
                 i15 = i89;
             }
             kVar.b = i15;
-            c.b(aVar9, bVar, eVar5, i15, cVar);
-            kVar.f = cVar;
+            c.b(aVar9, cVar, fVar4, i15, cVar4);
+            kVar.f = cVar4;
             return kVar;
         }
         forName = charset;
-        gc.d dVar42 = gc.d.h;
+        gc.e eVar32 = gc.e.h;
         int i202 = 8;
         int i212 = 4;
-        if (z14) {
+        if (z15) {
         }
-        u uVar2 = eVar2.c[bVar2.ordinal()];
-        int i402 = eVar2.d;
-        int i412 = uVar2.b;
-        r0[] r0VarArr2 = (r0[]) uVar2.c;
+        v vVar2 = fVar2.c[cVar2.ordinal()];
+        int i402 = fVar2.d;
+        int i412 = vVar2.b;
+        r0[] r0VarArr2 = (r0[]) vVar2.c;
         length = r0VarArr2.length;
         i13 = i7;
         int i422 = i13;
@@ -837,12 +836,12 @@ public abstract class b {
         return true;
     }
 
-    public static boolean d(int i7, gc.e eVar, gc.b bVar) {
-        int i10 = eVar.d;
-        u uVar = eVar.c[bVar.ordinal()];
-        int i11 = uVar.b;
+    public static boolean d(int i7, f fVar, gc.c cVar) {
+        int i10 = fVar.d;
+        v vVar = fVar.c[cVar.ordinal()];
+        int i11 = vVar.b;
         int i12 = 0;
-        for (r0 r0Var : (r0[]) uVar.c) {
+        for (r0 r0Var : (r0[]) vVar.c) {
             i12 += r0Var.a;
         }
         return i10 - (i12 * i11) >= (i7 + 7) / 8;

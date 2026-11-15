@@ -3,35 +3,34 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class x20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.voip.y b;
-    public final /* synthetic */ f40 c;
+    public final /* synthetic */ c40 b;
 
-    public /* synthetic */ x20(f40 f40Var, org.telegram.ui.Components.voip.y yVar, int i7) {
+    public /* synthetic */ x20(c40 c40Var, int i7) {
         this.a = i7;
-        this.c = f40Var;
-        this.b = yVar;
+        this.b = c40Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.voip.y yVar = this.b;
-                if (yVar.getParent() != null) {
-                    this.c.b.removeView(yVar);
-                    break;
-                }
+                c40 c40Var = this.b;
+                c40Var.Q1.setVisibility(4);
+                c40Var.R1.setVisibility(4);
+                c40Var.P1.setVisibility(4);
+                break;
+            case 1:
+                this.b.c2 = null;
                 break;
             default:
-                org.telegram.ui.Components.voip.y yVar2 = this.b;
-                if (yVar2.getParent() != null) {
-                    this.c.b.removeView(yVar2);
-                    break;
-                }
+                c40 c40Var2 = this.b;
+                c40Var2.c3 = null;
+                c40Var2.b3.setColor(c40Var2.S3 == 3 ? -1163700 : -12761513);
+                c40Var2.a3.invalidate();
                 break;
         }
     }

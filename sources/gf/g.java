@@ -1,879 +1,928 @@
 package gf;
 
-import a8.r9;
-import android.content.ContentProviderClient;
-import android.content.Context;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Parcel;
-import android.os.RemoteException;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
-import android.view.ViewConfiguration;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import fi.v9;
-import gb.a1;
+import a8.p0;
+import c8.y0;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Set;
-import jg.x1;
-import jg.y1;
-import l.d0;
-import l.w;
-import li.b2;
-import li.f2;
-import li.g1;
-import li.i0;
-import li.m3;
-import li.t3;
-import li.x;
-import org.json.JSONObject;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.ab;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.gu;
-import org.telegram.messenger.h0;
-import org.telegram.messenger.hu;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.kv;
-import org.telegram.messenger.l0;
-import org.telegram.messenger.o0;
-import org.telegram.messenger.ta;
-import org.telegram.messenger.w10;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Cells.h9;
-import org.telegram.ui.Cells.i9;
-import org.telegram.ui.Cells.l1;
-import org.telegram.ui.Cells.s7;
-import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Cells.z8;
-import org.telegram.ui.Components.fm0;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.s4;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.a00;
-import org.telegram.ui.d61;
-import org.telegram.ui.kw;
-import org.telegram.ui.uz;
-import w7.s;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Pattern;
+import kf.r;
+import kf.t;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class g implements i6.a, a00, y1, com.google.android.gms.common.api.internal.p, im0, s4, i0, w, m.l, ce.c, o0.a, ta, ab, ue.a, lm0 {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class g {
+    public static final LinkedHashSet p = new LinkedHashSet(Arrays.asList(kf.b.class, kf.i.class, kf.h.class, kf.j.class, t.class, kf.n.class, kf.l.class));
+    public static final Map q;
+    public CharSequence a;
+    public boolean d;
+    public boolean h;
+    public final List i;
+    public final lf.b j;
+    public final List k;
+    public final f l;
+    public final ArrayList n;
+    public final LinkedHashSet o;
+    public int b = 0;
+    public int c = 0;
+    public int e = 0;
+    public int f = 0;
+    public int g = 0;
+    public final LinkedHashMap m = new LinkedHashMap();
 
-    public /* synthetic */ g(int i7) {
-        this.a = i7;
+    static {
+        HashMap hashMap = new HashMap();
+        hashMap.put(kf.b.class, new ff.a(1));
+        hashMap.put(kf.i.class, new ff.a(3));
+        hashMap.put(kf.h.class, new ff.a(2));
+        hashMap.put(kf.j.class, new ff.a(4));
+        hashMap.put(t.class, new ff.a(7));
+        hashMap.put(kf.n.class, new ff.a(6));
+        hashMap.put(kf.l.class, new ff.a(5));
+        q = DesugarCollections.unmodifiableMap(hashMap);
     }
 
-    @Override // l.w
-    public boolean A(l.k kVar) {
-        m.i iVar = (m.i) this.b;
-        if (kVar == iVar.c) {
-            return false;
+    public g(ArrayList arrayList, lf.b bVar, ArrayList arrayList2) {
+        ArrayList arrayList3 = new ArrayList();
+        this.n = arrayList3;
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        this.o = linkedHashSet;
+        this.i = arrayList;
+        this.j = bVar;
+        this.k = arrayList2;
+        f fVar = new f(0);
+        this.l = fVar;
+        arrayList3.add(fVar);
+        linkedHashSet.add(fVar);
+    }
+
+    public final void a(mf.a aVar) {
+        while (!h().b(aVar.e())) {
+            e(h());
         }
-        ((d0) kVar).A.getClass();
-        iVar.getClass();
-        w wVar = iVar.e;
-        if (wVar != null) {
-            return wVar.A(kVar);
+        h().e().b(aVar.e());
+        this.n.add(aVar);
+        this.o.add(aVar);
+    }
+
+    public final void b(p pVar) {
+        l lVar = pVar.b;
+        lVar.a();
+        ArrayList arrayList = lVar.c;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            kf.m mVar = (kf.m) obj;
+            r rVar = pVar.a;
+            mVar.g();
+            kf.p pVar2 = (kf.p) rVar.e;
+            mVar.e = pVar2;
+            if (pVar2 != null) {
+                pVar2.f = mVar;
+            }
+            mVar.f = rVar;
+            rVar.e = mVar;
+            kf.p pVar3 = (kf.p) rVar.b;
+            mVar.b = pVar3;
+            if (((kf.p) mVar.e) == null) {
+                pVar3.c = mVar;
+            }
+            String str = mVar.g;
+            LinkedHashMap linkedHashMap = this.m;
+            if (!linkedHashMap.containsKey(str)) {
+                linkedHashMap.put(str, mVar);
+            }
         }
-        return false;
     }
 
-    @Override // ce.c
-    public Object B(ce.d dVar, kd.c cVar) {
-        Object B = ((q4.q) this.b).B(new a1(dVar, 1), cVar);
-        return B == jd.a.a ? B : gd.k.a;
-    }
-
-    public float C(int i7, int i10, int i11, int i12) {
-        float f10;
-        float f11;
-        cc.b bVar = (cc.b) this.b;
-        float z9 = z(i7, i10, i11, i12);
-        int i13 = i7 - (i11 - i7);
-        int i14 = 0;
-        if (i13 < 0) {
-            f10 = i7 / (i7 - i13);
-            i13 = 0;
+    public final void c() {
+        CharSequence subSequence;
+        if (this.d) {
+            int i7 = this.b + 1;
+            CharSequence charSequence = this.a;
+            CharSequence subSequence2 = charSequence.subSequence(i7, charSequence.length());
+            int i10 = 4 - (this.c % 4);
+            StringBuilder sb2 = new StringBuilder(subSequence2.length() + i10);
+            for (int i11 = 0; i11 < i10; i11++) {
+                sb2.append(' ');
+            }
+            sb2.append(subSequence2);
+            subSequence = sb2.toString();
         } else {
-            int i15 = bVar.a;
-            if (i13 >= i15) {
-                float f12 = ((i15 - 1) - i7) / (i13 - i7);
-                int i16 = i15 - 1;
-                f10 = f12;
-                i13 = i16;
+            CharSequence charSequence2 = this.a;
+            subSequence = charSequence2.subSequence(this.b, charSequence2.length());
+        }
+        h().a(subSequence);
+    }
+
+    public final void d() {
+        if (this.a.charAt(this.b) != '\t') {
+            this.b++;
+            this.c++;
+        } else {
+            this.b++;
+            int i7 = this.c;
+            this.c = (4 - (i7 % 4)) + i7;
+        }
+    }
+
+    public final void e(mf.a aVar) {
+        if (h() == aVar) {
+            p0.z(1, this.n);
+        }
+        if (aVar instanceof p) {
+            b((p) aVar);
+        }
+        aVar.d();
+    }
+
+    public final void f(List list) {
+        for (int size = list.size() - 1; size >= 0; size--) {
+            e((mf.a) list.get(size));
+        }
+    }
+
+    public final void g() {
+        int i7 = this.b;
+        int i10 = this.c;
+        this.h = true;
+        int length = this.a.length();
+        while (true) {
+            if (i7 >= length) {
+                break;
+            }
+            char charAt = this.a.charAt(i7);
+            if (charAt == '\t') {
+                i7++;
+                i10 += 4 - (i10 % 4);
+            } else if (charAt != ' ') {
+                this.h = false;
+                break;
             } else {
-                f10 = 1.0f;
+                i7++;
+                i10++;
             }
         }
-        float f13 = i10;
-        int i17 = (int) (f13 - ((i12 - i10) * f10));
-        if (i17 < 0) {
-            f11 = f13 / (i10 - i17);
-        } else {
-            int i18 = bVar.b;
-            if (i17 >= i18) {
-                f11 = ((i18 - 1) - i10) / (i17 - i10);
-                i14 = i18 - 1;
-            } else {
-                i14 = i17;
-                f11 = 1.0f;
-            }
-        }
-        return (z(i7, i10, (int) (((i13 - i7) * f11) + i7), i14) + z9) - 1.0f;
+        this.e = i7;
+        this.f = i10;
+        this.g = i10 - this.c;
     }
 
-    @Override // o0.a
-    public Cursor C0(Uri uri, String[] strArr, String[] strArr2) {
-        ContentProviderClient contentProviderClient = (ContentProviderClient) this.b;
-        if (contentProviderClient == null) {
-            return null;
-        }
-        try {
-            return contentProviderClient.query(uri, strArr, "query = ?", strArr2, null, null);
-        } catch (RemoteException e10) {
-            Log.w("FontsProvider", "Unable to query the content provider", e10);
-            return null;
-        }
+    public final mf.a h() {
+        return (mf.a) i5.c.h(1, this.n);
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public void D() {
-        int i7 = this.a;
-    }
-
-    public void E() {
-        h6.h hVar = (h6.h) this.b;
-        Iterator it = hVar.h.iterator();
-        if (it.hasNext()) {
-            it.next().getClass();
-            throw new ClassCastException();
-        }
-        Iterator it2 = hVar.i.iterator();
-        while (it2.hasNext()) {
-            ((h6.g) it2.next()).a();
-        }
-    }
-
-    @Override // ue.a
-    public void H0() {
-        hu huVar = (hu) this.b;
-        hu.j0(huVar, null);
-        huVar.a0 = null;
-    }
-
-    @Override // li.i0
-    public void I0(CharSequence charSequence) {
-        m3 m3Var = ((li.s4) this.b).N;
-        if (m3Var != null) {
-            m3Var.getClass();
-            if (charSequence == null || charSequence.length() <= 0) {
-                return;
-            }
-            m3Var.a.w4(charSequence.toString());
-        }
-    }
-
-    @Override // org.telegram.ui.Components.s4
-    public void L(int i7, int i10, boolean z9) {
-        ((b2) this.b).x0(i7, i10, z9);
-    }
-
-    @Override // li.i0
-    public void L1() {
-        li.s4 s4Var = (li.s4) this.b;
-        m3 m3Var = s4Var.N;
-        if (m3Var != null) {
-            li.a aVar = s4Var.a;
-            t3.S1(m3Var.a);
-        }
-    }
-
-    @Override // ue.a
-    public void O(float f10, float f11) {
-        kv kvVar;
-        l1 l1Var;
-        hu huVar = (hu) this.b;
-        gu guVar = huVar.a0;
-        if (guVar == null || (l1Var = (kvVar = huVar.a).F) == null) {
-            return;
-        }
-        l1Var.b1(kvVar.E, guVar.c);
-    }
-
-    @Override // li.i0
-    public h9 S0() {
-        return (li.s4) this.b;
-    }
-
-    @Override // ue.a
-    public boolean U0(float f10, float f11) {
-        hu huVar = (hu) this.b;
-        gu i02 = hu.i0(huVar, f10, f11);
-        if (i02 == null || i02.b) {
-            i02 = null;
-        }
-        huVar.a0 = i02;
-        return i02 != null;
-    }
-
-    @Override // li.i0
-    public li.a V0() {
-        return ((li.s4) this.b).a;
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ a0.h X0() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.im0
-    public void a(float f10) {
-        x xVar = (x) this.b;
-        ij ijVar = xVar.P;
-        if (ijVar == null) {
-            return;
-        }
-        ijVar.b0 = f10;
-        MediaController.B().i0(xVar.P, f10);
-    }
-
-    @Override // li.i0
-    public boolean a1() {
-        li.s4 s4Var = (li.s4) this.b;
-        m3 m3Var = s4Var.N;
-        if (m3Var == null) {
-            return false;
-        }
-        li.a aVar = s4Var.a;
-        return m3Var.a.V4();
-    }
-
-    @Override // com.google.android.gms.common.api.internal.p
-    public void accept(Object obj, Object obj2) {
-        l7.b bVar = (l7.b) this.b;
-        l7.a aVar = new l7.a((TaskCompletionSource) obj2);
-        l7.i iVar = (l7.i) ((l7.c) obj).n();
-        String str = bVar.l;
-        Parcel l1 = iVar.l1();
-        int i7 = l7.f.a;
-        l1.writeStrongBinder(aVar);
-        l1.writeString(str);
-        iVar.m1(l1, 2);
-    }
-
-    @Override // li.i0, li.f1
-    public void b(g1 g1Var) {
-        m3 m3Var = ((li.s4) this.b).N;
-        if (m3Var != null) {
-            t3 t3Var = m3Var.a;
-            t3.Q1(t3Var, g1Var);
-            t3Var.o3.r(g1Var, true);
-        }
-    }
-
-    @Override // l.w
-    public void c(l.k kVar, boolean z9) {
-        if (kVar instanceof d0) {
-            ((d0) kVar).z.k().c(false);
-        }
-        w wVar = ((m.i) this.b).e;
-        if (wVar != null) {
-            wVar.c(kVar, z9);
-        }
-    }
-
-    @Override // ue.a
-    public boolean c1(View view, float f10, float f11) {
-        hu huVar = (hu) this.b;
-        if (huVar.a0 == null) {
-            return false;
-        }
-        gu i02 = hu.i0(huVar, f10, f11);
-        gu guVar = huVar.a0;
-        if (i02 != guVar) {
-            return false;
-        }
-        kv kvVar = huVar.a;
-        l1 l1Var = kvVar.F;
-        if (l1Var == null) {
-            return true;
-        }
-        l1Var.v1(kvVar.E, guVar.c);
-        return true;
-    }
-
-    @Override // o0.a
-    public void close() {
-        ContentProviderClient contentProviderClient = (ContentProviderClient) this.b;
-        if (contentProviderClient != null) {
-            contentProviderClient.release();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.im0
-    public void d(float f10) {
-        ij ijVar = ((x) this.b).P;
-        if (ijVar == null) {
-            return;
-        }
-        ijVar.b0 = f10;
-    }
-
-    @Override // li.i0
-    public void d1(int i7, int i10) {
-        li.s4 s4Var = (li.s4) this.b;
-        m3 m3Var = s4Var.N;
-        if (m3Var != null) {
-            li.a aVar = s4Var.a;
-            f2 f2Var = m3Var.a.Q3;
-            if (f2Var != null) {
-                f2Var.f(i7, i10);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.a00
-    public boolean f(uz uzVar) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.a00
-    public void g(ij ijVar) {
-        ii.d0 d0Var = (ii.d0) this.b;
-        d0Var.t1.presentFragment(fm0.M(d0Var.a, ijVar));
-        d0Var.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public CharSequence getContentDescription() {
-        w10 w10Var;
-        switch (this.a) {
-            case 26:
-                return " ";
-            case 27:
-                t7 t7Var = (t7) this.b;
-                try {
-                    StringBuilder sb2 = new StringBuilder();
-                    if (!TextUtils.isEmpty(t7Var.s)) {
-                        sb2.append(t7Var.s);
-                    }
-                    s7 s7Var = t7Var.r;
-                    if (s7Var != null && (w10Var = s7Var.e) != null) {
-                        CharSequence charSequence = (CharSequence) w10Var.d(0, Integer.valueOf(t7Var.f));
-                        if (!TextUtils.isEmpty(charSequence)) {
-                            if (sb2.length() > 0) {
-                                sb2.append(", ");
-                            }
-                            sb2.append(charSequence);
-                        }
-                        CharSequence charSequence2 = (CharSequence) t7Var.r.e.d(-1, Integer.valueOf(t7Var.r.b()));
-                        CharSequence charSequence3 = (CharSequence) t7Var.r.e.d(1, Integer.valueOf(t7Var.r.a()));
-                        if (!TextUtils.isEmpty(charSequence2) && !TextUtils.isEmpty(charSequence3)) {
-                            if (sb2.length() > 0) {
-                                sb2.append(", ");
-                            }
-                            sb2.append(charSequence2);
-                            sb2.append(" – ");
-                            sb2.append(charSequence3);
-                        }
-                    }
-                    if (sb2.length() > 0) {
-                        return sb2.toString();
-                    }
-                    return null;
-                } catch (Throwable th2) {
-                    a8.g(th2, true);
-                    return t7Var.s;
-                }
-            default:
-                StringBuilder sb3 = new StringBuilder();
-                org.telegram.ui.Components.a8 a8Var = (org.telegram.ui.Components.a8) this.b;
-                sb3.append(id.G(a8Var.w2 / 60, "Minutes", new Object[0]));
-                sb3.append(' ');
-                sb3.append(id.G(a8Var.w2 % 60, "Seconds", new Object[0]));
-                return id.a0("AccDescrPlayerDuration", null, 2131754806, sb3.toString(), id.G(a8Var.x2 / 60, "Minutes", new Object[0]) + ' ' + id.G(a8Var.x2 % 60, "Seconds", new Object[0]));
-        }
-    }
-
-    @Override // ue.a
-    public long getLongPressDuration() {
-        return ViewConfiguration.getLongPressTimeout();
-    }
-
-    @Override // org.telegram.ui.a00
-    public boolean i() {
-        return false;
-    }
-
-    @Override // li.i0
-    public void i1() {
-        li.s4 s4Var = (li.s4) this.b;
-        m3 m3Var = s4Var.N;
-        if (m3Var != null) {
-            li.a aVar = s4Var.a;
-            t3 t3Var = m3Var.a;
-            f2 f2Var = t3Var.Q3;
-            if (f2Var != null) {
-                f2Var.g();
-            }
-            t3Var.o3.onContentChanged();
-        }
-    }
-
-    public float j(hc.c cVar, hc.c cVar2) {
-        int i7 = (int) cVar.a;
-        int i10 = (int) cVar.b;
-        int i11 = (int) cVar2.a;
-        int i12 = (int) cVar2.b;
-        float C = C(i7, i10, i11, i12);
-        float C2 = C((int) cVar2.a, i12, (int) cVar.a, i10);
-        return Float.isNaN(C) ? C2 / 7.0f : Float.isNaN(C2) ? C / 7.0f : (C + C2) / 14.0f;
-    }
-
-    @Override // ue.a
-    public /* synthetic */ boolean j0() {
-        return true;
-    }
-
-    public hc.a k(float f10, float f11, int i7, int i10) {
-        hc.a b10;
-        hc.a b11;
-        int i11 = (int) (f11 * f10);
-        int max = Math.max(0, i7 - i11);
-        cc.b bVar = (cc.b) this.b;
-        int min = Math.min(bVar.a - 1, i7 + i11) - max;
-        float f12 = 3.0f * f10;
-        if (min < f12) {
-            throw bc.e.a();
-        }
-        int max2 = Math.max(0, i10 - i11);
-        int min2 = Math.min(bVar.b - 1, i10 + i11) - max2;
-        if (min2 < f12) {
-            throw bc.e.a();
-        }
-        cc.b bVar2 = (cc.b) this.b;
-        hc.b bVar3 = new hc.b(bVar2, max, max2, min, min2, f10);
-        int i12 = bVar3.e;
-        int i13 = bVar3.c;
-        int i14 = i12 + i13;
-        int i15 = bVar3.f;
-        int i16 = (i15 / 2) + bVar3.d;
-        int[] iArr = new int[3];
-        for (int i17 = 0; i17 < i15; i17++) {
-            int i18 = ((i17 & 1) == 0 ? (i17 + 1) / 2 : -((i17 + 1) / 2)) + i16;
-            iArr[0] = 0;
-            iArr[1] = 0;
-            iArr[2] = 0;
-            int i19 = i13;
-            while (i19 < i14 && !bVar2.b(i19, i18)) {
-                i19++;
-            }
-            int i20 = 0;
-            while (i19 < i14) {
-                if (!bVar2.b(i19, i18)) {
-                    if (i20 == 1) {
-                        i20++;
-                    }
-                    iArr[i20] = iArr[i20] + 1;
-                } else if (i20 == 1) {
-                    iArr[1] = iArr[1] + 1;
-                } else if (i20 != 2) {
-                    i20++;
-                    iArr[i20] = iArr[i20] + 1;
-                } else {
-                    if (bVar3.a(iArr) && (b11 = bVar3.b(i18, i19, iArr)) != null) {
-                        return b11;
-                    }
-                    iArr[0] = iArr[2];
-                    iArr[1] = 1;
-                    iArr[2] = 0;
-                    i20 = 1;
-                }
-                i19++;
-            }
-            if (bVar3.a(iArr) && (b10 = bVar3.b(i18, i14, iArr)) != null) {
-                return b10;
-            }
-        }
-        ArrayList arrayList = bVar3.b;
-        if (arrayList.isEmpty()) {
-            throw bc.e.a();
-        }
-        return (hc.a) arrayList.get(0);
-    }
-
-    @Override // jg.y1
-    public boolean k1(int i7) {
-        switch (this.a) {
-            case 7:
-                return i7 == ((yl0) this.b).d0;
-            default:
-                return true;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public void l(boolean z9, float f10) {
-        int round;
-        switch (this.a) {
-            case 26:
-                d61 d61Var = (d61) ((org.telegram.ui.Cells.i0) this.b);
-                int i7 = (int) (m6.q * 100.0f);
-                int i10 = (int) (f10 * 100.0f);
-                m6.q = f10;
-                if (i7 != i10) {
-                    ThemeActivity themeActivity = d61Var.f.e;
-                    xi0 xi0Var = (xi0) themeActivity.b.K(themeActivity.f0);
-                    if (xi0Var != null) {
-                        ((z8) xi0Var.a).setText(id.a0("AutoNightBrightnessInfo", null, 2131753794, Integer.valueOf((int) (m6.q * 100.0f))));
-                    }
-                    m6.F(true);
-                    break;
-                }
-                break;
-            case 27:
-                t7 t7Var = (t7) this.b;
-                s7 s7Var = t7Var.r;
-                if (s7Var != null && t7Var.n != null) {
-                    if (s7Var.c != null) {
-                        double length = f10 * (r3.length - 1);
-                        int j3 = Utilities.j((int) Math.floor(length), t7Var.r.c.length - 1, 0);
-                        int j10 = Utilities.j((int) Math.ceil(length), t7Var.r.c.length - 1, 0);
-                        int[] iArr = t7Var.r.c;
-                        round = Math.round(g0.W1(Math.round(((float) (length - Math.floor(length))) * t7Var.r.d) / t7Var.r.d, iArr[j3], iArr[j10]));
-                    } else {
-                        round = Math.round(((t7Var.r.a() - t7Var.r.b()) * f10) + s7Var.b());
-                    }
-                    int i11 = t7Var.h;
-                    if (i11 != Integer.MIN_VALUE) {
-                        round = Math.max(round, i11);
-                    }
-                    int i12 = t7Var.f;
-                    if (i12 != round) {
-                        if (t7Var.c(i12) != t7Var.c(round)) {
-                            g0.c4(t7Var.e);
-                        }
-                        t7Var.f = round;
-                        t7Var.e(round, true);
-                        c20 c20Var = t7Var.n;
-                        if (c20Var != null) {
-                            c20Var.a(Integer.valueOf(t7Var.f));
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                if (z9) {
-                    MediaController.B().i0(MediaController.B().u0, f10);
-                }
-                ij ijVar = MediaController.B().u0;
-                if (ijVar != null && ijVar.I3()) {
-                    ((org.telegram.ui.Components.a8) this.b).b1(ijVar, false);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // jg.y1
-    public void m1(ArrayList arrayList) {
-        switch (this.a) {
-            case 7:
-                yl0 yl0Var = (yl0) this.b;
-                for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                    yl0Var.J.add(((x1) arrayList.get(i7)).a);
-                }
-                kw kwVar = yl0Var.U;
-                if (kwVar != null) {
-                    kwVar.d(yl0Var.D0 > 0, false);
-                }
-                yl0Var.f();
-                break;
-        }
-    }
-
-    public boolean n() {
-        return ((h0) this.b).c;
-    }
-
-    public StringBuilder o() {
-        mf.a aVar = (mf.a) this.b;
-        if (!(aVar instanceof q)) {
-            return null;
-        }
-        StringBuilder sb2 = ((q) aVar).b.b;
-        if (sb2.length() == 0) {
-            return null;
-        }
-        return sb2;
-    }
-
-    @Override // ue.a
-    public boolean o1() {
-        return true;
-    }
-
-    @Override // i6.a
-    public void p(Bitmap bitmap) {
-        ((i6.h) this.b).e(3, bitmap);
-    }
-
-    @Override // jg.y1
-    public void q(int i7) {
-        switch (this.a) {
-            case 7:
-                yl0 yl0Var = (yl0) this.b;
-                yl0Var.D0--;
-                yl0Var.e0 = i7;
-                if (yl0Var.f0 != i7) {
-                    yl0Var.s.clear();
-                }
-                if (yl0Var.g0 != i7) {
-                    yl0Var.I.clear();
-                }
-                yl0Var.N = true;
-                kw kwVar = yl0Var.U;
-                if (kwVar != null) {
-                    kwVar.d(yl0Var.D0 > 0, true);
-                }
-                yl0Var.f();
-                kw kwVar2 = yl0Var.U;
-                if (kwVar2 != null) {
-                    kwVar2.c();
-                    break;
-                }
-                break;
-            default:
-                g0.h3(new v9(this, 24));
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public int q0() {
-        switch (this.a) {
-            case 26:
-                return 0;
-            case 27:
-                s7 s7Var = ((t7) this.b).r;
-                if (s7Var == null) {
-                    return 0;
-                }
-                if (s7Var.c == null) {
-                    return s7Var.a() - s7Var.b();
-                }
-                return s7Var.d * (r1.length - 1);
-            default:
-                return 0;
-        }
-    }
-
-    @Override // ue.a
-    public void s(float f10, float f11) {
-        hu huVar = (hu) this.b;
-        gu i02 = hu.i0(huVar, f10, f11);
-        gu guVar = huVar.a0;
-        if (i02 != guVar) {
-            guVar = null;
-        }
-        hu.j0(huVar, guVar);
-    }
-
-    @Override // li.i0
-    public void t() {
-        li.s4 s4Var = (li.s4) this.b;
-        m3 m3Var = s4Var.N;
-        if (m3Var != null) {
-            t3.T1(m3Var.a, s4Var.a);
-        }
-    }
-
-    @Override // ue.a
-    public void t0() {
-        hu huVar = (hu) this.b;
-        hu.j0(huVar, huVar.a0);
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ a0.h v0() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // li.i0
-    public i9 w0() {
-        m3 m3Var = ((li.s4) this.b).N;
-        if (m3Var != null) {
-            return m3Var.a.getTextSelectionHelper();
-        }
-        return null;
-    }
-
-    public ia.b y(JSONObject jSONObject) {
-        ia.d bVar;
-        int i7 = jSONObject.getInt("settings_version");
-        if (i7 != 3) {
-            Log.e("FirebaseCrashlytics", "Could not determine SettingsJsonTransform for settings version " + i7 + ". Using default settings values.", null);
-            bVar = new nb.a(11);
-        } else {
-            bVar = new pb.b(11);
-        }
-        return bVar.c((s) this.b, jSONObject);
-    }
-
-    public float z(int i7, int i10, int i11, int i12) {
+    /* JADX WARN: Code restructure failed: missing block: B:231:0x01fd, code lost:
+    
+        if (r8 < 1) goto L117;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:232:0x01ff, code lost:
+    
+        r5 = r14 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:233:0x0205, code lost:
+    
+        if (r5 >= r15.length()) goto L131;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:234:0x0207, code lost:
+    
+        r8 = r15.charAt(r5);
+        r20 = r6;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:235:0x020f, code lost:
+    
+        if (r8 == '\t') goto L132;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:237:0x0213, code lost:
+    
+        if (r8 == ' ') goto L132;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:238:0x0218, code lost:
+    
+        r6 = r15.subSequence(r11, r14).toString();
+        r8 = new kf.q();
+        r8.g = java.lang.Integer.parseInt(r6);
+        r8.h = r4;
+        r4 = new gf.m(r8, r5);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:239:0x0216, code lost:
+    
+        r20 = r6;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:462:0x064c, code lost:
+    
+        if (r6 == 0) goto L372;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x00c0, code lost:
+    
+        r20 = r6;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x06ed, code lost:
+    
+        k(r22.e);
+     */
+    /* JADX WARN: Failed to find 'out' block for switch in B:174:0x01e8. Please report as an issue. */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x0260  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x02b2  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x045c  */
+    /* JADX WARN: Removed duplicated region for block: B:288:0x046e  */
+    /* JADX WARN: Removed duplicated region for block: B:296:0x04b5  */
+    /* JADX WARN: Removed duplicated region for block: B:366:0x053a  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void i(String str) {
+        mf.a aVar;
+        int i7;
+        c cVar;
+        boolean z10;
+        int i10;
+        int i11;
+        char charAt;
+        int i12;
+        h hVar;
+        c cVar2;
+        i iVar;
         int i13;
+        StringBuilder T;
         int i14;
+        m mVar;
+        char charAt2;
+        m mVar2;
         int i15;
         int i16;
-        int i17;
-        int i18;
-        g gVar;
-        int i19;
-        int i20 = 1;
-        boolean z9 = Math.abs(i12 - i10) > Math.abs(i11 - i7);
-        if (z9) {
-            i14 = i7;
-            i13 = i10;
-            i16 = i11;
-            i15 = i12;
-        } else {
-            i13 = i7;
-            i14 = i10;
-            i15 = i11;
-            i16 = i12;
+        String str2 = str;
+        int length = str2.length();
+        int i17 = 0;
+        StringBuilder sb2 = null;
+        for (int i18 = 0; i18 < length; i18++) {
+            char charAt3 = str2.charAt(i18);
+            if (charAt3 == 0) {
+                if (sb2 == null) {
+                    sb2 = new StringBuilder(length);
+                    sb2.append((CharSequence) str2, 0, i18);
+                }
+                sb2.append((char) 65533);
+            } else if (sb2 != null) {
+                sb2.append(charAt3);
+            }
         }
-        int abs = Math.abs(i15 - i13);
-        int abs2 = Math.abs(i16 - i14);
-        int i21 = 2;
-        int i22 = (-abs) / 2;
-        int i23 = i13 < i15 ? 1 : -1;
-        int i24 = i14 < i16 ? 1 : -1;
-        int i25 = i15 + i23;
-        int i26 = i13;
-        int i27 = i14;
-        int i28 = 0;
-        while (true) {
-            if (i26 == i25) {
-                i17 = i21;
+        if (sb2 != null) {
+            str2 = sb2.toString();
+        }
+        this.a = str2;
+        this.b = 0;
+        this.c = 0;
+        this.d = false;
+        ArrayList arrayList = this.n;
+        int i19 = 1;
+        for (mf.a aVar2 : arrayList.subList(1, arrayList.size())) {
+            g();
+            a h = aVar2.h(this);
+            if (h == null) {
                 break;
             }
-            int i29 = z9 ? i27 : i26;
-            int i30 = z9 ? i26 : i27;
-            boolean z10 = z9;
-            if (i28 == i20) {
-                i18 = i20;
-                i19 = abs;
-                gVar = this;
+            if (h.b) {
+                e(aVar2);
+                return;
+            }
+            int i20 = h.a;
+            if (i20 != -1) {
+                k(i20);
             } else {
-                i18 = 0;
-                gVar = this;
-                i19 = abs;
-            }
-            if (i18 == ((cc.b) gVar.b).b(i29, i30)) {
-                if (i28 == 2) {
-                    return r9.b(i26, i27, i13, i14);
+                int i21 = h.c;
+                if (i21 != -1) {
+                    j(i21);
                 }
-                i28++;
             }
-            i22 += abs2;
-            if (i22 > 0) {
-                if (i27 == i16) {
-                    i17 = 2;
-                    break;
+            i19++;
+        }
+        ArrayList arrayList2 = new ArrayList(arrayList.subList(i19, arrayList.size()));
+        mf.a aVar3 = (mf.a) arrayList.get(i19 - 1);
+        boolean isEmpty = arrayList2.isEmpty();
+        boolean z11 = (aVar3.e() instanceof r) || aVar3.f();
+        while (true) {
+            if (z11) {
+                g();
+                if (!this.h) {
+                    int i22 = 4;
+                    if (this.g >= 4 || !Character.isLetter(Character.codePointAt(this.a, this.e))) {
+                        d6.i iVar2 = new d6.i(aVar3, 23);
+                        Iterator it = this.i.iterator();
+                        while (true) {
+                            if (it.hasNext()) {
+                                i7 = i17;
+                                char c10 = ' ';
+                                switch (((ff.a) it.next()).a) {
+                                    case 0:
+                                        aVar = aVar3;
+                                        CharSequence charSequence = this.a;
+                                        StringBuilder T2 = iVar2.T();
+                                        if (T2 != null && T2.toString().contains("|") && !T2.toString().contains("\n")) {
+                                            CharSequence subSequence = charSequence.subSequence(this.b, charSequence.length());
+                                            ArrayList arrayList3 = new ArrayList();
+                                            int i23 = i7;
+                                            int i24 = i23;
+                                            int i25 = i24;
+                                            while (true) {
+                                                if (i24 >= subSequence.length()) {
+                                                    break;
+                                                } else {
+                                                    char charAt4 = subSequence.charAt(i24);
+                                                    if (charAt4 == '\t' || charAt4 == ' ') {
+                                                        i24++;
+                                                    } else if (charAt4 == '-' || charAt4 == ':') {
+                                                        if (i25 != 0 || arrayList3.isEmpty()) {
+                                                            if (charAt4 == ':') {
+                                                                i24++;
+                                                                i10 = 1;
+                                                            } else {
+                                                                i10 = i7;
+                                                            }
+                                                            int i26 = i7;
+                                                            while (i24 < subSequence.length() && subSequence.charAt(i24) == '-') {
+                                                                i24++;
+                                                                i26 = 1;
+                                                            }
+                                                            if (i26 != 0) {
+                                                                if (i24 >= subSequence.length() || subSequence.charAt(i24) != ':') {
+                                                                    i11 = i7;
+                                                                } else {
+                                                                    i24++;
+                                                                    i11 = 1;
+                                                                }
+                                                                arrayList3.add((i10 == 0 || i11 == 0) ? i10 != 0 ? ef.c.a : i11 != 0 ? ef.c.c : null : ef.c.b);
+                                                                i25 = i7;
+                                                            }
+                                                        }
+                                                    } else if (charAt4 == '|') {
+                                                        i24++;
+                                                        i25++;
+                                                        if (i25 <= 1) {
+                                                            i23 = 1;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            arrayList3 = null;
+                                            if (arrayList3 != null && !arrayList3.isEmpty()) {
+                                                ArrayList i27 = ff.b.i(T2);
+                                                if (arrayList3.size() >= i27.size()) {
+                                                    ff.b bVar = new ff.b(arrayList3, i27);
+                                                    mf.a[] aVarArr = new mf.a[1];
+                                                    aVarArr[i7] = bVar;
+                                                    c cVar3 = new c(aVarArr);
+                                                    cVar3.a = this.b;
+                                                    cVar3.b = true;
+                                                    cVar = cVar3;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        cVar = null;
+                                        break;
+                                    case 1:
+                                        aVar = aVar3;
+                                        int i28 = this.e;
+                                        if (b.i(this, i28)) {
+                                            int i29 = this.c + this.g;
+                                            int i30 = i29 + 1;
+                                            CharSequence charSequence2 = this.a;
+                                            int i31 = i28 + 1;
+                                            if (i31 < charSequence2.length() && ((charAt = charSequence2.charAt(i31)) == '\t' || charAt == ' ')) {
+                                                i30 = i29 + 2;
+                                            }
+                                            mf.a[] aVarArr2 = new mf.a[1];
+                                            aVarArr2[i7] = new b();
+                                            cVar = new c(aVarArr2);
+                                            cVar.c = i30;
+                                            break;
+                                        }
+                                        cVar = null;
+                                        break;
+                                    case 2:
+                                        aVar = aVar3;
+                                        int i32 = this.g;
+                                        if (i32 < 4) {
+                                            int i33 = this.e;
+                                            CharSequence charSequence3 = this.a;
+                                            int length2 = charSequence3.length();
+                                            int i34 = i33;
+                                            int i35 = i7;
+                                            int i36 = i35;
+                                            while (true) {
+                                                i12 = i33;
+                                                if (i34 < length2) {
+                                                    char charAt5 = charSequence3.charAt(i34);
+                                                    if (charAt5 == '`') {
+                                                        i35++;
+                                                    } else if (charAt5 == '~') {
+                                                        i36++;
+                                                    }
+                                                    i34++;
+                                                    i33 = i12;
+                                                }
+                                            }
+                                            int i37 = 3;
+                                            if (i35 >= 3) {
+                                                if (i36 == 0) {
+                                                    int i38 = i12 + i35;
+                                                    int length3 = charSequence3.length();
+                                                    while (true) {
+                                                        if (i38 >= length3) {
+                                                            i38 = -1;
+                                                        } else if (charSequence3.charAt(i38) != '`') {
+                                                            i38++;
+                                                        }
+                                                    }
+                                                    if (i38 == -1) {
+                                                        hVar = new h('`', i35, i32);
+                                                        if (hVar != null) {
+                                                            mf.a[] aVarArr3 = new mf.a[1];
+                                                            aVarArr3[i7] = hVar;
+                                                            cVar2 = new c(aVarArr3);
+                                                            cVar2.a = i12 + hVar.a.h;
+                                                            cVar = cVar2;
+                                                            break;
+                                                        }
+                                                    }
+                                                    hVar = null;
+                                                    if (hVar != null) {
+                                                    }
+                                                } else {
+                                                    i37 = 3;
+                                                }
+                                            }
+                                            if (i36 >= i37 && i35 == 0) {
+                                                hVar = new h('~', i36, i32);
+                                                if (hVar != null) {
+                                                }
+                                            }
+                                            hVar = null;
+                                            if (hVar != null) {
+                                            }
+                                        }
+                                        cVar = null;
+                                        break;
+                                    case 3:
+                                        aVar = aVar3;
+                                        if (this.g < 4) {
+                                            CharSequence charSequence4 = this.a;
+                                            int i39 = this.e;
+                                            int b10 = y0.b('#', i39, charSequence4.length(), charSequence4) - i39;
+                                            if (b10 != 0 && b10 <= 6) {
+                                                int i40 = i39 + b10;
+                                                if (i40 >= charSequence4.length()) {
+                                                    iVar = new i(b10, "");
+                                                } else {
+                                                    char charAt6 = charSequence4.charAt(i40);
+                                                    char c11 = ' ';
+                                                    char c12 = '\t';
+                                                    if (charAt6 == ' ' || charAt6 == '\t') {
+                                                        int length4 = charSequence4.length() - 1;
+                                                        while (true) {
+                                                            if (length4 < i40) {
+                                                                length4 = i40 - 1;
+                                                            } else {
+                                                                char charAt7 = charSequence4.charAt(length4);
+                                                                if (charAt7 == c12 || charAt7 == c11) {
+                                                                    length4--;
+                                                                    c11 = ' ';
+                                                                    c12 = '\t';
+                                                                }
+                                                            }
+                                                        }
+                                                        int i41 = length4;
+                                                        while (true) {
+                                                            if (i41 < i40) {
+                                                                i41 = i40 - 1;
+                                                            } else if (charSequence4.charAt(i41) == '#') {
+                                                                i41--;
+                                                            }
+                                                        }
+                                                        int i42 = i41;
+                                                        while (true) {
+                                                            if (i42 < i40) {
+                                                                i42 = i40 - 1;
+                                                            } else {
+                                                                char charAt8 = charSequence4.charAt(i42);
+                                                                if (charAt8 == '\t' || charAt8 == ' ') {
+                                                                    i42--;
+                                                                }
+                                                            }
+                                                        }
+                                                        iVar = i42 != i41 ? new i(b10, charSequence4.subSequence(i40, i42 + 1).toString()) : new i(b10, charSequence4.subSequence(i40, length4 + 1).toString());
+                                                    }
+                                                }
+                                                if (iVar == null) {
+                                                    mf.a[] aVarArr4 = new mf.a[1];
+                                                    aVarArr4[i7] = iVar;
+                                                    cVar2 = new c(aVarArr4);
+                                                    cVar2.a = charSequence4.length();
+                                                } else {
+                                                    char charAt9 = charSequence4.charAt(i39);
+                                                    if (charAt9 != '-') {
+                                                        if (charAt9 == '=') {
+                                                            if (y0.c(y0.b('=', i39 + 1, charSequence4.length(), charSequence4), charSequence4.length(), charSequence4) >= charSequence4.length()) {
+                                                                i13 = 1;
+                                                                if (i13 > 0 && (T = iVar2.T()) != null) {
+                                                                    i iVar3 = new i(i13, T.toString());
+                                                                    mf.a[] aVarArr5 = new mf.a[1];
+                                                                    aVarArr5[i7] = iVar3;
+                                                                    cVar2 = new c(aVarArr5);
+                                                                    cVar2.a = charSequence4.length();
+                                                                    cVar2.b = true;
+                                                                }
+                                                            }
+                                                        }
+                                                        i13 = i7;
+                                                        if (i13 > 0) {
+                                                            i iVar32 = new i(i13, T.toString());
+                                                            mf.a[] aVarArr52 = new mf.a[1];
+                                                            aVarArr52[i7] = iVar32;
+                                                            cVar2 = new c(aVarArr52);
+                                                            cVar2.a = charSequence4.length();
+                                                            cVar2.b = true;
+                                                        }
+                                                    }
+                                                    if (y0.c(y0.b('-', i39 + 1, charSequence4.length(), charSequence4), charSequence4.length(), charSequence4) >= charSequence4.length()) {
+                                                        i13 = 2;
+                                                        if (i13 > 0) {
+                                                        }
+                                                    }
+                                                    i13 = i7;
+                                                    if (i13 > 0) {
+                                                    }
+                                                }
+                                                cVar = cVar2;
+                                                break;
+                                            }
+                                            iVar = null;
+                                            if (iVar == null) {
+                                            }
+                                            cVar = cVar2;
+                                        }
+                                        cVar = null;
+                                        break;
+                                    case 4:
+                                        aVar = aVar3;
+                                        int i43 = i22;
+                                        int i44 = this.e;
+                                        CharSequence charSequence5 = this.a;
+                                        if (this.g < i43 && charSequence5.charAt(i44) == '<') {
+                                            for (int i45 = 1; i45 <= 7; i45++) {
+                                                if (i45 != 7 || !(((mf.a) iVar2.b).e() instanceof r)) {
+                                                    Pattern[] patternArr = j.e[i45];
+                                                    Pattern pattern = patternArr[i7];
+                                                    Pattern pattern2 = patternArr[1];
+                                                    if (pattern.matcher(charSequence5.subSequence(i44, charSequence5.length())).find()) {
+                                                        mf.a[] aVarArr6 = new mf.a[1];
+                                                        aVarArr6[i7] = new j(pattern2);
+                                                        cVar = new c(aVarArr6);
+                                                        cVar.a = this.b;
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        cVar = null;
+                                        break;
+                                    case 5:
+                                        aVar = aVar3;
+                                        if (this.g >= 4) {
+                                            if (!this.h && !(h().e() instanceof r)) {
+                                                mf.a[] aVarArr7 = new mf.a[1];
+                                                aVarArr7[i7] = new i();
+                                                cVar = new c(aVarArr7);
+                                                cVar.c = this.c + 4;
+                                                break;
+                                            }
+                                        }
+                                        cVar = null;
+                                        break;
+                                    case 6:
+                                        mf.a aVar4 = (mf.a) iVar2.b;
+                                        int i46 = this.g;
+                                        if (i46 >= 4) {
+                                            aVar = aVar3;
+                                        } else {
+                                            int i47 = this.e;
+                                            int i48 = this.c + i46;
+                                            int i49 = iVar2.T() != null ? 1 : i7;
+                                            CharSequence charSequence6 = this.a;
+                                            char charAt10 = charSequence6.charAt(i47);
+                                            if (charAt10 == '*' || charAt10 == '+' || charAt10 == '-') {
+                                                i14 = i49;
+                                                aVar = aVar3;
+                                                int i50 = i47 + 1;
+                                                if (i50 >= charSequence6.length() || (charAt2 = charSequence6.charAt(i50)) == '\t' || charAt2 == ' ') {
+                                                    kf.c cVar4 = new kf.c();
+                                                    cVar4.g = charAt10;
+                                                    mVar = new m(cVar4, i50);
+                                                    if (mVar != null) {
+                                                        kf.n nVar = mVar.a;
+                                                        int i51 = mVar.b;
+                                                        int i52 = (i51 - i47) + i48;
+                                                        int length5 = charSequence6.length();
+                                                        int i53 = i52;
+                                                        while (true) {
+                                                            if (i51 >= length5) {
+                                                                i15 = i7;
+                                                            } else {
+                                                                char charAt11 = charSequence6.charAt(i51);
+                                                                if (charAt11 == '\t') {
+                                                                    i53 = (4 - (i53 % 4)) + i53;
+                                                                } else if (charAt11 == ' ') {
+                                                                    i53++;
+                                                                } else {
+                                                                    i15 = 1;
+                                                                }
+                                                                i51++;
+                                                            }
+                                                        }
+                                                        if (i14 == 0 || ((!(nVar instanceof kf.q) || ((kf.q) nVar).g == 1) && i15 != 0)) {
+                                                            if (i15 == 0 || i53 - i52 > 4) {
+                                                                i53 = i52 + 1;
+                                                            }
+                                                            mVar2 = new m(nVar, i53);
+                                                            if (mVar2 != null) {
+                                                                kf.n nVar2 = mVar2.a;
+                                                                int i54 = mVar2.b;
+                                                                o oVar = new o(i54 - this.c);
+                                                                if (aVar4 instanceof n) {
+                                                                    kf.n nVar3 = ((n) aVar4).a;
+                                                                    if ((((nVar3 instanceof kf.c) && (nVar2 instanceof kf.c)) ? Character.valueOf(((kf.c) nVar3).g).equals(Character.valueOf(((kf.c) nVar2).g)) : ((nVar3 instanceof kf.q) && (nVar2 instanceof kf.q)) ? Character.valueOf(((kf.q) nVar3).h).equals(Character.valueOf(((kf.q) nVar2).h)) : i7) != 0) {
+                                                                        mf.a[] aVarArr8 = new mf.a[1];
+                                                                        aVarArr8[i7] = oVar;
+                                                                        cVar2 = new c(aVarArr8);
+                                                                        cVar2.c = i54;
+                                                                        cVar = cVar2;
+                                                                        break;
+                                                                    }
+                                                                }
+                                                                n nVar4 = new n(nVar2);
+                                                                mf.a[] aVarArr9 = new mf.a[2];
+                                                                aVarArr9[i7] = nVar4;
+                                                                aVarArr9[1] = oVar;
+                                                                cVar = new c(aVarArr9);
+                                                                cVar.c = i54;
+                                                                break;
+                                                            }
+                                                        }
+                                                    }
+                                                    mVar2 = null;
+                                                    if (mVar2 != null) {
+                                                    }
+                                                }
+                                                mVar = null;
+                                                if (mVar != null) {
+                                                }
+                                                mVar2 = null;
+                                                if (mVar2 != null) {
+                                                }
+                                            } else {
+                                                int length6 = charSequence6.length();
+                                                int i55 = i47;
+                                                int i56 = i7;
+                                                while (true) {
+                                                    if (i55 < length6) {
+                                                        int i57 = length6;
+                                                        char charAt12 = charSequence6.charAt(i55);
+                                                        i14 = i49;
+                                                        if (charAt12 != ')' && charAt12 != '.') {
+                                                            switch (charAt12) {
+                                                                case '0':
+                                                                case '1':
+                                                                case '2':
+                                                                case ns.o0 /* 51 */:
+                                                                case ns.p0 /* 52 */:
+                                                                case ns.q0 /* 53 */:
+                                                                case ns.r0 /* 54 */:
+                                                                case ns.s0 /* 55 */:
+                                                                case ns.t0 /* 56 */:
+                                                                case ns.u0 /* 57 */:
+                                                                    i56++;
+                                                                    if (i56 > 9) {
+                                                                        break;
+                                                                    } else {
+                                                                        i55++;
+                                                                        length6 = i57;
+                                                                        i49 = i14;
+                                                                    }
+                                                            }
+                                                            if (mVar != null) {
+                                                            }
+                                                            mVar2 = null;
+                                                            if (mVar2 != null) {
+                                                            }
+                                                        }
+                                                    } else {
+                                                        i14 = i49;
+                                                    }
+                                                }
+                                                aVar = aVar3;
+                                                mVar = null;
+                                                if (mVar != null) {
+                                                }
+                                                mVar2 = null;
+                                                if (mVar2 != null) {
+                                                }
+                                            }
+                                        }
+                                        cVar = null;
+                                        break;
+                                    case 7:
+                                        if (this.g < 4) {
+                                            int i58 = this.e;
+                                            CharSequence charSequence7 = this.a;
+                                            int length7 = charSequence7.length();
+                                            int i59 = i7;
+                                            int i60 = i59;
+                                            int i61 = i60;
+                                            while (true) {
+                                                if (i58 >= length7) {
+                                                    int i62 = i60;
+                                                    int i63 = i61;
+                                                    if ((i59 >= 3 && i62 == 0 && i63 == 0) || ((i62 >= 3 && i59 == 0 && i63 == 0) || (i63 >= 3 && i59 == 0 && i62 == 0))) {
+                                                        mf.a[] aVarArr10 = new mf.a[1];
+                                                        aVarArr10[i7] = new f(1);
+                                                        cVar = new c(aVarArr10);
+                                                        cVar.a = charSequence7.length();
+                                                    }
+                                                } else {
+                                                    char charAt13 = charSequence7.charAt(i58);
+                                                    if (charAt13 == '\t' || charAt13 == c10) {
+                                                        i60 = i60;
+                                                        i61 = i61;
+                                                    } else if (charAt13 == '*') {
+                                                        i61++;
+                                                    } else if (charAt13 == '-') {
+                                                        i59++;
+                                                    } else if (charAt13 == '_') {
+                                                        i60++;
+                                                    }
+                                                    i58++;
+                                                    c10 = ' ';
+                                                }
+                                            }
+                                        }
+                                        cVar = null;
+                                        aVar = aVar3;
+                                        break;
+                                    default:
+                                        if (this.g < i22) {
+                                            int i64 = this.e;
+                                            CharSequence charSequence8 = this.a;
+                                            int length8 = charSequence8.length();
+                                            int i65 = i64;
+                                            while (true) {
+                                                if (i65 >= length8) {
+                                                    i16 = length8 - i64;
+                                                } else if ('$' != charSequence8.charAt(i65)) {
+                                                    i16 = i65 - i64;
+                                                } else {
+                                                    i65++;
+                                                }
+                                            }
+                                            if (i16 >= 2 && y0.b(' ', i64 + i16, length8, charSequence8) == length8) {
+                                                mf.a[] aVarArr11 = new mf.a[1];
+                                                aVarArr11[i7] = new zc.b(i16);
+                                                cVar = new c(aVarArr11);
+                                                cVar.a = length8 + 1;
+                                                aVar = aVar3;
+                                                break;
+                                            }
+                                        }
+                                        cVar = null;
+                                        aVar = aVar3;
+                                        break;
+                                }
+                                if (cVar == null) {
+                                    i17 = i7;
+                                    aVar3 = aVar;
+                                    i22 = 4;
+                                }
+                            } else {
+                                i7 = i17;
+                                aVar = aVar3;
+                                cVar = null;
+                            }
+                        }
+                        if (cVar == null) {
+                            k(this.e);
+                        } else {
+                            if (!isEmpty) {
+                                f(arrayList2);
+                                isEmpty = true;
+                            }
+                            int i66 = cVar.a;
+                            if (i66 != -1) {
+                                k(i66);
+                            } else {
+                                int i67 = cVar.c;
+                                if (i67 != -1) {
+                                    j(i67);
+                                }
+                            }
+                            if (cVar.b) {
+                                mf.a h7 = h();
+                                z10 = true;
+                                p0.z(1, arrayList);
+                                this.o.remove(h7);
+                                if (h7 instanceof p) {
+                                    b((p) h7);
+                                }
+                                h7.e().g();
+                            } else {
+                                z10 = true;
+                            }
+                            mf.a[] aVarArr12 = (mf.a[]) cVar.d;
+                            int length9 = aVarArr12.length;
+                            int i68 = i7;
+                            while (i68 < length9) {
+                                mf.a aVar5 = aVarArr12[i68];
+                                a(aVar5);
+                                z11 = aVar5.f();
+                                i68++;
+                                aVar = aVar5;
+                            }
+                            i17 = i7;
+                            aVar3 = aVar;
+                        }
+                    }
                 }
-                i27 += i24;
-                i22 -= i19;
+            } else {
+                aVar = aVar3;
             }
-            i26 += i23;
-            abs = i19;
-            z9 = z10;
-            i20 = 1;
-            i21 = 2;
         }
-        if (i28 == i17) {
-            return r9.b(i25, i16, i13, i14);
+        if (!isEmpty && !this.h && h().c()) {
+            c();
+            return;
         }
-        return Float.NaN;
+        if (!isEmpty) {
+            f(arrayList2);
+        }
+        if (!aVar.f()) {
+            c();
+        } else {
+            if (this.h) {
+                return;
+            }
+            a(new p());
+            c();
+        }
     }
 
-    public /* synthetic */ g(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public final void j(int i7) {
+        int i10;
+        int i11 = this.f;
+        if (i7 >= i11) {
+            this.b = this.e;
+            this.c = i11;
+        }
+        int length = this.a.length();
+        while (true) {
+            i10 = this.c;
+            if (i10 >= i7 || this.b == length) {
+                break;
+            } else {
+                d();
+            }
+        }
+        if (i10 <= i7) {
+            this.d = false;
+            return;
+        }
+        this.b--;
+        this.c = i7;
+        this.d = true;
     }
 
-    public g() {
-        this.a = 9;
-        this.b = new HashMap();
-    }
-
-    public g(String str, long j3) {
-        this.a = 21;
-        this.b = new l0(str, j3);
-    }
-
-    public g(String str, Set set) {
-        this.a = 22;
-        this.b = new o0(str, set);
-    }
-
-    public g(Context context, Uri uri) {
-        this.a = 19;
-        this.b = context.getContentResolver().acquireUnstableContentProviderClient(uri);
-    }
-
-    public g(String str, boolean z9) {
-        this.a = 20;
-        this.b = new h0(str, z9);
-    }
-
-    private final void r() {
-    }
-
-    private final /* synthetic */ void u() {
-    }
-
-    private final void v() {
-    }
-
-    @Override // org.telegram.ui.a00
-    public void e() {
-    }
-
-    private final /* synthetic */ void x(ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.a00
-    public void h(ij ijVar, View view, int i7) {
-    }
-
-    @Override // ue.a
-    public /* synthetic */ void l1(View view, float f10, float f11) {
-    }
-
-    @Override // ue.a
-    public /* synthetic */ void m(View view, float f10, float f11) {
-    }
-
-    @Override // ue.a
-    public /* synthetic */ void w(View view, float f10, float f11) {
+    public final void k(int i7) {
+        int i10 = this.e;
+        if (i7 >= i10) {
+            this.b = i10;
+            this.c = this.f;
+        }
+        int length = this.a.length();
+        while (true) {
+            int i11 = this.b;
+            if (i11 >= i7 || i11 == length) {
+                break;
+            } else {
+                d();
+            }
+        }
+        this.d = false;
     }
 }

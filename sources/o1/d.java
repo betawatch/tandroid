@@ -1,6 +1,6 @@
 package o1;
 
-import a8.ab;
+import a8.bb;
 import android.content.Context;
 import android.content.SharedPreferences;
 import java.util.Iterator;
@@ -11,7 +11,7 @@ import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 import p1.i;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d {
     public final ka.b a;
@@ -30,7 +30,7 @@ public final class d {
         this.b = iVar;
         this.c = context;
         this.d = sharedPreferencesName;
-        this.e = ab.b(aVar);
+        this.e = bb.b(aVar);
         this.f = keysToMigrate == e.a ? null : new LinkedHashSet(keysToMigrate);
     }
 
@@ -58,7 +58,7 @@ public final class d {
                 obj2 = cVar2.b;
                 jd.a aVar = jd.a.a;
                 i7 = cVar2.d;
-                boolean z9 = true;
+                boolean z10 = true;
                 if (i7 != 0) {
                     af.b.c(obj2);
                     cVar2.a = this;
@@ -90,8 +90,8 @@ public final class d {
                             }
                         }
                     }
-                    z9 = false;
-                    return Boolean.valueOf(z9);
+                    z10 = false;
+                    return Boolean.valueOf(z10);
                 }
                 Map<String, ?> all = ((SharedPreferences) iVar.getValue()).getAll();
                 j.d(all, "sharedPrefs.all");
@@ -101,7 +101,7 @@ public final class d {
         obj2 = cVar2.b;
         jd.a aVar2 = jd.a.a;
         i7 = cVar2.d;
-        boolean z92 = true;
+        boolean z102 = true;
         if (i7 != 0) {
         }
         if (((Boolean) obj2).booleanValue()) {

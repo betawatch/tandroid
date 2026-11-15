@@ -1,69 +1,207 @@
 package hi;
 
-import android.text.SpannableStringBuilder;
-import java.util.Arrays;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.id;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.t10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.z91;
-import org.telegram.ui.zw;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.util.SparseArray;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.gz;
+import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.wi0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class o1 implements c20 {
-    public final /* synthetic */ z91 a;
-    public final /* synthetic */ zw b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class o1 extends uj0 {
+    public wi0 f3;
+    public boolean g3;
+    public float h3;
+    public float i3;
+    public boolean j3;
+    public final SparseArray k3;
+    public final ArrayList l3;
+    public final ArrayList m3;
+    public final ArrayList n3;
+    public final ArrayList o3;
+    public final PorterDuffColorFilter p3;
 
-    public /* synthetic */ o1(z91 z91Var, zw zwVar, long j3, int i7) {
-        this.a = z91Var;
-        this.b = zwVar;
-        this.c = j3;
-        this.d = i7;
+    public o1(Context context) {
+        super(context, null);
+        this.j3 = false;
+        this.k3 = new SparseArray();
+        this.l3 = new ArrayList();
+        this.m3 = new ArrayList();
+        this.n3 = new ArrayList();
+        this.o3 = new ArrayList();
+        this.p3 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        String str;
-        TLRPC.Chat chat;
-        Boolean bool = (Boolean) obj;
-        z91 z91Var = this.a;
-        zw zwVar = this.b;
-        if (z91Var != null) {
-            z91Var.finishFragment();
-            zwVar.removeSelfFromStack();
-        } else {
-            zwVar.finishFragment();
-        }
-        org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
-        if (T == null) {
+    public static void z1(o1 o1Var, int i7, int i10) {
+        if (o1Var.f3 == null || !(o1Var.getLayoutManager() instanceof v4.s)) {
             return;
         }
-        long j3 = this.c;
-        int i7 = this.d;
-        if (j3 >= 0) {
-            TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(j3));
-            str = t10.k(a22);
-            chat = a22;
+        v4.s sVar = (v4.s) o1Var.getLayoutManager();
+        View m10 = sVar.m(i7);
+        int L0 = sVar.L0();
+        if ((m10 == null && Math.abs(i7 - L0) > sVar.J * 9.0f) || !gz.c()) {
+            o1Var.f3.b = sVar.L0() < i7 ? 0 : 1;
+            o1Var.f3.d(i7, i10, false, false);
         } else {
-            TLRPC.Chat M0 = qp.s1(i7).M0(Long.valueOf(-j3));
-            if (M0 == null) {
-                str = "";
-                chat = M0;
-            } else {
-                str = M0.title;
-                chat = M0;
+            l1 l1Var = new l1(0, o1Var.getContext(), o1Var);
+            l1Var.a = i7;
+            l1Var.p = i10;
+            sVar.w0(l1Var);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        SparseArray sparseArray;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        m1 m1Var;
+        if (getVisibility() != 0) {
+            return;
+        }
+        int saveCount = canvas.getSaveCount();
+        canvas.save();
+        canvas.clipRect(0.0f, this.h3, getWidth(), this.i3);
+        if (!this.g3) {
+            super.dispatchDraw(canvas);
+            canvas.restore();
+            return;
+        }
+        Rect rect = this.F1;
+        if (!rect.isEmpty()) {
+            this.C1.setBounds(rect);
+            canvas.save();
+            q0.a aVar = this.n2;
+            if (aVar != null) {
+                aVar.accept(canvas);
+            }
+            this.C1.draw(canvas);
+            canvas.restore();
+        }
+        int i7 = 0;
+        int i10 = 0;
+        while (true) {
+            sparseArray = this.k3;
+            int size = sparseArray.size();
+            arrayList = this.l3;
+            if (i10 >= size) {
+                break;
+            }
+            ArrayList arrayList3 = (ArrayList) sparseArray.valueAt(i10);
+            arrayList3.clear();
+            arrayList.add(arrayList3);
+            i10++;
+        }
+        sparseArray.clear();
+        for (int i11 = 0; i11 < getChildCount(); i11++) {
+            View childAt = getChildAt(i11);
+            if (childAt instanceof n1) {
+                n1 n1Var = (n1) childAt;
+                if (n1Var.getY() < this.i3 && n1Var.getY() + n1Var.getHeight() > this.h3) {
+                    int y10 = this.j3 ? (int) n1Var.getY() : n1Var.getTop();
+                    ArrayList arrayList4 = (ArrayList) sparseArray.get(y10);
+                    if (arrayList4 == null) {
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) r.b.g(1, arrayList) : new ArrayList();
+                        sparseArray.put(y10, arrayList4);
+                    }
+                    arrayList4.add(n1Var);
+                }
             }
         }
-        gc a02 = gc.a0(T);
-        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.a0(null, null, bool.booleanValue() ? 2131752988 : 2131752987, str));
-        a02.getClass();
-        a02.V(Arrays.asList(chat), X2, null, null).k(false);
+        ArrayList arrayList5 = this.o3;
+        arrayList5.clear();
+        ArrayList arrayList6 = this.n3;
+        arrayList5.addAll(arrayList6);
+        arrayList6.clear();
+        canvas.save();
+        canvas.clipRect(0, getPaddingTop(), getWidth(), getHeight() - getPaddingBottom());
+        long currentTimeMillis = System.currentTimeMillis();
+        int i12 = 0;
+        while (true) {
+            int size2 = sparseArray.size();
+            arrayList2 = this.m3;
+            if (i12 >= size2) {
+                break;
+            }
+            ArrayList arrayList7 = (ArrayList) sparseArray.valueAt(i12);
+            n1 n1Var2 = (n1) arrayList7.get(i7);
+            int R = RecyclerView.R(n1Var2);
+            while (true) {
+                if (i7 >= arrayList5.size()) {
+                    m1Var = null;
+                    break;
+                } else {
+                    if (((m1) arrayList5.get(i7)).N == R) {
+                        m1Var = (m1) arrayList5.get(i7);
+                        arrayList5.remove(i7);
+                        break;
+                    }
+                    i7++;
+                }
+            }
+            if (m1Var == null) {
+                if (arrayList2.isEmpty()) {
+                    m1Var = new m1(this);
+                    m1Var.l(7);
+                } else {
+                    m1Var = (m1) r.b.g(1, arrayList2);
+                }
+                m1Var.N = R;
+                m1Var.e();
+            }
+            arrayList6.add(m1Var);
+            m1Var.P = arrayList7;
+            canvas.save();
+            canvas.translate(n1Var2.getLeft(), n1Var2.getY());
+            m1Var.O = n1Var2.getLeft();
+            int measuredWidth = getMeasuredWidth() - (n1Var2.getLeft() * 2);
+            int measuredHeight = n1Var2.getMeasuredHeight();
+            if (measuredWidth > 0 && measuredHeight > 0) {
+                m1Var.a(canvas, currentTimeMillis, measuredWidth, measuredHeight, getAlpha());
+            }
+            canvas.restore();
+            i12++;
+            i7 = 0;
+        }
+        for (int i13 = 0; i13 < arrayList5.size(); i13++) {
+            if (arrayList2.size() < 3) {
+                arrayList2.add((m1) arrayList5.get(i13));
+                ((m1) arrayList5.get(i13)).P = null;
+                ((m1) arrayList5.get(i13)).k();
+            } else {
+                ((m1) arrayList5.get(i13)).f();
+            }
+        }
+        arrayList5.clear();
+        for (int i14 = 0; i14 < getChildCount(); i14++) {
+            View childAt2 = getChildAt(i14);
+            if (childAt2 != null && !(childAt2 instanceof n1) && childAt2.getY() <= getHeight() - getPaddingBottom() && childAt2.getY() + childAt2.getHeight() >= getPaddingTop()) {
+                canvas.save();
+                canvas.translate((int) childAt2.getX(), (int) childAt2.getY());
+                childAt2.draw(canvas);
+                canvas.restore();
+            }
+        }
+        canvas.restore();
+        canvas.restoreToCount(saveCount);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void setLayoutManager(v4.o0 o0Var) {
+        super.setLayoutManager(o0Var);
+        this.f3 = null;
+        if (o0Var instanceof v4.b0) {
+            wi0 wi0Var = new wi0(this, (v4.b0) o0Var);
+            this.f3 = wi0Var;
+            wi0Var.i = new ci.h(this, 1);
+            wi0Var.h = new di.z6(this, 17);
+        }
     }
 }

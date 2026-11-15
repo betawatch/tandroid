@@ -5,6 +5,7 @@ import gd.k;
 import hd.f;
 import id.c;
 import java.util.List;
+import jd.a;
 import kd.g;
 import kd.j;
 import rd.l;
@@ -13,7 +14,7 @@ import zd.a1;
 import zd.y;
 import zd.z;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzim extends j implements p {
     public static final /* synthetic */ int zze = 0;
@@ -46,7 +47,7 @@ final class zzim extends j implements p {
     @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         Object zzh;
-        jd.a aVar = jd.a.a;
+        a aVar = a.a;
         int i7 = this.zza;
         k kVar = k.a;
         b.c(obj);

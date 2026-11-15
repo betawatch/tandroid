@@ -9,7 +9,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m0 implements IBinder.DeathRecipient {
     public final Messenger a;
@@ -64,14 +64,14 @@ public final class m0 implements IBinder.DeathRecipient {
     }
 
     public final void c(int i7, int i10) {
-        Bundle f10 = rf.b.f(i10, "volume");
+        Bundle f10 = r.b.f(i10, "volume");
         int i11 = this.d;
         this.d = i11 + 1;
         b(7, i11, i7, null, f10);
     }
 
     public final void d(int i7, int i10) {
-        Bundle f10 = rf.b.f(i10, "volume");
+        Bundle f10 = r.b.f(i10, "volume");
         int i11 = this.d;
         this.d = i11 + 1;
         b(8, i11, i7, null, f10);

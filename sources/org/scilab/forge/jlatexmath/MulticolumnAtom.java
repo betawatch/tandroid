@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class MulticolumnAtom extends Atom {
     protected int afterVlines;
@@ -22,20 +22,20 @@ public class MulticolumnAtom extends Atom {
         int length = str.length();
         int i7 = 0;
         int i10 = 2;
-        boolean z9 = true;
+        boolean z10 = true;
         while (i7 < length) {
             char charAt = str.charAt(i7);
             if (charAt == 'c') {
-                z9 = false;
+                z10 = false;
                 i10 = 2;
             } else if (charAt == 'l') {
                 i10 = 0;
-                z9 = false;
+                z10 = false;
             } else if (charAt == 'r') {
-                z9 = false;
+                z10 = false;
                 i10 = 1;
             } else if (charAt == '|') {
-                if (z9) {
+                if (z10) {
                     this.beforeVlines = 1;
                 } else {
                     this.afterVlines = 1;
@@ -49,7 +49,7 @@ public class MulticolumnAtom extends Atom {
                     if (str.charAt(i11) != '|') {
                         break;
                     }
-                    if (z9) {
+                    if (z10) {
                         this.beforeVlines++;
                     } else {
                         this.afterVlines++;

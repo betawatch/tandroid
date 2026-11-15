@@ -1,69 +1,93 @@
 package ui;
 
-import l2.x;
-import org.telegram.messenger.g0;
-import org.telegram.tgnet.ConnectionsManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
-    public final /* synthetic */ d c;
+public final class b implements a {
+    public final Paint a;
+    public final Matrix b;
+    public BitmapShader c;
+    public Bitmap d;
+    public final Matrix e;
+    public Bitmap f;
+    public int h;
+    public int n;
 
-    public /* synthetic */ b(e eVar, d dVar, int i7) {
-        this.a = i7;
-        this.b = eVar;
-        this.c = dVar;
+    public b() {
+        Paint paint = new Paint(3);
+        this.a = paint;
+        this.b = new Matrix();
+        this.e = new Matrix();
+        paint.setFilterBitmap(true);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                e eVar = this.b;
-                d dVar = (d) eVar.c;
-                d dVar2 = this.c;
-                if (dVar == dVar2) {
-                    eVar.d = null;
-                    eVar.m(dVar2);
-                    break;
-                }
-                break;
-            case 1:
-                e eVar2 = this.b;
-                d dVar3 = (d) eVar2.c;
-                d dVar4 = this.c;
-                if (dVar3 == dVar4) {
-                    b bVar = (b) eVar2.d;
-                    if (bVar != null) {
-                        g0.r(bVar);
-                        eVar2.d = null;
-                    }
-                    int i7 = dVar4.d;
-                    if (i7 != 0) {
-                        b bVar2 = new b(eVar2, dVar4, 2);
-                        eVar2.e = bVar2;
-                        g0.i3(bVar2, 20000L);
-                        x xVar = dVar4.a;
-                        ((ConnectionsManager) xVar.b).checkWebProxyInternal(dVar4.b, i7, new c(eVar2, dVar4));
-                        break;
-                    } else {
-                        eVar2.m(dVar4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                e eVar3 = this.b;
-                d dVar5 = (d) eVar3.c;
-                d dVar6 = this.c;
-                if (dVar5 == dVar6) {
-                    eVar3.e = null;
-                    eVar3.m(dVar6);
-                    break;
-                }
-                break;
+    public final void a(Bitmap bitmap) {
+        if (this.d == bitmap) {
+            return;
         }
+        this.d = bitmap;
+        Paint paint = this.a;
+        paint.setShader(null);
+        this.c = null;
+        if (bitmap != null) {
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+            this.c = bitmapShader;
+            paint.setShader(bitmapShader);
+            c();
+        }
+    }
+
+    public final void b(int i7, int i10) {
+        if (this.h == i7 && this.n == i10) {
+            return;
+        }
+        this.h = i7;
+        this.n = i10;
+        c();
+    }
+
+    @Override // ui.a
+    public final void b0(float f10, float f11, float f12, float f13, Canvas canvas) {
+        Bitmap bitmap = this.d;
+        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
+            return;
+        }
+        Matrix matrix = this.e;
+        Matrix matrix2 = this.b;
+        matrix.set(matrix2);
+        matrix.postTranslate(f10, f11);
+        this.c.setLocalMatrix(matrix2);
+        canvas.drawRect(f10, f11, f12, f13, this.a);
+    }
+
+    public final void c() {
+        Bitmap bitmap = this.d;
+        Matrix matrix = this.b;
+        if (bitmap == null) {
+            matrix.reset();
+            return;
+        }
+        int width = bitmap.getWidth();
+        int height = this.d.getHeight();
+        int i7 = this.h;
+        int i10 = this.n;
+        matrix.reset();
+        if (width <= 0 || height <= 0 || i7 <= 0 || i10 <= 0) {
+            return;
+        }
+        float f10 = i7;
+        float f11 = width;
+        float f12 = i10;
+        float f13 = height;
+        float max = Math.max(f10 / f11, f12 / f13);
+        matrix.setScale(max, max);
+        matrix.postTranslate((f10 - (f11 * max)) * 0.5f, ((f12 - (f13 * max)) * 0.5f) + 0);
     }
 }

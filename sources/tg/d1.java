@@ -8,10 +8,11 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.b6;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
+import org.telegram.ui.ActionBar.y5;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class d1 extends TextView {
     public boolean a;
@@ -33,8 +34,8 @@ public final class d1 extends TextView {
         super.onDraw(canvas);
         canvas.restore();
         if (this.a) {
-            int y10 = org.telegram.messenger.camera.q.y(16.0f, getHeight(), 2);
-            if (id.a0) {
+            int y10 = i20.y(16.0f, getHeight(), 2);
+            if (hd.a0) {
                 this.b.setBounds(org.telegram.messenger.g0.L(7.0f), y10, org.telegram.messenger.g0.L(23.0f), org.telegram.messenger.g0.L(16.0f) + y10);
             } else {
                 this.b.setBounds(getWidth() - org.telegram.messenger.g0.L(23.0f), y10, getWidth() - org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(16.0f) + y10);
@@ -43,14 +44,14 @@ public final class d1 extends TextView {
         }
     }
 
-    public void setCurrent(boolean z9) {
-        this.a = z9;
-        if (z9) {
-            setPadding(org.telegram.messenger.g0.L(id.a0 ? 27.0f : 12.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(id.a0 ? 12.0f : 27.0f), org.telegram.messenger.g0.L(6.0f));
-            setBackground(b6.d(0, b6.b(1090519039), org.telegram.messenger.g0.L(32.0f)));
+    public void setCurrent(boolean z10) {
+        this.a = z10;
+        if (z10) {
+            setPadding(org.telegram.messenger.g0.L(hd.a0 ? 27.0f : 12.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(hd.a0 ? 12.0f : 27.0f), org.telegram.messenger.g0.L(6.0f));
+            setBackground(y5.d(0, y5.b(1090519039), org.telegram.messenger.g0.L(32.0f)));
         } else {
             setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(14.0f));
-            setBackground(b6.d(0, b6.b(-14145495), 0.0f));
+            setBackground(y5.d(0, y5.b(-14145495), 0.0f));
         }
         if (this.a && this.b == null) {
             Drawable drawable = getContext().getDrawable(R.drawable.photo_expand);

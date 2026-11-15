@@ -1,16 +1,16 @@
 package d5;
 
-import aa.n;
 import android.content.pm.PackageInfo;
 import android.net.Uri;
 import android.webkit.WebView;
+import cb.c;
 import e5.k;
 import e5.l;
 import e5.m;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final boolean a;
@@ -28,7 +28,7 @@ public abstract class b {
             throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
         }
         m c10 = c(webView);
-        c10.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new af.a(new n(aVar, 15)));
+        c10.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new af.a(new c(aVar, 19)));
     }
 
     public static PackageInfo b() {

@@ -19,7 +19,7 @@ public abstract class a extends t3 implements BaseStream {
     public Runnable q;
     public boolean r;
 
-    public abstract e2 K0(a aVar, Spliterator spliterator, boolean z9, IntFunction intFunction);
+    public abstract e2 K0(a aVar, Spliterator spliterator, boolean z10, IntFunction intFunction);
 
     public abstract boolean L0(Spliterator spliterator, j5 j5Var);
 
@@ -29,9 +29,9 @@ public abstract class a extends t3 implements BaseStream {
 
     public abstract j5 Q0(int i7, j5 j5Var);
 
-    public abstract Spliterator T0(a aVar, Supplier supplier, boolean z9);
+    public abstract Spliterator T0(a aVar, Supplier supplier, boolean z10);
 
-    public a(Spliterator spliterator, int i7, boolean z9) {
+    public a(Spliterator spliterator, int i7, boolean z10) {
         this.i = null;
         this.n = spliterator;
         this.h = this;
@@ -39,7 +39,7 @@ public abstract class a extends t3 implements BaseStream {
         this.j = i10;
         this.m = (~(i10 << 1)) & v6.l;
         this.l = 0;
-        this.r = z9;
+        this.r = z10;
     }
 
     public a(a aVar, int i7) {
@@ -163,9 +163,9 @@ public abstract class a extends t3 implements BaseStream {
     }
 
     @Override // j$.util.stream.t3
-    public final e2 j0(Spliterator spliterator, boolean z9, IntFunction intFunction) {
+    public final e2 j0(Spliterator spliterator, boolean z10, IntFunction intFunction) {
         if (this.h.r) {
-            return K0(this, spliterator, z9, intFunction);
+            return K0(this, spliterator, z10, intFunction);
         }
         w1 A0 = A0(k0(spliterator), intFunction);
         F0(spliterator, A0);

@@ -1,18 +1,17 @@
 package y7;
 
-import java.util.HashMap;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class d6 implements oa.a {
-    public Object a;
-    public Object b;
-    public Object c;
+public final class d6 {
+    public final Long a;
+    public final k6 b;
+    public final Boolean c;
 
-    @Override // oa.a
-    public /* bridge */ /* synthetic */ oa.a b(Class cls, na.d dVar) {
-        ((HashMap) this.a).put(cls, dVar);
-        ((HashMap) this.b).remove(cls);
-        return this;
+    public /* synthetic */ d6(ld0 ld0Var) {
+        this.a = (Long) ld0Var.b;
+        this.b = (k6) ld0Var.c;
+        this.c = (Boolean) ld0Var.d;
     }
 }

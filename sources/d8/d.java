@@ -1,6 +1,6 @@
 package d8;
 
-import a8.k8;
+import a8.l8;
 import android.os.BadParcelableException;
 import android.os.Binder;
 import android.os.IBinder;
@@ -8,10 +8,9 @@ import android.os.IInterface;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import jg.g;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d extends Binder implements b, IInterface {
     public final /* synthetic */ int a;
@@ -24,13 +23,13 @@ public final class d extends Binder implements b, IInterface {
     }
 
     @Override // d8.b
-    public final void E0(Status status, o8.d dVar) {
+    public final void F0(Status status, o8.d dVar) {
         switch (this.a) {
             case 0:
                 break;
             default:
                 j.e(status, "status");
-                k8.a(status, dVar, this.b);
+                l8.a(status, dVar, this.b);
                 break;
         }
     }
@@ -40,7 +39,7 @@ public final class d extends Binder implements b, IInterface {
         switch (this.a) {
             case 0:
                 j.e(status, "status");
-                k8.a(status, bVar, this.b);
+                l8.a(status, bVar, this.b);
                 break;
         }
     }
@@ -57,9 +56,9 @@ public final class d extends Binder implements b, IInterface {
             o8.d dVar = (o8.d) a.a(parcel, o8.d.CREATOR);
             int dataAvail = parcel.dataAvail();
             if (dataAvail > 0) {
-                throw new BadParcelableException(g.j(dataAvail, "Parcel data not fully consumed, unread size: "));
+                throw new BadParcelableException(i5.c.i(dataAvail, "Parcel data not fully consumed, unread size: "));
             }
-            E0(status, dVar);
+            F0(status, dVar);
             return true;
         }
         if (i7 != 2) {
@@ -69,7 +68,7 @@ public final class d extends Binder implements b, IInterface {
         o8.b bVar = (o8.b) a.a(parcel, o8.b.CREATOR);
         int dataAvail2 = parcel.dataAvail();
         if (dataAvail2 > 0) {
-            throw new BadParcelableException(g.j(dataAvail2, "Parcel data not fully consumed, unread size: "));
+            throw new BadParcelableException(i5.c.i(dataAvail2, "Parcel data not fully consumed, unread size: "));
         }
         n(status2, bVar);
         return true;

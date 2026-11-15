@@ -1,65 +1,70 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.text.TextUtils;
+import android.widget.EditText;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class g81 extends org.telegram.ui.Cells.q1 {
-    public final Path ld;
-    public final Paint md;
-    public final /* synthetic */ int nd;
-    public final /* synthetic */ int od;
-    public final /* synthetic */ int pd;
-    public final /* synthetic */ i81 qd;
+public final class g81 extends org.telegram.ui.ActionBar.m0 {
+    public boolean a = false;
+    public final /* synthetic */ l81 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g81(i81 i81Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var, int i10, int i11, int i12) {
-        super(context, i7, false, null, h6Var);
-        this.qd = i81Var;
-        this.nd = i10;
-        this.od = i11;
-        this.pd = i12;
-        this.ld = new Path();
-        this.md = new Paint(1);
+    public g81(l81 l81Var) {
+        this.b = l81Var;
     }
 
-    @Override // org.telegram.ui.Cells.q1
-    public final void j1(Canvas canvas) {
-        this.R4 = 0;
-        this.S4 = this.P4.size() - 1;
-        super.j1(canvas);
+    @Override // org.telegram.ui.ActionBar.m0
+    public final void h() {
+        l81 l81Var = this.b;
+        if (l81Var.a.getVisibility() != 0) {
+            l81Var.a.setVisibility(0);
+            l81Var.a.setAlpha(0.0f);
+        }
+        l81Var.r.setVisibility(8);
+        l81Var.d.f();
+        l81Var.a.animate().alpha(1.0f).setDuration(150L).setListener(null).start();
+        l81Var.s.animate().alpha(0.0f).setDuration(150L).setListener(new f81(this, 0)).start();
+        this.a = false;
     }
 
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        int b22 = b2(this.nd);
-        float U1 = U1(b22);
-        float T1 = T1(b22);
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(getPollButtonsLeft(), U1, getPollButtonsRight(), T1);
-        Path path = this.ld;
-        path.rewind();
-        path.addRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), Path.Direction.CW);
-        Paint paint = this.md;
-        paint.setColor(0);
-        paint.setShadowLayer(org.telegram.messenger.g0.L(2.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.m6.r1(this.qd.y * 0.2f, -16777216));
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), paint);
-        canvas.clipPath(path);
-        d1(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(this.od, this.pd);
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final void setPressed(boolean z9) {
+    @Override // org.telegram.ui.ActionBar.m0
+    public final void l(EditText editText) {
+        String obj = editText.getText().toString();
+        k81 k81Var = this.b.e;
+        if (k81Var.e != null) {
+            Utilities.g.a(k81Var.e);
+            k81Var.e = null;
+        }
+        if (TextUtils.isEmpty(obj)) {
+            k81Var.c.clear();
+            k81Var.d.clear();
+            k81Var.f();
+            k81Var.h.r.setVisibility(8);
+        } else {
+            int i7 = k81Var.f + 1;
+            k81Var.f = i7;
+            org.telegram.messenger.p5 p5Var = Utilities.g;
+            j81 j81Var = new j81(k81Var, obj, i7, 0);
+            k81Var.e = j81Var;
+            p5Var.d(j81Var, 300L);
+        }
+        if (this.a || TextUtils.isEmpty(obj)) {
+            if (this.a && TextUtils.isEmpty(obj)) {
+                h();
+                return;
+            }
+            return;
+        }
+        if (this.b.s.getVisibility() != 0) {
+            this.b.s.setVisibility(0);
+            this.b.s.setAlpha(0.0f);
+        }
+        this.b.a.animate().alpha(0.0f).setDuration(150L).setListener(new f81(this, 1)).start();
+        this.b.e.d.clear();
+        this.b.e.c.clear();
+        this.b.e.f();
+        this.b.s.animate().setListener(null).alpha(1.0f).setDuration(150L).start();
+        this.a = true;
     }
 }

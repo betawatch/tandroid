@@ -1,48 +1,40 @@
 package ah;
 
-import ai.d0;
-import ai.e0;
-import ai.s;
+import ai.v2;
+import ai.z0;
 import android.view.View;
-import bi.dd;
-import bi.e1;
-import bi.g7;
-import bi.h1;
-import bi.k6;
-import bi.o3;
-import bi.oa;
-import bi.sc;
-import bi.uc;
-import bi.w1;
+import bi.f5;
+import bi.s2;
+import bi.t0;
+import bi.x0;
 import ch.b0;
-import di.f8;
-import di.g2;
-import di.j9;
-import di.q9;
-import di.u8;
-import di.x5;
-import di.z8;
-import fi.a8;
-import fi.d8;
-import fi.la;
-import fi.r5;
-import fi.s5;
-import fi.t0;
-import hi.k0;
-import org.telegram.messenger.c20;
+import di.bb;
+import di.db;
+import di.e5;
+import di.e9;
+import di.i1;
+import di.mb;
+import di.s0;
+import di.u2;
+import di.v0;
+import di.y5;
+import fi.b9;
+import fi.c1;
+import fi.i9;
+import fi.m8;
+import fi.o5;
+import fi.r8;
+import hi.ia;
+import hi.u0;
 import org.telegram.messenger.g0;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.id;
-import org.telegram.ui.Components.m20;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.Components.p20;
+import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.bf;
-import ug.w0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -55,8 +47,8 @@ public final /* synthetic */ class d implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        f2 Q;
-        c20 c20Var;
+        e2 Q;
+        e2 Q2;
         switch (this.a) {
             case 0:
                 Runnable runnable = ((e) this.b).e;
@@ -66,130 +58,130 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 }
                 break;
             case 1:
-                ((s) this.b).c.b.a.presentFragment(new PremiumPreviewFragment(0, "qr_emoji"));
+                v2 v2Var = (v2) this.b;
+                v2Var.getClass();
+                DictationAsr.T(!DictationAsr.v());
+                v2Var.e0();
                 break;
             case 2:
                 ((androidx.mediarouter.app.g) this.b).dismiss();
                 break;
             case 3:
-                ((m20) this.b).dismiss();
+                ((bi.e) this.b).dismiss();
                 break;
             case 4:
-                ((e1) this.b).dismiss();
+                ((t0) this.b).dismiss();
                 break;
             case 5:
-                h1 h1Var = (h1) this.b;
-                cg.b bVar = h1Var.y1.a;
-                cg.b bVar2 = cg.b.b;
-                if (bVar == bVar2) {
-                    bVar2 = cg.b.a;
-                }
-                h1Var.J0(cg.a.i(0L, bVar2), true, false, true);
-                h1Var.m1.setText("");
+                ((x0) this.b).c(null);
                 break;
             case 6:
-                ((w1) this.b).dismiss();
-                break;
-            case 7:
-                ((o3) this.b).run();
-                break;
-            case 8:
-                ((o3) this.b).run();
-                break;
-            case 9:
-                k6 k6Var = (k6) this.b;
-                k6Var.getClass();
-                new uc(k6Var.b, k6Var.g).show();
-                break;
-            case 10:
-                ((g7) this.b).dismiss();
-                break;
-            case 11:
-                ((oa) this.b).run();
-                break;
-            case 12:
-                if (((sc) ((a) this.b).c).e > 0 && (Q = LaunchActivity.Q()) != null) {
-                    d2 d2Var = new d2();
-                    d2Var.a = true;
-                    Q.showAsSheet(new dd(), d2Var);
+                if (((s2) this.b).a2.e > 0 && (Q = LaunchActivity.Q()) != null) {
+                    c2 c2Var = new c2();
+                    c2Var.a = true;
+                    Q.showAsSheet(new mb(), c2Var);
                     break;
                 }
                 break;
-            case 13:
+            case 7:
+                ((f5) this.b).performClick();
+                break;
+            case 8:
                 b0 b0Var = (b0) this.b;
                 if (b0Var.k) {
                     b0Var.d();
                     break;
                 }
                 break;
+            case 9:
+                ((ci.n) this.b).c.b.a.presentFragment(new PremiumPreviewFragment(0, "qr_emoji"));
+                break;
+            case 10:
+                ((p20) this.b).dismiss();
+                break;
+            case 11:
+                ((s0) this.b).dismiss();
+                break;
+            case 12:
+                v0 v0Var = (v0) this.b;
+                cg.b bVar = v0Var.z1.a;
+                cg.b bVar2 = cg.b.b;
+                if (bVar == bVar2) {
+                    bVar2 = cg.b.a;
+                }
+                v0Var.J0(cg.a.i(0L, bVar2), true, false, true);
+                v0Var.n1.setText("");
+                break;
+            case 13:
+                ((i1) this.b).dismiss();
+                break;
             case 14:
-                ((g2) this.b).q(!r5.f0, true);
+                ((u2) this.b).run();
                 break;
             case 15:
-                ((q9) this.b).T();
+                ((u2) this.b).run();
                 break;
             case 16:
-                ((x5) this.b).dismiss();
-                f2 Q2 = LaunchActivity.Q();
-                if (Q2 != null) {
-                    Q2.showDialog(new w0(Q2, 14, false));
+                e5 e5Var = (e5) this.b;
+                e5Var.getClass();
+                new db(e5Var.b, e5Var.g).show();
+                break;
+            case 17:
+                ((y5) this.b).dismiss();
+                break;
+            case 18:
+                ((e9) this.b).run();
+                break;
+            case 19:
+                if (((bb) ((a) this.b).c).e > 0 && (Q2 = LaunchActivity.Q()) != null) {
+                    c2 c2Var2 = new c2();
+                    c2Var2.a = true;
+                    Q2.showAsSheet(new mb(), c2Var2);
                     break;
                 }
                 break;
-            case 17:
-                u8 u8Var = (u8) this.b;
-                u8Var.onClick(u8Var.b);
-                break;
-            case 18:
-                z8 z8Var = (z8) this.b;
-                z8Var.b.t1.animate().alpha(0.0f).setDuration(150L).setListener(new j9(z8Var, 0)).start();
-                break;
-            case 19:
-                ((f8) this.b).run();
-                break;
             case 20:
-                fi.m mVar = (fi.m) this.b;
-                fi.g gVar = mVar.f;
+                ((fi.c2) this.b).q(!r5.g0, true);
+                break;
+            case 21:
+                ((i9) this.b).T();
+                break;
+            case 22:
+                ((o5) this.b).dismiss();
+                e2 Q3 = LaunchActivity.Q();
+                if (Q3 != null) {
+                    Q3.showDialog(new ug.x0(Q3, 14, false));
+                    break;
+                }
+                break;
+            case 23:
+                m8 m8Var = (m8) this.b;
+                m8Var.onClick(m8Var.b);
+                break;
+            case 24:
+                r8 r8Var = (r8) this.b;
+                r8Var.b.u1.animate().alpha(0.0f).setDuration(150L).setListener(new b9(r8Var, 0)).start();
+                break;
+            case 25:
+                ((c1) this.b).run();
+                break;
+            case 26:
+                hi.m mVar = (hi.m) this.b;
+                hi.g gVar = mVar.f;
                 gVar.d();
                 gVar.k(true);
-                fi.e eVar = mVar.c0;
+                hi.e eVar = mVar.d0;
                 g0.r(eVar);
                 eVar.run();
                 break;
-            case 21:
-                ((la) this.b).B();
-                break;
-            case 22:
-                t0.a((t0) this.b);
-                break;
-            case 23:
-                ((e0) this.b).run();
-                break;
-            case 24:
-                s5 s5Var = ((r5) this.b).y;
-                if (s5Var.r && (c20Var = s5Var.f) != null) {
-                    c20Var.a(5);
-                    break;
-                }
-                break;
-            case 25:
-                d8 d8Var = (d8) ((a8) this.b).h;
-                if (d8Var != null) {
-                    d8Var.run();
-                    break;
-                }
-                break;
-            case 26:
-                ((bf) this.b).run();
-                break;
             case 27:
-                ((bf) this.b).run();
+                ((ia) this.b).B();
                 break;
             case 28:
-                ChatActivityEnterView.e(((id) ((k0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
+                u0.a((u0) this.b);
                 break;
             default:
-                ((d0) this.b).run();
+                ((z0) this.b).run();
                 break;
         }
     }

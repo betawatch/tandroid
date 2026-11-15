@@ -1,72 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class uw extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
-    public int a;
-    public boolean b;
-    public final FrameLayout c;
-    public final /* synthetic */ gy d;
+public final /* synthetic */ class uw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uw(gy gyVar, Context context) {
-        super(context);
-        this.d = gyVar;
-        org.telegram.ui.ActionBar.s6 s6Var = org.telegram.ui.ActionBar.t6.a;
-        i6 i6Var = new i6(getContext(), false, false, false);
-        i6Var.b(0.3f, 250L, wq.h);
-        i6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        i6Var.setTypeface(org.telegram.messenger.g0.o());
-        int i7 = org.telegram.ui.ActionBar.m6.Gi;
-        org.telegram.ui.ActionBar.h6 h6Var = gyVar.Z1;
-        org.telegram.ui.ActionBar.t6.Y(i6Var, i7, h6Var);
-        i6Var.setGravity(17);
-        FrameLayout frameLayout = new FrameLayout(getContext());
-        this.c = frameLayout;
-        frameLayout.setBackground(org.telegram.ui.ActionBar.b6.e(gyVar.z(org.telegram.ui.ActionBar.m6.Ci), 8.0f));
-        frameLayout.addView(i6Var, c8.ha.e(-1, -2, 17));
-        addView(frameLayout, c8.ha.c(-1.0f, -1));
-        ug.p0 p0Var = new ug.p0(getContext(), h6Var, false);
-        p0Var.setIcon(R.raw.unlock_icon);
-        addView(p0Var, c8.ha.c(-1.0f, -1));
+    public /* synthetic */ uw(Object obj, float f10, int i7, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = f10;
+        this.c = i7;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setPadding(org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(11.0f));
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        try {
-            int z9 = this.d.z(org.telegram.ui.ActionBar.m6.Ci);
-            FrameLayout frameLayout = this.c;
-            if (frameLayout != null) {
-                if (z9 == this.a) {
-                    if (this.b != org.telegram.ui.ActionBar.m6.I.q()) {
-                    }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                vw vwVar = (vw) this.d;
+                float f10 = this.b;
+                int i7 = this.c;
+                ly lyVar = vwVar.G;
+                try {
+                    pi.l lVar = new pi.l(lyVar.Q.getContext(), 0, f10);
+                    lVar.a = i7;
+                    lyVar.R.w0(lVar);
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
                 }
-                this.b = org.telegram.ui.ActionBar.m6.I.q();
-                this.a = z9;
-                org.telegram.ui.ActionBar.m6.H1(frameLayout.getBackground(), z9, false);
-                org.telegram.ui.ActionBar.m6.H1(frameLayout.getBackground(), org.telegram.ui.ActionBar.b6.b(z9), true);
-                frameLayout.invalidate();
-            }
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+            default:
+                org.telegram.ui.n11 n11Var = (org.telegram.ui.n11) this.d;
+                float f11 = this.b;
+                int i10 = this.c;
+                try {
+                    pi.l lVar2 = new pi.l(n11Var.i0.getContext(), 0, f11);
+                    lVar2.a = i10;
+                    n11Var.s0.w0(lVar2);
+                    break;
+                } catch (Exception e11) {
+                    org.telegram.messenger.a8.g(e11, true);
+                }
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

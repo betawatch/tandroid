@@ -11,12 +11,12 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.messenger.ij;
+import org.telegram.messenger.gj;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.yr;
+import org.telegram.messenger.vr;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -66,9 +66,9 @@ public final /* synthetic */ class c implements Runnable {
         CountDownLatch countDownLatch;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
-        boolean z9;
-        ?? queryFinalized;
         boolean z10;
+        ?? queryFinalized;
+        boolean z11;
         ArrayList arrayList;
         switch (this.a) {
             case 0:
@@ -113,7 +113,7 @@ public final /* synthetic */ class c implements Runnable {
                 countDownLatchArr[i7].countDown();
                 return;
             default:
-                yr yrVar = (yr) this.e;
+                vr vrVar = (vr) this.e;
                 int i12 = this.b;
                 ArrayList arrayList3 = this.c;
                 int i13 = this.d;
@@ -125,7 +125,7 @@ public final /* synthetic */ class c implements Runnable {
                 try {
                     ArrayList arrayList6 = new ArrayList();
                     ArrayList arrayList7 = new ArrayList();
-                    SQLiteDatabase sQLiteDatabase = yrVar.b;
+                    SQLiteDatabase sQLiteDatabase = vrVar.b;
                     Locale locale = Locale.US;
                     ?? r11 = 0;
                     SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT did FROM shortcut_widget WHERE id = " + i12 + " ORDER BY ord ASC", new Object[0]);
@@ -153,7 +153,7 @@ public final /* synthetic */ class c implements Runnable {
                     queryFinalized2.dispose();
                     if (arrayList3.isEmpty() && i13 == 1) {
                         try {
-                            queryFinalized = yrVar.getMessagesStorage().b.queryFinalized("SELECT did FROM chat_hints WHERE type = 0 ORDER BY rating DESC LIMIT 4", new Object[0]);
+                            queryFinalized = vrVar.getMessagesStorage().b.queryFinalized("SELECT did FROM chat_hints WHERE type = 0 ORDER BY rating DESC LIMIT 4", new Object[0]);
                             while (queryFinalized.next()) {
                                 try {
                                     long longValue2 = queryFinalized.longValue(0);
@@ -167,9 +167,9 @@ public final /* synthetic */ class c implements Runnable {
                                     e = e12;
                                     sQLiteCursor2 = queryFinalized;
                                     countDownLatch = countDownLatch2;
-                                    z9 = true;
+                                    z10 = true;
                                     try {
-                                        yrVar.o(e, z9);
+                                        vrVar.o(e, z10);
                                         if (sQLiteCursor2 != null) {
                                         }
                                         countDownLatch.countDown();
@@ -196,9 +196,9 @@ public final /* synthetic */ class c implements Runnable {
                         } catch (Exception e13) {
                             e = e13;
                             countDownLatch = countDownLatch2;
-                            z9 = true;
+                            z10 = true;
                             sQLiteCursor2 = null;
-                            yrVar.o(e, z9);
+                            vrVar.o(e, z10);
                             if (sQLiteCursor2 != null) {
                             }
                             countDownLatch.countDown();
@@ -214,19 +214,19 @@ public final /* synthetic */ class c implements Runnable {
                         }
                     }
                     if (arrayList3.isEmpty()) {
-                        queryFinalized = yrVar.b.queryFinalized("SELECT d.did, d.last_mid, d.unread_count, d.date, m.data, m.read_state, m.mid, m.send_state, m.date FROM dialogs as d LEFT JOIN messages_v2 as m ON d.last_mid = m.mid AND d.did = m.uid WHERE d.folder_id = 0 ORDER BY d.pinned DESC, d.date DESC LIMIT 0,10", new Object[0]);
-                        z10 = true;
+                        queryFinalized = vrVar.b.queryFinalized("SELECT d.did, d.last_mid, d.unread_count, d.date, m.data, m.read_state, m.mid, m.send_state, m.date FROM dialogs as d LEFT JOIN messages_v2 as m ON d.last_mid = m.mid AND d.did = m.uid WHERE d.folder_id = 0 ORDER BY d.pinned DESC, d.date DESC LIMIT 0,10", new Object[0]);
+                        z11 = true;
                     } else {
-                        SQLiteDatabase sQLiteDatabase2 = yrVar.b;
+                        SQLiteDatabase sQLiteDatabase2 = vrVar.b;
                         Locale locale2 = Locale.US;
                         queryFinalized = sQLiteDatabase2.queryFinalized("SELECT d.did, d.last_mid, d.unread_count, d.date, m.data, m.read_state, m.mid, m.send_state, m.date FROM dialogs as d LEFT JOIN messages_v2 as m ON d.last_mid = m.mid AND d.did = m.uid WHERE d.did IN(" + TextUtils.join(",", arrayList3) + ")", new Object[0]);
-                        z10 = false;
+                        z11 = false;
                     }
                     while (queryFinalized.next()) {
                         try {
                             long longValue3 = queryFinalized.longValue(r11);
                             if (!m5.D(longValue3)) {
-                                if (z10) {
+                                if (z11) {
                                     arrayList3.add(Long.valueOf(longValue3));
                                 }
                                 TLRPC.TL_dialog tL_dialog = new TLRPC.TL_dialog();
@@ -241,9 +241,9 @@ public final /* synthetic */ class c implements Runnable {
                                     arrayList = arrayList5;
                                     countDownLatch = countDownLatch2;
                                     try {
-                                        TLdeserialize.readAttachPath(byteBufferValue, yrVar.getUserConfig().n);
+                                        TLdeserialize.readAttachPath(byteBufferValue, vrVar.getUserConfig().n);
                                         byteBufferValue.reuse();
-                                        ij.M5(queryFinalized.intValue(5), TLdeserialize);
+                                        gj.M5(queryFinalized.intValue(5), TLdeserialize);
                                         TLdeserialize.id = queryFinalized.intValue(6);
                                         TLdeserialize.send_state = queryFinalized.intValue(7);
                                         int intValue = queryFinalized.intValue(8);
@@ -253,15 +253,15 @@ public final /* synthetic */ class c implements Runnable {
                                         long j3 = tL_dialog.id;
                                         TLdeserialize.dialog_id = j3;
                                         r62.k(TLdeserialize, j3);
-                                        yr.e(TLdeserialize, arrayList6, arrayList7, null);
+                                        vr.e(TLdeserialize, arrayList6, arrayList7, null);
                                         countDownLatch2 = countDownLatch;
                                         arrayList5 = arrayList;
                                         r11 = 0;
                                     } catch (Exception e14) {
                                         e = e14;
                                         sQLiteCursor2 = queryFinalized;
-                                        z9 = true;
-                                        yrVar.o(e, z9);
+                                        z10 = true;
+                                        vrVar.o(e, z10);
                                         if (sQLiteCursor2 != null) {
                                         }
                                         countDownLatch.countDown();
@@ -293,7 +293,7 @@ public final /* synthetic */ class c implements Runnable {
                     countDownLatch = countDownLatch2;
                     sQLiteCursor = null;
                     queryFinalized.dispose();
-                    if (!z10) {
+                    if (!z11) {
                         try {
                             if (arrayList3.size() > hVar2.m()) {
                                 int size = arrayList3.size();
@@ -318,8 +318,8 @@ public final /* synthetic */ class c implements Runnable {
                         } catch (Exception e16) {
                             e = e16;
                             sQLiteCursor2 = sQLiteCursor;
-                            z9 = true;
-                            yrVar.o(e, z9);
+                            z10 = true;
+                            vrVar.o(e, z10);
                             if (sQLiteCursor2 != null) {
                                 sQLiteCursor2.dispose();
                             }
@@ -335,10 +335,10 @@ public final /* synthetic */ class c implements Runnable {
                         }
                     }
                     if (!arrayList7.isEmpty()) {
-                        yrVar.Q(TextUtils.join(",", arrayList7), arrayList4);
+                        vrVar.Q(TextUtils.join(",", arrayList7), arrayList4);
                     }
                     if (!arrayList6.isEmpty()) {
-                        yrVar.n0(arrayList6, arrayList8, false);
+                        vrVar.n0(arrayList6, arrayList8, false);
                     }
                 } catch (Exception e17) {
                     e = e17;
@@ -354,8 +354,8 @@ public final /* synthetic */ class c implements Runnable {
         }
     }
 
-    public /* synthetic */ c(yr yrVar, int i7, ArrayList arrayList, int i10, a0.h hVar, a0.h hVar2, ArrayList arrayList2, ArrayList arrayList3, CountDownLatch countDownLatch) {
-        this.e = yrVar;
+    public /* synthetic */ c(vr vrVar, int i7, ArrayList arrayList, int i10, a0.h hVar, a0.h hVar2, ArrayList arrayList2, ArrayList arrayList3, CountDownLatch countDownLatch) {
+        this.e = vrVar;
         this.b = i7;
         this.c = arrayList;
         this.d = i10;

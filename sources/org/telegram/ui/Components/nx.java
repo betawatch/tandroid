@@ -1,75 +1,58 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class nx extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
-    public final ImageView a;
-    public final TextView b;
-    public final RadialProgressView c;
-    public boolean d;
-    public final /* synthetic */ gy e;
+public final class nx extends a41 {
+    public static final /* synthetic */ int b = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nx(gy gyVar, Context context) {
-        super(context);
-        this.e = gyVar;
-        org.telegram.ui.ActionBar.s6 s6Var = org.telegram.ui.ActionBar.t6.a;
-        ImageView imageView = new ImageView(getContext());
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.gif_empty);
-        int i7 = org.telegram.ui.ActionBar.m6.Af;
-        org.telegram.ui.ActionBar.h6 h6Var = gyVar.Z1;
-        org.telegram.ui.ActionBar.t6.s(imageView, i7, h6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, c8.ha.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        textView.setText(org.telegram.messenger.id.M0(2131748207, null));
-        textView.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.t6.U(textView, i7, h6Var);
-        addView(textView, c8.ha.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
-        RadialProgressView radialProgressView = new RadialProgressView(context, h6Var);
-        this.c = radialProgressView;
-        radialProgressView.setVisibility(8);
-        radialProgressView.setProgressColor(gyVar.z(org.telegram.ui.ActionBar.m6.h6));
-        addView(radialProgressView, c8.ha.e(-2, -2, 17));
+    static {
+        a41.h(new nx());
     }
 
-    public final void a(boolean z9) {
-        if (this.d != z9) {
-            this.d = z9;
-            this.a.setVisibility(z9 ? 8 : 0);
-            this.b.setVisibility(z9 ? 8 : 0);
-            this.c.setVisibility(z9 ? 0 : 8);
+    public static b41 i(TLRPC.StickerSetCovered stickerSetCovered, ex exVar, boolean z10) {
+        b41 K = b41.K(nx.class);
+        long j3 = stickerSetCovered.set.id;
+        long j10 = 1 + j3;
+        K.d = (int) (j10 ^ (j10 >>> 32));
+        K.B = j3;
+        K.G = stickerSetCovered;
+        K.H = exVar;
+        K.e = z10;
+        return K;
+    }
+
+    @Override // org.telegram.ui.Components.a41
+    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+        ph.b bVar = (ph.b) view;
+        Object obj = b41Var.G;
+        if (obj instanceof TLRPC.TL_messages_stickerSet) {
+            bVar.setPack((TLRPC.TL_messages_stickerSet) obj);
+        } else if (obj instanceof TLRPC.StickerSetCovered) {
+            TLRPC.Document document = ((ex) b41Var.H).e;
+            bVar.d.setText(((TLRPC.StickerSetCovered) obj).set.short_name);
+            bVar.c.d(document, null, null, null, false, false);
         }
+        bVar.a(b41Var.e, false);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.camera.q.y(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.a41
+    public final boolean c(b41 b41Var, b41 b41Var2) {
+        return b41Var.B == b41Var2.B && b41Var.e == b41Var2.e;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        try {
-            this.c.setProgressColor(this.e.z(org.telegram.ui.ActionBar.m6.h6));
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
+    @Override // org.telegram.ui.Components.a41
+    public final View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        ph.b bVar = new ph.b(context, e6Var);
+        bVar.setLayoutParams(new v4.p0(org.telegram.messenger.g0.L(64.0f), -1));
+        return bVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.Components.a41
+    public final boolean e(b41 b41Var, b41 b41Var2) {
+        return b41Var.B == b41Var2.B;
     }
 }

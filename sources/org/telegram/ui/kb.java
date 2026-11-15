@@ -1,77 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class kb extends org.telegram.ui.Components.st0 {
-    public final /* synthetic */ mb f0;
+public final class kb extends c8.ma {
+    public org.telegram.messenger.gj a;
+    public int b = 0;
+    public boolean c = true;
+    public int d = 0;
+    public int e;
+    public final /* synthetic */ lb f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kb(mb mbVar, Context context) {
-        super(context, null);
-        this.f0 = mbVar;
+    public kb(lb lbVar) {
+        this.f = lbVar;
     }
 
-    public final void X(Canvas canvas, RectF rectF) {
-        boolean z9;
-        long uptimeMillis = SystemClock.uptimeMillis();
-        mb mbVar = this.f0;
-        if (mbVar.w.Y0()) {
-            canvas.save();
-            canvas.clipRect(rectF);
-            drawChild(canvas, mbVar.w, uptimeMillis);
-            canvas.restore();
-            return;
-        }
-        canvas.save();
-        canvas.clipRect(rectF);
-        canvas.translate(0.0f, mbVar.w.getY());
-        mbVar.w.getClass();
-        for (int i7 = 0; i7 < mbVar.w.getChildCount(); i7++) {
-            View childAt = mbVar.w.getChildAt(i7);
-            RectF rectF2 = mbVar.P0;
-            if (rectF == null || mbVar.w == null || childAt == null) {
-                z9 = false;
-            } else {
-                rectF2.set(childAt.getX(), mbVar.w.getY() + childAt.getY(), childAt.getX() + childAt.getWidth(), mbVar.w.getY() + childAt.getY() + childAt.getHeight());
-                z9 = !rectF2.intersect(rectF);
+    @Override // c8.ma
+    public final void a() {
+        org.telegram.messenger.gj gjVar = this.a;
+        lb lbVar = this.f;
+        if (gjVar != null) {
+            int indexOf = lbVar.p0.indexOf(gjVar) + lbVar.F.f;
+            if (indexOf >= 0) {
+                lbVar.y.i1(indexOf, this.e, false);
             }
-            if (!z9) {
-                if (childAt instanceof org.telegram.ui.Cells.q1) {
-                    canvas.save();
-                    canvas.translate(childAt.getX(), childAt.getY());
-                    org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt;
-                    if (q1Var.L0()) {
-                        canvas.save();
-                        canvas.translate(0.0f, q1Var.V);
-                        q1Var.M0(canvas, true, false);
-                        canvas.restore();
-                    }
-                    canvas.restore();
-                    mbVar.w.drawChild(canvas, childAt, uptimeMillis);
-                    if (q1Var.j2()) {
-                        canvas.save();
-                        canvas.translate(q1Var.getX(), q1Var.getY());
-                        q1Var.i1(canvas);
-                        canvas.restore();
-                    }
-                } else if (childAt instanceof org.telegram.ui.Cells.t0) {
-                    mbVar.w.drawChild(canvas, childAt, uptimeMillis);
-                    canvas.save();
-                    canvas.translate(childAt.getX(), childAt.getY());
-                    ((org.telegram.ui.Cells.t0) childAt).G(canvas);
-                    canvas.restore();
-                } else {
-                    mbVar.w.drawChild(canvas, childAt, uptimeMillis);
-                }
-            }
+        } else {
+            lbVar.y.i1(this.b, this.d, this.c);
         }
-        mbVar.w.getClass();
-        canvas.restore();
+        this.a = null;
+        lbVar.W = true;
+        lbVar.i1();
+        org.telegram.messenger.g0.h3(new fq0(this, 21));
+    }
+
+    @Override // c8.ma
+    public final void c() {
+        lb lbVar = this.f;
+        lbVar.L0 = lbVar.getNotificationCenter().q(lb.S0, lbVar.L0, true);
+    }
+
+    @Override // c8.ma
+    public final void d(View view) {
+        if (view instanceof org.telegram.ui.Cells.q1) {
+            this.f.h.add((org.telegram.ui.Cells.q1) view);
+        }
     }
 }

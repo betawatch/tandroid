@@ -1,15 +1,11 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class dk extends org.telegram.ui.Components.a31 {
-    public final /* synthetic */ cn D;
+public final class dk {
+    public final /* synthetic */ an a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dk(cn cnVar, Activity activity, cn cnVar2, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(activity, h6Var, cnVar2);
-        this.D = cnVar;
+    public dk(an anVar) {
+        this.a = anVar;
     }
 }

@@ -1,7 +1,7 @@
 package m6;
 
-import a8.ia;
-import a8.k1;
+import a8.ja;
+import a8.l1;
 import a8.r7;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,15 +17,14 @@ import c8.zc;
 import com.google.android.gms.internal.cast.l4;
 import com.google.android.gms.internal.cast.m0;
 import com.google.android.gms.internal.cast.q5;
-import com.google.android.gms.internal.cast.s;
 import com.google.android.gms.internal.cast.v0;
 import com.google.android.gms.internal.cast.x0;
 import com.google.android.gms.internal.play_billing.u;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import f5.r;
-import f5.w;
-import f5.z;
+import f5.a0;
+import f5.s;
+import f5.x;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,12 +34,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.ui.Cells.r2;
-import org.telegram.ui.Components.h6;
-import org.telegram.ui.xf;
+import org.telegram.ui.Components.g6;
+import org.telegram.ui.uf;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n implements OnSuccessListener, te.i {
     public static n e;
@@ -61,7 +60,7 @@ public final class n implements OnSuccessListener, te.i {
         synchronized (n.class) {
             try {
                 if (e == null) {
-                    ScheduledExecutorService unconfigurableScheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1, new r("MessengerIpcClient")));
+                    ScheduledExecutorService unconfigurableScheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1, new s("MessengerIpcClient")));
                     n nVar2 = new n();
                     nVar2.d = new l(nVar2);
                     nVar2.a = 1;
@@ -86,7 +85,7 @@ public final class n implements OnSuccessListener, te.i {
         if (TextUtils.isEmpty((String) this.b)) {
             throw new IllegalArgumentException("Title must be set and non-empty.");
         }
-        if (!k1.b(this.a)) {
+        if (!l1.b(this.a)) {
             StringBuilder sb2 = new StringBuilder("Authenticator combination is unsupported on API ");
             sb2.append(Build.VERSION.SDK_INT);
             sb2.append(": ");
@@ -95,7 +94,7 @@ public final class n implements OnSuccessListener, te.i {
             throw new IllegalArgumentException(sb2.toString());
         }
         int i10 = this.a;
-        boolean a10 = i10 != 0 ? k1.a(i10) : false;
+        boolean a10 = i10 != 0 ? l1.a(i10) : false;
         if (TextUtils.isEmpty((String) this.d) && !a10) {
             throw new IllegalArgumentException("Negative text must be set and non-empty.");
         }
@@ -127,7 +126,7 @@ public final class n implements OnSuccessListener, te.i {
         synchronized (this.b) {
             try {
                 if (((Looper) this.c) == null) {
-                    ia.p(this.a == 0 && ((HandlerThread) this.d) == null);
+                    ja.p(this.a == 0 && ((HandlerThread) this.d) == null);
                     HandlerThread handlerThread = new HandlerThread("ExoPlayer:Playback", -16);
                     this.d = handlerThread;
                     handlerThread.start();
@@ -150,7 +149,7 @@ public final class n implements OnSuccessListener, te.i {
             te.e eVar = (te.e) it.next();
             fArr[((Integer) eVar.a).intValue()] = eVar.c();
         }
-        ((xf) this.c).run();
+        ((uf) this.c).run();
     }
 
     @Override // te.i
@@ -162,7 +161,7 @@ public final class n implements OnSuccessListener, te.i {
         HandlerThread handlerThread;
         synchronized (this.b) {
             try {
-                ia.p(this.a > 0);
+                ja.p(this.a > 0);
                 int i7 = this.a - 1;
                 this.a = i7;
                 if (i7 == 0 && (handlerThread = (HandlerThread) this.d) != null) {
@@ -176,23 +175,23 @@ public final class n implements OnSuccessListener, te.i {
         }
     }
 
-    public void h(int i7, boolean z9, boolean z10) {
+    public void h(int i7, boolean z10, boolean z11) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = zc.b(this.a, 1 << i7, z9);
+        int b10 = zc.b(this.a, 1 << i7, z10);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {
-            ((te.j) this.d).f(Integer.valueOf(numberOfLeadingZeros2), z10);
+            ((te.j) this.d).f(Integer.valueOf(numberOfLeadingZeros2), z11);
         }
     }
 
     public void j(Throwable th2) {
-        w wVar = (w) this.d;
+        x xVar = (x) this.d;
         if (th2 instanceof TimeoutException) {
-            wVar.F(qs.n1, 28, z.p);
+            xVar.F(ns.n1, 28, a0.p);
             u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", th2);
         } else {
-            wVar.F(95, 28, z.p);
+            xVar.F(95, 28, a0.p);
             u.i("BillingClientTesting", "An error occurred while retrieving billing override.", th2);
         }
         ((Runnable) this.c).run();
@@ -228,7 +227,7 @@ public final class n implements OnSuccessListener, te.i {
         Bundle bundle = (Bundle) obj;
         g6.g gVar = m0Var.a;
         q6.m.g(gVar);
-        s sVar = m0Var.b;
+        com.google.android.gms.internal.cast.s sVar = m0Var.b;
         if (i7 != 3) {
             if (i7 == 2) {
                 i7 = 2;
@@ -238,7 +237,7 @@ public final class n implements OnSuccessListener, te.i {
                 gVar.a(new q5(x0Var));
                 if (sVar == null) {
                     v0 v0Var = new v0(x0Var, 0);
-                    s.i.b("register callback = %s", v0Var);
+                    com.google.android.gms.internal.cast.s.i.b("register callback = %s", v0Var);
                     q6.m.d("Must be called from the main thread.");
                     sVar.b.add(v0Var);
                     return;
@@ -251,7 +250,7 @@ public final class n implements OnSuccessListener, te.i {
         gVar.a(new l4(r7Var));
         if (sVar != null) {
             v0 v0Var2 = new v0(r7Var, 1);
-            s.i.b("register callback = %s", v0Var2);
+            com.google.android.gms.internal.cast.s.i.b("register callback = %s", v0Var2);
             q6.m.d("Must be called from the main thread.");
             sVar.b.add(v0Var2);
         }
@@ -265,13 +264,13 @@ public final class n implements OnSuccessListener, te.i {
 
     public n(int i7) {
         switch (i7) {
-            case 4:
-                h6 h6Var = new h6(true, true, true);
-                this.d = h6Var;
+            case 5:
+                g6 g6Var = new g6(true, true, true);
+                this.d = g6Var;
                 Paint paint = new Paint(1);
-                h6Var.w(g0.L(13.0f));
-                h6Var.u(-1);
-                h6Var.x(g0.o());
+                g6Var.w(g0.L(13.0f));
+                g6Var.u(-1);
+                g6Var.x(g0.o());
                 paint.setColor(i0.a.o(-16777216, 58));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 this.b = spannableStringBuilder;
@@ -280,14 +279,15 @@ public final class n implements OnSuccessListener, te.i {
                 this.c = spannableStringBuilder2;
                 spannableStringBuilder2.append((CharSequence) " ").setSpan(new r2(g0.L(1.0f)), 0, 1, 0);
                 break;
-            case 7:
-                this.b = new Object();
+            case 6:
+            default:
+                this.b = null;
                 this.c = null;
                 this.d = null;
                 this.a = 0;
                 break;
-            default:
-                this.b = null;
+            case 7:
+                this.b = new Object();
                 this.c = null;
                 this.d = null;
                 this.a = 0;

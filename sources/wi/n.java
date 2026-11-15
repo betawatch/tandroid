@@ -1,970 +1,443 @@
 package wi;
 
-import android.media.AudioRecord;
-import android.media.AudioTimestamp;
-import android.media.MediaCodec;
-import android.media.MediaCodecInfo;
-import android.media.MediaCrypto;
-import android.media.MediaFormat;
-import android.os.Build;
-import android.os.Process;
-import android.os.SystemClock;
-import android.view.Surface;
-import java.io.IOException;
-import java.nio.ByteBuffer;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.PorterDuff;
+import android.graphics.RectF;
+import android.util.Property;
+import android.view.ScaleGestureDetector;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.widget.ImageView;
+import bg.p0;
+import bg.r0;
+import bg.t0;
+import c8.ja;
+import fi.w2;
+import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLObject;
-import org.webrtc.MediaStreamTrack;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.Cells.y;
+import org.telegram.ui.Components.cf;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.ff;
+import org.telegram.ui.Components.m51;
+import org.telegram.ui.Components.um0;
+import org.telegram.ui.Components.y50;
+import org.telegram.ui.LaunchActivity;
+import ug.t1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class n implements s {
-    public boolean A;
-    public volatile long C;
-    public boolean D;
-    public boolean E;
-    public long F;
-    public long G;
-    public long H;
-    public int I;
-    public int J;
-    public int K;
-    public long L;
-    public long M;
-    public int N;
-    public volatile long O;
-    public long P;
-    public long Q;
-    public long R;
-    public long S;
-    public long T;
-    public int U;
-    public int V;
-    public int W;
-    public int X;
-    public int Y;
-    public int Z;
-    public final x a;
-    public int a0;
-    public final long b;
-    public int b0;
-    public final int c;
-    public boolean c0;
-    public final int d;
-    public long d0;
-    public final int e;
-    public final o f;
-    public final c g;
-    public final c h;
-    public MediaCodec n;
-    public MediaCodec o;
-    public AudioRecord p;
-    public Surface q;
-    public Thread r;
-    public Thread s;
-    public d t;
-    public d u;
-    public volatile boolean v;
-    public volatile boolean w;
-    public volatile boolean x;
-    public boolean y;
-    public int z;
-    public final AtomicBoolean i = new AtomicBoolean();
-    public final ArrayList j = new ArrayList();
-    public final AudioTimestamp k = new AudioTimestamp();
-    public final long[] l = new long[256];
-    public final long[] m = new long[256];
-    public volatile long B = Long.MAX_VALUE;
+public final class n {
+    public final l a;
+    public final l2.i b;
+    public int c = 0;
+    public int d = 0;
+    public h e;
+    public boolean f;
+    public boolean g;
 
-    public n(x xVar, long j3, int i7, int i10, int i11, o oVar, c cVar, c cVar2) {
-        this.a = xVar;
-        this.b = j3;
-        this.c = i7;
-        this.d = i10;
-        this.e = i11;
-        this.f = oVar;
-        this.g = cVar;
-        this.h = cVar2;
+    public n(l2.i iVar, l lVar) {
+        this.b = iVar;
+        this.a = lVar;
     }
 
-    public static MediaFormat c(int i7, int i10, int i11) {
-        MediaFormat createVideoFormat = MediaFormat.createVideoFormat("video/avc", i7, i7);
-        createVideoFormat.setInteger("color-format", 2130708361);
-        createVideoFormat.setInteger("bitrate", i10);
-        createVideoFormat.setInteger("frame-rate", i11);
-        createVideoFormat.setInteger("i-frame-interval", 1);
-        return createVideoFormat;
-    }
-
-    public static int f(MediaFormat mediaFormat) {
-        if (!mediaFormat.containsKey("prepend-sps-pps-to-idr-frames") || mediaFormat.getInteger("prepend-sps-pps-to-idr-frames") != 1) {
-            return 0;
+    public final void a(z10 z10Var) {
+        h hVar;
+        if (this.c != 1 || (hVar = this.e) == null) {
+            return;
         }
-        ByteBuffer byteBuffer = mediaFormat.getByteBuffer("csd-0");
-        ByteBuffer byteBuffer2 = mediaFormat.getByteBuffer("csd-1");
-        return (byteBuffer == null ? 0 : byteBuffer.remaining()) + (byteBuffer2 != null ? byteBuffer2.remaining() : 0);
-    }
-
-    public static String k(long j3, long j10) {
-        if (j3 == Long.MIN_VALUE) {
-            return "n/a";
-        }
-        return j3 + ".." + j10;
-    }
-
-    public final void a() {
-        int minBufferSize = AudioRecord.getMinBufferSize(48000, 16, 2);
-        if (minBufferSize <= 0) {
-            throw new IllegalStateException("Unsupported audio recording configuration");
-        }
-        int max = Math.max(minBufferSize * 4, TLObject.FLAG_14);
-        MediaFormat createAudioFormat = MediaFormat.createAudioFormat("audio/mp4a-latm", 48000, 1);
-        createAudioFormat.setInteger("aac-profile", 2);
-        createAudioFormat.setInteger("bitrate", 64000);
-        createAudioFormat.setInteger("max-input-size", max);
-        this.o = MediaCodec.createEncoderByType("audio/mp4a-latm");
-        this.f.b("audio encoder configure: codec=" + this.o.getName() + ", format=" + createAudioFormat + ", minBufferSize=" + minBufferSize + ", audioBufferSize=" + max);
-        this.o.configure(createAudioFormat, (Surface) null, (MediaCrypto) null, 1);
-        AudioRecord audioRecord = new AudioRecord(5, 48000, 16, 2, max);
-        this.p = audioRecord;
-        if (audioRecord.getState() != 1) {
-            throw new IllegalStateException("Unable to initialize AudioRecord");
-        }
+        this.e = null;
+        this.c = 0;
+        hVar.K = true;
+        hVar.d();
+        g0.i3(new t1(14, hVar, z10Var), 100L);
+        this.b.f();
     }
 
     public final void b() {
         int i7 = this.c;
-        int i10 = this.d;
-        int i11 = this.e;
-        MediaFormat c10 = c(i7, i10, i11);
-        MediaCodec createEncoderByType = MediaCodec.createEncoderByType("video/avc");
-        this.n = createEncoderByType;
-        MediaCodecInfo.VideoCapabilities videoCapabilities = createEncoderByType.getCodecInfo().getCapabilitiesForType("video/avc").getVideoCapabilities();
-        if (!videoCapabilities.isSizeSupported(i7, i7) || !videoCapabilities.areSizeAndRateSupported(i7, i7, i11)) {
-            throw new IOException(a8.p0.n(i11, " fps", jg.g.o("Video encoder does not support ", i7, "x", i7, " at ")));
-        }
-        this.f.b("video encoder configure: codec=" + this.n.getName() + ", format=" + c10);
-        this.n.configure(c10, (Surface) null, (MediaCrypto) null, 1);
-        this.q = this.n.createInputSurface();
-    }
-
-    public final boolean d(MediaCodec.BufferInfo bufferInfo, long j3) {
-        ByteBuffer outputBuffer;
-        int dequeueOutputBuffer = this.o.dequeueOutputBuffer(bufferInfo, j3);
-        boolean z9 = false;
-        while (true) {
-            boolean z10 = true;
-            if (dequeueOutputBuffer < 0) {
-                break;
-            }
-            if (bufferInfo.size > 0 && (bufferInfo.flags & 2) == 0 && (outputBuffer = this.o.getOutputBuffer(dequeueOutputBuffer)) != null && !this.x) {
-                if (bufferInfo.presentationTimeUs >= this.B) {
-                    this.Z++;
-                    this.a0++;
-                } else if (this.c0) {
-                    this.J++;
-                    this.H += bufferInfo.size;
-                    m(false, bufferInfo);
-                    v(false, outputBuffer, bufferInfo);
-                } else {
-                    ByteBuffer allocateDirect = ByteBuffer.allocateDirect(bufferInfo.size);
-                    int position = outputBuffer.position();
-                    int limit = outputBuffer.limit();
-                    try {
-                        outputBuffer.position(bufferInfo.offset);
-                        outputBuffer.limit(bufferInfo.offset + bufferInfo.size);
-                        allocateDirect.put(outputBuffer).flip();
-                        outputBuffer.limit(limit);
-                        outputBuffer.position(position);
-                        MediaCodec.BufferInfo bufferInfo2 = new MediaCodec.BufferInfo();
-                        bufferInfo2.set(0, bufferInfo.size, bufferInfo.presentationTimeUs, bufferInfo.flags);
-                        this.j.add(new m(allocateDirect, bufferInfo2));
-                        long j10 = this.O;
-                        if (j10 != Long.MIN_VALUE && bufferInfo.presentationTimeUs >= j10) {
-                            e(j10, false);
-                        }
-                    } catch (Throwable th2) {
-                        outputBuffer.limit(limit);
-                        outputBuffer.position(position);
-                        throw th2;
-                    }
-                }
-            }
-            if ((bufferInfo.flags & 4) == 0) {
-                z10 = false;
-            }
-            z9 |= z10;
-            this.o.releaseOutputBuffer(dequeueOutputBuffer, false);
-            dequeueOutputBuffer = this.o.dequeueOutputBuffer(bufferInfo, 0L);
-        }
-        if (dequeueOutputBuffer == -2) {
-            s(this.o.getOutputFormat(), false);
-        }
-        if (z9 && !this.c0 && this.O != Long.MIN_VALUE) {
-            e(this.O, true);
-        }
-        return z9;
-    }
-
-    public final void e(long j3, boolean z9) {
-        ArrayList arrayList = this.j;
-        if (arrayList.isEmpty()) {
+        if (i7 == 3) {
             return;
         }
-        int i7 = 0;
-        while (true) {
-            if (i7 >= arrayList.size()) {
-                i7 = -1;
-                break;
-            } else if (((m) arrayList.get(i7)).b.presentationTimeUs >= j3) {
-                break;
-            } else {
-                i7++;
-            }
-        }
-        if (i7 < 0) {
-            if (!z9) {
-                return;
-            } else {
-                i7 = arrayList.size() - 1;
-            }
-        } else if (i7 > 0 && j3 - ((m) arrayList.get(i7 - 1)).b.presentationTimeUs <= ((m) arrayList.get(i7)).b.presentationTimeUs - j3) {
-            i7--;
-        }
-        for (int i10 = 0; i10 < i7; i10++) {
-            this.Z++;
-        }
-        m mVar = (m) arrayList.get(i7);
-        this.d0 = mVar.b.presentationTimeUs - j3;
-        while (i7 < arrayList.size()) {
-            m mVar2 = (m) arrayList.get(i7);
-            ByteBuffer byteBuffer = mVar2.a;
-            MediaCodec.BufferInfo bufferInfo = mVar2.b;
-            this.J++;
-            this.H += bufferInfo.size;
-            m(false, bufferInfo);
-            v(false, byteBuffer, bufferInfo);
-            i7++;
-        }
-        arrayList.clear();
-        this.c0 = true;
-        StringBuilder t6 = a8.p0.t(j3, "A/V start aligned: videoPtsUs=", ", audioPtsUs=");
-        t6.append(mVar.b.presentationTimeUs);
-        t6.append(", deltaUs=");
-        t6.append(this.d0);
-        this.f.b(t6.toString());
-    }
-
-    public final boolean g() {
-        return (this.O == Long.MIN_VALUE || this.P == Long.MIN_VALUE || this.Q == Long.MIN_VALUE || this.R == Long.MIN_VALUE) ? false : true;
-    }
-
-    public final void h(Thread thread, long j3) {
-        if (thread == null) {
+        this.c = 3;
+        h hVar = this.e;
+        l2.i iVar = this.b;
+        l lVar = this.a;
+        if (hVar == null) {
+            lVar.V();
+            iVar.i(this, i7);
             return;
         }
-        try {
-            thread.join(j3);
-            if (thread.isAlive()) {
-                this.f.b("encoder thread did not stop: " + thread.getName());
+        this.e = null;
+        boolean z10 = i7 == 1;
+        Objects.requireNonNull(lVar);
+        vg.o oVar = new vg.o(lVar, 10);
+        if (!hVar.K) {
+            hVar.K = true;
+            hVar.d();
+            r1.g gVar = hVar.D;
+            if (gVar != null) {
+                gVar.d();
+                hVar.E.d();
             }
-        } catch (InterruptedException unused) {
-            Thread.currentThread().interrupt();
-        }
-    }
-
-    public final void i() {
-        synchronized (this) {
-            if (this.t != null && !this.v) {
-                d dVar = this.t;
-                this.t = null;
-                this.f.b("audio capture ready; waiting for common A/V start frame");
-                dVar.run();
-            }
-        }
-    }
-
-    public final void j() {
-        boolean z9;
-        synchronized (this) {
-            try {
-                z9 = true;
-                int i7 = this.z - 1;
-                this.z = i7;
-                if (!this.A || i7 != 0) {
-                    z9 = false;
-                }
-                if (z9) {
-                    this.A = false;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        if (z9) {
-            this.f.b("deferred codec release: encoder threads exited");
-            n();
-        }
-    }
-
-    public final void l(long j3) {
-        int i7;
-        long j10 = this.C;
-        long max = Math.max(0L, j10 - 256);
-        do {
-            j10--;
-            if (j10 < max) {
-                return;
+            if (z10 && hVar.g) {
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.setDuration(250L);
+                animatorSet.setInterpolator(er.f);
+                animatorSet.playTogether(ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_Y, 0.1f));
+                animatorSet.addListener(new y50(23, hVar, oVar));
+                animatorSet.start();
             } else {
-                i7 = (int) (j10 % 256);
+                hVar.f(oVar);
             }
-        } while (this.l[i7] != j3);
-        long nanoTime = System.nanoTime() - this.m[i7];
-        this.K++;
-        this.L += nanoTime;
-        this.M = Math.max(this.M, nanoTime);
-        if (this.K % 30 == 0) {
-            this.f.b("codec latency: average=" + ((this.L / this.K) / 1000000.0f) + " ms, max=" + (this.M / 1000000.0f) + " ms");
         }
+        iVar.i(this, i7);
     }
 
-    public final void m(boolean z9, MediaCodec.BufferInfo bufferInfo) {
-        long j3 = bufferInfo.presentationTimeUs;
-        if (!z9) {
-            if (this.Q == Long.MIN_VALUE) {
-                this.Q = j3;
-            }
-            long j10 = this.R;
-            if (j10 != Long.MIN_VALUE && j3 < j10) {
-                this.W++;
-            }
-            this.R = Math.max(j10, j3);
+    public final void c() {
+        h hVar = this.e;
+        if (hVar != null) {
+            hVar.k();
+        }
+        this.b.f();
+    }
+
+    public final boolean d() {
+        return this.c != 3;
+    }
+
+    public final boolean e() {
+        if (this.e == null) {
+            return false;
+        }
+        int i7 = this.c;
+        return i7 == 1 || (i7 == 2 && this.d == 1);
+    }
+
+    public final void f() {
+        int i7 = this.c;
+        if (i7 == 3) {
             return;
         }
-        if (this.O == Long.MIN_VALUE) {
-            this.O = j3;
-        }
-        long j11 = this.P;
-        if (j11 != Long.MIN_VALUE && j3 < j11) {
-            this.V++;
-        }
-        this.P = Math.max(j11, j3);
-        if ((bufferInfo.flags & 1) != 0) {
-            this.U++;
-            long j12 = this.S;
-            if (j12 != Long.MIN_VALUE) {
-                this.T = Math.max(this.T, j3 - j12);
-            }
-            this.S = j3;
-        }
-    }
-
-    public final void n() {
-        this.D = false;
-        this.E = false;
-        this.t = null;
-        this.u = null;
-        AudioRecord audioRecord = this.p;
-        if (audioRecord != null) {
-            audioRecord.release();
-            this.p = null;
-        }
-        Surface surface = this.q;
-        if (surface != null) {
-            surface.release();
-            this.q = null;
-        }
-        MediaCodec mediaCodec = this.n;
-        if (mediaCodec != null) {
-            try {
-                mediaCodec.stop();
-            } catch (IllegalStateException unused) {
-            }
-            mediaCodec.release();
-        }
-        MediaCodec mediaCodec2 = this.o;
-        if (mediaCodec2 != null) {
-            try {
-                mediaCodec2.stop();
-            } catch (IllegalStateException unused2) {
-            }
-            mediaCodec2.release();
-        }
-        this.o = null;
-        this.n = null;
-        this.s = null;
-        this.r = null;
-    }
-
-    public final void o(RuntimeException runtimeException) {
-        String str;
-        StringBuilder sb2 = new StringBuilder("codec error");
-        if (runtimeException instanceof MediaCodec.CodecException) {
-            MediaCodec.CodecException codecException = (MediaCodec.CodecException) runtimeException;
-            str = ": diagnostic=" + codecException.getDiagnosticInfo() + ", recoverable=" + codecException.isRecoverable() + ", transient=" + codecException.isTransient();
+        if (i7 != 0) {
+            b();
         } else {
-            str = "";
-        }
-        sb2.append(str);
-        this.f.a(sb2.toString(), runtimeException);
-        if (this.i.compareAndSet(false, true)) {
-            this.g.a(runtimeException);
+            this.c = 3;
+            this.b.i(this, 0);
         }
     }
 
-    public final long p() {
-        synchronized (this) {
-            try {
-                if (this.D && this.E) {
-                    if (this.v) {
-                        return this.B;
-                    }
-                    this.v = true;
-                    long max = Math.max(0L, (SystemClock.elapsedRealtimeNanos() - this.F) / 1000);
-                    this.B = max;
-                    AudioRecord audioRecord = this.p;
-                    if (audioRecord != null) {
-                        try {
-                            if (audioRecord.getRecordingState() == 3) {
-                                audioRecord.stop();
-                            }
-                        } catch (IllegalStateException e10) {
-                            this.f.a("AudioRecord stop failed", e10);
-                        }
-                    }
-                    this.f.b("recording stop boundary: presentationTimeUs=" + max);
-                    return max;
-                }
-                return Long.MAX_VALUE;
-            } finally {
-            }
-        }
-    }
-
-    public final void q() {
-        this.v = false;
-        this.w = false;
-        this.x = false;
-        this.y = false;
-        this.z = 0;
-        this.A = false;
-        this.B = Long.MAX_VALUE;
-        this.F = 0L;
-        this.H = 0L;
-        this.G = 0L;
-        this.J = 0;
-        this.I = 0;
-        this.C = 0L;
-        this.K = 0;
-        this.M = 0L;
-        this.L = 0L;
-        this.P = Long.MIN_VALUE;
-        this.O = Long.MIN_VALUE;
-        this.R = Long.MIN_VALUE;
-        this.Q = Long.MIN_VALUE;
-        this.S = Long.MIN_VALUE;
-        this.T = 0L;
-        this.U = 0;
-        this.W = 0;
-        this.V = 0;
-        this.Y = 0;
-        this.X = 0;
-        this.Z = 0;
-        this.a0 = 0;
-        this.b0 = 0;
-        this.c0 = false;
-        this.d0 = Long.MIN_VALUE;
-        this.t = null;
-        this.u = null;
-        this.j.clear();
-    }
-
-    public final long r(int i7) {
-        long max = Math.max(0L, ((SystemClock.elapsedRealtimeNanos() - this.F) / 1000) - ((i7 * 1000000) / 48000));
-        int i10 = Build.VERSION.SDK_INT;
-        o oVar = this.f;
-        if (i10 >= 24) {
-            AudioRecord audioRecord = this.p;
-            AudioTimestamp audioTimestamp = this.k;
-            if (audioRecord.getTimestamp(audioTimestamp, 1) == 0) {
-                long max2 = Math.max(0L, ((audioTimestamp.nanoTime - this.F) / 1000) - ((audioTimestamp.framePosition * 1000000) / 48000));
-                oVar.b("audio timestamp alignment: framePosition=" + audioTimestamp.framePosition + ", timestampDeltaUs=" + ((audioTimestamp.nanoTime - this.F) / 1000) + ", timestampBaseUs=" + max2 + ", readCompletionBaseUs=" + max);
-                return max2;
-            }
-        }
-        oVar.b("audio timestamp unavailable: readCompletionBaseUs=" + max);
-        return max;
-    }
-
-    public final void s(MediaFormat mediaFormat, boolean z9) {
-        if (z9) {
-            try {
-                this.N = f(mediaFormat);
-                x xVar = this.a;
-                int i7 = this.e;
-                synchronized (xVar) {
-                    xVar.s = i7;
-                }
-            } catch (u e10) {
-                if (this.x) {
-                    return;
-                }
-                this.x = true;
-                this.f.a("recording segment rejected; earlier segments are kept", e10);
-                this.h.a(e10);
-                return;
-            } catch (IOException e11) {
-                throw new IllegalStateException(e11);
-            }
-        }
-        o oVar = this.f;
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(z9 ? MediaStreamTrack.VIDEO_TRACK_KIND : MediaStreamTrack.AUDIO_TRACK_KIND);
-        sb2.append(" output format: ");
-        sb2.append(mediaFormat);
-        oVar.b(sb2.toString());
-        this.a.n(mediaFormat, z9);
-    }
-
-    public final synchronized void t(d dVar, d dVar2) {
-        if (this.E) {
-            return;
-        }
-        if (!this.D) {
-            throw new IllegalStateException("Recorder is not prepared");
-        }
-        try {
-            this.o.start();
-            this.p.startRecording();
-            if (this.p.getRecordingState() != 3) {
-                throw new IllegalStateException("Unable to start AudioRecord");
-            }
-            this.F = SystemClock.elapsedRealtimeNanos();
-            this.t = dVar;
-            this.u = dVar2;
-            this.E = true;
-            this.f.b("audio and video recording started: timeOriginNs=" + this.F + ", timelineOffsetUs=" + this.b + ", audioSessionId=" + this.p.getAudioSessionId());
-            final int i7 = 0;
-            this.r = new Thread(new Runnable(this) { // from class: wi.l
-                public final /* synthetic */ n b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    long j3;
-                    long j10;
-                    int i10 = i7;
-                    n nVar = this.b;
-                    nVar.getClass();
-                    switch (i10) {
-                        case 0:
-                            MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
-                            boolean z9 = false;
-                            while (!z9) {
-                                try {
-                                    try {
-                                    } catch (RuntimeException e10) {
-                                        if (nVar.v) {
-                                            nVar.f.a("video drain failed while stopping", e10);
-                                        } else {
-                                            nVar.o(e10);
-                                        }
-                                    }
-                                    if (nVar.w) {
-                                        nVar.j();
-                                        return;
-                                    }
-                                    int dequeueOutputBuffer = nVar.n.dequeueOutputBuffer(bufferInfo, 10000L);
-                                    if (dequeueOutputBuffer == -2) {
-                                        nVar.s(nVar.n.getOutputFormat(), true);
-                                    } else if (dequeueOutputBuffer >= 0) {
-                                        if (bufferInfo.size > 0 && (bufferInfo.flags & 2) == 0) {
-                                            if (bufferInfo.presentationTimeUs < nVar.B) {
-                                                nVar.I++;
-                                                nVar.G += bufferInfo.size;
-                                                nVar.m(true, bufferInfo);
-                                                nVar.l(bufferInfo.presentationTimeUs);
-                                                nVar.v(true, nVar.n.getOutputBuffer(dequeueOutputBuffer), bufferInfo);
-                                            } else {
-                                                nVar.b0++;
-                                            }
-                                        }
-                                        z9 = (bufferInfo.flags & 4) != 0;
-                                        nVar.n.releaseOutputBuffer(dequeueOutputBuffer, false);
-                                    }
-                                } catch (Throwable th2) {
-                                    nVar.j();
-                                    throw th2;
-                                }
-                            }
-                            nVar.j();
-                            return;
-                        default:
-                            Process.setThreadPriority(-16);
-                            MediaCodec.BufferInfo bufferInfo2 = new MediaCodec.BufferInfo();
-                            long j11 = Long.MIN_VALUE;
-                            boolean z10 = false;
-                            long j12 = Long.MIN_VALUE;
-                            boolean z11 = false;
-                            long j13 = 0;
-                            while (!z10) {
-                                try {
-                                    try {
-                                        if (!nVar.w) {
-                                            z10 = nVar.d(bufferInfo2, z11 ? 10000L : 0L);
-                                            if (!z10) {
-                                                int dequeueInputBuffer = nVar.o.dequeueInputBuffer(10000L);
-                                                if (dequeueInputBuffer >= 0) {
-                                                    if (nVar.v) {
-                                                        nVar.o.queueInputBuffer(dequeueInputBuffer, 0, 0, j12 == j11 ? 0L : j12 + ((1000000 * j13) / 48000), 4);
-                                                        z11 = true;
-                                                    } else {
-                                                        ByteBuffer inputBuffer = nVar.o.getInputBuffer(dequeueInputBuffer);
-                                                        if (inputBuffer == null) {
-                                                            nVar.o.queueInputBuffer(dequeueInputBuffer, 0, 0, 0L, 0);
-                                                        } else {
-                                                            inputBuffer.clear();
-                                                            j3 = j11;
-                                                            int read = nVar.p.read(inputBuffer, Math.min(inputBuffer.remaining(), 2048));
-                                                            if (read <= 0) {
-                                                                if (read < 0) {
-                                                                    int i11 = nVar.X + 1;
-                                                                    nVar.X = i11;
-                                                                    if (read == -6 || i11 >= 3) {
-                                                                        throw new IllegalStateException("AudioRecord read failed: " + read);
-                                                                    }
-                                                                } else {
-                                                                    nVar.Y++;
-                                                                }
-                                                                nVar.o.queueInputBuffer(dequeueInputBuffer, 0, 0, j12 == j3 ? 0L : j12 + ((1000000 * j13) / 48000), 0);
-                                                            } else {
-                                                                int i12 = read / 2;
-                                                                if (j12 == j3) {
-                                                                    long r10 = nVar.r(i12);
-                                                                    o oVar = nVar.f;
-                                                                    StringBuilder sb2 = new StringBuilder();
-                                                                    sb2.append("first audio input: basePtsUs=");
-                                                                    sb2.append(r10);
-                                                                    sb2.append(", frames=");
-                                                                    sb2.append(i12);
-                                                                    sb2.append(", timestampSource=");
-                                                                    j10 = 48000;
-                                                                    sb2.append(Build.VERSION.SDK_INT >= 24 ? "AudioTimestamp" : "read completion");
-                                                                    oVar.b(sb2.toString());
-                                                                    j12 = r10;
-                                                                } else {
-                                                                    j10 = 48000;
-                                                                }
-                                                                nVar.o.queueInputBuffer(dequeueInputBuffer, 0, i12 * 2, j12 + ((1000000 * j13) / j10), 0);
-                                                                j13 += i12;
-                                                                nVar.i();
-                                                            }
-                                                            j11 = j3;
-                                                        }
-                                                    }
-                                                }
-                                                j3 = j11;
-                                                j11 = j3;
-                                            }
-                                        }
-                                    } catch (RuntimeException e11) {
-                                        if (nVar.v) {
-                                            nVar.f.a("audio capture failed while stopping", e11);
-                                        } else {
-                                            nVar.o(e11);
-                                        }
-                                    }
-                                    nVar.j();
-                                    return;
-                                } catch (Throwable th3) {
-                                    nVar.j();
-                                    throw th3;
-                                }
-                            }
-                            nVar.j();
-                            return;
-                    }
-                }
-            }, "RoundVideoVideoEncoder");
-            final int i10 = 1;
-            this.s = new Thread(new Runnable(this) { // from class: wi.l
-                public final /* synthetic */ n b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    long j3;
-                    long j10;
-                    int i102 = i10;
-                    n nVar = this.b;
-                    nVar.getClass();
-                    switch (i102) {
-                        case 0:
-                            MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
-                            boolean z9 = false;
-                            while (!z9) {
-                                try {
-                                    try {
-                                    } catch (RuntimeException e10) {
-                                        if (nVar.v) {
-                                            nVar.f.a("video drain failed while stopping", e10);
-                                        } else {
-                                            nVar.o(e10);
-                                        }
-                                    }
-                                    if (nVar.w) {
-                                        nVar.j();
-                                        return;
-                                    }
-                                    int dequeueOutputBuffer = nVar.n.dequeueOutputBuffer(bufferInfo, 10000L);
-                                    if (dequeueOutputBuffer == -2) {
-                                        nVar.s(nVar.n.getOutputFormat(), true);
-                                    } else if (dequeueOutputBuffer >= 0) {
-                                        if (bufferInfo.size > 0 && (bufferInfo.flags & 2) == 0) {
-                                            if (bufferInfo.presentationTimeUs < nVar.B) {
-                                                nVar.I++;
-                                                nVar.G += bufferInfo.size;
-                                                nVar.m(true, bufferInfo);
-                                                nVar.l(bufferInfo.presentationTimeUs);
-                                                nVar.v(true, nVar.n.getOutputBuffer(dequeueOutputBuffer), bufferInfo);
-                                            } else {
-                                                nVar.b0++;
-                                            }
-                                        }
-                                        z9 = (bufferInfo.flags & 4) != 0;
-                                        nVar.n.releaseOutputBuffer(dequeueOutputBuffer, false);
-                                    }
-                                } catch (Throwable th2) {
-                                    nVar.j();
-                                    throw th2;
-                                }
-                            }
-                            nVar.j();
-                            return;
-                        default:
-                            Process.setThreadPriority(-16);
-                            MediaCodec.BufferInfo bufferInfo2 = new MediaCodec.BufferInfo();
-                            long j11 = Long.MIN_VALUE;
-                            boolean z10 = false;
-                            long j12 = Long.MIN_VALUE;
-                            boolean z11 = false;
-                            long j13 = 0;
-                            while (!z10) {
-                                try {
-                                    try {
-                                        if (!nVar.w) {
-                                            z10 = nVar.d(bufferInfo2, z11 ? 10000L : 0L);
-                                            if (!z10) {
-                                                int dequeueInputBuffer = nVar.o.dequeueInputBuffer(10000L);
-                                                if (dequeueInputBuffer >= 0) {
-                                                    if (nVar.v) {
-                                                        nVar.o.queueInputBuffer(dequeueInputBuffer, 0, 0, j12 == j11 ? 0L : j12 + ((1000000 * j13) / 48000), 4);
-                                                        z11 = true;
-                                                    } else {
-                                                        ByteBuffer inputBuffer = nVar.o.getInputBuffer(dequeueInputBuffer);
-                                                        if (inputBuffer == null) {
-                                                            nVar.o.queueInputBuffer(dequeueInputBuffer, 0, 0, 0L, 0);
-                                                        } else {
-                                                            inputBuffer.clear();
-                                                            j3 = j11;
-                                                            int read = nVar.p.read(inputBuffer, Math.min(inputBuffer.remaining(), 2048));
-                                                            if (read <= 0) {
-                                                                if (read < 0) {
-                                                                    int i11 = nVar.X + 1;
-                                                                    nVar.X = i11;
-                                                                    if (read == -6 || i11 >= 3) {
-                                                                        throw new IllegalStateException("AudioRecord read failed: " + read);
-                                                                    }
-                                                                } else {
-                                                                    nVar.Y++;
-                                                                }
-                                                                nVar.o.queueInputBuffer(dequeueInputBuffer, 0, 0, j12 == j3 ? 0L : j12 + ((1000000 * j13) / 48000), 0);
-                                                            } else {
-                                                                int i12 = read / 2;
-                                                                if (j12 == j3) {
-                                                                    long r10 = nVar.r(i12);
-                                                                    o oVar = nVar.f;
-                                                                    StringBuilder sb2 = new StringBuilder();
-                                                                    sb2.append("first audio input: basePtsUs=");
-                                                                    sb2.append(r10);
-                                                                    sb2.append(", frames=");
-                                                                    sb2.append(i12);
-                                                                    sb2.append(", timestampSource=");
-                                                                    j10 = 48000;
-                                                                    sb2.append(Build.VERSION.SDK_INT >= 24 ? "AudioTimestamp" : "read completion");
-                                                                    oVar.b(sb2.toString());
-                                                                    j12 = r10;
-                                                                } else {
-                                                                    j10 = 48000;
-                                                                }
-                                                                nVar.o.queueInputBuffer(dequeueInputBuffer, 0, i12 * 2, j12 + ((1000000 * j13) / j10), 0);
-                                                                j13 += i12;
-                                                                nVar.i();
-                                                            }
-                                                            j11 = j3;
-                                                        }
-                                                    }
-                                                }
-                                                j3 = j11;
-                                                j11 = j3;
-                                            }
-                                        }
-                                    } catch (RuntimeException e11) {
-                                        if (nVar.v) {
-                                            nVar.f.a("audio capture failed while stopping", e11);
-                                        } else {
-                                            nVar.o(e11);
-                                        }
-                                    }
-                                    nVar.j();
-                                    return;
-                                } catch (Throwable th3) {
-                                    nVar.j();
-                                    throw th3;
-                                }
-                            }
-                            nVar.j();
-                            return;
-                    }
-                }
-            }, "RoundVideoAudioEncoder");
-            this.z = 2;
-            this.r.start();
-            this.s.start();
-        } catch (RuntimeException e10) {
-            n();
-            throw e10;
-        }
-    }
-
-    public final void u() {
-        p();
-        synchronized (this) {
-            try {
-                if (this.D && !this.y) {
-                    if (!this.E) {
-                        n();
-                        return;
-                    }
-                    this.y = true;
-                    try {
-                        this.n.signalEndOfInputStream();
-                    } catch (IllegalStateException e10) {
-                        this.f.a("video encoder EOS failed", e10);
-                    }
-                    h(this.r, 5000L);
-                    h(this.s, 5000L);
-                    long j3 = g() ? this.Q - this.O : Long.MIN_VALUE;
-                    long j10 = g() ? this.R - this.P : Long.MIN_VALUE;
-                    long j11 = this.O;
-                    long j12 = this.P;
-                    long j13 = (j11 == Long.MIN_VALUE || j12 <= j11) ? 0L : j12 - j11;
-                    long j14 = this.Q;
-                    long j15 = this.R;
-                    long j16 = (j14 == Long.MIN_VALUE || j15 <= j14) ? 0L : j15 - j14;
-                    o oVar = this.f;
-                    StringBuilder sb2 = new StringBuilder("codec summary: videoBuffers=");
-                    sb2.append(this.I);
-                    sb2.append(", videoBytes=");
-                    sb2.append(this.G);
-                    sb2.append(", videoPts=");
-                    long j17 = j13;
-                    sb2.append(k(this.O, this.P));
-                    sb2.append(", actualVideoBitrate=");
-                    sb2.append(j17 <= 0 ? "n/a" : String.valueOf((this.G * 8000000) / j17));
-                    sb2.append(", keyframes=");
-                    sb2.append(this.U);
-                    sb2.append(", maxKeyframeIntervalUs=");
-                    sb2.append(this.T);
-                    sb2.append(", nonMonotonicVideoPts=");
-                    sb2.append(this.V);
-                    sb2.append(", audioBuffers=");
-                    sb2.append(this.J);
-                    sb2.append(", audioBytes=");
-                    sb2.append(this.H);
-                    sb2.append(", audioPts=");
-                    sb2.append(k(this.Q, this.R));
-                    sb2.append(", actualAudioBitrate=");
-                    sb2.append(j16 <= 0 ? "n/a" : String.valueOf((this.H * 8000000) / j16));
-                    sb2.append(", nonMonotonicAudioPts=");
-                    sb2.append(this.W);
-                    sb2.append(", avStartDeltaUs=");
-                    sb2.append(j3 == Long.MIN_VALUE ? "n/a" : String.valueOf(j3));
-                    sb2.append(", avEndDeltaUs=");
-                    sb2.append(j10 == Long.MIN_VALUE ? "n/a" : String.valueOf(j10));
-                    sb2.append(", audioReadErrors=");
-                    sb2.append(this.X);
-                    sb2.append(", emptyAudioReads=");
-                    sb2.append(this.Y);
-                    sb2.append(", droppedAudioBuffers=");
-                    sb2.append(this.Z);
-                    sb2.append(", droppedAudioAfterStop=");
-                    sb2.append(this.a0);
-                    sb2.append(", droppedVideoAfterStop=");
-                    sb2.append(this.b0);
-                    sb2.append(", stopPresentationTimeUs=");
-                    sb2.append(this.B == Long.MAX_VALUE ? "n/a" : Long.valueOf(this.B));
-                    sb2.append(", alignedAudioStartDeltaUs=");
-                    long j18 = this.d0;
-                    sb2.append(j18 == Long.MIN_VALUE ? "n/a" : String.valueOf(j18));
-                    sb2.append(", codecLatencyAvgMs=");
-                    int i7 = this.K;
-                    sb2.append(i7 != 0 ? Float.valueOf((this.L / i7) / 1000000.0f) : "n/a");
-                    sb2.append(", codecLatencyMaxMs=");
-                    sb2.append(this.M / 1000000.0f);
-                    oVar.b(sb2.toString());
-                    synchronized (this) {
-                        try {
-                            if (this.z > 0) {
-                                this.w = true;
-                            }
-                        } finally {
-                        }
-                    }
-                    if (this.w) {
-                        h(this.r, 1000L);
-                        h(this.s, 1000L);
-                    }
-                    synchronized (this) {
-                        try {
-                            if (this.z <= 0) {
-                                n();
-                                return;
-                            }
-                            this.A = true;
-                            this.f.b("codec release deferred until encoder threads exit: running=" + this.z);
-                        } finally {
-                        }
-                    }
-                }
-            } finally {
-            }
-        }
-    }
-
-    public final void v(boolean z9, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
+    public final o g(Activity activity, Bitmap bitmap, boolean z10) {
         int i7;
-        if (byteBuffer == null || this.x) {
-            return;
+        if (this.c != 0) {
+            throw new IllegalStateException("startFloating in state " + this.c);
         }
-        if (z9) {
-            try {
-                int i10 = this.N;
-                if (i10 > 0 && (bufferInfo.flags & 1) != 0 && (i7 = bufferInfo.size) > i10) {
-                    bufferInfo.offset += i10;
-                    bufferInfo.size = i7 - i10;
-                }
-            } catch (IOException e10) {
-                throw new IllegalStateException(e10);
+        l2.i iVar = this.b;
+        ArrayList arrayList = (ArrayList) iVar.c;
+        int i10 = 1;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            n nVar = (n) arrayList.get(size);
+            if (nVar != this && nVar.e()) {
+                nVar.b();
             }
         }
-        this.a.q(z9, byteBuffer, bufferInfo, this.b);
+        final h hVar = new h(this, activity);
+        this.e = hVar;
+        RectF rectF = new RectF();
+        l lVar = hVar.b;
+        h.j(rectF, lVar.L(), lVar.b0());
+        hVar.z = ((SharedPreferences) u7.i.b().a).getFloat("scale_factor", 1.0f);
+        Point point = g0.q;
+        hVar.A = (Math.min(point.x, point.y) - (h.m() * 2.0f)) / hVar.h();
+        hVar.x = (int) rectF.width();
+        hVar.y = (int) rectF.height();
+        hVar.B = rectF.left;
+        hVar.C = rectF.top - g0.m;
+        int L = lVar.L();
+        int b02 = lVar.b0();
+        float f10 = ((L <= 0 || b02 <= 0) ? 0.5625f : ((float) b02) / ((float) L)) < 1.0f ? 0.6f : 0.45f;
+        m51 m51Var = hVar.F;
+        m51Var.q = f10;
+        m51Var.a();
+        r1.g gVar = new r1.g(hVar, h.Q);
+        r1.h hVar2 = new r1.h();
+        hVar2.a(0.75f);
+        hVar2.b(650.0f);
+        gVar.m = hVar2;
+        final int i11 = 0;
+        gVar.a(new c(hVar, i11));
+        hVar.D = gVar;
+        r1.g gVar2 = new r1.g(hVar, h.R);
+        r1.h hVar3 = new r1.h();
+        hVar3.a(0.75f);
+        hVar3.b(650.0f);
+        gVar2.m = hVar3;
+        gVar2.a(new c(hVar, i10));
+        hVar.E = gVar2;
+        Activity activity2 = hVar.c;
+        int scaledTouchSlop = ViewConfiguration.get(activity2).getScaledTouchSlop();
+        ScaleGestureDetector scaleGestureDetector = new ScaleGestureDetector(activity2, new og.b(hVar, i10));
+        hVar.p = scaleGestureDetector;
+        scaleGestureDetector.setQuickScaleEnabled(false);
+        hVar.p.setStylusScaleEnabled(false);
+        hVar.q = new ff(activity2, new g(hVar, scaledTouchSlop));
+        hVar.i = new d(hVar, activity2, i10);
+        org.telegram.ui.e eVar = new org.telegram.ui.e(3, activity2, hVar);
+        hVar.h = eVar;
+        eVar.addView(hVar.i, ja.c(-1.0f, -1));
+        d dVar = hVar.i;
+        float L2 = g0.L(10.0f);
+        p0 p0Var = t0.a;
+        dVar.setOutlineProvider(new r0(0, L2));
+        hVar.i.setClipToOutline(true);
+        q6.h(j6.Xg, hVar.i, null);
+        ImageView imageView = new ImageView(activity2);
+        hVar.l = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+        hVar.l.setVisibility(8);
+        hVar.i.addView(hVar.l, ja.c(-1.0f, -1));
+        m51Var.n = new cf(hVar);
+        hVar.m = new d(hVar, activity2, i11);
+        d dVar2 = hVar.m;
+        Objects.requireNonNull(dVar2);
+        hVar.G = new um0(new vg.o(dVar2, 7), true);
+        hVar.m.setWillNotDraw(false);
+        hVar.m.setAlpha(0.0f);
+        View view = new View(activity2);
+        view.setBackgroundColor(1275068416);
+        hVar.m.addView(view, ja.c(-1.0f, -1));
+        int L3 = g0.L(8.0f);
+        ImageView imageView2 = new ImageView(activity2);
+        imageView2.setImageResource(R.drawable.pip_video_close);
+        int i12 = j6.Yg;
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        q6.s(imageView2, i12, null, mode);
+        int i13 = j6.i6;
+        y h02 = j6.h0(j6.x0(null, i13, false), 1, -1);
+        m6 M = q6.M(i13);
+        imageView2.setBackground(h02);
+        q6.j(imageView2, h02, null, M, null);
+        imageView2.setPadding(L3, L3, L3, L3);
+        imageView2.setOnClickListener(new View.OnClickListener() { // from class: wi.a
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                LaunchActivity launchActivity;
+                switch (i11) {
+                    case 0:
+                        hVar.a.b();
+                        break;
+                    case 1:
+                        n nVar2 = hVar.a;
+                        if (nVar2.c == 1) {
+                            l2.i iVar2 = nVar2.b;
+                            vg.o oVar = new vg.o(nVar2, 11);
+                            if (iVar2.b && (launchActivity = (LaunchActivity) iVar2.f) != null && !g0.H1(launchActivity)) {
+                                oVar.run();
+                                break;
+                            } else {
+                                ((ArrayList) iVar2.d).add(oVar);
+                                if (((LaunchActivity) iVar2.f) != null && !iVar2.a) {
+                                    try {
+                                        Intent intent = new Intent(org.telegram.messenger.t0.b, ((LaunchActivity) iVar2.f).getClass());
+                                        intent.addFlags(TLObject.FLAG_28);
+                                        org.telegram.messenger.t0.b.startActivity(intent);
+                                        break;
+                                    } catch (Exception e10) {
+                                        a8.g(e10, true);
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    default:
+                        h hVar4 = hVar;
+                        l lVar2 = hVar4.b;
+                        if (lVar2.h()) {
+                            lVar2.b();
+                        } else {
+                            if (hVar4.H) {
+                                lVar2.c(0L);
+                                hVar4.H = false;
+                            }
+                            lVar2.f();
+                        }
+                        hVar4.k();
+                        hVar4.a.b.f();
+                        break;
+                }
+            }
+        });
+        hVar.m.addView(imageView2, ja.d(38, 38.0f, 5, 0.0f, 4.0f, 4.0f, 0.0f));
+        ImageView imageView3 = new ImageView(activity2);
+        imageView3.setImageResource(R.drawable.pip_video_expand);
+        q6.s(imageView3, i12, null, mode);
+        final int i14 = 1;
+        y h03 = j6.h0(j6.x0(null, i13, false), 1, -1);
+        m6 M2 = q6.M(i13);
+        imageView3.setBackground(h03);
+        q6.j(imageView3, h03, null, M2, null);
+        imageView3.setPadding(L3, L3, L3, L3);
+        imageView3.setOnClickListener(new View.OnClickListener() { // from class: wi.a
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                LaunchActivity launchActivity;
+                switch (i14) {
+                    case 0:
+                        hVar.a.b();
+                        break;
+                    case 1:
+                        n nVar2 = hVar.a;
+                        if (nVar2.c == 1) {
+                            l2.i iVar2 = nVar2.b;
+                            vg.o oVar = new vg.o(nVar2, 11);
+                            if (iVar2.b && (launchActivity = (LaunchActivity) iVar2.f) != null && !g0.H1(launchActivity)) {
+                                oVar.run();
+                                break;
+                            } else {
+                                ((ArrayList) iVar2.d).add(oVar);
+                                if (((LaunchActivity) iVar2.f) != null && !iVar2.a) {
+                                    try {
+                                        Intent intent = new Intent(org.telegram.messenger.t0.b, ((LaunchActivity) iVar2.f).getClass());
+                                        intent.addFlags(TLObject.FLAG_28);
+                                        org.telegram.messenger.t0.b.startActivity(intent);
+                                        break;
+                                    } catch (Exception e10) {
+                                        a8.g(e10, true);
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    default:
+                        h hVar4 = hVar;
+                        l lVar2 = hVar4.b;
+                        if (lVar2.h()) {
+                            lVar2.b();
+                        } else {
+                            if (hVar4.H) {
+                                lVar2.c(0L);
+                                hVar4.H = false;
+                            }
+                            lVar2.f();
+                        }
+                        hVar4.k();
+                        hVar4.a.b.f();
+                        break;
+                }
+            }
+        });
+        hVar.m.addView(imageView3, ja.d(38, 38.0f, 5, 0.0f, 4.0f, 48.0f, 0.0f));
+        ImageView imageView4 = new ImageView(activity2);
+        hVar.n = imageView4;
+        q6.s(imageView4, i12, null, mode);
+        q6.Q(hVar.n, j6.h0(j6.x0(null, i13, false), 1, -1), null, q6.M(i13), null);
+        final int i15 = 2;
+        hVar.n.setOnClickListener(new View.OnClickListener() { // from class: wi.a
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                LaunchActivity launchActivity;
+                switch (i15) {
+                    case 0:
+                        hVar.a.b();
+                        break;
+                    case 1:
+                        n nVar2 = hVar.a;
+                        if (nVar2.c == 1) {
+                            l2.i iVar2 = nVar2.b;
+                            vg.o oVar = new vg.o(nVar2, 11);
+                            if (iVar2.b && (launchActivity = (LaunchActivity) iVar2.f) != null && !g0.H1(launchActivity)) {
+                                oVar.run();
+                                break;
+                            } else {
+                                ((ArrayList) iVar2.d).add(oVar);
+                                if (((LaunchActivity) iVar2.f) != null && !iVar2.a) {
+                                    try {
+                                        Intent intent = new Intent(org.telegram.messenger.t0.b, ((LaunchActivity) iVar2.f).getClass());
+                                        intent.addFlags(TLObject.FLAG_28);
+                                        org.telegram.messenger.t0.b.startActivity(intent);
+                                        break;
+                                    } catch (Exception e10) {
+                                        a8.g(e10, true);
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    default:
+                        h hVar4 = hVar;
+                        l lVar2 = hVar4.b;
+                        if (lVar2.h()) {
+                            lVar2.b();
+                        } else {
+                            if (hVar4.H) {
+                                lVar2.c(0L);
+                                hVar4.H = false;
+                            }
+                            lVar2.f();
+                        }
+                        hVar4.k();
+                        hVar4.a.b.f();
+                        break;
+                }
+            }
+        });
+        hVar.n.setVisibility(lVar.t0() ? 0 : 8);
+        hVar.m.addView(hVar.n, ja.e(38, 38, 17));
+        w2 w2Var = new w2(hVar, activity2);
+        hVar.o = w2Var;
+        w2Var.setVisibility(lVar.t0() ? 0 : 8);
+        hVar.m.addView(hVar.o, ja.c(-1.0f, -1));
+        hVar.i.addView(hVar.m, ja.c(-1.0f, -1));
+        View D = lVar.D();
+        hVar.k = D;
+        if (D != null) {
+            g0.E2(D);
+            hVar.i.addView(hVar.k, 0, ja.c(-1.0f, -1));
+        } else {
+            o oVar = new o(activity2);
+            hVar.j = oVar;
+            hVar.i.addView(oVar, 0, ja.c(-1.0f, -1));
+        }
+        if (bitmap != null && hVar.j != null) {
+            hVar.l.setImageBitmap(bitmap);
+            hVar.l.setVisibility(0);
+            hVar.j.setFirstFrameCallback(new b(hVar, i15));
+        }
+        hVar.a();
+        if (z10) {
+            hVar.h.setAlpha(0.0f);
+            hVar.h.setScaleX(0.1f);
+            hVar.h.setScaleY(0.1f);
+            AnimatorSet animatorSet = new AnimatorSet();
+            animatorSet.setDuration(250L);
+            animatorSet.setInterpolator(er.f);
+            i7 = 1;
+            animatorSet.playTogether(ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(hVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_Y, 1.0f));
+            animatorSet.start();
+        } else {
+            i7 = 1;
+        }
+        hVar.k();
+        o oVar2 = hVar.j;
+        this.c = i7;
+        iVar.f();
+        return oVar2;
     }
 }

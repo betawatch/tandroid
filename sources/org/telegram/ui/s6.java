@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class s6 {
     public long a;
@@ -14,7 +14,7 @@ public final class s6 {
         this.a = j3;
     }
 
-    public final void a(ci.b bVar, int i7) {
+    public final void a(ei.b bVar, int i7) {
         SparseArray sparseArray = this.d;
         t6 t6Var = (t6) sparseArray.get(i7, null);
         if (t6Var == null) {
@@ -28,7 +28,7 @@ public final class s6 {
         t6Var.b.add(bVar);
     }
 
-    public final void b(ci.b bVar) {
+    public final void b(ei.b bVar) {
         t6 t6Var = (t6) this.d.get(bVar.d, null);
         if (t6Var != null && t6Var.b.remove(bVar)) {
             long j3 = t6Var.a;

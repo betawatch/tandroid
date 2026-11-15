@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r7 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,13 +26,13 @@ public final /* synthetic */ class r7 implements Runnable {
                     }
                 }
                 if (r2.a) {
-                    w7.J.a(w7Var.H);
-                    w7.J.d(w7Var.H, 10000L);
+                    w7.K.a(w7Var.I);
+                    w7.K.d(w7Var.I, 10000L);
                     break;
                 }
                 break;
             default:
-                this.b.getNotificationCenter().k(qs.b5, new Object[0]);
+                this.b.getNotificationCenter().k(ns.b5, new Object[0]);
                 break;
         }
     }

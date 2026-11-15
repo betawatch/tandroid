@@ -1,16 +1,16 @@
 package fh;
 
-import a8.m7;
+import a8.n7;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import c8.j9;
-import org.telegram.messenger.camera.q;
+import c8.i9;
+import org.telegram.messenger.i20;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class f {
     public int d;
@@ -52,7 +52,7 @@ public final class f {
         float f12;
         float f13;
         float[] fArr2 = this.b;
-        this.l = m7.a(fArr2);
+        this.l = n7.a(fArr2);
         Rect rect = this.a;
         Rect rect2 = this.m;
         rect2.set(rect);
@@ -64,7 +64,7 @@ public final class f {
         path.rewind();
         if (e()) {
             int i10 = this.n;
-            boolean z9 = i10 == 0 || i10 == 2;
+            boolean z10 = i10 == 0 || i10 == 2;
             if (i10 == 0) {
                 rectF.left += this.p;
             } else if (i10 == 1) {
@@ -74,8 +74,8 @@ public final class f {
             } else {
                 rectF.right -= this.p;
             }
-            float height = z9 ? rectF.height() : rectF.width();
-            float width = z9 ? rectF.width() : rectF.height();
+            float height = z10 ? rectF.height() : rectF.width();
+            float width = z10 ? rectF.width() : rectF.height();
             int i11 = this.n;
             int i12 = i11 != 0 ? i11 != 1 ? i11 != 2 ? 2 : 1 : 0 : 3;
             float f14 = 2.0f;
@@ -99,7 +99,7 @@ public final class f {
             float min = Math.min(this.q, f19);
             float f20 = this.r;
             Math.sqrt(0.5d);
-            float b10 = q.b(min, f20, ((float) Math.sqrt(2.0d)) - 1.0f, f19);
+            float b10 = i20.b(min, f20, ((float) Math.sqrt(2.0d)) - 1.0f, f19);
             this.u = b10;
             int i14 = this.n;
             if (i14 != 0) {
@@ -123,7 +123,7 @@ public final class f {
             float f22 = f15 + b10;
             float f23 = f11 - f16;
             float f24 = f23 - b10;
-            float a10 = f22 <= f24 ? j9.a(f21, f22, f24) : f11 / f10;
+            float a10 = f22 <= f24 ? i9.a(f21, f22, f24) : f11 / f10;
             this.t = a10;
             this.v = a10 - f15;
             this.w = f23 - a10;
@@ -200,15 +200,15 @@ public final class f {
         canvas.drawRoundRect(f10, f11, f12, f13, f14, f14, paint);
     }
 
-    public final void d(Canvas canvas, Paint paint, boolean z9) {
-        if (!z9 || e()) {
+    public final void d(Canvas canvas, Paint paint, boolean z10) {
+        if (!z10 || e()) {
             c(canvas, paint);
             return;
         }
         Rect rect = this.m;
         float f10 = rect.top;
         float[] fArr = this.b;
-        float a10 = j9.a((fArr[0] * 2.0f) + f10, f10, rect.bottom);
+        float a10 = i9.a((fArr[0] * 2.0f) + f10, f10, rect.bottom);
         canvas.save();
         Rect rect2 = this.a;
         canvas.clipRect(rect2.left, rect2.top, rect2.right, a10);

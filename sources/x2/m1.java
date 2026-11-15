@@ -1,6 +1,6 @@
 package x2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m1 implements b1 {
     public final b1 a;
@@ -22,16 +22,16 @@ public final class m1 implements b1 {
     }
 
     @Override // x2.b1
-    public final int l(long j3) {
-        return this.a.l(j3 - this.b);
+    public final int n(long j3) {
+        return this.a.n(j3 - this.b);
     }
 
     @Override // x2.b1
-    public final int m(wf.b bVar, k2.h hVar, int i7) {
-        int m10 = this.a.m(bVar, hVar, i7);
-        if (m10 == -4) {
+    public final int q(k8.a aVar, k2.h hVar, int i7) {
+        int q10 = this.a.q(aVar, hVar, i7);
+        if (q10 == -4) {
             hVar.e += this.b;
         }
-        return m10;
+        return q10;
     }
 }

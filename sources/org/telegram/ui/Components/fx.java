@@ -1,37 +1,50 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class fx implements ux {
-    public final /* synthetic */ gx a;
+public final class fx extends c5.a {
+    public final /* synthetic */ ly c;
 
-    public fx(gx gxVar) {
-        this.a = gxVar;
+    public fx(ly lyVar) {
+        this.c = lyVar;
     }
 
-    @Override // org.telegram.ui.Components.ux
-    public final void e() {
-        gx gxVar = this.a;
-        if (gxVar.F.V.F) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        gxVar.F.V.e(true);
-        gx.E(gxVar, new ro(14, this, arrayList), arrayList, true);
+    @Override // c5.a
+    public final void a(c5.l lVar, Object obj) {
+        lVar.removeView((View) obj);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
-        String str = this.a.w;
-        ro roVar = new ro(13, this, str);
-        if (org.telegram.messenger.i6.d(str)) {
-            zu0.F3.c(org.telegram.messenger.p10.s0, str, new org.telegram.messenger.voip.k(28, linkedHashSet, roVar));
-        } else {
-            roVar.run();
+    @Override // c5.a
+    public final int b() {
+        return this.c.e.size();
+    }
+
+    @Override // c5.a
+    public final CharSequence d(int i7) {
+        if (i7 == 0) {
+            return org.telegram.messenger.hd.M0(2131751196, null);
         }
+        if (i7 == 1) {
+            return org.telegram.messenger.hd.M0(2131754879, null);
+        }
+        if (i7 != 2) {
+            return null;
+        }
+        return org.telegram.messenger.hd.M0(2131754756, null);
+    }
+
+    @Override // c5.a
+    public final Object e(c5.l lVar, int i7) {
+        FrameLayout frameLayout = ((hy) this.c.e.get(i7)).b;
+        lVar.addView(frameLayout);
+        return frameLayout;
+    }
+
+    @Override // c5.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

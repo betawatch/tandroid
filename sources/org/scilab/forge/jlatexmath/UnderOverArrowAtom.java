@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class UnderOverArrowAtom extends Atom {
     private Atom base;
@@ -8,11 +8,11 @@ public class UnderOverArrowAtom extends Atom {
     private boolean left;
     private boolean over;
 
-    public UnderOverArrowAtom(Atom atom, boolean z9, boolean z10) {
+    public UnderOverArrowAtom(Atom atom, boolean z10, boolean z11) {
         this.dble = false;
         this.base = atom;
-        this.left = z9;
-        this.over = z10;
+        this.left = z10;
+        this.over = z11;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -46,10 +46,10 @@ public class UnderOverArrowAtom extends Atom {
         return verticalBox;
     }
 
-    public UnderOverArrowAtom(Atom atom, boolean z9) {
+    public UnderOverArrowAtom(Atom atom, boolean z10) {
         this.left = false;
         this.base = atom;
-        this.over = z9;
+        this.over = z10;
         this.dble = true;
     }
 }

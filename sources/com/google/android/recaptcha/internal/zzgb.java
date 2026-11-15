@@ -1,17 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import a8.ab;
+import a8.bb;
 import af.b;
 import com.google.android.recaptcha.RecaptchaAction;
 import gd.c;
 import java.util.concurrent.TimeUnit;
+import jd.a;
 import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 import rd.l;
 import zd.b0;
 import zd.s;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzgb implements zzdw {
     private final zzfp zza;
@@ -25,7 +26,7 @@ public final class zzgb implements zzdw {
         zzdu zzduVar;
         this.zza = zzfpVar;
         int i7 = zzby.zza;
-        this.zzc = ab.b(zzfv.zza);
+        this.zzc = bb.b(zzfv.zza);
         zzduVar = zzdv.zza;
         this.zzf = zzduVar;
     }
@@ -58,7 +59,7 @@ public final class zzgb implements zzdw {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzfrVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzfrVar.zza;
-                Object obj2 = jd.a.a;
+                Object obj2 = a.a;
                 i7 = zzfrVar.zzc;
                 if (i7 != 0) {
                     b.c(obj);
@@ -82,7 +83,7 @@ public final class zzgb implements zzdw {
         }
         zzfrVar = new zzfr(this, cVar);
         Object obj3 = zzfrVar.zza;
-        Object obj22 = jd.a.a;
+        Object obj22 = a.a;
         i7 = zzfrVar.zzc;
         if (i7 != 0) {
         }

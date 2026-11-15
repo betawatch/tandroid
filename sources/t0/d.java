@@ -7,9 +7,9 @@ import android.os.ResultReceiver;
 import android.text.TextUtils;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d extends InputConnectionWrapper {
     public final /* synthetic */ e a;
@@ -26,10 +26,10 @@ public final class d extends InputConnectionWrapper {
         Object[] objArr;
         ResultReceiver resultReceiver;
         e eVar = this.a;
-        boolean z9 = false;
-        z9 = false;
-        z9 = false;
-        z9 = false;
+        boolean z10 = false;
+        z10 = false;
+        z10 = false;
+        z10 = false;
         if (bundle != null) {
             if (TextUtils.equals("androidx.core.view.inputmethod.InputConnectionCompat.COMMIT_CONTENT", str)) {
                 objArr = false;
@@ -45,10 +45,10 @@ public final class d extends InputConnectionWrapper {
                     int i7 = bundle.getInt(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS");
                     Bundle bundle2 = (Bundle) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_OPTS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_OPTS");
                     if (uri != null && clipDescription != null) {
-                        z9 = eVar.k(new qt(uri, clipDescription, uri2), i7, bundle2);
+                        z10 = eVar.o(new ff(uri, clipDescription, uri2), i7, bundle2);
                     }
                     if (resultReceiver != null) {
-                        resultReceiver.send(z9 ? 1 : 0, null);
+                        resultReceiver.send(z10 ? 1 : 0, null);
                     }
                 } catch (Throwable th2) {
                     th = th2;
@@ -62,7 +62,7 @@ public final class d extends InputConnectionWrapper {
                 resultReceiver = null;
             }
         }
-        if (z9) {
+        if (z10) {
             return true;
         }
         return super.performPrivateCommand(str, bundle);

@@ -1,41 +1,67 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class fi0 {
-    public final LaunchActivity a;
-    public final ArrayList b = new ArrayList();
-    public int c = TLObject.FLAG_31;
+public final /* synthetic */ class fi0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PasscodeActivity b;
 
-    public fi0(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+    public /* synthetic */ fi0(PasscodeActivity passcodeActivity, int i7) {
+        this.a = i7;
+        this.b = passcodeActivity;
     }
 
-    public final void a() {
-        boolean isEmpty = this.b.isEmpty();
-        LaunchActivity launchActivity = this.a;
-        try {
-            if (isEmpty || launchActivity.getResources().getConfiguration().smallestScreenWidthDp >= 600 || (Build.VERSION.SDK_INT >= 24 && launchActivity.isInMultiWindowMode())) {
-                int i7 = this.c;
-                if (i7 != Integer.MIN_VALUE) {
-                    launchActivity.setRequestedOrientation(i7);
-                    this.c = TLObject.FLAG_31;
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                PasscodeActivity passcodeActivity = this.b;
+                passcodeActivity.n.postDelayed(passcodeActivity.T, 3000L);
+                passcodeActivity.S = true;
+                break;
+            case 1:
+                PasscodeActivity passcodeActivity2 = this.b;
+                fy0 fy0Var = passcodeActivity2.W;
+                if (fy0Var != null) {
+                    org.telegram.messenger.g0.h3(fy0Var);
+                    passcodeActivity2.W = null;
                 }
-                return;
-            }
-            if (this.c == Integer.MIN_VALUE) {
-                this.c = launchActivity.getRequestedOrientation();
-            }
-            if (launchActivity.getRequestedOrientation() != 1) {
-                launchActivity.setRequestedOrientation(1);
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+                passcodeActivity2.finishFragment();
+                break;
+            case 2:
+                PasscodeActivity passcodeActivity3 = new PasscodeActivity(0);
+                PasscodeActivity passcodeActivity4 = this.b;
+                passcodeActivity4.presentFragment(passcodeActivity3, true);
+                m90 m90Var = passcodeActivity4.V;
+                if (m90Var != null) {
+                    org.telegram.messenger.g0.h3(m90Var);
+                    passcodeActivity4.V = null;
+                    break;
+                }
+                break;
+            case 3:
+                PasscodeActivity passcodeActivity5 = this.b;
+                org.telegram.messenger.g0.i3(new fi0(passcodeActivity5, 4), passcodeActivity5.s0() ? 150L : 1000L);
+                break;
+            case 4:
+                PasscodeActivity passcodeActivity6 = this.b;
+                if (passcodeActivity6.s0()) {
+                    for (dr drVar : passcodeActivity6.n.f) {
+                        drVar.A(0.0f);
+                    }
+                    break;
+                } else {
+                    passcodeActivity6.f.a(0.0f);
+                    break;
+                }
+            case 5:
+                PasscodeActivity passcodeActivity7 = this.b;
+                passcodeActivity7.S = false;
+                org.telegram.messenger.g0.W3(passcodeActivity7.r, false);
+                break;
+            default:
+                this.b.y0();
+                break;
         }
     }
 }

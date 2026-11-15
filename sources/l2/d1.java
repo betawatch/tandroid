@@ -1,38 +1,15 @@
 package l2;
 
-import android.util.Pair;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g1 b;
-    public final /* synthetic */ Pair c;
-    public final /* synthetic */ x2.b0 d;
+public final class d1 {
+    public final x2.a a;
+    public final y0 b;
+    public final c1 c;
 
-    public /* synthetic */ d1(g1 g1Var, Pair pair, x2.b0 b0Var, int i7) {
-        this.a = i7;
-        this.b = g1Var;
-        this.c = pair;
-        this.d = b0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                m2.e eVar = this.b.b.h;
-                Pair pair = this.c;
-                int intValue = ((Integer) pair.first).intValue();
-                x2.f0 f0Var = (x2.f0) pair.second;
-                f0Var.getClass();
-                eVar.E(intValue, f0Var, this.d);
-                break;
-            default:
-                m2.e eVar2 = this.b.b.h;
-                Pair pair2 = this.c;
-                eVar2.d(((Integer) pair2.first).intValue(), (x2.f0) pair2.second, this.d);
-                break;
-        }
+    public d1(x2.a aVar, y0 y0Var, c1 c1Var) {
+        this.a = aVar;
+        this.b = y0Var;
+        this.c = c1Var;
     }
 }

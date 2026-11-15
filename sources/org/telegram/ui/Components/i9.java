@@ -1,7 +1,337 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface i9 {
-    void dispose();
+public class i9 extends View {
+    public oy0 E;
+    public Path F;
+    public ColorMatrixColorFilter G;
+    public ImageReceiver a;
+    public ImageReceiver b;
+    public int c;
+    public int d;
+    public g5 e;
+    public ColorFilter f;
+    public t8 h;
+    public boolean n;
+    public boolean r;
+    public boolean s;
+    public boolean w;
+    public boolean x;
+    public ValueAnimator y;
+
+    public i9(Context context) {
+        super(context);
+        this.c = -1;
+        this.d = -1;
+        this.x = true;
+        ImageReceiver c10 = c();
+        this.a = c10;
+        c10.o1 = 0.0f;
+        c10.A1 = true;
+        c10.h1 = new s(this, 14);
+    }
+
+    public final void a() {
+        Bitmap n10;
+        if (!this.r || this.b.n() != null || this.a.n() == null || (n10 = this.a.n()) == null || n10.isRecycled()) {
+            return;
+        }
+        this.b.v0(Utilities.D(n10, false));
+        invalidate();
+    }
+
+    public final void b() {
+        this.a.f();
+    }
+
+    public ImageReceiver c() {
+        return new ImageReceiver(this);
+    }
+
+    public final void e() {
+        if (this.r) {
+            if (this.b.n() != null && !this.b.n().isRecycled()) {
+                this.b.n().recycle();
+            }
+            this.b.w0(null);
+            a();
+        }
+    }
+
+    public final void f(TLObject tLObject, t8 t8Var) {
+        this.a.i0(tLObject, t8Var, null);
+        e();
+    }
+
+    public final void g(int i7, long j3, Object obj, String str, String str2, String str3, org.telegram.messenger.gc gcVar, org.telegram.messenger.gc gcVar2) {
+        this.a.r0(gcVar, str, gcVar2, str2, null, j3, str3, obj, i7);
+        e();
+    }
+
+    public g5 getAnimatedEmojiDrawable() {
+        return this.e;
+    }
+
+    public t8 getAvatarDrawable() {
+        if (this.h == null) {
+            this.h = new t8((org.telegram.ui.ActionBar.e6) null);
+        }
+        return this.h;
+    }
+
+    public ImageReceiver getImageReceiver() {
+        return this.a;
+    }
+
+    public int[] getRoundRadius() {
+        return this.a.X0;
+    }
+
+    public final void h(String str, String str2, Drawable drawable) {
+        n(org.telegram.messenger.gc.g(str), str2, null, null, drawable, null, 0, null);
+    }
+
+    public final void j(org.telegram.messenger.gc gcVar, String str, Drawable drawable, Object obj) {
+        n(gcVar, str, null, null, drawable, null, 0, obj);
+    }
+
+    public final void k(org.telegram.messenger.gc gcVar, String str, String str2, Drawable drawable, Object obj) {
+        n(gcVar, str, null, null, drawable, str2, 0, obj);
+    }
+
+    public final void l(org.telegram.messenger.gc gcVar, String str, org.telegram.messenger.gc gcVar2, String str2, int i7, Object obj) {
+        n(gcVar, str, gcVar2, str2, null, null, i7, obj);
+    }
+
+    public final void m(org.telegram.messenger.gc gcVar, String str, org.telegram.messenger.gc gcVar2, String str2, Drawable drawable, Object obj) {
+        this.a.u0(gcVar, str, gcVar2, str2, null, null, drawable, 0L, null, obj, 1);
+        e();
+    }
+
+    public final void n(org.telegram.messenger.gc gcVar, String str, org.telegram.messenger.gc gcVar2, String str2, Drawable drawable, String str3, int i7, Object obj) {
+        this.a.r0(gcVar, str, gcVar2, str2, drawable, i7, str3, obj, 0);
+        e();
+    }
+
+    @Override // android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.n = true;
+        if (this.x) {
+            this.a.P();
+        }
+        if (this.s) {
+            this.b.P();
+        }
+        g5 g5Var = this.e;
+        if (g5Var != null) {
+            g5Var.a(this);
+        }
+    }
+
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.n = false;
+        if (this.x) {
+            this.a.R();
+        }
+        if (this.s) {
+            this.b.R();
+        }
+        g5 g5Var = this.e;
+        if (g5Var != null) {
+            g5Var.n(this);
+        }
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        int i7;
+        ColorFilter colorFilter;
+        g5 g5Var = this.e;
+        ImageReceiver imageReceiver = g5Var != null ? g5Var.k : this.a;
+        if (imageReceiver == null) {
+            return;
+        }
+        if (g5Var != null && (colorFilter = this.f) != null) {
+            g5Var.setColorFilter(colorFilter);
+        }
+        int i10 = this.c;
+        if (i10 == -1 || (i7 = this.d) == -1) {
+            imageReceiver.y0(0.0f, 0.0f, getWidth(), getHeight());
+            if (this.s) {
+                this.b.y0(0.0f, 0.0f, getWidth(), getHeight());
+            }
+        } else if (this.w) {
+            imageReceiver.y0(0.0f, 0.0f, i10, i7);
+            if (this.s) {
+                this.b.y0(0.0f, 0.0f, this.c, this.d);
+            }
+        } else {
+            float width = (getWidth() - this.c) / 2;
+            int height = getHeight();
+            imageReceiver.y0(width, (height - r3) / 2, this.c, this.d);
+            if (this.s) {
+                ImageReceiver imageReceiver2 = this.b;
+                float width2 = (getWidth() - this.c) / 2;
+                int height2 = getHeight();
+                imageReceiver2.y0(width2, (height2 - r4) / 2, this.c, this.d);
+            }
+        }
+        imageReceiver.h(canvas, null);
+        if (this.s) {
+            this.b.h(canvas, null);
+        }
+    }
+
+    public final void p(org.telegram.messenger.gc gcVar, String str, Drawable drawable, Object obj) {
+        n(gcVar, str, null, null, drawable, null, 0, obj);
+    }
+
+    public final void q(g51 g51Var, org.telegram.messenger.gc gcVar, String str, org.telegram.messenger.gc gcVar2, org.telegram.messenger.gc gcVar3, String str2, int i7, String str3) {
+        if (g51Var != null) {
+            this.a.w0(g51Var);
+        } else {
+            this.a.u0(gcVar, str, gcVar2, null, gcVar3, str2, null, i7, null, str3, 1);
+        }
+        e();
+    }
+
+    public final void r() {
+        this.a.G0(0, 0, true);
+    }
+
+    public final void s(int i7, int i10, boolean z10) {
+        this.a.G0(i7, i10, true);
+    }
+
+    public void setAnimatedEmojiDrawable(g5 g5Var) {
+        g5 g5Var2 = this.e;
+        if (g5Var2 == g5Var) {
+            return;
+        }
+        if (this.n && g5Var2 != null) {
+            g5Var2.n(this);
+        }
+        this.e = g5Var;
+        if (this.n && g5Var != null) {
+            g5Var.a(this);
+        }
+        invalidate();
+    }
+
+    public void setAspectFit(boolean z10) {
+        this.a.S0 = z10;
+    }
+
+    public void setBlurAllowed(boolean z10) {
+        if (this.n) {
+            throw new IllegalStateException("You should call setBlurAllowed(...) only when detached!");
+        }
+        this.s = z10;
+        if (z10) {
+            this.b = new ImageReceiver(null);
+        }
+    }
+
+    public void setBlurredText(CharSequence charSequence) {
+        if (TextUtils.isEmpty(charSequence)) {
+            this.E = null;
+            return;
+        }
+        this.E = new oy0(charSequence, 16.5f, org.telegram.messenger.g0.o());
+        if (this.G == null) {
+            ColorMatrix colorMatrix = new ColorMatrix();
+            colorMatrix.setSaturation(1.2f);
+            org.telegram.messenger.g0.h(colorMatrix, -0.2f);
+            this.G = new ColorMatrixColorFilter(colorMatrix);
+        }
+    }
+
+    public void setColorFilter(ColorFilter colorFilter) {
+        this.a.p1 = colorFilter;
+    }
+
+    public void setEmojiColorFilter(ColorFilter colorFilter) {
+        this.f = colorFilter;
+        invalidate();
+    }
+
+    public void setHasBlur(boolean z10) {
+        if (z10 && !this.s) {
+            throw new IllegalStateException("You should call setBlurAllowed(...) before calling setHasBlur(true)!");
+        }
+        this.r = z10;
+        if (!z10) {
+            if (this.b.n() != null && !this.b.n().isRecycled()) {
+                this.b.n().recycle();
+            }
+            this.b.w0(null);
+        }
+        a();
+    }
+
+    public void setImageBitmap(Bitmap bitmap) {
+        this.a.v0(bitmap);
+        e();
+    }
+
+    public void setImageDrawable(Drawable drawable) {
+        this.a.w0(drawable);
+        e();
+    }
+
+    public void setImageResource(int i7) {
+        this.a.w0(getResources().getDrawable(i7));
+        invalidate();
+        e();
+    }
+
+    public void setLayerNum(int i7) {
+        this.a.E0(i7);
+    }
+
+    public void setRoundRadius(int i7) {
+        this.a.J0(i7);
+        if (this.s) {
+            this.b.J0(i7);
+        }
+        invalidate();
+    }
+
+    public final void t(int i7, int i10, int i11, int i12) {
+        this.a.K0(i7, i10, i11, i12);
+        if (this.s) {
+            this.b.K0(i7, i10, i11, i12);
+        }
+        invalidate();
+    }
+
+    public final void u(int i7, int i10) {
+        this.c = i7;
+        this.d = i10;
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.a.t() || drawable == this.a.T || super.verifyDrawable(drawable);
+    }
 }

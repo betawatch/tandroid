@@ -1,201 +1,274 @@
 package org.telegram.messenger;
 
+import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.media.MediaDescription;
+import android.media.browse.MediaBrowser;
+import android.net.Uri;
 import android.os.Bundle;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.math.BigInteger;
+import android.os.SystemClock;
+import android.service.media.MediaBrowserService;
+import android.support.v4.media.session.PlaybackStateCompat;
+import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.regex.Pattern;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ik0;
-import org.telegram.ui.xn0;
-import org.telegram.ui.yc1;
-import org.telegram.ui.zc1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class uz implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class uz {
+    public static volatile uz p;
+    public final Context a;
+    public final android.support.v4.media.session.a0 b;
+    public int c;
+    public long d;
+    public boolean e;
+    public boolean f;
+    public Paint m;
+    public RectF n;
+    public final ArrayList g = new ArrayList();
+    public final a0.h h = new a0.h();
+    public final a0.h i = new a0.h();
+    public final a0.h j = new a0.h();
+    public final a0.h k = new a0.h();
+    public final a0.h l = new a0.h();
+    public final ArrayList o = new ArrayList();
 
-    public /* synthetic */ uz(Object obj, Object obj2, Object obj3, int i7) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public uz(Context context) {
+        this.a = context;
+        int i7 = m10.t0;
+        this.c = i7;
+        this.d = g0.b1(np.s1(i7).e7, "auto_lastSelectedDialog", 0L);
+        android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(context, "TelegramMediaSession", (ComponentName) null, (PendingIntent) null);
+        this.b = a0Var;
+        android.support.v4.media.session.u uVar = (android.support.v4.media.session.u) a0Var.b;
+        uVar.a.setFlags(3);
+        a0Var.r(new tz(this), null);
+        uVar.a.setSessionActivity(PendingIntent.getActivity(context, 99, new Intent(context, (Class<?>) LaunchActivity.class), 167772160));
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("com.google.android.gms.car.media.ALWAYS_RESERVE_SPACE_FOR.ACTION_QUEUE", true);
+        bundle.putBoolean("com.google.android.gms.car.media.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", true);
+        bundle.putBoolean("com.google.android.gms.car.media.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", true);
+        uVar.a.setExtras(bundle);
+        a0Var.q(true);
+        ArrayList arrayList = new ArrayList();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        gj gjVar = MediaController.B().v0;
+        if (gjVar != null) {
+            r3 = MediaController.B().H() ? 2477828L : 2477830L;
+            if (gjVar.I3()) {
+                r3 |= 48;
+            }
+        }
+        a0Var.t(new PlaybackStateCompat(0, 0L, 0L, 1.0f, r3, 0, null, elapsedRealtime, arrayList, -1L, null));
+        f();
+        a0Var.w(gz.N0 ? 1 : 0);
+        ns.e().b(new h5(this, 1), ns.c4);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((vz) this.b).q((String) this.c, (Bundle) this.d);
-                break;
-            case 1:
-                f10 f10Var = (f10) this.b;
-                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
-                d10 d10Var = (d10) this.d;
-                storyItem.detectedLng = "und";
-                f10Var.getMessagesController().P1().k.h(storyItem.dialogId, storyItem);
-                f10Var.I.remove(d10Var);
-                break;
-            case 2:
-                int[] iArr = (int[]) this.b;
-                c20[] c20VarArr = (c20[]) this.c;
-                Runnable runnable = (Runnable) this.d;
-                Pattern pattern = Utilities.a;
-                int i7 = iArr[0] + 1;
-                iArr[0] = i7;
-                if (i7 == c20VarArr.length && runnable != null) {
-                    runnable.run();
+    public static uz a(MusicBrowserService musicBrowserService) {
+        if (p == null) {
+            synchronized (uz.class) {
+                try {
+                    if (p == null) {
+                        p = new uz(musicBrowserService.getApplicationContext());
+                    }
+                } finally {
+                }
+            }
+        }
+        return p;
+    }
+
+    public static boolean b() {
+        int i7;
+        int elapsedRealtime = (int) (SystemClock.elapsedRealtime() / 1000);
+        if (gz.s.length() <= 0) {
+            return false;
+        }
+        if (gz.x) {
+            return true;
+        }
+        return !(gz.y == 0 || (i7 = gz.B) == 0 || i7 + gz.y > elapsedRealtime) || elapsedRealtime + 5 < gz.B;
+    }
+
+    public final void c(String str, j1 j1Var) {
+        long j3;
+        if (!this.e) {
+            this.o.add(new rz(str, j1Var));
+            if (this.f) {
+                return;
+            }
+            this.f = true;
+            int i7 = this.c;
+            vr a02 = vr.a0(i7);
+            a02.a.c(new l7(this, a02, i7, 22));
+            return;
+        }
+        if (str != null && str.startsWith("__CHAT_")) {
+            try {
+                j3 = Long.parseLong(str.substring(7));
+            } catch (Exception e10) {
+                a8.g(e10, true);
+            }
+            if (j3 == 0 && this.j.f(j3) == null) {
+                e(new kg((Object) this, (Object) j1Var, str, 29), j3);
+                return;
+            } else {
+                ((MediaBrowserService.Result) j1Var.b).sendResult(d(str));
+            }
+        }
+        j3 = 0;
+        if (j3 == 0) {
+        }
+        ((MediaBrowserService.Result) j1Var.b).sendResult(d(str));
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0062, code lost:
+    
+        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L18;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0085, code lost:
+    
+        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L18;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0090  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final ArrayList d(String str) {
+        long j3;
+        TLRPC.FileLocation fileLocation;
+        TLRPC.FileLocation fileLocation2;
+        ArrayList arrayList = new ArrayList();
+        int i7 = 0;
+        if ("__ROOT__".equals(str)) {
+            int i10 = 0;
+            while (true) {
+                ArrayList arrayList2 = this.g;
+                if (i10 >= arrayList2.size()) {
                     break;
                 }
-                break;
-            default:
-                String str = (String) this.c;
-                String str2 = (String) this.b;
-                byte[] bArr = (byte[]) this.d;
-                int i10 = WearAuthListenerService.r;
-                str.getClass();
-                if (str.equals("/tg-wear-auth/offer")) {
-                    StringBuilder u10 = a8.p0.u("wear-auth: offer from ", str2, " (");
-                    u10.append(bArr.length);
-                    u10.append(" bytes)");
-                    a8.b(u10.toString());
-                    BigInteger bigInteger = zc1.a;
-                    if (bArr.length != 272) {
-                        a8.b("wear-auth: malformed offer (" + bArr.length + ")");
-                        break;
+                long longValue = ((Long) arrayList2.get(i10)).longValue();
+                MediaDescription.Builder mediaId = new MediaDescription.Builder().setMediaId("__CHAT_" + longValue);
+                Bitmap bitmap = null;
+                if (m5.E(longValue)) {
+                    TLRPC.User user = (TLRPC.User) this.h.f(longValue);
+                    if (user != null) {
+                        mediaId.setTitle(g5.m(i7, user.first_name, user.last_name));
+                        TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
+                        if (userProfilePhoto != null) {
+                            fileLocation2 = userProfilePhoto.photo_small;
+                        }
                     } else {
-                        byte[] copyOfRange = Arrays.copyOfRange(bArr, 0, 16);
-                        byte[] copyOfRange2 = Arrays.copyOfRange(bArr, 16, bArr.length);
-                        a8.r7 r7Var = zc1.d;
-                        if (r7Var != null && Arrays.equals((byte[]) r7Var.b, copyOfRange)) {
-                            a8.b("wear-auth: duplicate offer (same sessionId) — ignoring");
-                            break;
-                        } else {
-                            a8.b("wear-auth: new session " + zc1.d(copyOfRange) + " from " + str2);
-                            zc1.d = new a8.r7(copyOfRange, copyOfRange2, str2);
-                            Context context = LaunchActivity.G1;
-                            if (context == null) {
-                                context = t0.b;
+                        mediaId.setTitle("DELETED USER");
+                    }
+                    fileLocation2 = null;
+                } else {
+                    TLRPC.Chat chat = (TLRPC.Chat) this.i.f(-longValue);
+                    if (chat != null) {
+                        mediaId.setTitle(chat.title);
+                        TLRPC.ChatPhoto chatPhoto = chat.photo;
+                        if (chatPhoto != null) {
+                            fileLocation2 = chatPhoto.photo_small;
+                        }
+                    } else {
+                        mediaId.setTitle("DELETED CHAT");
+                    }
+                    fileLocation = null;
+                    if (fileLocation != null) {
+                        w7.G(this.c);
+                        File J = w7.J(fileLocation, null, true, true);
+                        try {
+                            BitmapFactory.Options options = new BitmapFactory.Options();
+                            options.inSampleSize = 2;
+                            Bitmap decodeFile = BitmapFactory.decodeFile(J.toString(), options);
+                            if (decodeFile != null) {
+                                Bitmap createBitmap = Bitmap.createBitmap(decodeFile.getWidth(), decodeFile.getHeight(), Bitmap.Config.ARGB_8888);
+                                createBitmap.eraseColor(i7);
+                                Canvas canvas = new Canvas(createBitmap);
+                                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                                BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);
+                                if (this.m == null) {
+                                    this.m = new Paint(1);
+                                    this.n = new RectF();
+                                }
+                                this.m.setShader(bitmapShader);
+                                this.n.set(0.0f, 0.0f, decodeFile.getWidth(), decodeFile.getHeight());
+                                canvas.drawRoundRect(this.n, decodeFile.getWidth(), decodeFile.getHeight(), this.m);
+                                bitmap = createBitmap;
                             }
-                            if (context != null) {
-                                org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
-                                org.telegram.ui.ActionBar.h6 resourceProvider = T != null ? T.getResourceProvider() : null;
-                                org.telegram.ui.ActionBar.w2 w2Var = zc1.c;
-                                if (w2Var != null) {
-                                    w2Var.dismiss();
-                                    zc1.c = null;
-                                }
-                                org.telegram.ui.ActionBar.w2 l10 = k5.l(1, context, resourceProvider, false);
-                                yc1 yc1Var = new yc1(context);
-                                l10.N = yc1Var;
-                                int i11 = p10.s0;
-                                ArrayList arrayList = new ArrayList();
-                                arrayList.clear();
-                                for (int i12 = 0; i12 < 4; i12++) {
-                                    if (p10.i(i12).p()) {
-                                        if (!ConnectionsManager.getInstance(i12).isTestBackend()) {
-                                            i11 = i12;
-                                        }
-                                        arrayList.add(Integer.valueOf(i12));
-                                    }
-                                }
-                                Collections.sort(arrayList, new xn0(8));
-                                if (!arrayList.isEmpty()) {
-                                    FrameLayout frameLayout = new FrameLayout(context);
-                                    FrameLayout frameLayout2 = new FrameLayout(context);
-                                    int L = g0.L(14.0f);
-                                    int i13 = org.telegram.ui.ActionBar.m6.i5;
-                                    Drawable d02 = org.telegram.ui.ActionBar.m6.d0(L, org.telegram.ui.ActionBar.m6.w0(i13, resourceProvider));
-                                    org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i13);
-                                    frameLayout2.setBackground(d02);
-                                    org.telegram.ui.ActionBar.t6.j(frameLayout2, d02, M, null, resourceProvider);
-                                    org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
-                                    k9Var.setRoundRadius(g0.L(14.0f));
-                                    k9Var.getImageReceiver().A0 = true;
-                                    org.telegram.ui.Components.v8 v8Var = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
-                                    int[] iArr2 = {p10.s0};
-                                    TLRPC.User f10 = p10.i(iArr2[0]).f();
-                                    v8Var.r(f10);
-                                    k9Var.e(f10, v8Var);
-                                    frameLayout2.addView(k9Var, c8.ha.e(28, 28, qs.A1));
-                                    ImageView imageView = new ImageView(context);
-                                    imageView.setScaleType(ImageView.ScaleType.CENTER);
-                                    org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.r5, resourceProvider, PorterDuff.Mode.SRC_IN);
-                                    imageView.setImageResource(R.drawable.arrows_select);
-                                    frameLayout2.addView(imageView, c8.ha.d(18, 18.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
-                                    frameLayout.addView(frameLayout2, c8.ha.e(52, 28, 17));
-                                    frameLayout.setPadding(g0.L(8.0f), g0.L(4.0f), g0.L(8.0f), 0);
-                                    yc1Var.addView(frameLayout, c8.ha.q(-2, -2, 0.0f, 51, 6, 4, 6, 0));
-                                    c8.ka.a(frameLayout);
-                                    if (arrayList.size() <= 1) {
-                                        frameLayout.setVisibility(8);
-                                    }
-                                    LinearLayout f11 = k5.f(context, 1);
-                                    yc1Var.addView(f11, c8.ha.e(-1, -1, qs.E1));
-                                    org.telegram.ui.Components.k9 k9Var2 = new org.telegram.ui.Components.k9(context);
-                                    f11.addView(k9Var2, c8.ha.s(qs.O1, qs.O1, 49, 32.0f, 32.0f, 32.0f, 9.66f));
-                                    ui.b0(i11).c2(k9Var2, "Utya3D", "😎", "130_130");
-                                    int i14 = org.telegram.ui.ActionBar.m6.j5;
-                                    TextView b10 = c8.qa.b(context, 20.0f, i14, true, resourceProvider);
-                                    k5.m(b10, 17, null, 2131742944);
-                                    f11.addView(b10, c8.ha.s(-1, -2, 49, 32.0f, 24.0f, 32.0f, 9.66f));
-                                    TextView b11 = c8.qa.b(context, 14.0f, i14, false, null);
-                                    k5.m(b11, 17, null, 2131742945);
-                                    f11.addView(b11, c8.ha.t(-1, -2, 49, 32, 0, 32, 24));
-                                    fi.d h = k5.h(24, context, resourceProvider, true);
-                                    h.setText(id.M0(2131748250, null));
-                                    f11.addView(h, c8.ha.t(-1, 48, 7, 12, 12, 12, 8));
-                                    int i15 = org.telegram.ui.ActionBar.m6.a7;
-                                    l10.w0(i15);
-                                    l10.P(i15);
-                                    frameLayout.setOnClickListener(new org.telegram.ui.Components.m1(l10, frameLayout2, arrayList, iArr2, v8Var, k9Var, 4));
-                                    h.setOnClickListener(new ik0(22, h, iArr2));
-                                    zc1.c = l10;
-                                    l10.show();
-                                    break;
-                                }
-                            }
+                        } catch (Throwable th2) {
+                            a8.g(th2, true);
+                        }
+                        if (bitmap != null) {
+                            mediaId.setIconBitmap(bitmap);
                         }
                     }
-                } else if (str.equals("/tg-wear-auth/cancel")) {
-                    a8.b("wear-auth: cancel from " + str2);
-                    BigInteger bigInteger2 = zc1.a;
-                    a8.b("wear-auth: cancel received; dropping session and dismissing sheet");
-                    zc1.d = null;
-                    org.telegram.ui.ActionBar.w2 w2Var2 = zc1.c;
-                    if (w2Var2 != null) {
-                        w2Var2.dismiss();
-                        zc1.c = null;
-                        break;
+                    if (fileLocation != null || bitmap == null) {
+                        mediaId.setIconUri(Uri.parse("android.resource://" + this.a.getPackageName() + "/drawable/contact_blue"));
                     }
-                } else {
-                    a8.b("wear-auth: unexpected path ".concat(str));
-                    break;
+                    arrayList.add(new MediaBrowser.MediaItem(mediaId.build(), 1));
+                    i10++;
+                    i7 = 0;
                 }
-                break;
+                fileLocation = fileLocation2;
+                if (fileLocation != null) {
+                }
+                if (fileLocation != null) {
+                }
+                mediaId.setIconUri(Uri.parse("android.resource://" + this.a.getPackageName() + "/drawable/contact_blue"));
+                arrayList.add(new MediaBrowser.MediaItem(mediaId.build(), 1));
+                i10++;
+                i7 = 0;
+            }
+        } else if (str != null && str.startsWith("__CHAT_")) {
+            try {
+                j3 = Long.parseLong(str.replace("__CHAT_", ""));
+            } catch (Exception e10) {
+                a8.g(e10, true);
+                j3 = 0;
+            }
+            ArrayList arrayList3 = (ArrayList) this.j.f(j3);
+            if (arrayList3 != null) {
+                for (int i11 = 0; i11 < arrayList3.size(); i11++) {
+                    gj gjVar = (gj) arrayList3.get(i11);
+                    MediaDescription.Builder mediaId2 = new MediaDescription.Builder().setMediaId(j3 + "_" + i11);
+                    mediaId2.setTitle(gjVar.y1(true));
+                    mediaId2.setSubtitle(gjVar.w1(true));
+                    arrayList.add(new MediaBrowser.MediaItem(mediaId2.build(), 2));
+                }
+            }
         }
+        return arrayList;
     }
 
-    public /* synthetic */ uz(byte[] bArr, String str, String str2) {
-        this.a = 3;
-        this.c = str;
-        this.b = str2;
-        this.d = bArr;
+    public final void e(Runnable runnable, long j3) {
+        a0.h hVar = this.l;
+        ArrayList arrayList = (ArrayList) hVar.f(j3);
+        if (arrayList != null) {
+            arrayList.add(runnable);
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        arrayList2.add(runnable);
+        hVar.k(arrayList2, j3);
+        int i7 = this.c;
+        vr a02 = vr.a0(i7);
+        a02.a.c(new fk(i7, 11, j3, this, a02));
+    }
+
+    public final void f() {
+        int i7 = gz.S0;
+        this.b.v(i7 != 1 ? i7 != 2 ? 0 : 1 : 2);
     }
 }

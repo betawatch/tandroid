@@ -1,78 +1,46 @@
 package bi;
 
 import android.content.Context;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.qp;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.DataSettingsActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.aw;
-import org.telegram.ui.we;
-import org.telegram.ui.zs;
-import org.telegram.ui.zw;
+import android.view.View;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.ja;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b2 implements c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class b2 extends di.c6 {
+    public final /* synthetic */ int x3 = 0;
+    public final /* synthetic */ ja y3;
 
-    public /* synthetic */ b2(Object obj, Object obj2, long j3, int i7) {
-        this.a = i7;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b2(s2 s2Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, i7, j3, e6Var, null);
+        this.y3 = s2Var;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        int i7;
-        switch (this.a) {
-            case 0:
-                k7 k7Var = (k7) this.c;
-                qp qpVar = (qp) this.d;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                if (tL_premium_boostsStatus != null && tL_premium_boostsStatus.level < qpVar.s5) {
-                    org.telegram.messenger.f3 G0 = qpVar.G0();
-                    long j3 = this.b;
-                    G0.b(j3, tL_premium_boostsStatus, new r2(k7Var, tL_premium_boostsStatus, j3, qpVar, 0));
-                    break;
-                } else {
-                    k7Var.f2.setLoading(false);
-                    k7Var.t2(true);
-                    break;
-                }
+    @Override // org.telegram.ui.ActionBar.u2
+    public int R() {
+        switch (this.x3) {
             case 1:
-                DataSettingsActivity dataSettingsActivity = (DataSettingsActivity) this.c;
-                Long l10 = (Long) obj;
-                org.telegram.messenger.g0.r((zs) this.d);
-                dataSettingsActivity.V = dataSettingsActivity.V || System.currentTimeMillis() - this.b > 120;
-                dataSettingsActivity.X = l10.longValue();
-                dataSettingsActivity.W = false;
-                if (dataSettingsActivity.a != null && (i7 = dataSettingsActivity.s) >= 0) {
-                    dataSettingsActivity.s0(i7);
-                    break;
-                }
-                break;
-            case 2:
-                aw awVar = (aw) this.c;
-                Runnable runnable = (Runnable) obj;
-                ((org.telegram.ui.ActionBar.u1) this.d).r(150L);
-                zw zwVar = awVar.b;
-                Boolean bool = zwVar.G.bot_participant;
-                if (bool != null && bool.booleanValue()) {
-                    zwVar.getMessagesController().m(this.b, zwVar.getMessagesController().a2(Long.valueOf(zwVar.H)), 0, null, zwVar, false, runnable, new we(6, runnable), null);
-                    break;
-                } else {
-                    runnable.run();
-                    break;
-                }
+                return ((di.c6) this.y3).R();
             default:
-                ProfileActivity.g0((ProfileActivity) this.c, (Context) this.d, this.b, (TL_payments.connectedBotStarRef) obj);
-                break;
+                return super.R();
         }
+    }
+
+    @Override // di.c6, org.telegram.ui.ActionBar.u2, org.telegram.ui.ActionBar.a2
+    public cc k() {
+        switch (this.x3) {
+            case 0:
+                s2 s2Var = (s2) this.y3;
+                return new cc(s2Var.c, s2Var.J0);
+            default:
+                return super.k();
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b2(di.c6 c6Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.e6 e6Var, View view) {
+        super(context, i7, j3, e6Var, view);
+        this.y3 = c6Var;
     }
 }

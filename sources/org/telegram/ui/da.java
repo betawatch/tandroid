@@ -3,26 +3,26 @@ package org.telegram.ui;
 import android.app.Activity;
 import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class da extends ia {
-    public final /* synthetic */ int J = 0;
-    public final /* synthetic */ org.telegram.ui.Components.oj0 K;
+    public final /* synthetic */ int K = 0;
+    public final /* synthetic */ org.telegram.ui.Components.tj0 L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public da(ea eaVar, Activity activity, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(activity, h6Var);
-        this.K = eaVar;
+    public da(ea eaVar, Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(activity, e6Var);
+        this.L = eaVar;
         this.a = true;
     }
 
     @Override // org.telegram.ui.ia
     public final String getUsernameEditable() {
-        switch (this.J) {
+        switch (this.K) {
             case 0:
-                return ((ea) this.K).c.r;
+                return ((ea) this.L).c.r;
             default:
-                ah.i iVar = ((go) this.K).c.h3.b;
+                ah.i iVar = ((fo) this.L).c.i3.b;
                 if (iVar == null) {
                     return null;
                 }
@@ -31,8 +31,8 @@ public final class da extends ia {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public da(go goVar, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, h6Var);
-        this.K = goVar;
+    public da(fo foVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.L = foVar;
     }
 }

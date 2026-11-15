@@ -1,73 +1,228 @@
 package jg;
 
-import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.g5;
-import org.telegram.messenger.id;
-import org.telegram.messenger.qp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
+import org.telegram.messenger.vr;
+import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.dj0;
-import org.telegram.ui.kw;
-import org.telegram.ui.zw;
+import org.telegram.ui.jw;
+import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements f0, dj0 {
-    public final /* synthetic */ h0 a;
+public final /* synthetic */ class t implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ TLObject h;
+    public final /* synthetic */ ArrayList n;
+    public final /* synthetic */ TLObject r;
 
-    public /* synthetic */ t(h0 h0Var) {
-        this.a = h0Var;
+    public /* synthetic */ t(h0 h0Var, int i7, int i10, TLRPC.TL_error tL_error, String str, TLObject tLObject, TLMethod tLMethod, ArrayList arrayList, int i11) {
+        this.a = i11;
+        this.b = h0Var;
+        this.c = i7;
+        this.d = i10;
+        this.e = tL_error;
+        this.f = str;
+        this.h = tLObject;
+        this.r = tLMethod;
+        this.n = arrayList;
     }
 
-    @Override // jg.f0
-    public void a(a0.h hVar, ArrayList arrayList) {
-        h0 h0Var = this.a;
-        int i7 = h0Var.s0;
-        h0Var.t0 = arrayList;
-        h0Var.x0 = hVar;
-        for (int i10 = 0; i10 < h0Var.t0.size(); i10++) {
-            g0 g0Var = (g0) h0Var.t0.get(i10);
-            TLObject tLObject = g0Var.a;
-            if (tLObject instanceof TLRPC.User) {
-                qp.s1(i7).X3((TLRPC.User) g0Var.a, true, false);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                qp.s1(i7).Q3((TLRPC.Chat) g0Var.a, true);
-            } else if (tLObject instanceof TLRPC.EncryptedChat) {
-                qp.s1(i7).U3((TLRPC.EncryptedChat) g0Var.a, true);
-            }
-        }
-        h0Var.G(null);
-        h0Var.f();
-    }
-
-    @Override // org.telegram.ui.Components.dj0
-    public boolean c(int i7, View view) {
-        TLRPC.User a22;
-        kw kwVar = this.a.U;
-        if (kwVar != null) {
-            Long l10 = (Long) view.getTag();
-            long longValue = l10.longValue();
-            zw zwVar = kwVar.a;
-            if (zwVar.getParentActivity() != null && (a22 = zwVar.getMessagesController().a2(l10)) != null) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zwVar.getParentActivity());
-                String M0 = id.M0(2131752234, null);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.g0.X2(id.a0("ChatHintsDeleteAlert", null, 2131752235, g5.m(0, a22.first_name, a22.last_name)));
-                alertDialog$Builder.k(id.M0(2131744855, null), new di.c1(kwVar, longValue, 8));
-                alertDialog$Builder.h(id.M0(2131752589, null), null);
-                zwVar.showDialog(u1Var);
-                TextView textView = (TextView) u1Var.d(-1);
-                if (textView != null) {
-                    t6.U(textView, m6.q7, zwVar.getResourceProvider());
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v5 */
+    /* JADX WARN: Type inference failed for: r3v9 */
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7;
+        int i10;
+        int i11 = this.a;
+        ArrayList arrayList = this.n;
+        int i12 = this.d;
+        TLObject tLObject = this.r;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        int i13 = this.c;
+        TLObject tLObject2 = this.h;
+        Object obj3 = this.b;
+        boolean z10 = true;
+        int i14 = 0;
+        switch (i11) {
+            case 0:
+                h0 h0Var = (h0) obj3;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                String str = (String) obj;
+                TLRPC.TL_messages_search tL_messages_search = (TLRPC.TL_messages_search) tLObject;
+                z zVar = h0Var.k0;
+                ArrayList arrayList2 = h0Var.I;
+                int i15 = h0Var.t0;
+                if (i13 == h0Var.U && (i12 <= 0 || i12 == h0Var.e0)) {
+                    h0Var.E0--;
+                    if (tL_error == null) {
+                        h0Var.c0 = str;
+                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
+                        vr.a0(i15).m1(messages_messages.users, messages_messages.chats, true, true);
+                        np.s1(i15).Y3(messages_messages.users, false);
+                        np.s1(i15).S3(messages_messages.chats, false);
+                        if (tL_messages_search.add_offset == 0) {
+                            arrayList2.clear();
+                        }
+                        h0Var.d0 = messages_messages.next_rate;
+                        for (int i16 = 0; i16 < messages_messages.messages.size(); i16++) {
+                            TLRPC.Message message = messages_messages.messages.get(i16);
+                            int i17 = np.s1(i15).U.get(gj.B0(message));
+                            if (i17 == 0 || message.id > i17) {
+                                arrayList2.add((gj) arrayList.get(i16));
+                            }
+                        }
+                        h0Var.O = true;
+                        h0Var.Y = messages_messages.messages.size() != 20;
+                        if (i12 > 0) {
+                            h0Var.h0 = i12;
+                            if (h0Var.g0 != i12) {
+                                h0Var.s.clear();
+                            }
+                            if (h0Var.f0 != i12) {
+                                zVar.b();
+                            }
+                        }
+                        zVar.f(h0Var.s, h0Var.w0);
+                        jw jwVar = h0Var.V;
+                        if (jwVar != null) {
+                            jwVar.d(h0Var.E0 > 0, true);
+                            h0Var.V.c();
+                        }
+                        h0Var.f();
+                    }
                 }
-            }
+                h0Var.R = 0;
+                break;
+            case 1:
+                h0 h0Var2 = (h0) obj3;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                String str2 = (String) obj;
+                TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) tLObject;
+                z zVar2 = h0Var2.k0;
+                ArrayList arrayList3 = h0Var2.J;
+                ArrayList arrayList4 = h0Var2.I;
+                int i18 = h0Var2.t0;
+                if (i13 == h0Var2.Q && (i12 <= 0 || i12 == h0Var2.e0)) {
+                    h0Var2.E0--;
+                    if (tL_error2 == null) {
+                        h0Var2.c0 = str2;
+                        TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject2;
+                        vr.a0(i18).m1(messages_messages2.users, messages_messages2.chats, true, true);
+                        np.s1(i18).Y3(messages_messages2.users, false);
+                        np.s1(i18).S3(messages_messages2.chats, false);
+                        if (tL_messages_searchGlobal.offset_id == 0) {
+                            arrayList3.clear();
+                        }
+                        h0Var2.d0 = messages_messages2.next_rate;
+                        int i19 = 0;
+                        while (i19 < messages_messages2.messages.size()) {
+                            TLRPC.Message message2 = messages_messages2.messages.get(i19);
+                            int i20 = np.s1(i18).U.get(gj.B0(message2));
+                            if (i20 == 0 || message2.id > i20) {
+                                gj gjVar = (gj) arrayList.get(i19);
+                                if (!arrayList4.isEmpty()) {
+                                    for (int i21 = i14; i21 < arrayList4.size(); i21++) {
+                                        gj gjVar2 = (gj) arrayList4.get(i21);
+                                        if (gjVar2 == null || gjVar == null || gjVar.e1() != gjVar2.e1() || gj.B0(gjVar.k) != gj.B0(gjVar2.k)) {
+                                        }
+                                    }
+                                }
+                                arrayList3.add(gjVar);
+                                Integer num = (Integer) (message2.out ? np.s1(i18).Q : np.s1(i18).P).get(Long.valueOf(gj.B0(message2)));
+                                if (num != null) {
+                                    message2.unread = num.intValue() < message2.id;
+                                }
+                            }
+                            i19++;
+                            z10 = true;
+                            i14 = 0;
+                        }
+                        h0Var2.O = z10;
+                        h0Var2.X = messages_messages2.messages.size() != 20;
+                        if (i12 > 0) {
+                            h0Var2.h0 = i12;
+                            if (h0Var2.g0 != i12) {
+                                h0Var2.s.clear();
+                            }
+                            if (h0Var2.f0 != i12) {
+                                zVar2.b();
+                            }
+                        }
+                        zVar2.f(h0Var2.s, h0Var2.w0);
+                        jw jwVar2 = h0Var2.V;
+                        if (jwVar2 != null) {
+                            i10 = 1;
+                            jwVar2.d(h0Var2.E0 > 0, true);
+                            h0Var2.V.c();
+                        } else {
+                            i10 = 1;
+                        }
+                        h0Var2.H0 = i10;
+                        h0Var2.I0 = i10;
+                        i7 = 0;
+                        h0Var2.d = false;
+                        z51 z51Var = h0Var2.F0;
+                        if (z51Var != null) {
+                            String str3 = h0Var2.a0;
+                            TextView textView = (TextView) z51Var.b;
+                            Object[] objArr = new Object[i10];
+                            objArr[0] = str3;
+                            textView.setText(hd.a0(null, null, 2131745750, objArr));
+                        }
+                        h0Var2.f();
+                        h0Var2.P = i7;
+                        break;
+                    }
+                }
+                i7 = 0;
+                h0Var2.P = i7;
+                break;
+            default:
+                si siVar = (si) obj3;
+                a0.h hVar = (a0.h) obj2;
+                TLRPC.TL_messages_allStickers tL_messages_allStickers = (TLRPC.TL_messages_allStickers) tLObject;
+                siVar.getClass();
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
+                ArrayList arrayList5 = this.n;
+                arrayList5.set(i13, tL_messages_stickerSet);
+                hVar.k(tL_messages_stickerSet, ((TLRPC.StickerSet) obj).id);
+                if (hVar.m() == tL_messages_allStickers.sets.size()) {
+                    while (i14 < arrayList5.size()) {
+                        if (arrayList5.get(i14) == null) {
+                            arrayList5.remove(i14);
+                            i14--;
+                        }
+                        i14++;
+                    }
+                    siVar.z1(this.d, arrayList5, false, (int) (System.currentTimeMillis() / 1000), tL_messages_allStickers.hash2, null);
+                    break;
+                }
+                break;
         }
-        return true;
+    }
+
+    public /* synthetic */ t(si siVar, TLObject tLObject, ArrayList arrayList, int i7, a0.h hVar, TLRPC.StickerSet stickerSet, TLRPC.TL_messages_allStickers tL_messages_allStickers, int i10) {
+        this.a = 2;
+        this.b = siVar;
+        this.h = tLObject;
+        this.n = arrayList;
+        this.c = i7;
+        this.e = hVar;
+        this.f = stickerSet;
+        this.r = tL_messages_allStickers;
+        this.d = i10;
     }
 }

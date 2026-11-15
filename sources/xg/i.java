@@ -8,67 +8,67 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import c8.ha;
-import di.e4;
+import c8.ja;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.i6;
-import org.telegram.messenger.id;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.yr;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.vr;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Cells.m8;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.Cells.l8;
 import org.telegram.ui.Cells.w3;
 import org.telegram.ui.Cells.x3;
-import org.telegram.ui.Components.bv0;
-import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.wo;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.ik0;
-import v4.d1;
-import v4.o0;
-import wg.z0;
+import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.cv0;
+import org.telegram.ui.Components.fp;
+import org.telegram.ui.Components.i9;
+import org.telegram.ui.Components.uj0;
+import org.telegram.ui.sc1;
+import ug.p1;
+import ug.t1;
+import v4.e1;
+import v4.p0;
+import wg.x0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class i extends rg.b {
-    public final h6 d;
+    public final e6 d;
     public final Context e;
-    public pj0 f;
+    public uj0 f;
     public ArrayList n;
     public boolean s;
     public x3 w;
     public final boolean x;
     public boolean y;
     public final HashMap r = new HashMap();
-    public boolean D = true;
+    public boolean E = true;
     public final boolean h = true;
 
-    public i(Context context, h6 h6Var, boolean z9) {
+    public i(Context context, e6 e6Var, boolean z10) {
         this.e = context;
-        this.x = z9;
-        this.d = h6Var;
-        a aVar = new a(this, 2);
-        yr a02 = yr.a0(p10.s0);
-        a02.a.c(new u9.f(18, a02, aVar));
+        this.x = z10;
+        this.d = e6Var;
+        p1 p1Var = new p1(this, 7);
+        vr a02 = vr.a0(m10.t0);
+        a02.a.c(new t1(7, a02, p1Var));
     }
 
-    @Override // org.telegram.ui.Components.oj0
-    public final boolean D(d1 d1Var) {
-        int i7 = d1Var.f;
+    @Override // org.telegram.ui.Components.tj0
+    public final boolean D(e1 e1Var) {
+        int i7 = e1Var.f;
         return i7 == 3 || i7 == 6 || i7 == 9;
     }
 
     public final int F(TLRPC.Chat chat) {
         Integer num;
         int i7;
-        TLRPC.ChatFull N0 = qp.s1(p10.s0).N0(chat.id);
+        TLRPC.ChatFull N0 = np.s1(m10.t0).N0(chat.id);
         if (N0 != null && (i7 = N0.participants_count) > 0) {
             return i7;
         }
@@ -84,7 +84,7 @@ public final class i extends rg.b {
         g(this.n.size() - 1);
     }
 
-    @Override // v4.g0
+    @Override // v4.h0
     public final int b() {
         ArrayList arrayList = this.n;
         if (arrayList == null) {
@@ -93,7 +93,7 @@ public final class i extends rg.b {
         return arrayList.size();
     }
 
-    @Override // v4.g0
+    @Override // v4.h0
     public final int d(int i7) {
         ArrayList arrayList = this.n;
         if (arrayList == null || i7 < 0) {
@@ -102,25 +102,25 @@ public final class i extends rg.b {
         return ((h) arrayList.get(i7)).a;
     }
 
-    @Override // v4.g0
-    public final void t(d1 d1Var, int i7) {
-        boolean z9;
+    @Override // v4.h0
+    public final void t(e1 e1Var, int i7) {
+        boolean z10;
         int i10;
         ArrayList arrayList = this.n;
         if (arrayList == null || i7 < 0) {
             return;
         }
         h hVar = (h) arrayList.get(i7);
-        int i11 = d1Var.f;
-        View view = d1Var.a;
+        int i11 = e1Var.f;
+        View view = e1Var.a;
         int i12 = 8;
         if (i11 != 3) {
             if (i11 == 6) {
                 ah.c cVar = (ah.c) view;
-                z9 = i7 < this.n.size() - 1 && (i10 = i7 + 1) < this.n.size() - 1 && ((h) this.n.get(i10)).a != 7;
+                z10 = i7 < this.n.size() - 1 && (i10 = i7 + 1) < this.n.size() - 1 && ((h) this.n.get(i10)).a != 7;
                 cVar.w = hVar.f;
                 cVar.f();
-                cVar.setDivider(z9);
+                cVar.setDivider(z10);
                 cVar.c(hVar.k, false);
                 return;
             }
@@ -129,7 +129,7 @@ public final class i extends rg.b {
                 if (i13 < 0) {
                     i13 = (int) (g0.q.y * 0.3f);
                 }
-                view.setLayoutParams(new o0(-1, i13));
+                view.setLayoutParams(new p0(-1, i13));
                 return;
             }
             if (i11 == 7) {
@@ -138,7 +138,7 @@ public final class i extends rg.b {
             }
             if (i11 == 5) {
                 try {
-                    ((bv0) view).b.getImageReceiver().P0(false);
+                    ((cv0) view).b.getImageReceiver().P0(false);
                     return;
                 } catch (Exception unused) {
                     return;
@@ -146,9 +146,9 @@ public final class i extends rg.b {
             }
             if (i11 != 8) {
                 if (i11 == 9) {
-                    m8 m8Var = (m8) view;
-                    m8Var.g(m6.v6, m6.u6);
-                    m8Var.o(hVar.j, hVar.g, false);
+                    l8 l8Var = (l8) view;
+                    l8Var.g(j6.v6, j6.u6);
+                    l8Var.o(hVar.j, hVar.g, false);
                     return;
                 } else {
                     if (i11 == 10) {
@@ -157,7 +157,7 @@ public final class i extends rg.b {
                             return;
                         }
                         g0.E2(hVar.q);
-                        frameLayout.addView(hVar.q, ha.c(-2.0f, -1));
+                        frameLayout.addView(hVar.q, ja.c(-2.0f, -1));
                         return;
                     }
                     return;
@@ -171,13 +171,13 @@ public final class i extends rg.b {
                 }
                 x3Var.a(charSequence, hVar.m);
             } else {
-                x3Var.setText(i6.p(hVar.g, x3Var.getTextView(), null));
+                x3Var.setText(org.telegram.messenger.j6.p(hVar.g, x3Var.getTextView(), null));
                 if (!TextUtils.isEmpty(hVar.h)) {
                     CharSequence charSequence2 = hVar.h;
-                    ik0 ik0Var = hVar.m;
+                    sc1 sc1Var = hVar.m;
                     w3 w3Var = x3Var.b;
                     w3Var.c(charSequence2, false, true);
-                    w3Var.setOnClickListener(ik0Var);
+                    w3Var.setOnClickListener(sc1Var);
                     w3Var.setVisibility(0);
                 }
             }
@@ -190,22 +190,22 @@ public final class i extends rg.b {
             CharSequence charSequence3 = hVar.g;
             CharSequence charSequence4 = hVar.h;
             rVar.x.setVisibility(8);
-            rVar.H = null;
             rVar.I = null;
-            k9 k9Var = rVar.c;
-            k9Var.setRoundRadius(g0.L(20.0f));
-            k9Var.setImageDrawable(drawable);
-            e4 e4Var = rVar.d;
-            e4Var.k(charSequence3);
+            rVar.J = null;
+            i9 i9Var = rVar.c;
+            i9Var.setRoundRadius(g0.L(20.0f));
+            i9Var.setImageDrawable(drawable);
+            fi.w3 w3Var2 = rVar.d;
+            w3Var2.k(charSequence3);
             boolean[] zArr = rVar.s;
             zArr[0] = false;
             rVar.setSubtitle(charSequence4);
-            t6.X(rVar.e, zArr[0] ? m6.n5 : m6.r5, rVar.a);
-            wo woVar = rVar.w;
-            if (woVar != null) {
-                woVar.setAlpha(1.0f);
+            q6.X(rVar.e, zArr[0] ? j6.n5 : j6.r5, rVar.a);
+            fp fpVar = rVar.w;
+            if (fpVar != null) {
+                fpVar.setAlpha(1.0f);
             }
-            e4Var.i(null);
+            w3Var2.i(null);
         } else {
             TLRPC.User user = hVar.c;
             if (user != null) {
@@ -213,7 +213,7 @@ public final class i extends rg.b {
                 CharSequence charSequence5 = hVar.h;
                 if (charSequence5 != null) {
                     rVar.setSubtitle(charSequence5);
-                    t6.X(rVar.e, m6.r5, this.d);
+                    q6.X(rVar.e, j6.r5, this.d);
                 }
             } else {
                 TLRPC.Chat chat = hVar.e;
@@ -223,14 +223,14 @@ public final class i extends rg.b {
                     TLRPC.InputPeer inputPeer = hVar.d;
                     if (inputPeer != null) {
                         if (inputPeer instanceof TLRPC.TL_inputPeerSelf) {
-                            rVar.setUser(p10.i(p10.s0).f());
+                            rVar.setUser(m10.i(m10.t0).f());
                         } else if (inputPeer instanceof TLRPC.TL_inputPeerUser) {
-                            rVar.setUser(qp.s1(p10.s0).a2(Long.valueOf(inputPeer.user_id)));
+                            rVar.setUser(np.s1(m10.t0).a2(Long.valueOf(inputPeer.user_id)));
                         } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
-                            TLRPC.Chat M0 = qp.s1(p10.s0).M0(Long.valueOf(inputPeer.chat_id));
+                            TLRPC.Chat M0 = np.s1(m10.t0).M0(Long.valueOf(inputPeer.chat_id));
                             rVar.h(F(M0), M0);
                         } else if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
-                            TLRPC.Chat M02 = qp.s1(p10.s0).M0(Long.valueOf(inputPeer.channel_id));
+                            TLRPC.Chat M02 = np.s1(m10.t0).M0(Long.valueOf(inputPeer.channel_id));
                             rVar.h(F(M02), M02);
                         }
                     }
@@ -245,26 +245,26 @@ public final class i extends rg.b {
             rVar.setDivider(false);
         }
         rVar.setOptions(hVar.n);
-        z0 z0Var = hVar.o;
-        z0 z0Var2 = hVar.p;
-        ImageView imageView = rVar.F;
-        ImageView imageView2 = rVar.D;
-        boolean z10 = z0Var != null;
-        rVar.y = z10;
-        imageView2.setVisibility((z10 && rVar.G) ? 0 : 8);
-        imageView2.setOnClickListener(z0Var);
-        z9 = z0Var2 != null;
-        rVar.E = z9;
-        if (z9 && rVar.G) {
+        x0 x0Var = hVar.o;
+        x0 x0Var2 = hVar.p;
+        ImageView imageView = rVar.G;
+        ImageView imageView2 = rVar.E;
+        boolean z11 = x0Var != null;
+        rVar.y = z11;
+        imageView2.setVisibility((z11 && rVar.H) ? 0 : 8);
+        imageView2.setOnClickListener(x0Var);
+        z10 = x0Var2 != null;
+        rVar.F = z10;
+        if (z10 && rVar.H) {
             i12 = 0;
         }
         imageView.setVisibility(i12);
-        imageView.setOnClickListener(z0Var2);
-        rVar.g(this.D, false);
+        imageView.setOnClickListener(x0Var2);
+        rVar.g(this.E, false);
     }
 
-    @Override // v4.g0
-    public final d1 x(ViewGroup viewGroup, int i7) {
+    @Override // v4.h0
+    public final e1 x(ViewGroup viewGroup, int i7) {
         View rVar;
         Context context = this.e;
         if (i7 == -1) {
@@ -274,57 +274,57 @@ public final class i extends rg.b {
         } else if (i7 == 3) {
             rVar = new r(this.e, this.x, this.y, this.d, this.s);
         } else {
-            h6 h6Var = this.d;
+            e6 e6Var = this.d;
             if (i7 == 5) {
-                bv0 bv0Var = new bv0(context, null, 1, h6Var);
-                bv0Var.d.setText(id.M0(2131748167, null));
-                bv0Var.e.setText(id.M0(2131745807, null));
-                bv0Var.a.setTranslationY(g0.L(24.0f));
-                rVar = bv0Var;
+                cv0 cv0Var = new cv0(context, null, 1, e6Var);
+                cv0Var.d.setText(hd.M0(2131748167, null));
+                cv0Var.e.setText(hd.M0(2131745807, null));
+                cv0Var.a.setTranslationY(g0.L(24.0f));
+                rVar = cv0Var;
             } else {
-                boolean z9 = this.h;
+                boolean z10 = this.h;
                 if (i7 == 7) {
-                    ah.f fVar = new ah.f(context, h6Var);
+                    ah.f fVar = new ah.f(context, e6Var);
                     fVar.setTag(-33024);
                     rVar = fVar;
-                    if (z9) {
+                    if (z10) {
                         fVar.setBackground(null);
                         rVar = fVar;
                     }
                 } else if (i7 == 6) {
-                    ah.c cVar = new ah.c(context, h6Var);
+                    ah.c cVar = new ah.c(context, e6Var);
                     cVar.setTag(-33024);
                     rVar = cVar;
-                    if (z9) {
+                    if (z10) {
                         cVar.setBackground(null);
                         rVar = cVar;
                     }
                 } else if (i7 == 8) {
-                    x3 x3Var = new x3(context, h6Var);
+                    x3 x3Var = new x3(context, e6Var);
                     x3Var.setTag(-33024);
                     rVar = x3Var;
-                    if (z9) {
+                    if (z10) {
                         x3Var.setBackground(null);
                         rVar = x3Var;
                     }
                 } else if (i7 == 9) {
-                    m8 m8Var = new m8(context, h6Var);
-                    m8Var.n = 16;
-                    m8Var.x = 19;
-                    rVar = m8Var;
+                    l8 l8Var = new l8(context, e6Var);
+                    l8Var.n = 16;
+                    l8Var.x = 19;
+                    rVar = l8Var;
                 } else {
                     rVar = i7 == 10 ? new FrameLayout(context) : new View(context);
                 }
             }
         }
-        return new xi0(rVar);
+        return new cj0(rVar);
     }
 
-    @Override // v4.g0
-    public final void y(d1 d1Var) {
-        View view = d1Var.a;
+    @Override // v4.h0
+    public final void y(e1 e1Var) {
+        View view = e1Var.a;
         if (view instanceof r) {
-            ((r) view).g(this.D, false);
+            ((r) view).g(this.E, false);
         }
     }
 }

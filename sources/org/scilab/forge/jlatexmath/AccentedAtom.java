@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import a8.p0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class AccentedAtom extends Atom {
     private boolean acc;
@@ -85,9 +85,9 @@ public class AccentedAtom extends Atom {
         return horizontalBox2;
     }
 
-    public AccentedAtom(Atom atom, Atom atom2, boolean z9) {
+    public AccentedAtom(Atom atom, Atom atom2, boolean z10) {
         this(atom, atom2);
-        this.changeSize = z9;
+        this.changeSize = z10;
     }
 
     public AccentedAtom(Atom atom, String str) {

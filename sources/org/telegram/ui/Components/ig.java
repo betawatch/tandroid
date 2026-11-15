@@ -2,178 +2,277 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
+import android.os.SystemClock;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class ig extends ch0 {
-    public final v5 D;
-    public final fg E;
-    public gg r;
-    public hg s;
-    public final int w;
-    public boolean x;
-    public Drawable y;
+public final class ig extends View {
+    public ch0 E;
+    public final float[] F;
+    public long G;
+    public final Paint H;
+    public long I;
+    public final /* synthetic */ ChatActivityEnterView J;
+    public float a;
+    public boolean b;
+    public boolean c;
+    public final ch0 d;
+    public boolean e;
+    public boolean f;
+    public long h;
+    public boolean n;
+    public long r;
+    public float s;
+    public float w;
+    public float x;
+    public float y;
 
-    public ig(Context context, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ig(ChatActivityEnterView chatActivityEnterView, Context context) {
         super(context);
-        this.D = new v5(this, 0L, 320L, wq.h);
-        this.E = new fg(this, 0);
-        this.w = i7;
+        this.J = chatActivityEnterView;
+        this.h = -1L;
+        this.F = new float[3];
+        this.G = -1L;
+        this.H = new Paint(1);
+        ch0 ch0Var = new ch0(R.raw.chat_audio_record_delete_2, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), false, null);
+        this.d = ch0Var;
+        ch0Var.p0 = true;
+        g();
     }
 
-    public gg getCurrentState() {
-        return this.r;
+    public static float b(long j3) {
+        return (((float) Math.cos(((j3 % 1300) / 1300.0f) * 3.141592653589793d * 2.0d)) * 0.5f) + 0.5f;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00cf  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void j(gg ggVar, boolean z9) {
-        hg hgVar;
-        int ordinal;
-        hg hgVar2;
-        hg hgVar3;
-        if (z9 && ggVar == this.r) {
+    public final void c() {
+        this.c = true;
+        this.I = SystemClock.uptimeMillis();
+        ch0 ch0Var = this.d;
+        ch0Var.T(true, 0.0f);
+        if (this.b) {
+            ch0Var.start();
+        }
+    }
+
+    public final void d() {
+        h();
+    }
+
+    public final void e() {
+        ChatActivityEnterView chatActivityEnterView = this.J;
+        chatActivityEnterView.e4.setColor(chatActivityEnterView.u0(org.telegram.ui.ActionBar.j6.ag));
+        this.a = 1.0f;
+        System.currentTimeMillis();
+        this.G = -1L;
+        this.h = -1L;
+        this.c = false;
+        this.d.stop();
+        this.n = false;
+        this.y = 0.0f;
+        this.x = 0.0f;
+        this.w = 0.0f;
+        invalidate();
+    }
+
+    public final float f() {
+        float i7 = (1.0f - Utilities.i(this.x / 0.8f, 1.0f, 0.0f)) * this.w;
+        return com.google.android.gms.internal.vision.e2.C(i7, 2.0f, 3.0f, 12.0f * i7 * i7);
+    }
+
+    public final void g() {
+        int i7 = org.telegram.ui.ActionBar.j6.ag;
+        int i10 = ChatActivityEnterView.N6;
+        ChatActivityEnterView chatActivityEnterView = this.J;
+        int u02 = chatActivityEnterView.u0(i7);
+        int u03 = chatActivityEnterView.u0(org.telegram.ui.ActionBar.j6.Je);
+        int u04 = chatActivityEnterView.u0(org.telegram.ui.ActionBar.j6.Vf);
+        chatActivityEnterView.e4.setColor(u02);
+        ch0 ch0Var = this.d;
+        ch0Var.a0 = true;
+        ch0Var.Q(u04, "Cup Red");
+        ch0Var.Q(u04, "Box Red");
+        ch0Var.Q(u04, "Cup Grey");
+        ch0Var.Q(u04, "Box Grey");
+        ch0Var.Q(u04, "Box_Grey 2");
+        ch0Var.Q(u04, "Line 1");
+        ch0Var.Q(u04, "Line 2");
+        ch0Var.Q(u04, "Line 3");
+        ch0Var.Q(u03, "Line 1 Dup");
+        ch0Var.Q(u03, "Line 2 Dup");
+        ch0Var.Q(u03, "Line 3 Dup");
+        ch0Var.o();
+        ColorMatrix colorMatrix = new ColorMatrix();
+        colorMatrix.setSaturation(0.0f);
+        ch0Var.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+    }
+
+    public final ch0 h() {
+        if (this.E == null) {
+            ch0 ch0Var = new ch0(R.raw.chat_audio_record_delete_outline, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), false, null);
+            this.E = ch0Var;
+            ch0Var.J(true);
+            this.E.p0 = false;
+            int i7 = org.telegram.ui.ActionBar.j6.Vf;
+            int i10 = ChatActivityEnterView.N6;
+            int u02 = this.J.u0(i7);
+            ch0 ch0Var2 = this.E;
+            ch0Var2.a0 = true;
+            ch0Var2.Q(u02, "Cup Grey");
+            this.E.Q(u02, "Box_Grey 2");
+            this.E.Q(u02, "Box Grey");
+            this.E.o();
+            this.E.R(this);
+            this.E.T(true, 0.0f);
+        }
+        return this.E;
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.b = true;
+        boolean z10 = this.c;
+        ch0 ch0Var = this.d;
+        if (z10) {
+            ch0Var.start();
+        }
+        ch0Var.R(this);
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.b = false;
+        ch0 ch0Var = this.d;
+        ch0Var.stop();
+        ch0Var.R(null);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float f10;
+        float f11;
+        char c10;
+        ChatActivityEnterView chatActivityEnterView = this.J;
+        Paint paint = chatActivityEnterView.e4;
+        if (this.n) {
+            float min = Math.min(1.0f, (SystemClock.uptimeMillis() - this.r) / 240.0f);
+            float f12 = this.y;
+            int i7 = ChatActivityEnterView.N6;
+            float interpolation = er.i.getInterpolation(Utilities.i(f12 / 0.6f, 1.0f, 0.0f));
+            float u22 = 1.0f - ChatActivityEnterView.u2(0.05f, 0.55f, f12);
+            float[] fArr = this.F;
+            fArr[0] = u22;
+            fArr[1] = org.telegram.messenger.g0.T1(1.0f, 0.55f, interpolation);
+            fArr[2] = interpolation * 20.0f;
+            float measuredWidth = getMeasuredWidth() / 2.0f;
+            float measuredHeight = getMeasuredHeight() / 2.0f;
+            ch0 h = h();
+            float f13 = this.x;
+            h.T(true, (f13 > 0.0f ? (Math.min(1.0f, f13) * 14.0f) + 30.0f : this.w * 8.0f) / 52.0f);
+            h.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            canvas.save();
+            float f14 = fArr[1];
+            canvas.scale(f14, f14, measuredWidth, measuredHeight);
+            canvas.rotate(fArr[2], measuredWidth, measuredHeight);
+            canvas.rotate(f(), measuredWidth, org.telegram.messenger.g0.L(12.0f) + measuredHeight);
+            float min2 = Math.min(1.0f, 1.8f * min);
+            float u23 = 1.0f - ChatActivityEnterView.u2(0.25f, 0.85f, min);
+            float interpolation2 = er.g.getInterpolation(min);
+            if (u23 > 0.0f) {
+                c10 = 0;
+                paint.setColor(i0.a.f(min2, chatActivityEnterView.u0(org.telegram.ui.ActionBar.j6.ag), chatActivityEnterView.u0(org.telegram.ui.ActionBar.j6.Vf)));
+                paint.setAlpha((int) (u23 * 255.0f * fArr[0]));
+                canvas.drawCircle(measuredWidth, (org.telegram.messenger.g0.L(2.0f) * interpolation2) + measuredHeight, org.telegram.messenger.g0.T1(this.s, org.telegram.messenger.g0.L(1.5f), interpolation2), paint);
+            } else {
+                c10 = 0;
+            }
+            float u24 = ChatActivityEnterView.u2(0.05f, 0.6f, min) * fArr[c10];
+            if (u24 > 0.0f && h.u()) {
+                float i10 = Utilities.i(min, 1.0f, 0.0f) - 1.0f;
+                float T1 = org.telegram.messenger.g0.T1(0.45f, 1.0f, com.google.android.gms.internal.vision.e2.x(i10, 1.1f, i10, (2.1f * i10 * i10 * i10) + 1.0f));
+                canvas.save();
+                canvas.scale(T1, T1, measuredWidth, measuredHeight + org.telegram.messenger.g0.L(2.0f));
+                h.setAlpha((int) (u24 * 255.0f));
+                h.draw(canvas);
+                canvas.restore();
+            }
+            canvas.restore();
+            if (min < 1.0f || !h.u()) {
+                invalidate();
+                return;
+            }
             return;
         }
-        gg ggVar2 = this.r;
-        this.r = ggVar;
-        fg fgVar = this.E;
-        if (z9 && ggVar2 != null) {
-            hg[] values = hg.values();
-            int length = values.length;
-            int i7 = 0;
-            while (true) {
-                if (i7 >= length) {
-                    hgVar2 = null;
-                    break;
-                }
-                hgVar2 = values[i7];
-                if (hgVar2.a == ggVar2 && hgVar2.b == ggVar) {
-                    break;
-                } else {
-                    i7++;
-                }
+        if (!this.f) {
+            long uptimeMillis = SystemClock.uptimeMillis();
+            boolean z10 = this.e;
+            if (z10 || this.G < 0) {
+                this.G = uptimeMillis;
             }
-            if (hgVar2 != null) {
-                gg ggVar3 = this.r;
-                hg[] values2 = hg.values();
-                int length2 = values2.length;
-                int i10 = 0;
-                while (true) {
-                    if (i10 >= length2) {
-                        hgVar3 = null;
-                        break;
-                    }
-                    hgVar3 = values2[i10];
-                    if (hgVar3.a == ggVar2 && hgVar3.b == ggVar3) {
-                        break;
-                    } else {
-                        i10++;
-                    }
-                }
-                if (hgVar3 == this.s) {
-                    return;
-                }
-                this.s = hgVar3;
-                zg0 zg0Var = (zg0) fgVar.get(hgVar3);
-                zg0Var.stop();
-                if (hgVar3 == hg.e) {
-                    zg0Var.P(30);
-                    zg0Var.T(false, 0.0f);
-                } else if (hgVar3 == hg.d) {
-                    zg0Var.P(60);
-                    zg0Var.T(false, 0.5f);
-                } else {
-                    zg0Var.T(false, 0.0f);
-                }
-                zg0Var.K(0);
-                zg0Var.t0 = new wf(this, 21);
-                setAnimation(zg0Var);
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Cells.o0(zg0Var, 1));
-                ordinal = ggVar.ordinal();
-                if (ordinal != 0) {
-                    setContentDescription(org.telegram.messenger.id.M0(2131754734, null));
-                    return;
-                } else {
-                    if (ordinal != 1) {
-                        return;
-                    }
-                    setContentDescription(org.telegram.messenger.id.M0(2131754736, null));
-                    return;
-                }
-            }
+            this.a = (z10 || this.c) ? 1.0f : b(uptimeMillis - this.G);
         }
-        gg ggVar4 = this.r;
-        hg[] values3 = hg.values();
-        int length3 = values3.length;
-        int i11 = 0;
-        while (true) {
-            if (i11 >= length3) {
-                hgVar = null;
-                break;
-            }
-            hgVar = values3[i11];
-            if (hgVar.a == ggVar4) {
-                break;
-            } else {
-                i11++;
-            }
-        }
-        zg0 zg0Var2 = (zg0) fgVar.get(hgVar);
-        zg0Var2.stop();
-        zg0Var2.T(false, ggVar != gg.a ? 0.0f : 0.5f);
-        setAnimation(zg0Var2);
-        ordinal = ggVar.ordinal();
-        if (ordinal != 0) {
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float d = this.D.d(this.x);
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        if (d < 1.0f) {
-            if (d > 0.0f) {
-                canvas2 = canvas;
-                canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - d) * 255.0f), 31);
-            } else {
-                canvas2 = canvas;
-                canvas2.save();
-            }
-            float z9 = com.google.android.recaptcha.internal.a.z(1.0f, d, 0.6f, 0.4f);
-            canvas2.scale(z9, z9, width, height);
-            super.onDraw(canvas);
-            canvas2.restore();
+        if (this.c) {
+            f10 = 1.0f;
+            f11 = Math.min(1.0f, (SystemClock.uptimeMillis() - this.I) / 160.0f);
         } else {
-            canvas2 = canvas;
+            f10 = 1.0f;
+            f11 = 0.0f;
         }
-        if (d > 0.0f) {
-            if (this.y == null) {
-                this.y = getContext().getResources().getDrawable(R.drawable.msg_edit).mutate();
+        boolean z11 = this.c;
+        ch0 ch0Var = this.d;
+        if (z11) {
+            ch0Var.setAlpha((int) (f11 * 255.0f));
+            ch0Var.draw(canvas);
+            if (f11 < f10) {
+                invalidate();
             }
-            int intrinsicWidth = this.y.getIntrinsicWidth() / 2;
-            int intrinsicHeight = this.y.getIntrinsicHeight() / 2;
-            int i7 = (int) width;
-            int i10 = (int) height;
-            this.y.setBounds(i7 - intrinsicWidth, i10 - intrinsicHeight, i7 + intrinsicWidth, i10 + intrinsicHeight);
-            this.y.setColorFilter(getColorFilter());
-            this.y.setAlpha((int) (255.0f * d));
-            canvas2.save();
-            float f10 = (d * 0.6f) + 0.4f;
-            canvas2.scale(f10, f10, width, height);
-            this.y.draw(canvas2);
-            canvas2.restore();
         }
+        if (!this.c || f11 < f10 || !ch0Var.u()) {
+            boolean z12 = this.c;
+            float f15 = z12 ? 1.0f : this.a;
+            float f16 = (z12 && ch0Var.u()) ? 1.0f - f11 : 1.0f;
+            if (f16 <= 0.0f) {
+                if (this.f) {
+                    return;
+                }
+                invalidate();
+                return;
+            }
+            canvas.save();
+            float T12 = org.telegram.messenger.g0.T1(0.4f, 1.0f, f16);
+            canvas.scale(T12, T12, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+            float measuredWidth2 = getMeasuredWidth() / 2.0f;
+            float measuredHeight2 = getMeasuredHeight() / 2.0f;
+            float T13 = org.telegram.messenger.g0.T1(0.85f, 1.0f, f15) * org.telegram.messenger.g0.L(5.0f);
+            if (this.c) {
+                paint.setColor(i0.a.f(Math.min(1.0f, f11 * 2.5f), chatActivityEnterView.u0(org.telegram.ui.ActionBar.j6.ag), chatActivityEnterView.u0(org.telegram.ui.ActionBar.j6.Vf)));
+            }
+            int color = paint.getColor();
+            Paint paint2 = this.H;
+            paint2.setColor(color);
+            paint2.setAlpha((int) (40.8f * f15 * f16));
+            canvas.drawCircle(measuredWidth2, measuredHeight2, org.telegram.messenger.g0.T1(1.35f, 1.75f, f15) * T13, paint2);
+            paint.setAlpha((int) (org.telegram.messenger.g0.T1(0.6f, 1.0f, f15) * 255.0f * f16));
+            canvas.drawCircle(measuredWidth2, measuredHeight2, T13, paint);
+            canvas.restore();
+        }
+        if (this.f) {
+            return;
+        }
+        invalidate();
     }
 
-    public ig(Context context) {
-        this(context, 32);
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        this.d.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
     }
 }

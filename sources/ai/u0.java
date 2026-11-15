@@ -1,102 +1,68 @@
 package ai;
 
-import android.os.SystemClock;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.v10;
+import android.content.SharedPreferences;
+import android.util.Log;
+import java.io.File;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.rq;
+import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u0 implements v10 {
+public final /* synthetic */ class u0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ls c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ File b;
 
-    public /* synthetic */ u0(ls lsVar, Object obj, boolean z9, int i7) {
+    public /* synthetic */ u0(File file, int i7) {
         this.a = i7;
-        this.c = lsVar;
-        this.d = obj;
-        this.b = z9;
+        this.b = file;
     }
 
-    @Override // org.telegram.messenger.v10
-    public final void a(Object obj, Object obj2) {
-        int i7 = this.a;
-        boolean z9 = this.b;
-        Object obj3 = this.d;
-        ls lsVar = this.c;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        CountDownLatch e10;
+        switch (this.a) {
             case 0:
-                y0 y0Var = (y0) lsVar;
-                TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken = (TLRPC.TL_exportedNoPaidMessagesToken) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                l1 l1Var = y0Var.b;
-                if (y0Var.n == ((int[]) obj3)[0] && !y0Var.E) {
-                    y0Var.n = 0;
-                    if (tL_exportedNoPaidMessagesToken != null) {
-                        int i10 = y0Var.d;
-                        if (i10 != 0) {
-                            if (z9 == (i10 == 1)) {
-                                if (tL_exportedNoPaidMessagesToken.expires == 0) {
-                                    y0Var.f().edit().putString("qrNoPaidToken", tL_exportedNoPaidMessagesToken.token).putString("qrNoPaidUrl", tL_exportedNoPaidMessagesToken.url).apply();
-                                }
-                                y0Var.f = tL_exportedNoPaidMessagesToken;
-                                y0Var.h = SystemClock.elapsedRealtime();
-                                l1Var.setFreeLink(y0Var.d(tL_exportedNoPaidMessagesToken));
-                                break;
-                            }
-                        }
-                    } else {
-                        String str = tL_error != null ? tL_error.text : null;
-                        a8.d("QrShare: exportNoPaidMessagesToken " + str);
-                        TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken2 = y0Var.f;
-                        if (tL_exportedNoPaidMessagesToken2 != null) {
-                            if ((tL_exportedNoPaidMessagesToken2.expires != 0) == z9) {
-                                if (str != null) {
-                                    l1Var.getClass();
-                                    l1Var.d1(R.drawable.msg_warning, id.M0(2131751105, null), null);
-                                    break;
-                                }
-                            }
-                        }
-                        y0Var.d = 0;
-                        y0Var.f().edit().putBoolean("qrNoPaidPermanent", false).apply();
-                        if (!l1Var.v0) {
-                            if (str != null) {
-                                l1Var.d1(R.drawable.msg_warning, id.M0(2131751105, null), null);
-                                break;
-                            }
-                        } else {
-                            l1Var.U0(str != null ? id.M0(2131751105, null) : null);
-                            break;
+                File file = this.b;
+                ExecutorService executorService = DictationLid.a;
+                SharedPreferences e12 = np.e1();
+                long[] jArr = {0};
+                try {
+                    if (i1.d() && (e10 = i1.e()) != null) {
+                        try {
+                            e10.await(20000L, TimeUnit.MILLISECONDS);
+                        } catch (InterruptedException unused) {
                         }
                     }
+                    TLRPC.TL_transcriptionModel f10 = i1.f(i1.a(), "tinylid");
+                    if (f10 == null && !file.exists()) {
+                        Log.d("Dictation", "tinylid: not on the server");
+                    }
+                    int c10 = i1.c(f10, file, new a1.c(jArr, 8));
+                    if (c10 >= 0) {
+                        e12.edit().putLong("tinylid_checked", System.currentTimeMillis()).apply();
+                    }
+                    if (c10 > 0) {
+                        DictationLid.e = true;
+                        DictationLid.g = true;
+                        DictationLid.a.execute(new u0(file, 2));
+                    }
+                } finally {
+                    try {
+                        return;
+                    } finally {
+                    }
                 }
-                break;
+                return;
+            case 1:
+                DictationLid.g(this.b);
+                return;
             default:
-                rq rqVar = (rq) lsVar;
-                m8 m8Var = (m8) obj3;
-                TLRPC.Updates updates = (TLRPC.Updates) obj;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                if (updates == null) {
-                    rqVar.getClass();
-                    if (tL_error2 != null) {
-                        m8Var.setChecked(z9);
-                        gc.a0(rqVar).f0(tL_error2, false);
-                        break;
-                    }
-                } else {
-                    rqVar.getMessagesController().O3(updates, false);
-                    break;
-                }
-                break;
+                DictationLid.g(this.b);
+                return;
         }
     }
 }

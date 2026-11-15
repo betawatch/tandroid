@@ -18,13 +18,13 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import javax.net.ssl.SSLException;
-import li.z3;
+import oi.w3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d {
-    public final z3 a;
+    public final w3 a;
     public final OutputStream b;
     public final BufferedInputStream c;
     public int d;
@@ -38,9 +38,9 @@ public final class d {
     public String l;
     public final /* synthetic */ i m;
 
-    public d(i iVar, z3 z3Var, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
+    public d(i iVar, w3 w3Var, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
         this.m = iVar;
-        this.a = z3Var;
+        this.a = w3Var;
         this.c = new BufferedInputStream(inputStream, TLObject.FLAG_13);
         this.b = outputStream;
         this.k = (inetAddress.isLoopbackAddress() || inetAddress.isAnyLocalAddress()) ? "127.0.0.1" : inetAddress.getHostAddress().toString();
@@ -141,7 +141,7 @@ public final class d {
     public final void c() {
         f fVar = f.n;
         i iVar = this.m;
-        z3 z3Var = this.a;
+        w3 w3Var = this.a;
         BufferedInputStream bufferedInputStream = this.c;
         OutputStream outputStream = this.b;
         try {
@@ -149,7 +149,7 @@ public final class d {
                 try {
                     try {
                         byte[] bArr = new byte[TLObject.FLAG_13];
-                        boolean z9 = false;
+                        boolean z10 = false;
                         this.d = 0;
                         this.e = 0;
                         bufferedInputStream.mark(TLObject.FLAG_13);
@@ -190,30 +190,30 @@ public final class d {
                                 this.i.put("remote-addr", str);
                                 this.i.put("http-client-ip", str);
                             }
-                            int b10 = rf.b.b((String) hashMap2.get("method"));
-                            this.g = b10;
-                            if (b10 == 0) {
+                            int c10 = r.b.c((String) hashMap2.get("method"));
+                            this.g = c10;
+                            if (c10 == 0) {
                                 throw new h("BAD REQUEST: Syntax error. HTTP verb " + ((String) hashMap2.get("method")) + " unhandled.");
                             }
                             this.f = (String) hashMap2.get("uri");
                             this.j = new c(this.i);
                             String str2 = (String) this.i.get("connection");
-                            boolean z10 = "HTTP/1.1".equals(this.l) && (str2 == null || !str2.matches("(?i).*close.*"));
+                            boolean z11 = "HTTP/1.1".equals(this.l) && (str2 == null || !str2.matches("(?i).*close.*"));
                             g e10 = iVar.e(this);
                             String str3 = (String) this.i.get("accept-encoding");
                             this.j.f();
                             e10.i(this.g);
                             if (i.g(e10) && str3 != null && str3.contains("gzip")) {
-                                z9 = true;
+                                z10 = true;
                             }
-                            e10.g(z9);
-                            e10.h(z10);
+                            e10.g(z10);
+                            e10.h(z11);
                             e10.d(outputStream);
-                            if (!z10 || e10.b()) {
+                            if (!z11 || e10.b()) {
                                 throw new SocketException("NanoHttpd Shutdown");
                             }
                             i.d(e10);
-                            z3Var.b();
+                            w3Var.a();
                         } catch (SSLException e11) {
                             throw e11;
                         } catch (IOException unused) {
@@ -225,18 +225,18 @@ public final class d {
                         i.c(e12.a(), "text/plain", e12.getMessage()).d(outputStream);
                         i.d(outputStream);
                         i.d(null);
-                        z3Var.b();
+                        w3Var.a();
                     }
                 } catch (SSLException e13) {
                     i.c(fVar, "text/plain", "SSL PROTOCOL FAILURE: " + e13.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    z3Var.b();
+                    w3Var.a();
                 } catch (IOException e14) {
                     i.c(fVar, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e14.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    z3Var.b();
+                    w3Var.a();
                 }
             } catch (SocketException e15) {
                 throw e15;
@@ -245,7 +245,7 @@ public final class d {
             }
         } catch (Throwable th2) {
             i.d(null);
-            z3Var.b();
+            w3Var.a();
             throw th2;
         }
     }

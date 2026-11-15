@@ -1,63 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ga extends za0 {
-    public final /* synthetic */ boolean l0;
-    public final /* synthetic */ boolean m0;
-    public final /* synthetic */ ma n0;
+public final class ga extends v4.j0 {
+    public final /* synthetic */ v4.j0 a;
+    public final /* synthetic */ ha b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ga(ma maVar, Context context, boolean z9, boolean z10) {
-        super(context);
-        this.n0 = maVar;
-        this.l0 = z9;
-        this.m0 = z10;
+    public ga(ha haVar, v4.j0 j0Var) {
+        this.b = haVar;
+        this.a = j0Var;
     }
 
-    @Override // org.telegram.ui.Components.st0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ma maVar = this.n0;
-        maVar.W0(canvas, this);
-        super.dispatchDraw(canvas);
-        maVar.V0(canvas, this);
+    @Override // v4.j0
+    public final void a() {
+        this.a.a();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            float y10 = motionEvent.getY();
-            ma maVar = this.n0;
-            if (y10 < maVar.r0.getBounds().top) {
-                maVar.dismiss();
-            }
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    @Override // v4.j0
+    public final void b(int i7, int i10) {
+        this.a.b(i7 + (!((ja) this.b.f).K1 ? 1 : 0), i10);
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (!this.m0) {
-            this.n0.getClass();
-        }
-        return super.drawChild(canvas, view, j3);
+    @Override // v4.j0
+    public final void c(int i7, int i10, Object obj) {
+        this.a.c(i7 + (!((ja) this.b.f).K1 ? 1 : 0), i10, obj);
     }
 
-    @Override // org.telegram.ui.Components.za0, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i10);
-        ma maVar = this.n0;
-        maVar.q1 = size;
-        maVar.S0(i7, i10);
-        if (this.l0) {
-            i10 = View.MeasureSpec.makeMeasureSpec(maVar.q1, TLObject.FLAG_30);
-        }
-        super.onMeasure(i7, i10);
+    @Override // v4.j0
+    public final void d(int i7, int i10) {
+        this.a.d(i7 + (!((ja) this.b.f).K1 ? 1 : 0), i10);
+    }
+
+    @Override // v4.j0
+    public final void e(int i7, int i10) {
+        int i11 = !((ja) this.b.f).K1 ? 1 : 0;
+        this.a.e(i7 + i11, i10 + i11);
+    }
+
+    @Override // v4.j0
+    public final void f(int i7, int i10) {
+        this.a.f(i7 + (!((ja) this.b.f).K1 ? 1 : 0), i10);
     }
 }

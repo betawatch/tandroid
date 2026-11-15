@@ -1,35 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.TextView;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class gk implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ TextView b;
+public final /* synthetic */ class gk implements InputFilter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public gk(kg.x0 x0Var, TextView textView) {
-        this.b = textView;
-        this.a = TextUtils.isEmpty(x0Var.getText());
+    public /* synthetic */ gk(int i7, View view) {
+        this.a = i7;
+        this.b = view;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        boolean isEmpty = TextUtils.isEmpty(editable);
-        if (isEmpty != this.a) {
-            this.a = isEmpty;
-            this.b.setText(org.telegram.messenger.id.M0(isEmpty ? 2131746321 : 2131754486, null));
+    @Override // android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i7, int i10, Spanned spanned, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                return qk.S((qk) this.b, charSequence, i7, i10, spanned, i11, i12);
+            default:
+                return (charSequence.length() <= 0 || !Character.isWhitespace(charSequence.charAt(0))) ? charSequence : (TextUtils.isEmpty(((ew0) this.b).getText()) || i11 == 0) ? "" : charSequence;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

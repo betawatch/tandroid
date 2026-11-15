@@ -1,0 +1,39 @@
+package ki;
+
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.a41;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.uj0;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes4.dex */
+public final class l3 extends a41 {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        a41.h(new l3());
+    }
+
+    @Override // org.telegram.ui.Components.a41
+    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+        m3 m3Var = (m3) view;
+        CharSequence charSequence = b41Var.l;
+        CharSequence charSequence2 = b41Var.m;
+        m3Var.setText(charSequence);
+        m3Var.r.setText(charSequence2);
+    }
+
+    @Override // org.telegram.ui.Components.a41
+    public final View d(Context context, uj0 uj0Var, int i7, e6 e6Var) {
+        return new m3(context, e6Var);
+    }
+
+    @Override // org.telegram.ui.Components.a41
+    public final boolean f() {
+        return false;
+    }
+}

@@ -1,24 +1,17 @@
 package ui;
 
-import j$.util.function.IntUnaryOperator$-CC;
-import java.util.function.IntUnaryOperator;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g implements IntUnaryOperator {
-    public /* synthetic */ IntUnaryOperator andThen(IntUnaryOperator intUnaryOperator) {
-        return IntUnaryOperator$-CC.$default$andThen(this, intUnaryOperator);
-    }
+public final class g implements a {
+    public a a;
 
-    @Override // java.util.function.IntUnaryOperator
-    public final int applyAsInt(int i7) {
-        if (i7 >= 16777215) {
-            return 1;
+    @Override // ui.a
+    public final void b0(float f10, float f11, float f12, float f13, Canvas canvas) {
+        a aVar = this.a;
+        if (aVar != null) {
+            aVar.b0(f10, f11, f12, f13, canvas);
         }
-        return i7 + 1;
-    }
-
-    public /* synthetic */ IntUnaryOperator compose(IntUnaryOperator intUnaryOperator) {
-        return IntUnaryOperator$-CC.$default$compose(this, intUnaryOperator);
     }
 }

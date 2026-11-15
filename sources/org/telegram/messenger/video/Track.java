@@ -2,8 +2,8 @@ package org.telegram.messenger.video;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
-import i5.s;
-import i5.z;
+import i5.a0;
+import i5.t;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -13,9 +13,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
@@ -24,7 +24,7 @@ public class Track {
     private int height;
     private boolean isAudio;
     private int[] sampleCompositions;
-    private i5.n sampleDescriptionBox;
+    private i5.o sampleDescriptionBox;
     private long[] sampleDurations;
     private LinkedList<Integer> syncSamples;
     private int timeScale;
@@ -37,7 +37,7 @@ public class Track {
     private ArrayList<SamplePresentationTime> samplePresentationTimes = new ArrayList<>();
     private boolean first = true;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class SamplePresentationTime {
         private long dt;
         private int index;
@@ -66,21 +66,21 @@ public class Track {
         samplingFrequencyIndexMap.put(8000, 11);
     }
 
-    public Track(int i7, MediaFormat mediaFormat, boolean z9) {
+    public Track(int i7, MediaFormat mediaFormat, boolean z10) {
         int i10;
-        boolean z10;
+        boolean z11;
         int i11;
         this.syncSamples = null;
         this.volume = 0.0f;
         this.trackId = i7;
-        this.isAudio = z9;
+        this.isAudio = z10;
         int i12 = 0;
-        if (z9) {
+        if (z10) {
             this.volume = 1.0f;
             this.timeScale = mediaFormat.getInteger("sample-rate");
             this.handler = "soun";
-            this.headerBox = new s("smhd");
-            this.sampleDescriptionBox = new i5.n();
+            this.headerBox = new t("smhd");
+            this.sampleDescriptionBox = new i5.o();
             j5.b bVar = new j5.b("mp4a");
             bVar.h = mediaFormat.getInteger("channel-count");
             bVar.r = mediaFormat.getInteger("sample-rate");
@@ -98,7 +98,7 @@ public class Track {
             lc.d dVar = new lc.d();
             dVar.k = new ArrayList();
             if ("audio/mpeg".equals(string)) {
-                dVar.d = qs.q1;
+                dVar.d = ns.q1;
             } else {
                 dVar.d = 64;
             }
@@ -106,11 +106,11 @@ public class Track {
             dVar.g = 1536;
             if (mediaFormat.containsKey("max-bitrate")) {
                 i10 = 13;
-                z10 = 7;
+                z11 = 7;
                 dVar.h = mediaFormat.getInteger("max-bitrate");
             } else {
                 i10 = 13;
-                z10 = 7;
+                z11 = 7;
                 dVar.h = 96000L;
             }
             dVar.i = this.timeScale;
@@ -122,14 +122,14 @@ public class Track {
             gVar.m = dVar;
             ByteBuffer allocate = ByteBuffer.allocate(gVar.c());
             h5.b.r(3, allocate);
-            allocate.put((byte) ((gVar.c() - 2) & qs.e4));
+            allocate.put((byte) ((gVar.c() - 2) & ns.e4));
             h5.b.p(gVar.d, allocate);
-            allocate.put((byte) (((gVar.e << 7) | (gVar.f << 6) | (gVar.g << 5) | (31 & gVar.h)) & qs.e4));
+            allocate.put((byte) (((gVar.e << 7) | (gVar.f << 6) | (gVar.g << 5) | (31 & gVar.h)) & ns.e4));
             if (gVar.e > 0) {
                 h5.b.p(gVar.k, allocate);
             }
             if (gVar.f > 0) {
-                allocate.put((byte) (gVar.i & qs.e4));
+                allocate.put((byte) (gVar.i & ns.e4));
                 allocate.put(h5.b.b(gVar.j));
                 allocate.put((byte) 0);
             }
@@ -155,9 +155,9 @@ public class Track {
                 }
                 i12 = 4;
             }
-            allocate2.put((byte) ((i12 + i10) & qs.e4));
-            allocate2.put((byte) (dVar2.d & qs.e4));
-            allocate2.put((byte) (((dVar2.e << 2) | (dVar2.f << 1) | 1) & qs.e4));
+            allocate2.put((byte) ((i12 + i10) & ns.e4));
+            allocate2.put((byte) (dVar2.d & ns.e4));
+            allocate2.put((byte) (((dVar2.e << 2) | (dVar2.f << 1) | 1) & ns.e4));
             h5.b.q(dVar2.g, allocate2);
             allocate2.putInt((int) dVar2.h);
             allocate2.putInt((int) dVar2.i);
@@ -186,10 +186,10 @@ public class Track {
             ByteBuffer allocate4 = ByteBuffer.allocate(3);
             h5.b.r(6, allocate4);
             allocate4.put((byte) 1);
-            allocate4.put((byte) (mVar2.d & qs.e4));
+            allocate4.put((byte) (mVar2.d & ns.e4));
             allocate.put(allocate2.array());
             allocate.put(allocate4.array());
-            com.google.android.recaptcha.internal.a.t(ze.a.c(kc.a.h, bVar2, bVar2, allocate));
+            i5.c.u(ze.a.c(kc.a.h, bVar2, bVar2, allocate));
             bVar2.e = allocate;
             bVar.a(bVar2);
             this.sampleDescriptionBox.a(bVar);
@@ -200,12 +200,12 @@ public class Track {
         this.timeScale = 90000;
         this.syncSamples = new LinkedList<>();
         this.handler = "vide";
-        z zVar = new z("vmhd");
-        zVar.e = 0;
-        zVar.f = new int[3];
-        zVar.g(1);
-        this.headerBox = zVar;
-        this.sampleDescriptionBox = new i5.n();
+        a0 a0Var = new a0("vmhd");
+        a0Var.e = 0;
+        a0Var.f = new int[3];
+        a0Var.g(1);
+        this.headerBox = a0Var;
+        this.sampleDescriptionBox = new i5.o();
         String string2 = mediaFormat.getString("mime");
         if (!string2.equals("video/avc")) {
             if (string2.equals("video/mp4v")) {
@@ -308,9 +308,9 @@ public class Track {
             byte[] bArr5 = new byte[byteBuffer2.remaining()];
             byteBuffer2.get(bArr5);
             arrayList2.add(bArr5);
-            com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.h, aVar5, aVar5, arrayList));
+            i5.c.u(ze.a.c(qc.a.h, aVar5, aVar5, arrayList));
             aVar5.a.f = arrayList;
-            com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.n, aVar5, aVar5, arrayList2));
+            i5.c.u(ze.a.c(qc.a.n, aVar5, aVar5, arrayList2));
             aVar5.a.g = arrayList2;
         }
         if (mediaFormat.containsKey("level")) {
@@ -364,26 +364,26 @@ public class Track {
             } else if (integer2 == 8) {
                 aVar5.e(100);
             } else if (integer2 == 16) {
-                aVar5.e(qs.v1);
+                aVar5.e(ns.v1);
             } else if (integer2 == 32) {
-                aVar5.e(qs.G1);
+                aVar5.e(ns.G1);
             } else if (integer2 == 64) {
-                aVar5.e(qs.T3);
+                aVar5.e(ns.T3);
             }
         } else {
             aVar5.e(100);
         }
-        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.s, aVar5, aVar5, new Integer(-1)));
+        i5.c.u(ze.a.c(qc.a.s, aVar5, aVar5, new Integer(-1)));
         aVar5.a.j = -1;
-        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.w, aVar5, aVar5, new Integer(-1)));
+        i5.c.u(ze.a.c(qc.a.w, aVar5, aVar5, new Integer(-1)));
         aVar5.a.k = -1;
-        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.r, aVar5, aVar5, new Integer(-1)));
+        i5.c.u(ze.a.c(qc.a.r, aVar5, aVar5, new Integer(-1)));
         aVar5.a.i = -1;
-        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.b, aVar5, aVar5, new Integer(1)));
+        i5.c.u(ze.a.c(qc.a.b, aVar5, aVar5, new Integer(1)));
         aVar5.a.a = 1;
-        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.f, aVar5, aVar5, new Integer(3)));
+        i5.c.u(ze.a.c(qc.a.f, aVar5, aVar5, new Integer(3)));
         aVar5.a.e = 3;
-        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.d, aVar5, aVar5, new Integer(0)));
+        i5.c.u(ze.a.c(qc.a.d, aVar5, aVar5, new Integer(0)));
         aVar5.a.c = 0;
         cVar3.a(aVar5);
         this.sampleDescriptionBox.a(cVar3);
@@ -405,10 +405,10 @@ public class Track {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void addSample(long j3, MediaCodec.BufferInfo bufferInfo) {
-        boolean z9 = this.isAudio ? false : true;
+        boolean z10 = this.isAudio ? false : true;
         this.samples.add(new Sample(j3, bufferInfo.size));
         LinkedList<Integer> linkedList = this.syncSamples;
-        if (linkedList != null && z9) {
+        if (linkedList != null && z10) {
             linkedList.add(Integer.valueOf(this.samples.size()));
         }
         ArrayList<SamplePresentationTime> arrayList = this.samplePresentationTimes;
@@ -443,7 +443,7 @@ public class Track {
         return this.sampleCompositions;
     }
 
-    public i5.n getSampleDescriptionBox() {
+    public i5.o getSampleDescriptionBox() {
         return this.sampleDescriptionBox;
     }
 
@@ -499,7 +499,7 @@ public class Track {
         long j11 = Long.MAX_VALUE;
         long j12 = 0;
         int i11 = 0;
-        boolean z9 = false;
+        boolean z10 = false;
         while (true) {
             if (i11 >= this.samplePresentationTimes.size()) {
                 break;
@@ -518,7 +518,7 @@ public class Track {
                 j11 = Math.min(j11, j13);
             }
             if (samplePresentationTime.index != i11) {
-                z9 = true;
+                z10 = true;
             }
             i11++;
             j10 = j3;
@@ -531,7 +531,7 @@ public class Track {
         for (i7 = 1; i7 < arrayList.size(); i7++) {
             ((SamplePresentationTime) arrayList.get(i7)).dt = this.sampleDurations[i7] + ((SamplePresentationTime) arrayList.get(i7 - 1)).dt;
         }
-        if (z9) {
+        if (z10) {
             this.sampleCompositions = new int[this.samplePresentationTimes.size()];
             while (i10 < this.samplePresentationTimes.size()) {
                 SamplePresentationTime samplePresentationTime2 = this.samplePresentationTimes.get(i10);

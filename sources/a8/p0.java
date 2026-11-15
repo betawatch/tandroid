@@ -11,9 +11,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class p0 {
     public static /* synthetic */ void A(Object obj) {
@@ -26,28 +26,28 @@ public abstract /* synthetic */ class p0 {
         return new File(str).exists();
     }
 
-    public static int C(int i7, int i10, int i11) {
+    public static float C(float f10, float f11, float f12, float f13) {
+        return Math.max(f13, Math.min(f12, f10 / f11));
+    }
+
+    public static int D(int i7, int i10, int i11) {
         return com.google.android.gms.internal.vision.r0.T(i7) + i10 + i11;
     }
 
-    public static String D(String str, String str2, String str3) {
+    public static String E(String str, String str2, String str3) {
         return str + str2 + str3;
-    }
-
-    public static int E(int i7, int i10, int i11) {
-        return (com.google.android.gms.internal.vision.r0.y(i7) * i10) + i11;
     }
 
     public static c4.b a(c4.m mVar, byte[] bArr, int i7) {
         h9.f0 p10 = h9.i0.p();
-        mVar.z(bArr, 0, i7, c4.l.c, new a1.c(p10, 22));
+        mVar.K(bArr, 0, i7, c4.l.c, new a1.c(p10, 17));
         return new c4.b(p10.f());
     }
 
     public static final void b(int i7, View view, ViewGroup container) {
         kotlin.jvm.internal.j.e(view, "view");
         kotlin.jvm.internal.j.e(container, "container");
-        if (androidx.fragment.app.i0.K(2)) {
+        if (androidx.fragment.app.j0.K(2)) {
             Log.v("FragmentManager", "SpecialEffectsController: Calling apply state");
         }
         int c10 = p1.g.c(i7);
@@ -55,7 +55,7 @@ public abstract /* synthetic */ class p0 {
             ViewParent parent = view.getParent();
             ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
             if (viewGroup != null) {
-                if (androidx.fragment.app.i0.K(2)) {
+                if (androidx.fragment.app.j0.K(2)) {
                     Log.v("FragmentManager", "SpecialEffectsController: Removing view " + view + " from container " + viewGroup);
                 }
                 viewGroup.removeView(view);
@@ -64,12 +64,12 @@ public abstract /* synthetic */ class p0 {
             return;
         }
         if (c10 == 1) {
-            if (androidx.fragment.app.i0.K(2)) {
+            if (androidx.fragment.app.j0.K(2)) {
                 Log.v("FragmentManager", "SpecialEffectsController: Setting view " + view + " to VISIBLE");
             }
             ViewParent parent2 = view.getParent();
             if ((parent2 instanceof ViewGroup ? (ViewGroup) parent2 : null) == null) {
-                if (androidx.fragment.app.i0.K(2)) {
+                if (androidx.fragment.app.j0.K(2)) {
                     Log.v("FragmentManager", "SpecialEffectsController: Adding view " + view + " to Container " + container);
                 }
                 container.addView(view);
@@ -78,7 +78,7 @@ public abstract /* synthetic */ class p0 {
             return;
         }
         if (c10 == 2) {
-            if (androidx.fragment.app.i0.K(2)) {
+            if (androidx.fragment.app.j0.K(2)) {
                 Log.v("FragmentManager", "SpecialEffectsController: Setting view " + view + " to GONE");
             }
             view.setVisibility(8);
@@ -87,7 +87,7 @@ public abstract /* synthetic */ class p0 {
         if (c10 != 3) {
             return;
         }
-        if (androidx.fragment.app.i0.K(2)) {
+        if (androidx.fragment.app.j0.K(2)) {
             Log.v("FragmentManager", "SpecialEffectsController: Setting view " + view + " to INVISIBLE");
         }
         view.setVisibility(4);
@@ -167,9 +167,9 @@ public abstract /* synthetic */ class p0 {
                 return 29;
             case 29:
                 return 30;
-            case qs.T /* 30 */:
+            case ns.T /* 30 */:
                 return 31;
-            case qs.U /* 31 */:
+            case ns.U /* 31 */:
                 return 32;
             case 32:
                 return 33;
@@ -209,174 +209,174 @@ public abstract /* synthetic */ class p0 {
                 return 50;
             case 50:
                 return 51;
-            case qs.o0 /* 51 */:
+            case ns.o0 /* 51 */:
                 return 52;
-            case qs.p0 /* 52 */:
+            case ns.p0 /* 52 */:
                 return 53;
-            case qs.q0 /* 53 */:
+            case ns.q0 /* 53 */:
                 return 54;
-            case qs.r0 /* 54 */:
+            case ns.r0 /* 54 */:
                 return 55;
-            case qs.s0 /* 55 */:
+            case ns.s0 /* 55 */:
                 return 56;
-            case qs.t0 /* 56 */:
+            case ns.t0 /* 56 */:
                 return 57;
-            case qs.u0 /* 57 */:
+            case ns.u0 /* 57 */:
                 return 58;
-            case qs.v0 /* 58 */:
+            case ns.v0 /* 58 */:
                 return 59;
-            case qs.w0 /* 59 */:
+            case ns.w0 /* 59 */:
                 return 60;
-            case qs.x0 /* 60 */:
+            case ns.x0 /* 60 */:
                 return 61;
-            case qs.y0 /* 61 */:
+            case ns.y0 /* 61 */:
                 return 62;
-            case qs.z0 /* 62 */:
+            case ns.z0 /* 62 */:
                 return 63;
-            case qs.A0 /* 63 */:
+            case ns.A0 /* 63 */:
                 return 64;
             case 64:
                 return 65;
             case 65:
                 return 66;
-            case qs.D0 /* 66 */:
+            case ns.D0 /* 66 */:
                 return 67;
-            case qs.E0 /* 67 */:
+            case ns.E0 /* 67 */:
                 return 68;
-            case qs.F0 /* 68 */:
+            case ns.F0 /* 68 */:
                 return 69;
-            case qs.G0 /* 69 */:
+            case ns.G0 /* 69 */:
                 return 70;
-            case qs.H0 /* 70 */:
+            case ns.H0 /* 70 */:
                 return 71;
-            case qs.I0 /* 71 */:
+            case ns.I0 /* 71 */:
                 return 72;
-            case qs.J0 /* 72 */:
+            case ns.J0 /* 72 */:
                 return 73;
-            case qs.K0 /* 73 */:
+            case ns.K0 /* 73 */:
                 return 74;
-            case qs.L0 /* 74 */:
+            case ns.L0 /* 74 */:
                 return 75;
-            case qs.M0 /* 75 */:
+            case ns.M0 /* 75 */:
                 return 76;
-            case qs.N0 /* 76 */:
+            case ns.N0 /* 76 */:
                 return 77;
-            case qs.O0 /* 77 */:
+            case ns.O0 /* 77 */:
                 return 78;
-            case qs.P0 /* 78 */:
+            case ns.P0 /* 78 */:
                 return 79;
-            case qs.Q0 /* 79 */:
+            case ns.Q0 /* 79 */:
                 return 80;
             default:
                 switch (i7) {
                     case 96:
                         return 87;
-                    case qs.i1 /* 97 */:
+                    case ns.i1 /* 97 */:
                         return 88;
-                    case qs.j1 /* 98 */:
+                    case ns.j1 /* 98 */:
                         return 89;
-                    case qs.k1 /* 99 */:
+                    case ns.k1 /* 99 */:
                         return 90;
-                    case qs.l1 /* 100 */:
+                    case ns.l1 /* 100 */:
                         return 91;
                     case 101:
                         return 92;
-                    case qs.n1 /* 102 */:
+                    case ns.n1 /* 102 */:
                         return 83;
-                    case qs.o1 /* 103 */:
+                    case ns.o1 /* 103 */:
                         return 86;
-                    case qs.p1 /* 104 */:
+                    case ns.p1 /* 104 */:
                         return 93;
-                    case qs.q1 /* 105 */:
+                    case ns.q1 /* 105 */:
                         return 94;
-                    case qs.r1 /* 106 */:
+                    case ns.r1 /* 106 */:
                         return 95;
-                    case qs.s1 /* 107 */:
+                    case ns.s1 /* 107 */:
                         return 96;
-                    case qs.t1 /* 108 */:
+                    case ns.t1 /* 108 */:
                         return 97;
-                    case qs.u1 /* 109 */:
+                    case ns.u1 /* 109 */:
                         return 98;
-                    case qs.v1 /* 110 */:
+                    case ns.v1 /* 110 */:
                         return 99;
-                    case qs.w1 /* 111 */:
+                    case ns.w1 /* 111 */:
                         return 100;
-                    case qs.x1 /* 112 */:
+                    case ns.x1 /* 112 */:
                         return 101;
-                    case qs.y1 /* 113 */:
-                        return qs.n1;
-                    case qs.z1 /* 114 */:
-                        return qs.o1;
-                    case qs.A1 /* 115 */:
-                        return qs.p1;
-                    case qs.B1 /* 116 */:
-                        return qs.q1;
-                    case qs.C1 /* 117 */:
-                        return qs.r1;
-                    case qs.D1 /* 118 */:
-                        return qs.s1;
-                    case qs.E1 /* 119 */:
-                        return qs.t1;
+                    case ns.y1 /* 113 */:
+                        return ns.n1;
+                    case ns.z1 /* 114 */:
+                        return ns.o1;
+                    case ns.A1 /* 115 */:
+                        return ns.p1;
+                    case ns.B1 /* 116 */:
+                        return ns.q1;
+                    case ns.C1 /* 117 */:
+                        return ns.r1;
+                    case ns.D1 /* 118 */:
+                        return ns.s1;
+                    case ns.E1 /* 119 */:
+                        return ns.t1;
                     case 120:
-                        return qs.u1;
-                    case qs.F1 /* 121 */:
-                        return qs.v1;
-                    case qs.G1 /* 122 */:
-                        return qs.w1;
-                    case qs.H1 /* 123 */:
-                        return qs.x1;
-                    case qs.I1 /* 124 */:
-                        return qs.y1;
-                    case qs.J1 /* 125 */:
-                        return qs.z1;
-                    case qs.K1 /* 126 */:
-                        return qs.C1;
-                    case qs.L1 /* 127 */:
-                        return qs.E1;
+                        return ns.u1;
+                    case ns.F1 /* 121 */:
+                        return ns.v1;
+                    case ns.G1 /* 122 */:
+                        return ns.w1;
+                    case ns.H1 /* 123 */:
+                        return ns.x1;
+                    case ns.I1 /* 124 */:
+                        return ns.y1;
+                    case ns.J1 /* 125 */:
+                        return ns.z1;
+                    case ns.K1 /* 126 */:
+                        return ns.C1;
+                    case ns.L1 /* 127 */:
+                        return ns.E1;
                     case 128:
                         return 120;
-                    case qs.N1 /* 129 */:
-                        return qs.F1;
-                    case qs.O1 /* 130 */:
-                        return qs.G1;
-                    case qs.P1 /* 131 */:
-                        return qs.H1;
-                    case qs.Q1 /* 132 */:
-                        return qs.I1;
+                    case ns.N1 /* 129 */:
+                        return ns.F1;
+                    case ns.O1 /* 130 */:
+                        return ns.G1;
+                    case ns.P1 /* 131 */:
+                        return ns.H1;
+                    case ns.Q1 /* 132 */:
+                        return ns.I1;
                     case 133:
-                        return qs.J1;
+                        return ns.J1;
                     case 134:
-                        return qs.K1;
-                    case qs.R1 /* 135 */:
-                        return qs.L1;
-                    case qs.S1 /* 136 */:
+                        return ns.K1;
+                    case ns.R1 /* 135 */:
+                        return ns.L1;
+                    case ns.S1 /* 136 */:
                         return 128;
-                    case qs.T1 /* 137 */:
-                        return qs.N1;
-                    case qs.U1 /* 138 */:
-                        return qs.O1;
-                    case qs.V1 /* 139 */:
-                        return qs.P1;
-                    case qs.W1 /* 140 */:
-                        return qs.Q1;
-                    case qs.X1 /* 141 */:
+                    case ns.T1 /* 137 */:
+                        return ns.N1;
+                    case ns.U1 /* 138 */:
+                        return ns.O1;
+                    case ns.V1 /* 139 */:
+                        return ns.P1;
+                    case ns.W1 /* 140 */:
+                        return ns.Q1;
+                    case ns.X1 /* 141 */:
                         return 133;
-                    case qs.Y1 /* 142 */:
+                    case ns.Y1 /* 142 */:
                         return 134;
-                    case qs.Z1 /* 143 */:
-                        return qs.R1;
-                    case qs.a2 /* 144 */:
-                        return qs.S1;
-                    case qs.b2 /* 145 */:
-                        return qs.A1;
-                    case qs.c2 /* 146 */:
-                        return qs.B1;
-                    case qs.d2 /* 147 */:
-                        return qs.D1;
-                    case qs.e2 /* 148 */:
-                        return qs.T1;
-                    case qs.f2 /* 149 */:
-                        return qs.U1;
+                    case ns.Z1 /* 143 */:
+                        return ns.R1;
+                    case ns.a2 /* 144 */:
+                        return ns.S1;
+                    case ns.b2 /* 145 */:
+                        return ns.A1;
+                    case ns.c2 /* 146 */:
+                        return ns.B1;
+                    case ns.d2 /* 147 */:
+                        return ns.D1;
+                    case ns.e2 /* 148 */:
+                        return ns.T1;
+                    case ns.f2 /* 149 */:
+                        return ns.U1;
                     default:
                         return 0;
                 }
@@ -460,9 +460,9 @@ public abstract /* synthetic */ class p0 {
                 return 27;
             case 29:
                 return 28;
-            case qs.T /* 30 */:
+            case ns.T /* 30 */:
                 return 29;
-            case qs.U /* 31 */:
+            case ns.U /* 31 */:
                 return 30;
             case 32:
                 return 31;
@@ -502,182 +502,182 @@ public abstract /* synthetic */ class p0 {
                 return 48;
             case 50:
                 return 49;
-            case qs.o0 /* 51 */:
+            case ns.o0 /* 51 */:
                 return 50;
-            case qs.p0 /* 52 */:
+            case ns.p0 /* 52 */:
                 return 51;
-            case qs.q0 /* 53 */:
+            case ns.q0 /* 53 */:
                 return 52;
-            case qs.r0 /* 54 */:
+            case ns.r0 /* 54 */:
                 return 53;
-            case qs.s0 /* 55 */:
+            case ns.s0 /* 55 */:
                 return 54;
-            case qs.t0 /* 56 */:
+            case ns.t0 /* 56 */:
                 return 55;
-            case qs.u0 /* 57 */:
+            case ns.u0 /* 57 */:
                 return 56;
-            case qs.v0 /* 58 */:
+            case ns.v0 /* 58 */:
                 return 57;
-            case qs.w0 /* 59 */:
+            case ns.w0 /* 59 */:
                 return 58;
-            case qs.x0 /* 60 */:
+            case ns.x0 /* 60 */:
                 return 59;
-            case qs.y0 /* 61 */:
+            case ns.y0 /* 61 */:
                 return 60;
-            case qs.z0 /* 62 */:
+            case ns.z0 /* 62 */:
                 return 61;
-            case qs.A0 /* 63 */:
+            case ns.A0 /* 63 */:
                 return 62;
             case 64:
                 return 63;
             case 65:
                 return 64;
-            case qs.D0 /* 66 */:
+            case ns.D0 /* 66 */:
                 return 65;
-            case qs.E0 /* 67 */:
+            case ns.E0 /* 67 */:
                 return 66;
-            case qs.F0 /* 68 */:
+            case ns.F0 /* 68 */:
                 return 67;
-            case qs.G0 /* 69 */:
+            case ns.G0 /* 69 */:
                 return 68;
-            case qs.H0 /* 70 */:
+            case ns.H0 /* 70 */:
                 return 69;
-            case qs.I0 /* 71 */:
+            case ns.I0 /* 71 */:
                 return 70;
-            case qs.J0 /* 72 */:
+            case ns.J0 /* 72 */:
                 return 71;
-            case qs.K0 /* 73 */:
+            case ns.K0 /* 73 */:
                 return 72;
-            case qs.L0 /* 74 */:
+            case ns.L0 /* 74 */:
                 return 73;
-            case qs.M0 /* 75 */:
+            case ns.M0 /* 75 */:
                 return 74;
-            case qs.N0 /* 76 */:
+            case ns.N0 /* 76 */:
                 return 75;
-            case qs.O0 /* 77 */:
+            case ns.O0 /* 77 */:
                 return 76;
-            case qs.P0 /* 78 */:
+            case ns.P0 /* 78 */:
                 return 77;
-            case qs.Q0 /* 79 */:
+            case ns.Q0 /* 79 */:
                 return 78;
             case 80:
                 return 79;
-            case qs.S0 /* 81 */:
+            case ns.S0 /* 81 */:
                 return 90;
-            case qs.T0 /* 82 */:
+            case ns.T0 /* 82 */:
                 return 91;
-            case qs.U0 /* 83 */:
-                return qs.n1;
-            case qs.V0 /* 84 */:
+            case ns.U0 /* 83 */:
+                return ns.n1;
+            case ns.V0 /* 84 */:
                 return 93;
-            case qs.W0 /* 85 */:
+            case ns.W0 /* 85 */:
                 return 94;
-            case qs.X0 /* 86 */:
-                return qs.o1;
-            case qs.Y0 /* 87 */:
+            case ns.X0 /* 86 */:
+                return ns.o1;
+            case ns.Y0 /* 87 */:
                 return 96;
-            case qs.Z0 /* 88 */:
+            case ns.Z0 /* 88 */:
                 return 97;
-            case qs.a1 /* 89 */:
+            case ns.a1 /* 89 */:
                 return 98;
-            case qs.b1 /* 90 */:
+            case ns.b1 /* 90 */:
                 return 99;
-            case qs.c1 /* 91 */:
+            case ns.c1 /* 91 */:
                 return 100;
-            case qs.d1 /* 92 */:
+            case ns.d1 /* 92 */:
                 return 101;
-            case qs.e1 /* 93 */:
-                return qs.p1;
-            case qs.f1 /* 94 */:
-                return qs.q1;
-            case qs.g1 /* 95 */:
-                return qs.r1;
+            case ns.e1 /* 93 */:
+                return ns.p1;
+            case ns.f1 /* 94 */:
+                return ns.q1;
+            case ns.g1 /* 95 */:
+                return ns.r1;
             case 96:
-                return qs.s1;
-            case qs.i1 /* 97 */:
-                return qs.t1;
-            case qs.j1 /* 98 */:
-                return qs.u1;
-            case qs.k1 /* 99 */:
-                return qs.v1;
-            case qs.l1 /* 100 */:
-                return qs.w1;
+                return ns.s1;
+            case ns.i1 /* 97 */:
+                return ns.t1;
+            case ns.j1 /* 98 */:
+                return ns.u1;
+            case ns.k1 /* 99 */:
+                return ns.v1;
+            case ns.l1 /* 100 */:
+                return ns.w1;
             case 101:
-                return qs.x1;
-            case qs.n1 /* 102 */:
-                return qs.y1;
-            case qs.o1 /* 103 */:
-                return qs.z1;
-            case qs.p1 /* 104 */:
-                return qs.A1;
-            case qs.q1 /* 105 */:
-                return qs.B1;
-            case qs.r1 /* 106 */:
-                return qs.C1;
-            case qs.s1 /* 107 */:
-                return qs.D1;
-            case qs.t1 /* 108 */:
-                return qs.E1;
-            case qs.u1 /* 109 */:
+                return ns.x1;
+            case ns.n1 /* 102 */:
+                return ns.y1;
+            case ns.o1 /* 103 */:
+                return ns.z1;
+            case ns.p1 /* 104 */:
+                return ns.A1;
+            case ns.q1 /* 105 */:
+                return ns.B1;
+            case ns.r1 /* 106 */:
+                return ns.C1;
+            case ns.s1 /* 107 */:
+                return ns.D1;
+            case ns.t1 /* 108 */:
+                return ns.E1;
+            case ns.u1 /* 109 */:
                 return 120;
-            case qs.v1 /* 110 */:
-                return qs.F1;
-            case qs.w1 /* 111 */:
-                return qs.G1;
-            case qs.x1 /* 112 */:
-                return qs.H1;
-            case qs.y1 /* 113 */:
-                return qs.I1;
-            case qs.z1 /* 114 */:
-                return qs.J1;
-            case qs.A1 /* 115 */:
-                return qs.b2;
-            case qs.B1 /* 116 */:
-                return qs.c2;
-            case qs.C1 /* 117 */:
-                return qs.K1;
-            case qs.D1 /* 118 */:
-                return qs.d2;
-            case qs.E1 /* 119 */:
-                return qs.L1;
+            case ns.v1 /* 110 */:
+                return ns.F1;
+            case ns.w1 /* 111 */:
+                return ns.G1;
+            case ns.x1 /* 112 */:
+                return ns.H1;
+            case ns.y1 /* 113 */:
+                return ns.I1;
+            case ns.z1 /* 114 */:
+                return ns.J1;
+            case ns.A1 /* 115 */:
+                return ns.b2;
+            case ns.B1 /* 116 */:
+                return ns.c2;
+            case ns.C1 /* 117 */:
+                return ns.K1;
+            case ns.D1 /* 118 */:
+                return ns.d2;
+            case ns.E1 /* 119 */:
+                return ns.L1;
             case 120:
                 return 128;
-            case qs.F1 /* 121 */:
-                return qs.N1;
-            case qs.G1 /* 122 */:
-                return qs.O1;
-            case qs.H1 /* 123 */:
-                return qs.P1;
-            case qs.I1 /* 124 */:
-                return qs.Q1;
-            case qs.J1 /* 125 */:
+            case ns.F1 /* 121 */:
+                return ns.N1;
+            case ns.G1 /* 122 */:
+                return ns.O1;
+            case ns.H1 /* 123 */:
+                return ns.P1;
+            case ns.I1 /* 124 */:
+                return ns.Q1;
+            case ns.J1 /* 125 */:
                 return 133;
-            case qs.K1 /* 126 */:
+            case ns.K1 /* 126 */:
                 return 134;
-            case qs.L1 /* 127 */:
-                return qs.R1;
+            case ns.L1 /* 127 */:
+                return ns.R1;
             case 128:
-                return qs.S1;
-            case qs.N1 /* 129 */:
-                return qs.T1;
-            case qs.O1 /* 130 */:
-                return qs.U1;
-            case qs.P1 /* 131 */:
-                return qs.V1;
-            case qs.Q1 /* 132 */:
-                return qs.W1;
+                return ns.S1;
+            case ns.N1 /* 129 */:
+                return ns.T1;
+            case ns.O1 /* 130 */:
+                return ns.U1;
+            case ns.P1 /* 131 */:
+                return ns.V1;
+            case ns.Q1 /* 132 */:
+                return ns.W1;
             case 133:
-                return qs.X1;
+                return ns.X1;
             case 134:
-                return qs.Y1;
-            case qs.R1 /* 135 */:
-                return qs.Z1;
-            case qs.S1 /* 136 */:
-                return qs.a2;
-            case qs.T1 /* 137 */:
-                return qs.e2;
-            case qs.U1 /* 138 */:
-                return qs.f2;
+                return ns.Y1;
+            case ns.R1 /* 135 */:
+                return ns.Z1;
+            case ns.S1 /* 136 */:
+                return ns.a2;
+            case ns.T1 /* 137 */:
+                return ns.e2;
+            case ns.U1 /* 138 */:
+                return ns.f2;
             default:
                 throw null;
         }
@@ -691,8 +691,8 @@ public abstract /* synthetic */ class p0 {
         return com.google.android.gms.internal.cast.v4.o(i7) + i10 + i11;
     }
 
-    public static int h(int i7, int i10, int i11, int i12) {
-        return com.google.android.gms.internal.vision.r0.T(i7) + i10 + i11 + i12;
+    public static int h(Float f10, float f11) {
+        return org.telegram.messenger.g0.L(f10.floatValue() * f11);
     }
 
     public static j0 i(HashMap hashMap, int i7) {
@@ -706,9 +706,9 @@ public abstract /* synthetic */ class p0 {
         return bundle;
     }
 
-    public static Bundle k(String str, boolean z9) {
+    public static Bundle k(String str, boolean z10) {
         Bundle bundle = new Bundle();
-        bundle.putBoolean(str, z9);
+        bundle.putBoolean(str, z10);
         return bundle;
     }
 
@@ -782,13 +782,13 @@ public abstract /* synthetic */ class p0 {
         return hashMap;
     }
 
-    public static na.c y(int i7, m4.d0 d0Var) {
+    public static na.c y(int i7, ji.j jVar) {
         c8.s sVar = new c8.s(i7);
-        if (((HashMap) d0Var.b) == null) {
-            d0Var.b = new HashMap();
+        if (((HashMap) jVar.c) == null) {
+            jVar.c = new HashMap();
         }
-        ((HashMap) d0Var.b).put(c8.w.class, sVar);
-        return new na.c((String) d0Var.a, ((HashMap) d0Var.b) == null ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(new HashMap((HashMap) d0Var.b)));
+        ((HashMap) jVar.c).put(c8.w.class, sVar);
+        return new na.c((String) jVar.b, ((HashMap) jVar.c) == null ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(new HashMap((HashMap) jVar.c)));
     }
 
     public static void z(int i7, ArrayList arrayList) {

@@ -1,61 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vb implements org.telegram.messenger.x10 {
-    public final /* synthetic */ rc a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ View c;
+public final /* synthetic */ class vb implements org.telegram.messenger.z10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qc b;
 
-    public /* synthetic */ vb(rc rcVar, int i7, View view) {
-        this.a = rcVar;
-        this.b = i7;
-        this.c = view;
+    public /* synthetic */ vb(qc qcVar, int i7) {
+        this.a = i7;
+        this.b = qcVar;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj, Object obj2, Object obj3) {
-        Long l10 = (Long) obj;
-        Integer num = (Integer) obj2;
-        TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj3;
-        rc rcVar = this.a;
-        int i7 = rcVar.U;
-        int i10 = this.b;
-        if (i10 == i7) {
-            rcVar.n = l10.longValue();
-            rcVar.h1(true);
-        } else if (i10 == rcVar.c0) {
-            rcVar.x = l10.longValue();
-            rcVar.i1();
-        } else if (i10 == rcVar.f0) {
-            if (l10.longValue() == 0) {
-                rcVar.D = null;
-            } else if (tL_starGiftUnique != null) {
-                TLRPC.TL_emojiStatusCollectible q02 = org.telegram.messenger.qp.q0(tL_starGiftUnique);
-                if (num != null) {
-                    q02.flags |= 1;
-                    q02.until = num.intValue();
-                }
-                rcVar.D = q02;
-                rcVar.s = -1;
-                rcVar.x = 0L;
-            } else {
-                TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-                tL_emojiStatus.document_id = l10.longValue();
-                if (num != null) {
-                    tL_emojiStatus.flags |= 1;
-                    tL_emojiStatus.until = num.intValue();
-                }
-                rcVar.D = tL_emojiStatus;
-            }
-            rcVar.i1();
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) obj;
+                qc qcVar = this.b;
+                qcVar.F = wallPaper;
+                qcVar.G = wallPaper;
+                qcVar.H = wallPaper;
+                qcVar.e1(false);
+                qcVar.h1(false);
+                org.telegram.messenger.g0.i3(new wb(qcVar, 1), 350L);
+                break;
+            case 1:
+                qc.a0(this.b, (org.telegram.messenger.e3) obj);
+                break;
+            default:
+                this.b.d1((TL_stories.TL_premium_boostsStatus) obj);
+                break;
         }
-        rcVar.e1(true);
-        ((fc) this.c).c(l10.longValue(), tL_starGiftUnique != null, true);
-        rcVar.g1(true);
     }
 }

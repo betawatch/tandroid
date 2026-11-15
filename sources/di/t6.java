@@ -1,67 +1,31 @@
 package di;
 
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class t6 implements f3.g0 {
-    public final /* synthetic */ int a = 1;
-    public int b;
-    public long c;
-    public int d;
+public final /* synthetic */ class t6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Wallet.t1 b;
 
-    public /* synthetic */ t6() {
+    public /* synthetic */ t6(org.telegram.ui.Wallet.t1 t1Var, int i7) {
+        this.a = i7;
+        this.b = t1Var;
     }
 
-    public boolean a(int i7, int i10) {
-        int i11 = this.d;
-        if (i11 != 1) {
-            if ((i11 == 2 || i11 == 3) && ConnectionsManager.getInstance(i7).getCurrentTime() >= this.c) {
-                return false;
-            }
-        } else if (this.b >= i10) {
-            return false;
-        }
-        return true;
-    }
-
-    public int b() {
-        int i7 = this.d;
-        if (i7 != 2) {
-            return i7 != 3 ? 14 : 16;
-        }
-        return 15;
-    }
-
-    public String toString() {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
-            case 3:
-                StringBuilder sb2 = new StringBuilder("AtomSizeTooSmall{type=");
-                sb2.append(h2.m0.e0(this.b));
-                sb2.append(", size=");
-                sb2.append(this.c);
-                sb2.append(", minHeaderSize=");
-                return a8.p0.n(this.d, "}", sb2);
+            case 0:
+                this.b.a(Boolean.FALSE, "PRODUCT_NOT_FOUND");
+                break;
+            case 1:
+                this.b.a(Boolean.FALSE, "PRODUCT_NO_ONETIME_OFFER_DETAILS");
+                break;
+            case 2:
+                org.telegram.messenger.g0.h3(new t6(this.b, 3));
+                break;
             default:
-                return super.toString();
+                this.b.a(Boolean.FALSE, null);
+                break;
         }
-    }
-
-    public t6(int i7, long j3, int i10) {
-        this.b = i7;
-        this.c = j3;
-        this.d = i10;
-    }
-
-    public t6(long j3, int i7, int i10) {
-        this.c = j3;
-        this.b = i7;
-        this.d = i10;
-    }
-
-    public t6(int i7, int i10, long j3) {
-        this.d = i7;
-        this.c = j3;
-        this.b = i10;
     }
 }

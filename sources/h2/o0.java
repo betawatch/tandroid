@@ -1,170 +1,198 @@
 package h2;
 
-import android.text.TextUtils;
-import bg.v0;
-import java.io.File;
+import a8.db;
+import a8.eb;
+import a8.fb;
+import a8.gb;
+import a8.hb;
+import a8.ib;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.os.SystemClock;
+import android.util.Log;
+import c8.xc;
+import c8.yb;
+import fi.f6;
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.nb;
-import org.telegram.messenger.qb;
-import org.telegram.messenger.t7;
-import org.telegram.messenger.v10;
-import org.telegram.messenger.w7;
-import org.telegram.messenger.y8;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Cells.e2;
-import org.telegram.ui.Cells.h2;
-import org.telegram.ui.Components.i2;
-import org.telegram.ui.Wallet.g3;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class o0 implements yb.a {
+    public final /* synthetic */ int a = 1;
+    public boolean b;
+    public boolean c;
+    public final Object d;
+    public final Object e;
+    public Object f;
 
-    public /* synthetic */ o0(Object obj, Object obj2, boolean z9, boolean z10, int i7) {
-        this.a = i7;
-        this.d = obj;
-        this.e = obj2;
-        this.b = z9;
-        this.c = z10;
+    public o0(Context context, xb.a aVar) {
+        this.d = context;
+        this.e = aVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        y8 y8Var;
-        y8 y8Var2;
-        String o4;
-        switch (this.a) {
-            case 0:
-                p0 p0Var = (p0) this.d;
-                AtomicBoolean atomicBoolean = (AtomicBoolean) this.e;
-                boolean z9 = this.b;
-                boolean z10 = this.c;
-                p0Var.getClass();
-                atomicBoolean.set(false);
-                wf.b.w((wf.b) p0Var.d, z9, z10);
-                break;
-            case 1:
-                t7 t7Var = (t7) this.d;
-                boolean z11 = this.b;
-                String str = (String) this.e;
-                boolean z12 = this.c;
-                if (z11) {
-                    t7Var.d.n.remove(str);
-                } else {
-                    t7Var.d.h.remove(str);
-                }
-                qb qbVar = t7Var.d.E;
-                if (qbVar != null) {
-                    Utilities.d.c(new nb(qbVar, qbVar.a, str, z11));
-                }
-                if (!z12) {
-                    w7 w7Var = t7Var.d;
-                    int i7 = w7Var.r - 1;
-                    w7Var.r = i7;
-                    if (i7 < 1 && (y8Var = (y8) w7Var.e.poll()) != null) {
-                        t7Var.d.r++;
-                        y8Var.c();
-                        break;
-                    }
-                } else {
-                    w7 w7Var2 = t7Var.d;
-                    int i10 = w7Var2.s - 1;
-                    w7Var2.s = i10;
-                    if (i10 < 1 && (y8Var2 = (y8) w7Var2.f.poll()) != null) {
-                        t7Var.d.s++;
-                        y8Var2.c();
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                ((CameraController) this.d).lambda$stopVideoRecording$17(this.e, this.b, this.c);
-                break;
-            case 3:
-                e2 e2Var = (e2) this.d;
-                String str2 = (String) this.e;
-                boolean z13 = this.b;
-                boolean z14 = this.c;
-                h2 h2Var = e2Var.b;
-                h2Var.e0 = false;
-                h2Var.f0 = str2;
-                if (str2 == null) {
-                    h2Var.f0 = "";
-                }
-                h2Var.g0 = z13;
-                h2Var.f(z14, true);
-                break;
-            case 4:
-                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) this.d;
-                c20 c20Var = (c20) this.e;
-                boolean z15 = this.b;
-                boolean z16 = this.c;
-                TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) l0Var.e;
-                org.telegram.ui.Wallet.p0 p0Var2 = l0Var.c;
-                if (p0Var2 == null || !TextUtils.equals(p0Var2.c, tL_walletState.address) || !l0Var.c.f(tL_walletState.public_key)) {
-                    l0Var.z(new org.telegram.ui.Wallet.j((Object) l0Var, (Object) c20Var, (Object) tL_walletState, 6), z15, z16);
-                    break;
-                } else {
-                    c20Var.a(null);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Wallet.l0 l0Var2 = (org.telegram.ui.Wallet.l0) this.d;
-                v10 v10Var = (v10) this.e;
-                boolean z17 = this.b;
-                boolean z18 = this.c;
-                org.telegram.ui.Wallet.l0.H("getSecretPhrase: ready!");
-                TL_wallet.TL_walletState tL_walletState2 = (TL_wallet.TL_walletState) l0Var2.e;
-                if (!l0Var2.c.f(tL_walletState2.public_key)) {
-                    Object obj = null;
-                    if (!tL_walletState2.backup_enabled) {
-                        org.telegram.ui.Wallet.l0.j("getSecretPhrase: no server backup!");
-                        v10Var.a(null, "NO_LOCAL_BACKUP");
-                        break;
-                    } else {
-                        org.telegram.ui.Wallet.l0.H("getSecretPhrase: exportSecretPhrase through password request");
-                        g3.a(l0Var2.a, new ai.c0(9), null, null, null, new di.b0(4, l0Var2, v10Var), z17, z18, new v0(obj, 2));
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.Wallet.l0.H("getSecretPhrase: device has secured phrase, requesting");
-                    org.telegram.ui.Wallet.p0 p0Var3 = l0Var2.c;
-                    byte[] bArr = tL_walletState2.public_key;
-                    org.telegram.ui.Wallet.k kVar = new org.telegram.ui.Wallet.k(v10Var, 1);
-                    if (bArr == null) {
-                        o4 = "";
-                    } else {
-                        p0Var3.getClass();
-                        o4 = org.telegram.ui.Wallet.p0.o(bArr);
-                    }
-                    org.telegram.ui.Wallet.p0.h.execute(new i2(p0Var3, p0Var3.l(), o4, true, (c20) kVar));
-                    break;
-                }
+    public void a(boolean z10, boolean z11) {
+        i0 i0Var = (i0) this.e;
+        if (z10 && z11) {
+            i0Var.d(new m0(this, z10, z11, 0));
+            return;
+        }
+        AtomicBoolean atomicBoolean = new AtomicBoolean(true);
+        i0 i0Var2 = (i0) this.f;
+        i0Var2.a.postDelayed(new f6(23, this, atomicBoolean), 1000L);
+        i0Var.d(new n0(this, atomicBoolean, z10, z11, 0));
+    }
+
+    public void b(boolean z10) {
+        if (this.c == z10) {
+            return;
+        }
+        this.c = z10;
+        if (this.b) {
+            a(true, z10);
         }
     }
 
-    public /* synthetic */ o0(t7 t7Var, boolean z9, String str, boolean z10) {
-        this.a = 1;
-        this.d = t7Var;
-        this.b = z9;
-        this.e = str;
-        this.c = z10;
+    @Override // yb.a
+    public ArrayList c(ub.a aVar) {
+        a7.b bVar;
+        if (((db) this.f) == null) {
+            zzb();
+        }
+        db dbVar = (db) this.f;
+        q6.m.g(dbVar);
+        if (!this.b) {
+            try {
+                dbVar.t1(dbVar.p1(), 1);
+                this.b = true;
+            } catch (RemoteException e10) {
+                throw new lb.a("Failed to init thin image labeler.", e10);
+            }
+        }
+        int i7 = aVar.e;
+        int i10 = aVar.b;
+        int i11 = aVar.c;
+        int a10 = xc.a(aVar.d);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        int i12 = aVar.e;
+        if (i12 != -1) {
+            if (i12 != 17) {
+                if (i12 == 35) {
+                    bVar = new a7.b(null);
+                } else if (i12 != 842094169) {
+                    throw new lb.a(i5.c.i(aVar.e, "Unsupported image format: "), 3);
+                }
+            }
+            q6.m.g(null);
+            throw null;
+        }
+        Bitmap bitmap = aVar.a;
+        q6.m.g(bitmap);
+        bVar = new a7.b(bitmap);
+        try {
+            Parcel p12 = dbVar.p1();
+            int i13 = a8.g0.a;
+            p12.writeStrongBinder(bVar);
+            p12.writeInt(1);
+            int r10 = yb.r(p12, 20293);
+            yb.q(p12, 1, 4);
+            p12.writeInt(i7);
+            yb.q(p12, 2, 4);
+            p12.writeInt(i10);
+            yb.q(p12, 3, 4);
+            p12.writeInt(i11);
+            yb.q(p12, 4, 4);
+            p12.writeInt(a10);
+            yb.q(p12, 5, 8);
+            p12.writeLong(elapsedRealtime);
+            yb.s(p12, r10);
+            Parcel r12 = dbVar.r1(p12, 3);
+            ArrayList createTypedArrayList = r12.createTypedArrayList(hb.CREATOR);
+            r12.recycle();
+            ArrayList arrayList = new ArrayList();
+            int size = createTypedArrayList.size();
+            int i14 = 0;
+            while (i14 < size) {
+                Object obj = createTypedArrayList.get(i14);
+                i14++;
+                hb hbVar = (hb) obj;
+                arrayList.add(new wb.a(hbVar.b, hbVar.d, hbVar.a, hbVar.c));
+            }
+            return arrayList;
+        } catch (RemoteException e11) {
+            throw new lb.a("Failed to run thin image labeler.", e11);
+        }
     }
 
-    public /* synthetic */ o0(e2 e2Var, String str, File file, boolean z9, boolean z10) {
-        this.a = 3;
-        this.d = e2Var;
-        this.e = str;
-        this.b = z9;
-        this.c = z10;
+    public String toString() {
+        switch (this.a) {
+            case 1:
+                return "JsonConfiguration(encodeDefaults=false, ignoreUnknownKeys=false, isLenient=false, allowStructuredMapKeys=false, prettyPrint=false, explicitNulls=" + this.b + ", prettyPrintIndent='" + ((String) this.d) + "', coerceInputValues=false, useArrayPolymorphism=false, classDiscriminator='" + ((String) this.e) + "', allowSpecialFloatingPointValues=false, useAlternativeNames=" + this.c + ", namingStrategy=null, decodeEnumsCaseInsensitive=false, allowTrailingComma=false, allowComments=false, classDiscriminatorMode=" + ((pe.a) this.f) + ')';
+            default:
+                return super.toString();
+        }
+    }
+
+    @Override // yb.a
+    public void zzb() {
+        gb ebVar;
+        Context context = (Context) this.d;
+        if (((db) this.f) != null) {
+            return;
+        }
+        try {
+            IBinder b10 = b7.f.c(context, b7.f.b, "com.google.android.gms.vision.ica").b("com.google.android.gms.vision.label.mlkit.ImageLabelerCreator");
+            int i7 = fb.b;
+            if (b10 == null) {
+                ebVar = null;
+            } else {
+                IInterface queryLocalInterface = b10.queryLocalInterface("com.google.mlkit.vision.label.aidls.IImageLabelerCreator");
+                ebVar = queryLocalInterface instanceof gb ? (gb) queryLocalInterface : new eb(b10, "com.google.mlkit.vision.label.aidls.IImageLabelerCreator", 0);
+            }
+            this.f = ((eb) ebVar).x1(new a7.b(context), new ib(((xb.a) this.e).a, -1));
+        } catch (RemoteException e10) {
+            throw new lb.a("Failed to create thin image labeler.", e10);
+        } catch (b7.b unused) {
+            if (!this.c) {
+                pb.j.b(context);
+                this.c = true;
+            }
+            throw new lb.a("Waiting for the label optional module to be downloaded. Please wait.", 14);
+        }
+    }
+
+    @Override // yb.a
+    public void zzc() {
+        db dbVar = (db) this.f;
+        if (dbVar != null) {
+            try {
+                dbVar.t1(dbVar.p1(), 2);
+            } catch (RemoteException unused) {
+                Log.e("DecoupledImageLabeler", "Failed to release thin image labeler.");
+            }
+            this.f = null;
+            this.b = false;
+        }
+    }
+
+    public o0() {
+        pe.a aVar = pe.a.a;
+        this.b = true;
+        this.d = "    ";
+        this.e = TeXSymbolParser.TYPE_ATTR;
+        this.c = true;
+        this.f = aVar;
+    }
+
+    public o0(Context context, Looper looper, g0 g0Var) {
+        this.d = new wf.b(context.getApplicationContext(), 24);
+        this.e = g0Var.a(looper, null);
+        this.f = g0Var.a(Looper.getMainLooper(), null);
     }
 }

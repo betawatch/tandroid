@@ -11,9 +11,9 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityNodeProvider;
 import android.widget.Button;
-import org.telegram.ui.hc1;
+import org.telegram.ui.cc1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class c extends AccessibilityNodeProvider {
     public final e a;
@@ -63,7 +63,7 @@ public abstract class c extends AccessibilityNodeProvider {
                 text = staticLayout.getText();
             }
             text = null;
-        } else if (eVar2.R) {
+        } else if (eVar2.S) {
             StaticLayout staticLayout2 = eVar2.h;
             if (staticLayout2 != null) {
                 text = staticLayout2.getText();
@@ -87,9 +87,9 @@ public abstract class c extends AccessibilityNodeProvider {
         obtain2.setParent(eVar);
         Rect rect = this.c;
         if (i7 == 0) {
-            rect.set(eVar2.M);
-        } else if (i7 == 1) {
             rect.set(eVar2.N);
+        } else if (i7 == 1) {
+            rect.set(eVar2.O);
         } else {
             rect.setEmpty();
         }
@@ -112,14 +112,14 @@ public abstract class c extends AccessibilityNodeProvider {
         if (i10 != 16) {
             return false;
         }
-        d dVar = ((b) this).g.Q;
+        d dVar = ((b) this).g.R;
         if (dVar != null) {
             if (i7 == 0) {
-                ((hc1) dVar).a();
+                ((cc1) dVar).a();
                 return true;
             }
             if (i7 == 1) {
-                ((hc1) dVar).b();
+                ((cc1) dVar).b();
             }
         }
         return true;

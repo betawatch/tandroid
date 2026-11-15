@@ -1,13 +1,13 @@
 package p4;
 
-import a8.ia;
+import a8.ja;
 import android.os.Bundle;
 import android.os.Parcel;
-import c8.bb;
-import c8.ya;
+import c8.ab;
+import c8.hb;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class x0 implements u {
     public final l a;
@@ -23,55 +23,55 @@ public final class x0 implements u {
     /* JADX WARN: Type inference failed for: r3v3, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r3v6 */
     @Override // p4.u
-    public final void a(int i7, e1 e1Var, e2.y0 y0Var, boolean z9, boolean z10) {
+    public final void a(int i7, e1 e1Var, e2.y0 y0Var, boolean z10, boolean z11) {
         Parcel obtain;
         int i10 = this.b;
-        ia.p(i10 != 0);
-        ?? r32 = (z9 || !y0Var.a(17)) ? 1 : 0;
-        boolean z11 = z10 || !y0Var.a(30);
+        ja.p(i10 != 0);
+        ?? r32 = (z10 || !y0Var.a(17)) ? 1 : 0;
+        boolean z12 = z11 || !y0Var.a(30);
         l lVar = this.a;
         if (i10 < 2) {
-            Bundle f10 = e1Var.e(y0Var, z9, true).f(i10);
+            Bundle f10 = e1Var.e(y0Var, z10, true).f(i10);
             k kVar = (k) lVar;
             kVar.getClass();
             obtain = Parcel.obtain();
             try {
                 obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
                 obtain.writeInt(i7);
-                ya.a(obtain, f10);
+                ab.a(obtain, f10);
                 obtain.writeInt(r32);
                 kVar.a.transact(3007, obtain, null, 1);
                 return;
             } finally {
             }
         }
-        Bundle f11 = e1Var.e(y0Var, z9, z10).f(i10);
+        Bundle f11 = e1Var.e(y0Var, z10, z11).f(i10);
         Bundle bundle = new Bundle();
         bundle.putBoolean(d1.a, r32);
-        bundle.putBoolean(d1.b, z11);
+        bundle.putBoolean(d1.b, z12);
         k kVar2 = (k) lVar;
         kVar2.getClass();
         obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i7);
-            ya.a(obtain, f11);
-            ya.a(obtain, bundle);
+            ab.a(obtain, f11);
+            ab.a(obtain, bundle);
             kVar2.a.transact(3013, obtain, null, 1);
         } finally {
         }
     }
 
     @Override // p4.u
-    public final void b(int i7, l1 l1Var, boolean z9, boolean z10, int i10) {
-        Bundle b10 = l1Var.a(z9, z10).b(i10);
+    public final void b(int i7, l1 l1Var, boolean z10, boolean z11, int i10) {
+        Bundle b10 = l1Var.a(z10, z11).b(i10);
         k kVar = (k) this.a;
         kVar.getClass();
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i7);
-            ya.a(obtain, b10);
+            ab.a(obtain, b10);
             kVar.a.transact(3008, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -117,7 +117,7 @@ public final class x0 implements u {
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i7);
-            ya.a(obtain, b10);
+            ab.a(obtain, b10);
             kVar.a.transact(3009, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -150,7 +150,7 @@ public final class x0 implements u {
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i7);
-            ya.a(obtain, bundle);
+            ab.a(obtain, bundle);
             kVar.a.transact(3002, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -159,7 +159,7 @@ public final class x0 implements u {
 
     @Override // p4.u
     public final void g() {
-        bb.a(this.a);
+        hb.a(this.a);
     }
 
     public final int hashCode() {
@@ -179,7 +179,7 @@ public final class x0 implements u {
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i7);
-            ya.a(obtain, bundle);
+            ab.a(obtain, bundle);
             kVar.a.transact(3003, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -196,8 +196,8 @@ public final class x0 implements u {
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i7);
-            ya.a(obtain, a10);
-            ya.a(obtain, bundle);
+            ab.a(obtain, a10);
+            ab.a(obtain, bundle);
             kVar.a.transact(3005, obtain, null, 1);
         } finally {
             obtain.recycle();

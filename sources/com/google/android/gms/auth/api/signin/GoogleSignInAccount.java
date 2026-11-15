@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import org.json.JSONObject;
 import q6.m;
 import r6.a;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInAccount extends a implements ReflectedParcelable {
@@ -104,19 +104,19 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.l(parcel, 2, this.a);
-        xb.l(parcel, 3, this.b);
-        xb.l(parcel, 4, this.c);
-        xb.l(parcel, 5, this.d);
-        xb.k(parcel, 6, this.e, i7);
-        xb.l(parcel, 7, this.f);
-        xb.q(parcel, 8, 8);
+        int r10 = yb.r(parcel, 20293);
+        yb.l(parcel, 2, this.a);
+        yb.l(parcel, 3, this.b);
+        yb.l(parcel, 4, this.c);
+        yb.l(parcel, 5, this.d);
+        yb.k(parcel, 6, this.e, i7);
+        yb.l(parcel, 7, this.f);
+        yb.q(parcel, 8, 8);
         parcel.writeLong(this.h);
-        xb.l(parcel, 9, this.n);
-        xb.p(parcel, 10, this.r);
-        xb.l(parcel, 11, this.s);
-        xb.l(parcel, 12, this.w);
-        xb.s(parcel, r10);
+        yb.l(parcel, 9, this.n);
+        yb.p(parcel, 10, this.r);
+        yb.l(parcel, 11, this.s);
+        yb.l(parcel, 12, this.w);
+        yb.s(parcel, r10);
     }
 }

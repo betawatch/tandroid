@@ -8,7 +8,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements ua.b {
     public final /* synthetic */ int a;
@@ -36,26 +36,26 @@ public final /* synthetic */ class c implements ua.b {
                     context = i7 >= 24 ? f0.a.a(context) : null;
                 }
                 SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.firebase.common.prefs:" + d, 0);
-                boolean z9 = true;
+                boolean z10 = true;
                 if (sharedPreferences.contains("firebase_data_collection_default_enabled")) {
-                    z9 = sharedPreferences.getBoolean("firebase_data_collection_default_enabled", true);
+                    z10 = sharedPreferences.getBoolean("firebase_data_collection_default_enabled", true);
                 } else {
                     try {
                         PackageManager packageManager = context.getPackageManager();
                         if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null && bundle.containsKey("firebase_data_collection_default_enabled")) {
-                            z9 = applicationInfo.metaData.getBoolean("firebase_data_collection_default_enabled");
+                            z10 = applicationInfo.metaData.getBoolean("firebase_data_collection_default_enabled");
                         }
                     } catch (PackageManager.NameNotFoundException unused) {
                     }
                 }
-                aVar.a = z9;
+                aVar.a = z10;
                 return aVar;
             case 1:
                 return new sa.h((Context) this.b, (String) this.c);
             default:
-                u9.g gVar2 = (u9.g) this.c;
+                u9.f fVar = (u9.f) this.c;
                 u9.a aVar2 = (u9.a) this.b;
-                return aVar2.f.e(new r7(aVar2, gVar2));
+                return aVar2.f.i(new r7(aVar2, fVar));
         }
     }
 

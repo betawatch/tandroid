@@ -1,158 +1,125 @@
 package org.telegram.messenger;
 
-import android.graphics.Point;
-import android.graphics.Rect;
-import java.io.File;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class ev extends ru {
-    public final TL_iv.pageBlockVideo q0;
-    public final TLRPC.Document r0;
-    public final TLRPC.PhotoSize s0;
-    public final TLRPC.TL_photoStrippedSize t0;
-    public final boolean u0;
-    public final boolean v0;
+public final class ev extends MetricAffectingSpan {
+    public final iv a;
+    public final int b;
+    public final boolean c;
+    public boolean d;
+    public int e;
 
-    public ev(kv kvVar, Rect rect, int i7, TL_iv.pageBlockVideo pageblockvideo, boolean z9) {
-        super(kvVar, rect, i7, z9);
-        int i10;
-        int i11;
-        this.q0 = pageblockvideo;
-        TLRPC.Document s5 = kvVar.s(pageblockvideo.video_id);
-        this.r0 = s5;
-        boolean K4 = ij.K4(s5);
-        this.v0 = K4;
-        int i12 = 0;
-        this.u0 = K4 || ij.s3(s5, false);
-        if (s5 != null) {
-            this.s0 = w7.w(s5.thumbs, qs.r5, false, null, true);
-            this.t0 = w7.Q(s5.thumbs);
+    public ev(iv ivVar, int i7, boolean z10) {
+        this.a = ivVar;
+        this.b = i7;
+        this.c = z10;
+    }
+
+    public final void a(TextPaint textPaint) {
+        Typeface o12;
+        int L;
+        int w02;
+        int i7 = this.b;
+        int i10 = i7 & 15;
+        if (i10 == 8) {
+            o12 = Typeface.MONOSPACE;
+        } else if (i10 == 11) {
+            o12 = g0.o();
+        } else if (i10 >= 1 && i10 <= 6) {
+            o12 = TLObject.hasFlag(i7, 32) ? g0.o1("fonts/rmediumitalic.ttf") : g0.o();
+        } else if (TLObject.hasFlag(i7, 256)) {
+            o12 = Typeface.MONOSPACE;
         } else {
-            this.s0 = null;
-            this.t0 = null;
+            boolean hasFlag = TLObject.hasFlag(i7, 16);
+            boolean z10 = TLObject.hasFlag(i7, 32) || i10 == 12;
+            o12 = (hasFlag && z10) ? g0.o1("fonts/rmediumitalic.ttf") : hasFlag ? g0.o() : z10 ? g0.o1("fonts/ritalic.ttf") : null;
         }
-        if (s5 != null) {
-            while (true) {
-                if (i12 >= this.r0.attributes.size()) {
-                    i10 = 100;
-                    i11 = 100;
+        if (o12 != null) {
+            textPaint.setTypeface(o12);
+        }
+        int i11 = gz.W0;
+        if (i10 != 14 || !this.d) {
+            switch (i10) {
+                case 1:
+                    L = g0.L(i11 + 4);
                     break;
-                }
-                TLRPC.DocumentAttribute documentAttribute = this.r0.attributes.get(i12);
-                if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
-                    i11 = documentAttribute.w;
-                    i10 = documentAttribute.h;
+                case 2:
+                    L = g0.L(i11 + 2);
                     break;
-                }
-                i12++;
+                case 3:
+                    L = g0.L(i11 + 1);
+                    break;
+                case 4:
+                case 5:
+                case 6:
+                    L = g0.L(i11);
+                    break;
+                case 7:
+                case 13:
+                    L = g0.L(i11 - 2);
+                    break;
+                case 8:
+                    int i12 = i11 - 2;
+                    L = g0.L(Math.max(Math.min(10, i12), i12 - this.e));
+                    break;
+                case 9:
+                case 11:
+                case 12:
+                    L = g0.L(i11 - 2);
+                    break;
+                case 10:
+                    L = g0.L(i11 - 2);
+                    break;
+                case 14:
+                    L = g0.L(Math.max(8, i11 - 2));
+                    break;
+                case 15:
+                    L = g0.L(i11 - 2);
+                    break;
+                default:
+                    L = g0.L(i11);
+                    break;
             }
-            if (i11 <= 0 || i10 <= 0) {
-                TLRPC.PhotoSize photoSize = this.s0;
-                i11 = photoSize != null ? photoSize.w : 100;
-                i10 = photoSize != null ? photoSize.h : 100;
-            }
-            r4 = i11;
         } else {
-            i10 = 100;
+            L = g0.L(i11);
         }
-        int i13 = this.c;
-        int max = (int) ((i13 / Math.max(1, r4)) * i10);
-        Point point = g0.q;
-        int max2 = (int) (Math.max(point.x, point.y) * 0.55f);
-        if (max > max2) {
-            i13 = (int) ((max2 / Math.max(1, i10)) * r4);
-            max = max2;
+        if (TLObject.hasFlag(i7, 6144)) {
+            L -= g0.L(4.0f);
         }
-        this.b0 = i13;
-        this.c0 = max;
-        m0();
-    }
-
-    @Override // org.telegram.messenger.ru
-    public final boolean i0() {
-        if (this.v0) {
-            int i7 = iz.a;
-            return sc.e(1024);
-        }
-        int i10 = iz.a;
-        return sc.e(2048);
-    }
-
-    @Override // org.telegram.messenger.ru
-    public final void j0(boolean z9) {
-        TLRPC.Document document = this.r0;
-        if (document == null) {
-            return;
-        }
-        TLRPC.TL_photoStrippedSize tL_photoStrippedSize = this.t0;
-        hc c10 = tL_photoStrippedSize != null ? hc.c(tL_photoStrippedSize, document) : null;
-        TLRPC.PhotoSize photoSize = this.s0;
-        hc c11 = photoSize != null ? hc.c(photoSize, document) : null;
-        kv kvVar = this.a;
-        ImageReceiver imageReceiver = this.X;
-        if (!z9 || !this.u0 || (!i0() && !this.l0)) {
-            imageReceiver.u0(null, null, c11, null, c10, "b1", null, document.size, "mp4", kvVar.b, 1);
-            return;
-        }
-        imageReceiver.t0 = true;
-        imageReceiver.W(1);
-        imageReceiver.u0(hc.b(document), "g", c11, null, c10, "b1", null, document.size, "mp4", kvVar.b, 1);
-    }
-
-    @Override // org.telegram.messenger.ru
-    public final boolean k0() {
-        TLRPC.Document document = this.r0;
-        if (document == null) {
-            return false;
-        }
-        if (this.u0) {
-            return i0() && z5.q(this.a.a).c(4, document.size);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.messenger.ru
-    public final boolean l0() {
-        TLRPC.Document document = this.r0;
-        if (document != null) {
-            kv kvVar = this.a;
-            w7.G(kvVar.a);
-            File I = w7.I(document);
-            w7.G(kvVar.a);
-            File J = w7.J(document, null, true, true);
-            if ((I == null || !I.exists()) && (J == null || !J.exists())) {
-                return false;
+        textPaint.setTextSize(L);
+        if (!this.c) {
+            textPaint.setFlags(TLObject.setFlag(TLObject.setFlag(textPaint.getFlags(), 8, TLObject.hasFlag(i7, 64)), 16, TLObject.hasFlag(i7, 128)));
+            if (i10 != 8) {
+                iv ivVar = this.a;
+                if (i10 == 11) {
+                    w02 = org.telegram.ui.ActionBar.j6.w0(ivVar.E() ? org.telegram.ui.ActionBar.j6.Tb : org.telegram.ui.ActionBar.j6.Nd, ivVar.D);
+                } else if (i10 == 10) {
+                    w02 = org.telegram.ui.ActionBar.j6.r1(0.5f, org.telegram.ui.ActionBar.j6.w0(ivVar.E() ? org.telegram.ui.ActionBar.j6.Wc : org.telegram.ui.ActionBar.j6.Vc, ivVar.D));
+                } else {
+                    w02 = org.telegram.ui.ActionBar.j6.w0(ivVar.E() ? org.telegram.ui.ActionBar.j6.Wc : org.telegram.ui.ActionBar.j6.Vc, ivVar.D);
+                }
+                textPaint.setColor(w02);
             }
         }
-        return true;
+        if (TLObject.hasFlag(i7, TLObject.FLAG_12)) {
+            textPaint.baselineShift -= g0.L(6.0f);
+        } else if (TLObject.hasFlag(i7, 2048)) {
+            textPaint.baselineShift = g0.L(2.0f) + textPaint.baselineShift;
+        }
     }
 
-    @Override // org.telegram.messenger.ru
-    public final TL_iv.PageBlock n0() {
-        return this.q0;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        a(textPaint);
     }
 
-    @Override // org.telegram.messenger.ru
-    public final String o0() {
-        return w7.r(null, this.r0);
-    }
-
-    @Override // org.telegram.messenger.ru
-    public final boolean p0() {
-        return this.u0;
-    }
-
-    @Override // org.telegram.messenger.ru
-    public final boolean q0() {
-        return this.v0;
-    }
-
-    @Override // org.telegram.messenger.ru
-    public final boolean r0() {
-        TL_iv.pageBlockVideo pageblockvideo = this.q0;
-        return pageblockvideo != null && pageblockvideo.spoiler;
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        a(textPaint);
     }
 }

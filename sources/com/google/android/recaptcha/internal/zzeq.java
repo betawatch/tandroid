@@ -1,18 +1,19 @@
 package com.google.android.recaptcha.internal;
 
-import a8.ab;
+import a8.bb;
 import af.b;
 import com.google.android.gms.tasks.Task;
 import com.google.android.recaptcha.RecaptchaAction;
 import com.google.android.recaptcha.RecaptchaClient;
 import com.google.android.recaptcha.RecaptchaTasksClient;
 import gd.g;
+import jd.a;
 import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 import xd.c;
 import zd.b0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     private static final c zza = new c("^[a-zA-Z0-9/_]{1,100}$");
@@ -26,7 +27,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
         this.zzc = str;
         this.zzd = zzhhVar;
         int i7 = zzby.zza;
-        this.zze = ab.b(zzep.zza);
+        this.zze = bb.b(zzep.zza);
     }
 
     public static final void zzd(zzeq zzeqVar, long j3, RecaptchaAction recaptchaAction) {
@@ -58,7 +59,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzekVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzekVar.zza;
-                jd.a aVar = jd.a.a;
+                a aVar = a.a;
                 i7 = zzekVar.zzc;
                 if (i7 != 0) {
                     b.c(obj);
@@ -80,7 +81,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
         }
         zzekVar = new zzek(this, cVar);
         Object obj2 = zzekVar.zza;
-        jd.a aVar2 = jd.a.a;
+        a aVar2 = a.a;
         i7 = zzekVar.zzc;
         if (i7 != 0) {
         }
@@ -102,7 +103,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzeiVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzeiVar.zza;
-                Object obj2 = jd.a.a;
+                Object obj2 = a.a;
                 i7 = zzeiVar.zzc;
                 if (i7 == 0) {
                     if (i7 != 1) {
@@ -119,7 +120,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
         }
         zzeiVar = new zzei(this, cVar);
         Object obj3 = zzeiVar.zza;
-        Object obj22 = jd.a.a;
+        Object obj22 = a.a;
         i7 = zzeiVar.zzc;
         if (i7 == 0) {
         }
@@ -140,7 +141,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzejVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzejVar.zza;
-                Object obj2 = jd.a.a;
+                Object obj2 = a.a;
                 i7 = zzejVar.zzc;
                 if (i7 == 0) {
                     if (i7 != 1) {
@@ -157,7 +158,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
         }
         zzejVar = new zzej(this, cVar);
         Object obj4 = zzejVar.zza;
-        Object obj22 = jd.a.a;
+        Object obj22 = a.a;
         i7 = zzejVar.zzc;
         if (i7 == 0) {
         }

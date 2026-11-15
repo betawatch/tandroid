@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g1 extends b5 {
     private static final g1 zzb;
@@ -33,7 +33,7 @@ public final class g1 extends b5 {
             return (byte) 1;
         }
         if (i10 == 2) {
-            return new c6(zzb, "\u0001\u0007\u0000\u0001\u0001\t\u0007\u0000\u0002\u0000\u0001᠌\u0000\u0002ဇ\u0001\u0003᠌\u0002\u0004ဇ\u0003\u0007\u001b\b\u001b\tဈ\u0004", new Object[]{"zzd", "zze", x.w, "zzf", "zzg", x.O, "zzh", "zzi", b3.class, "zzj", b3.class, "zzk"});
+            return new c6(zzb, "\u0001\u0007\u0000\u0001\u0001\t\u0007\u0000\u0002\u0000\u0001᠌\u0000\u0002ဇ\u0001\u0003᠌\u0002\u0004ဇ\u0003\u0007\u001b\b\u001b\tဈ\u0004", new Object[]{"zzd", "zze", x.w, "zzf", "zzg", x.P, "zzh", "zzi", b3.class, "zzj", b3.class, "zzk"});
         }
         if (i10 == 3) {
             return new g1();

@@ -2,7 +2,7 @@ package j$.time;
 
 import j$.time.temporal.ChronoUnit;
 import j$.time.temporal.Temporal;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
@@ -103,9 +103,9 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
         return oVar.m(this);
     }
 
-    public final int H(boolean z9) {
+    public final int H(boolean z10) {
         int i7 = i.a[ordinal()];
-        return i7 != 1 ? (i7 == 2 || i7 == 3 || i7 == 4 || i7 == 5) ? 30 : 31 : z9 ? 29 : 28;
+        return i7 != 1 ? (i7 == 2 || i7 == 3 || i7 == 4 || i7 == 5) ? 30 : 31 : z10 ? 29 : 28;
     }
 
     public final int I() {
@@ -116,32 +116,32 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
         return 29;
     }
 
-    public final int G(boolean z9) {
+    public final int G(boolean z10) {
         switch (i.a[ordinal()]) {
             case 1:
                 return 32;
             case 2:
-                return (z9 ? 1 : 0) + 91;
+                return (z10 ? 1 : 0) + 91;
             case 3:
-                return (z9 ? 1 : 0) + qs.i2;
+                return (z10 ? 1 : 0) + ns.i2;
             case 4:
-                return (z9 ? 1 : 0) + qs.T3;
+                return (z10 ? 1 : 0) + ns.T3;
             case 5:
-                return (z9 ? 1 : 0) + qs.c5;
+                return (z10 ? 1 : 0) + ns.c5;
             case 6:
                 return 1;
             case 7:
-                return (z9 ? 1 : 0) + 60;
+                return (z10 ? 1 : 0) + 60;
             case 8:
-                return (z9 ? 1 : 0) + qs.F1;
+                return (z10 ? 1 : 0) + ns.F1;
             case 9:
-                return (z9 ? 1 : 0) + qs.M2;
+                return (z10 ? 1 : 0) + ns.M2;
             case 10:
-                return (z9 ? 1 : 0) + qs.q3;
+                return (z10 ? 1 : 0) + ns.q3;
             case 11:
-                return (z9 ? 1 : 0) + qs.x4;
+                return (z10 ? 1 : 0) + ns.x4;
             default:
-                return (z9 ? 1 : 0) + qs.G5;
+                return (z10 ? 1 : 0) + ns.G5;
         }
     }
 

@@ -10,14 +10,14 @@ import android.widget.FrameLayout;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
-import m.t3;
+import m.r3;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import r0.k1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i implements r0.m, l.w {
     public final /* synthetic */ s a;
@@ -26,43 +26,29 @@ public final class i implements r0.m, l.w {
         this.a = sVar;
     }
 
-    @Override // l.w
-    public boolean A(l.k kVar) {
-        Window.Callback callback;
-        if (kVar != kVar.k()) {
-            return true;
-        }
-        s sVar = this.a;
-        if (!sVar.O || (callback = sVar.f.getCallback()) == null || sVar.Z) {
-            return true;
-        }
-        callback.onMenuOpened(qs.t1, kVar);
-        return true;
-    }
-
     @Override // r0.m
-    public k1 S0(View view, k1 k1Var) {
-        boolean z9;
+    public k1 M0(View view, k1 k1Var) {
         boolean z10;
+        boolean z11;
         int d = k1Var.d();
         s sVar = this.a;
         Context context = sVar.e;
         int d2 = k1Var.d();
-        ActionBarContextView actionBarContextView = sVar.D;
+        ActionBarContextView actionBarContextView = sVar.E;
         if (actionBarContextView == null || !(actionBarContextView.getLayoutParams() instanceof ViewGroup.MarginLayoutParams)) {
-            z9 = false;
+            z10 = false;
         } else {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) sVar.D.getLayoutParams();
-            if (sVar.D.isShown()) {
-                if (sVar.l0 == null) {
-                    sVar.l0 = new Rect();
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) sVar.E.getLayoutParams();
+            if (sVar.E.isShown()) {
+                if (sVar.m0 == null) {
                     sVar.m0 = new Rect();
+                    sVar.n0 = new Rect();
                 }
-                Rect rect = sVar.l0;
-                Rect rect2 = sVar.m0;
+                Rect rect = sVar.m0;
+                Rect rect2 = sVar.n0;
                 rect.set(k1Var.b(), k1Var.d(), k1Var.c(), k1Var.a());
-                ViewGroup viewGroup = sVar.J;
-                Method method = t3.a;
+                ViewGroup viewGroup = sVar.K;
+                Method method = r3.a;
                 if (method != null) {
                     try {
                         method.invoke(viewGroup, rect, rect2);
@@ -73,21 +59,21 @@ public final class i implements r0.m, l.w {
                 int i7 = rect.top;
                 int i10 = rect.left;
                 int i11 = rect.right;
-                ViewGroup viewGroup2 = sVar.J;
+                ViewGroup viewGroup2 = sVar.K;
                 WeakHashMap weakHashMap = i0.a;
                 k1 a10 = r0.b0.a(viewGroup2);
                 int b10 = a10 == null ? 0 : a10.b();
                 int c10 = a10 == null ? 0 : a10.c();
                 if (marginLayoutParams.topMargin == i7 && marginLayoutParams.leftMargin == i10 && marginLayoutParams.rightMargin == i11) {
-                    z10 = false;
+                    z11 = false;
                 } else {
                     marginLayoutParams.topMargin = i7;
                     marginLayoutParams.leftMargin = i10;
                     marginLayoutParams.rightMargin = i11;
-                    z10 = true;
+                    z11 = true;
                 }
-                if (i7 <= 0 || sVar.L != null) {
-                    View view2 = sVar.L;
+                if (i7 <= 0 || sVar.M != null) {
+                    View view2 = sVar.M;
                     if (view2 != null) {
                         ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) view2.getLayoutParams();
                         int i12 = marginLayoutParams2.height;
@@ -96,58 +82,58 @@ public final class i implements r0.m, l.w {
                             marginLayoutParams2.height = i13;
                             marginLayoutParams2.leftMargin = b10;
                             marginLayoutParams2.rightMargin = c10;
-                            sVar.L.setLayoutParams(marginLayoutParams2);
+                            sVar.M.setLayoutParams(marginLayoutParams2);
                         }
                     }
                 } else {
                     View view3 = new View(context);
-                    sVar.L = view3;
+                    sVar.M = view3;
                     view3.setVisibility(8);
                     FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, marginLayoutParams.topMargin, 51);
                     layoutParams.leftMargin = b10;
                     layoutParams.rightMargin = c10;
-                    sVar.J.addView(sVar.L, -1, layoutParams);
+                    sVar.K.addView(sVar.M, -1, layoutParams);
                 }
-                View view4 = sVar.L;
+                View view4 = sVar.M;
                 r9 = view4 != null;
                 if (r9 && view4.getVisibility() != 0) {
-                    View view5 = sVar.L;
+                    View view5 = sVar.M;
                     view5.setBackgroundColor((view5.getWindowSystemUiVisibility() & TLObject.FLAG_13) != 0 ? context.getColor(R.color.abc_decor_view_status_guard_light) : context.getColor(R.color.abc_decor_view_status_guard));
                 }
-                if (!sVar.Q && r9) {
+                if (!sVar.R && r9) {
                     d2 = 0;
                 }
-                z9 = r9;
-                r9 = z10;
+                z10 = r9;
+                r9 = z11;
             } else if (marginLayoutParams.topMargin != 0) {
                 marginLayoutParams.topMargin = 0;
-                z9 = false;
+                z10 = false;
             } else {
-                z9 = false;
+                z10 = false;
                 r9 = false;
             }
             if (r9) {
-                sVar.D.setLayoutParams(marginLayoutParams);
+                sVar.E.setLayoutParams(marginLayoutParams);
             }
         }
-        View view6 = sVar.L;
+        View view6 = sVar.M;
         if (view6 != null) {
-            view6.setVisibility(z9 ? 0 : 8);
+            view6.setVisibility(z10 ? 0 : 8);
         }
         return i0.g(view, d != d2 ? k1Var.f(k1Var.b(), d2, k1Var.c(), k1Var.a()) : k1Var);
     }
 
     @Override // l.w
-    public void c(l.k kVar, boolean z9) {
+    public void e(l.k kVar, boolean z10) {
         r rVar;
         l.k k10 = kVar.k();
         int i7 = 0;
-        boolean z10 = k10 != kVar;
-        if (z10) {
+        boolean z11 = k10 != kVar;
+        if (z11) {
             kVar = k10;
         }
         s sVar = this.a;
-        r[] rVarArr = sVar.U;
+        r[] rVarArr = sVar.V;
         int length = rVarArr != null ? rVarArr.length : 0;
         while (true) {
             if (i7 < length) {
@@ -163,12 +149,26 @@ public final class i implements r0.m, l.w {
             }
         }
         if (rVar != null) {
-            if (!z10) {
-                sVar.h(rVar, z9);
+            if (!z11) {
+                sVar.h(rVar, z10);
             } else {
                 sVar.f(rVar.a, rVar, k10);
                 sVar.h(rVar, true);
             }
         }
+    }
+
+    @Override // l.w
+    public boolean y(l.k kVar) {
+        Window.Callback callback;
+        if (kVar != kVar.k()) {
+            return true;
+        }
+        s sVar = this.a;
+        if (!sVar.P || (callback = sVar.f.getCallback()) == null || sVar.a0) {
+            return true;
+        }
+        callback.onMenuOpened(ns.t1, kVar);
+        return true;
     }
 }

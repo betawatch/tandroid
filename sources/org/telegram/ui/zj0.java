@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import java.util.TimerTask;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class zj0 extends TimerTask {
     public final /* synthetic */ ak0 a;
@@ -18,8 +18,8 @@ public final class zj0 extends TimerTask {
             return;
         }
         double currentTimeMillis = System.currentTimeMillis();
-        ak0Var.D = (int) (ak0Var.D - (currentTimeMillis - ak0Var.F));
-        ak0Var.F = currentTimeMillis;
-        org.telegram.messenger.g0.h3(new hf0(this, 9));
+        ak0Var.E = (int) (ak0Var.E - (currentTimeMillis - ak0Var.G));
+        ak0Var.G = currentTimeMillis;
+        org.telegram.messenger.g0.h3(new ef0(this, 9));
     }
 }

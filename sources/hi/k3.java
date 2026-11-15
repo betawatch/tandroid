@@ -1,223 +1,312 @@
 package hi;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.k60;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Outline;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import androidx.appcompat.widget.ActionBarContainer;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.oy0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class k3 extends ClickableSpan {
-    public final /* synthetic */ int a = 1;
-    public final int b;
-    public final Object c;
-    public final Object d;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class k3 extends Drawable {
+    public final /* synthetic */ int a;
+    public Object b;
 
-    public k3(q3 q3Var, int i7, bi.l0 l0Var) {
-        this.d = q3Var;
-        this.b = i7;
-        this.c = l0Var;
+    public /* synthetic */ k3() {
+        this.a = 3;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        int i7 = this.a;
-        Object obj = this.d;
-        switch (i7) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
             case 0:
-                final bi.l0 l0Var = (bi.l0) this.c;
-                k60 H = k60.H((q3) obj, view);
-                final int i10 = 0;
-                char c10 = 1;
-                int i11 = this.b;
-                H.i(new Runnable() { // from class: hi.j3
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                bi.l0 l0Var2 = l0Var;
-                                if (l0Var2.g != 3) {
-                                    l0Var2.g = 3;
-                                    l0Var2.c = 0;
-                                    l0Var2.d = false;
-                                    l0Var2.i = false;
-                                    l0Var2.f = 0L;
-                                    l0Var2.j = null;
-                                    l0Var2.h = false;
-                                    l0Var2.a();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                bi.l0 l0Var3 = l0Var;
-                                if (l0Var3.g != 2) {
-                                    l0Var3.g = 2;
-                                    l0Var3.c = 0;
-                                    l0Var3.d = false;
-                                    l0Var3.i = false;
-                                    l0Var3.f = 0L;
-                                    l0Var3.j = null;
-                                    l0Var3.h = false;
-                                    l0Var3.a();
-                                    break;
-                                }
-                                break;
-                            default:
-                                bi.l0 l0Var4 = l0Var;
-                                if (l0Var4.g != 1) {
-                                    l0Var4.g = 1;
-                                    l0Var4.c = 0;
-                                    l0Var4.d = false;
-                                    l0Var4.i = false;
-                                    l0Var4.f = 0L;
-                                    l0Var4.j = null;
-                                    l0Var4.h = false;
-                                    l0Var4.a();
-                                    break;
-                                }
-                                break;
-                        }
+                canvas.save();
+                l3 l3Var = (l3) this.b;
+                canvas.drawPath(l3Var.F0, l3Var.c0);
+                canvas.restore();
+                break;
+            case 1:
+                canvas.save();
+                canvas.translate(0.0f, org.telegram.messenger.g0.L(1.0f));
+                ki.x2 x2Var = (ki.x2) this.b;
+                x2Var.N0.setBounds(getBounds());
+                x2Var.N0.draw(canvas);
+                canvas.restore();
+                break;
+            case 2:
+                ActionBarContainer actionBarContainer = (ActionBarContainer) this.b;
+                if (actionBarContainer.h) {
+                    Drawable drawable = actionBarContainer.f;
+                    if (drawable != null) {
+                        drawable.draw(canvas);
+                        break;
                     }
-                }, id.M0(2131752478, null), i11 == 3);
-                final int i12 = 2;
-                boolean z9 = i11 == 2;
-                String M0 = id.M0(2131752476, null);
-                final char c11 = c10 == true ? 1 : 0;
-                H.i(new Runnable() { // from class: hi.j3
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (c11) {
-                            case 0:
-                                bi.l0 l0Var2 = l0Var;
-                                if (l0Var2.g != 3) {
-                                    l0Var2.g = 3;
-                                    l0Var2.c = 0;
-                                    l0Var2.d = false;
-                                    l0Var2.i = false;
-                                    l0Var2.f = 0L;
-                                    l0Var2.j = null;
-                                    l0Var2.h = false;
-                                    l0Var2.a();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                bi.l0 l0Var3 = l0Var;
-                                if (l0Var3.g != 2) {
-                                    l0Var3.g = 2;
-                                    l0Var3.c = 0;
-                                    l0Var3.d = false;
-                                    l0Var3.i = false;
-                                    l0Var3.f = 0L;
-                                    l0Var3.j = null;
-                                    l0Var3.h = false;
-                                    l0Var3.a();
-                                    break;
-                                }
-                                break;
-                            default:
-                                bi.l0 l0Var4 = l0Var;
-                                if (l0Var4.g != 1) {
-                                    l0Var4.g = 1;
-                                    l0Var4.c = 0;
-                                    l0Var4.d = false;
-                                    l0Var4.i = false;
-                                    l0Var4.f = 0L;
-                                    l0Var4.j = null;
-                                    l0Var4.h = false;
-                                    l0Var4.a();
-                                    break;
-                                }
-                                break;
-                        }
+                } else {
+                    Drawable drawable2 = actionBarContainer.d;
+                    if (drawable2 != null) {
+                        drawable2.draw(canvas);
                     }
-                }, M0, z9);
-                H.i(new Runnable() { // from class: hi.j3
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                bi.l0 l0Var2 = l0Var;
-                                if (l0Var2.g != 3) {
-                                    l0Var2.g = 3;
-                                    l0Var2.c = 0;
-                                    l0Var2.d = false;
-                                    l0Var2.i = false;
-                                    l0Var2.f = 0L;
-                                    l0Var2.j = null;
-                                    l0Var2.h = false;
-                                    l0Var2.a();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                bi.l0 l0Var3 = l0Var;
-                                if (l0Var3.g != 2) {
-                                    l0Var3.g = 2;
-                                    l0Var3.c = 0;
-                                    l0Var3.d = false;
-                                    l0Var3.i = false;
-                                    l0Var3.f = 0L;
-                                    l0Var3.j = null;
-                                    l0Var3.h = false;
-                                    l0Var3.a();
-                                    break;
-                                }
-                                break;
-                            default:
-                                bi.l0 l0Var4 = l0Var;
-                                if (l0Var4.g != 1) {
-                                    l0Var4.g = 1;
-                                    l0Var4.c = 0;
-                                    l0Var4.d = false;
-                                    l0Var4.i = false;
-                                    l0Var4.f = 0L;
-                                    l0Var4.j = null;
-                                    l0Var4.h = false;
-                                    l0Var4.a();
-                                    break;
-                                }
-                                break;
-                        }
+                    Drawable drawable3 = actionBarContainer.e;
+                    if (drawable3 != null && actionBarContainer.n) {
+                        drawable3.draw(canvas);
+                        break;
                     }
-                }, id.M0(2131752477, null), i11 == 1);
-                H.V(5);
-                H.t = false;
-                H.s = 0;
-                H.a0(org.telegram.messenger.g0.L(24.0f), -org.telegram.messenger.g0.L(24.0f));
-                H.Z();
+                }
+                break;
+            case 3:
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY() - org.telegram.messenger.g0.L(1.0f), (getBounds().width() - org.telegram.messenger.g0.L(8.0f)) / 2.0f, (Paint) this.b);
+                break;
+            case 4:
+                Drawable[] drawableArr = (Drawable[]) this.b;
+                for (int i7 = 0; i7 < drawableArr.length; i7++) {
+                    drawableArr[i7].setBounds(getBounds());
+                    drawableArr[i7].draw(canvas);
+                }
+                break;
+            case 5:
+                ug.z0 z0Var = (ug.z0) this.b;
+                Rect bounds = getBounds();
+                z0Var.getClass();
+                z0Var.d(bounds.left, 0.0f, bounds.top, bounds.right, 0.0f, bounds.bottom);
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), Math.min(getBounds().width(), getBounds().height()) / 2.0f, z0Var.f);
+                break;
+            case 6:
+                ImageReceiver imageReceiver = (ImageReceiver) this.b;
+                imageReceiver.z0(getBounds());
+                imageReceiver.h(canvas, null);
+                break;
+            case 7:
+                ((oy0) this.b).c(getBounds().centerX() - (((oy0) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.G6, false), canvas);
+                break;
+            case 8:
+                canvas.save();
+                org.telegram.messenger.f6 f6Var = (org.telegram.messenger.f6) this.b;
+                if (f6Var.getBounds() != null) {
+                    canvas.scale(0.8333333f, 0.8333333f, f6Var.getBounds().centerX(), f6Var.getBounds().centerY());
+                }
+                f6Var.draw(canvas);
+                canvas.restore();
                 break;
             default:
-                Runnable runnable = (Runnable) obj;
-                if (runnable != null) {
-                    runnable.run();
+                canvas.save();
+                canvas.translate(getBounds().left, getBounds().top);
+                ((x5) this.b).draw(canvas);
+                canvas.restore();
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 1:
+                return org.telegram.messenger.g0.L(20.0f);
+            case 4:
+                return ((Drawable[]) this.b)[0].getIntrinsicHeight();
+            case 6:
+                return org.telegram.messenger.g0.L(30.0f);
+            case 9:
+                return ((x5) this.b).getHeight();
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 1:
+                return org.telegram.messenger.g0.L(20.0f);
+            case 4:
+                return ((Drawable[]) this.b)[0].getIntrinsicWidth();
+            case 6:
+                return org.telegram.messenger.g0.L(30.0f);
+            case 9:
+                return ((x5) this.b).getWidth();
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+            case 0:
+                return -2;
+            case 1:
+                return -2;
+            case 2:
+                return 0;
+            case 3:
+                return 0;
+            case 4:
+                return -2;
+            case 5:
+                return -2;
+            case 6:
+                return -2;
+            case 7:
+                return -2;
+            case 8:
+                return ((org.telegram.messenger.f6) this.b).getOpacity();
+            default:
+                return -2;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void getOutline(Outline outline) {
+        switch (this.a) {
+            case 2:
+                ActionBarContainer actionBarContainer = (ActionBarContainer) this.b;
+                if (!actionBarContainer.h) {
+                    Drawable drawable = actionBarContainer.d;
+                    if (drawable != null) {
+                        drawable.getOutline(outline);
+                        break;
+                    }
+                } else if (actionBarContainer.f != null) {
+                    actionBarContainer.d.getOutline(outline);
                     break;
                 }
                 break;
+            default:
+                super.getOutline(outline);
+                break;
         }
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
         switch (this.a) {
-            case 0:
-                textPaint.setUnderlineText(false);
-                textPaint.setColor(textPaint.linkColor);
+            case 1:
+                ((ki.x2) this.b).N0.setAlpha(i7);
+                break;
+            case 3:
+                ((Paint) this.b).setAlpha(i7);
+                break;
+            case 4:
+                int i10 = 0;
+                while (true) {
+                    Drawable[] drawableArr = (Drawable[]) this.b;
+                    if (i10 >= drawableArr.length) {
+                        break;
+                    } else {
+                        drawableArr[i10].setAlpha(i7);
+                        i10++;
+                    }
+                }
+            case 6:
+                ((ImageReceiver) this.b).setAlpha(i7 / 255.0f);
+                break;
+            case 8:
+                ((org.telegram.messenger.f6) this.b).setAlpha(i7);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setBounds(Rect rect) {
+        switch (this.a) {
+            case 8:
+                ((org.telegram.messenger.f6) this.b).setBounds(rect);
                 break;
             default:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                textPaint.setColor(m6.w0(this.b, (h6) this.c));
+                super.setBounds(rect);
                 break;
         }
     }
 
-    public k3(int i7, h6 h6Var, Runnable runnable) {
-        this.b = i7;
-        this.c = h6Var;
-        this.d = runnable;
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 1:
+                ((ki.x2) this.b).N0.setColorFilter(colorFilter);
+                break;
+            case 6:
+                ((ImageReceiver) this.b).p1 = colorFilter;
+                break;
+            case 8:
+                ((org.telegram.messenger.f6) this.b).setColorFilter(colorFilter);
+                break;
+        }
+    }
+
+    public /* synthetic */ k3(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setBounds(int i7, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 8:
+                ((org.telegram.messenger.f6) this.b).setBounds(i7, i10, i11, i12);
+                break;
+            default:
+                super.setBounds(i7, i10, i11, i12);
+                break;
+        }
+    }
+
+    public k3(ActionBarContainer actionBarContainer) {
+        this.a = 2;
+        this.b = actionBarContainer;
+    }
+
+    public k3(Context context) {
+        this.a = 4;
+        this.b = new Drawable[]{r1, context.getResources().getDrawable(R.drawable.verified_check).mutate()};
+        Drawable g10 = i5.c.g(context, R.drawable.verified_area);
+        g10.setColorFilter(new PorterDuffColorFilter(-9063442, PorterDuff.Mode.MULTIPLY));
+    }
+
+    public k3(String str) {
+        this.a = 7;
+        this.b = new oy0(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, org.telegram.messenger.g0.o());
+    }
+
+    private final void a(int i7) {
+    }
+
+    private final void b(int i7) {
+    }
+
+    private final void c(int i7) {
+    }
+
+    private final void d(int i7) {
+    }
+
+    private final void e(int i7) {
+    }
+
+    private final void f(ColorFilter colorFilter) {
+    }
+
+    private final void g(ColorFilter colorFilter) {
+    }
+
+    private final void h(ColorFilter colorFilter) {
+    }
+
+    private final void i(ColorFilter colorFilter) {
+    }
+
+    private final void j(ColorFilter colorFilter) {
+    }
+
+    private final void k(ColorFilter colorFilter) {
+    }
+
+    private final void l(ColorFilter colorFilter) {
     }
 }

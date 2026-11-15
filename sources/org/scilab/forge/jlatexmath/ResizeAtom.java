@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class ResizeAtom extends Atom {
     private Atom base;
@@ -10,10 +10,10 @@ public class ResizeAtom extends Atom {
     private float w;
     private int wunit;
 
-    public ResizeAtom(Atom atom, String str, String str2, boolean z9) {
+    public ResizeAtom(Atom atom, String str, String str2, boolean z10) {
         this.type = atom.type;
         this.base = atom;
-        this.keepaspectratio = z9;
+        this.keepaspectratio = z10;
         float[] length = SpaceAtom.getLength(str == null ? "" : str);
         float[] length2 = SpaceAtom.getLength(str2 == null ? "" : str2);
         if (length.length != 2) {

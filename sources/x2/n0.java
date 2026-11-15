@@ -1,6 +1,5 @@
 package x2;
 
-import h9.t1;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,7 +7,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n0 extends l {
     public static final e2.l0 s;
@@ -16,7 +15,7 @@ public final class n0 extends l {
     public final ArrayList l;
     public final e2.l1[] m;
     public final ArrayList n;
-    public final sa.d o;
+    public final nb.a o;
     public int p;
     public long[][] q;
     public androidx.datastore.preferences.protobuf.l r;
@@ -24,17 +23,17 @@ public final class n0 extends l {
     static {
         e2.z zVar = new e2.z();
         h9.g0 g0Var = h9.i0.b;
-        t1 t1Var = t1.e;
+        h9.s1 s1Var = h9.s1.e;
         List list = Collections.EMPTY_LIST;
-        t1 t1Var2 = t1.e;
+        h9.s1 s1Var2 = h9.s1.e;
         e2.e0 e0Var = new e2.e0();
         s = new e2.l0("MergingMediaSource", new e2.b0(zVar), null, new e2.f0(e0Var), e2.o0.L, e2.h0.d);
     }
 
     public n0(a... aVarArr) {
-        sa.d dVar = new sa.d(27);
+        nb.a aVar = new nb.a(28);
         this.k = aVarArr;
-        this.o = dVar;
+        this.o = aVar;
         this.n = new ArrayList(Arrays.asList(aVarArr));
         this.p = -1;
         this.l = new ArrayList(aVarArr.length);
@@ -46,7 +45,7 @@ public final class n0 extends l {
         new HashMap();
         h9.o.g(8, "expectedKeys");
         h9.o.g(2, "expectedValuesPerKey");
-        new h9.l1(h9.s.c(8)).h = new h9.k1();
+        new h9.k1(h9.s.c(8)).h = new h9.j1();
     }
 
     @Override // x2.a
@@ -86,9 +85,9 @@ public final class n0 extends l {
     }
 
     @Override // x2.a
-    public final void m(j2.d0 d0Var) {
-        this.j = d0Var;
-        this.i = h2.m0.q(null);
+    public final void m(j2.c0 c0Var) {
+        this.j = c0Var;
+        this.i = h2.l0.q(null);
         int i7 = 0;
         while (true) {
             a[] aVarArr = this.k;

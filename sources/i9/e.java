@@ -1,9 +1,9 @@
 package i9;
 
-import a8.ia;
+import a8.ja;
 import java.io.OutputStream;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e extends OutputStream {
     public final String toString() {
@@ -22,6 +22,6 @@ public final class e extends OutputStream {
     @Override // java.io.OutputStream
     public final void write(byte[] bArr, int i7, int i10) {
         bArr.getClass();
-        ia.n(i7, i10 + i7, bArr.length);
+        ja.n(i7, i10 + i7, bArr.length);
     }
 }

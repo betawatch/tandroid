@@ -2,72 +2,65 @@ package com.google.android.gms.common.api.internal;
 
 import android.os.DeadObjectException;
 import android.os.RemoteException;
+import android.util.Log;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class b1 extends s0 {
-    public final t b;
-    public final TaskCompletionSource c;
-    public final q d;
+public final class b1 extends e1 {
+    public final d b;
 
-    public b1(int i7, t tVar, TaskCompletionSource taskCompletionSource, q qVar) {
+    public b1(int i7, d dVar) {
         super(i7);
-        this.c = taskCompletionSource;
-        this.b = tVar;
-        this.d = qVar;
-        if (i7 == 2 && tVar.b) {
-            throw new IllegalArgumentException("Best-effort write calls cannot pass methods that should auto-resolve missing features.");
-        }
+        this.b = dVar;
     }
 
-    @Override // com.google.android.gms.common.api.internal.c1
+    @Override // com.google.android.gms.common.api.internal.e1
     public final void a(Status status) {
-        this.c.trySetException(this.d.f(status));
-    }
-
-    @Override // com.google.android.gms.common.api.internal.c1
-    public final void b(Exception exc) {
-        this.c.trySetException(exc);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.c1
-    public final void c(y0 y0Var, boolean z9) {
-        Boolean valueOf = Boolean.valueOf(z9);
-        Map map = (Map) y0Var.b;
-        TaskCompletionSource taskCompletionSource = this.c;
-        map.put(taskCompletionSource, valueOf);
-        taskCompletionSource.getTask().addOnCompleteListener(new y0(y0Var, taskCompletionSource));
-    }
-
-    @Override // com.google.android.gms.common.api.internal.c1
-    public final void d(j0 j0Var) {
-        TaskCompletionSource taskCompletionSource = this.c;
         try {
-            this.b.c(j0Var.b, taskCompletionSource);
-        } catch (DeadObjectException e10) {
-            throw e10;
-        } catch (RemoteException e11) {
-            a(c1.e(e11));
-        } catch (RuntimeException e12) {
-            taskCompletionSource.trySetException(e12);
+            this.b.o(status);
+        } catch (IllegalStateException e10) {
+            Log.w("ApiCallRunner", "Exception reporting failure", e10);
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.s0
-    public final n6.c[] f(j0 j0Var) {
-        return this.b.a;
+    @Override // com.google.android.gms.common.api.internal.e1
+    public final void b(Exception exc) {
+        String simpleName = exc.getClass().getSimpleName();
+        String localizedMessage = exc.getLocalizedMessage();
+        try {
+            this.b.o(new Status(10, org.telegram.ui.Cells.y0.m(simpleName, ": ", localizedMessage, new StringBuilder(simpleName.length() + 2 + String.valueOf(localizedMessage).length())), null, null));
+        } catch (IllegalStateException e10) {
+            Log.w("ApiCallRunner", "Exception reporting failure", e10);
+        }
     }
 
-    @Override // com.google.android.gms.common.api.internal.s0
-    public final boolean g(j0 j0Var) {
-        return this.b.b;
+    @Override // com.google.android.gms.common.api.internal.e1
+    public final void c(a1 a1Var, boolean z10) {
+        Boolean valueOf = Boolean.valueOf(z10);
+        Map map = (Map) a1Var.a;
+        d dVar = this.b;
+        map.put(dVar, valueOf);
+        dVar.b(new i1(a1Var, dVar));
     }
 
-    @Override // com.google.android.gms.common.api.internal.s0
-    public final int h(j0 j0Var) {
-        return this.b.c;
+    @Override // com.google.android.gms.common.api.internal.e1
+    public final void d(l0 l0Var) {
+        try {
+            d dVar = this.b;
+            com.google.android.gms.common.api.c cVar = l0Var.b;
+            dVar.getClass();
+            try {
+                dVar.n(cVar);
+            } catch (DeadObjectException e10) {
+                dVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
+                throw e10;
+            } catch (RemoteException e11) {
+                dVar.o(new Status(8, e11.getLocalizedMessage(), null, null));
+            }
+        } catch (RuntimeException e12) {
+            b(e12);
+        }
     }
 }

@@ -1,67 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.view.animation.DecelerateInterpolator;
-import org.telegram.messenger.MediaController;
+import android.app.Activity;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e40 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g40 b;
+public interface e40 {
+    long a();
 
-    public /* synthetic */ e40(g40 g40Var, int i7) {
-        this.a = i7;
-        this.b = g40Var;
-    }
+    boolean c();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.messenger.j20 j20Var;
-        int i7 = this.a;
-        g40 g40Var = this.b;
-        switch (i7) {
-            case 0:
-                g40Var.H0.s(false, false);
-                break;
-            case 1:
-                o40 o40Var = g40Var.H0;
-                org.telegram.messenger.j20 j20Var2 = new org.telegram.messenger.j20();
-                o40Var.R = j20Var2;
-                j20Var2.s = true;
-                j20Var2.a = -1L;
-                j20Var2.b = -1L;
-                j20Var2.w = o40Var.L;
-                j20Var2.x = o40Var.M;
-                j20Var2.y = o40Var.N;
-                j20Var2.z = o40Var.O;
-                j20Var2.q = Math.max(1L, o40Var.P);
-                org.telegram.messenger.j20 j20Var3 = o40Var.R;
-                j20Var3.n = 25;
-                j20Var3.h = 360;
-                j20Var3.k = 360;
-                j20Var3.i = 360;
-                j20Var3.l = 360;
-                j20Var3.o = o40Var.f0.getAbsolutePath();
-                g40Var.h(o40Var.f0);
-                o40Var.R.r = o40Var.j0;
-                org.telegram.messenger.qs.f(o40Var.e).k(org.telegram.messenger.qs.s2, Integer.valueOf(o40Var.U), o40Var.R, o40Var.f0.getAbsolutePath(), g40Var.A0);
-                break;
-            case 2:
-                if (g40Var.G0 && (j20Var = g40Var.H0.R) != null) {
-                    j20Var.P = false;
-                }
-                g40Var.c(g40Var.a, 0L, true);
-                MediaController.B().Y(false);
-                break;
-            case 3:
-                g40Var.H0.h1 = null;
-                break;
-            case 4:
-                g40Var.H0.q0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
-                break;
-            default:
-                g40Var.H0.q0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
-                break;
-        }
-    }
+    int getClassGuid();
+
+    View getFragmentView();
+
+    Activity getParentActivity();
+
+    void u(org.telegram.messenger.ff ffVar, org.telegram.messenger.g20 g20Var, boolean z10, int i7, int i10, boolean z11, long j3);
+
+    boolean z();
 }

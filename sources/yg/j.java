@@ -5,7 +5,7 @@ import android.text.Spanned;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.p2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class j extends InputFilter.LengthFilter {
     public final /* synthetic */ l a;
@@ -20,8 +20,8 @@ public final class j extends InputFilter.LengthFilter {
     public final CharSequence filter(CharSequence charSequence, int i7, int i10, Spanned spanned, int i11, int i12) {
         CharSequence filter = super.filter(charSequence, i7, i10, spanned, i11, i12);
         if (filter != null && filter.length() == 0) {
-            g0.F3(this.a.a);
-            p2.D.a();
+            g0.E3(this.a.a);
+            p2.E.a();
         }
         return filter;
     }

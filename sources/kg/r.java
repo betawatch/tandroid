@@ -1,43 +1,37 @@
 package kg;
 
 import android.content.DialogInterface;
-import org.telegram.ui.Cells.z5;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r implements DialogInterface.OnShowListener {
+public final /* synthetic */ class r implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ r(EditTextBoldCursor editTextBoldCursor, int i7) {
+    public /* synthetic */ r(int i7, View view) {
         this.a = i7;
-        this.b = editTextBoldCursor;
+        this.b = view;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                s sVar = (s) this.b;
-                sVar.requestFocus();
-                org.telegram.messenger.g0.K3(sVar);
-                break;
-            case 1:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                editTextBoldCursor.requestFocus();
-                org.telegram.messenger.g0.K3(editTextBoldCursor);
-                editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
-                break;
-            case 2:
-                z5 z5Var = (z5) this.b;
-                z5Var.requestFocus();
-                org.telegram.messenger.g0.K3(z5Var);
+                v.e = null;
+                View view = this.b;
+                if (view != null) {
+                    view.requestFocus();
+                    break;
+                }
                 break;
             default:
-                zh.n1 n1Var = (zh.n1) this.b;
-                n1Var.requestFocus();
-                org.telegram.messenger.g0.K3(n1Var);
+                r1.f = null;
+                View view2 = this.b;
+                if (view2 != null) {
+                    view2.requestFocus();
+                    break;
+                }
                 break;
         }
     }

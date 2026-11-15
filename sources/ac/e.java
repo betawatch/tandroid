@@ -1,6 +1,6 @@
 package ac;
 
-import a8.wa;
+import a8.xa;
 import android.os.SystemClock;
 import android.support.v4.media.session.a0;
 import c8.db;
@@ -8,10 +8,10 @@ import c8.de;
 import c8.eb;
 import c8.tf;
 import java.io.File;
-import vi.g;
-import vi.h;
+import yi.i;
+import yi.j;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements tf {
     public final long a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class e implements tf {
     }
 
     @Override // c8.tf
-    public wa zza() {
+    public xa zza() {
         f fVar = (f) this.b;
         eb ebVar = (eb) this.c;
         ga.d dVar = new ga.d(1);
@@ -35,7 +35,7 @@ public final /* synthetic */ class e implements tf {
         a0Var.b = ebVar;
         a0Var.c = Long.valueOf((SystemClock.elapsedRealtime() - this.a) & Long.MAX_VALUE);
         dVar.f = new de(a0Var);
-        return new wa(dVar, 0);
+        return new xa(dVar, 0);
     }
 
     public e(File file, long j3, byte[] bArr) {
@@ -44,9 +44,9 @@ public final /* synthetic */ class e implements tf {
         this.c = bArr == null ? null : (byte[]) bArr.clone();
     }
 
-    public e(long j3, g gVar, h hVar) {
-        this.c = hVar;
+    public e(long j3, i iVar, j jVar) {
+        this.c = jVar;
         this.a = j3;
-        this.b = gVar;
+        this.b = iVar;
     }
 }

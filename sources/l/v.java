@@ -12,7 +12,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class v {
     public final Context a;
@@ -27,11 +27,11 @@ public class v {
     public int f = 8388611;
     public final t k = new t(this);
 
-    public v(Context context, k kVar, View view, boolean z9, int i7, int i10) {
+    public v(Context context, k kVar, View view, boolean z10, int i7, int i10) {
         this.a = context;
         this.b = kVar;
         this.e = view;
-        this.c = z9;
+        this.c = z10;
         this.d = i7;
     }
 
@@ -71,10 +71,10 @@ public class v {
         }
     }
 
-    public final void d(int i7, int i10, boolean z9, boolean z10) {
+    public final void d(int i7, int i10, boolean z10, boolean z11) {
         s a10 = a();
-        a10.s(z10);
-        if (z9) {
+        a10.s(z11);
+        if (z10) {
             int i11 = this.f;
             View view = this.e;
             WeakHashMap weakHashMap = i0.a;

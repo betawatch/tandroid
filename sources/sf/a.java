@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import kf.p;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends rf.a {
     public static final Logger s = Logger.getLogger(a.class.getName());
@@ -415,9 +415,9 @@ public final class a extends rf.a {
                                                             String str5 = this.h;
                                                             if (str5 == null || str5.trim().length() == 0) {
                                                                 if (k11.i() == 2) {
-                                                                    int a10 = rf.b.a(dataInputStream5.readShort() - r62);
-                                                                    if (a10 != 0) {
-                                                                        this.h = rf.b.c(a10);
+                                                                    int b10 = r.b.b(dataInputStream5.readShort() - r62);
+                                                                    if (b10 != 0) {
+                                                                        this.h = r.b.d(b10);
                                                                     }
                                                                 } else {
                                                                     this.h = k11.m();

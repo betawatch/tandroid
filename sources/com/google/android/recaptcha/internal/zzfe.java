@@ -7,10 +7,11 @@ import hd.r;
 import id.c;
 import java.util.LinkedHashMap;
 import java.util.List;
+import jd.a;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzfe extends j implements p {
     final /* synthetic */ zzyg zza;
@@ -35,7 +36,7 @@ final class zzfe extends j implements p {
 
     @Override // kd.a
     public final Object invokeSuspend(Object obj) {
-        jd.a aVar = jd.a.a;
+        a aVar = a.a;
         b.c(obj);
         try {
             zzyg zzygVar = this.zza;

@@ -1,33 +1,56 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.os.Bundle;
+import android.view.View;
+import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mu implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class mu implements org.telegram.ui.Components.gj0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zw b;
+    public final /* synthetic */ yw b;
 
-    public /* synthetic */ mu(zw zwVar, int i7) {
+    public /* synthetic */ mu(yw ywVar, int i7) {
         this.a = i7;
-        this.b = zwVar;
+        this.b = ywVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.ui.Components.gj0
+    public final void b(int i7, View view) {
         switch (this.a) {
             case 0:
-                this.b.P4(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                zw zwVar = this.b;
-                zwVar.getClass();
-                zwVar.R4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                yw ywVar = this.b;
+                Object obj = ywVar.D0.y0.G(i7).G;
+                if (!(obj instanceof org.telegram.messenger.gj)) {
+                    if (obj instanceof fi.d6) {
+                        fi.d6 d6Var = (fi.d6) obj;
+                        Bundle f10 = r.b.f(3, TeXSymbolParser.TYPE_ATTR);
+                        f10.putString("hashtag", d6Var.C);
+                        f10.putInt("storiesCount", d6Var.J);
+                        ywVar.presentFragment(new org.telegram.ui.Components.x80(f10, null));
+                        break;
+                    }
+                } else {
+                    org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) obj;
+                    Bundle bundle = new Bundle();
+                    if (org.telegram.messenger.gj.B0(gjVar.k) >= 0) {
+                        bundle.putLong("user_id", org.telegram.messenger.gj.B0(gjVar.k));
+                    } else {
+                        bundle.putLong("chat_id", -org.telegram.messenger.gj.B0(gjVar.k));
+                    }
+                    bundle.putInt("message_id", gjVar.e1());
+                    an anVar = new an(bundle);
+                    yw.p4(anVar, gjVar);
+                    ywVar.presentFragment(anVar);
+                    break;
+                }
                 break;
             default:
-                zw zwVar2 = this.b;
-                zwVar2.getClass();
-                zwVar2.L4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                yw ywVar2 = this.b;
+                ywVar2.c0.I0(true);
+                ArrayList arrayList = ywVar2.c0.f3;
+                ywVar2.t3(arrayList.isEmpty() ? jg.q0.k3[i7] : (jg.o0) arrayList.get(i7));
                 break;
         }
     }

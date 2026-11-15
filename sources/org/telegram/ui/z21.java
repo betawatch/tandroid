@@ -1,37 +1,61 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class z21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a31 b;
+import android.view.View;
+import android.widget.Toast;
 
-    public /* synthetic */ z21(a31 a31Var, int i7) {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class z21 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k31 b;
+
+    public /* synthetic */ z21(k31 k31Var, int i7) {
         this.a = i7;
-        this.b = a31Var;
+        this.b = k31Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String sb2;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         int i7 = this.a;
-        a31 a31Var = this.b;
+        k31 k31Var = this.b;
         switch (i7) {
             case 0:
-                String str = a31Var.b.text;
-                if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
-                    StringBuilder sb3 = new StringBuilder();
-                    org.telegram.messenger.camera.q.q(null, 2131751105, sb3, "\n");
-                    sb3.append(a31Var.b.text);
-                    sb2 = sb3.toString();
-                } else {
-                    sb2 = org.telegram.messenger.id.M0(2131754709, null);
-                }
-                org.telegram.ui.Components.u4.r0(a31Var.c, org.telegram.messenger.id.M0(2131753894, null), sb2, null);
+                vf.c.t(k31Var.getParentActivity(), k31Var.getMessagesController().M5);
+                k31Var.getMessagesController().k4(0L, "PREMIUM_GRACE");
+                break;
+            case 1:
+                k31Var.getClass();
+                k31Var.presentFragment(new g(3));
+                break;
+            case 2:
+                k31Var.getMessagesController().k4(0L, "VALIDATE_PHONE_NUMBER");
+                break;
+            case 3:
+                k31Var.getClass();
+                k31Var.presentFragment(new xa1(8, null));
+                break;
+            case 4:
+                k31Var.getMessagesController().k4(0L, "VALIDATE_PASSWORD");
+                break;
+            case 5:
+                k31.a0(k31Var);
                 break;
             default:
-                org.telegram.ui.Components.u4.r0(a31Var.c, org.telegram.messenger.id.M0(2131753894, null), org.telegram.messenger.id.M0(2131751105, null), null);
-                break;
+                int i10 = k31Var.R + 1;
+                k31Var.R = i10;
+                if (i10 >= 2) {
+                    k31Var.presentFragment(new tt());
+                    break;
+                } else {
+                    boolean z10 = org.telegram.messenger.r2.a;
+                    try {
+                        Toast.makeText(k31Var.getParentActivity(), org.telegram.messenger.hd.M0(2131751625, null), 0).show();
+                        break;
+                    } catch (Exception e10) {
+                        org.telegram.messenger.a8.g(e10, true);
+                        return;
+                    }
+                }
         }
     }
 }

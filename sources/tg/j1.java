@@ -3,20 +3,21 @@ package tg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Path;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.is;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j1 extends pj0 implements ls {
-    public final Path e3;
-    public q0.a f3;
+public final class j1 extends uj0 implements is {
+    public final Path f3;
+    public q0.a g3;
 
     public j1(Context context) {
         super(context, null);
-        this.e3 = new Path();
+        this.f3 = new Path();
         setWillNotDraw(false);
         setLayoutManager(new v4.b0());
         setAdapter(new i1());
@@ -24,52 +25,52 @@ public final class j1 extends pj0 implements ls {
         setClipToPadding(false);
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.uj0
     public final Integer V0(int i7) {
         return 285212671;
     }
 
-    @Override // org.telegram.messenger.ls
+    @Override // org.telegram.messenger.is
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == qs.C5) {
+        if (i7 == ns.C5) {
             getAdapter().f();
         }
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void draw(Canvas canvas) {
-        q0.a aVar = this.f3;
+        q0.a aVar = this.g3;
         if (aVar != null) {
-            Path path = this.e3;
+            Path path = this.f3;
             aVar.accept(path);
             canvas.save();
             canvas.clipPath(path);
         }
         super.draw(canvas);
-        if (this.f3 != null) {
+        if (this.g3 != null) {
             canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        qs.e().c(this, qs.C5);
+        ns.e().c(this, ns.C5);
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        qs.e().n(this, qs.C5);
+        ns.e().n(this, ns.C5);
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, org.telegram.messenger.camera.q.B(16.0f, org.telegram.messenger.g0.L(48.0f) * Math.min(sg.b0.c().size(), 6), TLObject.FLAG_30));
+        super.onMeasure(i7, i20.B(16.0f, org.telegram.messenger.g0.L(48.0f) * Math.min(sg.a0.c().size(), 6), TLObject.FLAG_30));
     }
 
     public void setMaskProvider(q0.a aVar) {
-        this.f3 = aVar;
+        this.g3 = aVar;
         invalidate();
     }
 }

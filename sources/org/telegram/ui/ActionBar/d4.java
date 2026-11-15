@@ -1,44 +1,29 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.animation.Animation;
-import android.view.animation.Transformation;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class d4 extends Animation {
+public final class d4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ j4 e;
+    public final /* synthetic */ g4 b;
 
-    public /* synthetic */ d4(j4 j4Var, float f10, float f11, int i7, int i10) {
-        this.a = i10;
-        this.e = j4Var;
-        this.b = f10;
-        this.c = f11;
-        this.d = i7;
+    public /* synthetic */ d4(g4 g4Var, int i7) {
+        this.a = i7;
+        this.b = g4Var;
     }
 
-    @Override // android.view.animation.Animation
-    public final void applyTransformation(float f10, Transformation transformation) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                float f11 = this.b;
-                float z9 = com.google.android.recaptcha.internal.a.z(this.c, f11, f10, f11);
-                j4 j4Var = this.e;
-                j4Var.i.setX(z9 + (j4Var.f.getWidth() - this.d));
-                float f12 = 1.0f - f10;
-                j4Var.l.setAlpha(f12);
-                j4Var.j.setAlpha(f12);
+                ns.f(m10.t0).d(new r0(this, 9));
                 break;
             default:
-                float f13 = this.b;
-                float z10 = com.google.android.recaptcha.internal.a.z(this.c, f13, f10, f13);
-                j4 j4Var2 = this.e;
-                j4Var2.i.setX(z10 + (j4Var2.f.getWidth() - this.d));
-                j4Var2.l.setAlpha(f10);
-                j4Var2.j.setAlpha(f10);
+                ns.f(m10.t0).d(new r0(this, 10));
                 break;
         }
     }

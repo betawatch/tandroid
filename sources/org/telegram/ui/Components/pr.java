@@ -1,42 +1,16 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pr implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1[] b;
+public final class pr extends v4.k {
+    public final /* synthetic */ rr F;
 
-    public /* synthetic */ pr(org.telegram.ui.ActionBar.u1[] u1VarArr, int i7) {
-        this.a = i7;
-        this.b = u1VarArr;
+    public pr(rr rrVar) {
+        this.F = rrVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.u1 u1Var = this.b[0];
-                if (u1Var != null) {
-                    u1Var.dismiss();
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.u1[] u1VarArr = this.b;
-                try {
-                    u1VarArr[0].dismiss();
-                } catch (Throwable unused) {
-                }
-                u1VarArr[0] = null;
-                break;
-            default:
-                org.telegram.ui.ActionBar.u1[] u1VarArr2 = this.b;
-                try {
-                    u1VarArr2[0].dismiss();
-                } catch (Throwable unused2) {
-                }
-                u1VarArr2[0] = null;
-                break;
-        }
+    @Override // v4.k
+    public final void P(v4.e1 e1Var) {
+        this.F.b.invalidate();
     }
 }

@@ -1,78 +1,42 @@
 package fi;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jy;
-import org.telegram.ui.Components.nt0;
+import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.ui.Components.m60;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class s1 extends jy {
-    public final nt0 X;
-    public final /* synthetic */ t1 Y;
+public final /* synthetic */ class s1 implements View.OnLongClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s1(t1 t1Var) {
-        super(100, true);
-        this.Y = t1Var;
-        this.X = new nt0();
-        this.O = new ai.l(this, 2);
+    public /* synthetic */ s1(b4 b4Var, int i7) {
+        this.a = i7;
+        this.b = b4Var;
     }
 
-    @Override // v4.n0
-    public final int A() {
-        return B();
-    }
-
-    @Override // org.telegram.ui.Components.jy
-    public final nt0 D1(int i7) {
-        TLRPC.Document document;
-        ArrayList<TLRPC.DocumentAttribute> arrayList;
-        TLRPC.PhotoSize w10;
-        int i10;
-        int i11;
-        nt0 nt0Var = this.X;
-        nt0Var.c = false;
-        Object F = this.Y.c.F(i7);
-        if (F instanceof TLRPC.BotInlineResult) {
-            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) F;
-            document = botInlineResult.document;
-            if (document != null) {
-                arrayList = document.attributes;
-            } else {
-                TLRPC.WebDocument webDocument = botInlineResult.content;
-                if (webDocument != null) {
-                    arrayList = webDocument.attributes;
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        int i7 = this.a;
+        b4 b4Var = this.b;
+        switch (i7) {
+            case 0:
+                if (!b4Var.B0(true)) {
+                    m60 F = m60.F(b4Var.t0.w, b4Var.l0, view);
+                    F.c(R.drawable.msg_edit, hd.M0(2131748810, null), new t1(b4Var, 6), false);
+                    F.l(R.drawable.menu_delete_paid, hd.M0(2131748809, null), new t1(b4Var, 7), b4Var.v3 > 0);
+                    F.V(5);
+                    F.U = true;
+                    F.Z();
+                    break;
                 } else {
-                    TLRPC.WebDocument webDocument2 = botInlineResult.thumb;
-                    arrayList = webDocument2 != null ? webDocument2.attributes : null;
-                }
-            }
-        } else {
-            if (!(F instanceof TLRPC.Document)) {
-                nt0Var.c = true;
-                return nt0Var;
-            }
-            document = (TLRPC.Document) F;
-            arrayList = document.attributes;
-        }
-        nt0Var.b = 100.0f;
-        nt0Var.a = 100.0f;
-        nt0Var.c = false;
-        if (document != null && (w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false)) != null && (i10 = w10.w) != 0 && (i11 = w10.h) != 0) {
-            nt0Var.a = i10;
-            nt0Var.b = i11;
-        }
-        if (arrayList != null) {
-            for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                TLRPC.DocumentAttribute documentAttribute = arrayList.get(i12);
-                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    nt0Var.a = documentAttribute.w;
-                    nt0Var.b = documentAttribute.h;
                     break;
                 }
-            }
+            default:
+                b4Var.v0.k(b4Var.B0(false));
+                break;
         }
-        return nt0Var;
+        return true;
     }
 }

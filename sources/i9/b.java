@@ -1,8 +1,8 @@
 package i9;
 
-import a8.ia;
+import a8.ja;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b extends d {
     public final char[] e;
@@ -11,7 +11,7 @@ public final class b extends d {
         super(aVar, (Character) null);
         this.e = new char[512];
         char[] cArr = aVar.b;
-        ia.f(cArr.length == 16);
+        ja.f(cArr.length == 16);
         for (int i7 = 0; i7 < 256; i7++) {
             char[] cArr2 = this.e;
             cArr2[i7] = cArr[i7 >>> 4];
@@ -21,7 +21,7 @@ public final class b extends d {
 
     @Override // i9.d
     public final void b(StringBuilder sb2, byte[] bArr, int i7) {
-        ia.n(0, i7, bArr.length);
+        ja.n(0, i7, bArr.length);
         for (int i10 = 0; i10 < i7; i10++) {
             int i11 = bArr[i10] & 255;
             char[] cArr = this.e;

@@ -1,69 +1,46 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class th extends qq0 {
-    public final /* synthetic */ cn a;
+public final class th extends df0 {
+    public final /* synthetic */ an f;
 
-    public th(cn cnVar) {
-        this.a = cnVar;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final zq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
-        lj ljVar;
-        ImageReceiver imageReceiver;
-        if (i7 >= 0) {
-            cn cnVar = this.a;
-            if (i7 < cnVar.db.size() && (ljVar = cnVar.W1) != null && ljVar.getListView() != null) {
-                int childCount = cnVar.W1.getListView().getChildCount();
-                Object obj = cnVar.db.get(i7);
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = cnVar.W1.getListView().getChildAt(i10);
-                    if (childAt instanceof org.telegram.ui.Cells.h2) {
-                        org.telegram.ui.Cells.h2 h2Var = (org.telegram.ui.Cells.h2) childAt;
-                        if (h2Var.getResult() == obj) {
-                            imageReceiver = h2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                zq0 zq0Var = new zq0();
-                                zq0Var.b = iArr[0];
-                                zq0Var.c = iArr[1];
-                                zq0Var.d = cnVar.W1.getListView();
-                                zq0Var.a = imageReceiver;
-                                zq0Var.e = imageReceiver.p();
-                                zq0Var.h = imageReceiver.E();
-                                return zq0Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
-                }
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public th(an anVar, Context context, int i7, org.telegram.messenger.gj gjVar) {
+        super(context);
+        this.f = anVar;
+        this.a = null;
+        if (!gjVar.h4()) {
+            gjVar.P4();
         }
-        return null;
-    }
-
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
-        if (i7 >= 0) {
-            cn cnVar = this.a;
-            if (i7 >= cnVar.db.size()) {
-                return;
-            }
-            cnVar.Gb((TLRPC.BotInlineResult) cnVar.db.get(i7), z9, i10, 0L);
-        }
+        org.telegram.ui.Components.pz pzVar = new org.telegram.ui.Components.pz(context, null);
+        this.c = pzVar;
+        pzVar.e(org.telegram.ui.ActionBar.j6.G8, org.telegram.ui.ActionBar.j6.i6, -1);
+        pzVar.setViewType(13);
+        pzVar.setIsSingleCell(false);
+        addView(pzVar, c8.ja.c(-1.0f, -2));
+        org.telegram.ui.Components.z70 z70Var = new org.telegram.ui.Components.z70(context, null);
+        this.b = z70Var;
+        z70Var.setTextSize(1, 14.0f);
+        z70Var.setGravity(19);
+        org.telegram.ui.ActionBar.q6.U(z70Var, org.telegram.ui.ActionBar.j6.E8, null);
+        org.telegram.ui.ActionBar.q6.G(z70Var, org.telegram.ui.ActionBar.j6.Xc, null);
+        z70Var.setEllipsize(TextUtils.TruncateAt.END);
+        z70Var.setSingleLine();
+        z70Var.setLines(1);
+        z70Var.setMaxLines(1);
+        addView(z70Var, c8.ja.d(-1, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
+        TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
+        tL_channels_getMessageAuthor.channel = org.telegram.messenger.np.s1(i7).h1(-org.telegram.messenger.gj.B0(gjVar.k));
+        tL_channels_getMessageAuthor.id = gjVar.e1();
+        z70Var.setAlpha(0.0f);
+        ConnectionsManager.getInstance(i7).sendRequest(tL_channels_getMessageAuthor, new di.u1(this, i7, 9));
+        setBackground(org.telegram.ui.ActionBar.j6.a0(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.I5, false), 6, 0));
+        setEnabled(false);
     }
 }

@@ -1,42 +1,54 @@
 package org.telegram.ui.ActionBar;
 
+import android.graphics.Rect;
 import android.view.View;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class w3 {
-    public final l4 a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public boolean e = true;
-    public boolean f;
-    public long g;
+public final class w3 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ int a;
+    public final Object b;
+    public final Object c;
+    public final /* synthetic */ Object d;
 
-    public w3(l4 l4Var) {
-        this.a = l4Var;
+    public w3(qm0 qm0Var, qm0 qm0Var2, qm0 qm0Var3) {
+        this.a = 1;
+        this.b = qm0Var;
+        this.c = qm0Var2;
+        this.d = qm0Var3;
     }
 
-    public final void a() {
-        if (this.f) {
-            boolean z9 = this.b;
-            l4 l4Var = this.a;
-            if (z9 || this.c || this.d || !this.e) {
-                j4 j4Var = l4Var.b;
-                if (j4Var.f()) {
-                    j4Var.G = true;
-                    j4Var.x.start();
-                    j4Var.D.setEmpty();
-                    return;
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+        switch (this.a) {
+            case 0:
+                Rect rect = (Rect) this.b;
+                rect.set(i7, i10, i11, i12);
+                Rect rect2 = (Rect) this.c;
+                rect2.set(i13, i14, i15, i16);
+                i4 i4Var = (i4) this.d;
+                g4 g4Var = i4Var.b;
+                if (g4Var.f() && !rect.equals(rect2)) {
+                    i4Var.h = true;
+                    if (g4Var.f()) {
+                        i4Var.c();
+                        break;
+                    }
                 }
-                return;
-            }
-            View view = l4Var.a;
-            z3 z3Var = l4Var.l;
-            view.removeOnLayoutChangeListener(z3Var);
-            l4Var.a.addOnLayoutChangeListener(z3Var);
-            l4Var.c();
-            this.g = System.currentTimeMillis();
+                break;
+            default:
+                ((qm0) this.b).setProgress(org.telegram.ui.h5.n1);
+                ((qm0) this.c).setProgress(org.telegram.ui.h5.o1);
+                ((qm0) this.d).setProgress(org.telegram.ui.h5.p1);
+                break;
         }
+    }
+
+    public w3(i4 i4Var) {
+        this.a = 0;
+        this.d = i4Var;
+        this.b = new Rect();
+        this.c = new Rect();
     }
 }

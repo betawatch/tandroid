@@ -10,7 +10,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class ButtonBarLayout extends LinearLayout {
     public boolean a;
@@ -30,15 +30,15 @@ public class ButtonBarLayout extends LinearLayout {
         }
     }
 
-    private void setStacked(boolean z9) {
-        if (this.b != z9) {
-            if (!z9 || this.a) {
-                this.b = z9;
-                setOrientation(z9 ? 1 : 0);
-                setGravity(z9 ? 8388613 : 80);
+    private void setStacked(boolean z10) {
+        if (this.b != z10) {
+            if (!z10 || this.a) {
+                this.b = z10;
+                setOrientation(z10 ? 1 : 0);
+                setGravity(z10 ? 8388613 : 80);
                 View findViewById = findViewById(R.id.spacer);
                 if (findViewById != null) {
-                    findViewById.setVisibility(z9 ? 8 : 4);
+                    findViewById.setVisibility(z10 ? 8 : 4);
                 }
                 for (int childCount = getChildCount() - 2; childCount >= 0; childCount--) {
                     bringChildToFront(getChildAt(childCount));
@@ -50,7 +50,7 @@ public class ButtonBarLayout extends LinearLayout {
     @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         int i11;
-        boolean z9;
+        boolean z10;
         int i12;
         int size = View.MeasureSpec.getSize(i7);
         int i13 = 0;
@@ -62,17 +62,17 @@ public class ButtonBarLayout extends LinearLayout {
         }
         if (this.b || View.MeasureSpec.getMode(i7) != 1073741824) {
             i11 = i7;
-            z9 = false;
+            z10 = false;
         } else {
             i11 = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31);
-            z9 = true;
+            z10 = true;
         }
         super.onMeasure(i11, i10);
         if (this.a && !this.b && (getMeasuredWidthAndState() & (-16777216)) == 16777216) {
             setStacked(true);
-            z9 = true;
+            z10 = true;
         }
-        if (z9) {
+        if (z10) {
             super.onMeasure(i7, i10);
         }
         int childCount = getChildCount();
@@ -119,10 +119,10 @@ public class ButtonBarLayout extends LinearLayout {
         }
     }
 
-    public void setAllowStacking(boolean z9) {
-        if (this.a != z9) {
-            this.a = z9;
-            if (!z9 && this.b) {
+    public void setAllowStacking(boolean z10) {
+        if (this.a != z10) {
+            this.a = z10;
+            if (!z10 && this.b) {
                 setStacked(false);
             }
             requestLayout();

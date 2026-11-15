@@ -1,64 +1,24 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
+import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class nh implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a = 0;
-    public boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class nh extends org.telegram.ui.Components.wu {
+    public final /* synthetic */ oh R1;
 
-    public nh(f40 f40Var, org.telegram.messenger.s3 s3Var, boolean z9) {
-        this.d = f40Var;
-        this.c = s3Var;
-        this.b = z9;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nh(oh ohVar, org.telegram.ui.ActionBar.e2 e2Var, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, ArrayList arrayList) {
+        super(e2Var, activity, e6Var, arrayList);
+        this.R1 = ohVar;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        switch (this.a) {
-            case 0:
-                cn cnVar = (cn) this.d;
-                ViewTreeObserver viewTreeObserver = (ViewTreeObserver) this.c;
-                if (viewTreeObserver.isAlive()) {
-                    viewTreeObserver.removeOnPreDrawListener(this);
-                }
-                wi wiVar = cnVar.o1;
-                if (wiVar != null) {
-                    wiVar.getViewTreeObserver().removeOnPreDrawListener(this);
-                }
-                if (this.b) {
-                    return true;
-                }
-                this.b = true;
-                return cnVar.L8();
-            default:
-                f40 f40Var = (f40) this.d;
-                n30 n30Var = f40Var.K1;
-                n30Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                f40Var.k4 = null;
-                c20 c20Var = f40Var.U3;
-                org.telegram.messenger.s3 s3Var = (org.telegram.messenger.s3) this.c;
-                c20Var.j(s3Var);
-                if (f40Var.m2) {
-                    f40Var.m2 = false;
-                    f40Var.Q0(true);
-                    if (this.b && s3Var != null) {
-                        n30Var.v0(0);
-                    }
-                    f40Var.m2 = true;
-                } else {
-                    f40Var.Q0(true);
-                }
-                f40Var.b.requestLayout();
-                return false;
-        }
-    }
-
-    public nh(cn cnVar, ViewTreeObserver viewTreeObserver) {
-        this.d = cnVar;
-        this.c = viewTreeObserver;
+    @Override // org.telegram.ui.Components.wu, org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
+    public final void dismiss() {
+        super.dismiss();
+        an anVar = this.R1.p;
+        anVar.getClass();
+        anVar.x8(false, true, 0.0f);
     }
 }

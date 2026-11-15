@@ -2,7 +2,7 @@ package j$.time.temporal;
 
 import j$.time.DayOfWeek;
 import j$.time.LocalDate;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
@@ -232,7 +232,7 @@ public abstract class g implements o {
         };
         WEEK_BASED_YEAR = gVar4;
         b = new g[]{gVar, gVar2, gVar3, gVar4};
-        a = new int[]{0, 90, qs.L2, qs.w4, 0, 91, qs.M2, qs.x4};
+        a = new int[]{0, 90, ns.L2, ns.w4, 0, 91, ns.M2, ns.x4};
     }
 
     public static int G(int i7) {
@@ -253,7 +253,7 @@ public abstract class g implements o {
             i11 = i10 + 4;
         }
         if (L < i11) {
-            return (int) s.e(1L, G(y(localDate.X(qs.K2).U(-1L)))).d;
+            return (int) s.e(1L, G(y(localDate.X(ns.K2).U(-1L)))).d;
         }
         int i12 = ((L - i11) / 7) + 1;
         if (i12 != 53 || i11 == -3 || (i11 == -2 && localDate.O())) {

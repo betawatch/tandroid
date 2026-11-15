@@ -1,67 +1,45 @@
 package i5;
 
 import java.nio.ByteBuffer;
-import java.util.Iterator;
-import java.util.LinkedList;
-import y7.i6;
+import java.nio.channels.WritableByteChannel;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class i extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ i6 d;
-    public static final /* synthetic */ i6 e;
-    public String a;
-    public long b;
-    public LinkedList c;
+public final class i extends com.googlecode.mp4parser.b {
+    public final /* synthetic */ int f;
 
-    static {
-        ze.a aVar = new ze.a(i.class, "FileTypeBox.java");
-        d = aVar.e(aVar.d("getMajorBrand", "com.coremedia.iso.boxes.FileTypeBox", "", "", "java.lang.String"));
-        aVar.e(aVar.d("setMajorBrand", "com.coremedia.iso.boxes.FileTypeBox", "java.lang.String", "majorBrand", "void"));
-        aVar.e(aVar.d("setMinorVersion", "com.coremedia.iso.boxes.FileTypeBox", "long", "minorVersion", "void"));
-        e = aVar.e(aVar.d("getMinorVersion", "com.coremedia.iso.boxes.FileTypeBox", "", "", "long"));
-        aVar.e(aVar.d("getCompatibleBrands", "com.coremedia.iso.boxes.FileTypeBox", "", "", "java.util.List"));
-        aVar.e(aVar.d("setCompatibleBrands", "com.coremedia.iso.boxes.FileTypeBox", "java.util.List", "compatibleBrands", "void"));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i(String str, int i7) {
+        super(str);
+        this.f = i7;
     }
 
-    @Override // com.googlecode.mp4parser.a
-    public final void _parseDetails(ByteBuffer byteBuffer) {
-        this.a = h5.b.d(byteBuffer);
-        this.b = h5.b.i(byteBuffer);
-        int remaining = byteBuffer.remaining() / 4;
-        this.c = new LinkedList();
-        for (int i7 = 0; i7 < remaining; i7++) {
-            this.c.add(h5.b.d(byteBuffer));
+    @Override // com.googlecode.mp4parser.b, i5.b
+    public void getBox(WritableByteChannel writableByteChannel) {
+        switch (this.f) {
+            case 1:
+                writableByteChannel.write(d());
+                ByteBuffer allocate = ByteBuffer.allocate(8);
+                h5.b.r(0, allocate);
+                h5.b.q(0, allocate);
+                allocate.putInt(this.b.size());
+                writableByteChannel.write((ByteBuffer) allocate.rewind());
+                c(writableByteChannel);
+                break;
+            default:
+                super.getBox(writableByteChannel);
+                break;
         }
     }
 
-    @Override // com.googlecode.mp4parser.a
-    public final void getContent(ByteBuffer byteBuffer) {
-        byteBuffer.put(h5.c.d(this.a));
-        byteBuffer.putInt((int) this.b);
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            byteBuffer.put(h5.c.d((String) it.next()));
+    @Override // com.googlecode.mp4parser.b, i5.b
+    public long getSize() {
+        switch (this.f) {
+            case 1:
+                long b10 = b();
+                return 8 + b10 + (b10 + 16 >= 4294967296L ? 16 : 8);
+            default:
+                return super.getSize();
         }
-    }
-
-    @Override // com.googlecode.mp4parser.a
-    public final long getContentSize() {
-        return (this.c.size() * 4) + 8;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("FileTypeBox[majorBrand=");
-        com.google.android.recaptcha.internal.a.t(ze.a.b(d, this, this));
-        sb2.append(this.a);
-        sb2.append(";minorVersion=");
-        com.google.android.recaptcha.internal.a.t(ze.a.b(e, this, this));
-        sb2.append(this.b);
-        for (String str : this.c) {
-            sb2.append(";compatibleBrand=");
-            sb2.append(str);
-        }
-        sb2.append("]");
-        return sb2.toString();
     }
 }

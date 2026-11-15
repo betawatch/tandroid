@@ -1,53 +1,26 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ai extends org.telegram.ui.ActionBar.g1 {
-    public final /* synthetic */ org.telegram.ui.Components.ii0 o;
-    public final /* synthetic */ cn p;
+public final class ai extends org.telegram.ui.Components.xn {
+    public final /* synthetic */ an N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ai(cn cnVar, xa xaVar, org.telegram.ui.Components.ii0 ii0Var) {
-        super(xaVar, -2, -2);
-        this.p = cnVar;
-        this.o = ii0Var;
+    public ai(an anVar, Activity activity, int i7, TLRPC.Document document, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(activity, i7, document, e6Var);
+        this.N = anVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.g1
-    public final void d(boolean z9) {
-        super.d(z9);
-        org.telegram.ui.Components.ii0 ii0Var = this.o;
-        if (ii0Var != null) {
-            ii0Var.d(z9);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        cn cnVar = this.p;
-        if (cnVar.e9 != this) {
-            return;
-        }
-        org.telegram.ui.Components.bc bcVar = org.telegram.ui.Components.bc.w;
-        org.telegram.ui.Components.bc bcVar2 = cnVar.B1;
-        if (bcVar == bcVar2 && bcVar2 != null) {
-            bcVar2.b();
-            cnVar.B1 = null;
-        }
-        cnVar.e9 = null;
-        cnVar.j9 = null;
-        cnVar.i9 = null;
-        cnVar.B0.R = true;
-        if (cnVar.f9) {
-            cnVar.w8(false, true, 0.0f);
-        } else {
-            cnVar.f9 = true;
-        }
-        sj sjVar = cnVar.Z;
-        if (sjVar == null || sjVar.getEditField() == null) {
-            return;
-        }
-        cnVar.Z.getEditField().setAllowDrawCursor(true);
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        float y10 = getY();
+        an anVar = this.N;
+        float y11 = anVar.g1.getY() + y10;
+        this.K = anVar.m1.getBackgroundSizeY();
+        this.J = y11;
     }
 }

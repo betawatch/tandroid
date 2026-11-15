@@ -2,14 +2,14 @@ package a5;
 
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import bi.u6;
-import ch.m0;
-import li.r0;
-import org.telegram.ui.Components.np;
-import org.telegram.ui.Components.qm0;
-import org.telegram.ui.Components.r11;
+import ch.n0;
+import di.n5;
+import oi.p0;
+import org.telegram.ui.Components.um0;
+import org.telegram.ui.Components.vp;
+import org.telegram.ui.Components.w11;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -22,35 +22,35 @@ public final class b implements Drawable.Callback {
                 ((e) this.b).invalidateSelf();
                 break;
             case 1:
-                ((u6) this.b).h.invalidate();
-                break;
-            case 2:
-                m0 m0Var = (m0) this.b;
-                View view = m0Var.V;
+                n0 n0Var = (n0) this.b;
+                View view = n0Var.V;
                 if (view != null) {
                     view.invalidate();
-                    if (m0Var.Q && m0Var.V.getParent() != null && (m0Var.V.getParent().getParent() instanceof View)) {
-                        ((View) m0Var.V.getParent().getParent()).invalidate();
+                    if (n0Var.Q && n0Var.V.getParent() != null && (n0Var.V.getParent().getParent() instanceof View)) {
+                        ((View) n0Var.V.getParent().getParent()).invalidate();
                         break;
                     }
                 }
                 break;
-            case 3:
+            case 2:
                 ((dh.d) this.b).invalidateSelf();
+                break;
+            case 3:
+                ((n5) this.b).h.invalidate();
                 break;
             case 4:
                 break;
             case 5:
-                ((r0) this.b).b.invalidate();
+                ((p0) this.b).b.invalidate();
                 break;
             case 6:
-                ((np) this.b).invalidateSelf();
+                ((vp) this.b).invalidateSelf();
                 break;
             case 7:
-                ((qm0) this.b).b.run();
+                ((um0) this.b).b.run();
                 break;
             case 8:
-                ((r11) this.b).invalidateSelf();
+                ((w11) this.b).invalidateSelf();
                 break;
             case 9:
                 ((zg.a) this.b).c.invalidate();
@@ -68,16 +68,16 @@ public final class b implements Drawable.Callback {
                 ((e) this.b).scheduleSelf(runnable, j3);
                 break;
             case 1:
-                break;
-            case 2:
-                View view = ((m0) this.b).V;
+                View view = ((n0) this.b).V;
                 if (view != null) {
                     view.scheduleDrawable(drawable, runnable, j3);
                     break;
                 }
                 break;
-            case 3:
+            case 2:
                 ((dh.d) this.b).scheduleSelf(runnable, j3);
+                break;
+            case 3:
                 break;
             case 4:
                 Drawable.Callback callback = (Drawable.Callback) this.b;
@@ -89,7 +89,7 @@ public final class b implements Drawable.Callback {
             case 5:
                 break;
             case 6:
-                ((np) this.b).scheduleSelf(runnable, j3);
+                ((vp) this.b).scheduleSelf(runnable, j3);
                 break;
             case 7:
             case 8:
@@ -110,16 +110,16 @@ public final class b implements Drawable.Callback {
                 ((e) this.b).unscheduleSelf(runnable);
                 break;
             case 1:
-                break;
-            case 2:
-                View view = ((m0) this.b).V;
+                View view = ((n0) this.b).V;
                 if (view != null) {
                     view.unscheduleDrawable(drawable, runnable);
                     break;
                 }
                 break;
-            case 3:
+            case 2:
                 ((dh.d) this.b).unscheduleSelf(runnable);
+                break;
+            case 3:
                 break;
             case 4:
                 Drawable.Callback callback = (Drawable.Callback) this.b;
@@ -131,7 +131,7 @@ public final class b implements Drawable.Callback {
             case 5:
                 break;
             case 6:
-                ((np) this.b).unscheduleSelf(runnable);
+                ((vp) this.b).unscheduleSelf(runnable);
                 break;
             case 7:
             case 8:

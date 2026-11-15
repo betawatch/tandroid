@@ -1,20 +1,20 @@
 package z2;
 
-import a8.ia;
+import a8.ja;
 import h9.f0;
 import h9.g0;
 import h9.i0;
 import h9.n;
-import h9.o1;
-import h9.t1;
+import h9.n1;
+import h9.s1;
 import h9.x;
 import java.util.ArrayList;
-import v0.j;
+import x2.p1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c implements a {
-    public static final x b = new x(new n(new j(28), o1.b), new n(new j(29), o1.c));
+    public static final x b = new x(new n(new p1(3), n1.b), new n(new p1(4), n1.c));
     public final ArrayList a = new ArrayList();
 
     @Override // z2.a
@@ -58,7 +58,7 @@ public final class c implements a {
                         break;
                     }
                 }
-                t1 w10 = i0.w(b, arrayList2);
+                s1 w10 = i0.w(b, arrayList2);
                 f0 p10 = i0.p();
                 for (int i10 = 0; i10 < w10.d; i10++) {
                     p10.d(((c4.a) w10.get(i10)).a);
@@ -67,24 +67,24 @@ public final class c implements a {
             }
         }
         g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     @Override // z2.a
     public final boolean c(c4.a aVar, long j3) {
         long j10 = aVar.b;
-        ia.f(j10 != -9223372036854775807L);
-        ia.f(aVar.c != -9223372036854775807L);
-        boolean z9 = j10 <= j3 && j3 < aVar.d;
+        ja.f(j10 != -9223372036854775807L);
+        ja.f(aVar.c != -9223372036854775807L);
+        boolean z10 = j10 <= j3 && j3 < aVar.d;
         ArrayList arrayList = this.a;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             if (j10 >= ((c4.a) arrayList.get(size)).b) {
                 arrayList.add(size + 1, aVar);
-                return z9;
+                return z10;
             }
         }
         arrayList.add(0, aVar);
-        return z9;
+        return z10;
     }
 
     @Override // z2.a

@@ -4,67 +4,68 @@ import android.view.ViewGroup;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.id;
-import org.telegram.messenger.qp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.np;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.Components.gc;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.Components.cc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.o00;
+import org.telegram.ui.rv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i0 b;
+    public final /* synthetic */ j0 b;
 
-    public /* synthetic */ v(i0 i0Var, int i7) {
+    public /* synthetic */ v(j0 j0Var, int i7) {
         this.a = i7;
-        this.b = i0Var;
+        this.b = j0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        i0 i0Var = this.b;
+        j0 j0Var = this.b;
         switch (i7) {
             case 0:
                 if (LaunchActivity.Q() != null) {
-                    d2 d2Var = new d2();
-                    d2Var.a = true;
-                    i0Var.F2.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), d2Var);
+                    c2 c2Var = new c2();
+                    c2Var.a = true;
+                    j0Var.G2.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), c2Var);
                     break;
                 }
                 break;
             case 1:
-                i0Var.s2.g(i0Var.W1, false);
-                i0Var.t1();
+                j0Var.t2.g(j0Var.X1, false);
+                j0Var.t1();
                 break;
             case 2:
-                HashSet hashSet = i0Var.t2;
-                gc X = gc.X();
+                HashSet hashSet = j0Var.u2;
+                cc X = cc.X();
                 if (X != null) {
-                    org.telegram.messenger.camera.q.s(hashSet.size() == 1 ? id.a0(null, null, 2131749143, g5.p((TLRPC.User) hashSet.iterator().next())) : id.G(hashSet.size(), "InviteLinkSent", Integer.valueOf(hashSet.size())), X, R.raw.voip_invite, 36);
+                    i20.t(hashSet.size() == 1 ? hd.a0(null, null, 2131749143, g5.p((TLRPC.User) hashSet.iterator().next())) : hd.G(hashSet.size(), "InviteLinkSent", Integer.valueOf(hashSet.size())), X, R.raw.voip_invite, 36);
                     break;
                 }
                 break;
             case 3:
-                fi.d dVar = i0Var.N2;
-                TLRPC.ChatFull N0 = qp.s1(i0Var.a).N0(-i0Var.V1);
+                hi.d dVar = j0Var.O2;
+                TLRPC.ChatFull N0 = np.s1(j0Var.a).N0(-j0Var.W1);
                 dVar.c(Math.max(N0.boosts_unrestrict - N0.boosts_applied, 0), false);
                 break;
             default:
-                if (t3.N(i0Var.n1())) {
-                    if (i0Var.z2.getParent() != null) {
-                        ((ViewGroup) i0Var.z2.getParent()).removeView(i0Var.z2);
+                if (t3.N(j0Var.n1())) {
+                    if (j0Var.A2.getParent() != null) {
+                        ((ViewGroup) j0Var.A2.getParent()).removeView(j0Var.A2);
                     }
-                    o00 o00Var = i0Var.G2;
-                    if (o00Var != null && o00Var.getParent() != null) {
-                        ((ViewGroup) i0Var.G2.getParent()).removeView(i0Var.G2);
+                    rv rvVar = j0Var.H2;
+                    if (rvVar != null && rvVar.getParent() != null) {
+                        ((ViewGroup) j0Var.H2.getParent()).removeView(j0Var.H2);
                     }
-                    i0Var.n1.setPadding(0, 0, 0, 0);
+                    j0Var.o1.setPadding(0, 0, 0, 0);
                     break;
                 }
                 break;

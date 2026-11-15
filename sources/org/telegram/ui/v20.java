@@ -1,31 +1,23 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
+import android.graphics.Paint;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class v20 implements gr0 {
-    public final /* synthetic */ f40 a;
+public final class v20 extends Paint {
+    public final /* synthetic */ c40 a;
 
-    public v20(f40 f40Var) {
-        this.a = f40Var;
+    public v20(c40 c40Var) {
+        this.a = c40Var;
     }
 
-    @Override // org.telegram.ui.gr0
-    public final void I(org.telegram.messenger.ij ijVar) {
-        this.a.b.invalidate();
-    }
-
-    @Override // org.telegram.ui.gr0
-    public final void I0(org.telegram.messenger.ij ijVar) {
-        f40 f40Var = this.a;
-        f40Var.K1.I0(true);
-        f40Var.W3.f.K0(org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), 0, 0);
-        f40Var.b.invalidate();
-    }
-
-    @Override // org.telegram.ui.gr0
-    public final /* synthetic */ TextureView l0() {
-        return null;
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i7) {
+        super.setAlpha(i7);
+        ViewGroup viewGroup = this.a.b;
+        if (viewGroup != null) {
+            viewGroup.invalidate();
+        }
     }
 }

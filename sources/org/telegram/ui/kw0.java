@@ -1,24 +1,40 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.RectF;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class kw0 extends kg.f1 {
-    public final /* synthetic */ mw0 G;
+public final class kw0 implements c5.h {
+    public int a;
+    public final /* synthetic */ lw0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kw0(mw0 mw0Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, h6Var);
-        this.G = mw0Var;
+    public kw0(lw0 lw0Var) {
+        this.b = lw0Var;
     }
 
-    @Override // kg.f1
-    public final int a(int i7) {
-        ProfileActivity profileActivity = this.G.e;
-        RectF rectF = ProfileActivity.V6;
-        profileActivity.getClass();
-        return i7;
+    @Override // c5.h
+    public final void a(int i7) {
+        lw0 lw0Var = this.b;
+        ProfileActivity profileActivity = lw0Var.n;
+        int k10 = profileActivity.o0.E0.k(i7);
+        lw0Var.a(this.a != k10);
+        this.a = k10;
+        if (profileActivity.r0 == null) {
+            return;
+        }
+        if (profileActivity.T0.y()) {
+            org.telegram.messenger.g0.i3(new pu0(lw0Var, 4), 500L);
+        } else {
+            lw0Var.c();
+        }
+    }
+
+    @Override // c5.h
+    public final void b(float f10, int i7, int i10) {
+        ri.q qVar;
+        qVar = ((org.telegram.ui.ActionBar.e2) this.b.n).glassEngine;
+        qVar.g();
+    }
+
+    @Override // c5.h
+    public final void c(int i7) {
     }
 }

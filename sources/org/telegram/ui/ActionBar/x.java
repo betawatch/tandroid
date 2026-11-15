@@ -2,10 +2,10 @@ package org.telegram.ui.ActionBar;
 
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import org.telegram.messenger.c20;
-import org.telegram.ui.ne;
+import org.telegram.messenger.z10;
+import org.telegram.ui.ke;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class x {
     public y a;
@@ -15,12 +15,12 @@ public final class x {
     public int e;
     public Drawable f;
     public int g;
-    public h6 h;
+    public e6 h;
     public float i;
     public Boolean j;
     public Boolean k;
     public int l;
-    public r0 m;
+    public q0 m;
     public ArrayList n;
 
     public final void a() {
@@ -48,7 +48,7 @@ public final class x {
                 i10++;
             }
         }
-        r0 f10 = yVar.f(childCount, this.b, this.c, null, this.e, this.f, this.g, null, this.h);
+        q0 f10 = yVar.f(childCount, this.b, this.c, null, this.e, this.f, this.g, null, this.h);
         this.m = f10;
         f10.setVisibility(this.l);
         CharSequence charSequence = this.d;
@@ -57,11 +57,11 @@ public final class x {
         }
         Boolean bool = this.k;
         if (bool != null) {
-            this.m.R = bool.booleanValue();
+            this.m.S = bool.booleanValue();
         }
         Boolean bool2 = this.j;
         if (bool2 != null) {
-            this.m.S = bool2.booleanValue();
+            this.m.T = bool2.booleanValue();
         }
         this.m.setAlpha(this.i);
         ArrayList arrayList2 = this.n;
@@ -70,37 +70,37 @@ public final class x {
             while (i7 < size) {
                 Object obj = arrayList2.get(i7);
                 i7++;
-                ((c20) obj).a(this.m);
+                ((z10) obj).a(this.m);
             }
             this.n = null;
         }
     }
 
-    public final void b(ne neVar) {
-        r0 r0Var = this.m;
-        if (r0Var != null) {
-            neVar.a(r0Var);
+    public final void b(ke keVar) {
+        q0 q0Var = this.m;
+        if (q0Var != null) {
+            keVar.a(q0Var);
             return;
         }
         if (this.n == null) {
             this.n = new ArrayList();
         }
-        this.n.add(neVar);
+        this.n.add(keVar);
     }
 
     public final void c() {
         this.k = Boolean.FALSE;
-        r0 r0Var = this.m;
-        if (r0Var != null) {
-            r0Var.R = false;
+        q0 q0Var = this.m;
+        if (q0Var != null) {
+            q0Var.S = false;
         }
     }
 
     public final void d() {
         this.j = Boolean.TRUE;
-        r0 r0Var = this.m;
-        if (r0Var != null) {
-            r0Var.S = true;
+        q0 q0Var = this.m;
+        if (q0Var != null) {
+            q0Var.T = true;
         }
     }
 
@@ -110,9 +110,9 @@ public final class x {
             if (i7 == 0) {
                 a();
             }
-            r0 r0Var = this.m;
-            if (r0Var != null) {
-                r0Var.setVisibility(i7);
+            q0 q0Var = this.m;
+            if (q0Var != null) {
+                q0Var.setVisibility(i7);
             }
         }
     }

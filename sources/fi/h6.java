@@ -1,34 +1,37 @@
 package fi;
 
-import org.telegram.ui.Components.wq;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l6 b;
+    public final /* synthetic */ k6 b;
 
-    public /* synthetic */ h6(l6 l6Var, int i7) {
+    public /* synthetic */ h6(k6 k6Var, int i7) {
         this.a = i7;
-        this.b = l6Var;
+        this.b = k6Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        k6 k6Var = this.b;
+        switch (i7) {
             case 0:
-                this.b.c();
+                ns.f(k6Var.c).k(ns.x5, k6Var);
+                break;
+            case 1:
+                k6Var.u = false;
+                k6Var.w = true;
+                ns.f(k6Var.c).k(ns.x5, k6Var, Boolean.FALSE);
+                break;
+            case 2:
+                k6Var.z = false;
                 break;
             default:
-                l6 l6Var = this.b;
-                l6Var.a.animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(wq.h).setDuration(280L).start();
-                l6Var.c = System.currentTimeMillis();
-                l6Var.invalidate();
-                try {
-                    l6Var.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-                org.telegram.messenger.g0.i3(l6Var.h, 59500L);
+                k6Var.k.clear();
+                k6Var.d(true);
                 break;
         }
     }

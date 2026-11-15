@@ -1,187 +1,230 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class g6 implements org.telegram.ui.Components.ft0, i7 {
-    public final /* synthetic */ y6 a;
+public final /* synthetic */ class g6 implements org.telegram.ui.ActionBar.r6 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 b;
 
-    public /* synthetic */ g6(y6 y6Var) {
-        this.a = y6Var;
+    public /* synthetic */ g6(int i7, org.telegram.ui.ActionBar.e2 e2Var) {
+        this.a = i7;
+        this.b = e2Var;
     }
 
-    @Override // org.telegram.ui.Components.ft0
-    public void F(boolean z9) {
-        te.a aVar = this.a.T;
-        if (aVar == null || aVar.f == z9) {
-            return;
-        }
-        aVar.a(z9, true);
+    @Override // org.telegram.ui.ActionBar.r6
+    public final /* synthetic */ void a(float f10) {
+        int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.ft0
-    public float Y0() {
-        return jg.g.e(9.66f, oi.a.d(this.a.P), 0);
-    }
-
-    @Override // org.telegram.ui.i7
-    public void clear() {
-        y6.k0(this.a);
-    }
-
-    @Override // org.telegram.ui.i7
-    public void d() {
-        y6 y6Var = this.a;
-        ci.c cVar = y6Var.d0;
-        if (cVar == null || cVar.j.size() <= 0) {
-            return;
-        }
-        y6Var.d0.d();
-        i6 i6Var = y6Var.M;
-        if (i6Var != null) {
-            i6Var.f(false);
-            y6Var.M.e();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ft0
-    public int e1() {
-        return this.a.Q;
-    }
-
-    @Override // org.telegram.ui.i7
-    public void o(s6 s6Var, ci.b bVar, boolean z9) {
-        HashSet hashSet;
-        y6 y6Var = this.a;
-        if (s6Var == null) {
-            if (bVar != null) {
-                y6Var.d0.i(bVar);
-                y6Var.M.e();
-                y6.i0(y6Var);
-                return;
-            }
-            return;
-        }
-        if (y6Var.d0.j.size() > 0 || z9) {
-            ci.c cVar = y6Var.d0;
-            HashSet hashSet2 = cVar.j;
-            HashSet hashSet3 = cVar.l;
-            long j3 = s6Var.a;
-            SparseArray sparseArray = s6Var.d;
-            if (hashSet3.contains(Long.valueOf(j3))) {
-                for (int i7 = 0; i7 < sparseArray.size(); i7++) {
-                    ArrayList arrayList = ((t6) sparseArray.valueAt(i7)).b;
-                    int size = arrayList.size();
-                    int i10 = 0;
-                    while (i10 < size) {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        ci.b bVar2 = (ci.b) obj;
-                        if (hashSet2.remove(bVar2)) {
-                            cVar.k -= bVar2.c;
-                        }
-                    }
+    @Override // org.telegram.ui.ActionBar.r6
+    public final void b() {
+        int i7 = this.a;
+        org.telegram.ui.ActionBar.e2 e2Var = this.b;
+        switch (i7) {
+            case 0:
+                yt ytVar = ((y6) e2Var).a0;
+                if (ytVar != null) {
+                    ytVar.v0(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.h5, false));
+                    break;
                 }
-            } else {
-                for (int i11 = 0; i11 < sparseArray.size(); i11++) {
-                    ArrayList arrayList2 = ((t6) sparseArray.valueAt(i11)).b;
-                    int size2 = arrayList2.size();
-                    int i12 = 0;
-                    while (i12 < size2) {
-                        Object obj2 = arrayList2.get(i12);
-                        i12++;
-                        ci.b bVar3 = (ci.b) obj2;
-                        if (hashSet2.add(bVar3)) {
-                            cVar.k += bVar3.c;
-                        }
-                    }
-                }
-            }
-            cVar.c();
-            y6Var.M.e();
-            y6.i0(y6Var);
-            return;
-        }
-        if (y6Var.G <= 0 || y6Var.getParentActivity() == null) {
-            return;
-        }
-        s6Var.getClass();
-        boolean z10 = true;
-        ci.c cVar2 = new ci.c(true);
-        SparseArray sparseArray2 = s6Var.d;
-        Object obj3 = sparseArray2.get(0);
-        ArrayList arrayList3 = cVar2.d;
-        if (obj3 != null) {
-            arrayList3.addAll(((t6) sparseArray2.get(0)).b);
-        }
-        if (sparseArray2.get(1) != null) {
-            arrayList3.addAll(((t6) sparseArray2.get(1)).b);
-        }
-        Object obj4 = sparseArray2.get(2);
-        ArrayList arrayList4 = cVar2.e;
-        if (obj4 != null) {
-            arrayList4.addAll(((t6) sparseArray2.get(2)).b);
-        }
-        Object obj5 = sparseArray2.get(3);
-        ArrayList arrayList5 = cVar2.f;
-        if (obj5 != null) {
-            arrayList5.addAll(((t6) sparseArray2.get(3)).b);
-        }
-        Object obj6 = sparseArray2.get(4);
-        ArrayList arrayList6 = cVar2.g;
-        if (obj6 != null) {
-            arrayList6.addAll(((t6) sparseArray2.get(4)).b);
-        }
-        int i13 = 0;
-        while (true) {
-            int size3 = arrayList3.size();
-            hashSet = cVar2.j;
-            if (i13 >= size3) {
                 break;
-            }
-            hashSet.add((ci.b) arrayList3.get(i13));
-            if (((ci.b) arrayList3.get(i13)).d == 0) {
-                cVar2.r += ((ci.b) arrayList3.get(i13)).c;
-            } else {
-                cVar2.s += ((ci.b) arrayList3.get(i13)).c;
-            }
-            i13++;
+            case 1:
+                ((an) e2Var).Fb();
+                break;
+            case 2:
+                ((to) e2Var).getClass();
+                break;
+            case 3:
+                ((ap) e2Var).h.f();
+                break;
+            case 4:
+                ((mp) e2Var).getClass();
+                break;
+            case 5:
+                ((qq) e2Var).getClass();
+                break;
+            case 6:
+                ((ContactsActivity) e2Var).getClass();
+                break;
+            case 7:
+                yw ywVar = (yw) e2Var;
+                hw hwVar = ywVar.D0;
+                if (hwVar != null) {
+                    org.telegram.ui.ActionBar.y actionMode = hwVar.getActionMode();
+                    if (actionMode != null) {
+                        org.telegram.ui.ActionBar.q6.h(org.telegram.ui.ActionBar.j6.w8, actionMode, ywVar.getResourceProvider());
+                    }
+                    org.telegram.ui.ActionBar.q0 speedItem = ywVar.D0.getSpeedItem();
+                    if (speedItem != null) {
+                        speedItem.getIconView().setColorFilter(new PorterDuffColorFilter(ywVar.getThemedColor(org.telegram.ui.ActionBar.j6.y8), PorterDuff.Mode.SRC_IN));
+                        break;
+                    }
+                }
+                break;
+            case 8:
+                ((hz) e2Var).getClass();
+                break;
+            case 9:
+                ((p00) e2Var).x0();
+                break;
+            case 10:
+                ((t50) e2Var).a0(true);
+                break;
+            case 11:
+                ((ce0) e2Var).Q1();
+                break;
+            case 12:
+                ((cf0) e2Var).g0();
+                break;
+            case 13:
+                ((jg0) e2Var).f0();
+                break;
+            case 14:
+                ((NotificationsCustomSettingsActivity) e2Var).getClass();
+                break;
+            case 15:
+                ((im0) e2Var).J0();
+                break;
+            case 16:
+                ((PremiumPreviewFragment) e2Var).z0();
+                break;
+            case 17:
+                ((pt0) e2Var).getClass();
+                break;
+            case 18:
+                RectF rectF = ProfileActivity.X6;
+                ((ProfileActivity) e2Var).o5();
+                break;
+            case 19:
+                ((fx0) e2Var).getClass();
+                break;
+            case 20:
+                ((zx0) e2Var).b.f();
+                break;
+            case 21:
+                ((z41) e2Var).s0();
+                break;
+            case 22:
+                ThemeActivity themeActivity = (ThemeActivity) e2Var;
+                for (int i10 = 0; i10 < themeActivity.b.getChildCount(); i10++) {
+                    View childAt = themeActivity.b.getChildAt(i10);
+                    if (childAt instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) childAt).getAdapter().f();
+                    } else if (childAt instanceof ol0) {
+                        ((ol0) childAt).updateColors();
+                    }
+                }
+                for (int i11 = 0; i11 < themeActivity.b.getCachedChildCount(); i11++) {
+                    View P = themeActivity.b.P(i11);
+                    if (P instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) P).getAdapter().f();
+                    } else if (P instanceof ol0) {
+                        ((ol0) P).updateColors();
+                    }
+                }
+                for (int i12 = 0; i12 < themeActivity.b.getHiddenChildCount(); i12++) {
+                    View V = themeActivity.b.V(i12);
+                    if (V instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) V).getAdapter().f();
+                    } else if (V instanceof ol0) {
+                        ((ol0) V).updateColors();
+                    }
+                }
+                for (int i13 = 0; i13 < themeActivity.b.getAttachedScrapChildCount(); i13++) {
+                    View O = themeActivity.b.O(i13);
+                    if (O instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) O).getAdapter().f();
+                    } else if (O instanceof ol0) {
+                        ((ol0) O).updateColors();
+                    }
+                }
+                break;
+            case 23:
+                ((t71) e2Var).V0();
+                break;
+            default:
+                ((l81) e2Var).Z();
+                break;
         }
-        for (int i14 = 0; i14 < arrayList4.size(); i14++) {
-            hashSet.add((ci.b) arrayList4.get(i14));
-            cVar2.t += ((ci.b) arrayList4.get(i14)).c;
-        }
-        for (int i15 = 0; i15 < arrayList5.size(); i15++) {
-            hashSet.add((ci.b) arrayList5.get(i15));
-            cVar2.u += ((ci.b) arrayList5.get(i15)).c;
-        }
-        int i16 = 0;
-        while (i16 < arrayList6.size()) {
-            hashSet.add((ci.b) arrayList6.get(i16));
-            cVar2.v += ((ci.b) arrayList6.get(i16)).c;
-            i16++;
-            z10 = true;
-        }
-        cVar2.m = z10;
-        cVar2.n = z10;
-        cVar2.o = z10;
-        cVar2.p = z10;
-        cVar2.q = z10;
-        Collections.sort(arrayList3, new a3.c(17));
-        Collections.sort(arrayList4, new a3.c(17));
-        Collections.sort(arrayList5, new a3.c(17));
-        Collections.sort(arrayList6, new a3.c(17));
-        Collections.sort(cVar2.h, new a3.c(17));
-        zt ztVar = new zt(y6Var, s6Var, cVar2, new m4.d0(y6Var, s6Var, false));
-        y6Var.Z = ztVar;
-        y6Var.showDialog(ztVar);
     }
 
-    @Override // org.telegram.ui.i7
-    public /* synthetic */ void dismiss() {
+    private final /* synthetic */ void A(float f10) {
+    }
+
+    private final /* synthetic */ void c(float f10) {
+    }
+
+    private final /* synthetic */ void d(float f10) {
+    }
+
+    private final /* synthetic */ void e(float f10) {
+    }
+
+    private final /* synthetic */ void f(float f10) {
+    }
+
+    private final /* synthetic */ void g(float f10) {
+    }
+
+    private final /* synthetic */ void h(float f10) {
+    }
+
+    private final /* synthetic */ void i(float f10) {
+    }
+
+    private final /* synthetic */ void j(float f10) {
+    }
+
+    private final /* synthetic */ void k(float f10) {
+    }
+
+    private final /* synthetic */ void l(float f10) {
+    }
+
+    private final /* synthetic */ void m(float f10) {
+    }
+
+    private final /* synthetic */ void n(float f10) {
+    }
+
+    private final /* synthetic */ void o(float f10) {
+    }
+
+    private final /* synthetic */ void p(float f10) {
+    }
+
+    private final /* synthetic */ void q(float f10) {
+    }
+
+    private final /* synthetic */ void r(float f10) {
+    }
+
+    private final /* synthetic */ void s(float f10) {
+    }
+
+    private final /* synthetic */ void t(float f10) {
+    }
+
+    private final /* synthetic */ void u(float f10) {
+    }
+
+    private final /* synthetic */ void v(float f10) {
+    }
+
+    private final /* synthetic */ void w(float f10) {
+    }
+
+    private final /* synthetic */ void x(float f10) {
+    }
+
+    private final /* synthetic */ void y(float f10) {
+    }
+
+    private final /* synthetic */ void z(float f10) {
     }
 }

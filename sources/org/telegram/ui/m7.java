@@ -2,15 +2,15 @@ package org.telegram.ui;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class m7 extends rg.a {
     public s6 c;
-    public ci.b d;
+    public ei.b d;
 
     public final boolean equals(Object obj) {
-        ci.b bVar;
-        ci.b bVar2;
+        ei.b bVar;
+        ei.b bVar2;
         s6 s6Var;
         s6 s6Var2;
         if (this == obj) {

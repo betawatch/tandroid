@@ -1,48 +1,173 @@
 package f5;
 
+import a8.ja;
+import android.os.Bundle;
+import h9.g0;
+import h9.i0;
+import h9.s1;
 import java.util.ArrayList;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class k {
-    public final String a;
-    public final j b;
+public final class k implements z2.a {
+    public ArrayList a;
 
-    public k(JSONObject jSONObject) {
-        jSONObject.optString("basePlanId");
-        jSONObject.optString("offerId").getClass();
-        this.a = jSONObject.getString("offerIdToken");
-        this.b = new j(jSONObject.getJSONArray("pricingPhases"));
-        JSONObject optJSONObject = jSONObject.optJSONObject("installmentPlanDetails");
-        if (optJSONObject != null) {
-            optJSONObject.getInt("commitmentPaymentsCount");
-            optJSONObject.optInt("subsequentCommitmentPaymentsCount");
+    public k(int i7) {
+        switch (i7) {
+            case 4:
+                this.a = new ArrayList();
+                break;
+            default:
+                this.a = new ArrayList();
+                new ArrayList();
+                new ArrayList();
+                break;
         }
-        JSONObject optJSONObject2 = jSONObject.optJSONObject("transitionPlanDetails");
-        if (optJSONObject2 != null) {
-            optJSONObject2.getString("productId");
-            optJSONObject2.optString("title");
-            optJSONObject2.optString("name");
-            optJSONObject2.optString("description");
-            optJSONObject2.optString("basePlanId");
-            JSONObject optJSONObject3 = optJSONObject2.optJSONObject("pricingPhase");
-            if (optJSONObject3 != null) {
-                optJSONObject3.optString("billingPeriod");
-                optJSONObject3.optString("priceCurrencyCode");
-                optJSONObject3.optString("formattedPrice");
-                optJSONObject3.optLong("priceAmountMicros");
-                optJSONObject3.optInt("recurrenceMode");
-                optJSONObject3.optInt("billingCycleCount");
+    }
+
+    @Override // z2.a
+    public long a(long j3) {
+        ArrayList arrayList = this.a;
+        if (arrayList.isEmpty()) {
+            return Long.MIN_VALUE;
+        }
+        if (j3 < ((c4.a) arrayList.get(0)).b) {
+            return ((c4.a) arrayList.get(0)).b;
+        }
+        for (int i7 = 1; i7 < arrayList.size(); i7++) {
+            c4.a aVar = (c4.a) arrayList.get(i7);
+            long j10 = aVar.b;
+            long j11 = aVar.b;
+            if (j3 < j10) {
+                long j12 = ((c4.a) arrayList.get(i7 - 1)).d;
+                return (j12 == -9223372036854775807L || j12 <= j3 || j12 >= j11) ? j11 : j12;
             }
         }
-        ArrayList arrayList = new ArrayList();
-        JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
-        if (optJSONArray != null) {
-            for (int i7 = 0; i7 < optJSONArray.length(); i7++) {
-                arrayList.add(optJSONArray.getString(i7));
+        long j13 = ((c4.a) h9.o.n(arrayList)).d;
+        if (j13 == -9223372036854775807L || j3 >= j13) {
+            return Long.MIN_VALUE;
+        }
+        return j13;
+    }
+
+    @Override // z2.a
+    public i0 b(long j3) {
+        int g10 = g(j3);
+        if (g10 == 0) {
+            g0 g0Var = i0.b;
+            return s1.e;
+        }
+        c4.a aVar = (c4.a) this.a.get(g10 - 1);
+        long j10 = aVar.d;
+        if (j10 == -9223372036854775807L || j3 < j10) {
+            return aVar.a;
+        }
+        g0 g0Var2 = i0.b;
+        return s1.e;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x002d  */
+    @Override // z2.a
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean c(c4.a aVar, long j3) {
+        boolean z10;
+        int size;
+        ArrayList arrayList = this.a;
+        long j10 = aVar.b;
+        ja.f(j10 != -9223372036854775807L);
+        if (j10 <= j3) {
+            long j11 = aVar.d;
+            if (j11 == -9223372036854775807L || j3 < j11) {
+                z10 = true;
+                for (size = arrayList.size() - 1; size >= 0; size--) {
+                    if (j10 >= ((c4.a) arrayList.get(size)).b) {
+                        arrayList.add(size + 1, aVar);
+                        return z10;
+                    }
+                    if (((c4.a) arrayList.get(size)).b <= j3) {
+                        z10 = false;
+                    }
+                }
+                arrayList.add(0, aVar);
+                return z10;
             }
         }
+        z10 = false;
+        while (size >= 0) {
+        }
+        arrayList.add(0, aVar);
+        return z10;
+    }
+
+    @Override // z2.a
+    public void clear() {
+        this.a.clear();
+    }
+
+    @Override // z2.a
+    public long d(long j3) {
+        ArrayList arrayList = this.a;
+        if (arrayList.isEmpty() || j3 < ((c4.a) arrayList.get(0)).b) {
+            return -9223372036854775807L;
+        }
+        for (int i7 = 1; i7 < arrayList.size(); i7++) {
+            long j10 = ((c4.a) arrayList.get(i7)).b;
+            if (j3 == j10) {
+                return j10;
+            }
+            if (j3 < j10) {
+                c4.a aVar = (c4.a) arrayList.get(i7 - 1);
+                long j11 = aVar.d;
+                return (j11 == -9223372036854775807L || j11 > j3) ? aVar.b : j11;
+            }
+        }
+        c4.a aVar2 = (c4.a) h9.o.n(arrayList);
+        long j12 = aVar2.d;
+        return (j12 == -9223372036854775807L || j3 < j12) ? aVar2.b : j12;
+    }
+
+    @Override // z2.a
+    public void e(long j3) {
+        ArrayList arrayList = this.a;
+        int g10 = g(j3);
+        if (g10 == 0) {
+            return;
+        }
+        long j10 = ((c4.a) arrayList.get(g10 - 1)).d;
+        if (j10 == -9223372036854775807L || j10 >= j3) {
+            g10--;
+        }
+        arrayList.subList(0, g10).clear();
+    }
+
+    public s4.r f() {
+        if (this.a == null) {
+            return s4.r.c;
+        }
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("controlCategories", this.a);
+        return new s4.r(bundle, this.a);
+    }
+
+    public int g(long j3) {
+        ArrayList arrayList = this.a;
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            if (j3 < ((c4.a) arrayList.get(i7)).b) {
+                return i7;
+            }
+        }
+        return arrayList.size();
+    }
+
+    public wf.e h(int i7) {
+        return (wf.e) this.a.get(i7);
+    }
+
+    public k(wf.e eVar) {
+        ArrayList arrayList = new ArrayList(1);
+        this.a = arrayList;
+        arrayList.add(eVar);
     }
 }

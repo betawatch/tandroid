@@ -1,80 +1,136 @@
 package ug;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.ui.Components.cp;
-import org.telegram.ui.Components.i6;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import c8.ja;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a8;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.w80;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class o0 extends i6 {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ p0 w;
+public final class o0 extends FrameLayout implements m0 {
+    public final e6 a;
+    public final ArrayList b;
+    public final n0 c;
+    public final n0 d;
+    public final n0 e;
+    public final boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o0(p0 p0Var, Context context, int i7) {
-        super(context, true, true, true);
-        this.s = i7;
-        this.w = p0Var;
+    public o0(Context context, e6 e6Var) {
+        super(context);
+        this.b = new ArrayList();
+        this.a = e6Var;
+        for (w80 w80Var : w80.values()) {
+            if (w80Var.e) {
+                this.b.add(w80Var);
+            }
+            if (this.b.size() == 3) {
+                break;
+            }
+        }
+        if (this.b.size() < 3) {
+            a8.g(new IllegalArgumentException("There should be at least 3 premium icons!"), true);
+            this.f = true;
+        } else {
+            this.c = a(context, 0);
+            this.d = a(context, 1);
+            this.e = a(context, 2);
+            setClipChildren(false);
+        }
     }
 
-    @Override // org.telegram.ui.Components.i6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.s) {
-            case 0:
-                p0 p0Var = this.w;
-                if (p0Var.O > 0.0f) {
-                    if (p0Var.N == null) {
-                        p0Var.N = new cp(p0Var.f.getTextColor());
-                    }
-                    int L = (int) ((1.0f - p0Var.O) * org.telegram.messenger.g0.L(24.0f));
-                    p0Var.N.setBounds(0, L, getWidth(), getHeight() + L);
-                    p0Var.N.setAlpha((int) (p0Var.O * 255.0f));
-                    p0Var.N.draw(canvas);
-                    invalidate();
-                }
-                float f10 = p0Var.O;
-                if (f10 < 1.0f) {
-                    if (f10 == 0.0f) {
-                        super.onDraw(canvas);
-                        break;
-                    } else {
-                        canvas.save();
-                        canvas.translate(0.0f, (int) (p0Var.O * org.telegram.messenger.g0.L(-24.0f)));
-                        canvas.scale(1.0f, 1.0f - (p0Var.O * 0.4f));
-                        super.onDraw(canvas);
-                        canvas.restore();
-                        break;
-                    }
-                }
-                break;
-            default:
-                p0 p0Var2 = this.w;
-                if (p0Var2.O > 0.0f) {
-                    if (p0Var2.N == null) {
-                        p0Var2.N = new cp(p0Var2.f.getTextColor());
-                    }
-                    int L2 = (int) ((1.0f - p0Var2.O) * org.telegram.messenger.g0.L(24.0f));
-                    p0Var2.N.setBounds(0, L2, getWidth(), getHeight() + L2);
-                    p0Var2.N.setAlpha((int) (p0Var2.O * 255.0f));
-                    p0Var2.N.draw(canvas);
-                    invalidate();
-                }
-                float f11 = p0Var2.O;
-                if (f11 < 1.0f) {
-                    if (f11 == 0.0f) {
-                        super.onDraw(canvas);
-                        break;
-                    } else {
-                        canvas.save();
-                        canvas.translate(0.0f, (int) (p0Var2.O * org.telegram.messenger.g0.L(-24.0f)));
-                        canvas.scale(1.0f, 1.0f - (p0Var2.O * 0.4f));
-                        super.onDraw(canvas);
-                        canvas.restore();
-                        break;
-                    }
-                }
-                break;
+    public final n0 a(Context context, int i7) {
+        w80 w80Var = (w80) this.b.get(i7);
+        n0 n0Var = new n0(context);
+        r1 r1Var = new r1(20);
+        n0Var.e = r1Var;
+        Paint paint = new Paint(1);
+        n0Var.f = paint;
+        r1Var.r = 12;
+        r1Var.s = 8;
+        r1Var.t = 6;
+        if (i7 == 1) {
+            r1Var.O = 1001;
         }
+        if (i7 == 0) {
+            r1Var.O = 1002;
+        }
+        r1Var.P = this.a;
+        r1Var.Q = j6.Qk;
+        r1Var.c();
+        paint.setColor(-1);
+        n0Var.setLayoutParams(ja.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
+        n0Var.setForeground(w80Var.c);
+        n0Var.setBackgroundResource(w80Var.b);
+        n0Var.setPadding(org.telegram.messenger.g0.L(8.0f));
+        n0Var.setBackgroundOuterPadding(org.telegram.messenger.g0.L(32.0f));
+        addView(n0Var);
+        return n0Var;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        if (this.f) {
+            return;
+        }
+        int min = Math.min(View.MeasureSpec.getSize(i7), View.MeasureSpec.getSize(i10));
+        int L = org.telegram.messenger.g0.L(76.0f);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.c.getLayoutParams();
+        layoutParams.height = L;
+        layoutParams.width = L;
+        float f10 = L;
+        layoutParams.bottomMargin = (int) ((min * 0.1f) + f10);
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.d.getLayoutParams();
+        layoutParams2.height = L;
+        layoutParams2.width = L;
+        int i11 = (int) (f10 * 0.95f);
+        layoutParams2.rightMargin = i11;
+        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) this.e.getLayoutParams();
+        layoutParams3.height = L;
+        layoutParams3.width = L;
+        layoutParams3.leftMargin = i11;
+    }
+
+    @Override // ug.m0
+    public void setOffset(float f10) {
+        if (this.f) {
+            return;
+        }
+        float abs = Math.abs(f10 / getMeasuredWidth());
+        float interpolation = er.i.getInterpolation(abs);
+        int right = getRight();
+        n0 n0Var = this.e;
+        n0Var.setTranslationX(((n0Var.getWidth() * 1.5f) + (right - n0Var.getRight()) + org.telegram.messenger.g0.L(32.0f)) * interpolation);
+        n0Var.setTranslationY(org.telegram.messenger.g0.L(16.0f) * interpolation);
+        float i7 = Utilities.i(org.telegram.messenger.g0.T1(1.0f, 1.5f, interpolation), 1.0f, 0.0f);
+        n0Var.setScaleX(i7);
+        n0Var.setScaleY(i7);
+        int top = getTop();
+        n0 n0Var2 = this.c;
+        n0Var2.setTranslationY((((top - n0Var2.getTop()) - (n0Var2.getHeight() * 1.8f)) - org.telegram.messenger.g0.L(32.0f)) * abs);
+        n0Var2.setTranslationX(org.telegram.messenger.g0.L(16.0f) * abs);
+        float i10 = Utilities.i(org.telegram.messenger.g0.T1(1.0f, 1.8f, abs), 1.0f, 0.0f);
+        n0Var2.setScaleX(i10);
+        n0Var2.setScaleY(i10);
+        float interpolation2 = er.g.getInterpolation(abs);
+        int left = getLeft();
+        n0 n0Var3 = this.d;
+        n0Var3.setTranslationX((((left - n0Var3.getLeft()) - (n0Var3.getWidth() * 2.5f)) + org.telegram.messenger.g0.L(32.0f)) * interpolation2);
+        n0Var3.setTranslationY(((n0Var3.getHeight() * 2.5f) + (getBottom() - n0Var3.getBottom()) + org.telegram.messenger.g0.L(32.0f)) * interpolation2);
+        float i11 = Utilities.i(org.telegram.messenger.g0.T1(1.0f, 2.5f, abs), 1.0f, 0.0f);
+        n0Var3.setScaleX(i11);
+        n0Var3.setScaleY(i11);
+        float f11 = abs < 0.4f ? abs / 0.4f : 1.0f;
+        n0Var.h = f11;
+        n0Var2.h = f11;
+        n0Var3.h = f11;
     }
 }

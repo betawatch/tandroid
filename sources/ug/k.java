@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class k {
     public boolean a;
@@ -30,7 +30,7 @@ public final class k {
         this.m = r0Var;
     }
 
-    public final void a(int i7, boolean z9) {
+    public final void a(int i7, boolean z10) {
         ArrayList arrayList;
         org.telegram.ui.Cells.r0 r0Var = this.m;
         ArrayList arrayList2 = r0Var.c;
@@ -116,7 +116,7 @@ public final class k {
         Math.cos(atan2);
         g5.a aVar3 = Utilities.c;
         this.d = (int) (((aVar3.nextInt(50) + 50) / 100.0f) * 255.0f);
-        this.l = z9 ? Math.abs((aVar3.nextFloat() % 1.0f) * 0.9f) : 0.0f;
+        this.l = z10 ? Math.abs((aVar3.nextFloat() % 1.0f) * 0.9f) : 0.0f;
         this.a = true;
     }
 }

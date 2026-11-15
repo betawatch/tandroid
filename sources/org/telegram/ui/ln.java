@@ -1,31 +1,51 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ln implements RequestDelegate {
+public final /* synthetic */ class ln implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rn b;
+    public final /* synthetic */ qn b;
 
-    public /* synthetic */ ln(rn rnVar, int i7) {
+    public /* synthetic */ ln(qn qnVar, int i7) {
         this.a = i7;
-        this.b = rnVar;
+        this.b = qnVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        qn qnVar = this.b;
+        switch (i7) {
             case 0:
-                org.telegram.messenger.g0.h3(new o1(this.b, tL_error, tLObject, 27));
+                qn.a0(qnVar);
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new nn(this.b, 1));
+                qn.f0(qnVar);
+                break;
+            case 2:
+                qnVar.b.dismiss();
+                qnVar.finishFragment();
+                break;
+            case 3:
+                qnVar.N.setChecked(qnVar.x0.autotranslation);
                 break;
             default:
-                org.telegram.messenger.g0.h3(new nn(this.b, 4));
+                qnVar.e.setImageDrawable(qnVar.r);
+                qnVar.c0.o(R.drawable.msg_addphoto, org.telegram.messenger.hd.M0(2131752212, "ChatSetPhotoOrVideo"), true);
+                TLRPC.User user = qnVar.D0;
+                if (user != null) {
+                    user.photo = null;
+                    qnVar.getMessagesController().X3(qnVar.D0, true, false);
+                }
+                qnVar.P0 = true;
+                if (qnVar.S0 == null) {
+                    qnVar.S0 = new org.telegram.ui.Components.ch0(R.raw.camera_outline, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
+                }
+                qnVar.c0.e.setTranslationX(-org.telegram.messenger.g0.L(8.0f));
+                qnVar.c0.e.setAnimation(qnVar.S0);
                 break;
         }
     }

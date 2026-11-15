@@ -1,9 +1,9 @@
 package b3;
 
 import android.opengl.GLES20;
-import wi.d0;
+import zi.e0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class h {
     public final int a;
@@ -36,9 +36,9 @@ public class h {
     }
 
     public h(String str, String str2) {
-        int a10 = d0.a(35633, str);
+        int a10 = e0.a(35633, str);
         this.b = a10;
-        int a11 = d0.a(35632, str2);
+        int a11 = e0.a(35632, str2);
         this.c = a11;
         int glCreateProgram = GLES20.glCreateProgram();
         GLES20.glAttachShader(glCreateProgram, a10);
@@ -58,6 +58,6 @@ public class h {
         }
         String glGetProgramInfoLog = GLES20.glGetProgramInfoLog(glCreateProgram);
         GLES20.glDeleteProgram(glCreateProgram);
-        throw new IllegalStateException(rf.b.i("Unable to link program: ", glGetProgramInfoLog));
+        throw new IllegalStateException(r.b.k("Unable to link program: ", glGetProgramInfoLog));
     }
 }

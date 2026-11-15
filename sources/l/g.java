@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import androidx.appcompat.view.menu.ExpandedMenuView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g implements x, AdapterView.OnItemClickListener {
     public Context a;
@@ -30,23 +30,23 @@ public final class g implements x, AdapterView.OnItemClickListener {
     }
 
     @Override // l.x
-    public final void c(k kVar, boolean z9) {
-        w wVar = this.e;
-        if (wVar != null) {
-            wVar.c(kVar, z9);
-        }
-    }
-
-    @Override // l.x
-    public final boolean d() {
+    public final boolean c() {
         return false;
     }
 
     @Override // l.x
-    public final void e() {
+    public final void d() {
         f fVar = this.f;
         if (fVar != null) {
             fVar.notifyDataSetChanged();
+        }
+    }
+
+    @Override // l.x
+    public final void e(k kVar, boolean z10) {
+        w wVar = this.e;
+        if (wVar != null) {
+            wVar.e(kVar, z10);
         }
     }
 
@@ -79,8 +79,8 @@ public final class g implements x, AdapterView.OnItemClickListener {
         }
         l lVar = new l();
         lVar.a = d0Var;
-        f5.u uVar = new f5.u(context);
-        g.b bVar = (g.b) uVar.c;
+        f5.v vVar = new f5.v(context);
+        g.b bVar = (g.b) vVar.c;
         g gVar = new g((ContextThemeWrapper) bVar.c);
         lVar.c = gVar;
         gVar.e = lVar;
@@ -99,7 +99,7 @@ public final class g implements x, AdapterView.OnItemClickListener {
             bVar.f = d0Var.m;
         }
         bVar.k = lVar;
-        g.f g10 = uVar.g();
+        g.f g10 = vVar.g();
         lVar.b = g10;
         g10.setOnDismissListener(lVar);
         WindowManager.LayoutParams attributes = lVar.b.getWindow().getAttributes();
@@ -110,7 +110,7 @@ public final class g implements x, AdapterView.OnItemClickListener {
         if (wVar == null) {
             return true;
         }
-        wVar.A(d0Var);
+        wVar.y(d0Var);
         return true;
     }
 

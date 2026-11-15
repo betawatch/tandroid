@@ -1,116 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.SystemClock;
-import android.view.Choreographer;
-import android.view.PixelCopy;
-import android.view.Surface;
-import android.view.SurfaceView;
+import android.graphics.Rect;
+import android.text.TextPaint;
+import android.view.View;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class g80 {
-    public final org.telegram.ui.aa0 a;
-    public SurfaceView d;
-    public Bitmap e;
-    public Bitmap f;
-    public boolean g;
-    public boolean h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
-    public long l;
-    public final Handler b = new Handler(Looper.getMainLooper());
-    public final Paint c = new Paint(2);
-    public final e80 m = new Choreographer.FrameCallback() { // from class: org.telegram.ui.Components.e80
-        @Override // android.view.Choreographer.FrameCallback
-        public final void doFrame(long j3) {
-            g80 g80Var = g80.this;
-            g80Var.j = false;
-            g80Var.c();
-        }
-    };
-    public final gp n = new gp(this, 23);
+public final class g80 extends View implements org.telegram.ui.ActionBar.z5 {
+    public final TextPaint a;
+    public final Paint b;
+    public final String c;
+    public final Rect d;
+    public View e;
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Components.e80] */
-    public g80(org.telegram.ui.aa0 aa0Var) {
-        this.a = aa0Var;
+    public g80(Context context) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        this.b = new Paint(1);
+        this.d = new Rect();
+        this.c = org.telegram.messenger.hd.M0(2131748727, null);
+        textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        updateColors();
     }
 
-    public final void a() {
-        this.l = SystemClock.uptimeMillis() + 1500;
-        if (this.k) {
-            this.b.removeCallbacks(this.n);
-            this.k = false;
-        }
-        b();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        View view = this.e;
+        Rect rect = this.d;
+        float width = view != null ? ((((getWidth() - rect.width()) - org.telegram.messenger.g0.L(8.0f)) - this.e.getPaddingLeft()) - this.e.getPaddingRight()) / 2.0f : org.telegram.messenger.g0.L(64.0f);
+        Paint paint = this.b;
+        canvas.drawLine((((getWidth() - rect.width()) / 2.0f) - org.telegram.messenger.g0.L(8.0f)) - width, getHeight() / 2.0f, ((getWidth() - rect.width()) / 2.0f) - org.telegram.messenger.g0.L(8.0f), getHeight() / 2.0f, paint);
+        canvas.drawLine(((rect.width() + getWidth()) / 2.0f) + org.telegram.messenger.g0.L(8.0f), getHeight() / 2.0f, ((rect.width() + getWidth()) / 2.0f) + org.telegram.messenger.g0.L(8.0f) + width, getHeight() / 2.0f, paint);
+        canvas.drawText(this.c, (getWidth() - rect.width()) / 2.0f, (rect.height() + getHeight()) / 2.0f, this.a);
     }
 
-    public final void b() {
-        if (!this.g || this.i || this.d == null || this.j || this.k) {
-            return;
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        View view = this.e;
+        if (view != null) {
+            i7 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(view.getMeasuredWidth()), TLObject.FLAG_30);
         }
-        if (SystemClock.uptimeMillis() < this.l) {
-            this.j = true;
-            Choreographer.getInstance().postFrameCallback(this.m);
-        } else {
-            this.k = true;
-            this.b.postDelayed(this.n, 400L);
-        }
+        super.onMeasure(i7, i10);
+        String str = this.c;
+        this.a.getTextBounds(str, 0, str.length(), this.d);
     }
 
-    public final void c() {
-        Surface surface;
-        if (!this.g || this.i) {
-            return;
-        }
-        if (!this.h) {
-            SurfaceView surfaceView = this.d;
-            if (Build.VERSION.SDK_INT >= 24 && surfaceView != null && surfaceView.isAttachedToWindow() && surfaceView.getWidth() > 0 && surfaceView.getHeight() > 0 && (surface = surfaceView.getHolder().getSurface()) != null && surface.isValid()) {
-                int max = Math.max(1, surfaceView.getWidth() / 4);
-                int max2 = Math.max(1, surfaceView.getHeight() / 4);
-                Bitmap bitmap = this.f;
-                if (bitmap == null || bitmap.getWidth() != max || this.f.getHeight() != max2) {
-                    this.f = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
-                }
-                final Bitmap bitmap2 = this.f;
-                this.h = true;
-                try {
-                    PixelCopy.request(surfaceView, bitmap2, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.ui.Components.f80
-                        @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
-                        public final void onPixelCopyFinished(int i7) {
-                            g80 g80Var = g80.this;
-                            Bitmap bitmap3 = bitmap2;
-                            g80Var.h = false;
-                            if (g80Var.i || i7 != 0) {
-                                return;
-                            }
-                            g80Var.f = g80Var.e;
-                            g80Var.e = bitmap3;
-                            g80Var.a.run();
-                        }
-                    }, this.b);
-                } catch (Exception e10) {
-                    this.h = false;
-                    org.telegram.messenger.a8.g(e10, true);
-                }
-            }
-        }
-        b();
+    public void setMeasureAfter(View view) {
+        this.e = view;
     }
 
-    public final void d() {
-        if (this.j) {
-            Choreographer.getInstance().removeFrameCallback(this.m);
-            this.j = false;
-        }
-        if (this.k) {
-            this.b.removeCallbacks(this.n);
-            this.k = false;
-        }
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        this.a.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.y6, false));
+        this.b.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.zj, false));
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

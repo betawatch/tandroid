@@ -1,20 +1,29 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class d51 extends ImageReceiver {
-    public final /* synthetic */ e51 J1;
+public final class d51 extends v00 {
+    public final ah.i K;
+    public final /* synthetic */ e51 L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d51(e51 e51Var) {
-        super(null);
-        this.J1 = e51Var;
+    public d51(e51 e51Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.L = e51Var;
+        ah.i iVar = this.r;
+        this.K = iVar;
+        iVar.setImeOptions(268435459);
+        iVar.setHint(org.telegram.messenger.hd.M0(2131743339, null));
+        iVar.addTextChangedListener(new ah.j(this, 28));
+        iVar.setOnEditorActionListener(new q0(this, 11));
     }
 
-    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.n5
-    public final void invalidate() {
-        this.J1.invalidate();
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        this.L.J0(motionEvent, this.K);
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

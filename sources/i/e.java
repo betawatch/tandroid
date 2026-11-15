@@ -1,7 +1,7 @@
 package i;
 
 import a5.q;
-import a8.ra;
+import a8.sa;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -18,34 +18,34 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.StateSet;
-import c8.h0;
-import m.n2;
-import org.telegram.messenger.qs;
+import c8.i0;
+import m.m2;
+import org.telegram.messenger.ns;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e extends Drawable implements Drawable.Callback {
-    public static final /* synthetic */ int J = 0;
-    public boolean D;
-    public b E;
-    public h0 F;
-    public boolean I;
+    public static final /* synthetic */ int K = 0;
+    public boolean E;
+    public b F;
+    public i0 G;
+    public boolean J;
     public b a;
     public Rect b;
     public Drawable c;
     public Drawable d;
     public boolean f;
     public boolean n;
-    public ra r;
+    public sa r;
     public long s;
     public long w;
     public a5.b x;
     public b y;
-    public int e = qs.e4;
+    public int e = ns.e4;
     public int h = -1;
-    public int G = -1;
     public int H = -1;
+    public int I = -1;
 
     public e(b bVar, Resources resources) {
         i(new b(bVar, this, resources));
@@ -78,7 +78,7 @@ public final class e extends Drawable implements Drawable.Callback {
         TypedArray f10 = h0.b.f(resources2, theme, attributeSet, j.c.a);
         int i7 = 1;
         eVar.setVisible(f10.getBoolean(1, true), true);
-        b bVar = eVar.E;
+        b bVar = eVar.F;
         bVar.d |= j.b.b(f10);
         int i10 = 2;
         bVar.i = f10.getBoolean(2, bVar.i);
@@ -86,14 +86,14 @@ public final class e extends Drawable implements Drawable.Callback {
         bVar.l = f10.getBoolean(3, bVar.l);
         bVar.y = f10.getInt(4, bVar.y);
         bVar.z = f10.getInt(5, bVar.z);
-        boolean z9 = false;
+        boolean z10 = false;
         eVar.setDither(f10.getBoolean(0, bVar.w));
         b bVar2 = eVar.a;
         if (resources2 != null) {
             bVar2.b = resources2;
             int i12 = resources2.getDisplayMetrics().densityDpi;
             if (i12 == 0) {
-                i12 = qs.q2;
+                i12 = ns.q2;
             }
             int i13 = bVar2.c;
             bVar2.c = i12;
@@ -114,18 +114,18 @@ public final class e extends Drawable implements Drawable.Callback {
             if (next3 == i10 && depth <= depth2) {
                 if (xmlResourceParser.getName().equals("item")) {
                     TypedArray f11 = h0.b.f(resources2, theme, attributeSet, j.c.b);
-                    int resourceId = f11.getResourceId(z9 ? 1 : 0, z9 ? 1 : 0);
+                    int resourceId = f11.getResourceId(z10 ? 1 : 0, z10 ? 1 : 0);
                     int resourceId2 = f11.getResourceId(i7, -1);
-                    Drawable g10 = resourceId2 > 0 ? n2.d().g(context2, resourceId2) : null;
+                    Drawable g10 = resourceId2 > 0 ? m2.d().g(context2, resourceId2) : null;
                     f11.recycle();
                     int attributeCount = attributeSet.getAttributeCount();
                     int[] iArr = new int[attributeCount];
-                    int i14 = z9 ? 1 : 0;
+                    int i14 = z10 ? 1 : 0;
                     for (int i15 = i14; i15 < attributeCount; i15++) {
                         int attributeNameResource = attributeSet.getAttributeNameResource(i15);
                         if (attributeNameResource != 0 && attributeNameResource != 16842960 && attributeNameResource != 16843161) {
                             int i16 = i14 + 1;
-                            if (!attributeSet.getAttributeBooleanValue(i15, z9)) {
+                            if (!attributeSet.getAttributeBooleanValue(i15, z10)) {
                                 attributeNameResource = -attributeNameResource;
                             }
                             iArr[i14] = attributeNameResource;
@@ -150,7 +150,7 @@ public final class e extends Drawable implements Drawable.Callback {
                     if (g10 == null) {
                         throw new XmlPullParserException(xmlResourceParser.getPositionDescription() + ": <item> tag requires a 'drawable' attribute or child tag defining a drawable");
                     }
-                    b bVar3 = eVar.E;
+                    b bVar3 = eVar.F;
                     int a10 = bVar3.a(g10);
                     bVar3.H[a10] = trimStateSet;
                     bVar3.J.d(a10, Integer.valueOf(resourceId));
@@ -158,9 +158,9 @@ public final class e extends Drawable implements Drawable.Callback {
                     TypedArray f12 = h0.b.f(resources2, theme, attributeSet, j.c.c);
                     int resourceId3 = f12.getResourceId(2, -1);
                     int resourceId4 = f12.getResourceId(1, -1);
-                    int resourceId5 = f12.getResourceId(z9 ? 1 : 0, -1);
-                    Drawable g11 = resourceId5 > 0 ? n2.d().g(context2, resourceId5) : null;
-                    boolean z10 = f12.getBoolean(3, z9);
+                    int resourceId5 = f12.getResourceId(z10 ? 1 : 0, -1);
+                    Drawable g11 = resourceId5 > 0 ? m2.d().g(context2, resourceId5) : null;
+                    boolean z11 = f12.getBoolean(3, z10);
                     f12.recycle();
                     if (g11 == null) {
                         do {
@@ -182,21 +182,21 @@ public final class e extends Drawable implements Drawable.Callback {
                     if (resourceId3 == -1 || resourceId4 == -1) {
                         break;
                     }
-                    b bVar4 = eVar.E;
+                    b bVar4 = eVar.F;
                     int a11 = bVar4.a(g11);
                     long j3 = resourceId3;
                     long j10 = resourceId4;
                     long j11 = (j3 << 32) | j10;
-                    long j12 = z10 ? 8589934592L : 0L;
+                    long j12 = z11 ? 8589934592L : 0L;
                     long j13 = a11;
                     bVar4.I.a(j11, Long.valueOf(j13 | j12));
-                    if (z10) {
+                    if (z11) {
                         bVar4.I.a((j10 << 32) | j3, Long.valueOf(j13 | 4294967296L | j12));
                     }
                     context2 = context;
                     resources2 = resources;
                     i7 = 1;
-                    z9 = false;
+                    z10 = false;
                     i10 = 2;
                     i11 = 3;
                 } else {
@@ -218,10 +218,10 @@ public final class e extends Drawable implements Drawable.Callback {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(boolean z9) {
-        boolean z10;
+    public final void a(boolean z10) {
+        boolean z11;
         Drawable drawable;
-        boolean z11 = true;
+        boolean z12 = true;
         this.f = true;
         long uptimeMillis = SystemClock.uptimeMillis();
         Drawable drawable2 = this.c;
@@ -229,15 +229,15 @@ public final class e extends Drawable implements Drawable.Callback {
             long j3 = this.s;
             if (j3 != 0) {
                 if (j3 > uptimeMillis) {
-                    drawable2.setAlpha(((255 - (((int) ((j3 - uptimeMillis) * 255)) / this.a.y)) * this.e) / qs.e4);
-                    z10 = true;
+                    drawable2.setAlpha(((255 - (((int) ((j3 - uptimeMillis) * 255)) / this.a.y)) * this.e) / ns.e4);
+                    z11 = true;
                     drawable = this.d;
                     if (drawable == null) {
                         long j10 = this.w;
                         if (j10 != 0) {
                             if (j10 > uptimeMillis) {
-                                drawable.setAlpha(((((int) ((j10 - uptimeMillis) * 255)) / this.a.z) * this.e) / qs.e4);
-                                if (z9 && z11) {
+                                drawable.setAlpha(((((int) ((j10 - uptimeMillis) * 255)) / this.a.z) * this.e) / ns.e4);
+                                if (z10 && z12) {
                                     scheduleSelf(this.r, uptimeMillis + 16);
                                     return;
                                 }
@@ -250,8 +250,8 @@ public final class e extends Drawable implements Drawable.Callback {
                     } else {
                         this.w = 0L;
                     }
-                    z11 = z10;
-                    if (z9) {
+                    z12 = z11;
+                    if (z10) {
                         return;
                     } else {
                         return;
@@ -263,12 +263,12 @@ public final class e extends Drawable implements Drawable.Callback {
         } else {
             this.s = 0L;
         }
-        z10 = false;
+        z11 = false;
         drawable = this.d;
         if (drawable == null) {
         }
-        z11 = z10;
-        if (z9) {
+        z12 = z11;
+        if (z10) {
         }
     }
 
@@ -299,7 +299,7 @@ public final class e extends Drawable implements Drawable.Callback {
             bVar.b = resources;
             int i11 = resources.getDisplayMetrics().densityDpi;
             if (i11 == 0) {
-                i11 = qs.q2;
+                i11 = ns.q2;
             }
             int i12 = bVar.c;
             bVar.c = i11;
@@ -375,15 +375,15 @@ public final class e extends Drawable implements Drawable.Callback {
     }
 
     public final void e() {
-        boolean z9;
+        boolean z10;
         Drawable drawable = this.d;
-        boolean z10 = true;
+        boolean z11 = true;
         if (drawable != null) {
             drawable.jumpToCurrentState();
             this.d = null;
-            z9 = true;
+            z10 = true;
         } else {
-            z9 = false;
+            z10 = false;
         }
         Drawable drawable2 = this.c;
         if (drawable2 != null) {
@@ -394,21 +394,21 @@ public final class e extends Drawable implements Drawable.Callback {
         }
         if (this.w != 0) {
             this.w = 0L;
-            z9 = true;
+            z10 = true;
         }
         if (this.s != 0) {
             this.s = 0L;
         } else {
-            z10 = z9;
+            z11 = z10;
         }
-        if (z10) {
+        if (z11) {
             invalidateSelf();
         }
     }
 
     public final Drawable f() {
         if (!this.n && super.mutate() == this) {
-            b bVar = new b(this.E, this, null);
+            b bVar = new b(this.F, this, null);
             bVar.I = bVar.I.clone();
             bVar.J = bVar.J.clone();
             i(bVar);
@@ -418,12 +418,12 @@ public final class e extends Drawable implements Drawable.Callback {
     }
 
     public final Drawable g() {
-        if (!this.D) {
+        if (!this.E) {
             f();
             b bVar = this.y;
             bVar.I = bVar.I.clone();
             bVar.J = bVar.J.clone();
-            this.D = true;
+            this.E = true;
         }
         return this;
     }
@@ -440,7 +440,7 @@ public final class e extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public final Drawable.ConstantState getConstantState() {
-        boolean z9;
+        boolean z10;
         b bVar = this.a;
         if (!bVar.u) {
             bVar.c();
@@ -451,20 +451,20 @@ public final class e extends Drawable implements Drawable.Callback {
             while (true) {
                 if (i10 >= i7) {
                     bVar.v = true;
-                    z9 = true;
+                    z10 = true;
                     break;
                 }
                 if (drawableArr[i10].getConstantState() == null) {
                     bVar.v = false;
-                    z9 = false;
+                    z10 = false;
                     break;
                 }
                 i10++;
             }
         } else {
-            z9 = bVar.v;
+            z10 = bVar.v;
         }
-        if (!z9) {
+        if (!z10) {
             return null;
         }
         this.a.d = getChangingConfigurations();
@@ -583,7 +583,7 @@ public final class e extends Drawable implements Drawable.Callback {
     public final boolean getPadding(Rect rect) {
         b bVar = this.a;
         Rect rect2 = null;
-        boolean z9 = false;
+        boolean z10 = false;
         if (!bVar.i) {
             Rect rect3 = bVar.k;
             if (rect3 != null || bVar.j) {
@@ -623,18 +623,18 @@ public final class e extends Drawable implements Drawable.Callback {
         if (rect2 != null) {
             rect.set(rect2);
             if ((rect2.left | rect2.top | rect2.bottom | rect2.right) != 0) {
-                z9 = true;
+                z10 = true;
             }
         } else {
             Drawable drawable = this.c;
-            z9 = drawable != null ? drawable.getPadding(rect) : super.getPadding(rect);
+            z10 = drawable != null ? drawable.getPadding(rect) : super.getPadding(rect);
         }
         if (this.a.A && getLayoutDirection() == 1) {
             int i15 = rect.left;
             rect.left = rect.right;
             rect.right = i15;
         }
-        return z9;
+        return z10;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x006b  */
@@ -643,7 +643,7 @@ public final class e extends Drawable implements Drawable.Callback {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean h(int i7) {
-        ra raVar;
+        sa saVar;
         if (i7 == this.h) {
             return false;
         }
@@ -681,11 +681,11 @@ public final class e extends Drawable implements Drawable.Callback {
                     d(d);
                 }
                 if (this.s == 0 || this.w != 0) {
-                    raVar = this.r;
-                    if (raVar != null) {
-                        this.r = new ra(this, 25);
+                    saVar = this.r;
+                    if (saVar != null) {
+                        this.r = new sa(this, 28);
                     } else {
-                        unscheduleSelf(raVar);
+                        unscheduleSelf(saVar);
                     }
                     a(true);
                 }
@@ -697,8 +697,8 @@ public final class e extends Drawable implements Drawable.Callback {
         this.h = -1;
         if (this.s == 0) {
         }
-        raVar = this.r;
-        if (raVar != null) {
+        saVar = this.r;
+        if (saVar != null) {
         }
         a(true);
         invalidateSelf();
@@ -717,7 +717,7 @@ public final class e extends Drawable implements Drawable.Callback {
         }
         this.d = null;
         this.y = bVar;
-        this.E = bVar;
+        this.F = bVar;
     }
 
     @Override // android.graphics.drawable.Drawable.Callback
@@ -743,15 +743,15 @@ public final class e extends Drawable implements Drawable.Callback {
         return true;
     }
 
-    public final boolean j(boolean z9, boolean z10) {
-        boolean visible = super.setVisible(z9, z10);
+    public final boolean j(boolean z10, boolean z11) {
+        boolean visible = super.setVisible(z10, z11);
         Drawable drawable = this.d;
         if (drawable != null) {
-            drawable.setVisible(z9, z10);
+            drawable.setVisible(z10, z11);
         }
         Drawable drawable2 = this.c;
         if (drawable2 != null) {
-            drawable2.setVisible(z9, z10);
+            drawable2.setVisible(z10, z11);
         }
         return visible;
     }
@@ -759,24 +759,24 @@ public final class e extends Drawable implements Drawable.Callback {
     @Override // android.graphics.drawable.Drawable
     public final void jumpToCurrentState() {
         e();
-        h0 h0Var = this.F;
-        if (h0Var != null) {
-            h0Var.d();
-            this.F = null;
-            h(this.G);
-            this.G = -1;
+        i0 i0Var = this.G;
+        if (i0Var != null) {
+            i0Var.d();
+            this.G = null;
+            h(this.H);
             this.H = -1;
+            this.I = -1;
         }
     }
 
     @Override // android.graphics.drawable.Drawable
     public final Drawable mutate() {
-        if (!this.I) {
+        if (!this.J) {
             g();
-            b bVar = this.E;
+            b bVar = this.F;
             bVar.I = bVar.I.clone();
             bVar.J = bVar.J.clone();
-            this.I = true;
+            this.J = true;
         }
         return this;
     }
@@ -799,18 +799,18 @@ public final class e extends Drawable implements Drawable.Callback {
         int i10 = this.h;
         int i11 = bVar.h;
         Drawable[] drawableArr = bVar.g;
-        boolean z9 = false;
+        boolean z10 = false;
         for (int i12 = 0; i12 < i11; i12++) {
             Drawable drawable = drawableArr[i12];
             if (drawable != null) {
                 boolean layoutDirection = drawable.setLayoutDirection(i7);
                 if (i12 == i10) {
-                    z9 = layoutDirection;
+                    z10 = layoutDirection;
                 }
             }
         }
         bVar.x = i7;
-        return z9;
+        return z10;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -836,53 +836,53 @@ public final class e extends Drawable implements Drawable.Callback {
     */
     public final boolean onStateChange(int[] iArr) {
         int i7;
-        h0 aVar;
-        b bVar = this.E;
+        i0 aVar;
+        b bVar = this.F;
         int f10 = bVar.f(iArr);
         if (f10 < 0) {
             f10 = bVar.f(StateSet.WILD_CARD);
         }
         if (f10 != this.h) {
-            h0 h0Var = this.F;
-            if (h0Var != null) {
-                if (f10 != this.G) {
-                    if (f10 == this.H && h0Var.a()) {
-                        h0Var.b();
-                        this.G = this.H;
-                        this.H = f10;
+            i0 i0Var = this.G;
+            if (i0Var != null) {
+                if (f10 != this.H) {
+                    if (f10 == this.I && i0Var.a()) {
+                        i0Var.b();
+                        this.H = this.I;
+                        this.I = f10;
                     } else {
-                        i7 = this.G;
-                        h0Var.d();
+                        i7 = this.H;
+                        i0Var.d();
                     }
                 }
                 r4 = true;
             } else {
                 i7 = this.h;
             }
-            this.F = null;
+            this.G = null;
+            this.I = -1;
             this.H = -1;
-            this.G = -1;
-            b bVar2 = this.E;
+            b bVar2 = this.F;
             int e10 = bVar2.e(i7);
             int e11 = bVar2.e(f10);
             if (e11 != 0 && e10 != 0) {
                 long j3 = e11 | (e10 << 32);
                 int longValue = (int) ((Long) bVar2.I.g(-1L, j3)).longValue();
                 if (longValue >= 0) {
-                    boolean z9 = (((Long) bVar2.I.g(-1L, j3)).longValue() & 8589934592L) != 0;
+                    boolean z10 = (((Long) bVar2.I.g(-1L, j3)).longValue() & 8589934592L) != 0;
                     h(longValue);
                     Object obj = this.c;
                     if (obj instanceof AnimationDrawable) {
-                        aVar = new c((AnimationDrawable) obj, (((Long) bVar2.I.g(-1L, j3)).longValue() & 4294967296L) != 0, z9);
+                        aVar = new c((AnimationDrawable) obj, (((Long) bVar2.I.g(-1L, j3)).longValue() & 4294967296L) != 0, z10);
                     } else if (obj instanceof a5.e) {
                         aVar = new a((a5.e) obj, 1);
                     } else if (obj instanceof Animatable) {
                         aVar = new a((Animatable) obj, 0);
                     }
                     aVar.c();
-                    this.F = aVar;
-                    this.H = i7;
-                    this.G = f10;
+                    this.G = aVar;
+                    this.I = i7;
+                    this.H = f10;
                     r4 = true;
                 }
             }
@@ -917,13 +917,13 @@ public final class e extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAutoMirrored(boolean z9) {
+    public final void setAutoMirrored(boolean z10) {
         b bVar = this.a;
-        if (bVar.A != z9) {
-            bVar.A = z9;
+        if (bVar.A != z10) {
+            bVar.A = z10;
             Drawable drawable = this.c;
             if (drawable != null) {
-                drawable.setAutoMirrored(z9);
+                drawable.setAutoMirrored(z10);
             }
         }
     }
@@ -942,13 +942,13 @@ public final class e extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setDither(boolean z9) {
+    public final void setDither(boolean z10) {
         b bVar = this.a;
-        if (bVar.w != z9) {
-            bVar.w = z9;
+        if (bVar.w != z10) {
+            bVar.w = z10;
             Drawable drawable = this.c;
             if (drawable != null) {
-                drawable.setDither(z9);
+                drawable.setDither(z10);
             }
         }
     }
@@ -1001,12 +1001,12 @@ public final class e extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final boolean setVisible(boolean z9, boolean z10) {
-        boolean j3 = j(z9, z10);
-        h0 h0Var = this.F;
-        if (h0Var != null && (j3 || z10)) {
-            if (z9) {
-                h0Var.c();
+    public final boolean setVisible(boolean z10, boolean z11) {
+        boolean j3 = j(z10, z11);
+        i0 i0Var = this.G;
+        if (i0Var != null && (j3 || z11)) {
+            if (z10) {
+                i0Var.c();
                 return j3;
             }
             jumpToCurrentState();

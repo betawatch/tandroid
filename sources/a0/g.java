@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g implements Collection, Set {
     public int[] a = b0.a.a;
@@ -84,7 +84,7 @@ public final class g implements Collection, Set {
         int size = elements.size() + this.c;
         int i7 = this.c;
         int[] iArr = this.a;
-        boolean z9 = false;
+        boolean z10 = false;
         if (iArr.length < size) {
             Object[] objArr = this.b;
             int[] iArr2 = new int[size];
@@ -100,9 +100,9 @@ public final class g implements Collection, Set {
         }
         Iterator it = elements.iterator();
         while (it.hasNext()) {
-            z9 |= add(it.next());
+            z10 |= add(it.next());
         }
-        return z9;
+        return z10;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -229,28 +229,28 @@ public final class g implements Collection, Set {
     public final boolean removeAll(Collection elements) {
         kotlin.jvm.internal.j.e(elements, "elements");
         Iterator it = elements.iterator();
-        boolean z9 = false;
+        boolean z10 = false;
         while (it.hasNext()) {
-            z9 |= remove(it.next());
+            z10 |= remove(it.next());
         }
-        return z9;
+        return z10;
     }
 
     @Override // java.util.Collection, java.util.Set
     public final boolean retainAll(Collection elements) {
-        boolean z9;
+        boolean z10;
         kotlin.jvm.internal.j.e(elements, "elements");
         int i7 = this.c - 1;
-        boolean z10 = false;
+        boolean z11 = false;
         while (true) {
             int i10 = -1;
             if (-1 >= i7) {
-                return z10;
+                return z11;
             }
             Object obj = this.b[i7];
             Collection collection = elements;
             if (collection instanceof Collection) {
-                z9 = collection.contains(obj);
+                z10 = collection.contains(obj);
             } else {
                 if (!(collection instanceof List)) {
                     Iterator it = collection.iterator();
@@ -272,11 +272,11 @@ public final class g implements Collection, Set {
                 } else {
                     i10 = ((List) collection).indexOf(obj);
                 }
-                z9 = i10 >= 0;
+                z10 = i10 >= 0;
             }
-            if (!z9) {
+            if (!z10) {
                 f(i7);
-                z10 = true;
+                z11 = true;
             }
             i7--;
         }

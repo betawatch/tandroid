@@ -1,43 +1,20 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class or implements Runnable {
-    public final /* synthetic */ yr a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ TLRPC.Reaction d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ z10 n;
+public final class or {
+    public final int a;
+    public final int b;
+    public final int c;
 
-    public /* synthetic */ or(yr yrVar, String str, long j3, TLRPC.Reaction reaction, int i7, int i10, boolean z9, z10 z10Var) {
-        this.a = yrVar;
-        this.b = str;
-        this.c = j3;
-        this.d = reaction;
-        this.e = i7;
-        this.f = i10;
-        this.h = z9;
-        this.n = z10Var;
+    public or(int i7, int i10) {
+        this.a = i7;
+        this.b = i10;
     }
 
-    /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
-        	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
-        */
-    @Override // java.lang.Runnable
-    public final void run() {
-        /*
-            Method dump skipped, instructions count: 667
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.or.run():void");
+    public or(int i7, int i10, int i11) {
+        this.c = i7;
+        this.a = i10;
+        this.b = i11;
     }
 }

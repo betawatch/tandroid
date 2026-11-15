@@ -1,42 +1,33 @@
 package fi;
 
-import org.telegram.messenger.camera.CameraController;
+import java.util.ArrayList;
+import org.telegram.messenger.np;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r9 b;
+public final class p9 implements Runnable {
+    public final /* synthetic */ q9 a;
 
-    public /* synthetic */ p9(r9 r9Var, int i7) {
-        this.a = i7;
-        this.b = r9Var;
+    public p9(q9 q9Var) {
+        this.a = q9Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
-            case 0:
-                va vaVar = this.b.a;
-                c6 c6Var = vaVar.C0;
-                if (c6Var != null) {
-                    c6Var.c(false);
-                }
-                if (vaVar.Q1 && vaVar.R1 && vaVar.B0 != null) {
-                    vaVar.i0(false);
-                    CameraController.getInstance().stopVideoRecording(vaVar.B0.getCameraSessionRecording(), false, false);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.a.J(1, true);
-                break;
-            case 2:
-                this.b.a.J(1, true);
-                break;
-            default:
-                this.b.a.J(1, true);
-                break;
+        q9 q9Var = this.a;
+        int i7 = q9Var.a;
+        ArrayList arrayList = q9Var.d;
+        if (arrayList.isEmpty()) {
+            return;
         }
+        ArrayList arrayList2 = new ArrayList(arrayList);
+        arrayList.clear();
+        TL_stories.TL_stories_getPeerMaxIDs tL_stories_getPeerMaxIDs = new TL_stories.TL_stories_getPeerMaxIDs();
+        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+            tL_stories_getPeerMaxIDs.id.add(np.s1(i7).j1(((Long) arrayList2.get(i10)).longValue()));
+        }
+        ConnectionsManager.getInstance(i7).sendRequestTyped(tL_stories_getPeerMaxIDs, new d3.b(1), new bi.e4(6, this, arrayList2));
     }
 }

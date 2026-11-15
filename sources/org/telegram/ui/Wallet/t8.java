@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t8 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -27,22 +27,22 @@ public final /* synthetic */ class t8 implements TextView.OnEditorActionListener
                 org.telegram.messenger.g0.v1(u8Var.b);
                 return true;
             case 1:
-                o9 o9Var = (o9) this.b;
+                p9 p9Var = (p9) this.b;
                 if (i7 == 6) {
-                    fi.d dVar = o9Var.d0;
-                    if (dVar.c0) {
+                    hi.d dVar = p9Var.e0;
+                    if (dVar.d0) {
                         dVar.performClick();
                         return true;
                     }
                 } else {
-                    o9Var.getClass();
+                    p9Var.getClass();
                 }
                 return false;
             default:
                 pa paVar = (pa) this.b;
                 EditText editText = paVar.a;
-                boolean z9 = keyEvent != null && (keyEvent.getKeyCode() == 66 || keyEvent.getKeyCode() == 160);
-                if (i7 != 5 && !z9) {
+                boolean z10 = keyEvent != null && (keyEvent.getKeyCode() == 66 || keyEvent.getKeyCode() == 160);
+                if (i7 != 5 && !z10) {
                     return false;
                 }
                 if (keyEvent == null || (keyEvent.getAction() == 1 && !keyEvent.isCanceled())) {

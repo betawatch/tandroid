@@ -7,10 +7,10 @@ import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import libcore.io.Memory;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class c3 {
     public static final Unsafe a;
@@ -32,7 +32,7 @@ public abstract class c3 {
     static {
         ?? r16;
         b3 b3Var;
-        boolean z9;
+        boolean z10;
         Field b10;
         b3 b3Var2;
         Unsafe i7 = i();
@@ -52,7 +52,7 @@ public abstract class c3 {
             }
         }
         c = b3Var3;
-        boolean z10 = false;
+        boolean z11 = false;
         if (b3Var3 != null) {
             try {
                 Class<?> cls3 = b3Var3.a.getClass();
@@ -61,12 +61,12 @@ public abstract class c3 {
             } catch (Throwable th2) {
                 r16 = 0;
                 Logger.getLogger(c3.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th2.toString()));
-                z10 = false;
+                z11 = false;
             }
             if (b() != null) {
                 r16 = 0;
-                z10 = true;
-                d = z10;
+                z11 = true;
+                d = z11;
                 b3Var = c;
                 if (b3Var != null) {
                     try {
@@ -107,11 +107,11 @@ public abstract class c3 {
                         clsArr9[1] = cls;
                         clsArr9[2] = Object.class;
                         cls4.getMethod("putObject", clsArr9);
-                        z9 = true;
+                        z10 = true;
                     } catch (Throwable th3) {
                         Logger.getLogger(c3.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th3.toString()));
                     }
-                    e = z9;
+                    e = z10;
                     f = p(byte[].class);
                     p(boolean[].class);
                     a(boolean[].class);
@@ -131,8 +131,8 @@ public abstract class c3 {
                     }
                     g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? r16 : true;
                 }
-                z9 = r16;
-                e = z9;
+                z10 = r16;
+                e = z10;
                 f = p(byte[].class);
                 p(boolean[].class);
                 a(boolean[].class);
@@ -154,12 +154,12 @@ public abstract class c3 {
             }
         }
         r16 = 0;
-        d = z10;
+        d = z11;
         b3Var = c;
         if (b3Var != null) {
         }
-        z9 = r16;
-        e = z9;
+        z10 = r16;
+        e = z10;
         f = p(byte[].class);
         p(boolean[].class);
         a(boolean[].class);
@@ -213,14 +213,14 @@ public abstract class c3 {
         long j10 = (-4) & j3;
         int i7 = unsafe.getInt(obj, j10);
         int i10 = ((~((int) j3)) & 3) << 3;
-        unsafe.putInt(obj, j10, ((255 & b10) << i10) | (i7 & (~(qs.e4 << i10))));
+        unsafe.putInt(obj, j10, ((255 & b10) << i10) | (i7 & (~(ns.e4 << i10))));
     }
 
     public static void d(Object obj, long j3, byte b10) {
         Unsafe unsafe = c.a;
         long j10 = (-4) & j3;
         int i7 = (((int) j3) & 3) << 3;
-        unsafe.putInt(obj, j10, ((255 & b10) << i7) | (unsafe.getInt(obj, j10) & (~(qs.e4 << i7))));
+        unsafe.putInt(obj, j10, ((255 & b10) << i7) | (unsafe.getInt(obj, j10) & (~(ns.e4 << i7))));
     }
 
     public static int e(Object obj, long j3) {
@@ -264,11 +264,11 @@ public abstract class c3 {
     }
 
     public static /* bridge */ /* synthetic */ boolean m(Object obj, long j3) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & qs.e4)) != 0;
+        return ((byte) ((c.a.getInt(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & ns.e4)) != 0;
     }
 
     public static /* bridge */ /* synthetic */ boolean n(Object obj, long j3) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & qs.e4)) != 0;
+        return ((byte) ((c.a.getInt(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & ns.e4)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

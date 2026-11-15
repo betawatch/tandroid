@@ -1,27 +1,26 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wi implements cj {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.d5 b;
+public final class wi extends v4.c0 {
+    public final /* synthetic */ gi.g r;
 
-    public /* synthetic */ wi(org.telegram.messenger.d5 d5Var, int i7) {
-        this.a = i7;
-        this.b = d5Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wi(gi.g gVar, Context context) {
+        super(context);
+        this.r = gVar;
     }
 
-    @Override // org.telegram.ui.Components.cj
-    public final String run() {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = this.b.e;
-                return arrayList.isEmpty() ? "" : pf.b.c().b((String) arrayList.get(0));
-            default:
-                ArrayList arrayList2 = this.b.e;
-                return arrayList2.isEmpty() ? "" : pf.b.c().b((String) arrayList2.get(0));
-        }
+    @Override // v4.c0
+    public final int k(int i7, View view) {
+        return org.telegram.messenger.k5.B(7.0f, ((yi) this.r.R).n.getPaddingTop(), super.k(i7, view));
+    }
+
+    @Override // v4.c0
+    public final int m(int i7) {
+        return super.m(i7) * 2;
     }
 }

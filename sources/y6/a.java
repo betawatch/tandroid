@@ -3,9 +3,9 @@ package y6;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
-import o5.o;
+import o5.p;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements ThreadFactory {
     public final AtomicInteger b = new AtomicInteger();
@@ -14,7 +14,7 @@ public final class a implements ThreadFactory {
 
     @Override // java.util.concurrent.ThreadFactory
     public final Thread newThread(Runnable runnable) {
-        Thread newThread = this.c.newThread(new o(2, runnable));
+        Thread newThread = this.c.newThread(new p(2, runnable));
         int andIncrement = this.b.getAndIncrement();
         int length = String.valueOf(andIncrement).length();
         String str = this.a;

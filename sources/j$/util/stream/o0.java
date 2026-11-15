@@ -24,8 +24,8 @@ public final class o0 extends p0 {
         return null;
     }
 
-    public o0(Consumer consumer, boolean z9) {
-        super(z9);
+    public o0(Consumer consumer, boolean z10) {
+        super(z10);
         this.b = consumer;
     }
 

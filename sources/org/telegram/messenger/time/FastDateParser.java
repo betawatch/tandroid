@@ -1,7 +1,7 @@
 package org.telegram.messenger.time;
 
 import a8.p0;
-import com.google.android.recaptcha.internal.a;
+import com.google.android.gms.internal.vision.e2;
 import j$.util.DesugarTimeZone;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.ObjectInputStream;
@@ -22,9 +22,9 @@ import java.util.TreeMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class FastDateParser implements DateParser, Serializable {
     private static final long serialVersionUID = 2;
@@ -80,7 +80,7 @@ public class FastDateParser implements DateParser, Serializable {
     private static final Strategy SECOND_STRATEGY = new NumberStrategy(13);
     private static final Strategy MILLISECOND_STRATEGY = new NumberStrategy(14);
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class CopyQuotedStrategy extends Strategy {
         private final String formatField;
 
@@ -105,7 +105,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class TextStrategy extends Strategy {
         private final int field;
         private final Map<String, Integer> keyValues;
@@ -146,7 +146,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class TimeZoneStrategy extends Strategy {
         private static final int ID = 0;
         private static final int LONG_DST = 3;
@@ -178,7 +178,7 @@ public class FastDateParser implements DateParser, Serializable {
                     }
                 }
             }
-            StringBuilder m10 = a.m("(GMT[+\\-]\\d{0,1}\\d{2}|[+\\-]\\d{2}:?\\d{2}|");
+            StringBuilder m10 = e2.m("(GMT[+\\-]\\d{0,1}\\d{2}|[+\\-]\\d{2}:?\\d{2}|");
             Iterator<String> it = this.tzNames.keySet().iterator();
             while (it.hasNext()) {
                 FastDateParser.escapeRegex(m10, it.next(), false).append('|');
@@ -221,7 +221,7 @@ public class FastDateParser implements DateParser, Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static StringBuilder escapeRegex(StringBuilder sb2, String str, boolean z9) {
+    public static StringBuilder escapeRegex(StringBuilder sb2, String str, boolean z10) {
         sb2.append("\\Q");
         int i7 = 0;
         while (i7 < str.length()) {
@@ -235,7 +235,7 @@ public class FastDateParser implements DateParser, Serializable {
                         charAt = 'Q';
                     }
                 }
-            } else if (z9) {
+            } else if (z10) {
                 i7++;
                 if (i7 == str.length()) {
                     return sb2;
@@ -267,16 +267,16 @@ public class FastDateParser implements DateParser, Serializable {
         return concurrentMap;
     }
 
-    private static String[] getDisplayNameArray(int i7, boolean z9, Locale locale) {
+    private static String[] getDisplayNameArray(int i7, boolean z10, Locale locale) {
         DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(locale);
         if (i7 == 0) {
             return dateFormatSymbols.getEras();
         }
         if (i7 == 2) {
-            return z9 ? dateFormatSymbols.getMonths() : dateFormatSymbols.getShortMonths();
+            return z10 ? dateFormatSymbols.getMonths() : dateFormatSymbols.getShortMonths();
         }
         if (i7 == 7) {
-            return z9 ? dateFormatSymbols.getWeekdays() : dateFormatSymbols.getShortWeekdays();
+            return z10 ? dateFormatSymbols.getWeekdays() : dateFormatSymbols.getShortWeekdays();
         }
         if (i7 != 9) {
             return null;
@@ -314,47 +314,47 @@ public class FastDateParser implements DateParser, Serializable {
             switch (charAt) {
                 case '\'':
                     if (str.length() > 2) {
-                        return new CopyQuotedStrategy(a.k(str, 1, 1));
+                        return new CopyQuotedStrategy(e2.k(str, 1, 1));
                     }
                     break;
-                case qs.U0 /* 83 */:
+                case ns.U0 /* 83 */:
                     return MILLISECOND_STRATEGY;
-                case qs.Y0 /* 87 */:
+                case ns.Y0 /* 87 */:
                     return WEEK_OF_MONTH_STRATEGY;
-                case qs.b1 /* 90 */:
+                case ns.b1 /* 90 */:
                     break;
-                case qs.i1 /* 97 */:
+                case ns.i1 /* 97 */:
                     return getLocaleSpecificStrategy(9, calendar);
-                case qs.l1 /* 100 */:
+                case ns.l1 /* 100 */:
                     return DAY_OF_MONTH_STRATEGY;
-                case qs.p1 /* 104 */:
+                case ns.p1 /* 104 */:
                     return MODULO_HOUR_STRATEGY;
-                case qs.s1 /* 107 */:
+                case ns.s1 /* 107 */:
                     return HOUR_OF_DAY_STRATEGY;
-                case qs.u1 /* 109 */:
+                case ns.u1 /* 109 */:
                     return MINUTE_STRATEGY;
-                case qs.A1 /* 115 */:
+                case ns.A1 /* 115 */:
                     return SECOND_STRATEGY;
-                case qs.E1 /* 119 */:
+                case ns.E1 /* 119 */:
                     return WEEK_OF_YEAR_STRATEGY;
                 default:
                     switch (charAt) {
-                        case qs.F0 /* 68 */:
+                        case ns.F0 /* 68 */:
                             return DAY_OF_YEAR_STRATEGY;
-                        case qs.G0 /* 69 */:
+                        case ns.G0 /* 69 */:
                             return getLocaleSpecificStrategy(7, calendar);
-                        case qs.H0 /* 70 */:
+                        case ns.H0 /* 70 */:
                             return DAY_OF_WEEK_IN_MONTH_STRATEGY;
-                        case qs.I0 /* 71 */:
+                        case ns.I0 /* 71 */:
                             return getLocaleSpecificStrategy(0, calendar);
-                        case qs.J0 /* 72 */:
+                        case ns.J0 /* 72 */:
                             return MODULO_HOUR_OF_DAY_STRATEGY;
                         default:
                             switch (charAt) {
-                                case qs.M0 /* 75 */:
+                                case ns.M0 /* 75 */:
                                     return HOUR_STRATEGY;
-                                case qs.N0 /* 76 */:
-                                case qs.O0 /* 77 */:
+                                case ns.N0 /* 76 */:
+                                case ns.O0 /* 77 */:
                                     return str.length() >= 3 ? getLocaleSpecificStrategy(2, calendar) : NUMBER_MONTH_STRATEGY;
                             }
                     }
@@ -533,7 +533,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class NumberStrategy extends Strategy {
         private final int field;
 
@@ -569,7 +569,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static abstract class Strategy {
         private Strategy() {
         }

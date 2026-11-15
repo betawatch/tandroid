@@ -4,7 +4,7 @@ import android.os.Looper;
 import android.view.SurfaceHolder;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public interface c1 {
     long A();
@@ -19,7 +19,7 @@ public interface c1 {
 
     void C0();
 
-    void D(e eVar, boolean z9);
+    void D(e eVar, boolean z10);
 
     boolean D0();
 
@@ -43,7 +43,7 @@ public interface c1 {
 
     void I0(a1 a1Var);
 
-    void J(int i7, boolean z9);
+    void J(int i7, boolean z10);
 
     void J0();
 
@@ -85,7 +85,7 @@ public interface c1 {
 
     v0 W();
 
-    void X(boolean z9);
+    void X(boolean z10);
 
     void Y(int i7);
 
@@ -139,7 +139,7 @@ public interface c1 {
 
     long l();
 
-    g2.d l0();
+    g2.c l0();
 
     int m();
 
@@ -163,7 +163,7 @@ public interface c1 {
 
     long r();
 
-    void r0(boolean z9);
+    void r0(boolean z10);
 
     void s(int i7, long j3);
 
@@ -187,7 +187,7 @@ public interface c1 {
 
     int w0();
 
-    void x(boolean z9);
+    void x(boolean z10);
 
     void x0(List list);
 

@@ -1,6 +1,6 @@
 package b3;
 
-import a8.ia;
+import a8.ja;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import android.os.Trace;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k extends Handler implements Runnable {
     public final int a;
@@ -32,20 +32,20 @@ public final class k extends Handler implements Runnable {
         this.c = j3;
     }
 
-    public final void a(boolean z9) {
-        this.r = z9;
+    public final void a(boolean z10) {
+        this.r = z10;
         this.e = null;
         if (hasMessages(1)) {
             this.n = true;
             removeMessages(1);
-            if (!z9) {
+            if (!z10) {
                 sendEmptyMessage(2);
             }
         } else {
             synchronized (this) {
                 try {
                     this.n = true;
-                    this.b.q0();
+                    this.b.D();
                     Thread thread = this.h;
                     if (thread != null) {
                         thread.interrupt();
@@ -55,12 +55,12 @@ public final class k extends Handler implements Runnable {
                 }
             }
         }
-        if (z9) {
+        if (z10) {
             this.s.b = null;
             long elapsedRealtime = SystemClock.elapsedRealtime();
             j jVar = this.d;
             jVar.getClass();
-            jVar.q0(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
+            jVar.m(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
             this.d = null;
         }
     }
@@ -70,7 +70,7 @@ public final class k extends Handler implements Runnable {
         long j3 = elapsedRealtime - this.c;
         j jVar = this.d;
         jVar.getClass();
-        jVar.M0(this.b, elapsedRealtime, j3, this.f);
+        jVar.r(this.b, elapsedRealtime, j3, this.f);
         this.e = null;
         o oVar = this.s;
         c3.a aVar = oVar.a;
@@ -98,13 +98,13 @@ public final class k extends Handler implements Runnable {
         j jVar = this.d;
         jVar.getClass();
         if (this.n) {
-            jVar.q0(this.b, elapsedRealtime, j3, false);
+            jVar.m(this.b, elapsedRealtime, j3, false);
             return;
         }
         int i10 = message.what;
         if (i10 == 2) {
             try {
-                jVar.o1(this.b, elapsedRealtime, j3);
+                jVar.w(this.b, elapsedRealtime, j3);
                 return;
             } catch (RuntimeException e10) {
                 h2.a.d("LoadTask", "Unexpected exception handling load completed", e10);
@@ -119,8 +119,8 @@ public final class k extends Handler implements Runnable {
         this.e = iOException;
         int i11 = this.f + 1;
         this.f = i11;
-        i o02 = jVar.o0(this.b, elapsedRealtime, j3, iOException, i11);
-        int i12 = o02.a;
+        i k10 = jVar.k(this.b, elapsedRealtime, j3, iOException, i11);
+        int i12 = k10.a;
         if (i12 == 3) {
             this.s.c = this.e;
             return;
@@ -129,12 +129,12 @@ public final class k extends Handler implements Runnable {
             if (i12 == 1) {
                 this.f = 1;
             }
-            long j10 = o02.b;
+            long j10 = k10.b;
             if (j10 == -9223372036854775807L) {
                 j10 = Math.min((this.f - 1) * 1000, 5000);
             }
             o oVar = this.s;
-            ia.p(oVar.b == null);
+            ja.p(oVar.b == null);
             oVar.b = this;
             if (j10 > 0) {
                 sendEmptyMessageDelayed(1, j10);
@@ -146,13 +146,13 @@ public final class k extends Handler implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean z9;
+        boolean z10;
         try {
             synchronized (this) {
-                z9 = this.n;
+                z10 = this.n;
                 this.h = Thread.currentThread();
             }
-            if (!z9) {
+            if (!z10) {
                 Trace.beginSection("load:".concat(this.b.getClass().getSimpleName()));
                 try {
                     this.b.a();

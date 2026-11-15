@@ -2,10 +2,10 @@ package d3;
 
 import android.media.MediaFormat;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements w {
-    @Override // d3.w
-    public final void b(long j3, long j10, e2.u uVar, MediaFormat mediaFormat) {
+public final /* synthetic */ class c implements v {
+    @Override // d3.v
+    public final void a(long j3, long j10, e2.u uVar, MediaFormat mediaFormat) {
     }
 }

@@ -1,9 +1,9 @@
 package te;
 
 import android.graphics.RectF;
-import c8.j9;
+import c8.i9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements Comparable {
     public final Object a;
@@ -14,24 +14,24 @@ public final class e implements Comparable {
     public final k f;
     public boolean h = false;
 
-    public e(int i7, Object obj, boolean z9) {
+    public e(int i7, Object obj, boolean z10) {
         this.a = obj;
         this.b = i7;
-        this.d = new k(z9 ? 1.0f : 0.0f);
+        this.d = new k(z10 ? 1.0f : 0.0f);
         this.c = new k(i7);
         this.e = new l();
         this.f = new k(0.0f);
         a(false);
     }
 
-    public final void a(boolean z9) {
-        this.c.c(z9);
-        this.d.c(z9);
-        this.e.c(z9);
-        this.f.c(z9);
+    public final void a(boolean z10) {
+        this.c.c(z10);
+        this.d.c(z10);
+        this.e.c(z10);
+        this.f.c(z10);
         Object obj = this.a;
         if (obj instanceof l) {
-            ((l) obj).c(z9);
+            ((l) obj).c(z10);
         }
     }
 
@@ -43,7 +43,7 @@ public final class e implements Comparable {
     }
 
     public final float c() {
-        return j9.a(this.d.a, 0.0f, 1.0f);
+        return i9.a(this.d.a, 0.0f, 1.0f);
     }
 
     @Override // java.lang.Comparable

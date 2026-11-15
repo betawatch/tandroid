@@ -15,7 +15,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
@@ -40,7 +40,7 @@ public abstract class g {
         }
     }
 
-    public static boolean c(Context context, String str, boolean z9) {
+    public static boolean c(Context context, String str, boolean z10) {
         Resources resources;
         if (context != null && (resources = context.getResources()) != null) {
             int e10 = e(context, str, "bool");
@@ -52,7 +52,7 @@ public abstract class g {
                 return Boolean.parseBoolean(context.getString(e11));
             }
         }
-        return z9;
+        return z10;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

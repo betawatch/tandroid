@@ -1,73 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class f11 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class f11 extends Drawable {
+    public Paint a;
+    public RectF b;
 
-    public /* synthetic */ f11(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        RectF rectF = this.b;
+        rectF.set(getBounds());
+        rectF.inset(org.telegram.messenger.g0.L(1.0f), (rectF.height() - org.telegram.messenger.g0.L(28.0f)) / 2.0f);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), this.a);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                di.b3 b3Var = ((h11) this.b).f;
-                b3Var.setScaleX(1.0f);
-                b3Var.setScaleY(1.0f);
-                b3Var.invalidate();
-                break;
-            case 1:
-                l11 l11Var = (l11) this.b;
-                l11Var.L = 1.0f;
-                l11Var.h.invalidate();
-                break;
-            case 2:
-                ((t31) this.b).L = null;
-                break;
-            case 3:
-                UndoView undoView = (UndoView) this.b;
-                undoView.setVisibility(4);
-                undoView.setScaleX(1.0f);
-                undoView.setScaleY(1.0f);
-                undoView.setAlpha(1.0f);
-                break;
-            case 4:
-                z41 z41Var = (z41) this.b;
-                if (z41Var.a.getTag() == null) {
-                    z41Var.a.setVisibility(4);
-                    break;
-                }
-                break;
-            case 5:
-                super.onAnimationEnd(animator);
-                a51 a51Var = (a51) this.b;
-                a51Var.b = 0.0f;
-                a51Var.setTranslationY(0.0f);
-                a51Var.a = null;
-                break;
-            case 6:
-                u61 u61Var = (u61) this.b;
-                u61Var.J = false;
-                u61Var.setEnabled(true);
-                t61 t61Var = u61Var.D;
-                if (t61Var != null) {
-                    ((m) t61Var).y(1.0f);
-                }
-                u61Var.invalidate();
-                break;
-            case 7:
-                ((l71) this.b).e0 = null;
-                break;
-            default:
-                ((r71) this.b).K = null;
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.a.setAlpha(i7);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

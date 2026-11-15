@@ -1,6 +1,6 @@
 package zd;
 
-import a8.la;
+import a8.ma;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.IdentityHashMap;
@@ -9,7 +9,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class n1 implements a1, r, r1 {
     public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(n1.class, Object.class, "_state$volatile");
@@ -17,8 +17,8 @@ public class n1 implements a1, r, r1 {
     private volatile /* synthetic */ Object _parentHandle$volatile;
     private volatile /* synthetic */ Object _state$volatile;
 
-    public n1(boolean z9) {
-        this._state$volatile = z9 ? b0.j : b0.i;
+    public n1(boolean z10) {
+        this._state$volatile = z10 ? b0.j : b0.i;
     }
 
     public static q F(ee.j jVar) {
@@ -116,7 +116,7 @@ public class n1 implements a1, r, r1 {
                     ((e1) jVar2).j(th2);
                 } catch (Throwable th3) {
                     if (jVar != null) {
-                        la.a(jVar, th3);
+                        ma.a(jVar, th3);
                     } else {
                         jVar = new androidx.car.app.j("Exception in completion handler " + jVar2 + " for " + this, th3);
                     }
@@ -174,9 +174,9 @@ public class n1 implements a1, r, r1 {
     }
 
     public final int L(Object obj) {
-        boolean z9 = obj instanceof n0;
+        boolean z10 = obj instanceof n0;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
-        if (z9) {
+        if (z10) {
             if (((n0) obj).a) {
                 return 0;
             }
@@ -288,9 +288,9 @@ public class n1 implements a1, r, r1 {
                 }
                 J(n0Var);
             } else {
-                boolean z9 = obj instanceof x0;
+                boolean z10 = obj instanceof x0;
                 p1 p1Var = p1.a;
-                if (!z9) {
+                if (!z10) {
                     Object obj2 = atomicReferenceFieldUpdater.get(this);
                     v vVar = obj2 instanceof v ? (v) obj2 : null;
                     qVar.j(vVar != null ? vVar.a : null);
@@ -336,7 +336,7 @@ public class n1 implements a1, r, r1 {
 
     @Override // id.h
     public final id.f get(id.g gVar) {
-        return c8.m0.a(this, gVar);
+        return c8.n0.a(this, gVar);
     }
 
     @Override // zd.a1
@@ -404,7 +404,7 @@ public class n1 implements a1, r, r1 {
                 return b0.w(obj);
             }
         } while (L(obj) < 0);
-        f1 f1Var = new f1(c8.u0.b(cVar), this);
+        f1 f1Var = new f1(c8.v0.b(cVar), this);
         f1Var.s();
         f1Var.v(new j(b0.n(this, true, new m0(f1Var, 3)), 2));
         Object r10 = f1Var.r();
@@ -440,7 +440,7 @@ public class n1 implements a1, r, r1 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean j(Object obj) {
-        com.google.android.gms.internal.clearcut.e eVar;
+        aa.b0 b0Var;
         Object obj2 = b0.d;
         if (u()) {
             do {
@@ -463,7 +463,7 @@ public class n1 implements a1, r, r1 {
                 Object obj4 = atomicReferenceFieldUpdater.get(this);
                 if (!(obj4 instanceof h1)) {
                     if (!(obj4 instanceof x0)) {
-                        eVar = b0.g;
+                        b0Var = b0.g;
                         break;
                     }
                     if (th2 == null) {
@@ -480,7 +480,7 @@ public class n1 implements a1, r, r1 {
                                 }
                             }
                             G(v, th2);
-                            eVar = b0.d;
+                            b0Var = b0.d;
                             break loop1;
                         }
                         continue;
@@ -497,7 +497,7 @@ public class n1 implements a1, r, r1 {
                 } else {
                     synchronized (obj4) {
                         if (h1.d.get((h1) obj4) == b0.h) {
-                            eVar = b0.g;
+                            b0Var = b0.g;
                         } else {
                             boolean d = ((h1) obj4).d();
                             if (th2 == null) {
@@ -508,12 +508,12 @@ public class n1 implements a1, r, r1 {
                             if (c10 != null) {
                                 G(((h1) obj4).a, c10);
                             }
-                            eVar = b0.d;
+                            b0Var = b0.d;
                         }
                     }
                 }
             }
-            obj2 = eVar;
+            obj2 = b0Var;
         }
         if (obj2 != b0.d && obj2 != b0.e) {
             if (obj2 == b0.g) {
@@ -531,14 +531,14 @@ public class n1 implements a1, r, r1 {
         gd.k kVar;
         do {
             obj = a.get(this);
-            boolean z9 = obj instanceof x0;
+            boolean z10 = obj instanceof x0;
             kVar = gd.k.a;
-            if (!z9) {
+            if (!z10) {
                 b0.g(cVar.getContext());
                 return kVar;
             }
         } while (L(obj) < 0);
-        m mVar = new m(1, c8.u0.b(cVar));
+        m mVar = new m(1, c8.v0.b(cVar));
         mVar.s();
         mVar.v(new j(b0.n(this, true, new o(mVar, 1)), 2));
         Object r10 = mVar.r();
@@ -557,9 +557,9 @@ public class n1 implements a1, r, r1 {
         if (B()) {
             return true;
         }
-        boolean z9 = th2 instanceof CancellationException;
+        boolean z10 = th2 instanceof CancellationException;
         p pVar = (p) b.get(this);
-        return (pVar == null || pVar == p1.a) ? z9 : pVar.a(th2) || z9;
+        return (pVar == null || pVar == p1.a) ? z10 : pVar.a(th2) || z10;
     }
 
     public String m() {
@@ -568,7 +568,7 @@ public class n1 implements a1, r, r1 {
 
     @Override // id.h
     public final id.h minusKey(id.g gVar) {
-        return c8.m0.b(this, gVar);
+        return c8.n0.b(this, gVar);
     }
 
     public boolean n(Throwable th2) {
@@ -608,7 +608,7 @@ public class n1 implements a1, r, r1 {
                         ((e1) jVar2).j(th2);
                     } catch (Throwable th4) {
                         if (jVar != null) {
-                            la.a(jVar, th4);
+                            ma.a(jVar, th4);
                         } else {
                             jVar = new androidx.car.app.j("Exception in completion handler " + jVar2 + " for " + this, th4);
                         }
@@ -647,7 +647,7 @@ public class n1 implements a1, r, r1 {
 
     @Override // id.h
     public final id.h plus(id.h hVar) {
-        return c8.m0.c(this, hVar);
+        return c8.n0.c(this, hVar);
     }
 
     public final Object q(h1 h1Var, Object obj) {
@@ -667,7 +667,7 @@ public class n1 implements a1, r, r1 {
                     i7++;
                     Throwable th3 = (Throwable) obj2;
                     if (th3 != s5 && th3 != s5 && !(th3 instanceof CancellationException) && newSetFromMap.add(th3)) {
-                        la.a(s5, th3);
+                        ma.a(s5, th3);
                     }
                 }
             }
@@ -812,21 +812,21 @@ public class n1 implements a1, r, r1 {
         }
     }
 
-    public final l0 z(boolean z9, e1 e1Var) {
+    public final l0 z(boolean z10, e1 e1Var) {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         p1 p1Var;
-        boolean z10;
+        boolean z11;
         boolean c10;
         e1Var.d = this;
         loop0: while (true) {
             atomicReferenceFieldUpdater = a;
             Object obj = atomicReferenceFieldUpdater.get(this);
-            boolean z11 = obj instanceof n0;
+            boolean z12 = obj instanceof n0;
             p1Var = p1.a;
-            z10 = true;
-            if (!z11) {
+            z11 = true;
+            if (!z12) {
                 if (!(obj instanceof x0)) {
-                    z10 = false;
+                    z11 = false;
                     break;
                 }
                 x0 x0Var = (x0) obj;
@@ -839,7 +839,7 @@ public class n1 implements a1, r, r1 {
                         Throwable c11 = h1Var != null ? h1Var.c() : null;
                         if (c11 == null) {
                             c10 = b10.c(e1Var, 5);
-                        } else if (z9) {
+                        } else if (z10) {
                             e1Var.j(c11);
                             return p1Var;
                         }
@@ -863,10 +863,10 @@ public class n1 implements a1, r, r1 {
                 J(n0Var);
             }
         }
-        if (z10) {
+        if (z11) {
             return e1Var;
         }
-        if (z9) {
+        if (z10) {
             Object obj2 = atomicReferenceFieldUpdater.get(this);
             v vVar = obj2 instanceof v ? (v) obj2 : null;
             e1Var.j(vVar != null ? vVar.a : null);
@@ -875,14 +875,14 @@ public class n1 implements a1, r, r1 {
     }
 
     @Override // zd.a1
-    public final l0 invokeOnCompletion(boolean z9, boolean z10, rd.l lVar) {
+    public final l0 invokeOnCompletion(boolean z10, boolean z11, rd.l lVar) {
         e1 m0Var;
-        if (z9) {
+        if (z10) {
             m0Var = new z0(lVar);
         } else {
             m0Var = new m0(lVar, 1);
         }
-        return z(z10, m0Var);
+        return z(z11, m0Var);
     }
 
     public void I() {

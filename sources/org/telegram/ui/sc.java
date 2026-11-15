@@ -1,48 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class sc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bd b;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ sc(bd bdVar, int i7) {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class sc implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ad b;
+
+    public /* synthetic */ sc(ad adVar, int i7) {
         this.a = i7;
-        this.b = bdVar;
+        this.b = adVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.m0(true);
+                org.telegram.messenger.g0.h3(new u5(15, this.b, tLObject));
                 break;
             case 1:
-                bd bdVar = this.b;
-                bdVar.k0 = true;
-                bdVar.n0();
+                org.telegram.messenger.g0.h3(new u5(13, this.b, tL_error));
                 break;
             case 2:
-                bd bdVar2 = this.b;
-                bdVar2.D = null;
-                bdVar2.E = null;
-                bdVar2.m0 = null;
-                bdVar2.n0 = null;
-                bdVar2.p0 = null;
-                bdVar2.o0 = null;
-                bdVar2.q0 = 0.0d;
-                bdVar2.k0(false, true);
-                bdVar2.f.j(null, null, bdVar2.w, null);
-                bdVar2.n.setAnimation(bdVar2.K);
-                bdVar2.K.M(0);
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    org.telegram.messenger.g0.h3(new rc(this.b, 3));
+                    break;
+                }
                 break;
             default:
-                bd bdVar3 = this.b;
-                bdVar3.k0 = true;
-                if (bdVar3.y.length() > 0) {
-                    bdVar3.j0(bdVar3.y.getText().toString());
-                }
-                bdVar3.n0();
+                org.telegram.messenger.g0.h3(new o1(this.b, tL_error, tLObject, 11));
                 break;
         }
     }

@@ -8,15 +8,15 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.er;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class k extends ViewGroup {
-    public final j D;
+    public final j E;
     public final FrameLayout a;
-    public final k2 b;
+    public final o2 b;
     public final int c;
     public final int d;
     public boolean e;
@@ -35,26 +35,26 @@ public final class k extends ViewGroup {
         this.d = org.telegram.messenger.g0.L(6.0f);
         this.h = true;
         this.y = new i(this, 0);
-        this.D = new j(this, 0);
+        this.E = new j(this, 0);
         FrameLayout frameLayout = new FrameLayout(context);
         this.a = frameLayout;
         frameLayout.setBackgroundColor(-14999773);
         frameLayout.setOutlineProvider(new fh.a(this, 6));
         frameLayout.setClipToOutline(true);
         frameLayout.setElevation(org.telegram.messenger.g0.L(2.0f));
-        k2 k2Var = new k2(context, false, true, false, false);
-        this.b = k2Var;
+        o2 o2Var = new o2(context, false, true, false, false);
+        this.b = o2Var;
         RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FILL;
-        j2 j2Var = k2Var.d;
-        j2Var.setScalingType(scalingType);
-        j2Var.setEnableHardwareScaler(true);
-        j2Var.setMirror(true);
-        k2Var.a0 = 0;
-        View view = k2Var.h;
+        n2 n2Var = o2Var.d;
+        n2Var.setScalingType(scalingType);
+        n2Var.setEnableHardwareScaler(true);
+        n2Var.setMirror(true);
+        o2Var.b0 = 0;
+        View view = o2Var.h;
         if (view != null) {
             view.setVisibility(8);
         }
-        frameLayout.addView(k2Var);
+        frameLayout.addView(o2Var);
         frameLayout.setAlpha(0.0f);
         frameLayout.setScaleX(0.6f);
         frameLayout.setScaleY(0.6f);
@@ -70,7 +70,7 @@ public final class k extends ViewGroup {
         this.b.d.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), null);
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
-            sharedInstance.addExtraLocalSink(this.D);
+            sharedInstance.addExtraLocalSink(this.E);
         }
         c();
     }
@@ -80,7 +80,7 @@ public final class k extends ViewGroup {
             this.e = false;
             VoIPService sharedInstance = VoIPService.getSharedInstance();
             if (sharedInstance != null) {
-                sharedInstance.removeExtraLocalSink(this.D);
+                sharedInstance.removeExtraLocalSink(this.E);
             }
             org.telegram.messenger.g0.r(this.y);
             this.x = false;
@@ -91,8 +91,8 @@ public final class k extends ViewGroup {
     public final void c() {
         if (this.e) {
             VoIPService sharedInstance = VoIPService.getSharedInstance();
-            boolean z9 = (sharedInstance == null || sharedInstance.getVideoState(false) != 2 || sharedInstance.isScreencast()) ? false : true;
-            boolean z10 = SystemClock.elapsedRealtime() - this.r < 1000;
+            boolean z10 = (sharedInstance == null || sharedInstance.getVideoState(false) != 2 || sharedInstance.isScreencast()) ? false : true;
+            boolean z11 = SystemClock.elapsedRealtime() - this.r < 1000;
             if (sharedInstance != null && this.h != sharedInstance.isFrontFaceCamera()) {
                 boolean isFrontFaceCamera = sharedInstance.isFrontFaceCamera();
                 this.h = isFrontFaceCamera;
@@ -105,24 +105,24 @@ public final class k extends ViewGroup {
                 this.n = f10;
                 requestLayout();
             }
-            boolean z11 = z9 && z10;
+            boolean z12 = z10 && z11;
             FrameLayout frameLayout = this.a;
-            if (this.f == z11) {
+            if (this.f == z12) {
                 return;
             }
-            this.f = z11;
+            this.f = z12;
             frameLayout.animate().cancel();
-            if (!z11) {
-                frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setDuration(180L).setInterpolator(wq.g).withEndAction(new i(this, 1)).start();
+            if (!z12) {
+                frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setDuration(180L).setInterpolator(er.g).withEndAction(new i(this, 1)).start();
             } else {
                 frameLayout.setVisibility(0);
-                frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(220L).setInterpolator(wq.h).withEndAction(null).start();
+                frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(220L).setInterpolator(er.h).withEndAction(null).start();
             }
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         int i13 = this.c;
         int i14 = (i11 - i7) - i13;
         FrameLayout frameLayout = this.a;

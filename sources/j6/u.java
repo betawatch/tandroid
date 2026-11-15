@@ -1,168 +1,26 @@
 package j6;
 
-import com.google.android.gms.internal.cast.y;
-import java.util.concurrent.atomic.AtomicReference;
-import q6.c0;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class u extends g {
-    public final AtomicReference b;
-    public final y c;
+public final class u implements com.google.android.gms.common.api.r {
+    public final Status a;
+    public final f6.d b;
+    public final String c;
+    public final String d;
+    public final boolean e;
 
-    public u(v vVar) {
-        this.b = new AtomicReference(vVar);
-        this.c = new y(vVar.i, 0);
+    public u(Status status, f6.d dVar, String str, String str2, boolean z10) {
+        this.a = status;
+        this.b = dVar;
+        this.c = str;
+        this.d = str2;
+        this.e = z10;
     }
 
-    @Override // j6.h
-    public final void K0(d dVar) {
-        v vVar = (v) this.b.get();
-        if (vVar == null) {
-            return;
-        }
-        v.Y.b("onDeviceStatusChanged", new Object[0]);
-        this.c.post(new m9.u(20, vVar, dVar));
-    }
-
-    @Override // j6.h
-    public final void N0(c cVar) {
-        v vVar = (v) this.b.get();
-        if (vVar == null) {
-            return;
-        }
-        v.Y.b("onApplicationStatusChanged", new Object[0]);
-        this.c.post(new m9.u(21, vVar, cVar));
-    }
-
-    @Override // j6.h
-    public final void R0(f6.d dVar, String str, String str2, boolean z9) {
-        v vVar = (v) this.b.get();
-        if (vVar == null) {
-            return;
-        }
-        vVar.F = dVar;
-        vVar.U = dVar.a;
-        vVar.V = str2;
-        vVar.M = str;
-        synchronized (v.Z) {
-        }
-    }
-
-    @Override // j6.h
-    public final void W(int i7) {
-        v vVar = null;
-        v vVar2 = (v) this.b.getAndSet(null);
-        if (vVar2 != null) {
-            vVar2.S = -1;
-            vVar2.T = -1;
-            vVar2.F = null;
-            vVar2.M = null;
-            vVar2.Q = 0.0d;
-            vVar2.D();
-            vVar2.N = false;
-            vVar2.R = null;
-            vVar = vVar2;
-        }
-        if (vVar == null) {
-            return;
-        }
-        v.Y.b("ICastDeviceControllerListener.onDisconnected: %d", Integer.valueOf(i7));
-        if (i7 != 0) {
-            int i10 = vVar.C.get();
-            c0 c0Var = vVar.k;
-            c0Var.sendMessage(c0Var.obtainMessage(6, i10, 2));
-        }
-    }
-
-    @Override // j6.h
-    public final void X0(String str, byte[] bArr) {
-        if (((v) this.b.get()) == null) {
-            return;
-        }
-        v.Y.b("IGNORING: Receive (type=binary, ns=%s) <%d bytes>", str, Integer.valueOf(bArr.length));
-    }
-
-    @Override // j6.h
-    public final void Z(String str, String str2) {
-        v vVar = (v) this.b.get();
-        if (vVar == null) {
-            return;
-        }
-        v.Y.b("Receive (type=text, ns=%s) %s", str, str2);
-        this.c.post(new a9.h(vVar, str, str2, 6));
-    }
-
-    @Override // j6.h
-    public final void c0(int i7) {
-        if (((v) this.b.get()) == null) {
-            return;
-        }
-        synchronized (v.Z) {
-        }
-    }
-
-    @Override // j6.h
-    public final void f0(long j3) {
-        v vVar = (v) this.b.get();
-        if (vVar == null) {
-            return;
-        }
-        v.B(vVar, j3, 0);
-    }
-
-    @Override // j6.h
-    public final void g(int i7) {
-        if (((v) this.b.get()) == null) {
-            return;
-        }
-        synchronized (v.a0) {
-        }
-    }
-
-    @Override // j6.h
-    public final void zzd(int i7) {
-        v vVar = (v) this.b.get();
-        if (vVar == null) {
-            return;
-        }
-        vVar.U = null;
-        vVar.V = null;
-        synchronized (v.a0) {
-        }
-        if (vVar.H != null) {
-            this.c.post(new androidx.emoji2.text.j(vVar, i7, 2));
-        }
-    }
-
-    @Override // j6.h
-    public final void zzg(int i7) {
-        if (((v) this.b.get()) == null) {
-            return;
-        }
-        synchronized (v.a0) {
-        }
-    }
-
-    @Override // j6.h
-    public final void zzm(int i7, long j3) {
-        v vVar = (v) this.b.get();
-        if (vVar == null) {
-            return;
-        }
-        v.B(vVar, j3, i7);
-    }
-
-    @Override // j6.h
-    public final void zzn() {
-        v.Y.b("Deprecated callback: \"onStatusreceived\"", new Object[0]);
-    }
-
-    @Override // j6.h
-    public final void O0(int i7) {
-    }
-
-    @Override // j6.h
-    public final void h(int i7) {
+    @Override // com.google.android.gms.common.api.r
+    public final Status a() {
+        return this.a;
     }
 }

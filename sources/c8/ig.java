@@ -3,21 +3,21 @@ package c8;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class ig implements k {
     public transient cd a;
-    public transient a8.kb b;
+    public transient a8.lb b;
 
     public final Map a() {
-        a8.kb kbVar = this.b;
-        if (kbVar != null) {
-            return kbVar;
+        a8.lb lbVar = this.b;
+        if (lbVar != null) {
+            return lbVar;
         }
         jg jgVar = (jg) this;
-        a8.kb kbVar2 = new a8.kb(jgVar, jgVar.c, 1);
-        this.b = kbVar2;
-        return kbVar2;
+        a8.lb lbVar2 = new a8.lb(jgVar, jgVar.c, 1);
+        this.b = lbVar2;
+        return lbVar2;
     }
 
     public final Set b() {
@@ -42,10 +42,10 @@ public abstract class ig implements k {
     }
 
     public final int hashCode() {
-        return ((a8.kb) a()).b.hashCode();
+        return ((a8.lb) a()).b.hashCode();
     }
 
     public final String toString() {
-        return ((a8.kb) a()).b.toString();
+        return ((a8.lb) a()).b.toString();
     }
 }

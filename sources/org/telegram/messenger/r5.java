@@ -3,13 +3,13 @@ package org.telegram.messenger;
 import android.util.SparseIntArray;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r5 {
     public static ArrayList j;
     public static r5 k;
     public static final ArrayList l = new ArrayList();
-    public static final androidx.emoji2.text.n m = new androidx.emoji2.text.n(4);
+    public static final androidx.emoji2.text.o m = new androidx.emoji2.text.o(4);
     public ArrayList a;
     public SparseIntArray b;
     public ArrayList c;
@@ -18,11 +18,11 @@ public final class r5 {
     public int f;
     public int g;
     public boolean h;
-    public m.f3 i;
+    public j6.o i;
 
     public static void a(Runnable runnable) {
         if (Thread.currentThread() != t0.d.getLooper().getThread()) {
-            boolean z9 = r2.a;
+            boolean z10 = r2.a;
             a8.g(new RuntimeException("wrong thread"), true);
             return;
         }
@@ -31,7 +31,7 @@ public final class r5 {
             if (arrayList.isEmpty()) {
                 j = new ArrayList(100);
             } else {
-                j = (ArrayList) org.telegram.ui.Cells.f1.k(1, arrayList);
+                j = (ArrayList) r.b.g(1, arrayList);
             }
             g0.h3(m);
         }

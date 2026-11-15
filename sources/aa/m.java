@@ -6,11 +6,11 @@ import j$.util.Objects;
 import j$.util.function.Predicate$-CC;
 import java.io.File;
 import java.util.function.Predicate;
-import org.telegram.messenger.ij;
+import org.telegram.messenger.gj;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m implements Predicate {
     public final /* synthetic */ int a;
@@ -46,15 +46,15 @@ public final /* synthetic */ class m implements Predicate {
                 ApplicationExitInfo applicationExitInfo = (ApplicationExitInfo) obj;
                 return (applicationExitInfo.getReason() == 3 && applicationExitInfo.getDescription() != null && applicationExitInfo.getDescription().contains("OOM")) || (applicationExitInfo.getReason() == 2 && applicationExitInfo.getStatus() == OsConstants.SIGKILL);
             case 3:
-                return ((File) obj).exists();
-            case 4:
-                return ((String) obj) != null;
-            case 5:
-                return !ij.c3(((ij) obj).k);
-            case 6:
-                return Objects.nonNull((TLObject) obj);
-            default:
                 return !((TL_stars.StarGift) obj).auction;
+            case 4:
+                return ((File) obj).exists();
+            case 5:
+                return ((String) obj) != null;
+            case 6:
+                return !gj.c3(((gj) obj).k);
+            default:
+                return Objects.nonNull((TLObject) obj);
         }
     }
 }

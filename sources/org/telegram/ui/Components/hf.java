@@ -1,25 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class hf extends hi.k0 {
-    public final /* synthetic */ ChatActivityEnterView D;
+public final class hf extends AnimatorListenerAdapter {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hf(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, h6Var);
-        this.D = chatActivityEnterView;
+    public hf(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        ChatActivityEnterView chatActivityEnterView = this.D;
-        if (chatActivityEnterView.V0 == null || chatActivityEnterView.o3 != 1) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        oi0 oi0Var = chatActivityEnterView.i1;
+        if (oi0Var != null && oi0Var.T0 != null) {
+            chatActivityEnterView.r5 = new od(3, this, animator);
             return;
         }
-        chatActivityEnterView.Z2.w(f10);
+        i61 i61Var = chatActivityEnterView.g1;
+        if (i61Var != null) {
+            i61Var.setVisibility(8);
+        }
+        oi0 oi0Var2 = chatActivityEnterView.i1;
+        if (oi0Var2 != null) {
+            oi0Var2.setVisibility(8);
+        }
+        chatActivityEnterView.X4 = 0.0f;
+        chatActivityEnterView.K0();
+        chatActivityEnterView.B0();
+        ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.v2;
+        if (recordCircle != null) {
+            recordCircle.g();
+        }
     }
 }

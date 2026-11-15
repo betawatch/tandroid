@@ -3,16 +3,10 @@ package org.telegram.ui.Components;
 import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class qy0 extends MetricAffectingSpan {
-    public final TextPaint a;
-    public final String b;
-
-    public qy0(TextPaint textPaint, String str) {
-        this.a = textPaint;
-        this.b = str;
-    }
+public final class qy0 extends MetricAffectingSpan {
+    public TextPaint a;
 
     @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {

@@ -10,17 +10,17 @@ import android.util.SparseArray;
 import c4.l;
 import c4.m;
 import h2.j;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h implements m {
     public static final byte[] n = {0, 7, 8, 15};
@@ -50,7 +50,7 @@ public final class h implements m {
         paint2.setPathEffect(null);
         this.c = new Canvas();
         this.d = new b(719, 575, 0, 719, 0, 575);
-        this.e = new a(0, new int[]{0, -1, -16777216, -8421505}, b(), d());
+        this.e = new a(0, new int[]{0, -1, -16777216, -8421505}, b(), c());
         this.f = new g(H, H2);
     }
 
@@ -67,37 +67,37 @@ public final class h implements m {
         iArr[0] = 0;
         for (int i7 = 1; i7 < 16; i7++) {
             if (i7 < 8) {
-                iArr[i7] = e(qs.e4, (i7 & 1) != 0 ? 255 : 0, (i7 & 2) != 0 ? 255 : 0, (i7 & 4) != 0 ? 255 : 0);
+                iArr[i7] = d(ns.e4, (i7 & 1) != 0 ? 255 : 0, (i7 & 2) != 0 ? 255 : 0, (i7 & 4) != 0 ? 255 : 0);
             } else {
                 int i10 = i7 & 1;
-                int i11 = qs.L1;
+                int i11 = ns.L1;
                 int i12 = i10 != 0 ? 127 : 0;
                 int i13 = (i7 & 2) != 0 ? 127 : 0;
                 if ((i7 & 4) == 0) {
                     i11 = 0;
                 }
-                iArr[i7] = e(qs.e4, i12, i13, i11);
+                iArr[i7] = d(ns.e4, i12, i13, i11);
             }
         }
         return iArr;
     }
 
-    public static int[] d() {
+    public static int[] c() {
         int i7;
         int[] iArr = new int[256];
         iArr[0] = 0;
         for (int i10 = 0; i10 < 256; i10++) {
-            int i11 = qs.e4;
+            int i11 = ns.e4;
             if (i10 < 8) {
                 int i12 = (i10 & 1) != 0 ? 255 : 0;
                 int i13 = (i10 & 2) != 0 ? 255 : 0;
                 if ((i10 & 4) == 0) {
                     i11 = 0;
                 }
-                iArr[i10] = e(63, i12, i13, i11);
+                iArr[i10] = d(63, i12, i13, i11);
             } else {
-                int i14 = i10 & qs.S1;
-                int i15 = qs.A2;
+                int i14 = i10 & ns.S1;
+                int i15 = ns.A2;
                 if (i14 == 0) {
                     int i16 = ((i10 & 1) != 0 ? 85 : 0) + ((i10 & 16) != 0 ? 170 : 0);
                     int i17 = ((i10 & 2) != 0 ? 85 : 0) + ((i10 & 32) != 0 ? 170 : 0);
@@ -105,7 +105,7 @@ public final class h implements m {
                     if ((i10 & 64) == 0) {
                         i15 = 0;
                     }
-                    iArr[i10] = e(qs.e4, i16, i17, i7 + i15);
+                    iArr[i10] = d(ns.e4, i16, i17, i7 + i15);
                 } else if (i14 == 8) {
                     int i18 = ((i10 & 1) != 0 ? 85 : 0) + ((i10 & 16) != 0 ? 170 : 0);
                     int i19 = ((i10 & 2) != 0 ? 85 : 0) + ((i10 & 32) != 0 ? 170 : 0);
@@ -113,18 +113,18 @@ public final class h implements m {
                     if ((i10 & 64) == 0) {
                         i15 = 0;
                     }
-                    iArr[i10] = e(qs.L1, i18, i19, i7 + i15);
+                    iArr[i10] = d(ns.L1, i18, i19, i7 + i15);
                 } else if (i14 == 128) {
-                    iArr[i10] = e(qs.e4, ((i10 & 1) != 0 ? 43 : 0) + qs.L1 + ((i10 & 16) != 0 ? 85 : 0), ((i10 & 2) != 0 ? 43 : 0) + qs.L1 + ((i10 & 32) != 0 ? 85 : 0), ((i10 & 4) == 0 ? 0 : 43) + qs.L1 + ((i10 & 64) == 0 ? 0 : 85));
+                    iArr[i10] = d(ns.e4, ((i10 & 1) != 0 ? 43 : 0) + ns.L1 + ((i10 & 16) != 0 ? 85 : 0), ((i10 & 2) != 0 ? 43 : 0) + ns.L1 + ((i10 & 32) != 0 ? 85 : 0), ((i10 & 4) == 0 ? 0 : 43) + ns.L1 + ((i10 & 64) == 0 ? 0 : 85));
                 } else if (i14 == 136) {
-                    iArr[i10] = e(qs.e4, ((i10 & 1) != 0 ? 43 : 0) + ((i10 & 16) != 0 ? 85 : 0), ((i10 & 2) != 0 ? 43 : 0) + ((i10 & 32) != 0 ? 85 : 0), ((i10 & 4) == 0 ? 0 : 43) + ((i10 & 64) == 0 ? 0 : 85));
+                    iArr[i10] = d(ns.e4, ((i10 & 1) != 0 ? 43 : 0) + ((i10 & 16) != 0 ? 85 : 0), ((i10 & 2) != 0 ? 43 : 0) + ((i10 & 32) != 0 ? 85 : 0), ((i10 & 4) == 0 ? 0 : 43) + ((i10 & 64) == 0 ? 0 : 85));
                 }
             }
         }
         return iArr;
     }
 
-    public static int e(int i7, int i10, int i11, int i12) {
+    public static int d(int i7, int i10, int i11, int i12) {
         return (i7 << 24) | (i10 << 16) | (i11 << 8) | i12;
     }
 
@@ -134,22 +134,22 @@ public final class h implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void f(byte[] bArr, int[] iArr, int i7, int i10, int i11, Paint paint, Canvas canvas) {
+    public static void e(byte[] bArr, int[] iArr, int i7, int i10, int i11, Paint paint, Canvas canvas) {
         char c10;
         char c11;
-        boolean z9;
+        boolean z10;
         int i12;
         int i13;
         int i14;
         byte[] bArr2;
-        boolean z10;
+        boolean z11;
         int i15;
         int j3;
         int i16;
         int i17;
         int i18;
         int i19;
-        boolean z11;
+        boolean z12;
         int j10;
         int i20;
         Paint paint2 = paint;
@@ -169,21 +169,21 @@ public final class h implements m {
                 switch (j11) {
                     case 16:
                         byte[] bArr6 = i7 == 3 ? bArr3 == null ? r : bArr3 : i7 == 2 ? bArr5 == null ? n : bArr5 : null;
-                        boolean z12 = false;
+                        boolean z13 = false;
                         while (true) {
                             int j12 = fVar.j(2);
                             if (j12 != 0) {
-                                z9 = z12;
+                                z10 = z13;
                                 i12 = j12;
                                 i13 = 1;
                             } else if (fVar.i()) {
                                 int j13 = fVar.j(3) + 3;
-                                z9 = z12;
+                                z10 = z13;
                                 i12 = fVar.j(2);
                                 i13 = j13;
                             } else {
                                 if (fVar.i()) {
-                                    z9 = z12;
+                                    z10 = z13;
                                     i13 = 1;
                                     c10 = '\b';
                                     c11 = 4;
@@ -192,33 +192,33 @@ public final class h implements m {
                                     if (j14 == 0) {
                                         c10 = '\b';
                                         c11 = 4;
-                                        z9 = true;
+                                        z10 = true;
                                     } else if (j14 == 1) {
                                         c10 = '\b';
                                         c11 = 4;
-                                        z9 = z12;
+                                        z10 = z13;
                                         i13 = 2;
                                     } else if (j14 == 2) {
                                         c10 = '\b';
                                         c11 = 4;
                                         i13 = fVar.j(4) + 12;
                                         i12 = fVar.j(2);
-                                        z9 = z12;
+                                        z10 = z13;
                                         if (i13 != 0) {
                                         }
                                         i14 = i21;
                                         i21 = i14 + i13;
-                                        if (z9) {
+                                        if (z10) {
                                         }
                                     } else if (j14 != 3) {
-                                        z9 = z12;
+                                        z10 = z13;
                                         c10 = '\b';
                                         c11 = 4;
                                     } else {
                                         c10 = '\b';
                                         int j15 = fVar.j(8) + 29;
                                         i12 = fVar.j(2);
-                                        z9 = z12;
+                                        z10 = z13;
                                         i13 = j15;
                                         c11 = 4;
                                         if (i13 != 0 || paint2 == null) {
@@ -232,12 +232,12 @@ public final class h implements m {
                                             canvas.drawRect(i21, i22, i21 + i13, i22 + 1, paint2);
                                         }
                                         i21 = i14 + i13;
-                                        if (z9) {
+                                        if (z10) {
                                             fVar.c();
                                             break;
                                         } else {
                                             paint2 = paint;
-                                            z12 = z9;
+                                            z13 = z10;
                                         }
                                     }
                                     i12 = 0;
@@ -246,7 +246,7 @@ public final class h implements m {
                                     }
                                     i14 = i21;
                                     i21 = i14 + i13;
-                                    if (z9) {
+                                    if (z10) {
                                     }
                                 }
                                 i12 = 0;
@@ -254,7 +254,7 @@ public final class h implements m {
                                 }
                                 i14 = i21;
                                 i21 = i14 + i13;
-                                if (z9) {
+                                if (z10) {
                                 }
                             }
                             c10 = '\b';
@@ -263,7 +263,7 @@ public final class h implements m {
                             }
                             i14 = i21;
                             i21 = i14 + i13;
-                            if (z9) {
+                            if (z10) {
                             }
                         }
                     case 17:
@@ -272,25 +272,25 @@ public final class h implements m {
                         } else {
                             bArr2 = null;
                         }
-                        boolean z13 = false;
+                        boolean z14 = false;
                         while (true) {
                             int j16 = fVar.j(i26);
                             if (j16 != 0) {
-                                z10 = z13;
+                                z11 = z14;
                                 i16 = j16;
                                 i15 = 1;
                             } else if (fVar.i()) {
                                 if (fVar.i()) {
                                     int j17 = fVar.j(i25);
                                     if (j17 == 0) {
-                                        z10 = z13;
+                                        z11 = z14;
                                         i15 = 1;
                                     } else if (j17 != 1) {
                                         if (j17 == i25) {
                                             i15 = fVar.j(i26) + 9;
                                             j3 = fVar.j(i26);
                                         } else if (j17 != i24) {
-                                            z10 = z13;
+                                            z11 = z14;
                                             i15 = 0;
                                         } else {
                                             i15 = fVar.j(i23) + 25;
@@ -298,7 +298,7 @@ public final class h implements m {
                                         }
                                         i16 = j3;
                                     } else {
-                                        z10 = z13;
+                                        z11 = z14;
                                         i15 = i25;
                                     }
                                     i16 = 0;
@@ -306,15 +306,15 @@ public final class h implements m {
                                     i15 = fVar.j(i25) + 4;
                                     i16 = fVar.j(i26);
                                 }
-                                z10 = z13;
+                                z11 = z14;
                             } else {
                                 int j18 = fVar.j(i24);
                                 if (j18 != 0) {
                                     i15 = j18 + 2;
-                                    z10 = z13;
+                                    z11 = z14;
                                     i16 = 0;
                                 } else {
-                                    z10 = true;
+                                    z11 = true;
                                     i15 = 0;
                                     i16 = 0;
                                 }
@@ -334,11 +334,11 @@ public final class h implements m {
                                 canvas.drawRect(i21, i22, i21 + i15, i22 + 1, paint2);
                             }
                             i21 = i17 + i15;
-                            if (z10) {
+                            if (z11) {
                                 fVar.c();
                                 break;
                             } else {
-                                z13 = z10;
+                                z14 = z11;
                                 i24 = i18;
                                 i25 = i19;
                                 i26 = 4;
@@ -346,24 +346,24 @@ public final class h implements m {
                             }
                         }
                     case 18:
-                        boolean z14 = false;
+                        boolean z15 = false;
                         while (true) {
                             int j19 = fVar.j(8);
                             if (j19 != 0) {
-                                z11 = z14;
+                                z12 = z15;
                                 j10 = 1;
                             } else if (fVar.i()) {
-                                z11 = z14;
+                                z12 = z15;
                                 j10 = fVar.j(7);
                                 j19 = fVar.j(8);
                             } else {
                                 int j20 = fVar.j(7);
                                 if (j20 != 0) {
-                                    z11 = z14;
+                                    z12 = z15;
                                     j10 = j20;
                                     j19 = 0;
                                 } else {
-                                    z11 = true;
+                                    z12 = true;
                                     j19 = 0;
                                     j10 = 0;
                                 }
@@ -376,10 +376,10 @@ public final class h implements m {
                                 canvas.drawRect(i21, i22, i21 + j10, i22 + 1, paint2);
                             }
                             i21 = i20 + j10;
-                            if (z11) {
+                            if (z12) {
                                 break;
                             } else {
-                                z14 = z11;
+                                z15 = z12;
                             }
                         }
                         break;
@@ -404,7 +404,7 @@ public final class h implements m {
         }
     }
 
-    public static a g(d4.f fVar, int i7) {
+    public static a f(d4.f fVar, int i7) {
         int j3;
         int i10;
         int j10;
@@ -418,11 +418,11 @@ public final class h implements m {
         int i16 = 0;
         int[] iArr = {0, -1, -16777216, -8421505};
         int[] b10 = b();
-        int[] d = d();
+        int[] c10 = c();
         while (i15 > 0) {
             int j12 = fVar.j(i13);
             int j13 = fVar.j(i13);
-            int[] iArr2 = (j13 & 128) != 0 ? iArr : (j13 & 64) != 0 ? b10 : d;
+            int[] iArr2 = (j13 & 128) != 0 ? iArr : (j13 & 64) != 0 ? b10 : c10;
             if ((j13 & 1) != 0) {
                 i11 = fVar.j(i13);
                 i12 = fVar.j(i13);
@@ -443,28 +443,28 @@ public final class h implements m {
                 j3 = i12;
                 j10 = 255;
             }
-            double d2 = i11;
-            double d10 = i12 - 128;
-            double d11 = j3 - 128;
-            iArr2[j12] = e((byte) (255 - (j10 & qs.e4)), m0.i((int) ((1.402d * d10) + d2), 0, qs.e4), m0.i((int) ((d2 - (0.34414d * d11)) - (d10 * 0.71414d)), 0, qs.e4), m0.i((int) ((d11 * 1.772d) + d2), 0, qs.e4));
+            double d = i11;
+            double d2 = i12 - 128;
+            double d10 = j3 - 128;
+            iArr2[j12] = d((byte) (255 - (j10 & ns.e4)), l0.i((int) ((1.402d * d2) + d), 0, ns.e4), l0.i((int) ((d - (0.34414d * d10)) - (d2 * 0.71414d)), 0, ns.e4), l0.i((int) ((d10 * 1.772d) + d), 0, ns.e4));
             i15 = i10;
             i16 = 0;
             j11 = j11;
-            d = d;
+            c10 = c10;
             i13 = 8;
             i14 = 2;
         }
-        return new a(j11, iArr, b10, d);
+        return new a(j11, iArr, b10, c10);
     }
 
-    public static c h(d4.f fVar) {
+    public static c g(d4.f fVar) {
         byte[] bArr;
         int j3 = fVar.j(16);
         fVar.L(4);
         int j10 = fVar.j(2);
         boolean i7 = fVar.i();
         fVar.L(1);
-        byte[] bArr2 = m0.b;
+        byte[] bArr2 = l0.b;
         if (j10 == 1) {
             fVar.L(fVar.j(8) * 16);
         } else if (j10 == 0) {
@@ -485,31 +485,9 @@ public final class h implements m {
     }
 
     @Override // c4.m
-    public final int P() {
-        return 2;
-    }
-
-    @Override // c4.m
-    public final /* synthetic */ c4.d c(int i7, int i10, byte[] bArr) {
-        return p0.a(this, bArr, i10);
-    }
-
-    @Override // c4.m
-    public final void reset() {
-        g gVar = this.f;
-        gVar.c.clear();
-        gVar.d.clear();
-        gVar.e.clear();
-        gVar.f.clear();
-        gVar.g.clear();
-        gVar.h = null;
-        gVar.i = null;
-    }
-
-    @Override // c4.m
-    public final void z(byte[] bArr, int i7, int i10, l lVar, j jVar) {
+    public final void K(byte[] bArr, int i7, int i10, l lVar, j jVar) {
         g gVar;
-        boolean z9;
+        boolean z10;
         c4.a aVar;
         char c10;
         char c11;
@@ -534,7 +512,7 @@ public final class h implements m {
         while (true) {
             int b10 = fVar.b();
             gVar = this.f;
-            z9 = true;
+            z10 = true;
             if (b10 >= 48 && fVar.j(8) == 15) {
                 int j3 = fVar.j(8);
                 int j10 = fVar.j(16);
@@ -623,23 +601,23 @@ public final class h implements m {
                             break;
                         case 18:
                             if (j10 == gVar.a) {
-                                a g10 = g(fVar, j11);
-                                gVar.d.put(g10.a, g10);
+                                a f10 = f(fVar, j11);
+                                gVar.d.put(f10.a, f10);
                                 break;
                             } else if (j10 == gVar.b) {
-                                a g11 = g(fVar, j11);
-                                gVar.f.put(g11.a, g11);
+                                a f11 = f(fVar, j11);
+                                gVar.f.put(f11.a, f11);
                                 break;
                             }
                             break;
                         case 19:
                             if (j10 == gVar.a) {
-                                c h = h(fVar);
-                                gVar.e.put(h.a, h);
+                                c g10 = g(fVar);
+                                gVar.e.put(g10.a, g10);
                                 break;
                             } else if (j10 == gVar.b) {
-                                c h7 = h(fVar);
-                                gVar.g.put(h7.a, h7);
+                                c g11 = g(fVar);
+                                gVar.g.put(g11.a, g11);
                                 break;
                             }
                             break;
@@ -674,7 +652,7 @@ public final class h implements m {
         cc.c cVar4 = gVar.i;
         if (cVar4 == null) {
             g0 g0Var = i0.b;
-            aVar = new c4.a(-9223372036854775807L, -9223372036854775807L, t1.e);
+            aVar = new c4.a(-9223372036854775807L, -9223372036854775807L, s1.e);
         } else {
             b bVar2 = gVar.h;
             if (bVar2 == null) {
@@ -699,7 +677,7 @@ public final class h implements m {
                 int i30 = eVar4.c;
                 int i31 = eVar4.f;
                 int i32 = eVar4.d;
-                boolean z10 = z9;
+                boolean z11 = z10;
                 int i33 = i28 + i30;
                 int i34 = i29 + i32;
                 SparseArray sparseArray6 = sparseArray5;
@@ -740,8 +718,8 @@ public final class h implements m {
                         eVar = eVar5;
                         i15 = i36;
                         i16 = i42;
-                        f(cVar6.c, iArr, i39, i40, i41, paint2, canvas);
-                        f(cVar6.d, iArr, i39, i40, i41 + 1, paint2, canvas);
+                        e(cVar6.c, iArr, i39, i40, i41, paint2, canvas);
+                        e(cVar6.d, iArr, i39, i40, i41 + 1, paint2, canvas);
                     } else {
                         arrayList = arrayList2;
                         i12 = i37;
@@ -791,13 +769,13 @@ public final class h implements m {
                     c11 = 3;
                 }
                 Bitmap createBitmap2 = Bitmap.createBitmap(this.h, i44, i43, i45, i46);
-                float f10 = bVar3.a;
-                float f11 = bVar3.b;
-                arrayList3.add(new g2.b(null, null, null, createBitmap2, i43 / f11, 0, 0, i44 / f10, 0, TLObject.FLAG_31, -3.4028235E38f, i45 / f10, i46 / f11, false, -16777216, TLObject.FLAG_31, 0.0f, 0));
+                float f12 = bVar3.a;
+                float f13 = bVar3.b;
+                arrayList3.add(new g2.b(null, null, null, createBitmap2, i43 / f13, 0, 0, i44 / f12, 0, TLObject.FLAG_31, -3.4028235E38f, i45 / f12, i46 / f13, false, -16777216, TLObject.FLAG_31, 0.0f, 0));
                 canvas.drawColor(0, PorterDuff.Mode.CLEAR);
                 canvas.restore();
                 i27 = i35 + 1;
-                z9 = z10;
+                z10 = z11;
                 bVar2 = bVar3;
                 arrayList2 = arrayList3;
                 gVar = gVar3;
@@ -806,5 +784,27 @@ public final class h implements m {
             aVar = new c4.a(-9223372036854775807L, -9223372036854775807L, arrayList2);
         }
         jVar.accept(aVar);
+    }
+
+    @Override // c4.m
+    public final int Q() {
+        return 2;
+    }
+
+    @Override // c4.m
+    public final void reset() {
+        g gVar = this.f;
+        gVar.c.clear();
+        gVar.d.clear();
+        gVar.e.clear();
+        gVar.f.clear();
+        gVar.g.clear();
+        gVar.h = null;
+        gVar.i = null;
+    }
+
+    @Override // c4.m
+    public final /* synthetic */ c4.d x(int i7, int i10, byte[] bArr) {
+        return p0.a(this, bArr, i10);
     }
 }

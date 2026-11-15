@@ -1,20 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.webkit.JavascriptInterface;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ut {
-    public final /* synthetic */ vt a;
+public final /* synthetic */ class ut implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public ut(vt vtVar) {
-        this.a = vtVar;
+    public /* synthetic */ ut(int i7, View view) {
+        this.a = i7;
+        this.b = view;
     }
 
-    @JavascriptInterface
-    public void postEvent(String str, String str2) {
-        if ("loaded".equals(str)) {
-            org.telegram.messenger.g0.h3(new gp(this, 10));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.callOnClick();
+                break;
+            default:
+                this.b.invalidate();
+                break;
         }
     }
 }

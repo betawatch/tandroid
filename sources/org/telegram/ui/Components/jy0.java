@@ -1,47 +1,108 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jy0 implements org.telegram.ui.ActionBar.r1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ly0 b;
+public final class jy0 implements zi.s0, org.telegram.messenger.is {
+    public final int a;
+    public final boolean b;
+    public final HashMap c = new HashMap();
+    public boolean d;
 
-    public /* synthetic */ jy0(ly0 ly0Var, int i7) {
+    public jy0(int i7, boolean z10) {
         this.a = i7;
-        this.b = ly0Var;
+        this.b = z10;
+        org.telegram.messenger.ns.f(i7).b(this, org.telegram.messenger.ns.U1);
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        int i10 = this.a;
-        ly0 ly0Var = this.b;
-        switch (i10) {
-            case 0:
-                ly0Var.a();
-                break;
-            case 1:
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ly0Var.getContext());
-                String M0 = org.telegram.messenger.id.M0(2131743976, null);
-                org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
-                u1Var2.T = M0;
-                u1Var2.R = org.telegram.messenger.id.M0(R.string.AppName, null);
-                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751652, null), new jy0(ly0Var, 2));
-                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-                alertDialog$Builder.p();
-                break;
-            default:
-                org.telegram.ui.ActionBar.u1 u1Var3 = new org.telegram.ui.ActionBar.u1(3, ly0Var.getContext(), null);
-                u1Var3.i0 = false;
-                TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
-                deleteaccount.reason = "Decline ToS update";
-                ConnectionsManager.getInstance(ly0Var.d).sendRequest(deleteaccount, new org.telegram.ui.ld(22, ly0Var, u1Var3));
-                u1Var3.show();
-                break;
+    public final synchronized void a(long j3, File file, long j10, long j11) {
+        hy0 hy0Var = (hy0) this.c.get(Long.valueOf(j3));
+        if (!this.d && hy0Var != null && !hy0Var.e) {
+            e(hy0Var);
+            hy0Var.b = Math.max(hy0Var.b, j10 + j11);
+            org.telegram.messenger.w7.G(this.a).n(file.getAbsolutePath(), this.b, hy0Var.b, 0L, null);
         }
+    }
+
+    public final synchronized void b(long j3, long j10, File file) {
+        hy0 hy0Var = (hy0) this.c.get(Long.valueOf(j3));
+        if (!this.d && hy0Var != null && !hy0Var.e) {
+            e(hy0Var);
+            hy0Var.b = Math.max(hy0Var.b, j10);
+            hy0Var.c = j10;
+            org.telegram.messenger.w7.G(this.a).n(file.getAbsolutePath(), this.b, hy0Var.b, j10, null);
+        }
+    }
+
+    public final synchronized void c(long j3) {
+        hy0 hy0Var = (hy0) this.c.remove(Long.valueOf(j3));
+        if (hy0Var == null) {
+            return;
+        }
+        hy0Var.e = true;
+        if (hy0Var.d) {
+            org.telegram.messenger.w7.G(this.a).b(hy0Var.a.getAbsolutePath(), this.b);
+        }
+    }
+
+    public final synchronized void d(boolean z10) {
+        try {
+            if (this.d) {
+                return;
+            }
+            this.d = true;
+            org.telegram.messenger.ns.f(this.a).n(this, org.telegram.messenger.ns.U1);
+            if (z10) {
+                Iterator it = this.c.values().iterator();
+                while (it.hasNext()) {
+                    hy0 hy0Var = (hy0) it.next();
+                    if (hy0Var.d && !hy0Var.e) {
+                        org.telegram.messenger.w7.G(this.a).b(hy0Var.a.getAbsolutePath(), this.b);
+                    }
+                    it.remove();
+                }
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0039, code lost:
+    
+        r0.f = (org.telegram.tgnet.TLRPC.InputFile) r6[1];
+        r0.g = (org.telegram.tgnet.TLRPC.InputEncryptedFile) r6[2];
+        r0.h = (byte[]) r6[3];
+        r0.i = (byte[]) r6[4];
+        r0.c = java.lang.Math.max(r0.c, ((java.lang.Long) r6[5]).longValue());
+     */
+    @Override // org.telegram.messenger.is
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final synchronized void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (!this.d && i7 == org.telegram.messenger.ns.U1 && objArr.length >= 6) {
+            String str = (String) objArr[0];
+            Iterator it = this.c.values().iterator();
+            while (true) {
+                if (!it.hasNext()) {
+                    break;
+                }
+                hy0 hy0Var = (hy0) it.next();
+                if (!hy0Var.e && hy0Var.a.getAbsolutePath().equals(str)) {
+                    break;
+                }
+            }
+        }
+    }
+
+    public final void e(hy0 hy0Var) {
+        if (hy0Var.d) {
+            return;
+        }
+        hy0Var.d = true;
+        org.telegram.messenger.w7.G(this.a).g0(hy0Var.a.getAbsolutePath(), this.b, false, 1L, 33554432, false);
     }
 }

@@ -3,14 +3,13 @@ package p2;
 import android.net.Uri;
 import e2.e0;
 import e2.f1;
-import h2.m0;
+import h2.l0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import org.telegram.messenger.m6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c implements w2.a {
     public final long a;
@@ -21,23 +20,23 @@ public final class c implements w2.a {
     public final long f;
     public final long g;
     public final long h;
-    public final m6 i;
+    public final f5.a i;
     public final e0 j;
     public final Uri k;
     public final i l;
     public final List m;
 
-    public c(long j3, long j10, long j11, boolean z9, long j12, long j13, long j14, long j15, i iVar, m6 m6Var, e0 e0Var, Uri uri, ArrayList arrayList) {
+    public c(long j3, long j10, long j11, boolean z10, long j12, long j13, long j14, long j15, i iVar, f5.a aVar, e0 e0Var, Uri uri, ArrayList arrayList) {
         this.a = j3;
         this.b = j10;
         this.c = j11;
-        this.d = z9;
+        this.d = z10;
         this.e = j12;
         this.f = j13;
         this.g = j14;
         this.h = j15;
         this.l = iVar;
-        this.i = m6Var;
+        this.i = aVar;
         this.k = uri;
         this.j = e0Var;
         this.m = arrayList;
@@ -119,6 +118,6 @@ public final class c implements w2.a {
     }
 
     public final long d(int i7) {
-        return m0.S(c(i7));
+        return l0.S(c(i7));
     }
 }

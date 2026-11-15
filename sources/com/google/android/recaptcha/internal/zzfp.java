@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import a8.ab;
+import a8.bb;
 import android.app.Application;
 import android.net.ConnectivityManager;
 import android.net.Network;
@@ -10,7 +10,7 @@ import gd.c;
 import kotlin.jvm.internal.j;
 import zd.x1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzfp {
     private final String zza;
@@ -26,14 +26,14 @@ public final class zzfp {
     public zzfp(String str) {
         this.zza = str;
         int i7 = zzby.zza;
-        this.zzb = ab.b(zzff.zza);
-        this.zzc = ab.b(zzfg.zza);
-        this.zzd = ab.b(zzfh.zza);
-        this.zze = ab.b(zzfi.zza);
-        this.zzf = ab.b(zzfj.zza);
-        this.zzg = ab.b(zzfk.zza);
-        this.zzh = ab.b(zzfl.zza);
-        this.zzi = ab.b(zzfm.zza);
+        this.zzb = bb.b(zzff.zza);
+        this.zzc = bb.b(zzfg.zza);
+        this.zzd = bb.b(zzfh.zza);
+        this.zze = bb.b(zzfi.zza);
+        this.zzf = bb.b(zzfj.zza);
+        this.zzg = bb.b(zzfk.zza);
+        this.zzh = bb.b(zzfl.zza);
+        this.zzi = bb.b(zzfm.zza);
     }
 
     public static final /* synthetic */ zzq zzb(zzfp zzfpVar) {
@@ -100,7 +100,7 @@ public final class zzfp {
         try {
             zzxg zzj = zzxg.zzj(zzdb.zza(str));
             int i7 = zzby.zza;
-            ((zziq) ab.b(zzeu.zza).getValue()).zza(zzj);
+            ((zziq) bb.b(zzeu.zza).getValue()).zza(zzj);
         } catch (Exception e10) {
             throw new zzcg(zzce.zzl, zzcd.zzan, e10.getMessage(), null, 8, null);
         }

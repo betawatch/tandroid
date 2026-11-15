@@ -2,149 +2,237 @@ package org.telegram.messenger;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.Rect;
 import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.style.ReplacementSpan;
+import android.text.StaticLayout;
+import android.text.TextUtils;
+import android.text.style.CharacterStyle;
+import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class iu extends ReplacementSpan {
-    public final gu a;
-    public final TL_iv.textButton b;
-    public final RectF c = new RectF();
-    public float d;
-    public boolean e;
-    public int f;
-    public View h;
+public final class iu extends cu {
+    public final TL_iv.pageBlockDetails X;
+    public final hv Y;
+    public final hv[] Z;
+    public final AnimatedArrowDrawable a0;
+    public final Paint b0;
+    public org.telegram.ui.Components.dc c0;
+    public boolean d0;
+    public float e0;
+    public float f0;
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x004d  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public iu(kv kvVar, int i7, TL_iv.textButton textbutton, Boolean bool) {
-        boolean z9;
-        boolean z10;
-        this.b = textbutton;
-        TL_iv.RichText richText = textbutton.text;
-        if (richText instanceof TL_iv.textConcat) {
-            TL_iv.textConcat textconcat = (TL_iv.textConcat) richText;
-            if (!textconcat.texts.isEmpty()) {
-                boolean z11 = textconcat.texts.get(0) instanceof TL_iv.textCustomEmoji;
-                z10 = jg.g.i(1, textconcat.texts) instanceof TL_iv.textCustomEmoji;
-                z9 = z11;
-                TL_keyboard.RichButtonStyle richButtonStyle = textbutton.style;
-                boolean z12 = richButtonStyle == null && richButtonStyle.link;
-                SpannableStringBuilder l10 = kvVar.l(textbutton.text, !z12 ? kv.R(512, 0) : kv.R(16, 13));
-                TL_keyboard.InlineButtonType inlineButtonType = textbutton.type;
-                gu guVar = new gu(kvVar, i7, l10, null, inlineButtonType, textbutton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, z9, z10, z12, true, bool, new ds(this, 6));
-                this.a = guVar;
-                guVar.e = guVar.h();
-            }
-        }
-        z9 = false;
-        z10 = false;
-        TL_keyboard.RichButtonStyle richButtonStyle2 = textbutton.style;
-        if (richButtonStyle2 == null) {
-        }
-        SpannableStringBuilder l102 = kvVar.l(textbutton.text, !z12 ? kv.R(512, 0) : kv.R(16, 13));
-        TL_keyboard.InlineButtonType inlineButtonType2 = textbutton.type;
-        gu guVar2 = new gu(kvVar, i7, l102, null, inlineButtonType2, textbutton.style, inlineButtonType2 instanceof TL_keyboard.TL_inlineButtonTypeDisabled, z9, z10, z12, true, bool, new ds(this, 6));
-        this.a = guVar2;
-        guVar2.e = guVar2.h();
+    public iu(iv ivVar, Rect rect, int i7, TL_iv.pageBlockDetails pageblockdetails, SpannableStringBuilder spannableStringBuilder) {
+        super(ivVar, rect, i7);
+        this.b0 = new Paint(1);
+        this.X = pageblockdetails;
+        hv hvVar = new hv(ivVar, spannableStringBuilder, i5.c.d(16.0f, this.c - g0.L(53.0f), 0));
+        this.Y = hvVar;
+        this.Z = new hv[]{hvVar};
+        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.j6.w0(ivVar.E() ? org.telegram.ui.ActionBar.j6.vl : org.telegram.ui.ActionBar.j6.ul, ivVar.D));
+        this.a0 = animatedArrowDrawable;
+        animatedArrowDrawable.setAnimationProgress(pageblockdetails.open ? 0.0f : 1.0f);
     }
 
-    public final void a(View view) {
-        this.h = view;
-        this.a.a.i(view);
+    @Override // org.telegram.messenger.cu
+    public final void A(int i7, Rect rect) {
+        int i10 = (int) this.N;
+        Rect rect2 = this.b;
+        int i11 = i10 + rect2.top;
+        int i12 = rect2.left;
+        iv ivVar = this.a;
+        rect.set(i12 - ivVar.S, i11, (ivVar.C + ivVar.T) - rect2.right, i0() + i11);
     }
 
-    public final void b(View view) {
-        this.h = null;
-        this.a.a.f(view);
+    @Override // org.telegram.messenger.cu
+    public final int B() {
+        return 1;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        float f11;
-        gu guVar = this.a;
-        int i14 = guVar.a.s;
-        int i15 = (i14 <= 0 || this.f <= 0) ? 0 : 1;
-        if (i15 == 0 && i14 > 0 && (charSequence instanceof Spanned)) {
-            gv[] gvVarArr = (gv[]) ((Spanned) charSequence).getSpans(i7, i10, gv.class);
-            int length = gvVarArr.length;
-            int i16 = 0;
-            while (true) {
-                if (i16 >= length) {
-                    break;
-                }
-                if ((gvVarArr[i16].b & 15) == 14) {
-                    i15 = 1;
-                    break;
-                }
-                i16++;
-            }
+    @Override // org.telegram.messenger.cu
+    public final CharSequence D() {
+        return hd.M0(this.X.open ? 2131754882 : 2131754892, null);
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final CharSequence E(int i7) {
+        StaticLayout staticLayout;
+        hv hvVar = this.Y;
+        CharSequence h02 = (hvVar == null || (staticLayout = hvVar.b) == null) ? null : cu.h0(staticLayout.getText());
+        return TextUtils.concat(hd.M0(2131753987, null), ", ", hd.M0(this.X.open ? 2131754882 : 2131754892, null), TextUtils.isEmpty(h02) ? "" : TextUtils.concat(", ", h02));
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final int I() {
+        Rect rect = this.b;
+        return i0() + rect.top + rect.bottom;
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final int J() {
+        return K();
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final int K() {
+        Rect rect = this.b;
+        return g0.L(16.0f) + this.Y.r() + g0.L(53.0f) + rect.left + rect.right;
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final org.telegram.ui.Cells.s9[] L() {
+        return this.Z;
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final void T() {
+        this.Y.i(this.W);
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final boolean U(int i7, View view) {
+        j0();
+        return true;
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final void V() {
+        this.Y.f(this.W);
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final void W(Canvas canvas) {
+        org.telegram.ui.Components.dc dcVar = this.c0;
+        float a10 = dcVar != null ? dcVar.a(0.02f) : 1.0f;
+        iv ivVar = this.a;
+        float f10 = -ivVar.S;
+        int i7 = ivVar.C + ivVar.T;
+        Rect rect = this.b;
+        float f11 = (i7 - rect.left) - rect.right;
+        if (a10 != 1.0f) {
+            canvas.save();
+            canvas.scale(a10, a10, (f10 + f11) / 2.0f, i0() / 2.0f);
         }
-        if (i15 != 0) {
-            f11 = (i11 + i13) / 2.0f;
-        } else {
-            Paint.FontMetricsInt fontMetricsInt = paint.getFontMetricsInt();
-            f11 = ((fontMetricsInt.ascent + fontMetricsInt.descent) / 2.0f) + i12;
-        }
+        int w02 = org.telegram.ui.ActionBar.j6.w0(ivVar.E() ? org.telegram.ui.ActionBar.j6.vl : org.telegram.ui.ActionBar.j6.ul, ivVar.D);
+        AnimatedArrowDrawable animatedArrowDrawable = this.a0;
+        animatedArrowDrawable.a.setColor(w02);
+        animatedArrowDrawable.invalidateSelf();
         canvas.save();
-        int round = Math.round(f10 + (guVar.s ? 0 : g0.L(1.0f)));
-        int ceil = (int) Math.ceil((f11 - (guVar.c() / 2.0f)) + (i15 ^ 1));
-        float f12 = round;
-        float f13 = ceil;
-        this.c.set(f12, f13, round + guVar.e, guVar.c() + ceil);
-        canvas.translate(f12, f13);
-        guVar.a(canvas);
+        canvas.translate(g0.N(22.6f) + f10, g0.N(21.66f));
+        animatedArrowDrawable.draw(canvas);
         canvas.restore();
+        canvas.save();
+        canvas.translate(g0.L(53.0f) + f10, g0.L(14.0f));
+        hv hvVar = this.Y;
+        hvVar.d(canvas, hvVar.T);
+        canvas.restore();
+        if (a10 != 1.0f) {
+            canvas.restore();
+        }
+        if (this.X.open || ivVar.s) {
+            return;
+        }
+        int w03 = org.telegram.ui.ActionBar.j6.w0(ivVar.E() ? org.telegram.ui.ActionBar.j6.xl : org.telegram.ui.ActionBar.j6.wl, ivVar.D);
+        Paint paint = this.b0;
+        paint.setColor(w03);
+        canvas.drawRect(f10, i0() - 1.0f, f11, i0(), paint);
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        boolean z9 = this.e && fontMetricsInt != null;
-        int i11 = z9 ? fontMetricsInt.top : 0;
-        int i12 = z9 ? fontMetricsInt.ascent : 0;
-        int i13 = z9 ? fontMetricsInt.descent : 0;
-        int i14 = z9 ? fontMetricsInt.bottom : 0;
-        int i15 = z9 ? fontMetricsInt.leading : 0;
-        int L = g0.L(8.0f);
-        int L2 = g0.L(10.0f);
-        gu guVar = this.a;
-        if (fontMetricsInt != null && guVar.s) {
-            float f10 = this.d;
-            int i16 = (int) (((-L2) - L) * f10);
-            fontMetricsInt.top = i16;
-            int i17 = (int) ((L2 - L) * f10);
-            fontMetricsInt.bottom = i17;
-            fontMetricsInt.ascent = i16;
-            fontMetricsInt.descent = i17;
-            fontMetricsInt.leading = 0;
-        }
-        if (z9) {
-            fontMetricsInt.top = i11;
-            fontMetricsInt.ascent = i12;
-            fontMetricsInt.descent = i13;
-            fontMetricsInt.bottom = i14;
-            fontMetricsInt.leading = i15;
-            int i18 = this.f;
-            int i19 = i13 - i12;
-            if (i18 > i19) {
-                int i20 = i18 - i19;
-                int i21 = (i20 + 1) / 2;
-                int i22 = i12 - i21;
-                fontMetricsInt.ascent = i22;
-                fontMetricsInt.descent = i13 + (i20 - i21);
-                fontMetricsInt.top = Math.min(i11, i22);
-                fontMetricsInt.bottom = Math.max(fontMetricsInt.bottom, fontMetricsInt.descent);
+    @Override // org.telegram.messenger.cu
+    public final boolean Y(MotionEvent motionEvent) {
+        View view;
+        int actionMasked = motionEvent.getActionMasked();
+        iv ivVar = this.a;
+        if (actionMasked == 0) {
+            this.d0 = true;
+            if (this.c0 == null && (view = ivVar.Q) != null) {
+                this.c0 = new org.telegram.ui.Components.dc(view);
             }
+            org.telegram.ui.Components.dc dcVar = this.c0;
+            if (dcVar != null) {
+                dcVar.c(true);
+            }
+            return true;
         }
-        return guVar.e + (guVar.s ? 0 : g0.L(1.0f) * 2);
+        if (actionMasked != 1) {
+            if (actionMasked == 3) {
+                this.d0 = false;
+                org.telegram.ui.Components.dc dcVar2 = this.c0;
+                if (dcVar2 != null) {
+                    dcVar2.c(false);
+                }
+            }
+            return this.d0;
+        }
+        if (!this.d0) {
+            return false;
+        }
+        this.d0 = false;
+        org.telegram.ui.Components.dc dcVar3 = this.c0;
+        if (dcVar3 != null) {
+            dcVar3.c(false);
+        }
+        View view2 = ivVar.Q;
+        if (view2 != null) {
+            view2.playSoundEffect(0);
+        }
+        j0();
+        return true;
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final void Z(int i7, int i10, int i11) {
+        this.T = i7;
+        this.U = i10;
+        this.V = i11;
+        int L = g0.L(53.0f) + (i7 - this.a.S);
+        hv hvVar = this.Y;
+        hvVar.c = L - hvVar.f;
+        hvVar.d = g0.L(14.0f) + i10;
+        hvVar.e = i11;
+    }
+
+    public final int i0() {
+        return k5.b(12.66f, this.Y.b.getHeight() + g0.L(14.0f), g0.L(27.82f));
+    }
+
+    public final void j0() {
+        iv ivVar = this.a;
+        ivVar.X();
+        TL_iv.pageBlockDetails pageblockdetails = this.X;
+        boolean z10 = pageblockdetails.open;
+        pageblockdetails.open = !z10;
+        this.a0.a(!z10 ? 0.0f : 1.0f);
+        ivVar.s = true;
+        ivVar.Q();
+        View view = ivVar.Q;
+        if (view != null) {
+            view.invalidate();
+        }
+        org.telegram.ui.Cells.q1 q1Var = ivVar.E;
+        org.telegram.ui.Cells.l1 l1Var = ivVar.F;
+        if (q1Var == null || l1Var == null) {
+            return;
+        }
+        l1Var.B1(q1Var, true, true);
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final void k(SpannableStringBuilder spannableStringBuilder) {
+        cu.l(spannableStringBuilder, this.Y, this.Z);
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final boolean u(CharacterStyle characterStyle, int i7, tt ttVar) {
+        if (!this.Y.o(characterStyle, ttVar)) {
+            return false;
+        }
+        Rect rect = this.b;
+        ttVar.e = (g0.L(53.0f) + (rect.left - this.a.S)) - r0.f;
+        ttVar.f = g0.L(14.0f) + i7 + rect.top;
+        return true;
     }
 }

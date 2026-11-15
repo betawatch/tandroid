@@ -1,8 +1,11 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.view.ViewPropertyAnimator;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rr implements org.telegram.messenger.sr {
+public final /* synthetic */ class rr implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ContactsActivity b;
 
@@ -11,20 +14,33 @@ public final /* synthetic */ class rr implements org.telegram.messenger.sr {
         this.b = contactsActivity;
     }
 
-    @Override // org.telegram.messenger.sr
-    public final void a(int i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
                 ContactsActivity contactsActivity = this.b;
-                contactsActivity.getClass();
-                contactsActivity.X = i7 != 0;
-                if (i7 != 0) {
-                    contactsActivity.h0(false);
+                te.c cVar = contactsActivity.a;
+                cVar.c(contactsActivity.r ? 0.0f : 1.0f);
+                vr vrVar = contactsActivity.b;
+                float f10 = cVar.f;
+                ArrayList arrayList = vrVar.O;
+                vrVar.M = f10;
+                for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                    ((org.telegram.ui.Cells.s4) arrayList.get(i7)).setLetterProgress(f10);
+                }
+                contactsActivity.b.Y(contactsActivity.r ? 1 : 2, false);
+                contactsActivity.d.v0(0);
+                ViewPropertyAnimator withEndAction = contactsActivity.d.animate().alpha(1.0f).setDuration(220L).setInterpolator(org.telegram.ui.Components.er.h).withEndAction(new rr(contactsActivity, 1));
+                contactsActivity.f0 = withEndAction;
+                withEndAction.start();
+                if (contactsActivity.r) {
+                    cVar.e = 80L;
+                    cVar.a(1.0f);
                     break;
                 }
                 break;
             default:
-                ContactsActivity.a0(this.b, i7);
+                this.b.f0 = null;
                 break;
         }
     }

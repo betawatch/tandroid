@@ -7,10 +7,10 @@ import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import libcore.io.Memory;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzvc {
     static final long zza;
@@ -26,9 +26,9 @@ final class zzvc {
     /* JADX WARN: Removed duplicated region for block: B:20:0x012c  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
     static {
-        boolean z9;
-        zzvb zzvbVar;
         boolean z10;
+        zzvb zzvbVar;
+        boolean z11;
         Field zzB;
         zzvb zzvbVar2;
         Unsafe zzg2 = zzg();
@@ -58,8 +58,8 @@ final class zzvc {
                 zzh(th2);
             }
             if (zzB() != null) {
-                z9 = true;
-                zzg = z9;
+                z10 = true;
+                zzg = z10;
                 zzvbVar = zzf;
                 if (zzvbVar != null) {
                     try {
@@ -73,11 +73,11 @@ final class zzvc {
                         cls4.getMethod("putLong", Object.class, cls, cls);
                         cls4.getMethod("getObject", Object.class, cls);
                         cls4.getMethod("putObject", Object.class, cls, Object.class);
-                        z10 = true;
+                        z11 = true;
                     } catch (Throwable th3) {
                         zzh(th3);
                     }
-                    zzh = z10;
+                    zzh = z11;
                     zza = zzz(byte[].class);
                     zzz(boolean[].class);
                     zzA(boolean[].class);
@@ -97,8 +97,8 @@ final class zzvc {
                     }
                     zzb = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
                 }
-                z10 = false;
-                zzh = z10;
+                z11 = false;
+                zzh = z11;
                 zza = zzz(byte[].class);
                 zzz(boolean[].class);
                 zzA(boolean[].class);
@@ -119,13 +119,13 @@ final class zzvc {
                 zzb = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
             }
         }
-        z9 = false;
-        zzg = z9;
+        z10 = false;
+        zzg = z10;
         zzvbVar = zzf;
         if (zzvbVar != null) {
         }
-        z10 = false;
-        zzh = z10;
+        z11 = false;
+        zzh = z11;
         zza = zzz(byte[].class);
         zzz(boolean[].class);
         zzA(boolean[].class);
@@ -182,7 +182,7 @@ final class zzvc {
         long j10 = (-4) & j3;
         int i7 = unsafe.getInt(obj, j10);
         int i10 = ((~((int) j3)) & 3) << 3;
-        unsafe.putInt(obj, j10, ((255 & b10) << i10) | (i7 & (~(qs.e4 << i10))));
+        unsafe.putInt(obj, j10, ((255 & b10) << i10) | (i7 & (~(ns.e4 << i10))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -190,7 +190,7 @@ final class zzvc {
         Unsafe unsafe = zzf.zza;
         long j10 = (-4) & j3;
         int i7 = (((int) j3) & 3) << 3;
-        unsafe.putInt(obj, j10, ((255 & b10) << i7) | (unsafe.getInt(obj, j10) & (~(qs.e4 << i7))));
+        unsafe.putInt(obj, j10, ((255 & b10) << i7) | (unsafe.getInt(obj, j10) & (~(ns.e4 << i7))));
     }
 
     public static double zza(Object obj, long j3) {
@@ -233,8 +233,8 @@ final class zzvc {
         Logger.getLogger(zzvc.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th2.toString()));
     }
 
-    public static void zzm(Object obj, long j3, boolean z9) {
-        zzf.zzc(obj, j3, z9);
+    public static void zzm(Object obj, long j3, boolean z10) {
+        zzf.zzc(obj, j3, z10);
     }
 
     public static void zzn(byte[] bArr, long j3, byte b10) {
@@ -262,11 +262,11 @@ final class zzvc {
     }
 
     public static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j3) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & qs.e4)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & ns.e4)) != 0;
     }
 
     public static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j3) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & qs.e4)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & ns.e4)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

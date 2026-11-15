@@ -1,178 +1,125 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class jy extends v4.s {
-    public final boolean Q;
-    public final SparseIntArray R;
-    public final SparseIntArray S;
-    public int T;
-    public int U;
-    public int V;
-    public int W;
+public final class jy extends tj0 {
+    public final boolean c;
+    public final /* synthetic */ ly d;
 
-    public jy(int i7, boolean z9) {
-        super(i7);
-        this.R = new SparseIntArray();
-        this.S = new SparseIntArray();
-        this.Q = z9;
+    public jy(ly lyVar, boolean z10) {
+        this.d = lyVar;
+        this.c = z10;
     }
 
-    public static nt0 C1(nt0 nt0Var) {
-        if (nt0Var == null) {
-            return null;
-        }
-        if (nt0Var.a == 0.0f) {
-            nt0Var.a = 100.0f;
-        }
-        if (nt0Var.b == 0.0f) {
-            nt0Var.b = 100.0f;
-        }
-        float f10 = nt0Var.a;
-        float f11 = nt0Var.b;
-        float f12 = f10 / f11;
-        if (f12 <= 4.0f && f12 >= 0.2f) {
-            return nt0Var;
-        }
-        float max = Math.max(f10, f11);
-        nt0Var.a = max;
-        nt0Var.b = max;
-        return nt0Var;
+    @Override // org.telegram.ui.Components.tj0
+    public final boolean D(v4.e1 e1Var) {
+        return true;
     }
 
-    public final void B1() {
-        int i7;
-        int min;
-        boolean z9;
-        float f10;
-        SparseIntArray sparseIntArray = this.R;
-        if (sparseIntArray.size() == A() && this.W == this.m && this.T == this.J) {
-            return;
+    @Override // v4.h0
+    public final int b() {
+        boolean z10 = this.c;
+        ly lyVar = this.d;
+        return (z10 ? lyVar.o1 : lyVar.n1).size();
+    }
+
+    @Override // v4.h0
+    public final int d(int i7) {
+        return 0;
+    }
+
+    @Override // v4.h0
+    public final void t(v4.e1 e1Var, int i7) {
+        ArrayList<TLRPC.Document> arrayList;
+        org.telegram.messenger.gc k10;
+        i9 i9Var = (i9) e1Var.a;
+        ly lyVar = this.d;
+        boolean z10 = this.c;
+        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) (z10 ? lyVar.o1 : lyVar.n1).get(i7);
+        i9Var.setTag(stickerSetCovered);
+        if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
+            arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
+        } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
+            TLRPC.TL_messages_stickerSet m0 = org.telegram.messenger.si.b0(lyVar.d1).m0(org.telegram.messenger.si.Z(stickerSetCovered.set), false);
+            arrayList = m0 == null ? null : m0.documents;
+        } else {
+            arrayList = stickerSetCovered.covers;
         }
-        int i10 = this.m;
-        this.W = i10;
-        float f11 = i10;
-        if (f11 == 0.0f) {
-            f11 = 100.0f;
-        }
-        sparseIntArray.clear();
-        SparseIntArray sparseIntArray2 = this.S;
-        sparseIntArray2.clear();
-        boolean z10 = false;
-        this.V = 0;
-        this.U = 0;
-        int A = A();
-        this.T = A;
-        if (A == 0) {
-            return;
-        }
-        int L = org.telegram.messenger.g0.L(100.0f);
-        int i11 = this.J;
-        boolean z11 = this.Q;
-        int i12 = A + (z11 ? 1 : 0);
-        int i13 = 0;
-        int i14 = 0;
-        int i15 = i11;
-        while (i13 < i12) {
-            nt0 C1 = i13 < A ? C1(D1(i13)) : null;
-            if (C1 == null) {
-                z9 = i14 != 0 ? true : z10;
-                i7 = L;
-                min = i11;
+        TLRPC.Document document = stickerSetCovered.cover;
+        if (document == null) {
+            if (arrayList == null || arrayList.isEmpty()) {
+                document = null;
             } else {
-                i7 = L;
-                min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * L) / f11) * i11));
-                boolean z12 = i15 < min || (min > 33 && i15 < min + (-15));
-                if (C1.c) {
-                    sparseIntArray.put(i13, i15);
-                    this.V++;
-                    f10 = f11;
-                    i15 = i11;
-                    i14 = 0;
-                    i13++;
-                    L = i7;
-                    f11 = f10;
-                    z10 = false;
-                } else {
-                    z9 = z12;
-                }
-            }
-            if (z9) {
-                if (i15 == 0 || i14 == 0) {
-                    f10 = f11;
-                } else {
-                    int i16 = i15 / i14;
-                    int i17 = i13 - i14;
-                    f10 = f11;
-                    int i18 = i17;
-                    while (true) {
-                        int i19 = i17 + i14;
-                        if (i18 >= i19) {
+                if (stickerSetCovered.set != null) {
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        if (arrayList.get(i10).id == stickerSetCovered.set.thumb_document_id) {
+                            document = arrayList.get(i10);
                             break;
                         }
-                        if (i18 == i19 - 1) {
-                            sparseIntArray.put(i18, sparseIntArray.get(i18) + i15);
-                        } else {
-                            sparseIntArray.put(i18, sparseIntArray.get(i18) + i16);
-                        }
-                        i15 -= i16;
-                        i18++;
                     }
-                    sparseIntArray2.put(i13 - 1, this.V);
                 }
-                if (i13 == A) {
-                    break;
-                }
-                this.V++;
-                i15 = i11;
-                i14 = 0;
-            } else {
-                f10 = f11;
-                if (i15 < min) {
-                    min = i15;
+                document = null;
+                if (document == null) {
+                    document = arrayList.get(0);
                 }
             }
-            if (this.V == 0) {
-                this.U = Math.max(this.U, i13);
-            }
-            if (i13 == A - 1 && !z11) {
-                sparseIntArray2.put(i13, this.V);
-            }
-            i14++;
-            i15 -= min;
-            sparseIntArray.put(i13, min);
-            i13++;
-            L = i7;
-            f11 = f10;
-            z10 = false;
         }
-        this.V++;
+        if (document == null) {
+            return;
+        }
+        if (z10) {
+            i9Var.setColorFilter(org.telegram.messenger.gj.C4(document) ? org.telegram.ui.ActionBar.j6.o0(lyVar.a2) : null);
+        }
+        TLObject w10 = org.telegram.messenger.w7.w(stickerSetCovered.set.thumbs, 90, false, null, false);
+        org.telegram.messenger.pz d = org.telegram.messenger.t5.d(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.j6.c7, 0.2f, false);
+        if (d != null) {
+            d.e = 512;
+            d.f = 512;
+        }
+        if (w10 == null || org.telegram.messenger.gj.N4(document)) {
+            w10 = document;
+        }
+        boolean z11 = w10 instanceof TLRPC.Document;
+        if (z11) {
+            k10 = org.telegram.messenger.gc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document);
+        } else if (!(w10 instanceof TLRPC.PhotoSize)) {
+            return;
+        } else {
+            k10 = org.telegram.messenger.gc.k((TLRPC.PhotoSize) w10, document, stickerSetCovered.set.thumb_version);
+        }
+        org.telegram.messenger.gc gcVar = k10;
+        if (gcVar == null) {
+            return;
+        }
+        String str = !org.telegram.messenger.qc.e(z10 ? 16388 : 1) ? "30_30_firstframe" : "30_30";
+        if (z11 && (org.telegram.messenger.gj.K2(document, true) || org.telegram.messenger.gj.N4(document))) {
+            if (d != null) {
+                i9Var.p(org.telegram.messenger.gc.b(document), str, d, stickerSetCovered);
+                return;
+            } else {
+                i9Var.l(org.telegram.messenger.gc.b(document), str, gcVar, null, 0, stickerSetCovered);
+                return;
+            }
+        }
+        if (gcVar.p == 1) {
+            i9Var.k(gcVar, str, "tgs", d, stickerSetCovered);
+        } else {
+            i9Var.k(gcVar, null, "webp", d, stickerSetCovered);
+        }
     }
 
-    public nt0 D1(int i7) {
-        return new nt0(100.0f, 100.0f);
-    }
-
-    public final boolean E1(int i7) {
-        B1();
-        return this.S.get(i7, ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE;
-    }
-
-    @Override // v4.s, v4.n0
-    public final int I(v4.v0 v0Var, v4.a1 a1Var) {
-        return a1Var.b();
-    }
-
-    @Override // v4.s, v4.n0
-    public final int u(v4.v0 v0Var, v4.a1 a1Var) {
-        return 1;
-    }
-
-    @Override // v4.s, v4.b0, v4.n0
-    public boolean y0() {
-        return false;
+    @Override // v4.h0
+    public final v4.e1 x(ViewGroup viewGroup, int i7) {
+        iy iyVar = new iy(this, this.d.getContext());
+        iyVar.u(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
+        iyVar.setLayerNum(1);
+        iyVar.setAspectFit(true);
+        iyVar.setLayoutParams(new v4.p0(org.telegram.messenger.g0.L(34.0f), org.telegram.messenger.g0.L(34.0f)));
+        return new cj0(iyVar);
     }
 }

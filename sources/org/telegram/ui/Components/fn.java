@@ -1,73 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.z91;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class fn extends k9 {
-    public final org.telegram.ui.Cells.k6 G;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 H;
-    public final /* synthetic */ boolean I;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 J;
-    public final /* synthetic */ jn K;
+public final class fn implements TextWatcher {
+    public final /* synthetic */ en a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ org.telegram.ui.l4 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fn(jn jnVar, Context context, org.telegram.ui.ActionBar.f2 f2Var, boolean z9, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        this.K = jnVar;
-        this.H = f2Var;
-        this.I = z9;
-        this.J = h6Var;
-        this.G = new org.telegram.ui.Cells.k6(this);
+    public fn(org.telegram.ui.l4 l4Var, en enVar, int i7) {
+        this.c = l4Var;
+        this.a = enVar;
+        this.b = i7;
     }
 
-    @Override // org.telegram.ui.Components.k9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        long j3;
-        jn jnVar = this.K;
-        if (!jnVar.b || this.e != null) {
-            super.onDraw(canvas);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        jn jnVar = (jn) this.c.e;
+        en enVar = this.a;
+        if (enVar.getTag() != null) {
             return;
         }
-        org.telegram.ui.Cells.k6 k6Var = this.G;
-        k6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        k6Var.a = true;
-        k6Var.v = true;
-        k6Var.J = this.J;
-        Integer num = jnVar.c;
-        if (num != null) {
-            k6Var.z = num.intValue();
+        int i7 = this.b;
+        int i10 = i7 == 11 ? jnVar.o0 : jnVar.n0;
+        v4.e1 K = jnVar.s.K(i10);
+        if (K != null && jnVar.y != null) {
+            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                editable.removeSpan(imageSpan);
+            }
+            org.telegram.messenger.j6.l(editable, enVar.getEditField().getPaint().getFontMetricsInt(), false);
+            jnVar.y.setDirection(1);
+            jnVar.y.setDelegate(enVar);
+            jnVar.y.setTranslationY(K.a.getY());
+            jnVar.y.e();
         }
-        org.telegram.ui.cn cnVar = jnVar.G;
-        if (cnVar != null) {
-            j3 = cnVar.a();
+        if (i7 == 11) {
+            jnVar.P = editable;
         } else {
-            org.telegram.ui.ActionBar.f2 f2Var = this.H;
-            j3 = f2Var instanceof z91 ? -((z91) f2Var).a : 0L;
+            jnVar.O = editable;
         }
-        di.s7.h(j3, canvas, this.a, k6Var);
+        if (K != null) {
+            jn.Q(jnVar, K.a, i10);
+        }
+        jnVar.Y();
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!this.I || !getImageReceiver().L()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
-        } else {
-            accessibilityNodeInfo.setText(org.telegram.messenger.id.M0(2131754798, null));
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.id.M0(2131747817, null)));
-        }
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.K.b && this.G.a(this, motionEvent)) {
-            return true;
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

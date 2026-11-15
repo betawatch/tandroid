@@ -1,64 +1,87 @@
 package fi;
 
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.g90;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.gc;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.i10;
+import org.telegram.ui.Components.ou0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g4 implements r1.c {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
-    public final /* synthetic */ boolean c;
+public final class g4 {
+    public final ImageReceiver a;
+    public int b;
+    public StaticLayout c;
+    public final TextPaint d;
+    public j5 e;
+    public final /* synthetic */ h4 f;
 
-    public /* synthetic */ g4(FrameLayout frameLayout, boolean z9, int i7) {
-        this.a = i7;
-        this.b = frameLayout;
-        this.c = z9;
+    public g4(h4 h4Var) {
+        this.f = h4Var;
+        ImageReceiver imageReceiver = new ImageReceiver(h4Var);
+        this.a = imageReceiver;
+        TextPaint textPaint = new TextPaint(1);
+        this.d = textPaint;
+        imageReceiver.A1 = true;
+        imageReceiver.J0(org.telegram.messenger.g0.L(6.0f));
+        textPaint.setColor(-1);
+        textPaint.setTextSize(org.telegram.messenger.g0.L(13.0f));
     }
 
-    @Override // r1.c
-    public final void a(r1.g gVar, boolean z9, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                o5 o5Var = (o5) this.b;
-                w4 w4Var = o5Var.f1;
-                if (gVar == o5Var.l1) {
-                    o5Var.l1 = null;
-                    if (!this.c) {
-                        w4Var.setVisibility(8);
-                        sg.l0.e(o5Var.o1).g();
-                        w4Var.getAdapter().f();
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                o5 o5Var2 = (o5) this.b;
-                tg.j1 j1Var = o5Var2.V0;
-                if (gVar == o5Var2.e1) {
-                    o5Var2.e1 = null;
-                    if (!this.c) {
-                        j1Var.setVisibility(8);
-                    }
-                    j1Var.setMaskProvider(null);
-                    break;
-                }
-                break;
-            default:
-                g90 g90Var = (g90) this.b;
-                if (!z9) {
-                    g90Var.K = null;
-                    boolean z10 = this.c;
-                    g90Var.setVisibility(z10 ? 8 : 0);
-                    if (g90Var.N && z10) {
-                        g90Var.N = false;
-                        g90Var.b.setLayoutManager(g90Var.getNeededLayoutManager());
-                        g90Var.I = true;
-                        g90Var.o(true);
-                        break;
-                    }
-                }
-                break;
+    public final void a(int i7) {
+        h4 h4Var = this.f;
+        ArrayList arrayList = h4Var.F;
+        if (i7 < 0 || i7 >= arrayList.size()) {
+            return;
+        }
+        this.e = (j5) arrayList.get(i7);
+        boolean z10 = h4Var.w;
+        ImageReceiver imageReceiver = this.a;
+        if (z10) {
+            imageReceiver.P();
+        }
+        j5 j5Var = this.e;
+        TL_stories.StoryItem storyItem = j5Var.a;
+        if (storyItem != null) {
+            l7.x(imageReceiver, storyItem);
+        } else {
+            r6 r6Var = j5Var.b;
+            i10[] i10VarArr = l7.a;
+            if (r6Var.c.K) {
+                imageReceiver.r0(gc.g(r6Var.f), "320_180", null, null, null, 0L, null, null, 0);
+            } else {
+                imageReceiver.r0(gc.g(r6Var.e), "320_180", null, null, null, 0L, null, null, 0);
+            }
+        }
+        b();
+    }
+
+    public final void b() {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        TL_stories.StoryItem storyItem = this.e.a;
+        h4 h4Var = this.f;
+        if (storyItem != null) {
+            h4.a(h4Var, spannableStringBuilder, storyItem.views, false);
+        }
+        if (spannableStringBuilder.length() == 0) {
+            this.c = null;
+            return;
+        }
+        int i7 = (int) (h4Var.K + 1.0f);
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
+        TextPaint textPaint = this.d;
+        StaticLayout c10 = ou0.c(spannableStringBuilder, textPaint, i7, alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
+        this.c = c10;
+        if (c10.getLineCount() > 1) {
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("");
+            h4.a(h4Var, spannableStringBuilder2, this.e.a.views, true);
+            this.c = ou0.c(spannableStringBuilder2, textPaint, (int) (h4Var.K + 1.0f), alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
         }
     }
 }

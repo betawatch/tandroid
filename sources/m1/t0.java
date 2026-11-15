@@ -1,7 +1,7 @@
 package m1;
 
-import a8.ab;
-import c8.mb;
+import a8.bb;
+import c8.ob;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.nio.channels.FileLock;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class t0 implements m0 {
     public final id.h a;
@@ -34,8 +34,8 @@ public final class t0 implements m0 {
         this.e = ".version";
         this.f = "fcntl failed: EAGAIN";
         this.g = new ie.d();
-        this.h = ab.b(new q0(this, 1));
-        this.i = ab.b(new q0(this, 0));
+        this.h = bb.b(new q0(this, 1));
+        this.i = bb.b(new q0(this, 0));
     }
 
     public static final void f(t0 t0Var, File file) {
@@ -82,10 +82,10 @@ public final class t0 implements m0 {
         FileLock fileLock;
         FileLock fileLock2;
         ie.d dVar;
-        boolean z9;
+        boolean z10;
         FileInputStream fileInputStream;
         ie.d dVar2;
-        boolean z10;
+        boolean z11;
         ?? r22 = pVar;
         try {
             try {
@@ -100,10 +100,10 @@ public final class t0 implements m0 {
                         r52 = r32.h;
                         if (r52 == 0) {
                             if (r52 == 1) {
-                                z10 = r32.d;
+                                z11 = r32.d;
                                 dVar2 = r32.a;
                                 af.b.c(obj);
-                                if (z10) {
+                                if (z11) {
                                     dVar2.f(null);
                                 }
                                 return obj;
@@ -111,7 +111,7 @@ public final class t0 implements m0 {
                             if (r52 != 2) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
-                            z9 = r32.d;
+                            z10 = r32.d;
                             fileLock2 = r32.c;
                             fileInputStream = r32.b;
                             dVar = r32.a;
@@ -120,8 +120,8 @@ public final class t0 implements m0 {
                                 if (fileLock2 != null) {
                                     fileLock2.release();
                                 }
-                                mb.a(fileInputStream, null);
-                                if (z9) {
+                                ob.a(fileInputStream, null);
+                                if (z10) {
                                     dVar.f(null);
                                 }
                                 return obj;
@@ -166,13 +166,13 @@ public final class t0 implements m0 {
                                     obj = r22.invoke(valueOf, r32);
                                     if (obj != aVar) {
                                         dVar = dVar3;
-                                        z9 = e10;
+                                        z10 = e10;
                                         fileInputStream = fileInputStream2;
                                         fileLock2 = fileLock;
                                         if (fileLock2 != null) {
                                         }
-                                        mb.a(fileInputStream, null);
-                                        if (z9) {
+                                        ob.a(fileInputStream, null);
+                                        if (z10) {
                                         }
                                         return obj;
                                     }
@@ -191,8 +191,8 @@ public final class t0 implements m0 {
                                 obj = r22.invoke(bool, r32);
                                 if (obj != aVar) {
                                     dVar2 = dVar3;
-                                    z10 = e10;
-                                    if (z10) {
+                                    z11 = e10;
+                                    if (z11) {
                                     }
                                     return obj;
                                 }
@@ -216,7 +216,7 @@ public final class t0 implements m0 {
                     throw th6;
                 } catch (Throwable th7) {
                     try {
-                        mb.a(r52, th6);
+                        ob.a(r52, th6);
                         throw th7;
                     } catch (Throwable th8) {
                         th = th8;
@@ -315,7 +315,7 @@ public final class t0 implements m0 {
                                             fileLock.release();
                                         }
                                         try {
-                                            mb.a(closeable2, null);
+                                            ob.a(closeable2, null);
                                             ((ie.d) obj5).f(null);
                                             return obj4;
                                         } catch (Throwable th3) {
@@ -358,7 +358,7 @@ public final class t0 implements m0 {
                                         obj5 = obj2;
                                         if (fileLock != null) {
                                         }
-                                        mb.a(closeable2, null);
+                                        ob.a(closeable2, null);
                                         ((ie.d) obj5).f(null);
                                         return obj4;
                                     }
@@ -429,7 +429,7 @@ public final class t0 implements m0 {
             try {
                 throw th9;
             } catch (Throwable th10) {
-                mb.a(r12, th9);
+                ob.a(r12, th9);
                 throw th10;
             }
         }

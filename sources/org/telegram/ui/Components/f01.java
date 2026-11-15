@@ -1,74 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class f01 extends View {
-    public final g01 a;
-    public org.telegram.messenger.c20 b;
-    public final org.telegram.ui.ActionBar.h6 c;
-    public int d;
+public final class f01 extends TextView {
+    public View a;
+    public ViewPropertyAnimator b;
+    public boolean c;
+    public ro0 d;
 
-    public f01(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        this.c = h6Var;
-        g01 g01Var = new g01(i7, this, h6Var, false);
-        this.a = g01Var;
-        g01Var.s = new jr0(this, 16);
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        org.telegram.ui.ActionBar.h6 h6Var = this.c;
-        if (h6Var != null) {
-            h6Var.b(0.0f, 0.0f, getMeasuredWidth(), this.d);
-        } else {
-            org.telegram.ui.ActionBar.m6.r(0.0f, 0.0f, getMeasuredWidth(), this.d);
+    public final void a() {
+        if (this.a == null) {
+            return;
         }
-        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(33.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
-    }
-
-    public void set(org.telegram.messenger.ij ijVar) {
-        g01 g01Var = this.a;
-        g01Var.e(ijVar);
-        if (isAttachedToWindow()) {
-            g01Var.a();
+        View view = (View) getParent();
+        int i7 = 0;
+        int i10 = 0;
+        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
+            i10 += view2.getTop();
+            i7 += view2.getLeft();
         }
+        int width = ((this.a.getWidth() / 2) + i7) - (getMeasuredWidth() / 2);
+        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - org.telegram.messenger.g0.L(16.0f) : width : 0);
+        setTranslationY(i10 - getMeasuredHeight());
     }
 
-    public void setBackgroundHeight(int i7) {
-        this.d = i7;
-    }
-
-    public void setOnTopicClickListener(org.telegram.messenger.c20 c20Var) {
-        this.b = c20Var;
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        a();
     }
 }

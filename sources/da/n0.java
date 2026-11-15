@@ -2,7 +2,7 @@ package da;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n0 extends t2 {
     public final String a;
@@ -18,13 +18,13 @@ public final class n0 extends t2 {
     public final List k;
     public final int l;
 
-    public n0(String str, String str2, String str3, long j3, Long l10, boolean z9, b2 b2Var, s2 s2Var, r2 r2Var, c2 c2Var, List list, int i7) {
+    public n0(String str, String str2, String str3, long j3, Long l10, boolean z10, b2 b2Var, s2 s2Var, r2 r2Var, c2 c2Var, List list, int i7) {
         this.a = str;
         this.b = str2;
         this.c = str3;
         this.d = j3;
         this.e = l10;
-        this.f = z9;
+        this.f = z10;
         this.g = b2Var;
         this.h = s2Var;
         this.i = r2Var;

@@ -1,7 +1,7 @@
 package r2;
 
 import android.net.Uri;
-import j2.d0;
+import j2.c0;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -12,7 +12,7 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements j2.h {
     public final j2.h a;
@@ -27,9 +27,9 @@ public final class a implements j2.h {
     }
 
     @Override // j2.h
-    public final void addTransferListener(d0 d0Var) {
-        d0Var.getClass();
-        this.a.addTransferListener(d0Var);
+    public final void addTransferListener(c0 c0Var) {
+        c0Var.getClass();
+        this.a.addTransferListener(c0Var);
     }
 
     @Override // j2.h

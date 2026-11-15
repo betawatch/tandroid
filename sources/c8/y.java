@@ -9,14 +9,14 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class y implements na.e {
     public static final Charset f = Charset.forName("UTF-8");
-    public static final na.c g = new na.c("key", jg.g.q(a8.p0.x(w.class, new s(1))));
-    public static final na.c h = new na.c("value", jg.g.q(a8.p0.x(w.class, new s(2))));
+    public static final na.c g = new na.c("key", i5.c.p(a8.p0.x(w.class, new s(1))));
+    public static final na.c h = new na.c("value", i5.c.p(a8.p0.x(w.class, new s(2))));
     public static final x i = x.b;
     public OutputStream a;
     public final HashMap b;
@@ -52,8 +52,8 @@ public final class y implements na.e {
     }
 
     @Override // na.e
-    public final /* synthetic */ na.e c(na.c cVar, boolean z9) {
-        h(cVar, z9 ? 1 : 0, true);
+    public final /* synthetic */ na.e c(na.c cVar, boolean z10) {
+        h(cVar, z10 ? 1 : 0, true);
         return this;
     }
 
@@ -77,21 +77,21 @@ public final class y implements na.e {
         return this;
     }
 
-    public final void f(na.c cVar, double d, boolean z9) {
-        if (z9 && d == 0.0d) {
+    public final void f(na.c cVar, double d, boolean z10) {
+        if (z10 && d == 0.0d) {
             return;
         }
         k((i(cVar) << 3) | 1);
         this.a.write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putDouble(d).array());
     }
 
-    public final void g(na.c cVar, Object obj, boolean z9) {
+    public final void g(na.c cVar, Object obj, boolean z10) {
         if (obj == null) {
             return;
         }
         if (obj instanceof CharSequence) {
             CharSequence charSequence = (CharSequence) obj;
-            if (z9 && charSequence.length() == 0) {
+            if (z10 && charSequence.length() == 0) {
                 return;
             }
             k((i(cVar) << 3) | 2);
@@ -115,12 +115,12 @@ public final class y implements na.e {
             return;
         }
         if (obj instanceof Double) {
-            f(cVar, ((Double) obj).doubleValue(), z9);
+            f(cVar, ((Double) obj).doubleValue(), z10);
             return;
         }
         if (obj instanceof Float) {
             float floatValue = ((Float) obj).floatValue();
-            if (z9 && floatValue == 0.0f) {
+            if (z10 && floatValue == 0.0f) {
                 return;
             }
             k((i(cVar) << 3) | 5);
@@ -129,7 +129,7 @@ public final class y implements na.e {
         }
         if (obj instanceof Number) {
             long longValue = ((Number) obj).longValue();
-            if (z9 && longValue == 0) {
+            if (z10 && longValue == 0) {
                 return;
             }
             w wVar = (w) cVar.b(w.class);
@@ -141,12 +141,12 @@ public final class y implements na.e {
             return;
         }
         if (obj instanceof Boolean) {
-            h(cVar, ((Boolean) obj).booleanValue() ? 1 : 0, z9);
+            h(cVar, ((Boolean) obj).booleanValue() ? 1 : 0, z10);
             return;
         }
         if (obj instanceof byte[]) {
             byte[] bArr = (byte[]) obj;
-            if (z9 && bArr.length == 0) {
+            if (z10 && bArr.length == 0) {
                 return;
             }
             k((i(cVar) << 3) | 2);
@@ -156,7 +156,7 @@ public final class y implements na.e {
         }
         na.d dVar = (na.d) this.b.get(obj.getClass());
         if (dVar != null) {
-            j(dVar, cVar, obj, z9);
+            j(dVar, cVar, obj, z10);
             return;
         }
         na.f fVar = (na.f) this.c.get(obj.getClass());
@@ -164,7 +164,7 @@ public final class y implements na.e {
             a8.r0 r0Var = this.e;
             r0Var.b = false;
             r0Var.d = cVar;
-            r0Var.c = z9;
+            r0Var.c = z10;
             fVar.a(obj, r0Var);
             return;
         }
@@ -173,12 +173,12 @@ public final class y implements na.e {
         } else if (obj instanceof Enum) {
             h(cVar, ((Enum) obj).ordinal(), true);
         } else {
-            j(this.d, cVar, obj, z9);
+            j(this.d, cVar, obj, z10);
         }
     }
 
-    public final void h(na.c cVar, int i7, boolean z9) {
-        if (z9 && i7 == 0) {
+    public final void h(na.c cVar, int i7, boolean z10) {
+        if (z10 && i7 == 0) {
             return;
         }
         w wVar = (w) cVar.b(w.class);
@@ -189,7 +189,7 @@ public final class y implements na.e {
         k(i7);
     }
 
-    public final void j(na.d dVar, na.c cVar, Object obj, boolean z9) {
+    public final void j(na.d dVar, na.c cVar, Object obj, boolean z10) {
         a8.k0 k0Var = new a8.k0(1);
         k0Var.b = 0L;
         try {
@@ -200,7 +200,7 @@ public final class y implements na.e {
                 this.a = outputStream;
                 long j3 = k0Var.b;
                 k0Var.close();
-                if (z9 && j3 == 0) {
+                if (z10 && j3 == 0) {
                     return;
                 }
                 k((i(cVar) << 3) | 2);
@@ -226,7 +226,7 @@ public final class y implements na.e {
     public final void k(int i7) {
         while (true) {
             long j3 = i7 & (-128);
-            int i10 = i7 & qs.L1;
+            int i10 = i7 & ns.L1;
             if (j3 == 0) {
                 this.a.write(i10);
                 return;
@@ -240,7 +240,7 @@ public final class y implements na.e {
     public final void l(long j3) {
         while (true) {
             long j10 = (-128) & j3;
-            int i7 = ((int) j3) & qs.L1;
+            int i7 = ((int) j3) & ns.L1;
             if (j10 == 0) {
                 this.a.write(i7);
                 return;

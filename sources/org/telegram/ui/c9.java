@@ -7,37 +7,37 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class c9 extends z40 {
-    public final /* synthetic */ int v0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 w0;
+public final class c9 extends w40 {
+    public final /* synthetic */ int w0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 x0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c9(Bundle bundle, int i7, org.telegram.ui.ActionBar.f2 f2Var) {
+    public c9(Bundle bundle, int i7, org.telegram.ui.ActionBar.e2 e2Var) {
         super(bundle);
-        this.v0 = i7;
-        this.w0 = f2Var;
+        this.w0 = i7;
+        this.x0 = e2Var;
     }
 
-    @Override // org.telegram.ui.z40
+    @Override // org.telegram.ui.w40
     public final void s0(HashSet hashSet) {
         int size = hashSet.size();
-        int i7 = this.v0;
+        int i7 = this.w0;
         if (size == 1) {
-            TLRPC.User a22 = org.telegram.messenger.qp.s1(i7).a2((Long) hashSet.iterator().next());
-            TLRPC.UserFull b22 = org.telegram.messenger.qp.s1(i7).b2(a22.id);
+            TLRPC.User a22 = org.telegram.messenger.np.s1(i7).a2((Long) hashSet.iterator().next());
+            TLRPC.UserFull b22 = org.telegram.messenger.np.s1(i7).b2(a22.id);
             if (b22 == null) {
                 TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
-                tL_users_getFullUser.id = org.telegram.messenger.qp.s1(i7).o1(a22.id);
-                ConnectionsManager.getInstance(i7).sendRequest(tL_users_getFullUser, new jg.v(this, i7, a22, 3));
+                tL_users_getFullUser.id = org.telegram.messenger.np.s1(i7).o1(a22.id);
+                ConnectionsManager.getInstance(i7).sendRequest(tL_users_getFullUser, new jg.u(this, i7, a22, 3));
                 return;
             }
-            org.telegram.ui.Components.voip.y1.m(a22, false, b22.video_calls_available, getParentActivity(), b22, org.telegram.messenger.c.a(i7));
+            org.telegram.ui.Components.voip.c2.m(a22, false, b22.video_calls_available, getParentActivity(), b22, org.telegram.messenger.c.a(i7));
         } else {
             TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
             createconferencecall.random_id = Utilities.b.nextInt();
-            ConnectionsManager.getInstance(i7).sendRequest(createconferencecall, new jg.v(i7, hashSet, this.w0));
+            ConnectionsManager.getInstance(i7).sendRequest(createconferencecall, new jg.u(i7, hashSet, this.x0));
         }
         finishFragment();
     }

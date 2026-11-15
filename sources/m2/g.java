@@ -1,19 +1,19 @@
 package m2;
 
-import d3.q;
+import d3.p;
 import e2.i1;
 import e2.k1;
 import e2.l1;
-import h2.m0;
+import h2.l0;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
 import x2.f0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g {
-    public static final q h = new q(4);
+    public static final p h = new p(4);
     public static final Random i = new Random();
     public h d;
     public String f;
@@ -45,7 +45,7 @@ public final class g {
                 f fVar2 = (f) it.next();
                 it.remove();
                 if (fVar2.e && (hVar = this.d) != null) {
-                    hVar.n(aVar, fVar2.a);
+                    hVar.m(aVar, fVar2.a);
                 }
             }
         } catch (Throwable th2) {
@@ -97,7 +97,7 @@ public final class g {
                                 fVar = fVar2;
                                 j12 = j10;
                             } else if (j10 == j12) {
-                                String str = m0.a;
+                                String str = l0.a;
                                 if (fVar.d != null && f0Var2 != null) {
                                     fVar = fVar2;
                                 }
@@ -209,7 +209,7 @@ public final class g {
                 c11.e = true;
                 aVar.b.g(aVar.d.a, this.b);
                 this.b.d(aVar.d.b);
-                Math.max(0L, m0.h0(0L) + m0.h0(this.b.e));
+                Math.max(0L, l0.h0(0L) + l0.h0(this.b.e));
                 this.d.getClass();
             }
         }
@@ -219,14 +219,14 @@ public final class g {
         }
         if (c10.a.equals(this.f) && !c10.f) {
             c10.f = true;
-            this.d.m(aVar, c10.a);
+            this.d.l(aVar, c10.a);
         }
     }
 
     public final synchronized void g(a aVar, int i7) {
         try {
             this.d.getClass();
-            boolean z9 = i7 == 0;
+            boolean z10 = i7 == 0;
             Iterator it = this.c.values().iterator();
             while (it.hasNext()) {
                 f fVar = (f) it.next();
@@ -237,10 +237,10 @@ public final class g {
                         a(fVar);
                     }
                     if (fVar.e) {
-                        if (z9 && equals) {
-                            boolean z10 = fVar.f;
+                        if (z10 && equals) {
+                            boolean z11 = fVar.f;
                         }
-                        this.d.n(aVar, fVar.a);
+                        this.d.m(aVar, fVar.a);
                     }
                 }
             }

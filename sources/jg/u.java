@@ -1,228 +1,114 @@
 package jg;
 
-import android.widget.TextView;
+import android.graphics.RectF;
 import java.util.ArrayList;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.yr;
-import org.telegram.tgnet.TLMethod;
+import java.util.HashSet;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.e61;
-import org.telegram.ui.kw;
+import org.telegram.tgnet.Vector;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.c9;
+import org.telegram.ui.yt0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements Runnable {
+public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ TLObject h;
-    public final /* synthetic */ ArrayList n;
-    public final /* synthetic */ TLObject r;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ u(h0 h0Var, int i7, int i10, TLRPC.TL_error tL_error, String str, TLObject tLObject, TLMethod tLMethod, ArrayList arrayList, int i11) {
-        this.a = i11;
-        this.b = h0Var;
-        this.c = i7;
-        this.d = i10;
-        this.e = tL_error;
-        this.f = str;
-        this.h = tLObject;
-        this.r = tLMethod;
-        this.n = arrayList;
+    public /* synthetic */ u(int i7, HashSet hashSet, e2 e2Var) {
+        this.a = 4;
+        this.b = i7;
+        this.d = hashSet;
+        this.c = e2Var;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v5 */
-    /* JADX WARN: Type inference failed for: r3v9 */
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7;
-        int i10;
-        int i11 = this.a;
-        ArrayList arrayList = this.n;
-        int i12 = this.d;
-        TLObject tLObject = this.r;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        int i13 = this.c;
-        TLObject tLObject2 = this.h;
-        Object obj3 = this.b;
-        boolean z9 = true;
-        int i14 = 0;
-        switch (i11) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i7 = this.a;
+        int i10 = this.b;
+        Object obj = this.c;
+        Object obj2 = this.d;
+        switch (i7) {
             case 0:
-                h0 h0Var = (h0) obj3;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                String str = (String) obj;
-                TLRPC.TL_messages_search tL_messages_search = (TLRPC.TL_messages_search) tLObject;
-                z zVar = h0Var.j0;
-                ArrayList arrayList2 = h0Var.H;
-                int i15 = h0Var.s0;
-                if (i13 == h0Var.T && (i12 <= 0 || i12 == h0Var.d0)) {
-                    h0Var.D0--;
-                    if (tL_error == null) {
-                        h0Var.b0 = str;
-                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
-                        yr.a0(i15).m1(messages_messages.users, messages_messages.chats, true, true);
-                        qp.s1(i15).Y3(messages_messages.users, false);
-                        qp.s1(i15).S3(messages_messages.chats, false);
-                        if (tL_messages_search.add_offset == 0) {
-                            arrayList2.clear();
-                        }
-                        h0Var.c0 = messages_messages.next_rate;
-                        for (int i16 = 0; i16 < messages_messages.messages.size(); i16++) {
-                            TLRPC.Message message = messages_messages.messages.get(i16);
-                            int i17 = qp.s1(i15).T.get(ij.B0(message));
-                            if (i17 == 0 || message.id > i17) {
-                                arrayList2.add((ij) arrayList.get(i16));
-                            }
-                        }
-                        h0Var.N = true;
-                        h0Var.X = messages_messages.messages.size() != 20;
-                        if (i12 > 0) {
-                            h0Var.g0 = i12;
-                            if (h0Var.f0 != i12) {
-                                h0Var.s.clear();
-                            }
-                            if (h0Var.e0 != i12) {
-                                zVar.b();
-                            }
-                        }
-                        zVar.f(h0Var.s, h0Var.v0);
-                        kw kwVar = h0Var.U;
-                        if (kwVar != null) {
-                            kwVar.d(h0Var.D0 > 0, true);
-                            h0Var.U.c();
-                        }
-                        h0Var.f();
-                    }
-                }
-                h0Var.Q = 0;
+                h0 h0Var = (h0) obj2;
+                h0Var.getClass();
+                org.telegram.messenger.g0.h3(new ci.p0((Object) h0Var, this.b, (Object) tLObject, (String) obj, 6));
                 break;
             case 1:
-                h0 h0Var2 = (h0) obj3;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                String str2 = (String) obj;
-                TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) tLObject;
-                z zVar2 = h0Var2.j0;
-                ArrayList arrayList3 = h0Var2.I;
-                ArrayList arrayList4 = h0Var2.H;
-                int i18 = h0Var2.s0;
-                if (i13 == h0Var2.P && (i12 <= 0 || i12 == h0Var2.d0)) {
-                    h0Var2.D0--;
-                    if (tL_error2 == null) {
-                        h0Var2.b0 = str2;
-                        TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject2;
-                        yr.a0(i18).m1(messages_messages2.users, messages_messages2.chats, true, true);
-                        qp.s1(i18).Y3(messages_messages2.users, false);
-                        qp.s1(i18).S3(messages_messages2.chats, false);
-                        if (tL_messages_searchGlobal.offset_id == 0) {
-                            arrayList3.clear();
-                        }
-                        h0Var2.c0 = messages_messages2.next_rate;
-                        int i19 = 0;
-                        while (i19 < messages_messages2.messages.size()) {
-                            TLRPC.Message message2 = messages_messages2.messages.get(i19);
-                            int i20 = qp.s1(i18).T.get(ij.B0(message2));
-                            if (i20 == 0 || message2.id > i20) {
-                                ij ijVar = (ij) arrayList.get(i19);
-                                if (!arrayList4.isEmpty()) {
-                                    for (int i21 = i14; i21 < arrayList4.size(); i21++) {
-                                        ij ijVar2 = (ij) arrayList4.get(i21);
-                                        if (ijVar2 == null || ijVar == null || ijVar.e1() != ijVar2.e1() || ij.B0(ijVar.k) != ij.B0(ijVar2.k)) {
-                                        }
-                                    }
-                                }
-                                arrayList3.add(ijVar);
-                                Integer num = (Integer) (message2.out ? qp.s1(i18).P : qp.s1(i18).O).get(Long.valueOf(ij.B0(message2)));
-                                if (num != null) {
-                                    message2.unread = num.intValue() < message2.id;
-                                }
-                            }
-                            i19++;
-                            z9 = true;
-                            i14 = 0;
-                        }
-                        h0Var2.N = z9;
-                        h0Var2.W = messages_messages2.messages.size() != 20;
-                        if (i12 > 0) {
-                            h0Var2.g0 = i12;
-                            if (h0Var2.f0 != i12) {
-                                h0Var2.s.clear();
-                            }
-                            if (h0Var2.e0 != i12) {
-                                zVar2.b();
-                            }
-                        }
-                        zVar2.f(h0Var2.s, h0Var2.v0);
-                        kw kwVar2 = h0Var2.U;
-                        if (kwVar2 != null) {
-                            i10 = 1;
-                            kwVar2.d(h0Var2.D0 > 0, true);
-                            h0Var2.U.c();
-                        } else {
-                            i10 = 1;
-                        }
-                        h0Var2.G0 = i10;
-                        h0Var2.H0 = i10;
-                        i7 = 0;
-                        h0Var2.d = false;
-                        e61 e61Var = h0Var2.E0;
-                        if (e61Var != null) {
-                            String str3 = h0Var2.Z;
-                            TextView textView = (TextView) e61Var.b;
-                            Object[] objArr = new Object[i10];
-                            objArr[0] = str3;
-                            textView.setText(id.a0(null, null, 2131745750, objArr));
-                        }
-                        h0Var2.f();
-                        h0Var2.O = i7;
-                        break;
-                    }
-                }
-                i7 = 0;
-                h0Var2.O = i7;
+                ((VoIPService) obj2).lambda$startConferenceGroupCall$34(i10, (String) obj, tLObject, tL_error);
+                break;
+            case 2:
+                ((VoIPService) obj2).lambda$editCallMember$90(i10, (Runnable) obj, tLObject, tL_error);
+                break;
+            case 3:
+                org.telegram.messenger.g0.h3(new ci.p0((c9) obj2, tLObject, this.b, (TLRPC.User) obj, 15));
+                break;
+            case 4:
+                org.telegram.messenger.g0.h3(new ai.f1(tLObject, this.b, (HashSet) obj2, tL_error, (e2) obj, 11));
+                break;
+            case 5:
+                org.telegram.messenger.g0.h3(new ci.p0((e2) obj2, tLObject, this.b, (z10) obj, 23));
+                break;
+            case 6:
+                org.telegram.messenger.g0.h3(new ci.p0(obj2, this.b, (Object) tLObject, (String) obj, 25));
+                break;
+            case 7:
+                org.telegram.messenger.g0.h3(new ci.p0(obj2, this.b, (Object) tLObject, (String) obj, 27));
+                break;
+            case 8:
+                RectF rectF = ProfileActivity.X6;
+                org.telegram.messenger.g0.i3(new yt0((ProfileActivity) obj2, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) obj, 0), i10);
                 break;
             default:
-                ui uiVar = (ui) obj3;
-                a0.h hVar = (a0.h) obj2;
-                TLRPC.TL_messages_allStickers tL_messages_allStickers = (TLRPC.TL_messages_allStickers) tLObject;
-                uiVar.getClass();
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
-                ArrayList arrayList5 = this.n;
-                arrayList5.set(i13, tL_messages_stickerSet);
-                hVar.k(tL_messages_stickerSet, ((TLRPC.StickerSet) obj).id);
-                if (hVar.m() == tL_messages_allStickers.sets.size()) {
-                    while (i14 < arrayList5.size()) {
-                        if (arrayList5.get(i14) == null) {
-                            arrayList5.remove(i14);
-                            i14--;
+                TLRPC.Chat chat = (TLRPC.Chat) obj2;
+                z10 z10Var = (z10) obj;
+                if (tLObject instanceof Vector) {
+                    Vector vector = (Vector) tLObject;
+                    ArrayList arrayList = new ArrayList();
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i11 = 0; i11 < vector.objects.size(); i11++) {
+                        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) vector.objects.get(i11);
+                        arrayList.add(tL_premiumGiftCodeOption);
+                        String str = tL_premiumGiftCodeOption.store_product;
+                        if (str != null) {
+                            f5.a aVar = new f5.a();
+                            aVar.c = "inapp";
+                            aVar.b = str;
+                            arrayList2.add(aVar.a());
                         }
-                        i14++;
                     }
-                    uiVar.z1(this.d, arrayList5, false, (int) (System.currentTimeMillis() / 1000), tL_messages_allStickers.hash2, null);
-                    break;
+                    boolean isEmpty = arrayList2.isEmpty();
+                    int i12 = this.b;
+                    if (isEmpty || !wg.q.h()) {
+                        org.telegram.messenger.g0.h3(new wg.m(chat, i12, arrayList, z10Var, 1));
+                        break;
+                    } else {
+                        org.telegram.messenger.r1.i().o(arrayList2, new bg.f0(arrayList, chat, i12, z10Var, 10));
+                        break;
+                    }
                 }
                 break;
         }
     }
 
-    public /* synthetic */ u(ui uiVar, TLObject tLObject, ArrayList arrayList, int i7, a0.h hVar, TLRPC.StickerSet stickerSet, TLRPC.TL_messages_allStickers tL_messages_allStickers, int i10) {
-        this.a = 2;
-        this.b = uiVar;
-        this.h = tLObject;
-        this.n = arrayList;
-        this.c = i7;
-        this.e = hVar;
-        this.f = stickerSet;
-        this.r = tL_messages_allStickers;
-        this.d = i10;
+    public /* synthetic */ u(Object obj, int i7, Object obj2, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = i7;
+        this.c = obj2;
+    }
+
+    public /* synthetic */ u(ProfileActivity profileActivity, TLRPC.TL_channels_getParticipants tL_channels_getParticipants, int i7) {
+        this.a = 8;
+        this.d = profileActivity;
+        this.c = tL_channels_getParticipants;
+        this.b = i7;
     }
 }

@@ -1,8 +1,6 @@
 package x2;
 
-import l2.t1;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n1 implements d0, c0 {
     public final d0 a;
@@ -12,13 +10,6 @@ public final class n1 implements d0, c0 {
     public n1(d0 d0Var, long j3) {
         this.a = d0Var;
         this.b = j3;
-    }
-
-    @Override // x2.c0
-    public final void a(d0 d0Var) {
-        c0 c0Var = this.c;
-        c0Var.getClass();
-        c0Var.a(this);
     }
 
     @Override // x2.d0
@@ -55,20 +46,13 @@ public final class n1 implements d0, c0 {
     }
 
     @Override // x2.d1
-    public final boolean c(l2.v0 v0Var) {
-        l2.u0 u0Var = new l2.u0();
-        long j3 = v0Var.a;
-        u0Var.b = v0Var.b;
-        u0Var.c = v0Var.c;
-        u0Var.a = j3 - this.b;
-        return this.a.c(new l2.v0(u0Var));
-    }
-
-    @Override // x2.c1
-    public final void d(d1 d1Var) {
-        c0 c0Var = this.c;
-        c0Var.getClass();
-        c0Var.d(this);
+    public final boolean c(l2.s0 s0Var) {
+        l2.r0 r0Var = new l2.r0();
+        long j3 = s0Var.a;
+        r0Var.b = s0Var.b;
+        r0Var.c = s0Var.c;
+        r0Var.a = j3 - this.b;
+        return this.a.c(new l2.s0(r0Var));
     }
 
     @Override // x2.d1
@@ -80,15 +64,22 @@ public final class n1 implements d0, c0 {
         return e10 + this.b;
     }
 
+    @Override // x2.c1
+    public final void f0(d1 d1Var) {
+        c0 c0Var = this.c;
+        c0Var.getClass();
+        c0Var.f0(this);
+    }
+
     @Override // x2.d1
     public final boolean g() {
         return this.a.g();
     }
 
     @Override // x2.d0
-    public final long h(long j3, t1 t1Var) {
+    public final long h(long j3, l2.p1 p1Var) {
         long j10 = this.b;
-        return this.a.h(j3 - j10, t1Var) + j10;
+        return this.a.h(j3 - j10, p1Var) + j10;
     }
 
     @Override // x2.d0
@@ -102,42 +93,49 @@ public final class n1 implements d0, c0 {
         return this.a.j(j3 - j10) + j10;
     }
 
-    @Override // x2.d0
-    public final void k(long j3) {
-        this.a.k(j3 - this.b);
+    @Override // x2.c0
+    public final void k(d0 d0Var) {
+        c0 c0Var = this.c;
+        c0Var.getClass();
+        c0Var.k(this);
     }
 
     @Override // x2.d0
-    public final long n() {
-        long n10 = this.a.n();
-        if (n10 == -9223372036854775807L) {
+    public final void l(long j3) {
+        this.a.l(j3 - this.b);
+    }
+
+    @Override // x2.d0
+    public final long o() {
+        long o4 = this.a.o();
+        if (o4 == -9223372036854775807L) {
             return -9223372036854775807L;
         }
-        return n10 + this.b;
+        return o4 + this.b;
     }
 
     @Override // x2.d0
-    public final p1 o() {
-        return this.a.o();
+    public final q1 p() {
+        return this.a.p();
     }
 
     @Override // x2.d1
-    public final long p() {
-        long p10 = this.a.p();
-        if (p10 == Long.MIN_VALUE) {
+    public final long s() {
+        long s5 = this.a.s();
+        if (s5 == Long.MIN_VALUE) {
             return Long.MIN_VALUE;
         }
-        return p10 + this.b;
+        return s5 + this.b;
     }
 
     @Override // x2.d0
-    public final void q(c0 c0Var, long j3) {
+    public final void t(c0 c0Var, long j3) {
         this.c = c0Var;
-        this.a.q(this, j3 - this.b);
+        this.a.t(this, j3 - this.b);
     }
 
     @Override // x2.d1
-    public final void r(long j3) {
-        this.a.r(j3 - this.b);
+    public final void u(long j3) {
+        this.a.u(j3 - this.b);
     }
 }

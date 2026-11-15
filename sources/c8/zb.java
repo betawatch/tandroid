@@ -1,18 +1,18 @@
 package c8;
 
-import android.os.StrictMode;
-import java.util.concurrent.Callable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class zb {
-    public static Object a(Callable callable) {
-        StrictMode.ThreadPolicy threadPolicy = StrictMode.getThreadPolicy();
-        try {
-            StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
-            return callable.call();
-        } finally {
-            StrictMode.setThreadPolicy(threadPolicy);
-        }
+    public static r6.b a(byte[] bArr, Parcelable.Creator creator) {
+        q6.m.g(creator);
+        Parcel obtain = Parcel.obtain();
+        obtain.unmarshall(bArr, 0, bArr.length);
+        obtain.setDataPosition(0);
+        r6.b bVar = (r6.b) creator.createFromParcel(obtain);
+        obtain.recycle();
+        return bVar;
     }
 }

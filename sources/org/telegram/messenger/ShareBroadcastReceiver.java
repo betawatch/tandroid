@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class ShareBroadcastReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -15,7 +15,7 @@ public class ShareBroadcastReceiver extends BroadcastReceiver {
             Intent intent2 = new Intent("android.intent.action.SEND");
             intent2.setType("text/plain");
             intent2.putExtra("android.intent.extra.TEXT", dataString);
-            Intent createChooser = Intent.createChooser(intent2, id.M0(2131745458, null));
+            Intent createChooser = Intent.createChooser(intent2, hd.M0(2131745458, null));
             createChooser.setFlags(TLObject.FLAG_28);
             context.startActivity(createChooser);
         }

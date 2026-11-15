@@ -1,420 +1,891 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.DashPathEffect;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
 import android.graphics.RectF;
-import android.view.View;
+import android.os.SystemClock;
+import android.view.ViewGroup;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
+import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.np;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.ch0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class x7 extends View {
-    public final /* synthetic */ d8 a;
+public final class x7 implements Runnable {
+    public final /* synthetic */ c8 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x7(d8 d8Var, Context context) {
-        super(context);
-        this.a = d8Var;
+    public x7(c8 c8Var) {
+        this.a = c8Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i7;
+    /* JADX WARN: Removed duplicated region for block: B:110:0x048f  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0342  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x07f0  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0158  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x083c  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x0849  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x086d  */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x0893  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0162 A[LOOP:1: B:21:0x0160->B:22:0x0162, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x08a6  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x08c5 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x08d6  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x0959  */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x0a00  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x0a2c  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x017e  */
+    /* JADX WARN: Removed duplicated region for block: B:282:0x0a61  */
+    /* JADX WARN: Removed duplicated region for block: B:295:0x09ea  */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x08fb  */
+    /* JADX WARN: Removed duplicated region for block: B:418:0x066d  */
+    /* JADX WARN: Removed duplicated region for block: B:421:0x0674 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:424:0x0682  */
+    /* JADX WARN: Removed duplicated region for block: B:428:0x068c  */
+    /* JADX WARN: Removed duplicated region for block: B:433:0x069f  */
+    /* JADX WARN: Removed duplicated region for block: B:438:0x06b4  */
+    /* JADX WARN: Removed duplicated region for block: B:490:0x07dc A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x048b  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x049c  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        long j3;
         float f10;
+        p7 p7Var;
+        p7 p7Var2;
+        p7 p7Var3;
+        boolean z10;
+        k8.a aVar;
+        boolean z11;
+        org.telegram.ui.Components.i9 i9Var;
+        float[] D;
+        b8 b8Var;
+        RectF Z;
+        p7 j10;
+        int size;
+        int size2;
         float f11;
+        Iterator it;
         float f12;
+        boolean b10;
+        boolean b11;
+        h6 h6Var;
+        int i7;
         float f13;
         float f14;
-        float max;
-        RectF rectF;
+        c6 c6Var;
+        int size3;
         int i10;
-        RectF rectF2;
-        RectF rectF3;
-        RectF rectF4;
-        RectF rectF5;
-        RectF rectF6;
-        Canvas canvas2;
-        Paint paint;
-        int i11;
-        d8 d8Var;
-        Path path;
-        i6 i6Var;
+        Iterator it2;
+        String string;
+        boolean z12;
         float f15;
-        d8 d8Var2 = this.a;
-        RectF rectF7 = d8Var2.D1;
-        Path path2 = d8Var2.I;
-        i6 i6Var2 = d8Var2.c;
-        Matrix matrix = d8Var2.W;
-        Paint paint2 = d8Var2.F;
-        RectF rectF8 = d8Var2.H;
-        Paint paint3 = d8Var2.y;
-        Path path3 = d8Var2.T;
-        if (d8Var2.Y0 <= 0.0f) {
+        a8 a8Var;
+        a8 a8Var2;
+        boolean optBoolean;
+        int i11;
+        fi.u2 u2Var;
+        float f16;
+        float f17;
+        float f18;
+        float f19;
+        p7 p7Var4;
+        float f20;
+        ch0 B;
+        float f21;
+        float f22;
+        a8 a8Var3;
+        float f23;
+        c8 c8Var = this.a;
+        if (c8Var.b1 || !c8Var.isAttachedToWindow()) {
             return;
         }
-        paint3.setShader(null);
-        paint3.setColorFilter(null);
-        ArrayList arrayList = d8Var2.S;
-        int size = arrayList.size();
-        int i12 = 0;
-        while (i12 < size) {
-            Object obj = arrayList.get(i12);
-            int i13 = i12 + 1;
-            a8 a8Var = (a8) obj;
-            float f16 = a8Var.h / a8Var.f;
-            if (f16 < 0.1f) {
-                f15 = f16 / 0.1f;
-            } else {
-                float f17 = 1.0f - ((f16 - 0.1f) / 0.9f);
-                f15 = f17 * f17;
-            }
-            ArrayList arrayList2 = arrayList;
-            float B = com.google.android.recaptcha.internal.a.B(f15, 0.4f, 0.6f, a8Var.e);
-            paint3.setColor(-1);
-            paint3.setAlpha((int) (Utilities.l(f15) * 130.0f));
-            canvas.save();
-            canvas.translate(a8Var.a, a8Var.b);
-            canvas.rotate(a8Var.g);
-            path3.rewind();
-            float f18 = -B;
-            float f19 = f18 * 2.0f;
-            path3.moveTo(0.0f, f19);
-            float f20 = B * 0.35f;
-            float f21 = f18 * 0.35f;
-            path3.lineTo(f20, f21);
-            float f22 = B * 2.0f;
-            path3.lineTo(f22, 0.0f);
-            path3.lineTo(f20, f20);
-            path3.lineTo(0.0f, f22);
-            path3.lineTo(f21, f20);
-            path3.lineTo(f19, 0.0f);
-            path3.lineTo(f21, f21);
-            path3.close();
-            canvas.drawPath(path3, paint3);
-            canvas.restore();
-            i12 = i13;
-            arrayList = arrayList2;
-        }
-        float f23 = 1.0f;
-        paint3.setAlpha(qs.e4);
-        ArrayList arrayList3 = d8Var2.n;
-        int size2 = arrayList3.size();
-        int i14 = 0;
-        while (i14 < size2) {
-            Object obj2 = arrayList3.get(i14);
-            i14++;
-            z7 z7Var = (z7) obj2;
-            float l10 = f23 - Utilities.l(z7Var.c / 0.42f);
-            float x10 = org.telegram.ui.Cells.f1.x(l10, l10, l10, f23);
-            paint2.setColor(-1);
-            paint2.setAlpha((int) (l10 * 90.0f));
-            paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.4f) * l10);
-            canvas.drawCircle(z7Var.a, z7Var.b, com.google.android.recaptcha.internal.a.B(x10, 0.43f, 0.42f, d8Var2.U()), paint2);
-            arrayList3 = arrayList3;
-            size2 = size2;
-            f23 = 1.0f;
-        }
-        Paint paint4 = d8Var2.s1;
-        Path path4 = d8Var2.u1;
-        Paint paint5 = d8Var2.r1;
-        float l11 = Utilities.l(d8Var2.q1.a);
-        if (l11 < 0.01f || !d8Var2.C()) {
-            i7 = 1;
-        } else {
-            paint4.setAlpha((int) (22.0f * l11));
-            canvas.drawPath(path4, paint4);
-            float L = org.telegram.messenger.g0.L(6.0f);
-            float L2 = org.telegram.messenger.g0.L(4.5f);
-            float f24 = L + L2;
-            i7 = 1;
-            paint5.setPathEffect(new DashPathEffect(new float[]{L, L2}, f24 - ((d8Var2.n1 * org.telegram.messenger.g0.L(18.0f)) % f24)));
-            paint5.setStrokeWidth(org.telegram.messenger.g0.L(3.2f));
-            paint5.setColor(Color.argb((int) (40.0f * l11), 0, 18, 48));
-            canvas.drawPath(path4, paint5);
-            paint5.setStrokeWidth(org.telegram.messenger.g0.L(1.8f));
-            paint5.setColor(Color.argb((int) (l11 * 180.0f), qs.e4, qs.e4, qs.e4));
-            canvas.drawPath(path4, paint5);
-        }
-        float y10 = com.google.android.recaptcha.internal.a.y(d8Var2.a0, 0.6f, d8Var2.b0, 10.0f);
-        matrix.setScale(d8Var2.Y0 * 1.5f, 1.0f);
-        matrix.postRotate(-24.0f);
-        float f25 = d8Var2.Y0;
-        matrix.postTranslate(com.google.android.recaptcha.internal.a.x(y10, f25, 0.45f, (-f25) * 0.25f), 0.0f);
-        d8Var2.V.setLocalMatrix(matrix);
-        ArrayList<RectF> stickerObstacles = i6Var2.getStickerObstacles();
-        RectF rectF9 = stickerObstacles.get(0);
-        RectF rectF10 = stickerObstacles.get(i7);
-        RectF rectF11 = stickerObstacles.get(2);
-        RectF rectF12 = stickerObstacles.get(3);
-        RectF rectF13 = stickerObstacles.get(4);
-        RectF rectF14 = stickerObstacles.get(5);
-        ArrayList G = d8Var2.G();
-        Path path5 = path2;
-        int size3 = G.size();
-        int i15 = 0;
-        Paint paint6 = paint3;
-        i6 i6Var3 = i6Var2;
-        float f26 = 0.0f;
-        float f27 = 0.0f;
-        float f28 = 0.0f;
-        float f29 = 0.0f;
-        while (i15 < size3) {
-            int i16 = i15 + 1;
-            c8 c8Var = (c8) G.get(i15);
-            int i17 = c8Var.H;
-            int i18 = size3;
-            b8 b8Var = c8Var.i;
-            ArrayList arrayList4 = G;
-            b8 b8Var2 = c8Var.f;
-            b8 b8Var3 = c8Var.e;
-            RectF rectF15 = rectF11;
-            b8 b8Var4 = c8Var.j;
-            float f30 = f28;
-            b8 b8Var5 = c8Var.k;
-            RectF rectF16 = rectF14;
-            b8 b8Var6 = c8Var.p;
-            float f31 = f26;
-            if (i17 != 2 && (i17 != 1 || (c8Var.O && b8Var4.a > 0.3f))) {
-                rectF4 = rectF9;
-                rectF2 = rectF10;
-                rectF6 = rectF12;
-                rectF5 = rectF13;
-                max = f27;
-                rectF = rectF7;
-                path = path5;
-                i6Var = i6Var3;
-                paint = paint6;
-                rectF3 = rectF16;
-                d8Var = d8Var2;
-                path5 = path;
-                d8Var2 = d8Var;
-                paint6 = paint;
-                i6Var3 = i6Var;
-                rectF7 = rectF;
-                rectF9 = rectF4;
-                rectF12 = rectF6;
-                rectF13 = rectF5;
-                f27 = max;
-                i15 = i16;
-                size3 = i18;
-                G = arrayList4;
-                rectF11 = rectF15;
-                f28 = f30;
-                f26 = f31;
-                rectF10 = rectF2;
-                rectF14 = rectF3;
-            }
-            Bitmap a10 = c8Var.a();
-            float f32 = c8Var.l.a;
-            float l12 = Utilities.l(c8Var.r.a);
-            RectF rectF17 = rectF10;
-            float f33 = f27;
-            float B2 = com.google.android.recaptcha.internal.a.B(l12, 0.2f, 0.8f, (((1.0f - (c8Var.q.a * 0.9f)) * 0.04f * f32) + 1.0f) * d8Var2.U() * c8Var.g.a * c8Var.h.a);
-            if (a10 == null || B2 < 1.0f) {
-                f28 = f30;
-                path5 = path5;
-                f29 = f29;
-                paint6 = paint6;
-                i6Var3 = i6Var3;
-                rectF7 = rectF7;
-                rectF9 = rectF9;
-                rectF12 = rectF12;
-                i15 = i16;
-                size3 = i18;
-                rectF11 = rectF15;
-                rectF10 = rectF17;
-                rectF14 = rectF16;
-                f27 = f33;
-                f26 = f31;
-                d8Var2 = d8Var2;
-                rectF13 = rectF13;
-                G = arrayList4;
-            } else {
-                float max2 = Math.max(b8Var4.a, 0.7f * f32);
-                float L3 = (org.telegram.messenger.g0.L(9.0f) * max2) + org.telegram.messenger.g0.L(1.5f);
-                float sin = ((float) Math.sin(Math.toRadians(d8Var2.b0))) * L3 * 2.2f;
-                float sin2 = ((float) Math.sin(Math.toRadians(d8Var2.a0))) * L3 * 2.2f;
-                d8 d8Var3 = d8Var2;
-                float f34 = b8Var3.a + c8Var.n.a + sin;
-                float L4 = ((b8Var2.a + c8Var.o.a) + sin2) - (org.telegram.messenger.g0.L(4.0f) * max2);
-                float f35 = b8Var3.a - (sin * 0.3f);
-                float f36 = (L3 * 0.22f) + (b8Var2.a - (sin2 * 0.3f));
-                float l13 = Utilities.l((f32 * 1.5f) + (3.0f * max2) + b8Var6.a + b8Var5.a);
-                rectF7.set(Math.min(f34, f35) - B2, Math.min(L4, f36) - B2, Math.max(f34, f35) + B2, Math.max(L4, f36) + B2);
-                boolean intersects = RectF.intersects(rectF7, rectF12);
-                float f37 = B2 * 0.4f;
-                rectF8.set(f34 - f37, L4 - f37, f34 + f37, L4 + f37);
-                max = Math.max(f33, Math.max(d8.n(rectF8, rectF9), d8.n(rectF8, rectF13)) * l12);
-                f31 = Math.max(f31, d8.n(rectF8, rectF17) * l12);
-                f30 = Math.max(f30, d8.n(rectF8, rectF16) * l12);
-                float n10 = d8.n(rectF8, rectF15) * l12;
-                RectF rectF18 = rectF12;
-                f29 = Math.max(f29, n10);
-                if (intersects) {
-                    rectF = rectF7;
-                    i10 = canvas.saveLayer(rectF7, null);
-                } else {
-                    rectF = rectF7;
-                    i10 = -1;
+        long uptimeMillis = SystemClock.uptimeMillis();
+        long j11 = 0;
+        float min = c8Var.N0 == 0 ? 0.016666668f : Math.min(0.032f, (uptimeMillis - r4) / 1000.0f);
+        c8Var.N0 = uptimeMillis;
+        if (c8Var.A()) {
+            Iterator it3 = c8Var.f.values().iterator();
+            boolean z13 = false;
+            while (true) {
+                j3 = j11;
+                if (!it3.hasNext()) {
+                    break;
                 }
-                canvas.save();
-                canvas.rotate(b8Var.a, f35, f36);
-                rectF2 = rectF17;
-                rectF3 = rectF16;
-                rectF4 = rectF9;
-                rectF5 = rectF13;
-                rectF6 = rectF18;
-                rectF15 = rectF15;
-                d8Var3.t(canvas, c8Var, f35, f36, com.google.android.recaptcha.internal.a.B(b8Var6.a, 0.07f, (0.08f * max2) + 0.97f, B2), Math.max(max2, b8Var5.a * 0.5f), b8Var6.a, l13 * l12);
-                canvas.restore();
-                float f38 = f34 - B2;
-                float f39 = L4 - B2;
-                float f40 = f34 + B2;
-                float f41 = L4 + B2;
-                int saveLayer = canvas.saveLayer(f38, f39, f40, f41, null);
-                Paint paint7 = paint6;
-                paint7.setAlpha((int) (l12 * 255.0f));
-                float f42 = b8Var5.a;
-                if (f42 > 0.004f) {
-                    d8Var3.r(canvas, a10, f34, L4, B2, f42, 1.0f, b8Var.a, c8Var.U, c8Var.V);
-                    d8Var = d8Var3;
-                    canvas2 = canvas;
-                    i11 = saveLayer;
-                    paint = paint7;
+                b8 b8Var2 = (b8) it3.next();
+                boolean z14 = b8Var2.K;
+                a8 a8Var4 = b8Var2.m;
+                a8 a8Var5 = b8Var2.i;
+                String str = b8Var2.a;
+                a8 a8Var6 = b8Var2.j;
+                fi.u2 u2Var2 = b8Var2.c;
+                a8 a8Var7 = b8Var2.g;
+                a8 a8Var8 = b8Var2.f;
+                a8 a8Var9 = b8Var2.e;
+                a8 a8Var10 = b8Var2.h;
+                if (z14) {
+                    it2 = it3;
+                    f15 = min;
+                    z12 = z13;
                 } else {
-                    canvas2 = canvas;
-                    paint = paint7;
-                    i11 = saveLayer;
-                    d8Var = d8Var3;
-                    canvas2.save();
-                    canvas2.rotate(b8Var.a, f34, L4);
-                    float f43 = B2 / 2.0f;
-                    rectF8.set(f34 - f43, L4 - f43, f34 + f43, L4 + f43);
-                    canvas2.drawBitmap(a10, (Rect) null, rectF8, paint);
-                    canvas2.restore();
-                }
-                paint.setAlpha(qs.e4);
-                canvas2.drawRect(f38, f39, f40, f41, d8Var.U);
-                canvas2.restoreToCount(i11);
-                if (intersects) {
-                    if (intersects) {
-                        path = path5;
-                        i6Var = i6Var3;
-                        i6Var.h(path, d8Var.Y0, d8Var.Z0);
-                        canvas2.drawPath(path, d8Var.E1);
+                    b8Var2.K = true;
+                    if (c8Var.b) {
+                        it2 = it3;
+                        string = null;
                     } else {
-                        path = path5;
-                        i6Var = i6Var3;
+                        it2 = it3;
+                        string = c8Var.e.getString(str, null);
                     }
-                    canvas2.restoreToCount(i10);
-                } else {
-                    path = path5;
-                    i6Var = i6Var3;
+                    if (c8Var.c1 != null) {
+                        TL_wallet.cardSticker R = c8Var.R(str);
+                        if (R != null) {
+                            TL_stories.MediaAreaCoordinates mediaAreaCoordinates = R.coordinates;
+                            if (string == null) {
+                                z12 = z13;
+                            } else {
+                                z12 = z13;
+                                try {
+                                    optBoolean = new JSONObject(string).optBoolean("q");
+                                } catch (Exception unused) {
+                                }
+                                c8Var.K(b8Var2, mediaAreaCoordinates, optBoolean);
+                            }
+                            optBoolean = false;
+                            c8Var.K(b8Var2, mediaAreaCoordinates, optBoolean);
+                        } else {
+                            z12 = z13;
+                        }
+                    } else {
+                        z12 = z13;
+                        if (string != null) {
+                            try {
+                                JSONObject jSONObject = new JSONObject(string);
+                                f15 = min;
+                                try {
+                                    a8Var10.a((float) jSONObject.optDouble("s", 1.0d));
+                                    a8Var = a8Var4;
+                                    a8Var2 = a8Var6;
+                                } catch (Exception unused2) {
+                                    a8Var = a8Var4;
+                                    a8Var2 = a8Var6;
+                                }
+                                try {
+                                    a8Var5.a((float) jSONObject.optDouble("r", 0.0d));
+                                    b8Var2.N = jSONObject.optBoolean("q");
+                                    float[] fArr = {((float) jSONObject.getDouble("x")) * c8Var.Z0, ((float) jSONObject.getDouble("y")) * c8Var.a1, a8Var10.b};
+                                    a8Var9.a(fArr[0]);
+                                    a8Var8.a(fArr[1]);
+                                    a8Var10.a(fArr[2]);
+                                    b8Var2.H = 2;
+                                    long j12 = c8Var.O0 + 1;
+                                    c8Var.O0 = j12;
+                                    b8Var2.I = j12;
+                                    a8Var.a(1.0f);
+                                    if (b8Var2.J == j3) {
+                                        long j13 = c8Var.S0 + 1;
+                                        c8Var.S0 = j13;
+                                        b8Var2.J = j13;
+                                    }
+                                    str = str;
+                                    try {
+                                        if (str.equals(c8Var.Q0)) {
+                                            c8Var.U0 = b8Var2;
+                                            c8Var.T0 = b8Var2;
+                                            c8Var.V0 = 1.0f;
+                                            c8Var.e();
+                                        }
+                                    } catch (Exception unused3) {
+                                    }
+                                } catch (Exception unused4) {
+                                    str = str;
+                                    if (b8Var2.b()) {
+                                    }
+                                    while (r7 < r5) {
+                                    }
+                                    float f24 = f15;
+                                    i11 = b8Var2.H;
+                                    if (i11 == 1) {
+                                    }
+                                    z12 = true;
+                                    if (!b8Var2.b()) {
+                                    }
+                                    B = u2Var.B();
+                                    if (B == null) {
+                                    }
+                                    z13 = z12;
+                                    j11 = j3;
+                                    it3 = it2;
+                                    min = f16;
+                                }
+                            } catch (Exception unused5) {
+                            }
+                            if (b8Var2.b()) {
+                                b8Var2.a();
+                            }
+                            for (a8 a8Var11 : b8Var2.s) {
+                                z12 |= a8Var11.b(f15);
+                            }
+                            float f242 = f15;
+                            i11 = b8Var2.H;
+                            if (i11 == 1) {
+                                float t6 = Utilities.t(a8Var9.a + b8Var2.n.a, a8Var8.a + b8Var2.o.a, a8Var9.b, a8Var8.b);
+                                if (b8Var2.M || a8Var2.a >= 0.36f || t6 >= org.telegram.messenger.g0.L(24.0f)) {
+                                    f21 = 0.28f;
+                                } else {
+                                    b8Var2.M = true;
+                                    ArrayList arrayList = c8Var.n;
+                                    float f25 = a8Var9.b;
+                                    f21 = 0.28f;
+                                    float f26 = a8Var8.b;
+                                    y7 y7Var = new y7();
+                                    y7Var.a = f25;
+                                    y7Var.b = f26;
+                                    arrayList.add(y7Var);
+                                }
+                                if (b8Var2.L || a8Var2.a >= 0.22f || t6 >= org.telegram.messenger.g0.L(12.0f)) {
+                                    f22 = t6;
+                                    a8Var3 = a8Var8;
+                                    f23 = 1.4f;
+                                } else {
+                                    b8Var2.L = true;
+                                    a8 a8Var12 = b8Var2.p;
+                                    a8Var12.a(1.0f);
+                                    a8Var12.b = 0.0f;
+                                    a8 a8Var13 = c8Var.Q;
+                                    boolean z15 = b8Var2.P;
+                                    float f27 = z15 ? 420.0f : 260.0f;
+                                    float f28 = z15 ? 0.38f : 0.85f;
+                                    a8Var13.d = f27;
+                                    a8Var13.e = f28;
+                                    a8Var13.c -= z15 ? 0.75f : f21;
+                                    float f29 = z15 ? 3.4f : 1.4f;
+                                    a8 a8Var14 = c8Var.R;
+                                    float f30 = a8Var14.c;
+                                    f23 = 1.4f;
+                                    float f31 = a8Var9.b;
+                                    a8Var14.c = (((f31 / c8Var.Z0) - 0.5f) * 2.0f * f29) + f30;
+                                    a8 a8Var15 = c8Var.S;
+                                    float f32 = a8Var15.c;
+                                    float f33 = a8Var8.b;
+                                    f22 = t6;
+                                    a8Var15.c = (((f33 / c8Var.a1) - 0.5f) * 2.0f * f29) + f32;
+                                    if (z15) {
+                                        Random random = new Random();
+                                        int i12 = 0;
+                                        while (i12 < 14) {
+                                            z7 z7Var = new z7();
+                                            float g10 = org.telegram.ui.Cells.y0.g(random, 0.35f, (float) ((i12 / 14.0f) * 3.141592653589793d * 2.0d));
+                                            float nextFloat = (random.nextFloat() * org.telegram.messenger.g0.L(180.0f)) + org.telegram.messenger.g0.L(265.0f);
+                                            z7Var.a = f31;
+                                            z7Var.b = f33;
+                                            double d = g10;
+                                            z7Var.c = ((float) Math.cos(d)) * nextFloat;
+                                            z7Var.d = ((float) Math.sin(d)) * nextFloat;
+                                            z7Var.e = (random.nextFloat() * org.telegram.messenger.g0.L(1.1f)) + org.telegram.messenger.g0.L(0.8f);
+                                            z7Var.f = org.telegram.ui.Cells.y0.g(random, 0.35f, 0.7f);
+                                            z7Var.g = random.nextFloat() * 360.0f;
+                                            c8Var.T.add(z7Var);
+                                            i12++;
+                                            f31 = f31;
+                                            a8Var8 = a8Var8;
+                                        }
+                                    }
+                                    a8Var3 = a8Var8;
+                                    if (str.equals(c8Var.R0)) {
+                                        c8Var.X(b8Var2, false);
+                                        c8Var.R0 = null;
+                                    }
+                                }
+                                if (!b8Var2.Q && b8Var2.k.a < 0.3f) {
+                                    b8Var2.Q = true;
+                                    a8Var7.c -= f23;
+                                    c8Var.performHapticFeedback(3);
+                                }
+                                if (b8Var2.Q && f22 < 0.5f && Math.abs(a8Var7.a - 1.0f) < 0.004f && Math.abs(a8Var7.c) < 0.02f) {
+                                    b8Var2.H = 2;
+                                    a8Var9.a(a8Var9.b);
+                                    a8 a8Var16 = a8Var3;
+                                    a8Var16.a(a8Var16.b);
+                                }
+                                u2Var = u2Var2;
+                                f16 = f242;
+                            } else if (i11 == 4) {
+                                float e10 = org.telegram.ui.Cells.y0.e(f242, b8Var2.b0, b8Var2.W, 1.0f);
+                                b8Var2.W = e10;
+                                float f34 = 1.0f - e10;
+                                float f35 = 1.0f - (f34 * f34);
+                                p7 j14 = c8Var.j(b8Var2);
+                                float l10 = Utilities.l(e10 / 0.5f);
+                                if (j14 != null) {
+                                    f17 = e10;
+                                    f16 = f242;
+                                    f18 = 1.0f;
+                                    f19 = org.telegram.messenger.g0.T1(b8Var2.c0, 1.0f, com.google.android.gms.internal.vision.e2.C(l10, 2.0f, 3.0f, l10 * l10));
+                                } else {
+                                    f17 = e10;
+                                    f18 = 1.0f;
+                                    f16 = f242;
+                                    f19 = 1.0f;
+                                }
+                                if (j14 != null) {
+                                    j14.setScaleX(f19);
+                                    j14.setScaleY(f19);
+                                }
+                                RectF Z2 = c8Var.Z(b8Var2);
+                                if (Z2 == null) {
+                                    a8Var7.a((f18 - f35) * b8Var2.Z);
+                                    u2Var = u2Var2;
+                                    p7Var4 = j14;
+                                    f20 = 1.0f;
+                                } else {
+                                    float sin = (float) Math.sin(f35 * 3.141592653589793d);
+                                    u2Var = u2Var2;
+                                    p7Var4 = j14;
+                                    float min2 = Math.min(org.telegram.messenger.g0.L(90.0f), Utilities.t(Z2.centerX(), Z2.centerY(), b8Var2.X, b8Var2.Y) * 0.28f);
+                                    a8Var9.a(org.telegram.messenger.g0.T1(b8Var2.X, Z2.centerX(), f35));
+                                    a8Var8.a(org.telegram.messenger.g0.T1(b8Var2.Y, Z2.centerY(), f35) - ((((1.0f - f35) * 2.0f) * f35) * min2));
+                                    a8Var7.a(org.telegram.messenger.g0.T1(1.0f, f19, f35) * com.google.android.gms.internal.vision.e2.B(sin, 0.05f, 1.0f, org.telegram.messenger.g0.T1(b8Var2.Z, (c8Var.f(b8Var2) * (Z2.width() / f19)) / c8Var.U(), f35)));
+                                    a8Var2.a(sin * 0.8f);
+                                    float f36 = b8Var2.a0;
+                                    a8Var5.a((c8.c(-f36) * f35) + f36);
+                                    f20 = 1.0f;
+                                    a8Var.a(Utilities.l(1.0f - ((f35 - 0.35f) / 0.4f)));
+                                }
+                                if (f17 >= f20) {
+                                    c8Var.g(b8Var2);
+                                    if (p7Var4 != null) {
+                                        p7Var4.animate().scaleX(0.955f).scaleY(0.955f).setDuration(70L).setInterpolator(null).withEndAction(new s7(p7Var4, 1)).start();
+                                    }
+                                }
+                            } else {
+                                u2Var = u2Var2;
+                                f16 = f242;
+                                if (i11 == 5) {
+                                    if (a8Var7.a < 0.03f) {
+                                        c8Var.g(b8Var2);
+                                    }
+                                }
+                                if (!b8Var2.b()) {
+                                    b8Var2.R = true;
+                                } else if (b8Var2.H == 0) {
+                                    b8Var2.R = false;
+                                }
+                                B = u2Var.B();
+                                if (B == null && B.l0) {
+                                    ch0 B2 = u2Var.B();
+                                    int i13 = B2 == null ? 0 : B2.b0;
+                                    if (i13 >= 2) {
+                                        b8Var2.T = true;
+                                    }
+                                    boolean z16 = b8Var2.S && !b8Var2.T && b8Var2.H == 2;
+                                    if (b8Var2.l.b == 0.0f && !z16 && B2 != null && i13 < 2) {
+                                        u2Var.Q0();
+                                        u2Var.v0 = false;
+                                        b8Var2.S = false;
+                                    }
+                                    z13 = true;
+                                } else {
+                                    z13 = z12;
+                                }
+                                j11 = j3;
+                                it3 = it2;
+                                min = f16;
+                            }
+                            z12 = true;
+                            if (!b8Var2.b()) {
+                            }
+                            B = u2Var.B();
+                            if (B == null) {
+                            }
+                            z13 = z12;
+                            j11 = j3;
+                            it3 = it2;
+                            min = f16;
+                        }
+                    }
+                    f15 = min;
                 }
-                path5 = path;
-                d8Var2 = d8Var;
-                paint6 = paint;
-                i6Var3 = i6Var;
-                rectF7 = rectF;
-                rectF9 = rectF4;
-                rectF12 = rectF6;
-                rectF13 = rectF5;
-                f27 = max;
-                i15 = i16;
-                size3 = i18;
-                G = arrayList4;
-                rectF11 = rectF15;
-                f28 = f30;
-                f26 = f31;
-                rectF10 = rectF2;
-                rectF14 = rectF3;
+                a8Var = a8Var4;
+                a8Var2 = a8Var6;
+                if (b8Var2.b()) {
+                }
+                while (r7 < r5) {
+                }
+                float f2422 = f15;
+                i11 = b8Var2.H;
+                if (i11 == 1) {
+                }
+                z12 = true;
+                if (!b8Var2.b()) {
+                }
+                B = u2Var.B();
+                if (B == null) {
+                }
+                z13 = z12;
+                j11 = j3;
+                it3 = it2;
+                min = f16;
             }
-        }
-        d8 d8Var4 = d8Var2;
-        float f44 = f26;
-        float f45 = f27;
-        float f46 = f28;
-        i6 i6Var4 = i6Var3;
-        float f47 = f29;
-        Paint paint8 = d8Var4.k0;
-        Paint paint9 = d8Var4.l0;
-        Paint paint10 = d8Var4.j0;
-        c8 c8Var2 = d8Var4.h0;
-        if (c8Var2 == null || c8Var2.H != 2) {
-            f10 = f45;
-            f11 = f44;
-            f12 = f46;
-            f13 = f47;
-        } else {
-            float f48 = c8Var2.n.a + c8Var2.e.a;
-            float f49 = c8Var2.o.a + c8Var2.f.a;
-            float P = (d8Var4.P(c8Var2) * 0.5f) + org.telegram.messenger.g0.L(9.0f);
-            paint10.setColor(-1);
-            Paint.Style style = Paint.Style.STROKE;
-            paint10.setStyle(style);
-            paint10.setStrokeCap(Paint.Cap.ROUND);
-            paint10.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-            if (paint10.getPathEffect() == null) {
-                f14 = f45;
-                paint10.setPathEffect(new DashPathEffect(new float[]{org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f)}, 0.5f));
-            } else {
-                f14 = f45;
+            float f37 = min;
+            boolean z17 = z13;
+            a8 a8Var17 = c8Var.r1;
+            a8 a8Var18 = c8Var.q1;
+            boolean z18 = c8Var.b;
+            if (!z18) {
+                if (c8Var.i1) {
+                    b8 b8Var3 = c8Var.l1;
+                    if (b8Var3 != null && b8Var3.H == 0 && (j10 = c8Var.j(b8Var3)) != null && c8Var.z(j10) && c8.b(c8Var.l1)) {
+                        b8Var = c8Var.l1;
+                    } else {
+                        ArrayList arrayList2 = c8Var.h;
+                        int size4 = arrayList2.size();
+                        int i14 = 0;
+                        float f38 = 0.0f;
+                        float f39 = 0.0f;
+                        b8 b8Var4 = null;
+                        while (i14 < size4) {
+                            Object obj = arrayList2.get(i14);
+                            i14++;
+                            p7 p7Var5 = (p7) obj;
+                            b8 b8Var5 = (b8) c8Var.f.get(p7Var5.x0.address);
+                            if (b8Var5 != null && b8Var5.H == 0 && c8.b(b8Var5) && p7Var5.isAttachedToWindow() && c8Var.z(p7Var5) && (Z = c8Var.Z(b8Var5)) != null) {
+                                if (b8Var4 != null) {
+                                    float f40 = Z.top;
+                                    if (f40 >= f38 - 1.0f) {
+                                        if (Math.abs(f40 - f38) <= 1.0f && Z.left < f39) {
+                                        }
+                                    }
+                                }
+                                f38 = Z.top;
+                                f39 = Z.left;
+                                b8Var4 = b8Var5;
+                            }
+                        }
+                        b8Var = b8Var4;
+                    }
+                    if (b8Var != null && b8Var != c8Var.l1) {
+                        c8Var.l1 = b8Var;
+                        c8Var.n1 = null;
+                        c8Var.o1 = 0.0f;
+                    }
+                }
+                b8 b8Var6 = c8Var.l1;
+                p7 j15 = b8Var6 == null ? null : c8Var.j(b8Var6);
+                boolean z19 = c8Var.i1 && b8Var6 != null && b8Var6.H == 0 && c8.b(b8Var6) && j15 != null && c8Var.z(j15) && !c8Var.t0 && !c8Var.q0;
+                if (b8Var6 != null && (z19 || c8Var.j1)) {
+                    b8Var6.a();
+                    if (c8Var.n1 == null && b8Var6.u != null) {
+                        c8Var.n1 = c8Var.x(b8Var6, c8Var.Z0 * 0.6f, c8Var.a1 * 0.68f, true);
+                        b8Var6.N = false;
+                    }
+                }
+                a8Var18.b = z19 ? 1.0f : 0.0f;
+                a8Var17.b = ((!z19 && !c8Var.j1) || c8Var.n1 == null || c8.H(b8Var6) == null) ? 0.0f : 1.0f;
+                f10 = f37;
+                boolean b12 = a8Var18.b(f10) | a8Var17.b(f10);
+                float f41 = a8Var18.a;
+                boolean z20 = f41 > 0.002f || a8Var17.a > 0.002f;
+                if (z20) {
+                    c8Var.o1 += f10;
+                } else {
+                    c8Var.o1 = 0.0f;
+                    if (!c8Var.i1 && !c8Var.j1) {
+                        p7Var = null;
+                        c8Var.n1 = null;
+                        if (b8Var6 != null && b8Var6.H == 0 && b8Var6.v != null && f41 > 0.002f) {
+                            D = c8Var.D(c8Var.o1 % 2.0f);
+                            if (Utilities.l(a8Var18.a) * Math.max(D[0], Math.max(D[1], D[2])) >= 0.003f) {
+                                p7Var2 = j15;
+                                p7Var3 = c8Var.m1;
+                                if (p7Var3 != null && p7Var3 != p7Var2) {
+                                    i9Var = p7Var3.E;
+                                    if (i9Var.getAlpha() != 1.0f) {
+                                        i9Var.setAlpha(1.0f);
+                                    }
+                                    p7Var3.invalidate();
+                                }
+                                c8Var.m1 = p7Var2;
+                                if (p7Var2 != null) {
+                                    org.telegram.ui.Components.i9 i9Var2 = p7Var2.E;
+                                    if (i9Var2.getAlpha() != 0.0f) {
+                                        i9Var2.setAlpha(0.0f);
+                                    }
+                                    p7Var2.invalidate();
+                                }
+                                p7 p7Var6 = (z19 || a8Var18.a <= 0.5f) ? p7Var : j15;
+                                RectF rectF = c8Var.w1;
+                                if (c8Var.getParent() instanceof ViewGroup) {
+                                    RectF Z3 = p7Var6 == null ? p7Var : c8Var.Z(c8Var.l1);
+                                    if (Z3 != null) {
+                                        hi.l3 l3Var = c8Var.x1;
+                                        if (l3Var == null) {
+                                            c8Var.x1 = c8Var.B(2131743105, true);
+                                        } else if (c8Var.k1 && !(z11 = l3Var.W)) {
+                                            c8Var.k1 = false;
+                                            c8Var.j1 = false;
+                                            c8Var.i1 = false;
+                                            if (z11) {
+                                                l3Var.f(true);
+                                            }
+                                            if (!z18) {
+                                                np.e1().edit().putBoolean("walletcardstickerhint", true).apply();
+                                            }
+                                            c8Var.f0();
+                                        }
+                                        c8.J(c8Var.x1, Z3.centerX(), Z3.top + org.telegram.messenger.g0.L(4.0f));
+                                        hi.l3 l3Var2 = c8Var.x1;
+                                        if (!l3Var2.W) {
+                                            l3Var2.w();
+                                        }
+                                        c8Var.k1 = true;
+                                    } else {
+                                        c8Var.k1 = false;
+                                        hi.l3 l3Var3 = c8Var.x1;
+                                        if (l3Var3 != null && l3Var3.W) {
+                                            l3Var3.f(true);
+                                        }
+                                    }
+                                    if (c8Var.j1 && a8Var17.a > 0.5f && (aVar = c8Var.d) != null && aVar.M0() && c8Var.C()) {
+                                        if (c8Var.y1 == null) {
+                                            c8Var.y1 = c8Var.B(2131743106, false);
+                                        }
+                                        c8Var.v1.computeBounds(rectF, true);
+                                        float[] L = c8Var.L(rectF.centerX(), rectF.top);
+                                        if ((L[1] - org.telegram.messenger.g0.L(2.0f)) - org.telegram.messenger.g0.L(56.0f) < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m) {
+                                            float[] L2 = c8Var.L(rectF.centerX(), rectF.bottom);
+                                            hi.l3 l3Var4 = c8Var.y1;
+                                            float f42 = L2[0];
+                                            float L3 = L2[1] + org.telegram.messenger.g0.L(2.0f);
+                                            c8.o(l3Var4, 1);
+                                            l3Var4.p(0.0f, f42 - l3Var4.getPaddingLeft());
+                                            l3Var4.setTranslationY(L3);
+                                            l3Var4.invalidate();
+                                        } else {
+                                            c8.J(c8Var.y1, L[0], L[1] - org.telegram.messenger.g0.L(2.0f));
+                                        }
+                                        hi.l3 l3Var5 = c8Var.y1;
+                                        if (!l3Var5.W) {
+                                            l3Var5.w();
+                                        }
+                                    } else {
+                                        hi.l3 l3Var6 = c8Var.y1;
+                                        if (l3Var6 != null && l3Var6.W) {
+                                            l3Var6.f(true);
+                                        }
+                                    }
+                                }
+                                if (!b12 || z20) {
+                                    z10 = true;
+                                    boolean z21 = z17 | z10;
+                                    for (size = c8Var.T.size() - 1; size >= 0; size--) {
+                                        z7 z7Var2 = (z7) c8Var.T.get(size);
+                                        z7Var2.h += f10;
+                                        float exp = (float) Math.exp((-2.4f) * f10);
+                                        float f43 = z7Var2.c * exp;
+                                        z7Var2.c = f43;
+                                        float f44 = z7Var2.d * exp;
+                                        z7Var2.d = f44;
+                                        z7Var2.a = (f43 * f10) + z7Var2.a;
+                                        z7Var2.b = (f44 * f10) + z7Var2.b;
+                                        z7Var2.g = (f10 * 90.0f) + z7Var2.g;
+                                        if (z7Var2.h >= z7Var2.f) {
+                                            c8Var.T.remove(size);
+                                        }
+                                    }
+                                    if (!c8Var.T.isEmpty()) {
+                                        z21 = true;
+                                    }
+                                    for (size2 = c8Var.n.size() - 1; size2 >= 0; size2--) {
+                                        y7 y7Var2 = (y7) c8Var.n.get(size2);
+                                        float f45 = y7Var2.c + f10;
+                                        y7Var2.c = f45;
+                                        if (f45 > 0.42f) {
+                                            c8Var.n.remove(size2);
+                                        }
+                                    }
+                                    f11 = c8Var.V0;
+                                    if (f11 < 1.0f) {
+                                        c8Var.V0 = org.telegram.ui.Cells.y0.e(f10, c8Var.Y0 ? 0.45f : 1.2f, f11, 1.0f);
+                                        c8Var.e();
+                                        z21 = true;
+                                    }
+                                    it = c8Var.f.values().iterator();
+                                    boolean z22 = false;
+                                    while (it.hasNext()) {
+                                        if (((b8) it.next()).H == 5) {
+                                            z22 = true;
+                                        }
+                                    }
+                                    a8 a8Var19 = c8Var.O;
+                                    a8Var19.b = ((!c8Var.n0 && c8Var.p0 && a8Var19.b > 0.0f) || z22 || c8Var.g0) ? 1.0f : 0.0f;
+                                    a8 a8Var20 = c8Var.P;
+                                    boolean z23 = c8Var.u0;
+                                    a8Var20.b = (!z23 || z22 || c8Var.g0) ? 1.0f : 0.0f;
+                                    if (c8Var.g0) {
+                                        f12 = 0.0f;
+                                        a8 a8Var21 = c8Var.d0;
+                                        a8Var21.b = z23 ? 28.0f : 0.0f;
+                                        b10 = z21 | a8Var21.b(f10);
+                                    } else {
+                                        a8 a8Var22 = c8Var.d0;
+                                        a8Var22.a(Math.min(66.0f, (f10 * 60.0f) + a8Var22.a));
+                                        a8 a8Var23 = c8Var.d0;
+                                        if (a8Var23.a >= 66.0f) {
+                                            c8Var.g0 = false;
+                                            f12 = 0.0f;
+                                            a8Var23.a(0.0f);
+                                        } else {
+                                            f12 = 0.0f;
+                                        }
+                                        b10 = true;
+                                    }
+                                    b11 = b10 | c8Var.O.b(f10) | c8Var.P.b(f10) | c8Var.Q.b(f10) | c8Var.R.b(f10) | c8Var.S.b(f10);
+                                    c8Var.c.setStickerImpact(c8Var.Q.a);
+                                    h6Var = c8Var.c;
+                                    float max = Math.max(-1.0f, Math.min(1.0f, c8Var.R.a));
+                                    float max2 = Math.max(-1.0f, Math.min(1.0f, c8Var.S.a));
+                                    if (h6Var.c0 != 0) {
+                                        ga.d dVar = new ga.d(4);
+                                        float[] fArr2 = new float[8];
+                                        dVar.f(1000, 600, 0.0f, 5.0f, false, fArr2);
+                                        h6Var.d0 = Math.hypot((double) (fArr2[2] - fArr2[4]), (double) (fArr2[3] - fArr2[5])) < Math.hypot((double) (fArr2[0] - fArr2[6]), (double) (fArr2[1] - fArr2[7])) ? 1 : -1;
+                                        dVar.f(1000, 600, 5.0f, 0.0f, false, fArr2);
+                                        i7 = 0;
+                                        h6Var.c0 = Math.hypot((double) (fArr2[4] - fArr2[6]), (double) (fArr2[5] - fArr2[7])) < Math.hypot((double) (fArr2[0] - fArr2[2]), (double) (fArr2[1] - fArr2[3])) ? 1 : -1;
+                                    } else {
+                                        i7 = 0;
+                                    }
+                                    f13 = h6Var.c0 * max2 * 10.0f;
+                                    f14 = h6Var.d0 * max * 10.0f;
+                                    c6Var = h6Var.E;
+                                    if (c6Var.m0 == f13 || c6Var.n0 != f14) {
+                                        c6Var.m0 = f13;
+                                        c6Var.n0 = f14;
+                                        c6Var.b(c6Var.d0, c6Var.g0);
+                                    }
+                                    c8Var.b0 = c8Var.c.getCardRotationX();
+                                    c8Var.c0 = c8Var.c.getCardRotationY();
+                                    ArrayList arrayList3 = c8Var.h;
+                                    size3 = arrayList3.size();
+                                    i10 = i7;
+                                    while (i10 < size3) {
+                                        Object obj2 = arrayList3.get(i10);
+                                        i10++;
+                                        p7 p7Var7 = (p7) obj2;
+                                        b8 b8Var7 = (b8) c8Var.f.get(p7Var7.x0.address);
+                                        if (b8Var7 != null) {
+                                            p7Var7.k(b8Var7.R, true, b8Var7.H == 0 ? f12 : 1.0f);
+                                        }
+                                    }
+                                    c8Var.invalidate();
+                                    c8Var.M.invalidate();
+                                    c8Var.N.invalidate();
+                                    if (b11 && c8Var.n.isEmpty() && !c8Var.q0) {
+                                        c8Var.N0 = j3;
+                                        return;
+                                    }
+                                    c8Var.postOnAnimation(this);
+                                }
+                            }
+                        }
+                        p7Var2 = p7Var;
+                        p7Var3 = c8Var.m1;
+                        if (p7Var3 != null) {
+                            i9Var = p7Var3.E;
+                            if (i9Var.getAlpha() != 1.0f) {
+                            }
+                            p7Var3.invalidate();
+                        }
+                        c8Var.m1 = p7Var2;
+                        if (p7Var2 != null) {
+                        }
+                        if (z19) {
+                        }
+                        RectF rectF2 = c8Var.w1;
+                        if (c8Var.getParent() instanceof ViewGroup) {
+                        }
+                        if (!b12) {
+                        }
+                        z10 = true;
+                        boolean z212 = z17 | z10;
+                        while (size >= 0) {
+                        }
+                        if (!c8Var.T.isEmpty()) {
+                        }
+                        while (size2 >= 0) {
+                        }
+                        f11 = c8Var.V0;
+                        if (f11 < 1.0f) {
+                        }
+                        it = c8Var.f.values().iterator();
+                        boolean z222 = false;
+                        while (it.hasNext()) {
+                        }
+                        a8 a8Var192 = c8Var.O;
+                        a8Var192.b = ((!c8Var.n0 && c8Var.p0 && a8Var192.b > 0.0f) || z222 || c8Var.g0) ? 1.0f : 0.0f;
+                        a8 a8Var202 = c8Var.P;
+                        boolean z232 = c8Var.u0;
+                        a8Var202.b = (!z232 || z222 || c8Var.g0) ? 1.0f : 0.0f;
+                        if (c8Var.g0) {
+                        }
+                        b11 = b10 | c8Var.O.b(f10) | c8Var.P.b(f10) | c8Var.Q.b(f10) | c8Var.R.b(f10) | c8Var.S.b(f10);
+                        c8Var.c.setStickerImpact(c8Var.Q.a);
+                        h6Var = c8Var.c;
+                        float max3 = Math.max(-1.0f, Math.min(1.0f, c8Var.R.a));
+                        float max22 = Math.max(-1.0f, Math.min(1.0f, c8Var.S.a));
+                        if (h6Var.c0 != 0) {
+                        }
+                        f13 = h6Var.c0 * max22 * 10.0f;
+                        f14 = h6Var.d0 * max3 * 10.0f;
+                        c6Var = h6Var.E;
+                        if (c6Var.m0 == f13) {
+                        }
+                        c6Var.m0 = f13;
+                        c6Var.n0 = f14;
+                        c6Var.b(c6Var.d0, c6Var.g0);
+                        c8Var.b0 = c8Var.c.getCardRotationX();
+                        c8Var.c0 = c8Var.c.getCardRotationY();
+                        ArrayList arrayList32 = c8Var.h;
+                        size3 = arrayList32.size();
+                        i10 = i7;
+                        while (i10 < size3) {
+                        }
+                        c8Var.invalidate();
+                        c8Var.M.invalidate();
+                        c8Var.N.invalidate();
+                        if (b11) {
+                        }
+                        c8Var.postOnAnimation(this);
+                    }
+                }
+                p7Var = null;
+                if (b8Var6 != null) {
+                    D = c8Var.D(c8Var.o1 % 2.0f);
+                    if (Utilities.l(a8Var18.a) * Math.max(D[0], Math.max(D[1], D[2])) >= 0.003f) {
+                    }
+                }
+                p7Var2 = p7Var;
+                p7Var3 = c8Var.m1;
+                if (p7Var3 != null) {
+                }
+                c8Var.m1 = p7Var2;
+                if (p7Var2 != null) {
+                }
+                if (z19) {
+                }
+                RectF rectF22 = c8Var.w1;
+                if (c8Var.getParent() instanceof ViewGroup) {
+                }
+                if (!b12) {
+                }
+                z10 = true;
+                boolean z2122 = z17 | z10;
+                while (size >= 0) {
+                }
+                if (!c8Var.T.isEmpty()) {
+                }
+                while (size2 >= 0) {
+                }
+                f11 = c8Var.V0;
+                if (f11 < 1.0f) {
+                }
+                it = c8Var.f.values().iterator();
+                boolean z2222 = false;
+                while (it.hasNext()) {
+                }
+                a8 a8Var1922 = c8Var.O;
+                a8Var1922.b = ((!c8Var.n0 && c8Var.p0 && a8Var1922.b > 0.0f) || z2222 || c8Var.g0) ? 1.0f : 0.0f;
+                a8 a8Var2022 = c8Var.P;
+                boolean z2322 = c8Var.u0;
+                a8Var2022.b = (!z2322 || z2222 || c8Var.g0) ? 1.0f : 0.0f;
+                if (c8Var.g0) {
+                }
+                b11 = b10 | c8Var.O.b(f10) | c8Var.P.b(f10) | c8Var.Q.b(f10) | c8Var.R.b(f10) | c8Var.S.b(f10);
+                c8Var.c.setStickerImpact(c8Var.Q.a);
+                h6Var = c8Var.c;
+                float max32 = Math.max(-1.0f, Math.min(1.0f, c8Var.R.a));
+                float max222 = Math.max(-1.0f, Math.min(1.0f, c8Var.S.a));
+                if (h6Var.c0 != 0) {
+                }
+                f13 = h6Var.c0 * max222 * 10.0f;
+                f14 = h6Var.d0 * max32 * 10.0f;
+                c6Var = h6Var.E;
+                if (c6Var.m0 == f13) {
+                }
+                c6Var.m0 = f13;
+                c6Var.n0 = f14;
+                c6Var.b(c6Var.d0, c6Var.g0);
+                c8Var.b0 = c8Var.c.getCardRotationX();
+                c8Var.c0 = c8Var.c.getCardRotationY();
+                ArrayList arrayList322 = c8Var.h;
+                size3 = arrayList322.size();
+                i10 = i7;
+                while (i10 < size3) {
+                }
+                c8Var.invalidate();
+                c8Var.M.invalidate();
+                c8Var.N.invalidate();
+                if (b11) {
+                }
+                c8Var.postOnAnimation(this);
             }
-            paint10.setShadowLayer(org.telegram.messenger.g0.L(0.75f), 0.0f, 0.0f, 1342177280);
-            paint9.setColor(-1);
-            paint9.setStyle(style);
-            paint9.setStrokeWidth(org.telegram.messenger.g0.L(2.66f));
-            paint9.setShadowLayer(org.telegram.messenger.g0.L(0.75f), 0.0f, 0.0f, 1342177280);
-            paint8.setColor(-15033089);
-            canvas.save();
-            canvas.rotate(c8Var2.i.a, f48, f49);
-            float f50 = f48 - P;
-            float f51 = f49 - P;
-            f11 = f44;
-            float f52 = f48 + P;
-            float f53 = f49 + P;
-            f13 = f47;
-            f12 = f46;
-            f10 = f14;
-            canvas.drawArc(f50, f51, f52, f53, 0.0f, 180.0f, false, paint10);
-            canvas.drawArc(f50, f51, f52, f53, 180.0f, 180.0f, false, paint10);
-            for (int i19 = -1; i19 <= 1; i19 += 2) {
-                float f54 = (i19 * P) + f48;
-                canvas.drawCircle(f54, f49, org.telegram.messenger.g0.L(5.66f), paint9);
-                canvas.drawCircle(f54, f49, org.telegram.messenger.g0.L(4.66f), paint8);
+            f10 = f37;
+            z10 = false;
+            boolean z21222 = z17 | z10;
+            while (size >= 0) {
             }
-            canvas.restore();
-        }
-        g6 g6Var = i6Var4.N;
-        float round = Math.round(f13 * 20.0f) / 20.0f;
-        if (round != i6Var4.J) {
-            i6Var4.J = round;
-            i6Var4.H.invalidate();
-        }
-        float f55 = Math.max(f12, f10) > 0.0f ? 1.0f : 0.0f;
-        if (f55 != i6Var4.h) {
-            i6Var4.h = f55;
-            g6Var.invalidate();
-        }
-        float round2 = Math.round(f10 * 20.0f) / 20.0f;
-        float round3 = Math.round(f11 * 20.0f) / 20.0f;
-        if (round2 != i6Var4.d0) {
-            i6Var4.d0 = round2;
-            g6Var.invalidate();
-            i6Var4.O.invalidate();
-        }
-        if (round3 != i6Var4.e0) {
-            i6Var4.e0 = round3;
-            i6Var4.G.invalidate();
+            if (!c8Var.T.isEmpty()) {
+            }
+            while (size2 >= 0) {
+            }
+            f11 = c8Var.V0;
+            if (f11 < 1.0f) {
+            }
+            it = c8Var.f.values().iterator();
+            boolean z22222 = false;
+            while (it.hasNext()) {
+            }
+            a8 a8Var19222 = c8Var.O;
+            a8Var19222.b = ((!c8Var.n0 && c8Var.p0 && a8Var19222.b > 0.0f) || z22222 || c8Var.g0) ? 1.0f : 0.0f;
+            a8 a8Var20222 = c8Var.P;
+            boolean z23222 = c8Var.u0;
+            a8Var20222.b = (!z23222 || z22222 || c8Var.g0) ? 1.0f : 0.0f;
+            if (c8Var.g0) {
+            }
+            b11 = b10 | c8Var.O.b(f10) | c8Var.P.b(f10) | c8Var.Q.b(f10) | c8Var.R.b(f10) | c8Var.S.b(f10);
+            c8Var.c.setStickerImpact(c8Var.Q.a);
+            h6Var = c8Var.c;
+            float max322 = Math.max(-1.0f, Math.min(1.0f, c8Var.R.a));
+            float max2222 = Math.max(-1.0f, Math.min(1.0f, c8Var.S.a));
+            if (h6Var.c0 != 0) {
+            }
+            f13 = h6Var.c0 * max2222 * 10.0f;
+            f14 = h6Var.d0 * max322 * 10.0f;
+            c6Var = h6Var.E;
+            if (c6Var.m0 == f13) {
+            }
+            c6Var.m0 = f13;
+            c6Var.n0 = f14;
+            c6Var.b(c6Var.d0, c6Var.g0);
+            c8Var.b0 = c8Var.c.getCardRotationX();
+            c8Var.c0 = c8Var.c.getCardRotationY();
+            ArrayList arrayList3222 = c8Var.h;
+            size3 = arrayList3222.size();
+            i10 = i7;
+            while (i10 < size3) {
+            }
+            c8Var.invalidate();
+            c8Var.M.invalidate();
+            c8Var.N.invalidate();
+            if (b11) {
+            }
+            c8Var.postOnAnimation(this);
         }
     }
 }

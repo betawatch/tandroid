@@ -5,17 +5,17 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class GcmPushListenerService extends FirebaseMessagingService {
     public static final /* synthetic */ int n = 0;
 
     @Override // com.google.firebase.messaging.FirebaseMessagingService
-    public final void c(ab.z zVar) {
+    public final void c(ab.a0 a0Var) {
         long parseLong;
-        Bundle bundle = zVar.a;
+        Bundle bundle = a0Var.a;
         String string = bundle.getString("from");
-        if (zVar.b == null) {
+        if (a0Var.b == null) {
             a0.f fVar = new a0.f(0);
             for (String str : bundle.keySet()) {
                 Object obj = bundle.get(str);
@@ -26,9 +26,9 @@ public class GcmPushListenerService extends FirebaseMessagingService {
                     }
                 }
             }
-            zVar.b = fVar;
+            a0Var.b = fVar;
         }
-        HashMap hashMap = new HashMap(zVar.b);
+        HashMap hashMap = new HashMap(a0Var.b);
         Object obj2 = bundle.get("google.sent_time");
         if (obj2 instanceof Long) {
             parseLong = ((Long) obj2).longValue();

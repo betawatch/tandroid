@@ -3,12 +3,12 @@ package org.telegram.messenger;
 import com.android.billingclient.api.Purchase;
 import java.lang.reflect.Field;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.dj0;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements yi0, f5.g {
+public final /* synthetic */ class i implements dj0, f5.h {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -19,7 +19,7 @@ public final /* synthetic */ class i implements yi0, f5.g {
         this.c = obj3;
     }
 
-    @Override // f5.g
+    @Override // f5.h
     public void a(f5.f fVar) {
         TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose = (TLRPC.InputStorePaymentPurpose) this.a;
         Purchase purchase = (Purchase) this.b;
@@ -34,23 +34,23 @@ public final /* synthetic */ class i implements yi0, f5.g {
         int i7 = fVar.a;
         sb2.append(i7 == 0 ? "OK" : Integer.valueOf(i7));
         sb2.append(" ");
-        org.telegram.ui.Cells.f1.u(fVar.c, sb2);
+        org.telegram.ui.Cells.y0.t(fVar.c, sb2);
         if (runnable != null) {
             runnable.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.yi0
+    @Override // org.telegram.ui.Components.dj0
     public int run() {
-        org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.a;
+        org.telegram.ui.ActionBar.e2 e2Var = (org.telegram.ui.ActionBar.e2) this.a;
         String str = (String) this.b;
-        pj0 pj0Var = (pj0) this.c;
+        uj0 uj0Var = (uj0) this.c;
         int i7 = -1;
         try {
-            Field declaredField = f2Var.getClass().getDeclaredField(str);
+            Field declaredField = e2Var.getClass().getDeclaredField(str);
             declaredField.setAccessible(true);
-            v4.b0 b0Var = (v4.b0) pj0Var.getLayoutManager();
-            i7 = declaredField.getInt(f2Var);
+            v4.b0 b0Var = (v4.b0) uj0Var.getLayoutManager();
+            i7 = declaredField.getInt(e2Var);
             b0Var.h1(i7, g0.L(60.0f));
             declaredField.setAccessible(false);
             return i7;

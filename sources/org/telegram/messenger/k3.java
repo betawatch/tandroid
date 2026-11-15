@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -37,17 +37,17 @@ public final /* synthetic */ class k3 implements RequestDelegate {
                                 r3Var2.O = false;
                                 if (tLObject2 != null) {
                                     TL_phone.groupParticipants groupparticipants = (TL_phone.groupParticipants) tLObject2;
-                                    qp.s1(r3Var2.C.a).Y3(groupparticipants.users, false);
-                                    qp.s1(r3Var2.C.a).S3(groupparticipants.chats, false);
+                                    np.s1(r3Var2.C.a).Y3(groupparticipants.users, false);
+                                    np.s1(r3Var2.C.a).S3(groupparticipants.chats, false);
                                     TLRPC.GroupCall groupCall = r3Var2.b;
                                     int i11 = groupCall.participants_count;
                                     int i12 = groupparticipants.count;
                                     if (i11 != i12) {
                                         groupCall.participants_count = i12;
                                         if (r2.a) {
-                                            jg.g.s(r3Var2.b.participants_count, new StringBuilder("new participants reload count "));
+                                            i5.c.r(r3Var2.b.participants_count, new StringBuilder("new participants reload count "));
                                         }
-                                        qs.f(r3Var2.C.a).k(qs.w2, Long.valueOf(r3Var2.c), Long.valueOf(r3Var2.b.id), Boolean.FALSE);
+                                        ns.f(r3Var2.C.a).k(ns.w2, Long.valueOf(r3Var2.c), Long.valueOf(r3Var2.b.id), Boolean.FALSE);
                                         break;
                                     }
                                 }
@@ -58,8 +58,8 @@ public final /* synthetic */ class k3 implements RequestDelegate {
                                 if (tLObject2 instanceof TL_phone.groupCall) {
                                     TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject2;
                                     r3Var3.b = groupcall.call;
-                                    qp.s1(r3Var3.C.a).Y3(groupcall.users, false);
-                                    qp.s1(r3Var3.C.a).S3(groupcall.chats, false);
+                                    np.s1(r3Var3.C.a).Y3(groupcall.users, false);
+                                    np.s1(r3Var3.C.a).S3(groupcall.chats, false);
                                     ArrayList<TLRPC.GroupCallParticipant> arrayList = groupcall.participants;
                                     String str = groupcall.participants_next_offset;
                                     TLRPC.GroupCall groupCall2 = groupcall.call;
@@ -75,7 +75,7 @@ public final /* synthetic */ class k3 implements RequestDelegate {
                 r3 r3Var2 = this.b;
                 r3Var2.getClass();
                 if (tLObject != null) {
-                    qp.s1(r3Var2.C.a).O3((TLRPC.Updates) tLObject, false);
+                    np.s1(r3Var2.C.a).O3((TLRPC.Updates) tLObject, false);
                     break;
                 }
                 break;
@@ -83,7 +83,7 @@ public final /* synthetic */ class k3 implements RequestDelegate {
                 r3 r3Var3 = this.b;
                 r3Var3.getClass();
                 if (tLObject != null) {
-                    qp.s1(r3Var3.C.a).O3((TLRPC.Updates) tLObject, false);
+                    np.s1(r3Var3.C.a).O3((TLRPC.Updates) tLObject, false);
                     break;
                 }
                 break;
@@ -104,17 +104,17 @@ public final /* synthetic */ class k3 implements RequestDelegate {
                                 r3Var22.O = false;
                                 if (tLObject2 != null) {
                                     TL_phone.groupParticipants groupparticipants = (TL_phone.groupParticipants) tLObject2;
-                                    qp.s1(r3Var22.C.a).Y3(groupparticipants.users, false);
-                                    qp.s1(r3Var22.C.a).S3(groupparticipants.chats, false);
+                                    np.s1(r3Var22.C.a).Y3(groupparticipants.users, false);
+                                    np.s1(r3Var22.C.a).S3(groupparticipants.chats, false);
                                     TLRPC.GroupCall groupCall = r3Var22.b;
                                     int i11 = groupCall.participants_count;
                                     int i12 = groupparticipants.count;
                                     if (i11 != i12) {
                                         groupCall.participants_count = i12;
                                         if (r2.a) {
-                                            jg.g.s(r3Var22.b.participants_count, new StringBuilder("new participants reload count "));
+                                            i5.c.r(r3Var22.b.participants_count, new StringBuilder("new participants reload count "));
                                         }
-                                        qs.f(r3Var22.C.a).k(qs.w2, Long.valueOf(r3Var22.c), Long.valueOf(r3Var22.b.id), Boolean.FALSE);
+                                        ns.f(r3Var22.C.a).k(ns.w2, Long.valueOf(r3Var22.c), Long.valueOf(r3Var22.b.id), Boolean.FALSE);
                                         break;
                                     }
                                 }
@@ -125,8 +125,8 @@ public final /* synthetic */ class k3 implements RequestDelegate {
                                 if (tLObject2 instanceof TL_phone.groupCall) {
                                     TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject2;
                                     r3Var32.b = groupcall.call;
-                                    qp.s1(r3Var32.C.a).Y3(groupcall.users, false);
-                                    qp.s1(r3Var32.C.a).S3(groupcall.chats, false);
+                                    np.s1(r3Var32.C.a).Y3(groupcall.users, false);
+                                    np.s1(r3Var32.C.a).S3(groupcall.chats, false);
                                     ArrayList<TLRPC.GroupCallParticipant> arrayList = groupcall.participants;
                                     String str = groupcall.participants_next_offset;
                                     TLRPC.GroupCall groupCall2 = groupcall.call;

@@ -6,17 +6,17 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements com.google.android.gms.common.api.b {
     public final CastDevice a;
-    public final g6.e0 b;
+    public final g6.d0 b;
     public final Bundle c;
     public final String d = UUID.randomUUID().toString();
 
     public /* synthetic */ e(android.support.v4.media.session.a0 a0Var) {
         this.a = (CastDevice) a0Var.b;
-        this.b = (g6.e0) a0Var.c;
+        this.b = (g6.d0) a0Var.c;
         this.c = (Bundle) a0Var.d;
     }
 

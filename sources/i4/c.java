@@ -1,6 +1,6 @@
 package i4;
 
-import a8.ea;
+import a8.fa;
 import android.text.Layout;
 import android.text.SpannableStringBuilder;
 import android.text.style.AbsoluteSizeSpan;
@@ -12,10 +12,9 @@ import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
 import android.util.Pair;
-import c8.l0;
+import c8.m0;
 import g2.g;
-import g2.h;
-import h2.m0;
+import h2.l0;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +23,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
@@ -89,11 +88,11 @@ public final class c {
         return arrayList.size();
     }
 
-    public final void d(TreeSet treeSet, boolean z9) {
+    public final void d(TreeSet treeSet, boolean z10) {
         String str = this.a;
         boolean equals = "p".equals(str);
         boolean equals2 = "div".equals(str);
-        if (z9 || equals || (equals2 && this.i != null)) {
+        if (z10 || equals || (equals2 && this.i != null)) {
             long j3 = this.d;
             if (j3 != -9223372036854775807L) {
                 treeSet.add(Long.valueOf(j3));
@@ -107,7 +106,7 @@ public final class c {
             return;
         }
         for (int i7 = 0; i7 < this.m.size(); i7++) {
-            ((c) this.m.get(i7)).d(treeSet, z9 || equals);
+            ((c) this.m.get(i7)).d(treeSet, z10 || equals);
         }
     }
 
@@ -177,7 +176,7 @@ public final class c {
                     e eVar = (e) hashMap.get(str3);
                     eVar.getClass();
                     int i15 = eVar.j;
-                    f a11 = l0.a(this.f, this.g, map2);
+                    f a11 = m0.a(this.f, this.g, map2);
                     SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) aVar.a;
                     if (spannableStringBuilder == null) {
                         spannableStringBuilder = new SpannableStringBuilder();
@@ -217,16 +216,16 @@ public final class c {
                             if (!a11.c) {
                                 throw new IllegalStateException("Font color has not been defined.");
                             }
-                            ea.a(spannableStringBuilder, new ForegroundColorSpan(a11.b), intValue, intValue2);
+                            fa.a(spannableStringBuilder, new ForegroundColorSpan(a11.b), intValue, intValue2);
                         }
                         if (a11.e) {
                             if (!a11.e) {
                                 throw new IllegalStateException("Background color has not been defined.");
                             }
-                            ea.a(spannableStringBuilder, new BackgroundColorSpan(a11.d), intValue, intValue2);
+                            fa.a(spannableStringBuilder, new BackgroundColorSpan(a11.d), intValue, intValue2);
                         }
                         if (a11.a != null) {
-                            ea.a(spannableStringBuilder, new TypefaceSpan(a11.a), intValue, intValue2);
+                            fa.a(spannableStringBuilder, new TypefaceSpan(a11.a), intValue, intValue2);
                         }
                         b bVar = a11.r;
                         if (bVar != null) {
@@ -241,7 +240,7 @@ public final class c {
                             if (i20 == -2) {
                                 i20 = 1;
                             }
-                            ea.a(spannableStringBuilder, new h(i19, i13, i20), intValue, intValue2);
+                            fa.a(spannableStringBuilder, new g(i19, i13, i20), intValue, intValue2);
                         }
                         int i21 = a11.m;
                         if (i21 == 2) {
@@ -251,7 +250,7 @@ public final class c {
                                     cVar2 = null;
                                     break;
                                 }
-                                f a12 = l0.a(cVar2.f, cVar2.g, map2);
+                                f a12 = m0.a(cVar2.f, cVar2.g, map2);
                                 if (a12 != null && a12.m == 1) {
                                     break;
                                 } else {
@@ -267,7 +266,7 @@ public final class c {
                                         break;
                                     }
                                     c cVar3 = (c) arrayDeque.pop();
-                                    f a13 = l0.a(cVar3.f, cVar3.g, map2);
+                                    f a13 = m0.a(cVar3.f, cVar3.g, map2);
                                     if (a13 != null && a13.m == 3) {
                                         cVar = cVar3;
                                         break;
@@ -281,26 +280,26 @@ public final class c {
                                         i10 = 0;
                                         if (cVar.b(0).b != null) {
                                             String str5 = cVar.b(0).b;
-                                            String str6 = m0.a;
-                                            f a14 = l0.a(cVar.f, cVar.g, map2);
+                                            String str6 = l0.a;
+                                            f a14 = m0.a(cVar.f, cVar.g, map2);
                                             int i22 = a14 != null ? a14.n : -1;
-                                            if (i22 == -1 && (a10 = l0.a(cVar2.f, cVar2.g, map2)) != null) {
+                                            if (i22 == -1 && (a10 = m0.a(cVar2.f, cVar2.g, map2)) != null) {
                                                 i22 = a10.n;
                                             }
-                                            spannableStringBuilder.setSpan(new g(str5, i22), intValue, intValue2, 33);
+                                            spannableStringBuilder.setSpan(new g2.f(str5, i22), intValue, intValue2, 33);
                                             if (a11.q == 1) {
-                                                ea.a(spannableStringBuilder, new g2.f(), intValue, intValue2);
+                                                fa.a(spannableStringBuilder, new g2.e(), intValue, intValue2);
                                             }
                                             i11 = a11.j;
                                             float f11 = 100.0f;
                                             if (i11 == 1) {
                                                 it = it2;
                                                 f10 = 100.0f;
-                                                ea.a(spannableStringBuilder, new AbsoluteSizeSpan((int) a11.k, true), intValue, intValue2);
+                                                fa.a(spannableStringBuilder, new AbsoluteSizeSpan((int) a11.k, true), intValue, intValue2);
                                             } else if (i11 == 2) {
                                                 it = it2;
                                                 f10 = 100.0f;
-                                                ea.a(spannableStringBuilder, new RelativeSizeSpan(a11.k), intValue, intValue2);
+                                                fa.a(spannableStringBuilder, new RelativeSizeSpan(a11.k), intValue, intValue2);
                                             } else if (i11 != 3) {
                                                 it = it2;
                                                 f10 = 100.0f;
@@ -392,8 +391,8 @@ public final class c {
         }
     }
 
-    public final void i(long j3, boolean z9, String str, TreeMap treeMap) {
-        boolean z10;
+    public final void i(long j3, boolean z10, String str, TreeMap treeMap) {
+        boolean z11;
         TreeMap treeMap2;
         long j10;
         HashMap hashMap = this.k;
@@ -406,14 +405,14 @@ public final class c {
         }
         String str3 = this.h;
         String str4 = "".equals(str3) ? str : str3;
-        if (this.c && z9) {
+        if (this.c && z10) {
             SpannableStringBuilder e10 = e(str4, treeMap);
             String str5 = this.b;
             str5.getClass();
             e10.append((CharSequence) str5);
             return;
         }
-        if ("br".equals(str2) && z9) {
+        if ("br".equals(str2) && z10) {
             e(str4, treeMap).append('\n');
             return;
         }
@@ -427,16 +426,16 @@ public final class c {
             boolean equals = "p".equals(str2);
             for (int i7 = 0; i7 < c(); i7++) {
                 c b10 = b(i7);
-                if (z9 || equals) {
-                    z10 = true;
+                if (z10 || equals) {
+                    z11 = true;
                     treeMap2 = treeMap;
                     j10 = j3;
                 } else {
-                    z10 = false;
+                    z11 = false;
                     j10 = j3;
                     treeMap2 = treeMap;
                 }
-                b10.i(j10, z10, str4, treeMap2);
+                b10.i(j10, z11, str4, treeMap2);
             }
             if (equals) {
                 SpannableStringBuilder e11 = e(str4, treeMap);

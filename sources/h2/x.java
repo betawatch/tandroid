@@ -1,17 +1,18 @@
 package h2;
 
-import a8.ia;
-import c8.e1;
+import a8.ja;
+import a8.p0;
 import c8.g1;
+import c8.k1;
 import h9.t0;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class x {
     public static final char[] d = {'\r', '\n'};
@@ -23,16 +24,16 @@ public final class x {
     public int c;
 
     public x() {
-        this.a = m0.b;
+        this.a = l0.b;
     }
 
     public static int b(int i7, int i10, int i11, int i12) {
         byte b10 = (byte) i11;
-        return e1.c((byte) 0, g1.a(((i7 & 7) << 2) | ((i10 & 48) >> 4)), g1.a(((((byte) i10) & 15) << 4) | ((b10 & 60) >> 2)), g1.a(((b10 & 3) << 6) | (((byte) i12) & 63)));
+        return g1.c((byte) 0, k1.a(((i7 & 7) << 2) | ((i10 & 48) >> 4)), k1.a(((((byte) i10) & 15) << 4) | ((b10 & 60) >> 2)), k1.a(((b10 & 3) << 6) | (((byte) i12) & 63)));
     }
 
     public static int d(Charset charset) {
-        ia.h(f.contains(charset), "Unsupported charset: %s", charset);
+        ja.h(f.contains(charset), "Unsupported charset: %s", charset);
         return (charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) ? 1 : 2;
     }
 
@@ -93,7 +94,7 @@ public final class x {
         if (m10 >= 0) {
             return m10;
         }
-        throw new IllegalStateException(jg.g.j(m10, "Top bit not zero: "));
+        throw new IllegalStateException(i5.c.i(m10, "Top bit not zero: "));
     }
 
     public final int F() {
@@ -108,7 +109,7 @@ public final class x {
                 break;
             }
         }
-        return e1.b(j3);
+        return g1.b(j3);
     }
 
     public final long G() {
@@ -116,7 +117,7 @@ public final class x {
         if (u10 >= 0) {
             return u10;
         }
-        throw new IllegalStateException(a8.p0.o(u10, "Top bit not zero: "));
+        throw new IllegalStateException(p0.o(u10, "Top bit not zero: "));
     }
 
     public final int H() {
@@ -150,12 +151,12 @@ public final class x {
         }
         i7 = 0;
         if (i7 == 0) {
-            throw new NumberFormatException(a8.p0.o(j3, "Invalid UTF-8 sequence first byte: "));
+            throw new NumberFormatException(p0.o(j3, "Invalid UTF-8 sequence first byte: "));
         }
         f(i7);
         for (int i11 = 1; i11 < i7; i11++) {
             if ((this.a[this.b + i11] & 192) != 128) {
-                throw new NumberFormatException(a8.p0.o(j3, "Invalid UTF-8 sequence continuation byte: "));
+                throw new NumberFormatException(p0.o(j3, "Invalid UTF-8 sequence continuation byte: "));
             }
             j3 = (j3 << 6) | (r4 & 63);
         }
@@ -204,12 +205,12 @@ public final class x {
     }
 
     public final void M(int i7) {
-        ia.f(i7 >= 0 && i7 <= this.a.length);
+        ja.f(i7 >= 0 && i7 <= this.a.length);
         this.c = i7;
     }
 
     public final void N(int i7) {
-        ia.f(i7 >= 0 && i7 <= this.c);
+        ja.f(i7 >= 0 && i7 <= this.c);
         this.b = i7;
     }
 
@@ -232,9 +233,9 @@ public final class x {
         if (!g.get() || a() >= i7) {
             return;
         }
-        StringBuilder n10 = jg.g.n(i7, "bytesNeeded= ", ", bytesLeft=");
-        n10.append(a());
-        throw new IndexOutOfBoundsException(n10.toString());
+        StringBuilder m10 = i5.c.m(i7, "bytesNeeded= ", ", bytesLeft=");
+        m10.append(a());
+        throw new IndexOutOfBoundsException(m10.toString());
     }
 
     public final char g(int i7, ByteOrder byteOrder) {
@@ -258,7 +259,7 @@ public final class x {
     public final int h(Charset charset) {
         int i7;
         int i10;
-        ia.h(f.contains(charset), "Unsupported charset: %s", charset);
+        ja.h(f.contains(charset), "Unsupported charset: %s", charset);
         if (a() < d(charset)) {
             throw new IndexOutOfBoundsException("position=" + this.b + ", limit=" + this.c);
         }
@@ -330,15 +331,15 @@ public final class x {
         int h;
         if (a() >= d(charset) && (h = h(charset)) != 0) {
             long j3 = h >>> 8;
-            ia.d(j3, "out of range: %s", (j3 >> 32) == 0);
+            ja.d(j3, "out of range: %s", (j3 >> 32) == 0);
             int i7 = (int) j3;
             if (!Character.isSupplementaryCodePoint(i7)) {
                 long j10 = i7;
                 char c10 = (char) j10;
-                ia.d(j10, "Out of range: %s", ((long) c10) == j10);
+                ja.d(j10, "Out of range: %s", ((long) c10) == j10);
                 for (char c11 : cArr) {
                     if (c11 == c10) {
-                        this.b = e1.b(h & qs.e4) + this.b;
+                        this.b = g1.b(h & ns.e4) + this.b;
                         return c10;
                     }
                 }
@@ -366,7 +367,7 @@ public final class x {
 
     public final String n(Charset charset) {
         int i7;
-        ia.h(f.contains(charset), "Unsupported charset: %s", charset);
+        ja.h(f.contains(charset), "Unsupported charset: %s", charset);
         if (a() == 0) {
             return null;
         }
@@ -389,18 +390,18 @@ public final class x {
                 i10 = i11;
                 break;
             }
-            if ((charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) && m0.O(this.a[i10])) {
+            if ((charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) && l0.O(this.a[i10])) {
                 break;
             }
             if (charset.equals(StandardCharsets.UTF_16) || charset.equals(StandardCharsets.UTF_16BE)) {
                 byte[] bArr = this.a;
-                if (bArr[i10] == 0 && m0.O(bArr[i10 + 1])) {
+                if (bArr[i10] == 0 && l0.O(bArr[i10 + 1])) {
                     break;
                 }
             }
             if (charset.equals(StandardCharsets.UTF_16LE)) {
                 byte[] bArr2 = this.a;
-                if (bArr2[i10 + 1] == 0 && m0.O(bArr2[i10])) {
+                if (bArr2[i10 + 1] == 0 && l0.O(bArr2[i10])) {
                     break;
                 }
             }
@@ -480,7 +481,7 @@ public final class x {
         if (o4 >= 0) {
             return o4;
         }
-        throw new IllegalStateException(jg.g.j(o4, "Top bit not zero: "));
+        throw new IllegalStateException(i5.c.i(o4, "Top bit not zero: "));
     }
 
     public final int t() {
@@ -525,7 +526,7 @@ public final class x {
         }
         byte[] bArr = this.a;
         int i10 = this.b;
-        String str = m0.a;
+        String str = l0.a;
         String str2 = new String(bArr, i10, i7 - i10, StandardCharsets.UTF_8);
         this.b = i7;
         if (i7 < this.c) {
@@ -543,7 +544,7 @@ public final class x {
         int i11 = (i10 + i7) - 1;
         int i12 = (i11 >= this.c || this.a[i11] != 0) ? i7 : i7 - 1;
         byte[] bArr = this.a;
-        String str = m0.a;
+        String str = l0.a;
         String str2 = new String(bArr, i10, i12, StandardCharsets.UTF_8);
         this.b += i7;
         return str2;

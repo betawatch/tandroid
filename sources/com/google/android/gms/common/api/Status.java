@@ -1,6 +1,6 @@
 package com.google.android.gms.common.api;
 
-import a8.i8;
+import a8.j8;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.app.PendingIntent;
@@ -8,13 +8,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class Status extends r6.a implements q, ReflectedParcelable {
+public final class Status extends r6.a implements r, ReflectedParcelable {
     public final int a;
     public final String b;
     public final PendingIntent c;
@@ -24,7 +24,7 @@ public final class Status extends r6.a implements q, ReflectedParcelable {
     public static final Status h = new Status(8, null, null, null);
     public static final Status n = new Status(15, null, null, null);
     public static final Status r = new Status(16, null, null, null);
-    public static final Parcelable.Creator<Status> CREATOR = new t(3);
+    public static final Parcelable.Creator<Status> CREATOR = new u(3);
 
     public Status(int i7, String str, PendingIntent pendingIntent, n6.a aVar) {
         this.a = i7;
@@ -59,28 +59,28 @@ public final class Status extends r6.a implements q, ReflectedParcelable {
     }
 
     public final String toString() {
-        j2.n nVar = new j2.n(this);
+        ji.j jVar = new ji.j(this);
         String str = this.b;
         if (str == null) {
-            str = i8.a(this.a);
+            str = j8.a(this.a);
         }
-        nVar.X(str, "statusCode");
-        nVar.X(this.c, "resolution");
-        return nVar.toString();
+        jVar.U(str, "statusCode");
+        jVar.U(this.c, "resolution");
+        return jVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 1, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        xb.l(parcel, 2, this.b);
-        xb.k(parcel, 3, this.c, i7);
-        xb.k(parcel, 4, this.d, i7);
-        xb.s(parcel, r10);
+        yb.l(parcel, 2, this.b);
+        yb.k(parcel, 3, this.c, i7);
+        yb.k(parcel, 4, this.d, i7);
+        yb.s(parcel, r10);
     }
 
-    @Override // com.google.android.gms.common.api.q
+    @Override // com.google.android.gms.common.api.r
     public final Status a() {
         return this;
     }

@@ -1,176 +1,90 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 import android.view.View;
-import j$.util.Objects;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class kj0 extends vi0 {
-    public SparseIntArray c;
-    public SparseIntArray d;
-    public SparseIntArray e;
-    public int f;
-    public int h;
-    public final ArrayList n = new ArrayList();
+public final /* synthetic */ class kj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ Object d;
 
-    public kj0() {
-        L();
+    public /* synthetic */ kj0(Object obj, float f10, float f11, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.b = f10;
+        this.c = f11;
     }
 
-    @Override // org.telegram.ui.Components.oj0
-    public final boolean D(v4.d1 d1Var) {
-        int b10 = d1Var.b();
-        return V(S(b10), Q(b10), d1Var);
-    }
-
-    public final void L() {
-        SparseIntArray sparseIntArray = this.d;
-        if (sparseIntArray == null) {
-            this.d = new SparseIntArray();
-            this.c = new SparseIntArray();
-            this.e = new SparseIntArray();
-        } else {
-            sparseIntArray.clear();
-            this.c.clear();
-            this.e.clear();
+    @Override // java.lang.Runnable
+    public final void run() {
+        View view;
+        int i7 = this.a;
+        float f10 = this.c;
+        float f11 = this.b;
+        Object obj = this.d;
+        switch (i7) {
+            case 0:
+                uj0 uj0Var = (uj0) ((nj0) obj).b;
+                if (uj0Var.d1 != null && (view = uj0Var.M1) != null) {
+                    uj0Var.j1(view, f11, f10, true);
+                    uj0Var.d1 = null;
+                    break;
+                }
+                break;
+            default:
+                vg.h hVar = (vg.h) obj;
+                vg.m mVar = hVar.b;
+                ValueAnimator valueAnimator = mVar.d0;
+                vg.g gVar = mVar.i0;
+                vg.g gVar2 = mVar.h0;
+                if (valueAnimator != null) {
+                    valueAnimator.removeAllListeners();
+                    mVar.d0.cancel();
+                    mVar.d0 = null;
+                }
+                AnimatorSet animatorSet = mVar.e0;
+                if (animatorSet != null) {
+                    animatorSet.removeAllListeners();
+                    mVar.e0.cancel();
+                    mVar.e0 = null;
+                }
+                if (Math.abs(mVar.b.d) <= 10.0f) {
+                    org.telegram.messenger.g0.r(mVar.f0);
+                    mVar.e0 = new AnimatorSet();
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(mVar.b.d, f11);
+                    ofFloat.addUpdateListener(gVar2);
+                    long j3 = org.telegram.messenger.ns.x3;
+                    ofFloat.setDuration(j3);
+                    er erVar = er.h;
+                    ofFloat.setInterpolator(erVar);
+                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f11, 0.0f);
+                    ofFloat2.addUpdateListener(gVar2);
+                    ofFloat2.setStartDelay(j3);
+                    ofFloat2.setDuration(600L);
+                    OvershootInterpolator overshootInterpolator = org.telegram.messenger.g0.H;
+                    ofFloat2.setInterpolator(overshootInterpolator);
+                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(mVar.b.i, f10);
+                    ofFloat3.addUpdateListener(gVar);
+                    ofFloat3.setDuration(j3);
+                    ofFloat3.setInterpolator(erVar);
+                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f10, 0.0f);
+                    ofFloat4.addUpdateListener(gVar);
+                    ofFloat4.setStartDelay(j3);
+                    ofFloat4.setDuration(600L);
+                    ofFloat4.setInterpolator(overshootInterpolator);
+                    mVar.e0.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
+                    mVar.e0.addListener(new org.telegram.ui.g71(hVar, 23));
+                    mVar.e0.start();
+                    break;
+                } else {
+                    mVar.l();
+                    break;
+                }
         }
-        this.h = -1;
-        this.f = -1;
-    }
-
-    public abstract int M(int i7);
-
-    public int N(int i7, int i10) {
-        return Objects.hash(Integer.valueOf((-49612) * i7), O(i7, i10));
-    }
-
-    public abstract Object O(int i7, int i10);
-
-    public abstract int P(int i7, int i10);
-
-    public final int Q(int i7) {
-        int i10 = this.c.get(i7, ConnectionsManager.DEFAULT_DATACENTER_ID);
-        if (i10 != Integer.MAX_VALUE) {
-            return i10;
-        }
-        int i11 = this.f;
-        if (i11 < 0) {
-            i11 = R();
-            this.f = i11;
-        }
-        int i12 = 0;
-        int i13 = 0;
-        while (i12 < i11) {
-            int U = U(i12) + i13;
-            if (i7 >= i13 && i7 < U) {
-                int i14 = i7 - i13;
-                this.c.put(i7, i14);
-                return i14;
-            }
-            i12++;
-            i13 = U;
-        }
-        return -1;
-    }
-
-    public abstract int R();
-
-    public final int S(int i7) {
-        int i10 = this.d.get(i7, ConnectionsManager.DEFAULT_DATACENTER_ID);
-        if (i10 != Integer.MAX_VALUE) {
-            return i10;
-        }
-        int i11 = this.f;
-        if (i11 < 0) {
-            i11 = R();
-            this.f = i11;
-        }
-        int i12 = 0;
-        int i13 = 0;
-        while (i12 < i11) {
-            int U = U(i12) + i13;
-            if (i7 >= i13 && i7 < U) {
-                this.d.put(i7, i12);
-                return i12;
-            }
-            i12++;
-            i13 = U;
-        }
-        return -1;
-    }
-
-    public abstract View T(int i7, View view);
-
-    public final int U(int i7) {
-        int i10 = this.e.get(i7, ConnectionsManager.DEFAULT_DATACENTER_ID);
-        if (i10 != Integer.MAX_VALUE) {
-            return i10;
-        }
-        int M = M(i7);
-        this.e.put(i7, M);
-        return M;
-    }
-
-    public abstract boolean V(int i7, int i10, v4.d1 d1Var);
-
-    public abstract void W(int i7, int i10, v4.d1 d1Var);
-
-    public final void X(boolean z9) {
-        ArrayList arrayList = this.n;
-        ArrayList arrayList2 = new ArrayList(arrayList);
-        L();
-        arrayList.clear();
-        int i7 = this.f;
-        if (i7 < 0) {
-            i7 = R();
-            this.f = i7;
-        }
-        for (int i10 = 0; i10 < i7; i10++) {
-            int U = U(i10);
-            for (int i11 = 0; i11 < U; i11++) {
-                arrayList.add(Integer.valueOf(N(i10, i11)));
-            }
-        }
-        if (z9) {
-            v4.o.c(new jg.h(this, arrayList2, 2), true).c(this);
-        } else {
-            super.f();
-        }
-    }
-
-    @Override // v4.g0
-    public final int b() {
-        int i7 = this.h;
-        if (i7 >= 0) {
-            return i7;
-        }
-        this.h = 0;
-        int i10 = this.f;
-        if (i10 < 0) {
-            i10 = R();
-            this.f = i10;
-        }
-        for (int i11 = 0; i11 < i10; i11++) {
-            this.h = U(i11) + this.h;
-        }
-        return this.h;
-    }
-
-    @Override // v4.g0
-    public final int d(int i7) {
-        return P(S(i7), Q(i7));
-    }
-
-    @Override // v4.g0
-    public void f() {
-        X(false);
-    }
-
-    @Override // v4.g0
-    public final void t(v4.d1 d1Var, int i7) {
-        W(S(i7), Q(i7), d1Var);
     }
 }

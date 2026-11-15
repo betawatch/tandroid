@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Parcel;
 import android.os.RemoteException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class f {
     public static final j6.b b = new j6.b("Session", null);
@@ -46,9 +46,9 @@ public abstract class f {
                 v vVar = (v) xVar;
                 Parcel r12 = vVar.r1(vVar.p1(), 5);
                 int i7 = com.google.android.gms.internal.cast.t.a;
-                boolean z9 = r12.readInt() != 0;
+                boolean z10 = r12.readInt() != 0;
                 r12.recycle();
-                return z9;
+                return z10;
             } catch (RemoteException e10) {
                 b.a(e10, "Unable to call %s on %s.", "isConnected", x.class.getSimpleName());
             }
@@ -64,9 +64,9 @@ public abstract class f {
                 v vVar = (v) xVar;
                 Parcel r12 = vVar.r1(vVar.p1(), 6);
                 int i7 = com.google.android.gms.internal.cast.t.a;
-                boolean z9 = r12.readInt() != 0;
+                boolean z10 = r12.readInt() != 0;
                 r12.recycle();
-                return z9;
+                return z10;
             } catch (RemoteException e10) {
                 b.a(e10, "Unable to call %s on %s.", "isConnecting", x.class.getSimpleName());
             }

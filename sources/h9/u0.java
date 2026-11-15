@@ -1,8 +1,8 @@
 package h9;
 
-import a8.ia;
+import a8.ja;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class u0 extends i0 {
     public final /* synthetic */ q0 c;
@@ -16,13 +16,13 @@ public final class u0 extends i0 {
         q0 q0Var = this.c;
         switch (q0Var.d) {
             case 0:
-                q1 q1Var = ((z1) q0Var.e).e;
-                ia.j(i7, q1Var.c);
-                return new p1(q1Var, i7);
+                p1 p1Var = ((y1) q0Var.e).e;
+                ja.j(i7, p1Var.c);
+                return new o1(p1Var, i7);
             default:
-                q1 q1Var2 = ((z1) q0Var.e).e;
-                ia.j(i7, q1Var2.c);
-                return q1Var2.a[i7];
+                p1 p1Var2 = ((y1) q0Var.e).e;
+                ja.j(i7, p1Var2.c);
+                return p1Var2.a[i7];
         }
     }
 

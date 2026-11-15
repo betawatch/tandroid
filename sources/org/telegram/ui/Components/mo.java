@@ -1,32 +1,62 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.w71;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mo implements w71 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ no b;
+public abstract class mo extends FrameLayout {
+    public v61 a;
+    public float b;
+    public boolean c;
+    public float d;
+    public ValueAnimator e;
 
-    public /* synthetic */ mo(no noVar, int i7) {
-        this.a = i7;
-        this.b = noVar;
+    public abstract void a(boolean z10);
+
+    public final void b(boolean z10) {
+        this.c = z10;
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            this.e = null;
+            valueAnimator.cancel();
+        }
+        if (z10) {
+            setVisibility(0);
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
+        this.e = ofFloat;
+        ofFloat.addUpdateListener(new c6(this, 13));
+        this.e.setInterpolator(er.h);
+        this.e.setDuration(320L);
+        this.e.addListener(new org.telegram.ui.nn(5, this, z10));
+        this.e.start();
     }
 
-    @Override // org.telegram.ui.w71
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        switch (this.a) {
-            case 0:
-                vo voVar = this.b.a;
-                voVar.R1.K();
-                voVar.dismiss();
-                break;
-            default:
-                vo voVar2 = this.b.a;
-                voVar2.R1.K();
-                voVar2.dismiss();
-                break;
+    public int getCurrentHeight() {
+        return (int) (getMeasuredHeight() * this.b);
+    }
+
+    @Override // android.view.View
+    public final boolean isShown() {
+        return this.c;
+    }
+
+    public void setShown(float f10) {
+        this.b = f10;
+        v61 v61Var = this.a;
+        if (v61Var != null) {
+            v61Var.setPivotX(v61Var.getWidth() / 2.0f);
+            this.a.setPivotY(0.0f);
+            this.a.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, f10));
+            this.a.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, f10));
         }
+        setAlpha(f10);
+        invalidate();
+    }
+
+    public void setTabs(v61 v61Var) {
+        this.a = v61Var;
+        addView(v61Var, c8.ja.c(-1.0f, -1));
     }
 }

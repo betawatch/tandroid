@@ -1,46 +1,54 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class v0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z0 b;
+public final class v0 implements c5.h {
+    public int a = 0;
+    public int b;
+    public final /* synthetic */ x0 c;
 
-    public /* synthetic */ v0(z0 z0Var, int i7) {
-        this.a = i7;
-        this.b = z0Var;
+    public v0(x0 x0Var) {
+        this.c = x0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                z0 z0Var = this.b;
-                if (z0Var.getParent() != null) {
-                    ((ViewGroup) z0Var.getParent()).removeView(z0Var);
-                    break;
-                }
-                break;
-            case 1:
-                z0 z0Var2 = this.b;
-                if (z0Var2.getParent() != null) {
-                    ((ViewGroup) z0Var2.getParent()).removeView(z0Var2);
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                z0 z0Var3 = this.b;
-                if (z0Var3.getParent() != null) {
-                    ((ViewGroup) z0Var3.getParent()).removeView(z0Var3);
-                    break;
-                }
-                break;
+    /* JADX WARN: Type inference failed for: r0v1, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [boolean] */
+    @Override // c5.h
+    public final void a(int i7) {
+        int i10 = this.a;
+        x0 x0Var = this.c;
+        if (i10 == 0) {
+            if (i7 <= x0Var.E) {
+                x0Var.n = 1;
+            } else {
+                x0Var.n = 2;
+            }
+            x0.a(x0Var);
+            return;
+        }
+        if (i7 <= x0Var.E) {
+            this.b = 1;
+        } else {
+            this.b = 2;
+        }
+    }
+
+    @Override // c5.h
+    public final void b(float f10, int i7, int i10) {
+        x0 x0Var = this.c;
+        x0Var.y = i7;
+        x0Var.x = f10;
+        x0Var.d();
+    }
+
+    @Override // c5.h
+    public final void c(int i7) {
+        this.a = i7;
+        if (i7 == 0) {
+            int i10 = this.b;
+            x0 x0Var = this.c;
+            x0Var.n = i10;
+            x0.a(x0Var);
         }
     }
 }

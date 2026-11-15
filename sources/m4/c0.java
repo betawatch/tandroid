@@ -1,17 +1,16 @@
 package m4;
 
-import a8.ia;
+import a8.ja;
 import e2.s0;
-import f3.j0;
+import f3.i0;
 import java.util.List;
-import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c0 {
     public final /* synthetic */ int a;
     public final List b;
-    public final j0[] c;
+    public final i0[] c;
     public final h2.c d;
 
     public c0(int i7, List list) {
@@ -19,15 +18,15 @@ public final class c0 {
         switch (i7) {
             case 1:
                 this.b = list;
-                this.c = new j0[list.size()];
-                h2.c cVar = new h2.c(new l2.x(this, 18));
+                this.c = new i0[list.size()];
+                h2.c cVar = new h2.c(new ki.e(this, 14));
                 this.d = cVar;
                 cVar.C(3);
                 break;
             default:
                 this.b = list;
-                this.c = new j0[list.size()];
-                this.d = new h2.c(new l2.x(this, 17));
+                this.c = new i0[list.size()];
+                this.d = new h2.c(new ki.e(this, 13));
                 break;
         }
     }
@@ -44,25 +43,25 @@ public final class c0 {
         }
     }
 
-    public final void b(f3.q qVar, g0 g0Var) {
+    public final void b(f3.q qVar, f0 f0Var) {
         switch (this.a) {
             case 0:
                 int i7 = 0;
                 while (true) {
-                    j0[] j0VarArr = this.c;
-                    if (i7 >= j0VarArr.length) {
+                    i0[] i0VarArr = this.c;
+                    if (i7 >= i0VarArr.length) {
                         break;
                     } else {
-                        g0Var.b();
-                        g0Var.c();
-                        j0 O1 = qVar.O1(g0Var.c, 3);
+                        f0Var.b();
+                        f0Var.c();
+                        i0 d2 = qVar.d2(f0Var.c, 3);
                         e2.u uVar = (e2.u) this.b.get(i7);
                         String str = uVar.s;
-                        ia.h("application/cea-608".equals(str) || "application/cea-708".equals(str), "Invalid closed caption MIME type provided: %s", str);
+                        ja.h("application/cea-608".equals(str) || "application/cea-708".equals(str), "Invalid closed caption MIME type provided: %s", str);
                         String str2 = uVar.a;
                         if (str2 == null) {
-                            g0Var.c();
-                            str2 = (String) g0Var.e;
+                            f0Var.c();
+                            str2 = (String) f0Var.e;
                         }
                         e2.t tVar = new e2.t();
                         tVar.a = str2;
@@ -72,8 +71,8 @@ public final class c0 {
                         tVar.d = uVar.d;
                         tVar.O = uVar.P;
                         tVar.u = uVar.v;
-                        f1.s(tVar, O1);
-                        j0VarArr[i7] = O1;
+                        r.b.s(tVar, d2);
+                        i0VarArr[i7] = d2;
                         i7++;
                     }
                 }
@@ -81,27 +80,27 @@ public final class c0 {
             default:
                 int i10 = 0;
                 while (true) {
-                    j0[] j0VarArr2 = this.c;
-                    if (i10 >= j0VarArr2.length) {
+                    i0[] i0VarArr2 = this.c;
+                    if (i10 >= i0VarArr2.length) {
                         break;
                     } else {
-                        g0Var.b();
-                        g0Var.c();
-                        j0 O12 = qVar.O1(g0Var.c, 3);
+                        f0Var.b();
+                        f0Var.c();
+                        i0 d22 = qVar.d2(f0Var.c, 3);
                         e2.u uVar2 = (e2.u) this.b.get(i10);
                         String str3 = uVar2.s;
-                        ia.h("application/cea-608".equals(str3) || "application/cea-708".equals(str3), "Invalid closed caption MIME type provided: %s", str3);
+                        ja.h("application/cea-608".equals(str3) || "application/cea-708".equals(str3), "Invalid closed caption MIME type provided: %s", str3);
                         e2.t tVar2 = new e2.t();
-                        g0Var.c();
-                        tVar2.a = (String) g0Var.e;
+                        f0Var.c();
+                        tVar2.a = (String) f0Var.e;
                         tVar2.q = s0.n("video/mp2t");
                         tVar2.r = s0.n(str3);
                         tVar2.e = uVar2.e;
                         tVar2.d = uVar2.d;
                         tVar2.O = uVar2.P;
                         tVar2.u = uVar2.v;
-                        f1.s(tVar2, O12);
-                        j0VarArr2[i10] = O12;
+                        r.b.s(tVar2, d22);
+                        i0VarArr2[i10] = d22;
                         i10++;
                     }
                 }

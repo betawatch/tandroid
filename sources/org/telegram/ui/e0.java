@@ -1,64 +1,39 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.PopupWindow;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e0 implements PopupWindow.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class e0 implements org.telegram.messenger.r10 {
+    public final /* synthetic */ g4 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ vf.b d;
 
-    public /* synthetic */ e0(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public /* synthetic */ e0(g4 g4Var, String str, boolean[] zArr, vf.b bVar) {
+        this.a = g4Var;
+        this.b = str;
+        this.c = zArr;
+        this.d = bVar;
     }
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
-        switch (this.a) {
-            case 0:
-                g4 g4Var = (g4) this.b;
-                View view = g4Var.f;
-                if (view != null) {
-                    g4Var.d = null;
-                    view.invalidate();
-                    g4Var.f = null;
-                    break;
-                }
-                break;
-            case 1:
-                cn cnVar = (cn) this.b;
-                cnVar.e9 = null;
-                cnVar.j9 = null;
-                cnVar.i9 = null;
-                cnVar.B0.R = true;
-                cnVar.w8(false, true, 0.0f);
-                sj sjVar = cnVar.Z;
-                if (sjVar != null && sjVar.getEditField() != null) {
-                    cnVar.Z.getEditField().setAllowDrawCursor(true);
-                    break;
-                }
-                break;
-            default:
-                vi viVar = (vi) this.b;
-                viVar.b = null;
-                cn cnVar2 = viVar.x;
-                cnVar2.e9 = null;
-                cnVar2.j9 = null;
-                cnVar2.i9 = null;
-                cnVar2.B0.R = true;
-                if (cnVar2.f9) {
-                    cnVar2.w8(false, true, 0.0f);
-                } else {
-                    cnVar2.f9 = true;
-                }
-                sj sjVar2 = cnVar2.Z;
-                if (sjVar2 != null && sjVar2.getEditField() != null) {
-                    cnVar2.Z.getEditField().setAllowDrawCursor(true);
-                    break;
-                }
-                break;
+    @Override // org.telegram.messenger.r10
+    public final Object run() {
+        String str = this.b;
+        if (!vf.c.g(Uri.parse(str), false, this.c)) {
+            return Boolean.FALSE;
         }
+        g4 g4Var = this.a;
+        vf.b bVar = this.d;
+        if (bVar != null) {
+            bVar.c = new oi.u4(25, g4Var, bVar);
+        } else {
+            t3 t3Var = g4Var.L;
+            if (t3Var != null) {
+                t3Var.a(true);
+            }
+        }
+        vf.c.s(g4Var.M, Uri.parse(str), true, true, false, bVar, null, true, true, false, false);
+        return Boolean.TRUE;
     }
 }

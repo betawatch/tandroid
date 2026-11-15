@@ -1,21 +1,10 @@
 package ci;
 
-import java.io.File;
-import org.telegram.messenger.ij;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class b {
-    public final File a;
-    public long b;
-    public long c;
-    public int d;
-    public a e;
-    public ij f;
-    public int g;
-    public int h;
-
-    public b(File file) {
-        this.a = file;
-    }
+    public String a;
+    public float b;
+    public float c;
+    public boolean d;
 }

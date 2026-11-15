@@ -1,18 +1,27 @@
 package org.telegram.messenger;
 
-import android.telephony.PhoneStateListener;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class ue extends PhoneStateListener {
-    public final /* synthetic */ MediaController a;
+public final /* synthetic */ class ue implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ float c;
 
-    public ue(MediaController mediaController) {
-        this.a = mediaController;
+    public /* synthetic */ ue(String str, int i7, float f10) {
+        this.a = i7;
+        this.b = str;
+        this.c = f10;
     }
 
-    @Override // android.telephony.PhoneStateListener
-    public final void onCallStateChanged(int i7, String str) {
-        g0.h3(new x0(this, i7, 4));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                t0.b.getSharedPreferences("media_saved_pos", 0).edit().putFloat(this.b, this.c).commit();
+                break;
+            default:
+                t0.b.getSharedPreferences("media_saved_pos", 0).edit().putFloat(this.b, this.c).commit();
+                break;
+        }
     }
 }

@@ -1,43 +1,34 @@
 package l2;
 
-import android.media.MediaFormat;
+import android.os.Handler;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class d0 implements d3.w, m1 {
-    public d3.w a;
-    public d0 b;
+public final /* synthetic */ class d0 implements Executor {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public final void a() {
-        d0 d0Var = this.b;
-        if (d0Var != null) {
-            d0Var.a();
-        }
+    public /* synthetic */ d0(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // d3.w
-    public final void b(long j3, long j10, e2.u uVar, MediaFormat mediaFormat) {
-        d3.w wVar = this.a;
-        if (wVar != null) {
-            wVar.b(j3, j10, uVar, mediaFormat);
-        }
-    }
-
-    @Override // l2.m1
-    public final void c(int i7, Object obj) {
-        if (i7 == 7) {
-            this.a = (d3.w) obj;
-        } else if (i7 == 8) {
-            this.b = (d0) obj;
-        } else if (i7 == 10000 && obj != null) {
-            throw new ClassCastException();
-        }
-    }
-
-    public final void d() {
-        d0 d0Var = this.b;
-        if (d0Var != null) {
-            d0Var.d();
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ((h2.i0) this.b).d(runnable);
+                break;
+            case 1:
+                ((Handler) this.b).post(runnable);
+                break;
+            case 2:
+                h2.l0.W(((p4.d0) this.b).l, runnable);
+                break;
+            default:
+                ((s4.b) this.b).post(runnable);
+                break;
         }
     }
 }

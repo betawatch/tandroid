@@ -1,23 +1,23 @@
 package s4;
 
 import android.content.ComponentName;
-import com.google.android.gms.internal.vision.g3;
+import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
-import org.telegram.ui.Components.uy;
+import org.telegram.messenger.ou;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class u {
-    public final g3 a;
+    public final h3 a;
     public final ArrayList b = new ArrayList();
     public final boolean c;
-    public final uy d;
+    public final ou d;
     public ca.i e;
 
-    public u(g3 g3Var, boolean z9) {
-        this.a = g3Var;
-        this.d = (uy) g3Var.d;
-        this.c = z9;
+    public u(h3 h3Var, boolean z10) {
+        this.a = h3Var;
+        this.d = (ou) h3Var.d;
+        this.c = z10;
     }
 
     public final v a(String str) {

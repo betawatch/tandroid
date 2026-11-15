@@ -7,15 +7,15 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k9 extends a8.h0 {
-    public final /* synthetic */ a8.kb b;
+    public final /* synthetic */ a8.lb b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k9(a8.kb kbVar) {
+    public k9(a8.lb lbVar) {
         super(1);
-        this.b = kbVar;
+        this.b = lbVar;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -73,16 +73,16 @@ public final class k9 extends a8.h0 {
     public final boolean removeAll(Collection collection) {
         try {
             if (collection != null) {
-                return a8.d8.a(this, collection);
+                return a8.e8.a(this, collection);
             }
             throw null;
         } catch (UnsupportedOperationException unused) {
             Iterator it = collection.iterator();
-            boolean z9 = false;
+            boolean z10 = false;
             while (it.hasNext()) {
-                z9 |= remove(it.next());
+                z10 |= remove(it.next());
             }
-            return z9;
+            return z10;
         }
     }
 
@@ -100,7 +100,7 @@ public final class k9 extends a8.h0 {
                 ceil = size < 1073741824 ? (int) Math.ceil(size / 0.75d) : ConnectionsManager.DEFAULT_DATACENTER_ID;
             } else {
                 if (size < 0) {
-                    throw new IllegalArgumentException(jg.g.j(size, "expectedSize cannot be negative but was: "));
+                    throw new IllegalArgumentException(i5.c.i(size, "expectedSize cannot be negative but was: "));
                 }
                 ceil = size + 1;
             }

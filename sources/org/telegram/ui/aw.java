@@ -1,178 +1,156 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class aw implements f50 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1 a;
-    public final /* synthetic */ zw b;
+public final class aw extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ yw c;
 
-    public aw(zw zwVar, org.telegram.ui.ActionBar.u1 u1Var) {
-        this.b = zwVar;
-        this.a = u1Var;
+    public /* synthetic */ aw(yw ywVar, boolean z10, int i7) {
+        this.a = i7;
+        this.c = ywVar;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.f50
-    public final void e(g50 g50Var, final long j3) {
-        final int i7 = 0;
-        final int i10 = 1;
-        final org.telegram.ui.ActionBar.f2[] f2VarArr = {g50Var, null};
-        final int i11 = 0;
-        org.telegram.messenger.c20 c20Var = new org.telegram.messenger.c20(this) { // from class: org.telegram.ui.yv
-            public final /* synthetic */ aw b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.messenger.c20
-            public final void a(Object obj) {
-                Runnable runnable = (Runnable) obj;
-                switch (i11) {
-                    case 0:
-                        zw zwVar = this.b.b;
-                        Boolean bool = zwVar.G.has_username;
-                        if (bool != null && bool.booleanValue()) {
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("step", 1);
-                            bundle.putLong("chat_id", j3);
-                            bundle.putBoolean("forcePublic", zwVar.G.has_username.booleanValue());
-                            bd bdVar = new bd(bundle);
-                            bdVar.u0 = new a5(runnable, 12);
-                            zwVar.presentFragment(bdVar);
-                            f2VarArr[1] = bdVar;
-                            break;
-                        } else {
-                            runnable.run();
-                            break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                yw ywVar = this.c;
+                ywVar.r3.e();
+                if (ywVar.y1 == animator) {
+                    if (this.b) {
+                        ywVar.f0[0].a.c1();
+                    } else {
+                        uw uwVar = ywVar.f0[0].a;
+                        if (uwVar.h1) {
+                            uwVar.h1 = false;
+                            uwVar.K0(false);
                         }
-                    default:
-                        aw awVar = this.b;
-                        zw zwVar2 = awVar.b;
-                        zwVar2.c5(zwVar2.getMessagesController().M0(Long.valueOf(j3)), runnable, new org.telegram.ui.Components.h41(17, awVar, f2VarArr));
-                        break;
+                    }
+                    ywVar.y1 = null;
+                    break;
                 }
-            }
-        };
-        final int i12 = 1;
-        org.telegram.messenger.c20 c20Var2 = new org.telegram.messenger.c20(this) { // from class: org.telegram.ui.yv
-            public final /* synthetic */ aw b;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.messenger.c20
-            public final void a(Object obj) {
-                Runnable runnable = (Runnable) obj;
-                switch (i12) {
-                    case 0:
-                        zw zwVar = this.b.b;
-                        Boolean bool = zwVar.G.has_username;
-                        if (bool != null && bool.booleanValue()) {
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("step", 1);
-                            bundle.putLong("chat_id", j3);
-                            bundle.putBoolean("forcePublic", zwVar.G.has_username.booleanValue());
-                            bd bdVar = new bd(bundle);
-                            bdVar.u0 = new a5(runnable, 12);
-                            zwVar.presentFragment(bdVar);
-                            f2VarArr[1] = bdVar;
-                            break;
-                        } else {
-                            runnable.run();
-                            break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i7;
+        org.telegram.ui.ActionBar.q0 q0Var;
+        switch (this.a) {
+            case 0:
+                yw ywVar = this.c;
+                ywVar.r3.e();
+                if (ywVar.y1 == animator) {
+                    ywVar.M4(false, true);
+                    boolean z10 = this.b;
+                    if (z10) {
+                        ywVar.f0[0].a.c1();
+                        qv qvVar = ywVar.F0;
+                        if (qvVar != null) {
+                            qvVar.setVisibility(8);
                         }
-                    default:
-                        aw awVar = this.b;
-                        zw zwVar2 = awVar.b;
-                        zwVar2.c5(zwVar2.getMessagesController().M0(Long.valueOf(j3)), runnable, new org.telegram.ui.Components.h41(17, awVar, f2VarArr));
-                        break;
+                        ywVar.t3 = true;
+                        Activity parentActivity = ywVar.getParentActivity();
+                        i7 = ((org.telegram.ui.ActionBar.e2) ywVar).classGuid;
+                        org.telegram.messenger.g0.a3(parentActivity, i7);
+                        ywVar.k0.setVisibility(8);
+                        uv uvVar = ywVar.H3;
+                        if (uvVar != null) {
+                            uvVar.setVisibility(8);
+                        }
+                    } else {
+                        ywVar.u3 = false;
+                        hw hwVar = ywVar.D0;
+                        if (hwVar != null) {
+                            hwVar.setVisibility(8);
+                        }
+                        nw nwVar = ywVar.Y;
+                        if (nwVar != null) {
+                            nwVar.c();
+                        }
+                        hw hwVar2 = ywVar.D0;
+                        if (hwVar2 != null) {
+                            hwVar2.D0.clear();
+                            hwVar2.J();
+                        }
+                        uw uwVar = ywVar.f0[0].a;
+                        if (uwVar.h1) {
+                            uwVar.h1 = false;
+                            uwVar.K0(false);
+                        }
+                        ywVar.t3 = false;
+                        uv uvVar2 = ywVar.H3;
+                        if (uvVar2 != null) {
+                            uvVar2.setVisibility(0);
+                        }
+                    }
+                    View view = ywVar.fragmentView;
+                    if (view != null) {
+                        view.requestLayout();
+                    }
+                    ywVar.P4(z10 ? 1.0f : 0.0f);
+                    ywVar.f0[0].a.setVerticalScrollBarEnabled(true);
+                    hw hwVar3 = ywVar.D0;
+                    if (hwVar3 != null) {
+                        hwVar3.setBackground(null);
+                    }
+                    ywVar.y1 = null;
+                    break;
                 }
-            }
-        };
-        org.telegram.ui.ActionBar.u1 u1Var = this.a;
-        Utilities.u(0, c20Var, c20Var2, new bi.b2(this, u1Var, j3, 2), new org.telegram.messenger.c20(this) { // from class: org.telegram.ui.zv
-            public final /* synthetic */ aw b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.messenger.c20
-            public final void a(Object obj) {
-                switch (i7) {
-                    case 0:
-                        Runnable runnable = (Runnable) obj;
-                        zw zwVar = this.b.b;
-                        if (zwVar.G.bot_admin_rights == null) {
-                            runnable.run();
-                            break;
-                        } else {
-                            TLRPC.User a22 = zwVar.getMessagesController().a2(Long.valueOf(zwVar.H));
-                            org.telegram.messenger.qp messagesController = zwVar.getMessagesController();
-                            TLRPC.RequestPeerType requestPeerType = zwVar.G;
-                            TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
-                            Boolean bool = requestPeerType.bot_participant;
-                            messagesController.P4(j3, a22, tL_chatAdminRights, null, false, zwVar, bool == null || !bool.booleanValue(), true, null, runnable, new we(8, runnable));
-                            break;
-                        }
-                    default:
-                        Runnable runnable2 = (Runnable) obj;
-                        zw zwVar2 = this.b.b;
-                        if (zwVar2.G.user_admin_rights == null) {
-                            runnable2.run();
-                            break;
-                        } else {
-                            org.telegram.messenger.qp messagesController2 = zwVar2.getMessagesController();
-                            long j10 = j3;
-                            zwVar2.getMessagesController().P4(j10, org.telegram.messenger.p10.i(zwVar2.getAccountInstance().a).f(), mp.x0(messagesController2.M0(Long.valueOf(j10)).admin_rights, zwVar2.G.user_admin_rights), null, false, zwVar2, false, true, null, runnable2, new we(7, runnable2));
-                            break;
-                        }
+                break;
+            case 1:
+                yw ywVar2 = this.c;
+                ywVar2.Q3 = null;
+                if (!this.b && (q0Var = ywVar2.n0) != null) {
+                    q0Var.setVisibility(8);
+                    break;
                 }
-            }
-        }, new org.telegram.messenger.c20(this) { // from class: org.telegram.ui.zv
-            public final /* synthetic */ aw b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.messenger.c20
-            public final void a(Object obj) {
-                switch (i10) {
-                    case 0:
-                        Runnable runnable = (Runnable) obj;
-                        zw zwVar = this.b.b;
-                        if (zwVar.G.bot_admin_rights == null) {
-                            runnable.run();
-                            break;
-                        } else {
-                            TLRPC.User a22 = zwVar.getMessagesController().a2(Long.valueOf(zwVar.H));
-                            org.telegram.messenger.qp messagesController = zwVar.getMessagesController();
-                            TLRPC.RequestPeerType requestPeerType = zwVar.G;
-                            TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
-                            Boolean bool = requestPeerType.bot_participant;
-                            messagesController.P4(j3, a22, tL_chatAdminRights, null, false, zwVar, bool == null || !bool.booleanValue(), true, null, runnable, new we(8, runnable));
-                            break;
-                        }
-                    default:
-                        Runnable runnable2 = (Runnable) obj;
-                        zw zwVar2 = this.b.b;
-                        if (zwVar2.G.user_admin_rights == null) {
-                            runnable2.run();
-                            break;
-                        } else {
-                            org.telegram.messenger.qp messagesController2 = zwVar2.getMessagesController();
-                            long j10 = j3;
-                            zwVar2.getMessagesController().P4(j10, org.telegram.messenger.p10.i(zwVar2.getAccountInstance().a).f(), mp.x0(messagesController2.M0(Long.valueOf(j10)).admin_rights, zwVar2.G.user_admin_rights), null, false, zwVar2, false, true, null, runnable2, new we(7, runnable2));
-                            break;
-                        }
+                break;
+            default:
+                yw ywVar3 = this.c;
+                ywVar3.J = null;
+                boolean z11 = this.b;
+                ywVar3.L = z11;
+                if (!z11 && !ywVar3.M) {
+                    ywVar3.F0.setVisibility(8);
                 }
-            }
-        }, new bi.r2(this, u1Var, j3, f2VarArr, 5));
+                if (z11) {
+                    ywVar3.A3 = -org.telegram.messenger.g0.L(81.0f);
+                    ywVar3.O4(-ywVar3.g4());
+                } else {
+                    ywVar3.O4(0.0f);
+                    ywVar3.A3 = org.telegram.messenger.g0.L(81.0f);
+                }
+                int i10 = 0;
+                while (true) {
+                    xw[] xwVarArr = ywVar3.f0;
+                    if (i10 >= xwVarArr.length) {
+                        View view2 = ywVar3.fragmentView;
+                        if (view2 != null) {
+                            view2.requestLayout();
+                            break;
+                        }
+                    } else {
+                        xw xwVar = xwVarArr[i10];
+                        if (xwVar != null) {
+                            xwVar.a.requestLayout();
+                        }
+                        i10++;
+                    }
+                }
+                break;
+        }
     }
 }

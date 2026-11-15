@@ -1,71 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
+import android.content.Context;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bl implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
+public final class bl extends jg.s0 {
+    public final /* synthetic */ int E = 0;
+    public final /* synthetic */ org.telegram.messenger.is F;
 
-    public /* synthetic */ bl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i7) {
-        this.a = i7;
-        this.b = chatAttachAlertPhotoLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bl(dl dlVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(context, e6Var, z10, false);
+        this.F = dlVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+    @Override // v4.h0
+    public final void f() {
+        int i7 = this.E;
+        org.telegram.messenger.is isVar = this.F;
         switch (i7) {
             case 0:
-                boolean z9 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout.b.c.removeView(chatAttachAlertPhotoLayout.P);
-                chatAttachAlertPhotoLayout.P = null;
-                break;
-            case 1:
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout.w0(false);
-                chatAttachAlertPhotoLayout.n0 = null;
-                break;
-            case 2:
-                boolean z11 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout.w0(false);
-                chatAttachAlertPhotoLayout.n0 = null;
-                break;
-            case 3:
-                chatAttachAlertPhotoLayout.x.setVisibility(8);
-                break;
-            case 4:
-                chatAttachAlertPhotoLayout.G.f();
-                break;
-            case 5:
-                boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                ci ciVar = chatAttachAlertPhotoLayout.b;
-                if (f0.d.b(ciVar.Z1.getParentActivity(), "android.permission.CAMERA") == 0) {
-                    chatAttachAlertPhotoLayout.l0();
-                    break;
-                } else {
-                    try {
-                        ciVar.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 18);
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
+                dl dlVar = (dl) isVar;
+                bl blVar = dlVar.O;
+                org.telegram.ui.ActionBar.q0 q0Var = dlVar.x;
+                if (q0Var != null) {
+                    q0Var.setShowSearchProgress(blVar.w);
                 }
+                TextView textView = dlVar.w;
+                if (textView != null) {
+                    textView.setText(org.telegram.messenger.hd.a0(null, null, 2131748165, blVar.h));
+                }
+                super.f();
+                break;
             default:
-                boolean z13 = ChatAttachAlertPhotoLayout.q1;
-                ci ciVar2 = chatAttachAlertPhotoLayout.b;
-                try {
-                    if (Build.VERSION.SDK_INT >= 33) {
-                        ciVar2.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_IMAGES"}, 4);
-                    } else {
-                        ciVar2.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
-                    }
-                    break;
-                } catch (Exception unused2) {
-                    return;
+                org.telegram.ui.pa0 pa0Var = (org.telegram.ui.pa0) isVar;
+                org.telegram.ui.ActionBar.d5 d5Var = pa0Var.r;
+                if (d5Var != null) {
+                    d5Var.setShowSearchProgress(pa0Var.T.w);
                 }
+                TextView textView2 = pa0Var.n;
+                if (textView2 != null) {
+                    textView2.setText(org.telegram.messenger.hd.a0(null, null, 2131748165, pa0Var.T.h));
+                }
+                super.f();
+                break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bl(org.telegram.ui.pa0 pa0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(context, e6Var, false, z10);
+        this.F = pa0Var;
     }
 }

@@ -10,7 +10,8 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
-import di.z2;
+import com.google.android.gms.internal.vision.e2;
+import fi.u2;
 import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
@@ -18,25 +19,25 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.k5;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.fi0;
-import org.telegram.ui.Components.gi0;
-import org.telegram.ui.Components.h5;
-import org.telegram.ui.Components.hi0;
-import org.telegram.ui.Components.ii0;
-import org.telegram.ui.d11;
-import org.telegram.ui.r01;
-import org.telegram.ui.r11;
-import ug.z0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.ji0;
+import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.li0;
+import org.telegram.ui.Components.mi0;
+import org.telegram.ui.l01;
+import org.telegram.ui.l11;
+import org.telegram.ui.x01;
+import ug.a1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class a0 extends FrameLayout implements c6 {
+public final class a0 extends FrameLayout implements z5 {
     public final Drawable a;
     public final Rect b;
     public final Paint c;
@@ -73,13 +74,13 @@ public final class a0 extends FrameLayout implements c6 {
         rect.right = L;
         rect.top = L;
         rect.left = L;
-        int i7 = m6.He;
-        h6 h6Var = b0Var.s;
-        t6.x(this, mutate, i7, h6Var, PorterDuff.Mode.MULTIPLY);
+        int i7 = j6.Ke;
+        e6 e6Var = b0Var.s;
+        q6.x(this, mutate, i7, e6Var, PorterDuff.Mode.MULTIPLY);
         if (b0Var.y == 2) {
             paint.setColor(i0.a.f(0.13f, -16777216, -1));
         } else {
-            paint.setColor(m6.w0(m6.G8, h6Var));
+            paint.setColor(j6.w0(j6.G8, e6Var));
         }
     }
 
@@ -92,7 +93,7 @@ public final class a0 extends FrameLayout implements c6 {
     */
     public final void dispatchDraw(Canvas canvas) {
         float f10;
-        boolean z9;
+        boolean z10;
         HashMap hashMap;
         int i7;
         float f11;
@@ -100,12 +101,12 @@ public final class a0 extends FrameLayout implements c6 {
         float f12;
         RectF rectF2;
         int i10;
-        ii0 ii0Var;
+        mi0 mi0Var;
         int i11;
-        ii0 ii0Var2;
+        mi0 mi0Var2;
         int i12;
         float f13;
-        z2 z2Var;
+        u2 u2Var;
         int i13;
         int i14;
         int i15;
@@ -113,7 +114,7 @@ public final class a0 extends FrameLayout implements c6 {
         HashMap hashMap2;
         RectF rectF3;
         RectF rectF4;
-        ii0 ii0Var3;
+        mi0 mi0Var3;
         RectF rectF5;
         RectF rectF6;
         float f14;
@@ -121,11 +122,11 @@ public final class a0 extends FrameLayout implements c6 {
         float f16;
         float f17;
         float f18;
-        ii0 ii0Var4;
+        mi0 mi0Var4;
         RectF rectF7;
-        z2 z2Var2;
+        u2 u2Var2;
         int[] iArr;
-        z2 z2Var3;
+        u2 u2Var3;
         float f19;
         int i17;
         float f20;
@@ -137,7 +138,7 @@ public final class a0 extends FrameLayout implements c6 {
         float f26;
         float f27;
         float f28;
-        o0 o0Var;
+        p0 p0Var;
         int i18;
         float f29;
         Canvas canvas2 = canvas;
@@ -145,30 +146,30 @@ public final class a0 extends FrameLayout implements c6 {
         RectF rectF8 = b0Var.f;
         int i19 = b0Var.y;
         RectF rectF9 = b0Var.i;
-        w wVar = b0Var.m;
-        ii0 ii0Var5 = b0Var.n;
+        x xVar = b0Var.m;
+        mi0 mi0Var5 = b0Var.n;
         if (b0Var.l) {
             float i20 = Utilities.i(b0Var.j, 1.0f, 0.0f);
             RectF rectF10 = org.telegram.messenger.g0.P;
             rectF10.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
             if (i19 == 4) {
-                rectF8.set(ii0Var5.x);
+                rectF8.set(mi0Var5.x);
                 rectF8.offset(b0Var.g, b0Var.h);
             }
             org.telegram.messenger.g0.Z1(rectF8, rectF10, b0Var.j, rectF9);
             float T1 = org.telegram.messenger.g0.T1(b0Var.e, org.telegram.messenger.g0.L(i19 == 5 ? 20.0f : 8.0f), b0Var.j);
             HashMap hashMap3 = this.e;
             hashMap3.clear();
-            if (i19 == 1 || (ii0Var5.getDelegate() != null && ii0Var5.getDelegate().U())) {
+            if (i19 == 1 || (mi0Var5.getDelegate() != null && mi0Var5.getDelegate().L())) {
                 f10 = 1.0f;
-                hi0 delegate = ii0Var5.getDelegate();
+                li0 delegate = mi0Var5.getDelegate();
                 float x10 = getX();
                 a0 a0Var = b0Var.a;
-                z9 = true;
+                z10 = true;
                 hashMap = hashMap3;
                 i7 = 4;
                 f11 = 255.0f;
-                delegate.L(canvas, rectF9, T1, x10, i19 == 1 ? a0Var.getY() - org.telegram.messenger.g0.m : a0Var.getY() + b0Var.c.getY(), qs.e4, true);
+                delegate.J(canvas, rectF9, T1, x10, i19 == 1 ? a0Var.getY() - org.telegram.messenger.g0.m : a0Var.getY() + b0Var.c.getY(), ns.e4, true);
                 canvas2 = canvas;
                 rectF = rectF9;
             } else {
@@ -198,12 +199,12 @@ public final class a0 extends FrameLayout implements c6 {
                 hashMap = hashMap3;
                 i7 = 4;
                 f11 = 255.0f;
-                z9 = true;
+                z10 = true;
             }
-            if (ii0Var5.R0 != null) {
+            if (mi0Var5.S0 != null) {
                 canvas2.save();
                 float f30 = rectF.left;
-                float y10 = ii0Var5.R0.getY() + rectF.top;
+                float y10 = mi0Var5.S0.getY() + rectF.top;
                 if (i19 == 3 || i19 == i7) {
                     i18 = 5;
                 } else {
@@ -214,19 +215,19 @@ public final class a0 extends FrameLayout implements c6 {
                         rectF2 = rectF8;
                         f12 = T1;
                         i10 = i18;
-                        canvas2.saveLayerAlpha(0.0f, 0.0f, ii0Var5.R0.getMeasuredWidth(), ii0Var5.R0.getMeasuredHeight(), (int) ((f10 - b0Var.j) * ii0Var5.R0.getAlpha() * f11), 31);
-                        ii0Var5.R0.draw(canvas2);
+                        canvas2.saveLayerAlpha(0.0f, 0.0f, mi0Var5.S0.getMeasuredWidth(), mi0Var5.S0.getMeasuredHeight(), (int) ((f10 - b0Var.j) * mi0Var5.S0.getAlpha() * f11), 31);
+                        mi0Var5.S0.draw(canvas2);
                         canvas2.restore();
                         canvas2.restore();
                     }
                 }
-                f29 = ii0Var5.x.top;
+                f29 = mi0Var5.x.top;
                 canvas2.translate(f30, y10 - f29);
                 rectF2 = rectF8;
                 f12 = T1;
                 i10 = i18;
-                canvas2.saveLayerAlpha(0.0f, 0.0f, ii0Var5.R0.getMeasuredWidth(), ii0Var5.R0.getMeasuredHeight(), (int) ((f10 - b0Var.j) * ii0Var5.R0.getAlpha() * f11), 31);
-                ii0Var5.R0.draw(canvas2);
+                canvas2.saveLayerAlpha(0.0f, 0.0f, mi0Var5.S0.getMeasuredWidth(), mi0Var5.S0.getMeasuredHeight(), (int) ((f10 - b0Var.j) * mi0Var5.S0.getAlpha() * f11), 31);
+                mi0Var5.S0.draw(canvas2);
                 canvas2.restore();
                 canvas2.restore();
             } else {
@@ -234,20 +235,20 @@ public final class a0 extends FrameLayout implements c6 {
                 rectF2 = rectF8;
                 i10 = 5;
             }
-            float width = (rectF.width() - ii0Var5.x.width()) + (rectF.left - ii0Var5.x.left);
+            float width = (rectF.width() - mi0Var5.x.width()) + (rectF.left - mi0Var5.x.left);
             if (b0Var.j > 0.05f || i19 == i10) {
                 canvas2.save();
-                canvas2.translate(width, (rectF.height() - ii0Var5.x.height()) + (rectF.top - ii0Var5.x.top));
-                float max = (Math.max(0.25f, Math.min(ii0Var5.w, f10)) - 0.25f) / 0.75f;
+                canvas2.translate(width, (rectF.height() - mi0Var5.x.height()) + (rectF.top - mi0Var5.x.top));
+                float max = (Math.max(0.25f, Math.min(mi0Var5.w, f10)) - 0.25f) / 0.75f;
                 Canvas canvas3 = canvas2;
-                ii0Var5.f(ii0Var5.E * max, max, ii0Var5.F * max, ii0Var5.M0 == i10 ? qs.e4 : (int) k5.A(1.0f, ii0Var5.w0, Utilities.i(ii0Var5.w0 / 0.2f, 1.0f, 0.0f), f11), canvas3);
-                ii0Var = ii0Var5;
+                mi0Var5.f(mi0Var5.F * max, max, mi0Var5.G * max, mi0Var5.N0 == i10 ? ns.e4 : (int) k5.A(1.0f, mi0Var5.x0, Utilities.i(mi0Var5.x0 / 0.2f, 1.0f, 0.0f), f11), canvas3);
+                mi0Var = mi0Var5;
                 canvas2 = canvas3;
                 canvas2.restore();
                 i11 = 5;
             } else {
                 i11 = i10;
-                ii0Var = ii0Var5;
+                mi0Var = mi0Var5;
             }
             if (i19 == i11) {
                 Path path = this.w;
@@ -261,41 +262,41 @@ public final class a0 extends FrameLayout implements c6 {
             this.n = 1.0f;
             this.r = 0.0f;
             this.s = 0.0f;
-            if (ii0Var != null) {
-                for (int childCount = wVar.h0.getChildCount() - 1; childCount >= 0; childCount--) {
-                    if (wVar.h0.getChildAt(childCount) instanceof d11) {
-                        d11 d11Var = (d11) wVar.h0.getChildAt(childCount);
-                        if (d11Var.D && (o0Var = d11Var.y) != null) {
-                            hashMap.put(o0Var, d11Var);
+            if (mi0Var != null) {
+                for (int childCount = xVar.i0.getChildCount() - 1; childCount >= 0; childCount--) {
+                    if (xVar.i0.getChildAt(childCount) instanceof x01) {
+                        x01 x01Var = (x01) xVar.i0.getChildAt(childCount);
+                        if (x01Var.E && (p0Var = x01Var.y) != null) {
+                            hashMap.put(p0Var, x01Var);
                         }
                     }
                 }
                 int save = canvas2.save();
-                canvas2.translate(rectF.left, com.google.android.recaptcha.internal.a.z(1.0f, b0Var.j, ii0Var.g() + ii0Var.getTopOffset(), rectF.top));
-                float max2 = Math.max(1.0f - (wVar.i0.getVisibility() == 0 ? wVar.i0.getAlpha() : 0.0f), 1.0f - b0Var.j);
+                canvas2.translate(rectF.left, e2.z(1.0f, b0Var.j, mi0Var.g() + mi0Var.getTopOffset(), rectF.top));
+                float max2 = Math.max(1.0f - (xVar.j0.getVisibility() == 0 ? xVar.j0.getAlpha() : 0.0f), 1.0f - b0Var.j);
                 if (max2 != 1.0f) {
                     canvas2.saveLayerAlpha(0.0f, 0.0f, rectF.width(), rectF.height(), (int) (max2 * 255.0f), 31);
                 }
-                int x11 = (int) (wVar.h0.getX() + wVar.getX());
-                int y11 = (int) (wVar.h0.getY() + wVar.getY());
-                boolean z10 = wVar.d0.getParent() != null ? z9 : false;
+                int x11 = (int) (xVar.i0.getX() + xVar.getX());
+                int y11 = (int) (xVar.i0.getY() + xVar.getY());
+                boolean z11 = xVar.e0.getParent() != null ? z10 : false;
                 if (i19 != 5) {
                     float f31 = y11;
-                    if (z10) {
+                    if (z11) {
                         f13 = 2.0f;
                         f28 = x11 + (org.telegram.messenger.g0.L(36.0f) * b0Var.j);
                     } else {
                         f13 = 2.0f;
                         f28 = 0.0f;
                     }
-                    canvas2.clipRect(f31, f28, wVar.h0.getMeasuredWidth() + y11, wVar.h0.getMeasuredHeight() + x11);
+                    canvas2.clipRect(f31, f28, xVar.i0.getMeasuredWidth() + y11, xVar.i0.getMeasuredHeight() + x11);
                 } else {
                     f13 = 2.0f;
                 }
                 int i23 = -1;
                 int i24 = -1;
-                while (i24 < ii0Var.b.getChildCount()) {
-                    View childAt = i24 == i23 ? ii0Var.z0 : ii0Var.b.getChildAt(i24);
+                while (i24 < mi0Var.b.getChildCount()) {
+                    View childAt = i24 == i23 ? mi0Var.A0 : mi0Var.b.getChildAt(i24);
                     if (childAt.getLeft() < 0 || childAt.getVisibility() == 8) {
                         i13 = i24;
                         i14 = i19;
@@ -304,32 +305,32 @@ public final class a0 extends FrameLayout implements c6 {
                         hashMap2 = hashMap;
                         rectF3 = rectF2;
                         rectF4 = rectF;
-                        ii0Var3 = ii0Var;
+                        mi0Var3 = mi0Var;
                     } else {
                         canvas2.save();
-                        if (childAt instanceof gi0) {
-                            gi0 gi0Var = (gi0) childAt;
-                            fi0 fi0Var = gi0Var.a;
-                            fi0 fi0Var2 = gi0Var.b;
-                            z0 z0Var = gi0Var.f;
-                            if (z0Var != null) {
-                                z0Var.setAlpha(1.0f - b0Var.j);
+                        if (childAt instanceof ki0) {
+                            ki0 ki0Var = (ki0) childAt;
+                            ji0 ji0Var = ki0Var.a;
+                            ji0 ji0Var2 = ki0Var.b;
+                            a1 a1Var = ki0Var.f;
+                            if (a1Var != null) {
+                                a1Var.setAlpha(1.0f - b0Var.j);
                             }
-                            d11 d11Var2 = (d11) hashMap.get(gi0Var.e);
-                            if (d11Var2 != null) {
+                            x01 x01Var2 = (x01) hashMap.get(ki0Var.e);
+                            if (x01Var2 != null) {
                                 float x12 = childAt.getX();
                                 float y12 = childAt.getY();
                                 if (i24 == -1) {
-                                    x12 -= ii0Var.b.getX();
-                                    f19 = y12 - ii0Var.b.getY();
+                                    x12 -= mi0Var.b.getX();
+                                    f19 = y12 - mi0Var.b.getY();
                                 } else {
                                     f19 = y12;
                                 }
                                 i13 = i24;
-                                float x13 = ((wVar.h0.getX() + (wVar.getX() + d11Var2.getX())) - fi0Var2.getX()) - org.telegram.messenger.g0.L(1.0f);
-                                float y13 = (wVar.h0.getY() + (wVar.g0.getY() + (wVar.getY() + d11Var2.getY()))) - fi0Var2.getY();
-                                float measuredWidth = d11Var2.getMeasuredWidth();
-                                if (d11Var2.L) {
+                                float x13 = ((xVar.i0.getX() + (xVar.getX() + x01Var2.getX())) - ji0Var2.getX()) - org.telegram.messenger.g0.L(1.0f);
+                                float y13 = (xVar.i0.getY() + (xVar.h0.getY() + (xVar.getY() + x01Var2.getY()))) - ji0Var2.getY();
+                                float measuredWidth = x01Var2.getMeasuredWidth();
+                                if (x01Var2.M) {
                                     i17 = 4;
                                 } else {
                                     i17 = 4;
@@ -342,15 +343,15 @@ public final class a0 extends FrameLayout implements c6 {
                                         float f33 = x12;
                                         float T13 = org.telegram.messenger.g0.T1(f19, f32, b0Var.j);
                                         float f34 = f19;
-                                        float measuredWidth2 = measuredWidth / fi0Var2.getMeasuredWidth();
+                                        float measuredWidth2 = measuredWidth / ji0Var2.getMeasuredWidth();
                                         i16 = save;
                                         rectF5 = rectF;
                                         f18 = org.telegram.messenger.g0.T1(1.0f, measuredWidth2, b0Var.j);
-                                        if (gi0Var.D != 0) {
+                                        if (ki0Var.E != 0) {
                                             f23 = org.telegram.messenger.g0.L(6.0f);
                                             f25 = f23;
                                             f24 = 0.0f;
-                                        } else if (gi0Var.x) {
+                                        } else if (ki0Var.x) {
                                             f23 = org.telegram.messenger.g0.L(6.0f);
                                             f24 = f23;
                                             f25 = f24;
@@ -399,7 +400,7 @@ public final class a0 extends FrameLayout implements c6 {
                                     f20 = x13;
                                     f21 = measuredWidth;
                                 }
-                                float f35 = d11Var2.L ? 0.95f * f21 : f21;
+                                float f35 = x01Var2.M ? 0.95f * f21 : f21;
                                 float f36 = (measuredWidth - f35) / f13;
                                 measuredWidth = f35;
                                 f22 = f20 + f36;
@@ -411,11 +412,11 @@ public final class a0 extends FrameLayout implements c6 {
                                 float f332 = x12;
                                 float T132 = org.telegram.messenger.g0.T1(f19, f322, b0Var.j);
                                 float f342 = f19;
-                                float measuredWidth22 = measuredWidth / fi0Var2.getMeasuredWidth();
+                                float measuredWidth22 = measuredWidth / ji0Var2.getMeasuredWidth();
                                 i16 = save;
                                 rectF5 = rectF;
                                 f18 = org.telegram.messenger.g0.T1(1.0f, measuredWidth22, b0Var.j);
-                                if (gi0Var.D != 0) {
+                                if (ki0Var.E != 0) {
                                 }
                                 f26 = 0.0f;
                                 canvas2.translate(T122, T132);
@@ -435,41 +436,41 @@ public final class a0 extends FrameLayout implements c6 {
                                 i16 = save;
                                 hashMap2 = hashMap;
                                 rectF6 = rectF2;
-                                canvas2.translate(fi0Var2.getX() + childAt.getX(), fi0Var2.getY() + childAt.getY());
+                                canvas2.translate(ji0Var2.getX() + childAt.getX(), ji0Var2.getY() + childAt.getY());
                                 f14 = 0.0f;
                                 f15 = 0.0f;
                                 f16 = 0.0f;
                                 f17 = 0.0f;
                                 f18 = 1.0f;
                             }
-                            if (d11Var2 != null) {
-                                if (d11Var2.L) {
-                                    float measuredWidth3 = gi0Var.getMeasuredWidth() / f13;
-                                    float measuredHeight = gi0Var.getMeasuredHeight() / f13;
-                                    float measuredWidth4 = gi0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(f13);
-                                    float T14 = org.telegram.messenger.g0.T1(measuredWidth4, (d11Var2.getMeasuredWidth() - org.telegram.messenger.g0.L(f13)) / f18, b0Var.j);
+                            if (x01Var2 != null) {
+                                if (x01Var2.M) {
+                                    float measuredWidth3 = ki0Var.getMeasuredWidth() / f13;
+                                    float measuredHeight = ki0Var.getMeasuredHeight() / f13;
+                                    float measuredWidth4 = ki0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(f13);
+                                    float T14 = org.telegram.messenger.g0.T1(measuredWidth4, (x01Var2.getMeasuredWidth() - org.telegram.messenger.g0.L(f13)) / f18, b0Var.j);
                                     RectF rectF11 = org.telegram.messenger.g0.P;
                                     float f37 = T14 / f13;
                                     rectF7 = rectF6;
-                                    ii0Var4 = ii0Var;
+                                    mi0Var4 = mi0Var;
                                     rectF11.set(measuredWidth3 - f37, measuredHeight - f37, measuredWidth3 + f37, measuredHeight + f37);
                                     float T15 = org.telegram.messenger.g0.T1(measuredWidth4 / f13, org.telegram.messenger.g0.L(4.0f), b0Var.j);
-                                    canvas2.drawRoundRect(rectF11, T15, T15, wVar.L);
+                                    canvas2.drawRoundRect(rectF11, T15, T15, xVar.M);
                                 } else {
-                                    ii0Var4 = ii0Var;
+                                    mi0Var4 = mi0Var;
                                     rectF7 = rectF6;
                                 }
-                                gi0Var.y = false;
+                                ki0Var.y = false;
                                 if (f14 == 0.0f) {
-                                    gi0Var.draw(canvas2);
+                                    ki0Var.draw(canvas2);
                                 } else {
-                                    ImageReceiver imageReceiver = fi0Var2.getImageReceiver();
-                                    gi0Var.b();
-                                    h5 h5Var = fi0Var2.e;
-                                    if (h5Var != null && (z2Var3 = h5Var.k) != null) {
-                                        imageReceiver = z2Var3;
+                                    ImageReceiver imageReceiver = ji0Var2.getImageReceiver();
+                                    ki0Var.b();
+                                    g5 g5Var = ji0Var2.e;
+                                    if (g5Var != null && (u2Var3 = g5Var.k) != null) {
+                                        imageReceiver = u2Var3;
                                     }
-                                    int[] iArr2 = imageReceiver.W0;
+                                    int[] iArr2 = imageReceiver.X0;
                                     int i25 = 0;
                                     while (true) {
                                         iArr = this.d;
@@ -480,40 +481,40 @@ public final class a0 extends FrameLayout implements c6 {
                                         i25++;
                                     }
                                     imageReceiver.K0((int) org.telegram.messenger.g0.T1(f15, 0.0f, b0Var.j), (int) org.telegram.messenger.g0.T1(f16, 0.0f, b0Var.j), (int) org.telegram.messenger.g0.T1(f17, 0.0f, b0Var.j), (int) org.telegram.messenger.g0.T1(f14, 0.0f, b0Var.j));
-                                    gi0Var.draw(canvas2);
+                                    ki0Var.draw(canvas2);
                                     imageReceiver.L0(iArr);
                                 }
-                                boolean z11 = z9;
-                                gi0Var.y = z11;
-                                if (!d11Var2.b) {
-                                    d11Var2.b = z11;
-                                    d11Var2.invalidate();
+                                boolean z12 = z10;
+                                ki0Var.y = z12;
+                                if (!x01Var2.b) {
+                                    x01Var2.b = z12;
+                                    x01Var2.invalidate();
                                 }
                             } else {
-                                ii0Var4 = ii0Var;
+                                mi0Var4 = mi0Var;
                                 rectF7 = rectF6;
-                                if (gi0Var.r && fi0Var2.getImageReceiver().B() == null) {
-                                    float alpha = fi0Var.getImageReceiver().getAlpha();
-                                    fi0Var.getImageReceiver().setAlpha((1.0f - i20) * alpha);
-                                    fi0Var.draw(canvas2);
-                                    fi0Var.getImageReceiver().setAlpha(alpha);
+                                if (ki0Var.r && ji0Var2.getImageReceiver().B() == null) {
+                                    float alpha = ji0Var.getImageReceiver().getAlpha();
+                                    ji0Var.getImageReceiver().setAlpha((1.0f - i20) * alpha);
+                                    ji0Var.draw(canvas2);
+                                    ji0Var.getImageReceiver().setAlpha(alpha);
                                 } else {
-                                    gi0Var.b();
-                                    ImageReceiver imageReceiver2 = fi0Var2.getImageReceiver();
-                                    h5 h5Var2 = fi0Var2.e;
-                                    if (h5Var2 != null && (z2Var2 = h5Var2.k) != null) {
-                                        imageReceiver2 = z2Var2;
+                                    ki0Var.b();
+                                    ImageReceiver imageReceiver2 = ji0Var2.getImageReceiver();
+                                    g5 g5Var2 = ji0Var2.e;
+                                    if (g5Var2 != null && (u2Var2 = g5Var2.k) != null) {
+                                        imageReceiver2 = u2Var2;
                                     }
                                     float alpha2 = imageReceiver2.getAlpha();
                                     imageReceiver2.setAlpha((1.0f - i20) * alpha2);
-                                    fi0Var2.draw(canvas2);
+                                    ji0Var2.draw(canvas2);
                                     imageReceiver2.setAlpha(alpha2);
                                 }
                             }
-                            if (fi0Var2.getVisibility() != 0) {
+                            if (ji0Var2.getVisibility() != 0) {
                                 invalidate();
                             }
-                            ii0Var3 = ii0Var4;
+                            mi0Var3 = mi0Var4;
                             rectF4 = rectF5;
                             rectF3 = rectF7;
                             i15 = -1;
@@ -523,10 +524,10 @@ public final class a0 extends FrameLayout implements c6 {
                             i14 = i19;
                             i16 = save;
                             hashMap2 = hashMap;
-                            ii0Var3 = ii0Var;
+                            mi0Var3 = mi0Var;
                             rectF3 = rectF2;
                             rectF4 = rectF12;
-                            canvas2.translate((rectF12.width() + childAt.getX()) - ii0Var3.x.width(), (childAt.getY() + rectF3.top) - rectF4.top);
+                            canvas2.translate((rectF12.width() + childAt.getX()) - mi0Var3.x.width(), (childAt.getY() + rectF3.top) - rectF4.top);
                             i15 = -1;
                             canvas2.saveLayerAlpha(0.0f, 0.0f, childAt.getMeasuredWidth(), childAt.getMeasuredHeight(), (int) ((1.0f - i20) * 255.0f), 31);
                             float f38 = 1.0f - b0Var.j;
@@ -537,20 +538,20 @@ public final class a0 extends FrameLayout implements c6 {
                         canvas2.restore();
                     }
                     i24 = i13 + 1;
-                    ii0Var = ii0Var3;
+                    mi0Var = mi0Var3;
                     rectF2 = rectF3;
                     rectF = rectF4;
                     i23 = i15;
                     hashMap = hashMap2;
                     i19 = i14;
                     save = i16;
-                    z9 = true;
+                    z10 = true;
                 }
-                ii0Var2 = ii0Var;
+                mi0Var2 = mi0Var;
                 i12 = i19;
                 canvas2.restoreToCount(save);
             } else {
-                ii0Var2 = ii0Var;
+                mi0Var2 = mi0Var;
                 i12 = i19;
                 f13 = 2.0f;
             }
@@ -558,55 +559,55 @@ public final class a0 extends FrameLayout implements c6 {
             int i26 = b0Var.F;
             if (i26 < 5) {
                 if (i26 == 3) {
-                    ii0Var2.setSkipDraw(true);
+                    mi0Var2.setSkipDraw(true);
                 }
                 b0Var.F++;
             }
-            Paint paint2 = wVar.Y1;
-            r01 r01Var = wVar.h0;
-            ImageReceiver imageReceiver3 = wVar.V0;
-            if (wVar.S0 != null) {
+            Paint paint2 = xVar.Z1;
+            l01 l01Var = xVar.i0;
+            ImageReceiver imageReceiver3 = xVar.W0;
+            if (xVar.T0 != null) {
                 imageReceiver3.H0(this);
-                d11 d11Var3 = wVar.S0;
-                if (d11Var3 != null) {
-                    float f39 = wVar.U0;
-                    if (f39 != 1.0f && !wVar.T0 && wVar.h1) {
+                x01 x01Var3 = xVar.T0;
+                if (x01Var3 != null) {
+                    float f39 = xVar.V0;
+                    if (f39 != 1.0f && !xVar.U0 && xVar.i1) {
                         float f40 = f39 + 0.010666667f;
-                        wVar.U0 = f40;
+                        xVar.V0 = f40;
                         if (f40 >= 1.0f) {
-                            wVar.U0 = 1.0f;
-                            r11 r11Var = wVar.H;
-                            if (r11Var != null) {
-                                ii0 ii0Var6 = (ii0) ((aa.n) r11Var).b;
-                                if (d11Var3.s) {
-                                    ii0Var6.l(d11Var3, d11Var3.y, true);
+                            xVar.V0 = 1.0f;
+                            l11 l11Var = xVar.I;
+                            if (l11Var != null) {
+                                mi0 mi0Var6 = (mi0) ((ob.c) l11Var).b;
+                                if (x01Var3.s) {
+                                    mi0Var6.l(x01Var3, x01Var3.y, true);
                                 } else {
-                                    long j3 = d11Var3.e.documentId;
-                                    o0 o0Var2 = new o0();
-                                    o0Var2.g = j3;
-                                    o0Var2.h = j3;
-                                    ii0Var6.l(d11Var3, o0Var2, true);
+                                    long j3 = x01Var3.e.documentId;
+                                    p0 p0Var2 = new p0();
+                                    p0Var2.g = j3;
+                                    p0Var2.h = j3;
+                                    mi0Var6.l(x01Var3, p0Var2, true);
                                 }
                             }
                         }
-                        wVar.S0.G = wVar.U0;
+                        xVar.T0.H = xVar.V0;
                     }
-                    float f41 = (wVar.U0 * f13) + 1.0f;
+                    float f41 = (xVar.V0 * f13) + 1.0f;
                     canvas2.save();
-                    canvas2.translate(wVar.S0.getX() + r01Var.getX(), wVar.S0.getY() + r01Var.getY() + wVar.g0.getY());
-                    paint2.setColor(m6.w0(m6.G8, wVar.Z0));
-                    canvas2.drawRect(0.0f, 0.0f, wVar.S0.getMeasuredWidth(), wVar.S0.getMeasuredHeight(), paint2);
-                    canvas2.scale(f41, f41, wVar.S0.getMeasuredWidth() / f13, wVar.S0.getMeasuredHeight());
-                    d11 d11Var4 = wVar.S0;
-                    if (!d11Var4.s) {
-                        imageReceiver3 = d11Var4.r;
+                    canvas2.translate(xVar.T0.getX() + l01Var.getX(), xVar.T0.getY() + l01Var.getY() + xVar.h0.getY());
+                    paint2.setColor(j6.w0(j6.G8, xVar.a1));
+                    canvas2.drawRect(0.0f, 0.0f, xVar.T0.getMeasuredWidth(), xVar.T0.getMeasuredHeight(), paint2);
+                    canvas2.scale(f41, f41, xVar.T0.getMeasuredWidth() / f13, xVar.T0.getMeasuredHeight());
+                    x01 x01Var4 = xVar.T0;
+                    if (!x01Var4.s) {
+                        imageReceiver3 = x01Var4.r;
                     }
-                    h5 h5Var3 = wVar.W0;
-                    if (h5Var3 != null && (z2Var = h5Var3.k) != null && z2Var.I()) {
-                        imageReceiver3 = wVar.W0.k;
+                    g5 g5Var3 = xVar.X0;
+                    if (g5Var3 != null && (u2Var = g5Var3.k) != null && u2Var.I()) {
+                        imageReceiver3 = xVar.X0.k;
                     }
                     if (imageReceiver3 != null) {
-                        imageReceiver3.y0(0.0f, 0.0f, wVar.S0.getMeasuredWidth(), wVar.S0.getMeasuredHeight());
+                        imageReceiver3.y0(0.0f, 0.0f, xVar.T0.getMeasuredWidth(), xVar.T0.getMeasuredHeight());
                         imageReceiver3.h(canvas2, null);
                     }
                     canvas2.restore();
@@ -619,10 +620,10 @@ public final class a0 extends FrameLayout implements c6 {
             if (b0Var.x != null) {
                 invalidate();
             }
-            Runnable runnable = e0.c;
+            Runnable runnable = f0.c;
             if (runnable != null) {
                 runnable.run();
-                e0.c = null;
+                f0.c = null;
             }
         }
     }
@@ -631,9 +632,9 @@ public final class a0 extends FrameLayout implements c6 {
     public final void invalidate() {
         super.invalidate();
         b0 b0Var = this.x;
-        ii0 ii0Var = b0Var.n;
-        if (b0Var.y == 1 || !(ii0Var == null || ii0Var.getDelegate() == null || !ii0Var.getDelegate().U())) {
-            b0Var.m.f0.invalidate();
+        mi0 mi0Var = b0Var.n;
+        if (b0Var.y == 1 || !(mi0Var == null || mi0Var.getDelegate() == null || !mi0Var.getDelegate().L())) {
+            b0Var.m.g0.invalidate();
         }
     }
 
@@ -661,7 +662,7 @@ public final class a0 extends FrameLayout implements c6 {
             }
         }
         if (b0Var.y != 4) {
-            if (b0Var.n.F0) {
+            if (b0Var.n.G0) {
                 int ceil = (int) Math.ceil(b0Var.o.size() / 8.0f);
                 if (ceil <= 8) {
                     i11 = org.telegram.messenger.g0.L(8.0f) + (org.telegram.messenger.g0.L(36.0f) * ceil);
@@ -685,7 +686,7 @@ public final class a0 extends FrameLayout implements c6 {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void updateColors() {
         Paint paint;
         try {
@@ -693,14 +694,14 @@ public final class a0 extends FrameLayout implements c6 {
             if (b0Var.y == 2 || (paint = this.c) == null) {
                 return;
             }
-            paint.setColor(m6.w0(m6.G8, b0Var.s));
+            paint.setColor(j6.w0(j6.G8, b0Var.s));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

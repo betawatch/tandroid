@@ -1,29 +1,29 @@
 package qc;
 
+import ab.c0;
 import com.googlecode.mp4parser.g;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import lc.c;
-import org.telegram.messenger.qs;
-import ui.e;
-import y7.i6;
+import org.telegram.messenger.ns;
+import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ i6 D;
-    public static final /* synthetic */ i6 b;
-    public static final /* synthetic */ i6 c;
-    public static final /* synthetic */ i6 d;
-    public static final /* synthetic */ i6 e;
-    public static final /* synthetic */ i6 f;
-    public static final /* synthetic */ i6 h;
-    public static final /* synthetic */ i6 n;
-    public static final /* synthetic */ i6 r;
-    public static final /* synthetic */ i6 s;
-    public static final /* synthetic */ i6 w;
-    public static final /* synthetic */ i6 x;
-    public static final /* synthetic */ i6 y;
+    public static final /* synthetic */ ff E;
+    public static final /* synthetic */ ff b;
+    public static final /* synthetic */ ff c;
+    public static final /* synthetic */ ff d;
+    public static final /* synthetic */ ff e;
+    public static final /* synthetic */ ff f;
+    public static final /* synthetic */ ff h;
+    public static final /* synthetic */ ff n;
+    public static final /* synthetic */ ff r;
+    public static final /* synthetic */ ff s;
+    public static final /* synthetic */ ff w;
+    public static final /* synthetic */ ff x;
+    public static final /* synthetic */ ff y;
     public b a;
 
     static {
@@ -50,7 +50,7 @@ public final class a extends com.googlecode.mp4parser.a {
         aVar.e(aVar.d("getSPS", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "[Ljava.lang.String;"));
         aVar.e(aVar.d("getPPS", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "[Ljava.lang.String;"));
         aVar.e(aVar.d("getavcDecoderConfigurationRecord", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "com.mp4parser.iso14496.part15.AvcDecoderConfigurationRecord"));
-        D = aVar.e(aVar.d("toString", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "java.lang.String"));
+        E = aVar.e(aVar.d("toString", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "java.lang.String"));
         aVar.e(aVar.d("getAvcLevelIndication", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
         aVar.e(aVar.d("getLengthSizeMinusOne", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
         aVar.e(aVar.d("getSequenceParameterSets", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "java.util.List"));
@@ -122,23 +122,23 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final void d(int i7) {
-        com.google.android.recaptcha.internal.a.t(ze.a.c(e, this, this, new Integer(i7)));
+        i5.c.u(ze.a.c(e, this, this, new Integer(i7)));
         this.a.d = i7;
     }
 
     public final void e(int i7) {
-        com.google.android.recaptcha.internal.a.t(ze.a.c(c, this, this, new Integer(i7)));
+        i5.c.u(ze.a.c(c, this, this, new Integer(i7)));
         this.a.b = i7;
     }
 
     @Override // com.googlecode.mp4parser.a
     public final void getContent(ByteBuffer byteBuffer) {
-        com.google.android.recaptcha.internal.a.t(ze.a.c(y, this, this, byteBuffer));
+        i5.c.u(ze.a.c(y, this, this, byteBuffer));
         b bVar = this.a;
         h5.b.r(bVar.a, byteBuffer);
-        byteBuffer.put((byte) (bVar.b & qs.e4));
-        byteBuffer.put((byte) (bVar.c & qs.e4));
-        byteBuffer.put((byte) (bVar.d & qs.e4));
+        byteBuffer.put((byte) (bVar.b & ns.e4));
+        byteBuffer.put((byte) (bVar.c & ns.e4));
+        byteBuffer.put((byte) (bVar.d & ns.e4));
         c cVar = new c(1, byteBuffer);
         cVar.c(bVar.m, 6);
         cVar.c(bVar.e, 2);
@@ -155,7 +155,7 @@ public final class a extends com.googlecode.mp4parser.a {
             h5.b.p(bArr.length, byteBuffer);
             byteBuffer.put(bArr);
         }
-        byteBuffer.put((byte) (bVar.g.size() & qs.e4));
+        byteBuffer.put((byte) (bVar.g.size() & ns.e4));
         ArrayList arrayList2 = bVar.g;
         int size2 = arrayList2.size();
         int i11 = 0;
@@ -192,7 +192,7 @@ public final class a extends com.googlecode.mp4parser.a {
     @Override // com.googlecode.mp4parser.a
     public final long getContentSize() {
         int i7;
-        com.google.android.recaptcha.internal.a.t(ze.a.b(x, this, this));
+        i5.c.u(ze.a.b(x, this, this));
         b bVar = this.a;
         ArrayList arrayList = bVar.f;
         int size = arrayList.size();
@@ -228,7 +228,7 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final String toString() {
-        e b10 = ze.a.b(D, this, this);
+        c0 b10 = ze.a.b(E, this, this);
         g.a().getClass();
         g.b(b10);
         return "AvcConfigurationBox{avcDecoderConfigurationRecord=" + this.a + '}';

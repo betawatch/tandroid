@@ -3,7 +3,7 @@ package org.telegram.ui.web;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.webkit.MimeTypeMap;
-import fi.e7;
+import hi.d7;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -15,24 +15,23 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.p5;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
-    private c20 doneCallback;
+    private z10 doneCallback;
     private Exception exception;
     private File file;
     private long max_size = -1;
     private String overrideExt;
-    private c20 progressCallback;
+    private z10 progressCallback;
 
-    public HttpGetFileTask(c20 c20Var, c20 c20Var2) {
-        this.doneCallback = c20Var;
-        this.progressCallback = c20Var2;
+    public HttpGetFileTask(z10 z10Var, z10 z10Var2) {
+        this.doneCallback = z10Var;
+        this.progressCallback = z10Var2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -175,7 +174,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                         if (str2 == null) {
                             str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                         }
-                        this.file = e7.w(p10.s0, str2);
+                        this.file = d7.w(m10.t0, str2);
                     }
                     try {
                         bufferedInputStream = new BufferedInputStream(errorStream, TLObject.FLAG_14);
@@ -190,7 +189,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                         r19 = obj;
                                         if (read == -1) {
                                             if (this.progressCallback != null) {
-                                                org.telegram.messenger.g0.h3(new p5(this, 14));
+                                                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.r0(this, 27));
                                             }
                                             if (channel != null) {
                                                 channel.close();
@@ -218,7 +217,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                                 if (contentLengthLong > 0) {
                                                     float l10 = Utilities.l(j3 / contentLengthLong);
                                                     if (this.progressCallback != null) {
-                                                        org.telegram.messenger.g0.h3(new org.telegram.ui.b0(this, l10, 3));
+                                                        org.telegram.messenger.g0.h3(new org.telegram.ui.a0(this, l10, 3));
                                                     }
                                                 }
                                                 obj = r19;
@@ -316,12 +315,12 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
 
     @Override // android.os.AsyncTask
     public void onPostExecute(File file) {
-        c20 c20Var = this.doneCallback;
-        if (c20Var != null) {
+        z10 z10Var = this.doneCallback;
+        if (z10Var != null) {
             if (this.exception == null) {
-                c20Var.a(file);
+                z10Var.a(file);
             } else {
-                c20Var.a(null);
+                z10Var.a(null);
             }
         }
     }

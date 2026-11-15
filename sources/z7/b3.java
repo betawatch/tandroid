@@ -1,16 +1,16 @@
 package z7;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b3 implements na.d {
     public static final b3 a = new b3();
-    public static final na.c b = new na.c("durationMs", jg.g.q(rf.b.l(d.class, new a(1))));
-    public static final na.c c = new na.c("imageSource", jg.g.q(rf.b.l(d.class, new a(2))));
-    public static final na.c d = new na.c("imageFormat", jg.g.q(rf.b.l(d.class, new a(3))));
-    public static final na.c e = new na.c("imageByteSize", jg.g.q(rf.b.l(d.class, new a(4))));
-    public static final na.c f = new na.c("imageWidth", jg.g.q(rf.b.l(d.class, new a(5))));
-    public static final na.c g = new na.c("imageHeight", jg.g.q(rf.b.l(d.class, new a(6))));
-    public static final na.c h = new na.c("rotationDegrees", jg.g.q(rf.b.l(d.class, new a(7))));
+    public static final na.c b = new na.c("durationMs", i5.c.p(r.b.o(d.class, new a(1))));
+    public static final na.c c = new na.c("imageSource", i5.c.p(r.b.o(d.class, new a(2))));
+    public static final na.c d = new na.c("imageFormat", i5.c.p(r.b.o(d.class, new a(3))));
+    public static final na.c e = new na.c("imageByteSize", i5.c.p(r.b.o(d.class, new a(4))));
+    public static final na.c f = new na.c("imageWidth", i5.c.p(r.b.o(d.class, new a(5))));
+    public static final na.c g = new na.c("imageHeight", i5.c.p(r.b.o(d.class, new a(6))));
+    public static final na.c h = new na.c("rotationDegrees", i5.c.p(r.b.o(d.class, new a(7))));
 
     @Override // na.a
     public final void a(Object obj, Object obj2) {

@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.cast;
 
-import a8.v8;
+import a8.x8;
 import java.security.AccessController;
 import java.security.PrivilegedActionException;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class a4 extends v8 {
+public final class a4 extends x8 {
     public static final Unsafe a;
     public static final long b;
     public static final long c;
@@ -40,7 +40,7 @@ public final class a4 extends v8 {
         }
     }
 
-    @Override // a8.v8
+    @Override // a8.x8
     public final w3 a(c4 c4Var) {
         w3 w3Var;
         w3 w3Var2 = w3.d;
@@ -53,7 +53,7 @@ public final class a4 extends v8 {
         return w3Var;
     }
 
-    @Override // a8.v8
+    @Override // a8.x8
     public final b4 b(c4 c4Var) {
         b4 b4Var;
         b4 b4Var2 = b4.c;
@@ -66,27 +66,27 @@ public final class a4 extends v8 {
         return b4Var;
     }
 
-    @Override // a8.v8
+    @Override // a8.x8
     public final void c(b4 b4Var, b4 b4Var2) {
         a.putObject(b4Var, f, b4Var2);
     }
 
-    @Override // a8.v8
+    @Override // a8.x8
     public final void d(b4 b4Var, Thread thread) {
         a.putObject(b4Var, e, thread);
     }
 
-    @Override // a8.v8
+    @Override // a8.x8
     public final boolean e(c4 c4Var, w3 w3Var, w3 w3Var2) {
         return e4.a(a, c4Var, b, w3Var, w3Var2);
     }
 
-    @Override // a8.v8
+    @Override // a8.x8
     public final boolean f(c4 c4Var, Object obj, Object obj2) {
         return e4.a(a, c4Var, d, obj, obj2);
     }
 
-    @Override // a8.v8
+    @Override // a8.x8
     public final boolean g(c4 c4Var, b4 b4Var, b4 b4Var2) {
         return e4.a(a, c4Var, c, b4Var, b4Var2);
     }

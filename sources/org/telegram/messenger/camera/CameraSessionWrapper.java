@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class CameraSessionWrapper {
     public CameraSession camera1Session;
@@ -16,14 +16,14 @@ public class CameraSessionWrapper {
         return cameraSessionWrapper;
     }
 
-    public void destroy(boolean z9, Runnable runnable, Runnable runnable2) {
+    public void destroy(boolean z10, Runnable runnable, Runnable runnable2) {
         if (this.camera2Session != null) {
             if (runnable != null) {
                 runnable.run();
             }
-            this.camera2Session.destroy(z9, runnable2);
+            this.camera2Session.destroy(z10, runnable2);
         } else if (this.camera1Session != null) {
-            CameraController.getInstance().close(this.camera1Session, !z9 ? new CountDownLatch(1) : null, runnable, runnable2);
+            CameraController.getInstance().close(this.camera1Session, !z10 ? new CountDownLatch(1) : null, runnable, runnable2);
         }
     }
 
@@ -166,22 +166,22 @@ public class CameraSessionWrapper {
         }
     }
 
-    public void setFlipFront(boolean z9) {
+    public void setFlipFront(boolean z10) {
         CameraSession cameraSession;
         if (this.camera2Session == null && (cameraSession = this.camera1Session) != null) {
-            cameraSession.setFlipFront(z9);
+            cameraSession.setFlipFront(z10);
         }
     }
 
-    public void setOptimizeForBarcode(boolean z9) {
+    public void setOptimizeForBarcode(boolean z10) {
         Camera2Session camera2Session = this.camera2Session;
         if (camera2Session != null) {
-            camera2Session.setScanningBarcode(z9);
+            camera2Session.setScanningBarcode(z10);
             return;
         }
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
-            cameraSession.setOptimizeForBarcode(z9);
+            cameraSession.setOptimizeForBarcode(z10);
         }
     }
 

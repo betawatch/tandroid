@@ -1,66 +1,11 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.DeadObjectException;
-import android.os.RemoteException;
-import android.util.Log;
-import com.google.android.gms.common.api.Status;
-import java.util.Map;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class z0 extends c1 {
-    public final d b;
+public final class z0 {
+    public final /* synthetic */ a1 a;
 
-    public z0(int i7, d dVar) {
-        super(i7);
-        this.b = dVar;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.c1
-    public final void a(Status status) {
-        try {
-            this.b.o(status);
-        } catch (IllegalStateException e10) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e10);
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.c1
-    public final void b(Exception exc) {
-        String simpleName = exc.getClass().getSimpleName();
-        String localizedMessage = exc.getLocalizedMessage();
-        try {
-            this.b.o(new Status(10, org.telegram.ui.Cells.f1.n(simpleName, ": ", localizedMessage, new StringBuilder(simpleName.length() + 2 + String.valueOf(localizedMessage).length())), null, null));
-        } catch (IllegalStateException e10) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e10);
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.c1
-    public final void c(y0 y0Var, boolean z9) {
-        Boolean valueOf = Boolean.valueOf(z9);
-        Map map = (Map) y0Var.a;
-        d dVar = this.b;
-        map.put(dVar, valueOf);
-        dVar.b(new g1(y0Var, dVar));
-    }
-
-    @Override // com.google.android.gms.common.api.internal.c1
-    public final void d(j0 j0Var) {
-        try {
-            d dVar = this.b;
-            com.google.android.gms.common.api.c cVar = j0Var.b;
-            dVar.getClass();
-            try {
-                dVar.n(cVar);
-            } catch (DeadObjectException e10) {
-                dVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
-                throw e10;
-            } catch (RemoteException e11) {
-                dVar.o(new Status(8, e11.getLocalizedMessage(), null, null));
-            }
-        } catch (RuntimeException e12) {
-            b(e12);
-        }
+    public z0(a1 a1Var) {
+        this.a = a1Var;
     }
 }

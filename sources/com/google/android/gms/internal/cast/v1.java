@@ -4,7 +4,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class v1 extends b5 {
     private static final v1 zzb;
@@ -62,12 +62,12 @@ public final class v1 extends b5 {
             Object obj = arrayList.get(i7);
             i7++;
             if (obj == null) {
-                String k10 = jg.g.k(list.size() - size, "Element at index ", " is null.");
+                String j3 = i5.c.j(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
                     if (size3 < size) {
-                        throw new NullPointerException(k10);
+                        throw new NullPointerException(j3);
                     }
                     list.remove(size3);
                 }
@@ -94,12 +94,12 @@ public final class v1 extends b5 {
             Object obj = arrayList.get(i7);
             i7++;
             if (obj == null) {
-                String k10 = jg.g.k(list.size() - size, "Element at index ", " is null.");
+                String j3 = i5.c.j(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
                     if (size3 < size) {
-                        throw new NullPointerException(k10);
+                        throw new NullPointerException(j3);
                     }
                     list.remove(size3);
                 }
@@ -126,12 +126,12 @@ public final class v1 extends b5 {
             Object obj = arrayList.get(i7);
             i7++;
             if (obj == null) {
-                String k10 = jg.g.k(list.size() - size, "Element at index ", " is null.");
+                String j3 = i5.c.j(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
                     if (size3 < size) {
-                        throw new NullPointerException(k10);
+                        throw new NullPointerException(j3);
                     }
                     list.remove(size3);
                 }
@@ -158,12 +158,12 @@ public final class v1 extends b5 {
             Object obj = arrayList.get(i7);
             i7++;
             if (obj == null) {
-                String k10 = jg.g.k(list.size() - size, "Element at index ", " is null.");
+                String j3 = i5.c.j(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
                     if (size3 < size) {
-                        throw new NullPointerException(k10);
+                        throw new NullPointerException(j3);
                     }
                     list.remove(size3);
                 }

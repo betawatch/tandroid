@@ -1,48 +1,52 @@
 package y7;
 
-import java.util.Iterator;
-import java.util.Set;
+import c8.yd;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class m9 extends i9 implements Set {
-    public transient l9 b;
+public final class m9 extends k9 {
+    public static final m9 e = new m9(0, new Object[0]);
+    public final transient Object[] c;
+    public final transient int d;
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean equals(Object obj) {
-        if (obj == this || obj == this) {
-            return true;
-        }
-        if (obj instanceof Set) {
-            Set set = (Set) obj;
-            try {
-                if (size() == set.size()) {
-                    return containsAll(set);
-                }
-            } catch (ClassCastException | NullPointerException unused) {
-            }
-        }
-        return false;
+    public m9(int i7, Object[] objArr) {
+        this.c = objArr;
+        this.d = i7;
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
-        Iterator it = iterator();
-        int i7 = 0;
-        while (it.hasNext()) {
-            Object next = it.next();
-            i7 += next != null ? next.hashCode() : 0;
-        }
+    @Override // y7.k9, y7.h9
+    public final int f(Object[] objArr) {
+        Object[] objArr2 = this.c;
+        int i7 = this.d;
+        System.arraycopy(objArr2, 0, objArr, 0, i7);
         return i7;
     }
 
-    public final l9 l() {
-        l9 l9Var = this.b;
-        if (l9Var != null) {
-            return l9Var;
-        }
-        o9 o9Var = new o9((a) this);
-        this.b = o9Var;
-        return o9Var;
+    @Override // java.util.List
+    public final Object get(int i7) {
+        yd.a(i7, this.d);
+        Object obj = this.c[i7];
+        obj.getClass();
+        return obj;
+    }
+
+    @Override // y7.h9
+    public final int i() {
+        return this.d;
+    }
+
+    @Override // y7.h9
+    public final int j() {
+        return 0;
+    }
+
+    @Override // y7.h9
+    public final Object[] k() {
+        return this.c;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
     }
 }

@@ -1,95 +1,108 @@
 package jg;
 
-import j$.util.Objects;
-import java.util.ArrayList;
-import org.telegram.messenger.s3;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.n01;
-import org.telegram.ui.Components.p01;
-import org.telegram.ui.Components.pw;
-import org.telegram.ui.i40;
-import org.telegram.ui.t11;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.view.View;
+import android.widget.TextView;
+import c8.ja;
+import hi.y4;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.ns;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.Cells.d3;
+import org.telegram.ui.Components.i9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class h extends v4.o {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ Object d;
+public final class h extends d3 {
+    public final /* synthetic */ m f;
 
-    public /* synthetic */ h(Object obj, ArrayList arrayList, int i7) {
-        this.b = i7;
-        this.d = obj;
-        this.c = arrayList;
-    }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h(m mVar, Context context) {
+        super(context);
+        this.f = mVar;
+        this.a = m10.t0;
+        final int i7 = 1;
+        setOrientation(1);
+        q6.h(j6.a7, this, null);
+        y4 y4Var = new y4(context, 3);
+        y4Var.c = new Path();
+        Paint paint = new Paint(1);
+        y4Var.b = paint;
+        final int i10 = 0;
+        paint.setColor(j6.x0(null, j6.d6, false));
+        paint.setShadowLayer(org.telegram.messenger.g0.L(1.33f), 0.0f, org.telegram.messenger.g0.L(0.33f), 503316480);
+        y4Var.setWillNotDraw(false);
+        y4Var.setOrientation(1);
+        y4Var.setPadding(org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(32.0f));
+        i9 i9Var = new i9(context);
+        this.b = i9Var;
+        i9Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.c3
+            public final /* synthetic */ jg.h b;
 
-    @Override // v4.o
-    public final boolean a(int i7, int i10) {
-        switch (this.b) {
-            case 0:
-                if (((l) ((n) this.d).N.get(i7)).a == ((l) this.c.get(i10)).a) {
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i10) {
+                    case 0:
+                        this.b.b.getImageReceiver().P0(false);
+                        break;
+                    default:
+                        this.b.f.L();
+                        break;
                 }
-                break;
-        }
-        return true;
-    }
+            }
+        });
+        a();
+        y4Var.addView(i9Var, ja.r(ns.O1, ns.O1, 49));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setGravity(17);
+        textView.setTextSize(1, 18.0f);
+        q6.U(textView, j6.G6, null);
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        y4Var.addView(textView, ja.t(-1, -2, 49, 0, 6, 0, 0));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setGravity(17);
+        textView2.setTextSize(1, 14.0f);
+        q6.U(textView2, j6.y6, null);
+        y4Var.addView(textView2, ja.t(-1, -2, 49, 0, 7, 0, 0));
+        TextView textView3 = new TextView(context);
+        this.e = textView3;
+        textView3.setGravity(17);
+        textView3.setBackground(y5.f(j6.Fi, 8.0f));
+        textView3.setTextSize(1, 14.0f);
+        q6.U(textView3, j6.Ji, null);
+        textView3.setTypeface(org.telegram.messenger.g0.o());
+        textView3.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f));
+        textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.c3
+            public final /* synthetic */ jg.h b;
 
-    @Override // v4.o
-    public final boolean b(int i7, int i10) {
-        TLRPC.TL_contact tL_contact;
-        TLRPC.TL_contact tL_contact2;
-        TLRPC.RecentMeUrl recentMeUrl;
-        String str;
-        switch (this.b) {
-            case 0:
-                l lVar = (l) ((n) this.d).N.get(i7);
-                l lVar2 = (l) this.c.get(i10);
-                TLRPC.Dialog dialog = lVar.c;
-                int i11 = lVar.a;
-                int i12 = lVar2.a;
-                TLRPC.Dialog dialog2 = lVar2.c;
-                return i11 == i12 && (i11 != 0 ? i11 != 14 ? i11 != 4 ? i11 != 6 ? i11 != 5 ? i11 != 10 : lVar.j == lVar2.j : !((tL_contact = lVar.e) == null || (tL_contact2 = lVar2.e) == null || tL_contact.user_id != tL_contact2.user_id) : !((recentMeUrl = lVar.d) == null || lVar2.d == null || (str = recentMeUrl.url) == null || !str.equals(str)) : dialog != null && dialog2 != null && dialog.id == dialog2.id && dialog.isFolder == dialog2.isFolder : dialog != null && dialog2 != null && dialog.id == dialog2.id && lVar.h == lVar2.h && lVar.f == lVar2.f && lVar.g == lVar2.g);
-            case 1:
-                return ((Integer) this.c.get(i7)).equals(((pw) this.d).n.get(i10));
-            case 2:
-                return Objects.equals(this.c.get(i7), ((kj0) this.d).n.get(i10));
-            case 3:
-                return ((p01) this.c.get(i7)).a() == ((p01) ((n01) this.d).c.get(i10)).a();
-            case 4:
-                i40 i40Var = (i40) this.d;
-                ArrayList arrayList = this.c;
-                if (i7 >= arrayList.size() || i10 >= i40Var.e.size()) {
-                    return false;
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i7) {
+                    case 0:
+                        this.b.b.getImageReceiver().P0(false);
+                        break;
+                    default:
+                        this.b.f.L();
+                        break;
                 }
-                return ((s3) arrayList.get(i7)).equals(i40Var.e.get(i10));
-            default:
-                return ((Long) this.c.get(i7)).equals(((t11) this.d).v0.get(i10));
-        }
-    }
-
-    @Override // v4.o
-    public final int d() {
-        switch (this.b) {
-            case 0:
-                return this.c.size();
-            case 1:
-                return ((pw) this.d).n.size();
-            case 2:
-                return ((kj0) this.d).n.size();
-            case 3:
-                return ((n01) this.d).c.size();
-            case 4:
-                return ((i40) this.d).e.size();
-            default:
-                return ((t11) this.d).v0.size();
-        }
-    }
-
-    @Override // v4.o
-    public final int e() {
-        switch (this.b) {
-        }
-        return this.c.size();
+            }
+        });
+        y4Var.addView(textView3, ja.t(-1, -2, 49, 0, 18, 0, 0));
+        addView(y4Var, ja.o(-1, -2));
+        set(null);
     }
 }

@@ -1,7 +1,7 @@
 package i6;
 
 import a8.r7;
-import a8.u9;
+import a8.w9;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -24,7 +24,7 @@ import java.util.Arrays;
 import org.telegram.messenger.beta.R;
 import q6.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f {
     public static final j6.b u = new j6.b("MediaNotificationProxy", null);
@@ -76,14 +76,14 @@ public final class f {
             this.e = new ComponentName(context.getApplicationContext(), str);
         }
         this.h = fVar.c;
-        int dimensionPixelSize = resources.getDimensionPixelSize(fVar.H);
+        int dimensionPixelSize = resources.getDimensionPixelSize(fVar.I);
         this.i = new r7(context.getApplicationContext(), new h6.b(1, dimensionPixelSize, dimensionPixelSize));
         if (x6.b.d() && notificationManager != null) {
             NotificationChannel notificationChannel = new NotificationChannel("cast_media_notification", context.getResources().getString(R.string.media_notification_channel_name), 2);
             notificationChannel.setShowBadge(false);
             notificationManager.createNotificationChannel(notificationChannel);
         }
-        a2.a(a1.u0);
+        a2.a(a1.v0);
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
@@ -106,17 +106,17 @@ public final class f {
                         intent.putExtra(MediaIntentReceiver.EXTRA_SKIP_STEP_MS, j3);
                         PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, 201326592);
                         j6.b bVar = i.a;
-                        int i11 = fVar.D;
+                        int i11 = fVar.E;
                         if (j3 == 10000) {
-                            i11 = fVar.E;
-                        } else if (j3 == 30000) {
                             i11 = fVar.F;
-                        }
-                        int i12 = fVar.R;
-                        if (j3 == 10000) {
-                            i12 = fVar.S;
                         } else if (j3 == 30000) {
+                            i11 = fVar.G;
+                        }
+                        int i12 = fVar.S;
+                        if (j3 == 10000) {
                             i12 = fVar.T;
+                        } else if (j3 == 30000) {
+                            i12 = fVar.U;
                         }
                         this.r = new e0.g(i11, broadcast, resources.getString(i12)).b();
                     }
@@ -125,28 +125,28 @@ public final class f {
                 break;
             case -945151566:
                 if (str.equals(MediaIntentReceiver.ACTION_SKIP_NEXT)) {
-                    boolean z9 = this.k.c;
+                    boolean z10 = this.k.c;
                     if (this.o == null) {
-                        if (z9) {
+                        if (z10) {
                             Intent intent2 = new Intent(MediaIntentReceiver.ACTION_SKIP_NEXT);
                             intent2.setComponent(componentName);
                             pendingIntent = PendingIntent.getBroadcast(context, 0, intent2, 67108864);
                         }
-                        this.o = new e0.g(fVar.r, pendingIntent, resources.getString(fVar.M)).b();
+                        this.o = new e0.g(fVar.r, pendingIntent, resources.getString(fVar.N)).b();
                     }
                     return this.o;
                 }
                 break;
             case -945080078:
                 if (str.equals(MediaIntentReceiver.ACTION_SKIP_PREV)) {
-                    boolean z10 = this.k.d;
+                    boolean z11 = this.k.d;
                     if (this.p == null) {
-                        if (z10) {
+                        if (z11) {
                             Intent intent3 = new Intent(MediaIntentReceiver.ACTION_SKIP_PREV);
                             intent3.setComponent(componentName);
                             pendingIntent = PendingIntent.getBroadcast(context, 0, intent3, 67108864);
                         }
-                        this.p = new e0.g(fVar.s, pendingIntent, resources.getString(fVar.N)).b();
+                        this.p = new e0.g(fVar.s, pendingIntent, resources.getString(fVar.O)).b();
                     }
                     return this.p;
                 }
@@ -156,7 +156,7 @@ public final class f {
                     if (this.t == null) {
                         Intent intent4 = new Intent(MediaIntentReceiver.ACTION_STOP_CASTING);
                         intent4.setComponent(componentName);
-                        this.t = new e0.g(fVar.G, PendingIntent.getBroadcast(context, 0, intent4, 67108864), resources.getString(fVar.U)).b();
+                        this.t = new e0.g(fVar.H, PendingIntent.getBroadcast(context, 0, intent4, 67108864), resources.getString(fVar.V)).b();
                     }
                     return this.t;
                 }
@@ -166,7 +166,7 @@ public final class f {
                     if (this.s == null) {
                         Intent intent5 = new Intent(MediaIntentReceiver.ACTION_DISCONNECT);
                         intent5.setComponent(componentName);
-                        this.s = new e0.g(fVar.G, PendingIntent.getBroadcast(context, 0, intent5, 67108864), resources.getString(fVar.U, "")).b();
+                        this.s = new e0.g(fVar.H, PendingIntent.getBroadcast(context, 0, intent5, 67108864), resources.getString(fVar.V, "")).b();
                     }
                     return this.s;
                 }
@@ -179,17 +179,17 @@ public final class f {
                         if (this.m == null) {
                             Intent intent6 = new Intent(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK);
                             intent6.setComponent(componentName);
-                            this.m = new e0.g(fVar.n, PendingIntent.getBroadcast(context, 0, intent6, 67108864), resources.getString(fVar.L)).b();
+                            this.m = new e0.g(fVar.n, PendingIntent.getBroadcast(context, 0, intent6, 67108864), resources.getString(fVar.M)).b();
                         }
                         return this.m;
                     }
                     if (this.n == null) {
                         if (i13 == 2) {
                             i7 = fVar.f;
-                            i10 = fVar.J;
+                            i10 = fVar.K;
                         } else {
                             i7 = fVar.h;
-                            i10 = fVar.K;
+                            i10 = fVar.L;
                         }
                         Intent intent7 = new Intent(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK);
                         intent7.setComponent(componentName);
@@ -212,11 +212,11 @@ public final class f {
                         } else if (j3 == 30000) {
                             i14 = fVar.y;
                         }
-                        int i15 = fVar.O;
+                        int i15 = fVar.P;
                         if (j3 == 10000) {
-                            i15 = fVar.P;
-                        } else if (j3 == 30000) {
                             i15 = fVar.Q;
+                        } else if (j3 == 30000) {
+                            i15 = fVar.R;
                         }
                         this.q = new e0.g(i14, broadcast2, resources.getString(i15)).b();
                     }
@@ -245,7 +245,7 @@ public final class f {
         qVar.F.icon = fVar.e;
         qVar.e = q.d((String) this.k.f);
         int i7 = 0;
-        qVar.f = q.d(this.j.getString(fVar.I, (String) this.k.g));
+        qVar.f = q.d(this.j.getString(fVar.J, (String) this.k.g));
         qVar.h(2, true);
         qVar.k = false;
         qVar.x = 1;
@@ -265,7 +265,7 @@ public final class f {
             if (component != null) {
                 int size = arrayList.size();
                 try {
-                    for (Intent a11 = u9.a(context, component); a11 != null; a11 = u9.a(context, a11.getComponent())) {
+                    for (Intent a11 = w9.a(context, component); a11 != null; a11 = w9.a(context, a11.getComponent())) {
                         arrayList.add(size, a11);
                     }
                 } catch (PackageManager.NameNotFoundException e10) {
@@ -284,7 +284,7 @@ public final class f {
         if (activities != null) {
             qVar.g = activities;
         }
-        p pVar = fVar.V;
+        p pVar = fVar.W;
         j6.b bVar2 = u;
         if (pVar != null) {
             bVar2.b("actionsProvider != null", new Object[0]);

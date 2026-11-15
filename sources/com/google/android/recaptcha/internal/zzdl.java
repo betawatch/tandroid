@@ -1,16 +1,17 @@
 package com.google.android.recaptcha.internal;
 
 import android.content.Context;
-import c8.lb;
-import c8.mb;
+import c8.nb;
+import c8.ob;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import kotlin.jvm.internal.j;
+import pd.a;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzdl {
     public zzdl(Context context) {
@@ -42,9 +43,9 @@ public final class zzdl {
             } else {
                 int read2 = fileInputStream.read();
                 if (read2 != -1) {
-                    pd.a aVar = new pd.a(8193);
+                    a aVar = new a(8193);
                     aVar.write(read2);
-                    lb.a(fileInputStream, aVar);
+                    nb.a(fileInputStream, aVar);
                     int size = aVar.size() + i7;
                     if (size < 0) {
                         throw new OutOfMemoryError("File " + file + " is too big to fit in memory.");
@@ -61,7 +62,7 @@ public final class zzdl {
             try {
                 throw th2;
             } catch (Throwable th3) {
-                mb.a(fileInputStream, th2);
+                ob.a(fileInputStream, th2);
                 throw th3;
             }
         }

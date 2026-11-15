@@ -10,9 +10,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.ui.Components.wq;
+import org.telegram.messenger.i20;
+import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class o extends View {
     public final Paint a;
@@ -48,7 +49,7 @@ public final class o extends View {
                 if (i10 == 0) {
                     this.n.put(Long.valueOf((i7 << 16) + i10), Integer.valueOf(i0.a.f(i7 / 11.0f, -1, -16777216)));
                 } else {
-                    this.n.put(Long.valueOf((i7 << 16) + i10), Integer.valueOf(i10 < 6 ? i0.a.f(((5 - i10) / 4.0f) * 0.5f, this.b[i7], -16777216) : i0.a.f(org.telegram.messenger.camera.q.v(9 - i10, 5.0f, 0.5f, 0.5f), this.b[i7], -1)));
+                    this.n.put(Long.valueOf((i7 << 16) + i10), Integer.valueOf(i10 < 6 ? i0.a.f(((5 - i10) / 4.0f) * 0.5f, this.b[i7], -16777216) : i0.a.f(i20.v(9 - i10, 5.0f, 0.5f, 0.5f), this.b[i7], -1)));
                 }
             }
         }
@@ -84,7 +85,7 @@ public final class o extends View {
         Integer num = (Integer) this.n.get(Long.valueOf((x10 << 16) + y10));
         if (num != null) {
             int intValue = num.intValue();
-            int i7 = q.t1;
+            int i7 = q.u1;
             this.r.I0(intValue, 3);
             b(x10, y10);
         }
@@ -97,7 +98,7 @@ public final class o extends View {
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
         canvas.save();
-        Path path = this.r.o1;
+        Path path = this.r.p1;
         path.rewind();
         float f10 = 10.0f;
         path.addRoundRect(rectF, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), Path.Direction.CW);
@@ -141,7 +142,7 @@ public final class o extends View {
             if (num2 != null) {
                 paint2.setColor(org.telegram.messenger.g0.B(num2.intValue()) > 0.721f ? -15658735 : -1);
             }
-            paint2.setStrokeWidth(wq.h.getInterpolation(min) * org.telegram.messenger.g0.L(3.0f));
+            paint2.setStrokeWidth(er.h.getInterpolation(min) * org.telegram.messenger.g0.L(3.0f));
             Path path2 = this.f;
             path2.rewind();
             RectF rectF3 = org.telegram.messenger.g0.P;

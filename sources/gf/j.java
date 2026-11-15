@@ -1,109 +1,56 @@
 package gf;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+import f5.v;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j extends mf.a {
-    public final /* synthetic */ int a;
-    public final kf.a b;
-    public final Serializable c;
+    public static final Pattern[][] e = {new Pattern[]{null, null}, new Pattern[]{Pattern.compile("^<(?:script|pre|style)(?:\\s|>|$)", 2), Pattern.compile("</(?:script|pre|style)>", 2)}, new Pattern[]{Pattern.compile("^<!--"), Pattern.compile("-->")}, new Pattern[]{Pattern.compile("^<[?]"), Pattern.compile("\\?>")}, new Pattern[]{Pattern.compile("^<![A-Z]"), Pattern.compile(">")}, new Pattern[]{Pattern.compile("^<!\\[CDATA\\["), Pattern.compile("\\]\\]>")}, new Pattern[]{Pattern.compile("^</?(?:address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h1|h2|h3|h4|h5|h6|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|nav|noframes|ol|optgroup|option|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul)(?:\\s|[/]?[>]|$)", 2), null}, new Pattern[]{Pattern.compile("^(?:<[A-Za-z][A-Za-z0-9-]*(?:\\s+[a-zA-Z_:][a-zA-Z0-9:._-]*(?:\\s*=\\s*(?:[^\"'=<>`\\x00-\\x20]+|'[^']*'|\"[^\"]*\"))?)*\\s*/?>|</[A-Za-z][A-Za-z0-9-]*\\s*[>])\\s*$", 2), null}};
+    public final Pattern b;
+    public final kf.j a = new kf.j();
+    public boolean c = false;
+    public v d = new v(6, (short) 0);
 
-    public j() {
-        this.a = 1;
-        this.b = new kf.l();
-        this.c = new ArrayList();
+    public j(Pattern pattern) {
+        this.b = pattern;
     }
 
     @Override // mf.a
-    public void a(CharSequence charSequence) {
-        switch (this.a) {
-            case 1:
-                ((ArrayList) this.c).add(charSequence);
-                break;
+    public final void a(CharSequence charSequence) {
+        v vVar = this.d;
+        StringBuilder sb2 = (StringBuilder) vVar.c;
+        if (vVar.b != 0) {
+            sb2.append('\n');
         }
+        sb2.append(charSequence);
+        vVar.b++;
+        Pattern pattern = this.b;
+        if (pattern == null || !pattern.matcher(charSequence).find()) {
+            return;
+        }
+        this.c = true;
     }
 
     @Override // mf.a
-    public void d() {
-        int i7;
-        switch (this.a) {
-            case 1:
-                ArrayList arrayList = (ArrayList) this.c;
-                int size = arrayList.size() - 1;
-                while (true) {
-                    if (size >= 0) {
-                        CharSequence charSequence = (CharSequence) arrayList.get(size);
-                        int length = charSequence.length();
-                        int i10 = 0;
-                        while (true) {
-                            if (i10 < length) {
-                                char charAt = charSequence.charAt(i10);
-                                if (charAt != ' ') {
-                                    switch (charAt) {
-                                    }
-                                }
-                                i10++;
-                            } else {
-                                i10 = -1;
-                            }
-                        }
-                        if (i10 == -1) {
-                            size--;
-                        }
-                    }
-                }
-                StringBuilder sb2 = new StringBuilder();
-                for (i7 = 0; i7 < size + 1; i7++) {
-                    sb2.append((CharSequence) arrayList.get(i7));
-                    sb2.append('\n');
-                }
-                ((kf.l) this.b).g = sb2.toString();
-                break;
-        }
+    public final void d() {
+        this.a.g = ((StringBuilder) this.d.c).toString();
+        this.d = null;
     }
 
     @Override // mf.a
     public final kf.a e() {
-        switch (this.a) {
-            case 0:
-                return (kf.i) this.b;
-            default:
-                return (kf.l) this.b;
-        }
+        return this.a;
     }
 
     @Override // mf.a
-    public void g(lf.a aVar) {
-        switch (this.a) {
-            case 0:
-                aVar.a((String) this.c, (kf.i) this.b);
-                break;
+    public final a h(g gVar) {
+        if (this.c) {
+            return null;
         }
-    }
-
-    @Override // mf.a
-    public final a h(h hVar) {
-        switch (this.a) {
-            case 0:
-                return null;
-            default:
-                if (hVar.g >= 4) {
-                    return new a(-1, hVar.c + 4, false);
-                }
-                if (hVar.h) {
-                    return a.a(hVar.e);
-                }
-                return null;
+        if (gVar.h && this.b == null) {
+            return null;
         }
-    }
-
-    public j(int i7, String str) {
-        this.a = 0;
-        kf.i iVar = new kf.i();
-        this.b = iVar;
-        iVar.g = i7;
-        this.c = str;
+        return a.a(gVar.b);
     }
 }

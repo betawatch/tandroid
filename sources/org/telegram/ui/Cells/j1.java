@@ -1,11 +1,12 @@
 package org.telegram.ui.Cells;
 
 import android.view.MotionEvent;
+import org.telegram.messenger.ou;
 import org.telegram.messenger.video.OldVideoPlayerRewinder;
-import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.m51;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class j1 extends OldVideoPlayerRewinder {
     public final /* synthetic */ int a;
@@ -18,20 +19,20 @@ public final class j1 extends OldVideoPlayerRewinder {
 
     @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
     public final void onRewindCanceled() {
-        ti.i iVar;
+        wi.h hVar;
         switch (this.a) {
             case 0:
                 q1 q1Var = (q1) this.b;
                 q1Var.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                q1Var.Nb.f(false);
+                q1Var.Ob.f(false);
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
                 PhotoViewer.c(photoViewer, MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                photoViewer.z1.f(false);
-                ti.o oVar = photoViewer.O8;
-                if (oVar != null && (iVar = oVar.e) != null) {
-                    iVar.F.f(false);
+                photoViewer.A1.f(false);
+                wi.n nVar = photoViewer.P8;
+                if (nVar != null && (hVar = nVar.e) != null) {
+                    hVar.F.f(false);
                     break;
                 }
                 break;
@@ -39,38 +40,38 @@ public final class j1 extends OldVideoPlayerRewinder {
     }
 
     @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
-    public final void onRewindStart(boolean z9) {
-        ti.i iVar;
+    public final void onRewindStart(boolean z10) {
+        wi.h hVar;
         switch (this.a) {
             case 0:
                 q1 q1Var = (q1) this.b;
-                k51 k51Var = q1Var.Nb;
-                k51Var.n = new h9.f1(this, 26);
-                k51Var.e(false);
-                q1Var.Nb.d(!z9);
-                q1Var.Nb.f(true);
+                m51 m51Var = q1Var.Ob;
+                m51Var.n = new ou(this, 2);
+                m51Var.e(false);
+                q1Var.Ob.d(!z10);
+                q1Var.Ob.f(true);
                 q1Var.invalidate();
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
-                photoViewer.z1.e(false);
-                boolean z10 = !z9;
-                photoViewer.z1.d(z10);
-                photoViewer.z1.f(true);
-                photoViewer.e0.invalidate();
-                ti.o oVar = photoViewer.O8;
-                if (oVar != null && (iVar = oVar.e) != null) {
-                    k51 k51Var2 = iVar.F;
-                    k51Var2.e(false);
-                    k51Var2.d(z10);
-                    k51Var2.f(true);
-                    di.b3 b3Var = iVar.o;
-                    if (b3Var != null) {
-                        b3Var.invalidate();
+                photoViewer.A1.e(false);
+                boolean z11 = !z10;
+                photoViewer.A1.d(z11);
+                photoViewer.A1.f(true);
+                photoViewer.f0.invalidate();
+                wi.n nVar = photoViewer.P8;
+                if (nVar != null && (hVar = nVar.e) != null) {
+                    m51 m51Var2 = hVar.F;
+                    m51Var2.e(false);
+                    m51Var2.d(z11);
+                    m51Var2.f(true);
+                    fi.w2 w2Var = hVar.o;
+                    if (w2Var != null) {
+                        w2Var.invalidate();
                     }
-                    ti.e eVar = iVar.m;
-                    if (eVar != null) {
-                        eVar.invalidate();
+                    wi.d dVar = hVar.m;
+                    if (dVar != null) {
+                        dVar.invalidate();
                         break;
                     }
                 }
@@ -79,37 +80,37 @@ public final class j1 extends OldVideoPlayerRewinder {
     }
 
     @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
-    public final void updateRewindProgressUi(long j3, float f10, boolean z9) {
-        ti.i iVar;
+    public final void updateRewindProgressUi(long j3, float f10, boolean z10) {
+        wi.h hVar;
         switch (this.a) {
             case 0:
                 q1 q1Var = (q1) this.b;
-                q1Var.Nb.g(Math.abs(j3));
-                if (z9) {
-                    q1Var.P5.b0 = f10;
-                    q1Var.S3();
+                q1Var.Ob.g(Math.abs(j3));
+                if (z10) {
+                    q1Var.Q5.b0 = f10;
+                    q1Var.T3();
                     break;
                 }
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
-                photoViewer.z1.g(Math.abs(j3));
-                if (z9) {
-                    photoViewer.p3.h(false, f10);
-                    photoViewer.q3.invalidate();
+                photoViewer.A1.g(Math.abs(j3));
+                if (z10) {
+                    photoViewer.q3.h(false, f10);
+                    photoViewer.r3.invalidate();
                 }
-                ti.o oVar = photoViewer.O8;
-                if (oVar != null && (iVar = oVar.e) != null) {
-                    iVar.F.g(0L);
-                    if (z9) {
-                        iVar.I = f10;
-                        di.b3 b3Var = iVar.o;
-                        if (b3Var != null) {
-                            b3Var.invalidate();
+                wi.n nVar = photoViewer.P8;
+                if (nVar != null && (hVar = nVar.e) != null) {
+                    hVar.F.g(0L);
+                    if (z10) {
+                        hVar.I = f10;
+                        fi.w2 w2Var = hVar.o;
+                        if (w2Var != null) {
+                            w2Var.invalidate();
                         }
-                        ti.e eVar = iVar.m;
-                        if (eVar != null) {
-                            eVar.invalidate();
+                        wi.d dVar = hVar.m;
+                        if (dVar != null) {
+                            dVar.invalidate();
                             break;
                         }
                     }

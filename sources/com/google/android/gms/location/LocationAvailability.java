@@ -2,14 +2,14 @@ package com.google.android.gms.location;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import j7.b;
 import j8.g;
 import java.util.Arrays;
 import r6.a;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class LocationAvailability extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationAvailability> CREATOR = new b(22);
@@ -47,20 +47,20 @@ public final class LocationAvailability extends a implements ReflectedParcelable
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 1, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        xb.q(parcel, 2, 4);
+        yb.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        xb.q(parcel, 3, 8);
+        yb.q(parcel, 3, 8);
         parcel.writeLong(this.c);
-        xb.q(parcel, 4, 4);
+        yb.q(parcel, 4, 4);
         int i10 = this.d;
         parcel.writeInt(i10);
-        xb.o(parcel, 5, this.e, i7);
+        yb.o(parcel, 5, this.e, i7);
         int i11 = i10 >= 1000 ? 0 : 1;
-        xb.q(parcel, 6, 4);
+        yb.q(parcel, 6, 4);
         parcel.writeInt(i11);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 }

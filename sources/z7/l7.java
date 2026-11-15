@@ -1,15 +1,15 @@
 package z7;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l7 {
     public final m9 a;
     public final k7 b;
     public final f7 c;
 
-    public /* synthetic */ l7(y7.d6 d6Var) {
-        this.a = (m9) d6Var.a;
-        this.b = (k7) d6Var.b;
-        this.c = (f7) d6Var.c;
+    public /* synthetic */ l7(y7.f7 f7Var) {
+        this.a = (m9) f7Var.a;
+        this.b = (k7) f7Var.b;
+        this.c = (f7) f7Var.c;
     }
 }

@@ -1,217 +1,197 @@
 package org.telegram.messenger;
 
+import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dq implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yr b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ vr b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ dq(yr yrVar, ArrayList arrayList, boolean z9, int i7) {
-        this.a = i7;
-        this.b = yrVar;
-        this.c = arrayList;
-        this.d = z9;
+    public /* synthetic */ dq(int i7, int i10, long j3, long j10, vr vrVar, TLRPC.InputChannel inputChannel) {
+        this.b = vrVar;
+        this.c = j3;
+        this.e = i7;
+        this.h = inputChannel;
+        this.f = i10;
+        this.d = j10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x006f  */
-    /* JADX WARN: Removed duplicated region for block: B:29:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x00e8, code lost:
+    
+        if (r13 == null) goto L50;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00fb  */
+    /* JADX WARN: Type inference failed for: r13v9 */
+    /* JADX WARN: Type inference failed for: r7v2 */
+    /* JADX WARN: Type inference failed for: r7v4, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r7v5 */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        Exception e10;
-        SQLiteDatabase sQLiteDatabase;
-        switch (this.a) {
+        SQLiteCursor sQLiteCursor;
+        boolean z10;
+        int i7;
+        SQLiteCursor sQLiteCursor2;
+        int i10;
+        SQLiteCursor sQLiteCursor3;
+        SQLiteCursor sQLiteCursor4;
+        long j3;
+        int i11 = this.a;
+        Object obj = this.h;
+        switch (i11) {
             case 0:
-                yr yrVar = this.b;
-                yrVar.getClass();
-                ArrayList arrayList = this.c;
-                SQLitePreparedStatement sQLitePreparedStatement = null;
-                try {
-                    try {
-                        if (this.d) {
-                            yrVar.b.beginTransaction();
-                            SQLitePreparedStatement executeFast = yrVar.b.executeFast("UPDATE users SET status = ? WHERE uid = ?");
-                            try {
-                                int size = arrayList.size();
-                                for (int i7 = 0; i7 < size; i7++) {
-                                    TLRPC.User user = (TLRPC.User) arrayList.get(i7);
-                                    executeFast.requery();
-                                    TLRPC.UserStatus userStatus = user.status;
-                                    if (userStatus != null) {
-                                        executeFast.bindInteger(1, userStatus.expires);
-                                    } else {
-                                        executeFast.bindInteger(1, 0);
-                                    }
-                                    executeFast.bindLong(2, user.id);
-                                    executeFast.step();
-                                }
-                                executeFast.dispose();
-                                yrVar.b.commitTransaction();
-                            } catch (Exception e11) {
-                                e = e11;
-                                sQLitePreparedStatement = executeFast;
-                                yrVar.o(e, true);
-                                SQLiteDatabase sQLiteDatabase2 = yrVar.b;
-                                if (sQLiteDatabase2 != null) {
-                                    sQLiteDatabase2.commitTransaction();
-                                }
-                                if (sQLitePreparedStatement != null) {
-                                    sQLitePreparedStatement.dispose();
-                                    return;
-                                }
-                                return;
-                            } catch (Throwable th2) {
-                                th = th2;
-                                sQLitePreparedStatement = executeFast;
-                                SQLiteDatabase sQLiteDatabase3 = yrVar.b;
-                                if (sQLiteDatabase3 != null) {
-                                    sQLiteDatabase3.commitTransaction();
-                                }
-                                if (sQLitePreparedStatement != null) {
-                                    sQLitePreparedStatement.dispose();
-                                }
-                                throw th;
-                            }
-                        } else {
-                            ArrayList arrayList2 = new ArrayList();
-                            a0.h hVar = new a0.h();
-                            int size2 = arrayList.size();
-                            for (int i10 = 0; i10 < size2; i10++) {
-                                TLRPC.User user2 = (TLRPC.User) arrayList.get(i10);
-                                arrayList2.add(Long.valueOf(user2.id));
-                                hVar.k(user2, user2.id);
-                            }
-                            ArrayList arrayList3 = new ArrayList();
-                            yrVar.n0(arrayList2, arrayList3, false);
-                            int size3 = arrayList3.size();
-                            for (int i11 = 0; i11 < size3; i11++) {
-                                TLRPC.User user3 = (TLRPC.User) arrayList3.get(i11);
-                                TLRPC.User user4 = (TLRPC.User) hVar.f(user3.id);
-                                if (user4 != null) {
-                                    if (user4.first_name == null || user4.last_name == null) {
-                                        TLRPC.UserProfilePhoto userProfilePhoto = user4.photo;
-                                        if (userProfilePhoto != null) {
-                                            user3.photo = userProfilePhoto;
-                                        } else {
-                                            String str = user4.phone;
-                                            if (str != null) {
-                                                user3.phone = str;
-                                            }
-                                        }
-                                    } else {
-                                        if (!t10.w(user3)) {
-                                            user3.first_name = user4.first_name;
-                                            user3.last_name = user4.last_name;
-                                        }
-                                        user3.username = user4.username;
-                                    }
-                                }
-                            }
-                            if (!arrayList3.isEmpty()) {
-                                yrVar.b.beginTransaction();
-                                yrVar.o1(arrayList3);
-                                yrVar.b.commitTransaction();
-                            }
-                        }
-                        SQLiteDatabase sQLiteDatabase4 = yrVar.b;
-                        if (sQLiteDatabase4 != null) {
-                            sQLiteDatabase4.commitTransaction();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th3) {
-                        th = th3;
-                    }
-                } catch (Exception e12) {
-                    e = e12;
-                }
-                break;
+                this.b.getMessagesController().q3(-this.c, this.e, (TLRPC.InputChannel) obj, this.f, this.d, true);
+                return;
             case 1:
-                this.b.g1(this.c, this.d);
+                this.b.a2(this.c, this.d, (Integer) obj, this.e, this.f, 0, 0);
                 return;
             default:
-                ArrayList arrayList4 = this.c;
-                yr yrVar2 = this.b;
-                yrVar2.getClass();
-                SQLitePreparedStatement sQLitePreparedStatement2 = null;
+                final org.telegram.ui.Cells.d6 d6Var = (org.telegram.ui.Cells.d6) obj;
+                long j10 = this.d;
+                final ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                ?? r72 = 0;
+                int i12 = this.e;
+                final vr vrVar = this.b;
+                final long j11 = this.c;
                 try {
-                    if (this.d) {
+                    if (i12 <= 0) {
                         try {
-                            yrVar2.b.executeFast("DELETE FROM contacts WHERE 1").stepThis().dispose();
-                        } catch (Exception e13) {
-                            e10 = e13;
-                            yrVar2.o(e10, true);
-                            if (sQLitePreparedStatement2 != null) {
-                                sQLitePreparedStatement2.dispose();
-                            }
-                            sQLiteDatabase = yrVar2.b;
-                            if (sQLiteDatabase == null) {
-                                return;
-                            }
-                            sQLiteDatabase.commitTransaction();
-                            return;
-                        }
-                    }
-                    yrVar2.b.beginTransaction();
-                    SQLitePreparedStatement executeFast2 = yrVar2.b.executeFast("REPLACE INTO contacts VALUES(?, ?)");
-                    for (int i12 = 0; i12 < arrayList4.size(); i12++) {
-                        try {
-                            TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) arrayList4.get(i12);
-                            executeFast2.requery();
-                            executeFast2.bindLong(1, tL_contact.user_id);
-                            executeFast2.bindInteger(2, tL_contact.mutual ? 1 : 0);
-                            executeFast2.step();
-                        } catch (Exception e14) {
-                            e10 = e14;
-                            sQLitePreparedStatement2 = executeFast2;
-                            yrVar2.o(e10, true);
-                            if (sQLitePreparedStatement2 != null) {
-                            }
-                            sQLiteDatabase = yrVar2.b;
-                            if (sQLiteDatabase == null) {
-                            }
-                            sQLiteDatabase.commitTransaction();
-                            return;
-                        } catch (Throwable th4) {
-                            th = th4;
-                            sQLitePreparedStatement2 = executeFast2;
-                            if (sQLitePreparedStatement2 != null) {
-                                sQLitePreparedStatement2.dispose();
-                            }
-                            SQLiteDatabase sQLiteDatabase5 = yrVar2.b;
-                            if (sQLiteDatabase5 != null) {
-                                sQLiteDatabase5.commitTransaction();
+                            i10 = 1;
+                            i7 = i12;
+                            sQLiteCursor3 = vrVar.b.queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j11));
+                        } catch (Exception e10) {
+                            e = e10;
+                            z10 = true;
+                            i7 = i12;
+                            sQLiteCursor2 = null;
+                            a8.g(e, z10);
+                            sQLiteCursor4 = sQLiteCursor2;
+                            break;
+                        } catch (Throwable th2) {
+                            th = th2;
+                            sQLiteCursor = null;
+                            if (sQLiteCursor != null) {
                             }
                             throw th;
                         }
+                    } else {
+                        try {
+                            try {
+                                i7 = i12;
+                                try {
+                                    i10 = 1;
+                                    try {
+                                        sQLiteCursor3 = vrVar.b.queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? AND mid <= ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j11), Integer.valueOf(i7));
+                                    } catch (Exception e11) {
+                                        e = e11;
+                                        sQLiteCursor3 = 0;
+                                        z10 = true;
+                                        sQLiteCursor2 = sQLiteCursor3;
+                                        a8.g(e, z10);
+                                        sQLiteCursor4 = sQLiteCursor2;
+                                    }
+                                } catch (Exception e12) {
+                                    e = e12;
+                                }
+                            } catch (Throwable th3) {
+                                th = th3;
+                                sQLiteCursor = null;
+                                if (sQLiteCursor != null) {
+                                    sQLiteCursor.dispose();
+                                }
+                                throw th;
+                            }
+                        } catch (Exception e13) {
+                            e = e13;
+                            i7 = i12;
+                        }
                     }
-                    executeFast2.dispose();
-                    yrVar2.b.commitTransaction();
-                    sQLiteDatabase = yrVar2.b;
-                    if (sQLiteDatabase == null) {
-                        return;
+                    try {
+                        ArrayList arrayList4 = new ArrayList();
+                        ArrayList arrayList5 = new ArrayList();
+                        while (sQLiteCursor3.next()) {
+                            NativeByteBuffer byteBufferValue = sQLiteCursor3.byteBufferValue(r72);
+                            if (byteBufferValue != 0) {
+                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r72), r72);
+                                TLdeserialize.readAttachPath(byteBufferValue, j10);
+                                byteBufferValue.reuse();
+                                TLdeserialize.id = sQLiteCursor3.intValue(i10);
+                                j3 = j10;
+                                TLdeserialize.dialog_id = -j11;
+                                vr.e(TLdeserialize, arrayList4, arrayList5, null);
+                                arrayList.add(TLdeserialize);
+                            } else {
+                                j3 = j10;
+                            }
+                            j10 = j3;
+                            r72 = 0;
+                            i10 = 1;
+                        }
+                        sQLiteCursor3.dispose();
+                        sQLiteCursor4 = sQLiteCursor3;
+                        if (!arrayList.isEmpty()) {
+                            if (!arrayList4.isEmpty()) {
+                                vrVar.n0(arrayList4, arrayList2, false);
+                            }
+                            sQLiteCursor4 = sQLiteCursor3;
+                            if (!arrayList5.isEmpty()) {
+                                vrVar.Q(TextUtils.join(",", arrayList5), arrayList3);
+                                sQLiteCursor4 = sQLiteCursor3;
+                            }
+                        }
+                    } catch (Exception e14) {
+                        e = e14;
+                        z10 = true;
+                        sQLiteCursor2 = sQLiteCursor3;
+                        a8.g(e, z10);
+                        sQLiteCursor4 = sQLiteCursor2;
                     }
-                    sQLiteDatabase.commitTransaction();
+                    sQLiteCursor4.dispose();
+                    final int i13 = this.f;
+                    final int i14 = i7;
+                    g0.h3(new Runnable() { // from class: org.telegram.ui.Cells.b6
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            d6.b(d6.this, i13, arrayList, j11, i14, vrVar);
+                        }
+                    });
                     return;
-                } catch (Throwable th5) {
-                    th = th5;
+                } catch (Throwable th4) {
+                    th = th4;
                 }
         }
     }
 
-    public /* synthetic */ dq(yr yrVar, boolean z9, ArrayList arrayList) {
-        this.a = 2;
-        this.b = yrVar;
-        this.d = z9;
-        this.c = arrayList;
+    public /* synthetic */ dq(vr vrVar, long j3, long j10, Integer num, int i7, int i10) {
+        this.b = vrVar;
+        this.c = j3;
+        this.d = j10;
+        this.h = num;
+        this.e = i7;
+        this.f = i10;
+    }
+
+    public /* synthetic */ dq(org.telegram.ui.Cells.d6 d6Var, int i7, vr vrVar, long j3, long j10, int i10) {
+        this.h = d6Var;
+        this.e = i7;
+        this.b = vrVar;
+        this.c = j3;
+        this.d = j10;
+        this.f = i10;
     }
 }

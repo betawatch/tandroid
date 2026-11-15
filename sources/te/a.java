@@ -2,9 +2,9 @@ package te;
 
 import android.view.View;
 import android.view.animation.Interpolator;
-import org.telegram.ui.Components.voip.o1;
+import org.telegram.ui.Components.voip.s1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements b {
     public final int a;
@@ -16,30 +16,30 @@ public final class a implements b {
     public c h;
 
     public a(View view, Interpolator interpolator, long j3) {
-        this(0, new o1(view), interpolator, j3, false);
+        this(0, new s1(view), interpolator, j3, false);
     }
 
     @Override // te.b
-    public final void F(float f10, int i7) {
-        this.b.F(f10, this.a);
+    public final void E(float f10, int i7) {
+        this.b.E(f10, this.a);
     }
 
     @Override // te.b
-    public final void Y(int i7, float f10, float f11, c cVar) {
+    public final void G(int i7, float f10, float f11, c cVar) {
         if (this.e != f10) {
             this.e = f10;
-            this.b.Y(this.a, f10, -1.0f, null);
+            this.b.G(this.a, f10, -1.0f, null);
         }
     }
 
-    public final void a(boolean z9, boolean z10) {
+    public final void a(boolean z10, boolean z11) {
         a aVar;
-        if (this.f == z9 && z10) {
+        if (this.f == z10 && z11) {
             return;
         }
-        this.f = z9;
-        float f10 = z9 ? 1.0f : 0.0f;
-        if (z10) {
+        this.f = z10;
+        float f10 = z10 ? 1.0f : 0.0f;
+        if (z11) {
             if (this.h == null) {
                 aVar = this;
                 aVar.h = new c(0, aVar, this.c, this.d, this.e);
@@ -59,9 +59,9 @@ public final class a implements b {
             b bVar = this.b;
             if (f11 != f10) {
                 this.e = f10;
-                bVar.Y(i7, f10, -1.0f, null);
+                bVar.G(i7, f10, -1.0f, null);
             }
-            bVar.F(f10, i7);
+            bVar.E(f10, i7);
         }
     }
 
@@ -69,12 +69,12 @@ public final class a implements b {
         this(i7, bVar, interpolator, j3, false);
     }
 
-    public a(int i7, b bVar, Interpolator interpolator, long j3, boolean z9) {
+    public a(int i7, b bVar, Interpolator interpolator, long j3, boolean z10) {
         this.a = i7;
         this.b = bVar;
         this.c = interpolator;
         this.d = j3;
-        this.f = z9;
-        this.e = z9 ? 1.0f : 0.0f;
+        this.f = z10;
+        this.e = z10 ? 1.0f : 0.0f;
     }
 }

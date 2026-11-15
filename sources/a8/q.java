@@ -9,7 +9,7 @@ import android.os.Parcelable;
 import android.util.Log;
 import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class q extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -55,10 +55,10 @@ public abstract class q extends Binder implements IInterface {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
-        boolean z9;
         boolean z10;
-        com.google.android.gms.common.api.g createFromParcel;
         boolean z11;
+        com.google.android.gms.common.api.g createFromParcel;
+        boolean z12;
         switch (this.a) {
             case 1:
                 if (i7 <= 16777215) {
@@ -69,16 +69,16 @@ public abstract class q extends Binder implements IInterface {
                 return k1(i7, parcel, parcel2);
             case 2:
                 if (i7 > 16777215) {
-                    z9 = super.onTransact(i7, parcel, parcel2, i10);
+                    z10 = super.onTransact(i7, parcel, parcel2, i10);
                 } else {
                     parcel.enforceInterface(getInterfaceDescriptor());
-                    z9 = false;
+                    z10 = false;
                 }
-                if (!z9) {
-                    com.google.android.gms.internal.clearcut.y1 y1Var = (com.google.android.gms.internal.clearcut.y1) this;
+                if (!z10) {
+                    com.google.android.gms.internal.clearcut.x1 x1Var = (com.google.android.gms.internal.clearcut.x1) this;
                     switch (i7) {
                         case 1:
-                            y1Var.b.a((Status) com.google.android.gms.internal.clearcut.t.a(parcel, Status.CREATOR));
+                            x1Var.b.a((Status) com.google.android.gms.internal.clearcut.s.a(parcel, Status.CREATOR));
                             break;
                         case 2:
                             throw new UnsupportedOperationException();
@@ -109,7 +109,7 @@ public abstract class q extends Binder implements IInterface {
                 } else {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 }
-                f5.v vVar = (f5.v) this;
+                f5.w wVar = (f5.w) this;
                 if (i7 != 1) {
                     return false;
                 }
@@ -117,18 +117,18 @@ public abstract class q extends Binder implements IInterface {
                 int i11 = com.google.android.gms.internal.play_billing.d.a;
                 int dataAvail = parcel.dataAvail();
                 if (dataAvail > 0) {
-                    throw new BadParcelableException(jg.g.j(dataAvail, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(i5.c.i(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
-                vVar.b.a(Integer.valueOf(readInt));
+                wVar.b.a(Integer.valueOf(readInt));
                 return true;
             case 4:
                 if (i7 > 16777215) {
-                    z10 = super.onTransact(i7, parcel, parcel2, i10);
+                    z11 = super.onTransact(i7, parcel, parcel2, i10);
                 } else {
                     parcel.enforceInterface(getInterfaceDescriptor());
-                    z10 = false;
+                    z11 = false;
                 }
-                if (!z10) {
+                if (!z11) {
                     db.u uVar = (db.u) this;
                     if (i7 != 3) {
                         if (i7 == 4) {
@@ -139,7 +139,7 @@ public abstract class q extends Binder implements IInterface {
                             createFromParcel = parcel.readInt() != 0 ? com.google.android.gms.common.api.g.CREATOR.createFromParcel(parcel) : null;
                             int dataAvail2 = parcel.dataAvail();
                             if (dataAvail2 > 0) {
-                                throw new BadParcelableException(jg.g.j(dataAvail2, "Parcel data not fully consumed, unread size: "));
+                                throw new BadParcelableException(i5.c.i(dataAvail2, "Parcel data not fully consumed, unread size: "));
                             }
                             kotlin.jvm.internal.j.e(status, "status");
                             throw new UnsupportedOperationException();
@@ -154,7 +154,7 @@ public abstract class q extends Binder implements IInterface {
                         createFromParcel = parcel.readInt() != 0 ? com.google.android.gms.common.api.g.CREATOR.createFromParcel(parcel) : null;
                         int dataAvail3 = parcel.dataAvail();
                         if (dataAvail3 > 0) {
-                            throw new BadParcelableException(jg.g.j(dataAvail3, "Parcel data not fully consumed, unread size: "));
+                            throw new BadParcelableException(i5.c.i(dataAvail3, "Parcel data not fully consumed, unread size: "));
                         }
                         kotlin.jvm.internal.j.e(status2, "status");
                         throw new UnsupportedOperationException();
@@ -166,7 +166,7 @@ public abstract class q extends Binder implements IInterface {
                     createFromParcel = parcel.readInt() != 0 ? com.google.android.gms.common.api.g.CREATOR.createFromParcel(parcel) : null;
                     int dataAvail4 = parcel.dataAvail();
                     if (dataAvail4 > 0) {
-                        throw new BadParcelableException(jg.g.j(dataAvail4, "Parcel data not fully consumed, unread size: "));
+                        throw new BadParcelableException(i5.c.i(dataAvail4, "Parcel data not fully consumed, unread size: "));
                     }
                     kotlin.jvm.internal.j.e(status3, "status");
                     if (!status3.b() || createFromParcel4 == null) {
@@ -177,7 +177,7 @@ public abstract class q extends Binder implements IInterface {
                         Log.i(d1Var2.b, d1Var2.b("Verification support info received.", new Object[0]));
                         d1Var2.a("result: " + createFromParcel4, new Object[0]);
                     }
-                    k8.a(status3, createFromParcel4, uVar.b);
+                    l8.a(status3, createFromParcel4, uVar.b);
                 }
                 return true;
             case 5:
@@ -254,19 +254,19 @@ public abstract class q extends Binder implements IInterface {
                 return k1(i7, parcel, parcel2);
             case 10:
                 if (i7 > 16777215) {
-                    z11 = super.onTransact(i7, parcel, parcel2, i10);
+                    z12 = super.onTransact(i7, parcel, parcel2, i10);
                 } else {
                     parcel.enforceInterface(getInterfaceDescriptor());
-                    z11 = false;
+                    z12 = false;
                 }
-                if (!z11) {
+                if (!z12) {
                     k7.f fVar = (k7.f) this;
                     switch (i7) {
                         case 1:
                             Status status4 = (Status) t7.a.a(parcel, Status.CREATOR);
                             j7.m mVar = (j7.m) t7.a.a(parcel, j7.m.CREATOR);
                             h1(parcel);
-                            fVar.H0(status4, mVar);
+                            fVar.I0(status4, mVar);
                             break;
                         case 2:
                             Status status5 = (Status) t7.a.a(parcel, Status.CREATOR);
@@ -297,7 +297,7 @@ public abstract class q extends Binder implements IInterface {
                             Status status10 = (Status) t7.a.a(parcel, Status.CREATOR);
                             j7.f fVar2 = (j7.f) t7.a.a(parcel, j7.f.CREATOR);
                             h1(parcel);
-                            fVar.w0(status10, fVar2);
+                            fVar.x0(status10, fVar2);
                             break;
                         case 8:
                             Status status11 = (Status) t7.a.a(parcel, Status.CREATOR);
@@ -314,7 +314,7 @@ public abstract class q extends Binder implements IInterface {
                             Status status13 = (Status) t7.a.a(parcel, Status.CREATOR);
                             j7.r rVar = (j7.r) t7.a.a(parcel, j7.r.CREATOR);
                             h1(parcel);
-                            fVar.I0(status13, rVar);
+                            fVar.J0(status13, rVar);
                             break;
                         case 11:
                             Status status14 = (Status) t7.a.a(parcel, Status.CREATOR);

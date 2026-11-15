@@ -1,91 +1,81 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.util.Base64;
-import org.json.JSONObject;
+import android.content.SharedPreferences;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.wd0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class nt implements v0.g {
-    public final /* synthetic */ wd0 a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ int c;
+public final class nt implements is {
+    public static final nt c;
+    public static final List d;
+    public boolean a;
+    public as b;
 
-    public nt(wd0 wd0Var, Context context, int i7) {
-        this.a = wd0Var;
-        this.b = context;
-        this.c = i7;
+    static {
+        nt ntVar = new nt();
+        ntVar.b = new as(ntVar, 2);
+        c = ntVar;
+        d = Arrays.asList(5, 10, 15, 30, 60);
     }
 
-    @Override // v0.g
-    public final void a(Object obj) {
-        w0.i iVar = (w0.i) obj;
-        boolean z9 = iVar instanceof w0.k;
-        wd0 wd0Var = this.a;
-        if (z9) {
-            wd0Var.a(0L, null, "EMPTY");
+    public final void a() {
+        this.a = false;
+        if (gz.a1) {
+            ArrayList arrayList = new ArrayList(gz.z1);
+            Collections.sort(arrayList, new gl(12));
+            int size = arrayList.size();
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
+                fz fzVar = (fz) obj;
+                if (fzVar != gz.B1 && !fzVar.c && fzVar.d) {
+                    SharedPreferences.Editor edit = np.e1().edit();
+                    edit.putBoolean("proxy_enabled", true);
+                    fzVar.a.i(edit);
+                    edit.apply();
+                    gz.B1 = fzVar;
+                    ns.e().k(ns.A4, new Object[0]);
+                    ns.e().k(ns.C4, new Object[0]);
+                    ConnectionsManager.setProxySettings(true, gz.B1.a);
+                    return;
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.messenger.is
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        as asVar = this.b;
+        if (i7 == ns.B4) {
+            int i11 = gz.a;
+            if (np.e1().getBoolean("proxy_enabled", false) && gz.B1 != null && gz.a1 && gz.z1.size() > 1 && this.a) {
+                a();
+                return;
+            }
             return;
         }
-        if (iVar instanceof w0.g) {
-            wd0Var.a(0L, null, "CANCELLED");
-        } else if (iVar instanceof w0.j) {
-            wd0Var.a(0L, null, "CANCELLED");
-        } else if (iVar != null) {
-            wd0Var.a(0L, null, iVar.getMessage());
+        if (i7 == ns.A4) {
+            g0.r(asVar);
+            return;
         }
-    }
-
-    @Override // v0.g
-    public final void onResult(Object obj) {
-        final wd0 wd0Var = this.a;
-        bi.b1 b1Var = ((v0.o) obj).a;
-        TL_account.finishPasskeyLogin finishpasskeylogin = new TL_account.finishPasskeyLogin();
-        finishpasskeylogin.credential = new TL_account.inputPasskeyCredentialPublicKey();
-        try {
-            JSONObject jSONObject = new JSONObject(((Bundle) b1Var.a).getString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON"));
-            finishpasskeylogin.credential.id = jSONObject.getString("id");
-            finishpasskeylogin.credential.raw_id = jSONObject.getString("rawId");
-            JSONObject jSONObject2 = jSONObject.getJSONObject("response");
-            TL_account.inputPasskeyResponseLogin inputpasskeyresponselogin = new TL_account.inputPasskeyResponseLogin();
-            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-            inputpasskeyresponselogin.client_data = tL_dataJSON;
-            tL_dataJSON.data = new String(Base64.decode(jSONObject2.getString("clientDataJSON"), 8));
-            inputpasskeyresponselogin.authenticator_data = Base64.decode(jSONObject2.getString("authenticatorData"), 8);
-            inputpasskeyresponselogin.signature = Base64.decode(jSONObject2.getString("signature"), 8);
-            String str = new String(Base64.decode(jSONObject2.getString("userHandle"), 8));
-            inputpasskeyresponselogin.user_handle = str;
-            int parseInt = Integer.parseInt(str.split(":")[0]);
-            final long parseLong = Long.parseLong(inputpasskeyresponselogin.user_handle.split(":")[1]);
-            finishpasskeylogin.credential.response = inputpasskeyresponselogin;
-            org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, this.b, null);
-            u1Var.r(500L);
-            int i7 = this.c;
-            if (parseInt != ConnectionsManager.getInstance(i7).getCurrentDatacenterId()) {
-                int currentDatacenterId = ConnectionsManager.getInstance(i7).getCurrentDatacenterId();
-                long currentAuthKeyId = ConnectionsManager.getInstance(i7).getCurrentAuthKeyId();
-                ConnectionsManager.getInstance(i7).setDefaultDatacenterId(parseInt);
-                finishpasskeylogin.flags = 1 | finishpasskeylogin.flags;
-                finishpasskeylogin.from_dc_id = currentDatacenterId;
-                finishpasskeylogin.from_auth_key_id = currentAuthKeyId;
+        if (i7 == ns.T1 && i10 == m10.t0) {
+            int i12 = gz.a;
+            if (((!np.e1().getBoolean("proxy_enabled", false) || gz.B1 == null) && !gz.a1) || gz.z1.size() <= 1) {
+                return;
             }
-            final int sendRequestTyped = ConnectionsManager.getInstance(i7).sendRequestTyped(finishpasskeylogin, new d3.b(1), new q9(u1Var, wd0Var, parseLong, 3), parseInt, 72);
-            final int i10 = this.c;
-            u1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.messenger.mt
-                @Override // android.content.DialogInterface.OnCancelListener
-                public final void onCancel(DialogInterface dialogInterface) {
-                    ConnectionsManager.getInstance(i10).cancelRequest(sendRequestTyped, true);
-                    wd0Var.a(Long.valueOf(parseLong), null, "CANCELLED");
+            if (ConnectionsManager.getInstance(i10).getConnectionState() != 4) {
+                g0.r(asVar);
+            } else {
+                if (this.a) {
+                    return;
                 }
-            });
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            wd0Var.a(0L, null, e10.getMessage());
+                g0.i3(asVar, ((Integer) d.get(gz.b1)).intValue() * 1000);
+            }
         }
     }
 }

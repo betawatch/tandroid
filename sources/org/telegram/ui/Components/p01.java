@@ -1,27 +1,63 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class p01 {
-    public TLRPC.TL_forumTopic a;
-    public org.telegram.messenger.uv b;
-    public final /* synthetic */ s01 c;
+public final class p01 extends v4.o {
+    public final /* synthetic */ int b = 1;
+    public ArrayList c;
+    public ArrayList d;
 
-    public p01(s01 s01Var) {
-        this.c = s01Var;
+    public /* synthetic */ p01() {
     }
 
-    public final long a() {
-        org.telegram.messenger.uv uvVar = this.b;
-        if (uvVar != null) {
-            return uvVar.a;
+    @Override // v4.o
+    public final boolean a(int i7, int i10) {
+        switch (this.b) {
+            case 0:
+                throw null;
+            default:
+                rg.a aVar = (rg.a) this.c.get(i7);
+                rg.a aVar2 = (rg.a) this.d.get(i10);
+                if (aVar.a != aVar2.a) {
+                    return false;
+                }
+                return aVar.a(aVar2);
         }
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        if (tL_forumTopic == null) {
-            return 0L;
+    }
+
+    @Override // v4.o
+    public final boolean b(int i7, int i10) {
+        switch (this.b) {
+            case 0:
+                throw null;
+            default:
+                rg.a aVar = (rg.a) this.c.get(i7);
+                rg.a aVar2 = (rg.a) this.d.get(i10);
+                if (aVar.a != aVar2.a) {
+                    return false;
+                }
+                return aVar.equals(aVar2);
         }
-        return this.c.c ? org.telegram.messenger.m5.o(tL_forumTopic.from_id) : tL_forumTopic.id;
+    }
+
+    @Override // v4.o
+    public final int d() {
+        switch (this.b) {
+        }
+        return this.d.size();
+    }
+
+    @Override // v4.o
+    public final int e() {
+        switch (this.b) {
+        }
+        return this.c.size();
+    }
+
+    public p01(ArrayList arrayList, ArrayList arrayList2) {
+        this.c = arrayList;
+        this.d = arrayList2;
     }
 }

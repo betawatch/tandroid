@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public enum u0 extends b2 {
     public u0() {
@@ -10,13 +10,13 @@ public enum u0 extends b2 {
     @Override // dd.b2
     public final void d(l lVar, a aVar) {
         char d = aVar.d();
-        m0 m0Var = b2.W;
+        m0 m0Var = b2.X;
         if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
             lVar.c = m0Var;
             return;
         }
         if (d == '/') {
-            lVar.c = b2.e0;
+            lVar.c = b2.f0;
             return;
         }
         w wVar = b2.a;

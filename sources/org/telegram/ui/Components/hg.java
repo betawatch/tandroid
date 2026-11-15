@@ -1,55 +1,96 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.beta.R;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'd' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class hg {
-    public static final hg d;
-    public static final hg e;
-    public static final /* synthetic */ hg[] f;
-    public final gg a;
-    public final gg b;
-    public final int c;
+public final class hg extends k1.b {
+    public final int[] o;
+    public final /* synthetic */ ChatActivityEnterView.RecordCircle p;
 
-    static {
-        gg ggVar = gg.a;
-        gg ggVar2 = gg.b;
-        hg hgVar = new hg("VOICE_TO_VIDEO", 0, ggVar, ggVar2, R.raw.voice_and_video);
-        d = hgVar;
-        gg ggVar3 = gg.c;
-        gg ggVar4 = gg.d;
-        hg hgVar2 = new hg("STICKER_TO_KEYBOARD", 1, ggVar3, ggVar4, R.raw.sticker_to_keyboard);
-        gg ggVar5 = gg.e;
-        hg hgVar3 = new hg("SMILE_TO_KEYBOARD", 2, ggVar5, ggVar4, R.raw.smile_to_keyboard);
-        hg hgVar4 = new hg("VIDEO_TO_VOICE", 3, ggVar2, ggVar, R.raw.voice_and_video);
-        e = hgVar4;
-        hg hgVar5 = new hg("KEYBOARD_TO_STICKER", 4, ggVar4, ggVar3, R.raw.keyboard_to_sticker);
-        gg ggVar6 = gg.f;
-        f = new hg[]{hgVar, hgVar2, hgVar3, hgVar4, hgVar5, new hg("KEYBOARD_TO_GIF", 5, ggVar4, ggVar6, R.raw.keyboard_to_gif), new hg("KEYBOARD_TO_SMILE", 6, ggVar4, ggVar5, R.raw.keyboard_to_smile), new hg("GIF_TO_KEYBOARD", 7, ggVar6, ggVar4, R.raw.gif_to_keyboard), new hg("GIF_TO_SMILE", 8, ggVar6, ggVar5, R.raw.gif_to_smile), new hg("SMILE_TO_GIF", 9, ggVar5, ggVar6, R.raw.smile_to_gif), new hg("SMILE_TO_STICKER", 10, ggVar5, ggVar3, R.raw.smile_to_sticker), new hg("STICKER_TO_SMILE", 11, ggVar3, ggVar5, R.raw.sticker_to_smile)};
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hg(ChatActivityEnterView.RecordCircle recordCircle, ChatActivityEnterView.RecordCircle recordCircle2) {
+        super(recordCircle2);
+        this.p = recordCircle;
+        this.o = new int[2];
     }
 
-    public hg(String str, int i7, gg ggVar, gg ggVar2, int i10) {
-        this.a = ggVar;
-        this.b = ggVar2;
-        this.c = i10;
+    @Override // k1.b
+    public final int g(float f10, float f11) {
+        Rect rect;
+        ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
+        if (!chatActivityEnterView.a5 || chatActivityEnterView.v2 == null) {
+            return -1;
+        }
+        if (chatActivityEnterView.B4.contains((int) f10, (int) f11)) {
+            return 1;
+        }
+        if (chatActivityEnterView.A4.contains(f10, f11)) {
+            return 2;
+        }
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.S1;
+        if (slideTextView == null || (rect = slideTextView.I) == null) {
+            return -1;
+        }
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(rect);
+        ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.S1;
+        int[] iArr = this.o;
+        slideTextView2.getLocationOnScreen(iArr);
+        rectF.offset(iArr[0], iArr[1]);
+        chatActivityEnterView.v2.getLocationOnScreen(iArr);
+        rectF.offset(-iArr[0], -iArr[1]);
+        return rectF.contains(f10, f11) ? 3 : -1;
     }
 
-    public static hg valueOf(String str) {
-        return (hg) Enum.valueOf(hg.class, str);
+    @Override // k1.b
+    public final void h(ArrayList arrayList) {
+        if (ChatActivityEnterView.this.a5) {
+            arrayList.add(1);
+            arrayList.add(3);
+        }
     }
 
-    public static hg[] values() {
-        return (hg[]) f.clone();
+    @Override // k1.b
+    public final boolean k(int i7, int i10) {
+        return true;
+    }
+
+    @Override // k1.b
+    public final void l(int i7, s0.c cVar) {
+        Rect rect;
+        ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
+        if (i7 == 1) {
+            cVar.h(chatActivityEnterView.B4);
+            cVar.o(org.telegram.messenger.hd.M0(2131745640, "Send"));
+            return;
+        }
+        if (i7 == 2) {
+            Rect rect2 = chatActivityEnterView.C4;
+            RectF rectF = chatActivityEnterView.A4;
+            rect2.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+            cVar.h(chatActivityEnterView.C4);
+            cVar.o(org.telegram.messenger.hd.M0(2131744841, null));
+            return;
+        }
+        if (i7 != 3 || chatActivityEnterView.v2 == null) {
+            return;
+        }
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.S1;
+        if (slideTextView != null && (rect = slideTextView.I) != null) {
+            Rect rect3 = org.telegram.messenger.g0.Q;
+            rect3.set(rect);
+            ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.S1;
+            int[] iArr = this.o;
+            slideTextView2.getLocationOnScreen(iArr);
+            rect3.offset(iArr[0], iArr[1]);
+            chatActivityEnterView.v2.getLocationOnScreen(iArr);
+            rect3.offset(-iArr[0], -iArr[1]);
+            cVar.h(rect3);
+        }
+        cVar.o(org.telegram.messenger.hd.M0(2131752589, "Cancel"));
     }
 }

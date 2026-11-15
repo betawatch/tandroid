@@ -11,13 +11,13 @@ import android.os.RemoteException;
 import android.util.Log;
 import com.google.android.gms.common.api.Scope;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g extends r6.a {
     public static final Parcelable.Creator<g> CREATOR = new q4.x(11);
-    public static final Scope[] E = new Scope[0];
-    public static final n6.c[] F = new n6.c[0];
-    public final String D;
+    public static final Scope[] F = new Scope[0];
+    public static final n6.c[] G = new n6.c[0];
+    public final String E;
     public final int a;
     public final int b;
     public final int c;
@@ -32,10 +32,10 @@ public final class g extends r6.a {
     public final int x;
     public boolean y;
 
-    public g(int i7, int i10, int i11, String str, IBinder iBinder, Scope[] scopeArr, Bundle bundle, Account account, n6.c[] cVarArr, n6.c[] cVarArr2, boolean z9, int i12, boolean z10, String str2) {
-        Scope[] scopeArr2 = scopeArr == null ? E : scopeArr;
+    public g(int i7, int i10, int i11, String str, IBinder iBinder, Scope[] scopeArr, Bundle bundle, Account account, n6.c[] cVarArr, n6.c[] cVarArr2, boolean z10, int i12, boolean z11, String str2) {
+        Scope[] scopeArr2 = scopeArr == null ? F : scopeArr;
         Bundle bundle2 = bundle == null ? new Bundle() : bundle;
-        n6.c[] cVarArr3 = F;
+        n6.c[] cVarArr3 = G;
         n6.c[] cVarArr4 = cVarArr == null ? cVarArr3 : cVarArr;
         cVarArr3 = cVarArr2 != null ? cVarArr2 : cVarArr3;
         this.a = i7;
@@ -79,10 +79,10 @@ public final class g extends r6.a {
         this.h = bundle2;
         this.r = cVarArr4;
         this.s = cVarArr3;
-        this.w = z9;
+        this.w = z10;
         this.x = i12;
-        this.y = z10;
-        this.D = str2;
+        this.y = z11;
+        this.E = str2;
     }
 
     @Override // android.os.Parcelable

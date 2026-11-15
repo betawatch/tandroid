@@ -1,16 +1,16 @@
 package androidx.mediarouter.app;
 
-import a8.b7;
+import a8.c7;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageButton;
 import org.telegram.messenger.beta.R;
-import v4.d1;
+import v4.e1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class e0 extends d1 {
+public abstract class e0 extends e1 {
     public s4.v v;
     public final ImageButton w;
     public final MediaRouteVolumeSlider x;
@@ -24,13 +24,13 @@ public abstract class e0 extends d1 {
         this.y = n0Var;
         this.w = imageButton;
         this.x = mediaRouteVolumeSlider;
-        Context context = n0Var.D;
+        Context context = n0Var.E;
         Drawable b10 = b5.a.b(context, R.drawable.mr_cast_mute_button);
-        if (b7.h(context)) {
+        if (c7.h(context)) {
             b10.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
         }
         imageButton.setImageDrawable(b10);
-        if (b7.h(context)) {
+        if (c7.h(context)) {
             color = context.getColor(R.color.mr_cast_progressbar_progress_and_thumb_light);
             color2 = context.getColor(R.color.mr_cast_progressbar_background_light);
         } else {
@@ -43,29 +43,29 @@ public abstract class e0 extends d1 {
     public final void t(s4.v vVar) {
         this.v = vVar;
         int i7 = vVar.p;
-        boolean z9 = i7 == 0;
+        boolean z10 = i7 == 0;
         ImageButton imageButton = this.w;
-        imageButton.setActivated(z9);
+        imageButton.setActivated(z10);
         imageButton.setOnClickListener(new w(this, 1));
         s4.v vVar2 = this.v;
         MediaRouteVolumeSlider mediaRouteVolumeSlider = this.x;
         mediaRouteVolumeSlider.setTag(vVar2);
         mediaRouteVolumeSlider.setMax(vVar.q);
         mediaRouteVolumeSlider.setProgress(i7);
-        mediaRouteVolumeSlider.setOnSeekBarChangeListener(this.y.K);
+        mediaRouteVolumeSlider.setOnSeekBarChangeListener(this.y.L);
     }
 
-    public final void u(boolean z9) {
+    public final void u(boolean z10) {
         ImageButton imageButton = this.w;
-        if (imageButton.isActivated() == z9) {
+        if (imageButton.isActivated() == z10) {
             return;
         }
-        imageButton.setActivated(z9);
+        imageButton.setActivated(z10);
         n0 n0Var = this.y;
-        if (z9) {
-            n0Var.N.put(this.v.c, Integer.valueOf(this.x.getProgress()));
+        if (z10) {
+            n0Var.O.put(this.v.c, Integer.valueOf(this.x.getProgress()));
         } else {
-            n0Var.N.remove(this.v.c);
+            n0Var.O.remove(this.v.c);
         }
     }
 }

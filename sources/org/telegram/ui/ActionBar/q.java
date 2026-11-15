@@ -1,72 +1,45 @@
 package org.telegram.ui.ActionBar;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.graphics.drawable.Drawable;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+public final class q extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ActionBarLayout b;
 
-    public /* synthetic */ q(ActionBarLayout actionBarLayout, boolean z9, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, boolean z10, f2 f2Var, f2 f2Var2) {
-        this.d = actionBarLayout;
-        this.b = z9;
-        this.e = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.c = z10;
-        this.f = f2Var;
-        this.h = f2Var2;
+    public /* synthetic */ q(ActionBarLayout actionBarLayout, int i7) {
+        this.a = i7;
+        this.b = actionBarLayout;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         int i7 = this.a;
-        Object obj = this.h;
-        Object obj2 = this.f;
-        Object obj3 = this.e;
-        Object obj4 = this.d;
+        ActionBarLayout actionBarLayout = this.b;
         switch (i7) {
             case 0:
-                ActionBarLayout actionBarLayout = (ActionBarLayout) obj4;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj3;
-                f2 f2Var = (f2) obj2;
-                f2 f2Var2 = (f2) obj;
-                if (this.b) {
-                    actionBarLayout.h = true;
-                    actionBarLayout.J = actionBarPopupWindow$ActionBarPopupWindowLayout;
-                    actionBarLayout.a0 = false;
-                    actionBarLayout.s.setScaleX(1.0f);
-                    actionBarLayout.s.setScaleY(1.0f);
-                } else {
-                    Drawable drawable = ActionBarLayout.v1;
-                    actionBarLayout.W(f2Var, this.c);
-                    actionBarLayout.s.setTranslationX(0.0f);
-                }
-                if (f2Var != null) {
-                    f2Var.onTransitionAnimationEnd(false, false);
-                }
-                f2Var2.onTransitionAnimationEnd(true, false);
-                f2Var2.onBecomeFullyVisible();
+                Drawable drawable = ActionBarLayout.w1;
+                actionBarLayout.H(false);
                 break;
             default:
-                TwoStepVerificationActivity.f0((TwoStepVerificationActivity) obj4, (TLRPC.TL_error) obj3, (TLObject) obj2, this.b, this.c, (Runnable) obj);
+                Drawable drawable2 = ActionBarLayout.w1;
+                actionBarLayout.H(false);
                 break;
         }
     }
 
-    public /* synthetic */ q(TwoStepVerificationActivity twoStepVerificationActivity, TLRPC.TL_error tL_error, TLObject tLObject, boolean z9, boolean z10, Runnable runnable) {
-        this.d = twoStepVerificationActivity;
-        this.e = tL_error;
-        this.f = tLObject;
-        this.b = z9;
-        this.c = z10;
-        this.h = runnable;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.C0 = System.currentTimeMillis();
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

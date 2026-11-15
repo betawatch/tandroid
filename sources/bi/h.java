@@ -1,33 +1,22 @@
 package bi;
 
-import org.telegram.ui.TwoStepVerificationActivity;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z b;
-    public final /* synthetic */ TwoStepVerificationActivity c;
+public final /* synthetic */ class h implements te.b, bg.p {
+    public final /* synthetic */ y a;
 
-    public /* synthetic */ h(z zVar, TwoStepVerificationActivity twoStepVerificationActivity, int i7) {
-        this.a = i7;
-        this.b = zVar;
-        this.c = twoStepVerificationActivity;
+    @Override // te.b
+    public void G(int i7, float f10, float f11, te.c cVar) {
+        this.a.j1();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                z zVar = this.b;
-                zVar.h0.setLoading(false);
-                zVar.presentFragment(this.c);
-                break;
-            default:
-                z zVar2 = this.b;
-                zVar2.a0.setLoading(false);
-                zVar2.presentFragment(this.c);
-                break;
-        }
+    @Override // bg.p
+    public void g(long j3) {
+        y yVar = this.a;
+        yVar.k1(j3, yVar.s2);
+    }
+
+    @Override // te.b
+    public /* synthetic */ void E(float f10, int i7) {
     }
 }

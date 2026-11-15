@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import java.io.File;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h1 {
     public static h1 m;
@@ -64,20 +64,20 @@ public final class h1 {
         return m;
     }
 
-    public final void a(Runnable runnable, boolean z9) {
+    public final void a(Runnable runnable, boolean z10) {
         long j3;
         if (this.h) {
             return;
         }
         if (this.g) {
-            z9 = true;
+            z10 = true;
         }
-        if (!z9) {
+        if (!z10) {
             long currentTimeMillis = System.currentTimeMillis() - this.e;
             if (t0.x) {
                 j3 = 86400000;
             } else {
-                boolean z10 = r2.a;
+                boolean z11 = r2.a;
                 j3 = 1200000;
             }
             if (currentTimeMillis < j3) {
@@ -90,18 +90,18 @@ public final class h1 {
         }
         this.h = true;
         this.g = false;
-        new org.telegram.ui.web.a1(new g1(0, this, runnable)).execute("null");
+        new org.telegram.ui.web.y0(new g1(0, this, runnable)).execute("https://telegram.org/dl/android/apk-public-beta.json");
     }
 
-    public final void b(boolean z9) {
+    public final void b(boolean z10) {
         if (this.j || !TextUtils.isEmpty(this.d)) {
             return;
         }
         this.j = true;
         this.k = 0.0f;
-        qs.e().k(qs.R4, new Object[0]);
+        ns.e().k(ns.R4, new Object[0]);
         if (TextUtils.isEmpty(this.f)) {
-            if (z9) {
+            if (z10) {
                 this.j = false;
                 return;
             } else {
@@ -111,14 +111,14 @@ public final class h1 {
         }
         final int i7 = 0;
         final int i10 = 1;
-        HttpGetFileTask overrideExtension = new HttpGetFileTask(new c20(this) { // from class: org.telegram.messenger.f1
+        HttpGetFileTask overrideExtension = new HttpGetFileTask(new z10(this) { // from class: org.telegram.messenger.f1
             public final /* synthetic */ h1 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.messenger.c20
+            @Override // org.telegram.messenger.z10
             public final void a(Object obj) {
                 switch (i7) {
                     case 0:
@@ -126,18 +126,18 @@ public final class h1 {
                         break;
                     default:
                         this.b.k = ((Float) obj).floatValue();
-                        qs.e().k(qs.R4, new Object[0]);
+                        ns.e().k(ns.R4, new Object[0]);
                         break;
                 }
             }
-        }, new c20(this) { // from class: org.telegram.messenger.f1
+        }, new z10(this) { // from class: org.telegram.messenger.f1
             public final /* synthetic */ h1 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.messenger.c20
+            @Override // org.telegram.messenger.z10
             public final void a(Object obj) {
                 switch (i10) {
                     case 0:
@@ -145,7 +145,7 @@ public final class h1 {
                         break;
                     default:
                         this.b.k = ((Float) obj).floatValue();
-                        qs.e().k(qs.R4, new Object[0]);
+                        ns.e().k(ns.R4, new Object[0]);
                         break;
                 }
             }

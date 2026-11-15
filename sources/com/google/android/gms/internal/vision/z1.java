@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class z1 implements d2 {
     public d2[] a;
@@ -16,7 +16,7 @@ public final class z1 implements d2 {
     }
 
     @Override // com.google.android.gms.internal.vision.d2
-    public final l2 zzb(Class cls) {
+    public final m2 zzb(Class cls) {
         for (d2 d2Var : this.a) {
             if (d2Var.zza(cls)) {
                 return d2Var.zzb(cls);

@@ -1,41 +1,61 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class sc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tc b;
-    public final /* synthetic */ boolean c;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Space;
+import android.widget.TextView;
 
-    public /* synthetic */ sc(tc tcVar, boolean z9, int i7) {
-        this.a = i7;
-        this.b = tcVar;
-        this.c = z9;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public abstract class sc extends LinearLayout {
+    public ImageView a;
+    public TextView b;
+    public Space c;
+    public boolean d;
+
+    public final void a(ImageView imageView, LinearLayout.LayoutParams layoutParams) {
+        if (this.a == null) {
+            this.a = imageView;
+            addView(imageView, layoutParams);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                boolean z9 = this.c;
-                tc tcVar = this.b;
-                if (!z9) {
-                    tcVar.Y0.setVisibility(8);
-                    break;
-                } else {
-                    tcVar.getClass();
-                    break;
-                }
-            default:
-                boolean z10 = this.c;
-                tc tcVar2 = this.b;
-                if (!z10) {
-                    tcVar2.U0.setVisibility(8);
-                    break;
-                } else {
-                    tcVar2.getClass();
-                    break;
-                }
+    public final void b(Space space, LinearLayout.LayoutParams layoutParams) {
+        if (this.c == null) {
+            this.c = space;
+            addView(space, layoutParams);
+        }
+    }
+
+    public final void c(TextView textView, LinearLayout.LayoutParams layoutParams) {
+        if (this.b == null) {
+            this.b = textView;
+            addView(textView, layoutParams);
+        }
+    }
+
+    public abstract void d();
+
+    public ImageView getImageView() {
+        return this.a;
+    }
+
+    public TextView getTextView() {
+        return this.b;
+    }
+
+    public void setEditButton(boolean z10) {
+        this.d = z10;
+    }
+
+    public void setOnlyIconMode(boolean z10) {
+        TextView textView = this.b;
+        if (textView != null) {
+            textView.setVisibility(z10 ? 8 : 0);
+        }
+        Space space = this.c;
+        if (space != null) {
+            space.setVisibility(z10 ? 8 : 0);
         }
     }
 }

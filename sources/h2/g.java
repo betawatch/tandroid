@@ -1,23 +1,24 @@
 package h2;
 
 import android.util.Pair;
+import com.google.android.gms.internal.vision.e2;
 import e2.s0;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final byte[] a = {0, 0, 0, 1};
     public static final String[] b = {"", "A", "B", "C"};
     public static final Pattern c = Pattern.compile("^\\D?(\\d+)$");
 
-    public static String a(int i7, int i10, int i11, int i12, boolean z9, int[] iArr) {
-        Object[] objArr = {b[i7], Integer.valueOf(i10), Integer.valueOf(i11), Character.valueOf(z9 ? 'H' : 'L'), Integer.valueOf(i12)};
-        String str = m0.a;
+    public static String a(int i7, int i10, int i11, int i12, boolean z10, int[] iArr) {
+        Object[] objArr = {b[i7], Integer.valueOf(i10), Integer.valueOf(i11), Character.valueOf(z10 ? 'H' : 'L'), Integer.valueOf(i12)};
+        String str = l0.a;
         StringBuilder sb2 = new StringBuilder(String.format(Locale.US, "hvc1.%s%d.%X.%c%d", objArr));
         int length = iArr.length;
         while (length > 0 && iArr[length - 1] == 0) {
@@ -180,7 +181,7 @@ public abstract class g {
             switch (c10) {
                 case 0:
                     if (split.length != 4) {
-                        com.google.android.recaptcha.internal.a.r("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
+                        e2.q("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -189,7 +190,7 @@ public abstract class g {
                             int parseInt5 = Integer.parseInt(split[3]);
                             if (parseInt3 == 0) {
                                 if (parseInt4 == 0) {
-                                    i7 = qs.g4;
+                                    i7 = ns.g4;
                                 }
                                 i7 = -1;
                             } else if (parseInt3 != 1) {
@@ -227,7 +228,7 @@ public abstract class g {
                                     if (i10 == i11) {
                                         break;
                                     } else {
-                                        com.google.android.recaptcha.internal.a.o(parseInt5, "Unknown AC-4 level: ", "CodecSpecificDataUtil");
+                                        e2.o(parseInt5, "Unknown AC-4 level: ", "CodecSpecificDataUtil");
                                         break;
                                     }
                                 } else {
@@ -238,13 +239,13 @@ public abstract class g {
                                 }
                             }
                         } catch (NumberFormatException unused) {
-                            com.google.android.recaptcha.internal.a.r("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
+                            e2.q("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
                 case 1:
                     if (split.length < 4) {
-                        com.google.android.recaptcha.internal.a.r("Ignoring malformed APV codec string: ", str2, "CodecSpecificDataUtil");
+                        e2.q("Ignoring malformed APV codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -253,7 +254,7 @@ public abstract class g {
                             int parseInt8 = Integer.parseInt(split[3].substring(4));
                             if (parseInt6 != 33) {
                                 if (parseInt6 != 44) {
-                                    com.google.android.recaptcha.internal.a.o(parseInt6, "Ignoring invalid APV profile: ", "CodecSpecificDataUtil");
+                                    e2.o(parseInt6, "Ignoring invalid APV profile: ", "CodecSpecificDataUtil");
                                     break;
                                 }
                             } else {
@@ -271,7 +272,7 @@ public abstract class g {
                     }
                 case 2:
                     if (split.length < 4) {
-                        com.google.android.recaptcha.internal.a.r("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
+                        e2.q("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -281,7 +282,7 @@ public abstract class g {
                             if (parseInt9 == 0) {
                                 int i24 = 8;
                                 if (parseInt11 != 8 && parseInt11 != 10) {
-                                    com.google.android.recaptcha.internal.a.o(parseInt11, "Unknown AV1 bit depth: ", "CodecSpecificDataUtil");
+                                    e2.o(parseInt11, "Unknown AV1 bit depth: ", "CodecSpecificDataUtil");
                                     break;
                                 } else {
                                     int i25 = parseInt11 == 8 ? 1 : (mVar == null || !(mVar.d != null || (i12 = mVar.c) == 7 || i12 == 6)) ? 2 : TLObject.FLAG_12;
@@ -364,16 +365,16 @@ public abstract class g {
                                     if (i24 != -1) {
                                         break;
                                     } else {
-                                        com.google.android.recaptcha.internal.a.o(parseInt10, "Unknown AV1 level: ", "CodecSpecificDataUtil");
+                                        e2.o(parseInt10, "Unknown AV1 level: ", "CodecSpecificDataUtil");
                                         break;
                                     }
                                 }
                             } else {
-                                com.google.android.recaptcha.internal.a.o(parseInt9, "Unknown AV1 profile: ", "CodecSpecificDataUtil");
+                                e2.o(parseInt9, "Unknown AV1 profile: ", "CodecSpecificDataUtil");
                                 break;
                             }
                         } catch (NumberFormatException unused2) {
-                            com.google.android.recaptcha.internal.a.r("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
+                            e2.q("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
@@ -381,7 +382,7 @@ public abstract class g {
                 case 3:
                 case 4:
                     if (split.length < 2) {
-                        com.google.android.recaptcha.internal.a.r("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
+                        e2.q("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -454,11 +455,11 @@ public abstract class g {
                                                     break;
                                                 default:
                                                     switch (parseInt2) {
-                                                        case qs.T /* 30 */:
+                                                        case ns.T /* 30 */:
                                                             i13 = 256;
                                                             i16 = -1;
                                                             break;
-                                                        case qs.U /* 31 */:
+                                                        case ns.U /* 31 */:
                                                             i16 = -1;
                                                             i13 = 512;
                                                             break;
@@ -486,11 +487,11 @@ public abstract class g {
                                                                             i13 = 16384;
                                                                             i16 = -1;
                                                                             break;
-                                                                        case qs.o0 /* 51 */:
+                                                                        case ns.o0 /* 51 */:
                                                                             i13 = 32768;
                                                                             i16 = -1;
                                                                             break;
-                                                                        case qs.p0 /* 52 */:
+                                                                        case ns.p0 /* 52 */:
                                                                             i13 = 65536;
                                                                             i16 = -1;
                                                                             break;
@@ -506,11 +507,11 @@ public abstract class g {
                                     if (i13 != i16) {
                                         break;
                                     } else {
-                                        com.google.android.recaptcha.internal.a.o(parseInt2, "Unknown AVC level: ", "CodecSpecificDataUtil");
+                                        e2.o(parseInt2, "Unknown AVC level: ", "CodecSpecificDataUtil");
                                         break;
                                     }
                                 } else {
-                                    com.google.android.recaptcha.internal.a.o(parseInt, "Unknown AVC profile: ", "CodecSpecificDataUtil");
+                                    e2.o(parseInt, "Unknown AVC profile: ", "CodecSpecificDataUtil");
                                     break;
                                 }
                             } else {
@@ -520,13 +521,13 @@ public abstract class g {
                             if (i14 == i15) {
                             }
                         } catch (NumberFormatException unused3) {
-                            com.google.android.recaptcha.internal.a.r("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
+                            e2.q("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
                 case 7:
                     if (split.length < 4) {
-                        com.google.android.recaptcha.internal.a.r("Ignoring malformed IAMF codec string: ", str2, "CodecSpecificDataUtil");
+                        e2.q("Ignoring malformed IAMF codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -648,30 +649,30 @@ public abstract class g {
                                 }
                             }
                         } catch (NumberFormatException unused4) {
-                            com.google.android.recaptcha.internal.a.r("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
+                            e2.q("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
                             break;
                         }
                     } else {
-                        com.google.android.recaptcha.internal.a.r("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
+                        e2.q("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     }
                     break;
                 case '\t':
                     Pair pair = new Pair(1, 1);
                     if (split.length < 3) {
-                        com.google.android.recaptcha.internal.a.r("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
+                        e2.q("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
                             break;
                         } catch (NumberFormatException unused5) {
-                            com.google.android.recaptcha.internal.a.r("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
+                            e2.q("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
                             return pair;
                         }
                     }
                 case '\n':
                     if (split.length < 3) {
-                        com.google.android.recaptcha.internal.a.r("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
+                        e2.q("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -679,7 +680,7 @@ public abstract class g {
                             int parseInt15 = Integer.parseInt(split[2]);
                             int i27 = parseInt14 != 0 ? parseInt14 != 1 ? parseInt14 != 2 ? parseInt14 != 3 ? -1 : 8 : 4 : 2 : 1;
                             if (i27 == -1) {
-                                com.google.android.recaptcha.internal.a.o(parseInt14, "Unknown VP9 profile: ", "CodecSpecificDataUtil");
+                                e2.o(parseInt14, "Unknown VP9 profile: ", "CodecSpecificDataUtil");
                                 break;
                             } else {
                                 if (parseInt15 != 10) {
@@ -708,15 +709,15 @@ public abstract class g {
                                         i19 = 256;
                                     } else if (parseInt15 != 51) {
                                         switch (parseInt15) {
-                                            case qs.x0 /* 60 */:
+                                            case ns.x0 /* 60 */:
                                                 i20 = -1;
                                                 i19 = 2048;
                                                 break;
-                                            case qs.y0 /* 61 */:
+                                            case ns.y0 /* 61 */:
                                                 i20 = -1;
                                                 i19 = TLObject.FLAG_12;
                                                 break;
-                                            case qs.z0 /* 62 */:
+                                            case ns.z0 /* 62 */:
                                                 i19 = 8192;
                                                 break;
                                             default:
@@ -731,7 +732,7 @@ public abstract class g {
                                     if (i19 == i20) {
                                         break;
                                     } else {
-                                        com.google.android.recaptcha.internal.a.o(parseInt15, "Unknown VP9 level: ", "CodecSpecificDataUtil");
+                                        e2.o(parseInt15, "Unknown VP9 level: ", "CodecSpecificDataUtil");
                                         break;
                                     }
                                 } else {
@@ -742,14 +743,14 @@ public abstract class g {
                                 }
                             }
                         } catch (NumberFormatException unused6) {
-                            com.google.android.recaptcha.internal.a.r("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
+                            e2.q("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
                 case 11:
                 case '\f':
                     if (split.length < 3) {
-                        com.google.android.recaptcha.internal.a.r("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
+                        e2.q("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -1003,7 +1004,7 @@ public abstract class g {
                                 if (num2 == null) {
                                     break;
                                 } else {
-                                    com.google.android.recaptcha.internal.a.r("Unknown VVC level string: ", str5, "CodecSpecificDataUtil");
+                                    e2.q("Unknown VVC level string: ", str5, "CodecSpecificDataUtil");
                                     break;
                                 }
                             }
@@ -1011,7 +1012,7 @@ public abstract class g {
                             if (num2 == null) {
                             }
                         } catch (NumberFormatException unused7) {
-                            com.google.android.recaptcha.internal.a.r("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
+                            e2.q("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
@@ -1020,12 +1021,12 @@ public abstract class g {
             return null;
         }
         if (split.length < 3) {
-            com.google.android.recaptcha.internal.a.r("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
+            e2.q("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
             return null;
         }
         Matcher matcher = c.matcher(split[1]);
         if (!matcher.matches()) {
-            com.google.android.recaptcha.internal.a.r("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
+            e2.q("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
             return null;
         }
         String group = matcher.group(1);
@@ -1148,7 +1149,7 @@ public abstract class g {
                     break;
             }
             if (num != null) {
-                com.google.android.recaptcha.internal.a.r("Unknown Dolby Vision profile string: ", group, "CodecSpecificDataUtil");
+                e2.q("Unknown Dolby Vision profile string: ", group, "CodecSpecificDataUtil");
                 return null;
             }
             String str6 = split[2];
@@ -1290,7 +1291,7 @@ public abstract class g {
                 if (num2 == null) {
                     return new Pair(num, num2);
                 }
-                com.google.android.recaptcha.internal.a.r("Unknown Dolby Vision level string: ", str6, "CodecSpecificDataUtil");
+                e2.q("Unknown Dolby Vision level string: ", str6, "CodecSpecificDataUtil");
                 return null;
             }
             num2 = null;
@@ -1317,12 +1318,12 @@ public abstract class g {
         int i7;
         Integer num;
         if (strArr.length < 4) {
-            com.google.android.recaptcha.internal.a.r("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
+            e2.q("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
             return null;
         }
         Matcher matcher = c.matcher(strArr[1]);
         if (!matcher.matches()) {
-            com.google.android.recaptcha.internal.a.r("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
+            e2.q("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
             return null;
         }
         String group = matcher.group(1);
@@ -1333,7 +1334,7 @@ public abstract class g {
             i7 = (mVar == null || mVar.c != 6) ? 2 : 4096;
         } else {
             if (!"6".equals(group)) {
-                com.google.android.recaptcha.internal.a.r("Unknown HEVC profile string: ", group, "CodecSpecificDataUtil");
+                e2.q("Unknown HEVC profile string: ", group, "CodecSpecificDataUtil");
                 return null;
             }
             i7 = 6;
@@ -1605,7 +1606,7 @@ public abstract class g {
             if (num == null) {
                 return new Pair(Integer.valueOf(i7), num);
             }
-            com.google.android.recaptcha.internal.a.r("Unknown HEVC level string: ", str2, "CodecSpecificDataUtil");
+            e2.q("Unknown HEVC level string: ", str2, "CodecSpecificDataUtil");
             return null;
         }
         num = null;

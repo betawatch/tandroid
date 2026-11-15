@@ -1,48 +1,33 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nw implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gz b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ ij d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ sy f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ sy n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ HashMap s;
-    public final /* synthetic */ boolean w;
+    public final /* synthetic */ ez b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ ArrayList d;
 
-    public /* synthetic */ nw(gz gzVar, TLObject tLObject, ij ijVar, String str, sy syVar, boolean z9, sy syVar2, Object obj, HashMap hashMap, boolean z10, int i7) {
+    public /* synthetic */ nw(ez ezVar, long j3, ArrayList arrayList, int i7) {
         this.a = i7;
-        this.b = gzVar;
-        this.c = tLObject;
-        this.d = ijVar;
-        this.e = str;
-        this.f = syVar;
-        this.h = z9;
-        this.n = syVar2;
-        this.r = obj;
-        this.s = hashMap;
-        this.w = z10;
+        this.b = ezVar;
+        this.c = j3;
+        this.d = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.O(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w);
+                this.b.getMessagesController().l3(this.d, this.c);
                 break;
             case 1:
-                this.b.O(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w);
+                this.b.getMessagesController().l3(this.d, this.c);
                 break;
             default:
-                this.b.O(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w);
+                this.b.getMessagesController().l3(this.d, this.c);
                 break;
         }
     }

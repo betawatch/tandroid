@@ -1,412 +1,185 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
+import android.graphics.Color;
 import android.graphics.CornerPathEffect;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
+import android.text.style.CharacterStyle;
+import android.view.ViewConfiguration;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class a80 extends Drawable {
-    public Rect A;
-    public final float[] B;
-    public final RectF C;
-    public boolean D;
-    public int E;
-    public Paint F;
-    public LinearGradient G;
-    public Matrix H;
-    public int I;
-    public Paint J;
-    public LinearGradient K;
-    public Matrix L;
-    public final org.telegram.ui.ActionBar.h6 a;
-    public long b;
-    public long c;
-    public LinearGradient d;
-    public LinearGradient e;
-    public final Matrix f;
-    public final Matrix g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public boolean n;
-    public Integer o;
-    public Integer p;
-    public Integer q;
-    public Integer r;
-    public int s;
-    public float t;
-    public float u;
-    public long v;
-    public final Paint w;
-    public final Paint x;
-    public Path y;
-    public final Path z;
+public final class a80 {
+    public static final ArrayList s = new ArrayList();
+    public int a;
+    public int b;
+    public Paint c;
+    public Paint d;
+    public int e;
+    public int f;
+    public final CharacterStyle i;
+    public final float j;
+    public final float k;
+    public Rect m;
+    public float n;
+    public final long q;
+    public final ArrayList g = new ArrayList();
+    public int h = 0;
+    public final Path l = new Path();
+    public long o = -1;
+    public long p = -1;
+    public final boolean r = !org.telegram.messenger.qc.e(360928);
 
-    public a80(org.telegram.ui.ActionBar.h6 h6Var) {
-        this();
-        this.a = h6Var;
+    public a80(CharacterStyle characterStyle, org.telegram.ui.ActionBar.e6 e6Var, float f10, float f11, int i7) {
+        this.i = characterStyle;
+        d(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Ce, e6Var));
+        this.j = f10;
+        this.k = f11;
+        this.q = (long) Math.min(ViewConfiguration.getTapTimeout() * 1.8f, ViewConfiguration.getLongPressTimeout() * 0.8f);
     }
 
-    public final void a() {
-        if (c() || d()) {
-            return;
-        }
-        this.c = SystemClock.elapsedRealtime();
-    }
-
-    public void b(Canvas canvas, Path path) {
-        canvas.drawPath(path, this.w);
-        if (this.n) {
-            canvas.drawPath(path, this.x);
-        }
-    }
-
-    public final boolean c() {
-        return this.c > 0 && ((float) (SystemClock.elapsedRealtime() - this.c)) >= 320.0f;
-    }
-
-    public final boolean d() {
-        return this.c > 0 && ((float) (SystemClock.elapsedRealtime() - this.c)) < 320.0f;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:51:0x022b  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x02ed  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x030e  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0359  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x03a3  */
-    /* JADX WARN: Removed duplicated region for block: B:78:? A[RETURN, SYNTHETIC] */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        long j3;
-        float f10;
-        float f11;
-        boolean z9;
-        Path path;
+    /* JADX WARN: Multi-variable type inference failed */
+    public final boolean a(Canvas canvas) {
         boolean z10;
-        if (c()) {
-            return;
+        boolean z11;
+        boolean z12;
+        float f10;
+        boolean z13 = this.r;
+        int L = z13 ? 0 : org.telegram.messenger.g0.L(4.0f);
+        boolean z14 = this.a != L;
+        if (this.c == null) {
+            Paint paint = new Paint(1);
+            this.c = paint;
+            paint.setStyle(Paint.Style.FILL_AND_STROKE);
+            this.c.setColor(this.b);
+            this.e = Color.alpha(this.b);
         }
-        Rect bounds = getBounds();
-        Paint paint = this.w;
-        if (paint.getAlpha() <= 0) {
-            return;
+        if (this.d == null) {
+            Paint paint2 = new Paint(1);
+            this.d = paint2;
+            paint2.setStyle(Paint.Style.FILL_AND_STROKE);
+            this.d.setColor(this.b);
+            this.f = Color.alpha(this.b);
         }
-        int width = bounds.width();
-        if (width <= 0) {
-            width = org.telegram.messenger.g0.L(200.0f);
+        if (z14) {
+            this.a = L;
+            if (L <= 0) {
+                this.c.setPathEffect(null);
+                this.d.setPathEffect(null);
+            } else {
+                this.c.setPathEffect(new CornerPathEffect(this.a));
+                this.d.setPathEffect(new CornerPathEffect(this.a));
+            }
         }
-        int min = (int) (Math.min(org.telegram.messenger.g0.L(400.0f), width) * this.t);
-        Integer num = this.o;
-        org.telegram.ui.ActionBar.h6 h6Var = this.a;
-        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.m6.w0(this.l, h6Var);
-        Integer num2 = this.p;
-        int intValue2 = num2 != null ? num2.intValue() : org.telegram.ui.ActionBar.m6.w0(this.m, h6Var);
-        Integer num3 = this.q;
-        int intValue3 = num3 != null ? num3.intValue() : org.telegram.ui.ActionBar.m6.w0(this.l, h6Var);
-        Integer num4 = this.r;
-        int intValue4 = num4 != null ? num4.intValue() : org.telegram.ui.ActionBar.m6.w0(this.m, h6Var);
-        LinearGradient linearGradient = this.d;
-        Matrix matrix = this.g;
-        Matrix matrix2 = this.f;
-        Paint paint2 = this.x;
-        if (linearGradient == null || min != this.s || intValue != this.h || intValue2 != this.i || intValue3 != this.j || intValue4 != this.k) {
-            this.s = min;
-            this.h = intValue;
-            this.i = intValue2;
-            float f12 = this.s;
-            int i7 = this.h;
-            Shader.TileMode tileMode = Shader.TileMode.REPEAT;
-            LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, f12, 0.0f, new int[]{i7, this.i, i7}, new float[]{0.0f, 0.67f, 1.0f}, tileMode);
-            this.d = linearGradient2;
-            linearGradient2.setLocalMatrix(matrix2);
-            paint.setShader(this.d);
-            this.j = intValue3;
-            this.k = intValue4;
-            float f13 = this.s;
-            int i10 = this.j;
-            LinearGradient linearGradient3 = new LinearGradient(0.0f, 0.0f, f13, 0.0f, new int[]{i10, i10, this.k, i10}, new float[]{0.0f, 0.4f, 0.67f, 1.0f}, tileMode);
-            this.e = linearGradient3;
-            linearGradient3.setLocalMatrix(matrix);
-            paint2.setShader(this.e);
+        Rect rect = this.m;
+        float f11 = this.k;
+        float f12 = this.j;
+        ArrayList arrayList = this.g;
+        if (rect != null || this.h <= 0) {
+            z10 = 0;
+            z11 = z13;
+            z12 = true;
+            f10 = f12;
+        } else {
+            u70 u70Var = (u70) arrayList.get(0);
+            RectF rectF = org.telegram.messenger.g0.P;
+            u70Var.computeBounds(rectF, false);
+            this.m = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+            for (int i7 = 1; i7 < this.h; i7++) {
+                u70 u70Var2 = (u70) arrayList.get(i7);
+                RectF rectF2 = org.telegram.messenger.g0.P;
+                u70Var2.computeBounds(rectF2, false);
+                Rect rect2 = this.m;
+                rect2.left = Math.min(rect2.left, (int) rectF2.left);
+                Rect rect3 = this.m;
+                rect3.top = Math.min(rect3.top, (int) rectF2.top);
+                Rect rect4 = this.m;
+                rect4.right = Math.max(rect4.right, (int) rectF2.right);
+                Rect rect5 = this.m;
+                rect5.bottom = Math.max(rect5.bottom, (int) rectF2.bottom);
+            }
+            z10 = 0;
+            z11 = z13;
+            z12 = true;
+            f10 = f12;
+            this.n = (float) Math.sqrt(Math.max(Math.max(Math.pow(this.m.top - f11, 2.0d) + Math.pow(this.m.left - f12, 2.0d), Math.pow(this.m.top - f11, 2.0d) + Math.pow(this.m.right - f12, 2.0d)), Math.max(Math.pow(this.m.bottom - f11, 2.0d) + Math.pow(this.m.left - f12, 2.0d), Math.pow(this.m.bottom - f11, 2.0d) + Math.pow(this.m.right - f12, 2.0d))));
+        }
+        if (z11) {
+            for (int i10 = z10; i10 < this.h; i10++) {
+                canvas.drawPath((Path) arrayList.get(i10), this.d);
+            }
+            return z10;
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (this.b < 0) {
-            this.b = elapsedRealtime;
+        if (this.o < 0) {
+            this.o = elapsedRealtime;
         }
-        long j10 = this.v;
-        if (j10 > 0) {
-            j3 = 0;
-            f11 = Math.min(1.0f, (elapsedRealtime - this.b) / j10) * this.s;
-            f10 = 200.0f;
+        float interpolation = er.f.getInterpolation(Math.min(1.0f, (elapsedRealtime - this.o) / this.q));
+        float min = 1.0f - (this.p < 0 ? 0.0f : Math.min(1.0f, Math.max(0.0f, ((elapsedRealtime - 75) - r11) / 100.0f)));
+        this.c.setAlpha((int) (Math.min(1.0f, interpolation * 5.0f) * this.e * 0.2f * min));
+        this.c.setStrokeWidth(Math.min(1.0f, 0.0f) * org.telegram.messenger.g0.L(5.0f));
+        for (int i11 = z10; i11 < this.h; i11++) {
+            ((u70) arrayList.get(i11)).a();
+            canvas.drawPath((Path) arrayList.get(i11), this.c);
+        }
+        this.d.setAlpha((int) (this.f * 0.8f * min));
+        this.d.setStrokeWidth(Math.min(1.0f, 0.0f) * org.telegram.messenger.g0.L(5.0f));
+        if (interpolation < 1.0f) {
+            float f13 = interpolation * this.n;
+            canvas.save();
+            Path path = this.l;
+            path.reset();
+            path.addCircle(f10, f11, f13, Path.Direction.CW);
+            canvas.clipPath(path);
+            for (int i12 = z10; i12 < this.h; i12++) {
+                canvas.drawPath((Path) arrayList.get(i12), this.d);
+            }
+            canvas.restore();
         } else {
-            j3 = 0;
-            f10 = 200.0f;
-            float pow = ((float) Math.pow((((elapsedRealtime - this.b) / 2000.0f) * this.u) / 4.0f, 0.8500000238418579d)) * 4.0f * org.telegram.messenger.g0.p;
-            float f14 = this.s;
-            f11 = (pow * f14) % f14;
-        }
-        float f15 = (elapsedRealtime - this.b) / 550.0f;
-        float f16 = f10;
-        float interpolation = this.c > j3 ? 1.0f - wq.g.getInterpolation(Math.min(1.0f, (elapsedRealtime - r8) / 320.0f)) : 0.0f;
-        boolean d = d();
-        boolean z11 = false;
-        RectF rectF = this.C;
-        if (d) {
-            int max = Math.max(org.telegram.messenger.g0.L(f16), bounds.width() / 3);
-            if (interpolation < 1.0f) {
-                if (this.J == null) {
-                    this.J = new Paint(1);
-                    this.I = max;
-                    this.K = new LinearGradient(0.0f, 0.0f, max, 0.0f, new int[]{-1, 16777215}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                    Matrix matrix3 = new Matrix();
-                    this.L = matrix3;
-                    this.K.setLocalMatrix(matrix3);
-                    this.J.setShader(this.K);
-                    this.J.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                } else if (this.I != max) {
-                    this.I = max;
-                    LinearGradient linearGradient4 = new LinearGradient(0.0f, 0.0f, max, 0.0f, new int[]{-1, 16777215}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                    this.K = linearGradient4;
-                    linearGradient4.setLocalMatrix(this.L);
-                    this.J.setShader(this.K);
-                }
-                rectF.set(bounds);
-                rectF.inset(-paint2.getStrokeWidth(), -paint2.getStrokeWidth());
-                canvas.saveLayerAlpha(rectF, org.telegram.messenger.qs.e4, 31);
-                z9 = true;
-                if (this.D) {
-                    int max2 = Math.max(org.telegram.messenger.g0.L(f16), bounds.width() / 3);
-                    if (f15 < 1.0f) {
-                        if (this.F == null) {
-                            z10 = true;
-                            this.F = new Paint(1);
-                            this.E = max2;
-                            this.G = new LinearGradient(0.0f, 0.0f, max2, 0.0f, new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                            Matrix matrix4 = new Matrix();
-                            this.H = matrix4;
-                            this.G.setLocalMatrix(matrix4);
-                            this.F.setShader(this.G);
-                            this.F.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                        } else {
-                            z10 = true;
-                            if (this.E != max2) {
-                                this.E = max2;
-                                LinearGradient linearGradient5 = new LinearGradient(0.0f, 0.0f, max2, 0.0f, new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                                this.G = linearGradient5;
-                                linearGradient5.setLocalMatrix(this.H);
-                                this.F.setShader(this.G);
-                            }
-                        }
-                        rectF.set(bounds);
-                        rectF.inset(-paint2.getStrokeWidth(), -paint2.getStrokeWidth());
-                        canvas.saveLayerAlpha(rectF, org.telegram.messenger.qs.e4, 31);
-                        z11 = z10;
-                    }
-                }
-                matrix2.setTranslate(f11, 0.0f);
-                this.d.setLocalMatrix(matrix2);
-                matrix.setTranslate(f11, 0.0f);
-                this.e.setLocalMatrix(matrix);
-                path = this.y;
-                if (path == null) {
-                    Rect rect = this.A;
-                    Path path2 = this.z;
-                    if (rect == null || !rect.equals(bounds)) {
-                        path2.rewind();
-                        this.A = bounds;
-                        rectF.set(bounds);
-                        path2.addRoundRect(rectF, this.B, Path.Direction.CW);
-                    }
-                    path = path2;
-                }
-                b(canvas, path);
-                if (z11) {
-                    canvas.save();
-                    int width2 = bounds.width() + this.E;
-                    this.H.setTranslate(bounds.left + ((f15 * (width2 + r2)) - this.E), 0.0f);
-                    this.G.setLocalMatrix(this.H);
-                    int strokeWidth = (int) paint2.getStrokeWidth();
-                    canvas.drawRect(bounds.left - strokeWidth, bounds.top - strokeWidth, bounds.right + strokeWidth, bounds.bottom + strokeWidth, this.F);
-                    canvas.restore();
-                    canvas.restore();
-                }
-                if (z9) {
-                    canvas.save();
-                    int width3 = bounds.width() + this.I;
-                    this.L.setTranslate(bounds.right - ((interpolation * (width3 + r1)) - this.I), 0.0f);
-                    this.K.setLocalMatrix(this.L);
-                    int strokeWidth2 = (int) paint2.getStrokeWidth();
-                    canvas.drawRect(bounds.left - strokeWidth2, bounds.top - strokeWidth2, bounds.right + strokeWidth2, bounds.bottom + strokeWidth2, this.J);
-                    canvas.restore();
-                    canvas.restore();
-                }
-                if (c()) {
-                    invalidateSelf();
-                    return;
-                }
-                return;
+            for (int i13 = z10; i13 < this.h; i13++) {
+                canvas.drawPath((Path) arrayList.get(i13), this.d);
             }
         }
-        z9 = false;
-        if (this.D) {
-        }
-        matrix2.setTranslate(f11, 0.0f);
-        this.d.setLocalMatrix(matrix2);
-        matrix.setTranslate(f11, 0.0f);
-        this.e.setLocalMatrix(matrix);
-        path = this.y;
-        if (path == null) {
-        }
-        b(canvas, path);
-        if (z11) {
-        }
-        if (z9) {
-        }
-        if (c()) {
-        }
+        return (interpolation < 1.0f || this.p >= 0) ? z12 : z10;
     }
 
-    public final void e(RectF rectF) {
-        super.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        this.A = null;
+    public final u70 b() {
+        ArrayList arrayList = s;
+        u70 u70Var = !arrayList.isEmpty() ? (u70) arrayList.remove(0) : new u70(0);
+        u70Var.c = !this.r;
+        u70Var.reset();
+        ArrayList arrayList2 = this.g;
+        arrayList2.add(u70Var);
+        this.h = arrayList2.size();
+        return u70Var;
     }
 
-    public final void f(int i7, int i10) {
-        this.o = Integer.valueOf(i7);
-        this.p = Integer.valueOf(i10);
-        this.n = false;
-    }
-
-    public final void g(int i7, int i10, int i11, int i12) {
-        this.o = Integer.valueOf(i7);
-        this.p = Integer.valueOf(i10);
-        this.n = true;
-        this.q = Integer.valueOf(i11);
-        this.r = Integer.valueOf(i12);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    public final void h() {
-        this.t = 2.0f;
-    }
-
-    public final void i(float f10) {
-        if (this.y != null) {
-            this.w.setPathEffect(new CornerPathEffect(f10));
-            this.x.setPathEffect(new CornerPathEffect(f10));
+    public final void c() {
+        ArrayList arrayList = this.g;
+        if (arrayList.isEmpty()) {
             return;
         }
-        float[] fArr = this.B;
-        boolean z9 = (fArr[0] == f10 && fArr[2] == f10 && fArr[4] == f10 && fArr[6] == f10) ? false : true;
-        fArr[1] = f10;
-        fArr[0] = f10;
-        fArr[3] = f10;
-        fArr[2] = f10;
-        fArr[5] = f10;
-        fArr[4] = f10;
-        fArr[7] = f10;
-        fArr[6] = f10;
-        if (this.A == null || !z9) {
-            return;
-        }
-        Path path = this.z;
-        path.rewind();
-        Rect rect = this.A;
-        RectF rectF = this.C;
-        rectF.set(rect);
-        path.addRoundRect(rectF, fArr, Path.Direction.CW);
+        s.addAll(arrayList);
+        arrayList.clear();
+        this.h = 0;
     }
 
-    public final void j(float[] fArr) {
-        if (fArr == null || fArr.length != 8) {
-            return;
+    public final void d(int i7) {
+        this.b = i7;
+        Paint paint = this.c;
+        if (paint != null) {
+            paint.setColor(i7);
+            this.e = Color.alpha(i7);
         }
-        boolean z9 = false;
-        for (int i7 = 0; i7 < 8; i7++) {
-            float[] fArr2 = this.B;
-            float f10 = fArr2[i7];
-            float f11 = fArr[i7];
-            if (f10 != f11) {
-                fArr2[i7] = f11;
-                z9 = true;
-            }
+        Paint paint2 = this.d;
+        if (paint2 != null) {
+            paint2.setColor(i7);
+            this.f = Color.alpha(i7);
         }
-        if (this.A == null || !z9) {
-            return;
-        }
-        Path path = this.z;
-        path.rewind();
-        Rect rect = this.A;
-        RectF rectF = this.C;
-        rectF.set(rect);
-        path.addRoundRect(rectF, fArr, Path.Direction.CW);
-    }
-
-    public final void k(float f10) {
-        i(org.telegram.messenger.g0.L(f10));
-    }
-
-    public final void l() {
-        Path path = this.y;
-        if (path != null) {
-            RectF rectF = org.telegram.messenger.g0.P;
-            path.computeBounds(rectF, false);
-            e(rectF);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.w.setAlpha(i7);
-        this.x.setAlpha(i7);
-        if (i7 > 0) {
-            invalidateSelf();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.w.setColorFilter(colorFilter);
-    }
-
-    public a80() {
-        this.b = -1L;
-        this.c = -1L;
-        this.f = new Matrix();
-        this.g = new Matrix();
-        this.l = org.telegram.ui.ActionBar.m6.h5;
-        this.m = org.telegram.ui.ActionBar.m6.i5;
-        this.t = 1.0f;
-        this.u = 1.0f;
-        this.w = new Paint(1);
-        Paint paint = new Paint(1);
-        this.x = paint;
-        this.z = new Path();
-        this.B = new float[8];
-        this.C = new RectF();
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(org.telegram.messenger.g0.p > 2.0f ? 2.0f : 1.0f);
     }
 }

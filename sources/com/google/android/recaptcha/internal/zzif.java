@@ -1,19 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import a8.ab;
+import a8.bb;
 import af.b;
 import gd.c;
+import jd.a;
 import org.telegram.tgnet.TLObject;
 import zd.b0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzif {
     private final c zza;
 
     public zzif() {
         int i7 = zzby.zza;
-        this.zza = ab.b(zzie.zza);
+        this.zza = bb.b(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
@@ -34,7 +35,7 @@ public final class zzif {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzicVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzicVar.zza;
-                jd.a aVar = jd.a.a;
+                a aVar = a.a;
                 i7 = zzicVar.zzc;
                 if (i7 == 0) {
                     if (i7 != 1) {
@@ -52,7 +53,7 @@ public final class zzif {
         }
         zzicVar = new zzic(zzifVar, cVar);
         Object obj2 = zzicVar.zza;
-        jd.a aVar2 = jd.a.a;
+        a aVar2 = a.a;
         i7 = zzicVar.zzc;
         if (i7 == 0) {
         }

@@ -5,37 +5,37 @@ import android.graphics.Point;
 import android.view.View;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class RendererCommon {
     private static float BALANCED_VISIBLE_FRACTION = 0.5625f;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface GlDrawer {
-        void drawOes(int i7, int i10, int i11, int i12, int i13, float[] fArr, int i14, int i15, int i16, int i17, int i18, int i19, boolean z9);
+        void drawOes(int i7, int i10, int i11, int i12, int i13, float[] fArr, int i14, int i15, int i16, int i17, int i18, int i19, boolean z10);
 
-        void drawRgb(int i7, int i10, int i11, int i12, int i13, float[] fArr, int i14, int i15, int i16, int i17, int i18, int i19, boolean z9);
+        void drawRgb(int i7, int i10, int i11, int i12, int i13, float[] fArr, int i14, int i15, int i16, int i17, int i18, int i19, boolean z10);
 
-        void drawYuv(int[] iArr, int i7, int i10, int i11, int i12, float[] fArr, int i13, int i14, int i15, int i16, int i17, int i18, boolean z9);
+        void drawYuv(int[] iArr, int i7, int i10, int i11, int i12, float[] fArr, int i13, int i14, int i15, int i16, int i17, int i18, boolean z10);
 
         void release();
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface RendererEvents {
         void onFirstFrameRendered();
 
         void onFrameResolutionChanged(int i7, int i10, int i11);
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public enum ScalingType {
         SCALE_ASPECT_FIT,
         SCALE_ASPECT_FILL,
         SCALE_ASPECT_BALANCED
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class VideoLayoutMeasure {
         private float visibleFractionMatchOrientation;
         private float visibleFractionMismatchOrientation;
@@ -53,7 +53,7 @@ public class RendererCommon {
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
-        public Point measure(boolean z9, int i7, int i10, int i11, int i12) {
+        public Point measure(boolean z10, int i7, int i10, int i11, int i12) {
             int defaultSize = View.getDefaultSize(ConnectionsManager.DEFAULT_DATACENTER_ID, i7);
             int defaultSize2 = View.getDefaultSize(ConnectionsManager.DEFAULT_DATACENTER_ID, i10);
             if (i11 == 0 || i12 == 0 || defaultSize == 0 || defaultSize2 == 0) {
@@ -62,7 +62,7 @@ public class RendererCommon {
             float f10 = i11 / i12;
             float f11 = defaultSize / defaultSize2;
             Point displaySize = RendererCommon.getDisplaySize(((f10 > 1.0f ? 1 : (f10 == 1.0f ? 0 : -1)) > 0) == ((f11 > 1.0f ? 1 : (f11 == 1.0f ? 0 : -1)) > 0) ? this.visibleFractionMatchOrientation : this.visibleFractionMismatchOrientation, f10, defaultSize, defaultSize2);
-            if (!z9) {
+            if (!z10) {
                 if (View.MeasureSpec.getMode(i7) == 1073741824) {
                     displaySize.x = defaultSize;
                 }
@@ -129,7 +129,7 @@ public class RendererCommon {
         return getDisplaySize(convertScalingTypeToVisibleFraction(scalingType), f10, i7, i10);
     }
 
-    public static float[] getLayoutMatrix(boolean z9, float f10, float f11) {
+    public static float[] getLayoutMatrix(boolean z10, float f10, float f11) {
         float f12;
         float f13;
         if (f11 > f10) {
@@ -139,7 +139,7 @@ public class RendererCommon {
             f12 = f11 / f10;
             f13 = 1.0f;
         }
-        if (z9) {
+        if (z10) {
             f12 *= -1.0f;
         }
         float[] fArr = new float[16];

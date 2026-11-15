@@ -1,29 +1,49 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.content.Context;
+import android.graphics.Typeface;
+import android.widget.LinearLayout;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class sb extends ya {
-    public float a;
-    public rb b;
-    public k9 c;
-    public i6 d;
-    public boolean e;
+public final class sb extends va {
+    public final i9 a;
+    public final z70 b;
+    public final z70 c;
 
-    @Override // org.telegram.ui.Components.fb
+    public sb(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        int i7 = org.telegram.ui.ActionBar.j6.yj;
+        getThemedColor(i7);
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.j6.wj));
+        i9 i9Var = new i9(context);
+        this.a = i9Var;
+        addView(i9Var, c8.ja.i(32.0f, 32.0f, 8388627, 12.0f, 0.0f, 12.0f, 0.0f));
+        getThemedColor(i7);
+        int i10 = org.telegram.ui.ActionBar.j6.xj;
+        getThemedColor(i10);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, c8.ja.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        z70 z70Var = new z70(context, null);
+        this.b = z70Var;
+        z70Var.setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
+        org.telegram.ui.ActionBar.q6.U(z70Var, i7, e6Var);
+        z70Var.setTextSize(1, 14.0f);
+        z70Var.setTypeface(org.telegram.messenger.g0.o());
+        linearLayout.addView(z70Var);
+        z70 z70Var2 = new z70(context, null);
+        this.c = z70Var2;
+        z70Var2.setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
+        org.telegram.ui.ActionBar.q6.U(z70Var2, i7, e6Var);
+        org.telegram.ui.ActionBar.q6.G(z70Var2, i10, e6Var);
+        z70Var2.setTypeface(Typeface.SANS_SERIF);
+        z70Var2.setTextSize(1, 13.0f);
+        linearLayout.addView(z70Var2);
+    }
+
+    @Override // org.telegram.ui.Components.cb
     public CharSequence getAccessibilityText() {
-        return this.d.getText();
-    }
-
-    public void setProgress(float f10) {
-        if (this.e != (f10 < 1.0f)) {
-            this.e = f10 < 1.0f;
-            this.c.animate().scaleX(this.e ? 0.78f : 1.0f).scaleY(this.e ? 0.78f : 1.0f).setDuration(320L).setInterpolator(wq.h).start();
-        }
-        this.a = f10;
-        this.b.invalidate();
-    }
-
-    public void setTextColor(int i7) {
-        this.d.setTextColor(i7);
+        return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
     }
 }

@@ -1,29 +1,27 @@
 package h9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import a8.ja;
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class w1 extends t0 {
-    public final transient l0 d;
-    public final transient x1 e;
+public final class w1 extends i0 {
+    public final transient Object[] c;
+    public final transient int d;
+    public final transient int e;
 
-    public w1(l0 l0Var, x1 x1Var) {
-        this.d = l0Var;
-        this.e = x1Var;
+    public w1(int i7, int i10, Object[] objArr) {
+        this.c = objArr;
+        this.d = i7;
+        this.e = i10;
     }
 
-    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.d.get(obj) != null;
-    }
-
-    @Override // h9.t0, h9.d0
-    public final i0 f() {
-        return this.e;
-    }
-
-    @Override // h9.d0
-    public final int i(int i7, Object[] objArr) {
-        return this.e.i(i7, objArr);
+    @Override // java.util.List
+    public final Object get(int i7) {
+        ja.j(i7, this.e);
+        Object obj = this.c[(i7 * 2) + this.d];
+        Objects.requireNonNull(obj);
+        return obj;
     }
 
     @Override // h9.d0
@@ -31,14 +29,8 @@ public final class w1 extends t0 {
         return true;
     }
 
-    @Override // h9.d0
-    /* renamed from: n */
-    public final h2 iterator() {
-        return this.e.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.d.size();
+        return this.e;
     }
 }

@@ -2,9 +2,9 @@ package bg;
 
 import android.graphics.Bitmap;
 import java.util.ArrayList;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -29,9 +29,9 @@ public final /* synthetic */ class e implements Runnable {
                 }
                 break;
             default:
-                sg.b0.h = this.b;
-                sg.b0.i = false;
-                qs.e().k(qs.C5, new Object[0]);
+                sg.a0.h = this.b;
+                sg.a0.i = false;
+                ns.e().k(ns.C5, new Object[0]);
                 break;
         }
     }

@@ -1,116 +1,146 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class jv0 extends t11 {
-    public final /* synthetic */ k11[] e2;
-    public final /* synthetic */ ProfileActivity f2;
+public final class jv0 extends mq0 {
+    public final /* synthetic */ ProfileActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jv0(ProfileActivity profileActivity, ProfileActivity profileActivity2, Activity activity, Integer num, int i7, org.telegram.ui.ActionBar.h6 h6Var, int i10, k11[] k11VarArr) {
-        super(profileActivity2, activity, true, num, i7, true, h6Var, i10);
-        this.f2 = profileActivity;
-        this.e2 = k11VarArr;
+    public jv0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // org.telegram.ui.t11
-    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        int i7;
-        if (tL_starGiftUnique == null) {
-            return true;
-        }
-        i7 = ((org.telegram.ui.ActionBar.f2) this.f2).currentAccount;
-        return bi.ea.y(i7, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.qp.e1().getInt("statusgiftpage", 0) >= 2;
-    }
-
-    @Override // org.telegram.ui.t11
-    public final long getDialogId() {
-        return this.f2.a();
-    }
-
-    @Override // org.telegram.ui.t11
-    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        TLRPC.EmojiStatus emojiStatus;
-        int i7;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0108  */
+    /* JADX WARN: Type inference failed for: r1v7, types: [org.telegram.ui.Components.i9] */
+    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final uq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+        TLRPC.Chat M0;
+        TLRPC.ChatPhoto chatPhoto;
+        TLRPC.FileLocation fileLocation2;
+        uq0 uq0Var;
         int i10;
-        int i11;
-        k11[] k11VarArr = this.e2;
-        ProfileActivity profileActivity = this.f2;
-        if (tL_starGiftUnique != null) {
-            i7 = ((org.telegram.ui.ActionBar.f2) profileActivity).currentAccount;
-            TL_stars.SavedStarGift n10 = bi.ea.y(i7, false).n(tL_starGiftUnique.id);
-            if (n10 != null && org.telegram.messenger.qp.e1().getInt("statusgiftpage", 0) < 2) {
-                org.telegram.messenger.qp.e1().edit().putInt("statusgiftpage", org.telegram.messenger.qp.e1().getInt("statusgiftpage", 0) + 1).apply();
-                Context context = getContext();
-                i10 = ((org.telegram.ui.ActionBar.f2) profileActivity).currentAccount;
-                i11 = ((org.telegram.ui.ActionBar.f2) profileActivity).currentAccount;
-                bi.k7 k7Var = new bi.k7(context, i10, org.telegram.messenger.p10.i(i11).e(), profileActivity.z0, null);
-                k7Var.i2(n10, null);
-                k7Var.n2();
-                k7Var.show();
-                k11 k11Var = k11VarArr[0];
-                if (k11Var != null) {
-                    profileActivity.P5 = null;
-                    k11Var.dismiss();
-                    return;
+        boolean z12;
+        long j3;
+        yu0 yu0Var;
+        yu0 yu0Var2;
+        org.telegram.ui.Components.uf0 uf0Var;
+        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated;
+        TLRPC.User a22;
+        TLRPC.UserProfilePhoto userProfilePhoto;
+        if (fileLocation != null) {
+            ProfileActivity profileActivity = this.a;
+            if (profileActivity.Y.getScaleX() <= 0.96f || !z11) {
+                if (profileActivity.e1 == 0 ? profileActivity.f1 == 0 || (M0 = profileActivity.getMessagesController().M0(Long.valueOf(profileActivity.f1))) == null || (chatPhoto = M0.photo) == null || (fileLocation2 = chatPhoto.photo_big) == null : (a22 = profileActivity.getMessagesController().a2(Long.valueOf(profileActivity.e1))) == null || (userProfilePhoto = a22.photo) == null || (fileLocation2 = userProfilePhoto.photo_big) == null) {
+                    fileLocation2 = null;
                 }
-                return;
-            }
-            TLRPC.TL_inputEmojiStatusCollectible tL_inputEmojiStatusCollectible = new TLRPC.TL_inputEmojiStatusCollectible();
-            tL_inputEmojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
-            emojiStatus = tL_inputEmojiStatusCollectible;
-            if (num != null) {
-                tL_inputEmojiStatusCollectible.flags |= 1;
-                tL_inputEmojiStatusCollectible.until = num.intValue();
-                emojiStatus = tL_inputEmojiStatusCollectible;
-            }
-        } else if (l10 == null) {
-            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
-        } else {
-            TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-            tL_emojiStatus.document_id = l10.longValue();
-            emojiStatus = tL_emojiStatus;
-            if (num != null) {
-                tL_emojiStatus.flags |= 1;
-                tL_emojiStatus.until = num.intValue();
-                emojiStatus = tL_emojiStatus;
+                boolean z13 = false;
+                boolean z14 = fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id;
+                yu0 yu0Var3 = profileActivity.o0;
+                if (yu0Var3 != null) {
+                    int realCount = yu0Var3.getRealCount();
+                    i10 = 0;
+                    while (i10 < realCount) {
+                        org.telegram.messenger.gc G = profileActivity.o0.G(i10);
+                        if (G != null && (tL_fileLocationToBeDeprecated = G.f) != null && tL_fileLocationToBeDeprecated.local_id == fileLocation.local_id) {
+                            uq0Var = null;
+                            if (tL_fileLocationToBeDeprecated.volume_id == fileLocation.volume_id && G.a == fileLocation.dc_id) {
+                                z14 = true;
+                                break;
+                            }
+                        }
+                        i10++;
+                    }
+                }
+                uq0Var = null;
+                i10 = -1;
+                if (!z14) {
+                    return uq0Var;
+                }
+                xu0 xu0Var = profileActivity.f0;
+                if (i10 >= 0 && (yu0Var = profileActivity.o0) != null && yu0Var.getVisibility() == 0) {
+                    if (i10 != profileActivity.o0.getRealPosition() && (uf0Var = (yu0Var2 = profileActivity.o0).E0) != null) {
+                        yu0Var2.x(uf0Var.j() + i10, false);
+                    }
+                    ?? currentItemView = profileActivity.o0.getCurrentItemView();
+                    if (currentItemView != 0) {
+                        xu0Var = currentItemView;
+                        z12 = true;
+                        int[] iArr = new int[2];
+                        xu0Var.getLocationInWindow(iArr);
+                        uq0 uq0Var2 = new uq0();
+                        uq0Var2.b = iArr[0];
+                        uq0Var2.c = iArr[1];
+                        uq0Var2.d = xu0Var;
+                        ImageReceiver imageReceiver = xu0Var.getImageReceiver();
+                        uq0Var2.a = imageReceiver;
+                        j3 = profileActivity.e1;
+                        if (j3 == 0) {
+                            uq0Var2.f = j3;
+                        } else {
+                            long j10 = profileActivity.f1;
+                            if (j10 != 0) {
+                                uq0Var2.f = -j10;
+                            }
+                        }
+                        uq0Var2.e = imageReceiver.p();
+                        uq0Var2.g = -1L;
+                        uq0Var2.h = xu0Var.getImageReceiver().E();
+                        uq0Var2.k = !z12 ? 1.0f : profileActivity.Y.getScaleX();
+                        uq0Var2.p = profileActivity.e1 != profileActivity.getUserConfig().n;
+                        if (!z12 && profileActivity.Y.getScaleX() > 0.96f) {
+                            z13 = true;
+                        }
+                        uq0Var2.r = z13;
+                        uq0Var2.s = z12;
+                        return uq0Var2;
+                    }
+                }
+                z12 = false;
+                int[] iArr2 = new int[2];
+                xu0Var.getLocationInWindow(iArr2);
+                uq0 uq0Var22 = new uq0();
+                uq0Var22.b = iArr2[0];
+                uq0Var22.c = iArr2[1];
+                uq0Var22.d = xu0Var;
+                ImageReceiver imageReceiver2 = xu0Var.getImageReceiver();
+                uq0Var22.a = imageReceiver2;
+                j3 = profileActivity.e1;
+                if (j3 == 0) {
+                }
+                uq0Var22.e = imageReceiver2.p();
+                uq0Var22.g = -1L;
+                uq0Var22.h = xu0Var.getImageReceiver().E();
+                uq0Var22.k = !z12 ? 1.0f : profileActivity.Y.getScaleX();
+                uq0Var22.p = profileActivity.e1 != profileActivity.getUserConfig().n;
+                if (!z12) {
+                    z13 = true;
+                }
+                uq0Var22.r = z13;
+                uq0Var22.s = z12;
+                return uq0Var22;
             }
         }
-        profileActivity.E = tL_starGiftUnique != null ? Long.valueOf(tL_starGiftUnique.id) : null;
-        org.telegram.messenger.qp messagesController = profileActivity.getMessagesController();
-        TLRPC.Chat chat = profileActivity.D2;
-        messagesController.g5(chat == null ? 0L : -chat.id, emojiStatus, tL_starGiftUnique);
-        org.telegram.ui.Components.f5 f5Var = profileActivity.F;
-        if (f5Var != null) {
-            if (l10 == null && profileActivity.D2 == null) {
-                f5Var.g(profileActivity.o4(), true);
-            } else if (l10 != null) {
-                f5Var.j(l10.longValue(), true);
-            } else {
-                f5Var.g(null, true);
-            }
-            profileActivity.F.m(tL_starGiftUnique != null, true);
-        }
-        if (l10 != null) {
-            org.telegram.ui.Cells.o oVar = profileActivity.d0;
-            ch.o0 o0Var = new ch.o0();
-            long longValue = l10.longValue();
-            o0Var.g = longValue;
-            o0Var.h = longValue;
-            oVar.a(o0Var);
-        }
-        profileActivity.v5();
-        profileActivity.x5();
-        k11 k11Var2 = k11VarArr[0];
-        if (k11Var2 != null) {
-            profileActivity.P5 = null;
-            k11Var2.dismiss();
-        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
+    public final void G() {
+        this.a.f0.getImageReceiver().O0(true, true);
+    }
+
+    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
+    public final void f(String str, String str2, boolean z10) {
+        this.a.r0.p(str, str2, z10);
     }
 }

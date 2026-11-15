@@ -1,6 +1,6 @@
 package z7;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f7 {
     public final Long a;
@@ -11,13 +11,13 @@ public final class f7 {
     public final Integer f;
     public final Integer g;
 
-    public /* synthetic */ f7(m.q3 q3Var) {
-        this.a = (Long) q3Var.a;
-        this.b = (e7) q3Var.b;
-        this.c = (z6) q3Var.c;
-        this.d = (Integer) q3Var.d;
-        this.e = (Integer) q3Var.e;
-        this.f = (Integer) q3Var.f;
-        this.g = (Integer) q3Var.g;
+    public /* synthetic */ f7(m.o3 o3Var) {
+        this.a = (Long) o3Var.a;
+        this.b = (e7) o3Var.b;
+        this.c = (z6) o3Var.c;
+        this.d = (Integer) o3Var.d;
+        this.e = (Integer) o3Var.e;
+        this.f = (Integer) o3Var.f;
+        this.g = (Integer) o3Var.g;
     }
 }

@@ -1,39 +1,24 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.tl.TL_update;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ik implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qp b;
-    public final /* synthetic */ TL_update.TL_updatePeerBlocked c;
+    public final /* synthetic */ boolean[] b;
 
-    public /* synthetic */ ik(qp qpVar, TL_update.TL_updatePeerBlocked tL_updatePeerBlocked, int i7) {
+    public /* synthetic */ ik(int i7, boolean[] zArr) {
         this.a = i7;
-        this.b = qpVar;
-        this.c = tL_updatePeerBlocked;
+        this.b = zArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                g0.h3(new ik(this.b, this.c, 1));
+                this.b[0] = true;
                 break;
             default:
-                qp qpVar = this.b;
-                LongSparseIntArray longSparseIntArray = qpVar.G0;
-                TL_update.TL_updatePeerBlocked tL_updatePeerBlocked = this.c;
-                long B1 = ij.B1(tL_updatePeerBlocked.peer_id);
-                if (!tL_updatePeerBlocked.blocked) {
-                    longSparseIntArray.delete(B1);
-                } else if (longSparseIntArray.indexOfKey(B1) < 0) {
-                    longSparseIntArray.put(B1, 1);
-                }
-                qpVar.getNotificationCenter().k(43, new Object[0]);
-                qpVar.P1().m0(B1, tL_updatePeerBlocked.blocked_my_stories_from, false);
+                this.b[0] = true;
                 break;
         }
     }

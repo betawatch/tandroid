@@ -2,18 +2,18 @@ package u9;
 
 import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public interface b {
     Object a(Class cls);
 
-    p b(r rVar);
+    o b(q qVar);
 
     ua.b c(Class cls);
 
-    Object e(r rVar);
+    Object e(q qVar);
 
-    ua.b f(r rVar);
+    ua.b f(q qVar);
 
-    Set g(r rVar);
+    Set g(q qVar);
 }

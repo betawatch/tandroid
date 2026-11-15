@@ -1,27 +1,18 @@
 package pb;
 
-import java.util.concurrent.Executor;
+import java.lang.ref.PhantomReference;
+import java.lang.ref.ReferenceQueue;
+import java.util.Set;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class m implements Executor {
-    public static final m a;
-    public static final /* synthetic */ m[] b;
+public final class m extends PhantomReference {
+    public final Set a;
+    public final androidx.emoji2.text.o b;
 
-    static {
-        m mVar = new m("INSTANCE", 0);
-        a = mVar;
-        b = new m[]{mVar};
-    }
-
-    public static m[] values() {
-        return (m[]) b.clone();
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        f.a().a.post(runnable);
+    public /* synthetic */ m(a aVar, ReferenceQueue referenceQueue, Set set, androidx.emoji2.text.o oVar) {
+        super(aVar, referenceQueue);
+        this.a = set;
+        this.b = oVar;
     }
 }

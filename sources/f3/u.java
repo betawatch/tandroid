@@ -2,11 +2,11 @@ package f3;
 
 import e2.q0;
 import e2.s0;
-import h2.m0;
+import h2.l0;
 import java.nio.ByteOrder;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class u {
     public final int a;
@@ -19,7 +19,7 @@ public final class u {
     public final int h;
     public final int i;
     public final long j;
-    public final q4.q k;
+    public final wf.b k;
     public final q0 l;
 
     public u(byte[] bArr, int i7) {
@@ -112,14 +112,14 @@ public final class u {
         tVar.s = i7;
         tVar.J = this.g;
         tVar.K = this.e;
-        String str = m0.a;
-        tVar.L = m0.D(this.h, ByteOrder.LITTLE_ENDIAN);
+        String str = l0.a;
+        tVar.L = l0.D(this.h, ByteOrder.LITTLE_ENDIAN);
         tVar.u = Collections.singletonList(bArr);
         tVar.k = q0Var;
         return new e2.u(tVar);
     }
 
-    public u(int i7, int i10, int i11, int i12, int i13, int i14, int i15, long j3, q4.q qVar, q0 q0Var) {
+    public u(int i7, int i10, int i11, int i12, int i13, int i14, int i15, long j3, wf.b bVar, q0 q0Var) {
         this.a = i7;
         this.b = i10;
         this.c = i11;
@@ -130,7 +130,7 @@ public final class u {
         this.h = i15;
         this.i = a(i15);
         this.j = j3;
-        this.k = qVar;
+        this.k = bVar;
         this.l = q0Var;
     }
 }

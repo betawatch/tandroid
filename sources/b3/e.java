@@ -1,9 +1,9 @@
 package b3;
 
-import h2.m0;
+import h2.l0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e {
     public int c;
@@ -65,15 +65,15 @@ public final class e {
     }
 
     public final synchronized void d(int i7) {
-        boolean z9 = i7 < this.c;
+        boolean z10 = i7 < this.c;
         this.c = i7;
-        if (z9) {
+        if (z10) {
             e();
         }
     }
 
     public final synchronized void e() {
-        int max = Math.max(0, m0.g(this.c, this.b) - this.d);
+        int max = Math.max(0, l0.g(this.c, this.b) - this.d);
         int i7 = this.e;
         if (max >= i7) {
             return;

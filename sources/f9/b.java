@@ -1,74 +1,30 @@
 package f9;
 
-import android.content.ComponentName;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.util.Log;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.content.Context;
+import android.graphics.SurfaceTexture;
+import org.telegram.messenger.FilesMigrationService;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class b implements ServiceConnection {
-    public e9.c a;
-    public final /* synthetic */ c b;
-
-    public b(c cVar) {
-        this.b = cVar;
+public abstract /* synthetic */ class b {
+    public static /* synthetic */ Notification.Builder a(Context context, String str) {
+        return new Notification.Builder(context, str);
     }
 
-    public static boolean a(b bVar) {
-        return bVar.a != null;
+    public static /* synthetic */ Notification.Builder b(FilesMigrationService filesMigrationService, String str) {
+        return new Notification.Builder(filesMigrationService, str);
     }
 
-    public final boolean b(Intent intent, Bundle bundle) {
-        e9.c cVar = this.a;
-        if (cVar != null) {
-            e9.a aVar = (e9.a) cVar;
-            Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
-            int i7 = k5.a.a;
-            if (intent == null) {
-                obtain.writeInt(0);
-            } else {
-                obtain.writeInt(1);
-                intent.writeToParcel(obtain, 0);
-            }
-            obtain.writeInt(1);
-            bundle.writeToParcel(obtain, 0);
-            Parcel h12 = aVar.h1(obtain, 1);
-            boolean z9 = h12.readInt() != 0;
-            h12.recycle();
-            if (z9) {
-                return true;
-            }
-        }
-        return false;
+    public static /* synthetic */ NotificationChannel c(String str) {
+        return new NotificationChannel("Assistant_verifier", str, 2);
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        e9.c aVar;
-        if (this.b.a) {
-            Log.d("SAVerificationClientS", "onServiceConnected");
-        }
-        int i7 = e9.b.a;
-        if (iBinder == null) {
-            aVar = null;
-        } else {
-            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.search.verification.api.ISearchActionVerificationService");
-            aVar = queryLocalInterface instanceof e9.c ? (e9.c) queryLocalInterface : new e9.a(iBinder);
-        }
-        this.a = aVar;
+    public static /* synthetic */ SurfaceTexture d() {
+        return new SurfaceTexture(false);
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        this.a = null;
-        if (this.b.a) {
-            Log.d("SAVerificationClientS", "onServiceDisconnected");
-        }
+    public static /* synthetic */ void e() {
     }
 }

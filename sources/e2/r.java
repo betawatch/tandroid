@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r implements Comparator, Parcelable {
     public static final Parcelable.Creator<r> CREATOR = new p(0);
@@ -66,9 +66,9 @@ public final class r implements Comparator, Parcelable {
         parcel.writeTypedArray(this.a, 0);
     }
 
-    public r(String str, boolean z9, q... qVarArr) {
+    public r(String str, boolean z10, q... qVarArr) {
         this.c = str;
-        qVarArr = z9 ? (q[]) qVarArr.clone() : qVarArr;
+        qVarArr = z10 ? (q[]) qVarArr.clone() : qVarArr;
         this.a = qVarArr;
         this.d = qVarArr.length;
         Arrays.sort(qVarArr, this);
@@ -77,7 +77,7 @@ public final class r implements Comparator, Parcelable {
     public r(Parcel parcel) {
         this.c = parcel.readString();
         q[] qVarArr = (q[]) parcel.createTypedArray(q.CREATOR);
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         this.a = qVarArr;
         this.d = qVarArr.length;
     }

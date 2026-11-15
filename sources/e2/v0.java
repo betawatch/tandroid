@@ -2,7 +2,7 @@ package e2;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class v0 extends Exception {
     public static final String d;
@@ -16,7 +16,7 @@ public abstract class v0 extends Exception {
     public final Bundle c;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         d = Integer.toString(0, 36);
         e = Integer.toString(1, 36);
         f = Integer.toString(2, 36);

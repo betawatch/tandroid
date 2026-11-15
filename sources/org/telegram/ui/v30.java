@@ -1,17 +1,58 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class v30 extends org.telegram.ui.Cells.z3 {
-    @Override // org.telegram.ui.Cells.z3, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        if (org.telegram.messenger.g0.Q1()) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(420.0f), View.MeasureSpec.getSize(i7)), TLObject.FLAG_30), i10);
-        } else {
-            super.onMeasure(i7, i10);
+public final class v30 extends org.telegram.ui.Components.voip.r {
+    public final /* synthetic */ int h = 1;
+    public final /* synthetic */ org.telegram.ui.Components.tj0 n;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v30(f40 f40Var, Context context) {
+        super(context, true);
+        this.n = f40Var;
+    }
+
+    @Override // org.telegram.ui.Components.voip.r, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        switch (this.h) {
+            case 0:
+                super.onAttachedToWindow();
+                c40 c40Var = ((w30) this.n).N;
+                if (c40Var.L1.getVisibility() == 0 && c40Var.O4) {
+                    c40.J0(c40Var, this, true);
+                    break;
+                }
+                break;
+            default:
+                super.onAttachedToWindow();
+                f40 f40Var = (f40) this.n;
+                if (f40Var.r && getParticipant() != null) {
+                    f40Var.E(this, true);
+                    break;
+                }
+                break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.voip.r, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        switch (this.h) {
+            case 0:
+                super.onDetachedFromWindow();
+                c40.J0(((w30) this.n).N, this, false);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                ((f40) this.n).E(this, false);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v30(w30 w30Var, Context context) {
+        super(context, false);
+        this.n = w30Var;
     }
 }

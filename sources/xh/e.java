@@ -11,20 +11,20 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.iz;
-import org.telegram.ui.Components.k40;
-import org.telegram.ui.Components.w30;
-import org.telegram.ui.vq0;
+import org.telegram.messenger.gz;
+import org.telegram.ui.Components.n40;
+import org.telegram.ui.Components.z30;
+import org.telegram.ui.eh0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class e {
     public static HashMap n;
     public final double a;
     public final double b;
     public final int c;
-    public final vq0 d;
-    public final k40 e;
+    public final eh0 d;
+    public final n40 e;
     public d f;
     public final int g;
     public final int h;
@@ -34,19 +34,19 @@ public final class e {
     public int l = 0;
     public final c m = new c(this, 0);
 
-    public e(int i7, vq0 vq0Var, int i10, int i11) {
+    public e(int i7, eh0 eh0Var, int i10, int i11) {
         double d = 1.0d / ((int) g0.r);
         this.a = d;
         this.b = d * 4.0d;
         this.c = i7;
         this.g = i10;
         this.h = i11;
-        this.d = vq0Var;
-        k40 k40Var = new k40(2, vq0Var.getContext(), this);
-        this.e = k40Var;
-        k40Var.setSurfaceTextureListener(new w30(this, 5));
-        k40Var.setOpaque(false);
-        vq0Var.addView(k40Var);
+        this.d = eh0Var;
+        n40 n40Var = new n40(2, eh0Var.getContext(), this);
+        this.e = n40Var;
+        n40Var.setSurfaceTextureListener(new z30(this, 4));
+        n40Var.setOpaque(false);
+        eh0Var.addView(n40Var);
     }
 
     public static e d(int i7, View view, ViewGroup viewGroup) {
@@ -59,7 +59,7 @@ public final class e {
         }
         e eVar = (e) n.get(Integer.valueOf(i7));
         if (eVar == null) {
-            int o4 = iz.o();
+            int o4 = gz.o();
             if (o4 == 1) {
                 Point point = g0.q;
                 min = Math.min(900, (int) (((point.x + point.y) / 2.0f) * 0.8f));
@@ -75,9 +75,9 @@ public final class e {
             }
             HashMap hashMap = n;
             Integer valueOf = Integer.valueOf(i7);
-            vq0 vq0Var = new vq0(viewGroup.getContext(), 20);
-            viewGroup.addView(vq0Var);
-            e eVar2 = new e(i7, vq0Var, min, min);
+            eh0 eh0Var = new eh0(viewGroup.getContext(), 22);
+            viewGroup.addView(eh0Var);
+            e eVar2 = new e(i7, eh0Var, min, min);
             hashMap.put(valueOf, eVar2);
             eVar = eVar2;
         }
@@ -97,7 +97,7 @@ public final class e {
         return d(0, view, viewGroup);
     }
 
-    public static void f(boolean z9) {
+    public static void f(boolean z10) {
         d dVar;
         HashMap hashMap = n;
         if (hashMap == null) {
@@ -105,7 +105,7 @@ public final class e {
         }
         for (e eVar : hashMap.values()) {
             if (eVar.c == 0 && (dVar = eVar.f) != null) {
-                dVar.b = z9;
+                dVar.b = z10;
             }
         }
     }
@@ -135,7 +135,7 @@ public final class e {
         g0.i3(cVar, 30L);
     }
 
-    public final void c(Canvas canvas, View view, int i7, int i10, float f10, boolean z9) {
+    public final void c(Canvas canvas, View view, int i7, int i10, float f10, boolean z10) {
         if (canvas == null || view == null) {
             return;
         }
@@ -159,9 +159,9 @@ public final class e {
         if (num.intValue() % 4 == 3) {
             canvas.scale(1.0f, -1.0f, i11 / 2.0f, i12 / 2.0f);
         }
-        k40 k40Var = this.e;
-        if (z9) {
-            Bitmap bitmap = k40Var.getBitmap();
+        n40 n40Var = this.e;
+        if (z10) {
+            Bitmap bitmap = n40Var.getBitmap();
             if (bitmap != null) {
                 Paint paint = new Paint(7);
                 paint.setColor(-1);
@@ -169,8 +169,8 @@ public final class e {
                 bitmap.recycle();
             }
         } else {
-            k40Var.setAlpha(f10);
-            k40Var.draw(canvas);
+            n40Var.setAlpha(f10);
+            n40Var.draw(canvas);
         }
         canvas.restore();
     }

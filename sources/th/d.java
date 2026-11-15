@@ -2,65 +2,65 @@ package th;
 
 import android.graphics.Canvas;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fz;
+import org.telegram.messenger.dz;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gf;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.gc;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class d extends sh.d {
-    public final gf b;
-    public final fz c;
+public final class d extends sh.c {
+    public final ff b;
+    public final dz c;
 
     /* JADX WARN: Removed duplicated region for block: B:6:0x0081  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x008a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public d(fz fzVar) {
-        hc hcVar;
-        hc hcVar2;
-        this.c = fzVar;
-        gf gfVar = fzVar.y;
-        this.b = gfVar;
+    public d(dz dzVar) {
+        gc gcVar;
+        gc gcVar2;
+        this.c = dzVar;
+        ff ffVar = dzVar.y;
+        this.b = ffVar;
         this.a.J0(g0.L(7.0f));
         ImageReceiver imageReceiver = this.a;
         imageReceiver.G0(0, 0, true);
-        String str = gfVar.g;
-        int i7 = gfVar.C;
-        String str2 = gfVar.I;
+        String str = ffVar.g;
+        int i7 = ffVar.C;
+        String str2 = ffVar.I;
         if (str != null) {
-            hcVar = hc.g(str);
+            gcVar = gc.g(str);
         } else {
-            String str3 = gfVar.c;
+            String str3 = ffVar.c;
             if (str3 != null) {
-                hcVar = hc.g(str3);
+                gcVar = gc.g(str3);
             } else if (str2 == null) {
                 imageReceiver.f();
-                hcVar = null;
+                gcVar = null;
             } else {
-                if (!gfVar.b || gfVar.d()) {
-                    hc g10 = hc.g("thumb://" + i7 + ":" + str2);
-                    imageReceiver.G0(gfVar.J, gfVar.K, true);
-                    hcVar2 = g10;
-                    if (hcVar2 == null) {
-                        imageReceiver.q0(hcVar2, null, null, null, null, 0);
+                if (!ffVar.b || ffVar.d()) {
+                    gc g10 = gc.g("thumb://" + i7 + ":" + str2);
+                    imageReceiver.G0(ffVar.J, ffVar.K, true);
+                    gcVar2 = g10;
+                    if (gcVar2 == null) {
+                        imageReceiver.q0(gcVar2, null, null, null, null, 0);
                         return;
                     } else {
                         imageReceiver.f();
                         return;
                     }
                 }
-                hcVar = hc.g("vthumb://" + i7 + ":" + str2);
+                gcVar = gc.g("vthumb://" + i7 + ":" + str2);
             }
         }
-        hcVar2 = hcVar;
-        if (hcVar2 == null) {
+        gcVar2 = gcVar;
+        if (gcVar2 == null) {
         }
     }
 
-    @Override // sh.d
+    @Override // sh.c
     public final void c(Canvas canvas, int i7, int i10) {
         ImageReceiver imageReceiver = this.a;
         imageReceiver.y0(0.0f, 0.0f, i7, i10);

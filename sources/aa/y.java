@@ -1,56 +1,37 @@
 package aa;
 
-import android.os.Process;
-import android.util.Log;
-import java.util.Locale;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class y implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Object b;
+public final class y implements ThreadFactory {
+    public final /* synthetic */ int a;
+    public final Number b;
 
-    public y(Runnable runnable) {
-        this.b = runnable;
+    public y() {
+        this.a = 1;
+        this.b = new AtomicInteger(0);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Process.setThreadPriority(10);
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
         switch (this.a) {
             case 0:
-                ((Runnable) this.b).run();
-                break;
+                Thread newThread = Executors.defaultThreadFactory().newThread(new x(runnable));
+                newThread.setName("awaitEvenIfOnMainThread task continuation executor" + ((AtomicLong) this.b).getAndIncrement());
+                return newThread;
             default:
-                ExecutorService executorService = (ExecutorService) this.b;
-                try {
-                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                        Log.d("FirebaseCrashlytics", "Executing shutdown hook for awaitEvenIfOnMainThread task continuation executor", null);
-                    }
-                    executorService.shutdown();
-                    if (!executorService.awaitTermination(2L, TimeUnit.SECONDS)) {
-                        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                            Log.d("FirebaseCrashlytics", "awaitEvenIfOnMainThread task continuation executor did not shut down in the allocated time. Requesting immediate shutdown.", null);
-                        }
-                        executorService.shutdownNow();
-                        break;
-                    }
-                } catch (InterruptedException unused) {
-                    Locale locale = Locale.US;
-                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                        Log.d("FirebaseCrashlytics", "Interrupted while waiting for awaitEvenIfOnMainThread task continuation executor to shut down. Requesting immediate shutdown.", null);
-                    }
-                    executorService.shutdownNow();
-                    return;
-                }
-                break;
+                Thread thread = new Thread(runnable);
+                thread.setName("arch_disk_io_" + ((AtomicInteger) this.b).getAndIncrement());
+                return thread;
         }
     }
 
-    public y(ExecutorService executorService) {
-        TimeUnit timeUnit = TimeUnit.SECONDS;
-        this.b = executorService;
+    public y(AtomicLong atomicLong) {
+        this.a = 0;
+        this.b = atomicLong;
     }
 }

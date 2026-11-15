@@ -1,11 +1,31 @@
 package c8;
 
-import android.view.View;
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.ui.Components.z70;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class sa {
-    public static void a(View view, float f10, float f11, float f12, float f13) {
-        view.setPadding(org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f11), org.telegram.messenger.g0.L(f12), org.telegram.messenger.g0.L(f13));
+    public static z70 a(Context context, float f10, int i7, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+        int i10 = org.telegram.ui.ActionBar.j6.Xc;
+        z70 z70Var = new z70(context, null);
+        z70Var.setTextSize(1, f10);
+        org.telegram.ui.ActionBar.q6.U(z70Var, i7, e6Var);
+        org.telegram.ui.ActionBar.q6.G(z70Var, i10, e6Var);
+        if (z10) {
+            z70Var.setTypeface(org.telegram.messenger.g0.o());
+        }
+        return z70Var;
+    }
+
+    public static TextView b(Context context, float f10, int i7, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, f10);
+        org.telegram.ui.ActionBar.q6.U(textView, i7, e6Var);
+        if (z10) {
+            textView.setTypeface(org.telegram.messenger.g0.o());
+        }
+        return textView;
     }
 }

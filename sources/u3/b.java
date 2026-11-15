@@ -1,19 +1,19 @@
 package u3;
 
-import a8.ia;
+import a8.ja;
 import e2.n0;
 import e2.p0;
 import e2.u;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements p0 {
     public final ArrayList a;
 
     public b(ArrayList arrayList) {
         this.a = arrayList;
-        boolean z9 = false;
+        boolean z10 = false;
         if (!arrayList.isEmpty()) {
             long j3 = ((a) arrayList.get(0)).b;
             int i7 = 1;
@@ -22,7 +22,7 @@ public final class b implements p0 {
                     break;
                 }
                 if (((a) arrayList.get(i7)).a < j3) {
-                    z9 = true;
+                    z10 = true;
                     break;
                 } else {
                     j3 = ((a) arrayList.get(i7)).b;
@@ -30,7 +30,7 @@ public final class b implements p0 {
                 }
             }
         }
-        ia.f(!z9);
+        ja.f(!z10);
     }
 
     @Override // e2.p0

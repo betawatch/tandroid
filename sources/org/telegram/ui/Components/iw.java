@@ -1,25 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class iw extends c8.ja {
-    public final /* synthetic */ gy a;
+public final class iw extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ ly c;
 
-    public iw(gy gyVar) {
-        this.a = gyVar;
+    public /* synthetic */ iw(ly lyVar, boolean z10, int i7) {
+        this.a = i7;
+        this.c = lyVar;
+        this.b = z10;
     }
 
-    @Override // c8.ja
-    public final void a() {
-        gy gyVar = this.a;
-        gyVar.f0 = false;
-        gyVar.P.B1();
-    }
-
-    @Override // c8.ja
-    public final void b() {
-        gy gyVar = this.a;
-        gyVar.P.B1();
-        gyVar.f0 = true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                if (!this.b) {
+                    this.c.y.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!this.b) {
+                    this.c.E.setVisibility(4);
+                    break;
+                }
+                break;
+        }
     }
 }

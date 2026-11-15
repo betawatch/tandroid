@@ -9,7 +9,7 @@ import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class r5 extends FrameLayout {
     public final TextView a;
@@ -30,7 +30,7 @@ public final class r5 extends FrameLayout {
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, c8.ha.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(textView, c8.ja.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.b = linearLayout;
         linearLayout.setOrientation(0);
@@ -38,10 +38,10 @@ public final class r5 extends FrameLayout {
             RadioButton radioButton = new RadioButton(context);
             radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
             radioButton.setTag(Integer.valueOf(i10));
-            this.b.addView(radioButton, c8.ha.l(1.0f / this.e.length, 0, -1));
+            this.b.addView(radioButton, c8.ja.l(1.0f / this.e.length, 0, -1));
             radioButton.setOnClickListener(new a(this, i7));
         }
-        addView(this.b, c8.ha.d(-1, 40.0f, 51, 96.0f, 0.0f, 24.0f, 0.0f));
+        addView(this.b, c8.ja.d(-1, 40.0f, 51, 96.0f, 0.0f, 24.0f, 0.0f));
     }
 
     public final void a(int i7, String str) {
@@ -50,7 +50,7 @@ public final class r5 extends FrameLayout {
         b(false);
     }
 
-    public final void b(boolean z9) {
+    public final void b(boolean z10) {
         LinearLayout linearLayout = this.b;
         int childCount = linearLayout.getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
@@ -59,7 +59,7 @@ public final class r5 extends FrameLayout {
                 RadioButton radioButton = (RadioButton) childAt;
                 int intValue = ((Integer) radioButton.getTag()).intValue();
                 int[] iArr = this.e;
-                radioButton.a(this.d == iArr[intValue], z9);
+                radioButton.a(this.d == iArr[intValue], z10);
                 radioButton.b(intValue == 0 ? -1 : iArr[intValue], intValue != 0 ? iArr[intValue] : -1);
             }
         }

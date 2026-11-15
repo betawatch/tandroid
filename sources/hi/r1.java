@@ -1,48 +1,235 @@
 package hi;
 
-import android.text.Editable;
+import android.content.Context;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.lb0;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
+import org.telegram.messenger.vr;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.dc;
+import org.telegram.ui.Components.tj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class r1 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ lb0 d;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class r1 extends tj0 {
+    public String e;
+    public TLRPC.User f;
+    public String h;
+    public boolean n;
+    public final /* synthetic */ t1 s;
+    public final e1 c = new e1(this, 1);
+    public int d = -1;
+    public boolean r = false;
 
-    public r1(EditTextBoldCursor editTextBoldCursor, int i7, lb0 lb0Var) {
-        this.b = editTextBoldCursor;
-        this.c = i7;
-        this.d = lb0Var;
+    public r1(t1 t1Var) {
+        this.s = t1Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        EditTextBoldCursor editTextBoldCursor = this.b;
-        CharSequence text = editTextBoldCursor.getText();
-        if (!this.a) {
-            int length = text.length();
-            int i7 = this.c;
-            if (length > i7) {
-                this.a = true;
-                text = text.subSequence(0, i7);
-                editTextBoldCursor.setText(text);
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                this.a = false;
+    public static void E(r1 r1Var, boolean z10) {
+        t1 t1Var = r1Var.s;
+        ArrayList arrayList = t1Var.h;
+        arrayList.clear();
+        i2 i2Var = t1Var.r;
+        int i7 = i2.C1;
+        arrayList.addAll(new ArrayList(si.b0(i2Var.a).j0));
+        if (z10) {
+            r1Var.f();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tj0
+    public final boolean D(v4.e1 e1Var) {
+        return e1Var.f == 2;
+    }
+
+    public final Object F(int i7) {
+        int i10 = i7 - 1;
+        t1 t1Var = this.s;
+        if (!t1Var.h.isEmpty() && TextUtils.isEmpty(this.e)) {
+            if (i10 >= 0 && i10 < t1Var.h.size()) {
+                return t1Var.h.get(i10);
+            }
+            i10 -= t1Var.h.size();
+        }
+        if (t1Var.n.isEmpty()) {
+            return null;
+        }
+        if (!t1Var.h.isEmpty() && TextUtils.isEmpty(this.e)) {
+            i10--;
+        }
+        if (i10 < 0 || i10 >= t1Var.n.size()) {
+            return null;
+        }
+        return t1Var.n.get(i10);
+    }
+
+    public final void G() {
+        t1 t1Var = this.s;
+        i2 i2Var = t1Var.r;
+        if (this.r) {
+            return;
+        }
+        this.r = true;
+        t1Var.d.c(true);
+        if (this.d >= 0) {
+            int i7 = i2.C1;
+            ConnectionsManager.getInstance(i2Var.a).cancelRequest(this.d, true);
+            this.d = -1;
+        }
+        if (this.f == null) {
+            int i10 = i2.C1;
+            TLObject f22 = np.s1(i2Var.a).f2(np.s1(i2Var.a).L3);
+            if (f22 instanceof TLRPC.User) {
+                this.f = (TLRPC.User) f22;
             }
         }
-        this.d.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(text));
+        TLRPC.User user = this.f;
+        if (user == null && !this.n) {
+            TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
+            int i11 = i2.C1;
+            tL_contacts_resolveUsername.username = np.s1(i2Var.a).L3;
+            this.d = ConnectionsManager.getInstance(i2Var.a).sendRequest(tL_contacts_resolveUsername, new ai.d1(this, 9));
+            return;
+        }
+        if (user == null) {
+            return;
+        }
+        TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
+        int i12 = i2.C1;
+        tL_messages_getInlineBotResults.bot = np.s1(i2Var.a).q1(this.f);
+        String str = this.e;
+        if (str == null) {
+            str = "";
+        }
+        tL_messages_getInlineBotResults.query = str;
+        boolean isEmpty = TextUtils.isEmpty(this.h);
+        String str2 = this.h;
+        tL_messages_getInlineBotResults.offset = str2 != null ? str2 : "";
+        tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
+        String str3 = "gif_search_" + tL_messages_getInlineBotResults.query + "_" + tL_messages_getInlineBotResults.offset;
+        vr.a0(i2Var.a).M(str3, new di.f3(this, isEmpty, tL_messages_getInlineBotResults, str3));
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    public final void H(String str) {
+        t1 t1Var = this.s;
+        d2 d2Var = t1Var.d;
+        if (!TextUtils.equals(this.e, str)) {
+            if (this.d != -1) {
+                i2 i2Var = t1Var.r;
+                int i7 = i2.C1;
+                ConnectionsManager.getInstance(i2Var.a).cancelRequest(this.d, true);
+                this.d = -1;
+            }
+            this.r = false;
+            this.h = "";
+        }
+        boolean isEmpty = TextUtils.isEmpty(this.e);
+        this.e = str;
+        e1 e1Var = this.c;
+        org.telegram.messenger.g0.r(e1Var);
+        if (TextUtils.isEmpty(str)) {
+            t1Var.n.clear();
+            d2Var.c(false);
+            f();
+        } else {
+            if (isEmpty) {
+                f();
+            }
+            d2Var.c(true);
+            org.telegram.messenger.g0.i3(e1Var, 1500L);
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    @Override // v4.h0
+    public final int b() {
+        t1 t1Var = this.s;
+        int i7 = 0;
+        int size = ((t1Var.h.isEmpty() || !TextUtils.isEmpty(this.e)) ? 0 : t1Var.h.size()) + 1;
+        if (!t1Var.n.isEmpty()) {
+            if (!t1Var.h.isEmpty() && TextUtils.isEmpty(this.e)) {
+                i7 = 1;
+            }
+            i7 += t1Var.n.size();
+        }
+        return size + i7;
+    }
+
+    @Override // v4.h0
+    public final int d(int i7) {
+        if (i7 == 0) {
+            return 0;
+        }
+        int i10 = i7 - 1;
+        t1 t1Var = this.s;
+        if (!t1Var.h.isEmpty() && TextUtils.isEmpty(this.e)) {
+            i10 -= t1Var.h.size();
+        }
+        return (t1Var.n.isEmpty() || t1Var.h.isEmpty() || !TextUtils.isEmpty(this.e) || i10 != 0) ? 2 : 1;
+    }
+
+    @Override // v4.h0
+    public final void t(v4.e1 e1Var, int i7) {
+        int i10 = e1Var.f;
+        View view = e1Var.a;
+        if (i10 == 0) {
+            view.setTag(34);
+            view.setLayoutParams(new v4.p0(-1, (int) this.s.r.s1));
+            return;
+        }
+        if (i10 == 2) {
+            org.telegram.ui.Cells.h2 h2Var = (org.telegram.ui.Cells.h2) view;
+            Object F = F(i7);
+            if (!(F instanceof TLRPC.Document)) {
+                if (F instanceof TLRPC.BotInlineResult) {
+                    h2Var.e((TLRPC.BotInlineResult) F, this.f, true, false, false, true);
+                }
+            } else {
+                TLRPC.Document document = (TLRPC.Document) F;
+                h2Var.getClass();
+                h2Var.d(0, "gif" + document, document);
+            }
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.View, org.telegram.ui.Cells.i8] */
+    /* JADX WARN: Type inference failed for: r9v12, types: [android.view.View] */
+    @Override // v4.h0
+    public final v4.e1 x(ViewGroup viewGroup, int i7) {
+        org.telegram.ui.Cells.h2 h2Var;
+        t1 t1Var = this.s;
+        if (i7 == 0) {
+            h2Var = new View(t1Var.getContext());
+        } else if (i7 == 1) {
+            Context context = t1Var.getContext();
+            i2 i2Var = t1Var.r;
+            int i10 = i2.C1;
+            ?? i8Var = new org.telegram.ui.Cells.i8(context, false, false, i2Var.J0, false);
+            i8Var.a(0, hd.M0(2131750834, null));
+            v4.p0 p0Var = new v4.p0(-1, -2);
+            ((ViewGroup.MarginLayoutParams) p0Var).topMargin = org.telegram.messenger.g0.L(2.5f);
+            ((ViewGroup.MarginLayoutParams) p0Var).bottomMargin = org.telegram.messenger.g0.L(5.5f);
+            i8Var.setLayoutParams(p0Var);
+            h2Var = i8Var;
+        } else {
+            org.telegram.ui.Cells.h2 h2Var2 = new org.telegram.ui.Cells.h2(t1Var.getContext());
+            h2Var2.getPhotoImage().E0(7);
+            if (h2Var2.e0 == null) {
+                dc dcVar = new dc(h2Var2, 1.0f, 3.0f);
+                dcVar.e = 120L;
+                h2Var2.e0 = dcVar;
+            }
+            h2Var2.setIsKeyboard(true);
+            h2Var2.setCanPreviewGif(true);
+            h2Var = h2Var2;
+        }
+        return new cj0(h2Var);
     }
 }

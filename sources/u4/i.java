@@ -7,22 +7,22 @@ import c0.m;
 import java.io.File;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class i {
     public static final m a = new m();
     public static final Object b = new Object();
-    public static nb.a c = null;
+    public static sa.d c = null;
 
     public static long a(Context context) {
         PackageManager packageManager = context.getApplicationContext().getPackageManager();
         return Build.VERSION.SDK_INT >= 33 ? g.a(packageManager, context).lastUpdateTime : packageManager.getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
     }
 
-    public static nb.a b() {
-        nb.a aVar = new nb.a(26);
-        c = aVar;
-        a.k(aVar);
+    public static sa.d b() {
+        sa.d dVar = new sa.d(26);
+        c = dVar;
+        a.k(dVar);
         return c;
     }
 
@@ -34,13 +34,13 @@ public abstract class i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void c(Context context, boolean z9) {
+    public static void c(Context context, boolean z10) {
         h a10;
         h hVar;
         int i7;
-        if (z9 || c == null) {
+        if (z10 || c == null) {
             synchronized (b) {
-                if (!z9) {
+                if (!z10) {
                     try {
                         if (c != null) {
                             return;
@@ -54,10 +54,10 @@ public abstract class i {
                     File file = new File(new File("/data/misc/profiles/ref/", context.getPackageName()), "primary.prof");
                     long length = file.length();
                     int i11 = 0;
-                    boolean z10 = file.exists() && length > 0;
+                    boolean z11 = file.exists() && length > 0;
                     File file2 = new File(new File("/data/misc/profiles/cur/0/", context.getPackageName()), "primary.prof");
                     long length2 = file2.length();
-                    boolean z11 = file2.exists() && length2 > 0;
+                    boolean z12 = file2.exists() && length2 > 0;
                     try {
                         long a11 = a(context);
                         File file3 = new File(context.getFilesDir(), "profileInstalled");
@@ -73,7 +73,7 @@ public abstract class i {
                         }
                         if (a10 != null && a10.c == a11 && (i7 = a10.b) != 2) {
                             i11 = i7;
-                            if (z9 && z11 && i11 != 1) {
+                            if (z10 && z12 && i11 != 1) {
                                 i11 = 2;
                             }
                             if (a10 != null && a10.b == 2 && i11 == 1 && length < a10.d) {
@@ -86,10 +86,10 @@ public abstract class i {
                             b();
                             return;
                         }
-                        if (z11) {
+                        if (z12) {
                             i11 = 2;
                         }
-                        if (z9) {
+                        if (z10) {
                             i11 = 2;
                         }
                         if (a10 != null) {

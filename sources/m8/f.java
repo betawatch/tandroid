@@ -6,7 +6,7 @@ import androidx.car.app.j;
 import q6.m;
 import v7.i;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f {
     public final v7.a a;
@@ -16,13 +16,13 @@ public final class f {
         this.a = aVar;
     }
 
-    public final void a(k8.a aVar) {
-        v7.a aVar2 = this.a;
+    public final void a(ia.d dVar) {
+        v7.a aVar = this.a;
         try {
-            a7.a aVar3 = aVar.a;
-            i iVar = (i) aVar2;
+            a7.a aVar2 = (a7.a) dVar.b;
+            i iVar = (i) aVar;
             Parcel p12 = iVar.p1();
-            v7.b.c(p12, aVar3);
+            v7.b.c(p12, aVar2);
             iVar.t1(p12, 18);
         } catch (RemoteException e10) {
             throw new j(e10);
@@ -40,9 +40,9 @@ public final class f {
             Parcel p12 = iVar.p1();
             v7.b.c(p12, aVar2);
             Parcel o12 = iVar.o1(p12, 16);
-            boolean z9 = o12.readInt() != 0;
+            boolean z10 = o12.readInt() != 0;
             o12.recycle();
-            return z9;
+            return z10;
         } catch (RemoteException e10) {
             throw new j(e10);
         }

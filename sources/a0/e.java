@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements Collection {
     public final /* synthetic */ int a = 0;
@@ -130,17 +130,17 @@ public final class e implements Collection {
                 f fVar = (f) this.b;
                 int i7 = fVar.c;
                 int i10 = 0;
-                boolean z9 = false;
+                boolean z10 = false;
                 while (i10 < i7) {
                     if (collection.contains(fVar.i(i10))) {
                         fVar.g(i10);
                         i10--;
                         i7--;
-                        z9 = true;
+                        z10 = true;
                     }
                     i10++;
                 }
-                return z9;
+                return z10;
             default:
                 throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }
@@ -153,17 +153,17 @@ public final class e implements Collection {
                 f fVar = (f) this.b;
                 int i7 = fVar.c;
                 int i10 = 0;
-                boolean z9 = false;
+                boolean z10 = false;
                 while (i10 < i7) {
                     if (!collection.contains(fVar.i(i10))) {
                         fVar.g(i10);
                         i10--;
                         i7--;
-                        z9 = true;
+                        z10 = true;
                     }
                     i10++;
                 }
-                return z9;
+                return z10;
             default:
                 throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }

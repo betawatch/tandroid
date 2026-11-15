@@ -1,35 +1,111 @@
 package org.telegram.ui.web;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.text.TextUtils;
-import java.util.ArrayList;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import org.telegram.messenger.a8;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class z1 extends TLObject {
-    public final ArrayList a = new ArrayList();
+    public long a = System.currentTimeMillis();
+    public String b;
+    public String c;
+    public String d;
+    public int e;
+    public int f;
+    public Bitmap i;
+    public byte[] j;
+
+    public static z1 a(s0 s0Var) {
+        z1 z1Var = new z1();
+        String K0 = org.telegram.messenger.g0.K0(s0Var.getUrl(), true);
+        z1Var.b = K0;
+        if (TextUtils.isEmpty(K0)) {
+            return null;
+        }
+        if (s0Var.K) {
+            z1Var.c = s0Var.L;
+        }
+        z1Var.d = s0Var.r;
+        if (s0Var.s) {
+            z1Var.e = s0Var.x;
+        }
+        if (s0Var.w) {
+            z1Var.f = s0Var.y;
+        }
+        if (s0Var.N) {
+            z1Var.i = s0Var.P;
+        }
+        return z1Var;
+    }
 
     @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z9) {
-        int readInt32 = inputSerializedData.readInt32(z9);
-        for (int i7 = 0; i7 < readInt32; i7++) {
-            a2 a2Var = new a2();
-            a2Var.readParams(inputSerializedData, z9);
-            if (TextUtils.isEmpty(a2Var.b)) {
-                return;
-            }
-            this.a.add(a2Var);
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        this.a = inputSerializedData.readInt64(z10);
+        this.b = inputSerializedData.readString(z10);
+        this.c = inputSerializedData.readString(z10);
+        this.d = inputSerializedData.readString(z10);
+        this.e = inputSerializedData.readInt32(z10);
+        this.f = inputSerializedData.readInt32(z10);
+        if (inputSerializedData.readInt32(z10) == 1450380236) {
+            this.i = null;
+        } else {
+            this.j = inputSerializedData.readByteArray(z10);
+            this.i = BitmapFactory.decodeStream(new ByteArrayInputStream(this.j));
         }
     }
 
     @Override // org.telegram.tgnet.TLObject
     public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        ArrayList arrayList = this.a;
-        outputSerializedData.writeInt32(arrayList.size());
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            ((a2) arrayList.get(i7)).serializeToStream(outputSerializedData);
+        Bitmap.CompressFormat compressFormat;
+        outputSerializedData.writeInt64(this.a);
+        String str = this.b;
+        if (str == null) {
+            str = "";
+        }
+        outputSerializedData.writeString(str);
+        String str2 = this.c;
+        if (str2 == null) {
+            str2 = "";
+        }
+        outputSerializedData.writeString(str2);
+        String str3 = this.d;
+        outputSerializedData.writeString(str3 != null ? str3 : "");
+        outputSerializedData.writeInt32(this.e);
+        outputSerializedData.writeInt32(this.f);
+        if (this.i == null) {
+            outputSerializedData.writeInt32(TLRPC.TL_null.constructor);
+            return;
+        }
+        outputSerializedData.writeInt32(953850003);
+        byte[] bArr = this.j;
+        if (bArr != null) {
+            outputSerializedData.writeByteArray(bArr);
+            return;
+        }
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        if (Build.VERSION.SDK_INT >= 30) {
+            Bitmap bitmap = this.i;
+            compressFormat = Bitmap.CompressFormat.WEBP_LOSSY;
+            bitmap.compress(compressFormat, 80, byteArrayOutputStream);
+        } else {
+            this.i.compress(Bitmap.CompressFormat.WEBP, 80, byteArrayOutputStream);
+        }
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        this.j = byteArray;
+        outputSerializedData.writeByteArray(byteArray);
+        try {
+            byteArrayOutputStream.close();
+        } catch (Exception e10) {
+            a8.g(e10, true);
         }
     }
 }

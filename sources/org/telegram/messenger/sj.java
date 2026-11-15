@@ -2,45 +2,27 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sj implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qp b;
-    public final /* synthetic */ TLRPC.Chat c;
+    public final /* synthetic */ np b;
+    public final /* synthetic */ TLRPC.User c;
 
-    public /* synthetic */ sj(qp qpVar, TLRPC.Chat chat, int i7) {
+    public /* synthetic */ sj(np npVar, TLRPC.User user, int i7) {
         this.a = i7;
-        this.b = qpVar;
-        this.c = chat;
+        this.b = npVar;
+        this.c = user;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        TLRPC.Chat chat = this.c;
-        qp qpVar = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                qpVar.j(chat);
-                break;
-            case 1:
-                qpVar.getNotificationCenter().k(90, chat);
-                break;
-            case 2:
-                qpVar.getClass();
-                qpVar.G(chat.id, true);
-                break;
-            case 3:
-                qpVar.getNotificationCenter().k(90, chat);
-                break;
-            case 4:
-                qpVar.getNotificationCenter().k(qs.r5, Long.valueOf(chat.id), Boolean.valueOf(chat.forum), Boolean.valueOf(chat.forum_tabs), Boolean.valueOf(chat.forum_sidebar));
+                this.b.r1.remove(Long.valueOf(this.c.id));
                 break;
             default:
-                qpVar.T4(null);
-                qpVar.getNotificationCenter().k(qs.T5, Long.valueOf(chat.id), Boolean.valueOf(chat.collapsed_in_dialogs));
-                qpVar.getNotificationCenter().k(3, new Object[0]);
+                this.b.getContactsController().a(this.c);
                 break;
         }
     }

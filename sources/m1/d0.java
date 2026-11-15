@@ -1,6 +1,6 @@
 package m1;
 
-import c8.mb;
+import c8.ob;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class d0 implements a {
     public final File a;
@@ -91,7 +91,7 @@ public class d0 implements a {
                             if (b11 != aVar) {
                                 obj = b11;
                                 fileInputStream = fileInputStream4;
-                                mb.a(fileInputStream, null);
+                                ob.a(fileInputStream, null);
                                 return obj;
                             }
                             return aVar;
@@ -110,7 +110,7 @@ public class d0 implements a {
                     fileInputStream = (Closeable) c0Var.a;
                     try {
                         af.b.c(obj);
-                        mb.a(fileInputStream, null);
+                        ob.a(fileInputStream, null);
                         return obj;
                     } catch (Throwable th6) {
                         th2 = th6;
@@ -131,7 +131,7 @@ public class d0 implements a {
                     } finally {
                     }
                 }
-                mb.a(fileInputStream2, null);
+                ob.a(fileInputStream2, null);
                 return obj;
             }
         }
@@ -141,7 +141,7 @@ public class d0 implements a {
         r22 = c0Var.e;
         if (r22 != 0) {
         }
-        mb.a(fileInputStream2, null);
+        ob.a(fileInputStream2, null);
         return obj2;
     }
 

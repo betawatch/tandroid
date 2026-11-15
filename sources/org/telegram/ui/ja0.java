@@ -1,48 +1,36 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ja0 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ sa0 a;
+public final class ja0 extends org.telegram.ui.Components.ys0 {
+    public final /* synthetic */ pa0 x2;
 
-    public ja0(sa0 sa0Var) {
-        this.a = sa0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ja0(pa0 pa0Var, Context context, org.telegram.ui.Components.qs0 qs0Var, pa0 pa0Var2, ia0 ia0Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, 0L, qs0Var, 0, null, null, null, 8, 0, pa0Var2, ia0Var, 0, e6Var, null);
+        this.x2 = pa0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i7) {
-        sa0 sa0Var = this.a;
-        if (i7 == -1) {
-            sa0Var.finishFragment();
-            return;
-        }
-        if (i7 != 1) {
-            if (i7 == 5) {
-                sa0Var.C0(false);
-                return;
-            }
-            if (i7 == 6) {
-                sa0Var.B0(null);
-                return;
-            }
-            if ((i7 == 2 || i7 == 3 || i7 == 4) && sa0Var.E != null) {
-                sa0Var.D0();
-                sa0Var.E.j(i7 != 3 ? i7 == 4 ? 2 : 0 : 1);
-                return;
-            }
-            return;
-        }
-        try {
-            TLRPC.GeoPoint geoPoint = sa0Var.D0.k.media.geo;
-            double d = geoPoint.lat;
-            double d2 = geoPoint._long;
-            sa0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d2 + "?q=" + d + "," + d2)));
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
+    @Override // org.telegram.ui.Components.ys0
+    public final int O0() {
+        return 32;
+    }
+
+    @Override // org.telegram.ui.Components.ys0
+    public final boolean Y() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ys0
+    public final int e1() {
+        return 3;
+    }
+
+    @Override // org.telegram.ui.Components.ys0
+    public final TL_stories.MediaArea getStoriesArea() {
+        return this.x2.O0;
     }
 }

@@ -4,9 +4,9 @@ import android.util.Base64;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzvm {
     protected static final Charset zza = StandardCharsets.UTF_16;
@@ -98,10 +98,10 @@ public final class zzvm {
             for (int i11 = 0; i11 < 16; i11++) {
                 int i12 = this.zzb[i11];
                 int i13 = i11 * 4;
-                bArr3[i13] = (byte) (i12 & qs.e4);
-                bArr3[i13 + 1] = (byte) ((i12 >> 8) & qs.e4);
-                bArr3[i13 + 2] = (byte) ((i12 >> 16) & qs.e4);
-                bArr3[i13 + 3] = (byte) ((i12 >> 24) & qs.e4);
+                bArr3[i13] = (byte) (i12 & ns.e4);
+                bArr3[i13 + 1] = (byte) ((i12 >> 8) & ns.e4);
+                bArr3[i13 + 2] = (byte) ((i12 >> 16) & ns.e4);
+                bArr3[i13 + 3] = (byte) ((i12 >> 24) & ns.e4);
             }
             for (int i14 = 0; i14 < Math.min(64, length); i14++) {
                 int i15 = i7 + i14;

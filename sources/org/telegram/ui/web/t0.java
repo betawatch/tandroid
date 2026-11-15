@@ -1,75 +1,59 @@
 package org.telegram.ui.web;
 
-import android.net.Uri;
-import android.webkit.DownloadListener;
-import android.webkit.URLUtil;
-import android.widget.TextView;
-import java.util.List;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.id;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.z5;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.n3;
-import org.telegram.ui.ActionBar.t6;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.hd;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class t0 implements DownloadListener {
-    public final /* synthetic */ u0 a;
+public final class t0 {
+    public final String a;
+    public final String b;
+    public final int c;
 
-    public t0(u0 u0Var) {
-        this.a = u0Var;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0048, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r1.substring(r2 + 1)) == false) goto L12;
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterative(DepthRegionTraversal.java:31)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visit(SwitchOverStringVisitor.java:60)
      */
-    @Override // android.webkit.DownloadListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDownloadStart(String str, String str2, String str3, String str4, long j3) {
-        String guessFileName;
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("onDownloadStart ", str, " ", str2, " ");
-        com.google.android.recaptcha.internal.a.s(n10, str3, " ", str4, " ");
-        n10.append(j3);
-        String sb2 = n10.toString();
-        u0 u0Var = this.a;
-        u0Var.c(sb2);
-        try {
-            if (str.startsWith("blob:")) {
-                return;
-            }
-            try {
-                List<String> pathSegments = Uri.parse(str).getPathSegments();
-                guessFileName = pathSegments.get(pathSegments.size() - 1);
-                int lastIndexOf = guessFileName.lastIndexOf(".");
-                if (lastIndexOf > 0) {
+    public t0(JSONObject jSONObject) {
+        this.c = -1;
+        this.a = jSONObject.getString("id");
+        String string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
+        switch (string.hashCode()) {
+            case -1829997182:
+                if (string.equals("destructive")) {
+                    this.c = j6.q7;
+                    break;
                 }
-            } catch (Exception unused) {
-            }
-            guessFileName = URLUtil.guessFileName(str, str3, str4);
-            String U = org.telegram.messenger.g0.U(guessFileName);
-            x xVar = new x(this, str, str4, str2, U, 4);
-            if (z5.q(p10.s0).c(8, j3)) {
-                xVar.run();
-                return;
-            }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(u0Var.getContext());
-            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-            u1Var.R = id.M0(2131742930, null);
-            u1Var.T = org.telegram.messenger.g0.X2(j3 > 0 ? id.a0(null, null, 2131742931, U, org.telegram.messenger.g0.i0(j3, false, false)) : id.a0(null, null, 2131742932, U));
-            alertDialog$Builder.k(id.M0(2131742929, null), new n3(xVar, 5));
-            alertDialog$Builder.h(id.M0(2131752589, null), null);
-            TextView textView = (TextView) alertDialog$Builder.p().d(-2);
-            if (textView != null) {
-                t6.U(textView, m6.q7, null);
-            }
-        } catch (Exception e10) {
-            a8.g(e10, true);
+                break;
+            case -1367724422:
+                if (string.equals("cancel")) {
+                    this.b = hd.M0(2131752589, null);
+                    return;
+                }
+                break;
+            case 3548:
+                if (string.equals("ok")) {
+                    this.b = hd.M0(2131747831, null);
+                    return;
+                }
+                break;
+            case 94756344:
+                if (string.equals("close")) {
+                    this.b = hd.M0(2131752041, null);
+                    return;
+                }
+                break;
+            case 1544803905:
+                string.equals("default");
+                break;
         }
+        this.b = jSONObject.getString("text");
     }
 }

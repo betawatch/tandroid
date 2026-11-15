@@ -2,23 +2,23 @@ package com.google.android.gms.common.api;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h extends r6.a {
-    public static final Parcelable.Creator<h> CREATOR = new t(1);
+    public static final Parcelable.Creator<h> CREATOR = new u(1);
     public final int a;
     public final int b;
     public final int c;
     public final boolean d;
 
-    public h(int i7, int i10, int i11, boolean z9) {
+    public h(int i7, int i10, int i11, boolean z10) {
         this.a = i7;
         this.b = i10;
         this.c = i11;
-        this.d = z9;
+        this.d = z10;
     }
 
     public final boolean equals(Object obj) {
@@ -40,8 +40,8 @@ public final class h extends r6.a {
         int length2 = String.valueOf(i10).length();
         int i11 = this.c;
         int length3 = String.valueOf(i11).length();
-        boolean z9 = this.d;
-        StringBuilder sb2 = new StringBuilder(length + 55 + length2 + 19 + length3 + 13 + String.valueOf(z9).length() + 1);
+        boolean z10 = this.d;
+        StringBuilder sb2 = new StringBuilder(length + 55 + length2 + 19 + length3 + 13 + String.valueOf(z10).length() + 1);
         sb2.append("ComplianceOptions{callerProductId=");
         sb2.append(i7);
         sb2.append(", dataOwnerProductId=");
@@ -49,22 +49,22 @@ public final class h extends r6.a {
         sb2.append(", processingReason=");
         sb2.append(i11);
         sb2.append(", isUserData=");
-        sb2.append(z9);
+        sb2.append(z10);
         sb2.append("}");
         return sb2.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 1, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        xb.q(parcel, 2, 4);
+        yb.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        xb.q(parcel, 3, 4);
+        yb.q(parcel, 3, 4);
         parcel.writeInt(this.c);
-        xb.q(parcel, 4, 4);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 }

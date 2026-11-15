@@ -1,33 +1,45 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nd implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sd b;
-    public final /* synthetic */ Integer c;
+    public final /* synthetic */ rd b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ nd(sd sdVar, Integer num, int i7) {
+    public /* synthetic */ nd(rd rdVar, ArrayList arrayList, int i7) {
         this.a = i7;
-        this.b = sdVar;
-        this.c = num;
+        this.b = rdVar;
+        this.c = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        int i10 = 1;
-        Integer num = this.c;
-        sd sdVar = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                if (!sdVar.b.isEmpty()) {
-                    g0.h3(new nd(sdVar, num, i10));
-                    break;
+                rd rdVar = this.b;
+                ArrayList arrayList = rdVar.b;
+                ArrayList arrayList2 = this.c;
+                arrayList.addAll(arrayList2);
+                for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                    qd qdVar = (qd) arrayList.get(i7);
+                    rdVar.a.k(qdVar, qdVar.a);
                 }
+                g0.h3(new nd(rdVar, arrayList2, 1));
                 break;
             default:
-                sdVar.getNotificationCenter().k(76, num);
+                rd rdVar2 = this.b;
+                ArrayList arrayList3 = rdVar2.J;
+                ArrayList arrayList4 = this.c;
+                arrayList3.addAll(arrayList4);
+                for (int i10 = 0; i10 < arrayList4.size(); i10++) {
+                    qd qdVar2 = (qd) arrayList4.get(i10);
+                    rdVar2.K.k(qdVar2, qdVar2.a);
+                }
+                rd.q();
+                ns.e().k(ns.D4, new Object[0]);
                 break;
         }
     }

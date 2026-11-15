@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public enum q0 extends b2 {
     public q0() {
@@ -9,7 +9,7 @@ public enum q0 extends b2 {
 
     @Override // dd.b2
     public final void d(l lVar, a aVar) {
-        String g10 = aVar.g(b2.F0);
+        String g10 = aVar.g(b2.G0);
         if (g10.length() > 0) {
             lVar.i.f(g10);
         } else {
@@ -22,7 +22,7 @@ public enum q0 extends b2 {
             return;
         }
         if (d == '\"') {
-            lVar.c = b2.d0;
+            lVar.c = b2.e0;
             return;
         }
         if (d != '&') {

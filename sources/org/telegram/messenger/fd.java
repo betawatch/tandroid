@@ -1,114 +1,173 @@
 package org.telegram.messenger;
 
+import android.graphics.RectF;
+import android.os.SystemClock;
 import android.text.TextUtils;
-import java.io.File;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_ephemeral;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.fj0;
+import org.telegram.ui.Components.gt0;
+import org.telegram.ui.Components.kt0;
+import org.telegram.ui.Components.vt0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class fd {
-    public String a;
-    public String b;
-    public String c;
-    public String d;
-    public String e;
-    public String f;
-    public boolean g;
-    public int h;
-    public int i;
-    public boolean j;
-    public int k;
+public final /* synthetic */ class fd implements j9, Vector.TLDeserializer, OnCompleteListener, org.telegram.ui.ActionBar.q1, vt0, t10, gt0, y10, jh.i, fj0, kt0 {
+    public final /* synthetic */ int a;
 
-    public static fd a(String str) {
-        fd fdVar = null;
-        if (str != null && str.length() != 0) {
-            String[] split = str.split("\\|");
-            if (split.length >= 4) {
-                fdVar = new fd();
-                fdVar.a = split[0];
-                fdVar.b = split[1];
-                fdVar.c = split[2].toLowerCase();
-                fdVar.d = split[3];
-                if (split.length >= 5) {
-                    fdVar.h = Utilities.z(split[4]).intValue();
+    public /* synthetic */ fd(int i7) {
+        this.a = i7;
+    }
+
+    @Override // org.telegram.messenger.y10
+    public Boolean a(b41 b41Var, View view, Integer num, Float f10, Float f11) {
+        return Boolean.FALSE;
+    }
+
+    @Override // org.telegram.messenger.t10
+    public Object d(Number number, Object obj) {
+        Integer num = (Integer) number;
+        Integer num2 = (Integer) obj;
+        switch (this.a) {
+            case 21:
+                if (num.intValue() == 0) {
+                    return hd.G(num2.intValue(), "MaximumReactionsValue", new Object[0]);
                 }
-                fdVar.e = split.length >= 6 ? split[5] : "";
-                fdVar.f = split.length >= 7 ? split[6] : fdVar.c;
-                if (split.length >= 8) {
-                    fdVar.g = Utilities.z(split[7]).intValue() == 1;
+                return "" + num2;
+            default:
+                if (num.intValue() == 0) {
+                    return hd.H(',', "Stars", num2.intValue());
                 }
-                if (split.length >= 9) {
-                    fdVar.i = Utilities.z(split[8]).intValue();
-                }
-                if (split.length >= 10) {
-                    fdVar.k = Utilities.z(split[9]).intValue();
-                } else {
-                    fdVar.k = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                }
-                if (!TextUtils.isEmpty(fdVar.e)) {
-                    fdVar.e = fdVar.e.replace("-", "_");
-                }
+                return "" + num2;
+        }
+    }
+
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
+        switch (this.a) {
+            case 6:
+                return TLRPC.Peer.TLdeserialize(inputSerializedData, i7, z10);
+            case 7:
+                return TL_account.WebBrowserSettings.TLdeserialize(inputSerializedData, i7, z10);
+            case 8:
+                return TLRPC.MessageEntity.TLdeserialize(inputSerializedData, i7, z10);
+            case 9:
+                return TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, i7, z10);
+            case 10:
+            case 11:
+            case 12:
+            default:
+                return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i7, z10);
+            case 13:
+                return TL_iv.RichText.TLdeserialize(inputSerializedData, i7, z10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.kt0
+    public float get(Object obj) {
+        return ((org.telegram.ui.dr) obj).M1;
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        switch (this.a) {
+            case 15:
+                int i10 = gz.a;
+                break;
+            case 18:
+                t1Var.dismiss();
+                break;
+            case 22:
+                t1Var.dismiss();
+                break;
+            default:
+                t1Var.dismiss();
+                break;
+        }
+    }
+
+    @Override // jh.i
+    public void j(RectF rectF, View view) {
+        view.invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.gt0
+    public /* synthetic */ float k(RecyclerView recyclerView) {
+        return org.telegram.ui.Cells.y0.c(recyclerView);
+    }
+
+    @Override // org.telegram.ui.Components.vt0
+    public void l(int i7) {
+        if (i7 == 0) {
+            gz.A(3);
+            return;
+        }
+        if (i7 == 1) {
+            gz.A(0);
+        } else if (i7 == 2) {
+            gz.A(1);
+        } else if (i7 == 3) {
+            gz.A(2);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.gt0
+    public RecyclerView n(View view) {
+        return ((org.telegram.ui.rd) view).a;
+    }
+
+    @Override // org.telegram.messenger.j9
+    public Object o(Object obj) {
+        switch (this.a) {
+            case 2:
+                return new TLRPC.TL_messageEntityBold();
+            case 3:
+                return new TLRPC.TL_messageEntityItalic();
+            case 4:
+                return new TLRPC.TL_messageEntitySpoiler();
+            default:
+                return new TLRPC.TL_messageEntityStrike();
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        gz.j = SystemClock.elapsedRealtime();
+        if (task.isSuccessful()) {
+            String str = (String) task.getResult();
+            if (TextUtils.isEmpty(str)) {
+                return;
             }
+            PushListenerController.sendRegistrationToServer(2, str);
+            return;
         }
-        return fdVar;
-    }
-
-    public final String b() {
-        if (this.d != null && !i() && !j()) {
-            return "local_" + this.c;
+        if (r2.a) {
+            a8.b("Failed to get regid");
         }
-        if (!j()) {
-            return this.c;
-        }
-        return "unofficial_" + this.c;
+        gz.h = "__FIREBASE_FAILED__";
+        PushListenerController.sendRegistrationToServer(2, null);
     }
 
-    public final String c() {
-        return this.c.replace("_", "-");
+    @Override // org.telegram.ui.Components.gt0
+    public /* synthetic */ void s(RecyclerView recyclerView) {
+        org.telegram.ui.Cells.y0.b(recyclerView);
     }
 
-    public final File d() {
-        if (j()) {
-            return new File(t0.h(), a8.p0.s(new StringBuilder("unofficial_base_"), this.c, ".xml"));
-        }
-        return null;
+    public /* synthetic */ fd(Object obj, int i7) {
+        this.a = i7;
     }
 
-    public final File e() {
-        if (i()) {
-            return new File(t0.h(), a8.p0.s(new StringBuilder("remote_"), this.c, ".xml"));
-        }
-        if (j()) {
-            return new File(t0.h(), a8.p0.s(new StringBuilder("unofficial_"), this.c, ".xml"));
-        }
-        if (TextUtils.isEmpty(this.d)) {
-            return null;
-        }
-        return new File(this.d);
-    }
-
-    public final String f() {
-        String str = this.e;
-        if (str == null) {
-            str = "";
-        }
-        TextUtils.isEmpty(this.f);
-        return this.a + "|" + this.b + "|" + this.c + "|" + this.d + "|" + this.h + "|" + str + "|" + this.f + "|" + (this.g ? 1 : 0) + "|" + this.i + "|" + this.k;
-    }
-
-    public final boolean g() {
-        return (!j() || TextUtils.isEmpty(this.e) || this.e.equals(this.c)) ? false : true;
-    }
-
-    public final boolean h() {
-        return (TextUtils.isEmpty(this.d) || i() || j()) ? false : true;
-    }
-
-    public final boolean i() {
-        return "remote".equals(this.d);
-    }
-
-    public final boolean j() {
-        return "unofficial".equals(this.d);
+    @Override // org.telegram.ui.Components.vt0
+    public /* synthetic */ void p() {
     }
 }

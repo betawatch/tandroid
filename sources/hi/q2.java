@@ -1,37 +1,51 @@
 package hi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.ActionBar.m6;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.Components.pz;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class q2 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ t1 c;
-    public final /* synthetic */ a3 d;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class q2 extends pz {
+    public final /* synthetic */ int V;
 
-    public q2(a3 a3Var, int i7, int i10, t1 t1Var) {
-        this.d = a3Var;
-        this.a = i7;
-        this.b = i10;
-        this.c = t1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ q2(int i7, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.V = i7;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int f10 = i0.a.f(1.0f, this.a, this.b);
-        a3 a3Var = this.d;
-        a3Var.R = f10;
-        a3Var.l();
-        z2 z2Var = a3Var.f;
-        z2Var.invalidate();
-        x2 x2Var = a3Var.X;
-        x2Var.setBackgroundColor(a3Var.R);
-        t1 t1Var = this.c;
-        t1Var.b(x2Var, 1.0f);
-        a3Var.a = t1Var.a(m6.wj);
-        z2Var.invalidate();
+    @Override // org.telegram.ui.Components.pz
+    public int getColumnsCount() {
+        switch (this.V) {
+            case 0:
+                return 3;
+            case 1:
+                return 3;
+            default:
+                return super.getColumnsCount();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pz
+    public int getViewType() {
+        switch (this.V) {
+            case 1:
+                return 2;
+            default:
+                return super.getViewType();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pz, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.V) {
+            case 2:
+                setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(104.0f));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
     }
 }

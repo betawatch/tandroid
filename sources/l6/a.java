@@ -3,11 +3,12 @@ package l6;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.util.Log;
-import b9.j0;
+import b9.k0;
 import com.google.android.gms.common.api.d;
 import com.google.android.gms.common.api.e;
-import com.google.android.gms.internal.clearcut.b2;
-import com.google.android.gms.internal.clearcut.p1;
+import com.google.android.gms.internal.clearcut.a2;
+import com.google.android.gms.internal.clearcut.o1;
+import w7.s;
 
 /* loaded from: classes.dex */
 public final class a {
@@ -17,17 +18,17 @@ public final class a {
     public final int c;
     public final String d;
     public final int e;
-    public final p1 f;
-    public final j0 g;
+    public final o1 f;
+    public final k0 g;
     public final x6.a h;
-    public final b2 i;
+    public final a2 i;
 
     public a(Context context) {
-        j0 j0Var = new j0(context, j, null, new sa.d(6));
-        b2 b2Var = new b2(context);
+        k0 k0Var = new k0(context, j, null, new s(6));
+        a2 a2Var = new a2(context);
         this.e = -1;
-        p1 p1Var = p1.b;
-        this.f = p1Var;
+        o1 o1Var = o1.b;
+        this.f = o1Var;
         this.a = context;
         this.b = context.getPackageName();
         int i7 = 0;
@@ -39,9 +40,9 @@ public final class a {
         this.c = i7;
         this.e = -1;
         this.d = "VISION";
-        this.g = j0Var;
+        this.g = k0Var;
         this.h = x6.a.a;
-        this.f = p1Var;
-        this.i = b2Var;
+        this.f = o1Var;
+        this.i = a2Var;
     }
 }

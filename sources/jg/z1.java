@@ -1,24 +1,25 @@
 package jg;
 
 import android.util.Pair;
-import bi.u9;
+import di.l8;
+import hi.h4;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
 import org.telegram.messenger.t3;
-import org.telegram.messenger.yr;
+import org.telegram.messenger.vr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bo0;
+import org.telegram.ui.Components.eo0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class z1 {
     public y1 a;
@@ -37,12 +38,12 @@ public class z1 {
     public final a0.h h = new a0.h();
     public final a0.h i = new a0.h();
     public final ArrayList j = new ArrayList();
-    public final int m = p10.s0;
+    public final int m = m10.t0;
     public boolean p = true;
     public boolean s = false;
 
-    public z1(boolean z9) {
-        this.o = z9;
+    public z1(boolean z10) {
+        this.o = z10;
     }
 
     public final void a(CharSequence charSequence) {
@@ -50,7 +51,7 @@ public class z1 {
             return;
         }
         Matcher matcher = Pattern.compile("(^|\\s)#[^0-9][\\w@.]+").matcher(charSequence);
-        boolean z9 = false;
+        boolean z10 = false;
         while (matcher.find()) {
             int start = matcher.start();
             int end = matcher.end();
@@ -72,10 +73,10 @@ public class z1 {
             }
             x1Var.b = (int) (System.currentTimeMillis() / 1000);
             this.q.add(0, x1Var);
-            z9 = true;
+            z10 = true;
         }
-        if (z9) {
-            yr.a0(this.m).a.c(new ha.b(15, this, this.q));
+        if (z10) {
+            vr.a0(this.m).a.c(new h4(22, this, this.q));
         }
     }
 
@@ -88,7 +89,7 @@ public class z1 {
     public final void c() {
         this.q = new ArrayList();
         this.r = new HashMap();
-        yr.a0(this.m).a.c(new w1(this, 0));
+        vr.a0(this.m).a.c(new w1(this, 0));
     }
 
     public boolean d(TLObject tLObject) {
@@ -116,13 +117,13 @@ public class z1 {
                 if (obj instanceof g0) {
                     obj = ((g0) obj).a;
                 }
-                if (obj instanceof bo0) {
-                    obj = ((bo0) obj).b;
+                if (obj instanceof eo0) {
+                    obj = ((eo0) obj).b;
                 }
-                boolean z9 = obj instanceof TLRPC.User;
+                boolean z10 = obj instanceof TLRPC.User;
                 ArrayList arrayList3 = this.d;
                 ArrayList arrayList4 = this.e;
-                if (z9) {
+                if (z10) {
                     TLRPC.User user = (TLRPC.User) obj;
                     TLRPC.User user2 = (TLRPC.User) hVar.f(user.id);
                     if (user2 != null) {
@@ -154,8 +155,8 @@ public class z1 {
         }
     }
 
-    public final void g(String str, boolean z9, boolean z10, boolean z11, boolean z12, long j3, boolean z13, int i7, int i10) {
-        h(str, z9, z10, z11, z12, false, j3, z13, i7, i10, 0L, null);
+    public final void g(String str, boolean z10, boolean z11, boolean z12, boolean z13, long j3, boolean z14, int i7, int i10) {
+        h(str, z10, z11, z12, z13, false, j3, z14, i7, i10, 0L, null);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x013e  */
@@ -166,16 +167,16 @@ public class z1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void h(final String str, boolean z9, final boolean z10, final boolean z11, boolean z12, final boolean z13, long j3, boolean z14, int i7, final int i10, final long j10, final Runnable runnable) {
+    public final void h(final String str, boolean z10, final boolean z11, final boolean z12, boolean z13, final boolean z14, long j3, boolean z15, int i7, final int i10, final long j10, final Runnable runnable) {
         int i11;
-        boolean z15;
         boolean z16;
         boolean z17;
         boolean z18;
+        boolean z19;
         int i12;
         int size;
         int i13;
-        boolean z19;
+        boolean z20;
         String str2;
         ArrayList arrayList = this.b;
         int size2 = arrayList.size();
@@ -205,7 +206,7 @@ public class z1 {
             arrayList2.clear();
             arrayList5.clear();
             hVar3.b();
-            this.a.q(i10);
+            this.a.i(i10);
             return;
         }
         ArrayList arrayList6 = new ArrayList();
@@ -224,50 +225,50 @@ public class z1 {
                 tL_channels_getParticipants.filter.q = str;
                 tL_channels_getParticipants.limit = 50;
                 tL_channels_getParticipants.offset = 0;
-                tL_channels_getParticipants.channel = qp.s1(i11).h1(j3);
-                z16 = z12;
-                arrayList6.add(new Pair(tL_channels_getParticipants, new u9(this, str, z16, 2)));
+                tL_channels_getParticipants.channel = np.s1(i11).h1(j3);
+                z17 = z13;
+                arrayList6.add(new Pair(tL_channels_getParticipants, new l8(this, str, z17, 2)));
             } else {
-                z16 = z12;
+                z17 = z13;
                 this.n = str.toLowerCase();
             }
-            z15 = true;
-            z17 = false;
+            z16 = true;
+            z18 = false;
         } else {
-            z15 = true;
-            z16 = z12;
+            z16 = true;
+            z17 = z13;
             arrayList4.clear();
             hVar2.b();
-            z17 = true;
+            z18 = true;
         }
-        if (z9) {
+        if (z10) {
             if (str.length() <= 0) {
                 arrayList3.clear();
                 hVar.b();
                 arrayList2.clear();
-                z18 = false;
-                if (!z13 && z14 && str.startsWith("+") && str.length() > 3) {
+                z19 = false;
+                if (!z14 && z15 && str.startsWith("+") && str.length() > 3) {
                     arrayList5.clear();
                     hVar3.b();
                     String d = pf.b.d(str, false);
-                    ArrayList arrayList7 = g5.r(i11).e0;
+                    ArrayList arrayList7 = g5.r(i11).f0;
                     size = arrayList7.size();
-                    z19 = false;
+                    z20 = false;
                     for (i13 = 0; i13 < size; i13++) {
-                        TLRPC.User a22 = qp.s1(i11).a2(Long.valueOf(((TLRPC.TL_contact) arrayList7.get(i13)).user_id));
+                        TLRPC.User a22 = np.s1(i11).a2(Long.valueOf(((TLRPC.TL_contact) arrayList7.get(i13)).user_id));
                         if (a22 != null && (str2 = a22.phone) != null && str2.startsWith(d)) {
-                            if (!z19) {
-                                z19 = a22.phone.length() == d.length() ? z15 : false;
+                            if (!z20) {
+                                z20 = a22.phone.length() == d.length() ? z16 : false;
                             }
                             arrayList5.add(a22);
                             hVar3.k(a22, a22.id);
                         }
                     }
-                    if (!z19) {
+                    if (!z20) {
                         arrayList5.add("section");
                         arrayList5.add(d);
                     }
-                    z18 = false;
+                    z19 = false;
                 }
                 AtomicInteger atomicInteger = new AtomicInteger(0);
                 ArrayList arrayList8 = new ArrayList();
@@ -322,11 +323,11 @@ public class z1 {
                                             a0.h hVar4 = z1Var2.f;
                                             y1 y1Var = z1Var2.a;
                                             if (y1Var != null) {
-                                                a0.h X0 = y1Var.X0();
-                                                if (X0 != null) {
-                                                    int m10 = X0.m();
+                                                a0.h U = y1Var.U();
+                                                if (U != null) {
+                                                    int m10 = U.m();
                                                     for (int i19 = 0; i19 < m10; i19++) {
-                                                        TLRPC.User user = (TLRPC.User) hVar4.f(X0.j(i19));
+                                                        TLRPC.User user = (TLRPC.User) hVar4.f(U.j(i19));
                                                         if (user != null) {
                                                             arrayList18.remove(user);
                                                             arrayList17.remove(user);
@@ -334,11 +335,11 @@ public class z1 {
                                                         }
                                                     }
                                                 }
-                                                a0.h v02 = z1Var2.a.v0();
-                                                if (v02 != null) {
-                                                    int m11 = v02.m();
+                                                a0.h K = z1Var2.a.K();
+                                                if (K != null) {
+                                                    int m11 = K.m();
                                                     for (int i20 = 0; i20 < m11; i20++) {
-                                                        TLRPC.User user2 = (TLRPC.User) hVar4.f(v02.j(i20));
+                                                        TLRPC.User user2 = (TLRPC.User) hVar4.f(K.j(i20));
                                                         if (user2 != null) {
                                                             arrayList18.remove(user2);
                                                             arrayList17.remove(user2);
@@ -347,7 +348,7 @@ public class z1 {
                                                     }
                                                 }
                                             }
-                                            z1Var2.a.q(i17);
+                                            z1Var2.a.i(i17);
                                             Runnable runnable3 = runnable2;
                                             if (runnable3 != null) {
                                                 runnable3.run();
@@ -364,16 +365,16 @@ public class z1 {
                     atomicInteger = atomicInteger3;
                     arrayList8 = arrayList9;
                 }
-                if (z18) {
+                if (z19) {
                     return;
                 }
-                this.a.q(i10);
+                this.a.i(i10);
                 return;
             }
             TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
             tL_contacts_search.q = str;
             tL_contacts_search.limit = 20;
-            final boolean z20 = z16;
+            final boolean z21 = z17;
             arrayList6.add(new Pair(tL_contacts_search, new RequestDelegate() { // from class: jg.t1
                 /* JADX WARN: Code restructure failed: missing block: B:48:0x0116, code lost:
                 
@@ -392,34 +393,34 @@ public class z1 {
                     Code decompiled incorrectly, please refer to instructions dump.
                 */
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                    boolean z21;
                     boolean z22;
                     boolean z23;
                     boolean z24;
+                    boolean z25;
                     a0.h hVar4;
                     TLRPC.Chat chat;
                     TLRPC.User user;
                     TLRPC.TL_contacts_found tL_contacts_found;
                     a0.h hVar5;
                     ArrayList<TLRPC.Peer> arrayList11;
-                    boolean z25;
+                    boolean z26;
                     TLRPC.Chat chat2;
                     TLRPC.User user2;
                     a0.h hVar6;
                     z1 z1Var = z1.this;
-                    boolean z26 = z1Var.o;
+                    boolean z27 = z1Var.o;
                     int i16 = z1Var.m;
                     ArrayList arrayList12 = z1Var.d;
                     ArrayList arrayList13 = z1Var.e;
                     a0.h hVar7 = z1Var.f;
-                    if (z1Var.a.k1(i10) && tL_error == null) {
+                    if (z1Var.a.e0(i10) && tL_error == null) {
                         TLRPC.TL_contacts_found tL_contacts_found2 = (TLRPC.TL_contacts_found) tLObject2;
                         arrayList13.clear();
                         hVar7.b();
                         arrayList12.clear();
-                        qp.s1(i16).S3(tL_contacts_found2.chats, false);
-                        qp.s1(i16).Y3(tL_contacts_found2.users, false);
-                        yr.a0(i16).m1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
+                        np.s1(i16).S3(tL_contacts_found2.chats, false);
+                        np.s1(i16).Y3(tL_contacts_found2.users, false);
+                        vr.a0(i16).m1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
                         a0.h hVar8 = new a0.h();
                         a0.h hVar9 = new a0.h();
                         for (int i17 = 0; i17 < tL_contacts_found2.chats.size(); i17++) {
@@ -432,28 +433,28 @@ public class z1 {
                         }
                         int i19 = 0;
                         while (true) {
-                            z21 = z10;
-                            z22 = z13;
-                            z23 = z11;
-                            z24 = z20;
+                            z22 = z11;
+                            z23 = z14;
+                            z24 = z12;
+                            z25 = z21;
                             if (i19 >= 2) {
                                 break;
                             }
                             if (i19 != 0) {
                                 arrayList11 = tL_contacts_found2.results;
-                            } else if (z26) {
+                            } else if (z27) {
                                 arrayList11 = tL_contacts_found2.my_results;
                             } else {
-                                z25 = z26;
+                                z26 = z27;
                                 i19++;
                                 hVar8 = hVar8;
-                                z26 = z25;
+                                z27 = z26;
                             }
-                            z25 = z26;
+                            z26 = z27;
                             int i20 = 0;
                             while (i20 < arrayList11.size()) {
                                 TLRPC.Peer peer = arrayList11.get(i20);
-                                boolean z27 = z24;
+                                boolean z28 = z25;
                                 int i21 = i20;
                                 long j11 = peer.user_id;
                                 if (j11 != 0) {
@@ -475,15 +476,15 @@ public class z1 {
                                     user2 = null;
                                 }
                                 if (chat2 != null) {
-                                    if (z21 && ((!z22 || t3.b(chat2)) && ((z1Var.p || !t3.r0(chat2)) && z1Var.d(chat2)))) {
+                                    if (z22 && ((!z23 || t3.b(chat2)) && ((z1Var.p || !t3.r0(chat2)) && z1Var.d(chat2)))) {
                                         arrayList13.add(chat2);
                                         hVar7.k(chat2, -chat2.id);
                                     }
                                 } else if (user2 != null) {
-                                    if (!z22) {
-                                        if (!z23) {
+                                    if (!z23) {
+                                        if (!z24) {
                                         }
-                                        if (!z27) {
+                                        if (!z28) {
                                         }
                                         if (!z1Var.p) {
                                             if (i19 == 1) {
@@ -495,21 +496,21 @@ public class z1 {
                                             hVar7.k(user2, user2.id);
                                             hVar8 = hVar6;
                                             i20 = i21 + 1;
-                                            z24 = z27;
+                                            z25 = z28;
                                         }
                                     }
                                 }
                                 hVar6 = hVar8;
                                 hVar8 = hVar6;
                                 i20 = i21 + 1;
-                                z24 = z27;
+                                z25 = z28;
                             }
                             i19++;
                             hVar8 = hVar8;
-                            z26 = z25;
+                            z27 = z26;
                         }
                         a0.h hVar10 = hVar8;
-                        if (!z26) {
+                        if (!z27) {
                             int i22 = 0;
                             while (i22 < tL_contacts_found2.my_results.size()) {
                                 TLRPC.Peer peer2 = tL_contacts_found2.my_results.get(i22);
@@ -539,11 +540,11 @@ public class z1 {
                                 if (chat == null) {
                                     tL_contacts_found = tL_contacts_found2;
                                     hVar5 = hVar9;
-                                    if (user != null && !z22 && ((z23 || !user.bot) && ((z24 || !user.self) && user.id != j17 && z1Var.d(user)))) {
+                                    if (user != null && !z23 && ((z24 || !user.bot) && ((z25 || !user.self) && user.id != j17 && z1Var.d(user)))) {
                                         arrayList12.add(user);
                                         hVar7.k(user, user.id);
                                     }
-                                } else if (!z21 || (z22 && !t3.b(chat))) {
+                                } else if (!z22 || (z23 && !t3.b(chat))) {
                                     tL_contacts_found = tL_contacts_found2;
                                     hVar5 = hVar9;
                                 } else {
@@ -565,26 +566,26 @@ public class z1 {
                 }
             }));
         }
-        z18 = z17;
-        if (!z13) {
+        z19 = z18;
+        if (!z14) {
             arrayList5.clear();
             hVar3.b();
             String d2 = pf.b.d(str, false);
-            ArrayList arrayList72 = g5.r(i11).e0;
+            ArrayList arrayList72 = g5.r(i11).f0;
             size = arrayList72.size();
-            z19 = false;
+            z20 = false;
             while (i13 < size) {
             }
-            if (!z19) {
+            if (!z20) {
             }
-            z18 = false;
+            z19 = false;
         }
         AtomicInteger atomicInteger4 = new AtomicInteger(0);
         ArrayList arrayList82 = new ArrayList();
         i12 = 0;
         while (i12 < arrayList6.size()) {
         }
-        if (z18) {
+        if (z19) {
         }
     }
 

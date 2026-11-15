@@ -1,15 +1,14 @@
 package m4;
 
-import a8.ia;
+import a8.ja;
 import e2.s0;
-import f3.j0;
-import h2.m0;
+import f3.i0;
+import h2.l0;
 import java.util.Arrays;
 import java.util.Collections;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Cells.f1;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements i {
     public static final byte[] x = {73, 68, 51};
@@ -18,14 +17,14 @@ public final class e implements i {
     public final int e;
     public final String f;
     public String g;
-    public j0 h;
-    public j0 i;
+    public i0 h;
+    public i0 i;
     public boolean m;
     public boolean n;
     public int q;
     public boolean r;
     public int t;
-    public j0 v;
+    public i0 v;
     public long w;
     public final d4.f b = new d4.f(new byte[7], 7);
     public final h2.x c = new h2.x(Arrays.copyOf(x, 10));
@@ -37,8 +36,8 @@ public final class e implements i {
     public int k = 0;
     public int l = 256;
 
-    public e(int i7, String str, String str2, boolean z9) {
-        this.a = z9;
+    public e(int i7, String str, String str2, boolean z10) {
+        this.a = z10;
         this.d = str;
         this.e = i7;
         this.f = str2;
@@ -72,7 +71,7 @@ public final class e implements i {
         char c12;
         int i13;
         this.h.getClass();
-        String str = m0.a;
+        String str = l0.a;
         while (xVar.a() > 0) {
             int i14 = this.j;
             char c13 = 65535;
@@ -254,13 +253,13 @@ public final class e implements i {
                     if (i31 == 10) {
                         this.i.b(10, xVar2);
                         xVar2.N(6);
-                        j0 j0Var = this.i;
-                        int z9 = xVar2.z() + 10;
+                        i0 i0Var = this.i;
+                        int z10 = xVar2.z() + 10;
                         this.j = 4;
                         this.k = 10;
-                        this.v = j0Var;
+                        this.v = i0Var;
                         this.w = 0L;
-                        this.t = z9;
+                        this.t = z10;
                     }
                 } else if (i14 == 3) {
                     int i32 = this.m ? 7 : 5;
@@ -282,7 +281,7 @@ public final class e implements i {
                             fVar.L(5);
                             int j12 = fVar.j(3);
                             int i34 = this.p;
-                            byte[] bArr8 = {(byte) (((j11 << 3) & qs.X3) | ((i34 >> 1) & 7)), (byte) (((j12 << 3) & 120) | ((i34 << 7) & 128))};
+                            byte[] bArr8 = {(byte) (((j11 << 3) & ns.X3) | ((i34 >> 1) & 7)), (byte) (((j12 << 3) & 120) | ((i34 << 7) & 128))};
                             f3.a n10 = f3.b.n(new d4.f(bArr8, 2), false);
                             e2.t tVar = new e2.t();
                             tVar.a = this.g;
@@ -305,11 +304,11 @@ public final class e implements i {
                         if (this.m) {
                             i35 = j13 - 9;
                         }
-                        j0 j0Var2 = this.h;
+                        i0 i0Var2 = this.h;
                         long j14 = this.s;
                         this.j = 4;
                         this.k = 0;
-                        this.v = j0Var2;
+                        this.v = i0Var2;
                         this.w = j14;
                         this.t = i35;
                     }
@@ -322,7 +321,7 @@ public final class e implements i {
                     int i36 = this.k + min3;
                     this.k = i36;
                     if (i36 == this.t) {
-                        ia.p(this.u != -9223372036854775807L);
+                        ja.p(this.u != -9223372036854775807L);
                         this.v.c(this.u, 1, this.t, 0, null);
                         this.u += this.w;
                         this.j = 0;
@@ -368,31 +367,31 @@ public final class e implements i {
     }
 
     @Override // m4.i
-    public final void g(f3.q qVar, g0 g0Var) {
-        g0Var.b();
-        g0Var.c();
-        this.g = (String) g0Var.e;
-        g0Var.c();
-        j0 O1 = qVar.O1(g0Var.c, 1);
-        this.h = O1;
-        this.v = O1;
+    public final void g(f3.q qVar, f0 f0Var) {
+        f0Var.b();
+        f0Var.c();
+        this.g = (String) f0Var.e;
+        f0Var.c();
+        i0 d2 = qVar.d2(f0Var.c, 1);
+        this.h = d2;
+        this.v = d2;
         if (!this.a) {
             this.i = new f3.n();
             return;
         }
-        g0Var.b();
-        g0Var.c();
-        j0 O12 = qVar.O1(g0Var.c, 5);
-        this.i = O12;
+        f0Var.b();
+        f0Var.c();
+        i0 d22 = qVar.d2(f0Var.c, 5);
+        this.i = d22;
         e2.t tVar = new e2.t();
-        g0Var.c();
-        tVar.a = (String) g0Var.e;
+        f0Var.c();
+        tVar.a = (String) f0Var.e;
         tVar.q = s0.n(this.f);
         tVar.r = s0.n("application/id3");
-        f1.s(tVar, O12);
+        r.b.s(tVar, d22);
     }
 
     @Override // m4.i
-    public final void e(boolean z9) {
+    public final void e(boolean z10) {
     }
 }

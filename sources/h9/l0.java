@@ -1,6 +1,6 @@
 package h9;
 
-import a8.wa;
+import a8.xa;
 import j$.util.Map;
 import java.io.Serializable;
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class l0 implements Map, Serializable, j$.util.Map {
     public transient t0 a;
@@ -22,12 +22,12 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
             return (l0) map;
         }
         Set entrySet = map.entrySet();
-        wa waVar = new wa(entrySet != null ? entrySet.size() : 4, 10);
-        waVar.w(entrySet);
-        return waVar.d(true);
+        xa xaVar = new xa(entrySet != null ? entrySet.size() : 4, 10);
+        xaVar.v(entrySet);
+        return xaVar.c(true);
     }
 
-    public abstract v1 c();
+    public abstract u1 c();
 
     @Override // java.util.Map
     public final void clear() {
@@ -59,7 +59,7 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
         return values().contains(obj);
     }
 
-    public abstract w1 d();
+    public abstract v1 d();
 
     public abstract d0 e();
 
@@ -69,7 +69,7 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
         if (t0Var != null) {
             return t0Var;
         }
-        v1 c10 = c();
+        u1 c10 = c();
         this.a = c10;
         return c10;
     }
@@ -126,7 +126,7 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
         if (t0Var != null) {
             return t0Var;
         }
-        w1 d = d();
+        v1 d = d();
         this.b = d;
         return d;
     }
@@ -171,15 +171,15 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
         o.g(size, "size");
         StringBuilder sb2 = new StringBuilder((int) Math.min(size * 8, 1073741824L));
         sb2.append('{');
-        boolean z9 = true;
+        boolean z10 = true;
         for (Map.Entry entry : entrySet()) {
-            if (!z9) {
+            if (!z10) {
                 sb2.append(", ");
             }
             sb2.append(entry.getKey());
             sb2.append('=');
             sb2.append(entry.getValue());
-            z9 = false;
+            z10 = false;
         }
         sb2.append('}');
         return sb2.toString();

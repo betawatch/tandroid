@@ -1,7 +1,316 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.content.SharedPreferences;
+import android.util.LongSparseArray;
+import j$.util.Comparator$-CC;
+import j$.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_update;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public interface v9 {
-    void c(s9 s9Var);
+public final class v9 extends c1 {
+    public static volatile v9[] h = new v9[4];
+    public final androidx.activity.n a;
+    public final LongSparseArray b;
+    public final ArrayList c;
+    public boolean d;
+    public final LongSparseArray e;
+    public final xe.b f;
+
+    public v9(int i7) {
+        super(i7);
+        this.a = new androidx.activity.n(11);
+        this.b = new LongSparseArray();
+        this.c = new ArrayList();
+        this.e = new LongSparseArray();
+        this.f = new xe.b(false, true);
+    }
+
+    public static v9 c(int i7) {
+        v9 v9Var;
+        v9 v9Var2 = h[i7];
+        if (v9Var2 != null) {
+            return v9Var2;
+        }
+        synchronized (v9.class) {
+            try {
+                v9Var = h[i7];
+                if (v9Var == null) {
+                    v9[] v9VarArr = h;
+                    v9 v9Var3 = new v9(i7);
+                    v9VarArr[i7] = v9Var3;
+                    v9Var = v9Var3;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return v9Var;
+    }
+
+    public final void a(TL_stars.StarGift starGift, TL_stars.StarGiftAuctionState starGiftAuctionState, TL_stars.TL_StarGiftAuctionUserState tL_StarGiftAuctionUserState) {
+        s9 d = d(starGift.id);
+        r9 r9Var = d.b;
+        if (r9Var == null) {
+            r9 r9Var2 = new r9(this.currentAccount, starGift, starGiftAuctionState, tL_StarGiftAuctionUserState);
+            d.b = r9Var2;
+            r9Var2.h = d.c;
+        } else {
+            r9Var.d = starGift;
+            r9Var.a(starGiftAuctionState);
+            r9 r9Var3 = d.b;
+            r9Var3.e = tL_StarGiftAuctionUserState;
+            r9Var3.h();
+        }
+        o();
+        g(starGift.id);
+    }
+
+    public final r9 b(long j3) {
+        s9 s9Var = (s9) this.b.get(j3);
+        if (s9Var != null) {
+            return s9Var.b;
+        }
+        return null;
+    }
+
+    public final s9 d(long j3) {
+        LongSparseArray longSparseArray = this.b;
+        s9 s9Var = (s9) longSparseArray.get(j3);
+        if (s9Var != null) {
+            return s9Var;
+        }
+        s9 s9Var2 = new s9(j3);
+        longSparseArray.put(j3, s9Var2);
+        return s9Var2;
+    }
+
+    public final void e(long j3, z10 z10Var) {
+        r9 r9Var;
+        s9 s9Var = (s9) this.b.get(j3);
+        if (s9Var == null || (r9Var = s9Var.b) == null) {
+            z10Var.a(null);
+            return;
+        }
+        ArrayList arrayList = s9Var.g;
+        if (arrayList != null && r9Var.e.acquired_count == arrayList.size()) {
+            z10Var.a(s9Var.g);
+            return;
+        }
+        TL_payments.TL_getStarGiftAuctionAcquiredGifts tL_getStarGiftAuctionAcquiredGifts = new TL_payments.TL_getStarGiftAuctionAcquiredGifts();
+        tL_getStarGiftAuctionAcquiredGifts.gift_id = j3;
+        getConnectionsManager().sendRequestTyped(tL_getStarGiftAuctionAcquiredGifts, new d3.b(1), new m9(this, z10Var, s9Var));
+    }
+
+    public final void f(long j3, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState) {
+        a(tL_StarGiftAuctionState.gift, tL_StarGiftAuctionState.state, tL_StarGiftAuctionState.user_state);
+        s9 s9Var = (s9) this.b.get(j3);
+        if (s9Var == null || !s9Var.e) {
+            return;
+        }
+        a4 a4Var = new a4(this, s9Var, j3, 11);
+        s9Var.d = a4Var;
+        g0.i3(a4Var, tL_StarGiftAuctionState.timeout * 1000);
+    }
+
+    public final void g(long j3) {
+        Iterator it;
+        r9 b10 = b(j3);
+        androidx.activity.n nVar = this.a;
+        Long valueOf = Long.valueOf(j3);
+        synchronized (((HashMap) nVar.d)) {
+            try {
+                xe.b bVar = (xe.b) ((HashMap) nVar.d).get(valueOf);
+                it = bVar != null ? bVar.iterator() : null;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        if (b10 == null || it == null) {
+            return;
+        }
+        while (it.hasNext()) {
+            ((u9) it.next()).c(b10);
+        }
+    }
+
+    public final void h(TL_update.TL_updateStarGiftAuctionState tL_updateStarGiftAuctionState) {
+        r9 r9Var;
+        s9 s9Var = (s9) this.b.get(tL_updateStarGiftAuctionState.gift_id);
+        if (s9Var == null || (r9Var = s9Var.b) == null || !r9Var.a(tL_updateStarGiftAuctionState.state)) {
+            return;
+        }
+        o();
+        g(s9Var.a);
+    }
+
+    public final void i(TL_update.TL_updateStarGiftAuctionUserState tL_updateStarGiftAuctionUserState) {
+        r9 r9Var;
+        s9 s9Var = (s9) this.b.get(tL_updateStarGiftAuctionUserState.gift_id);
+        if (s9Var == null || (r9Var = s9Var.b) == null) {
+            return;
+        }
+        r9Var.e = tL_updateStarGiftAuctionUserState.user_state;
+        r9Var.h();
+        o();
+        g(s9Var.a);
+    }
+
+    public final void j(long j3, z10 z10Var) {
+        TL_stars.getStarGiftUpgradeAttributes getstargiftupgradeattributes = new TL_stars.getStarGiftUpgradeAttributes();
+        getstargiftupgradeattributes.gift_id = j3;
+        getConnectionsManager().sendRequestTyped(getstargiftupgradeattributes, new d3.b(1), new q9(z10Var, 0));
+    }
+
+    public final void k(long j3, bi.x xVar, long j10, bi.n nVar) {
+        s9 s9Var = (s9) this.b.get(j3);
+        if (s9Var == null || s9Var.f) {
+            nVar.a(Boolean.FALSE, null);
+            return;
+        }
+        if (!di.v8.y(this.currentAccount, false).e) {
+            di.v8.y(this.currentAccount, false).r(new k9(this, nVar, j3, xVar, j10));
+            return;
+        }
+        r9 r9Var = s9Var.b;
+        boolean z10 = r9Var != null && r9Var.e.bid_amount > 0;
+        s9Var.f = true;
+        TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
+        TLRPC.TL_inputInvoiceStarGiftAuctionBid tL_inputInvoiceStarGiftAuctionBid = new TLRPC.TL_inputInvoiceStarGiftAuctionBid();
+        tL_inputInvoiceStarGiftAuctionBid.gift_id = j3;
+        tL_inputInvoiceStarGiftAuctionBid.bid_amount = j10;
+        tL_inputInvoiceStarGiftAuctionBid.update_bid = z10;
+        if (xVar != null) {
+            long j11 = xVar.a;
+            if (j11 == 0) {
+                tL_inputInvoiceStarGiftAuctionBid.peer = new TLRPC.TL_inputPeerSelf();
+            } else {
+                tL_inputInvoiceStarGiftAuctionBid.peer = getMessagesController().j1(j11);
+            }
+            tL_inputInvoiceStarGiftAuctionBid.message = xVar.c;
+            tL_inputInvoiceStarGiftAuctionBid.hide_name = xVar.b;
+        } else if (!z10) {
+            tL_inputInvoiceStarGiftAuctionBid.peer = new TLRPC.TL_inputPeerSelf();
+            tL_inputInvoiceStarGiftAuctionBid.hide_name = false;
+        }
+        tL_payments_getPaymentForm.invoice = tL_inputInvoiceStarGiftAuctionBid;
+        getConnectionsManager().sendRequestTyped(tL_payments_getPaymentForm, new d3.b(1), new l9(this, nVar, s9Var, tL_payments_getPaymentForm, 0));
+    }
+
+    public final r9 l(long j3, u9 u9Var) {
+        androidx.activity.n nVar = this.a;
+        Long valueOf = Long.valueOf(j3);
+        synchronized (((HashMap) nVar.d)) {
+            try {
+                xe.b bVar = (xe.b) ((HashMap) nVar.d).get(valueOf);
+                if (bVar == null) {
+                    bVar = (xe.b) nVar.c;
+                    if (bVar != null) {
+                        nVar.c = bVar.h;
+                        bVar.h = null;
+                    } else {
+                        bVar = new xe.b(false, nVar.b);
+                    }
+                    ((HashMap) nVar.d).put(valueOf, bVar);
+                }
+                bVar.add(u9Var);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        m(j3);
+        return b(j3);
+    }
+
+    public final void m(long j3) {
+        s9 d = d(j3);
+        d.e = true;
+        a4 a4Var = d.d;
+        if (a4Var != null) {
+            g0.r(a4Var);
+            d.d = null;
+        }
+        TL_payments.TL_getStarGiftAuctionState tL_getStarGiftAuctionState = new TL_payments.TL_getStarGiftAuctionState();
+        TL_stars.TL_inputStarGiftAuction tL_inputStarGiftAuction = new TL_stars.TL_inputStarGiftAuction();
+        tL_inputStarGiftAuction.gift_id = d.a;
+        tL_getStarGiftAuctionState.auction = tL_inputStarGiftAuction;
+        r9 r9Var = d.b;
+        int i7 = 0;
+        if (r9Var != null) {
+            if (r9Var.f()) {
+                i7 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            } else {
+                TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = r9Var.f;
+                if (tL_starGiftAuctionState != null) {
+                    i7 = tL_starGiftAuctionState.version;
+                }
+            }
+        }
+        tL_getStarGiftAuctionState.version = i7;
+        getConnectionsManager().sendRequestTyped(tL_getStarGiftAuctionState, new d3.b(1), new o9(this, j3));
+    }
+
+    public final void n(long j3, u9 u9Var) {
+        androidx.activity.n nVar = this.a;
+        Long valueOf = Long.valueOf(j3);
+        synchronized (((HashMap) nVar.d)) {
+            try {
+                xe.b bVar = (xe.b) ((HashMap) nVar.d).get(valueOf);
+                if (bVar != null) {
+                    bVar.remove(u9Var);
+                    if (bVar.isEmpty()) {
+                        ((HashMap) nVar.d).remove(valueOf);
+                        bVar.h = (xe.b) nVar.c;
+                        nVar.c = bVar;
+                    }
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        s9 s9Var = (s9) this.b.get(j3);
+        if (s9Var == null) {
+            return;
+        }
+        s9Var.e = this.a.c(Long.valueOf(j3));
+        a4 a4Var = s9Var.d;
+        if (a4Var != null) {
+            g0.r(a4Var);
+            s9Var.d = null;
+        }
+    }
+
+    public final void o() {
+        SharedPreferences sharedPreferences = getMessagesController().f7;
+        if (sharedPreferences != null) {
+            sharedPreferences.edit().putLong("lastGiftAuctionTimeUpdate", System.currentTimeMillis()).apply();
+        }
+        ArrayList arrayList = this.c;
+        arrayList.clear();
+        LongSparseArray longSparseArray = this.b;
+        int size = longSparseArray.size();
+        for (int i7 = 0; i7 < size; i7++) {
+            s9 s9Var = (s9) longSparseArray.valueAt(i7);
+            r9 r9Var = s9Var.b;
+            if (r9Var != null && !r9Var.f()) {
+                r9 r9Var2 = s9Var.b;
+                if (r9Var2.e.bid_amount > 0) {
+                    arrayList.add(r9Var2);
+                }
+            }
+        }
+        List.-EL.sort(arrayList, Comparator$-CC.comparingInt(new bg.d(11)));
+        Iterator it = this.f.iterator();
+        while (it.hasNext()) {
+            ((t9) it.next()).g(arrayList);
+        }
+        ns.f(this.currentAccount).k(ns.Q3, new Object[0]);
+    }
 }

@@ -11,19 +11,19 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Trace;
 import c8.he;
-import h9.f1;
+import hi.l0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import jg.x;
+import jg.w;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final a0.j a = new a0.j(2);
-    public static final x b = new x(9);
+    public static final w b = new w(8);
 
     public static m4.f a(Context context, List list) {
         he.a("FontProvider.getFontFamilyResult");
@@ -44,7 +44,7 @@ public abstract class c {
     }
 
     public static ProviderInfo b(PackageManager packageManager, d dVar, Resources resources) {
-        x xVar = b;
+        w wVar = b;
         a0.j jVar = a;
         he.a("FontProvider.getProvider");
         try {
@@ -74,10 +74,10 @@ public abstract class c {
             for (Signature signature : signatureArr) {
                 arrayList.add(signature.toByteArray());
             }
-            Collections.sort(arrayList, xVar);
+            Collections.sort(arrayList, wVar);
             for (int i7 = 0; i7 < list.size(); i7++) {
                 ArrayList arrayList2 = new ArrayList((Collection) list.get(i7));
-                Collections.sort(arrayList2, xVar);
+                Collections.sort(arrayList2, wVar);
                 if (arrayList.size() == arrayList2.size()) {
                     for (int i10 = 0; i10 < arrayList.size(); i10++) {
                         if (!Arrays.equals((byte[]) arrayList.get(i10), (byte[]) arrayList2.get(i10))) {
@@ -101,13 +101,13 @@ public abstract class c {
             ArrayList arrayList = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
             Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            a gVar = Build.VERSION.SDK_INT < 24 ? new gf.g(context, build) : new f1(context, build);
+            a dVar2 = Build.VERSION.SDK_INT < 24 ? new ia.d(context, build) : new l0(context, build);
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
                 he.a("ContentQueryWrapper.query");
                 try {
-                    cursor = gVar.C0(build, strArr, new String[]{dVar.c});
+                    cursor = dVar2.p(build, strArr, new String[]{dVar.c});
                     Trace.endSection();
                     if (cursor != null && cursor.getCount() > 0) {
                         int columnIndex = cursor.getColumnIndex("result_code");
@@ -126,7 +126,7 @@ public abstract class c {
                     if (cursor != null) {
                         cursor.close();
                     }
-                    gVar.close();
+                    dVar2.close();
                     return (h[]) arrayList.toArray(new h[0]);
                 } finally {
                 }
@@ -134,7 +134,7 @@ public abstract class c {
                 if (cursor != null) {
                     cursor.close();
                 }
-                gVar.close();
+                dVar2.close();
                 throw th2;
             }
         } finally {

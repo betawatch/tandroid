@@ -1,30 +1,18 @@
 package c8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class u0 {
-    /* JADX WARN: Multi-variable type inference failed */
-    public static id.c a(id.c cVar, id.c cVar2, rd.p pVar) {
-        kotlin.jvm.internal.j.e(pVar, "<this>");
-        if (pVar instanceof kd.a) {
-            return ((kd.a) pVar).create(cVar, cVar2);
+    public static void a(long j3, String str) {
+        if (j3 >= 0) {
+            return;
         }
-        id.h context = cVar2.getContext();
-        return context == id.i.a ? new jd.b(cVar2, cVar, pVar) : new jd.c(cVar2, context, pVar, cVar);
+        throw new IllegalArgumentException(str + " (" + j3 + ") must be >= 0");
     }
 
-    public static id.c b(id.c cVar) {
-        id.c intercepted;
-        kotlin.jvm.internal.j.e(cVar, "<this>");
-        kd.c cVar2 = cVar instanceof kd.c ? (kd.c) cVar : null;
-        return (cVar2 == null || (intercepted = cVar2.intercepted()) == null) ? cVar : intercepted;
-    }
-
-    public static Object c(rd.p pVar, Object obj, id.c cVar) {
-        kotlin.jvm.internal.j.e(pVar, "<this>");
-        id.h context = cVar.getContext();
-        Object dVar = context == id.i.a ? new jd.d(cVar) : new jd.e(cVar, context);
-        kotlin.jvm.internal.u.a(2, pVar);
-        return pVar.invoke(obj, dVar);
+    public static void b(boolean z10) {
+        if (!z10) {
+            throw new ArithmeticException("mode was UNNECESSARY, but rounding was necessary");
+        }
     }
 }

@@ -1,40 +1,94 @@
 package f3;
 
-import a8.p0;
+import a8.ja;
+import e2.s0;
+import h9.s1;
+import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class d0 {
-    public static final d0 c = new d0(0, 0);
-    public final long a;
-    public final long b;
+public final class d0 implements o {
+    public final int a;
+    public final int b;
+    public final String c;
+    public int d;
+    public int e;
+    public q f;
+    public i0 g;
 
-    public d0(long j3, long j10) {
-        this.a = j3;
-        this.b = j10;
+    public d0(int i7, int i10, String str) {
+        this.a = i7;
+        this.b = i10;
+        this.c = str;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // f3.o
+    public final boolean b(p pVar) {
+        int i7 = this.b;
+        int i10 = this.a;
+        ja.p((i10 == -1 || i7 == -1) ? false : true);
+        h2.x xVar = new h2.x(i7);
+        ((l) pVar).h(xVar.a, 0, i7, false);
+        return xVar.H() == i10;
+    }
+
+    @Override // f3.o
+    public final void c(q qVar) {
+        this.f = qVar;
+        i0 d2 = qVar.d2(1024, 4);
+        this.g = d2;
+        e2.t tVar = new e2.t();
+        String str = this.c;
+        tVar.q = s0.n(str);
+        tVar.r = s0.n(str);
+        r.b.s(tVar, d2);
+        this.f.d1();
+        this.f.f(new e0());
+        this.e = 1;
+    }
+
+    @Override // f3.o
+    public final void d(long j3, long j10) {
+        if (j3 == 0 || this.e == 1) {
+            this.e = 1;
+            this.d = 0;
         }
-        if (obj != null && d0.class == obj.getClass()) {
-            d0 d0Var = (d0) obj;
-            if (this.a == d0Var.a && this.b == d0Var.b) {
-                return true;
+    }
+
+    @Override // f3.o
+    public final List e() {
+        h9.g0 g0Var = h9.i0.b;
+        return s1.e;
+    }
+
+    @Override // f3.o
+    public final int f(p pVar, s sVar) {
+        int i7 = this.e;
+        if (i7 != 1) {
+            if (i7 == 2) {
+                return -1;
             }
+            throw new IllegalStateException();
         }
-        return false;
+        i0 i0Var = this.g;
+        i0Var.getClass();
+        int e10 = i0Var.e(pVar, 1024, true);
+        if (e10 != -1) {
+            this.d += e10;
+            return 0;
+        }
+        this.e = 2;
+        this.g.c(0L, 1, this.d, 0, null);
+        this.d = 0;
+        return 0;
     }
 
-    public final int hashCode() {
-        return (((int) this.a) * 31) + ((int) this.b);
+    @Override // f3.o
+    public final o a() {
+        return this;
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("[timeUs=");
-        sb2.append(this.a);
-        sb2.append(", position=");
-        return p0.r(sb2, this.b, "]");
+    @Override // f3.o
+    public final void release() {
     }
 }

@@ -10,7 +10,7 @@ import org.webrtc.ContextUtils;
 import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class WebRtcAudioManager {
     private static final int BITS_PER_SAMPLE = 16;
@@ -41,14 +41,14 @@ public class WebRtcAudioManager {
     private int sampleRate;
     private final VolumeLogger volumeLogger;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class VolumeLogger {
         private static final String THREAD_NAME = "WebRtcVolumeLevelLoggerThread";
         private static final int TIMER_PERIOD_IN_SECONDS = 30;
         private final AudioManager audioManager;
         private Timer timer;
 
-        /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+        /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
         public class LogVolumeTask extends TimerTask {
             private final int maxRingVolume;
             private final int maxVoiceCallVolume;
@@ -102,8 +102,8 @@ public class WebRtcAudioManager {
         WebRtcAudioUtils.logAudioState(TAG);
     }
 
-    private static void assertTrue(boolean z9) {
-        if (!z9) {
+    private static void assertTrue(boolean z10) {
+        if (!z10) {
             throw new AssertionError("Expected condition to be true");
         }
     }
@@ -157,19 +157,19 @@ public class WebRtcAudioManager {
     }
 
     public static synchronized boolean getStereoInput() {
-        boolean z9;
+        boolean z10;
         synchronized (WebRtcAudioManager.class) {
-            z9 = useStereoInput;
+            z10 = useStereoInput;
         }
-        return z9;
+        return z10;
     }
 
     public static synchronized boolean getStereoOutput() {
-        boolean z9;
+        boolean z10;
         synchronized (WebRtcAudioManager.class) {
-            z9 = useStereoOutput;
+            z10 = useStereoOutput;
         }
-        return z9;
+        return z10;
     }
 
     private boolean hasEarpiece() {
@@ -220,26 +220,26 @@ public class WebRtcAudioManager {
         return ContextUtils.getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.audio.pro");
     }
 
-    private native void nativeCacheAudioParameters(int i7, int i10, int i11, boolean z9, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, boolean z15, int i12, int i13, long j3);
+    private native void nativeCacheAudioParameters(int i7, int i10, int i11, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, boolean z15, boolean z16, int i12, int i13, long j3);
 
-    public static synchronized void setBlacklistDeviceForOpenSLESUsage(boolean z9) {
+    public static synchronized void setBlacklistDeviceForOpenSLESUsage(boolean z10) {
         synchronized (WebRtcAudioManager.class) {
             blacklistDeviceForOpenSLESUsageIsOverridden = true;
-            blacklistDeviceForOpenSLESUsage = z9;
+            blacklistDeviceForOpenSLESUsage = z10;
         }
     }
 
-    public static synchronized void setStereoInput(boolean z9) {
+    public static synchronized void setStereoInput(boolean z10) {
         synchronized (WebRtcAudioManager.class) {
-            Logging.w(TAG, "Overriding default input behavior: setStereoInput(" + z9 + ')');
-            useStereoInput = z9;
+            Logging.w(TAG, "Overriding default input behavior: setStereoInput(" + z10 + ')');
+            useStereoInput = z10;
         }
     }
 
-    public static synchronized void setStereoOutput(boolean z9) {
+    public static synchronized void setStereoOutput(boolean z10) {
         synchronized (WebRtcAudioManager.class) {
-            Logging.w(TAG, "Overriding default output behavior: setStereoOutput(" + z9 + ')');
-            useStereoOutput = z9;
+            Logging.w(TAG, "Overriding default output behavior: setStereoOutput(" + z10 + ')');
+            useStereoOutput = z10;
         }
     }
 

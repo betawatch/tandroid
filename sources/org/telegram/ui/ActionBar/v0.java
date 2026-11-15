@@ -3,34 +3,34 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.accessibility.AccessibilityNodeInfo;
-import c8.j9;
+import c8.i9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class v0 extends w0 {
-    public final u0 g0;
-    public String h0;
+    public final u0 h0;
+    public String i0;
 
-    public v0(Context context, h6 h6Var) {
-        super(context, h6Var);
-        this.h0 = null;
+    public v0(Context context, e6 e6Var) {
+        super(context, e6Var);
+        this.i0 = null;
         setFocusable(true);
         setFocusableInTouchMode(true);
         setImportantForAccessibility(1);
         u0 u0Var = new u0(this, 0);
-        this.g0 = u0Var;
+        this.h0 = u0Var;
         setAccessibilityDelegate(u0Var);
     }
 
     @Override // org.telegram.ui.ActionBar.w0
     public final int c(float f10) {
-        int i7 = m6.gk;
-        h6 h6Var = this.y;
-        return i0.a.f(j9.a((((f10 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), m6.w0(i7, h6Var), m6.w0(m6.hk, h6Var));
+        int i7 = j6.jk;
+        e6 e6Var = this.y;
+        return i0.a.f(i9.a((((f10 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), j6.w0(i7, e6Var), j6.w0(j6.kk, e6Var));
     }
 
-    public final void e(boolean z9, float f10) {
-        d(z9, (f10 - 0.2f) / 2.8f);
+    public final void e(boolean z10, float f10) {
+        d(z10, (f10 - 0.2f) / 2.8f);
     }
 
     public float getSpeed() {
@@ -40,16 +40,16 @@ public final class v0 extends w0 {
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.g0.e(this, accessibilityNodeInfo);
+        this.h0.e(this, accessibilityNodeInfo);
     }
 
     @Override // android.view.View
     public final boolean performAccessibilityAction(int i7, Bundle bundle) {
-        return super.performAccessibilityAction(i7, bundle) || this.g0.g(this, i7, bundle);
+        return super.performAccessibilityAction(i7, bundle) || this.h0.g(this, i7, bundle);
     }
 
     public void setLabel(String str) {
-        this.h0 = str;
+        this.i0 = str;
     }
 
     @Override // org.telegram.ui.ActionBar.w0

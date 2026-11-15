@@ -4,11 +4,12 @@ import a0.m;
 import androidx.lifecycle.p0;
 import ca.i;
 import d6.d;
+import w7.s;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class b extends p0 {
-    public static final pb.b f = new pb.b(29);
+    public static final s f = new s(29);
     public final m d = new m();
     public boolean e = false;
 
@@ -34,7 +35,7 @@ public class b extends p0 {
             }
             dVar.a = null;
             if (iVar != null) {
-                boolean z9 = iVar.b;
+                boolean z10 = iVar.b;
             }
             dVar.d = true;
             dVar.b = false;

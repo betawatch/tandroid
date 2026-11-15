@@ -1,21 +1,98 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.PopupWindow;
+import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class du extends qu {
-    public final /* synthetic */ qu Q1;
+public final class du extends PopupWindow {
+    public static Field f;
+    public static final org.telegram.ui.ActionBar.a1 g = new org.telegram.ui.ActionBar.a1(1);
+    public ViewTreeObserver.OnScrollChangedListener a;
+    public ViewTreeObserver b;
+    public final cu c;
+    public boolean d;
+    public final int e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public du(qu quVar, org.telegram.ui.ActionBar.f2 f2Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, ArrayList arrayList) {
-        super(f2Var, context, h6Var, arrayList);
-        this.Q1 = quVar;
+    public du(cu cuVar) {
+        super(cuVar);
+        this.e = org.telegram.messenger.g0.L(org.telegram.messenger.g0.Q1() ? 40.0f : 32.0f);
+        this.c = cuVar;
+        setOutsideTouchable(true);
+        setClippingEnabled(true);
+        setInputMethodMode(2);
+        setSoftInputMode(0);
+        cuVar.setFocusableInTouchMode(true);
+        cuVar.setOnKeyListener(new dn(this, 1));
     }
 
-    @Override // org.telegram.ui.Components.qu
-    public final void L0() {
-        this.Q1.dismiss();
+    public final void a(View view) {
+        if (this.a != null) {
+            ViewTreeObserver viewTreeObserver = view.getWindowToken() != null ? view.getViewTreeObserver() : null;
+            ViewTreeObserver viewTreeObserver2 = this.b;
+            if (viewTreeObserver != viewTreeObserver2) {
+                if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
+                    this.b.removeOnScrollChangedListener(this.a);
+                }
+                this.b = viewTreeObserver;
+                if (viewTreeObserver != null) {
+                    viewTreeObserver.addOnScrollChangedListener(this.a);
+                }
+            }
+        }
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void dismiss() {
+        ViewTreeObserver viewTreeObserver;
+        setFocusable(false);
+        try {
+            super.dismiss();
+        } catch (Exception unused) {
+        }
+        if (this.a == null || (viewTreeObserver = this.b) == null) {
+            return;
+        }
+        if (viewTreeObserver.isAlive()) {
+            this.b.removeOnScrollChangedListener(this.a);
+        }
+        this.b = null;
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void showAsDropDown(View view, int i7, int i10) {
+        try {
+            super.showAsDropDown(view, i7, i10);
+            a(view);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void showAtLocation(View view, int i7, int i10, int i11) {
+        ViewTreeObserver viewTreeObserver;
+        super.showAtLocation(view, i7, i10, i11);
+        if (this.a == null || (viewTreeObserver = this.b) == null) {
+            return;
+        }
+        if (viewTreeObserver.isAlive()) {
+            this.b.removeOnScrollChangedListener(this.a);
+        }
+        this.b = null;
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void update(View view, int i7, int i10, int i11, int i12) {
+        super.update(view, i7, i10, i11, i12);
+        a(view);
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void update(View view, int i7, int i10) {
+        super.update(view, i7, i10);
+        a(view);
     }
 }

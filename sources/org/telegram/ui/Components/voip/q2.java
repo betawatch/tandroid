@@ -2,7 +2,7 @@ package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -19,28 +19,13 @@ public final /* synthetic */ class q2 implements ValueAnimator.AnimatorUpdateLis
             case 0:
                 r2 r2Var = this.b;
                 r2Var.getClass();
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                r2Var.d = intValue;
-                r2Var.e = intValue;
-                r2Var.f = intValue;
-                r2Var.h = intValue;
-                r2Var.n = intValue;
-                r2Var.invalidate();
+                r2Var.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r2Var.a(r2Var.S, r2Var.T);
                 break;
             default:
                 r2 r2Var2 = this.b;
                 r2Var2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r2Var2.d = org.telegram.messenger.g0.W1(floatValue, r2Var2.F, org.telegram.messenger.g0.L(56.0f));
-                r2Var2.e = org.telegram.messenger.g0.W1(floatValue, r2Var2.F, org.telegram.messenger.g0.L(36.0f));
-                r2Var2.f = org.telegram.messenger.g0.W1(floatValue, r2Var2.F, org.telegram.messenger.g0.L(60.0f));
-                r2Var2.h = org.telegram.messenger.g0.W1(floatValue, r2Var2.F, org.telegram.messenger.g0.L(36.0f));
-                r2Var2.n = org.telegram.messenger.g0.W1(floatValue, r2Var2.F, org.telegram.messenger.g0.L(64.0f));
-                r2Var2.r = org.telegram.messenger.g0.W1(floatValue, 0, org.telegram.messenger.g0.L(50.0f));
-                r2Var2.s = org.telegram.messenger.g0.W1(floatValue, 0, org.telegram.messenger.g0.L(20.0f));
-                r2Var2.w = org.telegram.messenger.g0.W1(floatValue, 0, 0);
-                r2Var2.x = org.telegram.messenger.g0.W1(floatValue, 0, org.telegram.messenger.g0.L(-20.0f));
-                r2Var2.y = org.telegram.messenger.g0.W1(floatValue, 0, org.telegram.messenger.g0.L(-40.0f));
+                r2Var2.a0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 r2Var2.invalidate();
                 break;
         }

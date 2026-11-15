@@ -1,26 +1,28 @@
 package v3;
 
-import c8.ca;
+import c8.ba;
 import e2.p0;
 import e2.q0;
 import h2.k0;
 import h2.x;
+import j$.util.DesugarCollections;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.ui.Components.m;
+import u7.i;
+import w7.s;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class c extends ca {
+public final class c extends ba {
     public final x a = new x();
     public final d4.f b = new d4.f();
     public k0 c;
 
-    @Override // c8.ca
+    @Override // c8.ba
     public final q0 b(o3.a aVar, ByteBuffer byteBuffer) {
-        p0 eVar;
+        b eVar;
         long j3;
         k0 k0Var = this.c;
         if (k0Var == null || aVar.r != k0Var.e()) {
@@ -52,26 +54,26 @@ public final class c extends ca {
             ArrayList arrayList = new ArrayList(A);
             for (int i10 = 0; i10 < A; i10++) {
                 xVar.C();
-                boolean z9 = (xVar.A() & 128) != 0;
+                boolean z10 = (xVar.A() & 128) != 0;
                 ArrayList arrayList2 = new ArrayList();
-                if (!z9) {
+                if (!z10) {
                     int A2 = xVar.A();
-                    boolean z10 = (A2 & 64) != 0;
-                    boolean z11 = (A2 & 32) != 0;
-                    if (z10) {
+                    boolean z11 = (A2 & 64) != 0;
+                    boolean z12 = (A2 & 32) != 0;
+                    if (z11) {
                         xVar.C();
                     }
-                    if (!z10) {
+                    if (!z11) {
                         int A3 = xVar.A();
                         ArrayList arrayList3 = new ArrayList(A3);
                         for (int i11 = 0; i11 < A3; i11++) {
                             xVar.A();
                             xVar.C();
-                            arrayList3.add(new qb.a(26));
+                            arrayList3.add(new nb.a(27));
                         }
                         arrayList2 = arrayList3;
                     }
-                    if (z11) {
+                    if (z12) {
                         xVar.A();
                         xVar.C();
                     }
@@ -79,33 +81,35 @@ public final class c extends ca {
                     xVar.A();
                     xVar.A();
                 }
-                arrayList.add(new m(arrayList2));
+                i iVar = new i();
+                iVar.a = DesugarCollections.unmodifiableList(arrayList2);
+                arrayList.add(iVar);
             }
             eVar = new f(arrayList);
         } else if (j12 == 5) {
             k0 k0Var3 = this.c;
             xVar.C();
-            boolean z12 = (xVar.A() & 128) != 0;
+            boolean z13 = (xVar.A() & 128) != 0;
             List list = Collections.EMPTY_LIST;
-            if (z12) {
+            if (z13) {
                 j3 = -9223372036854775807L;
             } else {
                 int A4 = xVar.A();
-                boolean z13 = (A4 & 64) != 0;
-                boolean z14 = (A4 & 32) != 0;
-                boolean z15 = (A4 & 16) != 0;
-                long d = (!z13 || z15) ? -9223372036854775807L : a.d(j10, xVar);
-                if (!z13) {
+                boolean z14 = (A4 & 64) != 0;
+                boolean z15 = (A4 & 32) != 0;
+                boolean z16 = (A4 & 16) != 0;
+                long d = (!z14 || z16) ? -9223372036854775807L : a.d(j10, xVar);
+                if (!z14) {
                     int A5 = xVar.A();
                     ArrayList arrayList4 = new ArrayList(A5);
                     for (int i12 = 0; i12 < A5; i12++) {
                         xVar.A();
-                        k0Var3.b(!z15 ? a.d(j10, xVar) : -9223372036854775807L);
-                        arrayList4.add(new pb.b(26));
+                        k0Var3.b(!z16 ? a.d(j10, xVar) : -9223372036854775807L);
+                        arrayList4.add(new s(26));
                     }
                     list = arrayList4;
                 }
-                if (z14) {
+                if (z15) {
                     xVar.A();
                     xVar.C();
                 }

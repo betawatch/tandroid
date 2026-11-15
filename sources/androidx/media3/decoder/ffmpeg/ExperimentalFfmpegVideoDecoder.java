@@ -3,17 +3,17 @@ package androidx.media3.decoder.ffmpeg;
 import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import e2.u;
-import h2.m0;
+import h2.l0;
+import i5.c;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import java.util.List;
-import jg.g;
 import k2.f;
 import k2.h;
 import k2.j;
 import k2.l;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class ExperimentalFfmpegVideoDecoder extends l {
     public final String o;
@@ -21,7 +21,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
     public volatile int q;
     public final ArrayDeque r;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static final class PendingInput {
         public final ByteBuffer a;
         public final long b;
@@ -64,7 +64,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
 
     private native long ffmpegInitialize(String str, byte[] bArr, int i7, int i10, int i11, int i12);
 
-    private native int ffmpegReceiveFrame(long j3, int i7, VideoDecoderOutputBuffer videoDecoderOutputBuffer, boolean z9);
+    private native int ffmpegReceiveFrame(long j3, int i7, VideoDecoderOutputBuffer videoDecoderOutputBuffer, boolean z10);
 
     private native void ffmpegRelease(long j3);
 
@@ -95,9 +95,9 @@ final class ExperimentalFfmpegVideoDecoder extends l {
     }
 
     @Override // k2.l
-    public final f i(h hVar, j jVar, boolean z9) {
+    public final f i(h hVar, j jVar, boolean z10) {
         VideoDecoderOutputBuffer videoDecoderOutputBuffer = (VideoDecoderOutputBuffer) jVar;
-        if (z9) {
+        if (z10) {
             long ffmpegReset = ffmpegReset(this.p);
             this.p = ffmpegReset;
             if (ffmpegReset == 0) {
@@ -106,9 +106,9 @@ final class ExperimentalFfmpegVideoDecoder extends l {
             this.r.clear();
         }
         ByteBuffer byteBuffer = hVar.c;
-        String str = m0.a;
+        String str = l0.a;
         boolean l10 = l(hVar.e);
-        boolean z10 = !l10;
+        boolean z11 = !l10;
         while (!this.r.isEmpty()) {
             PendingInput pendingInput = (PendingInput) this.r.peek();
             long j3 = this.p;
@@ -134,7 +134,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
             if (l10) {
                 videoDecoderOutputBuffer.init(hVar.e, this.q, null);
             }
-            int ffmpegReceiveFrame = ffmpegReceiveFrame(this.p, this.q, videoDecoderOutputBuffer, z10);
+            int ffmpegReceiveFrame = ffmpegReceiveFrame(this.p, this.q, videoDecoderOutputBuffer, z11);
             if (ffmpegReceiveFrame == -2) {
                 return new FfmpegDecoderException("ffmpegDecode error: (see logcat)");
             }
@@ -157,7 +157,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
             if (l10) {
                 videoDecoderOutputBuffer.init(hVar.e, this.q, null);
             }
-            int ffmpegReceiveFrame2 = ffmpegReceiveFrame(this.p, this.q, videoDecoderOutputBuffer, z10);
+            int ffmpegReceiveFrame2 = ffmpegReceiveFrame(this.p, this.q, videoDecoderOutputBuffer, z11);
             if (ffmpegReceiveFrame2 == -2) {
                 return new FfmpegDecoderException("ffmpegDecode error: (see logcat)");
             }
@@ -177,7 +177,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
         }
         int ffmpegRenderFrame = ffmpegRenderFrame(this.p, surface, videoDecoderOutputBuffer, videoDecoderOutputBuffer.width, videoDecoderOutputBuffer.height);
         if (ffmpegRenderFrame == -2 || ffmpegRenderFrame == -4) {
-            throw new FfmpegDecoderException(g.j(ffmpegRenderFrame, "Buffer render error: "));
+            throw new FfmpegDecoderException(c.i(ffmpegRenderFrame, "Buffer render error: "));
         }
     }
 

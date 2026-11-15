@@ -2,35 +2,35 @@ package org.telegram.ui.Cells;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.ft;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class g3 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ys b;
+    public final /* synthetic */ ft b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ h3 d;
 
-    public g3(h3 h3Var, int i7, ys ysVar, boolean z9) {
+    public g3(h3 h3Var, int i7, ft ftVar, boolean z10) {
         this.d = h3Var;
         this.a = i7;
-        this.b = ysVar;
-        this.c = z9;
+        this.b = ftVar;
+        this.c = z10;
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
         h3 h3Var = this.d;
-        boolean z9 = h3Var.a;
+        boolean z10 = h3Var.a;
         int i7 = this.a;
-        if (!z9) {
+        if (!z10) {
             if (i7 > 0 && editable != null && editable.length() > i7) {
                 h3Var.a = true;
                 CharSequence subSequence = editable.subSequence(0, i7);
-                ys ysVar = this.b;
-                ysVar.setText(subSequence);
-                ysVar.setSelection(ysVar.length());
+                ft ftVar = this.b;
+                ftVar.setText(subSequence);
+                ftVar.setSelection(ftVar.length());
                 h3Var.a = false;
             }
             h3Var.b(editable);
@@ -45,11 +45,11 @@ public final class g3 implements TextWatcher {
                 }
             }
         }
-        org.telegram.ui.Components.h6 h6Var = h3Var.y;
-        if (h6Var == null || i7 <= 0) {
+        org.telegram.ui.Components.g6 g6Var = h3Var.y;
+        if (g6Var == null || i7 <= 0) {
             return;
         }
-        h6Var.a();
+        g6Var.a();
         h3Var.c();
     }
 

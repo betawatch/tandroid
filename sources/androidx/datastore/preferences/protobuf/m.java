@@ -1,13 +1,13 @@
 package androidx.datastore.preferences.protobuf;
 
-import a8.p6;
+import a8.q6;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class m extends p6 {
+public final class m extends q6 {
     public static final Logger f = Logger.getLogger(m.class.getName());
     public static final boolean g = n1.e;
     public l0 a;
@@ -130,7 +130,7 @@ public final class m extends p6 {
         f(j3);
     }
 
-    @Override // a8.p6
+    @Override // a8.q6
     public final void a(int i7, int i10, byte[] bArr) {
         o(bArr, i7, i10);
     }
@@ -139,17 +139,17 @@ public final class m extends p6 {
         int i10 = this.d;
         int i11 = i10 + 1;
         this.d = i11;
-        byte b10 = (byte) (i7 & qs.e4);
+        byte b10 = (byte) (i7 & ns.e4);
         byte[] bArr = this.b;
         bArr[i10] = b10;
         int i12 = i10 + 2;
         this.d = i12;
-        bArr[i11] = (byte) ((i7 >> 8) & qs.e4);
+        bArr[i11] = (byte) ((i7 >> 8) & ns.e4);
         int i13 = i10 + 3;
         this.d = i13;
-        bArr[i12] = (byte) ((i7 >> 16) & qs.e4);
+        bArr[i12] = (byte) ((i7 >> 16) & ns.e4);
         this.d = i10 + 4;
-        bArr[i13] = (byte) ((i7 >> 24) & qs.e4);
+        bArr[i13] = (byte) ((i7 >> 24) & ns.e4);
     }
 
     public final void c(long j3) {
@@ -169,15 +169,15 @@ public final class m extends p6 {
         bArr[i12] = (byte) (255 & (j3 >> 24));
         int i14 = i7 + 5;
         this.d = i14;
-        bArr[i13] = (byte) (((int) (j3 >> 32)) & qs.e4);
+        bArr[i13] = (byte) (((int) (j3 >> 32)) & ns.e4);
         int i15 = i7 + 6;
         this.d = i15;
-        bArr[i14] = (byte) (((int) (j3 >> 40)) & qs.e4);
+        bArr[i14] = (byte) (((int) (j3 >> 40)) & ns.e4);
         int i16 = i7 + 7;
         this.d = i16;
-        bArr[i15] = (byte) (((int) (j3 >> 48)) & qs.e4);
+        bArr[i15] = (byte) (((int) (j3 >> 48)) & ns.e4);
         this.d = i7 + 8;
-        bArr[i16] = (byte) (((int) (j3 >> 56)) & qs.e4);
+        bArr[i16] = (byte) (((int) (j3 >> 56)) & ns.e4);
     }
 
     public final void d(int i7, int i10) {
@@ -185,13 +185,13 @@ public final class m extends p6 {
     }
 
     public final void e(int i7) {
-        boolean z9 = g;
+        boolean z10 = g;
         byte[] bArr = this.b;
-        if (z9) {
+        if (z10) {
             while ((i7 & (-128)) != 0) {
                 int i10 = this.d;
                 this.d = i10 + 1;
-                n1.j(bArr, i10, (byte) ((i7 | 128) & qs.e4));
+                n1.j(bArr, i10, (byte) ((i7 | 128) & ns.e4));
                 i7 >>>= 7;
             }
             int i11 = this.d;
@@ -202,7 +202,7 @@ public final class m extends p6 {
         while ((i7 & (-128)) != 0) {
             int i12 = this.d;
             this.d = i12 + 1;
-            bArr[i12] = (byte) ((i7 | 128) & qs.e4);
+            bArr[i12] = (byte) ((i7 | 128) & ns.e4);
             i7 >>>= 7;
         }
         int i13 = this.d;
@@ -211,13 +211,13 @@ public final class m extends p6 {
     }
 
     public final void f(long j3) {
-        boolean z9 = g;
+        boolean z10 = g;
         byte[] bArr = this.b;
-        if (z9) {
+        if (z10) {
             while ((j3 & (-128)) != 0) {
                 int i7 = this.d;
                 this.d = i7 + 1;
-                n1.j(bArr, i7, (byte) ((((int) j3) | 128) & qs.e4));
+                n1.j(bArr, i7, (byte) ((((int) j3) | 128) & ns.e4));
                 j3 >>>= 7;
             }
             int i10 = this.d;
@@ -228,7 +228,7 @@ public final class m extends p6 {
         while ((j3 & (-128)) != 0) {
             int i11 = this.d;
             this.d = i11 + 1;
-            bArr[i11] = (byte) ((((int) j3) | 128) & qs.e4);
+            bArr[i11] = (byte) ((((int) j3) | 128) & ns.e4);
             j3 >>>= 7;
         }
         int i12 = this.d;
@@ -279,10 +279,10 @@ public final class m extends p6 {
         }
     }
 
-    public final void p(int i7, boolean z9) {
+    public final void p(int i7, boolean z10) {
         m(11);
         d(i7, 0);
-        byte b10 = z9 ? (byte) 1 : (byte) 0;
+        byte b10 = z10 ? (byte) 1 : (byte) 0;
         int i10 = this.d;
         this.d = i10 + 1;
         this.b[i10] = b10;

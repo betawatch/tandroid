@@ -1,10 +1,11 @@
 package i2;
 
-import a8.ia;
+import a8.ja;
+import com.google.android.gms.internal.vision.e2;
 import h9.c0;
 import h9.f0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import j$.util.Objects;
 import java.lang.reflect.Array;
 import java.math.RoundingMode;
@@ -13,9 +14,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class o {
     public static final byte[] a = {0, 0, 0, 1};
@@ -39,7 +40,7 @@ public abstract class o {
 
     public static int c(byte[] bArr, int i7, int i10, boolean[] zArr) {
         int i11 = i10 - i7;
-        ia.p(i11 >= 0);
+        ja.p(i11 >= 0);
         if (i11 == 0) {
             return i10;
         }
@@ -143,19 +144,19 @@ public abstract class o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static h i(s sVar, boolean z9, int i7, h hVar) {
+    public static h i(s sVar, boolean z10, int i7, h hVar) {
         int[] iArr;
         int i10;
         int i11;
         int i12;
-        boolean z10;
         boolean z11;
+        boolean z12;
         int i13;
         int i14;
         int[] iArr2 = new int[6];
-        if (z9) {
+        if (z10) {
             int e10 = sVar.e(2);
-            z11 = sVar.d();
+            z12 = sVar.d();
             i13 = sVar.e(5);
             i14 = 0;
             for (int i15 = 0; i15 < 32; i15++) {
@@ -173,7 +174,7 @@ public abstract class o {
                 i10 = 0;
                 i11 = 0;
                 i12 = 0;
-                z10 = false;
+                z11 = false;
                 int e11 = sVar.e(8);
                 int i17 = 0;
                 for (int i18 = 0; i18 < i7; i18++) {
@@ -188,17 +189,17 @@ public abstract class o {
                 if (i7 > 0) {
                     sVar.j((8 - i7) * 2);
                 }
-                return new h(i10, i11, i12, e11, z10, iArr);
+                return new h(i10, i11, i12, e11, z11, iArr);
             }
             int i19 = hVar.a;
-            z11 = hVar.b;
+            z12 = hVar.b;
             i13 = hVar.c;
             i14 = hVar.d;
             iArr2 = hVar.e;
             i10 = i19;
         }
         iArr = iArr2;
-        z10 = z11;
+        z11 = z12;
         i11 = i13;
         i12 = i14;
         int e112 = sVar.e(8);
@@ -208,7 +209,7 @@ public abstract class o {
         sVar.j(i172);
         if (i7 > 0) {
         }
-        return new h(i10, i11, i12, e112, z10, iArr);
+        return new h(i10, i11, i12, e112, z11, iArr);
     }
 
     public static b7.l j(int i7, int i10, byte[] bArr) {
@@ -229,14 +230,14 @@ public abstract class o {
             int e10 = sVar.e(8);
             int i12 = 0;
             while (e10 == 255) {
-                i12 += qs.e4;
+                i12 += ns.e4;
                 e10 = sVar.e(8);
             }
             int i13 = i12 + e10;
             int e11 = sVar.e(8);
             int i14 = 0;
             while (e11 == 255) {
-                i14 += qs.e4;
+                i14 += ns.e4;
                 e11 = sVar.e(8);
             }
             int i15 = i14 + e11;
@@ -290,7 +291,7 @@ public abstract class o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static k k(byte[] bArr, int i7, int i10, ui.e eVar) {
+    public static k k(byte[] bArr, int i7, int i10, xi.e eVar) {
         int i11;
         int i12;
         int i13;
@@ -325,17 +326,17 @@ public abstract class o {
         sVar.j(4);
         int e10 = sVar.e(3);
         int i34 = h.b;
-        boolean z9 = i34 != 0 && e10 == 7;
+        boolean z10 = i34 != 0 && e10 == 7;
         if (eVar != null) {
-            i0 i0Var = (i0) eVar.b;
+            i0 i0Var = (i0) eVar.a;
             if (!i0Var.isEmpty()) {
                 i11 = ((g) i0Var.get(Math.min(i34, i0Var.size() - 1))).a;
                 h hVar2 = null;
-                if (z9) {
+                if (z10) {
                     sVar.i();
                     hVar2 = i(sVar, true, e10, null);
                 } else if (eVar != null) {
-                    i iVar2 = (i) eVar.c;
+                    i iVar2 = (i) eVar.b;
                     int[] iArr = iVar2.b;
                     i0 i0Var2 = iVar2.a;
                     int i35 = iArr[i11];
@@ -344,7 +345,7 @@ public abstract class o {
                     }
                 }
                 sVar.f();
-                if (z9) {
+                if (z10) {
                     int f13 = sVar.f();
                     if (f13 == 3) {
                         sVar.i();
@@ -370,7 +371,7 @@ public abstract class o {
                     i17 = f14;
                 } else {
                     int e11 = sVar.d() ? sVar.e(8) : -1;
-                    if (eVar != null && (qVar = (q4.q) eVar.d) != null) {
+                    if (eVar != null && (qVar = (q4.q) eVar.c) != null) {
                         i0 i0Var3 = (i0) qVar.b;
                         if (e11 == -1) {
                             e11 = ((int[]) qVar.c)[i11];
@@ -395,7 +396,7 @@ public abstract class o {
                     i16 = 0;
                 }
                 int f20 = sVar.f();
-                if (z9) {
+                if (z10) {
                     i18 = -1;
                     for (int i38 = sVar.d() ? 0 : e10; i38 <= e10; i38++) {
                         sVar.f();
@@ -413,7 +414,7 @@ public abstract class o {
                 sVar.f();
                 if (sVar.d()) {
                     int i39 = 6;
-                    if (z9 ? sVar.d() : false) {
+                    if (z10 ? sVar.d() : false) {
                         sVar.j(6);
                     } else if (sVar.d()) {
                         int i40 = 0;
@@ -576,7 +577,7 @@ public abstract class o {
                         } else if (e12 < 17) {
                             f24 = b[e12];
                         } else {
-                            com.google.android.recaptcha.internal.a.o(e12, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
+                            e2.o(e12, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
                         }
                     }
                     if (sVar.d()) {
@@ -596,7 +597,7 @@ public abstract class o {
                             i28 = -1;
                         }
                     } else {
-                        if (eVar != null && (iVar = (i) eVar.e) != null) {
+                        if (eVar != null && (iVar = (i) eVar.d) != null) {
                             i0 i0Var4 = iVar.a;
                             int i65 = iVar.b[i63];
                             if (i0Var4.size() > i65) {
@@ -634,13 +635,13 @@ public abstract class o {
         }
         i11 = 0;
         h hVar22 = null;
-        if (z9) {
+        if (z10) {
         }
         sVar.f();
-        if (z9) {
+        if (z10) {
         }
         int f202 = sVar.f();
-        if (z9) {
+        if (z10) {
         }
         sVar.f();
         sVar.f();
@@ -676,23 +677,23 @@ public abstract class o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ui.e l(int i7, int i10, byte[] bArr) {
+    public static xi.e l(int i7, int i10, byte[] bArr) {
         int[] iArr;
         int[] iArr2;
         i iVar;
         int i11;
         int i12;
         int i13;
-        boolean z9;
+        boolean z10;
         int i14;
-        t1 t1Var;
+        s1 s1Var;
         boolean[][] zArr;
         int i15;
         boolean[][] zArr2;
         int[] iArr3;
         int[] iArr4;
         int i16;
-        boolean z10;
+        boolean z11;
         int i17;
         boolean d2;
         int i18;
@@ -701,8 +702,8 @@ public abstract class o {
         boolean d10;
         int i21;
         int i22;
-        boolean z11;
         boolean z12;
+        boolean z13;
         s sVar = new s(bArr, i7, i10);
         h(sVar);
         sVar.j(4);
@@ -723,12 +724,12 @@ public abstract class o {
         int i26 = 6;
         int i27 = 1;
         i iVar2 = new i(i0.u(i24), new int[1], 0);
-        boolean z13 = i23 >= 2 && f10 >= 2;
-        boolean z14 = d11 && d12;
+        boolean z14 = i23 >= 2 && f10 >= 2;
+        boolean z15 = d11 && d12;
         int i28 = e12 + 1;
-        boolean z15 = i28 >= i23;
-        if (!z13 || !z14 || !z15) {
-            return new ui.e(null, iVar2, null, null);
+        boolean z16 = i28 >= i23;
+        if (!z14 || !z15 || !z16) {
+            return new xi.e((s1) null, iVar2, (q4.q) null, (i) null);
         }
         Class cls = Integer.TYPE;
         int[][] iArr5 = (int[][]) Array.newInstance((Class<?>) cls, f10, i28);
@@ -760,8 +761,8 @@ public abstract class o {
                 if (i32 == 0 || sVar.d()) {
                     boolean d13 = sVar.d();
                     boolean d14 = sVar.d();
-                    z12 = d13;
-                    z11 = d14;
+                    z13 = d13;
+                    z12 = d14;
                     if (d13 || d14) {
                         d2 = sVar.d();
                         if (d2) {
@@ -819,12 +820,12 @@ public abstract class o {
                         i32++;
                     }
                 } else {
+                    z13 = false;
                     z12 = false;
-                    z11 = false;
                 }
                 d2 = false;
-                i19 = z12;
-                i18 = z11;
+                i19 = z13;
+                i18 = z12;
                 i20 = 0;
                 while (i20 <= e11) {
                 }
@@ -834,7 +835,7 @@ public abstract class o {
         int[][] iArr10 = iArr5;
         int[] iArr11 = iArr7;
         if (!sVar.d()) {
-            return new ui.e(null, iVar2, null, null);
+            return new xi.e((s1) null, iVar2, (q4.q) null, (i) null);
         }
         int i37 = sVar.d;
         if (i37 > 0) {
@@ -852,7 +853,7 @@ public abstract class o {
             }
         }
         if (i39 == 0 || !zArr3[1]) {
-            return new ui.e(null, iVar2, null, null);
+            return new xi.e((s1) null, iVar2, (q4.q) null, (i) null);
         }
         int[] iArr12 = new int[i39];
         for (int i41 = 0; i41 < i39 - (d16 ? 1 : 0); i41++) {
@@ -924,17 +925,17 @@ public abstract class o {
                 int i52 = 0;
                 while (true) {
                     if (i52 >= i49) {
-                        z10 = true;
+                        z11 = true;
                         break;
                     }
                     int i53 = i52;
                     if (iArr18[iArr16[i49]] == iArr18[iArr16[i52]]) {
-                        z10 = false;
+                        z11 = false;
                         break;
                     }
                     i52 = i53 + 1;
                 }
-                if (z10) {
+                if (z11) {
                     i48++;
                 }
             }
@@ -945,7 +946,7 @@ public abstract class o {
         int[] iArr19 = iArr17;
         int e13 = sVar.e(4);
         if (i48 < 2 || e13 == 0) {
-            return new ui.e(null, iVar2, null, null);
+            return new xi.e((s1) null, iVar2, (q4.q) null, (i) null);
         }
         int[] iArr20 = new int[i48];
         for (int i54 = 0; i54 < i48; i54++) {
@@ -973,9 +974,9 @@ public abstract class o {
             iArr16 = iArr23;
         }
         int[] iArr25 = iArr16;
-        t1 f12 = p10.f();
+        s1 f12 = p10.f();
         if (((g) f12.get(0)).b == -1) {
-            return new ui.e(null, iVar2, null, null);
+            return new xi.e((s1) null, iVar2, (q4.q) null, (i) null);
         }
         int i58 = 1;
         while (true) {
@@ -989,7 +990,7 @@ public abstract class o {
             i58++;
         }
         if (i58 == -1) {
-            return new ui.e(null, iVar2, null, null);
+            return new xi.e((s1) null, iVar2, (q4.q) null, (i) null);
         }
         Class cls2 = Boolean.TYPE;
         boolean[][] zArr4 = (boolean[][]) Array.newInstance((Class<?>) cls2, i23, i23);
@@ -1043,7 +1044,7 @@ public abstract class o {
             }
         }
         if (i67 > 1) {
-            return new ui.e(null, iVar2, null, null);
+            return new xi.e((s1) null, iVar2, (q4.q) null, (i) null);
         }
         int[] iArr27 = new int[i23];
         int[] iArr28 = new int[f10];
@@ -1103,10 +1104,10 @@ public abstract class o {
                 p11.c(i38);
             }
         }
-        t1 f14 = p11.f();
+        s1 f14 = p11.f();
         int f15 = sVar.f() + f10;
         if (f15 > f10) {
-            return new ui.e(null, iVar2, null, null);
+            return new xi.e((s1) null, iVar2, (q4.q) null, (i) null);
         }
         int e14 = sVar.e(2);
         boolean[][] zArr13 = (boolean[][]) Array.newInstance((Class<?>) cls2, f15, i28);
@@ -1167,9 +1168,9 @@ public abstract class o {
                 for (int i86 = 0; i86 < iArr35[i84]; i86++) {
                     zArr14[i84][i86] = sVar.d();
                     int i87 = iArr34[i84];
-                    boolean z16 = zArr14[i84][i86];
-                    iArr34[i84] = i87 + (z16 ? 1 : 0);
-                    if (z16) {
+                    boolean z17 = zArr14[i84][i86];
+                    iArr34[i84] = i87 + (z17 ? 1 : 0);
+                    if (z17) {
                         iArr33[i84] = iArr10[i84][i86];
                     }
                 }
@@ -1190,7 +1191,7 @@ public abstract class o {
             while (i89 < iArr35[i84]) {
                 if (f13 > 1) {
                     zArr15[i84][i89] = zArr14[i84][i89];
-                    t1Var = f14;
+                    s1Var = f14;
                     zArr = zArr15;
                     RoundingMode roundingMode = RoundingMode.CEILING;
                     int c10 = j9.c.c(f13);
@@ -1217,27 +1218,27 @@ public abstract class o {
                         }
                     }
                 } else {
-                    t1Var = f14;
+                    s1Var = f14;
                     zArr = zArr15;
                 }
                 i89++;
-                f14 = t1Var;
+                f14 = s1Var;
                 zArr15 = zArr;
             }
-            t1 t1Var2 = f14;
+            s1 s1Var2 = f14;
             boolean[][] zArr16 = zArr15;
             if (iArr34[i84] == 1 && iArr2[iArr33[i84]] > 0) {
                 sVar.i();
             }
             i84++;
-            f14 = t1Var2;
+            f14 = s1Var2;
             zArr15 = zArr16;
             i83 = 2;
         }
-        t1 t1Var3 = f14;
+        s1 s1Var3 = f14;
         boolean[][] zArr17 = zArr15;
         if (i85 == 0) {
-            return new ui.e(null, iVar2, null, null);
+            return new xi.e((s1) null, iVar2, (q4.q) null, (i) null);
         }
         int f16 = sVar.f();
         int i93 = f16 + 1;
@@ -1247,12 +1248,12 @@ public abstract class o {
         Object[] objArr = new Object[i93];
         int i94 = 0;
         int i95 = 0;
-        boolean z17 = false;
+        boolean z18 = false;
         while (i94 < i93) {
             int i96 = i94;
             int e15 = sVar.e(16);
             int e16 = sVar.e(16);
-            boolean z18 = z17;
+            boolean z19 = z18;
             if (sVar.d()) {
                 i11 = sVar.e(2);
                 if (i11 == 3) {
@@ -1275,16 +1276,16 @@ public abstract class o {
             }
             j jVar = new j(i11, i12, i13, e15, e16);
             int b10 = c0.b(objArr.length, i95 + 1);
-            if (b10 > objArr.length || z18) {
+            if (b10 > objArr.length || z19) {
                 objArr = Arrays.copyOf(objArr, b10);
-                z9 = false;
+                z10 = false;
             } else {
-                z9 = z18;
+                z10 = z19;
             }
             objArr[i95] = jVar;
             i95++;
             i94 = i96 + 1;
-            z17 = z9;
+            z18 = z10;
         }
         if (i93 <= 1 || !sVar.d()) {
             for (int i97 = 1; i97 < i23; i97++) {
@@ -1368,25 +1369,25 @@ public abstract class o {
             Object[] objArr2 = new Object[e17];
             int i109 = 0;
             int i110 = 0;
-            boolean z19 = false;
+            boolean z20 = false;
             while (i109 < e17) {
                 sVar.j(3);
                 int i111 = sVar.d() ? 1 : 2;
                 int f23 = e2.m.f(sVar.e(8));
-                boolean z20 = d25;
+                boolean z21 = d25;
                 int g10 = e2.m.g(sVar.e(8));
                 sVar.j(8);
                 l lVar = new l(f23, i111, g10);
                 int b11 = c0.b(objArr2.length, i110 + 1);
-                if (b11 > objArr2.length || z19) {
+                if (b11 > objArr2.length || z20) {
                     objArr2 = Arrays.copyOf(objArr2, b11);
-                    z19 = false;
+                    z20 = false;
                 }
                 objArr2[i110] = lVar;
                 i109++;
                 i110++;
-                d25 = z20;
-                z19 = z19;
+                d25 = z21;
+                z20 = z20;
             }
             if (d25 && e17 > 1) {
                 for (int i112 = 0; i112 < i23; i112++) {
@@ -1397,7 +1398,7 @@ public abstract class o {
         } else {
             iVar = null;
         }
-        return new ui.e(f12, new i(t1Var3, iArr36, 0), qVar, iVar);
+        return new xi.e(f12, new i(s1Var3, iArr36, 0), qVar, iVar);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:101:0x0261  */
@@ -1419,13 +1420,13 @@ public abstract class o {
         int f10;
         int f11;
         int i11;
-        boolean z9;
+        boolean z10;
         int i12;
         int i13;
         int i14;
         int i15;
         int i16;
-        boolean z10;
+        boolean z11;
         boolean d2;
         int i17;
         int i18;
@@ -1474,13 +1475,13 @@ public abstract class o {
             } else {
                 i11 = 16;
             }
-            z9 = d12;
+            z10 = d12;
             i12 = f14;
         } else {
             f10 = 1;
             i11 = 16;
             i12 = 0;
-            z9 = false;
+            z10 = false;
             f11 = 0;
         }
         int f15 = sVar.f() + 4;
@@ -1502,7 +1503,7 @@ public abstract class o {
                     sVar.f();
                 }
                 i15 = f11;
-                z10 = d13;
+                z11 = d13;
                 i16 = 0;
                 sVar.f();
                 sVar.i();
@@ -1560,7 +1561,7 @@ public abstract class o {
                             f24 = b[e13];
                         } else {
                             i17 = f15;
-                            com.google.android.recaptcha.internal.a.o(e13, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
+                            e2.o(e13, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
                             if (sVar.d()) {
                                 sVar.i();
                             }
@@ -1648,14 +1649,14 @@ public abstract class o {
                     i18 = i15;
                     i19 = i41;
                 }
-                return new n(i40, e11, e12, f13, i39, i38, f12, i12, i18, z9, d2, i17, i14, i22, z10, i23, i20, i21, i19);
+                return new n(i40, e11, e12, f13, i39, i38, f12, i12, i18, z10, d2, i17, i14, i22, z11, i23, i20, i21, i19);
             }
             i13 = e10;
             i14 = f16;
             i15 = f11;
             i16 = 0;
         }
-        z10 = false;
+        z11 = false;
         sVar.f();
         sVar.i();
         int f182 = sVar.f() + 1;
@@ -1679,7 +1680,7 @@ public abstract class o {
         float f242 = 1.0f;
         if (sVar.d()) {
         }
-        return new n(i402, e11, e12, f13, i392, i382, f12, i12, i18, z9, d2, i17, i14, i22, z10, i23, i20, i21, i19);
+        return new n(i402, e11, e12, f13, i392, i382, f12, i12, i18, z10, d2, i17, i14, i22, z11, i23, i20, i21, i19);
     }
 
     public static void n(s sVar) {

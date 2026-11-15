@@ -1,138 +1,53 @@
 package ch;
 
-import android.text.TextUtils;
-import j$.util.Objects;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h5;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class o0 {
-    public boolean a;
-    public boolean b;
-    public long c;
-    public boolean d;
-    public boolean e;
-    public String f;
-    public long g;
-    public long h;
+public final class o0 extends n0 {
+    public final /* synthetic */ q0 g0;
 
-    public static o0 b(String str) {
-        if (str == null) {
-            str = "";
-        }
-        o0 o0Var = new o0();
-        if (!str.startsWith("animated_")) {
-            o0Var.f = str;
-            o0Var.h = str.hashCode();
-            return o0Var;
-        }
-        try {
-            long parseLong = Long.parseLong(str.substring(9));
-            o0Var.g = parseLong;
-            o0Var.h = parseLong;
-            return o0Var;
-        } catch (Exception unused) {
-            o0Var.f = str;
-            o0Var.h = str.hashCode();
-            return o0Var;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o0(q0 q0Var, n0 n0Var, TLRPC.ReactionCount reactionCount, boolean z10) {
+        super(n0Var, q0Var.l, q0Var.w, reactionCount, z10, q0Var.y);
+        this.g0 = q0Var;
     }
 
-    public static o0 c(TLRPC.TL_availableReaction tL_availableReaction) {
-        o0 o0Var = new o0();
-        o0Var.f = tL_availableReaction.reaction;
-        o0Var.h = r3.hashCode();
-        return o0Var;
+    @Override // ch.n0
+    public final float j() {
+        return this.g0.a;
     }
 
-    public static o0 d(TLRPC.Reaction reaction) {
-        o0 o0Var = new o0();
-        if (reaction instanceof TLRPC.TL_reactionPaid) {
-            o0Var.a = true;
-            return o0Var;
-        }
-        if (reaction instanceof TLRPC.TL_reactionEmoji) {
-            o0Var.f = ((TLRPC.TL_reactionEmoji) reaction).emoticon;
-            o0Var.h = r3.hashCode();
-            return o0Var;
-        }
-        if (reaction instanceof TLRPC.TL_reactionCustomEmoji) {
-            long j3 = ((TLRPC.TL_reactionCustomEmoji) reaction).document_id;
-            o0Var.g = j3;
-            o0Var.h = j3;
-        }
-        return o0Var;
+    @Override // ch.n0
+    public final ImageReceiver k() {
+        return (ImageReceiver) this.g0.E.get(this.r);
     }
 
-    public static o0 e(TLRPC.TL_availableEffect tL_availableEffect) {
-        o0 o0Var = new o0();
-        o0Var.b = true;
-        long j3 = tL_availableEffect.id;
-        o0Var.c = j3;
-        o0Var.e = tL_availableEffect.effect_animation_id == 0;
-        o0Var.g = tL_availableEffect.effect_sticker_id;
-        o0Var.h = j3;
-        o0Var.d = tL_availableEffect.premium_required;
-        o0Var.f = tL_availableEffect.emoticon;
-        return o0Var;
+    @Override // ch.n0
+    public final boolean l() {
+        return this.g0.x.P3();
     }
 
-    public final o0 a() {
-        String V;
-        long j3 = this.g;
-        return (j3 == 0 || (V = ij.V(h5.e(p10.s0, j3), null, null)) == null) ? this : b(V);
+    @Override // ch.n0
+    public final boolean m() {
+        q0 q0Var = this.g0;
+        int e12 = q0Var.x.e1();
+        long c12 = q0Var.x.c1();
+        l0 l0Var = l0.B;
+        if (l0Var == null) {
+            return false;
+        }
+        int i7 = l0Var.a;
+        if (i7 != 2 && i7 != 0) {
+            return false;
+        }
+        long j3 = l0Var.o;
+        return ((j3 != 0 && c12 == j3) || e12 == l0Var.n) && l0Var.p.equals(this.r);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && o0.class == obj.getClass()) {
-            o0 o0Var = (o0) obj;
-            if (this.g == o0Var.g && Objects.equals(this.f, o0Var.f)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final boolean f(TLRPC.Reaction reaction) {
-        return reaction instanceof TLRPC.TL_reactionEmoji ? TextUtils.equals(((TLRPC.TL_reactionEmoji) reaction).emoticon, this.f) : (reaction instanceof TLRPC.TL_reactionCustomEmoji) && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == this.g;
-    }
-
-    public final TLRPC.Reaction g() {
-        if (this.a) {
-            return new TLRPC.TL_reactionPaid();
-        }
-        if (this.f != null) {
-            TLRPC.TL_reactionEmoji tL_reactionEmoji = new TLRPC.TL_reactionEmoji();
-            tL_reactionEmoji.emoticon = this.f;
-            return tL_reactionEmoji;
-        }
-        TLRPC.TL_reactionCustomEmoji tL_reactionCustomEmoji = new TLRPC.TL_reactionCustomEmoji();
-        tL_reactionCustomEmoji.document_id = this.g;
-        return tL_reactionCustomEmoji;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.f, Long.valueOf(this.g));
-    }
-
-    public final String toString() {
-        TLRPC.Document e10;
-        if (!TextUtils.isEmpty(this.f)) {
-            return this.f;
-        }
-        long j3 = this.g;
-        if (j3 != 0 && (e10 = h5.e(p10.s0, j3)) != null) {
-            return ij.V(e10, null, null);
-        }
-        StringBuilder sb2 = new StringBuilder("VisibleReaction{");
-        sb2.append(this.g);
-        sb2.append(", ");
-        return a8.p0.s(sb2, this.f, "}");
+    @Override // ch.n0
+    public final void n() {
+        this.g0.E.remove(this.r);
     }
 }

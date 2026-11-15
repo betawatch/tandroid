@@ -1,9 +1,10 @@
 package ce;
 
+import aa.b0;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class w extends de.b implements u, c, de.e {
     public static final /* synthetic */ AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(w.class, Object.class, "_state$volatile");
@@ -31,16 +32,16 @@ public final class w extends de.b implements u, c, de.e {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final java.lang.Object B(ce.d r18, kd.c r19) {
+    public final java.lang.Object G(ce.d r18, kd.c r19) {
         /*
             Method dump skipped, instructions count: 329
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: ce.w.B(ce.d, kd.c):java.lang.Object");
+        throw new UnsupportedOperationException("Method not decompiled: ce.w.G(ce.d, kd.c):java.lang.Object");
     }
 
     @Override // de.e
-    public final c P(id.h hVar, int i7, be.a aVar) {
+    public final c Q(id.h hVar, int i7, be.a aVar) {
         return ((((i7 < 0 || i7 >= 2) && i7 != -2) || aVar != be.a.b) && !((i7 == 0 || i7 == -3) && aVar == be.a.a)) ? new b(this, hVar, i7, aVar, 1) : this;
     }
 
@@ -56,7 +57,7 @@ public final class w extends de.b implements u, c, de.e {
     public final boolean c(Object obj, Object obj2) {
         int i7;
         y[] yVarArr;
-        com.google.android.gms.internal.clearcut.e eVar;
+        b0 b0Var;
         synchronized (this) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = e;
             Object obj3 = atomicReferenceFieldUpdater.get(this);
@@ -82,10 +83,10 @@ public final class w extends de.b implements u, c, de.e {
                             AtomicReference atomicReference = yVar.a;
                             while (true) {
                                 Object obj4 = atomicReference.get();
-                                if (obj4 != null && obj4 != (eVar = x.b)) {
-                                    com.google.android.gms.internal.clearcut.e eVar2 = x.a;
-                                    if (obj4 != eVar2) {
-                                        while (!atomicReference.compareAndSet(obj4, eVar2)) {
+                                if (obj4 != null && obj4 != (b0Var = x.b)) {
+                                    b0 b0Var2 = x.a;
+                                    if (obj4 != b0Var2) {
+                                        while (!atomicReference.compareAndSet(obj4, b0Var2)) {
                                             if (atomicReference.get() != obj4) {
                                                 break;
                                             }
@@ -93,7 +94,7 @@ public final class w extends de.b implements u, c, de.e {
                                         ((zd.m) obj4).resumeWith(gd.k.a);
                                         break;
                                     }
-                                    while (!atomicReference.compareAndSet(obj4, eVar)) {
+                                    while (!atomicReference.compareAndSet(obj4, b0Var)) {
                                         if (atomicReference.get() != obj4) {
                                             break;
                                         }

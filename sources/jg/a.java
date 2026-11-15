@@ -1,11 +1,10 @@
 package jg;
 
-import bi.ub;
 import java.util.Locale;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.id;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -35,18 +34,18 @@ public final /* synthetic */ class a implements Runnable {
                 cVar2.r = null;
                 int i7 = cVar2.s + 1;
                 cVar2.s = i7;
-                Locale locale3 = id.E0().y;
+                Locale locale3 = hd.E0().y;
                 if (cVar2.d) {
                     if (locale3.getLanguage().contains("en")) {
                         locale = locale3;
-                        Utilities.e.c(new ub(cVar2, locale3, str2, locale, i7));
+                        Utilities.e.c(new ai.f1(cVar2, locale3, str2, locale, i7, 3));
                         break;
                     } else {
                         locale2 = Locale.US;
                     }
                 }
                 locale = locale2;
-                Utilities.e.c(new ub(cVar2, locale3, str2, locale, i7));
+                Utilities.e.c(new ai.f1(cVar2, locale3, str2, locale, i7, 3));
         }
     }
 }

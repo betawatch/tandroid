@@ -1,39 +1,85 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class jv0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yv0 b;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ jv0(yv0 yv0Var, int i7) {
-        this.a = i7;
-        this.b = yv0Var;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class jv0 implements org.telegram.ui.ActionBar.l0, org.telegram.messenger.tr {
+    public final /* synthetic */ bw0 a;
+
+    public /* synthetic */ jv0(bw0 bw0Var) {
+        this.a = bw0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.n1.f();
-                break;
-            case 1:
-                this.b.n1.f();
-                break;
-            case 2:
-                yv0 yv0Var = this.b;
-                yv0Var.dismiss();
-                org.telegram.messenger.ui.b0(yv0Var.a).f2(yv0Var.getContext(), yv0Var.M1, 1, yv0Var.F1, false, false);
-                break;
-            case 3:
-                yv0 yv0Var2 = this.b;
-                org.telegram.messenger.qp.s1(yv0Var2.a).y3("stickers", yv0Var2.F1, 1, null);
-                break;
-            default:
-                yv0 yv0Var3 = this.b;
-                yv0Var3.dismiss();
-                org.telegram.messenger.ui.b0(yv0Var3.a).f2(yv0Var3.getContext(), yv0Var3.M1, 1, yv0Var3.F1, false, false);
-                break;
+    @Override // org.telegram.messenger.tr
+    public void a(String str) {
+        bw0 bw0Var = this.a;
+        new o30(bw0Var.getContext(), bw0Var.j2, null, bw0Var.J0).show();
+    }
+
+    @Override // org.telegram.ui.ActionBar.l0
+    public void g(int i7) {
+        String str;
+        bw0 bw0Var = this.a;
+        org.telegram.ui.ActionBar.e2 e2Var = bw0Var.G1;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = bw0Var.N1;
+        if (tL_messages_stickerSet == null) {
+            return;
+        }
+        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
+        if (stickerSet == null || !stickerSet.emojis) {
+            str = "https://" + org.telegram.messenger.np.s1(bw0Var.a).V2 + "/addstickers/" + bw0Var.N1.set.short_name;
+        } else {
+            str = "https://" + org.telegram.messenger.np.s1(bw0Var.a).V2 + "/addemoji/" + bw0Var.N1.set.short_name;
+        }
+        String str2 = str;
+        if (i7 == 1) {
+            Context context = bw0Var.I1;
+            if (context == null && e2Var != null) {
+                context = e2Var.getParentActivity();
+            }
+            if (context == null) {
+                context = bw0Var.getContext();
+            }
+            mv0 mv0Var = new mv0(bw0Var, context, str2, str2, bw0Var.J0);
+            if (e2Var == null) {
+                mv0Var.show();
+                return;
+            }
+            e2Var.showDialog(mv0Var);
+            if (e2Var instanceof org.telegram.ui.an) {
+                boolean V9 = ((org.telegram.ui.an) e2Var).V9();
+                mv0Var.i0 = V9;
+                mv0Var.n = V9;
+                return;
+            }
+            return;
+        }
+        if (i7 == 2) {
+            try {
+                org.telegram.messenger.g0.g(str2);
+                new cc((FrameLayout) bw0Var.b, bw0Var.J0).k(false).j();
+                return;
+            } catch (Exception e10) {
+                org.telegram.messenger.a8.g(e10, true);
+                return;
+            }
+        }
+        if (i7 == 3) {
+            if (bw0Var.M1) {
+                bw0Var.L0();
+                return;
+            } else {
+                bw0Var.N0();
+                return;
+            }
+        }
+        if (i7 == 4) {
+            gw0.c(bw0Var.N1.set, bw0Var.J0, bw0Var.getContext(), new d(bw0Var, 20));
+        } else if (i7 == 5) {
+            gw0.b(bw0Var.N1.set, bw0Var.J0, bw0Var.getContext(), new kv0(bw0Var, 2));
         }
     }
 }

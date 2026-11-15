@@ -7,9 +7,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.view.View;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class n {
     public final Paint a;
@@ -26,20 +26,20 @@ public final class n {
     public boolean l;
     public float m;
     public float n;
-    public ug.t1 o;
-    public sh.b p;
+    public ug.w1 o;
+    public q2.d p;
 
     public n() {
-        this(64, qs.i3, qs.q2);
+        this(64, ns.i3, ns.q2);
     }
 
     public final void a(float f10, Canvas canvas, RectF rectF, View view) {
         c(view);
         canvas.drawRoundRect(rectF, f10, f10, this.a);
         if (this.k) {
-            boolean z9 = this.l;
+            boolean z10 = this.l;
             Paint paint = this.c;
-            if (z9) {
+            if (z10) {
                 rectF.inset(paint.getStrokeWidth() / 2.0f, paint.getStrokeWidth() / 2.0f);
             }
             canvas.drawRoundRect(rectF, f10, f10, paint);
@@ -51,7 +51,7 @@ public final class n {
         int[] iArr = {0, i0.a.o(i7, i10), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         this.b = new LinearGradient(0.0f, 0.0f, f10, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{0, i0.a.o(i7, qs.i3), 0}, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{0, i0.a.o(i7, ns.i3), 0}, (float[]) null, tileMode);
         this.a.setShader(this.b);
         this.c.setShader(this.d);
     }
@@ -70,9 +70,9 @@ public final class n {
                     this.g = f10;
                     if (f10 > this.m) {
                         this.g = 0.0f;
-                        sh.b bVar = this.p;
-                        if (bVar != null) {
-                            bVar.run();
+                        q2.d dVar = this.p;
+                        if (dVar != null) {
+                            dVar.run();
                         }
                     }
                     this.h = currentTimeMillis;
@@ -91,7 +91,7 @@ public final class n {
     }
 
     public n(int i7, int i10) {
-        this(i7, i10, qs.q2);
+        this(i7, i10, ns.q2);
     }
 
     public n(int i7, int i10, int i11) {

@@ -4,7 +4,7 @@ import java.text.Collator;
 import java.util.Comparator;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s4 implements Comparator {
     public final /* synthetic */ int a;
@@ -24,12 +24,12 @@ public final /* synthetic */ class s4 implements Comparator {
                 g5 g5Var = (g5) this.c;
                 TLRPC.User a22 = g5Var.getMessagesController().a2(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
                 TLRPC.User a23 = g5Var.getMessagesController().a2(Long.valueOf(((TLRPC.TL_contact) obj2).user_id));
-                return this.b.compare(t10.j(a22, true), t10.j(a23, true));
+                return this.b.compare(q10.j(a22, true), q10.j(a23, true));
             default:
                 a0.h hVar = (a0.h) this.c;
                 TLRPC.User user = (TLRPC.User) hVar.f(((TLRPC.TL_contact) obj).user_id);
                 TLRPC.User user2 = (TLRPC.User) hVar.f(((TLRPC.TL_contact) obj2).user_id);
-                return this.b.compare(t10.j(user, true), t10.j(user2, true));
+                return this.b.compare(q10.j(user, true), q10.j(user2, true));
         }
     }
 }

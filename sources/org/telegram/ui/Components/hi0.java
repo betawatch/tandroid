@@ -1,21 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface hi0 {
-    boolean E();
+public final class hi0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ki0 b;
 
-    void L(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z9);
+    public /* synthetic */ hi0(ki0 ki0Var, int i7) {
+        this.a = i7;
+        this.b = ki0Var;
+    }
 
-    void M();
-
-    boolean U();
-
-    void i(View view, ch.o0 o0Var, boolean z9, boolean z10);
-
-    boolean v();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                if (this.b.a.getImageReceiver().B() != null && !this.b.a.getImageReceiver().B().l0 && !this.b.a.getImageReceiver().B().y()) {
+                    this.b.a.getImageReceiver().B().start();
+                }
+                this.b.F = false;
+                break;
+            default:
+                ki0 ki0Var = this.b;
+                mi0 mi0Var = ki0Var.Q;
+                try {
+                    ki0Var.performHapticFeedback(0);
+                } catch (Exception unused) {
+                }
+                mi0Var.n0 = mi0Var.U.indexOf(ki0Var.e);
+                mi0Var.m0 = ki0Var.e;
+                mi0Var.invalidate();
+                break;
+        }
+    }
 }

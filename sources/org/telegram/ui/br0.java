@@ -1,19 +1,13 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class br0 {
-    public final int a;
-    public final ArrayList b;
-    public final xq0 c;
-    public final /* synthetic */ PhotoViewer d;
+public interface br0 {
+    void G0(org.telegram.messenger.gj gjVar);
 
-    public br0(PhotoViewer photoViewer, int i7, ArrayList arrayList, xq0 xq0Var) {
-        this.d = photoViewer;
-        this.b = arrayList;
-        this.a = i7;
-        this.c = xq0Var;
-    }
+    void I(org.telegram.messenger.gj gjVar);
+
+    TextureView g0();
 }

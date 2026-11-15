@@ -14,10 +14,11 @@ import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import hi.l0;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m implements l0.a {
     public n A;
@@ -73,7 +74,7 @@ public final class m implements l0.a {
         this.n.p(true);
         n nVar2 = this.A;
         if (nVar2 != null) {
-            nVar2.b = new g6.d0(this, 10);
+            nVar2.b = new l0(this, 7);
             nVar2.a.setVisibilityListener(nVar2);
         }
         return this;
@@ -136,8 +137,8 @@ public final class m implements l0.a {
         return false;
     }
 
-    public final void f(boolean z9) {
-        if (z9) {
+    public final void f(boolean z10) {
+        if (z10) {
             this.x |= 32;
         } else {
             this.x &= -33;
@@ -322,9 +323,9 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setCheckable(boolean z9) {
+    public final MenuItem setCheckable(boolean z10) {
         int i7 = this.x;
-        int i10 = (z9 ? 1 : 0) | (i7 & (-2));
+        int i10 = (z10 ? 1 : 0) | (i7 & (-2));
         this.x = i10;
         if (i7 != i10) {
             this.n.p(false);
@@ -333,12 +334,12 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setChecked(boolean z9) {
+    public final MenuItem setChecked(boolean z10) {
         int i7 = this.x;
         int i10 = i7 & 4;
         k kVar = this.n;
         if (i10 == 0) {
-            int i11 = (i7 & (-3)) | (z9 ? 2 : 0);
+            int i11 = (i7 & (-3)) | (z10 ? 2 : 0);
             this.x = i11;
             if (i7 != i11) {
                 kVar.p(false);
@@ -351,9 +352,9 @@ public final class m implements l0.a {
         for (int i12 = 0; i12 < size; i12++) {
             m mVar = (m) arrayList.get(i12);
             if (mVar.b == this.b && (mVar.x & 4) != 0 && mVar.isCheckable()) {
-                boolean z10 = mVar == this;
+                boolean z11 = mVar == this;
                 int i13 = mVar.x;
-                int i14 = (z10 ? 2 : 0) | (i13 & (-3));
+                int i14 = (z11 ? 2 : 0) | (i13 & (-3));
                 mVar.x = i14;
                 if (i13 != i14) {
                     mVar.n.p(false);
@@ -371,8 +372,8 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setEnabled(boolean z9) {
-        if (z9) {
+    public final MenuItem setEnabled(boolean z10) {
+        if (z10) {
             this.x |= 16;
         } else {
             this.x &= -17;
@@ -487,9 +488,9 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setVisible(boolean z9) {
+    public final MenuItem setVisible(boolean z10) {
         int i7 = this.x;
-        int i10 = (z9 ? 0 : 8) | (i7 & (-9));
+        int i10 = (z10 ? 0 : 8) | (i7 & (-9));
         this.x = i10;
         if (i7 != i10) {
             k kVar = this.n;

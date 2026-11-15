@@ -1,15 +1,31 @@
 package di;
 
 import android.content.Context;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class p5 extends l5 {
-    public final /* synthetic */ q5 b0;
+public final class p5 extends org.telegram.ui.Components.ec {
+    public final org.telegram.ui.ActionBar.e6 Q;
+    public String R;
+    public int S;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(q5 q5Var, q9 q9Var, Context context, x4 x4Var, ai.i iVar) {
-        super(q9Var, context, x4Var, iVar);
-        this.b0 = q5Var;
+    public p5(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.Q = e6Var;
+        org.telegram.ui.ActionBar.q6.U(this, org.telegram.ui.ActionBar.j6.G6, e6Var);
+        setTextSize(1, 14.0f);
+        setPadding(0, org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f));
+    }
+
+    public final void f(String str, int i7, s1 s1Var) {
+        if (str == this.R && this.S == i7) {
+            return;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.j6.m(str, getPaint().getFontMetricsInt(), false, null, 0));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.fc.b(ki.k.J0(i7), s1Var != null ? new ai.z0(this, s1Var, i7, 6) : null, this.Q, null));
+        setText(spannableStringBuilder);
+        this.R = str;
+        this.S = i7;
     }
 }

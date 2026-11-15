@@ -1,16 +1,16 @@
 package l2;
 
-import a8.ia;
+import a8.ja;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l extends e2.v0 {
-    public final int D;
-    public final x2.f0 E;
-    public final boolean F;
+    public final int E;
+    public final x2.f0 F;
+    public final boolean G;
     public final int s;
     public final String w;
     public final int x;
@@ -22,31 +22,31 @@ public final class l extends e2.v0 {
 
     public final l a(x2.f0 f0Var) {
         String message = getMessage();
-        String str = h2.m0.a;
-        return new l(message, getCause(), this.a, this.s, this.w, this.x, this.y, this.D, f0Var, this.b, this.F);
+        String str = h2.l0.a;
+        return new l(message, getCause(), this.a, this.s, this.w, this.x, this.y, this.E, f0Var, this.b, this.G);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(String str, Throwable th2, int i7, int i10, String str2, int i11, e2.u uVar, int i12, x2.f0 f0Var, long j3, boolean z9) {
+    public l(String str, Throwable th2, int i7, int i10, String str2, int i11, e2.u uVar, int i12, x2.f0 f0Var, long j3, boolean z10) {
         super(str, th2, i7, j3);
         Bundle bundle = Bundle.EMPTY;
-        ia.f(!z9 || i10 == 1);
-        ia.f(th2 != null || i10 == 3);
+        ja.f(!z10 || i10 == 1);
+        ja.f(th2 != null || i10 == 3);
         this.s = i10;
         this.w = str2;
         this.x = i11;
         this.y = uVar;
-        this.D = i12;
-        this.E = f0Var;
-        this.F = z9;
+        this.E = i12;
+        this.F = f0Var;
+        this.G = z10;
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public l(int i7, Throwable th2, int i10, String str, int i11, e2.u uVar, int i12, x2.f0 f0Var, boolean z9) {
-        this(TextUtils.isEmpty(null) ? r0 : rf.b.r(r0, ": null"), th2, i10, i7, r5, r6, r7, i12, f0Var, SystemClock.elapsedRealtime(), z9);
+    public l(int i7, Throwable th2, int i10, String str, int i11, e2.u uVar, int i12, x2.f0 f0Var, boolean z10) {
+        this(TextUtils.isEmpty(null) ? r0 : r.b.v(r0, ": null"), th2, i10, i7, r5, r6, r7, i12, f0Var, SystemClock.elapsedRealtime(), z10);
         String str2;
         int i13;
         e2.u uVar2;
@@ -77,7 +77,7 @@ public final class l extends e2.v0 {
             uVar2 = uVar;
             sb2.append(uVar2);
             sb2.append(", format_supported=");
-            String str5 = h2.m0.a;
+            String str5 = h2.l0.a;
             if (i12 == 0) {
                 str4 = "NO";
             } else if (i12 == 1) {

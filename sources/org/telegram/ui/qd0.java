@@ -1,0 +1,58 @@
+package org.telegram.ui;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class qd0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ be0 b;
+
+    public /* synthetic */ qd0(be0 be0Var, int i7) {
+        this.a = i7;
+        this.b = be0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                be0 be0Var = this.b;
+                zd0 zd0Var = be0Var.a;
+                ce0 ce0Var = be0Var.h0;
+                zd0 zd0Var2 = be0Var.b;
+                if (zd0Var2 != null) {
+                    if (ce0Var.d0) {
+                        zd0Var.clearFocus();
+                        zd0Var2.clearFocus();
+                    } else if (zd0Var.length() != 0) {
+                        zd0Var2.requestFocus();
+                        if (!be0Var.U) {
+                            zd0Var2.setSelection(zd0Var2.length());
+                        }
+                        ce0.b1(ce0Var, zd0Var2);
+                    } else {
+                        zd0Var.requestFocus();
+                        ce0.b1(ce0Var, zd0Var);
+                    }
+                }
+                if (ce0Var.G == 0) {
+                    be0Var.s();
+                    break;
+                }
+                break;
+            case 1:
+                be0 be0Var2 = this.b;
+                be0Var2.postDelayed(new qd0(be0Var2, 2), 200L);
+                break;
+            case 2:
+                this.b.h(null);
+                break;
+            case 3:
+                this.b.t(true);
+                break;
+            default:
+                be0 be0Var3 = this.b;
+                ce0.b1(be0Var3.h0, be0Var3.b);
+                break;
+        }
+    }
+}

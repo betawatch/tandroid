@@ -1,12 +1,12 @@
 package kg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class f {
     public static volatile f[] g = new f[4];
@@ -55,18 +55,18 @@ public final class f {
         c(null);
     }
 
-    public final void c(c20 c20Var) {
-        boolean z9;
-        if (c20Var != null) {
-            this.d.add(c20Var);
+    public final void c(z10 z10Var) {
+        boolean z10;
+        if (z10Var != null) {
+            this.d.add(z10Var);
         }
         if (this.e) {
             return;
         }
-        if (System.currentTimeMillis() - this.b > 60000 || !(z9 = this.f)) {
+        if (System.currentTimeMillis() - this.b > 60000 || !(z10 = this.f)) {
             this.e = true;
-            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new bi.j0(this, 15));
-        } else if (z9) {
+            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new ai.d1(this, 15));
+        } else if (z10) {
             d();
         }
     }
@@ -77,11 +77,11 @@ public final class f {
             ArrayList arrayList = this.d;
             if (i7 >= arrayList.size()) {
                 arrayList.clear();
-                qs.f(this.a).k(qs.Z3, new Object[0]);
+                ns.f(this.a).k(ns.Z3, new Object[0]);
                 return;
             } else {
                 if (arrayList.get(i7) != null) {
-                    ((c20) arrayList.get(i7)).a(this.c);
+                    ((z10) arrayList.get(i7)).a(this.c);
                 }
                 i7++;
             }

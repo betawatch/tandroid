@@ -1,8 +1,9 @@
 package og;
 
 import android.animation.ValueAnimator;
+import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -27,12 +28,12 @@ public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateList
             case 0:
                 o oVar = this.b;
                 oVar.getClass();
-                float z9 = com.google.android.recaptcha.internal.a.z(this.c, 1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
+                float z10 = e2.z(this.c, 1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
                 float[] fArr = this.d;
                 float f10 = fArr[0];
-                float f11 = z9 / f10;
+                float f11 = z10 / f10;
                 fArr[0] = f10 * f11;
-                m.g(oVar.L, f11, this.e, this.f);
+                m.g(oVar.M, f11, this.e, this.f);
                 oVar.r(false);
                 break;
             default:
@@ -48,14 +49,14 @@ public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateList
                 float f16 = fArr2[2];
                 float f17 = f15 - f16;
                 fArr2[2] = f16 + f17;
-                m mVar = oVar2.L;
+                m mVar = oVar2.M;
                 float f18 = fArr2[0];
                 m.f(mVar, f14 * f18, f17 * f18);
                 float f19 = ((this.f - 1.0f) * floatValue) + 1.0f;
                 float f20 = fArr2[0];
                 float f21 = f19 / f20;
                 fArr2[0] = f20 * f21;
-                m.g(oVar2.L, f21, 0.0f, 0.0f);
+                m.g(oVar2.M, f21, 0.0f, 0.0f);
                 oVar2.r(false);
                 break;
         }

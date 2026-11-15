@@ -1,18 +1,20 @@
 package c8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class o9 {
-    public static long a(h2.x xVar, int i7, int i10) {
-        xVar.N(i7);
-        if (xVar.a() < 5) {
-            return -9223372036854775807L;
+    public static String a(String str, String str2) {
+        int length = str.length() - str2.length();
+        if (length < 0 || length > 1) {
+            throw new IllegalArgumentException("Invalid input received");
         }
-        int m10 = xVar.m();
-        if ((8388608 & m10) != 0 || ((2096896 & m10) >> 8) != i10 || (m10 & 32) == 0 || xVar.A() < 7 || xVar.a() < 7 || (xVar.A() & 16) != 16) {
-            return -9223372036854775807L;
+        StringBuilder sb2 = new StringBuilder(str2.length() + str.length());
+        for (int i7 = 0; i7 < str.length(); i7++) {
+            sb2.append(str.charAt(i7));
+            if (str2.length() > i7) {
+                sb2.append(str2.charAt(i7));
+            }
         }
-        xVar.k(0, 6, new byte[6]);
-        return ((r0[0] & 255) << 25) | ((r0[1] & 255) << 17) | ((r0[2] & 255) << 9) | ((r0[3] & 255) << 1) | ((255 & r0[4]) >> 7);
+        return sb2.toString();
     }
 }

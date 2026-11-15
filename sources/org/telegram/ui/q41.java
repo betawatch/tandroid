@@ -1,39 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stats;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class q41 {
-    public boolean a;
-    public String b;
-    public long c;
-    public mg.b d;
-    public mg.b e;
-    public String f;
-    public String g;
-    public boolean h;
-    public final int i;
-    public final String j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public boolean o;
+public final class q41 extends mp {
+    public final /* synthetic */ boolean[] d1;
+    public final /* synthetic */ z41 e1;
+    public final /* synthetic */ s41 f1;
 
-    public q41(String str, int i7) {
-        this.j = str;
-        this.i = i7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q41(s41 s41Var, long j3, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10, boolean[] zArr, z41 z41Var) {
+        super(j3, j10, tL_chatAdminRights, null, tL_chatBannedRights, str, 0, true, z10, null);
+        this.f1 = s41Var;
+        this.d1 = zArr;
+        this.e1 = z41Var;
     }
 
-    public final void a(int i7, int i10, int i11, org.telegram.messenger.u10 u10Var) {
-        if (this.k) {
-            return;
+    @Override // org.telegram.ui.ActionBar.e2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        if (!z10 && z11 && this.d1[0]) {
+            z41 z41Var = this.e1;
+            if (org.telegram.ui.Components.cc.a(z41Var)) {
+                org.telegram.ui.Components.cc.C(this.f1.a.first_name, z41Var).j();
+            }
         }
-        this.k = true;
-        TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
-        tL_loadAsyncGraph.token = this.f;
-        ConnectionsManager.getInstance(i7).bindRequestToGuid(ConnectionsManager.getInstance(i7).sendRequest(tL_loadAsyncGraph, new p41(0, this, u10Var), null, null, 0, i11, 1, true), i10);
     }
 }

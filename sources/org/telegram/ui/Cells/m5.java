@@ -9,33 +9,33 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gf;
-import org.telegram.ui.Components.sl;
-import org.telegram.ui.Components.wq;
+import org.telegram.messenger.ff;
+import org.telegram.ui.Components.am;
+import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class m5 extends org.telegram.ui.Components.k9 {
-    public final Paint G;
-    public long H;
-    public Drawable I;
+public final class m5 extends org.telegram.ui.Components.i9 {
+    public final Paint H;
+    public long I;
     public Drawable J;
-    public final /* synthetic */ q5 K;
+    public Drawable K;
+    public final /* synthetic */ q5 L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public m5(q5 q5Var, Context context) {
         super(context);
-        this.K = q5Var;
-        this.G = new Paint(1);
+        this.L = q5Var;
+        this.H = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Components.k9, android.view.View
+    @Override // org.telegram.ui.Components.i9, android.view.View
     public final void onDraw(Canvas canvas) {
         Bitmap bitmap;
-        gf gfVar;
+        ff ffVar;
         Drawable drawable;
-        org.telegram.ui.Components.h5 h5Var = this.e;
-        ImageReceiver imageReceiver = h5Var != null ? h5Var.k : this.a;
+        org.telegram.ui.Components.g5 g5Var = this.e;
+        ImageReceiver imageReceiver = g5Var != null ? g5Var.k : this.a;
         if (imageReceiver == null) {
             return;
         }
@@ -52,56 +52,56 @@ public final class m5 extends org.telegram.ui.Components.k9 {
             imageReceiver2.y0(width2, (height2 - r6) / 2, this.c, this.d);
         }
         imageReceiver.h(canvas, null);
-        q5 q5Var = this.K;
-        if (q5Var.O) {
-            Rect rect = q5.b0;
+        q5 q5Var = this.L;
+        if (q5Var.P) {
+            Rect rect = q5.c0;
             this.b.h(canvas, null);
-            if (q5Var.N == null) {
-                if (q5Var.M == null) {
+            if (q5Var.O == null) {
+                if (q5Var.N == null) {
                     xh.f fVar = new xh.f();
-                    q5Var.M = fVar;
+                    q5Var.N = fVar;
                     fVar.h(i0.a.o(-1, (int) (Color.alpha(-1) * 0.325f)));
                 }
-                q5Var.M.setBounds(0, 0, getWidth(), getHeight());
-                q5Var.M.draw(canvas);
+                q5Var.N.setBounds(0, 0, getWidth(), getHeight());
+                q5Var.N.draw(canvas);
             }
             invalidate();
         }
-        float f10 = q5Var.U;
-        if (f10 != 1.0f && q5Var.S != null) {
-            int interpolation = (int) (wq.f.getInterpolation(1.0f - f10) * 255.0f);
-            Paint paint = this.G;
+        float f10 = q5Var.V;
+        if (f10 != 1.0f && q5Var.T != null) {
+            int interpolation = (int) (er.f.getInterpolation(1.0f - f10) * 255.0f);
+            Paint paint = this.H;
             paint.setAlpha(interpolation);
-            canvas.drawBitmap(q5Var.S, 0.0f, 0.0f, paint);
-            long min = Math.min(16L, System.currentTimeMillis() - this.H);
-            Float f11 = q5Var.T;
-            q5Var.U = f1.e(min, f11 == null ? 250.0f : f11.floatValue(), q5Var.U, 1.0f);
-            this.H = System.currentTimeMillis();
+            canvas.drawBitmap(q5Var.T, 0.0f, 0.0f, paint);
+            long min = Math.min(16L, System.currentTimeMillis() - this.I);
+            Float f11 = q5Var.U;
+            q5Var.V = y0.e(min, f11 == null ? 250.0f : f11.floatValue(), q5Var.V, 1.0f);
+            this.I = System.currentTimeMillis();
             invalidate();
-            if (q5Var.N != null) {
+            if (q5Var.O != null) {
                 q5Var.b.invalidate();
             }
-        } else if (f10 == 1.0f && (bitmap = q5Var.S) != null) {
+        } else if (f10 == 1.0f && (bitmap = q5Var.T) != null) {
             bitmap.recycle();
-            q5Var.S = null;
             q5Var.T = null;
+            q5Var.U = null;
             invalidate();
         }
         if (q5Var.s) {
-            o5 o5Var = q5Var.V;
-            if ((o5Var == null || !((sl) ((org.telegram.ui.Components.t) o5Var).b).s) && (gfVar = q5Var.H) != null && gfVar.i() && q5Var.H.d()) {
-                if (q5Var.H.j()) {
+            o5 o5Var = q5Var.W;
+            if ((o5Var == null || !((am) ((org.telegram.ui.Components.s) o5Var).b).s) && (ffVar = q5Var.I) != null && ffVar.i() && q5Var.I.d()) {
+                if (q5Var.I.j()) {
+                    if (this.K == null) {
+                        this.K = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();
+                    }
+                    drawable = this.K;
+                } else {
                     if (this.J == null) {
-                        this.J = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();
+                        this.J = getContext().getResources().getDrawable(R.drawable.media_live_on).mutate();
                     }
                     drawable = this.J;
-                } else {
-                    if (this.I == null) {
-                        this.I = getContext().getResources().getDrawable(R.drawable.media_live_on).mutate();
-                    }
-                    drawable = this.I;
                 }
-                drawable.setBounds((int) (imageReceiver.K0 + org.telegram.messenger.g0.L(8.0f)), (int) (imageReceiver.L0 + org.telegram.messenger.g0.L(8.0f)), (int) (imageReceiver.K0 + org.telegram.messenger.g0.L(30.0f)), (int) (imageReceiver.L0 + org.telegram.messenger.g0.L(26.0f)));
+                drawable.setBounds((int) (imageReceiver.L0 + org.telegram.messenger.g0.L(8.0f)), (int) (imageReceiver.M0 + org.telegram.messenger.g0.L(8.0f)), (int) (imageReceiver.L0 + org.telegram.messenger.g0.L(30.0f)), (int) (imageReceiver.M0 + org.telegram.messenger.g0.L(26.0f)));
                 drawable.draw(canvas);
             }
         }
@@ -110,8 +110,8 @@ public final class m5 extends org.telegram.ui.Components.k9 {
     @Override // android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, i10);
-        q5 q5Var = this.K;
-        gf gfVar = q5Var.H;
-        q5Var.h(gfVar != null && gfVar.M);
+        q5 q5Var = this.L;
+        ff ffVar = q5Var.I;
+        q5Var.h(ffVar != null && ffVar.M);
     }
 }

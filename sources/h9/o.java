@@ -1,7 +1,7 @@
 package h9;
 
-import a8.ha;
 import a8.ia;
+import a8.ja;
 import java.util.AbstractCollection;
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.Set;
 import java.util.SortedSet;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class o {
     public final /* synthetic */ int a = 2;
@@ -32,7 +32,7 @@ public abstract class o {
     public static void e(int i7, Object[] objArr) {
         for (int i10 = 0; i10 < i7; i10++) {
             if (objArr[i10] == null) {
-                throw new NullPointerException(jg.g.j(i10, "at index "));
+                throw new NullPointerException(i5.c.i(i10, "at index "));
             }
         }
     }
@@ -56,7 +56,7 @@ public abstract class o {
 
     public static Object h(int i7) {
         if (i7 < 2 || i7 > 1073741824 || Integer.highestOneBit(i7) != i7) {
-            throw new IllegalArgumentException(jg.g.j(i7, "must be power of 2 between 2^1 and 2^30: "));
+            throw new IllegalArgumentException(i5.c.i(i7, "must be power of 2 between 2^1 and 2^30: "));
         }
         return i7 <= 256 ? new byte[i7] : i7 <= 65536 ? new short[i7] : new int[i7];
     }
@@ -89,25 +89,25 @@ public abstract class o {
         }
     }
 
-    public static d2 l(Set set, g9.m mVar) {
+    public static c2 l(Set set, g9.l lVar) {
         if (set instanceof SortedSet) {
             Set set2 = (SortedSet) set;
-            if (!(set2 instanceof d2)) {
-                return new e2(set2, mVar);
+            if (!(set2 instanceof c2)) {
+                return new d2(set2, lVar);
             }
-            d2 d2Var = (d2) set2;
-            g9.m mVar2 = d2Var.b;
-            mVar2.getClass();
-            return new e2((SortedSet) d2Var.a, new g9.n(Arrays.asList(mVar2, mVar)));
+            c2 c2Var = (c2) set2;
+            g9.l lVar2 = c2Var.b;
+            lVar2.getClass();
+            return new d2((SortedSet) c2Var.a, new g9.m(Arrays.asList(lVar2, lVar)));
         }
-        if (!(set instanceof d2)) {
+        if (!(set instanceof c2)) {
             set.getClass();
-            return new d2(set, mVar);
+            return new c2(set, lVar);
         }
-        d2 d2Var2 = (d2) set;
-        g9.m mVar3 = d2Var2.b;
-        mVar3.getClass();
-        return new d2(d2Var2.a, new g9.n(Arrays.asList(mVar3, mVar)));
+        c2 c2Var2 = (c2) set;
+        g9.l lVar3 = c2Var2.b;
+        lVar3.getClass();
+        return new c2(c2Var2.a, new g9.m(Arrays.asList(lVar3, lVar)));
     }
 
     public static Object m(AbstractCollection abstractCollection, String str) {
@@ -122,7 +122,7 @@ public abstract class o {
             if (list.isEmpty()) {
                 throw new NoSuchElementException();
             }
-            return rf.b.g(1, list);
+            return r.b.h(1, list);
         }
         Iterator it = iterable.iterator();
         do {
@@ -141,10 +141,10 @@ public abstract class o {
         return i7;
     }
 
-    public static c2 p(Set set, t0 t0Var) {
-        ia.k(set, "set1");
-        ia.k(t0Var, "set2");
-        return new c2(set, t0Var);
+    public static b2 p(Set set, t0 t0Var) {
+        ja.k(set, "set1");
+        ja.k(t0Var, "set2");
+        return new b2(set, t0Var);
     }
 
     public static int q(int i7, int i10, int i11) {
@@ -154,7 +154,7 @@ public abstract class o {
     public static ArrayList r(Object... objArr) {
         int length = objArr.length;
         g(length, "arraySize");
-        ArrayList arrayList = new ArrayList(c8.e1.e(length + 5 + (length / 10)));
+        ArrayList arrayList = new ArrayList(c8.g1.e(length + 5 + (length / 10)));
         Collections.addAll(arrayList, objArr);
         return arrayList;
     }
@@ -197,7 +197,7 @@ public abstract class o {
             while (true) {
                 int i14 = w10 - 1;
                 int i15 = iArr[i14];
-                if ((i15 & i11) != i12 || !ha.a(obj, objArr[i14]) || (objArr2 != null && !ha.a(obj2, objArr2[i14]))) {
+                if ((i15 & i11) != i12 || !ia.a(obj, objArr[i14]) || (objArr2 != null && !ia.a(obj2, objArr2[i14]))) {
                     int i16 = i15 & i7;
                     if (i16 == 0) {
                         break;
@@ -210,9 +210,9 @@ public abstract class o {
         return -1;
     }
 
-    public static void t(List list, g9.m mVar, int i7, int i10) {
+    public static void t(List list, g9.l lVar, int i7, int i10) {
         for (int size = list.size() - 1; size > i10; size--) {
-            if (mVar.apply(list.get(size))) {
+            if (lVar.apply(list.get(size))) {
                 list.remove(size);
             }
         }

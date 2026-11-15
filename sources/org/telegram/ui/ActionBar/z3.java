@@ -1,54 +1,83 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Rect;
-import android.view.View;
-import org.telegram.ui.Components.mm0;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
+import android.widget.RelativeLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class z3 implements View.OnLayoutChangeListener {
+public final class z3 extends Animation {
     public final /* synthetic */ int a;
-    public final Object b;
-    public final Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ g4 e;
 
-    public z3(mm0 mm0Var, mm0 mm0Var2, mm0 mm0Var3) {
-        this.a = 1;
-        this.b = mm0Var;
-        this.c = mm0Var2;
-        this.d = mm0Var3;
+    public /* synthetic */ z3(g4 g4Var, int i7, int i10, float f10, float f11, int i11) {
+        this.a = i11;
+        this.e = g4Var;
+        this.b = i7;
+        this.c = i10;
+        this.d = f11;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+    @Override // android.view.animation.Animation
+    public final void applyTransformation(float f10, Transformation transformation) {
         switch (this.a) {
             case 0:
-                Rect rect = (Rect) this.b;
-                rect.set(i7, i10, i11, i12);
-                Rect rect2 = (Rect) this.c;
-                rect2.set(i13, i14, i15, i16);
-                l4 l4Var = (l4) this.d;
-                j4 j4Var = l4Var.b;
-                if (j4Var.f() && !rect.equals(rect2)) {
-                    l4Var.h = true;
-                    if (j4Var.f()) {
-                        l4Var.c();
-                        break;
-                    }
+                int i7 = this.b;
+                int i10 = this.c;
+                int i11 = (int) (f10 * (i7 - i10));
+                g4 g4Var = this.e;
+                RelativeLayout relativeLayout = g4Var.f;
+                g4.l(relativeLayout, relativeLayout.getLayoutParams().width, i10 + i11);
+                if (g4Var.M) {
+                    relativeLayout.setY(this.d - relativeLayout.getHeight());
+                    g4.a(g4Var);
+                    break;
+                }
+                break;
+            case 1:
+                int i12 = this.b;
+                int i13 = this.c;
+                g4 g4Var2 = this.e;
+                RelativeLayout relativeLayout2 = g4Var2.f;
+                g4.l(relativeLayout2, ((int) (f10 * (i12 - i13))) + i13, relativeLayout2.getLayoutParams().height);
+                relativeLayout2.setX(this.d - relativeLayout2.getWidth());
+                g4Var2.g.setX(relativeLayout2.getWidth() - i13);
+                g4Var2.h.setX(relativeLayout2.getWidth() - i12);
+                break;
+            case 2:
+                int i14 = this.b;
+                int i15 = this.c;
+                int i16 = (int) (f10 * (i14 - i15));
+                g4 g4Var3 = this.e;
+                RelativeLayout relativeLayout3 = g4Var3.f;
+                g4.l(relativeLayout3, relativeLayout3.getLayoutParams().width, i16 + i15);
+                if (g4Var3.M) {
+                    relativeLayout3.setY(this.d - (relativeLayout3.getHeight() - i15));
+                    g4.a(g4Var3);
+                    break;
                 }
                 break;
             default:
-                ((mm0) this.b).setProgress(org.telegram.ui.h5.m1);
-                ((mm0) this.c).setProgress(org.telegram.ui.h5.n1);
-                ((mm0) this.d).setProgress(org.telegram.ui.h5.o1);
+                int i17 = this.b;
+                int i18 = this.c;
+                g4 g4Var4 = this.e;
+                RelativeLayout relativeLayout4 = g4Var4.f;
+                g4.l(relativeLayout4, ((int) (f10 * (i17 - i18))) + i18, relativeLayout4.getLayoutParams().height);
+                relativeLayout4.setX(this.d - relativeLayout4.getWidth());
+                g4Var4.g.setX(relativeLayout4.getWidth() - i17);
+                g4Var4.h.setX(relativeLayout4.getWidth() - i18);
                 break;
         }
     }
 
-    public z3(l4 l4Var) {
-        this.a = 0;
-        this.d = l4Var;
-        this.b = new Rect();
-        this.c = new Rect();
+    public /* synthetic */ z3(g4 g4Var, int i7, int i10, float f10, int i11) {
+        this.a = i11;
+        this.e = g4Var;
+        this.b = i7;
+        this.c = i10;
+        this.d = f10;
     }
 }

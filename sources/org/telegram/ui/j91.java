@@ -1,46 +1,31 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j91 extends AnimatorListenerAdapter {
+public final class j91 extends v4.t0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ z91 c;
+    public final /* synthetic */ u91 b;
 
-    public /* synthetic */ j91(z91 z91Var, boolean z9, int i7) {
+    public /* synthetic */ j91(u91 u91Var, int i7) {
         this.a = i7;
-        this.c = z91Var;
-        this.b = z9;
+        this.b = u91Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i7;
+    @Override // v4.t0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        u91 u91Var;
+        dh.g gVar;
         switch (this.a) {
             case 0:
-                super.onAnimationEnd(animator);
-                boolean z9 = this.b;
-                float f10 = z9 ? 1.0f : 0.0f;
-                z91 z91Var = this.c;
-                z91Var.W0(f10);
-                if (!z9) {
-                    Activity parentActivity = z91Var.getParentActivity();
-                    i7 = ((org.telegram.ui.ActionBar.f2) z91Var).classGuid;
-                    org.telegram.messenger.g0.l3(parentActivity, i7);
-                    z91Var.r0.setVisibility(8);
-                    z91Var.U0(true);
-                    break;
-                } else {
-                    z91Var.q0.setVisibility(8);
-                    break;
-                }
+                this.b.C0();
+                break;
             default:
-                if (!this.b) {
-                    this.c.o0.setVisibility(8);
+                if (Build.VERSION.SDK_INT >= 31 && (gVar = (u91Var = this.b).h1) != null) {
+                    gVar.f(i7, i10);
+                    u91Var.B0();
                     break;
                 }
                 break;

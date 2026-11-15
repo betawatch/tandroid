@@ -1,6 +1,6 @@
 package com.google.android.play.core.integrity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class ao extends IntegrityTokenRequest {
     private final String a;
@@ -22,7 +22,7 @@ final class ao extends IntegrityTokenRequest {
     }
 
     public final boolean equals(Object obj) {
-        boolean z9;
+        boolean z10;
         Long l10;
         if (obj == this) {
             return true;
@@ -30,11 +30,11 @@ final class ao extends IntegrityTokenRequest {
         if (obj instanceof IntegrityTokenRequest) {
             IntegrityTokenRequest integrityTokenRequest = (IntegrityTokenRequest) obj;
             if (this.a.equals(integrityTokenRequest.nonce()) && ((l10 = this.b) != null ? l10.equals(integrityTokenRequest.cloudProjectNumber()) : integrityTokenRequest.cloudProjectNumber() == null)) {
-                z9 = true;
-                return ((obj instanceof ao) || !a()) ? z9 : z9;
+                z10 = true;
+                return ((obj instanceof ao) || !a()) ? z10 : z10;
             }
         }
-        z9 = false;
+        z10 = false;
         if (obj instanceof ao) {
         }
     }

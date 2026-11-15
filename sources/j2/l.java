@@ -1,15 +1,15 @@
 package j2;
 
-import a8.ia;
+import a8.ja;
 import android.net.Uri;
 import e2.s0;
 import e2.t0;
-import f3.j0;
-import h2.m0;
+import f3.i0;
+import h2.l0;
 import java.math.RoundingMode;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l implements n4.b {
     public int a;
@@ -21,9 +21,9 @@ public final class l implements n4.b {
     public Object g;
     public Object h;
 
-    public l(f3.q qVar, j0 j0Var, i2.s sVar, String str, int i7) {
+    public l(f3.q qVar, i0 i0Var, i2.s sVar, String str, int i7) {
         this.e = qVar;
-        this.f = j0Var;
+        this.f = i0Var;
         this.g = sVar;
         int i10 = sVar.a;
         int i11 = sVar.b;
@@ -54,7 +54,7 @@ public final class l implements n4.b {
         int i10;
         long j10 = j3;
         while (j10 > 0 && (i7 = this.c) < (i10 = this.a)) {
-            int e10 = ((j0) this.f).e(pVar, (int) Math.min(i10 - i7, j10), true);
+            int e10 = ((i0) this.f).e(pVar, (int) Math.min(i10 - i7, j10), true);
             if (e10 == -1) {
                 j10 = 0;
             } else {
@@ -69,11 +69,11 @@ public final class l implements n4.b {
             long j11 = this.b;
             long j12 = this.d;
             long j13 = sVar.b;
-            String str = m0.a;
-            long a02 = j11 + m0.a0(j12, 1000000L, j13, RoundingMode.DOWN);
+            String str = l0.a;
+            long a02 = j11 + l0.a0(j12, 1000000L, j13, RoundingMode.DOWN);
             int i13 = i12 * i11;
             int i14 = this.c - i13;
-            ((j0) this.f).c(a02, 1, i13, i14, null);
+            ((i0) this.f).c(a02, 1, i13, i14, null);
             this.d += i12;
             this.c = i14;
         }
@@ -91,13 +91,13 @@ public final class l implements n4.b {
     public void c(int i7, long j3) {
         n4.e eVar = new n4.e((i2.s) this.g, 1, i7, j3);
         ((f3.q) this.e).f(eVar);
-        j0 j0Var = (j0) this.f;
-        j0Var.g((e2.u) this.h);
-        j0Var.d(eVar.e);
+        i0 i0Var = (i0) this.f;
+        i0Var.g((e2.u) this.h);
+        i0Var.d(eVar.e);
     }
 
     public m d() {
-        ia.k((Uri) this.e, "The uri must be set.");
+        ja.k((Uri) this.e, "The uri must be set.");
         return new m((Uri) this.e, this.a, (byte[]) this.f, (Map) this.g, this.b, this.d, (String) this.h, this.c);
     }
 }

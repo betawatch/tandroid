@@ -1,13 +1,13 @@
 package gh;
 
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class e implements a {
-    public final h6 a;
+    public final e6 a;
     public d b;
     public d c;
     public d d;
@@ -17,8 +17,8 @@ public class e implements a {
     public float n;
     public float r;
 
-    public e(h6 h6Var) {
-        this.a = h6Var;
+    public e(e6 e6Var) {
+        this.a = e6Var;
         float N = g0.N(1.0f);
         float N2 = g0.N(0.33333334f);
         this.n = N;
@@ -30,40 +30,55 @@ public class e implements a {
     }
 
     @Override // gh.a
-    public int A() {
-        return a(this.c);
+    public /* synthetic */ float A1() {
+        return 0.0f;
     }
 
     @Override // gh.a
-    public /* synthetic */ int C0() {
+    public final int A2() {
+        return a(this.e);
+    }
+
+    @Override // gh.a
+    public /* synthetic */ int D1() {
         return 0;
     }
 
     @Override // gh.a
-    public /* synthetic */ int M() {
+    public /* synthetic */ int M0() {
         return 0;
     }
 
     @Override // gh.a
-    public int O() {
+    public int U0() {
         return a(this.d);
     }
 
     @Override // gh.a
-    public int R0() {
+    public int W1() {
         return a(this.b);
     }
 
+    @Override // gh.a
+    public final /* synthetic */ float Y0() {
+        return -1.0f;
+    }
+
+    @Override // gh.a
+    public final /* synthetic */ float Z0() {
+        return -1.0f;
+    }
+
     public final int a(d dVar) {
-        boolean z9 = false;
+        boolean z10 = false;
         if (dVar == null) {
             return 0;
         }
-        h6 h6Var = this.a;
-        if ((h6Var instanceof di.b) || (h6Var == null ? m6.I.q() : h6Var.a())) {
-            z9 = true;
+        e6 e6Var = this.a;
+        if ((e6Var instanceof fi.b) || (e6Var == null ? j6.I.q() : e6Var.a())) {
+            z10 = true;
         }
-        return dVar.k(h6Var, z9);
+        return dVar.j(e6Var, z10);
     }
 
     public float b() {
@@ -82,27 +97,12 @@ public class e implements a {
         this.d = new c(i10, i7, 0);
     }
 
-    @Override // gh.a
-    public final int e1() {
-        return a(this.e);
-    }
-
     public final void f(int i7, int i10) {
         this.c = new c(i10, i7, 0);
     }
 
     @Override // gh.a
-    public final /* synthetic */ float j0() {
-        return -1.0f;
-    }
-
-    @Override // gh.a
-    public final /* synthetic */ float o0() {
-        return -1.0f;
-    }
-
-    @Override // gh.a
-    public /* synthetic */ float v0() {
-        return 0.0f;
+    public int t0() {
+        return a(this.c);
     }
 }

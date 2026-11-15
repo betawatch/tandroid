@@ -1,23 +1,11 @@
 package m;
 
-import android.widget.TextView;
+import android.graphics.Typeface;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class v0 {
-    public static int a(TextView textView) {
-        return textView.getAutoSizeStepGranularity();
-    }
-
-    public static void b(TextView textView, int i7, int i10, int i11, int i12) {
-        textView.setAutoSizeTextTypeUniformWithConfiguration(i7, i10, i11, i12);
-    }
-
-    public static void c(TextView textView, int[] iArr, int i7) {
-        textView.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i7);
-    }
-
-    public static boolean d(TextView textView, String str) {
-        return textView.setFontVariationSettings(str);
+    public static Typeface a(Typeface typeface, int i7, boolean z10) {
+        return Typeface.create(typeface, i7, z10);
     }
 }

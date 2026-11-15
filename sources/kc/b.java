@@ -1,13 +1,14 @@
 package kc;
 
+import i5.c;
 import java.nio.ByteBuffer;
-import y7.i6;
+import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b extends a {
-    public static final /* synthetic */ i6 n;
-    public static final /* synthetic */ i6 r;
+    public static final /* synthetic */ ff n;
+    public static final /* synthetic */ ff r;
 
     static {
         ze.a aVar = new ze.a(b.class, "ESDescriptorBox.java");
@@ -18,7 +19,7 @@ public final class b extends a {
     }
 
     public final boolean equals(Object obj) {
-        com.google.android.recaptcha.internal.a.t(ze.a.c(n, this, this, obj));
+        c.u(ze.a.c(n, this, this, obj));
         if (this == obj) {
             return true;
         }
@@ -31,7 +32,7 @@ public final class b extends a {
     }
 
     public final int hashCode() {
-        com.google.android.recaptcha.internal.a.t(ze.a.b(r, this, this));
+        c.u(ze.a.b(r, this, this));
         ByteBuffer byteBuffer = this.e;
         if (byteBuffer != null) {
             return byteBuffer.hashCode();

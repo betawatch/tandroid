@@ -1,24 +1,24 @@
 package ab;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements na.d {
     public static final a a = new a();
-    public static final na.c b = new na.c("projectNumber", jg.g.q(jg.g.p(qa.d.class, new qa.a(1))));
-    public static final na.c c = new na.c("messageId", jg.g.q(jg.g.p(qa.d.class, new qa.a(2))));
-    public static final na.c d = new na.c("instanceId", jg.g.q(jg.g.p(qa.d.class, new qa.a(3))));
-    public static final na.c e = new na.c("messageType", jg.g.q(jg.g.p(qa.d.class, new qa.a(4))));
-    public static final na.c f = new na.c("sdkPlatform", jg.g.q(jg.g.p(qa.d.class, new qa.a(5))));
-    public static final na.c g = new na.c("packageName", jg.g.q(jg.g.p(qa.d.class, new qa.a(6))));
-    public static final na.c h = new na.c("collapseKey", jg.g.q(jg.g.p(qa.d.class, new qa.a(7))));
-    public static final na.c i = new na.c("priority", jg.g.q(jg.g.p(qa.d.class, new qa.a(8))));
-    public static final na.c j = new na.c("ttl", jg.g.q(jg.g.p(qa.d.class, new qa.a(9))));
-    public static final na.c k = new na.c("topic", jg.g.q(jg.g.p(qa.d.class, new qa.a(10))));
-    public static final na.c l = new na.c("bulkId", jg.g.q(jg.g.p(qa.d.class, new qa.a(11))));
-    public static final na.c m = new na.c("event", jg.g.q(jg.g.p(qa.d.class, new qa.a(12))));
-    public static final na.c n = new na.c("analyticsLabel", jg.g.q(jg.g.p(qa.d.class, new qa.a(13))));
-    public static final na.c o = new na.c("campaignId", jg.g.q(jg.g.p(qa.d.class, new qa.a(14))));
-    public static final na.c p = new na.c("composerLabel", jg.g.q(jg.g.p(qa.d.class, new qa.a(15))));
+    public static final na.c b = new na.c("projectNumber", i5.c.p(i5.c.o(qa.d.class, new qa.a(1))));
+    public static final na.c c = new na.c("messageId", i5.c.p(i5.c.o(qa.d.class, new qa.a(2))));
+    public static final na.c d = new na.c("instanceId", i5.c.p(i5.c.o(qa.d.class, new qa.a(3))));
+    public static final na.c e = new na.c("messageType", i5.c.p(i5.c.o(qa.d.class, new qa.a(4))));
+    public static final na.c f = new na.c("sdkPlatform", i5.c.p(i5.c.o(qa.d.class, new qa.a(5))));
+    public static final na.c g = new na.c("packageName", i5.c.p(i5.c.o(qa.d.class, new qa.a(6))));
+    public static final na.c h = new na.c("collapseKey", i5.c.p(i5.c.o(qa.d.class, new qa.a(7))));
+    public static final na.c i = new na.c("priority", i5.c.p(i5.c.o(qa.d.class, new qa.a(8))));
+    public static final na.c j = new na.c("ttl", i5.c.p(i5.c.o(qa.d.class, new qa.a(9))));
+    public static final na.c k = new na.c("topic", i5.c.p(i5.c.o(qa.d.class, new qa.a(10))));
+    public static final na.c l = new na.c("bulkId", i5.c.p(i5.c.o(qa.d.class, new qa.a(11))));
+    public static final na.c m = new na.c("event", i5.c.p(i5.c.o(qa.d.class, new qa.a(12))));
+    public static final na.c n = new na.c("analyticsLabel", i5.c.p(i5.c.o(qa.d.class, new qa.a(13))));
+    public static final na.c o = new na.c("campaignId", i5.c.p(i5.c.o(qa.d.class, new qa.a(14))));
+    public static final na.c p = new na.c("composerLabel", i5.c.p(i5.c.o(qa.d.class, new qa.a(15))));
 
     @Override // na.a
     public final void a(Object obj, Object obj2) {

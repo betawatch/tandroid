@@ -6,7 +6,7 @@ import androidx.datastore.preferences.protobuf.x0;
 import androidx.datastore.preferences.protobuf.y;
 import androidx.datastore.preferences.protobuf.z;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h extends z {
     public static final int BOOLEAN_FIELD_NUMBER = 1;
@@ -60,9 +60,9 @@ public final class h extends z {
         hVar.value_ = hVar2;
     }
 
-    public static void q(h hVar, boolean z9) {
+    public static void q(h hVar, boolean z10) {
         hVar.valueCase_ = 1;
-        hVar.value_ = Boolean.valueOf(z9);
+        hVar.value_ = Boolean.valueOf(z10);
     }
 
     public static void r(h hVar, float f10) {

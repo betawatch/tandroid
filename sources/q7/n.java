@@ -7,7 +7,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class n implements Map, Serializable, j$.util.Map {
     public static final Map.Entry[] b = new Map.Entry[0];
@@ -129,19 +129,19 @@ public abstract class n implements Map, Serializable, j$.util.Map {
         r rVar = (r) this;
         int size = rVar.size();
         if (size < 0) {
-            throw new IllegalArgumentException(jg.g.j(size, "size cannot be negative but was: "));
+            throw new IllegalArgumentException(i5.c.i(size, "size cannot be negative but was: "));
         }
         StringBuilder sb2 = new StringBuilder((int) Math.min(size * 8, 1073741824L));
         sb2.append('{');
-        boolean z9 = true;
+        boolean z10 = true;
         for (Map.Entry entry : rVar.entrySet()) {
-            if (!z9) {
+            if (!z10) {
                 sb2.append(", ");
             }
             sb2.append(entry.getKey());
             sb2.append('=');
             sb2.append(entry.getValue());
-            z9 = false;
+            z10 = false;
         }
         sb2.append('}');
         return sb2.toString();

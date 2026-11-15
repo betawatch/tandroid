@@ -8,85 +8,87 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ha;
-import di.b4;
-import fi.j7;
+import bi.x4;
+import c8.ja;
+import hi.g7;
+import hi.h4;
+import hi.i7;
+import hi.q4;
 import java.util.ArrayList;
-import jg.z1;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.k5;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.t10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.c5;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.z4;
 import org.telegram.ui.Cells.c2;
-import org.telegram.ui.Cells.q8;
+import org.telegram.ui.Cells.p8;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.wq;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.uj0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class q0 extends f2 {
-    public static final int U = -1;
-    public static final int V = -2;
-    public static final int W = -3;
-    public static final int X = -4;
-    public static final int Y = -5;
-    public static final int Z = -6;
-    public static final int a0 = -7;
-    public static final int b0 = -8;
-    public static final int c0 = -9;
-    public static final int d0 = -10;
-    public static final int e0 = -11;
-    public static final int f0 = -12;
-    public static final int g0 = -13;
-    public static final int h0 = -14;
-    public static final int i0 = -15;
-    public static final int j0 = -16;
-    public static final int k0 = -17;
-    public static final int l0 = -18;
-    public static final int m0 = -19;
-    public static final int n0 = -20;
-    public static final int o0 = -21;
-    public String D;
-    public int E;
-    public final k0 F;
-    public TL_account.connectedBots G;
-    public TL_account.TL_connectedBot H;
-    public boolean I;
-    public TL_account.TL_businessBotRights J;
-    public boolean K;
+public final class q0 extends e2 {
+    public static final int V = -1;
+    public static final int W = -2;
+    public static final int X = -3;
+    public static final int Y = -4;
+    public static final int Z = -5;
+    public static final int a0 = -6;
+    public static final int b0 = -7;
+    public static final int c0 = -8;
+    public static final int d0 = -9;
+    public static final int e0 = -10;
+    public static final int f0 = -11;
+    public static final int g0 = -12;
+    public static final int h0 = -13;
+    public static final int i0 = -14;
+    public static final int j0 = -15;
+    public static final int k0 = -16;
+    public static final int l0 = -17;
+    public static final int m0 = -18;
+    public static final int n0 = -19;
+    public static final int o0 = -20;
+    public static final int p0 = -21;
+    public String E;
+    public int F;
+    public final k0 G;
+    public TL_account.connectedBots H;
+    public TL_account.TL_connectedBot I;
+    public boolean J;
+    public TL_account.TL_businessBotRights K;
     public boolean L;
-    public TLRPC.User M;
-    public final LongSparseArray N;
-    public int O;
-    public boolean P;
+    public boolean M;
+    public TLRPC.User N;
+    public final LongSparseArray O;
+    public int P;
     public boolean Q;
     public boolean R;
     public boolean S;
     public boolean T;
-    public c5 a;
-    public j7 b;
-    public r41 c;
-    public z1 d;
+    public boolean U;
+    public z4 a;
+    public i7 b;
+    public u41 c;
+    public jg.z1 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
     public View h;
-    public b4 n;
+    public bi.v1 n;
     public TextView r;
     public ImageView s;
     public a0 w;
@@ -95,188 +97,188 @@ public final class q0 extends f2 {
 
     public q0() {
         super(null);
-        this.E = 0;
-        this.F = new k0(this, 4);
-        this.J = TL_account.TL_businessBotRights.makeDefault();
-        this.M = null;
-        this.N = new LongSparseArray();
-        this.O = -4;
-        this.P = true;
-        this.Q = false;
+        this.F = 0;
+        this.G = new k0(this, 4);
+        this.K = TL_account.TL_businessBotRights.makeDefault();
+        this.N = null;
+        this.O = new LongSparseArray();
+        this.P = -4;
+        this.Q = true;
         this.R = false;
+        this.S = false;
     }
 
-    public static void Z(q0 q0Var, TLRPC.TL_error tL_error, TLObject tLObject, int[] iArr, ArrayList arrayList, boolean z9, TLRPC.User user) {
-        f2 T;
+    public static void Z(q0 q0Var, TLRPC.TL_error tL_error, TLObject tLObject, int[] iArr, ArrayList arrayList, boolean z10, TLRPC.User user) {
+        e2 T;
         if (tL_error != null) {
             q0Var.a.b(false);
-            gc.d0(tL_error);
+            cc.d0(tL_error);
             return;
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             q0Var.a.b(false);
-            k5.p(null, 2131743879, gc.a0(q0Var), null);
+            k5.o(null, 2131743879, cc.a0(q0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
-            Utilities.d.c(new ha.b(18, q0Var, tLObject));
+            Utilities.d.c(new h4(28, q0Var, tLObject));
         }
         int i7 = iArr[0] + 1;
         iArr[0] = i7;
         if (i7 == arrayList.size()) {
             f.a(q0Var.currentAccount).b();
-            qp messagesController = q0Var.getMessagesController();
-            messagesController.r1.clear();
-            messagesController.w1.clear();
+            np messagesController = q0Var.getMessagesController();
+            messagesController.s1.clear();
+            messagesController.x1.clear();
             q0Var.finishFragment();
-            if (!z9 || user == null) {
+            if (!z10 || user == null) {
                 if (user == null || (T = LaunchActivity.T()) == null) {
                     return;
                 }
-                gc.a0(T).Q(R.raw.contact_check, 36, id.a0(null, null, 2131752784, t10.p(user))).j();
+                cc.a0(T).Q(R.raw.contact_check, 36, hd.a0(null, null, 2131752784, q10.p(user))).j();
                 return;
             }
-            f2 T2 = LaunchActivity.T();
+            e2 T2 = LaunchActivity.T();
             if (T2 != null) {
-                gc.a0(T2).Q(R.raw.contact_check, 36, id.a0(null, null, 2131752817, t10.p(user))).j();
+                cc.a0(T2).Q(R.raw.contact_check, 36, hd.a0(null, null, 2131752817, q10.p(user))).j();
             }
         }
     }
 
-    public static void b0(final q0 q0Var, x31 x31Var, final View view) {
-        if (x31Var.g && !q0Var.w.h(x31Var)) {
-            int i7 = x31Var.d;
+    public static void b0(final q0 q0Var, b41 b41Var, final View view) {
+        if (b41Var.g && !q0Var.w.h(b41Var)) {
+            int i7 = b41Var.d;
             final int i10 = 1;
-            if (i7 == U) {
+            if (i7 == V) {
                 a0 a0Var = q0Var.w;
-                q0Var.I = true;
+                q0Var.J = true;
                 a0Var.h = true;
-                q0Var.c.f3.O(true);
+                q0Var.c.g3.O(true);
                 q0Var.d0(true);
                 return;
             }
             final int i11 = 0;
-            if (i7 == V) {
-                a0 a0Var2 = q0Var.w;
-                q0Var.I = false;
-                a0Var2.h = false;
-                q0Var.c.f3.O(true);
-                q0Var.d0(true);
-                return;
-            }
             if (i7 == W) {
-                q0Var.M = null;
-                q0Var.c.f3.O(true);
+                a0 a0Var2 = q0Var.w;
+                q0Var.J = false;
+                a0Var2.h = false;
+                q0Var.c.g3.O(true);
                 q0Var.d0(true);
                 return;
             }
-            if (x31Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) q0Var.N.get(x31Var.x);
+            if (i7 == X) {
+                q0Var.N = null;
+                q0Var.c.g3.O(true);
+                q0Var.d0(true);
+                return;
+            }
+            if (b41Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) q0Var.O.get(b41Var.x);
                 if (user == null) {
                     return;
                 }
                 if (user.bot_business) {
-                    q0Var.M = user;
+                    q0Var.N = user;
                     org.telegram.messenger.g0.v1(q0Var.f);
-                    q0Var.c.f3.O(true);
+                    q0Var.c.g3.O(true);
                     q0Var.d0(true);
                     return;
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, q0Var.getParentActivity(), q0Var.resourceProvider);
-                String M0 = id.M0(2131752809, null);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.g0.X2(id.M0(2131752810, null));
-                alertDialog$Builder.k(id.M0(2131747831, null), null);
-                q0Var.showDialog(u1Var);
-                return;
-            }
-            if (i7 == X) {
-                boolean z9 = !q0Var.P;
-                q0Var.P = z9;
-                ((q8) view).setChecked(z9);
-                q0Var.c.f3.O(true);
+                String M0 = hd.M0(2131752809, null);
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.S = M0;
+                t1Var.U = org.telegram.messenger.g0.X2(hd.M0(2131752810, null));
+                alertDialog$Builder.k(hd.M0(2131747831, null), null);
+                q0Var.showDialog(t1Var);
                 return;
             }
             if (i7 == Y) {
-                int i12 = -q0Var.O;
-                q0Var.O = i12;
-                org.telegram.messenger.g0.G3(i12, view, null);
+                boolean z10 = !q0Var.Q;
+                q0Var.Q = z10;
+                ((p8) view).setChecked(z10);
+                q0Var.c.g3.O(true);
                 return;
             }
             if (i7 == Z) {
-                TL_account.TL_businessBotRights tL_businessBotRights = q0Var.J;
-                boolean z10 = !tL_businessBotRights.reply;
-                tL_businessBotRights.reply = z10;
-                ((c2) view).c(z10, true);
-                q0Var.c.f3.O(true);
-                q0Var.d0(true);
+                int i12 = -q0Var.P;
+                q0Var.P = i12;
+                org.telegram.messenger.g0.F3(i12, view, null);
                 return;
             }
             if (i7 == a0) {
-                TL_account.TL_businessBotRights tL_businessBotRights2 = q0Var.J;
-                boolean z11 = !tL_businessBotRights2.read_messages;
-                tL_businessBotRights2.read_messages = z11;
+                TL_account.TL_businessBotRights tL_businessBotRights = q0Var.K;
+                boolean z11 = !tL_businessBotRights.reply;
+                tL_businessBotRights.reply = z11;
                 ((c2) view).c(z11, true);
-                q0Var.c.f3.O(true);
+                q0Var.c.g3.O(true);
                 q0Var.d0(true);
                 return;
             }
             if (i7 == b0) {
-                TL_account.TL_businessBotRights tL_businessBotRights3 = q0Var.J;
-                boolean z12 = !tL_businessBotRights3.delete_sent_messages;
-                tL_businessBotRights3.delete_sent_messages = z12;
+                TL_account.TL_businessBotRights tL_businessBotRights2 = q0Var.K;
+                boolean z12 = !tL_businessBotRights2.read_messages;
+                tL_businessBotRights2.read_messages = z12;
                 ((c2) view).c(z12, true);
-                q0Var.c.f3.O(true);
+                q0Var.c.g3.O(true);
                 q0Var.d0(true);
                 return;
             }
             if (i7 == c0) {
-                TL_account.TL_businessBotRights tL_businessBotRights4 = q0Var.J;
-                boolean z13 = !tL_businessBotRights4.delete_received_messages;
-                tL_businessBotRights4.delete_received_messages = z13;
+                TL_account.TL_businessBotRights tL_businessBotRights3 = q0Var.K;
+                boolean z13 = !tL_businessBotRights3.delete_sent_messages;
+                tL_businessBotRights3.delete_sent_messages = z13;
                 ((c2) view).c(z13, true);
-                q0Var.c.f3.O(true);
+                q0Var.c.g3.O(true);
                 q0Var.d0(true);
                 return;
             }
             if (i7 == d0) {
-                boolean z14 = !q0Var.Q;
-                q0Var.Q = z14;
-                ((q8) view).setChecked(z14);
-                q0Var.c.f3.O(true);
-                return;
-            }
-            if (i7 == e0) {
-                TL_account.TL_businessBotRights tL_businessBotRights5 = q0Var.J;
-                boolean z15 = !tL_businessBotRights5.edit_name;
-                tL_businessBotRights5.edit_name = z15;
-                ((c2) view).c(z15, true);
-                q0Var.c.f3.O(true);
+                TL_account.TL_businessBotRights tL_businessBotRights4 = q0Var.K;
+                boolean z14 = !tL_businessBotRights4.delete_received_messages;
+                tL_businessBotRights4.delete_received_messages = z14;
+                ((c2) view).c(z14, true);
+                q0Var.c.g3.O(true);
                 q0Var.d0(true);
                 return;
             }
+            if (i7 == e0) {
+                boolean z15 = !q0Var.R;
+                q0Var.R = z15;
+                ((p8) view).setChecked(z15);
+                q0Var.c.g3.O(true);
+                return;
+            }
             if (i7 == f0) {
-                TL_account.TL_businessBotRights tL_businessBotRights6 = q0Var.J;
-                boolean z16 = !tL_businessBotRights6.edit_bio;
-                tL_businessBotRights6.edit_bio = z16;
+                TL_account.TL_businessBotRights tL_businessBotRights5 = q0Var.K;
+                boolean z16 = !tL_businessBotRights5.edit_name;
+                tL_businessBotRights5.edit_name = z16;
                 ((c2) view).c(z16, true);
-                q0Var.c.f3.O(true);
+                q0Var.c.g3.O(true);
                 q0Var.d0(true);
                 return;
             }
             if (i7 == g0) {
-                TL_account.TL_businessBotRights tL_businessBotRights7 = q0Var.J;
-                boolean z17 = !tL_businessBotRights7.edit_profile_photo;
-                tL_businessBotRights7.edit_profile_photo = z17;
+                TL_account.TL_businessBotRights tL_businessBotRights6 = q0Var.K;
+                boolean z17 = !tL_businessBotRights6.edit_bio;
+                tL_businessBotRights6.edit_bio = z17;
                 ((c2) view).c(z17, true);
-                q0Var.c.f3.O(true);
+                q0Var.c.g3.O(true);
                 q0Var.d0(true);
                 return;
             }
             if (i7 == h0) {
+                TL_account.TL_businessBotRights tL_businessBotRights7 = q0Var.K;
+                boolean z18 = !tL_businessBotRights7.edit_profile_photo;
+                tL_businessBotRights7.edit_profile_photo = z18;
+                ((c2) view).c(z18, true);
+                q0Var.c.g3.O(true);
+                q0Var.d0(true);
+                return;
+            }
+            if (i7 == i0) {
                 final int i13 = 5;
-                q0Var.c0(i7, !q0Var.J.edit_username, new Runnable(q0Var) { // from class: kg.j0
+                q0Var.c0(i7, !q0Var.K.edit_username, new Runnable(q0Var) { // from class: kg.j0
                     public final /* synthetic */ q0 b;
 
                     {
@@ -290,66 +292,66 @@ public final class q0 extends f2 {
                                 q0 q0Var2 = this.b;
                                 q0Var2.getClass();
                                 c2 c2Var = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.J;
-                                boolean z18 = !tL_businessBotRights8.view_gifts;
-                                tL_businessBotRights8.view_gifts = z18;
-                                c2Var.c(z18, true);
-                                q0Var2.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.K;
+                                boolean z19 = !tL_businessBotRights8.view_gifts;
+                                tL_businessBotRights8.view_gifts = z19;
+                                c2Var.c(z19, true);
+                                q0Var2.c.g3.O(true);
                                 q0Var2.d0(true);
                                 break;
                             case 1:
                                 q0 q0Var3 = this.b;
                                 q0Var3.getClass();
                                 c2 c2Var2 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.J;
-                                boolean z19 = !tL_businessBotRights9.sell_gifts;
-                                tL_businessBotRights9.sell_gifts = z19;
-                                c2Var2.c(z19, true);
-                                q0Var3.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.K;
+                                boolean z20 = !tL_businessBotRights9.sell_gifts;
+                                tL_businessBotRights9.sell_gifts = z20;
+                                c2Var2.c(z20, true);
+                                q0Var3.c.g3.O(true);
                                 q0Var3.d0(true);
                                 break;
                             case 2:
                                 q0 q0Var4 = this.b;
                                 q0Var4.getClass();
                                 c2 c2Var3 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.J;
-                                boolean z20 = !tL_businessBotRights10.change_gift_settings;
-                                tL_businessBotRights10.change_gift_settings = z20;
-                                c2Var3.c(z20, true);
-                                q0Var4.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.K;
+                                boolean z21 = !tL_businessBotRights10.change_gift_settings;
+                                tL_businessBotRights10.change_gift_settings = z21;
+                                c2Var3.c(z21, true);
+                                q0Var4.c.g3.O(true);
                                 q0Var4.d0(true);
                                 break;
                             case 3:
                                 q0 q0Var5 = this.b;
                                 q0Var5.getClass();
                                 c2 c2Var4 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.J;
-                                boolean z21 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
-                                tL_businessBotRights11.transfer_and_upgrade_gifts = z21;
-                                c2Var4.c(z21, true);
-                                q0Var5.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.K;
+                                boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
+                                tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
+                                c2Var4.c(z22, true);
+                                q0Var5.c.g3.O(true);
                                 q0Var5.d0(true);
                                 break;
                             case 4:
                                 q0 q0Var6 = this.b;
                                 q0Var6.getClass();
                                 c2 c2Var5 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.J;
-                                boolean z22 = !tL_businessBotRights12.transfer_stars;
-                                tL_businessBotRights12.transfer_stars = z22;
-                                c2Var5.c(z22, true);
-                                q0Var6.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.K;
+                                boolean z23 = !tL_businessBotRights12.transfer_stars;
+                                tL_businessBotRights12.transfer_stars = z23;
+                                c2Var5.c(z23, true);
+                                q0Var6.c.g3.O(true);
                                 q0Var6.d0(true);
                                 break;
                             default:
                                 q0 q0Var7 = this.b;
                                 q0Var7.getClass();
                                 c2 c2Var6 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.J;
-                                boolean z23 = !tL_businessBotRights13.edit_username;
-                                tL_businessBotRights13.edit_username = z23;
-                                c2Var6.c(z23, true);
-                                q0Var7.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.K;
+                                boolean z24 = !tL_businessBotRights13.edit_username;
+                                tL_businessBotRights13.edit_username = z24;
+                                c2Var6.c(z24, true);
+                                q0Var7.c.g3.O(true);
                                 q0Var7.d0(true);
                                 break;
                         }
@@ -357,15 +359,15 @@ public final class q0 extends f2 {
                 });
                 return;
             }
-            if (i7 == i0) {
-                boolean z18 = !q0Var.R;
-                q0Var.R = z18;
-                ((q8) view).setChecked(z18);
-                q0Var.c.f3.O(true);
+            if (i7 == j0) {
+                boolean z19 = !q0Var.S;
+                q0Var.S = z19;
+                ((p8) view).setChecked(z19);
+                q0Var.c.g3.O(true);
                 return;
             }
-            if (i7 == j0) {
-                q0Var.c0(i7, !q0Var.J.view_gifts, new Runnable(q0Var) { // from class: kg.j0
+            if (i7 == k0) {
+                q0Var.c0(i7, !q0Var.K.view_gifts, new Runnable(q0Var) { // from class: kg.j0
                     public final /* synthetic */ q0 b;
 
                     {
@@ -379,66 +381,66 @@ public final class q0 extends f2 {
                                 q0 q0Var2 = this.b;
                                 q0Var2.getClass();
                                 c2 c2Var = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.J;
-                                boolean z182 = !tL_businessBotRights8.view_gifts;
-                                tL_businessBotRights8.view_gifts = z182;
-                                c2Var.c(z182, true);
-                                q0Var2.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.K;
+                                boolean z192 = !tL_businessBotRights8.view_gifts;
+                                tL_businessBotRights8.view_gifts = z192;
+                                c2Var.c(z192, true);
+                                q0Var2.c.g3.O(true);
                                 q0Var2.d0(true);
                                 break;
                             case 1:
                                 q0 q0Var3 = this.b;
                                 q0Var3.getClass();
                                 c2 c2Var2 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.J;
-                                boolean z19 = !tL_businessBotRights9.sell_gifts;
-                                tL_businessBotRights9.sell_gifts = z19;
-                                c2Var2.c(z19, true);
-                                q0Var3.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.K;
+                                boolean z20 = !tL_businessBotRights9.sell_gifts;
+                                tL_businessBotRights9.sell_gifts = z20;
+                                c2Var2.c(z20, true);
+                                q0Var3.c.g3.O(true);
                                 q0Var3.d0(true);
                                 break;
                             case 2:
                                 q0 q0Var4 = this.b;
                                 q0Var4.getClass();
                                 c2 c2Var3 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.J;
-                                boolean z20 = !tL_businessBotRights10.change_gift_settings;
-                                tL_businessBotRights10.change_gift_settings = z20;
-                                c2Var3.c(z20, true);
-                                q0Var4.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.K;
+                                boolean z21 = !tL_businessBotRights10.change_gift_settings;
+                                tL_businessBotRights10.change_gift_settings = z21;
+                                c2Var3.c(z21, true);
+                                q0Var4.c.g3.O(true);
                                 q0Var4.d0(true);
                                 break;
                             case 3:
                                 q0 q0Var5 = this.b;
                                 q0Var5.getClass();
                                 c2 c2Var4 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.J;
-                                boolean z21 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
-                                tL_businessBotRights11.transfer_and_upgrade_gifts = z21;
-                                c2Var4.c(z21, true);
-                                q0Var5.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.K;
+                                boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
+                                tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
+                                c2Var4.c(z22, true);
+                                q0Var5.c.g3.O(true);
                                 q0Var5.d0(true);
                                 break;
                             case 4:
                                 q0 q0Var6 = this.b;
                                 q0Var6.getClass();
                                 c2 c2Var5 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.J;
-                                boolean z22 = !tL_businessBotRights12.transfer_stars;
-                                tL_businessBotRights12.transfer_stars = z22;
-                                c2Var5.c(z22, true);
-                                q0Var6.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.K;
+                                boolean z23 = !tL_businessBotRights12.transfer_stars;
+                                tL_businessBotRights12.transfer_stars = z23;
+                                c2Var5.c(z23, true);
+                                q0Var6.c.g3.O(true);
                                 q0Var6.d0(true);
                                 break;
                             default:
                                 q0 q0Var7 = this.b;
                                 q0Var7.getClass();
                                 c2 c2Var6 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.J;
-                                boolean z23 = !tL_businessBotRights13.edit_username;
-                                tL_businessBotRights13.edit_username = z23;
-                                c2Var6.c(z23, true);
-                                q0Var7.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.K;
+                                boolean z24 = !tL_businessBotRights13.edit_username;
+                                tL_businessBotRights13.edit_username = z24;
+                                c2Var6.c(z24, true);
+                                q0Var7.c.g3.O(true);
                                 q0Var7.d0(true);
                                 break;
                         }
@@ -446,8 +448,8 @@ public final class q0 extends f2 {
                 });
                 return;
             }
-            if (i7 == k0) {
-                q0Var.c0(i7, !q0Var.J.sell_gifts, new Runnable(q0Var) { // from class: kg.j0
+            if (i7 == l0) {
+                q0Var.c0(i7, !q0Var.K.sell_gifts, new Runnable(q0Var) { // from class: kg.j0
                     public final /* synthetic */ q0 b;
 
                     {
@@ -461,66 +463,66 @@ public final class q0 extends f2 {
                                 q0 q0Var2 = this.b;
                                 q0Var2.getClass();
                                 c2 c2Var = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.J;
-                                boolean z182 = !tL_businessBotRights8.view_gifts;
-                                tL_businessBotRights8.view_gifts = z182;
-                                c2Var.c(z182, true);
-                                q0Var2.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.K;
+                                boolean z192 = !tL_businessBotRights8.view_gifts;
+                                tL_businessBotRights8.view_gifts = z192;
+                                c2Var.c(z192, true);
+                                q0Var2.c.g3.O(true);
                                 q0Var2.d0(true);
                                 break;
                             case 1:
                                 q0 q0Var3 = this.b;
                                 q0Var3.getClass();
                                 c2 c2Var2 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.J;
-                                boolean z19 = !tL_businessBotRights9.sell_gifts;
-                                tL_businessBotRights9.sell_gifts = z19;
-                                c2Var2.c(z19, true);
-                                q0Var3.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.K;
+                                boolean z20 = !tL_businessBotRights9.sell_gifts;
+                                tL_businessBotRights9.sell_gifts = z20;
+                                c2Var2.c(z20, true);
+                                q0Var3.c.g3.O(true);
                                 q0Var3.d0(true);
                                 break;
                             case 2:
                                 q0 q0Var4 = this.b;
                                 q0Var4.getClass();
                                 c2 c2Var3 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.J;
-                                boolean z20 = !tL_businessBotRights10.change_gift_settings;
-                                tL_businessBotRights10.change_gift_settings = z20;
-                                c2Var3.c(z20, true);
-                                q0Var4.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.K;
+                                boolean z21 = !tL_businessBotRights10.change_gift_settings;
+                                tL_businessBotRights10.change_gift_settings = z21;
+                                c2Var3.c(z21, true);
+                                q0Var4.c.g3.O(true);
                                 q0Var4.d0(true);
                                 break;
                             case 3:
                                 q0 q0Var5 = this.b;
                                 q0Var5.getClass();
                                 c2 c2Var4 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.J;
-                                boolean z21 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
-                                tL_businessBotRights11.transfer_and_upgrade_gifts = z21;
-                                c2Var4.c(z21, true);
-                                q0Var5.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.K;
+                                boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
+                                tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
+                                c2Var4.c(z22, true);
+                                q0Var5.c.g3.O(true);
                                 q0Var5.d0(true);
                                 break;
                             case 4:
                                 q0 q0Var6 = this.b;
                                 q0Var6.getClass();
                                 c2 c2Var5 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.J;
-                                boolean z22 = !tL_businessBotRights12.transfer_stars;
-                                tL_businessBotRights12.transfer_stars = z22;
-                                c2Var5.c(z22, true);
-                                q0Var6.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.K;
+                                boolean z23 = !tL_businessBotRights12.transfer_stars;
+                                tL_businessBotRights12.transfer_stars = z23;
+                                c2Var5.c(z23, true);
+                                q0Var6.c.g3.O(true);
                                 q0Var6.d0(true);
                                 break;
                             default:
                                 q0 q0Var7 = this.b;
                                 q0Var7.getClass();
                                 c2 c2Var6 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.J;
-                                boolean z23 = !tL_businessBotRights13.edit_username;
-                                tL_businessBotRights13.edit_username = z23;
-                                c2Var6.c(z23, true);
-                                q0Var7.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.K;
+                                boolean z24 = !tL_businessBotRights13.edit_username;
+                                tL_businessBotRights13.edit_username = z24;
+                                c2Var6.c(z24, true);
+                                q0Var7.c.g3.O(true);
                                 q0Var7.d0(true);
                                 break;
                         }
@@ -528,9 +530,9 @@ public final class q0 extends f2 {
                 });
                 return;
             }
-            if (i7 == l0) {
+            if (i7 == m0) {
                 final int i14 = 2;
-                q0Var.c0(i7, !q0Var.J.change_gift_settings, new Runnable(q0Var) { // from class: kg.j0
+                q0Var.c0(i7, !q0Var.K.change_gift_settings, new Runnable(q0Var) { // from class: kg.j0
                     public final /* synthetic */ q0 b;
 
                     {
@@ -544,66 +546,66 @@ public final class q0 extends f2 {
                                 q0 q0Var2 = this.b;
                                 q0Var2.getClass();
                                 c2 c2Var = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.J;
-                                boolean z182 = !tL_businessBotRights8.view_gifts;
-                                tL_businessBotRights8.view_gifts = z182;
-                                c2Var.c(z182, true);
-                                q0Var2.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.K;
+                                boolean z192 = !tL_businessBotRights8.view_gifts;
+                                tL_businessBotRights8.view_gifts = z192;
+                                c2Var.c(z192, true);
+                                q0Var2.c.g3.O(true);
                                 q0Var2.d0(true);
                                 break;
                             case 1:
                                 q0 q0Var3 = this.b;
                                 q0Var3.getClass();
                                 c2 c2Var2 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.J;
-                                boolean z19 = !tL_businessBotRights9.sell_gifts;
-                                tL_businessBotRights9.sell_gifts = z19;
-                                c2Var2.c(z19, true);
-                                q0Var3.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.K;
+                                boolean z20 = !tL_businessBotRights9.sell_gifts;
+                                tL_businessBotRights9.sell_gifts = z20;
+                                c2Var2.c(z20, true);
+                                q0Var3.c.g3.O(true);
                                 q0Var3.d0(true);
                                 break;
                             case 2:
                                 q0 q0Var4 = this.b;
                                 q0Var4.getClass();
                                 c2 c2Var3 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.J;
-                                boolean z20 = !tL_businessBotRights10.change_gift_settings;
-                                tL_businessBotRights10.change_gift_settings = z20;
-                                c2Var3.c(z20, true);
-                                q0Var4.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.K;
+                                boolean z21 = !tL_businessBotRights10.change_gift_settings;
+                                tL_businessBotRights10.change_gift_settings = z21;
+                                c2Var3.c(z21, true);
+                                q0Var4.c.g3.O(true);
                                 q0Var4.d0(true);
                                 break;
                             case 3:
                                 q0 q0Var5 = this.b;
                                 q0Var5.getClass();
                                 c2 c2Var4 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.J;
-                                boolean z21 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
-                                tL_businessBotRights11.transfer_and_upgrade_gifts = z21;
-                                c2Var4.c(z21, true);
-                                q0Var5.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.K;
+                                boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
+                                tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
+                                c2Var4.c(z22, true);
+                                q0Var5.c.g3.O(true);
                                 q0Var5.d0(true);
                                 break;
                             case 4:
                                 q0 q0Var6 = this.b;
                                 q0Var6.getClass();
                                 c2 c2Var5 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.J;
-                                boolean z22 = !tL_businessBotRights12.transfer_stars;
-                                tL_businessBotRights12.transfer_stars = z22;
-                                c2Var5.c(z22, true);
-                                q0Var6.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.K;
+                                boolean z23 = !tL_businessBotRights12.transfer_stars;
+                                tL_businessBotRights12.transfer_stars = z23;
+                                c2Var5.c(z23, true);
+                                q0Var6.c.g3.O(true);
                                 q0Var6.d0(true);
                                 break;
                             default:
                                 q0 q0Var7 = this.b;
                                 q0Var7.getClass();
                                 c2 c2Var6 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.J;
-                                boolean z23 = !tL_businessBotRights13.edit_username;
-                                tL_businessBotRights13.edit_username = z23;
-                                c2Var6.c(z23, true);
-                                q0Var7.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.K;
+                                boolean z24 = !tL_businessBotRights13.edit_username;
+                                tL_businessBotRights13.edit_username = z24;
+                                c2Var6.c(z24, true);
+                                q0Var7.c.g3.O(true);
                                 q0Var7.d0(true);
                                 break;
                         }
@@ -611,9 +613,9 @@ public final class q0 extends f2 {
                 });
                 return;
             }
-            if (i7 == m0) {
+            if (i7 == n0) {
                 final int i15 = 3;
-                q0Var.c0(i7, !q0Var.J.transfer_and_upgrade_gifts, new Runnable(q0Var) { // from class: kg.j0
+                q0Var.c0(i7, !q0Var.K.transfer_and_upgrade_gifts, new Runnable(q0Var) { // from class: kg.j0
                     public final /* synthetic */ q0 b;
 
                     {
@@ -627,74 +629,74 @@ public final class q0 extends f2 {
                                 q0 q0Var2 = this.b;
                                 q0Var2.getClass();
                                 c2 c2Var = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.J;
-                                boolean z182 = !tL_businessBotRights8.view_gifts;
-                                tL_businessBotRights8.view_gifts = z182;
-                                c2Var.c(z182, true);
-                                q0Var2.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.K;
+                                boolean z192 = !tL_businessBotRights8.view_gifts;
+                                tL_businessBotRights8.view_gifts = z192;
+                                c2Var.c(z192, true);
+                                q0Var2.c.g3.O(true);
                                 q0Var2.d0(true);
                                 break;
                             case 1:
                                 q0 q0Var3 = this.b;
                                 q0Var3.getClass();
                                 c2 c2Var2 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.J;
-                                boolean z19 = !tL_businessBotRights9.sell_gifts;
-                                tL_businessBotRights9.sell_gifts = z19;
-                                c2Var2.c(z19, true);
-                                q0Var3.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.K;
+                                boolean z20 = !tL_businessBotRights9.sell_gifts;
+                                tL_businessBotRights9.sell_gifts = z20;
+                                c2Var2.c(z20, true);
+                                q0Var3.c.g3.O(true);
                                 q0Var3.d0(true);
                                 break;
                             case 2:
                                 q0 q0Var4 = this.b;
                                 q0Var4.getClass();
                                 c2 c2Var3 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.J;
-                                boolean z20 = !tL_businessBotRights10.change_gift_settings;
-                                tL_businessBotRights10.change_gift_settings = z20;
-                                c2Var3.c(z20, true);
-                                q0Var4.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.K;
+                                boolean z21 = !tL_businessBotRights10.change_gift_settings;
+                                tL_businessBotRights10.change_gift_settings = z21;
+                                c2Var3.c(z21, true);
+                                q0Var4.c.g3.O(true);
                                 q0Var4.d0(true);
                                 break;
                             case 3:
                                 q0 q0Var5 = this.b;
                                 q0Var5.getClass();
                                 c2 c2Var4 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.J;
-                                boolean z21 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
-                                tL_businessBotRights11.transfer_and_upgrade_gifts = z21;
-                                c2Var4.c(z21, true);
-                                q0Var5.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.K;
+                                boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
+                                tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
+                                c2Var4.c(z22, true);
+                                q0Var5.c.g3.O(true);
                                 q0Var5.d0(true);
                                 break;
                             case 4:
                                 q0 q0Var6 = this.b;
                                 q0Var6.getClass();
                                 c2 c2Var5 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.J;
-                                boolean z22 = !tL_businessBotRights12.transfer_stars;
-                                tL_businessBotRights12.transfer_stars = z22;
-                                c2Var5.c(z22, true);
-                                q0Var6.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.K;
+                                boolean z23 = !tL_businessBotRights12.transfer_stars;
+                                tL_businessBotRights12.transfer_stars = z23;
+                                c2Var5.c(z23, true);
+                                q0Var6.c.g3.O(true);
                                 q0Var6.d0(true);
                                 break;
                             default:
                                 q0 q0Var7 = this.b;
                                 q0Var7.getClass();
                                 c2 c2Var6 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.J;
-                                boolean z23 = !tL_businessBotRights13.edit_username;
-                                tL_businessBotRights13.edit_username = z23;
-                                c2Var6.c(z23, true);
-                                q0Var7.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.K;
+                                boolean z24 = !tL_businessBotRights13.edit_username;
+                                tL_businessBotRights13.edit_username = z24;
+                                c2Var6.c(z24, true);
+                                q0Var7.c.g3.O(true);
                                 q0Var7.d0(true);
                                 break;
                         }
                     }
                 });
-            } else if (i7 == n0) {
+            } else if (i7 == o0) {
                 final int i16 = 4;
-                q0Var.c0(i7, !q0Var.J.transfer_stars, new Runnable(q0Var) { // from class: kg.j0
+                q0Var.c0(i7, !q0Var.K.transfer_stars, new Runnable(q0Var) { // from class: kg.j0
                     public final /* synthetic */ q0 b;
 
                     {
@@ -708,103 +710,103 @@ public final class q0 extends f2 {
                                 q0 q0Var2 = this.b;
                                 q0Var2.getClass();
                                 c2 c2Var = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.J;
-                                boolean z182 = !tL_businessBotRights8.view_gifts;
-                                tL_businessBotRights8.view_gifts = z182;
-                                c2Var.c(z182, true);
-                                q0Var2.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights8 = q0Var2.K;
+                                boolean z192 = !tL_businessBotRights8.view_gifts;
+                                tL_businessBotRights8.view_gifts = z192;
+                                c2Var.c(z192, true);
+                                q0Var2.c.g3.O(true);
                                 q0Var2.d0(true);
                                 break;
                             case 1:
                                 q0 q0Var3 = this.b;
                                 q0Var3.getClass();
                                 c2 c2Var2 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.J;
-                                boolean z19 = !tL_businessBotRights9.sell_gifts;
-                                tL_businessBotRights9.sell_gifts = z19;
-                                c2Var2.c(z19, true);
-                                q0Var3.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights9 = q0Var3.K;
+                                boolean z20 = !tL_businessBotRights9.sell_gifts;
+                                tL_businessBotRights9.sell_gifts = z20;
+                                c2Var2.c(z20, true);
+                                q0Var3.c.g3.O(true);
                                 q0Var3.d0(true);
                                 break;
                             case 2:
                                 q0 q0Var4 = this.b;
                                 q0Var4.getClass();
                                 c2 c2Var3 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.J;
-                                boolean z20 = !tL_businessBotRights10.change_gift_settings;
-                                tL_businessBotRights10.change_gift_settings = z20;
-                                c2Var3.c(z20, true);
-                                q0Var4.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights10 = q0Var4.K;
+                                boolean z21 = !tL_businessBotRights10.change_gift_settings;
+                                tL_businessBotRights10.change_gift_settings = z21;
+                                c2Var3.c(z21, true);
+                                q0Var4.c.g3.O(true);
                                 q0Var4.d0(true);
                                 break;
                             case 3:
                                 q0 q0Var5 = this.b;
                                 q0Var5.getClass();
                                 c2 c2Var4 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.J;
-                                boolean z21 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
-                                tL_businessBotRights11.transfer_and_upgrade_gifts = z21;
-                                c2Var4.c(z21, true);
-                                q0Var5.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights11 = q0Var5.K;
+                                boolean z22 = !tL_businessBotRights11.transfer_and_upgrade_gifts;
+                                tL_businessBotRights11.transfer_and_upgrade_gifts = z22;
+                                c2Var4.c(z22, true);
+                                q0Var5.c.g3.O(true);
                                 q0Var5.d0(true);
                                 break;
                             case 4:
                                 q0 q0Var6 = this.b;
                                 q0Var6.getClass();
                                 c2 c2Var5 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.J;
-                                boolean z22 = !tL_businessBotRights12.transfer_stars;
-                                tL_businessBotRights12.transfer_stars = z22;
-                                c2Var5.c(z22, true);
-                                q0Var6.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights12 = q0Var6.K;
+                                boolean z23 = !tL_businessBotRights12.transfer_stars;
+                                tL_businessBotRights12.transfer_stars = z23;
+                                c2Var5.c(z23, true);
+                                q0Var6.c.g3.O(true);
                                 q0Var6.d0(true);
                                 break;
                             default:
                                 q0 q0Var7 = this.b;
                                 q0Var7.getClass();
                                 c2 c2Var6 = (c2) view;
-                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.J;
-                                boolean z23 = !tL_businessBotRights13.edit_username;
-                                tL_businessBotRights13.edit_username = z23;
-                                c2Var6.c(z23, true);
-                                q0Var7.c.f3.O(true);
+                                TL_account.TL_businessBotRights tL_businessBotRights13 = q0Var7.K;
+                                boolean z24 = !tL_businessBotRights13.edit_username;
+                                tL_businessBotRights13.edit_username = z24;
+                                c2Var6.c(z24, true);
+                                q0Var7.c.g3.O(true);
                                 q0Var7.d0(true);
                                 break;
                         }
                     }
                 });
-            } else if (i7 == o0) {
-                q0Var.c0(i7, !q0Var.J.manage_stories, new k0(q0Var, i11));
+            } else if (i7 == p0) {
+                q0Var.c0(i7, !q0Var.K.manage_stories, new k0(q0Var, i11));
             }
         }
     }
 
-    public final void c0(int i7, boolean z9, final Runnable runnable) {
+    public final void c0(int i7, boolean z10, final Runnable runnable) {
         final int i10 = 1;
         final int i11 = 0;
-        if (!this.K && i7 == h0 && z9) {
+        if (!this.L && i7 == i0 && z10) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String M0 = id.M0(2131752787, null);
-            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-            u1Var.R = M0;
-            u1Var.T = org.telegram.messenger.g0.X2(id.a0(null, null, 2131752788, t10.n(this.M)));
-            alertDialog$Builder.h(id.M0(2131752589, null), null);
-            alertDialog$Builder.k(id.M0(2131754284, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.p0
+            String M0 = hd.M0(2131752787, null);
+            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+            t1Var.S = M0;
+            t1Var.U = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131752788, q10.n(this.N)));
+            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder.k(hd.M0(2131754284, null), new org.telegram.ui.ActionBar.q1(this) { // from class: kg.p0
                 public final /* synthetic */ q0 b;
 
                 {
                     this.b = this;
                 }
 
-                @Override // org.telegram.ui.ActionBar.r1
-                public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i12) {
+                @Override // org.telegram.ui.ActionBar.q1
+                public final void h(org.telegram.ui.ActionBar.t1 t1Var2, int i12) {
                     switch (i11) {
                         case 0:
-                            this.b.K = true;
+                            this.b.L = true;
                             runnable.run();
                             break;
                         default:
-                            this.b.L = true;
+                            this.b.M = true;
                             runnable.run();
                             break;
                     }
@@ -814,32 +816,32 @@ public final class q0 extends f2 {
             alertDialog$Builder.p();
             return;
         }
-        if (this.L || !z9 || (i7 != k0 && i7 != l0 && i7 != m0 && i7 != n0)) {
+        if (this.M || !z10 || (i7 != l0 && i7 != m0 && i7 != n0 && i7 != o0)) {
             runnable.run();
             return;
         }
         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-        String M02 = id.M0(2131752787, null);
-        org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
-        u1Var2.R = M02;
-        u1Var2.T = org.telegram.messenger.g0.X2(id.a0(null, null, 2131752801, t10.n(this.M)));
-        alertDialog$Builder2.h(id.M0(2131752589, null), null);
-        alertDialog$Builder2.k(id.M0(2131754284, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.p0
+        String M02 = hd.M0(2131752787, null);
+        org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder2.a;
+        t1Var2.S = M02;
+        t1Var2.U = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131752801, q10.n(this.N)));
+        alertDialog$Builder2.h(hd.M0(2131752589, null), null);
+        alertDialog$Builder2.k(hd.M0(2131754284, null), new org.telegram.ui.ActionBar.q1(this) { // from class: kg.p0
             public final /* synthetic */ q0 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.ActionBar.r1
-            public final void g(org.telegram.ui.ActionBar.u1 u1Var22, int i12) {
+            @Override // org.telegram.ui.ActionBar.q1
+            public final void h(org.telegram.ui.ActionBar.t1 t1Var22, int i12) {
                 switch (i10) {
                     case 0:
-                        this.b.K = true;
+                        this.b.L = true;
                         runnable.run();
                         break;
                     default:
-                        this.b.L = true;
+                        this.b.M = true;
                         runnable.run();
                         break;
                 }
@@ -849,106 +851,107 @@ public final class q0 extends f2 {
         alertDialog$Builder2.p();
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final View createView(Context context) {
         int i7 = 1;
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(id.M0(2131752783, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 13));
-        this.a = this.simpleActionBar.p(id.M0(2131745946, null));
+        this.simpleActionBar.setTitle(hd.M0(2131752783, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new x4(this, 6));
+        this.a = this.simpleActionBar.q(hd.M0(2131745946, null));
         d0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         new LinearLayout(getParentActivity()).setOrientation(0);
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getParentActivity());
         this.f = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 17.0f);
-        t6.D(this.f, m6.H6, null);
+        q6.D(this.f, j6.H6, null);
         EditTextBoldCursor editTextBoldCursor2 = this.f;
-        int i10 = m6.G6;
-        t6.U(editTextBoldCursor2, i10, null);
+        int i10 = j6.G6;
+        q6.U(editTextBoldCursor2, i10, null);
         this.f.setBackgroundDrawable(null);
         this.f.setMaxLines(1);
         this.f.setLines(1);
         this.f.setPadding(0, 0, 0, 0);
         this.f.setSingleLine(true);
-        int i11 = 3;
-        this.f.setGravity((id.a0 ? 5 : 3) | 48);
+        int i11 = 5;
+        int i12 = 3;
+        this.f.setGravity((hd.a0 ? 5 : 3) | 48);
         this.f.setInputType(180224);
         this.f.setImeOptions(6);
-        this.f.setHint(id.M0(2131752816, null));
-        t6.v(this.f, i10, null);
+        this.f.setHint(hd.M0(2131752816, null));
+        q6.v(this.f, i10, null);
         this.f.setCursorSize(org.telegram.messenger.g0.L(19.0f));
         this.f.setCursorWidth(1.5f);
-        this.f.setOnEditorActionListener(new bi.p(this, i7));
-        this.f.addTextChangedListener(new ah.j(this, 9));
+        this.f.setOnEditorActionListener(new di.m(this, i7));
+        int i13 = 10;
+        this.f.addTextChangedListener(new ah.j(this, i13));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.e = frameLayout2;
-        frameLayout2.addView(this.f, ha.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
+        frameLayout2.addView(this.f, ja.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.e;
-        int i12 = m6.d6;
-        t6.h(i12, frameLayout3, getResourceProvider());
+        int i14 = j6.d6;
+        q6.h(i14, frameLayout3, getResourceProvider());
         View view = new View(context);
         this.h = view;
-        t6.h(m6.d7, view, getResourceProvider());
+        q6.h(j6.d7, view, getResourceProvider());
         FrameLayout frameLayout4 = this.e;
         View view2 = this.h;
         float f10 = 1.0f / org.telegram.messenger.g0.p;
-        boolean z9 = id.a0;
-        frameLayout4.addView(view2, ha.d(-1, f10, 87, z9 ? 0 : 21, 0.0f, z9 ? 21 : 0, 0.0f));
-        b4 b4Var = new b4(context, i11);
-        this.n = b4Var;
-        t6.h(i12, b4Var, getResourceProvider());
+        boolean z10 = hd.a0;
+        frameLayout4.addView(view2, ja.d(-1, f10, 87, z10 ? 0 : 21, 0.0f, z10 ? 21 : 0, 0.0f));
+        bi.v1 v1Var = new bi.v1(context, i11);
+        this.n = v1Var;
+        q6.h(i14, v1Var, getResourceProvider());
         TextView textView = new TextView(context);
         this.r = textView;
-        textView.setText(id.M0(2131752811, null));
+        textView.setText(hd.M0(2131752811, null));
         this.r.setTextSize(1, 14.0f);
         TextView textView2 = this.r;
-        int i13 = m6.z6;
-        t6.U(textView2, i13, getResourceProvider());
-        this.n.addView(this.r, ha.e(-2, -2, 17));
+        int i15 = j6.z6;
+        q6.U(textView2, i15, getResourceProvider());
+        this.n.addView(this.r, ja.e(-2, -2, 17));
         this.s = new ImageView(context);
-        j7 j7Var = new j7(getThemedColor(i13));
+        i7 i7Var = new i7(getThemedColor(i15));
         this.s.setScaleType(ImageView.ScaleType.CENTER);
-        this.s.setImageDrawable(j7Var);
-        this.b = j7Var;
-        this.n.addView(this.s, ha.e(-2, -2, 17));
+        this.s.setImageDrawable(i7Var);
+        this.b = i7Var;
+        this.n.addView(this.s, ja.e(-2, -2, 17));
         this.s.setAlpha(0.0f);
         this.s.setTranslationY(org.telegram.messenger.g0.L(8.0f));
-        z1 z1Var = new z1(true);
+        jg.z1 z1Var = new jg.z1(true);
         this.d = z1Var;
-        int i14 = 8;
-        z1Var.a = new gf.g(this, i14);
-        a0 a0Var = new a0(this, new k0(this, i11));
+        z1Var.a = new gc.b(this, 12);
+        a0 a0Var = new a0(this, new k0(this, i12));
         this.w = a0Var;
-        TL_account.TL_connectedBot tL_connectedBot = this.H;
+        TL_account.TL_connectedBot tL_connectedBot = this.I;
         a0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        r41 r41Var = new r41(this, new hi.u1(this, i14), new n0(this, i11), null);
-        this.c = r41Var;
-        r41Var.r1();
+        u41 u41Var = new u41(this, new q4(this, i13), new n0(this, i12), null);
+        this.c = u41Var;
+        u41Var.r1();
         this.c.setSectionsDrawBackground(true);
-        r41 r41Var2 = this.c;
-        r41Var2.f3.r = false;
-        frameLayout.addView(r41Var2, ha.c(-1.0f, -1));
+        u41 u41Var2 = this.c;
+        u41Var2.g3.r = false;
+        frameLayout.addView(u41Var2, ja.c(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
-    public final void d0(boolean z9) {
+    public final void d0(boolean z10) {
         if (this.a == null) {
             return;
         }
-        this.a.a(e0(), z9);
+        this.a.a(e0(), z10);
     }
 
     public final boolean e0() {
         a0 a0Var;
-        if (this.T) {
-            TLRPC.User user = this.M;
-            boolean z9 = user != null;
-            TL_account.TL_connectedBot tL_connectedBot = this.H;
-            if (z9 == (tL_connectedBot != null)) {
-                if ((user == null ? 0L : user.id) == (tL_connectedBot != null ? tL_connectedBot.bot_id : 0L) && (user == null || (this.J.equals(tL_connectedBot.rights) && ((a0Var = this.w) == null || !a0Var.g())))) {
+        if (this.U) {
+            TLRPC.User user = this.N;
+            boolean z10 = user != null;
+            TL_account.TL_connectedBot tL_connectedBot = this.I;
+            if (z10 == (tL_connectedBot != null)) {
+                if ((user == null ? 0L : user.id) == (tL_connectedBot != null ? tL_connectedBot.bot_id : 0L) && (user == null || (this.K.equals(tL_connectedBot.rights) && ((a0Var = this.w) == null || !a0Var.g())))) {
                 }
             }
             return true;
@@ -967,29 +970,29 @@ public final class q0 extends f2 {
             return;
         }
         if (this.w.k(this.c)) {
-            TLRPC.User user2 = this.M;
-            boolean z9 = user2 != null && ((tL_connectedBot = this.H) == null || tL_connectedBot.bot_id != user2.id);
+            TLRPC.User user2 = this.N;
+            boolean z10 = user2 != null && ((tL_connectedBot = this.I) == null || tL_connectedBot.bot_id != user2.id);
             ArrayList arrayList = new ArrayList();
-            TL_account.TL_connectedBot tL_connectedBot2 = this.H;
-            if (tL_connectedBot2 != null && ((user = this.M) == null || tL_connectedBot2.bot_id != user.id)) {
+            TL_account.TL_connectedBot tL_connectedBot2 = this.I;
+            if (tL_connectedBot2 != null && ((user = this.N) == null || tL_connectedBot2.bot_id != user.id)) {
                 TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
                 updateconnectedbot.deleted = true;
-                updateconnectedbot.bot = getMessagesController().o1(this.H.bot_id);
+                updateconnectedbot.bot = getMessagesController().o1(this.I.bot_id);
                 updateconnectedbot.recipients = new TL_account.TL_inputBusinessBotRecipients();
                 arrayList.add(updateconnectedbot);
             }
-            if (this.M != null) {
+            if (this.N != null) {
                 TL_account.updateConnectedBot updateconnectedbot2 = new TL_account.updateConnectedBot();
                 updateconnectedbot2.deleted = false;
-                updateconnectedbot2.rights = this.J;
-                updateconnectedbot2.bot = getMessagesController().q1(this.M);
+                updateconnectedbot2.rights = this.K;
+                updateconnectedbot2.bot = getMessagesController().q1(this.N);
                 updateconnectedbot2.recipients = this.w.b();
                 arrayList.add(updateconnectedbot2);
-                TL_account.TL_connectedBot tL_connectedBot3 = this.H;
+                TL_account.TL_connectedBot tL_connectedBot3 = this.I;
                 if (tL_connectedBot3 != null) {
-                    tL_connectedBot3.bot_id = this.M.id;
+                    tL_connectedBot3.bot_id = this.N.id;
                     tL_connectedBot3.recipients = this.w.c();
-                    this.H.rights = this.J;
+                    this.I.rights = this.K;
                 }
             }
             if (arrayList.isEmpty()) {
@@ -998,86 +1001,86 @@ public final class q0 extends f2 {
             }
             int[] iArr = {0};
             for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                getConnectionsManager().sendRequest((TLObject) arrayList.get(i7), new l0(this, iArr, arrayList, z9, user2));
+                getConnectionsManager().sendRequest((TLObject) arrayList.get(i7), new l0(this, iArr, arrayList, z10, user2));
             }
         }
     }
 
     public final void g0() {
-        boolean z9 = this.x;
+        boolean z10 = this.x;
         boolean e10 = this.d.e();
-        boolean z10 = true;
-        LongSparseArray longSparseArray = this.N;
-        if (z9 != (e10 || this.y || longSparseArray.size() > 0)) {
+        boolean z11 = true;
+        LongSparseArray longSparseArray = this.O;
+        if (z10 != (e10 || this.y || longSparseArray.size() > 0)) {
             if (!this.d.e() && !this.y && longSparseArray.size() <= 0) {
-                z10 = false;
+                z11 = false;
             }
-            this.x = z10;
-            ViewPropertyAnimator duration = this.r.animate().alpha(z10 ? 0.0f : 1.0f).translationY(z10 ? -org.telegram.messenger.g0.L(8.0f) : 0.0f).setDuration(320L);
-            wq wqVar = wq.h;
-            duration.setInterpolator(wqVar).start();
-            this.s.animate().alpha(z10 ? 1.0f : 0.0f).translationY(z10 ? 0.0f : org.telegram.messenger.g0.L(8.0f)).setDuration(320L).setInterpolator(wqVar).start();
+            this.x = z11;
+            ViewPropertyAnimator duration = this.r.animate().alpha(z11 ? 0.0f : 1.0f).translationY(z11 ? -org.telegram.messenger.g0.L(8.0f) : 0.0f).setDuration(320L);
+            er erVar = er.h;
+            duration.setInterpolator(erVar).start();
+            this.s.animate().alpha(z11 ? 1.0f : 0.0f).translationY(z11 ? 0.0f : org.telegram.messenger.g0.L(8.0f)).setDuration(320L).setInterpolator(erVar).start();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
-    public final pj0 getListViewForSimpleGlass() {
+    @Override // org.telegram.ui.ActionBar.e2
+    public final uj0 getListViewForSimpleGlass() {
         return this.c;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
-    public final boolean onBackPressed(boolean z9) {
+    @Override // org.telegram.ui.ActionBar.e2
+    public final boolean onBackPressed(boolean z10) {
         int i7 = 0;
         if (e0()) {
-            if (z9) {
+            if (z10) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-                String M0 = id.M0(2131743835, null);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.R = M0;
-                u1Var.T = id.M0(2131752786, null);
-                alertDialog$Builder.k(id.M0(2131754216, null), new n0(this, i7));
-                alertDialog$Builder.h(id.M0(2131747580, null), new n0(this, 1));
-                showDialog(u1Var);
+                String M0 = hd.M0(2131743835, null);
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.S = M0;
+                t1Var.U = hd.M0(2131752786, null);
+                alertDialog$Builder.k(hd.M0(2131754216, null), new n0(this, i7));
+                alertDialog$Builder.h(hd.M0(2131747580, null), new n0(this, 1));
+                showDialog(t1Var);
                 return false;
             }
         } else {
-            if (this.M != null || e0() || (this.d.d.isEmpty() && this.d.e.isEmpty())) {
-                return super.onBackPressed(z9);
+            if (this.N != null || e0() || (this.d.d.isEmpty() && this.d.e.isEmpty())) {
+                return super.onBackPressed(z10);
             }
-            if (z9) {
+            if (z10) {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getParentActivity());
-                String M02 = id.M0(2131752812, null);
-                org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
-                u1Var2.R = M02;
-                u1Var2.T = id.M0(2131752813, null);
-                alertDialog$Builder2.k(id.M0(2131752814, null), new n0(this, 2));
-                alertDialog$Builder2.h(id.M0(2131752589, null), null);
-                showDialog(u1Var2);
+                String M02 = hd.M0(2131752812, null);
+                org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder2.a;
+                t1Var2.S = M02;
+                t1Var2.U = hd.M0(2131752813, null);
+                alertDialog$Builder2.k(hd.M0(2131752814, null), new n0(this, 2));
+                alertDialog$Builder2.h(hd.M0(2131752589, null), null);
+                showDialog(t1Var2);
             }
         }
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final boolean onFragmentCreate() {
-        if (!this.S && !this.T) {
-            this.S = true;
-            f.a(this.currentAccount).c(new ii.c(this, 5));
+        if (!this.T && !this.U) {
+            this.T = true;
+            f.a(this.currentAccount).c(new g7(this, 8));
         }
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final void onThemeColorsChanged() {
         try {
-            j7 j7Var = this.b;
-            if (j7Var != null) {
-                j7Var.b(getThemedColor(m6.z6));
+            i7 i7Var = this.b;
+            if (i7Var != null) {
+                i7Var.b(getThemedColor(j6.z6));
                 ImageView imageView = this.s;
                 if (imageView != null) {
                     imageView.invalidate();
@@ -1093,7 +1096,7 @@ public final class q0 extends f2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final boolean useSimpleActionBar() {
         return true;
     }

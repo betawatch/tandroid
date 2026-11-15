@@ -1,6 +1,6 @@
 package m6;
 
-import ab.a0;
+import ab.b0;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -20,12 +20,12 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import m9.u;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l implements ServiceConnection {
     public int a = 0;
     public final Messenger b;
-    public j2.n c;
+    public k8.a c;
     public final ArrayDeque d;
     public final SparseArray e;
     public final /* synthetic */ n f;
@@ -58,7 +58,7 @@ public final class l implements ServiceConnection {
                         lVar.d();
                         Bundle data = message.getData();
                         if (data.getBoolean("unsupported", false)) {
-                            mVar.c(new a0("Not supported by GmsCore", null));
+                            mVar.c(new b0("Not supported by GmsCore", null));
                             return true;
                         }
                         switch (mVar.e) {
@@ -67,7 +67,7 @@ public final class l implements ServiceConnection {
                                     mVar.b(null);
                                     return true;
                                 }
-                                mVar.c(new a0("Invalid response to one way request", null));
+                                mVar.c(new b0("Invalid response to one way request", null));
                                 return true;
                             default:
                                 Bundle bundle = data.getBundle("data");
@@ -176,11 +176,11 @@ public final class l implements ServiceConnection {
             }
             this.a = 4;
             w6.a.a().b((Context) this.f.b, this);
-            a0 a0Var = new a0(str, securityException);
+            b0 b0Var = new b0(str, securityException);
             ArrayDeque arrayDeque = this.d;
             Iterator it = arrayDeque.iterator();
             while (it.hasNext()) {
-                ((m) it.next()).c(a0Var);
+                ((m) it.next()).c(b0Var);
             }
             arrayDeque.clear();
             int i10 = 0;
@@ -190,7 +190,7 @@ public final class l implements ServiceConnection {
                     sparseArray.clear();
                     return;
                 } else {
-                    ((m) sparseArray.valueAt(i10)).c(a0Var);
+                    ((m) sparseArray.valueAt(i10)).c(b0Var);
                     i10++;
                 }
             }

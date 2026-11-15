@@ -2,26 +2,55 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ox extends org.telegram.ui.Components.w31 {
-    public static final /* synthetic */ int b = 0;
+public final class ox extends org.telegram.ui.ActionBar.e2 {
+    public long a;
+    public TLRPC.Chat b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public bi.y4 f;
+    public fi.b0 h;
 
-    static {
-        org.telegram.ui.Components.w31.h(new ox());
+    @Override // org.telegram.ui.ActionBar.e2
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setActionBarMenuOnItemClick(new lx(this, 0));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131743981, null));
+        FrameLayout frameLayout = new FrameLayout(context);
+        bi.y4 y4Var = new bi.y4(this, new a5(this, 13), new zr(this, 9), null, 7);
+        this.f = y4Var;
+        y4Var.r1();
+        this.f.setSectionsDrawBackground(true);
+        frameLayout.addView(this.f, c8.ja.e(-1, -1, org.telegram.messenger.ns.E1));
+        this.fragmentView = frameLayout;
+        return frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, org.telegram.ui.Components.x31 x31Var, boolean z9, org.telegram.ui.Components.m41 m41Var, org.telegram.ui.Components.r41 r41Var) {
-        px pxVar = (px) view;
-        pxVar.n = (org.telegram.messenger.c20) x31Var.G;
-        pxVar.r = x31Var;
-        pxVar.b(x31Var.z, false);
+    @Override // org.telegram.ui.ActionBar.e2
+    public final org.telegram.ui.Components.uj0 getListViewForSimpleGlass() {
+        return this.f;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, org.telegram.ui.Components.pj0 pj0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
-        return new px(context, h6Var);
+    @Override // org.telegram.ui.ActionBar.e2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e2
+    public final boolean onFragmentCreate() {
+        this.b = getMessagesController().M0(Long.valueOf(-this.a));
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.e2
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

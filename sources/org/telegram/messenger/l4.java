@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.net.Uri;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l4 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class l4 implements Runnable {
             default:
                 String str5 = this.b;
                 int i10 = SmsReceiver.a;
-                qs.e().k(qs.g4, str5);
+                ns.e().k(ns.g4, str5);
                 break;
         }
     }

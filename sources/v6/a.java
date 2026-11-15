@@ -2,7 +2,7 @@ package v6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.common.api.n;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +13,7 @@ import java.util.TreeSet;
 import q6.m;
 import u8.o;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public static final Parcelable.Creator<a> CREATOR = new o(14);
@@ -22,21 +22,21 @@ public final class a extends r6.a {
     public final String c;
     public final String d;
 
-    public a(ArrayList arrayList, boolean z9, String str, String str2) {
+    public a(ArrayList arrayList, boolean z10, String str, String str2) {
         m.g(arrayList);
         this.a = arrayList;
-        this.b = z9;
+        this.b = z10;
         this.c = str;
         this.d = str2;
     }
 
-    public static a b(List list, boolean z9) {
+    public static a b(List list, boolean z10) {
         TreeSet treeSet = new TreeSet(c5.b.c);
         Iterator it = list.iterator();
         while (it.hasNext()) {
             Collections.addAll(treeSet, ((n) it.next()).c());
         }
-        return new a(new ArrayList(treeSet), z9, null, null);
+        return new a(new ArrayList(treeSet), z10, null, null);
     }
 
     public final boolean equals(Object obj) {
@@ -53,12 +53,12 @@ public final class a extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.p(parcel, 1, this.a);
-        xb.q(parcel, 2, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.p(parcel, 1, this.a);
+        yb.q(parcel, 2, 4);
         parcel.writeInt(this.b ? 1 : 0);
-        xb.l(parcel, 3, this.c);
-        xb.l(parcel, 4, this.d);
-        xb.s(parcel, r10);
+        yb.l(parcel, 3, this.c);
+        yb.l(parcel, 4, this.d);
+        yb.s(parcel, r10);
     }
 }

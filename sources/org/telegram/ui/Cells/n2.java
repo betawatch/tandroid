@@ -3,7 +3,7 @@ package org.telegram.ui.Cells;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class n2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -19,26 +19,26 @@ public final class n2 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 t2 t2Var = this.b;
-                t2Var.V3 = 1.0f;
-                t2Var.Y3 = null;
+                t2Var.W3 = 1.0f;
                 t2Var.Z3 = null;
                 t2Var.a4 = null;
+                t2Var.b4 = null;
                 t2Var.invalidate();
                 break;
             case 1:
                 t2 t2Var2 = this.b;
-                t2Var2.W3 = 1.0f;
+                t2Var2.X3 = 1.0f;
                 t2Var2.invalidate();
                 break;
             default:
                 t2 t2Var3 = this.b;
-                int i7 = (t2Var3.S2 ? 1 : 0) + (t2Var3.Q2 ? 2 : 0) + (t2Var3.R2 ? 4 : 0);
-                int i10 = t2Var3.v4;
+                int i7 = (t2Var3.T2 ? 1 : 0) + (t2Var3.R2 ? 2 : 0) + (t2Var3.S2 ? 4 : 0);
+                int i10 = t2Var3.w4;
                 if (i10 != i7) {
-                    t2Var3.E(i10, i7);
+                    t2Var3.H(i10, i7);
                 } else {
-                    t2Var3.z4 = false;
-                    t2Var3.x4 = i10;
+                    t2Var3.A4 = false;
+                    t2Var3.y4 = i10;
                 }
                 t2Var3.invalidate();
                 break;

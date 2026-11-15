@@ -1,49 +1,49 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.voip.VoIPService;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class o20 implements org.telegram.ui.ActionBar.q2 {
-    public final /* synthetic */ f40 a;
+public final class o20 extends TextView {
+    public final RectF a;
+    public final Paint b;
 
-    public o20(f40 f40Var) {
-        this.a = f40Var;
+    public o20(LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.a = new RectF();
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(-16711936);
     }
 
-    @Override // org.telegram.ui.ActionBar.q2
-    public final void v() {
-        CountDownLatch groupCallBottomSheetLatch;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
-            groupCallBottomSheetLatch.countDown();
-        }
-        f40 f40Var = this.a;
-        if (f40Var.z3 == 6) {
-            SharedPreferences e12 = org.telegram.messenger.qp.e1();
-            if (e12.getBoolean("reminderhint", false)) {
-                return;
-            }
-            e12.edit().putBoolean("reminderhint", true).commit();
-            if (f40Var.h2 == null) {
-                org.telegram.ui.Components.y20 y20Var = new org.telegram.ui.Components.y20(f40Var.getContext(), 8);
-                f40Var.h2 = y20Var;
-                y20Var.setAlpha(0.0f);
-                f40Var.h2.setVisibility(4);
-                f40Var.h2.setShowingDuration(4000L);
-                f40Var.b.addView(f40Var.h2, c8.ha.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
-                f40Var.h2.setText(org.telegram.messenger.id.M0(2131743438, null));
-                f40Var.h2.b();
-            }
-            f40Var.h2.setExtraTranslationY(-org.telegram.messenger.g0.m);
-            f40Var.h2.c(f40Var.v1);
-        }
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), this.b);
+        super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.q2
-    public final boolean x() {
-        return true;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.b;
+        paint.setColor(-16711936);
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), paint);
+        super.onDraw(canvas);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
     }
 }

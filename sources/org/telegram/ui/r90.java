@@ -1,32 +1,21 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class r90 extends cn {
-    public boolean td;
-    public final /* synthetic */ TLRPC.User ud;
-    public final /* synthetic */ TLRPC.User[] vd;
-    public final /* synthetic */ long wd;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r90(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j3) {
-        super(bundle);
-        this.ud = user;
-        this.vd = userArr;
-        this.wd = j3;
+public final class r90 extends org.telegram.ui.Cells.y8 {
+    @Override // org.telegram.ui.Cells.y8, android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
     }
 
-    @Override // org.telegram.ui.cn, org.telegram.ui.ActionBar.f2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.td) {
-            return;
-        }
-        this.td = true;
-        org.telegram.ui.Components.gc.a0(this).I(R.raw.contact_check, org.telegram.messenger.id.a0(null, null, 2131751739, org.telegram.messenger.t10.p(this.ud)), org.telegram.messenger.g0.U2(org.telegram.messenger.id.a0(null, null, 2131751740, org.telegram.messenger.t10.p(this.vd[0])), new bi.r3(this, this.wd, 27))).j();
+    @Override // android.view.View
+    public final void onPopulateAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+        super.onPopulateAccessibilityEvent(accessibilityEvent);
+        accessibilityEvent.setContentDescription(getTextView().getText());
+        setContentDescription(getTextView().getText());
     }
 }

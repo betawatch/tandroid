@@ -1,744 +1,300 @@
 package org.telegram.messenger;
 
-import android.graphics.Point;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextUtils;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.oy0;
+import org.telegram.ui.rg0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class dj {
-    public long a;
+public final class dj implements rg0 {
+    public float E;
+    public gj F;
+    public int G;
+    public org.telegram.ui.Components.dc H;
+    public boolean I;
+    public boolean J;
+    public boolean K;
+    public String L;
+    public oy0 M;
+    public int N;
+    public boolean O;
+    public int P;
+    public Drawable Q;
+    public oy0 R;
+    public int S;
+    public org.telegram.ui.Cells.y T;
+    public Paint U;
+    public boolean V;
+    public Paint W;
+    public boolean a;
     public boolean b;
-    public boolean c;
-    public ij h;
-    public boolean i;
-    public boolean j;
-    public final cj m;
-    public boolean n;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList e = new ArrayList();
-    public final HashMap f = new HashMap();
-    public final a0.h g = new a0.h();
-    public int k = -1;
-    public int l = 800;
+    public int c;
+    public StaticLayout e;
+    public int f;
+    public int h;
+    public int n;
+    public int r;
+    public int s;
+    public int w;
+    public byte x;
+    public final AtomicReference d = new AtomicReference();
+    public final ArrayList y = new ArrayList();
 
-    public dj() {
-        cj cjVar = new cj();
-        cjVar.n = 1.0f;
-        this.m = cjVar;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:386:0x07e4, code lost:
-    
-        if (r13[2] > r13[r15]) goto L245;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00a8, code lost:
-    
-        if ((org.telegram.messenger.ij.n1(r13.k) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) == false) goto L41;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00fb  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x011a  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0133  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x014e  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x006b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a() {
-        int i7;
-        boolean z9;
-        int i10;
-        int i11;
-        aj ajVar;
-        float f10;
-        int i12;
-        int i13;
-        int i14;
-        float f11;
-        byte b10;
-        boolean z10;
-        ij ijVar;
-        TLRPC.Message message;
-        float f12;
-        float f13;
-        this.e.clear();
-        this.f.clear();
-        this.g.b();
-        this.h = null;
-        this.l = 800;
-        int size = this.d.size();
-        boolean z11 = 0;
-        boolean z12 = true;
-        if (size == 1) {
-            this.h = (ij) this.d.get(0);
-            return;
+    public static String b(String str) {
+        if (str == null) {
+            return null;
         }
-        if (size < 1) {
-            return;
-        }
-        StringBuilder sb2 = new StringBuilder();
-        this.b = false;
-        this.c = false;
-        this.j = false;
-        int i15 = this.n ? size - 1 : 0;
-        boolean z13 = false;
-        boolean z14 = false;
-        boolean z15 = false;
-        boolean z16 = true;
-        float f14 = 1.0f;
-        while (true) {
-            if (this.n) {
-                if (i15 < 0) {
-                    break;
-                }
-                ijVar = (ij) this.d.get(i15);
-                if (i15 == (!this.n ? size - 1 : z11)) {
-                    ijVar.U2 = null;
-                    z15 = ijVar.P3();
-                    if (!z15) {
-                        TLRPC.Message message2 = ijVar.k;
-                        TLRPC.MessageFwdHeader messageFwdHeader = message2.fwd_from;
-                        if (messageFwdHeader == null || messageFwdHeader.saved_from_peer == null) {
-                            if (message2.from_id instanceof TLRPC.TL_peerUser) {
-                                TLRPC.Peer peer = message2.peer_id;
-                                if (peer.channel_id == 0) {
-                                    if (peer.chat_id == 0) {
-                                        if (!(ij.n1(message2) instanceof TLRPC.TL_messageMediaGame)) {
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        z13 = z12;
-                        if (!ijVar.I3() || ijVar.U2()) {
-                            this.i = z12;
-                        }
-                    }
-                    z13 = z11;
-                    if (!ijVar.I3()) {
-                    }
-                    this.i = z12;
-                }
-                message = ijVar.k;
-                if (message != null && message.invert_media) {
-                    this.j = z12;
-                }
-                TLRPC.PhotoSize w10 = w7.w(ijVar.n0, g0.Z0(z11), z11, null, z11);
-                aj ajVar2 = new aj();
-                ajVar2.h = (this.n ? i15 != size + (-1) : i15 != 0) ? z11 : z12;
-                f12 = w10 != null ? 1.0f : w10.w / w10.h;
-                ajVar2.g = f12;
-                if (f12 <= 1.2f) {
-                    sb2.append("w");
-                } else if (f12 < 0.8f) {
-                    sb2.append("n");
-                } else {
-                    sb2.append("q");
-                }
-                f13 = ajVar2.g;
-                f14 += f13;
-                if (f13 > 2.0f) {
-                    z14 = z12;
-                }
-                this.f.put(ijVar, ajVar2);
-                this.g.k(ajVar2, ijVar.e1());
-                this.e.add(ajVar2);
-                if (ijVar.z != null) {
-                    if (z16 && this.h == null) {
-                        this.h = ijVar;
-                        z16 = false;
-                    } else if (!this.i) {
-                        this.h = null;
-                    }
-                    this.c = true;
-                }
-                i15 = !this.n ? i15 - 1 : i15 + 1;
-                z11 = 0;
-                z12 = true;
-            } else {
-                if (i15 >= size) {
-                    break;
-                }
-                ijVar = (ij) this.d.get(i15);
-                if (i15 == (!this.n ? size - 1 : z11)) {
-                }
-                message = ijVar.k;
-                if (message != null) {
-                    this.j = z12;
-                }
-                TLRPC.PhotoSize w102 = w7.w(ijVar.n0, g0.Z0(z11), z11, null, z11);
-                aj ajVar22 = new aj();
-                ajVar22.h = (this.n ? i15 != size + (-1) : i15 != 0) ? z11 : z12;
-                if (w102 != null) {
-                }
-                ajVar22.g = f12;
-                if (f12 <= 1.2f) {
-                }
-                f13 = ajVar22.g;
-                f14 += f13;
-                if (f13 > 2.0f) {
-                }
-                this.f.put(ijVar, ajVar22);
-                this.g.k(ajVar22, ijVar.e1());
-                this.e.add(ajVar22);
-                if (ijVar.z != null) {
-                }
-                if (!this.n) {
-                }
-                z11 = 0;
-                z12 = true;
-            }
-        }
-        int i16 = 3;
-        if (this.i) {
-            for (int i17 = 0; i17 < size; i17++) {
-                aj ajVar3 = (aj) this.e.get(i17);
-                ajVar3.l = 3;
-                if (i17 == 0) {
-                    ajVar3.l = 7;
-                    b10 = 0;
-                    ajVar3.h = false;
-                    z10 = true;
-                } else {
-                    b10 = 0;
-                    if (i17 == size - 1) {
-                        ajVar3.l = 11;
-                        z10 = true;
-                        ajVar3.h = true;
-                    } else {
-                        z10 = true;
-                        ajVar3.h = false;
-                    }
-                }
-                ajVar3.k = z10;
-                ajVar3.g = 1.0f;
-                ajVar3.a = b10;
-                ajVar3.b = b10;
-                byte b11 = (byte) i17;
-                ajVar3.c = b11;
-                ajVar3.d = b11;
-                ajVar3.i = 1000;
-                ajVar3.e = this.l;
-                ajVar3.f = 100.0f;
-            }
-            return;
-        }
-        if (z13) {
-            this.l -= 50;
-            i7 = qs.Z3;
-        } else {
-            i7 = qs.e3;
-        }
-        int L = g0.L(120.0f);
-        float L2 = g0.L(120.0f);
-        Point point = g0.q;
-        int min = (int) (L2 / (Math.min(point.x, point.y) / this.l));
-        float L3 = g0.L(40.0f);
-        float min2 = Math.min(point.x, point.y);
-        float f15 = this.l;
-        int i18 = (int) (L3 / (min2 / f15));
-        float f16 = f15 / 814.0f;
-        float f17 = f14 / size;
-        float L4 = g0.L(100.0f) / 814.0f;
-        if (size == 1) {
-            aj ajVar4 = (aj) this.e.get(0);
-            float f18 = this.l / ajVar4.g;
-            ajVar4.a(Math.round(Math.min(f18, Math.min(f18, 407.0f))) / 814.0f, 0, 0, 0, 0, this.l, 15);
-            i10 = i7;
-            z9 = z15;
-            i11 = 0;
-        } else if (z14 || !(size == 2 || size == 3 || size == 4)) {
-            int i19 = 2;
-            z9 = z15;
-            int size2 = this.e.size();
-            float[] fArr = new float[size2];
-            for (int i20 = 0; i20 < size; i20++) {
-                if (f17 > 1.1f) {
-                    fArr[i20] = Math.max(1.0f, ((aj) this.e.get(i20)).g);
-                } else {
-                    fArr[i20] = Math.min(1.0f, ((aj) this.e.get(i20)).g);
-                }
-                fArr[i20] = Math.max(0.66667f, Math.min(1.7f, fArr[i20]));
-            }
-            ArrayList arrayList = new ArrayList();
-            int i21 = 1;
-            while (i21 < size2) {
-                int i22 = size2 - i21;
-                if (i21 <= 3 && i22 <= 3) {
-                    float e10 = e(0, i21, fArr);
-                    float e11 = e(i21, size2, fArr);
-                    bj bjVar = new bj();
-                    bjVar.a = new int[]{i21, i22};
-                    float[] fArr2 = new float[i19];
-                    fArr2[0] = e10;
-                    fArr2[1] = e11;
-                    bjVar.b = fArr2;
-                    arrayList.add(bjVar);
-                }
-                i21++;
-                i19 = 2;
-            }
-            for (int i23 = 1; i23 < size2 - 1; i23++) {
-                int i24 = 1;
-                while (true) {
-                    int i25 = size2 - i23;
-                    if (i24 < i25) {
-                        int i26 = i25 - i24;
-                        if (i23 <= 3) {
-                            if (i24 <= (f17 < 0.85f ? 4 : 3) && i26 <= 3) {
-                                float e12 = e(0, i23, fArr);
-                                int i27 = i23 + i24;
-                                float e13 = e(i23, i27, fArr);
-                                float e14 = e(i27, size2, fArr);
-                                bj bjVar2 = new bj();
-                                bjVar2.a = new int[]{i23, i24, i26};
-                                bjVar2.b = new float[]{e12, e13, e14};
-                                arrayList.add(bjVar2);
-                            }
-                        }
-                        i24++;
-                    }
-                }
-            }
-            for (int i28 = 1; i28 < size2 - 2; i28++) {
-                int i29 = 1;
-                while (true) {
-                    int i30 = size2 - i28;
-                    if (i29 < i30) {
-                        int i31 = 1;
-                        while (true) {
-                            int i32 = i30 - i29;
-                            if (i31 < i32) {
-                                int i33 = i32 - i31;
-                                if (i28 > i16 || i29 > i16 || i31 > i16 || i33 > i16) {
-                                    i13 = i7;
-                                    i14 = i16;
-                                } else {
-                                    i14 = i16;
-                                    float e15 = e(0, i28, fArr);
-                                    int i34 = i28 + i29;
-                                    float e16 = e(i28, i34, fArr);
-                                    int i35 = i34 + i31;
-                                    float e17 = e(i34, i35, fArr);
-                                    float e18 = e(i35, size2, fArr);
-                                    bj bjVar3 = new bj();
-                                    bjVar3.a = new int[]{i28, i29, i31, i33};
-                                    i13 = i7;
-                                    float[] fArr3 = new float[4];
-                                    fArr3[0] = e15;
-                                    fArr3[1] = e16;
-                                    fArr3[2] = e17;
-                                    fArr3[i14] = e18;
-                                    bjVar3.b = fArr3;
-                                    arrayList.add(bjVar3);
-                                }
-                                i31++;
-                                i16 = i14;
-                                i7 = i13;
-                            }
-                        }
-                        i29++;
-                    }
-                }
-            }
-            i10 = i7;
-            int i36 = i16;
-            float f19 = (this.l / 3) * 4;
-            int i37 = 0;
-            bj bjVar4 = null;
-            float f20 = 0.0f;
-            while (i37 < arrayList.size()) {
-                bj bjVar5 = (bj) arrayList.get(i37);
-                float f21 = Float.MAX_VALUE;
-                int i38 = 0;
-                float f22 = 0.0f;
-                while (true) {
-                    float[] fArr4 = bjVar5.b;
-                    if (i38 >= fArr4.length) {
-                        break;
-                    }
-                    float f23 = fArr4[i38];
-                    f22 += f23;
-                    if (f23 < f21) {
-                        f21 = f23;
-                    }
-                    i38++;
-                }
-                float abs = Math.abs(f22 - f19);
-                int[] iArr = bjVar5.a;
-                if (iArr.length > 1) {
-                    int i39 = iArr[0];
-                    int i40 = iArr[1];
-                    if (i39 <= i40) {
-                        f10 = f19;
-                        if (iArr.length <= 2 || i40 <= iArr[2]) {
-                            i12 = i36;
-                            if (iArr.length > i12) {
-                            }
-                        }
-                    } else {
-                        f10 = f19;
-                    }
-                    i12 = i36;
-                    abs *= 1.2f;
-                } else {
-                    f10 = f19;
-                    i12 = i36;
-                }
-                if (f21 < min) {
-                    abs *= 1.5f;
-                }
-                if (bjVar4 == null || abs < f20) {
-                    bjVar4 = bjVar5;
-                    f20 = abs;
-                }
-                i37++;
-                i36 = i12;
-                f19 = f10;
-            }
-            if (bjVar4 == null) {
-                return;
-            }
-            int i41 = 0;
-            int i42 = 0;
-            int i43 = 0;
-            while (true) {
-                int[] iArr2 = bjVar4.a;
-                if (i43 >= iArr2.length) {
-                    break;
-                }
-                int i44 = iArr2[i43];
-                float f24 = bjVar4.b[i43];
-                int i45 = this.l;
-                int i46 = i44 - 1;
-                i41 = Math.max(i41, i46);
-                int i47 = 0;
-                aj ajVar5 = null;
-                while (i47 < i44) {
-                    int i48 = (int) (fArr[i42] * f24);
-                    int i49 = i45 - i48;
-                    aj ajVar6 = (aj) this.e.get(i42);
-                    int i50 = i43 == 0 ? 4 : 0;
-                    if (i43 == bjVar4.a.length - 1) {
-                        i50 |= 8;
-                    }
-                    if (i47 == 0) {
-                        i50 |= 1;
-                        if (z9) {
-                            ajVar5 = ajVar6;
-                        }
-                    }
-                    if (i47 == i46) {
-                        i50 |= 2;
-                        if (!z9) {
-                            ajVar = ajVar6;
-                            ajVar6.a(Math.max(L4, f24 / 814.0f), i47, i47, i43, i43, i48, i50);
-                            i42++;
-                            i47++;
-                            i45 = i49;
-                            ajVar5 = ajVar;
-                            i46 = i46;
-                        }
-                    }
-                    ajVar = ajVar5;
-                    ajVar6.a(Math.max(L4, f24 / 814.0f), i47, i47, i43, i43, i48, i50);
-                    i42++;
-                    i47++;
-                    i45 = i49;
-                    ajVar5 = ajVar;
-                    i46 = i46;
-                }
-                ajVar5.e += i45;
-                ajVar5.i += i45;
-                i43++;
-            }
-            i11 = i41;
-        } else if (size == 2) {
-            aj ajVar7 = (aj) this.e.get(0);
-            aj ajVar8 = (aj) this.e.get(1);
-            String sb3 = sb2.toString();
-            if (sb3.equals("ww")) {
-                z9 = z15;
-                f11 = 0.4f;
-                if (f17 > f16 * 1.4d) {
-                    float f25 = ajVar7.g;
-                    float f26 = ajVar8.g;
-                    if (f25 - f26 < 0.2d) {
-                        float f27 = this.l;
-                        float round = Math.round(Math.min(f27 / f25, Math.min(f27 / f26, 407.0f))) / 814.0f;
-                        ajVar7.a(round, 0, 0, 0, 0, this.l, 7);
-                        ajVar8.a(round, 0, 0, 1, 1, this.l, 11);
-                        i11 = 0;
-                        i10 = i7;
-                    }
-                }
-            } else {
-                z9 = z15;
-                f11 = 0.4f;
-            }
-            if (sb3.equals("ww") || sb3.equals("qq")) {
-                int i51 = this.l / 2;
-                float f28 = i51;
-                float round2 = Math.round(Math.min(f28 / ajVar7.g, Math.min(f28 / ajVar8.g, 814.0f))) / 814.0f;
-                ajVar7.a(round2, 0, 0, 0, 0, i51, 13);
-                ajVar8.a(round2, 1, 1, 0, 0, i51, 14);
-            } else {
-                float f29 = this.l;
-                float f30 = ajVar7.g;
-                int max = (int) Math.max(f29 * f11, Math.round((f29 / f30) / ((1.0f / ajVar8.g) + (1.0f / f30))));
-                int i52 = this.l - max;
-                if (i52 < min) {
-                    max -= min - i52;
-                } else {
-                    min = i52;
-                }
-                float min3 = Math.min(814.0f, Math.round(Math.min(min / ajVar7.g, max / ajVar8.g))) / 814.0f;
-                ajVar7.a(min3, 0, 0, 0, 0, min, 13);
-                ajVar8.a(min3, 1, 1, 0, 0, max, 14);
-            }
-            i11 = 1;
-            i10 = i7;
-        } else {
-            z9 = z15;
-            if (size == 3) {
-                aj ajVar9 = (aj) this.e.get(0);
-                aj ajVar10 = (aj) this.e.get(1);
-                aj ajVar11 = (aj) this.e.get(2);
-                if (sb2.charAt(0) == 'n') {
-                    float f31 = ajVar10.g;
-                    float min4 = Math.min(407.0f, Math.round((this.l * f31) / (ajVar11.g + f31)));
-                    int max2 = (int) Math.max(min, Math.min(this.l * 0.5f, Math.round(Math.min(ajVar11.g * min4, ajVar10.g * r14))));
-                    int round3 = Math.round(Math.min((ajVar9.g * 814.0f) + i18, this.l - max2));
-                    ajVar9.a(1.0f, 0, 0, 0, 1, round3, 13);
-                    float f32 = (814.0f - min4) / 814.0f;
-                    ajVar10.a(f32, 1, 1, 0, 0, max2, 6);
-                    float f33 = min4 / 814.0f;
-                    ajVar11.a(f33, 0, 1, 1, 1, max2, 10);
-                    int i53 = this.l;
-                    ajVar11.i = i53;
-                    ajVar9.m = new float[]{f33, f32};
-                    if (z9) {
-                        ajVar9.i = i53 - max2;
-                    } else {
-                        ajVar10.i = i53 - round3;
-                        ajVar11.j = round3;
-                    }
-                    this.b = true;
-                } else {
-                    float round4 = Math.round(Math.min(this.l / ajVar9.g, 537.24005f)) / 814.0f;
-                    ajVar9.a(round4, 0, 1, 0, 0, this.l, 7);
-                    int i54 = this.l / 2;
-                    float f34 = i54;
-                    float min5 = Math.min(814.0f - round4, Math.round(Math.min(f34 / ajVar10.g, f34 / ajVar11.g))) / 814.0f;
-                    float f35 = min5 < L4 ? L4 : min5;
-                    ajVar10.a(f35, 0, 0, 1, 1, i54, 9);
-                    ajVar11.a(f35, 1, 1, 1, 1, i54, 10);
-                }
-                i10 = i7;
-                i11 = 1;
-            } else {
-                aj ajVar12 = (aj) this.e.get(0);
-                aj ajVar13 = (aj) this.e.get(1);
-                aj ajVar14 = (aj) this.e.get(2);
-                aj ajVar15 = (aj) this.e.get(3);
-                if (sb2.charAt(0) == 'w') {
-                    float round5 = Math.round(Math.min(this.l / ajVar12.g, 537.24005f)) / 814.0f;
-                    ajVar12.a(round5, 0, 2, 0, 0, this.l, 7);
-                    float round6 = Math.round(this.l / ((ajVar13.g + ajVar14.g) + ajVar15.g));
-                    float f36 = min;
-                    int max3 = (int) Math.max(f36, Math.min(this.l * 0.4f, ajVar13.g * round6));
-                    int max4 = (int) Math.max(Math.max(f36, this.l * 0.33f), ajVar15.g * round6);
-                    int i55 = (this.l - max3) - max4;
-                    if (i55 < g0.L(58.0f)) {
-                        int L5 = g0.L(58.0f) - i55;
-                        i55 = g0.L(58.0f);
-                        int i56 = L5 / 2;
-                        max3 -= i56;
-                        max4 -= L5 - i56;
-                    }
-                    int i57 = max3;
-                    float min6 = Math.min(814.0f - round5, round6) / 814.0f;
-                    float f37 = min6 < L4 ? L4 : min6;
-                    ajVar13.a(f37, 0, 0, 1, 1, i57, 9);
-                    ajVar14.a(f37, 1, 1, 1, 1, i55, 8);
-                    ajVar15.a(f37, 2, 2, 1, 1, max4, 10);
-                    i11 = 2;
-                    i10 = i7;
-                } else {
-                    int max5 = Math.max(min, Math.round(814.0f / ((1.0f / ajVar15.g) + ((1.0f / ajVar14.g) + (1.0f / ajVar13.g)))));
-                    float f38 = L;
-                    float f39 = max5;
-                    float min7 = Math.min(0.33f, Math.max(f38, f39 / ajVar13.g) / 814.0f);
-                    float min8 = Math.min(0.33f, Math.max(f38, f39 / ajVar14.g) / 814.0f);
-                    float f40 = (1.0f - min7) - min8;
-                    int round7 = Math.round(Math.min((ajVar12.g * 814.0f) + i18, this.l - max5));
-                    ajVar12.a(min7 + min8 + f40, 0, 0, 0, 2, round7, 13);
-                    ajVar13.a(min7, 1, 1, 0, 0, max5, 6);
-                    ajVar14.a(min8, 0, 1, 1, 1, max5, 2);
-                    ajVar14.i = this.l;
-                    ajVar15.a(f40, 0, 1, 2, 2, max5, 10);
-                    int i58 = this.l;
-                    ajVar15.i = i58;
-                    if (z9) {
-                        ajVar12.i = i58 - max5;
-                    } else {
-                        ajVar13.i = i58 - round7;
-                        ajVar14.j = round7;
-                        ajVar15.j = round7;
-                    }
-                    ajVar12.m = new float[]{min7, min8, f40};
-                    this.b = true;
-                    i11 = 1;
-                    i10 = i7;
-                }
-            }
-        }
-        boolean z17 = (z9 || this.d.isEmpty() || !((ij) this.d.get(0)).P2()) ? false : true;
-        for (int i59 = 0; i59 < size; i59++) {
-            aj ajVar16 = (aj) this.e.get(i59);
-            if (z9) {
-                if (ajVar16.a == 0) {
-                    ajVar16.i += i10;
-                }
-                if ((ajVar16.l & 2) != 0) {
-                    ajVar16.k = true;
-                }
-            } else {
-                if (ajVar16.b == i11 || (ajVar16.l & 2) != 0) {
-                    ajVar16.i += i10;
-                }
-                if ((ajVar16.l & 1) != 0) {
-                    ajVar16.k = true;
-                }
-            }
-            ij ijVar2 = (ij) this.d.get(i59);
-            if (!z9 && !z17 && ijVar2.l5()) {
-                if (ajVar16.k) {
-                    int i60 = ajVar16.i;
-                    if (i60 != 1000) {
-                        ajVar16.i = i60 + qs.t1;
-                    }
-                    ajVar16.e += qs.t1;
-                } else if ((ajVar16.l & 2) != 0) {
-                    int i61 = ajVar16.i;
-                    if (i61 != 1000) {
-                        ajVar16.i = i61 - 108;
-                    } else {
-                        int i62 = ajVar16.j;
-                        if (i62 != 0) {
-                            ajVar16.j = i62 + qs.t1;
-                        }
-                    }
-                }
-            }
-        }
-        if (!z17 || this.b) {
-            return;
-        }
-        int i63 = g0.q.x;
-        if (!g0.E && g0.Q1() && (!g0.P1() || t0.b.getResources().getConfiguration().orientation == 2)) {
-            i63 -= g0.l1(i63, 0, 0);
-        }
-        float L6 = g0.L(16.0f);
-        float L7 = g0.L(3.0f);
-        float f41 = i63;
-        int i64 = 0;
-        float L8 = (f41 - (L6 * 2.0f)) - (((ij) this.d.get(0)).S2 ? g0.L(71.0f) : 0);
-        int i65 = 0;
-        while (i65 < size) {
-            aj ajVar17 = (aj) this.e.get(i65);
-            if ((ajVar17.l & 1) != 0) {
-                int i66 = i64;
-                int i67 = i66;
-                while (i66 < size) {
-                    aj ajVar18 = (aj) this.e.get(i66);
-                    if (ajVar18.c == ajVar17.c) {
-                        i67 += ajVar18.e;
-                    }
-                    i66++;
-                }
-                if (i67 > 0) {
-                    float f42 = L8 / i67;
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i68 = i64; i68 < size; i68++) {
-                        aj ajVar19 = (aj) this.e.get(i68);
-                        if (ajVar19.c == ajVar17.c) {
-                            arrayList2.add(ajVar19);
-                        }
-                    }
-                    Collections.sort(arrayList2, new jg.x(27));
-                    int i69 = i64;
-                    int i70 = i69;
-                    int i71 = i70;
-                    while (i69 < arrayList2.size()) {
-                        aj ajVar20 = (aj) arrayList2.get(i69);
-                        int i72 = i69 == arrayList2.size() + (-1) ? 1 : i64;
-                        ajVar20.u = f42;
-                        ajVar20.r = (i70 * f42) + L6;
-                        int i73 = ajVar20.e;
-                        i70 += i73;
-                        ajVar20.s = (i73 * f42) - (i72 != 0 ? 0.0f : L7);
-                        int round8 = i72 != 0 ? 1000 : Math.round(((((i70 * f42) + L6) - (L7 / 2.0f)) * 1000.0f) / f41);
-                        ajVar20.i = round8 - i71;
-                        ajVar20.t = (i71 * i63) / 1000.0f;
-                        i69++;
-                        i71 = round8;
-                        i64 = 0;
-                    }
-                }
-            }
-            i65++;
-            i64 = 0;
+        String replaceAll = str.toLowerCase().replaceAll("\\W|lang$", "");
+        replaceAll.getClass();
+        switch (replaceAll) {
+            case "actionscript":
+                return "ActionScript";
+            case "aspnet":
+                return "ASP.NET";
+            case "bbcode":
+                return "BBCode";
+            case "csharp":
+            case "cs":
+                return "C#";
+            case "fsharp":
+                return "F#";
+            case "matlab":
+            case "r":
+            case "tl":
+            case "asm":
+            case "css":
+            case "csv":
+            case "ini":
+            case "jsx":
+            case "php":
+            case "qml":
+            case "sql":
+            case "tsx":
+            case "xml":
+            case "yml":
+            case "glsl":
+            case "hlsl":
+            case "html":
+            case "http":
+            case "json":
+            case "less":
+            case "nasm":
+            case "sass":
+            case "scss":
+            case "wasm":
+            case "yaml":
+            case "cobol":
+            case "json5":
+            case "jsonp":
+                return str.toUpperCase();
+            case "python":
+            case "py":
+                return "Python";
+            case "typescript":
+            case "ts":
+                return "TypeScript";
+            case "js":
+            case "javascript":
+                return "JavaScript";
+            case "md":
+            case "markdown":
+                return "Markdown";
+            case "rb":
+            case "ruby":
+                return "Ruby";
+            case "cpp":
+                return "C++";
+            case "tlb":
+            case "tl-b":
+                return "TL-B";
+            case "func":
+                return "FunC";
+            case "objc":
+            case "objectivec":
+                return "Objective-C";
+            case "vbnet":
+                return "VB.NET";
+            case "autohotkey":
+                return "AutoHotKey";
+            case "visual-basic":
+                return "Visual Basic";
+            case "gdscript":
+                return "GDScript";
+            default:
+                return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
         }
     }
 
-    public final ij b(int i7) {
-        ArrayList arrayList = this.d;
-        boolean isEmpty = arrayList.isEmpty();
-        HashMap hashMap = this.f;
-        if (!isEmpty && hashMap.isEmpty()) {
-            a();
-        }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            ij ijVar = (ij) arrayList.get(i10);
-            aj ajVar = (aj) hashMap.get(ijVar);
-            if (ajVar != null && (ajVar.l & i7) == i7) {
-                return ijVar;
+    @Override // org.telegram.ui.rg0
+    public final Layout a() {
+        return this.e;
+    }
+
+    public final int c() {
+        return g0.L(this.V ? 28.0f : 15.0f);
+    }
+
+    public final float d(org.telegram.ui.Cells.x1 x1Var) {
+        boolean f10;
+        if (x1Var.f3) {
+            HashSet hashSet = x1Var.e3;
+            f10 = true;
+            if (hashSet != null && hashSet.contains(Integer.valueOf(this.c))) {
+                f10 = false;
             }
+        } else {
+            f10 = f();
         }
+        return g0.T1(f10 ? 1.0f : 0.0f, f() ? 1.0f : 0.0f, x1Var.L1);
+    }
+
+    @Override // org.telegram.ui.rg0
+    public final View e() {
         return null;
     }
 
-    public final ij c() {
-        return b(this.n ? 10 : 5);
+    public final boolean f() {
+        HashSet hashSet;
+        gj gjVar = this.F;
+        return gjVar == null || (hashSet = gjVar.K0) == null || !hashSet.contains(Integer.valueOf(this.c));
     }
 
-    public final aj d(ij ijVar) {
-        if (ijVar == null) {
-            return null;
-        }
-        aj ajVar = (aj) this.f.get(ijVar);
-        if (ajVar != null) {
-            return ajVar;
-        }
-        return (aj) this.g.f(ijVar.e1());
+    public final int g() {
+        return g0.L(this.M != null ? 32.0f : 12.0f);
     }
 
-    public final float e(int i7, int i10, float[] fArr) {
-        float f10 = 0.0f;
-        while (i7 < i10) {
-            f10 += fArr[i7];
-            i7++;
+    public final int h() {
+        StaticLayout staticLayout;
+        return (this.M != null || (staticLayout = this.e) == null || staticLayout.getLineCount() == 0) ? g0.L(8.0f) + (-g()) : Math.round(((this.e.getLineBottom(0) + this.e.getLineTop(0)) / 2.0f) - (g0.L(18.0f) / 2.0f));
+    }
+
+    public final void i(Canvas canvas, RectF rectF, int i7, int i10, float f10) {
+        if (this.O) {
+            int r12 = org.telegram.ui.ActionBar.j6.r1(0.1f, i7);
+            if (this.S != r12) {
+                org.telegram.ui.Cells.y yVar = this.T;
+                this.S = r12;
+                org.telegram.ui.ActionBar.j6.H1(yVar, r12, true);
+            }
+            this.T.setBounds(g0.L(3.0f) + ((int) rectF.left), (int) (rectF.bottom - g0.L(38.0f)), (int) rectF.right, (int) rectF.bottom);
+            int i11 = (int) (255.0f * f10);
+            this.T.setAlpha(i11);
+            if (this.T.getCallback() != null) {
+                this.T.draw(canvas);
+            }
+            this.U.setColor(i0.a.o(i10, 38));
+            canvas.drawRect(rectF.left + g0.L(10.0f), (rectF.bottom - g0.L(38.0f)) - g0.f1(), rectF.right - g0.L(6.66f), rectF.bottom - g0.L(38.0f), this.U);
+            float centerX = rectF.centerX() - (Math.min(rectF.width() - g0.L(12.0f), ((this.Q.getIntrinsicWidth() * 0.8f) + g0.L(5.0f)) + this.R.c) / 2.0f);
+            float L = rectF.bottom - (g0.L(38.0f) / 2.0f);
+            if (this.P != i7) {
+                Drawable drawable = this.Q;
+                this.P = i7;
+                drawable.setColorFilter(new PorterDuffColorFilter(i7, PorterDuff.Mode.SRC_IN));
+            }
+            this.Q.setAlpha(i11);
+            this.Q.setBounds((int) centerX, (int) (L - ((r2.getIntrinsicHeight() * 0.8f) / 2.0f)), (int) ((this.Q.getIntrinsicWidth() * 0.8f) + centerX), (int) a8.p0.f(this.Q.getIntrinsicHeight(), 0.8f, 2.0f, L));
+            this.Q.draw(canvas);
+            oy0 oy0Var = this.R;
+            oy0Var.p = g0.L(12.0f) + ((int) (r1 - ((this.Q.getIntrinsicWidth() * 0.8f) + g0.L(5.0f))));
+            oy0Var.c((this.Q.getIntrinsicWidth() * 0.8f) + g0.L(5.0f) + centerX, L, f10, i7, canvas);
         }
-        return this.l / f10;
+    }
+
+    public final int j(org.telegram.ui.Cells.x1 x1Var) {
+        if (!this.K) {
+            return this.w;
+        }
+        return g0.W1(d(x1Var), this.w, this.G);
+    }
+
+    public final boolean k(float f10, float f11, float f12) {
+        if (!this.O || f10 < f12 - g0.L(38.0f) || f10 > f12 || f11 < (-g())) {
+            return false;
+        }
+        return f11 <= ((float) (g0.L(26.0f) + h()));
+    }
+
+    public final boolean l() {
+        byte b10 = this.x;
+        return (b10 & 1) != 0 && (b10 & 2) == 0;
+    }
+
+    public final void m(int i7, String str, boolean z10) {
+        boolean z11 = i7 >= 75 && !z10;
+        this.O = z11;
+        if (z11) {
+            this.R = new oy0(hd.M0(2131751765, null).toUpperCase(), gz.W0 - 3, g0.o());
+            Drawable g10 = i5.c.g(t0.b, R.drawable.msg_copy);
+            this.Q = g10;
+            g10.setColorFilter(new PorterDuffColorFilter(this.P, PorterDuff.Mode.SRC_IN));
+            this.T = org.telegram.ui.ActionBar.j6.c0(this.S, 0, 0, Math.min(5, gz.Y0), 0);
+            this.U = new Paint(1);
+        }
+        if (TextUtils.isEmpty(str)) {
+            this.L = null;
+            this.M = null;
+            return;
+        }
+        this.L = str;
+        String b10 = b(str);
+        int i10 = gz.W0 - 1;
+        qi.p pVar = qi.j.a;
+        oy0 oy0Var = new oy0(b10, i10 - ((i7 <= 120 ? i7 > 50 ? 3 : 2 : 5) / 2), g0.o());
+        this.M = oy0Var;
+        this.N = g0.L(4.0f) + ((int) (oy0Var.a.getTextSize() * 1.714f));
+    }
+
+    public final void n(String str, boolean z10) {
+        this.V = true;
+        this.O = !z10;
+        if (!z10) {
+            Drawable g10 = i5.c.g(t0.b, R.drawable.msg_copy);
+            this.Q = g10;
+            g10.setColorFilter(new PorterDuffColorFilter(this.P, PorterDuff.Mode.SRC_IN));
+            this.T = org.telegram.ui.ActionBar.j6.c0(this.S, 0, 0, Math.min(5, gz.Y0), 0);
+        }
+        if (TextUtils.isEmpty(str)) {
+            str = null;
+        }
+        this.L = str;
+        this.M = str != null ? new oy0(str, Math.max(8, gz.W0 - 4), null) : null;
+        this.N = 0;
+    }
+
+    public final float o(ArrayList arrayList) {
+        dj djVar;
+        if (arrayList == null) {
+            return 0.0f;
+        }
+        int i7 = 0;
+        for (int i10 = 0; i10 < arrayList.size() && (djVar = (dj) arrayList.get(i10)) != this; i10++) {
+            i7 += ((djVar.K && djVar.f()) ? djVar.G : djVar.w) + djVar.f + djVar.h;
+        }
+        return i7;
+    }
+
+    public final float p(ArrayList arrayList, org.telegram.ui.Cells.x1 x1Var) {
+        dj djVar;
+        if (arrayList == null) {
+            return 0.0f;
+        }
+        int i7 = 0;
+        for (int i10 = 0; i10 < arrayList.size() && (djVar = (dj) arrayList.get(i10)) != this; i10++) {
+            i7 += djVar.j(x1Var) + djVar.f + djVar.h;
+        }
+        return i7;
     }
 }

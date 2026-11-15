@@ -1,23 +1,62 @@
 package oi;
 
-import android.graphics.RectF;
-import android.view.View;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import org.telegram.messenger.a8;
+import ru.noties.jlatexmath.JLatexMathAndroid;
+import ru.noties.jlatexmath.JLatexMathDrawable;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class p {
-    public final View a;
-    public final e b;
-    public final RectF c = new RectF();
-    public final RectF d = new RectF();
-    public final RectF e = new RectF();
-    public final RectF f = new RectF();
-    public final RectF g = new RectF();
-    public boolean h;
-    public boolean i;
+    public static volatile boolean e = false;
+    public final Bitmap a;
+    public final int b;
+    public final int c;
+    public final int d;
 
-    public p(View view, e eVar) {
-        this.a = view;
-        this.b = eVar;
+    public p(Bitmap bitmap, int i7, int i10, int i11) {
+        this.a = bitmap;
+        this.b = i7;
+        this.c = i10;
+        this.d = i11;
+    }
+
+    public static p a(String str, float f10, boolean z10) {
+        if (str != null && !str.isEmpty()) {
+            try {
+                if (!e) {
+                    synchronized (p.class) {
+                        try {
+                            if (!e) {
+                                JLatexMathAndroid.init(org.telegram.messenger.t0.b);
+                                e = true;
+                            }
+                        } finally {
+                        }
+                    }
+                }
+                JLatexMathDrawable build = JLatexMathDrawable.builder(str).textSize(f10).build();
+                int intrinsicWidth = build.getIntrinsicWidth();
+                int intrinsicHeight = build.getIntrinsicHeight();
+                if (intrinsicWidth > 0 && intrinsicHeight > 0) {
+                    Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ALPHA_8);
+                    int i7 = 0;
+                    build.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
+                    build.draw(new Canvas(createBitmap));
+                    if (z10) {
+                        try {
+                            i7 = build.icon().getIconDepth();
+                        } catch (Throwable th2) {
+                            a8.g(th2, true);
+                        }
+                    }
+                    return new p(createBitmap, intrinsicWidth, intrinsicHeight, i7);
+                }
+            } catch (Throwable th3) {
+                a8.g(th3, true);
+            }
+        }
+        return null;
     }
 }

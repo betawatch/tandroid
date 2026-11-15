@@ -1,6 +1,6 @@
 package v4;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements d0 {
     public final d0 a;
@@ -19,7 +19,7 @@ public final class b implements d0 {
     }
 
     @Override // v4.d0
-    public final void M0(int i7, int i10) {
+    public final void K0(int i7, int i10) {
         int i11;
         if (this.b == 2 && (i11 = this.c) >= i7 && i11 <= i7 + i10) {
             this.d += i10;
@@ -39,17 +39,17 @@ public final class b implements d0 {
         }
         d0 d0Var = this.a;
         if (i7 == 1) {
-            d0Var.o0(this.c, this.d);
+            d0Var.m0(this.c, this.d);
         } else if (i7 == 2) {
-            d0Var.M0(this.c, this.d);
+            d0Var.K0(this.c, this.d);
         } else if (i7 == 3) {
-            d0Var.k1(this.c, this.d);
+            d0Var.h1(this.c, this.d);
         }
         this.b = 0;
     }
 
     @Override // v4.d0
-    public final void k1(int i7, int i10) {
+    public final void h1(int i7, int i10) {
         int i11;
         int i12;
         int i13;
@@ -65,7 +65,7 @@ public final class b implements d0 {
     }
 
     @Override // v4.d0
-    public final void o0(int i7, int i10) {
+    public final void m0(int i7, int i10) {
         int i11;
         if (this.b == 1 && i7 >= (i11 = this.c)) {
             int i12 = this.d;

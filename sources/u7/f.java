@@ -1,12 +1,12 @@
 package u7;
 
-import a8.k8;
+import a8.l8;
 import android.location.Location;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f extends a8.q {
     public final /* synthetic */ int b;
@@ -35,7 +35,7 @@ public final class f extends a8.q {
                     Status status = (Status) d.a(parcel, Status.CREATOR);
                     Location location = (Location) d.a(parcel, Location.CREATOR);
                     d.b(parcel);
-                    k8.a(status, location, this.c);
+                    l8.a(status, location, this.c);
                     break;
                 }
                 break;
@@ -46,7 +46,7 @@ public final class f extends a8.q {
                     Status status2 = eVar.a;
                     j8.d dVar = new j8.d();
                     dVar.a = eVar;
-                    k8.a(status2, dVar, this.c);
+                    l8.a(status2, dVar, this.c);
                     break;
                 }
                 break;

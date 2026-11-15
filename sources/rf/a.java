@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.io.RandomAccessFile;
 import tf.l;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a {
     public String a;
@@ -40,18 +40,18 @@ public abstract class a {
                 return new sf.a(bufferedInputStream);
             }
             if (bArr[0] == 102 && bArr[1] == 76 && bArr[2] == 97 && bArr[3] == 99) {
-                c cVar = new c(file);
-                if (cVar.s) {
+                b bVar = new b(file);
+                if (bVar.s) {
                     return null;
                 }
-                return cVar;
+                return bVar;
             }
             if (!file.getAbsolutePath().endsWith("mp3") && (((b10 = bArr[0]) != 73 || bArr[1] != 68 || bArr[2] != 51) && (b10 != 84 || bArr[1] != 65 || bArr[2] != 71))) {
-                c cVar2 = new c(file);
-                if (cVar2.s) {
+                b bVar2 = new b(file);
+                if (bVar2.s) {
                     return null;
                 }
-                return cVar2;
+                return bVar2;
             }
             return new l(bufferedInputStream, file.length());
         } catch (Exception unused) {

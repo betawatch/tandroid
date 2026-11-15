@@ -3,9 +3,8 @@ package h6;
 import android.util.Log;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.internal.cast.y;
-import fi.h2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q {
     public final /* synthetic */ int a;
@@ -16,8 +15,8 @@ public final /* synthetic */ class q {
         this.b = cVar;
     }
 
-    public final void a(com.google.android.gms.common.api.q qVar) {
-        n nVar = (n) qVar;
+    public final void a(com.google.android.gms.common.api.r rVar) {
+        n nVar = (n) rVar;
         switch (this.a) {
             case 0:
                 Status a10 = nVar.a();
@@ -30,9 +29,9 @@ public final /* synthetic */ class q {
                 cVar.l = null;
                 if (!cVar.h.isEmpty()) {
                     y yVar = cVar.i;
-                    h2 h2Var = cVar.j;
-                    yVar.removeCallbacks(h2Var);
-                    yVar.postDelayed(h2Var, 500L);
+                    r rVar2 = cVar.j;
+                    yVar.removeCallbacks(rVar2);
+                    yVar.postDelayed(rVar2, 500L);
                     break;
                 }
                 break;
@@ -47,9 +46,9 @@ public final /* synthetic */ class q {
                 cVar2.k = null;
                 if (!cVar2.h.isEmpty()) {
                     y yVar2 = cVar2.i;
-                    h2 h2Var2 = cVar2.j;
-                    yVar2.removeCallbacks(h2Var2);
-                    yVar2.postDelayed(h2Var2, 500L);
+                    r rVar3 = cVar2.j;
+                    yVar2.removeCallbacks(rVar3);
+                    yVar2.postDelayed(rVar3, 500L);
                     break;
                 }
                 break;

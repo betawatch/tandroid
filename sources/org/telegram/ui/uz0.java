@@ -1,68 +1,46 @@
 package org.telegram.ui;
 
-import android.graphics.SurfaceTexture;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class uz0 implements org.telegram.ui.Components.q51, org.telegram.ui.Components.m51 {
-    public final /* synthetic */ vz0 a;
+public final /* synthetic */ class uz0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n11 b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ uz0(vz0 vz0Var) {
-        this.a = vz0Var;
+    public /* synthetic */ uz0(n11 n11Var, boolean z10, int i7) {
+        this.a = i7;
+        this.b = n11Var;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.m51
-    public void F(boolean z9, float[] fArr) {
-        this.a.V.e(z9, fArr);
-    }
-
-    @Override // org.telegram.ui.Components.q51
-    public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.q51
-    public void onStateChanged(boolean z9, int i7) {
-        vz0 vz0Var = this.a;
-        if (i7 == 4) {
-            vz0Var.dismiss();
-        } else {
-            org.telegram.messenger.g0.r(vz0Var.Z);
-            org.telegram.messenger.g0.i3(vz0Var.Z, 16L);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                n11 n11Var = this.b;
+                l01 l01Var = n11Var.i0;
+                b01 b01Var = n11Var.j0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue = 1.0f - floatValue;
+                }
+                float f10 = 1.0f - floatValue;
+                l01Var.setAlpha(f10);
+                l01Var.setTranslationY(org.telegram.messenger.g0.L(8.0f) * floatValue);
+                b01Var.setAlpha(floatValue);
+                b01Var.setTranslationY(org.telegram.messenger.g0.L(8.0f) * f10);
+                n11Var.k0.setAlpha(b01Var.getAlpha() * floatValue);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue2 = 1.0f - floatValue2;
+                }
+                n11 n11Var2 = this.b;
+                n11Var2.k0.setAlpha(n11Var2.j0.getAlpha() * floatValue2);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.q51
-    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.m51
-    public boolean s() {
-        return this.a.V.i != null;
-    }
-
-    @Override // org.telegram.ui.Components.q51
-    public void onRenderedFirstFrame() {
-        org.telegram.messenger.g0.h3(new uu0(this, 14));
-    }
-
-    @Override // org.telegram.ui.Components.q51
-    public /* synthetic */ void onSeekFinished(m2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.q51
-    public /* synthetic */ void onSeekStarted(m2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.q51
-    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-    }
-
-    @Override // org.telegram.ui.Components.q51
-    public void onError(org.telegram.ui.Components.t51 t51Var, Exception exc) {
-    }
-
-    @Override // org.telegram.ui.Components.q51
-    public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
     }
 }

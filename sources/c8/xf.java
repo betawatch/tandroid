@@ -1,8 +1,8 @@
 package c8;
 
-import org.telegram.ui.Components.yw0;
+import org.telegram.ui.Components.bx0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class xf implements l5.e {
     public static xf b;
@@ -38,7 +38,7 @@ public final class xf implements l5.e {
         aVar.b(y9.class, v3.a);
         aVar.b(qc.class, r6.a);
         aVar.b(pf.class, n4.a);
-        aVar.b(pa.class, q4.a);
+        aVar.b(qa.class, q4.a);
         aVar.b(na.class, m4.a);
         aVar.b(rc.class, s6.a);
         aVar.b(fe.class, e8.a);
@@ -120,7 +120,7 @@ public final class xf implements l5.e {
         aVar.b(ua.class, w4.a);
         aVar.b(ya.class, a5.a);
         aVar.b(i9.class, g3.a);
-        aVar.b(qa.class, r4.a);
+        aVar.b(ra.class, r4.a);
         aVar.b(wa.class, y4.a);
         aVar.b(ma.class, l4.a);
         aVar.b(ea.class, c4.a);
@@ -159,8 +159,8 @@ public final class xf implements l5.e {
         aVar.b(sa.class, t4.a);
         aVar.b(w0.class, l2.a);
         aVar.b(v0.class, m2.a);
-        aVar.b(ra.class, s4.a);
-        aVar.b(yw0.class, p4.a);
+        aVar.b(bx0.class, s4.a);
+        aVar.b(oa.class, p4.a);
         aVar.b(wc.class, x6.a);
         aVar.b(yc.class, z6.a);
         aVar.b(xc.class, y6.a);

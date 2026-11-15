@@ -1,31 +1,95 @@
 package ji;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.x31;
+import android.util.Log;
+import org.telegram.messenger.g0;
+import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class i extends w31 {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes.dex */
+public final class i implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m b;
 
-    static {
-        w31.h(new i());
+    public /* synthetic */ i(m mVar, int i7) {
+        this.a = i7;
+        this.b = mVar;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        long j3 = x31Var.B;
-        ((j) view).a((int) j3, (int) (j3 >>> 32), x31Var.k, x31Var.l, x31Var.n, x31Var.q);
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, h6 h6Var) {
-        return new j(context, h6Var, false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                m mVar = this.b;
+                if (mVar.c == 3) {
+                    if (mVar.b.c()) {
+                        g0.i3(this, 300L);
+                        break;
+                    } else {
+                        mVar.g("draft gone", true);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                m mVar2 = this.b;
+                float[] fArr = mVar2.V;
+                if (mVar2.c == 4) {
+                    if (mVar2.b.b(fArr)) {
+                        float f10 = fArr[0];
+                        float f11 = fArr[1];
+                        boolean z10 = fArr[2] > 0.5f;
+                        if (Math.abs(f10 - mVar2.P) > 5.0E-4f || Math.abs(f11 - mVar2.Q) > 5.0E-4f || z10 != mVar2.T) {
+                            if (z10 && !mVar2.T) {
+                                mVar2.R = mVar2.P;
+                                mVar2.S = mVar2.Q;
+                            }
+                            if (z10 != mVar2.T) {
+                                StringBuilder sb2 = new StringBuilder("field: trim ");
+                                sb2.append(z10 ? "drag" : BuildConfig.BUILD_TYPE);
+                                sb2.append(" l=");
+                                sb2.append(f10);
+                                sb2.append(" r=");
+                                sb2.append(f11);
+                                sb2.append(" total=");
+                                sb2.append(mVar2.O);
+                                sb2.append(" frozen=");
+                                sb2.append(mVar2.e0 != null);
+                                Log.d("VoiceLive", sb2.toString());
+                            }
+                            mVar2.P = f10;
+                            mVar2.Q = f11;
+                            mVar2.T = z10;
+                            mVar2.n();
+                            if (!z10) {
+                                int i7 = 0;
+                                for (boolean z11 : mVar2.f(mVar2.c(), mVar2.P, mVar2.Q)) {
+                                    if (z11) {
+                                        i7++;
+                                    }
+                                }
+                                StringBuilder m10 = i5.c.m(i7, "field: trim applied, ", " of ");
+                                m10.append(mVar2.c().size());
+                                m10.append(" words cut, text ");
+                                m10.append(mVar2.n.length());
+                                m10.append(" chars");
+                                Log.d("VoiceLive", m10.toString());
+                            }
+                        }
+                    }
+                    g0.i3(this, 50L);
+                    break;
+                }
+                break;
+            default:
+                m mVar3 = this.b;
+                if (mVar3.c != 0) {
+                    mVar3.s();
+                    if (mVar3.c != 0) {
+                        g0.i3(this, 250L);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

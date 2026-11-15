@@ -3,7 +3,7 @@ package org.telegram.utils.twidget;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class i {
     public final ByteBuffer a;
@@ -14,10 +14,10 @@ public final class i {
     public final int[] f;
     public final String[] g;
 
-    public i(ByteBuffer byteBuffer, int i7, boolean z9, int i10, int[] iArr, int[] iArr2) {
+    public i(ByteBuffer byteBuffer, int i7, boolean z10, int i10, int[] iArr, int[] iArr2) {
         this.a = byteBuffer;
         this.b = i7;
-        this.c = z9;
+        this.c = z10;
         this.d = i10;
         this.e = iArr;
         this.f = iArr2;

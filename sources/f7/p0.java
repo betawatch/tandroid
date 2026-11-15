@@ -2,10 +2,11 @@ package f7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
+import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p0 extends r6.a {
     public static final Parcelable.Creator<p0> CREATOR = new db.k(11);
@@ -40,7 +41,7 @@ public final class p0 extends r6.a {
         String c11 = x6.b.c(s0Var2 == null ? null : s0Var2.p());
         q7.s0 s0Var3 = this.c;
         String c12 = x6.b.c(s0Var3 != null ? s0Var3.p() : null);
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("HmacSecretExtension{coseKeyAgreement=", c10, ", saltEnc=", c11, ", saltAuth=");
+        StringBuilder n10 = e2.n("HmacSecretExtension{coseKeyAgreement=", c10, ", saltEnc=", c11, ", saltAuth=");
         n10.append(c12);
         n10.append(", getPinUvAuthProtocol=");
         return a8.p0.n(this.d, "}", n10);
@@ -48,15 +49,15 @@ public final class p0 extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
+        int r10 = yb.r(parcel, 20293);
         q7.s0 s0Var = this.a;
-        xb.c(parcel, 1, s0Var == null ? null : s0Var.p());
+        yb.c(parcel, 1, s0Var == null ? null : s0Var.p());
         q7.s0 s0Var2 = this.b;
-        xb.c(parcel, 2, s0Var2 == null ? null : s0Var2.p());
+        yb.c(parcel, 2, s0Var2 == null ? null : s0Var2.p());
         q7.s0 s0Var3 = this.c;
-        xb.c(parcel, 3, s0Var3 != null ? s0Var3.p() : null);
-        xb.q(parcel, 4, 4);
+        yb.c(parcel, 3, s0Var3 != null ? s0Var3.p() : null);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(this.d);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 }

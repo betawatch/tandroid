@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public class RadialProgress2 {
     public float A;
@@ -22,7 +22,7 @@ public class RadialProgress2 {
     public Bitmap C;
     public Canvas D;
     public float E;
-    public org.telegram.ui.ActionBar.h6 F;
+    public org.telegram.ui.ActionBar.e6 F;
     public int G;
     public float H;
     public float I;
@@ -32,8 +32,8 @@ public class RadialProgress2 {
     public final Paint f;
     public final Paint g;
     public final Paint h;
-    public final p80 i;
-    public final p80 j;
+    public final s80 i;
+    public final s80 j;
     public float k;
     public int l;
     public int m;
@@ -53,7 +53,7 @@ public class RadialProgress2 {
     public final RectF a = new RectF();
     public int d = -1;
 
-    public RadialProgress2(View view, org.telegram.ui.ActionBar.h6 h6Var) {
+    public RadialProgress2(View view, org.telegram.ui.ActionBar.e6 e6Var) {
         Paint paint = new Paint(1);
         this.f = paint;
         this.g = new Paint(1);
@@ -70,26 +70,26 @@ public class RadialProgress2 {
         this.E = 1.0f;
         this.H = 1.0f;
         this.I = 1.0f;
-        this.F = h6Var;
+        this.F = e6Var;
         this.e = new Paint(1);
         this.b = view;
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.w = imageReceiver;
-        imageReceiver.J0 = true;
-        p80 p80Var = new p80();
-        this.i = p80Var;
-        p80 p80Var2 = new p80();
-        this.j = p80Var2;
-        p80Var2.j = true;
-        p80Var2.b.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        p80Var2.d(4, false);
+        imageReceiver.K0 = true;
+        s80 s80Var = new s80();
+        this.i = s80Var;
+        s80 s80Var2 = new s80();
+        this.j = s80Var2;
+        s80Var2.j = true;
+        s80Var2.b.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        s80Var2.d(4, false);
         int L = org.telegram.messenger.g0.L(22.0f);
         this.x = L;
         imageReceiver.J0(L);
         paint.setColor(1677721600);
         if (view != null) {
-            p80Var.A = new ax(view, 14);
-            p80Var2.A = new ax(view, 14);
+            s80Var.A = new gx(view, 14);
+            s80Var2.A = new gx(view, 14);
         }
     }
 
@@ -98,16 +98,16 @@ public class RadialProgress2 {
     }
 
     public final float b() {
-        p80 p80Var = this.i;
-        int i7 = p80Var.q;
-        int i10 = p80Var.p;
+        s80 s80Var = this.i;
+        int i7 = s80Var.q;
+        int i10 = s80Var.p;
         if ((i7 == 3 || i7 == 6 || i7 == 10 || i7 == 8 || i7 == 0) && i10 == 4) {
-            return p80Var.b();
+            return s80Var.b();
         }
         if (i7 != 4) {
             return 1.0f;
         }
-        return 1.0f - p80Var.b();
+        return 1.0f - s80Var.b();
     }
 
     public final void c() {
@@ -147,81 +147,81 @@ public class RadialProgress2 {
         Canvas canvas3;
         Canvas canvas4;
         int argb;
-        p80 p80Var = this.i;
-        int i13 = p80Var.q;
-        Paint paint2 = p80Var.c;
-        if (i13 != 4 || p80Var.b() < 1.0f) {
+        s80 s80Var = this.i;
+        int i13 = s80Var.q;
+        Paint paint2 = s80Var.c;
+        if (i13 != 4 || s80Var.b() < 1.0f) {
             RectF rectF = this.a;
             if (rectF.isEmpty()) {
                 return;
             }
-            int i14 = p80Var.q;
+            int i14 = s80Var.q;
             float b10 = b();
-            boolean z9 = this.z;
-            p80 p80Var2 = this.j;
+            boolean z10 = this.z;
+            s80 s80Var2 = this.j;
             Paint paint3 = this.h;
-            if (!z9 || this.q >= 0) {
+            if (!z10 || this.q >= 0) {
                 int i15 = this.u;
                 if (i15 >= 0) {
-                    p80Var2.c(org.telegram.ui.ActionBar.m6.w0(i15, this.F));
+                    s80Var2.c(org.telegram.ui.ActionBar.j6.w0(i15, this.F));
                 } else {
-                    p80Var2.c(this.n);
+                    s80Var2.c(this.n);
                 }
                 int i16 = this.p;
                 if (i16 < 0) {
                     paint3.setColor(this.l);
                 } else if (this.q >= 0) {
-                    paint3.setColor(org.telegram.messenger.g0.S0(this.r, this.s, org.telegram.ui.ActionBar.m6.w0(i16, this.F), org.telegram.ui.ActionBar.m6.w0(this.q, this.F)));
+                    paint3.setColor(org.telegram.messenger.g0.S0(this.r, this.s, org.telegram.ui.ActionBar.j6.w0(i16, this.F), org.telegram.ui.ActionBar.j6.w0(this.q, this.F)));
                 } else {
-                    paint3.setColor(org.telegram.ui.ActionBar.m6.w0(i16, this.F));
+                    paint3.setColor(org.telegram.ui.ActionBar.j6.w0(i16, this.F));
                 }
             } else {
                 int i17 = this.v;
                 if (i17 >= 0) {
-                    p80Var2.c(org.telegram.ui.ActionBar.m6.w0(i17, this.F));
+                    s80Var2.c(org.telegram.ui.ActionBar.j6.w0(i17, this.F));
                 } else {
-                    p80Var2.c(this.o);
+                    s80Var2.c(this.o);
                 }
                 int i18 = this.t;
                 if (i18 >= 0) {
-                    paint3.setColor(org.telegram.ui.ActionBar.m6.w0(i18, this.F));
+                    paint3.setColor(org.telegram.ui.ActionBar.j6.w0(i18, this.F));
                 } else {
                     paint3.setColor(this.m);
                 }
             }
-            boolean z10 = this.y;
+            boolean z11 = this.y;
             Paint paint4 = this.g;
-            if (z10) {
+            if (z11) {
                 int i19 = this.v;
                 if (i19 >= 0) {
-                    i7 = org.telegram.ui.ActionBar.m6.w0(i19, this.F);
-                    p80Var.c(i7);
-                    paint2.setColor((-16777216) | org.telegram.ui.ActionBar.m6.w0(this.t, this.F));
+                    i7 = org.telegram.ui.ActionBar.j6.w0(i19, this.F);
+                    s80Var.c(i7);
+                    paint2.setColor((-16777216) | org.telegram.ui.ActionBar.j6.w0(this.t, this.F));
                 } else {
                     i7 = this.o;
-                    p80Var.c(i7);
+                    s80Var.c(i7);
                     paint2.setColor((-16777216) | this.m);
                 }
                 int i20 = this.t;
                 if (i20 >= 0) {
-                    paint4.setColor(org.telegram.ui.ActionBar.m6.w0(i20, this.F));
+                    paint4.setColor(org.telegram.ui.ActionBar.j6.w0(i20, this.F));
                 } else {
                     paint4.setColor(this.m);
                 }
             } else {
                 int i21 = this.u;
                 if (i21 >= 0) {
-                    i7 = org.telegram.ui.ActionBar.m6.w0(i21, this.F);
-                    p80Var.c(i7);
-                    paint2.setColor((-16777216) | org.telegram.ui.ActionBar.m6.w0(this.p, this.F));
+                    i7 = org.telegram.ui.ActionBar.j6.w0(i21, this.F);
+                    s80Var.c(i7);
+                    paint2.setColor((-16777216) | org.telegram.ui.ActionBar.j6.w0(this.p, this.F));
                 } else {
                     i7 = this.n;
-                    p80Var.c(i7);
+                    s80Var.c(i7);
                     paint2.setColor((-16777216) | this.l);
                 }
                 int i22 = this.p;
                 if (i22 >= 0) {
-                    paint4.setColor(org.telegram.ui.ActionBar.m6.w0(i22, this.F));
+                    paint4.setColor(org.telegram.ui.ActionBar.j6.w0(i22, this.F));
                 } else {
                     paint4.setColor(this.l);
                 }
@@ -240,18 +240,18 @@ public class RadialProgress2 {
             }
             ImageReceiver imageReceiver = this.w;
             boolean I = imageReceiver.I();
-            boolean z11 = true;
+            boolean z12 = true;
             Paint paint5 = this.f;
             int i23 = 2;
             if (I) {
-                float f13 = imageReceiver.h1;
+                float f13 = imageReceiver.i1;
                 f10 = 1.0f;
                 paint5.setAlpha((int) (this.E * 100.0f * f13 * b10));
                 if (f13 >= 1.0f) {
                     argb = -1;
                     f11 = b10;
                     paint = paint3;
-                    z11 = false;
+                    z12 = false;
                 } else {
                     int red = Color.red(i7);
                     int green = Color.green(i7);
@@ -260,7 +260,7 @@ public class RadialProgress2 {
                     paint = paint3;
                     argb = Color.argb(Color.alpha(i7) + ((int) ((255 - r9) * f13)), red + ((int) ((255 - red) * f13)), green + ((int) ((255 - green) * f13)), blue + ((int) ((255 - blue) * f13)));
                 }
-                p80Var.c(argb);
+                s80Var.c(argb);
                 int i24 = this.x;
                 float f14 = ceil - i24;
                 float f15 = ceil2 - i24;
@@ -277,10 +277,10 @@ public class RadialProgress2 {
             } else {
                 i10 = canvas5.save();
                 float f17 = f10;
-                float v = com.google.android.recaptcha.internal.a.v(f17, this.s, 0.1f, f17);
-                this.D.scale(v, v, ceil, ceil2);
+                float t6 = com.google.android.gms.internal.vision.e2.t(f17, this.s, 0.1f, f17);
+                this.D.scale(t6, t6, ceil, ceil2);
             }
-            if (z11 && this.B) {
+            if (z12 && this.B) {
                 if ((this.c || this.q >= 0) && (canvas4 = this.D) != null) {
                     canvas4.drawCircle(ceil, ceil2, this.x, paint4);
                 } else if (i14 != 4 || f11 != 0.0f) {
@@ -307,18 +307,18 @@ public class RadialProgress2 {
                 float f18 = this.I;
                 canvas.scale(f18, f18, ceil, ceil2);
             }
-            p80Var.setBounds(ceil - i25, ceil2 - i25, ceil + i25, ceil2 + i25);
-            p80Var.E = imageReceiver.I();
+            s80Var.setBounds(ceil - i25, ceil2 - i25, ceil + i25, ceil2 + i25);
+            s80Var.E = imageReceiver.I();
             if (this.c || this.q >= 0) {
                 Canvas canvas6 = this.D;
                 if (canvas6 != null) {
-                    p80Var.draw(canvas6);
+                    s80Var.draw(canvas6);
                 } else {
-                    p80Var.draw(canvas);
+                    s80Var.draw(canvas);
                 }
             } else {
-                p80Var.o = this.E;
-                p80Var.draw(canvas);
+                s80Var.o = this.E;
+                s80Var.draw(canvas);
             }
             if (i10 != Integer.MIN_VALUE && (canvas2 = this.D) != null) {
                 canvas2.restoreToCount(i10);
@@ -337,7 +337,7 @@ public class RadialProgress2 {
                 }
                 int i27 = i11 / 2;
                 if (this.c) {
-                    float b11 = p80Var2.q != 4 ? 1.0f : 1.0f - p80Var2.b();
+                    float b11 = s80Var2.q != 4 ? 1.0f : 1.0f - s80Var2.b();
                     if (b11 == 0.0f) {
                         this.c = false;
                     }
@@ -348,7 +348,7 @@ public class RadialProgress2 {
                 Canvas canvas7 = this.D;
                 if (canvas7 != null) {
                     float f20 = i11 + 18 + i23;
-                    canvas7.drawCircle(org.telegram.messenger.g0.L(f20), org.telegram.messenger.g0.L(f20), org.telegram.messenger.g0.L(i27 + 1) * f12 * this.k, org.telegram.ui.ActionBar.m6.n0);
+                    canvas7.drawCircle(org.telegram.messenger.g0.L(f20), org.telegram.messenger.g0.L(f20), org.telegram.messenger.g0.L(i27 + 1) * f12 * this.k, org.telegram.ui.ActionBar.j6.n0);
                 } else {
                     int i28 = this.d;
                     Paint paint6 = this.e;
@@ -366,10 +366,10 @@ public class RadialProgress2 {
                     i12 = TLObject.FLAG_31;
                 }
                 float f22 = i27;
-                canvas.drawCircle(centerX, centerY, com.google.android.recaptcha.internal.a.z(1.0f, this.s, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(f22) * f12), paint);
+                canvas.drawCircle(centerX, centerY, com.google.android.gms.internal.vision.e2.z(1.0f, this.s, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(f22) * f12), paint);
                 if (this.c) {
-                    p80Var2.setBounds((int) (centerX - (org.telegram.messenger.g0.L(f22) * f12)), (int) (centerY - (org.telegram.messenger.g0.L(f22) * f12)), (int) ((org.telegram.messenger.g0.L(f22) * f12) + centerX), (int) ((org.telegram.messenger.g0.L(f22) * f12) + centerY));
-                    p80Var2.draw(canvas);
+                    s80Var2.setBounds((int) (centerX - (org.telegram.messenger.g0.L(f22) * f12)), (int) (centerY - (org.telegram.messenger.g0.L(f22) * f12)), (int) ((org.telegram.messenger.g0.L(f22) * f12) + centerX), (int) ((org.telegram.messenger.g0.L(f22) * f12) + centerY));
+                    s80Var2.draw(canvas);
                 }
                 if (i12 != Integer.MIN_VALUE) {
                     canvas.restoreToCount(i12);
@@ -400,39 +400,39 @@ public class RadialProgress2 {
         String str2;
         if (str != null) {
             Locale locale = Locale.US;
-            str2 = com.google.android.recaptcha.internal.a.j(this.x * 2, "_", this.x * 2);
+            str2 = com.google.android.gms.internal.vision.e2.j(this.x * 2, "_", this.x * 2);
         } else {
             str2 = null;
         }
         this.w.o0(str, str2, null, null, -1L);
     }
 
-    public final void i(TLRPC.PhotoSize photoSize, TLRPC.Document document, org.telegram.messenger.ij ijVar) {
+    public final void i(TLRPC.PhotoSize photoSize, TLRPC.Document document, org.telegram.messenger.gj gjVar) {
         Locale locale = Locale.US;
-        org.telegram.messenger.hc c10 = org.telegram.messenger.hc.c(photoSize, document);
+        org.telegram.messenger.gc c10 = org.telegram.messenger.gc.c(photoSize, document);
         int i7 = this.x;
-        this.w.q0(c10, com.google.android.recaptcha.internal.a.j(i7 * 2, "_", i7 * 2), null, null, ijVar, 1);
+        this.w.q0(c10, com.google.android.gms.internal.vision.e2.j(i7 * 2, "_", i7 * 2), null, null, gjVar, 1);
     }
 
     public final void j(TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, TLRPC.Document document, Object obj) {
         Locale locale = Locale.US;
-        String j3 = com.google.android.recaptcha.internal.a.j(this.x * 2, "_", this.x * 2);
-        this.w.r0(photoSize == null ? null : org.telegram.messenger.hc.c(photoSize, document), j3, photoSize2 != null ? org.telegram.messenger.hc.c(photoSize2, document) : null, j3, null, 0L, null, obj, 1);
+        String j3 = com.google.android.gms.internal.vision.e2.j(this.x * 2, "_", this.x * 2);
+        this.w.r0(photoSize == null ? null : org.telegram.messenger.gc.c(photoSize, document), j3, photoSize2 != null ? org.telegram.messenger.gc.c(photoSize2, document) : null, j3, null, 0L, null, obj, 1);
     }
 
-    public final void k(int i7, boolean z9, boolean z10) {
+    public final void k(int i7, boolean z10, boolean z11) {
         if (i7 == 2 || i7 == 3 || i7 == 4) {
-            p80 p80Var = this.j;
-            if (z9 && i7 == p80Var.q) {
+            s80 s80Var = this.j;
+            if (z10 && i7 == s80Var.q) {
                 return;
             }
-            p80Var.d(i7, z10);
-            boolean z11 = i7 != 4 || p80Var.b() < 1.0f;
-            this.c = z11;
-            if (z11) {
+            s80Var.d(i7, z11);
+            boolean z12 = i7 != 4 || s80Var.b() < 1.0f;
+            this.c = z12;
+            if (z12) {
                 c();
             }
-            if (z10) {
+            if (z11) {
                 d();
             } else {
                 this.b.invalidate();
@@ -452,24 +452,24 @@ public class RadialProgress2 {
         this.b = view;
         this.w.H0(view);
         Objects.requireNonNull(view);
-        this.i.A = new ax(view, 14);
-        this.j.A = new ax(view, 14);
+        this.i.A = new gx(view, 14);
+        this.j.A = new gx(view, 14);
     }
 
-    public final void o(boolean z9, boolean z10) {
-        if (z10) {
-            this.z = z9;
+    public final void o(boolean z10, boolean z11) {
+        if (z11) {
+            this.z = z10;
         } else {
-            this.y = z9;
+            this.y = z10;
         }
         d();
     }
 
-    public final void p(boolean z9, float f10) {
+    public final void p(boolean z10, float f10) {
         if (this.c) {
-            this.j.e(z9, f10);
+            this.j.e(z10, f10);
         } else {
-            this.i.e(z9, f10);
+            this.i.e(z10, f10);
         }
     }
 
@@ -482,18 +482,18 @@ public class RadialProgress2 {
     }
 
     public void setAsMini() {
-        p80 p80Var = this.i;
-        p80Var.j = true;
-        p80Var.b.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        s80 s80Var = this.i;
+        s80Var.j = true;
+        s80Var.b.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
     }
 
     public void setBackgroundGradientDrawable(LinearGradient linearGradient) {
-        p80 p80Var = this.i;
-        p80Var.C = linearGradient;
-        p80Var.D = new Matrix();
-        p80 p80Var2 = this.j;
-        p80Var2.C = linearGradient;
-        p80Var2.D = new Matrix();
+        s80 s80Var = this.i;
+        s80Var.C = linearGradient;
+        s80Var.D = new Matrix();
+        s80 s80Var2 = this.j;
+        s80Var2.C = linearGradient;
+        s80Var2.D = new Matrix();
     }
 
     public void setCircleRadius(int i7) {
@@ -512,15 +512,15 @@ public class RadialProgress2 {
         this.v = -1;
     }
 
-    public void setIcon(int i7, boolean z9, boolean z10) {
-        p80 p80Var = this.i;
-        if (z9 && i7 == p80Var.q) {
+    public void setIcon(int i7, boolean z10, boolean z11) {
+        s80 s80Var = this.i;
+        if (z10 && i7 == s80Var.q) {
             return;
         }
-        p80Var.d(i7, z10);
+        s80Var.d(i7, z11);
         View view = this.b;
         if (view != null) {
-            if (z10) {
+            if (z11) {
                 d();
             } else {
                 view.invalidate();

@@ -3,7 +3,7 @@ package com.google.android.gms.internal.cast;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class e6 {
     public static final Class a;
@@ -35,13 +35,13 @@ public abstract class e6 {
         c = new g6();
     }
 
-    public static void a(int i7, List list, q5 q5Var, boolean z9) {
+    public static void a(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 int intValue = ((Integer) list.get(i10)).intValue();
                 v4Var.j(i7 << 3);
@@ -64,13 +64,13 @@ public abstract class e6 {
         }
     }
 
-    public static void b(int i7, List list, q5 q5Var, boolean z9) {
+    public static void b(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 long longValue = ((Long) list.get(i10)).longValue();
                 v4Var.k(i7, (longValue >> 63) ^ (longValue + longValue));
@@ -92,13 +92,13 @@ public abstract class e6 {
         }
     }
 
-    public static void c(int i7, List list, q5 q5Var, boolean z9) {
+    public static void c(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 int intValue = ((Integer) list.get(i10)).intValue();
                 v4Var.j(i7 << 3);
@@ -119,13 +119,13 @@ public abstract class e6 {
         }
     }
 
-    public static void d(int i7, List list, q5 q5Var, boolean z9) {
+    public static void d(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 v4Var.k(i7, ((Long) list.get(i10)).longValue());
                 i10++;
@@ -370,13 +370,13 @@ public abstract class e6 {
         b5Var.zzc = f6Var;
     }
 
-    public static void p(int i7, List list, q5 q5Var, boolean z9) {
+    public static void p(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 boolean booleanValue = ((Boolean) list.get(i10)).booleanValue();
                 v4Var.j(i7 << 3);
@@ -398,13 +398,13 @@ public abstract class e6 {
         }
     }
 
-    public static void q(int i7, List list, q5 q5Var, boolean z9) {
+    public static void q(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 v4Var.f(i7, Double.doubleToRawLongBits(((Double) list.get(i10)).doubleValue()));
                 i10++;
@@ -424,13 +424,13 @@ public abstract class e6 {
         }
     }
 
-    public static void r(int i7, List list, q5 q5Var, boolean z9) {
+    public static void r(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 int intValue = ((Integer) list.get(i10)).intValue();
                 v4Var.j(i7 << 3);
@@ -460,13 +460,13 @@ public abstract class e6 {
         }
     }
 
-    public static void s(int i7, List list, q5 q5Var, boolean z9) {
+    public static void s(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 v4Var.d(i7, ((Integer) list.get(i10)).intValue());
                 i10++;
@@ -486,13 +486,13 @@ public abstract class e6 {
         }
     }
 
-    public static void t(int i7, List list, q5 q5Var, boolean z9) {
+    public static void t(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 v4Var.f(i7, ((Long) list.get(i10)).longValue());
                 i10++;
@@ -512,13 +512,13 @@ public abstract class e6 {
         }
     }
 
-    public static void u(int i7, List list, q5 q5Var, boolean z9) {
+    public static void u(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 v4Var.d(i7, Float.floatToRawIntBits(((Float) list.get(i10)).floatValue()));
                 i10++;
@@ -538,13 +538,13 @@ public abstract class e6 {
         }
     }
 
-    public static void v(int i7, List list, q5 q5Var, boolean z9) {
+    public static void v(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 int intValue = ((Integer) list.get(i10)).intValue();
                 v4Var.j(i7 << 3);
@@ -574,13 +574,13 @@ public abstract class e6 {
         }
     }
 
-    public static void w(int i7, List list, q5 q5Var, boolean z9) {
+    public static void w(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 v4Var.k(i7, ((Long) list.get(i10)).longValue());
                 i10++;
@@ -599,13 +599,13 @@ public abstract class e6 {
         }
     }
 
-    public static void x(int i7, List list, q5 q5Var, boolean z9) {
+    public static void x(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 v4Var.d(i7, ((Integer) list.get(i10)).intValue());
                 i10++;
@@ -625,13 +625,13 @@ public abstract class e6 {
         }
     }
 
-    public static void y(int i7, List list, q5 q5Var, boolean z9) {
+    public static void y(int i7, List list, q5 q5Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         v4 v4Var = (v4) q5Var.a;
         int i10 = 0;
-        if (!z9) {
+        if (!z10) {
             while (i10 < list.size()) {
                 v4Var.f(i7, ((Long) list.get(i10)).longValue());
                 i10++;

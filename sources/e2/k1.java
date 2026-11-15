@@ -1,13 +1,13 @@
 package e2;
 
-import a8.ia;
+import a8.ja;
 import android.net.Uri;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k1 {
     public static final String A;
@@ -47,17 +47,17 @@ public final class k1 {
         z zVar = new z();
         c0 c0Var = new c0();
         List list = Collections.EMPTY_LIST;
-        h9.t1 t1Var = h9.t1.e;
+        h9.s1 s1Var = h9.s1.e;
         e0 e0Var = new e0();
         h0 h0Var = h0.d;
         Uri uri = Uri.EMPTY;
-        ia.p(c0Var.b == null || c0Var.a != null);
+        ja.p(c0Var.b == null || c0Var.a != null);
         d0 d0Var = null;
         if (uri != null) {
             if (c0Var.a != null) {
                 d0Var = new d0(c0Var);
             }
-            g0Var = new g0(uri, null, d0Var, null, list, null, t1Var, -9223372036854775807L);
+            g0Var = new g0(uri, null, d0Var, null, list, null, s1Var, -9223372036854775807L);
         } else {
             g0Var = null;
         }
@@ -81,7 +81,7 @@ public final class k1 {
         return this.j != null;
     }
 
-    public final void b(Object obj, l0 l0Var, Object obj2, long j3, long j10, long j11, boolean z9, boolean z10, f0 f0Var, long j12, long j13, int i7, int i10, long j14) {
+    public final void b(Object obj, l0 l0Var, Object obj2, long j3, long j10, long j11, boolean z10, boolean z11, f0 f0Var, long j12, long j13, int i7, int i10, long j14) {
         this.a = obj;
         this.c = l0Var != null ? l0Var : r;
         if (l0Var != null) {
@@ -92,8 +92,8 @@ public final class k1 {
         this.e = j3;
         this.f = j10;
         this.g = j11;
-        this.h = z9;
-        this.i = z10;
+        this.h = z10;
+        this.i = z11;
         this.j = f0Var;
         this.l = j12;
         this.m = j13;
@@ -115,7 +115,7 @@ public final class k1 {
     }
 
     public final int hashCode() {
-        int hashCode = (this.c.hashCode() + ((this.a.hashCode() + qs.u3) * 31)) * 31;
+        int hashCode = (this.c.hashCode() + ((this.a.hashCode() + ns.u3) * 31)) * 31;
         Object obj = this.d;
         int hashCode2 = (hashCode + (obj == null ? 0 : obj.hashCode())) * 31;
         f0 f0Var = this.j;

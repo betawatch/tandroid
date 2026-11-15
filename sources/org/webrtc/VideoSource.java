@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.VideoProcessor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class VideoSource extends MediaSource {
     private final CapturerObserver capturerObserver;
@@ -11,7 +11,7 @@ public class VideoSource extends MediaSource {
     private VideoProcessor videoProcessor;
     private final Object videoProcessorLock;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class AspectRatio {
         public static final AspectRatio UNDEFINED = new AspectRatio(0, 0);
         public final int height;
@@ -28,13 +28,13 @@ public class VideoSource extends MediaSource {
         this.videoProcessorLock = new Object();
         this.capturerObserver = new CapturerObserver() { // from class: org.webrtc.VideoSource.1
             @Override // org.webrtc.CapturerObserver
-            public void onCapturerStarted(boolean z9) {
-                VideoSource.this.nativeAndroidVideoTrackSource.setState(z9);
+            public void onCapturerStarted(boolean z10) {
+                VideoSource.this.nativeAndroidVideoTrackSource.setState(z10);
                 synchronized (VideoSource.this.videoProcessorLock) {
                     try {
-                        VideoSource.this.isCapturerRunning = z9;
+                        VideoSource.this.isCapturerRunning = z10;
                         if (VideoSource.this.videoProcessor != null) {
-                            VideoSource.this.videoProcessor.onCapturerStarted(z9);
+                            VideoSource.this.videoProcessor.onCapturerStarted(z10);
                         }
                     } catch (Throwable th2) {
                         throw th2;
@@ -110,8 +110,8 @@ public class VideoSource extends MediaSource {
         return getNativeMediaSource();
     }
 
-    public void setIsScreencast(boolean z9) {
-        this.nativeAndroidVideoTrackSource.setIsScreencast(z9);
+    public void setIsScreencast(boolean z10) {
+        this.nativeAndroidVideoTrackSource.setIsScreencast(z10);
     }
 
     public void setVideoProcessor(VideoProcessor videoProcessor) {

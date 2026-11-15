@@ -1,15 +1,15 @@
 package n4;
 
+import f3.a0;
 import f3.b0;
 import f3.c0;
-import f3.d0;
-import h2.m0;
+import h2.l0;
 import i2.s;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class e implements c0 {
+public final class e implements b0 {
     public final s a;
     public final int b;
     public final long c;
@@ -25,32 +25,32 @@ public final class e implements c0 {
         this.e = i(j11);
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final boolean d() {
         return true;
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // f3.c0
-    public final b0 f(long j3) {
+    @Override // f3.b0
+    public final a0 f(long j3) {
         s sVar = this.a;
         long j10 = this.d;
-        long j11 = m0.j((sVar.b * j3) / (this.b * 1000000), 0L, j10 - 1);
+        long j11 = l0.j((sVar.b * j3) / (this.b * 1000000), 0L, j10 - 1);
         long j12 = this.c;
         long i7 = i(j11);
-        d0 d0Var = new d0(i7, (sVar.c * j11) + j12);
+        c0 c0Var = new c0(i7, (sVar.c * j11) + j12);
         if (i7 >= j3 || j11 == j10 - 1) {
-            return new b0(d0Var, d0Var);
+            return new a0(c0Var, c0Var);
         }
         long j13 = j11 + 1;
-        return new b0(d0Var, new d0(i(j13), (sVar.c * j13) + j12));
+        return new a0(c0Var, new c0(i(j13), (sVar.c * j13) + j12));
     }
 
-    @Override // f3.c0
+    @Override // f3.b0
     public final long h() {
         return this.e;
     }
@@ -58,7 +58,7 @@ public final class e implements c0 {
     public final long i(long j3) {
         long j10 = j3 * this.b;
         long j11 = this.a.b;
-        String str = m0.a;
-        return m0.a0(j10, 1000000L, j11, RoundingMode.DOWN);
+        String str = l0.a;
+        return l0.a0(j10, 1000000L, j11, RoundingMode.DOWN);
     }
 }

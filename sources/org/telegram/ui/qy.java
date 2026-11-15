@@ -1,29 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qy implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jz b;
+public final class qy extends FrameLayout {
+    public ImageView a;
+    public TextView b;
+    public int c;
+    public boolean d;
+    public Boolean e;
 
-    public /* synthetic */ qy(jz jzVar, int i7) {
-        this.a = i7;
-        this.b = jzVar;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        TextView textView = this.b;
+        super.onDraw(canvas);
+        if (this.d) {
+            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), org.telegram.ui.ActionBar.j6.k0);
+        }
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.h41(24, this.b, tLObject));
-                break;
-            default:
-                org.telegram.messenger.g0.h3(new tp(this.b, tL_error, tLObject, 6));
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
     }
 }

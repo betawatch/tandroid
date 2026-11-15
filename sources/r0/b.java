@@ -12,8 +12,9 @@ import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.cf;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class b {
     public static final View.AccessibilityDelegate c = new View.AccessibilityDelegate();
@@ -24,10 +25,10 @@ public class b {
         this(c);
     }
 
-    public org.telegram.ui.Components.m a(View view) {
+    public cf a(View view) {
         AccessibilityNodeProvider accessibilityNodeProvider = this.a.getAccessibilityNodeProvider(view);
         if (accessibilityNodeProvider != null) {
-            return new org.telegram.ui.Components.m(accessibilityNodeProvider);
+            return new cf(accessibilityNodeProvider);
         }
         return null;
     }
@@ -36,8 +37,8 @@ public class b {
         this.a.onInitializeAccessibilityEvent(view, accessibilityEvent);
     }
 
-    public void c(View view, s0.d dVar) {
-        this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
+    public void c(View view, s0.c cVar) {
+        this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
     }
 
     public boolean d(View view, int i7, Bundle bundle) {
@@ -47,7 +48,7 @@ public class b {
         if (list == null) {
             list = Collections.EMPTY_LIST;
         }
-        for (int i10 = 0; i10 < list.size() && ((AccessibilityNodeInfo.AccessibilityAction) ((s0.c) list.get(i10)).a).getId() != i7; i10++) {
+        for (int i10 = 0; i10 < list.size() && ((AccessibilityNodeInfo.AccessibilityAction) ((s0.b) list.get(i10)).a).getId() != i7; i10++) {
         }
         boolean performAccessibilityAction = this.a.performAccessibilityAction(view, i7, bundle);
         if (performAccessibilityAction || i7 != R.id.accessibility_action_clickable_span || bundle == null) {

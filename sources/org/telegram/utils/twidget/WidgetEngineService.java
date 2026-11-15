@@ -17,12 +17,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class WidgetEngineService extends Service {
     public static volatile String b;
     public static String c;
-    public static final ExecutorService d = Executors.newSingleThreadExecutor(new h2.l0(6));
+    public static final ExecutorService d = Executors.newSingleThreadExecutor(new ai.x0(6));
     public final z a = new z(this);
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
@@ -46,7 +46,7 @@ public final class WidgetEngineService extends Service {
                 }
                 InputStream open = assetManager2.open("WidgetSandbox/manifest.txt");
                 try {
-                    ExecutorService executorService = a1.a;
+                    ExecutorService executorService = d1.a;
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     byte[] bArr = new byte[TLObject.FLAG_14];
                     while (true) {
@@ -224,7 +224,7 @@ public final class WidgetEngineService extends Service {
         return str.contains(":widgets");
     }
 
-    private static native int installSeccomp(boolean z9);
+    private static native int installSeccomp(boolean z10);
 
     @Override // android.app.Service
     public final IBinder onBind(Intent intent) {
@@ -239,7 +239,7 @@ public final class WidgetEngineService extends Service {
             throw new IllegalStateException("libtwidget is missing");
         }
         long uptimeMillis2 = SystemClock.uptimeMillis() - uptimeMillis;
-        installSeccomp(false);
+        installSeccomp(true);
         StringBuilder sb2 = new StringBuilder("engine up: ");
         sb2.append(Build.VERSION.SDK_INT >= 24 ? uptimeMillis - Process.getStartUptimeMillis() : -1L);
         sb2.append(" ms from fork to onCreate, library ");

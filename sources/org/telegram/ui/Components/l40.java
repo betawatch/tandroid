@@ -1,60 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import org.telegram.messenger.ImageReceiver;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l40 extends q40 {
-    public ImageReceiver a;
-    public float b;
-    public final /* synthetic */ n40 c;
+public final /* synthetic */ class l40 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q40 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l40(n40 n40Var, Context context) {
-        super(context);
-        this.c = n40Var;
-        setWillNotDraw(false);
+    public /* synthetic */ l40(q40 q40Var, int i7) {
+        this.a = i7;
+        this.b = q40Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        n40 n40Var = this.c;
-        FrameLayout frameLayout = n40Var.x;
-        fk0 fk0Var = n40Var.w;
-        k40 k40Var = n40Var.y;
-        super.dispatchDraw(canvas);
-        if (this.a == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        zi.u0 u0Var;
+        int i7 = this.a;
+        q40 q40Var = this.b;
+        switch (i7) {
+            case 0:
+                zi.u0 u0Var2 = q40Var.R;
+                if (u0Var2 != null && u0Var2.a == 3) {
+                    long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
+                    long j3 = q40Var.H0;
+                    if (j3 == 0 || elapsedRealtimeNanos - j3 >= 70000000) {
+                        q40Var.F();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                int i10 = q40.M0;
+                q40Var.u();
+                break;
+            default:
+                int i11 = q40.M0;
+                zi.v0 v0Var = q40Var.P;
+                if (v0Var != null && (u0Var = q40Var.R) != null) {
+                    if (u0Var.a != 3) {
+                        if (u0Var.e) {
+                            v0Var.p();
+                            break;
+                        }
+                    } else {
+                        q40Var.y();
+                        break;
+                    }
+                }
+                break;
         }
-        float f10 = this.b;
-        if (f10 < 1.0f) {
-            this.b = Math.min(1.0f, f10 + 0.064f);
-            invalidate();
-        }
-        canvas.save();
-        canvas.translate(k40Var.getLeft() + frameLayout.getLeft() + fk0Var.getLeft(), k40Var.getTop() + frameLayout.getTop() + fk0Var.getTop());
-        if (this.a.M0 != k40Var.getWidth()) {
-            float width = k40Var.getWidth() / this.a.M0;
-            canvas.scale(width, width);
-        }
-        ImageReceiver imageReceiver = this.a;
-        canvas.translate(-imageReceiver.K0, -imageReceiver.L0);
-        float alpha = this.a.getAlpha();
-        this.a.setAlpha(this.b);
-        this.a.h(canvas, null);
-        this.a.setAlpha(alpha);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.q40
-    public final void setImageReceiver(ImageReceiver imageReceiver) {
-        if (this.a == null) {
-            this.b = 0.0f;
-        }
-        this.a = imageReceiver;
-        invalidate();
     }
 }

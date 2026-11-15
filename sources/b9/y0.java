@@ -1,158 +1,60 @@
 package b9;
 
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import android.util.Log;
-import java.io.File;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.atomic.AtomicInteger;
-import m.q3;
+import a8.j8;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class y0 extends q6.h {
-    public final ExecutorService F;
-    public final cb.c G;
-    public final cb.c H;
-    public final cb.c I;
-    public final cb.c J;
-    public final cb.c K;
-    public final cb.c L;
-    public final cb.c M;
-    public final cb.c N;
-    public final cb.c O;
-    public final cb.c P;
-    public final z0 Q;
+public final class y0 extends a {
+    public h0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y0(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, q3 q3Var) {
-        super(context, looper, 14, q3Var, kVar, lVar, 0);
-        ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
-        z0 a10 = z0.a(context);
-        this.G = new cb.c(10);
-        this.H = new cb.c(10);
-        this.I = new cb.c(10);
-        this.J = new cb.c(10);
-        this.K = new cb.c(10);
-        this.L = new cb.c(10);
-        this.M = new cb.c(10);
-        this.N = new cb.c(10);
-        this.O = new cb.c(10);
-        this.P = new cb.c(10);
-        q6.m.g(unconfigurableExecutorService);
-        this.F = unconfigurableExecutorService;
-        this.Q = a10;
-        File file = new File(new File(context.getFilesDir(), "wearos_assets"), "streamtmp");
-        file.mkdirs();
-        File[] listFiles = file.listFiles();
-        if (listFiles != null) {
-            for (File file2 : listFiles) {
-                file2.delete();
-            }
+    @Override // b9.a, b9.d0
+    public final void P(u0 u0Var) {
+        String str;
+        int i7 = u0Var.a;
+        switch (i7) {
+            case 4000:
+                str = "TARGET_NODE_NOT_CONNECTED";
+                break;
+            case 4001:
+                str = "DUPLICATE_LISTENER";
+                break;
+            case 4002:
+                str = "UNKNOWN_LISTENER";
+                break;
+            case 4003:
+                str = "DATA_ITEM_TOO_LARGE";
+                break;
+            case 4004:
+                str = "INVALID_TARGET_NODE";
+                break;
+            case 4005:
+                str = "ASSET_UNAVAILABLE";
+                break;
+            case 4006:
+                str = "DUPLICATE_CAPABILITY";
+                break;
+            case 4007:
+                str = "UNKNOWN_CAPABILITY";
+                break;
+            case 4008:
+                str = "WIFI_CREDENTIAL_SYNC_NO_CREDENTIAL_FETCHED";
+                break;
+            case 4009:
+                str = "UNSUPPORTED_BY_TARGET";
+                break;
+            case 4010:
+                str = "ACCOUNT_KEY_CREATION_FAILED";
+                break;
+            default:
+                str = j8.a(i7);
+                break;
         }
-    }
-
-    @Override // q6.d, com.google.android.gms.common.api.c
-    public final boolean c() {
-        return !this.Q.b();
-    }
-
-    @Override // q6.d, com.google.android.gms.common.api.c
-    public final int d() {
-        return 8600000;
-    }
-
-    @Override // q6.d, com.google.android.gms.common.api.c
-    public final void h(q6.b bVar) {
-        q6.c0 c0Var = this.k;
-        AtomicInteger atomicInteger = this.C;
-        Context context = this.h;
-        if (!c()) {
-            try {
-                Bundle bundle = context.getPackageManager().getApplicationInfo("com.google.android.wearable.app.cn", 128).metaData;
-                int i7 = bundle != null ? bundle.getInt("com.google.android.wearable.api.version", 0) : 0;
-                if (i7 < 8600000) {
-                    Log.w("WearableClient", "The Wear OS app is out of date. Requires API version 8600000 but found " + i7);
-                    Intent intent = new Intent("com.google.android.wearable.app.cn.UPDATE_ANDROID_WEAR").setPackage("com.google.android.wearable.app.cn");
-                    if (context.getPackageManager().resolveActivity(intent, 65536) == null) {
-                        intent = new Intent("android.intent.action.VIEW", Uri.parse("market://details").buildUpon().appendQueryParameter("id", "com.google.android.wearable.app.cn").build());
-                    }
-                    PendingIntent activity = PendingIntent.getActivity(context, 0, intent, i8.b.a);
-                    q6.m.h(bVar, "Connection progress callbacks cannot be null.");
-                    this.o = bVar;
-                    c0Var.sendMessage(c0Var.obtainMessage(3, atomicInteger.get(), 6, activity));
-                    return;
-                }
-            } catch (PackageManager.NameNotFoundException unused) {
-                q6.m.h(bVar, "Connection progress callbacks cannot be null.");
-                this.o = bVar;
-                c0Var.sendMessage(c0Var.obtainMessage(3, atomicInteger.get(), 16, null));
-                return;
-            }
+        i0 i0Var = new i0(new Status(i7, str, null, null), u0Var.b);
+        h0 h0Var = this.b;
+        if (h0Var != null) {
+            h0Var.a(i0Var);
+            this.b = null;
         }
-        super.h(bVar);
-    }
-
-    @Override // q6.d
-    public final IInterface i(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.wearable.internal.IWearableService");
-        return queryLocalInterface instanceof f0 ? (f0) queryLocalInterface : new f0(iBinder, "com.google.android.gms.wearable.internal.IWearableService", 6);
-    }
-
-    @Override // q6.d
-    public final n6.c[] k() {
-        return a9.c.b;
-    }
-
-    @Override // q6.d
-    public final String o() {
-        return "com.google.android.gms.wearable.internal.IWearableService";
-    }
-
-    @Override // q6.d
-    public final String p() {
-        return "com.google.android.gms.wearable.BIND";
-    }
-
-    @Override // q6.d
-    public final String q() {
-        return this.Q.b() ? "com.google.android.wearable.app.cn" : "com.google.android.gms";
-    }
-
-    @Override // q6.d
-    public final void w(int i7, IBinder iBinder, Bundle bundle, int i10) {
-        if (Log.isLoggable("WearableClient", 2)) {
-            Log.v("WearableClient", "onPostInitHandler: statusCode " + i7);
-        }
-        if (i7 == 0) {
-            this.G.E(iBinder);
-            this.H.E(iBinder);
-            this.I.E(iBinder);
-            this.K.E(iBinder);
-            this.L.E(iBinder);
-            this.M.E(iBinder);
-            this.N.E(iBinder);
-            this.O.E(iBinder);
-            this.P.E(iBinder);
-            this.J.E(iBinder);
-            i7 = 0;
-        }
-        super.w(i7, iBinder, bundle, i10);
-    }
-
-    @Override // q6.d
-    public final boolean x() {
-        return true;
     }
 }

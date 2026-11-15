@@ -89,15 +89,15 @@ public final class r extends b implements Collection {
     public final boolean removeAll(java.util.Collection collection) {
         collection.getClass();
         Object it = iterator();
-        boolean z9 = false;
+        boolean z10 = false;
         while (true) {
             a aVar = (a) it;
             if (!aVar.hasNext()) {
-                return z9;
+                return z10;
             }
             if (collection.contains(((h) it).next())) {
                 aVar.remove();
-                z9 = true;
+                z10 = true;
             }
         }
     }
@@ -107,7 +107,7 @@ public final class r extends b implements Collection {
         ConcurrentHashMap concurrentHashMap = this.a;
         predicate.getClass();
         k[] kVarArr = concurrentHashMap.a;
-        boolean z9 = false;
+        boolean z10 = false;
         if (kVarArr != null) {
             o oVar = new o(kVarArr, kVarArr.length, 0, kVarArr.length);
             while (true) {
@@ -118,11 +118,11 @@ public final class r extends b implements Collection {
                 Object obj = a10.b;
                 Object obj2 = a10.c;
                 if (predicate.test(obj2) && concurrentHashMap.g(obj, null, obj2) != null) {
-                    z9 = true;
+                    z10 = true;
                 }
             }
         }
-        return z9;
+        return z10;
     }
 
     @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection

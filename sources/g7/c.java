@@ -1,25 +1,17 @@
 package g7;
 
-import java.util.ArrayList;
+import f5.k;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c {
-    public final ArrayList a;
+    public static final c b;
+    public final k a = new k(1);
 
-    public wf.e a(int i7) {
-        return (wf.e) this.a.get(i7);
-    }
-
-    public c() {
-        this.a = new ArrayList();
-        new ArrayList();
-        new ArrayList();
-    }
-
-    public c(wf.e eVar) {
-        ArrayList arrayList = new ArrayList(1);
-        this.a = arrayList;
-        arrayList.add(eVar);
+    static {
+        c cVar = new c();
+        synchronized (c.class) {
+            b = cVar;
+        }
     }
 }

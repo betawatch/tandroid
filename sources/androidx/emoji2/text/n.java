@@ -1,120 +1,122 @@
 package androidx.emoji2.text;
 
-import android.os.Trace;
-import android.util.SparseIntArray;
-import di.s7;
-import java.util.ArrayList;
-import m.f3;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.r5;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.e10;
-import org.telegram.ui.Components.voip.e2;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.s2;
+import a8.b8;
+import a8.u6;
+import android.content.Context;
+import android.os.Build;
+import android.os.CancellationSignal;
+import c8.v0;
+import e2.s0;
+import h2.l0;
+import java.util.concurrent.Executor;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import org.telegram.messenger.lt;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class n implements Runnable {
-    public static final /* synthetic */ n b = new n(1);
-    public final /* synthetic */ int a;
+public final class n implements k, u2.k {
+    public final Context a;
 
-    public /* synthetic */ n(int i7) {
-        this.a = i7;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = 2;
-        boolean z9 = true;
-        switch (this.a) {
-            case 0:
-                try {
-                    int i10 = n0.g.a;
-                    Trace.beginSection("EmojiCompat.EmojiCompatInitializer.run");
-                    if (l.j == null) {
-                        z9 = false;
-                    }
-                    if (z9) {
-                        l.a().c();
-                    }
-                    Trace.endSection();
-                    return;
-                } catch (Throwable th2) {
-                    int i11 = n0.g.a;
-                    Trace.endSection();
-                    throw th2;
-                }
+    public n(Context context, int i7) {
+        switch (i7) {
             case 1:
-                return;
+                context.getClass();
+                this.a = context;
+                break;
             case 2:
-                Math.abs(Utilities.b.nextInt() % 3);
-                e10[] e10VarArr = s7.a;
-                qs.f(p10.s0).k(2, 0);
-                g0.i3(s7.o, 1000L);
-                LaunchActivity.Q().getFragmentView();
-                return;
+                this.a = context;
+                break;
             case 3:
-                return;
-            case 4:
-                ArrayList arrayList = r5.j;
-                if (arrayList == null || arrayList.isEmpty()) {
-                    r5.j = null;
-                    return;
-                }
-                ArrayList arrayList2 = r5.j;
-                r5.j = null;
-                if (r5.k == null) {
-                    int max = Math.max(1, Runtime.getRuntime().availableProcessors());
-                    r5 r5Var = new r5();
-                    r5Var.a = new ArrayList(10);
-                    r5Var.b = new SparseIntArray();
-                    r5Var.c = new ArrayList(10);
-                    r5Var.i = new f3(r5Var, 4);
-                    r5Var.d = max;
-                    r5Var.f = Utilities.b.nextInt();
-                    r5.k = r5Var;
-                }
-                Utilities.e.c(new org.telegram.messenger.k(i7, arrayList2));
-                return;
-            case 5:
-                m6.j = false;
-                m6.m(false);
-                return;
-            case 6:
-                m6.k = false;
-                m6.m(true);
-                return;
-            case 7:
-                return;
-            case 8:
-                e2 e2Var = e2.T;
-                if (e2Var != null) {
-                    g0.r(e2Var.b.f.N);
-                    return;
-                }
-                return;
+                kotlin.jvm.internal.j.e(context, "context");
+                this.a = context;
+                break;
             default:
-                return;
+                this.a = context.getApplicationContext();
+                break;
         }
     }
 
-    public n(s2 s2Var) {
-        this.a = 7;
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0073, code lost:
+    
+        if (android.os.Build.VERSION.SDK_INT >= 26) goto L45;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x007a, code lost:
+    
+        if (android.os.Build.VERSION.SDK_INT >= 34) goto L45;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int d(e2.u uVar) {
+        String str = uVar.s;
+        if (str == null || !s0.k(str)) {
+            return i5.c.a(0, 0, 0, 0);
+        }
+        String str2 = uVar.s;
+        String str3 = l0.a;
+        str2.getClass();
+        switch (str2) {
+            case "image/jpeg":
+            case "image/webp":
+            case "image/bmp":
+            case "image/png":
+                return i5.c.a(4, 0, 0, 0);
+        }
+        return i5.c.a(1, 0, 0, 0);
     }
 
-    private final /* synthetic */ void a() {
+    @Override // u2.k
+    public u2.l F(b8 b8Var) {
+        Context context;
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 < 31 && ((context = this.a) == null || i7 < 28 || !context.getPackageManager().hasSystemFeature("com.amazon.hardware.tv_screen"))) {
+            return new w7.s(25).F(b8Var);
+        }
+        int h = s0.h(((e2.u) b8Var.c).s);
+        h2.a.g("DMCodecAdapterFactory", "Creating an asynchronous MediaCodec adapter for track type " + l0.I(h));
+        androidx.activity.n nVar = new androidx.activity.n(new u2.b(h, 0), new u2.b(h, 1));
+        nVar.b = true;
+        return nVar.F(b8Var);
     }
 
-    private final void b() {
+    @Override // androidx.emoji2.text.k
+    public void a(u6 u6Var) {
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new a("EmojiCompatInitializer", 0));
+        threadPoolExecutor.allowCoreThreadTimeOut(true);
+        threadPoolExecutor.execute(new aa.r(this, u6Var, threadPoolExecutor, 5));
     }
 
-    private final void c() {
+    public Object b(Context context, v0.e eVar, lt ltVar) {
+        zd.m mVar = new zd.m(1, v0.b(ltVar));
+        mVar.s();
+        CancellationSignal cancellationSignal = new CancellationSignal();
+        mVar.u(new be.q(cancellationSignal, 1));
+        u7.i iVar = new u7.i(mVar);
+        d3.b bVar = new d3.b(3);
+        kotlin.jvm.internal.j.e(context, "context");
+        v0.i b10 = o5.j.b(new o5.j(this.a), eVar);
+        if (b10 == null) {
+            iVar.a(new w0.c(1, "createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
+        } else if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
+            iVar.a(new w0.c(3, "createCredential is not supported on this device"));
+        } else {
+            b10.onCreateCredential(context, eVar, cancellationSignal, bVar, iVar);
+        }
+        Object r10 = mVar.r();
+        jd.a aVar = jd.a.a;
+        return r10;
     }
 
-    private final void d() {
+    public void c(Context context, v0.m mVar, CancellationSignal cancellationSignal, Executor executor, v0.g gVar) {
+        kotlin.jvm.internal.j.e(executor, "executor");
+        v0.i b10 = o5.j.b(new o5.j(context), mVar);
+        if (b10 == null) {
+            gVar.a(new w0.h(1, "getCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
+        } else {
+            b10.onGetCredential(context, mVar, cancellationSignal, executor, gVar);
+        }
     }
 }

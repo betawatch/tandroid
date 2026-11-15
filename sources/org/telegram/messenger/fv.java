@@ -1,48 +1,65 @@
 package org.telegram.messenger;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Region;
 import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class fv {
-    public float a;
-    public boolean b;
-    public float c;
-    public float d;
-    public float e;
-    public ValueAnimator f;
-    public final Path g = new Path();
+public final /* synthetic */ class fv implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ hv b;
+    public final /* synthetic */ iv c;
+    public final /* synthetic */ View d;
 
-    public final void a(Canvas canvas) {
-        if (this.a > 0.0f) {
-            Path path = this.g;
-            path.rewind();
-            path.addCircle(this.c, this.d, this.e * this.a, Path.Direction.CW);
-            canvas.clipPath(path, Region.Op.DIFFERENCE);
+    public /* synthetic */ fv(hv hvVar, View view, iv ivVar) {
+        this.b = hvVar;
+        this.d = view;
+        this.c = ivVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                hv hvVar = this.b;
+                hvVar.getClass();
+                View view = this.d;
+                if (view != null) {
+                    view.post(new fv(hvVar, this.c, view));
+                    break;
+                }
+                break;
+            default:
+                hv hvVar2 = this.b;
+                iv ivVar = this.c;
+                if (ivVar != null) {
+                    hvVar2.getClass();
+                    gj gjVar = ivVar.b;
+                    if (gjVar != null) {
+                        gjVar.N0 = true;
+                    }
+                    ArrayList arrayList = ivVar.n;
+                    int size = arrayList.size();
+                    int i7 = 0;
+                    while (i7 < size) {
+                        Object obj = arrayList.get(i7);
+                        i7++;
+                        org.telegram.ui.Cells.s9 s9Var = (org.telegram.ui.Cells.s9) obj;
+                        if (s9Var instanceof hv) {
+                            ((hv) s9Var).x.clear();
+                        }
+                    }
+                } else {
+                    hvVar2.x.clear();
+                }
+                this.d.invalidate();
+                break;
         }
     }
 
-    public final boolean b() {
-        return this.b && this.a >= 1.0f;
-    }
-
-    public final void c(View view, float f10, float f11, float f12, float f13) {
-        if (this.b || this.f != null) {
-            return;
-        }
-        this.c = f10;
-        this.d = f11;
-        this.e = (float) Math.sqrt((f13 * f13) + (f12 * f12));
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.f = ofFloat;
-        ofFloat.setDuration((long) Utilities.i(this.e * 0.3f, 550.0f, 250.0f));
-        this.f.setInterpolator(org.telegram.ui.Components.wq.j);
-        this.f.addUpdateListener(new q(2, this, view));
-        this.f.addListener(new ah.l(12, this, view));
-        this.f.start();
+    public /* synthetic */ fv(hv hvVar, iv ivVar, View view) {
+        this.b = hvVar;
+        this.c = ivVar;
+        this.d = view;
     }
 }

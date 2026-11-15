@@ -1,58 +1,81 @@
 package bi;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import org.telegram.ui.Components.w70;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.i20;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class q0 extends LinearLayout {
-    public final ImageView a;
-    public final w70 b;
-    public final w70 c;
+public final class q0 extends i2 {
+    public final /* synthetic */ t0 A0;
+    public final RectF x0;
+    public final RectF y0;
+    public final Path z0;
 
-    public q0(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        setOrientation(0);
-        setPadding(org.telegram.messenger.g0.L(i7 == 1 ? 11.0f : 32.0f), 0, org.telegram.messenger.g0.L(i7 == 1 ? 11.0f : 32.0f), org.telegram.messenger.g0.L(i7 == 1 ? 8.0f : 12.0f));
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        int i10 = org.telegram.ui.ActionBar.m6.G6;
-        org.telegram.ui.ActionBar.t6.s(imageView, i10, null, PorterDuff.Mode.SRC_IN);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, c8.ha.t(24, 24, 51, 0, 6, 16, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        w70 w70Var = new w70(context, null);
-        this.b = w70Var;
-        w70Var.setTypeface(org.telegram.messenger.g0.o());
-        w70Var.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.t6.U(w70Var, i10, h6Var);
-        int i11 = org.telegram.ui.ActionBar.m6.Uc;
-        org.telegram.ui.ActionBar.t6.G(w70Var, i11, h6Var);
-        linearLayout.addView(w70Var, c8.ha.t(-1, -2, 7, 0, 0, 0, 3));
-        w70 w70Var2 = new w70(context, null);
-        this.c = w70Var2;
-        w70Var2.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.t6.U(w70Var2, org.telegram.ui.ActionBar.m6.z6, h6Var);
-        org.telegram.ui.ActionBar.t6.G(w70Var2, i11, h6Var);
-        linearLayout.addView(w70Var2, c8.ha.r(-1, -2, 7));
-        addView(linearLayout, c8.ha.q(-1, -2, 1.0f, 55, 0, 0, 0, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q0(t0 t0Var, Context context, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(i7, context, e6Var);
+        this.A0 = t0Var;
+        this.x0 = new RectF();
+        this.y0 = new RectF();
+        this.z0 = new Path();
     }
 
-    public final void a(int i7, CharSequence charSequence, CharSequence charSequence2) {
-        this.a.setImageResource(i7);
-        this.b.setText(charSequence);
-        this.c.setText(charSequence2);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    public void setSubtitle(CharSequence charSequence) {
-        this.c.setText(charSequence);
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        t0 t0Var = this.A0;
+        o0 o0Var = t0Var.W1;
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        FrameLayout frameLayout = this.d;
+        if (view == frameLayout) {
+            FrameLayout frameLayout2 = o0Var.b;
+            n0 n0Var = t0Var.U1;
+            RectF rectF = this.x0;
+            if (!jh.k.c(frameLayout2, n0Var, rectF)) {
+                return true;
+            }
+            RectF rectF2 = this.y0;
+            if (!jh.k.c(frameLayout, this, rectF2)) {
+                return true;
+            }
+            float centerX = rectF2.centerX() - org.telegram.messenger.g0.L(40.0f);
+            float centerY = rectF2.centerY() - org.telegram.messenger.g0.L(40.0f);
+            if (!rectF.isEmpty()) {
+                canvas.save();
+                canvas.clipPath(this.z0);
+                canvas.scale(0.6f, 0.6f, rectF2.centerX(), rectF2.centerY());
+                i20.j(o0Var.getHeight(), 2.0f, rectF2.centerY(), rectF2.centerX() - (o0Var.getWidth() / 2.0f), canvas);
+                o0Var.b(o0Var.getWidth() / 2.0f, org.telegram.messenger.g0.L(104.0f), o0Var.getWidth(), o0Var.getHeight(), canvas);
+                o0Var.c(o0Var.getWidth() / 2.0f, org.telegram.messenger.g0.L(104.0f), o0Var.getWidth(), o0Var.getHeight(), canvas);
+                canvas.restore();
+                canvas.save();
+                canvas.translate(centerX, centerY);
+                canvas.scale(org.telegram.messenger.g0.L(80.0f) / rectF.width(), org.telegram.messenger.g0.L(80.0f) / rectF.height());
+                o0Var.b.draw(canvas);
+                canvas.restore();
+            }
+        }
+        return drawChild;
     }
 
-    public void setTitle(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // android.view.View
+    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
+        super.onSizeChanged(i7, i10, i11, i12);
+        Path path = this.z0;
+        path.rewind();
+        RectF rectF = this.x0;
+        rectF.set(0.0f, 0.0f, i7, i10);
+        rectF.inset(org.telegram.messenger.g0.L(3.33f), org.telegram.messenger.g0.L(4.0f));
+        path.addRoundRect(rectF, org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(11.0f), Path.Direction.CW);
     }
 }

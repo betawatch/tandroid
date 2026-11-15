@@ -1,10 +1,10 @@
 package k2;
 
-import a8.ia;
+import a8.ja;
 import java.util.ArrayDeque;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class l implements e {
     public final k a;
@@ -40,16 +40,16 @@ public abstract class l implements e {
 
     @Override // k2.e
     public final void a(long j3) {
-        boolean z9;
+        boolean z10;
         synchronized (this.b) {
             try {
                 if (this.g != this.e.length && !this.k) {
-                    z9 = false;
-                    ia.p(z9);
+                    z10 = false;
+                    ja.p(z10);
                     this.n = j3;
                 }
-                z9 = true;
-                ia.p(z9);
+                z10 = true;
+                ja.p(z10);
                 this.n = j3;
             } catch (Throwable th2) {
                 throw th2;
@@ -66,7 +66,7 @@ public abstract class l implements e {
                 if (fVar != null) {
                     throw fVar;
                 }
-                ia.p(this.i == null);
+                ja.p(this.i == null);
                 int i7 = this.g;
                 if (i7 == 0) {
                     hVar = null;
@@ -122,7 +122,7 @@ public abstract class l implements e {
 
     public abstract f h(Throwable th2);
 
-    public abstract f i(h hVar, j jVar, boolean z9);
+    public abstract f i(h hVar, j jVar, boolean z10);
 
     public final boolean j() {
         f h;
@@ -144,7 +144,7 @@ public abstract class l implements e {
             int i7 = this.h - 1;
             this.h = i7;
             j jVar = jVarArr[i7];
-            boolean z9 = this.k;
+            boolean z10 = this.k;
             this.k = false;
             if (hVar.isEndOfStream()) {
                 jVar.addFlag(4);
@@ -157,7 +157,7 @@ public abstract class l implements e {
                     jVar.shouldBeSkipped = true;
                 }
                 try {
-                    h = i(hVar, jVar, z9);
+                    h = i(hVar, jVar, z10);
                 } catch (OutOfMemoryError e10) {
                     h = h(e10);
                 } catch (RuntimeException e11) {
@@ -214,12 +214,12 @@ public abstract class l implements e {
     }
 
     public final boolean l(long j3) {
-        boolean z9;
+        boolean z10;
         synchronized (this.b) {
             long j10 = this.n;
-            z9 = j10 == -9223372036854775807L || j3 >= j10;
+            z10 = j10 == -9223372036854775807L || j3 >= j10;
         }
-        return z9;
+        return z10;
     }
 
     @Override // k2.e
@@ -231,7 +231,7 @@ public abstract class l implements e {
                 if (fVar != null) {
                     throw fVar;
                 }
-                ia.f(hVar == this.i);
+                ja.f(hVar == this.i);
                 this.c.addLast(hVar);
                 if (!this.c.isEmpty() && this.h > 0) {
                     this.b.notify();
@@ -259,7 +259,7 @@ public abstract class l implements e {
     public final void o(int i7) {
         int i10 = this.g;
         h[] hVarArr = this.e;
-        ia.p(i10 == hVarArr.length);
+        ja.p(i10 == hVarArr.length);
         for (h hVar : hVarArr) {
             hVar.b(i7);
         }

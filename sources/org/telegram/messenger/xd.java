@@ -1,48 +1,54 @@
 package org.telegram.messenger;
 
-import android.media.AudioRecord;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xd implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaController b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ xd(MediaController mediaController, boolean z9, int i7) {
-        this.a = i7;
+    public /* synthetic */ xd(MediaController mediaController, int i7, int i10) {
+        this.a = i10;
         this.b = mediaController;
-        this.c = z9;
+        this.c = i7;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        int i10 = this.c;
+        MediaController mediaController = this.b;
+        switch (i7) {
             case 0:
-                MediaController mediaController = this.b;
-                p5 p5Var = mediaController.M1;
-                if (mediaController.f1 != null && mediaController.j1 != null) {
-                    boolean z9 = mediaController.d1;
-                    mediaController.d1 = !z9;
-                    if (!z9) {
-                        AudioRecord audioRecord = mediaController.e1;
-                        if (audioRecord != null) {
-                            mediaController.B1 = 4;
-                            audioRecord.stop();
-                            mediaController.e1.release();
-                            mediaController.e1 = null;
-                            p5Var.c(new xd(mediaController, this.c, 1));
-                            break;
-                        }
-                    } else {
-                        p5Var.a(mediaController.O1);
-                        p5Var.c(new vd(mediaController, 6));
-                        break;
-                    }
-                }
+                ns.f(mediaController.i1).k(ns.n2, Integer.valueOf(mediaController.h1), Integer.valueOf(i10 == 2 ? 1 : 0));
                 break;
             default:
-                MediaController.a(this.b, this.c);
+                if (i10 == -1) {
+                    if (mediaController.I(mediaController.v0) && !mediaController.H()) {
+                        mediaController.R(mediaController.v0, true);
+                    }
+                    mediaController.V = 0;
+                    mediaController.Y = 0;
+                } else if (i10 == 1) {
+                    mediaController.Y = 2;
+                    if (mediaController.Z) {
+                        mediaController.Z = false;
+                        if (mediaController.I(mediaController.v0) && mediaController.H()) {
+                            mediaController.S(mediaController.v0);
+                        }
+                    }
+                } else if (i10 == -3) {
+                    mediaController.Y = 1;
+                } else if (i10 == -2) {
+                    mediaController.Y = 0;
+                    if (mediaController.I(mediaController.v0) && !mediaController.H()) {
+                        mediaController.R(mediaController.v0, true);
+                        mediaController.Z = true;
+                    }
+                } else {
+                    String[] strArr = MediaController.W1;
+                }
+                mediaController.n0();
                 break;
         }
     }

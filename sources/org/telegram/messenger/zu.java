@@ -4,174 +4,188 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.text.Layout;
 import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.text.style.CharacterStyle;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class zu extends fu {
-    public final jv W;
-    public final jv[] X;
-    public final boolean Y;
-    public int Z;
-    public int a0;
-    public int b0;
+public abstract class zu extends cu {
+    public final hv X;
+    public final hv Y;
+    public final hv[] Z;
+    public final boolean a0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zu(kv kvVar, Rect rect, int i7, SpannableStringBuilder spannableStringBuilder) {
-        super(kvVar, rect, i7);
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-        this.b0 = -1;
-        Layout.Alignment alignment2 = Layout.Alignment.ALIGN_CENTER;
-        this.Y = false;
-        jv jvVar = new jv(kvVar, spannableStringBuilder, this.c, alignment);
-        this.W = jvVar;
-        this.X = new jv[]{jvVar};
+    public zu(iv ivVar, Rect rect, int i7, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2, Layout.Alignment alignment) {
+        super(ivVar, rect, i7);
+        this.a0 = alignment == Layout.Alignment.ALIGN_CENTER;
+        hv hvVar = new hv(ivVar, spannableStringBuilder, this.c, alignment);
+        this.X = hvVar;
+        hv hvVar2 = !TextUtils.isEmpty(spannableStringBuilder2) ? new hv(ivVar, spannableStringBuilder2, this.c, alignment) : null;
+        this.Y = hvVar2;
+        this.Z = hvVar2 == null ? new hv[]{hvVar} : new hv[]{hvVar, hvVar2};
     }
 
-    @Override // org.telegram.messenger.fu
-    public final int H() {
+    @Override // org.telegram.messenger.cu
+    public final int I() {
+        Rect rect = this.b;
+        int i02 = i0() + this.X.b.getHeight() + rect.top;
+        hv hvVar = this.Y;
+        return i02 + (hvVar != null ? hvVar.b.getHeight() : 0) + rect.bottom;
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final int J() {
+        hv hvVar = this.Y;
+        if (hvVar == null) {
+            hvVar = this.X;
+        }
+        Rect rect = this.b;
+        return hvVar.q() + rect.left + rect.right;
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final int K() {
+        Rect rect = this.b;
+        int i7 = rect.left;
+        int r10 = this.X.r();
+        hv hvVar = this.Y;
+        return Math.max(r10, hvVar != null ? hvVar.r() : 0) + i7 + rect.right;
+    }
+
+    @Override // org.telegram.messenger.cu
+    public final org.telegram.ui.Cells.s9[] L() {
         return this.Z;
     }
 
-    @Override // org.telegram.messenger.fu
-    public int I() {
-        Rect rect = this.b;
-        return this.W.b.getHeight() + rect.top + this.Z + this.a0 + rect.bottom;
-    }
-
-    @Override // org.telegram.messenger.fu
-    public final int J() {
-        Rect rect = this.b;
-        return this.W.q() + rect.left + rect.right;
-    }
-
-    @Override // org.telegram.messenger.fu
-    public final int K() {
-        Rect rect = this.b;
-        return this.W.r() + rect.left + rect.right;
-    }
-
-    @Override // org.telegram.messenger.fu
-    public final org.telegram.ui.Cells.t9[] L() {
-        return this.X;
-    }
-
-    @Override // org.telegram.messenger.fu
+    @Override // org.telegram.messenger.cu
     public final void T() {
-        this.W.i(this.V);
+        this.X.i(this.W);
+        hv hvVar = this.Y;
+        if (hvVar != null) {
+            hvVar.i(this.W);
+        }
     }
 
-    @Override // org.telegram.messenger.fu
+    @Override // org.telegram.messenger.cu
     public final void V() {
-        this.W.f(this.V);
-    }
-
-    @Override // org.telegram.messenger.fu
-    public void W(Canvas canvas) {
-        canvas.save();
-        canvas.translate(0.0f, this.Z);
-        int i02 = i0();
-        jv jvVar = this.W;
-        if (i02 != 0) {
-            jvVar.c = (this.b.left + i02) - jvVar.f;
-            canvas.save();
-            canvas.translate(i02, 0.0f);
-            jvVar.d(canvas, jvVar.S);
-            canvas.restore();
-        } else {
-            jvVar.d(canvas, jvVar.S);
+        this.X.f(this.W);
+        hv hvVar = this.Y;
+        if (hvVar != null) {
+            hvVar.f(this.W);
         }
-        canvas.restore();
     }
 
-    @Override // org.telegram.messenger.fu
-    public final void X(Canvas canvas, int i7, float f10) {
+    @Override // org.telegram.messenger.cu
+    public final void W(Canvas canvas) {
         canvas.save();
-        canvas.translate(0.0f, this.Z);
-        int i02 = i0();
-        jv jvVar = this.W;
-        if (i02 != 0) {
-            jvVar.c = (this.b.left + i02) - jvVar.f;
-            canvas.save();
-            canvas.translate(i02, 0.0f);
-            jvVar.m(canvas, i7, f10);
-            canvas.restore();
-        } else {
-            jvVar.m(canvas, i7, f10);
-        }
+        hv hvVar = this.X;
+        canvas.translate(j0(hvVar), 0.0f);
+        hvVar.d(canvas, hvVar.T);
         canvas.restore();
+        hv hvVar2 = this.Y;
+        if (hvVar2 != null) {
+            canvas.save();
+            canvas.translate(j0(hvVar2), i0() + hvVar.b.getHeight());
+            hvVar2.d(canvas, hvVar2.T);
+            canvas.restore();
+        }
     }
 
-    @Override // org.telegram.messenger.fu
-    public boolean Y(MotionEvent motionEvent) {
-        int i02 = i0();
-        motionEvent.offsetLocation(-i02, -this.Z);
-        boolean t6 = this.W.t(motionEvent);
-        motionEvent.offsetLocation(i02, this.Z);
+    @Override // org.telegram.messenger.cu
+    public final boolean Y(MotionEvent motionEvent) {
+        int i7;
+        hv hvVar = this.X;
+        int height = hvVar.b.getHeight();
+        float y10 = motionEvent.getY();
+        int i10 = 0;
+        if (y10 < 0.0f || y10 >= height) {
+            hvVar = this.Y;
+            if (hvVar == null || y10 < i0() + height) {
+                return false;
+            }
+            int j02 = j0(hvVar);
+            i10 = i0() + height;
+            i7 = j02;
+        } else {
+            i7 = j0(hvVar);
+        }
+        motionEvent.offsetLocation(-i7, -i10);
+        boolean t6 = hvVar.t(motionEvent);
+        motionEvent.offsetLocation(i7, i10);
         return t6;
     }
 
-    @Override // org.telegram.messenger.fu
+    @Override // org.telegram.messenger.cu
     public final void Z(int i7, int i10, int i11) {
-        super.Z(i7, i10 + this.Z, i11);
-        int i02 = i0();
-        if (i02 != 0) {
-            int i12 = i7 + i02;
-            jv jvVar = this.W;
-            jvVar.c = i12 - jvVar.f;
+        hv hvVar = this.X;
+        hvVar.c = (j0(hvVar) + i7) - hvVar.f;
+        hvVar.d = i10;
+        hvVar.e = i11;
+        hv hvVar2 = this.Y;
+        if (hvVar2 != null) {
+            hvVar2.c = (j0(hvVar2) + i7) - hvVar2.f;
+            hvVar2.d = i0() + hvVar.b.getHeight() + i10;
+            hvVar2.e = i11;
         }
     }
 
-    @Override // org.telegram.messenger.fu, org.telegram.ui.ug0
+    @Override // org.telegram.messenger.cu, org.telegram.ui.rg0
     public final Layout a() {
-        return this.W.b;
+        return this.X.b;
     }
 
     public final int i0() {
+        if (this.Y != null) {
+            return g0.L(2.0f);
+        }
+        return 0;
+    }
+
+    public final int j0(hv hvVar) {
         int L;
         int r10;
-        boolean z9 = this.Y;
+        boolean z10 = this.a0;
         Rect rect = this.b;
-        jv jvVar = this.W;
-        kv kvVar = this.a;
-        if (z9) {
-            L = (((kvVar.C + kvVar.T) - kvVar.S) - jvVar.r()) / 2;
+        iv ivVar = this.a;
+        if (z10) {
+            L = (((ivVar.C + ivVar.T) - ivVar.S) - hvVar.r()) / 2;
             r10 = rect.left;
         } else {
-            if (!kvVar.I()) {
+            if (!ivVar.I()) {
                 return 0;
             }
-            L = (((kvVar.C + kvVar.T) - g0.L(14.0f)) - rect.right) - rect.left;
-            r10 = jvVar.r();
+            L = (((ivVar.C + ivVar.T) - g0.L(14.0f)) - rect.right) - rect.left;
+            r10 = hvVar.r();
         }
         return L - r10;
     }
 
-    public final void j0(int i7, int i10) {
-        this.Z = i7;
-        this.a0 = i10;
-        g0();
-    }
-
-    @Override // org.telegram.messenger.fu
+    @Override // org.telegram.messenger.cu
     public final void k(SpannableStringBuilder spannableStringBuilder) {
-        fu.l(spannableStringBuilder, this.W, this.X);
+        cu.l(spannableStringBuilder, null, this.Z);
     }
 
-    @Override // org.telegram.messenger.fu
-    public final boolean u(CharacterStyle characterStyle, int i7, wt wtVar) {
-        if (!this.W.o(characterStyle, wtVar)) {
+    @Override // org.telegram.messenger.cu
+    public final boolean u(CharacterStyle characterStyle, int i7, tt ttVar) {
+        boolean o4 = this.X.o(characterStyle, ttVar);
+        Rect rect = this.b;
+        if (o4) {
+            ttVar.e = (j0(r0) + rect.left) - r0.f;
+            ttVar.f = i7 + rect.top;
+            return true;
+        }
+        hv hvVar = this.Y;
+        if (hvVar == null || !hvVar.o(characterStyle, ttVar)) {
             return false;
         }
-        Rect rect = this.b;
-        wtVar.e = (i0() + rect.left) - r0.f;
-        wtVar.f = i7 + rect.top + this.Z;
+        ttVar.e = (j0(hvVar) + rect.left) - hvVar.f;
+        ttVar.f = i0() + r0.b.getHeight() + i7 + rect.top;
         return true;
     }
 
-    @Override // org.telegram.messenger.fu
+    @Override // org.telegram.messenger.cu
     public final boolean v() {
-        return this.Y;
+        return this.a0;
     }
 }

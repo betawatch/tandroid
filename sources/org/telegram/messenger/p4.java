@@ -7,21 +7,21 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p4 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int a = 1;
     public final /* synthetic */ Object b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ c1 d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ p4(g5 g5Var, ArrayList arrayList, ArrayList arrayList2, boolean z9, String str) {
+    public /* synthetic */ p4(g5 g5Var, ArrayList arrayList, ArrayList arrayList2, boolean z10, String str) {
         this.d = g5Var;
         this.e = arrayList;
         this.f = arrayList2;
-        this.c = z9;
+        this.c = z10;
         this.b = str;
     }
 
@@ -36,46 +36,46 @@ public final /* synthetic */ class p4 implements RequestDelegate {
                 g5 g5Var = (g5) this.d;
                 ArrayList arrayList = (ArrayList) this.e;
                 ArrayList arrayList2 = (ArrayList) this.f;
-                boolean z9 = this.c;
+                boolean z10 = this.c;
                 String str = (String) this.b;
                 if (tL_error == null) {
                     g5Var.getMessagesController().O3((TLRPC.Updates) tLObject, false);
-                    yr messagesStorage = g5Var.getMessagesStorage();
+                    vr messagesStorage = g5Var.getMessagesStorage();
                     messagesStorage.getClass();
                     if (!arrayList.isEmpty()) {
-                        messagesStorage.a.c(new sp(messagesStorage, arrayList, i10));
+                        messagesStorage.a.c(new pp(messagesStorage, arrayList, i10));
                     }
                     Utilities.h.c(new w4(g5Var, arrayList2, i7));
                     while (i10 < arrayList2.size()) {
                         TLRPC.User user = (TLRPC.User) arrayList2.get(i10);
                         if (!TextUtils.isEmpty(user.phone)) {
                             g5Var.getMessagesStorage().f(user.phone, "");
-                            d5 d5Var = (d5) g5Var.Z.get(user.phone);
+                            d5 d5Var = (d5) g5Var.a0.get(user.phone);
                             if (d5Var != null && (indexOf = d5Var.g.indexOf(user.phone)) != -1) {
                                 d5Var.h.set(indexOf, 1);
                             }
                         }
                         i10++;
                     }
-                    g0.h3(new aa.d0(g5Var, arrayList2, z9, str, 11));
+                    g0.h3(new aa.c0(g5Var, arrayList2, z10, str, 11));
                     break;
                 }
                 break;
             case 1:
-                g0.h3(new gy(0, (gz) this.d, tLObject, (TLRPC.TL_messages_requestUrlAuth) this.e, (org.telegram.ui.cn) this.f, (String) this.b, this.c));
+                g0.h3(new ey(0, (ez) this.d, tLObject, (TLRPC.TL_messages_requestUrlAuth) this.e, (org.telegram.ui.an) this.f, (String) this.b, this.c));
                 break;
             default:
-                gz gzVar = (gz) this.d;
-                boolean z10 = this.c;
-                ij ijVar = (ij) this.e;
+                ez ezVar = (ez) this.d;
+                boolean z11 = this.c;
+                gj gjVar = (gj) this.e;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) this.f;
-                org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.b;
+                org.telegram.ui.ActionBar.e2 e2Var = (org.telegram.ui.ActionBar.e2) this.b;
                 if (tL_error != null) {
                     if (r8.r(tL_error.text)) {
                         String str2 = tL_error.text;
-                        ln lnVar = new ln(ijVar, gzVar, tL_messages_editMessage, f2Var, z10);
-                        gzVar = gzVar;
-                        if (ijVar != null && (tL_inputRichMessage = tL_messages_editMessage.rich_message) != null) {
+                        in inVar = new in(gjVar, ezVar, tL_messages_editMessage, e2Var, z11);
+                        ezVar = ezVar;
+                        if (gjVar != null && (tL_inputRichMessage = tL_messages_editMessage.rich_message) != null) {
                             ArrayList arrayList3 = new ArrayList(tL_inputRichMessage.documents.size() + tL_inputRichMessage.photos.size());
                             arrayList3.addAll(tL_inputRichMessage.photos);
                             arrayList3.addAll(tL_inputRichMessage.documents);
@@ -84,41 +84,41 @@ public final /* synthetic */ class p4 implements RequestDelegate {
                                 if (c10 < 0 || c10 >= arrayList3.size()) {
                                     c10 = 0;
                                 }
-                                gzVar.getFileRefController().u(new Object[]{arrayList3.get(c10), lnVar}, ijVar);
+                                ezVar.getFileRefController().u(new Object[]{arrayList3.get(c10), inVar}, gjVar);
                                 break;
                             }
                         }
                     }
-                    g0.h3(new zq(18, gzVar, ijVar));
-                    if (f2Var != null) {
-                        g0.h3(new tw(gzVar, tL_error, f2Var, tL_messages_editMessage, 1));
+                    g0.h3(new wq(18, ezVar, gjVar));
+                    if (e2Var != null) {
+                        g0.h3(new rw(ezVar, tL_error, e2Var, tL_messages_editMessage, 1));
                         break;
                     }
                 } else {
-                    if (z10 && ijVar != null) {
-                        ijVar.y2 = true;
+                    if (z11 && gjVar != null) {
+                        gjVar.A2 = true;
                     }
-                    gzVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
-                    g0.h3(new ds(gzVar, ijVar));
+                    ezVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    g0.h3(new as(ezVar, gjVar));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ p4(ij ijVar, gz gzVar, TLRPC.TL_messages_editMessage tL_messages_editMessage, org.telegram.ui.ActionBar.f2 f2Var, boolean z9) {
-        this.d = gzVar;
-        this.c = z9;
-        this.e = ijVar;
+    public /* synthetic */ p4(gj gjVar, ez ezVar, TLRPC.TL_messages_editMessage tL_messages_editMessage, org.telegram.ui.ActionBar.e2 e2Var, boolean z10) {
+        this.d = ezVar;
+        this.c = z10;
+        this.e = gjVar;
         this.f = tL_messages_editMessage;
-        this.b = f2Var;
+        this.b = e2Var;
     }
 
-    public /* synthetic */ p4(gz gzVar, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, org.telegram.ui.cn cnVar, String str, boolean z9) {
-        this.d = gzVar;
+    public /* synthetic */ p4(ez ezVar, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, org.telegram.ui.an anVar, String str, boolean z10) {
+        this.d = ezVar;
         this.e = tL_messages_requestUrlAuth;
-        this.f = cnVar;
+        this.f = anVar;
         this.b = str;
-        this.c = z9;
+        this.c = z10;
     }
 }

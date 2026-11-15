@@ -3,7 +3,7 @@ package p4;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class v {
     public final q4.r a;
@@ -12,7 +12,7 @@ public final class v {
     public final u d;
     public final Bundle e;
 
-    public v(q4.r rVar, int i7, int i10, boolean z9, u uVar, Bundle bundle) {
+    public v(q4.r rVar, int i7, int i10, boolean z10, u uVar, Bundle bundle) {
         this.a = rVar;
         this.b = i7;
         this.c = i10;

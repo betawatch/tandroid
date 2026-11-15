@@ -8,10 +8,10 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import bi.m6;
-import org.telegram.ui.Components.gp;
+import bi.x1;
+import org.telegram.ui.Components.fo;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class h extends Drawable {
     public final /* synthetic */ int a;
@@ -216,17 +216,17 @@ public abstract class h extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public void setFilterBitmap(boolean z9) {
+    public void setFilterBitmap(boolean z10) {
         switch (this.a) {
             case 0:
                 Drawable drawable = (Drawable) this.b;
                 if (drawable != null) {
-                    drawable.setFilterBitmap(z9);
+                    drawable.setFilterBitmap(z10);
                     break;
                 }
                 break;
             default:
-                super.setFilterBitmap(z9);
+                super.setFilterBitmap(z10);
                 break;
         }
     }
@@ -281,9 +281,9 @@ public abstract class h extends Drawable {
         this.a = 1;
         this.b = new Paint(1);
         if (view != null) {
-            view.addOnAttachStateChangeListener(new m6(this, 9));
+            view.addOnAttachStateChangeListener(new x1(this, 13));
             if (view.isAttachedToWindow()) {
-                view.post(new gp(this, 1));
+                view.post(new fo(this, 3));
             }
         }
     }

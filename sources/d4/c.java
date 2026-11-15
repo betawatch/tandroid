@@ -5,11 +5,11 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c extends j {
     public final int i;
@@ -28,10 +28,10 @@ public final class c extends j {
     public static final int[] z = {11, 1, 3, 12, 14, 5, 7, 9};
     public static final int[] A = {0, 4, 8, 12, 16, 20, 24, 28};
     public static final int[] B = {-1, -16711936, -16776961, -16711681, -65536, -256, -65281};
-    public static final int[] C = {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, qs.C3, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, TLRPC.LAYER, 93, qs.M3, qs.S3, qs.Z3, 97, 98, 99, 100, 101, qs.n1, qs.o1, qs.p1, qs.q1, qs.r1, qs.s1, qs.t1, qs.u1, qs.v1, qs.w1, qs.x1, qs.y1, qs.z1, qs.A1, qs.B1, qs.C1, qs.D1, qs.E1, 120, qs.F1, qs.G1, qs.H3, qs.W3, qs.m3, qs.Q3, 9632};
-    public static final int[] D = {qs.E2, qs.G2, qs.T2, qs.V2, 8482, qs.s2, qs.t2, 9834, qs.B3, 32, qs.I3, qs.D3, qs.J3, qs.N3, qs.T3, qs.a4};
-    public static final int[] E = {qs.X2, qs.f3, qs.o3, qs.v3, qs.x3, qs.b4, 8216, qs.r2, 42, 39, 8212, qs.z2, 8480, 8226, 8220, 8221, qs.W2, qs.Y2, qs.d3, qs.e3, qs.g3, 203, qs.K3, qs.k3, qs.l3, qs.O3, qs.p3, qs.u3, qs.Y3, qs.w3, qs.B2, qs.R2};
-    public static final int[] F = {qs.Z2, 227, qs.j3, qs.i3, qs.L3, qs.n3, qs.R3, qs.q3, qs.U3, qs.H1, qs.J1, 92, 94, 95, qs.I1, qs.K1, qs.a3, qs.E3, qs.r3, qs.V3, qs.A3, qs.v2, qs.u2, 9474, qs.b3, qs.F3, qs.t3, qs.X3, 9484, 9488, 9492, 9496};
+    public static final int[] C = {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, ns.C3, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, TLRPC.LAYER, 93, ns.M3, ns.S3, ns.Z3, 97, 98, 99, 100, 101, ns.n1, ns.o1, ns.p1, ns.q1, ns.r1, ns.s1, ns.t1, ns.u1, ns.v1, ns.w1, ns.x1, ns.y1, ns.z1, ns.A1, ns.B1, ns.C1, ns.D1, ns.E1, 120, ns.F1, ns.G1, ns.H3, ns.W3, ns.m3, ns.Q3, 9632};
+    public static final int[] D = {ns.E2, ns.G2, ns.T2, ns.V2, 8482, ns.s2, ns.t2, 9834, ns.B3, 32, ns.I3, ns.D3, ns.J3, ns.N3, ns.T3, ns.a4};
+    public static final int[] E = {ns.X2, ns.f3, ns.o3, ns.v3, ns.x3, ns.b4, 8216, ns.r2, 42, 39, 8212, ns.z2, 8480, 8226, 8220, 8221, ns.W2, ns.Y2, ns.d3, ns.e3, ns.g3, 203, ns.K3, ns.k3, ns.l3, ns.O3, ns.p3, ns.u3, ns.Y3, ns.w3, ns.B2, ns.R2};
+    public static final int[] F = {ns.Z2, 227, ns.j3, ns.i3, ns.L3, ns.n3, ns.R3, ns.q3, ns.U3, ns.H1, ns.J1, 92, 94, 95, ns.I1, ns.K1, ns.a3, ns.E3, ns.r3, ns.V3, ns.A3, ns.v2, ns.u2, 9474, ns.b3, ns.F3, ns.t3, ns.X3, 9484, 9488, 9492, 9496};
     public static final boolean[] G = {false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false};
     public final x h = new x();
     public final ArrayList m = new ArrayList();
@@ -69,7 +69,7 @@ public final class c extends j {
         List list = this.o;
         this.p = list;
         list.getClass();
-        return new d6.i(list, 16);
+        return new d6.i(list, 11);
     }
 
     @Override // d4.j, k2.e
@@ -97,19 +97,19 @@ public final class c extends j {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void g(h hVar) {
-        boolean z9;
+        boolean z10;
         ByteBuffer byteBuffer = hVar.c;
         byteBuffer.getClass();
         byte[] array = byteBuffer.array();
         int limit = byteBuffer.limit();
         x xVar = this.h;
         xVar.L(limit, array);
-        boolean z10 = false;
+        boolean z11 = false;
         while (true) {
             int a10 = xVar.a();
             int i7 = this.i;
             if (a10 < i7) {
-                if (z10) {
+                if (z11) {
                     int i10 = this.q;
                     if (i10 == 1 || i10 == 3) {
                         this.o = j();
@@ -124,16 +124,16 @@ public final class c extends j {
             int A3 = xVar.A();
             int A4 = xVar.A();
             if ((A2 & 2) == 0 && (A2 & 1) == this.j) {
-                byte b10 = (byte) (A3 & qs.L1);
-                byte b11 = (byte) (A4 & qs.L1);
+                byte b10 = (byte) (A3 & ns.L1);
+                byte b11 = (byte) (A4 & ns.L1);
                 if (b10 != 0 || b11 != 0) {
-                    boolean z11 = this.s;
+                    boolean z12 = this.s;
                     if ((A2 & 4) == 4) {
                         boolean[] zArr = G;
                         if (zArr[A3] && zArr[A4]) {
-                            z9 = true;
-                            this.s = z9;
-                            if (z9 || (b10 & 240) != 16) {
+                            z10 = true;
+                            this.s = z10;
+                            if (z10 || (b10 & 240) != 16) {
                                 this.t = false;
                             } else if (this.t && this.u == b10 && this.v == b11) {
                                 this.t = false;
@@ -142,7 +142,7 @@ public final class c extends j {
                                 this.u = b10;
                                 this.v = b11;
                             }
-                            if (!z9) {
+                            if (!z10) {
                                 if (1 <= b10 && b10 <= 15) {
                                     this.x = false;
                                 } else if ((b10 & 246) == 20) {
@@ -181,9 +181,9 @@ public final class c extends j {
                                                     this.n.a((char) ((b10 & 1) == 0 ? E[b11 & 31] : F[b11 & 31]));
                                                 } else if (i12 == 17 && (b11 & 240) == 32) {
                                                     this.n.a(' ');
-                                                    boolean z12 = (b11 & 1) == 1;
+                                                    boolean z13 = (b11 & 1) == 1;
                                                     b bVar = this.n;
-                                                    bVar.a.add(new a((b11 >> 1) & 7, z12, bVar.c.length()));
+                                                    bVar.a.add(new a((b11 >> 1) & 7, z13, bVar.c.length()));
                                                 } else if ((b10 & 240) == 16 && (b11 & 192) == 64) {
                                                     int i14 = z[b10 & 7];
                                                     if ((b11 & 32) != 0) {
@@ -198,12 +198,12 @@ public final class c extends j {
                                                         }
                                                         this.n.d = i14;
                                                     }
-                                                    boolean z13 = (b11 & 16) == 16;
-                                                    boolean z14 = (b11 & 1) == 1;
+                                                    boolean z14 = (b11 & 16) == 16;
+                                                    boolean z15 = (b11 & 1) == 1;
                                                     int i15 = (b11 >> 1) & 7;
                                                     b bVar4 = this.n;
-                                                    bVar4.a.add(new a(z13 ? 8 : i15, z14, bVar4.c.length()));
-                                                    if (z13) {
+                                                    bVar4.a.add(new a(z14 ? 8 : i15, z15, bVar4.c.length()));
+                                                    if (z14) {
                                                         this.n.e = A[i15];
                                                     }
                                                 } else if (i12 == 23 && b11 >= 33 && b11 <= 35) {
@@ -281,21 +281,21 @@ public final class c extends j {
                                                 this.n.a((char) iArr[(b11 & Byte.MAX_VALUE) - 32]);
                                             }
                                         }
-                                        z10 = true;
+                                        z11 = true;
                                     }
                                 }
-                            } else if (z11) {
+                            } else if (z12) {
                                 k();
-                                z10 = true;
+                                z11 = true;
                             }
                         }
                     }
-                    z9 = false;
-                    this.s = z9;
-                    if (z9) {
+                    z10 = false;
+                    this.s = z10;
+                    if (z10) {
                     }
                     this.t = false;
-                    if (!z9) {
+                    if (!z10) {
                     }
                 }
             }

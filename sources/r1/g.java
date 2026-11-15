@@ -4,11 +4,11 @@ import android.os.Looper;
 import android.util.AndroidRuntimeException;
 import android.view.Choreographer;
 import java.util.ArrayList;
-import org.telegram.ui.Components.b6;
-import org.telegram.ui.Components.xy0;
-import org.telegram.ui.ly0;
+import org.telegram.ui.Components.a6;
+import org.telegram.ui.Components.zy0;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g {
     public static final b o = new b(1);
@@ -80,7 +80,7 @@ public final class g {
         }
     }
 
-    public final void e(boolean z9) {
+    public final void e(boolean z10) {
         ArrayList arrayList;
         int i7 = 0;
         this.f = false;
@@ -104,7 +104,7 @@ public final class g {
                 break;
             }
             if (arrayList.get(i7) != null) {
-                ((c) arrayList.get(i7)).a(this, z9, this.b, this.a);
+                ((c) arrayList.get(i7)).a(this, z10, this.b, this.a);
             }
             i7++;
         }
@@ -161,8 +161,8 @@ public final class g {
         if (Looper.myLooper() != Looper.getMainLooper()) {
             throw new AndroidRuntimeException("Animations may only be started on the main thread");
         }
-        boolean z9 = this.f;
-        if (z9 || z9) {
+        boolean z10 = this.f;
+        if (z10 || z10) {
             return;
         }
         this.f = true;
@@ -181,10 +181,10 @@ public final class g {
         ArrayList arrayList = aVar.b;
         if (arrayList.size() == 0) {
             if (aVar.d == null) {
-                aVar.d = new ly0(aVar.c);
+                aVar.d = new ld0(aVar.c);
             }
-            ly0 ly0Var = aVar.d;
-            ((Choreographer) ly0Var.c).postFrameCallback((xy0) ly0Var.d);
+            ld0 ld0Var = aVar.d;
+            ((Choreographer) ld0Var.c).postFrameCallback((zy0) ld0Var.d);
         }
         if (arrayList.contains(this)) {
             return;
@@ -210,7 +210,7 @@ public final class g {
         this.k = new ArrayList();
         this.l = new ArrayList();
         this.d = null;
-        this.e = new b6(fVar, 1);
+        this.e = new a6(fVar, 1);
         this.j = 1.0f;
         this.m = null;
         this.n = Float.MAX_VALUE;

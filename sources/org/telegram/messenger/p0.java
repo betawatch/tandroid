@@ -8,78 +8,78 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.q61;
+import org.telegram.ui.ah0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p0 {
-    public final gf.g A;
-    public final gf.g B;
-    public final gf.g C;
-    public final h9.f1 D;
-    public final h9.f1 E;
-    public final g6.d0 F;
-    public final g6.d0 G;
-    public final g6.d0 H;
-    public final g6.d0 I;
-    public final g6.d0 J;
-    public final h9.f1 K;
-    public final g6.d0 L;
-    public final g6.d0 M;
-    public final g6.d0 N;
-    public final g6.d0 O;
-    public final g6.d0 P;
-    public final g6.d0 Q;
-    public final g6.d0 R;
-    public final g6.d0 S;
-    public final g6.d0 T;
-    public final gf.g U;
-    public final g6.d0 V;
-    public final g6.d0 W;
-    public final g6.d0 X;
-    public final g6.d0 Y;
-    public final g6.d0 Z;
+    public final hi.l0 A;
+    public final hi.l0 B;
+    public final hi.l0 C;
+    public final gc.b D;
+    public final gc.b E;
+    public final ia.d F;
+    public final ia.d G;
+    public final ia.d H;
+    public final ia.d I;
+    public final ia.d J;
+    public final gc.b K;
+    public final ia.d L;
+    public final ia.d M;
+    public final ia.d N;
+    public final ia.d O;
+    public final ia.d P;
+    public final ia.d Q;
+    public final ia.d R;
+    public final ia.d S;
+    public final ia.d T;
+    public final hi.l0 U;
+    public final ia.d V;
+    public final ia.d W;
+    public final ia.d X;
+    public final ia.d Y;
+    public final ia.d Z;
     public final HashMap a;
-    public final g6.d0 a0;
-    public final g6.d0 b;
-    public final g6.d0 b0;
-    public final g6.d0 c;
-    public final g6.d0 c0;
-    public final g6.d0 d;
-    public final g6.d0 d0;
-    public final g6.d0 e;
-    public final g6.d0 e0;
-    public final g6.d0 f;
-    public final gf.g f0;
-    public final gf.g g;
-    public final gf.g g0;
-    public final gf.g h;
-    public final gf.g h0;
-    public final h9.f1 i;
-    public final gf.g i0;
-    public final h9.f1 j;
-    public final gf.g j0;
-    public final h9.f1 k;
-    public final gf.g k0;
-    public final h9.f1 l;
-    public final gf.g l0;
-    public final gf.g m;
-    public final gf.g m0;
-    public final g6.d0 n;
-    public final h9.f1 n0;
-    public final g6.d0 o;
-    public final gf.g o0;
-    public final g6.d0 p;
-    public final g6.d0 q;
-    public final gf.g r;
-    public final gf.g s;
-    public final g6.d0 t;
-    public final g6.d0 u;
-    public final h9.f1 v;
-    public final h9.f1 w;
-    public final g6.d0 x;
-    public final g6.d0 y;
-    public final g6.d0 z;
+    public final ia.d a0;
+    public final ia.d b;
+    public final ia.d b0;
+    public final ia.d c;
+    public final ia.d c0;
+    public final ia.d d;
+    public final ia.d d0;
+    public final ia.d e;
+    public final ia.d e0;
+    public final ia.d f;
+    public final hi.l0 f0;
+    public final hi.l0 g;
+    public final hi.l0 g0;
+    public final hi.l0 h;
+    public final hi.l0 h0;
+    public final gc.b i;
+    public final hi.l0 i0;
+    public final gc.b j;
+    public final hi.l0 j0;
+    public final gc.b k;
+    public final hi.l0 k0;
+    public final gc.b l;
+    public final hi.l0 l0;
+    public final hi.l0 m;
+    public final hi.l0 m0;
+    public final ia.d n;
+    public final gc.b n0;
+    public final ia.d o;
+    public final hi.l0 o0;
+    public final ia.d p;
+    public final ia.d q;
+    public final hi.l0 r;
+    public final hi.l0 s;
+    public final ia.d t;
+    public final ia.d u;
+    public final gc.b v;
+    public final gc.b w;
+    public final ia.d x;
+    public final ia.d y;
+    public final ia.d z;
 
     public p0() {
         HashMap hashMap = new HashMap();
@@ -95,14 +95,14 @@ public final class p0 {
         this.i = g(86400L, "stars_suggested_post_age_min");
         this.j = g(300L, "stars_suggested_post_future_min");
         this.k = g(2678400L, "stars_suggested_post_future_max");
-        h9.f1 f1Var = new h9.f1(19);
-        hashMap.put("ton_usd_rate", (i0) f1Var.b);
-        this.l = f1Var;
+        gc.b bVar = new gc.b(25);
+        hashMap.put("ton_usd_rate", (i0) bVar.b);
+        this.l = bVar;
         f("stars_rating_learnmore_url", "https://telegram.org/blog/telegram-stars");
         this.m = c("need_age_video_verification", false);
         this.n = d(800, "stars_stargift_resale_commission_permille");
         this.o = d(800, "ton_stargift_resale_commission_permille");
-        this.p = d(qs.J1, "stars_stargift_resale_amount_min");
+        this.p = d(ns.J1, "stars_stargift_resale_amount_min");
         this.q = d(35000, "stars_stargift_resale_amount_max");
         this.r = e(10000000L, "ton_stargift_resale_amount_min");
         this.s = e(10000000000000L, "ton_stargift_resale_amount_max");
@@ -115,7 +115,7 @@ public final class p0 {
         this.x = d(128, "group_call_message_length_limit");
         this.y = d(128, "contact_note_length_limit");
         this.z = d(5, "passkeys_account_passkeys_max");
-        boolean z9 = r2.a;
+        boolean z10 = r2.a;
         this.A = c("settings_display_passkeys", true);
         this.B = c("android_disable_blur_in_light_theme", false);
         this.C = c("android_disable_blur_in_dark_theme", false);
@@ -125,9 +125,9 @@ public final class p0 {
         this.G = d(12, "poll_answers_max");
         this.H = d(12, "poll_countries_max");
         this.I = d(100, "poll_answer_length_max");
-        d(qs.e4, "poll_question_length_max");
-        d(qs.e3, "poll_solution_length_max");
-        this.J = d(qs.X4, "poll_caption_length_max");
+        d(ns.e4, "poll_question_length_max");
+        d(ns.e3, "poll_solution_length_max");
+        this.J = d(ns.X4, "poll_caption_length_max");
         this.K = g(300L, "poll_answer_delete_period");
         this.L = d(20, "bots_create_limit_default");
         this.M = d(40, "bots_create_limit_premium");
@@ -154,37 +154,37 @@ public final class p0 {
         this.f0 = c("android_audio_recorder_v2_disabled", false);
         this.g0 = c("android_round_video_recorder_v2_disabled", false);
         this.h0 = c("stars_spend_topup_invoice_disabled", false);
-        gf.g gVar = new gf.g("bot_allowed_suffixes", Collections.singleton("bot"));
-        hashMap.put("bot_allowed_suffixes", (o0) gVar.b);
-        this.i0 = gVar;
+        hi.l0 l0Var = new hi.l0("bot_allowed_suffixes", Collections.singleton("bot"));
+        hashMap.put("bot_allowed_suffixes", (o0) l0Var.b);
+        this.i0 = l0Var;
         this.j0 = c("wallet_available", true);
         this.k0 = c("wallet_paid_message_recipient_message_amount_check", true);
         this.l0 = e(100000000L, "wallet_transfer_min_nanos");
         e(100000000L, "wallet_gasless_min_nanos");
-        gf.g gVar2 = new gf.g("wallet_card_bg_gifts", Collections.EMPTY_SET);
-        hashMap.put("wallet_card_bg_gifts", (o0) gVar2.b);
-        this.m0 = gVar2;
-        h9.f1 f1Var2 = new h9.f1(20);
-        hashMap.put("agent_bot_ids", (m0) f1Var2.b);
-        this.n0 = f1Var2;
+        hi.l0 l0Var2 = new hi.l0("wallet_card_bg_gifts", Collections.EMPTY_SET);
+        hashMap.put("wallet_card_bg_gifts", (o0) l0Var2.b);
+        this.m0 = l0Var2;
+        gc.b bVar2 = new gc.b(26);
+        hashMap.put("agent_bot_ids", (m0) bVar2.b);
+        this.n0 = bVar2;
         this.o0 = c("widgets_disabled", false);
     }
 
     public final boolean a(SharedPreferences.Editor editor, TLRPC.TL_jsonObject tL_jsonObject) {
         int size = tL_jsonObject.value.size();
-        boolean z9 = false;
+        boolean z10 = false;
         for (int i7 = 0; i7 < size; i7++) {
             TLRPC.TL_jsonObjectValue tL_jsonObjectValue = tL_jsonObject.value.get(i7);
             k0 k0Var = (k0) this.a.get(tL_jsonObjectValue.key);
             if (k0Var != null) {
-                z9 |= k0Var.a(editor, tL_jsonObjectValue.value);
+                z10 |= k0Var.a(editor, tL_jsonObjectValue.value);
             }
         }
         if (((h0) this.o0.b).c) {
             ConcurrentHashMap concurrentHashMap = org.telegram.utils.twidget.n0.a;
-            g0.h3(new q61(11));
+            g0.h3(new ah0(15));
         }
-        return z9;
+        return z10;
     }
 
     public final void b(SharedPreferences sharedPreferences) {
@@ -198,34 +198,34 @@ public final class p0 {
         }
     }
 
-    public final gf.g c(String str, boolean z9) {
-        gf.g gVar = new gf.g(str, z9);
-        this.a.put(str, (h0) gVar.b);
-        return gVar;
+    public final hi.l0 c(String str, boolean z10) {
+        hi.l0 l0Var = new hi.l0(str, z10);
+        this.a.put(str, (h0) l0Var.b);
+        return l0Var;
     }
 
-    public final g6.d0 d(int i7, String str) {
-        g6.d0 d0Var = new g6.d0(str, i7);
-        this.a.put(str, (j0) d0Var.b);
-        return d0Var;
+    public final ia.d d(int i7, String str) {
+        ia.d dVar = new ia.d(str, i7);
+        this.a.put(str, (j0) dVar.b);
+        return dVar;
     }
 
-    public final gf.g e(long j3, String str) {
-        gf.g gVar = new gf.g(str, j3);
-        this.a.put(str, (l0) gVar.b);
-        return gVar;
+    public final hi.l0 e(long j3, String str) {
+        hi.l0 l0Var = new hi.l0(str, j3);
+        this.a.put(str, (l0) l0Var.b);
+        return l0Var;
     }
 
-    public final g6.d0 f(String str, String str2) {
-        g6.d0 d0Var = new g6.d0(str, str2);
-        this.a.put(str, (n0) d0Var.b);
-        return d0Var;
+    public final ia.d f(String str, String str2) {
+        ia.d dVar = new ia.d(str, str2);
+        this.a.put(str, (n0) dVar.b);
+        return dVar;
     }
 
-    public final h9.f1 g(long j3, String str) {
+    public final gc.b g(long j3, String str) {
         TimeUnit timeUnit = TimeUnit.SECONDS;
-        h9.f1 f1Var = new h9.f1(str, j3);
-        this.a.put(str, (l0) f1Var.b);
-        return f1Var;
+        gc.b bVar = new gc.b(str, j3);
+        this.a.put(str, (l0) bVar.b);
+        return bVar;
     }
 }

@@ -3,10 +3,10 @@ package lg;
 import android.animation.ValueAnimator;
 import android.graphics.Rect;
 import android.view.MotionEvent;
-import fi.j6;
+import hi.i6;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class j {
     public g a;
@@ -122,7 +122,7 @@ public final class j {
 
     public final boolean b(int i7, int i10) {
         h hVar;
-        boolean z9;
+        boolean z10;
         if (this.c || (hVar = this.n[i10]) == null) {
             return false;
         }
@@ -142,9 +142,9 @@ public final class j {
             if (f14 < f15) {
                 this.k = f13 - f15;
             }
-            z9 = true;
+            z10 = true;
         } else {
-            z9 = false;
+            z10 = false;
         }
         if (i11 == 2) {
             float f16 = f11 - ((i12 - i7) / this.b);
@@ -159,7 +159,7 @@ public final class j {
             if (f19 < f20) {
                 this.l = f18 + f20;
             }
-            z9 = true;
+            z10 = true;
         }
         if (i11 == 4) {
             float f21 = (i12 - i7) / this.b;
@@ -174,9 +174,9 @@ public final class j {
                 this.l = 1.0f;
                 this.k = 1.0f - (f11 - f10);
             }
-            z9 = true;
+            z10 = true;
         }
-        if (z9) {
+        if (z10) {
             this.a.A(true, false, false);
         }
         return true;
@@ -214,7 +214,7 @@ public final class j {
         float y10 = this.e - motionEvent.getY();
         if (motionEvent.getAction() == 1 && System.currentTimeMillis() - this.f < 300) {
             if (Math.sqrt((y10 * y10) + (x10 * x10)) < g0.L(10.0f)) {
-                float f12 = (this.d - g.k1) / this.b;
+                float f12 = (this.d - g.l1) / this.b;
                 float f13 = this.l;
                 float f14 = this.k;
                 float f15 = f13 - f14;
@@ -235,8 +235,8 @@ public final class j {
                 }
                 this.g = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.a.a(f11, f10, true);
-                this.g.addUpdateListener(new j6(this, f14, f11, f13, f10, 1));
-                this.g.setInterpolator(g.C1);
+                this.g.addUpdateListener(new i6(this, f14, f11, f13, f10, 1));
+                this.g.setInterpolator(g.D1);
                 this.g.start();
                 return true;
             }

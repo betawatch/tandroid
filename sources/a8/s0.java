@@ -1,6 +1,6 @@
 package a8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class s0 {
     public static int a(Object obj, Object obj2, int i7, Object obj3, int[] iArr, Object[] objArr, Object[] objArr2) {
@@ -42,7 +42,7 @@ public abstract class s0 {
 
     public static Object c(int i7) {
         if (i7 < 2 || i7 > 1073741824 || Integer.highestOneBit(i7) != i7) {
-            throw new IllegalArgumentException(jg.g.j(i7, "must be power of 2 between 2^1 and 2^30: "));
+            throw new IllegalArgumentException(i5.c.i(i7, "must be power of 2 between 2^1 and 2^30: "));
         }
         return i7 <= 256 ? new byte[i7] : i7 <= 65536 ? new short[i7] : new int[i7];
     }

@@ -12,7 +12,7 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class d implements Iterator {
     public final /* synthetic */ int a;
@@ -91,9 +91,9 @@ public class d implements Iterator {
             case 1:
                 Map.Entry entry = (Map.Entry) this.b.next();
                 this.c = (Collection) entry.getValue();
-                kb kbVar = (kb) this.d;
+                lb lbVar = (lb) this.d;
                 Object key = entry.getKey();
-                i iVar = (i) kbVar.e;
+                i iVar = (i) lbVar.e;
                 Collection collection = (Collection) entry.getValue();
                 iVar.getClass();
                 List list = (List) collection;
@@ -107,7 +107,7 @@ public class d implements Iterator {
                 this.c = (Collection) entry3.getValue();
                 Object key2 = entry3.getKey();
                 Collection collection2 = (Collection) entry3.getValue();
-                jg jgVar = (jg) ((kb) this.d).e;
+                jg jgVar = (jg) ((lb) this.d).e;
                 jgVar.getClass();
                 List list2 = (List) collection2;
                 return new c8.f(key2, list2 instanceof RandomAccess ? new be(jgVar, key2, list2, null) : new f(jgVar, key2, list2, (f) null));
@@ -121,7 +121,7 @@ public class d implements Iterator {
             case 6:
                 Map.Entry entry5 = (Map.Entry) this.b.next();
                 this.c = (Collection) entry5.getValue();
-                return ((kb) this.d).b(entry5);
+                return ((lb) this.d).b(entry5);
             case 7:
                 Map.Entry entry6 = (Map.Entry) this.b.next();
                 this.c = entry6;
@@ -147,7 +147,7 @@ public class d implements Iterator {
                     throw new IllegalStateException("no calls to next() since the last call to remove()");
                 }
                 this.b.remove();
-                ((i) ((kb) this.d).e).d -= ((Collection) this.c).size();
+                ((i) ((lb) this.d).e).d -= ((Collection) this.c).size();
                 ((Collection) this.c).clear();
                 this.c = null;
                 return;
@@ -167,7 +167,7 @@ public class d implements Iterator {
                     throw new IllegalStateException("no calls to next() since the last call to remove()");
                 }
                 this.b.remove();
-                ((jg) ((kb) this.d).e).getClass();
+                ((jg) ((lb) this.d).e).getClass();
                 ((Collection) this.c).size();
                 ((Collection) this.c).clear();
                 this.c = null;
@@ -189,14 +189,14 @@ public class d implements Iterator {
                 ((f) this.d).l();
                 return;
             case 6:
-                ia.o("no calls to next() since the last call to remove()", ((Collection) this.c) != null);
+                ja.o("no calls to next() since the last call to remove()", ((Collection) this.c) != null);
                 this.b.remove();
-                ((h9.l1) ((kb) this.d).e).f -= ((Collection) this.c).size();
+                ((h9.k1) ((lb) this.d).e).f -= ((Collection) this.c).size();
                 ((Collection) this.c).clear();
                 this.c = null;
                 return;
             case 7:
-                ia.o("no calls to next() since the last call to remove()", ((Map.Entry) this.c) != null);
+                ja.o("no calls to next() since the last call to remove()", ((Map.Entry) this.c) != null);
                 Collection collection3 = (Collection) ((Map.Entry) this.c).getValue();
                 this.b.remove();
                 ((h9.d) this.d).c.f -= collection3.size();
@@ -206,8 +206,8 @@ public class d implements Iterator {
             default:
                 this.b.remove();
                 f fVar2 = (f) this.d;
-                h9.l1 l1Var = (h9.l1) fVar2.f;
-                l1Var.f--;
+                h9.k1 k1Var = (h9.k1) fVar2.f;
+                k1Var.f--;
                 fVar2.j();
                 return;
         }
@@ -254,16 +254,16 @@ public class d implements Iterator {
         this.b = it;
     }
 
-    public d(kb kbVar) {
+    public d(lb lbVar) {
         this.a = 1;
-        this.d = kbVar;
-        this.b = kbVar.b.entrySet().iterator();
+        this.d = lbVar;
+        this.b = lbVar.b.entrySet().iterator();
     }
 
-    public d(kb kbVar, byte b10) {
+    public d(lb lbVar, byte b10) {
         this.a = 3;
-        this.d = kbVar;
-        this.b = kbVar.b.entrySet().iterator();
+        this.d = lbVar;
+        this.b = lbVar.b.entrySet().iterator();
     }
 
     public d(f fVar, char c10) {
@@ -287,9 +287,9 @@ public class d implements Iterator {
         this.b = listIterator;
     }
 
-    public d(kb kbVar, char c10) {
+    public d(lb lbVar, char c10) {
         this.a = 6;
-        this.d = kbVar;
-        this.b = kbVar.b.entrySet().iterator();
+        this.d = lbVar;
+        this.b = lbVar.b.entrySet().iterator();
     }
 }

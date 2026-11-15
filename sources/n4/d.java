@@ -1,11 +1,12 @@
 package n4;
 
 import b3.i;
+import com.google.android.gms.internal.vision.e2;
 import e2.t0;
 import f3.p;
 import h2.x;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final byte[] a = {0, 0, 0, 0, 16, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
@@ -17,7 +18,7 @@ public abstract class d {
         if (i7 != 1380533830 && i7 != 1380333108) {
             return false;
         }
-        pVar.b(0, 4, xVar.a);
+        pVar.c(0, 4, xVar.a);
         xVar.N(0);
         int m10 = xVar.m();
         if (m10 == 1463899717) {
@@ -34,7 +35,7 @@ public abstract class d {
             if (i10 == i7) {
                 return b10;
             }
-            com.google.android.recaptcha.internal.a.o(i10, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
+            e2.o(i10, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
             long j3 = b10.b;
             long j10 = 8 + j3;
             if (j3 % 2 != 0) {
@@ -43,7 +44,7 @@ public abstract class d {
             if (j10 > 2147483647L) {
                 throw t0.c("Chunk is too large (~2GB+) to skip; id: " + i10);
             }
-            pVar.s((int) j10);
+            pVar.m((int) j10);
             b10 = i.b(pVar, xVar);
         }
     }

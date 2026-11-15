@@ -1,45 +1,49 @@
 package bi;
 
-import org.telegram.messenger.c20;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import di.k8;
+import java.util.ArrayList;
+import org.telegram.messenger.np;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.wp0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t2 implements RequestDelegate {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ k7 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class t2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wp0 b;
 
-    public /* synthetic */ t2(k7 k7Var, long j3, long j10, c20 c20Var, long j11) {
-        this.b = k7Var;
-        this.c = j3;
-        this.d = j10;
-        this.f = c20Var;
-        this.e = j11;
+    public /* synthetic */ t2(wp0 wp0Var, int i7) {
+        this.a = i7;
+        this.b = wp0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new c3(this.b, (org.telegram.ui.ActionBar.u1) this.f, tLObject, this.c, this.d, this.e, tL_error));
+                k8 k8Var = this.b.e;
+                k8Var.getClass();
+                TL_stars.reorderStarGiftCollections reorderstargiftcollections = new TL_stars.reorderStarGiftCollections();
+                int i7 = k8Var.a;
+                reorderstargiftcollections.peer = np.s1(i7).j1(k8Var.b);
+                ArrayList arrayList = k8Var.e;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    reorderstargiftcollections.order.add(Integer.valueOf(((TL_stars.TL_starGiftCollection) obj).collection_id));
+                }
+                ConnectionsManager.getInstance(i7).sendRequest(reorderstargiftcollections, null);
+                k8Var.j();
+                break;
+            case 1:
+                this.b.setReorderingCollections(true);
                 break;
             default:
-                org.telegram.messenger.g0.h3(new c3(this.b, tLObject, this.c, this.d, (c20) this.f, tL_error, this.e));
+                this.b.a();
                 break;
         }
-    }
-
-    public /* synthetic */ t2(k7 k7Var, org.telegram.ui.ActionBar.u1 u1Var, long j3, long j10, long j11) {
-        this.b = k7Var;
-        this.f = u1Var;
-        this.c = j3;
-        this.d = j10;
-        this.e = j11;
     }
 }

@@ -1,71 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j50 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
-    public final ImageView a;
-    public final TextView b;
-    public final TextView c;
-    public int d;
-    public int e;
-    public final /* synthetic */ m50 f;
+public final class j50 implements s70 {
+    public final /* synthetic */ k50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j50(m50 m50Var, Context context) {
-        super(context);
-        this.f = m50Var;
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setBackground(org.telegram.ui.ActionBar.m6.M(46, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.R7, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Y7, false)));
-        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        imageView.setImageResource(R.drawable.large_income);
-        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        addView(imageView, c8.ha.d(46, 46.0f, 19, 13.0f, 0.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        com.google.android.recaptcha.internal.a.q(textView, 1, 16.0f);
-        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, null);
-        addView(textView, c8.ha.d(-1, -2.0f, 51, 72.0f, 9.0f, 0.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.y6, null);
-        addView(textView2, c8.ha.d(-1, -2.0f, 51, 72.0f, 32.0f, 0.0f, 0.0f));
+    public j50(k50 k50Var) {
+        this.a = k50Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(58.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.R7, false);
-        int x03 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Y7, false);
-        ImageView imageView = this.a;
-        if (imageView != null) {
-            if (x02 == this.d && x03 == this.e) {
-                return;
-            }
-            this.d = x02;
-            this.e = x03;
-            imageView.setBackground(org.telegram.ui.ActionBar.m6.M(46, x02, x03));
-            invalidate();
+    @Override // org.telegram.ui.Components.s70
+    public final void d() {
+        p50 p50Var = this.a.c;
+        org.telegram.ui.ActionBar.e2 e2Var = p50Var.P1;
+        if (e2Var instanceof org.telegram.ui.cf0) {
+            org.telegram.ui.cf0 cf0Var = (org.telegram.ui.cf0) e2Var;
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = p50Var.m1;
+            org.telegram.ui.i90 i90Var = new org.telegram.ui.i90(1, cf0Var.n);
+            i90Var.T = cf0Var.t0;
+            i90Var.d0(tL_chatInviteExported);
+            cf0Var.presentFragment(i90Var);
+        } else {
+            org.telegram.ui.i90 i90Var2 = new org.telegram.ui.i90(1, p50Var.b2);
+            i90Var2.d0(p50Var.m1);
+            i90Var2.T = new i50(this);
+            p50Var.P1.presentFragment(i90Var2);
         }
+        p50Var.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.Components.s70
+    public final void e() {
+        p50 p50Var = this.a.c;
+        org.telegram.ui.ActionBar.e2 e2Var = p50Var.P1;
+        if (e2Var instanceof org.telegram.ui.cf0) {
+            ((org.telegram.ui.cf0) e2Var).k0(p50Var.m1);
+        } else {
+            TLRPC.TL_messages_editExportedChatInvite tL_messages_editExportedChatInvite = new TLRPC.TL_messages_editExportedChatInvite();
+            tL_messages_editExportedChatInvite.link = p50Var.m1.link;
+            tL_messages_editExportedChatInvite.revoked = true;
+            tL_messages_editExportedChatInvite.peer = org.telegram.messenger.np.s1(p50Var.a).j1(-p50Var.b2);
+            ConnectionsManager.getInstance(p50Var.a).sendRequest(tL_messages_editExportedChatInvite, new h50(this, 0));
+        }
+        p50Var.dismiss();
+    }
+
+    @Override // org.telegram.ui.Components.s70
+    public final void j() {
+        p50 p50Var = this.a.c;
+        org.telegram.ui.ActionBar.e2 e2Var = p50Var.P1;
+        if (e2Var instanceof org.telegram.ui.cf0) {
+            ((org.telegram.ui.cf0) e2Var).h0(p50Var.m1);
+        } else {
+            TLRPC.TL_messages_deleteExportedChatInvite tL_messages_deleteExportedChatInvite = new TLRPC.TL_messages_deleteExportedChatInvite();
+            tL_messages_deleteExportedChatInvite.link = p50Var.m1.link;
+            tL_messages_deleteExportedChatInvite.peer = org.telegram.messenger.np.s1(p50Var.a).j1(-p50Var.b2);
+            ConnectionsManager.getInstance(p50Var.a).sendRequest(tL_messages_deleteExportedChatInvite, new h50(this, 1));
+        }
+        p50Var.dismiss();
+    }
+
+    @Override // org.telegram.ui.Components.s70
+    public final /* synthetic */ void f() {
     }
 }

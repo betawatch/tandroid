@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class u0 extends c1 {
     public final m a;
@@ -89,10 +89,10 @@ public final class u0 extends c1 {
         Iterator it = arrayList.iterator();
         try {
             if (it.hasNext()) {
-                sb2.append(nb.a.t0(it.next()));
+                sb2.append(sa.d.E2(it.next()));
                 while (it.hasNext()) {
                     sb2.append((CharSequence) ",\n  ");
-                    sb2.append(nb.a.t0(it.next()));
+                    sb2.append(sa.d.E2(it.next()));
                 }
             }
             sb2.append("\n]");

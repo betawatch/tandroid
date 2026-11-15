@@ -1,54 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ng implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ci b;
+public final class ng {
+    public static final ng a;
+    public static final ng b;
+    public static final ng c;
+    public static final ng d;
+    public static final ng e;
+    public static final ng f;
+    public static final /* synthetic */ ng[] h;
 
-    public /* synthetic */ ng(ci ciVar, int i7) {
-        this.a = i7;
-        this.b = ciVar;
+    static {
+        ng ngVar = new ng("VOICE", 0);
+        a = ngVar;
+        ng ngVar2 = new ng("VIDEO", 1);
+        b = ngVar2;
+        ng ngVar3 = new ng("STICKER", 2);
+        c = ngVar3;
+        ng ngVar4 = new ng("KEYBOARD", 3);
+        d = ngVar4;
+        ng ngVar5 = new ng("SMILE", 4);
+        e = ngVar5;
+        ng ngVar6 = new ng("GIF", 5);
+        f = ngVar6;
+        h = new ng[]{ngVar, ngVar2, ngVar3, ngVar4, ngVar5, ngVar6};
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.b.Q1();
-                break;
-            case 1:
-                this.b.A2.invalidate();
-                break;
-            case 2:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ci ciVar = this.b;
-                ciVar.C0 = floatValue;
-                org.telegram.ui.ActionBar.m2 m2Var = ciVar.c;
-                if (m2Var != null) {
-                    m2Var.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                ci ciVar2 = this.b;
-                ciVar2.getClass();
-                ciVar2.z1(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 4:
-                ci ciVar3 = this.b;
-                uh uhVar = ciVar3.v2;
-                hk hkVar = ciVar3.q2;
-                if (uhVar == hkVar && hkVar != null) {
-                    hkVar.invalidate();
-                    break;
-                }
-                break;
-            default:
-                this.b.Q1();
-                break;
-        }
+    public static ng valueOf(String str) {
+        return (ng) Enum.valueOf(ng.class, str);
+    }
+
+    public static ng[] values() {
+        return (ng[]) h.clone();
     }
 }

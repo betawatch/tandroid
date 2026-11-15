@@ -1,83 +1,90 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gg0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mg0 b;
+public final class gg0 extends j41 {
+    public final /* synthetic */ hg0 w;
 
-    public /* synthetic */ gg0(mg0 mg0Var, int i7) {
-        this.a = i7;
-        this.b = mg0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gg0(hg0 hg0Var, Context context, int i7, lg.f fVar, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, i7, fVar, e6Var);
+        this.w = hg0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i7 = 0;
-                final mg0 mg0Var = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.fg0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i7) {
-                            case 0:
-                                mg0.Z(mg0Var, tL_error, tLObject);
-                                break;
-                            case 1:
-                                mg0.b0(mg0Var, tL_error, tLObject);
-                                break;
-                            default:
-                                mg0.a0(mg0Var, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 1:
-                final int i10 = 1;
-                final mg0 mg0Var2 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.fg0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                mg0.Z(mg0Var2, tL_error, tLObject);
-                                break;
-                            case 1:
-                                mg0.b0(mg0Var2, tL_error, tLObject);
-                                break;
-                            default:
-                                mg0.a0(mg0Var2, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i11 = 2;
-                final mg0 mg0Var3 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.fg0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                mg0.Z(mg0Var3, tL_error, tLObject);
-                                break;
-                            case 1:
-                                mg0.b0(mg0Var3, tL_error, tLObject);
-                                break;
-                            default:
-                                mg0.a0(mg0Var3, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // org.telegram.ui.j41
+    public final void c() {
+        int i7;
+        int i10;
+        int i11;
+        jg0 jg0Var = this.w.d;
+        if (this.r.c > 0) {
+            return;
         }
+        performClick();
+        lg.g gVar = this.b;
+        if (gVar.u0.H) {
+            long selectedDate = gVar.getSelectedDate();
+            if (this.s == 4) {
+                l41 l41Var = this.r;
+                l41Var.e = new mg.e(l41Var.d, selectedDate);
+                g(false);
+                return;
+            }
+            if (this.r.g == null) {
+                return;
+            }
+            f();
+            String str = this.r.g + "_" + selectedDate;
+            mg.b bVar = (mg.b) jg0Var.w.f(str);
+            if (bVar != null) {
+                this.r.e = bVar;
+                g(false);
+                return;
+            }
+            TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
+            tL_loadAsyncGraph.token = this.r.g;
+            if (selectedDate != 0) {
+                tL_loadAsyncGraph.x = selectedDate;
+                tL_loadAsyncGraph.flags |= 1;
+            }
+            y41 y41Var = new y41();
+            jg0Var.x = y41Var;
+            jg0Var.f.getClass();
+            y41Var.a = RecyclerView.R(this);
+            gVar.u0.d(true, false);
+            i7 = ((org.telegram.ui.ActionBar.e2) jg0Var).currentAccount;
+            int sendRequest = ConnectionsManager.getInstance(i7).sendRequest(tL_loadAsyncGraph, new z9(this, str, y41Var, 25), null, null, 0, jg0Var.a.stats_dc, 1, true);
+            i10 = ((org.telegram.ui.ActionBar.e2) jg0Var).currentAccount;
+            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
+            i11 = ((org.telegram.ui.ActionBar.e2) jg0Var).classGuid;
+            connectionsManager.bindRequestToGuid(sendRequest, i11);
+        }
+    }
+
+    @Override // org.telegram.ui.j41
+    public final void f() {
+        hg0 hg0Var = this.w;
+        jg0 jg0Var = hg0Var.d;
+        y41 y41Var = jg0Var.x;
+        if (y41Var != null) {
+            y41Var.b = true;
+        }
+        int childCount = jg0Var.f.getChildCount();
+        for (int i7 = 0; i7 < childCount; i7++) {
+            View childAt = hg0Var.d.f.getChildAt(i7);
+            if (childAt instanceof j41) {
+                ((j41) childAt).b.u0.d(false, true);
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.j41
+    public final void b(l41 l41Var) {
     }
 }

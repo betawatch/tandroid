@@ -2,7 +2,7 @@ package x2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m implements d1 {
     public final d1 a;
@@ -14,8 +14,8 @@ public final class m implements d1 {
     }
 
     @Override // x2.d1
-    public final boolean c(l2.v0 v0Var) {
-        return this.a.c(v0Var);
+    public final boolean c(l2.s0 s0Var) {
+        return this.a.c(s0Var);
     }
 
     @Override // x2.d1
@@ -29,12 +29,12 @@ public final class m implements d1 {
     }
 
     @Override // x2.d1
-    public final long p() {
-        return this.a.p();
+    public final long s() {
+        return this.a.s();
     }
 
     @Override // x2.d1
-    public final void r(long j3) {
-        this.a.r(j3);
+    public final void u(long j3) {
+        this.a.u(j3);
     }
 }

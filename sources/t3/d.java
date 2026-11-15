@@ -3,7 +3,7 @@ package t3;
 import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d extends i {
     public final String b;
@@ -12,11 +12,11 @@ public final class d extends i {
     public final String[] e;
     public final i[] f;
 
-    public d(String str, boolean z9, boolean z10, String[] strArr, i[] iVarArr) {
+    public d(String str, boolean z10, boolean z11, String[] strArr, i[] iVarArr) {
         super("CTOC");
         this.b = str;
-        this.c = z9;
-        this.d = z10;
+        this.c = z10;
+        this.d = z11;
         this.e = strArr;
         this.f = iVarArr;
     }

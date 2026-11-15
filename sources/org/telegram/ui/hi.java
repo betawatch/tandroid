@@ -1,29 +1,69 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class hi implements org.telegram.messenger.ls {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ai.a1 b;
-    public final /* synthetic */ cn c;
-    public final /* synthetic */ cn d;
+public final class hi extends vf.b {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.q1 f;
+    public final /* synthetic */ an g;
 
-    public hi(cn cnVar, int i7, ai.a1 a1Var, cn cnVar2) {
-        this.d = cnVar;
-        this.a = i7;
-        this.b = a1Var;
-        this.c = cnVar2;
+    public /* synthetic */ hi(an anVar, int i7, org.telegram.ui.Cells.q1 q1Var, int i10) {
+        this.d = i10;
+        this.g = anVar;
+        this.e = i7;
+        this.f = q1Var;
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11;
-        int i12 = org.telegram.messenger.qs.D;
-        if (i7 == i12 && ((Integer) objArr[10]).intValue() == this.a) {
-            this.b.run();
-            org.telegram.messenger.g0.i3(new l2.z(this.c, i7, i10, objArr, 10), 50L);
-            i11 = ((org.telegram.ui.ActionBar.f2) this.d).currentAccount;
-            org.telegram.messenger.qs.f(i11).n(this, i12);
+    @Override // vf.b
+    public final void c(boolean z10) {
+        switch (this.d) {
+            case 0:
+                if (!z10) {
+                    org.telegram.messenger.g0.i3(new ai.v0(this, this.e, 23), 240L);
+                    break;
+                }
+                break;
+            case 1:
+                if (!z10) {
+                    org.telegram.messenger.g0.i3(new ai.v0(this, this.e, 26), 240L);
+                    break;
+                }
+                break;
+            default:
+                if (!z10) {
+                    org.telegram.messenger.g0.i3(new ai.v0(this, this.e, 27), 240L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // vf.b
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i7 = this.e;
+                an anVar = this.g;
+                anVar.Zb = i7;
+                anVar.ac = 6;
+                this.f.invalidate();
+                break;
+            case 1:
+                int i10 = this.e;
+                an anVar2 = this.g;
+                anVar2.Zb = i10;
+                anVar2.ac = 5;
+                anVar2.cc = null;
+                this.f.invalidate();
+                break;
+            default:
+                int i11 = this.e;
+                an anVar3 = this.g;
+                anVar3.Zb = i11;
+                anVar3.ac = 7;
+                this.f.invalidate();
+                break;
         }
     }
 }

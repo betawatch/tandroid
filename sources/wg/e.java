@@ -1,11 +1,11 @@
 package wg;
 
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.c20;
+import org.telegram.messenger.z10;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e implements c20 {
+public final /* synthetic */ class e implements z10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ AtomicBoolean b;
     public final /* synthetic */ vf.b c;
@@ -16,7 +16,7 @@ public final /* synthetic */ class e implements c20 {
         this.c = bVar;
     }
 
-    @Override // org.telegram.messenger.c20
+    @Override // org.telegram.messenger.z10
     public final void a(Object obj) {
         vf.b bVar;
         switch (this.a) {

@@ -1,31 +1,29 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface h6 {
-    boolean a();
+public final /* synthetic */ class h6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i6 b;
 
-    void b(float f10, float f11, int i7, int i10);
+    public /* synthetic */ h6(i6 i6Var, int i7) {
+        this.a = i7;
+        this.b = i6Var;
+    }
 
-    ColorFilter c();
-
-    Paint d(String str);
-
-    boolean e();
-
-    int f(int i7);
-
-    boolean g();
-
-    Drawable getDrawable(String str);
-
-    int h(int i7);
-
-    void i(int i7, int i10);
-
-    int j(int i7);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        i6 i6Var = this.b;
+        switch (i7) {
+            case 0:
+                i6Var.s();
+                break;
+            default:
+                ns.e().k(ns.t4, i6Var, Boolean.TRUE, null, -1);
+                break;
+        }
+    }
 }

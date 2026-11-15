@@ -1,282 +1,101 @@
 package hi;
 
 import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
-import fi.v9;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.hd;
+import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class v0 {
-    public final SensorManager a;
-    public Sensor b;
-    public long c;
-    public Sensor d;
-    public long e;
-    public Sensor f;
-    public Sensor g;
-    public long h;
-    public Sensor i;
-    public long j;
-    public org.telegram.ui.web.u0 k;
-    public boolean l;
-    public v9 m;
-    public v9 o;
-    public v9 q;
-    public v9 s;
-    public final s0 n = new s0(this, 0);
-    public final s0 p = new s0(this, 1);
-    public final t0 r = new t0(this);
-    public final u0 t = new u0(this);
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class v0 extends View {
+    public final Paint a;
+    public final TextPaint b;
+    public final StaticLayout c;
+    public final float d;
+    public final float e;
+    public final Path f;
+    public fi.c1 h;
+    public boolean n;
+    public final org.telegram.ui.Components.u5 r;
 
     public v0(Context context) {
-        this.a = (SensorManager) context.getSystemService("sensor");
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        this.f = new Path();
+        org.telegram.ui.Components.u5 u5Var = new org.telegram.ui.Components.u5(this);
+        this.r = u5Var;
+        paint.setColor(-869783512);
+        paint.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.L(6.0f)));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        textPaint.setColor(-1);
+        StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(hd.N0("StoryDraftSaved"), textPaint, r1.x, TextUtils.TruncateAt.END), textPaint, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.c = staticLayout;
+        this.d = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
+        this.e = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
+        u5Var.e(true, 0.0f);
     }
 
-    public static int a(long j3) {
-        if (j3 >= 160) {
-            return 3;
+    public final void a(boolean z10) {
+        fi.c1 c1Var;
+        if (!z10 && (c1Var = this.h) != null) {
+            org.telegram.messenger.g0.r(c1Var);
+            this.h = null;
         }
-        return j3 >= 60 ? 2 : 1;
+        this.n = z10;
+        invalidate();
     }
 
-    public final void b() {
-        if (this.l) {
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float d = this.r.d(this.n);
+        if (d <= 0.0f) {
             return;
         }
-        this.l = true;
-        SensorManager sensorManager = this.a;
-        if (sensorManager != null) {
-            Sensor sensor = this.b;
-            if (sensor != null) {
-                sensorManager.unregisterListener(this.n, sensor);
-            }
-            v9 v9Var = this.m;
-            if (v9Var != null) {
-                org.telegram.messenger.g0.r(v9Var);
-                this.m = null;
-            }
-            Sensor sensor2 = this.d;
-            if (sensor2 != null) {
-                sensorManager.unregisterListener(this.p, sensor2);
-            }
-            v9 v9Var2 = this.o;
-            if (v9Var2 != null) {
-                org.telegram.messenger.g0.r(v9Var2);
-                this.o = null;
-            }
-            Sensor sensor3 = this.g;
-            t0 t0Var = this.r;
-            if (sensor3 != null) {
-                sensorManager.unregisterListener(t0Var, sensor3);
-            }
-            Sensor sensor4 = this.f;
-            if (sensor4 != null) {
-                sensorManager.unregisterListener(t0Var, sensor4);
-            }
-            v9 v9Var3 = this.q;
-            if (v9Var3 != null) {
-                org.telegram.messenger.g0.r(v9Var3);
-                this.q = null;
-            }
-            Sensor sensor5 = this.i;
-            if (sensor5 != null) {
-                sensorManager.unregisterListener(this.t, sensor5);
-            }
-            v9 v9Var4 = this.s;
-            if (v9Var4 != null) {
-                org.telegram.messenger.g0.r(v9Var4);
-                this.s = null;
-            }
-        }
+        canvas.save();
+        canvas.translate(0.0f, (this.n ? er.k.getInterpolation(d) : 1.0f) * org.telegram.messenger.g0.L(12.0f));
+        float interpolation = er.h.getInterpolation(d);
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        float L = org.telegram.messenger.g0.L(22.0f) + this.d;
+        float min = (measuredWidth / 2.0f) - Math.min(org.telegram.messenger.g0.L(135.0f), 0.35f * measuredWidth);
+        float max = Math.max(org.telegram.messenger.g0.L(8.0f), min - (L / 2.0f));
+        Path path = this.f;
+        path.rewind();
+        path.moveTo(max, 0.0f);
+        float f10 = L + max;
+        path.lineTo(f10, 0.0f);
+        path.lineTo(f10, measuredHeight - org.telegram.messenger.g0.L(18.0f));
+        path.lineTo(org.telegram.messenger.g0.L(7.0f) + min, measuredHeight - org.telegram.messenger.g0.L(18.0f));
+        path.lineTo(org.telegram.messenger.g0.L(1.0f) + min, measuredHeight - org.telegram.messenger.g0.L(12.0f));
+        path.lineTo(min - org.telegram.messenger.g0.L(1.0f), measuredHeight - org.telegram.messenger.g0.L(12.0f));
+        path.lineTo(min - org.telegram.messenger.g0.L(7.0f), measuredHeight - org.telegram.messenger.g0.L(18.0f));
+        path.lineTo(max, measuredHeight - org.telegram.messenger.g0.L(18.0f));
+        path.close();
+        Paint paint = this.a;
+        paint.setAlpha((int) (204.0f * interpolation));
+        canvas.drawPath(path, paint);
+        canvas.save();
+        StaticLayout staticLayout = this.c;
+        canvas.translate((max + org.telegram.messenger.g0.L(11.0f)) - this.e, ((measuredHeight - org.telegram.messenger.g0.L(18.0f)) - staticLayout.getHeight()) / 2.0f);
+        this.b.setAlpha((int) (interpolation * 255.0f));
+        staticLayout.draw(canvas);
+        canvas.restore();
+        canvas.restore();
     }
 
-    public final boolean c(long j3) {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        if (this.b == null) {
-            Sensor defaultSensor = sensorManager.getDefaultSensor(1);
-            this.b = defaultSensor;
-            if (defaultSensor == null) {
-                return false;
-            }
-            this.c = j3;
-            if (!this.l) {
-                sensorManager.registerListener(this.n, defaultSensor, a(j3));
-            }
-        }
-        return true;
-    }
-
-    public final boolean d(long j3) {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        if (this.d == null) {
-            Sensor defaultSensor = sensorManager.getDefaultSensor(4);
-            this.d = defaultSensor;
-            if (defaultSensor == null) {
-                return false;
-            }
-            this.e = j3;
-            if (!this.l) {
-                sensorManager.registerListener(this.p, defaultSensor, a(j3));
-            }
-        }
-        return true;
-    }
-
-    public final boolean e(long j3, boolean z9) {
-        Sensor sensor;
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        u0 u0Var = this.t;
-        t0 t0Var = this.r;
-        if (z9) {
-            if (this.i != null) {
-                v9 v9Var = this.s;
-                if (v9Var != null) {
-                    org.telegram.messenger.g0.r(v9Var);
-                    this.s = null;
-                }
-                if (!this.l && (sensor = this.i) != null) {
-                    sensorManager.unregisterListener(u0Var, sensor);
-                }
-                this.i = null;
-            }
-            if (this.f == null || this.g == null) {
-                this.g = sensorManager.getDefaultSensor(1);
-                Sensor defaultSensor = sensorManager.getDefaultSensor(2);
-                this.f = defaultSensor;
-                Sensor sensor2 = this.g;
-                if (sensor2 == null || defaultSensor == null) {
-                    return false;
-                }
-                this.h = j3;
-                if (!this.l) {
-                    sensorManager.registerListener(t0Var, sensor2, a(j3));
-                    sensorManager.registerListener(t0Var, this.f, a(j3));
-                    return true;
-                }
-            }
-        } else {
-            if (this.f != null || this.g != null) {
-                v9 v9Var2 = this.q;
-                if (v9Var2 != null) {
-                    org.telegram.messenger.g0.r(v9Var2);
-                    this.q = null;
-                }
-                if (!this.l) {
-                    Sensor sensor3 = this.g;
-                    if (sensor3 != null) {
-                        sensorManager.unregisterListener(t0Var, sensor3);
-                    }
-                    Sensor sensor4 = this.f;
-                    if (sensor4 != null) {
-                        sensorManager.unregisterListener(t0Var, sensor4);
-                    }
-                }
-                this.g = null;
-                this.f = null;
-            }
-            if (this.i == null) {
-                Sensor defaultSensor2 = sensorManager.getDefaultSensor(15);
-                this.i = defaultSensor2;
-                if (defaultSensor2 == null) {
-                    return false;
-                }
-                this.j = j3;
-                if (!this.l) {
-                    sensorManager.registerListener(u0Var, defaultSensor2, a(j3));
-                }
-            }
-        }
-        return true;
-    }
-
-    public final boolean f() {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        Sensor sensor = this.b;
-        if (sensor == null) {
-            return true;
-        }
-        if (!this.l) {
-            sensorManager.unregisterListener(this.n, sensor);
-        }
-        v9 v9Var = this.m;
-        if (v9Var != null) {
-            org.telegram.messenger.g0.r(v9Var);
-            this.m = null;
-        }
-        this.b = null;
-        return true;
-    }
-
-    public final boolean g() {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        Sensor sensor = this.d;
-        if (sensor == null) {
-            return true;
-        }
-        if (!this.l) {
-            sensorManager.unregisterListener(this.p, sensor);
-        }
-        v9 v9Var = this.o;
-        if (v9Var != null) {
-            org.telegram.messenger.g0.r(v9Var);
-            this.o = null;
-        }
-        this.d = null;
-        return true;
-    }
-
-    public final boolean h() {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        Sensor sensor = this.g;
-        if (sensor == null && this.f == null && this.i == null) {
-            return true;
-        }
-        if (!this.l) {
-            t0 t0Var = this.r;
-            if (sensor != null) {
-                sensorManager.unregisterListener(t0Var, sensor);
-            }
-            Sensor sensor2 = this.f;
-            if (sensor2 != null) {
-                sensorManager.unregisterListener(t0Var, sensor2);
-            }
-            Sensor sensor3 = this.i;
-            if (sensor3 != null) {
-                sensorManager.unregisterListener(this.t, sensor3);
-            }
-        }
-        v9 v9Var = this.q;
-        if (v9Var != null) {
-            org.telegram.messenger.g0.r(v9Var);
-            this.q = null;
-        }
-        v9 v9Var2 = this.s;
-        if (v9Var2 != null) {
-            org.telegram.messenger.g0.r(v9Var2);
-            this.s = null;
-        }
-        this.g = null;
-        this.f = null;
-        this.i = null;
-        return true;
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(50.0f));
     }
 }

@@ -1,17 +1,18 @@
 package d4;
 
-import a8.ia;
+import a8.ja;
 import android.text.Layout;
 import android.text.SpannableStringBuilder;
+import com.google.android.gms.internal.vision.e2;
 import h2.x;
 import j$.util.DesugarCollections;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g extends j {
     public final x h = new x();
@@ -45,7 +46,7 @@ public final class g extends j {
         List list = this.n;
         this.o = list;
         list.getClass();
-        return new d6.i(list, 16);
+        return new d6.i(list, 11);
     }
 
     @Override // d4.j, k2.e
@@ -70,11 +71,11 @@ public final class g extends j {
         while (xVar.a() >= 3) {
             int A = xVar.A();
             int i7 = A & 3;
-            boolean z9 = (A & 4) == 4;
+            boolean z10 = (A & 4) == 4;
             byte A2 = (byte) xVar.A();
             byte A3 = (byte) xVar.A();
             if (i7 == 2 || i7 == 3) {
-                if (z9) {
+                if (z10) {
                     if (i7 == 3) {
                         j();
                         int i10 = (A2 & 192) >> 6;
@@ -94,7 +95,7 @@ public final class g extends j {
                         fVar.e = 1;
                         bArr[0] = A3;
                     } else {
-                        ia.f(i7 == 2);
+                        ja.f(i7 == 2);
                         f fVar2 = this.p;
                         if (fVar2 == null) {
                             h2.a.c("Cea708Decoder", "Encountered DTVCC_PACKET_DATA before DTVCC_PACKET_START");
@@ -131,7 +132,7 @@ public final class g extends j {
     public final void j() {
         char c10;
         int i7;
-        boolean z9;
+        boolean z10;
         f fVar = this.p;
         if (fVar == null) {
             return;
@@ -145,7 +146,7 @@ public final class g extends j {
         int i11 = fVar2.e;
         f fVar3 = this.i;
         fVar3.H(i11, bArr);
-        boolean z10 = false;
+        boolean z11 = false;
         while (true) {
             if (fVar3.b() > 0) {
                 int i12 = 3;
@@ -155,7 +156,7 @@ public final class g extends j {
                     fVar3.L(i10);
                     j3 = fVar3.j(6);
                     if (j3 < 7) {
-                        com.google.android.recaptcha.internal.a.o(j3, "Invalid extended service number: ", "Cea708Decoder");
+                        e2.o(j3, "Invalid extended service number: ", "Cea708Decoder");
                     }
                 }
                 if (j10 == 0) {
@@ -186,7 +187,7 @@ public final class g extends j {
                                             default:
                                                 if (j11 < 17 || j11 > 23) {
                                                     if (j11 < 24 || j11 > 31) {
-                                                        com.google.android.recaptcha.internal.a.o(j11, "Invalid C0 command: ", "Cea708Decoder");
+                                                        e2.o(j11, "Invalid C0 command: ", "Cea708Decoder");
                                                         break;
                                                     } else {
                                                         h2.a.l("Cea708Decoder", "Currently unsupported COMMAND_P16 Command: " + j11);
@@ -212,23 +213,23 @@ public final class g extends j {
                                 if (j11 == 127) {
                                     this.m.a((char) 9835);
                                 } else {
-                                    this.m.a((char) (j11 & qs.e4));
+                                    this.m.a((char) (j11 & ns.e4));
                                 }
                                 i7 = i10;
-                                z10 = true;
+                                z11 = true;
                             } else {
                                 if (j11 <= 159) {
                                     e[] eVarArr = this.l;
                                     switch (j11) {
                                         case 128:
-                                        case qs.N1 /* 129 */:
-                                        case qs.O1 /* 130 */:
-                                        case qs.P1 /* 131 */:
-                                        case qs.Q1 /* 132 */:
+                                        case ns.N1 /* 129 */:
+                                        case ns.O1 /* 130 */:
+                                        case ns.P1 /* 131 */:
+                                        case ns.Q1 /* 132 */:
                                         case 133:
                                         case 134:
-                                        case qs.R1 /* 135 */:
-                                            z9 = true;
+                                        case ns.R1 /* 135 */:
+                                            z10 = true;
                                             int i13 = j11 - 128;
                                             if (this.q != i13) {
                                                 this.q = i13;
@@ -236,8 +237,8 @@ public final class g extends j {
                                                 break;
                                             }
                                             break;
-                                        case qs.S1 /* 136 */:
-                                            z9 = true;
+                                        case ns.S1 /* 136 */:
+                                            z10 = true;
                                             for (int i14 = 1; i14 <= 8; i14++) {
                                                 if (fVar3.i()) {
                                                     e eVar = eVarArr[8 - i14];
@@ -251,54 +252,54 @@ public final class g extends j {
                                                 }
                                             }
                                             break;
-                                        case qs.T1 /* 137 */:
+                                        case ns.T1 /* 137 */:
                                             for (int i15 = 1; i15 <= 8; i15++) {
                                                 if (fVar3.i()) {
                                                     eVarArr[8 - i15].d = true;
                                                 }
                                             }
-                                            z9 = true;
+                                            z10 = true;
                                             break;
-                                        case qs.U1 /* 138 */:
+                                        case ns.U1 /* 138 */:
                                             for (int i16 = 1; i16 <= 8; i16++) {
                                                 if (fVar3.i()) {
                                                     eVarArr[8 - i16].d = false;
                                                 }
                                             }
-                                            z9 = true;
+                                            z10 = true;
                                             break;
-                                        case qs.V1 /* 139 */:
+                                        case ns.V1 /* 139 */:
                                             for (int i17 = 1; i17 <= 8; i17++) {
                                                 if (fVar3.i()) {
                                                     eVarArr[8 - i17].d = !r1.d;
                                                 }
                                             }
-                                            z9 = true;
+                                            z10 = true;
                                             break;
-                                        case qs.W1 /* 140 */:
+                                        case ns.W1 /* 140 */:
                                             for (int i18 = 1; i18 <= 8; i18++) {
                                                 if (fVar3.i()) {
                                                     eVarArr[8 - i18].d();
                                                 }
                                             }
-                                            z9 = true;
+                                            z10 = true;
                                             break;
-                                        case qs.X1 /* 141 */:
+                                        case ns.X1 /* 141 */:
                                             fVar3.L(8);
-                                            z9 = true;
+                                            z10 = true;
                                             break;
-                                        case qs.Y1 /* 142 */:
-                                            z9 = true;
+                                        case ns.Y1 /* 142 */:
+                                            z10 = true;
                                             break;
-                                        case qs.Z1 /* 143 */:
+                                        case ns.Z1 /* 143 */:
                                             l();
-                                            z9 = true;
+                                            z10 = true;
                                             break;
-                                        case qs.a2 /* 144 */:
+                                        case ns.a2 /* 144 */:
                                             int i19 = i10;
                                             if (!this.m.c) {
                                                 fVar3.L(16);
-                                                z9 = true;
+                                                z10 = true;
                                                 i12 = 3;
                                                 break;
                                             } else {
@@ -311,9 +312,9 @@ public final class g extends j {
                                                 fVar3.j(3);
                                                 fVar3.j(3);
                                                 this.m.e(i20, i21);
-                                                z9 = true;
+                                                z10 = true;
                                             }
-                                        case qs.b2 /* 145 */:
+                                        case ns.b2 /* 145 */:
                                             if (this.m.c) {
                                                 int c11 = e.c(fVar3.j(2), fVar3.j(2), fVar3.j(2), fVar3.j(2));
                                                 int c12 = e.c(fVar3.j(2), fVar3.j(2), fVar3.j(2), fVar3.j(2));
@@ -323,10 +324,10 @@ public final class g extends j {
                                             } else {
                                                 fVar3.L(24);
                                             }
-                                            z9 = true;
+                                            z10 = true;
                                             i12 = 3;
                                             break;
-                                        case qs.c2 /* 146 */:
+                                        case ns.c2 /* 146 */:
                                             if (this.m.c) {
                                                 fVar3.L(4);
                                                 int j12 = fVar3.j(4);
@@ -340,18 +341,18 @@ public final class g extends j {
                                             } else {
                                                 fVar3.L(16);
                                             }
-                                            z9 = true;
+                                            z10 = true;
                                             i12 = 3;
                                             break;
-                                        case qs.d2 /* 147 */:
-                                        case qs.e2 /* 148 */:
-                                        case qs.f2 /* 149 */:
-                                        case qs.g2 /* 150 */:
+                                        case ns.d2 /* 147 */:
+                                        case ns.e2 /* 148 */:
+                                        case ns.f2 /* 149 */:
+                                        case ns.g2 /* 150 */:
                                         default:
-                                            com.google.android.recaptcha.internal.a.o(j11, "Invalid C1 command: ", "Cea708Decoder");
-                                            z9 = true;
+                                            e2.o(j11, "Invalid C1 command: ", "Cea708Decoder");
+                                            z10 = true;
                                             break;
-                                        case qs.h2 /* 151 */:
+                                        case ns.h2 /* 151 */:
                                             if (this.m.c) {
                                                 int c13 = e.c(fVar3.j(2), fVar3.j(2), fVar3.j(2), fVar3.j(2));
                                                 fVar3.j(2);
@@ -368,17 +369,17 @@ public final class g extends j {
                                             } else {
                                                 fVar3.L(32);
                                             }
-                                            z9 = true;
+                                            z10 = true;
                                             i12 = 3;
                                             break;
-                                        case qs.i2 /* 152 */:
-                                        case qs.j2 /* 153 */:
-                                        case qs.k2 /* 154 */:
-                                        case qs.l2 /* 155 */:
-                                        case qs.m2 /* 156 */:
-                                        case qs.n2 /* 157 */:
-                                        case qs.o2 /* 158 */:
-                                        case qs.p2 /* 159 */:
+                                        case ns.i2 /* 152 */:
+                                        case ns.j2 /* 153 */:
+                                        case ns.k2 /* 154 */:
+                                        case ns.l2 /* 155 */:
+                                        case ns.m2 /* 156 */:
+                                        case ns.n2 /* 157 */:
+                                        case ns.o2 /* 158 */:
+                                        case ns.p2 /* 159 */:
                                             int i22 = j11 - 152;
                                             e eVar4 = eVarArr[i22];
                                             fVar3.L(i10);
@@ -416,7 +417,7 @@ public final class g extends j {
                                                 eVar4.l = j19;
                                                 int i26 = j19 - 1;
                                                 int i27 = e.B[i26];
-                                                boolean z11 = e.A[i26];
+                                                boolean z12 = e.A[i26];
                                                 int i28 = e.y[i26];
                                                 int i29 = e.z[i26];
                                                 int i30 = e.x[i26];
@@ -435,21 +436,21 @@ public final class g extends j {
                                                 this.q = i22;
                                                 this.m = eVarArr[i22];
                                             }
-                                            z9 = true;
+                                            z10 = true;
                                             i12 = 3;
                                             break;
                                     }
                                 } else {
-                                    z9 = true;
+                                    z10 = true;
                                     if (j11 <= 255) {
-                                        this.m.a((char) (j11 & qs.e4));
+                                        this.m.a((char) (j11 & ns.e4));
                                     } else {
-                                        com.google.android.recaptcha.internal.a.o(j11, "Invalid base command: ", "Cea708Decoder");
+                                        e2.o(j11, "Invalid base command: ", "Cea708Decoder");
                                         i7 = 2;
                                         c10 = 7;
                                     }
                                 }
-                                z10 = z9;
+                                z11 = z10;
                                 i7 = 2;
                                 c10 = 7;
                             }
@@ -499,49 +500,49 @@ public final class g extends j {
                                             case 50:
                                                 this.m.a((char) 8217);
                                                 break;
-                                            case qs.o0 /* 51 */:
+                                            case ns.o0 /* 51 */:
                                                 this.m.a((char) 8220);
                                                 break;
-                                            case qs.p0 /* 52 */:
+                                            case ns.p0 /* 52 */:
                                                 this.m.a((char) 8221);
                                                 break;
-                                            case qs.q0 /* 53 */:
+                                            case ns.q0 /* 53 */:
                                                 this.m.a((char) 8226);
                                                 break;
                                             default:
                                                 switch (j21) {
-                                                    case qs.D1 /* 118 */:
+                                                    case ns.D1 /* 118 */:
                                                         this.m.a((char) 8539);
                                                         break;
-                                                    case qs.E1 /* 119 */:
+                                                    case ns.E1 /* 119 */:
                                                         this.m.a((char) 8540);
                                                         break;
                                                     case 120:
                                                         this.m.a((char) 8541);
                                                         break;
-                                                    case qs.F1 /* 121 */:
+                                                    case ns.F1 /* 121 */:
                                                         this.m.a((char) 8542);
                                                         break;
-                                                    case qs.G1 /* 122 */:
+                                                    case ns.G1 /* 122 */:
                                                         this.m.a((char) 9474);
                                                         break;
-                                                    case qs.H1 /* 123 */:
+                                                    case ns.H1 /* 123 */:
                                                         this.m.a((char) 9488);
                                                         break;
-                                                    case qs.I1 /* 124 */:
+                                                    case ns.I1 /* 124 */:
                                                         this.m.a((char) 9492);
                                                         break;
-                                                    case qs.J1 /* 125 */:
+                                                    case ns.J1 /* 125 */:
                                                         this.m.a((char) 9472);
                                                         break;
-                                                    case qs.K1 /* 126 */:
+                                                    case ns.K1 /* 126 */:
                                                         this.m.a((char) 9496);
                                                         break;
-                                                    case qs.L1 /* 127 */:
+                                                    case ns.L1 /* 127 */:
                                                         this.m.a((char) 9484);
                                                         break;
                                                     default:
-                                                        com.google.android.recaptcha.internal.a.o(j21, "Invalid G2 character: ", "Cea708Decoder");
+                                                        e2.o(j21, "Invalid G2 character: ", "Cea708Decoder");
                                                         break;
                                                 }
                                         }
@@ -549,19 +550,19 @@ public final class g extends j {
                                         this.m.a((char) 8480);
                                     }
                                     i7 = 2;
-                                    z10 = true;
+                                    z11 = true;
                                 } else if (j21 > 159) {
                                     i7 = 2;
                                     if (j21 <= 255) {
                                         if (j21 == 160) {
                                             this.m.a((char) 13252);
                                         } else {
-                                            com.google.android.recaptcha.internal.a.o(j21, "Invalid G3 character: ", "Cea708Decoder");
+                                            e2.o(j21, "Invalid G3 character: ", "Cea708Decoder");
                                             this.m.a('_');
                                         }
-                                        z10 = true;
+                                        z11 = true;
                                     } else {
-                                        com.google.android.recaptcha.internal.a.o(j21, "Invalid extended command: ", "Cea708Decoder");
+                                        e2.o(j21, "Invalid extended command: ", "Cea708Decoder");
                                     }
                                 } else if (j21 <= 135) {
                                     fVar3.L(32);
@@ -580,7 +581,7 @@ public final class g extends j {
                 }
             }
         }
-        if (z10) {
+        if (z11) {
             this.n = k();
         }
         this.p = null;

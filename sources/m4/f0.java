@@ -1,13 +1,91 @@
 package m4;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import com.google.android.gms.internal.vision.e2;
+import java.net.Inet4Address;
+import java.net.Inet6Address;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import javax.net.SocketFactory;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f0 {
-    public final String a;
-    public final byte[] b;
+    public final int a;
+    public final int b;
+    public int c;
+    public final Object d;
+    public Object e;
 
-    public f0(String str, byte[] bArr) {
-        this.a = str;
-        this.b = bArr;
+    public f0(int i7, int i10) {
+        this(TLObject.FLAG_31, i7, i10);
+    }
+
+    public Socket a(InetAddress[] inetAddressArr) {
+        rc.h hVar = new rc.h();
+        ArrayList arrayList = new ArrayList(inetAddressArr.length);
+        int i7 = 0;
+        f5.v vVar = null;
+        int i10 = 0;
+        for (InetAddress inetAddress : inetAddressArr) {
+            int i11 = this.b;
+            if ((i11 != 2 || (inetAddress instanceof Inet4Address)) && (i11 != 3 || (inetAddress instanceof Inet6Address))) {
+                int i12 = i10 + this.c;
+                f5.v vVar2 = new f5.v(i12, 15);
+                arrayList.add(new rc.t(hVar, (SocketFactory) this.d, new InetSocketAddress(inetAddress, ((rc.a) this.e).b), this.a, vVar, vVar2));
+                vVar = vVar2;
+                i10 = i12;
+            }
+        }
+        hVar.b = arrayList;
+        hVar.a = new CountDownLatch(((ArrayList) hVar.b).size());
+        ArrayList arrayList2 = (ArrayList) hVar.b;
+        int size = arrayList2.size();
+        while (i7 < size) {
+            Object obj = arrayList2.get(i7);
+            i7++;
+            ((rc.t) obj).start();
+        }
+        ((CountDownLatch) hVar.a).await();
+        Socket socket = (Socket) hVar.c;
+        if (socket != null) {
+            return socket;
+        }
+        Exception exc = (Exception) hVar.d;
+        if (exc != null) {
+            throw exc;
+        }
+        throw new rc.v(44, "No viable interface to connect");
+    }
+
+    public void b() {
+        int i7 = this.c;
+        this.c = i7 == Integer.MIN_VALUE ? this.a : i7 + this.b;
+        this.e = ((String) this.d) + this.c;
+    }
+
+    public void c() {
+        if (this.c == Integer.MIN_VALUE) {
+            throw new IllegalStateException("generateNewId() must be called before retrieving ids.");
+        }
+    }
+
+    public f0(int i7, int i10, int i11) {
+        this.d = i7 != Integer.MIN_VALUE ? e2.i(i7, "/") : "";
+        this.a = i10;
+        this.b = i11;
+        this.c = TLObject.FLAG_31;
+        this.e = "";
+    }
+
+    public f0(SocketFactory socketFactory, rc.a aVar, int i7, int i10, int i11) {
+        this.d = socketFactory;
+        this.e = aVar;
+        this.a = i7;
+        this.b = i10;
+        this.c = i11;
     }
 }

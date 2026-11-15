@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class q extends AnimatorListenerAdapter {
     public final /* synthetic */ float[] a;
@@ -13,12 +13,12 @@ public final class q extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean d;
     public final /* synthetic */ r e;
 
-    public q(r rVar, float[] fArr, float f10, float f11, boolean z9) {
+    public q(r rVar, float[] fArr, float f10, float f11, boolean z10) {
         this.e = rVar;
         this.a = fArr;
         this.b = f10;
         this.c = f11;
-        this.d = z9;
+        this.d = z10;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener

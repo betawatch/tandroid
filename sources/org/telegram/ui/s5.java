@@ -3,7 +3,7 @@ package org.telegram.ui;
 import j$.util.Objects;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class s5 extends rg.a {
     public final String c;
@@ -19,7 +19,7 @@ public final class s5 extends rg.a {
 
     public final boolean equals(Object obj) {
         TL_stories.PrepaidGiveaway prepaidGiveaway;
-        boolean z9 = this.f;
+        boolean z10 = this.f;
         if (this == obj) {
             return true;
         }
@@ -28,26 +28,26 @@ public final class s5 extends rg.a {
         }
         s5 s5Var = (s5) obj;
         TL_stories.Boost boost = s5Var.d;
-        boolean z10 = s5Var.f;
+        boolean z11 = s5Var.f;
         TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
         if (prepaidGiveaway2 != null && (prepaidGiveaway = s5Var.e) != null) {
-            return prepaidGiveaway2.id == prepaidGiveaway.id && z9 == z10;
+            return prepaidGiveaway2.id == prepaidGiveaway.id && z10 == z11;
         }
         TL_stories.Boost boost2 = this.d;
         if (boost2 == null || boost == null) {
             return true;
         }
-        return boost2.id.hashCode() == boost.id.hashCode() && z9 == z10 && this.g == s5Var.g;
+        return boost2.id.hashCode() == boost.id.hashCode() && z10 == z11 && this.g == s5Var.g;
     }
 
     public final int hashCode() {
         return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
     }
 
-    public s5(TL_stories.Boost boost, boolean z9, int i7) {
+    public s5(TL_stories.Boost boost, boolean z10, int i7) {
         super(5, true);
         this.d = boost;
-        this.f = z9;
+        this.f = z10;
         this.g = i7;
     }
 }

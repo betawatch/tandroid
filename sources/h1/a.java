@@ -16,11 +16,11 @@ import c8.vc;
 import c8.wc;
 import kotlin.jvm.internal.j;
 import v0.c;
-import v0.o;
+import v0.n;
 import w0.d;
 import w0.i;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a {
     public static d a(Intent intent) {
@@ -54,7 +54,7 @@ public abstract class a {
         return ge.b(getCredentialException.getMessage(), type);
     }
 
-    public static o d(Intent intent) {
+    public static n d(Intent intent) {
         j.e(intent, "intent");
         GetCredentialResponse getCredentialResponse = (GetCredentialResponse) intent.getParcelableExtra("android.service.credentials.extra.GET_CREDENTIAL_RESPONSE", GetCredentialResponse.class);
         if (getCredentialResponse == null) {
@@ -66,7 +66,7 @@ public abstract class a {
         j.d(type, "getType(...)");
         Bundle data = credential.getData();
         j.d(data, "getData(...)");
-        return new o(wc.a(type, data));
+        return new n(wc.a(type, data));
     }
 
     public static AccessibilityNodeInfo.AccessibilityAction e() {

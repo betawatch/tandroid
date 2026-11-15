@@ -1,11 +1,75 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final class n80 implements org.telegram.ui.Components.ky0 {
-    public final /* synthetic */ LaunchActivity a;
+import android.os.Bundle;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-    public n80(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class n80 implements org.telegram.messenger.bp {
+    public final /* synthetic */ g50 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Integer e;
+    public final /* synthetic */ Bundle f;
+    public final /* synthetic */ LaunchActivity h;
+
+    public n80(LaunchActivity launchActivity, g50 g50Var, String str, org.telegram.ui.ActionBar.e2 e2Var, long j3, Integer num, Bundle bundle) {
+        this.h = launchActivity;
+        this.a = g50Var;
+        this.b = str;
+        this.c = e2Var;
+        this.d = j3;
+        this.e = num;
+        this.f = bundle;
+    }
+
+    @Override // org.telegram.messenger.bp
+    public final void a() {
+        LaunchActivity launchActivity = this.h;
+        if (!launchActivity.isFinishing()) {
+            org.telegram.ui.Components.t4.r0((org.telegram.ui.ActionBar.e2) i5.c.h(1, launchActivity.e0), null, org.telegram.messenger.hd.M0(2131749075, null), null);
+        }
+        try {
+            this.a.run();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.messenger.bp
+    public final void f(boolean z10) {
+        try {
+            this.a.run();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+        LaunchActivity launchActivity = this.h;
+        if (launchActivity.isFinishing()) {
+            return;
+        }
+        String str = this.b;
+        long j3 = this.d;
+        org.telegram.ui.ActionBar.e2 e2Var = this.c;
+        if (str == null || !(e2Var instanceof an) || ((an) e2Var).a() != j3) {
+            if (e2Var instanceof an) {
+                an anVar = (an) e2Var;
+                if (anVar.a() == j3 && this.e == null) {
+                    org.telegram.messenger.g0.F3(5.0f, anVar.A0, null);
+                    org.telegram.messenger.p2.E.a();
+                    qj qjVar = anVar.a0;
+                    for (int i7 = 0; i7 < qjVar.getChildCount(); i7++) {
+                        org.telegram.messenger.g0.F3(5.0f, qjVar.getChildAt(i7), null);
+                    }
+                    org.telegram.ui.ActionBar.k actionBar = anVar.getActionBar();
+                    for (int i10 = 0; i10 < actionBar.getChildCount(); i10++) {
+                        org.telegram.messenger.g0.F3(5.0f, actionBar.getChildAt(i10), null);
+                    }
+                }
+            }
+            e2Var = new an(this.f);
+            ((ActionBarLayout) launchActivity.M()).S(e2Var);
+        }
+        org.telegram.messenger.g0.i3(new di.f2(this, this.b, this.d, e2Var, 22), 150L);
     }
 }

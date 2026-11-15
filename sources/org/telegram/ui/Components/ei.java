@@ -1,51 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ei implements org.telegram.messenger.d20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class ei extends fi {
+    public int b;
+    public final /* synthetic */ ki c;
 
-    public /* synthetic */ ei(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ei(ki kiVar, Context context) {
+        super(context);
+        this.c = kiVar;
+        setWillNotDraw(false);
+        setFocusable(true);
+        int i7 = ki.I4;
+        org.telegram.ui.ActionBar.e6 e6Var = kiVar.J0;
+        qh.b bVar = new qh.b(context);
+        bVar.d = e6Var;
+        bVar.R = true;
+        TextView textView = bVar.a;
+        textView.setTextSize(1, 11.0f);
+        textView.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
+        bVar.b(false);
+        bVar.b.setLayoutParams(c8.ja.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+        bVar.x = org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Tl, e6Var);
+        bVar.s = org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Rl, e6Var);
+        bVar.w = org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Sl, e6Var);
+        bVar.a();
+        this.a = bVar;
+        addView(bVar, c8.ja.c(-1.0f, -1));
     }
 
-    @Override // org.telegram.messenger.d20
-    public final Object a(Object obj) {
-        int i7 = this.a;
-        char c10 = 1;
-        Object obj2 = this.b;
-        switch (i7) {
-            case 0:
-                return Boolean.valueOf(mi.O((mi) obj2, (org.telegram.messenger.ij) obj));
-            case 1:
-                th.f fVar = (th.f) obj2;
-                View view = (View) obj;
-                ImageReceiver imageReceiver = new ImageReceiver(view);
-                org.telegram.messenger.rz c11 = org.telegram.messenger.t5.c((org.telegram.ui.ActionBar.m6.I.q() ? 3 : 6) * 0.12f, org.telegram.ui.ActionBar.m6.Dc);
-                c11.t = true;
-                c11.m = org.telegram.ui.ActionBar.m6.ef;
-                imageReceiver.s0(org.telegram.messenger.hc.p(org.telegram.messenger.m20.b(fVar.b.geo, org.telegram.messenger.qs.X4, org.telegram.messenger.qs.y2, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.g0.p)))), null, null, null, new np(c11), null, 0);
-                view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.l8(imageReceiver, c10 == true ? 1 : 0));
-                imageReceiver.J0(org.telegram.messenger.g0.L(14.0f));
-                return new nc(4, imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
-            case 2:
-                int i10 = ((SparseIntArray) obj2).get(((Integer) obj).intValue(), -1);
-                if (i10 == -1) {
-                    return Boolean.TRUE;
-                }
-                return Boolean.valueOf(i10 == 1);
-            default:
-                r41 r41Var = (r41) obj2;
-                View view2 = (View) obj;
-                r41Var.getClass();
-                return view2.getParent() != r41Var ? Boolean.FALSE : Boolean.valueOf(!m41.K(r41Var.T(view2).f));
-        }
+    public final void a(int i7, String str, qh.a aVar) {
+        this.a.setText(str);
+        this.a.setTabAnimation(aVar);
+        this.b = i7;
+    }
+
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.f(((long) this.b) == this.c.U2, false);
     }
 }

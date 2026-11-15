@@ -25,7 +25,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Surface;
-import c8.ic;
+import c8.kc;
 import com.google.android.gms.tasks.Tasks;
 import j$.util.Objects;
 import java.security.MessageDigest;
@@ -33,13 +33,13 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
+import org.telegram.messenger.as;
+import org.telegram.messenger.az;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.ds;
-import org.telegram.messenger.qd;
-import org.telegram.ui.Components.xv0;
+import org.telegram.messenger.pd;
+import org.telegram.ui.Components.aw0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class b8 {
     public Object a;
@@ -74,15 +74,15 @@ public class b8 {
     }
 
     public static ColorStateList e(Context context, int i7) {
-        int c10 = m.a3.c(context, R.attr.colorControlHighlight);
-        return new ColorStateList(new int[][]{m.a3.b, m.a3.d, m.a3.c, m.a3.f}, new int[]{m.a3.b(context, R.attr.colorButtonNormal), i0.a.k(c10, i7), i0.a.k(c10, i7), i7});
+        int c10 = m.z2.c(context, R.attr.colorControlHighlight);
+        return new ColorStateList(new int[][]{m.z2.b, m.z2.d, m.z2.c, m.z2.f}, new int[]{m.z2.b(context, R.attr.colorButtonNormal), i0.a.k(c10, i7), i0.a.k(c10, i7), i7});
     }
 
     public static x2.f0 f(e2.c1 c1Var, h9.i0 i0Var, x2.f0 f0Var, e2.i1 i1Var) {
         e2.l1 y02 = c1Var.y0();
         int B = c1Var.B();
         Object l10 = y02.p() ? null : y02.l(B);
-        int b10 = (c1Var.p() || y02.p()) ? -1 : y02.f(B, i1Var, false).b(h2.m0.S(c1Var.l()) - i1Var.e);
+        int b10 = (c1Var.p() || y02.p()) ? -1 : y02.f(B, i1Var, false).b(h2.l0.S(c1Var.l()) - i1Var.e);
         for (int i7 = 0; i7 < i0Var.size(); i7++) {
             x2.f0 f0Var2 = (x2.f0) i0Var.get(i7);
             if (i(f0Var2, l10, c1Var.p(), c1Var.n0(), c1Var.O(), b10)) {
@@ -95,13 +95,13 @@ public class b8 {
         return null;
     }
 
-    public static LayerDrawable g(m.n2 n2Var, Context context, int i7) {
+    public static LayerDrawable g(m.m2 m2Var, Context context, int i7) {
         BitmapDrawable bitmapDrawable;
         BitmapDrawable bitmapDrawable2;
         BitmapDrawable bitmapDrawable3;
         int dimensionPixelSize = context.getResources().getDimensionPixelSize(i7);
-        Drawable g10 = n2Var.g(context, R.drawable.abc_star_black_48dp);
-        Drawable g11 = n2Var.g(context, R.drawable.abc_star_half_black_48dp);
+        Drawable g10 = m2Var.g(context, R.drawable.abc_star_black_48dp);
+        Drawable g11 = m2Var.g(context, R.drawable.abc_star_half_black_48dp);
         if ((g10 instanceof BitmapDrawable) && g10.getIntrinsicWidth() == dimensionPixelSize && g10.getIntrinsicHeight() == dimensionPixelSize) {
             bitmapDrawable = (BitmapDrawable) g10;
             bitmapDrawable2 = new BitmapDrawable(bitmapDrawable.getBitmap());
@@ -130,43 +130,43 @@ public class b8 {
         return layerDrawable;
     }
 
-    public static boolean i(x2.f0 f0Var, Object obj, boolean z9, int i7, int i10, int i11) {
+    public static boolean i(x2.f0 f0Var, Object obj, boolean z10, int i7, int i10, int i11) {
         Object obj2 = f0Var.a;
         int i12 = f0Var.b;
         if (!obj2.equals(obj)) {
             return false;
         }
-        if (z9 && i12 == i7 && f0Var.c == i10) {
+        if (z10 && i12 == i7 && f0Var.c == i10) {
             return true;
         }
-        return !z9 && i12 == -1 && f0Var.e == i11;
+        return !z10 && i12 == -1 && f0Var.e == i11;
     }
 
     public static void n(Drawable drawable, int i7, PorterDuff.Mode mode) {
         PorterDuffColorFilter h;
-        int[] iArr = m.m1.a;
+        int[] iArr = m.l1.a;
         Drawable mutate = drawable.mutate();
         if (mode == null) {
-            mode = m.r.b;
+            mode = m.q.b;
         }
-        PorterDuff.Mode mode2 = m.r.b;
-        synchronized (m.r.class) {
-            h = m.n2.h(i7, mode);
+        PorterDuff.Mode mode2 = m.q.b;
+        synchronized (m.q.class) {
+            h = m.m2.h(i7, mode);
         }
         mutate.setColorFilter(h);
     }
 
-    public void a(wa waVar, x2.f0 f0Var, e2.l1 l1Var) {
+    public void a(xa xaVar, x2.f0 f0Var, e2.l1 l1Var) {
         if (f0Var == null) {
             return;
         }
         if (l1Var.b(f0Var.a) != -1) {
-            waVar.v(f0Var, l1Var);
+            xaVar.u(f0Var, l1Var);
             return;
         }
-        e2.l1 l1Var2 = (e2.l1) ((h9.y1) this.c).get(f0Var);
+        e2.l1 l1Var2 = (e2.l1) ((h9.x1) this.c).get(f0Var);
         if (l1Var2 != null) {
-            waVar.v(f0Var, l1Var2);
+            xaVar.u(f0Var, l1Var2);
         }
     }
 
@@ -193,8 +193,8 @@ public class b8 {
     }
 
     public void d() {
-        ((LocationManager) this.b).removeUpdates((qd) this.c);
-        ((LocationManager) this.b).removeUpdates((qd) this.d);
+        ((LocationManager) this.b).removeUpdates((pd) this.c);
+        ((LocationManager) this.b).removeUpdates((pd) this.d);
         this.f = null;
         this.e = null;
     }
@@ -208,19 +208,19 @@ public class b8 {
         }
         if (i7 != R.drawable.abc_switch_thumb_material) {
             if (i7 == R.drawable.abc_btn_default_mtrl_shape) {
-                return e(context, m.a3.c(context, R.attr.colorButtonNormal));
+                return e(context, m.z2.c(context, R.attr.colorButtonNormal));
             }
             if (i7 == R.drawable.abc_btn_borderless_material) {
                 return e(context, 0);
             }
             if (i7 == R.drawable.abc_btn_colored_material) {
-                return e(context, m.a3.c(context, R.attr.colorAccent));
+                return e(context, m.z2.c(context, R.attr.colorAccent));
             }
             if (i7 == R.drawable.abc_spinner_mtrl_am_alpha || i7 == R.drawable.abc_spinner_textfield_background_material) {
                 return b5.a.a(context, R.color.abc_tint_spinner);
             }
             if (b((int[]) this.b, i7)) {
-                return m.a3.d(context, R.attr.colorControlNormal);
+                return m.z2.d(context, R.attr.colorControlNormal);
             }
             if (b((int[]) this.e, i7)) {
                 return b5.a.a(context, R.color.abc_tint_default);
@@ -235,21 +235,21 @@ public class b8 {
         }
         int[][] iArr = new int[3][];
         int[] iArr2 = new int[3];
-        ColorStateList d = m.a3.d(context, R.attr.colorSwitchThumbNormal);
+        ColorStateList d = m.z2.d(context, R.attr.colorSwitchThumbNormal);
         if (d == null || !d.isStateful()) {
-            iArr[0] = m.a3.b;
-            iArr2[0] = m.a3.b(context, R.attr.colorSwitchThumbNormal);
-            iArr[1] = m.a3.e;
-            iArr2[1] = m.a3.c(context, R.attr.colorControlActivated);
-            iArr[2] = m.a3.f;
-            iArr2[2] = m.a3.c(context, R.attr.colorSwitchThumbNormal);
+            iArr[0] = m.z2.b;
+            iArr2[0] = m.z2.b(context, R.attr.colorSwitchThumbNormal);
+            iArr[1] = m.z2.e;
+            iArr2[1] = m.z2.c(context, R.attr.colorControlActivated);
+            iArr[2] = m.z2.f;
+            iArr2[2] = m.z2.c(context, R.attr.colorSwitchThumbNormal);
         } else {
-            int[] iArr3 = m.a3.b;
+            int[] iArr3 = m.z2.b;
             iArr[0] = iArr3;
             iArr2[0] = d.getColorForState(iArr3, 0);
-            iArr[1] = m.a3.e;
-            iArr2[1] = m.a3.c(context, R.attr.colorControlActivated);
-            iArr[2] = m.a3.f;
+            iArr[1] = m.z2.e;
+            iArr2[1] = m.z2.c(context, R.attr.colorControlActivated);
+            iArr[2] = m.z2.f;
             iArr2[2] = d.getDefaultColor();
         }
         return new ColorStateList(iArr, iArr2);
@@ -259,7 +259,7 @@ public class b8 {
         Bundle bundle = (Bundle) this.a;
         String[] strArr2 = (String[]) Arrays.copyOf(strArr, strArr.length);
         if (strArr2.length <= 0) {
-            ic.a("String array is empty and is ignored by put method.");
+            kc.a("String array is empty and is ignored by put method.");
             return;
         }
         int i7 = 0;
@@ -271,7 +271,7 @@ public class b8 {
                 sb2.append("String at ");
                 sb2.append(i10);
                 sb2.append(" is null and is ignored by put method.");
-                ic.a(sb2.toString());
+                kc.a(sb2.toString());
             } else {
                 int i11 = 20000;
                 if (str2.length() > 20000) {
@@ -279,7 +279,7 @@ public class b8 {
                     sb3.append("String at ");
                     sb3.append(i10);
                     sb3.append(" is too long, truncating string.");
-                    ic.a(sb3.toString());
+                    kc.a(sb3.toString());
                     String str3 = strArr2[i7];
                     if (str3.length() > 20000) {
                         if (Character.isHighSurrogate(str3.charAt(19999)) && Character.isLowSurrogate(str3.charAt(20000))) {
@@ -295,7 +295,7 @@ public class b8 {
         if (i7 > 0) {
             Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i7);
             if (objArr.length >= 100) {
-                ic.a("Input Array of elements is too big, cutting off.");
+                kc.a("Input Array of elements is too big, cutting off.");
                 objArr = Arrays.copyOf(objArr, 100);
             }
             bundle.putStringArray(str, (String[]) objArr);
@@ -318,7 +318,7 @@ public class b8 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void l(String str, Bundle bundle, boolean z9) {
+    public void l(String str, Bundle bundle, boolean z10) {
         String str2;
         String str3;
         sa.f fVar;
@@ -351,7 +351,7 @@ public class b8 {
             str3 = "[HASH-ERROR]";
         }
         bundle.putString("firebase-app-name-hash", str3);
-        if (z9) {
+        if (z10) {
             o9.g gVar3 = (o9.g) this.a;
             gVar3.a();
             bundle.putString("Goog-Api-Key", gVar3.c.a);
@@ -411,12 +411,12 @@ public class b8 {
             this.b = (LocationManager) org.telegram.messenger.t0.b.getSystemService("location");
         }
         try {
-            ((LocationManager) this.b).requestLocationUpdates("gps", 1L, 0.0f, (qd) this.c);
+            ((LocationManager) this.b).requestLocationUpdates("gps", 1L, 0.0f, (pd) this.c);
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
         try {
-            ((LocationManager) this.b).requestLocationUpdates("network", 1L, 0.0f, (qd) this.d);
+            ((LocationManager) this.b).requestLocationUpdates("network", 1L, 0.0f, (pd) this.d);
         } catch (Exception e11) {
             org.telegram.messenger.a8.g(e11, true);
         }
@@ -429,53 +429,53 @@ public class b8 {
         } catch (Exception e12) {
             org.telegram.messenger.a8.g(e12, true);
         }
-        ds dsVar = (ds) this.e;
-        if (dsVar != null) {
-            org.telegram.messenger.g0.r(dsVar);
+        as asVar = (as) this.e;
+        if (asVar != null) {
+            org.telegram.messenger.g0.r(asVar);
         }
-        ds dsVar2 = new ds(this, 14);
-        this.e = dsVar2;
-        org.telegram.messenger.g0.i3(dsVar2, 5000L);
+        as asVar2 = new as(this, 14);
+        this.e = asVar2;
+        org.telegram.messenger.g0.i3(asVar2, 5000L);
     }
 
     public void p() {
         if (((LocationManager) this.b) == null) {
             return;
         }
-        ds dsVar = (ds) this.e;
-        if (dsVar != null) {
-            org.telegram.messenger.g0.r(dsVar);
+        as asVar = (as) this.e;
+        if (asVar != null) {
+            org.telegram.messenger.g0.r(asVar);
         }
         d();
     }
 
-    public void q(boolean z9) {
+    public void q(boolean z10) {
         ArrayList arrayList = (ArrayList) this.c;
         ArrayList arrayList2 = (ArrayList) this.b;
         ArrayList arrayList3 = (ArrayList) this.a;
         for (int i7 = 0; i7 < arrayList3.size(); i7++) {
             ((ValueAnimator) arrayList3.get(i7)).cancel();
-            if (z9) {
+            if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i7)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new xv0(this, i7, 0));
+                ofFloat.addUpdateListener(new aw0(this, i7, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
         }
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
             ((ValueAnimator) arrayList2.get(i10)).cancel();
-            if (z9) {
+            if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i10)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new xv0(this, i10, 1));
+                ofFloat2.addUpdateListener(new aw0(this, i10, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
         }
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             ((ValueAnimator) arrayList.get(i11)).cancel();
-            if (z9) {
+            if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i11)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new xv0(this, i11, 2));
+                ofFloat3.addUpdateListener(new aw0(this, i11, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -502,24 +502,24 @@ public class b8 {
     }
 
     public void s(e2.l1 l1Var) {
-        wa waVar = new wa(4, 10);
+        xa xaVar = new xa(4, 10);
         if (((h9.i0) this.b).isEmpty()) {
-            a(waVar, (x2.f0) this.e, l1Var);
+            a(xaVar, (x2.f0) this.e, l1Var);
             if (!Objects.equals((x2.f0) this.f, (x2.f0) this.e)) {
-                a(waVar, (x2.f0) this.f, l1Var);
+                a(xaVar, (x2.f0) this.f, l1Var);
             }
             if (!Objects.equals((x2.f0) this.d, (x2.f0) this.e) && !Objects.equals((x2.f0) this.d, (x2.f0) this.f)) {
-                a(waVar, (x2.f0) this.d, l1Var);
+                a(xaVar, (x2.f0) this.d, l1Var);
             }
         } else {
             for (int i7 = 0; i7 < ((h9.i0) this.b).size(); i7++) {
-                a(waVar, (x2.f0) ((h9.i0) this.b).get(i7), l1Var);
+                a(xaVar, (x2.f0) ((h9.i0) this.b).get(i7), l1Var);
             }
             if (!((h9.i0) this.b).contains((x2.f0) this.d)) {
-                a(waVar, (x2.f0) this.d, l1Var);
+                a(xaVar, (x2.f0) this.d, l1Var);
             }
         }
-        this.c = waVar.d(true);
+        this.c = xaVar.c(true);
     }
 
     public b8(int i7) {
@@ -570,10 +570,10 @@ public class b8 {
         this.f = jVar;
     }
 
-    public b8(cz czVar) {
+    public b8(az azVar) {
         int i7 = 1;
-        this.c = new qd(this, i7);
-        this.d = new qd(this, i7);
-        this.a = czVar;
+        this.c = new pd(this, i7);
+        this.d = new pd(this, i7);
+        this.a = azVar;
     }
 }

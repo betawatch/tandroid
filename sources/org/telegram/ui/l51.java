@@ -1,44 +1,40 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.location.Address;
+import android.location.Geocoder;
+import java.util.List;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l51 extends org.telegram.ui.Components.w31 {
-    public static final /* synthetic */ int c = 0;
-    public m.q3 b;
+public final /* synthetic */ class l51 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ThemeActivity b;
 
-    static {
-        org.telegram.ui.Components.w31.h(new l51());
+    public /* synthetic */ l51(ThemeActivity themeActivity, int i7) {
+        this.a = i7;
+        this.b = themeActivity;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void a(org.telegram.ui.Components.pj0 pj0Var, View view, org.telegram.ui.Components.x31 x31Var) {
-        ((org.telegram.ui.Cells.o7) view).l(x31Var != null && x31Var.h, false);
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, org.telegram.ui.Components.x31 x31Var, boolean z9, org.telegram.ui.Components.m41 m41Var, org.telegram.ui.Components.r41 r41Var) {
-        org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) view;
-        o7Var.k((org.telegram.messenger.ij) x31Var.G, x31Var.v, false);
-        o7Var.i(x31Var.e, false);
-        o7Var.l(x31Var.h, false);
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, org.telegram.ui.Components.pj0 pj0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
-        if (this.b == null) {
-            this.b = new m.q3(context, h6Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ThemeActivity themeActivity = this.b;
+                String str = null;
+                try {
+                    List<Address> fromLocation = new Geocoder(org.telegram.messenger.t0.b, Locale.getDefault()).getFromLocation(org.telegram.ui.ActionBar.j6.x, org.telegram.ui.ActionBar.j6.y, 1);
+                    if (fromLocation.size() > 0) {
+                        str = fromLocation.get(0).getLocality();
+                    }
+                } catch (Exception unused) {
+                }
+                org.telegram.messenger.g0.h3(new fy0(10, themeActivity, str));
+                break;
+            default:
+                ThemeActivity themeActivity2 = this.b;
+                themeActivity2.b.e1(new k51(themeActivity2, 0), 700, true);
+                break;
         }
-        org.telegram.ui.Cells.o7 o7Var = new org.telegram.ui.Cells.o7(context, this.b, i7);
-        o7Var.w0 = true;
-        o7Var.d0 = true;
-        return o7Var;
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final boolean e(org.telegram.ui.Components.x31 x31Var, org.telegram.ui.Components.x31 x31Var2) {
-        return x31Var.q == x31Var2.q && x31Var.e == x31Var2.e && x31Var.B == x31Var2.B;
     }
 }

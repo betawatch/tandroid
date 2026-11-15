@@ -3,10 +3,11 @@ package com.google.android.recaptcha.internal;
 import af.b;
 import gd.k;
 import id.c;
+import jd.a;
 import org.telegram.tgnet.TLObject;
 import rd.p;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzhj {
     public static final Object zza(zzhh zzhhVar, p pVar, c cVar) {
@@ -28,7 +29,7 @@ public final class zzhj {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzhiVar.zzb = i10 - TLObject.FLAG_31;
                 Object obj = zzhiVar.zza;
-                Object obj2 = jd.a.a;
+                Object obj2 = a.a;
                 i7 = zzhiVar.zzb;
                 k kVar = k.a;
                 if (i7 != 0) {
@@ -48,7 +49,7 @@ public final class zzhj {
         }
         zzhiVar = new zzhi(cVar);
         Object obj3 = zzhiVar.zza;
-        Object obj22 = jd.a.a;
+        Object obj22 = a.a;
         i7 = zzhiVar.zzb;
         k kVar2 = k.a;
         if (i7 != 0) {
@@ -58,7 +59,7 @@ public final class zzhj {
 
     public static final Object zzc(zzgr zzgrVar, zzhg zzhgVar, c cVar) {
         Object zza = zzhgVar.zza(zzgrVar.zza(), cVar);
-        return zza == jd.a.a ? zza : k.a;
+        return zza == a.a ? zza : k.a;
     }
 
     public static final Object zzd(int i7, int i10, p pVar, c cVar) {

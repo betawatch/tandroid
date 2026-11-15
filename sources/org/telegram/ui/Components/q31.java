@@ -1,0 +1,48 @@
+package org.telegram.ui.Components;
+
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class q31 extends v4.t0 {
+    public final /* synthetic */ x31 a;
+
+    public q31(x31 x31Var) {
+        this.a = x31Var;
+    }
+
+    @Override // v4.t0
+    public final void a(RecyclerView recyclerView, int i7) {
+        v4.t0 t0Var = this.a.E;
+        if (t0Var != null) {
+            t0Var.a(recyclerView, i7);
+        }
+    }
+
+    @Override // v4.t0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        x31 x31Var = this.a;
+        w31 w31Var = x31Var.s;
+        n31 n31Var = x31Var.n;
+        v4.t0 t0Var = x31Var.E;
+        if (t0Var != null) {
+            t0Var.b(n31Var, i7, i10);
+        }
+        if (i10 <= 0 || n31Var.getAdapter() != w31Var || !x31Var.K || w31Var.r || w31Var.s) {
+            return;
+        }
+        if (x31Var.r.N0() >= ((w31Var.x + 1) - ((w31Var.w + 1) * 10)) - 1) {
+            x31 x31Var2 = w31Var.y;
+            if (!x31Var2.K || w31Var.r || w31Var.s) {
+                return;
+            }
+            w31Var.r = true;
+            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
+            tL_messages_getOldFeaturedStickers.offset = w31Var.n.size();
+            tL_messages_getOldFeaturedStickers.limit = 40;
+            ConnectionsManager.getInstance(x31Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new v1(w31Var, 16));
+        }
+    }
+}

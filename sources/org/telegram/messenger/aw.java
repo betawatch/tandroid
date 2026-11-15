@@ -1,62 +1,41 @@
 package org.telegram.messenger;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class aw implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dw b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1 d;
+public final class aw extends TLObject {
+    public int a;
+    public TLRPC.TL_decryptedMessageLayer b;
+    public TLRPC.EncryptedFile c;
+    public boolean d;
+    public int e;
 
-    public /* synthetic */ aw(dw dwVar, Context context, org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        this.a = i7;
-        this.b = dwVar;
-        this.c = context;
-        this.d = u1Var;
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        inputSerializedData.readInt64(z10);
+        this.a = inputSerializedData.readInt32(z10);
+        this.b = TLRPC.TL_decryptedMessageLayer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        if (inputSerializedData.readBool(z10)) {
+            this.c = TLRPC.EncryptedFile.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        }
+        this.d = inputSerializedData.readBool(z10);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        org.telegram.ui.ActionBar.u1 u1Var = this.d;
-        Context context = this.c;
-        dw dwVar = this.b;
-        switch (i7) {
-            case 0:
-                dwVar.n = false;
-                if (!((Activity) context).isFinishing()) {
-                    try {
-                        u1Var.dismiss();
-                        break;
-                    } catch (Exception e10) {
-                        a8.g(e10, true);
-                        return;
-                    }
-                }
-                break;
-            default:
-                if (!((Activity) context).isFinishing()) {
-                    dwVar.n = false;
-                    try {
-                        u1Var.dismiss();
-                    } catch (Exception e11) {
-                        a8.g(e11, true);
-                    }
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                    String M0 = id.M0(R.string.AppName, null);
-                    org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
-                    u1Var2.R = M0;
-                    u1Var2.T = id.M0(2131751750, null);
-                    alertDialog$Builder.k(id.M0(2131747831, null), null);
-                    alertDialog$Builder.p().setCanceledOnTouchOutside(true);
-                    break;
-                }
-                break;
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(TLRPC.TL_message_secret_layer72.constructor);
+        outputSerializedData.writeInt64(0L);
+        outputSerializedData.writeInt32(this.a);
+        this.b.serializeToStream(outputSerializedData);
+        outputSerializedData.writeBool(this.c != null);
+        TLRPC.EncryptedFile encryptedFile = this.c;
+        if (encryptedFile != null) {
+            encryptedFile.serializeToStream(outputSerializedData);
         }
+        outputSerializedData.writeBool(this.d);
     }
 }

@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.cast;
 
-import a8.q8;
+import a8.v8;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q0 extends h0 {
     public static final Object[] r;
@@ -33,7 +33,7 @@ public final class q0 extends h0 {
         if (obj != null) {
             Object[] objArr = this.f;
             if (objArr.length != 0) {
-                int a10 = q8.a(obj.hashCode());
+                int a10 = v8.a(obj.hashCode());
                 while (true) {
                     int i7 = a10 & this.h;
                     Object obj2 = objArr[i7];

@@ -21,7 +21,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class d {
     public static volatile ArrayList a;
@@ -197,36 +197,36 @@ public abstract class d {
                 break;
             }
         }
-        g0.c cVar = new g0.c();
-        cVar.a = context;
-        cVar.b = b10;
-        cVar.e = b11;
-        cVar.m = parseInt;
+        g0.b bVar = new g0.b();
+        bVar.a = context;
+        bVar.b = b10;
+        bVar.e = b11;
+        bVar.m = parseInt;
         if (!TextUtils.isEmpty(b12)) {
-            cVar.f = b12;
+            bVar.f = b12;
         }
         if (!TextUtils.isEmpty(b13)) {
-            cVar.g = b13;
+            bVar.g = b13;
         }
         if (unflattenFromString != null) {
-            cVar.d = unflattenFromString;
+            bVar.d = unflattenFromString;
         }
         if (!arrayList.isEmpty()) {
-            cVar.c = (Intent[]) arrayList.toArray(new Intent[0]);
+            bVar.c = (Intent[]) arrayList.toArray(new Intent[0]);
         }
         if (!hashSet.isEmpty()) {
             g gVar = new g(0);
             gVar.addAll(hashSet);
-            cVar.j = gVar;
+            bVar.j = gVar;
         }
-        if (TextUtils.isEmpty(cVar.e)) {
+        if (TextUtils.isEmpty(bVar.e)) {
             throw new IllegalArgumentException("Shortcut must have a non-empty label");
         }
-        Intent[] intentArr = cVar.c;
+        Intent[] intentArr = bVar.c;
         if (intentArr == null || intentArr.length == 0) {
             throw new IllegalArgumentException("Shortcut must have an intent");
         }
-        return new f(cVar, b15, b16);
+        return new f(bVar, b15, b16);
     }
 
     public static void g(XmlSerializer xmlSerializer, String str, String str2) {
@@ -238,19 +238,19 @@ public abstract class d {
 
     public static void h(XmlSerializer xmlSerializer, f fVar) {
         xmlSerializer.startTag(null, "target");
-        g0.c cVar = fVar.c;
+        g0.b bVar = fVar.c;
         String str = fVar.b;
         String str2 = fVar.a;
-        g(xmlSerializer, "id", cVar.b);
-        g(xmlSerializer, "short_label", cVar.e.toString());
-        g(xmlSerializer, "rank", Integer.toString(cVar.m));
-        if (!TextUtils.isEmpty(cVar.f)) {
-            g(xmlSerializer, "long_label", cVar.f.toString());
+        g(xmlSerializer, "id", bVar.b);
+        g(xmlSerializer, "short_label", bVar.e.toString());
+        g(xmlSerializer, "rank", Integer.toString(bVar.m));
+        if (!TextUtils.isEmpty(bVar.f)) {
+            g(xmlSerializer, "long_label", bVar.f.toString());
         }
-        if (!TextUtils.isEmpty(cVar.g)) {
-            g(xmlSerializer, "disabled_message", cVar.g.toString());
+        if (!TextUtils.isEmpty(bVar.g)) {
+            g(xmlSerializer, "disabled_message", bVar.g.toString());
         }
-        ComponentName componentName = cVar.d;
+        ComponentName componentName = bVar.d;
         if (componentName != null) {
             g(xmlSerializer, "component", componentName.flattenToString());
         }
@@ -260,7 +260,7 @@ public abstract class d {
         if (!TextUtils.isEmpty(str)) {
             g(xmlSerializer, "icon_bitmap_path", str);
         }
-        Intent[] intentArr = cVar.c;
+        Intent[] intentArr = bVar.c;
         for (Intent intent : (Intent[]) Arrays.copyOf(intentArr, intentArr.length)) {
             xmlSerializer.startTag(null, "intent");
             g(xmlSerializer, "action", intent.getAction());
@@ -270,7 +270,7 @@ public abstract class d {
             }
             xmlSerializer.endTag(null, "intent");
         }
-        for (String str3 : cVar.j) {
+        for (String str3 : bVar.j) {
             if (!TextUtils.isEmpty(str3)) {
                 xmlSerializer.startTag(null, "categories");
                 g(xmlSerializer, "name", str3);

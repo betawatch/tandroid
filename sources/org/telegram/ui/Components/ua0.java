@@ -7,7 +7,7 @@ import android.graphics.Shader;
 import android.os.Build;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class ua0 {
     public final Shader.TileMode a;
@@ -20,14 +20,14 @@ public final class ua0 {
         this.a = tileMode;
     }
 
-    public final void a(boolean z9) {
+    public final void a(boolean z10) {
         BitmapShader bitmapShader;
-        if (this.c != z9) {
-            this.c = z9;
+        if (this.c != z10) {
+            this.c = z10;
             if (Build.VERSION.SDK_INT < 33 || (bitmapShader = this.d) == null) {
                 return;
             }
-            bitmapShader.setFilterMode(z9 ? 1 : 2);
+            bitmapShader.setFilterMode(z10 ? 1 : 2);
         }
     }
 

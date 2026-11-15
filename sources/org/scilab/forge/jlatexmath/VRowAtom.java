@@ -3,7 +3,7 @@ package org.scilab.forge.jlatexmath;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class VRowAtom extends Atom {
     protected LinkedList<Atom> elements = new LinkedList<>();
@@ -89,8 +89,8 @@ public class VRowAtom extends Atom {
         return this.vtop;
     }
 
-    public void setAddInterline(boolean z9) {
-        this.addInterline = z9;
+    public void setAddInterline(boolean z10) {
+        this.addInterline = z10;
     }
 
     public void setHalign(int i7) {
@@ -101,8 +101,8 @@ public class VRowAtom extends Atom {
         this.raise = new SpaceAtom(i7, f10, 0.0f, 0.0f);
     }
 
-    public void setVtop(boolean z9) {
-        this.vtop = z9;
+    public void setVtop(boolean z10) {
+        this.vtop = z10;
     }
 
     public VRowAtom(Atom atom) {

@@ -1,21 +1,72 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.animation.ValueAnimator;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import org.telegram.ui.Components.dc;
+import org.telegram.ui.Components.er;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface i3 {
-    void a(boolean z9);
+public final class i3 {
+    public final RectF a = new RectF();
+    public final j3 b;
+    public final b3 c;
+    public final z2 d;
+    public final Paint e;
+    public final Matrix f;
+    public final float[] g;
+    public final float[] h;
+    public float i;
+    public ValueAnimator j;
+    public final dc k;
+    public final Paint l;
+    public final RectF m;
+    public final Path n;
+    public final Paint o;
+    public final RadialGradient p;
+    public final Matrix q;
+    public final Paint r;
 
-    void b(boolean z9);
+    public i3(j3 j3Var, b3 b3Var, z2 z2Var) {
+        Paint paint = new Paint(1);
+        this.e = paint;
+        this.f = new Matrix();
+        this.g = new float[8];
+        this.h = new float[8];
+        this.i = 0.0f;
+        this.l = new Paint(1);
+        this.m = new RectF();
+        this.n = new Path();
+        this.o = new Paint(3);
+        this.p = new RadialGradient(0.0f, 0.0f, 255.0f, new int[]{0, 805306368}, new float[]{0.5f, 1.0f}, Shader.TileMode.CLAMP);
+        this.q = new Matrix();
+        this.r = new Paint(1);
+        this.b = j3Var;
+        this.c = b3Var;
+        this.d = z2Var;
+        this.k = new dc(j3Var);
+        paint.setColor(b3Var.r);
+    }
 
-    d3 c();
-
-    j3 d();
-
-    int e(int i7);
-
-    boolean g();
-
-    boolean i(a3 a3Var);
-
-    void release();
+    public final void a(float f10) {
+        ValueAnimator valueAnimator = this.j;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, f10);
+        this.j = ofFloat;
+        ofFloat.addUpdateListener(new hi.j3(this, 15));
+        this.j.addListener(new t0(this, f10, 1));
+        if (Math.abs(f10) < 0.1f) {
+            org.telegram.messenger.g0.n(this.j, 285.0d, 20.0d);
+        } else {
+            this.j.setInterpolator(er.h);
+        }
+        this.j.start();
+    }
 }

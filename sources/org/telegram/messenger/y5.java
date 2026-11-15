@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class y5 {
     public final int[] a;
@@ -14,17 +14,17 @@ public final class y5 {
     public boolean g;
     public int h;
 
-    public y5(int[] iArr, long j3, long j10, long j11, boolean z9, boolean z10, boolean z11, boolean z12, int i7, boolean z13) {
+    public y5(int[] iArr, long j3, long j10, long j11, boolean z10, boolean z11, boolean z12, boolean z13, int i7, boolean z14) {
         int[] iArr2 = new int[4];
         this.a = iArr2;
         this.b = new long[]{j3, j10, j11, 524288};
         System.arraycopy(iArr, 0, iArr2, 0, Math.max(iArr.length, 4));
-        this.c = z9;
-        this.d = z10;
-        this.f = z12;
+        this.c = z10;
+        this.d = z11;
+        this.f = z13;
         this.h = i7;
-        this.g = z11;
-        this.e = z13;
+        this.g = z12;
+        this.e = z14;
     }
 
     public final boolean a(y5 y5Var) {

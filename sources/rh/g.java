@@ -6,7 +6,7 @@ import java.util.WeakHashMap;
 import r0.b0;
 import r0.i0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class g implements Runnable {
                 }
                 break;
             default:
-                int i10 = hVar.G - 1;
-                hVar.G = i10;
+                int i10 = hVar.H - 1;
+                hVar.H = i10;
                 if (i10 == 0) {
-                    View view = hVar.E;
+                    View view = hVar.F;
                     RectF rectF = d.e;
                     WeakHashMap weakHashMap = i0.a;
                     hVar.k(d.e1(b0.a(view), view, view.getRootView()), false);

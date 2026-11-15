@@ -5,14 +5,14 @@ import java.util.LinkedHashSet;
 import org.webrtc.EglBase;
 import org.webrtc.VideoEncoderFactory;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class DefaultVideoEncoderFactory implements VideoEncoderFactory {
     private final VideoEncoderFactory hardwareVideoEncoderFactory;
     private final VideoEncoderFactory softwareVideoEncoderFactory = new SoftwareVideoEncoderFactory();
 
-    public DefaultVideoEncoderFactory(EglBase.Context context, boolean z9, boolean z10) {
-        this.hardwareVideoEncoderFactory = new HardwareVideoEncoderFactory(context, z9, z10);
+    public DefaultVideoEncoderFactory(EglBase.Context context, boolean z10, boolean z11) {
+        this.hardwareVideoEncoderFactory = new HardwareVideoEncoderFactory(context, z10, z11);
     }
 
     @Override // org.webrtc.VideoEncoderFactory

@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class t4 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -32,15 +32,15 @@ public final class t4 extends FrameLayout {
     public Object f;
     public Object h;
 
-    public t4(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public t4(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.b = org.telegram.messenger.g0.L(64.0f);
-        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
-        this.d = k9Var;
-        k9Var.setAspectFit(true);
-        k9Var.setRoundRadius(org.telegram.messenger.g0.L(12.0f));
-        addView(k9Var, c8.ha.c(-1.0f, -1));
-        RadialProgress2 radialProgress2 = new RadialProgress2(this, h6Var);
+        org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(context);
+        this.d = i9Var;
+        i9Var.setAspectFit(true);
+        i9Var.setRoundRadius(org.telegram.messenger.g0.L(12.0f));
+        addView(i9Var, c8.ja.c(-1.0f, -1));
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, e6Var);
         this.e = radialProgress2;
         radialProgress2.E = 0.0f;
         radialProgress2.setIcon(10, false, false);
@@ -52,11 +52,11 @@ public final class t4 extends FrameLayout {
         this.b = i7;
         ((sg.m) this.e).c = i7;
         if (i7 == 0) {
-            textView.setText(org.telegram.messenger.id.M0(2131747664, null).toUpperCase());
+            textView.setText(org.telegram.messenger.hd.M0(2131747664, null).toUpperCase());
         } else if (i7 == 1) {
-            textView.setText(org.telegram.messenger.id.M0(2131747666, null).toUpperCase());
+            textView.setText(org.telegram.messenger.hd.M0(2131747666, null).toUpperCase());
         } else if (i7 == 2) {
-            textView.setText(org.telegram.messenger.id.M0(2131747667, null).toUpperCase());
+            textView.setText(org.telegram.messenger.hd.M0(2131747667, null).toUpperCase());
         }
         b();
     }
@@ -65,7 +65,7 @@ public final class t4 extends FrameLayout {
         sg.q qVar = (sg.q) this.h;
         this.c = true;
         sg.m mVar = (sg.m) this.e;
-        mVar.d = i0.a.o(mVar.e.p1, org.telegram.messenger.qs.e4);
+        mVar.d = i0.a.o(mVar.e.q1, org.telegram.messenger.ns.e4);
         mVar.a();
         mVar.invalidate();
         EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.f;
@@ -73,11 +73,11 @@ public final class t4 extends FrameLayout {
         int selectionEnd = editTextBoldCursor.getSelectionEnd();
         int i7 = this.b;
         if (i7 == 0) {
-            editTextBoldCursor.setText(String.valueOf(Color.red(qVar.p1)));
+            editTextBoldCursor.setText(String.valueOf(Color.red(qVar.q1)));
         } else if (i7 == 1) {
-            editTextBoldCursor.setText(String.valueOf(Color.green(qVar.p1)));
+            editTextBoldCursor.setText(String.valueOf(Color.green(qVar.q1)));
         } else if (i7 == 2) {
-            editTextBoldCursor.setText(String.valueOf(Color.blue(qVar.p1)));
+            editTextBoldCursor.setText(String.valueOf(Color.blue(qVar.q1)));
         }
         editTextBoldCursor.setSelection(selectionStart, selectionEnd);
         this.c = false;
@@ -94,9 +94,9 @@ public final class t4 extends FrameLayout {
                 RadialProgress2 radialProgress2 = (RadialProgress2) obj;
                 super.dispatchDraw(canvas);
                 if (this.c) {
-                    Drawable t6 = ((org.telegram.ui.Components.k9) this.d).getImageReceiver().t();
+                    Drawable t6 = ((org.telegram.ui.Components.i9) this.d).getImageReceiver().t();
                     final int i11 = 1;
-                    if ((t6 instanceof org.telegram.ui.Components.u5) && ((org.telegram.ui.Components.u5) t6).d[4] > 0) {
+                    if ((t6 instanceof org.telegram.ui.Components.t5) && ((org.telegram.ui.Components.t5) t6).d[4] > 0) {
                         ValueAnimator valueAnimator = (ValueAnimator) this.h;
                         if (valueAnimator != null) {
                             valueAnimator.cancel();
@@ -105,7 +105,7 @@ public final class t4 extends FrameLayout {
                             }
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ValueAnimator) this.h).getAnimatedValue()).floatValue(), 0.0f);
                             this.f = ofFloat;
-                            ofFloat.addListener(new m.a(this, 16));
+                            ofFloat.addListener(new ki.s3(this, 17));
                             ((ValueAnimator) this.f).addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.s4
                                 public final /* synthetic */ t4 b;
 
@@ -173,18 +173,18 @@ public final class t4 extends FrameLayout {
                 break;
             case 1:
                 Paint paint = (Paint) obj;
-                x71 x71Var = (x71) this.h;
-                y61 y61Var = x71Var.a;
+                t71 t71Var = (t71) this.h;
+                s61 s61Var = t71Var.a;
                 if (this.c) {
                     RectF rectF = org.telegram.messenger.g0.P;
                     rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.qs.e4, 31);
-                    org.telegram.ui.ActionBar.m6.t(this, x71Var.y0, y61Var);
-                    Paint d = y61Var.d("paintChatActionBackground");
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ns.e4, 31);
+                    org.telegram.ui.ActionBar.j6.t(this, t71Var.z0, s61Var);
+                    Paint d = s61Var.d("paintChatActionBackground");
                     ColorFilter colorFilter = d.getColorFilter();
                     d.setColorFilter((ColorMatrixColorFilter) this.f);
-                    n71 n71Var = x71Var.y0;
-                    if (n71Var != null && (n71Var.getBackground() instanceof org.telegram.ui.Components.qa0) && x71Var.m1 < 0.0f) {
+                    j71 j71Var = t71Var.z0;
+                    if (j71Var != null && (j71Var.getBackground() instanceof org.telegram.ui.Components.ra0) && t71Var.n1 < 0.0f) {
                         f10 = 0.33f;
                     }
                     int alpha = d.getAlpha();
@@ -192,10 +192,10 @@ public final class t4 extends FrameLayout {
                     canvas.drawRect(rectF, d);
                     d.setAlpha(alpha);
                     d.setColorFilter(colorFilter);
-                    if (x71Var.N1) {
-                        float f11 = x71Var.o1;
+                    if (t71Var.O1) {
+                        float f11 = t71Var.p1;
                         if (f11 > 0.0f) {
-                            canvas.drawColor(i0.a.o(-16777216, (int) (f11 * 255.0f * x71Var.p1)));
+                            canvas.drawColor(i0.a.o(-16777216, (int) (f11 * 255.0f * t71Var.q1)));
                         }
                     }
                     canvas.save();
@@ -219,10 +219,10 @@ public final class t4 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         switch (this.a) {
             case 0:
-                super.onLayout(z9, i7, i10, i11, i12);
+                super.onLayout(z10, i7, i10, i11, i12);
                 int width = getWidth() / 2;
                 int height = getHeight() / 2;
                 RadialProgress2 radialProgress2 = (RadialProgress2) this.e;
@@ -230,7 +230,7 @@ public final class t4 extends FrameLayout {
                 radialProgress2.r(width - i13, height - i13, width + i13, height + i13);
                 break;
             default:
-                super.onLayout(z9, i7, i10, i11, i12);
+                super.onLayout(z10, i7, i10, i11, i12);
                 break;
         }
     }
@@ -265,33 +265,33 @@ public final class t4 extends FrameLayout {
         textView.setTextColor(-1711276033);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        addView(textView, c8.ha.d(-2, -2.0f, 3, 8.0f, 0.0f, 8.0f, 0.0f));
+        addView(textView, c8.ja.d(-2, -2.0f, 3, 8.0f, 0.0f, 8.0f, 0.0f));
         View mVar = new sg.m(qVar, context);
         this.e = mVar;
-        addView(mVar, c8.ha.d(-1, -1.0f, 3, 0.0f, 16.0f, 78.0f, 0.0f));
+        addView(mVar, c8.ja.d(-1, -1.0f, 3, 0.0f, 16.0f, 78.0f, 0.0f));
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.f = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(10.0f), 436207615));
+        editTextBoldCursor.setBackground(org.telegram.ui.ActionBar.j6.d0(org.telegram.messenger.g0.L(10.0f), 436207615));
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setTextColor(-1);
         editTextBoldCursor.setGravity(17);
         editTextBoldCursor.setSingleLine();
         editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setImeActionLabel(org.telegram.messenger.id.M0(2131751354, null), 6);
+        editTextBoldCursor.setImeActionLabel(org.telegram.messenger.hd.M0(2131751354, null), 6);
         editTextBoldCursor.setInputType(2);
         editTextBoldCursor.setTypeface(org.telegram.messenger.g0.o());
-        editTextBoldCursor.addTextChangedListener(new fi.h7(this));
-        editTextBoldCursor.setOnFocusChangeListener(new bi.n(this, 6));
-        editTextBoldCursor.setOnEditorActionListener(new org.telegram.ui.Components.k2(4));
-        addView(editTextBoldCursor, c8.ha.e(72, 36, 85));
+        editTextBoldCursor.addTextChangedListener(new bi.v(this));
+        editTextBoldCursor.setOnFocusChangeListener(new ch.c0(this, 6));
+        editTextBoldCursor.setOnEditorActionListener(new org.telegram.ui.Components.j2(4));
+        addView(editTextBoldCursor, c8.ja.e(72, 36, 85));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t4(x71 x71Var, Context context, boolean z9) {
+    public t4(t71 t71Var, Context context, boolean z10) {
         super(context);
-        this.h = x71Var;
-        this.c = z9;
+        this.h = t71Var;
+        this.c = z10;
         Paint paint = new Paint(3);
         this.e = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));

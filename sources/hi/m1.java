@@ -1,388 +1,224 @@
 package hi;
 
-import android.security.keystore.KeyGenParameterSpec;
-import android.text.TextUtils;
-import android.util.Pair;
-import j$.util.Collection;
-import j$.util.stream.Collectors;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.security.KeyStore;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.GCMParameterSpec;
-import org.json.JSONObject;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.hc;
+import org.telegram.messenger.qc;
+import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.os;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class m1 {
-    public final int a;
-    public final long b;
-    public final long c;
-    public final boolean d;
-    public String e;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class m1 extends os {
+    public int N;
+    public int O;
+    public ArrayList P;
+    public final ArrayList Q = new ArrayList();
+    public final boolean R = qc.e(8200);
+    public final /* synthetic */ o1 S;
 
-    public m1(int i7, long j3, long j10, boolean z9) {
-        this.a = i7;
-        this.b = j10;
-        this.c = j3;
-        this.d = z9;
+    public m1(o1 o1Var) {
+        this.S = o1Var;
     }
 
-    public static File b() {
-        try {
-            File filesDir = org.telegram.messenger.t0.b.getFilesDir();
-            if (filesDir != null) {
-                File file = new File(filesDir, "apps_storage/");
-                file.mkdirs();
-                if (filesDir.exists() || filesDir.mkdirs()) {
-                    if (filesDir.canWrite()) {
-                        return file;
-                    }
-                }
-            }
-        } catch (Exception unused) {
-        }
-        return new File("");
-    }
-
-    public static SecretKey g() {
-        KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
-        keyStore.load(null);
-        if (!keyStore.containsAlias("MiniAppsKey")) {
-            KeyGenerator keyGenerator = KeyGenerator.getInstance("AES", "AndroidKeyStore");
-            keyGenerator.init(new KeyGenParameterSpec.Builder("MiniAppsKey", 3).setBlockModes("GCM").setEncryptionPaddings("NoPadding").setUserAuthenticationRequired(false).build());
-            keyGenerator.generateKey();
-        }
-        return (SecretKey) keyStore.getKey("MiniAppsKey", null);
-    }
-
-    public static HashMap i() {
-        HashMap hashMap = new HashMap();
-        try {
-            File file = new File(b(), "secure_config.json");
-            FileInputStream fileInputStream = new FileInputStream(file);
-            try {
-                byte[] bArr = new byte[(int) file.length()];
-                fileInputStream.read(bArr);
-                fileInputStream.close();
-                JSONObject jSONObject = new JSONObject(new String(bArr));
-                Iterator<String> keys = jSONObject.keys();
-                while (keys.hasNext()) {
-                    String next = keys.next();
-                    JSONObject jSONObject2 = jSONObject.getJSONObject(next);
-                    l1 l1Var = new l1();
-                    l1Var.a = next;
-                    l1Var.b = jSONObject2.getLong("user_id");
-                    l1Var.c = jSONObject2.getString("user_name");
-                    l1Var.d = jSONObject2.getLong("created_at");
-                    l1Var.e = jSONObject2.getLong("edited_at");
-                    hashMap.put(next, l1Var);
-                }
-                return hashMap;
-            } catch (OutOfMemoryError e10) {
-                a8.g(e10, true);
-                throw new RuntimeException("QUOTA_EXCEEDED");
-            }
-        } catch (Exception e11) {
-            a8.g(e11, true);
-            return hashMap;
+    public static void m(Canvas canvas, org.telegram.ui.Components.g5 g5Var, n1 n1Var, float f10) {
+        if (g5Var != null) {
+            g5Var.setAlpha((int) (f10 * 255.0f));
+            g5Var.draw(canvas);
+        } else if (n1Var.f != null) {
+            canvas.save();
+            ImageReceiver imageReceiver = n1Var.f;
+            canvas.clipRect(imageReceiver.L0, imageReceiver.M0, imageReceiver.y(), n1Var.f.A());
+            n1Var.f.setAlpha(f10);
+            n1Var.f.h(canvas, null);
+            canvas.restore();
         }
     }
 
-    public static void k(HashMap hashMap) {
-        try {
-            JSONObject jSONObject = new JSONObject();
-            for (Map.Entry entry : hashMap.entrySet()) {
-                JSONObject jSONObject2 = new JSONObject();
-                jSONObject2.put("user_id", ((l1) entry.getValue()).b);
-                jSONObject2.put("user_name", ((l1) entry.getValue()).c);
-                jSONObject2.put("created_at", ((l1) entry.getValue()).d);
-                jSONObject2.put("edited_at", ((l1) entry.getValue()).e);
-                jSONObject.put((String) entry.getKey(), jSONObject2);
-            }
-            File file = new File(b(), "secure_config.json");
-            byte[] bytes = jSONObject.toString().getBytes();
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-            fileOutputStream.write(bytes);
-            fileOutputStream.close();
-        } catch (Exception e10) {
-            a8.g(e10, true);
+    @Override // org.telegram.ui.Components.os
+    public final void a(Canvas canvas, long j3, int i7, int i10, float f10) {
+        if (this.P == null) {
+            return;
         }
-    }
-
-    public final byte[] a(File file) {
-        byte[] bArr;
-        FileInputStream fileInputStream = new FileInputStream(file);
-        int length = (int) file.length();
-        boolean z9 = this.d;
-        if (z9) {
-            int read = fileInputStream.read();
-            bArr = new byte[read];
-            length = (length - 1) - read;
-            fileInputStream.read(bArr);
-        } else {
-            bArr = null;
-        }
-        try {
-            byte[] bArr2 = new byte[length];
-            fileInputStream.read(bArr2);
-            fileInputStream.close();
-            if (!z9) {
-                return bArr2;
-            }
-            try {
-                Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
-                cipher.init(2, g(), new GCMParameterSpec(128, bArr));
-                return cipher.doFinal(bArr2);
-            } catch (Exception e10) {
-                a8.g(e10, true);
-                l(file, "{}".getBytes());
-                throw new RuntimeException("UNKNOWN_ERROR");
-            }
-        } catch (OutOfMemoryError e11) {
-            a8.g(e11, true);
-            throw new RuntimeException("QUOTA_EXCEEDED");
-        }
-    }
-
-    public final File c() {
-        long j3;
-        if (this.d && TextUtils.isEmpty(this.e)) {
-            HashMap i7 = i();
-            Iterator it = i7.entrySet().iterator();
-            while (true) {
-                boolean hasNext = it.hasNext();
-                j3 = this.c;
-                if (!hasNext) {
-                    break;
-                }
-                Map.Entry entry = (Map.Entry) it.next();
-                if (((l1) entry.getValue()).b == j3) {
-                    this.e = (String) entry.getKey();
+        boolean z10 = true;
+        boolean z11 = this.S.b0() || this.P.size() <= 4 || !this.R;
+        if (!z11) {
+            for (int i11 = 0; i11 < this.P.size(); i11++) {
+                if (((n1) this.P.get(i11)).getScale() != 1.0f) {
                     break;
                 }
             }
-            if (TextUtils.isEmpty(this.e)) {
-                String uuid = UUID.randomUUID().toString();
-                this.e = uuid;
-                l1 l1Var = new l1();
-                l1Var.a = uuid;
-                l1Var.b = j3;
-                l1Var.c = m5.m(p10.i(this.a).f());
-                long currentTimeMillis = System.currentTimeMillis();
-                l1Var.e = currentTimeMillis;
-                l1Var.d = currentTimeMillis;
-                i7.put(this.e, l1Var);
-                k(i7);
+        }
+        z10 = z11;
+        if (!z10) {
+            super.a(canvas, j3, i7, i10, f10);
+            return;
+        }
+        i(System.currentTimeMillis());
+        d(canvas, f10);
+        k();
+    }
+
+    @Override // org.telegram.ui.Components.os
+    public final void c(Canvas canvas) {
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList = this.Q;
+            if (i7 >= arrayList.size()) {
+                return;
             }
-        }
-        return d(this.e);
-    }
-
-    public final File d(String str) {
-        File b10 = b();
-        StringBuilder sb2 = new StringBuilder();
-        long j3 = this.c;
-        boolean z9 = this.d;
-        Object obj = str;
-        if (!z9) {
-            obj = Long.valueOf(j3);
-        }
-        sb2.append(obj);
-        sb2.append("_");
-        long j10 = this.b;
-        sb2.append(j10);
-        sb2.append(z9 ? "_s" : "");
-        File file = new File(b10, sb2.toString());
-        File b11 = b();
-        StringBuilder sb3 = new StringBuilder();
-        sb3.append(j10);
-        sb3.append(z9 ? "_s" : "");
-        File file2 = new File(b11, sb3.toString());
-        if (!file.exists() && file2.exists()) {
-            file2.renameTo(file);
-            return file;
-        }
-        if (z9) {
-            File file3 = new File(b(), j3 + "_" + j10 + "_s");
-            if (!file.exists() && file3.exists()) {
-                file3.renameTo(file);
+            n1 n1Var = (n1) arrayList.get(i7);
+            n1Var.getClass();
+            org.telegram.ui.Components.g5 g5Var = n1Var.d;
+            if (g5Var != null) {
+                g5Var.setColorFilter(this.S.p3);
             }
-        }
-        return file;
-    }
-
-    public final JSONObject e(File file) {
-        if (!file.exists() || file.length() > 5242880) {
-            return new JSONObject();
-        }
-        try {
-            return new JSONObject(new String(a(file)));
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return new JSONObject();
+            n1Var.r.h(canvas, n1Var.n[this.L]);
+            i7++;
         }
     }
 
-    public final Pair f(String str) {
-        JSONObject e10 = e(c());
-        String optString = e10.optString(str);
-        boolean z9 = false;
-        if (this.d && optString == null && !e10.keys().hasNext()) {
-            HashSet hashSet = new HashSet();
-            for (int i7 = 0; i7 < 4; i7++) {
-                p10 i10 = p10.i(i7);
-                if (i10.p()) {
-                    hashSet.add(Long.valueOf(i10.e()));
+    @Override // org.telegram.ui.Components.os
+    public final void d(Canvas canvas, float f10) {
+        org.telegram.ui.Components.g5 g5Var;
+        if (this.P != null) {
+            canvas.save();
+            canvas.translate(-this.O, 0.0f);
+            for (int i7 = 0; i7 < this.P.size(); i7++) {
+                n1 n1Var = (n1) this.P.get(i7);
+                n1Var.getClass();
+                float scale = n1Var.getScale();
+                float alpha = n1Var.getAlpha() * f10;
+                Rect rect = org.telegram.messenger.g0.Q;
+                rect.set(n1Var.getPaddingLeft() + ((int) n1Var.getX()), n1Var.getPaddingTop(), (n1Var.getWidth() + ((int) n1Var.getX())) - n1Var.getPaddingRight(), n1Var.getHeight() - n1Var.getPaddingBottom());
+                org.telegram.ui.Components.g5 g5Var2 = n1Var.d;
+                if (g5Var2 != null) {
+                    g5Var2.setBounds(rect);
+                }
+                ImageReceiver imageReceiver = n1Var.f;
+                if (imageReceiver != null) {
+                    imageReceiver.z0(rect);
+                }
+                PorterDuffColorFilter porterDuffColorFilter = this.S.p3;
+                if (porterDuffColorFilter != null && (g5Var = n1Var.d) != null) {
+                    g5Var.setColorFilter(porterDuffColorFilter);
+                }
+                if (scale != 1.0f) {
+                    canvas.save();
+                    canvas.scale(scale, scale, rect.centerX(), rect.centerY());
+                    m(canvas, g5Var2, n1Var, alpha);
+                    canvas.restore();
+                } else {
+                    m(canvas, g5Var2, n1Var, alpha);
                 }
             }
-            Iterator it = ((Set) Collection.-EL.stream(i().values()).filter(new j1(hashSet, 0)).collect(Collectors.toSet())).iterator();
-            while (true) {
-                if (!it.hasNext()) {
-                    break;
+            canvas.restore();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.os
+    public final void g() {
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList = this.Q;
+            if (i7 >= arrayList.size()) {
+                this.S.invalidate();
+                return;
+            }
+            hc hcVar = ((n1) arrayList.get(i7)).n[this.L];
+            if (hcVar != null) {
+                hcVar.a();
+            }
+            i7++;
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00f9  */
+    @Override // org.telegram.ui.Components.os
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void i(long j3) {
+        float intrinsicWidth;
+        float width;
+        int height;
+        float f10;
+        int i7;
+        ArrayList arrayList = this.Q;
+        arrayList.clear();
+        for (int i10 = 0; i10 < this.P.size(); i10++) {
+            n1 n1Var = (n1) this.P.get(i10);
+            n1Var.getClass();
+            hc[] hcVarArr = n1Var.n;
+            org.telegram.ui.Components.g5 g5Var = n1Var.d;
+            ImageReceiver imageReceiver = g5Var != null ? g5Var.k : n1Var.f;
+            if (imageReceiver != null) {
+                imageReceiver.setAlpha(n1Var.getAlpha());
+                org.telegram.ui.Components.g5 g5Var2 = n1Var.d;
+                if (g5Var2 != null) {
+                    g5Var2.setColorFilter(this.S.p3);
                 }
-                try {
-                    File d = d(((l1) it.next()).a);
-                    if (d.exists() && e(d).has(str)) {
-                        z9 = true;
-                        break;
+                int i11 = this.L;
+                hc e02 = imageReceiver.e0(hcVarArr[i11], i11);
+                hcVarArr[i11] = e02;
+                e02.c = j3;
+                n1Var.r = imageReceiver;
+                if (imageReceiver.B() != null) {
+                    n1Var.r.B().V(j3);
+                }
+                if (n1Var.r.m() != null) {
+                    n1Var.r.m().D(j3);
+                }
+                Rect rect = org.telegram.messenger.g0.Q;
+                rect.set(n1Var.getPaddingLeft(), n1Var.getPaddingTop(), n1Var.getWidth() - n1Var.getPaddingRight(), n1Var.getHeight() - n1Var.getPaddingBottom());
+                ch0 B = imageReceiver.B();
+                if (B == null || (i7 = B.c) == 0) {
+                    org.telegram.ui.Components.t5 m10 = imageReceiver.m();
+                    if (m10 == null || m10.getIntrinsicHeight() == 0) {
+                        Bitmap n10 = imageReceiver.n();
+                        if (n10 != null) {
+                            width = n10.getWidth();
+                            height = n10.getHeight();
+                        } else {
+                            Drawable drawable = imageReceiver.n0;
+                            intrinsicWidth = (drawable == null || drawable.getIntrinsicHeight() == 0) ? 1.0f : drawable.getIntrinsicWidth() / drawable.getIntrinsicHeight();
+                            if (intrinsicWidth >= 1.0f) {
+                                float height2 = (rect.height() * intrinsicWidth) / 2.0f;
+                                int centerX = (int) (rect.centerX() - height2);
+                                rect.left = centerX;
+                                rect.right = (int) (rect.centerX() + height2);
+                            } else if (intrinsicWidth > 1.0f) {
+                                float width2 = (rect.width() / intrinsicWidth) / 2.0f;
+                                int centerY = (int) (rect.centerY() - width2);
+                                rect.top = centerY;
+                                rect.bottom = (int) (rect.centerY() + width2);
+                            }
+                            rect.offset((n1Var.getLeft() + ((int) n1Var.getTranslationX())) - this.O, 0);
+                            hcVarArr[i11].b(rect);
+                            arrayList.add(n1Var);
+                        }
+                    } else {
+                        width = m10.getIntrinsicWidth();
+                        height = m10.getIntrinsicHeight();
                     }
-                } catch (Exception e11) {
-                    a8.g(e11, true);
+                    f10 = height;
+                } else {
+                    width = B.b;
+                    f10 = i7;
                 }
-            }
-        }
-        return new Pair(optString, Boolean.valueOf(z9));
-    }
-
-    public final ArrayList h(String str) {
-        if (e(c()).keys().hasNext()) {
-            throw new RuntimeException("STORAGE_NOT_EMPTY");
-        }
-        ArrayList arrayList = new ArrayList();
-        HashSet hashSet = new HashSet();
-        for (int i7 = 0; i7 < 4; i7++) {
-            p10 i10 = p10.i(i7);
-            if (i10.p()) {
-                hashSet.add(Long.valueOf(i10.e()));
-            }
-        }
-        for (l1 l1Var : (Set) Collection.-EL.stream(i().values()).filter(new j1(hashSet, 1)).collect(Collectors.toSet())) {
-            try {
-                File d = d(l1Var.a);
-                if (d.exists() && e(d).has(str)) {
-                    arrayList.add(l1Var);
+                intrinsicWidth = width / f10;
+                if (intrinsicWidth >= 1.0f) {
                 }
-            } catch (Exception e10) {
-                a8.g(e10, true);
+                rect.offset((n1Var.getLeft() + ((int) n1Var.getTranslationX())) - this.O, 0);
+                hcVarArr[i11].b(rect);
+                arrayList.add(n1Var);
             }
-        }
-        return arrayList;
-    }
-
-    public final void j(String str) {
-        if (e(c()).keys().hasNext()) {
-            throw new RuntimeException("STORAGE_NOT_EMPTY");
-        }
-        HashSet hashSet = new HashSet();
-        for (int i7 = 0; i7 < 4; i7++) {
-            p10 i10 = p10.i(i7);
-            if (i10.p()) {
-                hashSet.add(Long.valueOf(i10.e()));
-            }
-        }
-        HashMap i11 = i();
-        l1 l1Var = (l1) i11.get(str);
-        if (l1Var == null) {
-            throw new RuntimeException("STORAGE_NOT_FOUND");
-        }
-        l1Var.b = this.c;
-        l1Var.c = m5.m(p10.i(this.a).f());
-        l1Var.e = System.currentTimeMillis();
-        k(i11);
-        this.e = l1Var.a;
-    }
-
-    public final void l(File file, byte[] bArr) {
-        FileOutputStream fileOutputStream = new FileOutputStream(file);
-        if (this.d) {
-            try {
-                Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
-                cipher.init(1, g());
-                byte[] iv = cipher.getIV();
-                fileOutputStream.write(iv.length);
-                fileOutputStream.write(iv);
-                bArr = cipher.doFinal(bArr);
-            } catch (Exception e10) {
-                a8.g(e10, true);
-                throw new RuntimeException("UNKNOWN_ERROR");
-            }
-        }
-        fileOutputStream.write(bArr);
-        fileOutputStream.close();
-    }
-
-    public final void m(JSONObject jSONObject) {
-        try {
-            byte[] bytes = jSONObject.toString().getBytes();
-            if (bytes.length > 5242880) {
-                throw new RuntimeException("QUOTA_EXCEEDED");
-            }
-            try {
-                l(c(), bytes);
-            } catch (Exception e10) {
-                a8.g(e10, true);
-                throw new RuntimeException("UNKNOWN_ERROR");
-            }
-        } catch (Exception e11) {
-            a8.g(e11, true);
-            throw new RuntimeException("UNKNOWN_ERROR");
-        } catch (OutOfMemoryError e12) {
-            a8.g(e12, true);
-            throw new RuntimeException("QUOTA_EXCEEDED");
-        }
-    }
-
-    public final void n(String str, String str2) {
-        if (str2.length() + str.length() > 5242880) {
-            throw new RuntimeException("QUOTA_EXCEEDED");
-        }
-        JSONObject e10 = e(c());
-        try {
-            e10.put(str, str2);
-            int length = e10.length();
-            boolean z9 = this.d;
-            if (length > 10 && z9) {
-                throw new RuntimeException("QUOTA_EXCEEDED");
-            }
-            m(e10);
-            if (z9) {
-                try {
-                    HashMap i7 = i();
-                    l1 l1Var = (l1) i7.get(this.e);
-                    if (l1Var != null) {
-                        l1Var.e = System.currentTimeMillis();
-                        k(i7);
-                    }
-                } catch (Exception unused) {
-                }
-            }
-        } catch (Exception e11) {
-            a8.g(e11, true);
-            throw new RuntimeException("UNKNOWN_ERROR");
         }
     }
 }

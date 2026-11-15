@@ -2,36 +2,36 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ht extends org.telegram.ui.Components.mc {
-    public final /* synthetic */ org.telegram.ui.Components.yh0 e0;
+public final class ht extends org.telegram.ui.Components.ic {
+    public final /* synthetic */ org.telegram.ui.Components.ci0 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ht(org.telegram.ui.Components.yh0 yh0Var, Context context, int i7, int[] iArr, int[] iArr2) {
+    public ht(org.telegram.ui.Components.ci0 ci0Var, Context context, int i7, int[] iArr, int[] iArr2) {
         super(context, i7, iArr, 1, iArr2);
-        this.e0 = yh0Var;
+        this.f0 = ci0Var;
     }
 
-    @Override // org.telegram.ui.Components.mc
+    @Override // org.telegram.ui.Components.ic
     public final int c() {
-        return org.telegram.messenger.qs.t3;
+        return org.telegram.messenger.ns.t3;
     }
 
-    @Override // org.telegram.ui.Components.mc
-    public final void d(int i7, boolean z9) {
+    @Override // org.telegram.ui.Components.ic
+    public final void d(int i7, boolean z10) {
         int i10;
-        kt ktVar = (kt) this.e0.e;
-        if (!z9) {
+        kt ktVar = (kt) this.f0.e;
+        if (!z10) {
             ktVar.l1();
             return;
         }
-        if (i7 < 0 || i7 >= ktVar.n3.length) {
+        if (i7 < 0 || i7 >= ktVar.o3.length) {
             return;
         }
         int i11 = 0;
         while (true) {
-            jt[] jtVarArr = ktVar.n3;
+            jt[] jtVarArr = ktVar.o3;
             i10 = -1;
             if (i11 >= jtVarArr.length) {
                 i11 = -1;
@@ -44,8 +44,8 @@ public final class ht extends org.telegram.ui.Components.mc {
         }
         int i12 = 0;
         while (true) {
-            if (i12 < ktVar.j3.size()) {
-                ft ftVar = (ft) ktVar.j3.get(i12);
+            if (i12 < ktVar.k3.size()) {
+                ft ftVar = (ft) ktVar.k3.get(i12);
                 if (ftVar != null && ftVar.a == 2 && ftVar.h == i11) {
                     i10 = i12;
                     break;
@@ -56,13 +56,13 @@ public final class ht extends org.telegram.ui.Components.mc {
             }
         }
         if (i10 >= 0) {
-            ktVar.e1(new l2.u(i10, 3), 0, true);
+            ktVar.e1(new l2.t(i10, 3), 0, true);
         } else {
             ktVar.l1();
         }
     }
 
-    @Override // org.telegram.ui.Components.mc
+    @Override // org.telegram.ui.Components.ic
     public final int e() {
         return 10;
     }

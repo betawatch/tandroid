@@ -2,31 +2,31 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qa implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mb b;
+    public final /* synthetic */ lb b;
 
-    public /* synthetic */ qa(mb mbVar, int i7) {
+    public /* synthetic */ qa(lb lbVar, int i7) {
         this.a = i7;
-        this.b = mbVar;
+        this.b = lbVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                mb mbVar = this.b;
-                mbVar.G0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                mbVar.H0 = -1;
-                mbVar.i1();
-                mbVar.I0 = null;
+                lb lbVar = this.b;
+                lbVar.H0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                lbVar.I0 = -1;
+                lbVar.i1();
+                lbVar.J0 = null;
                 break;
             case 1:
-                mb mbVar2 = this.b;
-                mbVar2.b1(false);
-                mbVar2.E.f();
+                lb lbVar2 = this.b;
+                lbVar2.b1(false);
+                lbVar2.F.f();
                 break;
             default:
                 this.b.a1();

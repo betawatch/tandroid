@@ -1,121 +1,128 @@
 package fi;
 
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import org.telegram.messenger.np;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.sp0;
+import org.telegram.ui.Components.wr;
+import org.telegram.ui.Components.ys0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.n50;
+import org.telegram.ui.tf0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class b8 extends rg.a {
-    public int c;
-    public Drawable d;
-    public CharSequence e;
-    public CharSequence f;
-    public TLRPC.User g;
-    public TLRPC.Chat h;
-    public int i;
-    public int j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public int o;
-    public int p;
-    public int q;
+public final /* synthetic */ class b8 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public b8(int i7, boolean z9) {
-        super(i7, z9);
-        this.p = -1;
+    public /* synthetic */ b8(int i7, tf0 tf0Var, org.telegram.ui.ActionBar.e2 e2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
+        this.a = 7;
+        this.b = i7;
+        this.c = tf0Var;
+        this.d = e2Var;
+        this.e = tL_payments_assignPlayMarketTransaction;
     }
 
-    public static b8 b(String str, CharSequence charSequence, int i7) {
-        b8 b8Var = new b8(9, false);
-        b8Var.e = str;
-        b8Var.f = charSequence;
-        b8Var.q = i7;
-        return b8Var;
-    }
-
-    public static b8 c() {
-        return new b8(0, false);
-    }
-
-    public static b8 d() {
-        b8 b8Var = new b8(-1, false);
-        b8Var.o = -1;
-        return b8Var;
-    }
-
-    public static b8 e() {
-        return new b8(1, false);
-    }
-
-    public static b8 f() {
-        return new b8(2, false);
-    }
-
-    public static b8 g(CharSequence charSequence) {
-        b8 b8Var = new b8(6, false);
-        b8Var.e = charSequence;
-        return b8Var;
-    }
-
-    public static b8 h(int i7, int i10, boolean z9) {
-        b8 b8Var = new b8(3, false);
-        b8Var.i = i7;
-        b8Var.k = z9;
-        b8Var.j = i10;
-        return b8Var;
-    }
-
-    public static b8 i(TLRPC.User user, boolean z9, boolean z10) {
-        b8 b8Var = new b8(3, true);
-        b8Var.g = user;
-        b8Var.k = z9;
-        b8Var.l = z10;
-        return b8Var;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || b8.class != obj.getClass()) {
-            return false;
-        }
-        b8 b8Var = (b8) obj;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         int i7 = this.a;
-        if (i7 != b8Var.a) {
-            return false;
+        int i10 = 2;
+        int i11 = this.b;
+        int i12 = 0;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        Object obj3 = this.c;
+        switch (i7) {
+            case 0:
+                TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers = (TLRPC.TL_messages_getAttachedStickers) obj2;
+                bg.k0 k0Var = (bg.k0) obj;
+                if (tL_error != null && org.telegram.messenger.r8.r(tL_error.text) && obj3 != null) {
+                    org.telegram.messenger.r8.n(i11).u(new Object[]{tL_messages_getAttachedStickers, k0Var}, obj3);
+                    break;
+                } else {
+                    k0Var.run(tLObject, tL_error);
+                    break;
+                }
+            case 1:
+                org.telegram.messenger.g0.h3(new ai.f1(tLObject, (boolean[]) obj3, (z10) obj2, this.b, (TL_account.updateEmojiStatus) obj, 7));
+                break;
+            case 2:
+                org.telegram.messenger.g0.h3(new bg.l0((n50) obj3, (org.telegram.ui.e4) obj2, tL_error, tLObject, this.b, (org.telegram.ui.a1) obj));
+                break;
+            case 3:
+                SharedPreferences sharedPreferences = (SharedPreferences) obj3;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) obj2;
+                org.telegram.ui.ActionBar.e2 e2Var = (org.telegram.ui.ActionBar.e2) obj;
+                if (tL_error != null) {
+                    org.telegram.messenger.g0.h3(new org.telegram.ui.Components.y1(t1Var, i12));
+                    break;
+                } else {
+                    org.telegram.messenger.g0.h3(new ai.f1(sharedPreferences, (TLRPC.TL_help_support) tLObject, t1Var, this.b, e2Var, 16));
+                    break;
+                }
+            case 4:
+                org.telegram.messenger.g0.h3(new ai.f1((rr) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj));
+                break;
+            case 5:
+                ys0 ys0Var = (ys0) obj3;
+                TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
+                org.telegram.messenger.g0.h3(new wr((org.telegram.ui.ActionBar.t1[]) obj2, i10));
+                int i13 = this.b;
+                if (tL_error != null) {
+                    org.telegram.messenger.g0.h3(new sp0(ys0Var, i13, tL_error, tL_messages_editMessage, 0));
+                    break;
+                } else {
+                    np.s1(i13).O3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
+            case 6:
+                String str = LaunchActivity.C1;
+                org.telegram.messenger.g0.i3(new ai.f1((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.t1) obj, 20), 2L);
+                break;
+            case 7:
+                tf0 tf0Var = (tf0) obj3;
+                org.telegram.ui.ActionBar.e2 e2Var2 = (org.telegram.ui.ActionBar.e2) obj2;
+                TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) obj;
+                if (!(tLObject instanceof TLRPC.Updates)) {
+                    if (tL_error != null) {
+                        org.telegram.messenger.g0.h3(new sp0(i11, tL_error, e2Var2, tL_payments_assignPlayMarketTransaction));
+                        break;
+                    }
+                } else {
+                    np.s1(i11).O3((TLRPC.Updates) tLObject, false);
+                    org.telegram.messenger.g0.h3(tf0Var);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.messenger.g0.h3(new bg.l0((org.telegram.ui.web.v0) obj3, tLObject, this.b, (org.telegram.ui.web.s0) obj2, (i7) obj, tL_error));
+                break;
         }
-        if (i7 == -1 && (this.o != b8Var.o || this.p != b8Var.p)) {
-            return false;
-        }
-        if (i7 == 3 && (this.g != b8Var.g || this.h != b8Var.h || this.i != b8Var.i || this.j != b8Var.j || this.k != b8Var.k || this.m != b8Var.m || this.n != b8Var.n)) {
-            return false;
-        }
-        if (i7 == 0 && this.c != b8Var.c) {
-            return false;
-        }
-        if (i7 == 2 && !TextUtils.equals(this.e, b8Var.e)) {
-            return false;
-        }
-        if (this.a == 8 && !TextUtils.equals(this.e, b8Var.e)) {
-            return false;
-        }
-        int i10 = this.a;
-        if ((i10 == 4 || i10 == 11) && !(TextUtils.equals(this.e, b8Var.e) && TextUtils.equals(this.f, b8Var.f))) {
-            return false;
-        }
-        if (this.a == 6 && (!TextUtils.equals(this.e, b8Var.e) || this.c != b8Var.c)) {
-            return false;
-        }
-        if (this.a == 7 && (this.c != b8Var.c || !TextUtils.equals(this.e, b8Var.e) || this.k != b8Var.k)) {
-            return false;
-        }
-        if (this.a != 9 || (this.q == b8Var.q && this.d == b8Var.d && TextUtils.equals(this.e, b8Var.e) && TextUtils.equals(this.f, b8Var.f))) {
-            return this.a != 10 || this.q == b8Var.q;
-        }
-        return false;
+    }
+
+    public /* synthetic */ b8(Object obj, int i7, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = i7;
+        this.d = obj2;
+        this.e = obj3;
+    }
+
+    public /* synthetic */ b8(Object obj, Object obj2, int i7, Object obj3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = i7;
+        this.e = obj3;
     }
 }

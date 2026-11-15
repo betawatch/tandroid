@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class RowAtom extends Atom implements Row {
     private static BitSet binSet;
@@ -76,10 +76,10 @@ public class RowAtom extends Atom implements Row {
             }
             Atom next = listIterator.next();
             i7++;
-            boolean z9 = false;
+            boolean z10 = false;
             while (next instanceof BreakMarkAtom) {
-                if (!z9) {
-                    z9 = true;
+                if (!z10) {
+                    z10 = true;
                 }
                 if (!listIterator.hasNext()) {
                     break;
@@ -134,7 +134,7 @@ public class RowAtom extends Atom implements Row {
             if (dummy2.isCharInMathMode() && (createBox instanceof CharBox)) {
                 ((CharBox) createBox).addItalicCorrectionToWidth();
             }
-            if (z9 || ((next instanceof CharAtom) && Character.isDigit(((CharAtom) next).getCharacter()))) {
+            if (z10 || ((next instanceof CharAtom) && Character.isDigit(((CharAtom) next).getCharacter()))) {
                 horizontalBox.addBreakPosition(horizontalBox.children.size());
             }
             horizontalBox.add(createBox);

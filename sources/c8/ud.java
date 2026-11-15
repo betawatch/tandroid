@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class ud {
     public static xf.a a(View view, xf.c cVar) {
@@ -23,13 +23,13 @@ public abstract class ud {
         ViewGroup viewGroup = (ViewGroup) rootView;
         xf.a aVar2 = (xf.a) viewGroup.getTag(R.id.tag_view_on_post_draw_root_state);
         if (aVar2 == null) {
-            di.b3 b3Var = new di.b3(viewGroup.getContext(), 8);
-            xf.a aVar3 = new xf.a(b3Var);
+            fi.w2 w2Var = new fi.w2(viewGroup.getContext(), 8);
+            xf.a aVar3 = new xf.a(w2Var);
             viewGroup.setTag(R.id.tag_view_on_post_draw_root_state, aVar3);
             if (viewGroup instanceof FrameLayout) {
-                viewGroup.addView(b3Var, new FrameLayout.LayoutParams(1, 1, 17));
+                viewGroup.addView(w2Var, new FrameLayout.LayoutParams(1, 1, 17));
             } else {
-                viewGroup.addView(b3Var, new ViewGroup.LayoutParams(1, 1));
+                viewGroup.addView(w2Var, new ViewGroup.LayoutParams(1, 1));
             }
             aVar2 = aVar3;
         }

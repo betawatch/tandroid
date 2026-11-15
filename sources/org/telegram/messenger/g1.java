@@ -2,9 +2,9 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g1 implements c20 {
+public final /* synthetic */ class g1 implements z10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -15,15 +15,15 @@ public final /* synthetic */ class g1 implements c20 {
         this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.c20
+    @Override // org.telegram.messenger.z10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                g0.h3(new ng((h1) this.b, (String) obj, (Runnable) this.c, 7));
+                g0.h3(new mg((h1) this.b, (String) obj, (Runnable) this.c, 7));
                 break;
             case 1:
                 e3 e3Var = (e3) this.b;
-                c20 c20Var = (c20) this.c;
+                z10 z10Var = (z10) this.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 if (tL_error.text.startsWith("FLOOD_WAIT")) {
                     e3Var.f = Utilities.z(tL_error.text).intValue();
@@ -31,14 +31,14 @@ public final /* synthetic */ class g1 implements c20 {
                     e3Var.b = true;
                 }
                 e3Var.a = false;
-                c20Var.a(e3Var);
+                z10Var.a(e3Var);
                 break;
             default:
-                gz gzVar = (gz) this.b;
-                ez ezVar = (ez) this.c;
-                gzVar.getClass();
-                ezVar.Q = ((Long) obj).longValue();
-                gzVar.r0(ezVar);
+                ez ezVar = (ez) this.b;
+                cz czVar = (cz) this.c;
+                ezVar.getClass();
+                czVar.Q = ((Long) obj).longValue();
+                ezVar.r0(czVar);
                 break;
         }
     }

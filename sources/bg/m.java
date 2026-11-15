@@ -8,16 +8,16 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.XMLReader;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m implements Html.TagHandler, ContentHandler {
-    public final nb.a a;
+    public final pb.b a;
     public ContentHandler b;
     public Editable c;
     public final ArrayDeque d = new ArrayDeque();
 
-    public m(nb.a aVar) {
-        this.a = aVar;
+    public m(pb.b bVar) {
+        this.a = bVar;
     }
 
     public static String a(String str, Attributes attributes) {
@@ -47,7 +47,7 @@ public final class m implements Html.TagHandler, ContentHandler {
         }
         Editable editable = this.c;
         this.a.getClass();
-        nb.a.f0(false, str2, editable, null);
+        pb.b.G0(false, str2, editable, null);
     }
 
     @Override // org.xml.sax.ContentHandler
@@ -56,7 +56,7 @@ public final class m implements Html.TagHandler, ContentHandler {
     }
 
     @Override // android.text.Html.TagHandler
-    public final void handleTag(boolean z9, String str, Editable editable, XMLReader xMLReader) {
+    public final void handleTag(boolean z10, String str, Editable editable, XMLReader xMLReader) {
         if (this.b == null) {
             this.c = editable;
             this.b = xMLReader.getContentHandler();
@@ -94,9 +94,9 @@ public final class m implements Html.TagHandler, ContentHandler {
     public final void startElement(String str, String str2, String str3, Attributes attributes) {
         Editable editable = this.c;
         this.a.getClass();
-        boolean f02 = nb.a.f0(true, str2, editable, attributes);
-        this.d.addLast(Boolean.valueOf(f02));
-        if (f02) {
+        boolean G0 = pb.b.G0(true, str2, editable, attributes);
+        this.d.addLast(Boolean.valueOf(G0));
+        if (G0) {
             return;
         }
         this.b.startElement(str, str2, str3, attributes);

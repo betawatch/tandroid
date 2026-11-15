@@ -1,27 +1,25 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class no0 implements org.telegram.messenger.c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ to0 b;
-    public final /* synthetic */ boolean c;
+import android.app.Activity;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ no0(to0 to0Var, boolean z9, int i7) {
-        this.a = i7;
-        this.b = to0Var;
-        this.c = z9;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class no0 extends org.telegram.ui.Components.bw0 {
+    public final /* synthetic */ oo0 s2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public no0(oo0 oo0Var, Activity activity, org.telegram.messenger.gj gjVar, TLObject tLObject, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(activity, gjVar, tLObject, e6Var);
+        this.s2 = oo0Var;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Components.gc.F(this.b.b.e0, this.c).j();
-                break;
-            default:
-                org.telegram.ui.Components.gc.F(this.b.b.e0, this.c).j();
-                break;
+    @Override // org.telegram.ui.Components.bw0, org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
+    public final void dismiss() {
+        super.dismiss();
+        PhotoViewer photoViewer = this.s2.b;
+        if (photoViewer.U3 == this) {
+            photoViewer.U3 = null;
         }
     }
 }

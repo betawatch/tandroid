@@ -1,22 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
+import android.util.Pair;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface ex0 extends org.telegram.ui.Cells.t9 {
-    int b();
+public final class ex0 extends ArrayList {
+    public final Class a;
+    public final Class b;
 
-    void d(Canvas canvas, View view);
+    public ex0(Class cls, Class cls2) {
+        this.a = cls;
+        this.b = cls2;
+    }
 
-    void f(View view);
-
-    void g(int i7);
-
-    void h(int i7);
-
-    void i(View view);
-
-    void j(int i7);
+    /* JADX WARN: Multi-variable type inference failed */
+    public final h6.m f() {
+        int size = size();
+        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
+        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
+        for (int i7 = 0; i7 < size; i7++) {
+            objArr[i7] = ((Pair) get(i7)).first;
+            objArr2[i7] = ((Pair) get(i7)).second;
+        }
+        return new h6.m(objArr, objArr2);
+    }
 }

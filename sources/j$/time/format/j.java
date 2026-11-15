@@ -31,7 +31,7 @@ public final class j implements f {
     @Override // j$.time.format.f
     public final boolean j(r rVar, StringBuilder sb2) {
         Long a10 = rVar.a(j$.time.temporal.a.OFFSET_SECONDS);
-        boolean z9 = false;
+        boolean z10 = false;
         if (a10 == null) {
             return false;
         }
@@ -61,9 +61,9 @@ public final class j implements f {
             abs += abs2;
             if (i10 == 7 || i10 == 8 || (i10 >= 5 && abs3 > 0)) {
                 if (i10 > 0 && i10 % 2 == 0) {
-                    z9 = true;
+                    z10 = true;
                 }
-                a(z9, abs3, sb2);
+                a(z10, abs3, sb2);
                 abs += abs3;
             }
         }
@@ -74,8 +74,8 @@ public final class j implements f {
         return true;
     }
 
-    public static void a(boolean z9, int i7, StringBuilder sb2) {
-        sb2.append(z9 ? ":" : "");
+    public static void a(boolean z10, int i7, StringBuilder sb2) {
+        sb2.append(z10 ? ":" : "");
         sb2.append((char) ((i7 / 10) + 48));
         sb2.append((char) ((i7 % 10) + 48));
     }

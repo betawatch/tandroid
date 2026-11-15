@@ -7,14 +7,14 @@ import j$.util.Comparator$-CC;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class s2 {
     public final t2 a;
@@ -29,48 +29,48 @@ public final class s2 {
         this.a = t2Var;
     }
 
-    public static void a(s2 s2Var, int i7, ij ijVar, TLRPC.Chat chat) {
+    public static void a(s2 s2Var, int i7, gj gjVar, TLRPC.Chat chat) {
         long j3;
-        boolean z9;
+        boolean z10;
         int i10;
         s2Var.getClass();
-        int e12 = (ijVar == null || chat == null) ? 0 : ijVar.e1();
+        int e12 = (gjVar == null || chat == null) ? 0 : gjVar.e1();
         if (s2Var.b != e12 || s2Var.e) {
             s2Var.f = null;
             s2Var.c = 0;
             s2Var.d = false;
             s2Var.e = false;
             s2Var.b = e12;
-            TextPaint textPaint = org.telegram.ui.ActionBar.m6.F0[0];
+            TextPaint textPaint = org.telegram.ui.ActionBar.j6.F0[0];
             if (chat != null) {
-                ArrayList l10 = qp.s1(i7).q7.l(chat.id);
-                boolean z10 = true;
+                ArrayList l10 = np.s1(i7).r7.l(chat.id);
+                boolean z11 = true;
                 if (l10 == null || l10.isEmpty()) {
-                    if (qp.s1(i7).q7.e(chat.id)) {
-                        s2Var.g = id.M0(org.telegram.messenger.t3.p0(chat) ? 2131748190 : 2131748137, null);
+                    if (np.s1(i7).r7.e(chat.id)) {
+                        s2Var.g = hd.M0(org.telegram.messenger.t3.p0(chat) ? 2131748190 : 2131748137, null);
                         return;
                     }
-                    qp.s1(i7).q7.n(0, chat.id, true);
-                    s2Var.g = id.M0(2131748779, null);
+                    np.s1(i7).r7.n(0, chat.id, true);
+                    s2Var.g = hd.M0(2131748779, null);
                     s2Var.e = true;
                     return;
                 }
                 ArrayList arrayList = new ArrayList(l10);
                 Collections.sort(arrayList, Comparator$-CC.comparingInt(new bg.d(14)));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                if (ijVar == null || org.telegram.messenger.t3.p0(chat)) {
+                if (gjVar == null || org.telegram.messenger.t3.p0(chat)) {
                     j3 = 0;
-                    z9 = false;
+                    z10 = false;
                     i10 = 0;
                 } else {
-                    j3 = ij.b2(i7, ijVar.k, true, false);
-                    TLRPC.TL_forumTopic f10 = qp.s1(i7).q7.f(chat.id, j3);
+                    j3 = gj.b2(i7, gjVar.k, true, false);
+                    TLRPC.TL_forumTopic f10 = np.s1(i7).r7.f(chat.id, j3);
                     if (f10 != null) {
-                        CharSequence j10 = qg.d.j(f10, textPaint, null);
+                        CharSequence j10 = qg.c.j(f10, textPaint, null);
                         spannableStringBuilder.append(j10);
                         i10 = f10.unread_count > 0 ? j10.length() : 0;
                         s2Var.c = j10.length();
-                        if (ijVar.P3()) {
+                        if (gjVar.P3()) {
                             s2Var.d = false;
                         } else {
                             s2Var.d = f10.unread_count > 0;
@@ -82,9 +82,9 @@ public final class s2 {
                     if (s2Var.d) {
                         spannableStringBuilder.append((CharSequence) " ");
                         spannableStringBuilder.setSpan(new r2(org.telegram.messenger.g0.L(3.0f)), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
-                        z9 = true;
+                        z10 = true;
                     } else {
-                        z9 = false;
+                        z10 = false;
                     }
                 }
                 if (org.telegram.messenger.t3.p0(chat)) {
@@ -98,7 +98,7 @@ public final class s2 {
                         f5Var.h = false;
                         f5Var.c(o4);
                         s2Var.f.put(Long.valueOf(o4), f5Var);
-                        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(org.telegram.messenger.m5.l(p10.s0, o4));
+                        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(org.telegram.messenger.m5.l(m10.t0, o4));
                         valueOf.insert(0, (CharSequence) "  ");
                         valueOf.setSpan(f5Var, 0, 1, 33);
                         spannableStringBuilder.append((CharSequence) valueOf);
@@ -108,26 +108,26 @@ public final class s2 {
                     for (int i13 = 4; i12 < Math.min(i13, arrayList.size()); i13 = 4) {
                         if (((TLRPC.TL_forumTopic) arrayList.get(i12)).id != j3) {
                             if (spannableStringBuilder.length() != 0) {
-                                if (z10 && z9) {
+                                if (z11 && z10) {
                                     spannableStringBuilder.append((CharSequence) " ");
                                 } else {
                                     spannableStringBuilder.append((CharSequence) ", ");
                                 }
                             }
-                            spannableStringBuilder.append(qg.d.j((TLRPC.ForumTopic) arrayList.get(i12), textPaint, null));
-                            z10 = false;
+                            spannableStringBuilder.append(qg.c.j((TLRPC.ForumTopic) arrayList.get(i12), textPaint, null));
+                            z11 = false;
                         }
                         i12++;
                     }
                 }
                 if (i10 > 0) {
                     Typeface o10 = org.telegram.messenger.g0.o();
-                    int i14 = org.telegram.ui.ActionBar.m6.X8;
-                    u31 u31Var = new u31();
-                    u31Var.a = o10;
-                    u31Var.c = i14;
-                    u31Var.b = org.telegram.ui.ActionBar.m6.v0(i14);
-                    spannableStringBuilder.setSpan(u31Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
+                    int i14 = org.telegram.ui.ActionBar.j6.X8;
+                    y31 y31Var = new y31();
+                    y31Var.a = o10;
+                    y31Var.c = i14;
+                    y31Var.b = org.telegram.ui.ActionBar.j6.v0(i14);
+                    spannableStringBuilder.setSpan(y31Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
                 }
                 s2Var.g = spannableStringBuilder;
             }

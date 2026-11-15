@@ -1,37 +1,11 @@
 package v0;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n {
-    public final List a;
-    public final boolean b;
+    public final com.google.android.gms.common.api.q a;
 
-    public n(List list, boolean z9) {
-        this.a = list;
-        this.b = z9;
-        if (list.isEmpty()) {
-            throw new IllegalArgumentException("credentialOptions should not be empty");
-        }
-        if (list.size() > 1) {
-            List list2 = list;
-            int i7 = 0;
-            if (!(list2 instanceof Collection) || !list2.isEmpty()) {
-                Iterator it = list2.iterator();
-                while (it.hasNext()) {
-                    if ((((h) it.next()) instanceof p) && (i7 = i7 + 1) < 0) {
-                        throw new ArithmeticException("Count overflow has happened.");
-                    }
-                }
-            }
-            if (i7 > 0 && i7 != this.a.size()) {
-                throw new IllegalArgumentException("Digital Credential Option cannot be used with other credential option.");
-            }
-            for (h hVar : this.a) {
-            }
-        }
+    public n(com.google.android.gms.common.api.q qVar) {
+        this.a = qVar;
     }
 }

@@ -1,124 +1,110 @@
 package m;
 
-import android.content.DialogInterface;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
+import android.database.DataSetObserver;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListAdapter;
-import androidx.appcompat.app.AlertController$RecycleListView;
+import android.widget.SpinnerAdapter;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class j0 implements p0, DialogInterface.OnClickListener {
-    public g.f a;
-    public k0 b;
-    public CharSequence c;
-    public final /* synthetic */ q0 d;
+public final class j0 implements ListAdapter, SpinnerAdapter {
+    public SpinnerAdapter a;
+    public ListAdapter b;
 
-    public j0(q0 q0Var) {
-        this.d = q0Var;
-    }
-
-    @Override // m.p0
-    public final boolean a() {
-        g.f fVar = this.a;
-        if (fVar != null) {
-            return fVar.isShowing();
+    @Override // android.widget.ListAdapter
+    public final boolean areAllItemsEnabled() {
+        ListAdapter listAdapter = this.b;
+        if (listAdapter != null) {
+            return listAdapter.areAllItemsEnabled();
         }
-        return false;
+        return true;
     }
 
-    @Override // m.p0
-    public final int b() {
+    @Override // android.widget.Adapter
+    public final int getCount() {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter == null) {
+            return 0;
+        }
+        return spinnerAdapter.getCount();
+    }
+
+    @Override // android.widget.SpinnerAdapter
+    public final View getDropDownView(int i7, View view, ViewGroup viewGroup) {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter == null) {
+            return null;
+        }
+        return spinnerAdapter.getDropDownView(i7, view, viewGroup);
+    }
+
+    @Override // android.widget.Adapter
+    public final Object getItem(int i7) {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter == null) {
+            return null;
+        }
+        return spinnerAdapter.getItem(i7);
+    }
+
+    @Override // android.widget.Adapter
+    public final long getItemId(int i7) {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter == null) {
+            return -1L;
+        }
+        return spinnerAdapter.getItemId(i7);
+    }
+
+    @Override // android.widget.Adapter
+    public final int getItemViewType(int i7) {
         return 0;
     }
 
-    @Override // m.p0
-    public final void c(int i7) {
-        Log.e("AppCompatSpinner", "Cannot set horizontal offset for MODE_DIALOG, ignoring");
+    @Override // android.widget.Adapter
+    public final View getView(int i7, View view, ViewGroup viewGroup) {
+        return getDropDownView(i7, view, viewGroup);
     }
 
-    @Override // m.p0
-    public final CharSequence d() {
-        return this.c;
+    @Override // android.widget.Adapter
+    public final int getViewTypeCount() {
+        return 1;
     }
 
-    @Override // m.p0
-    public final void dismiss() {
-        g.f fVar = this.a;
-        if (fVar != null) {
-            fVar.dismiss();
-            this.a = null;
+    @Override // android.widget.Adapter
+    public final boolean hasStableIds() {
+        SpinnerAdapter spinnerAdapter = this.a;
+        return spinnerAdapter != null && spinnerAdapter.hasStableIds();
+    }
+
+    @Override // android.widget.Adapter
+    public final boolean isEmpty() {
+        return getCount() == 0;
+    }
+
+    @Override // android.widget.ListAdapter
+    public final boolean isEnabled(int i7) {
+        ListAdapter listAdapter = this.b;
+        if (listAdapter != null) {
+            return listAdapter.isEnabled(i7);
+        }
+        return true;
+    }
+
+    @Override // android.widget.Adapter
+    public final void registerDataSetObserver(DataSetObserver dataSetObserver) {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter != null) {
+            spinnerAdapter.registerDataSetObserver(dataSetObserver);
         }
     }
 
-    @Override // m.p0
-    public final Drawable e() {
-        return null;
-    }
-
-    @Override // m.p0
-    public final void h(CharSequence charSequence) {
-        this.c = charSequence;
-    }
-
-    @Override // m.p0
-    public final void i(Drawable drawable) {
-        Log.e("AppCompatSpinner", "Cannot set popup background for MODE_DIALOG, ignoring");
-    }
-
-    @Override // m.p0
-    public final void j(int i7) {
-        Log.e("AppCompatSpinner", "Cannot set vertical offset for MODE_DIALOG, ignoring");
-    }
-
-    @Override // m.p0
-    public final void k(int i7) {
-        Log.e("AppCompatSpinner", "Cannot set horizontal (original) offset for MODE_DIALOG, ignoring");
-    }
-
-    @Override // m.p0
-    public final void l(int i7, int i10) {
-        if (this.b == null) {
-            return;
+    @Override // android.widget.Adapter
+    public final void unregisterDataSetObserver(DataSetObserver dataSetObserver) {
+        SpinnerAdapter spinnerAdapter = this.a;
+        if (spinnerAdapter != null) {
+            spinnerAdapter.unregisterDataSetObserver(dataSetObserver);
         }
-        q0 q0Var = this.d;
-        f5.u uVar = new f5.u(q0Var.getPopupContext());
-        g.b bVar = (g.b) uVar.c;
-        CharSequence charSequence = this.c;
-        if (charSequence != null) {
-            bVar.f = charSequence;
-        }
-        k0 k0Var = this.b;
-        int selectedItemPosition = q0Var.getSelectedItemPosition();
-        bVar.l = k0Var;
-        bVar.m = this;
-        bVar.b = selectedItemPosition;
-        bVar.a = true;
-        g.f g10 = uVar.g();
-        this.a = g10;
-        AlertController$RecycleListView alertController$RecycleListView = g10.f.e;
-        h0.d(alertController$RecycleListView, i7);
-        h0.c(alertController$RecycleListView, i10);
-        this.a.show();
-    }
-
-    @Override // m.p0
-    public final int m() {
-        return 0;
-    }
-
-    @Override // m.p0
-    public final void n(ListAdapter listAdapter) {
-        this.b = (k0) listAdapter;
-    }
-
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i7) {
-        q0 q0Var = this.d;
-        q0Var.setSelection(i7);
-        if (q0Var.getOnItemClickListener() != null) {
-            q0Var.performItemClick(null, i7, this.b.getItemId(i7));
-        }
-        dismiss();
     }
 }

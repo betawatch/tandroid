@@ -2,7 +2,7 @@ package q7;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class w0 extends c1 {
     public final s0 a;
@@ -48,7 +48,7 @@ public final class w0 extends c1 {
     public final String toString() {
         j0 j0Var;
         int i7;
-        boolean z9;
+        boolean z10;
         k0 k0Var = m0.d;
         m0 m0Var = k0Var.c;
         if (m0Var == null) {
@@ -67,17 +67,17 @@ public final class w0 extends c1 {
                     int i11 = 0;
                     while (true) {
                         if (i11 >= cArr.length) {
-                            z9 = false;
+                            z10 = false;
                             break;
                         }
                         char c11 = cArr[i11];
                         if (c11 >= 'A' && c11 <= 'Z') {
-                            z9 = true;
+                            z10 = true;
                             break;
                         }
                         i11++;
                     }
-                    if (z9) {
+                    if (z10) {
                         throw new IllegalStateException("Cannot call upperCase() on a mixed-case alphabet");
                     }
                     char[] cArr2 = new char[cArr.length];

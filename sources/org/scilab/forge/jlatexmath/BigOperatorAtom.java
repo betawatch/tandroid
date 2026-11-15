@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class BigOperatorAtom extends Atom {
     protected Atom base;
@@ -43,7 +43,7 @@ public class BigOperatorAtom extends Atom {
     */
     public Box createBox(TeXEnvironment teXEnvironment) {
         RowAtom rowAtom;
-        boolean z9;
+        boolean z10;
         Atom atom;
         int i7;
         Box horizontalBox;
@@ -59,8 +59,8 @@ public class BigOperatorAtom extends Atom {
                 rowAtom = (RowAtom) base;
                 if (rowAtom.lookAtLastAtom && this.base.type_limits != 2) {
                     this.base = rowAtom.getLastAtom();
-                    z9 = this.limitsSet;
-                    if ((!z9 && !this.limits) || ((!z9 && style >= 2) || (i7 = (atom = this.base).type_limits) == 1 || (i7 == 0 && style >= 2))) {
+                    z10 = this.limitsSet;
+                    if ((!z10 && !this.limits) || ((!z10 && style >= 2) || (i7 = (atom = this.base).type_limits) == 1 || (i7 == 0 && style >= 2))) {
                         if (rowAtom == null) {
                             return new ScriptsAtom(this.base, this.under, this.over).createBox(teXEnvironment);
                         }
@@ -127,8 +127,8 @@ public class BigOperatorAtom extends Atom {
             this.base = base;
         }
         rowAtom = null;
-        z9 = this.limitsSet;
-        if (!z9) {
+        z10 = this.limitsSet;
+        if (!z10) {
         }
         if (atom instanceof SymbolAtom) {
         }
@@ -161,9 +161,9 @@ public class BigOperatorAtom extends Atom {
         }
     }
 
-    public BigOperatorAtom(Atom atom, Atom atom2, Atom atom3, boolean z9) {
+    public BigOperatorAtom(Atom atom, Atom atom2, Atom atom3, boolean z10) {
         this(atom, atom2, atom3);
-        this.limits = z9;
+        this.limits = z10;
         this.limitsSet = true;
     }
 }

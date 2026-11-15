@@ -6,51 +6,52 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.wq;
+import bi.b6;
+import org.telegram.messenger.ns;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class y0 extends pj0 {
-    public static final Paint j3;
+public abstract class y0 extends uj0 {
     public static final Paint k3;
-    public static final Path l3;
-    public static final Paint m3;
-    public final Paint e3;
+    public static final Paint l3;
+    public static final Path m3;
+    public static final Paint n3;
     public final Paint f3;
-    public int g3;
-    public sg.l0 h3;
-    public q0.a i3;
+    public final Paint g3;
+    public int h3;
+    public sg.k0 i3;
+    public q0.a j3;
 
     static {
         Paint paint = new Paint(1);
-        j3 = paint;
+        k3 = paint;
         Paint paint2 = new Paint(1);
-        k3 = paint2;
+        l3 = paint2;
         paint.setColor(-2013265920);
         paint2.setColor(-1996488705);
-        l3 = new Path();
-        m3 = new Paint(1);
+        m3 = new Path();
+        n3 = new Paint(1);
     }
 
     public y0(Context context) {
         super(context, null);
-        this.e3 = new Paint(1);
+        this.f3 = new Paint(1);
         Paint paint = new Paint(1);
-        this.f3 = paint;
-        this.g3 = -1;
+        this.g3 = paint;
+        this.h3 = -1;
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
         setLayoutManager(new v4.s(7));
         setAdapter(new w0(this, context));
         setOverScrollMode(2);
-        setOnItemClickListener(new ai.k(this, 20));
+        setOnItemClickListener(new b6(this, 21));
     }
 
     public static void A1(float f10, float f11, float f12, int i7, Canvas canvas) {
-        Paint paint = m3;
+        Paint paint = n3;
         paint.setColor(i7);
         if (paint.getAlpha() == 255) {
             canvas.drawCircle(f10, f11, f12, paint);
@@ -58,14 +59,14 @@ public abstract class y0 extends pj0 {
         }
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(f10 - f12, f11 - f12, f10 + f12, f11 + f12);
-        paint.setAlpha(qs.e4);
+        paint.setAlpha(ns.e4);
         canvas.drawArc(rectF, -45.0f, -180.0f, true, paint);
-        Path path = l3;
+        Path path = m3;
         path.rewind();
         path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) jg.g.d(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.lineTo((float) i5.c.c(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
         path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) jg.g.d(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.lineTo((float) i5.c.c(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
         path.addArc(rectF, -45.0f, 180.0f);
         canvas.save();
         canvas.clipPath(path);
@@ -83,12 +84,12 @@ public abstract class y0 extends pj0 {
                 float f12 = i7;
                 float f13 = f10 + f12;
                 float f14 = f11 + f12;
-                Paint paint = j3;
+                Paint paint = k3;
                 Canvas canvas2 = canvas;
                 canvas2.drawRect(f10, f11, f13, f14, paint);
                 float f15 = i7 * 2;
                 float f16 = f10 + f15;
-                Paint paint2 = k3;
+                Paint paint2 = l3;
                 float f17 = f11;
                 canvas2.drawRect(f13, f17, f16, f14, paint2);
                 float f18 = f17 + f15;
@@ -102,8 +103,8 @@ public abstract class y0 extends pj0 {
         }
     }
 
-    public final void B1(boolean z9, float f10) {
-        float interpolation = z9 ? wq.g.getInterpolation(f10) : wq.i.getInterpolation(f10);
+    public final void B1(boolean z10, float f10) {
+        float interpolation = z10 ? er.g.getInterpolation(f10) : er.i.getInterpolation(f10);
         float childCount = 1.0f / (getChildCount() - 1);
         for (int i7 = 0; i7 < getChildCount(); i7++) {
             View childAt = getChildAt(i7);
@@ -120,20 +121,20 @@ public abstract class y0 extends pj0 {
     }
 
     public int getSelectedColorIndex() {
-        return this.g3;
+        return this.h3;
     }
 
     public void setColorListener(q0.a aVar) {
-        this.i3 = aVar;
+        this.j3 = aVar;
     }
 
-    public void setColorPalette(sg.l0 l0Var) {
-        this.h3 = l0Var;
+    public void setColorPalette(sg.k0 k0Var) {
+        this.i3 = k0Var;
         getAdapter().f();
     }
 
     public void setSelectedColorIndex(int i7) {
-        this.g3 = i7;
+        this.h3 = i7;
         getAdapter().f();
     }
 }

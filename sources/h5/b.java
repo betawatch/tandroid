@@ -2,10 +2,10 @@ package h5;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -106,7 +106,7 @@ public abstract class b {
         byteBuffer.put((byte) (((-16777216) & i7) >> 24));
         byteBuffer.put((byte) ((16711680 & i7) >> 16));
         byteBuffer.put((byte) ((65280 & i7) >> 8));
-        byteBuffer.put((byte) (i7 & qs.e4));
+        byteBuffer.put((byte) (i7 & ns.e4));
     }
 
     public static void n(ByteBuffer byteBuffer, double d) {
@@ -114,7 +114,7 @@ public abstract class b {
         byteBuffer.put((byte) (((-16777216) & i7) >> 24));
         byteBuffer.put((byte) ((16711680 & i7) >> 16));
         byteBuffer.put((byte) ((65280 & i7) >> 8));
-        byteBuffer.put((byte) (i7 & qs.e4));
+        byteBuffer.put((byte) (i7 & ns.e4));
     }
 
     public static void o(ByteBuffer byteBuffer, double d) {
@@ -125,15 +125,15 @@ public abstract class b {
 
     public static void p(int i7, ByteBuffer byteBuffer) {
         r((65535 & i7) >> 8, byteBuffer);
-        byteBuffer.put((byte) (i7 & qs.e4));
+        byteBuffer.put((byte) (i7 & ns.e4));
     }
 
     public static void q(int i7, ByteBuffer byteBuffer) {
         p((16777215 & i7) >> 8, byteBuffer);
-        byteBuffer.put((byte) (i7 & qs.e4));
+        byteBuffer.put((byte) (i7 & ns.e4));
     }
 
     public static void r(int i7, ByteBuffer byteBuffer) {
-        byteBuffer.put((byte) (i7 & qs.e4));
+        byteBuffer.put((byte) (i7 & ns.e4));
     }
 }

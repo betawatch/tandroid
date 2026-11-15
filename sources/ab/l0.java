@@ -7,7 +7,7 @@ import android.os.PowerManager;
 import android.util.Log;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l0 implements Runnable {
     public static final Object f = new Object();
@@ -46,11 +46,11 @@ public final class l0 implements Runnable {
         if (bool != null) {
             return bool.booleanValue();
         }
-        boolean z9 = context.checkCallingOrSelfPermission(str) == 0;
-        if (!z9 && Log.isLoggable("FirebaseMessaging", 3)) {
+        boolean z10 = context.checkCallingOrSelfPermission(str) == 0;
+        if (!z10 && Log.isLoggable("FirebaseMessaging", 3)) {
             Log.d("FirebaseMessaging", "Missing Permission: " + str + ". This permission should normally be included by the manifest merger, but may needed to be manually added to your manifest");
         }
-        return z9;
+        return z10;
     }
 
     public static boolean c(Context context) {
@@ -69,17 +69,17 @@ public final class l0 implements Runnable {
     }
 
     public final synchronized boolean d() {
-        boolean z9;
+        boolean z10;
         try {
             ConnectivityManager connectivityManager = (ConnectivityManager) this.a.getSystemService("connectivity");
             NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
             if (activeNetworkInfo != null) {
-                z9 = activeNetworkInfo.isConnected();
+                z10 = activeNetworkInfo.isConnected();
             }
         } catch (Throwable th2) {
             throw th2;
         }
-        return z9;
+        return z10;
     }
 
     /* JADX WARN: Finally extract failed */

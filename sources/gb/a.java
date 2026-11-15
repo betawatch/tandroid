@@ -1,18 +1,19 @@
 package gb;
 
 import android.os.Build;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
     public final String b;
     public final String c;
-    public final f0 d;
+    public final e0 d;
     public final ArrayList e;
 
-    public a(String str, String versionName, String appBuildVersion, f0 f0Var, ArrayList arrayList) {
+    public a(String str, String versionName, String appBuildVersion, e0 e0Var, ArrayList arrayList) {
         String deviceManufacturer = Build.MANUFACTURER;
         kotlin.jvm.internal.j.e(versionName, "versionName");
         kotlin.jvm.internal.j.e(appBuildVersion, "appBuildVersion");
@@ -20,7 +21,7 @@ public final class a {
         this.a = str;
         this.b = versionName;
         this.c = appBuildVersion;
-        this.d = f0Var;
+        this.d = e0Var;
         this.e = arrayList;
     }
 
@@ -40,7 +41,7 @@ public final class a {
     }
 
     public final int hashCode() {
-        return this.e.hashCode() + ((this.d.hashCode() + com.google.android.recaptcha.internal.a.h(com.google.android.recaptcha.internal.a.h(com.google.android.recaptcha.internal.a.h(this.a.hashCode() * 31, 31, this.b), 31, this.c), 31, Build.MANUFACTURER)) * 31);
+        return this.e.hashCode() + ((this.d.hashCode() + e2.h(e2.h(e2.h(this.a.hashCode() * 31, 31, this.b), 31, this.c), 31, Build.MANUFACTURER)) * 31);
     }
 
     public final String toString() {

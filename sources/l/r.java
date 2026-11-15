@@ -13,7 +13,7 @@ import android.view.SubMenu;
 import android.view.View;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r extends g.p implements MenuItem {
     public final l0.a c;
@@ -193,14 +193,14 @@ public final class r extends g.p implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setCheckable(boolean z9) {
-        this.c.setCheckable(z9);
+    public final MenuItem setCheckable(boolean z10) {
+        this.c.setCheckable(z10);
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setChecked(boolean z9) {
-        this.c.setChecked(z9);
+    public final MenuItem setChecked(boolean z10) {
+        this.c.setChecked(z10);
         return this;
     }
 
@@ -211,8 +211,8 @@ public final class r extends g.p implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setEnabled(boolean z9) {
-        this.c.setEnabled(z9);
+    public final MenuItem setEnabled(boolean z10) {
+        this.c.setEnabled(z10);
         return this;
     }
 
@@ -294,8 +294,8 @@ public final class r extends g.p implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setVisible(boolean z9) {
-        return this.c.setVisible(z9);
+    public final MenuItem setVisible(boolean z10) {
+        return this.c.setVisible(z10);
     }
 
     @Override // android.view.MenuItem

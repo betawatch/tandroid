@@ -7,7 +7,7 @@ import java.util.WeakHashMap;
 import r0.i0;
 import r0.n0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j extends n0 {
     public final /* synthetic */ int a;
@@ -24,13 +24,13 @@ public final class j extends n0 {
         Object obj = this.b;
         switch (i7) {
             case 0:
-                ((h) obj).b.D.setVisibility(0);
+                ((h) obj).b.E.setVisibility(0);
                 break;
             case 1:
                 s sVar = (s) obj;
-                sVar.D.setVisibility(0);
-                if (sVar.D.getParent() instanceof View) {
-                    View view = (View) sVar.D.getParent();
+                sVar.E.setVisibility(0);
+                if (sVar.E.getParent() instanceof View) {
+                    View view = (View) sVar.E.getParent();
                     WeakHashMap weakHashMap = i0.a;
                     r0.y.c(view);
                     break;
@@ -46,31 +46,31 @@ public final class j extends n0 {
         switch (i7) {
             case 0:
                 s sVar = ((h) obj).b;
-                sVar.D.setAlpha(1.0f);
-                sVar.G.d(null);
-                sVar.G = null;
+                sVar.E.setAlpha(1.0f);
+                sVar.H.d(null);
+                sVar.H = null;
                 break;
             case 1:
                 s sVar2 = (s) obj;
-                sVar2.D.setAlpha(1.0f);
-                sVar2.G.d(null);
-                sVar2.G = null;
+                sVar2.E.setAlpha(1.0f);
+                sVar2.H.d(null);
+                sVar2.H = null;
                 break;
             default:
                 s sVar3 = (s) ((q4.q) obj).c;
-                sVar3.D.setVisibility(8);
-                PopupWindow popupWindow = sVar3.E;
+                sVar3.E.setVisibility(8);
+                PopupWindow popupWindow = sVar3.F;
                 if (popupWindow != null) {
                     popupWindow.dismiss();
-                } else if (sVar3.D.getParent() instanceof View) {
-                    View view = (View) sVar3.D.getParent();
+                } else if (sVar3.E.getParent() instanceof View) {
+                    View view = (View) sVar3.E.getParent();
                     WeakHashMap weakHashMap = i0.a;
                     r0.y.c(view);
                 }
-                sVar3.D.e();
-                sVar3.G.d(null);
-                sVar3.G = null;
-                ViewGroup viewGroup = sVar3.J;
+                sVar3.E.e();
+                sVar3.H.d(null);
+                sVar3.H = null;
+                ViewGroup viewGroup = sVar3.K;
                 WeakHashMap weakHashMap2 = i0.a;
                 r0.y.c(viewGroup);
                 break;

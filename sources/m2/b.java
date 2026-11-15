@@ -5,22 +5,22 @@ import e2.v0;
 import e2.x1;
 import x2.b0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public interface b {
-    void A(a aVar, int i7);
+    void A(c1 c1Var, ji.j jVar);
 
-    void E(c1 c1Var, wf.b bVar);
+    void C(a aVar, int i7);
 
     void G(v0 v0Var);
 
-    void b(b0 b0Var);
-
-    void d(a aVar, int i7, long j3);
+    void k(b0 b0Var);
 
     void onRenderedFirstFrame(a aVar);
 
     void onSeekStarted(a aVar);
+
+    void p(a aVar, int i7, long j3);
 
     void r(a aVar, b0 b0Var);
 

@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import a8.p0;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzqs extends zzqv {
     private final byte[] zzc;
@@ -55,9 +55,9 @@ final class zzqs extends zzqv {
     }
 
     @Override // com.google.android.recaptcha.internal.zzqv
-    public final void zzd(int i7, boolean z9) {
+    public final void zzd(int i7, boolean z10) {
         zzt(i7 << 3);
-        zzb(z9 ? (byte) 1 : (byte) 0);
+        zzb(z10 ? (byte) 1 : (byte) 0);
     }
 
     @Override // com.google.android.recaptcha.internal.zzqv
@@ -236,12 +236,12 @@ final class zzqs extends zzqv {
 
     @Override // com.google.android.recaptcha.internal.zzqv
     public final void zzv(long j3) {
-        boolean z9;
+        boolean z10;
         int i7;
         IndexOutOfBoundsException indexOutOfBoundsException;
         int i10 = this.zze;
-        z9 = zzqv.zzd;
-        if (!z9 || this.zzd - i10 < 10) {
+        z10 = zzqv.zzd;
+        if (!z10 || this.zzd - i10 < 10) {
             int i11 = i10;
             while ((j3 & (-128)) != 0) {
                 try {

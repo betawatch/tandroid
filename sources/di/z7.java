@@ -1,43 +1,70 @@
 package di;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.vr;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z7 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i8 b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
+public final /* synthetic */ class z7 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ TLObject f;
 
-    public /* synthetic */ z7(i8 i8Var, float f10, float f11, int i7) {
-        this.a = i7;
-        this.b = i8Var;
-        this.c = f10;
-        this.d = f11;
+    public /* synthetic */ z7(v8 v8Var, TLObject tLObject, long j3, long j10, boolean z10) {
+        this.e = v8Var;
+        this.f = tLObject;
+        this.b = j3;
+        this.d = j10;
+        this.c = z10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.PeerSettings peerSettings;
+        int i7 = this.a;
+        TLObject tLObject = this.f;
+        Object obj = this.e;
+        switch (i7) {
             case 0:
-                i8 i8Var = this.b;
-                i8Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i8Var.setScrollY((int) org.telegram.messenger.g0.T1(this.c, 0.0f, floatValue));
-                h8 h8Var = i8Var.b0;
-                h8Var.x = org.telegram.messenger.g0.T1(this.d, 0.0f, floatValue);
-                h8Var.invalidate();
+                v8 v8Var = (v8) obj;
+                int i10 = v8Var.a;
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    long j3 = this.b;
+                    long j10 = this.d;
+                    if (j3 == 0) {
+                        TLRPC.UserFull b22 = np.s1(i10).b2(j10);
+                        if (b22 != null && (peerSettings = b22.settings) != null) {
+                            peerSettings.flags &= -16385;
+                            peerSettings.charge_paid_message_stars = 0L;
+                        }
+                        np.s1(i10).e7.edit().putLong(a8.p0.o(j10, "dialog_bar_paying_"), 0L).apply();
+                        np.s1(i10).a3(np.s1(i10).a2(Long.valueOf(j10)), np.s1(i10).M0(Long.valueOf(-j10)), true);
+                        org.telegram.messenger.g5.r(i10).D(true);
+                        ns.f(i10).k(ns.N3, Long.valueOf(j10));
+                        break;
+                    } else {
+                        v8Var.a0(-j3, j10, this.c);
+                        break;
+                    }
+                }
                 break;
             default:
-                i8 i8Var2 = this.b;
-                i8Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i8Var2.setScrollY((int) org.telegram.messenger.g0.T1(this.c, Math.min((i8Var2.getMeasuredHeight() - i8Var2.u0) - org.telegram.messenger.g0.L(64.0f), i8Var2.r0.getBottom() - i8Var2.getMeasuredHeight()), floatValue2));
-                h8 h8Var2 = i8Var2.b0;
-                h8Var2.x = org.telegram.messenger.g0.T1(this.d, 1.0f, floatValue2);
-                h8Var2.invalidate();
+                ((vr) obj).getMessagesController().B3(this.b, this.c, (TLRPC.InputPeer) tLObject, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ z7(vr vrVar, long j3, boolean z10, TLRPC.InputPeer inputPeer, long j10) {
+        this.e = vrVar;
+        this.b = j3;
+        this.c = z10;
+        this.f = inputPeer;
+        this.d = j10;
     }
 }

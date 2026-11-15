@@ -1,59 +1,52 @@
 package fi;
 
-import android.net.Uri;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.id;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.ns;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p0 implements c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t0 b;
+public final class p0 extends TextView {
+    public int a;
+    public final h6.m b;
 
-    public /* synthetic */ p0(t0 t0Var, int i7) {
-        this.a = i7;
-        this.b = t0Var;
+    public p0(Context context) {
+        super(context);
+        this.a = -1;
+        this.b = new h6.m(29);
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        int i7 = this.a;
-        t0 t0Var = this.b;
-        switch (i7) {
-            case 0:
-                Float f10 = (Float) obj;
-                s0 s0Var = t0Var.n;
-                if (s0Var != null) {
-                    s0Var.setProgress(f10.floatValue());
-                    break;
-                }
-                break;
-            case 1:
-                Uri uri = (Uri) obj;
-                if (t0Var.c && t0Var.r != null) {
-                    t0Var.n.b(R.raw.ic_save_to_gallery, 3500, id.N0("VideoSavedHint"));
-                    t0Var.c = false;
-                    t0Var.d();
-                    t0Var.w = uri;
-                    break;
-                }
-                break;
-            default:
-                Uri uri2 = (Uri) obj;
-                t0Var.c = false;
-                t0Var.d();
-                s0 s0Var2 = t0Var.n;
-                if (s0Var2 != null) {
-                    s0Var2.a();
-                    t0Var.n = null;
-                }
-                s0 s0Var3 = new s0(t0Var.getContext());
-                t0Var.n = s0Var3;
-                s0Var3.b(R.raw.ic_save_to_gallery, 2500, id.N0("PhotoSavedHint"));
-                t0Var.b.addView(t0Var.n);
-                t0Var.w = uri2;
-                break;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.a < 0) {
+            this.a = getLayout() != null ? (int) getLayout().getLineWidth(0) : 0;
         }
+        if (this.a <= org.telegram.messenger.g0.L(100.0f)) {
+            super.onDraw(canvas);
+            return;
+        }
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ns.e4, 31);
+        super.onDraw(canvas);
+        canvas.save();
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(getWidth() - org.telegram.messenger.g0.L(15.0f), 0.0f, getWidth(), getHeight());
+        this.b.m(canvas, rectF, 2, 1.0f);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31), i10);
+    }
+
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        this.a = -1;
     }
 }

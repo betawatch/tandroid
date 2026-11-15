@@ -1,7 +1,7 @@
 package l4;
 
-import a8.ea;
-import a8.ia;
+import a8.fa;
+import a8.ja;
 import android.graphics.Color;
 import android.text.SpannableStringBuilder;
 import android.text.SpannedString;
@@ -14,7 +14,7 @@ import android.text.style.StrikethroughSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import j$.util.DesugarCollections;
 import java.nio.charset.StandardCharsets;
@@ -28,10 +28,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*+)?$");
@@ -41,23 +41,23 @@ public abstract class h {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(qs.e4, qs.e4, qs.e4)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, qs.e4, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, qs.e4, qs.e4)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(qs.e4, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(qs.e4, qs.e4, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(qs.e4, 0, qs.e4)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, qs.e4)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(ns.e4, ns.e4, ns.e4)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, ns.e4, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, ns.e4, ns.e4)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(ns.e4, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(ns.e4, ns.e4, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(ns.e4, 0, ns.e4)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, ns.e4)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
         c = DesugarCollections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(qs.e4, qs.e4, qs.e4)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, qs.e4, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, qs.e4, qs.e4)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(qs.e4, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(qs.e4, qs.e4, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(qs.e4, 0, qs.e4)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, qs.e4)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(ns.e4, ns.e4, ns.e4)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, ns.e4, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, ns.e4, ns.e4)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(ns.e4, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(ns.e4, ns.e4, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(ns.e4, 0, ns.e4)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, ns.e4)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
         d = DesugarCollections.unmodifiableMap(hashMap2);
     }
@@ -81,35 +81,35 @@ public abstract class h {
                 }
                 c10 = 65535;
                 break;
-            case qs.j1 /* 98 */:
+            case ns.j1 /* 98 */:
                 if (str2.equals("b")) {
                     c10 = 1;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case qs.k1 /* 99 */:
+            case ns.k1 /* 99 */:
                 if (str2.equals("c")) {
                     c10 = 2;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case qs.q1 /* 105 */:
+            case ns.q1 /* 105 */:
                 if (str2.equals("i")) {
                     c10 = 3;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case qs.C1 /* 117 */:
+            case ns.C1 /* 117 */:
                 if (str2.equals("u")) {
                     c10 = 4;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case qs.D1 /* 118 */:
+            case ns.D1 /* 118 */:
                 if (str2.equals("v")) {
                     c10 = 5;
                     break;
@@ -161,7 +161,7 @@ public abstract class h {
                 spannableStringBuilder.setSpan(new UnderlineSpan(), i12, length, 33);
                 break;
             case 5:
-                spannableStringBuilder.setSpan(new g2.i(eVar.c), i12, length, 33);
+                spannableStringBuilder.setSpan(new g2.h(eVar.c), i12, length, 33);
                 break;
             case 7:
                 int c11 = c(list2, str, eVar);
@@ -182,7 +182,7 @@ public abstract class h {
                         int i18 = dVar.b - i16;
                         CharSequence subSequence = spannableStringBuilder.subSequence(i17, i18);
                         spannableStringBuilder.delete(i17, i18);
-                        spannableStringBuilder.setSpan(new g2.g(subSequence.toString(), c12), i14, i17, 33);
+                        spannableStringBuilder.setSpan(new g2.f(subSequence.toString(), c12), i14, i17, 33);
                         i16 = subSequence.length() + i16;
                         i14 = i17;
                     }
@@ -211,7 +211,7 @@ public abstract class h {
                     i10 = 1;
                     i11 = (i21 == 1 ? 1 : 0) | (bVar.m == 1 ? 2 : 0);
                 }
-                ea.a(spannableStringBuilder, new StyleSpan(i11), i12, length);
+                fa.a(spannableStringBuilder, new StyleSpan(i11), i12, length);
             } else {
                 i10 = 1;
             }
@@ -225,27 +225,27 @@ public abstract class h {
                 if (!bVar.g) {
                     throw new IllegalStateException("Font color not defined");
                 }
-                ea.a(spannableStringBuilder, new ForegroundColorSpan(bVar.f), i12, length);
+                fa.a(spannableStringBuilder, new ForegroundColorSpan(bVar.f), i12, length);
             }
             if (bVar.i) {
                 if (!bVar.i) {
                     throw new IllegalStateException("Background color not defined.");
                 }
-                ea.a(spannableStringBuilder, new BackgroundColorSpan(bVar.h), i12, length);
+                fa.a(spannableStringBuilder, new BackgroundColorSpan(bVar.h), i12, length);
             }
             if (bVar.e != null) {
-                ea.a(spannableStringBuilder, new TypefaceSpan(bVar.e), i12, length);
+                fa.a(spannableStringBuilder, new TypefaceSpan(bVar.e), i12, length);
             }
             int i22 = bVar.n;
             if (i22 == 1) {
-                ea.a(spannableStringBuilder, new AbsoluteSizeSpan((int) bVar.o, true), i12, length);
+                fa.a(spannableStringBuilder, new AbsoluteSizeSpan((int) bVar.o, true), i12, length);
             } else if (i22 == 2) {
-                ea.a(spannableStringBuilder, new RelativeSizeSpan(bVar.o), i12, length);
+                fa.a(spannableStringBuilder, new RelativeSizeSpan(bVar.o), i12, length);
             } else if (i22 == 3) {
-                ea.a(spannableStringBuilder, new RelativeSizeSpan(bVar.o / 100.0f), i12, length);
+                fa.a(spannableStringBuilder, new RelativeSizeSpan(bVar.o / 100.0f), i12, length);
             }
             if (bVar.q) {
-                spannableStringBuilder.setSpan(new g2.f(), i12, length, 33);
+                spannableStringBuilder.setSpan(new g2.e(), i12, length, 33);
             }
         }
     }
@@ -342,51 +342,51 @@ public abstract class h {
                     g(group2, gVar);
                 } else {
                     char c10 = 5;
-                    boolean z9 = false;
+                    boolean z10 = false;
                     if ("align".equals(group)) {
                         switch (group2.hashCode()) {
                             case -1364013995:
                                 break;
                             case -1074341483:
                                 if (group2.equals("middle")) {
-                                    z9 = true;
+                                    z10 = true;
                                     break;
                                 }
-                                z9 = -1;
+                                z10 = -1;
                                 break;
                             case 100571:
                                 if (group2.equals("end")) {
-                                    z9 = 2;
+                                    z10 = 2;
                                     break;
                                 }
-                                z9 = -1;
+                                z10 = -1;
                                 break;
                             case 3317767:
                                 if (group2.equals("left")) {
-                                    z9 = 3;
+                                    z10 = 3;
                                     break;
                                 }
-                                z9 = -1;
+                                z10 = -1;
                                 break;
                             case 108511772:
                                 if (group2.equals("right")) {
-                                    z9 = 4;
+                                    z10 = 4;
                                     break;
                                 }
-                                z9 = -1;
+                                z10 = -1;
                                 break;
                             case 109757538:
                                 if (group2.equals("start")) {
-                                    z9 = 5;
+                                    z10 = 5;
                                     break;
                                 }
-                                z9 = -1;
+                                z10 = -1;
                                 break;
                             default:
-                                z9 = -1;
+                                z10 = -1;
                                 break;
                         }
-                        switch (z9) {
+                        switch (z10) {
                             case false:
                             case true:
                                 i7 = 2;
@@ -561,52 +561,52 @@ public abstract class h {
             } else {
                 int i10 = i7 + 1;
                 if (i10 < str2.length()) {
-                    boolean z9 = str2.charAt(i10) == '/';
+                    boolean z10 = str2.charAt(i10) == '/';
                     int indexOf3 = str2.indexOf(62, i10);
                     i10 = indexOf3 == -1 ? str2.length() : indexOf3 + 1;
                     int i11 = i10 - 2;
-                    boolean z10 = str2.charAt(i11) == '/';
-                    int i12 = i7 + (z9 ? 2 : 1);
-                    if (!z10) {
+                    boolean z11 = str2.charAt(i11) == '/';
+                    int i12 = i7 + (z10 ? 2 : 1);
+                    if (!z11) {
                         i11 = i10 - 1;
                     }
                     String substring2 = str2.substring(i12, i11);
                     if (!substring2.trim().isEmpty()) {
                         String trim = substring2.trim();
-                        ia.f(!trim.isEmpty());
-                        String str4 = m0.a;
+                        ja.f(!trim.isEmpty());
+                        String str4 = l0.a;
                         String str5 = trim.split("[ \\.]", 2)[0];
                         str5.getClass();
                         switch (str5.hashCode()) {
-                            case qs.j1 /* 98 */:
+                            case ns.j1 /* 98 */:
                                 if (str5.equals("b")) {
                                     c10 = 0;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case qs.k1 /* 99 */:
+                            case ns.k1 /* 99 */:
                                 if (str5.equals("c")) {
                                     c10 = 1;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case qs.q1 /* 105 */:
+                            case ns.q1 /* 105 */:
                                 if (str5.equals("i")) {
                                     c10 = 2;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case qs.C1 /* 117 */:
+                            case ns.C1 /* 117 */:
                                 if (str5.equals("u")) {
                                     c10 = 3;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case qs.D1 /* 118 */:
+                            case ns.D1 /* 118 */:
                                 if (str5.equals("v")) {
                                     c10 = 4;
                                     break;
@@ -647,7 +647,7 @@ public abstract class h {
                             case 5:
                             case 6:
                             case 7:
-                                if (z9) {
+                                if (z10) {
                                     while (!arrayDeque.isEmpty()) {
                                         e eVar = (e) arrayDeque.pop();
                                         a(str, eVar, arrayList, spannableStringBuilder, list);
@@ -661,10 +661,10 @@ public abstract class h {
                                         }
                                     }
                                     break;
-                                } else if (!z10) {
+                                } else if (!z11) {
                                     int length = spannableStringBuilder.length();
                                     String trim2 = substring2.trim();
-                                    ia.f(!trim2.isEmpty());
+                                    ja.f(!trim2.isEmpty());
                                     int indexOf4 = trim2.indexOf(" ");
                                     if (indexOf4 == -1) {
                                         c11 = 0;

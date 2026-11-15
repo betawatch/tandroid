@@ -1,6 +1,6 @@
 package og;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class g {
     public boolean a;
@@ -48,8 +48,8 @@ public final class g {
         return this.h;
     }
 
-    public final void e(boolean z9, float f10, float f11, float f12, int i7, float f13, float f14, float f15, float f16, float f17, float f18, float f19, boolean z10) {
-        this.a = z9;
+    public final void e(boolean z10, float f10, float f11, float f12, int i7, float f13, float f14, float f15, float f16, float f17, float f18, float f19, boolean z11) {
+        this.a = z10;
         this.b = f10;
         this.c = f11;
         this.f = f13;
@@ -72,7 +72,7 @@ public final class g {
                 this.e = f19;
                 this.l = f14;
                 this.m = f15;
-                this.h = z10;
+                this.h = z11;
                 return;
             }
             this.i = i11 - 360;

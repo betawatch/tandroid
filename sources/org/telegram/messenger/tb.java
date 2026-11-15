@@ -1,237 +1,182 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
-import android.os.AsyncTask;
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
-import java.net.URL;
-import java.net.UnknownHostException;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import android.graphics.drawable.Drawable;
+import j$.util.Objects;
+import java.io.File;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class tb extends AsyncTask {
-    public final ub a;
-    public boolean b = true;
-    public HttpURLConnection c;
-    public final boolean d;
-    public final /* synthetic */ gc e;
+public final class tb {
+    public final /* synthetic */ fc A;
+    public Runnable b;
+    public boolean c;
+    public String d;
+    public String e;
+    public String f;
+    public String g;
+    public cw h;
+    public gc i;
+    public Object j;
+    public long k;
+    public int l;
+    public int m;
+    public int n;
+    public int o;
+    public File p;
+    public File q;
+    public File r;
+    public sb s;
+    public ac t;
+    public ub u;
+    public int a = 1;
+    public final ArrayList v = new ArrayList();
+    public final ArrayList w = new ArrayList();
+    public final ArrayList x = new ArrayList();
+    public final ArrayList y = new ArrayList();
+    public final ArrayList z = new ArrayList();
 
-    public tb(gc gcVar, ub ubVar) {
-        this.e = gcVar;
-        this.a = ubVar;
-        this.d = Uri.parse(ubVar.i.g).getQueryParameter("s") != null;
+    public tb(fc fcVar) {
+        this.A = fcVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x00c7, code lost:
-    
-        if (r2 == null) goto L53;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x00dd, code lost:
-    
-        if (r2 == null) goto L53;
-     */
-    /* JADX WARN: Finally extract failed */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x00f4 A[Catch: all -> 0x00f2, TryCatch #14 {all -> 0x00f2, blocks: (B:81:0x00e5, B:83:0x00e9, B:85:0x00ef, B:86:0x011a, B:103:0x00f4, B:105:0x00f8, B:106:0x00fb, B:108:0x00ff, B:110:0x0105, B:112:0x0111, B:113:0x0114, B:115:0x0118), top: B:80:0x00e5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x00e9 A[Catch: all -> 0x00f2, TryCatch #14 {all -> 0x00f2, blocks: (B:81:0x00e5, B:83:0x00e9, B:85:0x00ef, B:86:0x011a, B:103:0x00f4, B:105:0x00f8, B:106:0x00fb, B:108:0x00ff, B:110:0x0105, B:112:0x0111, B:113:0x0114, B:115:0x0118), top: B:80:0x00e5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0121 A[Catch: all -> 0x0124, TRY_LEAVE, TryCatch #2 {all -> 0x0124, blocks: (B:88:0x011d, B:90:0x0121), top: B:87:0x011d }] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0130 A[Catch: Exception -> 0x0133, TRY_ENTER, TRY_LEAVE, TryCatch #10 {Exception -> 0x0133, blocks: (B:39:0x00d1, B:94:0x0130), top: B:2:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:95:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0126 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    @Override // android.os.AsyncTask
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object doInBackground(Object[] objArr) {
-        InputStream inputStream;
-        ByteArrayOutputStream byteArrayOutputStream;
-        HttpURLConnection httpURLConnection;
-        InputStream inputStream2;
-        ByteArrayOutputStream byteArrayOutputStream2;
-        int read;
-        int responseCode;
-        String str = null;
-        try {
-            try {
-                HttpURLConnection httpURLConnection2 = (HttpURLConnection) new URL(this.a.i.g.replace("athumb://", "https://")).openConnection();
-                this.c = httpURLConnection2;
-                httpURLConnection2.setConnectTimeout(5000);
-                this.c.setReadTimeout(5000);
-                this.c.connect();
-                try {
-                    HttpURLConnection httpURLConnection3 = this.c;
-                    if (httpURLConnection3 != null && (responseCode = httpURLConnection3.getResponseCode()) != 200 && responseCode != 202 && responseCode != 304) {
-                        this.b = false;
-                    }
-                } catch (Exception e10) {
-                    a8.g(e10, false);
+    public final void a(ImageReceiver imageReceiver, String str, String str2, int i7, int i10) {
+        ArrayList arrayList = this.v;
+        int indexOf = arrayList.indexOf(imageReceiver);
+        ArrayList arrayList2 = this.w;
+        if (indexOf >= 0 && Objects.equals(((ImageReceiver) arrayList.get(indexOf)).R, str)) {
+            arrayList2.set(indexOf, Integer.valueOf(i10));
+            return;
+        }
+        arrayList.add(imageReceiver);
+        arrayList2.add(Integer.valueOf(i10));
+        this.x.add(str);
+        this.y.add(str2);
+        this.z.add(Integer.valueOf(i7));
+        this.A.k.put(imageReceiver.G(i7), this);
+    }
+
+    public final void b(ImageReceiver imageReceiver) {
+        int i7 = this.m;
+        int i10 = 0;
+        while (i10 < this.v.size()) {
+            ImageReceiver imageReceiver2 = (ImageReceiver) this.v.get(i10);
+            if (imageReceiver2 == null || imageReceiver2 == imageReceiver) {
+                this.v.remove(i10);
+                this.w.remove(i10);
+                this.x.remove(i10);
+                this.y.remove(i10);
+                i7 = ((Integer) this.z.remove(i10)).intValue();
+                if (imageReceiver2 != null) {
+                    this.A.k.remove(imageReceiver2.G(i7));
                 }
-                inputStream2 = this.c.getInputStream();
-                try {
-                    byteArrayOutputStream2 = new ByteArrayOutputStream();
-                } catch (Throwable th2) {
-                    inputStream = inputStream2;
-                    th = th2;
-                    byteArrayOutputStream = null;
-                }
-            } catch (Throwable th3) {
-                th = th3;
-                inputStream = null;
-                byteArrayOutputStream = null;
-                try {
-                    if (th instanceof SocketTimeoutException) {
-                        if (th instanceof UnknownHostException) {
-                            this.b = false;
-                        } else if (th instanceof SocketException) {
-                            if (th.getMessage() != null && th.getMessage().contains("ECONNRESET")) {
-                                this.b = false;
-                            }
-                        } else if (th instanceof FileNotFoundException) {
-                            this.b = false;
-                        }
-                    } else if (t0.s()) {
-                        this.b = false;
-                    }
-                    a8.g(th, false);
-                    try {
-                        httpURLConnection = this.c;
-                        if (httpURLConnection != null) {
-                            httpURLConnection.disconnect();
-                        }
-                    } catch (Throwable unused) {
-                    }
-                    if (inputStream != null) {
-                        try {
-                            inputStream.close();
-                        } catch (Throwable th4) {
-                            a8.g(th4, true);
-                        }
-                    }
-                    if (byteArrayOutputStream != null) {
-                        return null;
-                    }
-                    byteArrayOutputStream.close();
-                    return str;
-                } catch (Throwable th5) {
-                    try {
-                        HttpURLConnection httpURLConnection4 = this.c;
-                        if (httpURLConnection4 != null) {
-                            httpURLConnection4.disconnect();
-                        }
-                    } catch (Throwable unused2) {
-                    }
-                    if (inputStream != null) {
-                        try {
-                            inputStream.close();
-                        } catch (Throwable th6) {
-                            a8.g(th6, true);
-                        }
-                    }
-                    if (byteArrayOutputStream == null) {
-                        throw th5;
-                    }
-                    try {
-                        byteArrayOutputStream.close();
-                        throw th5;
-                    } catch (Exception unused3) {
-                        throw th5;
-                    }
+                i10--;
+            }
+            i10++;
+        }
+        if (this.v.isEmpty()) {
+            if (this.i != null && !this.A.w.containsKey(this.d)) {
+                gc gcVar = this.i;
+                if (gcVar.f != null) {
+                    w7.G(this.o).e(null, null, null, this.i.f, this.g, null);
+                } else if (gcVar.i != null) {
+                    w7.G(this.o).f(this.i.i);
+                } else if (gcVar.h != null) {
+                    w7.G(this.o).e(null, this.i.h, null, null, null, null);
+                } else if (gcVar.v != null) {
+                    w7.G(this.o).e(null, null, this.i.v, null, null, null);
                 }
             }
-            try {
-                byte[] bArr = new byte[32768];
-                while (!isCancelled() && (read = inputStream2.read(bArr)) > 0) {
-                    byteArrayOutputStream2.write(bArr, 0, read);
-                }
-                this.b = false;
-                JSONArray jSONArray = new JSONObject(new String(byteArrayOutputStream2.toByteArray())).getJSONArray("results");
-                if (jSONArray.length() > 0) {
-                    String string = jSONArray.getJSONObject(0).getString("artworkUrl100");
-                    if (this.d) {
-                        try {
-                            HttpURLConnection httpURLConnection5 = this.c;
-                            if (httpURLConnection5 != null) {
-                                httpURLConnection5.disconnect();
-                            }
-                        } catch (Throwable unused4) {
-                        }
-                        if (inputStream2 != null) {
-                            try {
-                                inputStream2.close();
-                            } catch (Throwable th7) {
-                                a8.g(th7, true);
-                            }
-                        }
-                        try {
-                            byteArrayOutputStream2.close();
-                        } catch (Exception unused5) {
-                        }
-                        return string;
-                    }
-                    str = string.replace("100x100", "600x600");
-                    try {
-                        HttpURLConnection httpURLConnection6 = this.c;
-                        if (httpURLConnection6 != null) {
-                            httpURLConnection6.disconnect();
-                        }
-                    } catch (Throwable unused6) {
-                    }
+            ub ubVar = this.u;
+            if (ubVar != null) {
+                if (i7 == 1) {
+                    this.A.q.a(ubVar);
                 } else {
-                    try {
-                        HttpURLConnection httpURLConnection7 = this.c;
-                        if (httpURLConnection7 != null) {
-                            httpURLConnection7.disconnect();
-                        }
-                    } catch (Throwable unused7) {
+                    ((of.a) this.A.p.b).remove(ubVar);
+                    com.google.android.gms.internal.cast.b0 b0Var = this.A.p;
+                    Runnable runnable = this.b;
+                    if (runnable == null) {
+                        b0Var.getClass();
+                    } else {
+                        ((of.a) b0Var.b).remove(runnable);
                     }
                 }
-                try {
-                    inputStream2.close();
-                } catch (Throwable th8) {
-                    a8.g(th8, true);
+                ub ubVar2 = this.u;
+                synchronized (ubVar2.b) {
+                    try {
+                        ubVar2.d = true;
+                        Thread thread = ubVar2.a;
+                        if (thread != null) {
+                            thread.interrupt();
+                        }
+                    } catch (Exception unused) {
+                    }
                 }
-                byteArrayOutputStream2.close();
-            } catch (Throwable th9) {
-                inputStream = inputStream2;
-                th = th9;
-                byteArrayOutputStream = byteArrayOutputStream2;
-                if (th instanceof SocketTimeoutException) {
-                }
-                a8.g(th, false);
-                httpURLConnection = this.c;
-                if (httpURLConnection != null) {
-                }
-                if (inputStream != null) {
-                }
-                if (byteArrayOutputStream != null) {
-                }
+                this.u = null;
             }
-            return str;
-        } catch (Exception unused8) {
-            return str;
+            ac acVar = this.t;
+            if (acVar != null) {
+                this.A.n.remove(acVar);
+                this.t.cancel(true);
+                this.t = null;
+            }
+            sb sbVar = this.s;
+            if (sbVar != null) {
+                this.A.o.remove(sbVar);
+                this.s.cancel(true);
+                this.s = null;
+            }
+            String str = this.e;
+            if (str != null) {
+                this.A.g.remove(str);
+            }
+            String str2 = this.e;
+            if (str2 != null) {
+                this.A.h.remove(str2);
+            }
+            String str3 = this.d;
+            if (str3 != null) {
+                this.A.i.remove(str3);
+                this.A.j.remove(fc.n(this.d));
+            }
         }
     }
 
-    @Override // android.os.AsyncTask
-    public final void onCancelled() {
-        this.e.s.c(new sb(this, 0));
-    }
-
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        String str = (String) obj;
-        gc gcVar = this.e;
-        p5 p5Var = gcVar.s;
-        if (str != null) {
-            p5Var.c(new x4(18, this, str));
-        } else if (this.b) {
-            p5Var.c(new ib(gcVar, this.a.e, 0));
+    public final void c(Drawable drawable, String str) {
+        tb tbVar;
+        fc fcVar;
+        ArrayList arrayList = this.w;
+        ArrayList arrayList2 = this.v;
+        if (drawable != null) {
+            tbVar = this;
+            g0.h3(new jn(tbVar, drawable, new ArrayList(arrayList2), new ArrayList(arrayList), str, 3));
+        } else {
+            tbVar = this;
         }
-        p5Var.c(new sb(this, 1));
+        int i7 = 0;
+        while (true) {
+            int size = arrayList2.size();
+            fcVar = tbVar.A;
+            if (i7 >= size) {
+                break;
+            }
+            fcVar.k.remove(((ImageReceiver) arrayList2.get(i7)).G(tbVar.m));
+            i7++;
+        }
+        arrayList2.clear();
+        arrayList.clear();
+        String str2 = tbVar.e;
+        if (str2 != null) {
+            fcVar.g.remove(str2);
+        }
+        String str3 = tbVar.e;
+        if (str3 != null) {
+            fcVar.h.remove(str3);
+        }
+        String str4 = tbVar.d;
+        if (str4 != null) {
+            fcVar.i.remove(str4);
+            fcVar.j.remove(fc.n(tbVar.d));
+        }
     }
 }

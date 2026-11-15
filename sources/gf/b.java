@@ -1,13 +1,13 @@
 package gf;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b extends mf.a {
     public final kf.b a = new kf.b();
 
-    public static boolean i(h hVar, int i7) {
-        CharSequence charSequence = hVar.a;
-        return hVar.g < 4 && i7 < charSequence.length() && charSequence.charAt(i7) == '>';
+    public static boolean i(g gVar, int i7) {
+        CharSequence charSequence = gVar.a;
+        return gVar.g < 4 && i7 < charSequence.length() && charSequence.charAt(i7) == '>';
     }
 
     @Override // mf.a
@@ -16,15 +16,15 @@ public final class b extends mf.a {
     }
 
     @Override // mf.a
-    public final a h(h hVar) {
+    public final a h(g gVar) {
         char charAt;
-        int i7 = hVar.e;
-        if (!i(hVar, i7)) {
+        int i7 = gVar.e;
+        if (!i(gVar, i7)) {
             return null;
         }
-        int i10 = hVar.c + hVar.g;
+        int i10 = gVar.c + gVar.g;
         int i11 = i10 + 1;
-        CharSequence charSequence = hVar.a;
+        CharSequence charSequence = gVar.a;
         int i12 = i7 + 1;
         if (i12 < charSequence.length() && ((charAt = charSequence.charAt(i12)) == '\t' || charAt == ' ')) {
             i11 = i10 + 2;

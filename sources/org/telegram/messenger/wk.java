@@ -1,31 +1,19 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.function.IntFunction;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wk implements Runnable {
+public final /* synthetic */ class wk implements IntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qp b;
-    public final /* synthetic */ TLRPC.Updates c;
-    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ wk(qp qpVar, TLRPC.Updates updates, boolean z9, int i7) {
-        this.a = i7;
-        this.b = qpVar;
-        this.c = updates;
-        this.d = z9;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.IntFunction
+    public final Object apply(int i7) {
         switch (this.a) {
             case 0:
-                this.b.O3(this.c, this.d);
-                break;
+                return new int[i7][];
             default:
-                Utilities.d.c(new wk(this.b, this.c, this.d, 0));
-                break;
+                return String.valueOf(i7);
         }
     }
 }

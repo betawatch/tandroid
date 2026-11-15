@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class n2 extends View {
     public final /* synthetic */ o2 a;
@@ -37,8 +37,8 @@ public final class n2 extends View {
         canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
         for (int i10 = 0; i10 < o2Var.e.items.size(); i10++) {
             float max = Math.max(0.0f, 1.0f - Math.abs(i10 - f10));
-            g4.C1.setAlpha((int) ((max * 95.0f) + 160.0f));
-            canvas.drawCircle(org.telegram.messenger.g0.L(4.0f) + i7 + (org.telegram.messenger.g0.L(13.0f) * i10), getMeasuredHeight() / 2.0f, (org.telegram.messenger.g0.L(1.0f) * max) + org.telegram.messenger.g0.L(2.0f), g4.C1);
+            g4.D1.setAlpha((int) ((max * 95.0f) + 160.0f));
+            canvas.drawCircle(org.telegram.messenger.g0.L(4.0f) + i7 + (org.telegram.messenger.g0.L(13.0f) * i10), getMeasuredHeight() / 2.0f, (org.telegram.messenger.g0.L(1.0f) * max) + org.telegram.messenger.g0.L(2.0f), g4.D1);
         }
         canvas.restore();
     }

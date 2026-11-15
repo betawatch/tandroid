@@ -1,69 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import java.io.File;
-import org.telegram.ui.Components.ThemeEditorView;
+import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.TextureView;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class fz0 implements a71 {
-    public final /* synthetic */ ThemeEditorView a;
+public final class fz0 extends TextureView {
+    public static Boolean f;
+    public dz0 a;
+    public final zy0 b;
+    public final ArrayList c;
+    public Runnable d;
+    public boolean e;
 
-    public fz0(ThemeEditorView themeEditorView) {
-        this.a = themeEditorView;
+    public fz0(Context context, Runnable runnable) {
+        super(context);
+        this.b = new zy0(this, 0);
+        this.c = new ArrayList();
+        this.d = runnable;
+        setOpaque(false);
+        setSurfaceTextureListener(new z30(this, 1));
     }
 
-    @Override // org.telegram.ui.Components.a71
-    public final void a() {
+    public static void b(Runnable runnable) {
+        if (runnable == null) {
+            return;
+        }
+        if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
+            org.telegram.messenger.g0.h3(runnable);
+        } else {
+            runnable.run();
+        }
+    }
+
+    public static boolean c() {
+        if (f == null) {
+            f = Boolean.valueOf(org.telegram.messenger.np.e1().getBoolean("nothanos", false));
+        }
+        Boolean bool = f;
+        return bool == null || !bool.booleanValue();
+    }
+
+    public final void a(View view) {
         int i7 = 0;
+        int i10 = 0;
+        boolean z10 = false;
         while (true) {
-            ThemeEditorView themeEditorView = this.a;
-            if (i7 >= themeEditorView.e.size()) {
-                ThemeEditorView.EditorAlert editorAlert = themeEditorView.n;
-                int i10 = ThemeEditorView.EditorAlert.G1;
-                editorAlert.L0(true);
+            ArrayList arrayList = this.c;
+            if (i10 >= arrayList.size()) {
+                break;
+            }
+            ez0 ez0Var = (ez0) arrayList.get(i10);
+            if (ez0Var.a == view) {
+                Runnable runnable = ez0Var.d;
+                if (runnable != null) {
+                    b(runnable);
+                    ez0Var.d = null;
+                }
+                arrayList.remove(i10);
+                i10--;
+                z10 = true;
+            }
+            i10++;
+        }
+        if (z10) {
+            return;
+        }
+        dz0 dz0Var = this.a;
+        ArrayList arrayList2 = dz0Var.X;
+        if (dz0Var.b.get()) {
+            Handler handler = dz0Var.getHandler();
+            if (handler != null) {
+                handler.sendMessage(handler.obtainMessage(5, view));
                 return;
-            } else {
-                org.telegram.ui.ActionBar.v6 v6Var = (org.telegram.ui.ActionBar.v6) themeEditorView.e.get(i7);
-                int x02 = org.telegram.ui.ActionBar.m6.x0(v6Var.i, v6Var.e, false);
-                v6Var.h = x02;
-                if (i7 == 0) {
-                    themeEditorView.n.l1.c(x02);
+            }
+            while (i7 < arrayList2.size()) {
+                cz0 cz0Var = (cz0) arrayList2.get(i7);
+                if (cz0Var.a.contains(view)) {
+                    Runnable runnable2 = cz0Var.f;
+                    if (runnable2 != null) {
+                        b(runnable2);
+                        cz0Var.f = null;
+                    }
+                    arrayList2.remove(i7);
+                    i7--;
                 }
                 i7++;
             }
         }
-    }
-
-    @Override // org.telegram.ui.Components.a71
-    public final void b(File file, Bitmap bitmap, boolean z9) {
-        org.telegram.ui.ActionBar.l6 l6Var = this.a.o;
-        org.telegram.ui.ActionBar.m6.im.delete(org.telegram.ui.ActionBar.m6.Be);
-        org.telegram.ui.ActionBar.m6.im.delete(org.telegram.ui.ActionBar.m6.Ce);
-        org.telegram.ui.ActionBar.m6.im.delete(org.telegram.ui.ActionBar.m6.De);
-        org.telegram.ui.ActionBar.m6.im.delete(org.telegram.ui.ActionBar.m6.Ee);
-        org.telegram.ui.ActionBar.m6.im.delete(org.telegram.ui.ActionBar.m6.Fe);
-        org.telegram.ui.ActionBar.m6.h0 = null;
-        l6Var.v(null);
-        if (bitmap == null) {
-            org.telegram.ui.ActionBar.m6.f0 = null;
-            org.telegram.ui.ActionBar.m6.e0 = null;
-            org.telegram.ui.ActionBar.m6.x1(l6Var, false, false, false);
-            org.telegram.ui.ActionBar.m6.u1(true);
-            return;
-        }
-        org.telegram.ui.ActionBar.m6.f0 = new BitmapDrawable(bitmap);
-        org.telegram.ui.ActionBar.m6.x1(l6Var, false, false, false);
-        int[] q10 = org.telegram.messenger.g0.q(org.telegram.ui.ActionBar.m6.f0);
-        int i7 = q10[0];
-        org.telegram.ui.ActionBar.m6.c0 = i7;
-        org.telegram.ui.ActionBar.m6.X = i7;
-        int i10 = q10[1];
-        org.telegram.ui.ActionBar.m6.d0 = i10;
-        org.telegram.ui.ActionBar.m6.b0 = i10;
-        org.telegram.ui.ActionBar.m6.i();
-        org.telegram.ui.ActionBar.m6.h(org.telegram.ui.ActionBar.m6.e0);
-        org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.z4, new Object[0]);
     }
 }

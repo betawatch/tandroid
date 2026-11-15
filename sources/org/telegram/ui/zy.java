@@ -1,92 +1,89 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ViewPropertyAnimator;
-import android.widget.TextView;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class zy extends org.telegram.ui.Cells.n4 {
-    public final /* synthetic */ jz D;
-    public final TextView r;
-    public final bi.rc s;
-    public int w;
-    public final org.telegram.ui.Components.y4 x;
-    public boolean y;
+public final class zy extends rg.a {
+    public View.OnClickListener c;
+    public CharSequence d;
+    public String e;
+    public boolean f;
+    public boolean g;
+    public long h;
+    public String i;
+    public int j;
+    public int k;
+    public boolean l;
+    public TL_chatlists.TL_exportedChatlistInvite m;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public zy(jz jzVar, Context context) {
-        super(context, r2, 22, 15, false, r6);
-        org.telegram.ui.ActionBar.h6 h6Var;
-        this.D = jzVar;
-        int i7 = org.telegram.ui.ActionBar.m6.L6;
-        h6Var = ((org.telegram.ui.ActionBar.f2) jzVar).resourceProvider;
-        TextView textView = new TextView(getContext());
-        this.r = textView;
-        textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.z6, jzVar.getResourceProvider());
-        textView.setText(org.telegram.messenger.id.M0(jzVar.getUserConfig().q() ? 2131750620 : 2131750619, null));
-        textView.setGravity(5);
-        int i10 = (org.telegram.messenger.id.a0 ? 3 : 5) | 48;
-        float f10 = this.b;
-        addView(textView, c8.ha.d(-1, -1.0f, i10, f10, 16.66f, f10, this.c));
-        textView.setAlpha(0.0f);
-        bi.rc rcVar = new bi.rc(this, getContext());
-        this.s = rcVar;
-        this.x = new org.telegram.ui.Components.y4(rcVar, 320L, org.telegram.ui.Components.wq.h, 0);
-        rcVar.setTextSize(org.telegram.messenger.g0.L(10.0f));
-        rcVar.setTypeface(org.telegram.messenger.g0.o());
-        rcVar.setGravity(5);
-        rcVar.setPadding(org.telegram.messenger.g0.L(4.66f), 0, org.telegram.messenger.g0.L(4.66f), 0);
-        int i11 = (org.telegram.messenger.id.a0 ? 3 : 5) | 48;
-        float f11 = this.b;
-        addView(rcVar, c8.ha.d(-1, -1.0f, i11, f11, 16.66f, f11, this.c));
+    public static zy b(int i7, String str, boolean z10) {
+        zy zyVar = new zy(4, false);
+        zyVar.k = i7;
+        zyVar.d = str;
+        zyVar.l = z10;
+        return zyVar;
     }
 
-    public final void d(int i7, boolean z9) {
-        jz jzVar = this.D;
-        String M0 = org.telegram.messenger.id.M0(jzVar.getUserConfig().q() ? 2131750620 : 2131750619, null);
-        TextView textView = this.r;
-        textView.setText(M0);
-        int i10 = 0;
-        boolean z10 = i7 < 0;
-        if (!z10) {
-            int[] iArr = org.telegram.ui.ActionBar.m6.r8;
-            i10 = jzVar.getThemedColor(iArr[i7 % iArr.length]);
-        }
-        this.w = i10;
-        bi.rc rcVar = this.s;
-        if (!z10) {
-            rcVar.setEmojiColor(i10);
-        }
-        if (!z9) {
-            this.x.a(this.w, true);
-        }
-        if (z10 != this.y) {
-            this.y = z10;
-            ViewPropertyAnimator duration = textView.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(320L);
-            org.telegram.ui.Components.wq wqVar = org.telegram.ui.Components.wq.h;
-            duration.setInterpolator(wqVar).start();
-            rcVar.animate().alpha(z10 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(wqVar).start();
-        }
+    public static zy c(int i7, String str, String str2, boolean z10) {
+        zy zyVar = new zy(1, false);
+        zyVar.g = z10;
+        zyVar.d = str;
+        zyVar.i = str2;
+        zyVar.j = i7;
+        return zyVar;
     }
 
-    public final void e(CharSequence charSequence, boolean z9) {
-        if (charSequence == null) {
-            charSequence = "";
+    public static zy d(String str) {
+        zy zyVar = new zy(TextUtils.isEmpty(str) ? 3 : 6, false);
+        zyVar.d = str;
+        return zyVar;
+    }
+
+    public final boolean equals(Object obj) {
+        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite;
+        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2;
+        if (this != obj) {
+            if (obj == null || zy.class != obj.getClass()) {
+                return false;
+            }
+            zy zyVar = (zy) obj;
+            int i7 = this.a;
+            if (i7 != zyVar.a) {
+                return false;
+            }
+            if (i7 == 11) {
+                if (!TextUtils.equals(this.d, zyVar.d) || !TextUtils.equals(this.e, zyVar.e)) {
+                    return false;
+                }
+            } else {
+                if ((i7 == 0 || i7 == 1 || i7 == 3 || i7 == 4) && !TextUtils.equals(this.d, zyVar.d)) {
+                    return false;
+                }
+                int i10 = this.a;
+                if (i10 == 0) {
+                    if (this.f != zyVar.f) {
+                        return false;
+                    }
+                } else if (i10 == 1) {
+                    if (this.h != zyVar.h || !TextUtils.equals(this.i, zyVar.i) || this.j != zyVar.j) {
+                        return false;
+                    }
+                } else if (i10 == 7 && (tL_exportedChatlistInvite = this.m) != (tL_exportedChatlistInvite2 = zyVar.m)) {
+                    if (!TextUtils.equals(tL_exportedChatlistInvite.url, tL_exportedChatlistInvite2.url)) {
+                        return false;
+                    }
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite3 = this.m;
+                    boolean z10 = tL_exportedChatlistInvite3.revoked;
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite4 = zyVar.m;
+                    if (z10 != tL_exportedChatlistInvite4.revoked || !TextUtils.equals(tL_exportedChatlistInvite3.title, tL_exportedChatlistInvite4.title) || this.m.peers.size() != zyVar.m.peers.size()) {
+                        return false;
+                    }
+                }
+            }
         }
-        boolean z10 = false;
-        if (charSequence.length() > 12) {
-            charSequence = charSequence.subSequence(0, 12);
-        }
-        bi.rc rcVar = this.s;
-        CharSequence m10 = org.telegram.messenger.i6.m(charSequence, rcVar.getPaint().getFontMetricsInt(), false, null, 0);
-        if (z9 && !org.telegram.messenger.id.a0) {
-            z10 = true;
-        }
-        rcVar.c(m10, z10, true);
+        return true;
     }
 }

@@ -1,21 +1,23 @@
 package qe;
 
 import a4.k;
+import c8.t9;
 import c8.u9;
-import c8.v9;
+import com.google.android.gms.internal.vision.e2;
+import w7.s;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class f {
     public static final g a = new g();
 
-    public static final me.d a(me.d dVar, pb.b module) {
+    public static final me.d a(me.d dVar, s module) {
         kotlin.jvm.internal.j.e(dVar, "<this>");
         kotlin.jvm.internal.j.e(module, "module");
         if (!kotlin.jvm.internal.j.a(dVar.e(), me.e.b)) {
             return dVar.isInline() ? a(dVar.i(0), module) : dVar;
         }
-        u9.a(dVar);
+        t9.a(dVar);
         return dVar;
     }
 
@@ -39,7 +41,7 @@ public abstract class f {
                 int i11 = i7 + 30;
                 String str = i10 <= 0 ? "" : ".....";
                 String str2 = i11 >= charSequence.length() ? "" : ".....";
-                StringBuilder m10 = com.google.android.recaptcha.internal.a.m(str);
+                StringBuilder m10 = e2.m(str);
                 if (i10 < 0) {
                     i10 = 0;
                 }
@@ -69,7 +71,7 @@ public abstract class f {
 
     public static final j f(me.d desc, pe.b bVar) {
         kotlin.jvm.internal.j.e(desc, "desc");
-        v9 e10 = desc.e();
+        u9 e10 = desc.e();
         if (e10 instanceof me.a) {
             return j.f;
         }
@@ -80,7 +82,7 @@ public abstract class f {
             return j.c;
         }
         me.d a10 = a(desc.i(0), bVar.b);
-        v9 e11 = a10.e();
+        u9 e11 = a10.e();
         if ((e11 instanceof me.c) || kotlin.jvm.internal.j.a(e11, me.e.c)) {
             return j.e;
         }

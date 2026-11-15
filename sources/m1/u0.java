@@ -6,7 +6,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import zd.c2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class u0 extends kotlin.jvm.internal.k implements rd.l {
     public final /* synthetic */ int b;
@@ -41,7 +41,7 @@ public final class u0 extends kotlin.jvm.internal.k implements rd.l {
             default:
                 Throwable th2 = (Throwable) obj;
                 ((y) this.c).invoke(th2);
-                be.c cVar = (be.c) ((ab.b0) this.d).d;
+                be.c cVar = (be.c) ((xi.e) this.d).c;
                 cVar.g(th2, false);
                 do {
                     cVar.getClass();
@@ -73,24 +73,24 @@ public final class u0 extends kotlin.jvm.internal.k implements rd.l {
                                             kVar4 = l10;
                                         }
                                     }
-                                    Object z9 = cVar.z(kVar4, i7, andIncrement, obj3);
-                                    if (z9 == be.e.m) {
+                                    Object z10 = cVar.z(kVar4, i7, andIncrement, obj3);
+                                    if (z10 == be.e.m) {
                                         c2 c2Var = obj3 instanceof c2 ? (c2) obj3 : null;
                                         if (c2Var != null) {
                                             c2Var.a(kVar4, i7);
                                         }
                                         cVar.B(andIncrement);
                                         kVar4.i();
-                                    } else if (z9 == be.e.o) {
+                                    } else if (z10 == be.e.o) {
                                         if (andIncrement < cVar.p()) {
                                             kVar4.b();
                                         }
                                     } else {
-                                        if (z9 == be.e.n) {
+                                        if (z10 == be.e.n) {
                                             throw new IllegalStateException("unexpected");
                                         }
                                         kVar4.b();
-                                        hVar = z9;
+                                        hVar = z10;
                                     }
                                 }
                             }

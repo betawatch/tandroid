@@ -1,52 +1,32 @@
 package y7;
 
 import c8.yd;
+import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class n9 extends l9 {
-    public static final n9 e = new n9(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+public final class n9 extends k9 {
+    public final /* synthetic */ a c;
 
-    public n9(int i7, Object[] objArr) {
-        this.c = objArr;
-        this.d = i7;
-    }
-
-    @Override // y7.l9, y7.i9
-    public final int f(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i7 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i7);
-        return i7;
+    public n9(a aVar) {
+        this.c = aVar;
     }
 
     @Override // java.util.List
-    public final Object get(int i7) {
-        yd.a(i7, this.d);
-        Object obj = this.c[i7];
+    public final /* synthetic */ Object get(int i7) {
+        a aVar = this.c;
+        yd.a(i7, aVar.e);
+        int i10 = i7 + i7;
+        Object[] objArr = aVar.d;
+        Object obj = objArr[i10];
         obj.getClass();
-        return obj;
-    }
-
-    @Override // y7.i9
-    public final int i() {
-        return this.d;
-    }
-
-    @Override // y7.i9
-    public final int j() {
-        return 0;
-    }
-
-    @Override // y7.i9
-    public final Object[] k() {
-        return this.c;
+        Object obj2 = objArr[i10 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.d;
+        return this.c.e;
     }
 }

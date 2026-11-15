@@ -1,12 +1,12 @@
 package h9;
 
-import a8.ia;
+import a8.ja;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class v0 extends h2 {
+public final class v0 extends g2 {
     public int a;
     public Object b;
     public final /* synthetic */ int c;
@@ -21,7 +21,7 @@ public final class v0 extends h2 {
     @Override // java.util.Iterator
     public final boolean hasNext() {
         Object next;
-        ia.p(this.a != 4);
+        ja.p(this.a != 4);
         int c10 = p1.g.c(this.a);
         if (c10 == 0) {
             return true;
@@ -39,7 +39,7 @@ public final class v0 extends h2 {
                         } else {
                             next = it.next();
                         }
-                    } while (!((g9.m) this.e).apply(next));
+                    } while (!((g9.l) this.e).apply(next));
                 default:
                     do {
                         Iterator it2 = this.d;
@@ -50,7 +50,7 @@ public final class v0 extends h2 {
                         } else {
                             next = it2.next();
                         }
-                    } while (!((c2) this.e).b.contains(next));
+                    } while (!((b2) this.e).b.contains(next));
             }
             this.b = next;
             if (this.a != 3) {
@@ -73,18 +73,18 @@ public final class v0 extends h2 {
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public v0(Iterator it, g9.m mVar) {
+    public v0(Iterator it, g9.l lVar) {
         this();
         this.c = 0;
         this.d = it;
-        this.e = mVar;
+        this.e = lVar;
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public v0(c2 c2Var) {
+    public v0(b2 b2Var) {
         this();
         this.c = 1;
-        this.e = c2Var;
-        this.d = c2Var.a.iterator();
+        this.e = b2Var;
+        this.d = b2Var.a.iterator();
     }
 }

@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public enum x0 extends b2 {
     public x0() {
@@ -11,15 +11,15 @@ public enum x0 extends b2 {
     public final void d(l lVar, a aVar) {
         if (aVar.k("--")) {
             lVar.n.b();
-            lVar.c = b2.h0;
+            lVar.c = b2.i0;
         } else if (aVar.l("DOCTYPE")) {
-            lVar.c = b2.n0;
+            lVar.c = b2.o0;
         } else if (aVar.k("[CDATA[")) {
             lVar.e();
-            lVar.c = b2.D0;
+            lVar.c = b2.E0;
         } else {
             lVar.m(this);
-            lVar.a(b2.f0);
+            lVar.a(b2.g0);
         }
     }
 }

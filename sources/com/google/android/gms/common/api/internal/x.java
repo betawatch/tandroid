@@ -1,82 +1,42 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.util.Log;
+import android.os.Looper;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.locks.Lock;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class x extends f0 {
-    public final /* synthetic */ int b = 0;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class x implements q6.b {
+    public final WeakReference a;
+    public final com.google.android.gms.common.api.e b;
+    public final boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x(y yVar, e0 e0Var, n6.a aVar) {
-        super(e0Var);
-        this.c = aVar;
-        this.d = yVar;
+    public x(c0 c0Var, com.google.android.gms.common.api.e eVar, boolean z10) {
+        this.a = new WeakReference(c0Var);
+        this.b = eVar;
+        this.c = z10;
     }
 
-    @Override // com.google.android.gms.common.api.internal.f0
-    public final void a() {
-        q6.i m0Var;
-        int i7 = this.b;
-        Object obj = this.d;
-        Object obj2 = this.c;
-        switch (i7) {
-            case 0:
-                ((y) obj).c.h((n6.a) obj2);
-                break;
-            default:
-                b0 b0Var = (b0) obj2;
-                r8.h hVar = (r8.h) obj;
-                if (b0Var.j(0)) {
-                    n6.a aVar = hVar.b;
-                    if (!aVar.c()) {
-                        if (b0Var.x && !aVar.b()) {
-                            b0Var.g();
-                            b0Var.d();
-                            break;
-                        } else {
-                            b0Var.h(aVar);
-                            break;
-                        }
-                    } else {
-                        q6.x xVar = hVar.c;
-                        q6.m.g(xVar);
-                        n6.a aVar2 = xVar.c;
-                        if (!aVar2.c()) {
-                            Log.wtf("GACConnecting", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar2)), new Exception());
-                            b0Var.h(aVar2);
-                            break;
-                        } else {
-                            b0Var.D = true;
-                            IBinder iBinder = xVar.b;
-                            if (iBinder == null) {
-                                m0Var = null;
-                            } else {
-                                int i10 = q6.a.b;
-                                IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
-                                m0Var = queryLocalInterface instanceof q6.i ? (q6.i) queryLocalInterface : new q6.m0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 9);
-                            }
-                            q6.m.g(m0Var);
-                            b0Var.E = m0Var;
-                            b0Var.F = xVar.d;
-                            b0Var.G = xVar.e;
-                            b0Var.d();
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // q6.b
+    public final void a(n6.a aVar) {
+        c0 c0Var = (c0) this.a.get();
+        if (c0Var == null) {
+            return;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x(z zVar, b0 b0Var, b0 b0Var2, r8.h hVar) {
-        super(b0Var);
-        this.c = b0Var2;
-        this.d = hVar;
+        Lock lock = c0Var.b;
+        q6.m.i("onReportServiceBinding must be called on the GoogleApiClient handler thread", Looper.myLooper() == c0Var.a.o.h);
+        lock.lock();
+        try {
+            if (c0Var.j(0)) {
+                if (!aVar.c()) {
+                    c0Var.f(aVar, this.b, this.c);
+                }
+                if (c0Var.k()) {
+                    c0Var.d();
+                }
+            }
+        } finally {
+            lock.unlock();
+        }
     }
 }

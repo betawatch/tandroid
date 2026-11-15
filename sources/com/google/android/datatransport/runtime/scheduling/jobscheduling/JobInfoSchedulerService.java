@@ -7,11 +7,12 @@ import h6.m;
 import ia.c;
 import java.util.concurrent.Executor;
 import o5.i;
-import o5.s;
-import org.telegram.ui.Components.pp0;
+import o5.t;
+import org.telegram.ui.Components.sp0;
+import org.telegram.ui.web.e1;
 import y5.a;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class JobInfoSchedulerService extends JobService {
     public static final /* synthetic */ int a = 0;
@@ -22,15 +23,15 @@ public class JobInfoSchedulerService extends JobService {
         String string2 = jobParameters.getExtras().getString("extras");
         int i7 = jobParameters.getExtras().getInt("priority");
         int i10 = jobParameters.getExtras().getInt("attemptNumber");
-        s.b(getApplicationContext());
+        t.b(getApplicationContext());
         m a10 = i.a();
         a10.F(string);
         a10.d = a.b(i7);
         if (string2 != null) {
             a10.c = Base64.decode(string2, 0);
         }
-        c cVar = s.a().d;
-        ((Executor) cVar.e).execute(new pp0(cVar, a10.h(), i10, new org.telegram.ui.web.s(29, this, jobParameters), 24));
+        c cVar = t.a().d;
+        ((Executor) cVar.e).execute(new sp0(cVar, a10.j(), i10, new e1(23, this, jobParameters), 24));
         return true;
     }
 

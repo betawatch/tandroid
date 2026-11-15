@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.ConcurrentModificationException;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class l {
     public int[] a;
@@ -155,7 +155,7 @@ public class l {
 
     public final Object f(int i7) {
         if (i7 < 0 || i7 >= this.c) {
-            throw new IllegalArgumentException(jg.g.j(i7, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(i5.c.i(i7, "Expected index to be within 0..size()-1, but was ").toString());
         }
         return this.b[i7 << 1];
     }
@@ -163,7 +163,7 @@ public class l {
     public final Object g(int i7) {
         int i10;
         if (i7 < 0 || i7 >= (i10 = this.c)) {
-            throw new IllegalArgumentException(jg.g.j(i7, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(i5.c.i(i7, "Expected index to be within 0..size()-1, but was ").toString());
         }
         Object[] objArr = this.b;
         int i11 = i7 << 1;
@@ -228,7 +228,7 @@ public class l {
 
     public final Object h(int i7, Object obj) {
         if (i7 < 0 || i7 >= this.c) {
-            throw new IllegalArgumentException(jg.g.j(i7, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(i5.c.i(i7, "Expected index to be within 0..size()-1, but was ").toString());
         }
         int i10 = (i7 << 1) + 1;
         Object[] objArr = this.b;
@@ -255,7 +255,7 @@ public class l {
 
     public final Object i(int i7) {
         if (i7 < 0 || i7 >= this.c) {
-            throw new IllegalArgumentException(jg.g.j(i7, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(i5.c.i(i7, "Expected index to be within 0..size()-1, but was ").toString());
         }
         return this.b[(i7 << 1) + 1];
     }

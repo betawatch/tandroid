@@ -1,12 +1,10 @@
 package m3;
 
-import a8.ua;
+import a8.va;
 import c4.k;
-import c8.m9;
+import c8.l9;
 import e2.q0;
 import e2.s0;
-import f3.j0;
-import f3.l;
 import f3.o;
 import f3.p;
 import f3.q;
@@ -15,18 +13,17 @@ import f3.t;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.util.List;
-import org.telegram.ui.Cells.f1;
-import z3.m;
+import z3.l;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements o {
     public q b;
     public p c;
-    public ua d;
-    public m e;
+    public va d;
+    public l e;
     public int g;
     public long h;
     public int i;
@@ -36,7 +33,7 @@ public final class a implements o {
 
     @Override // f3.o
     public final boolean b(p pVar) {
-        return m9.a((l) pVar, true);
+        return l9.a((f3.l) pVar, true);
     }
 
     @Override // f3.o
@@ -48,9 +45,9 @@ public final class a implements o {
     public final void d(long j3, long j10) {
         if (j3 != 0) {
             if (this.f == 3) {
-                m mVar = this.e;
-                mVar.getClass();
-                mVar.d(j3, j10);
+                l lVar = this.e;
+                lVar.getClass();
+                lVar.d(j3, j10);
                 return;
             }
             return;
@@ -66,7 +63,7 @@ public final class a implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     @Override // f3.o
@@ -77,10 +74,10 @@ public final class a implements o {
                 int i10 = this.i;
                 x xVar = this.a;
                 if (i10 == 0) {
-                    if (!pVar.c(xVar.a, 0, 8, true)) {
+                    if (!pVar.d(xVar.a, 0, 8, true)) {
                         q qVar = this.b;
                         qVar.getClass();
-                        qVar.U0();
+                        qVar.d1();
                         this.b.f(new t(-9223372036854775807L));
                         this.f = 4;
                         return -1;
@@ -102,17 +99,17 @@ public final class a implements o {
                     o3.b bVar = new o3.b(0L, position - j3, -9223372036854775807L, position, this.h - j3);
                     q qVar2 = this.b;
                     qVar2.getClass();
-                    j0 O1 = qVar2.O1(1024, 4);
+                    f3.i0 d2 = qVar2.d2(1024, 4);
                     e2.t tVar = new e2.t();
                     tVar.q = s0.n("image/heic");
                     tVar.k = new q0(bVar);
-                    f1.s(tVar, O1);
+                    r.b.s(tVar, d2);
                     this.f = 2;
                 } else {
                     this.f = 1;
                 }
             } else if (i7 == 1) {
-                pVar.s((int) (this.h - this.i));
+                pVar.m((int) (this.h - this.i));
                 this.i = 0;
                 this.f = 0;
             } else {
@@ -125,32 +122,32 @@ public final class a implements o {
                     }
                     if (this.d == null || pVar != this.c) {
                         this.c = pVar;
-                        this.d = new ua(pVar, this.j);
+                        this.d = new va(pVar, this.j);
                     }
-                    m mVar = this.e;
-                    mVar.getClass();
-                    int f10 = mVar.f(this.d, sVar);
+                    l lVar = this.e;
+                    lVar.getClass();
+                    int f10 = lVar.f(this.d, sVar);
                     if (f10 == 1) {
                         sVar.a += this.j;
                     }
                     return f10;
                 }
                 if (this.e == null) {
-                    this.e = new m(k.i, 8);
+                    this.e = new l(k.i, 8);
                 }
-                ua uaVar = new ua(pVar, this.j);
-                this.d = uaVar;
-                if (this.e.b(uaVar)) {
-                    m mVar2 = this.e;
+                va vaVar = new va(pVar, this.j);
+                this.d = vaVar;
+                if (this.e.b(vaVar)) {
+                    l lVar2 = this.e;
                     long j10 = this.j;
                     q qVar3 = this.b;
                     qVar3.getClass();
-                    mVar2.c(new ua(j10, qVar3, 3));
+                    lVar2.c(new va(j10, qVar3, 3));
                     this.f = 3;
                 } else {
                     q qVar4 = this.b;
                     qVar4.getClass();
-                    qVar4.U0();
+                    qVar4.d1();
                     this.b.f(new t(-9223372036854775807L));
                     this.f = 4;
                 }
@@ -160,9 +157,9 @@ public final class a implements o {
 
     @Override // f3.o
     public final void release() {
-        m mVar = this.e;
-        if (mVar != null) {
-            mVar.getClass();
+        l lVar = this.e;
+        if (lVar != null) {
+            lVar.getClass();
             this.e = null;
         }
     }

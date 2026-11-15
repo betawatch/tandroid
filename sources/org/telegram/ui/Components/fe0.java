@@ -1,114 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.SurfaceView;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.PhotoViewer;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class fe0 extends org.telegram.ui.j4 {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final class fe0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ge0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fe0(int i7, Context context, Object obj) {
-        super(context);
-        this.h = i7;
-        this.n = obj;
+    public /* synthetic */ fe0(ge0 ge0Var, int i7) {
+        this.a = i7;
+        this.b = ge0Var;
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.h) {
-            case 2:
-                PhotoViewer photoViewer = (PhotoViewer) this.n;
-                Drawable[] drawableArr = PhotoViewer.Y8;
-                photoViewer.getClass();
-                super.draw(canvas);
-                break;
-            default:
-                super.draw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.messenger.ij ijVar;
-        switch (this.h) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
-                if (view == pipRoundVideoView.c && (ijVar = MediaController.B().u0) != null) {
-                    pipRoundVideoView.E.set(org.telegram.messenger.g0.N(1.5f), org.telegram.messenger.g0.N(1.5f), getMeasuredWidth() - org.telegram.messenger.g0.N(1.5f), getMeasuredHeight() - org.telegram.messenger.g0.N(1.5f));
-                    canvas.drawArc(pipRoundVideoView.E, -90.0f, ijVar.b0 * 360.0f, false, org.telegram.ui.ActionBar.m6.k2);
-                }
-                return drawChild;
-            case 1:
-            default:
-                return super.drawChild(canvas, view, j3);
-            case 2:
-                PhotoViewer photoViewer = (PhotoViewer) this.n;
-                if (view == photoViewer.D3 && photoViewer.f4) {
-                    return true;
-                }
-                return super.drawChild(canvas, view, j3);
-        }
-    }
-
-    @Override // org.telegram.ui.j4, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.h) {
-            case 1:
-                super.onMeasure(i7, i10);
-                l71 l71Var = (l71) this.n;
-                if (l71Var.f != null) {
-                    ViewGroup.LayoutParams layoutParams = l71Var.d.getLayoutParams();
-                    layoutParams.width = getMeasuredWidth();
-                    layoutParams.height = getMeasuredHeight();
-                    ImageView imageView = l71Var.e;
-                    if (imageView != null) {
-                        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
-                        layoutParams2.width = getMeasuredWidth();
-                        layoutParams2.height = getMeasuredHeight();
-                        break;
-                    }
+                ge0 ge0Var = this.b;
+                ge0Var.h = false;
+                ge0Var.a = ge0Var.c;
+                ge0Var.invalidate();
+                int i7 = ge0Var.K;
+                if (i7 >= 0) {
+                    ge0Var.b(i7);
+                    ge0Var.K = -1;
+                    break;
                 }
                 break;
-            case 2:
-                super.onMeasure(i7, i10);
-                PhotoViewer photoViewer = (PhotoViewer) this.n;
-                ImageView imageView2 = photoViewer.w3;
-                if (imageView2 != null) {
-                    ViewGroup.LayoutParams layoutParams3 = imageView2.getLayoutParams();
-                    layoutParams3.width = getMeasuredWidth();
-                    layoutParams3.height = getMeasuredHeight();
-                }
-                TextureView textureView = photoViewer.B2;
-                if (textureView instanceof i51) {
-                    textureView.setPivotX(textureView.getMeasuredWidth() / 2);
-                    photoViewer.E2.setPivotX(photoViewer.B2.getMeasuredWidth() / 2);
-                } else {
-                    if (textureView != null) {
-                        textureView.setPivotX(0.0f);
-                    }
-                    SurfaceView surfaceView = photoViewer.C2;
-                    if (surfaceView != null) {
-                        surfaceView.setPivotX(0.0f);
-                    }
-                    photoViewer.E2.setPivotX(0.0f);
-                }
-                photoViewer.s0();
-                break;
             default:
-                super.onMeasure(i7, i10);
+                ge0 ge0Var2 = this.b;
+                ge0Var2.n = false;
+                ge0Var2.h = false;
+                ge0Var2.invalidate();
+                int i10 = ge0Var2.K;
+                if (i10 >= 0) {
+                    ge0Var2.b(i10);
+                    ge0Var2.K = -1;
+                }
+                ge0Var2.a();
                 break;
         }
     }

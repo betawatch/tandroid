@@ -3,18 +3,19 @@ package com.google.android.recaptcha.internal;
 import af.b;
 import android.app.Application;
 import com.google.android.gms.common.api.i;
-import com.google.android.gms.common.api.internal.s;
 import com.google.android.gms.common.api.internal.t;
+import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.tasks.Task;
 import d8.e;
 import gd.g;
 import gd.k;
 import id.c;
+import jd.a;
 import kd.j;
 import o8.f;
 import rd.p;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzs extends j implements p {
     final /* synthetic */ zzu zza;
@@ -40,7 +41,7 @@ final class zzs extends j implements p {
     @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         zzcz zzczVar;
-        jd.a aVar = jd.a.a;
+        a aVar = a.a;
         b.c(obj);
         zzu zzuVar = this.zza;
         zzczVar = zzuVar.zza;
@@ -56,9 +57,9 @@ final class zzs extends j implements p {
         Application context = zzu.zzl(zzuVar);
         kotlin.jvm.internal.j.e(context, "context");
         e eVar = new e(context, e.l, com.google.android.gms.common.api.b.j, i.c);
-        s b10 = t.b();
+        t b10 = u.b();
         b10.d = new n6.c[]{f.b};
-        b10.c = new d6.i(cVar, 17);
+        b10.c = new d6.i(cVar, 12);
         b10.a = 34001;
         Task e10 = eVar.e(0, b10.a());
         kotlin.jvm.internal.j.d(e10, "doRead(...)");

@@ -1,23 +1,52 @@
 package ri;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class c implements a {
-    public final Paint a = new Paint(1);
-    public int b;
+public final class c implements ui.a, si.a {
+    public final int a;
+    public final /* synthetic */ d b;
 
-    public final void a(int i7) {
-        if (this.b != i7) {
-            this.b = i7;
-            this.a.setColor(i7);
-        }
+    public c(d dVar, int i7) {
+        this.b = dVar;
+        this.a = i7;
     }
 
-    @Override // ri.a
-    public final void e(Canvas canvas, float f10, float f11, float f12, float f13) {
-        canvas.drawRect(f10, f11, f12, f13, this.a);
+    @Override // si.a
+    public final int a() {
+        boolean a10 = r.b.a(this.a);
+        d dVar = this.b;
+        return a10 ? dVar.s : dVar.q;
+    }
+
+    @Override // ui.a
+    public final void b0(float f10, float f11, float f12, float f13, Canvas canvas) {
+        d.a(this.b, canvas, this.a, f10, f11, f12, f13);
+    }
+
+    @Override // si.a
+    public final void d(float f10, float f11, int i7, Canvas canvas, RectF rectF) {
+        d.b(this.b, this.a, canvas, rectF, i7, f10, f11);
+    }
+
+    @Override // si.a
+    public final int e() {
+        boolean a10 = r.b.a(this.a);
+        d dVar = this.b;
+        return a10 ? dVar.n : dVar.m;
+    }
+
+    @Override // si.a
+    public final int f() {
+        boolean a10 = r.b.a(this.a);
+        d dVar = this.b;
+        return a10 ? dVar.r : dVar.p;
+    }
+
+    @Override // si.a
+    public final boolean g() {
+        return true;
     }
 }

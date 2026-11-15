@@ -1,10 +1,10 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.wa;
+import a8.xa;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public enum j {
     b(-999),
@@ -42,16 +42,16 @@ public enum j {
 
     static {
         char c10 = 0;
-        wa waVar = new wa(c10, 5);
-        waVar.c = new Object[8];
-        waVar.b = 0;
+        xa xaVar = new xa(c10, 5);
+        xaVar.c = new Object[8];
+        xaVar.b = 0;
         j[] values = values();
         int length = values.length;
         for (int i7 = c10; i7 < length; i7++) {
             j jVar = values[i7];
             Integer valueOf = Integer.valueOf(jVar.a);
-            int i10 = waVar.b + 1;
-            Object[] objArr = (Object[]) waVar.c;
+            int i10 = xaVar.b + 1;
+            Object[] objArr = (Object[]) xaVar.c;
             int length2 = objArr.length;
             int i11 = i10 + i10;
             if (i11 > length2) {
@@ -65,21 +65,21 @@ public enum j {
                         length2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                     }
                 }
-                waVar.c = Arrays.copyOf(objArr, length2);
+                xaVar.c = Arrays.copyOf(objArr, length2);
             }
-            Object[] objArr2 = (Object[]) waVar.c;
-            int i12 = waVar.b;
+            Object[] objArr2 = (Object[]) xaVar.c;
+            int i12 = xaVar.b;
             int i13 = i12 + i12;
             objArr2[i13] = valueOf;
             objArr2[i13 + 1] = jVar;
-            waVar.b = i12 + 1;
+            xaVar.b = i12 + 1;
         }
-        s sVar = (s) waVar.d;
+        s sVar = (s) xaVar.d;
         if (sVar != null) {
             throw sVar.a();
         }
-        a0 c11 = a0.c(waVar.b, (Object[]) waVar.c, waVar);
-        s sVar2 = (s) waVar.d;
+        a0 c11 = a0.c(xaVar.b, (Object[]) xaVar.c, xaVar);
+        s sVar2 = (s) xaVar.d;
         if (sVar2 != null) {
             throw sVar2.a();
         }

@@ -1,18 +1,19 @@
 package pb;
 
-import a8.wa;
+import a8.xa;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 import c8.ed;
-import com.google.android.gms.common.api.internal.t;
+import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
+import tg.x;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final n6.c[] a = new n6.c[0];
@@ -33,43 +34,43 @@ public abstract class j {
         n6.c cVar9 = new n6.c("mlkit.barcode.ui", 1L);
         n6.c cVar10 = new n6.c("mlkit.smartreply", 1L);
         c = new n6.c("mlkit.segmentation.subject", 1L);
-        wa waVar = new wa(24, (byte) 0);
-        waVar.B("barcode", cVar);
-        waVar.B("custom_ica", cVar2);
-        waVar.B("face", cVar3);
-        waVar.B("ica", cVar4);
-        waVar.B("ocr", cVar5);
-        waVar.B("langid", cVar6);
-        waVar.B("nlclassifier", cVar7);
-        waVar.B("tflite_dynamite", cVar8);
-        waVar.B("barcode_ui", cVar9);
-        waVar.B("smart_reply", cVar10);
-        w7.e eVar = (w7.e) waVar.d;
+        xa xaVar = new xa(24, (byte) 0);
+        xaVar.A("barcode", cVar);
+        xaVar.A("custom_ica", cVar2);
+        xaVar.A("face", cVar3);
+        xaVar.A("ica", cVar4);
+        xaVar.A("ocr", cVar5);
+        xaVar.A("langid", cVar6);
+        xaVar.A("nlclassifier", cVar7);
+        xaVar.A("tflite_dynamite", cVar8);
+        xaVar.A("barcode_ui", cVar9);
+        xaVar.A("smart_reply", cVar10);
+        w7.e eVar = (w7.e) xaVar.d;
         if (eVar != null) {
             throw eVar.a();
         }
-        w7.l c10 = w7.l.c(waVar.b, (Object[]) waVar.c, waVar);
-        w7.e eVar2 = (w7.e) waVar.d;
+        w7.l c10 = w7.l.c(xaVar.b, (Object[]) xaVar.c, xaVar);
+        w7.e eVar2 = (w7.e) xaVar.d;
         if (eVar2 != null) {
             throw eVar2.a();
         }
         d = c10;
-        wa waVar2 = new wa(24, (byte) 0);
-        waVar2.B("com.google.android.gms.vision.barcode", cVar);
-        waVar2.B("com.google.android.gms.vision.custom.ica", cVar2);
-        waVar2.B("com.google.android.gms.vision.face", cVar3);
-        waVar2.B("com.google.android.gms.vision.ica", cVar4);
-        waVar2.B("com.google.android.gms.vision.ocr", cVar5);
-        waVar2.B("com.google.android.gms.mlkit.langid", cVar6);
-        waVar2.B("com.google.android.gms.mlkit.nlclassifier", cVar7);
-        waVar2.B("com.google.android.gms.tflite_dynamite", cVar8);
-        waVar2.B("com.google.android.gms.mlkit_smartreply", cVar10);
-        w7.e eVar3 = (w7.e) waVar2.d;
+        xa xaVar2 = new xa(24, (byte) 0);
+        xaVar2.A("com.google.android.gms.vision.barcode", cVar);
+        xaVar2.A("com.google.android.gms.vision.custom.ica", cVar2);
+        xaVar2.A("com.google.android.gms.vision.face", cVar3);
+        xaVar2.A("com.google.android.gms.vision.ica", cVar4);
+        xaVar2.A("com.google.android.gms.vision.ocr", cVar5);
+        xaVar2.A("com.google.android.gms.mlkit.langid", cVar6);
+        xaVar2.A("com.google.android.gms.mlkit.nlclassifier", cVar7);
+        xaVar2.A("com.google.android.gms.tflite_dynamite", cVar8);
+        xaVar2.A("com.google.android.gms.mlkit_smartreply", cVar10);
+        w7.e eVar3 = (w7.e) xaVar2.d;
         if (eVar3 != null) {
             throw eVar3.a();
         }
-        w7.l.c(waVar2.b, (Object[]) waVar2.c, waVar2);
-        w7.e eVar4 = (w7.e) waVar2.d;
+        w7.l.c(xaVar2.b, (Object[]) xaVar2.c, xaVar2);
+        w7.e eVar4 = (w7.e) xaVar2.d;
         if (eVar4 != null) {
             throw eVar4.a();
         }
@@ -77,7 +78,7 @@ public abstract class j {
 
     public static boolean a(Context context, n6.c[] cVarArr) {
         try {
-            return ((u6.a) Tasks.await(new v6.f(context, v6.f.l, com.google.android.gms.common.api.b.j, com.google.android.gms.common.api.i.c).f(new r(cVarArr, 1)).addOnFailureListener(new sa.d(20)))).a;
+            return ((u6.a) Tasks.await(new v6.e(context, v6.e.l, com.google.android.gms.common.api.b.j, com.google.android.gms.common.api.i.c).f(new s(cVarArr, 1)).addOnFailureListener(new b(21)))).a;
         } catch (InterruptedException | ExecutionException e10) {
             Log.e("OptionalModuleUtils", "Failed to complete the task of features availability check", e10);
             return false;
@@ -112,20 +113,20 @@ public abstract class j {
     public static void c(Context context, n6.c[] cVarArr) {
         Task e10;
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new r(cVarArr, 0));
+        arrayList.add(new s(cVarArr, 0));
         q6.m.a("APIs must not be empty.", !arrayList.isEmpty());
-        v6.f fVar = new v6.f(context, v6.f.l, com.google.android.gms.common.api.b.j, com.google.android.gms.common.api.i.c);
+        v6.e eVar = new v6.e(context, v6.e.l, com.google.android.gms.common.api.b.j, com.google.android.gms.common.api.i.c);
         v6.a b10 = v6.a.b(arrayList, true);
         if (b10.a.isEmpty()) {
             e10 = Tasks.forResult(new u6.c(0, false));
         } else {
-            com.google.android.gms.common.api.internal.s b11 = t.b();
+            com.google.android.gms.common.api.internal.t b11 = u.b();
             b11.d = new n6.c[]{n7.b.d};
             b11.b = true;
             b11.a = 27304;
-            b11.c = new v6.e(fVar, b10);
-            e10 = fVar.e(0, b11.a());
+            b11.c = new x(4, eVar, b10);
+            e10 = eVar.e(0, b11.a());
         }
-        e10.addOnFailureListener(new qb.a(20));
+        e10.addOnFailureListener(new nb.a(21));
     }
 }

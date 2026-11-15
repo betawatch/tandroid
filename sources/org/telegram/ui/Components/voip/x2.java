@@ -1,45 +1,29 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a3 b;
+public final class x2 extends Drawable {
+    public final int a = -15130842;
 
-    public /* synthetic */ x2(a3 a3Var, int i7) {
-        this.a = i7;
-        this.b = a3Var;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.drawColor(this.a);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                a3 a3Var = this.b;
-                a3Var.getClass();
-                a3Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a3Var.invalidate();
-                break;
-            case 1:
-                a3 a3Var2 = this.b;
-                a3Var2.getClass();
-                a3Var2.x = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                a3Var2.invalidate();
-                break;
-            case 2:
-                a3 a3Var3 = this.b;
-                a3Var3.getClass();
-                a3Var3.s = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                a3Var3.invalidate();
-                break;
-            default:
-                a3 a3Var4 = this.b;
-                a3Var4.getClass();
-                a3Var4.r = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                a3Var4.invalidate();
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -11,11 +11,11 @@ import android.opengl.GLU;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
-import h2.m0;
+import h2.l0;
 import java.util.Arrays;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m extends HandlerThread implements Handler.Callback {
     public h2.l a;
@@ -37,10 +37,10 @@ public final class m extends HandlerThread implements Handler.Callback {
         EGLConfig[] eGLConfigArr = new EGLConfig[1];
         int[] iArr3 = new int[1];
         boolean eglChooseConfig = EGL14.eglChooseConfig(eglGetDisplay, h2.l.h, 0, eGLConfigArr, 0, 1, iArr3, 0);
-        boolean z9 = eglChooseConfig && iArr3[0] > 0 && eGLConfigArr[0] != null;
+        boolean z10 = eglChooseConfig && iArr3[0] > 0 && eGLConfigArr[0] != null;
         Object[] objArr = {Boolean.valueOf(eglChooseConfig), Integer.valueOf(iArr3[0]), eGLConfigArr[0]};
-        String str = m0.a;
-        h2.e.a(String.format(Locale.US, "eglChooseConfig failed: success=%b, numConfigs[0]=%d, configs[0]=%s", objArr), z9);
+        String str = l0.a;
+        h2.e.a(String.format(Locale.US, "eglChooseConfig failed: success=%b, numConfigs[0]=%d, configs[0]=%s", objArr), z10);
         EGLConfig eGLConfig = eGLConfigArr[0];
         EGLContext eglCreateContext = EGL14.eglCreateContext(lVar.c, eGLConfig, EGL14.EGL_NO_CONTEXT, i7 == 0 ? new int[]{12440, 2, 12344} : new int[]{12440, 2, 12992, 1, 12344}, 0);
         h2.e.a("eglCreateContext failed", eglCreateContext != null);
@@ -58,14 +58,14 @@ public final class m extends HandlerThread implements Handler.Callback {
         StringBuilder sb2 = new StringBuilder();
         h9.o.g(4, "initialCapacity");
         Object[] objArr2 = new Object[4];
-        boolean z10 = false;
+        boolean z11 = false;
         int i10 = 0;
         while (true) {
             int glGetError = GLES20.glGetError();
             if (glGetError == 0) {
                 break;
             }
-            if (z10) {
+            if (z11) {
                 sb2.append('\n');
             }
             String gluErrorString = GLU.gluErrorString(glGetError);
@@ -82,9 +82,9 @@ public final class m extends HandlerThread implements Handler.Callback {
             }
             objArr2[i10] = valueOf;
             i10 = i11;
-            z10 = true;
+            z11 = true;
         }
-        if (z10) {
+        if (z11) {
             throw new h2.m(sb2.toString(), h9.i0.o(i10, objArr2));
         }
         SurfaceTexture surfaceTexture = new SurfaceTexture(iArr[0]);

@@ -1,27 +1,48 @@
 package org.telegram.ui.ActionBar;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class a5 {
-    public static final a5 a;
-    public static final a5 b;
-    public static final /* synthetic */ a5[] c;
+public final /* synthetic */ class a5 implements te.d, l0 {
+    public final /* synthetic */ c5 a;
 
-    static {
-        a5 a5Var = new a5("ICON", 0);
-        a = a5Var;
-        a5 a5Var2 = new a5("TEXT", 1);
-        b = a5Var2;
-        c = new a5[]{a5Var, a5Var2};
+    public /* synthetic */ a5(c5 c5Var) {
+        this.a = c5Var;
     }
 
-    public static a5 valueOf(String str) {
-        return (a5) Enum.valueOf(a5.class, str);
+    @Override // te.d
+    public void b0() {
+        c5 c5Var = this.a;
+        c5Var.e();
+        c5Var.a.invalidate();
     }
 
-    public static a5[] values() {
-        return (a5[]) c.clone();
+    @Override // org.telegram.ui.ActionBar.l0
+    public void g(int i7) {
+        j jVar = this.a.a.W;
+        if (jVar != null) {
+            jVar.b(i7);
+        }
+    }
+
+    @Override // te.d
+    public /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // te.d
+    public /* synthetic */ boolean s(float f10) {
+        return false;
+    }
+
+    @Override // te.d
+    public /* synthetic */ void n(boolean z10) {
+    }
+
+    @Override // te.d
+    public /* synthetic */ void a() {
+    }
+
+    @Override // te.d
+    public /* synthetic */ void v() {
     }
 }

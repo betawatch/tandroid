@@ -2,18 +2,17 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class r0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ org.telegram.messenger.is c;
 
-    public /* synthetic */ r0(Object obj, int i7, int i10) {
+    public /* synthetic */ r0(org.telegram.messenger.is isVar, int i7, int i10) {
         this.a = i10;
-        this.c = obj;
+        this.c = isVar;
         this.b = i7;
     }
 
@@ -22,23 +21,17 @@ public final class r0 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 g4 g4Var = (g4) this.c;
-                g4Var.u0[1].b();
-                g4Var.u0[1].setVisibility(8);
-                g4Var.P0.S(g4Var.u0[0].b);
-                org.telegram.ui.Cells.i9 i9Var = g4Var.P0;
-                k3[] k3VarArr = g4Var.u0;
-                i9Var.z0 = k3VarArr[0].d;
+                g4Var.v0[1].b();
+                g4Var.v0[1].setVisibility(8);
+                g4Var.Q0.S(g4Var.v0[0].b);
+                org.telegram.ui.Cells.h9 h9Var = g4Var.Q0;
+                k3[] k3VarArr = g4Var.v0;
+                h9Var.z0 = k3VarArr[0].d;
                 int i7 = this.b;
                 k3VarArr[i7].setBackgroundDrawable(null);
-                g4Var.u0[i7].setLayerType(0, null);
-                g4Var.v0 = null;
-                g4Var.f0.f = false;
-                break;
-            case 1:
-                Activity activity = (Activity) this.c;
-                int i10 = this.b;
-                org.telegram.messenger.g0.t3(activity, i10, false);
-                org.telegram.messenger.g0.m3(activity, org.telegram.messenger.g0.B(i10) >= 0.721f);
+                g4Var.v0[i7].setLayerType(0, null);
+                g4Var.w0 = null;
+                g4Var.g0.f = false;
                 break;
             default:
                 ((LaunchActivity) this.c).D0(this.b);

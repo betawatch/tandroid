@@ -1,46 +1,30 @@
 package o5;
 
-import android.os.Process;
-import c8.cc;
+import java.util.HashMap;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class o implements Runnable {
-    public final /* synthetic */ int a;
-    public final Runnable b;
+public abstract class o {
+    public static final ld0 a;
 
-    public /* synthetic */ o(int i7, Runnable runnable) {
-        this.a = i7;
-        this.b = runnable;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                try {
-                    this.b.run();
-                    break;
-                } catch (Exception e10) {
-                    cc.b("Executor", "Background execution failure.", e10);
-                    return;
-                }
-            case 1:
-                this.b.run();
-                break;
-            default:
-                Process.setThreadPriority(0);
-                this.b.run();
-                break;
-        }
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 1:
-                return this.b.toString();
-            default:
-                return super.toString();
-        }
+    static {
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
+        hashMap.put(o.class, e.a);
+        hashMap2.remove(o.class);
+        hashMap.put(r5.a.class, a.a);
+        hashMap2.remove(r5.a.class);
+        hashMap.put(r5.g.class, g.a);
+        hashMap2.remove(r5.g.class);
+        hashMap.put(r5.e.class, d.a);
+        hashMap2.remove(r5.e.class);
+        hashMap.put(r5.d.class, c.a);
+        hashMap2.remove(r5.d.class);
+        hashMap.put(r5.b.class, b.a);
+        hashMap2.remove(r5.b.class);
+        hashMap.put(r5.f.class, f.a);
+        hashMap2.remove(r5.f.class);
+        a = new ld0(new HashMap(hashMap), new HashMap(hashMap2), qa.f.a, 11);
     }
 }

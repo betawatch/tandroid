@@ -12,7 +12,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.n6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class l extends Thread {
     public final SurfaceTexture a;
@@ -32,7 +32,7 @@ public final class l extends Thread {
     */
     public final void a() {
         m mVar;
-        boolean z9;
+        boolean z10;
         m mVar2;
         f fVar;
         m mVar3 = this.d;
@@ -65,7 +65,7 @@ public final class l extends Thread {
         if (eGLConfig == null) {
             throw new RuntimeException("eglConfig not initialized");
         }
-        int i10 = mVar3.S == 4 ? 3 : 2;
+        int i10 = mVar3.T == 4 ? 3 : 2;
         EGL10 egl102 = mVar3.r;
         EGLDisplay eGLDisplay = mVar3.f;
         EGLContext eGLContext = EGL10.EGL_NO_CONTEXT;
@@ -97,15 +97,15 @@ public final class l extends Thread {
         while (!this.b) {
             synchronized (this.d) {
                 try {
-                    if (this.d.H && (fVar = (mVar2 = this.d).b) != null) {
+                    if (this.d.I && (fVar = (mVar2 = this.d).b) != null) {
                         m.c(mVar2, fVar);
-                        this.d.H = false;
+                        this.d.I = false;
                     }
                 } finally {
                 }
             }
             m mVar4 = this.d;
-            if (mVar4.b != null && !mVar4.G) {
+            if (mVar4.b != null && !mVar4.H) {
                 long nanoTime2 = System.nanoTime();
                 m.a(this.d, (nanoTime2 - nanoTime) / 1.0E9f);
                 if (!this.c) {
@@ -118,9 +118,9 @@ public final class l extends Thread {
                 mVar = this.d;
             } catch (InterruptedException unused) {
             }
-            if (mVar.b != null && !mVar.G) {
-                z9 = false;
-                if (z9) {
+            if (mVar.b != null && !mVar.H) {
+                z10 = false;
+                if (z10) {
                     long nanoTime3 = this.d.x - (System.nanoTime() - nanoTime);
                     if (nanoTime3 > 0) {
                         Thread.sleep(nanoTime3 / 1000000, (int) (nanoTime3 % 1000000));
@@ -129,8 +129,8 @@ public final class l extends Thread {
                     Thread.sleep(100L);
                 }
             }
-            z9 = true;
-            if (z9) {
+            z10 = true;
+            if (z10) {
             }
         }
     }
@@ -144,7 +144,7 @@ public final class l extends Thread {
                 }
                 m mVar = this.d;
                 mVar.c = this.a;
-                mVar.H = true;
+                mVar.I = true;
                 try {
                     try {
                         a();

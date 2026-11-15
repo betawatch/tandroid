@@ -1,88 +1,21 @@
 package di;
 
-import c8.ia;
-import j$.util.Objects;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.voip.NativeInstance;
+import java.util.function.ToDoubleFunction;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x0 implements Runnable {
+public final /* synthetic */ class x0 implements ToDoubleFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g1 b;
 
-    public /* synthetic */ x0(g1 g1Var, int i7) {
+    public /* synthetic */ x0(int i7) {
         this.a = i7;
-        this.b = g1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.ToDoubleFunction
+    public final double applyAsDouble(Object obj) {
         switch (this.a) {
-            case 0:
-                this.b.p();
-                break;
-            case 1:
-                this.b.q();
-                break;
-            case 2:
-                this.b.t(true);
-                break;
-            case 3:
-                g1 g1Var = this.b;
-                qs.f(g1Var.e).k(qs.G2, Long.valueOf(g1Var.w.id));
-                g1Var.u(true);
-                break;
-            case 4:
-                this.b.w();
-                break;
-            case 5:
-                this.b.t(true);
-                break;
-            case 6:
-                g1 g1Var2 = this.b;
-                if (g1Var2.E != null) {
-                    org.telegram.messenger.p5 p5Var = Utilities.e;
-                    NativeInstance nativeInstance = g1Var2.E;
-                    Objects.requireNonNull(nativeInstance);
-                    p5Var.c(new org.telegram.messenger.voip.p0(nativeInstance, 3));
-                    g1Var2.M.clear();
-                    g1Var2.E = null;
-                }
-                g1Var2.k();
-                break;
-            case 7:
-                this.b.t(true);
-                break;
-            case 8:
-                this.b.t(true);
-                break;
-            case 9:
-                g1 g1Var3 = this.b;
-                if (g1Var3.E != null) {
-                    org.telegram.messenger.p5 p5Var2 = Utilities.e;
-                    NativeInstance nativeInstance2 = g1Var3.E;
-                    Objects.requireNonNull(nativeInstance2);
-                    p5Var2.c(new org.telegram.messenger.voip.p0(nativeInstance2, 3));
-                    g1Var3.M.clear();
-                    g1Var3.E = null;
-                }
-                g1Var3.k();
-                break;
-            case 10:
-                this.b.p();
-                break;
-            case 11:
-                this.b.q();
-                break;
-            default:
-                g1 g1Var4 = this.b;
-                if (!g1Var4.n) {
-                    ia.b(new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new ai.i(g1Var4, 10));
-                    break;
-                }
-                break;
         }
+        return ((TLRPC.TL_topPeer) obj).rating;
     }
 }

@@ -1,56 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r9 implements View.OnClickListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ t9 b;
+public final class r9 implements Runnable {
+    public boolean a;
+    public int b;
+    public int c;
+    public final /* synthetic */ s9 d;
 
-    public /* synthetic */ r9(t9 t9Var) {
-        this.b = t9Var;
+    public r9(s9 s9Var) {
+        this.d = s9Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        t9 t9Var = this.b;
-        switch (i7) {
-            case 0:
-                int i10 = t9Var.w + 1;
-                t9Var.w = i10;
-                if (i10 >= 10) {
-                    t9Var.setVisibility(8);
-                    org.telegram.messenger.iz.j1 = null;
-                    org.telegram.messenger.iz.y();
-                    break;
-                }
-                break;
-            default:
-                org.telegram.messenger.t0.u();
-                boolean z9 = org.telegram.messenger.r2.a;
-                if (org.telegram.messenger.t0.a.b(t9Var.getContext())) {
-                    TLRPC.TL_help_appUpdate tL_help_appUpdate = t9Var.n;
-                    if (!(tL_help_appUpdate.document instanceof TLRPC.TL_document)) {
-                        if (tL_help_appUpdate.url != null) {
-                            vf.c.t(t9Var.getContext(), t9Var.n.url);
-                            break;
-                        }
-                    } else if (!org.telegram.messenger.t0.a.v((Activity) t9Var.getContext(), t9Var.n.document)) {
-                        org.telegram.messenger.w7.G(t9Var.s).W(t9Var.n.document, "update", 3, 1);
-                        t9Var.a(true);
-                        break;
-                    }
-                }
-                break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        Bitmap bitmap;
+        s9 s9Var = this.d;
+        Paint paint = s9Var.w;
+        if (s9Var.f == null) {
+            s9Var.f = new Bitmap[2];
+            s9Var.i = new Canvas[2];
         }
-    }
-
-    public /* synthetic */ r9(t9 t9Var, LaunchActivity launchActivity) {
-        this.b = t9Var;
+        int i7 = (int) (this.b / 15.0f);
+        int i10 = 0;
+        while (i10 < 2) {
+            int i11 = (int) ((i10 == 0 ? s9Var.s : this.c) / 15.0f);
+            Bitmap bitmap2 = s9Var.f[i10];
+            if (bitmap2 != null && ((bitmap2.getHeight() != i11 || s9Var.f[i10].getWidth() != i7) && (bitmap = s9Var.f[i10]) != null)) {
+                bitmap.recycle();
+                s9Var.f[i10] = null;
+            }
+            System.currentTimeMillis();
+            Bitmap[] bitmapArr = s9Var.f;
+            if (bitmapArr[i10] == null) {
+                try {
+                    bitmapArr[i10] = Bitmap.createBitmap(i7, i11, Bitmap.Config.ARGB_8888);
+                    s9Var.i[i10] = new Canvas(s9Var.f[i10]);
+                    s9Var.i[i10].scale(i7 / s9Var.e[i10].getWidth(), i11 / s9Var.e[i10].getHeight());
+                } catch (Throwable th2) {
+                    org.telegram.messenger.a8.g(th2, true);
+                }
+            }
+            if (i10 == 1) {
+                s9Var.f[i10].eraseColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.d6, s9Var.y));
+            } else {
+                s9Var.f[i10].eraseColor(0);
+            }
+            paint.setAlpha(org.telegram.messenger.ns.e4);
+            Utilities.stackBlurBitmap(s9Var.e[i10], 15);
+            Canvas canvas = s9Var.i[i10];
+            if (canvas != null) {
+                canvas.drawBitmap(s9Var.e[i10], 0.0f, 0.0f, paint);
+            }
+            if (this.a) {
+                return;
+            } else {
+                i10++;
+            }
+        }
+        org.telegram.messenger.g0.h3(new dg(this, 12));
     }
 }

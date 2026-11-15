@@ -1,13 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final class pw0 {
-    public final my0 a;
-    public final my0 b;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-    public pw0(my0 my0Var, my0 my0Var2) {
-        this.a = my0Var;
-        this.b = my0Var2;
-    }
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public interface pw0 {
+    boolean a();
+
+    void e(TextWatcher textWatcher);
+
+    EditTextBoldCursor getEditField();
+
+    float getEditFieldBottomOffset();
+
+    Editable getEditText();
+
+    CharSequence getFieldText();
+
+    org.telegram.ui.ActionBar.e2 getParentFragment();
+
+    int getVisibility();
+
+    void setFieldText(CharSequence charSequence);
 }

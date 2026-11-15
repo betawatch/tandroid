@@ -1,16 +1,16 @@
 package h9;
 
-import a8.ha;
+import a8.ia;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class k implements Map.Entry {
     @Override // java.util.Map.Entry
     public final boolean equals(Object obj) {
         if (obj instanceof Map.Entry) {
             Map.Entry entry = (Map.Entry) obj;
-            if (ha.a(getKey(), entry.getKey()) && ha.a(getValue(), entry.getValue())) {
+            if (ia.a(getKey(), entry.getKey()) && ia.a(getValue(), entry.getValue())) {
                 return true;
             }
         }

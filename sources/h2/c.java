@@ -1,7 +1,7 @@
 package h2;
 
-import a8.ia;
-import a8.wa;
+import a8.ja;
+import a8.xa;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -22,16 +22,17 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.WeakHashMap;
-import m.c3;
-import m.m1;
+import m.b3;
+import m.l1;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.jc;
+import org.telegram.messenger.ic;
 import org.telegram.messenger.p5;
-import org.telegram.ui.Components.qd0;
-import org.telegram.ui.sk;
+import org.telegram.ui.Components.cf;
+import org.telegram.ui.Components.rd0;
+import org.telegram.ui.qk;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -47,9 +48,9 @@ public final class c {
         this.c = jVar;
         this.d = kVar;
         this.a = -1;
-        p0 p0Var = bVar.a;
-        this.e = p0Var;
-        this.f = p0Var.b ? null : new qe.e(descriptor);
+        o0 o0Var = bVar.a;
+        this.e = o0Var;
+        this.f = o0Var.b ? null : new qe.e(descriptor);
     }
 
     public void A(Runnable runnable) {
@@ -61,12 +62,12 @@ public final class c {
 
     public void B(ColorStateList colorStateList) {
         if (colorStateList != null) {
-            if (((c3) this.d) == null) {
-                this.d = new c3();
+            if (((b3) this.d) == null) {
+                this.d = new b3();
             }
-            c3 c3Var = (c3) this.d;
-            c3Var.c = colorStateList;
-            c3Var.b = true;
+            b3 b3Var = (b3) this.d;
+            b3Var.c = colorStateList;
+            b3Var.b = true;
         } else {
             this.d = null;
         }
@@ -74,33 +75,33 @@ public final class c {
     }
 
     public void C(int i7) {
-        ia.p(i7 >= 0);
+        ja.p(i7 >= 0);
         this.a = i7;
         r(i7);
     }
 
     public void D(ColorStateList colorStateList) {
-        if (((c3) this.e) == null) {
-            this.e = new c3();
+        if (((b3) this.e) == null) {
+            this.e = new b3();
         }
-        c3 c3Var = (c3) this.e;
-        c3Var.c = colorStateList;
-        c3Var.b = true;
+        b3 b3Var = (b3) this.e;
+        b3Var.c = colorStateList;
+        b3Var.b = true;
         b();
     }
 
     public void E(PorterDuff.Mode mode) {
-        if (((c3) this.e) == null) {
-            this.e = new c3();
+        if (((b3) this.e) == null) {
+            this.e = new b3();
         }
-        c3 c3Var = (c3) this.e;
-        c3Var.d = mode;
-        c3Var.a = true;
+        b3 b3Var = (b3) this.e;
+        b3Var.d = mode;
+        b3Var.a = true;
         b();
     }
 
     public boolean F() {
-        return ((qd0) this.b).b() && ((qd0) this.c).b() && ((qd0) this.d).b() && ((qd0) this.e).b();
+        return ((rd0) this.b).b() && ((rd0) this.c).b() && ((rd0) this.d).b() && ((rd0) this.e).b();
     }
 
     public void G(Object obj) {
@@ -109,14 +110,14 @@ public final class c {
         if (obj2.equals(obj)) {
             return;
         }
-        l2.i0 i0Var = ((l2.v) this.d).b;
+        l2.f0 f0Var = ((l2.u) this.d).b;
         ((Integer) obj2).getClass();
         Integer num = (Integer) obj;
         int intValue = num.intValue();
-        i0Var.F1();
-        i0Var.t1(1, 10, num);
-        i0Var.t1(2, 10, num);
-        i0Var.m.e(21, new l2.u(intValue, 1));
+        f0Var.F1();
+        f0Var.t1(1, 10, num);
+        f0Var.t1(2, 10, num);
+        f0Var.m.e(21, new l2.t(intValue, 1));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x002c, code lost:
@@ -133,7 +134,7 @@ public final class c {
         if (j3 != -9223372036854775807L && (i7 = this.a) != 0) {
             if (i7 != -1 && priorityQueue.size() >= this.a) {
                 i2.t tVar = (i2.t) priorityQueue.peek();
-                String str = m0.a;
+                String str = l0.a;
             }
             ArrayDeque arrayDeque2 = (ArrayDeque) this.c;
             x xVar2 = arrayDeque2.isEmpty() ? new x() : (x) arrayDeque2.pop();
@@ -146,8 +147,8 @@ public final class c {
             }
             i2.t tVar3 = arrayDeque.isEmpty() ? new i2.t() : (i2.t) arrayDeque.pop();
             ArrayList arrayList = tVar3.a;
-            ia.f(j3 != -9223372036854775807L);
-            ia.p(arrayList.isEmpty());
+            ja.f(j3 != -9223372036854775807L);
+            ja.p(arrayList.isEmpty());
             tVar3.b = j3;
             arrayList.add(xVar2);
             priorityQueue.add(tVar3);
@@ -159,46 +160,46 @@ public final class c {
             }
             return;
         }
-        ((i2.u) this.b).b(j3, xVar);
+        ((i2.u) this.b).a(j3, xVar);
     }
 
     public void b() {
         View view = (View) this.b;
         Drawable background = view.getBackground();
         if (background != null) {
-            if (((c3) this.d) != null) {
-                if (((c3) this.f) == null) {
-                    this.f = new c3();
+            if (((b3) this.d) != null) {
+                if (((b3) this.f) == null) {
+                    this.f = new b3();
                 }
-                c3 c3Var = (c3) this.f;
-                c3Var.c = null;
-                c3Var.b = false;
-                c3Var.d = null;
-                c3Var.a = false;
+                b3 b3Var = (b3) this.f;
+                b3Var.c = null;
+                b3Var.b = false;
+                b3Var.d = null;
+                b3Var.a = false;
                 WeakHashMap weakHashMap = r0.i0.a;
                 ColorStateList c10 = r0.a0.c(view);
                 if (c10 != null) {
-                    c3Var.b = true;
-                    c3Var.c = c10;
+                    b3Var.b = true;
+                    b3Var.c = c10;
                 }
                 PorterDuff.Mode d = r0.a0.d(view);
                 if (d != null) {
-                    c3Var.a = true;
-                    c3Var.d = d;
+                    b3Var.a = true;
+                    b3Var.d = d;
                 }
-                if (c3Var.b || c3Var.a) {
-                    m.r.d(background, c3Var, view.getDrawableState());
+                if (b3Var.b || b3Var.a) {
+                    m.q.d(background, b3Var, view.getDrawableState());
                     return;
                 }
             }
-            c3 c3Var2 = (c3) this.e;
-            if (c3Var2 != null) {
-                m.r.d(background, c3Var2, view.getDrawableState());
+            b3 b3Var2 = (b3) this.e;
+            if (b3Var2 != null) {
+                m.q.d(background, b3Var2, view.getDrawableState());
                 return;
             }
-            c3 c3Var3 = (c3) this.d;
-            if (c3Var3 != null) {
-                m.r.d(background, c3Var3, view.getDrawableState());
+            b3 b3Var3 = (b3) this.d;
+            if (b3Var3 != null) {
+                m.q.d(background, b3Var3, view.getDrawableState());
             }
         }
     }
@@ -209,37 +210,37 @@ public final class c {
         pe.b bVar = (pe.b) this.b;
         qe.j f10 = qe.f.f(descriptor, bVar);
         a4.k kVar = (a4.k) this.d;
-        wa waVar = (wa) kVar.c;
-        int i7 = waVar.b + 1;
-        waVar.b = i7;
-        Object[] objArr = (Object[]) waVar.c;
+        xa xaVar = (xa) kVar.c;
+        int i7 = xaVar.b + 1;
+        xaVar.b = i7;
+        Object[] objArr = (Object[]) xaVar.c;
         if (i7 == objArr.length) {
             int i10 = i7 * 2;
             Object[] copyOf = Arrays.copyOf(objArr, i10);
             kotlin.jvm.internal.j.d(copyOf, "copyOf(...)");
-            waVar.c = copyOf;
-            int[] copyOf2 = Arrays.copyOf((int[]) waVar.d, i10);
+            xaVar.c = copyOf;
+            int[] copyOf2 = Arrays.copyOf((int[]) xaVar.d, i10);
             kotlin.jvm.internal.j.d(copyOf2, "copyOf(...)");
-            waVar.d = copyOf2;
+            xaVar.d = copyOf2;
         }
-        ((Object[]) waVar.c)[i7] = descriptor;
+        ((Object[]) xaVar.c)[i7] = descriptor;
         kVar.h(f10.a);
         String str = (String) kVar.f;
         int i11 = kVar.b;
         while (true) {
-            int r10 = kVar.r(i11);
+            int q10 = kVar.q(i11);
             b10 = 10;
-            if (r10 == -1) {
-                kVar.b = r10;
+            if (q10 == -1) {
+                kVar.b = q10;
                 break;
             }
-            char charAt = str.charAt(r10);
+            char charAt = str.charAt(q10);
             if (charAt != '\t' && charAt != '\n' && charAt != '\r' && charAt != ' ') {
-                kVar.b = r10;
+                kVar.b = q10;
                 b10 = qe.f.b(charAt);
                 break;
             }
-            i11 = r10 + 1;
+            i11 = q10 + 1;
         }
         if (b10 != 4) {
             int ordinal = f10.ordinal();
@@ -251,44 +252,44 @@ public final class c {
 
     public int d(me.d descriptor) {
         pe.b json = (pe.b) this.b;
-        p0 p0Var = json.a;
+        o0 o0Var = json.a;
         a4.k kVar = (a4.k) this.d;
         kotlin.jvm.internal.j.e(descriptor, "descriptor");
         qe.j jVar = (qe.j) this.c;
         int ordinal = jVar.ordinal();
         int i7 = 0;
         r10 = false;
-        boolean z9 = false;
+        boolean z10 = false;
         int i10 = -1;
         if (ordinal == 0) {
             qe.e eVar = (qe.e) this.f;
-            p0 p0Var2 = (p0) this.e;
-            boolean v = kVar.v();
+            o0 o0Var2 = (o0) this.e;
+            boolean u10 = kVar.u();
             if (kVar.e()) {
-                p0Var2.getClass();
+                o0Var2.getClass();
                 String name = kVar.g();
                 kVar.h(':');
                 kotlin.jvm.internal.j.e(descriptor, "<this>");
                 kotlin.jvm.internal.j.e(json, "json");
                 kotlin.jvm.internal.j.e(name, "name");
-                p0 p0Var3 = json.a;
-                p0Var3.getClass();
+                o0 o0Var3 = json.a;
+                o0Var3.getClass();
                 qe.f.e(descriptor, json);
                 int d = descriptor.d(name);
                 i10 = -3;
-                if (d == -3 && p0Var3.c) {
-                    org.telegram.ui.Components.m mVar = json.c;
+                if (d == -3 && o0Var3.c) {
+                    cf cfVar = json.c;
                     b1.f fVar = new b1.f(2, descriptor, json);
-                    mVar.getClass();
-                    mVar.getClass();
+                    cfVar.getClass();
+                    cfVar.getClass();
                     kotlin.jvm.internal.j.e(descriptor, "descriptor");
-                    Map map = (Map) ((ConcurrentHashMap) mVar.a).get(descriptor);
+                    Map map = (Map) ((ConcurrentHashMap) cfVar.a).get(descriptor);
                     qe.g gVar = qe.f.a;
                     Object obj = map != null ? map.get(gVar) : null;
                     Object obj2 = obj != null ? obj : null;
                     if (obj2 == null) {
                         obj2 = fVar.invoke();
-                        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) mVar.a;
+                        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) cfVar.a;
                         Object obj3 = concurrentHashMap.get(descriptor);
                         Object obj4 = obj3;
                         if (obj3 == null) {
@@ -323,22 +324,22 @@ public final class c {
                     }
                 }
             } else {
-                if (v) {
-                    p0Var.getClass();
+                if (u10) {
+                    o0Var.getClass();
                     qe.f.c(kVar, "object");
                     throw null;
                 }
                 if (eVar != null) {
                     oe.d dVar2 = eVar.a;
-                    c1.c cVar = dVar2.b;
-                    me.d dVar3 = dVar2.a;
-                    int f11 = dVar3.f();
+                    c1.d dVar3 = dVar2.b;
+                    me.d dVar4 = dVar2.a;
+                    int f11 = dVar4.f();
                     while (true) {
                         long j3 = dVar2.c;
                         if (j3 != -1) {
                             int numberOfTrailingZeros = Long.numberOfTrailingZeros(~j3);
                             dVar2.c |= 1 << numberOfTrailingZeros;
-                            if (((Boolean) cVar.invoke(dVar3, Integer.valueOf(numberOfTrailingZeros))).booleanValue()) {
+                            if (((Boolean) dVar3.invoke(dVar4, Integer.valueOf(numberOfTrailingZeros))).booleanValue()) {
                                 i10 = numberOfTrailingZeros;
                                 break;
                             }
@@ -357,7 +358,7 @@ public final class c {
                                     int numberOfTrailingZeros2 = Long.numberOfTrailingZeros(~j10);
                                     j10 |= 1 << numberOfTrailingZeros2;
                                     int i14 = numberOfTrailingZeros2 + i13;
-                                    if (((Boolean) cVar.invoke(dVar3, Integer.valueOf(i14))).booleanValue()) {
+                                    if (((Boolean) dVar3.invoke(dVar4, Integer.valueOf(i14))).booleanValue()) {
                                         jArr3[i7] = j10;
                                         i10 = i14;
                                         break loop1;
@@ -372,39 +373,39 @@ public final class c {
                 }
             }
         } else if (ordinal != 2) {
-            boolean v10 = kVar.v();
+            boolean u11 = kVar.u();
             if (kVar.e()) {
                 int i15 = this.a;
-                if (i15 != -1 && !v10) {
+                if (i15 != -1 && !u11) {
                     a4.k.n(kVar, "Expected end of the array or comma", 0, 6);
                     throw null;
                 }
                 i10 = i15 + 1;
                 this.a = i10;
-            } else if (v10) {
-                p0Var.getClass();
+            } else if (u11) {
+                o0Var.getClass();
                 qe.f.c(kVar, "array");
                 throw null;
             }
         } else {
             int i16 = this.a;
-            boolean z10 = i16 % 2 != 0;
-            if (!z10) {
+            boolean z11 = i16 % 2 != 0;
+            if (!z11) {
                 kVar.h(':');
             } else if (i16 != -1) {
-                z9 = kVar.v();
+                z10 = kVar.u();
             }
             if (kVar.e()) {
-                if (z10) {
+                if (z11) {
                     if (this.a == -1) {
                         int i17 = kVar.b;
-                        if (z9) {
+                        if (z10) {
                             a4.k.n(kVar, "Unexpected leading comma", i17, 4);
                             throw null;
                         }
                     } else {
                         int i18 = kVar.b;
-                        if (!z9) {
+                        if (!z10) {
                             a4.k.n(kVar, "Expected comma after the key-value pair", i18, 4);
                             throw null;
                         }
@@ -412,15 +413,15 @@ public final class c {
                 }
                 i10 = this.a + 1;
                 this.a = i10;
-            } else if (z9) {
-                p0Var.getClass();
+            } else if (z10) {
+                o0Var.getClass();
                 qe.f.c(kVar, "object");
                 throw null;
             }
         }
         if (jVar != qe.j.e) {
-            wa waVar = (wa) kVar.c;
-            ((int[]) waVar.d)[waVar.b] = i10;
+            xa xaVar = (xa) kVar.c;
+            ((int[]) xaVar.d)[xaVar.b] = i10;
         }
         return i10;
     }
@@ -454,25 +455,25 @@ public final class c {
         qe.e eVar = (qe.e) this.f;
         if (!(eVar != null ? eVar.b : false)) {
             a4.k kVar = (a4.k) this.d;
-            int r10 = kVar.r(kVar.u());
+            int q10 = kVar.q(kVar.t());
             String str = (String) kVar.f;
-            int length = str.length() - r10;
-            boolean z9 = false;
-            if (length >= 4 && r10 != -1) {
+            int length = str.length() - q10;
+            boolean z10 = false;
+            if (length >= 4 && q10 != -1) {
                 int i7 = 0;
                 while (true) {
                     if (i7 < 4) {
-                        if ("null".charAt(i7) != str.charAt(r10 + i7)) {
+                        if ("null".charAt(i7) != str.charAt(q10 + i7)) {
                             break;
                         }
                         i7++;
-                    } else if (length <= 4 || qe.f.b(str.charAt(r10 + 4)) != 0) {
-                        z9 = true;
-                        kVar.b = r10 + 4;
+                    } else if (length <= 4 || qe.f.b(str.charAt(q10 + 4)) != 0) {
+                        z10 = true;
+                        kVar.b = q10 + 4;
                     }
                 }
             }
-            if (!z9) {
+            if (!z10) {
                 return true;
             }
         }
@@ -489,41 +490,41 @@ public final class c {
     }
 
     public Object k(me.d descriptor, int i7, ke.a deserializer, Object obj) {
-        wa waVar = (wa) ((a4.k) this.d).c;
+        xa xaVar = (xa) ((a4.k) this.d).c;
         kotlin.jvm.internal.j.e(descriptor, "descriptor");
         kotlin.jvm.internal.j.e(deserializer, "deserializer");
-        boolean z9 = ((qe.j) this.c) == qe.j.e && (i7 & 1) == 0;
-        if (z9) {
-            int[] iArr = (int[]) waVar.d;
-            int i10 = waVar.b;
+        boolean z10 = ((qe.j) this.c) == qe.j.e && (i7 & 1) == 0;
+        if (z10) {
+            int[] iArr = (int[]) xaVar.d;
+            int i10 = xaVar.b;
             if (iArr[i10] == -2) {
-                ((Object[]) waVar.c)[i10] = qe.g.a;
+                ((Object[]) xaVar.c)[i10] = qe.g.a;
             }
         }
         kotlin.jvm.internal.j.e(descriptor, "descriptor");
         kotlin.jvm.internal.j.e(deserializer, "deserializer");
         Object l10 = l(deserializer);
-        if (z9) {
-            int[] iArr2 = (int[]) waVar.d;
-            int i11 = waVar.b;
+        if (z10) {
+            int[] iArr2 = (int[]) xaVar.d;
+            int i11 = xaVar.b;
             if (iArr2[i11] != -2) {
                 int i12 = i11 + 1;
-                waVar.b = i12;
-                Object[] objArr = (Object[]) waVar.c;
+                xaVar.b = i12;
+                Object[] objArr = (Object[]) xaVar.c;
                 if (i12 == objArr.length) {
                     int i13 = i12 * 2;
                     Object[] copyOf = Arrays.copyOf(objArr, i13);
                     kotlin.jvm.internal.j.d(copyOf, "copyOf(...)");
-                    waVar.c = copyOf;
-                    int[] copyOf2 = Arrays.copyOf((int[]) waVar.d, i13);
+                    xaVar.c = copyOf;
+                    int[] copyOf2 = Arrays.copyOf((int[]) xaVar.d, i13);
                     kotlin.jvm.internal.j.d(copyOf2, "copyOf(...)");
-                    waVar.d = copyOf2;
+                    xaVar.d = copyOf2;
                 }
             }
-            Object[] objArr2 = (Object[]) waVar.c;
-            int i14 = waVar.b;
+            Object[] objArr2 = (Object[]) xaVar.c;
+            int i14 = xaVar.b;
             objArr2[i14] = l10;
-            ((int[]) waVar.d)[i14] = -2;
+            ((int[]) xaVar.d)[i14] = -2;
         }
         return l10;
     }
@@ -538,13 +539,13 @@ public final class c {
             if (xd.d.e(message, "at path")) {
                 throw e10;
             }
-            throw new ke.b(e10.a, e10.getMessage() + " at path: " + ((wa) ((a4.k) this.d).c).m(), e10);
+            throw new ke.b(e10.a, e10.getMessage() + " at path: " + ((xa) ((a4.k) this.d).c).l(), e10);
         }
     }
 
     public String m() {
         a4.k kVar = (a4.k) this.d;
-        ((p0) this.e).getClass();
+        ((o0) this.e).getClass();
         return kVar.j();
     }
 
@@ -555,8 +556,8 @@ public final class c {
 
     public void o() {
         this.b = null;
-        if (((sk) this.f) != null) {
-            Utilities.e.a((sk) this.f);
+        if (((qk) this.f) != null) {
+            Utilities.e.a((qk) this.f);
         }
         Bitmap bitmap = (Bitmap) this.c;
         if (bitmap != null && !bitmap.isRecycled()) {
@@ -568,50 +569,50 @@ public final class c {
     public void p(me.d descriptor) {
         a4.k kVar = (a4.k) this.d;
         kotlin.jvm.internal.j.e(descriptor, "descriptor");
-        p0 p0Var = ((pe.b) this.b).a;
-        p0Var.getClass();
-        if (kVar.v()) {
-            p0Var.getClass();
+        o0 o0Var = ((pe.b) this.b).a;
+        o0Var.getClass();
+        if (kVar.u()) {
+            o0Var.getClass();
             qe.f.c(kVar, "");
             throw null;
         }
         kVar.h(((qe.j) this.c).b);
-        wa waVar = (wa) kVar.c;
-        int i7 = waVar.b;
-        int[] iArr = (int[]) waVar.d;
+        xa xaVar = (xa) kVar.c;
+        int i7 = xaVar.b;
+        int[] iArr = (int[]) xaVar.d;
         if (iArr[i7] == -2) {
             iArr[i7] = -1;
-            waVar.b = i7 - 1;
+            xaVar.b = i7 - 1;
         }
-        int i10 = waVar.b;
+        int i10 = xaVar.b;
         if (i10 != -1) {
-            waVar.b = i10 - 1;
+            xaVar.b = i10 - 1;
         }
     }
 
     public void q() {
         ByteBuffer byteBuffer = (ByteBuffer) this.f;
         byteBuffer.position(0);
-        qd0 qd0Var = (qd0) this.b;
-        if (qd0Var.f == null) {
-            qd0Var.a();
+        rd0 rd0Var = (rd0) this.b;
+        if (rd0Var.f == null) {
+            rd0Var.a();
         }
-        float[] fArr = qd0Var.f;
-        qd0 qd0Var2 = (qd0) this.c;
-        if (qd0Var2.f == null) {
-            qd0Var2.a();
+        float[] fArr = rd0Var.f;
+        rd0 rd0Var2 = (rd0) this.c;
+        if (rd0Var2.f == null) {
+            rd0Var2.a();
         }
-        float[] fArr2 = qd0Var2.f;
-        qd0 qd0Var3 = (qd0) this.d;
-        if (qd0Var3.f == null) {
-            qd0Var3.a();
+        float[] fArr2 = rd0Var2.f;
+        rd0 rd0Var3 = (rd0) this.d;
+        if (rd0Var3.f == null) {
+            rd0Var3.a();
         }
-        float[] fArr3 = qd0Var3.f;
-        qd0 qd0Var4 = (qd0) this.e;
-        if (qd0Var4.f == null) {
-            qd0Var4.a();
+        float[] fArr3 = rd0Var3.f;
+        rd0 rd0Var4 = (rd0) this.e;
+        if (rd0Var4.f == null) {
+            rd0Var4.a();
         }
-        float[] fArr4 = qd0Var4.f;
+        float[] fArr4 = rd0Var4.f;
         for (int i7 = 0; i7 < 200; i7++) {
             byteBuffer.put((byte) (fArr2[i7] * 255.0f));
             byteBuffer.put((byte) (fArr3[i7] * 255.0f));
@@ -626,14 +627,14 @@ public final class c {
         PriorityQueue priorityQueue = (PriorityQueue) this.e;
         while (priorityQueue.size() > i7) {
             i2.t tVar = (i2.t) priorityQueue.poll();
-            String str = m0.a;
+            String str = l0.a;
             int i10 = 0;
             while (true) {
                 arrayList = tVar.a;
                 if (i10 >= arrayList.size()) {
                     break;
                 }
-                ((i2.u) this.b).b(tVar.b, (x) arrayList.get(i10));
+                ((i2.u) this.b).a(tVar.b, (x) arrayList.get(i10));
                 ((ArrayDeque) this.c).push((x) arrayList.get(i10));
                 i10++;
             }
@@ -648,12 +649,12 @@ public final class c {
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x001f, code lost:
     
-        if (((org.telegram.ui.sk) r8.f) != null) goto L5;
+        if (((org.telegram.ui.qk) r8.f) != null) goto L5;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Bitmap s(Bitmap bitmap, String str, int i7, int i10, boolean z9) {
+    public Bitmap s(Bitmap bitmap, String str, int i7, int i10, boolean z10) {
         if (bitmap != null && !bitmap.isRecycled()) {
             if (TextUtils.equals((String) this.b, str)) {
                 Bitmap bitmap2 = (Bitmap) this.c;
@@ -661,45 +662,45 @@ public final class c {
                     return bitmap2;
                 }
             }
-            if (((sk) this.f) != null) {
-                Utilities.e.a((sk) this.f);
+            if (((qk) this.f) != null) {
+                Utilities.e.a((qk) this.f);
             }
             this.b = str;
             p5 p5Var = Utilities.e;
-            sk skVar = new sk(this, bitmap, i7, i10, str, z9);
-            this.f = skVar;
-            p5Var.c(skVar);
+            qk qkVar = new qk(this, bitmap, i7, i10, str, z10);
+            this.f = qkVar;
+            p5Var.c(qkVar);
             return (Bitmap) this.c;
         }
         return null;
     }
 
-    public Bitmap t(jc jcVar) {
-        if (jcVar == null) {
+    public Bitmap t(ic icVar) {
+        if (icVar == null) {
             return null;
         }
-        return s(jcVar.c, jcVar.a, jcVar.e, 0, false);
+        return s(icVar.c, icVar.a, icVar.e, 0, false);
     }
 
     public Bitmap u(ImageReceiver imageReceiver) {
         if (imageReceiver == null) {
             return null;
         }
-        return s(imageReceiver.n(), imageReceiver.Q, imageReceiver.U, imageReceiver.V, false);
+        return s(imageReceiver.n(), imageReceiver.R, imageReceiver.V, imageReceiver.W, false);
     }
 
     public ColorStateList v() {
-        c3 c3Var = (c3) this.e;
-        if (c3Var != null) {
-            return (ColorStateList) c3Var.c;
+        b3 b3Var = (b3) this.e;
+        if (b3Var != null) {
+            return (ColorStateList) b3Var.c;
         }
         return null;
     }
 
     public PorterDuff.Mode w() {
-        c3 c3Var = (c3) this.e;
-        if (c3Var != null) {
-            return (PorterDuff.Mode) c3Var.d;
+        b3 b3Var = (b3) this.e;
+        if (b3Var != null) {
+            return (PorterDuff.Mode) b3Var.d;
         }
         return null;
     }
@@ -709,32 +710,32 @@ public final class c {
         View view = (View) this.b;
         Context context = view.getContext();
         int[] iArr = f.a.z;
-        h6.m x10 = h6.m.x(context, attributeSet, iArr, i7);
-        TypedArray typedArray = (TypedArray) x10.c;
+        h6.m z10 = h6.m.z(context, attributeSet, iArr, i7);
+        TypedArray typedArray = (TypedArray) z10.c;
         View view2 = (View) this.b;
-        r0.i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) x10.c, i7);
+        r0.i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) z10.c, i7);
         try {
             if (typedArray.hasValue(0)) {
                 this.a = typedArray.getResourceId(0, -1);
-                m.r rVar = (m.r) this.c;
+                m.q qVar = (m.q) this.c;
                 Context context2 = view.getContext();
                 int i11 = this.a;
-                synchronized (rVar) {
-                    i10 = rVar.a.i(context2, i11);
+                synchronized (qVar) {
+                    i10 = qVar.a.i(context2, i11);
                 }
                 if (i10 != null) {
                     B(i10);
                 }
             }
             if (typedArray.hasValue(1)) {
-                r0.a0.f(view, x10.o(1));
+                r0.a0.f(view, z10.o(1));
             }
             if (typedArray.hasValue(2)) {
-                r0.a0.g(view, m1.b(typedArray.getInt(2, -1), null));
+                r0.a0.g(view, l1.b(typedArray.getInt(2, -1), null));
             }
-            x10.C();
+            z10.D();
         } catch (Throwable th2) {
-            x10.C();
+            z10.D();
             throw th2;
         }
     }
@@ -748,11 +749,11 @@ public final class c {
     public void z(int i7) {
         ColorStateList colorStateList;
         this.a = i7;
-        m.r rVar = (m.r) this.c;
-        if (rVar != null) {
+        m.q qVar = (m.q) this.c;
+        if (qVar != null) {
             Context context = ((View) this.b).getContext();
-            synchronized (rVar) {
-                colorStateList = rVar.a.i(context, i7);
+            synchronized (qVar) {
+                colorStateList = qVar.a.i(context, i7);
             }
         } else {
             colorStateList = null;
@@ -764,7 +765,7 @@ public final class c {
     public c(View view) {
         this.a = -1;
         this.b = view;
-        this.c = m.r.a();
+        this.c = m.q.a();
     }
 
     public c(i2.u uVar) {
@@ -776,10 +777,10 @@ public final class c {
     }
 
     public c() {
-        this.b = new qd0();
-        this.c = new qd0();
-        this.d = new qd0();
-        this.e = new qd0();
+        this.b = new rd0();
+        this.c = new rd0();
+        this.d = new rd0();
+        this.e = new rd0();
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
         this.f = allocateDirect;
         allocateDirect.order(ByteOrder.LITTLE_ENDIAN);

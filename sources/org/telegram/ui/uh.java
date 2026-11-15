@@ -1,67 +1,88 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
+import android.graphics.Rect;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class uh implements View.OnClickListener {
-    public final /* synthetic */ mf0 a;
-    public final /* synthetic */ org.telegram.ui.Components.pj0 b;
-    public final /* synthetic */ LinearLayout c;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ cn f;
+public final class uh implements View.OnTouchListener {
+    public final /* synthetic */ int a;
+    public final int[] b;
+    public final /* synthetic */ Rect c;
+    public final /* synthetic */ Object d;
 
-    public uh(cn cnVar, mf0 mf0Var, org.telegram.ui.Components.pj0 pj0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
-        this.f = cnVar;
-        this.a = mf0Var;
-        this.b = pj0Var;
-        this.c = linearLayout;
-        this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.e = iArr;
+    public uh(c40 c40Var, Rect rect) {
+        this.a = 1;
+        this.d = c40Var;
+        this.c = rect;
+        this.b = new int[2];
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        mf0 mf0Var = this.a;
-        ArrayList arrayList = mf0Var.b;
-        ArrayList arrayList2 = mf0Var.c;
-        cn cnVar = this.f;
-        if (cnVar.e9 == null || arrayList2.isEmpty()) {
-            return;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        e30 e30Var;
+        switch (this.a) {
+            case 0:
+                an anVar = (an) this.d;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4) {
+                        anVar.P7(true);
+                        break;
+                    }
+                } else {
+                    org.telegram.ui.ActionBar.g1 g1Var = anVar.f9;
+                    if (g1Var != null && g1Var.isShowing()) {
+                        View contentView = anVar.f9.getContentView();
+                        int[] iArr = this.b;
+                        contentView.getLocationInWindow(iArr);
+                        int i7 = iArr[0];
+                        int i10 = iArr[1];
+                        int measuredWidth = contentView.getMeasuredWidth() + i7;
+                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
+                        Rect rect = this.c;
+                        rect.set(i7, i10, measuredWidth, measuredHeight);
+                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            anVar.P7(true);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                c40 c40Var = (c40) this.d;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4 && (e30Var = c40Var.e5) != null && e30Var.isShowing()) {
+                        c40Var.e5.dismiss();
+                        break;
+                    }
+                } else {
+                    e30 e30Var2 = c40Var.e5;
+                    if (e30Var2 != null && e30Var2.isShowing()) {
+                        View contentView2 = c40Var.e5.getContentView();
+                        int[] iArr2 = this.b;
+                        contentView2.getLocationInWindow(iArr2);
+                        int i11 = iArr2[0];
+                        int i12 = iArr2[1];
+                        int measuredWidth2 = contentView2.getMeasuredWidth() + i11;
+                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
+                        Rect rect2 = this.c;
+                        rect2.set(i11, i12, measuredWidth2, measuredHeight2);
+                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            c40Var.e5.dismiss();
+                            break;
+                        }
+                    }
+                }
+                break;
         }
-        if (arrayList2.size() == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
-                return;
-            }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
-            }
-            cnVar.presentFragment(new ProfileActivity(bundle, null));
-            cnVar.P7(true);
-            return;
-        }
-        if (org.telegram.messenger.iz.c1 > 0 && cnVar.l1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
-            org.telegram.ui.Components.bc t6 = new org.telegram.ui.Components.gc(org.telegram.ui.Components.wa.a(cnVar.getParentActivity()), cnVar.za).t(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131748488, null)), null);
-            cnVar.B1 = t6;
-            t6.j = 4000;
-            t6.j();
-            org.telegram.messenger.iz.S(org.telegram.messenger.iz.c1 - 1);
-        }
-        org.telegram.ui.Components.pj0 pj0Var = this.b;
-        pj0Var.requestLayout();
-        this.c.requestLayout();
-        pj0Var.getAdapter().f();
-        this.d.getSwipeBack().e(this.e[0]);
+        return false;
+    }
+
+    public uh(an anVar, Rect rect) {
+        this.a = 0;
+        this.d = anVar;
+        this.c = rect;
+        this.b = new int[2];
     }
 }

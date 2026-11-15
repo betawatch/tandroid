@@ -1,60 +1,40 @@
 package bi;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.qp;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_payments;
+import android.content.Context;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.po0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l0 {
-    public final int a;
-    public final long b;
-    public int c;
-    public boolean d;
-    public long f;
-    public boolean h;
-    public boolean i;
-    public String j;
-    public final ArrayList e = new ArrayList();
-    public int g = 1;
+public final class l0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ TL_stars.StarGift a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
 
-    public l0(int i7, long j3) {
-        this.h = false;
-        this.i = false;
-        this.j = null;
-        this.a = i7;
-        this.b = j3;
-        if (System.currentTimeMillis() - this.f > 900000) {
-            this.c = 0;
-            this.d = false;
-            this.i = false;
-            this.f = 0L;
-            this.j = null;
-            this.h = false;
-            a();
-        }
+    public l0(Context context, TL_stars.StarGift starGift, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.a = starGift;
+        this.b = context;
+        this.c = e6Var;
     }
 
-    public final void a() {
-        if (this.h || this.i || this.d) {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i7) {
+        Context context = this.b;
+        TL_stars.StarGift starGift = this.a;
+        if (i7 != 3 && i7 != 2) {
+            if (i7 == 4) {
+                m0.g1(context, starGift, this.c);
+                return;
+            }
             return;
         }
-        this.f = System.currentTimeMillis();
-        this.h = true;
-        TL_payments.getSuggestedStarRefBots getsuggestedstarrefbots = new TL_payments.getSuggestedStarRefBots();
-        int i7 = this.a;
-        getsuggestedstarrefbots.peer = qp.s1(i7).j1(this.b);
-        getsuggestedstarrefbots.limit = 20;
-        int i10 = this.g;
-        getsuggestedstarrefbots.order_by_date = i10 == 3;
-        getsuggestedstarrefbots.order_by_revenue = i10 == 2;
-        if (TextUtils.isEmpty(this.j)) {
-            getsuggestedstarrefbots.offset = "";
+        String str = np.s1(m10.t0).V2 + "/auction/" + starGift.auction_slug;
+        if (i7 == 3) {
+            org.telegram.messenger.g0.g(str);
         } else {
-            getsuggestedstarrefbots.offset = this.j;
+            po0.N0(context, null, str, false, str).show();
         }
-        ConnectionsManager.getInstance(i7).sendRequest(getsuggestedstarrefbots, new j0(this, 1));
     }
 }

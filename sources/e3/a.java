@@ -1,37 +1,37 @@
 package e3;
 
 import e2.u;
-import h2.m0;
+import h2.l0;
 import h2.x;
+import i5.c;
 import java.nio.ByteBuffer;
-import jg.g;
 import k2.h;
+import l2.a0;
 import l2.b;
-import l2.d0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends b {
-    public final h I;
-    public final x J;
-    public d0 K;
-    public long L;
+    public final h J;
+    public final x K;
+    public a0 L;
+    public long M;
 
     public a() {
         super(6);
-        this.I = new h(1, 0);
-        this.J = new x();
+        this.J = new h(1, 0);
+        this.K = new x();
     }
 
     @Override // l2.b
     public final int C(u uVar) {
-        return "application/x-camera-motion".equals(uVar.s) ? g.b(4, 0, 0, 0) : g.b(0, 0, 0, 0);
+        return "application/x-camera-motion".equals(uVar.s) ? c.a(4, 0, 0, 0) : c.a(0, 0, 0, 0);
     }
 
-    @Override // l2.b, l2.m1
+    @Override // l2.b, l2.i1
     public final void c(int i7, Object obj) {
         if (i7 == 8) {
-            this.K = (d0) obj;
+            this.L = (a0) obj;
         }
     }
 
@@ -52,45 +52,45 @@ public final class a extends b {
 
     @Override // l2.b
     public final void n() {
-        d0 d0Var = this.K;
-        if (d0Var != null) {
-            d0Var.d();
+        a0 a0Var = this.L;
+        if (a0Var != null) {
+            a0Var.d();
         }
     }
 
     @Override // l2.b
-    public final void p(long j3, boolean z9, boolean z10) {
-        this.L = Long.MIN_VALUE;
-        d0 d0Var = this.K;
-        if (d0Var != null) {
-            d0Var.d();
+    public final void p(long j3, boolean z10, boolean z11) {
+        this.M = Long.MIN_VALUE;
+        a0 a0Var = this.L;
+        if (a0Var != null) {
+            a0Var.d();
         }
     }
 
     @Override // l2.b
     public final void x(long j3, long j10) {
         float[] fArr;
-        while (!k() && this.L < 100000 + j3) {
-            h hVar = this.I;
+        while (!k() && this.M < 100000 + j3) {
+            h hVar = this.J;
             hVar.clear();
-            wf.b bVar = this.c;
-            bVar.A();
-            if (w(bVar, hVar, 0) != -4 || hVar.isEndOfStream()) {
+            k8.a aVar = this.c;
+            aVar.x0();
+            if (w(aVar, hVar, 0) != -4 || hVar.isEndOfStream()) {
                 return;
             }
             long j11 = hVar.e;
-            this.L = j11;
-            boolean z9 = j11 < this.x;
-            if (this.K != null && !z9) {
+            this.M = j11;
+            boolean z10 = j11 < this.x;
+            if (this.L != null && !z10) {
                 hVar.c();
                 ByteBuffer byteBuffer = hVar.c;
-                String str = m0.a;
+                String str = l0.a;
                 if (byteBuffer.remaining() != 16) {
                     fArr = null;
                 } else {
                     byte[] array = byteBuffer.array();
                     int limit = byteBuffer.limit();
-                    x xVar = this.J;
+                    x xVar = this.K;
                     xVar.L(limit, array);
                     xVar.N(byteBuffer.arrayOffset() + 4);
                     float[] fArr2 = new float[3];
@@ -100,7 +100,7 @@ public final class a extends b {
                     fArr = fArr2;
                 }
                 if (fArr != null) {
-                    this.K.a();
+                    this.L.b();
                 }
             }
         }

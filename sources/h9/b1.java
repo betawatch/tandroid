@@ -3,9 +3,9 @@ package h9;
 import java.util.AbstractList;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class b1 extends g2 implements ListIterator {
+public final class b1 extends f2 implements ListIterator {
     public final /* synthetic */ int b;
     public final /* synthetic */ AbstractList c;
 
@@ -16,7 +16,7 @@ public final class b1 extends g2 implements ListIterator {
         this.c = abstractList;
     }
 
-    @Override // h9.g2
+    @Override // h9.f2
     public final Object a(Object obj) {
         switch (this.b) {
             case 0:

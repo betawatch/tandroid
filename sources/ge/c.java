@@ -1,6 +1,7 @@
 package ge;
 
 import a8.p0;
+import aa.b0;
 import ee.p;
 import java.io.Closeable;
 import java.lang.Thread;
@@ -11,16 +12,15 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.locks.LockSupport;
-import org.telegram.messenger.qs;
-import zd.b0;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c implements Executor, Closeable {
     public static final /* synthetic */ AtomicLongFieldUpdater n = AtomicLongFieldUpdater.newUpdater(c.class, "parkedWorkersStack$volatile");
     public static final /* synthetic */ AtomicLongFieldUpdater r = AtomicLongFieldUpdater.newUpdater(c.class, "controlState$volatile");
     public static final /* synthetic */ AtomicIntegerFieldUpdater s = AtomicIntegerFieldUpdater.newUpdater(c.class, "_isTerminated$volatile");
-    public static final com.google.android.gms.internal.clearcut.e w = new com.google.android.gms.internal.clearcut.e("NOT_IN_STACK", 1);
+    public static final b0 w = new b0("NOT_IN_STACK", 1);
     private volatile /* synthetic */ int _isTerminated$volatile;
     public final int a;
     public final int b;
@@ -38,16 +38,16 @@ public final class c implements Executor, Closeable {
         this.c = j3;
         this.d = str;
         if (i7 < 1) {
-            throw new IllegalArgumentException(jg.g.k(i7, "Core pool size ", " should be at least 1").toString());
+            throw new IllegalArgumentException(i5.c.j(i7, "Core pool size ", " should be at least 1").toString());
         }
         if (i10 < i7) {
             throw new IllegalArgumentException(p0.m(i10, i7, "Max pool size ", " should be greater than or equals to core pool size ").toString());
         }
         if (i10 > 2097150) {
-            throw new IllegalArgumentException(jg.g.k(i10, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
+            throw new IllegalArgumentException(i5.c.j(i10, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
         }
         if (j3 <= 0) {
-            throw new IllegalArgumentException(rf.b.h(j3, "Idle worker keep alive time ", " must be positive").toString());
+            throw new IllegalArgumentException(r.b.j(j3, "Idle worker keep alive time ", " must be positive").toString());
         }
         this.e = new f();
         this.f = new f();
@@ -93,7 +93,7 @@ public final class c implements Executor, Closeable {
         }
     }
 
-    public final void b(Runnable runnable, boolean z9) {
+    public final void b(Runnable runnable, boolean z10) {
         i jVar;
         b bVar;
         k.f.getClass();
@@ -101,13 +101,13 @@ public final class c implements Executor, Closeable {
         if (runnable instanceof i) {
             jVar = (i) runnable;
             jVar.a = nanoTime;
-            jVar.b = z9;
+            jVar.b = z10;
         } else {
-            jVar = new j(nanoTime, z9, runnable);
+            jVar = new j(nanoTime, z10, runnable);
         }
-        boolean z10 = jVar.b;
+        boolean z11 = jVar.b;
         AtomicLongFieldUpdater atomicLongFieldUpdater = r;
-        long addAndGet = z10 ? atomicLongFieldUpdater.addAndGet(this, 2097152L) : 0L;
+        long addAndGet = z11 ? atomicLongFieldUpdater.addAndGet(this, 2097152L) : 0L;
         Thread currentThread = Thread.currentThread();
         a aVar = currentThread instanceof a ? (a) currentThread : null;
         if (aVar == null || !kotlin.jvm.internal.j.a(aVar.n, this)) {
@@ -127,7 +127,7 @@ public final class c implements Executor, Closeable {
                     if (jVar.b) {
                         m.e.incrementAndGet(mVar);
                     }
-                    int i7 = atomicIntegerFieldUpdater.get(mVar) & qs.L1;
+                    int i7 = atomicIntegerFieldUpdater.get(mVar) & ns.L1;
                     while (atomicReferenceArray.get(i7) != null) {
                         Thread.yield();
                     }
@@ -142,7 +142,7 @@ public final class c implements Executor, Closeable {
                 throw new RejectedExecutionException(p0.s(new StringBuilder(), this.d, " was terminated"));
             }
         }
-        if (z10) {
+        if (z11) {
             if (e() || d(addAndGet)) {
                 return;
             }
@@ -290,7 +290,7 @@ public final class c implements Executor, Closeable {
     }
 
     public final boolean e() {
-        com.google.android.gms.internal.clearcut.e eVar;
+        b0 b0Var;
         int i7;
         while (true) {
             long j3 = n.get(this);
@@ -301,8 +301,8 @@ public final class c implements Executor, Closeable {
                 long j10 = (2097152 + j3) & (-2097152);
                 Object c10 = aVar.c();
                 while (true) {
-                    eVar = w;
-                    if (c10 == eVar) {
+                    b0Var = w;
+                    if (c10 == b0Var) {
                         i7 = -1;
                         break;
                     }
@@ -319,7 +319,7 @@ public final class c implements Executor, Closeable {
                 }
                 if (i7 >= 0) {
                     if (n.compareAndSet(this, j3, i7 | j10)) {
-                        aVar.h(eVar);
+                        aVar.h(b0Var);
                     } else {
                         continue;
                     }
@@ -392,14 +392,14 @@ public final class c implements Executor, Closeable {
         StringBuilder sb5 = new StringBuilder();
         sb5.append(this.d);
         sb5.append('@');
-        sb5.append(b0.j(this));
+        sb5.append(zd.b0.j(this));
         sb5.append("[Pool Size {core = ");
         int i16 = this.a;
         sb5.append(i16);
         sb5.append(", max = ");
-        jg.g.x(sb5, this.b, "}, Worker States {CPU = ", i7, ", blocking = ");
-        jg.g.x(sb5, i10, ", parked = ", i11, ", dormant = ");
-        jg.g.x(sb5, i12, ", terminated = ", i13, "}, running workers queues = ");
+        i5.c.y(sb5, this.b, "}, Worker States {CPU = ", i7, ", blocking = ");
+        i5.c.y(sb5, i10, ", parked = ", i11, ", dormant = ");
+        i5.c.y(sb5, i12, ", terminated = ", i13, "}, running workers queues = ");
         sb5.append(arrayList);
         sb5.append(", global CPU queue size = ");
         sb5.append(this.e.c());

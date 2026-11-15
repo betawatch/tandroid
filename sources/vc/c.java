@@ -10,7 +10,7 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c extends SSLSocketFactory {
     public final SSLSocketFactory a = HttpsURLConnection.getDefaultSSLSocketFactory();
@@ -24,17 +24,17 @@ public final class c extends SSLSocketFactory {
         } catch (NoSuchAlgorithmException unused) {
             strArr = new String[0];
         }
-        boolean z9 = false;
         boolean z10 = false;
+        boolean z11 = false;
         for (String str : strArr) {
             if (str.equals("TLSv1.1")) {
-                z9 = true;
-            } else if (str.equals("TLSv1.2")) {
                 z10 = true;
+            } else if (str.equals("TLSv1.2")) {
+                z11 = true;
             }
         }
-        this.b = z9;
-        this.c = z10;
+        this.b = z10;
+        this.c = z11;
     }
 
     public final Socket a(Socket socket) {
@@ -54,8 +54,8 @@ public final class c extends SSLSocketFactory {
     }
 
     @Override // javax.net.ssl.SSLSocketFactory
-    public final Socket createSocket(Socket socket, String str, int i7, boolean z9) {
-        return a(this.a.createSocket(socket, str, i7, z9));
+    public final Socket createSocket(Socket socket, String str, int i7, boolean z10) {
+        return a(this.a.createSocket(socket, str, i7, z10));
     }
 
     @Override // javax.net.ssl.SSLSocketFactory

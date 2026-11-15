@@ -10,7 +10,7 @@ import java.util.ArrayDeque;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j0 {
     public static final long h = TimeUnit.HOURS.toSeconds(8);
@@ -58,8 +58,8 @@ public final class j0 {
         }
     }
 
-    public final synchronized void c(boolean z9) {
-        this.f = z9;
+    public final synchronized void c(boolean z10) {
+        this.f = z10;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x00d6 A[Catch: IOException -> 0x0085, TRY_LEAVE, TryCatch #0 {IOException -> 0x0085, blocks: (B:8:0x002a, B:13:0x00d0, B:15:0x00d6, B:19:0x003c, B:21:0x0044, B:23:0x0072, B:26:0x0087, B:28:0x008f, B:30:0x00bd), top: B:7:0x002a }] */

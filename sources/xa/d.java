@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import va.j;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d {
     public static final long d = TimeUnit.HOURS.toMillis(24);
@@ -14,13 +14,13 @@ public final class d {
     public int c;
 
     public d() {
-        if (sa.d.b == null) {
+        if (z9.a.a == null) {
             Pattern pattern = j.c;
-            sa.d.b = new sa.d(28);
+            z9.a.a = new z9.a();
         }
-        sa.d dVar = sa.d.b;
+        z9.a aVar = z9.a.a;
         if (j.d == null) {
-            j.d = new j(dVar);
+            j.d = new j(aVar);
         }
         this.a = j.d;
     }
@@ -35,12 +35,12 @@ public final class d {
     }
 
     public final synchronized boolean b() {
-        boolean z9;
+        boolean z10;
         if (this.c != 0) {
             this.a.a.getClass();
-            z9 = System.currentTimeMillis() > this.b;
+            z10 = System.currentTimeMillis() > this.b;
         }
-        return z9;
+        return z10;
     }
 
     public final synchronized void c() {

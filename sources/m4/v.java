@@ -1,21 +1,20 @@
 package m4;
 
-import a8.ia;
-import c8.n9;
-import c8.s0;
-import di.t6;
-import e2.t0;
-import f3.j0;
-import h2.m0;
-import h9.i0;
-import h9.t1;
+import a8.ja;
+import c8.m9;
+import c8.t0;
+import e2.s0;
+import f3.i0;
+import fi.m6;
+import h2.l0;
+import h9.s1;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class v implements i {
     public String e;
-    public j0 f;
+    public i0 f;
     public boolean i;
     public int k;
     public int l;
@@ -27,7 +26,7 @@ public final class v implements i {
     public final h2.x a = new h2.x(new byte[15], 2);
     public final d4.f b = new d4.f();
     public final h2.x c = new h2.x();
-    public final t6 p = new t6();
+    public final m6 p = new m6();
     public int q = -2147483647;
     public int r = -1;
     public long t = -1;
@@ -59,7 +58,7 @@ public final class v implements i {
         long j10;
         int i14;
         long j11;
-        boolean z9;
+        boolean z10;
         int i15;
         this.f.getClass();
         while (xVar.a() > 0) {
@@ -69,7 +68,7 @@ public final class v implements i {
             int i19 = 1;
             if (i16 != 0) {
                 h2.x xVar2 = this.c;
-                t6 t6Var = this.p;
+                m6 m6Var = this.p;
                 if (i16 == 1) {
                     int a10 = xVar.a();
                     h2.x xVar3 = this.a;
@@ -82,11 +81,11 @@ public final class v implements i {
                         d4.f fVar = this.b;
                         fVar.H(i20, bArr2);
                         fVar.d();
-                        int a11 = n9.a(fVar, 3, 8, 8);
-                        t6Var.b = a11;
+                        int a11 = m9.a(fVar, 3, 8, 8);
+                        m6Var.b = a11;
                         if (a11 != -1) {
-                            ia.f(Math.max(Math.max(2, 8), 32) <= 63);
-                            s0.a(s0.a(3L, 255L), 4294967296L);
+                            ja.f(Math.max(Math.max(2, 8), 32) <= 63);
+                            t0.a(t0.a(3L, 255L), 4294967296L);
                             if (fVar.b() >= 2) {
                                 long l10 = fVar.l(2);
                                 if (l10 == 3) {
@@ -101,35 +100,35 @@ public final class v implements i {
                                     }
                                 }
                                 j11 = l10;
-                                t6Var.c = j11;
+                                m6Var.c = j11;
                                 if (j11 != -1) {
                                     if (j11 > 16) {
-                                        throw t0.c("Contains sub-stream with an invalid packet label " + t6Var.c);
+                                        throw e2.t0.c("Contains sub-stream with an invalid packet label " + m6Var.c);
                                     }
                                     if (j11 == 0) {
-                                        int i21 = t6Var.b;
+                                        int i21 = m6Var.b;
                                         if (i21 == 1) {
-                                            throw t0.a(null, "Mpegh3daConfig packet with invalid packet label 0");
+                                            throw e2.t0.a(null, "Mpegh3daConfig packet with invalid packet label 0");
                                         }
                                         if (i21 == 2) {
-                                            throw t0.a(null, "Mpegh3daFrame packet with invalid packet label 0");
+                                            throw e2.t0.a(null, "Mpegh3daFrame packet with invalid packet label 0");
                                         }
                                         if (i21 == 17) {
-                                            throw t0.a(null, "AudioTruncation packet with invalid packet label 0");
+                                            throw e2.t0.a(null, "AudioTruncation packet with invalid packet label 0");
                                         }
                                     }
-                                    int a12 = n9.a(fVar, 11, 24, 24);
-                                    t6Var.d = a12;
+                                    int a12 = m9.a(fVar, 11, 24, 24);
+                                    m6Var.d = a12;
                                     if (a12 != -1) {
-                                        z9 = true;
-                                        if (z9) {
+                                        z10 = true;
+                                        if (z10) {
                                             i15 = 0;
                                         } else {
                                             i15 = 0;
                                             this.n = 0;
-                                            this.o = t6Var.d + i20 + this.o;
+                                            this.o = m6Var.d + i20 + this.o;
                                         }
-                                        if (z9) {
+                                        if (z10) {
                                             int i22 = xVar3.c;
                                             if (i22 < 15) {
                                                 xVar3.M(i22 + 1);
@@ -139,7 +138,7 @@ public final class v implements i {
                                             xVar3.N(i15);
                                             this.f.b(xVar3.c, xVar3);
                                             xVar3.K(2);
-                                            xVar2.K(t6Var.d);
+                                            xVar2.K(m6Var.d);
                                             this.m = true;
                                             this.d = 2;
                                         }
@@ -147,14 +146,14 @@ public final class v implements i {
                                 }
                             }
                             j11 = -1;
-                            t6Var.c = j11;
+                            m6Var.c = j11;
                             if (j11 != -1) {
                             }
                         }
-                        z9 = false;
-                        if (z9) {
+                        z10 = false;
+                        if (z10) {
                         }
-                        if (z9) {
+                        if (z10) {
                         }
                     } else {
                         this.m = false;
@@ -163,7 +162,7 @@ public final class v implements i {
                     if (i16 != 2) {
                         throw new IllegalStateException();
                     }
-                    int i23 = t6Var.b;
+                    int i23 = m6Var.b;
                     if (i23 == 1 || i23 == 17) {
                         int i24 = xVar.b;
                         int min2 = Math.min(xVar.a(), xVar2.a());
@@ -171,14 +170,14 @@ public final class v implements i {
                         xVar2.O(min2);
                         xVar.N(i24);
                     }
-                    int min3 = Math.min(xVar.a(), t6Var.d - this.n);
+                    int min3 = Math.min(xVar.a(), m6Var.d - this.n);
                     this.f.b(min3, xVar);
                     int i25 = this.n + min3;
                     this.n = i25;
-                    if (i25 != t6Var.d) {
+                    if (i25 != m6Var.d) {
                         continue;
                     } else {
-                        int i26 = t6Var.b;
+                        int i26 = m6Var.b;
                         if (i26 == 1) {
                             byte[] bArr3 = xVar2.a;
                             d4.f fVar2 = new d4.f(bArr3, bArr3.length);
@@ -228,7 +227,7 @@ public final class v implements i {
                                     case 13:
                                     case 14:
                                     default:
-                                        throw t0.c("Unsupported sampling rate index " + j13);
+                                        throw e2.t0.c("Unsupported sampling rate index " + j13);
                                     case 15:
                                         i12 = 57600;
                                         break;
@@ -281,7 +280,7 @@ public final class v implements i {
                                 i13 = 2048;
                             } else {
                                 if (j14 != 4) {
-                                    throw t0.c("Unsupported coreSbrFrameLengthIndex " + j14);
+                                    throw e2.t0.c("Unsupported coreSbrFrameLengthIndex " + j14);
                                 }
                                 i13 = TLObject.FLAG_12;
                             }
@@ -294,12 +293,12 @@ public final class v implements i {
                                 c10 = 3;
                             } else {
                                 if (j14 != 4) {
-                                    throw t0.c("Unsupported coreSbrFrameLengthIndex " + j14);
+                                    throw e2.t0.c("Unsupported coreSbrFrameLengthIndex " + j14);
                                 }
                                 c10 = 1;
                             }
                             fVar2.L(2);
-                            n9.c(fVar2);
+                            m9.c(fVar2);
                             int j15 = fVar2.j(5);
                             int i28 = 0;
                             int i29 = 0;
@@ -308,14 +307,14 @@ public final class v implements i {
                                 int i31 = 16;
                                 if (i28 < j15 + 1) {
                                     int j16 = fVar2.j(3);
-                                    i29 = n9.a(fVar2, 5, 8, 16) + 1 + i29;
+                                    i29 = m9.a(fVar2, 5, 8, 16) + 1 + i29;
                                     if ((j16 == 0 || j16 == 2) && fVar2.i()) {
-                                        n9.c(fVar2);
+                                        m9.c(fVar2);
                                     }
                                     i28++;
                                     i19 = i30;
                                 } else {
-                                    int a13 = n9.a(fVar2, 4, 8, 16) + 1;
+                                    int a13 = m9.a(fVar2, 4, 8, 16) + 1;
                                     fVar2.K();
                                     int i32 = 0;
                                     while (true) {
@@ -328,7 +327,7 @@ public final class v implements i {
                                                     fVar2.L(13);
                                                 }
                                                 if (c10 > 0) {
-                                                    n9.b(fVar2);
+                                                    m9.b(fVar2);
                                                 }
                                             } else if (j17 == i30) {
                                                 fVar2.L(i18);
@@ -340,7 +339,7 @@ public final class v implements i {
                                                     fVar2.K();
                                                 }
                                                 if (c10 > 0) {
-                                                    n9.b(fVar2);
+                                                    m9.b(fVar2);
                                                     i14 = fVar2.j(2);
                                                 } else {
                                                     i14 = 0;
@@ -371,10 +370,10 @@ public final class v implements i {
                                                     fVar2.K();
                                                 }
                                             } else if (j17 == i18) {
-                                                n9.a(fVar2, 4, i17, i31);
-                                                int a14 = n9.a(fVar2, 4, i17, i31);
+                                                m9.a(fVar2, 4, i17, i31);
+                                                int a14 = m9.a(fVar2, 4, i17, i31);
                                                 if (fVar2.i()) {
-                                                    n9.a(fVar2, i17, i31, 0);
+                                                    m9.a(fVar2, i17, i31, 0);
                                                 }
                                                 fVar2.K();
                                                 if (a14 > 0) {
@@ -389,12 +388,12 @@ public final class v implements i {
                                         } else {
                                             if (fVar2.i()) {
                                                 int i34 = 8;
-                                                int a15 = n9.a(fVar2, 2, 4, 8) + 1;
+                                                int a15 = m9.a(fVar2, 2, 4, 8) + 1;
                                                 int i35 = 0;
                                                 bArr = null;
                                                 while (i35 < a15) {
-                                                    int a16 = n9.a(fVar2, 4, i34, 16);
-                                                    int a17 = n9.a(fVar2, 4, i34, 16);
+                                                    int a16 = m9.a(fVar2, 4, i34, 16);
+                                                    int a17 = m9.a(fVar2, 4, i34, 16);
                                                     if (a16 == 7) {
                                                         int j20 = fVar2.j(4) + 1;
                                                         fVar2.L(4);
@@ -419,15 +418,15 @@ public final class v implements i {
                                                     this.q = (int) (i12 * d);
                                                     this.r = (int) (i27 * d);
                                                     j3 = this.t;
-                                                    j10 = t6Var.c;
+                                                    j10 = m6Var.c;
                                                     if (j3 != j10) {
                                                         this.t = j10;
                                                         String concat = j12 != -1 ? "mhm1".concat(String.format(".%02X", Integer.valueOf(j12))) : "mhm1";
-                                                        t1 v = (bArr == null || bArr.length <= 0) ? null : i0.v(m0.b, bArr);
+                                                        s1 v = (bArr == null || bArr.length <= 0) ? null : h9.i0.v(l0.b, bArr);
                                                         e2.t tVar = new e2.t();
                                                         tVar.a = this.e;
-                                                        tVar.q = e2.s0.n("video/mp2t");
-                                                        tVar.r = e2.s0.n("audio/mhm1");
+                                                        tVar.q = s0.n("video/mp2t");
+                                                        tVar.r = s0.n("audio/mhm1");
                                                         tVar.K = this.q;
                                                         tVar.j = concat;
                                                         tVar.u = v;
@@ -441,7 +440,7 @@ public final class v implements i {
                                                     this.q = (int) (i12 * d);
                                                     this.r = (int) (i27 * d);
                                                     j3 = this.t;
-                                                    j10 = t6Var.c;
+                                                    j10 = m6Var.c;
                                                     if (j3 != j10) {
                                                     }
                                                     i10 = 1;
@@ -455,7 +454,7 @@ public final class v implements i {
                                                     this.q = (int) (i12 * d);
                                                     this.r = (int) (i27 * d);
                                                     j3 = this.t;
-                                                    j10 = t6Var.c;
+                                                    j10 = m6Var.c;
                                                     if (j3 != j10) {
                                                     }
                                                     i10 = 1;
@@ -469,14 +468,14 @@ public final class v implements i {
                                                     this.q = (int) (i12 * d);
                                                     this.r = (int) (i27 * d);
                                                     j3 = this.t;
-                                                    j10 = t6Var.c;
+                                                    j10 = m6Var.c;
                                                     if (j3 != j10) {
                                                     }
                                                     i10 = 1;
                                                     this.u = true;
                                                     break;
                                                 default:
-                                                    throw t0.c("Unsupported sampling rate " + i12);
+                                                    throw e2.t0.c("Unsupported sampling rate " + i12);
                                             }
                                         }
                                     }
@@ -576,15 +575,15 @@ public final class v implements i {
     }
 
     @Override // m4.i
-    public final void g(f3.q qVar, g0 g0Var) {
-        g0Var.b();
-        g0Var.c();
-        this.e = (String) g0Var.e;
-        g0Var.c();
-        this.f = qVar.O1(g0Var.c, 1);
+    public final void g(f3.q qVar, f0 f0Var) {
+        f0Var.b();
+        f0Var.c();
+        this.e = (String) f0Var.e;
+        f0Var.c();
+        this.f = qVar.d2(f0Var.c, 1);
     }
 
     @Override // m4.i
-    public final void e(boolean z9) {
+    public final void e(boolean z10) {
     }
 }

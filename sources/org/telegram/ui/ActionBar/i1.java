@@ -9,12 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class i1 {
-    public static final wq w = mi.l.V;
+    public static final er w = pi.k.V;
     public final FrameLayout a;
     public FrameLayout b;
     public ViewGroup c;
@@ -29,7 +29,7 @@ public abstract class i1 {
     public boolean s;
     public boolean v;
     public boolean e = false;
-    public final m.f3 h = new m.f3(this, 15);
+    public final j6.o h = new j6.o(this, 18);
     public int i = -1;
     public int j = -1;
     public int k = -1;
@@ -40,7 +40,7 @@ public abstract class i1 {
 
     public i1(FrameLayout frameLayout) {
         this.a = frameLayout;
-        org.telegram.messenger.g0.h3(new l2.a0(this, 18));
+        org.telegram.messenger.g0.h3(new r0(this, 1));
     }
 
     public static Activity a(Context context) {
@@ -67,7 +67,7 @@ public abstract class i1 {
             while (true) {
                 view2 = null;
                 if (view != null) {
-                    if (!(view.getParent() instanceof o3)) {
+                    if (!(view.getParent() instanceof l3)) {
                         if (!(view.getParent() instanceof View)) {
                             break;
                         } else {
@@ -101,11 +101,11 @@ public abstract class i1 {
         }
     }
 
-    public abstract void e(float f10, float f11, boolean z9);
+    public abstract void e(float f10, float f11, boolean z10);
 
     public abstract void f();
 
-    public abstract void g(int i7, boolean z9);
+    public abstract void g(int i7, boolean z10);
 
     public final void h(int i7) {
         int i10 = 0;
@@ -136,8 +136,8 @@ public abstract class i1 {
         h(-1);
         this.o.clear();
         this.d.requestLayout();
-        boolean z9 = this.s;
-        e(0.0f, z9 ? 1.0f : 0.0f, z9);
+        boolean z10 = this.s;
+        e(0.0f, z10 ? 1.0f : 0.0f, z10);
         if (!(this instanceof ch.k)) {
             this.a.setTranslationY(0.0f);
         }

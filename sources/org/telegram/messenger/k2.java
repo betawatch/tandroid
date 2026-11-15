@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k2 extends c1 {
     public static volatile k2[] b = new k2[4];
@@ -42,19 +42,19 @@ public final class k2 extends c1 {
 
     public final void a(long j3, long j10, TLRPC.JoinChatBotResult joinChatBotResult) {
         this.a.get(j10, 0L);
-        getNotificationCenter().k(qs.Q5, new j2(j3, joinChatBotResult));
-        HashSet hashSet = hi.a3.a1;
+        getNotificationCenter().k(ns.Q5, new j2(j3, joinChatBotResult));
+        HashSet hashSet = ki.x2.b1;
         if (hashSet != null) {
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {
-                hi.a3 a3Var = (hi.a3) it.next();
-                hi.q4 q4Var = a3Var.w0;
-                if (q4Var != null && q4Var.g == 5) {
-                    long j11 = q4Var.b;
+                ki.x2 x2Var = (ki.x2) it.next();
+                ki.k4 k4Var = x2Var.x0;
+                if (k4Var != null && k4Var.g == 5) {
+                    long j11 = k4Var.b;
                     if (j11 == j3 || j11 == 0) {
-                        TLObject tLObject = q4Var.q;
+                        TLObject tLObject = k4Var.q;
                         if ((tLObject instanceof TLRPC.TL_webViewResultUrl) && ((TLRPC.TL_webViewResultUrl) tLObject).query_id == j10) {
-                            a3Var.o(false);
+                            x2Var.o(false);
                             return;
                         }
                     }
@@ -63,18 +63,18 @@ public final class k2 extends c1 {
         }
     }
 
-    public final void c(final long j3, final long j10, final long j11, boolean z9) {
-        org.telegram.ui.ActionBar.f2 Q;
-        if (LaunchActivity.G1 == null || (Q = LaunchActivity.Q()) == null) {
+    public final void c(final long j3, final long j10, final long j11, boolean z10) {
+        org.telegram.ui.ActionBar.e2 Q;
+        if (LaunchActivity.H1 == null || (Q = LaunchActivity.Q()) == null) {
             return;
         }
         TLRPC.User a22 = getMessagesController().a2(Long.valueOf(j10));
-        if (!z9) {
-            if (b6.h(this.currentAccount, j10) || getMessagesController().W6.contains(Long.valueOf(j10))) {
+        if (!z10) {
+            if (b6.j(this.currentAccount, j10) || getMessagesController().X6.contains(Long.valueOf(j10))) {
                 c(j3, j10, j11, true);
                 return;
             } else {
-                org.telegram.ui.Components.u4.n(Q, a22, new Runnable() { // from class: org.telegram.messenger.i2
+                org.telegram.ui.Components.t4.n(Q, a22, new Runnable() { // from class: org.telegram.messenger.i2
                     @Override // java.lang.Runnable
                     public final void run() {
                         long j12 = j11;
@@ -82,21 +82,21 @@ public final class k2 extends c1 {
                         long j13 = j3;
                         long j14 = j10;
                         k2Var.c(j13, j14, j12, true);
-                        b6.n(k2Var.currentAccount, j14);
+                        b6.p(k2Var.currentAccount, j14);
                     }
-                }, new ai.m0(24));
+                }, new ai.o(28));
                 return;
             }
         }
         this.a.put(j11, j10);
-        org.telegram.ui.ActionBar.f2 Q2 = LaunchActivity.Q();
-        hi.q4 b10 = hi.q4.b(this.currentAccount, j3, j10, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
+        org.telegram.ui.ActionBar.e2 Q2 = LaunchActivity.Q();
+        ki.k4 b10 = ki.k4.b(this.currentAccount, j3, j10, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
         b10.d = j11;
-        hi.a3 a3Var = new hi.a3(LaunchActivity.G1, null);
-        a3Var.B(false);
-        a3Var.B0 = true;
-        a3Var.l0 = LaunchActivity.G1;
-        a3Var.x(Q2, b10);
-        a3Var.show();
+        ki.x2 x2Var = new ki.x2(LaunchActivity.H1, null);
+        x2Var.B(false);
+        x2Var.C0 = true;
+        x2Var.m0 = LaunchActivity.H1;
+        x2Var.x(Q2, b10);
+        x2Var.show();
     }
 }

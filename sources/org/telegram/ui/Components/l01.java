@@ -1,49 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.widget.EditText;
-import androidx.recyclerview.widget.RecyclerView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l01 extends v4.s0 {
+public final class l01 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ s01 c;
+    public final /* synthetic */ v01 b;
 
-    public l01(s01 s01Var, int i7, long j3) {
-        this.c = s01Var;
+    public /* synthetic */ l01(v01 v01Var, int i7) {
         this.a = i7;
-        this.b = j3;
+        this.b = v01Var;
     }
 
-    @Override // v4.s0
-    public final void a(RecyclerView recyclerView, int i7) {
-        EditText editText = this.c.w;
-        if (i7 == 1 && editText.hasFocus()) {
-            org.telegram.messenger.g0.v1(editText);
-            editText.clearFocus();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                v01 v01Var = this.b;
+                if (v01Var.U == animator) {
+                    v01Var.U = null;
+                    break;
+                }
+                break;
+            case 1:
+                v01 v01Var2 = this.b;
+                if (v01Var2.g0 == animator) {
+                    v01Var2.g0 = null;
+                }
+                v01Var2.b(1.0f);
+                break;
+            default:
+                v01 v01Var3 = this.b;
+                if (v01Var3.K == animator) {
+                    v01Var3.K = null;
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        s01 s01Var = this.c;
-        s01Var.i();
-        v4.b0 b0Var = (v4.b0) recyclerView.getLayoutManager();
-        if (b0Var == null || b0Var.N0() < s01Var.s.c.size() - 3) {
-            return;
-        }
-        boolean z9 = s01Var.d;
-        int i11 = this.a;
-        if (z9) {
-            org.telegram.messenger.qp.s1(i11).G1().g(false);
-            return;
-        }
-        org.telegram.messenger.k00 k00Var = org.telegram.messenger.qp.s1(i11).q7;
-        long j3 = -this.b;
-        if (k00Var.e(j3)) {
-            return;
-        }
-        k00Var.o(j3);
     }
 }

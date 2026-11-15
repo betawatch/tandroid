@@ -1,30 +1,33 @@
 package oi;
 
-import j$.util.Objects;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class r {
-    public final boolean a;
-    public final boolean b;
+    public int a = 0;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public String e;
+    public float f;
+    public TLRPC.Photo g;
+    public TLRPC.Document h;
+    public TLRPC.Document i;
+    public int j;
+    public int k;
+    public int l;
+    public int m;
+    public boolean n;
 
-    public r(boolean z9, boolean z10) {
-        this.a = z9;
-        this.b = z10;
+    public final boolean a() {
+        return this.a == 1;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof r)) {
+    public final boolean b() {
+        if (this.a != 2) {
             return false;
         }
-        r rVar = (r) obj;
-        return this.a == rVar.a && this.b == rVar.b;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.a), Boolean.valueOf(this.b));
+        return (this.b || this.c || this.d) ? this.h != null : this.g != null;
     }
 }

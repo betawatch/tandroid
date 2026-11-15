@@ -1,43 +1,50 @@
 package di;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.ui.LaunchActivity;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a4 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1 b;
 
-    public /* synthetic */ s3(a4 a4Var, int i7) {
+    public /* synthetic */ s3(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         this.a = i7;
-        this.b = a4Var;
+        this.b = t1Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        org.telegram.ui.ActionBar.t1 t1Var = this.b;
+        switch (i7) {
             case 0:
-                ((h9) this.b.x.z1).g(false);
+                t1Var.dismiss();
+                org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
+                if (T != null) {
+                    org.telegram.ui.Components.xb Q = org.telegram.ui.Components.cc.a0(T).Q(R.raw.error, 36, hd.M0(2131748552, null));
+                    Q.t = true;
+                    Q.j();
+                    break;
+                }
                 break;
             case 1:
-                j4 j4Var = this.b.x;
-                c4 c4Var = j4Var.z1;
-                if (c4Var != null) {
-                    q9 q9Var = ((h9) c4Var).d;
-                    q9Var.Y0 = false;
-                    q9Var.V();
-                }
-                j4Var.d1(false);
-                j4Var.Q2 = true;
-                j4Var.t0.E(true);
+                t1Var.dismiss();
                 break;
             case 2:
-                j4 j4Var2 = this.b.x;
-                j4Var2.D3 = true;
-                j4Var2.setActive(false);
+                t1Var.dismiss();
                 break;
             default:
-                j4 j4Var3 = this.b.x;
-                j4Var3.D3 = true;
-                j4Var3.setActive(false);
+                if (!t1Var.isShowing()) {
+                    try {
+                        t1Var.show();
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
                 break;
         }
     }

@@ -1,29 +1,61 @@
 package a8;
 
 import android.content.Context;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
-import org.telegram.messenger.beta.R;
+import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a7 {
-    public static int a(Context context) {
-        float fraction;
-        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        boolean z9 = displayMetrics.widthPixels < displayMetrics.heightPixels;
-        TypedValue typedValue = new TypedValue();
-        context.getResources().getValue(z9 ? R.dimen.mr_dialog_fixed_width_minor : R.dimen.mr_dialog_fixed_width_major, typedValue, true);
-        int i7 = typedValue.type;
-        if (i7 == 5) {
-            fraction = typedValue.getDimension(displayMetrics);
-        } else {
-            if (i7 != 6) {
-                return -2;
-            }
-            int i10 = displayMetrics.widthPixels;
-            fraction = typedValue.getFraction(i10, i10);
+    public static Boolean a;
+    public static Boolean b;
+    public static Boolean c;
+    public static Boolean d;
+    public static Boolean e;
+    public static Boolean f;
+    public static Boolean g;
+
+    public static boolean a(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        if (f == null) {
+            f = Boolean.valueOf(Build.VERSION.SDK_INT >= 26 && packageManager.hasSystemFeature("android.hardware.type.automotive"));
         }
-        return (int) fraction;
+        return f.booleanValue();
+    }
+
+    public static boolean b(Resources resources) {
+        boolean z10 = false;
+        if (resources == null) {
+            return false;
+        }
+        if (d == null) {
+            Configuration configuration = resources.getConfiguration();
+            if ((configuration.screenLayout & 15) <= 3 && configuration.smallestScreenWidthDp >= 600) {
+                z10 = true;
+            }
+            d = Boolean.valueOf(z10);
+        }
+        return d.booleanValue();
+    }
+
+    public static boolean c(Context context) {
+        Resources resources = context.getResources();
+        if (resources == null) {
+            return false;
+        }
+        if (b == null) {
+            b = Boolean.valueOf((resources.getConfiguration().screenLayout & 15) > 3 || b(resources));
+        }
+        return b.booleanValue();
+    }
+
+    public static boolean d(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        if (g == null) {
+            g = Boolean.valueOf(packageManager.hasSystemFeature("com.google.android.tv") || packageManager.hasSystemFeature("android.hardware.type.television") || packageManager.hasSystemFeature("android.software.leanback"));
+        }
+        return g.booleanValue();
     }
 }

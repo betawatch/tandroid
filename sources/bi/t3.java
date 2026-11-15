@@ -1,392 +1,415 @@
 package bi;
 
-import android.text.TextUtils;
-import android.text.style.CharacterStyle;
-import android.util.Base64;
-import android.widget.TextView;
+import android.graphics.Point;
+import android.view.View;
+import android.widget.LinearLayout;
+import c8.ja;
+import di.k8;
+import di.v8;
+import java.io.Serializable;
 import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.v10;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.jk0;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.cn;
-import org.telegram.ui.ge;
-import org.telegram.ui.he;
-import org.telegram.ui.ji;
-import org.telegram.ui.ke;
-import org.telegram.ui.nm;
-import org.telegram.ui.q61;
-import org.telegram.ui.sb1;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.m60;
+import org.telegram.ui.Components.wp0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t3 implements v10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class t3 implements x10, y10 {
+    public final /* synthetic */ c4 a;
 
-    public /* synthetic */ t3(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, int i7) {
-        this.a = i7;
-        this.c = obj;
-        this.b = obj2;
-        this.d = obj3;
-        this.e = obj4;
-        this.f = obj5;
+    public /* synthetic */ t3(c4 c4Var) {
+        this.a = c4Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x02e0  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x032a  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x0342  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x0361  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x0309  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x01d2  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x01de  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x01f2  */
-    @Override // org.telegram.messenger.v10
+    /* JADX WARN: Removed duplicated region for block: B:100:0x02b8  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0285  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0266  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0292  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02b6  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x02cf  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x02d1  */
+    /* JADX WARN: Type inference failed for: r0v69, types: [org.telegram.ui.Components.m60] */
+    /* JADX WARN: Type inference failed for: r4v1 */
+    /* JADX WARN: Type inference failed for: r4v2 */
+    /* JADX WARN: Type inference failed for: r4v26, types: [int] */
+    /* JADX WARN: Type inference failed for: r7v7, types: [android.view.View, android.widget.ScrollView, bi.z3] */
+    @Override // org.telegram.messenger.y10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(Object obj, Object obj2) {
-        Runnable q61Var;
-        long j3;
-        boolean z9;
-        long j10;
-        long j11;
-        int i7;
-        int i10;
+    public Boolean a(b41 b41Var, View view, Integer num, Float f10, Float f11) {
         boolean z10;
-        boolean z11;
-        CharSequence charSequence;
-        TL_iv.RichMessage richMessage;
-        TLRPC.Message message;
-        Object[] objArr;
+        c4 c4Var;
+        ?? r42;
+        i2 i2Var;
+        final c4 c4Var2;
+        final TL_stars.SavedStarGift savedStarGift;
+        i2 i2Var2;
         String str;
+        k8 k8Var;
+        boolean z11;
+        TL_stars.StarGift starGift;
+        TL_stars.TL_starGiftUnique tL_starGiftUnique;
         String str2;
+        String str3;
+        int i7;
         boolean z12;
-        int i11;
-        String str3 = "NULL_ERROR";
-        int i12 = 2;
-        int i13 = 6;
-        int i14 = 1;
-        r10 = true;
-        boolean z13 = true;
-        switch (this.a) {
-            case 0:
-                k7 k7Var = (k7) this.c;
-                boolean[] zArr = (boolean[]) this.b;
-                TextView textView = (TextView) this.d;
-                TL_stars.starGiftDepositPayload[] stargiftdepositpayloadArr = (TL_stars.starGiftDepositPayload[]) this.e;
-                Runnable[] runnableArr = (Runnable[]) this.f;
-                TL_stars.starGiftDepositPayload stargiftdepositpayload = (TL_stars.starGiftDepositPayload) obj;
-                if (!zArr[0]) {
-                    if (stargiftdepositpayload != null) {
-                        stargiftdepositpayloadArr[0] = stargiftdepositpayload;
-                        if (org.telegram.ui.Wallet.l0.x(k7Var.a).v() >= stargiftdepositpayload.amount) {
-                            org.telegram.ui.Wallet.l0 x10 = org.telegram.ui.Wallet.l0.x(k7Var.a);
-                            ai.e eVar = new ai.e(textView, 6);
-                            try {
-                                boolean[] zArr2 = new boolean[1];
-                                x10.m0(new org.telegram.ui.Wallet.h7(x10, zArr2, eVar, org.telegram.ui.Wallet.l0.h(stargiftdepositpayload), 5));
-                                q61Var = new org.telegram.ui.Wallet.l(zArr2, 3);
-                            } catch (Exception e10) {
-                                org.telegram.ui.Wallet.l0.k("emulateDepositNFT: invalid payload", e10);
-                                org.telegram.messenger.g0.h3(new sb1(6, eVar, e10));
-                                q61Var = new q61(i12);
-                            }
-                            runnableArr[0] = q61Var;
-                            break;
-                        } else {
-                            textView.setVisibility(8);
-                            break;
+        Object obj;
+        c4 c4Var3 = this.a;
+        int i10 = c4Var3.b;
+        wp0 wp0Var = c4Var3.a;
+        boolean z13 = false;
+        boolean z14 = false;
+        boolean z15 = false;
+        if (c4Var3.e != null) {
+            if (view instanceof i2) {
+                Object obj2 = b41Var.G;
+                if (obj2 instanceof TL_stars.SavedStarGift) {
+                    i2 i2Var3 = (i2) view;
+                    TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj2;
+                    org.telegram.ui.ActionBar.e2 e2Var = wp0Var.a;
+                    k8 k8Var2 = wp0Var.e;
+                    m60 I = m60.I(e2Var, view);
+                    wp0Var.J = I;
+                    if (k8Var2.h()) {
+                        if (!c4Var3.d) {
+                            k8Var2.d().size();
                         }
-                    } else {
-                        textView.setVisibility(8);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                cn cnVar = (cn) this.c;
-                boolean[] zArr3 = (boolean[]) this.b;
-                vf.b bVar = (vf.b) this.d;
-                TLRPC.User[] userArr = (TLRPC.User[]) this.e;
-                l4 l4Var = (l4) this.f;
-                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
-                if (!zArr3[0]) {
-                    if (bVar != null) {
-                        bVar.b();
-                    }
-                    userArr[0] = (walletuseraddress == null || walletuseraddress.user_id == 0) ? null : cnVar.getMessagesController().a2(Long.valueOf(walletuseraddress.user_id));
-                    l4Var.run();
-                    break;
-                }
-                break;
-            case 2:
-                cn cnVar2 = (cn) this.c;
-                vf.b bVar2 = (vf.b) this.b;
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.d;
-                String str4 = (String) this.e;
-                CharacterStyle characterStyle = (CharacterStyle) this.f;
-                TLObject tLObject = (TLObject) obj;
-                Boolean bool = (Boolean) obj2;
-                bVar2.b();
-                if (!(tLObject instanceof TLRPC.User)) {
-                    j3 = 0;
-                    if (!(tLObject instanceof TLRPC.Chat)) {
-                        z9 = false;
-                        i14 = 0;
-                        j10 = 0;
-                        j11 = 0;
-                        k60 I = k60.I(cnVar2, q1Var);
-                        jk0 jk0Var = new jk0(cnVar2.getParentActivity(), cnVar2.za);
-                        I.p = new ge(jk0Var, r11);
-                        i7 = (j10 > j11 ? 1 : (j10 == j11 ? 0 : -1));
-                        if (i7 == 0) {
-                            int i15 = z9 ? R.drawable.msg_channel : R.drawable.msg_discussion;
-                            int i16 = z9 ? 2131743561 : 2131745601;
-                            i10 = i7;
-                            z10 = z9;
-                            z11 = false;
-                            I.c(i15, org.telegram.messenger.id.M0(i16, null), new bg.j0(cnVar2, j10, 5), false);
-                        } else {
-                            i10 = i7;
-                            z10 = z9;
-                            z11 = false;
+                        ?? J = I.J();
+                        J.c(R.drawable.ic_ab_back, hd.M0(2131753756, null), new u3(I, z15 ? 1 : 0), false);
+                        J.k();
+                        ?? z3Var = new z3(c4Var3.getContext(), z14 ? 1 : 0);
+                        LinearLayout linearLayout = new LinearLayout(c4Var3.getContext());
+                        z3Var.addView(linearLayout);
+                        linearLayout.setOrientation(1);
+                        boolean z16 = true;
+                        J.r(z3Var, ja.o(-1, -2));
+                        if (k8Var2.d().size() + 1 < ((org.telegram.messenger.j0) np.s1(i10).y7.t.b).c) {
+                            org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(0, c4Var3.getContext(), c4Var3.c, false, false);
+                            z0Var.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
+                            int i11 = org.telegram.ui.ActionBar.j6.E8;
+                            z0Var.c(i11, org.telegram.ui.ActionBar.j6.F8);
+                            z0Var.h(0.12f, i11);
+                            z0Var.j(hd.M0(2131750098, null), R.drawable.menu_folder_add, null);
+                            z0Var.setOnClickListener(new ah.g(c4Var3, I, savedStarGift2, 5));
+                            linearLayout.addView(z0Var, ja.o(-1, -2));
                         }
-                        I.c(R.drawable.msg_copy, org.telegram.messenger.id.M0(2131746678, null), new ke(cnVar2, jk0Var, str4, 3), z11);
-                        int i17 = 13;
-                        if (bool.booleanValue()) {
-                            I.c(R.drawable.outline_gram_24, org.telegram.messenger.id.M0(2131752653, null), new he(cnVar2, str4, i17), z11);
-                        }
-                        I.k();
-                        if (i10 == 0) {
-                            charSequence = null;
-                            I.n(tLObject, org.telegram.messenger.id.M0(i14 != 0 ? 2131743546 : z10 ? 2131743560 : 2131743553, null), new bg.j0(cnVar2, j10, 6));
-                        } else {
-                            charSequence = null;
-                            I.p(13, org.telegram.messenger.g0.L(200.0f), org.telegram.messenger.id.M0(2131748133, null));
-                        }
-                        jk0Var.e(I);
-                        jk0Var.f(q1Var, characterStyle, charSequence, false);
-                        cnVar2.showDialog(jk0Var);
-                        break;
-                    } else {
-                        TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                        long j12 = -chat.id;
-                        z9 = org.telegram.messenger.t3.V(chat);
-                        j10 = j12;
-                        i14 = 0;
-                    }
-                } else {
-                    j3 = 0;
-                    j10 = ((TLRPC.User) tLObject).id;
-                    z9 = false;
-                }
-                j11 = j3;
-                k60 I2 = k60.I(cnVar2, q1Var);
-                jk0 jk0Var2 = new jk0(cnVar2.getParentActivity(), cnVar2.za);
-                I2.p = new ge(jk0Var2, r11);
-                i7 = (j10 > j11 ? 1 : (j10 == j11 ? 0 : -1));
-                if (i7 == 0) {
-                }
-                I2.c(R.drawable.msg_copy, org.telegram.messenger.id.M0(2131746678, null), new ke(cnVar2, jk0Var2, str4, 3), z11);
-                int i172 = 13;
-                if (bool.booleanValue()) {
-                }
-                I2.k();
-                if (i10 == 0) {
-                }
-                jk0Var2.e(I2);
-                jk0Var2.f(q1Var, characterStyle, charSequence, false);
-                cnVar2.showDialog(jk0Var2);
-            case 3:
-                cn cnVar3 = (cn) this.c;
-                ji jiVar = (ji) this.b;
-                int[] iArr = (int[]) this.d;
-                org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) this.e;
-                ij ijVar = (ij) this.f;
-                TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) obj;
-                if (cnVar3.cc == jiVar) {
-                    iArr[0] = 0;
-                    jiVar.c(false);
-                    if (messages_messages != null) {
-                        cnVar3.getMessagesController().Y3(messages_messages.users, false);
-                        cnVar3.getMessagesController().S3(messages_messages.chats, false);
-                        int i18 = 0;
-                        while (true) {
-                            if (i18 < messages_messages.messages.size()) {
-                                TLRPC.Message message2 = messages_messages.messages.get(i18);
-                                if (message2 == null || (richMessage = message2.rich_message) == null) {
-                                    i18++;
+                        ArrayList d = k8Var2.d();
+                        int size = d.size();
+                        int i12 = 0;
+                        LinearLayout linearLayout2 = linearLayout;
+                        while (i12 < size) {
+                            int i13 = i12 + 1;
+                            TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) d.get(i12);
+                            ArrayList arrayList = k8Var2.e(tL_starGiftCollection.collection_id).l;
+                            int size2 = arrayList.size();
+                            i2 i2Var4 = i2Var3;
+                            int i14 = 0;
+                            while (true) {
+                                if (i14 >= size2) {
+                                    z12 = false;
+                                    break;
                                 }
+                                Object obj3 = arrayList.get(i14);
+                                i14++;
+                                int i15 = size2;
+                                if (v8.k((TL_stars.SavedStarGift) obj3, savedStarGift2)) {
+                                    z12 = z16;
+                                    break;
+                                }
+                                size2 = i15;
+                            }
+                            org.telegram.ui.ActionBar.z0 z0Var2 = new org.telegram.ui.ActionBar.z0(2, c4Var3.getContext(), c4Var3.c, false, false);
+                            z0Var2.setChecked(z12);
+                            c4 c4Var4 = c4Var3;
+                            boolean z17 = z12;
+                            z0Var2.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
+                            int i16 = org.telegram.ui.ActionBar.j6.E8;
+                            z0Var2.c(i16, org.telegram.ui.ActionBar.j6.F8);
+                            z0Var2.h(0.12f, i16);
+                            if (tL_starGiftCollection.icon != null) {
+                                a4 a4Var = new a4(3, i10, tL_starGiftCollection.icon);
+                                z0Var2.getImageView().addOnAttachStateChangeListener(new x1(a4Var, 10));
+                                z0Var2.j(tL_starGiftCollection.title, 0, a4Var);
+                                obj = null;
                             } else {
-                                richMessage = null;
+                                obj = null;
+                                z0Var2.j(tL_starGiftCollection.title, R.drawable.msg_folders, null);
                             }
+                            ArrayList arrayList2 = d;
+                            LinearLayout linearLayout3 = linearLayout2;
+                            z0Var2.setOnClickListener(new m3(c4Var4, z17, tL_starGiftCollection, savedStarGift2, I, 0));
+                            linearLayout3.addView(z0Var2, ja.o(-1, -2));
+                            d = arrayList2;
+                            c4Var3 = c4Var4;
+                            size = size;
+                            i12 = i13;
+                            i2Var3 = i2Var4;
+                            z16 = true;
+                            linearLayout2 = linearLayout3;
                         }
-                        if (richMessage != null && (message = ijVar.k) != null) {
-                            message.rich_message = richMessage;
-                            ijVar.w2 = null;
-                            nm nmVar = cnVar3.Uc;
-                            if (nmVar != null && q1Var2 != null) {
-                                nmVar.e(q1Var2, true, false, true);
-                                break;
-                            }
-                        }
+                        c4Var = c4Var3;
+                        i2Var = i2Var3;
+                        r42 = 0;
+                        I.c(R.drawable.msg_addfolder, hd.M0(2131750395, null), new n3(I, J, r42), false);
+                        I.k();
+                    } else {
+                        c4Var = c4Var3;
+                        r42 = 0;
+                        i2Var = i2Var3;
                     }
-                }
-                break;
-            case 4:
-                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) this.c;
-                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) this.b;
-                gz gzVar = (gz) this.d;
-                ij ijVar2 = (ij) this.e;
-                org.telegram.ui.Wallet.h7 h7Var = (org.telegram.ui.Wallet.h7) this.f;
-                TLRPC.Updates updates = (TLRPC.Updates) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                TL_update.TL_updateSentWalletTransaction A = org.telegram.ui.Wallet.l0.A(updates);
-                if (tL_error == null && A != null) {
-                    String str5 = A.msg_hash;
-                    if (!TextUtils.isEmpty(str5) && org.telegram.ui.Wallet.l0.g0(str5) != null) {
-                        objArr = true;
-                        Object[] objArr2 = (!wallettransaction.pending || wallettransaction.failed || TextUtils.isEmpty(wallettransaction.id)) ? false : true;
-                        if (objArr == false && objArr2 == false) {
-                            z13 = false;
-                        }
-                        gzVar.k(ijVar2, updates, z13);
-                        if (updates != null) {
-                            Utilities.d.c(new sb1(i12, l0Var, updates));
-                        }
-                        if (objArr != true) {
-                            org.telegram.ui.Wallet.l0.H("transfer is sent, msg_hash=" + A.msg_hash + ", gasless=" + A.gasless);
-                            l0Var.d(wallettransaction, A);
-                            break;
+                    if (savedStarGift2.gift instanceof TL_stars.TL_starGiftUnique) {
+                        if (!wp0Var.c() || c4Var.d || (savedStarGift2.unsaved && savedStarGift2.pinned_to_top)) {
+                            c4Var2 = c4Var;
+                            savedStarGift = savedStarGift2;
+                            i2Var2 = i2Var;
+                            str = null;
+                            z10 = r42;
+                            k8Var = k8Var2;
+                            if (wp0Var.c() && c4Var2.d) {
+                                I.c(R.drawable.tabs_reorder, hd.M0(2131750033, null), new o3(c4Var2, 1), z10);
+                                starGift = savedStarGift.gift;
+                                tL_starGiftUnique = (TL_stars.TL_starGiftUnique) starGift;
+                                if (starGift.slug == null) {
+                                    str2 = np.s1(i10).V2 + "/nft/" + savedStarGift.gift.slug;
+                                } else {
+                                    str2 = str;
+                                }
+                                if (di.c6.L1(i10, org.telegram.messenger.m5.o(tL_starGiftUnique.owner_id))) {
+                                    boolean M1 = di.c6.M1(i10, tL_starGiftUnique);
+                                    int i17 = M1 ? R.drawable.menu_takeoff : R.drawable.menu_wear;
+                                    String M0 = hd.M0(M1 ? 2131749879 : 2131749842, str);
+                                    final int i18 = z10 ? 1 : 0;
+                                    I.c(i17, M0, new Runnable() { // from class: bi.p3
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            switch (i18) {
+                                                case 0:
+                                                    c4 c4Var5 = c4Var2;
+                                                    b4 b4Var = new b4(c4Var5, c4Var5.getContext(), c4Var5.b, c4Var5.a.c, c4Var5.c, 0);
+                                                    b4Var.k2(savedStarGift, null);
+                                                    b4Var.u2(false);
+                                                    break;
+                                                case 1:
+                                                    c4 c4Var6 = c4Var2;
+                                                    b4 b4Var2 = new b4(c4Var6, c4Var6.getContext(), c4Var6.b, c4Var6.a.c, c4Var6.c, 1);
+                                                    b4Var2.k2(savedStarGift, null);
+                                                    b4Var2.O1();
+                                                    break;
+                                                default:
+                                                    c4 c4Var7 = c4Var2;
+                                                    b4 b4Var3 = new b4(c4Var7, c4Var7.getContext(), c4Var7.b, c4Var7.a.c, c4Var7.c, 2);
+                                                    b4Var3.k2(savedStarGift, null);
+                                                    b4Var3.X1();
+                                                    break;
+                                            }
+                                        }
+                                    }, z10);
+                                }
+                                I.l(R.drawable.msg_link2, hd.M0(2131751762, str), new a1.e(28, c4Var2, str2), str2 == null ? true : z10 ? 1 : 0);
+                                final int i19 = 1;
+                                I.l(R.drawable.msg_share, hd.M0(2131745459, str), new Runnable() { // from class: bi.p3
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        switch (i19) {
+                                            case 0:
+                                                c4 c4Var5 = c4Var2;
+                                                b4 b4Var = new b4(c4Var5, c4Var5.getContext(), c4Var5.b, c4Var5.a.c, c4Var5.c, 0);
+                                                b4Var.k2(savedStarGift, null);
+                                                b4Var.u2(false);
+                                                break;
+                                            case 1:
+                                                c4 c4Var6 = c4Var2;
+                                                b4 b4Var2 = new b4(c4Var6, c4Var6.getContext(), c4Var6.b, c4Var6.a.c, c4Var6.c, 1);
+                                                b4Var2.k2(savedStarGift, null);
+                                                b4Var2.O1();
+                                                break;
+                                            default:
+                                                c4 c4Var7 = c4Var2;
+                                                b4 b4Var3 = new b4(c4Var7, c4Var7.getContext(), c4Var7.b, c4Var7.a.c, c4Var7.c, 2);
+                                                b4Var3.k2(savedStarGift, null);
+                                                b4Var3.X1();
+                                                break;
+                                        }
+                                    }
+                                }, str2 == null ? true : z10 ? 1 : 0);
+                            }
                         } else {
-                            h7Var.run();
-                            if (tL_error != null && (str = tL_error.text) != null) {
-                                str3 = str;
+                            boolean z18 = savedStarGift2.pinned_to_top;
+                            int i20 = z18 ? R.drawable.msg_unpin : R.drawable.msg_pin;
+                            if (z18) {
+                                i7 = 2131749884;
+                                str3 = null;
+                            } else {
+                                str3 = null;
+                                i7 = 2131750078;
                             }
-                            org.telegram.ui.Wallet.l0.j("sendTransfer: ".concat(str3));
-                            break;
+                            k8Var = k8Var2;
+                            savedStarGift = savedStarGift2;
+                            str = str3;
+                            i2Var2 = i2Var;
+                            c4Var2 = c4Var;
+                            z10 = r42;
+                            I.c(i20, hd.M0(i7, str3), new androidx.car.app.utils.a(c4Var2, savedStarGift, i2Var2, view, 1), z10);
+                            I.l(R.drawable.tabs_reorder, hd.M0(2131750033, str), new o3(c4Var2, z10 ? 1 : 0), savedStarGift.pinned_to_top);
+                        }
+                        starGift = savedStarGift.gift;
+                        tL_starGiftUnique = (TL_stars.TL_starGiftUnique) starGift;
+                        if (starGift.slug == null) {
+                        }
+                        if (di.c6.L1(i10, org.telegram.messenger.m5.o(tL_starGiftUnique.owner_id))) {
+                        }
+                        I.l(R.drawable.msg_link2, hd.M0(2131751762, str), new a1.e(28, c4Var2, str2), str2 == null ? true : z10 ? 1 : 0);
+                        final int i192 = 1;
+                        I.l(R.drawable.msg_share, hd.M0(2131745459, str), new Runnable() { // from class: bi.p3
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i192) {
+                                    case 0:
+                                        c4 c4Var5 = c4Var2;
+                                        b4 b4Var = new b4(c4Var5, c4Var5.getContext(), c4Var5.b, c4Var5.a.c, c4Var5.c, 0);
+                                        b4Var.k2(savedStarGift, null);
+                                        b4Var.u2(false);
+                                        break;
+                                    case 1:
+                                        c4 c4Var6 = c4Var2;
+                                        b4 b4Var2 = new b4(c4Var6, c4Var6.getContext(), c4Var6.b, c4Var6.a.c, c4Var6.c, 1);
+                                        b4Var2.k2(savedStarGift, null);
+                                        b4Var2.O1();
+                                        break;
+                                    default:
+                                        c4 c4Var7 = c4Var2;
+                                        b4 b4Var3 = new b4(c4Var7, c4Var7.getContext(), c4Var7.b, c4Var7.a.c, c4Var7.c, 2);
+                                        b4Var3.k2(savedStarGift, null);
+                                        b4Var3.X1();
+                                        break;
+                                }
+                            }
+                        }, str2 == null ? true : z10 ? 1 : 0);
+                    } else {
+                        c4Var2 = c4Var;
+                        savedStarGift = savedStarGift2;
+                        i2Var2 = i2Var;
+                        str = null;
+                        z10 = r42;
+                        k8Var = k8Var2;
+                        if (wp0Var.c() && c4Var2.d) {
+                            I.c(R.drawable.tabs_reorder, hd.M0(2131750033, null), new o3(c4Var2, 3), z10);
                         }
                     }
-                }
-                objArr = false;
-                if (!wallettransaction.pending) {
-                }
-                if (objArr == false) {
-                    z13 = false;
-                }
-                gzVar.k(ijVar2, updates, z13);
-                if (updates != null) {
-                }
-                if (objArr != true) {
-                }
-                break;
-            case 5:
-                org.telegram.ui.Wallet.l0 l0Var2 = (org.telegram.ui.Wallet.l0) this.c;
-                org.telegram.ui.Wallet.h7 h7Var2 = (org.telegram.ui.Wallet.h7) this.b;
-                org.telegram.ui.Wallet.g0 g0Var = (org.telegram.ui.Wallet.g0) this.d;
-                org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) this.e;
-                TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) this.f;
-                TLRPC.Updates updates2 = (TLRPC.Updates) obj;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                TL_update.TL_updateSentWalletTransaction A2 = org.telegram.ui.Wallet.l0.A(updates2);
-                if (updates2 != null) {
-                    Utilities.d.c(new sb1(i12, l0Var2, updates2));
-                }
-                if (A2 != null) {
-                    String str6 = A2.msg_hash;
-                    if (!TextUtils.isEmpty(str6) && org.telegram.ui.Wallet.l0.g0(str6) != null) {
-                        org.telegram.ui.Wallet.l0.H("disable backup: transfer is sent, msg_hash=" + A2.msg_hash + ", gasless=" + A2.gasless);
-                        org.telegram.ui.Wallet.f0 f0Var = new org.telegram.ui.Wallet.f0(l0Var2);
-                        f0Var.a = A2.msg_hash;
-                        f0Var.c = g0Var.c;
-                        f0Var.b = i0Var;
-                        if (A2.transaction != null) {
-                            f0Var.a();
-                        } else {
-                            l0Var2.r.add(f0Var);
-                        }
-                        l0Var2.d(wallettransaction2, A2);
-                        break;
+                    if (di.c6.L1(i10, wp0Var.c)) {
+                        boolean z19 = savedStarGift.unsaved;
+                        I.c(z19 ? R.drawable.msg_message : R.drawable.menu_hide_gift, hd.M0(z19 ? 2131749981 : 2131750187, str), new aa.r(c4Var2, savedStarGift, i2Var2, 8), z10);
                     }
-                }
-                h7Var2.run();
-                if (tL_error2 != null && (str2 = tL_error2.text) != null) {
-                    str3 = str2;
-                }
-                org.telegram.ui.Wallet.l0.j("disable backup: sendTransfer: ".concat(str3));
-                break;
-            case 6:
-                org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) this.c;
-                c20 c20Var = (c20) this.b;
-                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) this.d;
-                org.telegram.ui.Wallet.i0 i0Var2 = (org.telegram.ui.Wallet.i0) this.e;
-                TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) this.f;
-                TLRPC.Updates updates3 = (TLRPC.Updates) obj;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                if (updates3 != null) {
-                    z12 = updates3.update instanceof TL_update.TL_updateSentWalletTransaction;
-                    ArrayList<TLRPC.Update> arrayList = updates3.updates;
-                    int size = arrayList.size();
-                    int i19 = 0;
-                    while (i19 < size) {
-                        TLRPC.Update update = arrayList.get(i19);
-                        i19++;
-                        z12 |= update instanceof TL_update.TL_updateSentWalletTransaction;
+                    TL_stars.StarGift starGift2 = savedStarGift.gift;
+                    if (starGift2 instanceof TL_stars.TL_starGiftUnique) {
+                        final int i21 = 2;
+                        I.l(R.drawable.menu_transfer, hd.M0(2131749918, str), new Runnable() { // from class: bi.p3
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i21) {
+                                    case 0:
+                                        c4 c4Var5 = c4Var2;
+                                        b4 b4Var = new b4(c4Var5, c4Var5.getContext(), c4Var5.b, c4Var5.a.c, c4Var5.c, 0);
+                                        b4Var.k2(savedStarGift, null);
+                                        b4Var.u2(false);
+                                        break;
+                                    case 1:
+                                        c4 c4Var6 = c4Var2;
+                                        b4 b4Var2 = new b4(c4Var6, c4Var6.getContext(), c4Var6.b, c4Var6.a.c, c4Var6.c, 1);
+                                        b4Var2.k2(savedStarGift, null);
+                                        b4Var2.O1();
+                                        break;
+                                    default:
+                                        c4 c4Var7 = c4Var2;
+                                        b4 b4Var3 = new b4(c4Var7, c4Var7.getContext(), c4Var7.b, c4Var7.a.c, c4Var7.c, 2);
+                                        b4Var3.k2(savedStarGift, null);
+                                        b4Var3.X1();
+                                        break;
+                                }
+                            }
+                        }, org.telegram.messenger.m5.o(((TL_stars.TL_starGiftUnique) starGift2).owner_id) == m10.i(i10).e() ? true : z10 ? 1 : 0);
                     }
-                    Utilities.d.c(new sb1(7, d2Var, updates3));
-                } else {
-                    z12 = false;
-                }
-                if (tL_error3 != null && "WALLET_KEY_MISMATCH".equals(tL_error3.text)) {
-                    d2Var.b.E();
-                }
-                if ((tL_error3 == null && !z12) || (tL_error3 != null && ((i11 = tL_error3.code) < 0 || i11 >= 500))) {
-                    c20Var.a(org.telegram.ui.Wallet.d2.z(tL_error3, "sendTransfer"));
-                    break;
-                } else {
-                    d2Var.y(z1Var, i0Var2, tL_error3 == null ? Base64.encodeToString(sendtransfer.data_normal, 2) : null, tL_error3 == null ? -1 : 0, tL_error3 != null ? org.telegram.ui.Wallet.d2.z(tL_error3, "sendTransfer") : null, c20Var);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Wallet.d2 d2Var2 = (org.telegram.ui.Wallet.d2) this.c;
-                org.telegram.ui.Wallet.m mVar = (org.telegram.ui.Wallet.m) this.b;
-                TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) this.d;
-                String str7 = (String) this.e;
-                byte[] bArr = (byte[]) this.f;
-                org.telegram.ui.Wallet.i0 i0Var3 = (org.telegram.ui.Wallet.i0) obj;
-                String str8 = (String) obj2;
-                d2Var2.getClass();
-                if (str8 == null && i0Var3 != null) {
-                    org.telegram.ui.Wallet.i0 b10 = i0Var3.b();
-                    org.telegram.ui.Wallet.s sVar = new org.telegram.ui.Wallet.s(i13, b10, mVar);
-                    TL_wallet.tonConnectGetNextEventId tonconnectgetnexteventid = new TL_wallet.tonConnectGetNextEventId();
-                    tonconnectgetnexteventid.session_id = tonconnectsession.id;
-                    d2Var2.f.sendRequestTyped(tonconnectgetnexteventid, new d3.b(i14), new org.telegram.ui.Wallet.d1(d2Var2, sVar, b10, tonconnectsession, str7, bArr));
-                    break;
-                } else {
-                    if (str8 == null) {
-                        str8 = "Recovery phrase is unavailable";
+                    if (k8Var.h() && c4Var2.d) {
+                        z11 = true;
+                        I.c(R.drawable.msg_removefolder, hd.M0(2131750039, str), new aa.r(c4Var2, savedStarGift, I, 7), true);
+                        I.E();
+                        I.t();
+                    } else {
+                        z11 = true;
                     }
-                    mVar.a(str8);
-                    break;
+                    if (I.x() > 0) {
+                        I.V(5);
+                        I.u = z11;
+                        I.v = z11;
+                        I.L = z11;
+                        Point point = org.telegram.messenger.g0.q;
+                        int min = Math.min(point.x, point.y);
+                        I.N = min - org.telegram.messenger.g0.L(32.0f);
+                        I.O = (int) (min * 0.6f);
+                        I.P = true;
+                        I.W = true;
+                        I.Z();
+                        i2Var2.E.getImageReceiver().P0(true);
+                        z13 = true;
+                    }
+                    z13 = z10;
                 }
+            }
+            z10 = false;
+            z13 = z10;
+        }
+        return Boolean.valueOf(z13);
+    }
+
+    @Override // org.telegram.messenger.x10
+    public void m(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        b41 b41Var = (b41) obj;
+        c4 c4Var = this.a;
+        wp0 wp0Var = c4Var.a;
+        int i7 = c4Var.b;
+        if (c4Var.e == null) {
+            return;
+        }
+        Object obj3 = b41Var.G;
+        if (obj3 instanceof TL_stars.SavedStarGift) {
+            TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj3;
+            if (!c4Var.h) {
+                di.c6 c6Var = new di.c6(c4Var.getContext(), c4Var.b, wp0Var.c, c4Var.c, null);
+                c6Var.g3 = new o3(c4Var, 2);
+                c6Var.N2 = new ab.g(5, c4Var, savedStarGift);
+                c6Var.k2(savedStarGift, c4Var.e);
+                c6Var.show();
+                return;
+            }
+            if (!c4Var.d && (savedStarGift.gift instanceof TL_stars.TL_starGiftUnique)) {
+                boolean z10 = savedStarGift.pinned_to_top;
+                boolean z11 = !z10;
+                if (!z10 && savedStarGift.unsaved) {
+                    savedStarGift.unsaved = false;
+                    TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
+                    savestargift.stargift = c4Var.e.h(savedStarGift);
+                    savestargift.unsave = savedStarGift.unsaved;
+                    ConnectionsManager.getInstance(i7).sendRequest(savestargift, null, 64);
+                }
+                if (c4Var.e.o(savedStarGift, z11, true)) {
+                    cc.a0(wp0Var.a).Q(R.raw.chats_infotip, 36, hd.H(',', "GiftsPinLimit", np.s1(i7).L6)).j();
+                }
+                if (z10) {
+                    return;
+                }
+                c4Var.f.v0(0);
+            }
         }
     }
 }

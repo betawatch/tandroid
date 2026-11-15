@@ -6,14 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class w3 extends org.telegram.ui.Components.i6 {
+public final class w3 extends org.telegram.ui.Components.h6 {
     public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w3(Context context, boolean z9, boolean z10, boolean z11, int i7) {
-        super(context, z9, z10, z11);
+    public /* synthetic */ w3(Context context, boolean z10, boolean z11, boolean z12, int i7) {
+        super(context, z10, z11, z12);
         this.s = i7;
     }
 
@@ -43,7 +43,7 @@ public final class w3 extends org.telegram.ui.Components.i6 {
     public void invalidate() {
         switch (this.s) {
             case 4:
-                if (!ch.e0.b(this)) {
+                if (!ch.f0.b(this)) {
                     super.invalidate();
                     break;
                 }
@@ -54,7 +54,7 @@ public final class w3 extends org.telegram.ui.Components.i6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i6, android.view.View
+    @Override // org.telegram.ui.Components.h6, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.s) {
             case 2:
@@ -69,7 +69,7 @@ public final class w3 extends org.telegram.ui.Components.i6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i6, android.view.View
+    @Override // org.telegram.ui.Components.h6, android.view.View
     public void onMeasure(int i7, int i10) {
         switch (this.s) {
             case 3:
@@ -88,8 +88,8 @@ public final class w3 extends org.telegram.ui.Components.i6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w3(Context context, boolean z9, boolean z10, boolean z11, boolean z12, boolean z13) {
-        super(context, z9, z10, z11, z12, z13);
+    public /* synthetic */ w3(Context context, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
+        super(context, z10, z11, z12, z13, z14);
         this.s = 5;
     }
 
@@ -97,7 +97,7 @@ public final class w3 extends org.telegram.ui.Components.i6 {
     public void invalidate(int i7, int i10, int i11, int i12) {
         switch (this.s) {
             case 4:
-                if (!ch.e0.b(this)) {
+                if (!ch.f0.b(this)) {
                     super.invalidate(i7, i10, i11, i12);
                     break;
                 }

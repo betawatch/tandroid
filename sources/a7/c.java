@@ -9,24 +9,24 @@ import androidx.car.app.j;
 import h6.m;
 import j$.util.Objects;
 import l8.f;
-import m.q3;
+import m.o3;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q3 b;
+    public final /* synthetic */ o3 b;
 
-    public c(q3 q3Var, int i7) {
+    public c(o3 o3Var, int i7) {
         this.a = i7;
         switch (i7) {
             case 1:
-                Objects.requireNonNull(q3Var);
-                this.b = q3Var;
+                Objects.requireNonNull(o3Var);
+                this.b = o3Var;
                 break;
             default:
-                Objects.requireNonNull(q3Var);
-                this.b = q3Var;
+                Objects.requireNonNull(o3Var);
+                this.b = o3Var;
                 break;
         }
     }

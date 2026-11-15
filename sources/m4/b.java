@@ -1,11 +1,11 @@
 package m4;
 
-import a8.ia;
+import a8.ja;
 import e2.s0;
-import f3.j0;
+import f3.i0;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements i {
     public final /* synthetic */ int a;
@@ -15,7 +15,7 @@ public final class b implements i {
     public final int e;
     public final String f;
     public String g;
-    public j0 h;
+    public i0 h;
     public int i;
     public int j;
     public boolean k;
@@ -355,7 +355,7 @@ public final class b implements i {
                         int i34 = this.j + min2;
                         this.j = i34;
                         if (i34 == this.n) {
-                            ia.p(this.o != -9223372036854775807L);
+                            ja.p(this.o != -9223372036854775807L);
                             this.h.c(this.o, 1, this.n, 0, null);
                             this.o += this.l;
                             this.i = 0;
@@ -422,7 +422,7 @@ public final class b implements i {
                         int i38 = this.j + min4;
                         this.j = i38;
                         if (i38 == this.n) {
-                            ia.p(this.o != -9223372036854775807L);
+                            ja.p(this.o != -9223372036854775807L);
                             this.h.c(this.o, 1, this.n, 0, null);
                             this.o += this.l;
                             this.i = 0;
@@ -452,7 +452,7 @@ public final class b implements i {
     }
 
     @Override // m4.i
-    public final void e(boolean z9) {
+    public final void e(boolean z10) {
         int i7 = this.a;
     }
 
@@ -469,21 +469,21 @@ public final class b implements i {
     }
 
     @Override // m4.i
-    public final void g(f3.q qVar, g0 g0Var) {
+    public final void g(f3.q qVar, f0 f0Var) {
         switch (this.a) {
             case 0:
-                g0Var.b();
-                g0Var.c();
-                this.g = (String) g0Var.e;
-                g0Var.c();
-                this.h = qVar.O1(g0Var.c, 1);
+                f0Var.b();
+                f0Var.c();
+                this.g = (String) f0Var.e;
+                f0Var.c();
+                this.h = qVar.d2(f0Var.c, 1);
                 break;
             default:
-                g0Var.b();
-                g0Var.c();
-                this.g = (String) g0Var.e;
-                g0Var.c();
-                this.h = qVar.O1(g0Var.c, 1);
+                f0Var.b();
+                f0Var.c();
+                this.g = (String) f0Var.e;
+                f0Var.c();
+                this.h = qVar.d2(f0Var.c, 1);
                 break;
         }
     }
@@ -516,9 +516,9 @@ public final class b implements i {
         }
     }
 
-    private final void a(boolean z9) {
+    private final void a(boolean z10) {
     }
 
-    private final void b(boolean z9) {
+    private final void b(boolean z10) {
     }
 }

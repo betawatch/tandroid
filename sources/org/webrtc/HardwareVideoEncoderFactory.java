@@ -10,7 +10,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglBase14;
 import org.webrtc.VideoEncoderFactory;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     private static final List<String> H264_HW_EXCEPTION_MODELS = Arrays.asList("SAMSUNG-SGH-I337", "Nexus 7", "Nexus 4");
@@ -24,7 +24,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     private final boolean enableIntelVp8Encoder;
     private final EglBase14.Context sharedContext;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
@@ -54,8 +54,8 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
         }
     }
 
-    public HardwareVideoEncoderFactory(EglBase.Context context, boolean z9, boolean z10) {
-        this(context, z9, z10, null);
+    public HardwareVideoEncoderFactory(EglBase.Context context, boolean z10, boolean z11) {
+        this(context, z10, z11, null);
     }
 
     private BitrateAdjuster createBitrateAdjuster(VideoCodecMimeType videoCodecMimeType, String str) {
@@ -197,20 +197,20 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
         return (VideoCodecInfo[]) arrayList.toArray(new VideoCodecInfo[arrayList.size()]);
     }
 
-    public HardwareVideoEncoderFactory(EglBase.Context context, boolean z9, boolean z10, Predicate<MediaCodecInfo> predicate) {
+    public HardwareVideoEncoderFactory(EglBase.Context context, boolean z10, boolean z11, Predicate<MediaCodecInfo> predicate) {
         if (context instanceof EglBase14.Context) {
             this.sharedContext = (EglBase14.Context) context;
         } else {
             Logging.w(TAG, "No shared EglBase.Context.  Encoders will not use texture mode.");
             this.sharedContext = null;
         }
-        this.enableIntelVp8Encoder = z9;
-        this.enableH264HighProfile = z10;
+        this.enableIntelVp8Encoder = z10;
+        this.enableH264HighProfile = z11;
         this.codecAllowedPredicate = predicate;
     }
 
     @Deprecated
-    public HardwareVideoEncoderFactory(boolean z9, boolean z10) {
-        this(null, z9, z10);
+    public HardwareVideoEncoderFactory(boolean z10, boolean z11) {
+        this(null, z10, z11);
     }
 }

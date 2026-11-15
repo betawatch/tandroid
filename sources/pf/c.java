@@ -1,6 +1,6 @@
 package pf;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -11,10 +11,10 @@ public final class c {
 
     public final String a(String str, String str2, String str3) {
         StringBuilder sb2 = new StringBuilder(20);
-        boolean z9 = false;
-        int i7 = 0;
         boolean z10 = false;
+        int i7 = 0;
         boolean z11 = false;
+        boolean z12 = false;
         for (int i10 = 0; i10 < this.e.length(); i10++) {
             char charAt = this.e.charAt(i10);
             if (charAt != '#') {
@@ -23,15 +23,15 @@ public final class c {
                         if (str2 != null) {
                             sb2.append(str2);
                         }
-                        z9 = true;
+                        z10 = true;
                     } else if (charAt == 'n') {
                         if (str3 != null) {
                             sb2.append(str3);
                         }
-                        z10 = true;
+                        z11 = true;
                     }
                 } else if (i7 < str.length()) {
-                    z11 = true;
+                    z12 = true;
                 }
                 if (charAt == ' ' && i10 > 0) {
                     int i11 = i10 - 1;
@@ -42,23 +42,23 @@ public final class c {
                     if (this.e.charAt(i11) == 'c' && str2 == null) {
                     }
                 }
-                if (i7 < str.length() || (z11 && charAt == ')')) {
+                if (i7 < str.length() || (z12 && charAt == ')')) {
                     sb2.append(this.e.substring(i10, i10 + 1));
                     if (charAt == ')') {
-                        z11 = false;
+                        z12 = false;
                     }
                 }
             } else if (i7 < str.length()) {
                 int i12 = i7 + 1;
                 sb2.append(str.substring(i7, i12));
                 i7 = i12;
-            } else if (z11) {
+            } else if (z12) {
                 sb2.append(" ");
             }
         }
-        if (str2 != null && !z9) {
+        if (str2 != null && !z10) {
             sb2.insert(0, str2.concat(" "));
-        } else if (str3 != null && !z10) {
+        } else if (str3 != null && !z11) {
             sb2.insert(0, str3);
         }
         return sb2.toString();

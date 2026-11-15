@@ -1,219 +1,195 @@
 package di;
 
+import android.graphics.Bitmap;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.Arrays;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.yr;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.is;
+import org.telegram.messenger.np;
+import org.telegram.messenger.s10;
+import org.telegram.messenger.u10;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.r1, lh.a {
+public final /* synthetic */ class s1 implements u10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j4 b;
+    public final /* synthetic */ is b;
 
-    public /* synthetic */ s1(j4 j4Var, int i7) {
+    public /* synthetic */ s1(is isVar, int i7) {
         this.a = i7;
-        this.b = j4Var;
+        this.b = isVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r12v10 */
-    /* JADX WARN: Type inference failed for: r12v11 */
-    /* JADX WARN: Type inference failed for: r12v5 */
-    /* JADX WARN: Type inference failed for: r12v6 */
-    /* JADX WARN: Type inference failed for: r12v7 */
-    /* JADX WARN: Type inference failed for: r12v8, types: [org.telegram.tgnet.TLRPC$UserFull] */
-    /* JADX WARN: Type inference failed for: r4v21, types: [java.util.ArrayList] */
-    /* JADX WARN: Type inference failed for: r4v22, types: [java.util.ArrayList] */
-    /* JADX WARN: Type inference failed for: r4v9, types: [org.telegram.messenger.yr] */
-    /* JADX WARN: Type inference failed for: r9v10 */
-    /* JADX WARN: Type inference failed for: r9v11, types: [java.lang.Object, org.telegram.tgnet.tl.TL_stories$PeerStories] */
-    /* JADX WARN: Type inference failed for: r9v14 */
-    /* JADX WARN: Type inference failed for: r9v5 */
-    /* JADX WARN: Type inference failed for: r9v6 */
-    /* JADX WARN: Type inference failed for: r9v9 */
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        long j3;
-        TLRPC.ChatFull chatFull;
-        ?? r92;
-        ?? r12;
-        boolean z9;
-        boolean z10;
-        TL_stories.StoryItem storyItem;
-        int i10 = this.a;
-        j4 j4Var = this.b;
-        switch (i10) {
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj, Object obj2, Object obj3) {
+        int i7;
+        hi.t tVar;
+        switch (this.a) {
             case 0:
-                o2 o2Var = j4Var.K1;
-                if (o2Var != null) {
-                    o2Var.x();
-                    break;
+                ((c6) this.b).q2((View) obj2, (CharSequence) obj, ((Boolean) obj3).booleanValue());
+                break;
+            case 1:
+                c6 c6Var = (c6) this.b;
+                ArrayList arrayList = (ArrayList) obj;
+                s10 s10Var = (s10) obj2;
+                Runnable runnable = (Runnable) obj3;
+                bi.y5 y5Var = c6Var.S2;
+                if (y5Var != null) {
+                    y5Var.b();
+                    c6Var.S2 = null;
                 }
+                TL_stars.craftStarGift craftstargift = new TL_stars.craftStarGift();
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj4 = arrayList.get(i10);
+                    i10++;
+                    TL_stars.TL_inputSavedStarGiftSlug tL_inputSavedStarGiftSlug = new TL_stars.TL_inputSavedStarGiftSlug();
+                    tL_inputSavedStarGiftSlug.slug = ((TL_stars.StarGift) obj4).slug;
+                    craftstargift.stargift.add(tL_inputSavedStarGiftSlug);
+                }
+                ConnectionsManager.getInstance(c6Var.a).sendRequestTyped(craftstargift, new d3.b(1), new b2(c6Var, s10Var, arrayList, runnable, 0));
                 break;
             default:
-                h4 h4Var = j4Var.x1;
-                int i11 = 0;
-                boolean z11 = true;
-                TLRPC.ChatFull chatFull2 = null;
-                if (h4Var.f && (storyItem = h4Var.a) != null) {
-                    TLRPC.MessageMedia messageMedia = storyItem.media;
-                    if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
-                        TLRPC.InputGroupCall inputGroupCall = ((TLRPC.TL_messageMediaVideoStream) messageMedia).call;
-                        g1 g1Var = g1.W;
-                        if (g1Var != null && g1Var.f(inputGroupCall)) {
-                            g1.W.e();
-                            if (g1.W != null) {
-                                g1.W = null;
-                                qs.f(j4Var.l2).k(qs.G2, Long.valueOf(g1.W.g()));
+                hi.sa saVar = (hi.sa) this.b;
+                Boolean bool = (Boolean) obj;
+                ArrayList arrayList2 = (ArrayList) obj2;
+                ArrayList arrayList3 = (ArrayList) obj3;
+                if (saVar.g0 == 0 && arrayList2 != null && !arrayList2.isEmpty() && saVar.q2 == null && !saVar.X && saVar.I()) {
+                    saVar.I1 = null;
+                    saVar.J1 = null;
+                    saVar.K1 = null;
+                    if (bool.booleanValue()) {
+                        if (arrayList2.size() + saVar.B0.getFilledCount() > saVar.B0.getTotalCount()) {
+                            int size2 = arrayList2.size() + saVar.B0.getFilledCount();
+                            ArrayList a10 = hi.t.a();
+                            int size3 = a10.size();
+                            int i11 = 0;
+                            while (true) {
+                                if (i11 < size3) {
+                                    Object obj5 = a10.get(i11);
+                                    i11++;
+                                    tVar = (hi.t) obj5;
+                                    if (tVar.e.size() >= size2) {
+                                    }
+                                } else {
+                                    tVar = null;
+                                }
+                            }
+                            if (tVar == null) {
+                                saVar.B0.o(null);
+                                saVar.B0.c();
+                                saVar.J0.setSelected((hi.t) null);
+                                hi.v9 v9Var = saVar.C0;
+                                if (v9Var != null) {
+                                    v9Var.recordHevc = !saVar.B0.j();
+                                }
+                                saVar.J0.a(false, true);
+                                saVar.l0(true);
+                                break;
+                            } else {
+                                hi.fa faVar = saVar.B0;
+                                saVar.A0 = tVar;
+                                faVar.o(tVar);
+                                saVar.J0.setSelected(tVar);
+                                int indexOf = hi.t.a().indexOf(tVar);
+                                if (indexOf >= 0) {
+                                    saVar.J0.a.v0(indexOf);
+                                }
+                                hi.v9 v9Var2 = saVar.C0;
+                                if (v9Var2 != null) {
+                                    v9Var2.recordHevc = !saVar.B0.j();
+                                }
+                                saVar.H0.setDrawable(new hi.u(tVar, false));
+                                saVar.b0(saVar.I0, saVar.J0.e, true);
+                                saVar.P0.e(true, saVar.B0.j() ? saVar.B0.getFilledProgress() : 0.0f);
                             }
                         }
                     }
-                }
-                TL_stories.StoryItem storyItem2 = h4Var.a;
-                if (storyItem2 instanceof j6) {
-                    k6 k6Var = ((j6) storyItem2).a;
-                    TLRPC.MessageMedia messageMedia2 = storyItem2.media;
-                    k6Var.getClass();
-                    k6Var.F(new ArrayList(Arrays.asList(messageMedia2)));
-                } else if (storyItem2 != null) {
-                    j4 j4Var2 = h4Var.k;
-                    z6 z6Var = j4Var2.B1;
-                    long j10 = j4Var2.k1;
-                    a0.h hVar = z6Var.i;
-                    int i12 = z6Var.a;
-                    if (!(storyItem2 instanceof TL_stories.TL_storyItemDeleted)) {
-                        int i13 = 0;
-                        while (i13 < 2) {
-                            if (i13 == 0) {
-                                j3 = 0;
-                                TLRPC.ChatFull chatFull3 = chatFull2;
-                                chatFull = chatFull3;
-                                r92 = (TL_stories.PeerStories) hVar.f(j10);
-                                r12 = chatFull3;
-                            } else if (j10 >= 0) {
-                                TLRPC.UserFull b22 = qp.s1(i12).b2(j10);
-                                if (b22 != null) {
-                                    j3 = 0;
-                                    chatFull = chatFull2;
-                                    r12 = b22;
-                                    r92 = b22.stories;
+                    saVar.M1 = true;
+                    int i12 = 0;
+                    while (true) {
+                        if (i12 < arrayList2.size()) {
+                            hi.d7 l10 = hi.d7.l((ff) arrayList2.get(i12));
+                            l10.M0 = (Bitmap) arrayList3.get(i12);
+                            l10.J0 = saVar.w0;
+                            l10.K0 = saVar.x0;
+                            l10.A();
+                            if (!bool.booleanValue()) {
+                                if (saVar.L1 == null) {
+                                    saVar.L1 = l10;
                                 } else {
-                                    j3 = 0;
-                                    chatFull = chatFull2;
-                                    r12 = b22;
-                                    r92 = chatFull;
-                                }
-                            } else {
-                                j3 = 0;
-                                TLRPC.ChatFull N0 = qp.s1(i12).N0(-j10);
-                                if (N0 != null) {
-                                    chatFull = N0;
-                                    r92 = N0.stories;
-                                    r12 = chatFull2;
-                                } else {
-                                    TLRPC.ChatFull chatFull4 = chatFull2;
-                                    chatFull = N0;
-                                    r92 = chatFull4;
-                                    r12 = chatFull4;
-                                }
-                            }
-                            if (r92 != 0) {
-                                int i14 = i11;
-                                while (true) {
-                                    if (i14 < r92.stories.size()) {
-                                        if (r92.stories.get(i14).id == storyItem2.id) {
-                                            r92.stories.remove(i14);
-                                            if (r92.stories.size() == 0) {
-                                                if (!z6Var.M(j10)) {
-                                                    hVar.l(j10);
-                                                    z6Var.g.remove(r92);
-                                                    z6Var.h.remove(r92);
-                                                }
-                                                if (j10 > j3) {
-                                                    TLRPC.User a22 = qp.s1(i12).a2(Long.valueOf(j10));
-                                                    if (a22 != null) {
-                                                        a22.stories_unavailable = z11;
-                                                    }
-                                                } else {
-                                                    TLRPC.Chat M0 = qp.s1(i12).M0(Long.valueOf(-j10));
-                                                    if (M0 != null) {
-                                                        M0.stories_unavailable = true;
-                                                    }
-                                                }
-                                            }
-                                        } else {
-                                            i14++;
-                                            z11 = true;
-                                        }
+                                    if (saVar.I1 == null) {
+                                        ArrayList arrayList4 = new ArrayList();
+                                        saVar.I1 = arrayList4;
+                                        arrayList4.add(saVar.L1);
+                                    }
+                                    if (saVar.I1.size() < 10) {
+                                        saVar.I1.add(l10);
                                     }
                                 }
-                            }
-                            if (chatFull != null) {
-                                z9 = false;
-                                yr.a0(i12).N1(chatFull, false);
+                                i12++;
+                            } else if (saVar.B0.l(l10)) {
+                                saVar.L1 = hi.d7.a(saVar.B0.getLayout(), saVar.B0.getContent());
                             } else {
-                                z9 = false;
+                                i12++;
                             }
-                            if (r12 != 0) {
-                                yr.a0(i12).j2(r12, z9);
-                            }
-                            i13++;
-                            i11 = 0;
-                            z11 = true;
-                            chatFull2 = null;
                         }
-                        TL_stories.TL_stories_deleteStories tL_stories_deleteStories = new TL_stories.TL_stories_deleteStories();
-                        tL_stories_deleteStories.peer = qp.s1(i12).j1(j10);
-                        tL_stories_deleteStories.id.add(Integer.valueOf(storyItem2.id));
-                        ConnectionsManager.getInstance(i12).sendRequest(tL_stories_deleteStories, new y5(z6Var, 4));
-                        m7 m7Var = z6Var.k;
-                        m7Var.b.a.c(new j7(m7Var, j10, storyItem2.id, 1));
-                        qs.f(i12).k(qs.v5, new Object[0]);
-                        qp.s1(i12).D();
-                        z6Var.n0(j10, Arrays.asList(storyItem2));
                     }
-                } else {
-                    y6 y6Var = h4Var.b;
-                    if (y6Var != null) {
-                        y6Var.a();
-                    }
-                }
-                j4Var.h1();
-                if (!j4Var.t1 || j4Var.j1 != 0) {
-                    int i15 = j4Var.s1;
-                    int i16 = j4Var.j1;
-                    if (i15 >= i16) {
-                        j4Var.s1 = i16 - 1;
-                        z10 = false;
+                    if (saVar.I1 != null) {
+                        saVar.h0(false, true);
+                        saVar.R0.a(saVar.P1);
+                        hi.f6 f6Var = saVar.P0;
+                        boolean z10 = saVar.P1 == 1;
+                        f6Var.o0 = -1.0f;
+                        f6Var.p0 = z10;
+                        f6Var.invalidate();
+                        saVar.J1 = new ArrayList();
+                        saVar.K1 = new ArrayList();
+                        for (int i13 = 0; i13 < saVar.I1.size(); i13 = com.google.android.gms.internal.vision.e2.f(i13, i13, 1, saVar.K1)) {
+                            saVar.J1.add(Integer.valueOf(i13));
+                        }
+                        saVar.B0.n(null);
+                        saVar.J0.a(false, true);
+                        saVar.l0(true);
+                        saVar.e(false);
+                        saVar.J(1, true);
+                        hi.l9 l9Var = saVar.e1;
+                        if (l9Var != null) {
+                            hi.e1 e1Var = l9Var.h;
+                            if (!l9Var.J && !l9Var.N && (i7 = np.e1().getInt("multistorieshint", 0)) < 3) {
+                                np.e1().edit().putInt("multistorieshint", i7 + 1).apply();
+                                org.telegram.messenger.g0.r(e1Var);
+                                l9Var.J = true;
+                                l9Var.invalidate();
+                                org.telegram.messenger.g0.i3(e1Var, 5500L);
+                            }
+                        }
+                        hi.g3 g3Var = saVar.N0;
+                        if (g3Var != null) {
+                            saVar.m2 = g3Var.e.e0();
+                            saVar.n2 = saVar.N0.getSelectedAlbum();
+                            break;
+                        }
                     } else {
-                        z10 = false;
-                        if (i15 < 0) {
-                            j4Var.s1 = 0;
+                        hi.d7 d7Var = saVar.L1;
+                        if (d7Var != null) {
+                            d7Var.B();
+                        }
+                        saVar.J0.a(false, true);
+                        saVar.l0(true);
+                        saVar.e(false);
+                        hi.g3 g3Var2 = saVar.N0;
+                        if (g3Var2 != null) {
+                            saVar.m2 = g3Var2.e.e0();
+                            saVar.n2 = saVar.N0.getSelectedAlbum();
+                            break;
                         }
                     }
-                    j4Var.d1(z10);
-                    q9 q9Var = j4Var.s0;
-                    if (q9Var != null) {
-                        q9Var.r();
-                        break;
-                    }
-                } else {
-                    ((h9) j4Var.z1).j();
-                    break;
                 }
                 break;
-        }
-    }
-
-    @Override // lh.a
-    public void h(int i7) {
-        if (i7 == 0) {
-            this.b.N0();
         }
     }
 }

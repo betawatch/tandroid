@@ -1,25 +1,26 @@
 package t3;
 
-import a8.ia;
-import c8.e1;
+import a8.ja;
+import c8.g1;
+import com.google.android.gms.internal.vision.e2;
 import e2.n0;
-import h2.m0;
+import h2.l0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n extends i {
     public final String b;
     public final i0 c;
 
-    public n(String str, String str2, t1 t1Var) {
+    public n(String str, String str2, s1 s1Var) {
         super(str);
-        ia.f(!t1Var.isEmpty());
+        ja.f(!s1Var.isEmpty());
         this.b = str2;
-        i0 q10 = i0.q(t1Var);
+        i0 q10 = i0.q(s1Var);
         this.c = q10;
     }
 
@@ -251,7 +252,7 @@ public final class n extends i {
                 case 6:
                 case 21:
                     String str3 = (String) i0Var.get(0);
-                    String str4 = m0.a;
+                    String str4 = l0.a;
                     String[] split = str3.split("/", -1);
                     int parseInt3 = Integer.parseInt(split[0]);
                     Integer valueOf = split.length > 1 ? Integer.valueOf(Integer.parseInt(split[1])) : null;
@@ -271,7 +272,7 @@ public final class n extends i {
                     n0Var.t = Integer.valueOf(Integer.parseInt((String) i0Var.get(0)));
                     break;
                 case '\f':
-                    Integer g10 = e1.g((String) i0Var.get(0));
+                    Integer g10 = g1.g((String) i0Var.get(0));
                     if (g10 != null) {
                         String a10 = j.a(g10.intValue());
                         if (a10 != null) {
@@ -328,7 +329,7 @@ public final class n extends i {
     }
 
     public final int hashCode() {
-        int h = com.google.android.recaptcha.internal.a.h(527, 31, this.a);
+        int h = e2.h(527, 31, this.a);
         String str = this.b;
         return this.c.hashCode() + ((h + (str != null ? str.hashCode() : 0)) * 31);
     }

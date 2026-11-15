@@ -1,25 +1,70 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class wd {
-    public String b;
-    public CharSequence c;
-    public long d;
-    public long e;
-    public String f;
-    public boolean g;
-    public String h;
-    public long j;
-    public boolean a = true;
-    public TL_stars.StarsAmount i = TL_stars.StarsAmount.ofStars(0);
+public final class wd extends FrameLayout {
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.Components.o5 b;
+    public final TextView c;
+    public final TextView d;
+    public final DecimalFormat e;
+    public boolean f;
 
-    public static wd a(String str, String str2) {
-        wd wdVar = new wd();
-        wdVar.b = str;
-        wdVar.c = str2;
-        return wdVar;
+    public wd(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.a = e6Var;
+        LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
+        addView(f10, c8.ja.d(-1, -2.0f, org.telegram.messenger.ns.E1, 17.0f, 9.0f, 130.0f, 9.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.G6, e6Var);
+        f10.addView(textView, c8.ja.o(-1, -2));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 13.0f);
+        org.telegram.ui.ActionBar.q6.U(textView2, org.telegram.ui.ActionBar.j6.y6, e6Var);
+        f10.addView(textView2, c8.ja.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2));
+        org.telegram.ui.Components.o5 o5Var = new org.telegram.ui.Components.o5(context);
+        this.b = o5Var;
+        o5Var.setTypeface(org.telegram.messenger.g0.o());
+        o5Var.setTextSize(1, 13.0f);
+        addView(o5Var, c8.ja.d(-2, -2.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+        DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
+        decimalFormatSymbols.setDecimalSeparator('.');
+        DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
+        this.e = decimalFormat;
+        decimalFormat.setMinimumFractionDigits(2);
+        decimalFormat.setMaximumFractionDigits(12);
+        decimalFormat.setGroupingUsed(false);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.f) {
+            org.telegram.ui.ActionBar.e6 e6Var = this.a;
+            Paint d = e6Var != null ? e6Var.d("paintDivider") : org.telegram.ui.ActionBar.j6.k0;
+            if (d != null) {
+                canvas.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(17.0f) : 0), getMeasuredHeight() - 1, d);
+            }
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 }

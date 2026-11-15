@@ -7,14 +7,13 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import bg.s;
-import jg.g;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.messenger.t0;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class c extends Drawable {
     public final /* synthetic */ int a;
@@ -24,8 +23,8 @@ public final class c extends Drawable {
 
     public c() {
         this.a = 1;
-        this.d = qs.e4;
-        this.b = g.h(t0.b, R.drawable.settings_arrow);
+        this.d = ns.e4;
+        this.b = i5.c.g(t0.b, R.drawable.settings_arrow);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -37,16 +36,16 @@ public final class c extends Drawable {
             default:
                 float exactCenterX = getBounds().exactCenterX();
                 float exactCenterY = getBounds().exactCenterY();
-                int x02 = m6.x0(null, m6.G6, false);
-                int x03 = m6.x0(null, m6.d6, false);
+                int x02 = j6.x0(null, j6.G6, false);
+                int x03 = j6.x0(null, j6.d6, false);
                 int i7 = this.c;
                 Drawable drawable = this.b;
                 if (i7 != x03) {
                     this.c = x03;
                     drawable.setColorFilter(new PorterDuffColorFilter(x03, PorterDuff.Mode.SRC_IN));
                 }
-                canvas.drawCircle(exactCenterX, exactCenterY, g0.L(7.6666665f), m6.n0(i0.a.o(x03, this.d)));
-                canvas.drawCircle(exactCenterX, exactCenterY, g0.L(6.6666665f), m6.n0(i0.a.o(x02, this.d)));
+                canvas.drawCircle(exactCenterX, exactCenterY, g0.L(7.6666665f), j6.n0(i0.a.o(x03, this.d)));
+                canvas.drawCircle(exactCenterX, exactCenterY, g0.L(6.6666665f), j6.n0(i0.a.o(x02, this.d)));
                 s.d(drawable, exactCenterX, exactCenterY, 17);
                 canvas.translate(0.0f, g0.L(0.66f));
                 canvas.save();

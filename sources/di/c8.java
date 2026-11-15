@@ -1,147 +1,77 @@
 package di;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.qp;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.my0;
-import org.telegram.ui.Components.wp;
-import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class c8 {
-    public static CharSequence[] y;
-    public int a;
-    public Long b;
-    public Integer c;
-    public Integer d;
-    public boolean e;
-    public TLRPC.Document g;
-    public SpannableStringBuilder k;
-    public String l;
-    public boolean m;
-    public my0 n;
-    public my0 o;
-    public boolean p;
-    public boolean q;
-    public View r;
-    public Runnable s;
-    public int x;
-    public boolean f = true;
-    public final org.telegram.ui.Components.v5 h = new org.telegram.ui.Components.v5(0, 350, wq.h);
-    public final hc i = new hc((View) null);
-    public final org.telegram.ui.Cells.y j = org.telegram.ui.ActionBar.m6.a0(553648127, 0, 0);
-    public final Paint t = new Paint(1);
-    public final Paint u = new Paint(1);
-    public final Path v = new Path();
-    public final RectF w = new RectF();
+public final /* synthetic */ class c8 implements z10 {
+    public final /* synthetic */ v8 a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ z10 d;
+    public final /* synthetic */ Context e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 f;
+    public final /* synthetic */ boolean g;
+    public final /* synthetic */ String h;
+    public final /* synthetic */ gj i;
+    public final /* synthetic */ TLRPC.InputInvoice j;
+    public final /* synthetic */ TLRPC.TL_payments_paymentFormStars k;
+    public final /* synthetic */ int l;
+    public final /* synthetic */ long m;
 
-    public static CharSequence d() {
-        if (y == null) {
-            y = new CharSequence[2];
-        }
-        CharSequence[] charSequenceArr = y;
-        if (charSequenceArr[0] == null) {
-            charSequenceArr[0] = new SpannableStringBuilder("u");
-            wp wpVar = new wp(R.drawable.filled_widget_music, 0);
-            wpVar.c(org.telegram.messenger.g0.L(16.0f));
-            wpVar.G = 1.0f;
-            float f10 = -org.telegram.messenger.g0.L(1.0f);
-            float L = org.telegram.messenger.g0.L(1.0f);
-            wpVar.r = f10;
-            wpVar.s = L;
-            ((SpannableStringBuilder) y[0]).setSpan(wpVar, 0, 1, 33);
-        }
-        return y[0];
+    public /* synthetic */ c8(v8 v8Var, long j3, boolean[] zArr, z10 z10Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, String str, gj gjVar, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, int i7, long j10) {
+        this.a = v8Var;
+        this.b = j3;
+        this.c = zArr;
+        this.d = z10Var;
+        this.e = context;
+        this.f = e6Var;
+        this.g = z10;
+        this.h = str;
+        this.i = gjVar;
+        this.j = inputInvoice;
+        this.k = tL_payments_paymentFormStars;
+        this.l = i7;
+        this.m = j10;
     }
 
-    public final void a(Canvas canvas, float f10) {
-        if (this.n == null) {
-            CharSequence charSequence = this.k;
-            if (charSequence == null) {
-                charSequence = "";
-            }
-            TLRPC.Document document = this.g;
-            this.n = new my0(charSequence, document != null ? 12.0f : 14.0f, document != null ? null : org.telegram.messenger.g0.o());
-        }
-        if (this.o == null || this.m) {
-            String str = this.l;
-            this.o = new my0(str != null ? str : "", 14.0f, null);
-        }
-        float d = this.h.d(this.f);
-        Paint paint = this.t;
-        paint.setColor(TLObject.FLAG_30);
-        int min = (int) Math.min(f10, Math.max(this.n.c, this.o.c) + org.telegram.messenger.g0.W1(d, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(18.0f)));
-        this.x = min;
-        int W1 = org.telegram.messenger.g0.W1(d, org.telegram.messenger.g0.L(42.0f), org.telegram.messenger.g0.L(22.0f));
-        float f11 = min;
-        RectF rectF = this.w;
-        rectF.set(0.0f, 0.0f, f11, W1);
-        canvas.save();
-        float a10 = this.i.a(0.02f);
-        canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
-        float W12 = org.telegram.messenger.g0.W1(d, org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(11.0f));
-        canvas.drawRoundRect(rectF, W12, W12, paint);
-        canvas.save();
-        Path path = this.v;
-        path.rewind();
-        path.addRoundRect(rectF, W12, W12, Path.Direction.CW);
-        canvas.clipPath(path);
-        org.telegram.ui.Cells.y yVar = this.j;
-        yVar.setBounds(0, 0, min, W1);
-        yVar.draw(canvas);
-        canvas.restore();
-        canvas.save();
-        canvas.clipRect(0, 0, org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(42.0f));
-        RectF rectF2 = org.telegram.messenger.g0.P;
-        rectF2.set(0.0f, 0.0f, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(42.0f));
-        Paint paint2 = this.u;
-        paint2.setColor(-1);
-        float f12 = 1.0f - d;
-        paint2.setAlpha((int) (255.0f * f12));
-        canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(5.0f), paint2);
-        canvas.restore();
-        int L = min - org.telegram.messenger.g0.L(20.0f);
-        if (f11 < f10) {
-            L = (int) Math.min(org.telegram.messenger.g0.L(12.0f) + L, f10 - org.telegram.messenger.g0.L(20.0f));
-        }
-        my0 my0Var = this.n;
-        float f13 = L;
-        my0Var.p = f13;
-        my0Var.c(org.telegram.messenger.g0.W1(d, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(7.0f)), org.telegram.messenger.g0.W1(d, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(11.0f)), 1.0f, -1, canvas);
-        my0 my0Var2 = this.o;
-        my0Var2.p = f13;
-        my0Var2.c(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(30.0f), f12, -1, canvas);
-        canvas.restore();
-    }
-
-    public final int b() {
-        return org.telegram.messenger.g0.L(this.f ? 22.0f : 42.0f);
-    }
-
-    public final void c() {
-        if (this.p || this.q || this.b == null || this.c == null || this.r == null) {
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
+        z10 z10Var = (z10) obj;
+        v8 v8Var = this.a;
+        long j3 = v8Var.f.amount;
+        long j10 = this.b;
+        boolean[] zArr = this.c;
+        z10 z10Var2 = this.d;
+        gj gjVar = this.i;
+        TLRPC.InputInvoice inputInvoice = this.j;
+        TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars = this.k;
+        int i7 = this.l;
+        if (j3 >= j10) {
+            v8Var.Z(gjVar, inputInvoice, tL_payments_paymentFormStars, new r6(v8Var, i7, z10Var, zArr, z10Var2));
             return;
         }
-        this.q = true;
-        qp.s1(this.a).P1().g0(this.c.intValue(), this.b.longValue(), new ai.i(this, 14));
-    }
-
-    public final void e(float f10, float f11, boolean z9) {
-        this.i.c(z9);
-        int[] iArr = z9 ? new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled} : new int[0];
-        org.telegram.ui.Cells.y yVar = this.j;
-        yVar.setState(iArr);
-        if (z9) {
-            yVar.setHotspot(f10, f11);
+        boolean z10 = np.s1(v8Var.a).k7;
+        Context context = this.e;
+        org.telegram.ui.ActionBar.e6 e6Var = this.f;
+        if (!z10) {
+            boolean[] zArr2 = {false};
+            cb cbVar = new cb(context, e6Var, j10, this.g ? 9 : 0, this.h, new h8(v8Var, zArr2, gjVar, inputInvoice, tL_payments_paymentFormStars, zArr, i7, z10Var2, z10Var), this.m);
+            cbVar.setOnDismissListener(new k6(v8Var, z10Var, zArr2, zArr, z10Var2, 1));
+            cbVar.show();
+            return;
         }
+        if (z10Var != null) {
+            z10Var.a(Boolean.FALSE);
+        }
+        if (!zArr[0] && z10Var2 != null) {
+            z10Var2.a("cancelled");
+            zArr[0] = true;
+        }
+        v8.c0(context, e6Var);
     }
 }

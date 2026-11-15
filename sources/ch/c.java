@@ -1,10 +1,11 @@
 package ch;
 
 import android.graphics.Rect;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class c {
     public float a;
@@ -26,7 +27,7 @@ public final class c {
 
     public final void a() {
         d dVar = this.l;
-        boolean z9 = dVar.f;
+        boolean z10 = dVar.f;
         ArrayList arrayList = dVar.c;
         Rect rect = dVar.b;
         float f10 = 0.0f;
@@ -51,7 +52,7 @@ public final class c {
                 f10 = f11;
             }
         }
-        float f15 = z9 ? 0.8f : 0.5f;
+        float f15 = z10 ? 0.8f : 0.5f;
         this.c = b10;
         if (b10 > rect.width() * f15) {
             this.a = rect.width() * f15;
@@ -64,16 +65,16 @@ public final class c {
         }
         float height = rect.height() * 0.1f;
         g5.a aVar = Utilities.c;
-        this.b = com.google.android.recaptcha.internal.a.c(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, height, rect.height() * 0.45f);
-        if (z9) {
-            float c12 = com.google.android.recaptcha.internal.a.c(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, rect.width() * 0.1f, rect.width() * 0.05f);
+        this.b = e2.c(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, height, rect.height() * 0.45f);
+        if (z10) {
+            float c12 = e2.c(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, rect.width() * 0.1f, rect.width() * 0.05f);
             this.f = c12;
             this.g = (((Math.abs(((int) aVar.nextLong()) % 100) / 100.0f) * 1.5f) + 1.5f) * c12;
-            this.d = com.google.android.recaptcha.internal.a.c(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, rect.height() * 0.1f, this.f / 2.0f);
+            this.d = e2.c(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, rect.height() * 0.1f, this.f / 2.0f);
             this.e = rect.height() + this.f;
             this.i = Math.abs(((int) aVar.nextLong()) % 600) + 1000;
         } else {
-            float c13 = com.google.android.recaptcha.internal.a.c(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, rect.width() * 0.1f, rect.width() * 0.05f);
+            float c13 = e2.c(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, rect.width() * 0.1f, rect.width() * 0.05f);
             this.f = c13;
             this.g = (((Math.abs(((int) aVar.nextLong()) % 100) / 100.0f) * 0.5f) + 1.5f) * c13;
             this.d = c10;
@@ -91,7 +92,7 @@ public final class c {
         if (!dVar.f) {
             return (Math.abs(((int) Utilities.c.nextLong()) % 100) / 100.0f) * rect.width();
         }
-        return com.google.android.recaptcha.internal.a.c(Math.abs(((int) Utilities.c.nextLong()) % 100), 100.0f, rect.width() * 1.5f, rect.width() * (-0.25f));
+        return e2.c(Math.abs(((int) Utilities.c.nextLong()) % 100), 100.0f, rect.width() * 1.5f, rect.width() * (-0.25f));
     }
 
     public final float c() {

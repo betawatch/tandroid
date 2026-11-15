@@ -1,50 +1,46 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class wu0 extends v4.b0 {
-    public final /* synthetic */ ProfileActivity I;
+public final class wu0 implements jp {
+    public final /* synthetic */ TLRPC.Chat a;
+    public final /* synthetic */ mp b;
+    public final /* synthetic */ ProfileActivity c;
 
-    public wu0(ProfileActivity profileActivity) {
-        this.I = profileActivity;
+    public wu0(ProfileActivity profileActivity, TLRPC.Chat chat, mp mpVar) {
+        this.c = profileActivity;
+        this.a = chat;
+        this.b = mpVar;
     }
 
-    @Override // v4.b0, v4.n0
-    public final int o0(int i7, v4.v0 v0Var, v4.a1 a1Var) {
-        ProfileActivity profileActivity = this.I;
-        View m10 = profileActivity.c.m(0);
-        if (m10 != null && !profileActivity.F0) {
-            int top = m10.getTop() - profileActivity.j4();
-            boolean z9 = profileActivity.n2;
-            if (z9 || top <= i7) {
-                if (z9) {
-                    if (i7 >= top) {
-                        profileActivity.n2 = false;
-                    } else if (profileActivity.a.getScrollState() == 1 && !profileActivity.o2) {
-                        i7 /= 2;
-                    }
-                }
-            } else if (!profileActivity.n0.X0.isEmpty() && profileActivity.e0.getImageReceiver().L() && !org.telegram.messenger.g0.C1() && ((!profileActivity.m2 && !org.telegram.messenger.g0.Q1()) || profileActivity.I0)) {
-                profileActivity.n2 = profileActivity.I2 == null;
+    @Override // org.telegram.ui.jp
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.c;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.F2.megagroup ? 10 : 9);
+    }
+
+    @Override // org.telegram.ui.jp
+    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = this.c;
+        profileActivity.removeSelfFromStack();
+        TLRPC.User a22 = profileActivity.getMessagesController().a2(Long.valueOf(profileActivity.e1));
+        if (a22 == null || (chat = this.a) == null || profileActivity.e1 == 0) {
+            return;
+        }
+        mp mpVar = this.b;
+        if (!mpVar.R || mpVar.getParentLayout() == null) {
+            return;
+        }
+        for (org.telegram.ui.ActionBar.e2 e2Var : mpVar.getParentLayout().getFragmentStack()) {
+            if (e2Var instanceof lb) {
+                lb lbVar = (lb) e2Var;
+                lbVar.a1();
+                org.telegram.messenger.g0.h3(new lc0(lbVar, a22, chat, 28));
+                return;
             }
-            i7 = top;
         }
-        if (!profileActivity.N1 || profileActivity.a.P0) {
-            return super.o0(i7, v0Var, a1Var);
-        }
-        return 0;
-    }
-
-    @Override // v4.b0, v4.n0
-    public final boolean y0() {
-        return this.I.q0 != null;
-    }
-
-    @Override // v4.b0
-    public final void z0(v4.a1 a1Var, int[] iArr) {
-        super.z0(a1Var, iArr);
-        iArr[0] = Math.max(iArr[0], ProfileActivity.J0(this.I));
     }
 }

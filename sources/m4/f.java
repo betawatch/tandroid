@@ -5,10 +5,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f {
     public final int a;
@@ -24,7 +24,7 @@ public final class f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public h0 a(int i7, m6.n nVar) {
+    public g0 a(int i7, m6.n nVar) {
         String str = (String) nVar.b;
         if (i7 != 2) {
             if (i7 == 3 || i7 == 4) {
@@ -75,9 +75,9 @@ public final class f {
                         switch (i7) {
                             case 128:
                                 break;
-                            case qs.N1 /* 129 */:
+                            case ns.N1 /* 129 */:
                                 return new w(new b(nVar.c(), 0, str, "video/mp2t"));
-                            case qs.O1 /* 130 */:
+                            case ns.O1 /* 130 */:
                                 if (!c(64)) {
                                     return null;
                                 }
@@ -89,9 +89,9 @@ public final class f {
                                             return null;
                                         }
                                         return new b0(new h6.m("application/x-scte35"));
-                                    case qs.R1 /* 135 */:
+                                    case ns.R1 /* 135 */:
                                         break;
-                                    case qs.S1 /* 136 */:
+                                    case ns.S1 /* 136 */:
                                         break;
                                     default:
                                         return null;
@@ -123,8 +123,8 @@ public final class f {
                 for (int i10 = 0; i10 < A3; i10++) {
                     String y10 = xVar.y(3, StandardCharsets.UTF_8);
                     int A4 = xVar.A();
-                    boolean z9 = (A4 & 128) != 0;
-                    if (z9) {
+                    boolean z10 = (A4 & 128) != 0;
+                    if (z10) {
                         i7 = A4 & 63;
                         str = "application/cea-708";
                     } else {
@@ -133,10 +133,10 @@ public final class f {
                     }
                     byte A5 = (byte) xVar.A();
                     xVar.O(1);
-                    if (z9) {
-                        boolean z10 = (A5 & 64) != 0;
+                    if (z10) {
+                        boolean z11 = (A5 & 64) != 0;
                         byte[] bArr = h2.g.a;
-                        list = Collections.singletonList(z10 ? new byte[]{1} : new byte[]{0});
+                        list = Collections.singletonList(z11 ? new byte[]{1} : new byte[]{0});
                     } else {
                         list = null;
                     }

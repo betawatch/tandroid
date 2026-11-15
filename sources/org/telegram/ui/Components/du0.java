@@ -9,7 +9,7 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class du0 {
     public final a4.k a;
@@ -23,13 +23,13 @@ public final class du0 {
     public long k;
     public int n;
     public final Paint e = new Paint();
-    public final int f = org.telegram.ui.ActionBar.m6.A8;
+    public final int f = org.telegram.ui.ActionBar.j6.A8;
     public final ArrayList l = new ArrayList();
     public final ArrayList m = new ArrayList();
 
     public du0(int i7) {
         this.h = i7;
-        int i10 = i7 == 0 ? 100 : org.telegram.messenger.qs.X4;
+        int i10 = i7 == 0 ? 100 : org.telegram.messenger.ns.X4;
         this.i = i10;
         Paint paint = new Paint(1);
         this.c = paint;
@@ -45,7 +45,7 @@ public final class du0 {
         paint2.setStyle(style);
         if (Build.VERSION.SDK_INT >= 29) {
             this.a = new a4.k(i10);
-            this.b = g0.a.a(a(true));
+            this.b = ai.d.b(a(true));
         } else {
             this.a = null;
             this.b = null;
@@ -56,13 +56,13 @@ public final class du0 {
         }
     }
 
-    public static Bitmap a(boolean z9) {
+    public static Bitmap a(boolean z10) {
         Paint paint = new Paint(1);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(0.5f));
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(-1);
-        Bitmap createBitmap = Bitmap.createBitmap(z9 ? org.telegram.messenger.g0.L(20.0f) : org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), Bitmap.Config.ARGB_8888);
+        Bitmap createBitmap = Bitmap.createBitmap(z10 ? org.telegram.messenger.g0.L(20.0f) : org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         float N = org.telegram.messenger.g0.N(2.0f) * 2.0f;
         float f10 = (-org.telegram.messenger.g0.N(0.57f)) * 2.0f;
@@ -89,8 +89,8 @@ public final class du0 {
             double d11 = N2;
             float f19 = f17 + f15;
             float f20 = f18 + f16;
-            canvas.drawLine(f19, f20, f17 + ((float) ((Math.cos(d2) * d10) - (Math.sin(d2) * d11))), ((float) jg.g.d(d2, d11, Math.sin(d2) * d10)) + f18, paint);
-            canvas.drawLine(f19, f20, f17 + ((float) (((-Math.cos(d2)) * d10) - (Math.sin(d2) * d11))), ((float) jg.g.d(d2, d11, (-Math.sin(d2)) * d10)) + f18, paint);
+            canvas.drawLine(f19, f20, f17 + ((float) ((Math.cos(d2) * d10) - (Math.sin(d2) * d11))), ((float) i5.c.c(d2, d11, Math.sin(d2) * d10)) + f18, paint);
+            canvas.drawLine(f19, f20, f17 + ((float) (((-Math.cos(d2)) * d10) - (Math.sin(d2) * d11))), ((float) i5.c.c(d2, d11, (-Math.sin(d2)) * d10)) + f18, paint);
             f12 = f14 + 1.0471976f;
             i7++;
             L2 = f18;
@@ -100,7 +100,7 @@ public final class du0 {
         }
         Bitmap bitmap2 = createBitmap;
         float f21 = f11;
-        if (z9) {
+        if (z10) {
             Paint paint2 = new Paint(1);
             paint2.setStrokeWidth(org.telegram.messenger.g0.L(1.5f));
             paint2.setStrokeCap(Paint.Cap.ROUND);
@@ -114,7 +114,7 @@ public final class du0 {
     public final void b(Canvas canvas, View view) {
         int i7;
         cu0 cu0Var;
-        if (view == null || canvas == null || !org.telegram.messenger.sc.e(32)) {
+        if (view == null || canvas == null || !org.telegram.messenger.qc.e(32)) {
             return;
         }
         c();
@@ -135,12 +135,12 @@ public final class du0 {
                     f12 *= cu0Var2.i;
                 }
                 float f13 = i13 == 0 ? L : 0.0f;
-                kVar.t(i12, i0.a.o(this.n, (int) (cu0Var2.f * 255.0f)));
+                kVar.s(i12, i0.a.o(this.n, (int) (cu0Var2.f * 255.0f)));
                 a4.k.d((float[]) kVar.c, i12, f10 - f12, f11 - f12, f10 + f12, f11 + f12);
                 float f14 = L;
                 a4.k.d((float[]) kVar.d, i12, f13, 0.0f, f13 + f14, f14);
             }
-            g0.a.b(canvas, kVar, min, this.b);
+            ai.d.c(canvas, kVar, min, this.b);
         } else {
             int size = arrayList.size();
             for (int i14 = 0; i14 < size; i14++) {
@@ -259,7 +259,7 @@ public final class du0 {
     public final void c() {
         int i7 = this.g;
         if (i7 == 0) {
-            i7 = org.telegram.ui.ActionBar.m6.x0(null, this.f, false) & (-1644826);
+            i7 = org.telegram.ui.ActionBar.j6.x0(null, this.f, false) & (-1644826);
         }
         if (this.n != i7) {
             this.n = i7;

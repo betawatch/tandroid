@@ -1,26 +1,26 @@
 package q7;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class f0 {
     public static final char[] a = "0123456789abcdef".toCharArray();
 
     public final boolean equals(Object obj) {
-        boolean z9;
+        boolean z10;
         if (obj instanceof f0) {
             byte[] bArr = ((e0) this).b;
             int length = bArr.length * 8;
             byte[] bArr2 = ((e0) ((f0) obj)).b;
             if (length == bArr2.length * 8) {
                 if (bArr.length == bArr2.length) {
-                    z9 = true;
+                    z10 = true;
                     for (int i7 = 0; i7 < bArr.length; i7++) {
-                        z9 &= bArr[i7] == bArr2[i7];
+                        z10 &= bArr[i7] == bArr2[i7];
                     }
                 } else {
-                    z9 = false;
+                    z10 = false;
                 }
-                if (z9) {
+                if (z10) {
                     return true;
                 }
             }

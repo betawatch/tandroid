@@ -1,26 +1,30 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class up0 extends zh.d2 {
-    public final /* synthetic */ ys0 V;
+public final class up0 extends vs0 {
+    public final /* synthetic */ ys0 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public up0(ys0 ys0Var, org.telegram.ui.ActionBar.f2 f2Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.h6 h6Var, dh.c cVar) {
-        super(f2Var, context, i7, j3, h6Var, cVar);
-        this.V = ys0Var;
+    public up0(ys0 ys0Var, Context context) {
+        super(ys0Var, context, 0, true);
+        this.H = ys0Var;
     }
 
-    @Override // zh.d2
-    public final void q(boolean z9) {
-        ys0 ys0Var = this.V;
-        TextView textView = ys0Var.s0;
-        textView.setVisibility(0);
-        textView.animate().alpha(z9 ? 1.0f : 0.0f).scaleX(z9 ? 1.0f : 0.4f).scaleY(z9 ? 1.0f : 0.4f).withEndAction(new tp0(0, this, z9)).start();
-        ys0Var.I1(true);
-        ys0Var.W0();
+    @Override // org.telegram.ui.Components.vs0, v4.h0
+    public final void f() {
+        super.f();
+        ys0 ys0Var = this.H;
+        tr0 g02 = ys0Var.g0(9);
+        if (g02 != null && g02.n.getVisibility() == 0) {
+            ys0Var.i0.f();
+        }
+        if (g02 != null) {
+            pq0 pq0Var = g02.w;
+            fi.k6 k6Var = this.s;
+            pq0Var.e(k6Var != null && (k6Var.k() || (ys0Var.t0() && this.s.g() > 0)), true);
+        }
     }
 }

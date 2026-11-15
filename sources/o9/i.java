@@ -1,15 +1,12 @@
 package o9;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.text.TextUtils;
 import j$.util.Objects;
-import j2.n;
-import m4.d0;
-import org.telegram.messenger.beta.R;
+import ji.j;
 import q6.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -35,16 +32,12 @@ public final class i {
     }
 
     public static i a(Context context) {
-        d0 d0Var = new d0();
-        m.g(context);
-        Resources resources = context.getResources();
-        d0Var.a = resources;
-        d0Var.b = resources.getResourcePackageName(R.string.common_google_play_services_unknown_issue);
-        String L = d0Var.L("google_app_id");
-        if (TextUtils.isEmpty(L)) {
+        k8.a aVar = new k8.a(context, 26);
+        String K0 = aVar.K0("google_app_id");
+        if (TextUtils.isEmpty(K0)) {
             return null;
         }
-        return new i(L, d0Var.L("google_api_key"), d0Var.L("firebase_database_url"), d0Var.L("ga_trackingId"), d0Var.L("gcm_defaultSenderId"), d0Var.L("google_storage_bucket"), d0Var.L("recaptcha_site_key"), d0Var.L("project_id"));
+        return new i(K0, aVar.K0("google_api_key"), aVar.K0("firebase_database_url"), aVar.K0("ga_trackingId"), aVar.K0("gcm_defaultSenderId"), aVar.K0("google_storage_bucket"), aVar.K0("recaptcha_site_key"), aVar.K0("project_id"));
     }
 
     public final boolean equals(Object obj) {
@@ -60,14 +53,14 @@ public final class i {
     }
 
     public final String toString() {
-        n nVar = new n(this);
-        nVar.X(this.b, "applicationId");
-        nVar.X(this.a, "apiKey");
-        nVar.X(this.c, "databaseUrl");
-        nVar.X(this.e, "gcmSenderId");
-        nVar.X(this.f, "storageBucket");
-        nVar.X(this.g, "recaptchaSiteKey");
-        nVar.X(this.h, "projectId");
-        return nVar.toString();
+        j jVar = new j(this);
+        jVar.U(this.b, "applicationId");
+        jVar.U(this.a, "apiKey");
+        jVar.U(this.c, "databaseUrl");
+        jVar.U(this.e, "gcmSenderId");
+        jVar.U(this.f, "storageBucket");
+        jVar.U(this.g, "recaptchaSiteKey");
+        jVar.U(this.h, "projectId");
+        return jVar.toString();
     }
 }

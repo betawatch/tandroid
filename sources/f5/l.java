@@ -1,110 +1,60 @@
 package f5;
 
-import android.text.TextUtils;
 import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l {
     public final String a;
-    public final JSONObject b;
-    public final String c;
-    public final String d;
-    public final String e;
-    public final String f;
-    public final String g;
-    public final ArrayList h;
-    public final ArrayList i;
+    public final k b;
 
-    public l(String str) {
-        this.a = str;
-        JSONObject jSONObject = new JSONObject(str);
-        this.b = jSONObject;
-        String optString = jSONObject.optString("productId");
-        this.c = optString;
-        String optString2 = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
-        this.d = optString2;
-        if (TextUtils.isEmpty(optString)) {
-            throw new IllegalArgumentException("Product id cannot be empty.");
-        }
-        if (TextUtils.isEmpty(optString2)) {
-            throw new IllegalArgumentException("Product type cannot be empty.");
-        }
-        this.e = jSONObject.optString("title");
-        jSONObject.optString("name");
-        jSONObject.optString("description");
-        jSONObject.optString("packageDisplayName");
-        jSONObject.optString("iconUrl");
-        this.f = jSONObject.optString("skuDetailsToken");
-        this.g = jSONObject.optString("serializedDocid");
-        JSONArray optJSONArray = jSONObject.optJSONArray("subscriptionOfferDetails");
-        if (optJSONArray != null) {
-            ArrayList arrayList = new ArrayList();
-            for (int i7 = 0; i7 < optJSONArray.length(); i7++) {
-                arrayList.add(new k(optJSONArray.getJSONObject(i7)));
+    public l(JSONObject jSONObject) {
+        jSONObject.optString("basePlanId");
+        jSONObject.optString("offerId").getClass();
+        this.a = jSONObject.getString("offerIdToken");
+        JSONArray jSONArray = jSONObject.getJSONArray("pricingPhases");
+        k kVar = new k();
+        ArrayList arrayList = new ArrayList();
+        if (jSONArray != null) {
+            for (int i7 = 0; i7 < jSONArray.length(); i7++) {
+                JSONObject optJSONObject = jSONArray.optJSONObject(i7);
+                if (optJSONObject != null) {
+                    arrayList.add(new j(optJSONObject));
+                }
             }
-            this.h = arrayList;
-        } else {
-            this.h = (optString2.equals("subs") || optString2.equals("play_pass_subs")) ? new ArrayList() : null;
         }
-        JSONObject optJSONObject = this.b.optJSONObject("oneTimePurchaseOfferDetails");
-        JSONArray optJSONArray2 = this.b.optJSONArray("oneTimePurchaseOfferDetailsList");
+        kVar.a = arrayList;
+        this.b = kVar;
+        JSONObject optJSONObject2 = jSONObject.optJSONObject("installmentPlanDetails");
+        if (optJSONObject2 != null) {
+            optJSONObject2.getInt("commitmentPaymentsCount");
+            optJSONObject2.optInt("subsequentCommitmentPaymentsCount");
+        }
+        JSONObject optJSONObject3 = jSONObject.optJSONObject("transitionPlanDetails");
+        if (optJSONObject3 != null) {
+            optJSONObject3.getString("productId");
+            optJSONObject3.optString("title");
+            optJSONObject3.optString("name");
+            optJSONObject3.optString("description");
+            optJSONObject3.optString("basePlanId");
+            JSONObject optJSONObject4 = optJSONObject3.optJSONObject("pricingPhase");
+            if (optJSONObject4 != null) {
+                optJSONObject4.optString("billingPeriod");
+                optJSONObject4.optString("priceCurrencyCode");
+                optJSONObject4.optString("formattedPrice");
+                optJSONObject4.optLong("priceAmountMicros");
+                optJSONObject4.optInt("recurrenceMode");
+                optJSONObject4.optInt("billingCycleCount");
+            }
+        }
         ArrayList arrayList2 = new ArrayList();
-        if (optJSONArray2 != null) {
-            for (int i10 = 0; i10 < optJSONArray2.length(); i10++) {
-                arrayList2.add(new h(optJSONArray2.getJSONObject(i10)));
+        JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
+        if (optJSONArray != null) {
+            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
+                arrayList2.add(optJSONArray.getString(i10));
             }
-            this.i = arrayList2;
-            return;
         }
-        if (optJSONObject == null) {
-            this.i = null;
-        } else {
-            arrayList2.add(new h(optJSONObject));
-            this.i = arrayList2;
-        }
-    }
-
-    public final h a() {
-        ArrayList arrayList = this.i;
-        if (arrayList == null || arrayList.isEmpty()) {
-            return null;
-        }
-        return (h) arrayList.get(0);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof l) {
-            return TextUtils.equals(this.a, ((l) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        String obj = this.b.toString();
-        String valueOf = String.valueOf(this.h);
-        StringBuilder sb2 = new StringBuilder("ProductDetails{jsonString='");
-        com.google.android.recaptcha.internal.a.s(sb2, this.a, "', parsedJson=", obj, ", productId='");
-        sb2.append(this.c);
-        sb2.append("', productType='");
-        sb2.append(this.d);
-        sb2.append("', title='");
-        sb2.append(this.e);
-        sb2.append("', productDetailsToken='");
-        sb2.append(this.f);
-        sb2.append("', subscriptionOfferDetails=");
-        sb2.append(valueOf);
-        sb2.append("}");
-        return sb2.toString();
     }
 }

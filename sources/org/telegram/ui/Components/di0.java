@@ -1,36 +1,31 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class di0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gi0 b;
+public final class di0 extends rg.a {
+    public final ch.p0 c;
 
-    public /* synthetic */ di0(gi0 gi0Var, int i7) {
-        this.a = i7;
-        this.b = gi0Var;
+    public di0(int i7, ch.p0 p0Var) {
+        super(i7, false);
+        this.c = p0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                if (this.b.a.getImageReceiver().B() != null && !this.b.a.getImageReceiver().B().k0 && !this.b.a.getImageReceiver().B().y()) {
-                    this.b.a.getImageReceiver().B().start();
-                }
-                this.b.E = false;
-                break;
-            default:
-                gi0 gi0Var = this.b;
-                ii0 ii0Var = gi0Var.P;
-                try {
-                    gi0Var.performHapticFeedback(0);
-                } catch (Exception unused) {
-                }
-                ii0Var.m0 = ii0Var.T.indexOf(gi0Var.e);
-                ii0Var.l0 = gi0Var.e;
-                ii0Var.invalidate();
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj != null && di0.class == obj.getClass()) {
+            di0 di0Var = (di0) obj;
+            int i7 = this.a;
+            int i10 = di0Var.a;
+            if (i7 == i10 && (i7 == 0 || i7 == 3)) {
+                ch.p0 p0Var = this.c;
+                return p0Var != null && p0Var.equals(di0Var.c);
+            }
+            if (i7 == i10) {
+                return true;
+            }
+        }
+        return false;
     }
 }

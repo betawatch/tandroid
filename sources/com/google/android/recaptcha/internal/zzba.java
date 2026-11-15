@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import a8.ab;
+import a8.bb;
 import android.app.Application;
 import com.google.android.play.core.integrity.StandardIntegrityException;
 import gd.c;
@@ -8,7 +8,7 @@ import java.nio.charset.StandardCharsets;
 import kotlin.jvm.internal.f;
 import n6.e;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzba implements zzar {
     private final zzbo zza;
@@ -144,7 +144,7 @@ public final class zzba implements zzar {
         return this.zzc;
     }
 
-    public final void zzo(boolean z9) {
+    public final void zzo(boolean z10) {
         this.zzc = false;
     }
 
@@ -154,7 +154,7 @@ public final class zzba implements zzar {
         this.zzc = true;
         this.zzd = "";
         int i7 = zzby.zza;
-        this.zze = ab.b(zzaz.zza);
+        this.zze = bb.b(zzaz.zza);
     }
 
     public zzba(zzbo zzboVar, zzda zzdaVar, int i7, f fVar) {

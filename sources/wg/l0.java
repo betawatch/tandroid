@@ -1,79 +1,63 @@
 package wg;
 
-import android.os.CountDownTimer;
-import android.view.View;
-import di.e4;
-import java.util.ArrayList;
-import java.util.Date;
-import org.telegram.messenger.id;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.m5;
-import org.telegram.ui.Components.pj0;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.FrameLayout;
+import c8.ja;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.Components.i9;
+import org.telegram.ui.Components.t8;
+import org.telegram.ui.i2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l0 extends CountDownTimer {
-    public final /* synthetic */ q0 a;
+public final class l0 extends FrameLayout implements z5 {
+    public final i9 a;
+    public final i2 b;
+    public final Paint c;
+    public TLRPC.Chat d;
+    public final t8 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l0(q0 q0Var) {
-        super(Long.MAX_VALUE, 1000L);
-        this.a = q0Var;
+    public l0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.e = new t8((e6) null);
+        i9 i9Var = new i9(getContext());
+        this.a = i9Var;
+        i9Var.setRoundRadius(org.telegram.messenger.g0.L(30.0f));
+        i2 i2Var = new i2(context);
+        Paint paint2 = new Paint(1);
+        i2Var.b = paint2;
+        i2Var.c = i2Var.getContext().getDrawable(R.drawable.mini_boost_remove);
+        int i7 = j6.h5;
+        paint2.setColor(j6.x0(null, i7, false));
+        this.b = i2Var;
+        i2Var.setAlpha(0.0f);
+        addView(i9Var, ja.d(-1, -1.0f, 0, 5.0f, 5.0f, 5.0f, 5.0f));
+        addView(i2Var, ja.d(28, 28.0f, 85, 0.0f, 0.0f, 0.0f, 3.0f));
+        paint.setColor(j6.x0(null, i7, false));
     }
 
-    @Override // android.os.CountDownTimer
-    public final void onTick(long j3) {
-        q0 q0Var = this.a;
-        pj0 pj0Var = q0Var.n1;
-        ArrayList arrayList = q0Var.T1;
-        ArrayList arrayList2 = new ArrayList(arrayList.size());
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) obj;
-            if (tL_myBoost.cooldown_until_date > 0) {
-                arrayList2.add(tL_myBoost);
-            }
-            if (tL_myBoost.cooldown_until_date * 1000 < System.currentTimeMillis()) {
-                tL_myBoost.cooldown_until_date = 0;
-            }
-        }
-        if (arrayList2.isEmpty()) {
-            return;
-        }
-        for (int i10 = 0; i10 < pj0Var.getChildCount(); i10++) {
-            View childAt = pj0Var.getChildAt(i10);
-            if (childAt instanceof ah.r) {
-                ah.r rVar = (ah.r) childAt;
-                if (arrayList2.contains(rVar.getBoost())) {
-                    m5 m5Var = rVar.e;
-                    e4 e4Var = rVar.d;
-                    int i11 = rVar.J.cooldown_until_date;
-                    if (i11 > 0) {
-                        rVar.setSubtitle(id.a0(null, null, 2131753594, ah.r.f((i11 * 1000) - System.currentTimeMillis())));
-                        e4Var.setAlpha(0.65f);
-                        m5Var.setAlpha(0.65f);
-                        rVar.i(false, 0.3f);
-                    } else {
-                        rVar.setSubtitle(id.a0(null, null, 2131753661, id.E0().o0().format(new Date(rVar.J.expires * 1000))));
-                        if (e4Var.getAlpha() < 1.0f) {
-                            e4Var.animate().alpha(1.0f).start();
-                            m5Var.animate().alpha(1.0f).start();
-                            rVar.i(true, 1.0f);
-                        } else {
-                            e4Var.setAlpha(1.0f);
-                            m5Var.setAlpha(1.0f);
-                            rVar.i(false, 1.0f);
-                        }
-                    }
-                }
-            }
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, (getMeasuredHeight() / 2.0f) - org.telegram.messenger.g0.L(2.0f), this.c);
+        super.dispatchDraw(canvas);
     }
 
-    @Override // android.os.CountDownTimer
-    public final void onFinish() {
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        this.c.setColor(j6.x0(null, j6.h5, false));
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

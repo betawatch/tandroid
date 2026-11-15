@@ -5,6 +5,7 @@ import android.opengl.GLES20;
 import android.opengl.GLES30;
 import android.opengl.Matrix;
 import c8.ad;
+import com.google.android.gms.internal.vision.e2;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -14,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class a {
     public static final String[] D = {"crownGradient", "pavilionGradient", "lightSweep", "crownSweep", "rightCrownSweep", "leftCrownSweep", "pavilionSweep", "rightPavilionSweep", "leftPavilionSweep"};
@@ -149,7 +150,7 @@ public final class a {
 
     public static float i(float f10) {
         float max = Math.max(0.0f, Math.min(1.0f, f10));
-        return com.google.android.recaptcha.internal.a.C(max, 2.0f, 3.0f, max * max);
+        return e2.C(max, 2.0f, 3.0f, max * max);
     }
 
     public static String j(Context context, String str) {
@@ -174,8 +175,8 @@ public final class a {
         GLES20.glDeleteRenderbuffers(iArr5.length, iArr5, 0);
     }
 
-    public final void c(int i7, int i10, float f10, float f11, float f12, float f13, float f14, float f15, boolean z9) {
-        boolean z10;
+    public final void c(int i7, int i10, float f10, float f11, float f12, float f13, float f14, float f15, boolean z10) {
+        boolean z11;
         int i11;
         int i12;
         if (i7 <= 0 || i10 <= 0) {
@@ -197,7 +198,7 @@ public final class a {
             }
             float[] fArr2 = this.m;
             float f18 = fArr2[(i13 * 42) + i15];
-            fArr[i15] = com.google.android.recaptcha.internal.a.z(fArr2[((1 + i13) * 42) + i15], f18, f17, f18);
+            fArr[i15] = e2.z(fArr2[((1 + i13) * 42) + i15], f18, f17, f18);
             i15++;
         }
         float f19 = i7;
@@ -208,7 +209,7 @@ public final class a {
         int i17 = 36160;
         int[] iArr = this.e;
         if (max2 == i16 && max3 == this.v) {
-            z10 = true;
+            z11 = true;
             i11 = 2;
             i12 = 0;
         } else {
@@ -216,7 +217,7 @@ public final class a {
             this.v = max3;
             GLES20.glBindFramebuffer(36160, iArr[0]);
             int i18 = 0;
-            z10 = true;
+            z11 = true;
             for (int i19 = 2; i18 < i19; i19 = 2) {
                 int[] iArr2 = this.f;
                 int i20 = i14;
@@ -265,7 +266,7 @@ public final class a {
         Matrix.rotateM(this.i, 0, -((float) Math.toDegrees(f12)), 0.0f, 0.0f, 1.0f);
         Matrix.rotateM(this.i, 0, (float) Math.toDegrees(d11), 1.0f, 0.0f, 0.0f);
         Matrix.rotateM(this.i, 0, (float) Math.toDegrees(d10), 0.0f, 1.0f, 0.0f);
-        boolean z11 = false;
+        boolean z12 = false;
         Matrix.transposeM(this.j, 0, fArr5, 0);
         float f29 = 0.0f;
         int i24 = 0;
@@ -273,18 +274,18 @@ public final class a {
         while (i24 < 4) {
             float f31 = (i24 * 3.1415927f) / 2.0f;
             int i25 = i24;
-            float cos = (float) (Math.cos(f21 - fArr3[z11 ? 1 : 0]) * Math.cos(f10 + f31));
+            float cos = (float) (Math.cos(f21 - fArr3[z12 ? 1 : 0]) * Math.cos(f10 + f31));
             if (cos > f30) {
                 f30 = cos;
                 f29 = f31;
             }
             i24 = i25 + 1;
-            z11 = false;
+            z12 = false;
         }
         float hypot = (!this.A || max <= 0.0f) ? 0.596f : ((float) Math.hypot((float) Math.atan2(Math.sin(f10 - this.y), Math.cos(f10 - this.y)), f21 - this.z)) / max;
         this.y = f10;
         this.z = f21;
-        this.A = z10;
+        this.A = z11;
         float i26 = i(((0.41887903f / Math.max(hypot, 0.001f)) - 0.06f) / 0.34f) * i(1.0f - (((float) Math.acos(Math.max(-1.0f, Math.min(1.0f, f30)))) / 0.20943952f));
         GLES20.glBindFramebuffer(36160, iArr[0]);
         GLES20.glViewport(0, 0, this.u, this.v);
@@ -339,7 +340,7 @@ public final class a {
         int i28 = this.u;
         int i29 = this.v;
         GLES30.glBlitFramebuffer(0, 0, i28, i29, 0, 0, i28, i29, TLObject.FLAG_14, 9728);
-        if (!z9) {
+        if (!z10) {
             d(f14, f15, i7, i10);
         } else {
             GLES20.glBindFramebuffer(36160, iArr[1]);

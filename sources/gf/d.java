@@ -3,7 +3,7 @@ package gf;
 import android.support.v4.media.session.MediaSessionCompat$Token;
 import kf.s;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d {
     public final boolean a;
@@ -14,22 +14,22 @@ public final class d {
     public final Object f;
     public final Object g;
 
-    public d(boolean z9, int i7, String str, String str2, MediaSessionCompat$Token mediaSessionCompat$Token, boolean z10, boolean z11) {
-        this.a = z9;
+    public d(boolean z10, int i7, String str, String str2, MediaSessionCompat$Token mediaSessionCompat$Token, boolean z11, boolean z12) {
+        this.a = z10;
         this.b = i7;
         this.f = str;
         this.g = str2;
         this.e = mediaSessionCompat$Token;
-        this.c = z10;
-        this.d = z11;
+        this.c = z11;
+        this.d = z12;
     }
 
-    public d(s sVar, int i7, d dVar, e eVar, boolean z9) {
+    public d(s sVar, int i7, d dVar, e eVar, boolean z10) {
         this.c = true;
         this.d = false;
         this.e = sVar;
         this.b = i7;
-        this.a = z9;
+        this.a = z10;
         this.f = dVar;
         this.g = eVar;
     }

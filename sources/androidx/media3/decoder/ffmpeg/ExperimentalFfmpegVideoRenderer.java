@@ -7,34 +7,34 @@ import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import d3.h0;
 import e2.s0;
 import e2.u;
-import h2.m0;
-import jg.g;
+import h2.l0;
+import i5.c;
 import k2.e;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class ExperimentalFfmpegVideoRenderer extends d3.a {
-    public static final int r0 = ((m0.g(720, 64) * m0.g(1280, 64)) * 6144) / 2;
-    public final int n0;
+    public static final int s0 = ((l0.g(720, 64) * l0.g(1280, 64)) * 6144) / 2;
     public final int o0;
     public final int p0;
-    public ExperimentalFfmpegVideoDecoder q0;
+    public final int q0;
+    public ExperimentalFfmpegVideoDecoder r0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ExperimentalFfmpegVideoRenderer(long j3, Handler handler, h0 h0Var, int i7) {
         super(j3, handler, h0Var, i7);
         int availableProcessors = Runtime.getRuntime().availableProcessors();
-        this.p0 = availableProcessors;
-        this.n0 = 4;
+        this.q0 = availableProcessors;
         this.o0 = 4;
+        this.p0 = 4;
     }
 
     @Override // l2.b
     public final int C(u uVar) {
         String str = uVar.s;
         String str2 = FfmpegLibrary.a;
-        return !s0.m(str) ? g.b(0, 0, 0, 0) : !FfmpegLibrary.d(str) ? g.b(1, 0, 0, 0) : uVar.T != 0 ? g.b(2, 0, 0, 0) : qs.W1;
+        return !s0.m(str) ? c.a(0, 0, 0, 0) : !FfmpegLibrary.d(str) ? c.a(1, 0, 0, 0) : uVar.T != 0 ? c.a(2, 0, 0, 0) : ns.W1;
     }
 
     @Override // d3.a
@@ -42,11 +42,11 @@ public final class ExperimentalFfmpegVideoRenderer extends d3.a {
         Trace.beginSection("createFfmpegVideoDecoder");
         int i7 = uVar.t;
         if (i7 == -1) {
-            i7 = r0;
+            i7 = s0;
         }
         int i10 = i7;
-        ExperimentalFfmpegVideoDecoder experimentalFfmpegVideoDecoder = new ExperimentalFfmpegVideoDecoder(this.n0, this.o0, i10, Math.max(this.p0, 1), uVar);
-        this.q0 = experimentalFfmpegVideoDecoder;
+        ExperimentalFfmpegVideoDecoder experimentalFfmpegVideoDecoder = new ExperimentalFfmpegVideoDecoder(this.o0, this.p0, i10, Math.max(this.q0, 1), uVar);
+        this.r0 = experimentalFfmpegVideoDecoder;
         Trace.endSection();
         return experimentalFfmpegVideoDecoder;
     }
@@ -54,7 +54,7 @@ public final class ExperimentalFfmpegVideoRenderer extends d3.a {
     @Override // d3.a
     public final void N(VideoDecoderOutputBuffer videoDecoderOutputBuffer, Surface surface) {
         try {
-            ExperimentalFfmpegVideoDecoder experimentalFfmpegVideoDecoder = this.q0;
+            ExperimentalFfmpegVideoDecoder experimentalFfmpegVideoDecoder = this.r0;
             if (experimentalFfmpegVideoDecoder == null) {
                 throw new FfmpegDecoderException("Failed to render output buffer to surface: decoder is not initialized.");
             }
@@ -66,7 +66,7 @@ public final class ExperimentalFfmpegVideoRenderer extends d3.a {
 
     @Override // d3.a
     public final void O(int i7) {
-        ExperimentalFfmpegVideoDecoder experimentalFfmpegVideoDecoder = this.q0;
+        ExperimentalFfmpegVideoDecoder experimentalFfmpegVideoDecoder = this.r0;
         if (experimentalFfmpegVideoDecoder != null) {
             experimentalFfmpegVideoDecoder.q = i7;
         }

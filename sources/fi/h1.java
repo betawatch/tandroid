@@ -1,45 +1,30 @@
 package fi;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.Components.m61;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class h1 extends m61 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ k2 c;
-
-    public h1(k2 k2Var, boolean z9, Context context) {
-        this.c = k2Var;
-        this.a = z9;
-        this.b = context;
+public final class h1 extends TLRPC.TL_messageMediaStory {
+    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        this.user_id = inputSerializedData.readInt64(z10);
+        this.id = inputSerializedData.readInt32(z10);
+        this.storyItem = TL_stories.StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        this.via_mention = inputSerializedData.readBool(z10);
+        this.peer = np.s1(m10.t0).z1(this.user_id);
     }
 
-    @Override // org.telegram.ui.Components.m61
-    public final void b(View view, int i7, int i10) {
-        u1 u1Var = (u1) view;
-        if (this.a) {
-            i7 = 1;
-        }
-        u1Var.a(i7);
-    }
-
-    @Override // org.telegram.ui.Components.m61
-    public final View d(int i7) {
-        Context context = this.b;
-        k2 k2Var = this.c;
-        return i7 == 1 ? new t1(k2Var, context) : new z1(k2Var, context);
-    }
-
-    @Override // org.telegram.ui.Components.m61
-    public final int e() {
-        return this.a ? 1 : 3;
-    }
-
-    @Override // org.telegram.ui.Components.m61
-    public final int h(int i7) {
-        return (i7 == 0 || i7 == 1) ? 0 : 1;
+    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(-946147811);
+        outputSerializedData.writeInt64(this.user_id);
+        outputSerializedData.writeInt32(this.id);
+        this.storyItem.serializeToStream(outputSerializedData);
+        outputSerializedData.writeBool(this.via_mention);
     }
 }

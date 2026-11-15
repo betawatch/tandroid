@@ -1,81 +1,53 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class yh implements org.telegram.ui.Components.ej0 {
-    public final /* synthetic */ cn a;
+public final class yh extends org.telegram.ui.ActionBar.g1 {
+    public final /* synthetic */ org.telegram.ui.Components.mi0 o;
+    public final /* synthetic */ an p;
 
-    public yh(cn cnVar) {
-        this.a = cnVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yh(an anVar, wa waVar, org.telegram.ui.Components.mi0 mi0Var) {
+        super(waVar, -2, -2);
+        this.p = anVar;
+        this.o = mi0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
-    @Override // org.telegram.ui.Components.ej0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean f(float f10, float f11, int i7, View view) {
-        boolean z9;
-        boolean z10;
-        org.telegram.ui.ActionBar.l lVar;
-        View view2;
-        boolean z11;
-        cn cnVar = this.a;
-        rl rlVar = cnVar.s9;
-        if ((rlVar == null || !rlVar.z) && !cnVar.z9()) {
-            z9 = ((org.telegram.ui.ActionBar.f2) cnVar).inPreviewMode;
-            if (!z9 && !cnVar.kb) {
-                cnVar.P4 = true;
-                if (view instanceof org.telegram.ui.Cells.t0) {
-                    org.telegram.ui.Cells.t0 t0Var = (org.telegram.ui.Cells.t0) view;
-                    org.telegram.messenger.ij messageObject = t0Var.getMessageObject();
-                    if (messageObject != null) {
-                        if (!(messageObject.k.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && t0Var.getMessageObject().D != 21 && !t0Var.getMessageObject().X4() && t0Var.getMessageObject().D != 30) {
-                            z10 = false;
-                            lVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-                            if (!lVar.x() || (cnVar.X9() && !z10)) {
-                                view2 = view;
-                                cn.k2(cnVar, view2, view2 instanceof org.telegram.ui.Cells.q1 ? !((org.telegram.ui.Cells.q1) view2).B2(f10) : false, f10, f11);
-                                z11 = true;
-                            } else {
-                                view2 = view;
-                                z11 = cnVar.Y7(view2, false, true, f10, f11, true, true, false);
-                            }
-                            if (view2 instanceof org.telegram.ui.Cells.q1) {
-                                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view2;
-                                if (q1Var.getMessageObject() != null && q1Var.getMessageObject().D != 27) {
-                                    cn.l2(cnVar, i7);
-                                    return true;
-                                }
-                            }
-                            return z11;
-                        }
-                    }
-                }
-                z10 = true;
-                lVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-                if (lVar.x()) {
-                }
-                view2 = view;
-                cn.k2(cnVar, view2, view2 instanceof org.telegram.ui.Cells.q1 ? !((org.telegram.ui.Cells.q1) view2).B2(f10) : false, f10, f11);
-                z11 = true;
-                if (view2 instanceof org.telegram.ui.Cells.q1) {
-                }
-                return z11;
-            }
+    @Override // org.telegram.ui.ActionBar.g1
+    public final void d(boolean z10) {
+        super.d(z10);
+        org.telegram.ui.Components.mi0 mi0Var = this.o;
+        if (mi0Var != null) {
+            mi0Var.d(z10);
         }
-        return false;
     }
 
-    @Override // org.telegram.ui.Components.ej0
-    public final /* synthetic */ void q(float f10) {
-    }
-
-    @Override // org.telegram.ui.Components.ej0
-    public final /* synthetic */ void i() {
+    @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        an anVar = this.p;
+        if (anVar.f9 != this) {
+            return;
+        }
+        org.telegram.ui.Components.xb xbVar = org.telegram.ui.Components.xb.w;
+        org.telegram.ui.Components.xb xbVar2 = anVar.C1;
+        if (xbVar == xbVar2 && xbVar2 != null) {
+            xbVar2.b();
+            anVar.C1 = null;
+        }
+        anVar.f9 = null;
+        anVar.k9 = null;
+        anVar.j9 = null;
+        anVar.C0.R = true;
+        if (anVar.g9) {
+            anVar.x8(false, true, 0.0f);
+        } else {
+            anVar.g9 = true;
+        }
+        qj qjVar = anVar.a0;
+        if (qjVar == null || qjVar.getEditField() == null) {
+            return;
+        }
+        anVar.a0.getEditField().setAllowDrawCursor(true);
     }
 }

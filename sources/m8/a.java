@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import androidx.car.app.j;
 import q6.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public final v7.h a;
@@ -26,9 +26,9 @@ public final class a {
             Parcel p12 = fVar.p1();
             v7.b.c(p12, hVar2);
             Parcel o12 = fVar.o1(p12, 17);
-            boolean z9 = o12.readInt() != 0;
+            boolean z10 = o12.readInt() != 0;
             o12.recycle();
-            return z9;
+            return z10;
         } catch (RemoteException e10) {
             throw new j(e10);
         }

@@ -1,165 +1,71 @@
 package fi;
 
-import android.app.Activity;
-import android.net.Uri;
-import android.os.Build;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import java.io.File;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Components.cp;
+import android.graphics.Typeface;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class t0 extends ImageView {
+public final class t0 {
     public int a;
-    public FrameLayout b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public cp f;
-    public v8 h;
-    public s0 n;
-    public e7 r;
-    public q0 s;
-    public Uri w;
-    public boolean x;
-    public boolean y;
+    public long b;
+    public int c;
+    public long d;
+    public int e;
+    public ArrayList f;
 
-    public static void a(t0 t0Var) {
-        v8 v8Var = t0Var.h;
-        int i7 = Build.VERSION.SDK_INT;
-        if ((i7 <= 28 || org.telegram.messenger.r2.b) && t0Var.getContext().checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0) {
-            Activity W = org.telegram.messenger.g0.W(t0Var.getContext());
-            if (W != null) {
-                W.requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, qs.y1);
-                return;
-            }
-            return;
-        }
-        if (t0Var.c || t0Var.r == null) {
-            return;
-        }
-        if (t0Var.w != null) {
-            if (i7 >= 30) {
-                t0Var.getContext().getContentResolver().delete(t0Var.w, null);
-                t0Var.w = null;
-            } else if (i7 < 29) {
-                try {
-                    new File(t0Var.w.toString()).delete();
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                }
-                t0Var.w = null;
+    public final float a() {
+        int currentTime = ConnectionsManager.getInstance(this.a).getCurrentTime();
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
+        int i7 = currentTime;
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            s0 s0Var = (s0) obj;
+            if (s0Var.g > 0) {
+                i7 = Math.min(i7, s0Var.d);
+                i10 = Math.max(i10, t.b(this.a, (int) s0Var.g, 0) + s0Var.d);
             }
         }
-        t0Var.c = true;
-        s0 s0Var = t0Var.n;
-        if (s0Var != null) {
-            s0Var.a();
-            t0Var.n = null;
-        }
-        q0 q0Var = t0Var.s;
-        if (q0Var != null) {
-            q0Var.a(true);
-            t0Var.s = null;
-        }
-        if (v8Var != null) {
-            t0Var.e = true;
-            v8Var.a(new n0(t0Var, 0));
-        }
-        t0Var.d();
-        if (v8Var == null) {
-            t0Var.b();
-        }
+        Typeface typeface = org.telegram.messenger.g0.a;
+        return (currentTime - i10) / (i7 - i10);
     }
 
-    public final void b() {
-        e7 e7Var;
-        if (!this.e || (e7Var = this.r) == null) {
-            return;
-        }
+    public final int b() {
+        int currentTime = ConnectionsManager.getInstance(this.a).getCurrentTime();
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
         int i7 = 0;
-        this.e = false;
-        int i10 = 1;
-        if (e7Var.E()) {
-            this.d = true;
-            s0 s0Var = new s0(getContext());
-            this.n = s0Var;
-            s0Var.setOnCancelListener(new n0(this, i10));
-            this.b.addView(this.n);
-            File s02 = org.telegram.messenger.g0.s0(false);
-            this.s = new q0(this.a, this.r, s02, new o0(this, s02, i7), new p0(this, i7), new n0(this, 2));
-        } else {
-            this.d = false;
-            File q02 = org.telegram.messenger.g0.q0("png", false);
-            if (q02 == null) {
-                this.n.b(R.raw.error, 3500, id.N0("UnknownError"));
-                this.c = false;
-                d();
-                return;
-            }
-            Utilities.i.c(new o0(this, q02, i10));
-        }
-        d();
-    }
-
-    public final void c(String str) {
-        s0 s0Var = this.n;
-        if (s0Var != null) {
-            s0Var.a();
-            this.n = null;
-        }
-        s0 s0Var2 = new s0(getContext());
-        this.n = s0Var2;
-        s0Var2.b(R.raw.error, 3500, str);
-        this.b.addView(this.n);
-    }
-
-    public final void d() {
-        boolean z9 = this.x;
-        boolean z10 = this.c;
-        boolean z11 = false;
-        if (z9 != (z10 && !this.d)) {
-            boolean z12 = z10 && !this.d;
-            this.x = z12;
-            if (z12) {
-                org.telegram.messenger.g0.S3(this, this.f);
-            } else {
-                org.telegram.messenger.g0.R3(this, R.drawable.media_download);
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            s0 s0Var = (s0) obj;
+            long j3 = s0Var.g;
+            if (j3 > 0 && currentTime - s0Var.d <= t.b(this.a, (int) j3, 0)) {
+                i7 += (int) s0Var.g;
             }
         }
-        if (this.y != (this.c && this.d)) {
-            clearAnimation();
-            ViewPropertyAnimator animate = animate();
-            if (this.c && this.d) {
-                z11 = true;
-            }
-            this.y = z11;
-            animate.alpha(z11 ? 0.4f : 1.0f).start();
-        }
+        this.d = Math.max(this.d, i7);
+        return i7;
     }
 
-    public void setEntry(e7 e7Var) {
-        this.w = null;
-        this.r = e7Var;
-        q0 q0Var = this.s;
-        if (q0Var != null) {
-            q0Var.a(true);
-            this.s = null;
+    public final void c() {
+        int currentTime = ConnectionsManager.getInstance(this.a).getCurrentTime();
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            s0 s0Var = (s0) obj;
+            if (s0Var.g > 0) {
+                currentTime = Math.min(currentTime, s0Var.d);
+            }
         }
-        s0 s0Var = this.n;
-        if (s0Var != null) {
-            s0Var.a();
-            this.n = null;
-        }
-        if (e7Var == null) {
-            this.c = false;
-            d();
-        }
+        this.c = currentTime;
     }
 }

@@ -1,37 +1,45 @@
 package com.google.android.gms.internal.clearcut;
 
+import android.util.Base64;
 import android.util.Log;
+import java.io.IOException;
 
 /* loaded from: classes.dex */
 public final class f extends d {
-    public final /* synthetic */ int i;
+    public final Object i;
+    public String j;
+    public s1 k;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(i iVar, String str, Object obj, int i7) {
-        super(iVar, str, obj);
-        this.i = i7;
+    public f(h hVar, String str, s1 s1Var) {
+        super(hVar, str, s1Var);
+        this.i = new Object();
     }
 
     @Override // com.google.android.gms.internal.clearcut.d
-    public final /* synthetic */ Object d(String str) {
-        switch (this.i) {
-            case 0:
-                if (e2.c.matcher(str).matches()) {
-                    return Boolean.TRUE;
+    public final Object d(String str) {
+        s1 s1Var;
+        try {
+            synchronized (this.i) {
+                try {
+                    if (!str.equals(this.j)) {
+                        s1 g10 = s1.g(Base64.decode(str, 3));
+                        this.j = str;
+                        this.k = g10;
+                    }
+                    s1Var = this.k;
+                } finally {
                 }
-                if (e2.d.matcher(str).matches()) {
-                    return Boolean.FALSE;
-                }
-                String str2 = this.b;
-                StringBuilder sb2 = new StringBuilder(str.length() + String.valueOf(str2).length() + 28);
-                sb2.append("Invalid boolean value for ");
-                sb2.append(str2);
-                sb2.append(": ");
-                sb2.append(str);
-                Log.e("PhenotypeFlag", sb2.toString());
-                return null;
-            default:
-                return str;
+            }
+            return s1Var;
+        } catch (IOException | IllegalArgumentException unused) {
+            String str2 = this.b;
+            StringBuilder sb2 = new StringBuilder(String.valueOf(str).length() + String.valueOf(str2).length() + 27);
+            sb2.append("Invalid byte[] value for ");
+            sb2.append(str2);
+            sb2.append(": ");
+            sb2.append(str);
+            Log.e("PhenotypeFlag", sb2.toString());
+            return null;
         }
     }
 }

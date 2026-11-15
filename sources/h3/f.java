@@ -1,28 +1,29 @@
 package h3;
 
+import com.google.android.gms.internal.vision.e2;
 import e2.s0;
 import e2.t;
 import e2.u;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import h9.c0;
 import h9.g0;
 import h9.i0;
 import h9.o;
-import h9.t1;
+import h9.s1;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f implements a {
     public final i0 a;
     public final int b;
 
-    public f(int i7, t1 t1Var) {
+    public f(int i7, s1 s1Var) {
         this.b = i7;
-        this.a = t1Var;
+        this.a = s1Var;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -86,7 +87,7 @@ public final class f implements a {
                                 gVar = new g(new u(tVar));
                                 break;
                             } else {
-                                com.google.android.recaptcha.internal.a.o(o13, "Ignoring track with unsupported compression ", "StreamFormatChunk");
+                                e2.o(o13, "Ignoring track with unsupported compression ", "StreamFormatChunk");
                                 gVar = dVar;
                                 break;
                             }
@@ -99,8 +100,8 @@ public final class f implements a {
                                     int o14 = xVar.o();
                                     xVar.O(6);
                                     int t11 = xVar.t();
-                                    String str3 = m0.a;
-                                    int D = m0.D(t11, ByteOrder.LITTLE_ENDIAN);
+                                    String str3 = l0.a;
+                                    int D = l0.D(t11, ByteOrder.LITTLE_ENDIAN);
                                     int t12 = xVar.a() > 0 ? xVar.t() : 0;
                                     t tVar2 = new t();
                                     tVar2.r = s0.n(str2);
@@ -117,10 +118,10 @@ public final class f implements a {
                                     gVar = new g(new u(tVar2));
                                     break;
                                 } else {
-                                    com.google.android.recaptcha.internal.a.o(t6, "Ignoring track with unsupported format tag ", "StreamFormatChunk");
+                                    e2.o(t6, "Ignoring track with unsupported format tag ", "StreamFormatChunk");
                                 }
                             } else {
-                                h2.a.l("StreamFormatChunk", "Ignoring strf box for unsupported track type: " + m0.I(i12));
+                                h2.a.l("StreamFormatChunk", "Ignoring strf box for unsupported track type: " + l0.I(i12));
                             }
                             gVar = dVar;
                         }

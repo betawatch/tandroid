@@ -3,28 +3,27 @@ package com.google.mlkit.vision.common.internal;
 import com.google.firebase.components.ComponentRegistrar;
 import e2.j0;
 import java.util.List;
-import jg.g;
 import u9.a;
-import u9.j;
+import u9.i;
 import vb.b;
 import vb.c;
 import z7.ra;
 import z7.ta;
 import z7.va;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class VisionCommonRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
         j0 a10 = a.a(c.class);
-        a10.a(new j(2, 0, b.class));
+        a10.a(new i(2, 0, b.class));
         a10.f = vb.a.c;
         Object[] objArr = {a10.b()};
         for (int i7 = 0; i7 < 1; i7++) {
             ra raVar = ta.b;
             if (objArr[i7] == null) {
-                throw new NullPointerException(g.j(i7, "at index "));
+                throw new NullPointerException(i5.c.i(i7, "at index "));
             }
         }
         ra raVar2 = ta.b;

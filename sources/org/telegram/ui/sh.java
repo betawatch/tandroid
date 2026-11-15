@@ -1,24 +1,67 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class sh extends org.telegram.ui.Components.qu {
-    public final /* synthetic */ cn Q1;
+public final class sh implements View.OnClickListener {
+    public final /* synthetic */ jf0 a;
+    public final /* synthetic */ org.telegram.ui.Components.uj0 b;
+    public final /* synthetic */ LinearLayout c;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ an f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sh(cn cnVar, org.telegram.ui.ActionBar.f2 f2Var, Activity activity, org.telegram.ui.ActionBar.h6 h6Var, ArrayList arrayList) {
-        super(f2Var, activity, h6Var, arrayList);
-        this.Q1 = cnVar;
+    public sh(an anVar, jf0 jf0Var, org.telegram.ui.Components.uj0 uj0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.f = anVar;
+        this.a = jf0Var;
+        this.b = uj0Var;
+        this.c = linearLayout;
+        this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.e = iArr;
     }
 
-    @Override // org.telegram.ui.Components.qu, org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
-    public final void dismiss() {
-        super.dismiss();
-        cn cnVar = this.Q1;
-        cnVar.getClass();
-        cnVar.w8(false, true, 0.0f);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        jf0 jf0Var = this.a;
+        ArrayList arrayList = jf0Var.b;
+        ArrayList arrayList2 = jf0Var.c;
+        an anVar = this.f;
+        if (anVar.f9 == null || arrayList2.isEmpty()) {
+            return;
+        }
+        if (arrayList2.size() == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
+            }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            anVar.presentFragment(new ProfileActivity(bundle, null));
+            anVar.P7(true);
+            return;
+        }
+        if (org.telegram.messenger.gz.c1 > 0 && anVar.m1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
+            org.telegram.ui.Components.xb t6 = new org.telegram.ui.Components.cc(org.telegram.ui.Components.ta.a(anVar.getParentActivity()), anVar.Aa).t(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131748488, null)), null);
+            anVar.C1 = t6;
+            t6.j = 4000;
+            t6.j();
+            org.telegram.messenger.gz.S(org.telegram.messenger.gz.c1 - 1);
+        }
+        org.telegram.ui.Components.uj0 uj0Var = this.b;
+        uj0Var.requestLayout();
+        this.c.requestLayout();
+        uj0Var.getAdapter().f();
+        this.d.getSwipeBack().e(this.e[0]);
     }
 }

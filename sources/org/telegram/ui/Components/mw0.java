@@ -1,22 +1,84 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface mw0 {
-    void d(TextWatcher textWatcher);
+public final class mw0 {
+    public final int a;
+    public final org.telegram.ui.Cells.t0 b;
+    public final org.telegram.ui.ActionBar.e6 c;
+    public final ch0 d;
+    public TL_account.TL_birthday e;
+    public oy0 f;
+    public oy0[] g;
+    public oy0[] h;
+    public boolean i;
+    public oy0 j;
+    public final RectF k = new RectF();
+    public final Paint l = new Paint(1);
+    public final dc m;
 
-    EditTextBoldCursor getEditField();
+    public mw0(int i7, org.telegram.ui.Cells.t0 t0Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.a = i7;
+        this.b = t0Var;
+        this.c = e6Var;
+        ch0 ch0Var = new ch0(R.raw.cake, org.telegram.messenger.g0.L(66.0f), org.telegram.messenger.g0.L(66.0f), true, null);
+        this.d = ch0Var;
+        ch0Var.H(false);
+        this.m = new dc(t0Var);
+    }
 
-    Editable getEditText();
+    public final void a(Canvas canvas) {
+        int L = org.telegram.messenger.g0.L(66.0f);
+        org.telegram.ui.Cells.t0 t0Var = this.b;
+        int width = (t0Var.getWidth() - L) / 2;
+        int L2 = org.telegram.messenger.g0.L(13.0f) + L;
+        ch0 ch0Var = this.d;
+        ch0Var.setBounds(width, org.telegram.messenger.g0.L(13.0f), width + L, L2);
+        ch0Var.draw(canvas);
+        this.f.c((t0Var.getWidth() - this.f.k()) / 2.0f, org.telegram.messenger.g0.L(19.0f) + L, 1.0f, -1, canvas);
+        int i7 = (int) (this.f.i() + org.telegram.messenger.g0.L(19.0f) + L + org.telegram.messenger.g0.L(17.0f));
+        int i10 = 0;
+        for (int i11 = 0; i11 < this.g.length; i11++) {
+            i10 = (int) (Math.max(this.g[i11].k(), this.h[i11].k()) + org.telegram.messenger.g0.L(9.0f) + org.telegram.messenger.g0.L(9.0f) + i10);
+        }
+        int width2 = (t0Var.getWidth() - i10) / 2;
+        int i12 = 0;
+        while (i12 < this.g.length) {
+            float max = Math.max(this.g[i12].k(), this.h[i12].k()) + org.telegram.messenger.g0.L(9.0f) + org.telegram.messenger.g0.L(9.0f);
+            float f10 = width2;
+            float f11 = (max / 2.0f) + f10;
+            int i13 = (int) (f10 + max);
+            oy0 oy0Var = this.g[i12];
+            oy0Var.c(f11 - (oy0Var.k() / 2.0f), i7, 0.75f, -1, canvas);
+            oy0 oy0Var2 = this.h[i12];
+            oy0Var2.c(f11 - (oy0Var2.k() / 2.0f), org.telegram.messenger.g0.L(16.0f) + i7, 1.0f, -1, canvas);
+            i12++;
+            width2 = i13;
+        }
+        if (this.i) {
+            int L3 = org.telegram.messenger.g0.L(38.0f) + i7;
+            canvas.save();
+            float k10 = this.j.k() + org.telegram.messenger.g0.L(26.0f);
+            float L4 = org.telegram.messenger.g0.L(30.0f);
+            float f12 = L3;
+            RectF rectF = this.k;
+            rectF.set((t0Var.getWidth() - k10) / 2.0f, f12, (t0Var.getWidth() + k10) / 2.0f, f12 + L4);
+            float a10 = this.m.a(0.1f);
+            canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
+            float f13 = L4 / 2.0f;
+            canvas.drawRoundRect(rectF, f13, f13, this.l);
+            this.j.c(rectF.left + org.telegram.messenger.g0.L(13.0f), rectF.centerY(), 1.0f, -1, canvas);
+            canvas.restore();
+        }
+    }
 
-    CharSequence getFieldText();
-
-    org.telegram.ui.ActionBar.f2 getParentFragment();
-
-    int getVisibility();
-
-    void setFieldText(CharSequence charSequence);
+    public final void b() {
+        ((org.telegram.ui.ActionBar.u2) t4.l(this.b.getContext(), org.telegram.messenger.hd.M0(2131751672, null), org.telegram.messenger.hd.M0(2131751671, null), this.e, new q2(this, 13), null, true, false, this.c).b).show();
+    }
 }

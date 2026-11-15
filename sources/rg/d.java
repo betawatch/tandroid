@@ -3,16 +3,16 @@ package rg;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.Cells.z7;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Cells.y7;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class d extends pj0 {
-    public boolean e3;
+public abstract class d extends uj0 {
+    public boolean f3;
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.uj0
     public final void J0(Canvas canvas, RectF rectF, long j3) {
         super.J0(canvas, rectF, j3);
         int childCount = getChildCount();
@@ -24,9 +24,9 @@ public abstract class d extends pj0 {
                 if (rectF.intersects(x10, y10, childAt.getWidth() + x10, childAt.getHeight() + y10)) {
                     canvas.save();
                     canvas.translate(x10, y10);
-                    z7 z7Var = (z7) ((c) childAt);
-                    if (z7Var.L) {
-                        z7Var.b(canvas, this);
+                    y7 y7Var = (y7) ((c) childAt);
+                    if (y7Var.M) {
+                        y7Var.b(canvas, this);
                     }
                     canvas.restore();
                 }
@@ -34,17 +34,17 @@ public abstract class d extends pj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
-        this.e3 = false;
+        this.f3 = false;
         for (int i7 = 0; i7 < getChildCount(); i7++) {
             if (getChildAt(i7) instanceof c) {
                 c cVar = (c) getChildAt(i7);
                 canvas.save();
                 canvas.translate(cVar.getX(), cVar.getY());
-                z7 z7Var = (z7) cVar;
-                if (z7Var.L) {
-                    z7Var.b(canvas, this);
+                y7 y7Var = (y7) cVar;
+                if (y7Var.M) {
+                    y7Var.b(canvas, this);
                 }
                 canvas.restore();
             }
@@ -54,10 +54,10 @@ public abstract class d extends pj0 {
 
     @Override // android.view.View
     public final void invalidate() {
-        if (this.e3) {
+        if (this.f3) {
             return;
         }
         super.invalidate();
-        this.e3 = true;
+        this.f3 = true;
     }
 }

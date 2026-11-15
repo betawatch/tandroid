@@ -1,10 +1,11 @@
 package rc;
 
+import com.google.android.gms.internal.vision.e2;
 import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class x {
     public boolean a;
@@ -19,7 +20,7 @@ public final class x {
         x xVar = new x();
         xVar.a = true;
         xVar.e = 8;
-        byte[] bArr = {(byte) ((i7 >> 8) & qs.e4), (byte) (i7 & qs.e4)};
+        byte[] bArr = {(byte) ((i7 >> 8) & ns.e4), (byte) (i7 & ns.e4)};
         if (str == null || str.length() == 0) {
             xVar.c(bArr);
             return xVar;
@@ -49,7 +50,7 @@ public final class x {
 
     public final String toString() {
         String str;
-        StringBuilder m10 = com.google.android.recaptcha.internal.a.m("WebSocketFrame(FIN=");
+        StringBuilder m10 = e2.m("WebSocketFrame(FIN=");
         m10.append(this.a ? "1" : "0");
         m10.append(",RSV1=");
         m10.append(this.b ? "1" : "0");

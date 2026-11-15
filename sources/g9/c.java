@@ -2,7 +2,7 @@ package g9;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class c extends i {
     public final /* synthetic */ int a = 1;
@@ -13,7 +13,7 @@ public class c extends i {
         this.b = iVar;
     }
 
-    @Override // g9.m
+    @Override // g9.l
     public final boolean apply(Object obj) {
         switch (this.a) {
         }

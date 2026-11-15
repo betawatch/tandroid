@@ -4,9 +4,9 @@ import org.telegram.messenger.k5;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,11 +38,11 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                                         a1Var2.finishFragment();
                                         break;
                                     } else {
-                                        k5.p(null, 2131743879, gc.a0(a1Var2), null);
+                                        k5.o(null, 2131743879, cc.a0(a1Var2), null);
                                         break;
                                     }
                                 } else {
-                                    gc.d0(tL_error2);
+                                    cc.d0(tL_error2);
                                     break;
                                 }
                             default:
@@ -52,12 +52,12 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                                         break;
                                     } else {
                                         a1Var2.b.b(false);
-                                        k5.p(null, 2131743879, gc.a0(a1Var2), null);
+                                        k5.o(null, 2131743879, cc.a0(a1Var2), null);
                                         break;
                                     }
                                 } else {
                                     a1Var2.b.b(false);
-                                    gc.d0(tL_error2);
+                                    cc.d0(tL_error2);
                                     break;
                                 }
                         }
@@ -82,11 +82,11 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                                         a1Var22.finishFragment();
                                         break;
                                     } else {
-                                        k5.p(null, 2131743879, gc.a0(a1Var22), null);
+                                        k5.o(null, 2131743879, cc.a0(a1Var22), null);
                                         break;
                                     }
                                 } else {
-                                    gc.d0(tL_error2);
+                                    cc.d0(tL_error2);
                                     break;
                                 }
                             default:
@@ -96,12 +96,12 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                                         break;
                                     } else {
                                         a1Var22.b.b(false);
-                                        k5.p(null, 2131743879, gc.a0(a1Var22), null);
+                                        k5.o(null, 2131743879, cc.a0(a1Var22), null);
                                         break;
                                     }
                                 } else {
                                     a1Var22.b.b(false);
-                                    gc.d0(tL_error2);
+                                    cc.d0(tL_error2);
                                     break;
                                 }
                         }

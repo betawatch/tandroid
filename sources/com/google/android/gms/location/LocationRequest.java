@@ -5,24 +5,25 @@ import android.os.Parcelable;
 import android.os.SystemClock;
 import android.os.WorkSource;
 import android.util.Log;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
+import com.google.android.gms.internal.vision.e2;
 import j7.b;
 import j8.h;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import q6.m;
 import r6.a;
-import u7.j;
-import u7.n;
+import u7.k;
+import u7.o;
 import x6.f;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class LocationRequest extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationRequest> CREATOR = new b(23);
-    public final WorkSource D;
-    public final j E;
+    public final WorkSource E;
+    public final k F;
     public int a;
     public long b;
     public long c;
@@ -37,7 +38,7 @@ public final class LocationRequest extends a implements ReflectedParcelable {
     public final String x;
     public final boolean y;
 
-    public LocationRequest(int i7, long j3, long j10, long j11, long j12, long j13, int i10, float f10, boolean z9, long j14, int i11, int i12, String str, boolean z10, WorkSource workSource, j jVar) {
+    public LocationRequest(int i7, long j3, long j10, long j11, long j12, long j13, int i10, float f10, boolean z10, long j14, int i11, int i12, String str, boolean z11, WorkSource workSource, k kVar) {
         this.a = i7;
         this.b = j3;
         this.c = j10;
@@ -45,14 +46,14 @@ public final class LocationRequest extends a implements ReflectedParcelable {
         this.e = j12 == Long.MAX_VALUE ? j13 : Math.min(Math.max(1L, j12 - SystemClock.elapsedRealtime()), j13);
         this.f = i10;
         this.h = f10;
-        this.n = z9;
+        this.n = z10;
         this.r = j14 != -1 ? j14 : j3;
         this.s = i11;
         this.w = i12;
         this.x = str;
-        this.y = z10;
-        this.D = workSource;
-        this.E = jVar;
+        this.y = z11;
+        this.E = workSource;
+        this.F = kVar;
     }
 
     public static String c(long j3) {
@@ -60,10 +61,10 @@ public final class LocationRequest extends a implements ReflectedParcelable {
         if (j3 == Long.MAX_VALUE) {
             return "∞";
         }
-        StringBuilder sb3 = n.a;
+        StringBuilder sb3 = o.a;
         synchronized (sb3) {
             sb3.setLength(0);
-            n.a(j3, sb3);
+            o.a(j3, sb3);
             sb2 = sb3.toString();
         }
         return sb2;
@@ -84,13 +85,13 @@ public final class LocationRequest extends a implements ReflectedParcelable {
             return false;
         }
         if ((i7 == 105 || this.b == locationRequest.b) && this.c == locationRequest.c && b() == locationRequest.b()) {
-            return (!b() || this.d == locationRequest.d) && this.e == locationRequest.e && this.f == locationRequest.f && this.h == locationRequest.h && this.n == locationRequest.n && this.s == locationRequest.s && this.w == locationRequest.w && this.y == locationRequest.y && this.D.equals(locationRequest.D) && m.k(this.x, locationRequest.x) && m.k(this.E, locationRequest.E);
+            return (!b() || this.d == locationRequest.d) && this.e == locationRequest.e && this.f == locationRequest.f && this.h == locationRequest.h && this.n == locationRequest.n && this.s == locationRequest.s && this.w == locationRequest.w && this.y == locationRequest.y && this.E.equals(locationRequest.E) && m.k(this.x, locationRequest.x) && m.k(this.F, locationRequest.F);
         }
         return false;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Long.valueOf(this.b), Long.valueOf(this.c), this.D});
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Long.valueOf(this.b), Long.valueOf(this.c), this.E});
     }
 
     /* JADX WARN: Removed duplicated region for block: B:61:0x0149  */
@@ -100,22 +101,22 @@ public final class LocationRequest extends a implements ReflectedParcelable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final String toString() {
-        j jVar;
+        k kVar;
         int intValue;
         String str;
         String str2;
-        StringBuilder m10 = com.google.android.recaptcha.internal.a.m("Request[");
+        StringBuilder m10 = e2.m("Request[");
         int i7 = this.a;
         if (i7 == 105) {
             m10.append(h.a(i7));
         } else {
             m10.append("@");
             if (b()) {
-                n.a(this.b, m10);
+                o.a(this.b, m10);
                 m10.append("/");
-                n.a(this.d, m10);
+                o.a(this.d, m10);
             } else {
-                n.a(this.b, m10);
+                o.a(this.b, m10);
             }
             m10.append(" ");
             m10.append(h.a(this.a));
@@ -136,14 +137,14 @@ public final class LocationRequest extends a implements ReflectedParcelable {
         long j3 = this.e;
         if (j3 != Long.MAX_VALUE) {
             m10.append(", duration=");
-            n.a(j3, m10);
+            o.a(j3, m10);
         }
         int i10 = this.f;
         if (i10 != Integer.MAX_VALUE) {
             m10.append(", maxUpdates=");
             m10.append(i10);
         }
-        boolean z9 = true;
+        boolean z10 = true;
         int i11 = this.w;
         if (i11 != 0) {
             m10.append(", ");
@@ -186,23 +187,23 @@ public final class LocationRequest extends a implements ReflectedParcelable {
             m10.append(str3);
         }
         Method method = f.d;
-        WorkSource workSource = this.D;
+        WorkSource workSource = this.E;
         if (method != null) {
             try {
                 Object invoke = method.invoke(workSource, null);
                 m.g(invoke);
-                z9 = ((Boolean) invoke).booleanValue();
+                z10 = ((Boolean) invoke).booleanValue();
             } catch (Exception e10) {
                 Log.e("WorkSourceUtil", "Unable to check WorkSource emptiness", e10);
             }
-            if (!z9) {
+            if (!z10) {
                 m10.append(", ");
                 m10.append(workSource);
             }
-            jVar = this.E;
-            if (jVar != null) {
+            kVar = this.F;
+            if (kVar != null) {
                 m10.append(", impersonation=");
-                m10.append(jVar);
+                m10.append(kVar);
             }
             m10.append(']');
             return m10.toString();
@@ -217,12 +218,12 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e11);
             }
             if (intValue != 0) {
-                z9 = false;
+                z10 = false;
             }
-            if (!z9) {
+            if (!z10) {
             }
-            jVar = this.E;
-            if (jVar != null) {
+            kVar = this.F;
+            if (kVar != null) {
             }
             m10.append(']');
             return m10.toString();
@@ -230,10 +231,10 @@ public final class LocationRequest extends a implements ReflectedParcelable {
         intValue = 0;
         if (intValue != 0) {
         }
-        if (!z9) {
+        if (!z10) {
         }
-        jVar = this.E;
-        if (jVar != null) {
+        kVar = this.F;
+        if (kVar != null) {
         }
         m10.append(']');
         return m10.toString();
@@ -241,38 +242,38 @@ public final class LocationRequest extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
+        int r10 = yb.r(parcel, 20293);
         int i10 = this.a;
-        xb.q(parcel, 1, 4);
+        yb.q(parcel, 1, 4);
         parcel.writeInt(i10);
         long j3 = this.b;
-        xb.q(parcel, 2, 8);
+        yb.q(parcel, 2, 8);
         parcel.writeLong(j3);
         long j10 = this.c;
-        xb.q(parcel, 3, 8);
+        yb.q(parcel, 3, 8);
         parcel.writeLong(j10);
-        xb.q(parcel, 6, 4);
+        yb.q(parcel, 6, 4);
         parcel.writeInt(this.f);
-        xb.q(parcel, 7, 4);
+        yb.q(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        xb.q(parcel, 8, 8);
+        yb.q(parcel, 8, 8);
         parcel.writeLong(this.d);
-        xb.q(parcel, 9, 4);
+        yb.q(parcel, 9, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        xb.q(parcel, 10, 8);
+        yb.q(parcel, 10, 8);
         parcel.writeLong(this.e);
         long j11 = this.r;
-        xb.q(parcel, 11, 8);
+        yb.q(parcel, 11, 8);
         parcel.writeLong(j11);
-        xb.q(parcel, 12, 4);
+        yb.q(parcel, 12, 4);
         parcel.writeInt(this.s);
-        xb.q(parcel, 13, 4);
+        yb.q(parcel, 13, 4);
         parcel.writeInt(this.w);
-        xb.l(parcel, 14, this.x);
-        xb.q(parcel, 15, 4);
+        yb.l(parcel, 14, this.x);
+        yb.q(parcel, 15, 4);
         parcel.writeInt(this.y ? 1 : 0);
-        xb.k(parcel, 16, this.D, i7);
-        xb.k(parcel, 17, this.E, i7);
-        xb.s(parcel, r10);
+        yb.k(parcel, 16, this.E, i7);
+        yb.k(parcel, 17, this.F, i7);
+        yb.s(parcel, r10);
     }
 }

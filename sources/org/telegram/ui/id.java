@@ -1,31 +1,34 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class id implements pa1 {
+public final /* synthetic */ class id implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zd b;
-    public final /* synthetic */ TwoStepVerificationActivity c;
+    public final /* synthetic */ xd b;
+    public final /* synthetic */ z41 c;
+    public final /* synthetic */ TwoStepVerificationActivity d;
 
-    public /* synthetic */ id(zd zdVar, TwoStepVerificationActivity twoStepVerificationActivity, int i7) {
+    public /* synthetic */ id(xd xdVar, z41 z41Var, TwoStepVerificationActivity twoStepVerificationActivity, int i7) {
         this.a = i7;
-        this.b = zdVar;
-        this.c = twoStepVerificationActivity;
+        this.b = xdVar;
+        this.c = z41Var;
+        this.d = twoStepVerificationActivity;
     }
 
-    @Override // org.telegram.ui.pa1
-    public final void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.F(false, tL_inputCheckPasswordSRP, this.c);
+                this.b.B0.setLoading(false);
+                this.c.presentFragment(this.d);
                 break;
             case 1:
-                this.b.F(true, tL_inputCheckPasswordSRP, this.c);
+                this.b.H0.setLoading(false);
+                this.c.presentFragment(this.d);
                 break;
             default:
-                this.b.F(true, tL_inputCheckPasswordSRP, this.c);
+                this.b.H0.setLoading(false);
+                this.c.presentFragment(this.d);
                 break;
         }
     }

@@ -12,7 +12,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t8 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,21 +48,21 @@ public final /* synthetic */ class t8 implements Runnable {
     */
     public final void run() {
         long j3;
-        boolean z9;
         boolean z10;
         boolean z11;
+        boolean z12;
         TLRPC.InputReplyTo inputReplyTo;
         String sb2;
         SQLiteCursor sQLiteCursor;
         int i7;
         SQLiteCursor queryFinalized;
         long j10;
-        boolean z12;
         boolean z13;
-        int i10;
         boolean z14;
+        int i10;
+        boolean z15;
         int i11;
-        dw dwVar;
+        bw bwVar;
         TLRPC.EncryptedChat encryptedChat;
         int i12;
         long j11;
@@ -81,29 +81,29 @@ public final /* synthetic */ class t8 implements Runnable {
                 boolean[] zArr = y8Var.R;
                 if (f10 != null && y8Var.G != 0 && j13 == 0) {
                     if (f10.floatValue() > 0.75f) {
-                        z9 = true;
-                        z9 = true;
+                        z10 = true;
+                        z10 = true;
                         if (!zArr[0]) {
                             zArr[0] = true;
-                            z10 = true;
-                            if (f10.floatValue() > 0.95f || zArr[z9 ? 1 : 0]) {
-                                z11 = z10;
+                            z11 = true;
+                            if (f10.floatValue() > 0.95f || zArr[z10 ? 1 : 0]) {
+                                z12 = z11;
                             } else {
-                                zArr[z9 ? 1 : 0] = z9;
-                                z11 = z9 ? 1 : 0;
+                                zArr[z10 ? 1 : 0] = z10;
+                                z12 = z10 ? 1 : 0;
                             }
-                            if (z11) {
+                            if (z12) {
                                 y8Var.G = (long) (j12 / f10.floatValue());
                             }
                         }
                     } else {
-                        z9 = true;
+                        z10 = true;
                     }
-                    z10 = false;
+                    z11 = false;
                     if (f10.floatValue() > 0.95f) {
                     }
-                    z11 = z10;
-                    if (z11) {
+                    z12 = z11;
+                    if (z12) {
                     }
                 }
                 if (y8Var.G == 0 || j13 == 0) {
@@ -127,10 +127,10 @@ public final /* synthetic */ class t8 implements Runnable {
                 }
                 return;
             case 1:
-                ui uiVar = (ui) obj2;
+                si siVar = (si) obj2;
                 TLRPC.Message message = (TLRPC.Message) obj;
-                a0.h hVar = uiVar.s1;
-                a0.h hVar2 = (a0.h) uiVar.r1.f(j13);
+                a0.h hVar = siVar.t1;
+                a0.h hVar2 = (a0.h) siVar.s1.f(j13);
                 TLRPC.DraftMessage draftMessage = hVar2 != null ? (TLRPC.DraftMessage) hVar2.f(j12) : null;
                 if (draftMessage == null || (inputReplyTo = draftMessage.reply_to) == null || inputReplyTo.reply_to_msg_id != message.id) {
                     return;
@@ -145,7 +145,7 @@ public final /* synthetic */ class t8 implements Runnable {
                 hVar4.k(message, j12);
                 SerializedData serializedData = new SerializedData(message.getObjectSize());
                 message.serializeToStream(serializedData);
-                SharedPreferences.Editor edit = uiVar.t1.edit();
+                SharedPreferences.Editor edit = siVar.u1.edit();
                 if (j12 == 0) {
                     sb2 = a8.p0.o(j13, "r_");
                 } else {
@@ -154,29 +154,29 @@ public final /* synthetic */ class t8 implements Runnable {
                     sb2 = t6.toString();
                 }
                 edit.putString(sb2, Utilities.f(serializedData.toByteArray())).commit();
-                uiVar.getNotificationCenter().k(85, Long.valueOf(j13));
+                siVar.getNotificationCenter().k(85, Long.valueOf(j13));
                 serializedData.cleanup();
                 return;
             case 2:
-                ((ui) obj2).P0(this.b, this.c, (ArrayList) obj, false);
+                ((si) obj2).P0(this.b, this.c, (ArrayList) obj, false);
                 return;
             case 3:
-                ((yr) obj2).getMessagesController().a0(null, null, null, this.b, true, 1, false, this.c, (TLRPC.TL_messages_deleteScheduledMessages) obj, 0);
+                ((vr) obj2).getMessagesController().a0(null, null, null, this.b, true, 1, false, this.c, (TLRPC.TL_messages_deleteScheduledMessages) obj, 0);
                 return;
             case 4:
-                ((yr) obj2).getMessagesController().k3(this.b, (TLRPC.InputPeer) obj, this.c);
+                ((vr) obj2).getMessagesController().k3(this.b, (TLRPC.InputPeer) obj, this.c);
                 return;
             case 5:
-                yr yrVar = (yr) obj2;
-                org.telegram.ui.dg dgVar = (org.telegram.ui.dg) obj;
+                vr vrVar = (vr) obj2;
+                org.telegram.ui.ag agVar = (org.telegram.ui.ag) obj;
                 try {
                     if (j13 != 0) {
-                        SQLiteDatabase sQLiteDatabase = yrVar.b;
+                        SQLiteDatabase sQLiteDatabase = vrVar.b;
                         Locale locale = Locale.US;
                         queryFinalized = sQLiteDatabase.queryFinalized("SELECT MIN(mid) FROM messages_topics WHERE uid = " + j12 + " AND topic_id = " + j13 + " AND mention = 1 AND read_state IN(0, 1)", new Object[0]);
                         i7 = 0;
                     } else {
-                        SQLiteDatabase sQLiteDatabase2 = yrVar.b;
+                        SQLiteDatabase sQLiteDatabase2 = vrVar.b;
                         Locale locale2 = Locale.US;
                         i7 = 0;
                         queryFinalized = sQLiteDatabase2.queryFinalized("SELECT MIN(mid) FROM messages_v2 WHERE uid = " + j12 + " AND mention = 1 AND read_state IN(0, 1)", new Object[0]);
@@ -186,10 +186,10 @@ public final /* synthetic */ class t8 implements Runnable {
                         try {
                             int intValue = sQLiteCursor.next() ? sQLiteCursor.intValue(i7) : 0;
                             sQLiteCursor.dispose();
-                            g0.h3(new x0(dgVar, intValue, 9));
+                            g0.h3(new x0(agVar, intValue, 9));
                         } catch (Exception e10) {
                             e = e10;
-                            yrVar.o(e, true);
+                            vrVar.o(e, true);
                             if (sQLiteCursor == null) {
                                 return;
                             }
@@ -216,32 +216,32 @@ public final /* synthetic */ class t8 implements Runnable {
                 sQLiteCursor.dispose();
                 return;
             case 6:
-                et etVar = (et) obj2;
+                bt btVar = (bt) obj2;
                 TLRPC.PeerNotifySettings peerNotifySettings = (TLRPC.PeerNotifySettings) obj;
                 long j14 = this.b;
                 long j15 = this.c;
-                String v = dt.v(j14, j15, true);
-                int i15 = etVar.a;
-                qp s12 = qp.s1(i15);
+                String v = at.v(j14, j15, true);
+                int i15 = btVar.a;
+                np s12 = np.s1(i15);
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i15);
-                yr a02 = yr.a0(i15);
-                dt t10 = dt.t(i15);
-                int c11 = k5.c("notify2_", v, etVar.b(), -1);
-                int c12 = k5.c("notifyuntil_", v, etVar.b(), 0);
-                SharedPreferences.Editor edit2 = etVar.b().edit();
+                vr a02 = vr.a0(i15);
+                at t10 = at.t(i15);
+                int c11 = k5.c("notify2_", v, btVar.b(), -1);
+                int c12 = k5.c("notifyuntil_", v, btVar.b(), 0);
+                SharedPreferences.Editor edit2 = btVar.b().edit();
                 if ((peerNotifySettings.flags & 2) != 0) {
                     j10 = j15;
-                    edit2.putBoolean(rf.b.i("silent_", v), peerNotifySettings.silent);
+                    edit2.putBoolean(r.b.k("silent_", v), peerNotifySettings.silent);
                 } else {
                     j10 = j15;
                     edit2.remove("silent_" + v);
                 }
                 if ((peerNotifySettings.flags & 64) != 0) {
-                    edit2.putBoolean(rf.b.i("stories_", v), !peerNotifySettings.stories_muted);
+                    edit2.putBoolean(r.b.k("stories_", v), !peerNotifySettings.stories_muted);
                 } else {
                     edit2.remove("stories_" + v);
                 }
-                TLRPC.Dialog dialog = j10 == 0 ? (TLRPC.Dialog) s12.Q.f(j14) : null;
+                TLRPC.Dialog dialog = j10 == 0 ? (TLRPC.Dialog) s12.R.f(j14) : null;
                 if (dialog != null) {
                     dialog.notify_settings = peerNotifySettings;
                 }
@@ -251,9 +251,9 @@ public final /* synthetic */ class t8 implements Runnable {
                             dialog.notify_settings.mute_until = 0;
                         }
                         edit2.remove("notify2_" + v);
-                        z12 = true;
+                        z13 = true;
                     } else {
-                        z12 = false;
+                        z13 = false;
                     }
                     if (j10 == 0) {
                         a02.E1(j14, 0L);
@@ -262,16 +262,16 @@ public final /* synthetic */ class t8 implements Runnable {
                     if (peerNotifySettings.mute_until > connectionsManager.getCurrentTime()) {
                         if (peerNotifySettings.mute_until <= connectionsManager.getCurrentTime() + 31536000) {
                             if (c11 == 3 && c12 == peerNotifySettings.mute_until) {
-                                z14 = false;
+                                z15 = false;
                             } else {
                                 edit2.putInt("notify2_" + v, 3);
                                 edit2.putInt("notifyuntil_" + v, peerNotifySettings.mute_until);
                                 if (dialog != null) {
                                     dialog.notify_settings.mute_until = 0;
                                 }
-                                z14 = true;
+                                z15 = true;
                             }
-                            z13 = z14;
+                            z14 = z15;
                             i11 = peerNotifySettings.mute_until;
                         } else if (c11 != 2) {
                             edit2.putInt("notify2_" + v, 2);
@@ -279,25 +279,25 @@ public final /* synthetic */ class t8 implements Runnable {
                                 dialog.notify_settings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
                             }
                             i11 = 0;
-                            z13 = true;
+                            z14 = true;
                         } else {
                             i11 = 0;
-                            z13 = false;
+                            z14 = false;
                         }
                         if (j10 == 0) {
                             a02.E1(j14, (i11 << 32) | 1);
                             t10.N(j14);
                         }
-                        etVar.a(peerNotifySettings.android_sound, edit2, j14, j10, 0);
+                        btVar.a(peerNotifySettings.android_sound, edit2, j14, j10, 0);
                         edit2.apply();
-                        if (z13) {
+                        if (z14) {
                             return;
                         }
-                        g0.h3(new ds(etVar, 1));
+                        g0.h3(new as(btVar, 1));
                         return;
                     }
                     if (c11 == 0 || c11 == 1) {
-                        z12 = false;
+                        z13 = false;
                     } else {
                         if (dialog != null) {
                             TLRPC.PeerNotifySettings peerNotifySettings2 = dialog.notify_settings;
@@ -307,23 +307,23 @@ public final /* synthetic */ class t8 implements Runnable {
                             i10 = 0;
                         }
                         edit2.putInt("notify2_" + v, i10);
-                        z12 = true;
+                        z13 = true;
                     }
                     if (j10 == 0) {
                         a02.E1(j14, 0L);
                     }
                 }
-                z13 = z12;
-                etVar.a(peerNotifySettings.android_sound, edit2, j14, j10, 0);
+                z14 = z13;
+                btVar.a(peerNotifySettings.android_sound, edit2, j14, j10, 0);
                 edit2.apply();
-                if (z13) {
+                if (z14) {
                 }
                 break;
             default:
-                dw dwVar2 = (dw) obj2;
+                bw bwVar2 = (bw) obj2;
                 TLRPC.EncryptedChat encryptedChat2 = (TLRPC.EncryptedChat) obj;
                 try {
-                    if (encryptedChat2.admin_id == dwVar2.getUserConfig().e() && (j13 & 1) == 0) {
+                    if (encryptedChat2.admin_id == bwVar2.getUserConfig().e() && (j13 & 1) == 0) {
                         j13++;
                     }
                     if (j13 > j12) {
@@ -331,7 +331,7 @@ public final /* synthetic */ class t8 implements Runnable {
                     }
                     int i16 = (int) j13;
                     int i17 = (int) j12;
-                    SQLiteDatabase sQLiteDatabase3 = dwVar2.getMessagesStorage().b;
+                    SQLiteDatabase sQLiteDatabase3 = bwVar2.getMessagesStorage().b;
                     Locale locale3 = Locale.US;
                     SQLiteCursor queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT uid FROM requested_holes WHERE uid = " + encryptedChat2.id + " AND ((seq_out_start >= " + i16 + " AND " + i16 + " <= seq_out_end) OR (seq_out_start >= " + i17 + " AND " + i17 + " <= seq_out_end))", new Object[0]);
                     boolean next = queryFinalized2.next();
@@ -346,7 +346,7 @@ public final /* synthetic */ class t8 implements Runnable {
                         sparseArray.put((int) j13, null);
                         j13 += 2;
                     }
-                    SQLiteDatabase sQLiteDatabase4 = dwVar2.getMessagesStorage().b;
+                    SQLiteDatabase sQLiteDatabase4 = bwVar2.getMessagesStorage().b;
                     Locale locale4 = Locale.US;
                     ?? queryFinalized3 = sQLiteDatabase4.queryFinalized("SELECT m.data, r.random_id, s.seq_in, s.seq_out, m.ttl, s.mid FROM messages_seq as s LEFT JOIN randoms_v2 as r ON r.mid = s.mid LEFT JOIN messages_v2 as m ON m.mid = s.mid WHERE m.uid = " + F + " AND m.out = 1 AND s.seq_out >= " + i16 + " AND s.seq_out <= " + i17 + " ORDER BY seq_out ASC", new Object[0]);
                     while (queryFinalized3.next()) {
@@ -362,7 +362,7 @@ public final /* synthetic */ class t8 implements Runnable {
                         if (byteBufferValue != 0) {
                             c10 = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r14), r14);
                             i12 = i16;
-                            c10.readAttachPath(byteBufferValue, dwVar2.getUserConfig().n);
+                            c10.readAttachPath(byteBufferValue, bwVar2.getUserConfig().n);
                             byteBufferValue.reuse();
                             c10.random_id = longValue;
                             c10.dialog_id = F;
@@ -375,7 +375,7 @@ public final /* synthetic */ class t8 implements Runnable {
                             i12 = i16;
                             long j16 = longValue;
                             j11 = F;
-                            c10 = dwVar2.c(intValue4, intValue3, intValue2, j16, encryptedChat3);
+                            c10 = bwVar2.c(intValue4, intValue3, intValue2, j16, encryptedChat3);
                             i13 = intValue3;
                         }
                         arrayList.add(c10);
@@ -392,28 +392,28 @@ public final /* synthetic */ class t8 implements Runnable {
                         int i19 = 0;
                         while (i19 < sparseArray.size()) {
                             int keyAt = sparseArray.keyAt(i19);
-                            arrayList.add(dwVar2.c(dwVar2.getUserConfig().j(), keyAt, keyAt + 1, Utilities.b.nextLong(), encryptedChat4));
+                            arrayList.add(bwVar2.c(bwVar2.getUserConfig().j(), keyAt, keyAt + 1, Utilities.b.nextLong(), encryptedChat4));
                             i19++;
-                            dwVar2 = dwVar2;
+                            bwVar2 = bwVar2;
                             encryptedChat4 = encryptedChat4;
                         }
-                        dwVar = dwVar2;
+                        bwVar = bwVar2;
                         encryptedChat = encryptedChat4;
-                        dwVar.getUserConfig().v(false);
+                        bwVar.getUserConfig().v(false);
                     } else {
-                        dwVar = dwVar2;
+                        bwVar = bwVar2;
                         encryptedChat = encryptedChat4;
                     }
-                    Collections.sort(arrayList, new jl(19));
+                    Collections.sort(arrayList, new gl(18));
                     ArrayList arrayList2 = new ArrayList();
                     arrayList2.add(encryptedChat);
-                    g0.h3(new bw(dwVar, arrayList, 0));
-                    gz sendMessagesHelper = dwVar.getSendMessagesHelper();
+                    g0.h3(new zv(bwVar, arrayList, 0));
+                    ez sendMessagesHelper = bwVar.getSendMessagesHelper();
                     ArrayList arrayList3 = new ArrayList();
                     ArrayList arrayList4 = new ArrayList();
                     sendMessagesHelper.getClass();
-                    g0.h3(new yj(sendMessagesHelper, arrayList3, arrayList4, arrayList2, arrayList, (Object) null, 1));
-                    SQLiteDatabase sQLiteDatabase5 = dwVar.getMessagesStorage().b;
+                    g0.h3(new wj(sendMessagesHelper, arrayList3, arrayList4, arrayList2, arrayList, (Object) null, 1));
+                    SQLiteDatabase sQLiteDatabase5 = bwVar.getMessagesStorage().b;
                     Locale locale5 = Locale.US;
                     sQLiteDatabase5.executeFast("REPLACE INTO requested_holes VALUES(" + encryptedChat.id + ", " + i18 + ", " + i17 + ")").stepThis().dispose();
                     return;

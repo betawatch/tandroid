@@ -6,10 +6,11 @@ import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.gms.cast.CastDevice;
+import f6.e0;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j extends a8.q {
     public final /* synthetic */ int b = 2;
@@ -28,21 +29,19 @@ public final class j extends a8.q {
         CastDevice castDevice2;
         int i10 = this.b;
         Object obj = this.c;
-        boolean z9 = false;
-        Object[] objArr = 0;
-        Object[] objArr2 = 0;
+        int i11 = 0;
         switch (i10) {
             case 0:
-                v0.j jVar = (v0.j) obj;
+                ug.x xVar = (ug.x) obj;
                 if (i7 == 1) {
-                    a7.b bVar = new a7.b(jVar);
+                    a7.b bVar = new a7.b(xVar);
                     parcel2.writeNoException();
                     com.google.android.gms.internal.cast.t.d(parcel2, bVar);
                     break;
                 } else if (i7 == 2) {
                     int readInt = parcel.readInt();
                     com.google.android.gms.internal.cast.t.b(parcel);
-                    jVar.getClass();
+                    xVar.getClass();
                     Log.d("CAST_STATE", "onCastStateChanged " + readInt);
                     parcel2.writeNoException();
                     break;
@@ -74,8 +73,8 @@ public final class j extends a8.q {
                         parcel2.writeNoException();
                         break;
                     case 4:
-                        int i11 = com.google.android.gms.internal.cast.t.a;
-                        int i12 = parcel.readInt() != 0 ? 1 : 0;
+                        int i12 = com.google.android.gms.internal.cast.t.a;
+                        int i13 = parcel.readInt() != 0 ? 1 : 0;
                         com.google.android.gms.internal.cast.t.b(parcel);
                         c cVar = (c) fVar;
                         q qVar = cVar.e;
@@ -83,7 +82,7 @@ public final class j extends a8.q {
                             try {
                                 o oVar = (o) qVar;
                                 Parcel p12 = oVar.p1();
-                                p12.writeInt(i12);
+                                p12.writeInt(i13);
                                 p12.writeInt(0);
                                 oVar.t1(p12, 6);
                             } catch (RemoteException e10) {
@@ -125,10 +124,10 @@ public final class j extends a8.q {
                         if (b10 != null) {
                             String str = b10.d;
                             if (!b10.equals(cVar3.k)) {
-                                Object[] objArr3 = !TextUtils.isEmpty(str) && ((castDevice2 = cVar3.k) == null || !TextUtils.equals(castDevice2.d, str));
+                                Object[] objArr = !TextUtils.isEmpty(str) && ((castDevice2 = cVar3.k) == null || !TextUtils.equals(castDevice2.d, str));
                                 cVar3.k = b10;
-                                c.m.b("update to device (%s) with name %s", b10, true != objArr3 ? "unchanged" : "changed");
-                                if (objArr3 != false && (castDevice = cVar3.k) != null) {
+                                c.m.b("update to device (%s) with name %s", b10, true != objArr ? "unchanged" : "changed");
+                                if (objArr != false && (castDevice = cVar3.k) != null) {
                                     i6.h hVar2 = cVar3.h;
                                     if (hVar2 != null) {
                                         j6.b bVar3 = i6.h.v;
@@ -138,7 +137,7 @@ public final class j extends a8.q {
                                     }
                                     Iterator it = new HashSet(cVar3.d).iterator();
                                     while (it.hasNext()) {
-                                        ((e0) it.next()).getClass();
+                                        ((d0) it.next()).getClass();
                                     }
                                 }
                             }
@@ -159,7 +158,7 @@ public final class j extends a8.q {
                 } else if (i7 == 2) {
                     boolean z10 = bVar4.e;
                     parcel2.writeNoException();
-                    int i13 = com.google.android.gms.internal.cast.t.a;
+                    int i14 = com.google.android.gms.internal.cast.t.a;
                     parcel2.writeInt(z10 ? 1 : 0);
                     break;
                 } else if (i7 == 3) {
@@ -180,12 +179,12 @@ public final class j extends a8.q {
                     String readString2 = parcel.readString();
                     String readString3 = parcel.readString();
                     com.google.android.gms.internal.cast.t.b(parcel);
-                    f6.e0 e0Var = cVar4.i;
+                    e0 e0Var = cVar4.i;
                     if (e0Var != null && e0Var.G == 2) {
-                        com.google.android.gms.common.api.internal.s b11 = com.google.android.gms.common.api.internal.t.b();
-                        b11.c = new f6.b0(e0Var, readString2, readString3, objArr2 == true ? 1 : 0);
+                        com.google.android.gms.common.api.internal.t b11 = com.google.android.gms.common.api.internal.u.b();
+                        b11.c = new f6.b0(e0Var, readString2, readString3, i11);
                         b11.a = 8407;
-                        e0Var.e(1, b11.a()).addOnCompleteListener(new d0((Object) this, (int) (objArr == true ? 1 : 0)));
+                        e0Var.e(1, b11.a()).addOnCompleteListener(new cb.c(this, 28));
                     }
                     parcel2.writeNoException();
                     break;
@@ -193,22 +192,22 @@ public final class j extends a8.q {
                     String readString4 = parcel.readString();
                     f6.i iVar = (f6.i) com.google.android.gms.internal.cast.t.a(parcel, f6.i.CREATOR);
                     com.google.android.gms.internal.cast.t.b(parcel);
-                    f6.e0 e0Var2 = cVar4.i;
+                    e0 e0Var2 = cVar4.i;
                     if (e0Var2 != null && e0Var2.G == 2) {
-                        com.google.android.gms.common.api.internal.s b12 = com.google.android.gms.common.api.internal.t.b();
+                        com.google.android.gms.common.api.internal.t b12 = com.google.android.gms.common.api.internal.u.b();
                         b12.c = new android.support.v4.media.session.a0(e0Var2, readString4, iVar, false, 23);
                         b12.a = 8406;
-                        e0Var2.e(1, b12.a()).addOnCompleteListener(new aa.n(this, 26));
+                        e0Var2.e(1, b12.a()).addOnCompleteListener(new ob.c(this, 24));
                     }
                     parcel2.writeNoException();
                     break;
                 } else if (i7 == 3) {
                     String readString5 = parcel.readString();
                     com.google.android.gms.internal.cast.t.b(parcel);
-                    f6.e0 e0Var3 = cVar4.i;
+                    e0 e0Var3 = cVar4.i;
                     if (e0Var3 != null && e0Var3.G == 2) {
-                        com.google.android.gms.common.api.internal.s b13 = com.google.android.gms.common.api.internal.t.b();
-                        b13.c = new q4.q(e0Var3, readString5, z9, 22);
+                        com.google.android.gms.common.api.internal.t b13 = com.google.android.gms.common.api.internal.u.b();
+                        b13.c = new wf.b(19, e0Var3, readString5);
                         b13.a = 8409;
                         e0Var3.e(1, b13.a());
                     }
@@ -264,8 +263,8 @@ public final class j extends a8.q {
         this.c = bVar;
     }
 
-    public j(v0.j jVar) {
+    public j(ug.x xVar) {
         super("com.google.android.gms.cast.framework.ICastStateListener", 1);
-        this.c = jVar;
+        this.c = xVar;
     }
 }

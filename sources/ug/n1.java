@@ -1,21 +1,38 @@
 package ug;
 
-import android.graphics.Paint;
 import android.graphics.RectF;
-import java.util.ArrayList;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class n1 {
-    public int i;
-    public final RectF a = new RectF();
-    public final RectF b = new RectF();
-    public final Paint c = new Paint();
-    public final ArrayList e = new ArrayList();
-    public float f = 1.0f;
-    public final long h = 2000;
-    public final float j = 1000.0f / org.telegram.messenger.g0.r;
-    public final int g = qs.e3;
-    public final float[] d = new float[800];
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public long e;
+    public float f;
+    public final /* synthetic */ o1 g;
+
+    public n1(o1 o1Var) {
+        this.g = o1Var;
+    }
+
+    public final void a(long j3, boolean z10) {
+        o1 o1Var = this.g;
+        RectF rectF = o1Var.a;
+        long j10 = j3 + o1Var.h;
+        g5.a aVar = Utilities.c;
+        this.e = j10 + aVar.nextInt(1000);
+        RectF rectF2 = z10 ? o1Var.b : rectF;
+        float abs = Math.abs(((int) aVar.nextLong()) % rectF2.width()) + rectF2.left;
+        float abs2 = Math.abs(((int) aVar.nextLong()) % rectF2.height()) + rectF2.top;
+        this.a = abs;
+        this.b = abs2;
+        double atan2 = Math.atan2(abs - rectF.centerX(), this.b - rectF.centerY());
+        this.c = (float) Math.sin(atan2);
+        this.d = (float) Math.cos(atan2);
+        aVar.nextInt(50);
+        this.f = 0.0f;
+    }
 }

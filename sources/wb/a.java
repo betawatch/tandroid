@@ -4,7 +4,7 @@ import android.support.v4.media.session.a0;
 import java.util.Arrays;
 import q6.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -43,18 +43,18 @@ public final class a {
         a0Var2.c = this.a;
         a0Var2.b = "text";
         String valueOf = String.valueOf(this.b);
-        boolean z9 = false;
-        b8.a aVar = new b8.a(11, z9);
+        boolean z10 = false;
+        b8.a aVar = new b8.a(11, z10);
         ((a0) a0Var.d).d = aVar;
         a0Var.d = aVar;
         aVar.c = valueOf;
         aVar.b = "confidence";
         String valueOf2 = String.valueOf(this.c);
-        b8.a aVar2 = new b8.a(11, z9);
+        b8.a aVar2 = new b8.a(11, z10);
         ((a0) a0Var.d).d = aVar2;
         aVar2.c = valueOf2;
         aVar2.b = "index";
-        a0 a0Var3 = new a0(11, z9);
+        a0 a0Var3 = new a0(11, z10);
         aVar2.d = a0Var3;
         a0Var.d = a0Var3;
         a0Var3.c = this.d;

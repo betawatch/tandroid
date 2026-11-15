@@ -1,9 +1,9 @@
 package oe;
 
-import c8.v9;
+import c8.u9;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g implements me.d {
     public final me.d a;
@@ -37,7 +37,7 @@ public final class g implements me.d {
     }
 
     @Override // me.d
-    public final v9 e() {
+    public final u9 e() {
         return me.f.d;
     }
 
@@ -72,7 +72,7 @@ public final class g implements me.d {
         if (i7 >= 0) {
             return hd.n.a;
         }
-        throw new IllegalArgumentException(jg.g.k(i7, "Illegal index ", ", kotlin.collections.LinkedHashMap expects only non-negative indices").toString());
+        throw new IllegalArgumentException(i5.c.j(i7, "Illegal index ", ", kotlin.collections.LinkedHashMap expects only non-negative indices").toString());
     }
 
     public final int hashCode() {
@@ -82,7 +82,7 @@ public final class g implements me.d {
     @Override // me.d
     public final me.d i(int i7) {
         if (i7 < 0) {
-            throw new IllegalArgumentException(jg.g.k(i7, "Illegal index ", ", kotlin.collections.LinkedHashMap expects only non-negative indices").toString());
+            throw new IllegalArgumentException(i5.c.j(i7, "Illegal index ", ", kotlin.collections.LinkedHashMap expects only non-negative indices").toString());
         }
         int i10 = i7 % 2;
         if (i10 == 0) {
@@ -104,7 +104,7 @@ public final class g implements me.d {
         if (i7 >= 0) {
             return false;
         }
-        throw new IllegalArgumentException(jg.g.k(i7, "Illegal index ", ", kotlin.collections.LinkedHashMap expects only non-negative indices").toString());
+        throw new IllegalArgumentException(i5.c.j(i7, "Illegal index ", ", kotlin.collections.LinkedHashMap expects only non-negative indices").toString());
     }
 
     public final String toString() {

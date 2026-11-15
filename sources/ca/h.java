@@ -1,6 +1,7 @@
 package ca;
 
 import android.util.Log;
+import com.google.android.gms.internal.vision.e2;
 import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.File;
@@ -18,7 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h {
     public static final Charset b = Charset.forName("UTF-8");
@@ -62,7 +63,7 @@ public final class h {
         JSONArray jSONArray = new JSONArray();
         for (int i7 = 0; i7 < list.size(); i7++) {
             try {
-                jSONArray.put(new JSONObject(p.a.u(list.get(i7))));
+                jSONArray.put(new JSONObject(p.a.o(list.get(i7))));
             } catch (JSONException e10) {
                 Log.w("FirebaseCrashlytics", "Exception parsing rollout assignment!", e10);
             }
@@ -79,7 +80,7 @@ public final class h {
 
     public static void g(File file, String str) {
         if (file.exists() && file.delete()) {
-            Log.i("FirebaseCrashlytics", com.google.android.recaptcha.internal.a.l("Deleted corrupt file: ", file.getAbsolutePath(), "\nReason: ", str), null);
+            Log.i("FirebaseCrashlytics", e2.l("Deleted corrupt file: ", file.getAbsolutePath(), "\nReason: ", str), null);
         }
     }
 
@@ -87,12 +88,12 @@ public final class h {
     /* JADX WARN: Type inference failed for: r1v4, types: [int] */
     /* JADX WARN: Type inference failed for: r1v5 */
     /* JADX WARN: Type inference failed for: r1v8, types: [java.io.Closeable] */
-    public final Map c(String str, boolean z9) {
+    public final Map c(String str, boolean z10) {
         Throwable th2;
         FileInputStream fileInputStream;
         Exception e10;
         ga.d dVar = this.a;
-        File b10 = z9 ? dVar.b(str, "internal-keys") : dVar.b(str, "keys");
+        File b10 = z10 ? dVar.b(str, "internal-keys") : dVar.b(str, "keys");
         if (!b10.exists() || b10.length() == 0) {
             g(b10, "The file has a length of zero for session: " + str);
             return Collections.EMPTY_MAP;
@@ -168,19 +169,19 @@ public final class h {
                 closeable = r32;
             }
         }
-        String i7 = rf.b.i("No userId set for session ", str);
+        String k10 = r.b.k("No userId set for session ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", i7, null);
+            Log.d("FirebaseCrashlytics", k10, null);
         }
         f(b10);
         return null;
     }
 
-    public final void h(String str, Map map, boolean z9) {
+    public final void h(String str, Map map, boolean z10) {
         String jSONObject;
         BufferedWriter bufferedWriter;
         ga.d dVar = this.a;
-        File b10 = z9 ? dVar.b(str, "internal-keys") : dVar.b(str, "keys");
+        File b10 = z10 ? dVar.b(str, "internal-keys") : dVar.b(str, "keys");
         BufferedWriter bufferedWriter2 = null;
         try {
             try {

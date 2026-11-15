@@ -6,29 +6,28 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
-import bi.de;
-import di.w8;
+import fi.o8;
 import j$.util.Objects;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.nt0;
-import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.v50;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.pi0;
+import org.telegram.ui.Components.u5;
+import org.telegram.ui.Components.y50;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class q1 extends j {
-    public nt0 q0;
-    public w8 r0;
-    public w8 s0;
-    public ch.f0 t0;
-    public ch.f0 u0;
-    public ch.o0 v0;
-    public v5 w0;
-    public v5 x0;
-    public boolean y0;
-    public float z0;
+    public float A0;
+    public nt0 r0;
+    public o8 s0;
+    public o8 t0;
+    public ch.g0 u0;
+    public ch.g0 v0;
+    public ch.p0 w0;
+    public u5 x0;
+    public u5 y0;
+    public boolean z0;
 
     @Override // tg.j
     public final i a() {
@@ -39,54 +38,54 @@ public final class q1 extends j {
 
     @Override // tg.j, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        nt0 nt0Var = this.q0;
+        nt0 nt0Var = this.r0;
         int padding = getPadding();
-        float e10 = this.x0.e(false, 1.0f);
+        float e10 = this.y0.e(false, 1.0f);
         if (e10 == 1.0f) {
-            this.s0 = null;
+            this.t0 = null;
         }
         canvas.save();
-        float f10 = this.z0;
+        float f10 = this.A0;
         canvas.scale(f10, f10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        w8 w8Var = this.s0;
-        if (w8Var != null) {
-            w8Var.e = (int) ((1.0f - e10) * 255.0f);
-            w8Var.setBounds(padding, padding, ((int) nt0Var.a) - padding, ((int) nt0Var.b) - padding);
-            this.s0.draw(canvas);
+        o8 o8Var = this.t0;
+        if (o8Var != null) {
+            o8Var.e = (int) ((1.0f - e10) * 255.0f);
+            o8Var.setBounds(padding, padding, ((int) nt0Var.a) - padding, ((int) nt0Var.b) - padding);
+            this.t0.draw(canvas);
         }
-        w8 w8Var2 = this.r0;
-        w8Var2.e = (int) (e10 * 255.0f);
-        w8Var2.setBounds(padding, padding, ((int) nt0Var.a) - padding, ((int) nt0Var.b) - padding);
-        this.r0.draw(canvas);
+        o8 o8Var2 = this.s0;
+        o8Var2.e = (int) (e10 * 255.0f);
+        o8Var2.setBounds(padding, padding, ((int) nt0Var.a) - padding, ((int) nt0Var.b) - padding);
+        this.s0.draw(canvas);
         Rect rect = org.telegram.messenger.g0.Q;
-        float width = (this.r0.getBounds().width() * 0.61f) / 2.0f;
-        rect.set((int) (this.r0.getBounds().centerX() - width), (int) (this.r0.getBounds().centerY() - width), (int) (this.r0.getBounds().centerX() + width), (int) (this.r0.getBounds().centerY() + width));
-        float e11 = this.w0.e(false, 1.0f);
-        this.t0.c(rect);
+        float width = (this.s0.getBounds().width() * 0.61f) / 2.0f;
+        rect.set((int) (this.s0.getBounds().centerX() - width), (int) (this.s0.getBounds().centerY() - width), (int) (this.s0.getBounds().centerX() + width), (int) (this.s0.getBounds().centerY() + width));
+        float e11 = this.x0.e(false, 1.0f);
         this.u0.c(rect);
-        this.t0.d(this.r0.a == 1 ? -1 : -16777216);
+        this.v0.c(rect);
+        this.u0.d(this.s0.a == 1 ? -1 : -16777216);
         if (e11 == 1.0f) {
-            this.t0.a(canvas);
+            this.u0.a(canvas);
         } else {
             canvas.save();
             float f11 = 1.0f - e11;
             canvas.scale(f11, f11, rect.centerX(), rect.top);
-            ch.f0 f0Var = this.u0;
-            f0Var.h = f11;
-            f0Var.a(canvas);
+            ch.g0 g0Var = this.v0;
+            g0Var.h = f11;
+            g0Var.a(canvas);
             canvas.restore();
             canvas.save();
             canvas.scale(e11, e11, rect.centerX(), rect.bottom);
-            ch.f0 f0Var2 = this.t0;
-            f0Var2.h = e11;
-            f0Var2.a(canvas);
+            ch.g0 g0Var2 = this.u0;
+            g0Var2.h = e11;
+            g0Var2.a(canvas);
             canvas.restore();
         }
         canvas.restore();
     }
 
-    public ch.o0 getCurrentReaction() {
-        return this.v0;
+    public ch.p0 getCurrentReaction() {
+        return this.w0;
     }
 
     @Override // tg.j
@@ -100,25 +99,25 @@ public final class q1 extends j {
     }
 
     public int getPadding() {
-        return (int) ((this.q0.b - org.telegram.messenger.g0.L(84.0f)) / 2.0f);
+        return (int) ((this.r0.b - org.telegram.messenger.g0.L(84.0f)) / 2.0f);
     }
 
     @Override // tg.j
-    public ki0 getSelectionBounds() {
+    public pi0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new ki0();
+            return new pi0();
         }
         float scaleX = viewGroup.getScaleX();
         float scale = (getScale() + 0.4f) * getMeasuredWidth();
         float f10 = scale / 2.0f;
         float f11 = scale * scaleX;
-        return new ki0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
+        return new pi0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
     }
 
     @Override // tg.j
     public final void k() {
-        nt0 nt0Var = this.q0;
+        nt0 nt0Var = this.r0;
         float f10 = nt0Var.a / 2.0f;
         float f11 = nt0Var.b / 2.0f;
         setX(getPositionX() - f10);
@@ -129,72 +128,72 @@ public final class q1 extends j {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.t0.b(true);
         this.u0.b(true);
+        this.v0.b(true);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.t0.b(false);
         this.u0.b(false);
+        this.v0.b(false);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        nt0 nt0Var = this.q0;
+        nt0 nt0Var = this.r0;
         super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) nt0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) nt0Var.b, TLObject.FLAG_30));
     }
 
-    public final void q(boolean z9) {
-        if (z9) {
-            this.s0 = this.r0;
-            w8 w8Var = new w8(this);
-            this.r0 = w8Var;
-            if (this.s0.a != 1) {
-                w8Var.a();
+    public final void q(boolean z10) {
+        if (z10) {
+            this.t0 = this.s0;
+            o8 o8Var = new o8(this);
+            this.s0 = o8Var;
+            if (this.t0.a != 1) {
+                o8Var.a();
             }
-            this.r0.b(this.y0, false);
-            this.r0.c(getScaleX());
-            this.x0.e(true, 0.0f);
+            this.s0.b(this.z0, false);
+            this.s0.c(getScaleX());
+            this.y0.e(true, 0.0f);
         } else {
-            this.r0.a();
+            this.s0.a();
         }
         invalidate();
     }
 
-    public final void r(boolean z9) {
-        boolean z10 = !this.y0;
-        this.y0 = z10;
-        if (!z9) {
-            this.r0.b(z10, z9);
+    public final void r(boolean z10) {
+        boolean z11 = !this.z0;
+        this.z0 = z11;
+        if (!z10) {
+            this.s0.b(z11, z10);
             return;
         }
         boolean[] zArr = {false};
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new de(28, this, zArr));
-        ofFloat.addListener(new v50(20, this, zArr));
-        ofFloat.setInterpolator(wq.g);
+        ofFloat.addUpdateListener(new ch.v(28, this, zArr));
+        ofFloat.addListener(new y50(20, this, zArr));
+        ofFloat.setInterpolator(er.g);
         ofFloat.setDuration(350L);
         ofFloat.start();
     }
 
-    public final void s(ch.o0 o0Var, boolean z9) {
-        if (Objects.equals(this.v0, o0Var)) {
+    public final void s(ch.p0 p0Var, boolean z10) {
+        if (Objects.equals(this.w0, p0Var)) {
             return;
         }
-        if (!z9) {
-            this.v0 = o0Var;
-            this.t0.e(o0Var);
+        if (!z10) {
+            this.w0 = p0Var;
+            this.u0.e(p0Var);
             invalidate();
             return;
         }
-        this.v0 = o0Var;
-        this.u0.e(o0Var);
-        ch.f0 f0Var = this.t0;
-        this.t0 = this.u0;
-        this.u0 = f0Var;
-        this.w0.e(true, 0.0f);
+        this.w0 = p0Var;
+        this.v0.e(p0Var);
+        ch.g0 g0Var = this.u0;
+        this.u0 = this.v0;
+        this.v0 = g0Var;
+        this.x0.e(true, 0.0f);
         invalidate();
     }
 
@@ -202,7 +201,7 @@ public final class q1 extends j {
     public void setScaleX(float f10) {
         if (getScaleX() != f10) {
             super.setScaleX(f10);
-            this.r0.c(f10);
+            this.s0.c(f10);
             invalidate();
         }
     }

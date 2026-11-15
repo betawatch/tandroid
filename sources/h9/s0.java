@@ -2,7 +2,7 @@ package h9;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s0 extends b0 {
     @Override // h9.c0
@@ -20,7 +20,7 @@ public final class s0 extends b0 {
         int i7 = this.b;
         if (i7 == 0) {
             int i10 = t0.c;
-            return a2.s;
+            return z1.s;
         }
         if (i7 != 1) {
             t0 p10 = t0.p(i7, this.a);
@@ -31,6 +31,6 @@ public final class s0 extends b0 {
         Object obj = this.a[0];
         Objects.requireNonNull(obj);
         int i11 = t0.c;
-        return new f2(obj);
+        return new e2(obj);
     }
 }

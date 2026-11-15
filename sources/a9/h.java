@@ -1,7 +1,7 @@
 package a9;
 
-import a8.s9;
-import a8.wa;
+import a8.u9;
+import a8.xa;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -14,16 +14,15 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import b9.c0;
-import b9.k0;
-import c8.y9;
+import b9.l0;
+import c8.x9;
 import com.google.android.gms.common.api.internal.k;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
-import f5.t;
 import f6.d0;
 import f6.e0;
-import j6.v;
+import j6.w;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -39,9 +38,9 @@ import m9.u;
 import org.telegram.messenger.WearAuthListenerService;
 import org.telegram.messenger.j1;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.uf;
-import sg.i0;
-import y7.d6;
+import org.telegram.ui.Components.bg;
+import sg.h0;
+import y7.f7;
 import z7.k7;
 import z7.m9;
 import z7.ma;
@@ -50,7 +49,7 @@ import z7.ra;
 import z7.ta;
 import z7.va;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -79,13 +78,13 @@ public final /* synthetic */ class h implements Runnable {
 
     private final void b() {
         f6.f fVar;
-        synchronized (((v) this.b).I) {
-            fVar = (f6.f) ((v) this.b).I.get((String) this.c);
+        synchronized (((w) this.b).I) {
+            fVar = (f6.f) ((w) this.b).I.get((String) this.c);
         }
         if (fVar != null) {
             ((h6.h) fVar).o((String) this.d);
         } else {
-            v.Y.b("Discarded message for unknown namespace '%s'", (String) this.c);
+            w.Y.b("Discarded message for unknown namespace '%s'", (String) this.c);
         }
     }
 
@@ -122,7 +121,7 @@ public final /* synthetic */ class h implements Runnable {
             }
             k10 = i10.k(new m(i7, 2, bundle, 0));
         }
-        k10.addOnCompleteListener(m6.d.c, new g6.d0((CountDownLatch) this.d, 18));
+        k10.addOnCompleteListener(m6.d.c, new gc.b((CountDownLatch) this.d, 18));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x002e, code lost:
@@ -141,10 +140,10 @@ public final /* synthetic */ class h implements Runnable {
         switch (this.a) {
             case 0:
                 d dVar = (d) this.b;
-                k0 k0Var = (k0) this.c;
+                l0 l0Var = (l0) this.c;
                 c0 c0Var = (c0) this.d;
                 WearAuthListenerService wearAuthListenerService = dVar.c;
-                k0Var.getClass();
+                l0Var.getClass();
                 try {
                     c0Var.getClass();
                     Parcel obtain = Parcel.obtain();
@@ -166,41 +165,41 @@ public final /* synthetic */ class h implements Runnable {
                 }
             case 1:
                 k kVar = (k) this.b;
-                wa waVar = (wa) this.d;
-                if (waVar.b > 0) {
-                    Bundle bundle = (Bundle) waVar.d;
+                xa xaVar = (xa) this.d;
+                if (xaVar.b > 0) {
+                    Bundle bundle = (Bundle) xaVar.d;
                     kVar.onCreate(bundle != null ? bundle.getBundle((String) this.c) : null);
                 }
-                if (waVar.b >= 2) {
+                if (xaVar.b >= 2) {
                     kVar.onStart();
                 }
-                if (waVar.b >= 3) {
+                if (xaVar.b >= 3) {
                     kVar.onResume();
                 }
-                if (waVar.b >= 4) {
+                if (xaVar.b >= 4) {
                     kVar.onStop();
                 }
-                if (waVar.b >= 5) {
+                if (xaVar.b >= 5) {
                     kVar.onDestroy();
                     return;
                 }
                 return;
             case 2:
-                super/*f5.b*/.c((aa.n) this.c, (j1) this.d);
+                super/*f5.b*/.c((cb.c) this.c, (j1) this.d);
                 return;
             case 3:
-                super/*f5.b*/.a((aa.c0) this.c, (f5.g) this.d);
+                super/*f5.b*/.a((f5.g) this.c, (f5.h) this.d);
                 return;
             case 4:
                 a();
                 return;
             case 5:
-                ha.c cVar = (ha.c) this.d;
-                aa.b bVar = (aa.b) this.b;
-                cVar.b(bVar, (TaskCompletionSource) this.c);
-                ((AtomicInteger) cVar.i.c).set(0);
-                double min = Math.min(3600000.0d, Math.pow(cVar.b, cVar.a()) * (60000.0d / cVar.a));
-                String str2 = "Delay for: " + String.format(Locale.US, "%.2f", Double.valueOf(min / 1000.0d)) + " s for report: " + bVar.b;
+                ha.b bVar = (ha.b) this.d;
+                aa.b bVar2 = (aa.b) this.b;
+                bVar.b(bVar2, (TaskCompletionSource) this.c);
+                ((AtomicInteger) bVar.i.c).set(0);
+                double min = Math.min(3600000.0d, Math.pow(bVar.b, bVar.a()) * (60000.0d / bVar.a));
+                String str2 = "Delay for: " + String.format(Locale.US, "%.2f", Double.valueOf(min / 1000.0d)) + " s for report: " + bVar2.b;
                 if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                     Log.d("FirebaseCrashlytics", str2, null);
                 }
@@ -221,10 +220,10 @@ public final /* synthetic */ class h implements Runnable {
                     obj = ((o0.e) this.b).call();
                 } catch (Exception unused2) {
                 }
-                ((Handler) this.d).post(new u(26, (t) this.c, obj));
+                ((Handler) this.d).post(new u(25, (f5.u) this.c, obj));
                 return;
             case 9:
-                ((uf) this.d).J((File) this.c, (ArrayList) this.b);
+                ((bg) this.d).K((File) this.c, (ArrayList) this.b);
                 return;
             case 10:
                 x4.e eVar = (x4.e) this.d;
@@ -264,16 +263,16 @@ public final /* synthetic */ class h implements Runnable {
                     }
                 } catch (IOException | OutOfMemoryError | RuntimeException e12) {
                     Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e12);
-                    throw new RuntimeException(rf.b.i("Unable to write bitmap to file ", str3), e12);
+                    throw new RuntimeException(r.b.k("Unable to write bitmap to file ", str3), e12);
                 }
             default:
                 ma maVar = (ma) this.b;
-                i0 i0Var = (i0) this.c;
+                h0 h0Var = (h0) this.c;
                 k7 k7Var = k7.b;
                 String str4 = (String) this.d;
-                d6 d6Var = (d6) i0Var.b;
-                d6Var.b = k7Var;
-                m9 m9Var = (m9) d6Var.a;
+                f7 f7Var = (f7) h0Var.b;
+                f7Var.b = k7Var;
+                m9 m9Var = (m9) f7Var.a;
                 if (m9Var != null) {
                     str = m9Var.d;
                     int i11 = r2.a;
@@ -282,18 +281,18 @@ public final /* synthetic */ class h implements Runnable {
                     }
                 }
                 str = "NA";
-                s9 s9Var = new s9();
-                s9Var.a = maVar.a;
-                s9Var.b = maVar.b;
+                u9 u9Var = new u9();
+                u9Var.a = maVar.a;
+                u9Var.b = maVar.b;
                 synchronized (ma.class) {
                     vaVar = ma.j;
                     if (vaVar == null) {
-                        n0.c a10 = y9.a(Resources.getSystem().getConfiguration());
+                        n0.c a10 = x9.a(Resources.getSystem().getConfiguration());
                         Object[] objArr = new Object[4];
                         int i12 = 0;
                         while (i7 < a10.a.size()) {
                             Locale locale = a10.a.get(i7);
-                            f5.a aVar = pb.c.a;
+                            k8.a aVar = pb.c.a;
                             String languageTag = locale.toLanguageTag();
                             languageTag.getClass();
                             int i13 = i12 + 1;
@@ -318,15 +317,15 @@ public final /* synthetic */ class h implements Runnable {
                         ma.j = vaVar;
                     }
                 }
-                s9Var.k = vaVar;
-                s9Var.g = Boolean.TRUE;
-                s9Var.d = str;
-                s9Var.c = str4;
-                s9Var.e = maVar.f.isSuccessful() ? (String) maVar.f.getResult() : maVar.d.a();
-                s9Var.i = 10;
-                s9Var.j = Integer.valueOf(maVar.h);
-                i0Var.c = s9Var;
-                maVar.c.a(i0Var);
+                u9Var.k = vaVar;
+                u9Var.g = Boolean.TRUE;
+                u9Var.d = str;
+                u9Var.c = str4;
+                u9Var.e = maVar.f.isSuccessful() ? (String) maVar.f.getResult() : maVar.d.a();
+                u9Var.i = 10;
+                u9Var.j = Integer.valueOf(maVar.h);
+                h0Var.c = u9Var;
+                maVar.c.a(h0Var);
                 return;
         }
     }
@@ -338,17 +337,17 @@ public final /* synthetic */ class h implements Runnable {
         this.d = obj3;
     }
 
-    public /* synthetic */ h(Object obj, Object obj2, Object obj3, boolean z9, int i7) {
+    public /* synthetic */ h(Object obj, Object obj2, Object obj3, boolean z10, int i7) {
         this.a = i7;
         this.b = obj2;
         this.c = obj3;
         this.d = obj;
     }
 
-    public /* synthetic */ h(ma maVar, i0 i0Var, String str) {
+    public /* synthetic */ h(ma maVar, h0 h0Var, String str) {
         this.a = 12;
         this.b = maVar;
-        this.c = i0Var;
+        this.c = h0Var;
         this.d = str;
     }
 }

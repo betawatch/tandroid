@@ -1,9 +1,9 @@
 package cc;
 
 import java.lang.reflect.Array;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h extends g {
     public b e;
@@ -32,7 +32,7 @@ public final class h extends g {
             int i13 = i10 - 8;
             int i14 = i7 - 8;
             int i15 = 2;
-            boolean z9 = true;
+            boolean z10 = true;
             int i16 = 0;
             int[][] iArr = (int[][]) Array.newInstance((Class<?>) Integer.TYPE, i12, i11);
             int i17 = 0;
@@ -45,7 +45,7 @@ public final class h extends g {
                 if (i19 > i13) {
                     i19 = i13;
                 }
-                boolean z10 = z9;
+                boolean z11 = z10;
                 int i20 = i16;
                 while (i20 < i11) {
                     int i21 = i20 << 3;
@@ -54,7 +54,7 @@ public final class h extends g {
                     }
                     int i22 = (i19 * i7) + i21;
                     int i23 = i15;
-                    int i24 = qs.e4;
+                    int i24 = ns.e4;
                     int i25 = 0;
                     int i26 = 0;
                     int i27 = 0;
@@ -116,7 +116,7 @@ public final class h extends g {
                     i18 = 8;
                 }
                 i17++;
-                z9 = z10;
+                z10 = z11;
                 i16 = 0;
             }
             byte[] bArr3 = a10;

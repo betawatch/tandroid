@@ -1,82 +1,134 @@
 package fi;
 
-import android.os.SystemClock;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g6 b;
+public final class d6 extends k6 {
+    public final String C;
+    public final String D;
+    public final TL_stories.MediaArea E;
+    public final ArrayList F;
+    public boolean G;
+    public String H;
+    public int I;
+    public int J;
 
-    public /* synthetic */ d6(g6 g6Var, int i7) {
-        this.a = i7;
-        this.b = g6Var;
+    public d6(int i7, String str, String str2) {
+        super(i7, 0L, 3, -1, null);
+        this.F = new ArrayList();
+        this.H = "";
+        this.C = str2;
+        this.D = str;
+        this.E = null;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                g6 g6Var = this.b;
-                g6Var.r0 = false;
-                g6Var.z0 = false;
-                g6Var.v0 = SystemClock.elapsedRealtime();
-                g6Var.u0 = true;
-                g6Var.w0 = false;
-                g6Var.J.c(false);
-                g6Var.K.c(false);
-                g6Var.L.c(false);
-                ((r9) g6Var.a).e(true);
-                break;
-            case 1:
-                long currentTimeMillis = System.currentTimeMillis();
-                g6 g6Var2 = this.b;
-                g6Var2.Q = currentTimeMillis;
-                g6Var2.R = 0L;
-                g6Var2.r0 = true;
-                ((r9) g6Var2.a).a.J0.a(0L, true);
-                break;
-            case 2:
-                g6 g6Var3 = this.b;
-                if (!g6Var3.r0 && !g6Var3.b()) {
-                    if (!va.c(((r9) g6Var3.a).a)) {
-                        g6Var3.w0 = false;
-                        g6Var3.J.c(false);
-                        g6Var3.K.c(false);
-                        g6Var3.L.c(false);
-                        break;
-                    } else {
-                        g6Var3.z0 = true;
-                        g6Var3.A0 = true;
-                        ((r9) g6Var3.a).f(new d6(g6Var3, 4), true);
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                g6 g6Var4 = this.b;
-                if (!g6Var4.r0 && !g6Var4.b()) {
-                    y9 y9Var = ((r9) g6Var4.a).a.B0;
-                    if (y9Var != null) {
-                        y9Var.toggleDual();
-                    }
-                    g6Var4.d(360.0f);
-                    g6Var4.w0 = false;
-                    g6Var4.J.c(false);
-                    g6Var4.K.c(false);
-                    g6Var4.L.c(false);
-                    break;
-                }
-                break;
-            default:
-                long currentTimeMillis2 = System.currentTimeMillis();
-                g6 g6Var5 = this.b;
-                g6Var5.Q = currentTimeMillis2;
-                g6Var5.r0 = true;
-                e6 e6Var = g6Var5.a;
-                g6Var5.R = 0L;
-                ((r9) e6Var).a.J0.a(0L, true);
-                break;
+    @Override // fi.k6
+    public final gj f(int i7) {
+        if (i7 < 0) {
+            return null;
         }
+        ArrayList arrayList = this.i;
+        if (i7 >= arrayList.size()) {
+            return null;
+        }
+        return (gj) arrayList.get(i7);
+    }
+
+    @Override // fi.k6
+    public final int g() {
+        return this.J;
+    }
+
+    @Override // fi.k6
+    public final ArrayList h() {
+        return this.F;
+    }
+
+    @Override // fi.k6
+    public final int i() {
+        return this.i.size();
+    }
+
+    @Override // fi.k6
+    public final boolean k() {
+        return this.G;
+    }
+
+    @Override // fi.k6
+    public final boolean l() {
+        return false;
+    }
+
+    @Override // fi.k6
+    public final boolean q(int i7, List list, boolean z10) {
+        if (this.G || this.H == null) {
+            return false;
+        }
+        TL_stories.TL_stories_searchPosts tL_stories_searchPosts = new TL_stories.TL_stories_searchPosts();
+        tL_stories_searchPosts.offset = this.H;
+        tL_stories_searchPosts.limit = i7;
+        String str = this.C;
+        if (str != null) {
+            tL_stories_searchPosts.flags |= 1;
+            tL_stories_searchPosts.hashtag = str;
+        }
+        TL_stories.MediaArea mediaArea = this.E;
+        if (mediaArea != null) {
+            tL_stories_searchPosts.flags |= 2;
+            tL_stories_searchPosts.area = mediaArea;
+        }
+        this.G = true;
+        String str2 = this.D;
+        boolean isEmpty = TextUtils.isEmpty(str2);
+        TLObject tLObject = null;
+        int i10 = this.c;
+        if (!isEmpty) {
+            TLObject f22 = np.s1(i10).f2(str2);
+            if (f22 == null) {
+                np.s1(i10).d2().a(str2, null, new n2(this, z10, i7, list));
+                return true;
+            }
+            tLObject = f22;
+        }
+        if (tLObject != null) {
+            tL_stories_searchPosts.flags |= 4;
+            tL_stories_searchPosts.peer = np.k1(tLObject);
+        }
+        this.I = ConnectionsManager.getInstance(i10).sendRequest(tL_stories_searchPosts, new ai.d1(this, 7));
+        return true;
+    }
+
+    @Override // fi.k6
+    public final boolean r(int i7) {
+        return false;
+    }
+
+    public d6(int i7, TL_stories.MediaArea mediaArea) {
+        super(i7, 0L, 3, -1, null);
+        this.F = new ArrayList();
+        this.H = "";
+        this.C = null;
+        this.D = null;
+        this.E = mediaArea;
+    }
+
+    @Override // fi.k6
+    public final void j() {
+    }
+
+    @Override // fi.k6
+    public final void s() {
+    }
+
+    @Override // fi.k6
+    public final void x() {
     }
 }

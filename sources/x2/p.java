@@ -1,24 +1,25 @@
 package x2;
 
-import a8.ia;
+import a8.ja;
 import android.content.Context;
 import android.net.Uri;
-import h9.t1;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.k5;
-import org.telegram.ui.ly0;
+import org.telegram.ui.ActionBar.h5;
+import org.telegram.ui.Wallet.k8;
+import org.telegram.ui.ld0;
+import tg.a2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p implements e0 {
-    public final k5 a;
-    public final j2.n b;
-    public w7.s c;
+    public final h5 a;
+    public final wf.b b;
+    public nb.a c;
     public final long d;
     public final long e;
     public final long f;
@@ -27,16 +28,16 @@ public final class p implements e0 {
     public boolean i;
 
     public p(Context context, f3.m mVar) {
-        j2.n nVar = new j2.n(context);
-        w7.s sVar = new w7.s(5, false);
-        this.b = nVar;
-        this.c = sVar;
-        k5 k5Var = new k5(mVar, sVar);
-        this.a = k5Var;
-        if (nVar != ((j2.n) k5Var.f)) {
-            k5Var.f = nVar;
-            ((HashMap) k5Var.d).clear();
-            ((HashMap) k5Var.e).clear();
+        wf.b bVar = new wf.b(context);
+        nb.a aVar = new nb.a(6);
+        this.b = bVar;
+        this.c = aVar;
+        h5 h5Var = new h5(mVar, aVar);
+        this.a = h5Var;
+        if (bVar != ((wf.b) h5Var.f)) {
+            h5Var.f = bVar;
+            ((HashMap) h5Var.d).clear();
+            ((HashMap) h5Var.e).clear();
         }
         this.d = -9223372036854775807L;
         this.e = -9223372036854775807L;
@@ -55,17 +56,17 @@ public final class p implements e0 {
     }
 
     @Override // x2.e0
-    public final e0 a(w7.s sVar) {
-        this.c = sVar;
-        k5 k5Var = this.a;
-        k5Var.h = sVar;
-        f3.m mVar = (f3.m) k5Var.c;
+    public final e0 a(nb.a aVar) {
+        this.c = aVar;
+        h5 h5Var = this.a;
+        h5Var.h = aVar;
+        f3.m mVar = (f3.m) h5Var.c;
         synchronized (mVar) {
-            mVar.c = sVar;
+            mVar.c = aVar;
         }
-        Iterator it = ((HashMap) k5Var.e).values().iterator();
+        Iterator it = ((HashMap) h5Var.e).values().iterator();
         while (it.hasNext()) {
-            ((e0) it.next()).a(sVar);
+            ((e0) it.next()).a(aVar);
         }
         return this;
     }
@@ -74,8 +75,8 @@ public final class p implements e0 {
     @Override // x2.e0
     public final a b(e2.l0 l0Var) {
         Uri uri;
-        boolean z9;
         boolean z10;
+        boolean z11;
         long j3;
         Uri uri2;
         String str;
@@ -90,20 +91,20 @@ public final class p implements e0 {
         }
         if (Objects.equals(l0Var2.b.b, "application/x-image-uri")) {
             long j10 = l0Var2.b.h;
-            String str3 = h2.m0.a;
+            String str3 = h2.l0.a;
             throw null;
         }
         e2.g0 g0Var = l0Var2.b;
-        int K = h2.m0.K(g0Var.a, g0Var.b);
+        int K = h2.l0.K(g0Var.a, g0Var.b);
         if (l0Var2.b.h != -9223372036854775807L) {
             f3.m mVar = (f3.m) this.a.c;
             synchronized (mVar) {
                 mVar.e = 1;
             }
-            k5.c(this.a);
+            h5.c(this.a);
         }
         try {
-            e0 h = this.a.h(K);
+            e0 i7 = this.a.i(K);
             e2.e0 a10 = l0Var2.c.a();
             e2.f0 f0Var = l0Var2.c;
             if (f0Var.a == -9223372036854775807L) {
@@ -124,12 +125,12 @@ public final class p implements e0 {
             e2.f0 f0Var2 = new e2.f0(a10);
             if (f0Var2.equals(l0Var2.c)) {
                 uri = null;
-                z9 = true;
-                z10 = false;
+                z10 = true;
+                z11 = false;
             } else {
                 e2.c0 c0Var2 = new e2.c0();
                 List list = Collections.EMPTY_LIST;
-                h9.i0 i0Var = t1.e;
+                h9.i0 i0Var = h9.s1.e;
                 e2.h0 h0Var = e2.h0.d;
                 e2.b0 b0Var = l0Var2.e;
                 e2.z zVar = new e2.z();
@@ -153,9 +154,9 @@ public final class p implements e0 {
                     uri = null;
                     e2.d0 d0Var = g0Var2.c;
                     if (d0Var != null) {
-                        z10 = false;
+                        z11 = false;
                         e2.c0 c0Var3 = new e2.c0();
-                        z9 = true;
+                        z10 = true;
                         c0Var3.a = d0Var.a;
                         c0Var3.b = d0Var.b;
                         c0Var3.c = d0Var.c;
@@ -166,8 +167,8 @@ public final class p implements e0 {
                         c0Var3.h = d0Var.h;
                         c0Var = c0Var3;
                     } else {
-                        z9 = true;
-                        z10 = false;
+                        z10 = true;
+                        z11 = false;
                         c0Var = new e2.c0();
                     }
                     e2.y yVar2 = g0Var2.d;
@@ -179,8 +180,8 @@ public final class p implements e0 {
                     c0Var2 = c0Var;
                 } else {
                     uri = null;
-                    z9 = true;
-                    z10 = false;
+                    z10 = true;
+                    z11 = false;
                     j3 = -9223372036854775807L;
                     uri2 = null;
                     str = null;
@@ -190,7 +191,7 @@ public final class p implements e0 {
                 List list2 = list;
                 h9.i0 i0Var2 = i0Var;
                 e2.e0 a11 = f0Var2.a();
-                ia.p((c0Var2.b == null || c0Var2.a != null) ? z9 : z10 ? 1 : 0);
+                ja.p((c0Var2.b == null || c0Var2.a != null) ? z10 : z11 ? 1 : 0);
                 e2.g0 g0Var3 = uri2 != null ? new e2.g0(uri2, str, c0Var2.a != null ? new e2.d0(c0Var2) : uri, yVar, list2, str2, i0Var2, j3) : uri;
                 if (str4 == null) {
                     str4 = "";
@@ -203,84 +204,84 @@ public final class p implements e0 {
                 }
                 l0Var2 = new e2.l0(str7, b0Var2, g0Var3, f0Var3, o0Var, h0Var2);
             }
-            a b10 = h.b(l0Var2);
+            a b10 = i7.b(l0Var2);
             h9.i0 i0Var3 = l0Var2.b.g;
             if (!i0Var3.isEmpty()) {
                 a[] aVarArr = new a[i0Var3.size() + 1];
-                aVarArr[z10 ? 1 : 0] = b10;
-                for (int i7 = z10 ? 1 : 0; i7 < i0Var3.size(); i7++) {
+                aVarArr[z11 ? 1 : 0] = b10;
+                for (int i10 = z11 ? 1 : 0; i10 < i0Var3.size(); i10++) {
                     if (this.i) {
                         e2.t tVar = new e2.t();
-                        tVar.r = e2.s0.n(((e2.k0) i0Var3.get(i7)).b);
-                        tVar.d = ((e2.k0) i0Var3.get(i7)).c;
-                        tVar.e = ((e2.k0) i0Var3.get(i7)).d;
-                        tVar.f = ((e2.k0) i0Var3.get(i7)).e;
-                        tVar.b = ((e2.k0) i0Var3.get(i7)).f;
-                        tVar.a = ((e2.k0) i0Var3.get(i7)).g;
+                        tVar.r = e2.s0.n(((e2.k0) i0Var3.get(i10)).b);
+                        tVar.d = ((e2.k0) i0Var3.get(i10)).c;
+                        tVar.e = ((e2.k0) i0Var3.get(i10)).d;
+                        tVar.f = ((e2.k0) i0Var3.get(i10)).e;
+                        tVar.b = ((e2.k0) i0Var3.get(i10)).f;
+                        tVar.a = ((e2.k0) i0Var3.get(i10)).g;
                         e2.u uVar = new e2.u(tVar);
-                        org.telegram.ui.web.a0 a0Var = new org.telegram.ui.web.a0(23, this, uVar);
-                        j2.n nVar = this.b;
-                        u5.e eVar = new u5.e(a0Var, 10);
-                        ly0 ly0Var = new ly0(6);
-                        pb.b bVar = new pb.b(4);
-                        if (this.c.w(uVar)) {
+                        k8 k8Var = new k8(28, this, uVar);
+                        wf.b bVar = this.b;
+                        a2 a2Var = new a2(k8Var, 14);
+                        ld0 ld0Var = new ld0(7);
+                        qb.a aVar = new qb.a(4);
+                        if (this.c.L(uVar)) {
                             e2.t a12 = uVar.a();
                             a12.r = e2.s0.n("application/x-media3-cues");
                             a12.j = uVar.s;
-                            a12.P = this.c.D(uVar);
+                            a12.P = this.c.O(uVar);
                             uVar = new e2.u(a12);
                         }
                         e2.u uVar2 = uVar;
-                        int i10 = i7 + 1;
-                        String uri4 = ((e2.k0) i0Var3.get(i7)).a.toString();
+                        int i11 = i10 + 1;
+                        String uri4 = ((e2.k0) i0Var3.get(i10)).a.toString();
                         e2.z zVar2 = new e2.z();
                         e2.c0 c0Var4 = new e2.c0();
                         List list3 = Collections.EMPTY_LIST;
-                        t1 t1Var = t1.e;
+                        h9.s1 s1Var = h9.s1.e;
                         e2.e0 e0Var = new e2.e0();
                         e2.h0 h0Var3 = e2.h0.d;
                         Uri parse = uri4 == null ? uri : Uri.parse(uri4);
-                        ia.p((c0Var4.b == null || c0Var4.a != null) ? z9 : z10 ? 1 : 0);
-                        e2.g0 g0Var4 = parse != null ? new e2.g0(parse, null, c0Var4.a != null ? new e2.d0(c0Var4) : uri, null, list3, null, t1Var, -9223372036854775807L) : uri;
+                        ja.p((c0Var4.b == null || c0Var4.a != null) ? z10 : z11 ? 1 : 0);
+                        e2.g0 g0Var4 = parse != null ? new e2.g0(parse, null, c0Var4.a != null ? new e2.d0(c0Var4) : uri, null, list3, null, s1Var, -9223372036854775807L) : uri;
                         e2.l0 l0Var3 = new e2.l0("", new e2.b0(zVar2), g0Var4, new e2.f0(e0Var), e2.o0.L, h0Var3);
                         g0Var4.getClass();
-                        aVarArr[i10] = new x0(l0Var3, nVar, eVar, ly0Var.t(l0Var3), bVar, TLObject.FLAG_20, uVar2);
+                        aVarArr[i11] = new x0(l0Var3, bVar, a2Var, ld0Var.s(l0Var3), aVar, TLObject.FLAG_20, uVar2);
                     } else {
-                        j2.n nVar2 = this.b;
-                        nVar2.getClass();
-                        aVarArr[i7 + 1] = new l1((e2.k0) i0Var3.get(i7), nVar2, new pb.b(4));
+                        wf.b bVar2 = this.b;
+                        bVar2.getClass();
+                        aVarArr[i10 + 1] = new l1((e2.k0) i0Var3.get(i10), bVar2, new qb.a(4));
                     }
                 }
                 b10 = new n0(aVarArr);
             }
             e2.b0 b0Var3 = l0Var2.e;
             if (b0Var3.b != 0 || b0Var3.d != Long.MIN_VALUE || b0Var3.f) {
-                e eVar2 = new e(b10);
+                e eVar = new e(b10);
                 long j11 = b0Var3.b;
                 if (j11 >= 0) {
-                    z10 = z9;
+                    z11 = z10;
                 }
-                ia.f(z10);
-                ia.p(!eVar2.h);
-                eVar2.b = j11;
+                ja.f(z11);
+                ja.p(!eVar.h);
+                eVar.b = j11;
                 long j12 = b0Var3.d;
-                ia.p(!eVar2.h);
-                eVar2.c = j12;
-                boolean z11 = !b0Var3.g;
-                ia.p(!eVar2.h);
-                eVar2.d = z11;
-                boolean z12 = b0Var3.e;
-                ia.p(!eVar2.h);
-                eVar2.e = z12;
-                boolean z13 = b0Var3.f;
-                ia.p(!eVar2.h);
-                eVar2.f = z13;
-                boolean z14 = b0Var3.h;
-                ia.p(!eVar2.h);
-                eVar2.g = z14;
-                ia.p(!eVar2.h);
-                eVar2.h = z9;
-                b10 = new h(eVar2);
+                ja.p(!eVar.h);
+                eVar.c = j12;
+                boolean z12 = !b0Var3.g;
+                ja.p(!eVar.h);
+                eVar.d = z12;
+                boolean z13 = b0Var3.e;
+                ja.p(!eVar.h);
+                eVar.e = z13;
+                boolean z14 = b0Var3.f;
+                ja.p(!eVar.h);
+                eVar.f = z14;
+                boolean z15 = b0Var3.h;
+                ja.p(!eVar.h);
+                eVar.g = z15;
+                ja.p(!eVar.h);
+                eVar.h = z10;
+                b10 = new h(eVar);
             }
             l0Var2.b.getClass();
             if (l0Var2.b.d == null) {
@@ -294,26 +295,26 @@ public final class p implements e0 {
     }
 
     @Override // x2.e0
-    public final e0 c(boolean z9) {
-        this.i = z9;
-        k5 k5Var = this.a;
-        k5Var.a = z9;
-        f3.m mVar = (f3.m) k5Var.c;
+    public final e0 c(boolean z10) {
+        this.i = z10;
+        h5 h5Var = this.a;
+        h5Var.a = z10;
+        f3.m mVar = (f3.m) h5Var.c;
         synchronized (mVar) {
-            mVar.b = z9;
+            mVar.b = z10;
         }
-        Iterator it = ((HashMap) k5Var.e).values().iterator();
+        Iterator it = ((HashMap) h5Var.e).values().iterator();
         while (it.hasNext()) {
-            ((e0) it.next()).c(z9);
+            ((e0) it.next()).c(z10);
         }
         return this;
     }
 
     @Override // x2.e0
     public final e0 d(int i7) {
-        k5 k5Var = this.a;
-        k5Var.b = i7;
-        f3.m mVar = (f3.m) k5Var.c;
+        h5 h5Var = this.a;
+        h5Var.b = i7;
+        f3.m mVar = (f3.m) h5Var.c;
         synchronized (mVar) {
             mVar.d = i7;
         }

@@ -1,331 +1,192 @@
 package di;
 
-import a8.ra;
 import android.content.Context;
-import android.os.Build;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
+import android.graphics.RectF;
+import android.os.SystemClock;
 import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.vr;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.an;
+import org.telegram.ui.k60;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class x7 extends c5.k {
-    public ArrayList A0;
-    public c4 B0;
-    public boolean C0;
-    public boolean D0;
-    public int E0;
-    public int F0;
-    public Runnable G0;
-    public final g4 H0;
-    public int I0;
-    public int J0;
-    public float K0;
-    public boolean L0;
-    public final ra M0;
-    public final q9 N0;
-    public int O0;
-    public final ArrayList P0;
-    public float Q0;
-    public long w0;
-    public ArrayList x0;
-    public int y0;
-    public final u7 z0;
+public final /* synthetic */ class x7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public x7(int i7, Context context, q9 q9Var, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context);
-        this.A0 = new ArrayList();
-        this.D0 = true;
-        w wVar = (w) this;
-        this.M0 = new ra(wVar, 21);
-        this.O0 = -1;
-        this.P0 = new ArrayList();
-        this.y0 = i7;
-        this.H0 = new g4(context);
-        this.N0 = q9Var;
-        u7 u7Var = new u7(wVar, context, q9Var, h6Var);
-        this.z0 = u7Var;
-        setAdapter(u7Var);
-        r4 r4Var = new r4(wVar, 2);
-        boolean z9 = this.m0 == null;
-        this.m0 = r4Var;
-        setChildrenDrawingOrderEnabled(true);
-        this.o0 = 1;
-        this.n0 = 2;
-        if (z9) {
-            s();
-        }
-        setOffscreenPageLimit(0);
-        b(new v7(wVar, q9Var, 0));
-        setOverScrollMode(2);
+    public /* synthetic */ x7(int i7, int i10, long j3, Object obj, Object obj2) {
+        this.a = i10;
+        this.d = obj;
+        this.e = obj2;
+        this.b = i7;
+        this.c = j3;
     }
 
-    public static boolean C(ArrayList arrayList, ArrayList arrayList2) {
-        if (arrayList == null && arrayList2 == null) {
-            return true;
-        }
-        if (arrayList == null || arrayList2 == null || arrayList.size() != arrayList2.size()) {
-            return false;
-        }
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            if (arrayList.get(i7) != arrayList2.get(i7)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public final void A() {
-        boolean z9 = false;
-        int i7 = 0;
-        while (true) {
-            if (i7 >= getChildCount()) {
-                z9 = true;
-                break;
-            }
-            w7 w7Var = (w7) getChildAt(i7);
-            if (w7Var.d && !w7Var.a.x1.d()) {
-                break;
-            } else {
-                i7++;
-            }
-        }
-        this.N0.l(z9);
-    }
-
-    public final void B() {
-        if (this.O0 >= 0) {
-            for (int i7 = 0; i7 < getChildCount(); i7++) {
-                if (((Integer) getChildAt(i7).getTag()).intValue() == getCurrentItem() && getCurrentItem() == this.O0) {
-                    w7 w7Var = (w7) getChildAt(i7);
-                    if (!w7Var.d) {
-                        this.O0 = -1;
-                        w7Var.a(true);
-                        if (this.x0 != null) {
-                            j4 j4Var = w7Var.a;
-                            long j3 = w7Var.b;
-                            ArrayList arrayList = w7Var.c;
-                            j4Var.k1 = j3;
-                            j4Var.i1 = arrayList;
-                            j4Var.m0(0);
-                        } else {
-                            w7Var.a.S0(0, w7Var.b);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        SQLitePreparedStatement sQLitePreparedStatement = null;
+        sQLitePreparedStatement = null;
+        sQLitePreparedStatement = null;
+        long j3 = this.c;
+        int i10 = this.b;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        switch (i7) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj;
+                SQLiteDatabase sQLiteDatabase = ((vr) obj2).b;
+                try {
+                    try {
+                        sQLiteDatabase.executeFast("DELETE FROM star_gifts2").stepThis().dispose();
+                        if (arrayList != null) {
+                            sQLitePreparedStatement = sQLiteDatabase.executeFast("REPLACE INTO star_gifts2 VALUES(?, ?, ?, ?, ?)");
+                            for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                                TL_stars.StarGift starGift = (TL_stars.StarGift) arrayList.get(i11);
+                                sQLitePreparedStatement.requery();
+                                sQLitePreparedStatement.bindLong(1, starGift.id);
+                                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(starGift.getObjectSize());
+                                starGift.serializeToStream(nativeByteBuffer);
+                                sQLitePreparedStatement.bindByteBuffer(2, nativeByteBuffer);
+                                sQLitePreparedStatement.bindLong(3, i10);
+                                sQLitePreparedStatement.bindLong(4, j3);
+                                sQLitePreparedStatement.bindInteger(5, i11);
+                                sQLitePreparedStatement.step();
+                                nativeByteBuffer.reuse();
+                            }
+                        }
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    } catch (Exception e10) {
+                        org.telegram.messenger.a8.g(e10, true);
+                        if (sQLitePreparedStatement == null) {
+                            return;
                         }
                     }
-                }
-            }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00b8  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void D(int i7, long j3, ArrayList arrayList) {
-        boolean z9;
-        u7 u7Var;
-        int size;
-        q9 q9Var;
-        ArrayList arrayList2;
-        int i10 = 0;
-        if (this.w0 == j3) {
-            ArrayList arrayList3 = this.x0;
-            if (arrayList3 != null || arrayList != null) {
-                if (arrayList3 != null && arrayList != null && arrayList3.size() == arrayList.size()) {
-                    for (int i11 = 0; i11 < arrayList3.size(); i11++) {
-                        if (!C((ArrayList) arrayList3.get(i11), (ArrayList) arrayList.get(i11))) {
-                            break;
-                        }
+                    sQLitePreparedStatement.dispose();
+                    return;
+                } catch (Throwable th2) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
                     }
+                    throw th2;
                 }
-            }
-            if (this.y0 == i7) {
+            case 1:
+                ((hi.d) obj2).setLoading(false);
+                org.telegram.ui.ActionBar.u2 u2Var = ((org.telegram.ui.ActionBar.u2[]) obj)[0];
+                if (u2Var != null) {
+                    u2Var.dismiss();
+                }
+                v8.y(i10, false).R();
+                org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
+                if (T == null) {
+                    return;
+                }
+                T.presentFragment(an.ua(j3));
                 return;
-            }
-        }
-        if (this.w0 == j3 && this.y0 == i7 && (arrayList2 = this.x0) != null && arrayList != null && arrayList.size() > arrayList2.size()) {
-            for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                if (C((ArrayList) arrayList2.get(i12), (ArrayList) arrayList.get(i12))) {
+            case 2:
+                org.telegram.ui.g4 g4Var = (org.telegram.ui.g4) obj2;
+                TLObject tLObject = (TLObject) obj;
+                if (g4Var.I0 == 0) {
+                    return;
                 }
-            }
-            z9 = true;
-            this.w0 = j3;
-            this.x0 = arrayList;
-            this.y0 = i7;
-            u7Var = this.z0;
-            if (!z9 && u7Var != null) {
-                u7Var.g();
-                this.C0 = true;
+                g4Var.I0 = 0;
+                g4Var.Z(false);
+                if (tLObject != null) {
+                    TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
+                    np.s1(i10).Y3(tL_contacts_resolvedPeer.users, false);
+                    vr.a0(i10).m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
+                    if (tL_contacts_resolvedPeer.users.isEmpty()) {
+                        return;
+                    }
+                    g4Var.N(j3, tL_contacts_resolvedPeer.users.get(0));
+                    return;
+                }
                 return;
-            }
-            setAdapter(null);
-            setAdapter(u7Var);
-            while (true) {
-                size = arrayList.size();
-                q9Var = this.N0;
-                if (i10 < size || ((ArrayList) arrayList.get(i10)).contains(Integer.valueOf(q9Var.O0))) {
-                    break;
-                } else {
-                    i10++;
+            case 3:
+                ((org.telegram.ui.n6) obj2).a(Float.valueOf(((int[]) obj)[0] / i10), Boolean.valueOf(System.currentTimeMillis() - j3 > 250));
+                return;
+            case 4:
+                RectF rectF = ProfileActivity.X6;
+                ((ProfileActivity) obj2).getMessagesController().P1().b(i10, j3, (ArrayList) obj);
+                return;
+            case 5:
+                rc.u uVar = (rc.u) obj;
+                org.telegram.ui.Wallet.y0 y0Var = ((org.telegram.ui.Wallet.x0) obj2).c;
+                if (!y0Var.c(uVar, i10)) {
+                    y0Var.d("closing stale connected websocket; attempt=" + i10);
+                    uVar.c();
+                    return;
                 }
-            }
-            if (q9Var.Q0) {
-                i10 = (arrayList.size() - 1) - i10;
-            }
-            setCurrentItem(i10);
-            this.C0 = true;
-        }
-        z9 = false;
-        this.w0 = j3;
-        this.x0 = arrayList;
-        this.y0 = i7;
-        u7Var = this.z0;
-        if (!z9) {
-        }
-        setAdapter(null);
-        setAdapter(u7Var);
-        while (true) {
-            size = arrayList.size();
-            q9Var = this.N0;
-            if (i10 < size) {
-                break;
-            } else {
-                break;
-            }
-            i10++;
-        }
-        if (q9Var.Q0) {
-        }
-        setCurrentItem(i10);
-        this.C0 = true;
-    }
-
-    public final boolean E(boolean z9) {
-        q9 q9Var = this.N0;
-        boolean z10 = false;
-        if (z9) {
-            int currentItem = getCurrentItem();
-            ArrayList arrayList = this.x0;
-            if (arrayList == null) {
-                arrayList = this.A0;
-            }
-            if (currentItem < arrayList.size() - 1) {
-                int currentItem2 = getCurrentItem() + 1;
-                if (q9Var.a && Build.VERSION.SDK_INT < 33) {
-                    z10 = true;
+                y0Var.d("websocket connected after " + (SystemClock.elapsedRealtime() - j3) + " ms");
+                org.telegram.ui.Wallet.v0 v0Var = y0Var.o;
+                try {
+                    JSONArray put = new JSONArray().put(y0Var.b);
+                    StringBuilder sb2 = new StringBuilder("wallet-");
+                    int i12 = y0Var.g + 1;
+                    y0Var.g = i12;
+                    sb2.append(i12);
+                    y0Var.f = sb2.toString();
+                    JSONObject put2 = new JSONObject().put("operation", "subscribe").put("id", y0Var.f).put("types", new JSONArray().put("transactions").put("account_state_change")).put("include_address_book", true).put("addresses", put).put("min_finality", "pending");
+                    org.telegram.messenger.g0.r(v0Var);
+                    org.telegram.messenger.g0.i3(v0Var, 30000L);
+                    y0Var.g(put2.toString());
+                    return;
+                } catch (JSONException unused) {
+                    y0Var.f("could not encode subscription");
+                    return;
                 }
-                x(currentItem2, !z10);
-                return true;
-            }
-        }
-        if (z9 || getCurrentItem() <= 0) {
-            return false;
-        }
-        int currentItem3 = getCurrentItem() - 1;
-        if (q9Var.a && Build.VERSION.SDK_INT < 33) {
-            z10 = true;
-        }
-        x(currentItem3, !z10);
-        return true;
-    }
-
-    public final void F() {
-        for (int i7 = 0; i7 < getChildCount(); i7++) {
-            j4 j4Var = (j4) ((FrameLayout) getChildAt(i7)).getChildAt(0);
-            j4Var.setActive(((Integer) getChildAt(i7).getTag()).intValue() == getCurrentItem() && !j4Var.D3);
+            case 6:
+                org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) obj2;
+                d2Var.getClass();
+                TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
+                long j10 = this.c;
+                tonconnectgetpending.session_id = Long.valueOf(j10);
+                d2Var.f.sendRequestTyped(tonconnectgetpending, new d3.b(1), new org.telegram.ui.Wallet.n1(d2Var, (k60) obj, j10, this.b, 0));
+                return;
+            default:
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj2, (org.telegram.ui.ActionBar.e6) obj);
+                String M0 = hd.M0(2131743073, null);
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.S = M0;
+                t1Var.U = org.telegram.messenger.g0.W2(hd.V(null, null, 2131743071, org.telegram.ui.Wallet.l0.x(i10).m(j3, true)));
+                i5.c.C(null, 2131743063, alertDialog$Builder, null);
+                return;
         }
     }
 
-    public long getCurrentDialogId() {
-        if (this.x0 != null) {
-            return this.w0;
-        }
-        if (getCurrentItem() < this.A0.size()) {
-            return ((Long) this.A0.get(getCurrentItem())).longValue();
-        }
-        return 0L;
+    public /* synthetic */ x7(ProfileActivity profileActivity, long j3, int i7, ArrayList arrayList) {
+        this.a = 4;
+        this.d = profileActivity;
+        this.c = j3;
+        this.b = i7;
+        this.e = arrayList;
     }
 
-    public j4 getCurrentPeerView() {
-        for (int i7 = 0; i7 < getChildCount(); i7++) {
-            if (((Integer) getChildAt(i7).getTag()).intValue() == getCurrentItem()) {
-                return (j4) ((FrameLayout) getChildAt(i7)).getChildAt(0);
-            }
-        }
-        return null;
-    }
-
-    public ArrayList<Long> getDialogIds() {
-        return this.A0;
-    }
-
-    @Override // c5.k, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.D0 && !this.L0) {
-            try {
-                return super.onInterceptTouchEvent(motionEvent);
-            } catch (Exception e10) {
-                org.telegram.messenger.a8.g(e10, true);
-            }
-        }
-        return false;
-    }
-
-    @Override // c5.k, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        if (this.C0) {
-            this.C0 = false;
-            j4 currentPeerView = getCurrentPeerView();
-            if (currentPeerView != null) {
-                c4 c4Var = this.B0;
-                h9 h9Var = (h9) c4Var;
-                h9Var.a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
-            }
-        }
-        B();
-        F();
-    }
-
-    @Override // c5.k, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.D0 && !this.L0) {
-            return super.onTouchEvent(motionEvent);
-        }
-        if (this.L0) {
-            return motionEvent.getAction() == 0 || motionEvent.getAction() == 2;
-        }
-        return false;
-    }
-
-    public void setDelegate(c4 c4Var) {
-        this.B0 = c4Var;
-    }
-
-    public void setHorizontalProgressToDismiss(float f10) {
-        if (Math.abs(f10) > 1.0f || this.Q0 == f10) {
-            return;
-        }
-        this.Q0 = f10;
-        setCameraDistance(getWidth() * 15);
-        setPivotX(f10 < 0.0f ? getWidth() : 0.0f);
-        setPivotY(getHeight() * 0.5f);
-        setRotationY(f10 * 90.0f);
-    }
-
-    public void setKeyboardHeight(int i7) {
-        if (this.E0 != i7) {
-            this.E0 = i7;
-            j4 currentPeerView = getCurrentPeerView();
-            if (currentPeerView != null) {
-                currentPeerView.requestLayout();
-            }
-        }
-    }
-
-    public void setPaused(boolean z9) {
-        for (int i7 = 0; i7 < getChildCount(); i7++) {
-            ((j4) ((FrameLayout) getChildAt(i7)).getChildAt(0)).setPaused(z9);
-        }
+    public /* synthetic */ x7(org.telegram.ui.Wallet.d2 d2Var, long j3, k60 k60Var, int i7) {
+        this.a = 6;
+        this.d = d2Var;
+        this.c = j3;
+        this.e = k60Var;
+        this.b = i7;
     }
 }

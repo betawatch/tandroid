@@ -1,35 +1,56 @@
 package org.telegram.messenger;
 
-import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class ma {
-    public final long a;
-    public final int b;
+    public final int c;
+    public l7 e;
+    public boolean f;
+    public int g;
+    public int h;
+    public TLRPC.Peer i;
+    public String k;
+    public int l;
+    public int m;
+    public boolean n;
+    public final ArrayList a = new ArrayList();
+    public final HashMap b = new HashMap();
+    public int d = -1;
+    public int j = ConnectionsManager.DEFAULT_DATACENTER_ID;
 
-    public ma(TLRPC.Message message) {
-        long B0 = ij.B0(message);
-        int i7 = message.id;
-        this.a = B0;
-        this.b = i7;
+    public ma(int i7) {
+        this.c = i7;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void a() {
+        if (this.d >= 0) {
+            ConnectionsManager.getInstance(this.c).cancelRequest(this.d, true);
+            this.d = -1;
         }
-        if (obj != null && ma.class == obj.getClass()) {
-            ma maVar = (ma) obj;
-            if (this.a == maVar.a && this.b == maVar.b) {
-                return true;
-            }
+        l7 l7Var = this.e;
+        if (l7Var != null) {
+            l7Var.run();
+            this.e = null;
         }
-        return false;
+        this.a.clear();
+        this.b.clear();
+        this.g = 0;
+        this.h = 0;
+        this.i = null;
+        this.j = 2147483637;
+        this.k = null;
+        this.l = 0;
+        this.m = 0;
+        this.n = false;
     }
 
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), Integer.valueOf(this.b));
+    public final int b() {
+        int i7 = this.l >= this.a.size() - 1 ? 0 : 1;
+        return this.l > 0 ? i7 | 2 : i7;
     }
 }

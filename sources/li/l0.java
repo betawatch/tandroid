@@ -1,92 +1,193 @@
 package li;
 
+import android.text.SpannableStringBuilder;
+import c8.zc;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.jl;
+import org.telegram.messenger.m5;
+import org.telegram.messenger.np;
+import org.telegram.messenger.t3;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.o4;
+import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.an;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class l0 {
-    public static ArrayList d;
-    public final int a;
-    public final String b;
-    public final List c;
-
-    public l0(int i7, String str, String... strArr) {
-        this.a = i7;
-        this.b = str;
-        this.c = Arrays.asList(strArr);
+public abstract class l0 {
+    public static SpannableStringBuilder a(gj gjVar, String str, String str2, boolean z10, boolean z11) {
+        TLRPC.Message message = gjVar.k;
+        TLRPC.TL_messageActionChangeCommunity tL_messageActionChangeCommunity = (TLRPC.TL_messageActionChangeCommunity) message.action;
+        boolean z12 = m5.o(message.peer_id) == m5.o(message.from_id);
+        boolean z13 = tL_messageActionChangeCommunity.community_id == 0;
+        if (z12) {
+            if (z13) {
+                return org.telegram.messenger.g0.X2(hd.M0(z11 ? 2131751868 : z10 ? 2131751862 : 2131751856, null));
+            }
+            return org.telegram.messenger.g0.X2(hd.a0(null, null, z11 ? 2131751870 : z10 ? 2131751864 : 2131751858, str));
+        }
+        if (gjVar.N3()) {
+            if (z13) {
+                return org.telegram.messenger.g0.X2(hd.M0(z11 ? 2131751866 : z10 ? 2131751860 : 2131751854, null));
+            }
+            return org.telegram.messenger.g0.X2(hd.a0(null, null, z11 ? 2131751867 : z10 ? 2131751861 : 2131751855, str));
+        }
+        if (z13) {
+            return org.telegram.messenger.g0.X2(hd.a0(null, null, z11 ? 2131751869 : z10 ? 2131751863 : 2131751857, str2));
+        }
+        return org.telegram.messenger.g0.X2(hd.a0(null, null, z11 ? 2131751871 : z10 ? 2131751865 : 2131751859, str2, str));
     }
 
-    public static ArrayList a(String str) {
-        String trim = str == null ? "" : str.trim();
-        if (trim.startsWith("/")) {
-            trim = trim.substring(1);
+    public static int b(int i7, long j3) {
+        TLRPC.Chat M0;
+        long j10;
+        TLRPC.User user;
+        TLRPC.ChatFull N0;
+        ArrayList<TL_communities.CommunityPeer> arrayList;
+        if (j3 > 0) {
+            TLRPC.User a22 = np.s1(i7).a2(Long.valueOf(j3));
+            if (a22 == null) {
+                return 0;
+            }
+            j10 = a22.linked_community_id;
+            user = a22;
+            M0 = null;
+        } else {
+            M0 = np.s1(i7).M0(Long.valueOf(-j3));
+            if (M0 == null) {
+                return 0;
+            }
+            j10 = M0.linked_community_id;
+            user = null;
         }
-        String lowerCase = trim.toLowerCase();
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = d;
-        if (arrayList2 == null) {
-            ArrayList arrayList3 = new ArrayList();
-            d = arrayList3;
-            arrayList3.add(new l0(R.drawable.iv_h1, id.M0(2131754030, null), "#", "/h1", "/header", "/title", "/heading"));
-            d.add(new l0(R.drawable.iv_h2, id.M0(2131754029, null), "##", "/h2"));
-            d.add(new l0(R.drawable.iv_h3, id.M0(2131754028, null), "###", "/h3"));
-            d.add(new l0(R.drawable.iv_h4, id.M0(2131754027, null), "####", "/h4"));
-            d.add(new l0(R.drawable.iv_h5, id.M0(2131754026, null), "#####", "/h5"));
-            d.add(new l0(R.drawable.iv_h6, id.M0(2131754025, null), "######", "/h6"));
-            d.add(new l0(R.drawable.iv_quote, id.M0(2131753996, null), "|", "/quote"));
-            d.add(new l0(R.drawable.iv_pullquote, id.M0(2131753997, null), "/pullquote"));
-            d.add(new l0(R.drawable.iv_code, id.M0(2131754055, null), "```", "/code", "/pre", "/preformatted"));
-            d.add(new l0(R.drawable.iv_footer, id.M0(2131754032, null), "/footer"));
-            d.add(new l0(R.drawable.iv_list, id.M0(2131754051, null), "-", "/list"));
-            d.add(new l0(R.drawable.iv_ordered_list, id.M0(2131754048, null), "1."));
-            d.add(new l0(R.drawable.iv_todo, id.M0(2131754004, null), "[]", "/todo", "/checklist"));
-            d.add(new l0(R.drawable.iv_details, id.M0(2131754046, null), ">", "/toggle", "/details"));
-            d.add(new l0(R.drawable.iv_button, id.M0(2131746011, null), "/button"));
-            d.add(new l0(R.drawable.iv_table, id.M0(2131754047, null), "/table"));
-            d.add(new l0(R.drawable.iv_math, id.M0(2131754049, null), "/math", "/latex", "/expression"));
-            d.add(new l0(R.drawable.iv_divider, id.M0(2131754053, null), "---"));
-            d.add(new l0(R.drawable.iv_media, id.M0(2131754052, null), "/image", "/pic", "/picture", "/photo", "/img", "/media"));
-            d.add(new l0(R.drawable.iv_media, id.M0(2131754045, null), "/video", "/vid", "/media"));
-            d.add(new l0(R.drawable.iv_audio, id.M0(2131754054, null), "/audio", "/music", "/media"));
-            d.add(new l0(R.drawable.iv_location, id.M0(2131754050, null), "/map", "/location", "/venue"));
-            arrayList2 = d;
-        }
-        int size = arrayList2.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList2.get(i7);
-            i7++;
-            l0 l0Var = (l0) obj;
-            if (!lowerCase.isEmpty()) {
-                String[] split = l0Var.b.toLowerCase().split(" ");
-                int length = split.length;
-                int i10 = 0;
-                while (true) {
-                    if (i10 >= length) {
-                        Iterator it = l0Var.c.iterator();
-                        while (it.hasNext()) {
-                            String lowerCase2 = ((String) it.next()).toLowerCase();
-                            if (lowerCase2.startsWith("/")) {
-                                lowerCase2 = lowerCase2.substring(1);
-                            }
-                            if (lowerCase2.startsWith(lowerCase)) {
-                            }
-                        }
-                    } else {
-                        if (split[i10].startsWith(lowerCase)) {
-                            break;
-                        }
-                        i10++;
-                    }
+        if (j10 != 0 && (N0 = np.s1(i7).N0(j10)) != null && (arrayList = N0.linked_peers) != null) {
+            int size = arrayList.size();
+            int i10 = 0;
+            while (i10 < size) {
+                TL_communities.CommunityPeer communityPeer = arrayList.get(i10);
+                i10++;
+                TL_communities.CommunityPeer communityPeer2 = communityPeer;
+                if (m5.o(communityPeer2.peer) == j3) {
+                    return c(M0, user != null ? np.s1(i7).S0(user.id) : null, user, communityPeer2);
                 }
             }
-            arrayList.add(l0Var);
         }
-        return arrayList;
+        return 0;
+    }
+
+    public static int c(TLRPC.Chat chat, TLRPC.Dialog dialog, TLRPC.User user, TL_communities.CommunityPeer communityPeer) {
+        if (user != null) {
+            if (dialog == null) {
+                return 2;
+            }
+        } else {
+            if (chat == null) {
+                return 0;
+            }
+            if (!t3.j0(chat)) {
+                if (t3.t0(chat) || communityPeer.can_view_history) {
+                    return 2;
+                }
+                return (!zc.a(communityPeer.flags, 1) || communityPeer.visible) ? 3 : 4;
+            }
+        }
+        return 1;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void d(e2 e2Var, long j3, int i7) {
+        o4 o4Var;
+        an anVar;
+        int i10;
+        List list = null;
+        if (org.telegram.messenger.g0.Q1()) {
+            o4Var = null;
+            anVar = null;
+        } else {
+            o4Var = e2Var.getParentLayout();
+            if (o4Var != null) {
+                List fragmentStack = o4Var.getFragmentStack();
+                i10 = fragmentStack.size() - 2;
+                while (true) {
+                    if (i10 < 0) {
+                        anVar = null;
+                        i10 = -1;
+                        break;
+                    }
+                    e2 e2Var2 = (e2) fragmentStack.get(i10);
+                    if (e2Var2 instanceof an) {
+                        anVar = (an) e2Var2;
+                        if (anVar.a() == j3) {
+                            break;
+                        }
+                    }
+                    i10--;
+                }
+                list = fragmentStack;
+                boolean U = t3.U(e2Var.getCurrentAccount(), j3);
+                if (i10 != -1) {
+                    if (!(e2Var instanceof yw)) {
+                        e2Var.finishFragment();
+                    }
+                    f(cc.X(), i7, U);
+                    return;
+                }
+                for (int size = list.size() - 2; size > i10; size--) {
+                    ((ActionBarLayout) o4Var).d0((e2) list.get(size), false);
+                }
+                e2Var.finishFragment();
+                org.telegram.messenger.g0.i3(new g0(i7, anVar, U), 250L);
+                return;
+            }
+            anVar = null;
+        }
+        i10 = -1;
+        boolean U2 = t3.U(e2Var.getCurrentAccount(), j3);
+        if (i10 != -1) {
+        }
+    }
+
+    public static void e(t1[] t1VarArr, e2 e2Var, int i7, TLRPC.Chat chat) {
+        if (t1VarArr[0] != null) {
+            return;
+        }
+        np s12 = np.s1(i7);
+        di.k0 k0Var = new di.k0(t1VarArr, e2Var, i7, chat);
+        TLRPC.TL_channels_getAdminedPublicChannels tL_channels_getAdminedPublicChannels = new TLRPC.TL_channels_getAdminedPublicChannels();
+        tL_channels_getAdminedPublicChannels.for_community_peer = true;
+        int sendRequestTyped = s12.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new d3.b(1), new jl(s12, k0Var, 0));
+        ConnectionsManager.getInstance(i7).bindRequestToGuid(sendRequestTyped, e2Var.getClassGuid());
+        t1 t1Var = new t1(3, e2Var.getContext(), null);
+        t1VarArr[0] = t1Var;
+        t1Var.r(500L);
+        t1VarArr[0].setOnCancelListener(new e0(i7, sendRequestTyped, t1VarArr, 0));
+    }
+
+    public static void f(cc ccVar, int i7, boolean z10) {
+        String M0;
+        int i10 = i7 == 2 ? R.raw.timer_toast : R.raw.contact_check;
+        int i11 = i7 == 2 ? 24 : 36;
+        if (i7 == 0) {
+            M0 = hd.M0(2131751943, null);
+        } else if (i7 == 1) {
+            M0 = hd.M0(z10 ? 2131751942 : 2131751941, null);
+        } else {
+            M0 = hd.M0(2131751940, null);
+        }
+        ccVar.G(i10, i11, M0).j();
     }
 }

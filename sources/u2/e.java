@@ -4,12 +4,12 @@ import android.media.MediaCodec;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.HandlerThread;
-import h2.m0;
+import h2.l0;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final ArrayDeque h = new ArrayDeque();
@@ -29,7 +29,7 @@ public final class e implements m {
         this.d = new AtomicReference();
     }
 
-    public static d c() {
+    public static d a() {
         ArrayDeque arrayDeque = h;
         synchronized (arrayDeque) {
             try {
@@ -43,7 +43,7 @@ public final class e implements m {
         }
     }
 
-    public static void d(d dVar) {
+    public static void b(d dVar) {
         ArrayDeque arrayDeque = h;
         synchronized (arrayDeque) {
             arrayDeque.add(dVar);
@@ -51,27 +51,35 @@ public final class e implements m {
     }
 
     @Override // u2.m
-    public final void a(int i7, int i10, int i11, long j3) {
-        i();
-        d c10 = c();
-        c10.a = i7;
-        c10.b = i10;
-        c10.d = j3;
-        c10.e = i11;
-        android.support.v4.media.session.q qVar = this.c;
-        String str = m0.a;
-        qVar.obtainMessage(1, c10).sendToTarget();
+    public final void Y() {
+        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
+        if (runtimeException != null) {
+            throw runtimeException;
+        }
     }
 
     @Override // u2.m
-    public final void b(int i7, k2.d dVar, long j3, int i10) {
-        i();
-        d c10 = c();
-        c10.a = i7;
-        c10.b = 0;
-        c10.d = j3;
-        c10.e = i10;
-        MediaCodec.CryptoInfo cryptoInfo = c10.c;
+    public final void d(int i7, int i10, int i11, long j3) {
+        Y();
+        d a10 = a();
+        a10.a = i7;
+        a10.b = i10;
+        a10.d = j3;
+        a10.e = i11;
+        android.support.v4.media.session.q qVar = this.c;
+        String str = l0.a;
+        qVar.obtainMessage(1, a10).sendToTarget();
+    }
+
+    @Override // u2.m
+    public final void e(int i7, k2.d dVar, long j3, int i10) {
+        Y();
+        d a10 = a();
+        a10.a = i7;
+        a10.b = 0;
+        a10.d = j3;
+        a10.e = i10;
+        MediaCodec.CryptoInfo cryptoInfo = a10.c;
         cryptoInfo.numSubSamples = dVar.f;
         int[] iArr = dVar.d;
         int[] iArr2 = cryptoInfo.numBytesOfClearData;
@@ -120,8 +128,8 @@ public final class e implements m {
             cryptoInfo.setPattern(new MediaCodec.CryptoInfo.Pattern(dVar.g, dVar.h));
         }
         android.support.v4.media.session.q qVar = this.c;
-        String str = m0.a;
-        qVar.obtainMessage(2, c10).sendToTarget();
+        String str = l0.a;
+        qVar.obtainMessage(2, a10).sendToTarget();
     }
 
     @Override // u2.m
@@ -147,18 +155,10 @@ public final class e implements m {
     }
 
     @Override // u2.m
-    public final void i() {
-        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
-        if (runtimeException != null) {
-            throw runtimeException;
-        }
-    }
-
-    @Override // u2.m
     public final void setParameters(Bundle bundle) {
-        i();
+        Y();
         android.support.v4.media.session.q qVar = this.c;
-        String str = m0.a;
+        String str = l0.a;
         qVar.obtainMessage(4, bundle).sendToTarget();
     }
 

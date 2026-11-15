@@ -11,64 +11,64 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.view.TextureView;
-import fi.e5;
-import fi.x5;
+import hi.c5;
+import hi.w5;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Components.ba;
+import org.telegram.messenger.ns;
+import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class r0 extends org.telegram.ui.Cells.q1 {
-    public final ba ld;
-    public final float[] md;
-    public final Path nd;
-    public final Paint od;
-    public final Rect pd;
-    public final RectF qd;
-    public final /* synthetic */ s0 rd;
+    public final float[] Ad;
+    public final Path Bd;
+    public final Paint Cd;
+    public final Rect Dd;
+    public final RectF Ed;
+    public final /* synthetic */ s0 Fd;
+    public final y9 zd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public r0(s0 s0Var, Context context, int i7, t0 t0Var) {
         super(context, i7, false, null, t0Var);
-        this.rd = s0Var;
-        this.ld = new ba(s0Var.d, this, 10, false);
-        this.md = new float[8];
-        this.nd = new Path();
+        this.Fd = s0Var;
+        this.zd = new y9(s0Var.d, this, 10, false);
+        this.Ad = new float[8];
+        this.Bd = new Path();
         Paint paint = new Paint();
-        this.od = paint;
+        this.Cd = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.pd = new Rect();
-        this.qd = new RectF();
+        this.Dd = new Rect();
+        this.Ed = new RectF();
     }
 
     @Override // org.telegram.ui.Cells.q1
-    public final Paint Z1(String str) {
+    public final Paint a2(String str) {
         if ("paintChatActionBackground".equals(str)) {
-            this.rd.h.v0 = true;
-            Paint c10 = this.ld.c(1.0f);
+            this.Fd.h.w0 = true;
+            Paint c10 = this.zd.c(1.0f);
             if (c10 != null) {
                 return c10;
             }
         }
-        return super.Z1(str);
+        return super.a2(str);
     }
 
     @Override // org.telegram.ui.Cells.q1
     public final boolean l1(Canvas canvas) {
-        x5 x5Var;
+        w5 w5Var;
         float[] fArr;
         ImageReceiver photoImage = getPhotoImage();
-        s0 s0Var = this.rd;
-        e5 e5Var = s0Var.h;
-        if (!s0Var.f || photoImage == null || (((x5Var = s0Var.e) == null || !x5Var.g || !x5Var.d || !e5Var.x0) && !e5Var.u0 && (e5Var.w0 == null || !e5Var.M0.r0))) {
+        s0 s0Var = this.Fd;
+        c5 c5Var = s0Var.h;
+        if (!s0Var.f || photoImage == null || (((w5Var = s0Var.e) == null || !w5Var.g || !w5Var.d || !c5Var.y0) && !c5Var.v0 && (c5Var.x0 == null || !c5Var.N0.s0))) {
             return super.l1(canvas);
         }
         int i7 = 0;
         while (true) {
-            int[] iArr = photoImage.W0;
+            int[] iArr = photoImage.X0;
             int length = iArr.length;
-            fArr = this.md;
+            fArr = this.Ad;
             if (i7 >= length) {
                 break;
             }
@@ -79,13 +79,13 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
             i7++;
         }
         RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(photoImage.K0, photoImage.L0, photoImage.y(), photoImage.A());
-        Path path = this.nd;
+        rectF.set(photoImage.L0, photoImage.M0, photoImage.y(), photoImage.A());
+        Path path = this.Bd;
         path.rewind();
         path.addRoundRect(rectF, fArr, Path.Direction.CW);
-        TextureView textureView = e5Var.w0;
-        if (textureView == null || !e5Var.M0.r0) {
-            canvas.drawPath(path, this.od);
+        TextureView textureView = c5Var.x0;
+        if (textureView == null || !c5Var.N0.s0) {
+            canvas.drawPath(path, this.Cd);
             return true;
         }
         Bitmap bitmap = textureView.getBitmap();
@@ -95,16 +95,16 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
         canvas.save();
         canvas.clipPath(path);
         canvas.translate(-getX(), -getY());
-        float max = Math.max(photoImage.M0 / e5Var.y0, photoImage.N0 / e5Var.z0);
-        canvas.translate(photoImage.r() - ((e5Var.y0 * max) / 2.0f), photoImage.s() - ((e5Var.z0 * max) / 2.0f));
-        canvas.scale((e5Var.y0 / e5Var.w0.getWidth()) * max, (e5Var.z0 / e5Var.w0.getHeight()) * max);
+        float max = Math.max(photoImage.N0 / c5Var.z0, photoImage.O0 / c5Var.A0);
+        canvas.translate(photoImage.r() - ((c5Var.z0 * max) / 2.0f), photoImage.s() - ((c5Var.A0 * max) / 2.0f));
+        canvas.scale((c5Var.z0 / c5Var.x0.getWidth()) * max, (c5Var.A0 / c5Var.x0.getHeight()) * max);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        Rect rect = this.pd;
+        Rect rect = this.Dd;
         rect.set(0, 0, width, height);
-        float width2 = e5Var.w0.getWidth();
-        float height2 = e5Var.w0.getHeight();
-        RectF rectF2 = this.qd;
+        float width2 = c5Var.x0.getWidth();
+        float height2 = c5Var.x0.getHeight();
+        RectF rectF2 = this.Ed;
         rectF2.set(0.0f, 0.0f, width2, height2);
         canvas.drawBitmap(bitmap, rect, rectF2, (Paint) null);
         canvas.restore();
@@ -114,11 +114,11 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
     @Override // org.telegram.ui.Cells.q1, android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
-        s0 s0Var = this.rd;
-        x5 x5Var = s0Var.e;
-        if ((x5Var != null && x5Var.g && x5Var.d) || s0Var.h.u0) {
+        s0 s0Var = this.Fd;
+        w5 w5Var = s0Var.e;
+        if ((w5Var != null && w5Var.g && w5Var.d) || s0Var.h.v0) {
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), qs.e4, 31);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ns.e4, 31);
         } else {
             canvas2 = canvas;
             canvas2.save();

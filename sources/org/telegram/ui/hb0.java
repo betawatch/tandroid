@@ -1,30 +1,105 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hb0 implements RequestDelegate {
+public final /* synthetic */ class hb0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rb0 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ ob0 b;
 
-    public /* synthetic */ hb0(rb0 rb0Var, String str, int i7) {
+    public /* synthetic */ hb0(ob0 ob0Var, int i7) {
         this.a = i7;
-        this.b = rb0Var;
-        this.c = str;
+        this.b = ob0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new jb0(this.b, tL_error, this.c, tLObject));
+                this.b.o();
+                break;
+            case 1:
+                ob0 ob0Var = this.b;
+                ob0Var.postDelayed(new hb0(ob0Var, 2), 150L);
+                hb0 hb0Var = ob0Var.T;
+                ob0Var.removeCallbacks(hb0Var);
+                ob0Var.postDelayed(hb0Var, 3000L);
+                ob0Var.S = true;
+                break;
+            case 2:
+                lb0 lb0Var = this.b.a;
+                int i7 = 0;
+                lb0Var.e = false;
+                lb0Var.f[0].requestFocus();
+                while (true) {
+                    dr[] drVarArr = lb0Var.f;
+                    if (i7 >= drVarArr.length) {
+                        break;
+                    } else {
+                        drVarArr[i7].A(0.0f);
+                        i7++;
+                    }
+                }
+            case 3:
+                ob0 ob0Var2 = this.b;
+                ob0Var2.postDelayed(new hb0(ob0Var2, 5), 150L);
+                break;
+            case 4:
+                ob0 ob0Var3 = this.b;
+                nb0 nb0Var = ob0Var3.R;
+                boolean z10 = false;
+                ob0Var3.S = false;
+                int i10 = 0;
+                while (true) {
+                    dr[] drVarArr2 = ob0Var3.a.f;
+                    if (i10 >= drVarArr2.length) {
+                        if (nb0Var.getCurrentView() != ob0Var3.e) {
+                            nb0Var.showNext();
+                            FrameLayout frameLayout = ob0Var3.h;
+                            if (ob0Var3.f.getVisibility() != 0 && ob0Var3.a0.G != 3 && !ob0Var3.Q) {
+                                z10 = true;
+                            }
+                            org.telegram.messenger.g0.Y3(frameLayout, z10, 1.0f, true, true);
+                            break;
+                        }
+                    } else {
+                        drVarArr2[i10].A(0.0f);
+                        i10++;
+                    }
+                }
+                break;
+            case 5:
+                lb0 lb0Var2 = this.b.a;
+                int i11 = 0;
+                lb0Var2.e = false;
+                lb0Var2.f[0].requestFocus();
+                while (true) {
+                    dr[] drVarArr3 = lb0Var2.f;
+                    if (i11 >= drVarArr3.length) {
+                        break;
+                    } else {
+                        drVarArr3[i11].A(0.0f);
+                        i11++;
+                    }
+                }
+            case 6:
+                this.b.p(true);
+                break;
+            case 7:
+                this.b.q();
                 break;
             default:
-                org.telegram.messenger.g0.h3(new jb0(this.b, tL_error, tLObject, this.c));
+                ob0 ob0Var4 = this.b;
+                org.telegram.ui.Components.fh0 fh0Var = ob0Var4.x;
+                fh0Var.getAnimatedDrawable().N(0, false, false);
+                fh0Var.d();
+                lb0 lb0Var3 = ob0Var4.a;
+                if (lb0Var3 != null && lb0Var3.f != null) {
+                    lb0Var3.setText("");
+                    lb0Var3.f[0].requestFocus();
+                    break;
+                }
                 break;
         }
     }

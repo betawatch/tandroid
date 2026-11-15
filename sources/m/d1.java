@@ -1,27 +1,15 @@
 package m;
 
-import android.text.Layout;
 import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.util.Log;
+import android.text.TextDirectionHeuristic;
+import android.text.TextDirectionHeuristics;
 import android.widget.TextView;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public abstract class d1 {
-    public static StaticLayout a(CharSequence charSequence, Layout.Alignment alignment, int i7, int i10, TextView textView, TextPaint textPaint, g1 g1Var) {
-        StaticLayout.Builder obtain = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i7);
-        StaticLayout.Builder hyphenationFrequency = obtain.setAlignment(alignment).setLineSpacing(textView.getLineSpacingExtra(), textView.getLineSpacingMultiplier()).setIncludePad(textView.getIncludeFontPadding()).setBreakStrategy(textView.getBreakStrategy()).setHyphenationFrequency(textView.getHyphenationFrequency());
-        if (i10 == -1) {
-            i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        hyphenationFrequency.setMaxLines(i10);
-        try {
-            g1Var.a(obtain, textView);
-        } catch (ClassCastException unused) {
-            Log.w("ACTVAutoSizeHelper", "Failed to obtain TextDirectionHeuristic, auto size may be incorrect");
-        }
-        return obtain.build();
+public class d1 extends f1 {
+    @Override // m.f1
+    public void a(StaticLayout.Builder builder, TextView textView) {
+        builder.setTextDirection((TextDirectionHeuristic) g1.e("getTextDirectionHeuristic", textView, TextDirectionHeuristics.FIRSTSTRONG_LTR));
     }
 }

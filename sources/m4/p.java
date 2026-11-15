@@ -1,12 +1,12 @@
 package m4;
 
 import android.util.SparseArray;
-import f3.j0;
+import f3.i0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p {
-    public final j0 a;
+    public final i0 a;
     public final boolean b;
     public final boolean c;
     public final i2.s f;
@@ -26,10 +26,10 @@ public final class p {
     public boolean k = false;
     public boolean o = false;
 
-    public p(j0 j0Var, boolean z9, boolean z10) {
-        this.a = j0Var;
-        this.b = z9;
-        this.c = z10;
+    public p(i0 i0Var, boolean z10, boolean z11) {
+        this.a = i0Var;
+        this.b = z10;
+        this.c = z11;
         byte[] bArr = new byte[128];
         this.g = bArr;
         this.f = new i2.s(bArr, 0, 0);

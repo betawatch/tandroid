@@ -1,5 +1,6 @@
 package q4;
 
+import ab.c0;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.app.PendingIntent;
@@ -17,7 +18,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Parcel;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
@@ -26,38 +26,31 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.play_billing.a4;
-import com.google.android.gms.internal.play_billing.b4;
-import com.google.android.gms.internal.play_billing.f3;
-import com.google.android.gms.internal.play_billing.g3;
-import com.google.android.gms.internal.play_billing.i3;
-import com.google.android.gms.internal.play_billing.l3;
-import com.google.android.gms.internal.play_billing.o3;
-import com.google.android.gms.internal.play_billing.p3;
-import com.google.android.gms.internal.play_billing.t3;
-import com.google.android.gms.internal.play_billing.v3;
-import com.google.android.gms.internal.play_billing.w3;
-import com.google.android.gms.internal.play_billing.x3;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
-import f6.e0;
-import g6.d0;
-import h9.f1;
-import h9.t1;
+import gb.h1;
+import gb.i1;
+import gb.u0;
+import h9.s1;
 import j$.util.DesugarCollections;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
 import java.io.FileWriter;
 import java.lang.ref.ReferenceQueue;
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.WeakHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import l.a0;
@@ -66,12 +59,11 @@ import org.telegram.tgnet.TLObject;
 import r0.i0;
 import r0.k1;
 import r0.l0;
-import s4.s0;
-import zd.b0;
+import s4.t0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListener, lf.b, f5.y, com.google.android.gms.common.api.internal.p, ib.b, g9.k, i6.a {
+public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListener, ib.b, g9.k, i6.a, j6.n {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -82,6 +74,58 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         this.b = obj2;
     }
 
+    public static String g(q qVar) {
+        Collection<String> collection = (Collection) qVar.c;
+        StringBuilder sb2 = new StringBuilder("com.google.android.gms.cast.CATEGORY_CAST");
+        String str = (String) qVar.b;
+        if (str != null) {
+            String upperCase = str.toUpperCase(Locale.ROOT);
+            if (!upperCase.matches("[A-F0-9]+")) {
+                throw new IllegalArgumentException("Invalid application ID: ".concat(str));
+            }
+            sb2.append("/");
+            sb2.append(upperCase);
+        }
+        if (collection != null) {
+            if (collection.isEmpty()) {
+                throw new IllegalArgumentException("Must specify at least one namespace");
+            }
+            if (str == null) {
+                sb2.append("/");
+            }
+            sb2.append("/");
+            boolean z10 = true;
+            for (String str2 : collection) {
+                j6.a.b(str2);
+                if (!z10) {
+                    sb2.append(",");
+                }
+                if (!j6.a.a.matcher(str2).matches()) {
+                    StringBuilder sb3 = new StringBuilder(str2.length());
+                    for (int i7 = 0; i7 < str2.length(); i7++) {
+                        char charAt = str2.charAt(i7);
+                        if ((charAt < 'A' || charAt > 'Z') && ((charAt < 'a' || charAt > 'z') && !((charAt >= '0' && charAt <= '9') || charAt == '_' || charAt == '-' || charAt == '.' || charAt == ':'))) {
+                            sb3.append(String.format("%%%04x", Integer.valueOf(charAt)));
+                        } else {
+                            sb3.append(charAt);
+                        }
+                    }
+                    str2 = sb3.toString();
+                }
+                sb2.append(str2);
+                z10 = false;
+            }
+        }
+        if (str == null && collection == null) {
+            sb2.append("/");
+        }
+        if (collection == null) {
+            sb2.append("/");
+        }
+        sb2.append("//ALLOW_IPV6");
+        return sb2.toString();
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:16:0x0045  */
     /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:33:0x0061  */
@@ -89,7 +133,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object B(ce.d dVar, kd.c cVar) {
+    public Object G(ce.d dVar, kd.c cVar) {
         ce.i iVar;
         jd.a aVar;
         int i7;
@@ -99,7 +143,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         ce.d dVar2;
         ce.c cVar2;
         switch (this.a) {
-            case 11:
+            case 10:
                 if (cVar instanceof ce.i) {
                     iVar = (ce.i) cVar;
                     int i10 = iVar.b;
@@ -154,7 +198,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
                         iVar.e = null;
                         iVar.f = null;
                         iVar.b = 2;
-                        if (cVar2.B(dVar2, iVar) == aVar) {
+                        if (cVar2.G(dVar2, iVar) == aVar) {
                             return aVar;
                         }
                         return gd.k.a;
@@ -172,18 +216,18 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
                 iVar.e = null;
                 iVar.f = null;
                 iVar.b = 2;
-                if (cVar2.B(dVar2, iVar) == aVar) {
+                if (cVar2.G(dVar2, iVar) == aVar) {
                 }
                 return gd.k.a;
             default:
-                Object B = ((wf.b) this.b).B(new ce.o(new kotlin.jvm.internal.o(), dVar, (ka.b) this.c), cVar);
-                return B == jd.a.a ? B : gd.k.a;
+                Object G = ((wf.b) this.b).G(new ce.o(new kotlin.jvm.internal.o(), dVar, (ka.b) this.c), cVar);
+                return G == jd.a.a ? G : gd.k.a;
         }
     }
 
     @Override // r0.m
-    public k1 S0(View view, k1 k1Var) {
-        c5.k kVar = (c5.k) this.c;
+    public k1 M0(View view, k1 k1Var) {
+        c5.l lVar = (c5.l) this.c;
         k1 g10 = i0.g(view, k1Var);
         if (g10.a.n()) {
             return g10;
@@ -193,9 +237,9 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         rect.top = g10.d();
         rect.right = g10.c();
         rect.bottom = g10.a();
-        int childCount = kVar.getChildCount();
+        int childCount = lVar.getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
-            k1 b10 = i0.b(kVar.getChildAt(i7), g10);
+            k1 b10 = i0.b(lVar.getChildAt(i7), g10);
             rect.left = Math.min(b10.b(), rect.left);
             rect.top = Math.min(b10.d(), rect.top);
             rect.right = Math.min(b10.c(), rect.right);
@@ -204,94 +248,84 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         return g10.f(rect.left, rect.top, rect.right, rect.bottom);
     }
 
-    public f5.d a() {
-        if (((f5.l) this.b) != null) {
-            return new f5.d(this);
-        }
-        throw new NullPointerException("ProductDetails is required for constructing ProductDetailsParams.");
-    }
-
-    @Override // com.google.android.gms.common.api.internal.p
-    public void accept(Object obj, Object obj2) {
-        e0 e0Var = (e0) this.b;
-        String str = (String) this.c;
-        j6.w wVar = (j6.w) obj;
-        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-        q6.m.i("Not connected to device", e0Var.G == 2);
-        j6.f fVar = (j6.f) wVar.n();
-        Parcel p12 = fVar.p1();
-        p12.writeString(str);
-        fVar.u1(p12, 5);
-        synchronized (e0Var.t) {
-            try {
-                if (e0Var.q != null) {
-                    taskCompletionSource.setException(q6.m.l(new Status(2001, null, null, null)));
-                } else {
-                    e0Var.q = taskCompletionSource;
+    public f3.o a(Object... objArr) {
+        Constructor b10;
+        synchronized (((AtomicBoolean) this.c)) {
+            if (!((AtomicBoolean) this.c).get()) {
+                try {
+                    b10 = ((di.o) this.b).b();
+                } catch (ClassNotFoundException unused) {
+                    ((AtomicBoolean) this.c).set(true);
+                } catch (Exception e10) {
+                    throw new RuntimeException("Error instantiating extension", e10);
                 }
-            } catch (Throwable th2) {
-                throw th2;
             }
+            b10 = null;
+        }
+        if (b10 == null) {
+            return null;
+        }
+        try {
+            return (f3.o) b10.newInstance(objArr);
+        } catch (Exception e11) {
+            throw new IllegalStateException("Unexpected error creating extractor", e11);
         }
     }
 
     @Override // g9.k, l5.e
     public Object apply(Object obj) {
-        return ((g9.k) ((d0) this.b).b).apply(obj);
+        return ((g9.k) ((ob.c) this.b).b).apply(obj);
     }
 
-    @Override // lf.b
-    public lf.a b(wf.b bVar) {
-        List list = (List) this.c;
-        List list2 = (List) bVar.b;
-        int size = list2 != null ? list2.size() : 0;
-        if (size > 0) {
-            ArrayList arrayList = new ArrayList(list.size() + size);
-            arrayList.addAll(list);
-            arrayList.addAll(list2);
-            list = arrayList;
+    public synchronized Map b() {
+        try {
+            if (((Map) this.c) == null) {
+                this.c = DesugarCollections.unmodifiableMap(new HashMap((HashMap) this.b));
+            }
+        } catch (Throwable th2) {
+            throw th2;
         }
-        return new ed.i(bVar, (List) this.b, list);
+        return (Map) this.c;
     }
 
     public void c(k.a aVar) {
-        ui.e eVar = (ui.e) this.b;
-        ((ActionMode.Callback) eVar.b).onDestroyActionMode(eVar.r(aVar));
+        c0 c0Var = (c0) this.b;
+        ((ActionMode.Callback) c0Var.b).onDestroyActionMode(c0Var.m(aVar));
         g.s sVar = (g.s) this.c;
-        if (sVar.E != null) {
-            sVar.f.getDecorView().removeCallbacks(sVar.F);
+        if (sVar.F != null) {
+            sVar.f.getDecorView().removeCallbacks(sVar.G);
         }
-        if (sVar.D != null) {
-            l0 l0Var = sVar.G;
+        if (sVar.E != null) {
+            l0 l0Var = sVar.H;
             if (l0Var != null) {
                 l0Var.b();
             }
-            l0 a10 = i0.a(sVar.D);
+            l0 a10 = i0.a(sVar.E);
             a10.a(0.0f);
-            sVar.G = a10;
+            sVar.H = a10;
             a10.d(new g.j(this, 2));
         }
         sVar.y = null;
-        ViewGroup viewGroup = sVar.J;
+        ViewGroup viewGroup = sVar.K;
         WeakHashMap weakHashMap = i0.a;
         r0.y.c(viewGroup);
-        sVar.w();
+        sVar.y();
     }
 
     public boolean d(k.a aVar, Menu menu) {
-        ViewGroup viewGroup = ((g.s) this.c).J;
+        ViewGroup viewGroup = ((g.s) this.c).K;
         WeakHashMap weakHashMap = i0.a;
         r0.y.c(viewGroup);
-        ui.e eVar = (ui.e) this.b;
-        ActionMode.Callback callback = (ActionMode.Callback) eVar.b;
-        k.e r10 = eVar.r(aVar);
-        a0.l lVar = (a0.l) eVar.e;
+        c0 c0Var = (c0) this.b;
+        ActionMode.Callback callback = (ActionMode.Callback) c0Var.b;
+        k.e m10 = c0Var.m(aVar);
+        a0.l lVar = (a0.l) c0Var.e;
         Menu menu2 = (Menu) lVar.get(menu);
         if (menu2 == null) {
-            menu2 = new a0((Context) eVar.c, (l.k) menu);
+            menu2 = new a0((Context) c0Var.c, (l.k) menu);
             lVar.put(menu, menu2);
         }
-        return callback.onPrepareActionMode(r10, menu2);
+        return callback.onPrepareActionMode(m10, menu2);
     }
 
     public void e(android.support.v4.media.session.s sVar, Handler handler) {
@@ -310,7 +344,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         synchronized (lVar.d) {
             for (int beginBroadcast = lVar.f.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
                 try {
-                    ((b) lVar.f.getBroadcastItem(beginBroadcast)).S0(wVar);
+                    ((b) lVar.f.getBroadcastItem(beginBroadcast)).T0(wVar);
                 } catch (RemoteException | SecurityException e10) {
                     h2.a.d("MediaSessionCompat", "Dead object in setPlaybackState.", e10);
                 }
@@ -340,157 +374,37 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         mediaSession.setPlaybackState(wVar.x);
     }
 
-    public void g(f5.l lVar) {
-        this.b = lVar;
-        if (lVar.a() != null) {
-            lVar.a().getClass();
-            String str = lVar.a().d;
-            if (str != null) {
-                this.c = str;
-            }
-        }
-    }
-
     @Override // fd.a
     public Object get() {
-        Context appContext = (Context) ((d9.o) this.b).a;
-        id.h blockingDispatcher = (id.h) ((ib.c) this.c).get();
-        kotlin.jvm.internal.j.e(appContext, "appContext");
-        kotlin.jvm.internal.j.e(blockingDispatcher, "blockingDispatcher");
-        return gb.r.a(jb.j.a, new f1(new gb.p(0), 15), b0.b(blockingDispatcher), new gb.q(appContext, 0));
+        return new u0((h1) ((ib.c) this.b).get(), (i1) ((ib.c) this.c).get());
     }
 
-    public void h(g3 g3Var) {
-        try {
-            o(g3Var, (p3) this.b);
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
+    @Override // j6.n
+    public void h(String str, long j3, long j10, long j11) {
+        j6.n nVar = (j6.n) this.b;
+        if (nVar != null) {
+            nVar.h(str, j3, j10, j11);
         }
     }
 
-    public void i(g3 g3Var, int i7, long j3) {
-        try {
-            o3 o3Var = (o3) ((p3) this.b).g();
-            o3Var.c();
-            p3.p((p3) o3Var.b, i7);
-            p3 p3Var = (p3) o3Var.a();
-            this.b = p3Var;
-            if (j3 != 0) {
-                o3 o3Var2 = (o3) p3Var.g();
-                o3Var2.c();
-                p3.r((p3) o3Var2.b, j3);
-                p3Var = (p3) o3Var2.a();
-            }
-            o(g3Var, p3Var);
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void j(g3 g3Var, long j3, boolean z9) {
-        p3 p3Var;
-        try {
-            f3 f3Var = (f3) g3Var.g();
-            t3 t3Var = (t3) g3Var.o().g();
-            t3Var.c();
-            v3.n((v3) t3Var.b, z9);
-            f3Var.c();
-            g3.r((g3) f3Var.b, (v3) t3Var.a());
-            g3 g3Var2 = (g3) f3Var.a();
-            if (j3 == 0) {
-                p3Var = (p3) this.b;
+    @Override // j6.n
+    public void k(String str, long j3, int i7, Object obj, long j10, long j11) {
+        int i10;
+        j6.m mVar = (j6.m) this.c;
+        if (((j6.n) this.b) != null) {
+            if (i7 == 2001) {
+                Object[] objArr = {Integer.valueOf(mVar.i)};
+                j6.b bVar = mVar.a;
+                Log.w(bVar.a, bVar.d("Possibility of local queue out of sync with receiver queue. Refetching sequence number. Current Local Sequence Number = %d", objArr));
+                Iterator it = ((h6.h) mVar.h.b).i.iterator();
+                while (it.hasNext()) {
+                    ((h6.g) it.next()).o();
+                }
+                i10 = 2001;
             } else {
-                o3 o3Var = (o3) ((p3) this.b).g();
-                o3Var.c();
-                p3.r((p3) o3Var.b, j3);
-                p3Var = (p3) o3Var.a();
+                i10 = i7;
             }
-            o(g3Var2, p3Var);
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void k(g3 g3Var, int i7, long j3, boolean z9) {
-        p3 p3Var;
-        try {
-            o3 o3Var = (o3) ((p3) this.b).g();
-            o3Var.c();
-            p3.p((p3) o3Var.b, i7);
-            this.b = (p3) o3Var.a();
-            f3 f3Var = (f3) g3Var.g();
-            t3 t3Var = (t3) g3Var.o().g();
-            t3Var.c();
-            v3.n((v3) t3Var.b, z9);
-            f3Var.c();
-            g3.r((g3) f3Var.b, (v3) t3Var.a());
-            g3 g3Var2 = (g3) f3Var.a();
-            if (j3 == 0) {
-                p3Var = (p3) this.b;
-            } else {
-                o3 o3Var2 = (o3) ((p3) this.b).g();
-                o3Var2.c();
-                p3.r((p3) o3Var2.b, j3);
-                p3Var = (p3) o3Var2.a();
-            }
-            o(g3Var2, p3Var);
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void l(l3 l3Var) {
-        try {
-            w3 t6 = x3.t();
-            t6.d((p3) this.b);
-            t6.c();
-            x3.p((x3) t6.b, l3Var);
-            ((ca.i) this.c).m((x3) t6.a());
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void m(a4 a4Var) {
-        try {
-            ca.i iVar = (ca.i) this.c;
-            w3 t6 = x3.t();
-            t6.d((p3) this.b);
-            t6.c();
-            x3.r((x3) t6.b, a4Var);
-            iVar.m((x3) t6.a());
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void n(b4 b4Var) {
-        if (b4Var == null) {
-            return;
-        }
-        try {
-            w3 t6 = x3.t();
-            t6.d((p3) this.b);
-            t6.c();
-            x3.s((x3) t6.b, b4Var);
-            ((ca.i) this.c).m((x3) t6.a());
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void o(g3 g3Var, p3 p3Var) {
-        if (g3Var == null) {
-            return;
-        }
-        try {
-            w3 t6 = x3.t();
-            t6.d(p3Var);
-            t6.c();
-            x3.n((x3) t6.b, g3Var);
-            ((ca.i) this.c).m((x3) t6.a());
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
+            ((j6.n) this.b).k(str, j3, i10, obj, j10, j11);
         }
     }
 
@@ -503,75 +417,54 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         }
     }
 
-    @Override // i6.a
-    public void p(Bitmap bitmap) {
-        wf.b bVar = (wf.b) this.b;
-        bVar.c = bitmap;
-        i6.f fVar = (i6.f) this.c;
-        fVar.l = bVar;
-        fVar.b();
-    }
-
-    public void q(i3 i3Var, p3 p3Var) {
-        try {
-            w3 t6 = x3.t();
-            t6.d(p3Var);
-            t6.c();
-            x3.o((x3) t6.b, i3Var);
-            ((ca.i) this.c).m((x3) t6.a());
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
     @Override // com.google.android.gms.tasks.SuccessContinuation
     public Task then(Object obj) {
         FileWriter fileWriter;
         switch (this.a) {
             case 3:
                 Boolean bool = (Boolean) obj;
-                aa.q qVar = (aa.q) this.c;
+                aa.p pVar = (aa.p) this.c;
                 if (bool.booleanValue()) {
                     if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                         Log.d("FirebaseCrashlytics", "Sending cached crash reports...", null);
                     }
                     boolean booleanValue = bool.booleanValue();
-                    aa.x xVar = qVar.b;
+                    aa.w wVar = pVar.b;
                     if (booleanValue) {
-                        xVar.h.trySetResult(null);
-                        return ((Task) this.b).onSuccessTask(qVar.e.a, new d6.i(this, 2));
+                        wVar.h.trySetResult(null);
+                        return ((Task) this.b).onSuccessTask(pVar.e.a, new d6.i(this, 1));
                     }
-                    xVar.getClass();
+                    wVar.getClass();
                     throw new IllegalStateException("An invalid data collection token was used.");
                 }
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                     Log.v("FirebaseCrashlytics", "Deleting cached crash reports...", null);
                 }
-                Iterator it = ga.d.i(((File) qVar.g.d).listFiles(aa.q.r)).iterator();
+                Iterator it = ga.d.i(((File) pVar.g.d).listFiles(aa.p.r)).iterator();
                 while (it.hasNext()) {
                     ((File) it.next()).delete();
                 }
-                ga.d dVar = qVar.m.b.b;
+                ga.d dVar = pVar.m.b.b;
                 ga.b.b(ga.d.i(((File) dVar.f).listFiles()));
                 ga.b.b(ga.d.i(((File) dVar.h).listFiles()));
                 ga.b.b(ga.d.i(((File) dVar.n).listFiles()));
-                qVar.q.trySetResult(null);
+                pVar.q.trySetResult(null);
                 return Tasks.forResult(null);
             default:
                 ia.c cVar = (ia.c) this.c;
-                JSONObject jSONObject = (JSONObject) ((ba.e) this.b).c.a.submit(new aa.t(this, 2)).get();
+                JSONObject jSONObject = (JSONObject) ((ba.e) this.b).c.a.submit(new aa.s(this, 3)).get();
                 FileWriter fileWriter2 = null;
                 if (jSONObject != null) {
-                    ia.b y10 = ((gf.g) cVar.c).y(jSONObject);
-                    f1 f1Var = (f1) cVar.e;
-                    long j3 = y10.c;
-                    f1Var.getClass();
+                    ia.b S = ((ia.d) cVar.c).S(jSONObject);
+                    hi.l0 l0Var = (hi.l0) cVar.e;
+                    long j3 = S.c;
+                    l0Var.getClass();
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                         Log.v("FirebaseCrashlytics", "Writing settings to cache file...", null);
                     }
                     try {
                         jSONObject.put("expires_at", j3);
-                        fileWriter = new FileWriter((File) f1Var.b);
+                        fileWriter = new FileWriter((File) l0Var.b);
                         try {
                             try {
                                 fileWriter.write(jSONObject.toString());
@@ -587,12 +480,12 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
                             Log.e("FirebaseCrashlytics", "Failed to cache settings", e);
                             aa.g.b(fileWriter, "Failed to close settings writer.");
                             ia.c.d("Loaded settings: ", jSONObject);
-                            String str = (String) ((ia.e) cVar.b).f;
+                            String str = (String) ((ia.f) cVar.b).f;
                             SharedPreferences.Editor edit = ((Context) cVar.a).getSharedPreferences("com.google.firebase.crashlytics", 0).edit();
                             edit.putString("existing_instance_identifier", str);
                             edit.apply();
-                            ((AtomicReference) cVar.h).set(y10);
-                            ((TaskCompletionSource) ((AtomicReference) cVar.i).get()).trySetResult(y10);
+                            ((AtomicReference) cVar.h).set(S);
+                            ((TaskCompletionSource) ((AtomicReference) cVar.i).get()).trySetResult(S);
                             return Tasks.forResult(null);
                         }
                     } catch (Exception e11) {
@@ -605,18 +498,27 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
                     }
                     aa.g.b(fileWriter, "Failed to close settings writer.");
                     ia.c.d("Loaded settings: ", jSONObject);
-                    String str2 = (String) ((ia.e) cVar.b).f;
+                    String str2 = (String) ((ia.f) cVar.b).f;
                     SharedPreferences.Editor edit2 = ((Context) cVar.a).getSharedPreferences("com.google.firebase.crashlytics", 0).edit();
                     edit2.putString("existing_instance_identifier", str2);
                     edit2.apply();
-                    ((AtomicReference) cVar.h).set(y10);
-                    ((TaskCompletionSource) ((AtomicReference) cVar.i).get()).trySetResult(y10);
+                    ((AtomicReference) cVar.h).set(S);
+                    ((TaskCompletionSource) ((AtomicReference) cVar.i).get()).trySetResult(S);
                 }
                 return Tasks.forResult(null);
         }
     }
 
-    public /* synthetic */ q(int i7, boolean z9) {
+    @Override // i6.a
+    public void x(Bitmap bitmap) {
+        wf.b bVar = (wf.b) this.b;
+        bVar.c = bitmap;
+        i6.f fVar = (i6.f) this.c;
+        fVar.l = bVar;
+        fVar.b();
+    }
+
+    public /* synthetic */ q(int i7, boolean z10) {
         this.a = i7;
     }
 
@@ -625,23 +527,10 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         this.b = context;
     }
 
-    public /* synthetic */ q(Object obj, Object obj2, boolean z9, int i7) {
+    public /* synthetic */ q(Object obj, Object obj2, boolean z10, int i7) {
         this.a = i7;
         this.b = obj;
         this.c = obj2;
-    }
-
-    public q(Context context, p3 p3Var) {
-        this.a = 21;
-        ca.i iVar = new ca.i(2);
-        try {
-            o5.s.b(context);
-            iVar.c = o5.s.a().c(m5.a.e).a("PLAY_BILLING_LIBRARY", new l5.c("proto"), new w7.s(8, false));
-        } catch (Throwable unused) {
-            iVar.b = true;
-        }
-        this.c = iVar;
-        this.b = p3Var;
     }
 
     public q(int i7) {
@@ -651,6 +540,9 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
                 this.b = new ConcurrentHashMap(16, 0.75f, 10);
                 this.c = new ReferenceQueue();
                 break;
+            case 28:
+                this.b = new HashMap();
+                break;
             default:
                 this.b = new AtomicInteger();
                 this.c = new AtomicInteger();
@@ -659,13 +551,13 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
     }
 
     public q(Animation animation) {
-        this.a = 7;
+        this.a = 6;
         this.b = animation;
         this.c = null;
     }
 
     public q(Animator animator) {
-        this.a = 7;
+        this.a = 6;
         this.b = null;
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
@@ -673,7 +565,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
     }
 
     public q(ArrayList arrayList, ArrayList arrayList2) {
-        this.a = 25;
+        this.a = 23;
         int size = arrayList.size();
         this.b = new int[size];
         this.c = new float[size];
@@ -684,13 +576,13 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
     }
 
     public q(int i7, int i10) {
-        this.a = 25;
+        this.a = 23;
         this.b = new int[]{i7, i10};
         this.c = new float[]{0.0f, 1.0f};
     }
 
     public q(int i7, int i10, int i11) {
-        this.a = 25;
+        this.a = 23;
         this.b = new int[]{i7, i10, i11};
         this.c = new float[]{0.0f, 0.5f, 1.0f};
     }
@@ -704,7 +596,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         this.a = 0;
         if (!TextUtils.isEmpty(str)) {
             if (componentName == null) {
-                int i7 = s0.b;
+                int i7 = t0.b;
                 Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
                 intent.setPackage(context.getPackageName());
                 List<ResolveInfo> queryBroadcastReceivers = context.getPackageManager().queryBroadcastReceivers(intent, 0);
@@ -751,15 +643,21 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         throw new IllegalArgumentException("tag must not be null or empty");
     }
 
-    public q(t1 t1Var, int[] iArr) {
-        this.a = 27;
-        this.b = h9.i0.q(t1Var);
+    public q(s1 s1Var, int[] iArr) {
+        this.a = 25;
+        this.b = h9.i0.q(s1Var);
         this.c = iArr;
     }
 
-    public q(c5.k kVar) {
-        this.a = 9;
-        this.c = kVar;
+    public q(c5.l lVar) {
+        this.a = 8;
+        this.c = lVar;
         this.b = new Rect();
+    }
+
+    public q(di.o oVar) {
+        this.a = 18;
+        this.b = oVar;
+        this.c = new AtomicBoolean(false);
     }
 }

@@ -1,7 +1,29 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface ph0 {
-    void b(rh0 rh0Var, int i7);
+public final class ph0 extends v4.t0 {
+    public final /* synthetic */ v4.b0 a;
+    public final /* synthetic */ vh0 b;
+
+    public ph0(vh0 vh0Var, v4.b0 b0Var) {
+        this.b = vh0Var;
+        this.a = b0Var;
+    }
+
+    @Override // v4.t0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        int loadCount;
+        vh0 vh0Var = this.b;
+        if (vh0Var.x && vh0Var.y && !vh0Var.w) {
+            int N0 = this.a.N0();
+            int b10 = vh0Var.f.b() - 1;
+            loadCount = vh0Var.getLoadCount();
+            if (N0 >= b10 - loadCount) {
+                vh0Var.c();
+            }
+        }
+    }
 }

@@ -2,7 +2,7 @@ package com.google.android.gms.wearable;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import java.util.List;
 import q6.m;
 import r6.a;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class ConnectionConfiguration extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new w.a(8);
@@ -27,15 +27,15 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
     public final int w;
     public final List x;
 
-    public ConnectionConfiguration(String str, String str2, int i7, int i10, boolean z9, boolean z10, String str3, boolean z11, String str4, String str5, int i11, ArrayList arrayList) {
+    public ConnectionConfiguration(String str, String str2, int i7, int i10, boolean z10, boolean z11, String str3, boolean z12, String str4, String str5, int i11, ArrayList arrayList) {
         this.a = str;
         this.b = str2;
         this.c = i7;
         this.d = i10;
-        this.e = z9;
-        this.f = z10;
+        this.e = z10;
+        this.f = z11;
         this.h = str3;
-        this.n = z11;
+        this.n = z12;
         this.r = str4;
         this.s = str5;
         this.w = i11;
@@ -60,31 +60,31 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.l(parcel, 2, this.a);
-        xb.l(parcel, 3, this.b);
+        int r10 = yb.r(parcel, 20293);
+        yb.l(parcel, 2, this.a);
+        yb.l(parcel, 3, this.b);
         int i10 = this.c;
-        xb.q(parcel, 4, 4);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(i10);
         int i11 = this.d;
-        xb.q(parcel, 5, 4);
+        yb.q(parcel, 5, 4);
         parcel.writeInt(i11);
-        boolean z9 = this.e;
-        xb.q(parcel, 6, 4);
-        parcel.writeInt(z9 ? 1 : 0);
-        boolean z10 = this.f;
-        xb.q(parcel, 7, 4);
+        boolean z10 = this.e;
+        yb.q(parcel, 6, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        xb.l(parcel, 8, this.h);
-        boolean z11 = this.n;
-        xb.q(parcel, 9, 4);
+        boolean z11 = this.f;
+        yb.q(parcel, 7, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        xb.l(parcel, 10, this.r);
-        xb.l(parcel, 11, this.s);
+        yb.l(parcel, 8, this.h);
+        boolean z12 = this.n;
+        yb.q(parcel, 9, 4);
+        parcel.writeInt(z12 ? 1 : 0);
+        yb.l(parcel, 10, this.r);
+        yb.l(parcel, 11, this.s);
         int i12 = this.w;
-        xb.q(parcel, 12, 4);
+        yb.q(parcel, 12, 4);
         parcel.writeInt(i12);
-        xb.n(parcel, 13, this.x);
-        xb.s(parcel, r10);
+        yb.n(parcel, 13, this.x);
+        yb.s(parcel, r10);
     }
 }

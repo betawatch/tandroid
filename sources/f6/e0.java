@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e0 extends com.google.android.gms.common.api.j implements f0 {
     public static final j6.b H = new j6.b("CastClient", null);
@@ -20,7 +20,7 @@ public final class e0 extends com.google.android.gms.common.api.j implements f0 
     public final CastDevice B;
     public final HashMap C;
     public final HashMap D;
-    public final g6.e0 E;
+    public final g6.d0 E;
     public final List F;
     public int G;
     public final d0 l;

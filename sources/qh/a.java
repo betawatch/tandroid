@@ -4,10 +4,9 @@ import org.telegram.messenger.beta.R;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class a {
-    public static final a D;
     public static final a E;
     public static final a F;
     public static final a G;
@@ -22,7 +21,8 @@ public final class a {
     public static final a P;
     public static final a Q;
     public static final a R;
-    public static final /* synthetic */ a[] S;
+    public static final a S;
+    public static final /* synthetic */ a[] T;
     public static final a f;
     public static final a h;
     public static final a n;
@@ -62,37 +62,37 @@ public final class a {
         y = aVar8;
         a aVar9 = new a(8, R.raw.tab_gift, R.raw.tab_gift_reverse, "GIFT");
         a aVar10 = new a(9, R.raw.tab_location, R.raw.tab_location_reverse, "LOCATION");
-        D = aVar10;
+        E = aVar10;
         a aVar11 = new a(10, R.raw.tab_sticker, R.raw.tab_sticker_reverse, "STICKER");
-        E = aVar11;
+        F = aVar11;
         a aVar12 = new a(11, R.raw.tab_emoji, R.raw.tab_emoji_reverse, "EMOJI");
-        F = aVar12;
+        G = aVar12;
         a aVar13 = new a(12, R.raw.tab_models, R.raw.tab_models_reverse, "MODELS");
-        G = aVar13;
+        H = aVar13;
         a aVar14 = new a(13, R.raw.tab_music, R.raw.tab_music_reverse, "MUSIC");
-        H = aVar14;
+        I = aVar14;
         a aVar15 = new a(14, R.raw.tab_poll, R.raw.tab_poll_reverse, "POLL");
-        I = aVar15;
+        J = aVar15;
         a aVar16 = new a(15, R.raw.tab_symbols, R.raw.tab_symbols_reverse, "SYMBOLS");
-        J = aVar16;
+        K = aVar16;
         a aVar17 = new a(16, R.raw.tab_reply, R.raw.tab_reply_reverse, "REPLIES");
-        K = aVar17;
+        L = aVar17;
         a aVar18 = new a(17, R.raw.tab_wallet, R.raw.tab_wallet_reverse, "WALLET");
         a aVar19 = new a();
-        L = aVar19;
+        M = aVar19;
         a aVar20 = new a(19, R.raw.tab_article, R.raw.tab_article_reverse, "ARTICLE");
-        M = aVar20;
+        N = aVar20;
         a aVar21 = new a(20, R.raw.gram, R.raw.gram_reverse, "GRAM");
-        N = aVar21;
+        O = aVar21;
         a aVar22 = new a("BOOSTS", 21, R.raw.boosts, 25, 49);
-        O = aVar22;
+        P = aVar22;
         a aVar23 = new a("MONETIZATION", 22, R.raw.monetize, 19, 45);
-        P = aVar23;
+        Q = aVar23;
         a aVar24 = new a("STORIES_SAVED", 23, R.raw.msg_stories_saved, 20, 40);
-        Q = aVar24;
+        R = aVar24;
         a aVar25 = new a("STORIES_ARCHIVE", 24, R.raw.msg_stories_archive);
-        R = aVar25;
-        S = new a[]{aVar, aVar2, aVar3, aVar4, aVar5, aVar6, aVar7, aVar8, aVar9, aVar10, aVar11, aVar12, aVar13, aVar14, aVar15, aVar16, aVar17, aVar18, aVar19, aVar20, aVar21, aVar22, aVar23, aVar24, aVar25};
+        S = aVar25;
+        T = new a[]{aVar, aVar2, aVar3, aVar4, aVar5, aVar6, aVar7, aVar8, aVar9, aVar10, aVar11, aVar12, aVar13, aVar14, aVar15, aVar16, aVar17, aVar18, aVar19, aVar20, aVar21, aVar22, aVar23, aVar24, aVar25};
     }
 
     public a(String str, int i7, int i10, int i11, int i12) {
@@ -108,7 +108,7 @@ public final class a {
     }
 
     public static a[] values() {
-        return (a[]) S.clone();
+        return (a[]) T.clone();
     }
 
     public a() {

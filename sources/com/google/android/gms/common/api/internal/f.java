@@ -5,7 +5,7 @@ import android.util.Log;
 import android.util.Pair;
 import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f extends com.google.android.gms.internal.cast.y {
     @Override // android.os.Handler
@@ -24,11 +24,11 @@ public final class f extends com.google.android.gms.internal.cast.y {
         }
         Pair pair = (Pair) message.obj;
         h6.q qVar = (h6.q) pair.first;
-        com.google.android.gms.common.api.q qVar2 = (com.google.android.gms.common.api.q) pair.second;
+        com.google.android.gms.common.api.r rVar = (com.google.android.gms.common.api.r) pair.second;
         try {
-            qVar.a(qVar2);
+            qVar.a(rVar);
         } catch (RuntimeException e10) {
-            BasePendingResult.m(qVar2);
+            BasePendingResult.m(rVar);
             throw e10;
         }
     }

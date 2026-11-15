@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class z extends a {
     private static final int MEMOIZED_SERIALIZED_SIZE_MASK = Integer.MAX_VALUE;
@@ -61,7 +61,7 @@ public abstract class z extends a {
         }
     }
 
-    public static final boolean f(z zVar, boolean z9) {
+    public static final boolean f(z zVar, boolean z10) {
         byte byteValue = ((Byte) zVar.c(1)).byteValue();
         if (byteValue == 1) {
             return true;
@@ -72,7 +72,7 @@ public abstract class z extends a {
         y0 y0Var = y0.c;
         y0Var.getClass();
         boolean e10 = y0Var.a(zVar.getClass()).e(zVar);
-        if (z9) {
+        if (z10) {
             zVar.c(2);
         }
         return e10;
@@ -98,7 +98,7 @@ public abstract class z extends a {
             if (f11 >= 0) {
                 return f11;
             }
-            throw new IllegalStateException(jg.g.j(f11, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(i5.c.i(f11, "serialized size must be non-negative, was "));
         }
         int i7 = this.memoizedSerializedSize;
         if ((i7 & ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE) {
@@ -169,7 +169,7 @@ public abstract class z extends a {
 
     public final void k(int i7) {
         if (i7 < 0) {
-            throw new IllegalStateException(jg.g.j(i7, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(i5.c.i(i7, "serialized size must be non-negative, was "));
         }
         this.memoizedSerializedSize = (i7 & ConnectionsManager.DEFAULT_DATACENTER_ID) | (this.memoizedSerializedSize & Integer.MIN_VALUE);
     }

@@ -3,22 +3,22 @@ package org.telegram.ui;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class ur extends jg.s1 {
-    public final /* synthetic */ ContactsActivity K;
+    public final /* synthetic */ ContactsActivity L;
 
-    public ur(ContactsActivity contactsActivity, Context context, a0.h hVar, boolean z9, boolean z10, boolean z11) {
-        this.K = contactsActivity;
+    public ur(ContactsActivity contactsActivity, Context context, a0.h hVar, boolean z10, boolean z11, boolean z12) {
+        this.L = contactsActivity;
         this.d = new ArrayList();
         this.e = new ArrayList();
-        this.H = new ArrayList();
+        this.I = new ArrayList();
         this.c = context;
         this.h = hVar;
-        this.r = z9;
-        this.s = z10;
+        this.r = z10;
+        this.s = z11;
         this.y = 0;
-        this.w = z11;
+        this.w = z12;
         this.x = true;
         jg.z1 z1Var = new jg.z1(true);
         this.f = z1Var;
@@ -27,9 +27,9 @@ public final class ur extends jg.s1 {
 
     @Override // jg.s1
     public final void F() {
-        if (this.D || this.f.e() || b() != 0) {
+        if (this.E || this.f.e() || b() != 0) {
             return;
         }
-        this.K.c.e(false, true);
+        this.L.c.e(false, true);
     }
 }

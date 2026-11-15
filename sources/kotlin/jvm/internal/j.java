@@ -1,12 +1,13 @@
 package kotlin.jvm.internal;
 
 import a8.p0;
+import com.google.android.gms.internal.vision.e2;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final Object[] a = new Object[0];
@@ -54,7 +55,7 @@ public abstract class j {
                 i7++;
             }
             StackTraceElement stackTraceElement = stackTrace[i7];
-            StringBuilder n10 = com.google.android.recaptcha.internal.a.n("Parameter specified as non-null is null: method ", stackTraceElement.getClassName(), ".", stackTraceElement.getMethodName(), ", parameter ");
+            StringBuilder n10 = e2.n("Parameter specified as non-null is null: method ", stackTraceElement.getClassName(), ".", stackTraceElement.getMethodName(), ", parameter ");
             n10.append(str);
             NullPointerException nullPointerException = new NullPointerException(n10.toString());
             g(nullPointerException, j.class.getName());

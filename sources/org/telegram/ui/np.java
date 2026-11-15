@@ -1,14 +1,14 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class np implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rq b;
+    public final /* synthetic */ qq b;
 
-    public /* synthetic */ np(rq rqVar, int i7) {
+    public /* synthetic */ np(qq qqVar, int i7) {
         this.a = i7;
-        this.b = rqVar;
+        this.b = qqVar;
     }
 
     @Override // java.lang.Runnable
@@ -18,8 +18,8 @@ public final /* synthetic */ class np implements Runnable {
                 this.b.w0();
                 break;
             default:
-                rq rqVar = this.b;
-                rqVar.getMessagesController().V2(0, rqVar.M, true);
+                qq qqVar = this.b;
+                qqVar.getMessagesController().V2(0, qqVar.N, true);
                 break;
         }
     }

@@ -10,10 +10,10 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class b extends Drawable {
     public final TextPaint a;
@@ -42,15 +42,15 @@ public final class b extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        boolean z9 = this.d;
+        boolean z10 = this.d;
         TextPaint textPaint = this.b;
         TextPaint textPaint2 = this.a;
-        if (z9) {
+        if (z10) {
             int alpha = textPaint2.getAlpha();
             int alpha2 = textPaint.getAlpha();
-            textPaint2.setColor(m6.x0(null, m6.G6, false));
+            textPaint2.setColor(j6.x0(null, j6.G6, false));
             textPaint2.setAlpha(alpha);
-            textPaint.setColor(m6.x0(null, m6.y6, false));
+            textPaint.setColor(j6.x0(null, j6.y6, false));
             textPaint.setAlpha(alpha2);
         }
         int width = getBounds().width();

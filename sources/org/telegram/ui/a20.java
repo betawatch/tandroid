@@ -1,20 +1,19 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class a20 extends v4.s0 {
-    public final /* synthetic */ f40 a;
+public final class a20 extends org.telegram.ui.Components.vf0 {
+    public final /* synthetic */ c40 t1;
 
-    public a20(f40 f40Var) {
-        this.a = f40Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a20(c40 c40Var, LaunchActivity launchActivity, a30 a30Var, k30 k30Var, z10 z10Var) {
+        super(launchActivity, a30Var, k30Var, z10Var);
+        this.t1 = c40Var;
     }
 
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        f40 f40Var = this.a;
-        f40Var.b.invalidate();
-        f40Var.U3.invalidate();
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.t1.b.invalidate();
     }
 }

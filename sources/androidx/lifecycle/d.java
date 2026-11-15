@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d {
     public static final d c = new d();
@@ -51,7 +51,7 @@ public final class d {
                 throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e10);
             }
         }
-        boolean z9 = false;
+        boolean z10 = false;
         for (Method method : methodArr) {
             b0 b0Var = (b0) method.getAnnotation(b0.class);
             if (b0Var != null) {
@@ -78,12 +78,12 @@ public final class d {
                     throw new IllegalArgumentException("cannot have more than 2 params");
                 }
                 b(hashMap, new c(i7, method), value, cls);
-                z9 = true;
+                z10 = true;
             }
         }
         b bVar3 = new b(hashMap);
         hashMap2.put(cls, bVar3);
-        this.b.put(cls, Boolean.valueOf(z9));
+        this.b.put(cls, Boolean.valueOf(z10));
         return bVar3;
     }
 }

@@ -1,8 +1,8 @@
 package dd;
 
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public enum p0 extends b2 {
     public p0() {
@@ -12,7 +12,7 @@ public enum p0 extends b2 {
     @Override // dd.b2
     public final void d(l lVar, a aVar) {
         char d = aVar.d();
-        t0 t0Var = b2.c0;
+        t0 t0Var = b2.d0;
         if (d == 0) {
             lVar.m(this);
             lVar.i.e((char) 65533);
@@ -21,7 +21,7 @@ public enum p0 extends b2 {
         }
         if (d != ' ') {
             if (d == '\"') {
-                lVar.c = b2.a0;
+                lVar.c = b2.b0;
                 return;
             }
             if (d != '`') {
@@ -41,14 +41,14 @@ public enum p0 extends b2 {
                     return;
                 }
                 if (d == '\'') {
-                    lVar.c = b2.b0;
+                    lVar.c = b2.c0;
                     return;
                 }
                 switch (d) {
-                    case qs.x0 /* 60 */:
-                    case qs.y0 /* 61 */:
+                    case ns.x0 /* 60 */:
+                    case ns.y0 /* 61 */:
                         break;
-                    case qs.z0 /* 62 */:
+                    case ns.z0 /* 62 */:
                         lVar.m(this);
                         lVar.k();
                         lVar.c = wVar;

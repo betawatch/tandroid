@@ -2,11 +2,11 @@ package s7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import java.util.ArrayList;
 import q4.x;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g extends r6.a {
     public final String a;
@@ -31,7 +31,7 @@ public final class g extends r6.a {
         String str2;
         String str3;
         String str4 = null;
-        boolean z9 = true;
+        boolean z10 = true;
         int i10 = e;
         if (i7 != i10) {
             if (i7 >= 0) {
@@ -39,7 +39,7 @@ public final class g extends r6.a {
                 if (i7 < 10) {
                     str3 = strArr[i7];
                     if (str3 == null) {
-                        z9 = false;
+                        z10 = false;
                     }
                 }
             } else {
@@ -52,7 +52,7 @@ public final class g extends r6.a {
         StringBuilder sb2 = new StringBuilder(32);
         sb2.append("Invalid section type ");
         sb2.append(i7);
-        q6.m.a(sb2.toString(), z9);
+        q6.m.a(sb2.toString(), z10);
         this.a = str;
         this.b = kVar;
         this.c = i7;
@@ -89,12 +89,12 @@ public final class g extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.l(parcel, 1, this.a);
-        xb.k(parcel, 3, this.b, i7);
-        xb.q(parcel, 4, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.l(parcel, 1, this.a);
+        yb.k(parcel, 3, this.b, i7);
+        yb.q(parcel, 4, 4);
         parcel.writeInt(this.c);
-        xb.c(parcel, 5, this.d);
-        xb.s(parcel, r10);
+        yb.c(parcel, 5, this.d);
+        yb.s(parcel, r10);
     }
 }

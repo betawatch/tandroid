@@ -1,17 +1,31 @@
 package fi;
 
-import android.graphics.PointF;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.ui.Components.xb;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class n5 {
-    public final PointF a;
-    public final float b;
-    public final float c;
+public final class n5 extends FrameLayout {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ o5 b;
 
-    public /* synthetic */ n5(PointF pointF, float f10, float f11) {
-        this.a = pointF;
-        this.b = f10;
-        this.c = f11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n5(o5 o5Var, Context context, float f10) {
+        super(context);
+        this.b = o5Var;
+        this.a = f10;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        xb.a(this.b.c, new bi.e1(this, 4));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        xb.h(this.b.c);
     }
 }

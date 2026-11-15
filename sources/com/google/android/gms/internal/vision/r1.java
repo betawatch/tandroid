@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r1 extends n0 implements t1, RandomAccess {
     public final ArrayList b;
@@ -61,7 +61,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
         if (!(obj instanceof q0)) {
             byte[] bArr = (byte[]) obj;
             String str = new String(bArr, j1.a);
-            if (a3.a.s(0, bArr.length, bArr)) {
+            if (b3.a.s(0, bArr.length, bArr)) {
                 arrayList.set(i7, str);
             }
             return str;
@@ -69,7 +69,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
         q0 q0Var = (q0) obj;
         String str2 = q0Var.i() == 0 ? "" : new String(q0Var.b, q0Var.m(), q0Var.i(), j1.a);
         int m10 = q0Var.m();
-        if (a3.a.s(m10, q0Var.i() + m10, q0Var.b)) {
+        if (b3.a.s(m10, q0Var.i() + m10, q0Var.b)) {
             arrayList.set(i7, str2);
         }
         return str2;
@@ -127,7 +127,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.t1
     public final t1 zze() {
-        return this.a ? new s2(this) : this;
+        return this.a ? new t2(this) : this;
     }
 
     public r1(ArrayList arrayList) {

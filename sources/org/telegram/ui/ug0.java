@@ -1,12 +1,25 @@
 package org.telegram.ui;
 
-import android.text.Layout;
-import android.view.View;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface ug0 {
-    Layout a();
+public final /* synthetic */ class ug0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bh0 b;
 
-    View e();
+    public /* synthetic */ ug0(bh0 bh0Var, int i7) {
+        this.a = i7;
+        this.b = bh0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.v1(this.b.m1);
+                break;
+            default:
+                org.telegram.messenger.g0.J3(this.b.n1.getEditText());
+                break;
+        }
+    }
 }

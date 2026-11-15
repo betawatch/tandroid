@@ -1,30 +1,30 @@
 package org.telegram.messenger.voip;
 
-import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ HashSet c;
-    public final /* synthetic */ String d;
+    public final /* synthetic */ TLRPC.Updates c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ v(VoIPService voIPService, HashSet hashSet, String str, int i7) {
+    public /* synthetic */ v(VoIPService voIPService, TLRPC.Updates updates, long j3, int i7) {
         this.a = i7;
         this.b = voIPService;
-        this.c = hashSet;
-        this.d = str;
+        this.c = updates;
+        this.d = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$startConferenceGroupCall$42(this.c, this.d);
+                this.b.lambda$startConferenceGroupCall$38(this.c, this.d);
                 break;
             default:
-                this.b.lambda$startConferenceGroupCall$50(this.c, this.d);
+                this.b.lambda$startConferenceGroupCall$46(this.c, this.d);
                 break;
         }
     }

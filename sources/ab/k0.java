@@ -8,7 +8,7 @@ import android.os.Build;
 import android.util.Log;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k0 extends BroadcastReceiver {
     public l0 a;
@@ -32,7 +32,7 @@ public final class k0 extends BroadcastReceiver {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final synchronized void onReceive(Context context, Intent intent) {
-        boolean z9;
+        boolean z10;
         try {
             l0 l0Var = this.a;
             if (l0Var == null) {
@@ -40,8 +40,8 @@ public final class k0 extends BroadcastReceiver {
             }
             if (l0Var.d()) {
                 if (!Log.isLoggable("FirebaseMessaging", 3) && (Build.VERSION.SDK_INT != 23 || !Log.isLoggable("FirebaseMessaging", 3))) {
-                    z9 = false;
-                    if (z9) {
+                    z10 = false;
+                    if (z10) {
                         Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
                     }
                     l0 l0Var2 = this.a;
@@ -49,8 +49,8 @@ public final class k0 extends BroadcastReceiver {
                     context.unregisterReceiver(this);
                     this.a = null;
                 }
-                z9 = true;
-                if (z9) {
+                z10 = true;
+                if (z10) {
                 }
                 l0 l0Var22 = this.a;
                 l0Var22.d.e.schedule(l0Var22, 0L, TimeUnit.SECONDS);

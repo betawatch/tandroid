@@ -40,7 +40,7 @@ public final class n extends a implements Serializable {
         try {
             HashMap hashMap = new HashMap();
             int[][] w10 = w();
-            int z9 = (int) LocalDate.of(1882, 11, 12).z();
+            int z10 = (int) LocalDate.of(1882, 11, 12).z();
             for (int i7 = 1300; i7 <= 1600; i7++) {
                 int[] iArr = w10[i7 - 1300];
                 if (iArr.length != 12) {
@@ -48,12 +48,12 @@ public final class n extends a implements Serializable {
                 }
                 hashMap.put(Integer.valueOf(i7), iArr);
             }
-            if (z9 == 0) {
+            if (z10 == 0) {
                 throw new IllegalArgumentException("Configuration does not contain a ISO start date");
             }
             this.g = 15600;
-            this.e = z9;
-            int[] l10 = l(z9, hashMap);
+            this.e = z10;
+            int[] l10 = l(z10, hashMap);
             this.d = l10;
             this.f = l10[3612];
             for (int i10 = 1300; i10 < 1600; i10++) {

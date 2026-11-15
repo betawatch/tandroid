@@ -1,17 +1,18 @@
 package ce;
 
-import a8.la;
+import a8.ma;
+import aa.b0;
 import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.concurrent.CancellationException;
 import org.telegram.tgnet.TLObject;
 import zd.a1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class x {
-    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("NONE", 1);
-    public static final com.google.android.gms.internal.clearcut.e b = new com.google.android.gms.internal.clearcut.e("PENDING", 1);
+    public static final b0 a = new b0("NONE", 1);
+    public static final b0 b = new b0("PENDING", 1);
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x0033  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0021  */
@@ -52,7 +53,7 @@ public abstract class x {
             return gd.k.a;
         } catch (Throwable th3) {
             if (th2 != null && th2 != th3) {
-                la.a(th3, th2);
+                ma.a(th3, th2);
             }
             throw th3;
         }
@@ -91,7 +92,7 @@ public abstract class x {
                         d mVar = new m(dVar, rVar2);
                         kVar.a = rVar2;
                         kVar.c = 1;
-                        if (cVar.B(mVar, kVar) == aVar) {
+                        if (cVar.G(mVar, kVar) == aVar) {
                             return aVar;
                         }
                         return null;
@@ -119,10 +120,10 @@ public abstract class x {
                     return th;
                 }
                 if (th instanceof CancellationException) {
-                    la.a(th2, th);
+                    ma.a(th2, th);
                     throw th2;
                 }
-                la.a(th, th2);
+                ma.a(th, th2);
                 throw th;
             }
         }
@@ -156,7 +157,7 @@ public abstract class x {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object c(d dVar, be.r rVar, boolean z9, kd.c cVar) {
+    public static final Object c(d dVar, be.r rVar, boolean z10, kd.c cVar) {
         e eVar;
         int i7;
         be.b bVar;
@@ -185,13 +186,13 @@ public abstract class x {
                         eVar.a = dVar;
                         eVar.b = rVar3;
                         eVar.c = bVar;
-                        eVar.d = z9;
+                        eVar.d = z10;
                         eVar.f = 1;
                         obj = bVar.b(eVar);
                         if (obj != aVar) {
                         }
                     } else if (i7 == 1) {
-                        z9 = eVar.d;
+                        z10 = eVar.d;
                         bVar2 = eVar.c;
                         ?? r92 = eVar.b;
                         dVar2 = eVar.a;
@@ -203,7 +204,7 @@ public abstract class x {
                         if (i7 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        z9 = eVar.d;
+                        z10 = eVar.d;
                         bVar2 = eVar.c;
                         ?? r93 = eVar.b;
                         dVar2 = eVar.a;
@@ -216,7 +217,7 @@ public abstract class x {
                         eVar.a = dVar;
                         eVar.b = rVar3;
                         eVar.c = bVar;
-                        eVar.d = z9;
+                        eVar.d = z10;
                         eVar.f = 1;
                         obj = bVar.b(eVar);
                         if (obj != aVar) {
@@ -227,17 +228,17 @@ public abstract class x {
                         bVar2 = bVar3;
                         rVar2 = rVar3;
                         if (!((Boolean) obj).booleanValue()) {
-                            if (z9) {
+                            if (z10) {
                                 rVar2.cancel(null);
                             }
                             return gd.k.a;
                         }
                         Object obj2 = bVar2.a;
-                        com.google.android.gms.internal.clearcut.e eVar2 = be.e.p;
-                        if (obj2 == eVar2) {
+                        b0 b0Var = be.e.p;
+                        if (obj2 == b0Var) {
                             throw new IllegalStateException("`hasNext()` has not been invoked");
                         }
-                        bVar2.a = eVar2;
+                        bVar2.a = b0Var;
                         if (obj2 == be.e.l) {
                             Throwable n10 = bVar2.c.n();
                             int i11 = ee.s.a;
@@ -246,7 +247,7 @@ public abstract class x {
                         eVar.a = dVar2;
                         eVar.b = rVar2;
                         eVar.c = bVar2;
-                        eVar.d = z9;
+                        eVar.d = z10;
                         eVar.f = 2;
                         rVar4 = rVar2;
                     }
@@ -258,7 +259,7 @@ public abstract class x {
             try {
                 throw th2;
             } catch (Throwable th3) {
-                if (z9) {
+                if (z10) {
                     CancellationException cancellationException = th2 instanceof CancellationException ? th2 : null;
                     if (cancellationException == null) {
                         cancellationException = new CancellationException("Channel was consumed, consumer had failed");
@@ -286,7 +287,7 @@ public abstract class x {
     public static final Object d(c cVar, kd.c cVar2) {
         s sVar;
         int i7;
-        com.google.android.gms.internal.clearcut.e eVar;
+        b0 b0Var;
         kotlin.jvm.internal.r rVar;
         de.a e10;
         r rVar2;
@@ -299,17 +300,17 @@ public abstract class x {
                 Object obj2 = sVar.c;
                 Object obj3 = jd.a.a;
                 i7 = sVar.d;
-                eVar = de.g.a;
+                b0Var = de.g.a;
                 if (i7 != 0) {
                     af.b.c(obj2);
                     kotlin.jvm.internal.r rVar3 = new kotlin.jvm.internal.r();
-                    rVar3.a = eVar;
+                    rVar3.a = b0Var;
                     r rVar4 = new r(rVar3, 0);
                     try {
                         sVar.a = rVar3;
                         sVar.b = rVar4;
                         sVar.d = 1;
-                        if (cVar.B(rVar4, sVar) == obj3) {
+                        if (cVar.G(rVar4, sVar) == obj3) {
                             return obj3;
                         }
                         rVar = rVar3;
@@ -320,7 +321,7 @@ public abstract class x {
                         if (e10.a != rVar2) {
                         }
                         obj = rVar.a;
-                        if (obj == eVar) {
+                        if (obj == b0Var) {
                         }
                     }
                 } else {
@@ -337,12 +338,12 @@ public abstract class x {
                             throw e10;
                         }
                         obj = rVar.a;
-                        if (obj == eVar) {
+                        if (obj == b0Var) {
                         }
                     }
                 }
                 obj = rVar.a;
-                if (obj == eVar) {
+                if (obj == b0Var) {
                     return obj;
                 }
                 throw new NoSuchElementException("Expected at least one element");
@@ -352,11 +353,11 @@ public abstract class x {
         Object obj22 = sVar.c;
         Object obj32 = jd.a.a;
         i7 = sVar.d;
-        eVar = de.g.a;
+        b0Var = de.g.a;
         if (i7 != 0) {
         }
         obj = rVar.a;
-        if (obj == eVar) {
+        if (obj == b0Var) {
         }
     }
 
@@ -388,7 +389,7 @@ public abstract class x {
                         tVar.a = rVar3;
                         tVar.b = rVar4;
                         tVar.d = 1;
-                        if (cVar.B(rVar4, tVar) == obj2) {
+                        if (cVar.G(rVar4, tVar) == obj2) {
                             return obj2;
                         }
                         rVar = rVar3;

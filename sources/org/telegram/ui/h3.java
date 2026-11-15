@@ -4,25 +4,25 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class h3 extends hi.b4 {
-    public boolean c0;
-    public final /* synthetic */ k3 d0;
+public final class h3 extends ki.x3 {
+    public boolean d0;
+    public final /* synthetic */ k3 e0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public h3(k3 k3Var, Context context) {
         super(context);
-        this.d0 = k3Var;
+        this.e0 = k3Var;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        this.c0 = true;
+        this.d0 = true;
         setOffsetY(View.MeasureSpec.getSize(i10) * 0.4f);
-        this.c0 = false;
+        this.d0 = false;
         int size = View.MeasureSpec.getSize(i10);
-        t3 t3Var = this.d0.L.K;
+        t3 t3Var = this.e0.M.L;
         if (t3Var != null) {
             t3Var.getClass();
         }
@@ -31,7 +31,7 @@ public final class h3 extends hi.b4 {
 
     @Override // android.view.View, android.view.ViewParent
     public final void requestLayout() {
-        if (this.c0) {
+        if (this.d0) {
             return;
         }
         super.requestLayout();

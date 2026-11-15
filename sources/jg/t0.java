@@ -2,14 +2,14 @@ package jg;
 
 import java.io.File;
 import java.util.ArrayList;
+import org.telegram.messenger.jg;
 import org.telegram.messenger.kg;
-import org.telegram.messenger.lg;
-import org.telegram.messenger.ui;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -20,68 +20,68 @@ public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ t0(i1 i1Var, CharSequence charSequence, int i7, ArrayList arrayList, boolean z9, boolean z10) {
-        this.e = i1Var;
+    public /* synthetic */ t0(h1 h1Var, CharSequence charSequence, int i7, ArrayList arrayList, boolean z10, boolean z11) {
+        this.e = h1Var;
         this.f = charSequence;
         this.c = i7;
         this.h = arrayList;
-        this.b = z9;
-        this.d = z10;
+        this.b = z10;
+        this.d = z11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((i1) this.e).U((CharSequence) this.f, this.c, (ArrayList) this.h, this.b, this.d);
+                ((h1) this.e).U((CharSequence) this.f, this.c, (ArrayList) this.h, this.b, this.d);
                 break;
             case 1:
-                ui uiVar = (ui) this.e;
+                si siVar = (si) this.e;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.f;
                 String str = (String) this.h;
-                boolean z9 = this.b;
+                boolean z10 = this.b;
                 int i7 = this.c;
-                if (z9) {
+                if (z10) {
                     if (tL_messages_stickerSet == null || Math.abs((System.currentTimeMillis() / 1000) - i7) >= 86400) {
-                        org.telegram.messenger.g0.i3(new kg(uiVar, str, this.d, 0), (tL_messages_stickerSet != null || z9) ? 0L : 1000L);
+                        org.telegram.messenger.g0.i3(new jg(siVar, str, this.d, 0), (tL_messages_stickerSet != null || z10) ? 0L : 1000L);
                         if (tL_messages_stickerSet == null) {
                         }
                     }
                 }
                 if (tL_messages_stickerSet == null) {
-                    if (!z9) {
-                        uiVar.F1(str, null, i7);
+                    if (!z10) {
+                        siVar.F1(str, null, i7);
                         break;
                     }
                 } else {
-                    if (!z9) {
-                        uiVar.F1(str, tL_messages_stickerSet, i7);
+                    if (!z10) {
+                        siVar.F1(str, tL_messages_stickerSet, i7);
                     }
-                    org.telegram.messenger.g0.h3(new lg(uiVar, str, tL_messages_stickerSet, 0));
+                    org.telegram.messenger.g0.h3(new kg(siVar, str, tL_messages_stickerSet, 0));
                     break;
                 }
                 break;
             default:
-                org.telegram.messenger.g0.h3(new l2.a0(m6.p1((e6) this.e, (File) this.f, this.c, this.b, (TLRPC.Document) this.h, this.d), 28));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.r0(j6.p1((b6) this.e, (File) this.f, this.c, this.b, (TLRPC.Document) this.h, this.d), 11));
                 break;
         }
     }
 
-    public /* synthetic */ t0(ui uiVar, boolean z9, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i7, String str, boolean z10) {
-        this.e = uiVar;
-        this.b = z9;
+    public /* synthetic */ t0(si siVar, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i7, String str, boolean z11) {
+        this.e = siVar;
+        this.b = z10;
         this.f = tL_messages_stickerSet;
         this.c = i7;
         this.h = str;
-        this.d = z10;
+        this.d = z11;
     }
 
-    public /* synthetic */ t0(e6 e6Var, File file, int i7, boolean z9, TLRPC.Document document, boolean z10) {
-        this.e = e6Var;
+    public /* synthetic */ t0(b6 b6Var, File file, int i7, boolean z10, TLRPC.Document document, boolean z11) {
+        this.e = b6Var;
         this.f = file;
         this.c = i7;
-        this.b = z9;
+        this.b = z10;
         this.h = document;
-        this.d = z10;
+        this.d = z11;
     }
 }

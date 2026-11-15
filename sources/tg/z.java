@@ -3,7 +3,7 @@ package tg;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class z extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -18,12 +18,12 @@ public final class z extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.O1.setTranslationY(0.0f);
+                this.b.P1.setTranslationY(0.0f);
                 break;
             default:
                 g0 g0Var = this.b;
-                g0Var.R1 = false;
-                g0Var.O1.setTranslationY(0.0f);
+                g0Var.S1 = false;
+                g0Var.P1.setTranslationY(0.0f);
                 g0Var.l0();
                 break;
         }

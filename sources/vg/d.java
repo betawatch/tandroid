@@ -7,7 +7,7 @@ import javax.microedition.khronos.opengles.GL10;
 import org.telegram.messenger.a8;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class d implements GLSurfaceView.Renderer {
     public long a;
@@ -30,11 +30,11 @@ public final class d implements GLSurfaceView.Renderer {
             GLES20.glBindFramebuffer(36160, 0);
             GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
             GLES20.glClear(TLObject.FLAG_14);
-            if (this.d.D) {
+            if (this.d.E) {
                 return;
             }
-            this.d.D = true;
-            final int i7 = this.d.E;
+            this.d.E = true;
+            final int i7 = this.d.F;
             final int i10 = 0;
             this.d.post(new Runnable(this) { // from class: vg.c
                 public final /* synthetic */ d b;
@@ -54,7 +54,7 @@ public final class d implements GLSurfaceView.Renderer {
                             d dVar2 = this.b;
                             int i11 = i7;
                             e eVar = dVar2.d;
-                            if (eVar.e && !eVar.r && i11 == dVar2.d.G) {
+                            if (eVar.e && !eVar.r && i11 == dVar2.d.H) {
                                 e eVar2 = dVar2.d;
                                 eVar2.s = true;
                                 Runnable runnable = eVar2.w;
@@ -105,7 +105,7 @@ public final class d implements GLSurfaceView.Renderer {
                             d dVar2 = this.b;
                             int i112 = i11;
                             e eVar2 = dVar2.d;
-                            if (eVar2.e && !eVar2.r && i112 == dVar2.d.G) {
+                            if (eVar2.e && !eVar2.r && i112 == dVar2.d.H) {
                                 e eVar22 = dVar2.d;
                                 eVar22.s = true;
                                 Runnable runnable = eVar22.w;
@@ -122,14 +122,14 @@ public final class d implements GLSurfaceView.Renderer {
         } catch (RuntimeException e10) {
             a8.g(e10, true);
             this.d.r = true;
-            this.d.post(new sh.b(this, 22));
+            this.d.post(new q2.d(this, 28));
         }
     }
 
     @Override // android.opengl.GLSurfaceView.Renderer
     public final void onSurfaceChanged(GL10 gl10, int i7, int i10) {
         this.b = false;
-        this.c = this.d.G;
+        this.c = this.d.H;
         if (this.d.r) {
             return;
         }
@@ -139,8 +139,8 @@ public final class d implements GLSurfaceView.Renderer {
     @Override // android.opengl.GLSurfaceView.Renderer
     public final void onSurfaceCreated(GL10 gl10, EGLConfig eGLConfig) {
         e eVar = this.d;
-        int i7 = eVar.G + 1;
-        eVar.G = i7;
+        int i7 = eVar.H + 1;
+        eVar.H = i7;
         this.c = i7;
         this.b = false;
         this.a = 0L;
@@ -152,7 +152,7 @@ public final class d implements GLSurfaceView.Renderer {
         } catch (RuntimeException e10) {
             a8.g(e10, true);
             this.d.r = true;
-            this.d.post(new sh.b(this, 22));
+            this.d.post(new q2.d(this, 28));
         }
     }
 }

@@ -1,27 +1,26 @@
 package m4;
 
-import a8.ia;
+import a8.ja;
 import e2.s0;
-import f3.j0;
-import h2.m0;
+import f3.i0;
 import java.util.Collections;
-import l2.o0;
+import l2.l0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s implements i {
     public final c0 a;
     public String b;
-    public j0 c;
+    public i0 c;
     public r d;
     public boolean e;
     public long l;
     public final boolean[] f = new boolean[3];
-    public final o0 g = new o0(32);
-    public final o0 h = new o0(33);
-    public final o0 i = new o0(34);
-    public final o0 j = new o0(39);
-    public final o0 k = new o0(40);
+    public final l0 g = new l0(32);
+    public final l0 h = new l0(33);
+    public final l0 i = new l0(34);
+    public final l0 j = new l0(39);
+    public final l0 k = new l0(40);
     public long m = -9223372036854775807L;
     public final h2.x n = new h2.x();
 
@@ -32,12 +31,12 @@ public final class s implements i {
     public final void a(long j3, long j10, int i7, int i10) {
         h2.c cVar = this.a.d;
         r rVar = this.d;
-        boolean z9 = this.e;
+        boolean z10 = this.e;
         if (rVar.j && rVar.g) {
             rVar.m = rVar.c;
             rVar.j = false;
         } else if (rVar.h || rVar.g) {
-            if (z9 && rVar.i) {
+            if (z10 && rVar.i) {
                 rVar.a(i7 + ((int) (j3 - rVar.b)));
             }
             rVar.k = rVar.b;
@@ -46,21 +45,21 @@ public final class s implements i {
             rVar.i = true;
         }
         if (!this.e) {
-            o0 o0Var = this.g;
-            o0Var.e(i10);
-            o0 o0Var2 = this.h;
-            o0Var2.e(i10);
-            o0 o0Var3 = this.i;
-            o0Var3.e(i10);
-            if (o0Var.d && o0Var2.d && o0Var3.d) {
+            l0 l0Var = this.g;
+            l0Var.e(i10);
+            l0 l0Var2 = this.h;
+            l0Var2.e(i10);
+            l0 l0Var3 = this.i;
+            l0Var3.e(i10);
+            if (l0Var.d && l0Var2.d && l0Var3.d) {
                 String str = this.b;
-                int i11 = o0Var.e;
-                byte[] bArr = new byte[o0Var2.e + i11 + o0Var3.e];
-                System.arraycopy((byte[]) o0Var.f, 0, bArr, 0, i11);
-                System.arraycopy((byte[]) o0Var2.f, 0, bArr, o0Var.e, o0Var2.e);
-                System.arraycopy((byte[]) o0Var3.f, 0, bArr, o0Var.e + o0Var2.e, o0Var3.e);
+                int i11 = l0Var.e;
+                byte[] bArr = new byte[l0Var2.e + i11 + l0Var3.e];
+                System.arraycopy((byte[]) l0Var.f, 0, bArr, 0, i11);
+                System.arraycopy((byte[]) l0Var2.f, 0, bArr, l0Var.e, l0Var2.e);
+                System.arraycopy((byte[]) l0Var3.f, 0, bArr, l0Var.e + l0Var2.e, l0Var3.e);
                 String str2 = null;
-                i2.k k10 = i2.o.k((byte[]) o0Var2.f, 3, o0Var2.e, null);
+                i2.k k10 = i2.o.k((byte[]) l0Var2.f, 3, l0Var2.e, null);
                 i2.h hVar = k10.b;
                 if (hVar != null) {
                     str2 = h2.g.a(hVar.a, hVar.c, hVar.d, hVar.f, hVar.b, hVar.e);
@@ -82,22 +81,22 @@ public final class s implements i {
                 e2.u uVar = new e2.u(tVar);
                 this.c.g(uVar);
                 int i12 = uVar.u;
-                ia.p(i12 != -1);
+                ja.p(i12 != -1);
                 cVar.C(i12);
                 this.e = true;
             }
         }
-        o0 o0Var4 = this.j;
-        boolean e10 = o0Var4.e(i10);
+        l0 l0Var4 = this.j;
+        boolean e10 = l0Var4.e(i10);
         h2.x xVar = this.n;
         if (e10) {
-            xVar.L(i2.o.p(o0Var4.e, (byte[]) o0Var4.f), (byte[]) o0Var4.f);
+            xVar.L(i2.o.p(l0Var4.e, (byte[]) l0Var4.f), (byte[]) l0Var4.f);
             xVar.O(5);
             cVar.a(j10, xVar);
         }
-        o0 o0Var5 = this.k;
-        if (o0Var5.e(i10)) {
-            xVar.L(i2.o.p(o0Var5.e, (byte[]) o0Var5.f), (byte[]) o0Var5.f);
+        l0 l0Var5 = this.k;
+        if (l0Var5.e(i10)) {
+            xVar.L(i2.o.p(l0Var5.e, (byte[]) l0Var5.f), (byte[]) l0Var5.f);
             xVar.O(5);
             cVar.a(j10, xVar);
         }
@@ -128,7 +127,7 @@ public final class s implements i {
     public final void c(h2.x xVar) {
         int i7;
         this.c.getClass();
-        String str = m0.a;
+        String str = h2.l0.a;
         while (xVar.a() > 0) {
             int i10 = xVar.b;
             int i11 = xVar.c;
@@ -185,10 +184,10 @@ public final class s implements i {
     }
 
     @Override // m4.i
-    public final void e(boolean z9) {
+    public final void e(boolean z10) {
         this.c.getClass();
-        String str = m0.a;
-        if (z9) {
+        String str = h2.l0.a;
+        if (z10) {
             this.a.d.r(0);
             a(this.l, this.m, 0, 0);
             h(this.l, this.m, 0, 48);
@@ -201,20 +200,20 @@ public final class s implements i {
     }
 
     @Override // m4.i
-    public final void g(f3.q qVar, g0 g0Var) {
-        g0Var.b();
-        g0Var.c();
-        this.b = (String) g0Var.e;
-        g0Var.c();
-        j0 O1 = qVar.O1(g0Var.c, 2);
-        this.c = O1;
-        this.d = new r(O1);
-        this.a.b(qVar, g0Var);
+    public final void g(f3.q qVar, f0 f0Var) {
+        f0Var.b();
+        f0Var.c();
+        this.b = (String) f0Var.e;
+        f0Var.c();
+        i0 d2 = qVar.d2(f0Var.c, 2);
+        this.c = d2;
+        this.d = new r(d2);
+        this.a.b(qVar, f0Var);
     }
 
     public final void h(long j3, long j10, int i7, int i10) {
         r rVar = this.d;
-        boolean z9 = this.e;
+        boolean z10 = this.e;
         rVar.g = false;
         rVar.h = false;
         rVar.e = j10;
@@ -222,7 +221,7 @@ public final class s implements i {
         rVar.b = j3;
         if (i10 >= 32 && i10 != 40) {
             if (rVar.i && !rVar.j) {
-                if (z9) {
+                if (z10) {
                     rVar.a(i7);
                 }
                 rVar.i = false;
@@ -232,9 +231,9 @@ public final class s implements i {
                 rVar.j = true;
             }
         }
-        boolean z10 = i10 >= 16 && i10 <= 21;
-        rVar.c = z10;
-        rVar.f = z10 || i10 <= 9;
+        boolean z11 = i10 >= 16 && i10 <= 21;
+        rVar.c = z11;
+        rVar.f = z11 || i10 <= 9;
         if (!this.e) {
             this.g.h(i10);
             this.h.h(i10);

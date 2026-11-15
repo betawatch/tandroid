@@ -1,38 +1,37 @@
 package v0;
 
-import android.os.Bundle;
-import bi.b1;
-import org.json.JSONObject;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class m extends b1 {
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(String str, int i7, Bundle data) {
-        super(str, data);
-        switch (i7) {
-            case 2:
-                super("android.credentials.TYPE_PASSWORD_CREDENTIAL", data);
-                if (str.length() <= 0) {
-                    throw new IllegalArgumentException("password should not be empty");
-                }
-                return;
-            case 3:
-                super("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data);
-                if (str.length() != 0) {
-                    try {
-                        new JSONObject(str);
-                        return;
-                    } catch (Exception unused) {
+public final class m {
+    public final List a;
+    public final boolean b;
+
+    public m(List list, boolean z10) {
+        this.a = list;
+        this.b = z10;
+        if (list.isEmpty()) {
+            throw new IllegalArgumentException("credentialOptions should not be empty");
+        }
+        if (list.size() > 1) {
+            List list2 = list;
+            int i7 = 0;
+            if (!(list2 instanceof Collection) || !list2.isEmpty()) {
+                Iterator it = list2.iterator();
+                while (it.hasNext()) {
+                    if ((((h) it.next()) instanceof o) && (i7 = i7 + 1) < 0) {
+                        throw new ArithmeticException("Count overflow has happened.");
                     }
                 }
-                throw new IllegalArgumentException("authenticationResponseJson must not be empty, and must be a valid JSON");
-            default:
-                kotlin.jvm.internal.j.e(data, "data");
-                if (str.length() <= 0) {
-                    throw new IllegalArgumentException("type should not be empty");
-                }
-                return;
+            }
+            if (i7 > 0 && i7 != this.a.size()) {
+                throw new IllegalArgumentException("Digital Credential Option cannot be used with other credential option.");
+            }
+            for (h hVar : this.a) {
+            }
         }
     }
 }

@@ -1,52 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.RadialProgressView;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class de0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
-    public final /* synthetic */ sd0 c;
+public final /* synthetic */ class de0 implements org.telegram.ui.Components.hj0, org.telegram.ui.ActionBar.q1 {
+    public final /* synthetic */ ee0 a;
 
-    public /* synthetic */ de0(int i7, f fVar, sd0 sd0Var) {
-        this.a = i7;
-        this.b = fVar;
-        this.c = sd0Var;
+    public /* synthetic */ de0(ee0 ee0Var) {
+        this.a = ee0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        sd0 sd0Var = this.c;
-        f fVar = this.b;
-        switch (i7) {
-            case 0:
-                int i10 = sd0.F;
-                sd0Var.a();
-                org.telegram.messenger.g0.i3(new de0(1, fVar, sd0Var), 150L);
-                break;
-            default:
-                ee0 ee0Var = (ee0) fVar.b;
-                ee0Var.h(null);
-                RadialProgressView radialProgressView = ee0Var.g0.N.d;
-                RadialProgressView radialProgressView2 = sd0Var.h.d;
-                radialProgressView.getClass();
-                radialProgressView.a = radialProgressView2.a;
-                radialProgressView.b = radialProgressView2.b;
-                radialProgressView.H = radialProgressView2.H;
-                radialProgressView.I = radialProgressView2.I;
-                radialProgressView.J = radialProgressView2.J;
-                radialProgressView.c = radialProgressView2.c;
-                radialProgressView.n = radialProgressView2.n;
-                radialProgressView.e = radialProgressView2.e;
-                radialProgressView.D = radialProgressView2.D;
-                radialProgressView.F = radialProgressView2.F;
-                radialProgressView.G = radialProgressView2.G;
-                radialProgressView.d = radialProgressView2.d;
-                radialProgressView.E = radialProgressView2.E;
-                radialProgressView.b(85L);
-                break;
-        }
+    @Override // org.telegram.ui.Components.hj0
+    public /* synthetic */ boolean c1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.hj0
+    public void f(float f10, float f11, int i7, View view) {
+        ee0.b0(this.a, i7);
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        org.telegram.messenger.np.s1(this.a.currentAccount).A3(1);
+    }
+
+    @Override // org.telegram.ui.Components.hj0
+    public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

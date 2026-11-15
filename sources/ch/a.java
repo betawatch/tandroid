@@ -2,17 +2,17 @@ package ch;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ b b;
-    public final /* synthetic */ d0 c;
+    public final /* synthetic */ e0 c;
 
-    public /* synthetic */ a(b bVar, d0 d0Var, int i7) {
+    public /* synthetic */ a(b bVar, e0 e0Var, int i7) {
         this.a = i7;
         this.b = bVar;
-        this.c = d0Var;
+        this.c = e0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener

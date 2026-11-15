@@ -24,9 +24,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final ArrayMap a;
@@ -87,7 +86,7 @@ public abstract class g {
         } catch (ClassNotFoundException e10) {
             throw new f(p0.p("Enum class [", string2, "] not found"), eVar, e10);
         } catch (IllegalArgumentException e11) {
-            throw new f(f1.m("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e11);
+            throw new f(r.b.l("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e11);
         } catch (ReflectiveOperationException e12) {
             throw new f(p0.p("Enum of class [", string2, "] missing valueOf method"), eVar, e12);
         }
@@ -158,7 +157,7 @@ public abstract class g {
                 String str = field.getDeclaringClass().getName() + field.getName();
                 Object obj2 = bundle.get(str);
                 if (obj2 == null) {
-                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "androidx.core.graphics.drawable.IconCompat"));
+                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "android.support.v4.graphics.drawable.IconCompat"));
                 }
                 if (obj2 instanceof Bundle) {
                     field.set(newInstance, f((Bundle) obj2, eVar));
@@ -380,14 +379,14 @@ public abstract class g {
                 i7++;
                 Field field = (Field) obj2;
                 field.setAccessible(true);
-                String r10 = rf.b.r(field.getDeclaringClass().getName(), field.getName());
+                String v = r.b.v(field.getDeclaringClass().getName(), field.getName());
                 try {
                     Object obj3 = field.get(obj);
                     if (obj3 != null) {
-                        bundle.putParcelable(r10, o(obj3, field.getName(), eVar));
+                        bundle.putParcelable(v, o(obj3, field.getName(), eVar));
                     }
                 } catch (IllegalAccessException e10) {
-                    throw new f(rf.b.i("Field is not accessible: ", r10), eVar, e10);
+                    throw new f(r.b.k("Field is not accessible: ", v), eVar, e10);
                 }
             }
             return bundle;

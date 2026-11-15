@@ -8,11 +8,11 @@ import android.view.View;
 import java.lang.reflect.Field;
 import java.util.Iterator;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.s5;
 import org.telegram.ui.Components.t5;
-import org.telegram.ui.Components.u5;
-import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k implements Choreographer.FrameCallback {
     public static final long[] r;
@@ -28,7 +28,7 @@ public final class k implements Choreographer.FrameCallback {
 
     static {
         int i7;
-        boolean z9;
+        boolean z10;
         long j3;
         int i10 = 60;
         long[] jArr = new long[60];
@@ -64,7 +64,7 @@ public final class k implements Choreographer.FrameCallback {
                                 if ((j10 & j11) != 0) {
                                     j3 = (~j11) & j10;
                                     j10 = j3;
-                                    z9 = true;
+                                    z10 = true;
                                     break;
                                 }
                                 i22++;
@@ -73,15 +73,15 @@ public final class k implements Choreographer.FrameCallback {
                                 if ((j10 & j11) == 0 && (i16 % 2 != 0 || i23 % 2 != 0)) {
                                     j3 = j11 | j10;
                                     j10 = j3;
-                                    z9 = true;
+                                    z10 = true;
                                     break;
                                 }
                                 i22++;
                                 i13 = 2;
                             }
                         }
-                        z9 = false;
-                        if (z9) {
+                        z10 = false;
+                        if (z10) {
                             break;
                         }
                         i21++;
@@ -133,11 +133,11 @@ public final class k implements Choreographer.FrameCallback {
         e(max).c.add(runnable);
     }
 
-    public final void b(t5 t5Var, int i7) {
+    public final void b(s5 s5Var, int i7) {
         c();
         int max = Math.max(1, Math.min(i7, 60));
-        g(t5Var);
-        e(max).b.add(t5Var);
+        g(s5Var);
+        e(max).b.add(s5Var);
     }
 
     @Override // android.view.Choreographer.FrameCallback
@@ -171,31 +171,31 @@ public final class k implements Choreographer.FrameCallback {
                         }
                         Iterator it2 = jVar.b.iterator();
                         while (it2.hasNext()) {
-                            t5 t5Var = (t5) it2.next();
-                            int i10 = t5Var.a;
-                            Object obj = t5Var.b;
+                            s5 s5Var = (s5) it2.next();
+                            int i10 = s5Var.a;
+                            Object obj = s5Var.b;
                             switch (i10) {
                                 case 0:
-                                    u5 u5Var = (u5) obj;
-                                    int i11 = u5Var.Q0 + 1;
-                                    u5Var.Q0 = i11;
+                                    t5 t5Var = (t5) obj;
+                                    int i11 = t5Var.R0 + 1;
+                                    t5Var.R0 = i11;
                                     if (i11 > 10) {
-                                        u5Var.R0 = true;
+                                        t5Var.S0 = true;
                                     }
-                                    u5Var.i();
-                                    if (!u5Var.U0) {
+                                    t5Var.i();
+                                    if (!t5Var.V0) {
                                         break;
                                     } else {
-                                        u5Var.T0 = true;
-                                        u5Var.t();
+                                        t5Var.U0 = true;
+                                        t5Var.t();
                                         break;
                                     }
                                 case 1:
-                                    Field field = EditTextBoldCursor.y1;
+                                    Field field = EditTextBoldCursor.E1;
                                     ((EditTextBoldCursor) obj).invalidate();
                                     break;
                                 default:
-                                    zg0.g((zg0) obj);
+                                    ch0.g((ch0) obj);
                                     break;
                             }
                         }
@@ -262,15 +262,15 @@ public final class k implements Choreographer.FrameCallback {
         }
     }
 
-    public final void g(t5 t5Var) {
+    public final void g(s5 s5Var) {
         c();
-        if (t5Var == null) {
+        if (s5Var == null) {
             return;
         }
         int i7 = 0;
         while (true) {
             SparseArray sparseArray = this.b;
-            if (i7 >= sparseArray.size() || ((j) sparseArray.valueAt(i7)).b.remove(t5Var)) {
+            if (i7 >= sparseArray.size() || ((j) sparseArray.valueAt(i7)).b.remove(s5Var)) {
                 return;
             } else {
                 i7++;

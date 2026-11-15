@@ -6,14 +6,14 @@ import android.text.method.MetaKeyKeyListener;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements KeyListener {
     public final KeyListener a;
-    public final qb.a b;
+    public final nb.a b;
 
     public e(KeyListener keyListener) {
-        qb.a aVar = new qb.a(24);
+        nb.a aVar = new nb.a(25);
         this.a = keyListener;
         this.b = aVar;
     }
@@ -30,15 +30,15 @@ public final class e implements KeyListener {
 
     @Override // android.text.method.KeyListener
     public final boolean onKeyDown(View view, Editable editable, int i7, KeyEvent keyEvent) {
-        boolean z9;
+        boolean z10;
         this.b.getClass();
-        if (i7 != 67 ? i7 != 112 ? false : wf.b.E(editable, keyEvent, true) : wf.b.E(editable, keyEvent, false)) {
+        if (i7 != 67 ? i7 != 112 ? false : wf.b.s(editable, keyEvent, true) : wf.b.s(editable, keyEvent, false)) {
             MetaKeyKeyListener.adjustMetaAfterKeypress(editable);
-            z9 = true;
+            z10 = true;
         } else {
-            z9 = false;
+            z10 = false;
         }
-        return z9 || this.a.onKeyDown(view, editable, i7, keyEvent);
+        return z10 || this.a.onKeyDown(view, editable, i7, keyEvent);
     }
 
     @Override // android.text.method.KeyListener

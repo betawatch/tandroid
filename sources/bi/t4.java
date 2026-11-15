@@ -1,45 +1,32 @@
 package bi;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t4 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class t4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g5 b;
 
-    public /* synthetic */ t4(k7 k7Var, boolean z9, TLRPC.Document document, boolean z10, TL_stars.saveStarGift savestargift) {
-        this.d = k7Var;
-        this.b = z9;
-        this.e = document;
-        this.c = z10;
-        this.f = savestargift;
+    public /* synthetic */ t4(org.telegram.ui.ActionBar.g5 g5Var, int i7) {
+        this.a = i7;
+        this.b = g5Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new m2((k7) this.d, tLObject, this.b, (TLRPC.Document) this.e, this.c, tL_error, (TL_stars.saveStarGift) this.f));
+                this.b.a(true);
+                break;
+            case 1:
+                this.b.a(true);
                 break;
             default:
-                org.telegram.messenger.g0.h3(new m2((yh.m) this.d, this.b, (Runnable) this.e, (String) this.f, tL_error, tLObject, this.c));
+                org.telegram.ui.ActionBar.g5 g5Var = this.b;
+                if (!g5Var.E && g5Var.O) {
+                    g5Var.c();
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ t4(yh.m mVar, boolean z9, yh.e eVar, String str, boolean z10) {
-        this.d = mVar;
-        this.b = z9;
-        this.e = eVar;
-        this.f = str;
-        this.c = z10;
     }
 }

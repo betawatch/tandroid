@@ -1,8 +1,8 @@
 package dd;
 
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public enum t0 extends b2 {
     public t0() {
@@ -11,7 +11,7 @@ public enum t0 extends b2 {
 
     @Override // dd.b2
     public final void d(l lVar, a aVar) {
-        String h = aVar.h(b2.H0);
+        String h = aVar.h(b2.I0);
         if (h.length() > 0) {
             lVar.i.f(h);
         }
@@ -42,10 +42,10 @@ public enum t0 extends b2 {
                     }
                     if (d != '\'') {
                         switch (d) {
-                            case qs.x0 /* 60 */:
-                            case qs.y0 /* 61 */:
+                            case ns.x0 /* 60 */:
+                            case ns.y0 /* 61 */:
                                 break;
-                            case qs.z0 /* 62 */:
+                            case ns.z0 /* 62 */:
                                 lVar.k();
                                 lVar.c = wVar;
                                 break;
@@ -61,6 +61,6 @@ public enum t0 extends b2 {
             lVar.i.e(d);
             return;
         }
-        lVar.c = b2.W;
+        lVar.c = b2.X;
     }
 }

@@ -20,12 +20,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertController$RecycleListView;
 import androidx.core.widget.NestedScrollView;
 import java.util.WeakHashMap;
-import m.w1;
+import m.v1;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import r0.i0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class f extends u implements DialogInterface {
     public final e f;
@@ -36,7 +36,7 @@ public class f extends u implements DialogInterface {
     }
 
     public static int e(Context context, int i7) {
-        if (((i7 >>> 24) & qs.e4) >= 1) {
+        if (((i7 >>> 24) & ns.e4) >= 1) {
             return i7;
         }
         TypedValue typedValue = new TypedValue();
@@ -63,18 +63,18 @@ public class f extends u implements DialogInterface {
         if (view == null) {
             view = null;
         }
-        boolean z9 = view != null;
-        if (!z9 || !e.a(view)) {
+        boolean z10 = view != null;
+        if (!z10 || !e.a(view)) {
             window.setFlags(131072, 131072);
         }
-        if (z9) {
+        if (z10) {
             FrameLayout frameLayout = (FrameLayout) window.findViewById(R.id.custom);
             frameLayout.addView(view, new ViewGroup.LayoutParams(-1, -1));
             if (eVar.g) {
                 frameLayout.setPadding(0, 0, 0, 0);
             }
             if (eVar.e != null) {
-                ((LinearLayout.LayoutParams) ((w1) viewGroup.getLayoutParams())).weight = 0.0f;
+                ((LinearLayout.LayoutParams) ((v1) viewGroup.getLayoutParams())).weight = 0.0f;
             }
         } else {
             viewGroup.setVisibility(8);
@@ -183,10 +183,10 @@ public class f extends u implements DialogInterface {
                 }
             }
         }
-        boolean z10 = viewGroup.getVisibility() != 8;
+        boolean z11 = viewGroup.getVisibility() != 8;
         int i10 = (b10 == null || b10.getVisibility() == 8) ? 0 : 1;
-        boolean z11 = b12.getVisibility() != 8;
-        if (!z11 && (findViewById = b11.findViewById(R.id.textSpacerNoButtons)) != null) {
+        boolean z12 = b12.getVisibility() != 8;
+        if (!z12 && (findViewById = b11.findViewById(R.id.textSpacerNoButtons)) != null) {
             findViewById.setVisibility(0);
         }
         if (i10 != 0) {
@@ -207,17 +207,17 @@ public class f extends u implements DialogInterface {
         AlertController$RecycleListView alertController$RecycleListView = eVar.e;
         if (alertController$RecycleListView != null) {
             alertController$RecycleListView.getClass();
-            if (!z11 || i10 == 0) {
-                alertController$RecycleListView.setPadding(alertController$RecycleListView.getPaddingLeft(), i10 != 0 ? alertController$RecycleListView.getPaddingTop() : alertController$RecycleListView.a, alertController$RecycleListView.getPaddingRight(), z11 ? alertController$RecycleListView.getPaddingBottom() : alertController$RecycleListView.b);
+            if (!z12 || i10 == 0) {
+                alertController$RecycleListView.setPadding(alertController$RecycleListView.getPaddingLeft(), i10 != 0 ? alertController$RecycleListView.getPaddingTop() : alertController$RecycleListView.a, alertController$RecycleListView.getPaddingRight(), z12 ? alertController$RecycleListView.getPaddingBottom() : alertController$RecycleListView.b);
             }
         }
-        if (!z10) {
+        if (!z11) {
             View view2 = eVar.e;
             if (view2 == null) {
                 view2 = eVar.m;
             }
             if (view2 != null) {
-                int i11 = z11 ? 2 : 0;
+                int i11 = z12 ? 2 : 0;
                 View findViewById11 = window.findViewById(R.id.scrollIndicatorUp);
                 View findViewById12 = window.findViewById(R.id.scrollIndicatorDown);
                 WeakHashMap weakHashMap = i0.a;
@@ -245,7 +245,7 @@ public class f extends u implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyDown(int i7, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.f(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.g(keyEvent)) {
             return super.onKeyDown(i7, keyEvent);
         }
         return true;
@@ -254,7 +254,7 @@ public class f extends u implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyUp(int i7, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.f(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.g(keyEvent)) {
             return super.onKeyUp(i7, keyEvent);
         }
         return true;

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class d0 {
     public String e;
@@ -91,19 +91,19 @@ public final class d0 {
         f(!this.h);
     }
 
-    public final void f(boolean z9) {
+    public final void f(boolean z10) {
         if (TextUtils.isEmpty(this.e)) {
             return;
         }
         TL_wallet.getNfts getnfts = new TL_wallet.getNfts();
-        String str = z9 ? "" : this.f;
+        String str = z10 ? "" : this.f;
         getnfts.offset = str;
         getnfts.limit = TextUtils.isEmpty(str) ? 5 : 20;
         this.i = true;
-        this.j = z9;
+        this.j = z10;
         this.k = null;
         g();
-        this.l = ConnectionsManager.getInstance(this.m.a).sendRequestTyped(getnfts, new d3.b(1), new fi.l9(3, this, z9));
+        this.l = ConnectionsManager.getInstance(this.m.a).sendRequestTyped(getnfts, new d3.b(1), new hi.j9(3, this, z10));
     }
 
     public final void g() {

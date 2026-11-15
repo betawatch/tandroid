@@ -11,9 +11,8 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.ix;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class i {
     public final ab.q a;
@@ -35,7 +34,7 @@ public abstract class i {
         }
         final CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(cancellationTokenSource.getToken());
-        this.a.D(new Runnable() { // from class: pb.q
+        this.a.E(new Runnable() { // from class: pb.r
             @Override // java.lang.Runnable
             public final void run() {
                 Callable callable2 = callable;
@@ -76,7 +75,7 @@ public abstract class i {
                     }
                 }
             }
-        }, new Executor() { // from class: pb.p
+        }, new Executor() { // from class: pb.q
             @Override // java.util.concurrent.Executor
             public final void execute(Runnable runnable) {
                 try {
@@ -101,7 +100,7 @@ public abstract class i {
     public final void d(Executor executor) {
         q6.m.j(this.b.get() > 0);
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.D(new ix(this, taskCompletionSource, false, 3), executor);
+        this.a.E(new l(2, this, taskCompletionSource), executor);
         taskCompletionSource.getTask();
     }
 }

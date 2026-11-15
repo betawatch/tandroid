@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j extends k {
     public final FileInputStream c;
@@ -380,7 +380,7 @@ public final class j extends k {
         int i11 = i10 + i7;
         int i12 = this.e;
         if (i11 <= i12) {
-            throw new IllegalStateException(jg.g.k(i7, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(i5.c.j(i7, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i13 = this.i;
         if (i7 <= (ConnectionsManager.DEFAULT_DATACENTER_ID - i13) - i10 && i13 + i10 + i7 <= this.j) {

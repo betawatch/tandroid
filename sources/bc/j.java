@@ -1,8 +1,8 @@
 package bc;
 
-import a8.r9;
+import a8.t9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class j {
     public final float a;
@@ -14,7 +14,7 @@ public abstract class j {
     }
 
     public static float a(j jVar, j jVar2) {
-        return r9.a(jVar.a, jVar.b, jVar2.a, jVar2.b);
+        return t9.a(jVar.a, jVar.b, jVar2.a, jVar2.b);
     }
 
     public final boolean equals(Object obj) {

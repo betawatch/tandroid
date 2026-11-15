@@ -1,5 +1,6 @@
 package ie;
 
+import aa.b0;
 import ee.r;
 import gd.k;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
@@ -9,7 +10,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import zd.l;
 import zd.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class h {
     public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "head$volatile");
@@ -86,10 +87,10 @@ public class h {
                 int i7 = (int) (andIncrement % i.f);
                 while (!atomicReferenceArray.compareAndSet(i7, null, cVar)) {
                     if (atomicReferenceArray.get(i7) != null) {
-                        com.google.android.gms.internal.clearcut.e eVar = i.b;
-                        com.google.android.gms.internal.clearcut.e eVar2 = i.c;
-                        while (!atomicReferenceArray.compareAndSet(i7, eVar, eVar2)) {
-                            if (atomicReferenceArray.get(i7) != eVar) {
+                        b0 b0Var = i.b;
+                        b0 b0Var2 = i.c;
+                        while (!atomicReferenceArray.compareAndSet(i7, b0Var, b0Var2)) {
+                            if (atomicReferenceArray.get(i7) != b0Var) {
                                 break;
                             }
                         }
@@ -105,13 +106,13 @@ public class h {
     }
 
     public final void b() {
-        boolean z9;
+        boolean z10;
         int i7;
         Object b10;
         do {
             AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = f;
             int andIncrement = atomicIntegerFieldUpdater.getAndIncrement(this);
-            z9 = true;
+            z10 = true;
             if (andIncrement >= 1) {
                 do {
                     i7 = atomicIntegerFieldUpdater.get(this);
@@ -159,7 +160,7 @@ public class h {
             j jVar2 = (j) ee.a.c(b10);
             AtomicReferenceArray atomicReferenceArray = jVar2.e;
             jVar2.b();
-            boolean z10 = false;
+            boolean z11 = false;
             if (jVar2.c <= j3) {
                 int i10 = (int) (andIncrement2 % i.f);
                 Object andSet = atomicReferenceArray.getAndSet(i10, i.b);
@@ -168,17 +169,17 @@ public class h {
                     int i12 = 0;
                     while (true) {
                         if (i12 >= i11) {
-                            com.google.android.gms.internal.clearcut.e eVar = i.b;
-                            com.google.android.gms.internal.clearcut.e eVar2 = i.d;
+                            b0 b0Var = i.b;
+                            b0 b0Var2 = i.d;
                             while (true) {
-                                if (atomicReferenceArray.compareAndSet(i10, eVar, eVar2)) {
-                                    z10 = true;
+                                if (atomicReferenceArray.compareAndSet(i10, b0Var, b0Var2)) {
+                                    z11 = true;
                                     break;
-                                } else if (atomicReferenceArray.get(i10) != eVar) {
+                                } else if (atomicReferenceArray.get(i10) != b0Var) {
                                     break;
                                 }
                             }
-                            z9 = true ^ z10;
+                            z10 = true ^ z11;
                         } else if (atomicReferenceArray.get(i10) == i.c) {
                             break;
                         } else {
@@ -190,13 +191,13 @@ public class h {
                         throw new IllegalStateException(("unexpected: " + andSet).toString());
                     }
                     l lVar = (l) andSet;
-                    com.google.android.gms.internal.clearcut.e d2 = lVar.d(k.a, this.a);
+                    b0 d2 = lVar.d(k.a, this.a);
                     if (d2 != null) {
                         lVar.f(d2);
                     }
                 }
             }
-            z9 = false;
-        } while (!z9);
+            z10 = false;
+        } while (!z10);
     }
 }

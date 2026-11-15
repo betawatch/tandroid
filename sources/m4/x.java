@@ -1,9 +1,9 @@
 package m4;
 
 import h2.k0;
-import h2.m0;
+import h2.l0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class x {
     public final /* synthetic */ int a;
@@ -66,20 +66,20 @@ public final class x {
     public final void a(f3.p pVar) {
         switch (this.a) {
             case 0:
-                byte[] bArr = m0.b;
+                byte[] bArr = l0.b;
                 h2.x xVar = this.c;
                 xVar.getClass();
                 xVar.L(bArr.length, bArr);
                 this.d = true;
-                pVar.q();
+                pVar.l();
                 break;
             default:
-                byte[] bArr2 = m0.b;
+                byte[] bArr2 = l0.b;
                 h2.x xVar2 = this.c;
                 xVar2.getClass();
                 xVar2.L(bArr2.length, bArr2);
                 this.d = true;
-                pVar.q();
+                pVar.l();
                 break;
         }
     }

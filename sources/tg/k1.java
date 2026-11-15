@@ -2,9 +2,9 @@ package tg;
 
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import c8.j9;
+import c8.i9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class k1 extends GestureDetector.SimpleOnGestureListener {
     public float a;
@@ -24,8 +24,8 @@ public final class k1 extends GestureDetector.SimpleOnGestureListener {
             m1Var.f = contains;
             m1Var.invalidate();
             if (contains) {
-                l1 l1Var = m1Var.K;
-                this.a = l1Var != null ? l1Var.get() : m1Var.H.c;
+                l1 l1Var = m1Var.L;
+                this.a = l1Var != null ? l1Var.get() : m1Var.I.c;
                 this.b = false;
             }
         }
@@ -42,17 +42,17 @@ public final class k1 extends GestureDetector.SimpleOnGestureListener {
             }
             float f12 = this.a;
             float y10 = ((motionEvent.getY() - motionEvent2.getY()) - this.c) / m1Var.e.height();
-            float f13 = m1Var.G;
-            float f14 = m1Var.F;
-            float a10 = j9.a(com.google.android.recaptcha.internal.a.z(f13, f14, y10, f12), f14, f13);
-            l1 l1Var = m1Var.K;
+            float f13 = m1Var.H;
+            float f14 = m1Var.G;
+            float a10 = i9.a(com.google.android.gms.internal.vision.e2.z(f13, f14, y10, f12), f14, f13);
+            l1 l1Var = m1Var.L;
             if (l1Var != null) {
-                l1Var.X(a10);
+                l1Var.r0(a10);
             } else {
-                m1Var.H.c = a10;
+                m1Var.I.c = a10;
             }
             m1Var.x.e(true, a10);
-            Runnable runnable = m1Var.I;
+            Runnable runnable = m1Var.J;
             if (runnable != null) {
                 runnable.run();
             }

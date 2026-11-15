@@ -3,13 +3,14 @@ package f6;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
+import com.google.android.gms.internal.vision.e2;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d extends r6.a {
     public static final Parcelable.Creator<d> CREATOR = new v(17);
@@ -54,28 +55,28 @@ public final class d extends r6.a {
         List list = this.c;
         int size = list == null ? 0 : list.size();
         String valueOf = String.valueOf(this.e);
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("applicationId: ", this.a, ", name: ", this.b, ", namespaces.count: ");
+        StringBuilder n10 = e2.n("applicationId: ", this.a, ", name: ", this.b, ", namespaces.count: ");
         n10.append(size);
         n10.append(", senderAppIdentifier: ");
         n10.append(this.d);
         n10.append(", senderAppLaunchUrl: ");
-        com.google.android.recaptcha.internal.a.s(n10, valueOf, ", iconUrl: ", this.f, ", type: ");
+        e2.r(n10, valueOf, ", iconUrl: ", this.f, ", type: ");
         n10.append(this.h);
         return n10.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.l(parcel, 2, this.a);
-        xb.l(parcel, 3, this.b);
-        xb.n(parcel, 5, DesugarCollections.unmodifiableList(this.c));
-        xb.l(parcel, 6, this.d);
-        xb.k(parcel, 7, this.e, i7);
-        xb.l(parcel, 8, this.f);
-        xb.l(parcel, 9, this.h);
-        xb.a(parcel, 10, this.n);
-        xb.a(parcel, 11, this.r);
-        xb.s(parcel, r10);
+        int r10 = yb.r(parcel, 20293);
+        yb.l(parcel, 2, this.a);
+        yb.l(parcel, 3, this.b);
+        yb.n(parcel, 5, DesugarCollections.unmodifiableList(this.c));
+        yb.l(parcel, 6, this.d);
+        yb.k(parcel, 7, this.e, i7);
+        yb.l(parcel, 8, this.f);
+        yb.l(parcel, 9, this.h);
+        yb.a(parcel, 10, this.n);
+        yb.a(parcel, 11, this.r);
+        yb.s(parcel, r10);
     }
 }

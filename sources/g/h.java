@@ -2,12 +2,12 @@ package g;
 
 import android.view.ViewGroup;
 import java.util.WeakHashMap;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h implements Runnable {
     public final /* synthetic */ int a;
@@ -25,34 +25,34 @@ public final class h implements Runnable {
         s sVar = this.b;
         switch (i7) {
             case 0:
-                if ((sVar.i0 & 1) != 0) {
-                    sVar.j(0);
+                if ((sVar.j0 & 1) != 0) {
+                    sVar.k(0);
                 }
-                if ((sVar.i0 & TLObject.FLAG_12) != 0) {
-                    sVar.j(qs.t1);
+                if ((sVar.j0 & TLObject.FLAG_12) != 0) {
+                    sVar.k(ns.t1);
                 }
-                sVar.h0 = false;
-                sVar.i0 = 0;
+                sVar.i0 = false;
+                sVar.j0 = 0;
                 break;
             default:
-                sVar.E.showAtLocation(sVar.D, 55, 0, 0);
-                l0 l0Var = sVar.G;
+                sVar.F.showAtLocation(sVar.E, 55, 0, 0);
+                l0 l0Var = sVar.H;
                 if (l0Var != null) {
                     l0Var.b();
                 }
-                if (sVar.I && (viewGroup = sVar.J) != null) {
+                if (sVar.J && (viewGroup = sVar.K) != null) {
                     WeakHashMap weakHashMap = i0.a;
                     if (viewGroup.isLaidOut()) {
-                        sVar.D.setAlpha(0.0f);
-                        l0 a10 = i0.a(sVar.D);
+                        sVar.E.setAlpha(0.0f);
+                        l0 a10 = i0.a(sVar.E);
                         a10.a(1.0f);
-                        sVar.G = a10;
+                        sVar.H = a10;
                         a10.d(new j(this, 0));
                         break;
                     }
                 }
-                sVar.D.setAlpha(1.0f);
-                sVar.D.setVisibility(0);
+                sVar.E.setAlpha(1.0f);
+                sVar.E.setVisibility(0);
                 break;
         }
     }

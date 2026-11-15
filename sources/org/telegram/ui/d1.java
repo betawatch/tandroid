@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class d1 extends g.p {
     public final /* synthetic */ h1 c;
@@ -12,6 +12,6 @@ public final class d1 extends g.p {
     @Override // g.p
     public final int i(int i7) {
         h1 h1Var = this.c;
-        return ((org.telegram.messenger.aj) h1Var.w.b.get(h1Var.s.items.get((r1.size() - i7) - 1))).i;
+        return ((org.telegram.messenger.yi) h1Var.w.b.get(h1Var.s.items.get((r1.size() - i7) - 1))).i;
     }
 }

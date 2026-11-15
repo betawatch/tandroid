@@ -1,15 +1,16 @@
 package l2;
 
-import a8.ia;
+import a8.ja;
 import android.text.TextUtils;
+import h9.s1;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class h implements t0 {
-    public static final h9.t1 r;
+public final class h implements q0 {
+    public static final s1 r;
     public final e2.k1 a;
     public final e2.i1 b;
     public final b3.e c;
@@ -35,7 +36,7 @@ public final class h implements t0 {
         r = h9.i0.o(6, objArr);
     }
 
-    public h(b3.e eVar, int i7, int i10, int i11, int i12, int i13, boolean z9, Map map) {
+    public h(b3.e eVar, int i7, int i10, int i11, int i12, int i13, boolean z10, Map map) {
         a(i10, 0, "bufferForPlaybackMs", "0");
         a(i11, 0, "bufferForPlaybackForLocalPlaybackMs", "0");
         a(i12, 0, "bufferForPlaybackAfterRebufferMs", "0");
@@ -51,24 +52,24 @@ public final class h implements t0 {
         this.b = new e2.i1();
         this.c = eVar;
         long j3 = 50000;
-        this.d = h2.m0.S(j3);
-        this.e = h2.m0.S(i7);
-        this.f = h2.m0.S(j3);
-        this.g = h2.m0.S(j3);
-        this.h = h2.m0.S(i10);
-        this.i = h2.m0.S(i11);
-        this.j = h2.m0.S(i12);
-        this.k = h2.m0.S(i13);
+        this.d = h2.l0.S(j3);
+        this.e = h2.l0.S(i7);
+        this.f = h2.l0.S(j3);
+        this.g = h2.l0.S(j3);
+        this.h = h2.l0.S(i10);
+        this.i = h2.l0.S(i11);
+        this.j = h2.l0.S(i12);
+        this.k = h2.l0.S(i13);
         this.l = -1;
-        this.m = z9;
-        this.n = h2.m0.S(0);
+        this.m = z10;
+        this.n = h2.l0.S(0);
         this.p = new ConcurrentHashMap();
         this.o = h9.l0.b(map);
         this.q = -1L;
     }
 
     public static void a(int i7, int i10, String str, String str2) {
-        ia.i(i7 >= i10, "%s cannot be less than %s", str, str2);
+        ja.i(i7 >= i10, "%s cannot be less than %s", str, str2);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x0079  */
@@ -81,13 +82,13 @@ public final class h implements t0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean b(s0 s0Var) {
+    public final boolean b(p0 p0Var) {
         int i7;
-        boolean z9;
+        boolean z10;
         long j3;
         float f10;
-        m2.j jVar = s0Var.a;
-        long j10 = s0Var.d;
+        m2.j jVar = p0Var.a;
+        long j10 = p0Var.d;
         g gVar = (g) this.p.get(jVar);
         gVar.getClass();
         g gVar2 = (g) this.p.get(jVar);
@@ -98,40 +99,40 @@ public final class h implements t0 {
         int i10 = i7 * this.c.b;
         g gVar3 = (g) this.p.get(jVar);
         gVar3.getClass();
-        boolean z10 = i10 >= gVar3.c;
+        boolean z11 = i10 >= gVar3.c;
         if (jVar.equals(m2.j.c)) {
-            return !z10;
+            return !z11;
         }
-        e2.l1 l1Var = s0Var.b;
-        e2.g0 g0Var = l1Var.m(l1Var.g(s0Var.c.a, this.b).c, this.a, 0L).c.b;
+        e2.l1 l1Var = p0Var.b;
+        e2.g0 g0Var = l1Var.m(l1Var.g(p0Var.c.a, this.b).c, this.a, 0L).c.b;
         if (g0Var != null) {
             String scheme = g0Var.a.getScheme();
             if (TextUtils.isEmpty(scheme) || r.contains(scheme)) {
-                z9 = true;
-                j3 = !z9 ? this.e : this.d;
-                long j11 = !z9 ? this.g : this.f;
-                f10 = s0Var.e;
+                z10 = true;
+                j3 = !z10 ? this.e : this.d;
+                long j11 = !z10 ? this.g : this.f;
+                f10 = p0Var.e;
                 if (f10 > 1.0f) {
-                    j3 = Math.min(h2.m0.B(j3, f10), j11);
+                    j3 = Math.min(h2.l0.B(j3, f10), j11);
                 }
                 if (j10 >= Math.max(j3, 500000L)) {
-                    boolean z11 = (z9 ? this.m : false) || !z10;
-                    gVar.b = z11;
-                    if (!z11 && j10 < 500000) {
+                    boolean z12 = (z10 ? this.m : false) || !z11;
+                    gVar.b = z12;
+                    if (!z12 && j10 < 500000) {
                         h2.a.l("DefaultLoadControl", "Target buffer size reached with less than 500ms of buffered media data.");
                     }
-                } else if (j10 >= j11 || z10) {
+                } else if (j10 >= j11 || z11) {
                     gVar.b = false;
                 }
                 return gVar.b;
             }
         }
-        z9 = false;
-        if (!z9) {
+        z10 = false;
+        if (!z10) {
         }
-        if (!z9) {
+        if (!z10) {
         }
-        f10 = s0Var.e;
+        f10 = p0Var.e;
         if (f10 > 1.0f) {
         }
         if (j10 >= Math.max(j3, 500000L)) {

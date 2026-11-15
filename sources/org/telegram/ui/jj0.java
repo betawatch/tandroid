@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class jj0 implements vj0 {
     public final /* synthetic */ TLRPC.SecureValueType a;
@@ -15,45 +15,45 @@ public final class jj0 implements vj0 {
     public final /* synthetic */ int c;
     public final /* synthetic */ ek0 d;
 
-    public jj0(ek0 ek0Var, TLRPC.SecureValueType secureValueType, boolean z9, int i7) {
+    public jj0(ek0 ek0Var, TLRPC.SecureValueType secureValueType, boolean z10, int i7) {
         this.d = ek0Var;
         this.a = secureValueType;
-        this.b = z9;
+        this.b = z10;
         this.c = i7;
     }
 
-    public static void a(jj0 jj0Var, org.telegram.messenger.ew ewVar, TLRPC.TL_secureFile tL_secureFile) {
+    public static void a(jj0 jj0Var, org.telegram.messenger.cw cwVar, TLRPC.TL_secureFile tL_secureFile) {
         jj0Var.getClass();
-        org.telegram.messenger.w7.G(org.telegram.messenger.p10.s0);
-        File I = org.telegram.messenger.w7.I(ewVar);
-        String str = ewVar.b.dc_id + "_" + ewVar.b.id;
-        org.telegram.messenger.w7.G(org.telegram.messenger.p10.s0);
+        org.telegram.messenger.w7.G(org.telegram.messenger.m10.t0);
+        File I = org.telegram.messenger.w7.I(cwVar);
+        String str = cwVar.b.dc_id + "_" + cwVar.b.id;
+        org.telegram.messenger.w7.G(org.telegram.messenger.m10.t0);
         File I2 = org.telegram.messenger.w7.I(tL_secureFile);
         String str2 = tL_secureFile.dc_id + "_" + tL_secureFile.id;
         I.renameTo(I2);
-        org.telegram.messenger.gc.D().S(str, str2, null);
+        org.telegram.messenger.fc.D().S(str, str2, null);
     }
 
-    public static TLRPC.InputSecureFile b(org.telegram.messenger.ew ewVar) {
-        if (ewVar.d == null) {
+    public static TLRPC.InputSecureFile b(org.telegram.messenger.cw cwVar) {
+        if (cwVar.d == null) {
             TLRPC.TL_inputSecureFile tL_inputSecureFile = new TLRPC.TL_inputSecureFile();
-            TLRPC.TL_secureFile tL_secureFile = ewVar.b;
+            TLRPC.TL_secureFile tL_secureFile = cwVar.b;
             tL_inputSecureFile.id = tL_secureFile.id;
             tL_inputSecureFile.access_hash = tL_secureFile.access_hash;
             return tL_inputSecureFile;
         }
         TLRPC.TL_inputSecureFileUploaded tL_inputSecureFileUploaded = new TLRPC.TL_inputSecureFileUploaded();
-        TLRPC.TL_inputFile tL_inputFile = ewVar.d;
+        TLRPC.TL_inputFile tL_inputFile = cwVar.d;
         tL_inputSecureFileUploaded.id = tL_inputFile.id;
         tL_inputSecureFileUploaded.parts = tL_inputFile.parts;
         tL_inputSecureFileUploaded.md5_checksum = tL_inputFile.md5_checksum;
-        tL_inputSecureFileUploaded.file_hash = ewVar.f;
-        tL_inputSecureFileUploaded.secret = ewVar.e;
+        tL_inputSecureFileUploaded.file_hash = cwVar.f;
+        tL_inputSecureFileUploaded.secret = cwVar.e;
         return tL_inputSecureFileUploaded;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void c(TLRPC.TL_secureRequiredType tL_secureRequiredType, String str, String str2, TLRPC.TL_secureRequiredType tL_secureRequiredType2, String str3, ArrayList arrayList, org.telegram.messenger.ew ewVar, ArrayList arrayList2, org.telegram.messenger.ew ewVar2, org.telegram.messenger.ew ewVar3, Runnable runnable, m4.d0 d0Var) {
+    public final void c(TLRPC.TL_secureRequiredType tL_secureRequiredType, String str, String str2, TLRPC.TL_secureRequiredType tL_secureRequiredType2, String str3, ArrayList arrayList, org.telegram.messenger.cw cwVar, ArrayList arrayList2, org.telegram.messenger.cw cwVar2, org.telegram.messenger.cw cwVar3, Runnable runnable, k8.a aVar) {
         TLRPC.TL_inputSecureValue tL_inputSecureValue;
         TLRPC.TL_securePlainPhone tL_securePlainPhone;
         TLRPC.TL_inputSecureValue tL_inputSecureValue2;
@@ -92,10 +92,10 @@ public final class jj0 implements vj0 {
             tL_inputSecureValue3.plain_data = tL_securePlainPhone;
             tL_inputSecureValue = tL_inputSecureValue3;
         }
-        boolean z9 = this.b;
-        if (!z9 && tL_inputSecureValue == null) {
-            if (d0Var != null) {
-                d0Var.a(null, null);
+        boolean z10 = this.b;
+        if (!z10 && tL_inputSecureValue == null) {
+            if (aVar != null) {
+                aVar.d(null, null);
                 return;
             }
             return;
@@ -112,47 +112,47 @@ public final class jj0 implements vj0 {
                 tL_secureData2.data_hash = (byte[]) o13.e;
                 tL_secureData2.secret = (byte[]) o13.b;
             }
-            if (ewVar2 != null) {
-                tL_inputSecureValue4.front_side = b(ewVar2);
+            if (cwVar2 != null) {
+                tL_inputSecureValue4.front_side = b(cwVar2);
                 tL_inputSecureValue4.flags |= 2;
             }
-            if (ewVar3 != null) {
-                tL_inputSecureValue4.reverse_side = b(ewVar3);
+            if (cwVar3 != null) {
+                tL_inputSecureValue4.reverse_side = b(cwVar3);
                 tL_inputSecureValue4.flags |= 4;
             }
-            if (ewVar != null) {
-                tL_inputSecureValue4.selfie = b(ewVar);
+            if (cwVar != null) {
+                tL_inputSecureValue4.selfie = b(cwVar);
                 tL_inputSecureValue4.flags |= 8;
             }
             if (arrayList2 != null && !arrayList2.isEmpty()) {
                 tL_inputSecureValue4.flags |= 64;
                 int size = arrayList2.size();
                 for (int i10 = 0; i10 < size; i10++) {
-                    tL_inputSecureValue4.translation.add(b((org.telegram.messenger.ew) arrayList2.get(i10)));
+                    tL_inputSecureValue4.translation.add(b((org.telegram.messenger.cw) arrayList2.get(i10)));
                 }
             }
             if (arrayList != null && !arrayList.isEmpty()) {
                 tL_inputSecureValue4.flags |= 16;
                 int size2 = arrayList.size();
                 for (int i11 = 0; i11 < size2; i11++) {
-                    tL_inputSecureValue4.files.add(b((org.telegram.messenger.ew) arrayList.get(i11)));
+                    tL_inputSecureValue4.files.add(b((org.telegram.messenger.cw) arrayList.get(i11)));
                 }
             }
-            if (!z9) {
+            if (!z10) {
                 tL_inputSecureValue2 = tL_inputSecureValue4;
                 TL_account.saveSecureValue savesecurevalue = new TL_account.saveSecureValue();
                 savesecurevalue.value = tL_inputSecureValue;
-                savesecurevalue.secure_secret_id = ek0Var.b1;
-                i7 = ((org.telegram.ui.ActionBar.f2) ek0Var).currentAccount;
-                ConnectionsManager.getInstance(i7).sendRequest(savesecurevalue, new ij0(this, d0Var, str, savesecurevalue, tL_secureRequiredType2, tL_secureRequiredType, arrayList, ewVar, ewVar2, ewVar3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
+                savesecurevalue.secure_secret_id = ek0Var.c1;
+                i7 = ((org.telegram.ui.ActionBar.e2) ek0Var).currentAccount;
+                ConnectionsManager.getInstance(i7).sendRequest(savesecurevalue, new ij0(this, aVar, str, savesecurevalue, tL_secureRequiredType2, tL_secureRequiredType, arrayList, cwVar, cwVar2, cwVar3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
             }
             tL_inputSecureValue = tL_inputSecureValue4;
         }
         tL_inputSecureValue2 = null;
         TL_account.saveSecureValue savesecurevalue2 = new TL_account.saveSecureValue();
         savesecurevalue2.value = tL_inputSecureValue;
-        savesecurevalue2.secure_secret_id = ek0Var.b1;
-        i7 = ((org.telegram.ui.ActionBar.f2) ek0Var).currentAccount;
-        ConnectionsManager.getInstance(i7).sendRequest(savesecurevalue2, new ij0(this, d0Var, str, savesecurevalue2, tL_secureRequiredType2, tL_secureRequiredType, arrayList, ewVar, ewVar2, ewVar3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
+        savesecurevalue2.secure_secret_id = ek0Var.c1;
+        i7 = ((org.telegram.ui.ActionBar.e2) ek0Var).currentAccount;
+        ConnectionsManager.getInstance(i7).sendRequest(savesecurevalue2, new ij0(this, aVar, str, savesecurevalue2, tL_secureRequiredType2, tL_secureRequiredType, arrayList, cwVar, cwVar2, cwVar3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
     }
 }

@@ -1,30 +1,51 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ge implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.jk0 b;
+import android.content.DialogInterface;
 
-    public /* synthetic */ ge(org.telegram.ui.Components.jk0 jk0Var, int i7) {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ge implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ an b;
+
+    public /* synthetic */ ge(an anVar, int i7) {
         this.a = i7;
-        this.b = jk0Var;
+        this.b = anVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.jk0 jk0Var = this.b;
-                if (!jk0Var.M) {
-                    jk0Var.M = true;
-                    jk0Var.c(new org.telegram.ui.Components.hk0(jk0Var, 0), false);
-                    jk0Var.s.invalidate();
+                lj ljVar = this.b.m2;
+                if (ljVar != null) {
+                    ljVar.c(false);
                     break;
                 }
                 break;
+            case 1:
+                an.j1(this.b);
+                break;
+            case 2:
+                this.b.x8(false, true, 0.0f);
+                break;
+            case 3:
+                this.b.x8(false, true, 0.0f);
+                break;
+            case 4:
+                this.b.x8(false, true, 0.0f);
+                break;
+            case 5:
+                this.b.x8(false, true, 0.0f);
+                break;
+            case 6:
+                this.b.x8(false, true, 0.0f);
+                break;
+            case 7:
+                this.b.x8(false, true, 0.0f);
+                break;
             default:
-                this.b.dismiss();
+                this.b.jc = null;
                 break;
         }
     }

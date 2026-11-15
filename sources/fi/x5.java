@@ -1,37 +1,34 @@
 package fi;
 
-import android.view.TextureView;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class x5 {
-    public TextureView a;
-    public ii.c b;
-    public hi.u1 c;
-    public boolean d;
-    public int e;
-    public int f;
-    public boolean g;
+public final /* synthetic */ class x5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s6 b;
 
-    public final void a(TextureView textureView) {
-        TextureView textureView2 = this.a;
-        if (textureView2 == textureView) {
-            return;
-        }
-        if (textureView2 != null) {
-            ViewParent parent = textureView2.getParent();
-            if (parent instanceof ViewGroup) {
-                ((ViewGroup) parent).removeView(this.a);
-            }
-            this.a = null;
-        }
-        this.d = false;
-        this.a = textureView;
-        ii.c cVar = this.b;
-        if (cVar != null) {
-            cVar.a(textureView);
+    public /* synthetic */ x5(s6 s6Var, int i7) {
+        this.a = i7;
+        this.b = s6Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                s6 s6Var = this.b;
+                s6Var.R = false;
+                s6Var.S = null;
+                break;
+            case 1:
+                s6 s6Var2 = this.b;
+                s6Var2.s = true;
+                s6Var2.l.edit().putBoolean("read_loaded", true).apply();
+                break;
+            default:
+                s6 s6Var3 = this.b;
+                s6Var3.R = false;
+                s6Var3.S = null;
+                break;
         }
     }
 }

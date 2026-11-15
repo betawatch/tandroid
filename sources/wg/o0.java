@@ -1,23 +1,110 @@
 package wg;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import fi.i4;
+import java.util.ArrayList;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.m5;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.Components.ja;
+import org.telegram.ui.Components.tj0;
+import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.xb;
+import org.telegram.ui.sc1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class o0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ n0 a;
-    public final /* synthetic */ p0 b;
+public final class o0 extends ja {
+    public final ArrayList T1;
+    public final ArrayList U1;
+    public final TLRPC.Chat V1;
+    public final b0 W1;
+    public n0 X1;
+    public j0 Y1;
 
-    public o0(p0 p0Var, n0 n0Var) {
-        this.b = p0Var;
-        this.a = n0Var;
+    public o0(e2 e2Var, TL_stories.TL_premium_myBoosts tL_premium_myBoosts, TLRPC.Chat chat) {
+        super(e2Var, false);
+        this.T1 = new ArrayList();
+        this.U1 = new ArrayList();
+        this.v1 = 0.3f;
+        this.V1 = chat;
+        ArrayList<TL_stories.TL_myBoost> arrayList = tL_premium_myBoosts.my_boosts;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            TL_stories.TL_myBoost tL_myBoost = arrayList.get(i7);
+            i7++;
+            TL_stories.TL_myBoost tL_myBoost2 = tL_myBoost;
+            TLRPC.Peer peer = tL_myBoost2.peer;
+            if (peer != null && m5.o(peer) != (-chat.id)) {
+                this.U1.add(tL_myBoost2);
+            }
+        }
+        ah.a aVar = new ah.a(getContext(), this.J0, this.o1);
+        aVar.setClickable(true);
+        aVar.setOrientation(1);
+        aVar.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
+        q6.h(j6.h5, aVar, this.J0);
+        b0 b0Var = new b0(getContext(), this.J0);
+        this.W1 = b0Var;
+        b0Var.k();
+        b0Var.setCounterColor(-6785796);
+        b0Var.setOnClickListener(new sc1(6, this, chat));
+        aVar.addView(b0Var, c8.ja.r(-1, 48, 87));
+        ViewGroup viewGroup = this.b;
+        int i10 = this.u0;
+        viewGroup.addView(aVar, c8.ja.f(-2.0f, -1, 87, i10, 0, i10, 0));
+        uj0 uj0Var = this.o1;
+        int i11 = this.u0;
+        uj0Var.setPadding(i11, 0, i11, org.telegram.messenger.g0.L(64.0f));
+        this.o1.setOnItemClickListener(new i4(24, this, chat));
+        O();
+        b1();
+        d1(false);
+        xb.a(this.c, new i0());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        n0 n0Var = this.a;
-        n0Var.setLayerType(0, null);
-        this.b.d.removeView(n0Var);
+    @Override // org.telegram.ui.Components.ja
+    public final tj0 L0(uj0 uj0Var) {
+        return new k0(this);
+    }
+
+    @Override // org.telegram.ui.Components.ja
+    public final CharSequence O0() {
+        return hd.M0(2131753321, null);
+    }
+
+    public final void d1(boolean z10) {
+        b0 b0Var = this.W1;
+        b0Var.setShowZero(false);
+        ArrayList arrayList = this.T1;
+        if (arrayList.size() > 1) {
+            b0Var.i(hd.M0(2131753316, null), z10, true);
+        } else {
+            b0Var.i(hd.M0(2131753321, null), z10, true);
+        }
+        b0Var.c(arrayList.size(), z10);
+        b0Var.setEnabled(arrayList.size() > 0);
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.Y1 = new j0(this);
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.Y1.cancel();
+    }
+
+    @Override // org.telegram.ui.ActionBar.u2
+    public final void v() {
+        this.Y1.start();
     }
 }

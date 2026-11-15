@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.time.FastDateFormat;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a8 {
     public static boolean j = false;
@@ -58,8 +58,8 @@ public final class a8 {
         }
     }
 
-    public static void c(boolean z9) {
-        if (z9 || System.currentTimeMillis() - l >= 30000) {
+    public static void c(boolean z10) {
+        if (z10 || System.currentTimeMillis() - l >= 30000) {
             l = System.currentTimeMillis();
             try {
                 Debug.dumpHprofData(new File(g0.P0(), j().b.format(System.currentTimeMillis()) + "_heap.hprof").getAbsolutePath());
@@ -93,9 +93,9 @@ public final class a8 {
         g(th2, true);
     }
 
-    public static void g(Throwable th2, boolean z9) {
+    public static void g(Throwable th2, boolean z10) {
         if (r2.a) {
-            if (!(th2 instanceof InterruptedException) && !(th2 instanceof MediaCodecVideoConvertor.ConversionCanceledException) && !(th2 instanceof z7) && z9) {
+            if (!(th2 instanceof InterruptedException) && !(th2 instanceof MediaCodecVideoConvertor.ConversionCanceledException) && !(th2 instanceof z7) && z10) {
                 Typeface typeface = g0.a;
                 t0.a(th2);
             }
@@ -105,7 +105,7 @@ public final class a8 {
                 j = true;
                 File file = new File(t0.h(), "malformed_database/");
                 file.mkdirs();
-                yr a02 = yr.a0(p10.s0);
+                vr a02 = vr.a0(m10.t0);
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(a02.c);
                 arrayList.add(a02.d);
@@ -132,13 +132,13 @@ public final class a8 {
         j().k();
     }
 
-    public static void i(Throwable th2, boolean z9) {
+    public static void i(Throwable th2, boolean z10) {
         if (r2.a) {
             if (th2 instanceof OutOfMemoryError) {
                 j();
                 c(false);
             }
-            if (z9 && !(th2 instanceof InterruptedException) && !(th2 instanceof MediaCodecVideoConvertor.ConversionCanceledException) && !(th2 instanceof z7)) {
+            if (z10 && !(th2 instanceof InterruptedException) && !(th2 instanceof MediaCodecVideoConvertor.ConversionCanceledException) && !(th2 instanceof z7)) {
                 Typeface typeface = g0.a;
                 t0.a(th2);
             }

@@ -1,45 +1,24 @@
 package i5;
 
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
+import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class h extends com.googlecode.mp4parser.b {
-    public final /* synthetic */ int f;
+public final class h extends com.googlecode.mp4parser.c {
+    public static final /* synthetic */ ff e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h(String str, int i7) {
-        super(str);
-        this.f = i7;
+    static {
+        ze.a aVar = new ze.a(h.class, "DataEntryUrlBox.java");
+        e = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.DataEntryUrlBox", "", "", "java.lang.String"));
     }
 
-    @Override // com.googlecode.mp4parser.b, i5.b
-    public void getBox(WritableByteChannel writableByteChannel) {
-        switch (this.f) {
-            case 1:
-                writableByteChannel.write(d());
-                ByteBuffer allocate = ByteBuffer.allocate(8);
-                h5.b.r(0, allocate);
-                h5.b.q(0, allocate);
-                allocate.putInt(this.b.size());
-                writableByteChannel.write((ByteBuffer) allocate.rewind());
-                c(writableByteChannel);
-                break;
-            default:
-                super.getBox(writableByteChannel);
-                break;
-        }
+    @Override // com.googlecode.mp4parser.a
+    public final long getContentSize() {
+        return 4L;
     }
 
-    @Override // com.googlecode.mp4parser.b, i5.b
-    public long getSize() {
-        switch (this.f) {
-            case 1:
-                long b10 = b();
-                return 8 + b10 + (b10 + 16 >= 4294967296L ? 16 : 8);
-            default:
-                return super.getSize();
-        }
+    public final String toString() {
+        c.u(ze.a.b(e, this, this));
+        return "DataEntryUrlBox[]";
     }
 }

@@ -1,348 +1,1521 @@
 package org.telegram.messenger;
 
-import android.app.DownloadManager;
-import android.content.ContentValues;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
-import android.os.SystemClock;
-import android.provider.MediaStore;
-import android.text.TextUtils;
-import android.webkit.MimeTypeMap;
-import java.io.File;
-import java.io.FileDescriptor;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.nio.channels.FileChannel;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.tgnet.TLRPC;
+import android.os.RemoteException;
+import java.lang.ref.WeakReference;
+import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class cf implements ls {
-    public c a;
-    public org.telegram.ui.ActionBar.u1 b;
-    public ArrayList c;
-    public HashMap d;
-    public float e;
-    public boolean f;
-    public boolean h;
-    public int n;
-    public CountDownLatch r;
-    public sr s;
-    public boolean w;
+public final class cf implements e2.a1 {
+    public final /* synthetic */ int a = 0;
+    public final Object b;
+    public final Object c;
 
-    /* JADX WARN: Removed duplicated region for block: B:114:0x018c A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:121:? A[Catch: all -> 0x016b, SYNTHETIC, TRY_LEAVE, TryCatch #3 {all -> 0x016b, blocks: (B:84:0x0160, B:120:0x0194, B:119:0x0191, B:103:0x0173, B:115:0x018c), top: B:6:0x0017, inners: #6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x017c A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:73:? A[Catch: all -> 0x015d, SYNTHETIC, TRY_LEAVE, TryCatch #11 {all -> 0x015d, blocks: (B:72:0x0184, B:71:0x0181, B:83:0x0159, B:102:0x0170, B:67:0x017c), top: B:11:0x001f, inners: #0 }] */
+    public cf(p4.d0 d0Var, p4.g1 g1Var) {
+        this.b = new WeakReference(d0Var);
+        this.c = new WeakReference(g1Var);
+    }
+
+    @Override // e2.a1
+    public final /* synthetic */ void B(List list) {
+        int i7 = this.a;
+    }
+
+    @Override // e2.a1
+    public final /* synthetic */ void D(int i7, boolean z10) {
+        int i10 = this.a;
+    }
+
+    @Override // e2.a1
+    public final void E(e2.q1 q1Var) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        k10.s = k10.s.d(q1Var);
+                        k10.c.a(true, true);
+                        k10.d(new org.telegram.utils.twidget.e(q1Var, 22));
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final /* synthetic */ void F(e2.z0 z0Var) {
+        int i7 = this.a;
+    }
+
+    @Override // e2.a1
+    public final void H(e2.w0 w0Var) {
+        e2.q1 q1Var;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 v0Var = e1Var.a;
+                        int i7 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i10 = e1Var.f;
+                        int i11 = e1Var.h;
+                        boolean z11 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i12 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i13 = e1Var.p;
+                        e2.e eVar = e1Var.q;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z12 = e1Var.u;
+                        boolean z13 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z14 = e1Var.x;
+                        boolean z15 = e1Var.y;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j3 = e1Var.C;
+                        long j10 = e1Var.D;
+                        long j11 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var2 = e1Var.G;
+                        try {
+                            if (!l1Var2.p()) {
+                                q1Var = q1Var2;
+                                if (l1Var.a.b >= l1Var2.o()) {
+                                    z10 = false;
+                                    a8.ja.p(z10);
+                                    k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                    k10.c.a(true, true);
+                                    p4.m0 m0Var = (p4.m0) k10.h.j.e;
+                                    m0Var.p0(m0Var.h.t);
+                                    break;
+                                }
+                            } else {
+                                q1Var = q1Var2;
+                            }
+                            p4.m0 m0Var2 = (p4.m0) k10.h.j.e;
+                            m0Var2.p0(m0Var2.h.t);
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                        z10 = true;
+                        a8.ja.p(z10);
+                        k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                        k10.c.a(true, true);
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void J(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        k10.d(new gh.c(i7, i10, 3));
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void L(e2.l1 l1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    p4.g1 g1Var = (p4.g1) ((WeakReference) this.c).get();
+                    if (g1Var != null) {
+                        k10.s = k10.s.c(l1Var, g1Var.R0(), i7);
+                        k10.c.a(false, true);
+                        try {
+                            k10.h.j.t(l1Var);
+                            break;
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final /* synthetic */ void M(e2.q0 q0Var) {
+        int i7 = this.a;
+    }
+
+    @Override // e2.a1
+    public final void O(e2.y0 y0Var) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        k10.f(y0Var);
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void P(boolean z10) {
+        switch (this.a) {
+            case 0:
+                l2.p pVar = (l2.p) this.b;
+                df dfVar = (df) this.c;
+                a aVar = dfVar.e;
+                if (z10) {
+                    dfVar.c = ((l2.f0) pVar).l();
+                } else {
+                    long l10 = ((l2.f0) pVar).l();
+                    long j3 = dfVar.c;
+                    if (j3 != -9223372036854775807L && l10 > j3) {
+                        df.a(dfVar, j3, l10);
+                    }
+                    dfVar.c = -9223372036854775807L;
+                }
+                g0.r(aVar);
+                if (!z10) {
+                    g0.i3(aVar, 60000L);
+                    break;
+                }
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 v0Var = e1Var.a;
+                        int i7 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i10 = e1Var.f;
+                        e2.w0 w0Var = e1Var.g;
+                        int i11 = e1Var.h;
+                        boolean z11 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i12 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i13 = e1Var.p;
+                        e2.e eVar = e1Var.q;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z12 = e1Var.u;
+                        boolean z13 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z14 = e1Var.y;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j10 = e1Var.C;
+                        long j11 = e1Var.D;
+                        long j12 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var = e1Var.G;
+                        a8.ja.p(l1Var2.p() || l1Var.a.b < l1Var2.o());
+                        k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z10, z14, o0Var2, j10, j11, j12, s1Var, q1Var);
+                        k10.c.a(true, true);
+                        try {
+                            p4.m0 m0Var = (p4.m0) k10.h.j.e;
+                            m0Var.p0(m0Var.h.t);
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                        k10.t();
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void a(int i7) {
+        e2.q1 q1Var;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 v0Var = e1Var.a;
+                        int i10 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i11 = e1Var.f;
+                        e2.w0 w0Var = e1Var.g;
+                        int i12 = e1Var.h;
+                        boolean z11 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i13 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        e2.e eVar = e1Var.q;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z12 = e1Var.u;
+                        boolean z13 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z14 = e1Var.x;
+                        boolean z15 = e1Var.y;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j3 = e1Var.C;
+                        long j10 = e1Var.D;
+                        long j11 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var2 = e1Var.G;
+                        try {
+                            if (!l1Var2.p()) {
+                                q1Var = q1Var2;
+                                if (l1Var.a.b >= l1Var2.o()) {
+                                    z10 = false;
+                                    a8.ja.p(z10);
+                                    k10.s = new p4.e1(v0Var, i10, l1Var, b1Var, b1Var2, i11, w0Var, i12, z11, x1Var, l1Var2, i13, o0Var, f10, f11, eVar, i7, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                    k10.c.a(true, true);
+                                    k10.h.j.getClass();
+                                    break;
+                                }
+                            } else {
+                                q1Var = q1Var2;
+                            }
+                            k10.h.j.getClass();
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                        z10 = true;
+                        a8.ja.p(z10);
+                        k10.s = new p4.e1(v0Var, i10, l1Var, b1Var, b1Var2, i11, w0Var, i12, z11, x1Var, l1Var2, i13, o0Var, f10, f11, eVar, i7, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                        k10.c.a(true, true);
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void b(e2.x1 x1Var) {
+        e2.q1 q1Var;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    p4.e1 e1Var = k10.s;
+                    e2.v0 v0Var = e1Var.a;
+                    int i7 = e1Var.b;
+                    p4.l1 l1Var = e1Var.c;
+                    e2.b1 b1Var = e1Var.d;
+                    e2.b1 b1Var2 = e1Var.e;
+                    int i10 = e1Var.f;
+                    e2.w0 w0Var = e1Var.g;
+                    int i11 = e1Var.h;
+                    boolean z11 = e1Var.i;
+                    e2.l1 l1Var2 = e1Var.j;
+                    int i12 = e1Var.k;
+                    e2.o0 o0Var = e1Var.m;
+                    float f10 = e1Var.n;
+                    float f11 = e1Var.o;
+                    int i13 = e1Var.p;
+                    e2.e eVar = e1Var.q;
+                    g2.c cVar = e1Var.r;
+                    e2.o oVar = e1Var.s;
+                    int i14 = e1Var.t;
+                    boolean z12 = e1Var.u;
+                    boolean z13 = e1Var.v;
+                    int i15 = e1Var.w;
+                    boolean z14 = e1Var.x;
+                    boolean z15 = e1Var.y;
+                    int i16 = e1Var.z;
+                    int i17 = e1Var.A;
+                    e2.o0 o0Var2 = e1Var.B;
+                    long j3 = e1Var.C;
+                    long j10 = e1Var.D;
+                    long j11 = e1Var.E;
+                    e2.s1 s1Var = e1Var.F;
+                    e2.q1 q1Var2 = e1Var.G;
+                    try {
+                        if (!l1Var2.p()) {
+                            q1Var = q1Var2;
+                            if (l1Var.a.b >= l1Var2.o()) {
+                                z10 = false;
+                                a8.ja.p(z10);
+                                k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                k10.c.a(true, true);
+                                k10.h.j.getClass();
+                                break;
+                            }
+                        } else {
+                            q1Var = q1Var2;
+                        }
+                        k10.h.j.getClass();
+                    } catch (RemoteException e10) {
+                        h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                    }
+                    z10 = true;
+                    a8.ja.p(z10);
+                    k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                    k10.c.a(true, true);
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final /* synthetic */ void c(boolean z10) {
+        int i7 = this.a;
+    }
+
+    @Override // e2.a1
+    public final void d(int i7) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        k10.s = e1Var.b(e1Var.w, i7, e1Var.v);
+                        k10.c.a(true, true);
+                        try {
+                            p4.m0 m0Var = (p4.m0) k10.h.j.e;
+                            m0Var.p0(m0Var.h.t);
+                            break;
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void e(int i7) {
+        e2.q1 q1Var;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 v0Var = e1Var.a;
+                        int i10 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i11 = e1Var.f;
+                        e2.w0 w0Var = e1Var.g;
+                        boolean z11 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i12 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i13 = e1Var.p;
+                        e2.e eVar = e1Var.q;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z12 = e1Var.u;
+                        boolean z13 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z14 = e1Var.x;
+                        boolean z15 = e1Var.y;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j3 = e1Var.C;
+                        long j10 = e1Var.D;
+                        long j11 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var2 = e1Var.G;
+                        try {
+                            if (!l1Var2.p()) {
+                                q1Var = q1Var2;
+                                if (l1Var.a.b >= l1Var2.o()) {
+                                    z10 = false;
+                                    a8.ja.p(z10);
+                                    k10.s = new p4.e1(v0Var, i10, l1Var, b1Var, b1Var2, i11, w0Var, i7, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                    k10.c.a(true, true);
+                                    k10.h.j.r(i7);
+                                    break;
+                                }
+                            } else {
+                                q1Var = q1Var2;
+                            }
+                            k10.h.j.r(i7);
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                        z10 = true;
+                        a8.ja.p(z10);
+                        k10.s = new p4.e1(v0Var, i10, l1Var, b1Var, b1Var2, i11, w0Var, i7, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                        k10.c.a(true, true);
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final /* synthetic */ void f(boolean z10) {
+        int i7 = this.a;
+    }
+
+    @Override // e2.a1
+    public final /* synthetic */ void g(int i7) {
+        int i10 = this.a;
+    }
+
+    /* JADX WARN: Can't wrap try/catch for region: R(7:7|(2:9|(5:11|12|13|14|15))(1:22)|21|12|13|14|15) */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x00c0, code lost:
+    
+        r0 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x00c1, code lost:
+    
+        h2.a.d("MediaSessionImpl", "Exception in using media1 API", r0);
+     */
+    @Override // e2.a1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(File file, File file2, String str) {
-        File file3;
-        FileInputStream fileInputStream;
-        boolean z9;
-        Throwable th2;
-        FileChannel channel;
-        FileChannel channel2;
-        String str2;
-        if (g0.I1(Uri.fromFile(file), 0)) {
-            return;
-        }
-        boolean z10 = true;
-        try {
-            try {
-                FileInputStream fileInputStream2 = new FileInputStream(file);
-                try {
-                    try {
-                        channel = fileInputStream2.getChannel();
-                        try {
-                            file3 = file2;
-                        } catch (Throwable th3) {
-                            th = th3;
-                            file3 = file2;
-                        }
-                        try {
-                            try {
-                                channel2 = new FileOutputStream(file3).getChannel();
-                                try {
-                                    long size = channel.size();
-                                    try {
-                                        if (g0.I1(null, ((Integer) FileDescriptor.class.getDeclaredMethod("getInt$", null).invoke(fileInputStream2.getFD(), null)).intValue())) {
-                                            if (this.b != null) {
-                                                g0.h3(new bf(this, 3));
-                                            }
-                                            if (channel2 != null) {
-                                                channel2.close();
-                                            }
-                                            try {
-                                                channel.close();
-                                                try {
-                                                    fileInputStream2.close();
-                                                    return;
-                                                } catch (Exception e10) {
-                                                    e = e10;
-                                                    a8.g(e, z10);
-                                                    file3.delete();
-                                                    return;
-                                                }
-                                            } catch (Throwable th4) {
-                                                th = th4;
-                                                z9 = true;
-                                                fileInputStream = fileInputStream2;
-                                                th2 = th;
-                                                try {
-                                                    fileInputStream.close();
-                                                    throw th2;
-                                                } catch (Throwable th5) {
-                                                    th2.addSuppressed(th5);
-                                                    throw th2;
-                                                }
-                                            }
-                                        }
-                                    } catch (Throwable th6) {
-                                        a8.g(th6, true);
-                                    }
-                                    long j3 = 0;
-                                    long j10 = 0;
-                                    while (j3 < size) {
-                                        if (this.f) {
-                                            break;
-                                        }
-                                        z9 = z10;
-                                        fileInputStream = fileInputStream2;
-                                        try {
-                                            channel2.transferFrom(channel, j3, Math.min(4096L, size - j3));
-                                            long j11 = 4096 + j3;
-                                            if (j11 < size && j10 > SystemClock.elapsedRealtime() - 500) {
-                                                j3 = j11;
-                                                z10 = z9;
-                                                fileInputStream2 = fileInputStream;
-                                            }
-                                            long elapsedRealtime = SystemClock.elapsedRealtime();
-                                            g0.h3(new af(this, (int) ((((100.0f / this.c.size()) * j3) / size) + this.e), 1));
-                                            j10 = elapsedRealtime;
-                                            j3 = j11;
-                                            z10 = z9;
-                                            fileInputStream2 = fileInputStream;
-                                        } catch (Throwable th7) {
-                                            th = th7;
-                                            Throwable th8 = th;
-                                            if (channel2 != null) {
-                                                throw th8;
-                                            }
-                                            try {
-                                                channel2.close();
-                                                throw th8;
-                                            } catch (Throwable th9) {
-                                                th8.addSuppressed(th9);
-                                                throw th8;
-                                            }
-                                        }
-                                    }
-                                    z9 = z10;
-                                    fileInputStream = fileInputStream2;
-                                } catch (Throwable th10) {
-                                    th = th10;
-                                    z9 = z10;
-                                    fileInputStream = fileInputStream2;
-                                    Throwable th82 = th;
-                                    if (channel2 != null) {
-                                    }
-                                }
-                            } catch (Throwable th11) {
-                                th = th11;
-                                Throwable th12 = th;
-                                if (channel != null) {
-                                    throw th12;
-                                }
-                                try {
-                                    channel.close();
-                                    throw th12;
-                                } catch (Throwable th13) {
-                                    th12.addSuppressed(th13);
-                                    throw th12;
-                                }
+    public final void h(boolean z10) {
+        e2.s1 s1Var;
+        boolean z11;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 v0Var = e1Var.a;
+                        int i7 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i10 = e1Var.f;
+                        e2.w0 w0Var = e1Var.g;
+                        int i11 = e1Var.h;
+                        boolean z12 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i12 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i13 = e1Var.p;
+                        e2.e eVar = e1Var.q;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z13 = e1Var.u;
+                        boolean z14 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z15 = e1Var.x;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j3 = e1Var.C;
+                        long j10 = e1Var.D;
+                        long j11 = e1Var.E;
+                        e2.s1 s1Var2 = e1Var.F;
+                        e2.q1 q1Var = e1Var.G;
+                        if (!l1Var2.p()) {
+                            s1Var = s1Var2;
+                            if (l1Var.a.b >= l1Var2.o()) {
+                                z11 = false;
+                                a8.ja.p(z11);
+                                k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z12, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z13, z14, i15, i16, i17, z15, z10, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                k10.c.a(true, true);
+                                k10.h.j.getClass();
+                                k10.t();
+                                break;
                             }
-                        } catch (Throwable th14) {
-                            th = th14;
-                            z9 = true;
-                            fileInputStream = fileInputStream2;
-                            Throwable th122 = th;
-                            if (channel != null) {
-                            }
+                        } else {
+                            s1Var = s1Var2;
                         }
-                    } catch (Throwable th15) {
-                        th = th15;
-                        th2 = th;
-                        fileInputStream.close();
-                        throw th2;
+                        z11 = true;
+                        a8.ja.p(z11);
+                        k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z12, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z13, z14, i15, i16, i17, z15, z10, o0Var2, j3, j10, j11, s1Var, q1Var);
+                        k10.c.a(true, true);
+                        k10.h.j.getClass();
+                        k10.t();
                     }
-                } catch (Throwable th16) {
-                    th = th16;
-                    file3 = file2;
                 }
-            } catch (Exception e11) {
-                e = e11;
-                z10 = z9;
-            }
-        } catch (Exception e12) {
-            e = e12;
-            file3 = file2;
+                break;
         }
-        if (this.f) {
-            if (channel2 != null) {
-                channel2.close();
-            }
-            channel.close();
-            fileInputStream.close();
-            file3.delete();
-            return;
-        }
-        if (this.w) {
-            g0.d(file3);
-        } else {
-            DownloadManager downloadManager = (DownloadManager) t0.b.getSystemService("download");
-            if (TextUtils.isEmpty(str)) {
-                MimeTypeMap singleton = MimeTypeMap.getSingleton();
-                String name = file3.getName();
-                int lastIndexOf = name.lastIndexOf(46);
-                if (lastIndexOf != -1) {
-                    String mimeTypeFromExtension = singleton.getMimeTypeFromExtension(name.substring(lastIndexOf + 1).toLowerCase());
-                    if (TextUtils.isEmpty(mimeTypeFromExtension)) {
-                        mimeTypeFromExtension = "text/plain";
-                    }
-                    str2 = mimeTypeFromExtension;
-                } else {
-                    str2 = "text/plain";
-                }
-            } else {
-                str2 = str;
-            }
-            downloadManager.addCompletedDownload(file3.getName(), file3.getName(), false, str2, file3.getAbsolutePath(), file3.length(), true);
-        }
-        float size2 = (100.0f / this.c.size()) + this.e;
-        this.e = size2;
-        g0.h3(new af(this, (int) size2, 2));
-        if (channel2 != null) {
-            channel2.close();
-        }
-        channel.close();
-        fileInputStream.close();
     }
 
-    /* JADX WARN: Type inference failed for: r2v19 */
-    /* JADX WARN: Type inference failed for: r2v2 */
-    /* JADX WARN: Type inference failed for: r2v3, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r6v0 */
-    /* JADX WARN: Type inference failed for: r6v1, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r6v5 */
-    public final boolean b(ij ijVar) {
-        TLRPC.MessageMedia n1;
-        TLRPC.Photo photo;
-        TLRPC.PhotoSize w10;
-        boolean z9 = false;
-        if (!ijVar.D3() || (n1 = ij.n1(ijVar.k)) == null || (photo = n1.photo) == null || n1.document == null || (w10 = w7.w(photo.sizes, g0.Z0(true), false, null, true)) == null) {
-            return false;
-        }
-        w7.G(this.a.a);
-        File J = w7.J(w10, null, false, true);
-        File J2 = w7.J(n1.document, null, false, true);
-        ?? r22 = (J == null || !J.exists()) ? 1 : 0;
-        ?? r62 = (J2 == null || !J2.exists()) ? 1 : 0;
-        int i7 = r22 + r62;
-        if (i7 > 0) {
-            this.r = new CountDownLatch(i7);
-            g0.h3(new mh(this, (boolean) r22, w10, ijVar, n1.photo, (boolean) r62, n1.document));
-            this.r.await();
-        }
-        if (!this.f) {
-            if (J == null || !J.exists()) {
-                J = w7.J(w10, null, true, true);
-            }
-            if (J2 == null || !J2.exists()) {
-                J2 = w7.J(n1.document, null, true, true);
-            }
-            if (J != null && J.exists() && J2 != null && J2.exists()) {
-                String D = w7.D(J);
-                if (TextUtils.isEmpty(D)) {
-                    D = "jpg";
-                }
-                String mimeTypeFromExtension = MimeTypeMap.getSingleton().getMimeTypeFromExtension(D.toLowerCase());
-                if (TextUtils.isEmpty(mimeTypeFromExtension)) {
-                    mimeTypeFromExtension = "image/jpeg";
-                }
-                String p02 = g0.p0(0, D);
-                if (Build.VERSION.SDK_INT >= 29) {
-                    ContentValues contentValues = new ContentValues();
-                    Uri contentUri = MediaStore.Downloads.getContentUri("external_primary");
-                    contentValues.put("relative_path", new File(Environment.DIRECTORY_DOWNLOADS, "Telegram") + File.separator);
-                    contentValues.put("_display_name", p02);
-                    contentValues.put("mime_type", mimeTypeFromExtension);
-                    Uri insert = t0.b.getContentResolver().insert(contentUri, contentValues);
-                    if (insert != null) {
-                        OutputStream openOutputStream = t0.b.getContentResolver().openOutputStream(insert);
-                        if (openOutputStream != null) {
-                            try {
-                                MediaController.H0(J, J2, openOutputStream, null);
-                                z9 = !this.f;
-                            } finally {
-                            }
-                        }
-                        if (openOutputStream != null) {
-                            openOutputStream.close();
-                        }
-                        if (z9) {
-                            this.n++;
-                        } else {
-                            try {
-                                t0.b.getContentResolver().delete(insert, null, null);
-                            } catch (Exception unused) {
-                            }
+    @Override // e2.a1
+    public final void i(int i7, boolean z10) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        k10.s = e1Var.b(i7, e1Var.z, z10);
+                        k10.c.a(true, true);
+                        try {
+                            p4.m0 m0Var = (p4.m0) k10.h.j.e;
+                            m0Var.p0(m0Var.h.t);
+                            break;
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
                         }
                     }
-                } else {
-                    File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "Telegram");
-                    file.mkdirs();
-                    File file2 = new File(file, p02);
-                    if (!file2.exists()) {
-                        file2.createNewFile();
-                    }
-                    FileOutputStream fileOutputStream = new FileOutputStream(file2);
-                    try {
-                        MediaController.H0(J, J2, fileOutputStream, null);
-                        fileOutputStream.close();
-                        if (this.f) {
-                            file2.delete();
-                        } else {
-                            ((DownloadManager) t0.b.getSystemService("download")).addCompletedDownload(file2.getName(), file2.getName(), false, mimeTypeFromExtension, file2.getAbsolutePath(), file2.length(), true);
-                            this.n++;
-                        }
-                    } finally {
-                    }
                 }
-                float size = (100.0f / this.c.size()) + this.e;
-                this.e = size;
-                g0.h3(new af(this, (int) size, 3));
-                return true;
-            }
+                break;
         }
-        return true;
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        HashMap hashMap = this.d;
-        if (i7 == qs.Y1 || i7 == qs.Z1) {
-            if (hashMap.remove((String) objArr[0]) != null) {
-                this.r.countDown();
-            }
-        } else if (i7 == qs.X1 && hashMap.containsKey((String) objArr[0])) {
-            g0.h3(new af(this, (int) com.google.android.recaptcha.internal.a.c(((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue(), this.c.size(), 100.0f, this.e), 0));
+    @Override // e2.a1
+    public final void j(float f10) {
+        e2.q1 q1Var;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    p4.e1 e1Var = k10.s;
+                    e2.v0 v0Var = e1Var.a;
+                    int i7 = e1Var.b;
+                    p4.l1 l1Var = e1Var.c;
+                    e2.b1 b1Var = e1Var.d;
+                    e2.b1 b1Var2 = e1Var.e;
+                    int i10 = e1Var.f;
+                    e2.w0 w0Var = e1Var.g;
+                    int i11 = e1Var.h;
+                    boolean z11 = e1Var.i;
+                    e2.l1 l1Var2 = e1Var.j;
+                    int i12 = e1Var.k;
+                    e2.x1 x1Var = e1Var.l;
+                    e2.o0 o0Var = e1Var.m;
+                    float f11 = e1Var.n;
+                    int i13 = e1Var.p;
+                    e2.e eVar = e1Var.q;
+                    g2.c cVar = e1Var.r;
+                    e2.o oVar = e1Var.s;
+                    int i14 = e1Var.t;
+                    boolean z12 = e1Var.u;
+                    boolean z13 = e1Var.v;
+                    int i15 = e1Var.w;
+                    boolean z14 = e1Var.x;
+                    boolean z15 = e1Var.y;
+                    int i16 = e1Var.z;
+                    int i17 = e1Var.A;
+                    e2.o0 o0Var2 = e1Var.B;
+                    long j3 = e1Var.C;
+                    long j10 = e1Var.D;
+                    long j11 = e1Var.E;
+                    e2.s1 s1Var = e1Var.F;
+                    e2.q1 q1Var2 = e1Var.G;
+                    if (f10 != 0.0f) {
+                        f11 = f10;
+                    }
+                    try {
+                        if (!l1Var2.p()) {
+                            q1Var = q1Var2;
+                            if (l1Var.a.b >= l1Var2.o()) {
+                                z10 = false;
+                                a8.ja.p(z10);
+                                k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                k10.c.a(true, true);
+                                k10.h.j.getClass();
+                                break;
+                            }
+                        } else {
+                            q1Var = q1Var2;
+                        }
+                        k10.h.j.getClass();
+                    } catch (RemoteException e10) {
+                        h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                    }
+                    z10 = true;
+                    a8.ja.p(z10);
+                    k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                    k10.c.a(true, true);
+                }
+                break;
         }
+    }
+
+    public p4.d0 k() {
+        return (p4.d0) ((WeakReference) this.b).get();
+    }
+
+    @Override // e2.a1
+    public final void l(int i7) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    p4.g1 g1Var = (p4.g1) ((WeakReference) this.c).get();
+                    if (g1Var != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 W = g1Var.W();
+                        int i10 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i11 = e1Var.f;
+                        e2.w0 w0Var = e1Var.g;
+                        int i12 = e1Var.h;
+                        boolean z10 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i13 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i14 = e1Var.p;
+                        e2.e eVar = e1Var.q;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i15 = e1Var.t;
+                        boolean z11 = e1Var.u;
+                        boolean z12 = e1Var.v;
+                        int i16 = e1Var.w;
+                        boolean z13 = e1Var.y;
+                        int i17 = e1Var.z;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j3 = e1Var.C;
+                        long j10 = e1Var.D;
+                        long j11 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var = e1Var.G;
+                        boolean z14 = i7 == 3 && z12 && i17 == 0;
+                        a8.ja.p(l1Var2.p() || l1Var.a.b < l1Var2.o());
+                        k10.s = new p4.e1(W, i10, l1Var, b1Var, b1Var2, i11, w0Var, i12, z10, x1Var, l1Var2, i13, o0Var, f10, f11, eVar, i14, cVar, oVar, i15, z11, z12, i16, i17, i7, z14, z13, o0Var2, j3, j10, j11, s1Var, q1Var);
+                        k10.c.a(true, true);
+                        try {
+                            qe qeVar = k10.h.j;
+                            g1Var.W();
+                            p4.m0 m0Var = (p4.m0) qeVar.e;
+                            m0Var.p0(m0Var.h.t);
+                            break;
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void m(e2.o0 o0Var) {
+        e2.q1 q1Var;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    p4.e1 e1Var = k10.s;
+                    e2.v0 v0Var = e1Var.a;
+                    int i7 = e1Var.b;
+                    p4.l1 l1Var = e1Var.c;
+                    e2.b1 b1Var = e1Var.d;
+                    e2.b1 b1Var2 = e1Var.e;
+                    int i10 = e1Var.f;
+                    e2.w0 w0Var = e1Var.g;
+                    int i11 = e1Var.h;
+                    boolean z11 = e1Var.i;
+                    e2.l1 l1Var2 = e1Var.j;
+                    int i12 = e1Var.k;
+                    e2.x1 x1Var = e1Var.l;
+                    float f10 = e1Var.n;
+                    float f11 = e1Var.o;
+                    int i13 = e1Var.p;
+                    e2.e eVar = e1Var.q;
+                    g2.c cVar = e1Var.r;
+                    e2.o oVar = e1Var.s;
+                    int i14 = e1Var.t;
+                    boolean z12 = e1Var.u;
+                    boolean z13 = e1Var.v;
+                    int i15 = e1Var.w;
+                    boolean z14 = e1Var.x;
+                    boolean z15 = e1Var.y;
+                    int i16 = e1Var.z;
+                    int i17 = e1Var.A;
+                    e2.o0 o0Var2 = e1Var.B;
+                    long j3 = e1Var.C;
+                    long j10 = e1Var.D;
+                    long j11 = e1Var.E;
+                    e2.s1 s1Var = e1Var.F;
+                    e2.q1 q1Var2 = e1Var.G;
+                    try {
+                        if (!l1Var2.p()) {
+                            q1Var = q1Var2;
+                            if (l1Var.a.b >= l1Var2.o()) {
+                                z10 = false;
+                                a8.ja.p(z10);
+                                k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                k10.c.a(true, true);
+                                k10.h.j.q(o0Var);
+                                break;
+                            }
+                        } else {
+                            q1Var = q1Var2;
+                        }
+                        k10.h.j.q(o0Var);
+                    } catch (RemoteException e10) {
+                        h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                    }
+                    z10 = true;
+                    a8.ja.p(z10);
+                    k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                    k10.c.a(true, true);
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void n(e2.e eVar) {
+        e2.q1 q1Var;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 v0Var = e1Var.a;
+                        int i7 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i10 = e1Var.f;
+                        e2.w0 w0Var = e1Var.g;
+                        int i11 = e1Var.h;
+                        boolean z11 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i12 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i13 = e1Var.p;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z12 = e1Var.u;
+                        boolean z13 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z14 = e1Var.x;
+                        boolean z15 = e1Var.y;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j3 = e1Var.C;
+                        long j10 = e1Var.D;
+                        long j11 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var2 = e1Var.G;
+                        try {
+                            if (!l1Var2.p()) {
+                                q1Var = q1Var2;
+                                if (l1Var.a.b >= l1Var2.o()) {
+                                    z10 = false;
+                                    a8.ja.p(z10);
+                                    k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                    k10.c.a(true, true);
+                                    p4.m0 m0Var = (p4.m0) k10.h.j.e;
+                                    m0Var.h.t.K().getClass();
+                                    ((q4.l) m0Var.n.b).a.setPlaybackToLocal(eVar.b());
+                                    break;
+                                }
+                            } else {
+                                q1Var = q1Var2;
+                            }
+                            p4.m0 m0Var2 = (p4.m0) k10.h.j.e;
+                            m0Var2.h.t.K().getClass();
+                            ((q4.l) m0Var2.n.b).a.setPlaybackToLocal(eVar.b());
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                        z10 = true;
+                        a8.ja.p(z10);
+                        k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                        k10.c.a(true, true);
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void o(e2.o0 o0Var) {
+        e2.q1 q1Var;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 v0Var = e1Var.a;
+                        int i7 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i10 = e1Var.f;
+                        e2.w0 w0Var = e1Var.g;
+                        int i11 = e1Var.h;
+                        boolean z11 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i12 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var2 = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i13 = e1Var.p;
+                        e2.e eVar = e1Var.q;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z12 = e1Var.u;
+                        boolean z13 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z14 = e1Var.x;
+                        boolean z15 = e1Var.y;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        long j3 = e1Var.C;
+                        long j10 = e1Var.D;
+                        long j11 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var2 = e1Var.G;
+                        try {
+                            if (!l1Var2.p()) {
+                                q1Var = q1Var2;
+                                if (l1Var.a.b >= l1Var2.o()) {
+                                    z10 = false;
+                                    a8.ja.p(z10);
+                                    k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var2, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var, j3, j10, j11, s1Var, q1Var);
+                                    k10.c.a(true, true);
+                                    k10.h.j.v();
+                                    break;
+                                }
+                            } else {
+                                q1Var = q1Var2;
+                            }
+                            k10.h.j.v();
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                        z10 = true;
+                        a8.ja.p(z10);
+                        k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var2, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var, j3, j10, j11, s1Var, q1Var);
+                        k10.c.a(true, true);
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void onRenderedFirstFrame() {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    ab.c0 c0Var = k10.g.b;
+                    h9.i0 o4 = c0Var.o();
+                    for (int i7 = 0; i7 < o4.size(); i7++) {
+                        p4.v vVar = (p4.v) o4.get(i7);
+                        c0Var.s(vVar);
+                        k10.c(vVar, new org.telegram.utils.twidget.e(21));
+                    }
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final /* synthetic */ void q(e2.v0 v0Var) {
+        int i7 = this.a;
+    }
+
+    @Override // e2.a1
+    public final void s(e2.b1 b1Var, e2.b1 b1Var2, int i7) {
+        switch (this.a) {
+            case 0:
+                df dfVar = (df) this.c;
+                if (i7 == 1) {
+                    long j3 = dfVar.c;
+                    if (j3 != -9223372036854775807L) {
+                        df.a(dfVar, j3, b1Var.f);
+                    }
+                    dfVar.c = ((com.google.android.gms.common.api.q) ((l2.p) this.b)).h() ? b1Var2.f : -9223372036854775807L;
+                    g0.r(dfVar.e);
+                    break;
+                }
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 v0Var = e1Var.a;
+                        int i10 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.w0 w0Var = e1Var.g;
+                        int i11 = e1Var.h;
+                        boolean z10 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i12 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i13 = e1Var.p;
+                        e2.e eVar = e1Var.q;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z11 = e1Var.u;
+                        boolean z12 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z13 = e1Var.x;
+                        boolean z14 = e1Var.y;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j10 = e1Var.C;
+                        long j11 = e1Var.D;
+                        long j12 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var = e1Var.G;
+                        a8.ja.p(l1Var2.p() || l1Var.a.b < l1Var2.o());
+                        k10.s = new p4.e1(v0Var, i10, l1Var, b1Var, b1Var2, i7, w0Var, i11, z10, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z11, z12, i15, i16, i17, z13, z14, o0Var2, j10, j11, j12, s1Var, q1Var);
+                        k10.c.a(true, true);
+                        try {
+                            p4.m0 m0Var = (p4.m0) k10.h.j.e;
+                            m0Var.p0(m0Var.h.t);
+                            break;
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void t(boolean z10) {
+        e2.q1 q1Var;
+        boolean z11;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 v0Var = e1Var.a;
+                        int i7 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i10 = e1Var.f;
+                        e2.w0 w0Var = e1Var.g;
+                        int i11 = e1Var.h;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i12 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i13 = e1Var.p;
+                        e2.e eVar = e1Var.q;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z12 = e1Var.u;
+                        boolean z13 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z14 = e1Var.x;
+                        boolean z15 = e1Var.y;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j3 = e1Var.C;
+                        long j10 = e1Var.D;
+                        long j11 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var2 = e1Var.G;
+                        try {
+                            if (!l1Var2.p()) {
+                                q1Var = q1Var2;
+                                if (l1Var.a.b >= l1Var2.o()) {
+                                    z11 = false;
+                                    a8.ja.p(z11);
+                                    k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z10, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                    k10.c.a(true, true);
+                                    k10.h.j.s(z10);
+                                    break;
+                                }
+                            } else {
+                                q1Var = q1Var2;
+                            }
+                            k10.h.j.s(z10);
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                        z11 = true;
+                        a8.ja.p(z11);
+                        k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z10, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                        k10.c.a(true, true);
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void u(e2.s1 s1Var) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        k10.s = k10.s.a(s1Var);
+                        k10.c.a(true, false);
+                        k10.d(new org.telegram.utils.twidget.e(s1Var, 20));
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void v(int i7, e2.l0 l0Var) {
+        e2.q1 q1Var;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 v0Var = e1Var.a;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i10 = e1Var.f;
+                        e2.w0 w0Var = e1Var.g;
+                        int i11 = e1Var.h;
+                        boolean z11 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i12 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i13 = e1Var.p;
+                        e2.e eVar = e1Var.q;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z12 = e1Var.u;
+                        boolean z13 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z14 = e1Var.x;
+                        boolean z15 = e1Var.y;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j3 = e1Var.C;
+                        long j10 = e1Var.D;
+                        long j11 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var2 = e1Var.G;
+                        try {
+                            if (!l1Var2.p()) {
+                                q1Var = q1Var2;
+                                if (l1Var.a.b >= l1Var2.o()) {
+                                    z10 = false;
+                                    a8.ja.p(z10);
+                                    k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                    k10.c.a(true, true);
+                                    k10.h.j.o(l0Var);
+                                    break;
+                                }
+                            } else {
+                                q1Var = q1Var2;
+                            }
+                            k10.h.j.o(l0Var);
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                        z10 = true;
+                        a8.ja.p(z10);
+                        k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                        k10.c.a(true, true);
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void x(g2.c cVar) {
+        e2.q1 q1Var;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        e2.v0 v0Var = e1Var.a;
+                        int i7 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i10 = e1Var.f;
+                        e2.w0 w0Var = e1Var.g;
+                        int i11 = e1Var.h;
+                        boolean z11 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i12 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i13 = e1Var.p;
+                        e2.e eVar = e1Var.q;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z12 = e1Var.u;
+                        boolean z13 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z14 = e1Var.x;
+                        boolean z15 = e1Var.y;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j3 = e1Var.C;
+                        long j10 = e1Var.D;
+                        long j11 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var2 = e1Var.G;
+                        if (!l1Var2.p()) {
+                            q1Var = q1Var2;
+                            if (l1Var.a.b >= l1Var2.o()) {
+                                z10 = false;
+                                a8.ja.p(z10);
+                                k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                k10.c.a(true, true);
+                                break;
+                            }
+                        } else {
+                            q1Var = q1Var2;
+                        }
+                        z10 = true;
+                        a8.ja.p(z10);
+                        k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                        k10.c.a(true, true);
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // e2.a1
+    public final void y(e2.v0 v0Var) {
+        e2.q1 q1Var;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                p4.d0 k10 = k();
+                if (k10 != null) {
+                    k10.u();
+                    if (((p4.g1) ((WeakReference) this.c).get()) != null) {
+                        p4.e1 e1Var = k10.s;
+                        int i7 = e1Var.b;
+                        p4.l1 l1Var = e1Var.c;
+                        e2.b1 b1Var = e1Var.d;
+                        e2.b1 b1Var2 = e1Var.e;
+                        int i10 = e1Var.f;
+                        e2.w0 w0Var = e1Var.g;
+                        int i11 = e1Var.h;
+                        boolean z11 = e1Var.i;
+                        e2.l1 l1Var2 = e1Var.j;
+                        int i12 = e1Var.k;
+                        e2.x1 x1Var = e1Var.l;
+                        e2.o0 o0Var = e1Var.m;
+                        float f10 = e1Var.n;
+                        float f11 = e1Var.o;
+                        int i13 = e1Var.p;
+                        e2.e eVar = e1Var.q;
+                        g2.c cVar = e1Var.r;
+                        e2.o oVar = e1Var.s;
+                        int i14 = e1Var.t;
+                        boolean z12 = e1Var.u;
+                        boolean z13 = e1Var.v;
+                        int i15 = e1Var.w;
+                        boolean z14 = e1Var.x;
+                        boolean z15 = e1Var.y;
+                        int i16 = e1Var.z;
+                        int i17 = e1Var.A;
+                        e2.o0 o0Var2 = e1Var.B;
+                        long j3 = e1Var.C;
+                        long j10 = e1Var.D;
+                        long j11 = e1Var.E;
+                        e2.s1 s1Var = e1Var.F;
+                        e2.q1 q1Var2 = e1Var.G;
+                        try {
+                            if (!l1Var2.p()) {
+                                q1Var = q1Var2;
+                                if (l1Var.a.b >= l1Var2.o()) {
+                                    z10 = false;
+                                    a8.ja.p(z10);
+                                    k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                                    k10.c.a(true, true);
+                                    p4.m0 m0Var = (p4.m0) k10.h.j.e;
+                                    m0Var.p0(m0Var.h.t);
+                                    break;
+                                }
+                            } else {
+                                q1Var = q1Var2;
+                            }
+                            p4.m0 m0Var2 = (p4.m0) k10.h.j.e;
+                            m0Var2.p0(m0Var2.h.t);
+                        } catch (RemoteException e10) {
+                            h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
+                        }
+                        z10 = true;
+                        a8.ja.p(z10);
+                        k10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z11, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, cVar, oVar, i14, z12, z13, i15, i16, i17, z14, z15, o0Var2, j3, j10, j11, s1Var, q1Var);
+                        k10.c.a(true, true);
+                    }
+                }
+                break;
+        }
+    }
+
+    public cf(df dfVar, l2.p pVar) {
+        this.c = dfVar;
+        this.b = pVar;
+    }
+
+    private final /* synthetic */ void h0() {
+    }
+
+    private final /* synthetic */ void A(List list) {
+    }
+
+    private final /* synthetic */ void C(List list) {
+    }
+
+    private final /* synthetic */ void G(e2.z0 z0Var) {
+    }
+
+    private final /* synthetic */ void I(e2.z0 z0Var) {
+    }
+
+    private final /* synthetic */ void K(boolean z10) {
+    }
+
+    private final /* synthetic */ void N(boolean z10) {
+    }
+
+    private final /* synthetic */ void Q(boolean z10) {
+    }
+
+    private final /* synthetic */ void S(e2.o0 o0Var) {
+    }
+
+    private final /* synthetic */ void T(e2.q0 q0Var) {
+    }
+
+    private final /* synthetic */ void U(e2.q0 q0Var) {
+    }
+
+    private final /* synthetic */ void W(e2.w0 w0Var) {
+    }
+
+    private final /* synthetic */ void X(int i7) {
+    }
+
+    private final /* synthetic */ void Y(int i7) {
+    }
+
+    private final /* synthetic */ void Z(e2.v0 v0Var) {
+    }
+
+    private final /* synthetic */ void a0(e2.v0 v0Var) {
+    }
+
+    private final /* synthetic */ void b0(e2.v0 v0Var) {
+    }
+
+    private final /* synthetic */ void e0(e2.o0 o0Var) {
+    }
+
+    private final /* synthetic */ void f0(int i7) {
+    }
+
+    private final /* synthetic */ void g0(int i7) {
+    }
+
+    private final /* synthetic */ void i0(int i7) {
+    }
+
+    private final /* synthetic */ void j0(boolean z10) {
+    }
+
+    private final /* synthetic */ void k0(boolean z10) {
+    }
+
+    private final /* synthetic */ void l0(boolean z10) {
+    }
+
+    private final /* synthetic */ void o0(e2.q1 q1Var) {
+    }
+
+    private final /* synthetic */ void p(e2.e eVar) {
+    }
+
+    private final /* synthetic */ void p0(e2.s1 s1Var) {
+    }
+
+    private final /* synthetic */ void q0(e2.x1 x1Var) {
+    }
+
+    private final /* synthetic */ void r(int i7) {
+    }
+
+    private final /* synthetic */ void r0(float f10) {
+    }
+
+    private final /* synthetic */ void w(e2.y0 y0Var) {
+    }
+
+    private final /* synthetic */ void z(g2.c cVar) {
+    }
+
+    private final /* synthetic */ void R(int i7, e2.l0 l0Var) {
+    }
+
+    private final /* synthetic */ void V(int i7, boolean z10) {
+    }
+
+    private final /* synthetic */ void c0(int i7, boolean z10) {
+    }
+
+    private final /* synthetic */ void d0(int i7, boolean z10) {
+    }
+
+    private final /* synthetic */ void m0(int i7, int i10) {
+    }
+
+    private final /* synthetic */ void n0(e2.l1 l1Var, int i7) {
     }
 }

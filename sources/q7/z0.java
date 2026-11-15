@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class z0 extends c1 {
     public final int a;
@@ -93,10 +93,10 @@ public final class z0 extends c1 {
             Map.Entry entry = (Map.Entry) k10.next();
             linkedHashMap.put(((c1) entry.getKey()).toString().replace("\n", "\n  "), ((c1) entry.getValue()).toString().replace("\n", "\n  "));
         }
-        nb.a aVar = new nb.a(22);
+        sa.d dVar = new sa.d(22);
         StringBuilder sb2 = new StringBuilder("{\n  ");
         try {
-            a.g(sb2, linkedHashMap.entrySet().iterator(), aVar);
+            a.g(sb2, linkedHashMap.entrySet().iterator(), dVar);
             sb2.append("\n}");
             return sb2.toString();
         } catch (IOException e10) {

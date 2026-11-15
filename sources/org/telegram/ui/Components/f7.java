@@ -1,44 +1,68 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f7 implements bj0 {
+public final class f7 extends FrameLayout {
     public final /* synthetic */ int a;
+    public final /* synthetic */ y7 b;
 
-    public /* synthetic */ f7(int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f7(y7 y7Var, Context context, int i7) {
+        super(context);
         this.a = i7;
+        this.b = y7Var;
     }
 
-    @Override // org.telegram.ui.Components.bj0
-    public final void c(int i7, View view) {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        TextView textView;
         switch (this.a) {
             case 0:
-                if (view instanceof org.telegram.ui.Cells.w) {
-                    ((org.telegram.ui.Cells.w) view).a();
-                    break;
+                int y10 = org.telegram.messenger.i20.y(248.0f, i11 - i7, 4);
+                for (int i13 = 0; i13 < 5; i13++) {
+                    int L = (y10 * i13) + org.telegram.messenger.g0.L((i13 * 48) + 4);
+                    int L2 = org.telegram.messenger.g0.L(9.0f);
+                    y7 y7Var = this.b;
+                    View view = y7Var.h2[i13];
+                    view.layout(L, L2, view.getMeasuredWidth() + L, y7Var.h2[i13].getMeasuredHeight() + L2);
                 }
                 break;
             case 1:
-                boolean z9 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.q5) {
-                    org.telegram.ui.Cells.q5 q5Var = (org.telegram.ui.Cells.q5) view;
-                    q5Var.y.d(q5Var);
-                    break;
-                }
+            default:
+                super.onLayout(z10, i7, i10, i11, i12);
                 break;
             case 2:
-                break;
-            case 3:
-                int i10 = zh.d.V1;
-                break;
-            default:
-                int i11 = zh.l.v2;
+                super.onLayout(z10, i7, i10, i11, i12);
+                y7 y7Var2 = this.b;
+                if (y7Var2.P1 != null && (textView = y7Var2.U1) != null) {
+                    int left = (textView.getLeft() - org.telegram.messenger.g0.L(4.0f)) - y7Var2.P1.getMeasuredWidth();
+                    org.telegram.ui.ActionBar.q0 q0Var = y7Var2.P1;
+                    q0Var.layout(left, q0Var.getTop(), y7Var2.P1.getMeasuredWidth() + left, y7Var2.P1.getBottom());
+                    break;
+                }
                 break;
         }
     }
 
-    private final void a(int i7, View view) {
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                y7 y7Var = this.b;
+                if (y7Var.c2.getTag() != null) {
+                    y7Var.W0(false, true);
+                }
+                return true;
+            case 2:
+                return true;
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
     }
 }

@@ -1,35 +1,15 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class kx {
-    public float a;
-    public float b;
-    public boolean c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public boolean h;
-    public boolean i;
-    public ch.d j;
-    public long k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public float o;
-    public int p;
-    public TLRPC.Document q;
-    public final ImageReceiver r;
-    public String s;
-
-    public kx() {
-        ImageReceiver imageReceiver = new ImageReceiver(null);
-        this.r = imageReceiver;
-        imageReceiver.z1 = true;
-        imageReceiver.b = true;
+public abstract class kx extends org.telegram.ui.ActionBar.e2 {
+    @Override // org.telegram.ui.ActionBar.e2
+    public final View createView(Context context) {
+        org.telegram.ui.Components.st0 st0Var = new org.telegram.ui.Components.st0(context, null);
+        this.fragmentView = st0Var;
+        return st0Var;
     }
 }

@@ -1,11 +1,11 @@
 package x2;
 
-import a8.ia;
+import a8.ja;
 import android.net.Uri;
 import java.util.Map;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s implements j2.h {
     public final j2.h a;
@@ -15,7 +15,7 @@ public final class s implements j2.h {
     public int e;
 
     public s(j2.h hVar, int i7, s0 s0Var) {
-        ia.f(i7 > 0);
+        ja.f(i7 > 0);
         this.a = hVar;
         this.b = i7;
         this.c = s0Var;
@@ -24,9 +24,9 @@ public final class s implements j2.h {
     }
 
     @Override // j2.h
-    public final void addTransferListener(j2.d0 d0Var) {
-        d0Var.getClass();
-        this.a.addTransferListener(d0Var);
+    public final void addTransferListener(j2.c0 c0Var) {
+        c0Var.getClass();
+        this.a.addTransferListener(c0Var);
     }
 
     @Override // j2.h
@@ -57,7 +57,7 @@ public final class s implements j2.h {
             byte[] bArr2 = this.d;
             int i12 = 0;
             if (hVar.read(bArr2, 0, 1) != -1) {
-                int i13 = (bArr2[0] & qs.e4) << 4;
+                int i13 = (bArr2[0] & ns.e4) << 4;
                 if (i13 != 0) {
                     byte[] bArr3 = new byte[i13];
                     int i14 = i13;
@@ -74,12 +74,12 @@ public final class s implements j2.h {
                     if (i13 > 0) {
                         h2.x xVar = new h2.x(bArr3, i13);
                         s0 s0Var = this.c;
-                        long max = !s0Var.x ? s0Var.r : Math.max(s0Var.y.s(true), s0Var.r);
+                        long max = !s0Var.x ? s0Var.r : Math.max(s0Var.y.v(true), s0Var.r);
                         int a10 = xVar.a();
-                        f3.j0 j0Var = s0Var.w;
-                        j0Var.getClass();
-                        j0Var.b(a10, xVar);
-                        j0Var.c(max, 1, a10, 0, null);
+                        f3.i0 i0Var = s0Var.w;
+                        i0Var.getClass();
+                        i0Var.b(a10, xVar);
+                        i0Var.c(max, 1, a10, 0, null);
                         s0Var.x = true;
                     }
                 }

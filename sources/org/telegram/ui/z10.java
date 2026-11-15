@@ -1,20 +1,27 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final class z10 extends v4.k {
-    public final /* synthetic */ f40 F;
+import org.telegram.tgnet.TLRPC;
 
-    public z10(f40 f40Var) {
-        this.F = f40Var;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class z10 extends q4 {
+    public final /* synthetic */ c40 V;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z10(c40 c40Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.V = c40Var;
     }
 
-    @Override // v4.k
-    public final void P(v4.d1 d1Var) {
-        f40 f40Var = this.F;
-        f40Var.K1.invalidate();
-        f40Var.U3.invalidate();
-        f40Var.b.invalidate();
-        f40.P0(f40Var);
+    @Override // org.telegram.ui.q4, org.telegram.ui.Components.rf0
+    public final void c() {
+        c40 c40Var = this.V;
+        org.telegram.messenger.c cVar = c40Var.o1;
+        a20 a20Var = c40Var.m1;
+        long dialogId = a20Var.getDialogId();
+        if (dialogId > 0) {
+            TLRPC.User a22 = org.telegram.messenger.np.s1(cVar.a).a2(Long.valueOf(dialogId));
+            a20Var.H(null, org.telegram.messenger.gc.m(cVar.a, 0, a22), org.telegram.messenger.gc.m(cVar.a, 1, a22), false);
+        }
     }
 }

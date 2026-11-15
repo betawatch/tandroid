@@ -1,77 +1,57 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
 import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tm0 implements org.telegram.ui.Components.s4, org.telegram.ui.Components.dj0, org.telegram.ui.ActionBar.e1, org.telegram.ui.ActionBar.r1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ an0 b;
+public final class tm0 implements org.telegram.ui.ActionBar.n0, org.telegram.ui.Components.xj0 {
+    public final /* synthetic */ ym0 a;
 
-    public /* synthetic */ tm0(an0 an0Var, int i7) {
-        this.a = i7;
-        this.b = an0Var;
+    public /* synthetic */ tm0(ym0 ym0Var) {
+        this.a = ym0Var;
     }
 
-    @Override // org.telegram.ui.Components.s4
-    public void L(int i7, int i10, boolean z9) {
-        switch (this.a) {
-            case 0:
-                this.b.j0(i7, z9);
-                break;
-            default:
-                this.b.j0(i7, z9);
-                break;
+    @Override // org.telegram.ui.Components.xj0
+    public void a(boolean z10) {
+        org.telegram.ui.ActionBar.o4 o4Var;
+        ym0 ym0Var = this.a;
+        ym0Var.X = z10 ? 1 : 0;
+        if (z10) {
+            o4Var = ((org.telegram.ui.ActionBar.e2) ym0Var).parentLayout;
+            o4Var.getView().requestDisallowInterceptTouchEvent(true);
         }
+        ym0Var.L.d1(true);
     }
 
-    @Override // org.telegram.ui.Components.dj0
-    public boolean c(int i7, View view) {
-        an0 an0Var = this.b;
-        if (an0Var.Y) {
-            an0Var.f0(view, an0Var.J.e.get(i7));
-            return true;
-        }
-        if (!(view instanceof org.telegram.ui.Cells.q5)) {
-            return false;
-        }
-        org.telegram.ui.Components.tj0 tj0Var = an0Var.V;
-        boolean z9 = !((org.telegram.ui.Cells.q5) view).a();
-        an0Var.X = z9;
-        tj0Var.d(i7, view, z9);
-        return false;
+    @Override // org.telegram.ui.Components.xj0
+    public boolean b(int i7) {
+        return this.a.M.d(i7) == 0;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        an0 an0Var = this.b;
-        bn0 bn0Var = an0Var.t0;
-        if (bn0Var == null) {
-            an0Var.e0();
-            return;
-        }
-        switch (bn0Var.a) {
-            case 1:
-                dn0 dn0Var = bn0Var.b;
-                dn0Var.a.e0();
-                dn0Var.b.e0();
-                break;
-            default:
-                dn0 dn0Var2 = bn0Var.b;
-                dn0Var2.a.e0();
-                dn0Var2.b.e0();
-                break;
+    @Override // org.telegram.ui.Components.xj0
+    public void d(View view, boolean z10) {
+        if (z10 == this.a.Y && (view instanceof org.telegram.ui.Cells.q5)) {
+            org.telegram.ui.Cells.q5 q5Var = (org.telegram.ui.Cells.q5) view;
+            q5Var.y.d(q5Var);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e1
-    public void j(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.g1 g1Var;
-        an0 an0Var = this.b;
-        an0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g1Var = an0Var.m0) != null && g1Var.isShowing()) {
-            an0Var.m0.d(true);
-        }
+    @Override // org.telegram.ui.Components.xj0
+    public boolean g(int i7) {
+        ym0 ym0Var = this.a;
+        org.telegram.messenger.ve veVar = ym0Var.K;
+        return ym0Var.b.containsKey(veVar != null ? Integer.valueOf(((org.telegram.messenger.ff) veVar.e.get(i7)).C) : ((org.telegram.messenger.jf) ym0Var.f.get(i7)).B);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n0
+    public void k() {
+        ym0 ym0Var = this.a;
+        ym0Var.R.setText(org.telegram.messenger.hd.M0(ym0Var.Z ? 2131745346 : 2131745345, null));
+        ym0Var.R.setIcon(ym0Var.Z ? R.drawable.msg_media : R.drawable.msg_list);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n0
+    public void i() {
     }
 }

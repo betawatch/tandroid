@@ -1,6 +1,6 @@
 package g2;
 
-import a8.ia;
+import a8.ja;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -8,12 +8,12 @@ import android.text.Layout;
 import android.text.Spanned;
 import android.text.SpannedString;
 import android.text.TextUtils;
-import h2.m0;
+import h2.l0;
 import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b {
     public static final String A;
@@ -57,7 +57,7 @@ public final class b {
 
     static {
         new b("", null, null, null, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
-        String str = m0.a;
+        String str = l0.a;
         s = Integer.toString(0, 36);
         t = Integer.toString(17, 36);
         u = Integer.toString(1, 36);
@@ -80,11 +80,11 @@ public final class b {
         L = Integer.toString(19, 36);
     }
 
-    public b(CharSequence charSequence, Layout.Alignment alignment, Layout.Alignment alignment2, Bitmap bitmap, float f10, int i7, int i10, float f11, int i11, int i12, float f12, float f13, float f14, boolean z9, int i13, int i14, float f15, int i15) {
+    public b(CharSequence charSequence, Layout.Alignment alignment, Layout.Alignment alignment2, Bitmap bitmap, float f10, int i7, int i10, float f11, int i11, int i12, float f12, float f13, float f14, boolean z10, int i13, int i14, float f15, int i15) {
         if (charSequence == null) {
             bitmap.getClass();
         } else {
-            ia.f(bitmap == null);
+            ja.f(bitmap == null);
         }
         if (charSequence instanceof Spanned) {
             this.a = SpannedString.valueOf(charSequence);
@@ -103,7 +103,7 @@ public final class b {
         this.i = i11;
         this.j = f13;
         this.k = f14;
-        this.l = z9;
+        this.l = z10;
         this.m = i13;
         this.n = i12;
         this.o = f12;
@@ -119,31 +119,31 @@ public final class b {
             bundle.putCharSequence(s, charSequence);
             if (charSequence instanceof Spanned) {
                 Spanned spanned = (Spanned) charSequence;
-                String str = e.a;
+                String str = d.a;
                 ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
+                for (f fVar : (f[]) spanned.getSpans(0, spanned.length(), f.class)) {
+                    fVar.getClass();
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putString(f.c, fVar.a);
+                    bundle2.putInt(f.d, fVar.b);
+                    arrayList.add(d.a(spanned, fVar, 1, bundle2));
+                }
                 for (g gVar : (g[]) spanned.getSpans(0, spanned.length(), g.class)) {
                     gVar.getClass();
-                    Bundle bundle2 = new Bundle();
-                    bundle2.putString(g.c, gVar.a);
-                    bundle2.putInt(g.d, gVar.b);
-                    arrayList.add(e.a(spanned, gVar, 1, bundle2));
+                    Bundle bundle3 = new Bundle();
+                    bundle3.putInt(g.d, gVar.a);
+                    bundle3.putInt(g.e, gVar.b);
+                    bundle3.putInt(g.f, gVar.c);
+                    arrayList.add(d.a(spanned, gVar, 2, bundle3));
+                }
+                for (e eVar : (e[]) spanned.getSpans(0, spanned.length(), e.class)) {
+                    arrayList.add(d.a(spanned, eVar, 3, null));
                 }
                 for (h hVar : (h[]) spanned.getSpans(0, spanned.length(), h.class)) {
                     hVar.getClass();
-                    Bundle bundle3 = new Bundle();
-                    bundle3.putInt(h.d, hVar.a);
-                    bundle3.putInt(h.e, hVar.b);
-                    bundle3.putInt(h.f, hVar.c);
-                    arrayList.add(e.a(spanned, hVar, 2, bundle3));
-                }
-                for (f fVar : (f[]) spanned.getSpans(0, spanned.length(), f.class)) {
-                    arrayList.add(e.a(spanned, fVar, 3, null));
-                }
-                for (i iVar : (i[]) spanned.getSpans(0, spanned.length(), i.class)) {
-                    iVar.getClass();
                     Bundle bundle4 = new Bundle();
-                    bundle4.putString(i.b, iVar.a);
-                    arrayList.add(e.a(spanned, iVar, 4, bundle4));
+                    bundle4.putString(h.b, hVar.a);
+                    arrayList.add(d.a(spanned, hVar, 4, bundle4));
                 }
                 if (!arrayList.isEmpty()) {
                     bundle.putParcelableArrayList(t, arrayList);

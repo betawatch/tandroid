@@ -1,75 +1,31 @@
 package fi;
 
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import java.net.Socket;
-import java.util.ArrayDeque;
-import java.util.TimerTask;
-import org.telegram.ui.Components.gp;
-import org.telegram.ui.hc0;
-import org.telegram.ui.hf0;
-import org.telegram.ui.kz;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class h2 extends TimerTask {
+public final class h2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ h2(Object obj, int i7) {
+    public /* synthetic */ h2(int i7, View view) {
         this.a = i7;
-        this.b = obj;
+        this.b = view;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        BasePendingResult basePendingResult;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new di.f8(this, 20));
+                org.telegram.messenger.g0.E2(this.b);
                 break;
             case 1:
-                h6.c cVar = (h6.c) this.b;
-                ArrayDeque arrayDeque = cVar.h;
-                if (!arrayDeque.isEmpty() && cVar.k == null && cVar.b != 0) {
-                    h6.h hVar = cVar.c;
-                    int[] e10 = j6.a.e(arrayDeque);
-                    hVar.getClass();
-                    q6.m.d("Must be called from the main thread.");
-                    if (hVar.w()) {
-                        h6.j jVar = new h6.j(hVar, e10);
-                        h6.h.x(jVar);
-                        basePendingResult = jVar;
-                    } else {
-                        basePendingResult = h6.h.t();
-                    }
-                    cVar.k = basePendingResult;
-                    basePendingResult.i(new h6.q(cVar, 1));
-                    arrayDeque.clear();
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.messenger.g0.h3(new gp(this, 22));
-                break;
-            case 3:
-                if (((hc0) this.b).N != null) {
-                    org.telegram.messenger.g0.h3(new kz(this, 25));
-                    break;
-                }
-                break;
-            case 4:
-                org.telegram.messenger.g0.h3(new hf0(this, 8));
+                org.telegram.messenger.g0.E2(this.b);
                 break;
             default:
-                try {
-                    Socket socket = ((rc.q) this.b).a.a.g;
-                    if (socket != null) {
-                        socket.close();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
-                }
+                this.b.setTranslationX(0.0f);
                 break;
         }
     }

@@ -1,131 +1,130 @@
 package hi;
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.p00;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.widget.FrameLayout;
+import org.telegram.messenger.gz;
+import org.telegram.messenger.qc;
+import org.telegram.messenger.z10;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.ft;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class e extends ug.q1 {
-    public final /* synthetic */ int r;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class e implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e(Context context, int i7) {
-        super(context);
-        this.r = i7;
+    public /* synthetic */ e(m mVar, int i7) {
+        this.a = i7;
+        this.b = mVar;
     }
 
-    @Override // ug.q1
-    public final void a() {
-        switch (this.r) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        m mVar = this.b;
+        switch (i7) {
             case 0:
-                super.a();
-                ug.p1 p1Var = this.a;
-                p1Var.q = true;
-                p1Var.K = false;
-                p1Var.L = true;
-                p1Var.H = true;
-                p1Var.c();
-                break;
-            case 1:
-                super.a();
-                ug.p1 p1Var2 = this.a;
-                p1Var2.q = true;
-                p1Var2.K = false;
-                p1Var2.L = true;
-                p1Var2.H = true;
-                p1Var2.c();
-                break;
-            case 2:
-                p00 p00Var = new p00(50);
-                this.a = p00Var;
-                p00Var.O = 100;
-                p00Var.M = false;
-                p00Var.G = false;
-                p00Var.K = true;
-                p00Var.H = true;
-                p00Var.J = false;
-                p00Var.r = 4;
-                p00Var.w = 0.98f;
-                p00Var.v = 0.98f;
-                p00Var.u = 0.98f;
-                p00Var.c();
-                break;
-            case 3:
-                ug.p1 p1Var3 = this.a;
-                p1Var3.q = true;
-                p1Var3.K = false;
-                p1Var3.H = true;
-                p1Var3.J = true;
-                p1Var3.k = org.telegram.messenger.g0.L(-14.0f);
-                ug.p1 p1Var4 = this.a;
-                p1Var4.x = 2000L;
-                p1Var4.y = 3000;
-                p1Var4.r = 16;
-                p1Var4.G = false;
-                p1Var4.O = 28;
-                p1Var4.Q = m6.Ak;
-                p1Var4.c();
-                break;
-            case 4:
-                ug.p1 p1Var5 = this.a;
-                p1Var5.q = true;
-                p1Var5.K = false;
-                p1Var5.H = true;
-                p1Var5.J = true;
-                p1Var5.k = org.telegram.messenger.g0.L(-14.0f);
-                ug.p1 p1Var6 = this.a;
-                p1Var6.x = 2000L;
-                p1Var6.y = 3000;
-                p1Var6.r = 16;
-                p1Var6.G = false;
-                p1Var6.O = 28;
-                p1Var6.Q = m6.Ak;
-                p1Var6.c();
+                mVar.t();
                 break;
             default:
-                super.a();
-                ug.p1 p1Var7 = this.a;
-                p1Var7.q = true;
-                p1Var7.K = false;
-                p1Var7.L = true;
-                p1Var7.H = true;
-                p1Var7.c();
-                break;
-        }
-    }
-
-    @Override // ug.q1
-    public int getStarsRectWidth() {
-        switch (this.r) {
-            case 0:
-                return getMeasuredWidth();
-            case 1:
-                return getMeasuredWidth();
-            case 2:
-                return getMeasuredWidth();
-            default:
-                return super.getStarsRectWidth();
-        }
-    }
-
-    @Override // ug.q1, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.r) {
-            case 3:
-                super.onMeasure(i7, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.g0.L(52.0f));
-                break;
-            case 4:
-                super.onMeasure(i7, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.g0.L(52.0f));
-                break;
-            case 5:
-                super.onMeasure(i7, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.g0.L(52.0f));
-                break;
-            default:
-                super.onMeasure(i7, i10);
+                boolean z10 = mVar.m0;
+                FrameLayout frameLayout = mVar.K;
+                j jVar = mVar.r;
+                g gVar = mVar.f;
+                if (mVar.p0 != z10) {
+                    mVar.p0 = z10;
+                    ValueAnimator valueAnimator = mVar.q0;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                        mVar.q0 = null;
+                    }
+                    z10 z10Var = mVar.k0;
+                    if (z10Var != null) {
+                        z10Var.a(Boolean.valueOf(z10));
+                    }
+                    mVar.d(z10);
+                    if (z10) {
+                        i iVar = mVar.N;
+                        if (iVar != null) {
+                            iVar.setVisibility(0);
+                        }
+                        jVar.setVisibility(0);
+                    } else {
+                        gVar.getEditText().scrollBy(0, -gVar.getEditText().getScrollY());
+                    }
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(mVar.o0, z10 ? 1.0f : 0.0f);
+                    mVar.q0 = ofFloat;
+                    ofFloat.addUpdateListener(new ah.h(mVar, 26));
+                    if (!z10) {
+                        gVar.getEditText().setAllowDrawCursor(false);
+                    }
+                    mVar.q0.addListener(new bi.v4(8, mVar, z10));
+                    if (z10) {
+                        mVar.q0.setInterpolator(org.telegram.ui.ActionBar.i1.w);
+                        mVar.q0.setDuration(250L);
+                    } else {
+                        mVar.q0.setInterpolator(new x1.a());
+                        mVar.q0.setDuration(420L);
+                    }
+                    mVar.q0.start();
+                    ft editText = gVar.getEditText();
+                    if (editText != null && editText.getLayout() != null) {
+                        ObjectAnimator objectAnimator = mVar.g0;
+                        if (objectAnimator != null) {
+                            objectAnimator.cancel();
+                        }
+                        int scrollY = editText.getScrollY();
+                        gVar.setSelection(z10 ? gVar.a.length() : 0);
+                        gVar.getEditText().setForceCursorEnd(false);
+                        ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", scrollY, z10 ? editText.getLayout().getLineTop(editText.getLineCount()) - ((editText.getHeight() - editText.getPaddingTop()) - editText.getPaddingBottom()) : 0);
+                        mVar.g0 = ofInt;
+                        ofInt.setDuration(360L);
+                        mVar.g0.setInterpolator(er.h);
+                        mVar.g0.start();
+                    }
+                    gVar.setSuggestionsEnabled(z10);
+                    if (!z10) {
+                        gVar.getEditText().j(false, true);
+                    }
+                    if (z10 && gz.o() >= 1 && !qc.f()) {
+                        if (mVar.r0 == null) {
+                            mVar.r0 = Bitmap.createBitmap((int) (frameLayout.getWidth() / 12.0f), (int) (frameLayout.getHeight() / 12.0f), Bitmap.Config.ARGB_8888);
+                        }
+                        mVar.y0 = true;
+                        mVar.i(mVar.r0);
+                        mVar.y0 = false;
+                        Bitmap bitmap = mVar.r0;
+                        if (bitmap != null && !bitmap.isRecycled()) {
+                            Bitmap bitmap2 = mVar.r0;
+                            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                            mVar.s0 = new BitmapShader(bitmap2, tileMode, tileMode);
+                            Matrix matrix = mVar.t0;
+                            if (matrix == null) {
+                                mVar.t0 = new Matrix();
+                            } else {
+                                matrix.reset();
+                            }
+                            mVar.s0.setLocalMatrix(mVar.t0);
+                            if (mVar.u0 == null) {
+                                Paint paint = new Paint(3);
+                                mVar.u0 = paint;
+                                paint.setColor(-1);
+                            }
+                            mVar.u0.setShader(mVar.s0);
+                            break;
+                        } else {
+                            mVar.r0 = null;
+                            break;
+                        }
+                    }
+                }
                 break;
         }
     }

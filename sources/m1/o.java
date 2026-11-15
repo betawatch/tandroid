@@ -2,17 +2,17 @@ package m1;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o extends kd.c {
     public /* synthetic */ Object a;
     public int b;
-    public final /* synthetic */ gb.a1 c;
+    public final /* synthetic */ gb.y0 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(gb.a1 a1Var, id.c cVar) {
+    public o(gb.y0 y0Var, id.c cVar) {
         super(cVar);
-        this.c = a1Var;
+        this.c = y0Var;
     }
 
     @Override // kd.a

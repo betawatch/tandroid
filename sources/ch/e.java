@@ -1,11 +1,12 @@
 package ch;
 
+import ai.v0;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.widget.ImageView;
-import org.telegram.messenger.c20;
+import org.telegram.messenger.z10;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class e extends ImageView {
     public long a;
@@ -20,7 +21,7 @@ public final class e extends ImageView {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        c20 c20Var;
+        z10 z10Var;
         int action = motionEvent.getAction();
         f fVar = this.b;
         if (action == 0) {
@@ -30,11 +31,11 @@ public final class e extends ImageView {
             this.a = System.currentTimeMillis();
             fVar.b = true;
             fVar.c = false;
-            org.telegram.messenger.g0.i3(new bg.m0(fVar, 350, 2), 350);
+            org.telegram.messenger.g0.i3(new v0(fVar, 350, 2), 350);
         } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
             fVar.b = false;
-            if (!fVar.c && (c20Var = fVar.d) != null) {
-                c20Var.a(Boolean.FALSE);
+            if (!fVar.c && (z10Var = fVar.d) != null) {
+                z10Var.a(Boolean.FALSE);
                 try {
                     fVar.a.performHapticFeedback(3);
                 } catch (Exception unused) {

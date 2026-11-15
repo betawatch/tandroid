@@ -1,95 +1,159 @@
 package org.telegram.ui.Components;
 
-import java.io.File;
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Build;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Dictation.DictationAsr;
+import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class tf extends org.telegram.ui.qq0 {
-    public boolean a;
-    public final /* synthetic */ org.telegram.messenger.gf b;
-    public final /* synthetic */ File c;
-    public final /* synthetic */ uf d;
+public final class tf implements Runnable {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public tf(uf ufVar, org.telegram.messenger.gf gfVar, File file) {
-        this.d = ufVar;
-        this.b = gfVar;
-        this.c = file;
+    public tf(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    public final void G() {
-        if (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.messenger.gj threadMessage;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        ke keVar = chatActivityEnterView.p4;
+        Activity activity = chatActivityEnterView.w3;
+        cg cgVar = chatActivityEnterView.H3;
+        if (cgVar == null || activity == null) {
             return;
         }
-        try {
-            this.c.delete();
-        } catch (Throwable unused) {
+        cgVar.E();
+        chatActivityEnterView.r4 = true;
+        int i7 = 0;
+        chatActivityEnterView.q4 = false;
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.S1;
+        if (slideTextView != null) {
+            slideTextView.setAlpha(1.0f);
+            chatActivityEnterView.S1.setTranslationY(0.0f);
         }
-    }
-
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
-    public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
-        org.telegram.messenger.ij threadMessage;
-        String str;
-        org.telegram.ui.cn cnVar;
-        ChatActivityEnterView chatActivityEnterView = this.d.Z1;
-        org.telegram.ui.sm smVar = chatActivityEnterView.V2;
-        if (smVar != null && (cnVar = chatActivityEnterView.P2) != null && smVar.f) {
-            cnVar.xc();
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        org.telegram.messenger.fz fzVar = new org.telegram.messenger.fz();
-        org.telegram.messenger.gf gfVar = this.b;
-        if (gfVar.b || (str = gfVar.h) == null) {
-            String str2 = gfVar.I;
-            if (str2 != null) {
-                fzVar.c = str2;
+        chatActivityEnterView.K3 = null;
+        chatActivityEnterView.J3 = null;
+        if (chatActivityEnterView.d1) {
+            boolean z10 = activity.checkSelfPermission("android.permission.RECORD_AUDIO") == 0;
+            boolean z11 = activity.checkSelfPermission("android.permission.CAMERA") == 0;
+            if (!z10 || !z11) {
+                String[] strArr = new String[(z10 || z11) ? 1 : 2];
+                if (!z10 && !z11) {
+                    strArr[0] = "android.permission.RECORD_AUDIO";
+                    strArr[1] = "android.permission.CAMERA";
+                } else if (z10) {
+                    strArr[0] = "android.permission.CAMERA";
+                } else {
+                    strArr[0] = "android.permission.RECORD_AUDIO";
+                }
+                activity.requestPermissions(strArr, org.telegram.messenger.ns.g2);
+                return;
             }
-        } else {
-            fzVar.c = str;
+            if (CameraController.getInstance().isCameraInitied()) {
+                keVar.run();
+            } else {
+                CameraController.getInstance().initCamera(keVar);
+            }
+            if (chatActivityEnterView.n3) {
+                return;
+            }
+            chatActivityEnterView.n3 = true;
+            chatActivityEnterView.f2(0, true);
+            ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.v2;
+            if (recordCircle != null) {
+                recordCircle.I = 0.5f;
+                recordCircle.J = false;
+            }
+            lg lgVar = chatActivityEnterView.Z0;
+            if (lgVar != null) {
+                lgVar.a = false;
+                lgVar.d = 0L;
+                lgVar.e = 0L;
+                lgVar.h = 0L;
+                lgVar.n = 0L;
+                lgVar.b = false;
+                return;
+            }
+            return;
         }
-        fzVar.e = gfVar.c;
-        fzVar.p = gfVar.d();
-        fzVar.o = gfVar.b;
-        fzVar.q = gfVar.j();
-        fzVar.z = gfVar.m;
-        fzVar.A = gfVar.P;
-        CharSequence charSequence = gfVar.a;
-        fzVar.d = charSequence != null ? charSequence.toString() : null;
-        fzVar.i = gfVar.n;
-        fzVar.j = gfVar.r;
-        fzVar.h = gfVar.x;
-        fzVar.k = j20Var;
-        fzVar.r = true;
-        arrayList.add(fzVar);
-        gfVar.e();
-        this.a = true;
-        boolean h = org.telegram.messenger.gz.h(fzVar.d);
-        org.telegram.messenger.c cVar = chatActivityEnterView.R;
-        org.telegram.messenger.nj njVar = null;
-        long j3 = chatActivityEnterView.Q2;
-        org.telegram.messenger.ij ijVar = chatActivityEnterView.T2;
+        int i10 = Build.VERSION.SDK_INT;
+        if (activity.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+            activity.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 3);
+            return;
+        }
+        chatActivityEnterView.H3.a1(1);
+        if (DictationAsr.B()) {
+            if (DictationAsr.x()) {
+                Context context = chatActivityEnterView.getContext();
+                if (i10 >= 33 && ai.d.c == 0 && !ai.d.d) {
+                    org.telegram.messenger.g0.h3(new ai.a(context.getApplicationContext(), i7));
+                }
+            }
+            ArrayList b10 = ai.t0.b(chatActivityEnterView.getContext(), chatActivityEnterView.y3);
+            android.support.v4.media.session.a0 P = DictationAsr.P(b10, true);
+            if (P != null) {
+                ai.s sVar = (ai.s) P.b;
+                long currentTimeMillis = System.currentTimeMillis();
+                SharedPreferences e12 = org.telegram.messenger.np.e1();
+                StringBuilder sb2 = new StringBuilder("tinyasr_checked_");
+                sb2.append(sVar.a);
+                boolean z12 = currentTimeMillis - e12.getLong(sb2.toString(), 0L) > 86400000;
+                boolean w10 = DictationAsr.w(sVar);
+                if (w10 && !sVar.g) {
+                    sVar.g = true;
+                    DictationAsr.d.execute(new ai.p(sVar, i7));
+                }
+                if ((w10 || ai.i1.b()) && (!w10 || z12)) {
+                    DictationAsr.t(sVar);
+                }
+                Context context2 = chatActivityEnterView.getContext();
+                ExecutorService executorService = DictationLid.a;
+                if (DictationAsr.v()) {
+                    DictationLid.d(context2);
+                }
+            } else {
+                Context context3 = chatActivityEnterView.getContext();
+                if (DictationLid.e(b10)) {
+                    DictationLid.d(context3);
+                }
+            }
+        }
+        chatActivityEnterView.l3 = -1.0f;
+        cg cgVar2 = chatActivityEnterView.H3;
+        TL_stories.StoryItem c12 = cgVar2 != null ? cgVar2.c1() : null;
+        MediaController B = MediaController.B();
+        int i11 = chatActivityEnterView.R;
+        long j3 = chatActivityEnterView.y3;
+        org.telegram.messenger.gj gjVar = chatActivityEnterView.B3;
         threadMessage = chatActivityEnterView.getThreadMessage();
-        org.telegram.ui.sm smVar2 = chatActivityEnterView.V2;
-        org.telegram.messenger.ij ijVar2 = chatActivityEnterView.Z1;
-        org.telegram.ui.cn cnVar2 = chatActivityEnterView.P2;
-        org.telegram.messenger.hw X8 = cnVar2 != null ? cnVar2.X8() : null;
-        long sendMonoForumPeerId = chatActivityEnterView.getSendMonoForumPeerId();
-        org.telegram.ui.cn cnVar3 = chatActivityEnterView.P2;
-        if (cnVar3 != null) {
-            njVar = cnVar3.w5;
+        int i12 = chatActivityEnterView.o3;
+        org.telegram.ui.an anVar = chatActivityEnterView.x3;
+        B.x0(i11, j3, gjVar, threadMessage, c12, i12, true, anVar != null ? anVar.Y8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+        chatActivityEnterView.n3 = true;
+        chatActivityEnterView.f2(0, true);
+        lg lgVar2 = chatActivityEnterView.Z0;
+        if (lgVar2 != null) {
+            lgVar2.a(0L);
         }
-        org.telegram.messenger.gz.X(cVar, arrayList, j3, ijVar, threadMessage, null, smVar2, false, false, ijVar2, null, z9, i10, i11, h, null, X8, 0L, false, 0L, sendMonoForumPeerId, njVar, null, false);
-        vf vfVar = chatActivityEnterView.Z2;
-        if (vfVar != null) {
-            vfVar.F(null, true, i10, i11, 0L);
+        ig igVar = chatActivityEnterView.T1;
+        if (igVar != null) {
+            igVar.e = false;
+        }
+        chatActivityEnterView.a1.getParent().requestDisallowInterceptTouchEvent(true);
+        ChatActivityEnterView.RecordCircle recordCircle2 = chatActivityEnterView.v2;
+        if (recordCircle2 != null) {
+            recordCircle2.I = 1.0f;
+            recordCircle2.J = true;
         }
     }
 }

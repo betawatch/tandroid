@@ -2,13 +2,13 @@ package dd;
 
 import java.util.Arrays;
 import java.util.Map;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l {
     public static final char[] r;
-    public static final int[] s = {8364, qs.N1, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, 352, 8249, qs.J5, qs.X1, 381, qs.Z1, qs.a2, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, qs.K5, qs.n2, 382, 376};
+    public static final int[] s = {8364, ns.N1, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, 352, 8249, ns.J5, ns.X1, 381, ns.Z1, ns.a2, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, ns.K5, ns.n2, 382, 376};
     public final a a;
     public final b b;
     public k d;
@@ -56,7 +56,7 @@ public final class l {
         b bVar = this.b;
         if (bVar.size() < 0) {
             a aVar = this.a;
-            bVar.add(new com.google.android.gms.internal.clearcut.z0(aVar.f + aVar.e, "Invalid character reference: %s", new Object[]{str}));
+            bVar.add(new com.google.android.gms.internal.clearcut.y0(aVar.f + aVar.e, "Invalid character reference: %s", new Object[]{str}));
         }
     }
 
@@ -67,7 +67,7 @@ public final class l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int[] c(Character ch2, boolean z9) {
+    public final int[] c(Character ch2, boolean z10) {
         int i7;
         char c10;
         int i10;
@@ -184,7 +184,7 @@ public final class l {
                 b("invalid named referenece '" + c18 + "'");
                 return null;
             }
-            if (z9 && (aVar.o() || ((!aVar.j() && (c11 = cArr[aVar.e]) >= '0' && c11 <= '9') || aVar.n('=', '-', '_')))) {
+            if (z10 && (aVar.o() || ((!aVar.j() && (c11 = cArr[aVar.e]) >= '0' && c11 <= '9') || aVar.n('=', '-', '_')))) {
                 aVar.e = aVar.g;
                 return null;
             }
@@ -219,9 +219,9 @@ public final class l {
         return null;
     }
 
-    public final j d(boolean z9) {
+    public final j d(boolean z10) {
         j jVar;
-        if (z9) {
+        if (z10) {
             jVar = this.j;
             jVar.b();
         } else {
@@ -258,10 +258,10 @@ public final class l {
         if (bVar.size() < 0) {
             a aVar = this.a;
             int i10 = aVar.f + aVar.e;
-            com.google.android.gms.internal.clearcut.z0 z0Var = new com.google.android.gms.internal.clearcut.z0(1);
-            z0Var.b = i10;
-            z0Var.c = "Attributes incorrectly present on end tag";
-            bVar.add(z0Var);
+            com.google.android.gms.internal.clearcut.y0 y0Var = new com.google.android.gms.internal.clearcut.y0(1);
+            y0Var.b = i10;
+            y0Var.c = "Attributes incorrectly present on end tag";
+            bVar.add(y0Var);
         }
     }
 
@@ -297,7 +297,7 @@ public final class l {
         b bVar = this.b;
         if (bVar.size() < 0) {
             a aVar = this.a;
-            bVar.add(new com.google.android.gms.internal.clearcut.z0(aVar.f + aVar.e, "Unexpectedly reached end of file (EOF) in input state [%s]", new Object[]{b2Var}));
+            bVar.add(new com.google.android.gms.internal.clearcut.y0(aVar.f + aVar.e, "Unexpectedly reached end of file (EOF) in input state [%s]", new Object[]{b2Var}));
         }
     }
 
@@ -305,7 +305,7 @@ public final class l {
         b bVar = this.b;
         if (bVar.size() < 0) {
             a aVar = this.a;
-            bVar.add(new com.google.android.gms.internal.clearcut.z0(aVar.f + aVar.e, "Unexpected character '%s' in input state [%s]", new Object[]{Character.valueOf(aVar.i()), b2Var}));
+            bVar.add(new com.google.android.gms.internal.clearcut.y0(aVar.f + aVar.e, "Unexpected character '%s' in input state [%s]", new Object[]{Character.valueOf(aVar.i()), b2Var}));
         }
     }
 

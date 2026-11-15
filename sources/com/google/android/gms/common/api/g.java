@@ -2,14 +2,14 @@ package com.google.android.gms.common.api;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import java.util.Arrays;
-import org.telegram.ui.Cells.f1;
+import org.telegram.ui.Cells.y0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g extends r6.a {
-    public static final Parcelable.Creator<g> CREATOR = t.b;
+    public static final Parcelable.Creator<g> CREATOR = u.b;
     public static final g d;
     public final h a;
     public final boolean b;
@@ -21,9 +21,9 @@ public final class g extends r6.a {
         d = gVar;
     }
 
-    public g(h hVar, boolean z9) {
+    public g(h hVar, boolean z10) {
         this.a = hVar;
-        this.b = z9;
+        this.b = z10;
     }
 
     public final boolean equals(Object obj) {
@@ -40,7 +40,7 @@ public final class g extends r6.a {
 
     public final String toString() {
         String valueOf = String.valueOf(this.a);
-        return f1.n("ApiMetadata(complianceOptions=", valueOf, ")", new StringBuilder(valueOf.length() + 31));
+        return y0.m("ApiMetadata(complianceOptions=", valueOf, ")", new StringBuilder(valueOf.length() + 31));
     }
 
     @Override // android.os.Parcelable
@@ -51,10 +51,10 @@ public final class g extends r6.a {
             return;
         }
         parcel.writeInt(-204102970);
-        int r10 = xb.r(parcel, 20293);
-        xb.k(parcel, 1, this.a, i7);
-        xb.q(parcel, 2, 4);
+        int r10 = yb.r(parcel, 20293);
+        yb.k(parcel, 1, this.a, i7);
+        yb.q(parcel, 2, 4);
         parcel.writeInt(this.b ? 1 : 0);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 }

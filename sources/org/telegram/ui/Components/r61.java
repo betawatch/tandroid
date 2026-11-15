@@ -1,17 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class r61 {
-    public int a;
-    public CharSequence b;
-    public int c;
+public final class r61 extends v4.k {
+    public final /* synthetic */ v61 F;
 
-    public final int a(TextPaint textPaint) {
-        int ceil = (int) Math.ceil(fi.m3.h(this.b, textPaint));
-        this.c = ceil;
-        return Math.max(0, ceil);
+    public r61(v61 v61Var) {
+        this.F = v61Var;
+    }
+
+    @Override // v4.k
+    public final void P(v4.e1 e1Var) {
+        this.F.invalidate();
     }
 }

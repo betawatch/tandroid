@@ -1,75 +1,38 @@
 package org.telegram.messenger;
 
-import android.util.Pair;
 import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class ef {
-    public final int a;
-    public TLRPC.TL_inputDocument b;
-    public long c = -9223372036854775807L;
-    public final ArrayList d = new ArrayList();
-    public final a e = new a(this, 19);
+public final /* synthetic */ class ef implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ff b;
 
-    public ef(int i7) {
+    public /* synthetic */ ef(ff ffVar, int i7) {
         this.a = i7;
+        this.b = ffVar;
     }
 
-    public static void a(ef efVar, long j3, long j10) {
-        ArrayList arrayList = efVar.d;
-        int i7 = 0;
-        while (i7 < arrayList.size() && ((Long) ((Pair) arrayList.get(i7)).first).longValue() <= j3) {
-            i7++;
-        }
-        arrayList.add(i7, new Pair(Long.valueOf(j3), Long.valueOf(j10)));
-        int max = Math.max(0, i7 - 1);
-        while (max < arrayList.size() - 1) {
-            Pair pair = (Pair) arrayList.get(max);
-            int i10 = max + 1;
-            Pair pair2 = (Pair) arrayList.get(i10);
-            if (((Long) pair.second).longValue() >= ((Long) pair2.first).longValue()) {
-                arrayList.set(max, new Pair((Long) pair.first, Long.valueOf(Math.max(((Long) pair.second).longValue(), ((Long) pair2.second).longValue()))));
-                arrayList.remove(i10);
-            } else {
-                max = i10;
-            }
-        }
-    }
-
-    public final void b() {
-        if (this.b == null) {
-            return;
-        }
-        d();
-        this.b = null;
-    }
-
-    public final long c() {
-        ArrayList arrayList = this.d;
-        int size = arrayList.size();
-        long j3 = 0;
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            Pair pair = (Pair) obj;
-            j3 += ((Long) pair.second).longValue() - ((Long) pair.first).longValue();
-        }
-        return j3;
-    }
-
-    public final void d() {
-        g0.r(this.e);
-        if (this.b != null && c() >= 3000) {
-            TLRPC.TL_messages_reportMusicListen tL_messages_reportMusicListen = new TLRPC.TL_messages_reportMusicListen();
-            tL_messages_reportMusicListen.id = this.b;
-            tL_messages_reportMusicListen.listened_duration = (int) Math.round(c() / 1000.0d);
-            ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_reportMusicListen, null);
-            this.c = -9223372036854775807L;
-            this.d.clear();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ff ffVar = this.b;
+                ffVar.d();
+                g0.h3(new ef(ffVar, 1));
+                break;
+            default:
+                ff ffVar2 = this.b;
+                ffVar2.X = false;
+                ArrayList arrayList = ffVar2.Y;
+                ffVar2.Y = null;
+                if (arrayList != null) {
+                    for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                        ((Runnable) arrayList.get(i7)).run();
+                    }
+                    break;
+                }
+                break;
         }
     }
 }

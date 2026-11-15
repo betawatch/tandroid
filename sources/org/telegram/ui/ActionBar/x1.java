@@ -1,159 +1,150 @@
 package org.telegram.ui.ActionBar;
 
-import android.R;
-import android.app.Activity;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.util.TypedValue;
-import android.view.ContextThemeWrapper;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
-import java.util.WeakHashMap;
-import org.telegram.messenger.a8;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.animation.DecelerateInterpolator;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class x1 extends u1 {
-    public static final int[] u1 = {R.attr.windowEnterAnimation, R.attr.windowExitAnimation};
-    public int k1;
-    public int l1;
-    public FrameLayout m1;
-    public ViewGroup n1;
-    public View o1;
-    public DialogInterface.OnShowListener p1;
-    public DialogInterface.OnDismissListener q1;
-    public boolean r1;
-    public long s1;
-    public final l2.a0 t1;
+public final class x1 extends Drawable {
+    public final Paint a;
+    public boolean b;
+    public long c;
+    public float d;
+    public float e;
+    public int f;
+    public final boolean g;
+    public final DecelerateInterpolator h;
+    public int i;
+    public int j;
+    public float k;
+    public int l;
 
-    public x1(int i7, Context context, h6 h6Var) {
-        super(i7, context, h6Var);
-        this.r1 = false;
-        this.s1 = 0L;
-        this.t1 = new l2.a0(this, 20);
+    public x1(boolean z10) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.h = new DecelerateInterpolator();
+        this.i = -1;
+        this.j = -9079435;
+        this.k = 300.0f;
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        paint2.setColor(-65536);
+        this.g = z10;
     }
 
-    public static Activity t(Context context) {
-        if (context instanceof Activity) {
-            return (Activity) context;
-        }
-        if (context instanceof ContextThemeWrapper) {
-            return t(((ContextThemeWrapper) context).getBaseContext());
-        }
-        return null;
+    public final void a(int i7) {
+        this.i = i7;
+        invalidateSelf();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0047  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0056  */
-    @Override // org.telegram.ui.ActionBar.u1, android.app.Dialog, android.content.DialogInterface
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void dismiss() {
-        Animation animation;
-        if (isShowing() && !this.r1) {
-            this.r1 = true;
-            org.telegram.messenger.g0.r(this.t1);
-            if (this.m1.getVisibility() != 0) {
-                u().removeView(this.m1);
-                return;
+    public final void b(int i7) {
+        this.j = i7;
+        invalidateSelf();
+    }
+
+    public final void c(boolean z10, float f10) {
+        this.c = 0L;
+        float f11 = this.e;
+        if (f11 == 1.0f) {
+            this.b = true;
+        } else if (f11 == 0.0f) {
+            this.b = false;
+        }
+        this.c = 0L;
+        if (z10) {
+            if (f11 < f10) {
+                this.f = (int) (f11 * this.k);
+            } else {
+                this.f = (int) ((1.0f - f11) * this.k);
             }
-            int i7 = this.l1;
-            if (i7 != 0 && i7 != -1) {
-                try {
-                    animation = AnimationUtils.loadAnimation(getContext(), i7);
-                } catch (Resources.NotFoundException e10) {
-                    a8.g(e10, true);
-                }
-                this.n1.clearAnimation();
-                if (animation == null) {
-                    animation.setAnimationListener(new androidx.mediarouter.app.f0(this, 1));
-                    this.n1.startAnimation(animation);
-                } else {
-                    this.n1.animate().cancel();
-                    this.n1.animate().setDuration(300L).alpha(0.0f).start();
-                }
-                this.o1.animate().setListener(null).cancel();
-                this.o1.animate().setDuration(300L).alpha(0.0f).setListener(new v1(this, 1)).start();
-            }
-            animation = null;
-            this.n1.clearAnimation();
-            if (animation == null) {
-            }
-            this.o1.animate().setListener(null).cancel();
-            this.o1.animate().setDuration(300L).alpha(0.0f).setListener(new v1(this, 1)).start();
-        }
-    }
-
-    @Override // android.app.Dialog
-    public final boolean isShowing() {
-        return (u().indexOfChild(this.m1) == -1 || this.r1) ? false : true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public final void r(long j3) {
-        if (isShowing()) {
-            return;
-        }
-        this.s1 = j3;
-        show();
-    }
-
-    @Override // android.app.Dialog
-    public final void setOnDismissListener(DialogInterface.OnDismissListener onDismissListener) {
-        this.q1 = onDismissListener;
-    }
-
-    @Override // android.app.Dialog
-    public final void setOnShowListener(DialogInterface.OnShowListener onShowListener) {
-        this.p1 = onShowListener;
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1, android.app.Dialog
-    public final void show() {
-        TypedValue typedValue = new TypedValue();
-        getContext().getTheme().resolveAttribute(R.attr.windowAnimationStyle, typedValue, true);
-        TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(typedValue.resourceId, u1);
-        this.k1 = obtainStyledAttributes.getResourceId(0, -1);
-        this.l1 = obtainStyledAttributes.getResourceId(1, -1);
-        obtainStyledAttributes.recycle();
-        this.j0 = true;
-        ViewGroup g10 = g(false);
-        this.n1 = g10;
-        g10.setClickable(true);
-        WindowManager.LayoutParams attributes = getWindow().getAttributes();
-        FrameLayout frameLayout = new FrameLayout(getContext());
-        frameLayout.setOnClickListener(new ii.g(this, 14));
-        View view = new View(getContext());
-        this.o1 = view;
-        view.setBackgroundColor(m6.r1(attributes.dimAmount, -16777216));
-        frameLayout.addView(this.o1, new FrameLayout.LayoutParams(-1, -1));
-        FrameLayout frameLayout2 = new FrameLayout(getContext());
-        frameLayout2.addView(this.n1, new FrameLayout.LayoutParams(-1, -2, 17));
-        frameLayout.addView(frameLayout2, new FrameLayout.LayoutParams(attributes.width, -2, 17));
-        this.m1 = frameLayout;
-        u().addView(this.m1);
-        FrameLayout frameLayout3 = this.m1;
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.y.c(frameLayout3);
-        r0.a0.i(this.m1, new bi.f(3, frameLayout2));
-        this.m1.setVisibility(4);
-        long j3 = this.s1;
-        l2.a0 a0Var = this.t1;
-        if (j3 == 0) {
-            a0Var.run();
+            this.c = System.currentTimeMillis();
+            this.d = f10;
         } else {
-            org.telegram.messenger.g0.i3(a0Var, j3);
+            this.e = f10;
+            this.d = f10;
         }
+        invalidateSelf();
     }
 
-    public final ViewGroup u() {
-        return (ViewGroup) t(getContext()).getWindow().getDecorView();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (this.e != this.d) {
+            if (this.c != 0) {
+                int currentTimeMillis = this.f + ((int) (System.currentTimeMillis() - this.c));
+                this.f = currentTimeMillis;
+                float f10 = currentTimeMillis;
+                float f11 = this.k;
+                if (f10 >= f11) {
+                    this.e = this.d;
+                } else {
+                    float f12 = this.e;
+                    float f13 = this.d;
+                    DecelerateInterpolator decelerateInterpolator = this.h;
+                    if (f12 < f13) {
+                        this.e = decelerateInterpolator.getInterpolation(f10 / f11) * this.d;
+                    } else {
+                        this.e = 1.0f - decelerateInterpolator.getInterpolation(f10 / f11);
+                    }
+                }
+            }
+            this.c = System.currentTimeMillis();
+            invalidateSelf();
+        }
+        int f14 = i0.a.f(this.e, this.i, this.j);
+        Paint paint = this.a;
+        paint.setColor(f14);
+        canvas.save();
+        canvas.translate(org.telegram.messenger.g0.L(24.0f) / 2.0f, org.telegram.messenger.g0.L(24.0f) / 2.0f);
+        int i7 = this.l;
+        if (i7 != 0) {
+            canvas.rotate(i7);
+        }
+        float f15 = this.e;
+        canvas.translate(-org.telegram.messenger.g0.L(0.66f), 0.0f);
+        if (this.g) {
+            canvas.rotate((this.e * (this.b ? -180 : ns.K2)) + 135.0f);
+            f15 = 1.0f;
+        } else {
+            canvas.rotate(this.e * (this.b ? -225 : ns.R1));
+        }
+        float f16 = 1.0f - f15;
+        canvas.drawLine(org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(-6.75f, -8.0f, f15)), 0.0f, org.telegram.messenger.g0.L(8.0f) - ((paint.getStrokeWidth() / 2.0f) * f16), 0.0f, paint);
+        float L = org.telegram.messenger.g0.L(-0.25f);
+        float L2 = org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(7.0f, 8.0f, f15)) - ((paint.getStrokeWidth() / 4.0f) * f16);
+        float L3 = org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(-7.25f, 0.0f, f15));
+        canvas.drawLine(L3, -L, 0.0f, -L2, paint);
+        canvas.drawLine(L3, L, 0.0f, L2, paint);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.a.setAlpha(i7);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

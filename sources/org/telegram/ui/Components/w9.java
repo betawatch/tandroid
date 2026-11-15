@@ -1,87 +1,120 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.graphics.Paint;
 import android.view.View;
-import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class w9 extends pj0 {
-    public int e3;
-    public int f3;
-    public boolean g3;
-    public int h3;
-    public boolean i3;
+public final class w9 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public final void A1() {
-        if (getLayoutParams() == null) {
-            return;
+    public /* synthetic */ w9(int i7, Object obj, Object obj2) {
+        this.a = i7;
+        this.c = obj;
+        this.b = obj2;
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        int i7 = this.a;
+        Object obj = this.b;
+        Object obj2 = this.c;
+        switch (i7) {
+            case 0:
+                u9 u9Var = (u9) obj;
+                if (u9Var != null) {
+                    u9Var.d.add((y9) obj2);
+                    break;
+                }
+                break;
+            case 1:
+                oy0 oy0Var = (oy0) obj2;
+                oy0Var.k = p5.update(oy0Var.l, (View) obj, oy0Var.k, oy0Var.b);
+                break;
+            default:
+                org.telegram.ui.Wallet.c4 c4Var = (org.telegram.ui.Wallet.c4) obj2;
+                org.telegram.ui.Wallet.b4 b4Var = c4Var.m;
+                if (b4Var != null) {
+                    b4Var.setPaused(!c4Var.n);
+                }
+                c4Var.a.isAttachedToWindow();
+                int i10 = c4Var.v0;
+                if (-1 != i10) {
+                    if (i10 >= 0) {
+                        org.telegram.messenger.ns.f(i10).n(c4Var.x0, 67);
+                    }
+                    c4Var.v0 = -1;
+                    break;
+                }
+                break;
         }
-        if (!org.telegram.messenger.iz.f()) {
-            this.e3 = 0;
-            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = 0;
-        } else {
-            this.e3 = z1();
-            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = -this.e3;
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        switch (this.a) {
+            case 0:
+                y9 y9Var = (y9) this.c;
+                u9 u9Var = (u9) this.b;
+                if (u9Var != null) {
+                    ArrayList arrayList = u9Var.d;
+                    arrayList.remove(y9Var);
+                    if (u9Var.e.isEmpty() && arrayList.isEmpty()) {
+                        u9Var.n.o();
+                    }
+                }
+                y9Var.n = null;
+                Paint paint = y9Var.h;
+                y9Var.o = null;
+                paint.setShader(null);
+                break;
+            case 1:
+                p5.release((View) this.b, ((oy0) this.c).k);
+                break;
+            default:
+                org.telegram.ui.Wallet.c4 c4Var = (org.telegram.ui.Wallet.c4) this.c;
+                org.telegram.ui.Cells.t0 t0Var = c4Var.a;
+                c4Var.f();
+                c4Var.M = false;
+                c4Var.N = 0L;
+                c4Var.k();
+                r1.g gVar = c4Var.Z;
+                if (gVar != null) {
+                    gVar.d();
+                    c4Var.Z = null;
+                }
+                c4Var.a0 = 1.0f;
+                t0Var.invalidate();
+                if (t0Var.getParent() instanceof View) {
+                    ((View) t0Var.getParent()).invalidate();
+                }
+                c4Var.l();
+                org.telegram.ui.Wallet.i6 i6Var = c4Var.k;
+                org.telegram.ui.Cells.t0 t0Var2 = (org.telegram.ui.Cells.t0) this.b;
+                WeakHashMap weakHashMap = i6Var.e;
+                weakHashMap.remove(t0Var2);
+                if (weakHashMap.isEmpty()) {
+                    i6Var.a();
+                }
+                t0Var.isAttachedToWindow();
+                int i7 = c4Var.v0;
+                if (-1 != i7) {
+                    if (i7 >= 0) {
+                        org.telegram.messenger.ns.f(i7).n(c4Var.x0, 67);
+                    }
+                    c4Var.v0 = -1;
+                }
+                org.telegram.ui.Wallet.b4 b4Var = c4Var.m;
+                if (b4Var != null) {
+                    b4Var.setPaused(true);
+                }
+                c4Var.l.stop();
+                c4Var.H = false;
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.pj0, eh.a
-    public final void d(Canvas canvas, RectF rectF) {
-        this.i3 = true;
-        super.d(canvas, rectF);
-        this.i3 = false;
-    }
-
-    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        if (this.e3 == 0 || Y0()) {
-            super.dispatchDraw(canvas);
-        } else {
-            canvas.clipRect(0, this.e3, getMeasuredWidth(), getMeasuredHeight() + this.h3);
-            super.dispatchDraw(canvas);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view.getY() + view.getMeasuredHeight() >= this.e3 || this.i3 || Y0()) {
-            return super.drawChild(canvas, view, j3);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        A1();
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public void onMeasure(int i7, int i10) {
-        this.g3 = true;
-        A1();
-        super.setPadding(getPaddingLeft(), this.f3 + this.e3, getPaddingRight(), getPaddingBottom());
-        this.g3 = false;
-        super.onMeasure(i7, i10);
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        if (this.g3) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // android.view.View
-    public final void setPadding(int i7, int i10, int i11, int i12) {
-        this.f3 = i10;
-        super.setPadding(i7, i10 + this.e3, i11, i12);
-    }
-
-    public int z1() {
-        return org.telegram.messenger.g0.L(203.0f);
     }
 }

@@ -1,10 +1,10 @@
 package org.telegram.tgnet;
 
-import org.telegram.messenger.d20;
+import org.telegram.messenger.a20;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u implements d20 {
+public final /* synthetic */ class u implements a20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ InputSerializedData b;
 
@@ -13,7 +13,7 @@ public final /* synthetic */ class u implements d20 {
         this.b = inputSerializedData;
     }
 
-    @Override // org.telegram.messenger.d20
+    @Override // org.telegram.messenger.a20
     public final Object a(Object obj) {
         int i7 = this.a;
         boolean booleanValue = ((Boolean) obj).booleanValue();

@@ -1,59 +1,40 @@
 package l2;
 
-import android.os.Bundle;
-import org.telegram.messenger.k9;
-import org.telegram.ui.Components.bc;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.me0;
+import h9.s1;
+import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements h2.o, p.a, k9, h2.j {
+public final /* synthetic */ class w implements h2.o, p4.a1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ List b;
 
-    public /* synthetic */ w(int i7, boolean z9) {
+    public /* synthetic */ w(int i7, s1 s1Var) {
         this.a = i7;
-        this.b = z9;
-    }
-
-    @Override // p.a
-    public bc a(gc gcVar) {
-        return gcVar.k(this.b);
-    }
-
-    @Override // h2.j
-    public void accept(Object obj) {
-        switch (this.a) {
-            case 4:
-                ((p4.g1) obj).X(this.b);
-                break;
-            case 5:
-                ((p4.g1) obj).r0(this.b);
-                break;
-            default:
-                ((p4.g1) obj).x(this.b);
-                break;
-        }
+        this.b = s1Var;
     }
 
     @Override // h2.o
     public void invoke(Object obj) {
         switch (this.a) {
             case 0:
-                ((e2.a1) obj).t(this.b);
+                ((e2.a1) obj).B(this.b);
                 break;
             default:
-                ((e2.a1) obj).f(this.b);
+                ((m2.b) obj).getClass();
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.k9
-    public Object j(Object obj) {
-        Bundle k10 = a8.p0.k("afterSignup", this.b);
-        me0 me0Var = new me0();
-        me0Var.r0(k10);
-        return me0Var;
+    @Override // p4.a1
+    public Object k(p4.d0 d0Var, p4.v vVar, int i7) {
+        switch (this.a) {
+        }
+        return d0Var.l(vVar, this.b);
+    }
+
+    public /* synthetic */ w(m2.a aVar, List list) {
+        this.a = 1;
+        this.b = list;
     }
 }

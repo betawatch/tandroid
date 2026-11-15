@@ -1,19 +1,18 @@
 package a3;
 
-import a8.ia;
+import a8.ja;
 import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Pair;
-import c8.e1;
+import c8.g1;
 import e2.m1;
 import e2.n1;
 import e2.o1;
-import e2.q1;
-import h2.m0;
+import h2.l0;
 import h9.i0;
-import h9.r1;
-import h9.t1;
+import h9.q1;
+import h9.s1;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -21,14 +20,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.RandomAccess;
-import l2.r0;
+import l2.o0;
 import org.telegram.tgnet.ConnectionsManager;
-import x2.p1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s extends x {
-    public static final r1 l = new h9.t(new c(1));
+    public static final q1 l = new h9.t(new c(1));
     public final Object d;
     public final Context e;
     public final nb.a f;
@@ -71,11 +69,11 @@ public final class s extends x {
     public static void d(w wVar, n nVar, t[] tVarArr) {
         int i7 = wVar.a;
         for (int i10 = 0; i10 < i7; i10++) {
-            p1 p1Var = wVar.c[i10];
+            x2.q1 q1Var = wVar.c[i10];
             Map map = (Map) nVar.D0.get(i10);
-            if (map != null && map.containsKey(p1Var)) {
+            if (map != null && map.containsKey(q1Var)) {
                 Map map2 = (Map) nVar.D0.get(i10);
-                if (map2 != null && map2.get(p1Var) != null) {
+                if (map2 != null && map2.get(q1Var) != null) {
                     throw new ClassCastException();
                 }
                 tVarArr[i10] = null;
@@ -94,10 +92,10 @@ public final class s extends x {
 
     public static void f(w wVar, n nVar, t[] tVarArr) {
         int i7 = wVar.a;
-        p1[] p1VarArr = wVar.c;
+        x2.q1[] q1VarArr = wVar.c;
         HashMap hashMap = new HashMap();
         for (int i10 = 0; i10 < i7; i10++) {
-            g(p1VarArr[i10], nVar, hashMap);
+            g(q1VarArr[i10], nVar, hashMap);
         }
         g(wVar.f, nVar, hashMap);
         for (int i11 = 0; i11 < i7; i11++) {
@@ -105,14 +103,14 @@ public final class s extends x {
             if (n1Var != null) {
                 m1 m1Var = n1Var.a;
                 i0 i0Var = n1Var.b;
-                tVarArr[i11] = (i0Var.isEmpty() || p1VarArr[i11].b(m1Var) == -1) ? null : new t(m1Var, e1.f(i0Var));
+                tVarArr[i11] = (i0Var.isEmpty() || q1VarArr[i11].b(m1Var) == -1) ? null : new t(m1Var, g1.f(i0Var));
             }
         }
     }
 
-    public static void g(p1 p1Var, q1 q1Var, HashMap hashMap) {
-        for (int i7 = 0; i7 < p1Var.a; i7++) {
-            n1 n1Var = (n1) q1Var.H.get(p1Var.a(i7));
+    public static void g(x2.q1 q1Var, e2.q1 q1Var2, HashMap hashMap) {
+        for (int i7 = 0; i7 < q1Var.a; i7++) {
+            n1 n1Var = (n1) q1Var2.H.get(q1Var.a(i7));
             if (n1Var != null) {
                 m1 m1Var = n1Var.a;
                 n1 n1Var2 = (n1) hashMap.get(Integer.valueOf(m1Var.c));
@@ -133,19 +131,19 @@ public final class s extends x {
         return null;
     }
 
-    public static int i(e2.u uVar, String str, boolean z9) {
+    public static int i(e2.u uVar, String str, boolean z10) {
         if (!TextUtils.isEmpty(str) && str.equals(uVar.d)) {
             return 4;
         }
         String l10 = l(str);
         String l11 = l(uVar.d);
         if (l11 == null || l10 == null) {
-            return (z9 && l11 == null) ? 1 : 0;
+            return (z10 && l11 == null) ? 1 : 0;
         }
         if (l11.startsWith(l10) || l10.startsWith(l11)) {
             return 3;
         }
-        String str2 = m0.a;
+        String str2 = l0.a;
         return l11.split("-", 2)[0].equals(l10.split("-", 2)[0]) ? 2 : 0;
     }
 
@@ -165,25 +163,25 @@ public final class s extends x {
             return false;
         }
         if (o1Var.b) {
-            boolean z9 = (uVar.N == 0 && uVar.O == 0) ? false : true;
-            boolean z10 = (i7 & 1024) != 0;
-            if (z9 && !z10) {
+            boolean z10 = (uVar.N == 0 && uVar.O == 0) ? false : true;
+            boolean z11 = (i7 & 1024) != 0;
+            if (z10 && !z11) {
                 return false;
             }
         }
         return true;
     }
 
-    public static t o(p1 p1Var, int[][] iArr, n nVar) {
+    public static t o(x2.q1 q1Var, int[][] iArr, n nVar) {
         if (nVar.w.a != 2) {
             int i7 = 0;
             m1 m1Var = null;
             k kVar = null;
-            for (int i10 = 0; i10 < p1Var.a; i10++) {
-                m1 a10 = p1Var.a(i10);
+            for (int i10 = 0; i10 < q1Var.a; i10++) {
+                m1 a10 = q1Var.a(i10);
                 int[] iArr2 = iArr[i10];
                 for (int i11 = 0; i11 < a10.a; i11++) {
-                    if (jg.g.c(iArr2[i11], nVar.B0)) {
+                    if (i5.c.b(iArr2[i11], nVar.B0)) {
                         k kVar2 = new k(a10.d[i11], iArr2[i11]);
                         if (kVar != null) {
                             if (h9.w.a.c(kVar2.b, kVar.b).c(kVar2.a, kVar.a).e() <= 0) {
@@ -211,15 +209,15 @@ public final class s extends x {
         int i12 = 0;
         while (i12 < i11) {
             if (i7 == wVar2.b[i12]) {
-                p1 p1Var = wVar2.c[i12];
-                for (int i13 = 0; i13 < p1Var.a; i13++) {
-                    m1 a10 = p1Var.a(i13);
-                    t1 h = pVar.h(i12, a10, iArr[i12][i13]);
+                x2.q1 q1Var = wVar2.c[i12];
+                for (int i13 = 0; i13 < q1Var.a; i13++) {
+                    m1 a10 = q1Var.a(i13);
+                    s1 f10 = pVar.f(i12, a10, iArr[i12][i13]);
                     int i14 = a10.a;
                     boolean[] zArr = new boolean[i14];
                     int i15 = 0;
                     while (i15 < i14) {
-                        q qVar = (q) h.get(i15);
+                        q qVar = (q) f10.get(i15);
                         int a11 = qVar.a();
                         if (zArr[i15] || a11 == 0) {
                             i10 = i11;
@@ -231,7 +229,7 @@ public final class s extends x {
                                 arrayList2.add(qVar);
                                 int i16 = i15 + 1;
                                 while (i16 < i14) {
-                                    q qVar2 = (q) h.get(i16);
+                                    q qVar2 = (q) f10.get(i16);
                                     int i17 = i11;
                                     if (qVar2.a() == 2 && qVar.b(qVar2)) {
                                         arrayList2.add(qVar2);
@@ -273,7 +271,7 @@ public final class s extends x {
             try {
                 Thread thread = this.h;
                 if (thread != null) {
-                    ia.o("DefaultTrackSelector is accessed on the wrong thread.", thread == Thread.currentThread());
+                    ja.o("DefaultTrackSelector is accessed on the wrong thread.", thread == Thread.currentThread());
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -288,7 +286,7 @@ public final class s extends x {
     }
 
     @Override // a3.x
-    public final void b(q1 q1Var) {
+    public final void b(e2.q1 q1Var) {
         if (q1Var instanceof n) {
             q((n) q1Var);
         }
@@ -306,20 +304,20 @@ public final class s extends x {
     }
 
     public final void k() {
-        boolean z9;
-        r0 r0Var;
+        boolean z10;
+        o0 o0Var;
         c3.d dVar;
         synchronized (this.d) {
             try {
-                z9 = this.g.A0 && Build.VERSION.SDK_INT >= 32 && (dVar = this.i) != null && dVar.b;
+                z10 = this.g.A0 && Build.VERSION.SDK_INT >= 32 && (dVar = this.i) != null && dVar.b;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        if (!z9 || (r0Var = this.a) == null) {
+        if (!z10 || (o0Var = this.a) == null) {
             return;
         }
-        r0Var.n.f(10);
+        o0Var.n.f(10);
     }
 
     public final void m() {
@@ -341,9 +339,9 @@ public final class s extends x {
         if (nVar.A0 && this.e == null) {
             h2.a.l("DefaultTrackSelector", "Audio channel count constraints cannot be applied without reference to Context. Build the track selector instance with one of the non-deprecated constructors that take a Context argument.");
         }
-        r0 r0Var = this.a;
-        if (r0Var != null) {
-            r0Var.n.f(10);
+        o0 o0Var = this.a;
+        if (o0Var != null) {
+            o0Var.n.f(10);
         }
     }
 }

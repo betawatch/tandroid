@@ -8,11 +8,11 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
-import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.messenger.hd;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class b extends ReplacementSpan {
     public final TextPaint a;
@@ -21,20 +21,20 @@ public final class b extends ReplacementSpan {
     public float d;
     public float e;
     public int f;
-    public final h6 h;
+    public final e6 h;
 
-    public b(h6 h6Var) {
+    public b(e6 e6Var) {
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;
         this.b = new RectF();
-        this.h = h6Var;
+        this.h = e6Var;
         textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        textPaint.setColor(m6.w0(m6.C6, h6Var));
+        textPaint.setColor(j6.w0(j6.C6, e6Var));
     }
 
     public final void a() {
         if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(id.M0(2131746408, null), this.a, org.telegram.messenger.g0.q.x, id.a0 ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            StaticLayout staticLayout = new StaticLayout(hd.M0(2131746408, null), this.a, org.telegram.messenger.g0.q.x, hd.a0 ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             this.c = staticLayout;
             this.d = staticLayout.getLineWidth(0);
             this.e = this.c.getHeight();
@@ -44,7 +44,7 @@ public final class b extends ReplacementSpan {
     @Override // android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
         a();
-        this.a.setColor(m6.w0(m6.C6, this.h));
+        this.a.setColor(j6.w0(j6.C6, this.h));
         Rect clipBounds = canvas.getClipBounds();
         RectF rectF = this.b;
         rectF.set(clipBounds);

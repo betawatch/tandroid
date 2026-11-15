@@ -1,112 +1,63 @@
 package fi;
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import bi.nd;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Timer;
-import org.telegram.messenger.ui;
-import org.telegram.tgnet.TLRPC;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class i2 extends f2 {
-    public ch.f0 i;
-    public ch.f0 j;
-    public int k;
-    public final org.telegram.ui.Components.v5 l;
-    public Timer m;
-    public final di.w8 n;
-    public final ArrayList o;
-    public final /* synthetic */ nd p;
+public final class i2 extends hi.e5 {
+    public final /* synthetic */ int d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i2(nd ndVar) {
-        super(ndVar);
-        this.p = ndVar;
-        this.i = new ch.f0(ndVar);
-        this.j = new ch.f0(ndVar);
-        this.l = new org.telegram.ui.Components.v5(ndVar);
-        this.n = new di.w8(ndVar);
-        this.o = new ArrayList();
-        this.a = 3;
-        this.b = org.telegram.messenger.g0.L(44.0f);
-        this.c = org.telegram.messenger.g0.L(36.0f);
-        k2 k2Var = (k2) ndVar.h;
-        int i7 = k2.B1;
-        ArrayList arrayList = ui.b0(k2Var.a).h;
-        for (int i10 = 0; i10 < Math.min(arrayList.size(), 8); i10++) {
-            this.o.add(ch.o0.c((TLRPC.TL_availableReaction) arrayList.get(i10)));
-        }
-        Collections.sort(this.o, new a3.c(26));
-        if (!this.o.isEmpty()) {
-            this.i.e((ch.o0) this.o.get(this.k));
-        }
-        this.l.e(true, 1.0f);
+    public /* synthetic */ i2(int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(2, e6Var);
+        this.d = i7;
     }
 
-    @Override // fi.f2
-    public final void a(Canvas canvas, float f10, float f11) {
-        float L = f11 - org.telegram.messenger.g0.L(4.0f);
-        float f12 = (int) f10;
-        float f13 = (int) L;
-        float f14 = this.b;
-        float f15 = (int) (f10 + f14);
-        float f16 = (int) (L + f14);
-        RectF rectF = this.f;
-        rectF.set(f12, f13, f15, f16);
-        float a10 = this.g.a(0.05f);
-        canvas.save();
-        canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
-        int i7 = (int) rectF.left;
-        int i10 = (int) rectF.top;
-        int i11 = (int) rectF.right;
-        int i12 = (int) rectF.bottom;
-        di.w8 w8Var = this.n;
-        w8Var.setBounds(i7, i10, i11, i12);
-        w8Var.draw(canvas);
-        float L2 = org.telegram.messenger.g0.L(30.0f);
-        Rect rect = org.telegram.messenger.g0.Q;
-        float f17 = L2 / 2.0f;
-        rect.set((int) (rectF.centerX() - f17), (int) (rectF.centerY() - f17), (int) (rectF.centerX() + f17), (int) (rectF.centerY() + f17));
-        float e10 = this.l.e(false, 1.0f);
-        this.j.c(rect);
-        this.i.c(rect);
-        if (e10 == 1.0f) {
-            this.i.a(canvas);
-        } else {
-            canvas.save();
-            float f18 = 1.0f - e10;
-            canvas.scale(f18, f18, rectF.centerX(), rectF.top);
-            ch.f0 f0Var = this.j;
-            f0Var.h = f18;
-            f0Var.a(canvas);
-            canvas.restore();
-            canvas.save();
-            canvas.scale(e10, e10, rectF.centerX(), rectF.bottom);
-            ch.f0 f0Var2 = this.i;
-            f0Var2.h = e10;
-            f0Var2.a(canvas);
-            canvas.restore();
-        }
-        canvas.restore();
-    }
-
-    @Override // fi.f2
-    public final void b(boolean z9) {
-        this.i.b(z9);
-        this.j.b(z9);
-        Timer timer = this.m;
-        if (timer != null) {
-            timer.cancel();
-            this.m = null;
-        }
-        if (z9) {
-            Timer timer2 = new Timer();
-            this.m = timer2;
-            timer2.schedule(new h2(this, 0), 2000L, 2000L);
+    @Override // hi.e5
+    public final void k() {
+        switch (this.d) {
+            case 0:
+                SparseIntArray sparseIntArray = (SparseIntArray) this.b;
+                sparseIntArray.append(org.telegram.ui.ActionBar.j6.h5, -14737633);
+                sparseIntArray.append(org.telegram.ui.ActionBar.j6.a7, -13421773);
+                break;
+            case 1:
+                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.j6.zf, -1071635414);
+                break;
+            case 2:
+                SparseIntArray sparseIntArray2 = (SparseIntArray) this.b;
+                sparseIntArray2.put(org.telegram.ui.ActionBar.j6.zf, i0.a.f(0.2f, -16777216, -1));
+                sparseIntArray2.put(org.telegram.ui.ActionBar.j6.Oe, i0.a.f(0.5f, -16777216, -1));
+                break;
+            case 3:
+                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.j6.zf, i0.a.o(-1, 30));
+                break;
+            case 4:
+                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.j6.zf, i0.a.o(-1, 30));
+                break;
+            case 5:
+                SparseIntArray sparseIntArray3 = (SparseIntArray) this.b;
+                sparseIntArray3.append(org.telegram.ui.ActionBar.j6.h5, -14803426);
+                sparseIntArray3.append(org.telegram.ui.ActionBar.j6.a7, -16777216);
+                break;
+            case 6:
+                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.j6.zf, i0.a.o(-1, 30));
+                break;
+            case 7:
+                SparseIntArray sparseIntArray4 = (SparseIntArray) this.b;
+                sparseIntArray4.append(org.telegram.ui.ActionBar.j6.h5, -14737633);
+                sparseIntArray4.append(org.telegram.ui.ActionBar.j6.a7, -13421773);
+                break;
+            case 8:
+                SparseIntArray sparseIntArray5 = (SparseIntArray) this.b;
+                sparseIntArray5.append(org.telegram.ui.ActionBar.j6.h5, -14803426);
+                sparseIntArray5.append(org.telegram.ui.ActionBar.j6.a7, -16777216);
+                break;
+            default:
+                SparseIntArray sparseIntArray6 = (SparseIntArray) this.b;
+                sparseIntArray6.append(org.telegram.ui.ActionBar.j6.h5, -14803426);
+                sparseIntArray6.append(org.telegram.ui.ActionBar.j6.a7, -16777216);
+                break;
         }
     }
 }

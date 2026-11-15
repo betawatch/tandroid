@@ -7,13 +7,13 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Trace;
 import c8.he;
-import c8.j0;
+import c8.k0;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final a0.j a = new a0.j(16);
@@ -77,9 +77,9 @@ public abstract class g {
                 }
                 if (list2.size() <= 1 || Build.VERSION.SDK_INT < 29) {
                     h[] hVarArr = (h[]) list2.get(0);
-                    j0 j0Var = i0.e.a;
+                    k0 k0Var = i0.f.a;
                     he.a("TypefaceCompat.createFromFontInfo");
-                    b10 = i0.e.a.b(context, hVarArr, i7);
+                    b10 = i0.f.a.b(context, hVarArr, i7);
                     Trace.endSection();
                     if (b10 != null) {
                         return new f(-3);
@@ -87,9 +87,9 @@ public abstract class g {
                     jVar.b(str, b10);
                     return new f(b10);
                 }
-                j0 j0Var2 = i0.e.a;
+                k0 k0Var2 = i0.f.a;
                 he.a("TypefaceCompat.createFromFontInfoWithFallback");
-                b10 = i0.e.a.c(context, list2, i7);
+                b10 = i0.f.a.c(context, list2, i7);
                 Trace.endSection();
                 if (b10 != null) {
                 }

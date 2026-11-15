@@ -1,27 +1,65 @@
 package u9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import a8.p0;
+import c8.tc;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i {
-    public final r a;
-    public final boolean b;
+    public final q a;
+    public final int b;
+    public final int c;
 
-    public i(r rVar, boolean z9) {
-        this.a = rVar;
-        this.b = z9;
+    public i(int i7, int i10, Class cls) {
+        this(q.a(cls), i7, i10);
+    }
+
+    public static i a(Class cls) {
+        return new i(1, 0, cls);
+    }
+
+    public static i b(q qVar) {
+        return new i(qVar, 1, 0);
     }
 
     public final boolean equals(Object obj) {
-        if (obj instanceof i) {
-            i iVar = (i) obj;
-            if (iVar.a.equals(this.a) && iVar.b == this.b) {
-                return true;
-            }
+        if (!(obj instanceof i)) {
+            return false;
         }
-        return false;
+        i iVar = (i) obj;
+        return this.a.equals(iVar.a) && this.b == iVar.b && this.c == iVar.c;
     }
 
     public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ Boolean.valueOf(this.b).hashCode();
+        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ this.c;
+    }
+
+    public final String toString() {
+        String str;
+        StringBuilder sb2 = new StringBuilder("Dependency{anInterface=");
+        sb2.append(this.a);
+        sb2.append(", type=");
+        int i7 = this.b;
+        sb2.append(i7 == 1 ? "required" : i7 == 0 ? "optional" : "set");
+        sb2.append(", injection=");
+        int i10 = this.c;
+        if (i10 == 0) {
+            str = "direct";
+        } else if (i10 == 1) {
+            str = "provider";
+        } else {
+            if (i10 != 2) {
+                throw new AssertionError(i5.c.i(i10, "Unsupported injection: "));
+            }
+            str = "deferred";
+        }
+        return p0.s(sb2, str, "}");
+    }
+
+    public i(q qVar, int i7, int i10) {
+        tc.a(qVar, "Null dependency anInterface.");
+        this.a = qVar;
+        this.b = i7;
+        this.c = i10;
     }
 }

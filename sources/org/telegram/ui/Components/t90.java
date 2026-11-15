@@ -1,85 +1,34 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t90 implements View.OnClickListener {
+public final /* synthetic */ class t90 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ FrameLayout c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ da0 b;
+    public final /* synthetic */ Context c;
 
-    public /* synthetic */ t90(FrameLayout frameLayout, boolean z9, Object obj, Object obj2, Object obj3, int i7) {
+    public /* synthetic */ t90(da0 da0Var, Context context, int i7) {
         this.a = i7;
-        this.c = frameLayout;
-        this.b = z9;
-        this.d = obj;
-        this.e = obj2;
-        this.f = obj3;
+        this.b = da0Var;
+        this.c = context;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        boolean z9 = this.b;
-        FrameLayout frameLayout = this.c;
-        int i10 = 0;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                ca0 ca0Var = (ca0) frameLayout;
-                Context context = (Context) obj3;
-                ha0 ha0Var = (ha0) obj2;
-                ha0 ha0Var2 = (ha0) obj;
-                ia0 ia0Var = ca0Var.c0;
-                org.telegram.messenger.mj mjVar = ia0Var.d;
-                if (!z9) {
-                    new gc(ia0Var, ia0Var.F).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131750583, null), new r90(ca0Var, context, i10))).j();
-                    break;
-                } else {
-                    boolean z10 = mjVar.k;
-                    mjVar.k = !z10;
-                    ia0Var.y = false;
-                    if (z10) {
-                        mjVar.l = false;
-                        if (ha0Var != null) {
-                            ha0Var.a(false, true);
-                        }
-                    }
-                    ha0Var2.a(mjVar.k, true);
-                    ca0Var.i();
-                    ca0Var.l(true);
-                    break;
-                }
+                da0 da0Var = this.b;
+                da0Var.d0.a(false);
+                org.telegram.messenger.g0.h3(new t90(da0Var, this.c, 1));
+                break;
             default:
-                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
-                k60 k60Var = (k60) obj;
-                up0 up0Var = ((zh.z1) frameLayout).a;
-                if (z9) {
-                    up0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
-                    gc.a0(up0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131750037, bi.k7.z1(savedStarGift.gift), tL_starGiftCollection.title))).j();
-                } else {
-                    bi.t9 t9Var = up0Var.e;
-                    int i11 = tL_starGiftCollection.collection_id;
-                    t9Var.getClass();
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(savedStarGift);
-                    t9Var.a(i11, arrayList);
-                    gc.a0(up0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131750393, bi.k7.z1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                Context context = this.c;
+                if (org.telegram.messenger.g0.E1(context)) {
+                    new ug.x0(43, context, this.b.d0.G).show();
+                    break;
                 }
-                k60Var.u();
-                up0Var.o();
                 break;
         }
     }

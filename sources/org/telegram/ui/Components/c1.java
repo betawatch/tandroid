@@ -1,38 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1 b;
-    public final /* synthetic */ Context c;
+    public final /* synthetic */ ArrayList b;
 
-    public /* synthetic */ c1(int i7, Context context, org.telegram.ui.ActionBar.u1 u1Var) {
+    public /* synthetic */ c1(int i7, ArrayList arrayList) {
         this.a = i7;
-        this.b = u1Var;
-        this.c = context;
+        this.b = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        Context context = this.c;
-        org.telegram.ui.ActionBar.u1 u1Var = this.b;
-        switch (i7) {
+        org.telegram.ui.ActionBar.e2 Q;
+        switch (this.a) {
             case 0:
-                if (u1Var != null) {
-                    u1Var.dismiss();
+                if (this.b != null && (Q = LaunchActivity.Q()) != null) {
+                    org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2();
+                    c2Var.a = true;
+                    Q.showAsSheet(new PrivacyControlActivity(11, false), c2Var);
+                    break;
                 }
-                vf.c.t(context, org.telegram.messenger.id.M0(2131752895, null));
                 break;
             default:
-                if (u1Var != null) {
-                    u1Var.dismiss();
+                int i7 = 0;
+                while (true) {
+                    ArrayList arrayList = this.b;
+                    if (i7 >= arrayList.size()) {
+                        break;
+                    } else {
+                        ((View) arrayList.get(i7)).setVisibility(8);
+                        if (arrayList.get(i7) instanceof org.telegram.ui.Cells.q1) {
+                            ((org.telegram.ui.Cells.q1) arrayList.get(i7)).k3(false, false);
+                            ((org.telegram.ui.Cells.q1) arrayList.get(i7)).m3(false, false, false);
+                        }
+                        i7++;
+                    }
                 }
-                vf.c.t(context, org.telegram.messenger.id.M0(2131752895, null));
-                break;
         }
     }
 }

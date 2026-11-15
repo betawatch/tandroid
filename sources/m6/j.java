@@ -12,7 +12,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import m9.u;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -57,12 +57,12 @@ public final /* synthetic */ class j implements Runnable {
                     bundle.putBundle("data", mVar.d);
                     obtain.setData(bundle);
                     try {
-                        j2.n nVar2 = lVar.c;
-                        Messenger messenger2 = (Messenger) nVar2.b;
+                        k8.a aVar = lVar.c;
+                        Messenger messenger2 = (Messenger) aVar.b;
                         if (messenger2 != null) {
                             messenger2.send(obtain);
                         } else {
-                            g gVar = (g) nVar2.c;
+                            g gVar = (g) aVar.c;
                             if (gVar == null) {
                                 throw new IllegalStateException("Both messengers are null");
                             }

@@ -1,31 +1,45 @@
 package di;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout b;
+public final /* synthetic */ class u3 implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ u3(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int i7) {
-        this.a = i7;
-        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
+    public /* synthetic */ u3(c6 c6Var, boolean z10, TLRPC.Document document, boolean z11, TL_stars.saveStarGift savestargift) {
+        this.d = c6Var;
+        this.b = z10;
+        this.e = document;
+        this.c = z11;
+        this.f = savestargift;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.b;
-                if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
-                    break;
-                }
+                org.telegram.messenger.g0.h3(new x1((c6) this.d, tLObject, this.b, (TLRPC.Document) this.e, this.c, tL_error, (TL_stars.saveStarGift) this.f));
                 break;
             default:
-                org.telegram.messenger.g0.v1(this.b);
+                org.telegram.messenger.g0.h3(new x1((zh.l) this.d, this.b, (Runnable) this.e, (String) this.f, tL_error, tLObject, this.c));
                 break;
         }
+    }
+
+    public /* synthetic */ u3(zh.l lVar, boolean z10, zh.e eVar, String str, boolean z11) {
+        this.d = lVar;
+        this.b = z10;
+        this.e = eVar;
+        this.f = str;
+        this.c = z11;
     }
 }

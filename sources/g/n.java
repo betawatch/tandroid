@@ -1,5 +1,6 @@
 package g;
 
+import ab.c0;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.AttributeSet;
@@ -27,7 +28,7 @@ import org.telegram.messenger.beta.R;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n implements Window.Callback {
     public final Window.Callback a;
@@ -72,9 +73,9 @@ public final class n implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        boolean z9 = this.c;
+        boolean z10 = this.c;
         Window.Callback callback = this.a;
-        return z9 ? callback.dispatchKeyEvent(keyEvent) : this.e.i(keyEvent) || callback.dispatchKeyEvent(keyEvent);
+        return z10 ? callback.dispatchKeyEvent(keyEvent) : this.e.j(keyEvent) || callback.dispatchKeyEvent(keyEvent);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x0066, code lost:
@@ -91,15 +92,15 @@ public final class n implements Window.Callback {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean dispatchKeyShortcutEvent(KeyEvent keyEvent) {
-        boolean z9;
+        boolean z10;
         l.k kVar;
         boolean performShortcut;
         if (!this.a.dispatchKeyShortcutEvent(keyEvent)) {
             int keyCode = keyEvent.getKeyCode();
             s sVar = this.e;
-            b0 p10 = sVar.p();
-            if (p10 != null) {
-                a0 a0Var = p10.i;
+            b0 r10 = sVar.r();
+            if (r10 != null) {
+                a0 a0Var = r10.i;
                 if (a0Var == null || (kVar = a0Var.d) == null) {
                     performShortcut = false;
                 } else {
@@ -107,26 +108,26 @@ public final class n implements Window.Callback {
                     performShortcut = kVar.performShortcut(keyCode, keyEvent, 0);
                 }
             }
-            r rVar = sVar.V;
-            if (rVar == null || !sVar.t(rVar, keyEvent.getKeyCode(), keyEvent)) {
-                if (sVar.V == null) {
-                    r o4 = sVar.o(0);
-                    sVar.u(o4, keyEvent);
-                    boolean t6 = sVar.t(o4, keyEvent.getKeyCode(), keyEvent);
-                    o4.k = false;
+            r rVar = sVar.W;
+            if (rVar == null || !sVar.v(rVar, keyEvent.getKeyCode(), keyEvent)) {
+                if (sVar.W == null) {
+                    r q10 = sVar.q(0);
+                    sVar.w(q10, keyEvent);
+                    boolean v = sVar.v(q10, keyEvent.getKeyCode(), keyEvent);
+                    q10.k = false;
                 }
-                z9 = false;
-                if (z9) {
+                z10 = false;
+                if (z10) {
                     return false;
                 }
             } else {
-                r rVar2 = sVar.V;
+                r rVar2 = sVar.W;
                 if (rVar2 != null) {
                     rVar2.l = true;
                 }
             }
-            z9 = true;
-            if (z9) {
+            z10 = true;
+            if (z10) {
             }
         }
         return true;
@@ -194,12 +195,12 @@ public final class n implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final boolean onMenuOpened(int i7, Menu menu) {
-        b0 p10;
+        b0 r10;
         b(i7, menu);
-        if (i7 == 108 && (p10 = this.e.p()) != null) {
-            ArrayList arrayList = p10.m;
-            if (true != p10.l) {
-                p10.l = true;
+        if (i7 == 108 && (r10 = this.e.r()) != null) {
+            ArrayList arrayList = r10.m;
+            if (true != r10.l) {
+                r10.l = true;
                 if (arrayList.size() > 0) {
                     arrayList.get(0).getClass();
                     throw new ClassCastException();
@@ -219,20 +220,20 @@ public final class n implements Window.Callback {
         s sVar = this.e;
         if (i7 != 108) {
             if (i7 == 0) {
-                r o4 = sVar.o(i7);
-                if (o4.m) {
-                    sVar.h(o4, false);
+                r q10 = sVar.q(i7);
+                if (q10.m) {
+                    sVar.h(q10, false);
                     return;
                 }
                 return;
             }
             return;
         }
-        b0 p10 = sVar.p();
-        if (p10 != null) {
-            ArrayList arrayList = p10.m;
-            if (p10.l) {
-                p10.l = false;
+        b0 r10 = sVar.r();
+        if (r10 != null) {
+            ArrayList arrayList = r10.m;
+            if (r10.l) {
+                r10.l = false;
                 if (arrayList.size() <= 0) {
                     return;
                 }
@@ -243,8 +244,8 @@ public final class n implements Window.Callback {
     }
 
     @Override // android.view.Window.Callback
-    public final void onPointerCaptureChanged(boolean z9) {
-        k.l.a(this.a, z9);
+    public final void onPointerCaptureChanged(boolean z10) {
+        k.l.a(this.a, z10);
     }
 
     @Override // android.view.Window.Callback
@@ -265,7 +266,7 @@ public final class n implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final void onProvideKeyboardShortcuts(List list, Menu menu, int i7) {
-        l.k kVar = this.e.o(0).h;
+        l.k kVar = this.e.q(0).h;
         if (kVar != null) {
             d(list, kVar, i7);
         } else {
@@ -284,8 +285,8 @@ public final class n implements Window.Callback {
     }
 
     @Override // android.view.Window.Callback
-    public final void onWindowFocusChanged(boolean z9) {
-        this.a.onWindowFocusChanged(z9);
+    public final void onWindowFocusChanged(boolean z10) {
+        this.a.onWindowFocusChanged(z10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:60:0x01b9  */
@@ -296,33 +297,33 @@ public final class n implements Window.Callback {
     public final ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i7) {
         ViewGroup viewGroup;
         s sVar = this.e;
-        if (!sVar.H || i7 != 0) {
+        if (!sVar.I || i7 != 0) {
             return k.j.b(this.a, callback, i7);
         }
         Context context = sVar.e;
-        ui.e eVar = new ui.e(context, callback);
+        c0 c0Var = new c0(context, callback);
         k.a aVar = sVar.y;
         if (aVar != null) {
             aVar.b();
         }
-        q4.q qVar = new q4.q(23, sVar, eVar);
-        b0 p10 = sVar.p();
-        if (p10 != null) {
-            a0 a0Var = p10.i;
+        q4.q qVar = new q4.q(21, sVar, c0Var);
+        b0 r10 = sVar.r();
+        if (r10 != null) {
+            a0 a0Var = r10.i;
             if (a0Var != null) {
                 a0Var.b();
             }
-            p10.c.setHideOnContentScrollEnabled(false);
-            p10.f.e();
-            a0 a0Var2 = new a0(p10, p10.f.getContext(), qVar);
+            r10.c.setHideOnContentScrollEnabled(false);
+            r10.f.e();
+            a0 a0Var2 = new a0(r10, r10.f.getContext(), qVar);
             l.k kVar = a0Var2.d;
             kVar.w();
             try {
-                if (((ui.e) a0Var2.e.b).O(a0Var2, kVar)) {
-                    p10.i = a0Var2;
+                if (((c0) a0Var2.e.b).E(a0Var2, kVar)) {
+                    r10.i = a0Var2;
                     a0Var2.h();
-                    p10.f.c(a0Var2);
-                    p10.a(true);
+                    r10.f.c(a0Var2);
+                    r10.a(true);
                 } else {
                     a0Var2 = null;
                 }
@@ -332,7 +333,7 @@ public final class n implements Window.Callback {
             }
         }
         if (sVar.y == null) {
-            l0 l0Var = sVar.G;
+            l0 l0Var = sVar.H;
             if (l0Var != null) {
                 l0Var.b();
             }
@@ -340,8 +341,8 @@ public final class n implements Window.Callback {
             if (aVar2 != null) {
                 aVar2.b();
             }
-            if (sVar.D == null) {
-                if (sVar.R) {
+            if (sVar.E == null) {
+                if (sVar.S) {
                     TypedValue typedValue = new TypedValue();
                     Resources.Theme theme = context.getTheme();
                     theme.resolveAttribute(R.attr.actionBarTheme, typedValue, true);
@@ -353,32 +354,32 @@ public final class n implements Window.Callback {
                         cVar.getTheme().setTo(newTheme);
                         context = cVar;
                     }
-                    sVar.D = new ActionBarContextView(context);
+                    sVar.E = new ActionBarContextView(context);
                     PopupWindow popupWindow = new PopupWindow(context, (AttributeSet) null, R.attr.actionModePopupWindowStyle);
-                    sVar.E = popupWindow;
+                    sVar.F = popupWindow;
                     popupWindow.setWindowLayoutType(2);
-                    sVar.E.setContentView(sVar.D);
-                    sVar.E.setWidth(-1);
+                    sVar.F.setContentView(sVar.E);
+                    sVar.F.setWidth(-1);
                     context.getTheme().resolveAttribute(R.attr.actionBarSize, typedValue, true);
-                    sVar.D.setContentHeight(TypedValue.complexToDimensionPixelSize(typedValue.data, context.getResources().getDisplayMetrics()));
-                    sVar.E.setHeight(-2);
-                    sVar.F = new h(sVar, 1);
+                    sVar.E.setContentHeight(TypedValue.complexToDimensionPixelSize(typedValue.data, context.getResources().getDisplayMetrics()));
+                    sVar.F.setHeight(-2);
+                    sVar.G = new h(sVar, 1);
                 } else {
-                    ViewStubCompat viewStubCompat = (ViewStubCompat) sVar.J.findViewById(R.id.action_mode_bar_stub);
+                    ViewStubCompat viewStubCompat = (ViewStubCompat) sVar.K.findViewById(R.id.action_mode_bar_stub);
                     if (viewStubCompat != null) {
-                        viewStubCompat.setLayoutInflater(LayoutInflater.from(sVar.m()));
-                        sVar.D = (ActionBarContextView) viewStubCompat.a();
+                        viewStubCompat.setLayoutInflater(LayoutInflater.from(sVar.n()));
+                        sVar.E = (ActionBarContextView) viewStubCompat.a();
                     }
                 }
             }
-            if (sVar.D != null) {
-                l0 l0Var2 = sVar.G;
+            if (sVar.E != null) {
+                l0 l0Var2 = sVar.H;
                 if (l0Var2 != null) {
                     l0Var2.b();
                 }
-                sVar.D.e();
-                Context context2 = sVar.D.getContext();
-                ActionBarContextView actionBarContextView = sVar.D;
+                sVar.E.e();
+                Context context2 = sVar.E.getContext();
+                ActionBarContextView actionBarContextView = sVar.E;
                 k.d dVar = new k.d();
                 dVar.c = context2;
                 dVar.d = actionBarContextView;
@@ -387,43 +388,43 @@ public final class n implements Window.Callback {
                 kVar2.l = 1;
                 dVar.n = kVar2;
                 kVar2.e = dVar;
-                if (eVar.O(dVar, kVar2)) {
+                if (c0Var.E(dVar, kVar2)) {
                     dVar.h();
-                    sVar.D.c(dVar);
+                    sVar.E.c(dVar);
                     sVar.y = dVar;
-                    if (sVar.I && (viewGroup = sVar.J) != null) {
+                    if (sVar.J && (viewGroup = sVar.K) != null) {
                         WeakHashMap weakHashMap = i0.a;
                         if (viewGroup.isLaidOut()) {
-                            sVar.D.setAlpha(0.0f);
-                            l0 a10 = i0.a(sVar.D);
+                            sVar.E.setAlpha(0.0f);
+                            l0 a10 = i0.a(sVar.E);
                             a10.a(1.0f);
-                            sVar.G = a10;
+                            sVar.H = a10;
                             a10.d(new j(sVar, 1));
-                            if (sVar.E != null) {
-                                sVar.f.getDecorView().post(sVar.F);
+                            if (sVar.F != null) {
+                                sVar.f.getDecorView().post(sVar.G);
                             }
                         }
                     }
-                    sVar.D.setAlpha(1.0f);
-                    sVar.D.setVisibility(0);
-                    if (sVar.D.getParent() instanceof View) {
-                        View view = (View) sVar.D.getParent();
+                    sVar.E.setAlpha(1.0f);
+                    sVar.E.setVisibility(0);
+                    if (sVar.E.getParent() instanceof View) {
+                        View view = (View) sVar.E.getParent();
                         WeakHashMap weakHashMap2 = i0.a;
                         r0.y.c(view);
                     }
-                    if (sVar.E != null) {
+                    if (sVar.F != null) {
                     }
                 } else {
                     sVar.y = null;
                 }
             }
-            sVar.w();
+            sVar.y();
             sVar.y = sVar.y;
         }
-        sVar.w();
+        sVar.y();
         k.a aVar3 = sVar.y;
         if (aVar3 != null) {
-            return eVar.r(aVar3);
+            return c0Var.m(aVar3);
         }
         return null;
     }

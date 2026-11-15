@@ -9,9 +9,9 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.km;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g implements d, w5.c, c {
     public static final l5.c f = new l5.c("proto");
@@ -108,12 +108,12 @@ public final class g implements d, w5.c, c {
         if (b10 == null) {
             return arrayList;
         }
-        h(sQLiteDatabase.query("events", new String[]{"_id", "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline", "product_id", "pseudonymous_id", "experiment_ids_clear_blob", "experiment_ids_encrypted_blob"}, "context_id = ?", new String[]{b10.toString()}, null, null, null, String.valueOf(i7)), new gr(this, arrayList, iVar, 14));
+        h(sQLiteDatabase.query("events", new String[]{"_id", "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline", "product_id", "pseudonymous_id", "experiment_ids_clear_blob", "experiment_ids_encrypted_blob"}, "context_id = ?", new String[]{b10.toString()}, null, null, null, String.valueOf(i7)), new km(this, arrayList, iVar, 15));
         return arrayList;
     }
 
     public final void e(long j3, r5.c cVar, String str) {
-        c(new bi.i(str, cVar, j3, 10));
+        c(new di.h(str, cVar, j3, 10));
     }
 
     public final Object f(w5.b bVar) {
@@ -124,9 +124,9 @@ public final class g implements d, w5.c, c {
             try {
                 a10.beginTransaction();
                 try {
-                    Object h = bVar.h();
+                    Object g10 = bVar.g();
                     a10.setTransactionSuccessful();
-                    return h;
+                    return g10;
                 } finally {
                     a10.endTransaction();
                 }

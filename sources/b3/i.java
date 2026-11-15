@@ -1,21 +1,21 @@
 package b3;
 
-import a8.ia;
+import a8.ja;
 import h2.x;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i {
     public final int a;
     public final long b;
 
-    public /* synthetic */ i(int i7, long j3, boolean z9) {
+    public /* synthetic */ i(int i7, long j3, boolean z10) {
         this.a = i7;
         this.b = j3;
     }
 
     public static i b(f3.p pVar, x xVar) {
-        pVar.b(0, 8, xVar.a);
+        pVar.c(0, 8, xVar.a);
         xVar.N(0);
         return new i(xVar.m(), xVar.r(), false);
     }
@@ -26,7 +26,7 @@ public final class i {
     }
 
     public i(int i7, long j3) {
-        ia.f(j3 >= 0);
+        ja.f(j3 >= 0);
         this.a = i7;
         this.b = j3;
     }

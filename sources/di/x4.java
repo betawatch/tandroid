@@ -1,29 +1,101 @@
 package di;
 
-import android.text.TextUtils;
-import j$.util.Objects;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class x4 {
-    public boolean a = true;
-    public boolean b;
-    public String c;
+public final class x4 extends Drawable {
+    public Drawable g;
+    public int h;
+    public int i;
+    public final Paint b = new Paint(1);
+    public final Shader[] c = new Shader[2];
+    public final Matrix d = new Matrix();
+    public final org.telegram.ui.Components.u5 e = new org.telegram.ui.Components.u5(1.0f, new ch.w(this, 18), 0, 420, er.h);
+    public final RectF f = new RectF();
+    public final int a = 1;
 
-    public final boolean equals(Object obj) {
-        if (this != obj) {
-            if (obj != null && x4.class == obj.getClass()) {
-                x4 x4Var = (x4) obj;
-                boolean z9 = (TextUtils.isEmpty(this.c) && TextUtils.isEmpty(x4Var.c)) || Objects.equals(this.c, x4Var.c);
-                if (this.a != x4Var.a || this.b != x4Var.b || !z9) {
-                }
-            }
-            return false;
+    public final void a(int i7, int i10) {
+        if (this.h == i7 && this.i == i10) {
+            return;
         }
-        return true;
+        Shader[] shaderArr = this.c;
+        shaderArr[0] = shaderArr[1];
+        if (this.a == 0) {
+            this.h = i7;
+            this.i = i10;
+            shaderArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        } else {
+            float L = org.telegram.messenger.g0.L(340.0f);
+            this.h = i7;
+            this.i = i10;
+            shaderArr[1] = new RadialGradient(0.0f, 0.0f, L, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        }
+        this.e.e(true, 0.0f);
+        invalidateSelf();
     }
 
-    public final int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.a), Boolean.valueOf(this.b), this.c);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        RectF rectF = this.f;
+        rectF.set(bounds);
+        rectF.right = rectF.width() + rectF.left;
+        int i7 = 0;
+        float e10 = this.e.e(false, 1.0f);
+        while (true) {
+            Shader[] shaderArr = this.c;
+            if (i7 >= shaderArr.length) {
+                break;
+            }
+            if (shaderArr[i7] != null) {
+                float pow = (float) Math.pow(1.0f - Math.abs(i7 - e10), 0.25d);
+                if (pow > 0.0f) {
+                    Matrix matrix = this.d;
+                    matrix.reset();
+                    if (this.a == 1) {
+                        matrix.postTranslate(rectF.centerX(), org.telegram.messenger.g0.L(145.0f));
+                    } else {
+                        matrix.postScale(getBounds().width() / 100.0f, 1.0f);
+                    }
+                    shaderArr[i7].setLocalMatrix(matrix);
+                    Shader shader = shaderArr[i7];
+                    Paint paint = this.b;
+                    paint.setShader(shader);
+                    paint.setAlpha((int) (pow * 255.0f));
+                    canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
+                }
+            }
+            i7++;
+        }
+        if (this.g != null) {
+            canvas.save();
+            canvas.translate(rectF.centerX(), org.telegram.messenger.g0.L(145.0f));
+            w0.a(canvas, 0, this.g, rectF.width(), org.telegram.messenger.g0.L(290.0f), 2.0f, 1.0f);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

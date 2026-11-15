@@ -1,53 +1,64 @@
 package jg;
 
-import java.util.ArrayList;
-import org.telegram.messenger.qp;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.is;
+import org.telegram.messenger.np;
+import org.telegram.ui.Components.ly;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class d1 implements Runnable {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ a0.h e;
-    public final /* synthetic */ qp f;
-    public final /* synthetic */ i1 h;
+public final class d1 {
+    public final int a;
+    public final long b;
+    public final long c;
+    public boolean e;
+    public final /* synthetic */ int g;
+    public final /* synthetic */ is h;
+    public boolean d = false;
+    public long f = -1;
 
-    public d1(i1 i1Var, TLRPC.Chat chat, String str, long j3, ArrayList arrayList, a0.h hVar, qp qpVar) {
-        this.h = i1Var;
-        this.a = chat;
-        this.b = str;
-        this.c = j3;
-        this.d = arrayList;
-        this.e = hVar;
-        this.f = qpVar;
+    public d1(is isVar, int i7, long j3, long j10, int i10) {
+        this.g = i10;
+        this.h = isVar;
+        this.a = i7;
+        this.b = j3;
+        this.c = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        i1 i1Var = this.h;
-        if (i1Var.E != this) {
+    public final void a() {
+        boolean N;
+        switch (this.g) {
+            case 0:
+                N = ((h1) this.h).N();
+                break;
+            default:
+                ly lyVar = (ly) this.h;
+                if (lyVar.u1 == null || lyVar.getVisibility() != 0 || !lyVar.L0) {
+                    N = false;
+                    break;
+                } else {
+                    N = true;
+                    break;
+                }
+        }
+        this.d = N;
+        if (N) {
             return;
         }
-        TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-        tL_channels_getParticipants.channel = qp.i1(this.a);
-        tL_channels_getParticipants.limit = 20;
-        tL_channels_getParticipants.offset = 0;
-        TLRPC.TL_channelParticipantsMentions tL_channelParticipantsMentions = new TLRPC.TL_channelParticipantsMentions();
-        int i7 = tL_channelParticipantsMentions.flags;
-        tL_channelParticipantsMentions.flags = i7 | 1;
-        tL_channelParticipantsMentions.q = this.b;
-        long j3 = this.c;
-        if (j3 != 0) {
-            tL_channelParticipantsMentions.flags = i7 | 3;
-            tL_channelParticipantsMentions.top_msg_id = (int) j3;
+        if (this.e) {
+            np.s1(this.a).D4(2, 0, this.b, this.c, null);
         }
-        tL_channels_getParticipants.filter = tL_channelParticipantsMentions;
-        int i10 = i1Var.i0 + 1;
-        i1Var.i0 = i10;
-        i1Var.j0 = ConnectionsManager.getInstance(i1Var.f).sendRequest(tL_channels_getParticipants, new bg.k0(this, i10, this.d, this.e, this.f, 4));
+        this.f = -1L;
+    }
+
+    public final void b() {
+        if (this.d) {
+            if (this.f == -1) {
+                this.f = System.currentTimeMillis();
+            } else if (System.currentTimeMillis() - this.f > 2000) {
+                this.e = true;
+                this.f = System.currentTimeMillis();
+                np.s1(this.a).D4(10, 0, this.b, this.c, null);
+            }
+        }
     }
 }

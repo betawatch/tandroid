@@ -7,9 +7,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class HevcDecoderConfigurationRecord {
     int avgFrameRate;
@@ -40,7 +40,7 @@ public class HevcDecoderConfigurationRecord {
     int reserved5 = 31;
     List<Array> arrays = new ArrayList();
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class Array {
         public boolean array_completeness;
         public List<byte[]> nalUnits;
@@ -87,7 +87,7 @@ public class HevcDecoderConfigurationRecord {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class H265NalUnitHeader {
         public int forbiddenZeroFlag;
         public int nalUnitType;
@@ -333,7 +333,7 @@ public class HevcDecoderConfigurationRecord {
     public void parse(ByteBuffer byteBuffer) {
         this.configurationVersion = h5.b.k(byteBuffer);
         int a10 = h5.b.a(byteBuffer.get());
-        this.general_profile_space = (a10 & qs.W2) >> 6;
+        this.general_profile_space = (a10 & ns.W2) >> 6;
         this.general_tier_flag = (a10 & 32) > 0;
         this.general_profile_idc = a10 & 31;
         this.general_profile_compatibility_flags = h5.b.i(byteBuffer);
@@ -353,20 +353,20 @@ public class HevcDecoderConfigurationRecord {
         this.reserved1 = (61440 & h7) >> 12;
         this.min_spatial_segmentation_idc = h7 & 4095;
         int a11 = h5.b.a(byteBuffer.get());
-        this.reserved2 = (a11 & qs.b4) >> 2;
+        this.reserved2 = (a11 & ns.b4) >> 2;
         this.parallelismType = a11 & 3;
         int a12 = h5.b.a(byteBuffer.get());
-        this.reserved3 = (a12 & qs.b4) >> 2;
+        this.reserved3 = (a12 & ns.b4) >> 2;
         this.chromaFormat = a12 & 3;
         int a13 = h5.b.a(byteBuffer.get());
-        this.reserved4 = (a13 & qs.X3) >> 3;
+        this.reserved4 = (a13 & ns.X3) >> 3;
         this.bitDepthLumaMinus8 = a13 & 7;
         int a14 = h5.b.a(byteBuffer.get());
-        this.reserved5 = (a14 & qs.X3) >> 3;
+        this.reserved5 = (a14 & ns.X3) >> 3;
         this.bitDepthChromaMinus8 = a14 & 7;
         this.avgFrameRate = h5.b.h(byteBuffer);
         int a15 = h5.b.a(byteBuffer.get());
-        this.constantFrameRate = (a15 & qs.W2) >> 6;
+        this.constantFrameRate = (a15 & ns.W2) >> 6;
         this.numTemporalLayers = (a15 & 56) >> 3;
         this.temporalIdNested = (a15 & 4) > 0;
         this.lengthSizeMinusOne = a15 & 3;
@@ -417,8 +417,8 @@ public class HevcDecoderConfigurationRecord {
         this.constantFrameRate = i7;
     }
 
-    public void setFrame_only_constraint_flag(boolean z9) {
-        this.frame_only_constraint_flag = z9;
+    public void setFrame_only_constraint_flag(boolean z10) {
+        this.frame_only_constraint_flag = z10;
     }
 
     public void setGeneral_constraint_indicator_flags(long j3) {
@@ -441,12 +441,12 @@ public class HevcDecoderConfigurationRecord {
         this.general_profile_space = i7;
     }
 
-    public void setGeneral_tier_flag(boolean z9) {
-        this.general_tier_flag = z9;
+    public void setGeneral_tier_flag(boolean z10) {
+        this.general_tier_flag = z10;
     }
 
-    public void setInterlaced_source_flag(boolean z9) {
-        this.interlaced_source_flag = z9;
+    public void setInterlaced_source_flag(boolean z10) {
+        this.interlaced_source_flag = z10;
     }
 
     public void setLengthSizeMinusOne(int i7) {
@@ -457,8 +457,8 @@ public class HevcDecoderConfigurationRecord {
         this.min_spatial_segmentation_idc = i7;
     }
 
-    public void setNon_packed_constraint_flag(boolean z9) {
-        this.non_packed_constraint_flag = z9;
+    public void setNon_packed_constraint_flag(boolean z10) {
+        this.non_packed_constraint_flag = z10;
     }
 
     public void setNumTemporalLayers(int i7) {
@@ -469,12 +469,12 @@ public class HevcDecoderConfigurationRecord {
         this.parallelismType = i7;
     }
 
-    public void setProgressive_source_flag(boolean z9) {
-        this.progressive_source_flag = z9;
+    public void setProgressive_source_flag(boolean z10) {
+        this.progressive_source_flag = z10;
     }
 
-    public void setTemporalIdNested(boolean z9) {
-        this.temporalIdNested = z9;
+    public void setTemporalIdNested(boolean z10) {
+        this.temporalIdNested = z10;
     }
 
     public String toString() {
@@ -553,7 +553,7 @@ public class HevcDecoderConfigurationRecord {
 
     public void write(ByteBuffer byteBuffer) {
         h5.b.r(this.configurationVersion, byteBuffer);
-        byteBuffer.put((byte) (((this.general_profile_space << 6) + (this.general_tier_flag ? 32 : 0) + this.general_profile_idc) & qs.e4));
+        byteBuffer.put((byte) (((this.general_profile_space << 6) + (this.general_tier_flag ? 32 : 0) + this.general_profile_idc) & ns.e4));
         byteBuffer.putInt((int) this.general_profile_compatibility_flags);
         long j3 = this.general_constraint_indicator_flags;
         if (this.frame_only_constraint_flag) {
@@ -570,17 +570,17 @@ public class HevcDecoderConfigurationRecord {
         }
         h5.b.p((int) ((281474976710655L & j3) >> 32), byteBuffer);
         byteBuffer.putInt((int) (j3 & 4294967295L));
-        byteBuffer.put((byte) (this.general_level_idc & qs.e4));
+        byteBuffer.put((byte) (this.general_level_idc & ns.e4));
         h5.b.p((this.reserved1 << 12) + this.min_spatial_segmentation_idc, byteBuffer);
-        byteBuffer.put((byte) (((this.reserved2 << 2) + this.parallelismType) & qs.e4));
-        byteBuffer.put((byte) (((this.reserved3 << 2) + this.chromaFormat) & qs.e4));
-        byteBuffer.put((byte) (((this.reserved4 << 3) + this.bitDepthLumaMinus8) & qs.e4));
-        byteBuffer.put((byte) (((this.reserved5 << 3) + this.bitDepthChromaMinus8) & qs.e4));
+        byteBuffer.put((byte) (((this.reserved2 << 2) + this.parallelismType) & ns.e4));
+        byteBuffer.put((byte) (((this.reserved3 << 2) + this.chromaFormat) & ns.e4));
+        byteBuffer.put((byte) (((this.reserved4 << 3) + this.bitDepthLumaMinus8) & ns.e4));
+        byteBuffer.put((byte) (((this.reserved5 << 3) + this.bitDepthChromaMinus8) & ns.e4));
         h5.b.p(this.avgFrameRate, byteBuffer);
-        byteBuffer.put((byte) (((this.constantFrameRate << 6) + (this.numTemporalLayers << 3) + (this.temporalIdNested ? 4 : 0) + this.lengthSizeMinusOne) & qs.e4));
-        byteBuffer.put((byte) (this.arrays.size() & qs.e4));
+        byteBuffer.put((byte) (((this.constantFrameRate << 6) + (this.numTemporalLayers << 3) + (this.temporalIdNested ? 4 : 0) + this.lengthSizeMinusOne) & ns.e4));
+        byteBuffer.put((byte) (this.arrays.size() & ns.e4));
         for (Array array : this.arrays) {
-            byteBuffer.put((byte) (((array.array_completeness ? 128 : 0) + (array.reserved ? 64 : 0) + array.nal_unit_type) & qs.e4));
+            byteBuffer.put((byte) (((array.array_completeness ? 128 : 0) + (array.reserved ? 64 : 0) + array.nal_unit_type) & ns.e4));
             h5.b.p(array.nalUnits.size(), byteBuffer);
             for (byte[] bArr : array.nalUnits) {
                 h5.b.p(bArr.length, byteBuffer);

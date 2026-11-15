@@ -1,153 +1,70 @@
 package bi;
 
-import android.animation.ValueAnimator;
-import android.graphics.RectF;
-import android.opengl.Matrix;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.Components.wq;
+import di.v8;
+import di.xa;
+import org.telegram.messenger.np;
+import org.telegram.messenger.s10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.e70;
+import org.telegram.ui.Components.ja;
+import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class v5 {
-    public final w5 a;
-    public ai.d0 d;
-    public int f;
-    public int g;
-    public float j;
-    public float k;
-    public final ArrayList b = new ArrayList();
-    public int c = 0;
-    public boolean e = false;
-    public final float[] h = new float[16];
-    public float[] i = new float[16];
-    public boolean l = false;
+public final /* synthetic */ class v5 implements s10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u2 c;
+    public final /* synthetic */ Object d;
 
-    public v5(w5 w5Var) {
-        this.a = w5Var;
+    public /* synthetic */ v5(ja jaVar, Object obj, long j3, int i7) {
+        this.a = i7;
+        this.c = jaVar;
+        this.d = obj;
+        this.b = j3;
     }
 
-    public final void a(int i7) {
-        this.b.add(new u5(3, 0.0f, 0.0f, i7, -1, 0.0f, null, null));
-    }
-
-    public final void b() {
-        ai.d0 d0Var;
-        boolean z9 = this.e;
-        w5 w5Var = this.a;
-        if (!z9) {
-            int i7 = this.c;
-            ArrayList arrayList = this.b;
-            if (i7 < arrayList.size()) {
-                u5 u5Var = (u5) arrayList.get(this.c);
-                this.c++;
-                int i10 = u5Var.a;
-                int i11 = u5Var.e;
-                float f10 = u5Var.b;
-                int i12 = u5Var.d;
-                int c10 = p1.g.c(i10);
-                if (c10 == 0) {
-                    Runnable runnable = u5Var.h;
-                    if (runnable != null) {
-                        runnable.run();
+    @Override // org.telegram.messenger.s10
+    public final void a(Object obj, Object obj2) {
+        TLRPC.Updates updates;
+        switch (this.a) {
+            case 0:
+                z5 z5Var = (z5) this.c;
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.d;
+                di.c5 c5Var = (di.c5) obj;
+                vf.b bVar = (vf.b) obj2;
+                bVar.d();
+                v8.x(z5Var.a, c5Var.a).h(c5Var.b, tL_starGiftUnique, this.b, null, true, new h0(z5Var, bVar, tL_starGiftUnique, 1));
+                break;
+            case 1:
+                xa.d1((xa) this.c, (b41) this.d, this.b, (Boolean) obj, (String) obj2);
+                break;
+            default:
+                e70 e70Var = (e70) this.c;
+                TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = (TLRPC.TL_messages_importChatInvite) this.d;
+                TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
+                    TLRPC.Updates updates2 = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
+                    np.s1(e70Var.a).O3(updates2, false);
+                    updates = updates2;
+                } else {
+                    if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
+                        org.telegram.messenger.g0.h3(new z60(e70Var, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult, this.b, 1));
                     }
-                    b();
-                    return;
+                    updates = null;
                 }
-                if (c10 == 1) {
-                    w5Var.d = (u5Var.c * 0.01f) + w5Var.d;
-                    w5Var.e = (f10 * 0.01f) + w5Var.e;
-                    this.f = 1;
-                    this.g = 1;
-                    return;
-                }
-                if (c10 == 2) {
-                    this.f = i12;
-                    this.g = i12;
-                    return;
-                }
-                int i13 = 0;
-                if (c10 == 3) {
-                    System.arraycopy(w5Var.c, 0, this.h, 0, 16);
-                    float f11 = u5Var.f;
-                    float[] fArr = new float[16];
-                    Matrix.setIdentityM(fArr, 0);
-                    if (f11 != 0.0f) {
-                        Matrix.rotateM(fArr, 0, -f11, 0.0f, 0.0f, 1.0f);
-                    }
-                    if (i11 == 0) {
-                        Matrix.rotateM(fArr, 0, 90.0f, 0.0f, 1.0f, 0.0f);
-                    } else if (i11 == 1) {
-                        Matrix.rotateM(fArr, 0, -90.0f, 0.0f, 1.0f, 0.0f);
-                    } else if (i11 == 2) {
-                        Matrix.rotateM(fArr, 0, 90.0f, 1.0f, 0.0f, 0.0f);
-                    } else if (i11 == 3) {
-                        Matrix.rotateM(fArr, 0, -90.0f, 1.0f, 0.0f, 0.0f);
-                    } else if (i11 == 4) {
-                        Matrix.rotateM(fArr, 0, 180.0f, 0.0f, 1.0f, 0.0f);
-                    }
-                    this.i = fArr;
-                    this.g = i12;
-                    this.f = i12;
-                    this.j = w5Var.d;
-                    this.k = w5Var.e;
-                    return;
-                }
-                int i14 = 5;
-                if (c10 != 4) {
-                    if (c10 != 5) {
-                        return;
-                    }
-                    w5Var.f = f10 > 0.0f;
-                    b();
-                    return;
-                }
-                this.l = true;
-                View view = u5Var.g;
-                ValueAnimator valueAnimator = w5Var.G;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                    w5Var.G = null;
-                }
-                RectF rectF = new RectF();
-                rectF.left = view.getX() - w5Var.getX();
-                rectF.top = view.getY() - w5Var.getY();
-                rectF.right = rectF.left + view.getWidth();
-                rectF.bottom = rectF.top + view.getHeight();
-                org.telegram.messenger.g0.E2(view);
-                int childCount = w5Var.getChildCount();
-                w5Var.addView(view, c8.ha.e(64, 64, 17));
-                w5Var.w.add(Integer.valueOf(i11));
-                w5Var.x.put(Integer.valueOf(childCount), Integer.valueOf(i11));
-                w5Var.y.put(Integer.valueOf(childCount), rectF);
-                w5Var.F = childCount;
-                w5Var.E = 0.0f;
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                w5Var.G = ofFloat;
-                ofFloat.addUpdateListener(new ah.h(w5Var, i14));
-                w5Var.G.addListener(new t5(w5Var, i13));
-                w5Var.G.setDuration(i12 * 16);
-                w5Var.G.setInterpolator(wq.h);
-                w5Var.G.start();
-                return;
-            }
+                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.m5(e70Var, tL_error, updates, tL_messages_importChatInvite, 27));
+                break;
         }
-        w5Var.H = null;
-        if (this.e || (d0Var = this.d) == null) {
-            return;
-        }
-        d0Var.run();
     }
 
-    public final void c(float f10, float f11) {
-        this.b.add(new u5(2, f10, f11, 0, -1, 0.0f, null, null));
-    }
-
-    public final void d(boolean z9) {
-        this.b.add(new u5(6, z9 ? 1.0f : -1.0f, 0.0f, 0, -1, 0.0f, null, null));
-    }
-
-    public final void e(b6 b6Var, int i7, float f10) {
-        this.b.add(new u5(5, 0.0f, 0.0f, 32, i7, f10, b6Var, null));
+    public /* synthetic */ v5(e70 e70Var, long j3, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+        this.a = 2;
+        this.c = e70Var;
+        this.b = j3;
+        this.d = tL_messages_importChatInvite;
     }
 }

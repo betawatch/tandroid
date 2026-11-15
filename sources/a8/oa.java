@@ -1,22 +1,29 @@
 package a8;
 
-import java.util.concurrent.Callable;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class oa implements Callable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pb.k b;
+public final class oa implements ta {
+    public final ArrayList a;
 
-    public /* synthetic */ oa(pb.k kVar, int i7) {
-        this.a = i7;
-        this.b = kVar;
+    public oa(Context context, na naVar) {
+        ArrayList arrayList = new ArrayList();
+        this.a = arrayList;
+        naVar.getClass();
+        arrayList.add(new za(context, naVar));
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        switch (this.a) {
+    @Override // a8.ta
+    public final void a(xa xaVar) {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ((ta) obj).a(xaVar);
         }
-        return this.b.a();
     }
 }

@@ -5,12 +5,12 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.text.TextUtils;
 import android.util.Log;
-import c8.y9;
+import c8.x9;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class s {
     public static final a0.l a = new a0.l(0);
@@ -136,7 +136,7 @@ public abstract class s {
         a0.l lVar = a;
         synchronized (lVar) {
             try {
-                Locale locale = y9.a(context.getResources().getConfiguration()).a.get(0);
+                Locale locale = x9.a(context.getResources().getConfiguration()).a.get(0);
                 if (!locale.equals(b)) {
                     lVar.clear();
                     b = locale;

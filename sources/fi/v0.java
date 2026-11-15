@@ -1,77 +1,244 @@
 package fi;
 
-import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.RequestDelegateTimestamp;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v0 implements c20 {
+public final /* synthetic */ class v0 implements NativeInstance.PayloadCallback, RequestDelegateTimestamp, NativeInstance.VideoSourcesCallback, NativeInstance.RequestBroadcastPartCallback, NativeInstance.RequestCurrentTimeCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z0 b;
+    public final /* synthetic */ e1 b;
 
-    public /* synthetic */ v0(z0 z0Var, int i7) {
+    public /* synthetic */ v0(e1 e1Var, int i7) {
         this.a = i7;
-        this.b = z0Var;
+        this.b = e1Var;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        File file;
-        File file2;
-        ArrayList arrayList = (ArrayList) obj;
+    @Override // org.telegram.messenger.voip.NativeInstance.PayloadCallback
+    public void run(int i7, String str) {
+        e1 e1Var = this.b;
+        e1Var.L = i7;
+        TL_phone.joinGroupCall joingroupcall = new TL_phone.joinGroupCall();
+        boolean z10 = !e1Var.n;
+        joingroupcall.muted = z10;
+        joingroupcall.video_stopped = z10;
+        joingroupcall.call = e1Var.f;
+        TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
+        joingroupcall.params = tL_dataJSON;
+        tL_dataJSON.data = str;
+        TLRPC.TL_inputPeerUser tL_inputPeerUser = new TLRPC.TL_inputPeerUser();
+        joingroupcall.join_as = tL_inputPeerUser;
+        int i10 = e1Var.e;
+        tL_inputPeerUser.user_id = m10.i(org.telegram.messenger.c.a(i10).a).e();
+        ConnectionsManager.getInstance(i10).sendRequest(joingroupcall, new di.u1(e1Var, i7, 2));
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegateTimestamp
+    public void run(TLObject tLObject, TLRPC.TL_error tL_error, long j3) {
+        if (tL_error == null) {
+            e1 e1Var = this.b;
+            if (e1Var.F == null || e1Var.x) {
+                return;
+            }
+            TL_phone.groupCallStreamChannels groupcallstreamchannels = (TL_phone.groupCallStreamChannels) tLObject;
+            int i7 = 0;
+            if (!groupcallstreamchannels.channels.isEmpty()) {
+                long j10 = groupcallstreamchannels.channels.get(0).last_timestamp_ms;
+            }
+            if (groupcallstreamchannels.channels.isEmpty()) {
+                org.telegram.messenger.g0.h3(new x0(e1Var, 8));
+            }
+            if (e1Var.H == null) {
+                TLRPC.TL_groupCallParticipant tL_groupCallParticipant = new TLRPC.TL_groupCallParticipant();
+                e1Var.H = tL_groupCallParticipant;
+                tL_groupCallParticipant.peer = np.s1(e1Var.e).z1(e1Var.b);
+                e1Var.H.video = new TLRPC.TL_groupCallParticipantVideo();
+                TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup = new TLRPC.TL_groupCallParticipantVideoSourceGroup();
+                tL_groupCallParticipantVideoSourceGroup.semantics = "SIM";
+                ArrayList<TL_phone.TL_groupCallStreamChannel> arrayList = groupcallstreamchannels.channels;
+                int size = arrayList.size();
+                while (i7 < size) {
+                    TL_phone.TL_groupCallStreamChannel tL_groupCallStreamChannel = arrayList.get(i7);
+                    i7++;
+                    tL_groupCallParticipantVideoSourceGroup.sources.add(Integer.valueOf(tL_groupCallStreamChannel.channel));
+                }
+                e1Var.H.video.source_groups.add(tL_groupCallParticipantVideoSourceGroup);
+                TLRPC.GroupCallParticipant groupCallParticipant = e1Var.H;
+                TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo = groupCallParticipant.video;
+                tL_groupCallParticipantVideo.endpoint = "unified";
+                groupCallParticipant.videoEndpoint = "unified";
+                NativeInstance nativeInstance = e1Var.F;
+                NativeInstance.SsrcGroup[] d = e1.d(tL_groupCallParticipantVideo);
+                e1Var.r(d);
+                nativeInstance.addIncomingVideoOutput(2, "unified", d, e1Var.I, org.telegram.messenger.m5.o(e1Var.H.peer));
+            }
+        }
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.VideoSourcesCallback
+    public void run(long j3, int[] iArr) {
+        e1 e1Var = this.b;
+        if (e1Var.F == null) {
+            return;
+        }
+        TL_phone.getGroupParticipants getgroupparticipants = new TL_phone.getGroupParticipants();
+        getgroupparticipants.call = e1Var.f;
+        getgroupparticipants.offset = "";
+        int i7 = 0;
+        while (i7 < iArr.length) {
+            i7 = com.google.android.gms.internal.vision.e2.f(iArr[i7], i7, 1, getgroupparticipants.sources);
+        }
+        ConnectionsManager.getInstance(e1Var.e).sendRequest(getgroupparticipants, new di.o2(e1Var, iArr, j3, 3));
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback
+    public void run(final long j3, final long j10, final int i7, final int i10) {
+        String str;
         switch (this.a) {
-            case 0:
-                long currentTimeMillis = System.currentTimeMillis();
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                ArrayList arrayList4 = new ArrayList();
-                for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                    e7 a10 = ((y0) arrayList.get(i7)).a();
-                    if ((a10.v() || ((file = a10.L) != null && file.exists())) && currentTimeMillis - a10.d <= 604800000) {
-                        arrayList4.add(a10);
-                        arrayList2.add(Long.valueOf(a10.b));
-                    } else {
-                        arrayList3.add(a10);
+            case 3:
+                final e1 e1Var = this.b;
+                if (e1Var.w != null) {
+                    StringBuilder sb2 = new StringBuilder("[LivePlayer] sending getFile time_ms=");
+                    sb2.append(j3);
+                    sb2.append(j10 == 500 ? ", scale = 1" : "");
+                    sb2.append(", video_channel = ");
+                    sb2.append(i7);
+                    sb2.append(", video_quality = ");
+                    sb2.append(i10);
+                    org.telegram.messenger.a8.b(sb2.toString());
+                    final long currentTimeMillis = System.currentTimeMillis();
+                    TLRPC.TL_upload_getFile tL_upload_getFile = new TLRPC.TL_upload_getFile();
+                    tL_upload_getFile.limit = 131072;
+                    TLRPC.TL_inputGroupCallStream tL_inputGroupCallStream = new TLRPC.TL_inputGroupCallStream();
+                    tL_inputGroupCallStream.call = e1Var.f;
+                    tL_inputGroupCallStream.time_ms = j3;
+                    if (j10 == 500) {
+                        tL_inputGroupCallStream.scale = 1;
                     }
+                    if (i7 != 0) {
+                        tL_inputGroupCallStream.flags |= 1;
+                        tL_inputGroupCallStream.video_channel = i7;
+                        tL_inputGroupCallStream.video_quality = i10;
+                    }
+                    tL_upload_getFile.location = tL_inputGroupCallStream;
+                    if (i7 == 0) {
+                        str = a8.p0.o(j3, "");
+                    } else {
+                        str = i7 + "_" + j3 + "_" + i10;
+                    }
+                    final String str2 = str;
+                    org.telegram.messenger.g0.h3(new ai.z0(e1Var, str2, ConnectionsManager.getInstance(org.telegram.messenger.c.a(e1Var.e).a).sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: fi.w0
+                        @Override // org.telegram.tgnet.RequestDelegateTimestamp
+                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error, long j11) {
+                            e1 e1Var2 = e1.this;
+                            if (e1Var2.x || e1Var2.F == null) {
+                                return;
+                            }
+                            org.telegram.messenger.g0.h3(new di.s2(22, e1Var2, str2));
+                            long j12 = currentTimeMillis;
+                            long j13 = j3;
+                            long j14 = j10;
+                            int i11 = i7;
+                            int i12 = i10;
+                            if (tLObject != null) {
+                                TLRPC.TL_upload_file tL_upload_file = (TLRPC.TL_upload_file) tLObject;
+                                StringBuilder sb3 = new StringBuilder("[LivePlayer] received in ");
+                                sb3.append(System.currentTimeMillis() - j12);
+                                sb3.append("ms getFile{time_ms=");
+                                sb3.append(j13);
+                                sb3.append(j14 == 500 ? ", scale = 1" : "");
+                                sb3.append(", video_channel = ");
+                                sb3.append(i11);
+                                sb3.append(", video_quality = ");
+                                sb3.append(i12);
+                                sb3.append("}: ");
+                                sb3.append(tL_upload_file.bytes.limit());
+                                sb3.append(" bytes");
+                                org.telegram.messenger.a8.b(sb3.toString());
+                                NativeInstance nativeInstance = e1Var2.F;
+                                NativeByteBuffer nativeByteBuffer = tL_upload_file.bytes;
+                                nativeInstance.onStreamPartAvailable(j13, nativeByteBuffer.buffer, nativeByteBuffer.limit(), j11, i11, i12);
+                                return;
+                            }
+                            if ("GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
+                                e1Var2.F.onStreamPartAvailable(j13, null, -1, j11, i11, i12);
+                                org.telegram.messenger.g0.h3(new x0(e1Var2, 4));
+                                return;
+                            }
+                            if ("GROUPCALL_JOIN_MISSING".equals(tL_error.text)) {
+                                org.telegram.messenger.g0.h3(new x0(e1Var2, 6));
+                                StringBuilder sb4 = new StringBuilder("[LivePlayer] received in ");
+                                sb4.append(System.currentTimeMillis() - j12);
+                                sb4.append("ms getFile{time_ms=");
+                                sb4.append(j13);
+                                sb4.append(j14 == 500 ? ", scale = 1" : "");
+                                sb4.append(", video_channel = ");
+                                sb4.append(i11);
+                                sb4.append(", video_quality = ");
+                                sb4.append(i12);
+                                sb4.append("}: ");
+                                sb4.append(tL_error.text);
+                                sb4.append(" => rejoining");
+                                org.telegram.messenger.a8.b(sb4.toString());
+                                return;
+                            }
+                            int i13 = ("TIME_TOO_BIG".equals(tL_error.text) || tL_error.text.startsWith("FLOOD_WAIT")) ? 0 : -1;
+                            StringBuilder sb5 = new StringBuilder("[LivePlayer] received in ");
+                            sb5.append(System.currentTimeMillis() - j12);
+                            sb5.append("ms getFile{time_ms=");
+                            sb5.append(j13);
+                            sb5.append(j14 == 500 ? ", scale = 1" : "");
+                            sb5.append(", video_channel = ");
+                            sb5.append(i11);
+                            sb5.append(", video_quality = ");
+                            sb5.append(i12);
+                            sb5.append("}: ");
+                            sb5.append(tL_error.text);
+                            sb5.append(" => ");
+                            sb5.append(i13);
+                            org.telegram.messenger.a8.b(sb5.toString());
+                            e1Var2.F.onStreamPartAvailable(j13, null, i13, j11, i11, i12);
+                        }
+                    }, 2, 2, e1Var.h()), 9));
+                    break;
                 }
-                z0 z0Var = this.b;
-                z0Var.c(arrayList3);
-                z0Var.f = false;
-                z0Var.e = true;
-                di.z6 P1 = qp.s1(z0Var.a).P1();
-                int size = arrayList4.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj2 = arrayList4.get(i10);
-                    i10++;
-                    di.y6 y6Var = new di.y6(P1, (e7) obj2);
-                    P1.d(y6Var.J, y6Var, P1.b, false);
-                }
-                qs.f(P1.a).k(qs.v5, new Object[0]);
                 break;
             default:
-                z0 z0Var2 = this.b;
-                z0Var2.getClass();
-                long currentTimeMillis2 = System.currentTimeMillis();
-                ArrayList arrayList5 = new ArrayList();
-                ArrayList arrayList6 = new ArrayList();
-                for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    e7 a11 = ((y0) arrayList.get(i11)).a();
-                    if ((a11.v() || ((file2 = a11.L) != null && file2.exists())) && (!a11.g ? currentTimeMillis2 - a11.d <= 604800000 : currentTimeMillis2 <= a11.J)) {
-                        z0Var2.b.add(a11);
-                        arrayList5.add(Long.valueOf(a11.b));
-                    } else {
-                        arrayList6.add(a11);
-                    }
-                }
-                z0Var2.c(arrayList6);
-                z0Var2.d = false;
-                z0Var2.c = true;
-                qs.f(z0Var2.a).k(qs.y5, new Object[0]);
+                StringBuilder sb3 = new StringBuilder("[LivePlayer] cancelling getFile time_ms=");
+                sb3.append(j3);
+                sb3.append(j10 == 500 ? ", scale = 1" : "");
+                sb3.append(i7 != 0 ? a8.p0.m(i7, i10, ", video_channel = ", ", video_quality = ") : "");
+                org.telegram.messenger.a8.b(sb3.toString());
+                org.telegram.messenger.g0.h3(new a1(i7, i10, 0, j3, this.b));
                 break;
+        }
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.RequestCurrentTimeCallback
+    public void run(long j3) {
+        e1 e1Var = this.b;
+        int i7 = e1Var.e;
+        TLRPC.GroupCall groupCall = e1Var.w;
+        if (groupCall != null && groupCall.rtmp_stream) {
+            TL_phone.getGroupCallStreamChannels getgroupcallstreamchannels = new TL_phone.getGroupCallStreamChannels();
+            getgroupcallstreamchannels.call = e1Var.f;
+            if (e1Var.w == null || e1Var.F == null) {
+                return;
+            }
+            ConnectionsManager.getInstance(i7).sendRequest(getgroupcallstreamchannels, new ai.c0(e1Var, j3, 1), 65536, 2, e1Var.h());
+            return;
+        }
+        NativeInstance nativeInstance = e1Var.F;
+        if (nativeInstance != null) {
+            nativeInstance.onRequestTimeComplete(j3, ConnectionsManager.getInstance(i7).getCurrentTimeMillis());
         }
     }
 }

@@ -1,151 +1,113 @@
 package org.telegram.messenger;
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class el implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ qp b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ TLObject e;
+public final /* synthetic */ class el implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ is b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ el(qp qpVar, TLRPC.Chat chat, boolean z9, long j3) {
-        this.b = qpVar;
-        this.e = chat;
-        this.c = z9;
-        this.d = j3;
+    public /* synthetic */ el(np npVar, long j3, int i7, int i10, boolean z10, int i11) {
+        this.a = i11;
+        this.b = npVar;
+        this.c = j3;
+        this.d = i7;
+        this.e = i10;
+        this.f = z10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         long j3;
-        ArrayList arrayList;
-        switch (this.a) {
+        int i7;
+        int i10 = this.a;
+        is isVar = this.b;
+        switch (i10) {
             case 0:
-                TLRPC.Chat chat = (TLRPC.Chat) this.e;
-                TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) tLObject;
-                if (tL_channels_channelParticipant != null) {
-                    TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipant.participant;
-                    if (channelParticipant instanceof TLRPC.TL_channelParticipantSelf) {
-                        TLRPC.TL_channelParticipantSelf tL_channelParticipantSelf = (TLRPC.TL_channelParticipantSelf) channelParticipant;
-                        boolean z9 = chat.megagroup;
-                        qp qpVar = this.b;
-                        if (z9) {
-                            yr messagesStorage = qpVar.getMessagesStorage();
-                            long j10 = chat.id;
-                            messagesStorage.getClass();
-                            CountDownLatch countDownLatch = new CountDownLatch(1);
-                            boolean[] zArr = new boolean[1];
-                            messagesStorage.a.c(new fq(messagesStorage, j10, zArr, countDownLatch, 0));
-                            try {
-                                countDownLatch.await();
-                            } catch (Exception e10) {
-                                messagesStorage.o(e10, true);
-                            }
-                            if (zArr[0]) {
-                            }
+                np npVar = (np) isVar;
+                a0.h hVar = npVar.R;
+                long j10 = this.c;
+                TLRPC.Dialog dialog = (TLRPC.Dialog) hVar.f(j10);
+                int i11 = this.e;
+                if (dialog != null) {
+                    int i12 = dialog.unread_count;
+                    int i13 = this.d;
+                    if (i13 == 0 || i11 >= dialog.top_message) {
+                        dialog.unread_count = 0;
+                    } else {
+                        int max = Math.max(i12 - i13, 0);
+                        dialog.unread_count = max;
+                        if (i11 != Integer.MIN_VALUE && max > (i7 = dialog.top_message - i11)) {
+                            dialog.unread_count = i7;
                         }
-                        g0.h3(new hi(12, qpVar, tL_channels_channelParticipant));
-                        qpVar.getMessagesStorage().m1(tL_channels_channelParticipant.users, tL_channels_channelParticipant.chats, true, true);
-                        boolean z10 = this.c;
-                        long j11 = this.d;
-                        if (z10 && Math.abs(qpVar.getConnectionsManager().getCurrentTime() - tL_channels_channelParticipant.participant.date) < 86400) {
-                            yr messagesStorage2 = qpVar.getMessagesStorage();
-                            messagesStorage2.getClass();
-                            j3 = j11;
-                            CountDownLatch countDownLatch2 = new CountDownLatch(1);
-                            boolean[] zArr2 = new boolean[1];
-                            messagesStorage2.a.c(new fq(messagesStorage2, j3, zArr2, countDownLatch2, 1));
-                            try {
-                                countDownLatch2.await();
-                            } catch (Exception e11) {
-                                messagesStorage2.o(e11, true);
-                            }
-                            if (!zArr2[0]) {
-                                TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
-                                tL_messageService.flags = 256;
-                                int j12 = qpVar.getUserConfig().j();
-                                tL_messageService.id = j12;
-                                tL_messageService.local_id = j12;
-                                tL_messageService.date = tL_channels_channelParticipant.participant.date;
-                                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                                tL_messageService.from_id = tL_peerUser;
-                                tL_peerUser.user_id = tL_channels_channelParticipant.participant.inviter_id;
-                                TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
-                                tL_messageService.peer_id = tL_peerChannel;
-                                tL_peerChannel.channel_id = j3;
-                                tL_messageService.media_unread = true;
-                                tL_messageService.unread = true;
-                                tL_messageService.post = true;
-                                if (tL_channelParticipantSelf.via_invite && tL_channelParticipantSelf.inviter_id == qpVar.getUserConfig().e()) {
-                                    tL_messageService.action = new TLRPC.TL_messageActionChatJoinedByRequest();
-                                } else {
-                                    tL_messageService.action = new TLRPC.TL_messageActionChatAddUser();
-                                }
-                                tL_messageService.action.users.add(Long.valueOf(qpVar.getUserConfig().e()));
-                                tL_messageService.dialog_id = -j3;
-                                qpVar.getUserConfig().v(false);
-                                arrayList = new ArrayList();
-                                ArrayList arrayList2 = new ArrayList();
-                                ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-                                for (int i7 = 0; i7 < tL_channels_channelParticipant.users.size(); i7++) {
-                                    TLRPC.User user = tL_channels_channelParticipant.users.get(i7);
-                                    concurrentHashMap.put(Long.valueOf(user.id), user);
-                                }
-                                arrayList2.add(tL_messageService);
-                                arrayList.add(new ij(qpVar.currentAccount, (TLRPC.Message) tL_messageService, (AbstractMap) concurrentHashMap, (AbstractMap) null, true, false));
-                                if (tL_messageService.from_id.user_id != qpVar.getUserConfig().e()) {
-                                    qpVar.getMessagesStorage().a.c(new qj(qpVar, arrayList, 2));
-                                }
-                                qpVar.getMessagesStorage().j1(arrayList2, true, true, false, 0, false, 0, 0L);
-                                ArrayList arrayList3 = arrayList;
-                                yr messagesStorage3 = qpVar.getMessagesStorage();
-                                long j13 = j3;
-                                messagesStorage3.a.c(new vp(2, tL_channels_channelParticipant.participant.inviter_id, j13, messagesStorage3));
-                                g0.h3(new jm(qpVar, j13, arrayList3, tL_channels_channelParticipant, 5));
-                                break;
-                            }
-                        } else {
-                            j3 = j11;
-                        }
-                        arrayList = null;
-                        ArrayList arrayList32 = arrayList;
-                        yr messagesStorage32 = qpVar.getMessagesStorage();
-                        long j132 = j3;
-                        messagesStorage32.a.c(new vp(2, tL_channels_channelParticipant.participant.inviter_id, j132, messagesStorage32));
-                        g0.h3(new jm(qpVar, j132, arrayList32, tL_channels_channelParticipant, 5));
                     }
+                    boolean z10 = dialog.unread_mark;
+                    if (z10) {
+                        dialog.unread_mark = false;
+                        npVar.getMessagesStorage().F1(dialog.id, false);
+                    }
+                    if ((i12 != 0 || z10) && dialog.unread_count == 0) {
+                        j3 = j10;
+                        npVar.r2(j3, 0L, null);
+                        int i14 = 0;
+                        while (true) {
+                            so[] soVarArr = npVar.N;
+                            if (i14 < soVarArr.length) {
+                                so soVar = soVarArr[i14];
+                                if (soVar == null || (soVar.g & 64) == 0) {
+                                    i14++;
+                                } else {
+                                    npVar.U4(null);
+                                    npVar.getNotificationCenter().k(3, new Object[0]);
+                                }
+                            }
+                        }
+                    } else {
+                        j3 = j10;
+                    }
+                    npVar.getNotificationCenter().k(2, 256);
+                } else {
+                    j3 = j10;
+                }
+                if (!this.f) {
+                    long j11 = j3;
+                    npVar.getNotificationsController().L(null, j11, 0, i11, false);
+                    LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
+                    longSparseIntArray.put(j11, 0);
+                    npVar.getNotificationsController().J(longSparseIntArray);
+                    break;
+                } else {
+                    long j12 = j3;
+                    npVar.getNotificationsController().L(null, j12, 0, i11, true);
+                    LongSparseIntArray longSparseIntArray2 = new LongSparseIntArray(1);
+                    longSparseIntArray2.put(j12, -1);
+                    npVar.getNotificationsController().J(longSparseIntArray2);
+                    break;
                 }
                 break;
+            case 1:
+                g0.h3(new el((np) isVar, this.c, this.d, this.e, this.f, 0));
+                break;
             default:
-                TLRPC.User user2 = (TLRPC.User) this.e;
-                if (tL_error == null) {
-                    boolean z11 = tLObject instanceof TLRPC.Updates;
-                    qp qpVar2 = this.b;
-                    if (z11) {
-                        qpVar2.O3((TLRPC.Updates) tLObject, false);
-                    }
-                    if (this.c && !t10.B(user2)) {
-                        g0.i3(new mk(qpVar2, this.d, 10), 1000L);
-                        break;
-                    }
-                }
+                int i15 = ChatActivityEnterView.N6;
+                ((ChatActivityEnterView) isVar).k1(this.f, this.d, this.e, this.c, false);
                 break;
         }
     }
 
-    public /* synthetic */ el(qp qpVar, boolean z9, TLRPC.User user, long j3) {
-        this.b = qpVar;
-        this.c = z9;
-        this.e = user;
-        this.d = j3;
+    public /* synthetic */ el(ChatActivityEnterView chatActivityEnterView, boolean z10, int i7, int i10, long j3) {
+        this.a = 2;
+        this.b = chatActivityEnterView;
+        this.f = z10;
+        this.d = i7;
+        this.e = i10;
+        this.c = j3;
     }
 }

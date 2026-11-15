@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
+import i5.c;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import jg.g;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzqo extends zzqq {
     private final InputStream zzf;
@@ -79,7 +79,7 @@ final class zzqo extends zzqq {
         int i11 = i10 + i7;
         int i12 = this.zzh;
         if (i11 <= i12) {
-            throw new IllegalStateException(g.k(i7, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(c.j(i7, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i13 = this.zzl;
         if (i7 > (ConnectionsManager.DEFAULT_DATACENTER_ID - i13) - i10 || i13 + i10 + i7 > this.zzm) {
@@ -116,7 +116,7 @@ final class zzqo extends zzqq {
         }
     }
 
-    private final byte[] zzP(int i7, boolean z9) {
+    private final byte[] zzP(int i7, boolean z10) {
         byte[] zzQ = zzQ(i7);
         if (zzQ != null) {
             return zzQ;

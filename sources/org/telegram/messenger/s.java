@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.text.TextUtils;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -21,23 +21,23 @@ public final /* synthetic */ class s implements Runnable {
             case 0:
                 Intent intent = this.b;
                 try {
-                    int i7 = p10.s0;
+                    int i7 = m10.t0;
                     t0.w();
-                    if (!g0.p2(false) && !iz.C) {
+                    if (!g0.p2(false) && !gz.C) {
                         String stringExtra = intent.getStringExtra("android.intent.extra.TEXT");
                         if (!TextUtils.isEmpty(stringExtra)) {
                             String stringExtra2 = intent.getStringExtra("com.google.android.voicesearch.extra.RECIPIENT_CONTACT_URI");
                             long parseLong = Long.parseLong(intent.getStringExtra("com.google.android.voicesearch.extra.RECIPIENT_CONTACT_CHAT_ID"));
-                            TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(parseLong));
-                            if (a22 == null && (a22 = yr.a0(i7).k0(parseLong)) != null) {
-                                qp.s1(i7).X3(a22, true, false);
+                            TLRPC.User a22 = np.s1(i7).a2(Long.valueOf(parseLong));
+                            if (a22 == null && (a22 = vr.a0(i7).k0(parseLong)) != null) {
+                                np.s1(i7).X3(a22, true, false);
                             }
                             if (a22 != null) {
                                 g5.r(i7);
                                 if (stringExtra2 != null) {
                                     Utilities.h.c(new l4(stringExtra2, 0));
                                 }
-                                gz.C(i7).r0(ez.b(stringExtra, a22.id, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                                ez.C(i7).r0(cz.b(stringExtra, a22.id, null, null, null, true, null, null, null, true, 0, 0, null, false));
                                 break;
                             }
                         }

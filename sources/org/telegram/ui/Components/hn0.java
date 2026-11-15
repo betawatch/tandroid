@@ -1,75 +1,122 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.WindowInsets;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hn0 implements oi.m, r0.m, org.telegram.ui.ActionBar.e1, oi.n {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mo0 b;
+public final class hn0 extends qu0 {
+    public boolean a = false;
+    public long b = 0;
+    public boolean c = false;
+    public float d;
+    public final Paint e;
 
-    public /* synthetic */ hn0(mo0 mo0Var, int i7) {
-        this.a = i7;
-        this.b = mo0Var;
-    }
-
-    @Override // r0.m
-    public r0.k1 S0(View view, r0.k1 k1Var) {
-        WindowInsets g10 = k1Var.g();
-        mo0 mo0Var = this.b;
-        mo0Var.t0(g10);
-        i0.b f10 = k1Var.a.f(519);
-        if (!mo0Var.B2.equals(f10)) {
-            mo0Var.B2 = f10;
-            mo0Var.c.requestLayout();
-        }
-        return r0.k1.b;
-    }
-
-    @Override // oi.n
-    public int h() {
-        mo0 mo0Var = this.b;
-        mo0Var.getClass();
-        return org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, mo0Var.I0);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e1
-    public void j(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.g1 g1Var;
-        org.telegram.ui.ActionBar.g1 g1Var2;
-        switch (this.a) {
-            case 2:
-                mo0 mo0Var = this.b;
-                mo0Var.getClass();
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g1Var = mo0Var.E2) != null && g1Var.isShowing()) {
-                    mo0Var.E2.d(true);
-                    break;
-                }
-                break;
-            default:
-                mo0 mo0Var2 = this.b;
-                mo0Var2.getClass();
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g1Var2 = mo0Var2.E2) != null && g1Var2.isShowing()) {
-                    mo0Var2.E2.d(true);
-                    break;
-                }
-                break;
+    public hn0(boolean z10) {
+        if (z10) {
+            Paint paint = new Paint(1);
+            this.e = paint;
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         }
     }
 
-    @Override // oi.m
-    public void l(int i7) {
-        mo0 mo0Var = this.b;
-        dh.g gVar = mo0Var.J2;
-        if (Build.VERSION.SDK_INT < 31 || gVar == null) {
+    @Override // org.telegram.ui.Components.qu0
+    public final void b(int i7) {
+        Paint paint = this.e;
+        if (paint != null) {
+            paint.setColor(i7);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.qu0
+    public final void c(boolean z10) {
+        this.a = z10;
+    }
+
+    @Override // org.telegram.ui.Components.qu0
+    public final void d() {
+        this.b = System.currentTimeMillis();
+        this.c = true;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Paint paint = this.e;
+        if (paint == null) {
+            paint = org.telegram.ui.ActionBar.j6.d2;
+        }
+        Paint paint2 = paint;
+        int i7 = 0;
+        while (i7 < 3) {
+            if (i7 == 0) {
+                paint2.setAlpha((int) (this.d * 255.0f));
+            } else if (i7 == 2) {
+                paint2.setAlpha((int) ((1.0f - this.d) * 255.0f));
+            } else {
+                paint2.setAlpha(org.telegram.messenger.ns.e4);
+            }
+            float L = (org.telegram.messenger.g0.L(5.0f) * i7) + (org.telegram.messenger.g0.L(5.0f) * this.d);
+            float f10 = 8.0f;
+            Canvas canvas2 = canvas;
+            canvas2.drawLine(L, org.telegram.messenger.g0.L(this.a ? 3.0f : 4.0f), L + org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(this.a ? 7.0f : 8.0f), paint2);
+            float L2 = org.telegram.messenger.g0.L(this.a ? 11.0f : 12.0f);
+            float L3 = L + org.telegram.messenger.g0.L(4.0f);
+            if (this.a) {
+                f10 = 7.0f;
+            }
+            canvas2.drawLine(L, L2, L3, org.telegram.messenger.g0.L(f10), paint2);
+            i7++;
+            canvas = canvas2;
+        }
+        if (!this.c) {
             return;
         }
-        if (c8.zc.a(i7, 4)) {
-            gVar.h(mo0Var.X0.e());
+        long currentTimeMillis = System.currentTimeMillis();
+        long j3 = currentTimeMillis - this.b;
+        this.b = currentTimeMillis;
+        if (j3 > 50) {
+            j3 = 50;
         }
-        gVar.e(mo0Var.O2, mo0Var.b.getWidth(), mo0Var.b.getHeight());
+        this.d = (j3 / 500.0f) + this.d;
+        while (true) {
+            float f11 = this.d;
+            if (f11 <= 1.0f) {
+                a();
+                return;
+            }
+            this.d = f11 - 1.0f;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.qu0
+    public final void e() {
+        this.c = false;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(14.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(18.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

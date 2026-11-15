@@ -1,243 +1,266 @@
 package fi;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import java.util.Iterator;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.c20;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.cn;
-import org.telegram.ui.dc1;
-import org.telegram.ui.wp0;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Cells.pa;
+import org.telegram.ui.Cells.sa;
+import org.telegram.ui.Components.cv;
+import org.telegram.ui.ad;
+import org.telegram.ui.c50;
+import org.telegram.ui.oc0;
+import org.telegram.ui.oc1;
+import org.telegram.ui.pc1;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class v3 extends org.telegram.ui.Components.i9 {
+    public final /* synthetic */ int H;
+    public final /* synthetic */ Object I;
 
-    public /* synthetic */ v3(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v3(int i7, Context context, Object obj) {
+        super(context);
+        this.H = i7;
+        this.I = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ((b4) this.b).invalidate();
-                break;
+    @Override // org.telegram.ui.Components.i9
+    public ImageReceiver c() {
+        switch (this.H) {
             case 1:
-                s5 s5Var = (s5) this.b;
-                s5Var.getClass();
-                s5Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s5Var.e();
+                return new u2(this, this, 1);
+            default:
+                return super.c();
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate(Rect rect) {
+        switch (this.H) {
+            case 7:
+                super.invalidate(rect);
+                ((org.telegram.ui.Components.p8) this.I).invalidate();
+                break;
+            default:
+                super.invalidate(rect);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.i9, android.view.View
+    public void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        switch (this.H) {
+            case 0:
+                if (this.a.R0) {
+                    RectF rectF = org.telegram.messenger.g0.P;
+                    rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                    ((x3) this.I).b(1.0f, canvas, rectF, true);
+                }
+                super.onDraw(canvas);
                 break;
             case 2:
-                r5 r5Var = (r5) this.b;
-                r5Var.getClass();
-                r5Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r5Var.invalidate();
+                org.telegram.ui.Cells.g7 g7Var = (org.telegram.ui.Cells.g7) this.I;
+                v3 v3Var = g7Var.b;
+                float f10 = v3Var.getImageReceiver().I() ? 1.0f - v3Var.getImageReceiver().i1 : 1.0f;
+                g7Var.d.setAlpha(f10);
+                g7Var.a.setAlpha(f10);
+                super.onDraw(canvas);
                 break;
             case 3:
-                l6 l6Var = (l6) this.b;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l6Var.E = floatValue;
-                k6 k6Var = l6Var.a;
-                k6Var.setScaleX(1.0f - floatValue);
-                k6Var.setScaleY(1.0f - l6Var.E);
-                l6Var.invalidate();
-                break;
-            case 4:
-                p7 p7Var = (p7) this.b;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p7Var.r = floatValue2;
-                c20 c20Var = p7Var.y;
-                if (c20Var != null) {
-                    c20Var.a(Float.valueOf(Utilities.i(floatValue2, 1.0f, -1.0f)));
+                pa paVar = (pa) this.I;
+                org.telegram.ui.Cells.j6 j6Var = paVar.U;
+                if (!paVar.G) {
+                    super.onDraw(canvas);
+                    break;
+                } else {
+                    j6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                    l7.h(paVar.V, canvas, this.a, j6Var);
+                    break;
                 }
-                p7Var.a.invalidate();
+            case 4:
+                super.onDraw(canvas);
+                sa saVar = (sa) this.I;
+                Object obj = saVar.h;
+                if ((obj instanceof oc1) || (obj instanceof pc1)) {
+                    canvas.drawLine(1.0f, 0.0f, getMeasuredWidth() - 1, 0.0f, saVar.s.n);
+                    canvas2 = canvas;
+                    canvas2.drawLine(0.0f, 0.0f, 0.0f, getMeasuredHeight(), saVar.s.n);
+                    canvas2.drawLine(getMeasuredWidth() - 1, 0.0f, getMeasuredWidth() - 1, getMeasuredHeight(), saVar.s.n);
+                    canvas2.drawLine(1.0f, getMeasuredHeight() - 1, getMeasuredWidth() - 1, getMeasuredHeight() - 1, saVar.s.n);
+                } else {
+                    canvas2 = canvas;
+                }
+                if (saVar.e) {
+                    saVar.s.r.setColor(org.telegram.ui.ActionBar.j6.c0);
+                    int measuredWidth = getMeasuredWidth() / 2;
+                    int measuredHeight = getMeasuredHeight() / 2;
+                    canvas2.drawCircle(measuredWidth, measuredHeight, org.telegram.messenger.g0.L(20.0f), saVar.s.r);
+                    Drawable drawable = saVar.s.w;
+                    drawable.setBounds(org.telegram.ui.Cells.y0.A(2, measuredWidth, drawable), org.telegram.ui.Cells.y0.y(2, measuredHeight, saVar.s.w), org.telegram.ui.Cells.y0.w(2, measuredWidth, saVar.s.w), org.telegram.ui.Cells.y0.h(2, measuredHeight, saVar.s.w));
+                    saVar.s.w.draw(canvas2);
+                    break;
+                }
                 break;
-            case 5:
-                ((n8) this.b).y.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 6:
-                p8 p8Var = (p8) this.b;
-                p8Var.getClass();
-                p8Var.setContainerHeight(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 7:
-                lg.h hVar = (lg.h) this.b;
-                hVar.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hVar.g.a.invalidate();
-                break;
-            case 8:
-                li.s4 s4Var = (li.s4) this.b;
-                s4Var.getClass();
-                s4Var.a0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s4Var.requestLayout();
-                s4Var.invalidate();
-                break;
-            case 9:
-                mi.l lVar = (mi.l) this.b;
-                cn cnVar = lVar.F;
-                if (cnVar != null) {
-                    cnVar.N9();
-                    if (cnVar.X8 != null) {
-                        cnVar.fragmentView.invalidate();
+            case 11:
+                if (!((org.telegram.ui.web.v0) this.I).w) {
+                    if (this.a.t() != null) {
+                        this.a.y0(0.0f, 0.0f, getWidth(), (getWidth() / r0.getIntrinsicWidth()) * r0.getIntrinsicHeight());
+                        this.a.h(canvas, null);
                         break;
                     }
                 } else {
-                    lVar.G.invalidate();
+                    super.onDraw(canvas);
                     break;
                 }
-                break;
-            case 10:
-                org.telegram.ui.ActionBar.w0 w0Var = (org.telegram.ui.ActionBar.w0) this.b;
-                w0Var.getClass();
-                w0Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                w0Var.invalidate();
-                break;
-            case 11:
-                org.telegram.ui.ActionBar.z0 z0Var = (org.telegram.ui.ActionBar.z0) this.b;
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                z0Var.setTextColor(i0.a.f(floatValue3, -1, -9194260));
-                z0Var.setIconColor(i0.a.f(floatValue3, -1, -9194260));
-                break;
-            case 12:
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
-                int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                for (int i7 = 0; i7 < itemsCount; i7++) {
-                    View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i7);
-                    if (!(childAt instanceof org.telegram.ui.ActionBar.d1)) {
-                        float s5 = org.telegram.messenger.g0.s(floatValue4, actionBarPopupWindow$ActionBarPopupWindowLayout.w ? (itemsCount - 1) - i7 : i7, itemsCount, 4.0f);
-                        childAt.setTranslationY((1.0f - s5) * org.telegram.messenger.g0.L(-6.0f));
-                        childAt.setAlpha(s5 * (childAt.isEnabled() ? 1.0f : 0.5f));
-                    }
-                }
-                break;
-            case 13:
-                org.telegram.ui.ActionBar.i1 i1Var = (org.telegram.ui.ActionBar.i1) this.b;
-                if (!i1Var.e) {
-                    float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                    if (i1Var.r) {
-                        floatValue5 = 1.0f - floatValue5;
-                    }
-                    float z9 = (int) com.google.android.recaptcha.internal.a.z(1.0f, floatValue5, i1Var.q, i1Var.p * floatValue5);
-                    if (!(i1Var instanceof ch.k)) {
-                        i1Var.a.setTranslationY(z9);
-                    }
-                    i1Var.e(-z9, floatValue5, i1Var.s);
-                    break;
-                }
-                break;
-            case 14:
-                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.b;
-                e3Var.getClass();
-                e3Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                Iterator it = e3Var.I.iterator();
-                while (it.hasNext()) {
-                    ((Runnable) it.next()).run();
-                }
-                e3Var.invalidate();
-                break;
-            case 15:
-                org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) this.b;
-                k3Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                org.telegram.ui.ActionBar.l3 l3Var = k3Var.b;
-                if (l3Var != null) {
-                    l3Var.invalidate();
-                    break;
-                }
-                break;
-            case 16:
-                org.telegram.ui.Components.voip.a0 a0Var = (org.telegram.ui.Components.voip.a0) this.b;
-                a0Var.getClass();
-                a0Var.r = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a0Var.e();
-                break;
-            case 17:
-                org.telegram.ui.Components.voip.o0 o0Var = (org.telegram.ui.Components.voip.o0) this.b;
-                o0Var.getClass();
-                o0Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 18:
-                dc1 dc1Var = (dc1) this.b;
-                dc1Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int L = (org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(36.0f)) - org.telegram.messenger.g0.L(52.0f);
-                org.telegram.ui.Components.voip.x0 x0Var = dc1Var.c;
-                x0Var.getLayoutParams().width = org.telegram.messenger.g0.L(52.0f) + ((int) (L * dc1Var.E));
-                x0Var.requestLayout();
-                break;
-            case 19:
-                org.telegram.ui.Components.voip.n1 n1Var = (org.telegram.ui.Components.voip.n1) this.b;
-                n1Var.getClass();
-                n1Var.K = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n1Var.invalidate();
-                break;
-            case 20:
-                org.telegram.ui.Components.voip.e2 e2Var = (org.telegram.ui.Components.voip.e2) this.b;
-                e2Var.getClass();
-                e2Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                e2Var.b.invalidate();
-                break;
-            case 21:
-                di.z2 z2Var = (di.z2) this.b;
-                ((di.d4) z2Var.K1).a.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                z2Var.invalidate();
-                break;
-            case 22:
-                org.telegram.ui.web.k1 k1Var = (org.telegram.ui.web.k1) this.b;
-                float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k1Var.U = floatValue6;
-                k1Var.V.setAlpha(floatValue6);
-                k1Var.invalidate();
-                break;
-            case 23:
-                org.telegram.ui.l0 l0Var = (org.telegram.ui.l0) this.b;
-                float floatValue7 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l0Var.a0 = floatValue7;
-                l0Var.j(floatValue7);
-                l0Var.b0.setAlpha(l0Var.a0);
-                l0Var.R.setTranslationX(org.telegram.messenger.g0.L(56.0f) * l0Var.a0);
-                l0Var.O.setTranslationX(org.telegram.messenger.g0.L(112.0f) * l0Var.a0);
-                l0Var.invalidate();
-                break;
-            case 24:
-                ((wp0) ((tg.o0) this.b)).K.e0.invalidate();
-                break;
-            case 25:
-                tg.h1 h1Var = (tg.h1) this.b;
-                h1Var.getClass();
-                h1Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                h1Var.invalidate();
-                break;
-            case 26:
-                tg.o1 o1Var = (tg.o1) this.b;
-                o1Var.getClass();
-                o1Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o1Var.invalidate();
-                break;
-            case 27:
-                sg.i iVar = (sg.i) this.b;
-                iVar.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                iVar.invalidate();
-                break;
-            case 28:
-                tg.c2 c2Var = (tg.c2) this.b;
-                c2Var.getClass();
-                c2Var.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             default:
-                tg.i2 i2Var = (tg.i2) this.b;
-                float floatValue8 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i2Var.D = floatValue8;
-                bi.t tVar = i2Var.c;
-                tVar.setAlpha(floatValue8);
-                tVar.setScaleX(org.telegram.messenger.g0.T1(0.9f, 1.0f, i2Var.D));
-                tVar.setScaleY(org.telegram.messenger.g0.T1(0.9f, 1.0f, i2Var.D));
-                i2Var.b.invalidate();
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.H) {
+            case 1:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(240.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.H) {
+            case 3:
+                if (!((pa) this.I).U.a(this, motionEvent)) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.i9, android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        switch (this.H) {
+            case 1:
+                return drawable == ((kg.a1) this.I).n || super.verifyDrawable(drawable);
+            default:
+                return super.verifyDrawable(drawable);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v3(org.telegram.ui.web.v0 v0Var, Context context) {
+        super(context);
+        this.H = 11;
+        this.I = v0Var;
+        this.a = new u2(this, this, 7);
+    }
+
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.H) {
+            case 5:
+                hi.n5 n5Var = ((ad) this.I).h;
+                if (n5Var != null) {
+                    n5Var.invalidate();
+                }
+                super.invalidate();
+                break;
+            case 6:
+                hi.n5 n5Var2 = ((qn) this.I).f;
+                if (n5Var2 != null) {
+                    n5Var2.invalidate();
+                }
+                super.invalidate();
+                break;
+            case 7:
+                super.invalidate();
+                ((org.telegram.ui.Components.p8) this.I).invalidate();
+                break;
+            case 8:
+                if (!ch.f0.b(this)) {
+                    super.invalidate();
+                    ((cv) this.I).f();
+                    break;
+                }
+                break;
+            case 9:
+                hi.n5 n5Var3 = ((c50) this.I).e;
+                if (n5Var3 != null) {
+                    n5Var3.invalidate();
+                }
+                super.invalidate();
+                break;
+            case 10:
+                hi.n5 n5Var4 = ((oc0) this.I).h;
+                if (n5Var4 != null) {
+                    n5Var4.invalidate();
+                }
+                super.invalidate();
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate(int i7, int i10, int i11, int i12) {
+        switch (this.H) {
+            case 5:
+                hi.n5 n5Var = ((ad) this.I).h;
+                if (n5Var != null) {
+                    n5Var.invalidate();
+                }
+                super.invalidate(i7, i10, i11, i12);
+                break;
+            case 6:
+                hi.n5 n5Var2 = ((qn) this.I).f;
+                if (n5Var2 != null) {
+                    n5Var2.invalidate();
+                }
+                super.invalidate(i7, i10, i11, i12);
+                break;
+            case 7:
+                super.invalidate(i7, i10, i11, i12);
+                ((org.telegram.ui.Components.p8) this.I).invalidate();
+                break;
+            case 8:
+                if (!ch.f0.b(this)) {
+                    super.invalidate(i7, i10, i11, i12);
+                    break;
+                }
+                break;
+            case 9:
+                hi.n5 n5Var3 = ((c50) this.I).e;
+                if (n5Var3 != null) {
+                    n5Var3.invalidate();
+                }
+                super.invalidate(i7, i10, i11, i12);
+                break;
+            case 10:
+                hi.n5 n5Var4 = ((oc0) this.I).h;
+                if (n5Var4 != null) {
+                    n5Var4.invalidate();
+                }
+                super.invalidate(i7, i10, i11, i12);
+                break;
+            default:
+                super.invalidate(i7, i10, i11, i12);
                 break;
         }
     }

@@ -1,6 +1,6 @@
 package fh;
 
-import a8.aa;
+import a8.ca;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
@@ -9,11 +9,11 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Shader;
 import java.lang.ref.WeakReference;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class b extends aa {
+public final class b extends ca {
     public final Paint a;
     public final Paint b;
     public final Matrix c;
@@ -31,9 +31,9 @@ public final class b extends aa {
         paint.setFilterBitmap(true);
     }
 
-    @Override // a8.aa
-    public final void b(Canvas canvas, ri.a aVar) {
-        ri.b bVar = (ri.b) g.v(aVar);
+    @Override // a8.ca
+    public final void b(Canvas canvas, ui.a aVar) {
+        ui.b bVar = (ui.b) g.v(aVar);
         g gVar = this.f;
         int i7 = gVar.c;
         Bitmap bitmap = bVar.d;
@@ -52,7 +52,7 @@ public final class b extends aa {
             }
         }
         if (Color.alpha(gVar.x) > 0) {
-            gVar.c0.c(canvas, 0);
+            gVar.d0.c(canvas, 0);
         }
         if (this.e != null && bitmap != null && !bitmap.isRecycled() && i7 > 0) {
             Matrix matrix = bVar.b;
@@ -61,13 +61,13 @@ public final class b extends aa {
             matrix2.postTranslate(-gVar.d, -gVar.e);
             this.e.setLocalMatrix(matrix2);
             paint.setAlpha(i7);
-            gVar.Q.c(canvas, paint);
+            gVar.R.c(canvas, paint);
         }
-        int r12 = m6.r1(i7 / 255.0f, gVar.y);
+        int r12 = j6.r1(i7 / 255.0f, gVar.y);
         if (Color.alpha(r12) > 0) {
             Paint paint2 = this.b;
             paint2.setColor(r12);
-            gVar.Q.c(canvas, paint2);
+            gVar.R.c(canvas, paint2);
         }
     }
 }

@@ -1,93 +1,105 @@
 package ri;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
 import android.graphics.Shader;
+import bg.n0;
+import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class b implements a {
-    public final Paint a;
-    public final Matrix b;
-    public BitmapShader c;
-    public Bitmap d;
-    public final Matrix e;
-    public Bitmap f;
-    public int h;
+public final class b {
+    public final RenderNode e;
+    public final RenderNode f;
+    public final RenderNode g;
+    public final RenderNode h;
+    public final RenderNode i;
+    public ColorFilter j;
+    public int k;
+    public int l;
+    public int m;
     public int n;
+    public int o;
+    public int p;
+    public float s;
+    public float t;
+    public int u;
+    public int v;
+    public int w;
+    public int x;
+    public final RectF a = new RectF();
+    public final Rect b = new Rect();
+    public final RectF c = new RectF();
+    public final RectF d = new RectF();
+    public int q = 1;
+    public final RectF r = new RectF();
 
-    public b() {
-        Paint paint = new Paint(3);
-        this.a = paint;
-        this.b = new Matrix();
-        this.e = new Matrix();
-        paint.setFilterBitmap(true);
+    public b(int i7) {
+        RenderNode renderNode = new RenderNode("cap-" + i7);
+        this.e = renderNode;
+        renderNode.setUseCompositingLayer(true, null);
+        RenderNode renderNode2 = new RenderNode("glass-" + i7);
+        this.f = renderNode2;
+        renderNode2.setRenderEffect(n0.d());
+        this.g = new RenderNode("glass-frosted-" + i7);
+        RenderNode renderNode3 = new RenderNode("filtered-" + i7);
+        this.h = renderNode3;
+        renderNode3.setRenderEffect(RenderEffect.createColorFilterEffect(d.v));
+        this.i = new RenderNode("frosted-filtered-" + i7);
     }
 
-    public final void a(Bitmap bitmap) {
-        if (this.d == bitmap) {
-            return;
+    public final RenderNode a(int i7) {
+        int c10 = p1.g.c(i7);
+        if (c10 == 0) {
+            return this.e;
         }
-        this.d = bitmap;
-        Paint paint = this.a;
-        paint.setShader(null);
-        this.c = null;
-        if (bitmap != null) {
+        if (c10 == 1) {
+            return this.f;
+        }
+        if (c10 == 2) {
+            return this.g;
+        }
+        if (c10 == 3) {
+            return this.i;
+        }
+        throw new IllegalArgumentException("Unknown source index: ".concat(r.b.w(i7)));
+    }
+
+    public final void b(int i7, int i10, int i11) {
+        if (this.o != i7) {
+            this.o = i7;
+            float N = g0.N(7.0f);
+            float max = N <= 0.0f ? 0.0f : Math.max(0.0f, ((((N * 0.57735f) + 0.5f) / i7) - 0.5f) / 0.57735f);
+            this.s = max;
+            this.e.setRenderEffect(RenderEffect.createBlurEffect(max, max, Shader.TileMode.CLAMP));
+        }
+        if (this.p != i10) {
+            this.p = i10;
+            float N2 = g0.N(36.0f);
+            float max2 = N2 > 0.0f ? Math.max(0.0f, ((((N2 * 0.57735f) + 0.5f) / i10) - 0.5f) / 0.57735f) : 0.0f;
+            this.t = max2;
+            RenderNode renderNode = this.g;
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-            this.c = bitmapShader;
-            paint.setShader(bitmapShader);
-            c();
+            renderNode.setRenderEffect(RenderEffect.createBlurEffect(max2, max2, tileMode));
+            RenderNode renderNode2 = this.i;
+            float f10 = this.t;
+            renderNode2.setRenderEffect(RenderEffect.createBlurEffect(f10, f10, tileMode));
         }
+        this.q = i11;
     }
 
-    public final void b(int i7, int i10) {
-        if (this.h == i7 && this.n == i10) {
-            return;
+    public final void c(ColorMatrixColorFilter colorMatrixColorFilter) {
+        if (this.j != colorMatrixColorFilter) {
+            this.j = colorMatrixColorFilter;
+            RenderNode renderNode = this.h;
+            if (colorMatrixColorFilter == null) {
+                colorMatrixColorFilter = d.v;
+            }
+            renderNode.setRenderEffect(RenderEffect.createColorFilterEffect(colorMatrixColorFilter));
         }
-        this.h = i7;
-        this.n = i10;
-        c();
-    }
-
-    public final void c() {
-        Bitmap bitmap = this.d;
-        Matrix matrix = this.b;
-        if (bitmap == null) {
-            matrix.reset();
-            return;
-        }
-        int width = bitmap.getWidth();
-        int height = this.d.getHeight();
-        int i7 = this.h;
-        int i10 = this.n;
-        matrix.reset();
-        if (width <= 0 || height <= 0 || i7 <= 0 || i10 <= 0) {
-            return;
-        }
-        float f10 = i7;
-        float f11 = width;
-        float f12 = i10;
-        float f13 = height;
-        float max = Math.max(f10 / f11, f12 / f13);
-        matrix.setScale(max, max);
-        matrix.postTranslate((f10 - (f11 * max)) * 0.5f, ((f12 - (f13 * max)) * 0.5f) + 0);
-    }
-
-    @Override // ri.a
-    public final void e(Canvas canvas, float f10, float f11, float f12, float f13) {
-        Bitmap bitmap = this.d;
-        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
-            return;
-        }
-        Matrix matrix = this.e;
-        Matrix matrix2 = this.b;
-        matrix.set(matrix2);
-        matrix.postTranslate(f10, f11);
-        this.c.setLocalMatrix(matrix2);
-        canvas.drawRect(f10, f11, f12, f13, this.a);
     }
 }

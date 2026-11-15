@@ -1,8 +1,8 @@
 package oe;
 
-import h2.p0;
+import h2.o0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c implements ke.a {
     public static final c a = new c();
@@ -17,7 +17,7 @@ public final class c implements ke.a {
         } else {
             ((mc.a) iVar.c).c(String.valueOf(doubleValue));
         }
-        ((p0) hVar.f).getClass();
+        ((o0) hVar.f).getClass();
         if (Double.isInfinite(doubleValue) || Double.isNaN(doubleValue)) {
             throw new qe.d("Unexpected special floating-point value " + Double.valueOf(doubleValue) + ". By default, non-finite floating point values are prohibited because they do not conform JSON specification. It is possible to deserialize them using 'JsonBuilder.allowSpecialFloatingPointValues = true'\nCurrent output: " + ((Object) qe.f.d(-1, ((mc.a) iVar.c).toString())));
         }

@@ -7,16 +7,17 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import bg.y;
-import f5.u;
+import f5.v;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.iz;
+import org.telegram.messenger.gz;
 import org.telegram.messenger.q5;
+import tg.x;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class h {
     public static h q;
@@ -30,29 +31,29 @@ public final class h {
     public boolean l;
     public boolean p;
     public final q5 a = new q5("SpoilerEffectBitmapFactory", 3);
-    public final u[] b = new u[f.C.length];
-    public final v6.e[] c = new v6.e[2];
+    public final v[] b = new v[f.C.length];
+    public final x[] c = new x[2];
     public int d = 0;
     public final Rect m = new Rect();
     public final y n = new y(this, 2);
     public final Rect o = new Rect();
 
     public h() {
-        int L = g0.L(iz.o() == 2 ? 150.0f : 100.0f);
+        int L = g0.L(gz.o() == 2 ? 150.0f : 100.0f);
         Point point = g0.q;
         int min = (int) Math.min(Math.min(point.x, point.y) * 0.5f, L);
         this.k = min < g0.L(80.0f) ? g0.L(80.0f) : min;
         int i7 = 0;
         while (true) {
-            u[] uVarArr = this.b;
-            if (i7 >= uVarArr.length) {
+            v[] vVarArr = this.b;
+            if (i7 >= vVarArr.length) {
                 return;
             }
-            boolean z9 = false;
-            u uVar = new u(19, z9, z9);
-            uVar.c = new float[Math.max(64, 2)];
-            uVar.b = 0;
-            uVarArr[i7] = uVar;
+            boolean z10 = false;
+            v vVar = new v(19, z10, z10);
+            vVar.c = new float[Math.max(64, 2)];
+            vVar.b = 0;
+            vVarArr[i7] = vVar;
             i7++;
         }
     }
@@ -68,9 +69,9 @@ public final class h {
         float f11;
         int i13;
         Rect rect2 = rect;
-        u[] uVarArr = this.b;
-        for (u uVar : uVarArr) {
-            uVar.b = 0;
+        v[] vVarArr = this.b;
+        for (v vVar : vVarArr) {
+            vVar.b = 0;
         }
         int i14 = 0;
         while (i14 < 100) {
@@ -79,7 +80,7 @@ public final class h {
                 float[][] fArr = f.D;
                 int[] iArr2 = fVar.f;
                 float[] fArr2 = fVar.e;
-                int length = uVarArr.length;
+                int length = vVarArr.length;
                 float[] fArr3 = f.C;
                 if (length == fArr3.length) {
                     long currentTimeMillis = System.currentTimeMillis();
@@ -118,8 +119,8 @@ public final class h {
                         bVar.g = min2;
                         float f26 = bVar.a;
                         float f27 = bVar.b;
-                        boolean z9 = f26 < f14 || f26 > f25 || f27 < f15 || f27 > f17;
-                        if (min2 >= bVar.f || z9) {
+                        boolean z10 = f26 < f14 || f26 > f25 || f27 < f15 || f27 > f17;
+                        if (min2 >= bVar.f || z10) {
                             if (stack.size() < i15) {
                                 stack.push(bVar);
                             }
@@ -259,16 +260,16 @@ public final class h {
                         size2 = i10;
                     }
                     for (int i35 = 0; i35 < length2; i35++) {
-                        u uVar2 = uVarArr[i35];
+                        v vVar2 = vVarArr[i35];
                         float[] fArr5 = fArr[i35];
                         int i36 = iArr[i35];
-                        int i37 = uVar2.b + i36;
-                        float[] fArr6 = (float[]) uVar2.c;
+                        int i37 = vVar2.b + i36;
+                        float[] fArr6 = (float[]) vVar2.c;
                         if (i37 > fArr6.length) {
-                            uVar2.c = Arrays.copyOf((float[]) uVar2.c, Math.max(i37, fArr6.length * 2));
+                            vVar2.c = Arrays.copyOf((float[]) vVar2.c, Math.max(i37, fArr6.length * 2));
                         }
-                        System.arraycopy(fArr5, 0, (float[]) uVar2.c, uVar2.b, i36);
-                        uVar2.b += i36;
+                        System.arraycopy(fArr5, 0, (float[]) vVar2.c, vVar2.b, i36);
+                        vVar2.b += i36;
                     }
                     i14 = i7 + 1;
                     rect2 = rect;
@@ -281,15 +282,15 @@ public final class h {
         f fVar2 = (f) this.i.get(0);
         fVar2.getClass();
         float[] fArr7 = f.C;
-        if (uVarArr.length != fArr7.length) {
+        if (vVarArr.length != fArr7.length) {
             return;
         }
         for (int i38 = 0; i38 < fArr7.length; i38++) {
-            u uVar3 = uVarArr[i38];
+            v vVar3 = vVarArr[i38];
             Paint paint = fVar2.a[i38];
-            int i39 = uVar3.b;
+            int i39 = vVar3.b;
             if (i39 > 0) {
-                canvas.drawPoints((float[]) uVar3.c, 0, i39, paint);
+                canvas.drawPoints((float[]) vVar3.c, 0, i39, paint);
             }
         }
     }

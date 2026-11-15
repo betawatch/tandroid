@@ -7,9 +7,9 @@ import android.view.MotionEvent;
 import java.security.SecureRandom;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.fj0;
+import org.telegram.ui.Components.kj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class h implements GestureDetector.OnGestureListener {
     public final /* synthetic */ int a;
@@ -23,19 +23,19 @@ public final class h implements GestureDetector.OnGestureListener {
     @Override // android.view.GestureDetector.OnGestureListener
     public final boolean onDown(MotionEvent motionEvent) {
         m mVar = this.b;
-        ValueAnimator valueAnimator = mVar.c0;
+        ValueAnimator valueAnimator = mVar.d0;
         if (valueAnimator != null) {
             valueAnimator.removeAllListeners();
-            mVar.c0.cancel();
-            mVar.c0 = null;
-        }
-        AnimatorSet animatorSet = mVar.d0;
-        if (animatorSet != null) {
-            animatorSet.removeAllListeners();
             mVar.d0.cancel();
             mVar.d0 = null;
         }
-        g0.r(mVar.e0);
+        AnimatorSet animatorSet = mVar.e0;
+        if (animatorSet != null) {
+            animatorSet.removeAllListeners();
+            mVar.e0.cancel();
+            mVar.e0 = null;
+        }
+        g0.r(mVar.f0);
         mVar.a = true;
         return true;
     }
@@ -70,7 +70,7 @@ public final class h implements GestureDetector.OnGestureListener {
     public final boolean onSingleTapUp(MotionEvent motionEvent) {
         float measuredWidth = this.b.getMeasuredWidth() / 2.0f;
         SecureRandom secureRandom = Utilities.b;
-        g0.i3(new fj0(this, ((measuredWidth - motionEvent.getX()) * (secureRandom.nextInt(30) + 40)) / measuredWidth, ((measuredWidth - motionEvent.getY()) * (secureRandom.nextInt(30) + 40)) / measuredWidth, 1), 16L);
+        g0.i3(new kj0(this, ((measuredWidth - motionEvent.getX()) * (secureRandom.nextInt(30) + 40)) / measuredWidth, ((measuredWidth - motionEvent.getY()) * (secureRandom.nextInt(30) + 40)) / measuredWidth, 1), 16L);
         return true;
     }
 

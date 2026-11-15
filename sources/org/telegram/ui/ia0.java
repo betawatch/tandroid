@@ -1,53 +1,58 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ia0 extends v4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sa0 b;
+public final class ia0 implements org.telegram.ui.Components.nr0 {
+    public final /* synthetic */ pa0 a;
 
-    public /* synthetic */ ia0(sa0 sa0Var, int i7) {
-        this.a = i7;
-        this.b = sa0Var;
+    public ia0(pa0 pa0Var) {
+        this.a = pa0Var;
     }
 
-    @Override // v4.s0
-    public final void a(RecyclerView recyclerView, int i7) {
-        switch (this.a) {
-            case 0:
-                if (i7 == 1) {
-                    sa0 sa0Var = this.b;
-                    if (sa0Var.t0 && sa0Var.u0) {
-                        org.telegram.messenger.g0.v1(sa0Var.getParentActivity().getCurrentFocus());
-                        break;
-                    }
-                }
-                break;
-            default:
-                boolean z9 = i7 != 0;
-                sa0 sa0Var2 = this.b;
-                sa0Var2.M = z9;
-                if (!z9 && sa0Var2.H != null) {
-                    sa0Var2.H = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.nr0
+    public final void W() {
+        pa0 pa0Var = this.a;
+        ja0 ja0Var = pa0Var.M0;
+        int m0 = ja0Var == null ? 0 : ja0Var.m0(8);
+        pa0Var.N0.setText(org.telegram.messenger.hd.G(m0, "LocationStories", new Object[0]));
+        ha0 ha0Var = pa0Var.Q;
+        boolean z10 = m0 > 0;
+        if (ha0Var.a0 != z10) {
+            ha0Var.a0 = z10;
+            ha0Var.f();
+            pa0Var.R.w0(0, org.telegram.messenger.g0.L(200.0f), null);
         }
     }
 
-    @Override // v4.s0
-    public void b(RecyclerView recyclerView, int i7, int i10) {
-        switch (this.a) {
-            case 1:
-                sa0 sa0Var = this.b;
-                sa0Var.K0(false);
-                if (sa0Var.H != null) {
-                    sa0Var.J += i10;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.nr0
+    public final boolean Y() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.nr0
+    public final org.telegram.ui.Components.uj0 f() {
+        return this.a.R;
+    }
+
+    @Override // org.telegram.ui.Components.nr0
+    public final TLRPC.Chat g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.nr0
+    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.nr0
+    public final boolean t() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.nr0
+    public final void J() {
     }
 }

@@ -7,16 +7,16 @@ import androidx.biometric.u;
 import androidx.biometric.v;
 import androidx.biometric.x;
 import androidx.biometric.z;
-import d6.i;
 import h6.m;
 import java.lang.ref.WeakReference;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
-import org.telegram.messenger.id;
+import ob.c;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Wallet.u0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final class a extends FingerprintManager.AuthenticationCallback {
     public final void onAuthenticationError(int i7, CharSequence charSequence) {
         switch (this.a) {
             case 0:
-                ((x) ((a0) ((i) this.b).b).d).a(i7, charSequence);
+                ((x) ((a0) ((c) this.b).b).d).a(i7, charSequence);
                 break;
             default:
                 u0 u0Var = (u0) this.b;
@@ -55,7 +55,7 @@ public final class a extends FingerprintManager.AuthenticationCallback {
         Object obj = this.b;
         switch (i7) {
             case 0:
-                WeakReference weakReference = ((x) ((a0) ((i) obj).b).d).a;
+                WeakReference weakReference = ((x) ((a0) ((c) obj).b).d).a;
                 if (weakReference.get() != null && ((z) weakReference.get()).n) {
                     z zVar = (z) weakReference.get();
                     if (zVar.u == null) {
@@ -68,7 +68,7 @@ public final class a extends FingerprintManager.AuthenticationCallback {
             default:
                 u0 u0Var = (u0) obj;
                 if (u0Var.f() && (alertDialog = u0Var.i) != null) {
-                    alertDialog.setMessage(id.M0(2131743117, null));
+                    alertDialog.setMessage(hd.M0(2131743117, null));
                     break;
                 }
                 break;
@@ -80,7 +80,7 @@ public final class a extends FingerprintManager.AuthenticationCallback {
         AlertDialog alertDialog;
         switch (this.a) {
             case 0:
-                WeakReference weakReference = ((x) ((a0) ((i) this.b).b).d).a;
+                WeakReference weakReference = ((x) ((a0) ((c) this.b).b).d).a;
                 if (weakReference.get() != null) {
                     z zVar = (z) weakReference.get();
                     if (zVar.t == null) {
@@ -109,7 +109,7 @@ public final class a extends FingerprintManager.AuthenticationCallback {
         m mVar;
         switch (this.a) {
             case 0:
-                i iVar = (i) this.b;
+                c cVar = (c) this.b;
                 FingerprintManager.CryptoObject cryptoObject = authenticationResult.getCryptoObject();
                 v vVar = null;
                 if (cryptoObject != null) {
@@ -120,7 +120,7 @@ public final class a extends FingerprintManager.AuthenticationCallback {
                     } else if (cryptoObject.getMac() != null) {
                         mVar = new m(cryptoObject.getMac());
                     }
-                    iVar.getClass();
+                    cVar.getClass();
                     if (mVar != null) {
                         Cipher cipher = (Cipher) mVar.c;
                         if (cipher != null) {
@@ -137,14 +137,14 @@ public final class a extends FingerprintManager.AuthenticationCallback {
                             }
                         }
                     }
-                    ((x) ((a0) iVar.b).d).b(new u(vVar, 2));
+                    ((x) ((a0) cVar.b).d).b(new u(vVar, 2));
                     break;
                 }
                 mVar = null;
-                iVar.getClass();
+                cVar.getClass();
                 if (mVar != null) {
                 }
-                ((x) ((a0) iVar.b).d).b(new u(vVar, 2));
+                ((x) ((a0) cVar.b).d).b(new u(vVar, 2));
             default:
                 u0 u0Var = (u0) this.b;
                 if (!u0Var.f) {

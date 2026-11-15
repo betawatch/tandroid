@@ -1,7 +1,7 @@
 package wf;
 
 import a8.p0;
-import a8.ua;
+import a8.va;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.util.Pair;
-import d3.x;
+import d3.w;
 import f6.l;
 import j2.h;
 import j2.m;
@@ -29,24 +29,24 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 import org.telegram.messenger.t0;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.fg;
-import v0.j;
-import v4.v0;
+import org.telegram.ui.Components.mg;
+import ug.x;
+import v4.w0;
 import yc.f;
 import yc.g;
 import yc.i;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final e l;
     public static final HashMap m;
     public final ExtendedDefaultDataSourceFactory e;
-    public final j f;
+    public final x f;
     public final sa.d g;
     public final HashMap h;
     public Pair i;
@@ -54,7 +54,7 @@ public final class d extends i {
     public final AtomicInteger k;
 
     static {
-        e eVar = new e(new v0(Uri.parse("file:///android_asset/cast/default.png"), "image/png", "/assets/default"));
+        e eVar = new e(new w0(Uri.parse("file:///android_asset/cast/default.png"), "image/png", "/assets/default"));
         l = eVar;
         e[] eVarArr = {eVar};
         HashMap hashMap = new HashMap();
@@ -64,12 +64,12 @@ public final class d extends i {
     }
 
     public d() {
-        this.c = new ua(11);
+        this.c = new va(10);
         this.h = new HashMap();
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new j(14);
+        this.f = new x(15);
         this.g = new sa.d(11);
         this.e = new ExtendedDefaultDataSourceFactory(t0.b, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -94,7 +94,7 @@ public final class d extends i {
             }
         }
         StringBuilder sb2 = new StringBuilder();
-        sb2.append(String.valueOf(ipAddress & qs.e4) + '.' + ((ipAddress >> 8) & qs.e4) + '.' + ((ipAddress >> 16) & qs.e4) + '.' + ((ipAddress >> 24) & qs.e4));
+        sb2.append(String.valueOf(ipAddress & ns.e4) + '.' + ((ipAddress >> 8) & ns.e4) + '.' + ((ipAddress >> 16) & ns.e4) + '.' + ((ipAddress >> 24) & ns.e4));
         sb2.append(":61578");
         return sb2.toString();
     }
@@ -107,7 +107,7 @@ public final class d extends i {
     public final g e(yc.d dVar) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
-        StringBuilder n10 = jg.g.n(incrementAndGet, "Request ", " ");
+        StringBuilder m10 = i5.c.m(incrementAndGet, "Request ", " ");
         switch (dVar.g) {
             case 1:
                 str = "GET";
@@ -161,27 +161,27 @@ public final class d extends i {
                 str = "null";
                 break;
         }
-        n10.append(str);
-        n10.append(" ");
-        n10.append(dVar.f);
-        n10.append(" ");
-        rf.b.p(n10, (String) dVar.i.get("range"), "CAST_SERVER");
+        m10.append(str);
+        m10.append(" ");
+        m10.append(dVar.f);
+        m10.append(" ");
+        r.b.t(m10, (String) dVar.i.get("range"), "CAST_SERVER");
         try {
             g k10 = k(dVar);
-            fg fgVar = k10.e;
-            fgVar.put("Access-Control-Allow-Origin", "*");
-            fgVar.put("Access-Control-Max-Age", "3628800");
-            fgVar.put("Access-Control-Allow-Methods", "*");
-            fgVar.put("Access-Control-Allow-Headers", "*");
+            mg mgVar = k10.e;
+            mgVar.put("Access-Control-Allow-Origin", "*");
+            mgVar.put("Access-Control-Max-Age", "3628800");
+            mgVar.put("Access-Control-Allow-Methods", "*");
+            mgVar.put("Access-Control-Allow-Headers", "*");
             return k10;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
             g c10 = i.c(f.n, "text/plain", "Error reading file");
-            fg fgVar2 = c10.e;
-            fgVar2.put("Access-Control-Allow-Origin", "*");
-            fgVar2.put("Access-Control-Max-Age", "3628800");
-            fgVar2.put("Access-Control-Allow-Methods", "*");
-            fgVar2.put("Access-Control-Allow-Headers", "*");
+            mg mgVar2 = c10.e;
+            mgVar2.put("Access-Control-Allow-Origin", "*");
+            mgVar2.put("Access-Control-Max-Age", "3628800");
+            mgVar2.put("Access-Control-Allow-Methods", "*");
+            mgVar2.put("Access-Control-Allow-Headers", "*");
             return c10;
         }
     }
@@ -202,9 +202,9 @@ public final class d extends i {
         if (this.j) {
             try {
                 i.d(this.a);
-                ua uaVar = this.c;
-                uaVar.getClass();
-                ArrayList arrayList = new ArrayList((List) uaVar.c);
+                va vaVar = this.c;
+                vaVar.getClass();
+                ArrayList arrayList = new ArrayList((List) vaVar.c);
                 int size = arrayList.size();
                 int i7 = 0;
                 while (i7 < size) {
@@ -234,9 +234,9 @@ public final class d extends i {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final g k(yc.d dVar) {
-        boolean z9;
+        boolean z10;
         long j3;
-        x xVar;
+        w wVar;
         long j10;
         g c10;
         long parseLong;
@@ -317,23 +317,23 @@ public final class d extends i {
                 if (substring.startsWith("-")) {
                     parseLong2 = open - 1;
                     parseLong = parseLong2 - Long.parseLong(substring.substring(1));
-                    z9 = equals2;
+                    z10 = equals2;
                 } else {
                     String[] split = substring.split("-");
                     parseLong = Long.parseLong(split[0]);
-                    z9 = equals2;
+                    z10 = equals2;
                     parseLong2 = split.length > 1 ? Long.parseLong(split[1]) : open - 1;
                 }
                 long j13 = parseLong;
                 j3 = open;
                 long j14 = j3 - 1;
-                xVar = new x(j13, parseLong2 > j14 ? j14 : parseLong2);
-                long j15 = xVar == null ? (xVar.b - xVar.a) + 1 : j3;
-                if (xVar != null) {
+                wVar = new w(j13, parseLong2 > j14 ? j14 : parseLong2);
+                long j15 = wVar == null ? (wVar.b - wVar.a) + 1 : j3;
+                if (wVar != null) {
                     j12 = j15;
-                    j11 = xVar.a;
+                    j11 = wVar.a;
                 }
-                if (!z9) {
+                if (!z10) {
                     int i10 = (int) j15;
                     byte[] bArr = new byte[i10];
                     createDataSource.open(new m(uri, 1, null, map, j11, j12, null, 0));
@@ -344,7 +344,7 @@ public final class d extends i {
                 if (j15 != 0) {
                     j10 = j3;
                     c cVar = new c(createDataSource, new m(uri, 1, null, map, j11, j12, null, 0));
-                    if (xVar != null) {
+                    if (wVar != null) {
                         fVar = f.e;
                     }
                     c10 = new g(fVar, eVar.a, cVar, j15);
@@ -353,20 +353,20 @@ public final class d extends i {
                     c10 = i.c(f.d, str3, "");
                 }
                 g gVar = c10;
-                if (xVar != null) {
-                    gVar.e.put("Content-Range", "bytes " + xVar.a + "-" + xVar.b + "/" + j10);
+                if (wVar != null) {
+                    gVar.e.put("Content-Range", "bytes " + wVar.a + "-" + wVar.b + "/" + j10);
                 }
                 return gVar;
             }
         }
-        z9 = equals2;
+        z10 = equals2;
         j3 = open;
-        xVar = null;
-        if (xVar == null) {
+        wVar = null;
+        if (wVar == null) {
         }
-        if (xVar != null) {
+        if (wVar != null) {
         }
-        if (!z9) {
+        if (!z10) {
         }
     }
 

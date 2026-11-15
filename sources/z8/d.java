@@ -2,10 +2,10 @@ package z8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import y8.v;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d extends r6.a {
     public static final Parcelable.Creator<d> CREATOR = new v(10);
@@ -18,21 +18,21 @@ public final class d extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
+        int r10 = yb.r(parcel, 20293);
         int i10 = this.a;
-        xb.q(parcel, 2, 4);
+        yb.q(parcel, 2, 4);
         parcel.writeInt(i10);
-        xb.l(parcel, 3, this.b);
+        yb.l(parcel, 3, this.b);
         double d = this.c;
-        xb.q(parcel, 4, 8);
+        yb.q(parcel, 4, 8);
         parcel.writeDouble(d);
-        xb.l(parcel, 5, this.d);
+        yb.l(parcel, 5, this.d);
         long j3 = this.e;
-        xb.q(parcel, 6, 8);
+        yb.q(parcel, 6, 8);
         parcel.writeLong(j3);
         int i11 = this.f;
-        xb.q(parcel, 7, 4);
+        yb.q(parcel, 7, 4);
         parcel.writeInt(i11);
-        xb.s(parcel, r10);
+        yb.s(parcel, r10);
     }
 }

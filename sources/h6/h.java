@@ -8,8 +8,8 @@ import com.google.android.gms.cast.MediaError;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.common.api.internal.s;
 import com.google.android.gms.common.api.internal.t;
+import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.internal.cast.y;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import f6.a0;
@@ -24,9 +24,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h implements f6.f {
     public static final j6.b k = new j6.b("RemoteMediaClient", null);
@@ -53,15 +53,15 @@ public final class h implements f6.f {
         m mVar2 = new m(this);
         this.d = mVar2;
         this.c = mVar;
-        mVar.h = new gf.g(this, 1);
+        mVar.h = new gc.b(this, 1);
         mVar.c = mVar2;
         this.e = new c(this);
     }
 
-    public static com.google.android.gms.common.api.internal.r t() {
-        com.google.android.gms.common.api.internal.r rVar = new com.google.android.gms.common.api.internal.r(null, 1);
-        rVar.a(new n(new Status(17, null, null, null), 0));
-        return rVar;
+    public static com.google.android.gms.common.api.internal.s t() {
+        com.google.android.gms.common.api.internal.s sVar = new com.google.android.gms.common.api.internal.s(null, 1);
+        sVar.a(new n(new Status(17, null, null, null), 0));
+        return sVar;
     }
 
     public static final void x(o oVar) {
@@ -103,11 +103,11 @@ public final class h implements f6.f {
         if (e10 == null) {
             return null;
         }
-        Integer num = (Integer) e10.N.get(e10.x);
+        Integer num = (Integer) e10.O.get(e10.x);
         if (num == null) {
             return null;
         }
-        return (f6.o) e10.G.get(num.intValue());
+        return (f6.o) e10.H.get(num.intValue());
     }
 
     public final MediaInfo d() {
@@ -203,7 +203,7 @@ public final class h implements f6.f {
     public final boolean n() {
         q6.m.d("Must be called from the main thread.");
         f6.q e10 = e();
-        return e10 != null && e10.H;
+        return e10 != null && e10.I;
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
@@ -217,7 +217,7 @@ public final class h implements f6.f {
     /* JADX WARN: Removed duplicated region for block: B:58:0x0143 A[Catch: JSONException -> 0x0082, TryCatch #0 {JSONException -> 0x0082, blocks: (B:12:0x004b, B:14:0x0058, B:16:0x0062, B:17:0x006e, B:19:0x0074, B:28:0x008c, B:30:0x0098, B:32:0x00a7, B:37:0x00c1, B:40:0x00c6, B:41:0x010a, B:43:0x010e, B:44:0x011a, B:46:0x011e, B:47:0x0127, B:49:0x012b, B:50:0x0131, B:52:0x0135, B:53:0x0138, B:55:0x013c, B:56:0x013f, B:58:0x0143, B:59:0x0146, B:61:0x014a, B:63:0x0154, B:64:0x0157, B:66:0x015b, B:67:0x0173, B:68:0x0177, B:70:0x017d, B:73:0x00cb, B:74:0x00b1, B:76:0x00b7, B:80:0x0165, B:84:0x0190), top: B:8:0x003e }] */
     /* JADX WARN: Removed duplicated region for block: B:61:0x014a A[Catch: JSONException -> 0x0082, TryCatch #0 {JSONException -> 0x0082, blocks: (B:12:0x004b, B:14:0x0058, B:16:0x0062, B:17:0x006e, B:19:0x0074, B:28:0x008c, B:30:0x0098, B:32:0x00a7, B:37:0x00c1, B:40:0x00c6, B:41:0x010a, B:43:0x010e, B:44:0x011a, B:46:0x011e, B:47:0x0127, B:49:0x012b, B:50:0x0131, B:52:0x0135, B:53:0x0138, B:55:0x013c, B:56:0x013f, B:58:0x0143, B:59:0x0146, B:61:0x014a, B:63:0x0154, B:64:0x0157, B:66:0x015b, B:67:0x0173, B:68:0x0177, B:70:0x017d, B:73:0x00cb, B:74:0x00b1, B:76:0x00b7, B:80:0x0165, B:84:0x0190), top: B:8:0x003e }] */
     /* JADX WARN: Removed duplicated region for block: B:66:0x015b A[Catch: JSONException -> 0x0082, TryCatch #0 {JSONException -> 0x0082, blocks: (B:12:0x004b, B:14:0x0058, B:16:0x0062, B:17:0x006e, B:19:0x0074, B:28:0x008c, B:30:0x0098, B:32:0x00a7, B:37:0x00c1, B:40:0x00c6, B:41:0x010a, B:43:0x010e, B:44:0x011a, B:46:0x011e, B:47:0x0127, B:49:0x012b, B:50:0x0131, B:52:0x0135, B:53:0x0138, B:55:0x013c, B:56:0x013f, B:58:0x0143, B:59:0x0146, B:61:0x014a, B:63:0x0154, B:64:0x0157, B:66:0x015b, B:67:0x0173, B:68:0x0177, B:70:0x017d, B:73:0x00cb, B:74:0x00b1, B:76:0x00b7, B:80:0x0165, B:84:0x0190), top: B:8:0x003e }] */
-    /* JADX WARN: Type inference failed for: r3v0, types: [j6.o] */
+    /* JADX WARN: Type inference failed for: r3v0, types: [j6.p] */
     /* JADX WARN: Type inference failed for: r3v1 */
     /* JADX WARN: Type inference failed for: r3v3 */
     /*
@@ -231,8 +231,8 @@ public final class h implements f6.f {
         int[] m10;
         j6.m mVar = this.c;
         String str2 = mVar.o;
-        j6.o oVar = mVar.n;
-        j6.o oVar2 = mVar.j;
+        j6.p pVar = mVar.n;
+        j6.p pVar2 = mVar.j;
         List list = mVar.d;
         j6.b bVar = mVar.a;
         bVar.b("message received: %s", str);
@@ -248,7 +248,7 @@ public final class h implements f6.f {
                         switch (string.hashCode()) {
                             case -1830647528:
                                 if (string.equals("LOAD_CANCELLED")) {
-                                    oVar2.b(optLong, 2101, j6.m.f(jSONObject));
+                                    pVar2.b(optLong, 2101, j6.m.f(jSONObject));
                                     break;
                                 }
                                 break;
@@ -260,7 +260,7 @@ public final class h implements f6.f {
                                         JSONArray jSONArray = jSONObject.getJSONArray("items");
                                         f6.o[] oVarArr = new f6.o[jSONArray.length()];
                                         for (int i11 = 0; i11 < jSONArray.length(); i11++) {
-                                            oVarArr[i11] = new cb.c(jSONArray.getJSONObject(i11)).n();
+                                            oVarArr[i11] = new d6.i(jSONArray.getJSONObject(i11)).P();
                                         }
                                         Iterator it = ((h) mVar.h.b).i.iterator();
                                         while (it.hasNext()) {
@@ -275,14 +275,14 @@ public final class h implements f6.f {
                                     Log.w(str3, bVar.d("received unexpected error: Invalid Request.", new Object[0]));
                                     Iterator it2 = list.iterator();
                                     while (it2.hasNext()) {
-                                        ((j6.o) it2.next()).b(optLong, 2001, j6.m.f(jSONObject));
+                                        ((j6.p) it2.next()).b(optLong, 2001, j6.m.f(jSONObject));
                                     }
                                     break;
                                 }
                                 break;
                             case -262628938:
                                 if (string.equals("LOAD_FAILED")) {
-                                    oVar2.b(optLong, 2100, j6.m.f(jSONObject));
+                                    pVar2.b(optLong, 2100, j6.m.f(jSONObject));
                                     break;
                                 }
                                 break;
@@ -290,7 +290,7 @@ public final class h implements f6.f {
                                 if (string.equals("ERROR")) {
                                     Iterator it3 = list.iterator();
                                     while (it3.hasNext()) {
-                                        ((j6.o) it3.next()).b(optLong, 2100, j6.m.f(jSONObject));
+                                        ((j6.p) it3.next()).b(optLong, 2100, j6.m.f(jSONObject));
                                     }
                                     if (mVar.h == null) {
                                         break;
@@ -376,7 +376,7 @@ public final class h implements f6.f {
                                     Log.w(str3, bVar.d("received unexpected error: Invalid Player State.", new Object[0]));
                                     Iterator it10 = list.iterator();
                                     while (it10.hasNext()) {
-                                        ((j6.o) it10.next()).b(optLong, 2100, j6.m.f(jSONObject));
+                                        ((j6.p) it10.next()).b(optLong, 2100, j6.m.f(jSONObject));
                                     }
                                     break;
                                 }
@@ -386,9 +386,9 @@ public final class h implements f6.f {
                                     JSONArray jSONArray2 = jSONObject.getJSONArray("status");
                                     if (jSONArray2.length() > 0) {
                                         JSONObject jSONObject2 = jSONArray2.getJSONObject(0);
-                                        boolean c13 = oVar2.c(optLong);
-                                        if (oVar.d()) {
-                                            if (oVar.c(optLong)) {
+                                        boolean c13 = pVar2.c(optLong);
+                                        if (pVar.d()) {
+                                            if (pVar.c(optLong)) {
                                             }
                                             i7 = 1;
                                             if (!c13 && (qVar = mVar.f) != null) {
@@ -416,9 +416,9 @@ public final class h implements f6.f {
                                                 }
                                                 if ((i10 & 32) != 0) {
                                                     mVar.e = SystemClock.elapsedRealtime();
-                                                    gf.g gVar = mVar.h;
-                                                    if (gVar != null) {
-                                                        gVar.E();
+                                                    gc.b bVar2 = mVar.h;
+                                                    if (bVar2 != null) {
+                                                        bVar2.G0();
                                                     }
                                                 }
                                                 if ((i10 & 64) != 0) {
@@ -430,7 +430,7 @@ public final class h implements f6.f {
                                             qVar2.b(jSONObject2, 0);
                                             mVar.f = qVar2;
                                             mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = qs.L1;
+                                            i10 = ns.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {
@@ -473,7 +473,7 @@ public final class h implements f6.f {
                                             qVar22.b(jSONObject2, 0);
                                             mVar.f = qVar22;
                                             mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = qs.L1;
+                                            i10 = ns.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {
@@ -498,7 +498,7 @@ public final class h implements f6.f {
                                             qVar222.b(jSONObject2, 0);
                                             mVar.f = qVar222;
                                             mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = qs.L1;
+                                            i10 = ns.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {
@@ -525,7 +525,7 @@ public final class h implements f6.f {
                                     }
                                     Iterator it11 = list.iterator();
                                     while (it11.hasNext()) {
-                                        ((j6.o) it11.next()).b(optLong, 0, null);
+                                        ((j6.p) it11.next()).b(optLong, 0, null);
                                     }
                                     break;
                                 }
@@ -639,7 +639,7 @@ public final class h implements f6.f {
         synchronized (e0Var.D) {
             e0Var.D.put(str, this);
         }
-        s b10 = t.b();
+        t b10 = u.b();
         b10.c = new a0(e0Var, str, this);
         b10.a = 8413;
         e0Var.e(1, b10.a());
@@ -669,7 +669,7 @@ public final class h implements f6.f {
             synchronized (e0Var2.D) {
                 fVar = (f6.f) e0Var2.D.remove(str);
             }
-            s b10 = t.b();
+            t b10 = u.b();
             b10.c = new a0(e0Var2, fVar, str);
             b10.a = 8414;
             e0Var2.e(1, b10.a());

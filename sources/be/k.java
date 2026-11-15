@@ -3,7 +3,7 @@ package be;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import zd.c2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k extends ee.r {
     public final c e;
@@ -46,20 +46,20 @@ public final class k extends ee.r {
     */
     public final void h(int i7, id.h hVar) {
         int i10 = e.b;
-        boolean z9 = i7 >= i10;
-        if (z9) {
+        boolean z10 = i7 >= i10;
+        if (z10) {
             i7 -= i10;
         }
         this.f.get(i7 * 2);
         while (true) {
             Object l10 = l(i7);
-            boolean z10 = l10 instanceof c2;
+            boolean z11 = l10 instanceof c2;
             c cVar = this.e;
-            if (z10 || (l10 instanceof v)) {
-                if (k(i7, l10, z9 ? e.j : e.k)) {
+            if (z11 || (l10 instanceof v)) {
+                if (k(i7, l10, z10 ? e.j : e.k)) {
                     n(i7, null);
-                    m(i7, !z9);
-                    if (z9) {
+                    m(i7, !z10);
+                    if (z10) {
                         kotlin.jvm.internal.j.b(cVar);
                         return;
                     }
@@ -95,8 +95,8 @@ public final class k extends ee.r {
         return this.f.get((i7 * 2) + 1);
     }
 
-    public final void m(int i7, boolean z9) {
-        if (z9) {
+    public final void m(int i7, boolean z10) {
+        if (z10) {
             c cVar = this.e;
             kotlin.jvm.internal.j.b(cVar);
             cVar.B((this.c * e.b) + i7);

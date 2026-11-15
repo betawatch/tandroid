@@ -1,221 +1,61 @@
 package di;
 
-import android.content.SharedPreferences;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.SurfaceTexture;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.os.Build;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.qp;
-import org.telegram.ui.Cells.ma;
-import org.telegram.ui.Components.us;
-import org.telegram.ui.Components.vt;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.rc;
-import org.telegram.ui.uy0;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.ht0;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e implements c20 {
+public final /* synthetic */ class e implements ht0, r0.m {
     public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ e(int i7) {
+    public /* synthetic */ e(int i7, FrameLayout frameLayout) {
         this.a = i7;
+        this.b = frameLayout;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        ij messageObject;
-        ij messageObject2;
+    @Override // r0.m
+    public r0.k1 M0(View view, r0.k1 k1Var) {
+        r0.h1 h1Var = k1Var.a;
+        Rect rect = new Rect();
+        if (Build.VERSION.SDK_INT >= 30) {
+            i0.c f10 = h1Var.f(527);
+            rect.set(f10.a, f10.b, f10.c, f10.d);
+        } else {
+            rect.set(h1Var.i().a, h1Var.i().b, h1Var.i().c, h1Var.i().d);
+        }
+        int i7 = rect.left;
+        int i10 = rect.top;
+        int i11 = rect.right;
+        int i12 = rect.bottom + org.telegram.messenger.g0.n;
+        FrameLayout frameLayout = this.b;
+        frameLayout.setPadding(i7, i10, i11, i12);
+        frameLayout.requestLayout();
+        return k1Var;
+    }
+
+    @Override // org.telegram.ui.Components.ht0
+    public void a(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
         switch (this.a) {
             case 0:
-                View view = (View) obj;
-                view.setAlpha(1.0f);
-                view.setTranslationX(0.0f);
-                view.setTranslationY(0.0f);
+                uj0 uj0Var = (uj0) recyclerView;
+                ih.d.a(uj0Var, canvas, rectF, uj0Var, this.b);
                 break;
             case 1:
-                ((View) obj).setTranslationY(0.0f);
-                break;
-            case 2:
-                ((p) ((View) obj)).invalidate();
-                break;
-            case 3:
-                View view2 = (View) obj;
-                if (view2 instanceof kg.p1) {
-                    ((kg.p1) view2).c.invalidate();
-                    break;
-                }
-                break;
-            case 4:
-                View view3 = (View) obj;
-                if (view3 instanceof kg.p1) {
-                    ((kg.p1) view3).d.a(false, true);
-                    break;
-                }
-                break;
-            case 5:
-                org.telegram.messenger.p5 p5Var = gz.I;
-                break;
-            case 6:
-                HashMap hashMap = org.telegram.ui.ActionBar.e3.K;
-                break;
-            case 7:
-                int i7 = org.telegram.ui.ActionBar.c3.r;
-                break;
-            case 8:
-                int i10 = ma.n;
-                break;
-            case 9:
-                rc.f1((View) obj);
-                break;
-            case 10:
-                View view4 = (View) obj;
-                if ((view4 instanceof org.telegram.ui.Cells.q1) && (messageObject = ((org.telegram.ui.Cells.q1) view4).getMessageObject()) != null) {
-                    messageObject.K1 = true;
-                    break;
-                }
-                break;
-            case 11:
-                View view5 = (View) obj;
-                if ((view5 instanceof org.telegram.ui.Cells.q1) && (messageObject2 = ((org.telegram.ui.Cells.q1) view5).getMessageObject()) != null) {
-                    messageObject2.K1 = true;
-                    messageObject2.H = true;
-                    break;
-                }
-                break;
-            case 12:
-                vt vtVar = vt.R1;
-                break;
-            case 13:
-                View view6 = (View) obj;
-                if (view6 instanceof org.telegram.ui.ActionBar.p2) {
-                    ((org.telegram.ui.ActionBar.p2) view6).getTextView().invalidate();
-                    break;
-                } else {
-                    view6.invalidate();
-                    break;
-                }
-            case 14:
-                View view7 = (View) obj;
-                if (view7 instanceof org.telegram.ui.Cells.f5) {
-                    org.telegram.ui.Cells.f5 f5Var = (org.telegram.ui.Cells.f5) view7;
-                    f5Var.b.invalidate();
-                    f5Var.c.invalidate();
-                    break;
-                } else if (view7 instanceof kg.p1) {
-                    ((kg.p1) view7).c.invalidate();
-                    break;
-                } else {
-                    view7.invalidate();
-                    break;
-                }
-            case 15:
-                View view8 = (View) obj;
-                if (view8 instanceof org.telegram.ui.Cells.z7) {
-                    ((org.telegram.ui.Cells.z7) view8).a(true);
-                    break;
-                }
-                break;
-            case 16:
-                View view9 = (View) obj;
-                if (view9 instanceof org.telegram.ui.Cells.z7) {
-                    ((org.telegram.ui.Cells.z7) view9).c(true);
-                    break;
-                }
-                break;
-            case 17:
-                ((Boolean) obj).getClass();
-                break;
-            case 18:
-                break;
-            case 19:
-                Long l10 = (Long) obj;
-                if (l10 != null && l10.longValue() != Long.MAX_VALUE) {
-                    org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
-                    if (T != null) {
-                        T.presentFragment(ProfileActivity.D4(l10.longValue()));
-                        break;
-                    }
-                } else {
-                    org.telegram.messenger.g0.h3(new us(26));
-                    break;
-                }
-                break;
-            case 20:
-                SurfaceTexture surfaceTexture = (SurfaceTexture) obj;
-                Drawable[] drawableArr = PhotoViewer.Y8;
-                if (surfaceTexture != null) {
-                    surfaceTexture.release();
-                    break;
-                }
-                break;
-            case 21:
-                Drawable[] drawableArr2 = PhotoViewer.Y8;
-                break;
-            case 22:
-                RectF rectF = ProfileActivity.V6;
-                break;
-            case 23:
-                HashSet hashSet = (HashSet) obj;
-                String str = id.E0().B.f;
-                hashSet.addAll(uy0.d0());
-                SharedPreferences.Editor edit = qp.e1().edit();
-                if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
-                    edit.remove("translate_button_restricted_languages");
-                } else {
-                    edit.putStringSet("translate_button_restricted_languages", hashSet);
-                }
-                edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                uy0.s = false;
-                for (int i11 = 0; i11 < 4; i11++) {
-                    try {
-                        qp.s1(i11).s7.g();
-                    } catch (Exception unused) {
-                    }
-                }
-                break;
-            case 24:
-                View view10 = (View) obj;
-                view10.setScaleX(1.0f);
-                view10.setScaleY(1.0f);
-                break;
-            case 25:
-                ArrayList arrayList = org.telegram.ui.Wallet.t2.a;
-                break;
-            case 26:
-                ((org.telegram.ui.Wallet.r2) obj).a();
-                break;
-            case 27:
-                ((org.telegram.ui.Wallet.r2) obj).b();
-                break;
-            case 28:
-                View view11 = (View) obj;
-                if (view11 instanceof org.telegram.ui.web.g) {
-                    ((org.telegram.ui.web.g) view11).setChecked(false);
-                    break;
-                }
+                uj0 uj0Var2 = (uj0) recyclerView;
+                ih.d.a(uj0Var2, canvas, rectF, uj0Var2, this.b);
                 break;
             default:
-                View view12 = (View) obj;
-                if (view12 instanceof org.telegram.ui.web.g) {
-                    ((org.telegram.ui.web.g) view12).setChecked(false);
-                    break;
-                }
+                uj0 uj0Var3 = (uj0) recyclerView;
+                ih.d.a(uj0Var3, canvas, rectF, uj0Var3, this.b);
                 break;
         }
-    }
-
-    public /* synthetic */ e(rc rcVar) {
-        this.a = 9;
     }
 }

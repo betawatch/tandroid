@@ -3,64 +3,64 @@ package kh;
 import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import c8.ha;
+import c8.ja;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.cp;
-import org.telegram.ui.Components.cq;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.kq;
+import org.telegram.ui.Components.lp;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout {
-    public final h6 a;
+    public final e6 a;
     public a b;
-    public cq c;
+    public kq c;
     public boolean d;
 
-    public b(Context context, h6 h6Var) {
+    public b(Context context, e6 e6Var) {
         super(context);
-        this.a = h6Var;
+        this.a = e6Var;
     }
 
-    public final void a(int i7, boolean z9) {
+    public final void a(int i7, boolean z10) {
         if (this.c == null) {
-            cq cqVar = new cq(getContext(), this.a);
-            this.c = cqVar;
-            cqVar.setReverse(this.d);
-            addView(this.c, ha.e(-1, 28, 48));
+            kq kqVar = new kq(getContext(), this.a);
+            this.c = kqVar;
+            kqVar.setReverse(this.d);
+            addView(this.c, ja.e(-1, 28, 48));
         }
-        this.c.a.c(i7, z9);
+        this.c.a.c(i7, z10);
     }
 
-    public final void b(boolean z9, boolean z10) {
-        super.setEnabled(z9);
-        this.b.e(z9, z10);
+    public final void b(boolean z10, boolean z11) {
+        super.setEnabled(z10);
+        this.b.e(z10, z11);
     }
 
-    public final void c(boolean z9, boolean z10) {
+    public final void c(boolean z10, boolean z11) {
         a aVar = this.b;
         if (aVar.d == null) {
-            if (!z9) {
+            if (!z10) {
                 return;
             }
-            cp cpVar = new cp(g0.L(18.0f), g0.L(1.7f), -9079435);
-            aVar.e = cpVar;
-            cpVar.f = 90.0f;
+            lp lpVar = new lp(g0.L(18.0f), g0.L(1.7f), -9079435);
+            aVar.e = lpVar;
+            lpVar.f = 90.0f;
             ImageView imageView = new ImageView(aVar.getContext());
             aVar.d = imageView;
             imageView.setBackground(aVar.e);
             aVar.d.setVisibility(8);
-            aVar.addView(aVar.d, ha.e(46, 46, 17));
+            aVar.addView(aVar.d, ja.e(46, 46, 17));
         }
         te.a aVar2 = aVar.a;
         if (!aVar2.f && aVar2.e == 0.0f) {
             aVar.e.c = -1L;
         }
-        aVar2.a(z9, z10);
+        aVar2.a(z10, z11);
     }
 
     @Override // android.view.View
-    public void setEnabled(boolean z9) {
-        b(z9, false);
+    public void setEnabled(boolean z10) {
+        b(z10, false);
     }
 }

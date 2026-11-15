@@ -7,14 +7,14 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.wq;
-import org.telegram.ui.sf;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.pf;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class q8 extends FrameLayout {
     public final ImageView a;
-    public final c4 b;
+    public final b4 b;
     public float c;
     public float d;
     public float e;
@@ -36,10 +36,10 @@ public final class q8 extends FrameLayout {
         imageView.setImageResource(R.drawable.mini_gram_72);
         imageView.setScaleX(0.7407407f);
         imageView.setScaleY(0.7407407f);
-        addView(imageView, c8.ha.c(-1.0f, -1));
-        c4 c4Var = new c4(this, context, new l(this, 11));
-        this.b = c4Var;
-        addView(c4Var, c8.ha.c(-1.0f, -1));
+        addView(imageView, c8.ja.c(-1.0f, -1));
+        b4 b4Var = new b4(this, context, new l(this, 11));
+        this.b = b4Var;
+        addView(b4Var, c8.ja.c(-1.0f, -1));
     }
 
     public final void a(float f10) {
@@ -51,7 +51,7 @@ public final class q8 extends FrameLayout {
             hVar.b(280.0f);
             gVar.m = hVar;
             this.x.f(0.001f);
-            this.x.b(new q3(this, 1));
+            this.x.b(new p3(this, 1));
         }
         this.x.c(f10);
     }
@@ -67,8 +67,8 @@ public final class q8 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.w = ofFloat;
         ofFloat.setDuration(350L);
-        this.w.setInterpolator(wq.h);
-        this.w.addUpdateListener(new sf(this, IEEEremainder, 6));
+        this.w.setInterpolator(er.h);
+        this.w.addUpdateListener(new pf(this, IEEEremainder, 6));
         this.w.start();
         a(1.0f);
     }
@@ -99,8 +99,8 @@ public final class q8 extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        c4 c4Var = this.b;
-        if (c4Var.n && c4Var.getVisibility() == 0) {
+        b4 b4Var = this.b;
+        if (b4Var.n && b4Var.getVisibility() == 0) {
             int actionMasked = motionEvent.getActionMasked();
             if (actionMasked == 0) {
                 if (!this.s && this.e <= 1.001f) {
@@ -132,8 +132,8 @@ public final class q8 extends FrameLayout {
                             return true;
                         }
                         float radians = ((float) Math.toRadians(0.800000011920929d)) / org.telegram.messenger.g0.p;
-                        this.c = com.google.android.recaptcha.internal.a.z(motionEvent.getX(findPointerIndex), this.n, radians, this.c);
-                        this.d = com.google.android.recaptcha.internal.a.z(motionEvent.getY(findPointerIndex), this.r, radians, this.d);
+                        this.c = com.google.android.gms.internal.vision.e2.z(motionEvent.getX(findPointerIndex), this.n, radians, this.c);
+                        this.d = com.google.android.gms.internal.vision.e2.z(motionEvent.getY(findPointerIndex), this.r, radians, this.d);
                         this.n = motionEvent.getX(findPointerIndex);
                         this.r = motionEvent.getY(findPointerIndex);
                         return true;

@@ -8,9 +8,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-import vi.f;
+import yi.h;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class d {
     public long A;
@@ -19,8 +19,8 @@ public final class d {
     public final File b;
     public final long c;
     public final long d;
-    public final f e;
-    public final vi.b f;
+    public final h e;
+    public final yi.b f;
     public final ac.e g;
     public final HandlerThread h;
     public final Handler i;
@@ -42,12 +42,12 @@ public final class d {
     public final AtomicInteger m = new AtomicInteger();
     public final ByteBuffer s = ByteBuffer.allocateDirect(1920).order(ByteOrder.nativeOrder());
 
-    public d(File file, File file2, long j3, long j10, f fVar, vi.b bVar, ac.e eVar) {
+    public d(File file, File file2, long j3, long j10, h hVar, yi.b bVar, ac.e eVar) {
         this.a = file;
         this.b = file2;
         this.c = j3;
         this.d = j10;
-        this.e = fVar;
+        this.e = hVar;
         this.f = bVar;
         this.g = eVar;
         HandlerThread handlerThread = new HandlerThread("AudioRecorderCapture", -16);
@@ -75,7 +75,7 @@ public final class d {
             this.z++;
             this.A += nanoTime2;
             this.B = Math.max(this.B, nanoTime2);
-            vi.b bVar = this.f;
+            yi.b bVar = this.f;
             if (!b10) {
                 bVar.b("RNNoise processing failed; recording unprocessed PCM");
                 this.u.c();
@@ -104,7 +104,7 @@ public final class d {
         if (this.o) {
             return;
         }
-        this.i.postAtFrontOfQueue(new vi.a(this, 1));
+        this.i.postAtFrontOfQueue(new yi.a(this, 1));
     }
 
     public final void e(Exception exc) {

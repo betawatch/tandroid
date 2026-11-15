@@ -7,18 +7,17 @@ import java.util.Arrays;
 import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
-import m4.g0;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Cells.f1;
+import m4.f0;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s {
     public final SocketFactory a;
     public final a b;
     public final int c;
     public int d = 1;
-    public int e = qs.Z3;
+    public int e = ns.Z3;
     public boolean f;
     public Socket g;
 
@@ -39,7 +38,7 @@ public final class s {
         int i10 = this.e;
         SocketFactory socketFactory = this.a;
         a aVar = this.b;
-        g0 g0Var = new g0(socketFactory, aVar, this.c, i7, i10);
+        f0 f0Var = new f0(socketFactory, aVar, this.c, i7, i10);
         UnknownHostException unknownHostException = null;
         try {
             inetAddressArr = InetAddress.getAllByName(aVar.a);
@@ -65,7 +64,7 @@ public final class s {
             throw new v(44, "Failed to resolve hostname " + aVar + ": " + unknownHostException.getMessage(), unknownHostException);
         }
         try {
-            Socket a10 = g0Var.a(inetAddressArr);
+            Socket a10 = f0Var.a(inetAddressArr);
             this.g = a10;
             if (a10 instanceof SSLSocket) {
                 SSLSocket sSLSocket = (SSLSocket) a10;
@@ -75,7 +74,7 @@ public final class s {
                         str = " (" + sSLSocket.getSession().getPeerPrincipal().toString() + ")";
                     } catch (Exception unused) {
                     }
-                    throw new i(49, f1.m("The certificate of the peer", str, " does not match the expected hostname (", str2, ")"));
+                    throw new i(49, r.b.l("The certificate of the peer", str, " does not match the expected hostname (", str2, ")"));
                 }
             }
         } catch (Exception e12) {

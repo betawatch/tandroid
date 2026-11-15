@@ -1,14 +1,14 @@
 package kg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.qp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.cb1;
+import org.telegram.ui.xa1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -18,11 +18,11 @@ public final /* synthetic */ class l0 implements RequestDelegate {
     public final /* synthetic */ Object e;
     public final /* synthetic */ TLObject f;
 
-    public /* synthetic */ l0(q0 q0Var, int[] iArr, ArrayList arrayList, boolean z9, TLRPC.User user) {
+    public /* synthetic */ l0(q0 q0Var, int[] iArr, ArrayList arrayList, boolean z10, TLRPC.User user) {
         this.c = q0Var;
         this.d = iArr;
         this.e = arrayList;
-        this.b = z9;
+        this.b = z10;
         this.f = user;
     }
 
@@ -33,33 +33,33 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new o0((q0) this.c, tL_error, tLObject, (int[]) this.d, (ArrayList) this.e, this.b, (TLRPC.User) this.f));
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new o0((cb1) this.c, tL_error, this.b, tLObject, (byte[]) this.d, (String) this.e, (TL_account.passwordInputSettings) this.f));
+                org.telegram.messenger.g0.h3(new o0((xa1) this.c, tL_error, this.b, tLObject, (byte[]) this.d, (String) this.e, (TL_account.passwordInputSettings) this.f));
                 break;
             default:
-                yh.m mVar = (yh.m) this.c;
+                zh.l lVar = (zh.l) this.c;
                 TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.d;
                 TLRPC.User user = (TLRPC.User) this.f;
                 TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = (TLRPC.TL_messages_hideChatJoinRequest) this.e;
                 if (tL_error == null) {
-                    qp.s1(mVar.k).O3((TLRPC.TL_updates) tLObject, false);
+                    np.s1(lVar.k).O3((TLRPC.TL_updates) tLObject, false);
                 }
-                org.telegram.messenger.g0.h3(new o0(mVar, tL_error, tLObject, tL_chatInviteImporter, this.b, user, tL_messages_hideChatJoinRequest));
+                org.telegram.messenger.g0.h3(new o0(lVar, tL_error, tLObject, tL_chatInviteImporter, this.b, user, tL_messages_hideChatJoinRequest));
                 break;
         }
     }
 
-    public /* synthetic */ l0(cb1 cb1Var, boolean z9, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
-        this.c = cb1Var;
-        this.b = z9;
+    public /* synthetic */ l0(xa1 xa1Var, boolean z10, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
+        this.c = xa1Var;
+        this.b = z10;
         this.d = bArr;
         this.e = str;
         this.f = passwordinputsettings;
     }
 
-    public /* synthetic */ l0(yh.m mVar, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z9, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
-        this.c = mVar;
+    public /* synthetic */ l0(zh.l lVar, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
+        this.c = lVar;
         this.d = tL_chatInviteImporter;
-        this.b = z9;
+        this.b = z10;
         this.f = user;
         this.e = tL_messages_hideChatJoinRequest;
     }

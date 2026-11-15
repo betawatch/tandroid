@@ -1,10 +1,10 @@
 package e5;
 
-import a8.w9;
+import a8.y9;
 import java.lang.reflect.InvocationTargetException;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class l {
     public static final n a;
@@ -12,7 +12,7 @@ public abstract class l {
     static {
         n eVar;
         try {
-            eVar = new d6.i((WebViewProviderFactoryBoundaryInterface) af.b.a(WebViewProviderFactoryBoundaryInterface.class, w9.a()), 20);
+            eVar = new ob.c((WebViewProviderFactoryBoundaryInterface) af.b.a(WebViewProviderFactoryBoundaryInterface.class, y9.a()), 17);
         } catch (ClassNotFoundException unused) {
             eVar = new e();
         } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e10) {

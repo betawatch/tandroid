@@ -5,14 +5,14 @@ import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.font.TextLayout;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class JavaFontRenderingBox extends Box {
     private static Font font = new Font("Serif", 0, 10);
     private float size;
     private TextLayout text;
 
-    public JavaFontRenderingBox(String str, int i7, float f10, Font font2, boolean z9) {
+    public JavaFontRenderingBox(String str, int i7, float f10, Font font2, boolean z10) {
         this.size = f10;
         TextLayout textLayout = new TextLayout(str, font2.deriveFont(i7), null);
         this.text = textLayout;

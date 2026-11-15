@@ -9,8 +9,8 @@ import android.content.pm.ServiceInfo;
 import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Handler;
-import c8.v9;
-import h2.p0;
+import c8.u9;
+import h2.o0;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,16 +20,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.n3;
-import org.telegram.ui.Components.dt;
-import org.telegram.ui.h10;
+import org.telegram.messenger.ns;
+import org.telegram.ui.ActionBar.z;
+import org.telegram.ui.Components.u11;
 import s4.n;
 import s4.r0;
+import s4.s0;
 import s4.u;
 import s4.x;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h {
     public boolean a;
@@ -88,7 +88,7 @@ public final class h {
         ca.i iVar = (ca.i) this.b;
         kotlin.jvm.internal.j.e(descriptor, "descriptor");
         int ordinal = ((j) this.d).ordinal();
-        boolean z9 = true;
+        boolean z10 = true;
         if (ordinal == 1) {
             if (!iVar.b) {
                 iVar.j(',');
@@ -108,9 +108,9 @@ public final class h {
             } else {
                 iVar.j(':');
                 iVar.k();
-                z9 = false;
+                z10 = false;
             }
-            this.a = z9;
+            this.a = z10;
             return;
         }
         if (ordinal != 3) {
@@ -166,7 +166,7 @@ public final class h {
     public void g(me.d descriptor, int i7, ke.a serializer, Object obj) {
         kotlin.jvm.internal.j.e(descriptor, "descriptor");
         kotlin.jvm.internal.j.e(serializer, "serializer");
-        if (obj != null || ((p0) this.f).b) {
+        if (obj != null || ((o0) this.f).b) {
             kotlin.jvm.internal.j.e(descriptor, "descriptor");
             kotlin.jvm.internal.j.e(serializer, "serializer");
             b(descriptor, i7);
@@ -194,19 +194,19 @@ public final class h {
     public void i(ke.a serializer, Object obj) {
         String str;
         kotlin.jvm.internal.j.e(serializer, "serializer");
-        p0 p0Var = ((pe.b) this.c).a;
-        p0Var.getClass();
-        int ordinal = ((pe.a) p0Var.f).ordinal();
+        o0 o0Var = ((pe.b) this.c).a;
+        o0Var.getClass();
+        int ordinal = ((pe.a) o0Var.f).ordinal();
         if (ordinal != 0) {
             if (ordinal == 1) {
-                v9 e10 = serializer.d().e();
+                u9 e10 = serializer.d().e();
                 if (kotlin.jvm.internal.j.a(e10, me.f.b) || kotlin.jvm.internal.j.a(e10, me.f.e)) {
                     me.d d = serializer.d();
                     kotlin.jvm.internal.j.e(d, "<this>");
                     Iterator it = d.getAnnotations().iterator();
                     while (true) {
                         if (!it.hasNext()) {
-                            str = (String) p0Var.e;
+                            str = (String) o0Var.e;
                             break;
                         }
                         Annotation annotation = (Annotation) it.next();
@@ -320,13 +320,13 @@ public final class h {
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((u4.c) this.c).L();
+            ((u4.c) this.c).y();
             return null;
         }
     }
 
     public void n(int i7, Serializable serializable) {
-        ((Executor) this.b).execute(new h10(this, i7, serializable, 24));
+        ((Executor) this.b).execute(new u11(this, i7, serializable, 27));
     }
 
     public void o() {
@@ -348,7 +348,7 @@ public final class h {
             Iterator<ResolveInfo> it2 = packageManager.queryIntentServices(new Intent("android.media.MediaRouteProviderService"), 0).iterator();
             int i10 = 0;
             while (true) {
-                boolean z9 = true;
+                boolean z10 = true;
                 if (!it2.hasNext()) {
                     break;
                 }
@@ -383,7 +383,7 @@ public final class h {
                     }
                     if (i12 < 0) {
                         r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        r0Var.F = new n3(this, r0Var);
+                        r0Var.G = new z(this, r0Var);
                         if (!r0Var.x) {
                             r0Var.x = true;
                             r0Var.r();
@@ -397,11 +397,11 @@ public final class h {
                             r0Var2.x = true;
                             r0Var2.r();
                         }
-                        if (r0Var2.D == null) {
+                        if (r0Var2.E == null) {
                             if (!r0Var2.x || (((n) r0Var2.h) == null && r0Var2.w.isEmpty())) {
-                                z9 = false;
+                                z10 = false;
                             }
-                            if (z9) {
+                            if (z10) {
                                 r0Var2.q();
                                 r0Var2.n();
                             }
@@ -426,7 +426,7 @@ public final class h {
                         eVar.l.remove(d);
                     }
                     arrayList.remove(r0Var3);
-                    r0Var3.F = null;
+                    r0Var3.G = null;
                     if (r0Var3.x) {
                         r0Var3.x = false;
                         r0Var3.r();
@@ -437,14 +437,14 @@ public final class h {
     }
 
     public boolean p(me.d dVar) {
-        ((p0) this.f).getClass();
+        ((o0) this.f).getClass();
         return false;
     }
 
     public h(Context context, s4.e eVar) {
         this.f = new ArrayList();
         this.g = new androidx.mediarouter.app.f(this, 12);
-        this.h = new dt(this, 27);
+        this.h = new s0(this, 0);
         this.b = context;
         this.c = eVar;
         this.d = new Handler();
@@ -473,10 +473,10 @@ public final class h {
                     break;
                 case 28:
                 case 29:
-                case qs.T /* 30 */:
+                case ns.T /* 30 */:
                     bArr = u4.d.e;
                     break;
-                case qs.U /* 31 */:
+                case ns.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:

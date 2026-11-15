@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k1 extends b5 {
     private static final k1 zzb;
@@ -57,9 +57,9 @@ public final class k1 extends b5 {
         k1Var.zzd |= 1;
     }
 
-    public static /* synthetic */ void p(k1 k1Var, boolean z9) {
+    public static /* synthetic */ void p(k1 k1Var, boolean z10) {
         k1Var.zzd |= 2;
-        k1Var.zzf = z9;
+        k1Var.zzf = z10;
     }
 
     public static /* synthetic */ void q(k1 k1Var, long j3) {
@@ -82,9 +82,9 @@ public final class k1 extends b5 {
         k1Var.zzo = i7;
     }
 
-    public static /* synthetic */ void u(k1 k1Var, boolean z9) {
+    public static /* synthetic */ void u(k1 k1Var, boolean z10) {
         k1Var.zzd |= 2048;
-        k1Var.zzp = z9;
+        k1Var.zzp = z10;
     }
 
     public static /* synthetic */ void v(k1 k1Var, int i7) {
@@ -97,9 +97,9 @@ public final class k1 extends b5 {
         k1Var.zzr = i7;
     }
 
-    public static /* synthetic */ void x(k1 k1Var, boolean z9) {
+    public static /* synthetic */ void x(k1 k1Var, boolean z10) {
         k1Var.zzd |= TLObject.FLAG_14;
-        k1Var.zzs = z9;
+        k1Var.zzs = z10;
     }
 
     @Override // com.google.android.gms.internal.cast.b5
@@ -109,7 +109,7 @@ public final class k1 extends b5 {
             return (byte) 1;
         }
         if (i10 == 2) {
-            return new c6(zzb, "\u0001\u000f\u0000\u0001\u0001\u000f\u000f\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဇ\u0001\u0003စ\u0002\u0004ဆ\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007င\u0006\bင\u0007\tဉ\b\n᠌\t\u000bင\n\fဇ\u000b\rင\f\u000eင\r\u000fဇ\u000e", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi", x.y, "zzj", x.x, "zzk", "zzl", "zzm", "zzn", x.P, "zzo", "zzp", "zzq", "zzr", "zzs"});
+            return new c6(zzb, "\u0001\u000f\u0000\u0001\u0001\u000f\u000f\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဇ\u0001\u0003စ\u0002\u0004ဆ\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007င\u0006\bင\u0007\tဉ\b\n᠌\t\u000bင\n\fဇ\u000b\rင\f\u000eင\r\u000fဇ\u000e", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi", x.y, "zzj", x.x, "zzk", "zzl", "zzm", "zzn", x.Q, "zzo", "zzp", "zzq", "zzr", "zzs"});
         }
         if (i10 == 3) {
             return new k1();

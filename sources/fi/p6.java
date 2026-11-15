@@ -1,21 +1,25 @@
 package fi;
 
-import org.telegram.messenger.ImageReceiver;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class p6 {
-    public final String a;
+public final /* synthetic */ class p6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r6 b;
 
-    public p6(String str) {
-        this.a = str;
+    public /* synthetic */ p6(r6 r6Var, int i7) {
+        this.a = i7;
+        this.b = r6Var;
     }
 
-    public abstract String a();
-
-    public abstract String b();
-
-    public abstract void c(org.telegram.ui.ActionBar.f2 f2Var);
-
-    public abstract void d(ImageReceiver imageReceiver);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.e();
+                break;
+            default:
+                this.b.b();
+                break;
+        }
+    }
 }

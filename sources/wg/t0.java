@@ -1,66 +1,25 @@
 package wg;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.c20;
+import android.content.Context;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t0 implements c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w0 b;
+public final class t0 extends ah.o {
+    public final /* synthetic */ u0 L;
 
-    public /* synthetic */ t0(w0 w0Var, int i7) {
-        this.a = i7;
-        this.b = w0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t0(u0 u0Var, Context context, e6 e6Var) {
+        super(context, e6Var);
+        this.L = u0Var;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                String str = (String) obj;
-                w0 w0Var = this.b;
-                ArrayList arrayList = w0Var.b2;
-                tg.y yVar = w0Var.q2;
-                w0Var.i2 = str;
-                int i7 = w0Var.m2;
-                if (i7 == 1) {
-                    org.telegram.messenger.g0.r(yVar);
-                    org.telegram.messenger.g0.i3(yVar, 350L);
-                    break;
-                } else if (i7 == 2) {
-                    if (!TextUtils.isEmpty(str)) {
-                        org.telegram.messenger.g0.r(yVar);
-                        org.telegram.messenger.g0.i3(yVar, 350L);
-                        break;
-                    } else {
-                        org.telegram.messenger.g0.r(yVar);
-                        arrayList.clear();
-                        arrayList.addAll(r.e(w0Var.l2.id));
-                        w0Var.m1(false, true);
-                        w0Var.j1(true);
-                        break;
-                    }
-                } else if (i7 == 3) {
-                    w0Var.m1(false, true);
-                    w0Var.j1(true);
-                    break;
-                }
-                break;
-            default:
-                List list = (List) obj;
-                w0 w0Var2 = this.b;
-                ArrayList arrayList2 = w0Var2.b2;
-                if (!TextUtils.isEmpty(w0Var2.i2)) {
-                    arrayList2.clear();
-                    arrayList2.addAll(list);
-                    w0Var2.n1(true, true);
-                    w0Var2.j1(true);
-                    break;
-                }
-                break;
-        }
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        int L = org.telegram.messenger.g0.L(78.0f) + getMeasuredHeight();
+        u0 u0Var = this.L;
+        u0Var.l2 = L;
+        u0Var.k2.G();
     }
 }

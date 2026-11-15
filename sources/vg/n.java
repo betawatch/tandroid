@@ -24,12 +24,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.sz;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.qz;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class n {
     public static final String[] e0 = {"models/star.binobj"};
@@ -158,7 +159,7 @@ public final class n {
                 fArr4[1] = 0.5f;
                 fArr4[2] = 0.78f;
                 fArr4[3] = 1.0f;
-                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{m6.x0(null, m6.zk, false), m6.x0(null, m6.Ak, false), m6.x0(null, m6.Bk, false), m6.x0(null, m6.Ck, false)}, fArr4, Shader.TileMode.CLAMP));
+                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{j6.x0(null, j6.Ck, false), j6.x0(null, j6.Dk, false), j6.x0(null, j6.Ek, false), j6.x0(null, j6.Fk, false)}, fArr4, Shader.TileMode.CLAMP));
                 canvas.drawRect(0.0f, 0.0f, 100.0f, 100.0f, paint);
                 int[] iArr = new int[1];
                 GLES20.glGenTextures(1, iArr, 0);
@@ -266,7 +267,7 @@ public final class n {
                 GLES20.glBindTexture(3553, this.o);
                 int i31 = this.b0;
                 if (i31 == 0 || i31 == 2) {
-                    bitmap2 = sz.d(R.raw.start_texture, qs.P3, qs.P3, -1);
+                    bitmap2 = qz.d(R.raw.start_texture, ns.P3, ns.P3, -1);
                 } else {
                     try {
                         if (i31 == 1) {
@@ -327,11 +328,11 @@ public final class n {
                 fArr = null;
                 fArr2 = null;
                 e.printStackTrace();
-                this.i[i21] = org.telegram.messenger.camera.q.g(ByteBuffer.allocateDirect(fArr3.length * 4));
+                this.i[i21] = i20.h(ByteBuffer.allocateDirect(fArr3.length * 4));
                 this.i[i21].put(fArr3).position(0);
-                this.j[i21] = org.telegram.messenger.camera.q.g(ByteBuffer.allocateDirect(fArr2.length * 4));
+                this.j[i21] = i20.h(ByteBuffer.allocateDirect(fArr2.length * 4));
                 this.j[i21].put(fArr2).position(0);
-                this.k[i21] = org.telegram.messenger.camera.q.g(ByteBuffer.allocateDirect(fArr.length * 4));
+                this.k[i21] = i20.h(ByteBuffer.allocateDirect(fArr.length * 4));
                 this.k[i21].put(fArr).position(0);
                 this.y[i21] = fArr3.length;
                 i21++;
@@ -428,11 +429,11 @@ public final class n {
                         } catch (IOException e12) {
                             e = e12;
                             e.printStackTrace();
-                            this.i[i21] = org.telegram.messenger.camera.q.g(ByteBuffer.allocateDirect(fArr3.length * 4));
+                            this.i[i21] = i20.h(ByteBuffer.allocateDirect(fArr3.length * 4));
                             this.i[i21].put(fArr3).position(0);
-                            this.j[i21] = org.telegram.messenger.camera.q.g(ByteBuffer.allocateDirect(fArr2.length * 4));
+                            this.j[i21] = i20.h(ByteBuffer.allocateDirect(fArr2.length * 4));
                             this.j[i21].put(fArr2).position(0);
-                            this.k[i21] = org.telegram.messenger.camera.q.g(ByteBuffer.allocateDirect(fArr.length * 4));
+                            this.k[i21] = i20.h(ByteBuffer.allocateDirect(fArr.length * 4));
                             this.k[i21].put(fArr).position(0);
                             this.y[i21] = fArr3.length;
                             i21++;
@@ -442,11 +443,11 @@ public final class n {
                             i18 = 3;
                             i20 = 0;
                         }
-                        this.i[i21] = org.telegram.messenger.camera.q.g(ByteBuffer.allocateDirect(fArr3.length * 4));
+                        this.i[i21] = i20.h(ByteBuffer.allocateDirect(fArr3.length * 4));
                         this.i[i21].put(fArr3).position(0);
-                        this.j[i21] = org.telegram.messenger.camera.q.g(ByteBuffer.allocateDirect(fArr2.length * 4));
+                        this.j[i21] = i20.h(ByteBuffer.allocateDirect(fArr2.length * 4));
                         this.j[i21].put(fArr2).position(0);
-                        this.k[i21] = org.telegram.messenger.camera.q.g(ByteBuffer.allocateDirect(fArr.length * 4));
+                        this.k[i21] = i20.h(ByteBuffer.allocateDirect(fArr.length * 4));
                         this.k[i21].put(fArr).position(0);
                         this.y[i21] = fArr3.length;
                         i21++;

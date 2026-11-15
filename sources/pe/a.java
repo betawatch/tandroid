@@ -1,10 +1,10 @@
 package pe;
 
-import c8.j1;
+import c8.l1;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public static final a a;
@@ -17,7 +17,7 @@ public final class a {
         a = aVar3;
         a[] aVarArr = {aVar, aVar2, aVar3};
         b = aVarArr;
-        j1.a(aVarArr);
+        l1.a(aVarArr);
     }
 
     public static a valueOf(String str) {

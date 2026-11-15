@@ -1,40 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ly0 extends FrameLayout {
-    public static final /* synthetic */ int e = 0;
-    public TextView a;
-    public ky0 b;
-    public TLRPC.TL_help_termsOfService c;
-    public int d;
+public final /* synthetic */ class ly0 implements org.telegram.ui.ActionBar.q1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ny0 b;
 
-    public final void a() {
-        ky0 ky0Var = this.b;
-        int i7 = this.d;
-        org.telegram.ui.n80 n80Var = (org.telegram.ui.n80) ky0Var;
-        n80Var.getClass();
-        org.telegram.messenger.p10.i(i7).Z = null;
-        org.telegram.messenger.p10.i(i7).v(false);
-        LaunchActivity launchActivity = n80Var.a;
-        ArrayList arrayList = launchActivity.d0;
-        if (!arrayList.isEmpty()) {
-            ((org.telegram.ui.ActionBar.f2) jg.g.i(1, arrayList)).onResume();
-        }
-        launchActivity.A0.animate().alpha(0.0f).setDuration(150L).setInterpolator(org.telegram.messenger.g0.G).withEndAction(new org.telegram.ui.kz(n80Var, 17)).start();
-        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
-        tL_help_acceptTermsOfService.id = this.c.id;
-        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new di.v5(22));
+    public /* synthetic */ ly0(ny0 ny0Var, int i7) {
+        this.a = i7;
+        this.b = ny0Var;
     }
 
-    public void setDelegate(ky0 ky0Var) {
-        this.b = ky0Var;
+    @Override // org.telegram.ui.ActionBar.q1
+    public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        int i10 = this.a;
+        ny0 ny0Var = this.b;
+        switch (i10) {
+            case 0:
+                ny0Var.a();
+                break;
+            case 1:
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ny0Var.getContext());
+                String M0 = org.telegram.messenger.hd.M0(2131743976, null);
+                org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
+                t1Var2.U = M0;
+                t1Var2.S = org.telegram.messenger.hd.M0(R.string.AppName, null);
+                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751652, null), new ly0(ny0Var, 2));
+                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                alertDialog$Builder.p();
+                break;
+            default:
+                org.telegram.ui.ActionBar.t1 t1Var3 = new org.telegram.ui.ActionBar.t1(3, ny0Var.getContext(), null);
+                t1Var3.j0 = false;
+                TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
+                deleteaccount.reason = "Decline ToS update";
+                ConnectionsManager.getInstance(ny0Var.d).sendRequest(deleteaccount, new org.telegram.ui.v7(24, ny0Var, t1Var3));
+                t1Var3.show();
+                break;
+        }
     }
 }

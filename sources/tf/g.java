@@ -5,27 +5,27 @@ import android.graphics.BitmapFactory;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Components.uy;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.ou;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g extends rf.a {
     public static final Logger s = Logger.getLogger(g.class.getName());
     public byte r;
 
     public static boolean b(m mVar) {
-        boolean z9;
+        boolean z10;
         mVar.mark(3);
         try {
             if (mVar.read() == 73 && mVar.read() == 68) {
                 if (mVar.read() == 51) {
-                    z9 = true;
-                    return z9;
+                    z10 = true;
+                    return z10;
                 }
             }
-            z9 = false;
-            return z9;
+            z10 = false;
+            return z10;
         } finally {
             mVar.reset();
         }
@@ -34,7 +34,7 @@ public final class g extends rf.a {
     public static f5.a c(e eVar) {
         b b10 = eVar.b();
         eVar.c(3, b.c);
-        return new f5.a(eVar.d(qs.e3, b10), eVar.c((int) eVar.a.e(), b10), false);
+        return new f5.a(4, eVar.d(ns.e3, b10), eVar.c((int) eVar.a.e(), b10));
     }
 
     public static String e(e eVar) {
@@ -65,8 +65,8 @@ public final class g extends rf.a {
             case "COM":
             case "COMM":
                 f5.a c10 = c(eVar);
-                if (this.i == null || (str = c10.a) == null || "".equals(str)) {
-                    this.i = c10.b;
+                if (this.i == null || (str = c10.b) == null || "".equals(str)) {
+                    this.i = c10.c;
                     return;
                 }
                 return;
@@ -74,25 +74,25 @@ public final class g extends rf.a {
             case "APIC":
                 if (this.o == null || this.r != 3) {
                     b b10 = eVar.b();
-                    uy uyVar = eVar.d;
+                    ou ouVar = eVar.d;
                     if (eVar.b.a == 2) {
                         eVar.c(3, b.c).toUpperCase().getClass();
                     } else {
                         eVar.d(20, b.c);
                     }
-                    byte M = uyVar.M();
-                    eVar.d(qs.e3, b10);
+                    byte g12 = ouVar.g1();
+                    eVar.d(ns.e3, b10);
                     int e10 = (int) eVar.a.e();
                     byte[] bArr = new byte[e10];
                     int i12 = 0;
                     while (i12 < e10) {
-                        int read = ((ab.d) uyVar.b).read(bArr, i12, e10 - i12);
+                        int read = ((ab.d) ouVar.b).read(bArr, i12, e10 - i12);
                         if (read <= 0) {
                             throw new EOFException();
                         }
                         i12 += read;
                     }
-                    if (this.o == null || M == 3 || M == 0) {
+                    if (this.o == null || g12 == 3 || g12 == 0) {
                         try {
                             options = new BitmapFactory.Options();
                             options.inJustDecodeBounds = true;
@@ -119,7 +119,7 @@ public final class g extends rf.a {
                                     this.p = this.o;
                                 }
                             }
-                            this.r = M;
+                            this.r = g12;
                             return;
                         }
                         for (int max2 = Math.max(i10, options.outHeight); max2 > 800; max2 /= 2) {
@@ -130,7 +130,7 @@ public final class g extends rf.a {
                         this.o = decodeByteArray;
                         if (decodeByteArray != null) {
                         }
-                        this.r = M;
+                        this.r = g12;
                         return;
                     }
                     return;
@@ -152,14 +152,14 @@ public final class g extends rf.a {
                     try {
                         if (e11.charAt(0) == '(') {
                             int indexOf = e11.indexOf(41);
-                            if (indexOf > 1 && (i7 = rf.b.a(Integer.parseInt(e11.substring(1, indexOf)))) == 0 && e11.length() > (i11 = indexOf + 1)) {
+                            if (indexOf > 1 && (i7 = r.b.b(Integer.parseInt(e11.substring(1, indexOf)))) == 0 && e11.length() > (i11 = indexOf + 1)) {
                                 this.h = e11.substring(i11);
                             }
                         } else {
-                            i7 = rf.b.a(Integer.parseInt(e11));
+                            i7 = r.b.b(Integer.parseInt(e11));
                         }
                         if (i7 != 0) {
-                            this.h = rf.b.c(i7);
+                            this.h = r.b.d(i7);
                             return;
                         }
                         return;
@@ -296,7 +296,7 @@ public final class g extends rf.a {
             case "ULT":
             case "USLT":
                 if (this.n == null) {
-                    this.n = c(eVar).b;
+                    this.n = c(eVar).c;
                     return;
                 }
                 return;

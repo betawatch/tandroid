@@ -1,27 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class d20 extends q4 {
-    public final /* synthetic */ f40 U;
+public final class d20 extends View {
+    public final /* synthetic */ c40 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d20(f40 f40Var, LaunchActivity launchActivity) {
+    public d20(c40 c40Var, LaunchActivity launchActivity) {
         super(launchActivity);
-        this.U = f40Var;
+        this.a = c40Var;
     }
 
-    @Override // org.telegram.ui.q4, org.telegram.ui.Components.of0
-    public final void c() {
-        f40 f40Var = this.U;
-        org.telegram.messenger.c cVar = f40Var.n1;
-        e20 e20Var = f40Var.l1;
-        long dialogId = e20Var.getDialogId();
-        if (dialogId > 0) {
-            TLRPC.User a22 = org.telegram.messenger.qp.s1(cVar.a).a2(Long.valueOf(dialogId));
-            e20Var.H(null, org.telegram.messenger.hc.m(cVar.a, 0, a22), org.telegram.messenger.hc.m(cVar.a, 1, a22), false);
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        if (getAlpha() != f10) {
+            super.setAlpha(f10);
+            this.a.U0();
         }
     }
 }

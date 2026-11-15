@@ -1,37 +1,28 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class m91 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n91 b;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ m91(n91 n91Var, int i7) {
-        this.a = i7;
-        this.b = n91Var;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class m91 extends rg.a {
+    public final TLRPC.TL_forumTopic c;
+
+    public m91(int i7, TLRPC.TL_forumTopic tL_forumTopic) {
+        super(i7, true);
+        this.c = tL_forumTopic;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                n91 n91Var = this.b;
-                n91Var.F = null;
-                if (n91Var.G != -1) {
-                    n91Var.H.getNotificationCenter().j(n91Var.G);
-                    n91Var.G = -1;
-                    break;
-                }
-                break;
-            default:
-                n91 n91Var2 = this.b;
-                n91Var2.F = null;
-                if (n91Var2.G != -1) {
-                    n91Var2.H.getNotificationCenter().j(n91Var2.G);
-                    n91Var2.G = -1;
-                    break;
-                }
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj != null && m91.class == obj.getClass()) {
+            m91 m91Var = (m91) obj;
+            int i7 = this.a;
+            if (i7 == m91Var.a && i7 == 0 && this.c.id == m91Var.c.id) {
+                return true;
+            }
+        }
+        return false;
     }
 }

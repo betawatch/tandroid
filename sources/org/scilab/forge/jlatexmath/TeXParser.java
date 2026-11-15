@@ -1,15 +1,15 @@
 package org.scilab.forge.jlatexmath;
 
 import a8.p0;
-import com.google.android.recaptcha.internal.a;
+import com.google.android.gms.internal.vision.e2;
+import i5.c;
 import java.lang.Character;
 import java.util.HashSet;
 import java.util.Set;
-import jg.g;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class TeXParser {
     private static final char BACKPRIME = 8245;
@@ -696,7 +696,7 @@ public class TeXParser {
         ((ArrayOfAtoms) this.formula).addRow();
     }
 
-    public Atom convertCharacter(char c10, boolean z9) {
+    public Atom convertCharacter(char c10, boolean z10) {
         String str;
         String[] strArr;
         if (this.ignoreWhiteSpace) {
@@ -713,7 +713,7 @@ public class TeXParser {
             if (fontInfos == null) {
                 return new CharAtom(convertToRomanNumber, this.formula.textStyle, this.ignoreWhiteSpace);
             }
-            if (z9) {
+            if (z10) {
                 return new JavaFontRenderingAtom(Character.toString(convertToRomanNumber), fontInfos);
             }
             int i7 = this.pos;
@@ -758,11 +758,11 @@ public class TeXParser {
         TeXFormula.FontInfos externalFont = (!(equals && TeXFormula.isRegisteredBlock(unicodeBlock)) && equals) ? null : TeXFormula.getExternalFont(of2);
         if (externalFont == null) {
             if (this.isPartial) {
-                return new ColorAtom(new RomanAtom(new TeXFormula(g.k(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
+                return new ColorAtom(new RomanAtom(new TeXFormula(c.j(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
             }
             throw new ParseException("Unknown character : '" + Character.toString(convertToRomanNumber) + "' (or " + ((int) convertToRomanNumber) + ")");
         }
-        if (z9) {
+        if (z10) {
             return new JavaFontRenderingAtom(Character.toString(convertToRomanNumber), externalFont);
         }
         int i12 = this.pos;
@@ -1100,7 +1100,7 @@ public class TeXParser {
 
     public void parse() {
         int i7;
-        boolean z9;
+        boolean z10;
         char charAt;
         int i10 = parseDepth;
         int i11 = i10 + 1;
@@ -1149,14 +1149,14 @@ public class TeXParser {
                                 if (!this.ignoreWhiteSpace) {
                                     if (this.parseString.charAt(i14) == '$') {
                                         this.pos++;
-                                        z9 = true;
+                                        z10 = true;
                                         i7 = 0;
                                     } else {
                                         i7 = 2;
-                                        z9 = false;
+                                        z10 = false;
                                     }
                                     this.formula.add(new MathAtom(new TeXFormula(this, getDollarGroup(DOLLAR), false).root, i7));
-                                    if (z9 && this.parseString.charAt(this.pos) == '$') {
+                                    if (z10 && this.parseString.charAt(this.pos) == '$') {
                                         this.pos++;
                                     }
                                 }
@@ -1259,25 +1259,25 @@ public class TeXParser {
         return i10;
     }
 
-    public void setArrayMode(boolean z9) {
-        this.arrayMode = z9;
+    public void setArrayMode(boolean z10) {
+        this.arrayMode = z10;
     }
 
-    public TeXParser(boolean z9, String str, TeXFormula teXFormula) {
+    public TeXParser(boolean z10, String str, TeXFormula teXFormula) {
         this(str, teXFormula, false);
-        this.isPartial = z9;
+        this.isPartial = z10;
         firstpass();
     }
 
-    public TeXParser(boolean z9, String str, TeXFormula teXFormula, boolean z10) {
+    public TeXParser(boolean z10, String str, TeXFormula teXFormula, boolean z11) {
         this.ignoreWhiteSpace = true;
         this.formula = teXFormula;
-        this.isPartial = z9;
+        this.isPartial = z10;
         if (str != null) {
             this.parseString = new StringBuffer(str);
             this.len = str.length();
             this.pos = 0;
-            if (z10) {
+            if (z11) {
                 firstpass();
                 return;
             }
@@ -1398,36 +1398,36 @@ public class TeXParser {
             if (this.isPartial) {
                 return stringBuffer.toString();
             }
-            throw new ParseException(a.l("The token ", str, " must be closed by ", str2));
+            throw new ParseException(e2.l("The token ", str, " must be closed by ", str2));
         }
         return stringBuffer.substring(0, (stringBuffer.length() - this.pos) + i11);
     }
 
-    public TeXParser(String str, TeXFormula teXFormula, boolean z9) {
-        this(false, str, teXFormula, z9);
+    public TeXParser(String str, TeXFormula teXFormula, boolean z10) {
+        this(false, str, teXFormula, z10);
     }
 
-    public TeXParser(boolean z9, String str, ArrayOfAtoms arrayOfAtoms, boolean z10) {
-        this(z9, str, (TeXFormula) arrayOfAtoms, z10);
+    public TeXParser(boolean z10, String str, ArrayOfAtoms arrayOfAtoms, boolean z11) {
+        this(z10, str, (TeXFormula) arrayOfAtoms, z11);
         this.arrayMode = true;
     }
 
-    public TeXParser(boolean z9, String str, ArrayOfAtoms arrayOfAtoms, boolean z10, boolean z11) {
-        this(z9, str, (TeXFormula) arrayOfAtoms, z10, z11);
+    public TeXParser(boolean z10, String str, ArrayOfAtoms arrayOfAtoms, boolean z11, boolean z12) {
+        this(z10, str, (TeXFormula) arrayOfAtoms, z11, z12);
         this.arrayMode = true;
     }
 
-    public TeXParser(String str, ArrayOfAtoms arrayOfAtoms, boolean z9) {
-        this(false, str, (TeXFormula) arrayOfAtoms, z9);
+    public TeXParser(String str, ArrayOfAtoms arrayOfAtoms, boolean z10) {
+        this(false, str, (TeXFormula) arrayOfAtoms, z10);
     }
 
-    public TeXParser(boolean z9, String str, TeXFormula teXFormula, boolean z10, boolean z11) {
-        this(z9, str, teXFormula, z10);
+    public TeXParser(boolean z10, String str, TeXFormula teXFormula, boolean z11, boolean z12) {
+        this(z10, str, teXFormula, z11);
+        this.ignoreWhiteSpace = z12;
+    }
+
+    public TeXParser(String str, TeXFormula teXFormula, boolean z10, boolean z11) {
+        this(false, str, teXFormula, z10);
         this.ignoreWhiteSpace = z11;
-    }
-
-    public TeXParser(String str, TeXFormula teXFormula, boolean z9, boolean z10) {
-        this(false, str, teXFormula, z9);
-        this.ignoreWhiteSpace = z10;
     }
 }

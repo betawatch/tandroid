@@ -3,7 +3,7 @@ package c8;
 import com.google.mlkit.vision.segmentation.subject.internal.zzd;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class ke {
     public static zzd a(zb.d dVar) {
@@ -14,11 +14,11 @@ public abstract class ke {
         zzd zzdVar = new zzd(fVar, executor);
         ga.d dVar2 = new ga.d(1);
         dVar2.d = db.b;
-        q4.q qVar = new q4.q(10, false);
+        q4.q qVar = new q4.q(9, false);
         qVar.c = dVar.a();
         qVar.b = eb.b;
         dVar2.e = new ae(qVar);
-        pb.m.a.execute(new a8.pa(b10, new a8.wa(dVar2, 1), fb.N4, b10.c(), 1));
+        pb.n.a.execute(new a8.qa(b10, new a8.xa(dVar2, 1), fb.O4, b10.c(), 1));
         return zzdVar;
     }
 }

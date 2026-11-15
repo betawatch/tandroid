@@ -8,7 +8,7 @@ import android.provider.ContactsContract;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w4 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class w4 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        boolean z9;
+        boolean z10;
         Cursor cursor;
         switch (this.a) {
             case 0:
@@ -65,18 +65,18 @@ public final /* synthetic */ class w4 implements Runnable {
                         if (!(t0.b.checkSelfPermission("android.permission.WRITE_CONTACTS") == 0)) {
                             return;
                         }
-                        SharedPreferences sharedPreferences = qp.s1(g5Var.currentAccount).e7;
-                        boolean z10 = sharedPreferences.getBoolean("contacts_updated_v7", false);
-                        boolean z11 = !z10;
-                        if (!z10) {
+                        SharedPreferences sharedPreferences = np.s1(g5Var.currentAccount).f7;
+                        boolean z11 = sharedPreferences.getBoolean("contacts_updated_v7", false);
+                        boolean z12 = !z11;
+                        if (!z11) {
                             try {
                                 sharedPreferences.edit().putBoolean("contacts_updated_v7", true).commit();
                             } catch (Exception e10) {
                                 e = e10;
-                                z9 = true;
+                                z10 = true;
                                 cursor = null;
                                 try {
-                                    a8.g(e, z9);
+                                    a8.g(e, z10);
                                     break;
                                 } catch (Throwable th2) {
                                     th = th2;
@@ -99,7 +99,7 @@ public final /* synthetic */ class w4 implements Runnable {
                                     long j10 = query.getLong(i7);
                                     if (j10 != 0) {
                                         if (account.name.equals(query.getString(2))) {
-                                            if (z10 && hVar2.h(j10) < 0) {
+                                            if (z11 && hVar2.h(j10) < 0) {
                                                 hVar2.k(Long.valueOf(j3), j10);
                                             }
                                             arrayList2.add(Long.valueOf(j3));
@@ -111,14 +111,14 @@ public final /* synthetic */ class w4 implements Runnable {
                                     i10 = 0;
                                 }
                                 query.close();
-                                a8.b("performWriteContactsToPhoneBookInternal contacts array " + arrayList.size() + " " + z11 + " bookContactsSize=" + hVar.m() + " toDelete=" + arrayList2.size() + " currentAccount=" + g5Var.currentAccount);
+                                a8.b("performWriteContactsToPhoneBookInternal contacts array " + arrayList.size() + " " + z12 + " bookContactsSize=" + hVar.m() + " toDelete=" + arrayList2.size() + " currentAccount=" + g5Var.currentAccount);
                                 if (!arrayList2.isEmpty()) {
                                     g5Var.k(contentResolver, account, arrayList2, hVar2, hVar);
                                 }
                                 ArrayList arrayList3 = null;
                                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
                                     TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) arrayList.get(i11);
-                                    if (!z10 || hVar.h(tL_contact.user_id) < 0) {
+                                    if (!z11 || hVar.h(tL_contact.user_id) < 0) {
                                         if (arrayList3 == null) {
                                             arrayList3 = new ArrayList();
                                         }
@@ -142,8 +142,8 @@ public final /* synthetic */ class w4 implements Runnable {
                         } catch (Exception e11) {
                             e = e11;
                             cursor = query;
-                            z9 = true;
-                            a8.g(e, z9);
+                            z10 = true;
+                            a8.g(e, z10);
                         } catch (Throwable th3) {
                             th = th3;
                             cursor = query;
@@ -157,7 +157,7 @@ public final /* synthetic */ class w4 implements Runnable {
                     }
                 } catch (Exception e12) {
                     e = e12;
-                    z9 = true;
+                    z10 = true;
                 }
                 break;
             case 1:

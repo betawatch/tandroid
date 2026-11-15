@@ -11,7 +11,7 @@ import android.graphics.RectF;
 import android.os.Build;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class va0 {
     public static final float[] k = new float[4];
@@ -21,9 +21,9 @@ public final class va0 {
     public int f;
     public int g;
     public int h;
-    public final h6.m a = new h6.m(new j2(19));
-    public final a8.wa b = new a8.wa(17, (byte) 0);
-    public final ai.n1 c = new ai.n1(3);
+    public final h6.m a = new h6.m(new e2(23));
+    public final a8.xa b = new a8.xa(17, (byte) 0);
+    public final ci.b1 c = new ci.b1(3);
     public final Matrix i = new Matrix();
     public final RectF j = new RectF();
 
@@ -62,14 +62,14 @@ public final class va0 {
         Matrix.ScaleToFit scaleToFit = Matrix.ScaleToFit.FILL;
         Matrix matrix = this.i;
         matrix.setRectToRect(rectF2, rectF, scaleToFit);
-        ai.n1 n1Var = this.c;
-        ua0 ua0Var = (ua0) n1Var.c;
+        ci.b1 b1Var = this.c;
+        ua0 ua0Var = (ua0) b1Var.c;
         ua0Var.b.set(matrix);
         BitmapShader bitmapShader = ua0Var.d;
         if (bitmapShader != null) {
             bitmapShader.setLocalMatrix(matrix);
         }
-        ua0 ua0Var2 = (ua0) n1Var.d;
+        ua0 ua0Var2 = (ua0) b1Var.d;
         ua0Var2.b.set(matrix);
         BitmapShader bitmapShader2 = ua0Var2.d;
         if (bitmapShader2 != null) {
@@ -86,16 +86,16 @@ public final class va0 {
     }
 
     public final void d(Matrix matrix) {
-        ai.n1 n1Var = this.c;
-        float[] fArr = (float[]) n1Var.h;
+        ci.b1 b1Var = this.c;
+        float[] fArr = (float[]) b1Var.h;
         a(matrix, fArr);
-        ua0 ua0Var = (ua0) n1Var.e;
+        ua0 ua0Var = (ua0) b1Var.e;
         ua0Var.b.set(matrix);
         BitmapShader bitmapShader = ua0Var.d;
         if (bitmapShader != null) {
             bitmapShader.setLocalMatrix(matrix);
         }
-        boolean z9 = false;
+        boolean z10 = false;
         ua0Var.a(b(fArr[0]) && b(fArr[1]));
         ta0 ta0Var = this.d;
         if (ta0Var == null || Build.VERSION.SDK_INT < 33) {
@@ -105,30 +105,30 @@ public final class va0 {
         a(matrix, fArr2);
         ua0 ua0Var2 = ta0Var.d;
         if (b(fArr2[0]) && b(fArr2[1])) {
-            z9 = true;
+            z10 = true;
         }
-        ua0Var2.a(z9);
+        ua0Var2.a(z10);
         ta0Var.e.b(fArr2);
         ta0Var.f.b(fArr2);
     }
 
-    public final Paint e(Bitmap bitmap, Bitmap bitmap2, int i7, int i10, int i11, boolean z9) {
+    public final Paint e(Bitmap bitmap, Bitmap bitmap2, int i7, int i10, int i11, boolean z10) {
         Bitmap bitmap3;
         Bitmap bitmap4 = (Bitmap) this.a.n(bitmap2);
         if (i11 >= 0) {
             int o4 = i0.a.o(i7, ((Color.alpha(i7) * i10) * i11) / 25500);
-            a8.wa waVar = this.b;
-            ih.a aVar = (ih.a) waVar.c;
-            if (aVar.a(bitmap) || o4 != waVar.b || ((Bitmap) waVar.d) == null) {
-                Bitmap bitmap5 = (Bitmap) waVar.d;
-                if (bitmap5 == null || bitmap5.getWidth() != bitmap.getWidth() || ((Bitmap) waVar.d).getHeight() != bitmap.getHeight()) {
-                    waVar.d = Bitmap.createBitmap(bitmap);
+            a8.xa xaVar = this.b;
+            ih.a aVar = (ih.a) xaVar.c;
+            if (aVar.a(bitmap) || o4 != xaVar.b || ((Bitmap) xaVar.d) == null) {
+                Bitmap bitmap5 = (Bitmap) xaVar.d;
+                if (bitmap5 == null || bitmap5.getWidth() != bitmap.getWidth() || ((Bitmap) xaVar.d).getHeight() != bitmap.getHeight()) {
+                    xaVar.d = Bitmap.createBitmap(bitmap);
                 }
-                Utilities.applySoftLight(bitmap, (Bitmap) waVar.d, o4);
+                Utilities.applySoftLight(bitmap, (Bitmap) xaVar.d, o4);
                 aVar.b(bitmap);
-                waVar.b = o4;
+                xaVar.b = o4;
             }
-            bitmap3 = (Bitmap) waVar.d;
+            bitmap3 = (Bitmap) xaVar.d;
         } else {
             bitmap3 = null;
         }
@@ -138,27 +138,27 @@ public final class va0 {
         this.g = bitmap4.getWidth();
         this.h = bitmap4.getHeight();
         ta0 ta0Var = this.d;
-        if (ta0Var != null && z9 && Build.VERSION.SDK_INT >= 33) {
+        if (ta0Var != null && z10 && Build.VERSION.SDK_INT >= 33) {
             return ta0Var.a(bitmap, bitmap4, bitmap6, i10, i11);
         }
-        ai.n1 n1Var = this.c;
-        km kmVar = (km) n1Var.f;
-        km kmVar2 = (km) n1Var.g;
-        ua0 ua0Var = (ua0) n1Var.d;
-        Paint paint = (Paint) n1Var.b;
-        ua0 ua0Var2 = (ua0) n1Var.c;
+        ci.b1 b1Var = this.c;
+        tm tmVar = (tm) b1Var.f;
+        tm tmVar2 = (tm) b1Var.g;
+        ua0 ua0Var = (ua0) b1Var.d;
+        Paint paint = (Paint) b1Var.b;
+        ua0 ua0Var2 = (ua0) b1Var.c;
         boolean b10 = ua0Var2.b(bitmap);
-        ua0 ua0Var3 = (ua0) n1Var.e;
+        ua0 ua0Var3 = (ua0) b1Var.e;
         boolean b11 = b10 | ua0Var3.b(bitmap4);
         if (i11 >= 0) {
-            if ((ua0Var.b(bitmap6) | b11) || n1Var.a != 1) {
-                n1Var.a = 1;
+            if ((ua0Var.b(bitmap6) | b11) || b1Var.a != 1) {
+                b1Var.a = 1;
                 paint.setShader(new ComposeShader(ua0Var2.d, new ComposeShader(ua0Var.d, ua0Var3.d, PorterDuff.Mode.DST_IN), PorterDuff.Mode.SRC_OVER));
                 return paint;
             }
-        } else if ((kmVar2.R(i0.a.o(-1, ((-i11) * i10) / 100)) | b11 | kmVar.R(-16777216)) || n1Var.a != 2) {
-            n1Var.a = 2;
-            paint.setShader(new ComposeShader((bg.l) kmVar.b, new ComposeShader(new ComposeShader(ua0Var2.d, ua0Var3.d, PorterDuff.Mode.DST_IN), (bg.l) kmVar2.b, PorterDuff.Mode.MULTIPLY), PorterDuff.Mode.SRC_OVER));
+        } else if ((tmVar2.R(i0.a.o(-1, ((-i11) * i10) / 100)) | b11 | tmVar.R(-16777216)) || b1Var.a != 2) {
+            b1Var.a = 2;
+            paint.setShader(new ComposeShader((bg.l) tmVar.b, new ComposeShader(new ComposeShader(ua0Var2.d, ua0Var3.d, PorterDuff.Mode.DST_IN), (bg.l) tmVar2.b, PorterDuff.Mode.MULTIPLY), PorterDuff.Mode.SRC_OVER));
             return paint;
         }
         return paint;

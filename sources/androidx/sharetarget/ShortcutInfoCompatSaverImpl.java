@@ -1,7 +1,6 @@
 package androidx.sharetarget;
 
 import a0.f;
-import a2.b;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -10,8 +9,8 @@ import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
 import c0.m;
 import e0.j0;
-import g0.c;
-import g0.e;
+import g0.b;
+import g0.d;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,12 +20,12 @@ import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.telegram.ui.ix;
-import vb.d;
+import pb.l;
+import x4.e;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class ShortcutInfoCompatSaverImpl extends e {
+public class ShortcutInfoCompatSaverImpl extends d {
     public static final Object h = new Object();
     public static volatile ShortcutInfoCompatSaverImpl i;
     public final Context a;
@@ -44,7 +43,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
         File file = new File(context.getFilesDir(), "ShortcutInfoCompatSaver_share_targets");
         this.g = new File(file, "ShortcutInfoCompatSaver_share_targets_bitmaps");
         this.f = new File(file, "targets.xml");
-        threadPoolExecutor.submit(new ix(9, this, file));
+        threadPoolExecutor.submit(new l(this, file, false, 9));
     }
 
     public static void f(File file) {
@@ -68,67 +67,67 @@ public class ShortcutInfoCompatSaverImpl extends e {
         return i;
     }
 
-    @Override // g0.e
+    @Override // g0.d
     public final Object a(List list) {
         ArrayList arrayList = new ArrayList(list.size());
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            c cVar = (c) it.next();
-            c cVar2 = new c();
-            cVar2.a = cVar.a;
-            cVar2.b = cVar.b;
-            Intent[] intentArr = cVar.c;
-            cVar2.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
-            cVar2.d = cVar.d;
-            cVar2.e = cVar.e;
-            cVar2.f = cVar.f;
-            cVar2.g = cVar.g;
-            cVar2.h = cVar.h;
-            cVar2.k = cVar.k;
-            cVar2.l = cVar.l;
-            cVar2.m = cVar.m;
-            j0[] j0VarArr = cVar.i;
+            b bVar = (b) it.next();
+            b bVar2 = new b();
+            bVar2.a = bVar.a;
+            bVar2.b = bVar.b;
+            Intent[] intentArr = bVar.c;
+            bVar2.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
+            bVar2.d = bVar.d;
+            bVar2.e = bVar.e;
+            bVar2.f = bVar.f;
+            bVar2.g = bVar.g;
+            bVar2.h = bVar.h;
+            bVar2.k = bVar.k;
+            bVar2.l = bVar.l;
+            bVar2.m = bVar.m;
+            j0[] j0VarArr = bVar.i;
             if (j0VarArr != null) {
-                cVar2.i = (j0[]) Arrays.copyOf(j0VarArr, j0VarArr.length);
+                bVar2.i = (j0[]) Arrays.copyOf(j0VarArr, j0VarArr.length);
             }
-            if (cVar.j != null) {
-                cVar2.j = new HashSet(cVar.j);
+            if (bVar.j != null) {
+                bVar2.j = new HashSet(bVar.j);
             }
-            PersistableBundle persistableBundle = cVar.n;
+            PersistableBundle persistableBundle = bVar.n;
             if (persistableBundle != null) {
-                cVar2.n = persistableBundle;
+                bVar2.n = persistableBundle;
             }
-            if (TextUtils.isEmpty(cVar2.e)) {
+            if (TextUtils.isEmpty(bVar2.e)) {
                 throw new IllegalArgumentException("Shortcut must have a non-empty label");
             }
-            Intent[] intentArr2 = cVar2.c;
+            Intent[] intentArr2 = bVar2.c;
             if (intentArr2 == null || intentArr2.length == 0) {
                 throw new IllegalArgumentException("Shortcut must have an intent");
             }
-            arrayList.add(cVar2);
+            arrayList.add(bVar2);
         }
         m mVar = new m();
-        this.d.submit(new x4.e(this, arrayList, mVar, 1));
+        this.d.submit(new e(this, arrayList, mVar, 1));
         return mVar;
     }
 
-    @Override // g0.e
+    @Override // g0.d
     public final List b() {
-        return (List) this.d.submit(new b(this, 6)).get();
+        return (List) this.d.submit(new a2.b(this, 6)).get();
     }
 
-    @Override // g0.e
+    @Override // g0.d
     public final Object c() {
         m mVar = new m();
-        this.d.submit(new ix(10, this, mVar));
+        this.d.submit(new l(this, mVar, false, 10));
         return mVar;
     }
 
-    @Override // g0.e
+    @Override // g0.d
     public final Object d(List list) {
         ArrayList arrayList = new ArrayList(list);
         m mVar = new m();
-        this.d.submit(new x4.e(this, arrayList, mVar, 0));
+        this.d.submit(new e(this, arrayList, mVar, 0));
         return mVar;
     }
 
@@ -154,7 +153,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
     public final IconCompat g(String str) {
         int i7;
         Context context = this.a;
-        x4.f fVar = (x4.f) this.d.submit(new d(this, str)).get();
+        x4.f fVar = (x4.f) this.d.submit(new vb.d(this, str)).get();
         if (fVar == null) {
             return null;
         }
@@ -172,7 +171,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
         if (TextUtils.isEmpty(fVar.b)) {
             return null;
         }
-        Bitmap bitmap = (Bitmap) this.e.submit(new b(fVar, 7)).get();
+        Bitmap bitmap = (Bitmap) this.e.submit(new a2.b(fVar, 7)).get();
         if (bitmap != null) {
             return IconCompat.c(bitmap);
         }
@@ -180,9 +179,9 @@ public class ShortcutInfoCompatSaverImpl extends e {
     }
 
     public final void h(m mVar) {
-        ix ixVar = new ix(7, this, new ArrayList(this.b.values()));
+        l lVar = new l(this, new ArrayList(this.b.values()), false, 7);
         m mVar2 = new m();
-        this.e.submit(new ix(mVar2, ixVar, false, 11));
-        mVar2.b(new ix(mVar2, mVar, false, 8), this.d);
+        this.e.submit(new l(11, mVar2, lVar));
+        mVar2.b(new l(8, mVar2, mVar), this.d);
     }
 }

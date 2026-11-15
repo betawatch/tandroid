@@ -1,85 +1,69 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.ContextThemeWrapper;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class yc extends org.telegram.ui.Components.ch0 {
-    public final /* synthetic */ int r;
-    public final /* synthetic */ Object s;
+public final class yc extends RadialProgressView {
+    public final /* synthetic */ int O;
+    public final /* synthetic */ Object P;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yc(int i7, Context context, Object obj) {
-        super(context);
-        this.r = i7;
-        this.s = obj;
-    }
-
-    @Override // android.view.View
-    public void invalidate(int i7, int i10, int i11, int i12) {
-        switch (this.r) {
-            case 0:
-                super.invalidate(i7, i10, i11, i12);
-                ((bd) this.s).h.invalidate();
-                break;
-            case 1:
-            case 2:
-            default:
-                super.invalidate(i7, i10, i11, i12);
-                break;
-            case 3:
-                super.invalidate(i7, i10, i11, i12);
-                ((g50) this.s).e.invalidate();
-                break;
-            case 4:
-                super.invalidate(i7, i10, i11, i12);
-                ((sc0) this.s).h.invalidate();
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.r) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                if (!((org.telegram.ui.Components.vo) this.s).G1) {
-                    accessibilityNodeInfo.setText(org.telegram.messenger.id.M0(2131754750, null));
-                    break;
-                } else {
-                    accessibilityNodeInfo.setText(org.telegram.messenger.id.M0(2131754751, null));
-                    break;
-                }
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
+    public /* synthetic */ yc(org.telegram.ui.Components.l30 l30Var, Context context, int i7) {
+        super(context, null);
+        this.O = i7;
+        this.P = l30Var;
     }
 
     @Override // android.view.View
     public void invalidate() {
-        switch (this.r) {
-            case 0:
+        switch (this.O) {
+            case 3:
                 super.invalidate();
-                ((bd) this.s).h.invalidate();
+                oq0 oq0Var = ((PhotoViewer) this.P).f0;
+                if (oq0Var != null) {
+                    oq0Var.invalidate();
+                    break;
+                }
                 break;
-            case 1:
             default:
                 super.invalidate();
                 break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.RadialProgressView, android.view.View
+    public final void setAlpha(float f10) {
+        switch (this.O) {
+            case 0:
+                super.setAlpha(f10);
+                ((ad) this.P).h.invalidate();
+                break;
+            case 1:
+                super.setAlpha(f10);
+                ((c50) this.P).e.invalidate();
+                break;
             case 2:
-                super.invalidate();
-                ((org.telegram.ui.Components.g10) this.s).invalidate();
+                super.setAlpha(f10);
+                ((oc0) this.P).h.invalidate();
                 break;
-            case 3:
-                super.invalidate();
-                ((g50) this.s).e.invalidate();
-                break;
-            case 4:
-                super.invalidate();
-                ((sc0) this.s).h.invalidate();
+            default:
+                super.setAlpha(f10);
+                oq0 oq0Var = ((PhotoViewer) this.P).f0;
+                if (oq0Var != null) {
+                    oq0Var.invalidate();
+                    break;
+                }
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yc(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(contextThemeWrapper, e6Var);
+        this.O = 3;
+        this.P = photoViewer;
     }
 }

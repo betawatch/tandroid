@@ -1,6 +1,6 @@
 package androidx.mediarouter.app;
 
-import a8.b7;
+import a8.c7;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -14,8 +14,9 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.cf;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k0 extends e0 {
     public final ImageView A;
@@ -46,14 +47,14 @@ public final class k0 extends e0 {
         this.D = (RelativeLayout) view.findViewById(R.id.mr_cast_volume_layout);
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.mr_cast_checkbox);
         this.E = checkBox;
-        Context context = n0Var.D;
+        Context context = n0Var.E;
         Drawable b10 = b5.a.b(context, R.drawable.mr_cast_checkbox);
-        if (b7.h(context)) {
+        if (c7.h(context)) {
             b10.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
         }
         checkBox.setButtonDrawable(b10);
-        b7.i(context, progressBar);
-        this.F = b7.c(context);
+        c7.i(context, progressBar);
+        this.F = c7.c(context);
         Resources resources = context.getResources();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         TypedValue typedValue = new TypedValue();
@@ -65,7 +66,7 @@ public final class k0 extends e0 {
         if (vVar.g()) {
             return true;
         }
-        org.telegram.ui.Components.m b10 = this.I.x.r.b(vVar);
+        cf b10 = this.I.x.r.b(vVar);
         if (b10 == null) {
             return false;
         }
@@ -73,17 +74,17 @@ public final class k0 extends e0 {
         return (oVar != null ? oVar.b : 1) == 3;
     }
 
-    public final void w(boolean z9, boolean z10) {
+    public final void w(boolean z10, boolean z11) {
         CheckBox checkBox = this.E;
         checkBox.setEnabled(false);
         this.z.setEnabled(false);
-        checkBox.setChecked(z9);
-        if (z9) {
+        checkBox.setChecked(z10);
+        if (z10) {
             this.A.setVisibility(4);
             this.B.setVisibility(0);
         }
-        if (z10) {
-            this.I.D(z9 ? this.G : 0, this.D);
+        if (z11) {
+            this.I.D(z10 ? this.G : 0, this.D);
         }
     }
 }

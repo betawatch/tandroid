@@ -2,10 +2,11 @@ package f7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 import q7.k1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class u extends r6.a {
     public static final Parcelable.Creator<u> CREATOR = new db.k(14);
@@ -20,12 +21,12 @@ public final class u extends r6.a {
 
     public u(String str, String str2, byte[] bArr, j jVar, i iVar, k kVar, g gVar, String str3) {
         q7.s0 o4 = bArr == null ? null : q7.s0.o(bArr.length, bArr);
-        boolean z9 = false;
+        boolean z10 = false;
         q6.m.a("Must provide a response object.", (jVar != null && iVar == null && kVar == null) || (jVar == null && iVar != null && kVar == null) || (jVar == null && iVar == null && kVar != null));
         if (kVar != null || (str != null && o4 != null)) {
-            z9 = true;
+            z10 = true;
         }
-        q6.m.a("Must provide id and rawId if not an error response.", z9);
+        q6.m.a("Must provide id and rawId if not an error response.", z10);
         this.a = str;
         this.b = str2;
         this.c = o4;
@@ -55,9 +56,9 @@ public final class u extends r6.a {
         String valueOf2 = String.valueOf(this.e);
         String valueOf3 = String.valueOf(this.f);
         String valueOf4 = String.valueOf(this.h);
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("PublicKeyCredential{\n id='", this.a, "', \n type='", this.b, "', \n rawId=");
-        com.google.android.recaptcha.internal.a.s(n10, c10, ", \n registerResponse=", valueOf, ", \n signResponse=");
-        com.google.android.recaptcha.internal.a.s(n10, valueOf2, ", \n errorResponse=", valueOf3, ", \n extensionsClientOutputs=");
+        StringBuilder n10 = e2.n("PublicKeyCredential{\n id='", this.a, "', \n type='", this.b, "', \n rawId=");
+        e2.r(n10, c10, ", \n registerResponse=", valueOf, ", \n signResponse=");
+        e2.r(n10, valueOf2, ", \n errorResponse=", valueOf3, ", \n extensionsClientOutputs=");
         n10.append(valueOf4);
         n10.append(", \n authenticatorAttachment='");
         n10.append(this.n);
@@ -67,7 +68,7 @@ public final class u extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        k1.a.T();
+        k1.a.q1();
         throw null;
     }
 }

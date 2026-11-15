@@ -1,111 +1,127 @@
 package org.telegram.ui.web;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.ui;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import c8.ja;
+import c8.na;
+import hi.y2;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.Components.i9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class h implements ls {
-    public final int b;
-    public final Runnable c;
-    public final String d;
-    public boolean f;
-    public boolean h;
-    public boolean n;
-    public final ArrayList a = new ArrayList();
-    public final int e = ConnectionsManager.generateClassGuid();
+public final class h extends FrameLayout implements z5 {
+    public final e6 a;
+    public final i9 b;
+    public final LinearLayout c;
+    public final FrameLayout.LayoutParams d;
+    public final TextView e;
+    public final TextView f;
+    public final TextView h;
+    public final ImageView n;
+    public final y2 r;
+    public int s;
+    public final Paint w;
+    public boolean x;
 
-    public h(String str, int i7, Runnable runnable) {
-        this.b = i7;
-        this.d = str;
-        this.c = runnable;
+    public h(Context context, e6 e6Var) {
+        super(context);
+        this.w = new Paint(1);
+        this.a = e6Var;
+        na.b(this, 0.03f, 1.25f);
+        i9 i9Var = new i9(context);
+        this.b = i9Var;
+        i9Var.setRoundRadius(org.telegram.messenger.g0.L(6.0f));
+        addView(i9Var, ja.d(32, 32.0f, 19, 10.0f, 8.0f, 8.0f, 8.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.c = linearLayout;
+        linearLayout.setOrientation(1);
+        TextView textView = new TextView(context);
+        this.e = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setMaxLines(1);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        linearLayout.addView(textView, ja.r(-1, -2, 51));
+        TextView textView2 = new TextView(context);
+        this.f = textView2;
+        textView2.setTextSize(1, 13.0f);
+        textView2.setMaxLines(1);
+        textView2.setEllipsize(truncateAt);
+        linearLayout.addView(textView2, ja.t(-1, -2, 51, 0, 3, 0, 0));
+        FrameLayout.LayoutParams d = ja.d(-1, -2.0f, 19, 64.0f, 0.0f, 70.0f, 0.0f);
+        this.d = d;
+        addView(linearLayout, d);
+        TextView textView3 = new TextView(context);
+        this.h = textView3;
+        textView3.setTextSize(1, 13.0f);
+        textView3.setMaxLines(1);
+        textView3.setEllipsize(truncateAt);
+        textView3.setGravity(5);
+        textView3.setTextAlignment(6);
+        addView(textView3, ja.d(-2, -2.0f, 21, 64.0f, -10.0f, 12.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.n = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.attach_arrow_right);
+        addView(imageView, ja.d(32, 32.0f, 21, 8.0f, 8.0f, 8.0f, 8.0f));
+        y2 y2Var = new y2(this, getContext(), e6Var, 2);
+        this.r = y2Var;
+        y2Var.b(-1, j6.d6, j6.k7);
+        y2Var.setDrawUnchecked(false);
+        y2Var.setDrawBackgroundAsArc(3);
+        addView(y2Var, ja.d(24, 24.0f, 19, 26.0f, 12.0f, 0.0f, 0.0f));
     }
 
-    public final void a() {
-        if (this.h) {
-            return;
-        }
-        this.h = true;
-        int i7 = this.b;
-        qs.f(i7).c(this, qs.V);
-        qs.f(i7).c(this, qs.H1);
-        if (TextUtils.isEmpty(this.d)) {
-            d();
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(j6.d6));
+        hashSet.add(Integer.valueOf(j6.G6));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.x) {
+            canvas.drawRect(org.telegram.messenger.g0.L(59.0f), getHeight() - Math.max(org.telegram.messenger.g0.L(0.66f), 1), getWidth(), getHeight(), this.w);
         }
     }
 
-    public final void b(ArrayList arrayList) {
-        int i7 = 0;
-        while (true) {
-            ArrayList arrayList2 = this.a;
-            if (i7 >= arrayList2.size()) {
-                return;
-            }
-            if (arrayList.contains(Integer.valueOf(((ij) arrayList2.get(i7)).e1()))) {
-                arrayList2.remove(i7);
-                i7--;
-            }
-            i7++;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(56.0f), TLObject.FLAG_30));
     }
 
-    public final void c() {
-        if (this.h) {
-            this.h = false;
-            int i7 = this.b;
-            qs.f(i7).n(this, qs.V);
-            qs.f(i7).n(this, qs.H1);
-            ConnectionsManager.getInstance(i7).cancelRequestsForGuid(this.e);
-            this.n = false;
-        }
+    public void setChecked(boolean z10) {
+        this.r.a(z10, true);
     }
 
-    public final void d() {
-        ArrayList arrayList;
-        if (this.n || this.f) {
-            return;
-        }
-        this.n = true;
-        int i7 = this.b;
-        long e10 = p10.i(i7).e();
-        int i10 = 0;
-        int i11 = Integer.MAX_VALUE;
-        while (true) {
-            arrayList = this.a;
-            if (i10 >= arrayList.size()) {
-                break;
-            }
-            i11 = Math.min(i11, ((ij) arrayList.get(i10)).e1());
-            i10++;
-        }
-        ui b02 = ui.b0(i7);
-        int i12 = arrayList.isEmpty() ? 30 : 50;
-        if (i11 == Integer.MAX_VALUE) {
-            i11 = 0;
-        }
-        b02.N0(e10, i12, i11, 0, 3, 0L, 1, this.e, 0, null, this.d);
-    }
-
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = qs.V;
-        ArrayList arrayList = this.a;
-        if (i7 != i11) {
-            if (i7 == qs.H1) {
-                arrayList.add(0, (ij) objArr[0]);
-            }
-        } else if (((Integer) objArr[3]).intValue() == this.e) {
-            this.n = false;
-            ArrayList arrayList2 = (ArrayList) objArr[2];
-            this.f = ((Boolean) objArr[5]).booleanValue();
-            arrayList.addAll(arrayList2);
-            this.c.run();
-        }
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        int i7 = j6.d6;
+        e6 e6Var = this.a;
+        int w02 = j6.w0(i7, e6Var);
+        int w03 = j6.w0(j6.G6, e6Var);
+        this.s = w03;
+        this.e.setTextColor(w03);
+        this.f.setTextColor(j6.w(w02, j6.r1(0.55f, w03)));
+        this.h.setTextColor(j6.r1(0.55f, w03));
+        this.n.setColorFilter(new PorterDuffColorFilter(j6.r1(0.6f, w03), PorterDuff.Mode.SRC_IN));
+        this.w.setColor(j6.r1(0.1f, w03));
+        this.b.invalidate();
     }
 }

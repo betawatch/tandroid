@@ -1,5 +1,6 @@
 package org.webrtc;
 
+import ai.e1;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Point;
@@ -9,16 +10,16 @@ import android.view.TextureView;
 import android.view.View;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.jr;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.sc;
+import org.telegram.messenger.gr;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.qc;
 import org.telegram.messenger.voip.VoIPService;
 import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class TextureViewRenderer extends TextureView implements TextureView.SurfaceTextureListener, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "TextureViewRenderer";
@@ -90,17 +91,17 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
     private void onRotationChanged() {
         int i7;
         int i10 = this.useCameraRotation ? OrientationHelper.cameraOrientation : 0;
-        boolean z9 = this.mirror;
-        if (z9) {
+        boolean z10 = this.mirror;
+        if (z10) {
             i10 = 360 - i10;
         }
         int i11 = -i10;
         if (this.useCameraRotation) {
             int i12 = this.screenRotation;
             if (i12 == 1) {
-                i7 = z9 ? 90 : -90;
+                i7 = z10 ? 90 : -90;
             } else if (i12 == 3) {
-                i7 = z9 ? qs.t4 : -270;
+                i7 = z10 ? ns.t4 : -270;
             }
             i11 += i7;
         }
@@ -140,7 +141,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         sb2.append(", frame size: ");
         sb2.append(this.rotatedFrameWidth);
         sb2.append("x");
-        jg.g.x(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        i5.c.y(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb2.append(min2);
         sb2.append(", old surface size: ");
         sb2.append(this.surfaceWidth);
@@ -189,9 +190,9 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
                 if (runnable != null) {
                     g0.r(runnable);
                 }
-                jg.r rVar = new jg.r(this, i10, i11, 17);
-                this.updateScreenRunnable = rVar;
-                postOrRun(rVar);
+                jg.q qVar = new jg.q(this, i10, i11, 18);
+                this.updateScreenRunnable = qVar;
+                postOrRun(qVar);
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -316,9 +317,9 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
                             throw th2;
                         }
                     }
-                    jr jrVar = new jr(this, i7, i10, i18, i17, 2);
-                    this.updateScreenRunnable = jrVar;
-                    postOrRun(jrVar);
+                    gr grVar = new gr(this, i7, i10, i18, i17, 2);
+                    this.updateScreenRunnable = grVar;
+                    postOrRun(grVar);
                 } catch (Throwable th4) {
                     th = th4;
                     th2 = th;
@@ -397,7 +398,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
     }
 
     public void setBackgroundRenderer(TextureView textureView) {
-        if (sc.e(512)) {
+        if (qc.e(512)) {
             this.backgroundRenderer = textureView;
             if (textureView != null) {
                 textureView.setSurfaceTextureListener(new TextureView.SurfaceTextureListener() { // from class: org.webrtc.TextureViewRenderer.1
@@ -428,9 +429,9 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         }
     }
 
-    public void setEnableHardwareScaler(boolean z9) {
+    public void setEnableHardwareScaler(boolean z10) {
         ThreadUtils.checkIsOnMainThread();
-        this.enableFixedSize = z9;
+        this.enableFixedSize = z10;
         updateSurfaceSize();
     }
 
@@ -438,9 +439,9 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         this.eglRenderer.setFpsReduction(f10);
     }
 
-    public void setIsCamera(boolean z9) {
-        this.isCamera = z9;
-        if (z9) {
+    public void setIsCamera(boolean z10) {
+        this.isCamera = z10;
+        if (z10) {
             return;
         }
         OrientationHelper orientationHelper = new OrientationHelper() { // from class: org.webrtc.TextureViewRenderer.2
@@ -460,13 +461,13 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         this.maxTextureSize = i7;
     }
 
-    public void setMirror(boolean z9) {
-        if (this.mirror != z9) {
-            this.mirror = z9;
+    public void setMirror(boolean z10) {
+        if (this.mirror != z10) {
+            this.mirror = z10;
             if (this.rotateTextureWithScreen) {
                 onRotationChanged();
             } else {
-                this.eglRenderer.setMirror(z9);
+                this.eglRenderer.setMirror(z10);
             }
             updateSurfaceSize();
             requestLayout();
@@ -478,9 +479,9 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         this.parentSink = videoSink;
     }
 
-    public void setRotateTextureWithScreen(boolean z9) {
-        if (this.rotateTextureWithScreen != z9) {
-            this.rotateTextureWithScreen = z9;
+    public void setRotateTextureWithScreen(boolean z10) {
+        if (this.rotateTextureWithScreen != z10) {
+            this.rotateTextureWithScreen = z10;
             requestLayout();
         }
     }
@@ -512,9 +513,9 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         updateVideoSizes();
     }
 
-    public void setUseCameraRotation(boolean z9) {
-        if (this.useCameraRotation != z9) {
-            this.useCameraRotation = z9;
+    public void setUseCameraRotation(boolean z10) {
+        if (this.useCameraRotation != z10) {
+            this.useCameraRotation = z10;
             onRotationChanged();
             updateVideoSizes();
         }
@@ -569,7 +570,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         requestLayout();
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class TextureEglRenderer extends EglRenderer implements TextureView.SurfaceTextureListener {
         private static final String TAG = "TextureEglRenderer";
         private int frameRotation;
@@ -658,7 +659,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
             ThreadUtils.checkIsOnMainThread();
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            releaseEglSurface(new l2.a0(countDownLatch, 29), false);
+            releaseEglSurface(new e1(countDownLatch, 1), false);
             ThreadUtils.awaitUninterruptibly(countDownLatch);
             return true;
         }

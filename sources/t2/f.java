@@ -1,61 +1,59 @@
 package t2;
 
-import a8.ia;
+import a8.ja;
 import android.graphics.Bitmap;
 import android.os.Trace;
-import androidx.biometric.t;
+import androidx.emoji2.text.n;
 import e2.u;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
-import jg.g;
 import k2.h;
-import l2.k0;
-import l2.r0;
-import li.z;
+import l2.h0;
+import l2.o0;
 import x2.f0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f extends l2.b {
-    public final t I;
-    public final h J;
-    public final ArrayDeque K;
-    public boolean L;
+    public final n J;
+    public final h K;
+    public final ArrayDeque L;
     public boolean M;
-    public e N;
-    public long O;
+    public boolean N;
+    public e O;
     public long P;
-    public int Q;
+    public long Q;
     public int R;
-    public u S;
-    public b T;
-    public h U;
-    public d V;
-    public k0 W;
-    public Bitmap X;
-    public boolean Y;
-    public z Z;
-    public z a0;
-    public int b0;
-    public boolean c0;
+    public int S;
+    public u T;
+    public b U;
+    public h V;
+    public d W;
+    public h0 X;
+    public Bitmap Y;
+    public boolean Z;
+    public m5.b a0;
+    public m5.b b0;
+    public int c0;
+    public boolean d0;
 
-    public f(t tVar) {
+    public f(n nVar) {
         super(4);
-        this.I = tVar;
-        this.V = d.a;
-        this.J = new h(0, 0);
-        this.N = e.c;
-        this.K = new ArrayDeque();
+        this.J = nVar;
+        this.W = d.a;
+        this.K = new h(0, 0);
+        this.O = e.c;
+        this.L = new ArrayDeque();
+        this.Q = -9223372036854775807L;
         this.P = -9223372036854775807L;
-        this.O = -9223372036854775807L;
-        this.Q = 0;
-        this.R = 1;
+        this.R = 0;
+        this.S = 1;
     }
 
     @Override // l2.b
     public final int C(u uVar) {
-        this.I.getClass();
-        return t.d(uVar);
+        this.J.getClass();
+        return n.d(uVar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:68:0x0161, code lost:
@@ -66,114 +64,114 @@ public final class f extends l2.b {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean F(long j3) {
-        boolean z9;
+        boolean z10;
         Bitmap bitmap;
-        Bitmap bitmap2 = this.X;
-        if ((bitmap2 == null || this.Z != null) && (this.R != 0 || this.n == 2)) {
-            ArrayDeque arrayDeque = this.K;
+        Bitmap bitmap2 = this.Y;
+        if ((bitmap2 == null || this.a0 != null) && (this.S != 0 || this.n == 2)) {
+            ArrayDeque arrayDeque = this.L;
             if (bitmap2 == null) {
-                this.T.getClass();
-                a aVar = (a) this.T.c();
+                this.U.getClass();
+                a aVar = (a) this.U.c();
                 if (aVar != null) {
                     if (!aVar.isEndOfStream()) {
-                        ia.k(aVar.a, "Non-EOS buffer came back from the decoder without bitmap.");
-                        this.X = aVar.a;
+                        ja.k(aVar.a, "Non-EOS buffer came back from the decoder without bitmap.");
+                        this.Y = aVar.a;
                         aVar.release();
                     } else {
-                        if (this.Q == 3) {
+                        if (this.R == 3) {
                             I();
-                            this.S.getClass();
+                            this.T.getClass();
                             H();
                             return false;
                         }
                         aVar.release();
                         if (arrayDeque.isEmpty()) {
-                            this.M = true;
+                            this.N = true;
                             return false;
                         }
                     }
                 }
             }
-            if (this.Y && this.X != null && this.Z != null) {
-                this.S.getClass();
-                u uVar = this.S;
+            if (this.Z && this.Y != null && this.a0 != null) {
+                this.T.getClass();
+                u uVar = this.T;
                 int i7 = uVar.R;
                 int i10 = uVar.S;
-                boolean z10 = ((i7 == 1 && i10 == 1) || i7 == -1 || i10 == -1) ? false : true;
-                z zVar = this.Z;
-                if (((Bitmap) zVar.c) == null) {
-                    if (z10) {
-                        int i11 = zVar.a;
-                        this.X.getClass();
-                        int width = this.X.getWidth();
-                        u uVar2 = this.S;
+                boolean z11 = ((i7 == 1 && i10 == 1) || i7 == -1 || i10 == -1) ? false : true;
+                m5.b bVar = this.a0;
+                if (((Bitmap) bVar.c) == null) {
+                    if (z11) {
+                        int i11 = bVar.b;
+                        this.Y.getClass();
+                        int width = this.Y.getWidth();
+                        u uVar2 = this.T;
                         uVar2.getClass();
                         int i12 = width / uVar2.R;
-                        int height = this.X.getHeight();
-                        u uVar3 = this.S;
+                        int height = this.Y.getHeight();
+                        u uVar3 = this.T;
                         uVar3.getClass();
                         int i13 = height / uVar3.S;
-                        int i14 = this.S.R;
-                        bitmap = Bitmap.createBitmap(this.X, (i11 % i14) * i12, (i11 / i14) * i13, i12, i13);
+                        int i14 = this.T.R;
+                        bitmap = Bitmap.createBitmap(this.Y, (i11 % i14) * i12, (i11 / i14) * i13, i12, i13);
                     } else {
-                        bitmap = this.X;
+                        bitmap = this.Y;
                         bitmap.getClass();
                     }
-                    zVar.c = bitmap;
+                    bVar.c = bitmap;
                 }
-                ((Bitmap) this.Z.c).getClass();
-                long j10 = this.Z.b - j3;
-                boolean z11 = this.n == 2;
-                int i15 = this.R;
+                ((Bitmap) this.a0.c).getClass();
+                long j10 = this.a0.a - j3;
+                boolean z12 = this.n == 2;
+                int i15 = this.S;
                 if (i15 != 0) {
                     if (i15 == 1) {
-                        z11 = true;
+                        z12 = true;
                     } else {
                         if (i15 != 3) {
                             throw new IllegalStateException();
                         }
-                        z11 = false;
+                        z12 = false;
                     }
                 }
-                if (z11 || j10 < 30000) {
-                    k0 k0Var = this.W;
-                    if (k0Var != null) {
-                        long j11 = this.N.b;
-                        this.S.getClass();
-                        r0 r0Var = k0Var.a;
-                        if (r0Var.U) {
-                            r0Var.n.a(37).b();
+                if (z12 || j10 < 30000) {
+                    h0 h0Var = this.X;
+                    if (h0Var != null) {
+                        long j11 = this.O.b;
+                        this.T.getClass();
+                        o0 o0Var = h0Var.a;
+                        if (o0Var.V) {
+                            o0Var.n.a(37).b();
                         }
                     }
-                    d dVar = this.V;
-                    long j12 = this.N.b;
+                    d dVar = this.W;
+                    long j12 = this.O.b;
                     dVar.getClass();
-                    z9 = true;
+                    z10 = true;
                 } else {
-                    z9 = false;
+                    z10 = false;
                 }
-                if (z9) {
-                    z zVar2 = this.Z;
-                    zVar2.getClass();
-                    long j13 = zVar2.b;
-                    this.O = j13;
+                if (z10) {
+                    m5.b bVar2 = this.a0;
+                    bVar2.getClass();
+                    long j13 = bVar2.a;
+                    this.P = j13;
                     while (!arrayDeque.isEmpty() && j13 >= ((e) arrayDeque.peek()).a) {
-                        this.N = (e) arrayDeque.removeFirst();
+                        this.O = (e) arrayDeque.removeFirst();
                     }
-                    this.R = 3;
-                    if (z10) {
-                        z zVar3 = this.Z;
-                        zVar3.getClass();
-                        int i16 = zVar3.a;
-                        u uVar4 = this.S;
+                    this.S = 3;
+                    if (z11) {
+                        m5.b bVar3 = this.a0;
+                        bVar3.getClass();
+                        int i16 = bVar3.b;
+                        u uVar4 = this.T;
                         uVar4.getClass();
                         int i17 = uVar4.S;
-                        u uVar5 = this.S;
+                        u uVar5 = this.T;
                         uVar5.getClass();
                     }
-                    this.X = null;
-                    this.Z = this.a0;
-                    this.a0 = null;
+                    this.Y = null;
+                    this.a0 = this.b0;
+                    this.b0 = null;
                     return true;
                 }
             }
@@ -198,112 +196,112 @@ public final class f extends l2.b {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean G(long j3) {
-        boolean z9;
+        boolean z10;
         h hVar;
         u uVar;
         int i7;
         h hVar2;
-        if (!this.Y || this.Z == null) {
-            wf.b bVar = this.c;
-            bVar.A();
-            b bVar2 = this.T;
-            if (bVar2 != null && this.Q != 3 && !this.L) {
-                if (this.U == null) {
-                    h hVar3 = (h) bVar2.d();
-                    this.U = hVar3;
+        if (!this.Z || this.a0 == null) {
+            k8.a aVar = this.c;
+            aVar.x0();
+            b bVar = this.U;
+            if (bVar != null && this.R != 3 && !this.M) {
+                if (this.V == null) {
+                    h hVar3 = (h) bVar.d();
+                    this.V = hVar3;
                 }
-                if (this.Q == 2) {
-                    this.U.getClass();
-                    this.U.setFlags(4);
-                    b bVar3 = this.T;
-                    bVar3.getClass();
-                    bVar3.e(this.U);
-                    this.U = null;
-                    this.Q = 3;
+                if (this.R == 2) {
+                    this.V.getClass();
+                    this.V.setFlags(4);
+                    b bVar2 = this.U;
+                    bVar2.getClass();
+                    bVar2.e(this.V);
+                    this.V = null;
+                    this.R = 3;
                     return false;
                 }
-                int w10 = w(bVar, this.U, 0);
+                int w10 = w(aVar, this.V, 0);
                 if (w10 == -5) {
-                    u uVar2 = (u) bVar.c;
+                    u uVar2 = (u) aVar.c;
                     uVar2.getClass();
-                    this.S = uVar2;
-                    this.c0 = true;
-                    this.Q = 2;
+                    this.T = uVar2;
+                    this.d0 = true;
+                    this.R = 2;
                     return true;
                 }
                 if (w10 == -4) {
-                    this.U.c();
-                    ByteBuffer byteBuffer = this.U.c;
+                    this.V.c();
+                    ByteBuffer byteBuffer = this.V.c;
                     if (byteBuffer == null || byteBuffer.remaining() <= 0) {
-                        h hVar4 = this.U;
+                        h hVar4 = this.V;
                         hVar4.getClass();
                         if (!hVar4.isEndOfStream()) {
-                            z9 = false;
-                            if (z9) {
-                                h hVar5 = this.U;
+                            z10 = false;
+                            if (z10) {
+                                h hVar5 = this.V;
                                 hVar5.getClass();
-                                hVar5.a = this.S;
-                                b bVar4 = this.T;
-                                bVar4.getClass();
-                                h hVar6 = this.U;
+                                hVar5.a = this.T;
+                                b bVar3 = this.U;
+                                bVar3.getClass();
+                                h hVar6 = this.V;
                                 hVar6.getClass();
-                                bVar4.e(hVar6);
-                                this.b0 = 0;
+                                bVar3.e(hVar6);
+                                this.c0 = 0;
                             }
-                            hVar = this.U;
+                            hVar = this.V;
                             hVar.getClass();
                             if (hVar.isEndOfStream()) {
-                                int i10 = this.b0;
+                                int i10 = this.c0;
                                 long j10 = hVar.e;
-                                z zVar = new z();
-                                zVar.a = i10;
-                                zVar.b = j10;
-                                this.a0 = zVar;
-                                this.b0 = i10 + 1;
-                                if (!this.Y) {
-                                    boolean z10 = j10 - 30000 <= j3 && j3 <= 30000 + j10;
-                                    z zVar2 = this.Z;
-                                    boolean z11 = zVar2 != null && zVar2.b <= j3 && j3 < j10;
-                                    u uVar3 = this.S;
+                                m5.b bVar4 = new m5.b();
+                                bVar4.b = i10;
+                                bVar4.a = j10;
+                                this.b0 = bVar4;
+                                this.c0 = i10 + 1;
+                                if (!this.Z) {
+                                    boolean z11 = j10 - 30000 <= j3 && j3 <= 30000 + j10;
+                                    m5.b bVar5 = this.a0;
+                                    boolean z12 = bVar5 != null && bVar5.a <= j3 && j3 < j10;
+                                    u uVar3 = this.T;
                                     uVar3.getClass();
-                                    this.Y = z10 || z11 || (uVar3.R == -1 || (i7 = (uVar = this.S).S) == -1 || i10 == (i7 * uVar.R) - 1);
-                                    if (z11) {
+                                    this.Z = z11 || z12 || (uVar3.R == -1 || (i7 = (uVar = this.T).S) == -1 || i10 == (i7 * uVar.R) - 1);
+                                    if (z12) {
                                     }
                                 }
-                                this.Z = this.a0;
-                                this.a0 = null;
+                                this.a0 = this.b0;
+                                this.b0 = null;
                             } else {
-                                this.Y = true;
+                                this.Z = true;
                             }
-                            hVar2 = this.U;
+                            hVar2 = this.V;
                             hVar2.getClass();
                             if (!hVar2.isEndOfStream()) {
-                                this.L = true;
-                                this.U = null;
+                                this.M = true;
+                                this.V = null;
                                 return false;
                             }
-                            long j11 = this.P;
-                            h hVar7 = this.U;
+                            long j11 = this.Q;
+                            h hVar7 = this.V;
                             hVar7.getClass();
-                            this.P = Math.max(j11, hVar7.e);
-                            if (z9) {
-                                this.U = null;
+                            this.Q = Math.max(j11, hVar7.e);
+                            if (z10) {
+                                this.V = null;
                             } else {
-                                h hVar8 = this.U;
+                                h hVar8 = this.V;
                                 hVar8.getClass();
                                 hVar8.clear();
                             }
-                            return !this.Y;
+                            return !this.Z;
                         }
                     }
-                    z9 = true;
-                    if (z9) {
+                    z10 = true;
+                    if (z10) {
                     }
-                    hVar = this.U;
+                    hVar = this.V;
                     hVar.getClass();
                     if (hVar.isEndOfStream()) {
                     }
-                    hVar2 = this.U;
+                    hVar2 = this.V;
                     hVar2.getClass();
                     if (!hVar2.isEndOfStream()) {
                     }
@@ -316,48 +314,48 @@ public final class f extends l2.b {
     }
 
     public final void H() {
-        if (this.c0) {
-            u uVar = this.S;
+        if (this.d0) {
+            u uVar = this.T;
             uVar.getClass();
-            t tVar = this.I;
-            tVar.getClass();
-            int d = t.d(uVar);
-            if (d != g.b(4, 0, 0, 0) && d != g.b(3, 0, 0, 0)) {
-                throw d(new c("Provided decoder factory can't create decoder for format."), this.S, false, 4005);
+            n nVar = this.J;
+            nVar.getClass();
+            int d = n.d(uVar);
+            if (d != i5.c.a(4, 0, 0, 0) && d != i5.c.a(3, 0, 0, 0)) {
+                throw d(new c("Provided decoder factory can't create decoder for format."), this.T, false, 4005);
             }
-            b bVar = this.T;
+            b bVar = this.U;
             if (bVar != null) {
                 bVar.release();
             }
-            this.T = new b(tVar.a);
-            this.c0 = false;
+            this.U = new b(nVar.a);
+            this.d0 = false;
         }
     }
 
     public final void I() {
-        this.U = null;
-        this.Q = 0;
-        this.P = -9223372036854775807L;
-        b bVar = this.T;
+        this.V = null;
+        this.R = 0;
+        this.Q = -9223372036854775807L;
+        b bVar = this.U;
         if (bVar != null) {
             bVar.release();
-            this.T = null;
+            this.U = null;
         }
     }
 
-    @Override // l2.b, l2.m1
+    @Override // l2.b, l2.i1
     public final void c(int i7, Object obj) {
         if (i7 != 15) {
             if (i7 != 23) {
                 return;
             }
-            this.W = (k0) obj;
+            this.X = (h0) obj;
         } else {
             d dVar = obj instanceof d ? (d) obj : null;
             if (dVar == null) {
                 dVar = d.a;
             }
-            this.V = dVar;
+            this.W = dVar;
         }
     }
 
@@ -368,47 +366,47 @@ public final class f extends l2.b {
 
     @Override // l2.b
     public final boolean l() {
-        return this.M;
+        return this.N;
     }
 
     @Override // l2.b
     public final boolean m() {
-        int i7 = this.R;
+        int i7 = this.S;
         if (i7 != 3) {
-            return i7 == 0 && this.Y;
+            return i7 == 0 && this.Z;
         }
         return true;
     }
 
     @Override // l2.b
     public final void n() {
-        this.S = null;
-        this.N = e.c;
-        this.K.clear();
+        this.T = null;
+        this.O = e.c;
+        this.L.clear();
         I();
-        this.V.getClass();
+        this.W.getClass();
     }
 
     @Override // l2.b
-    public final void o(boolean z9, boolean z10) {
-        this.R = z10 ? 1 : 0;
+    public final void o(boolean z10, boolean z11) {
+        this.S = z11 ? 1 : 0;
     }
 
     @Override // l2.b
-    public final void p(long j3, boolean z9, boolean z10) {
-        this.R = Math.min(this.R, 1);
+    public final void p(long j3, boolean z10, boolean z11) {
+        this.S = Math.min(this.S, 1);
+        this.N = false;
         this.M = false;
-        this.L = false;
-        this.X = null;
-        this.Z = null;
+        this.Y = null;
         this.a0 = null;
-        this.Y = false;
-        this.U = null;
-        b bVar = this.T;
+        this.b0 = null;
+        this.Z = false;
+        this.V = null;
+        b bVar = this.U;
         if (bVar != null) {
             bVar.flush();
         }
-        this.K.clear();
+        this.L.clear();
     }
 
     @Override // l2.b
@@ -419,7 +417,7 @@ public final class f extends l2.b {
     @Override // l2.b
     public final void r() {
         I();
-        this.R = Math.min(this.R, 1);
+        this.S = Math.min(this.S, 1);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0023, code lost:
@@ -431,48 +429,48 @@ public final class f extends l2.b {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void u(u[] uVarArr, long j3, long j10, f0 f0Var) {
-        if (this.N.b != -9223372036854775807L) {
-            ArrayDeque arrayDeque = this.K;
+        if (this.O.b != -9223372036854775807L) {
+            ArrayDeque arrayDeque = this.L;
             if (arrayDeque.isEmpty()) {
-                long j11 = this.P;
+                long j11 = this.Q;
                 if (j11 != -9223372036854775807L) {
-                    long j12 = this.O;
+                    long j12 = this.P;
                     if (j12 != -9223372036854775807L) {
                     }
                 }
             }
-            arrayDeque.add(new e(this.P, j10));
+            arrayDeque.add(new e(this.Q, j10));
             return;
         }
-        this.N = new e(-9223372036854775807L, j10);
+        this.O = new e(-9223372036854775807L, j10);
     }
 
     @Override // l2.b
     public final void x(long j3, long j10) {
-        if (this.M) {
+        if (this.N) {
             return;
         }
-        if (this.S == null) {
-            wf.b bVar = this.c;
-            bVar.A();
-            h hVar = this.J;
+        if (this.T == null) {
+            k8.a aVar = this.c;
+            aVar.x0();
+            h hVar = this.K;
             hVar.clear();
-            int w10 = w(bVar, hVar, 2);
+            int w10 = w(aVar, hVar, 2);
             if (w10 != -5) {
                 if (w10 == -4) {
-                    ia.p(hVar.isEndOfStream());
-                    this.L = true;
+                    ja.p(hVar.isEndOfStream());
                     this.M = true;
+                    this.N = true;
                     return;
                 }
                 return;
             }
-            u uVar = (u) bVar.c;
+            u uVar = (u) aVar.c;
             uVar.getClass();
-            this.S = uVar;
-            this.c0 = true;
+            this.T = uVar;
+            this.d0 = true;
         }
-        if (this.T == null) {
+        if (this.U == null) {
             H();
         }
         try {

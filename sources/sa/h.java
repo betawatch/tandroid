@@ -2,10 +2,10 @@ package sa;
 
 import android.content.Context;
 import android.os.Build;
-import c8.a1;
-import c8.qb;
-import gb.b1;
-import gb.p;
+import c8.c1;
+import c8.rb;
+import gb.o;
+import gb.z0;
 import j$.time.ZoneOffset;
 import j$.time.format.DateTimeFormatter;
 import j$.util.DateRetargetClass;
@@ -21,16 +21,16 @@ import java.util.Set;
 import rd.l;
 import zd.b0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class h {
     public static final q1.e b = new q1.e("fire-global");
     public static final q1.e c = new q1.e("fire-count");
-    public static final q1.e d = qb.a("last-used-date");
+    public static final q1.e d = rb.a("last-used-date");
     public final ka.d a;
 
     public h(Context context, String str) {
-        this.a = new ka.d(context, rf.b.i("FirebaseHeartBeat", str));
+        this.a = new ka.d(context, r.b.k("FirebaseHeartBeat", str));
     }
 
     public static String c(long j3) {
@@ -43,7 +43,7 @@ public final class h {
                 Iterator it = ((Set) entry.getValue()).iterator();
                 while (it.hasNext()) {
                     if (str.equals((String) it.next())) {
-                        return qb.b(((q1.e) entry.getKey()).a);
+                        return rb.b(((q1.e) entry.getKey()).a);
                     }
                 }
             }
@@ -56,7 +56,7 @@ public final class h {
         if (d2 == null) {
             return;
         }
-        HashSet hashSet = new HashSet((Collection) a1.a(bVar, d2, new HashSet()));
+        HashSet hashSet = new HashSet((Collection) c1.a(bVar, d2, new HashSet()));
         hashSet.remove(str);
         if (hashSet.isEmpty()) {
             bVar.c(d2);
@@ -66,7 +66,7 @@ public final class h {
     }
 
     public final synchronized void a() {
-        this.a.a(new p(this));
+        this.a.a(new o(this));
     }
 
     public final synchronized ArrayList b() {
@@ -76,7 +76,7 @@ public final class h {
             String c10 = c(System.currentTimeMillis());
             ka.d dVar = this.a;
             dVar.getClass();
-            for (Map.Entry entry : ((Map) b0.u(new b1(dVar, null, 2))).entrySet()) {
+            for (Map.Entry entry : ((Map) b0.u(new z0(dVar, null, 2))).entrySet()) {
                 if (entry.getValue() instanceof Set) {
                     HashSet hashSet = new HashSet((Set) entry.getValue());
                     hashSet.remove(c10);
@@ -114,7 +114,7 @@ public final class h {
         try {
             try {
                 String c10 = c(j3);
-                q1.e b10 = qb.b(str);
+                q1.e b10 = rb.b(str);
                 this.a.a(new e1.b(this, c10, str, b10, 2));
             } catch (Throwable th2) {
                 th = th2;

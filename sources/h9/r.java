@@ -1,9 +1,9 @@
 package h9;
 
-import a8.ha;
+import a8.ia;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r extends k {
     public final Object a;
@@ -22,7 +22,7 @@ public final class r extends k {
         Object obj = this.a;
         s sVar = this.c;
         if (i7 != -1 && i7 < sVar.size()) {
-            if (ha.a(obj, sVar.k()[this.b])) {
+            if (ia.a(obj, sVar.k()[this.b])) {
                 return;
             }
         }

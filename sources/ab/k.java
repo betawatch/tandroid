@@ -9,7 +9,7 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.ExecutorService;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k {
     public static final Object c = new Object();
@@ -22,7 +22,7 @@ public final class k {
         this.a = executorService;
     }
 
-    public static Task a(Context context, Intent intent, boolean z9) {
+    public static Task a(Context context, Intent intent, boolean z10) {
         p0 p0Var;
         if (Log.isLoggable("FirebaseMessaging", 3)) {
             Log.d("FirebaseMessaging", "Binding to service");
@@ -37,10 +37,10 @@ public final class k {
                 throw th2;
             }
         }
-        if (!z9) {
+        if (!z10) {
             return p0Var.b(intent).continueWith(new d3.b(3), new a3.l(8));
         }
-        if (b0.k().m(context)) {
+        if (c0.q().w(context)) {
             m0.c(context, p0Var, intent);
         } else {
             p0Var.b(intent);
@@ -56,9 +56,9 @@ public final class k {
         }
         Context context = (Context) this.a;
         d3.b bVar = (d3.b) this.b;
-        boolean z9 = x6.b.d() && context.getApplicationInfo().targetSdkVersion >= 26;
-        boolean z10 = (intent.getFlags() & TLObject.FLAG_28) != 0;
-        return (!z9 || z10) ? Tasks.call(bVar, new i(0, context, intent)).continueWithTask(bVar, new j(context, intent, z10, 0)) : a(context, intent, z10);
+        boolean z10 = x6.b.d() && context.getApplicationInfo().targetSdkVersion >= 26;
+        boolean z11 = (intent.getFlags() & TLObject.FLAG_28) != 0;
+        return (!z10 || z11) ? Tasks.call(bVar, new i(0, context, intent)).continueWithTask(bVar, new j(context, intent, z11, 0)) : a(context, intent, z11);
     }
 
     public k(Context context) {

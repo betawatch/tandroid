@@ -1,18 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.app.Activity;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class vc0 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ ad0 a;
+    public final /* synthetic */ bd0 G1;
 
-    public vc0(ad0 ad0Var) {
-        this.a = ad0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vc0(bd0 bd0Var, Activity activity) {
+        super(activity, null);
+        this.G1 = bd0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i7) {
-        if (i7 == -1) {
-            this.a.dismiss();
-        }
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        super.setAlpha(f10);
+        this.G1.b.invalidate();
     }
 }

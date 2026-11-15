@@ -1,6 +1,6 @@
 package f0;
 
-import ab.x;
+import ab.y;
 import android.app.AppOpsManager;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -14,7 +14,7 @@ import e0.i0;
 import j$.util.Objects;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final Object a = null;
@@ -38,7 +38,7 @@ public abstract class d {
                     AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(AppOpsManager.class);
                     noteProxyOpNoThrow = appOpsManager == null ? 1 : appOpsManager.checkOpNoThrow(permissionToOp, Binder.getCallingUid(), str2);
                     if (noteProxyOpNoThrow == 0) {
-                        noteProxyOpNoThrow = appOpsManager != null ? appOpsManager.checkOpNoThrow(permissionToOp, i10, x.f(context)) : 1;
+                        noteProxyOpNoThrow = appOpsManager != null ? appOpsManager.checkOpNoThrow(permissionToOp, i10, y.f(context)) : 1;
                     }
                 } else {
                     noteProxyOpNoThrow = ((AppOpsManager) context.getSystemService(AppOpsManager.class)).noteProxyOpNoThrow(permissionToOp, str2);

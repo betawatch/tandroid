@@ -2,35 +2,33 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wv implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dw b;
-    public final /* synthetic */ TLRPC.EncryptedChat c;
+    public final /* synthetic */ bw b;
+    public final /* synthetic */ TLRPC.TL_encryptedChatDiscarded c;
 
-    public /* synthetic */ wv(dw dwVar, TLRPC.EncryptedChat encryptedChat, int i7) {
+    public /* synthetic */ wv(bw bwVar, TLRPC.TL_encryptedChatDiscarded tL_encryptedChatDiscarded, int i7) {
         this.a = i7;
-        this.b = dwVar;
-        this.c = encryptedChat;
+        this.b = bwVar;
+        this.c = tL_encryptedChatDiscarded;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        TLRPC.EncryptedChat encryptedChat = this.c;
-        dw dwVar = this.b;
+        TLRPC.TL_encryptedChatDiscarded tL_encryptedChatDiscarded = this.c;
+        bw bwVar = this.b;
         switch (i7) {
             case 0:
-                dwVar.getNotificationCenter().k(35, encryptedChat);
-                break;
-            case 1:
-                dwVar.getNotificationCenter().k(35, encryptedChat);
-                dwVar.w(encryptedChat, null);
+                bwVar.getMessagesController().U3(tL_encryptedChatDiscarded, false);
+                bwVar.getNotificationCenter().k(35, tL_encryptedChatDiscarded);
                 break;
             default:
-                dwVar.getNotificationCenter().k(35, encryptedChat);
-                dwVar.w(encryptedChat, null);
+                bwVar.getMessagesController().U3(tL_encryptedChatDiscarded, false);
+                bwVar.getMessagesStorage().V1(tL_encryptedChatDiscarded);
+                bwVar.getNotificationCenter().k(35, tL_encryptedChatDiscarded);
                 break;
         }
     }

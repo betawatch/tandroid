@@ -1,173 +1,181 @@
 package di;
 
-import fi.qa;
-import fi.va;
+import android.os.Bundle;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.ks0;
-import org.telegram.ui.sv;
-import org.telegram.ui.zw;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.s10;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.d31;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.di0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b2 implements z10 {
+public final /* synthetic */ class b2 implements s10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ b2(int i7, Object obj, Object obj2) {
+    public /* synthetic */ b2(Object obj, Object obj2, Object obj3, Object obj4, int i7) {
         this.a = i7;
         this.b = obj;
         this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0145  */
-    @Override // org.telegram.messenger.z10
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
-        sv svVar;
-        org.telegram.ui.ActionBar.f2 f2Var;
-        org.telegram.ui.ActionBar.r4 parentLayout;
-        switch (this.a) {
+    @Override // org.telegram.messenger.s10
+    public final void a(Object obj, Object obj2) {
+        AlertDialog$Builder alertDialog$Builder;
+        gj gjVar;
+        int i7 = this.a;
+        Object obj3 = this.e;
+        Object obj4 = this.d;
+        Object obj5 = this.c;
+        Object obj6 = this.b;
+        switch (i7) {
             case 0:
-                j4 j4Var = (j4) this.b;
-                va vaVar = (va) this.c;
-                Long l10 = (Long) obj;
-                Runnable runnable = (Runnable) obj2;
-                Boolean bool = (Boolean) obj3;
-                Long l11 = (Long) obj4;
-                q9 q9Var = j4Var.s0;
-                if (!bool.booleanValue()) {
-                    long currentTimeMillis = System.currentTimeMillis();
-                    i4 i4Var = j4Var.v2;
-                    if (i4Var == null || ((p9) i4Var.c) != null) {
-                        p9 p9Var = (p9) i4Var.c;
-                        p9Var.firstFrameRendered = false;
-                        i4Var.a = false;
-                        p9Var.setOnReadyListener(new e2(0, currentTimeMillis, runnable));
-                        ((h9) j4Var.z1).g(false);
-                        ch0 ch0Var = j4Var.i0;
-                        if (ch0Var != null) {
-                            ch0Var.setAnimation(j4Var.g1.u);
+                c6 c6Var = (c6) obj6;
+                s10 s10Var = (s10) obj5;
+                ArrayList arrayList = (ArrayList) obj4;
+                Runnable runnable = (Runnable) obj3;
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (updates != null) {
+                    ArrayList y02 = np.y0(updates, TL_update.TL_updateNewMessage.class);
+                    int size = y02.size();
+                    int i10 = 0;
+                    while (true) {
+                        if (i10 < size) {
+                            Object obj7 = y02.get(i10);
+                            i10++;
+                            TLRPC.Message message = ((TL_update.TL_updateNewMessage) obj7).message;
+                            if (message != null && (message.action instanceof TLRPC.TL_messageActionStarGiftUnique)) {
+                                gjVar = new gj(c6Var.a, message, false, false);
+                            }
+                        } else {
+                            gjVar = null;
                         }
-                        if (j4Var.A2 > 0 && l10.longValue() > j4Var.A2 - 1400) {
-                            l10 = 0L;
-                        }
-                        j4Var.R0(l10.longValue(), true);
-                        j4Var.D3 = false;
-                        org.telegram.messenger.g0.i3(runnable, 400L);
-                        if (bool.booleanValue()) {
-                            j4Var.d1(false);
+                    }
+                    np.s1(c6Var.a).O3(updates, false);
+                    if (gjVar == null) {
+                        s10Var.a(null, null);
+                        v8.y(c6Var.a, false).O();
+                        m8 G = v8.y(c6Var.a, false).G(m10.i(c6Var.a).e(), false);
+                        if (G != null) {
+                            G.k(arrayList, null);
                             break;
                         }
                     } else {
-                        ((h9) j4Var.z1).g(false);
-                        j4Var.setActive(true);
-                        j4Var.D3 = false;
-                        j4Var.R0 = new d2(0, runnable);
-                        if (bool.booleanValue()) {
-                            j4Var.d1(false);
-                        }
-                        org.telegram.messenger.g0.i3(runnable, 400L);
+                        TL_stars.StarGift starGift = ((TLRPC.TL_messageActionStarGiftUnique) gjVar.k.action).gift;
+                        s10Var.a(starGift, new androidx.car.app.utils.a(c6Var, gjVar, arrayList, starGift, 8));
                         break;
                     }
-                } else {
-                    org.telegram.ui.ActionBar.f2 f2Var2 = q9Var.f;
-                    if (f2Var2 != null && (parentLayout = f2Var2.getParentLayout()) != null) {
-                        List fragmentStack = parentLayout.getFragmentStack();
-                        ArrayList arrayList = new ArrayList();
-                        for (int size = fragmentStack.size() - 1; size >= 0; size--) {
-                            org.telegram.ui.ActionBar.f2 f2Var3 = (org.telegram.ui.ActionBar.f2) fragmentStack.get(size);
-                            if (f2Var3 instanceof zw) {
-                                zw zwVar = (zw) f2Var3;
-                                zwVar.W3();
-                                svVar = zwVar.E0;
-                                r3 = svVar != null ? svVar.e(l11.longValue()) : null;
-                                for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                                    ((ActionBarLayout) parentLayout).d0((org.telegram.ui.ActionBar.f2) arrayList.get(i7), false);
-                                }
-                                f2Var = q9Var.f;
-                                if (f2Var != null) {
-                                    f2Var.clearSheets();
-                                }
-                                q9Var.B();
-                                j4Var.D3 = false;
-                                if (svVar != null || !svVar.k(l11.longValue())) {
-                                    vaVar.X(qa.c(r3));
-                                    org.telegram.messenger.g0.i3(runnable, 400L);
-                                    break;
-                                } else {
-                                    svVar.b0.add(new bi.u0(r3, svVar, l11, vaVar, runnable, 8));
-                                    break;
-                                }
-                            } else {
-                                arrayList.add(f2Var3);
-                            }
+                } else if (tL_error != null) {
+                    if ("STARGIFT_CRAFT_UNAVAILABLE".equalsIgnoreCase(tL_error.text)) {
+                        alertDialog$Builder = new AlertDialog$Builder(0, c6Var.getContext(), new fi.b());
+                        String M0 = hd.M0(2131749755, null);
+                        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                        t1Var.S = M0;
+                        t1Var.U = org.telegram.messenger.g0.X2(hd.M0(2131749757, null));
+                    } else {
+                        String str = tL_error.text;
+                        if (str == null || !str.startsWith("STARGIFT_CRAFT_TOO_EARLY_")) {
+                            c6Var.k().f0(tL_error, false);
+                            runnable.run();
+                            break;
+                        } else {
+                            long parseLong = Long.parseLong(tL_error.text.substring(25)) + ConnectionsManager.getInstance(c6Var.a).getCurrentTime();
+                            alertDialog$Builder = new AlertDialog$Builder(0, c6Var.getContext(), new fi.b());
+                            String M02 = hd.M0(2131749755, null);
+                            org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
+                            t1Var2.S = M02;
+                            t1Var2.U = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131749756, hd.x(parseLong, true)));
                         }
                     }
-                    svVar = null;
-                    f2Var = q9Var.f;
-                    if (f2Var != null) {
-                    }
-                    q9Var.B();
-                    j4Var.D3 = false;
-                    if (svVar != null) {
-                    }
-                    vaVar.X(qa.c(r3));
-                    org.telegram.messenger.g0.i3(runnable, 400L);
+                    i5.c.C(null, 2131747831, alertDialog$Builder, null);
+                    runnable.run();
                 }
                 break;
             case 1:
-                ks0 ks0Var = (ks0) this.b;
-                org.telegram.ui.q8 q8Var = (org.telegram.ui.q8) this.c;
-                ArrayList arrayList2 = (ArrayList) obj;
-                int i10 = ks0Var.d;
-                qp.s1(i10).Y3((ArrayList) obj2, true);
-                qp.s1(i10).S3((ArrayList) obj3, true);
-                org.telegram.ui.Components.h5.g(i10).d((ArrayList) obj4);
-                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                    ij ijVar = (ij) arrayList2.get(i11);
-                    if (ijVar.z2() && ijVar.k.reactions != null) {
-                        ijVar.Q2 = true;
-                    }
-                    ijVar.K5(ks0Var.x, true);
-                    ks0Var.n.add(ijVar);
-                }
-                ks0Var.G(true);
-                org.telegram.messenger.g0.i3(q8Var, 540L);
-                break;
-            default:
-                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) this.b;
-                org.telegram.ui.Wallet.i8 i8Var = (org.telegram.ui.Wallet.i8) this.c;
-                TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
-                org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) obj2;
-                byte[] bArr = (byte[]) obj3;
-                String str = (String) obj4;
-                if (sendtransfer != null && i0Var != null && bArr != null) {
-                    org.telegram.ui.Wallet.l0.H("prepare disable backup: transfer ready, initing storage with new secret phrase!");
-                    org.telegram.ui.Wallet.g0 g0Var = new org.telegram.ui.Wallet.g0();
-                    g0Var.c = bArr;
-                    g0Var.b = i0Var.b();
-                    g0Var.a = sendtransfer;
-                    l0Var.c.p(p10.i(l0Var.a).e(), bArr, i0Var, new org.telegram.ui.Wallet.s(l0Var, g0Var, i8Var));
+                c6 c6Var2 = (c6) obj6;
+                vf.b bVar = (vf.b) obj5;
+                wg.c1 c1Var = (wg.c1) obj4;
+                w2 w2Var = (w2) obj3;
+                TL_stars.starGiftDepositPayload stargiftdepositpayload = (TL_stars.starGiftDepositPayload) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                if (stargiftdepositpayload != null) {
+                    w2Var.a(stargiftdepositpayload);
                     break;
                 } else {
-                    org.telegram.ui.Wallet.l0.j("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
-                    if (str == null) {
-                        str = "NULL_ERROR";
-                    }
-                    i8Var.a(null, str);
+                    bVar.b();
+                    (c1Var != null ? new org.telegram.ui.Components.cc(c1Var.c, c6Var2.J0) : c6Var2.k()).f0(tL_error2, false);
                     break;
                 }
+            case 2:
+                d31 d31Var = (d31) obj5;
+                String str2 = (String) obj4;
+                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj3;
+                ((org.telegram.ui.ActionBar.t1) obj6).dismiss();
+                if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) {
+                    org.telegram.ui.ActionBar.u2 u2Var = di0.a;
+                    if (u2Var != null) {
+                        u2Var.dismiss();
+                        di0.a = null;
+                    }
+                    di0.a().I(R.raw.error, hd.M0(2131753128, null), TextUtils.isEmpty(str2) ? hd.M0(2131753129, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.xj, e6Var), hd.a0(null, null, 2131753130, str2))).j();
+                    break;
+                } else {
+                    d31Var.run();
+                    break;
+                }
+            default:
+                org.telegram.ui.web.v0 v0Var = (org.telegram.ui.web.v0) obj6;
+                fi.i7 i7Var = (fi.i7) obj5;
+                String str3 = (String) obj4;
+                TLRPC.User user = (TLRPC.User) obj3;
+                TLRPC.Updates updates2 = (TLRPC.Updates) obj;
+                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
+                org.telegram.ui.ActionBar.e6 e6Var2 = v0Var.e;
+                if (updates2 == null) {
+                    if (tL_error3 == null) {
+                        new org.telegram.ui.Components.cc(v0Var, e6Var2).e0("UNKNOWN_BUTTON", false);
+                        v0Var.x(i7Var, "requested_chat_failed", org.telegram.ui.web.v0.A(str3, "req_id"));
+                        break;
+                    } else {
+                        new org.telegram.ui.Components.cc(v0Var, e6Var2).f0(tL_error3, false);
+                        v0Var.x(i7Var, "requested_chat_failed", org.telegram.ui.web.v0.A(str3, "req_id"));
+                        break;
+                    }
+                } else {
+                    np.s1(v0Var.N).O3(updates2, false);
+                    v0Var.x(i7Var, "requested_chat_sent", org.telegram.ui.web.v0.A(str3, "req_id"));
+                    long j3 = v0Var.V.id;
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", user.id);
+                    org.telegram.ui.web.a0 a0Var = new org.telegram.ui.web.a0(v0Var, bundle, user, j3);
+                    org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
+                    if (T != null) {
+                        T.presentFragment(a0Var);
+                    }
+                    org.telegram.ui.web.c0 c0Var = v0Var.c;
+                    if (c0Var != null) {
+                        c0Var.b();
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

@@ -1,12 +1,12 @@
 package org.telegram.ui.Cells;
 
 import android.view.View;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.zw0;
+import org.telegram.ui.Components.dc;
+import org.telegram.ui.tw0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j0 extends hc {
+public final class j0 extends dc {
     public final /* synthetic */ int k;
     public final /* synthetic */ Object l;
 
@@ -17,25 +17,25 @@ public final class j0 extends hc {
         this.l = q1Var2;
     }
 
-    @Override // org.telegram.ui.Components.hc
+    @Override // org.telegram.ui.Components.dc
     public final void b() {
         switch (this.k) {
             case 0:
-                ((q1) this.l).p2();
+                ((q1) this.l).q2();
                 break;
             case 1:
-                ((q1) this.l).p2();
+                ((q1) this.l).q2();
                 break;
             default:
-                ((zw0) this.l).invalidateSelf();
+                ((tw0) this.l).invalidateSelf();
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(zw0 zw0Var) {
+    public j0(tw0 tw0Var) {
         super((View) null);
         this.k = 2;
-        this.l = zw0Var;
+        this.l = tw0Var;
     }
 }

@@ -1,55 +1,29 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xm implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qp b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ yo b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    public /* synthetic */ xm(qp qpVar, long j3, Runnable runnable, int i7) {
+    public /* synthetic */ xm(yo yoVar, TLRPC.TL_error tL_error, int i7) {
         this.a = i7;
-        this.b = qpVar;
-        this.c = j3;
-        this.d = runnable;
+        this.b = yoVar;
+        this.c = tL_error;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        Runnable runnable = this.d;
-        long j3 = this.c;
-        qp qpVar = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                if (runnable != null) {
-                    qpVar.getClass();
-                    runnable.run();
-                }
-                qpVar.getNotificationCenter().k(qs.X4, Long.valueOf(j3), 0L);
-                break;
-            case 1:
-                qpVar.V2(0, j3, true);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                this.b.d(this.c);
                 break;
             default:
-                qpVar.V2(0, j3, true);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                this.b.d(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ xm(qp qpVar, Runnable runnable, long j3) {
-        this.a = 0;
-        this.b = qpVar;
-        this.d = runnable;
-        this.c = j3;
     }
 }

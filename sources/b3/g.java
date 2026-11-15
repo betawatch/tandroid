@@ -1,34 +1,34 @@
 package b3;
 
-import a8.ia;
+import a8.ja;
 import android.content.Context;
 import android.os.SystemClock;
-import fi.v9;
+import fi.c1;
 import h2.g0;
 import h2.v;
 import h2.w;
 import h9.i0;
 import h9.l0;
-import h9.t1;
-import j2.d0;
+import h9.s1;
+import j2.c0;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class g implements d, d0 {
-    public static final t1 p = i0.t(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
-    public static final t1 q = i0.t(1500000L, 980000L, 750000L, 520000L, 290000L);
-    public static final t1 r = i0.t(2000000L, 1300000L, 1000000L, 860000L, 610000L);
-    public static final t1 s = i0.t(2500000L, 1700000L, 1200000L, 970000L, 680000L);
-    public static final t1 t = i0.t(4700000L, 2800000L, 2100000L, 1700000L, 980000L);
-    public static final t1 u = i0.t(2700000L, 2000000L, 1600000L, 1300000L, 1000000L);
+public final class g implements d, c0 {
+    public static final s1 p = i0.t(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
+    public static final s1 q = i0.t(1500000L, 980000L, 750000L, 520000L, 290000L);
+    public static final s1 r = i0.t(2000000L, 1300000L, 1000000L, 860000L, 610000L);
+    public static final s1 s = i0.t(2500000L, 1700000L, 1200000L, 970000L, 680000L);
+    public static final s1 t = i0.t(4700000L, 2800000L, 2100000L, 1700000L, 980000L);
+    public static final s1 u = i0.t(2700000L, 2000000L, 1600000L, 1300000L, 1000000L);
     public static g v;
     public final Context a;
     public final l0 b;
-    public final aa.n c;
+    public final cb.c c;
     public final g0 d;
     public final boolean e;
     public final t f;
@@ -43,11 +43,11 @@ public final class g implements d, d0 {
     public String o;
 
     public g(Context context, HashMap hashMap) {
-        boolean z9;
+        boolean z10;
         g0 g0Var = g0.a;
         this.a = context == null ? null : context.getApplicationContext();
         this.b = l0.b(hashMap);
-        this.c = new aa.n(5);
+        this.c = new cb.c(8);
         this.f = new t();
         this.d = g0Var;
         this.e = true;
@@ -73,10 +73,10 @@ public final class g implements d, d0 {
         v vVar2 = new v(a10, fVar, e10);
         synchronized (a10.e) {
             ((CopyOnWriteArrayList) a10.d).add(vVar2);
-            z9 = a10.a;
+            z10 = a10.a;
         }
-        if (z9) {
-            vVar2.b.execute(new v9(vVar2, 9));
+        if (z10) {
+            vVar2.b.execute(new c1(vVar2, 24));
         }
     }
 
@@ -782,12 +782,12 @@ public final class g implements d, d0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized void f(j2.m mVar, boolean z9) {
+    public final synchronized void f(j2.m mVar, boolean z10) {
         Throwable th2;
-        boolean z10;
+        boolean z11;
         g gVar;
         try {
-            if (z9) {
+            if (z10) {
                 if (mVar != null) {
                     try {
                     } catch (Throwable th3) {
@@ -795,12 +795,12 @@ public final class g implements d, d0 {
                         throw th2;
                     }
                 }
-                z10 = true;
-                if (z10) {
+                z11 = true;
+                if (z11) {
                     return;
                 }
                 try {
-                    ia.p(this.g > 0);
+                    ja.p(this.g > 0);
                     this.d.getClass();
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     int i7 = (int) (elapsedRealtime - this.h);
@@ -828,8 +828,8 @@ public final class g implements d, d0 {
                     throw th2;
                 }
             }
-            z10 = false;
-            if (z10) {
+            z11 = false;
+            if (z11) {
             }
         } catch (Throwable th5) {
             th = th5;
@@ -845,13 +845,13 @@ public final class g implements d, d0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized void g(j2.m mVar, boolean z9) {
-        boolean z10;
-        if (z9) {
+    public final synchronized void g(j2.m mVar, boolean z10) {
+        boolean z11;
+        if (z10) {
             if (mVar != null) {
             }
-            z10 = true;
-            if (z10) {
+            z11 = true;
+            if (z11) {
                 return;
             }
             if (this.g == 0) {
@@ -861,8 +861,8 @@ public final class g implements d, d0 {
             this.g++;
             return;
         }
-        z10 = false;
-        if (z10) {
+        z11 = false;
+        if (z11) {
         }
     }
 }

@@ -1,38 +1,90 @@
 package kg;
 
-import android.content.DialogInterface;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.tr;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.s4;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class q implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t1[] c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ EditTextBoldCursor e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ q(int i7, View view) {
-        this.a = i7;
-        this.b = view;
+    public /* synthetic */ q(EditTextBoldCursor editTextBoldCursor, int i7, Object obj, org.telegram.ui.ActionBar.t1[] t1VarArr, View view, int i10) {
+        this.a = i10;
+        this.e = editTextBoldCursor;
+        this.b = i7;
+        this.f = obj;
+        this.c = t1VarArr;
+        this.d = view;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                v.e = null;
-                View view = this.b;
-                if (view != null) {
-                    view.requestFocus();
+                s sVar = (s) this.e;
+                TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.f;
+                if (i7 == 6) {
+                    String obj = sVar.getText().toString();
+                    if (obj.length() > 32) {
+                        org.telegram.messenger.g0.E3(sVar);
+                    } else {
+                        y d = y.d(this.b);
+                        TL_account.TL_businessChatLink c10 = d.c(tL_businessChatLink.link);
+                        if (c10 != null) {
+                            TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
+                            tL_inputBusinessChatLink.message = c10.message;
+                            tL_inputBusinessChatLink.entities = c10.entities;
+                            tL_inputBusinessChatLink.title = obj;
+                            d.b(c10, tL_inputBusinessChatLink, null);
+                        }
+                        org.telegram.ui.ActionBar.t1[] t1VarArr = this.c;
+                        org.telegram.ui.ActionBar.t1 t1Var = t1VarArr[0];
+                        if (t1Var != null) {
+                            t1Var.dismiss();
+                        }
+                        if (t1VarArr[0] == v.e) {
+                            v.e = null;
+                        }
+                        View view = this.d;
+                        if (view != null) {
+                            view.requestFocus();
+                        }
+                    }
                     break;
                 }
                 break;
             default:
-                q1.f = null;
-                View view2 = this.b;
-                if (view2 != null) {
-                    view2.requestFocus();
+                s4 s4Var = (s4) this.e;
+                tr trVar = (tr) this.f;
+                if (i7 == 6) {
+                    String obj2 = s4Var.getText().toString();
+                    if (obj2.length() > this.b) {
+                        org.telegram.messenger.g0.E3(s4Var);
+                    } else {
+                        trVar.a(obj2);
+                        org.telegram.ui.ActionBar.t1 t1Var2 = this.c[0];
+                        if (t1Var2 != null) {
+                            t1Var2.dismiss();
+                        }
+                        View view2 = this.d;
+                        if (view2 != null) {
+                            view2.requestFocus();
+                        }
+                    }
                     break;
                 }
                 break;
         }
+        return false;
     }
 }

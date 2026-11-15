@@ -1,39 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kk0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rk0 b;
+public final class kk0 extends FrameLayout {
+    public final Paint a;
+    public final w30 b;
+    public final RectF c;
+    public final float d;
+    public float e;
 
-    public /* synthetic */ kk0(rk0 rk0Var, int i7) {
-        this.a = i7;
-        this.b = rk0Var;
+    public kk0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        w30 w30Var = new w30(this, 1);
+        this.b = w30Var;
+        this.c = new RectF();
+        this.d = (org.telegram.messenger.g0.L(3.0f) * 0.5f) + org.telegram.messenger.g0.L(5.0f);
+        a(paint, 0.2f);
+        a(w30Var, 1.0f);
+        setWillNotDraw(false);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        rk0 rk0Var = this.b;
-        switch (i7) {
-            case 0:
-                rk0Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 1:
-                rk0Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 2:
-                rk0Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 3:
-                rk0Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            default:
-                rk0Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
+    public static void a(Paint paint, float f10) {
+        paint.setColor(-1);
+        paint.setAlpha(Math.round(f10 * 255.0f));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float width = getWidth();
+        float f10 = this.d;
+        RectF rectF = this.c;
+        rectF.set(f10, f10, width - f10, getHeight() - f10);
+        canvas.drawOval(rectF, this.a);
+        canvas.drawArc(rectF, -90.0f, this.e * 360.0f, false, this.b);
+    }
+
+    public Paint getPaint() {
+        return this.b;
+    }
+
+    public void setProgress(float f10) {
+        float max = Math.max(0.0f, Math.min(1.0f, f10));
+        if (this.e == max) {
+            return;
         }
+        this.e = max;
+        invalidate();
     }
 }

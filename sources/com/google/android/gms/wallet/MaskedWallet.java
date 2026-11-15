@@ -2,7 +2,7 @@ package com.google.android.gms.wallet;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.identity.intents.model.UserAddress;
 import r6.a;
@@ -12,7 +12,7 @@ import y8.g;
 import y8.q;
 import y8.v;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class MaskedWallet extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MaskedWallet> CREATOR = new v(4);
@@ -30,18 +30,18 @@ public final class MaskedWallet extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.l(parcel, 2, this.a);
-        xb.l(parcel, 3, this.b);
-        xb.m(parcel, 4, this.c);
-        xb.l(parcel, 5, this.d);
-        xb.k(parcel, 6, this.e, i7);
-        xb.k(parcel, 7, this.f, i7);
-        xb.o(parcel, 8, this.h, i7);
-        xb.o(parcel, 9, this.n, i7);
-        xb.k(parcel, 10, this.r, i7);
-        xb.k(parcel, 11, this.s, i7);
-        xb.o(parcel, 12, this.w, i7);
-        xb.s(parcel, r10);
+        int r10 = yb.r(parcel, 20293);
+        yb.l(parcel, 2, this.a);
+        yb.l(parcel, 3, this.b);
+        yb.m(parcel, 4, this.c);
+        yb.l(parcel, 5, this.d);
+        yb.k(parcel, 6, this.e, i7);
+        yb.k(parcel, 7, this.f, i7);
+        yb.o(parcel, 8, this.h, i7);
+        yb.o(parcel, 9, this.n, i7);
+        yb.k(parcel, 10, this.r, i7);
+        yb.k(parcel, 11, this.s, i7);
+        yb.o(parcel, 12, this.w, i7);
+        yb.s(parcel, r10);
     }
 }

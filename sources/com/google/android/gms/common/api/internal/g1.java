@@ -1,23 +1,42 @@
 package com.google.android.gms.common.api.internal;
 
-import com.google.android.gms.common.api.Status;
-import j$.util.Objects;
-import java.util.Map;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class g1 implements com.google.android.gms.common.api.o {
-    public final /* synthetic */ BasePendingResult a;
-    public final /* synthetic */ y0 b;
+public final class g1 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
+    public final com.google.android.gms.common.api.e a;
+    public final boolean b;
+    public i0 c;
 
-    public g1(y0 y0Var, BasePendingResult basePendingResult) {
-        this.a = basePendingResult;
-        Objects.requireNonNull(y0Var);
-        this.b = y0Var;
+    public g1(com.google.android.gms.common.api.e eVar, boolean z10) {
+        this.a = eVar;
+        this.b = z10;
     }
 
-    @Override // com.google.android.gms.common.api.o
-    public final void a(Status status) {
-        ((Map) this.b.a).remove(this.a);
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnected(Bundle bundle) {
+        q6.m.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        this.c.onConnected(bundle);
+    }
+
+    @Override // com.google.android.gms.common.api.l
+    public final void onConnectionFailed(n6.a aVar) {
+        com.google.android.gms.common.api.e eVar = this.a;
+        boolean z10 = this.b;
+        q6.m.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        i0 i0Var = this.c;
+        i0Var.a.lock();
+        try {
+            i0Var.m.l(aVar, eVar, z10);
+        } finally {
+            i0Var.a.unlock();
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnectionSuspended(int i7) {
+        q6.m.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        this.c.onConnectionSuspended(i7);
     }
 }

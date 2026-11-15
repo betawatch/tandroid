@@ -1,25 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class mh0 extends lz {
-    public final /* synthetic */ rh0 U;
+public final /* synthetic */ class mh0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vh0 b;
+    public final /* synthetic */ TLObject c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mh0(rh0 rh0Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, h6Var);
-        this.U = rh0Var;
+    public /* synthetic */ mh0(vh0 vh0Var, TLObject tLObject, int i7) {
+        this.a = i7;
+        this.b = vh0Var;
+        this.c = tLObject;
     }
 
-    @Override // org.telegram.ui.Components.lz
-    public final int getAdditionalHeight() {
-        l90 l90Var;
-        rh0 rh0Var = this.U;
-        if (rh0Var.H.isEmpty() || (l90Var = rh0Var.J) == null) {
-            return 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                vh0 vh0Var = this.b;
+                org.telegram.messenger.ns.f(vh0Var.b).d(new mh0(vh0Var, this.c, 1));
+                break;
+            default:
+                vh0.a(this.b, this.c);
+                break;
         }
-        return org.telegram.messenger.g0.L(8.0f) + l90Var.getMeasuredHeight();
     }
 }

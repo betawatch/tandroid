@@ -1,6 +1,6 @@
 package m1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class v extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -57,77 +57,77 @@ public final class v extends kd.j implements rd.p {
     public final Object invokeSuspend(Object obj) {
         Throwable th2;
         int i7;
-        boolean z9;
-        e1 e1Var;
         boolean z10;
+        e1 e1Var;
         boolean z11;
+        boolean z12;
         Object obj2;
         int i10;
         switch (this.a) {
             case 0:
                 jd.a aVar = jd.a.a;
-                boolean z12 = this.b;
+                boolean z13 = this.b;
                 b0 b0Var = this.d;
                 try {
                 } catch (Throwable th3) {
-                    if (z12 != 0) {
+                    if (z13 != 0) {
                         m0 g10 = b0Var.g();
                         this.f = th3;
-                        this.c = z12;
+                        this.c = z13;
                         this.b = 2;
                         Object b10 = g10.b(this);
                         if (b10 == aVar) {
                             return aVar;
                         }
-                        z9 = z12;
+                        z10 = z13;
                         th2 = th3;
                         obj = b10;
                     } else {
-                        boolean z13 = z12;
+                        boolean z14 = z13;
                         th2 = th3;
                         i7 = this.e;
-                        z9 = z13;
+                        z10 = z14;
                     }
                 }
-                if (z12 == 0) {
+                if (z13 == 0) {
                     af.b.c(obj);
-                    boolean z14 = this.c;
-                    this.c = z14;
+                    boolean z15 = this.c;
+                    this.c = z15;
                     this.b = 1;
-                    obj = b0.f(b0Var, z14, this);
-                    z12 = z14;
+                    obj = b0.f(b0Var, z15, this);
+                    z13 = z15;
                     if (obj == aVar) {
                         return aVar;
                     }
                 } else {
-                    if (z12 != 1) {
-                        if (z12 != 2) {
+                    if (z13 != 1) {
+                        if (z13 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        z9 = this.c;
+                        z10 = this.c;
                         th2 = (Throwable) this.f;
                         af.b.c(obj);
                         i7 = ((Number) obj).intValue();
                         w0 w0Var = new w0(i7, th2);
-                        z10 = z9;
+                        z11 = z10;
                         e1Var = w0Var;
-                        return new gd.e(e1Var, Boolean.valueOf(z10));
+                        return new gd.e(e1Var, Boolean.valueOf(z11));
                     }
-                    boolean z15 = this.c;
+                    boolean z16 = this.c;
                     af.b.c(obj);
-                    z12 = z15;
+                    z13 = z16;
                 }
                 e1Var = (e1) obj;
-                z10 = z12;
-                return new gd.e(e1Var, Boolean.valueOf(z10));
+                z11 = z13;
+                return new gd.e(e1Var, Boolean.valueOf(z11));
             default:
                 jd.a aVar2 = jd.a.a;
                 int i11 = this.b;
                 b0 b0Var2 = this.d;
                 if (i11 == 0) {
                     af.b.c(obj);
-                    z11 = this.c;
-                    this.c = z11;
+                    z12 = this.c;
+                    this.c = z12;
                     this.b = 1;
                     obj = b0Var2.i(this);
                     if (obj == aVar2) {
@@ -143,10 +143,10 @@ public final class v extends kd.j implements rd.p {
                         i10 = ((Number) obj).intValue();
                         return new c(obj2, obj2 != null ? obj2.hashCode() : 0, i10);
                     }
-                    z11 = this.c;
+                    z12 = this.c;
                     af.b.c(obj);
                 }
-                if (!z11) {
+                if (!z12) {
                     obj2 = obj;
                     i10 = this.e;
                     return new c(obj2, obj2 != null ? obj2.hashCode() : 0, i10);

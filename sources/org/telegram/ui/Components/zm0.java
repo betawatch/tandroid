@@ -1,31 +1,30 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class zm0 implements cb {
-    public final /* synthetic */ bc a;
-    public final /* synthetic */ me b;
+public final class zm0 extends LinearLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
-    public zm0(me meVar, bc bcVar) {
-        this.b = meVar;
-        this.a = bcVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zm0(Context context, int i7, int i10) {
+        super(context);
+        this.a = i7;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final void a() {
-        this.b.G.add(this.a);
+    @Override // android.view.View
+    public final int getSuggestedMinimumWidth() {
+        return org.telegram.messenger.g0.L(260.0f);
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final void b() {
-        this.b.G.remove(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.cb
-    public final /* synthetic */ void c(bc bcVar) {
-    }
-
-    @Override // org.telegram.ui.Components.cb
-    public final /* synthetic */ void d() {
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i7), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.b), View.MeasureSpec.getMode(i10)));
     }
 }

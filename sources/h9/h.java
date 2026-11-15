@@ -1,20 +1,20 @@
 package h9;
 
-import a8.kb;
+import a8.lb;
 import java.util.Comparator;
 import java.util.SortedMap;
 import java.util.SortedSet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class h extends kb implements SortedMap {
+public class h extends lb implements SortedMap {
     public SortedSet f;
-    public final /* synthetic */ l1 h;
+    public final /* synthetic */ k1 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(l1 l1Var, SortedMap sortedMap) {
-        super(l1Var, sortedMap, 2);
-        this.h = l1Var;
+    public h(k1 k1Var, SortedMap sortedMap) {
+        super(k1Var, sortedMap, 2);
+        this.h = k1Var;
     }
 
     public SortedSet c() {
@@ -26,7 +26,7 @@ public class h extends kb implements SortedMap {
         return e().comparator();
     }
 
-    @Override // a8.kb, java.util.AbstractMap, java.util.Map
+    @Override // a8.lb, java.util.AbstractMap, java.util.Map
     /* renamed from: d, reason: merged with bridge method [inline-methods] */
     public SortedSet keySet() {
         SortedSet sortedSet = this.f;

@@ -1,7 +1,95 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.pc1;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface xo {
-    void a();
+public final class xo implements ii {
+    public final /* synthetic */ ep a;
+
+    public xo(ep epVar) {
+        this.a = epVar;
+    }
+
+    @Override // org.telegram.ui.Components.ii
+    public final void R0(Object obj) {
+        uo uoVar = new uo(obj, null, true, 3);
+        ep epVar = this.a;
+        uoVar.X1 = epVar.Z1;
+        uoVar.h1(epVar.v1.a());
+        uoVar.K1 = new wo(this, 1);
+        ep.I0(epVar, uoVar);
+    }
+
+    @Override // org.telegram.ui.Components.ii
+    public final boolean V1() {
+        System.currentTimeMillis();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ii
+    public final void d0(vg vgVar) {
+        vgVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.ii
+    public final /* synthetic */ boolean g0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ii
+    public final void y1(int i7, boolean z10, boolean z11, int i10, int i11, long j3, boolean z12, boolean z13, long j10) {
+        ep epVar = this.a;
+        try {
+            HashMap<Object, Object> selectedPhotos = epVar.S1.e2.getSelectedPhotos();
+            if (selectedPhotos.isEmpty()) {
+                return;
+            }
+            org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) selectedPhotos.values().iterator().next();
+            String str = ffVar.h;
+            if (str == null) {
+                str = ffVar.I;
+            }
+            if (str != null) {
+                File file = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
+                Point c12 = org.telegram.messenger.g0.c1();
+                Bitmap K = org.telegram.messenger.fc.K(str, null, (float) c12.x, (float) c12.y, true);
+                K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
+                uo uoVar = new uo(new pc1(file, file, ""), K, false, 2);
+                uoVar.X1 = epVar.Z1;
+                uoVar.H1 = false;
+                uoVar.G1 = false;
+                uoVar.p1 = 0.2f;
+                uoVar.h1(epVar.v1.a());
+                uoVar.K1 = new wo(this, 0);
+                ep.I0(epVar, uoVar);
+            }
+        } catch (Throwable th2) {
+            org.telegram.messenger.a8.g(th2, true);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ii
+    public final /* synthetic */ void h1(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ii
+    public final /* synthetic */ void K0() {
+    }
+
+    @Override // org.telegram.ui.Components.ii
+    public final /* synthetic */ void v0() {
+    }
+
+    @Override // org.telegram.ui.Components.ii
+    public final /* synthetic */ void b2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
+    }
 }

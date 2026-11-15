@@ -1,6 +1,6 @@
 package bg;
 
-import a8.ra;
+import a8.sa;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Build;
@@ -18,15 +18,15 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b0 extends View {
-    public View D;
-    public z E;
-    public final AtomicBoolean F;
+    public View E;
+    public z F;
     public final AtomicBoolean G;
-    public final Handler H;
-    public final ra I;
+    public final AtomicBoolean H;
+    public final Handler I;
+    public final sa J;
     public int a;
     public long b;
     public int c;
@@ -52,10 +52,10 @@ public final class b0 extends View {
         this.h = paint;
         Paint paint2 = new Paint(1);
         this.n = paint2;
-        this.F = new AtomicBoolean(false);
         this.G = new AtomicBoolean(false);
-        this.H = new Handler(Looper.getMainLooper());
-        this.I = new ra(this, 12);
+        this.H = new AtomicBoolean(false);
+        this.I = new Handler(Looper.getMainLooper());
+        this.J = new sa(this, 14);
         paint.setColor(-1342177280);
         paint2.setColor(-1);
         paint2.setTextSize(org.telegram.messenger.g0.L(9.0f));
@@ -97,8 +97,8 @@ public final class b0 extends View {
         layoutParams2.y = L;
         layoutParams2.width = org.telegram.messenger.g0.L(260.0f);
         b0Var.r.addView(b0Var, b0Var.s);
-        b0Var.G.set(true);
-        if (b0Var.F.getAndSet(true)) {
+        b0Var.H.set(true);
+        if (b0Var.G.getAndSet(true)) {
             return b0Var;
         }
         HandlerThread handlerThread = new HandlerThread("FrameMetrics");
@@ -110,22 +110,22 @@ public final class b0 extends View {
         b0Var.w.addOnFrameMetricsAvailableListener(xVar, handler);
         b0Var.d = new y(b0Var, 0);
         Choreographer.getInstance().postFrameCallback(b0Var.d);
-        View view = b0Var.D;
+        View view = b0Var.E;
         if (view != null) {
-            b0Var.E = new z(0, b0Var);
+            b0Var.F = new z(0, b0Var);
             ViewTreeObserver viewTreeObserver = view.getViewTreeObserver();
             if (viewTreeObserver.isAlive()) {
-                viewTreeObserver.addOnDrawListener(b0Var.E);
+                viewTreeObserver.addOnDrawListener(b0Var.F);
             }
         }
-        b0Var.H.post(b0Var.I);
+        b0Var.I.post(b0Var.J);
         return b0Var;
     }
 
     public final void c() {
         x xVar;
-        this.F.set(false);
-        this.H.removeCallbacks(this.I);
+        this.G.set(false);
+        this.I.removeCallbacks(this.J);
         Window window = this.w;
         if (window != null && (xVar = this.y) != null) {
             window.removeOnFrameMetricsAvailableListener(xVar);
@@ -134,19 +134,19 @@ public final class b0 extends View {
             Choreographer.getInstance().removeFrameCallback(this.d);
             this.d = null;
         }
-        View view = this.D;
-        if (view != null && this.E != null) {
+        View view = this.E;
+        if (view != null && this.F != null) {
             ViewTreeObserver viewTreeObserver = view.getViewTreeObserver();
             if (viewTreeObserver.isAlive()) {
-                viewTreeObserver.removeOnDrawListener(this.E);
+                viewTreeObserver.removeOnDrawListener(this.F);
             }
-            this.E = null;
+            this.F = null;
         }
         HandlerThread handlerThread = this.x;
         if (handlerThread != null) {
             handlerThread.quitSafely();
         }
-        if (this.r != null && this.G.getAndSet(false)) {
+        if (this.r != null && this.H.getAndSet(false)) {
             try {
                 this.r.removeViewImmediate(this);
             } catch (Throwable unused) {
@@ -204,16 +204,16 @@ public final class b0 extends View {
                 canvas.drawText(String.format(locale, "%-16s : %5.2f / %5.2f ms", "frame", Double.valueOf(max / 1000000.0d), Double.valueOf(max2)), L, f17, paint);
                 float f18 = f17 + f12 + f12;
                 canvas.drawText(String.format(locale, "%-16s : %d /s", "vsync", Integer.valueOf(this.c)), L, f18, paint);
-                canvas.drawText(String.format(locale, "%-16s : %d /s", this.D != null ? "onDraw" : "onDraw (none)", Integer.valueOf(this.f)), L, f18 + f12, paint);
+                canvas.drawText(String.format(locale, "%-16s : %d /s", this.E != null ? "onDraw" : "onDraw (none)", Integer.valueOf(this.f)), L, f18 + f12, paint);
                 return;
             }
             int i10 = length;
             a0 a0Var = values[i7];
             int i11 = i7;
-            boolean z9 = Build.VERSION.SDK_INT >= a0Var.c;
+            boolean z10 = Build.VERSION.SDK_INT >= a0Var.c;
             String str = a0Var.b;
             long j16 = j12;
-            if (z9) {
+            if (z10) {
                 long j17 = a0Var.d;
                 if (j17 >= 0) {
                     format = String.format(Locale.US, "%-16s : %5.2f / %5.2f ms", str, Double.valueOf(j17 / 1000000.0d), Double.valueOf(a0Var.e));
@@ -281,22 +281,22 @@ public final class b0 extends View {
 
     public void setObservedView(View view) {
         View view2;
-        View view3 = this.D;
-        if (view3 != null && this.E != null) {
+        View view3 = this.E;
+        if (view3 != null && this.F != null) {
             ViewTreeObserver viewTreeObserver = view3.getViewTreeObserver();
             if (viewTreeObserver.isAlive()) {
-                viewTreeObserver.removeOnDrawListener(this.E);
+                viewTreeObserver.removeOnDrawListener(this.F);
             }
-            this.E = null;
+            this.F = null;
         }
-        this.D = view;
-        if (!this.F.get() || (view2 = this.D) == null) {
+        this.E = view;
+        if (!this.G.get() || (view2 = this.E) == null) {
             return;
         }
-        this.E = new z(0, this);
+        this.F = new z(0, this);
         ViewTreeObserver viewTreeObserver2 = view2.getViewTreeObserver();
         if (viewTreeObserver2.isAlive()) {
-            viewTreeObserver2.addOnDrawListener(this.E);
+            viewTreeObserver2.addOnDrawListener(this.F);
         }
     }
 }

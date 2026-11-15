@@ -1,16 +1,17 @@
 package com.google.android.recaptcha.internal;
 
-import a8.ab;
+import a8.bb;
 import af.b;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import gd.c;
+import ie.a;
 import ie.d;
 import org.telegram.tgnet.TLObject;
 import zd.e0;
 import zd.s;
 import zd.t;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzbo {
     public s zza;
@@ -18,7 +19,7 @@ public final class zzbo {
     private zzbp zzc;
     private final c zzd;
     private long zze;
-    private final ie.a zzf;
+    private final a zzf;
     private boolean zzg;
 
     public zzbo() {
@@ -150,9 +151,9 @@ public final class zzbo {
 
     public zzbo(long j3) {
         int i7 = zzby.zza;
-        this.zzb = ab.b(zzbk.zza);
+        this.zzb = bb.b(zzbk.zza);
         this.zzc = zzbp.zza;
-        this.zzd = ab.b(zzbl.zza);
+        this.zzd = bb.b(zzbl.zza);
         this.zzf = new d();
     }
 }

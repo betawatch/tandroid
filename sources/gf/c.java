@@ -3,11 +3,11 @@ package gf;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
-import com.google.android.gms.internal.vision.t2;
+import com.google.android.gms.internal.vision.u2;
 import java.util.ArrayList;
-import org.telegram.ui.Components.uy;
+import org.telegram.messenger.ou;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -23,30 +23,30 @@ public final class c {
     }
 
     public w8.b a() {
-        boolean z9;
+        boolean z10;
         x8.b bVar = new x8.b();
         int i7 = this.c;
         bVar.a = i7;
         int i10 = this.a;
         bVar.b = i10;
-        boolean z10 = false;
+        boolean z11 = false;
         bVar.c = 0;
         bVar.d = false;
         bVar.e = this.b;
         bVar.f = -1.0f;
         if (i7 == 2 || i10 != 2) {
-            z9 = true;
+            z10 = true;
         } else {
             Log.e("FaceDetector", "Contour is not supported for non-SELFIE mode.");
-            z9 = false;
+            z10 = false;
         }
         if (bVar.b == 2 && bVar.c == 1) {
             Log.e("FaceDetector", "Classification is not supported with contour.");
         } else {
-            z10 = z9;
+            z11 = z10;
         }
-        if (z10) {
-            return new w8.b(new t2((Context) this.d, bVar));
+        if (z11) {
+            return new w8.b(new u2((Context) this.d, bVar));
         }
         throw new IllegalArgumentException("Invalid build options");
     }
@@ -81,6 +81,6 @@ public final class c {
     }
 
     public c(View view, ArrayList arrayList, xh.j jVar) {
-        this.d = new uy(view.getContext(), new xh.i(this, view, arrayList, jVar));
+        this.d = new ou(view.getContext(), new xh.i(this, view, arrayList, jVar));
     }
 }

@@ -1,31 +1,61 @@
 package hi;
 
-import android.view.View;
+import android.content.Context;
+import org.telegram.messenger.qc;
+import org.telegram.ui.Components.av0;
+import org.telegram.ui.Components.wu0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class c2 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a3 b;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class c2 extends av0 {
+    public final /* synthetic */ boolean H3;
+    public final /* synthetic */ d2 I3;
 
-    public /* synthetic */ c2(a3 a3Var, int i7) {
-        this.a = i7;
-        this.b = a3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c2(d2 d2Var, Context context, int i7, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(i7, context, e6Var);
+        this.I3 = d2Var;
+        this.H3 = z10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.web.u0 webView = this.b.D.getWebView();
-                if (webView != null) {
-                    webView.reload();
+    @Override // org.telegram.ui.Components.av0
+    public final boolean D1() {
+        return qc.e(8200);
+    }
+
+    @Override // org.telegram.ui.Components.av0
+    public final wu0[] E1(wu0[] wu0VarArr) {
+        if (wu0VarArr != null && this.H3) {
+            int i7 = 0;
+            while (true) {
+                if (i7 >= wu0VarArr.length) {
+                    i7 = -1;
                     break;
                 }
-                break;
-            default:
-                this.b.w();
-                break;
+                wu0 wu0Var = wu0VarArr[i7];
+                if (wu0Var != null && wu0Var.b) {
+                    break;
+                }
+                i7++;
+            }
+            if (i7 >= 0) {
+                int length = wu0VarArr.length;
+                wu0[] wu0VarArr2 = new wu0[length];
+                wu0VarArr2[0] = wu0VarArr[i7];
+                int i10 = 1;
+                while (i10 < length) {
+                    wu0VarArr2[i10] = wu0VarArr[i10 <= i7 ? i10 - 1 : i10];
+                    i10++;
+                }
+                return wu0VarArr2;
+            }
         }
+        return wu0VarArr;
+    }
+
+    @Override // org.telegram.ui.Components.av0
+    public final void H1(int i7) {
+        super.H1(i7);
+        this.I3.d(false);
     }
 }

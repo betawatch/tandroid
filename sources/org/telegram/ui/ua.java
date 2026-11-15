@@ -3,10 +3,10 @@ package org.telegram.ui;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ua implements Runnable {
-    public final /* synthetic */ mb a;
+    public final /* synthetic */ lb a;
     public final /* synthetic */ ArrayList b;
     public final /* synthetic */ ArrayList c;
     public final /* synthetic */ ArrayList d;
@@ -14,8 +14,8 @@ public final /* synthetic */ class ua implements Runnable {
     public final /* synthetic */ float f;
     public final /* synthetic */ float h;
 
-    public /* synthetic */ ua(mb mbVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, View view, float f10, float f11) {
-        this.a = mbVar;
+    public /* synthetic */ ua(lb lbVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, View view, float f10, float f11) {
+        this.a = lbVar;
         this.b = arrayList;
         this.c = arrayList2;
         this.d = arrayList3;
@@ -26,6 +26,6 @@ public final /* synthetic */ class ua implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        mb.a0(this.a, this.b, this.c, this.d, this.e, this.f, this.h);
+        lb.a0(this.a, this.b, this.c, this.d, this.e, this.f, this.h);
     }
 }

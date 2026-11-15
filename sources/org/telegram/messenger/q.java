@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.Window;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -22,14 +22,14 @@ public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateList
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.lg lgVar = (org.telegram.ui.Components.lg) this.b;
+                org.telegram.ui.Components.sg sgVar = (org.telegram.ui.Components.sg) this.b;
                 Window window = (Window) this.c;
                 int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                if (lgVar != null) {
-                    org.telegram.ui.Components.ci ciVar = lgVar.b;
-                    ciVar.F0 = -1;
-                    ciVar.G0 = intValue;
-                    ciVar.b.invalidate();
+                if (sgVar != null) {
+                    org.telegram.ui.Components.ki kiVar = sgVar.b;
+                    kiVar.G0 = -1;
+                    kiVar.H0 = intValue;
+                    kiVar.b.invalidate();
                 }
                 try {
                     window.setNavigationBarColor(intValue);
@@ -38,13 +38,13 @@ public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateList
                     return;
                 }
             case 1:
-                ((t51) this.c).B0(((Float) valueAnimator.getAnimatedValue()).floatValue() * (((MediaController) this.b).X != 1 ? 1.0f : 0.2f));
+                ((u51) this.c).B0(((Float) valueAnimator.getAnimatedValue()).floatValue() * (((MediaController) this.b).Y != 1 ? 1.0f : 0.2f));
                 break;
             default:
-                fv fvVar = (fv) this.b;
+                dv dvVar = (dv) this.b;
                 View view = (View) this.c;
-                fvVar.getClass();
-                fvVar.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dvVar.getClass();
+                dvVar.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (view != null) {
                     view.invalidate();
                     break;

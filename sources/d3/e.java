@@ -1,32 +1,31 @@
 package d3;
 
-import a8.ia;
+import a8.ja;
 import android.view.Surface;
-import bi.ab;
 import e2.x1;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e implements k0 {
-    public final y a;
-    public final z b;
-    public final e0 c;
+    public final x a;
+    public final y b;
+    public final d0 c;
     public final ArrayDeque d;
     public Surface e;
     public e2.u f;
     public long g;
     public i0 h;
     public Executor i;
-    public w j;
+    public v j;
 
-    public e(y yVar, z zVar, h2.g0 g0Var) {
-        this.a = yVar;
-        this.b = zVar;
-        yVar.l = g0Var;
-        this.c = new e0(new q4.q(this), yVar, zVar);
+    public e(x xVar, y yVar, h2.g0 g0Var) {
+        this.a = xVar;
+        this.b = yVar;
+        xVar.l = g0Var;
+        this.c = new d0(new q4.q(this), xVar, yVar);
         this.d = new ArrayDeque();
         this.f = new e2.u(new e2.t());
         this.g = -9223372036854775807L;
@@ -37,9 +36,9 @@ public final class e implements k0 {
 
     @Override // d3.k0
     public final boolean a() {
-        e0 e0Var = this.c;
-        long j3 = e0Var.j;
-        return j3 != -9223372036854775807L && e0Var.i == j3;
+        d0 d0Var = this.c;
+        long j3 = d0Var.j;
+        return j3 != -9223372036854775807L && d0Var.i == j3;
     }
 
     @Override // d3.k0
@@ -50,8 +49,8 @@ public final class e implements k0 {
     }
 
     @Override // d3.k0
-    public final void c(w wVar) {
-        this.j = wVar;
+    public final void c(v vVar) {
+        this.j = vVar;
     }
 
     @Override // d3.k0
@@ -68,16 +67,16 @@ public final class e implements k0 {
     @Override // d3.k0
     public final void f() {
         this.b.b();
-        y yVar = this.a;
-        yVar.d = false;
-        yVar.i = -9223372036854775807L;
-        d0 d0Var = yVar.b;
-        d0Var.d = false;
-        a0 a0Var = d0Var.c;
-        if (a0Var != null) {
-            a0Var.b();
+        x xVar = this.a;
+        xVar.d = false;
+        xVar.i = -9223372036854775807L;
+        c0 c0Var = xVar.b;
+        c0Var.d = false;
+        z zVar = c0Var.c;
+        if (zVar != null) {
+            zVar.b();
         }
-        d0Var.a();
+        c0Var.a();
     }
 
     @Override // d3.k0
@@ -104,22 +103,22 @@ public final class e implements k0 {
 
     @Override // d3.k0
     public final void k() {
-        e0 e0Var = this.c;
-        if (e0Var.h == -9223372036854775807L) {
-            e0Var.h = Long.MIN_VALUE;
-            e0Var.i = Long.MIN_VALUE;
+        d0 d0Var = this.c;
+        if (d0Var.h == -9223372036854775807L) {
+            d0Var.h = Long.MIN_VALUE;
+            d0Var.i = Long.MIN_VALUE;
         }
-        e0Var.j = e0Var.h;
+        d0Var.j = d0Var.h;
     }
 
     @Override // d3.k0
     public final void l(int i7) {
-        d0 d0Var = this.a.b;
-        if (d0Var.j == i7) {
+        c0 c0Var = this.a.b;
+        if (c0Var.j == i7) {
             return;
         }
-        d0Var.j = i7;
-        d0Var.d(true);
+        c0Var.j = i7;
+        c0Var.d(true);
     }
 
     @Override // d3.k0
@@ -131,8 +130,8 @@ public final class e implements k0 {
     @Override // d3.k0
     public final boolean n(long j3, i iVar) {
         this.d.add(iVar);
-        e0 e0Var = this.c;
-        h2.s sVar = e0Var.f;
+        d0 d0Var = this.c;
+        h2.s sVar = d0Var.f;
         int i7 = sVar.c;
         long[] jArr = (long[]) sVar.e;
         if (i7 == jArr.length) {
@@ -155,45 +154,45 @@ public final class e implements k0 {
         sVar.b = i12;
         ((long[]) sVar.e)[i12] = j3;
         sVar.c++;
-        e0Var.h = j3;
-        e0Var.j = -9223372036854775807L;
-        this.i.execute(new ab(this, 11));
+        d0Var.h = j3;
+        d0Var.j = -9223372036854775807L;
+        this.i.execute(new ch.w(this, 2));
         return true;
     }
 
     @Override // d3.k0
-    public final void o(boolean z9) {
-        if (z9) {
-            y yVar = this.a;
-            yVar.b.b();
-            yVar.h = -9223372036854775807L;
-            yVar.f = -9223372036854775807L;
-            yVar.e = Math.min(yVar.e, 1);
-            yVar.i = -9223372036854775807L;
-            yVar.n = false;
+    public final void o(boolean z10) {
+        if (z10) {
+            x xVar = this.a;
+            xVar.b.b();
+            xVar.h = -9223372036854775807L;
+            xVar.f = -9223372036854775807L;
+            xVar.e = Math.min(xVar.e, 1);
+            xVar.i = -9223372036854775807L;
+            xVar.n = false;
         }
         this.b.b();
-        e0 e0Var = this.c;
-        h2.j0 j0Var = e0Var.d;
-        h2.s sVar = e0Var.f;
+        d0 d0Var = this.c;
+        h2.j0 j0Var = d0Var.d;
+        h2.s sVar = d0Var.f;
         sVar.a = 0;
         sVar.b = -1;
         sVar.c = 0;
-        e0Var.h = -9223372036854775807L;
-        e0Var.i = -9223372036854775807L;
-        e0Var.j = -9223372036854775807L;
-        h2.j0 j0Var2 = e0Var.e;
+        d0Var.h = -9223372036854775807L;
+        d0Var.i = -9223372036854775807L;
+        d0Var.j = -9223372036854775807L;
+        h2.j0 j0Var2 = d0Var.e;
         if (j0Var2.p() > 0) {
-            ia.f(j0Var2.p() > 0);
+            ja.f(j0Var2.p() > 0);
             while (j0Var2.p() > 1) {
                 j0Var2.i();
             }
             Object i7 = j0Var2.i();
             i7.getClass();
-            e0Var.l = ((Long) i7).longValue();
+            d0Var.l = ((Long) i7).longValue();
         }
         if (j0Var.p() > 0) {
-            ia.f(j0Var.p() > 0);
+            ja.f(j0Var.p() > 0);
             while (j0Var.p() > 1) {
                 j0Var.i();
             }
@@ -219,13 +218,13 @@ public final class e implements k0 {
     }
 
     @Override // d3.k0
-    public final void r(boolean z9) {
-        this.a.c(z9);
+    public final void r(boolean z10) {
+        this.a.c(z10);
     }
 
     @Override // d3.k0
-    public final boolean s(boolean z9) {
-        return this.a.b(z9);
+    public final boolean s(boolean z10) {
+        return this.a.b(z10);
     }
 
     @Override // d3.k0
@@ -235,15 +234,15 @@ public final class e implements k0 {
 
     @Override // d3.k0
     public final void u(e2.u uVar, long j3, int i7, List list) {
-        ia.p(list.isEmpty());
+        ja.p(list.isEmpty());
         int i10 = uVar.z;
         int i11 = uVar.A;
         e2.u uVar2 = this.f;
         int i12 = uVar2.z;
-        e0 e0Var = this.c;
+        d0 d0Var = this.c;
         if (i10 != i12 || i11 != uVar2.A) {
-            h2.j0 j0Var = e0Var.d;
-            long j10 = e0Var.h;
+            h2.j0 j0Var = d0Var.d;
+            long j10 = d0Var.h;
             j0Var.a(new x1(i10, i11), j10 == -9223372036854775807L ? 0L : j10 + 1);
         }
         float f10 = uVar.D;
@@ -252,12 +251,12 @@ public final class e implements k0 {
         }
         this.f = uVar;
         if (j3 != this.g) {
-            if (e0Var.f.c == 0) {
-                e0Var.b.e(i7);
-                e0Var.l = j3;
+            if (d0Var.f.c == 0) {
+                d0Var.b.e(i7);
+                d0Var.l = j3;
             } else {
-                h2.j0 j0Var2 = e0Var.e;
-                long j11 = e0Var.h;
+                h2.j0 j0Var2 = d0Var.e;
+                long j11 = d0Var.h;
                 j0Var2.a(Long.valueOf(j3), j11 == -9223372036854775807L ? -4611686018427387904L : j11 + 1);
             }
             this.g = j3;
@@ -271,9 +270,9 @@ public final class e implements k0 {
 
     @Override // d3.k0
     public final void w() {
-        y yVar = this.a;
-        if (yVar.e == 0) {
-            yVar.e = 1;
+        x xVar = this.a;
+        if (xVar.e == 0) {
+            xVar.e = 1;
         }
     }
 

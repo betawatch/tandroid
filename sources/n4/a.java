@@ -4,21 +4,21 @@ import e2.s0;
 import e2.t;
 import e2.t0;
 import e2.u;
-import f3.j0;
+import f3.i0;
 import f3.q;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import i2.s;
 import java.math.RoundingMode;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements b {
     public static final int[] m = {-1, -1, -1, -1, 2, 4, 6, 8, -1, -1, -1, -1, 2, 4, 6, 8};
-    public static final int[] n = {7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, qs.s1, qs.D1, qs.O1, qs.Z1, qs.n2, qs.D2, qs.U2, qs.m3, qs.G3, qs.c4, qs.C4, qs.e5, qs.I5, 371, 408, 449, 494, 544, 598, 658, 724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767};
+    public static final int[] n = {7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, ns.s1, ns.D1, ns.O1, ns.Z1, ns.n2, ns.D2, ns.U2, ns.m3, ns.G3, ns.c4, ns.C4, ns.e5, ns.I5, 371, 408, 449, 494, 544, 598, 658, 724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767};
     public final q a;
-    public final j0 b;
+    public final i0 b;
     public final s c;
     public final int d;
     public final byte[] e;
@@ -30,9 +30,9 @@ public final class a implements b {
     public int k;
     public long l;
 
-    public a(q qVar, j0 j0Var, s sVar) {
+    public a(q qVar, i0 i0Var, s sVar) {
         this.a = qVar;
-        this.b = j0Var;
+        this.b = i0Var;
         this.c = sVar;
         int i7 = sVar.b;
         int max = Math.max(1, i7 / 10);
@@ -47,7 +47,7 @@ public final class a implements b {
         if (t6 != i12) {
             throw t0.a(null, "Expected frames per block: " + i12 + "; got: " + t6);
         }
-        int g10 = m0.g(max, t6);
+        int g10 = l0.g(max, t6);
         this.e = new byte[g10 * i11];
         this.f = new x(t6 * 2 * i10 * g10);
         int i13 = ((i11 * i7) * 8) / t6;
@@ -96,9 +96,9 @@ public final class a implements b {
         e eVar = new e(this.c, this.d, i7, j3);
         this.a.f(eVar);
         u uVar = this.h;
-        j0 j0Var = this.b;
-        j0Var.g(uVar);
-        j0Var.d(eVar.e);
+        i0 i0Var = this.b;
+        i0Var.g(uVar);
+        i0Var.d(eVar.e);
     }
 
     public final void d(int i7) {
@@ -106,8 +106,8 @@ public final class a implements b {
         long j10 = this.l;
         s sVar = this.c;
         long j11 = sVar.b;
-        String str = m0.a;
-        long a02 = j3 + m0.a0(j10, 1000000L, j11, RoundingMode.DOWN);
+        String str = l0.a;
+        long a02 = j3 + l0.a0(j10, 1000000L, j11, RoundingMode.DOWN);
         int i10 = i7 * 2 * sVar.a;
         this.b.c(a02, 1, i10, this.k - i10, null);
         this.l += i7;

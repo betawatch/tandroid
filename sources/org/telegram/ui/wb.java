@@ -1,37 +1,28 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wb implements org.telegram.messenger.c20 {
+public final /* synthetic */ class wb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rc b;
+    public final /* synthetic */ qc b;
 
-    public /* synthetic */ wb(rc rcVar, int i7) {
+    public /* synthetic */ wb(qc qcVar, int i7) {
         this.a = i7;
-        this.b = rcVar;
+        this.b = qcVar;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        qc qcVar = this.b;
+        switch (i7) {
             case 0:
-                TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) obj;
-                rc rcVar = this.b;
-                rcVar.E = wallPaper;
-                rcVar.F = wallPaper;
-                rcVar.G = wallPaper;
-                rcVar.e1(false);
-                rcVar.h1(false);
-                org.telegram.messenger.g0.i3(new xb(rcVar, 1), 350L);
-                break;
-            case 1:
-                rc.a0(this.b, (org.telegram.messenger.e3) obj);
+                qc.Z(qcVar);
                 break;
             default:
-                this.b.d1((TL_stories.TL_premium_boostsStatus) obj);
+                org.telegram.messenger.k5.n(null, 2131752260, org.telegram.ui.Components.cc.a0(qcVar), R.raw.done, 36);
                 break;
         }
     }

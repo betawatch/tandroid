@@ -2,7 +2,7 @@ package te;
 
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l {
     public final RectF e = new RectF();
@@ -19,11 +19,11 @@ public final class l {
         return this.a.b(f10) || this.b.b(f11) || this.c.b(f12) || this.d.b(f13);
     }
 
-    public final void c(boolean z9) {
-        this.a.c(z9);
-        this.b.c(z9);
-        this.c.c(z9);
-        this.d.c(z9);
+    public final void c(boolean z10) {
+        this.a.c(z10);
+        this.b.c(z10);
+        this.c.c(z10);
+        this.d.c(z10);
     }
 
     public final void d(float f10, float f11, float f12, float f13) {

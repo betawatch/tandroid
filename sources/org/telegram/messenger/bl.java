@@ -1,217 +1,151 @@
 package org.telegram.messenger;
 
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bl implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qp b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int g;
-    public final /* synthetic */ long h;
-    public final /* synthetic */ long i;
-    public final /* synthetic */ int j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ int l;
-    public final /* synthetic */ int m;
-    public final /* synthetic */ int n;
-    public final /* synthetic */ long o;
-    public final /* synthetic */ int p;
-    public final /* synthetic */ boolean q;
-    public final /* synthetic */ int r;
-    public final /* synthetic */ boolean s;
-    public final /* synthetic */ boolean t;
-    public final /* synthetic */ TLObject u;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ np b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ TLObject e;
 
-    public /* synthetic */ bl(qp qpVar, int i7, int i10, int i11, int i12, int i13, long j3, long j10, int i14, int i15, int i16, int i17, int i18, long j11, int i19, boolean z9, int i20, boolean z10, boolean z11, TLRPC.TL_messages_getReplies tL_messages_getReplies) {
-        this.a = 1;
-        this.b = qpVar;
-        this.c = i7;
-        this.d = i10;
-        this.e = i11;
-        this.f = i12;
-        this.g = i13;
-        this.h = j3;
-        this.i = j10;
-        this.j = i14;
-        this.k = i15;
-        this.l = i16;
-        this.m = i17;
-        this.n = i18;
-        this.o = j11;
-        this.p = i19;
-        this.q = z9;
-        this.r = i20;
-        this.s = z10;
-        this.t = z11;
-        this.u = tL_messages_getReplies;
+    public /* synthetic */ bl(np npVar, TLRPC.Chat chat, boolean z10, long j3) {
+        this.b = npVar;
+        this.e = chat;
+        this.c = z10;
+        this.d = j3;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i7;
-        int i10;
-        int i11;
-        int i12;
+        long j3;
+        ArrayList arrayList;
         switch (this.a) {
             case 0:
-                TLRPC.TL_messages_getSavedHistory tL_messages_getSavedHistory = (TLRPC.TL_messages_getSavedHistory) this.u;
-                qp qpVar = this.b;
-                int i13 = this.f;
-                if (tLObject != null) {
-                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                    ArrayList<TLRPC.Message> arrayList = messages_messages.messages;
-                    long j3 = this.h;
-                    qpVar.e4(arrayList, j3);
-                    int size = messages_messages.messages.size();
-                    int i14 = this.c;
-                    if (size > i14) {
-                        messages_messages.messages.remove(0);
-                    }
-                    int i15 = this.e;
-                    if (i15 == 0 || messages_messages.messages.isEmpty()) {
-                        i7 = this.d;
-                    } else {
-                        i7 = ((TLRPC.Message) jg.g.i(1, messages_messages.messages)).id;
-                        int size2 = messages_messages.messages.size() - 1;
-                        while (true) {
-                            if (size2 >= 0) {
-                                TLRPC.Message message = messages_messages.messages.get(size2);
-                                if (message.date > i15) {
-                                    i7 = message.id;
-                                } else {
-                                    size2--;
-                                }
+                TLRPC.Chat chat = (TLRPC.Chat) this.e;
+                TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) tLObject;
+                if (tL_channels_channelParticipant != null) {
+                    TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipant.participant;
+                    if (channelParticipant instanceof TLRPC.TL_channelParticipantSelf) {
+                        TLRPC.TL_channelParticipantSelf tL_channelParticipantSelf = (TLRPC.TL_channelParticipantSelf) channelParticipant;
+                        boolean z10 = chat.megagroup;
+                        np npVar = this.b;
+                        if (z10) {
+                            vr messagesStorage = npVar.getMessagesStorage();
+                            long j10 = chat.id;
+                            messagesStorage.getClass();
+                            CountDownLatch countDownLatch = new CountDownLatch(1);
+                            boolean[] zArr = new boolean[1];
+                            messagesStorage.a.c(new cq(messagesStorage, j10, zArr, countDownLatch, 0));
+                            try {
+                                countDownLatch.await();
+                            } catch (Exception e10) {
+                                messagesStorage.o(e10, true);
+                            }
+                            if (zArr[0]) {
                             }
                         }
-                    }
-                    qpVar.K3(messages_messages, messages_messages.messages.size(), j3, this.i, i14, i7, i15, false, i13, this.g, this.j, this.k, this.l, this.m, false, this.n, this.o, this.p, this.q, this.r, this.s, this.t, null);
-                    break;
-                } else {
-                    g0.h3(new dg(qpVar, i13, (TLObject) tL_messages_getSavedHistory, tL_error, 13));
-                    break;
-                }
-            case 1:
-                TLRPC.TL_messages_getReplies tL_messages_getReplies = (TLRPC.TL_messages_getReplies) this.u;
-                qp qpVar2 = this.b;
-                int i16 = this.j;
-                if (tLObject == null) {
-                    g0.h3(new dg(qpVar2, i16, (TLObject) tL_messages_getReplies, tL_error, 9));
-                    break;
-                } else {
-                    TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
-                    int size3 = messages_messages2.messages.size();
-                    int i17 = this.c;
-                    if (size3 > i17) {
-                        messages_messages2.messages.remove(0);
-                    }
-                    boolean isEmpty = messages_messages2.messages.isEmpty();
-                    int i18 = this.d;
-                    int i19 = this.e;
-                    int i20 = this.g;
-                    if (!isEmpty) {
-                        if (i19 == 0) {
-                            int i21 = this.f;
-                            if (i21 != 0 && i20 == 2 && i18 > 0) {
-                                for (int size4 = messages_messages2.messages.size() - 1; size4 >= 0; size4--) {
-                                    TLRPC.Message message2 = messages_messages2.messages.get(size4);
-                                    int i22 = message2.id;
-                                    if (i22 > i21 && !message2.out) {
-                                        i11 = i18;
-                                        i10 = i22;
-                                        qpVar2.K3(messages_messages2, messages_messages2.messages.size(), this.h, this.i, i17, i11, i19, false, i16, i10, this.k, this.l, this.m, i20, false, this.n, this.o, this.p, this.q, this.r, this.s, this.t, null);
-                                        break;
-                                    }
+                        g0.h3(new fi(12, npVar, tL_channels_channelParticipant));
+                        npVar.getMessagesStorage().m1(tL_channels_channelParticipant.users, tL_channels_channelParticipant.chats, true, true);
+                        boolean z11 = this.c;
+                        long j11 = this.d;
+                        if (z11 && Math.abs(npVar.getConnectionsManager().getCurrentTime() - tL_channels_channelParticipant.participant.date) < 86400) {
+                            vr messagesStorage2 = npVar.getMessagesStorage();
+                            messagesStorage2.getClass();
+                            j3 = j11;
+                            CountDownLatch countDownLatch2 = new CountDownLatch(1);
+                            boolean[] zArr2 = new boolean[1];
+                            messagesStorage2.a.c(new cq(messagesStorage2, j3, zArr2, countDownLatch2, 1));
+                            try {
+                                countDownLatch2.await();
+                            } catch (Exception e11) {
+                                messagesStorage2.o(e11, true);
+                            }
+                            if (!zArr2[0]) {
+                                TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
+                                tL_messageService.flags = 256;
+                                int j12 = npVar.getUserConfig().j();
+                                tL_messageService.id = j12;
+                                tL_messageService.local_id = j12;
+                                tL_messageService.date = tL_channels_channelParticipant.participant.date;
+                                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                                tL_messageService.from_id = tL_peerUser;
+                                tL_peerUser.user_id = tL_channels_channelParticipant.participant.inviter_id;
+                                TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
+                                tL_messageService.peer_id = tL_peerChannel;
+                                tL_peerChannel.channel_id = j3;
+                                tL_messageService.media_unread = true;
+                                tL_messageService.unread = true;
+                                tL_messageService.post = true;
+                                if (tL_channelParticipantSelf.via_invite && tL_channelParticipantSelf.inviter_id == npVar.getUserConfig().e()) {
+                                    tL_messageService.action = new TLRPC.TL_messageActionChatJoinedByRequest();
+                                } else {
+                                    tL_messageService.action = new TLRPC.TL_messageActionChatAddUser();
                                 }
+                                tL_messageService.action.users.add(Long.valueOf(npVar.getUserConfig().e()));
+                                tL_messageService.dialog_id = -j3;
+                                npVar.getUserConfig().v(false);
+                                arrayList = new ArrayList();
+                                ArrayList arrayList2 = new ArrayList();
+                                ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+                                for (int i7 = 0; i7 < tL_channels_channelParticipant.users.size(); i7++) {
+                                    TLRPC.User user = tL_channels_channelParticipant.users.get(i7);
+                                    concurrentHashMap.put(Long.valueOf(user.id), user);
+                                }
+                                arrayList2.add(tL_messageService);
+                                arrayList.add(new gj(npVar.currentAccount, (TLRPC.Message) tL_messageService, (AbstractMap) concurrentHashMap, (AbstractMap) null, true, false));
+                                if (tL_messageService.from_id.user_id != npVar.getUserConfig().e()) {
+                                    npVar.getMessagesStorage().a.c(new oj(npVar, arrayList, 2));
+                                }
+                                npVar.getMessagesStorage().j1(arrayList2, true, true, false, 0, false, 0, 0L);
+                                ArrayList arrayList3 = arrayList;
+                                vr messagesStorage3 = npVar.getMessagesStorage();
+                                long j13 = j3;
+                                messagesStorage3.a.c(new sp(2, tL_channels_channelParticipant.participant.inviter_id, j13, messagesStorage3));
+                                g0.h3(new gm(npVar, j13, arrayList3, tL_channels_channelParticipant, 5));
+                                break;
                             }
                         } else {
-                            i18 = ((TLRPC.Message) jg.g.i(1, messages_messages2.messages)).id;
-                            int size5 = messages_messages2.messages.size() - 1;
-                            while (true) {
-                                if (size5 >= 0) {
-                                    TLRPC.Message message3 = messages_messages2.messages.get(size5);
-                                    if (message3.date > i19) {
-                                        i18 = message3.id;
-                                    } else {
-                                        size5--;
-                                    }
-                                }
-                            }
+                            j3 = j11;
                         }
+                        arrayList = null;
+                        ArrayList arrayList32 = arrayList;
+                        vr messagesStorage32 = npVar.getMessagesStorage();
+                        long j132 = j3;
+                        messagesStorage32.a.c(new sp(2, tL_channels_channelParticipant.participant.inviter_id, j132, messagesStorage32));
+                        g0.h3(new gm(npVar, j132, arrayList32, tL_channels_channelParticipant, 5));
                     }
-                    i10 = 0;
-                    i11 = i18;
-                    qpVar2.K3(messages_messages2, messages_messages2.messages.size(), this.h, this.i, i17, i11, i19, false, i16, i10, this.k, this.l, this.m, i20, false, this.n, this.o, this.p, this.q, this.r, this.s, this.t, null);
                 }
                 break;
             default:
-                TLRPC.TL_messages_getHistory tL_messages_getHistory = (TLRPC.TL_messages_getHistory) this.u;
-                qp qpVar3 = this.b;
-                int i23 = this.f;
-                if (tLObject != null) {
-                    TLRPC.messages_Messages messages_messages3 = (TLRPC.messages_Messages) tLObject;
-                    ArrayList<TLRPC.Message> arrayList2 = messages_messages3.messages;
-                    long j10 = this.h;
-                    qpVar3.e4(arrayList2, j10);
-                    int size6 = messages_messages3.messages.size();
-                    int i24 = this.c;
-                    if (size6 > i24) {
-                        messages_messages3.messages.remove(0);
+                TLRPC.User user2 = (TLRPC.User) this.e;
+                if (tL_error == null) {
+                    boolean z12 = tLObject instanceof TLRPC.Updates;
+                    np npVar2 = this.b;
+                    if (z12) {
+                        npVar2.O3((TLRPC.Updates) tLObject, false);
                     }
-                    int i25 = this.e;
-                    if (i25 == 0 || messages_messages3.messages.isEmpty()) {
-                        i12 = this.d;
-                    } else {
-                        i12 = ((TLRPC.Message) jg.g.i(1, messages_messages3.messages)).id;
-                        int size7 = messages_messages3.messages.size() - 1;
-                        while (true) {
-                            if (size7 >= 0) {
-                                TLRPC.Message message4 = messages_messages3.messages.get(size7);
-                                if (message4.date > i25) {
-                                    i12 = message4.id;
-                                } else {
-                                    size7--;
-                                }
-                            }
-                        }
+                    if (this.c && !q10.B(user2)) {
+                        g0.i3(new kk(npVar2, this.d, 10), 1000L);
+                        break;
                     }
-                    qpVar3.K3(messages_messages3, messages_messages3.messages.size(), j10, this.i, i24, i12, i25, false, i23, this.g, this.j, this.k, this.l, this.m, false, this.n, this.o, this.p, this.q, this.r, this.s, this.t, null);
-                    break;
-                } else {
-                    g0.h3(new dg(qpVar3, i23, (TLObject) tL_messages_getHistory, tL_error, 11));
-                    break;
                 }
+                break;
         }
     }
 
-    public /* synthetic */ bl(qp qpVar, long j3, int i7, int i10, int i11, long j10, int i12, int i13, int i14, int i15, int i16, int i17, int i18, long j11, int i19, boolean z9, int i20, boolean z10, boolean z11, TLObject tLObject, int i21) {
-        this.a = i21;
-        this.b = qpVar;
-        this.h = j3;
-        this.c = i7;
-        this.d = i10;
-        this.e = i11;
-        this.i = j10;
-        this.f = i12;
-        this.g = i13;
-        this.j = i14;
-        this.k = i15;
-        this.l = i16;
-        this.m = i17;
-        this.n = i18;
-        this.o = j11;
-        this.p = i19;
-        this.q = z9;
-        this.r = i20;
-        this.s = z10;
-        this.t = z11;
-        this.u = tLObject;
+    public /* synthetic */ bl(np npVar, boolean z10, TLRPC.User user, long j3) {
+        this.b = npVar;
+        this.c = z10;
+        this.e = user;
+        this.d = j3;
     }
 }

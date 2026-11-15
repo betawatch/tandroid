@@ -1,30 +1,69 @@
 package gb;
 
-import android.app.Application;
-import android.content.Context;
 import android.util.Log;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class o {
-    public final o9.g a;
-    public final jb.l b;
+public final /* synthetic */ class o implements rd.l {
+    public final /* synthetic */ int a;
 
-    public o(o9.g firebaseApp, jb.l settings, id.h backgroundDispatcher, y0 sessionsActivityLifecycleCallbacks) {
-        kotlin.jvm.internal.j.e(firebaseApp, "firebaseApp");
-        kotlin.jvm.internal.j.e(settings, "settings");
-        kotlin.jvm.internal.j.e(backgroundDispatcher, "backgroundDispatcher");
-        kotlin.jvm.internal.j.e(sessionsActivityLifecycleCallbacks, "sessionsActivityLifecycleCallbacks");
-        this.a = firebaseApp;
-        this.b = settings;
-        Log.d("FirebaseSessions", "Initializing Firebase Sessions 3.0.8.");
-        firebaseApp.a();
-        Context applicationContext = firebaseApp.a.getApplicationContext();
-        if (applicationContext instanceof Application) {
-            ((Application) applicationContext).registerActivityLifecycleCallbacks(sessionsActivityLifecycleCallbacks);
-            zd.b0.q(zd.b0.b(backgroundDispatcher), new be.l(this, sessionsActivityLifecycleCallbacks, null, 4));
-        } else {
-            Log.e("FirebaseSessions", "Failed to register lifecycle callbacks, unexpected context " + applicationContext.getClass() + '.');
+    public /* synthetic */ o(int i7) {
+        this.a = i7;
+    }
+
+    @Override // rd.l
+    public final Object invoke(Object obj) {
+        switch (this.a) {
+            case 0:
+                m1.b ex = (m1.b) obj;
+                kotlin.jvm.internal.j.e(ex, "ex");
+                Log.w("FirebaseSessions", "CorruptionException in session configs DataStore", ex);
+                return jb.j.b;
+            case 1:
+                q1.b bVar = (q1.b) obj;
+                q1.e eVar = sa.h.c;
+                long j3 = 0;
+                for (Map.Entry entry : bVar.a().entrySet()) {
+                    if (entry.getValue() instanceof Set) {
+                        q1.e eVar2 = (q1.e) entry.getKey();
+                        Set set = (Set) entry.getValue();
+                        String c10 = sa.h.c(System.currentTimeMillis());
+                        if (set.contains(c10)) {
+                            Object[] objArr = {c10};
+                            HashSet hashSet = new HashSet(1);
+                            Object obj2 = objArr[0];
+                            Objects.requireNonNull(obj2);
+                            if (!hashSet.add(obj2)) {
+                                throw new IllegalArgumentException("duplicate element: " + obj2);
+                            }
+                            bVar.d(eVar2, DesugarCollections.unmodifiableSet(hashSet));
+                            j3++;
+                        } else {
+                            bVar.c(eVar2);
+                        }
+                    }
+                }
+                if (j3 == 0) {
+                    bVar.c(eVar);
+                } else {
+                    bVar.d(eVar, Long.valueOf(j3));
+                }
+                return null;
+            default:
+                id.f fVar = (id.f) obj;
+                if (fVar instanceof zd.x) {
+                    return (zd.x) fVar;
+                }
+                return null;
         }
+    }
+
+    public /* synthetic */ o(sa.h hVar) {
+        this.a = 1;
     }
 }

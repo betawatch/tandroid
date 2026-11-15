@@ -1,37 +1,39 @@
 package org.telegram.ui;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import java.util.LinkedHashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yz0 implements org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.qi0 {
-    public final /* synthetic */ t11 a;
+public final /* synthetic */ class yz0 implements org.telegram.messenger.z10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LinkedHashSet b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ yz0(t11 t11Var) {
-        this.a = t11Var;
+    public /* synthetic */ yz0(LinkedHashSet linkedHashSet, Runnable runnable, int i7) {
+        this.a = i7;
+        this.b = linkedHashSet;
+        this.c = runnable;
     }
 
-    @Override // org.telegram.ui.Components.qi0
-    public void e() {
-        this.a.m();
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        t11 t11Var = this.a;
-        int i10 = t11Var.V;
-        ConnectionsManager.getInstance(i10).sendRequest(new TL_account.clearRecentEmojiStatuses(), null);
-        org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i10);
-        ArrayList[] arrayListArr = b02.E0;
-        ArrayList arrayList = arrayListArr[0];
-        if (arrayList != null) {
-            arrayList.clear();
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj;
+                if (arrayList != null) {
+                    this.b.addAll(arrayList);
+                }
+                this.c.run();
+                break;
+            default:
+                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
+                if (tL_emojiList != null) {
+                    this.b.addAll(tL_emojiList.document_id);
+                }
+                this.c.run();
+                break;
         }
-        b02.D0[0] = 0;
-        b02.getMessagesStorage().a.c(new org.telegram.messenger.fg(b02, 8));
-        ArrayList arrayList2 = arrayListArr[0];
-        t11Var.B(false, true, true);
     }
 }

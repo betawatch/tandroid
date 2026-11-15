@@ -1,12 +1,12 @@
 package t2;
 
-import a8.ia;
+import a8.ja;
 import android.content.Context;
 import android.graphics.Point;
-import bg.o0;
+import bg.n0;
 import e2.t0;
 import e2.u;
-import h2.m0;
+import h2.l0;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import k2.h;
@@ -14,7 +14,7 @@ import k2.j;
 import k2.l;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b extends l {
     public final Context o;
@@ -47,18 +47,18 @@ public final class b extends l {
     }
 
     @Override // k2.l
-    public final k2.f i(h hVar, j jVar, boolean z9) {
+    public final k2.f i(h hVar, j jVar, boolean z10) {
         a aVar = (a) jVar;
         ByteBuffer byteBuffer = hVar.c;
         byteBuffer.getClass();
-        ia.p(byteBuffer.hasArray());
-        ia.f(byteBuffer.arrayOffset() == 0);
+        ja.p(byteBuffer.hasArray());
+        ja.f(byteBuffer.arrayOffset() == 0);
         try {
             int i7 = this.p;
             if (i7 == -1) {
                 Context context = this.o;
                 if (context != null) {
-                    Point y10 = m0.y(context);
+                    Point y10 = l0.y(context);
                     int i10 = y10.x;
                     int i11 = y10.y;
                     u uVar = hVar.a;
@@ -77,7 +77,7 @@ public final class b extends l {
                     i7 = TLObject.FLAG_12;
                 }
             }
-            aVar.a = o0.b(byteBuffer.remaining(), i7, byteBuffer.array());
+            aVar.a = n0.b(byteBuffer.remaining(), i7, byteBuffer.array());
             aVar.timeUs = hVar.e;
             return null;
         } catch (t0 e10) {

@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yt0 implements Runnable {
     public final /* synthetic */ int a;
@@ -16,25 +16,25 @@ public final /* synthetic */ class yt0 implements Runnable {
         switch (this.a) {
             case 0:
                 au0 au0Var = this.b;
-                au0Var.V0 = false;
-                if (!au0Var.Y0 && au0Var.W0) {
+                au0Var.W0 = false;
+                if (!au0Var.Z0 && au0Var.X0) {
                     au0Var.C(true);
                     break;
                 }
                 break;
             case 1:
-                this.b.V0 = false;
+                this.b.W0 = false;
                 break;
             case 2:
                 au0 au0Var2 = this.b;
-                au0Var2.Y0 = false;
-                if (!au0Var2.V0 && au0Var2.W0) {
+                au0Var2.Z0 = false;
+                if (!au0Var2.W0 && au0Var2.X0) {
                     au0Var2.C(true);
                     break;
                 }
                 break;
             default:
-                this.b.Y0 = false;
+                this.b.Z0 = false;
                 break;
         }
     }

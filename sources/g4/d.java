@@ -1,10 +1,11 @@
 package g4;
 
-import a8.ia;
+import a8.ja;
 import android.graphics.Color;
-import c8.e1;
+import c8.g1;
+import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class d {
     public final String a;
@@ -18,21 +19,21 @@ public final class d {
     public final boolean i;
     public final int j;
 
-    public d(String str, int i7, Integer num, Integer num2, float f10, boolean z9, boolean z10, boolean z11, boolean z12, int i10) {
+    public d(String str, int i7, Integer num, Integer num2, float f10, boolean z10, boolean z11, boolean z12, boolean z13, int i10) {
         this.a = str;
         this.b = i7;
         this.c = num;
         this.d = num2;
         this.e = f10;
-        this.f = z9;
-        this.g = z10;
-        this.h = z11;
-        this.i = z12;
+        this.f = z10;
+        this.g = z11;
+        this.h = z12;
+        this.i = z13;
         this.j = i10;
     }
 
     public static int a(String str) {
-        boolean z9;
+        boolean z10;
         try {
             int parseInt = Integer.parseInt(str.trim());
             switch (parseInt) {
@@ -45,18 +46,18 @@ public final class d {
                 case 7:
                 case 8:
                 case 9:
-                    z9 = true;
+                    z10 = true;
                     break;
                 default:
-                    z9 = false;
+                    z10 = false;
                     break;
             }
-            if (z9) {
+            if (z10) {
                 return parseInt;
             }
         } catch (NumberFormatException unused) {
         }
-        com.google.android.recaptcha.internal.a.r("Ignoring unknown alignment: ", str, "SsaStyle");
+        e2.q("Ignoring unknown alignment: ", str, "SsaStyle");
         return -1;
     }
 
@@ -73,8 +74,8 @@ public final class d {
     public static Integer c(String str) {
         try {
             long parseLong = str.startsWith("&H") ? Long.parseLong(str.substring(2), 16) : Long.parseLong(str);
-            ia.f(parseLong <= 4294967295L);
-            return Integer.valueOf(Color.argb(e1.b(((parseLong >> 24) & 255) ^ 255), e1.b(parseLong & 255), e1.b((parseLong >> 8) & 255), e1.b((parseLong >> 16) & 255)));
+            ja.f(parseLong <= 4294967295L);
+            return Integer.valueOf(Color.argb(g1.b(((parseLong >> 24) & 255) ^ 255), g1.b(parseLong & 255), g1.b((parseLong >> 8) & 255), g1.b((parseLong >> 16) & 255)));
         } catch (IllegalArgumentException e10) {
             h2.a.m("SsaStyle", "Failed to parse color expression: '" + str + "'", e10);
             return null;

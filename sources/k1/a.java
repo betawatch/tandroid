@@ -6,38 +6,38 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.m;
+import org.telegram.ui.Components.cf;
 import r0.i0;
-import s0.d;
+import s0.c;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class a extends m {
+public final class a extends cf {
     public final /* synthetic */ b b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a(b bVar) {
-        super(16);
+        super(15);
         this.b = bVar;
     }
 
-    @Override // org.telegram.ui.Components.m
-    public final d s(int i7) {
-        return new d(AccessibilityNodeInfo.obtain(this.b.j(i7).a));
+    @Override // org.telegram.ui.Components.cf
+    public final c m(int i7) {
+        return new c(AccessibilityNodeInfo.obtain(this.b.j(i7).a));
     }
 
-    @Override // org.telegram.ui.Components.m
-    public final d v(int i7) {
+    @Override // org.telegram.ui.Components.cf
+    public final c p(int i7) {
         b bVar = this.b;
         int i10 = i7 == 2 ? bVar.k : bVar.l;
         if (i10 == Integer.MIN_VALUE) {
             return null;
         }
-        return s(i10);
+        return m(i10);
     }
 
-    @Override // org.telegram.ui.Components.m
-    public final boolean z(int i7, int i10, Bundle bundle) {
+    @Override // org.telegram.ui.Components.cf
+    public final boolean r(int i7, int i10, Bundle bundle) {
         int i11;
         int i12;
         b bVar = this.b;

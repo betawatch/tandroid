@@ -1,31 +1,59 @@
 package l2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes.dex */
-public final class q1 {
-    public static final q1 c = new q1(0, false);
-    public final int a;
-    public final boolean b;
+import android.os.SystemClock;
 
-    public q1(int i7, boolean z9) {
-        this.a = i7;
-        this.b = z9;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes.dex */
+public final class q1 implements t0 {
+    public long a;
+    public long b;
+    public boolean c;
+    public Object d;
+    public Object e;
+
+    @Override // l2.t0
+    public long a() {
+        long j3 = this.a;
+        if (!this.c) {
+            return j3;
+        }
+        ((h2.g0) this.d).getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime() - this.b;
+        return (((e2.w0) this.e).a == 1.0f ? h2.l0.S(elapsedRealtime) : elapsedRealtime * r4.c) + j3;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && q1.class == obj.getClass()) {
-            q1 q1Var = (q1) obj;
-            if (this.a == q1Var.a && this.b == q1Var.b) {
-                return true;
-            }
-        }
+    @Override // l2.t0
+    public /* synthetic */ boolean b() {
         return false;
     }
 
-    public final int hashCode() {
-        return (this.a << 1) + (this.b ? 1 : 0);
+    public void c(long j3) {
+        this.a = j3;
+        if (this.c) {
+            ((h2.g0) this.d).getClass();
+            this.b = SystemClock.elapsedRealtime();
+        }
+    }
+
+    public void d() {
+        if (this.c) {
+            return;
+        }
+        ((h2.g0) this.d).getClass();
+        this.b = SystemClock.elapsedRealtime();
+        this.c = true;
+    }
+
+    @Override // l2.t0
+    public void e(e2.w0 w0Var) {
+        if (this.c) {
+            c(a());
+        }
+        this.e = w0Var;
+    }
+
+    @Override // l2.t0
+    public e2.w0 j() {
+        return (e2.w0) this.e;
     }
 }

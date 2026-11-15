@@ -1,140 +1,154 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.animation.ValueAnimator;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.p5;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.i20;
+import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l2 extends View {
-    public StaticLayout a;
-    public final RectF b;
-    public final Paint c;
-    public final Paint d;
-    public String e;
-    public final TextPaint f;
-    public int h;
+public final class l2 extends FrameLayout {
+    public TextView[] a;
+    public TextView b;
+    public FrameLayout c;
+    public p2 d;
+    public CharSequence e;
+    public boolean f;
+    public ValueAnimator h;
     public boolean n;
-    public final Drawable r;
-    public final p5 s;
 
-    public l2(Activity activity) {
-        super(activity);
-        this.b = new RectF();
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        TextPaint textPaint = new TextPaint(1);
-        this.f = textPaint;
-        this.h = 4;
-        this.n = false;
-        this.s = new p5(this, 7);
-        textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        textPaint.setColor(-1);
-        paint.setColor(i0.a.o(-1, qs.F3));
-        paint2.setColor(i0.a.o(-1, qs.n1));
-        Drawable drawable = activity.getDrawable(R.drawable.calls_decline);
-        this.r = drawable;
-        drawable.setBounds(0, 0, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
+    public final void a(View view, View view2, Runnable runnable) {
+        view.setVisibility(0);
+        view2.setVisibility(0);
+        view2.setTranslationY(org.telegram.messenger.g0.L(15.0f));
+        view2.setAlpha(0.0f);
+        this.f = true;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.h = ofFloat;
+        ofFloat.addUpdateListener(new ch.v(18, view2, view));
+        this.h.addListener(new jg.j0((FrameLayout) this, view, view2, (Object) runnable, 3));
+        this.h.setDuration(250L).setInterpolator(er.f);
+        this.h.start();
     }
 
-    public final void a() {
-        p5 p5Var = this.s;
-        removeCallbacks(p5Var);
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void b(String str, boolean z10, boolean z11) {
+        View view = this.d;
+        TextView[] textViewArr = this.a;
+        if (z10) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+            SpannableString spannableString = new SpannableString(".");
+            spannableString.setSpan(new kg.p1(textViewArr), 0, 1, 33);
+            spannableStringBuilder.append((CharSequence) spannableString);
+            str = spannableStringBuilder;
+        }
+        if (TextUtils.isEmpty(textViewArr[0].getText())) {
+            z11 = false;
+        }
+        if (!z11) {
+            ValueAnimator valueAnimator = this.h;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.f = false;
+            textViewArr[0].setText(str);
+            textViewArr[0].setVisibility(0);
+            textViewArr[1].setVisibility(8);
+            view.setVisibility(8);
             return;
         }
-        String g02 = org.telegram.messenger.g0.g0((int) (sharedInstance.getCallDuration() / 1000), true, false);
-        String str = this.e;
-        if (str == null || !str.equals(g02)) {
-            this.e = g02;
-            if (this.a == null) {
-                requestLayout();
-            }
-            String str2 = this.e;
-            TextPaint textPaint = this.f;
-            this.a = new StaticLayout(str2, textPaint, (int) textPaint.measureText(str2), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        if (this.f) {
+            this.e = str;
+            return;
         }
-        postDelayed(p5Var, 300L);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        StaticLayout staticLayout = this.a;
-        int i7 = 0;
-        int L = staticLayout == null ? 0 : org.telegram.messenger.g0.L(21.0f) + staticLayout.getWidth();
-        canvas.save();
-        canvas.translate((getMeasuredWidth() - L) / 2.0f, 0.0f);
-        canvas.save();
         if (this.n) {
-            canvas.translate(-org.telegram.messenger.g0.L(7.0f), -org.telegram.messenger.g0.L(3.0f));
-            this.r.draw(canvas);
+            textViewArr[0].setText(str);
+            a(view, textViewArr[0], null);
         } else {
-            canvas.translate(0.0f, (getMeasuredHeight() - org.telegram.messenger.g0.L(11.0f)) / 2.0f);
-            while (i7 < 4) {
-                int i10 = i7 + 1;
-                Paint paint = i10 > this.h ? this.d : this.c;
-                float f10 = i7;
-                float N = org.telegram.messenger.g0.N(4.16f) * f10;
-                float N2 = org.telegram.messenger.g0.N(2.75f) * (3 - i7);
-                float N3 = org.telegram.messenger.g0.N(2.75f) + (org.telegram.messenger.g0.N(4.16f) * f10);
-                float L2 = org.telegram.messenger.g0.L(11.0f);
-                RectF rectF = this.b;
-                rectF.set(N, N2, N3, L2);
-                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(0.7f), org.telegram.messenger.g0.N(0.7f), paint);
-                i7 = i10;
+            if (textViewArr[0].getText().equals(str)) {
+                return;
             }
+            textViewArr[1].setText(str);
+            a(textViewArr[0], textViewArr[1], new org.telegram.ui.ActionBar.r0(this, 18));
         }
-        canvas.restore();
-        if (staticLayout != null) {
-            canvas.translate(org.telegram.messenger.g0.L(21.0f), 0.0f);
-            staticLayout.draw(canvas);
-        }
-        canvas.restore();
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        StaticLayout staticLayout = this.a;
-        if (staticLayout != null) {
-            setMeasuredDimension(View.MeasureSpec.getSize(i7), staticLayout.getHeight());
+    public final void c(boolean z10) {
+        FrameLayout frameLayout = this.c;
+        if (!z10) {
+            if (frameLayout.getVisibility() == 8) {
+                return;
+            }
+            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(er.f).setListener(new k2(this, 1)).setDuration(300L).start();
         } else {
-            setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(15.0f));
+            if (frameLayout.getVisibility() == 0) {
+                return;
+            }
+            frameLayout.setVisibility(0);
+            frameLayout.setAlpha(0.0f);
+            frameLayout.setScaleY(0.6f);
+            frameLayout.setScaleX(0.6f);
+            frameLayout.animate().setListener(null).cancel();
+            i20.n(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), er.k, 300L);
         }
+    }
+
+    public final void d(boolean z10, boolean z11) {
+        TextView textView = this.b;
+        if (!z11) {
+            textView.animate().setListener(null).cancel();
+            textView.setVisibility(z10 ? 0 : 8);
+        } else {
+            if (!z10) {
+                textView.animate().alpha(0.0f).setListener(new k2(this, 0)).setDuration(150L).start();
+                return;
+            }
+            if (textView.getVisibility() != 0) {
+                textView.setVisibility(0);
+                textView.setAlpha(0.0f);
+            }
+            textView.animate().setListener(null).cancel();
+            textView.animate().alpha(1.0f).setDuration(150L).start();
+        }
+    }
+
+    public final void e(boolean z10) {
+        p2 p2Var = this.d;
+        TextView[] textViewArr = this.a;
+        if (TextUtils.isEmpty(textViewArr[0].getText())) {
+            z10 = false;
+        }
+        if (this.n) {
+            return;
+        }
+        p2Var.a();
+        if (z10) {
+            if (this.f) {
+                this.e = "timer";
+                return;
+            } else {
+                this.n = true;
+                a(textViewArr[0], p2Var, null);
+                return;
+            }
+        }
+        ValueAnimator valueAnimator = this.h;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.n = true;
+        this.f = false;
+        textViewArr[0].setVisibility(8);
+        textViewArr[1].setVisibility(8);
+        p2Var.setVisibility(0);
     }
 
     public void setSignalBarCount(int i7) {
-        this.h = i7;
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i7) {
-        if (getVisibility() != i7) {
-            if (i7 == 0) {
-                this.e = "00:00";
-                String str = this.e;
-                TextPaint textPaint = this.f;
-                this.a = new StaticLayout(str, textPaint, (int) textPaint.measureText(str), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                a();
-            } else {
-                this.e = null;
-                this.a = null;
-            }
-        }
-        super.setVisibility(i7);
+        this.d.setSignalBarCount(i7);
     }
 }

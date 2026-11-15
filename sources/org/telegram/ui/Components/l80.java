@@ -1,25 +1,16 @@
 package org.telegram.ui.Components;
 
-import java.util.regex.Pattern;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l80 extends ed.h {
-    public static final Pattern e = Pattern.compile("\\$([^\\s\\$][^\\$]*?)(?<!\\s)\\$(?![0-9])");
+public final class l80 {
+    public final ad.a a;
+    public final int b;
+    public final ArrayList c = new ArrayList();
 
-    @Override // ed.h
-    public final kf.p b() {
-        String a10 = a(e);
-        if (a10 == null) {
-            return null;
-        }
-        zc.d dVar = new zc.d();
-        dVar.g = com.google.android.recaptcha.internal.a.k(a10, 1, 1);
-        return dVar;
-    }
-
-    @Override // ed.h
-    public final char d() {
-        return '$';
+    public l80(ad.a aVar, int i7) {
+        this.a = aVar;
+        this.b = i7;
     }
 }

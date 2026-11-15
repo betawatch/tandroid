@@ -1,6 +1,6 @@
 package gb;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements oe.e {
     public static final z a;
@@ -34,13 +34,13 @@ public final /* synthetic */ class z implements oe.e {
         me.d dVar = descriptor;
         h2.c c10 = decoder.c(dVar);
         String str = null;
-        boolean z9 = true;
+        boolean z10 = true;
         int i7 = 0;
         int i10 = 0;
-        while (z9) {
+        while (z10) {
             int d = c10.d(dVar);
             if (d == -1) {
-                z9 = false;
+                z10 = false;
             } else if (d == 0) {
                 i10 = c10.f(dVar, 0);
                 i7 |= 1;

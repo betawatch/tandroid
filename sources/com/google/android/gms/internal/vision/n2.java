@@ -1,23 +1,122 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import java.util.AbstractList;
+import java.util.Arrays;
+import java.util.RandomAccess;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public interface n2 {
-    boolean a(Object obj);
+public final class n2 extends n0 implements RandomAccess {
+    public static final n2 d;
+    public Object[] b;
+    public int c;
 
-    void b(Object obj);
+    static {
+        n2 n2Var = new n2(0, new Object[0]);
+        d = n2Var;
+        n2Var.a = false;
+    }
 
-    void c(Object obj, y1 y1Var);
+    public n2(int i7, Object[] objArr) {
+        this.b = objArr;
+        this.c = i7;
+    }
 
-    int d(f1 f1Var);
+    @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean add(Object obj) {
+        f();
+        int i7 = this.c;
+        Object[] objArr = this.b;
+        if (i7 == objArr.length) {
+            this.b = Arrays.copyOf(objArr, ((i7 * 3) / 2) + 1);
+        }
+        Object[] objArr2 = this.b;
+        int i10 = this.c;
+        this.c = i10 + 1;
+        objArr2[i10] = obj;
+        ((AbstractList) this).modCount++;
+        return true;
+    }
 
-    void e(f1 f1Var, f1 f1Var2);
+    @Override // java.util.AbstractList, java.util.List
+    public final Object get(int i7) {
+        i(i7);
+        return this.b[i7];
+    }
 
-    void f(Object obj, byte[] bArr, int i7, int i10, com.google.android.gms.internal.clearcut.m mVar);
+    public final void i(int i7) {
+        if (i7 < 0 || i7 >= this.c) {
+            throw new IndexOutOfBoundsException(j(i7));
+        }
+    }
 
-    boolean g(f1 f1Var, f1 f1Var2);
+    public final String j(int i7) {
+        int i10 = this.c;
+        StringBuilder sb2 = new StringBuilder(35);
+        sb2.append("Index:");
+        sb2.append(i7);
+        sb2.append(", Size:");
+        sb2.append(i10);
+        return sb2.toString();
+    }
 
-    Object zza();
+    @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List
+    public final Object remove(int i7) {
+        f();
+        i(i7);
+        Object[] objArr = this.b;
+        Object obj = objArr[i7];
+        if (i7 < this.c - 1) {
+            System.arraycopy(objArr, i7 + 1, objArr, i7, (r2 - i7) - 1);
+        }
+        this.c--;
+        ((AbstractList) this).modCount++;
+        return obj;
+    }
 
-    int zzb(Object obj);
+    @Override // java.util.AbstractList, java.util.List
+    public final Object set(int i7, Object obj) {
+        f();
+        i(i7);
+        Object[] objArr = this.b;
+        Object obj2 = objArr[i7];
+        objArr[i7] = obj;
+        ((AbstractList) this).modCount++;
+        return obj2;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c;
+    }
+
+    @Override // com.google.android.gms.internal.vision.o1
+    public final /* synthetic */ o1 zza(int i7) {
+        if (i7 < this.c) {
+            throw new IllegalArgumentException();
+        }
+        return new n2(this.c, Arrays.copyOf(this.b, i7));
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final void add(int i7, Object obj) {
+        int i10;
+        f();
+        if (i7 >= 0 && i7 <= (i10 = this.c)) {
+            Object[] objArr = this.b;
+            if (i10 < objArr.length) {
+                System.arraycopy(objArr, i7, objArr, i7 + 1, i10 - i7);
+            } else {
+                Object[] objArr2 = new Object[((i10 * 3) / 2) + 1];
+                System.arraycopy(objArr, 0, objArr2, 0, i7);
+                System.arraycopy(this.b, i7, objArr2, i7 + 1, this.c - i7);
+                this.b = objArr2;
+            }
+            this.b[i7] = obj;
+            this.c++;
+            ((AbstractList) this).modCount++;
+            return;
+        }
+        throw new IndexOutOfBoundsException(j(i7));
+    }
 }

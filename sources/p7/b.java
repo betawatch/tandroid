@@ -1,11 +1,11 @@
 package p7;
 
 import a8.i0;
-import c8.hb;
+import c8.jb;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b extends i0 implements ListIterator {
     public final int b;
@@ -17,7 +17,7 @@ public final class b extends i0 implements ListIterator {
         super(5);
         int size = eVar.size();
         if (i7 < 0 || i7 > size) {
-            throw new IndexOutOfBoundsException(hb.c(i7, size, "index"));
+            throw new IndexOutOfBoundsException(jb.c(i7, size, "index"));
         }
         this.b = size;
         this.c = i7;

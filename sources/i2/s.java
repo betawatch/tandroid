@@ -1,8 +1,8 @@
 package i2;
 
-import a8.ia;
+import a8.ja;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s {
     public int a;
@@ -22,7 +22,7 @@ public final class s {
     public void a() {
         int i7;
         int i10 = this.c;
-        ia.p(i10 >= 0 && (i10 < (i7 = this.a) || (i10 == i7 && this.d == 0)));
+        ja.p(i10 >= 0 && (i10 < (i7 = this.a) || (i10 == i7 && this.d == 0)));
     }
 
     public boolean b(int i7) {
@@ -58,16 +58,16 @@ public final class s {
         while (this.c < this.a && !d()) {
             i11++;
         }
-        boolean z9 = this.c == this.a;
+        boolean z10 = this.c == this.a;
         this.c = i7;
         this.d = i10;
-        return !z9 && b((i11 * 2) + 1);
+        return !z10 && b((i11 * 2) + 1);
     }
 
     public boolean d() {
-        boolean z9 = (this.e[this.c] & (128 >> this.d)) != 0;
+        boolean z10 = (this.e[this.c] & (128 >> this.d)) != 0;
         i();
-        return z9;
+        return z10;
     }
 
     public int e(int i7) {

@@ -1,7 +1,7 @@
 package m3;
 
-import c8.m9;
-import f3.e0;
+import c8.l9;
+import f3.d0;
 import f3.l;
 import f3.o;
 import f3.p;
@@ -9,20 +9,20 @@ import f3.q;
 import f3.s;
 import h9.g0;
 import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final o a;
     public final boolean b;
 
     public b(int i7) {
-        boolean z9 = (i7 & 1) != 0;
-        this.b = z9;
-        if (z9) {
-            this.a = new e0(-1, -1, "image/heif");
+        boolean z10 = (i7 & 1) != 0;
+        this.b = z10;
+        if (z10) {
+            this.a = new d0(-1, -1, "image/heif");
         } else {
             this.a = new a();
         }
@@ -30,7 +30,7 @@ public final class b implements o {
 
     @Override // f3.o
     public final boolean b(p pVar) {
-        return this.b ? m9.a((l) pVar, false) : this.a.b(pVar);
+        return this.b ? l9.a((l) pVar, false) : this.a.b(pVar);
     }
 
     @Override // f3.o
@@ -46,7 +46,7 @@ public final class b implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = i0.b;
-        return t1.e;
+        return s1.e;
     }
 
     @Override // f3.o

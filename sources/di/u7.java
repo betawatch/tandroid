@@ -1,115 +1,141 @@
 package di;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.ij;
-import org.telegram.ui.Components.ii0;
-import org.telegram.ui.Components.o40;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.ez;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.so;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.xq0;
+import org.telegram.ui.Components.ys0;
+import org.telegram.ui.Components.zd0;
+import org.telegram.ui.hz;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class u7 extends c5.a {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ q9 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 e;
-    public final /* synthetic */ w f;
+public final /* synthetic */ class u7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
 
-    public u7(w wVar, Context context, q9 q9Var, org.telegram.ui.ActionBar.h6 h6Var) {
-        this.f = wVar;
-        this.c = context;
-        this.d = q9Var;
-        this.e = h6Var;
+    public /* synthetic */ u7(Object obj, int i7, boolean z10, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = i7;
+        this.c = z10;
     }
 
-    @Override // c5.a
-    public final void a(c5.k kVar, Object obj) {
-        FrameLayout frameLayout = (FrameLayout) obj;
-        kVar.removeView(frameLayout);
-        j4 j4Var = (j4) frameLayout.getChildAt(0);
-        org.telegram.messenger.g0.E2(j4Var);
-        this.f.P0.add(j4Var);
-    }
-
-    @Override // c5.a
-    public final int b() {
-        w wVar = this.f;
-        ArrayList arrayList = wVar.x0;
-        return arrayList != null ? arrayList.size() : wVar.A0.size();
-    }
-
-    @Override // c5.a
-    public final Object e(c5.k kVar, int i7) {
-        j4 t7Var;
-        Context context = this.c;
-        w wVar = this.f;
-        w7 w7Var = new w7(wVar, context);
-        ArrayList arrayList = wVar.P0;
-        boolean isEmpty = arrayList.isEmpty();
-        q9 q9Var = this.d;
-        if (isEmpty) {
-            t7Var = new t7(this, this.c, q9Var, wVar.H0, this.e);
-        } else {
-            t7Var = (j4) arrayList.remove(0);
-            t7Var.X0.a.getImageReceiver().O0(true, true);
-            if (t7Var.N1 != null) {
-                t7Var.K1.P0();
-                t7Var.K1.setAlpha(1.0f - t7Var.N3);
-            }
-            ii0 ii0Var = t7Var.O1;
-            if (ii0Var != null) {
-                ii0Var.n();
-            }
-            ii0 ii0Var2 = t7Var.a3;
-            if (ii0Var2 != null) {
-                ii0Var2.n();
-            }
-            o40 o40Var = t7Var.s2;
-            if (o40Var != null) {
-                org.telegram.messenger.g0.E2(o40Var);
-                t7Var.s2.d(true);
-                t7Var.s2 = null;
-            }
-            t7Var.setActive(false);
-            t7Var.setIsVisible(false);
-            t7Var.u2 = false;
-            t7Var.x2.e(false, 0.0f);
-            t7Var.U0 = null;
-            t7Var.R2 = false;
-            t7Var.n0();
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab;
+        int i7 = this.a;
+        int i10 = this.b;
+        boolean z10 = this.c;
+        Object obj = this.d;
+        switch (i7) {
+            case 0:
+                v8 v8Var = (v8) obj;
+                if (!z10) {
+                    v8Var.getClass();
+                    break;
+                } else {
+                    v8Var.Q.remove(Integer.valueOf(i10));
+                    Runnable runnable = (Runnable) v8Var.R.remove(Integer.valueOf(i10));
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                l2.o0 o0Var = (l2.o0) obj;
+                m2.e eVar = o0Var.N;
+                int i11 = o0Var.a[i10].a.b;
+                m2.a U = eVar.U();
+                eVar.V(U, 1033, new li.p(U, i10, i11, z10));
+                break;
+            case 2:
+                np npVar = (np) obj;
+                int i12 = 0;
+                while (i12 < npVar.Q0.size()) {
+                    if (((so) npVar.Q0.get(i12)).a == i10) {
+                        npVar.Q0.remove(i12);
+                        i12--;
+                    }
+                    i12++;
+                }
+                npVar.R0 = null;
+                npVar.S0.clear();
+                npVar.getNotificationCenter().k(ns.O2, new Object[0]);
+                if (z10) {
+                    npVar.getNotificationCenter().k(3, new Object[0]);
+                    break;
+                }
+                break;
+            case 3:
+                HashMap hashMap = ((ez) obj).I;
+                Boolean bool = (Boolean) hashMap.get(Integer.valueOf(i10));
+                if (bool != null && bool.booleanValue() == z10) {
+                    hashMap.remove(Integer.valueOf(i10));
+                    break;
+                }
+                break;
+            case 4:
+                ((zd0) obj).a.b.x3(i10, z10);
+                break;
+            case 5:
+                kl0 kl0Var = (kl0) obj;
+                kl0Var.o = null;
+                kl0Var.c(i10, z10, true);
+                break;
+            case 6:
+                ys0 ys0Var = ((xq0) obj).a;
+                org.telegram.ui.ActionBar.e2 e2Var = ys0Var.y1;
+                if (e2Var != null) {
+                    if (z10) {
+                        TLRPC.TL_channels_setMainProfileTab tL_channels_setMainProfileTab = new TLRPC.TL_channels_setMainProfileTab();
+                        tL_channels_setMainProfileTab.tab = ys0.o0(i10, true);
+                        tL_channels_setMainProfileTab.channel = e2Var.getMessagesController().h1(ys0Var.g1.id);
+                        TLRPC.ChatFull chatFull = ys0Var.g1;
+                        chatFull.flags2 |= TLObject.FLAG_22;
+                        chatFull.main_tab = tL_channels_setMainProfileTab.tab;
+                        tL_account_setMainProfileTab = tL_channels_setMainProfileTab;
+                    } else {
+                        TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab2 = new TLRPC.TL_account_setMainProfileTab();
+                        TLRPC.ProfileTab o02 = ys0.o0(i10, true);
+                        tL_account_setMainProfileTab2.tab = o02;
+                        TLRPC.UserFull userFull = ys0Var.h1;
+                        tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
+                        if (userFull != null) {
+                            userFull.flags2 |= TLObject.FLAG_20;
+                            userFull.main_tab = o02;
+                            e2Var.getMessagesStorage().j2(ys0Var.h1, true);
+                            tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
+                        }
+                    }
+                    e2Var.getConnectionsManager().sendRequest(tL_account_setMainProfileTab, null);
+                    ys0Var.P1(true);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Components.xb I = org.telegram.ui.Components.cc.a0((hz) obj).I(z10 ? R.raw.folder_in : R.raw.folder_out, z10 ? hd.G(i10, "FolderLinkAddedChats", new Object[0]) : hd.G(i10, "FolderLinkRemovedChats", new Object[0]), hd.M0(2131750668, null));
+                I.j = 5000;
+                I.j();
+                break;
         }
-        w7Var.a = t7Var;
-        t7Var.setAccount(wVar.y0);
-        t7Var.setDelegate(wVar.B0);
-        t7Var.setLongpressed(q9Var.Z0);
-        w7Var.setTag(Integer.valueOf(i7));
-        ArrayList arrayList2 = wVar.x0;
-        if (arrayList2 != null) {
-            if (q9Var.Q0) {
-                i7 = (arrayList2.size() - 1) - i7;
-            }
-            ArrayList arrayList3 = (ArrayList) arrayList2.get(i7);
-            w7Var.c = arrayList3;
-            r6 r6Var = q9Var.N0;
-            if ((r6Var instanceof l6) || (r6Var instanceof u6)) {
-                ij f10 = r6Var.f(((Integer) arrayList3.get(0)).intValue());
-                w7Var.b = f10 == null ? wVar.w0 : ij.B0(f10.k);
-            } else {
-                w7Var.b = wVar.w0;
-            }
-        } else {
-            w7Var.c = null;
-            w7Var.b = ((Long) wVar.A0.get(i7)).longValue();
-        }
-        w7Var.addView(t7Var);
-        t7Var.requestLayout();
-        kVar.addView(w7Var);
-        return w7Var;
     }
 
-    @Override // c5.a
-    public final boolean f(View view, Object obj) {
-        return view == obj;
+    public /* synthetic */ u7(Object obj, boolean z10, int i7, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.c = z10;
+        this.b = i7;
     }
 }

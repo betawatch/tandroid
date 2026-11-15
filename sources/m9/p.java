@@ -1,10 +1,10 @@
 package m9;
 
-import c8.s9;
+import c8.r9;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p extends s implements Runnable {
     public y n;
@@ -13,13 +13,13 @@ public final class p extends s implements Runnable {
     @Override // m9.o
     public final void d() {
         y yVar = this.n;
-        boolean z9 = false;
+        boolean z10 = false;
         if ((yVar != null) & (this.a instanceof a)) {
             Object obj = this.a;
             if ((obj instanceof a) && ((a) obj).a) {
-                z9 = true;
+                z10 = true;
             }
-            yVar.cancel(z9);
+            yVar.cancel(z10);
         }
         this.n = null;
         this.r = null;
@@ -38,7 +38,7 @@ public final class p extends s implements Runnable {
         }
         if (kVar == null) {
             if (k10 != null) {
-                return rf.b.r(str, k10);
+                return r.b.v(str, k10);
             }
             return null;
         }
@@ -59,7 +59,7 @@ public final class p extends s implements Runnable {
         }
         try {
             try {
-                Object apply = kVar.apply(s9.a(yVar));
+                Object apply = kVar.apply(r9.a(yVar));
                 this.r = null;
                 m(apply);
             } catch (Throwable th2) {

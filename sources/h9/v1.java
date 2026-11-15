@@ -1,38 +1,29 @@
 package h9;
 
-import java.util.Map;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class v1 extends t0 {
     public final transient l0 d;
-    public final transient Object[] e;
-    public final transient int f;
-    public final transient int h;
+    public final transient w1 e;
 
-    public v1(l0 l0Var, Object[] objArr, int i7, int i10) {
+    public v1(l0 l0Var, w1 w1Var) {
         this.d = l0Var;
-        this.e = objArr;
-        this.f = i7;
-        this.h = i10;
+        this.e = w1Var;
     }
 
-    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection
     public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.d.get(key))) {
-                return true;
-            }
-        }
-        return false;
+        return this.d.get(obj) != null;
+    }
+
+    @Override // h9.t0, h9.d0
+    public final i0 f() {
+        return this.e;
     }
 
     @Override // h9.d0
     public final int i(int i7, Object[] objArr) {
-        return f().i(i7, objArr);
+        return this.e.i(i7, objArr);
     }
 
     @Override // h9.d0
@@ -42,17 +33,12 @@ public final class v1 extends t0 {
 
     @Override // h9.d0
     /* renamed from: n */
-    public final h2 iterator() {
-        return f().listIterator(0);
-    }
-
-    @Override // h9.t0
-    public final i0 r() {
-        return new u1(this);
+    public final g2 iterator() {
+        return this.e.listIterator(0);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return this.h;
+        return this.d.size();
     }
 }

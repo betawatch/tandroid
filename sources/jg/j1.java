@@ -1,49 +1,31 @@
 package jg;
 
-import di.i7;
-import org.telegram.messenger.qp;
-import org.telegram.ui.Cells.p2;
-import org.telegram.ui.Cells.t2;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.cn;
+import android.content.Context;
+import android.view.View;
+import fi.d6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.a41;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class j1 implements p2 {
-    public final /* synthetic */ m1 a;
+public final class j1 extends a41 {
+    public static final /* synthetic */ int b = 0;
 
-    public j1(m1 m1Var) {
-        this.a = m1Var;
+    static {
+        a41.h(new j1());
     }
 
-    @Override // org.telegram.ui.Cells.p2
-    public final boolean m() {
-        return false;
+    @Override // org.telegram.ui.Components.a41
+    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+        ((k1) view).a((d6) b41Var.G);
     }
 
-    @Override // org.telegram.ui.Cells.p2
-    public final void u(t2 t2Var) {
-        m1 m1Var = this.a;
-        cn cnVar = m1Var.f;
-        if (qp.s1(m1Var.r).P1().K(t2Var.getDialogId())) {
-            cnVar.getOrCreateStoryViewer().getClass();
-            cnVar.getOrCreateStoryViewer().J(m1Var.c, t2Var.getDialogId(), i7.a((pj0) t2Var.getParent()));
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.p2
-    public final void l(t2 t2Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.p2
-    public final void r(t2 t2Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.p2
-    public final void w(t2 t2Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.p2
-    public final void q() {
+    @Override // org.telegram.ui.Components.a41
+    public final View d(Context context, uj0 uj0Var, int i7, e6 e6Var) {
+        return new k1(context, e6Var);
     }
 }

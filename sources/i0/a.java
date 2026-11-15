@@ -1,9 +1,10 @@
 package i0;
 
 import android.graphics.Color;
-import org.telegram.messenger.qs;
+import com.google.android.gms.internal.vision.e2;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final ThreadLocal a = new ThreadLocal();
@@ -100,7 +101,7 @@ public abstract class a {
             A = 0.0f;
             abs = 0.0f;
         } else {
-            A = max == f10 ? ((f11 - f12) / f13) % 6.0f : max == f11 ? com.google.android.recaptcha.internal.a.A(f12, f10, f13, 2.0f) : com.google.android.recaptcha.internal.a.A(f10, f11, f13, 4.0f);
+            A = max == f10 ? ((f11 - f12) / f13) % 6.0f : max == f11 ? e2.A(f12, f10, f13, 2.0f) : e2.A(f10, f11, f13, 4.0f);
             abs = f13 / (1.0f - Math.abs((2.0f * f14) - 1.0f));
         }
         float f15 = (A * 60.0f) % 360.0f;
@@ -164,12 +165,12 @@ public abstract class a {
 
     public static int i(float f10, int i7, int i10) {
         int alpha = Color.alpha(i10);
-        int i11 = qs.e4;
+        int i11 = ns.e4;
         if (alpha != 255) {
             throw new IllegalArgumentException("background can not be translucent: #" + Integer.toHexString(i10));
         }
         double d = f10;
-        if (g(o(i7, qs.e4), i10) < d) {
+        if (g(o(i7, ns.e4), i10) < d) {
             return -1;
         }
         int i12 = 0;
@@ -203,7 +204,7 @@ public abstract class a {
     public static int k(int i7, int i10) {
         int alpha = Color.alpha(i10);
         int alpha2 = Color.alpha(i7);
-        int i11 = 255 - (((255 - alpha2) * (255 - alpha)) / qs.e4);
+        int i11 = 255 - (((255 - alpha2) * (255 - alpha)) / ns.e4);
         return Color.argb(i11, l(Color.red(i7), alpha2, Color.red(i10), alpha, i11), l(Color.green(i7), alpha2, Color.green(i10), alpha, i11), l(Color.blue(i7), alpha2, Color.blue(i10), alpha, i11));
     }
 
@@ -211,14 +212,14 @@ public abstract class a {
         if (i13 == 0) {
             return 0;
         }
-        return com.google.android.recaptcha.internal.a.e(qs.e4, i10, i11 * i12, (i7 * qs.e4) * i10) / (i13 * qs.e4);
+        return e2.v(ns.e4, i10, i11 * i12, (i7 * ns.e4) * i10) / (i13 * ns.e4);
     }
 
     public static int m(int i7) {
         if (i7 < 0) {
             return 0;
         }
-        return Math.min(i7, qs.e4);
+        return Math.min(i7, ns.e4);
     }
 
     public static double n(double d) {

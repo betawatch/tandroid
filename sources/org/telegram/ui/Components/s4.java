@@ -1,7 +1,41 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import java.util.HashSet;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface s4 {
-    void L(int i7, int i10, boolean z9);
+public class s4 extends EditTextBoldCursor implements org.telegram.ui.ActionBar.z5 {
+    public boolean M1;
+    public int N1;
+    public org.telegram.ui.ActionBar.e6 O1;
+    public int P1;
+
+    public final void A(int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.M1 = true;
+        this.N1 = i7;
+        this.O1 = e6Var;
+        int w02 = org.telegram.ui.ActionBar.j6.w0(i7, e6Var);
+        this.P1 = w02;
+        setCursorColor(w02);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void addColorKeys(HashSet hashSet) {
+        if (this.M1) {
+            hashSet.add(Integer.valueOf(this.N1));
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        int w02;
+        try {
+            if (this.M1 && (w02 = org.telegram.ui.ActionBar.j6.w0(this.N1, this.O1)) != this.P1) {
+                this.P1 = w02;
+                setCursorColor(w02);
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
 }

@@ -3,7 +3,7 @@ package b3;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class t {
     public static final a3.c g = new a3.c(10);
@@ -81,6 +81,6 @@ public final class t {
         if (arrayList.isEmpty()) {
             return Float.NaN;
         }
-        return ((s) jg.g.i(1, arrayList)).c;
+        return ((s) i5.c.h(1, arrayList)).c;
     }
 }

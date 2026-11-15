@@ -1,124 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.Timer;
-import org.telegram.messenger.beta.R;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class z50 extends org.telegram.ui.Components.oj0 {
-    public final Context c;
-    public ArrayList d = new ArrayList();
-    public ArrayList e = new ArrayList();
-    public Timer f;
-    public boolean h;
-    public final /* synthetic */ c60 n;
+public final class z50 extends y5 {
+    public final /* synthetic */ yw f;
 
-    public z50(c60 c60Var, Context context) {
-        this.n = c60Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z50(Bundle bundle, yw ywVar) {
+        super(bundle);
+        this.f = ywVar;
     }
 
-    @Override // v4.g0
-    public final void A(v4.d1 d1Var) {
-        View view = d1Var.a;
-        if (view instanceof org.telegram.ui.Cells.q4) {
-            ((org.telegram.ui.Cells.q4) view).a.getImageReceiver().c();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.oj0
-    public final boolean D(v4.d1 d1Var) {
-        return d1Var.f != 2;
-    }
-
-    public final void E(String str) {
-        try {
-            Timer timer = this.f;
-            if (timer != null) {
-                timer.cancel();
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-        if (str == null) {
-            this.d.clear();
-            this.e.clear();
-            f();
-        } else {
-            Timer timer2 = new Timer();
-            this.f = timer2;
-            timer2.schedule(new jg.q1(3, this, str), 200L, 300L);
-        }
-    }
-
-    @Override // v4.g0
-    public final int b() {
-        return this.h ? this.d.size() : this.n.w.size() + 2;
-    }
-
-    @Override // v4.g0
-    public final int d(int i7) {
-        if (this.h) {
-            return 0;
-        }
-        if (i7 == 0) {
-            return 1;
-        }
-        return i7 == 1 ? 2 : 0;
-    }
-
-    @Override // v4.g0
-    public final void f() {
-        super.f();
-        c60 c60Var = this.n;
-        z50 z50Var = c60Var.s;
-        if (z50Var == null || c60Var.y) {
+    @Override // org.telegram.ui.ActionBar.e2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || z11) {
             return;
         }
-        c60Var.r.setVisibility(z50Var.b() == 2 ? 0 : 4);
-    }
-
-    @Override // v4.g0
-    public final void t(v4.d1 d1Var, int i7) {
-        org.telegram.messenger.d5 d5Var;
-        CharSequence charSequence;
-        if (d1Var.f == 0) {
-            org.telegram.ui.Cells.q4 q4Var = (org.telegram.ui.Cells.q4) d1Var.a;
-            boolean z9 = this.h;
-            c60 c60Var = this.n;
-            if (z9) {
-                d5Var = (org.telegram.messenger.d5) this.d.get(i7);
-                charSequence = (CharSequence) this.e.get(i7);
-            } else {
-                d5Var = (org.telegram.messenger.d5) c60Var.w.get(i7 - 2);
-                charSequence = null;
-            }
-            q4Var.a(d5Var, charSequence);
-            boolean containsKey = c60Var.D.containsKey(d5Var.b);
-            org.telegram.ui.Components.wo woVar = q4Var.e;
-            if (woVar != null) {
-                woVar.a(containsKey, false);
-            }
-        }
-    }
-
-    @Override // v4.g0
-    public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        View view;
-        Context context = this.c;
-        if (i7 == 1) {
-            org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(context);
-            int i10 = org.telegram.ui.ActionBar.m6.G6;
-            m8Var.g(i10, i10);
-            m8Var.u(org.telegram.messenger.id.M0(2131745427, null), "", false, R.drawable.msg_shareout, false);
-            view = m8Var;
-        } else {
-            view = i7 == 2 ? new org.telegram.ui.Cells.y6(context, (org.telegram.ui.Cells.f1) null) : new org.telegram.ui.Cells.q4(context, true);
-        }
-        return new org.telegram.ui.Components.xi0(view);
+        this.f.removeSelfFromStack();
     }
 }

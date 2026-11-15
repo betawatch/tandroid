@@ -6,26 +6,26 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingRegistrar;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements u9.d {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u9.r b;
+    public final /* synthetic */ u9.q b;
 
-    public /* synthetic */ r(u9.r rVar, int i7) {
+    public /* synthetic */ r(u9.q qVar, int i7) {
         this.a = i7;
-        this.b = rVar;
+        this.b = qVar;
     }
 
     @Override // u9.d
-    public final Object e(r7 r7Var) {
+    public final Object i(r7 r7Var) {
         FirebaseMessaging lambda$getComponents$0;
         switch (this.a) {
             case 0:
                 lambda$getComponents$0 = FirebaseMessagingRegistrar.lambda$getComponents$0(this.b, r7Var);
                 return lambda$getComponents$0;
             default:
-                return new sa.c((Context) r7Var.a(Context.class), ((o9.g) r7Var.a(o9.g.class)).d(), r7Var.H(sa.d.class), r7Var.c(cb.b.class), (Executor) r7Var.e(this.b));
+                return new sa.c((Context) r7Var.a(Context.class), ((o9.g) r7Var.a(o9.g.class)).d(), r7Var.I(sa.d.class), r7Var.c(cb.b.class), (Executor) r7Var.e(this.b));
         }
     }
 }

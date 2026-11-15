@@ -1,125 +1,250 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ey extends oj0 {
-    public final boolean c;
-    public final /* synthetic */ gy d;
+public final /* synthetic */ class ey implements org.telegram.messenger.z10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fy b;
 
-    public ey(gy gyVar, boolean z9) {
-        this.d = gyVar;
-        this.c = z9;
+    public /* synthetic */ ey(fy fyVar, int i7) {
+        this.a = i7;
+        this.b = fyVar;
     }
 
-    @Override // org.telegram.ui.Components.oj0
-    public final boolean D(v4.d1 d1Var) {
-        return true;
-    }
-
-    @Override // v4.g0
-    public final int b() {
-        boolean z9 = this.c;
-        gy gyVar = this.d;
-        return (z9 ? gyVar.n1 : gyVar.m1).size();
-    }
-
-    @Override // v4.g0
-    public final int d(int i7) {
-        return 0;
-    }
-
-    @Override // v4.g0
-    public final void t(v4.d1 d1Var, int i7) {
-        ArrayList<TLRPC.Document> arrayList;
-        org.telegram.messenger.hc k10;
-        k9 k9Var = (k9) d1Var.a;
-        gy gyVar = this.d;
-        boolean z9 = this.c;
-        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) (z9 ? gyVar.n1 : gyVar.m1).get(i7);
-        k9Var.setTag(stickerSetCovered);
-        if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
-            arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
-        } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-            TLRPC.TL_messages_stickerSet m0 = org.telegram.messenger.ui.b0(gyVar.c1).m0(org.telegram.messenger.ui.Z(stickerSetCovered.set), false);
-            arrayList = m0 == null ? null : m0.documents;
-        } else {
-            arrayList = stickerSetCovered.covers;
-        }
-        TLRPC.Document document = stickerSetCovered.cover;
-        if (document == null) {
-            if (arrayList == null || arrayList.isEmpty()) {
-                document = null;
-            } else {
-                if (stickerSetCovered.set != null) {
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        if (arrayList.get(i10).id == stickerSetCovered.set.thumb_document_id) {
-                            document = arrayList.get(i10);
-                            break;
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x01c1, code lost:
+    
+        if (r7.charAt(r10) <= 57343) goto L71;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x01de, code lost:
+    
+        if (r7.charAt(r10) != 9794) goto L81;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r7v12, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r7v8, types: [java.lang.CharSequence] */
+    @Override // org.telegram.messenger.z10
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Object obj) {
+        int A1;
+        int A12;
+        int i7 = this.a;
+        int i10 = 3;
+        fy fyVar = this.b;
+        switch (i7) {
+            case 0:
+                fyVar.a((Runnable) obj, true);
+                break;
+            case 1:
+                Runnable runnable = (Runnable) obj;
+                ArrayList arrayList = fyVar.s;
+                LongSparseArray longSparseArray = fyVar.w;
+                gy gyVar = fyVar.x;
+                HashMap hashMap = org.telegram.messenger.si.b0(gyVar.R.d1).e0;
+                HashSet hashSet = new HashSet();
+                ArrayList arrayList2 = new ArrayList();
+                for (ArrayList arrayList3 : hashMap.values()) {
+                    int size = arrayList3.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        Object obj2 = arrayList3.get(i11);
+                        i11++;
+                        TLRPC.Document document = (TLRPC.Document) obj2;
+                        if (!hashSet.contains(Long.valueOf(document.id)) && org.telegram.messenger.gj.X3(document)) {
+                            hashSet.add(Long.valueOf(document.id));
+                            arrayList2.add(document);
+                            longSparseArray.put(document.id, document);
                         }
                     }
                 }
-                document = null;
-                if (document == null) {
-                    document = arrayList.get(0);
+                ArrayList arrayList4 = org.telegram.messenger.si.b0(gyVar.R.d1).t0[0];
+                int size2 = arrayList4.size();
+                int i12 = 0;
+                while (i12 < size2) {
+                    Object obj3 = arrayList4.get(i12);
+                    i12++;
+                    TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) obj3;
+                    TLRPC.Document document2 = stickerSetCovered.cover;
+                    if (document2 != null && !hashSet.contains(Long.valueOf(document2.id)) && org.telegram.messenger.gj.X3(stickerSetCovered.cover)) {
+                        hashSet.add(Long.valueOf(stickerSetCovered.cover.id));
+                        arrayList2.add(stickerSetCovered.cover);
+                        TLRPC.Document document3 = stickerSetCovered.cover;
+                        longSparseArray.put(document3.id, document3);
+                    }
+                    ArrayList<TLRPC.Document> arrayList5 = stickerSetCovered.covers;
+                    if (arrayList5 != null) {
+                        int size3 = arrayList5.size();
+                        int i13 = 0;
+                        while (i13 < size3) {
+                            TLRPC.Document document4 = arrayList5.get(i13);
+                            i13++;
+                            TLRPC.Document document5 = document4;
+                            Runnable runnable2 = runnable;
+                            if (!hashSet.contains(Long.valueOf(document5.id)) && org.telegram.messenger.gj.X3(document5)) {
+                                hashSet.add(Long.valueOf(document5.id));
+                                arrayList2.add(document5);
+                                longSparseArray.put(document5.id, document5);
+                            }
+                            runnable = runnable2;
+                        }
+                    }
+                    runnable = runnable;
                 }
-            }
+                Runnable runnable3 = runnable;
+                if (!arrayList2.isEmpty()) {
+                    arrayList.addAll(arrayList2);
+                    fyVar.f.put(arrayList, gyVar.O);
+                    fyVar.h.add(arrayList);
+                }
+                runnable3.run();
+                break;
+            case 2:
+                fyVar.a((Runnable) obj, false);
+                break;
+            case 3:
+                org.telegram.messenger.si.b0(fyVar.x.R.d1).Y1(false, fyVar.a, new gh(6, fyVar, (Runnable) obj));
+                break;
+            case 4:
+                Runnable runnable4 = (Runnable) obj;
+                gy gyVar2 = fyVar.x;
+                ArrayList arrayList6 = fyVar.s;
+                if (fyVar.a.length() <= 14) {
+                    HashMap hashMap2 = org.telegram.messenger.si.b0(gyVar2.R.d1).e0;
+                    String str = fyVar.a;
+                    int length = str.length();
+                    int i14 = 0;
+                    String str2 = str;
+                    while (i14 < length) {
+                        if (i14 < length - 1) {
+                            if (str2.charAt(i14) == 55356) {
+                                int i15 = i14 + 1;
+                                if (str2.charAt(i15) >= 57339) {
+                                    break;
+                                }
+                            }
+                            if (str2.charAt(i14) == 8205) {
+                                int i16 = i14 + 1;
+                                if (str2.charAt(i16) != 9792) {
+                                    break;
+                                }
+                                length -= 2;
+                                str2 = TextUtils.concat(str2.subSequence(0, i14), str2.subSequence(i14 + 2, str2.length()));
+                                i14--;
+                                i14++;
+                                str2 = str2;
+                            }
+                        }
+                        if (str2.charAt(i14) == 65039) {
+                            length--;
+                            str2 = TextUtils.concat(str2.subSequence(0, i14), str2.subSequence(i14 + 1, str2.length()));
+                            i14--;
+                            i14++;
+                            str2 = str2;
+                        } else {
+                            i14++;
+                            str2 = str2;
+                        }
+                    }
+                    ArrayList arrayList7 = hashMap2 != null ? (ArrayList) hashMap2.get(str2.toString()) : null;
+                    if (arrayList7 != null && !arrayList7.isEmpty()) {
+                        arrayList6.addAll(arrayList7);
+                        int size4 = arrayList7.size();
+                        for (int i17 = 0; i17 < size4; i17++) {
+                            TLRPC.Document document6 = (TLRPC.Document) arrayList7.get(i17);
+                            fyVar.w.put(document6.id, document6);
+                        }
+                        fyVar.f.put(arrayList6, gyVar2.O);
+                        fyVar.h.add(arrayList6);
+                    }
+                }
+                runnable4.run();
+                break;
+            case 5:
+                Runnable runnable5 = (Runnable) obj;
+                gy gyVar3 = fyVar.x;
+                ly lyVar = gyVar3.R;
+                int i18 = lyVar.d1;
+                HashMap hashMap3 = org.telegram.messenger.si.b0(i18).e0;
+                if (hashMap3 != null && !hashMap3.isEmpty() && fyVar.a.length() > 1) {
+                    String[] G0 = org.telegram.messenger.g0.G0();
+                    if (!Arrays.equals(lyVar.X0, G0)) {
+                        org.telegram.messenger.si.b0(i18).M(G0, false);
+                    }
+                    lyVar.X0 = G0;
+                    org.telegram.messenger.si.b0(i18).U(lyVar.X0, gyVar3.O, true, new km(fyVar, hashMap3, runnable5, i10), false);
+                    break;
+                } else {
+                    runnable5.run();
+                    break;
+                }
+            case 6:
+                Runnable runnable6 = (Runnable) obj;
+                HashMap hashMap4 = fyVar.d;
+                HashMap hashMap5 = fyVar.e;
+                ArrayList arrayList8 = fyVar.c;
+                gy gyVar4 = fyVar.x;
+                ArrayList s02 = org.telegram.messenger.si.b0(gyVar4.R.d1).s0(0);
+                ly lyVar2 = gyVar4.R;
+                int i19 = lyVar2.d1;
+                int i20 = lyVar2.d1;
+                org.telegram.messenger.np.s1(i19).w0(s02);
+                int size5 = s02.size();
+                for (int i21 = 0; i21 < size5; i21++) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) s02.get(i21);
+                    int A13 = org.telegram.messenger.g0.A1(tL_messages_stickerSet.set.title, gyVar4.O);
+                    if (A13 < 0) {
+                        String str3 = tL_messages_stickerSet.set.short_name;
+                        if (str3 != null && (A12 = org.telegram.messenger.g0.A1(str3, gyVar4.O)) >= 0 && (A12 == 0 || tL_messages_stickerSet.set.short_name.charAt(A12 - 1) == ' ')) {
+                            arrayList8.add(tL_messages_stickerSet);
+                            hashMap4.put(tL_messages_stickerSet, Boolean.TRUE);
+                        }
+                    } else if (A13 == 0 || tL_messages_stickerSet.set.title.charAt(A13 - 1) == ' ') {
+                        arrayList8.add(tL_messages_stickerSet);
+                        hashMap5.put(tL_messages_stickerSet, Integer.valueOf(A13));
+                    }
+                }
+                ArrayList s03 = org.telegram.messenger.si.b0(i20).s0(3);
+                org.telegram.messenger.np.s1(i20).w0(s03);
+                int size6 = s03.size();
+                for (int i22 = 0; i22 < size6; i22++) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) s03.get(i22);
+                    int A14 = org.telegram.messenger.g0.A1(tL_messages_stickerSet2.set.title, gyVar4.O);
+                    if (A14 < 0) {
+                        String str4 = tL_messages_stickerSet2.set.short_name;
+                        if (str4 != null && (A1 = org.telegram.messenger.g0.A1(str4, gyVar4.O)) >= 0 && (A1 == 0 || tL_messages_stickerSet2.set.short_name.charAt(A1 - 1) == ' ')) {
+                            arrayList8.add(tL_messages_stickerSet2);
+                            hashMap4.put(tL_messages_stickerSet2, Boolean.TRUE);
+                        }
+                    } else if (A14 == 0 || tL_messages_stickerSet2.set.title.charAt(A14 - 1) == ' ') {
+                        arrayList8.add(tL_messages_stickerSet2);
+                        hashMap5.put(tL_messages_stickerSet2, Integer.valueOf(A14));
+                    }
+                }
+                runnable6.run();
+                break;
+            default:
+                Runnable runnable7 = (Runnable) obj;
+                gy gyVar5 = fyVar.x;
+                if (org.telegram.messenger.j6.d(gyVar5.O)) {
+                    TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
+                    tL_messages_getStickers.emoticon = fyVar.a;
+                    tL_messages_getStickers.hash = 0L;
+                    gyVar5.M = ConnectionsManager.getInstance(gyVar5.R.d1).sendRequest(tL_messages_getStickers, new bi.j6(fyVar, tL_messages_getStickers, runnable7, 15));
+                    break;
+                } else {
+                    runnable7.run();
+                    break;
+                }
         }
-        if (document == null) {
-            return;
-        }
-        if (z9) {
-            k9Var.setColorFilter(org.telegram.messenger.ij.C4(document) ? org.telegram.ui.ActionBar.m6.o0(gyVar.Z1) : null);
-        }
-        TLObject w10 = org.telegram.messenger.w7.w(stickerSetCovered.set.thumbs, 90, false, null, false);
-        org.telegram.messenger.rz d = org.telegram.messenger.t5.d(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.m6.c7, 0.2f, false);
-        if (d != null) {
-            d.e = 512;
-            d.f = 512;
-        }
-        if (w10 == null || org.telegram.messenger.ij.N4(document)) {
-            w10 = document;
-        }
-        boolean z10 = w10 instanceof TLRPC.Document;
-        if (z10) {
-            k10 = org.telegram.messenger.hc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document);
-        } else if (!(w10 instanceof TLRPC.PhotoSize)) {
-            return;
-        } else {
-            k10 = org.telegram.messenger.hc.k((TLRPC.PhotoSize) w10, document, stickerSetCovered.set.thumb_version);
-        }
-        org.telegram.messenger.hc hcVar = k10;
-        if (hcVar == null) {
-            return;
-        }
-        String str = !org.telegram.messenger.sc.e(z9 ? 16388 : 1) ? "30_30_firstframe" : "30_30";
-        if (z10 && (org.telegram.messenger.ij.K2(document, true) || org.telegram.messenger.ij.N4(document))) {
-            if (d != null) {
-                k9Var.p(org.telegram.messenger.hc.b(document), str, d, stickerSetCovered);
-                return;
-            } else {
-                k9Var.l(org.telegram.messenger.hc.b(document), str, hcVar, null, 0, stickerSetCovered);
-                return;
-            }
-        }
-        if (hcVar.p == 1) {
-            k9Var.k(hcVar, str, "tgs", d, stickerSetCovered);
-        } else {
-            k9Var.k(hcVar, null, "webp", d, stickerSetCovered);
-        }
-    }
-
-    @Override // v4.g0
-    public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        dy dyVar = new dy(this, this.d.getContext());
-        dyVar.u(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
-        dyVar.setLayerNum(1);
-        dyVar.setAspectFit(true);
-        dyVar.setLayoutParams(new v4.o0(org.telegram.messenger.g0.L(34.0f), org.telegram.messenger.g0.L(34.0f)));
-        return new xi0(dyVar);
     }
 }

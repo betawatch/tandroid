@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class d1 implements Cloneable {
     public final f1 a;
@@ -15,9 +15,9 @@ public abstract class d1 implements Cloneable {
     }
 
     public static void b(f1 f1Var, f1 f1Var2) {
-        k2 k2Var = k2.c;
-        k2Var.getClass();
-        k2Var.a(f1Var.getClass()).e(f1Var, f1Var2);
+        l2 l2Var = l2.c;
+        l2Var.getClass();
+        l2Var.a(f1Var.getClass()).e(f1Var, f1Var2);
     }
 
     public final void a(f1 f1Var) {
@@ -34,14 +34,14 @@ public abstract class d1 implements Cloneable {
             this.c = false;
         }
         try {
-            k2 k2Var = k2.c;
+            l2 l2Var = l2.c;
             f1 f1Var = this.b;
-            k2Var.getClass();
-            n2 a10 = k2Var.a(f1Var.getClass());
+            l2Var.getClass();
+            o2 a10 = l2Var.a(f1Var.getClass());
             f1 f1Var2 = this.b;
-            com.google.android.gms.internal.clearcut.m mVar = new com.google.android.gms.internal.clearcut.m();
+            com.google.android.gms.internal.clearcut.l lVar = new com.google.android.gms.internal.clearcut.l();
             u0Var.getClass();
-            a10.f(f1Var2, bArr, 0, i7, mVar);
+            a10.f(f1Var2, bArr, 0, i7, lVar);
         } catch (n1 e10) {
             throw e10;
         } catch (IOException e11) {
@@ -68,28 +68,28 @@ public abstract class d1 implements Cloneable {
             return this.b;
         }
         f1 f1Var = this.b;
-        k2 k2Var = k2.c;
-        k2Var.getClass();
-        k2Var.a(f1Var.getClass()).b(f1Var);
+        l2 l2Var = l2.c;
+        l2Var.getClass();
+        l2Var.a(f1Var.getClass()).b(f1Var);
         this.c = true;
         return this.b;
     }
 
     public final f1 f() {
         f1 e10 = e();
-        boolean z9 = true;
+        boolean z10 = true;
         byte byteValue = ((Byte) e10.e(1)).byteValue();
         if (byteValue != 1) {
             if (byteValue == 0) {
-                z9 = false;
+                z10 = false;
             } else {
-                k2 k2Var = k2.c;
-                k2Var.getClass();
-                z9 = k2Var.a(e10.getClass()).a(e10);
+                l2 l2Var = l2.c;
+                l2Var.getClass();
+                z10 = l2Var.a(e10.getClass()).a(e10);
                 e10.e(2);
             }
         }
-        if (z9) {
+        if (z10) {
             return e10;
         }
         throw new androidx.car.app.j("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");

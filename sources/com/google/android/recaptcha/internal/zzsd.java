@@ -1,10 +1,11 @@
 package com.google.android.recaptcha.internal;
 
+import com.google.android.gms.internal.vision.e2;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzsd {
     private static final zzsd zzb = new zzsd(true);
@@ -137,10 +138,10 @@ final class zzsd {
     private final void zzm(Map.Entry entry) {
         zzsc zzscVar = (zzsc) entry.getKey();
         Object value = entry.getValue();
-        boolean z9 = value instanceof zztc;
+        boolean z10 = value instanceof zztc;
         zzscVar.zzg();
         if (zzscVar.zze() != zzvh.zzi) {
-            if (z9) {
+            if (z10) {
                 throw new IllegalStateException("Lazy fields must be message-valued");
             }
             this.zza.put(zzscVar, zzl(value));
@@ -148,13 +149,13 @@ final class zzsd {
         }
         Object zze = zze(zzscVar);
         if (zze != null) {
-            if (z9) {
+            if (z10) {
                 throw null;
             }
             this.zza.put(zzscVar, zze instanceof zztx ? zzscVar.zzc((zztx) zze, (zztx) value) : zzscVar.zzb(((zzts) zze).zzag(), (zzts) value).zzk());
         } else {
             this.zza.put(zzscVar, zzl(value));
-            if (z9) {
+            if (z10) {
                 this.zzd = true;
             }
         }
@@ -194,7 +195,7 @@ final class zzsd {
             zzA = zzqv.zzA(zza) + zzqv.zzA(16);
             int zzA3 = zzqv.zzA(24);
             int zza2 = ((zztc) value).zza();
-            zzx = a.d(zza2, zza2, zzA3);
+            zzx = e2.u(zza2, zza2, zzA3);
         } else {
             int zza3 = ((zzsc) entry.getKey()).zza();
             int zzA4 = zzqv.zzA(8);
@@ -319,7 +320,7 @@ final class zzsd {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void zzi(zzsc zzscVar, Object obj) {
-        boolean z9;
+        boolean z10;
         zzscVar.zzg();
         zzscVar.zzd();
         byte[] bArr = zzsv.zzb;
@@ -328,22 +329,22 @@ final class zzsd {
         zzvh zzvhVar = zzvh.zza;
         switch (r0.zza()) {
             case zza:
-                z9 = obj instanceof Integer;
+                z10 = obj instanceof Integer;
                 break;
             case zzb:
-                z9 = obj instanceof Long;
+                z10 = obj instanceof Long;
                 break;
             case zzc:
-                z9 = obj instanceof Float;
+                z10 = obj instanceof Float;
                 break;
             case zzd:
-                z9 = obj instanceof Double;
+                z10 = obj instanceof Double;
                 break;
             case zze:
-                z9 = obj instanceof Boolean;
+                z10 = obj instanceof Boolean;
                 break;
             case zzf:
-                z9 = obj instanceof String;
+                z10 = obj instanceof String;
                 break;
             case zzg:
                 if (!(obj instanceof zzqm)) {
@@ -396,7 +397,7 @@ final class zzsd {
         return true;
     }
 
-    private zzsd(boolean z9) {
+    private zzsd(boolean z10) {
         zzg();
         zzg();
     }

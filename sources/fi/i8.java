@@ -1,53 +1,22 @@
 package fi;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import org.telegram.ui.pa0;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class i8 extends v4.k {
-    public final /* synthetic */ n8 F;
+public final class i8 extends pa0 {
+    public final /* synthetic */ int S0;
 
-    public i8(n8 n8Var) {
-        this.F = n8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i8(int i7, int i10) {
+        super(i7);
+        this.S0 = i10;
     }
 
-    @Override // v4.k
-    public final void M() {
-        n8 n8Var = this.F;
-        s8 s8Var = n8Var.W;
-        int i7 = s8.X1;
-        s8Var.b.invalidate();
-        n8Var.e.invalidate();
-    }
-
-    @Override // v4.k
-    public final void O() {
-        n8 n8Var = this.F;
-        s8 s8Var = n8Var.W;
-        int i7 = s8.X1;
-        s8Var.b.invalidate();
-        n8Var.e.invalidate();
-    }
-
-    @Override // v4.k
-    public final void P(v4.d1 d1Var) {
-        n8 n8Var = this.F;
-        s8 s8Var = n8Var.W;
-        int i7 = s8.X1;
-        s8Var.b.invalidate();
-        n8Var.e.invalidate();
-        n8Var.f.invalidate();
-    }
-
-    @Override // v4.k
-    public final void Q() {
-        n8 n8Var = this.F;
-        s8 s8Var = n8Var.W;
-        int i7 = s8.X1;
-        s8Var.b.invalidate();
-        n8Var.e.invalidate();
-    }
-
-    @Override // v4.f1
-    public final boolean t(v4.d1 d1Var) {
+    @Override // org.telegram.ui.pa0
+    public final boolean o0() {
+        switch (this.S0) {
+        }
         return true;
     }
 }

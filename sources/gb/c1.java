@@ -1,29 +1,26 @@
 package gb;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class c1 {
-    public static final c1 a;
-    public static final c1 b;
-    public static final /* synthetic */ c1[] c;
+public final class c1 extends kd.c {
+    public String a;
+    public a1 b;
+    public /* synthetic */ Object c;
+    public final /* synthetic */ d1 d;
+    public int e;
 
-    static {
-        c1 c1Var = new c1("GENERAL", 0);
-        a = c1Var;
-        c1 c1Var2 = new c1("FALLBACK", 1);
-        b = c1Var2;
-        c1[] c1VarArr = {c1Var, c1Var2};
-        c = c1VarArr;
-        c8.j1.a(c1VarArr);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c1(d1 d1Var, id.c cVar) {
+        super(cVar);
+        this.d = d1Var;
     }
 
-    public static c1 valueOf(String str) {
-        return (c1) Enum.valueOf(c1.class, str);
-    }
-
-    public static c1[] values() {
-        return (c1[]) c.clone();
+    @Override // kd.a
+    public final Object invokeSuspend(Object obj) {
+        this.c = obj;
+        this.e |= TLObject.FLAG_31;
+        return d1.a(this.d, null, null, this);
     }
 }

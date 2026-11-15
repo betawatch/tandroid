@@ -6,15 +6,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j {
-    public static final f5.a b = new f5.a("LibraryVersion", "");
+    public static final k8.a b = new k8.a("LibraryVersion", "");
     public static final j c = new j();
     public final ConcurrentHashMap a = new ConcurrentHashMap();
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00f8  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00ff  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0104  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -22,7 +22,7 @@ public final class j {
         IOException e10;
         String str2;
         InputStream inputStream;
-        f5.a aVar = b;
+        k8.a aVar = b;
         m.f(str, "Please provide a valid libraryName");
         ConcurrentHashMap concurrentHashMap = this.a;
         if (concurrentHashMap.containsKey(str)) {
@@ -32,16 +32,16 @@ public final class j {
         InputStream inputStream2 = null;
         r7 = null;
         String str3 = null;
-        inputStream2 = null;
+        InputStream inputStream3 = null;
         try {
             try {
                 inputStream = j.class.getResourceAsStream("/" + str + ".properties");
-            } catch (IOException e11) {
-                e10 = e11;
-                str2 = null;
+            } catch (Throwable th2) {
+                th = th2;
             }
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (IOException e11) {
+            e10 = e11;
+            str2 = null;
         }
         try {
             if (inputStream != null) {
@@ -52,8 +52,8 @@ public final class j {
                 sb2.append(" version is ");
                 sb2.append(str3);
                 String sb3 = sb2.toString();
-                if (Log.isLoggable(aVar.a, 2)) {
-                    String str4 = aVar.b;
+                if (Log.isLoggable((String) aVar.b, 2)) {
+                    String str4 = (String) aVar.c;
                     if (str4 != null) {
                         sb3 = str4.concat(sb3);
                     }
@@ -64,8 +64,8 @@ public final class j {
                 sb4.append("Failed to get app version for libraryName: ");
                 sb4.append(str);
                 String sb5 = sb4.toString();
-                if (Log.isLoggable(aVar.a, 5)) {
-                    String str5 = aVar.b;
+                if (Log.isLoggable((String) aVar.b, 5)) {
+                    String str5 = (String) aVar.c;
                     if (str5 != null) {
                         sb5 = str5.concat(sb5);
                     }
@@ -80,16 +80,16 @@ public final class j {
             sb6.append("Failed to get app version for libraryName: ");
             sb6.append(str);
             String sb7 = sb6.toString();
-            if (Log.isLoggable(aVar.a, 6)) {
-                String str6 = aVar.b;
+            if (Log.isLoggable((String) aVar.b, 6)) {
+                String str6 = (String) aVar.c;
                 if (str6 != null) {
                     sb7 = str6.concat(sb7);
                 }
                 Log.e("LibraryVersion", sb7, e10);
             }
-            InputStream inputStream3 = inputStream2;
+            InputStream inputStream4 = inputStream2;
             str3 = str2;
-            inputStream = inputStream3;
+            inputStream = inputStream4;
             if (inputStream != null) {
             }
             if (str3 == null) {
@@ -98,9 +98,9 @@ public final class j {
             return str3;
         } catch (Throwable th3) {
             th = th3;
-            inputStream2 = inputStream;
-            if (inputStream2 != null) {
-                x6.b.a(inputStream2);
+            inputStream3 = inputStream;
+            if (inputStream3 != null) {
+                x6.b.a(inputStream3);
             }
             throw th;
         }
@@ -108,8 +108,8 @@ public final class j {
             x6.b.a(inputStream);
         }
         if (str3 == null) {
-            if (Log.isLoggable(aVar.a, 3)) {
-                String str7 = aVar.b;
+            if (Log.isLoggable((String) aVar.b, 3)) {
+                String str7 = (String) aVar.c;
                 Log.d("LibraryVersion", str7 != null ? str7.concat(".properties file is dropped during release process. Failure to read app version is expected during Google internal testing where locally-built libraries are used") : ".properties file is dropped during release process. Failure to read app version is expected during Google internal testing where locally-built libraries are used");
             }
             str3 = "UNKNOWN";

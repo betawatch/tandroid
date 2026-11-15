@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q0 extends u0 {
     public static final PathInterpolator e = new PathInterpolator(0.0f, 1.1f, 0.0f, 1.0f);
@@ -18,7 +18,7 @@ public final class q0 extends u0 {
     public static final AccelerateInterpolator h = new AccelerateInterpolator(1.5f);
 
     public static void e(View view, v0 v0Var) {
-        bi.b1 i7 = i(view);
+        com.google.android.gms.common.api.q i7 = i(view);
         if (i7 != null) {
             i7.V0();
             return;
@@ -31,24 +31,24 @@ public final class q0 extends u0 {
         }
     }
 
-    public static void f(View view, k1 k1Var, boolean z9) {
-        bi.b1 i7 = i(view);
+    public static void f(View view, k1 k1Var, boolean z10) {
+        com.google.android.gms.common.api.q i7 = i(view);
         if (i7 != null) {
             i7.a = k1Var;
-            if (!z9) {
-                z9 = true;
+            if (!z10) {
+                z10 = true;
             }
         }
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-                f(viewGroup.getChildAt(i10), k1Var, z9);
+                f(viewGroup.getChildAt(i10), k1Var, z10);
             }
         }
     }
 
     public static void g(View view, k1 k1Var, List list) {
-        bi.b1 i7 = i(view);
+        com.google.android.gms.common.api.q i7 = i(view);
         if (i7 != null) {
             i7.W0(k1Var, list);
             return;
@@ -61,8 +61,8 @@ public final class q0 extends u0 {
         }
     }
 
-    public static void h(View view, v0 v0Var, j2.n nVar) {
-        bi.b1 i7 = i(view);
+    public static void h(View view, v0 v0Var, k8.a aVar) {
+        com.google.android.gms.common.api.q i7 = i(view);
         if (i7 != null) {
             rh.d dVar = (rh.d) i7;
             if (dVar.c == 0) {
@@ -77,12 +77,12 @@ public final class q0 extends u0 {
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-                h(viewGroup.getChildAt(i10), v0Var, nVar);
+                h(viewGroup.getChildAt(i10), v0Var, aVar);
             }
         }
     }
 
-    public static bi.b1 i(View view) {
+    public static com.google.android.gms.common.api.q i(View view) {
         Object tag = view.getTag(R.id.tag_window_insets_animation_callback);
         if (tag instanceof p0) {
             return ((p0) tag).a;

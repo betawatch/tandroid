@@ -1,29 +1,24 @@
 package y7;
 
-import a8.wa;
-import a8.xa;
-import android.content.Context;
+import a8.ab;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class f9 implements d9 {
-    public final u9.n a;
-    public final b9 b;
+public abstract class f9 {
+    public static ab a;
 
-    public f9(Context context, b9 b9Var) {
-        this.b = b9Var;
-        m5.a aVar = m5.a.e;
-        o5.s.b(context);
-        o5.q c10 = o5.s.a().c(aVar);
-        if (m5.a.d.contains(new l5.c("json"))) {
-            new u9.n(new xa(c10, 4));
+    public static synchronized d9 a(a9 a9Var) {
+        d9 d9Var;
+        synchronized (f9.class) {
+            try {
+                if (a == null) {
+                    a = new ab(3);
+                }
+                d9Var = (d9) a.R0(a9Var);
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        this.a = new u9.n(new xa(c10, 5));
-    }
-
-    @Override // y7.d9
-    public final void a(wa waVar) {
-        this.b.getClass();
-        ((o5.r) this.a.get()).a(waVar.b != 0 ? l5.a.a(waVar.E()) : new l5.a(null, waVar.E(), l5.d.b, null), new ni.a(3));
+        return d9Var;
     }
 }

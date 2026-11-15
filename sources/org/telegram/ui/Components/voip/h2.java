@@ -1,155 +1,184 @@
 package org.telegram.ui.Components.voip;
 
+import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Point;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+import android.view.ViewParent;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import bi.de;
-import org.telegram.ui.ActionBar.p5;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ec1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class h2 extends FrameLayout {
-    public TextView[] a;
-    public TextView b;
-    public FrameLayout c;
-    public l2 d;
-    public CharSequence e;
-    public boolean f;
-    public ValueAnimator h;
-    public boolean n;
+    public static final /* synthetic */ int h = 0;
+    public final float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public final /* synthetic */ i2 f;
 
-    public final void a(View view, View view2, Runnable runnable) {
-        view.setVisibility(0);
-        view2.setVisibility(0);
-        view2.setTranslationY(org.telegram.messenger.g0.L(15.0f));
-        view2.setAlpha(0.0f);
-        this.f = true;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.h = ofFloat;
-        ofFloat.addUpdateListener(new de(19, view2, view));
-        this.h.addListener(new jg.j0((FrameLayout) this, view, view2, (Object) runnable, 4));
-        this.h.setDuration(250L).setInterpolator(wq.f);
-        this.h.start();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h2(i2 i2Var, Context context) {
+        super(context);
+        this.f = i2Var;
+        this.a = ViewConfiguration.get(context).getScaledTouchSlop();
+        setOutlineProvider(new bg.p0(18));
+        setClipToOutline(true);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void b(String str, boolean z9, boolean z10) {
-        View view = this.d;
-        TextView[] textViewArr = this.a;
-        if (z9) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-            SpannableString spannableString = new SpannableString(".");
-            spannableString.setSpan(new kg.o1(textViewArr), 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) spannableString);
-            str = spannableStringBuilder;
-        }
-        if (TextUtils.isEmpty(textViewArr[0].getText())) {
-            z10 = false;
-        }
-        if (!z10) {
-            ValueAnimator valueAnimator = this.h;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.f = false;
-            textViewArr[0].setText(str);
-            textViewArr[0].setVisibility(0);
-            textViewArr[1].setVisibility(8);
-            view.setVisibility(8);
-            return;
-        }
-        if (this.f) {
-            this.e = str;
-            return;
-        }
-        if (this.n) {
-            textViewArr[0].setText(str);
-            a(view, textViewArr[0], null);
-        } else {
-            if (textViewArr[0].getText().equals(str)) {
-                return;
-            }
-            textViewArr[1].setText(str);
-            a(textViewArr[0], textViewArr[1], new p5(this, 5));
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        i2 i2Var = this.f;
+        i2Var.r.setPivotX(i2Var.s.getMeasuredWidth());
+        i2Var.r.setPivotY(i2Var.s.getMeasuredHeight());
+        i2Var.r.setTranslationX((1.0f / getScaleX()) * (-org.telegram.messenger.g0.L(4.0f)) * i2Var.w);
+        i2Var.r.setTranslationY((1.0f / getScaleY()) * (-org.telegram.messenger.g0.L(4.0f)) * i2Var.w);
+        i2Var.r.setRoundCorners((1.0f / getScaleY()) * org.telegram.messenger.g0.L(8.0f) * i2Var.w);
+        i2Var.r.setScaleX(((1.0f - i2Var.w) * 0.6f) + 0.4f);
+        i2Var.r.setScaleY(((1.0f - i2Var.w) * 0.6f) + 0.4f);
+        i2Var.r.setAlpha(Math.min(1.0f, 1.0f - i2Var.w));
+        super.dispatchDraw(canvas);
     }
 
-    public final void c(boolean z9) {
-        FrameLayout frameLayout = this.c;
-        if (!z9) {
-            if (frameLayout.getVisibility() == 8) {
-                return;
-            }
-            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(wq.f).setListener(new g2(this, 1)).setDuration(300L).start();
-        } else {
-            if (frameLayout.getVisibility() == 0) {
-                return;
-            }
-            frameLayout.setVisibility(0);
-            frameLayout.setAlpha(0.0f);
-            frameLayout.setScaleY(0.6f);
-            frameLayout.setScaleX(0.6f);
-            frameLayout.animate().setListener(null).cancel();
-            org.telegram.messenger.camera.q.l(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), wq.k, 300L);
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        this.b = org.telegram.messenger.g0.L(16.0f);
+        this.c = org.telegram.messenger.g0.L(16.0f);
+        this.d = org.telegram.messenger.g0.L(60.0f);
+        this.e = org.telegram.messenger.g0.L(16.0f);
     }
 
-    public final void d(boolean z9, boolean z10) {
-        TextView textView = this.b;
-        if (!z10) {
-            textView.animate().setListener(null).cancel();
-            textView.setVisibility(z9 ? 0 : 8);
-        } else {
-            if (!z9) {
-                textView.animate().alpha(0.0f).setListener(new g2(this, 0)).setDuration(150L).start();
-                return;
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x002b, code lost:
+    
+        if (r4 != 3) goto L63;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        i2 i2Var = this.f;
+        if (i2.T || i2.U == null) {
+            return false;
+        }
+        org.telegram.messenger.g0.r(i2Var.O);
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
+        ViewParent parent = getParent();
+        int action = motionEvent.getAction();
+        if (action != 0) {
+            if (action != 1) {
+                if (action == 2) {
+                    i2 i2Var2 = this.f;
+                    float f10 = rawX - i2Var2.J;
+                    float f11 = rawY - i2Var2.K;
+                    if (!i2Var2.L) {
+                        float f12 = (f11 * f11) + (f10 * f10);
+                        float f13 = this.a;
+                        if (f12 > f13 * f13) {
+                            if (parent != null) {
+                                parent.requestDisallowInterceptTouchEvent(true);
+                            }
+                            i2 i2Var3 = this.f;
+                            i2Var3.L = true;
+                            i2Var3.J = rawX;
+                            i2Var3.K = rawY;
+                            f10 = 0.0f;
+                            f11 = 0.0f;
+                        }
+                    }
+                    i2 i2Var4 = this.f;
+                    if (i2Var4.L) {
+                        WindowManager.LayoutParams layoutParams = i2Var4.d;
+                        layoutParams.x = (int) (layoutParams.x + f10);
+                        layoutParams.y = (int) (layoutParams.y + f11);
+                        i2Var4.J = rawX;
+                        i2Var4.K = rawY;
+                        org.telegram.messenger.g0.S3(i2Var4.c, i2Var4.a, layoutParams);
+                        return true;
+                    }
+                }
             }
-            if (textView.getVisibility() != 0) {
-                textView.setVisibility(0);
-                textView.setAlpha(0.0f);
+            AnimatorSet animatorSet = this.f.P;
+            if (animatorSet != null) {
+                animatorSet.cancel();
             }
-            textView.animate().setListener(null).cancel();
-            textView.animate().alpha(1.0f).setDuration(150L).start();
-        }
-    }
-
-    public final void e(boolean z9) {
-        l2 l2Var = this.d;
-        TextView[] textViewArr = this.a;
-        if (TextUtils.isEmpty(textViewArr[0].getText())) {
-            z9 = false;
-        }
-        if (this.n) {
-            return;
-        }
-        l2Var.a();
-        if (z9) {
-            if (this.f) {
-                this.e = "timer";
-                return;
-            } else {
-                this.n = true;
-                a(textViewArr[0], l2Var, null);
-                return;
+            if (motionEvent.getAction() == 1 && !this.f.L && System.currentTimeMillis() - this.f.M < 150) {
+                Context context = getContext();
+                boolean z10 = context instanceof LaunchActivity;
+                if (z10 && !org.telegram.messenger.t0.x) {
+                    ec1.n((Activity) context, this.f.N);
+                } else if (z10) {
+                    Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
+                    intent.setAction("voip");
+                    context.startActivity(intent);
+                }
+                this.f.L = false;
+                return false;
             }
+            if (parent != null) {
+                parent.requestDisallowInterceptTouchEvent(false);
+                Point point = org.telegram.messenger.g0.q;
+                int i7 = point.x;
+                int i10 = point.y + i2.W;
+                float f14 = this.d;
+                float f15 = this.e;
+                i2 i2Var5 = this.f;
+                float left = i2Var5.b.getLeft() + i2Var5.d.x;
+                float measuredWidth = this.f.b.getMeasuredWidth() + left;
+                i2 i2Var6 = this.f;
+                float top = i2Var6.b.getTop() + i2Var6.d.y;
+                float measuredHeight = this.f.b.getMeasuredHeight() + top;
+                this.f.P = new AnimatorSet();
+                float f16 = this.b;
+                if (left < f16) {
+                    i2 i2Var7 = this.f;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(i2Var7.d.x, f16 - i2Var7.b.getLeft());
+                    ofFloat.addUpdateListener(this.f.Q);
+                    this.f.P.playTogether(ofFloat);
+                } else if (measuredWidth > i7 - this.c) {
+                    i2 i2Var8 = this.f;
+                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(i2Var8.d.x, (i7 - i2Var8.b.getRight()) - this.c);
+                    ofFloat2.addUpdateListener(this.f.Q);
+                    this.f.P.playTogether(ofFloat2);
+                }
+                if (top < f14) {
+                    i2 i2Var9 = this.f;
+                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(i2Var9.d.y, f14 - i2Var9.b.getTop());
+                    ofFloat3.addUpdateListener(this.f.R);
+                    this.f.P.playTogether(ofFloat3);
+                } else if (measuredHeight > i10 - f15) {
+                    i2 i2Var10 = this.f;
+                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(i2Var10.d.y, (i10 - i2Var10.b.getMeasuredHeight()) - f15);
+                    ofFloat4.addUpdateListener(this.f.R);
+                    this.f.P.playTogether(ofFloat4);
+                }
+                this.f.P.setDuration(150L).setInterpolator(er.f);
+                this.f.P.start();
+            }
+            this.f.L = false;
+            i2.U.getClass();
+            return true;
         }
-        ValueAnimator valueAnimator = this.h;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+        i2 i2Var11 = this.f;
+        i2Var11.J = rawX;
+        i2Var11.K = rawY;
+        i2Var11.M = System.currentTimeMillis();
+        AnimatorSet animatorSet2 = this.f.P;
+        if (animatorSet2 != null) {
+            animatorSet2.cancel();
         }
-        this.n = true;
-        this.f = false;
-        textViewArr[0].setVisibility(8);
-        textViewArr[1].setVisibility(8);
-        l2Var.setVisibility(0);
-    }
-
-    public void setSignalBarCount(int i7) {
-        this.d.setSignalBarCount(i7);
+        return true;
     }
 }

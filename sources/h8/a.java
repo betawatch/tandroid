@@ -1,6 +1,6 @@
 package h8;
 
-import a8.k8;
+import a8.l8;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
@@ -9,7 +9,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import q6.m;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends Binder implements j, IInterface {
     public final /* synthetic */ int a;
@@ -22,16 +22,16 @@ public final class a extends Binder implements j, IInterface {
     }
 
     @Override // h8.j
-    public void P(int i7, boolean z9) {
+    public void Q(int i7, boolean z10) {
         switch (this.a) {
             case 1:
-                k8.a(new Status(i7, null, null, null), Boolean.valueOf(z9), this.b);
+                l8.a(new Status(i7, null, null, null), Boolean.valueOf(z10), this.b);
                 break;
         }
     }
 
     @Override // h8.j
-    public void d0(Status status, y8.i iVar) {
+    public void e0(Status status, y8.i iVar) {
         switch (this.a) {
             case 0:
                 int i7 = y8.a.c;
@@ -49,7 +49,7 @@ public final class a extends Binder implements j, IInterface {
 
     @Override // android.os.Binder
     public final boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
-        boolean z9;
+        boolean z10;
         if (i7 <= 16777215) {
             parcel.enforceInterface(getInterfaceDescriptor());
         } else if (super.onTransact(i7, parcel, parcel2, i10)) {
@@ -65,8 +65,8 @@ public final class a extends Binder implements j, IInterface {
             case 3:
                 int readInt = parcel.readInt();
                 int i11 = c.a;
-                z9 = parcel.readInt() != 0;
-                P(readInt, z9);
+                z10 = parcel.readInt() != 0;
+                Q(readInt, z10);
                 return true;
             case 4:
                 parcel.readInt();
@@ -85,8 +85,8 @@ public final class a extends Binder implements j, IInterface {
                 return true;
             case 9:
                 Status status = (Status) c.a(parcel, Status.CREATOR);
-                z9 = parcel.readInt() != 0;
-                x0(status, z9);
+                z10 = parcel.readInt() != 0;
+                y0(status, z10);
                 return true;
             case 10:
                 return true;
@@ -99,7 +99,7 @@ public final class a extends Binder implements j, IInterface {
             case 14:
                 Status status2 = (Status) c.a(parcel, Status.CREATOR);
                 y8.i iVar = (y8.i) c.a(parcel, y8.i.CREATOR);
-                d0(status2, iVar);
+                e0(status2, iVar);
                 return true;
             case 15:
                 return true;
@@ -116,10 +116,10 @@ public final class a extends Binder implements j, IInterface {
     }
 
     @Override // h8.j
-    public void x0(Status status, boolean z9) {
+    public void y0(Status status, boolean z10) {
         switch (this.a) {
             case 1:
-                k8.a(status, Boolean.valueOf(z9), this.b);
+                l8.a(status, Boolean.valueOf(z10), this.b);
                 break;
         }
     }
@@ -129,12 +129,12 @@ public final class a extends Binder implements j, IInterface {
         return this;
     }
 
-    public final void h1(Status status, boolean z9) {
+    public final void h1(Status status, boolean z10) {
     }
 
     public final void i1(Status status, y8.i iVar) {
     }
 
-    public final void j1(int i7, boolean z9) {
+    public final void j1(int i7, boolean z10) {
     }
 }

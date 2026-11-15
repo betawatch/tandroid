@@ -4,16 +4,16 @@ import android.graphics.Canvas;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import bi.dd;
+import di.mb;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.messenger.r1;
-import org.telegram.ui.zd;
+import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class d {
     public final long[] a;
@@ -39,7 +39,7 @@ public final class d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public d(long j3, long j10, boolean z9, float f10, int i7, TextPaint textPaint, TextPaint textPaint2) {
+    public d(long j3, long j10, boolean z10, float f10, int i7, TextPaint textPaint, TextPaint textPaint2) {
         long j11;
         float f11;
         int i10;
@@ -52,8 +52,8 @@ public final class d {
         int i13;
         int i14;
         ?? obj = new Object();
-        obj.g = qs.e4;
-        if (z9) {
+        obj.g = ns.e4;
+        if (z10) {
             long j14 = j3 - j10;
             if (j14 == 0) {
                 j11 = j10 - 1;
@@ -82,7 +82,7 @@ public final class d {
                         obj.c = new CharSequence[i10];
                         obj.e = new StaticLayout[i10];
                     }
-                    boolean z10 = f11 / f10 >= 1.0f;
+                    boolean z11 = f11 / f10 >= 1.0f;
                     i11 = 0;
                     d dVar = obj;
                     while (i11 < i10) {
@@ -91,7 +91,7 @@ public final class d {
                         dVar.b[i11] = dVar.b(0, textPaint, j16, i7);
                         if (f10 > 0.0f) {
                             float f13 = dVar.a[i11] / f10;
-                            if (z10) {
+                            if (z11) {
                                 long j17 = (long) f13;
                                 if (f13 - j17 < 0.01f || i7 == 1 || i7 == 2) {
                                     dVar.c[i11] = dVar.b(1, textPaint2, j17, i7);
@@ -145,7 +145,7 @@ public final class d {
                         obj.c = new CharSequence[i12];
                         obj.e = new StaticLayout[i12];
                     }
-                    boolean z11 = ((float) max2) / f10 < 1.0f;
+                    boolean z12 = ((float) max2) / f10 < 1.0f;
                     i13 = 1;
                     while (i13 < i12) {
                         long j19 = i13 * max2;
@@ -154,7 +154,7 @@ public final class d {
                         obj.b[i13] = obj.b(0, textPaint, j19, i7);
                         if (f10 > 0.0f) {
                             float f14 = obj.a[i13] / f10;
-                            if (z11) {
+                            if (z12) {
                                 long j21 = (long) f14;
                                 if (f14 - j21 < 0.01f || i7 == 1 || i7 == 2) {
                                     obj.c[i13] = obj.b(1, textPaint2, j21, i7);
@@ -227,7 +227,7 @@ public final class d {
                 return g0.o0((int) j3, 0);
             }
             if (i7 != 1) {
-                return dd.a1(false, jg.g.m(j3, ' ', new StringBuilder("XTR ")), 0.65f, null);
+                return mb.a1(false, i5.c.l(j3, ' ', new StringBuilder("XTR ")), 0.65f, null);
             }
             return "≈" + r1.i().f(j3, "USD");
         }
@@ -244,6 +244,6 @@ public final class d {
             this.h.setGroupingUsed(false);
         }
         this.h.setMaximumFractionDigits(j3 <= 1000000000 ? 6 : 2);
-        return zd.K("TON " + this.h.format(j3 / 1.0E9d), textPaint, 0.8f, -g0.L(0.66f), false);
+        return xd.K("TON " + this.h.format(j3 / 1.0E9d), textPaint, 0.8f, -g0.L(0.66f), false);
     }
 }

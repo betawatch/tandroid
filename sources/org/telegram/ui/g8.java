@@ -1,9 +1,22 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class g8 {
-    public float a;
-    public float b;
-    public float c;
+    public org.telegram.messenger.gj a;
+    public ArrayList b;
+    public int c;
+    public boolean f;
+    public int h;
+    public float i;
+    public float j;
+    public float k;
+    public float l;
+    public float m;
+    public float n;
+    public float d = 1.0f;
+    public float e = 1.0f;
+    public boolean g = true;
 }

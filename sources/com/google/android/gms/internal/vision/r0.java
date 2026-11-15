@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.vision;
 
 import java.util.logging.Logger;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r0 extends e1 {
     public static final Logger f = Logger.getLogger(r0.class.getName());
-    public static final boolean g = x2.e;
+    public static final boolean g = y2.e;
     public y1 b;
     public final byte[] c;
     public final int d;
@@ -25,18 +25,18 @@ public final class r0 extends e1 {
     public static int G(String str) {
         int length;
         try {
-            length = a3.a(str);
-        } catch (b3 unused) {
+            length = b3.a(str);
+        } catch (c3 unused) {
             length = str.getBytes(j1.a).length;
         }
         return T(length) + length;
     }
 
-    public static int I(int i7, l0 l0Var, n2 n2Var) {
+    public static int I(int i7, l0 l0Var, o2 o2Var) {
         int T = T(i7 << 3) << 1;
         int c10 = l0Var.c();
         if (c10 == -1) {
-            c10 = n2Var.zzb(l0Var);
+            c10 = o2Var.zzb(l0Var);
             l0Var.b(c10);
         }
         return T + c10;
@@ -45,7 +45,7 @@ public final class r0 extends e1 {
     public static int J(int i7, q0 q0Var) {
         int T = T(i7 << 3);
         int i10 = q0Var.i();
-        return a8.p0.C(i10, i10, T);
+        return a8.p0.D(i10, i10, T);
     }
 
     public static int N(int i7, long j3) {
@@ -141,25 +141,25 @@ public final class r0 extends e1 {
     }
 
     public final void E(long j3) {
-        boolean z9 = g;
+        boolean z10 = g;
         byte[] bArr = this.c;
-        if (z9 && F() >= 10) {
+        if (z10 && F() >= 10) {
             while ((j3 & (-128)) != 0) {
                 int i7 = this.e;
                 this.e = i7 + 1;
-                x2.e(bArr, i7, (byte) ((((int) j3) & qs.L1) | 128));
+                y2.e(bArr, i7, (byte) ((((int) j3) & ns.L1) | 128));
                 j3 >>>= 7;
             }
             int i10 = this.e;
             this.e = i10 + 1;
-            x2.e(bArr, i10, (byte) j3);
+            y2.e(bArr, i10, (byte) j3);
             return;
         }
         while ((j3 & (-128)) != 0) {
             try {
                 int i11 = this.e;
                 this.e = i11 + 1;
-                bArr[i11] = (byte) ((((int) j3) & qs.L1) | 128);
+                bArr[i11] = (byte) ((((int) j3) & ns.L1) | 128);
                 j3 >>>= 7;
             } catch (IndexOutOfBoundsException e10) {
                 throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e10);
@@ -175,14 +175,14 @@ public final class r0 extends e1 {
     }
 
     public final void H(int i7) {
-        boolean z9 = g;
+        boolean z10 = g;
         byte[] bArr = this.c;
-        if (!z9 || m0.a() || F() < 5) {
+        if (!z10 || m0.a() || F() < 5) {
             while ((i7 & (-128)) != 0) {
                 try {
                     int i10 = this.e;
                     this.e = i10 + 1;
-                    bArr[i10] = (byte) ((i7 & qs.L1) | 128);
+                    bArr[i10] = (byte) ((i7 & ns.L1) | 128);
                     i7 >>>= 7;
                 } catch (IndexOutOfBoundsException e10) {
                     throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e10);
@@ -196,44 +196,44 @@ public final class r0 extends e1 {
         if ((i7 & (-128)) == 0) {
             int i12 = this.e;
             this.e = i12 + 1;
-            x2.e(bArr, i12, (byte) i7);
+            y2.e(bArr, i12, (byte) i7);
             return;
         }
         int i13 = this.e;
         this.e = i13 + 1;
-        x2.e(bArr, i13, (byte) (i7 | 128));
+        y2.e(bArr, i13, (byte) (i7 | 128));
         int i14 = i7 >>> 7;
         if ((i14 & (-128)) == 0) {
             int i15 = this.e;
             this.e = i15 + 1;
-            x2.e(bArr, i15, (byte) i14);
+            y2.e(bArr, i15, (byte) i14);
             return;
         }
         int i16 = this.e;
         this.e = i16 + 1;
-        x2.e(bArr, i16, (byte) (i14 | 128));
+        y2.e(bArr, i16, (byte) (i14 | 128));
         int i17 = i7 >>> 14;
         if ((i17 & (-128)) == 0) {
             int i18 = this.e;
             this.e = i18 + 1;
-            x2.e(bArr, i18, (byte) i17);
+            y2.e(bArr, i18, (byte) i17);
             return;
         }
         int i19 = this.e;
         this.e = i19 + 1;
-        x2.e(bArr, i19, (byte) (i17 | 128));
+        y2.e(bArr, i19, (byte) (i17 | 128));
         int i20 = i7 >>> 21;
         if ((i20 & (-128)) == 0) {
             int i21 = this.e;
             this.e = i21 + 1;
-            x2.e(bArr, i21, (byte) i20);
+            y2.e(bArr, i21, (byte) i20);
         } else {
             int i22 = this.e;
             this.e = i22 + 1;
-            x2.e(bArr, i22, (byte) (i20 | 128));
+            y2.e(bArr, i22, (byte) (i20 | 128));
             int i23 = this.e;
             this.e = i23 + 1;
-            x2.e(bArr, i23, (byte) (i7 >>> 28));
+            y2.e(bArr, i23, (byte) (i7 >>> 28));
         }
     }
 

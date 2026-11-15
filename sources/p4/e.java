@@ -2,7 +2,7 @@ package p4;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -34,25 +34,25 @@ public final /* synthetic */ class e implements Runnable {
                 }
                 break;
             case 1:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 1, c1.s1(new org.telegram.utils.twidget.e(21)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 1, c1.s1(new org.telegram.utils.twidget.e(26)));
                 break;
             case 2:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 9, c1.s1(new r0(0)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 9, c1.s1(new q0(5)));
                 break;
             case 3:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 7, c1.s1(new org.telegram.utils.twidget.e(26)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 7, c1.s1(new q0(1)));
                 break;
             case 4:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 12, c1.s1(new org.telegram.utils.twidget.e(29)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 12, c1.s1(new q0(4)));
                 break;
             case 5:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 11, c1.s1(new org.telegram.utils.twidget.e(25)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 11, c1.s1(new q0(0)));
                 break;
             case 6:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 3, c1.s1(new r0(6)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 3, c1.s1(new q0(11)));
                 break;
             case 7:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 1, c1.s1(new org.telegram.utils.twidget.e(21)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 1, c1.s1(new org.telegram.utils.twidget.e(26)));
                 break;
             case 8:
                 this.b.g.o1(this.c, TLObject.FLAG_31);

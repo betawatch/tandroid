@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class t1 extends b5 {
     private static final t1 zzb;
@@ -30,9 +30,9 @@ public final class t1 extends b5 {
         t1Var.zzg = i7;
     }
 
-    public static /* synthetic */ void o(t1 t1Var, boolean z9) {
+    public static /* synthetic */ void o(t1 t1Var, boolean z10) {
         t1Var.zzd |= 8;
-        t1Var.zzh = z9;
+        t1Var.zzh = z10;
     }
 
     public static /* synthetic */ void p(t1 t1Var, int i7) {

@@ -1,233 +1,73 @@
 package bi;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.webkit.JsPromptResult;
-import android.widget.EditText;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.qs;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.hb0;
-import org.telegram.ui.ExternalActionActivity;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.j01;
-import org.telegram.ui.jc1;
-import org.telegram.ui.ll0;
-import org.telegram.ui.r31;
+import org.telegram.ui.Components.i60;
+import org.telegram.ui.Components.m60;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u3 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class u3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ m60 b;
 
-    public /* synthetic */ u3(int i7, Object obj, Object obj2) {
+    public /* synthetic */ u3(m60 m60Var, int i7) {
         this.a = i7;
-        this.b = obj;
-        this.c = obj2;
+        this.b = m60Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        Runnable runnable;
-        org.telegram.ui.Wallet.o9 o9Var;
-        int i7 = this.a;
-        Object obj = this.c;
-        Object obj2 = this.b;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                ((boolean[]) obj2)[0] = true;
-                Runnable runnable2 = ((Runnable[]) obj)[0];
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
+                this.b.s();
                 break;
             case 1:
-                zh.p3 p3Var = (zh.p3) obj;
-                if (!((boolean[]) obj2)[0]) {
-                    p3Var.a(Boolean.FALSE, null);
+                i60 i60Var = this.b.m;
+                if (i60Var != null) {
+                    org.telegram.messenger.g0.v1(i60Var.getContentView());
                     break;
                 }
                 break;
             case 2:
-                boolean[] zArr = (boolean[]) obj2;
-                di.s2 s2Var = (di.s2) obj;
-                if (!zArr[0]) {
-                    s2Var.a(Boolean.FALSE);
-                    zArr[0] = true;
+                i60 i60Var2 = this.b.m;
+                if (i60Var2 != null) {
+                    org.telegram.messenger.g0.v1(i60Var2.getContentView());
                     break;
                 }
                 break;
             case 3:
-                boolean[] zArr2 = (boolean[]) obj2;
-                org.telegram.ui.web.v vVar = (org.telegram.ui.web.v) obj;
-                if (!zArr2[0]) {
-                    zArr2[0] = true;
-                    vVar.a(null);
+                i60 i60Var3 = this.b.m;
+                if (i60Var3 != null) {
+                    org.telegram.messenger.g0.v1(i60Var3.getContentView());
                     break;
                 }
                 break;
             case 4:
-                jg.i1 i1Var = (jg.i1) obj;
-                i1Var.getClass();
-                if (!((boolean[]) obj2)[0]) {
-                    i1Var.Q();
+                i60 i60Var4 = this.b.m;
+                if (i60Var4 != null) {
+                    org.telegram.messenger.g0.v1(i60Var4.getContentView());
                     break;
                 }
                 break;
             case 5:
-                org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj2;
-                DialogInterface.OnDismissListener onDismissListener = (DialogInterface.OnDismissListener) obj;
-                f2Var.getClass();
-                if (onDismissListener != null) {
-                    onDismissListener.onDismiss(dialogInterface);
-                }
-                f2Var.onDialogDismiss((Dialog) dialogInterface);
-                if (dialogInterface == f2Var.visibleDialog) {
-                    f2Var.visibleDialog = null;
+                i60 i60Var5 = this.b.m;
+                if (i60Var5 != null) {
+                    org.telegram.messenger.g0.v1(i60Var5.getContentView());
                     break;
                 }
                 break;
             case 6:
-                org.telegram.ui.ActionBar.f2 f2Var2 = (org.telegram.ui.ActionBar.f2) obj2;
-                org.telegram.ui.ActionBar.d2 d2Var = (org.telegram.ui.ActionBar.d2) obj;
-                f2Var2.onPause();
-                f2Var2.onFragmentDestroy();
-                if (d2Var != null && (runnable = d2Var.b) != null) {
-                    runnable.run();
+                i60 i60Var6 = this.b.m;
+                if (i60Var6 != null) {
+                    org.telegram.messenger.g0.v1(i60Var6.getContentView());
                     break;
                 }
                 break;
             case 7:
-                org.telegram.messenger.g0.v1((EditText) obj2);
-                org.telegram.messenger.g0.v1((EditText) obj);
-                break;
-            case 8:
-                q0.a aVar = (q0.a) obj;
-                if (!((AtomicBoolean) obj2).get()) {
-                    aVar.accept(Boolean.FALSE);
-                    break;
-                }
-                break;
-            case 9:
-                ((ai.i) obj2).a(Integer.valueOf(((hb0) obj).getValue()));
-                break;
-            case 10:
-                ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj2;
-                ArrayList arrayList = ExternalActionActivity.y;
-                externalActionActivity.getClass();
-                externalActionActivity.setResult(1, new Intent().putExtra("error", ((TLRPC.TL_error) obj).text));
-                externalActionActivity.finish();
-                break;
-            case 11:
-                LaunchActivity launchActivity = (LaunchActivity) obj2;
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) obj;
-                if (u1Var == launchActivity.F0) {
-                    ActionBarLayout actionBarLayout = launchActivity.o0;
-                    org.telegram.ui.ActionBar.f2 lastFragment = actionBarLayout == null ? null : actionBarLayout.getLastFragment();
-                    try {
-                        String str = org.telegram.messenger.id.E0().B.c;
-                        if (lastFragment != null) {
-                            org.telegram.ui.Components.bc Q = org.telegram.ui.Components.gc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.U(2131752545, "ChangeLanguageLater", str.equals("en") ? launchActivity.I0 : launchActivity.H0));
-                            Q.j = 5000;
-                            Q.j();
-                        } else {
-                            org.telegram.ui.Components.bc Q2 = new org.telegram.ui.Components.gc(org.telegram.ui.Components.wa.a(launchActivity), null).Q(R.raw.msg_translate, 36, LaunchActivity.U(2131752545, "ChangeLanguageLater", str.equals("en") ? launchActivity.I0 : launchActivity.H0));
-                            Q2.j = 5000;
-                            Q2.j();
-                        }
-                    } catch (Exception e10) {
-                        org.telegram.messenger.a8.g(e10, true);
-                    }
-                    launchActivity.F0 = null;
-                } else if (u1Var == launchActivity.D0) {
-                    qp.e1();
-                    SharedPreferences.Editor edit = qp.e1().edit();
-                    edit.putBoolean("proxy_enabled", false);
-                    edit.commit();
-                    ConnectionsManager.setProxySettings(false, null);
-                    qs.e().k(qs.A4, new Object[0]);
-                    launchActivity.D0 = null;
-                }
-                launchActivity.C0.remove(u1Var);
-                break;
-            case 12:
-                ll0 ll0Var = (ll0) obj;
-                if (!((boolean[]) obj2)[0]) {
-                    ll0Var.a(Boolean.FALSE);
-                    break;
-                }
-                break;
-            case 13:
-                j01 j01Var = (j01) obj;
-                if (!((boolean[]) obj2)[0]) {
-                    j01Var.c(true);
-                }
-                j01Var.x = null;
-                break;
-            case 14:
-                jc1 jc1Var = (jc1) obj;
-                if (!((boolean[]) obj2)[0]) {
-                    jc1Var.t0.b();
-                    break;
-                }
-                break;
-            case 15:
-                TLRPC.User user = (TLRPC.User) obj2;
-                TL_wallet.walletTransactionPeerUser wallettransactionpeeruser = (TL_wallet.walletTransactionPeerUser) obj;
-                org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
-                if (T != null) {
-                    if (user != null) {
-                        o9Var = new org.telegram.ui.Wallet.o9(user);
-                    } else {
-                        o9Var = new org.telegram.ui.Wallet.o9(wallettransactionpeeruser.address);
-                        o9Var.A0(wallettransactionpeeruser.domain);
-                    }
-                    T.presentFragment(o9Var);
-                    break;
-                }
-                break;
-            case 16:
-                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) obj2;
-                Runnable runnable3 = (Runnable) obj;
-                if (runnable3 != null) {
-                    x0Var.getClass();
-                    runnable3.run();
-                }
-                x0Var.c0 = null;
-                break;
-            case 17:
-                boolean[] zArr3 = (boolean[]) obj2;
-                JsPromptResult jsPromptResult = (JsPromptResult) obj;
-                if (!zArr3[0]) {
-                    zArr3[0] = true;
-                    jsPromptResult.cancel();
-                    break;
-                }
+                this.b.s();
                 break;
             default:
-                r31 r31Var = (r31) obj;
-                if (!((AtomicBoolean) obj2).get()) {
-                    r31Var.run();
-                    break;
-                }
+                this.b.s();
                 break;
         }
-    }
-
-    public /* synthetic */ u3(Object obj, boolean[] zArr, int i7) {
-        this.a = i7;
-        this.c = obj;
-        this.b = zArr;
     }
 }

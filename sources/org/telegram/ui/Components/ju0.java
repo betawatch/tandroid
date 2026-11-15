@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ju0 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class ju0 implements Runnable {
                 lu0 lu0Var = mu0Var2.e;
                 if (lu0Var != null) {
                     mu0Var2.getVisibilityFactor();
-                    ProfileActivity profileActivity = ((org.telegram.ui.wt0) lu0Var).b;
-                    profileActivity.r.setTranslationX(profileActivity.m4(profileActivity.x6, profileActivity.z6));
-                    profileActivity.r.setTranslationY(profileActivity.n4(profileActivity.A6));
+                    ProfileActivity profileActivity = ((org.telegram.ui.qt0) lu0Var).b;
+                    profileActivity.r.setTranslationX(profileActivity.l4(profileActivity.z6, profileActivity.B6));
+                    profileActivity.r.setTranslationY(profileActivity.m4(profileActivity.C6));
                     break;
                 }
                 break;

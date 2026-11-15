@@ -1,85 +1,111 @@
 package org.telegram.ui.Components;
 
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.os.Build;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class lf0 implements c5.g {
-    public final /* synthetic */ sf0 a;
+public final class lf0 {
+    public static final float[] m = new ColorMatrix().getArray();
+    public static final float[] n;
+    public static final sa.d o;
+    public final ri.d a;
+    public final ri.c b;
+    public final dh.c c;
+    public final dh.c d;
+    public final dh.c e;
+    public final ui.d f;
+    public final xe.b g;
+    public final xe.b h;
+    public int i;
+    public boolean j;
+    public float k;
+    public float l;
 
-    public lf0(sf0 sf0Var) {
-        this.a = sf0Var;
+    static {
+        ColorMatrix colorMatrix = new ColorMatrix();
+        org.telegram.messenger.g0.i(colorMatrix, 0.65f);
+        org.telegram.messenger.g0.n2(colorMatrix, 0.5f);
+        n = colorMatrix.getArray();
+        o = new sa.d(18);
     }
 
-    @Override // c5.g
-    public final void a(int i7) {
-        sf0 sf0Var = this.a;
-        int i10 = sf0Var.o1;
-        boolean z9 = i7 >= i10;
-        if (i7 != i10) {
-            sf0Var.getClass();
-            sf0Var.o1 = i7;
+    public lf0(ri.q qVar, ri.a aVar) {
+        xe.b bVar = new xe.b();
+        this.g = bVar;
+        xe.b bVar2 = new xe.b();
+        this.h = bVar2;
+        if (Build.VERSION.SDK_INT >= 31) {
+            aVar.l = true;
+            ri.d dVar = aVar.g;
+            this.a = dVar;
+            this.b = dVar != null ? dVar.d(4) : null;
+        } else {
+            this.a = null;
+            this.b = null;
         }
-        org.telegram.messenger.yo yoVar = sf0Var.S0;
-        if (yoVar != null) {
-            rf0 rf0Var = sf0Var.D0;
-            yoVar.b(i7 - (rf0Var != null ? rf0Var.j() : 0), z9);
+        kf0 kf0Var = new kf0(this, null);
+        kf0 kf0Var2 = new kf0(this, new jf0(aVar.c));
+        dh.c cVar = new dh.c(kf0Var, kf0Var, kf0Var);
+        cVar.j = qVar;
+        cVar.g = bVar;
+        cVar.f = bVar2;
+        this.c = cVar;
+        dh.c cVar2 = new dh.c(kf0Var2, kf0Var2, kf0Var2);
+        cVar2.j = qVar;
+        cVar2.g = bVar;
+        cVar2.f = bVar2;
+        this.d = cVar2;
+        cVar2.k = true;
+        ui.d dVar2 = new ui.d(kf0Var2, new jf0(aVar.f));
+        this.f = dVar2;
+        dh.c cVar3 = new dh.c(dVar2, dVar2, dVar2);
+        cVar3.j = qVar;
+        cVar3.g = bVar;
+        cVar3.f = bVar2;
+        this.e = cVar3;
+        cVar3.k = true;
+    }
+
+    public final void a() {
+        Iterator it = this.h.iterator();
+        while (it.hasNext()) {
+            ((fh.g) it.next()).updateColors();
+        }
+        Iterator it2 = this.g.iterator();
+        while (it2.hasNext()) {
+            ((View) it2.next()).invalidate();
         }
     }
 
-    @Override // c5.g
-    public final void b(float f10, int i7, int i10) {
-        org.telegram.messenger.hc hcVar;
-        sf0 sf0Var = this.a;
-        sf0Var.B(f10, i7);
-        if (i10 == 0) {
-            int k10 = sf0Var.D0.k(i7);
-            if (sf0Var.i1) {
-                k10--;
-            }
-            sf0Var.getCurrentItemView();
-            int childCount = sf0Var.getChildCount();
-            for (int i11 = 0; i11 < childCount; i11++) {
-                View childAt = sf0Var.getChildAt(i11);
-                if (childAt instanceof k9) {
-                    rf0 rf0Var = sf0Var.D0;
-                    int k11 = rf0Var.k(rf0Var.d.indexOf(childAt));
-                    if (sf0Var.i1) {
-                        k11--;
+    public final void b(float f10) {
+        ri.d dVar;
+        ColorMatrixColorFilter colorMatrixColorFilter;
+        if (this.k != f10) {
+            this.k = f10;
+            if (Build.VERSION.SDK_INT >= 31 && (dVar = this.a) != null) {
+                if (f10 > 0.0f) {
+                    float[] fArr = m;
+                    int length = fArr.length;
+                    float[] fArr2 = new float[length];
+                    for (int i7 = 0; i7 < length; i7++) {
+                        fArr2[i7] = org.telegram.messenger.g0.T1(fArr[i7], n[i7], f10);
                     }
-                    ImageReceiver imageReceiver = ((k9) childAt).getImageReceiver();
-                    boolean z9 = imageReceiver.t0;
-                    if (k11 >= 0 && k11 < sf0Var.W0.size()) {
-                        if (k11 == k10) {
-                            if (!z9) {
-                                imageReceiver.t0 = true;
-                                imageReceiver.P0(false);
-                            }
-                            org.telegram.messenger.hc hcVar2 = (org.telegram.messenger.hc) sf0Var.W0.get(k11);
-                            if (hcVar2 != null) {
-                                org.telegram.messenger.w7 G = org.telegram.messenger.w7.G(sf0Var.L0);
-                                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = hcVar2.f;
-                                if (tL_fileLocationToBeDeprecated != null) {
-                                    org.telegram.messenger.w7.J.c(new org.telegram.messenger.x4(9, G, tL_fileLocationToBeDeprecated));
-                                }
-                            }
-                        } else if (z9) {
-                            u5 m10 = imageReceiver.m();
-                            if (m10 != null && (hcVar = (org.telegram.messenger.hc) sf0Var.W0.get(k11)) != null) {
-                                m10.y(hcVar.j, false, true);
-                            }
-                            imageReceiver.t0 = false;
-                            imageReceiver.Q0();
-                        }
+                    colorMatrixColorFilter = new ColorMatrixColorFilter(fArr2);
+                } else {
+                    colorMatrixColorFilter = null;
+                }
+                if (dVar.k != colorMatrixColorFilter) {
+                    dVar.k = colorMatrixColorFilter;
+                    for (int i10 = 0; i10 < dVar.b; i10++) {
+                        ((ri.b) dVar.a.get(i10)).c(colorMatrixColorFilter);
                     }
                 }
             }
+            a();
         }
-    }
-
-    @Override // c5.g
-    public final void c(int i7) {
     }
 }

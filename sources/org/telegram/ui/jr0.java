@@ -1,31 +1,39 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jr0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sr0 b;
+public final class jr0 extends org.telegram.ui.Cells.z5 {
+    public final /* synthetic */ lr0 G;
 
-    public /* synthetic */ jr0(sr0 sr0Var, int i7) {
-        this.a = i7;
-        this.b = sr0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jr0(lr0 lr0Var, Context context, int i7) {
+        super(context, i7, null, null);
+        this.G = lr0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                sr0 sr0Var = this.b;
-                sr0Var.getClass();
-                sr0Var.R.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                sr0 sr0Var2 = this.b;
-                sr0Var2.getClass();
-                sr0Var2.R.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+    @Override // org.telegram.ui.Cells.z5
+    public final void h(bi.u uVar, ActionMode actionMode) {
+        if (uVar.isFocused() && uVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            an.C8(menu, this.G.d.f.h, false, true, true, true);
         }
+    }
+
+    @Override // org.telegram.ui.Cells.z5
+    public final void j(boolean z10) {
+        nr0.i0(this.G.d, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.z5
+    public final void k(org.telegram.ui.Cells.z5 z5Var) {
+        nr0.j0(this.G.d, z5Var);
     }
 }

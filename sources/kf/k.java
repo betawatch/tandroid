@@ -1,8 +1,8 @@
 package kf;
 
-import c8.b1;
+import c8.d1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k extends p {
     public final /* synthetic */ int g;
@@ -16,13 +16,13 @@ public final class k extends p {
     }
 
     @Override // kf.p
-    public final void a(b1 b1Var) {
+    public final void a(d1 d1Var) {
         switch (this.g) {
             case 0:
-                b1Var.i(this);
+                d1Var.i(this);
                 break;
             default:
-                b1Var.s(this);
+                d1Var.s(this);
                 break;
         }
     }

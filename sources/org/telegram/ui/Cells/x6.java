@@ -1,74 +1,63 @@
 package org.telegram.ui.Cells;
 
-import android.text.SpannableStringBuilder;
+import android.content.Context;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.id;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qp;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.uy0;
-import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public abstract class x6 extends LinearLayout {
-    public TextView a;
-    public w70 b;
-    public TextView c;
-    public TextView d;
-    public int e;
-    public int f;
+public final class x6 extends View {
+    public int a;
+    public final int b;
+    public boolean c;
+    public boolean d;
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+    public x6(Context context) {
+        this(context, (y0) null);
     }
 
-    public void setType(int i7) {
-        int i10 = this.f;
-        TextView textView = this.c;
-        w70 w70Var = this.b;
-        TextView textView2 = this.a;
-        TextView textView3 = this.d;
-        this.e = i7;
-        if (i7 != 0) {
-            if (i7 == 1) {
-                textView2.setText(id.M0(2131742803, null));
-                w70Var.setText(id.M0(2131742802, null));
-                textView.setText(id.M0(2131742800, null));
-                textView3.setVisibility(0);
-                textView3.setText(id.M0(2131742801, null));
-                return;
-            }
-            if (i7 == 2) {
-                textView2.setText(id.M0(2131749526, null));
-                w70Var.setText(id.M0(2131749527, null));
-                textView.setText(id.M0(2131749528, null));
-                textView3.setVisibility(8);
-                return;
-            }
-            return;
+    private int getBackgroundResId() {
+        boolean z10 = this.c;
+        return (z10 && this.d) ? R.drawable.greydivider : z10 ? R.drawable.greydivider_bottom : this.d ? R.drawable.greydivider_top : R.drawable.transparent;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(this.a), TLObject.FLAG_30));
+    }
+
+    public void setSize(int i7) {
+        this.a = i7;
+    }
+
+    public x6(Context context, Object obj) {
+        this(context, (y0) null);
+    }
+
+    public x6(Context context, y0 y0Var) {
+        super(context);
+        this.c = true;
+        this.d = true;
+        this.a = 12;
+        int i7 = this.b;
+        if (i7 == 0) {
+            setBackground(null);
+        } else {
+            setBackgroundColor(i7);
         }
-        textView2.setText(id.a0(null, null, 2131752156, org.telegram.messenger.k5.i(new StringBuilder("+"), qp.s1(i10).a2(Long.valueOf(p10.i(i10).n)).phone, pf.b.c())));
-        String M0 = id.M0(2131752155, null);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M0);
-        int indexOf = M0.indexOf("**");
-        int lastIndexOf = M0.lastIndexOf("**");
-        if (indexOf >= 0 && lastIndexOf >= 0 && indexOf != lastIndexOf) {
-            spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
-            spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
-            try {
-                spannableStringBuilder.setSpan(new b41(id.M0(2131752154, null), (uy0) null), indexOf, lastIndexOf - 2, 33);
-            } catch (Exception e10) {
-                org.telegram.messenger.a8.g(e10, true);
-            }
+    }
+
+    public x6(Context context, int i7, int i10) {
+        super(context);
+        this.c = true;
+        this.d = true;
+        this.b = i7;
+        this.a = 12;
+        if (i7 == 0) {
+            setBackground(null);
+        } else {
+            setBackgroundColor(i7);
         }
-        w70Var.setText(spannableStringBuilder);
-        textView.setText(id.M0(2131752152, null));
-        textView3.setVisibility(0);
-        textView3.setText(id.M0(2131752153, null));
     }
 }

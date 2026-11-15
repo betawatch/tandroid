@@ -1,36 +1,22 @@
 package a8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.util.Base64;
+import java.util.LinkedHashMap;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class o9 {
-    public static void a(int i7, int i10) {
-        String a10;
-        if (i7 < 0 || i7 >= i10) {
-            if (i7 < 0) {
-                a10 = p9.a("%s (%s) must not be negative", "index", Integer.valueOf(i7));
-            } else {
-                if (i10 < 0) {
-                    throw new IllegalArgumentException(jg.g.j(i10, "negative size: "));
-                }
-                a10 = p9.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i7), Integer.valueOf(i10));
-            }
-            throw new IndexOutOfBoundsException(a10);
+    public static byte[] a(JSONObject jSONObject) {
+        LinkedHashMap linkedHashMap = d1.g.a;
+        String optString = jSONObject.optString("challenge", "");
+        kotlin.jvm.internal.j.b(optString);
+        if (optString.length() == 0) {
+            throw new JSONException("Challenge not found in request or is unexpectedly empty");
         }
-    }
-
-    public static void b(int i7, int i10, int i11) {
-        if (i7 < 0 || i10 < i7 || i10 > i11) {
-            throw new IndexOutOfBoundsException((i7 < 0 || i7 > i11) ? c(i7, i11, "start index") : (i10 < 0 || i10 > i11) ? c(i10, i11, "end index") : p9.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i10), Integer.valueOf(i7)));
-        }
-    }
-
-    public static String c(int i7, int i10, String str) {
-        if (i7 < 0) {
-            return p9.a("%s (%s) must not be negative", str, Integer.valueOf(i7));
-        }
-        if (i10 >= 0) {
-            return p9.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i7), Integer.valueOf(i10));
-        }
-        throw new IllegalArgumentException(jg.g.j(i10, "negative size: "));
+        byte[] decode = Base64.decode(optString, 11);
+        kotlin.jvm.internal.j.d(decode, "decode(...)");
+        return decode;
     }
 }

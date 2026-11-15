@@ -1,30 +1,20 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class w10 extends TextView {
-    public final RectF a;
-    public final /* synthetic */ f40 b;
+public final class w10 extends v4.t0 {
+    public final /* synthetic */ c40 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w10(f40 f40Var, Context context) {
-        super(context);
-        this.b = f40Var;
-        this.a = new RectF();
+    public w10(c40 c40Var) {
+        this.a = c40Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, width, height);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), this.b.a3);
-        super.onDraw(canvas);
+    @Override // v4.t0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        c40 c40Var = this.a;
+        c40Var.b.invalidate();
+        c40Var.Z3.invalidate();
     }
 }

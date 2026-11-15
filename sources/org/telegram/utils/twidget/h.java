@@ -16,10 +16,11 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.SweepGradient;
 import android.os.Build;
+import com.google.android.gms.internal.vision.e2;
 import java.nio.charset.StandardCharsets;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public final class h {
     public static final PorterDuff.Mode[] W = {null, PorterDuff.Mode.SRC_IN, PorterDuff.Mode.SRC_OUT, PorterDuff.Mode.SRC_ATOP, PorterDuff.Mode.DST_OVER, PorterDuff.Mode.DST_IN, PorterDuff.Mode.DST_OUT, PorterDuff.Mode.DST_ATOP, PorterDuff.Mode.ADD, PorterDuff.Mode.SRC, PorterDuff.Mode.XOR, PorterDuff.Mode.MULTIPLY, PorterDuff.Mode.SCREEN, PorterDuff.Mode.OVERLAY, PorterDuff.Mode.DARKEN, PorterDuff.Mode.LIGHTEN};
@@ -139,7 +140,7 @@ public final class h {
             float[] fArr3 = new float[fArr.length];
             for (int i10 = 0; i10 < fArr.length; i10++) {
                 float f11 = f10 / max;
-                fArr3[i10] = com.google.android.recaptcha.internal.a.z(1.0f, f11, fArr[i10], f11);
+                fArr3[i10] = e2.z(1.0f, f11, fArr[i10], f11);
             }
             fArr = fArr3;
         }
@@ -153,7 +154,7 @@ public final class h {
     public final void c(Canvas canvas, g gVar) {
         char c10;
         Bitmap image;
-        boolean z9;
+        boolean z10;
         float[] fArr = this.i;
         fArr[6] = 0.0f;
         fArr[7] = 0.0f;
@@ -200,9 +201,9 @@ public final class h {
                 int i11 = this.n;
                 image = i10 == i11 ? this.o : gVar.canvasBitmap(i10);
                 if (this.N == i11) {
-                    z9 = true;
+                    z10 = true;
                     if (image != null) {
-                        Bitmap copy = z9 ? image.copy(Bitmap.Config.ARGB_8888, false) : null;
+                        Bitmap copy = z10 ? image.copy(Bitmap.Config.ARGB_8888, false) : null;
                         if (copy != null) {
                             image = copy;
                         }
@@ -236,7 +237,7 @@ public final class h {
                 c10 = 6;
                 image = gVar.image(this.O);
             }
-            z9 = false;
+            z10 = false;
             if (image != null) {
             }
         }
@@ -269,296 +270,334 @@ public final class h {
         }
     }
 
-    public final float e() {
+    public final void e(int i7) {
+        if (i7 < 0 || i7 > this.t.length - this.u) {
+            throw new IllegalArgumentException("Canvas batch: count");
+        }
+    }
+
+    public final float f() {
         int[] iArr = this.t;
         int i7 = this.u;
         this.u = i7 + 1;
         return Float.intBitsToFloat(iArr[i7]);
     }
 
-    public final void f(Path path, boolean z9) {
+    public final void g(Path path, boolean z10) {
         path.rewind();
         int[] iArr = this.t;
         int i7 = this.u;
         int i10 = i7 + 1;
         this.u = i10;
         int i11 = iArr[i7];
-        int i12 = i7 + 2;
-        this.u = i12;
-        int i13 = iArr[i10];
-        int i14 = i12 + i11;
-        int i15 = i14;
-        for (int i16 = i12; i16 < i14; i16++) {
-            int i17 = iArr[i16];
-            if (i17 == 0) {
-                path.moveTo(Float.intBitsToFloat(iArr[i15]), Float.intBitsToFloat(iArr[i15 + 1]));
-            } else if (i17 != 1) {
-                if (i17 == 2) {
-                    path.quadTo(Float.intBitsToFloat(iArr[i15]), Float.intBitsToFloat(iArr[i15 + 1]), Float.intBitsToFloat(iArr[i15 + 2]), Float.intBitsToFloat(iArr[i15 + 3]));
-                    i15 += 4;
-                } else if (i17 == 3) {
-                    path.cubicTo(Float.intBitsToFloat(iArr[i15]), Float.intBitsToFloat(iArr[i15 + 1]), Float.intBitsToFloat(iArr[i15 + 2]), Float.intBitsToFloat(iArr[i15 + 3]), Float.intBitsToFloat(iArr[i15 + 4]), Float.intBitsToFloat(iArr[i15 + 5]));
-                    i15 += 6;
-                } else if (i17 == 4) {
-                    path.close();
+        this.u = i7 + 2;
+        int i12 = iArr[i10];
+        e(i11);
+        if (i12 >= 0) {
+            int[] iArr2 = this.t;
+            int length = iArr2.length;
+            int i13 = this.u;
+            if (i12 <= (length - i13) - i11) {
+                int i14 = i13 + i11;
+                int i15 = i14 + i12;
+                int i16 = i14;
+                for (int i17 = i13; i17 < i14; i17++) {
+                    int i18 = iArr2[i17];
+                    if (((i18 == 0 || i18 == 1) ? 2 : i18 == 2 ? 4 : i18 == 3 ? 6 : 0) + i16 > i15) {
+                        throw new IllegalArgumentException("Canvas batch: path");
+                    }
+                    if (i18 == 0) {
+                        path.moveTo(Float.intBitsToFloat(iArr2[i16]), Float.intBitsToFloat(iArr2[i16 + 1]));
+                    } else if (i18 != 1) {
+                        if (i18 == 2) {
+                            path.quadTo(Float.intBitsToFloat(iArr2[i16]), Float.intBitsToFloat(iArr2[i16 + 1]), Float.intBitsToFloat(iArr2[i16 + 2]), Float.intBitsToFloat(iArr2[i16 + 3]));
+                            i16 += 4;
+                        } else if (i18 == 3) {
+                            path.cubicTo(Float.intBitsToFloat(iArr2[i16]), Float.intBitsToFloat(iArr2[i16 + 1]), Float.intBitsToFloat(iArr2[i16 + 2]), Float.intBitsToFloat(iArr2[i16 + 3]), Float.intBitsToFloat(iArr2[i16 + 4]), Float.intBitsToFloat(iArr2[i16 + 5]));
+                            i16 += 6;
+                        } else if (i18 == 4) {
+                            path.close();
+                        }
+                    } else {
+                        path.lineTo(Float.intBitsToFloat(iArr2[i16]), Float.intBitsToFloat(iArr2[i16 + 1]));
+                    }
+                    i16 += 2;
                 }
-            } else {
-                path.lineTo(Float.intBitsToFloat(iArr[i15]), Float.intBitsToFloat(iArr[i15 + 1]));
+                this.u = i11 + i12 + this.u;
+                if (z10) {
+                    path.setFillType(Path.FillType.WINDING);
+                    return;
+                }
+                return;
             }
-            i15 += 2;
         }
-        this.u = i11 + i13 + this.u;
-        if (z9) {
-            path.setFillType(Path.FillType.WINDING);
-        }
+        throw new IllegalArgumentException("Canvas batch: count");
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0344  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x03cb  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x02ca  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x022a  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x02e7  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0393  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x041a  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0319  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x02db  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0336  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void g(g gVar) {
-        boolean z9;
-        int i7;
+    public final void h(g gVar) {
         boolean z10;
+        boolean z11;
+        float f10;
+        int i7;
         int i10;
-        int i11;
         int[] iArr = this.t;
-        int i12 = this.u;
-        int i13 = i12 + 1;
-        this.u = i13;
-        int i14 = iArr[i12];
-        this.v = i14;
-        boolean z11 = false;
-        if (i14 == 0) {
+        int i11 = this.u;
+        int i12 = i11 + 1;
+        this.u = i12;
+        int i13 = iArr[i11];
+        this.v = i13;
+        boolean z12 = false;
+        if (i13 == 0) {
             this.o.eraseColor(0);
             return;
         }
-        int i15 = 2;
-        if (i14 == 6) {
-            int e10 = (int) e();
-            int e11 = (int) e();
+        if (i13 == 6) {
+            int f11 = (int) f();
+            int f12 = (int) f();
             int[] iArr2 = this.t;
-            int i16 = this.u;
-            int i17 = i16 + 1;
+            int i14 = this.u;
+            int i15 = i14 + 1;
+            this.u = i15;
+            int i16 = iArr2[i14];
+            int i17 = i14 + 2;
             this.u = i17;
-            int i18 = iArr2[i16];
-            int i19 = i16 + 2;
+            int i18 = iArr2[i15];
+            int i19 = i14 + 3;
             this.u = i19;
             int i20 = iArr2[i17];
-            int i21 = i16 + 3;
-            this.u = i21;
-            int i22 = iArr2[i19];
-            this.u = ((i22 + 3) >> 2) + i21;
-            if (i18 <= 0 || i20 <= 0 || i22 != i18 * i20 * 4) {
-                return;
-            }
-            int max = Math.max(0, e10);
-            int max2 = Math.max(0, e11);
-            int min = Math.min(this.o.getWidth(), e10 + i18);
-            int min2 = Math.min(this.o.getHeight(), i20 + e11);
-            if (min <= max || min2 <= max2) {
-                return;
-            }
-            int i23 = min - max;
-            int i24 = min2 - max2;
-            int[] iArr3 = new int[i23 * i24];
-            for (int i25 = max2; i25 < min2; i25++) {
-                int i26 = max;
-                while (i26 < min) {
-                    int i27 = this.t[(i26 - e10) + com.google.android.recaptcha.internal.a.e(i25, e11, i18, i21)];
-                    iArr3[(i26 - max) + ((i25 - max2) * i23)] = ((i27 & qs.e4) << 16) | ((-16711936) & i27) | ((i27 >>> 16) & qs.e4);
-                    i26++;
-                    e10 = e10;
+            if (i20 >= 0) {
+                long j3 = i20;
+                if (((3 + j3) >> 2) <= iArr2.length - i19) {
+                    this.u = ((i20 + 3) >> 2) + i19;
+                    if (i16 <= 0 || i18 <= 0 || j3 != i16 * i18 * 4) {
+                        return;
+                    }
+                    int max = Math.max(0, f11);
+                    int max2 = Math.max(0, f12);
+                    int min = Math.min(this.o.getWidth(), f11 + i16);
+                    int min2 = Math.min(this.o.getHeight(), i18 + f12);
+                    if (min <= max || min2 <= max2) {
+                        return;
+                    }
+                    int i21 = min - max;
+                    int i22 = min2 - max2;
+                    int[] iArr3 = new int[i21 * i22];
+                    for (int i23 = max2; i23 < min2; i23++) {
+                        int i24 = max;
+                        while (i24 < min) {
+                            int i25 = this.t[(i24 - f11) + e2.v(i23, f12, i16, i19)];
+                            iArr3[(i24 - max) + ((i23 - max2) * i21)] = ((i25 & ns.e4) << 16) | ((-16711936) & i25) | ((i25 >>> 16) & ns.e4);
+                            i24++;
+                            f11 = f11;
+                        }
+                    }
+                    this.o.setPixels(iArr3, 0, i21, max, max2, i21, i22);
+                    return;
                 }
             }
-            this.o.setPixels(iArr3, 0, i23, max, max2, i23, i24);
-            return;
+            throw new IllegalArgumentException("Canvas batch: pixels");
         }
-        this.u = i12 + 2;
-        int i28 = iArr[i13];
-        if (i28 > 0) {
+        this.u = i11 + 2;
+        int i26 = iArr[i12];
+        e(i26);
+        if (i26 > 0) {
             this.q.save();
-            for (int i29 = 0; i29 < i28; i29++) {
+            for (int i27 = 0; i27 < i26; i27++) {
                 Path path = this.f;
-                f(path, false);
+                g(path, false);
                 int[] iArr4 = this.t;
-                int i30 = this.u;
-                this.u = i30 + 1;
-                path.setFillType(iArr4[i30] != 0 ? Path.FillType.EVEN_ODD : Path.FillType.WINDING);
+                int i28 = this.u;
+                this.u = i28 + 1;
+                path.setFillType(iArr4[i28] != 0 ? Path.FillType.EVEN_ODD : Path.FillType.WINDING);
                 this.q.clipPath(path);
             }
         }
-        int i31 = this.v;
+        int i29 = this.v;
         Path path2 = this.e;
-        if (i31 == 1 || i31 == 2 || i31 == 3) {
-            f(path2, i31 == 3);
+        if (i29 == 1 || i29 == 2 || i29 == 3) {
+            g(path2, i29 == 3);
         }
-        int i32 = this.v;
-        if (i32 == 3) {
+        int i30 = this.v;
+        if (i30 == 3) {
             this.q.drawPath(path2, this.d);
         } else {
             int[] iArr5 = this.t;
-            if (i32 == 1 || i32 == 2) {
+            if (i30 == 1 || i30 == 2) {
                 path2.setFillType(iArr5[this.u] != 0 ? Path.FillType.EVEN_ODD : Path.FillType.WINDING);
             }
             this.u++;
-            float e12 = e();
+            float f13 = f();
             float[] fArr = this.i;
-            fArr[0] = e12;
-            fArr[3] = e();
-            fArr[1] = e();
-            fArr[4] = e();
-            fArr[2] = e();
-            fArr[5] = e();
-            this.A = Math.max(0.0f, Math.min(1.0f, e()));
-            int i33 = this.u;
-            int i34 = i33 + 1;
-            this.u = i34;
-            this.w = iArr5[i33];
-            int i35 = i33 + 2;
-            this.u = i35;
-            Object[] objArr = iArr5[i34] != 0;
+            fArr[0] = f13;
+            fArr[3] = f();
+            fArr[1] = f();
+            fArr[4] = f();
+            fArr[2] = f();
+            fArr[5] = f();
+            this.A = Math.max(0.0f, Math.min(1.0f, f()));
+            int i31 = this.u;
+            int i32 = i31 + 1;
+            this.u = i32;
+            this.w = iArr5[i31];
+            int i33 = i31 + 2;
+            this.u = i33;
+            Object[] objArr = iArr5[i32] != 0;
             this.z = 0;
             if (objArr != false) {
-                this.u = i33 + 3;
-                this.z = iArr5[i35];
-                this.B = e();
-                this.C = e();
-                this.D = e();
+                this.u = i31 + 3;
+                this.z = iArr5[i33];
+                this.B = f();
+                this.C = f();
+                this.D = f();
             }
-            int i36 = this.v;
-            if (i36 == 1 || i36 == 2 || i36 == 4) {
-                int i37 = this.u;
-                int i38 = i37 + 1;
-                this.u = i38;
-                int i39 = iArr5[i37];
-                this.x = i39;
+            int i34 = this.v;
+            if (i34 == 1 || i34 == 2 || i34 == 4) {
+                int i35 = this.u;
+                int i36 = i35 + 1;
+                this.u = i36;
+                int i37 = iArr5[i35];
+                this.x = i37;
                 this.E = null;
                 this.F = null;
                 this.y = 0;
-                if (i39 == 0) {
-                    this.u = i37 + 2;
-                    this.y = iArr5[i38];
+                if (i37 == 0) {
+                    this.u = i35 + 2;
+                    this.y = iArr5[i36];
                 } else {
-                    for (int i40 = 0; i40 < 6; i40++) {
-                        this.j[i40] = e();
+                    for (int i38 = 0; i38 < 6; i38++) {
+                        this.j[i38] = f();
                     }
                     int[] iArr6 = this.t;
-                    int i41 = this.u;
-                    this.u = i41 + 1;
-                    int i42 = iArr6[i41];
-                    if (i42 == 0) {
-                        z9 = false;
-                        i7 = 2;
+                    int i39 = this.u;
+                    int i40 = i39 + 1;
+                    this.u = i40;
+                    int i41 = iArr6[i39];
+                    if (i41 == 0) {
+                        z10 = false;
                     } else {
-                        int[] iArr7 = new int[Math.max(2, i42)];
-                        float[] fArr2 = new float[i42 == 1 ? 2 : i42];
-                        int i43 = 0;
-                        while (i43 < i42) {
-                            float e13 = e();
-                            int i44 = i15;
-                            int[] iArr8 = this.t;
-                            int i45 = this.u;
-                            this.u = i45 + 1;
-                            iArr7[i43] = iArr8[i45];
-                            fArr2[i43] = Math.max(0.0f, Math.min(1.0f, e13));
-                            i43++;
-                            i15 = i44;
-                            z11 = z11;
+                        if (i41 < 0 || i41 > (iArr6.length - i40) / 2) {
+                            throw new IllegalArgumentException("Canvas batch: stops");
                         }
-                        z9 = z11;
-                        i7 = i15;
-                        if (i42 == 1) {
-                            iArr7[1] = iArr7[z9 ? 1 : 0];
-                            fArr2[z9 ? 1 : 0] = 0.0f;
+                        int[] iArr7 = new int[Math.max(2, i41)];
+                        float[] fArr2 = new float[i41 == 1 ? 2 : i41];
+                        int i42 = 0;
+                        while (i42 < i41) {
+                            float f14 = f();
+                            int[] iArr8 = this.t;
+                            int i43 = this.u;
+                            this.u = i43 + 1;
+                            iArr7[i42] = iArr8[i43];
+                            fArr2[i42] = Math.max(0.0f, Math.min(1.0f, f14));
+                            i42++;
+                            z12 = z12;
+                        }
+                        z10 = z12;
+                        if (i41 == 1) {
+                            iArr7[1] = iArr7[z10 ? 1 : 0];
+                            fArr2[z10 ? 1 : 0] = 0.0f;
                             fArr2[1] = 1.0f;
                         }
                         this.E = iArr7;
                         this.F = fArr2;
                     }
-                    z10 = z9;
-                    this.U = z10;
-                    if (this.v == 4) {
+                    z11 = z10;
+                    this.U = z11;
+                    if (this.v != 4) {
                         int[] iArr9 = this.t;
-                        int i46 = this.u;
-                        int i47 = i46 + 1;
-                        this.u = i47;
-                        this.M = iArr9[i46];
-                        this.u = i46 + 2;
-                        int i48 = iArr9[i47];
-                        byte[] bArr = new byte[i48];
-                        for (int i49 = 0; i49 < i48; i49++) {
-                            bArr[i49] = (byte) (this.t[this.u + (i49 >> 2)] >>> ((i49 & 3) * 8));
-                        }
-                        this.u += (i48 + 3) >> 2;
-                        this.P = new String(bArr, StandardCharsets.UTF_8);
-                        this.Q = e();
-                        this.R = e();
-                        this.S = e();
-                        this.T = e();
-                        int[] iArr10 = this.t;
-                        int i50 = this.u;
-                        this.u = i50 + 1;
-                        this.U = iArr10[i50] != 0;
-                    }
-                    if (this.v != i7 || this.U) {
-                        this.I = e();
-                        int[] iArr11 = this.t;
-                        int i51 = this.u;
-                        int i52 = i51 + 1;
-                        this.u = i52;
-                        this.G = iArr11[i51];
-                        this.u = i51 + 2;
-                        this.H = iArr11[i52];
-                        this.J = e();
-                        int[] iArr12 = this.t;
-                        int i53 = this.u;
-                        this.u = i53 + 1;
-                        i10 = iArr12[i53];
-                        this.L = null;
-                        if (i10 > 0) {
-                            this.L = new float[i10];
-                            for (int i54 = 0; i54 < i10; i54++) {
-                                this.L[i54] = e();
+                        int i44 = this.u;
+                        int i45 = i44 + 1;
+                        this.u = i45;
+                        this.M = iArr9[i44];
+                        int i46 = i44 + 2;
+                        this.u = i46;
+                        int i47 = iArr9[i45];
+                        if (i47 >= 0) {
+                            long j10 = (i47 + 3) >> 2;
+                            int length = iArr9.length - i46;
+                            f10 = 1.0f;
+                            if (j10 <= length) {
+                                byte[] bArr = new byte[i47];
+                                for (int i48 = 0; i48 < i47; i48++) {
+                                    bArr[i48] = (byte) (this.t[this.u + (i48 >> 2)] >>> ((i48 & 3) * 8));
+                                }
+                                this.u += (i47 + 3) >> 2;
+                                this.P = new String(bArr, StandardCharsets.UTF_8);
+                                this.Q = f();
+                                this.R = f();
+                                this.S = f();
+                                this.T = f();
+                                int[] iArr10 = this.t;
+                                int i49 = this.u;
+                                this.u = i49 + 1;
+                                this.U = iArr10[i49] != 0;
                             }
                         }
-                        this.K = e();
+                        throw new IllegalArgumentException("Canvas batch: bytes");
+                    }
+                    f10 = 1.0f;
+                    if (this.v != 2 || this.U) {
+                        this.I = f();
+                        int[] iArr11 = this.t;
+                        int i50 = this.u;
+                        int i51 = i50 + 1;
+                        this.u = i51;
+                        this.G = iArr11[i50];
+                        this.u = i50 + 2;
+                        this.H = iArr11[i51];
+                        this.J = f();
+                        int[] iArr12 = this.t;
+                        int i52 = this.u;
+                        this.u = i52 + 1;
+                        i7 = iArr12[i52];
+                        e(i7);
+                        this.L = null;
+                        if (i7 > 0) {
+                            this.L = new float[i7];
+                            for (int i53 = 0; i53 < i7; i53++) {
+                                this.L[i53] = f();
+                            }
+                        }
+                        this.K = f();
                     }
                     if (this.v == 5) {
-                        int i55 = this.u;
-                        int i56 = i55 + 1;
-                        this.u = i56;
-                        this.N = iArr5[i55];
-                        this.u = i55 + 2;
-                        this.O = iArr5[i56];
-                        for (int i57 = 0; i57 < 8; i57++) {
-                            this.k[i57] = e();
+                        int i54 = this.u;
+                        int i55 = i54 + 1;
+                        this.u = i55;
+                        this.N = iArr5[i54];
+                        this.u = i54 + 2;
+                        this.O = iArr5[i55];
+                        for (int i56 = 0; i56 < 8; i56++) {
+                            this.k[i56] = f();
                         }
-                        int i58 = this.u;
-                        this.u = i58 + 1;
-                        this.V = iArr5[i58] != 0;
+                        int i57 = this.u;
+                        this.u = i57 + 1;
+                        this.V = iArr5[i57] != 0;
                     }
-                    if (this.v != 1 && this.x == 0 && this.A == 1.0f && this.w == 0 && this.z == 0) {
-                        int i59 = this.y;
+                    if (this.v != 1 && this.x == 0 && this.A == f10 && this.w == 0 && this.z == 0) {
+                        int i58 = this.y;
                         Paint paint = this.b;
-                        paint.setColor(i59);
+                        paint.setColor(i58);
                         this.q.drawPath(path2, paint);
                     } else {
-                        i11 = this.z;
+                        i10 = this.z;
                         Paint paint2 = this.c;
-                        if (i11 == 0) {
+                        if (i10 == 0) {
                             Bitmap createBitmap = Bitmap.createBitmap(this.o.getWidth(), this.o.getHeight(), Bitmap.Config.ARGB_8888);
                             c(new Canvas(createBitmap), gVar);
                             Paint paint3 = new Paint(1);
-                            float f10 = this.D / 2.0f;
-                            if (f10 > 0.5f) {
-                                paint3.setMaskFilter(new BlurMaskFilter((f10 - 0.5f) / 0.57735f, BlurMaskFilter.Blur.NORMAL));
+                            float f15 = this.D / 2.0f;
+                            if (f15 > 0.5f) {
+                                paint3.setMaskFilter(new BlurMaskFilter((f15 - 0.5f) / 0.57735f, BlurMaskFilter.Blur.NORMAL));
                             }
                             Bitmap extractAlpha = createBitmap.extractAlpha(paint3, new int[2]);
                             paint2.reset();
@@ -572,7 +611,7 @@ public final class h {
                             this.q.restore();
                             extractAlpha.recycle();
                             createBitmap.recycle();
-                        } else if (this.A < 1.0f || this.w != 0) {
+                        } else if (this.A < f10 || this.w != 0) {
                             paint2.reset();
                             paint2.setAlpha(Math.round(this.A * 255.0f));
                             b(this.w, paint2);
@@ -585,41 +624,60 @@ public final class h {
                     }
                 }
             }
-            z10 = false;
-            i7 = 2;
-            this.U = z10;
-            if (this.v == 4) {
+            z11 = false;
+            this.U = z11;
+            if (this.v != 4) {
             }
-            if (this.v != i7) {
+            if (this.v != 2) {
             }
-            this.I = e();
+            this.I = f();
             int[] iArr112 = this.t;
-            int i512 = this.u;
-            int i522 = i512 + 1;
-            this.u = i522;
-            this.G = iArr112[i512];
-            this.u = i512 + 2;
-            this.H = iArr112[i522];
-            this.J = e();
+            int i502 = this.u;
+            int i512 = i502 + 1;
+            this.u = i512;
+            this.G = iArr112[i502];
+            this.u = i502 + 2;
+            this.H = iArr112[i512];
+            this.J = f();
             int[] iArr122 = this.t;
-            int i532 = this.u;
-            this.u = i532 + 1;
-            i10 = iArr122[i532];
+            int i522 = this.u;
+            this.u = i522 + 1;
+            i7 = iArr122[i522];
+            e(i7);
             this.L = null;
-            if (i10 > 0) {
+            if (i7 > 0) {
             }
-            this.K = e();
+            this.K = f();
             if (this.v == 5) {
             }
             if (this.v != 1) {
             }
-            i11 = this.z;
+            i10 = this.z;
             Paint paint22 = this.c;
-            if (i11 == 0) {
+            if (i10 == 0) {
             }
         }
-        if (i28 > 0) {
+        if (i26 > 0) {
             this.q.restore();
+        }
+    }
+
+    public final synchronized Bitmap i() {
+        try {
+            Bitmap bitmap = this.o;
+            if (bitmap == null) {
+                return null;
+            }
+            if (this.s == this.r) {
+                if (this.p == null) {
+                }
+                return this.p;
+            }
+            this.p = bitmap.copy(Bitmap.Config.ARGB_8888, false);
+            this.s = this.r;
+            return this.p;
+        } catch (Throwable th2) {
+            throw th2;
         }
     }
 }

@@ -1,6 +1,8 @@
 package h0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import com.google.android.gms.internal.vision.e2;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k {
     public static final k k;
@@ -31,7 +33,7 @@ public final class k {
         float[] fArr5 = fArr2[2];
         float f17 = (f14 * fArr5[2]) + (f12 * fArr5[1]) + (f10 * fArr5[0]);
         float f18 = ((double) 1.0f) >= 0.9d ? 0.69f : 0.655f;
-        float C = com.google.android.recaptcha.internal.a.C((float) Math.exp(((-j3) - 42.0f) / 92.0f), 0.2777778f, 1.0f, 1.0f);
+        float C = e2.C((float) Math.exp(((-j3) - 42.0f) / 92.0f), 0.2777778f, 1.0f, 1.0f);
         double d = C;
         if (d > 1.0d) {
             C = 1.0f;
@@ -39,7 +41,7 @@ public final class k {
             C = 0.0f;
         }
         float f19 = 1.0f / ((5.0f * j3) + 1.0f);
-        float D = com.google.android.recaptcha.internal.a.D(f19, f19, f19, f19);
+        float D = e2.D(f19, f19, f19, f19);
         float f20 = 1.0f - D;
         float cbrt = (0.1f * f20 * f20 * ((float) Math.cbrt(j3 * 5.0d))) + (D * j3);
         float j10 = b.j() / fArr[1];
@@ -53,7 +55,7 @@ public final class k {
         float f24 = (f23 * 400.0f) / (f23 + 27.13f);
         float f25 = fArr6[2];
         float[] fArr7 = {f22, f24, (400.0f * f25) / (f25 + 27.13f)};
-        k = new k(j10, com.google.android.recaptcha.internal.a.B(fArr7[2], 0.05f, (fArr7[0] * 2.0f) + fArr7[1], pow), pow, pow, f18, 1.0f, new float[]{(((100.0f / f15) * C) + 1.0f) - C, (((100.0f / f16) * C) + 1.0f) - C, (((100.0f / f17) * C) + 1.0f) - C}, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt);
+        k = new k(j10, e2.B(fArr7[2], 0.05f, (fArr7[0] * 2.0f) + fArr7[1], pow), pow, pow, f18, 1.0f, new float[]{(((100.0f / f15) * C) + 1.0f) - C, (((100.0f / f16) * C) + 1.0f) - C, (((100.0f / f17) * C) + 1.0f) - C}, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt);
     }
 
     public k(float f10, float f11, float f12, float f13, float f14, float f15, float[] fArr, float f16, float f17, float f18) {

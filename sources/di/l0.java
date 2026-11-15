@@ -1,15 +1,39 @@
 package di;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import org.telegram.messenger.pr;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l0 extends CharacterStyle {
-    public final float a = 0.75f;
+public final /* synthetic */ class l0 implements pr {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setAlpha((int) (this.a * textPaint.getAlpha()));
+    public /* synthetic */ l0(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    @Override // org.telegram.messenger.pr
+    public final void a(int i7) {
+        switch (this.a) {
+            case 0:
+                p0 p0Var = (p0) this.b;
+                p0Var.getClass();
+                p0Var.f1(cg.a.i(0L, i7 == 0 ? cg.b.a : cg.b.b), true, false, true);
+                p0Var.a2.setText("");
+                break;
+            case 1:
+                s0 s0Var = (s0) this.b;
+                s0Var.getClass();
+                s0Var.M0(cg.a.i(0L, i7 == 0 ? cg.b.a : cg.b.b), true, false, true);
+                s0Var.r1.setText("");
+                break;
+            default:
+                e5 e5Var = (e5) this.b;
+                e5Var.getClass();
+                e5Var.q = i7 == 0 ? cg.b.a : cg.b.b;
+                e5Var.a(true);
+                break;
+        }
     }
 }

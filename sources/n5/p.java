@@ -2,7 +2,7 @@ package n5;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p extends b0 {
     public final byte[] a;
@@ -19,11 +19,11 @@ public final class p extends b0 {
         }
         if (obj instanceof b0) {
             b0 b0Var = (b0) obj;
-            boolean z9 = b0Var instanceof p;
+            boolean z10 = b0Var instanceof p;
             p pVar = (p) b0Var;
-            if (Arrays.equals(this.a, z9 ? pVar.a : pVar.a)) {
+            if (Arrays.equals(this.a, z10 ? pVar.a : pVar.a)) {
                 p pVar2 = (p) b0Var;
-                if (Arrays.equals(this.b, z9 ? pVar2.b : pVar2.b)) {
+                if (Arrays.equals(this.b, z10 ? pVar2.b : pVar2.b)) {
                     return true;
                 }
             }

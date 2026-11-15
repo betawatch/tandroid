@@ -1,6 +1,6 @@
 package gb;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l {
     public final ua.b a;
@@ -10,7 +10,7 @@ public final class l {
         this.a = transportFactoryProvider;
     }
 
-    public final void a(p0 p0Var) {
-        ((o5.q) ((l5.f) this.a.get())).a("FIREBASE_APPQUALITY_SESSION", new l5.c("json"), new g2.c(this, 1)).a(l5.a.a(p0Var), new ni.a(3));
+    public final void a(o0 o0Var) {
+        ((o5.r) ((l5.f) this.a.get())).a("FIREBASE_APPQUALITY_SESSION", new l5.c("json"), new g0.e(this)).a(l5.a.a(o0Var), new n2.a0(7));
     }
 }

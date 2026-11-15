@@ -1,53 +1,61 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.graphics.SurfaceTexture;
+import org.telegram.messenger.voip.VideoCapturerDevice;
+import org.telegram.ui.Components.z30;
+import org.webrtc.EglBase;
+import org.webrtc.EglRenderer;
+import org.webrtc.GlRectDrawer;
+import org.webrtc.VideoFrame;
+import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z0 b;
+public final class u0 implements VideoSink {
+    public final EglRenderer a;
+    public SurfaceTexture b;
+    public boolean c;
 
-    public /* synthetic */ u0(z0 z0Var, int i7) {
-        this.a = i7;
-        this.b = z0Var;
+    public u0(wi.o oVar) {
+        EglRenderer eglRenderer = new EglRenderer("pip-egl");
+        this.a = eglRenderer;
+        eglRenderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), EglBase.CONFIG_PLAIN, new GlRectDrawer());
+        oVar.setSurfaceTextureListener(new z30(this, 3));
+        SurfaceTexture surfaceTexture = oVar.getSurfaceTexture();
+        if (surfaceTexture == null || oVar.a == null) {
+            return;
+        }
+        int width = oVar.getWidth();
+        int height = oVar.getHeight();
+        if (this.c || this.b == surfaceTexture) {
+            return;
+        }
+        this.b = surfaceTexture;
+        if (width > 0 && height > 0) {
+            eglRenderer.setLayoutAspectRatio(width / height);
+        }
+        eglRenderer.createEglSurface(surfaceTexture);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                z0 z0Var = this.b;
-                z0Var.getClass();
-                z0Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                z0Var.invalidate();
-                break;
-            case 1:
-                z0 z0Var2 = this.b;
-                z0Var2.getClass();
-                z0Var2.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float L = z0Var2.I + org.telegram.messenger.g0.L(28.0f);
-                float L2 = z0Var2.J + org.telegram.messenger.g0.L(52.0f);
-                float f10 = z0Var2.D;
-                z0Var2.G = L - (L * f10);
-                z0Var2.H = L2 - (f10 * L2);
-                z0Var2.invalidate();
-                break;
-            case 2:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                z0 z0Var3 = this.b;
-                z0Var3.E = floatValue;
-                int L3 = (org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(36.0f)) - org.telegram.messenger.g0.L(52.0f);
-                x0 x0Var = z0Var3.c;
-                x0Var.getLayoutParams().width = org.telegram.messenger.g0.L(52.0f) + ((int) (L3 * z0Var3.E));
-                x0Var.requestLayout();
-                break;
-            default:
-                z0 z0Var4 = this.b;
-                z0Var4.getClass();
-                z0Var4.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                z0Var4.e();
-                break;
+    public final void a() {
+        if (this.c) {
+            return;
         }
+        this.c = true;
+        this.a.release();
+        this.b = null;
+    }
+
+    @Override // org.webrtc.VideoSink
+    public final void onFrame(VideoFrame videoFrame) {
+        if (this.c) {
+            return;
+        }
+        this.a.onFrame(videoFrame);
+    }
+
+    @Override // org.webrtc.VideoSink
+    public final /* synthetic */ void setParentSink(VideoSink videoSink) {
+        org.webrtc.d0.a(this, videoSink);
     }
 }

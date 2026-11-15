@@ -1,47 +1,40 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o40 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z40 b;
+public final class o40 extends org.telegram.ui.Components.z00 {
+    public final /* synthetic */ w40 r;
 
-    public /* synthetic */ o40(z40 z40Var, int i7) {
-        this.a = i7;
-        this.b = z40Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o40(w40 w40Var, Context context, int i7) {
+        super(context, i7);
+        this.r = w40Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                z40 z40Var = this.b;
-                z40Var.X = null;
-                z40Var.Z.b();
-                z40Var.h.b();
-                z40Var.p0();
-                z40Var.w0();
-                z40Var.x0();
-                break;
-            case 1:
-                z40 z40Var2 = this.b;
-                z40Var2.f.r.clearFocus();
-                z40Var2.f.r.requestFocus();
-                org.telegram.messenger.g0.K3(z40Var2.f.r);
-                break;
-            case 2:
-                this.b.t0();
-                break;
-            case 3:
-                z40 z40Var3 = this.b;
-                z40Var3.s0(z40Var3.q0());
-                break;
-            default:
-                z40 z40Var4 = this.b;
-                z40Var4.s0(z40Var4.q0());
-                break;
+    @Override // org.telegram.ui.Components.z00
+    public final void a(org.telegram.ui.Components.f20 f20Var) {
+        super.a(f20Var);
+        w40.e0(this.r);
+    }
+
+    @Override // org.telegram.ui.Components.z00
+    public final void b() {
+        super.b();
+        w40.e0(this.r);
+    }
+
+    @Override // org.telegram.ui.Components.z00
+    public final void c(org.telegram.ui.Components.f20 f20Var) {
+        w40 w40Var = this.r;
+        if (f20Var == w40Var.Y) {
+            w40Var.Y = null;
         }
+        if (f20Var == w40Var.Z) {
+            w40Var.Z = null;
+        }
+        super.c(f20Var);
+        w40.e0(w40Var);
     }
 }

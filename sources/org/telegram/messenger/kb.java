@@ -1,113 +1,230 @@
 package org.telegram.messenger;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import java.util.ArrayList;
-import org.telegram.ui.Components.zg0;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class kb extends h2.j0 {
-    public final /* synthetic */ int e;
-    public final /* synthetic */ gc f;
+public final /* synthetic */ class kb implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ kb(gc gcVar, int i7, int i10) {
-        super(i7, 2);
-        this.e = i10;
-        this.f = gcVar;
+    public /* synthetic */ kb(int i7, long j3, long j10, String str) {
+        this.a = 0;
+        this.d = i7;
+        this.e = str;
+        this.b = j3;
+        this.c = j10;
     }
 
-    @Override // h2.j0
-    public void e(String str, Object obj, Object obj2) {
-        switch (this.e) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        SQLiteCursor queryFinalized;
+        long j3;
+        long j10;
+        int i7;
+        int i10;
+        long j11;
+        long j12;
+        int i11 = this.a;
+        int i12 = 0;
+        long j13 = this.c;
+        long j14 = this.b;
+        int i13 = this.d;
+        Object obj = this.e;
+        switch (i11) {
             case 0:
-                BitmapDrawable bitmapDrawable = (BitmapDrawable) obj;
-                gc gcVar = this.f;
-                String str2 = gcVar.F;
-                if (str2 == null || !str2.equals(str)) {
-                    Integer num = (Integer) gcVar.a.get(str);
-                    if (num == null || num.intValue() == 0) {
-                        Bitmap bitmap = bitmapDrawable.getBitmap();
-                        if (!bitmap.isRecycled()) {
-                            ArrayList arrayList = new ArrayList();
-                            arrayList.add(bitmap);
-                            g0.A2(arrayList);
-                            break;
-                        }
-                    }
-                }
+                ns.f(i13).k(ns.X1, (String) obj, Long.valueOf(j14), Long.valueOf(j13));
                 break;
             case 1:
-                BitmapDrawable bitmapDrawable2 = (BitmapDrawable) obj;
-                gc gcVar2 = this.f;
-                String str3 = gcVar2.F;
-                if (str3 == null || !str3.equals(str)) {
-                    Integer num2 = (Integer) gcVar2.a.get(str);
-                    if (num2 == null || num2.intValue() == 0) {
-                        Bitmap bitmap2 = bitmapDrawable2.getBitmap();
-                        if (!bitmap2.isRecycled()) {
-                            ArrayList arrayList2 = new ArrayList();
-                            arrayList2.add(bitmap2);
-                            g0.A2(arrayList2);
-                            break;
+                si siVar = (si) obj;
+                siVar.getClass();
+                try {
+                    int[] iArr = new int[9];
+                    iArr[0] = -1;
+                    iArr[1] = -1;
+                    iArr[2] = -1;
+                    iArr[3] = -1;
+                    iArr[4] = -1;
+                    iArr[5] = -1;
+                    iArr[6] = -1;
+                    iArr[7] = -1;
+                    iArr[8] = -1;
+                    int i14 = 8;
+                    int[] iArr2 = new int[9];
+                    iArr2[0] = -1;
+                    iArr2[1] = -1;
+                    iArr2[2] = -1;
+                    iArr2[3] = -1;
+                    iArr2[4] = -1;
+                    iArr2[5] = -1;
+                    iArr2[6] = -1;
+                    iArr2[7] = -1;
+                    iArr2[8] = -1;
+                    int i15 = 7;
+                    int[] iArr3 = new int[9];
+                    iArr3[0] = 0;
+                    iArr3[1] = 0;
+                    iArr3[2] = 0;
+                    iArr3[3] = 0;
+                    iArr3[4] = 0;
+                    iArr3[5] = 0;
+                    iArr3[6] = 0;
+                    iArr3[7] = 0;
+                    iArr3[8] = 0;
+                    long j15 = this.b;
+                    int i16 = 4;
+                    long j16 = this.c;
+                    if (j15 != 0) {
+                        SQLiteDatabase sQLiteDatabase = siVar.getMessagesStorage().b;
+                        Locale locale = Locale.US;
+                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT type, count, old FROM media_counts_topics WHERE uid = " + j16 + " AND topic_id = " + j15, new Object[0]);
+                    } else {
+                        SQLiteDatabase sQLiteDatabase2 = siVar.getMessagesStorage().b;
+                        Locale locale2 = Locale.US;
+                        queryFinalized = sQLiteDatabase2.queryFinalized("SELECT type, count, old FROM media_counts_v2 WHERE uid = " + j16, new Object[0]);
+                    }
+                    while (queryFinalized.next()) {
+                        int intValue = queryFinalized.intValue(0);
+                        if (intValue >= 0 && intValue < 9) {
+                            int intValue2 = queryFinalized.intValue(1);
+                            iArr[intValue] = intValue2;
+                            iArr2[intValue] = intValue2;
+                            iArr3[intValue] = queryFinalized.intValue(2);
                         }
                     }
-                }
-                break;
-            case 3:
-                BitmapDrawable bitmapDrawable3 = (BitmapDrawable) obj;
-                gc gcVar3 = this.f;
-                Integer num3 = (Integer) gcVar3.a.get(str);
-                boolean z9 = bitmapDrawable3 instanceof org.telegram.ui.Components.u5;
-                if (z9) {
-                    gcVar3.f.remove((org.telegram.ui.Components.u5) bitmapDrawable3);
-                }
-                if (num3 == null || num3.intValue() == 0) {
-                    if (z9) {
-                        ((org.telegram.ui.Components.u5) bitmapDrawable3).u();
-                    }
-                    if (bitmapDrawable3 instanceof zg0) {
-                        ((zg0) bitmapDrawable3).C(false);
+                    queryFinalized.dispose();
+                    if (!m5.C(j16)) {
+                        TLRPC.TL_messages_getSearchCounters tL_messages_getSearchCounters = new TLRPC.TL_messages_getSearchCounters();
+                        tL_messages_getSearchCounters.peer = siVar.getMessagesController().j1(j16);
+                        if (j15 != 0) {
+                            if (j16 == siVar.getUserConfig().e()) {
+                                tL_messages_getSearchCounters.saved_peer_id = siVar.getMessagesController().j1(j15);
+                                tL_messages_getSearchCounters.flags |= 4;
+                            } else {
+                                tL_messages_getSearchCounters.top_msg_id = (int) j15;
+                                tL_messages_getSearchCounters.flags |= 1;
+                            }
+                        }
+                        int i17 = 0;
+                        boolean z10 = false;
+                        while (i17 < 9) {
+                            if (tL_messages_getSearchCounters.peer == null) {
+                                iArr[i17] = i12;
+                            } else if (iArr[i17] == -1 || iArr3[i17] == 1) {
+                                if (i17 == 0) {
+                                    i7 = i12;
+                                    tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterPhotoVideo());
+                                } else {
+                                    i7 = i12;
+                                    if (i17 == 1) {
+                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterDocument());
+                                    } else if (i17 == 2) {
+                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterRoundVoice());
+                                    } else if (i17 == 3) {
+                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterUrl());
+                                    } else if (i17 == i16) {
+                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterMusic());
+                                    } else if (i17 == 6) {
+                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterPhotos());
+                                    } else if (i17 == i15) {
+                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterVideo());
+                                    } else if (i17 == i14) {
+                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterPoll());
+                                    } else {
+                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterGif());
+                                    }
+                                }
+                                if (iArr[i17] == -1) {
+                                    z10 = true;
+                                } else if (iArr3[i17] == 1) {
+                                    iArr[i17] = -1;
+                                }
+                                i17++;
+                                i12 = i7;
+                                i14 = 8;
+                                i15 = 7;
+                                i16 = 4;
+                            }
+                            i7 = i12;
+                            i17++;
+                            i12 = i7;
+                            i14 = 8;
+                            i15 = 7;
+                            i16 = 4;
+                        }
+                        if (tL_messages_getSearchCounters.filters.isEmpty()) {
+                            j3 = j15;
+                            j10 = j16;
+                        } else {
+                            j10 = j16;
+                            j3 = j15;
+                            siVar.getConnectionsManager().bindRequestToGuid(siVar.getConnectionsManager().sendRequest(tL_messages_getSearchCounters, new zf(siVar, iArr, j16, j15, 1)), i13);
+                        }
+                        if (!z10 || siVar.getConnectionsManager().getConnectionState() != 3) {
+                            g0.h3(new gg(siVar, j10, j3, iArr2, 1));
+                            break;
+                        }
+                    } else {
+                        int i18 = 0;
+                        while (i18 < 9) {
+                            if (iArr[i18] == -1) {
+                                SQLiteDatabase sQLiteDatabase3 = siVar.getMessagesStorage().b;
+                                Locale locale3 = Locale.US;
+                                SQLiteCursor queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT COUNT(mid) FROM media_v4 WHERE uid = " + j16 + " AND type = " + i18 + " LIMIT 1", new Object[0]);
+                                if (queryFinalized2.next()) {
+                                    iArr[i18] = queryFinalized2.intValue(0);
+                                } else {
+                                    iArr[i18] = 0;
+                                }
+                                queryFinalized2.dispose();
+                                i10 = i18;
+                                j12 = j15;
+                                long j17 = j16;
+                                si siVar2 = siVar;
+                                siVar2.H1(j17, j12, i10, iArr[i18]);
+                                j11 = j17;
+                                siVar = siVar2;
+                            } else {
+                                i10 = i18;
+                                j11 = j16;
+                                j12 = j15;
+                            }
+                            i18 = i10 + 1;
+                            j16 = j11;
+                            j15 = j12;
+                        }
+                        g0.h3(new gg(siVar, j16, j15, iArr, 0));
                         break;
                     }
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    return;
+                }
+                break;
+            default:
+                h00 h00Var = (h00) obj;
+                long j18 = -j14;
+                TLRPC.TL_forumTopic f10 = h00Var.f(j18, j13);
+                if (f10 != null) {
+                    f10.unread_mentions_count = i13;
+                    h00Var.y(j18, true);
+                    break;
                 }
                 break;
         }
     }
 
-    @Override // h2.j0
-    public Object l(String str, Object obj) {
-        switch (this.e) {
-            case 3:
-                BitmapDrawable bitmapDrawable = (BitmapDrawable) obj;
-                if (bitmapDrawable instanceof org.telegram.ui.Components.u5) {
-                    this.f.f.add((org.telegram.ui.Components.u5) bitmapDrawable);
-                }
-                return (BitmapDrawable) super.l(str, bitmapDrawable);
-            default:
-                return super.l(str, obj);
-        }
-    }
-
-    @Override // h2.j0
-    public final int q(Object obj) {
-        switch (this.e) {
-            case 0:
-                return gc.d(this.f, (BitmapDrawable) obj);
-            case 1:
-                return gc.d(this.f, (BitmapDrawable) obj);
-            case 2:
-                return gc.d(this.f, (BitmapDrawable) obj);
-            default:
-                return gc.d(this.f, (BitmapDrawable) obj);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kb(gc gcVar) {
-        super(10485760, 2);
-        this.e = 3;
-        this.f = gcVar;
+    public /* synthetic */ kb(c1 c1Var, long j3, long j10, int i7, int i10) {
+        this.a = i10;
+        this.e = c1Var;
+        this.b = j3;
+        this.c = j10;
+        this.d = i7;
     }
 }

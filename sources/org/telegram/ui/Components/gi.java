@@ -1,21 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.io.Serializable;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gi implements org.telegram.messenger.a20, org.telegram.messenger.b20 {
-    public final /* synthetic */ mi a;
+public final class gi extends v00 {
+    public final ki K;
 
-    @Override // org.telegram.messenger.b20
-    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
-        this.a.Q(x31Var, view);
-        return Boolean.TRUE;
+    public gi(Context context, org.telegram.ui.ActionBar.e6 e6Var, ki kiVar) {
+        super(context, e6Var);
+        this.K = kiVar;
     }
 
-    @Override // org.telegram.messenger.a20
-    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        this.a.Q((x31) obj, (View) obj2);
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        this.K.h1(this.r, true);
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

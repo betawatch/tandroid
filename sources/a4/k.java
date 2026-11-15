@@ -1,11 +1,10 @@
 package a4;
 
-import a8.wa;
+import a8.xa;
+import ab.y;
 import android.app.Notification;
 import android.app.RemoteInput;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -13,15 +12,14 @@ import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
 import androidx.core.graphics.drawable.IconCompat;
-import androidx.emoji2.text.w;
-import bg.o0;
+import bg.n0;
 import e0.j0;
-import e0.l0;
 import e0.m;
 import e0.o;
 import e0.q;
+import f3.z;
 import h2.k0;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -30,18 +28,17 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import m4.a0;
+import m4.d0;
 import m4.e0;
 import m4.f0;
 import m4.g0;
-import m4.h0;
 import m6.n;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.ax0;
-import org.telegram.ui.Components.cx0;
+import org.telegram.ui.Components.dx0;
+import org.telegram.ui.Components.fx0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class k implements a0 {
     public final /* synthetic */ int a;
@@ -75,7 +72,7 @@ public class k implements a0 {
         throw null;
     }
 
-    public static void s(Notification notification) {
+    public static void r(Notification notification) {
         notification.sound = null;
         notification.vibrate = null;
         notification.defaults &= -4;
@@ -109,14 +106,14 @@ public class k implements a0 {
         SparseArray sparseArray2 = (SparseArray) this.d;
         SparseIntArray sparseIntArray = (SparseIntArray) this.e;
         d4.f fVar2 = (d4.f) this.c;
-        e0 e0Var = (e0) this.f;
-        SparseArray sparseArray3 = e0Var.h;
-        SparseBooleanArray sparseBooleanArray = e0Var.i;
-        m4.f fVar3 = e0Var.f;
-        List list = e0Var.c;
-        int i12 = e0Var.a;
+        d0 d0Var = (d0) this.f;
+        SparseArray sparseArray3 = d0Var.h;
+        SparseBooleanArray sparseBooleanArray = d0Var.i;
+        m4.f fVar3 = d0Var.f;
+        List list = d0Var.c;
+        int i12 = d0Var.a;
         if (xVar.A() == 2) {
-            if (i12 == 1 || i12 == 2 || e0Var.n == 1) {
+            if (i12 == 1 || i12 == 2 || d0Var.n == 1) {
                 k0Var = (k0) list.get(0);
             } else {
                 k0Var = new k0(((k0) list.get(0)).d());
@@ -129,16 +126,16 @@ public class k implements a0 {
                 xVar.k(0, 2, (byte[]) fVar2.b);
                 fVar2.J(0);
                 fVar2.L(3);
-                e0Var.t = fVar2.j(13);
+                d0Var.t = fVar2.j(13);
                 xVar.k(0, 2, (byte[]) fVar2.b);
                 fVar2.J(0);
                 fVar2.L(4);
                 xVar.O(fVar2.j(12));
-                if (i12 == 2 && e0Var.r == null) {
-                    h0 a10 = fVar3.a(21, new n(21, null, 0, null, m0.b));
-                    e0Var.r = a10;
+                if (i12 == 2 && d0Var.r == null) {
+                    g0 a10 = fVar3.a(21, new n(21, null, 0, null, l0.b));
+                    d0Var.r = a10;
                     if (a10 != null) {
-                        a10.b(k0Var, e0Var.m, new g0(H, 21, TLObject.FLAG_13));
+                        a10.b(k0Var, d0Var.m, new f0(H, 21, TLObject.FLAG_13));
                     }
                 }
                 sparseArray2.clear();
@@ -203,9 +200,9 @@ public class k implements a0 {
                                 int A3 = xVar.A();
                                 if (A3 != 21) {
                                     if (A3 == 14) {
-                                        i15 = qs.S1;
+                                        i15 = ns.S1;
                                     } else if (A3 == 33) {
-                                        i15 = qs.V1;
+                                        i15 = ns.V1;
                                     }
                                 }
                                 i15 = 172;
@@ -226,7 +223,7 @@ public class k implements a0 {
                                         k0 k0Var4 = k0Var;
                                         byte[] bArr = new byte[4];
                                         xVar.k(0, 4, bArr);
-                                        arrayList2.add(new f0(trim, bArr));
+                                        arrayList2.add(new e0(trim, bArr));
                                         k0Var = k0Var4;
                                         A2 = A2;
                                         H = H;
@@ -274,7 +271,7 @@ public class k implements a0 {
                         c10 = 21;
                     } else {
                         c10 = 21;
-                        h0 a12 = (i12 == 2 && j3 == 21) ? e0Var.r : fVar3.a(j3, nVar);
+                        g0 a12 = (i12 == 2 && j3 == 21) ? d0Var.r : fVar3.a(j3, nVar);
                         if (i12 != 2 || j10 < sparseIntArray.get(i20, TLObject.FLAG_13)) {
                             sparseIntArray.put(i20, j10);
                             sparseArray2.put(i20, a12);
@@ -295,19 +292,19 @@ public class k implements a0 {
                     int keyAt = sparseIntArray.keyAt(i22);
                     int valueAt = sparseIntArray.valueAt(i22);
                     sparseBooleanArray.put(keyAt, true);
-                    e0Var.j.put(valueAt, true);
-                    h0 h0Var = (h0) sparseArray2.valueAt(i22);
-                    if (h0Var != null) {
-                        if (h0Var != e0Var.r) {
+                    d0Var.j.put(valueAt, true);
+                    g0 g0Var = (g0) sparseArray2.valueAt(i22);
+                    if (g0Var != null) {
+                        if (g0Var != d0Var.r) {
                             i7 = i21;
                             k0Var2 = k0Var6;
-                            h0Var.b(k0Var2, e0Var.m, new g0(i7, keyAt, TLObject.FLAG_13));
+                            g0Var.b(k0Var2, d0Var.m, new f0(i7, keyAt, TLObject.FLAG_13));
                         } else {
                             k0Var2 = k0Var6;
                             i7 = i21;
                         }
                         sparseArray = sparseArray6;
-                        sparseArray.put(valueAt, h0Var);
+                        sparseArray.put(valueAt, g0Var);
                     } else {
                         k0Var2 = k0Var6;
                         sparseArray = sparseArray6;
@@ -320,20 +317,20 @@ public class k implements a0 {
                 }
                 SparseArray sparseArray7 = sparseArray6;
                 if (i12 == 2) {
-                    if (e0Var.o) {
+                    if (d0Var.o) {
                         return;
                     }
-                    e0Var.m.U0();
-                    e0Var.n = 0;
-                    e0Var.o = true;
+                    d0Var.m.d1();
+                    d0Var.n = 0;
+                    d0Var.o = true;
                     return;
                 }
                 sparseArray7.remove(this.b);
-                int i23 = i12 == 1 ? 0 : e0Var.n - 1;
-                e0Var.n = i23;
+                int i23 = i12 == 1 ? 0 : d0Var.n - 1;
+                d0Var.n = i23;
                 if (i23 == 0) {
-                    e0Var.m.U0();
-                    e0Var.o = true;
+                    d0Var.m.d1();
+                    d0Var.o = true;
                 }
             }
         }
@@ -389,17 +386,17 @@ public class k implements a0 {
             if (str.charAt(i10) == '\\') {
                 int i11 = this.b;
                 char charAt = str.charAt(i10);
-                boolean z9 = false;
+                boolean z10 = false;
                 while (charAt != '\"') {
                     if (charAt == '\\') {
                         sb2.append((CharSequence) str, i11, i10);
-                        int r10 = r(i10 + 1);
-                        if (r10 == -1) {
+                        int q10 = q(i10 + 1);
+                        if (q10 == -1) {
                             n(this, "Expected escape sequence to continue, got EOF", 0, 6);
                             throw null;
                         }
-                        int i12 = r10 + 1;
-                        char charAt2 = str.charAt(r10);
+                        int i12 = q10 + 1;
+                        char charAt2 = str.charAt(q10);
                         if (charAt2 == 'u') {
                             i12 = a(i12, str);
                         } else {
@@ -410,7 +407,7 @@ public class k implements a0 {
                             }
                             sb2.append(c10);
                         }
-                        i11 = r(i12);
+                        i11 = q(i12);
                         if (i11 == -1) {
                             n(this, "Unexpected EOF", i11, 4);
                             throw null;
@@ -419,7 +416,7 @@ public class k implements a0 {
                         i10++;
                         if (i10 >= str.length()) {
                             sb2.append((CharSequence) str, i11, i10);
-                            i11 = r(i10);
+                            i11 = q(i10);
                             if (i11 == -1) {
                                 n(this, "Unexpected EOF", i11, 4);
                                 throw null;
@@ -430,10 +427,10 @@ public class k implements a0 {
                         }
                     }
                     i10 = i11;
-                    z9 = true;
+                    z10 = true;
                     charAt = str.charAt(i10);
                 }
-                String obj = !z9 ? str.subSequence(i11, i10).toString() : l(i11, i10);
+                String obj = !z10 ? str.subSequence(i11, i10).toString() : l(i11, i10);
                 this.b = i10 + 1;
                 return obj;
             }
@@ -448,7 +445,7 @@ public class k implements a0 {
     public void h(char c10) {
         int i7 = this.b;
         if (i7 == -1) {
-            w(c10);
+            v(c10);
             throw null;
         }
         String str = (String) this.f;
@@ -460,13 +457,13 @@ public class k implements a0 {
                 if (charAt == c10) {
                     return;
                 }
-                w(c10);
+                v(c10);
                 throw null;
             }
             i7 = i10;
         }
         this.b = -1;
-        w(c10);
+        v(c10);
         throw null;
     }
 
@@ -643,29 +640,29 @@ public class k implements a0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public long i() {
-        boolean z9;
-        int r10 = r(u());
+        boolean z10;
+        int q10 = q(t());
         String str = (String) this.f;
         int i7 = 6;
         int i10 = 0;
-        if (r10 >= str.length() || r10 == -1) {
+        if (q10 >= str.length() || q10 == -1) {
             n(this, "EOF", 0, 6);
             throw null;
         }
-        if (str.charAt(r10) == '\"') {
-            r10++;
-            if (r10 == str.length()) {
+        if (str.charAt(q10) == '\"') {
+            q10++;
+            if (q10 == str.length()) {
                 n(this, "EOF", 0, 6);
                 throw null;
             }
-            z9 = true;
+            z10 = true;
         } else {
-            z9 = false;
+            z10 = false;
         }
-        int i11 = r10;
+        int i11 = q10;
         int i12 = 0;
-        boolean z10 = false;
         boolean z11 = false;
+        boolean z12 = false;
         long j3 = 0;
         long j10 = 0;
         long j11 = 0;
@@ -675,17 +672,17 @@ public class k implements a0 {
                 break;
             }
             char charAt = str.charAt(i11);
-            if ((charAt == 'e' || charAt == 'E') && !z10) {
-                if (i11 == r10) {
+            if ((charAt == 'e' || charAt == 'E') && !z11) {
+                if (i11 == q10) {
                     n(this, "Unexpected symbol " + charAt + " in numeric literal", i10, i7);
                     throw null;
                 }
                 i11++;
                 j10 = j12;
                 i12 = 1;
-                z10 = true;
-            } else if (charAt == '-' && z10) {
-                if (i11 == r10) {
+                z11 = true;
+            } else if (charAt == '-' && z11) {
+                if (i11 == q10) {
                     n(this, "Unexpected symbol '-' in numeric literal", i10, 6);
                     throw null;
                 }
@@ -693,7 +690,7 @@ public class k implements a0 {
                 i12 = i10;
                 j10 = j12;
                 i7 = 6;
-            } else if (charAt != '+' || !z10) {
+            } else if (charAt != '+' || !z11) {
                 if (charAt != '-') {
                     if (qe.f.b(charAt) != 0) {
                         break;
@@ -703,7 +700,7 @@ public class k implements a0 {
                     if (i13 < 0 || i13 >= 10) {
                         break;
                     }
-                    if (z10) {
+                    if (z11) {
                         j3 = (j3 * 10) + i13;
                     } else {
                         j11 = (j11 * 10) - i13;
@@ -716,17 +713,17 @@ public class k implements a0 {
                     i7 = 6;
                     i10 = 0;
                 } else {
-                    if (i11 != r10) {
+                    if (i11 != q10) {
                         n(this, "Unexpected symbol '-' in numeric literal", i10, 6);
                         throw null;
                     }
                     i11++;
                     j10 = j12;
                     i7 = 6;
-                    z11 = true;
+                    z12 = true;
                 }
             } else {
-                if (i11 == r10) {
+                if (i11 == q10) {
                     n(this, "Unexpected symbol '+' in numeric literal", i10, 6);
                     throw null;
                 }
@@ -756,35 +753,35 @@ public class k implements a0 {
             this.d = null;
             return str2;
         }
-        int u10 = u();
-        if (u10 >= str.length() || u10 == -1) {
-            n(this, "EOF", u10, 4);
+        int t6 = t();
+        if (t6 >= str.length() || t6 == -1) {
+            n(this, "EOF", t6, 4);
             throw null;
         }
-        byte b10 = qe.f.b(str.charAt(u10));
+        byte b10 = qe.f.b(str.charAt(t6));
         if (b10 == 1) {
             return j();
         }
         if (b10 != 0) {
-            n(this, "Expected beginning of the string, but got " + str.charAt(u10), 0, 6);
+            n(this, "Expected beginning of the string, but got " + str.charAt(t6), 0, 6);
             throw null;
         }
-        boolean z9 = false;
-        while (qe.f.b(str.charAt(u10)) == 0) {
-            u10++;
-            if (u10 >= str.length()) {
-                ((StringBuilder) this.e).append((CharSequence) str, this.b, u10);
-                int r10 = r(u10);
-                if (r10 == -1) {
-                    this.b = u10;
+        boolean z10 = false;
+        while (qe.f.b(str.charAt(t6)) == 0) {
+            t6++;
+            if (t6 >= str.length()) {
+                ((StringBuilder) this.e).append((CharSequence) str, this.b, t6);
+                int q10 = q(t6);
+                if (q10 == -1) {
+                    this.b = t6;
                     return l(0, 0);
                 }
-                u10 = r10;
-                z9 = true;
+                t6 = q10;
+                z10 = true;
             }
         }
-        String obj = !z9 ? str.subSequence(this.b, u10).toString() : l(this.b, u10);
-        this.b = u10;
+        String obj = !z10 ? str.subSequence(this.b, t6).toString() : l(this.b, t6);
+        this.b = t6;
         return obj;
     }
 
@@ -801,10 +798,10 @@ public class k implements a0 {
         kotlin.jvm.internal.j.e(message, "message");
         kotlin.jvm.internal.j.e(hint, "hint");
         String concat = hint.length() == 0 ? "" : "\n".concat(hint);
-        StringBuilder j3 = rf.b.j(message, " at path: ");
-        j3.append(((wa) this.c).m());
-        j3.append(concat);
-        String message2 = j3.toString();
+        StringBuilder m10 = r.b.m(message, " at path: ");
+        m10.append(((xa) this.c).l());
+        m10.append(concat);
+        String message2 = m10.toString();
         String input = (String) this.f;
         kotlin.jvm.internal.j.e(message2, "message");
         kotlin.jvm.internal.j.e(input, "input");
@@ -817,11 +814,11 @@ public class k implements a0 {
         throw new qe.d(message3);
     }
 
-    public void o(byte b10, boolean z9) {
+    public void o(byte b10, boolean z10) {
         String str = (String) this.f;
         String str2 = b10 == 1 ? "quotation mark '\"'" : b10 == 2 ? "string escape sequence '\\'" : b10 == 4 ? "comma ','" : b10 == 5 ? "colon ':'" : b10 == 6 ? "start of the object '{'" : b10 == 7 ? "end of the object '}'" : b10 == 8 ? "start of the array '['" : b10 == 9 ? "end of the array ']'" : b10 == 10 ? "end of the input" : b10 == Byte.MAX_VALUE ? "invalid token" : "valid token";
-        int i7 = z9 ? this.b - 1 : this.b;
-        n(this, f1.m("Expected ", str2, ", but had '", (this.b == str.length() || i7 < 0) ? "EOF" : String.valueOf(str.charAt(i7)), "' instead"), i7, 4);
+        int i7 = z10 ? this.b - 1 : this.b;
+        n(this, r.b.l("Expected ", str2, ", but had '", (this.b == str.length() || i7 < 0) ? "EOF" : String.valueOf(str.charAt(i7)), "' instead"), i7, 4);
         throw null;
     }
 
@@ -840,20 +837,14 @@ public class k implements a0 {
         throw null;
     }
 
-    public void q() {
-        ((Canvas) this.c).restore();
-        ((Matrix) this.d).set((Matrix) f1.k(1, (ArrayList) this.e));
-        this.b--;
-    }
-
-    public int r(int i7) {
+    public int q(int i7) {
         if (i7 < ((String) this.f).length()) {
             return i7;
         }
         return -1;
     }
 
-    public void t(int i7, int i10) {
+    public void s(int i7, int i10) {
         int[] iArr = (int[]) this.f;
         int i11 = i7 * 4;
         iArr[i11] = i10;
@@ -862,39 +853,7 @@ public class k implements a0 {
         iArr[i11 + 3] = i10;
     }
 
-    public String toString() {
-        switch (this.a) {
-            case 2:
-                StringBuilder sb2 = new StringBuilder(qs.e3);
-                sb2.append("<<\n mode: ");
-                sb2.append((gc.d) this.c);
-                sb2.append("\n ecLevel: ");
-                sb2.append((gc.b) this.d);
-                sb2.append("\n version: ");
-                sb2.append((gc.e) this.e);
-                sb2.append("\n maskPattern: ");
-                sb2.append(this.b);
-                if (((cc.c) this.f) == null) {
-                    sb2.append("\n matrix: null\n");
-                } else {
-                    sb2.append("\n matrix:\n");
-                    sb2.append((cc.c) this.f);
-                }
-                sb2.append(">>\n");
-                return sb2.toString();
-            case 7:
-                StringBuilder sb3 = new StringBuilder("JsonReader(source='");
-                sb3.append(this.f);
-                sb3.append("', currentPosition=");
-                sb3.append(this.b);
-                sb3.append(')');
-                return sb3.toString();
-            default:
-                return super.toString();
-        }
-    }
-
-    public int u() {
+    public int t() {
         char charAt;
         int i7 = this.b;
         if (i7 == -1) {
@@ -908,17 +867,49 @@ public class k implements a0 {
         return i7;
     }
 
-    public boolean v() {
-        int u10 = u();
+    public String toString() {
+        switch (this.a) {
+            case 2:
+                StringBuilder sb2 = new StringBuilder(ns.e3);
+                sb2.append("<<\n mode: ");
+                sb2.append((gc.e) this.c);
+                sb2.append("\n ecLevel: ");
+                sb2.append((gc.c) this.d);
+                sb2.append("\n version: ");
+                sb2.append((gc.f) this.e);
+                sb2.append("\n maskPattern: ");
+                sb2.append(this.b);
+                if (((cc.c) this.f) == null) {
+                    sb2.append("\n matrix: null\n");
+                } else {
+                    sb2.append("\n matrix:\n");
+                    sb2.append((cc.c) this.f);
+                }
+                sb2.append(">>\n");
+                return sb2.toString();
+            case 6:
+                StringBuilder sb3 = new StringBuilder("JsonReader(source='");
+                sb3.append(this.f);
+                sb3.append("', currentPosition=");
+                sb3.append(this.b);
+                sb3.append(')');
+                return sb3.toString();
+            default:
+                return super.toString();
+        }
+    }
+
+    public boolean u() {
+        int t6 = t();
         String str = (String) this.f;
-        if (u10 >= str.length() || u10 == -1 || str.charAt(u10) != ',') {
+        if (t6 >= str.length() || t6 == -1 || str.charAt(t6) != ',') {
             return false;
         }
         this.b++;
         return true;
     }
 
-    public void w(char c10) {
+    public void v(char c10) {
         int i7 = this.b;
         if (i7 > 0 && c10 == '\"') {
             try {
@@ -938,18 +929,18 @@ public class k implements a0 {
         throw null;
     }
 
-    public void x(int i7) {
+    public void w(int i7) {
         int[] iArr = (int[]) this.e;
         if (iArr[i7] != 0) {
             return;
         }
         iArr[i7] = 1;
-        for (ax0 ax0Var : ((ax0[][]) this.d)[i7]) {
-            x(ax0Var.a.b);
-            ax0[] ax0VarArr = (ax0[]) this.c;
+        for (dx0 dx0Var : ((dx0[][]) this.d)[i7]) {
+            w(dx0Var.a.b);
+            dx0[] dx0VarArr = (dx0[]) this.c;
             int i10 = this.b;
             this.b = i10 - 1;
-            ax0VarArr[i10] = ax0Var;
+            dx0VarArr[i10] = dx0Var;
         }
         iArr[i7] = 2;
     }
@@ -1033,14 +1024,14 @@ public class k implements a0 {
             e0.h hVar = (e0.h) obj;
             IconCompat a11 = hVar.a();
             int i13 = hVar.f;
-            boolean z9 = hVar.d;
+            boolean z10 = hVar.d;
             Bundle bundle3 = hVar.a;
             ArrayList arrayList7 = arrayList6;
             int i14 = size;
             Notification.Action.Builder builder2 = new Notification.Action.Builder(a11 != null ? a11.m(context2) : context2, hVar.h, hVar.i);
-            l0[] l0VarArr = hVar.c;
+            e0.l0[] l0VarArr = hVar.c;
             if (l0VarArr != null) {
-                RemoteInput[] a12 = l0.a(l0VarArr);
+                RemoteInput[] a12 = e0.l0.a(l0VarArr);
                 int length = a12.length;
                 int i15 = 0;
                 while (i15 < length) {
@@ -1055,20 +1046,20 @@ public class k implements a0 {
             } else {
                 bundle2 = new Bundle();
             }
-            bundle2.putBoolean("android.support.allowGeneratedReplies", z9);
+            bundle2.putBoolean("android.support.allowGeneratedReplies", z10);
             int i16 = Build.VERSION.SDK_INT;
             if (i16 >= 24) {
-                w.i(builder2, z9);
+                androidx.emoji2.text.x.i(builder2, z10);
             }
             bundle2.putInt("android.support.action.semanticAction", i13);
             if (i16 >= 28) {
                 d1.f.y(builder2, i13);
             }
             if (i16 >= 29) {
-                ab.x.m(builder2);
+                y.m(builder2);
             }
             if (i16 >= 31) {
-                o0.g(builder2);
+                n0.g(builder2);
             }
             bundle2.putBoolean("android.support.action.showsUserInterface", hVar.e);
             builder2.addExtras(bundle2);
@@ -1161,7 +1152,7 @@ public class k implements a0 {
                 }
                 bundle.putBoolean(str, hVar2.d);
                 bundle8.putBundle("extras", bundle);
-                l0[] l0VarArr2 = hVar2.c;
+                e0.l0[] l0VarArr2 = hVar2.c;
                 if (l0VarArr2 == null) {
                     arrayList = arrayList5;
                     i11 = i20;
@@ -1172,11 +1163,11 @@ public class k implements a0 {
                     i11 = i20;
                     int i21 = 0;
                     while (i21 < l0VarArr2.length) {
-                        l0 l0Var = l0VarArr2[i21];
+                        e0.l0 l0Var = l0VarArr2[i21];
                         int i22 = i21;
                         Bundle bundle10 = new Bundle();
                         l0Var.getClass();
-                        l0[] l0VarArr3 = l0VarArr2;
+                        e0.l0[] l0VarArr3 = l0VarArr2;
                         String str3 = str;
                         bundle10.putString("resultKey", "extra_voice_reply");
                         bundle10.putCharSequence("label", l0Var.a);
@@ -1219,7 +1210,7 @@ public class k implements a0 {
         int i23 = Build.VERSION.SDK_INT;
         if (i23 >= 24) {
             ((Notification.Builder) this.d).setExtras(qVar.v);
-            w.j((Notification.Builder) this.d);
+            androidx.emoji2.text.x.j((Notification.Builder) this.d);
         }
         if (i23 >= 26) {
             z6.a.g((Notification.Builder) this.d);
@@ -1247,7 +1238,7 @@ public class k implements a0 {
                 if (i10 >= 29) {
                     return;
                 }
-                ab.x.j((Notification.Builder) this.d, qVar.D);
+                y.j((Notification.Builder) this.d, qVar.D);
                 Notification.Builder builder4 = (Notification.Builder) this.d;
                 o oVar = qVar.E;
                 if (oVar != null) {
@@ -1256,16 +1247,16 @@ public class k implements a0 {
                     } else if (i10 == 29) {
                         a10 = m.a(oVar);
                     }
-                    ab.x.l(builder4, a10);
+                    y.l(builder4, a10);
                     gVar = qVar.A;
                     if (gVar == null) {
-                        ab.x.o((Notification.Builder) this.d, gVar.b);
+                        y.o((Notification.Builder) this.d, gVar.b);
                         return;
                     }
                     return;
                 }
                 a10 = bubbleMetadata;
-                ab.x.l(builder4, a10);
+                y.l(builder4, a10);
                 gVar = qVar.A;
                 if (gVar == null) {
                 }
@@ -1281,76 +1272,68 @@ public class k implements a0 {
     }
 
     @Override // m4.a0
-    public void b(k0 k0Var, f3.q qVar, g0 g0Var) {
+    public void b(k0 k0Var, f3.q qVar, f0 f0Var) {
     }
 
     public k(String source) {
-        this.a = 7;
+        this.a = 6;
         kotlin.jvm.internal.j.e(source, "source");
-        wa waVar = new wa((char) 0, 21);
-        waVar.c = new Object[8];
+        xa xaVar = new xa((char) 0, 21);
+        xaVar.c = new Object[8];
         int[] iArr = new int[8];
         for (int i7 = 0; i7 < 8; i7++) {
             iArr[i7] = -1;
         }
-        waVar.d = iArr;
-        waVar.b = -1;
-        this.c = waVar;
+        xaVar.d = iArr;
+        xaVar.b = -1;
+        this.c = xaVar;
         this.e = new StringBuilder();
         this.f = source;
     }
 
-    public k(f3.a0 a0Var, f3.l0 l0Var, byte[] bArr, ci.a[] aVarArr, int i7) {
+    public k(z zVar, f3.k0 k0Var, byte[] bArr, ei.a[] aVarArr, int i7) {
         this.a = 0;
-        this.c = a0Var;
-        this.d = l0Var;
+        this.c = zVar;
+        this.d = k0Var;
         this.e = bArr;
         this.f = aVarArr;
         this.b = i7;
     }
 
-    public k(Canvas canvas) {
-        this.a = 6;
-        this.d = new Matrix();
-        this.e = new ArrayList();
-        this.f = new ArrayList();
-        this.c = canvas;
-    }
-
-    public k(e0 e0Var, int i7) {
+    public k(d0 d0Var, int i7) {
         this.a = 3;
-        this.f = e0Var;
+        this.f = d0Var;
         this.c = new d4.f(new byte[5], 5);
         this.d = new SparseArray();
         this.e = new SparseIntArray();
         this.b = i7;
     }
 
-    public k(cx0 cx0Var, ax0[] ax0VarArr) {
+    public k(fx0 fx0Var, dx0[] dx0VarArr) {
         this.a = 5;
-        this.f = cx0Var;
-        int length = ax0VarArr.length;
-        this.c = new ax0[length];
+        this.f = fx0Var;
+        int length = dx0VarArr.length;
+        this.c = new dx0[length];
         this.b = length - 1;
-        int e10 = cx0Var.e() + 1;
-        ax0[][] ax0VarArr2 = new ax0[e10][];
+        int e10 = fx0Var.e() + 1;
+        dx0[][] dx0VarArr2 = new dx0[e10][];
         int[] iArr = new int[e10];
-        for (ax0 ax0Var : ax0VarArr) {
-            int i7 = ax0Var.a.a;
+        for (dx0 dx0Var : dx0VarArr) {
+            int i7 = dx0Var.a.a;
             iArr[i7] = iArr[i7] + 1;
         }
         for (int i10 = 0; i10 < e10; i10++) {
-            ax0VarArr2[i10] = new ax0[iArr[i10]];
+            dx0VarArr2[i10] = new dx0[iArr[i10]];
         }
         Arrays.fill(iArr, 0);
-        for (ax0 ax0Var2 : ax0VarArr) {
-            int i11 = ax0Var2.a.a;
-            ax0[] ax0VarArr3 = ax0VarArr2[i11];
+        for (dx0 dx0Var2 : dx0VarArr) {
+            int i11 = dx0Var2.a.a;
+            dx0[] dx0VarArr3 = dx0VarArr2[i11];
             int i12 = iArr[i11];
             iArr[i11] = i12 + 1;
-            ax0VarArr3[i12] = ax0Var2;
+            dx0VarArr3[i12] = dx0Var2;
         }
-        this.d = ax0VarArr2;
-        this.e = new int[((cx0) this.f).e() + 1];
+        this.d = dx0VarArr2;
+        this.e = new int[((fx0) this.f).e() + 1];
     }
 }

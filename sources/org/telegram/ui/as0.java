@@ -1,77 +1,44 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.view.View;
+import android.widget.RelativeLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class as0 extends org.telegram.ui.Cells.q1 {
-    public final Path ld;
-    public final Paint md;
-    public final /* synthetic */ byte[] nd;
-    public final /* synthetic */ int od;
-    public final /* synthetic */ int pd;
-    public final /* synthetic */ cs0 qd;
+public final class as0 extends RelativeLayout {
+    public final /* synthetic */ PopupNotificationActivity a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public as0(cs0 cs0Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var, byte[] bArr, int i10, int i11) {
-        super(context, i7, false, null, h6Var);
-        this.qd = cs0Var;
-        this.nd = bArr;
-        this.od = i10;
-        this.pd = i11;
-        this.ld = new Path();
-        this.md = new Paint(1);
+    public as0(PopupNotificationActivity popupNotificationActivity, PopupNotificationActivity popupNotificationActivity2) {
+        super(popupNotificationActivity2);
+        this.a = popupNotificationActivity;
     }
 
-    @Override // org.telegram.ui.Cells.q1
-    public final void j1(Canvas canvas) {
-        this.R4 = 0;
-        this.S4 = this.P4.size() - 1;
-        this.T4 = (-org.telegram.messenger.g0.L(7.0f)) * this.qd.D;
-        super.j1(canvas);
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        int V1 = V1(this.nd);
-        float U1 = U1(V1);
-        float T1 = T1(V1);
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(getPollButtonsLeft(), U1, getPollButtonsRight(), T1);
-        float f10 = rectF.top;
-        float L = org.telegram.messenger.g0.L(3.0f);
-        cs0 cs0Var = this.qd;
-        rectF.top = org.telegram.messenger.g0.T1(L, cs0Var.V ? -org.telegram.messenger.g0.L(3.0f) : 0.0f, cs0Var.D) + f10;
-        float f11 = rectF.bottom;
-        boolean z9 = cs0Var.V;
-        float L2 = org.telegram.messenger.g0.L(3.0f);
-        if (!z9) {
-            L2 = org.telegram.messenger.g0.T1(L2, 0.0f, cs0Var.D);
+    @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        for (int i13 = 0; i13 < getChildCount(); i13++) {
+            View childAt = getChildAt(i13);
+            if (childAt.getTag() instanceof String) {
+                int left = childAt.getLeft();
+                PopupNotificationActivity popupNotificationActivity = this.a;
+                childAt.layout(left, org.telegram.messenger.g0.L(3.0f) + popupNotificationActivity.b.getTop(), childAt.getRight(), popupNotificationActivity.b.getBottom());
+            }
         }
-        rectF.bottom = f11 + L2;
-        Path path = this.ld;
-        path.rewind();
-        path.addRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), Path.Direction.CW);
-        Paint paint = this.md;
-        paint.setColor(0);
-        paint.setShadowLayer(org.telegram.messenger.g0.L(2.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.m6.r1(cs0Var.D * 0.2f, -16777216));
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), paint);
-        canvas.clipPath(path);
-        d1(canvas);
-        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Cells.q1, android.view.View
+    @Override // android.widget.RelativeLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(this.od, this.pd);
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final void setPressed(boolean z9) {
+        super.onMeasure(i7, i10);
+        PopupNotificationActivity popupNotificationActivity = this.a;
+        int measuredWidth = popupNotificationActivity.b.getMeasuredWidth();
+        int measuredHeight = popupNotificationActivity.b.getMeasuredHeight();
+        for (int i11 = 0; i11 < getChildCount(); i11++) {
+            View childAt = getChildAt(i11);
+            if (childAt.getTag() instanceof String) {
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight - org.telegram.messenger.g0.L(3.0f), TLObject.FLAG_30));
+            }
+        }
     }
 }

@@ -2,27 +2,27 @@ package tf;
 
 import java.io.EOFException;
 import java.io.InputStream;
-import org.telegram.ui.Components.uy;
+import org.telegram.messenger.ou;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e {
     public static final b7.j e = new b7.j(4);
     public final uf.a a;
     public final h b;
     public final f c;
-    public final uy d;
+    public final ou d;
 
     public e(InputStream inputStream, long j3, int i7, h hVar, f fVar) {
         uf.a aVar = new uf.a(inputStream, j3, i7);
         this.a = aVar;
-        this.d = new uy(aVar, 19);
+        this.d = new ou(aVar, 26);
         this.b = hVar;
         this.c = fVar;
     }
 
-    public static String a(byte[] bArr, int i7, b bVar, boolean z9) {
-        if (z9) {
+    public static String a(byte[] bArr, int i7, b bVar, boolean z10) {
+        if (z10) {
             int i10 = 0;
             for (int i11 = 0; i11 < i7; i11++) {
                 if (bArr[i11] == 0 && (bVar != b.d || i10 != 0 || i11 % 2 == 0)) {
@@ -46,25 +46,25 @@ public final class e {
     }
 
     public final b b() {
-        byte M = this.d.M();
-        if (M == 0) {
+        byte g12 = this.d.g1();
+        if (g12 == 0) {
             return b.c;
         }
-        if (M == 1) {
+        if (g12 == 1) {
             return b.d;
         }
-        if (M == 2) {
+        if (g12 == 2) {
             return b.e;
         }
-        if (M == 3) {
+        if (g12 == 3) {
             return b.f;
         }
-        throw new c(jg.g.j(M, "Invalid encoding: "));
+        throw new c(i5.c.i(g12, "Invalid encoding: "));
     }
 
     public final String c(int i7, b bVar) {
         if (i7 > this.a.e()) {
-            throw new c(jg.g.j(i7, "Could not read fixed-length string of length: "));
+            throw new c(i5.c.i(i7, "Could not read fixed-length string of length: "));
         }
         d dVar = (d) e.get();
         byte[] bArr = dVar.a;
@@ -78,12 +78,12 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i10 = 0;
         while (true) {
-            uy uyVar = this.d;
+            ou ouVar = this.d;
             if (i10 >= i7) {
-                uyVar.getClass();
+                ouVar.getClass();
                 return a(bArr2, i7, bVar, true);
             }
-            int read = ((ab.d) uyVar.b).read(bArr2, i10, i7 - i10);
+            int read = ((ab.d) ouVar.b).read(bArr2, i10, i7 - i10);
             if (read <= 0) {
                 throw new EOFException();
             }
@@ -105,9 +105,9 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i10 = 0;
         for (int i11 = 0; i11 < min; i11++) {
-            byte M = this.d.M();
-            bArr2[i11] = M;
-            if (M != 0 || (bVar == b.d && i10 == 0 && i11 % 2 != 0)) {
+            byte g12 = this.d.g1();
+            bArr2[i11] = g12;
+            if (g12 != 0 || (bVar == b.d && i10 == 0 && i11 % 2 != 0)) {
                 i10 = 0;
             } else {
                 i10++;

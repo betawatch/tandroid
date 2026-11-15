@@ -1,6 +1,6 @@
 package h9;
 
-import a8.kb;
+import a8.lb;
 import j$.util.DesugarCollections;
 import java.util.Collection;
 import java.util.Iterator;
@@ -12,15 +12,15 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.SortedSet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class e extends h implements NavigableMap {
-    public final /* synthetic */ l1 n;
+    public final /* synthetic */ k1 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(l1 l1Var, NavigableMap navigableMap) {
-        super(l1Var, navigableMap);
-        this.n = l1Var;
+    public e(k1 k1Var, NavigableMap navigableMap) {
+        super(k1Var, navigableMap);
+        this.n = k1Var;
     }
 
     @Override // h9.h
@@ -117,7 +117,7 @@ public final class e extends h implements NavigableMap {
         return e().higherKey(obj);
     }
 
-    @Override // h9.h, a8.kb, java.util.AbstractMap, java.util.Map
+    @Override // h9.h, a8.lb, java.util.AbstractMap, java.util.Map
     public final Set keySet() {
         return (NavigableSet) super.keySet();
     }
@@ -157,7 +157,7 @@ public final class e extends h implements NavigableMap {
 
     @Override // java.util.NavigableMap
     public final Map.Entry pollLastEntry() {
-        return f(((c) ((kb) descendingMap()).entrySet()).iterator());
+        return f(((c) ((lb) descendingMap()).entrySet()).iterator());
     }
 
     @Override // h9.h, java.util.SortedMap, java.util.NavigableMap
@@ -171,17 +171,17 @@ public final class e extends h implements NavigableMap {
     }
 
     @Override // java.util.NavigableMap
-    public final NavigableMap headMap(Object obj, boolean z9) {
-        return new e(this.n, e().headMap(obj, z9));
+    public final NavigableMap headMap(Object obj, boolean z10) {
+        return new e(this.n, e().headMap(obj, z10));
     }
 
     @Override // java.util.NavigableMap
-    public final NavigableMap subMap(Object obj, boolean z9, Object obj2, boolean z10) {
-        return new e(this.n, e().subMap(obj, z9, obj2, z10));
+    public final NavigableMap subMap(Object obj, boolean z10, Object obj2, boolean z11) {
+        return new e(this.n, e().subMap(obj, z10, obj2, z11));
     }
 
     @Override // java.util.NavigableMap
-    public final NavigableMap tailMap(Object obj, boolean z9) {
-        return new e(this.n, e().tailMap(obj, z9));
+    public final NavigableMap tailMap(Object obj, boolean z10) {
+        return new e(this.n, e().tailMap(obj, z10));
     }
 }

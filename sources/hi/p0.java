@@ -1,29 +1,46 @@
 package hi;
 
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import org.telegram.messenger.c20;
+import java.io.File;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final class p0 implements LocationListener {
-    public final /* synthetic */ LocationManager a;
-    public final /* synthetic */ LocationListener[] b;
-    public final /* synthetic */ c20 c;
-    public final /* synthetic */ r0 d;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class p0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u0 b;
+    public final /* synthetic */ File c;
 
-    public p0(r0 r0Var, LocationManager locationManager, LocationListener[] locationListenerArr, c20 c20Var) {
-        this.d = r0Var;
-        this.a = locationManager;
-        this.b = locationListenerArr;
-        this.c = c20Var;
+    public /* synthetic */ p0(u0 u0Var, File file, int i7) {
+        this.a = i7;
+        this.b = u0Var;
+        this.c = file;
     }
 
-    @Override // android.location.LocationListener
-    public final void onLocationChanged(Location location) {
-        this.a.removeUpdates(this.b[0]);
-        this.d.getClass();
-        this.c.a(r0.h(location));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                u0 u0Var = this.b;
+                if (u0Var.c && u0Var.r != null) {
+                    MediaController.d0(this.c.getAbsolutePath(), u0Var.getContext(), 1, null, null, new q0(u0Var, 1));
+                    break;
+                }
+                break;
+            case 1:
+                u0 u0Var2 = this.b;
+                d7 d7Var = u0Var2.r;
+                File file = this.c;
+                d7Var.c(file);
+                if (u0Var2.c && u0Var2.r != null) {
+                    org.telegram.messenger.g0.h3(new p0(u0Var2, file, 2));
+                    break;
+                }
+                break;
+            default:
+                String absolutePath = this.c.getAbsolutePath();
+                u0 u0Var3 = this.b;
+                MediaController.d0(absolutePath, u0Var3.getContext(), 0, null, null, new q0(u0Var3, 2));
+                break;
+        }
     }
 }

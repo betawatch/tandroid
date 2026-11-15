@@ -1,70 +1,45 @@
 package ai;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import c8.ha;
-import com.google.android.gms.internal.vision.t2;
-import com.google.android.gms.internal.vision.x1;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.camera.CameraView;
+import android.animation.ValueAnimator;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.ae;
+import org.telegram.ui.sl;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b0 implements Runnable {
+public final /* synthetic */ class b0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i0 b;
+    public final /* synthetic */ m0 b;
 
-    public /* synthetic */ b0(i0 i0Var, int i7) {
+    public /* synthetic */ b0(m0 m0Var, int i7) {
         this.a = i7;
-        this.b = i0Var;
+        this.b = m0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                i0 i0Var = this.b;
-                i0Var.g();
-                i0Var.a.l(i0Var);
+                ae aeVar = this.b.f;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ChatActivityEnterView chatActivityEnterView = aeVar.b;
+                chatActivityEnterView.t1 = floatValue;
+                chatActivityEnterView.Z1();
                 break;
             case 1:
-                i0 i0Var2 = this.b;
-                u8.n nVar = i0Var2.i0;
-                if (nVar != null) {
-                    nVar.X0();
-                    i0Var2.i0 = null;
-                }
-                Bitmap bitmap = i0Var2.k0;
-                if (bitmap != null) {
-                    bitmap.recycle();
-                    i0Var2.k0 = null;
-                }
-                i0Var2.f0.quitSafely();
-                break;
-            case 2:
-                i0 i0Var3 = this.b;
-                try {
-                    Context context = org.telegram.messenger.t0.b;
-                    x1 x1Var = new x1();
-                    x1Var.a = 256;
-                    i0Var3.i0 = new u8.n(new t2(context, x1Var));
-                } catch (Throwable th2) {
-                    a8.g(th2, true);
-                }
-                i0Var3.j0 = new aa.n(20);
+                m0 m0Var = this.b;
+                m0Var.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m0Var.b0 = floatValue2;
+                m0Var.f.e(floatValue2);
                 break;
             default:
-                i0 i0Var4 = this.b;
-                if (!i0Var4.V && !i0Var4.U && i0Var4.b == null && CameraView.isCameraAllowed()) {
-                    CameraController.getInstance().initCamera(null);
-                    CameraView cameraView = new CameraView(i0Var4.getContext(), false);
-                    cameraView.setUseMaxPreview(true);
-                    cameraView.setOptimizeForBarcode(true);
-                    cameraView.setAlpha(0.0f);
-                    cameraView.setDelegate(new ab.g(2, i0Var4, cameraView));
-                    i0Var4.b = cameraView;
-                    i0Var4.addView(cameraView, 0, ha.c(-1.0f, -1));
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m0 m0Var2 = this.b;
+                m0Var2.E0 = floatValue3;
+                sl slVar = m0Var2.D0;
+                if (slVar != null && !slVar.c0()) {
+                    m0Var2.D0.a0();
                     break;
                 }
                 break;

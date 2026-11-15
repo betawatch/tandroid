@@ -3,28 +3,27 @@ package u7;
 import android.os.Looper;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.tasks.Task;
-import m4.d0;
-import org.telegram.messenger.z9;
+import org.telegram.messenger.y9;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class c extends com.google.android.gms.common.api.j {
     public static final com.google.android.gms.common.api.e l = new com.google.android.gms.common.api.e("LocationServices.API", new a9.e(18), new com.google.android.gms.common.api.d());
 
-    public Task f(LocationRequest locationRequest, z9 z9Var, Looper looper) {
+    public Task f(LocationRequest locationRequest, y9 y9Var, Looper looper) {
         if (looper == null) {
             looper = Looper.myLooper();
             q6.m.h(looper, "invalid null looper");
         }
-        com.google.android.gms.common.api.internal.o o4 = cb.c.o(looper, z9Var, z9.class.getSimpleName());
-        androidx.activity.n nVar = new androidx.activity.n(this, o4);
-        d0 d0Var = new d0(nVar, locationRequest);
-        bi.a aVar = new bi.a();
-        aVar.a = true;
-        aVar.c = d0Var;
-        aVar.d = nVar;
-        aVar.e = o4;
-        aVar.b = 2436;
-        return b(aVar.a());
+        com.google.android.gms.common.api.internal.o h = cb.c.h(looper, y9Var, y9.class.getSimpleName());
+        androidx.activity.n nVar = new androidx.activity.n(this, h);
+        tg.x xVar = new tg.x(1, nVar, locationRequest);
+        com.google.android.gms.common.api.internal.p pVar = new com.google.android.gms.common.api.internal.p();
+        pVar.b = true;
+        pVar.c = xVar;
+        pVar.d = nVar;
+        pVar.e = h;
+        pVar.a = 2436;
+        return b(pVar.a());
     }
 }

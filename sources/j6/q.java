@@ -1,45 +1,70 @@
 package j6;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import a8.va;
+import android.text.TextUtils;
+import android.util.Log;
+import f6.b0;
+import f6.e0;
+import f6.f0;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class q extends a8.q implements e {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TaskCompletionSource c;
+public abstract class q {
+    public final b a;
+    public final String b;
+    public h6.m c;
+    public final List d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q(int i7, TaskCompletionSource taskCompletionSource) {
-        super("com.google.android.gms.cast.internal.IBundleCallback", 1);
-        this.b = i7;
-        this.c = taskCompletionSource;
+    public q(String str) {
+        a.b(str);
+        this.b = str;
+        this.a = new b("MediaControlChannel", null);
+        this.d = DesugarCollections.synchronizedList(new ArrayList());
     }
 
-    @Override // a8.q
-    public final boolean k1(int i7, Parcel parcel, Parcel parcel2) {
-        if (i7 != 1) {
-            return false;
-        }
-        Bundle bundle = (Bundle) com.google.android.gms.internal.cast.t.a(parcel, Bundle.CREATOR);
-        com.google.android.gms.internal.cast.t.b(parcel);
-        y0(bundle);
-        return true;
+    public final void a(p pVar) {
+        this.d.add(pVar);
     }
 
-    @Override // j6.e
-    public final void y0(Bundle bundle) {
-        switch (this.b) {
-            case 0:
-                this.c.setResult(bundle);
-                break;
-            case 1:
-                this.c.setResult(bundle);
-                break;
-            default:
-                this.c.setResult(bundle);
-                break;
+    public final long b() {
+        h6.m mVar = this.c;
+        if (mVar != null) {
+            return ((AtomicLong) mVar.c).getAndIncrement();
         }
+        b bVar = this.a;
+        Log.e(bVar.a, bVar.d("Attempt to generate requestId without a sink", new Object[0]));
+        return 0L;
+    }
+
+    public final void c(long j3, String str) {
+        h6.m mVar = this.c;
+        if (mVar == null) {
+            b bVar = this.a;
+            Log.e(bVar.a, bVar.d("Attempt to send text message without a sink", new Object[0]));
+            return;
+        }
+        f0 f0Var = (f0) mVar.b;
+        if (f0Var == null) {
+            throw new IllegalStateException("Device is not connected");
+        }
+        e0 e0Var = (e0) f0Var;
+        String str2 = this.b;
+        a.b(str2);
+        if (TextUtils.isEmpty(str)) {
+            throw new IllegalArgumentException("The message payload cannot be null or empty");
+        }
+        if (str.length() > 524288) {
+            b bVar2 = e0.H;
+            Log.w(bVar2.a, bVar2.d("Message send failed. Message exceeds maximum size", new Object[0]));
+            throw new IllegalArgumentException("Message exceeds maximum size524288");
+        }
+        com.google.android.gms.common.api.internal.t b10 = com.google.android.gms.common.api.internal.u.b();
+        b10.c = new b0(e0Var, str2, str, 1);
+        b10.a = 8405;
+        e0Var.e(1, b10.a()).addOnFailureListener(new va(mVar, j3, 4));
     }
 }

@@ -15,19 +15,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class nj0 extends org.telegram.ui.ActionBar.k {
+public final class nj0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ ek0 a;
 
     public nj0(ek0 ek0Var) {
         this.a = ek0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0207  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x020e  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0217  */
-    @Override // org.telegram.ui.ActionBar.k
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0209  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0210  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0219  */
+    @Override // org.telegram.ui.ActionBar.j
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -58,30 +58,30 @@ public final class nj0 extends org.telegram.ui.ActionBar.k {
             if (ek0Var.getParentActivity() == null) {
                 return;
             }
-            org.telegram.ui.Components.w70 w70Var = new org.telegram.ui.Components.w70(ek0Var.getParentActivity(), null);
-            String M0 = org.telegram.messenger.id.M0(2131747559, null);
+            org.telegram.ui.Components.z70 z70Var = new org.telegram.ui.Components.z70(ek0Var.getParentActivity(), null);
+            String M0 = org.telegram.messenger.hd.M0(2131747559, null);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M0);
             int indexOf = M0.indexOf(42);
             int lastIndexOf = M0.lastIndexOf(42);
             if (indexOf != -1 && lastIndexOf != -1) {
                 spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
                 spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.h4(org.telegram.messenger.id.M0(2131747557, null), i15, this), indexOf, lastIndexOf - 1, 33);
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.g4(org.telegram.messenger.hd.M0(2131747557, null), i15, this), indexOf, lastIndexOf - 1, 33);
             }
-            w70Var.setText(spannableStringBuilder);
-            w70Var.setTextSize(1, 16.0f);
-            org.telegram.ui.ActionBar.t6.G(w70Var, org.telegram.ui.ActionBar.m6.k5, null);
-            org.telegram.ui.ActionBar.t6.C(w70Var, org.telegram.ui.ActionBar.m6.l5, null);
-            w70Var.setPadding(org.telegram.messenger.g0.L(23.0f), 0, org.telegram.messenger.g0.L(23.0f), 0);
-            w70Var.setMovementMethod(new org.telegram.messenger.c0(false));
-            org.telegram.ui.ActionBar.t6.U(w70Var, org.telegram.ui.ActionBar.m6.j5, null);
+            z70Var.setText(spannableStringBuilder);
+            z70Var.setTextSize(1, 16.0f);
+            org.telegram.ui.ActionBar.q6.G(z70Var, org.telegram.ui.ActionBar.j6.k5, null);
+            org.telegram.ui.ActionBar.q6.C(z70Var, org.telegram.ui.ActionBar.j6.l5, null);
+            z70Var.setPadding(org.telegram.messenger.g0.L(23.0f), 0, org.telegram.messenger.g0.L(23.0f), 0);
+            z70Var.setMovementMethod(new org.telegram.messenger.c0(false));
+            org.telegram.ui.ActionBar.q6.U(z70Var, org.telegram.ui.ActionBar.j6.j5, null);
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ek0Var.getParentActivity());
-            alertDialog$Builder.o(w70Var);
-            String M02 = org.telegram.messenger.id.M0(2131747558, null);
-            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-            u1Var.R = M02;
-            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752041, null), null);
-            ek0Var.showDialog(u1Var);
+            alertDialog$Builder.o(z70Var);
+            String M02 = org.telegram.messenger.hd.M0(2131747558, null);
+            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+            t1Var.S = M02;
+            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752041, null), null);
+            ek0Var.showDialog(t1Var);
             return;
         }
         if (i7 == 2) {
@@ -90,83 +90,83 @@ public final class nj0 extends org.telegram.ui.ActionBar.k {
                 return;
             }
             if (i14 == 7) {
-                ek0Var.J1[ek0Var.I1].h(null);
+                ek0Var.K1[ek0Var.J1].h(null);
                 return;
             }
-            hf0 hf0Var = new hf0(this, 6);
-            m4.d0 d0Var = new m4.d0(this, hf0Var, false);
+            ef0 ef0Var = new ef0(this, 6);
+            k8.a aVar = new k8.a(18, this, ef0Var);
             if (i14 == 4) {
                 if (ek0Var.f) {
-                    obj = ek0Var.d1;
+                    obj = ek0Var.e1;
                 } else if (ek0.H0(ek0Var)) {
                     return;
                 } else {
-                    obj = ek0Var.Y[0].getText().toString();
+                    obj = ek0Var.Z[0].getText().toString();
                 }
-                ((jj0) ek0Var.B1).c(ek0Var.E, obj, null, null, null, null, null, null, null, null, hf0Var, d0Var);
+                ((jj0) ek0Var.C1).c(ek0Var.F, obj, null, null, null, null, null, null, null, null, ef0Var, aVar);
             } else if (i14 == 3) {
                 if (ek0Var.f) {
-                    i13 = ((org.telegram.ui.ActionBar.f2) ek0Var).currentAccount;
-                    str = org.telegram.messenger.p10.i(i13).f().phone;
+                    i13 = ((org.telegram.ui.ActionBar.e2) ek0Var).currentAccount;
+                    str = org.telegram.messenger.m10.i(i13).f().phone;
                 } else {
                     if (ek0.H0(ek0Var)) {
                         return;
                     }
-                    str = ek0Var.Y[1].getText().toString() + ek0Var.Y[2].getText().toString();
+                    str = ek0Var.Z[1].getText().toString() + ek0Var.Z[2].getText().toString();
                 }
-                ((jj0) ek0Var.B1).c(ek0Var.E, str, null, null, null, null, null, null, null, null, hf0Var, d0Var);
+                ((jj0) ek0Var.C1).c(ek0Var.F, str, null, null, null, null, null, null, null, null, ef0Var, aVar);
             } else if (i14 == 2) {
-                if (!ek0Var.o1.isEmpty() || ek0.H0(ek0Var)) {
+                if (!ek0Var.p1.isEmpty() || ek0.H0(ek0Var)) {
                     return;
                 }
                 if (ek0Var.y1()) {
                     ek0Var.finishFragment();
                     return;
                 }
-                if (!ek0Var.v0) {
+                if (!ek0Var.w0) {
                     jSONObject = new JSONObject();
                     try {
-                        jSONObject.put("street_line1", ek0Var.Y[0].getText().toString());
-                        jSONObject.put("street_line2", ek0Var.Y[1].getText().toString());
-                        jSONObject.put("post_code", ek0Var.Y[2].getText().toString());
-                        jSONObject.put("city", ek0Var.Y[3].getText().toString());
-                        jSONObject.put("state", ek0Var.Y[4].getText().toString());
+                        jSONObject.put("street_line1", ek0Var.Z[0].getText().toString());
+                        jSONObject.put("street_line2", ek0Var.Z[1].getText().toString());
+                        jSONObject.put("post_code", ek0Var.Z[2].getText().toString());
+                        jSONObject.put("city", ek0Var.Z[3].getText().toString());
+                        jSONObject.put("state", ek0Var.Z[4].getText().toString());
                         jSONObject.put("country_code", ek0Var.s);
                     } catch (Exception unused) {
                     }
-                    hashMap = ek0Var.w1;
+                    hashMap = ek0Var.x1;
                     if (hashMap != null) {
                         hashMap.clear();
                     }
-                    hashMap2 = ek0Var.x1;
+                    hashMap2 = ek0Var.y1;
                     if (hashMap2 != null) {
                         hashMap2.clear();
                     }
-                    ((jj0) ek0Var.B1).c(ek0Var.E, null, jSONObject != null ? jSONObject.toString() : null, ek0Var.F, null, ek0Var.i1, ek0Var.j1, ek0Var.k1, null, null, hf0Var, d0Var);
+                    ((jj0) ek0Var.C1).c(ek0Var.F, null, jSONObject != null ? jSONObject.toString() : null, ek0Var.G, null, ek0Var.j1, ek0Var.k1, ek0Var.l1, null, null, ef0Var, aVar);
                 }
                 jSONObject = null;
-                hashMap = ek0Var.w1;
+                hashMap = ek0Var.x1;
                 if (hashMap != null) {
                 }
-                hashMap2 = ek0Var.x1;
+                hashMap2 = ek0Var.y1;
                 if (hashMap2 != null) {
                 }
-                ((jj0) ek0Var.B1).c(ek0Var.E, null, jSONObject != null ? jSONObject.toString() : null, ek0Var.F, null, ek0Var.i1, ek0Var.j1, ek0Var.k1, null, null, hf0Var, d0Var);
+                ((jj0) ek0Var.C1).c(ek0Var.F, null, jSONObject != null ? jSONObject.toString() : null, ek0Var.G, null, ek0Var.j1, ek0Var.k1, ek0Var.l1, null, null, ef0Var, aVar);
             } else if (i14 == 1) {
-                if (!c(hf0Var, d0Var)) {
+                if (!c(ef0Var, aVar)) {
                     return;
                 }
             } else if (i14 == 6) {
                 TL_account.verifyEmail verifyemail = new TL_account.verifyEmail();
                 verifyemail.purpose = new TLRPC.TL_emailVerifyPurposePassport();
                 TLRPC.TL_emailVerificationCode tL_emailVerificationCode = new TLRPC.TL_emailVerificationCode();
-                tL_emailVerificationCode.code = ek0Var.Y[0].getText().toString();
+                tL_emailVerificationCode.code = ek0Var.Z[0].getText().toString();
                 verifyemail.verification = tL_emailVerificationCode;
-                i10 = ((org.telegram.ui.ActionBar.f2) ek0Var).currentAccount;
-                int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(verifyemail, new bi.g2(this, hf0Var, d0Var, verifyemail, 15));
-                i11 = ((org.telegram.ui.ActionBar.f2) ek0Var).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.e2) ek0Var).currentAccount;
+                int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(verifyemail, new bi.l1(this, ef0Var, aVar, verifyemail, 16));
+                i11 = ((org.telegram.ui.ActionBar.e2) ek0Var).currentAccount;
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
-                i12 = ((org.telegram.ui.ActionBar.f2) ek0Var).classGuid;
+                i12 = ((org.telegram.ui.ActionBar.e2) ek0Var).classGuid;
                 connectionsManager.bindRequestToGuid(sendRequest, i12);
             }
             ek0Var.R1(true, true);
@@ -189,7 +189,7 @@ public final class nj0 extends org.telegram.ui.ActionBar.k {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean c(hf0 hf0Var, m4.d0 d0Var) {
+    public final boolean c(ef0 ef0Var, k8.a aVar) {
         ?? r19;
         int i7;
         char c10;
@@ -202,37 +202,37 @@ public final class nj0 extends org.telegram.ui.ActionBar.k {
         char c11;
         int i11;
         char c12;
-        boolean z9;
+        boolean z10;
         int i12;
         ek0 ek0Var = this.a;
         int[] iArr = ek0Var.y;
-        boolean[] zArr = ek0Var.t0;
+        boolean[] zArr = ek0Var.u0;
         char c13 = 0;
-        if (!ek0Var.o1.isEmpty() || ek0.H0(ek0Var)) {
+        if (!ek0Var.p1.isEmpty() || ek0.H0(ek0Var)) {
             return false;
         }
         int i13 = 3;
         char c14 = 2;
-        org.telegram.messenger.ew ewVar = null;
+        org.telegram.messenger.cw cwVar = null;
         ?? r15 = 1;
-        if (ek0Var.u0) {
-            ek0Var.u0 = false;
+        if (ek0Var.v0) {
+            ek0Var.v0 = false;
             int i14 = 0;
-            boolean z10 = false;
+            boolean z11 = false;
             while (i14 < zArr.length) {
                 if (zArr[i14]) {
-                    ek0Var.Y[i14].setErrorText(org.telegram.messenger.id.M0(2131747449, null));
-                    if (!z10) {
-                        String S0 = zArr[c13] ? org.telegram.messenger.id.E0().S0(ek0Var.a0[c13].getText().toString(), r15, r15) : ek0Var.Y[c13].getText().toString();
-                        String S02 = zArr[r15] ? org.telegram.messenger.id.E0().S0(ek0Var.a0[r15].getText().toString(), r15, r15) : ek0Var.Y[r15].getText().toString();
-                        String S03 = zArr[c14] ? org.telegram.messenger.id.E0().S0(ek0Var.a0[c14].getText().toString(), r15, r15) : ek0Var.Y[c14].getText().toString();
+                    ek0Var.Z[i14].setErrorText(org.telegram.messenger.hd.M0(2131747449, null));
+                    if (!z11) {
+                        String S0 = zArr[c13] ? org.telegram.messenger.hd.E0().S0(ek0Var.b0[c13].getText().toString(), r15, r15) : ek0Var.Z[c13].getText().toString();
+                        String S02 = zArr[r15] ? org.telegram.messenger.hd.E0().S0(ek0Var.b0[r15].getText().toString(), r15, r15) : ek0Var.Z[r15].getText().toString();
+                        String S03 = zArr[c14] ? org.telegram.messenger.hd.E0().S0(ek0Var.b0[c14].getText().toString(), r15, r15) : ek0Var.Z[c14].getText().toString();
                         if (TextUtils.isEmpty(S0) || TextUtils.isEmpty(S02) || TextUtils.isEmpty(S03)) {
                             c11 = c13;
                             i11 = i13;
                             c12 = c14;
-                            z9 = r15;
+                            z10 = r15;
                             i12 = i14;
-                            ek0Var.D1(ek0Var.Y[i12]);
+                            ek0Var.D1(ek0Var.Z[i12]);
                         } else {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ek0Var.getParentActivity());
                             Object[] objArr = new Object[i13];
@@ -240,44 +240,44 @@ public final class nj0 extends org.telegram.ui.ActionBar.k {
                             objArr[r15] = S02;
                             objArr[c14] = S03;
                             c12 = c14;
-                            String a02 = org.telegram.messenger.id.a0("PassportNameCheckAlert", null, 2131747503, objArr);
-                            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                            u1Var.T = a02;
-                            u1Var.R = org.telegram.messenger.id.M0(R.string.AppName, null);
+                            String a02 = org.telegram.messenger.hd.a0("PassportNameCheckAlert", null, 2131747503, objArr);
+                            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                            t1Var.U = a02;
+                            t1Var.S = org.telegram.messenger.hd.M0(R.string.AppName, null);
                             c11 = c13;
-                            z9 = r15;
+                            z10 = r15;
                             i12 = i14;
                             i11 = i13;
-                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751354, null), new org.telegram.ui.Components.r0(this, S0, S02, S03, hf0Var, d0Var, 1));
-                            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131751335, null), new l2.q(this, i12, 15));
-                            ek0Var.showDialog(u1Var);
+                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751354, null), new org.telegram.ui.Components.p0(this, S0, S02, S03, ef0Var, aVar, 1));
+                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751335, null), new ai.r1(this, i12, 18));
+                            ek0Var.showDialog(t1Var);
                         }
-                        z10 = z9;
+                        z11 = z10;
                         i14 = i12 + 1;
                         c14 = c12;
                         i13 = i11;
-                        r15 = z9;
+                        r15 = z10;
                         c13 = c11;
                     }
                 }
                 c11 = c13;
                 i11 = i13;
                 c12 = c14;
-                z9 = r15;
+                z10 = r15;
                 i12 = i14;
                 i14 = i12 + 1;
                 c14 = c12;
                 i13 = i11;
-                r15 = z9;
+                r15 = z10;
                 c13 = c11;
             }
-            boolean z11 = c13;
+            boolean z12 = c13;
             i7 = i13;
             c10 = c14;
             i10 = r15;
-            r19 = z11;
-            if (z10) {
-                return z11;
+            r19 = z12;
+            if (z11) {
+                return z12;
             }
         } else {
             r19 = 0;
@@ -290,25 +290,25 @@ public final class nj0 extends org.telegram.ui.ActionBar.k {
             return r19;
         }
         try {
-            if (ek0Var.v0) {
+            if (ek0Var.w0) {
                 jSONObject = null;
             } else {
-                HashMap hashMap3 = new HashMap(ek0Var.s1);
-                if (ek0Var.E.native_names) {
-                    if (ek0Var.q0.getVisibility() == 0) {
-                        hashMap3.put("first_name_native", ek0Var.a0[r19].getText().toString());
-                        hashMap3.put("middle_name_native", ek0Var.a0[i10].getText().toString());
-                        hashMap3.put("last_name_native", ek0Var.a0[c10].getText().toString());
+                HashMap hashMap3 = new HashMap(ek0Var.t1);
+                if (ek0Var.F.native_names) {
+                    if (ek0Var.r0.getVisibility() == 0) {
+                        hashMap3.put("first_name_native", ek0Var.b0[r19].getText().toString());
+                        hashMap3.put("middle_name_native", ek0Var.b0[i10].getText().toString());
+                        hashMap3.put("last_name_native", ek0Var.b0[c10].getText().toString());
                     } else {
-                        hashMap3.put("first_name_native", ek0Var.Y[r19].getText().toString());
-                        hashMap3.put("middle_name_native", ek0Var.Y[i10].getText().toString());
-                        hashMap3.put("last_name_native", ek0Var.Y[c10].getText().toString());
+                        hashMap3.put("first_name_native", ek0Var.Z[r19].getText().toString());
+                        hashMap3.put("middle_name_native", ek0Var.Z[i10].getText().toString());
+                        hashMap3.put("last_name_native", ek0Var.Z[c10].getText().toString());
                     }
                 }
-                hashMap3.put("first_name", ek0Var.Y[r19].getText().toString());
-                hashMap3.put("middle_name", ek0Var.Y[i10].getText().toString());
-                hashMap3.put("last_name", ek0Var.Y[c10].getText().toString());
-                hashMap3.put("birth_date", ek0Var.Y[i7].getText().toString());
+                hashMap3.put("first_name", ek0Var.Z[r19].getText().toString());
+                hashMap3.put("middle_name", ek0Var.Z[i10].getText().toString());
+                hashMap3.put("last_name", ek0Var.Z[c10].getText().toString());
+                hashMap3.put("birth_date", ek0Var.Z[i7].getText().toString());
                 hashMap3.put("gender", ek0Var.x);
                 hashMap3.put("country_code", ek0Var.s);
                 hashMap3.put("residence_country_code", ek0Var.w);
@@ -362,9 +362,9 @@ public final class nj0 extends org.telegram.ui.ActionBar.k {
             jSONObject = null;
             jSONObject2 = null;
         }
-        if (ek0Var.F != null) {
-            HashMap hashMap4 = new HashMap(ek0Var.t1);
-            hashMap4.put("document_no", ek0Var.Y[7].getText().toString());
+        if (ek0Var.G != null) {
+            HashMap hashMap4 = new HashMap(ek0Var.u1);
+            hashMap4.put("document_no", ek0Var.Z[7].getText().toString());
             if (iArr[0] != 0) {
                 Locale locale = Locale.US;
                 Integer valueOf = Integer.valueOf(iArr[c10]);
@@ -423,51 +423,51 @@ public final class nj0 extends org.telegram.ui.ActionBar.k {
                 }
             } catch (Exception unused3) {
             }
-            hashMap = ek0Var.w1;
+            hashMap = ek0Var.x1;
             if (hashMap != null) {
                 hashMap.clear();
             }
-            hashMap2 = ek0Var.x1;
+            hashMap2 = ek0Var.y1;
             if (hashMap2 != null) {
                 hashMap2.clear();
             }
-            vj0 vj0Var = ek0Var.B1;
-            TLRPC.TL_secureRequiredType tL_secureRequiredType = ek0Var.E;
+            vj0 vj0Var = ek0Var.C1;
+            TLRPC.TL_secureRequiredType tL_secureRequiredType = ek0Var.F;
             String jSONObject3 = jSONObject == null ? jSONObject.toString() : null;
-            TLRPC.TL_secureRequiredType tL_secureRequiredType2 = ek0Var.F;
+            TLRPC.TL_secureRequiredType tL_secureRequiredType2 = ek0Var.G;
             String jSONObject4 = jSONObject2 == null ? jSONObject2.toString() : null;
-            org.telegram.messenger.ew ewVar2 = ek0Var.j1;
-            ArrayList arrayList3 = ek0Var.k1;
-            org.telegram.messenger.ew ewVar3 = ek0Var.l1;
-            linearLayout = ek0Var.f0;
+            org.telegram.messenger.cw cwVar2 = ek0Var.k1;
+            ArrayList arrayList3 = ek0Var.l1;
+            org.telegram.messenger.cw cwVar3 = ek0Var.m1;
+            linearLayout = ek0Var.g0;
             if (linearLayout != null && linearLayout.getVisibility() == 0) {
-                ewVar = ek0Var.m1;
+                cwVar = ek0Var.n1;
             }
-            ((jj0) vj0Var).c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, ewVar2, arrayList3, ewVar3, ewVar, hf0Var, d0Var);
+            ((jj0) vj0Var).c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, cwVar2, arrayList3, cwVar3, cwVar, ef0Var, aVar);
             return true;
         }
         jSONObject2 = null;
-        hashMap = ek0Var.w1;
+        hashMap = ek0Var.x1;
         if (hashMap != null) {
         }
-        hashMap2 = ek0Var.x1;
+        hashMap2 = ek0Var.y1;
         if (hashMap2 != null) {
         }
-        vj0 vj0Var2 = ek0Var.B1;
-        TLRPC.TL_secureRequiredType tL_secureRequiredType3 = ek0Var.E;
+        vj0 vj0Var2 = ek0Var.C1;
+        TLRPC.TL_secureRequiredType tL_secureRequiredType3 = ek0Var.F;
         if (jSONObject == null) {
         }
-        TLRPC.TL_secureRequiredType tL_secureRequiredType22 = ek0Var.F;
+        TLRPC.TL_secureRequiredType tL_secureRequiredType22 = ek0Var.G;
         if (jSONObject2 == null) {
         }
-        org.telegram.messenger.ew ewVar22 = ek0Var.j1;
-        ArrayList arrayList32 = ek0Var.k1;
-        org.telegram.messenger.ew ewVar32 = ek0Var.l1;
-        linearLayout = ek0Var.f0;
+        org.telegram.messenger.cw cwVar22 = ek0Var.k1;
+        ArrayList arrayList32 = ek0Var.l1;
+        org.telegram.messenger.cw cwVar32 = ek0Var.m1;
+        linearLayout = ek0Var.g0;
         if (linearLayout != null) {
-            ewVar = ek0Var.m1;
+            cwVar = ek0Var.n1;
         }
-        ((jj0) vj0Var2).c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, ewVar22, arrayList32, ewVar32, ewVar, hf0Var, d0Var);
+        ((jj0) vj0Var2).c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, cwVar22, arrayList32, cwVar32, cwVar, ef0Var, aVar);
         return true;
     }
 }

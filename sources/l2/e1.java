@@ -1,37 +1,27 @@
 package l2;
 
-import android.util.Pair;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g1 b;
-    public final /* synthetic */ Pair c;
-    public final /* synthetic */ x2.t d;
-    public final /* synthetic */ x2.b0 e;
+public final class e1 implements x0 {
+    public final x2.a0 a;
+    public int d;
+    public boolean e;
+    public final ArrayList c = new ArrayList();
+    public final Object b = new Object();
 
-    public /* synthetic */ e1(g1 g1Var, Pair pair, x2.t tVar, x2.b0 b0Var, int i7) {
-        this.a = i7;
-        this.b = g1Var;
-        this.c = pair;
-        this.d = tVar;
-        this.e = b0Var;
+    public e1(x2.a aVar, boolean z10) {
+        this.a = new x2.a0(aVar, z10);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                m2.e eVar = this.b.b.h;
-                Pair pair = this.c;
-                eVar.A(((Integer) pair.first).intValue(), (x2.f0) pair.second, this.d, this.e);
-                break;
-            default:
-                m2.e eVar2 = this.b.b.h;
-                Pair pair2 = this.c;
-                eVar2.G(((Integer) pair2.first).intValue(), (x2.f0) pair2.second, this.d, this.e);
-                break;
-        }
+    @Override // l2.x0
+    public final Object a() {
+        return this.b;
+    }
+
+    @Override // l2.x0
+    public final e2.l1 b() {
+        return this.a.o;
     }
 }

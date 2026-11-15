@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.i9;
+import a8.k9;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class m1 extends i9 {
+public final class m1 extends k9 {
     public static final Logger e = Logger.getLogger(m1.class.getName());
     public static final boolean f = c3.e;
     public i2 a;
@@ -192,10 +192,10 @@ public final class m1 extends i9 {
     public final void q(long j3) {
         int i7;
         int i10 = this.d;
-        boolean z9 = f;
+        boolean z10 = f;
         int i11 = this.c;
         byte[] bArr = this.b;
-        if (!z9 || i11 - i10 < 10) {
+        if (!z10 || i11 - i10 < 10) {
             long j10 = j3;
             while ((j10 & (-128)) != 0) {
                 i7 = i10 + 1;

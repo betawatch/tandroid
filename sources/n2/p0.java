@@ -1,36 +1,16 @@
 package n2;
 
-import android.os.SystemClock;
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p0 {
-    public long a = -9223372036854775807L;
-    public long b = -9223372036854775807L;
-    public Serializable c;
+    public final e2.w0 a;
+    public final long b;
+    public final long c;
+    public long d;
 
-    public void a(Exception exc) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (((Exception) this.c) == null) {
-            this.c = exc;
-        }
-        if (this.a == -9223372036854775807L && q0.c0.get() <= 0) {
-            this.a = 200 + elapsedRealtime;
-        }
-        long j3 = this.a;
-        if (j3 == -9223372036854775807L || elapsedRealtime < j3) {
-            this.b = elapsedRealtime + 50;
-            return;
-        }
-        Exception exc2 = (Exception) this.c;
-        if (exc2 != exc) {
-            exc2.addSuppressed(exc);
-        }
-        Exception exc3 = (Exception) this.c;
-        this.c = null;
-        this.a = -9223372036854775807L;
-        this.b = -9223372036854775807L;
-        throw exc3;
+    public p0(e2.w0 w0Var, long j3, long j10) {
+        this.a = w0Var;
+        this.b = j3;
+        this.c = j10;
     }
 }

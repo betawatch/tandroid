@@ -1,10 +1,10 @@
 package y2;
 
-import a8.wa;
+import a8.xa;
 import x2.a1;
 import x2.b1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g implements b1 {
     public final i a;
@@ -25,29 +25,29 @@ public final class g implements b1 {
             return;
         }
         i iVar = this.e;
-        wa waVar = iVar.h;
+        xa xaVar = iVar.h;
         int[] iArr = iVar.b;
         int i7 = this.c;
-        waVar.j(iArr[i7], iVar.c[i7], 0, null, iVar.J);
+        xaVar.i(iArr[i7], iVar.c[i7], 0, null, iVar.K);
         this.d = true;
     }
 
     @Override // x2.b1
     public final boolean f() {
         i iVar = this.e;
-        return !iVar.v() && this.b.A(iVar.P);
+        return !iVar.z() && this.b.A(iVar.Q);
     }
 
     @Override // x2.b1
-    public final int l(long j3) {
+    public final int n(long j3) {
         i iVar = this.e;
-        if (iVar.v()) {
+        if (iVar.z()) {
             return 0;
         }
-        boolean z9 = iVar.P;
+        boolean z10 = iVar.Q;
         a1 a1Var = this.b;
-        int x10 = a1Var.x(j3, z9);
-        a aVar = iVar.L;
+        int x10 = a1Var.x(j3, z10);
+        a aVar = iVar.M;
         if (aVar != null) {
             x10 = Math.min(x10, aVar.d(this.c + 1) - a1Var.v());
         }
@@ -59,18 +59,18 @@ public final class g implements b1 {
     }
 
     @Override // x2.b1
-    public final int m(wf.b bVar, k2.h hVar, int i7) {
+    public final int q(k8.a aVar, k2.h hVar, int i7) {
         i iVar = this.e;
-        if (iVar.v()) {
+        if (iVar.z()) {
             return -3;
         }
-        a aVar = iVar.L;
+        a aVar2 = iVar.M;
         a1 a1Var = this.b;
-        if (aVar != null && aVar.d(this.c + 1) <= a1Var.v()) {
+        if (aVar2 != null && aVar2.d(this.c + 1) <= a1Var.v()) {
             return -3;
         }
         b();
-        return a1Var.F(bVar, hVar, i7, iVar.P);
+        return a1Var.F(aVar, hVar, i7, iVar.Q);
     }
 
     @Override // x2.b1

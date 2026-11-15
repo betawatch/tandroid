@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class n3 extends FrameLayout {
     public final TextView a;
@@ -14,23 +14,23 @@ public final class n3 extends FrameLayout {
     public boolean c;
     public final boolean d;
 
-    public n3(g4 g4Var, Context context, boolean z9) {
+    public n3(g4 g4Var, Context context, boolean z10) {
         super(context);
-        this.d = z9;
+        this.d = z10;
         setTag(90);
         TextView textView = new TextView(context);
         this.a = textView;
-        textView.setText(org.telegram.messenger.id.M0(z9 ? 2131746916 : 2131746917, null));
+        textView.setText(org.telegram.messenger.hd.M0(z10 ? 2131746916 : 2131746917, null));
         textView.setTextSize(1, 12.0f);
         textView.setGravity(17);
         textView.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-        addView(textView, c8.ha.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
+        addView(textView, c8.ja.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 12.0f);
         textView2.setGravity(19);
         textView2.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-        addView(textView2, c8.ha.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
+        addView(textView2, c8.ja.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

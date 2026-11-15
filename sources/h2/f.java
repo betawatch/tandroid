@@ -2,11 +2,11 @@ package h2;
 
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qs;
-import v4.a1;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.ns;
+import v4.b1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -15,7 +15,7 @@ public final class f {
     public int[] d;
 
     public f(int[] iArr) {
-        this.a = p10.s0;
+        this.a = m10.t0;
         this.b = -1;
         this.c = -1;
         this.d = iArr;
@@ -67,34 +67,34 @@ public final class f {
         this.c++;
     }
 
-    public void c(RecyclerView recyclerView, boolean z9) {
-        boolean z10;
+    public void c(RecyclerView recyclerView, boolean z10) {
+        boolean z11;
         int i7;
         this.c = 0;
         int[] iArr = this.d;
         if (iArr != null) {
             Arrays.fill(iArr, -1);
         }
-        v4.n0 n0Var = recyclerView.y;
-        if (recyclerView.x == null || n0Var == null || !n0Var.h) {
+        v4.o0 o0Var = recyclerView.y;
+        if (recyclerView.x == null || o0Var == null || !o0Var.h) {
             return;
         }
-        if (z9) {
+        if (z10) {
             if (!recyclerView.d.g()) {
                 int b10 = recyclerView.x.b();
-                v4.b0 b0Var = (v4.b0) n0Var;
+                v4.b0 b0Var = (v4.b0) o0Var;
                 v4.a0 a0Var = b0Var.B;
                 if (a0Var == null || (i7 = a0Var.a) < 0) {
                     b0Var.f1();
-                    z10 = b0Var.v;
+                    z11 = b0Var.v;
                     i7 = b0Var.y;
                     if (i7 == -1) {
-                        i7 = z10 ? b10 - 1 : 0;
+                        i7 = z11 ? b10 - 1 : 0;
                     }
                 } else {
-                    z10 = a0Var.c;
+                    z11 = a0Var.c;
                 }
-                int i10 = z10 ? -1 : 1;
+                int i10 = z11 ? -1 : 1;
                 for (int i11 = 0; i11 < b0Var.E && i7 >= 0 && i7 < b10; i11++) {
                     b(i7, 0);
                     i7 += i10;
@@ -103,40 +103,40 @@ public final class f {
         } else if (!recyclerView.Z()) {
             int i12 = this.a;
             int i13 = this.b;
-            a1 a1Var = recyclerView.u0;
-            v4.b0 b0Var2 = (v4.b0) n0Var;
+            b1 b1Var = recyclerView.v0;
+            v4.b0 b0Var2 = (v4.b0) o0Var;
             if (b0Var2.o != 0) {
                 i12 = i13;
             }
             if (b0Var2.r() != 0 && i12 != 0) {
                 b0Var2.G0();
-                b0Var2.m1(i12 > 0 ? 1 : -1, Math.abs(i12), true, a1Var);
-                b0Var2.A0(a1Var, b0Var2.p, this);
+                b0Var2.m1(i12 > 0 ? 1 : -1, Math.abs(i12), true, b1Var);
+                b0Var2.A0(b1Var, b0Var2.p, this);
             }
         }
         int i14 = this.c;
-        if (i14 > n0Var.i) {
-            n0Var.i = i14;
-            n0Var.j = z9;
+        if (i14 > o0Var.i) {
+            o0Var.i = i14;
+            o0Var.j = z10;
             recyclerView.b.l();
         }
     }
 
     public void d() {
         int[] iArr = this.d;
-        int i7 = p10.s0;
+        int i7 = m10.t0;
         if (this.a != i7) {
-            qs.f(i7).j(this.b);
+            ns.f(i7).j(this.b);
             this.b = -1;
             this.a = i7;
         }
-        this.b = qs.f(i7).q(iArr, this.b, true);
-        this.c = qs.e().q(iArr, this.c, true);
+        this.b = ns.f(i7).q(iArr, this.b, true);
+        this.c = ns.e().q(iArr, this.c, true);
     }
 
     public void e() {
-        qs.f(this.a).j(this.b);
-        qs.e().j(this.c);
+        ns.f(this.a).j(this.b);
+        ns.e().j(this.c);
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */

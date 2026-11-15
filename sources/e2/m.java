@@ -1,8 +1,9 @@
 package e2;
 
+import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class m {
     public static final m h = new m(1, 2, 3, null, -1, -1);
@@ -21,7 +22,7 @@ public final class m {
     public int g;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         i = Integer.toString(0, 36);
         j = Integer.toString(1, 36);
         k = Integer.toString(2, 36);
@@ -40,15 +41,15 @@ public final class m {
     }
 
     public static String a(int i7) {
-        return i7 != -1 ? i7 != 1 ? i7 != 2 ? jg.g.j(i7, "Undefined color range ") : "Limited range" : "Full range" : "Unset color range";
+        return i7 != -1 ? i7 != 1 ? i7 != 2 ? i5.c.i(i7, "Undefined color range ") : "Limited range" : "Full range" : "Unset color range";
     }
 
     public static String b(int i7) {
-        return i7 != -1 ? i7 != 6 ? i7 != 1 ? i7 != 2 ? jg.g.j(i7, "Undefined color space ") : "BT601" : "BT709" : "BT2020" : "Unset color space";
+        return i7 != -1 ? i7 != 6 ? i7 != 1 ? i7 != 2 ? i5.c.i(i7, "Undefined color space ") : "BT601" : "BT709" : "BT2020" : "Unset color space";
     }
 
     public static String c(int i7) {
-        return i7 != -1 ? i7 != 10 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 6 ? i7 != 7 ? jg.g.j(i7, "Undefined color transfer ") : "HLG" : "ST2084 PQ" : "SDR SMPTE 170M" : "sRGB" : "Linear" : "Gamma 2.2" : "Unset color transfer";
+        return i7 != -1 ? i7 != 10 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 6 ? i7 != 7 ? i5.c.i(i7, "Undefined color transfer ") : "HLG" : "ST2084 PQ" : "SDR SMPTE 170M" : "sRGB" : "Linear" : "Gamma 2.2" : "Unset color transfer";
     }
 
     public static boolean e(m mVar) {
@@ -139,9 +140,9 @@ public final class m {
         sb2.append(this.d != null);
         sb2.append(", ");
         int i7 = this.e;
-        sb2.append(i7 != -1 ? com.google.android.recaptcha.internal.a.i(i7, "bit Luma") : "NA");
+        sb2.append(i7 != -1 ? e2.i(i7, "bit Luma") : "NA");
         sb2.append(", ");
         int i10 = this.f;
-        return a8.p0.s(sb2, i10 != -1 ? com.google.android.recaptcha.internal.a.i(i10, "bit Chroma") : "NA", ")");
+        return a8.p0.s(sb2, i10 != -1 ? e2.i(i10, "bit Chroma") : "NA", ")");
     }
 }

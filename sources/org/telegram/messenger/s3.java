@@ -1,25 +1,25 @@
 package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.f40;
+import org.telegram.ui.c40;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class s3 {
     public TLRPC.GroupCallParticipant a;
     public boolean b;
     public float c;
 
-    public s3(TLRPC.GroupCallParticipant groupCallParticipant, boolean z9) {
+    public s3(TLRPC.GroupCallParticipant groupCallParticipant, boolean z10) {
         this.a = groupCallParticipant;
-        this.b = z9;
+        this.b = z10;
     }
 
     public final void a(int i7, int i10, r3 r3Var) {
         float f10 = i7 / i10;
         if (this.c != f10) {
             this.c = f10;
-            if (f40.z5 || r3Var.f.size() % 2 != 1) {
+            if (c40.E5 || r3Var.f.size() % 2 != 1) {
                 return;
             }
             r3Var.B();
@@ -32,7 +32,7 @@ public final class s3 {
         }
         if (obj != null && s3.class == obj.getClass()) {
             s3 s3Var = (s3) obj;
-            if (this.b == s3Var.b && ij.B1(this.a.peer) == ij.B1(s3Var.a.peer)) {
+            if (this.b == s3Var.b && gj.B1(this.a.peer) == gj.B1(s3Var.a.peer)) {
                 return true;
             }
         }

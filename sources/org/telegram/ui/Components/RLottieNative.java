@@ -5,7 +5,7 @@ import android.os.Trace;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class RLottieNative {
     public final int[] a;
@@ -101,16 +101,16 @@ public final class RLottieNative {
 
     private static native void nDestroy(long j3);
 
-    private static native int nGetFrame(long j3, int i7, Bitmap bitmap, boolean z9);
+    private static native int nGetFrame(long j3, int i7, Bitmap bitmap, boolean z10);
 
-    public final int c(int i7, Bitmap bitmap, boolean z9) {
+    public final int c(int i7, Bitmap bitmap, boolean z10) {
         if (this.c.get()) {
             throw new IllegalStateException("Called method on a recycled RLottie instance");
         }
         long j3 = this.b;
         Trace.beginSection("RLottieNative#getFrame");
         try {
-            return nGetFrame(j3, i7, bitmap, z9);
+            return nGetFrame(j3, i7, bitmap, z10);
         } finally {
             Trace.endSection();
         }

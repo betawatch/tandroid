@@ -1,25 +1,34 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ VideoCapturerDevice b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ h(VideoCapturerDevice videoCapturerDevice, int i7) {
-        this.a = i7;
+    public /* synthetic */ h(VideoCapturerDevice videoCapturerDevice, int i7, long j3) {
         this.b = videoCapturerDevice;
+        this.d = i7;
+        this.c = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onDestroy$8();
+                this.b.lambda$onStateChanged$6(this.d, this.c);
                 break;
             default:
-                this.b.lambda$onDestroy$9();
+                this.b.lambda$onStateChanged$7(this.c, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ h(VideoCapturerDevice videoCapturerDevice, long j3, int i7) {
+        this.b = videoCapturerDevice;
+        this.c = j3;
+        this.d = i7;
     }
 }

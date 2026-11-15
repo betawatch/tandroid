@@ -9,49 +9,49 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class WearReplyReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
 
     public static void a(c cVar, CharSequence charSequence, long j3, long j10, int i7, int[] iArr) {
-        ij ijVar;
+        gj gjVar;
         int i10 = cVar.a;
-        ij ijVar2 = null;
+        gj gjVar2 = null;
         if (i7 != 0) {
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
             tL_message.message = "";
             tL_message.id = i7;
-            tL_message.peer_id = qp.s1(i10).z1(j3);
-            ijVar = new ij(i10, tL_message, false, false);
+            tL_message.peer_id = np.s1(i10).z1(j3);
+            gjVar = new gj(i10, tL_message, false, false);
         } else {
-            ijVar = null;
+            gjVar = null;
         }
         if (j10 != 0) {
             TLRPC.TL_message tL_message2 = new TLRPC.TL_message();
             tL_message2.message = "";
             tL_message2.id = (int) j10;
-            tL_message2.peer_id = qp.s1(i10).z1(j3);
+            tL_message2.peer_id = np.s1(i10).z1(j3);
             TLRPC.TL_messageActionTopicCreate tL_messageActionTopicCreate = new TLRPC.TL_messageActionTopicCreate();
             tL_message2.action = tL_messageActionTopicCreate;
             tL_messageActionTopicCreate.title = "";
-            ijVar2 = new ij(i10, tL_message2, false, false);
+            gjVar2 = new gj(i10, tL_message2, false, false);
         }
-        gz.C(i10).r0(ez.b(charSequence.toString(), j3, ijVar, ijVar2, null, true, null, null, null, true, 0, 0, null, false));
+        ez.C(i10).r0(cz.b(charSequence.toString(), j3, gjVar, gjVar2, null, true, null, null, null, true, 0, 0, null, false));
         if (iArr != null && iArr.length > 0) {
             ArrayList arrayList = new ArrayList(iArr.length);
             int length = iArr.length;
             int i11 = 0;
             while (i11 < length) {
-                i11 = com.google.android.recaptcha.internal.a.f(iArr[i11], i11, 1, arrayList);
+                i11 = com.google.android.gms.internal.vision.e2.f(iArr[i11], i11, 1, arrayList);
             }
-            yr a02 = yr.a0(i10);
+            vr a02 = vr.a0(i10);
             if (!arrayList.isEmpty()) {
-                a02.a.c(new lr(a02, arrayList, j3, 0));
+                a02.a.c(new ir(a02, arrayList, j3, 0));
             }
         }
         if (j10 == 0) {
-            qp.s1(i10).j3(j3, i7, i7, 0, false, j10, 0, true, 0);
+            np.s1(i10).j3(j3, i7, i7, 0, false, j10, 0, true, 0);
         }
     }
 
@@ -71,14 +71,14 @@ public class WearReplyReceiver extends BroadcastReceiver {
         final long longExtra2 = intent.getLongExtra("topic_id", 0L);
         int intExtra2 = intent.getIntExtra("currentAccount", 0);
         final int[] intArrayExtra = intent.getIntArrayExtra("voice_msg_ids");
-        if (longExtra == 0 || intExtra == 0 || !p10.r(intExtra2)) {
+        if (longExtra == 0 || intExtra == 0 || !m10.r(intExtra2)) {
             return;
         }
         final c a10 = c.a(intExtra2);
         if (m5.E(longExtra)) {
-            if (qp.s1(a10.a).a2(Long.valueOf(longExtra)) == null) {
+            if (np.s1(a10.a).a2(Long.valueOf(longExtra)) == null) {
                 final int i7 = 0;
-                Utilities.e.c(new Runnable(this) { // from class: org.telegram.messenger.l20
+                Utilities.e.c(new Runnable(this) { // from class: org.telegram.messenger.j20
                     public final /* synthetic */ WearReplyReceiver b;
 
                     {
@@ -91,25 +91,25 @@ public class WearReplyReceiver extends BroadcastReceiver {
                             case 0:
                                 int i10 = WearReplyReceiver.a;
                                 c cVar = a10;
-                                yr a02 = yr.a0(cVar.a);
+                                vr a02 = vr.a0(cVar.a);
                                 long j3 = longExtra;
-                                g0.h3(new fm(this.b, cVar, a02.k0(j3), charSequence, j3, longExtra2, intExtra, intArrayExtra));
+                                g0.h3(new cm(this.b, cVar, a02.k0(j3), charSequence, j3, longExtra2, intExtra, intArrayExtra));
                                 break;
                             default:
                                 int i11 = WearReplyReceiver.a;
                                 c cVar2 = a10;
-                                yr a03 = yr.a0(cVar2.a);
+                                vr a03 = vr.a0(cVar2.a);
                                 long j10 = longExtra;
-                                g0.h3(new fm(this.b, cVar2, a03.P(-j10), charSequence, j10, longExtra2, intExtra, intArrayExtra));
+                                g0.h3(new cm(this.b, cVar2, a03.P(-j10), charSequence, j10, longExtra2, intExtra, intArrayExtra));
                                 break;
                         }
                     }
                 });
                 return;
             }
-        } else if (m5.z(longExtra) && qp.s1(a10.a).M0(Long.valueOf(-longExtra)) == null) {
+        } else if (m5.z(longExtra) && np.s1(a10.a).M0(Long.valueOf(-longExtra)) == null) {
             final int i10 = 1;
-            Utilities.e.c(new Runnable(this) { // from class: org.telegram.messenger.l20
+            Utilities.e.c(new Runnable(this) { // from class: org.telegram.messenger.j20
                 public final /* synthetic */ WearReplyReceiver b;
 
                 {
@@ -122,16 +122,16 @@ public class WearReplyReceiver extends BroadcastReceiver {
                         case 0:
                             int i102 = WearReplyReceiver.a;
                             c cVar = a10;
-                            yr a02 = yr.a0(cVar.a);
+                            vr a02 = vr.a0(cVar.a);
                             long j3 = longExtra;
-                            g0.h3(new fm(this.b, cVar, a02.k0(j3), charSequence, j3, longExtra2, intExtra, intArrayExtra));
+                            g0.h3(new cm(this.b, cVar, a02.k0(j3), charSequence, j3, longExtra2, intExtra, intArrayExtra));
                             break;
                         default:
                             int i11 = WearReplyReceiver.a;
                             c cVar2 = a10;
-                            yr a03 = yr.a0(cVar2.a);
+                            vr a03 = vr.a0(cVar2.a);
                             long j10 = longExtra;
-                            g0.h3(new fm(this.b, cVar2, a03.P(-j10), charSequence, j10, longExtra2, intExtra, intArrayExtra));
+                            g0.h3(new cm(this.b, cVar2, a03.P(-j10), charSequence, j10, longExtra2, intExtra, intArrayExtra));
                             break;
                     }
                 }

@@ -2,187 +2,218 @@ package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
+import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public class wp extends ReplacementSpan {
-    public int D;
-    public int E;
-    public final int F;
-    public float G;
-    public float H;
-    public float I;
-    public boolean J;
-    public Paint.FontMetricsInt K;
-    public boolean a;
-    public int b;
-    public Drawable c;
-    public boolean d;
+public abstract class wp extends Drawable {
+    public final Paint a;
+    public long b;
+    public final RectF c;
+    public float d;
     public boolean e;
-    public boolean f;
-    public int h;
-    public int n;
-    public float r;
-    public float s;
-    public float w;
-    public float x;
-    public int y;
+    public int f;
+    public int g;
 
-    public wp(int i7) {
-        this(i7, 0);
+    public wp() {
+        this(2.0f);
     }
 
-    public final void a(int i7) {
-        this.h = i7;
-        this.e = i7 < 0;
-    }
+    public abstract int a();
 
-    public final void b(Paint.FontMetricsInt fontMetricsInt) {
-        this.J = true;
-        this.K = fontMetricsInt;
-        if (fontMetricsInt != null) {
-            c(Math.abs(this.K.ascent) + Math.abs(fontMetricsInt.descent));
-            if (this.D == 0) {
-                c(org.telegram.messenger.g0.L(20.0f));
-            }
-        }
-    }
-
-    public final void c(int i7) {
-        this.D = i7;
-        this.c.setBounds(0, 0, i7, i7);
-    }
-
-    public final void d(float f10) {
-        this.r = f10;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0035  */
-    @Override // android.text.style.ReplacementSpan
+    /* JADX WARN: Removed duplicated region for block: B:32:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x015c  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0180  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x01b7  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x01c0  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0157  */
+    @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        boolean z9;
-        if (this.a) {
-            if (this.d) {
-                int i14 = this.y;
-                if (i14 == 0) {
-                    if (this.f && (paint instanceof TextPaint)) {
-                        i14 = ((TextPaint) paint).linkColor;
-                    } else if (this.e) {
-                        i14 = paint.getColor();
-                        z9 = true;
-                        if (this.b != i14) {
-                            this.b = i14;
-                            this.c.setColorFilter(new PorterDuffColorFilter(this.b, PorterDuff.Mode.SRC_IN));
-                        }
-                    } else {
-                        i14 = org.telegram.ui.ActionBar.m6.x0(null, this.h, false);
-                    }
-                }
-                z9 = false;
-                if (this.b != i14) {
-                }
-            } else {
-                z9 = false;
-            }
-            canvas.save();
-            Drawable drawable = this.c;
-            int i15 = i13 - (drawable != null ? drawable.getBounds().bottom : i13);
-            int i16 = this.F;
-            if (i16 != 1) {
-                if (i16 == 2) {
-                    int D = jg.g.D(i13, i11, 2, i11);
-                    Drawable drawable2 = this.c;
-                    i15 = D - (drawable2 != null ? drawable2.getBounds().height() / 2 : 0);
-                } else if (i16 == 0) {
-                    int i17 = i13 - i11;
-                    int i18 = this.D;
-                    if (i18 == 0) {
-                        i18 = this.c.getIntrinsicHeight();
-                    }
-                    i15 = jg.g.D(i17, i18, 2, i11) + org.telegram.messenger.g0.L(this.n);
-                }
-            }
-            canvas.translate(f10 + this.r, i15 + this.s);
-            if (this.c != null) {
-                float f11 = this.H;
-                if (f11 != 1.0f || this.I != 1.0f) {
-                    canvas.scale(f11, this.I, 0.0f, r5.getBounds().centerY());
-                }
-                float f12 = this.w;
-                if (f12 != 1.0f) {
-                    canvas.rotate(f12, this.c.getBounds().centerX(), this.c.getBounds().centerY());
-                }
-                if (z9) {
-                    this.c.setAlpha((int) ((paint.getAlpha() / Color.alpha(this.b)) * this.x * 255.0f));
+    public final void draw(Canvas canvas) {
+        Canvas canvas2;
+        float f10;
+        float f11;
+        float f12;
+        float f13;
+        float y10;
+        Paint paint;
+        float f14;
+        long currentTimeMillis = System.currentTimeMillis();
+        int a10 = a();
+        Paint paint2 = this.a;
+        if (a10 != 0) {
+            this.g = Color.alpha(a10);
+            paint2.setColor(i0.a.o(a10, org.telegram.messenger.ns.e4));
+        }
+        long j3 = this.b;
+        if (j3 != 0) {
+            long j10 = currentTimeMillis - j3;
+            boolean z10 = this.e;
+            if (z10 || this.d != 0.0f) {
+                float f15 = ((j10 * 360) / 500.0f) + this.d;
+                this.d = f15;
+                if (z10 || f15 < 720.0f) {
+                    this.d = f15 - (((int) (f15 / 720.0f)) * 720);
                 } else {
-                    this.c.setAlpha((int) (paint.getAlpha() * this.x));
+                    this.d = 0.0f;
                 }
-                this.c.draw(canvas);
+                invalidateSelf();
+            }
+        }
+        if (this.g == 255 || getBounds() == null || getBounds().isEmpty()) {
+            canvas2 = canvas;
+            canvas2.save();
+        } else {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, this.g, 31);
+        }
+        canvas2.translate(org.telegram.messenger.g0.L(24.0f) / 2, org.telegram.messenger.g0.L(24.0f) / 2);
+        canvas2.rotate(-45.0f);
+        float f16 = this.d;
+        if (f16 < 0.0f || f16 >= 90.0f) {
+            if (f16 >= 90.0f && f16 < 180.0f) {
+                f13 = org.telegram.messenger.k5.y(f16, 90.0f, 90.0f, 1.0f);
+                f11 = 0.0f;
+                f10 = 0.0f;
+                f12 = 1.0f;
+            } else if (f16 < 180.0f || f16 >= 270.0f) {
+                if (f16 >= 270.0f && f16 < 360.0f) {
+                    y10 = (f16 - 270.0f) / 90.0f;
+                } else if (f16 >= 360.0f && f16 < 450.0f) {
+                    y10 = org.telegram.messenger.k5.y(f16, 360.0f, 90.0f, 1.0f);
+                } else if (f16 >= 450.0f && f16 < 540.0f) {
+                    f11 = (f16 - 450.0f) / 90.0f;
+                    f13 = 0.0f;
+                    f12 = 0.0f;
+                    f10 = 0.0f;
+                } else if (f16 >= 540.0f && f16 < 630.0f) {
+                    f13 = (f16 - 540.0f) / 90.0f;
+                    f12 = 0.0f;
+                    f10 = 0.0f;
+                    f11 = 1.0f;
+                } else if (f16 < 630.0f || f16 >= 720.0f) {
+                    f10 = 0.0f;
+                    f11 = 1.0f;
+                    f13 = f11;
+                } else {
+                    f12 = (f16 - 630.0f) / 90.0f;
+                    f10 = 0.0f;
+                    f11 = 1.0f;
+                    f13 = 1.0f;
+                }
+                f10 = y10;
+                f11 = 0.0f;
+                f13 = f11;
+            } else {
+                f12 = org.telegram.messenger.k5.y(f16, 180.0f, 90.0f, 1.0f);
+                f11 = 0.0f;
+                f13 = 0.0f;
+                f10 = 0.0f;
+            }
+            if (f11 == 0.0f) {
+                paint = paint2;
+                canvas2.drawLine(0.0f, 0.0f, 0.0f, this.f * f11, paint);
+            } else {
+                paint = paint2;
+            }
+            if (f13 != 0.0f) {
+                canvas.drawLine((-this.f) * f13, 0.0f, 0.0f, 0.0f, paint);
+            }
+            if (f12 != 0.0f) {
+                canvas.drawLine(0.0f, (-this.f) * f12, 0.0f, 0.0f, paint);
+            }
+            if (f10 != 1.0f) {
+                float f17 = this.f;
+                canvas.drawLine(f17 * f10, 0.0f, f17, 0.0f, paint);
             }
             canvas.restore();
-        }
-    }
-
-    public final void e(float f10) {
-        this.r = 0.0f;
-        this.s = f10;
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        if (!this.J || this.K == null) {
-            if (this.E != 0) {
-                return (int) (Math.abs(this.H) * this.E);
+            int centerX = getBounds().centerX();
+            int centerY = getBounds().centerY();
+            int i7 = this.f;
+            float f18 = centerX - i7;
+            float f19 = centerY - i7;
+            float f20 = centerX + i7;
+            float f21 = centerY + i7;
+            RectF rectF = this.c;
+            rectF.set(f18, f19, f20, f21);
+            f14 = this.d;
+            float f22 = (f14 >= 360.0f ? f14 - 360.0f : 0.0f) - 45.0f;
+            if (f14 >= 360.0f) {
+                f14 = 720.0f - f14;
             }
-            float abs = Math.abs(this.G) * Math.abs(this.H);
-            int i11 = this.D;
-            if (i11 == 0) {
-                i11 = this.c.getIntrinsicWidth();
-            }
-            return (int) (abs * i11);
+            canvas.drawArc(rectF, f22, f14, false, paint);
+            this.b = currentTimeMillis;
         }
-        if (fontMetricsInt == null) {
-            fontMetricsInt = new Paint.FontMetricsInt();
+        f11 = 1.0f - (f16 / 90.0f);
+        f10 = 0.0f;
+        f13 = 1.0f;
+        f12 = f13;
+        if (f11 == 0.0f) {
         }
-        Paint.FontMetricsInt fontMetricsInt2 = this.K;
-        fontMetricsInt.ascent = fontMetricsInt2.ascent;
-        fontMetricsInt.descent = fontMetricsInt2.descent;
-        fontMetricsInt.top = fontMetricsInt2.top;
-        fontMetricsInt.bottom = fontMetricsInt2.bottom;
-        return (int) (Math.abs(this.G) * Math.abs(this.H) * this.D);
+        if (f13 != 0.0f) {
+        }
+        if (f12 != 0.0f) {
+        }
+        if (f10 != 1.0f) {
+        }
+        canvas.restore();
+        int centerX2 = getBounds().centerX();
+        int centerY2 = getBounds().centerY();
+        int i72 = this.f;
+        float f182 = centerX2 - i72;
+        float f192 = centerY2 - i72;
+        float f202 = centerX2 + i72;
+        float f212 = centerY2 + i72;
+        RectF rectF2 = this.c;
+        rectF2.set(f182, f192, f202, f212);
+        f14 = this.d;
+        float f222 = (f14 >= 360.0f ? f14 - 360.0f : 0.0f) - 45.0f;
+        if (f14 >= 360.0f) {
+        }
+        canvas.drawArc(rectF2, f222, f14, false, paint);
+        this.b = currentTimeMillis;
     }
 
-    public wp(Drawable drawable) {
-        this(0, drawable);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(24.0f);
     }
 
-    public wp(int i7, int i10) {
-        this(i10, org.telegram.messenger.t0.b.getDrawable(i7).mutate());
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(24.0f);
     }
 
-    public wp(int i7, Drawable drawable) {
-        this.a = true;
-        this.d = true;
-        this.e = true;
-        this.f = false;
-        this.n = 0;
-        this.x = 1.0f;
-        this.G = 1.0f;
-        this.H = 1.0f;
-        this.I = 1.0f;
-        this.c = drawable;
-        if (drawable != null) {
-            drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-        }
-        this.F = i7;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    public wp(float f10) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        new DecelerateInterpolator();
+        this.c = new RectF();
+        this.g = org.telegram.messenger.ns.e4;
+        paint.setColor(-1);
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(f10));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStyle(Paint.Style.STROKE);
+        this.f = org.telegram.messenger.g0.L(8.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

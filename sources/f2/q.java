@@ -1,43 +1,245 @@
 package f2;
 
-import java.nio.ByteBuffer;
+import a8.ja;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public interface q {
-    void a(int i7, ByteBuffer byteBuffer);
+public final class q {
+    public final int a;
+    public final int b;
+    public final float c;
+    public final float d;
+    public final float e;
+    public final int f;
+    public final int g;
+    public final int h;
+    public final p i;
+    public int j;
+    public int k;
+    public int l;
+    public int m;
+    public int n;
+    public int o;
+    public int p;
+    public double q;
 
-    void b(int i7, ByteBuffer byteBuffer);
+    public q(int i7, int i10, float f10, float f11, int i11, boolean z10) {
+        this.a = i7;
+        this.b = i10;
+        this.c = f10;
+        this.d = f11;
+        this.e = i7 / i11;
+        this.f = i7 / 400;
+        int i12 = i7 / 65;
+        this.g = i12;
+        this.h = i12 * 2;
+        this.i = z10 ? new o(this) : new cc.e(this);
+    }
 
-    void c(int i7, int i10);
+    public final void a(int i7, int i10) {
+        p pVar = this.i;
+        pVar.i(i10);
+        Object g10 = pVar.g();
+        int i11 = this.b;
+        System.arraycopy(g10, i7 * i11, pVar.h(), this.k * i11, i11 * i10);
+        this.k += i10;
+    }
 
-    void d(int i7, int i10);
-
-    int e(int i7, int i10, int i11);
-
-    void f();
-
-    void flush();
-
-    Object g();
-
-    Object h();
-
-    void i(int i7);
-
-    boolean j();
-
-    void k(long j3, int i7, long j10);
-
-    Object l();
-
-    void m(int i7, int i10, int i11, int i12, int i13);
-
-    void n(int i7);
-
-    int o();
-
-    void p(int i7);
-
-    int q(int i7, int i10);
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void b() {
+        float f10;
+        int i7;
+        double d;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        long j3;
+        long j10;
+        int i17 = this.k;
+        float f11 = this.c;
+        float f12 = this.d;
+        double d2 = f11 / f12;
+        float f13 = this.e * f12;
+        int i18 = this.a;
+        int i19 = 1;
+        p pVar = this.i;
+        int i20 = this.b;
+        if (d2 > 1.0000100135803223d || d2 < 0.9999899864196777d) {
+            int i21 = this.j;
+            int i22 = this.h;
+            if (i21 >= i22) {
+                int i23 = 0;
+                while (true) {
+                    int i24 = this.o;
+                    if (i24 > 0) {
+                        int min = Math.min(i22, i24);
+                        a(i23, min);
+                        this.o -= min;
+                        i23 += min;
+                        f10 = f13;
+                        d = d2;
+                        i12 = i19;
+                        i10 = i22;
+                    } else {
+                        int i25 = i18 > 4000 ? i18 / 4000 : i19;
+                        int i26 = this.g;
+                        int i27 = this.f;
+                        if (i20 == i19 && i25 == i19) {
+                            i7 = pVar.e(i23, i27, i26);
+                            f10 = f13;
+                        } else {
+                            pVar.d(i23, i25);
+                            f10 = f13;
+                            int q10 = pVar.q(i27 / i25, i26 / i25);
+                            if (i25 != i19) {
+                                int i28 = q10 * i25;
+                                int i29 = i25 * 4;
+                                int i30 = i28 - i29;
+                                int i31 = i28 + i29;
+                                if (i30 >= i27) {
+                                    i27 = i30;
+                                }
+                                if (i31 <= i26) {
+                                    i26 = i31;
+                                }
+                                if (i20 == i19) {
+                                    i7 = pVar.e(i23, i27, i26);
+                                } else {
+                                    pVar.d(i23, i19);
+                                    i7 = pVar.q(i27, i26);
+                                }
+                            } else {
+                                i7 = q10;
+                            }
+                        }
+                        int i32 = pVar.j() ? this.p : i7;
+                        pVar.f();
+                        this.p = i7;
+                        if (d2 > 1.0d) {
+                            if (d2 >= 2.0d) {
+                                i13 = i19;
+                                double d10 = (i32 / (d2 - 1.0d)) + this.q;
+                                i14 = (int) Math.round(d10);
+                                d = d2;
+                                this.q = d10 - i14;
+                                pVar = pVar;
+                            } else {
+                                d = d2;
+                                i13 = i19;
+                                double d11 = (((2.0d - d) * i32) / (d - 1.0d)) + this.q;
+                                int round = (int) Math.round(d11);
+                                this.o = round;
+                                this.q = d11 - round;
+                                i14 = i32;
+                            }
+                            pVar.i(i14);
+                            int i33 = i22;
+                            int i34 = i14;
+                            pVar.m(i34, this.b, this.k, i23, i23 + i32);
+                            this.k += i34;
+                            i23 = i32 + i34 + i23;
+                            i10 = i33;
+                            i12 = i13;
+                        } else {
+                            d = d2;
+                            int i35 = i19;
+                            int i36 = i22;
+                            if (d < 0.5d) {
+                                i10 = i36;
+                                double d12 = ((i32 * d) / (1.0d - d)) + this.q;
+                                int round2 = (int) Math.round(d12);
+                                this.q = d12 - round2;
+                                i11 = round2;
+                            } else {
+                                i10 = i36;
+                                double d13 = ((((d * 2.0d) - 1.0d) * i32) / (1.0d - d)) + this.q;
+                                int round3 = (int) Math.round(d13);
+                                this.o = round3;
+                                this.q = d13 - round3;
+                                i11 = i32;
+                            }
+                            int i37 = i32 + i11;
+                            pVar.i(i37);
+                            i12 = i35;
+                            System.arraycopy(pVar.g(), i23 * i20, pVar.h(), this.k * i20, i32 * i20);
+                            int i38 = i23;
+                            pVar.m(i11, this.b, this.k + i32, i32 + i23, i38);
+                            this.k += i37;
+                            i23 = i38 + i11;
+                        }
+                    }
+                    if (i23 + i10 > i21) {
+                        break;
+                    }
+                    i22 = i10;
+                    f13 = f10;
+                    i19 = i12;
+                    d2 = d;
+                }
+                int i39 = this.j - i23;
+                System.arraycopy(pVar.g(), i23 * i20, pVar.g(), 0, i39 * i20);
+                this.j = i39;
+                if (f10 != 1.0f || this.k == i17) {
+                }
+                long j11 = (long) (i18 / f10);
+                long j12 = i18;
+                while (j11 != 0 && j12 != 0 && j11 % 2 == 0 && j12 % 2 == 0) {
+                    j11 /= 2;
+                    j12 /= 2;
+                }
+                int i40 = this.k - i17;
+                pVar.n(i40);
+                System.arraycopy(pVar.h(), i17 * i20, pVar.l(), this.l * i20, i40 * i20);
+                this.k = i17;
+                this.l += i40;
+                int i41 = 0;
+                while (true) {
+                    i15 = this.l - 1;
+                    if (i41 >= i15) {
+                        break;
+                    }
+                    while (true) {
+                        i16 = this.m + 1;
+                        j3 = i16;
+                        long j13 = j3 * j11;
+                        j10 = this.n;
+                        if (j13 <= j10 * j12) {
+                            break;
+                        }
+                        int i42 = i12;
+                        pVar.i(i42);
+                        pVar.k(j12, i41, j11);
+                        this.n += i42;
+                        this.k += i42;
+                    }
+                    int i43 = i12;
+                    this.m = i16;
+                    if (j3 == j12) {
+                        this.m = 0;
+                        ja.p(j10 == j11 ? i43 : 0);
+                        this.n = 0;
+                    }
+                    i41++;
+                    i12 = i43;
+                }
+                if (i15 == 0) {
+                    return;
+                }
+                System.arraycopy(pVar.l(), i15 * i20, pVar.l(), 0, (this.l - i15) * i20);
+                this.l -= i15;
+                return;
+            }
+        } else {
+            a(0, this.j);
+            this.j = 0;
+        }
+        f10 = f13;
+        i12 = 1;
+        if (f10 != 1.0f) {
+        }
+    }
 }

@@ -1,26 +1,46 @@
 package org.telegram.ui.Components;
 
+import android.os.Bundle;
 import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.c2 b;
+    public final /* synthetic */ TLRPC.User b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 c;
+    public final /* synthetic */ AlertDialog$Builder d;
 
-    public /* synthetic */ z0(org.telegram.ui.Cells.c2 c2Var, int i7) {
+    public /* synthetic */ z0(TLRPC.User user, org.telegram.ui.ActionBar.e2 e2Var, AlertDialog$Builder alertDialog$Builder, int i7) {
         this.a = i7;
-        this.b = c2Var;
+        this.b = user;
+        this.c = e2Var;
+        this.d = alertDialog$Builder;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.c(!r3.b(), true);
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", this.b.id);
+                org.telegram.ui.ActionBar.e2 e2Var = this.c;
+                if (e2Var.getMessagesController().E(bundle, e2Var, null, null)) {
+                    e2Var.presentFragment(new ProfileActivity(bundle, null));
+                }
+                this.d.a.M0.run();
                 break;
             default:
-                this.b.c(!r3.b(), true);
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("user_id", this.b.id);
+                org.telegram.ui.ActionBar.e2 e2Var2 = this.c;
+                if (e2Var2.getMessagesController().E(bundle2, e2Var2, null, null)) {
+                    e2Var2.presentFragment(new ProfileActivity(bundle2, null));
+                }
+                this.d.a.M0.run();
                 break;
         }
     }

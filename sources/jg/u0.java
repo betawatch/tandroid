@@ -1,35 +1,35 @@
 package jg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.pi;
 import org.telegram.ui.Cells.g2;
-import org.telegram.ui.Components.b90;
+import org.telegram.ui.Components.d90;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u0 implements ri, g2 {
-    public final /* synthetic */ i1 a;
+public final /* synthetic */ class u0 implements pi, g2 {
+    public final /* synthetic */ h1 a;
 
-    public /* synthetic */ u0(i1 i1Var) {
-        this.a = i1Var;
+    public /* synthetic */ u0(h1 h1Var) {
+        this.a = h1Var;
     }
 
-    @Override // org.telegram.messenger.ri
-    public void e(String str, ArrayList arrayList) {
-        i1 i1Var = this.a;
-        i1Var.N = arrayList;
-        i1Var.I = null;
-        i1Var.A0 = null;
-        i1Var.y = null;
-        i1Var.D = null;
-        i1Var.J = null;
-        i1Var.Q = null;
-        i1Var.M = null;
-        i1Var.K = null;
-        i1Var.P = null;
-        i1Var.f();
-        b90 b90Var = i1Var.V;
-        ArrayList arrayList2 = i1Var.N;
-        b90Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
+    @Override // org.telegram.messenger.pi
+    public void c(String str, ArrayList arrayList) {
+        h1 h1Var = this.a;
+        h1Var.O = arrayList;
+        h1Var.J = null;
+        h1Var.B0 = null;
+        h1Var.y = null;
+        h1Var.E = null;
+        h1Var.K = null;
+        h1Var.R = null;
+        h1Var.N = null;
+        h1Var.L = null;
+        h1Var.Q = null;
+        h1Var.f();
+        d90 d90Var = h1Var.W;
+        ArrayList arrayList2 = h1Var.O;
+        d90Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
     }
 }

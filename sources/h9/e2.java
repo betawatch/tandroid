@@ -1,57 +1,54 @@
 package h9;
 
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.SortedSet;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class e2 extends d2 implements SortedSet {
-    @Override // java.util.SortedSet
-    public final Comparator comparator() {
-        return ((SortedSet) this.a).comparator();
+public final class e2 extends t0 {
+    public final transient Object d;
+
+    public e2(Object obj) {
+        obj.getClass();
+        this.d = obj;
     }
 
-    @Override // java.util.SortedSet
-    public final Object first() {
-        Iterator it = this.a.iterator();
-        it.getClass();
-        g9.m mVar = this.b;
-        mVar.getClass();
-        while (it.hasNext()) {
-            Object next = it.next();
-            if (mVar.apply(next)) {
-                return next;
-            }
-        }
-        throw new NoSuchElementException();
+    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection
+    public final boolean contains(Object obj) {
+        return this.d.equals(obj);
     }
 
-    @Override // java.util.SortedSet
-    public final SortedSet headSet(Object obj) {
-        return new e2(((SortedSet) this.a).headSet(obj), this.b);
+    @Override // h9.t0, h9.d0
+    public final i0 f() {
+        return i0.u(this.d);
     }
 
-    @Override // java.util.SortedSet
-    public final Object last() {
-        SortedSet sortedSet = (SortedSet) this.a;
-        while (true) {
-            Object last = sortedSet.last();
-            if (this.b.apply(last)) {
-                return last;
-            }
-            sortedSet = sortedSet.headSet(last);
-        }
+    @Override // h9.t0, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return this.d.hashCode();
     }
 
-    @Override // java.util.SortedSet
-    public final SortedSet subSet(Object obj, Object obj2) {
-        return new e2(((SortedSet) this.a).subSet(obj, obj2), this.b);
+    @Override // h9.d0
+    public final int i(int i7, Object[] objArr) {
+        objArr[i7] = this.d;
+        return i7 + 1;
     }
 
-    @Override // java.util.SortedSet
-    public final SortedSet tailSet(Object obj) {
-        return new e2(((SortedSet) this.a).tailSet(obj), this.b);
+    @Override // h9.d0
+    public final boolean m() {
+        return false;
+    }
+
+    @Override // h9.d0
+    /* renamed from: n */
+    public final g2 iterator() {
+        return new z0(this.d);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return 1;
+    }
+
+    @Override // java.util.AbstractCollection
+    public final String toString() {
+        return "[" + this.d.toString() + ']';
     }
 }

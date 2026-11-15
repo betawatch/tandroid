@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class x extends y {
     public final ArrayList e = new ArrayList();
@@ -63,7 +63,7 @@ public final class x extends y {
     public final void b(a4.k kVar) {
         boolean booleanValue;
         w wVar;
-        boolean z9;
+        boolean z10;
         int size;
         Notification.MessagingStyle b10;
         Notification.Builder builder = (Notification.Builder) kVar.d;
@@ -128,7 +128,7 @@ public final class x extends y {
                     size4--;
                 }
             } else {
-                wVar = !arrayList.isEmpty() ? (w) jg.g.i(1, arrayList) : null;
+                wVar = !arrayList.isEmpty() ? (w) i5.c.h(1, arrayList) : null;
             }
         }
         if (this.h != null && this.i.booleanValue()) {
@@ -150,10 +150,10 @@ public final class x extends y {
                 if (j0Var4 == null || j0Var4.a != null) {
                 }
             }
-            z9 = false;
+            z10 = false;
             for (size = arrayList.size() - 1; size >= 0; size--) {
                 w wVar2 = (w) arrayList.get(size);
-                CharSequence e10 = z9 ? e(wVar2) : wVar2.a;
+                CharSequence e10 = z10 ? e(wVar2) : wVar2.a;
                 if (size != arrayList.size() - 1) {
                     spannableStringBuilder.insert(0, (CharSequence) "\n");
                 }
@@ -161,7 +161,7 @@ public final class x extends y {
             }
             new Notification.BigTextStyle(builder).setBigContentTitle(null).bigText(spannableStringBuilder);
         }
-        z9 = true;
+        z10 = true;
         while (size >= 0) {
         }
         new Notification.BigTextStyle(builder).setBigContentTitle(null).bigText(spannableStringBuilder);

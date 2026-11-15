@@ -1,15 +1,15 @@
 package com.google.android.gms.internal.cast;
 
-import a8.p8;
+import a8.q8;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class k4 extends p8 implements ScheduledFuture, m9.y, Future {
+public final class k4 extends q8 implements ScheduledFuture, m9.y, Future {
     public final c4 b;
     public final ScheduledFuture c;
 
@@ -24,10 +24,10 @@ public final class k4 extends p8 implements ScheduledFuture, m9.y, Future {
     }
 
     @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z9) {
-        boolean cancel = this.b.cancel(z9);
+    public final boolean cancel(boolean z10) {
+        boolean cancel = this.b.cancel(z10);
         if (cancel) {
-            this.c.cancel(z9);
+            this.c.cancel(z10);
         }
         return cancel;
     }

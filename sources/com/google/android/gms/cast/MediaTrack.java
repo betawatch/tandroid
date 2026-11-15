@@ -3,7 +3,7 @@ package com.google.android.gms.cast;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import f6.v;
 import java.util.Arrays;
@@ -16,7 +16,7 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import r6.a;
 import x6.c;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class MediaTrack extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaTrack> CREATOR = new v(16);
@@ -105,9 +105,9 @@ public final class MediaTrack extends a implements ReflectedParcelable {
         }
         MediaTrack mediaTrack = (MediaTrack) obj;
         JSONObject jSONObject = this.s;
-        boolean z9 = jSONObject == null;
+        boolean z10 = jSONObject == null;
         JSONObject jSONObject2 = mediaTrack.s;
-        if (z9 != (jSONObject2 == null)) {
+        if (z10 != (jSONObject2 == null)) {
             return false;
         }
         return (jSONObject == null || jSONObject2 == null || c.a(jSONObject, jSONObject2)) && this.a == mediaTrack.a && this.b == mediaTrack.b && j6.a.d(this.c, mediaTrack.c) && j6.a.d(this.d, mediaTrack.d) && j6.a.d(this.e, mediaTrack.e) && j6.a.d(this.f, mediaTrack.f) && this.h == mediaTrack.h && j6.a.d(this.n, mediaTrack.n);
@@ -121,19 +121,19 @@ public final class MediaTrack extends a implements ReflectedParcelable {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.s;
         this.r = jSONObject == null ? null : jSONObject.toString();
-        int r10 = xb.r(parcel, 20293);
-        xb.q(parcel, 2, 8);
+        int r10 = yb.r(parcel, 20293);
+        yb.q(parcel, 2, 8);
         parcel.writeLong(this.a);
-        xb.q(parcel, 3, 4);
+        yb.q(parcel, 3, 4);
         parcel.writeInt(this.b);
-        xb.l(parcel, 4, this.c);
-        xb.l(parcel, 5, this.d);
-        xb.l(parcel, 6, this.e);
-        xb.l(parcel, 7, this.f);
-        xb.q(parcel, 8, 4);
+        yb.l(parcel, 4, this.c);
+        yb.l(parcel, 5, this.d);
+        yb.l(parcel, 6, this.e);
+        yb.l(parcel, 7, this.f);
+        yb.q(parcel, 8, 4);
         parcel.writeInt(this.h);
-        xb.n(parcel, 9, this.n);
-        xb.l(parcel, 10, this.r);
-        xb.s(parcel, r10);
+        yb.n(parcel, 9, this.n);
+        yb.l(parcel, 10, this.r);
+        yb.s(parcel, r10);
     }
 }

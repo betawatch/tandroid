@@ -1,37 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.ImageView;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class vj0 extends tb {
-    public final wj0 c;
+public final class vj0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public boolean f;
 
-    public vj0(Activity activity, String str) {
-        super(activity, null);
-        this.b.setText(str);
-        this.b.setTranslationY(-1.0f);
-        ImageView imageView = this.a;
-        wj0 wj0Var = new wj0();
-        this.c = wj0Var;
-        imageView.setImageDrawable(wj0Var);
+    public final void a(float f10, float f11, float f12, float f13) {
+        this.a = f10;
+        this.d = f12;
+        this.b = f10 - Math.max(0.0f, Math.min(f11, Math.max(0.0f, f12 - f13)));
+        this.c = Math.max(f10, f12);
+        this.f = this.b <= f13 + 0.5f;
+        this.e = 0.0f;
     }
 
-    @Override // org.telegram.ui.Components.fb
-    public final void onEnterTransitionEnd() {
-        super.onEnterTransitionEnd();
-        wj0 wj0Var = this.c;
-        wj0Var.getClass();
-        wj0Var.g = System.currentTimeMillis();
-        wj0Var.invalidateSelf();
-    }
-
-    @Override // org.telegram.ui.Components.fb
-    public final void onExitTransitionEnd() {
-        super.onExitTransitionEnd();
-        wj0 wj0Var = this.c;
-        wj0Var.g = -1L;
-        wj0Var.invalidateSelf();
+    public final float b() {
+        if (this.f) {
+            return this.c;
+        }
+        float f10 = this.b;
+        return ((this.c - f10) * this.e) + f10;
     }
 }

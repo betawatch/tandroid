@@ -1,31 +1,137 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ip0 extends ViewOutlineProvider {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+public final class ip0 extends org.telegram.ui.Components.u51 {
+    public final /* synthetic */ int n0;
+    public final /* synthetic */ org.telegram.messenger.is o0;
 
-    public /* synthetic */ ip0(Object obj, float f10, int i7) {
-        this.a = i7;
-        this.c = obj;
-        this.b = f10;
+    public /* synthetic */ ip0(org.telegram.messenger.is isVar, int i7) {
+        this.n0 = i7;
+        this.o0 = isVar;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.u51
+    public final void g0() {
+        switch (this.n0) {
             case 0:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * org.telegram.messenger.g0.L(10.0f) * ((Float) ((ValueAnimator) this.c).getAnimatedValue()).floatValue());
+                super.g0();
+                PhotoViewer photoViewer = (PhotoViewer) this.o0;
+                if (photoViewer.u4 == 0) {
+                    PhotoViewer.R(photoViewer, false);
+                }
+                if (!photoViewer.O8) {
+                    d1.f.D(S());
+                    d1.f.x(false);
+                    break;
+                }
                 break;
             default:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * org.telegram.messenger.g0.L(10.0f) * (1.0f - ((PhotoViewer) this.c).W));
+                super.g0();
+                ((SecretMediaViewer) this.o0).V.a(false, true);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.u51
+    public final void h0() {
+        switch (this.n0) {
+            case 0:
+                super.h0();
+                PhotoViewer photoViewer = (PhotoViewer) this.o0;
+                PhotoViewer.R(photoViewer, true);
+                if (!photoViewer.O8) {
+                    d1.f.D(S());
+                    d1.f.x(true);
+                    break;
+                }
+                break;
+            default:
+                super.h0();
+                ((SecretMediaViewer) this.o0).V.a(true, true);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.u51, e2.a1
+    public void onRenderedFirstFrame() {
+        e2.w0 j3;
+        switch (this.n0) {
+            case 0:
+                super.onRenderedFirstFrame();
+                PhotoViewer photoViewer = (PhotoViewer) this.o0;
+                boolean z10 = true;
+                photoViewer.S = true;
+                if (photoViewer.E2) {
+                    photoViewer.f0.invalidate();
+                }
+                photoViewer.y3();
+                if (!d1.f.u() && !photoViewer.r) {
+                    z10 = false;
+                }
+                t0(z10);
+                if (!photoViewer.O8) {
+                    d1.f.D(S());
+                    l2.f0 f0Var = this.d;
+                    float f10 = 1.0f;
+                    if (f0Var != null && (j3 = f0Var.j()) != null) {
+                        f10 = j3.a;
+                    }
+                    d1.f.z(f10);
+                    break;
+                }
+                break;
+            default:
+                super.onRenderedFirstFrame();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.u51
+    public void p0(long j3) {
+        switch (this.n0) {
+            case 0:
+                q0(j3, false);
+                PhotoViewer photoViewer = (PhotoViewer) this.o0;
+                if (photoViewer.s1) {
+                    PhotoViewer.S(photoViewer, j3);
+                }
+                if (!photoViewer.O8) {
+                    d1.f.D(j3);
+                    break;
+                }
+                break;
+            default:
+                super.p0(j3);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.u51
+    public void u0(boolean z10) {
+        switch (this.n0) {
+            case 1:
+                super.u0(z10);
+                ((SecretMediaViewer) this.o0).V.a(z10, true);
+                break;
+            default:
+                super.u0(z10);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.u51
+    public void v0(float f10) {
+        switch (this.n0) {
+            case 0:
+                super.v0(f10);
+                if (!((PhotoViewer) this.o0).O8) {
+                    d1.f.z(f10);
+                    break;
+                }
+                break;
+            default:
+                super.v0(f10);
                 break;
         }
     }

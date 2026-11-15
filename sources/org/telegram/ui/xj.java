@@ -1,20 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class xj extends org.telegram.ui.Components.s41 {
-    public final /* synthetic */ cn N;
+public final class xj implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ an b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xj(cn cnVar, Context context) {
-        super(context);
-        this.N = cnVar;
+    public /* synthetic */ xj(an anVar, int i7) {
+        this.a = i7;
+        this.b = anVar;
     }
 
-    @Override // org.telegram.ui.Components.s41
-    public final org.telegram.ui.ActionBar.h6 getResourceProvider() {
-        return this.N.za;
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.rg rgVar;
+        FrameLayout frameLayout;
+        switch (this.a) {
+            case 0:
+                an anVar = this.b;
+                AnimatorSet animatorSet = anVar.ra;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    anVar.ra.start();
+                    break;
+                }
+                break;
+            default:
+                an anVar2 = this.b;
+                if (anVar2.d3 == this && (rgVar = anVar2.b1) != null && (frameLayout = anVar2.c3) != null) {
+                    rgVar.i(frameLayout, false, true);
+                    break;
+                }
+                break;
+        }
     }
 }

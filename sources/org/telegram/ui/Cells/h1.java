@@ -4,10 +4,10 @@ import android.graphics.RectF;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextUtils;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ij;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class h1 implements Runnable {
     public final /* synthetic */ int a;
@@ -20,42 +20,42 @@ public final class h1 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean w22;
+        boolean x22;
         switch (this.a) {
             case 0:
-                l1 l1Var = this.b.Ra;
+                l1 l1Var = this.b.Sa;
                 if (l1Var != null) {
-                    l1Var.u();
+                    l1Var.t();
                     break;
                 }
                 break;
             default:
                 q1 q1Var = this.b;
-                h1 h1Var = q1Var.vb;
-                ij ijVar = q1Var.P5;
-                if (ijVar != null && (w22 = q1Var.w2(ijVar)) != q1Var.g3) {
-                    q1Var.g3 = w22;
-                    if (w22) {
-                        ij ijVar2 = q1Var.P5;
-                        q1Var.P5 = null;
-                        q1Var.w3(ijVar2, q1Var.K, q1Var.F, q1Var.E, q1Var.G, false);
+                h1 h1Var = q1Var.wb;
+                gj gjVar = q1Var.Q5;
+                if (gjVar != null && (x22 = q1Var.x2(gjVar)) != q1Var.h3) {
+                    q1Var.h3 = x22;
+                    if (x22) {
+                        gj gjVar2 = q1Var.Q5;
+                        q1Var.Q5 = null;
+                        q1Var.x3(gjVar2, q1Var.L, q1Var.G, q1Var.F, q1Var.H, false);
                     } else {
                         org.telegram.messenger.g0.i3(h1Var, 1000L);
-                        q1Var.eb = true;
-                        int L = q1Var.a7 - org.telegram.messenger.g0.L(91.0f);
-                        q1Var.d3 = new StaticLayout(TextUtils.ellipsize(id.M0(2131753966, null), org.telegram.ui.ActionBar.m6.H2, L, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.m6.H2, L, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                        q1Var.fb = true;
+                        int L = q1Var.b7 - org.telegram.messenger.g0.L(91.0f);
+                        q1Var.e3 = new StaticLayout(TextUtils.ellipsize(hd.M0(2131753966, null), org.telegram.ui.ActionBar.j6.H2, L, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.j6.H2, L, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                     }
                 }
-                if (!q1Var.g3) {
-                    RectF rectF = q1Var.b4;
+                if (!q1Var.h3) {
+                    RectF rectF = q1Var.c4;
                     q1Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
-                    if (q1Var.eb) {
+                    if (q1Var.fb) {
                         org.telegram.messenger.g0.i3(h1Var, 1000L);
                         break;
                     }
                 } else {
                     q1Var.invalidate();
-                    q1Var.eb = false;
+                    q1Var.fb = false;
                     break;
                 }
                 break;

@@ -6,7 +6,7 @@ import android.content.IntentSender;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
-import com.google.android.gms.internal.vision.g3;
+import com.google.android.gms.internal.vision.h3;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -14,10 +14,11 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ListIterator;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Components.uy;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.ou;
+import org.telegram.ui.Components.cf;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class v {
     public final u a;
@@ -44,11 +45,11 @@ public final class v {
     public int r = -1;
     public ArrayList v = new ArrayList();
 
-    public v(u uVar, String str, String str2, boolean z9) {
+    public v(u uVar, String str, String str2, boolean z10) {
         this.a = uVar;
         this.b = str;
         this.c = str2;
-        this.h = z9;
+        this.h = z10;
     }
 
     public static p a() {
@@ -60,7 +61,7 @@ public final class v {
         return null;
     }
 
-    public final org.telegram.ui.Components.m b(v vVar) {
+    public final cf b(v vVar) {
         if (vVar == null) {
             throw new NullPointerException("route must not be null");
         }
@@ -69,10 +70,10 @@ public final class v {
         if (fVar == null || !fVar.containsKey(str)) {
             return null;
         }
-        return new org.telegram.ui.Components.m((o) this.w.get(str));
+        return new cf((o) this.w.get(str));
     }
 
-    public final g3 c() {
+    public final h3 c() {
         u uVar = this.a;
         uVar.getClass();
         x.b();
@@ -88,7 +89,7 @@ public final class v {
         if (vVar == this || this.n == 3) {
             return true;
         }
-        return TextUtils.equals(((ComponentName) ((uy) c().d).b).getPackageName(), "android") && m("android.media.intent.category.LIVE_AUDIO") && !m("android.media.intent.category.LIVE_VIDEO");
+        return TextUtils.equals(((ComponentName) ((ou) c().d).b).getPackageName(), "android") && m("android.media.intent.category.LIVE_AUDIO") && !m("android.media.intent.category.LIVE_VIDEO");
     }
 
     public final boolean e() {
@@ -260,7 +261,7 @@ public final class v {
                 }
                 ArrayList c10 = mVar.c();
                 ArrayList arrayList2 = new ArrayList();
-                boolean z9 = c10.size() != this.v.size();
+                boolean z10 = c10.size() != this.v.size();
                 if (!c10.isEmpty()) {
                     e c11 = x.c();
                     int size = c10.size();
@@ -290,14 +291,14 @@ public final class v {
                         }
                         if (vVar != null) {
                             arrayList2.add(vVar);
-                            if (!z9 && !this.v.contains(vVar)) {
-                                z9 = true;
+                            if (!z10 && !this.v.contains(vVar)) {
+                                z10 = true;
                             }
                         }
                         i11 = i10;
                     }
                 }
-                if (!z9) {
+                if (!z10) {
                     return i14;
                 }
                 this.v = arrayList2;
@@ -380,7 +381,7 @@ public final class v {
                 }
             }
         }
-        x.c().a.b(qs.i4, this);
+        x.c().a.b(ns.i4, this);
     }
 
     public final String toString() {

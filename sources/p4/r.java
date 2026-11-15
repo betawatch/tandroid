@@ -1,6 +1,6 @@
 package p4;
 
-import a8.ia;
+import a8.ja;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Build;
@@ -8,50 +8,50 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.WindowManager;
-import h9.t1;
+import h9.s1;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r {
     public static final AtomicReference n = new AtomicReference(null);
     public final Context a;
     public final e2.c1 b;
     public String c;
-    public final pb.b d;
+    public final w7.s d;
     public final Bundle e;
     public final Bundle f;
     public h2.d g;
     public final boolean h;
-    public final t1 i;
-    public final t1 j;
-    public final t1 k;
+    public final s1 i;
+    public final s1 j;
+    public final s1 k;
     public final boolean l;
     public boolean m;
 
     public r(LaunchActivity launchActivity, e2.c1 c1Var) {
-        pb.b bVar = new pb.b(20);
+        w7.s sVar = new w7.s(20);
         Context applicationContext = launchActivity.getApplicationContext();
         applicationContext.getClass();
         this.a = applicationContext;
         this.b = c1Var;
-        ia.f(c1Var.P());
+        ja.f(c1Var.P());
         this.c = "";
-        this.d = bVar;
+        this.d = sVar;
         this.e = new Bundle();
         this.f = new Bundle();
         h9.g0 g0Var = h9.i0.b;
-        t1 t1Var = t1.e;
-        this.i = t1Var;
-        this.j = t1Var;
+        s1 s1Var = s1.e;
+        this.i = s1Var;
+        this.j = s1Var;
         this.h = true;
         this.l = true;
-        this.k = t1Var;
+        this.k = s1Var;
     }
 
     public final x a() {
-        ia.p(!this.m);
+        ja.p(!this.m);
         this.m = true;
         Object obj = x.b;
         int intValue = ((Integer) d0.C.get()).intValue();
@@ -62,14 +62,14 @@ public final class r {
         }
         h2.d dVar = this.g;
         if (dVar == null) {
-            bg.w0 w0Var = new bg.w0();
-            w0Var.c = context;
-            w0Var.b = -1;
-            w0Var.b = intValue;
-            w0Var.a = true;
-            this.g = new j2.i(w0Var);
+            bg.v0 v0Var = new bg.v0();
+            v0Var.c = context;
+            v0Var.b = -1;
+            v0Var.b = intValue;
+            v0Var.a = true;
+            this.g = new j2.i(v0Var);
         } else {
-            this.g = new f5.u(dVar, intValue, 12);
+            this.g = new f5.v(dVar, intValue, 11);
         }
         if (i7 == 29) {
             h2.d dVar2 = this.g;
@@ -88,9 +88,9 @@ public final class r {
                 atomicReference.set(aVar2);
                 aVar = aVar2;
             }
-            this.g = new j2.n(dVar2, aVar, false, 22);
+            this.g = new ji.j(20, dVar2, aVar);
         }
-        this.g = new m4.d0((Object) this.g, false);
+        this.g = new k8.a(this.g);
         return new x(this.a, this.c, this.b, this.i, this.j, this.k, this.d, this.e, this.f, this.g, this.h, this.l);
     }
 }

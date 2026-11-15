@@ -1,20 +1,20 @@
 package x2;
 
-import a8.ia;
-import a8.wa;
+import a8.ja;
+import a8.xa;
 import android.os.Looper;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class a {
     public final ArrayList a = new ArrayList(1);
     public final HashSet b = new HashSet(1);
-    public final wa c = new wa(new CopyOnWriteArrayList(), 0, (f0) null);
-    public final q2.j d = new q2.j(new CopyOnWriteArrayList(), 0, null);
+    public final xa c = new xa(new CopyOnWriteArrayList(), 0, (f0) null);
+    public final q2.k d = new q2.k(new CopyOnWriteArrayList(), 0, null);
     public Looper e;
     public e2.l1 f;
     public m2.j g;
@@ -23,8 +23,8 @@ public abstract class a {
         return false;
     }
 
-    public final wa b(f0 f0Var) {
-        return new wa((CopyOnWriteArrayList) this.c.d, 0, f0Var);
+    public final xa b(f0 f0Var) {
+        return new xa((CopyOnWriteArrayList) this.c.d, 0, f0Var);
     }
 
     public abstract d0 c(f0 f0Var, h6.m mVar, long j3);
@@ -61,24 +61,24 @@ public abstract class a {
 
     public abstract void k();
 
-    public final void l(g0 g0Var, j2.d0 d0Var, m2.j jVar) {
+    public final void l(g0 g0Var, j2.c0 c0Var, m2.j jVar) {
         Looper myLooper = Looper.myLooper();
         Looper looper = this.e;
-        ia.f(looper == null || looper == myLooper);
+        ja.f(looper == null || looper == myLooper);
         this.g = jVar;
         e2.l1 l1Var = this.f;
         this.a.add(g0Var);
         if (this.e == null) {
             this.e = myLooper;
             this.b.add(g0Var);
-            m(d0Var);
+            m(c0Var);
         } else if (l1Var != null) {
             f(g0Var);
             g0Var.a(this, l1Var);
         }
     }
 
-    public abstract void m(j2.d0 d0Var);
+    public abstract void m(j2.c0 c0Var);
 
     public final void n(e2.l1 l1Var) {
         this.f = l1Var;
@@ -110,13 +110,13 @@ public abstract class a {
 
     public abstract void q();
 
-    public final void r(q2.k kVar) {
+    public final void r(q2.l lVar) {
         CopyOnWriteArrayList copyOnWriteArrayList = this.d.c;
         Iterator it = copyOnWriteArrayList.iterator();
         while (it.hasNext()) {
-            q2.i iVar = (q2.i) it.next();
-            if (iVar.b == kVar) {
-                copyOnWriteArrayList.remove(iVar);
+            q2.j jVar = (q2.j) it.next();
+            if (jVar.b == lVar) {
+                copyOnWriteArrayList.remove(jVar);
             }
         }
     }

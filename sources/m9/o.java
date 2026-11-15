@@ -1,7 +1,7 @@
 package m9;
 
 import a8.p0;
-import c8.r9;
+import c8.q9;
 import com.google.android.gms.internal.play_billing.s0;
 import j$.util.Objects;
 import java.util.Locale;
@@ -16,27 +16,27 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class o extends n9.a implements y {
     public static final boolean d;
     public static final s0 e;
-    public static final r9 f;
+    public static final q9 f;
     public static final Object h;
     public volatile Object a;
     public volatile c b;
     public volatile n c;
 
     static {
-        boolean z9;
+        boolean z10;
         Throwable th2;
-        r9 fVar;
+        q9 fVar;
         try {
-            z9 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
+            z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
-            z9 = false;
+            z10 = false;
         }
-        d = z9;
+        d = z10;
         e = new s0(o.class, 1);
         Throwable th3 = null;
         try {
@@ -62,7 +62,7 @@ public abstract class o extends n9.a implements y {
         h = new Object();
     }
 
-    public static void g(o oVar, boolean z9) {
+    public static void g(o oVar, boolean z10) {
         c cVar = null;
         while (true) {
             for (n e10 = f.e(oVar); e10 != null; e10 = e10.b) {
@@ -72,8 +72,8 @@ public abstract class o extends n9.a implements y {
                     LockSupport.unpark(thread);
                 }
             }
-            if (z9) {
-                z9 = false;
+            if (z10) {
+                z10 = false;
             }
             oVar.d();
             c cVar2 = cVar;
@@ -171,13 +171,13 @@ public abstract class o extends n9.a implements y {
             }
         }
         boolean isCancelled = yVar.isCancelled();
-        boolean z9 = true;
+        boolean z10 = true;
         if ((!d) && isCancelled) {
             a aVar2 = a.d;
             Objects.requireNonNull(aVar2);
             return aVar2;
         }
-        boolean z10 = false;
+        boolean z11 = false;
         while (true) {
             try {
                 try {
@@ -189,9 +189,9 @@ public abstract class o extends n9.a implements y {
                         return new b(e);
                     }
                 } catch (InterruptedException unused) {
-                    z10 = z9;
+                    z11 = z10;
                 } catch (Throwable th3) {
-                    if (z10) {
+                    if (z11) {
                         Thread.currentThread().interrupt();
                     }
                     throw th3;
@@ -211,7 +211,7 @@ public abstract class o extends n9.a implements y {
                 return new a(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: " + yVar, e13), false);
             }
         }
-        if (z10) {
+        if (z11) {
             Thread.currentThread().interrupt();
         }
         if (!isCancelled) {
@@ -222,16 +222,16 @@ public abstract class o extends n9.a implements y {
 
     public final void a(StringBuilder sb2) {
         Object obj;
-        boolean z9 = false;
+        boolean z10 = false;
         while (true) {
             try {
                 try {
                     obj = get();
                     break;
                 } catch (InterruptedException unused) {
-                    z9 = true;
+                    z10 = true;
                 } catch (Throwable th2) {
-                    if (z9) {
+                    if (z10) {
                         Thread.currentThread().interrupt();
                     }
                     throw th2;
@@ -251,7 +251,7 @@ public abstract class o extends n9.a implements y {
                 return;
             }
         }
-        if (z9) {
+        if (z10) {
             Thread.currentThread().interrupt();
         }
         sb2.append("SUCCESS, result=[");
@@ -285,29 +285,29 @@ public abstract class o extends n9.a implements y {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public boolean cancel(boolean z9) {
+    public boolean cancel(boolean z10) {
         a aVar;
         Object obj = this.a;
         if (!(obj == null) && !(obj instanceof e)) {
             return false;
         }
         if (d) {
-            aVar = new a(new CancellationException("Future.cancel() was called."), z9);
+            aVar = new a(new CancellationException("Future.cancel() was called."), z10);
         } else {
-            aVar = z9 ? a.c : a.d;
+            aVar = z10 ? a.c : a.d;
             Objects.requireNonNull(aVar);
         }
         o oVar = this;
-        boolean z10 = false;
+        boolean z11 = false;
         while (true) {
             if (f.b(oVar, obj, aVar)) {
-                g(oVar, z9);
+                g(oVar, z10);
                 if (!(obj instanceof e)) {
                     break;
                 }
                 y yVar = ((e) obj).b;
                 if (!(yVar instanceof g)) {
-                    yVar.cancel(z9);
+                    yVar.cancel(z10);
                     break;
                 }
                 oVar = (o) yVar;
@@ -315,11 +315,11 @@ public abstract class o extends n9.a implements y {
                 if (!(obj == null) && !(obj instanceof e)) {
                     break;
                 }
-                z10 = true;
+                z11 = true;
             } else {
                 obj = oVar.a;
                 if (!(obj instanceof e)) {
-                    return z10;
+                    return z11;
                 }
             }
         }
@@ -347,7 +347,7 @@ public abstract class o extends n9.a implements y {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public Object get(long j3, TimeUnit timeUnit) {
-        boolean z9;
+        boolean z10;
         long j10;
         long nanoTime;
         n nVar = n.c;
@@ -365,11 +365,11 @@ public abstract class o extends n9.a implements y {
             n nVar2 = this.c;
             if (nVar2 != nVar) {
                 n nVar3 = new n();
-                z9 = true;
+                z10 = true;
                 while (true) {
-                    r9 r9Var = f;
-                    r9Var.f(nVar3, nVar2);
-                    if (r9Var.c(this, nVar2, nVar3)) {
+                    q9 q9Var = f;
+                    q9Var.f(nVar3, nVar2);
+                    if (q9Var.c(this, nVar2, nVar3)) {
                         j10 = j11;
                         while (true) {
                             LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -407,30 +407,30 @@ public abstract class o extends n9.a implements y {
                     t6.append(timeUnit.toString().toLowerCase(locale));
                     String sb2 = t6.toString();
                     if (nanos + 1000 < j10) {
-                        String r10 = rf.b.r(sb2, " (plus ");
+                        String v = r.b.v(sb2, " (plus ");
                         long j13 = -nanos;
                         long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
                         long nanos2 = j13 - timeUnit.toNanos(convert);
-                        boolean z10 = (convert == j10 || nanos2 > 1000) ? z9 : false;
+                        boolean z11 = (convert == j10 || nanos2 > 1000) ? z10 : false;
                         if (convert > j10) {
-                            String str = r10 + convert + " " + lowerCase;
-                            if (z10) {
-                                str = rf.b.r(str, ",");
+                            String str = v + convert + " " + lowerCase;
+                            if (z11) {
+                                str = r.b.v(str, ",");
                             }
-                            r10 = rf.b.r(str, " ");
+                            v = r.b.v(str, " ");
                         }
-                        if (z10) {
-                            r10 = r10 + nanos2 + " nanoseconds ";
+                        if (z11) {
+                            v = v + nanos2 + " nanoseconds ";
                         }
-                        sb2 = rf.b.r(r10, "delay)");
+                        sb2 = r.b.v(v, "delay)");
                     }
                     if (isDone()) {
-                        throw new TimeoutException(rf.b.r(sb2, " but future completed as timeout expired"));
+                        throw new TimeoutException(r.b.v(sb2, " but future completed as timeout expired"));
                     }
-                    throw new TimeoutException(p0.D(sb2, " for ", oVar));
+                    throw new TimeoutException(p0.E(sb2, " for ", oVar));
                 }
                 Object obj4 = this.a;
-                if ((obj4 != null ? z9 : false) && (!(obj4 instanceof e))) {
+                if ((obj4 != null ? z10 : false) && (!(obj4 instanceof e))) {
                     return i(obj4);
                 }
                 if (Thread.interrupted()) {
@@ -445,7 +445,7 @@ public abstract class o extends n9.a implements y {
             Objects.requireNonNull(obj5);
             return i(obj5);
         }
-        z9 = true;
+        z10 = true;
         j10 = 0;
         if (nanos <= j10) {
         }
@@ -645,9 +645,9 @@ public abstract class o extends n9.a implements y {
             if (nVar2 != nVar) {
                 n nVar3 = new n();
                 do {
-                    r9 r9Var = f;
-                    r9Var.f(nVar3, nVar2);
-                    if (r9Var.c(this, nVar2, nVar3)) {
+                    q9 q9Var = f;
+                    q9Var.f(nVar3, nVar2);
+                    if (q9Var.c(this, nVar2, nVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

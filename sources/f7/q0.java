@@ -3,7 +3,7 @@ package f7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Base64;
-import c8.xb;
+import c8.yb;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -13,7 +13,7 @@ import java.util.Iterator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class q0 extends r6.a {
     public static final Parcelable.Creator<q0> CREATOR = new db.k(12);
@@ -35,12 +35,12 @@ public final class q0 extends r6.a {
         this.a = bArr;
     }
 
-    public static q0 b(JSONObject jSONObject, boolean z9) {
+    public static q0 b(JSONObject jSONObject, boolean z10) {
         ArrayList arrayList = new ArrayList();
         try {
             if (jSONObject.has("eval")) {
                 arrayList.add(null);
-                if (z9) {
+                if (z10) {
                     arrayList.add(e(jSONObject.getJSONObject("eval")));
                 } else {
                     arrayList.add(f(jSONObject.getJSONObject("eval")));
@@ -52,7 +52,7 @@ public final class q0 extends r6.a {
                 while (keys.hasNext()) {
                     String next = keys.next();
                     arrayList.add(x6.b.b(next));
-                    if (z9) {
+                    if (z10) {
                         arrayList.add(e(jSONObject2.getJSONObject(next)));
                     } else {
                         arrayList.add(f(jSONObject2.getJSONObject(next)));
@@ -82,7 +82,7 @@ public final class q0 extends r6.a {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static byte[] d(byte[] bArr) {
-        bg.w0 w0Var;
+        bg.v0 v0Var;
         q7.e0 e0Var;
         int i7 = q7.h0.a;
         q7.i0 i0Var = q7.g0.a;
@@ -91,28 +91,28 @@ public final class q0 extends r6.a {
         try {
             if (i0Var.h) {
                 try {
-                    w0Var = new bg.w0((MessageDigest) messageDigest.clone(), i10);
+                    v0Var = new bg.v0((MessageDigest) messageDigest.clone(), i10);
                 } catch (CloneNotSupportedException unused) {
                 }
-                MessageDigest messageDigest2 = (MessageDigest) w0Var.c;
+                MessageDigest messageDigest2 = (MessageDigest) v0Var.c;
                 byte[] bArr2 = b;
                 bArr2.getClass();
                 int length = bArr2.length;
-                if (!w0Var.a) {
+                if (!v0Var.a) {
                     throw new IllegalStateException("Cannot re-use a Hasher after calling hash() on it");
                 }
                 messageDigest2.update(bArr2, 0, length);
                 bArr.getClass();
                 int length2 = bArr.length;
-                if (w0Var.a) {
+                if (v0Var.a) {
                     throw new IllegalStateException("Cannot re-use a Hasher after calling hash() on it");
                 }
                 messageDigest2.update(bArr, 0, length2);
-                if (w0Var.a) {
+                if (v0Var.a) {
                     throw new IllegalStateException("Cannot re-use a Hasher after calling hash() on it");
                 }
-                w0Var.a = true;
-                int i11 = w0Var.b;
+                v0Var.a = true;
+                int i11 = v0Var.b;
                 if (i11 == messageDigest2.getDigestLength()) {
                     byte[] digest = messageDigest2.digest();
                     char[] cArr = q7.f0.a;
@@ -124,12 +124,12 @@ public final class q0 extends r6.a {
                 }
                 return (byte[]) e0Var.b.clone();
             }
-            w0Var = new bg.w0(MessageDigest.getInstance(messageDigest.getAlgorithm()), i10);
-            MessageDigest messageDigest22 = (MessageDigest) w0Var.c;
+            v0Var = new bg.v0(MessageDigest.getInstance(messageDigest.getAlgorithm()), i10);
+            MessageDigest messageDigest22 = (MessageDigest) v0Var.c;
             byte[] bArr22 = b;
             bArr22.getClass();
             int length3 = bArr22.length;
-            if (!w0Var.a) {
+            if (!v0Var.a) {
             }
         } catch (NoSuchAlgorithmException e10) {
             throw new AssertionError(e10);
@@ -197,8 +197,8 @@ public final class q0 extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = xb.r(parcel, 20293);
-        xb.d(parcel, 1, this.a);
-        xb.s(parcel, r10);
+        int r10 = yb.r(parcel, 20293);
+        yb.d(parcel, 1, this.a);
+        yb.s(parcel, r10);
     }
 }

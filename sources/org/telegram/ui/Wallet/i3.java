@@ -1,33 +1,45 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i3 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class i3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p3 b;
+    public final /* synthetic */ o3 b;
 
-    public /* synthetic */ i3(p3 p3Var, int i7) {
+    public /* synthetic */ i3(o3 o3Var, int i7) {
         this.a = i7;
-        this.b = p3Var;
+        this.b = o3Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                p3 p3Var = this.b;
-                p3Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p3Var.Q = floatValue;
-                p3Var.r.setUseGyroscope(floatValue);
+                o3 o3Var = this.b;
+                if (!o3Var.T && !o3Var.S) {
+                    ih.d.c(o3Var.F, o3Var.h);
+                    o3Var.G.d();
+                    h6 h6Var = o3Var.r;
+                    i3 i3Var = new i3(o3Var, 1);
+                    c6 c6Var = h6Var.E;
+                    if (c6Var == null) {
+                        i3Var.run();
+                        break;
+                    } else if (c6Var.b == null) {
+                        c6Var.d = i3Var;
+                        break;
+                    } else {
+                        i3Var.run();
+                        break;
+                    }
+                }
                 break;
             default:
-                p3 p3Var2 = this.b;
-                p3Var2.getClass();
-                p3Var2.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p3Var2.e();
+                o3 o3Var2 = this.b;
+                if (!o3Var2.T && !o3Var2.S) {
+                    o3Var2.a(1.0f);
+                    break;
+                }
                 break;
         }
     }

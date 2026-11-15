@@ -1,112 +1,259 @@
 package bi;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.wa;
+import org.telegram.ui.Components.xb;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class t extends LinearLayout {
+public final class t implements wa {
     public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t(Context context, int i7) {
-        super(context);
+    public /* synthetic */ t(int i7) {
         this.a = i7;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchSetPressed(boolean z9) {
+    @Override // org.telegram.ui.Components.wa
+    public final /* synthetic */ boolean a() {
         switch (this.a) {
-            case 9:
-                break;
-            default:
-                super.dispatchSetPressed(z9);
-                break;
         }
+        return true;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 5:
-                super.onLayout(z9, i7, i10, i11, i12);
-                setPivotX(getWidth());
-                break;
-            default:
-                super.onLayout(z9, i7, i10, i11, i12);
-                break;
-        }
+    @Override // org.telegram.ui.Components.wa
+    public final /* synthetic */ void b(xb xbVar) {
+        int i7 = this.a;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
+    @Override // org.telegram.ui.Components.wa
+    public final /* synthetic */ void c(float f10) {
+        int i7 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.wa
+    public final /* synthetic */ void d(xb xbVar) {
+        int i7 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.wa
+    public final /* synthetic */ boolean e() {
+        switch (this.a) {
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.wa
+    public final int f(int i7) {
+        int i10;
+        int L;
         switch (this.a) {
             case 0:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
-                break;
+                return org.telegram.messenger.g0.L(64.0f);
             case 1:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
-                break;
+                return 0;
             case 2:
-            case 5:
-            case 6:
-            case 7:
-            case 9:
-            default:
-                super.onMeasure(i7, i10);
-                break;
+                return 0;
             case 3:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
-                break;
+                return 0;
             case 4:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+                return 0;
+            case 5:
+                i10 = org.telegram.messenger.g0.n;
+                L = org.telegram.messenger.g0.L(64.0f);
                 break;
+            case 6:
+                i10 = org.telegram.messenger.g0.n;
+                L = org.telegram.messenger.g0.L(60.0f);
+                break;
+            case 7:
+                return 0;
             case 8:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(220.0f), View.MeasureSpec.getSize(i7)), View.MeasureSpec.getMode(i7)), i10);
-                break;
+                return org.telegram.messenger.g0.L(51.0f);
+            case 9:
+                return org.telegram.messenger.g0.L(74.0f);
             case 10:
-                super.onMeasure(i7, i10);
-                setPivotY(0.0f);
-                setPivotX(0.0f);
-                break;
+                return org.telegram.messenger.g0.L(80.0f);
             case 11:
-                super.onMeasure(i7, i10);
-                setPivotY(0.0f);
-                setPivotX(getMeasuredWidth());
+                i10 = org.telegram.messenger.g0.n;
+                L = org.telegram.messenger.g0.L(16.0f);
                 break;
             case 12:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(600.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(800.0f)), TLObject.FLAG_30));
-                break;
+                return org.telegram.messenger.g0.L(62.0f);
+            case 13:
+                return org.telegram.messenger.g0.L(64.0f);
+            case 14:
+                return 0;
+            case 15:
+                return 0;
+            default:
+                return org.telegram.messenger.g0.L(68.0f);
         }
+        return L + i10;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t(Context context) {
-        super(context);
-        this.a = 13;
-        setOrientation(1);
-        setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
-        TextView g10 = org.telegram.messenger.k5.g(context, 1, 14.0f);
-        int i7 = org.telegram.ui.ActionBar.m6.G6;
-        org.telegram.ui.ActionBar.t6.U(g10, i7, null);
-        g10.setTypeface(org.telegram.messenger.g0.o());
-        g10.setText(org.telegram.messenger.id.M0(2131754944, null));
-        addView(g10);
-        TextView textView = new TextView(context);
-        textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.t6.U(textView, i7, null);
-        textView.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131754946, null)));
-        addView(textView, c8.ha.q(-1, -2, 0.0f, 0, 0, 0, 0, 0));
-        TextView textView2 = new TextView(context);
-        textView2.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.t6.U(textView2, i7, null);
-        textView2.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131754945, null)));
-        addView(textView2, c8.ha.q(-1, -2, 0.0f, 0, 0, 24, 0, 0));
+    @Override // org.telegram.ui.Components.wa
+    public final boolean g(int i7) {
+        switch (this.a) {
+        }
+        return false;
     }
 
-    private final void a(boolean z9) {
+    @Override // org.telegram.ui.Components.wa
+    public final int h(int i7) {
+        switch (this.a) {
+        }
+        return org.telegram.messenger.g0.m;
+    }
+
+    private final /* synthetic */ void A(xb xbVar) {
+    }
+
+    private final /* synthetic */ void B(xb xbVar) {
+    }
+
+    private final /* synthetic */ void C(xb xbVar) {
+    }
+
+    private final /* synthetic */ void D(xb xbVar) {
+    }
+
+    private final /* synthetic */ void E(xb xbVar) {
+    }
+
+    private final /* synthetic */ void F(xb xbVar) {
+    }
+
+    private final /* synthetic */ void G(xb xbVar) {
+    }
+
+    private final /* synthetic */ void H(xb xbVar) {
+    }
+
+    private final /* synthetic */ void I(xb xbVar) {
+    }
+
+    private final /* synthetic */ void J(xb xbVar) {
+    }
+
+    private final /* synthetic */ void K(xb xbVar) {
+    }
+
+    private final /* synthetic */ void L(xb xbVar) {
+    }
+
+    private final /* synthetic */ void M(xb xbVar) {
+    }
+
+    private final /* synthetic */ void N(xb xbVar) {
+    }
+
+    private final /* synthetic */ void O(xb xbVar) {
+    }
+
+    private final /* synthetic */ void P(xb xbVar) {
+    }
+
+    private final /* synthetic */ void Q(xb xbVar) {
+    }
+
+    private final /* synthetic */ void R(xb xbVar) {
+    }
+
+    private final /* synthetic */ void S(xb xbVar) {
+    }
+
+    private final /* synthetic */ void T(xb xbVar) {
+    }
+
+    private final /* synthetic */ void U(xb xbVar) {
+    }
+
+    private final /* synthetic */ void V(xb xbVar) {
+    }
+
+    private final /* synthetic */ void W(xb xbVar) {
+    }
+
+    private final /* synthetic */ void X(xb xbVar) {
+    }
+
+    private final /* synthetic */ void Y(xb xbVar) {
+    }
+
+    private final /* synthetic */ void Z(xb xbVar) {
+    }
+
+    private final /* synthetic */ void a0(xb xbVar) {
+    }
+
+    private final /* synthetic */ void b0(xb xbVar) {
+    }
+
+    private final /* synthetic */ void c0(xb xbVar) {
+    }
+
+    private final /* synthetic */ void d0(xb xbVar) {
+    }
+
+    private final /* synthetic */ void e0(xb xbVar) {
+    }
+
+    private final /* synthetic */ void f0(xb xbVar) {
+    }
+
+    private final /* synthetic */ void g0(xb xbVar) {
+    }
+
+    private final /* synthetic */ void i(float f10) {
+    }
+
+    private final /* synthetic */ void j(float f10) {
+    }
+
+    private final /* synthetic */ void k(float f10) {
+    }
+
+    private final /* synthetic */ void l(float f10) {
+    }
+
+    private final /* synthetic */ void m(float f10) {
+    }
+
+    private final /* synthetic */ void n(float f10) {
+    }
+
+    private final /* synthetic */ void o(float f10) {
+    }
+
+    private final /* synthetic */ void p(float f10) {
+    }
+
+    private final /* synthetic */ void q(float f10) {
+    }
+
+    private final /* synthetic */ void r(float f10) {
+    }
+
+    private final /* synthetic */ void s(float f10) {
+    }
+
+    private final /* synthetic */ void t(float f10) {
+    }
+
+    private final /* synthetic */ void u(float f10) {
+    }
+
+    private final /* synthetic */ void v(float f10) {
+    }
+
+    private final /* synthetic */ void w(float f10) {
+    }
+
+    private final /* synthetic */ void x(float f10) {
+    }
+
+    private final /* synthetic */ void y(float f10) {
+    }
+
+    private final /* synthetic */ void z(xb xbVar) {
     }
 }

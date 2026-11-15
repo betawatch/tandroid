@@ -81,7 +81,7 @@ public final class p extends k {
         if (h.c(this, i, 0, 1)) {
             return;
         }
-        boolean z9 = false;
+        boolean z10 = false;
         while (true) {
             int i7 = this.lockState;
             if ((i7 & (-3)) == 0) {
@@ -91,13 +91,13 @@ public final class p extends k {
             } else if ((i7 & 2) == 0) {
                 if (h.c(this, i, i7, i7 | 2)) {
                     this.g = Thread.currentThread();
-                    z9 = true;
+                    z10 = true;
                 }
-            } else if (z9) {
+            } else if (z10) {
                 LockSupport.park(this);
             }
         }
-        if (z9) {
+        if (z10) {
             this.g = null;
         }
     }
@@ -153,7 +153,7 @@ public final class p extends k {
         q qVar;
         q qVar2 = this.e;
         Class<?> cls = null;
-        boolean z9 = false;
+        boolean z10 = false;
         while (qVar2 != null) {
             int i12 = qVar2.a;
             if (i12 > i7) {
@@ -173,7 +173,7 @@ public final class p extends k {
                             i10 = compareTo;
                         }
                     }
-                    if (!z9) {
+                    if (!z10) {
                         q qVar3 = qVar2.f;
                         if (qVar3 != null && (b11 = qVar3.b(i7, obj, cls)) != null) {
                             return b11;
@@ -182,7 +182,7 @@ public final class p extends k {
                         if (qVar4 != null && (b10 = qVar4.b(i7, obj, cls)) != null) {
                             return b10;
                         }
-                        z9 = true;
+                        z10 = true;
                     }
                     i11 = i(obj, obj3);
                 }
@@ -268,9 +268,9 @@ public final class p extends k {
                     }
                     qVar9 = qVar10;
                 }
-                boolean z9 = qVar9.i;
+                boolean z10 = qVar9.i;
                 qVar9.i = qVar.i;
-                qVar.i = z9;
+                qVar.i = z10;
                 q qVar11 = qVar9.g;
                 q qVar12 = qVar.e;
                 if (qVar9 == qVar8) {

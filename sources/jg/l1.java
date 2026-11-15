@@ -1,162 +1,195 @@
 package jg;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.CharacterStyle;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import c8.ha;
-import di.l6;
+import android.view.ViewGroup;
+import fi.d6;
 import java.util.ArrayList;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ij;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.x8;
-import org.telegram.ui.Components.xz;
+import java.util.HashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.is;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.na;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.si;
+import org.telegram.messenger.t3;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Cells.t2;
+import org.telegram.ui.Components.pz;
+import org.telegram.ui.Components.tj0;
+import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l1 extends FrameLayout {
-    public final h6 a;
-    public final x8 b;
-    public final TextView[] c;
-    public final TextView[] d;
-    public float e;
-    public ValueAnimator f;
+public final class l1 extends tj0 implements is {
+    public d6 E;
+    public final Context c;
+    public final an f;
+    public int h;
+    public int n;
+    public final e6 s;
+    public final int w;
+    public final boolean x;
+    public String y;
+    public final HashSet d = new HashSet();
+    public final ArrayList e = new ArrayList();
+    public final int r = m10.t0;
+    public final hi.e1 F = new hi.e1(this, 22);
 
-    public l1(Context context, h6 h6Var) {
-        super(context);
-        this.c = new TextView[2];
-        this.d = new TextView[2];
-        this.a = h6Var;
-        setWillNotDraw(false);
-        x8 x8Var = new x8(this, false);
-        this.b = x8Var;
-        x8Var.l = true;
-        x8Var.p = org.telegram.messenger.g0.L(75.0f);
-        x8Var.o = org.telegram.messenger.g0.L(48.0f);
-        x8Var.x = true;
-        x8Var.s = org.telegram.messenger.g0.L(22.0f);
-        int i7 = 0;
-        while (i7 < 2) {
-            this.c[i7] = new TextView(context);
-            t6.U(this.c[i7], m6.G6, h6Var);
-            this.c[i7].setTypeface(org.telegram.messenger.g0.o());
-            this.c[i7].setTextSize(1, 14.0f);
-            int i10 = 8;
-            this.c[i7].setVisibility(i7 == 0 ? 0 : 8);
-            addView(this.c[i7], ha.d(-1, -2.0f, 48, 76.0f, 7.0f, 40.0f, 0.0f));
-            this.d[i7] = new TextView(context);
-            t6.U(this.d[i7], m6.z6, h6Var);
-            this.d[i7].setTextSize(1, 12.0f);
-            TextView textView = this.d[i7];
-            if (i7 == 0) {
-                i10 = 0;
+    public l1(Context context, an anVar, e6 e6Var, int i7, boolean z10) {
+        this.s = e6Var;
+        this.c = context;
+        this.f = anVar;
+        this.w = i7;
+        this.x = z10;
+    }
+
+    @Override // org.telegram.ui.Components.tj0
+    public final boolean D(v4.e1 e1Var) {
+        int i7 = e1Var.f;
+        return i7 == 0 || i7 == 2;
+    }
+
+    public final Object E(int i7) {
+        if (i7 < 0) {
+            return null;
+        }
+        ArrayList arrayList = this.e;
+        if (i7 >= arrayList.size()) {
+            return null;
+        }
+        return arrayList.get(i7);
+    }
+
+    @Override // v4.h0
+    public final int b() {
+        return this.e.size() + this.n;
+    }
+
+    @Override // v4.h0
+    public final int d(int i7) {
+        return i7 < this.e.size() ? 0 : 1;
+    }
+
+    @Override // org.telegram.messenger.is
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == ns.x5 && objArr[0] == this.E) {
+            f();
+        }
+    }
+
+    @Override // v4.h0
+    public final void f() {
+        int b10 = b();
+        ArrayList arrayList = this.e;
+        arrayList.clear();
+        HashSet hashSet = this.d;
+        hashSet.clear();
+        int i7 = this.r;
+        int i10 = this.w;
+        ArrayList arrayList2 = i10 == 0 ? si.b0(i7).Z0 : na.a(i7).b(i10).a;
+        int i11 = 0;
+        for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+            gj gjVar = (gj) arrayList2.get(i12);
+            if ((!gjVar.z2() || gjVar.S2) && !hashSet.contains(Integer.valueOf(gjVar.e1()))) {
+                arrayList.add(gjVar);
+                hashSet.add(Integer.valueOf(gjVar.e1()));
             }
-            textView.setVisibility(i10);
-            addView(this.d[i7], ha.d(-1, -2.0f, 48, 76.0f, 26.33f, 40.0f, 0.0f));
-            i7++;
         }
-        ImageView e10 = org.telegram.messenger.camera.q.e(context, R.drawable.msg_arrowright);
-        t6.s(e10, m6.P5, h6Var, PorterDuff.Mode.SRC_IN);
-        addView(e10, ha.d(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
-    }
-
-    public final boolean a(l6 l6Var) {
-        String str;
-        x8 x8Var;
-        int i7 = 0;
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = l6Var.i;
-            str = l6Var.D;
-            int size = arrayList.size();
-            x8Var = this.b;
-            if (i7 >= size || i10 >= 3) {
-                break;
+        int i13 = this.n;
+        this.h = arrayList.size();
+        if (i10 != 0) {
+            if (!na.a(i7).b(i10).n && this.h != 0) {
+                i11 = Utilities.j(na.a(i7).b(i10).m - this.h, 3, 0);
             }
-            ij ijVar = (ij) l6Var.i.get(i7);
-            long j3 = ijVar.l.dialogId;
-            TextUtils.isEmpty(str);
-            x8Var.j(i10, l6Var.c, ijVar.l);
-            i10++;
-            i7++;
-        }
-        x8Var.i(i10);
-        x8Var.a(false, true);
-        boolean isEmpty = TextUtils.isEmpty(str);
-        TextView[] textViewArr = this.c;
-        if (isEmpty) {
-            textViewArr[0].setText(id.H(' ', "HashtagStoriesFound", l6Var.J));
+            this.n = i11;
         } else {
-            textViewArr[0].setText(c(id.K("HashtagStoriesFoundChannel", l6Var.J, ' ', rf.b.i("@", str))));
-        }
-        this.d[0].setText(id.a0(null, null, 2131749348, l6Var.C));
-        return i10 > 0;
-    }
-
-    public final void b(int i7, String str, String str2) {
-        boolean isEmpty = TextUtils.isEmpty(str2);
-        TextView[] textViewArr = this.c;
-        if (isEmpty) {
-            textViewArr[1].setText(id.H(' ', "HashtagMessagesFound", i7));
-        } else {
-            textViewArr[1].setText(c(id.K("HashtagMessagesFoundChannel", i7, ' ', rf.b.i("@", str2))));
-        }
-        this.d[1].setText(id.a0(null, null, 2131749357, str));
-    }
-
-    public final SpannableStringBuilder c(String str) {
-        int i7 = m6.Ci;
-        h6 h6Var = this.a;
-        SpannableStringBuilder Q2 = org.telegram.messenger.g0.Q2(str, i7, h6Var, null, false);
-        try {
-            CharacterStyle[] characterStyleArr = (CharacterStyle[]) Q2.getSpans(0, Q2.length(), CharacterStyle.class);
-            for (int i10 = 0; i10 < characterStyleArr.length; i10++) {
-                int spanStart = Q2.getSpanStart(characterStyleArr[i10]);
-                int spanEnd = Q2.getSpanEnd(characterStyleArr[i10]);
-                Q2.removeSpan(characterStyleArr[i10]);
-                Q2.setSpan(new xz(m6.Ci, h6Var), spanStart, spanEnd, 0);
+            if (!si.b0(i7).W1() && this.h != 0) {
+                i11 = Utilities.j(si.b0(i7).j0() - this.h, 3, 0);
             }
-            return Q2;
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return Q2;
+            this.n = i11;
         }
+        int b11 = b();
+        if (b10 >= b11) {
+            super.f();
+            return;
+        }
+        if (i13 > 0) {
+            k(b10 - i13, i13);
+        }
+        o(b10, b11 - b10);
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.e > 0.0f) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - this.e) * 255.0f), 31);
+    @Override // v4.h0
+    public final void t(v4.e1 e1Var, int i7) {
+        boolean z10;
+        int i10;
+        int i11;
+        int i12 = e1Var.f;
+        View view = e1Var.a;
+        if (i12 != 0) {
+            if (i12 == 2) {
+                ((k1) view).a(this.E);
+                return;
+            }
+            return;
+        }
+        t2 t2Var = (t2) view;
+        t2Var.t2 = true;
+        gj gjVar = (gj) E(i7);
+        long B0 = gj.B0(gjVar.k);
+        int i13 = gjVar.k.date;
+        if (this.x) {
+            t2Var.s0 = true;
+            long P1 = gjVar.P1();
+            TLRPC.Message message = gjVar.k;
+            TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
+            if (messageFwdHeader == null || ((i10 = messageFwdHeader.date) == 0 && messageFwdHeader.saved_date == 0)) {
+                i11 = message.date;
+            } else {
+                if (i10 == 0) {
+                    i11 = messageFwdHeader.saved_date;
+                }
+                z10 = false;
+                B0 = P1;
+            }
+            i10 = i11;
+            z10 = false;
+            B0 = P1;
         } else {
-            canvas.save();
+            if (gjVar.P3() || t3.o0(this.r, B0)) {
+                B0 = gjVar.Z0();
+            }
+            z10 = true;
+            i10 = i13;
         }
-        canvas.translate(org.telegram.messenger.g0.W1(this.e, 0, -org.telegram.messenger.g0.L(62.0f)), 0.0f);
-        this.b.g(canvas);
-        canvas.restore();
-        super.onDraw(canvas);
-        Paint W0 = m6.W0("paintDivider", this.a);
-        if (W0 == null) {
-            W0 = m6.k0;
-        }
-        canvas.drawRect(0.0f, getHeight() - 1, getWidth(), getHeight(), W0);
+        t2Var.f0(B0, gjVar, i10, z10, false);
+        t2Var.setDialogCellDelegate(new i1(this));
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
+    @Override // v4.h0
+    public final v4.e1 x(ViewGroup viewGroup, int i7) {
+        View t2Var;
+        View view;
+        if (i7 != 0) {
+            e6 e6Var = this.s;
+            Context context = this.c;
+            if (i7 == 1) {
+                pz pzVar = new pz(context, e6Var);
+                pzVar.setIsSingleCell(true);
+                pzVar.setViewType(7);
+                view = pzVar;
+            } else if (i7 != 2) {
+                t2Var = null;
+            } else {
+                view = new k1(context, e6Var);
+            }
+            t2Var = view;
+        } else {
+            t2Var = new t2(null, this.c, true, this.r, this.s);
+        }
+        return i5.c.q(t2Var, t2Var, -1, -2);
     }
 }

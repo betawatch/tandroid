@@ -1,44 +1,33 @@
 package fi;
 
 import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.wo;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class a3 extends wo {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ ViewGroup e;
+public final class a3 extends m8 {
+    public final /* synthetic */ i9 I;
+    public final /* synthetic */ b4 J;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ a3(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
-        super(21, context, h6Var);
-        this.d = i7;
-        this.e = viewGroup;
+    public a3(b4 b4Var, Context context, e3 e3Var, org.telegram.ui.ActionBar.e6 e6Var, i9 i9Var) {
+        super(context, e3Var, e6Var);
+        this.J = b4Var;
+        this.I = i9Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        switch (this.d) {
-            case 0:
-                super.invalidate();
-                ((b3) this.e).invalidate();
-                break;
-            case 1:
-                super.invalidate();
-                ((org.telegram.ui.Cells.t2) this.e).invalidate();
-                break;
-            default:
-                super.invalidate();
-                ((org.telegram.ui.web.g) this.e).invalidate();
-                break;
+    @Override // fi.m8
+    public final void b(boolean z10) {
+        u3 u3Var = this.J.A1;
+        if (u3Var != null) {
+            i9 i9Var = ((z8) u3Var).d;
+            i9Var.i1 = z10;
+            i9Var.V();
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a3(b3 b3Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(24, context, h6Var);
-        this.d = 0;
-        this.e = b3Var;
+    @Override // fi.m8
+    public final Bitmap getPlayingBitmap() {
+        return this.J.getPlayingBitmap();
     }
 }

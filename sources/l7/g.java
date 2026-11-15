@@ -7,24 +7,25 @@ import android.os.IInterface;
 import android.os.Looper;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import m.q3;
+import m.o3;
+import tg.x;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g extends q6.h {
     public final z5.b F;
 
-    public g(Context context, Looper looper, q3 q3Var, z5.b bVar, k kVar, l lVar) {
-        super(context, looper, 68, q3Var, kVar, lVar, 0);
+    public g(Context context, Looper looper, o3 o3Var, z5.b bVar, k kVar, l lVar) {
+        super(context, looper, 68, o3Var, kVar, lVar, 0);
         bVar = bVar == null ? z5.b.c : bVar;
-        v6.e eVar = new v6.e();
-        eVar.a = Boolean.FALSE;
+        x xVar = new x(9, (byte) 0);
+        xVar.b = Boolean.FALSE;
         z5.b bVar2 = z5.b.c;
         bVar.getClass();
-        eVar.a = Boolean.valueOf(bVar.a);
-        eVar.b = bVar.b;
-        eVar.b = e.a();
-        this.F = new z5.b(eVar);
+        xVar.b = Boolean.valueOf(bVar.a);
+        xVar.c = bVar.b;
+        xVar.c = e.a();
+        this.F = new z5.b(xVar);
     }
 
     @Override // q6.d, com.google.android.gms.common.api.c

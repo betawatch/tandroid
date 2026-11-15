@@ -1,32 +1,40 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
+import android.content.Context;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class iv extends org.telegram.ui.Components.kg0 {
-    public final /* synthetic */ int f0 = 0;
-    public final /* synthetic */ Object g0;
+public final class iv extends FragmentContextView {
+    public final /* synthetic */ int Y0;
+    public final /* synthetic */ yw Z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iv(z91 z91Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
-        super(spannableStringBuilder, spannableStringBuilder2);
-        this.g0 = z91Var;
-    }
-
-    @Override // org.telegram.ui.Components.kg0
-    public final float d() {
-        switch (this.f0) {
-            case 0:
-                return ((yw) this.g0).a.getViewOffset();
+    public iv(yw ywVar, Context context, yw ywVar2, int i7) {
+        super(context, ywVar2, true);
+        this.Y0 = i7;
+        switch (i7) {
+            case 1:
+                this.Z0 = ywVar;
+                super(context, ywVar2, false);
+                break;
             default:
-                return ((z91) this.g0).N.l3;
+                this.Z0 = ywVar;
+                break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iv(String str, String str2, yw ywVar) {
-        super(str, str2);
-        this.g0 = ywVar;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i7) {
+        switch (this.Y0) {
+            case 0:
+                yw ywVar = this.Z0;
+                ywVar.L1.i(ywVar.I1, i7 == 0, true);
+                break;
+            default:
+                yw ywVar2 = this.Z0;
+                ywVar2.L1.i(ywVar2.K1, i7 == 0, true);
+                break;
+        }
     }
 }

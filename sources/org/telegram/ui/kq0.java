@@ -1,59 +1,85 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
+import android.content.Context;
+import android.widget.FrameLayout;
+import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class kq0 extends tg.s1 {
-    public final Path r0;
-    public boolean s0;
-    public final org.telegram.ui.Components.v5 t0;
-    public final /* synthetic */ PhotoViewer u0;
+public final class kq0 extends org.telegram.ui.Components.yy0 {
+    public boolean a;
+    public float b;
+    public NestedScrollView c;
+    public FrameLayout d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kq0(PhotoViewer photoViewer) {
-        super(photoViewer.o5, photoViewer.E, photoViewer.v2, photoViewer.b0);
-        this.u0 = photoViewer;
-        this.r0 = new Path();
-        this.t0 = new org.telegram.ui.Components.v5(this, 0L, 420L, org.telegram.ui.Components.wq.h);
+    public kq0(Context context) {
+        super(context);
+        this.a = false;
+        this.b = 1.0f;
     }
 
-    public final void m(boolean z9, boolean z10) {
-        this.s0 = z9;
-        if (!z10) {
-            this.t0.f(z9, true);
+    public final void b(int i7, boolean z10) {
+        super.setVisibility(i7);
+        if (this.a && z10) {
+            this.c.setVisibility(i7);
         }
-        invalidate();
-    }
-
-    @Override // tg.s1, fi.d, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        Path path = this.r0;
-        path.rewind();
-        path.addRoundRect(this.l0, org.telegram.messenger.g0.L(this.p0), org.telegram.messenger.g0.L(this.p0), Path.Direction.CW);
-        canvas.clipPath(path);
-        canvas.translate(-getX(), -getY());
-        PhotoViewer photoViewer = this.u0;
-        if (this == photoViewer.u5 || this == photoViewer.v5) {
-            canvas.translate(-photoViewer.t5.getX(), -photoViewer.t5.getY());
-        }
-        photoViewer.N0(canvas, this.k0, -13948117, 855638016, false, true, false);
-        float d = this.t0.d(this.s0);
-        if (d > 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.m6.r1(d, -1));
-        }
-        setTextColor(i0.a.f(d, -1, -16777216));
-        canvas.restore();
-        super.onDraw(canvas);
     }
 
     @Override // android.view.View
-    public final void onDrawForeground(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.r0);
-        super.onDrawForeground(canvas);
-        canvas.restore();
+    public float getAlpha() {
+        return this.a ? this.b : super.getAlpha();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.d == null || getParent() != this.d) {
+            return;
+        }
+        this.a = true;
+        this.c.setVisibility(getVisibility());
+        this.c.setAlpha(this.b);
+        super.setAlpha(1.0f);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (this.a) {
+            this.a = false;
+            this.c.setVisibility(8);
+            super.setAlpha(this.b);
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f10) {
+        this.b = f10;
+        if (this.a) {
+            this.c.setAlpha(f10);
+        } else {
+            super.setAlpha(f10);
+        }
+    }
+
+    public void setContainer(FrameLayout frameLayout) {
+        this.d = frameLayout;
+    }
+
+    public void setScrollView(NestedScrollView nestedScrollView) {
+        this.c = nestedScrollView;
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        if (this.a) {
+            this.c.invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i7) {
+        b(i7, true);
     }
 }

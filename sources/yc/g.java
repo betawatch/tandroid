@@ -16,16 +16,16 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.zip.GZIPOutputStream;
-import org.telegram.ui.Components.fg;
+import org.telegram.ui.Components.mg;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g implements Closeable {
     public final f a;
     public final String b;
     public final InputStream c;
     public final long d;
-    public final fg e = new fg(this, 1);
+    public final mg e = new mg(this, 1);
     public final HashMap f = new HashMap();
     public int h;
     public boolean n;
@@ -130,17 +130,17 @@ public final class g implements Closeable {
 
     public final void e(OutputStream outputStream, long j3) {
         byte[] bArr = new byte[(int) 16384];
-        boolean z9 = j3 == -1;
+        boolean z10 = j3 == -1;
         while (true) {
-            if (j3 <= 0 && !z9) {
+            if (j3 <= 0 && !z10) {
                 return;
             }
-            int read = this.c.read(bArr, 0, (int) (z9 ? 16384L : Math.min(j3, 16384L)));
+            int read = this.c.read(bArr, 0, (int) (z10 ? 16384L : Math.min(j3, 16384L)));
             if (read <= 0) {
                 return;
             }
             outputStream.write(bArr, 0, read);
-            if (!z9) {
+            if (!z10) {
                 j3 -= read;
             }
         }
@@ -159,12 +159,12 @@ public final class g implements Closeable {
         return j3;
     }
 
-    public final void g(boolean z9) {
-        this.r = z9;
+    public final void g(boolean z10) {
+        this.r = z10;
     }
 
-    public final void h(boolean z9) {
-        this.s = z9;
+    public final void h(boolean z10) {
+        this.s = z10;
     }
 
     public final void i(int i7) {

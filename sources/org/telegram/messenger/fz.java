@@ -1,39 +1,59 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
+import android.text.TextUtils;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class fz {
-    public long A;
-    public int B;
-    public Uri a;
-    public String b;
-    public String c;
-    public String d;
-    public String e;
-    public String f;
-    public TLRPC.Photo g;
-    public int h;
-    public ArrayList i;
-    public ArrayList j;
-    public j20 k;
-    public kf l;
-    public TLRPC.BotInlineResult m;
-    public HashMap n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
-    public boolean r;
-    public boolean s;
-    public boolean t;
-    public boolean u;
-    public TLRPC.VideoSize v;
-    public long w;
-    public boolean x;
-    public gf y;
-    public long z;
+    public xi.a a;
+    public long b;
+    public boolean c;
+    public boolean d;
+    public long e;
+
+    public fz(xi.a aVar) {
+        this.a = aVar;
+    }
+
+    public static fz a(int i7, SerializedData serializedData) {
+        long j3;
+        long j10;
+        n2.o0 a10 = xi.a.a();
+        String readString = serializedData.readString(false);
+        if (readString == null) {
+            readString = "";
+        }
+        a10.c = readString;
+        a10.b = serializedData.readInt32(false);
+        String readString2 = serializedData.readString(false);
+        if (readString2 == null) {
+            readString2 = "";
+        }
+        a10.d = readString2;
+        String readString3 = serializedData.readString(false);
+        if (readString3 == null) {
+            readString3 = "";
+        }
+        a10.e = readString3;
+        String readString4 = serializedData.readString(false);
+        a10.f = readString4 != null ? readString4 : "";
+        if (i7 >= 2) {
+            j3 = serializedData.readInt64(false);
+            j10 = serializedData.readInt64(false);
+        } else {
+            j3 = 0;
+            j10 = 0;
+        }
+        if (i7 >= 3) {
+            a10.q(xi.a.f(serializedData.readInt32(false)));
+        } else {
+            a10.q(TextUtils.isEmpty(readString4) ? 1 : 2);
+        }
+        fz fzVar = new fz(a10.d());
+        fzVar.e = j10;
+        fzVar.b = j3;
+        fzVar.d = j3 > 0;
+        return fzVar;
+    }
 }

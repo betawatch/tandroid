@@ -1,41 +1,78 @@
 package bi;
 
 import android.content.Context;
-import org.telegram.messenger.v10;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.pj0;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class o0 extends m41 {
-    public final /* synthetic */ int P;
+public final class o0 extends di.w5 {
+    public final Path E0;
+    public final float[] F0;
+    public final /* synthetic */ int G0;
+    public final /* synthetic */ t0 H0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o0(pj0 pj0Var, Context context, int i7, int i10, boolean z9, v10 v10Var, org.telegram.ui.ActionBar.h6 h6Var, int i11) {
-        super(pj0Var, context, i7, i10, z9, v10Var, h6Var);
-        this.P = i11;
+    public o0(t0 t0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, a3.f fVar, o oVar, o oVar2, o oVar3, o oVar4, o oVar5, o oVar6, int i7) {
+        super(context, e6Var, fVar, oVar, null, oVar2, oVar3, oVar4, oVar5, oVar6);
+        this.H0 = t0Var;
+        this.G0 = i7;
+        this.E0 = new Path();
+        this.F0 = new float[8];
     }
 
-    @Override // org.telegram.ui.Components.m41, org.telegram.ui.Components.oj0
-    public boolean D(v4.d1 d1Var) {
-        switch (this.P) {
-            case 0:
-                return false;
-            default:
-                return super.D(d1Var);
+    @Override // di.w5, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.E0);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (view == this.b) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j3);
+    }
+
+    @Override // di.w5
+    public final int getFinalHeight() {
+        return org.telegram.messenger.g0.L(this.G0);
+    }
+
+    @Override // di.w5
+    public final float getRealHeight() {
+        return org.telegram.messenger.g0.L(this.G0);
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        q0 q0Var = this.H0.Y1;
+        if (q0Var != null) {
+            q0Var.invalidate();
         }
     }
 
-    @Override // org.telegram.ui.Components.m41
-    public int I(int i7) {
-        switch (this.P) {
-            case 1:
-                if (i7 == org.telegram.ui.ActionBar.m6.i5) {
-                    return -15921907;
-                }
-                return org.telegram.ui.ActionBar.m6.w0(i7, this.x);
-            default:
-                return super.I(i7);
-        }
+    @Override // di.w5
+    public final void k(int i7) {
+        this.H0.Y1.setRibbonColor(i7);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
+        super.onSizeChanged(i7, i10, i11, i12);
+        float L = org.telegram.messenger.g0.L(12.0f);
+        float[] fArr = this.F0;
+        fArr[3] = L;
+        fArr[2] = L;
+        fArr[1] = L;
+        fArr[0] = L;
+        Path path = this.E0;
+        path.rewind();
+        path.addRoundRect(0.0f, 0.0f, i7, i10, this.F0, Path.Direction.CW);
     }
 }

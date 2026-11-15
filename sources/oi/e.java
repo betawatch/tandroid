@@ -1,64 +1,48 @@
 package oi;
 
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.qs;
+import java.util.ArrayList;
+import org.telegram.messenger.gj;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.cl;
+import org.telegram.ui.Components.ki;
+import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public abstract class e extends Drawable {
-    public final Rect a = new Rect();
-    public r b = q.f();
-    public int c = qs.e4;
-    public float d;
-    public float e;
+public final /* synthetic */ class e implements cl, si {
+    public final /* synthetic */ o a;
+    public final /* synthetic */ ki b;
 
-    public abstract void a();
-
-    public void b(Rect rect) {
-        rect.set(getBounds());
+    public /* synthetic */ e(o oVar, ki kiVar) {
+        this.a = oVar;
+        this.b = kiVar;
     }
 
-    public int c() {
-        return 0;
-    }
-
-    public int d() {
-        return 0;
-    }
-
-    public abstract boolean e();
-
-    public abstract void f(int i7);
-
-    public abstract void g(r rVar);
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.c;
-    }
-
-    public final void i(float f10, float f11) {
-        if (this.d == f10 && this.e == f11) {
+    @Override // org.telegram.ui.Components.cl
+    public void d(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
+        o oVar = this.a;
+        oVar.getClass();
+        ki kiVar = this.b;
+        if (messageMedia == null || messageMedia.geo == null) {
+            kiVar.a(true);
             return;
         }
-        this.d = f10;
-        this.e = f11;
-        h();
+        TL_iv.pageBlockMap pageblockmap = new TL_iv.pageBlockMap();
+        pageblockmap.geo = messageMedia.geo;
+        pageblockmap.zoom = 15;
+        pageblockmap.w = 600;
+        pageblockmap.h = 400;
+        oVar.r.V1(pageblockmap);
+        oVar.a0(true);
+        kiVar.a(true);
     }
 
-    public abstract boolean j();
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        if (this.c != i7) {
-            this.c = i7;
-            f(i7);
+    @Override // org.telegram.ui.Components.si
+    public void k(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
+        if (!arrayList.isEmpty()) {
+            this.a.r.e2((gj) arrayList.get(0));
         }
-    }
-
-    public abstract void updateColors();
-
-    public void h() {
+        this.b.a(true);
     }
 }

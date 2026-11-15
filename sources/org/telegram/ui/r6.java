@@ -6,13 +6,13 @@ import android.graphics.RectF;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class r6 extends View implements org.telegram.ui.ActionBar.c6 {
+public final class r6 extends View implements org.telegram.ui.ActionBar.z5 {
     public Paint a;
     public Paint b;
     public float c;
-    public org.telegram.ui.Components.v5 d;
+    public org.telegram.ui.Components.u5 d;
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
@@ -24,20 +24,20 @@ public final class r6 extends View implements org.telegram.ui.ActionBar.c6 {
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), this.a);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void updateColors() {
         try {
             Paint paint = this.a;
-            int i7 = org.telegram.ui.ActionBar.m6.N6;
-            paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, i7, false));
-            this.b.setColor(org.telegram.ui.ActionBar.m6.r1(0.2f, org.telegram.ui.ActionBar.m6.x0(null, i7, false)));
+            int i7 = org.telegram.ui.ActionBar.j6.N6;
+            paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, i7, false));
+            this.b.setColor(org.telegram.ui.ActionBar.j6.r1(0.2f, org.telegram.ui.ActionBar.j6.x0(null, i7, false)));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
+    @Override // org.telegram.ui.ActionBar.z5
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

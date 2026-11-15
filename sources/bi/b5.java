@@ -1,43 +1,17 @@
 package bi;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
 import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class b5 extends ClickableSpan {
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ b5(int i7) {
-        this.a = i7;
-    }
-
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                vf.c.t(view.getContext(), "https://t.me/BotFather");
-                break;
+public final class b5 extends org.telegram.ui.ActionBar.z0 {
+    @Override // org.telegram.ui.ActionBar.z0, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
+        if (View.MeasureSpec.getMode(i7) == Integer.MIN_VALUE) {
+            size = org.telegram.messenger.g0.L(250.0f);
         }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                textPaint.setUnderlineText(false);
-                textPaint.setColor(-1);
-                break;
-            default:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-        }
-    }
-
-    private final void a(View view) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i10);
     }
 }

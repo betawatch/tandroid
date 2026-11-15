@@ -1,33 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.c20 b;
-    public final /* synthetic */ int c;
+public final class b0 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public final int a;
+    public final org.telegram.ui.ActionBar.e6 b;
+    public int c;
+    public boolean d;
+    public TL_aicompose.AiComposeTone e;
+    public boolean f;
+    public final i9 h;
+    public final TextView n;
+    public float r;
 
-    public /* synthetic */ b0(org.telegram.messenger.c20 c20Var, int i7, int i10) {
-        this.a = i10;
-        this.b = c20Var;
-        this.c = i7;
+    public b0(int i7, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.d = true;
+        this.a = i7;
+        this.b = e6Var;
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setClipToPadding(false);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, c8.ja.d(-2, -2.0f, 17, 0.0f, 2.0f, 0.0f, 2.0f));
+        i9 i9Var = new i9(context);
+        this.h = i9Var;
+        org.telegram.messenger.ns.i(i9Var);
+        linearLayout.addView(i9Var, c8.ja.t(24, 24, 49, 0, 4, 0, 0));
+        TextView textView = new TextView(context);
+        this.n = textView;
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        textView.setTextSize(1, 12.0f);
+        textView.setGravity(17);
+        textView.setSingleLine();
+        linearLayout.addView(textView, c8.ja.t(-2, -2, 49, 0, 2, 0, 0));
+        c8.na.b(this, 0.05f, 1.5f);
+        a(true, 0.0f);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.a(Integer.valueOf(this.c));
-                break;
-            default:
-                org.telegram.messenger.c20 c20Var = this.b;
-                if (c20Var != null) {
-                    c20Var.a(Integer.valueOf(this.c));
-                    break;
-                }
-                break;
+    public final void a(boolean z10, float f10) {
+        if (z10 || Math.abs(f10 - this.r) >= 0.01f) {
+            this.r = f10;
+            int i7 = org.telegram.ui.ActionBar.j6.G6;
+            org.telegram.ui.ActionBar.e6 e6Var = this.b;
+            int w02 = org.telegram.ui.ActionBar.j6.w0(i7, e6Var);
+            int i10 = org.telegram.ui.ActionBar.j6.Fi;
+            int f11 = i0.a.f(f10, w02, org.telegram.ui.ActionBar.j6.w0(i10, e6Var));
+            int f12 = i0.a.f(f10, org.telegram.ui.ActionBar.j6.w0(i7, e6Var), org.telegram.ui.ActionBar.j6.w0(i10, e6Var));
+            PorterDuffColorFilter porterDuffColorFilter = !this.f ? new PorterDuffColorFilter(f11, PorterDuff.Mode.SRC_IN) : null;
+            i9 i9Var = this.h;
+            i9Var.setColorFilter(porterDuffColorFilter);
+            i9Var.setEmojiColorFilter(new PorterDuffColorFilter(f11, PorterDuff.Mode.SRC_IN));
+            i9Var.invalidate();
+            this.n.setTextColor(f12);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.Fi));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.i6));
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        a(true, this.r);
+        boolean z10 = this.d;
+        org.telegram.ui.ActionBar.e6 e6Var = this.b;
+        int r12 = z10 ? org.telegram.ui.ActionBar.j6.r1(0.1f, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Fi, e6Var)) : org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.i6, e6Var);
+        int i7 = this.c;
+        setBackground(org.telegram.ui.ActionBar.j6.a0(r12, i7, i7));
     }
 }

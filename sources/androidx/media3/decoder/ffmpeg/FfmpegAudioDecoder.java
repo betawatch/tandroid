@@ -1,9 +1,9 @@
 package androidx.media3.decoder.ffmpeg;
 
-import a8.ia;
+import a8.ja;
 import androidx.media3.decoder.SimpleDecoderOutputBuffer;
 import e2.u;
-import h2.m0;
+import h2.l0;
 import h2.x;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -12,9 +12,9 @@ import k2.f;
 import k2.h;
 import k2.j;
 import k2.l;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class FfmpegAudioDecoder extends l {
     public static final byte[] w = {102, 76, 97, 67};
@@ -36,7 +36,7 @@ public final class FfmpegAudioDecoder extends l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public FfmpegAudioDecoder(int i7, u uVar, boolean z9) {
+    public FfmpegAudioDecoder(int i7, u uVar, boolean z10) {
         super(new h[16], new SimpleDecoderOutputBuffer[16]);
         byte[] bArr;
         int i10;
@@ -88,12 +88,12 @@ public final class FfmpegAudioDecoder extends l {
                 byte[] bArr5 = (byte[]) list.get(1);
                 byte[] bArr6 = new byte[bArr4.length + bArr5.length + 6];
                 bArr6[0] = (byte) (bArr4.length >> 8);
-                bArr6[1] = (byte) (bArr4.length & qs.e4);
+                bArr6[1] = (byte) (bArr4.length & ns.e4);
                 System.arraycopy(bArr4, 0, bArr6, 2, bArr4.length);
                 bArr6[bArr4.length + 2] = 0;
                 bArr6[bArr4.length + 3] = 0;
                 bArr6[bArr4.length + 4] = (byte) (bArr5.length >> 8);
-                bArr6[bArr4.length + 5] = (byte) (bArr5.length & qs.e4);
+                bArr6[bArr4.length + 5] = (byte) (bArr5.length & ns.e4);
                 System.arraycopy(bArr5, 0, bArr6, bArr4.length + 6, bArr5.length);
                 bArr = bArr6;
                 break;
@@ -155,9 +155,9 @@ public final class FfmpegAudioDecoder extends l {
                 break;
         }
         this.p = bArr;
-        this.q = z9 ? 4 : 2;
-        this.r = z9 ? 131070 : 65535;
-        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, z9, uVar.L, uVar.K);
+        this.q = z10 ? 4 : 2;
+        this.r = z10 ? 131070 : 65535;
+        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, z10, uVar.L, uVar.K);
         this.s = ffmpegInitialize;
         if (ffmpegInitialize == 0) {
             throw new FfmpegDecoderException("Initialization failed.");
@@ -171,7 +171,7 @@ public final class FfmpegAudioDecoder extends l {
 
     private native int ffmpegGetSampleRate(long j3);
 
-    private native long ffmpegInitialize(String str, byte[] bArr, boolean z9, int i7, int i10);
+    private native long ffmpegInitialize(String str, byte[] bArr, boolean z10, int i7, int i10);
 
     private native void ffmpegRelease(long j3);
 
@@ -181,7 +181,7 @@ public final class FfmpegAudioDecoder extends l {
         this.r = i7;
         ByteBuffer byteBuffer = simpleDecoderOutputBuffer.b;
         byteBuffer.getClass();
-        ia.f(i7 >= byteBuffer.limit());
+        ja.f(i7 >= byteBuffer.limit());
         ByteBuffer order = ByteBuffer.allocateDirect(i7).order(ByteOrder.nativeOrder());
         int position = byteBuffer.position();
         byteBuffer.position(0);
@@ -213,9 +213,9 @@ public final class FfmpegAudioDecoder extends l {
     }
 
     @Override // k2.l
-    public final f i(h hVar, j jVar, boolean z9) {
+    public final f i(h hVar, j jVar, boolean z10) {
         SimpleDecoderOutputBuffer simpleDecoderOutputBuffer = (SimpleDecoderOutputBuffer) jVar;
-        if (z9) {
+        if (z10) {
             long ffmpegReset = ffmpegReset(this.s, this.p);
             this.s = ffmpegReset;
             if (ffmpegReset == 0) {
@@ -223,7 +223,7 @@ public final class FfmpegAudioDecoder extends l {
             }
         }
         ByteBuffer byteBuffer = hVar.c;
-        String str = m0.a;
+        String str = l0.a;
         int limit = byteBuffer.limit();
         long j3 = hVar.e;
         int i7 = this.r;

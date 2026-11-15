@@ -1,16 +1,32 @@
 package c8;
 
-import java.nio.ByteBuffer;
+import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class ca {
-    public e2.q0 a(o3.a aVar) {
-        ByteBuffer byteBuffer = aVar.c;
-        byteBuffer.getClass();
-        a8.ia.f(byteBuffer.position() == 0 && byteBuffer.hasArray() && byteBuffer.arrayOffset() == 0);
-        return b(aVar, byteBuffer);
+    public static void a(ek0 ek0Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        ek0Var.r(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Fi, e6Var), e6Var != null ? e6Var.a() : org.telegram.ui.ActionBar.j6.I.q());
     }
 
-    public abstract e2.q0 b(o3.a aVar, ByteBuffer byteBuffer);
+    public static int b(oi.a aVar) {
+        if (aVar == null) {
+            return 0;
+        }
+        return c(aVar) + (Math.max(0, aVar.c) > 0 ? org.telegram.messenger.g0.L(com.google.android.gms.internal.vision.e2.v(r4, 1, 24, 28)) : 0);
+    }
+
+    public static int c(oi.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return org.telegram.messenger.g0.L(com.google.android.gms.internal.vision.e2.v(r3, 1, 16, 12));
+    }
+
+    public static int d(oi.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return org.telegram.messenger.g0.L(com.google.android.gms.internal.vision.e2.v(r3, 1, 16, 8));
+    }
 }

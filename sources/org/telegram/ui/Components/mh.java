@@ -1,87 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class mh implements lj {
-    public final /* synthetic */ ci a;
+public final class mh extends View {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ki b;
 
-    public mh(ci ciVar) {
-        this.a = ciVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ mh(ki kiVar, Context context, int i7) {
+        super(context);
+        this.a = i7;
+        this.b = kiVar;
     }
 
-    @Override // org.telegram.ui.Components.lj
-    public final void A() {
-        ci ciVar = this.a;
-        lj ljVar = ciVar.R1;
-        if (ljVar != null) {
-            ljVar.A();
-            return;
-        }
-        Object obj = ciVar.Z1;
-        if (obj instanceof lj) {
-            ((lj) obj).A();
-            return;
-        }
-        if (obj instanceof org.telegram.ui.ek0) {
-            org.telegram.ui.ek0 ek0Var = (org.telegram.ui.ek0) obj;
-            try {
-                Intent intent = new Intent("android.intent.action.GET_CONTENT");
-                intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
-                intent.setType("*/*");
-                ek0Var.startActivityForResult(intent, 21);
-            } catch (Exception e10) {
-                org.telegram.messenger.a8.g(e10, true);
-            }
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                super.draw(canvas);
+                this.b.W1.draw(canvas);
+                break;
+            default:
+                super.draw(canvas);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.lj
-    public final void S() {
-        this.a.p1(true);
-    }
-
-    @Override // org.telegram.ui.Components.lj
-    public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z9, int i7, long j3, boolean z10, long j10) {
-        ci ciVar = this.a;
-        lj ljVar = ciVar.R1;
-        if (ljVar != null) {
-            ljVar.n(arrayList, str, arrayList2, arrayList3, z9, i7, j3, z10, j10);
-            return;
-        }
-        Object obj = ciVar.Z1;
-        if (obj instanceof lj) {
-            ((lj) obj).n(arrayList, str, arrayList2, arrayList3, z9, i7, j3, z10, j10);
-            return;
-        }
-        if (obj instanceof org.telegram.ui.ek0) {
-            org.telegram.ui.ek0 ek0Var = (org.telegram.ui.ek0) obj;
-            ArrayList arrayList4 = new ArrayList();
-            int size = arrayList.size();
-            for (int i10 = 0; i10 < size; i10++) {
-                org.telegram.messenger.fz fzVar = new org.telegram.messenger.fz();
-                fzVar.c = (String) arrayList.get(i10);
-                arrayList4.add(fzVar);
-            }
-            ek0Var.K1(arrayList4);
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                ki kiVar = this.b;
+                String format = String.format("%d", Integer.valueOf(Math.max(1, kiVar.w2.getSelectedItemsCount())));
+                int max = Math.max(org.telegram.messenger.g0.L(16.0f) + ((int) Math.ceil(kiVar.H2.measureText(format))), org.telegram.messenger.g0.L(24.0f));
+                int measuredWidth = getMeasuredWidth() / 2;
+                kiVar.H2.setColor(i0.a.o(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.C5, kiVar.J0), (int) (((kiVar.T2 * 0.42d) + 0.58d) * Color.alpha(r5))));
+                kiVar.J2.setColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.h5, kiVar.J0));
+                int i7 = max / 2;
+                kiVar.I2.set(measuredWidth - i7, 0.0f, i7 + measuredWidth, getMeasuredHeight());
+                canvas.drawRoundRect(kiVar.I2, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), kiVar.J2);
+                kiVar.J2.setColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.W9, kiVar.J0));
+                kiVar.I2.set(org.telegram.messenger.g0.L(2.0f) + r6, org.telegram.messenger.g0.L(2.0f), r3 - org.telegram.messenger.g0.L(2.0f), getMeasuredHeight() - org.telegram.messenger.g0.L(2.0f));
+                canvas.drawRoundRect(kiVar.I2, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), kiVar.J2);
+                canvas.drawText(format, measuredWidth - (r2 / 2), org.telegram.messenger.g0.L(16.2f), kiVar.H2);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.lj
-    public final void p(ArrayList arrayList, boolean z9, int i7, long j3) {
-        ci ciVar = this.a;
-        lj ljVar = ciVar.R1;
-        if (ljVar != null) {
-            ljVar.p(arrayList, z9, i7, j3);
-            return;
-        }
-        org.telegram.ui.ActionBar.f2 f2Var = ciVar.Z1;
-        if (f2Var instanceof org.telegram.ui.cn) {
-            ((org.telegram.ui.cn) f2Var).p(arrayList, z9, i7, j3);
-        } else if (f2Var instanceof org.telegram.ui.ek0) {
-            ((org.telegram.ui.ek0) f2Var).K1(arrayList);
+    @Override // android.view.View
+    public void onSizeChanged(int i7, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                super.onSizeChanged(i7, i10, i11, i12);
+                this.b.W1.setBounds(0, (i10 - org.telegram.messenger.g0.n) - org.telegram.messenger.g0.L(48.0f), i7, i10);
+                break;
+            default:
+                super.onSizeChanged(i7, i10, i11, i12);
+                break;
         }
     }
 }

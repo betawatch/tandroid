@@ -1,28 +1,13 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qx0 implements org.telegram.ui.Components.dj0, org.telegram.ui.ActionBar.r1 {
-    public final /* synthetic */ ProxyListActivity a;
-
-    public /* synthetic */ qx0(ProxyListActivity proxyListActivity) {
-        this.a = proxyListActivity;
-    }
-
-    @Override // org.telegram.ui.Components.dj0
-    public boolean c(int i7, View view) {
-        ProxyListActivity proxyListActivity = this.a;
-        if (i7 < proxyListActivity.n || i7 >= proxyListActivity.r) {
-            return false;
-        }
-        proxyListActivity.a.M(i7);
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        ProxyListActivity.a0(this.a);
+public final class qx0 extends org.telegram.ui.Components.lm0 {
+    @Override // org.telegram.ui.Components.lm0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        invalidate();
     }
 }

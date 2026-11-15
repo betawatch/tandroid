@@ -1,16 +1,16 @@
 package com.google.firebase.messaging;
 
 import a8.b1;
+import ab.b0;
 import ab.h;
-import ab.z;
+import ab.w;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.media.session.a0;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.gms.tasks.Tasks;
-import d6.i;
-import f5.r;
+import f5.s;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Locale;
@@ -20,7 +20,7 @@ import m6.c;
 import m6.m;
 import m6.n;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class FirebaseMessagingService extends h {
     public static final ArrayDeque h = new ArrayDeque(10);
@@ -107,11 +107,11 @@ public class FirebaseMessagingService extends h {
                     extras = new Bundle();
                 }
                 extras.remove("androidx.content.wakelockid");
-                if (i.l0(extras)) {
-                    i iVar = new i(extras);
-                    ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new r("Firebase-Messaging-Network-Io"));
+                if (w.f(extras)) {
+                    w wVar = new w(extras);
+                    ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new s("Firebase-Messaging-Network-Io"));
                     try {
-                        if (new a0(this, iVar, newSingleThreadExecutor, 5).k()) {
+                        if (new a0(this, wVar, newSingleThreadExecutor, 5).l()) {
                             break;
                         } else {
                             newSingleThreadExecutor.shutdown();
@@ -123,14 +123,14 @@ public class FirebaseMessagingService extends h {
                         newSingleThreadExecutor.shutdown();
                     }
                 }
-                c(new z(extras));
+                c(new ab.a0(extras));
                 break;
             case "send_error":
                 if (intent.getStringExtra("google.message_id") == null) {
                     intent.getStringExtra("message_id");
                 }
                 String stringExtra4 = intent.getStringExtra("error");
-                new ab.a0(stringExtra4);
+                new b0(stringExtra4);
                 if (stringExtra4 != null) {
                     stringExtra4.toLowerCase(Locale.US).getClass();
                     break;
@@ -150,7 +150,7 @@ public class FirebaseMessagingService extends h {
         }
     }
 
-    public void c(z zVar) {
+    public void c(ab.a0 a0Var) {
     }
 
     public void d(String str) {

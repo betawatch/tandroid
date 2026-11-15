@@ -1,9 +1,9 @@
 package h2;
 
-import a8.ia;
+import a8.ja;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class k0 {
     public long a;
@@ -44,16 +44,16 @@ public final class k0 {
         try {
             long j10 = this.c;
             if (j10 != -9223372036854775807L) {
-                String str = m0.a;
-                long a02 = m0.a0(j10, 90000L, 1000000L, RoundingMode.DOWN);
+                String str = l0.a;
+                long a02 = l0.a0(j10, 90000L, 1000000L, RoundingMode.DOWN);
                 long j11 = (4294967296L + a02) / 8589934592L;
                 long j12 = ((j11 - 1) * 8589934592L) + j3;
                 long j13 = (j11 * 8589934592L) + j3;
                 j3 = Math.abs(j12 - a02) < Math.abs(j13 - a02) ? j12 : j13;
             }
             long j14 = j3;
-            String str2 = m0.a;
-            return a(m0.a0(j14, 1000000L, 90000L, RoundingMode.DOWN));
+            String str2 = l0.a;
+            return a(l0.a0(j14, 1000000L, 90000L, RoundingMode.DOWN));
         } catch (Throwable th2) {
             throw th2;
         }
@@ -65,16 +65,16 @@ public final class k0 {
         }
         long j10 = this.c;
         if (j10 != -9223372036854775807L) {
-            String str = m0.a;
-            long a02 = m0.a0(j10, 90000L, 1000000L, RoundingMode.DOWN);
+            String str = l0.a;
+            long a02 = l0.a0(j10, 90000L, 1000000L, RoundingMode.DOWN);
             long j11 = a02 / 8589934592L;
             Long.signum(j11);
             long j12 = (j11 * 8589934592L) + j3;
             j3 = j12 >= a02 ? j12 : ((j11 + 1) * 8589934592L) + j3;
         }
         long j13 = j3;
-        String str2 = m0.a;
-        return a(m0.a0(j13, 1000000L, 90000L, RoundingMode.DOWN));
+        String str2 = l0.a;
+        return a(l0.a0(j13, 1000000L, 90000L, RoundingMode.DOWN));
     }
 
     public final synchronized long d() {
@@ -100,13 +100,13 @@ public final class k0 {
         this.c = -9223372036854775807L;
     }
 
-    public final synchronized void h(long j3, boolean z9) {
+    public final synchronized void h(long j3, boolean z10) {
         try {
-            ia.p(this.a == 9223372036854775806L);
+            ja.p(this.a == 9223372036854775806L);
             if (f()) {
                 return;
             }
-            if (z9) {
+            if (z10) {
                 this.d.set(Long.valueOf(j3));
             } else {
                 while (!f()) {

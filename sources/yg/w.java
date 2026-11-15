@@ -8,73 +8,73 @@ import android.text.SpannableString;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import c8.ha;
+import c8.ja;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.e80;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.h6;
+import org.telegram.ui.Components.u5;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final RadioButton a;
     public final Drawable b;
     public final Drawable c;
-    public final i6 d;
-    public final i6 e;
+    public final h6 d;
+    public final h6 e;
     public final TextView f;
     public final SpannableString h;
     public final SpannableString n;
     public TL_stars.TL_starsGiveawayOption r;
     public int s;
-    public final v5 w;
+    public final u5 w;
 
-    public w(Context context, h6 h6Var) {
+    public w(Context context, e6 e6Var) {
         super(context);
-        this.w = new v5(this, 0L, 500L, wq.h);
-        Drawable h = jg.g.h(context, R.drawable.star_small_outline);
-        this.b = h;
-        t6.x(this, h, m6.h5, h6Var, PorterDuff.Mode.SRC_IN);
-        this.c = jg.g.h(context, R.drawable.star_small_inner);
+        this.w = new u5(this, 0L, 500L, er.h);
+        Drawable g10 = i5.c.g(context, R.drawable.star_small_outline);
+        this.b = g10;
+        q6.x(this, g10, j6.h5, e6Var, PorterDuff.Mode.SRC_IN);
+        this.c = i5.c.g(context, R.drawable.star_small_inner);
         setWillNotDraw(false);
-        i6 i6Var = new i6(context, false, false, false);
-        this.d = i6Var;
-        t6.Y(i6Var, m6.G6, h6Var);
-        i6Var.setTypeface(g0.o());
-        i6Var.setTextSize(g0.L(16.0f));
-        addView(i6Var, ha.d(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
+        h6 h6Var = new h6(context, false, false, false);
+        this.d = h6Var;
+        q6.Y(h6Var, j6.G6, e6Var);
+        h6Var.setTypeface(g0.o());
+        h6Var.setTextSize(g0.L(16.0f));
+        addView(h6Var, ja.d(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
-        spannableString.setSpan(new b80(g0.L(90.0f), i6Var), 0, 1, 33);
-        i6 i6Var2 = new i6(context, false, true, true);
-        this.e = i6Var2;
-        int i7 = m6.z6;
-        t6.Y(i6Var2, i7, h6Var);
-        i6Var2.setTextSize(g0.L(13.0f));
-        addView(i6Var2, ha.d(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
+        spannableString.setSpan(new e80(g0.L(90.0f), h6Var), 0, 1, 33);
+        h6 h6Var2 = new h6(context, false, true, true);
+        this.e = h6Var2;
+        int i7 = j6.z6;
+        q6.Y(h6Var2, i7, e6Var);
+        h6Var2.setTextSize(g0.L(13.0f));
+        addView(h6Var2, ja.d(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
         SpannableString spannableString2 = new SpannableString("x");
         this.n = spannableString2;
-        spannableString2.setSpan(new b80(g0.L(70.0f), i6Var2), 0, 1, 33);
+        spannableString2.setSpan(new e80(g0.L(70.0f), h6Var2), 0, 1, 33);
         TextView textView = new TextView(context);
         this.f = textView;
-        t6.U(textView, i7, h6Var);
+        q6.U(textView, i7, e6Var);
         textView.setTextSize(1, 16.0f);
         textView.setGravity(5);
-        addView(textView, ha.d(-2, -2.0f, 21, 0.0f, 0.0f, 19.0f, 0.0f));
+        addView(textView, ja.d(-2, -2.0f, 21, 0.0f, 0.0f, 19.0f, 0.0f));
         RadioButton radioButton = new RadioButton(context);
         this.a = radioButton;
         radioButton.setSize(g0.L(20.0f));
-        t6.O(radioButton, m6.j7, m6.E5, h6Var);
-        addView(radioButton, ha.d(20, 20.0f, 19, 22.0f, 0.0f, 0.0f, 0.0f));
+        q6.O(radioButton, j6.j7, j6.E5, e6Var);
+        addView(radioButton, ja.d(20, 20.0f, 19, 22.0f, 0.0f, 0.0f, 0.0f));
     }
 
     public TL_stars.TL_starsGiveawayOption getOption() {

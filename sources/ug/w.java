@@ -1,26 +1,25 @@
 package ug;
 
 import android.view.View;
-import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.dj0;
+import org.telegram.ui.Components.ij0;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w implements org.telegram.ui.ActionBar.r1, dj0 {
+public final /* synthetic */ class w implements org.telegram.ui.ActionBar.q1, ij0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i0 b;
+    public final /* synthetic */ j0 b;
 
-    public /* synthetic */ w(i0 i0Var, int i7) {
+    public /* synthetic */ w(j0 j0Var, int i7) {
         this.a = i7;
-        this.b = i0Var;
+        this.b = j0Var;
     }
 
-    @Override // org.telegram.ui.Components.dj0
-    public boolean c(int i7, View view) {
-        i0 i0Var = this.b;
-        i0Var.n1.getOnItemClickListener().c(i7, view);
-        if (i0Var.c2 != 19) {
+    @Override // org.telegram.ui.Components.ij0
+    public boolean b(int i7, View view) {
+        j0 j0Var = this.b;
+        j0Var.o1.getOnItemClickListener().b(i7, view);
+        if (j0Var.d2 != 19) {
             try {
                 view.performHapticFeedback(0);
             } catch (Exception unused) {
@@ -29,17 +28,17 @@ public final /* synthetic */ class w implements org.telegram.ui.ActionBar.r1, dj
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 0:
-                i0 i0Var = this.b;
-                i0Var.F2.presentFragment(new PremiumPreviewFragment(0, null));
-                i0Var.dismiss();
-                u1Var.dismiss();
+                j0 j0Var = this.b;
+                j0Var.G2.presentFragment(new PremiumPreviewFragment(0, null));
+                j0Var.dismiss();
+                t1Var.dismiss();
                 break;
             default:
-                u1Var.dismiss();
+                t1Var.dismiss();
                 this.b.i1();
                 break;
         }

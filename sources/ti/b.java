@@ -1,54 +1,20 @@
 package ti;
 
-import android.widget.ImageView;
-import org.telegram.messenger.g0;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i b;
+public final class b {
+    public static final b c = new b(Float.POSITIVE_INFINITY);
+    public final float a;
+    public final float b;
 
-    public /* synthetic */ b(i iVar, int i7) {
-        this.a = i7;
-        this.b = iVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                i iVar = this.b;
-                ImageView imageView = iVar.l;
-                if (imageView != null) {
-                    imageView.setVisibility(8);
-                    iVar.l.setImageDrawable(null);
-                    break;
-                }
-                break;
-            case 1:
-                i iVar2 = this.b;
-                if (iVar2.b() && iVar2.c()) {
-                    float f10 = iVar2.M[0];
-                    if (iVar2.b.R(f10 >= ((float) iVar2.x) * 0.5f, f10, iVar2.G) && !iVar2.u) {
-                        iVar2.u = true;
-                        iVar2.o(true);
-                        if (!iVar2.w) {
-                            iVar2.w = true;
-                            g0.i3(iVar2.P, 1500L);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 2:
-                g0.h3(new b(this.b, 0));
-                break;
-            default:
-                i iVar3 = this.b;
-                iVar3.getClass();
-                g0.h3(new b(iVar3, 0));
-                break;
+    public b(float f10) {
+        if (Float.isNaN(Float.POSITIVE_INFINITY)) {
+            throw new IllegalArgumentException("epsX must be >= 0");
         }
+        if (Float.isNaN(f10) || f10 < 0.0f) {
+            throw new IllegalArgumentException("epsY must be >= 0");
+        }
+        this.a = Float.POSITIVE_INFINITY;
+        this.b = f10;
     }
 }

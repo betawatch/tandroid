@@ -6,20 +6,20 @@ import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.oe0;
-import org.telegram.ui.Components.qe0;
-import org.telegram.ui.Components.z41;
-import org.telegram.ui.x90;
+import org.telegram.ui.Components.b51;
+import org.telegram.ui.Components.re0;
+import org.telegram.ui.Components.te0;
+import org.telegram.ui.v90;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class a2 extends org.telegram.ui.Components.i6 {
+public final class a2 extends org.telegram.ui.Components.h6 {
     public final /* synthetic */ int s;
     public Object w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ a2(Context context, boolean z9, boolean z10, boolean z11) {
-        super(context, z9, z10, z11);
+    public /* synthetic */ a2(Context context, boolean z10, boolean z11, boolean z12) {
+        super(context, z10, z11, z12);
         this.s = 3;
     }
 
@@ -28,10 +28,10 @@ public final class a2 extends org.telegram.ui.Components.i6 {
         switch (this.s) {
             case 1:
                 super.invalidate();
-                oe0 oe0Var = (oe0) this.w;
-                qe0 qe0Var = oe0Var.d;
-                if (oe0Var == qe0Var.l1.getPinnedHeader()) {
-                    qe0Var.l1.invalidate();
+                re0 re0Var = (re0) this.w;
+                te0 te0Var = re0Var.d;
+                if (re0Var == te0Var.m1.getPinnedHeader()) {
+                    te0Var.m1.invalidate();
                     break;
                 }
                 break;
@@ -41,7 +41,7 @@ public final class a2 extends org.telegram.ui.Components.i6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i6, android.view.View
+    @Override // org.telegram.ui.Components.h6, android.view.View
     public void onDraw(Canvas canvas) {
         int r12;
         switch (this.s) {
@@ -58,12 +58,12 @@ public final class a2 extends org.telegram.ui.Components.i6 {
                 canvas.translate(org.telegram.messenger.g0.L(15.0f), 0.0f);
                 super.onDraw(canvas);
                 canvas.translate(((getMeasuredWidth() - d()) / 2.0f) - org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(11.0f));
-                ((z41) this.w).b.draw(canvas);
+                ((b51) this.w).b.draw(canvas);
                 canvas.restore();
                 break;
             case 3:
                 ShapeDrawable shapeDrawable = (ShapeDrawable) this.w;
-                if (shapeDrawable != null && shapeDrawable.getPaint().getColor() != (r12 = org.telegram.ui.ActionBar.m6.r1(0.15f, org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.L6, false)))) {
+                if (shapeDrawable != null && shapeDrawable.getPaint().getColor() != (r12 = org.telegram.ui.ActionBar.j6.r1(0.15f, org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.L6, false)))) {
                     shapeDrawable.getPaint().setColor(r12);
                 }
                 shapeDrawable.setBounds(0, 0, (int) (getDrawable().c() + getPaddingLeft() + getPaddingRight()), getMeasuredHeight());
@@ -73,16 +73,16 @@ public final class a2 extends org.telegram.ui.Components.i6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i6, android.view.View
+    @Override // org.telegram.ui.Components.h6, android.view.View
     public void onMeasure(int i7, int i10) {
         switch (this.s) {
             case 4:
-                x90 x90Var = (x90) this.w;
+                v90 v90Var = (v90) this.w;
                 int size = View.MeasureSpec.getSize(i7);
                 if (size <= 0) {
                     size = org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(20.0f);
                 }
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - x90Var.d.getPaint().measureText(x90Var.d.getText().toString())) - x90Var.f.getPaint().measureText(x90Var.f.getText().toString())), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(24.0f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - v90Var.d.getPaint().measureText(v90Var.d.getText().toString())) - v90Var.f.getPaint().measureText(v90Var.f.getText().toString())), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(24.0f), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -94,9 +94,9 @@ public final class a2 extends org.telegram.ui.Components.i6 {
     public boolean post(Runnable runnable) {
         switch (this.s) {
             case 1:
-                qe0 qe0Var = ((oe0) this.w).d;
-                o8 o8Var = qe0.L1;
-                return qe0Var.b.post(runnable);
+                te0 te0Var = ((re0) this.w).d;
+                n8 n8Var = te0.M1;
+                return te0Var.b.post(runnable);
             default:
                 return super.post(runnable);
         }
@@ -106,9 +106,9 @@ public final class a2 extends org.telegram.ui.Components.i6 {
     public boolean postDelayed(Runnable runnable, long j3) {
         switch (this.s) {
             case 1:
-                qe0 qe0Var = ((oe0) this.w).d;
-                o8 o8Var = qe0.L1;
-                return qe0Var.b.postDelayed(runnable, j3);
+                te0 te0Var = ((re0) this.w).d;
+                n8 n8Var = te0.M1;
+                return te0Var.b.postDelayed(runnable, j3);
             default:
                 return super.postDelayed(runnable, j3);
         }
@@ -122,16 +122,16 @@ public final class a2 extends org.telegram.ui.Components.i6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a2(z41 z41Var, Context context) {
+    public a2(b51 b51Var, Context context) {
         super(context, true, true, true);
         this.s = 2;
-        this.w = z41Var;
+        this.w = b51Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a2(x90 x90Var, Context context) {
+    public a2(v90 v90Var, Context context) {
         super(context, false, true, true);
         this.s = 4;
-        this.w = x90Var;
+        this.w = v90Var;
     }
 }

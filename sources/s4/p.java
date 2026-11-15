@@ -1,17 +1,17 @@
 package s4;
 
-import a8.pa;
+import a8.qa;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Components.uy;
+import org.telegram.messenger.ou;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class p extends q {
     public final Object a = new Object();
     public Executor b;
-    public uy c;
+    public ou c;
     public m d;
     public ArrayList e;
 
@@ -32,7 +32,7 @@ public abstract class p extends q {
                 try {
                     Executor executor = this.b;
                     if (executor != null) {
-                        executor.execute(new pa(this, this.c, mVar, arrayList, false, 6));
+                        executor.execute(new qa(this, this.c, mVar, arrayList, false, 6));
                     } else {
                         this.d = mVar;
                         this.e = new ArrayList(arrayList);

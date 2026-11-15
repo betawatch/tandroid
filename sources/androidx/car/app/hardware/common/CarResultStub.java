@@ -4,33 +4,33 @@ import ab.j;
 import android.os.IBinder;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.hardware.ICarHardwareResult;
-import androidx.car.app.utils.g;
+import androidx.car.app.utils.h;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.web.s;
-import p4.r0;
+import org.telegram.ui.web.e1;
+import p4.q0;
 import r.a;
-import r.c;
+import r.d;
 import w.b;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
     private final a mHostDispatcher;
     private final boolean mIsSingleShot;
-    private final Map<c, Executor> mListeners = new HashMap();
+    private final Map<d, Executor> mListeners = new HashMap();
     private final int mResultType;
     private final T mUnsupportedValue;
 
-    public CarResultStub(int i7, b bVar, boolean z9, T t6, a aVar) {
+    public CarResultStub(int i7, b bVar, boolean z10, T t6, a aVar) {
         Objects.requireNonNull(aVar);
         this.mHostDispatcher = aVar;
         this.mResultType = i7;
         this.mBundle = bVar;
-        this.mIsSingleShot = z9;
+        this.mIsSingleShot = z10;
         Objects.requireNonNull(t6);
         this.mUnsupportedValue = t6;
     }
@@ -46,36 +46,36 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onCarHardwareResult$0(boolean z9, b bVar) {
-        notifyResults(z9, bVar);
+    public /* synthetic */ Object lambda$onCarHardwareResult$0(boolean z10, b bVar) {
+        notifyResults(z10, bVar);
         return null;
     }
 
-    private void notifyResults(boolean z9, b bVar) {
-        T convertAndRecast = z9 ? convertAndRecast(bVar) : this.mUnsupportedValue;
-        for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new s(16, entry, convertAndRecast));
+    private void notifyResults(boolean z10, b bVar) {
+        T convertAndRecast = z10 ? convertAndRecast(bVar) : this.mUnsupportedValue;
+        for (Map.Entry<d, Executor> entry : this.mListeners.entrySet()) {
+            entry.getValue().execute(new e1(13, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();
         }
     }
 
-    public void addListener(Executor executor, c cVar) {
+    public void addListener(Executor executor, d dVar) {
         this.mListeners.isEmpty();
-        Objects.requireNonNull(cVar);
+        Objects.requireNonNull(dVar);
         throw new ClassCastException();
     }
 
     @Override // androidx.car.app.hardware.ICarHardwareResult
-    public void onCarHardwareResult(int i7, boolean z9, b bVar, IBinder iBinder) {
-        g.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new j(this, z9, bVar, 12));
+    public void onCarHardwareResult(int i7, boolean z10, b bVar, IBinder iBinder) {
+        h.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new j(this, z10, bVar, 12));
     }
 
-    public boolean removeListener(c cVar) {
-        Map<c, Executor> map = this.mListeners;
-        Objects.requireNonNull(cVar);
-        map.remove(cVar);
+    public boolean removeListener(d dVar) {
+        Map<d, Executor> map = this.mListeners;
+        Objects.requireNonNull(dVar);
+        map.remove(dVar);
         if (!this.mListeners.isEmpty()) {
             return false;
         }
@@ -86,7 +86,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         int i7 = this.mResultType;
         b bVar = this.mBundle;
         aVar.getClass();
-        g.d("unsubscribeCarHardwareResult", new r0(aVar, i7, bVar));
+        h.d("unsubscribeCarHardwareResult", new q0(aVar, i7, bVar));
         return true;
     }
 }

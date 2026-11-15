@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g1 implements d2 {
     public static final g1 b = new g1(0);
@@ -21,7 +21,7 @@ public final class g1 implements d2 {
     }
 
     @Override // com.google.android.gms.internal.vision.d2
-    public final l2 zzb(Class cls) {
+    public final m2 zzb(Class cls) {
         switch (this.a) {
             case 0:
                 if (!f1.class.isAssignableFrom(cls)) {
@@ -29,7 +29,7 @@ public final class g1 implements d2 {
                     throw new IllegalArgumentException(name.length() != 0 ? "Unsupported message type: ".concat(name) : new String("Unsupported message type: "));
                 }
                 try {
-                    return (l2) f1.d(cls.asSubclass(f1.class)).e(3);
+                    return (m2) f1.d(cls.asSubclass(f1.class)).e(3);
                 } catch (Exception e10) {
                     String name2 = cls.getName();
                     throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e10);

@@ -1,10 +1,11 @@
 package com.google.android.recaptcha.internal;
 
 import gd.g;
+import jd.a;
 import kd.c;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzei extends c {
     /* synthetic */ Object zza;
@@ -22,6 +23,6 @@ final class zzei extends c {
         this.zza = obj;
         this.zzc |= TLObject.FLAG_31;
         Object obj2 = this.zzb.execute-0E7RQCE(null, 0L, this);
-        return obj2 == jd.a.a ? obj2 : new g(obj2);
+        return obj2 == a.a ? obj2 : new g(obj2);
     }
 }

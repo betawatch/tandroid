@@ -6,13 +6,13 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.pt0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public abstract class z extends ViewGroup implements pt0 {
     public boolean a;
     public androidx.emoji2.text.j b;
     public int c;
-    public m.f3 d;
+    public j6.o d;
     public Runnable e;
 
     public z(Context context) {
@@ -45,7 +45,7 @@ public abstract class z extends ViewGroup implements pt0 {
     }
 
     @Override // org.telegram.ui.Components.pt0
-    public final void f(Runnable runnable) {
+    public final void d(Runnable runnable) {
         this.e = runnable;
     }
 
@@ -62,7 +62,7 @@ public abstract class z extends ViewGroup implements pt0 {
         return false;
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.q9
+    @Override // android.view.View, org.telegram.ui.Cells.p9
     public void invalidate() {
         Runnable runnable = this.e;
         if (runnable != null) {
@@ -77,9 +77,9 @@ public abstract class z extends ViewGroup implements pt0 {
         if (jVar != null) {
             removeCallbacks(jVar);
         }
-        m.f3 f3Var = this.d;
-        if (f3Var != null) {
-            removeCallbacks(f3Var);
+        j6.o oVar = this.d;
+        if (oVar != null) {
+            removeCallbacks(oVar);
         }
     }
 
@@ -97,7 +97,7 @@ public abstract class z extends ViewGroup implements pt0 {
         }
         this.a = true;
         if (this.d == null) {
-            this.d = new m.f3(this, 19);
+            this.d = new j6.o(this, 22);
         }
         postDelayed(this.d, ViewConfiguration.getTapTimeout());
     }

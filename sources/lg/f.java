@@ -9,19 +9,21 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.i7;
 import org.telegram.messenger.p5;
 import org.telegram.messenger.x7;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.h6;
-import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.wq;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.g6;
+import org.telegram.ui.Components.u5;
 import org.telegram.ui.l0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class f {
     public int a;
@@ -72,10 +74,10 @@ public final class f {
         }
     }
 
-    public void b(boolean z9) {
+    public void b(boolean z10) {
         p5 p5Var = (p5) this.f;
         x7 x7Var = (x7) this.h;
-        if (z9) {
+        if (z10) {
             p5Var.a(x7Var);
             x7Var.run();
         } else {
@@ -94,27 +96,27 @@ public final class f {
         RectF rectF = l0Var.a;
         rectF.set(0.0f, 0.0f, f10, f11);
         canvas.saveLayerAlpha(rectF, (int) (f12 * 255.0f), 31);
-        h6 h6Var = (h6) this.d;
-        float i7 = h6Var.i();
-        h6 h6Var2 = (h6) this.e;
-        float i10 = h6Var2.i();
-        TextPaint textPaint = h6Var2.a;
+        g6 g6Var = (g6) this.d;
+        float i7 = g6Var.i();
+        g6 g6Var2 = (g6) this.e;
+        float i10 = g6Var2.i();
+        TextPaint textPaint = g6Var2.a;
         float f13 = i10 * i7;
         canvas.save();
         float f14 = 0.82f * f11;
-        canvas.translate(0.0f, com.google.android.recaptcha.internal.a.z(1.0f, l0Var.G, f14, -g0.L(1.0f)));
+        canvas.translate(0.0f, e2.z(1.0f, l0Var.H, f14, -g0.L(1.0f)));
         canvas.translate(0.0f, (-g0.L(4.0f)) * f13);
-        float T1 = g0.T1(1.0f, 0.86f, f13) * l0Var.G;
+        float T1 = g0.T1(1.0f, 0.86f, f13) * l0Var.H;
         canvas.scale(T1, T1, 0.0f, 0.0f);
-        h6Var.o(0.0f, 0.0f, f10, f11);
-        h6Var.draw(canvas);
+        g6Var.o(0.0f, 0.0f, f10, f11);
+        g6Var.draw(canvas);
         canvas.restore();
-        float d = ((v5) this.f).d(this.c);
+        float d = ((u5) this.f).d(this.c);
         canvas.save();
-        canvas.translate(0.0f, com.google.android.recaptcha.internal.a.v(1.0f, f13, g0.L(4.0f), (g0.L(14.0f) * f13) + ((1.0f - l0Var.G) * f14 * f13) + (-g0.L(1.0f))));
-        float T12 = g0.T1(1.15f, 0.9f, f13) * l0Var.G;
+        canvas.translate(0.0f, e2.t(1.0f, f13, g0.L(4.0f), (g0.L(14.0f) * f13) + ((1.0f - l0Var.H) * f14 * f13) + (-g0.L(1.0f))));
+        float T12 = g0.T1(1.15f, 0.9f, f13) * l0Var.H;
         canvas.scale(T12, T12, 0.0f, 0.0f);
-        h6Var2.u(i0.a.f(d, this.a, m6.x0(null, m6.q7, false)));
+        g6Var2.u(i0.a.f(d, this.a, j6.x0(null, j6.q7, false)));
         if (d > 0.0f) {
             if (this.b != textPaint.getColor()) {
                 int color = textPaint.getColor();
@@ -125,11 +127,11 @@ public final class f {
             drawable.setBounds(0, ((int) (f11 - g0.L(16.0f))) / 2, g0.L(16.0f), ((int) (g0.L(16.0f) + f11)) / 2);
             drawable.draw(canvas);
         }
-        h6Var2.o(g0.L(20.0f) * d, 0.0f, f10, f11);
-        h6Var2.draw(canvas);
+        g6Var2.o(g0.L(20.0f) * d, 0.0f, f10, f11);
+        g6Var2.draw(canvas);
         canvas.restore();
         rectF.set(f10 - g0.L(12.0f), 0.0f, f10, f11);
-        l0Var.r0.m(canvas, rectF, 2, 1.0f);
+        l0Var.s0.m(canvas, rectF, 2, 1.0f);
         canvas.restore();
     }
 
@@ -137,7 +139,7 @@ public final class f {
         Canvas canvas;
         Paint paint = (Paint) this.g;
         RectF rectF = (RectF) this.f;
-        int w02 = m6.w0(m6.d6, (org.telegram.ui.ActionBar.h6) this.h);
+        int w02 = j6.w0(j6.d6, (e6) this.h);
         int i11 = (i7 + i10) << 10;
         if (i11 != this.a || this.c) {
             this.c = false;
@@ -159,28 +161,28 @@ public final class f {
 
     public f(l0 l0Var) {
         this.h = l0Var;
-        h6 h6Var = new h6(true, true, true);
-        this.d = h6Var;
-        h6 h6Var2 = new h6(true, true, true);
-        this.e = h6Var2;
-        this.f = new v5(l0Var, 0L, 300L, wq.h);
+        g6 g6Var = new g6(true, true, true);
+        this.d = g6Var;
+        g6 g6Var2 = new g6(true, true, true);
+        this.e = g6Var2;
+        this.f = new u5(l0Var, 0L, 300L, er.h);
         this.c = false;
-        h6Var.K = true;
-        h6Var.w(g0.L(18.33f));
-        h6Var.A = 0.6f;
-        h6Var.x(g0.o());
-        h6Var.q(false);
-        h6Var.setCallback(l0Var);
-        h6Var.M = 9999999;
-        h6Var2.K = true;
-        h6Var2.w(g0.L(14.0f));
-        h6Var2.q(false);
-        h6Var2.setCallback(l0Var);
-        h6Var2.M = 9999999;
+        g6Var.L = true;
+        g6Var.w(g0.L(18.33f));
+        g6Var.B = 0.6f;
+        g6Var.x(g0.o());
+        g6Var.q(false);
+        g6Var.setCallback(l0Var);
+        g6Var.N = 9999999;
+        g6Var2.L = true;
+        g6Var2.w(g0.L(14.0f));
+        g6Var2.q(false);
+        g6Var2.setCallback(l0Var);
+        g6Var2.N = 9999999;
         this.g = l0Var.getContext().getResources().getDrawable(R.drawable.warning_sign).mutate();
     }
 
-    public f(org.telegram.ui.ActionBar.h6 h6Var) {
+    public f(e6 e6Var) {
         this.f = new RectF();
         Paint paint = new Paint(1);
         this.g = paint;
@@ -188,6 +190,6 @@ public final class f {
         this.c = true;
         paint.setColor(0);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.h = h6Var;
+        this.h = e6Var;
     }
 }

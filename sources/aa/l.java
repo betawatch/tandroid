@@ -12,14 +12,14 @@ import java.io.StringReader;
 import java.util.function.Function;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ij;
+import org.telegram.messenger.gj;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.y00;
+import org.telegram.messenger.np;
+import org.telegram.messenger.v00;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ps;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements Function {
     public final /* synthetic */ int a;
@@ -89,15 +89,15 @@ public final /* synthetic */ class l implements Function {
             case 5:
                 return String.valueOf((Long) obj);
             case 6:
-                return qp.a((int[]) obj);
+                return np.a((int[]) obj);
             case 7:
-                return ((y00) obj).b;
+                return ((v00) obj).b;
             case 8:
                 return Long.valueOf(m5.o((TLRPC.Peer) obj));
             case 9:
-                return Long.valueOf(((ij) obj).Z0());
+                return Long.valueOf(((gj) obj).Z0());
             case 10:
-                return Integer.valueOf(((ij) obj).e1());
+                return Integer.valueOf(((gj) obj).e1());
             case 11:
                 TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj;
                 if (channelParticipant == null) {
@@ -110,8 +110,10 @@ public final /* synthetic */ class l implements Function {
                 return Long.valueOf(m5.o(((TLRPC.GroupCallParticipant) obj).peer));
             case 14:
                 return ((ps) obj).a;
-            default:
+            case 15:
                 return ((ps) obj).a;
+            default:
+                return new org.telegram.utils.twidget.h(((Integer) obj).intValue());
         }
     }
 

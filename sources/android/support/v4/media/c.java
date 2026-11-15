@@ -2,7 +2,7 @@ package android.support.v4.media;
 
 import android.media.Rating;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class c {
     public static float a(Rating rating) {
@@ -29,8 +29,8 @@ public abstract class c {
         return rating.isThumbUp();
     }
 
-    public static Rating g(boolean z9) {
-        return Rating.newHeartRating(z9);
+    public static Rating g(boolean z10) {
+        return Rating.newHeartRating(z10);
     }
 
     public static Rating h(float f10) {
@@ -41,8 +41,8 @@ public abstract class c {
         return Rating.newStarRating(i7, f10);
     }
 
-    public static Rating j(boolean z9) {
-        return Rating.newThumbRating(z9);
+    public static Rating j(boolean z10) {
+        return Rating.newThumbRating(z10);
     }
 
     public static Rating k(int i7) {

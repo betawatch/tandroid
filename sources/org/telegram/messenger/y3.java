@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -15,11 +15,11 @@ public final /* synthetic */ class y3 implements RequestDelegate {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ y3(c1 c1Var, Object obj, boolean z9, long j3, Object obj2, int i7) {
+    public /* synthetic */ y3(c1 c1Var, Object obj, boolean z10, long j3, Object obj2, int i7) {
         this.a = i7;
         this.d = c1Var;
         this.e = obj;
-        this.b = z9;
+        this.b = z10;
         this.c = j3;
         this.f = obj2;
     }
@@ -31,57 +31,57 @@ public final /* synthetic */ class y3 implements RequestDelegate {
                 g0.h3(new z3((d4) this.d, tLObject, this.c, this.b, (String) this.e, (Runnable) this.f));
                 break;
             case 1:
-                vi viVar = (vi) this.d;
+                ti tiVar = (ti) this.d;
                 TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
-                bi.t4 t4Var = (bi.t4) this.f;
-                viVar.getClass();
-                g0.h3(new bi.l(viVar, tL_error, tLObject, tL_chatInviteImporter, this.b, this.c, t4Var));
+                di.u3 u3Var = (di.u3) this.f;
+                tiVar.getClass();
+                g0.h3(new di.j(tiVar, tL_error, tLObject, tL_chatInviteImporter, this.b, this.c, u3Var));
                 break;
             case 2:
-                qp qpVar = (qp) this.d;
+                np npVar = (np) this.d;
                 a0.h hVar = (a0.h) this.e;
-                lp lpVar = (lp) this.f;
+                ip ipVar = (ip) this.f;
                 TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers = null;
                 if (tLObject != null) {
                     TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers2 = (TLRPC.TL_channels_sendAsPeers) tLObject;
                     if (!tL_channels_sendAsPeers2.peers.isEmpty()) {
-                        g0.h3(new hi(17, qpVar, tL_channels_sendAsPeers2));
+                        g0.h3(new fi(17, npVar, tL_channels_sendAsPeers2));
                         tL_channels_sendAsPeers = tL_channels_sendAsPeers2;
                     }
                 }
-                g0.h3(new z3(qpVar, tL_channels_sendAsPeers, hVar, this.c, lpVar, this.b));
+                g0.h3(new z3(npVar, tL_channels_sendAsPeers, hVar, this.c, ipVar, this.b));
                 break;
             case 3:
-                g0.h3(new z3((k00) this.d, tLObject, this.b, this.c, (HashSet) this.e, (Runnable) this.f));
+                g0.h3(new z3((h00) this.d, tLObject, this.b, this.c, (HashSet) this.e, (Runnable) this.f));
                 break;
             default:
-                g0.h3(new bi.l((f10) this.d, (b10) this.e, tLObject, this.b, tL_error, this.c, (HashSet) this.f));
+                g0.h3(new di.j((c10) this.d, (y00) this.e, tLObject, this.b, tL_error, this.c, (HashSet) this.f));
                 break;
         }
     }
 
-    public /* synthetic */ y3(d4 d4Var, long j3, boolean z9, String str, Runnable runnable) {
+    public /* synthetic */ y3(d4 d4Var, long j3, boolean z10, String str, Runnable runnable) {
         this.a = 0;
         this.d = d4Var;
         this.c = j3;
-        this.b = z9;
+        this.b = z10;
         this.e = str;
         this.f = runnable;
     }
 
-    public /* synthetic */ y3(qp qpVar, a0.h hVar, long j3, lp lpVar, boolean z9) {
+    public /* synthetic */ y3(np npVar, a0.h hVar, long j3, ip ipVar, boolean z10) {
         this.a = 2;
-        this.d = qpVar;
+        this.d = npVar;
         this.e = hVar;
         this.c = j3;
-        this.f = lpVar;
-        this.b = z9;
+        this.f = ipVar;
+        this.b = z10;
     }
 
-    public /* synthetic */ y3(k00 k00Var, boolean z9, long j3, HashSet hashSet, Runnable runnable) {
+    public /* synthetic */ y3(h00 h00Var, boolean z10, long j3, HashSet hashSet, Runnable runnable) {
         this.a = 3;
-        this.d = k00Var;
-        this.b = z9;
+        this.d = h00Var;
+        this.b = z10;
         this.c = j3;
         this.e = hashSet;
         this.f = runnable;

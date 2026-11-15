@@ -2,7 +2,7 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class s {
     private final d9.q a;
@@ -18,7 +18,7 @@ final class s {
         if (context == null) {
             throw new NullPointerException("instance cannot be null");
         }
-        d9.o oVar = new d9.o(context);
+        d9.o oVar = new d9.o(context, 0);
         this.a = oVar;
         adVar = ac.a;
         d9.m b10 = d9.m.b(adVar);

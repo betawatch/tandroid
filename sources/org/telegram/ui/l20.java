@@ -1,43 +1,20 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l20 implements TextWatcher {
-    public final /* synthetic */ f40 a;
-
-    public l20(f40 f40Var) {
-        this.a = f40Var;
+public final class l20 extends FrameLayout {
+    public l20(LaunchActivity launchActivity) {
+        super(launchActivity);
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String str;
-        f40 f40Var = this.a;
-        f40Var.u5.a(TextUtils.isEmpty(editable), true);
-        int codePointCount = Character.codePointCount(editable, 0, editable.length());
-        int i7 = f40Var.X1;
-        if (codePointCount + 25 > i7) {
-            str = "" + (i7 - codePointCount);
-        } else {
-            str = null;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getAlpha() <= 0.95f) {
+            return false;
         }
-        f40Var.G1.a();
-        f40Var.G1.setText(str);
-        f40Var.G1.setTextColor(codePointCount >= i7 ? -1280137 : -1);
-        if (codePointCount > i7) {
-            org.telegram.messenger.p2.D.a();
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v4 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -43,42 +43,42 @@ public final /* synthetic */ class v4 implements RequestDelegate {
                     } else {
                         g5Var.getUserConfig().h = contacts_contacts.saved_count;
                         g5Var.getUserConfig().v(false);
-                        g0.h3(new dg(g5Var, contacts_contacts.users, i7, contacts_contacts.contacts, 3));
+                        g0.h3(new cg(g5Var, contacts_contacts.users, i7, contacts_contacts.contacts, 3));
                         break;
                     }
                 }
                 break;
             case 1:
-                sd sdVar = (sd) this.c;
+                rd rdVar = (rd) this.c;
                 if (tL_error == null) {
-                    g0.h3(new a4(sdVar, this.b, tLObject, 1));
+                    g0.h3(new a4(rdVar, this.b, tLObject, 1));
                     break;
                 }
                 break;
             case 2:
-                g0.h3(new ir((vv) this.c, tLObject, this.b, 4));
+                g0.h3(new fr((tv) this.c, tLObject, this.b, 4));
                 break;
             case 3:
-                dw dwVar = (dw) this.c;
+                bw bwVar = (bw) this.c;
                 long j3 = this.b;
                 if (j3 == 0) {
-                    dwVar.getClass();
+                    bwVar.getClass();
                     break;
                 } else {
-                    dwVar.getMessagesStorage().q1(j3);
+                    bwVar.getMessagesStorage().q1(j3);
                     break;
                 }
             default:
-                gz gzVar = (gz) this.c;
+                ez ezVar = (ez) this.c;
                 if (tL_error == null) {
-                    gzVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    ezVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
                 }
                 long j10 = this.b;
                 if (j10 == 0) {
-                    gzVar.getClass();
+                    ezVar.getClass();
                     break;
                 } else {
-                    gzVar.getMessagesStorage().q1(j10);
+                    ezVar.getMessagesStorage().q1(j10);
                     break;
                 }
         }

@@ -1,103 +1,62 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.content.Intent;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ki0 extends org.telegram.ui.ActionBar.k {
+public final class ki0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 c;
+    public final /* synthetic */ PasscodeActivity b;
 
-    public /* synthetic */ ki0(org.telegram.ui.ActionBar.f2 f2Var, Object obj, int i7) {
+    public /* synthetic */ ki0(PasscodeActivity passcodeActivity, int i7) {
         this.a = i7;
-        this.c = f2Var;
-        this.b = obj;
+        this.b = passcodeActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i7) {
-        int i10 = this.a;
-        Object obj = this.b;
-        int i11 = 0;
-        org.telegram.ui.ActionBar.f2 f2Var = this.c;
-        switch (i10) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i7 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        switch (this.a) {
             case 0:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) f2Var;
-                if (i7 != -1) {
-                    if (i7 == 1) {
-                        passcodeActivity.D = passcodeActivity.D != 0 ? 0 : 1;
-                        org.telegram.messenger.g0.i3(new tc0(18, this, (org.telegram.ui.ActionBar.z0) obj), 150L);
-                        passcodeActivity.h.setText("");
-                        er[] erVarArr = passcodeActivity.n.f;
-                        int length = erVarArr.length;
-                        while (i11 < length) {
-                            erVarArr[i11].setText("");
-                            i11++;
-                        }
-                        passcodeActivity.z0();
-                        break;
-                    }
-                } else {
-                    passcodeActivity.finishFragment();
+                PasscodeActivity passcodeActivity = this.b;
+                fi0 fi0Var = passcodeActivity.T;
+                if (passcodeActivity.S) {
+                    passcodeActivity.n.removeCallbacks(fi0Var);
+                    fi0Var.run();
                     break;
                 }
                 break;
             default:
-                ProxyListActivity proxyListActivity = (ProxyListActivity) f2Var;
-                ArrayList arrayList = proxyListActivity.E;
-                if (i7 == -1) {
-                    if (!arrayList.isEmpty()) {
-                        proxyListActivity.a.F();
-                        break;
-                    } else {
-                        proxyListActivity.finishFragment();
-                        break;
-                    }
-                } else if (i7 == 0) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(proxyListActivity.getParentActivity());
-                    String M0 = org.telegram.messenger.id.M0(arrayList.size() > 1 ? 2131751510 : 2131751511, null);
-                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                    u1Var.T = M0;
-                    alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-                    u1Var.R = org.telegram.messenger.id.M0(2131751509, null);
-                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751598, null), new oi0(this, 13));
-                    proxyListActivity.showDialog(u1Var);
-                    TextView textView = (TextView) u1Var.d(-1);
-                    if (textView != null) {
-                        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
-                        break;
-                    }
-                } else if (i7 == 1) {
-                    StringBuilder sb2 = new StringBuilder();
-                    int size = arrayList.size();
-                    while (i11 < size) {
-                        Object obj2 = arrayList.get(i11);
-                        i11++;
-                        org.telegram.messenger.hz hzVar = (org.telegram.messenger.hz) obj2;
-                        if (sb2.length() > 0) {
-                            sb2.append("\n\n");
-                        }
-                        sb2.append(hzVar.a.e());
-                    }
-                    Intent intent = new Intent("android.intent.action.SEND");
-                    intent.setType("text/plain");
-                    intent.putExtra("android.intent.extra.TEXT", sb2.toString());
-                    Intent createChooser = Intent.createChooser(intent, org.telegram.messenger.id.M0(arrayList.size() > 1 ? 2131745457 : 2131745458, null));
-                    createChooser.setFlags(TLObject.FLAG_28);
-                    ((Context) obj).startActivity(createChooser);
-                    l4 l4Var = proxyListActivity.a;
-                    if (l4Var != null) {
-                        l4Var.F();
-                        break;
-                    }
+                PasscodeActivity passcodeActivity2 = this.b;
+                fi0 fi0Var2 = passcodeActivity2.T;
+                if (passcodeActivity2.S) {
+                    passcodeActivity2.n.removeCallbacks(fi0Var2);
+                    fi0Var2.run();
+                    break;
                 }
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(Editable editable) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

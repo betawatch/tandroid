@@ -9,9 +9,9 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.r2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public class c0 extends z0 {
+public class c0 extends a1 {
     public static final boolean q;
     public PointF k;
     public final DisplayMetrics l;
@@ -23,7 +23,7 @@ public class c0 extends z0 {
     public int p = 0;
 
     static {
-        boolean z9 = r2.a;
+        boolean z10 = r2.a;
         q = true;
     }
 
@@ -31,8 +31,8 @@ public class c0 extends z0 {
         this.l = context.getResources().getDisplayMetrics();
     }
 
-    @Override // v4.z0
-    public final void d(int i7, int i10, y0 y0Var) {
+    @Override // v4.a1
+    public final void d(int i7, int i10, z0 z0Var) {
         PointF pointF;
         if (this.b.y.r() == 0) {
             h();
@@ -52,24 +52,24 @@ public class c0 extends z0 {
         int i15 = i13 * i14 > 0 ? i14 : 0;
         this.p = i15;
         if (i12 == 0 && i15 == 0) {
-            q(y0Var);
+            q(z0Var);
         }
     }
 
-    @Override // v4.z0
+    @Override // v4.a1
     public final void f() {
         this.p = 0;
         this.o = 0;
         this.k = null;
     }
 
-    @Override // v4.z0
-    public void g(View view, y0 y0Var) {
+    @Override // v4.a1
+    public void g(View view, z0 z0Var) {
         int j3 = j(o(), view);
         int k10 = k(p(), view);
         int m10 = m((int) Math.sqrt((k10 * k10) + (j3 * j3)));
         if (m10 > 0) {
-            y0Var.b(-j3, -k10, m10, this.j);
+            z0Var.b(-j3, -k10, m10, this.j);
         }
     }
 
@@ -95,21 +95,21 @@ public class c0 extends z0 {
     }
 
     public final int j(int i7, View view) {
-        n0 n0Var = this.c;
-        if (n0Var == null || !n0Var.d()) {
+        o0 o0Var = this.c;
+        if (o0Var == null || !o0Var.d()) {
             return 0;
         }
-        o0 o0Var = (o0) view.getLayoutParams();
-        return i(n0.x(view) - ((ViewGroup.MarginLayoutParams) o0Var).leftMargin, n0.y(view) + ((ViewGroup.MarginLayoutParams) o0Var).rightMargin, n0Var.D(), n0Var.m - n0Var.E(), i7);
+        p0 p0Var = (p0) view.getLayoutParams();
+        return i(o0.x(view) - ((ViewGroup.MarginLayoutParams) p0Var).leftMargin, o0.y(view) + ((ViewGroup.MarginLayoutParams) p0Var).rightMargin, o0Var.D(), o0Var.m - o0Var.E(), i7);
     }
 
     public int k(int i7, View view) {
-        n0 n0Var = this.c;
-        if (n0Var == null || !n0Var.e()) {
+        o0 o0Var = this.c;
+        if (o0Var == null || !o0Var.e()) {
             return 0;
         }
-        o0 o0Var = (o0) view.getLayoutParams();
-        return i(n0.z(view) - ((ViewGroup.MarginLayoutParams) o0Var).topMargin, n0.v(view) + ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin, n0Var.F(), n0Var.n - n0Var.C(), i7);
+        p0 p0Var = (p0) view.getLayoutParams();
+        return i(o0.z(view) - ((ViewGroup.MarginLayoutParams) p0Var).topMargin, o0.v(view) + ((ViewGroup.MarginLayoutParams) p0Var).bottomMargin, o0Var.F(), o0Var.n - o0Var.C(), i7);
     }
 
     public float l(DisplayMetrics displayMetrics) {
@@ -153,21 +153,21 @@ public class c0 extends z0 {
         return f10 > 0.0f ? 1 : -1;
     }
 
-    public void q(y0 y0Var) {
+    public void q(z0 z0Var) {
         PointF a10 = a(this.a);
         if (a10 == null || (a10.x == 0.0f && a10.y == 0.0f)) {
-            y0Var.d = this.a;
+            z0Var.d = this.a;
             h();
             return;
         }
-        z0.b(a10);
+        a1.b(a10);
         this.k = a10;
         this.o = (int) (a10.x * 10000.0f);
         this.p = (int) (a10.y * 10000.0f);
-        y0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.i);
+        z0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.i);
     }
 
-    @Override // v4.z0
+    @Override // v4.a1
     public final void e() {
     }
 }

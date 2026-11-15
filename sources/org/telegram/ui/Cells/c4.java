@@ -2,36 +2,36 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class c4 extends org.telegram.ui.ActionBar.m5 {
-    public float M0;
-    public final /* synthetic */ int N0;
-    public final /* synthetic */ f4 O0;
+public final class c4 extends org.telegram.ui.ActionBar.j5 {
+    public float N0;
+    public final /* synthetic */ int O0;
+    public final /* synthetic */ f4 P0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public c4(f4 f4Var, Context context, int i7) {
         super(context);
-        this.O0 = f4Var;
-        this.N0 = i7;
+        this.P0 = f4Var;
+        this.O0 = i7;
     }
 
     @Override // android.view.View
     public final float getAlpha() {
-        return this.M0;
+        return this.N0;
     }
 
     @Override // android.view.View
     public final void setAlpha(float f10) {
-        this.M0 = f10;
-        f4 f4Var = this.O0;
-        if (this.N0 != 4) {
+        this.N0 = f10;
+        f4 f4Var = this.P0;
+        if (this.O0 != 4) {
             super.setAlpha((1.0f - f4Var.d[4].getFullAlpha()) * f10);
             return;
         }
         float fullAlpha = f4Var.d[4].getFullAlpha();
         if (f4Var.c()) {
-            float f11 = f4Var.e0;
+            float f11 = f4Var.f0;
             if (f11 > 0.0f) {
                 super.setAlpha(1.0f - f11);
                 return;
@@ -44,24 +44,24 @@ public final class c4 extends org.telegram.ui.ActionBar.m5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m5
+    @Override // org.telegram.ui.ActionBar.j5
     public final void setFullAlpha(float f10) {
         super.setFullAlpha(f10);
         int i7 = 0;
         while (true) {
-            org.telegram.ui.ActionBar.m5[] m5VarArr = this.O0.d;
-            if (i7 >= m5VarArr.length) {
+            org.telegram.ui.ActionBar.j5[] j5VarArr = this.P0.d;
+            if (i7 >= j5VarArr.length) {
                 return;
             }
-            org.telegram.ui.ActionBar.m5 m5Var = m5VarArr[i7];
-            m5Var.setAlpha(m5Var.getAlpha());
+            org.telegram.ui.ActionBar.j5 j5Var = j5VarArr[i7];
+            j5Var.setAlpha(j5Var.getAlpha());
             i7++;
         }
     }
 
     @Override // android.view.View
     public final void setTranslationY(float f10) {
-        if (this.N0 == 4 && getFullAlpha() > 0.0f) {
+        if (this.O0 == 4 && getFullAlpha() > 0.0f) {
             f10 = 0.0f;
         }
         super.setTranslationY(f10);

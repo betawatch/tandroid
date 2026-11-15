@@ -1,97 +1,174 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import java.util.HashSet;
-import java.util.Random;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class qo0 extends View implements org.telegram.ui.ActionBar.c6 {
-    public Random a;
-    public Paint b;
-    public Paint c;
-    public Paint d;
-    public Paint e;
-    public float f;
-    public float h;
-    public float n;
+public final class qo0 extends Drawable {
+    public long a = 0;
+    public final float[] b = {0.0f, -0.5f};
+    public final Drawable c;
+    public final Drawable d;
+    public final Drawable e;
+    public final int f;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.c;
-        Paint paint2 = this.b;
-        super.onDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.messenger.qs.e4, 31);
-        float f10 = 3.0f;
-        int measuredWidth = (getMeasuredWidth() / 2) - org.telegram.messenger.g0.L(3.0f);
-        int L = org.telegram.messenger.g0.L(1.0f) + ((org.telegram.messenger.g0.L(1.0f) + measuredWidth) * 7);
-        wq wqVar = wq.g;
-        float f11 = this.f;
-        float interpolation = wqVar.getInterpolation(f11 > 0.4f ? (f11 - 0.4f) / 0.6f : 0.0f);
-        float f12 = (this.n * interpolation) + ((1.0f - interpolation) * this.h);
-        canvas.save();
-        canvas.translate(0.0f, (-org.telegram.messenger.k5.B(4.0f, getMeasuredHeight(), L)) * f12);
-        int i7 = 0;
-        for (int i10 = 7; i7 < i10; i10 = 7) {
-            int L2 = ((org.telegram.messenger.g0.L(1.0f) + measuredWidth) * i7) + org.telegram.messenger.g0.L(f10);
-            RectF rectF = org.telegram.messenger.g0.P;
-            float f13 = L2;
-            float f14 = L2 + measuredWidth;
-            rectF.set(0.0f, f13, measuredWidth, f14);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), paint2);
-            rectF.set(org.telegram.messenger.g0.L(1.0f) + measuredWidth, f13, org.telegram.messenger.k5.C(1.0f, measuredWidth, measuredWidth), f14);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), paint2);
-            i7++;
-            f10 = f10;
+    public qo0(Context context, int i7) {
+        this.f = i7;
+        if (i7 == 4) {
+            this.c = i5.c.g(context, R.drawable.filled_extend_location);
+            this.d = i5.c.g(context, R.drawable.smallanimationpinleft);
+            this.e = i5.c.g(context, R.drawable.smallanimationpinright);
+        } else if (i7 == 5) {
+            this.c = i5.c.g(context, R.drawable.filled_stop_location);
+            this.d = i5.c.g(context, R.drawable.smallanimationpinleft);
+            this.e = i5.c.g(context, R.drawable.smallanimationpinright);
+        } else if (i7 == 1) {
+            this.c = i5.c.g(context, R.drawable.smallanimationpin);
+            this.d = i5.c.g(context, R.drawable.smallanimationpinleft);
+            this.e = i5.c.g(context, R.drawable.smallanimationpinright);
+        } else {
+            this.c = i5.c.g(context, R.drawable.animationpin);
+            this.d = i5.c.g(context, R.drawable.animationpinleft);
+            this.e = i5.c.g(context, R.drawable.animationpinright);
         }
-        float f15 = f10;
-        canvas.restore();
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), org.telegram.messenger.g0.L(4.0f), this.d);
-        canvas.translate(0.0f, getMeasuredHeight() - org.telegram.messenger.g0.L(4.0f));
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), org.telegram.messenger.g0.L(4.0f), this.e);
-        canvas.restore();
-        float measuredHeight = ((getMeasuredHeight() - org.telegram.messenger.g0.L(21.0f)) * f12) + org.telegram.messenger.g0.L(f15);
-        RectF rectF2 = org.telegram.messenger.g0.P;
-        rectF2.set(getMeasuredWidth() - org.telegram.messenger.g0.L(f15), measuredHeight, getMeasuredWidth(), org.telegram.messenger.g0.L(15.0f) + measuredHeight);
-        canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(1.5f), org.telegram.messenger.g0.L(1.5f), paint);
-        float centerY = rectF2.centerY();
-        float L3 = org.telegram.messenger.g0.L(0.5f) + measuredWidth;
-        rectF2.set(L3 - org.telegram.messenger.g0.L(8.0f), centerY - org.telegram.messenger.g0.L(f15), L3 + org.telegram.messenger.g0.L(8.0f), centerY + org.telegram.messenger.g0.L(f15));
-        canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(f15), org.telegram.messenger.g0.L(f15), paint);
-        float f16 = this.f + 0.016f;
-        this.f = f16;
-        if (f16 > 1.0f) {
-            this.h = this.n;
-            float abs = Math.abs(this.a.nextInt() % 1001) / 1000.0f;
-            this.n = abs;
-            if (abs > this.h) {
-                this.n = abs + 0.3f;
-            } else {
-                this.n = abs - 0.3f;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float[] fArr;
+        int L;
+        int L2;
+        int L3;
+        int D;
+        int i7;
+        Drawable drawable = this.c;
+        int intrinsicWidth = drawable.getIntrinsicWidth();
+        int intrinsicHeight = drawable.getIntrinsicHeight();
+        int i10 = 3;
+        int i11 = 5;
+        int i12 = 1;
+        int i13 = this.f;
+        int i14 = 4;
+        int L4 = (i13 == 4 || i13 == 5) ? org.telegram.messenger.g0.L(24.0f) : i13 == 3 ? org.telegram.messenger.g0.L(44.0f) : i13 == 2 ? org.telegram.messenger.g0.L(32.0f) : i13 == 1 ? org.telegram.messenger.g0.L(30.0f) : org.telegram.messenger.g0.L(120.0f);
+        int intrinsicHeight2 = ((getIntrinsicHeight() - L4) / 2) + getBounds().top;
+        int intrinsicWidth2 = ((getIntrinsicWidth() - L4) / 2) + getBounds().left;
+        int i15 = intrinsicWidth + intrinsicWidth2;
+        drawable.setBounds(intrinsicWidth2, intrinsicHeight2, i15, intrinsicHeight2 + intrinsicHeight);
+        drawable.draw(canvas);
+        int i16 = 0;
+        while (true) {
+            fArr = this.b;
+            if (i16 >= 2) {
+                break;
             }
-            this.n = Math.max(0.0f, Math.min(1.0f, this.n));
-            this.f = 0.0f;
+            float f10 = fArr[i16];
+            if (f10 >= 0.0f) {
+                float f11 = (f10 * 0.5f) + 0.5f;
+                if (i13 == i14 || i13 == i11) {
+                    int L5 = org.telegram.messenger.g0.L(2.5f * f11);
+                    L = org.telegram.messenger.g0.L(f11 * 6.5f);
+                    int L6 = org.telegram.messenger.g0.L(fArr[i16] * 6.0f);
+                    L2 = (org.telegram.messenger.g0.L(3.0f) + intrinsicWidth2) - L6;
+                    L3 = ((intrinsicHeight / 2) + intrinsicHeight2) - org.telegram.messenger.g0.L(2.0f);
+                    D = org.telegram.messenger.i20.D(3.0f, i15, L6);
+                    i7 = L5;
+                } else if (i13 == i10) {
+                    i7 = org.telegram.messenger.g0.L(5.0f * f11);
+                    L = org.telegram.messenger.g0.L(f11 * 18.0f);
+                    int L7 = org.telegram.messenger.g0.L(fArr[i16] * 15.0f);
+                    L2 = (org.telegram.messenger.g0.L(2.0f) + intrinsicWidth2) - L7;
+                    L3 = ((intrinsicHeight / 2) + intrinsicHeight2) - org.telegram.messenger.g0.L(7.0f);
+                    D = org.telegram.messenger.i20.D(2.0f, i15, L7);
+                } else if (i13 == 2) {
+                    i7 = org.telegram.messenger.g0.L(5.0f * f11);
+                    L = org.telegram.messenger.g0.L(f11 * 18.0f);
+                    int L8 = org.telegram.messenger.g0.L(fArr[i16] * 15.0f);
+                    L2 = (org.telegram.messenger.g0.L(2.0f) + intrinsicWidth2) - L8;
+                    L3 = (intrinsicHeight / 2) + intrinsicHeight2;
+                    D = org.telegram.messenger.i20.D(2.0f, i15, L8);
+                } else if (i13 == i12) {
+                    int L9 = org.telegram.messenger.g0.L(2.5f * f11);
+                    L = org.telegram.messenger.g0.L(f11 * 6.5f);
+                    int L10 = org.telegram.messenger.g0.L(fArr[i16] * 6.0f);
+                    L2 = (org.telegram.messenger.g0.L(7.0f) + intrinsicWidth2) - L10;
+                    L3 = (intrinsicHeight / 2) + intrinsicHeight2;
+                    i7 = L9;
+                    D = org.telegram.messenger.i20.D(7.0f, i15, L10);
+                } else {
+                    i7 = org.telegram.messenger.g0.L(5.0f * f11);
+                    L = org.telegram.messenger.g0.L(f11 * 18.0f);
+                    int L11 = org.telegram.messenger.g0.L(fArr[i16] * 15.0f);
+                    L2 = (org.telegram.messenger.g0.L(42.0f) + intrinsicWidth2) - L11;
+                    L3 = ((intrinsicHeight / 2) + intrinsicHeight2) - org.telegram.messenger.g0.L(7.0f);
+                    D = org.telegram.messenger.i20.D(42.0f, i15, L11);
+                }
+                float f12 = fArr[i16];
+                int y10 = (int) ((f12 < 0.5f ? f12 / 0.5f : org.telegram.messenger.k5.y(f12, 0.5f, 0.5f, 1.0f)) * 255.0f);
+                Drawable drawable2 = this.d;
+                drawable2.setAlpha(y10);
+                int i17 = L3 - L;
+                int i18 = L3 + L;
+                drawable2.setBounds(L2 - i7, i17, L2 + i7, i18);
+                drawable2.draw(canvas);
+                Drawable drawable3 = this.e;
+                drawable3.setAlpha(y10);
+                drawable3.setBounds(D - i7, i17, D + i7, i18);
+                drawable3.draw(canvas);
+            }
+            i16++;
+            i10 = 3;
+            i11 = 5;
+            i12 = 1;
+            i14 = 4;
         }
-        invalidate();
+        long currentTimeMillis = System.currentTimeMillis();
+        long j3 = currentTimeMillis - this.a;
+        this.a = currentTimeMillis;
+        if (j3 > 16) {
+            j3 = 16;
+        }
+        for (int i19 = 0; i19 < 2; i19++) {
+            if (fArr[i19] >= 1.0f) {
+                fArr[i19] = 0.0f;
+            }
+            float f13 = (j3 / 1300.0f) + fArr[i19];
+            fArr[i19] = f13;
+            if (f13 > 1.0f) {
+                fArr[i19] = 1.0f;
+            }
+        }
+        invalidateSelf();
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void updateColors() {
-        try {
-            Paint paint = this.b;
-            int i7 = org.telegram.ui.ActionBar.m6.dg;
-            paint.setColor(i0.a.o(org.telegram.ui.ActionBar.m6.x0(null, i7, false), 76));
-            this.c.setColor(org.telegram.ui.ActionBar.m6.x0(null, i7, false));
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        int i7 = this.f;
+        return (i7 == 4 || i7 == 5) ? org.telegram.messenger.g0.L(42.0f) : i7 == 3 ? org.telegram.messenger.g0.L(100.0f) : i7 == 2 ? org.telegram.messenger.g0.L(74.0f) : i7 == 1 ? org.telegram.messenger.g0.L(40.0f) : org.telegram.messenger.g0.L(180.0f);
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        int i7 = this.f;
+        return (i7 == 4 || i7 == 5) ? org.telegram.messenger.g0.L(42.0f) : i7 == 3 ? org.telegram.messenger.g0.L(100.0f) : i7 == 2 ? org.telegram.messenger.g0.L(74.0f) : i7 == 1 ? org.telegram.messenger.g0.L(40.0f) : org.telegram.messenger.g0.L(120.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.c.setColorFilter(colorFilter);
+        this.d.setColorFilter(colorFilter);
+        this.e.setColorFilter(colorFilter);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
     }
 }

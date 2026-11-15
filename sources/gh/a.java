@@ -1,23 +1,23 @@
 package gh;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public interface a {
-    int A();
+    float A1();
 
-    int C0();
+    int A2();
 
-    int M();
+    int D1();
 
-    int O();
+    int M0();
 
-    int R0();
+    int U0();
 
-    int e1();
+    int W1();
 
-    float j0();
+    float Y0();
 
-    float o0();
+    float Z0();
 
-    float v0();
+    int t0();
 }

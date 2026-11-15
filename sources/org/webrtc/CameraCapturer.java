@@ -10,7 +10,7 @@ import java.util.List;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 abstract class CameraCapturer implements CameraVideoCapturer {
     private static final int MAX_OPEN_CAMERA_ATTEMPTS = 3;
@@ -202,7 +202,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     private final Object stateLock = new Object();
     private SwitchState switchState = SwitchState.IDLE;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public enum SwitchState {
         IDLE,
         PENDING,
@@ -286,7 +286,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     public void switchCameraInternal(CameraVideoCapturer.CameraSwitchHandler cameraSwitchHandler, String str) {
         Logging.d(TAG, "switchCamera internal");
         if (!Arrays.asList(this.cameraEnumerator.getDeviceNames()).contains(str)) {
-            reportCameraSwitchError(rf.b.i("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
+            reportCameraSwitchError(r.b.k("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
             return;
         }
         synchronized (this.stateLock) {
@@ -295,13 +295,13 @@ abstract class CameraCapturer implements CameraVideoCapturer {
                     reportCameraSwitchError("Camera switch already in progress.", cameraSwitchHandler);
                     return;
                 }
-                boolean z9 = this.sessionOpening;
-                if (!z9 && this.currentSession == null) {
+                boolean z10 = this.sessionOpening;
+                if (!z10 && this.currentSession == null) {
                     reportCameraSwitchError("switchCamera: camera is not running.", cameraSwitchHandler);
                     return;
                 }
                 this.switchEventsHandler = cameraSwitchHandler;
-                if (z9) {
+                if (z10) {
                     this.switchState = SwitchState.PENDING;
                     this.pendingCameraName = str;
                     return;
@@ -336,9 +336,9 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void changeCaptureFormat(int i7, int i10, int i11) {
-        StringBuilder o4 = jg.g.o("changeCaptureFormat: ", i7, "x", i10, "@");
-        o4.append(i11);
-        Logging.d(TAG, o4.toString());
+        StringBuilder n10 = i5.c.n("changeCaptureFormat: ", i7, "x", i10, "@");
+        n10.append(i11);
+        Logging.d(TAG, n10.toString());
         synchronized (this.stateLock) {
             stopCapture();
             startCapture(i7, i10, i11);
@@ -395,9 +395,9 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void startCapture(int i7, int i10, int i11) {
-        StringBuilder o4 = jg.g.o("startCapture: ", i7, "x", i10, "@");
-        o4.append(i11);
-        Logging.d(TAG, o4.toString());
+        StringBuilder n10 = i5.c.n("startCapture: ", i7, "x", i10, "@");
+        n10.append(i11);
+        Logging.d(TAG, n10.toString());
         if (this.applicationContext == null) {
             throw new RuntimeException("CameraCapturer must be initialized before calling startCapture.");
         }

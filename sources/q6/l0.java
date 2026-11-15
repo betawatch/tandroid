@@ -6,7 +6,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class l0 {
     public static final Object g = new Object();
@@ -89,8 +89,8 @@ public final class l0 {
         }
     }
 
-    public final void c(String str, String str2, ServiceConnection serviceConnection, boolean z9) {
-        i0 i0Var = new i0(str, str2, z9);
+    public final void c(String str, String str2, ServiceConnection serviceConnection, boolean z10) {
+        i0 i0Var = new i0(str, str2, z10);
         m.h(serviceConnection, "ServiceConnection must not be null");
         HashMap hashMap = this.a;
         synchronized (hashMap) {

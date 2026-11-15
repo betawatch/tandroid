@@ -1,18 +1,43 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final class nl0 {
-    public ch.o0 a;
-    public int b;
-    public String c;
-    public int d;
+import android.view.View;
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof nl0)) {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class nl0 extends v4.k {
+    @Override // v4.k, v4.g1
+    public final boolean r(v4.e1 e1Var, e2.r0 r0Var, int i7, int i10, int i11, int i12) {
+        tl0 tl0Var;
+        sl0 sl0Var;
+        View view = e1Var.a;
+        if ((view instanceof tl0) && (sl0Var = (tl0Var = (tl0) view).a) != null) {
+            sl0Var.h = sl0Var.M;
+            sl0Var.f = sl0Var.N;
+            sl0Var.g = sl0Var.O;
+            tl0Var.b.e(true, 0.0f);
+            tl0Var.invalidate();
+        }
+        int translationX = i7 + ((int) view.getTranslationX());
+        int translationY = i10 + ((int) view.getTranslationY());
+        R(e1Var);
+        int i13 = i11 - translationX;
+        int i14 = i12 - translationY;
+        if (i13 == 0 && i14 == 0) {
+            v(e1Var);
             return false;
         }
-        nl0 nl0Var = (nl0) obj;
-        return this.b == nl0Var.b && this.a.h == nl0Var.a.h && this.d == nl0Var.d;
+        if (i13 != 0) {
+            view.setTranslationX(-i13);
+        }
+        if (i14 != 0) {
+            view.setTranslationY(-i14);
+        }
+        this.r.add(new v4.j(e1Var, translationX, translationY, i11, i12));
+        return true;
+    }
+
+    @Override // v4.g1
+    public final boolean t(v4.e1 e1Var) {
+        return true;
     }
 }

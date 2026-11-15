@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.cast;
 
-import a8.n8;
+import a8.o8;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j0 extends f0 {
     public static final j0 e = new j0(0, new Object[0]);
@@ -24,7 +24,7 @@ public final class j0 extends f0 {
 
     @Override // java.util.List
     public final Object get(int i7) {
-        n8.a(i7, this.d);
+        o8.a(i7, this.d);
         Object obj = this.c[i7];
         obj.getClass();
         return obj;

@@ -1,48 +1,190 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Typeface;
-import android.text.TextPaint;
+import android.util.SparseIntArray;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class m41 {
-    public final org.telegram.ui.Components.kz a;
-    public ng.f b;
-    public final int c;
-    public final /* synthetic */ n41 d;
+public final class m41 extends v4.o {
+    public int b;
+    public final e41 c;
+    public final v4.b0 d;
+    public final SparseIntArray e = new SparseIntArray();
+    public int f = -1;
+    public int g = -1;
+    public int h = -1;
+    public int i = -1;
+    public int j = -1;
+    public int k = -1;
+    public int l = -1;
+    public int m = -1;
+    public int n = -1;
+    public int o = -1;
+    public int p = -1;
+    public int q = -1;
+    public int r = -1;
+    public int s = -1;
+    public int t = -1;
+    public int u = -1;
+    public int v = -1;
+    public int w = -1;
+    public int x = -1;
+    public int y = -1;
 
-    public m41(n41 n41Var, int i7) {
-        this.d = n41Var;
-        this.c = i7;
-        org.telegram.ui.Components.kz kzVar = new org.telegram.ui.Components.kz(n41Var.getContext());
-        kzVar.c = true;
-        TextPaint textPaint = new TextPaint(1);
-        kzVar.e = textPaint;
-        kzVar.f = new Paint(1);
-        Paint paint = new Paint(1);
-        kzVar.h = paint;
-        Paint paint2 = new Paint(1);
-        kzVar.n = paint2;
-        kzVar.x = org.telegram.messenger.g0.L(35.0f);
-        kzVar.y = org.telegram.messenger.g0.L(22.0f);
-        kzVar.D = org.telegram.messenger.g0.L(8.0f);
-        kzVar.E = org.telegram.messenger.g0.L(3.5f);
-        kzVar.F = new RectF();
-        kzVar.G = 0.0f;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
-        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.5f));
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint2.setStyle(style);
-        paint2.setStrokeCap(Paint.Cap.ROUND);
-        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        this.a = kzVar;
-        kzVar.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-        n41Var.h.addView(kzVar);
-        n41Var.n.add(this);
+    public m41(e41 e41Var, v4.b0 b0Var) {
+        this.c = e41Var;
+        this.d = b0Var;
+    }
+
+    @Override // v4.o
+    public final boolean a(int i7, int i10) {
+        return this.e.get(i7) == this.c.d(i10);
+    }
+
+    @Override // v4.o
+    public final boolean b(int i7, int i10) {
+        SparseIntArray sparseIntArray = this.e;
+        int i11 = sparseIntArray.get(i7);
+        e41 e41Var = this.c;
+        if (i11 == 13 && e41Var.d(i10) == 13) {
+            return true;
+        }
+        if (sparseIntArray.get(i7) == 10 && e41Var.d(i10) == 10) {
+            return true;
+        }
+        int i12 = this.x;
+        if (i7 >= i12 && i7 <= this.y) {
+            return i7 - i12 == i10 - e41Var.J;
+        }
+        if (i7 == this.f && i10 == e41Var.e) {
+            return true;
+        }
+        if (i7 == this.g && i10 == e41Var.h) {
+            return true;
+        }
+        if (i7 == this.h && i10 == e41Var.r) {
+            return true;
+        }
+        if (i7 == this.i && i10 == e41Var.s) {
+            return true;
+        }
+        if (i7 == this.j && i10 == e41Var.w) {
+            return true;
+        }
+        if (i7 == this.k && i10 == e41Var.x) {
+            return true;
+        }
+        if (i7 == this.l && i10 == e41Var.y) {
+            return true;
+        }
+        if (i7 == this.m && i10 == e41Var.n) {
+            return true;
+        }
+        if (i7 == this.n && i10 == e41Var.E) {
+            return true;
+        }
+        if (i7 == this.r && i10 == e41Var.L) {
+            return true;
+        }
+        if (i7 == this.s && i10 == e41Var.M) {
+            return true;
+        }
+        if (i7 == this.t && i10 == e41Var.N) {
+            return true;
+        }
+        if (i7 == this.u && i10 == e41Var.O) {
+            return true;
+        }
+        if (i7 == this.v && i10 == e41Var.P) {
+            return true;
+        }
+        if (i7 == this.w && i10 == e41Var.Q) {
+            return true;
+        }
+        if (i7 == this.o && i10 == e41Var.F) {
+            return true;
+        }
+        if (i7 == this.p && i10 == e41Var.G) {
+            return true;
+        }
+        return i7 == this.q && i10 == e41Var.H;
+    }
+
+    @Override // v4.o
+    public final int d() {
+        return this.c.d0;
+    }
+
+    @Override // v4.o
+    public final int e() {
+        return this.b;
+    }
+
+    public final void f() {
+        int i7;
+        long j3;
+        View m10;
+        SparseIntArray sparseIntArray = this.e;
+        sparseIntArray.clear();
+        e41 e41Var = this.c;
+        this.b = e41Var.d0;
+        int i10 = 0;
+        for (int i11 = 0; i11 < this.b; i11++) {
+            sparseIntArray.put(i11, e41Var.d(i11));
+        }
+        this.f = e41Var.e;
+        this.g = e41Var.h;
+        this.h = e41Var.r;
+        this.i = e41Var.s;
+        this.j = e41Var.w;
+        this.k = e41Var.x;
+        this.l = e41Var.y;
+        this.m = e41Var.n;
+        this.n = e41Var.E;
+        this.x = e41Var.J;
+        this.y = e41Var.K;
+        this.o = e41Var.F;
+        this.p = e41Var.G;
+        this.q = e41Var.H;
+        this.r = e41Var.L;
+        this.s = e41Var.M;
+        this.t = e41Var.N;
+        this.u = e41Var.O;
+        this.v = e41Var.P;
+        this.w = e41Var.Q;
+        e41Var.E();
+        v4.b0 b0Var = this.d;
+        int L0 = b0Var.L0();
+        int N0 = b0Var.N0();
+        while (true) {
+            if (L0 > N0) {
+                i7 = 0;
+                j3 = -1;
+                break;
+            } else {
+                if (e41Var.c(L0) != -1 && (m10 = b0Var.m(L0)) != null) {
+                    j3 = e41Var.c(L0);
+                    i7 = m10.getTop();
+                    break;
+                }
+                L0++;
+            }
+        }
+        v4.o.c(this, true).c(e41Var);
+        if (j3 != -1) {
+            while (true) {
+                if (i10 >= e41Var.d0) {
+                    i10 = -1;
+                    break;
+                } else if (e41Var.c(i10) == j3) {
+                    break;
+                } else {
+                    i10++;
+                }
+            }
+            if (i10 > 0) {
+                b0Var.h1(i10, i7);
+            }
+        }
     }
 }

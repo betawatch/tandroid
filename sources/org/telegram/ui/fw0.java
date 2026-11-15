@@ -1,52 +1,54 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
+import android.content.Context;
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class fw0 extends ClickableSpan {
-    public final /* synthetic */ TLRPC.TL_username a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ mw0 c;
+public final class fw0 extends View {
+    public int a;
+    public int b;
+    public final /* synthetic */ iw0 c;
 
-    public fw0(mw0 mw0Var, TLRPC.TL_username tL_username, String str) {
-        this.c = mw0Var;
-        this.a = tL_username;
-        this.b = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fw0(iw0 iw0Var, Context context) {
+        super(context);
+        this.c = iw0Var;
+        this.a = 0;
+        this.b = 0;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11 = this.b;
         ProfileActivity profileActivity = this.c.e;
-        TLRPC.TL_username tL_username = this.a;
-        if (!tL_username.editable) {
-            if (profileActivity.k5 == this) {
-                return;
-            }
-            profileActivity.h5(this);
-            TL_fragment.TL_getCollectibleInfo tL_getCollectibleInfo = new TL_fragment.TL_getCollectibleInfo();
-            TL_fragment.TL_inputCollectibleUsername tL_inputCollectibleUsername = new TL_fragment.TL_inputCollectibleUsername();
-            tL_inputCollectibleUsername.username = tL_username.username;
-            tL_getCollectibleInfo.collectible = tL_inputCollectibleUsername;
-            profileActivity.getConnectionsManager().bindRequestToGuid(profileActivity.getConnectionsManager().sendRequest(tL_getCollectibleInfo, new k50(24, this, tL_username)), profileActivity.getClassGuid());
+        if (i11 != profileActivity.a.getMeasuredHeight()) {
+            this.a = 0;
+        }
+        this.b = profileActivity.a.getMeasuredHeight();
+        int childCount = profileActivity.a.getChildCount();
+        if (childCount != profileActivity.d.e.O2) {
+            setMeasuredDimension(profileActivity.a.getMeasuredWidth(), this.a);
             return;
         }
-        profileActivity.h5(null);
-        String str = profileActivity.getMessagesController().U2 + "/" + this.b;
-        TLRPC.Chat chat = profileActivity.D2;
-        if (chat == null || !chat.noforwards) {
-            org.telegram.messenger.g0.g(str);
-            profileActivity.L.j(56, 0L, null);
+        int i12 = 0;
+        for (int i13 = 0; i13 < childCount; i13++) {
+            View childAt = profileActivity.a.getChildAt(i13);
+            profileActivity.a.getClass();
+            int R = RecyclerView.R(childAt);
+            if (R >= 0 && R != profileActivity.D3) {
+                i12 += profileActivity.a.getChildAt(i13).getMeasuredHeight();
+            }
         }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
-        textPaint.setColor(textPaint.linkColor);
+        View view = profileActivity.fragmentView;
+        int measuredHeight = (((view == null ? 0 : view.getMeasuredHeight()) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m) - i12;
+        if (measuredHeight > profileActivity.i4()) {
+            measuredHeight = 0;
+        }
+        int i14 = measuredHeight > 0 ? measuredHeight : 0;
+        int measuredWidth = profileActivity.a.getMeasuredWidth();
+        this.a = i14;
+        setMeasuredDimension(measuredWidth, i14);
     }
 }

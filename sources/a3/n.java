@@ -5,15 +5,15 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
-import c8.e1;
+import c8.g1;
 import e2.p1;
 import e2.q1;
-import h2.m0;
+import h2.l0;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Map;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n extends q1 {
     public static final n F0 = new n(new m());
@@ -47,7 +47,7 @@ public final class n extends q1 {
     public final boolean z0;
 
     static {
-        String str = m0.a;
+        String str = l0.a;
         G0 = Integer.toString(1000, 36);
         H0 = Integer.toString(1001, 36);
         I0 = Integer.toString(1002, 36);
@@ -125,10 +125,10 @@ public final class n extends q1 {
                 if (entry.getValue() != null) {
                     throw new ClassCastException();
                 }
-                arrayList2.add((x2.p1) entry.getKey());
+                arrayList2.add((x2.q1) entry.getKey());
                 arrayList.add(Integer.valueOf(keyAt));
             }
-            c10.putIntArray(Q0, e1.f(arrayList));
+            c10.putIntArray(Q0, g1.f(arrayList));
             c10.putParcelableArrayList(R0, h2.e.h(arrayList2, new l(0)));
             SparseArray<? extends Parcelable> sparseArray3 = new SparseArray<>(sparseArray.size());
             if (sparseArray.size() > 0) {
@@ -167,8 +167,8 @@ public final class n extends q1 {
                                         Map map2 = (Map) sparseArray.valueAt(indexOfKey);
                                         if (map2.size() == map.size()) {
                                             for (Map.Entry entry : map.entrySet()) {
-                                                x2.p1 p1Var = (x2.p1) entry.getKey();
-                                                if (map2.containsKey(p1Var) && Objects.equals(entry.getValue(), map2.get(p1Var))) {
+                                                x2.q1 q1Var = (x2.q1) entry.getKey();
+                                                if (map2.containsKey(q1Var) && Objects.equals(entry.getValue(), map2.get(q1Var))) {
                                                 }
                                             }
                                         }

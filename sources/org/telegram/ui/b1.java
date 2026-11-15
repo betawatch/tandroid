@@ -5,22 +5,22 @@ import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class b1 extends v4.m0 {
+public final class b1 extends v4.n0 {
     public final /* synthetic */ h1 a;
 
     public b1(h1 h1Var) {
         this.a = h1Var;
     }
 
-    @Override // v4.m0
-    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.a1 a1Var) {
+    @Override // v4.n0
+    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.b1 b1Var) {
         g1 g1Var = this.a.w;
         int i7 = 0;
         rect.bottom = 0;
-        org.telegram.messenger.aj ajVar = view instanceof a2 ? (org.telegram.messenger.aj) g1Var.b.get(((a2) view).N) : view instanceof v2 ? (org.telegram.messenger.aj) g1Var.b.get(((v2) view).L) : null;
-        if (ajVar == null || ajVar.m == null) {
+        org.telegram.messenger.yi yiVar = view instanceof a2 ? (org.telegram.messenger.yi) g1Var.b.get(((a2) view).O) : view instanceof v2 ? (org.telegram.messenger.yi) g1Var.b.get(((v2) view).M) : null;
+        if (yiVar == null || yiVar.m == null) {
             return;
         }
         Point point = org.telegram.messenger.g0.q;
@@ -28,21 +28,21 @@ public final class b1 extends v4.m0 {
         int i10 = 0;
         int i11 = 0;
         while (true) {
-            if (i10 >= ajVar.m.length) {
+            if (i10 >= yiVar.m.length) {
                 break;
             }
             i11 += (int) Math.ceil(r3[i10] * max);
             i10++;
         }
-        int M = (org.telegram.messenger.g0.M(11.0f) * (ajVar.d - ajVar.c)) + i11;
+        int M = (org.telegram.messenger.g0.M(11.0f) * (yiVar.d - yiVar.c)) + i11;
         int size = g1Var.a.size();
         while (true) {
             if (i7 < size) {
-                org.telegram.messenger.aj ajVar2 = (org.telegram.messenger.aj) g1Var.a.get(i7);
-                byte b10 = ajVar2.c;
-                byte b11 = ajVar.c;
-                if (b10 == b11 && ((ajVar2.a != ajVar.a || ajVar2.b != ajVar.b || b10 != b11 || ajVar2.d != ajVar.d) && b10 == b11)) {
-                    M = org.telegram.messenger.k5.B(4.0f, (int) Math.ceil(max * ajVar2.f), M);
+                org.telegram.messenger.yi yiVar2 = (org.telegram.messenger.yi) g1Var.a.get(i7);
+                byte b10 = yiVar2.c;
+                byte b11 = yiVar.c;
+                if (b10 == b11 && ((yiVar2.a != yiVar.a || yiVar2.b != yiVar.b || b10 != b11 || yiVar2.d != yiVar.d) && b10 == b11)) {
+                    M = org.telegram.messenger.k5.B(4.0f, (int) Math.ceil(max * yiVar2.f), M);
                     break;
                 }
                 i7++;

@@ -1,112 +1,49 @@
 package hi;
 
-import android.app.Activity;
-import android.content.DialogInterface;
-import di.p7;
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.json.JSONObject;
-import org.telegram.messenger.c20;
-import org.telegram.ui.Cells.z5;
-import org.telegram.ui.Components.t4;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class o0 implements DialogInterface.OnDismissListener {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ u0 b;
 
-    public /* synthetic */ o0(Object obj, Object obj2, Object obj3, int i7) {
+    public /* synthetic */ o0(u0 u0Var, int i7) {
         this.a = i7;
-        this.c = obj;
-        this.b = obj2;
-        this.d = obj3;
+        this.b = u0Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        u0 u0Var = this.b;
+        switch (i7) {
             case 0:
-                r0 r0Var = (r0) this.c;
-                boolean[] zArr = (boolean[]) this.b;
-                org.telegram.ui.web.n nVar = (org.telegram.ui.web.n) this.d;
-                r0Var.getClass();
-                if (!zArr[0]) {
-                    r0Var.d = true;
-                    r0Var.e = false;
-                    r0Var.k();
-                    Iterator it = r0Var.f.iterator();
-                    while (it.hasNext()) {
-                        ((Runnable) it.next()).run();
-                    }
-                    zArr[0] = true;
-                    nVar.a(Boolean.TRUE, Boolean.FALSE);
-                    break;
-                }
+                u0Var.b();
                 break;
             case 1:
-                boolean[] zArr2 = (boolean[]) this.b;
-                boolean[] zArr3 = (boolean[]) this.c;
-                c20 c20Var = (c20) this.d;
-                if (!zArr2[0] && !zArr3[0]) {
-                    zArr3[0] = true;
-                    c20Var.a("USER_DECLINED");
-                    break;
+                u0Var.e = false;
+                r0 r0Var = u0Var.s;
+                if (r0Var != null) {
+                    r0Var.a(true);
+                    u0Var.s = null;
                 }
-                break;
-            case 2:
-                t4 t4Var = (t4) this.c;
-                org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.b;
-                Activity activity = (Activity) this.d;
-                org.telegram.messenger.g0.v1(t4Var);
-                if (f2Var != null) {
-                    org.telegram.messenger.g0.a3(activity, f2Var.getClassGuid());
-                    break;
+                t0 t0Var = u0Var.n;
+                if (t0Var != null) {
+                    t0Var.a();
                 }
-                break;
-            case 3:
-                c20 c20Var2 = (c20) this.c;
-                org.telegram.ui.Components.n3 n3Var = (org.telegram.ui.Components.n3) this.b;
-                org.telegram.ui.Components.p3 p3Var = (org.telegram.ui.Components.p3) this.d;
-                c20Var2.a(Integer.valueOf(p3Var.getValue() + (n3Var.getValue() * 60)));
-                break;
-            case 4:
-                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.c;
-                AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
-                p7 p7Var = (p7) this.d;
-                x0Var.getClass();
-                if (!atomicBoolean.get()) {
-                    x0Var.x(p7Var, "popup_closed", new JSONObject());
-                }
-                x0Var.c0 = null;
-                x0Var.e0 = System.currentTimeMillis();
-                break;
-            case 5:
-                z5 z5Var = (z5) this.c;
-                org.telegram.ui.ActionBar.f2 f2Var2 = (org.telegram.ui.ActionBar.f2) this.b;
-                Activity activity2 = (Activity) this.d;
-                org.telegram.messenger.g0.v1(z5Var);
-                if (f2Var2 != null) {
-                    org.telegram.messenger.g0.a3(activity2, f2Var2.getClassGuid());
-                    break;
-                }
+                u0Var.c = false;
+                u0Var.d();
                 break;
             default:
-                zh.d2 d2Var = (zh.d2) this.c;
-                zh.n1 n1Var = (zh.n1) this.b;
-                Activity activity3 = (Activity) this.d;
-                org.telegram.messenger.g0.v1(n1Var);
-                org.telegram.messenger.g0.a3(activity3, d2Var.a.getClassGuid());
+                if (u0Var.c && u0Var.r != null) {
+                    u0Var.n.b(R.raw.error, 3500, hd.N0("VideoConvertFail"));
+                    u0Var.c = false;
+                    u0Var.d();
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ o0(boolean[] zArr, boolean[] zArr2, c20 c20Var) {
-        this.a = 1;
-        this.b = zArr;
-        this.c = zArr2;
-        this.d = c20Var;
     }
 }

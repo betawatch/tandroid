@@ -1,10 +1,10 @@
 package tf;
 
 import java.io.EOFException;
-import org.telegram.ui.Components.uy;
-import org.telegram.ui.ly0;
+import org.telegram.messenger.ou;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
@@ -15,22 +15,22 @@ public final class f {
     public final boolean f;
     public final int g;
 
-    public f(ly0 ly0Var) {
+    public f(ld0 ld0Var) {
         byte b10;
         byte b11;
-        uf.a aVar = (uf.a) ly0Var.b;
+        uf.a aVar = (uf.a) ld0Var.b;
         long j3 = aVar.b;
-        uy uyVar = (uy) ly0Var.d;
-        h hVar = (h) ly0Var.c;
+        ou ouVar = (ou) ld0Var.d;
+        h hVar = (h) ld0Var.c;
         int i7 = hVar.a;
         int i10 = hVar.a;
         byte b12 = 2;
         if (i7 == 2) {
-            uyVar.getClass();
+            ouVar.getClass();
             byte[] bArr = new byte[3];
             int i11 = 0;
             while (i11 < 3) {
-                int read = ((ab.d) uyVar.b).read(bArr, i11, 3 - i11);
+                int read = ((ab.d) ouVar.b).read(bArr, i11, 3 - i11);
                 if (read <= 0) {
                     throw new EOFException();
                 }
@@ -38,11 +38,11 @@ public final class f {
             }
             this.a = new String(bArr, "ISO-8859-1");
         } else {
-            uyVar.getClass();
+            ouVar.getClass();
             byte[] bArr2 = new byte[4];
             int i12 = 0;
             while (i12 < 4) {
-                int read2 = ((ab.d) uyVar.b).read(bArr2, i12, 4 - i12);
+                int read2 = ((ab.d) ouVar.b).read(bArr2, i12, 4 - i12);
                 if (read2 <= 0) {
                     throw new EOFException();
                 }
@@ -52,15 +52,15 @@ public final class f {
         }
         byte b13 = 8;
         if (i10 == 2) {
-            this.c = ((uyVar.M() & 255) << 16) | ((uyVar.M() & 255) << 8) | (uyVar.M() & 255);
+            this.c = ((ouVar.g1() & 255) << 16) | ((ouVar.g1() & 255) << 8) | (ouVar.g1() & 255);
         } else if (i10 == 3) {
-            this.c = uyVar.O();
+            this.c = ouVar.h1();
         } else {
-            this.c = uyVar.P();
+            this.c = ouVar.j1();
         }
         if (i10 > 2) {
-            uyVar.M();
-            byte M = uyVar.M();
+            ouVar.g1();
+            byte g12 = ouVar.g1();
             byte b14 = 64;
             if (i10 == 3) {
                 b13 = 128;
@@ -72,35 +72,35 @@ public final class f {
                 b11 = 1;
                 b14 = 4;
             }
-            boolean z9 = (b13 & M) != 0;
-            this.e = z9;
-            this.d = (b12 & M) != 0;
-            boolean z10 = (M & b14) != 0;
-            this.f = z10;
+            boolean z10 = (b13 & g12) != 0;
+            this.e = z10;
+            this.d = (b12 & g12) != 0;
+            boolean z11 = (g12 & b14) != 0;
+            this.f = z11;
             if (i10 == 3) {
-                if (z9) {
-                    this.g = uyVar.O();
+                if (z10) {
+                    this.g = ouVar.h1();
                     this.c -= 4;
                 }
-                if (z10) {
-                    uyVar.M();
+                if (z11) {
+                    ouVar.g1();
                     this.c--;
                 }
-                if ((M & b10) != 0) {
-                    uyVar.M();
+                if ((g12 & b10) != 0) {
+                    ouVar.g1();
                     this.c--;
                 }
             } else {
-                if ((M & b10) != 0) {
-                    uyVar.M();
+                if ((g12 & b10) != 0) {
+                    ouVar.g1();
                     this.c--;
                 }
-                if (z10) {
-                    uyVar.M();
+                if (z11) {
+                    ouVar.g1();
                     this.c--;
                 }
-                if ((M & b11) != 0) {
-                    this.g = uyVar.P();
+                if ((g12 & b11) != 0) {
+                    this.g = ouVar.j1();
                     this.c -= 4;
                 }
             }

@@ -1,37 +1,37 @@
 package n2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j2.n b;
-    public final /* synthetic */ r0 c;
+    public final /* synthetic */ k8.a b;
+    public final /* synthetic */ s0 c;
 
-    public /* synthetic */ r(j2.n nVar, r0 r0Var, int i7) {
+    public /* synthetic */ r(k8.a aVar, s0 s0Var, int i7) {
         this.a = i7;
-        this.b = nVar;
-        this.c = r0Var;
+        this.b = aVar;
+        this.c = s0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        r0 r0Var = this.c;
-        j2.n nVar = this.b;
+        s0 s0Var = this.c;
+        k8.a aVar = this.b;
         switch (i7) {
             case 0:
-                s sVar = (s) nVar.c;
-                String str = h2.m0.a;
-                m2.e eVar = ((l2.c0) sVar).a.s;
+                s sVar = (s) aVar.c;
+                String str = h2.l0.a;
+                m2.e eVar = ((l2.z) sVar).a.s;
                 m2.a U = eVar.U();
-                eVar.V(U, 1032, new m2.d(U, r0Var, 14));
+                eVar.V(U, 1032, new m2.c(U, s0Var, 20));
                 break;
             default:
-                s sVar2 = (s) nVar.c;
-                String str2 = h2.m0.a;
-                m2.e eVar2 = ((l2.c0) sVar2).a.s;
+                s sVar2 = (s) aVar.c;
+                String str2 = h2.l0.a;
+                m2.e eVar2 = ((l2.z) sVar2).a.s;
                 m2.a U2 = eVar2.U();
-                eVar2.V(U2, 1031, new m2.c(U2, r0Var, 27));
+                eVar2.V(U2, 1031, new m2.c(U2, s0Var, 3));
                 break;
         }
     }

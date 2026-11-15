@@ -1,61 +1,59 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.lang.reflect.Method;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class aq0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.nk0 b;
+public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ sq0 a;
+    public final /* synthetic */ Integer b;
+    public final /* synthetic */ PhotoViewer c;
 
-    public /* synthetic */ aq0(org.telegram.ui.Components.nk0 nk0Var, int i7) {
-        this.a = i7;
-        this.b = nk0Var;
+    public aq0(PhotoViewer photoViewer, sq0 sq0Var, Integer num) {
+        this.c = photoViewer;
+        this.a = sq0Var;
+        this.b = num;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
-                photoViewer.Q1.getNextView().setText((CharSequence) null);
-                yp0 yp0Var = photoViewer.T1;
-                yp0Var.l0 = false;
-                if (yp0Var.m0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) yp0Var.o0.getLayoutParams()).topMargin = yp0Var.m0;
-                    yp0Var.m0 = -1;
-                    yp0Var.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                ((PhotoViewer) this.b.b).Q1.setTranslationY(0.0f);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                yp0 yp0Var = ((PhotoViewer) this.b.b).T1;
-                Method method = yp0Var.f0;
-                if (method != null) {
-                    try {
-                        method.invoke(yp0Var, null);
-                        break;
-                    } catch (Exception e10) {
-                        org.telegram.messenger.a8.g(e10, true);
-                        return;
-                    }
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        PhotoViewer photoViewer = this.c;
+        photoViewer.h0.getViewTreeObserver().removeOnPreDrawListener(this);
+        photoViewer.G.setTranslationY(-org.telegram.messenger.g0.L(32.0f));
+        ViewPropertyAnimator duration = photoViewer.G.animate().alpha(1.0f).translationY(0.0f).setDuration(150L);
+        org.telegram.ui.Components.er erVar = org.telegram.ui.Components.er.f;
+        duration.setInterpolator(erVar).start();
+        photoViewer.O0.setTranslationY(-org.telegram.messenger.g0.L(32.0f));
+        photoViewer.O0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(erVar).start();
+        photoViewer.P0.setTranslationY(-org.telegram.messenger.g0.L(32.0f));
+        photoViewer.P0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(erVar).start();
+        photoViewer.Q0.setTranslationY(org.telegram.messenger.g0.L(32.0f));
+        photoViewer.Q0.animate().alpha(1.0f).setDuration(150L).setInterpolator(erVar).start();
+        photoViewer.T0.setTranslationY(org.telegram.messenger.g0.L(32.0f));
+        photoViewer.T0.setAlpha(0.0f);
+        photoViewer.T0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(erVar).start();
+        photoViewer.s3.setTranslationY(org.telegram.messenger.g0.L(32.0f));
+        photoViewer.s3.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(erVar).start();
+        photoViewer.f0.setAlpha(0.0f);
+        photoViewer.M0.setAlpha(0);
+        photoViewer.n4 = 4;
+        photoViewer.f0.invalidate();
+        AnimatorSet animatorSet = new AnimatorSet();
+        di.k4 k4Var = photoViewer.Q0;
+        ObjectAnimator duration2 = ObjectAnimator.ofFloat(k4Var, (Property<di.k4, Float>) View.TRANSLATION_Y, k4Var.getTranslationY(), 0.0f).setDuration(220L);
+        duration2.setInterpolator(erVar);
+        di.k4 k4Var2 = photoViewer.Q0;
+        Property property = View.ALPHA;
+        ObjectAnimator duration3 = ObjectAnimator.ofFloat(k4Var2, (Property<di.k4, Float>) property, 1.0f).setDuration(220L);
+        duration3.setInterpolator(erVar);
+        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.f0, (Property<oq0, Float>) property, 0.0f, 1.0f).setDuration(220L), ObjectAnimator.ofFloat(photoViewer.k0, (Property<View, Float>) property, 0.0f, 1.0f).setDuration(220L), duration2, duration3);
+        animatorSet.addListener(new zp0(this));
+        animatorSet.start();
+        return true;
     }
 }

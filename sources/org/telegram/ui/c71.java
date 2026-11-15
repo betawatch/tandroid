@@ -1,66 +1,22 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class c71 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x71 b;
+public final class c71 extends t71 {
+    public final /* synthetic */ an m2;
+    public final /* synthetic */ boolean n2;
 
-    public /* synthetic */ c71(x71 x71Var, int i7) {
-        this.a = i7;
-        this.b = x71Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c71(Object obj, an anVar, boolean z10) {
+        super(obj, null, true);
+        this.m2 = anVar;
+        this.n2 = z10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                x71 x71Var = this.b;
-                x71Var.y0.invalidate();
-                x71Var.x0[1].setVisibility(8);
-                x71Var.d2 = null;
-                break;
-            case 1:
-                this.b.C0 = null;
-                break;
-            case 2:
-                x71 x71Var2 = this.b;
-                if (x71Var2.E0.getTag() == null) {
-                    x71Var2.E0.setVisibility(4);
-                }
-                x71Var2.I0 = null;
-                break;
-            case 3:
-                x71 x71Var3 = this.b;
-                if (x71Var3.F0.getTag() == null) {
-                    x71Var3.F0.setVisibility(4);
-                }
-                x71Var3.J0 = null;
-                break;
-            case 4:
-                x71 x71Var4 = this.b;
-                cc ccVar = x71Var4.i2;
-                if (ccVar != null) {
-                    if (ccVar.getParent() != null) {
-                        ((ViewGroup) x71Var4.i2.getParent()).removeView(x71Var4.i2);
-                    }
-                    x71Var4.i2 = null;
-                }
-                x71Var4.k2 = null;
-                super.onAnimationEnd(animator);
-                break;
-            default:
-                x71 x71Var5 = this.b;
-                if (!x71Var5.q1.a()) {
-                    x71Var5.S1.setVisibility(8);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.e2
+    public final void onFragmentClosed() {
+        super.onFragmentClosed();
+        ym ymVar = this.m2.Aa;
+        ymVar.r(ymVar.f, ymVar.g, false, Boolean.valueOf(this.n2), false);
     }
 }

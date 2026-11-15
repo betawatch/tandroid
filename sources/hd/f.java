@@ -49,7 +49,7 @@ public abstract class f extends l {
         Object next;
         kotlin.jvm.internal.j.e(iterable, "<this>");
         if (i7 < 0) {
-            throw new IllegalArgumentException(jg.g.k(i7, "Requested element count ", " is less than zero.").toString());
+            throw new IllegalArgumentException(i5.c.j(i7, "Requested element count ", " is less than zero.").toString());
         }
         n nVar = n.a;
         if (i7 == 0) {
@@ -129,9 +129,9 @@ public abstract class f extends l {
     public static List l(Iterable iterable) {
         ArrayList arrayList;
         kotlin.jvm.internal.j.e(iterable, "<this>");
-        boolean z9 = iterable instanceof Collection;
+        boolean z10 = iterable instanceof Collection;
         n nVar = n.a;
-        if (z9) {
+        if (z10) {
             Collection collection = (Collection) iterable;
             int size = collection.size();
             if (size == 0) {
@@ -142,7 +142,7 @@ public abstract class f extends l {
             }
             return d0.a(iterable instanceof List ? ((List) iterable).get(0) : collection.iterator().next());
         }
-        if (z9) {
+        if (z10) {
             arrayList = n((Collection) iterable);
         } else {
             ArrayList arrayList2 = new ArrayList();

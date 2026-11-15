@@ -3,9 +3,9 @@ package lc;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.HashMap;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a extends b {
     public static final HashMap U;
@@ -83,20 +83,20 @@ public final class a extends b {
         hashMap2.put(10, "(reserved)");
         hashMap2.put(11, "(reserved)");
         hashMap2.put(12, "TTSI");
-        jg.g.t(13, hashMap2, "Main synthetic", 14, "Wavetable synthesis");
-        jg.g.t(15, hashMap2, "General MIDI", 16, "Algorithmic Synthesis and Audio FX");
-        jg.g.t(17, hashMap2, "ER AAC LC", 18, "(reserved)");
-        jg.g.t(19, hashMap2, "ER AAC LTP", 20, "ER AAC Scalable");
-        jg.g.t(21, hashMap2, "ER TwinVQ", 22, "ER BSAC");
-        jg.g.t(23, hashMap2, "ER AAC LD", 24, "ER CELP");
-        jg.g.t(25, hashMap2, "ER HVXC", 26, "ER HILN");
-        jg.g.t(27, hashMap2, "ER Parametric", 28, "SSC");
-        jg.g.t(29, hashMap2, "PS", 30, "MPEG Surround");
-        jg.g.t(31, hashMap2, "(escape)", 32, "Layer-1");
-        jg.g.t(33, hashMap2, "Layer-2", 34, "Layer-3");
-        jg.g.t(35, hashMap2, "DST", 36, "ALS");
-        jg.g.t(37, hashMap2, "SLS", 38, "SLS non-core");
-        jg.g.t(39, hashMap2, "ER AAC ELD", 40, "SMR Simple");
+        i5.c.s(13, hashMap2, "Main synthetic", 14, "Wavetable synthesis");
+        i5.c.s(15, hashMap2, "General MIDI", 16, "Algorithmic Synthesis and Audio FX");
+        i5.c.s(17, hashMap2, "ER AAC LC", 18, "(reserved)");
+        i5.c.s(19, hashMap2, "ER AAC LTP", 20, "ER AAC Scalable");
+        i5.c.s(21, hashMap2, "ER TwinVQ", 22, "ER BSAC");
+        i5.c.s(23, hashMap2, "ER AAC LD", 24, "ER CELP");
+        i5.c.s(25, hashMap2, "ER HVXC", 26, "ER HILN");
+        i5.c.s(27, hashMap2, "ER Parametric", 28, "SSC");
+        i5.c.s(29, hashMap2, "PS", 30, "MPEG Surround");
+        i5.c.s(31, hashMap2, "(escape)", 32, "Layer-1");
+        i5.c.s(33, hashMap2, "Layer-2", 34, "Layer-3");
+        i5.c.s(35, hashMap2, "DST", 36, "ALS");
+        i5.c.s(37, hashMap2, "SLS", 38, "SLS non-core");
+        i5.c.s(39, hashMap2, "ER AAC ELD", 40, "SMR Simple");
         hashMap2.put(41, "SMR Main");
     }
 
@@ -240,7 +240,7 @@ public final class a extends b {
                 break;
             case 28:
                 throw new UnsupportedOperationException("can't parse SSCSpecificConfig yet");
-            case qs.T /* 30 */:
+            case ns.T /* 30 */:
                 this.o = cVar.a(1);
                 throw new UnsupportedOperationException("can't parse SpatialSpecificConfig yet");
             case 32:

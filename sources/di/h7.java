@@ -1,7 +1,59 @@
 package di;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import android.content.Context;
+import org.telegram.messenger.s10;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public interface h7 {
-    void b(boolean z9);
+public final /* synthetic */ class h7 implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ v8 b;
+    public final /* synthetic */ s10 c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
+    public final /* synthetic */ long f;
+    public final /* synthetic */ String g;
+    public final /* synthetic */ long h;
+    public final /* synthetic */ TLObject i;
+    public final /* synthetic */ TLObject j;
+
+    public /* synthetic */ h7(v8 v8Var, s10 s10Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, String str, long j10, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        this.b = v8Var;
+        this.c = s10Var;
+        this.d = context;
+        this.e = e6Var;
+        this.f = j3;
+        this.g = str;
+        this.h = j10;
+        this.i = tLObject;
+        this.j = tL_textWithEntities;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new l7(this.b, tLObject, tL_error, this.c, this.d, this.e, this.f, this.g, (TLRPC.TL_payments_paymentFormStarGift) this.i, (TL_stars.StarGift) this.j, this.h));
+                break;
+            default:
+                org.telegram.messenger.g0.h3(new l7(this.b, tLObject, tL_error, this.c, this.d, this.e, this.f, this.g, this.h, this.i, (TLRPC.TL_textWithEntities) this.j));
+                break;
+        }
+    }
+
+    public /* synthetic */ h7(v8 v8Var, s10 s10Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10) {
+        this.b = v8Var;
+        this.c = s10Var;
+        this.d = context;
+        this.e = e6Var;
+        this.f = j3;
+        this.g = str;
+        this.i = tL_payments_paymentFormStarGift;
+        this.j = starGift;
+        this.h = j10;
+    }
 }

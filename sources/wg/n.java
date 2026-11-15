@@ -1,32 +1,33 @@
 package wg;
 
-import org.telegram.messenger.c20;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.lv0;
+import tg.v1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c20 b;
-    public final /* synthetic */ c20 c;
+    public final /* synthetic */ z10 b;
+    public final /* synthetic */ z10 c;
 
-    public /* synthetic */ n(c20 c20Var, c20 c20Var2, int i7) {
+    public /* synthetic */ n(z10 z10Var, z10 z10Var2, int i7) {
         this.a = i7;
-        this.b = c20Var;
-        this.c = c20Var2;
+        this.b = z10Var;
+        this.c = z10Var2;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new r31(tL_error, this.b, this.c));
+                org.telegram.messenger.g0.h3(new lv0(tL_error, this.b, this.c, 25));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new q(tL_error, this.b, tLObject, this.c));
+                org.telegram.messenger.g0.h3(new v1(tL_error, this.b, tLObject, this.c, 2));
                 break;
         }
     }

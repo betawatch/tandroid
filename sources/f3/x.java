@@ -4,7 +4,7 @@ import e2.t0;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class x {
     public final List a;
@@ -21,9 +21,9 @@ public final class x {
     public final float l;
     public final int m;
     public final String n;
-    public final ui.e o;
+    public final xi.e o;
 
-    public x(List list, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, float f10, int i19, String str, ui.e eVar) {
+    public x(List list, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, float f10, int i19, String str, xi.e eVar) {
         this.a = list;
         this.b = i7;
         this.c = i10;
@@ -41,13 +41,13 @@ public final class x {
         this.o = eVar;
     }
 
-    public static x a(h2.x xVar, boolean z9, ui.e eVar) {
-        boolean z10;
+    public static x a(h2.x xVar, boolean z10, xi.e eVar) {
+        boolean z11;
         b7.l j3;
         int i7;
         int i10 = 4;
         try {
-            if (z9) {
+            if (z10) {
                 xVar.O(4);
             } else {
                 xVar.O(21);
@@ -59,7 +59,7 @@ public final class x {
             int i13 = 0;
             int i14 = 0;
             while (true) {
-                z10 = true;
+                z11 = true;
                 if (i13 >= A2) {
                     break;
                 }
@@ -74,7 +74,7 @@ public final class x {
             }
             xVar.N(i11);
             byte[] bArr = new byte[i14];
-            ui.e eVar2 = eVar;
+            xi.e eVar2 = eVar;
             int i16 = -1;
             int i17 = -1;
             int i18 = -1;
@@ -93,9 +93,9 @@ public final class x {
                 int A3 = xVar.A() & 63;
                 int H3 = xVar.H();
                 int i28 = i12;
-                ui.e eVar3 = eVar2;
+                xi.e eVar3 = eVar2;
                 while (i28 < H3) {
-                    boolean z11 = z10;
+                    boolean z12 = z11;
                     int H4 = xVar.H();
                     int i29 = A;
                     System.arraycopy(i2.o.a, i12, bArr, i27, i10);
@@ -131,14 +131,14 @@ public final class x {
                             i21 = i32;
                         } else if (A3 == 39 && i28 == 0 && (j3 = i2.o.j(i30, i30 + H4, bArr)) != null && eVar3 != null) {
                             i12 = 0;
-                            i24 = j3.a == ((i2.g) ((h9.i0) eVar3.b).get(0)).b ? 4 : 5;
+                            i24 = j3.a == ((i2.g) ((h9.i0) eVar3.a).get(0)).b ? 4 : 5;
                         }
                         i12 = 0;
                     }
                     i27 = i30 + H4;
                     xVar.O(H4);
                     i28++;
-                    z10 = z11;
+                    z11 = z12;
                     A = i29;
                     i10 = 4;
                 }
@@ -148,7 +148,7 @@ public final class x {
             }
             return new x(i14 == 0 ? Collections.EMPTY_LIST : Collections.singletonList(bArr), A + 1, i16, i17, i18, i19, i20, i21, i22, i23, i24, f10, i25, str, eVar2);
         } catch (ArrayIndexOutOfBoundsException e10) {
-            throw t0.a(e10, "Error parsing".concat(z9 ? "L-HEVC config" : "HEVC config"));
+            throw t0.a(e10, "Error parsing".concat(z10 ? "L-HEVC config" : "HEVC config"));
         }
     }
 }

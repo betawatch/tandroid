@@ -1,23 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.graphics.Canvas;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class sv extends di.q {
-    public final /* synthetic */ zw O0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sv(zw zwVar, Context context, zw zwVar2, int i7, int i10) {
-        super(context, zwVar2, i7, i10);
-        this.O0 = zwVar;
+public final class sv extends org.telegram.ui.Components.t9 {
+    @Override // org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.l lVar;
-        lVar = ((org.telegram.ui.ActionBar.f2) this.O0).actionBar;
-        return !lVar.x() && super.dispatchTouchEvent(motionEvent);
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.t9
+    public final int z1() {
+        return org.telegram.messenger.g0.L(48.0f);
+    }
+
+    @Override // org.telegram.ui.Components.t9, org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
     }
 }

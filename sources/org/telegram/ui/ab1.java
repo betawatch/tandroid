@@ -1,49 +1,48 @@
 package org.telegram.ui;
 
-import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class ab1 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ cb1 a;
+public final /* synthetic */ class ab1 implements org.telegram.messenger.z10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UserInfoActivity b;
 
-    public ab1(cb1 cb1Var) {
-        this.a = cb1Var;
+    public /* synthetic */ ab1(UserInfoActivity userInfoActivity, int i7) {
+        this.a = i7;
+        this.b = userInfoActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i7) {
-        org.telegram.ui.ActionBar.r4 r4Var;
-        cb1 cb1Var = this.a;
-        if (i7 == -1) {
-            if (cb1Var.G >= 0) {
-                r4Var = ((org.telegram.ui.ActionBar.f2) cb1Var).parentLayout;
-                if (r4Var.getFragmentStack().size() == 1) {
-                    cb1Var.N0();
-                    return;
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
+        int i7 = this.a;
+        UserInfoActivity userInfoActivity = this.b;
+        switch (i7) {
+            case 0:
+                userInfoActivity.K = (TL_account.TL_birthday) obj;
+                bi.v3 v3Var = userInfoActivity.y;
+                if (v3Var != null) {
+                    v3Var.g3.O(true);
                 }
-            }
-            cb1Var.finishFragment();
-            return;
-        }
-        if (i7 == 1) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cb1Var.getParentActivity());
-            TL_account.Password password = cb1Var.U;
-            String M0 = (password == null || !password.has_password) ? org.telegram.messenger.id.M0(2131752578, null) : org.telegram.messenger.id.M0(2131752586, null);
-            String M02 = org.telegram.messenger.id.M0(2131752585, null);
-            String M03 = org.telegram.messenger.id.M0(2131754950, null);
-            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-            u1Var.T = M0;
-            u1Var.R = M02;
-            alertDialog$Builder.k(M03, new oi0(this, 22));
-            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-            cb1Var.showDialog(u1Var);
-            TextView textView = (TextView) u1Var.d(-1);
-            if (textView != null) {
-                org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
-            }
+                userInfoActivity.g0(true);
+                break;
+            default:
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
+                if (userInfoActivity.L != chat) {
+                    userInfoActivity.L = chat;
+                    if (chat != null) {
+                        org.telegram.messenger.k5.n(null, 2131751233, org.telegram.ui.Components.cc.a0(userInfoActivity), R.raw.contact_check, 36);
+                    }
+                    userInfoActivity.g0(true);
+                    bi.v3 v3Var2 = userInfoActivity.y;
+                    if (v3Var2 != null) {
+                        v3Var2.g3.O(true);
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

@@ -1,30 +1,52 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class tv0 implements jp {
-    public final /* synthetic */ zw a;
-    public final /* synthetic */ uv0 b;
+public final class tv0 implements hi.ja {
+    public final /* synthetic */ ProfileActivity a;
 
-    public tv0(uv0 uv0Var, zw zwVar) {
-        this.b = uv0Var;
-        this.a = zwVar;
+    public tv0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // org.telegram.ui.jp
-    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        ProfileActivity profileActivity = this.b.b;
-        profileActivity.M1 = true;
-        this.a.removeSelfFromStack();
-        org.telegram.messenger.qs notificationCenter = profileActivity.getNotificationCenter();
-        int i10 = org.telegram.messenger.qs.t;
-        notificationCenter.n(profileActivity, i10);
-        profileActivity.getNotificationCenter().k(i10, new Object[0]);
+    @Override // hi.ja
+    public final hi.na a(long j3) {
+        ProfileActivity profileActivity = this.a;
+        if (j3 != profileActivity.a()) {
+            return null;
+        }
+        profileActivity.f0.setRoundRadiusForExpand((int) org.telegram.messenger.g0.T1(profileActivity.r4(), 0.0f, profileActivity.l2));
+        xu0 xu0Var = profileActivity.f0;
+        boolean c02 = org.telegram.messenger.t3.c0(profileActivity.F2);
+        if (xu0Var == null || xu0Var.getRootView() == null) {
+            return null;
+        }
+        float scaleX = ((View) xu0Var.getParent()).getScaleX();
+        float f10 = xu0Var.getImageReceiver().N0 * scaleX;
+        float f11 = c02 ? 0.32f * f10 : f10;
+        hi.la laVar = new hi.la(xu0Var, 0);
+        float[] fArr = new float[2];
+        xu0Var.getRootView().getLocationOnScreen(new int[2]);
+        org.telegram.messenger.g0.r1(xu0Var, (ViewGroup) xu0Var.getRootView(), fArr);
+        float f12 = (xu0Var.getImageReceiver().L0 * scaleX) + r4[0] + fArr[0];
+        float f13 = (xu0Var.getImageReceiver().M0 * scaleX) + r4[1] + fArr[1];
+        laVar.c.set(f12, f13, f12 + f10, f10 + f13);
+        laVar.e = xu0Var.getImageReceiver();
+        laVar.b = f11;
+        return laVar;
     }
 
-    @Override // org.telegram.ui.jp
-    public final void a(TLRPC.User user) {
+    @Override // hi.ja
+    public final void e(long j3, di.x2 x2Var) {
+        ProfileActivity profileActivity = this.a;
+        profileActivity.f0.setHasStories(profileActivity.z4());
+        if (j3 == profileActivity.a() && profileActivity.p2 && profileActivity.l2 > 0.0f) {
+            profileActivity.c.h1(0, profileActivity.i4() - profileActivity.a.getPaddingTop());
+            profileActivity.a.post(new k90(profileActivity, 16));
+        }
+        org.telegram.messenger.g0.i3(x2Var, 30L);
     }
 }

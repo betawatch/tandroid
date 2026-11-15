@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.telegram.messenger.a20;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.d20;
-import org.telegram.ui.Components.bx0;
+import org.telegram.ui.Components.ex0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class TLJsonParser {
     private final JSONObject jsonObject;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface Deserializable {
         void deserializeFromJson(TLJsonParser tLJsonParser);
     }
@@ -22,21 +22,21 @@ public class TLJsonParser {
         this.jsonObject = jSONObject;
     }
 
-    private static <T extends Deserializable> T parse(TLJsonParser tLJsonParser, d20 d20Var) {
+    private static <T extends Deserializable> T parse(TLJsonParser tLJsonParser, a20 a20Var) {
         try {
-            return (T) d20Var.a(tLJsonParser);
+            return (T) a20Var.a(tLJsonParser);
         } catch (Exception e10) {
             a8.g(e10, true);
             return null;
         }
     }
 
-    private boolean parseBoolean(Object obj, boolean z9) {
+    private boolean parseBoolean(Object obj, boolean z10) {
         try {
-            return obj instanceof Boolean ? ((Boolean) obj).booleanValue() : obj instanceof String ? Boolean.parseBoolean((String) obj) : z9;
+            return obj instanceof Boolean ? ((Boolean) obj).booleanValue() : obj instanceof String ? Boolean.parseBoolean((String) obj) : z10;
         } catch (Exception e10) {
             a8.g(e10, true);
-            return z9;
+            return z10;
         }
     }
 
@@ -62,8 +62,8 @@ public class TLJsonParser {
         return obj instanceof String ? (String) obj : str;
     }
 
-    public boolean readBoolean(String str, boolean z9) {
-        return parseBoolean(this.jsonObject.opt(str), z9);
+    public boolean readBoolean(String str, boolean z10) {
+        return parseBoolean(this.jsonObject.opt(str), z10);
     }
 
     public int readInt32(String str, int i7) {
@@ -74,10 +74,10 @@ public class TLJsonParser {
         return parseInt64(this.jsonObject.opt(str), i7);
     }
 
-    public <T extends Deserializable> T readObject(String str, d20 d20Var) {
+    public <T extends Deserializable> T readObject(String str, a20 a20Var) {
         JSONObject optJSONObject = this.jsonObject.optJSONObject(str);
         if (optJSONObject != null) {
-            return (T) parse(new TLJsonParser(optJSONObject), d20Var);
+            return (T) parse(new TLJsonParser(optJSONObject), a20Var);
         }
         return null;
     }
@@ -86,23 +86,23 @@ public class TLJsonParser {
         return readString(str, null);
     }
 
-    public <T extends Deserializable> ArrayList<T> readVector(String str, d20 d20Var) {
-        bx0 bx0Var = (ArrayList<T>) new ArrayList();
+    public <T extends Deserializable> ArrayList<T> readVector(String str, a20 a20Var) {
+        ex0 ex0Var = (ArrayList<T>) new ArrayList();
         JSONArray optJSONArray = this.jsonObject.optJSONArray(str);
         if (optJSONArray != null) {
             int length = optJSONArray.length();
             for (int i7 = 0; i7 < length; i7++) {
                 try {
-                    Deserializable parse = parse(new TLJsonParser(optJSONArray.getJSONObject(i7)), d20Var);
+                    Deserializable parse = parse(new TLJsonParser(optJSONArray.getJSONObject(i7)), a20Var);
                     if (parse != null) {
-                        bx0Var.add(parse);
+                        ex0Var.add(parse);
                     }
                 } catch (JSONException e10) {
                     a8.g(e10, true);
                 }
             }
         }
-        return bx0Var;
+        return ex0Var;
     }
 
     public String readString(String str, String str2) {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -29,7 +29,7 @@ public abstract class w {
     /* JADX WARN: Multi-variable type inference failed */
     public static int b(Class cls) {
         Constructor constructor;
-        boolean z9;
+        boolean z10;
         HashMap hashMap = a;
         Integer num = (Integer) hashMap.get(cls);
         if (num != null) {
@@ -70,7 +70,7 @@ public abstract class w {
                 HashMap hashMap3 = dVar.b;
                 Boolean bool = (Boolean) hashMap3.get(cls);
                 if (bool != null) {
-                    z9 = bool.booleanValue();
+                    z10 = bool.booleanValue();
                 } else {
                     try {
                         Method[] declaredMethods = cls.getDeclaredMethods();
@@ -79,12 +79,12 @@ public abstract class w {
                         while (true) {
                             if (i10 >= length) {
                                 hashMap3.put(cls, Boolean.FALSE);
-                                z9 = false;
+                                z10 = false;
                                 break;
                             }
                             if (((b0) declaredMethods[i10].getAnnotation(b0.class)) != null) {
                                 dVar.a(cls, declaredMethods);
-                                z9 = true;
+                                z10 = true;
                                 break;
                             }
                             i10++;
@@ -93,7 +93,7 @@ public abstract class w {
                         throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e11);
                     }
                 }
-                if (!z9) {
+                if (!z10) {
                     Class superclass = cls.getSuperclass();
                     if (superclass != null && s.class.isAssignableFrom(superclass)) {
                         kotlin.jvm.internal.j.d(superclass, "superclass");

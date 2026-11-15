@@ -8,12 +8,12 @@ import android.util.Pair;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import fi.c7;
+import hi.b7;
 import java.util.concurrent.ExecutionException;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t implements Continuation, c7 {
+public final /* synthetic */ class t implements Continuation, b7 {
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
 
@@ -22,8 +22,8 @@ public final /* synthetic */ class t implements Continuation, c7 {
         this.b = str;
     }
 
-    @Override // fi.c7
-    public Bitmap c(BitmapFactory.Options options) {
+    @Override // hi.b7
+    public Bitmap d(BitmapFactory.Options options) {
         return BitmapFactory.decodeFile(this.b, options);
     }
 
@@ -43,7 +43,7 @@ public final /* synthetic */ class t implements Continuation, c7 {
                 }
                 throw new ExecutionException(new IllegalArgumentException("Unexpected Error: FID NOT matching!"));
             default:
-                return !task.isSuccessful() ? Tasks.forException(r7.q(task)) : Tasks.forResult(new Pair((String) task.getResult(), this.b));
+                return !task.isSuccessful() ? Tasks.forException(r7.s(task)) : Tasks.forResult(new Pair((String) task.getResult(), this.b));
         }
     }
 

@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class a0 extends g.p implements Menu {
     public final k c;
@@ -127,23 +127,23 @@ public class a0 extends g.p implements Menu {
     }
 
     @Override // android.view.Menu
-    public final void setGroupCheckable(int i7, boolean z9, boolean z10) {
-        this.c.setGroupCheckable(i7, z9, z10);
+    public final void setGroupCheckable(int i7, boolean z10, boolean z11) {
+        this.c.setGroupCheckable(i7, z10, z11);
     }
 
     @Override // android.view.Menu
-    public final void setGroupEnabled(int i7, boolean z9) {
-        this.c.setGroupEnabled(i7, z9);
+    public final void setGroupEnabled(int i7, boolean z10) {
+        this.c.setGroupEnabled(i7, z10);
     }
 
     @Override // android.view.Menu
-    public final void setGroupVisible(int i7, boolean z9) {
-        this.c.setGroupVisible(i7, z9);
+    public final void setGroupVisible(int i7, boolean z10) {
+        this.c.setGroupVisible(i7, z10);
     }
 
     @Override // android.view.Menu
-    public final void setQwertyMode(boolean z9) {
-        this.c.setQwertyMode(z9);
+    public final void setQwertyMode(boolean z10) {
+        this.c.setQwertyMode(z10);
     }
 
     @Override // android.view.Menu

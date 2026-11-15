@@ -11,7 +11,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -67,7 +67,7 @@ public final /* synthetic */ class d8 implements Runnable {
                 f8 f8Var = (f8) obj;
                 String str = (String) serializable;
                 ConcurrentHashMap concurrentHashMap = f8Var.f;
-                boolean z9 = r2.a;
+                boolean z10 = r2.a;
                 a8.b("put file path id=" + j10 + " dc=" + i12 + " type=" + i11 + " path=" + str);
                 f8Var.c();
                 SQLiteDatabase sQLiteDatabase = f8Var.c;
@@ -165,11 +165,11 @@ public final /* synthetic */ class d8 implements Runnable {
                 sQLitePreparedStatement2.dispose();
                 return;
             default:
-                yr yrVar = (yr) obj;
+                vr vrVar = (vr) obj;
                 ArrayList<TLRPC.Peer> arrayList = (ArrayList) serializable;
-                yrVar.getClass();
+                vrVar.getClass();
                 try {
-                    executeFast2 = yrVar.b.executeFast("UPDATE messages_v2 SET replies_data = ? WHERE mid = ? AND uid = ?");
+                    executeFast2 = vrVar.b.executeFast("UPDATE messages_v2 SET replies_data = ? WHERE mid = ? AND uid = ?");
                 } catch (Exception e13) {
                     e = e13;
                     sQLitePreparedStatement3 = null;
@@ -178,7 +178,7 @@ public final /* synthetic */ class d8 implements Runnable {
                     sQLitePreparedStatement3 = null;
                 }
                 try {
-                    SQLiteDatabase sQLiteDatabase2 = yrVar.b;
+                    SQLiteDatabase sQLiteDatabase2 = vrVar.b;
                     Locale locale = Locale.ENGLISH;
                     j3 = -j10;
                     queryFinalized = sQLiteDatabase2.queryFinalized("SELECT replies_data FROM messages_v2 WHERE mid = " + i12 + " AND uid = " + j3, new Object[0]);
@@ -187,7 +187,7 @@ public final /* synthetic */ class d8 implements Runnable {
                     sQLitePreparedStatement3 = executeFast2;
                     sQLiteCursor = null;
                     try {
-                        yrVar.o(e, true);
+                        vrVar.o(e, true);
                         if (sQLitePreparedStatement3 != null) {
                             sQLitePreparedStatement3.dispose();
                         }
@@ -252,7 +252,7 @@ public final /* synthetic */ class d8 implements Runnable {
                     e = e15;
                     sQLiteCursor = queryFinalized;
                     sQLitePreparedStatement3 = executeFast2;
-                    yrVar.o(e, true);
+                    vrVar.o(e, true);
                     if (sQLitePreparedStatement3 != null) {
                     }
                     if (sQLiteCursor == null) {
@@ -271,8 +271,8 @@ public final /* synthetic */ class d8 implements Runnable {
         }
     }
 
-    public /* synthetic */ d8(yr yrVar, int i7, long j3, int i10, ArrayList arrayList, int i11) {
-        this.f = yrVar;
+    public /* synthetic */ d8(vr vrVar, int i7, long j3, int i10, ArrayList arrayList, int i11) {
+        this.f = vrVar;
         this.b = i7;
         this.c = j3;
         this.d = i10;

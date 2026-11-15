@@ -3,9 +3,9 @@ package tg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class x0 extends View {
     public int a;
@@ -17,25 +17,25 @@ public final class x0 extends View {
         super(context);
         this.c = y0Var;
         setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
-        setLayoutParams(new v4.o0(-2, 0));
+        setLayoutParams(new v4.p0(-2, 0));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         y0 y0Var = this.c;
-        y0Var.e3.setColor(this.a);
+        y0Var.f3.setColor(this.a);
         float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
         if (this.b != 0.0f) {
-            min -= (y0Var.f3.getStrokeWidth() + org.telegram.messenger.g0.L(3.0f)) * this.b;
+            min -= (y0Var.g3.getStrokeWidth() + org.telegram.messenger.g0.L(3.0f)) * this.b;
         }
         float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
         float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
         y0.A1(width, height, min, this.a, canvas);
         if (this.b != 0.0f) {
-            y0Var.f3.setColor(this.a);
-            y0Var.f3.setAlpha(qs.e4);
-            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - org.telegram.messenger.g0.L(2.0f), y0Var.f3);
+            y0Var.g3.setColor(this.a);
+            y0Var.g3.setAlpha(ns.e4);
+            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - org.telegram.messenger.g0.L(2.0f), y0Var.g3);
         }
     }
 }

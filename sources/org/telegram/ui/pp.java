@@ -2,42 +2,42 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pp implements org.telegram.messenger.tr, org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.cj0, org.telegram.ui.Components.dj0 {
+public final /* synthetic */ class pp implements org.telegram.messenger.qr, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.hj0, org.telegram.ui.Components.ij0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rq b;
+    public final /* synthetic */ qq b;
 
-    public /* synthetic */ pp(rq rqVar, int i7) {
+    public /* synthetic */ pp(qq qqVar, int i7) {
         this.a = i7;
-        this.b = rqVar;
+        this.b = qqVar;
     }
 
-    @Override // org.telegram.ui.Components.dj0
-    public boolean c(int i7, View view) {
-        rq rqVar = this.b;
-        if (rqVar.getParentActivity() != null) {
-            v4.g0 adapter = rqVar.c.getAdapter();
-            nq nqVar = rqVar.a;
-            if (adapter == nqVar) {
-                return rqVar.m0(nqVar.E(i7), false, view);
+    @Override // org.telegram.ui.Components.ij0
+    public boolean b(int i7, View view) {
+        qq qqVar = this.b;
+        if (qqVar.getParentActivity() != null) {
+            v4.h0 adapter = qqVar.c.getAdapter();
+            mq mqVar = qqVar.a;
+            if (adapter == mqVar) {
+                return qqVar.m0(mqVar.E(i7), false, view);
             }
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.cj0
-    public void f(float f10, float f11, int i7, View view) {
-        rq.a0(this.b, view, i7);
-    }
-
-    @Override // org.telegram.ui.Components.cj0
-    public /* synthetic */ boolean f1(View view) {
+    @Override // org.telegram.ui.Components.hj0
+    public /* synthetic */ boolean c1(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.Components.hj0
+    public void f(float f10, float f11, int i7, View view) {
+        qq.a0(this.b, view, i7);
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 1:
                 this.b.z0();
@@ -48,12 +48,12 @@ public final /* synthetic */ class pp implements org.telegram.messenger.tr, org.
         }
     }
 
-    @Override // org.telegram.messenger.tr
+    @Override // org.telegram.messenger.qr
     public void run(long j3) {
-        rq.Z(this.b, j3);
+        qq.Z(this.b, j3);
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.hj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

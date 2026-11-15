@@ -1,17 +1,17 @@
 package c8;
 
 import android.graphics.Color;
-import org.telegram.messenger.iz;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.gz;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class g0 {
-    public static gh.e a(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new g2.c(19);
+    public static gh.e a(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new g0.e(21);
         eVar.f(385875968, 402653183);
         eVar.e(385875968, 402653183);
         eVar.d(285212672, 83886079);
@@ -26,9 +26,9 @@ public abstract class g0 {
         return eVar;
     }
 
-    public static gh.e b(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new hh.a(0, h6Var);
+    public static gh.e b(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new hh.a(0, e6Var);
         eVar.f(-1, 687865855);
         eVar.e(-1, 352321535);
         eVar.d(TLObject.FLAG_29, 0);
@@ -39,21 +39,21 @@ public abstract class g0 {
         return eVar;
     }
 
-    public static boolean c(int i7, org.telegram.ui.ActionBar.h6 h6Var) {
-        boolean a10 = h6Var != null ? h6Var.a() : org.telegram.ui.ActionBar.m6.I.q();
-        boolean f10 = iz.f();
-        if (f10 && !a10 && ((org.telegram.messenger.h0) qp.s1(i7).x7.B.b).c) {
+    public static boolean c(int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        boolean a10 = e6Var != null ? e6Var.a() : org.telegram.ui.ActionBar.j6.I.q();
+        boolean f10 = gz.f();
+        if (f10 && !a10 && ((org.telegram.messenger.h0) np.s1(i7).y7.B.b).c) {
             f10 = false;
         }
-        if (f10 && a10 && ((org.telegram.messenger.h0) qp.s1(i7).x7.C.b).c) {
+        if (f10 && a10 && ((org.telegram.messenger.h0) np.s1(i7).y7.C.b).c) {
             return false;
         }
         return f10;
     }
 
-    public static gh.e d(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new g2.c(23);
+    public static gh.e d(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new g0.e(25);
         eVar.f(-1, 687865855);
         eVar.e(-1, 352321535);
         eVar.d(TLObject.FLAG_30, 0);
@@ -68,9 +68,9 @@ public abstract class g0 {
         return eVar;
     }
 
-    public static gh.e e(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new g2.c(10);
+    public static gh.e e(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new g0.e(12);
         eVar.f(687865855, 687865855);
         eVar.e(352321535, 352321535);
         eVar.d(TLObject.FLAG_29, 0);
@@ -85,9 +85,9 @@ public abstract class g0 {
         return eVar;
     }
 
-    public static gh.e f(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new g2.c(18);
+    public static gh.e f(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new g0.e(20);
         eVar.f(285212672, 117440511);
         eVar.e(TLObject.FLAG_29, 301989887);
         eVar.d(TLObject.FLAG_29, 83886079);
@@ -102,9 +102,9 @@ public abstract class g0 {
         return eVar;
     }
 
-    public static gh.e g(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new g2.c(7);
+    public static gh.e g(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new g0.e(9);
         eVar.f(1157627903, 0);
         eVar.e(587202559, 0);
         eVar.d(939524096, 0);
@@ -117,13 +117,13 @@ public abstract class g0 {
         return eVar;
     }
 
-    public static gh.e h(org.telegram.ui.ActionBar.h6 h6Var) {
-        return g(h6Var);
+    public static gh.e h(org.telegram.ui.ActionBar.e6 e6Var) {
+        return g(e6Var);
     }
 
-    public static gh.e i(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new g2.c(22);
+    public static gh.e i(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new g0.e(24);
         eVar.f(687865855, 687865855);
         eVar.e(352321535, 352321535);
         float N = org.telegram.messenger.g0.N(0.6666667f);
@@ -133,9 +133,9 @@ public abstract class g0 {
         return eVar;
     }
 
-    public static gh.e j(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new g2.c(20);
+    public static gh.e j(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new g0.e(22);
         eVar.f(-1, 553648127);
         eVar.e(0, 553648127);
         eVar.d(1207959552, 83886079);
@@ -148,9 +148,9 @@ public abstract class g0 {
         return eVar;
     }
 
-    public static gh.e k(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new g2.c(16);
+    public static gh.e k(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new g0.e(18);
         eVar.f(1157627903, 0);
         eVar.e(587202559, 0);
         eVar.d(637534208, 0);
@@ -163,9 +163,9 @@ public abstract class g0 {
         return eVar;
     }
 
-    public static gh.e l(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new g2.c(11);
+    public static gh.e l(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new g0.e(13);
         eVar.f(-1, 553648127);
         eVar.e(-1, 352321535);
         eVar.d(372454195, 0);
@@ -181,23 +181,23 @@ public abstract class g0 {
     }
 
     public static int m(float f10, int i7, int i10) {
-        float a10 = j9.a(f10, 0.0f, 1.0f);
+        float a10 = i9.a(f10, 0.0f, 1.0f);
         if (a10 <= 0.0f) {
             return Color.argb(0, 0, 0, 0);
         }
         if (a10 >= 1.0f) {
-            return Color.argb(qs.e4, Color.red(i10), Color.green(i10), Color.blue(i10));
+            return Color.argb(ns.e4, Color.red(i10), Color.green(i10), Color.blue(i10));
         }
         int red = Color.red(i7);
         int green = Color.green(i7);
         int blue = Color.blue(i7);
         float f11 = 1.0f - a10;
-        return Color.argb(j9.b(Math.round(a10 * 255.0f), 0, qs.e4), j9.b(Math.round((Color.red(i10) - (red * f11)) / a10), 0, qs.e4), j9.b(Math.round((Color.green(i10) - (green * f11)) / a10), 0, qs.e4), j9.b(Math.round((Color.blue(i10) - (blue * f11)) / a10), 0, qs.e4));
+        return Color.argb(i9.b(Math.round(a10 * 255.0f), 0, ns.e4), i9.b(Math.round((Color.red(i10) - (red * f11)) / a10), 0, ns.e4), i9.b(Math.round((Color.green(i10) - (green * f11)) / a10), 0, ns.e4), i9.b(Math.round((Color.blue(i10) - (blue * f11)) / a10), 0, ns.e4));
     }
 
-    public static gh.e n(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new g2.c(8);
+    public static gh.e n(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new g0.e(10);
         eVar.f(285212672, 117440511);
         eVar.e(TLObject.FLAG_29, 301989887);
         eVar.d(TLObject.FLAG_29, 83886079);
@@ -212,9 +212,9 @@ public abstract class g0 {
         return eVar;
     }
 
-    public static hh.b o(org.telegram.ui.ActionBar.h6 h6Var) {
-        hh.b bVar = new hh.b(h6Var, h6Var);
-        bVar.e = new hh.a(2, h6Var);
+    public static hh.b o(org.telegram.ui.ActionBar.e6 e6Var) {
+        hh.b bVar = new hh.b(e6Var, e6Var);
+        bVar.e = new hh.a(2, e6Var);
         bVar.f(-1, 553648127);
         bVar.e(-1, 352321535);
         bVar.d(TLObject.FLAG_29, 0);
@@ -225,9 +225,9 @@ public abstract class g0 {
         return bVar;
     }
 
-    public static gh.e p(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new g2.c(21);
+    public static gh.e p(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new g0.e(23);
         eVar.f(0, 0);
         eVar.e(0, 0);
         eVar.d(0, 0);
@@ -238,9 +238,9 @@ public abstract class g0 {
         return eVar;
     }
 
-    public static gh.e q(org.telegram.ui.ActionBar.h6 h6Var) {
-        gh.e eVar = new gh.e(h6Var);
-        eVar.e = new hh.a(1, h6Var);
+    public static gh.e q(org.telegram.ui.ActionBar.e6 e6Var) {
+        gh.e eVar = new gh.e(e6Var);
+        eVar.e = new hh.a(1, e6Var);
         eVar.f(0, 0);
         eVar.e(0, 0);
         eVar.d(0, 0);

@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
     private static final boolean[] zza;
@@ -151,13 +151,13 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
         zza();
         zzi(i7);
         boolean[] zArr = this.zzb;
-        boolean z9 = zArr[i7];
+        boolean z10 = zArr[i7];
         if (i7 < this.zzc - 1) {
             System.arraycopy(zArr, i7 + 1, zArr, i7, (r2 - i7) - 1);
         }
         this.zzc--;
         ((AbstractList) this).modCount++;
-        return Boolean.valueOf(z9);
+        return Boolean.valueOf(z10);
     }
 
     @Override // java.util.AbstractList
@@ -178,9 +178,9 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
         zza();
         zzi(i7);
         boolean[] zArr = this.zzb;
-        boolean z9 = zArr[i7];
+        boolean z10 = zArr[i7];
         zArr[i7] = booleanValue;
-        return Boolean.valueOf(z9);
+        return Boolean.valueOf(z10);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -196,7 +196,7 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
         throw new IllegalArgumentException();
     }
 
-    public final void zze(boolean z9) {
+    public final void zze(boolean z10) {
         zza();
         int i7 = this.zzc;
         int length = this.zzb.length;
@@ -208,7 +208,7 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
         boolean[] zArr2 = this.zzb;
         int i10 = this.zzc;
         this.zzc = i10 + 1;
-        zArr2[i10] = z9;
+        zArr2[i10] = z10;
     }
 
     public final boolean zzf(int i7) {
@@ -216,8 +216,8 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
         return this.zzb[i7];
     }
 
-    private zzqd(boolean[] zArr, int i7, boolean z9) {
-        super(z9);
+    private zzqd(boolean[] zArr, int i7, boolean z10) {
+        super(z10);
         this.zzb = zArr;
         this.zzc = i7;
     }

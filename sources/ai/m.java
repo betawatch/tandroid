@@ -1,44 +1,64 @@
 package ai;
 
-import android.view.ViewGroup;
-import c8.ja;
-import org.telegram.ui.t11;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class m extends ja {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+public final /* synthetic */ class m implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ float[] b;
+    public final /* synthetic */ android.support.v4.media.session.a0 c;
+    public final /* synthetic */ ki.r1 d;
+    public final /* synthetic */ boolean[] e;
 
-    public /* synthetic */ m(ViewGroup viewGroup, int i7) {
-        this.a = i7;
-        this.b = viewGroup;
+    public /* synthetic */ m(float[] fArr, android.support.v4.media.session.a0 a0Var, ki.r1 r1Var, boolean[] zArr) {
+        this.b = fArr;
+        this.c = a0Var;
+        this.d = r1Var;
+        this.e = zArr;
     }
 
-    @Override // c8.ja
-    public final void a() {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((q0) this.b).w = false;
-                break;
-            case 1:
-                ((fi.m1) this.b).i3 = false;
+                final boolean[] zArr = this.e;
+                final android.support.v4.media.session.a0 a0Var = this.c;
+                final ki.r1 r1Var = this.d;
+                final float[] fArr = this.b;
+                s[] sVarArr = DictationAsr.a;
+                if (!zArr[0]) {
+                    DictationAsr.V((s) a0Var.b, new t() { // from class: ai.n
+                        @Override // ai.t
+                        public final void a(boolean z10) {
+                            boolean[] zArr2 = zArr;
+                            ki.r1 r1Var2 = r1Var;
+                            float[] fArr2 = fArr;
+                            android.support.v4.media.session.a0 a0Var2 = a0Var;
+                            s[] sVarArr2 = DictationAsr.a;
+                            if (zArr2[0]) {
+                                return;
+                            }
+                            if (z10) {
+                                new Thread(new m(fArr2, a0Var2, r1Var2, zArr2), "DictationAsrFile").start();
+                            } else {
+                                r1Var2.a(null, null, true);
+                            }
+                        }
+                    });
+                    break;
+                }
                 break;
             default:
-                ((t11) this.b).x1 = false;
+                DictationAsr.a(this.b, this.c, this.d, this.e);
                 break;
         }
     }
 
-    @Override // c8.ja
-    public void b() {
-        switch (this.a) {
-            case 1:
-                ((fi.m1) this.b).i3 = true;
-                break;
-            case 2:
-                ((t11) this.b).x1 = true;
-                break;
-        }
+    public /* synthetic */ m(boolean[] zArr, android.support.v4.media.session.a0 a0Var, ki.r1 r1Var, float[] fArr) {
+        this.e = zArr;
+        this.c = a0Var;
+        this.d = r1Var;
+        this.b = fArr;
     }
 }

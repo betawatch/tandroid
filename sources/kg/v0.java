@@ -3,17 +3,17 @@ package kg;
 import android.text.TextUtils;
 import java.io.Serializable;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a20;
-import org.telegram.messenger.id;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.sa0;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v0 implements a20, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class v0 implements x10, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ a1 b;
 
@@ -22,8 +22,8 @@ public final /* synthetic */ class v0 implements a20, org.telegram.ui.ActionBar.
         this.b = a1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         switch (this.a) {
             case 1:
                 this.b.b0();
@@ -45,44 +45,44 @@ public final /* synthetic */ class v0 implements a20, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.messenger.a20
-    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+    @Override // org.telegram.messenger.x10
+    public void m(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         a1 a1Var = this.b;
-        x31 x31Var = (x31) obj;
-        int i7 = x31Var.d;
+        b41 b41Var = (b41) obj;
+        int i7 = b41Var.d;
         int i10 = 3;
-        if (i7 != 1 && x31Var.c != a1Var.f) {
+        if (i7 != 1 && b41Var.c != a1Var.f) {
             if (i7 == 2) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(a1Var.getParentActivity());
-                alertDialog$Builder.a.R = id.M0(2131752694, null);
-                alertDialog$Builder.a.T = id.M0(2131752695, null);
-                alertDialog$Builder.k(id.M0(2131746321, null), new v0(a1Var, i10));
-                alertDialog$Builder.h(id.M0(2131752589, null), null);
+                alertDialog$Builder.a.S = hd.M0(2131752694, null);
+                alertDialog$Builder.a.U = hd.M0(2131752695, null);
+                alertDialog$Builder.k(hd.M0(2131746321, null), new v0(a1Var, i10));
+                alertDialog$Builder.h(hd.M0(2131752589, null), null);
                 a1Var.showDialog(alertDialog$Builder.a);
                 return;
             }
             return;
         }
-        if (a1Var.x != null && x31Var.c != a1Var.f) {
+        if (a1Var.x != null && b41Var.c != a1Var.f) {
             a1Var.x = null;
-            a1Var.a.f3.O(true);
+            a1Var.a.g3.O(true);
             return;
         }
-        sa0 sa0Var = new sa0(8);
+        pa0 pa0Var = new pa0(8);
         if (a1Var.x != null) {
             TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
             tL_channelLocation.address = a1Var.y;
             tL_channelLocation.geo_point = a1Var.x;
-            sa0Var.C0 = tL_channelLocation;
+            pa0Var.D0 = tL_channelLocation;
         }
-        sa0Var.G0 = new ab.g(21, a1Var, sa0Var);
+        pa0Var.H0 = new ab.g(25, a1Var, pa0Var);
         if (a1Var.x != null || TextUtils.isEmpty(a1Var.y)) {
-            a1Var.presentFragment(sa0Var);
+            a1Var.presentFragment(pa0Var);
             return;
         }
-        org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, a1Var.getParentActivity(), null);
-        u1Var.i0 = false;
-        u1Var.r(200L);
-        Utilities.g.c(new t0(a1Var, sa0Var, u1Var));
+        org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, a1Var.getParentActivity(), null);
+        t1Var.j0 = false;
+        t1Var.r(200L);
+        Utilities.g.c(new t0(a1Var, pa0Var, t1Var));
     }
 }

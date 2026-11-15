@@ -8,7 +8,7 @@ import f3.i;
 import f3.p;
 import f3.s;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public final e a;
@@ -53,22 +53,22 @@ public final class a {
             i iVar = this.b;
             if (j12 <= j13) {
                 this.c = null;
-                iVar.M();
+                iVar.r0();
                 return c(pVar, j3, sVar);
             }
             long position = j11 - pVar.getPosition();
             if (position < 0 || position > 262144) {
                 break;
             }
-            pVar.s((int) position);
-            pVar.q();
-            h a10 = iVar.a(pVar, fVar.b);
-            int i7 = a10.a;
-            long j14 = a10.b;
-            long j15 = a10.c;
+            pVar.m((int) position);
+            pVar.l();
+            h W = iVar.W(pVar, fVar.b);
+            int i7 = W.a;
+            long j14 = W.b;
+            long j15 = W.c;
             if (i7 == -3) {
                 this.c = null;
-                iVar.M();
+                iVar.r0();
                 return c(pVar, j11, sVar);
             }
             if (i7 == -2) {
@@ -82,10 +82,10 @@ public final class a {
                     }
                     long position2 = j15 - pVar.getPosition();
                     if (position2 >= 0 && position2 <= 262144) {
-                        pVar.s((int) position2);
+                        pVar.m((int) position2);
                     }
                     this.c = null;
-                    iVar.M();
+                    iVar.r0();
                     return c(pVar, j15, sVar);
                 }
                 fVar.e = j14;
@@ -99,7 +99,7 @@ public final class a {
         f fVar = this.c;
         if (fVar == null || fVar.a != j3) {
             e eVar = this.a;
-            this.c = new f(j3, eVar.a.q(j3), eVar.c, eVar.d, eVar.e, eVar.f);
+            this.c = new f(j3, eVar.a.l(j3), eVar.c, eVar.d, eVar.e, eVar.f);
         }
     }
 }

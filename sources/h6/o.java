@@ -2,25 +2,24 @@ package h6;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
-import g6.d0;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class o extends BasePendingResult {
-    public d0 o;
+    public ob.c o;
     public final boolean p;
     public final /* synthetic */ h q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(h hVar, boolean z9) {
+    public o(h hVar, boolean z10) {
         super(null);
         this.q = hVar;
-        this.p = z9;
+        this.p = z10;
     }
 
     @Override // com.google.android.gms.common.api.internal.BasePendingResult
-    public final /* synthetic */ com.google.android.gms.common.api.q d(Status status) {
+    public final /* synthetic */ com.google.android.gms.common.api.r d(Status status) {
         return new n(status, 1);
     }
 
@@ -28,7 +27,7 @@ public abstract class o extends BasePendingResult {
 
     public final j6.n o() {
         if (this.o == null) {
-            this.o = new d0(this, 3);
+            this.o = new ob.c(this, 28);
         }
         return this.o;
     }

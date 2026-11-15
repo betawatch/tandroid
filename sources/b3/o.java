@@ -1,14 +1,14 @@
 package b3;
 
-import a8.ia;
-import a8.ra;
+import a8.ja;
+import a8.sa;
 import android.os.Looper;
 import android.os.SystemClock;
-import h2.m0;
+import h2.l0;
 import java.io.IOException;
 import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class o implements p {
     public static final i d = new i(0, -9223372036854775807L, false);
@@ -23,9 +23,9 @@ public final class o implements p {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public o(String str) {
-        this(new c3.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new a3.l(19)));
+        this(new c3.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new a3.l(17)));
         String concat = "ExoPlayer:Loader:".concat(str);
-        String str2 = m0.a;
+        String str2 = l0.a;
     }
 
     @Override // b3.p
@@ -65,7 +65,7 @@ public final class o implements p {
         }
         c3.a aVar = this.a;
         if (mVar != null) {
-            aVar.execute(new ra(mVar, 10));
+            aVar.execute(new sa(mVar, 12));
         }
         aVar.b.accept(aVar.a);
     }
@@ -75,7 +75,7 @@ public final class o implements p {
         myLooper.getClass();
         this.c = null;
         k kVar = new k(this, myLooper, lVar, jVar, i7, SystemClock.elapsedRealtime());
-        ia.p(this.b == null);
+        ja.p(this.b == null);
         this.b = kVar;
         kVar.b();
     }

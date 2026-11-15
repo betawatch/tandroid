@@ -1,20 +1,71 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class sd extends org.telegram.ui.Components.rj0 {
-    public final /* synthetic */ vd c0;
+public final class sd extends org.telegram.ui.Components.n61 {
+    public final Context a;
+    public final int b;
+    public final int c;
+    public final org.telegram.ui.ActionBar.e6 d;
+    public final ArrayList e = new ArrayList();
+    public final /* synthetic */ td f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sd(vd vdVar, Context context, org.telegram.ui.ActionBar.h6 h6Var, zd zdVar) {
-        super(context, h6Var, zdVar);
-        this.c0 = vdVar;
+    public sd(td tdVar, Context context, int i7, long j3, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.f = tdVar;
+        this.a = context;
+        this.b = i7;
+        this.c = i10;
+        this.d = e6Var;
+        i();
     }
 
-    @Override // org.telegram.ui.Components.v61, android.view.View
-    public final boolean canScrollHorizontally(int i7) {
-        return this.c0.x.Q0 && super.canScrollHorizontally(i7);
+    @Override // org.telegram.ui.Components.n61
+    public final void b(View view, int i7, int i10) {
+        this.f.b.J(view);
+    }
+
+    @Override // org.telegram.ui.Components.n61
+    public final View d(int i7) {
+        return new rd(this.f, this.a, i7, this.b, this.c, new ai.v0(this, i7, 21), this.d);
+    }
+
+    @Override // org.telegram.ui.Components.n61
+    public final int e() {
+        return this.e.size();
+    }
+
+    @Override // org.telegram.ui.Components.n61
+    public final CharSequence g(int i7) {
+        int h = h(i7);
+        return h != 0 ? h != 1 ? "" : org.telegram.messenger.hd.M0(2131748352, null) : org.telegram.messenger.hd.M0(2131748353, null);
+    }
+
+    @Override // org.telegram.ui.Components.n61
+    public final int h(int i7) {
+        if (i7 < 0) {
+            return 1;
+        }
+        ArrayList arrayList = this.e;
+        if (i7 >= arrayList.size()) {
+            return 1;
+        }
+        return ((org.telegram.ui.Components.b41) arrayList.get(i7)).z;
+    }
+
+    public final void i() {
+        ArrayList arrayList = this.e;
+        arrayList.clear();
+        td tdVar = this.f;
+        if (!tdVar.n.isEmpty()) {
+            arrayList.add(org.telegram.ui.Components.b41.D(1));
+        }
+        if (tdVar.r.isEmpty()) {
+            return;
+        }
+        arrayList.add(org.telegram.ui.Components.b41.D(0));
     }
 }

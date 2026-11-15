@@ -1,47 +1,45 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ag implements Runnable {
+public final /* synthetic */ class ag implements org.telegram.messenger.pr {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u1[] b;
+    public final /* synthetic */ an b;
 
-    public /* synthetic */ ag(org.telegram.ui.ActionBar.u1[] u1VarArr, int i7) {
+    public /* synthetic */ ag(an anVar, int i7) {
         this.a = i7;
-        this.b = u1VarArr;
+        this.b = anVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.pr
+    public final void a(int i7) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.u1[] u1VarArr = this.b;
-                try {
-                    u1VarArr[0].dismiss();
-                } catch (Throwable unused) {
+                an anVar = this.b;
+                if (anVar.getParentActivity() != null && anVar.fragmentView != null && i7 > 0) {
+                    org.telegram.ui.Components.cc.a0(anVar).m(org.telegram.ui.Components.bc.r, i7, 0, 0, anVar.Aa).j();
+                    break;
                 }
-                u1VarArr[0] = null;
                 break;
             case 1:
-                org.telegram.ui.ActionBar.u1[] u1VarArr2 = this.b;
-                try {
-                    u1VarArr2[0].dismiss();
-                } catch (Throwable unused2) {
+                an anVar2 = this.b;
+                if (i7 != 0) {
+                    anVar2.l(i7, 0, false, 0, true, 0);
+                    break;
+                } else {
+                    anVar2.D6 = false;
+                    anVar2.ka();
+                    break;
                 }
-                u1VarArr2[0] = null;
-                break;
-            case 2:
-                org.telegram.messenger.g0.h3(new ag(this.b, 4));
-                break;
-            case 3:
-                org.telegram.messenger.g0.h3(new ag(this.b, 5));
-                break;
-            case 4:
-                this.b[0].dismiss();
-                break;
             default:
-                this.b[0].dismiss();
-                break;
+                an anVar3 = this.b;
+                if (i7 != 0) {
+                    anVar3.finishFragment();
+                    break;
+                } else {
+                    anVar3.zd(true);
+                    break;
+                }
         }
     }
 }

@@ -2,68 +2,68 @@ package org.telegram.ui.Components;
 
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f0 b;
+    public final /* synthetic */ d0 b;
 
-    public /* synthetic */ a(f0 f0Var, int i7) {
+    public /* synthetic */ a(d0 d0Var, int i7) {
         this.a = i7;
-        this.b = f0Var;
+        this.b = d0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        f0 f0Var = this.b;
+        d0 d0Var = this.b;
         switch (i7) {
             case 0:
-                fi.m3 m3Var = f0Var.w2;
-                if (m3Var != null) {
-                    m3Var.f(true);
-                    f0Var.w2 = null;
+                hi.l3 l3Var = d0Var.x2;
+                if (l3Var != null) {
+                    l3Var.f(true);
+                    d0Var.x2 = null;
                 }
-                fi.m3 m3Var2 = new fi.m3(f0Var.getContext(), 1);
-                f0Var.w2 = m3Var2;
-                m3Var2.t();
-                f0Var.w2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
-                f0Var.w2.s(20.0f);
-                fi.m3 m3Var3 = f0Var.w2;
+                hi.l3 l3Var2 = new hi.l3(d0Var.getContext(), 1);
+                d0Var.x2 = l3Var2;
+                l3Var2.t();
+                d0Var.x2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
+                d0Var.x2.s(20.0f);
+                hi.l3 l3Var3 = d0Var.x2;
                 float L = org.telegram.messenger.g0.L(12.0f);
                 float L2 = org.telegram.messenger.g0.L(4.0f);
-                int r12 = org.telegram.ui.ActionBar.m6.r1(0.25f, -16777216);
-                Paint paint = m3Var3.F;
-                m3Var3.i0 = L;
-                m3Var3.j0 = L2;
-                m3Var3.k0 = r12;
+                int r12 = org.telegram.ui.ActionBar.j6.r1(0.25f, -16777216);
+                Paint paint = l3Var3.G;
+                l3Var3.j0 = L;
+                l3Var3.k0 = L2;
+                l3Var3.l0 = r12;
                 paint.setShadowLayer(L, 0.0f, L2, r12);
-                f0Var.w2.u(org.telegram.messenger.id.M0(2131755000, null));
-                f0Var.w2.o(0.5f, 0.0f);
-                fi.m3 m3Var4 = f0Var.w2;
-                m3Var4.d = 8000L;
-                f0Var.b.addView(m3Var4, c8.ha.d(-1, 200.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
-                f0Var.w2.w();
-                f0Var.w1();
+                d0Var.x2.u(org.telegram.messenger.hd.M0(2131755000, null));
+                d0Var.x2.o(0.5f, 0.0f);
+                hi.l3 l3Var4 = d0Var.x2;
+                l3Var4.d = 8000L;
+                d0Var.b.addView(l3Var4, c8.ja.d(-1, 200.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
+                d0Var.x2.w();
+                d0Var.w1();
                 break;
             case 1:
-                if (!f0Var.F2) {
-                    f0Var.y2.setVisibility(8);
+                if (!d0Var.G2) {
+                    d0Var.z2.setVisibility(8);
                     break;
                 }
                 break;
             case 2:
-                if (f0Var.F2) {
-                    f0Var.x2.setVisibility(8);
+                if (d0Var.G2) {
+                    d0Var.y2.setVisibility(8);
                     break;
                 }
                 break;
             case 3:
-                org.telegram.messenger.g0.K3(f0Var.v2.d);
+                org.telegram.messenger.g0.J3(d0Var.w2.d);
                 break;
             default:
-                f0Var.q1(0, 0, false);
-                f0Var.dismiss();
+                d0Var.q1(0, 0, false);
+                d0Var.dismiss();
                 break;
         }
     }

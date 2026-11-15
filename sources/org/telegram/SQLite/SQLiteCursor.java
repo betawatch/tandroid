@@ -6,7 +6,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class SQLiteCursor {
     public static final int FIELD_TYPE_BYTEARRAY = 4;
@@ -128,9 +128,9 @@ public class SQLiteCursor {
                 throw new SQLiteException("sqlite busy");
             }
         }
-        boolean z9 = step == 0;
-        this.inRow = z9;
-        return z9;
+        boolean z10 = step == 0;
+        this.inRow = z10;
+        return z10;
     }
 
     public String stringValue(int i7) {
@@ -138,13 +138,13 @@ public class SQLiteCursor {
         return columnStringValue(this.preparedStatement.getStatementHandle(), i7);
     }
 
-    public <T extends TLObject> T tlObjectValue(int i7, Vector.TLDeserializer<T> tLDeserializer, boolean z9) {
+    public <T extends TLObject> T tlObjectValue(int i7, Vector.TLDeserializer<T> tLDeserializer, boolean z10) {
         NativeByteBuffer byteBufferValue = byteBufferValue(i7);
         if (byteBufferValue == null) {
             return null;
         }
         try {
-            return tLDeserializer.deserialize(byteBufferValue, byteBufferValue.readInt32(z9), z9);
+            return tLDeserializer.deserialize(byteBufferValue, byteBufferValue.readInt32(z10), z10);
         } finally {
             byteBufferValue.reuse();
         }

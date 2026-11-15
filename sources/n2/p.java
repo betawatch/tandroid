@@ -1,15 +1,15 @@
 package n2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j2.n b;
+    public final /* synthetic */ k8.a b;
     public final /* synthetic */ Exception c;
 
-    public /* synthetic */ p(j2.n nVar, Exception exc, int i7) {
+    public /* synthetic */ p(k8.a aVar, Exception exc, int i7) {
         this.a = i7;
-        this.b = nVar;
+        this.b = aVar;
         this.c = exc;
     }
 
@@ -17,21 +17,21 @@ public final /* synthetic */ class p implements Runnable {
     public final void run() {
         int i7 = this.a;
         Exception exc = this.c;
-        j2.n nVar = this.b;
+        k8.a aVar = this.b;
         switch (i7) {
             case 0:
-                s sVar = (s) nVar.c;
-                String str = h2.m0.a;
-                m2.e eVar = ((l2.c0) sVar).a.s;
+                s sVar = (s) aVar.c;
+                String str = h2.l0.a;
+                m2.e eVar = ((l2.z) sVar).a.s;
                 m2.a U = eVar.U();
-                eVar.V(U, 1029, new m2.c(U, exc, 12));
+                eVar.V(U, 1029, new li.p(U, exc, 18));
                 break;
             default:
-                s sVar2 = (s) nVar.c;
-                String str2 = h2.m0.a;
-                m2.e eVar2 = ((l2.c0) sVar2).a.s;
+                s sVar2 = (s) aVar.c;
+                String str2 = h2.l0.a;
+                m2.e eVar2 = ((l2.z) sVar2).a.s;
                 m2.a U2 = eVar2.U();
-                eVar2.V(U2, 1014, new m2.d(U2, exc, 4));
+                eVar2.V(U2, 1014, new m2.c(U2, exc, 10));
                 break;
         }
     }

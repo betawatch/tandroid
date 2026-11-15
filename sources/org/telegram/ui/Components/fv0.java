@@ -1,34 +1,126 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class fv0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ FrameLayout c;
+public final class fv0 extends Drawable {
+    public final int a;
+    public final int b;
+    public final g5[] c;
+    public final boolean e;
+    public int d = org.telegram.messenger.ns.e4;
+    public final RectF f = new RectF();
+    public boolean g = false;
 
-    public /* synthetic */ fv0(FrameLayout frameLayout, View view, int i7) {
-        this.a = i7;
-        this.c = frameLayout;
-        this.b = view;
+    public fv0(int i7, ArrayList arrayList, boolean z10) {
+        this.e = z10;
+        int max = (int) Math.max(1.0d, Math.sqrt(arrayList.size()));
+        this.a = max;
+        int min = Math.min(max * max, arrayList.size());
+        this.b = min;
+        this.c = new g5[min];
+        if (!arrayList.isEmpty()) {
+            org.telegram.messenger.gj.H2((TLRPC.Document) arrayList.get(0));
+        }
+        int i10 = max < 2 ? 1 : 0;
+        for (int i11 = 0; i11 < this.b; i11++) {
+            this.c[i11] = g5.l(i7, i10, (TLRPC.Document) arrayList.get(i11));
+        }
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                gv0 gv0Var = (gv0) this.c;
-                gv0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                gv0Var.invalidate();
-                ((rk0) this.b).invalidate();
-                break;
-            default:
-                ((v61) this.c).F(this.b, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+    public final void a(org.telegram.ui.Cells.q1 q1Var) {
+        for (int i7 = 0; i7 < this.b; i7++) {
+            this.c[i7].n(q1Var);
         }
+    }
+
+    public final boolean b() {
+        return this.g;
+    }
+
+    public final boolean c(ArrayList arrayList) {
+        g5[] g5VarArr = this.c;
+        if (g5VarArr.length == arrayList.size()) {
+            for (int i7 = 0; i7 < g5VarArr.length; i7++) {
+                TLRPC.Document document = g5VarArr[i7].e;
+                if ((document == null ? 0L : document.id) == ((TLRPC.Document) arrayList.get(i7)).id) {
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public final void d() {
+        this.g = false;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        g5 g5Var;
+        if (this.d <= 0) {
+            return;
+        }
+        Rect bounds = getBounds();
+        RectF rectF = this.f;
+        rectF.set(bounds);
+        float centerX = rectF.centerX() - (org.telegram.messenger.g0.L(48.0f) / 2.0f);
+        float centerY = rectF.centerY() - (org.telegram.messenger.g0.L(48.0f) / 2.0f);
+        int L = org.telegram.messenger.g0.L(48.0f);
+        int i7 = this.a;
+        float f10 = L / i7;
+        float L2 = org.telegram.messenger.g0.L(48.0f) / i7;
+        canvas.save();
+        canvas.clipRect(centerX, centerY, org.telegram.messenger.g0.L(48.0f) + centerX, org.telegram.messenger.g0.L(48.0f) + centerY);
+        for (int i10 = 0; i10 < i7; i10++) {
+            for (int i11 = 0; i11 < i7; i11++) {
+                int i12 = (i10 * i7) + i11;
+                if (i12 >= 0) {
+                    g5[] g5VarArr = this.c;
+                    if (i12 < g5VarArr.length && (g5Var = g5VarArr[i12]) != null) {
+                        g5Var.setBounds((int) ((i11 * f10) + centerX), (int) ((i10 * L2) + centerY), (int) (((i11 + 1) * f10) + centerX), (int) (((i10 + 1) * L2) + centerY));
+                        g5VarArr[i12].setAlpha(this.d);
+                        g5VarArr[i12].setColorFilter(this.e ? org.telegram.ui.ActionBar.j6.w3 : org.telegram.ui.ActionBar.j6.v3);
+                        g5VarArr[i12].draw(canvas);
+                    }
+                }
+            }
+        }
+        canvas.restore();
+    }
+
+    public final void e() {
+        this.g = true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(48.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(48.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.d = i7;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

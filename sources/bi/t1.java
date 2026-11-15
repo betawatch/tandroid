@@ -1,89 +1,23 @@
 package bi;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.TextView;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class t1 extends w31 {
-    static {
-        w31.h(new t1());
+public final class t1 extends u6 {
+    public final /* synthetic */ s2 v2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t1(s2 s2Var, Context context, int i7, TL_stars.StarGift starGift, long j3, k1 k1Var, boolean z10, boolean z11) {
+        super(context, i7, starGift, null, j3, k1Var, z10, z11);
+        this.v2 = s2Var;
     }
 
-    public static x31 i(int i7, r1 r1Var) {
-        x31 K = x31.K(t1.class);
-        K.u = 1;
-        K.z = i7;
-        K.G = r1Var;
-        return K;
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        String str;
-        u1 u1Var = (u1) view;
-        r1 r1Var = (r1) x31Var.G;
-        int i7 = x31Var.z;
-        Integer[] numArr = new Integer[1];
-        u1Var.s = i7 == 0;
-        org.telegram.ui.Components.k9 k9Var = u1Var.d;
-        TextView textView = u1Var.e;
-        zh.v0 v0Var = u1Var.c;
-        u1Var.w = r1Var;
-        if (i7 == 0) {
-            v0Var.d(null);
-            v0Var.e(null);
-            TL_stars.starGiftAttributeModel stargiftattributemodel = r1Var.c;
-            textView.setText(stargiftattributemodel.name);
-            u1.a(u1Var, stargiftattributemodel.document, 80, x31Var.G, true);
-            k9Var.setColorFilter(null);
-            v0Var.y = org.telegram.ui.ActionBar.m6.Ci;
-            str = k7.F1(stargiftattributemodel.rarity, numArr);
-        } else if (i7 == 1) {
-            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = r1Var.a;
-            TL_stars.starGiftAttributePattern stargiftattributepattern = r1Var.b;
-            v0Var.d(stargiftattributebackdrop);
-            v0Var.e(stargiftattributepattern);
-            v0Var.y = org.telegram.ui.ActionBar.m6.d6;
-            textView.setText(stargiftattributebackdrop.name);
-            u1.a(u1Var, stargiftattributepattern.document, 48, x31Var.G, false);
-            k9Var.setColorFilter(new PorterDuffColorFilter(i0.a.o(stargiftattributebackdrop.pattern_color, 64), PorterDuff.Mode.SRC_IN));
-            str = k7.F1(stargiftattributebackdrop.rarity, numArr);
-        } else if (i7 == 2) {
-            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = r1Var.a;
-            TL_stars.starGiftAttributePattern stargiftattributepattern2 = r1Var.b;
-            v0Var.d(stargiftattributebackdrop2);
-            v0Var.e(stargiftattributepattern2);
-            v0Var.y = org.telegram.ui.ActionBar.m6.d6;
-            textView.setText(stargiftattributepattern2.name);
-            u1.a(u1Var, stargiftattributepattern2.document, 64, x31Var.G, false);
-            k9Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            str = k7.F1(stargiftattributepattern2.rarity, numArr);
-        } else {
-            str = "";
-        }
-        if (i7 == 0) {
-            org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, u1Var.a);
-        } else {
-            org.telegram.ui.ActionBar.t6.q(textView);
-            textView.setTextColor(-1);
-        }
-        u1Var.f.setText(str);
-        u1Var.h = numArr[0];
-        u1Var.b();
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
-        return new u1(context, h6Var);
+    @Override // bi.u6
+    public final cc e1() {
+        s2 s2Var = this.v2;
+        return new cc(s2Var.c, s2Var.J0);
     }
 }

@@ -1,26 +1,42 @@
 package j6;
 
-import com.google.android.gms.common.api.Status;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class t implements com.google.android.gms.common.api.q {
-    public final Status a;
-    public final f6.d b;
-    public final String c;
-    public final String d;
-    public final boolean e;
-
-    public t(Status status, f6.d dVar, String str, String str2, boolean z9) {
-        this.a = status;
-        this.b = dVar;
-        this.c = str;
-        this.d = str2;
-        this.e = z9;
+public final class t extends q6.h {
+    @Override // q6.d, com.google.android.gms.common.api.c
+    public final int d() {
+        return 12451000;
     }
 
-    @Override // com.google.android.gms.common.api.q
-    public final Status a() {
-        return this.a;
+    @Override // q6.d
+    public final IInterface i(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cast.internal.ICastService");
+        return queryLocalInterface instanceof i ? (i) queryLocalInterface : new i(iBinder, "com.google.android.gms.cast.internal.ICastService", 2);
+    }
+
+    @Override // q6.d
+    public final n6.c[] k() {
+        return f6.y.e;
+    }
+
+    @Override // q6.d
+    public final String o() {
+        return "com.google.android.gms.cast.internal.ICastService";
+    }
+
+    @Override // q6.d
+    public final String p() {
+        return "com.google.android.gms.cast.service.BIND_CAST_DEVICE_CONTROLLER_SERVICE";
+    }
+
+    @Override // q6.d
+    public final boolean x() {
+        return true;
     }
 }

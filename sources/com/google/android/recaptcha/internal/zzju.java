@@ -1,6 +1,7 @@
 package com.google.android.recaptcha.internal;
 
 import c8.d0;
+import com.google.android.gms.internal.vision.e2;
 import hd.e;
 import hd.h;
 import hd.n;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class zzju implements zzjt {
     public static final zzju zza = new zzju();
@@ -17,10 +18,10 @@ public final class zzju implements zzjt {
     }
 
     private static final List zzc(Object obj) {
-        boolean z9 = obj instanceof byte[];
+        boolean z10 = obj instanceof byte[];
         n nVar = n.a;
         int i7 = 0;
-        if (z9) {
+        if (z10) {
             byte[] bArr = (byte[]) obj;
             int length = bArr.length;
             if (length == 0) {
@@ -66,7 +67,7 @@ public final class zzju implements zzjt {
             ArrayList arrayList3 = new ArrayList(iArr.length);
             int length6 = iArr.length;
             while (i7 < length6) {
-                i7 = a.f(iArr[i7], i7, 1, arrayList3);
+                i7 = e2.f(iArr[i7], i7, 1, arrayList3);
             }
             return arrayList3;
         }

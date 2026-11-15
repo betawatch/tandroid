@@ -1,28 +1,79 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class te implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cn b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ te(cn cnVar, long j3, long j10, int i7) {
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class te implements org.telegram.ui.ActionBar.q1, org.telegram.messenger.yo, il0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
+
+    public /* synthetic */ te(int i7, Runnable runnable) {
         this.a = i7;
-        this.b = cnVar;
-        this.c = j3;
-        this.d = j10;
+        this.b = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.yo
+    public boolean d(TLRPC.TL_error tL_error) {
         switch (this.a) {
-            case 0:
-                cn.p0(this.b, this.c, this.d);
+            case 3:
+                this.b.run();
+                break;
+            case 4:
+                this.b.run();
+                break;
+            case 5:
+                this.b.run();
+                break;
+            case 6:
+                this.b.run();
+                break;
+            case 7:
+                this.b.run();
                 break;
             default:
-                cn.G1(this.b, this.c, this.d);
+                this.b.run();
+                break;
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.il0
+    public void e(int i7) {
+        int i10 = this.a;
+        Runnable runnable = this.b;
+        switch (i10) {
+            case 9:
+                String str = LaunchActivity.C1;
+                if (i7 == 1) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            default:
+                if (i7 == 1) {
+                    runnable.run();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                break;
+            case 1:
+                this.b.run();
+                break;
+            default:
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
         }
     }

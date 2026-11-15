@@ -4,10 +4,10 @@ import android.os.Parcel;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.m;
-import com.google.android.gms.common.api.q;
-import org.telegram.messenger.qs;
+import com.google.android.gms.common.api.r;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class g extends com.google.android.gms.common.api.internal.d {
     public final /* synthetic */ int q;
@@ -19,12 +19,12 @@ public final class g extends com.google.android.gms.common.api.internal.d {
     }
 
     @Override // com.google.android.gms.common.api.internal.BasePendingResult, com.google.android.gms.common.api.internal.e
-    public final /* bridge */ /* synthetic */ void a(q qVar) {
-        a(qVar);
+    public final /* bridge */ /* synthetic */ void a(r rVar) {
+        a(rVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.BasePendingResult
-    public final /* bridge */ /* synthetic */ q d(Status status) {
+    public final /* bridge */ /* synthetic */ r d(Status status) {
         int i7 = this.q;
         return status;
     }
@@ -41,7 +41,7 @@ public final class g extends com.google.android.gms.common.api.internal.d {
                 int i7 = l7.f.a;
                 l1.writeStrongBinder(fVar);
                 l7.f.c(l1, googleSignInOptions);
-                kVar.m1(l1, qs.n1);
+                kVar.m1(l1, ns.n1);
                 break;
             default:
                 e eVar2 = (e) cVar;
@@ -52,7 +52,7 @@ public final class g extends com.google.android.gms.common.api.internal.d {
                 int i10 = l7.f.a;
                 l12.writeStrongBinder(fVar2);
                 l7.f.c(l12, googleSignInOptions2);
-                kVar2.m1(l12, qs.o1);
+                kVar2.m1(l12, ns.o1);
                 break;
         }
     }

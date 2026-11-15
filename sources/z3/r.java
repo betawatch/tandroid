@@ -1,37 +1,75 @@
 package z3;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+import a8.ja;
+import f3.h0;
+
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class r {
-    public final int a;
-    public final int b;
-    public final long c;
-    public final long d;
-    public final long e;
-    public final long f;
-    public final e2.u g;
-    public final int h;
-    public final long[] i;
-    public final long[] j;
-    public final int k;
-    public final s[] l;
+    public final boolean a;
+    public final String b;
+    public final h0 c;
+    public final int d;
+    public final byte[] e;
 
-    public r(int i7, int i10, long j3, long j10, long j11, long j12, e2.u uVar, int i11, s[] sVarArr, int i12, long[] jArr, long[] jArr2) {
-        this.a = i7;
-        this.b = i10;
-        this.c = j3;
-        this.d = j10;
-        this.e = j11;
-        this.f = j12;
-        this.g = uVar;
-        this.h = i11;
-        this.l = sVarArr;
-        this.k = i12;
-        this.i = jArr;
-        this.j = jArr2;
-    }
-
-    public final r a(e2.u uVar) {
-        return new r(this.a, this.b, this.c, this.d, this.e, this.f, uVar, this.h, this.l, this.k, this.i, this.j);
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0052, code lost:
+    
+        if (r6.equals("cbc1") == false) goto L14;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public r(boolean z10, String str, int i7, byte[] bArr, int i10, int i11, byte[] bArr2) {
+        char c10 = 0;
+        int i12 = 1;
+        ja.f((i7 == 0) ^ (bArr2 == null));
+        this.a = z10;
+        this.b = str;
+        this.d = i7;
+        this.e = bArr2;
+        if (str != null) {
+            switch (str.hashCode()) {
+                case 3046605:
+                    break;
+                case 3046671:
+                    if (str.equals("cbcs")) {
+                        c10 = 1;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3049879:
+                    if (str.equals("cenc")) {
+                        c10 = 2;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3049895:
+                    if (str.equals("cens")) {
+                        c10 = 3;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                default:
+                    c10 = 65535;
+                    break;
+            }
+            switch (c10) {
+                case 0:
+                case 1:
+                    i12 = 2;
+                    break;
+                case 2:
+                case 3:
+                    break;
+                default:
+                    h2.a.l("TrackEncryptionBox", "Unsupported protection scheme type '" + str + "'. Assuming AES-CTR crypto mode.");
+                    break;
+            }
+        }
+        this.c = new h0(i12, i10, i11, bArr);
     }
 }

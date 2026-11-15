@@ -1,42 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.ImageView;
-
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class um implements View.OnKeyListener {
+public final /* synthetic */ class um implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ org.telegram.messenger.z10 b;
 
-    public /* synthetic */ um(Object obj, int i7) {
+    public /* synthetic */ um(org.telegram.messenger.z10 z10Var, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = z10Var;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i7, KeyEvent keyEvent) {
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                ym ymVar = (ym) this.b;
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
-                if (i7 != 67 || keyEvent.getAction() != 0 || editTextBoldCursor.length() != 0) {
-                    return false;
-                }
-                ImageView imageView = ymVar.f;
-                if (imageView != null) {
-                    imageView.callOnClick();
-                }
-                return true;
+                this.b.a(new th.e((String) obj));
+                break;
             default:
-                xt xtVar = (xt) this.b;
-                xtVar.getClass();
-                if (i7 != 82 || keyEvent.getRepeatCount() != 0 || keyEvent.getAction() != 1 || !xtVar.isShowing()) {
-                    return false;
+                int[] iArr = (int[]) obj;
+                boolean z10 = false;
+                if (iArr.length >= 1 && iArr[0] == 0) {
+                    z10 = true;
                 }
-                xtVar.dismiss();
-                return true;
+                this.b.a(Boolean.valueOf(z10));
+                break;
         }
     }
 }

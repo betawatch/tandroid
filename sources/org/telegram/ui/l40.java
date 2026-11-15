@@ -1,26 +1,47 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.view.View;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class l40 extends ug.i0 {
-    public final /* synthetic */ m40 S2;
+public final /* synthetic */ class l40 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w40 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l40(m40 m40Var, m40 m40Var2, Activity activity, int i7, int i10, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(i7, i10, activity, m40Var2, h6Var);
-        this.S2 = m40Var;
+    public /* synthetic */ l40(w40 w40Var, int i7) {
+        this.a = i7;
+        this.b = w40Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
-    public final void dismiss() {
-        super.dismiss();
-        this.S2.B0 = false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.w2
-    public final void v() {
-        this.S2.B0 = false;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                w40 w40Var = this.b;
+                w40Var.Y = null;
+                w40Var.a0.b();
+                w40Var.h.b();
+                w40Var.p0();
+                w40Var.w0();
+                w40Var.x0();
+                break;
+            case 1:
+                w40 w40Var2 = this.b;
+                w40Var2.f.r.clearFocus();
+                w40Var2.f.r.requestFocus();
+                org.telegram.messenger.g0.J3(w40Var2.f.r);
+                break;
+            case 2:
+                this.b.t0();
+                break;
+            case 3:
+                w40 w40Var3 = this.b;
+                w40Var3.s0(w40Var3.q0());
+                break;
+            default:
+                w40 w40Var4 = this.b;
+                w40Var4.s0(w40Var4.q0());
+                break;
+        }
     }
 }

@@ -1,17 +1,87 @@
 package fi;
 
 import android.content.Context;
-import android.graphics.PointF;
-import java.util.ArrayList;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class e5 extends tg.u0 {
-    public final /* synthetic */ o5 M0;
+public final class e5 extends c5.l {
+    public boolean x0;
+    public final /* synthetic */ k5 y0;
+    public final /* synthetic */ k5 z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e5(o5 o5Var, Context context, PointF pointF, ArrayList arrayList, org.telegram.ui.Components.x9 x9Var, boolean z9, x5 x5Var) {
-        super(context, pointF, arrayList, x9Var, z9, x5Var);
-        this.M0 = o5Var;
+    public e5(k5 k5Var, Context context) {
+        super(context);
+        this.z0 = k5Var;
+        this.y0 = k5Var;
+    }
+
+    public final boolean A(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            this.x0 = true;
+        }
+        if (this.x0 && this.y0.y <= 0) {
+            try {
+                return super.onInterceptTouchEvent(motionEvent);
+            } catch (Exception unused) {
+            }
+        }
+        return false;
+    }
+
+    public final boolean B(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            this.x0 = true;
+        }
+        if (!this.x0 || this.y0.y > 0) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        float currentTopOffset;
+        float y10 = motionEvent.getY();
+        currentTopOffset = this.z0.getCurrentTopOffset();
+        if (y10 >= currentTopOffset || motionEvent.getAction() != 0) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    @Override // c5.l, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        float currentTopOffset;
+        float currentTopOffset2;
+        float y10 = motionEvent.getY();
+        k5 k5Var = this.z0;
+        currentTopOffset = k5Var.getCurrentTopOffset();
+        if (y10 < currentTopOffset) {
+            return false;
+        }
+        currentTopOffset2 = k5Var.getCurrentTopOffset();
+        if (Math.abs(currentTopOffset2 - k5Var.d) > org.telegram.messenger.g0.L(1.0f)) {
+            return false;
+        }
+        return A(motionEvent);
+    }
+
+    @Override // c5.l, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        float currentTopOffset;
+        float currentTopOffset2;
+        float y10 = motionEvent.getY();
+        k5 k5Var = this.z0;
+        currentTopOffset = k5Var.getCurrentTopOffset();
+        if (y10 < currentTopOffset) {
+            return false;
+        }
+        currentTopOffset2 = k5Var.getCurrentTopOffset();
+        if (Math.abs(currentTopOffset2 - k5Var.d) > org.telegram.messenger.g0.L(1.0f)) {
+            return false;
+        }
+        return B(motionEvent);
     }
 }

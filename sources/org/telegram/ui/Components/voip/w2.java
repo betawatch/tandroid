@@ -1,32 +1,59 @@
 package org.telegram.ui.Components.voip;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class w2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b3 b;
-    public final /* synthetic */ int c;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ w2(b3 b3Var, int i7, int i10) {
-        this.a = i10;
-        this.b = b3Var;
-        this.c = i7;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class w2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y2 b;
+
+    public /* synthetic */ w2(y2 y2Var, int i7) {
+        this.a = i7;
+        this.b = y2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new w2(this.b, this.c, 2));
+                y2 y2Var = this.b;
+                y2Var.getClass();
+                y2Var.I = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                y2Var.invalidate();
+                y2Var.U.c();
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new w2(this.b, this.c, 3));
+                y2 y2Var2 = this.b;
+                y2Var2.getClass();
+                y2Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y2Var2.invalidate();
+                y2Var2.U.c();
                 break;
             case 2:
-                this.b.c(this.c);
+                y2 y2Var3 = this.b;
+                y2Var3.getClass();
+                y2Var3.I = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                y2Var3.invalidate();
+                y2Var3.U.c();
+                break;
+            case 3:
+                y2 y2Var4 = this.b;
+                y2Var4.getClass();
+                y2Var4.F = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                y2Var4.invalidate();
+                break;
+            case 4:
+                y2 y2Var5 = this.b;
+                y2Var5.getClass();
+                y2Var5.G = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                y2Var5.invalidate();
                 break;
             default:
-                this.b.a(this.c);
+                y2 y2Var6 = this.b;
+                y2Var6.getClass();
+                y2Var6.F = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                y2Var6.invalidate();
                 break;
         }
     }

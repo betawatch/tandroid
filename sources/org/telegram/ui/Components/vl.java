@@ -1,33 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vl implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zl b;
+public final class vl extends TextView {
+    public float a;
+    public boolean b;
+    public final /* synthetic */ Paint c;
 
-    public /* synthetic */ vl(zl zlVar, int i7) {
-        this.a = i7;
-        this.b = zlVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vl(Context context, Paint paint) {
+        super(context);
+        this.c = paint;
+        this.a = 0.0f;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                zl zlVar = this.b;
-                zlVar.getClass();
-                zlVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                zlVar.invalidate();
-                break;
-            default:
-                zl zlVar2 = this.b;
-                zlVar2.getClass();
-                zlVar2.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                zlVar2.invalidate();
-                break;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i7 = (int) ((this.a * 130.0f) + 125.0f);
+        Paint paint = this.c;
+        paint.setAlpha(i7);
+        if (this.b) {
+            float f10 = this.a + 0.026666667f;
+            this.a = f10;
+            if (f10 >= 1.0f) {
+                this.a = 1.0f;
+                this.b = false;
+            }
+        } else {
+            float f11 = this.a - 0.026666667f;
+            this.a = f11;
+            if (f11 <= 0.0f) {
+                this.a = 0.0f;
+                this.b = true;
+            }
         }
+        super.onDraw(canvas);
+        canvas.drawCircle(org.telegram.messenger.g0.L(14.0f), getMeasuredHeight() / 2, org.telegram.messenger.g0.L(4.0f), paint);
+        invalidate();
     }
 }

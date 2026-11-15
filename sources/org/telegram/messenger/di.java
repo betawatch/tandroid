@@ -1,160 +1,152 @@
 package org.telegram.messenger;
 
+import android.text.TextUtils;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final /* synthetic */ class di implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c1 b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class di implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ a0.h d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ c1 f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ di(c1 c1Var, Object obj, Object obj2, int i7) {
-        this.a = i7;
-        this.b = c1Var;
-        this.c = obj;
-        this.d = obj2;
+    public /* synthetic */ di(si siVar, wz wzVar, xz xzVar, ArrayList arrayList, long j3, a0.h hVar, Runnable runnable) {
+        this.f = siVar;
+        this.h = wzVar;
+        this.n = xzVar;
+        this.c = arrayList;
+        this.b = j3;
+        this.d = hVar;
+        this.e = runnable;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i7 = this.a;
-        int i10 = 1;
-        Object obj = this.d;
-        Object obj2 = this.c;
-        c1 c1Var = this.b;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                ui uiVar = (ui) c1Var;
-                TLRPC.TL_messages_faveSticker tL_messages_faveSticker = (TLRPC.TL_messages_faveSticker) obj;
-                if (tL_error != null && r8.r(tL_error.text) && obj2 != null) {
-                    uiVar.getFileRefController().u(new Object[]{tL_messages_faveSticker}, obj2);
-                    break;
-                } else {
-                    g0.h3(new fg(uiVar, 2));
-                    break;
-                }
-            case 1:
-                ui uiVar2 = (ui) c1Var;
-                TLRPC.TL_messages_saveRecentSticker tL_messages_saveRecentSticker = (TLRPC.TL_messages_saveRecentSticker) obj;
-                uiVar2.getClass();
-                if (tL_error != null && r8.r(tL_error.text) && obj2 != null) {
-                    uiVar2.getFileRefController().u(new Object[]{tL_messages_saveRecentSticker}, obj2);
-                    break;
-                }
-                break;
-            case 2:
-                g0.h3(new mn((qp) c1Var, tL_error, tLObject, (Long) obj2, (c20) obj));
-                break;
-            case 3:
-                qp qpVar = (qp) c1Var;
-                org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj2;
-                TLRPC.TL_messages_createChat tL_messages_createChat = (TLRPC.TL_messages_createChat) obj;
-                if (tL_error == null) {
-                    if (tLObject instanceof TLRPC.TL_messages_invitedUsers) {
-                        TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) tLObject;
-                        qpVar.O3(tL_messages_invitedUsers.updates, false);
-                        g0.h3(new b4(9, qpVar, tL_messages_invitedUsers));
-                        break;
-                    }
-                } else {
-                    g0.h3(new em(qpVar, tL_error, f2Var, tL_messages_createChat, 2));
-                    break;
-                }
-                break;
-            case 4:
-                qp qpVar2 = (qp) c1Var;
-                org.telegram.ui.ActionBar.f2 f2Var2 = (org.telegram.ui.ActionBar.f2) obj2;
-                TLRPC.TL_channels_createChannel tL_channels_createChannel = (TLRPC.TL_channels_createChannel) obj;
-                if (tL_error == null) {
-                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    qpVar2.O3(updates, false);
-                    g0.h3(new hi(20, qpVar2, updates));
-                    break;
-                } else {
-                    g0.h3(new em(qpVar2, tL_error, f2Var2, tL_channels_createChannel, 1));
-                    break;
-                }
-            case 5:
-                qp qpVar3 = (qp) c1Var;
-                TLRPC.TL_messages_saveGif tL_messages_saveGif = (TLRPC.TL_messages_saveGif) obj;
-                qpVar3.getClass();
-                if (tL_error != null && r8.r(tL_error.text)) {
-                    qpVar3.getFileRefController().u(new Object[]{tL_messages_saveGif}, obj2);
-                    break;
-                }
-                break;
-            case 6:
-                qp qpVar4 = (qp) c1Var;
-                TLRPC.Chat chat = (TLRPC.Chat) obj2;
-                TLRPC.User user = (TLRPC.User) obj;
-                if (tLObject != null) {
-                    TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
-                    if (t3.T(chat)) {
-                        qpVar4.L3(tL_messages_affectedHistory.pts, tL_messages_affectedHistory.pts_count, chat.id);
-                    } else {
-                        qpVar4.M3(tL_messages_affectedHistory.pts, -1, tL_messages_affectedHistory.pts_count);
-                    }
-                    new ArrayList();
-                    qpVar4.getMessagesStorage().c2(chat != null ? -chat.id : user.id, null, false, 0, 0, false, null);
-                    break;
-                }
-                break;
-            case 7:
-                qp qpVar5 = (qp) c1Var;
-                TLRPC.ChatFull chatFull = (TLRPC.ChatFull) obj2;
-                String str = (String) obj;
-                if ((tLObject instanceof TLRPC.TL_boolTrue) && chatFull != null) {
-                    g0.h3(new lg((Object) qpVar5, (Object) chatFull, str, 14));
-                    break;
-                }
-                break;
-            case 8:
-                qp qpVar6 = (qp) c1Var;
-                Runnable runnable = (Runnable) obj2;
-                Runnable runnable2 = (Runnable) obj;
-                qpVar6.getClass();
-                if (tLObject == null) {
-                    if (tL_error != null && !"CHAT_NOT_MODIFIED".equals(tL_error.text)) {
-                        if (runnable2 != null) {
-                            runnable2.run();
-                            break;
+                si siVar = (si) this.f;
+                wz wzVar = (wz) this.h;
+                xz xzVar = (xz) this.n;
+                ArrayList arrayList = this.c;
+                xz.a(wzVar);
+                wz d = xz.d(xzVar, "loadReplyMessagesForMessages: (encrypted) loading those messages from storage");
+                try {
+                    ArrayList arrayList2 = new ArrayList();
+                    SQLiteDatabase sQLiteDatabase = siVar.getMessagesStorage().b;
+                    Locale locale = Locale.US;
+                    SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid, m.date, r.random_id FROM randoms_v2 as r INNER JOIN messages_v2 as m ON r.mid = m.mid AND r.uid = m.uid WHERE r.random_id IN(" + TextUtils.join(",", arrayList) + ")", new Object[0]);
+                    while (true) {
+                        boolean next = queryFinalized.next();
+                        long j3 = this.b;
+                        a0.h hVar = this.d;
+                        if (!next) {
+                            queryFinalized.dispose();
+                            if (hVar.m() != 0) {
+                                for (int i7 = 0; i7 < hVar.m(); i7++) {
+                                    ArrayList arrayList3 = (ArrayList) hVar.n(i7);
+                                    for (int i10 = 0; i10 < arrayList3.size(); i10++) {
+                                        TLRPC.MessageReplyHeader messageReplyHeader = ((gj) arrayList3.get(i10)).k.reply_to;
+                                        if (messageReplyHeader != null) {
+                                            messageReplyHeader.reply_to_random_id = 0L;
+                                        }
+                                    }
+                                }
+                            }
+                            xz.a(d);
+                            g0.h3(new gm(siVar, xz.d(xzVar, "loadReplyMessagesForMessages (encrypted) runOnUIThread: posting notification"), j3, arrayList2, 3));
+                            Runnable runnable = this.e;
+                            if (runnable != null) {
+                                runnable.run();
+                                break;
+                            }
+                        } else {
+                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
+                            if (byteBufferValue != null) {
+                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                                TLdeserialize.readAttachPath(byteBufferValue, siVar.getUserConfig().n);
+                                byteBufferValue.reuse();
+                                TLdeserialize.id = queryFinalized.intValue(1);
+                                TLdeserialize.date = queryFinalized.intValue(2);
+                                TLdeserialize.dialog_id = j3;
+                                long longValue = queryFinalized.longValue(3);
+                                ArrayList arrayList4 = (ArrayList) hVar.f(longValue);
+                                hVar.l(longValue);
+                                if (arrayList4 != null) {
+                                    gj gjVar = new gj(siVar.currentAccount, TLdeserialize, false, false);
+                                    arrayList2.add(gjVar);
+                                    for (int i11 = 0; i11 < arrayList4.size(); i11++) {
+                                        gj gjVar2 = (gj) arrayList4.get(i11);
+                                        gjVar2.C = gjVar;
+                                        gjVar2.m();
+                                        gjVar2.k.reply_to = new TLRPC.TL_messageReplyHeader();
+                                        TLRPC.MessageReplyHeader messageReplyHeader2 = gjVar2.k.reply_to;
+                                        messageReplyHeader2.flags |= 16;
+                                        messageReplyHeader2.reply_to_msg_id = gjVar.L1();
+                                    }
+                                }
+                            }
                         }
-                    } else if (runnable != null) {
-                        runnable.run();
-                        break;
                     }
-                } else {
-                    qpVar6.O3((TLRPC.Updates) tLObject, false);
-                    g0.h3(new sn(qpVar6, 3));
-                    if (runnable != null) {
-                        runnable.run();
-                        break;
-                    }
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    return;
                 }
-                break;
-            case 9:
-                g0.h3(new xw((gz) c1Var, (String) obj2, (List) obj, i10));
-                break;
-            case 10:
-                g0.h3(new em((gz) c1Var, tLObject, (sy) obj2, (String) obj, 23));
                 break;
             default:
-                gz gzVar = (gz) c1Var;
-                org.telegram.ui.ActionBar.f2 f2Var3 = (org.telegram.ui.ActionBar.f2) obj2;
-                TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
-                if (tL_error != null) {
-                    g0.h3(new tw(gzVar, tL_error, f2Var3, tL_messages_editMessage, 0));
-                    break;
-                } else {
-                    gzVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                h00 h00Var = (h00) this.f;
+                TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs = (TLRPC.TL_messages_savedDialogs) this.h;
+                HashSet hashSet = (HashSet) this.n;
+                int i12 = 0;
+                h00Var.getMessagesController().Y3(tL_messages_savedDialogs.users, false);
+                h00Var.getMessagesController().S3(tL_messages_savedDialogs.chats, false);
+                long j10 = this.b;
+                ArrayList arrayList5 = this.c;
+                h00Var.u(j10, arrayList5, this.d, false, 2, -1);
+                long j11 = -j10;
+                h00Var.getMessagesStorage().C1(h00Var.getConnectionsManager().getCurrentTime(), j11, (List) h00Var.a.f(j10), true);
+                h00Var.getMessagesStorage().j1(tL_messages_savedDialogs.messages, false, true, false, 0, false, 0, 0L);
+                int size = arrayList5.size();
+                while (i12 < size) {
+                    Object obj = arrayList5.get(i12);
+                    i12++;
+                    hashSet.remove(Long.valueOf(m5.o(((TLRPC.TL_forumTopic) obj).from_id)));
+                }
+                Iterator it = hashSet.iterator();
+                while (it.hasNext()) {
+                    long longValue2 = ((Long) it.next()).longValue();
+                    vr messagesStorage = h00Var.getMessagesStorage();
+                    messagesStorage.a.c(new sp(1, j11, longValue2, messagesStorage));
+                    h00Var.s(j10, longValue2);
+                }
+                Runnable runnable2 = this.e;
+                if (runnable2 != null) {
+                    runnable2.run();
                     break;
                 }
+                break;
         }
+    }
+
+    public /* synthetic */ di(h00 h00Var, TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j3, ArrayList arrayList, a0.h hVar, HashSet hashSet, Runnable runnable) {
+        this.f = h00Var;
+        this.h = tL_messages_savedDialogs;
+        this.b = j3;
+        this.c = arrayList;
+        this.d = hVar;
+        this.n = hashSet;
+        this.e = runnable;
     }
 }

@@ -2,21 +2,19 @@ package n3;
 
 import e2.s0;
 import e2.u;
-import f3.e0;
-import f3.j0;
+import f3.d0;
+import f3.i0;
 import f3.o;
 import f3.p;
 import f3.q;
 import f3.s;
 import f3.t;
 import h9.g0;
-import h9.i0;
-import h9.t1;
+import h9.s1;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a = 0;
@@ -24,7 +22,7 @@ public final class a implements o {
 
     public a(int i7) {
         if ((i7 & 1) != 0) {
-            this.b = new e0(65496, 2, "image/jpeg");
+            this.b = new d0(65496, 2, "image/jpeg");
         } else {
             this.b = new b();
         }
@@ -53,14 +51,14 @@ public final class a implements o {
                 ((o) this.b).c(qVar);
                 break;
             default:
-                j0 O1 = qVar.O1(0, 3);
+                i0 d2 = qVar.d2(0, 3);
                 qVar.f(new t(-9223372036854775807L));
-                qVar.U0();
+                qVar.d1();
                 u uVar = (u) this.b;
                 e2.t a10 = uVar.a();
                 a10.r = s0.n("text/x-unknown");
                 a10.j = uVar.s;
-                f1.s(a10, O1);
+                r.b.s(a10, d2);
                 break;
         }
     }
@@ -79,8 +77,8 @@ public final class a implements o {
     public final List e() {
         switch (this.a) {
         }
-        g0 g0Var = i0.b;
-        return t1.e;
+        g0 g0Var = h9.i0.b;
+        return s1.e;
     }
 
     @Override // f3.o

@@ -7,9 +7,9 @@ import android.util.Log;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
-import org.telegram.ui.ly0;
+import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class p extends g {
     public static final j6.b j = new j6.b("MediaRouterProxy", null);
@@ -19,7 +19,7 @@ public final class p extends g {
     public final s f;
     public final boolean i;
 
-    public p(Context context, s4.x xVar, g6.b bVar, j6.r rVar) {
+    public p(Context context, s4.x xVar, g6.b bVar, j6.s sVar) {
         super("com.google.android.gms.cast.framework.internal.IMediaRouter", 0);
         this.e = new HashMap();
         this.c = xVar;
@@ -37,9 +37,9 @@ public final class p extends g {
         boolean isEmpty = context.getPackageManager().queryBroadcastReceivers(intent, 0).isEmpty();
         this.i = !isEmpty;
         if (!isEmpty) {
-            a2.a(a1.a0);
+            a2.a(a1.b0);
         }
-        rVar.f(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new wf.b(11, this, bVar));
+        sVar.f(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new wf.b(11, this, bVar));
     }
 
     public final void m1(android.support.v4.media.session.a0 a0Var) {
@@ -47,13 +47,13 @@ public final class p extends g {
         s4.x.b();
         s4.e c10 = s4.x.c();
         c10.D = a0Var;
-        ly0 ly0Var = a0Var != null ? new ly0(c10, a0Var) : null;
-        ly0 ly0Var2 = c10.C;
-        if (ly0Var2 != null) {
-            ly0Var2.n();
+        ld0 ld0Var = a0Var != null ? new ld0(c10, a0Var) : null;
+        ld0 ld0Var2 = c10.C;
+        if (ld0Var2 != null) {
+            ld0Var2.n();
         }
-        c10.C = ly0Var;
-        if (ly0Var != null) {
+        c10.C = ld0Var;
+        if (ld0Var != null) {
             c10.l();
         }
     }

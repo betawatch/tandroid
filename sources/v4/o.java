@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public abstract class o {
     public static final c5.b a = new c5.b(8);
@@ -139,13 +139,13 @@ public abstract class o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static p4.c c(o oVar, boolean z9) {
+    public static p4.c c(o oVar, boolean z10) {
         int i7;
         int[] iArr;
         int[] iArr2;
         n nVar;
         int i10;
-        boolean z10;
+        boolean z11;
         int i11;
         int i12;
         int i13;
@@ -168,7 +168,7 @@ public abstract class o {
         int[] iArr4 = new int[i17];
         ArrayList arrayList3 = new ArrayList();
         while (!arrayList2.isEmpty()) {
-            m mVar2 = (m) org.telegram.ui.Cells.f1.k(1, arrayList2);
+            m mVar2 = (m) r.b.g(1, arrayList2);
             int i18 = mVar2.a;
             int i19 = mVar2.b;
             int i20 = mVar2.c;
@@ -177,7 +177,7 @@ public abstract class o {
             if (i21 >= 1 && i22 >= 1) {
                 int i23 = i21 - i22;
                 int i24 = ((i21 + i22) + 1) / 2;
-                boolean z11 = true;
+                boolean z12 = true;
                 int i25 = (abs - i24) - 1;
                 i7 = abs;
                 int i26 = abs + i24 + 1;
@@ -203,7 +203,7 @@ public abstract class o {
                                 iArr2 = iArr3;
                             }
                             i10 = iArr2[(i7 + i31) - 1] + 1;
-                            z10 = z11;
+                            z11 = z12;
                             i11 = i18;
                             i12 = i10 - i31;
                             while (i10 < i21 && i12 < i22) {
@@ -224,7 +224,7 @@ public abstract class o {
                                 nVar.a = i14;
                                 nVar.b = i14 - i31;
                                 nVar.c = i10 - i14;
-                                nVar.d = z10;
+                                nVar.d = z11;
                                 nVar.e = false;
                                 break;
                             }
@@ -238,7 +238,7 @@ public abstract class o {
                             iArr2 = iArr3;
                         }
                         i10 = iArr2[i7 + i31 + 1];
-                        z10 = false;
+                        z11 = false;
                         i11 = i18;
                         i12 = i10 - i31;
                         while (i10 < i21) {
@@ -271,7 +271,7 @@ public abstract class o {
                 }
                 nVar.a += mVar2.a;
                 nVar.b += mVar2.c;
-                m mVar3 = arrayList3.isEmpty() ? new m() : (m) org.telegram.ui.Cells.f1.k(1, arrayList3);
+                m mVar3 = arrayList3.isEmpty() ? new m() : (m) r.b.g(1, arrayList3);
                 mVar3.a = mVar2.a;
                 mVar3.c = mVar2.c;
                 if (nVar.e) {
@@ -312,7 +312,7 @@ public abstract class o {
         }
         int[] iArr5 = iArr3;
         Collections.sort(arrayList, a);
-        return new p4.c(oVar, arrayList, iArr5, iArr4, z9);
+        return new p4.c(oVar, arrayList, iArr5, iArr4, z10);
     }
 
     public abstract boolean a(int i7, int i10);

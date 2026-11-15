@@ -10,11 +10,11 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class jt0 extends View {
     public final ImageReceiver a;
-    public final v8 b;
+    public final t8 b;
     public final Paint c;
     public float d;
     public boolean e;
@@ -24,7 +24,7 @@ public final class jt0 extends View {
         super(context);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.a = imageReceiver;
-        this.b = new v8((org.telegram.ui.ActionBar.h6) null);
+        this.b = new t8((org.telegram.ui.ActionBar.e6) null);
         Paint paint = new Paint(1);
         this.c = paint;
         imageReceiver.J0(org.telegram.messenger.g0.L(28.0f));
@@ -32,20 +32,20 @@ public final class jt0 extends View {
         paint.setStyle(Paint.Style.STROKE);
     }
 
-    public final void a(boolean z9, boolean z10) {
+    public final void a(boolean z10, boolean z11) {
         ValueAnimator valueAnimator = this.f;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        if (!z10) {
-            this.d = z9 ? 1.0f : 0.0f;
+        if (!z11) {
+            this.d = z10 ? 1.0f : 0.0f;
             invalidate();
             return;
         }
-        ValueAnimator duration = ValueAnimator.ofFloat(this.d, z9 ? 1.0f : 0.0f).setDuration(200L);
-        duration.setInterpolator(wq.f);
-        duration.addUpdateListener(new c60(this, 20));
-        duration.addListener(new e60(this, 22));
+        ValueAnimator duration = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f).setDuration(200L);
+        duration.setInterpolator(er.f);
+        duration.addUpdateListener(new f60(this, 20));
+        duration.addListener(new h60(this, 22));
         duration.start();
         this.f = duration;
     }
@@ -73,7 +73,7 @@ public final class jt0 extends View {
         canvas.save();
         float f10 = (this.d * 0.1f) + 0.9f;
         canvas.scale(f10, f10);
-        int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.m5, false);
+        int x02 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.m5, false);
         Paint paint = this.c;
         paint.setColor(x02);
         paint.setAlpha((int) (Color.alpha(paint.getColor()) * this.d));
@@ -95,13 +95,13 @@ public final class jt0 extends View {
     }
 
     public void setAvatar(TLObject tLObject) {
-        v8 v8Var = this.b;
-        v8Var.l(tLObject);
-        this.a.i0(tLObject, v8Var, null);
+        t8 t8Var = this.b;
+        t8Var.l(tLObject);
+        this.a.i0(tLObject, t8Var, null);
     }
 
-    public void setHideAvatar(boolean z9) {
-        this.e = z9;
+    public void setHideAvatar(boolean z10) {
+        this.e = z10;
         invalidate();
     }
 }

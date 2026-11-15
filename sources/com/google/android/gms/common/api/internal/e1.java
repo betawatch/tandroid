@@ -1,42 +1,26 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Bundle;
+import android.os.RemoteException;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class e1 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
-    public final com.google.android.gms.common.api.e a;
-    public final boolean b;
-    public g0 c;
+public abstract class e1 {
+    public final int a;
 
-    public e1(com.google.android.gms.common.api.e eVar, boolean z9) {
-        this.a = eVar;
-        this.b = z9;
+    public e1(int i7) {
+        this.a = i7;
     }
 
-    @Override // com.google.android.gms.common.api.k
-    public final void onConnected(Bundle bundle) {
-        q6.m.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
-        this.c.onConnected(bundle);
+    public static Status e(RemoteException remoteException) {
+        return new Status(19, remoteException.getClass().getSimpleName() + ": " + remoteException.getLocalizedMessage(), null, null);
     }
 
-    @Override // com.google.android.gms.common.api.l
-    public final void onConnectionFailed(n6.a aVar) {
-        com.google.android.gms.common.api.e eVar = this.a;
-        boolean z9 = this.b;
-        q6.m.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
-        g0 g0Var = this.c;
-        g0Var.a.lock();
-        try {
-            g0Var.m.q(aVar, eVar, z9);
-        } finally {
-            g0Var.a.unlock();
-        }
-    }
+    public abstract void a(Status status);
 
-    @Override // com.google.android.gms.common.api.k
-    public final void onConnectionSuspended(int i7) {
-        q6.m.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
-        this.c.onConnectionSuspended(i7);
-    }
+    public abstract void b(Exception exc);
+
+    public abstract void c(a1 a1Var, boolean z10);
+
+    public abstract void d(l0 l0Var);
 }

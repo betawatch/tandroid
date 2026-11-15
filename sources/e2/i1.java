@@ -1,9 +1,9 @@
 package e2;
 
 import j$.util.Objects;
-import org.telegram.messenger.qs;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class i1 {
     public static final String h;
@@ -20,7 +20,7 @@ public final class i1 {
     public c g = c.c;
 
     static {
-        String str = h2.m0.a;
+        String str = h2.l0.a;
         h = Integer.toString(0, 36);
         i = Integer.toString(1, 36);
         j = Integer.toString(2, 36);
@@ -128,19 +128,19 @@ public final class i1 {
         return false;
     }
 
-    public final void h(Object obj, Object obj2, int i7, long j3, long j10, c cVar, boolean z9) {
+    public final void h(Object obj, Object obj2, int i7, long j3, long j10, c cVar, boolean z10) {
         this.a = obj;
         this.b = obj2;
         this.c = i7;
         this.d = j3;
         this.e = j10;
         this.g = cVar;
-        this.f = z9;
+        this.f = z10;
     }
 
     public final int hashCode() {
         Object obj = this.a;
-        int hashCode = (qs.u3 + (obj == null ? 0 : obj.hashCode())) * 31;
+        int hashCode = (ns.u3 + (obj == null ? 0 : obj.hashCode())) * 31;
         Object obj2 = this.b;
         int hashCode2 = (((hashCode + (obj2 != null ? obj2.hashCode() : 0)) * 31) + this.c) * 31;
         long j3 = this.d;

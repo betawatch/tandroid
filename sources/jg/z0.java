@@ -1,54 +1,53 @@
 package jg;
 
-import bi.g2;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.yr;
+import org.telegram.messenger.np;
+import org.telegram.messenger.vr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class z0 implements Runnable {
     public final /* synthetic */ String a;
     public final /* synthetic */ String b;
-    public final /* synthetic */ qp c;
-    public final /* synthetic */ yr d;
-    public final /* synthetic */ i1 e;
+    public final /* synthetic */ np c;
+    public final /* synthetic */ vr d;
+    public final /* synthetic */ h1 e;
 
-    public z0(i1 i1Var, String str, String str2, qp qpVar, yr yrVar) {
-        this.e = i1Var;
+    public z0(h1 h1Var, String str, String str2, np npVar, vr vrVar) {
+        this.e = h1Var;
         this.a = str;
         this.b = str2;
-        this.c = qpVar;
-        this.d = yrVar;
+        this.c = npVar;
+        this.d = vrVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        i1 i1Var = this.e;
-        if (i1Var.y0 != this) {
+        h1 h1Var = this.e;
+        if (h1Var.z0 != this) {
             return;
         }
-        i1Var.y0 = null;
-        TLRPC.User user = i1Var.w0;
-        if (user != null || i1Var.v0) {
-            if (i1Var.v0) {
+        h1Var.z0 = null;
+        TLRPC.User user = h1Var.x0;
+        if (user != null || h1Var.w0) {
+            if (h1Var.w0) {
                 return;
             }
-            i1Var.T(true, user, this.a, "");
+            h1Var.T(true, user, this.a, "");
             return;
         }
         String str = this.b;
-        i1Var.q0 = str;
-        qp qpVar = this.c;
-        TLObject f22 = qpVar.f2(str);
+        h1Var.r0 = str;
+        np npVar = this.c;
+        TLObject f22 = npVar.f2(str);
         if (f22 instanceof TLRPC.User) {
-            i1Var.R((TLRPC.User) f22);
+            h1Var.R((TLRPC.User) f22);
             return;
         }
         TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-        tL_contacts_resolveUsername.username = i1Var.q0;
-        i1Var.t0 = ConnectionsManager.getInstance(i1Var.f).sendRequest(tL_contacts_resolveUsername, new g2(this, str, qpVar, this.d, 7));
+        tL_contacts_resolveUsername.username = h1Var.r0;
+        h1Var.u0 = ConnectionsManager.getInstance(h1Var.f).sendRequest(tL_contacts_resolveUsername, new bi.l1(this, str, npVar, this.d, 8));
     }
 }

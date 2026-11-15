@@ -6,18 +6,18 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public interface IPanModeListener extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$navigation$model$IPanModeListener".replace('$', '.');
 
-    void onPanModeChanged(boolean z9, IOnDoneCallback iOnDoneCallback);
+    void onPanModeChanged(boolean z10, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static abstract class Stub extends Binder implements IPanModeListener {
         static final int TRANSACTION_onPanModeChanged = 2;
 
-        /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+        /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
         public static class Proxy implements IPanModeListener {
             private IBinder mRemote;
 
@@ -35,11 +35,11 @@ public interface IPanModeListener extends IInterface {
             }
 
             @Override // androidx.car.app.navigation.model.IPanModeListener
-            public void onPanModeChanged(boolean z9, IOnDoneCallback iOnDoneCallback) {
+            public void onPanModeChanged(boolean z10, IOnDoneCallback iOnDoneCallback) {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IPanModeListener.DESCRIPTOR);
-                    obtain.writeInt(z9 ? 1 : 0);
+                    obtain.writeInt(z10 ? 1 : 0);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(2, obtain, null, 1);
                 } finally {
@@ -83,7 +83,7 @@ public interface IPanModeListener extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class Default implements IPanModeListener {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -91,7 +91,7 @@ public interface IPanModeListener extends IInterface {
         }
 
         @Override // androidx.car.app.navigation.model.IPanModeListener
-        public void onPanModeChanged(boolean z9, IOnDoneCallback iOnDoneCallback) {
+        public void onPanModeChanged(boolean z10, IOnDoneCallback iOnDoneCallback) {
         }
     }
 }

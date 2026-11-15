@@ -4,7 +4,7 @@ import java.io.Serializable;
 import kotlin.jvm.internal.j;
 import rd.p;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements h, Serializable {
     public final h a;
@@ -18,7 +18,7 @@ public final class b implements h, Serializable {
     }
 
     public final boolean equals(Object obj) {
-        boolean z9;
+        boolean z10;
         if (this == obj) {
             return true;
         }
@@ -49,19 +49,19 @@ public final class b implements h, Serializable {
                 while (true) {
                     f fVar = bVar4.b;
                     if (!j.a(bVar.get(fVar.getKey()), fVar)) {
-                        z9 = false;
+                        z10 = false;
                         break;
                     }
                     h hVar3 = bVar4.a;
                     if (!(hVar3 instanceof b)) {
                         j.c(hVar3, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext.Element");
                         f fVar2 = (f) hVar3;
-                        z9 = j.a(bVar.get(fVar2.getKey()), fVar2);
+                        z10 = j.a(bVar.get(fVar2.getKey()), fVar2);
                         break;
                     }
                     bVar4 = (b) hVar3;
                 }
-                if (z9) {
+                if (z10) {
                     return true;
                 }
             }

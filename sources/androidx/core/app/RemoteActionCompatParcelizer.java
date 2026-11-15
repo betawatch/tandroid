@@ -8,13 +8,13 @@ import b5.b;
 import b5.c;
 import b5.d;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class RemoteActionCompatParcelizer {
     public static RemoteActionCompat read(b bVar) {
         RemoteActionCompat remoteActionCompat = new RemoteActionCompat();
         d dVar = remoteActionCompat.a;
-        boolean z9 = true;
+        boolean z10 = true;
         if (bVar.e(1)) {
             dVar = bVar.h();
         }
@@ -30,18 +30,18 @@ public class RemoteActionCompatParcelizer {
         }
         remoteActionCompat.c = charSequence2;
         remoteActionCompat.d = (PendingIntent) bVar.g(remoteActionCompat.d, 4);
-        boolean z10 = remoteActionCompat.e;
+        boolean z11 = remoteActionCompat.e;
         if (bVar.e(5)) {
-            z10 = ((c) bVar).e.readInt() != 0;
+            z11 = ((c) bVar).e.readInt() != 0;
         }
-        remoteActionCompat.e = z10;
-        boolean z11 = remoteActionCompat.f;
+        remoteActionCompat.e = z11;
+        boolean z12 = remoteActionCompat.f;
         if (!bVar.e(6)) {
-            z9 = z11;
+            z10 = z12;
         } else if (((c) bVar).e.readInt() == 0) {
-            z9 = false;
+            z10 = false;
         }
-        remoteActionCompat.f = z9;
+        remoteActionCompat.f = z10;
         return remoteActionCompat;
     }
 
@@ -58,11 +58,11 @@ public class RemoteActionCompatParcelizer {
         bVar.i(3);
         TextUtils.writeToParcel(charSequence2, parcel, 0);
         bVar.k(remoteActionCompat.d, 4);
-        boolean z9 = remoteActionCompat.e;
+        boolean z10 = remoteActionCompat.e;
         bVar.i(5);
-        parcel.writeInt(z9 ? 1 : 0);
-        boolean z10 = remoteActionCompat.f;
-        bVar.i(6);
         parcel.writeInt(z10 ? 1 : 0);
+        boolean z11 = remoteActionCompat.f;
+        bVar.i(6);
+        parcel.writeInt(z11 ? 1 : 0);
     }
 }

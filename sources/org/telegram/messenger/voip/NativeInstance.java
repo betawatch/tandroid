@@ -1,18 +1,20 @@
 package org.telegram.messenger.voip;
 
+import ai.z0;
 import android.graphics.Point;
-import bi.d3;
+import bi.m1;
 import java.nio.ByteBuffer;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.iz;
+import org.telegram.messenger.gz;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.voip.Instance;
 import org.telegram.messenger.voip.VoIPService;
 import org.webrtc.ContextUtils;
 import org.webrtc.VideoSink;
+import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class NativeInstance {
     private AudioLevelsCallback audioLevelsCallback;
@@ -32,33 +34,33 @@ public class NativeInstance {
     private float[] temp = new float[1];
     private VideoSourcesCallback unknownParticipantsCallback;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface AudioLevelsCallback {
         void run(int[] iArr, float[] fArr, boolean[] zArr);
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface PayloadCallback {
         void run(int i7, String str);
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface RequestBroadcastPartCallback {
         void run(long j3, long j10, int i7, int i10);
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface RequestCurrentTimeCallback {
         void run(long j3);
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class SsrcGroup {
         public String semantics;
         public int[] ssrcs;
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public interface VideoSourcesCallback {
         void run(long j3, int[] iArr);
     }
@@ -80,13 +82,18 @@ public class NativeInstance {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onNetworkStateUpdated$0(boolean z9, boolean z10) {
-        this.onStateUpdatedListener.onStateUpdated(z9 ? 1 : 0, z10);
+    public /* synthetic */ void lambda$onNetworkStateUpdated$0(boolean z10, boolean z11) {
+        this.onStateUpdatedListener.onStateUpdated(z10 ? 1 : 0, z11);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onParticipantDescriptionsRequired$2(long j3, int[] iArr) {
         this.unknownParticipantsCallback.run(j3, iArr);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$setIncomingAudioCapture$4(WebRtcAudioRecord.AudioSamples audioSamples) {
+        pushOwnAudio(audioSamples.getData(), audioSamples.getSampleRate(), audioSamples.getChannelCount());
     }
 
     public static NativeInstance make(String str, Instance.Config config, String str2, Instance.Endpoint[] endpointArr, Instance.Proxy proxy, int i7, Instance.EncryptionKey encryptionKey, VideoSink videoSink, long j3, AudioLevelsCallback audioLevelsCallback) {
@@ -101,7 +108,7 @@ public class NativeInstance {
         return nativeInstance;
     }
 
-    public static NativeInstance makeGroup(String str, long j3, boolean z9, boolean z10, PayloadCallback payloadCallback, AudioLevelsCallback audioLevelsCallback, VideoSourcesCallback videoSourcesCallback, RequestBroadcastPartCallback requestBroadcastPartCallback, RequestBroadcastPartCallback requestBroadcastPartCallback2, RequestCurrentTimeCallback requestCurrentTimeCallback, boolean z11) {
+    public static NativeInstance makeGroup(String str, long j3, boolean z10, boolean z11, PayloadCallback payloadCallback, AudioLevelsCallback audioLevelsCallback, VideoSourcesCallback videoSourcesCallback, RequestBroadcastPartCallback requestBroadcastPartCallback, RequestBroadcastPartCallback requestBroadcastPartCallback2, RequestCurrentTimeCallback requestCurrentTimeCallback, boolean z12) {
         ContextUtils.initialize(org.telegram.messenger.t0.b);
         NativeInstance nativeInstance = new NativeInstance();
         nativeInstance.payloadCallback = payloadCallback;
@@ -111,11 +118,11 @@ public class NativeInstance {
         nativeInstance.cancelRequestBroadcastPartCallback = requestBroadcastPartCallback2;
         nativeInstance.requestCurrentTimeCallback = requestCurrentTimeCallback;
         nativeInstance.isGroup = true;
-        nativeInstance.nativePtr = makeGroupNativeInstance(nativeInstance, str, iz.V, j3, z9, z10, z11);
+        nativeInstance.nativePtr = makeGroupNativeInstance(nativeInstance, str, gz.V, j3, z10, z11, z12);
         return nativeInstance;
     }
 
-    private static native long makeGroupNativeInstance(NativeInstance nativeInstance, String str, boolean z9, long j3, boolean z10, boolean z11, boolean z12);
+    private static native long makeGroupNativeInstance(NativeInstance nativeInstance, String str, boolean z10, long j3, boolean z11, boolean z12, boolean z13);
 
     private static native long makeNativeInstance(String str, NativeInstance nativeInstance, Instance.Config config, String str2, Instance.Endpoint[] endpointArr, Instance.Proxy proxy, int i7, Instance.EncryptionKey encryptionKey, VideoSink videoSink, long j3, float f10);
 
@@ -132,15 +139,15 @@ public class NativeInstance {
 
     private void onEmitJoinPayload(String str, int i7) {
         try {
-            org.telegram.messenger.g0.h3(new ai.e0(this, i7, str, 23));
+            org.telegram.messenger.g0.h3(new z0(this, i7, str, 26));
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    private void onNetworkStateUpdated(boolean z9, boolean z10) {
+    private void onNetworkStateUpdated(boolean z10, boolean z11) {
         if (this.onStateUpdatedListener != null) {
-            org.telegram.messenger.g0.h3(new h2.n0(this, z9, z10, 2));
+            org.telegram.messenger.g0.h3(new h2.m0(this, z10, z11, 2));
         }
     }
 
@@ -148,7 +155,7 @@ public class NativeInstance {
         if (this.unknownParticipantsCallback == null) {
             return;
         }
-        org.telegram.messenger.g0.h3(new d3(this, j3, iArr, 13));
+        org.telegram.messenger.g0.h3(new m1(this, j3, iArr, 14));
     }
 
     private void onRemoteMediaStateUpdated(int i7, int i10) {
@@ -191,9 +198,20 @@ public class NativeInstance {
         }
     }
 
+    private static native void pushOwnAudio(byte[] bArr, int i7, int i10);
+
+    public static native byte[] readIncomingAudio();
+
     private void requestCurrentTime(long j3) {
         this.requestCurrentTimeCallback.run(j3);
     }
+
+    public static void setIncomingAudioCapture(boolean z10) {
+        WebRtcAudioRecord.setOnAudioSamplesReady(z10 ? new g() : null);
+        setIncomingAudioCaptureNative(z10);
+    }
+
+    private static native void setIncomingAudioCaptureNative(boolean z10);
 
     public static native void setVideoStateCapturer(long j3, int i7);
 
@@ -201,7 +219,7 @@ public class NativeInstance {
 
     private native void stopNative();
 
-    public static native void switchCameraCapturer(long j3, boolean z9);
+    public static native void switchCameraCapturer(long j3, boolean z10);
 
     public native void activateVideoCapturer(long j3);
 
@@ -237,13 +255,13 @@ public class NativeInstance {
 
     public native void onStreamPartAvailable(long j3, ByteBuffer byteBuffer, int i7, long j10, int i10, int i11);
 
-    public native void prepareForStream(boolean z9);
+    public native void prepareForStream(boolean z10);
 
     public native void removeIncomingVideoOutput(long j3);
 
-    public native void resetGroupInstance(boolean z9, boolean z10);
+    public native void resetGroupInstance(boolean z10, boolean z11);
 
-    public native void setAudioOutputGainControlEnabled(boolean z9);
+    public native void setAudioOutputGainControlEnabled(boolean z10);
 
     public native void setBufferSize(int i7);
 
@@ -255,11 +273,11 @@ public class NativeInstance {
 
     public native void setJoinResponsePayload(String str);
 
-    public native void setMuteMicrophone(boolean z9);
+    public native void setMuteMicrophone(boolean z10);
 
     public native void setNetworkType(int i7);
 
-    public native void setNoiseSuppressionEnabled(boolean z9);
+    public native void setNoiseSuppressionEnabled(boolean z10);
 
     public void setOnRemoteMediaStateUpdatedListener(Instance.OnRemoteMediaStateUpdatedListener onRemoteMediaStateUpdatedListener) {
         this.onRemoteMediaStateUpdatedListener = onRemoteMediaStateUpdatedListener;
@@ -302,5 +320,5 @@ public class NativeInstance {
         stopGroupNative();
     }
 
-    public native void switchCamera(boolean z9);
+    public native void switchCamera(boolean z10);
 }

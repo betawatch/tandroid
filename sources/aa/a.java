@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
 import java.util.ArrayList;
-import sg.i0;
+import sg.h0;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -16,9 +16,9 @@ public final class a {
     public final String e;
     public final String f;
     public final String g;
-    public final i0 h;
+    public final h0 h;
 
-    public a(String str, String str2, ArrayList arrayList, String str3, String str4, String str5, String str6, i0 i0Var) {
+    public a(String str, String str2, ArrayList arrayList, String str3, String str4, String str5, String str6, h0 h0Var) {
         this.a = str;
         this.b = str2;
         this.c = arrayList;
@@ -26,18 +26,18 @@ public final class a {
         this.e = str4;
         this.f = str5;
         this.g = str6;
-        this.h = i0Var;
+        this.h = h0Var;
     }
 
-    public static a a(Context context, b0 b0Var, String str, String str2, ArrayList arrayList, i0 i0Var) {
+    public static a a(Context context, a0 a0Var, String str, String str2, ArrayList arrayList, h0 h0Var) {
         String packageName = context.getPackageName();
-        String d = b0Var.d();
+        String d = a0Var.d();
         PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
         String l10 = Build.VERSION.SDK_INT >= 28 ? Long.toString(packageInfo.getLongVersionCode()) : Integer.toString(packageInfo.versionCode);
         String str3 = packageInfo.versionName;
         if (str3 == null) {
             str3 = "0.0";
         }
-        return new a(str, str2, arrayList, d, packageName, l10, str3, i0Var);
+        return new a(str, str2, arrayList, d, packageName, l10, str3, h0Var);
     }
 }

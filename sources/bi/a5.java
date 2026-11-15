@@ -1,56 +1,62 @@
 package bi;
 
 import android.content.Context;
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.a41;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class a5 extends ClickableSpan {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ String h;
+public final class a5 extends a41 {
+    public static final /* synthetic */ int b = 0;
 
-    public a5(boolean[] zArr, int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var, long j3, String str, String str2) {
-        this.a = zArr;
-        this.b = i7;
-        this.c = context;
-        this.d = h6Var;
-        this.e = j3;
-        this.f = str;
-        this.h = str2;
+    static {
+        a41.h(new a5());
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        boolean[] zArr = this.a;
-        if (zArr[0]) {
-            return;
+    @Override // org.telegram.ui.Components.a41
+    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+        b5 b5Var = (b5) view;
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) b41Var.G;
+        int i7 = b41Var.z;
+        String str = (String) b41Var.l;
+        boolean z11 = b41Var.e;
+        b5Var.getClass();
+        ShapeDrawable L = org.telegram.ui.ActionBar.j6.L(org.telegram.messenger.g0.L(20.0f), stargiftattributebackdrop.center_color | (-16777216));
+        CharSequence charSequence = stargiftattributebackdrop.name;
+        if (!TextUtils.isEmpty(str)) {
+            charSequence = org.telegram.messenger.g0.w1(charSequence, str, b5Var.P);
         }
-        zArr[0] = true;
-        int i7 = this.b;
-        v0 v0Var = new v0(zArr, i7, this.c, this.d, 1);
-        long j3 = this.e;
-        String str = this.f;
-        if (j3 != 0) {
-            v0Var.a(Long.valueOf(j3), str);
-            return;
+        if (i7 > 0) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+            spannableStringBuilder.append((CharSequence) "  ");
+            int length = spannableStringBuilder.length();
+            spannableStringBuilder.append((CharSequence) Integer.toString(i7));
+            spannableStringBuilder.setSpan(new y31(org.telegram.messenger.g0.o()), length, spannableStringBuilder.length(), 33);
+            charSequence = spannableStringBuilder;
         }
-        TL_stars.getUniqueStarGift getuniquestargift = new TL_stars.getUniqueStarGift();
-        getuniquestargift.slug = this.h.concat("-1");
-        ConnectionsManager.getInstance(i7).sendRequest(getuniquestargift, new j(5, v0Var, str));
+        b5Var.j(charSequence, 0, L);
+        b5Var.setChecked(z11);
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setColor(textPaint.linkColor);
-        textPaint.setUnderlineText(false);
+    @Override // org.telegram.ui.Components.a41
+    public final View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        b5 b5Var = new b5(0, context, e6Var, false, false);
+        b5Var.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
+        b5Var.c(org.telegram.ui.ActionBar.j6.E8, org.telegram.ui.ActionBar.j6.F8);
+        b5Var.g(-1, PorterDuff.Mode.MULTIPLY);
+        b5Var.c.setTranslationX(org.telegram.messenger.g0.L(2.0f));
+        b5Var.a(2);
+        b5Var.setBackground(null);
+        return b5Var;
     }
 }

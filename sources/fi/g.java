@@ -1,207 +1,40 @@
 package fi;
 
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.MotionEvent;
-import android.view.RoundedCorner;
-import android.view.View;
-import android.view.WindowInsets;
-import android.widget.FrameLayout;
-import org.telegram.messenger.qs;
-import org.telegram.ui.Components.ft;
-import org.telegram.ui.Components.gy;
-import org.telegram.ui.Components.kt;
-import org.telegram.ui.Components.st0;
-import org.telegram.ui.Components.tc;
-import org.telegram.ui.Components.wq;
-import org.telegram.ui.Components.ys;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.fq;
+import org.telegram.ui.qv;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class g extends kt {
-    public org.telegram.ui.Components.ba V;
-    public fh.g W;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h6 a0;
-    public final /* synthetic */ org.telegram.ui.Components.x9 b0;
-    public final /* synthetic */ m c0;
+public final class g extends fq {
+    public int E;
+    public final /* synthetic */ Drawable F;
+    public final /* synthetic */ Drawable G;
+    public final /* synthetic */ qv H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, Context context, st0 st0Var, int i7, di.b bVar, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.Components.x9 x9Var) {
-        super(context, st0Var, null, i7, true, bVar);
-        this.c0 = mVar;
-        this.a0 = h6Var;
-        this.b0 = x9Var;
+    public g(qv qvVar, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super(drawable, drawable2);
+        this.H = qvVar;
+        this.F = drawable3;
+        this.G = drawable4;
     }
 
-    @Override // org.telegram.ui.Components.kt
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        m mVar = this.c0;
-        if ((mVar instanceof r) && ((r) mVar).N1) {
-            return false;
+    @Override // org.telegram.ui.Components.fq, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        qv qvVar = this.H;
+        int i7 = qvVar.b;
+        int f10 = qvVar.f(i7 == 0 ? org.telegram.ui.ActionBar.j6.s8 : org.telegram.ui.ActionBar.j6.M8);
+        if (this.E != f10) {
+            this.E = f10;
+            int f11 = i0.a.f(0.1f, qvVar.f(i7 == 0 ? org.telegram.ui.ActionBar.j6.A8 : org.telegram.ui.ActionBar.j6.P8), f10);
+            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+            this.F.setColorFilter(new PorterDuffColorFilter(f11, mode));
+            this.G.setColorFilter(new PorterDuffColorFilter(f10, mode));
         }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.kt
-    public final void f() {
-        super.f();
-        gy emojiView = getEmojiView();
-        if (emojiView != null) {
-            m mVar = this.c0;
-            if (mVar.getEditTextStyle() == 2 || mVar.getEditTextStyle() == 3) {
-                emojiView.w0 = false;
-                emojiView.x2 = false;
-                emojiView.setShouldDrawBackground(false);
-                if (mVar instanceof tc) {
-                    emojiView.setPadding(0, 0, 0, org.telegram.messenger.g0.n);
-                    emojiView.c = 3;
-                }
-                emojiView.updateColors();
-            }
-        }
-        if (emojiView != null) {
-            emojiView.L2 = true;
-            emojiView.setClipToOutline(true);
-            emojiView.setOutlineProvider(new bg.q0(2));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.kt
-    public final void g(Canvas canvas, ft ftVar) {
-        Bitmap bitmap;
-        int i7;
-        int i10;
-        WindowInsets rootWindowInsets;
-        View view = ftVar;
-        m mVar = this.c0;
-        dh.j jVar = mVar.d;
-        RectF rectF = mVar.y0;
-        rectF.set(0.0f, 0.0f, view.getWidth(), org.telegram.messenger.g0.L(29.0f) + view.getHeight());
-        if (mVar.g0 != null) {
-            if (this.W == null) {
-                if (Build.VERSION.SDK_INT < 31 || (rootWindowInsets = getRootWindowInsets()) == null) {
-                    i7 = 0;
-                    i10 = 0;
-                } else {
-                    RoundedCorner roundedCorner = rootWindowInsets.getRoundedCorner(3);
-                    RoundedCorner roundedCorner2 = rootWindowInsets.getRoundedCorner(2);
-                    i10 = roundedCorner == null ? 0 : roundedCorner.getRadius();
-                    i7 = roundedCorner2 == null ? 0 : roundedCorner2.getRadius();
-                }
-                fh.g c10 = mVar.g0.c(view, null, false);
-                c10.p(c8.g0.i(this.a0));
-                this.W = c10;
-                c10.t(org.telegram.messenger.g0.L(29.0f), org.telegram.messenger.g0.L(29.0f), i7, i10, true);
-                fh.g gVar = this.W;
-                gVar.S = true;
-                gVar.u(org.telegram.messenger.g0.L(32.0f));
-                fh.g gVar2 = this.W;
-                gVar2.Q.g = 0.4f;
-                gVar2.n();
-            }
-            Rect rect = org.telegram.messenger.g0.Q;
-            rectF.round(rect);
-            this.W.setBounds(rect);
-            this.W.draw(canvas);
-            return;
-        }
-        if (mVar.g()) {
-            if (this.V == null) {
-                this.V = new org.telegram.ui.Components.ba(this.b0, view, 7, false);
-            }
-            mVar.h(this.V, canvas, mVar.y0, org.telegram.messenger.g0.L(29.0f), false, 0.0f, -view.getY(), false);
-            jVar.m = org.telegram.messenger.g0.L(29.0f);
-            jVar.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, org.telegram.messenger.g0.L(29.0f) + ((int) rectF.bottom));
-            jVar.draw(canvas);
-            return;
-        }
-        Paint paint = mVar.e;
-        FrameLayout frameLayout = mVar.J;
-        if (mVar.n0 > 0.0f && mVar.t0 != null && mVar.r0 != null && (bitmap = mVar.q0) != null && !bitmap.isRecycled()) {
-            mVar.s0.reset();
-            mVar.s0.postScale(frameLayout.getWidth() / mVar.q0.getWidth(), frameLayout.getHeight() / mVar.q0.getHeight());
-            float f10 = 0.0f;
-            float f11 = 0.0f;
-            for (int i11 = 0; i11 < 8 && view != null; i11++) {
-                f10 += view.getX();
-                f11 += view.getY();
-                Object parent = view.getParent();
-                view = parent instanceof View ? (View) parent : null;
-            }
-            mVar.s0.postTranslate(-f10, -f11);
-            mVar.r0.setLocalMatrix(mVar.s0);
-            mVar.t0.setAlpha((int) (mVar.n0 * 255.0f * 0.95f));
-            canvas.drawRoundRect(rectF, 0.0f, 0.0f, mVar.t0);
-        }
-        paint.setAlpha((int) (mVar.t0 == null ? 128.0f : org.telegram.messenger.g0.W1(mVar.n0, 128, qs.j2) * 0.95f));
-        canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
-    }
-
-    @Override // org.telegram.ui.Components.kt
-    public final void p() {
-        this.c0.L.a();
-    }
-
-    @Override // org.telegram.ui.Components.kt
-    public final void q(int i7, int i10) {
-        this.c0.s(i7, i10);
-    }
-
-    @Override // org.telegram.ui.Components.kt
-    public final boolean t(int i7) {
-        m mVar = this.c0;
-        g gVar = mVar.f;
-        ObjectAnimator objectAnimator = mVar.f0;
-        if (objectAnimator != null && objectAnimator.isRunning() && i7 == mVar.b0) {
-            return false;
-        }
-        mVar.invalidate();
-        if (!mVar.W) {
-            return true;
-        }
-        mVar.W = false;
-        if (mVar.a0 == i7) {
-            return true;
-        }
-        ObjectAnimator objectAnimator2 = mVar.f0;
-        if (objectAnimator2 != null && objectAnimator2.isRunning() && i7 == mVar.b0) {
-            return true;
-        }
-        ObjectAnimator objectAnimator3 = mVar.f0;
-        if (objectAnimator3 != null) {
-            objectAnimator3.cancel();
-        }
-        gVar.getEditText().setScrollY(mVar.a0);
-        ys editText = gVar.getEditText();
-        int i10 = mVar.a0;
-        mVar.b0 = i7;
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", i10, i7);
-        mVar.f0 = ofInt;
-        ofInt.setDuration(240L);
-        mVar.f0.setInterpolator(wq.h);
-        mVar.f0.addListener(new bi.t5(this, 16));
-        mVar.f0.start();
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.kt
-    public final void u() {
-        this.c0.L.e = true;
-    }
-
-    @Override // org.telegram.ui.Components.kt
-    public final void y() {
-        this.c0.L.a();
+        super.draw(canvas);
     }
 }

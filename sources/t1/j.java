@@ -5,7 +5,7 @@ import android.text.method.TransformationMethod;
 import android.view.View;
 import androidx.emoji2.text.l;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class j implements TransformationMethod {
     public final TransformationMethod a;
@@ -32,10 +32,10 @@ public final class j implements TransformationMethod {
     }
 
     @Override // android.text.method.TransformationMethod
-    public final void onFocusChanged(View view, CharSequence charSequence, boolean z9, int i7, Rect rect) {
+    public final void onFocusChanged(View view, CharSequence charSequence, boolean z10, int i7, Rect rect) {
         TransformationMethod transformationMethod = this.a;
         if (transformationMethod != null) {
-            transformationMethod.onFocusChanged(view, charSequence, z9, i7, rect);
+            transformationMethod.onFocusChanged(view, charSequence, z10, i7, rect);
         }
     }
 }

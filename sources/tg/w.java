@@ -1,49 +1,49 @@
 package tg;
 
 import android.app.Activity;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.cn;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class w extends cn {
-    public final /* synthetic */ g0 td;
+public final class w extends an {
+    public final /* synthetic */ g0 ud;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public w(g0 g0Var) {
         super(null);
-        this.td = g0Var;
+        this.ud = g0Var;
     }
 
-    @Override // org.telegram.ui.cn
-    public final boolean U9() {
+    @Override // org.telegram.ui.an
+    public final boolean V9() {
         return false;
     }
 
-    @Override // org.telegram.ui.cn, org.telegram.ui.Components.jg, org.telegram.ui.Components.b40
+    @Override // org.telegram.ui.an, org.telegram.ui.Components.qg, org.telegram.ui.Components.e40
     public final long a() {
         return 0L;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.ActionBar.e2
     public final Activity getParentActivity() {
-        return org.telegram.messenger.g0.W(this.td.getContext());
+        return org.telegram.messenger.g0.W(this.ud.getContext());
     }
 
-    @Override // org.telegram.ui.cn, org.telegram.ui.ActionBar.f2
-    public final h6 getResourceProvider() {
-        return this.td.z1;
+    @Override // org.telegram.ui.an, org.telegram.ui.ActionBar.e2
+    public final e6 getResourceProvider() {
+        return this.ud.A1;
     }
 
-    @Override // org.telegram.ui.cn, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.an, org.telegram.ui.ActionBar.e2
     public final boolean isLightStatusBar() {
         return false;
     }
 
-    @Override // org.telegram.ui.cn, org.telegram.ui.Components.jg
+    @Override // org.telegram.ui.an, org.telegram.ui.Components.qg
     public final TLRPC.User j() {
-        return p10.i(this.currentAccount).f();
+        return m10.i(this.currentAccount).f();
     }
 }

@@ -1,33 +1,24 @@
 package fi;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class a9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ va b;
-    public final /* synthetic */ Runnable c;
+import android.content.Context;
 
-    public /* synthetic */ a9(va vaVar, Runnable runnable, int i7) {
-        this.a = i7;
-        this.b = vaVar;
-        this.c = runnable;
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* loaded from: classes3.dex */
+public final class a9 extends x {
+    public final /* synthetic */ i9 a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a9(Context context, i9 i9Var) {
+        super(context);
+        this.a = i9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.c.run();
-                this.b.o0();
-                break;
-            default:
-                va vaVar = this.b;
-                vaVar.e(false);
-                org.telegram.messenger.g0.r(vaVar.g2);
-                vaVar.g2 = null;
-                vaVar.S1 = false;
-                this.c.run();
-                break;
+    @Override // fi.x, android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        a4 a4Var = this.a.G0;
+        if (a4Var != null) {
+            a4Var.b();
         }
     }
 }

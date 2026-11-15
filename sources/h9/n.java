@@ -3,15 +3,15 @@ package h9;
 import java.io.Serializable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
-public final class n extends r1 implements Serializable {
+public final class n extends q1 implements Serializable {
     public final g9.k a;
-    public final r1 b;
+    public final q1 b;
 
-    public n(g9.k kVar, r1 r1Var) {
+    public n(g9.k kVar, q1 q1Var) {
         this.a = kVar;
-        this.b = r1Var;
+        this.b = q1Var;
     }
 
     @Override // java.util.Comparator

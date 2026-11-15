@@ -4,7 +4,7 @@ import a8.b1;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements OnSuccessListener {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class p implements OnSuccessListener {
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
     public final void onSuccess(Object obj) {
-        boolean z9;
+        boolean z10;
         switch (this.a) {
             case 0:
                 j0 j0Var = (j0) obj;
@@ -25,9 +25,9 @@ public final /* synthetic */ class p implements OnSuccessListener {
                     return;
                 }
                 synchronized (j0Var) {
-                    z9 = j0Var.f;
+                    z10 = j0Var.f;
                 }
-                if (z9) {
+                if (z10) {
                     return;
                 }
                 j0Var.e(0L);
@@ -35,7 +35,7 @@ public final /* synthetic */ class p implements OnSuccessListener {
             default:
                 FirebaseMessaging firebaseMessaging = this.b;
                 m6.a aVar = (m6.a) obj;
-                d0 d0Var = FirebaseMessaging.m;
+                ob.c cVar = FirebaseMessaging.m;
                 firebaseMessaging.getClass();
                 if (aVar != null) {
                     b1.b(aVar.a);

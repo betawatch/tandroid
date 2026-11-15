@@ -2,7 +2,7 @@ package x2;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class y extends r {
     public static final Object h = new Object();
@@ -25,9 +25,9 @@ public final class y extends r {
     }
 
     @Override // x2.r, e2.l1
-    public final e2.i1 f(int i7, e2.i1 i1Var, boolean z9) {
-        this.e.f(i7, i1Var, z9);
-        if (Objects.equals(i1Var.b, this.g) && z9) {
+    public final e2.i1 f(int i7, e2.i1 i1Var, boolean z10) {
+        this.e.f(i7, i1Var, z10);
+        if (Objects.equals(i1Var.b, this.g) && z10) {
             i1Var.b = h;
         }
         return i1Var;

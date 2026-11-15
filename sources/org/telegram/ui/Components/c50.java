@@ -1,40 +1,50 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c50 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.User b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ oj0 h;
+public final class c50 extends uj0 {
+    public int f3;
+    public final /* synthetic */ p50 g3;
 
-    public /* synthetic */ c50(oj0 oj0Var, TLRPC.User user, String str, boolean z9, boolean z10, boolean z11, int i7) {
-        this.a = i7;
-        this.h = oj0Var;
-        this.b = user;
-        this.c = str;
-        this.d = z9;
-        this.e = z10;
-        this.f = z11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c50(p50 p50Var, Context context) {
+        super(context, null);
+        this.g3 = p50Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                m50 m50Var = ((h50) this.h).c;
-                ey0.b(m50Var.getContext(), m50Var.a, -m50Var.a2, this.b, this.c, this.d, this.e, this.f, m50Var.I0);
-                break;
-            default:
-                ys0 ys0Var = ((lr0) this.h).f;
-                ey0.b(ys0Var.getContext(), ys0Var.x1.getCurrentAccount(), ys0Var.l1, this.b, this.c, this.d, this.e, this.f, ys0Var.H1);
-                break;
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        p50 p50Var = this.g3;
+        c50 c50Var = p50Var.Q1;
+        if (this.f3 != View.MeasureSpec.getSize(i10)) {
+            this.f3 = View.MeasureSpec.getSize(i10);
+            p50Var.V1 = true;
+            c50Var.setPadding(0, 0, 0, 0);
+            p50Var.V1 = false;
+            measure(i7, View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31));
+            int measuredHeight = getMeasuredHeight();
+            int i11 = this.f3;
+            int i12 = (int) ((i11 / 5.0f) * 2.0f);
+            if (i12 < org.telegram.messenger.g0.L(60.0f) + (i11 - measuredHeight)) {
+                i12 = this.f3 - measuredHeight;
+            }
+            p50Var.V1 = true;
+            c50Var.setPadding(0, i12, 0, 0);
+            p50Var.V1 = false;
+            measure(i7, View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31));
         }
+        super.onMeasure(i7, i10);
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.g3.V1) {
+            return;
+        }
+        super.requestLayout();
     }
 }

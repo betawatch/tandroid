@@ -5,7 +5,7 @@ import android.graphics.SurfaceTexture;
 import android.os.Build;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class n extends Surface {
     public static int d;
@@ -14,10 +14,10 @@ public final class n extends Surface {
     public final m b;
     public boolean c;
 
-    public n(m mVar, SurfaceTexture surfaceTexture, boolean z9) {
+    public n(m mVar, SurfaceTexture surfaceTexture, boolean z10) {
         super(surfaceTexture);
         this.b = mVar;
-        this.a = z9;
+        this.a = z10;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0047 A[RETURN] */
@@ -46,19 +46,19 @@ public final class n extends Surface {
     }
 
     public static synchronized boolean b(Context context) {
-        boolean z9;
+        boolean z10;
         synchronized (n.class) {
             try {
                 if (!e) {
                     d = a(context);
                     e = true;
                 }
-                z9 = d != 0;
+                z10 = d != 0;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return z9;
+        return z10;
     }
 
     @Override // android.view.Surface

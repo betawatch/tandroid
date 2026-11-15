@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
 public class RtpParameters {
     public final List<Codec> codecs;
@@ -14,7 +14,7 @@ public class RtpParameters {
     private final Rtcp rtcp;
     public final String transactionId;
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class Codec {
         public Integer clockRate;
         MediaStreamTrack.MediaType kind;
@@ -57,7 +57,7 @@ public class RtpParameters {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public enum DegradationPreference {
         DISABLED,
         MAINTAIN_FRAMERATE,
@@ -69,16 +69,16 @@ public class RtpParameters {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class HeaderExtension {
         private final boolean encrypted;
         private final int id;
         private final String uri;
 
-        public HeaderExtension(String str, int i7, boolean z9) {
+        public HeaderExtension(String str, int i7, boolean z10) {
             this.uri = str;
             this.id = i7;
-            this.encrypted = z9;
+            this.encrypted = z10;
         }
 
         public boolean getEncrypted() {
@@ -94,14 +94,14 @@ public class RtpParameters {
         }
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class Rtcp {
         private final String cname;
         private final boolean reducedSize;
 
-        public Rtcp(String str, boolean z9) {
+        public Rtcp(String str, boolean z10) {
             this.cname = str;
-            this.reducedSize = z9;
+            this.reducedSize = z10;
         }
 
         public String getCname() {
@@ -146,7 +146,7 @@ public class RtpParameters {
         return this.transactionId;
     }
 
-    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
     public static class Encoding {
         public boolean active;
         public boolean adaptiveAudioPacketTime;
@@ -160,11 +160,11 @@ public class RtpParameters {
         public Double scaleResolutionDownBy;
         public Long ssrc;
 
-        public Encoding(String str, boolean z9, Double d) {
+        public Encoding(String str, boolean z10, Double d) {
             this.bitratePriority = 1.0d;
             this.networkPriority = 0;
             this.rid = str;
-            this.active = z9;
+            this.active = z10;
             this.scaleResolutionDownBy = d;
         }
 
@@ -212,9 +212,9 @@ public class RtpParameters {
             return this.ssrc;
         }
 
-        public Encoding(String str, boolean z9, double d, int i7, Integer num, Integer num2, Integer num3, Integer num4, Double d2, Long l10, boolean z10) {
+        public Encoding(String str, boolean z10, double d, int i7, Integer num, Integer num2, Integer num3, Integer num4, Double d2, Long l10, boolean z11) {
             this.rid = str;
-            this.active = z9;
+            this.active = z10;
             this.bitratePriority = d;
             this.networkPriority = i7;
             this.maxBitrateBps = num;
@@ -223,7 +223,7 @@ public class RtpParameters {
             this.numTemporalLayers = num4;
             this.scaleResolutionDownBy = d2;
             this.ssrc = l10;
-            this.adaptiveAudioPacketTime = z10;
+            this.adaptiveAudioPacketTime = z11;
         }
     }
 }

@@ -3,7 +3,7 @@ package vg;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class j extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,29 +21,29 @@ public final class j extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 m mVar = this.b;
                 mVar.b.d = 0.0f;
-                mVar.d0 = null;
-                mVar.j(mVar.L);
+                mVar.e0 = null;
+                mVar.j(mVar.M);
                 break;
             case 1:
                 super.onAnimationEnd(animator);
                 m mVar2 = this.b;
                 mVar2.b.d = 0.0f;
-                mVar2.d0 = null;
-                mVar2.j(mVar2.L);
+                mVar2.e0 = null;
+                mVar2.j(mVar2.M);
                 break;
             case 2:
                 super.onAnimationEnd(animator);
                 m mVar3 = this.b;
                 mVar3.b.d = 0.0f;
-                mVar3.d0 = null;
-                mVar3.j(mVar3.L);
+                mVar3.e0 = null;
+                mVar3.j(mVar3.M);
                 break;
             default:
                 super.onAnimationEnd(animator);
                 m mVar4 = this.b;
                 mVar4.b.d = 0.0f;
-                mVar4.d0 = null;
-                mVar4.j(mVar4.L);
+                mVar4.e0 = null;
+                mVar4.j(mVar4.M);
                 break;
         }
     }

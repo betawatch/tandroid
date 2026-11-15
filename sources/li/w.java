@@ -1,38 +1,58 @@
 package li;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.x31;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class w extends w31 {
-    public static final /* synthetic */ int b = 0;
+public final class w implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d0 b;
 
-    static {
-        w31.h(new w());
+    public /* synthetic */ w(d0 d0Var, int i7) {
+        this.a = i7;
+        this.b = d0Var;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        ((x) view).h((a) x31Var.G, (n3) x31Var.H);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                String obj = editable.toString();
+                d0 d0Var = this.b;
+                boolean isEmpty = TextUtils.isEmpty(d0Var.M1);
+                d0Var.M1 = obj;
+                d0Var.A1.h(0L, d0Var.p1, 0L, 0L, null, false, obj, isEmpty);
+                break;
+            default:
+                String obj2 = editable.toString();
+                d0 d0Var2 = this.b;
+                d0Var2.N1 = obj2;
+                d0Var2.B1.g3.O(true);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, h6 h6Var) {
-        x xVar = new x(i7, context, h6Var);
-        xVar.setBackground(new y1(m6.w0(m6.d6, h6Var)));
-        return xVar;
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final boolean f() {
-        return false;
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final /* synthetic */ void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

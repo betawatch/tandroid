@@ -1,26 +1,86 @@
 package wi;
 
-import android.os.SystemClock;
-import java.util.concurrent.atomic.AtomicLong;
-import org.telegram.messenger.a8;
+import android.app.Activity;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
+import ug.t1;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes4.dex */
-public final class o {
-    public static final AtomicLong c = new AtomicLong(1);
-    public final long a = c.getAndIncrement();
-    public final long b = SystemClock.elapsedRealtime();
+public final class o extends TextureView implements TextureView.SurfaceTextureListener {
+    public SurfaceTexture a;
+    public TextureView.SurfaceTextureListener b;
+    public Runnable c;
+    public long d;
 
-    public final void a(String str, Throwable th2) {
-        a8.d(c() + str + ": " + th2);
-        a8.g(th2, true);
+    public o(Activity activity) {
+        super(activity);
+        setOpaque(false);
+        super.setSurfaceTextureListener(this);
     }
 
-    public final void b(String str) {
-        a8.b(c() + str);
+    @Override // android.view.TextureView, android.view.View
+    public final void onAttachedToWindow() {
+        if (this.a != null) {
+            SurfaceTexture surfaceTexture = getSurfaceTexture();
+            SurfaceTexture surfaceTexture2 = this.a;
+            if (surfaceTexture != surfaceTexture2) {
+                setSurfaceTexture(surfaceTexture2);
+            }
+        }
+        super.onAttachedToWindow();
     }
 
-    public final String c() {
-        return "RoundVideo[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] ";
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i7, int i10) {
+        this.a = surfaceTexture;
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.b;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureAvailable(surfaceTexture, i7, i10);
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        if (surfaceTexture == this.a) {
+            post(new t1(15, this, surfaceTexture));
+            return false;
+        }
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.b;
+        return surfaceTextureListener == null || surfaceTextureListener.onSurfaceTextureDestroyed(surfaceTexture);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i7, int i10) {
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.b;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureSizeChanged(surfaceTexture, i7, i10);
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.b;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureUpdated(surfaceTexture);
+        }
+        if (this.c != null) {
+            if (this.d == 0 || surfaceTexture.getTimestamp() != this.d) {
+                Runnable runnable = this.c;
+                this.c = null;
+                runnable.run();
+            }
+        }
+    }
+
+    public void setFirstFrameCallback(Runnable runnable) {
+        this.c = runnable;
+        SurfaceTexture surfaceTexture = this.a;
+        this.d = surfaceTexture != null ? surfaceTexture.getTimestamp() : 0L;
+    }
+
+    @Override // android.view.TextureView
+    public void setSurfaceTextureListener(TextureView.SurfaceTextureListener surfaceTextureListener) {
+        this.b = surfaceTextureListener;
     }
 }

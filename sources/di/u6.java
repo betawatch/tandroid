@@ -1,108 +1,64 @@
 package di;
 
+import android.app.Activity;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.qs;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class u6 extends r6 {
-    public final ArrayList C;
+public final /* synthetic */ class u6 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ List e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public u6(int i7, ArrayList arrayList) {
-        super(i7, 0L, 3, -1, null);
-        this.C = new ArrayList();
-        F(arrayList);
+    public /* synthetic */ u6(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, List list, int i7) {
+        this.a = i7;
+        this.b = obj;
+        this.c = obj2;
+        this.f = obj3;
+        this.d = obj4;
+        this.g = obj5;
+        this.e = list;
     }
 
-    public final void F(ArrayList arrayList) {
-        int i7;
-        ArrayList arrayList2 = this.i;
-        arrayList2.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            int size = arrayList.size();
-            i7 = this.c;
-            if (i10 >= size) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new g7(tLObject, (f5.m) this.b, (f5.f) this.c, (org.telegram.ui.Wallet.t1) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.g, this.e, tL_error, 0));
                 break;
-            }
-            TL_stories.StoryItem storyItem = (TL_stories.StoryItem) arrayList.get(i10);
-            if (storyItem != null) {
-                storyItem.messageId = arrayList2.size();
-                ij ijVar = new ij(i7, storyItem);
-                ijVar.r0(false);
-                ArrayList arrayList3 = new ArrayList();
-                arrayList3.add(Integer.valueOf(arrayList2.size()));
-                this.C.add(arrayList3);
-                arrayList2.add(ijVar);
-                i11++;
-            }
-            i10++;
-        }
-        if (i11 > 0) {
-            qs.f(i7).k(qs.x5, this);
+            case 1:
+                org.telegram.messenger.g0.h3(new g7(tLObject, (f5.m) this.b, (f5.f) this.c, (bi.v5) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGift) this.g, this.e, tL_error, 1));
+                break;
+            case 2:
+                org.telegram.messenger.g0.h3(new g7((UserInfoActivity) this.b, tL_error, (TLObject) this.c, (TL_account.TL_birthday) this.f, (TLRPC.UserFull) this.d, tLObject, (int[]) this.g, (ArrayList) this.e));
+                break;
+            case 3:
+                org.telegram.messenger.g0.h3(new g7(tL_error, (z10) this.b, tLObject, this.e, (f5.f) this.c, (z10) this.f, (org.telegram.ui.ActionBar.e2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 9));
+                break;
+            default:
+                org.telegram.messenger.g0.h3(new g7(tL_error, (z10) this.b, tLObject, this.e, (f5.f) this.c, (z10) this.f, (org.telegram.ui.ActionBar.e2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 10));
+                break;
         }
     }
 
-    @Override // di.r6
-    public final ij f(int i7) {
-        if (i7 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.i;
-        if (i7 >= arrayList.size()) {
-            return null;
-        }
-        return (ij) arrayList.get(i7);
-    }
-
-    @Override // di.r6
-    public final int g() {
-        return this.i.size();
-    }
-
-    @Override // di.r6
-    public final ArrayList h() {
-        return new ArrayList(this.C);
-    }
-
-    @Override // di.r6
-    public final int i() {
-        return this.i.size();
-    }
-
-    @Override // di.r6
-    public final boolean k() {
-        return false;
-    }
-
-    @Override // di.r6
-    public final boolean l() {
-        return false;
-    }
-
-    @Override // di.r6
-    public final boolean q(int i7, List list, boolean z9) {
-        return false;
-    }
-
-    @Override // di.r6
-    public final boolean r(int i7) {
-        return false;
-    }
-
-    @Override // di.r6
-    public final void j() {
-    }
-
-    @Override // di.r6
-    public final void s() {
-    }
-
-    @Override // di.r6
-    public final void x() {
+    public /* synthetic */ u6(z10 z10Var, List list, f5.f fVar, z10 z10Var2, org.telegram.ui.ActionBar.e2 e2Var, TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose, int i7) {
+        this.a = i7;
+        this.b = z10Var;
+        this.e = list;
+        this.c = fVar;
+        this.f = z10Var2;
+        this.d = e2Var;
+        this.g = inputStorePaymentPurpose;
     }
 }

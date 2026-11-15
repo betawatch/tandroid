@@ -2,14 +2,14 @@ package com.google.android.gms.cast;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import f6.v;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import r6.a;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public class MediaError extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaError> CREATOR = new v(6);
@@ -36,13 +36,13 @@ public class MediaError extends a implements ReflectedParcelable {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.f;
         this.e = jSONObject == null ? null : jSONObject.toString();
-        int r10 = xb.r(parcel, 20293);
-        xb.l(parcel, 2, this.a);
-        xb.q(parcel, 3, 8);
+        int r10 = yb.r(parcel, 20293);
+        yb.l(parcel, 2, this.a);
+        yb.q(parcel, 3, 8);
         parcel.writeLong(this.b);
-        xb.i(parcel, 4, this.c);
-        xb.l(parcel, 5, this.d);
-        xb.l(parcel, 6, this.e);
-        xb.s(parcel, r10);
+        yb.i(parcel, 4, this.c);
+        yb.l(parcel, 5, this.d);
+        yb.l(parcel, 6, this.e);
+        yb.s(parcel, r10);
     }
 }

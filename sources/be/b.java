@@ -1,11 +1,11 @@
 package be;
 
-import c8.u0;
+import aa.b0;
+import c8.v0;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import zd.b0;
 import zd.c2;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes.dex */
 public final class b implements c2 {
     public Object a = e.p;
@@ -28,7 +28,7 @@ public final class b implements c2 {
         k kVar;
         k kVar2;
         Object obj = this.a;
-        boolean z9 = true;
+        boolean z10 = true;
         if (obj == e.p || obj == e.l) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = c.h;
             c cVar = this.c;
@@ -48,32 +48,32 @@ public final class b implements c2 {
                 } else {
                     kVar = kVar3;
                 }
-                Object z10 = cVar.z(kVar, i7, andIncrement, null);
-                com.google.android.gms.internal.clearcut.e eVar2 = e.m;
-                if (z10 == eVar2) {
+                Object z11 = cVar.z(kVar, i7, andIncrement, null);
+                b0 b0Var = e.m;
+                if (z11 == b0Var) {
                     throw new IllegalStateException("unreachable");
                 }
-                com.google.android.gms.internal.clearcut.e eVar3 = e.o;
-                if (z10 == eVar3) {
+                b0 b0Var2 = e.o;
+                if (z11 == b0Var2) {
                     if (andIncrement < cVar.p()) {
                         kVar.b();
                     }
                     kVar3 = kVar;
                 } else {
-                    if (z10 != e.n) {
+                    if (z11 != e.n) {
                         kVar.b();
-                        this.a = z10;
-                        return Boolean.valueOf(z9);
+                        this.a = z11;
+                        return Boolean.valueOf(z10);
                     }
-                    zd.m l11 = b0.l(u0.b(eVar));
+                    zd.m l11 = zd.b0.l(v0.b(eVar));
                     try {
                         this.b = l11;
                         try {
-                            Object z11 = cVar.z(kVar, i7, andIncrement, this);
-                            if (z11 == eVar2) {
+                            Object z12 = cVar.z(kVar, i7, andIncrement, this);
+                            if (z12 == b0Var) {
                                 a(kVar, i7);
                             } else {
-                                if (z11 == eVar3) {
+                                if (z12 == b0Var2) {
                                     if (andIncrement < cVar.p()) {
                                         kVar.b();
                                     }
@@ -102,29 +102,29 @@ public final class b implements c2 {
                                             } else {
                                                 kVar2 = kVar4;
                                             }
-                                            Object z12 = cVar.z(kVar2, i10, andIncrement2, this);
-                                            if (z12 == e.m) {
+                                            Object z13 = cVar.z(kVar2, i10, andIncrement2, this);
+                                            if (z13 == e.m) {
                                                 a(kVar2, i10);
                                                 break;
                                             }
-                                            if (z12 == e.o) {
+                                            if (z13 == e.o) {
                                                 if (andIncrement2 < cVar.p()) {
                                                     kVar2.b();
                                                 }
                                                 kVar4 = kVar2;
                                             } else {
-                                                if (z12 == e.n) {
+                                                if (z13 == e.n) {
                                                     throw new IllegalStateException("unexpected");
                                                 }
                                                 kVar2.b();
-                                                this.a = z12;
+                                                this.a = z13;
                                                 this.b = null;
                                             }
                                         }
                                     }
                                 } else {
                                     kVar.b();
-                                    this.a = z11;
+                                    this.a = z12;
                                     this.b = null;
                                 }
                                 l11.B(Boolean.TRUE, null);
@@ -148,8 +148,8 @@ public final class b implements c2 {
                 int i11 = ee.s.a;
                 throw m11;
             }
-            z9 = false;
+            z10 = false;
         }
-        return Boolean.valueOf(z9);
+        return Boolean.valueOf(z10);
     }
 }

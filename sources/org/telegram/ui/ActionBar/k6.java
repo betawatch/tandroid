@@ -1,29 +1,62 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.messenger.qs;
+import android.graphics.PorterDuff;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l6 b;
+public final class k6 {
+    public int a;
+    public int b = -1;
+    public int c;
+    public float d;
+    public WeakReference e;
+    public e6 f;
+    public int g;
+    public PorterDuff.Mode h;
+    public Object i;
+    public WeakReference j;
+    public boolean k;
+    public int l;
+    public boolean m;
+    public n6 n;
+    public o6 o;
 
-    public /* synthetic */ k6(l6 l6Var, int i7) {
-        this.a = i7;
-        this.b = l6Var;
+    public final boolean a() {
+        WeakReference weakReference = this.e;
+        return weakReference != null && weakReference.get() == null;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public final int b() {
         int i7 = this.a;
-        l6 l6Var = this.b;
-        switch (i7) {
-            case 0:
-                l6Var.s();
-                break;
-            default:
-                qs.e().k(qs.t4, l6Var, Boolean.TRUE, null, -1);
-                break;
+        int i10 = this.b;
+        int i11 = this.c;
+        float f10 = this.d;
+        e6 e6Var = this.f;
+        if (e6Var == null) {
+            WeakReference weakReference = this.e;
+            e6Var = weakReference != null ? (e6) weakReference.get() : null;
+        }
+        return q6.P(i7, i10, i11, f10, e6Var);
+    }
+
+    public final void c(int i7, int i10, int i11, float f10, e6 e6Var) {
+        this.a = i7;
+        this.b = i10;
+        this.c = i11;
+        this.d = f10;
+        if (e6Var == null) {
+            this.e = null;
+            this.f = null;
+            return;
+        }
+        Class<?> cls = e6Var.getClass();
+        if (cls.isSynthetic() || cls.getName().contains("$$Lambda") || cls.getName().contains("$$ExternalSynthetic")) {
+            this.e = null;
+            this.f = e6Var;
+        } else {
+            this.e = new WeakReference(e6Var);
+            this.f = null;
         }
     }
 }

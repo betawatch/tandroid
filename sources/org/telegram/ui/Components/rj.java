@@ -1,36 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final class rj extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.xp b;
+public final class rj extends uj0 {
+    public final /* synthetic */ int f3;
+    public final Paint g3;
+    public final /* synthetic */ dk h3;
 
-    public rj(org.telegram.ui.xp xpVar) {
-        this.b = xpVar;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ((tj) this.b.d).U.e();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rj(dk dkVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i7) {
+        super(context, e6Var);
+        this.f3 = i7;
+        switch (i7) {
+            case 1:
+                this.h3 = dkVar;
+                super(context, e6Var);
+                this.g3 = new Paint();
                 break;
             default:
-                org.telegram.ui.xp xpVar = this.b;
-                View view = xpVar.b;
-                view.setAlpha(1.0f);
-                v4.n0.x0(view);
-                ((tj) xpVar.d).X.r.removeView(view);
+                this.h3 = dkVar;
+                this.g3 = new Paint();
                 break;
         }
     }
 
-    public rj(org.telegram.ui.xp xpVar, v4.n0 n0Var) {
-        this.b = xpVar;
+    @Override // org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.f3) {
+            case 0:
+                if (this.h3.n == 2 && getChildCount() > 0) {
+                    float f10 = 2.14748365E9f;
+                    for (int i7 = 0; i7 < getChildCount(); i7++) {
+                        if (getChildAt(i7).getY() < f10) {
+                            f10 = getChildAt(i7).getY();
+                        }
+                    }
+                    this.g3.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.h5, false));
+                }
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                if (this.h3.n == 1 && getChildCount() > 0) {
+                    float f11 = 2.14748365E9f;
+                    for (int i10 = 0; i10 < getChildCount(); i10++) {
+                        if (getChildAt(i10).getY() < f11) {
+                            f11 = getChildAt(i10).getY();
+                        }
+                    }
+                    this.g3.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.h5, false));
+                }
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
+            case 0:
+                if (this.h3.n == 0) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

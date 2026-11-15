@@ -1,27 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.location.Location;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ok implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vk b;
+public final class ok implements TextWatcher {
+    public final /* synthetic */ qk a;
 
-    public /* synthetic */ ok(vk vkVar, int i7) {
-        this.a = i7;
-        this.b = vkVar;
+    public ok(qk qkVar) {
+        this.a = qkVar;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                vk.Z(this.b, (org.telegram.messenger.fa) obj);
-                break;
-            default:
-                vk.W(this.b, (Location) obj);
-                break;
-        }
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        this.a.i0();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

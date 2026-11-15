@@ -1,17 +1,17 @@
 package wg;
 
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
 /* loaded from: classes3.dex */
 public final class k {
-    public final /* synthetic */ z a;
-    public final /* synthetic */ h6 b;
+    public final /* synthetic */ y a;
+    public final /* synthetic */ e6 b;
     public final /* synthetic */ l c;
 
-    public k(l lVar, z zVar, h6 h6Var) {
+    public k(l lVar, y yVar, e6 e6Var) {
         this.c = lVar;
-        this.a = zVar;
-        this.b = h6Var;
+        this.a = yVar;
+        this.b = e6Var;
     }
 }
